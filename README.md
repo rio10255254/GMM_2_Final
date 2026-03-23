@@ -134,11 +134,11 @@ flowchart TD
 - `main`
   - 當前整理後的 shared mainline
 - `baseline/*`
-  - 正式 production baseline
+  - 保留的 reference namespace，用來放已核准的 baseline 里程碑
 - `reconstructed/*`
   - 建立在 curated import 之上的 evidence-backed reconstructed governance/reference branches
 - `research/*`
-  - 有研究價值但不冒充原始 git 歷史的語意分支
+  - 新研究與策略嘗試的主要分支類型
 - `sandbox/*`
   - 已隔離的實驗面，例如 `R32Sandbox`
 
@@ -148,6 +148,8 @@ flowchart TD
 - reconstructed branch 預設是 governance/reference branch，不等於已復原的 historical tree
 - 若 branch 是 semantic / research，也必須明確標示它不是原始歷史快照
 - 本 repo 不會假造不存在的原始 git 歷史
+- 新的研究工作預設應使用 `research/*` 或 `sandbox/*`
+- `baseline/*` 不是日常開發用的普通合作 branch family，而是受保護的 reference namespace
 
 詳見 `REPO_GOVERNANCE.md` 與 `docs/index/PROJECT_DOCUMENT_INDEX.md`。
 
