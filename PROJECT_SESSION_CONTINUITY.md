@@ -3,41 +3,25 @@ Last updated: 2026-03-20
 
 ## Purpose / 用途
 
-### 繁體中文
-
 這份文件只負責跨入口 handoff。  
-它回答三件事：
+This file exists only for cross-interface handoff.
 
-1. 接手時應先讀哪幾份文件
-2. 目前最重要、最穩定的已確認事實是什麼
-3. 接手時有哪些工作規則不能搞錯
+它回答三件事：  
+It answers three questions:
 
-它**不**負責展開完整現況細節，也**不**負責定義穩定架構規則。
+1. 接手時應先讀哪幾份文件  
+   Which files a new owner should read first
+2. 目前最重要、最穩定的已確認事實是什麼  
+   What the highest-value confirmed facts currently are
+3. 接手時有哪些工作規則不能搞錯  
+   Which operating rules must not be misunderstood during handoff
 
-### English
-
-This file exists only for cross-interface handoff. It answers three questions:
-
-1. Which files a new owner should read first
-2. What the highest-value confirmed facts currently are
-3. Which operating rules must not be misunderstood during handoff
-
-It does **not** expand full current-state detail, and it does **not** define the
-stable architecture rules.
+它**不**負責展開完整現況細節，也**不**負責定義穩定架構規則。  
+It does **not** expand full current-state detail, and it does **not** define the stable architecture rules.
 
 ## Read Order / 閱讀順序
 
-### 繁體中文
-
-固定閱讀順序：
-
-1. `PROJECT_SESSION_CONTINUITY.md`
-2. `PROJECT_CURRENT_STATE.md`
-3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
-
-### English
-
+固定閱讀順序：  
 Recommended fixed read order:
 
 1. `PROJECT_SESSION_CONTINUITY.md`
@@ -88,24 +72,18 @@ Recommended fixed read order:
 
 ## Current Working Rule / 目前工作規則
 
-### 繁體中文
-
-新的 assistant / agent 接手時，先遵守以下規則：
-
-1. 先讀這份文件與 `PROJECT_CURRENT_STATE.md`
-2. 以 repo 內正式文件為準，不以 `.codex` 內部 session 檔為準
-3. 不要把 live process-level 狀態手抄回 root prose；active sandbox 直接看 `Experiments\R32Sandbox\runtime\`
-4. tracked 的 legacy root status 快照放在 `docs/runtime/legacy/root_status/`；若 root 再出現 `000_LONGRUN_*`，視為本地 runtime 輸出
-5. baseline、verdict、active experiment 有變時，優先回寫這份文件與 `PROJECT_CURRENT_STATE.md`
-6. 當某個 sandbox winner 已完成 external FAIL 後，不要再把它寫成 current promising line；下一步應改寫成 new branch / new mechanism required
-
-### English
-
+新的 assistant / agent 接手時，先遵守以下規則：  
 When a new assistant or agent takes over, follow these rules first:
 
-1. Read this file and `PROJECT_CURRENT_STATE.md` first.
-2. Treat the repository’s formal docs as the source of truth, not internal `.codex` session files.
-3. Do not copy live process-level status back into root prose docs; for active sandbox status, read `Experiments\R32Sandbox\runtime\` directly.
-4. Tracked legacy root-status snapshots live under `docs/runtime/legacy/root_status/`; if `000_LONGRUN_*` reappears at the root, treat it as local runtime output.
-5. When the baseline, verdict, or active experiment changes, update this file and `PROJECT_CURRENT_STATE.md` first.
-6. Once a sandbox winner has completed external FAIL, do not keep describing it as the current promising line; the next step must be reframed as a new branch or new mechanism.
+1. 先讀這份文件與 `PROJECT_CURRENT_STATE.md`  
+   Read this file and `PROJECT_CURRENT_STATE.md` first.
+2. 以 repo 內正式文件為準，不以 `.codex` 內部 session 檔為準  
+   Treat the repository’s formal docs as the source of truth, not internal `.codex` session files.
+3. 不要把 live process-level 狀態手抄回 root prose；active sandbox 直接看 `Experiments\R32Sandbox\runtime\`  
+   Do not copy live process-level status back into root prose docs; for active sandbox status, read `Experiments\R32Sandbox\runtime\` directly.
+4. tracked 的 legacy root status 快照放在 `docs/runtime/legacy/root_status/`；若 root 再出現 `000_LONGRUN_*`，視為本地 runtime 輸出  
+   Tracked legacy root-status snapshots live under `docs/runtime/legacy/root_status/`; if `000_LONGRUN_*` reappears at the root, treat it as local runtime output.
+5. baseline、verdict、active experiment 有變時，優先回寫這份文件與 `PROJECT_CURRENT_STATE.md`  
+   When the baseline, verdict, or active experiment changes, update this file and `PROJECT_CURRENT_STATE.md` first.
+6. 當某個 sandbox winner 已完成 external FAIL 後，不要再把它寫成 current promising line；下一步應改寫成 new branch / new mechanism required  
+   Once a sandbox winner has completed external FAIL, do not keep describing it as the current promising line; the next step must be reframed as a new branch or new mechanism.
