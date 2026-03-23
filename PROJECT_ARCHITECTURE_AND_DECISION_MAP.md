@@ -3,41 +3,30 @@ Last updated: 2026-03-20
 
 ## Purpose / 用途
 
-### 繁體中文
-
-這份文件只描述**穩定架構與決策規則**。
-
-它回答：
-
-- 系統真正目標是什麼
-- external truth 與 internal surrogate 的關係
-- 目前正式 baseline policy 是什麼
-- 什麼情況下才值得立新 round
-- 升級 baseline 的必要條件是什麼
-
-它**不**負責展開當前 round 的逐步進度，也**不**負責做跨入口 handoff。
-
-### English
-
+這份文件只描述**穩定架構與決策規則**。  
 This document describes the **stable architecture and decision rules** only.
 
+它回答：  
 It answers:
 
+- 系統真正目標是什麼  
 - what the true system goal is
+- external truth 與 internal surrogate 的關係  
 - how external truth relates to internal surrogates
+- 目前正式 baseline policy 是什麼  
 - what the current baseline policy is
+- 什麼情況下才值得立新 round  
 - when a new round is worth starting
+- 升級 baseline 的必要條件是什麼  
 - what conditions are required to promote a new baseline
 
-It does **not** expand step-by-step progress for the current round, and it does
-**not** serve as the cross-interface handoff file.
+它**不**負責展開當前 round 的逐步進度，也**不**負責做跨入口 handoff。  
+It does **not** expand step-by-step progress for the current round, and it does **not** serve as the cross-interface handoff file.
 
 ## Layer A — External Truth / Layer A — 外部真值
 
 最終真值永遠是 external GMF 的 whole-annulus 幾何定位表現。
-English summary:
-The final truth is always the external GMF whole-annulus geometric localization
-result.
+The final truth is always the external GMF whole-annulus geometric localization result.
 
 external GMF 真正在乎 / external GMF truly optimizes for：
 
@@ -47,13 +36,11 @@ external GMF 真正在乎 / external GMF truly optimizes for：
 - sign monotonicity
 
 它不直接在乎一般視覺銳利度，也不接受 internal gate 直接替代。
-It does not directly optimize for generic visual sharpness, and internal gates
-can never replace it.
+It does not directly optimize for generic visual sharpness, and internal gates can never replace it.
 
 ## Layer B — Internal Surrogate / Layer B — 內部代理指標
 
 internal surrogate 是代理，不是 external GMF 本身。
-English summary:
 Internal surrogates are useful proxies, not substitutes for external GMF.
 
 目前穩定存在的 surrogate 類型：
@@ -73,10 +60,7 @@ Internal surrogates are useful proxies, not substitutes for external GMF.
 - process-audit harness：驗證單一技術假說
 - pairwise delta probe：驗證 `pairmix_algblend` 主線
 - internal-external correlation：找 screening 指標，不可替代 external
-English summary:
-Use each surrogate for what it was designed to do: candidate selection,
-hypothesis testing, screening, or diagnosis. None of them replaces the final
-external gate.
+Use each surrogate for what it was designed to do: candidate selection, hypothesis testing, screening, or diagnosis. None of them replaces the final external gate.
 
 ## Layer C — Optimization Target / Layer C — 目前優化目標
 
@@ -86,11 +70,7 @@ external gate.
 2. 不犧牲 `8px` macro guard
 3. 只在有新機制或高價值微調時再開新 round
 
-English summary:
-The current optimization target is narrow and practical: keep the `Round30`
-advantage on the external `0.8px` battlefield, preserve the `8px` guard, and
-only open a new round when there is a genuinely new mechanism or a high-value,
-verifiable refinement.
+The current optimization target is narrow and practical: keep the `Round30` advantage on the external `0.8px` battlefield, preserve the `8px` guard, and only open a new round when there is a genuinely new mechanism or a high-value, verifiable refinement.
 
 ## Stable Architecture Boundary / 穩定架構邊界
 
@@ -109,11 +89,7 @@ verifiable refinement.
 - 但它已不再代表 root shared mainline 的運行面
 - `R32 real_eq` 已被 external GMF 否定，因此 sandbox 若要續做，下一步必須是新分支 / 新機制
 
-English summary:
-The shared mainline and the `R32Sandbox` are intentionally separated. `R32`
-remains a sandboxed research direction, but the `r32_real_eq` line has already
-been externally falsified, so any continuation must use a new branch or
-mechanism.
+The shared mainline and the `R32Sandbox` are intentionally separated. `R32` remains a sandboxed research direction, but the `r32_real_eq` line has already been externally falsified, so any continuation must use a new branch or mechanism.
 
 ## Stable Artifact Map / 穩定 artifact 地圖
 
@@ -148,11 +124,11 @@ mechanism.
 
 - `D:\GMM_2_Final\ESTIMATOR_POLICY.json`
 
-English summary:
-The current adopted production checkpoint is `Round30 / r30_b1_dironly`, with
-`edge_centroid` at `0.08px`, `pairmix_algblend` at `0.8px`, and
-`edge_band_refine` at `8px`. `ESTIMATOR_POLICY.json` is the only
-machine-readable baseline truth.
+目前正式 production checkpoint 是 `Round30 / r30_b1_dironly`，`0.08px` 用 `edge_centroid`、`0.8px` 用 `pairmix_algblend`、`8px` 用 `edge_band_refine`。  
+The current adopted production checkpoint is `Round30 / r30_b1_dironly`, with `edge_centroid` at `0.08px`, `pairmix_algblend` at `0.8px`, and `edge_band_refine` at `8px`.
+
+`ESTIMATOR_POLICY.json` 是唯一 machine-readable baseline truth。  
+`ESTIMATOR_POLICY.json` is the only machine-readable baseline truth.
 
 ## Confirmed Findings / 已確認結論
 
@@ -181,11 +157,8 @@ machine-readable baseline truth.
 - 缺 artifact 的候選不能被硬寫成 external verdict
 - external final gate 仍然是 **whole-annulus GMF**，不因 sandbox 化而改變
 
-English summary:
-This section records three classes of stable conclusions:
-- what has been externally supported
-- what has been externally falsified
-- what remains useful only as caution or screening knowledge
+這一節可分成三類穩定結論：哪些方向已被 external 支持、哪些已被 external 否定、以及哪些只適合作為 caution 或 screening 知識。  
+This section records three classes of stable conclusions: what has been externally supported, what has been externally falsified, and what remains useful only as caution or screening knowledge.
 
 ## Decision Rules / 決策規則
 
@@ -231,12 +204,8 @@ This section records three classes of stable conclusions:
 - `Round30 / r30_b1_dironly` 仍是唯一 production baseline
 - 若要續做 `R32`，不應延用 `r32_real_eq_finetune` 當 current promising line
 
-English summary:
-The stable decision rules are simple:
-- promote a new baseline only after it passes both internal calibration and the external GMF battlefield
-- do not reopen lines that have already been falsified
-- treat the current hard boundary as `external 0.8px step std < 0.167862`
-- do not keep describing the failed `r32_real_eq_finetune` line as promising
+穩定規則層其實很簡單：新 baseline 必須同時通過 internal calibration 與 external GMF battlefield；已被否定的線不要重開；當前硬邊界仍是 `external 0.8px step std < 0.167862`；失敗的 `r32_real_eq_finetune` 不能再被描述成 promising line。  
+The stable decision rules are simple: promote a new baseline only after it passes both internal calibration and the external GMF battlefield; do not reopen lines that have already been falsified; treat the current hard boundary as `external 0.8px step std < 0.167862`; and do not keep describing the failed `r32_real_eq_finetune` line as promising.
 
 ## Source of Truth Rules / 真相來源規則
 
@@ -251,9 +220,5 @@ The stable decision rules are simple:
 - machine-readable policy truth:
   `ESTIMATOR_POLICY.json`
 
-English summary:
-Use `PROJECT_CURRENT_STATE.md` for current truth, `PROJECT_SESSION_CONTINUITY.md`
-for handoff, `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md` for stable rules,
-`docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` for the long
-historical narrative, and `ESTIMATOR_POLICY.json` for machine-readable policy
-truth.
+目前真相看 `PROJECT_CURRENT_STATE.md`，handoff 看 `PROJECT_SESSION_CONTINUITY.md`，穩定規則看這份文件，完整歷史看 `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`，機器可讀政策則看 `ESTIMATOR_POLICY.json`。  
+Use `PROJECT_CURRENT_STATE.md` for current truth, `PROJECT_SESSION_CONTINUITY.md` for handoff, this file for stable rules, `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` for the long historical narrative, and `ESTIMATOR_POLICY.json` for machine-readable policy truth.

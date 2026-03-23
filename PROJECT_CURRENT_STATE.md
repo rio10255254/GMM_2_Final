@@ -23,9 +23,8 @@ The current adopted baseline is **Round30 / `r30_b1_dironly`**.
 - internal decision: `D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\selected\reports\ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md`
 - external compare: `D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\selected\reports\ROUND30_EXTERNAL_COMPARE.md`
 
-English note:
-These files are the formal seed, internal decision, and external compare
-artifacts for the currently adopted baseline.
+這三份檔案分別對應目前正式 baseline 的 seed、internal decision 與 external compare 證據。  
+These three files are the formal seed, internal decision, and external compare artifacts for the currently adopted baseline.
 
 ## 2. Latest Verified Outcomes / 最近已驗證結果
 
@@ -39,9 +38,8 @@ One-line verdict: **all measured Round31 B1 hyperparameter candidates regressed 
 - decision: `D:\GMM_2_Final\Traing_Progress\organized_20260316\round31\selected\reports\ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md`
 - external compare: `D:\GMM_2_Final\Traing_Progress\organized_20260316\round31\selected\reports\ROUND31_EXTERNAL_COMPARE.md`
 
-English note:
-Round31 is a formal B1-line follow-up, but its measured candidates regressed on
-the external `0.8px` battlefield.
+Round31 是沿 B1 主線做的正式 follow-up，但 measured candidates 在 external `0.8px` battlefield 全部退步。  
+Round31 is a formal B1-line follow-up, but its measured candidates regressed on the external `0.8px` battlefield.
 
 measured candidates / 已量測候選：
 
@@ -56,9 +54,8 @@ artifact caveat / artifact 注意事項：
 - `r31_eq_combo` 缺 `GMF_score.txt`
 - 判定：**external artifact missing**，不是 measured regression
 
-English note:
-`r31_eq_combo` is explicitly tracked as an artifact-missing case, not as a
-measured failure.
+`r31_eq_combo` 被明確記為 artifact missing，而不是 measured failure。  
+`r31_eq_combo` is explicitly tracked as an artifact-missing case, not as a measured failure.
 
 ### Round32 / Round32
 
@@ -74,9 +71,8 @@ internal chain 正式入口 / Formal internal-chain entry points：
 - runtime status:
   `D:\GMM_2_Final\Experiments\R32Sandbox\runtime\R32_STATUS.md`
 
-English note:
-These files carry the formal internal decision path for the `R32Sandbox` line
-and the canonical runtime truth for the sandbox.
+這些檔案承載 `R32Sandbox` 的正式 internal decision path 與 canonical runtime truth。  
+These files carry the formal internal decision path for the `R32Sandbox` line and the canonical runtime truth for the sandbox.
 
 已確認事實 / Confirmed facts：
 
@@ -88,9 +84,8 @@ and the canonical runtime truth for the sandbox.
 - decision memo 已確認 `r32_real_eq_finetune` 通過 calibrated pairmix / macro guard
 - external compare 已完成，verdict = FAIL
 
-English note:
-The internal winner exists and passed the internal chain, but the final external
-compare has already completed and failed.
+internal winner 的確存在且通過 internal chain，但 final external compare 已完成且失敗。  
+The internal winner exists and passed the internal chain, but the final external compare has already completed and failed.
 
 external compare 核心數字 / Core external compare numbers：
 
@@ -106,9 +101,8 @@ external compare 核心數字 / Core external compare numbers：
 - `0.8px` main battlefield 相對 `R30` 惡化 `+97.7%`
 - `8px` guard 也失守
 
-English note:
-The failure is not marginal. The `0.8px` battlefield deteriorated sharply
-relative to `Round30`, and the `8px` guard also failed.
+這不是邊際失敗；`0.8px` 主戰場相對 `Round30` 明顯惡化，`8px` guard 也一起失守。  
+This is not a marginal failure. The `0.8px` battlefield deteriorated sharply relative to `Round30`, and the `8px` guard also failed.
 
 ## 3. Current Active State / 目前 active 狀態
 
@@ -118,10 +112,8 @@ relative to `Round30`, and the `8px` guard also failed.
 - `R32 real_eq` 這條線已完成 external FAIL
 - 若要續做 `R32`，下一步必須是新的 sandbox branch / 新機制
 
-English note:
-There is currently no winning line that can directly challenge the baseline.
-`R32 real_eq` has already failed externally, so any continuation must start as a
-new sandbox branch or new mechanism.
+目前沒有任何可直接挑戰 baseline 的 winning line；`R32 real_eq` 已外部失敗，若要續做只能開新 sandbox branch / 新機制。  
+There is currently no winning line that can directly challenge the baseline. `R32 real_eq` has already failed externally, so any continuation must start as a new sandbox branch or new mechanism.
 
 現在 process-level / runtime truth 入口是 / The current process-level runtime truth entry point is：
 
@@ -146,9 +138,8 @@ The Git-tracked `000_LONGRUN_ROUND32_STATUS.*` files are now kept under `docs/ru
 - final compare json:
   `D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.json`
 
-English note:
-The external validation is fully closed. Both the human-readable Markdown and
-the machine-readable JSON verdict artifacts are available.
+外部驗證已完全關閉，Markdown 與 JSON verdict artifacts 都已具備。  
+The external validation is fully closed. Both the human-readable Markdown and the machine-readable JSON verdict artifacts are available.
 
 目前真正的結論是 / The real conclusion is：
 
@@ -168,7 +159,5 @@ the machine-readable JSON verdict artifacts are available.
 2. `8px` 不能明顯退步
 3. `0.08px` 改善不能補償 `0.8px` 主戰場退步
 
-English note:
-Any future `R32` candidate must beat `0.167862` on the external `0.8px`
-battlefield, avoid meaningful `8px` regression, and cannot trade away the main
-battlefield just to improve `0.08px`.
+未來任何 `R32` 候選都必須在 external `0.8px` battlefield 擊敗 `0.167862`，同時不能用 `8px` 退步或主戰場退步去換取 `0.08px` 改善。  
+Any future `R32` candidate must beat `0.167862` on the external `0.8px` battlefield, avoid meaningful `8px` regression, and cannot trade away the main battlefield just to improve `0.08px`.

@@ -2,37 +2,25 @@
 
 ## Canonical Reading Order / 正式閱讀順序
 
-### 繁體中文
-
-新接手時，只看這四份：
-
-1. `PROJECT_SESSION_CONTINUITY.md`
-2. `PROJECT_CURRENT_STATE.md`
-3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`（只有需要完整歷史時再看）
-
-定位規則：
-
-- 想快速接手：看 `PROJECT_SESSION_CONTINUITY.md`
-- 想知道現在真相：看 `PROJECT_CURRENT_STATE.md`
-- 想知道穩定規則：看 `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-- 想補完整歷史：最後看 `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
-
-### English
-
+新接手時，只看這四份：  
 When taking over the project, start with these four files:
 
 1. `PROJECT_SESSION_CONTINUITY.md`
 2. `PROJECT_CURRENT_STATE.md`
 3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` (only when you need the full historical narrative)
+4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`（只有需要完整歷史時再看 / only when you need the full historical narrative）
 
-Use them this way:
+想快速接手：看 `PROJECT_SESSION_CONTINUITY.md`  
+For the fastest handoff, read `PROJECT_SESSION_CONTINUITY.md`.
 
-- for the fastest handoff: `PROJECT_SESSION_CONTINUITY.md`
-- for current truth: `PROJECT_CURRENT_STATE.md`
-- for stable rules: `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-- for full historical context: `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
+想知道現在真相：看 `PROJECT_CURRENT_STATE.md`  
+For current truth, read `PROJECT_CURRENT_STATE.md`.
+
+想知道穩定規則：看 `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`  
+For stable rules, read `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`.
+
+想補完整歷史：最後看 `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`  
+For the full historical context, read `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` last.
 
 ## One-Screen Snapshot / 一頁快照
 
@@ -43,32 +31,24 @@ Use them this way:
 
 ## Project Goal / 專案目標
 
-### 繁體中文
-
-這不是一般影像增強專案。
-
-真正目標是：
-
-- 對 annulus 邊界做可定位的幾何重建
-- 讓固定 external GMF 在不同位移尺度下都能穩定定位
-
-工程上真正優化的不是「看起來更銳利」，而是 **whole-annulus geometry 是否更對 external GMF 友善**。
-
-### English
-
+這不是一般影像增強專案。  
 This is not a generic image-enhancement project.
 
+真正目標是：  
 The actual goal is:
 
+- 對 annulus 邊界做可定位的幾何重建  
 - to reconstruct annulus boundaries in a geometrically localizable way
+- 讓固定 external GMF 在不同位移尺度下都能穩定定位  
 - to keep a fixed external GMF stable across multiple displacement scales
 
-In practice, the real optimization target is not “making the image look
-sharper”, but **making the whole-annulus geometry more GMF-friendly**.
+工程上真正優化的不是「看起來更銳利」，而是 **whole-annulus geometry 是否更對 external GMF 友善**。  
+In practice, the real optimization target is not “making the image look sharper”, but **making the whole-annulus geometry more GMF-friendly**.
 
 ## Root Surface
 
-root 現在只保留**入口層**與**治理層**：
+root 現在只保留**入口層**與**治理層**。  
+The repository root is intentionally kept small and holds only the entry layer and governance layer.
 
 ```text
 D:\GMM_2_Final\
@@ -87,11 +67,6 @@ D:\GMM_2_Final\
 ├── Experiments\
 └── docs\
 ```
-
-English summary:
-The repository root is intentionally kept small. It contains only the main
-entry-point docs, governance docs, policy files, and top-level code directories
-that a maintainer is expected to use directly.
 
 ## Docs Navigation
 
@@ -118,36 +93,27 @@ docs\
         └── root_status\
 ```
 
-用途分工：
+用途分工如下：  
+The docs tree is divided as follows:
 
-- `docs/analysis/`
-  研究路徑圖、決策路徑總覽、GitHub 可視化入口
-- `docs/evidence/`
-  精選實驗證據層；追蹤小型、高價值、可核對的正式證據副本
-  （含 current baseline、historical baseline path、falsified lines、
-  side-direction falsifications、analysis、runtime snapshots）
-- `docs/history/`
-  完整歷史敘事與研究反省
-- `docs/index/`
-  文件責任邊界與導航索引
-- `docs/runtime/legacy/`
-  已追蹤的 legacy root status 快照；不是當前 canonical runtime surface
-
-English summary:
-- `docs/analysis/` holds research-path and visualization material
-- `docs/evidence/` holds curated formal evidence copies
-- `docs/history/` holds the long historical narrative
-- `docs/index/` holds navigation and responsibility mapping
-- `docs/runtime/legacy/` holds tracked legacy runtime snapshots, not current canonical runtime truth
+- `docs/analysis/`：研究路徑圖、決策路徑總覽、GitHub 可視化入口  
+- `docs/analysis/`: research-path and visualization material
+- `docs/evidence/`：精選實驗證據層；追蹤小型、高價值、可核對的正式證據副本  
+- `docs/evidence/`: curated formal evidence copies
+- `docs/history/`：完整歷史敘事與研究反省  
+- `docs/history/`: the long historical narrative
+- `docs/index/`：文件責任邊界與導航索引  
+- `docs/index/`: navigation and responsibility mapping
+- `docs/runtime/legacy/`：已追蹤的 legacy root status 快照；不是當前 canonical runtime surface  
+- `docs/runtime/legacy/`: tracked legacy runtime snapshots, not current canonical runtime truth
 
 ## Research Path Overview
 
-完整圖請看 `docs/analysis/RESEARCH_PATHS.md`。
+完整圖請看 `docs/analysis/RESEARCH_PATHS.md`。  
+See `docs/analysis/RESEARCH_PATHS.md` for the fuller research-path map.
 
-English summary:
-See `docs/analysis/RESEARCH_PATHS.md` for the fuller research-path map. The
-diagram below is the shortest route from the historical `R26` baseline path to
-the current `Round30` baseline and the `Round31` / `Round32` falsified lines.
+下面這張圖只保留從歷史 `R26` 基準路徑走到 `Round30` baseline，再到 `Round31` / `Round32` 否定線的最短路徑。  
+The diagram below keeps only the shortest route from the historical `R26` baseline path to the `Round30` baseline and then to the `Round31` / `Round32` falsified lines.
 
 ```mermaid
 flowchart TD
@@ -159,7 +125,8 @@ flowchart TD
 
 ## Sync Policy
 
-這個 GitHub 倉庫是**研究程式碼與正式文件的治理面**，不是磁碟內容的完整鏡像。
+這個 GitHub 倉庫是**研究程式碼與正式文件的治理面**，不是磁碟內容的完整鏡像。  
+This GitHub repository is the governance-facing surface for research code and formal documentation, not a full mirror of the working directory.
 
 應該同步到 GitHub 的內容：
 
@@ -176,33 +143,28 @@ flowchart TD
 - bulk logs、checkpoint、weights、artifacts、reconstructions、raw GMF dumps
 - 訓練資料、部署包、portable runtime、local backups
 
-會被保留的例外：
+會被保留的例外如下：  
+The following remain as intentional exceptions:
 
 - 小型、刻意保留、可核對的 canonical sample fixtures 可以進版控
 - 例如 `Model/Test_Image/VisionTop_20251029182653732.bmp`
 - 這類檔案的用途是提供穩定、可引用的最小輸入樣本，不是保存 bulk experiment payload
 
-English summary:
-GitHub should contain governance-facing material only: important branches,
-decision docs, analysis, curated evidence, and a very small number of canonical
-sample fixtures. It should not contain daily runtime noise or bulk outputs.
-
 ## Current Workflow Boundaries
 
-- root shared 主線不再繼續吸收 `R32` 專用 loader / audit / launcher / monitor
-- `R32` 專用執行面以 `Experiments\R32Sandbox\` 為 canonical surface
-- 已追蹤的 root `000_LONGRUN_*_STATUS.*` 快照現已移到 `docs/runtime/legacy/root_status/`
-- 若舊腳本在 root 再生成 `000_LONGRUN_*`，那些檔案一律視為**本地 runtime 輸出**，不再是 Git-tracked canonical docs
-
-English summary:
-The root shared workflow and the `R32Sandbox` execution surface are separated.
-Tracked legacy root status snapshots were moved under `docs/runtime/legacy/`,
-and any regenerated root `000_LONGRUN_*` files should be treated as local
-runtime output only.
+- root shared 主線不再繼續吸收 `R32` 專用 loader / audit / launcher / monitor  
+- the root shared mainline no longer absorbs `R32`-specific loader / audit / launcher / monitor logic
+- `R32` 專用執行面以 `Experiments\R32Sandbox\` 為 canonical surface  
+- the dedicated `R32` execution surface is `Experiments\R32Sandbox\`
+- 已追蹤的 root `000_LONGRUN_*_STATUS.*` 快照現已移到 `docs/runtime/legacy/root_status/`  
+- tracked root `000_LONGRUN_*_STATUS.*` snapshots now live under `docs/runtime/legacy/root_status/`
+- 若舊腳本在 root 再生成 `000_LONGRUN_*`，那些檔案一律視為**本地 runtime 輸出**，不再是 Git-tracked canonical docs  
+- if older scripts regenerate `000_LONGRUN_*` at the root, treat them as local runtime outputs only
 
 ## Branch Strategy
 
-這個 repo 使用混合式 branch 策略：
+這個 repo 使用混合式 branch 策略：  
+This repository uses a mixed branch strategy:
 
 - `main`
   - 當前整理後的 shared mainline
@@ -215,7 +177,8 @@ runtime output only.
 - `sandbox/*`
   - 已隔離的實驗面，例如 `R32Sandbox`
 
-重建規則：
+重建規則如下：  
+The reconstruction rules are:
 
 - 若 branch 是 reconstructed，必須明確標示 reconstructed
 - reconstructed branch 預設是 governance/reference branch，不等於已復原的 historical tree
@@ -224,14 +187,8 @@ runtime output only.
 - 新的研究工作預設應使用 `research/*` 或 `sandbox/*`
 - `baseline/*` 不是日常開發用的普通合作 branch family，而是受保護的 reference namespace
 
-English summary:
-- `main` is the curated shared mainline
-- `baseline/*` is a protected reference namespace for approved baseline milestones
-- `reconstructed/*` preserves evidence-backed reconstructed milestones
-- `research/*` is the default family for new research work
-- `sandbox/*` is for isolated experimental execution surfaces
-
 詳見 `REPO_GOVERNANCE.md` 與 `docs/index/PROJECT_DOCUMENT_INDEX.md`。
+See `REPO_GOVERNANCE.md` and `docs/index/PROJECT_DOCUMENT_INDEX.md` for the fuller governance map.
 
 GitHub-side ruleset / project 定義同步放在 `.github/governance/`。
 GitHub 研究控制台目前位於 `https://github.com/users/rio10255254/projects/1`。
@@ -240,3 +197,11 @@ GitHub 研究控制台目前位於 `https://github.com/users/rio10255254/project
 重要實驗證據的 curated tracked copies 請看 `docs/evidence/README.md`。
 如果要一眼看懂「哪份證據支撐哪個結論」，請看 `docs/evidence/EVIDENCE_MAP.md`。
 如果要直接看代表性影像對照，請看 `docs/evidence/visuals/README.md`。
+
+GitHub-side ruleset and project definitions are tracked in `.github/governance/`.
+The GitHub research control plane lives at `https://github.com/users/rio10255254/projects/1`.
+The control plane is now a date-driven core timeline for the research history.
+For the step-by-step experiment workflow, see `docs/index/NEW_EXPERIMENT_SOP.md`.
+For curated tracked evidence copies, see `docs/evidence/README.md`.
+For a one-look evidence chain, see `docs/evidence/EVIDENCE_MAP.md`.
+For representative visual comparisons, see `docs/evidence/visuals/README.md`.
