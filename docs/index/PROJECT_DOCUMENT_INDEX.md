@@ -35,6 +35,8 @@ Last updated: 2026-03-20
   研究路徑圖、Mermaid 可視化入口
 - `docs/evidence/README.md`
   精選實驗證據層的入口與用途說明
+- `docs/evidence/EVIDENCE_MAP.md`
+  一頁式證據鏈地圖；回答每份 evidence 支撐哪個 baseline / falsified line / analysis 結論
 - `docs/index/PROJECT_DOCUMENT_INDEX.md`
   文件責任邊界與導覽索引
 - `docs/index/NEW_EXPERIMENT_SOP.md`
