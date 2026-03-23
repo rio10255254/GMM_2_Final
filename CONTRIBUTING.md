@@ -1,62 +1,139 @@
-# Contributing
+# Contributing / 協作指南
 
-## Repository Scope
+## Repository Scope / 倉庫範圍
 
-This repository is a curated research-code repo.
+### 繁體中文
 
-Tracked content:
+這個 repository 是一個經過策展的研究程式碼倉庫，不是磁碟工作目錄的完整鏡像。
 
-- source code in `Model/`, `Tools/`, and selected `Experiments/R32Sandbox/` code/docs
-- project truth docs and governance docs at the repo root
-- `docs/` navigation, analysis, historical narrative, and curated legacy references
-- light reports, manifests, and policies that explain decisions
-- PSF fitting source and supporting documentation
+會被追蹤的內容：
 
-Intentionally untracked content:
+- `Model/`、`Tools/` 與選定的 `Experiments/R32Sandbox/` 程式與說明文件
+- root 的 project truth 文件與治理文件
+- `docs/` 內的導航、分析、歷史敘事與 curated legacy references
+- 用來說明正式決策的輕量報告、manifest 與政策文件
+- PSF fitting 的原始碼與輔助說明
+
+刻意**不**追蹤的內容：
 
 - `Traing_Progress/`
 - `Training_Data/`
 - `_deployment_package/`
-- bulk artifacts such as `weights/`, `artifacts/`, `logs/`, `reconstructions/`, `gmf_results/`
+- 大量 artifact，例如 `weights/`、`artifacts/`、`logs/`、`reconstructions/`、`gmf_results/`
+- portable runtimes、備份資料夾與編輯器本地狀態
+
+只要某個結果能由已追蹤程式重現，或更適合放在外部儲存，就不要把它放進 Git history。
+
+### English
+
+This repository is a curated research-code repository, not a full mirror of the
+working directory on disk.
+
+Tracked content includes:
+
+- code and docs in `Model/`, `Tools/`, and selected `Experiments/R32Sandbox/`
+- project-truth and governance docs at the repository root
+- navigation, analysis, historical narrative, and curated legacy references under `docs/`
+- lightweight reports, manifests, and policy files that explain formal decisions
+- PSF fitting source and supporting documentation
+
+Intentionally untracked content includes:
+
+- `Traing_Progress/`
+- `Training_Data/`
+- `_deployment_package/`
+- bulk artifacts such as `weights/`, `artifacts/`, `logs/`, `reconstructions/`, and `gmf_results/`
 - portable runtimes, backup folders, and editor-local state
 
-If a result is reproducible from tracked code or can live in external storage, keep it out of Git history.
+If a result can be reproduced from tracked code or belongs in external storage,
+keep it out of Git history.
 
-## Canonical Reading Order
+## Canonical Reading Order / 正式閱讀順序
 
-Start here when taking over the project:
+### 繁體中文
+
+新接手時請依照這個順序閱讀：
 
 1. `PROJECT_SESSION_CONTINUITY.md`
 2. `PROJECT_CURRENT_STATE.md`
 3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
 4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
-## Branch Strategy
+### English
 
-- `main`: curated shared mainline for tracked code, docs, and governance
-- `baseline/*`: reserved reference namespace for approved baseline milestones
-- `reconstructed/*`: evidence-backed reconstructed governance/reference branches built on top of the curated `2026-03-23` import, clearly labeled as reconstructed and not as recovered historical trees unless that restoration is completed later
-- `research/*`: semantic research branches for new experiments and strategy work that preserve intent without pretending to be original git history
-- `sandbox/*`: isolated experimental surfaces such as `R32` for work that should not be treated as a baseline candidate yet
+When taking over the project, read these files in order:
 
-Use `research/*` or `sandbox/*` for new research work. Treat `baseline/*` as a protected namespace, not as the default branch family for new experiments.
+1. `PROJECT_SESSION_CONTINUITY.md`
+2. `PROJECT_CURRENT_STATE.md`
+3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
-For a step-by-step experiment workflow, see `docs/index/NEW_EXPERIMENT_SOP.md`.
+## Branch Strategy / 分支策略
 
-Do not claim that a reconstructed branch is the original historical git state or a recovered historical tree unless that state is verifiably preserved or later restored file-for-file.
+### 繁體中文
 
-## Pull Requests
+- `main`：目前整理後的 shared mainline，放追蹤中的程式、說明與治理內容
+- `baseline/*`：保留的 reference namespace，只用來放已核准的 baseline 里程碑
+- `reconstructed/*`：建立在 `2026-03-23` curated import 之上的 reconstructed governance/reference branches
+- `research/*`：新研究與策略嘗試的主要分支類型
+- `sandbox/*`：像 `R32` 這類需要隔離的實驗面
+
+新的研究工作預設應該使用 `research/*` 或 `sandbox/*`。  
+`baseline/*` 是受保護的命名空間，不是新實驗的預設 branch family。
+
+若你需要一步一步的實驗流程，請直接看 `docs/index/NEW_EXPERIMENT_SOP.md`。
+
+不要把 reconstructed branch 寫成原始歷史 git state，除非那個狀態真的被完整保留，或之後已經 file-for-file 復原。
+
+### English
+
+- `main`: the curated shared mainline for tracked code, docs, and governance
+- `baseline/*`: a reserved reference namespace for approved baseline milestones
+- `reconstructed/*`: evidence-backed reconstructed governance/reference branches built on top of the curated `2026-03-23` import
+- `research/*`: the default branch family for new research and strategy work
+- `sandbox/*`: isolated experimental surfaces such as `R32`
+
+Use `research/*` or `sandbox/*` for new work by default.  
+Treat `baseline/*` as a protected namespace, not as the normal branch family for new experiments.
+
+For the step-by-step experiment workflow, see `docs/index/NEW_EXPERIMENT_SOP.md`.
+
+Do not describe a reconstructed branch as the original historical git state or
+a recovered historical tree unless that state is verifiably preserved or later
+restored file-for-file.
+
+## Pull Requests / Pull Request 規則
+
+### 繁體中文
+
+建立 PR 前，請先確認：
+
+1. 沒有把 bulk artifacts 或資料一起 stage 進去
+2. 若 baseline、verdict、active experiment 或 repository information architecture 有變，對應正式文件都已更新
+3. PR 說明有交代這次改動和 external GMF truth、baseline policy、branch taxonomy 的關係
+4. 若改動只屬於日常 runtime 輸出或 log noise，請留在本地，不要推上 GitHub
+5. 若 PR 不是 trivial，開 PR 後或把 draft 轉成 ready 後，請手動留言 `@codex review`
+
+### English
 
 Before opening a PR:
 
 1. Verify that no bulk artifacts or data are staged.
 2. Update the relevant formal docs if the baseline, verdict, active experiment, or repository information architecture changed.
 3. Explain the change in terms of external GMF truth, baseline policy, and branch taxonomy where relevant.
-4. If the change only affects day-to-day runtime outputs or log noise, keep it local instead of pushing it.
-5. If the PR is non-trivial, manually comment `@codex review` after opening it or marking it ready for review.
+4. Keep day-to-day runtime output and log noise local instead of pushing it.
+5. For non-trivial PRs, manually comment `@codex review` after opening the PR or marking it ready for review.
 
-## Issues
+## Issues / Issue 使用方式
+
+### 繁體中文
+
+- 新 branch 或新 round，請使用研究 round proposal template
+- tracked source、docs 或治理問題，請使用 bug report template
+- 大型檔案不要直接丟 GitHub；請改連外部報告或正式 evidence
+
+### English
 
 - Use the research round proposal template for new branches or rounds.
 - Use the bug report template for defects in tracked source, docs, or governance.
-- Link to external reports instead of uploading large files into GitHub.
+- Link to external reports or curated evidence instead of uploading large files directly into GitHub.

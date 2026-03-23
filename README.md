@@ -1,6 +1,8 @@
 # GMM_2_Final
 
-## Canonical Reading Order
+## Canonical Reading Order / 正式閱讀順序
+
+### 繁體中文
 
 新接手時，只看這四份：
 
@@ -16,14 +18,32 @@
 - 想知道穩定規則：看 `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
 - 想補完整歷史：最後看 `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
-## One-Screen Snapshot
+### English
 
-- production baseline 仍是 `Round30 / r30_b1_dironly`
-- `Round32` 已切到 `Experiments/R32Sandbox/`
-- `Round32` internal winner `r32_real_eq_finetune` 已完成 external compare，結論是 **FAIL**
-- 若要續做 `R32`，下一步必須是新的 sandbox branch / 新機制，不是延用這個 winner
+When taking over the project, start with these four files:
 
-## Project Goal
+1. `PROJECT_SESSION_CONTINUITY.md`
+2. `PROJECT_CURRENT_STATE.md`
+3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` (only when you need the full historical narrative)
+
+Use them this way:
+
+- for the fastest handoff: `PROJECT_SESSION_CONTINUITY.md`
+- for current truth: `PROJECT_CURRENT_STATE.md`
+- for stable rules: `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+- for full historical context: `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
+
+## One-Screen Snapshot / 一頁快照
+
+- production baseline / 目前 production baseline：`Round30 / r30_b1_dironly`
+- `Round32` lives in `Experiments/R32Sandbox/`
+- `Round32` internal winner `r32_real_eq_finetune` completed external compare and the verdict is **FAIL**
+- if `R32` continues, the next step must be a new sandbox branch or new mechanism, not a repair of the falsified winner
+
+## Project Goal / 專案目標
+
+### 繁體中文
 
 這不是一般影像增強專案。
 
@@ -33,6 +53,18 @@
 - 讓固定 external GMF 在不同位移尺度下都能穩定定位
 
 工程上真正優化的不是「看起來更銳利」，而是 **whole-annulus geometry 是否更對 external GMF 友善**。
+
+### English
+
+This is not a generic image-enhancement project.
+
+The actual goal is:
+
+- to reconstruct annulus boundaries in a geometrically localizable way
+- to keep a fixed external GMF stable across multiple displacement scales
+
+In practice, the real optimization target is not “making the image look
+sharper”, but **making the whole-annulus geometry more GMF-friendly**.
 
 ## Root Surface
 
@@ -55,6 +87,11 @@ D:\GMM_2_Final\
 ├── Experiments\
 └── docs\
 ```
+
+English summary:
+The repository root is intentionally kept small. It contains only the main
+entry-point docs, governance docs, policy files, and top-level code directories
+that a maintainer is expected to use directly.
 
 ## Docs Navigation
 
@@ -96,9 +133,21 @@ docs\
 - `docs/runtime/legacy/`
   已追蹤的 legacy root status 快照；不是當前 canonical runtime surface
 
+English summary:
+- `docs/analysis/` holds research-path and visualization material
+- `docs/evidence/` holds curated formal evidence copies
+- `docs/history/` holds the long historical narrative
+- `docs/index/` holds navigation and responsibility mapping
+- `docs/runtime/legacy/` holds tracked legacy runtime snapshots, not current canonical runtime truth
+
 ## Research Path Overview
 
 完整圖請看 `docs/analysis/RESEARCH_PATHS.md`。
+
+English summary:
+See `docs/analysis/RESEARCH_PATHS.md` for the fuller research-path map. The
+diagram below is the shortest route from the historical `R26` baseline path to
+the current `Round30` baseline and the `Round31` / `Round32` falsified lines.
 
 ```mermaid
 flowchart TD
@@ -133,12 +182,23 @@ flowchart TD
 - 例如 `Model/Test_Image/VisionTop_20251029182653732.bmp`
 - 這類檔案的用途是提供穩定、可引用的最小輸入樣本，不是保存 bulk experiment payload
 
+English summary:
+GitHub should contain governance-facing material only: important branches,
+decision docs, analysis, curated evidence, and a very small number of canonical
+sample fixtures. It should not contain daily runtime noise or bulk outputs.
+
 ## Current Workflow Boundaries
 
 - root shared 主線不再繼續吸收 `R32` 專用 loader / audit / launcher / monitor
 - `R32` 專用執行面以 `Experiments\R32Sandbox\` 為 canonical surface
 - 已追蹤的 root `000_LONGRUN_*_STATUS.*` 快照現已移到 `docs/runtime/legacy/root_status/`
 - 若舊腳本在 root 再生成 `000_LONGRUN_*`，那些檔案一律視為**本地 runtime 輸出**，不再是 Git-tracked canonical docs
+
+English summary:
+The root shared workflow and the `R32Sandbox` execution surface are separated.
+Tracked legacy root status snapshots were moved under `docs/runtime/legacy/`,
+and any regenerated root `000_LONGRUN_*` files should be treated as local
+runtime output only.
 
 ## Branch Strategy
 
@@ -163,6 +223,13 @@ flowchart TD
 - 本 repo 不會假造不存在的原始 git 歷史
 - 新的研究工作預設應使用 `research/*` 或 `sandbox/*`
 - `baseline/*` 不是日常開發用的普通合作 branch family，而是受保護的 reference namespace
+
+English summary:
+- `main` is the curated shared mainline
+- `baseline/*` is a protected reference namespace for approved baseline milestones
+- `reconstructed/*` preserves evidence-backed reconstructed milestones
+- `research/*` is the default family for new research work
+- `sandbox/*` is for isolated experimental execution surfaces
 
 詳見 `REPO_GOVERNANCE.md` 與 `docs/index/PROJECT_DOCUMENT_INDEX.md`。
 
