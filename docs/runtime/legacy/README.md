@@ -1,15 +1,15 @@
-# Legacy Runtime References / Legacy Runtime 參考層
+# Legacy Runtime 參考層 / Legacy Runtime References
 
 這裡保存的是 **已追蹤** 的 legacy root runtime / status curated copies。  
 This directory stores **tracked** curated copies of legacy root runtime and status files.
 
 ## Purpose / 用途
 
-- 保留歷史上曾放在 repo root 的 `000_LONGRUN_*_STATUS.*` 可追溯副本  
+- 保留歷史上曾放在 repo root 的 `000_LONGRUN_*_STATUS.*` 可追溯副本。  
   Preserve traceable copies of `000_LONGRUN_*_STATUS.*` files that historically lived at the repository root.
-- 讓 GitHub 上仍可看到重要 legacy bridge  
+- 讓 GitHub 上仍可看到重要 legacy bridge。  
   Keep important legacy bridge files visible on GitHub.
-- 同時把 root 從 status 檔噪音中清出來  
+- 同時把 root 從 status 檔噪音中清出來。  
   Keep the repository root free of status-file noise.
 
 ## Important Rule / 重要規則

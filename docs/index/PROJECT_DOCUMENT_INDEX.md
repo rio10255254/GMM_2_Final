@@ -1,4 +1,4 @@
-# PROJECT DOCUMENT INDEX / 文件索引
+# 文件索引 / PROJECT DOCUMENT INDEX
 
 Last updated: 2026-03-20
 
@@ -20,44 +20,44 @@ These five files are the main handoff entry surface:
 Their roles are:
 
 - `README.md`
-  - 繁中：總入口、閱讀順序、root 入口層與 docs 導航。
-  - English: Top-level entry point, reading order, root surface, and docs navigation.
+  總入口、閱讀順序、root 入口層與 docs 導航。  
+  Top-level entry point, reading order, root surface, and docs navigation.
 - `PROJECT_SESSION_CONTINUITY.md`
-  - 繁中：跨入口 handoff。
-  - English: Cross-interface handoff.
+  跨入口 handoff。  
+  Cross-interface handoff.
 - `PROJECT_CURRENT_STATE.md`
-  - 繁中：目前真相。
-  - English: Current truth.
+  目前真相。  
+  Current truth.
 - `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-  - 繁中：穩定規則。
-  - English: Stable rules and decision boundaries.
+  穩定規則。  
+  Stable rules and decision boundaries.
 - `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
-  - 繁中：完整歷史脈絡。
-  - English: Full historical narrative and strategy context.
+  完整歷史脈絡。  
+  Full historical narrative and strategy context.
 
 ## Docs Surface / 導航文件層
 
 - `docs/README.md`
-  - 繁中：docs 區入口與子目錄導覽。
-  - English: Entry point and directory guide for the `docs/` area.
+  docs 區入口與子目錄導覽。  
+  Entry point and directory guide for the `docs/` area.
 - `docs/analysis/RESEARCH_PATHS.md`
-  - 繁中：研究路徑圖與 Mermaid 可視化入口。
-  - English: Research-path map and Mermaid visualization entry.
+  研究路徑圖與 Mermaid 可視化入口。  
+  Research-path map and Mermaid visualization entry.
 - `docs/evidence/README.md`
-  - 繁中：精選實驗證據層的入口與用途說明。
-  - English: Entry point and purpose guide for the curated evidence layer.
+  精選實驗證據層的入口與用途說明。  
+  Entry point and purpose guide for the curated evidence layer.
 - `docs/evidence/EVIDENCE_MAP.md`
-  - 繁中：一頁式證據鏈地圖，回答每份 evidence 支撐哪個 baseline、falsified line、或 analysis 結論。
-  - English: A one-page evidence-chain map showing which evidence supports which baseline, falsified line, or analytical conclusion.
+  一頁式證據鏈地圖，回答每份 evidence 支撐哪個 baseline、falsified line、或 analysis 結論。  
+  A one-page evidence-chain map showing which evidence supports which baseline, falsified line, or analytical conclusion.
 - `docs/index/PROJECT_DOCUMENT_INDEX.md`
-  - 繁中：文件責任邊界與導航索引。
-  - English: Documentation responsibility map and navigation index.
+  文件責任邊界與導航索引。  
+  Documentation responsibility map and navigation index.
 - `docs/index/NEW_EXPERIMENT_SOP.md`
-  - 繁中：新增實驗時的 branch、issue、Project、doc、與 PR 操作清單。
-  - English: The operational checklist for adding a new experiment, including branches, issues, Project updates, docs, and PRs.
+  新增實驗時的 branch、issue、Project、doc、與 PR 操作清單。  
+  The operational checklist for adding a new experiment, including branches, issues, Project updates, docs, and PRs.
 - `docs/runtime/legacy/README.md`
-  - 繁中：legacy runtime / root status curated copies 的保存規則。
-  - English: Preservation rules for legacy runtime and root-status curated copies.
+  legacy runtime / root status curated copies 的保存規則。  
+  Preservation rules for legacy runtime and root-status curated copies.
 
 ## Sandbox Surface / Sandbox 文件層
 
@@ -65,14 +65,14 @@ Their roles are:
 The `R32`-specific entry surface is:
 
 - `Experiments\R32Sandbox\README.md`
-  - 繁中：sandbox 的總入口。
-  - English: Main entry point for the sandbox.
+  sandbox 的總入口。  
+  Main entry point for the sandbox.
 - `Experiments\R32Sandbox\runtime\R32_STATUS.md`
-  - 繁中：sandbox runtime truth。
-  - English: Sandbox runtime truth.
+  sandbox runtime truth。  
+  Sandbox runtime truth.
 - `Experiments\R32Sandbox\external_compare\README.md`
-  - 繁中：external compare 流程與 final verdict carrier。
-  - English: External compare flow and final-verdict carrier.
+  external compare 流程與 final verdict carrier。  
+  External compare flow and final-verdict carrier.
 
 ## Machine-Readable Policy / 機器可讀政策層
 
@@ -84,26 +84,26 @@ This file remains the machine-readable policy truth for the shared mainline.
 ## Evidence Surface / 證據文件層
 
 - `docs/evidence/README.md`
-  - 繁中：curated tracked copies 的總入口。
-  - English: Main entry for curated tracked copies.
+  curated tracked copies 的總入口。  
+  Main entry for curated tracked copies.
 - `docs/evidence/baseline/`
-  - 繁中：支撐目前 baseline promotion 的核心證據。
-  - English: Core evidence supporting the current baseline promotion.
+  支撐目前 baseline promotion 的核心證據。  
+  Core evidence supporting the current baseline promotion.
 - `docs/evidence/historical_baselines/`
-  - 繁中：支撐 `R18/R22 -> Round25 -> R26 -> Round29` 的歷史 baseline path 證據。
-  - English: Evidence supporting the historical baseline path from `R18/R22` through `Round25`, `R26`, and `Round29`.
+  支撐 `R18/R22 -> Round25 -> R26 -> Round29` 的歷史 baseline path 證據。  
+  Evidence supporting the historical baseline path from `R18/R22` through `Round25`, `R26`, and `Round29`.
 - `docs/evidence/falsified/`
-  - 繁中：支撐 Round31 / Round32 等正式否定性結果的核心證據。
-  - English: Core evidence supporting formally falsified results such as Round31 and Round32.
+  支撐 Round31 / Round32 等正式否定性結果的核心證據。  
+  Core evidence supporting formally falsified results such as Round31 and Round32.
 - `docs/evidence/side_directions/`
-  - 繁中：支撐 `TTA C2` 等重要 side-direction falsifications。
-  - English: Evidence supporting important side-direction falsifications such as `TTA C2`.
+  支撐 `TTA C2` 等重要 side-direction falsifications。  
+  Evidence supporting important side-direction falsifications such as `TTA C2`.
 - `docs/evidence/analysis/`
-  - 繁中：支撐 correlation / screening 等綜合分析證據。
-  - English: Evidence for analytical conclusions such as correlation and screening logic.
+  支撐 correlation / screening 等綜合分析證據。  
+  Evidence for analytical conclusions such as correlation and screening logic.
 - `docs/evidence/runtime/`
-  - 繁中：小型 canonical runtime truth snapshots。
-  - English: Small canonical runtime-truth snapshots.
+  小型 canonical runtime truth snapshots。  
+  Small canonical runtime-truth snapshots.
 
 ## Legacy Bridge / Legacy 橋接層
 
@@ -116,11 +116,11 @@ These files are kept only as tracked legacy bridge copies. They are no longer th
 ## Archive / Non-Core / 歸檔與非核心層
 
 - `Project_Archive\`
-  - 繁中：conversation scan、maintenance artifact 等非核心文件。
-  - English: Non-core material such as conversation scans and maintenance artifacts.
+  conversation scan、maintenance artifact 等非核心文件。  
+  Non-core material such as conversation scans and maintenance artifacts.
 - `_deployment_package\`
-  - 繁中：外部交付鏡像。
-  - English: External delivery/package mirror.
+  外部交付鏡像。  
+  External delivery/package mirror.
 - `Trash_Archive\`
-  - 繁中：淘汰內容。
-  - English: Retired and discarded material.
+  淘汰內容。  
+  Retired and discarded material.

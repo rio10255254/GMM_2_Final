@@ -1,35 +1,34 @@
-# Docs Navigation / 文件導覽
+# 文件導覽 / Docs Navigation
 
 這個資料夾收納 repository root 之外、仍值得追蹤進 Git 的文件。  
-目標是讓 root 保持成「入口層」，而不是變成文件堆積區。
+This directory holds tracked documentation that lives outside the repository root.
 
-This directory holds tracked documentation that lives outside the repository
-root. Its purpose is to keep the root as a clean entry surface instead of
-turning it into a document dump.
+目標是讓 root 保持成「入口層」，而不是變成文件堆積區。  
+Its purpose is to keep the root as a clean entry surface instead of turning it into a document dump.
 
 ## Layout / 目錄結構
 
 - `analysis/`
-  - 繁中：研究路徑圖、視覺化總覽、決策路徑摘要。
-  - English: Research-path diagrams, visual overviews, and decision-path summaries.
+  研究路徑圖、視覺化總覽、決策路徑摘要。  
+  Research-path diagrams, visual overviews, and decision-path summaries.
 - `evidence/`
-  - 繁中：小型、高價值、可核對的實驗證據副本。
-  - English: Small, high-value, reviewable curated experiment evidence copies.
-  - 繁中：再細分為 `baseline/`、`historical_baselines/`、`falsified/`、`side_directions/`、`analysis/`、`runtime/`、`visuals/`。
-  - English: Further split into `baseline/`, `historical_baselines/`, `falsified/`, `side_directions/`, `analysis/`, `runtime/`, and `visuals/`.
-  - 繁中：`EVIDENCE_MAP.md` 負責說明每份關鍵 evidence 支撐哪個 baseline、falsified line、或 analysis 結論。
-  - English: `EVIDENCE_MAP.md` explains which baseline, falsified line, or analytical conclusion each key evidence file supports.
-  - 繁中：`visuals/README.md` 說明少量代表性 comparison sheets 的用途。
-  - English: `visuals/README.md` explains the purpose of the small set of representative comparison sheets.
+  小型、高價值、可核對的實驗證據副本。  
+  Small, high-value, reviewable curated experiment evidence copies.
+  再細分為 `baseline/`、`historical_baselines/`、`falsified/`、`side_directions/`、`analysis/`、`runtime/`、`visuals/`。  
+  Further split into `baseline/`, `historical_baselines/`, `falsified/`, `side_directions/`, `analysis/`, `runtime/`, and `visuals/`.
+  `EVIDENCE_MAP.md` 負責說明每份關鍵 evidence 支撐哪個 baseline、falsified line、或 analysis 結論。  
+  `EVIDENCE_MAP.md` explains which baseline, falsified line, or analytical conclusion each key evidence file supports.
+  `visuals/README.md` 說明少量代表性 comparison sheets 的用途。  
+  `visuals/README.md` explains the purpose of the small set of representative comparison sheets.
 - `history/`
-  - 繁中：完整歷史敘事與研究反省。
-  - English: Long-form historical narrative and research reflection.
+  完整歷史敘事與研究反省。  
+  Long-form historical narrative and research reflection.
 - `index/`
-  - 繁中：文件責任邊界、操作流程、與導航索引。
-  - English: Documentation responsibility maps, workflow guides, and navigation indexes.
+  文件責任邊界、操作流程、與導航索引。  
+  Documentation responsibility maps, workflow guides, and navigation indexes.
 - `runtime/legacy/`
-  - 繁中：已追蹤的 legacy runtime / root status curated copies。
-  - English: Tracked curated copies of legacy runtime and root status files.
+  已追蹤的 legacy runtime / root status curated copies。  
+  Tracked curated copies of legacy runtime and root status files.
 
 ## Reading Guide / 建議閱讀順序
 
