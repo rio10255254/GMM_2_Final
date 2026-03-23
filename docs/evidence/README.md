@@ -41,6 +41,16 @@ locations so the repository can keep a stable, reviewable evidence surface.
 The source files remain in place. This directory is not the original execution
 root and should not be treated as a live runtime directory.
 
+## First Stop
+
+If you want to understand the evidence chain quickly, read:
+
+- `EVIDENCE_MAP.md`
+
+That file explains which evidence supports the current baseline, the historical
+baseline path, major falsified lines, side-direction rejections, analysis
+conclusions, and runtime truth.
+
 ## Layout
 
 - `baseline/`
@@ -56,6 +66,8 @@ root and should not be treated as a live runtime directory.
   - evidence that supports screening logic or cross-run analytical conclusions
 - `runtime/`
   - small canonical runtime truth snapshots that are worth tracking
+- `EVIDENCE_MAP.md`
+  - one-file map of which evidence supports which verdict or branch
 
 ## Current Core Set
 

@@ -91,6 +91,11 @@ If the Project is opened in table view, `Milestone Date` is the easiest quick
 sort key. If the Project is opened in roadmap view, GitHub uses `Start Date` and
 `Target Date`.
 
+The Project is for the **timeline**. The repository evidence chain itself should
+be read through `docs/evidence/EVIDENCE_MAP.md`, which explains which curated
+files support each baseline, falsified line, side-direction rejection, analysis
+conclusion, and runtime truth snapshot.
+
 ## Manual Unblock For Future Project Automation
 
 To create or modify the GitHub Project from automation in future sessions, the

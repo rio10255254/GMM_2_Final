@@ -10,6 +10,8 @@
   - 小型、高價值、可核對的 curated experiment evidence copies
   - 進一步分成 `baseline/`、`historical_baselines/`、`falsified/`、
     `side_directions/`、`analysis/`、`runtime/`
+  - 另有 `EVIDENCE_MAP.md` 說明每份關鍵 evidence 支撐哪個 baseline /
+    falsified line / analysis 結論
 - `history/`
   - 長篇完整歷史敘事與研究反省
 - `index/`

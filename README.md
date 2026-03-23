@@ -171,3 +171,4 @@ GitHub 研究控制台目前位於 `https://github.com/users/rio10255254/project
 控制台目前已補成按日期排列的核心研究時間線，可直接用來看歷史演進。
 新增實驗時的單頁流程請看 `docs/index/NEW_EXPERIMENT_SOP.md`。
 重要實驗證據的 curated tracked copies 請看 `docs/evidence/README.md`。
+如果要一眼看懂「哪份證據支撐哪個結論」，請看 `docs/evidence/EVIDENCE_MAP.md`。
