@@ -152,3 +152,4 @@ flowchart TD
 詳見 `REPO_GOVERNANCE.md` 與 `docs/index/PROJECT_DOCUMENT_INDEX.md`。
 
 GitHub-side ruleset / project 定義同步放在 `.github/governance/`。
+GitHub 研究控制台目前位於 `https://github.com/users/rio10255254/projects/1`。

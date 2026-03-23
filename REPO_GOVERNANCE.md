@@ -127,5 +127,7 @@ same session.
 Current status:
 
 - repository rulesets for `main` and `baseline/*` are already applied on GitHub
-- GitHub Project creation still requires a token with `project` / `read:project`
-  scope
+- GitHub Project `GMM Research Control Plane` exists at
+  `https://github.com/users/rio10255254/projects/1`
+- future automated Project changes still require a token with `project` /
+  `read:project` scope
