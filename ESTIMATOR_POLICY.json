@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-19 10:12:00",
+  "generated_at": "2026-03-23 00:00:00",
   "source": {
     "round30_internal_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md",
     "round30_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_EXTERNAL_COMPARE.md",
@@ -10,7 +10,7 @@
     "round29_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\external_compare_r18_r22_r25_r26_r27_r28_r29\\reports\\EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_R29_SUMMARY.md",
     "tta_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\tta_experiment\\r26_tta_cross5\\reports\\TTA_VS_BASELINE_CROSS5_COMPARISON.md",
     "correlation_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\analysis\\INTERNAL_EXTERNAL_CORRELATION.md",
-    "round32_status_md": "D:\\GMM_2_Final\\docs\\runtime\\legacy\\root_status\\000_LONGRUN_ROUND32_STATUS.md"
+    "round32_status_md": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\runtime\\R32_STATUS.md"
   },
   "active_baseline_policy": {
     "status": "final_production_baseline",
@@ -34,42 +34,49 @@
     "notes": "Round30 architecture breakthrough was the first externally validated branch to beat the R26 baseline on the main battlefield. Production promotion is based on external GMF, not internal family winner."
   },
   "latest_internal_frontier": {
-    "status": "round32_family_summary_complete_pending_repair_and_full_audit",
+    "status": "no_current_winning_line_after_round32_external_fail",
     "round": "round32",
-    "candidate": "r32_long_from_r25",
-    "checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r32longr25_20260318_161243\\weights\\best_tradeoff.pth.tar",
+    "candidate": "r32_real_eq_finetune",
+    "checkpoint": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\artifacts\\training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431\\weights\\best_tradeoff.pth.tar",
     "internal_metrics": {
-      "proxy_step_std_0p8": 0.17935973380357523,
-      "best_epoch": 8
+      "internal_gate_passed": true
     },
-    "notes": "Round32 family summary preferred r32_long_from_r25 among completed sweep candidates, but the prior full audit run failed at r32_wider_b1 and the round is now in repair/rerun state."
+    "notes": "Round32 internal winner was r32_real_eq_finetune, but it completed external compare and failed. There is currently no winning line that can challenge the Round30 baseline."
   },
   "latest_falsified_branch": {
-    "status": "round31_b1_hyperparam_external_regression",
-    "round": "round31",
-    "branch_type": "b1_hyperparam_tuning",
+    "status": "round32_real_eq_external_fail",
+    "round": "round32",
+    "branch_type": "sandbox_real_eq_finetune",
     "winner_baseline_kept": "r30_b1_dironly",
     "challengers": {
-      "r31_eq_prob_up": {
-        "step_std_0p8px": 0.184867,
-        "delta_vs_b1_dironly": 0.017006
-      },
-      "r31_eq_weight_up": {
-        "step_std_0p8px": 0.185458,
-        "delta_vs_b1_dironly": 0.017596
-      },
-      "r31_edge_ratio_low": {
-        "step_std_0p8px": 0.179347,
-        "delta_vs_b1_dironly": 0.011486
-      },
-      "r31_eq_combo": {
-        "status": "missing_external_artifact",
-        "notes": "No GMF_score.txt was found under round31/gmf_results/raw/r31_eq_combo."
+      "r32_real_eq_finetune": {
+        "step_std_8px": 0.319667,
+        "step_std_0p8px": 0.331821,
+        "step_std_0p08px": 0.230119,
+        "delta_vs_b1_dironly_0p8px": 0.16396,
+        "verdict": "external_fail"
       }
     },
-    "notes": "All measured Round31 hyperparameter candidates regressed on the external 0.8px battlefield relative to Round30. The missing eq_combo artifact is tracked explicitly and is not treated as a measured failure."
+    "notes": "Round32 internal winner r32_real_eq_finetune completed the external final gate and failed badly on the main 0.8px battlefield. The Round30 baseline remains unchanged."
   },
   "latest_analyses": {
+    "round32_external_compare": {
+      "status": "completed_failed",
+      "baseline": "r30_b1_dironly",
+      "candidate": "r32_real_eq_finetune",
+      "external_gmf": {
+        "step_std_8px": 0.319667,
+        "step_std_0p8px": 0.331821,
+        "step_std_0p08px": 0.230119,
+        "step_std_0p8px_outlier_filtered": 0.303349
+      },
+      "delta_vs_r30": {
+        "step_std_8px": 0.114475,
+        "step_std_0p8px": 0.16396,
+        "step_std_0p08px": 0.072399
+      },
+      "upgrade_decision": "rejected_due_to_external_fail"
+    },
     "round31_external_compare": {
       "status": "completed_measured_candidates_failed",
       "baseline": "r30_b1_dironly",
@@ -115,13 +122,13 @@
     }
   },
   "active_experiment": {
-    "status": "round32_repair_blocked_real_eq_device_nameerror",
-    "round": "round32",
-    "candidate": "r32_real_eq_finetune",
-    "goal": "complete_round32_repair_then_beat_r30_external_0p8_step_std_0.167862",
-    "status_file": "D:\\GMM_2_Final\\docs\\runtime\\legacy\\root_status\\000_LONGRUN_ROUND32_STATUS.md",
-    "batch_root": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round32",
-    "notes": "The first targeted rerun exposed a RealImageOnlyFolder NameError caused by an undefined _imread_gray helper. That bug is fixed, but the second rerun reached Epoch 13 and then failed in the real-domain EQ branch because it uses an undefined variable named device when moving real_batch onto CUDA."
+    "status": "no_current_winning_line_new_sandbox_branch_required",
+    "round": "round32_post_falsification",
+    "candidate": null,
+    "goal": "establish a new sandbox branch or mechanism that can beat r30_b1_dironly on external 0.8px step std without losing the 8px guard",
+    "status_file": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\runtime\\R32_STATUS.md",
+    "batch_root": "D:\\GMM_2_Final\\Experiments\\R32Sandbox",
+    "notes": "Round32 real_eq has already completed external compare and failed. If work continues, it must proceed as a new sandbox branch or new mechanism rather than as a repair of the falsified winner."
   },
   "historical_milestones": {
     "round26_final_stepmag_baseline": {
@@ -148,7 +155,9 @@
   "notes": [
     "Round30 / r30_b1_dironly is the current final production baseline.",
     "Round31 measured external compare is formalized and does not change the baseline.",
-    "Round32 repair is currently blocked by a second real-domain EQ runtime bug: device is not defined.",
+    "Round32 internal winner r32_real_eq_finetune completed external compare and failed; it cannot be promoted.",
+    "There is currently no winning line that can challenge the Round30 baseline.",
+    "If Round32 work continues, it must move to a new sandbox branch or new mechanism.",
     "Generic step_mag sweep from 0.28 to 0.42 is closed; the externally verified optimum within that line remains 0.35."
   ]
 }
