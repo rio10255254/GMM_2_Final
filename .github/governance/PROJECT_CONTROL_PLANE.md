@@ -15,7 +15,9 @@ protection:
     owner to bypass when necessary
 - `ruleset-baseline.json`
   - protects `baseline/*`
-  - preserves milestone branches as reference branches
+  - preserves milestone branches as a reserved reference namespace
+  - blocks ad-hoc creation and ordinary updates, while still allowing the
+    repository owner to bypass when necessary
 
 As of `2026-03-23`, these server-side rulesets have already been applied on
 GitHub:
@@ -73,7 +75,7 @@ The current core timeline is intentionally kept to 10 high-value milestones:
 6. `2026-03-17 | R26 sm035 confirmed as the generic step_mag optimum`
 7. `2026-03-18 | Round30 architecture breakthrough promoted r30_b1_dironly`
 8. `2026-03-19 | Round31 B1 hyperparameter tuning regressed externally`
-9. `2026-03-19 | Round32 sandbox winner failed external compare`
+9. `2026-03-20 | Round32 sandbox winner failed external compare`
 10. `2026-03-20 | Post-R32 new sandbox branch is required`
 
 These items are date-prefixed and also carry the `Milestone Date` field so the
