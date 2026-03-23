@@ -6,6 +6,8 @@
 
 - `analysis/`
   - 研究路徑圖、視覺化總覽、決策路徑摘要
+- `evidence/`
+  - 小型、高價值、可核對的 curated experiment evidence copies
 - `history/`
   - 長篇完整歷史敘事與研究反省
 - `index/`
@@ -26,6 +28,7 @@
 
 - 重大 branch 與策略脈絡
 - 重要分析與決策 memo
+- 小型正式證據副本
 - curated legacy runtime references
 
 不追蹤日常 runtime 噪音、即時 log spam、bulk outputs。
