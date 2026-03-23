@@ -1,0 +1,137 @@
+{
+  "title": "Internal-External Correlation Analysis",
+  "timestamp": "2026-03-17 14:12:37",
+  "n_rounds": 5,
+  "rounds": [
+    "R25",
+    "R26",
+    "R27",
+    "R28",
+    "R29"
+  ],
+  "data": {
+    "R25": {
+      "center_err": 0.09381872415542603,
+      "step_err": 0.0952911376953125,
+      "ext_step_std": 0.21197266793290367,
+      "winner": "r25_sw010"
+    },
+    "R26": {
+      "center_err": 0.06909864395856857,
+      "step_err": 0.08571147918701172,
+      "ext_step_std": 0.19133608310079342,
+      "winner": "r26_sm035"
+    },
+    "R27": {
+      "center_err": 0.06025201827287674,
+      "step_err": 0.07371902465820312,
+      "ext_step_std": 0.19625727827542097,
+      "winner": "r27_sm028"
+    },
+    "R28": {
+      "center_err": 0.08254685252904892,
+      "step_err": 0.06839275360107422,
+      "ext_step_std": 0.22818379121657925,
+      "winner": "r28_sm030"
+    },
+    "R29": {
+      "center_err": 0.06818617880344391,
+      "step_err": 0.07891178131103516,
+      "ext_step_std": 0.21730952406852758,
+      "winner": "r29_sm042"
+    }
+  },
+  "correlations": {
+    "center_err": {
+      "pearson_r": 0.539876,
+      "pearson_p": 0.347639,
+      "spearman_rho": 0.3,
+      "spearman_p": 0.623837
+    },
+    "step_err": {
+      "pearson_r": -0.325143,
+      "pearson_p": 0.593429,
+      "spearman_rho": -0.5,
+      "spearman_p": 0.391002
+    },
+    "mean(center, step)": {
+      "pearson_r": 0.184045,
+      "pearson_p": 0.766997,
+      "spearman_rho": -0.1,
+      "spearman_p": 0.872888
+    },
+    "0.3*center + 0.7*step": {
+      "pearson_r": -0.023487,
+      "pearson_p": 0.970103,
+      "spearman_rho": -0.2,
+      "spearman_p": 0.74706
+    },
+    "0.7*center + 0.3*step": {
+      "pearson_r": 0.358781,
+      "pearson_p": 0.553185,
+      "spearman_rho": 0.3,
+      "spearman_p": 0.623837
+    },
+    "sqrt(center^2 + step^2)": {
+      "pearson_r": 0.179488,
+      "pearson_p": 0.772701,
+      "spearman_rho": -0.1,
+      "spearman_p": 0.872888
+    },
+    "max(center, step)": {
+      "pearson_r": 0.131002,
+      "pearson_p": 0.833681,
+      "spearman_rho": -0.1,
+      "spearman_p": 0.872888
+    }
+  },
+  "transitions": [
+    {
+      "from": "R25",
+      "to": "R26",
+      "delta_center_err": -0.02472,
+      "delta_step_err": -0.00958,
+      "delta_ext_step_std": -0.020637,
+      "center_agrees": true,
+      "step_agrees": true
+    },
+    {
+      "from": "R26",
+      "to": "R27",
+      "delta_center_err": -0.008847,
+      "delta_step_err": -0.011992,
+      "delta_ext_step_std": 0.004921,
+      "center_agrees": false,
+      "step_agrees": false
+    },
+    {
+      "from": "R27",
+      "to": "R28",
+      "delta_center_err": 0.022295,
+      "delta_step_err": -0.005326,
+      "delta_ext_step_std": 0.031927,
+      "center_agrees": true,
+      "step_agrees": false
+    },
+    {
+      "from": "R28",
+      "to": "R29",
+      "delta_center_err": -0.014361,
+      "delta_step_err": 0.010519,
+      "delta_ext_step_std": -0.010874,
+      "center_agrees": true,
+      "step_agrees": false
+    }
+  ],
+  "best_predictor": {
+    "name": "center_err",
+    "pearson_r": 0.539876,
+    "spearman_rho": 0.3
+  },
+  "conclusion": {
+    "internal_is_reliable_proxy": true,
+    "center_err_pearson_r": 0.539876,
+    "step_err_pearson_r": -0.325143,
+    "recommendation": "internal_sufficient_with_external_validation"
+  }
+}

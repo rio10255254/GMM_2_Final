@@ -64,7 +64,13 @@ docs\
 ├── analysis\
 │   └── RESEARCH_PATHS.md
 ├── evidence\
-│   └── README.md
+│   ├── README.md
+│   ├── baseline\
+│   ├── historical_baselines\
+│   ├── falsified\
+│   ├── side_directions\
+│   ├── analysis\
+│   └── runtime\
 ├── history\
 │   └── PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md
 ├── index\
@@ -81,6 +87,8 @@ docs\
   研究路徑圖、決策路徑總覽、GitHub 可視化入口
 - `docs/evidence/`
   精選實驗證據層；追蹤小型、高價值、可核對的正式證據副本
+  （含 current baseline、historical baseline path、falsified lines、
+  side-direction falsifications、analysis、runtime snapshots）
 - `docs/history/`
   完整歷史敘事與研究反省
 - `docs/index/`

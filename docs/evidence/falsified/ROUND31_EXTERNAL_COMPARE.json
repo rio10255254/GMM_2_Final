@@ -1,0 +1,182 @@
+{
+  "generated_at": "2026-03-19 10:06:40",
+  "baseline_candidate": "r30_b1_dironly",
+  "baseline_main_target_0p8px": 0.16786155907881575,
+  "models": [
+    {
+      "candidate": "r30_b1_dironly",
+      "root": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\gmf_results\\raw\\r30_b1_dironly",
+      "metrics": {
+        "8px": {
+          "frames": 100,
+          "step_mean": -8.019565656565655,
+          "step_std": 0.20519250196078956,
+          "lag1_autocorr": 0.027121493318882684,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\gmf_results\\raw\\r30_b1_dironly\\pitch8px\\GMF_score.txt"
+        },
+        "0.8px": {
+          "frames": 60,
+          "step_mean": -0.8027627118644077,
+          "step_std": 0.16786155907881575,
+          "lag1_autocorr": 0.26702686569370776,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\gmf_results\\raw\\r30_b1_dironly\\pitch0p8px\\GMF_score.txt"
+        },
+        "0.08px": {
+          "frames": 40,
+          "step_mean": -0.07402564102564249,
+          "step_std": 0.15772005175991496,
+          "lag1_autocorr": -0.18125756573340177,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\gmf_results\\raw\\r30_b1_dironly\\pitch0p08px\\GMF_score.txt"
+        }
+      },
+      "outlier_0p8": {
+        "removed_steps": 0,
+        "raw_step_std": 0.16786155907881575,
+        "filtered_step_std": 0.16786155907881575
+      }
+    },
+    {
+      "candidate": "r31_eq_prob_up",
+      "root": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_eq_prob_up",
+      "metrics": {
+        "8px": {
+          "frames": 100,
+          "step_mean": -8.018191919191919,
+          "step_std": 0.1854612419292353,
+          "lag1_autocorr": 0.14002872399914734,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_eq_prob_up\\pitch8px\\GMF_score.txt"
+        },
+        "0.8px": {
+          "frames": 60,
+          "step_mean": -0.8041864406779662,
+          "step_std": 0.18486719691202214,
+          "lag1_autocorr": 0.15530623326704515,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_eq_prob_up\\pitch0p8px\\GMF_score.txt"
+        },
+        "0.08px": {
+          "frames": 40,
+          "step_mean": -0.06974358974359045,
+          "step_std": 0.1426447475281359,
+          "lag1_autocorr": -0.029201365074065247,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_eq_prob_up\\pitch0p08px\\GMF_score.txt"
+        }
+      },
+      "outlier_0p8": {
+        "removed_steps": 0,
+        "raw_step_std": 0.18486719691202214,
+        "filtered_step_std": 0.18486719691202214
+      }
+    },
+    {
+      "candidate": "r31_eq_weight_up",
+      "root": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_eq_weight_up",
+      "metrics": {
+        "8px": {
+          "frames": 100,
+          "step_mean": -8.02039393939394,
+          "step_std": 0.1926510331384963,
+          "lag1_autocorr": 0.21883908774512117,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_eq_weight_up\\pitch8px\\GMF_score.txt"
+        },
+        "0.8px": {
+          "frames": 60,
+          "step_mean": -0.8026101694915242,
+          "step_std": 0.1854580236620889,
+          "lag1_autocorr": 0.37317923379993156,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_eq_weight_up\\pitch0p8px\\GMF_score.txt"
+        },
+        "0.08px": {
+          "frames": 40,
+          "step_mean": -0.07400000000000208,
+          "step_std": 0.15412133082536575,
+          "lag1_autocorr": -0.21046524753482307,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_eq_weight_up\\pitch0p08px\\GMF_score.txt"
+        }
+      },
+      "outlier_0p8": {
+        "removed_steps": 0,
+        "raw_step_std": 0.1854580236620889,
+        "filtered_step_std": 0.1854580236620889
+      }
+    },
+    {
+      "candidate": "r31_edge_ratio_low",
+      "root": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_edge_ratio_low",
+      "metrics": {
+        "8px": {
+          "frames": 100,
+          "step_mean": -8.019949494949493,
+          "step_std": 0.21060827603417437,
+          "lag1_autocorr": 0.01430852040736032,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_edge_ratio_low\\pitch8px\\GMF_score.txt"
+        },
+        "0.8px": {
+          "frames": 60,
+          "step_mean": -0.803457627118644,
+          "step_std": 0.17934724599283208,
+          "lag1_autocorr": 0.3814137153973046,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_edge_ratio_low\\pitch0p8px\\GMF_score.txt"
+        },
+        "0.08px": {
+          "frames": 40,
+          "step_mean": -0.07051282051282051,
+          "step_std": 0.14832360183489146,
+          "lag1_autocorr": -0.05593280031490635,
+          "source": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_edge_ratio_low\\pitch0p08px\\GMF_score.txt"
+        }
+      },
+      "outlier_0p8": {
+        "removed_steps": 0,
+        "raw_step_std": 0.17934724599283208,
+        "filtered_step_std": 0.17934724599283208
+      }
+    }
+  ],
+  "measured_rows": [
+    {
+      "candidate": "r31_eq_prob_up",
+      "step_std_8px": 0.1854612419292353,
+      "step_std_0p8px": 0.18486719691202214,
+      "step_std_0p08px": 0.1426447475281359,
+      "lag1_autocorr_0p8px": 0.15530623326704515,
+      "delta_vs_r30_0p8px": 0.017005637833206383,
+      "pct_vs_r30_0p8px": 10.130751749554378
+    },
+    {
+      "candidate": "r31_eq_weight_up",
+      "step_std_8px": 0.1926510331384963,
+      "step_std_0p8px": 0.1854580236620889,
+      "step_std_0p08px": 0.15412133082536575,
+      "lag1_autocorr_0p8px": 0.37317923379993156,
+      "delta_vs_r30_0p8px": 0.017596464583273158,
+      "pct_vs_r30_0p8px": 10.482724383020367
+    },
+    {
+      "candidate": "r31_edge_ratio_low",
+      "step_std_8px": 0.21060827603417437,
+      "step_std_0p8px": 0.17934724599283208,
+      "step_std_0p08px": 0.14832360183489146,
+      "lag1_autocorr_0p8px": 0.3814137153973046,
+      "delta_vs_r30_0p8px": 0.01148568691401633,
+      "pct_vs_r30_0p8px": 6.842356866603076
+    }
+  ],
+  "missing_candidates": [
+    {
+      "candidate": "r31_eq_combo",
+      "expected_root": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\gmf_results\\raw\\r31_eq_combo",
+      "reason": "missing_gmf_score_artifact"
+    }
+  ],
+  "verdict": {
+    "baseline_kept": true,
+    "winner": "r30_b1_dironly",
+    "reason": "All measured Round31 candidates regressed on external 0.8px step std relative to Round30."
+  },
+  "method": {
+    "posy_source": "GMF_score.txt -> PosY",
+    "step_definition": "step[i] = PosY[i+1] - PosY[i]",
+    "outlier_rule_for_0p8px": "|step - mean(step)| > 3 * std(step)",
+    "anchor_autocorr_definition": "lag-1 Pearson correlation of detrended PosY residuals"
+  }
+}
