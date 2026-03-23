@@ -63,7 +63,11 @@ conceptual fields:
 - `Round`
 - `Milestone Date`
   - ISO `YYYY-MM-DD`
-  - used to sort the research route chronologically
+  - a text reference field for quick sorting / reading
+- `Start Date`
+  - the actual GitHub Roadmap start-date field
+- `Target Date`
+  - the actual GitHub Roadmap target-date field
 
 The current core timeline is intentionally kept to 10 high-value milestones:
 
@@ -78,9 +82,14 @@ The current core timeline is intentionally kept to 10 high-value milestones:
 9. `2026-03-20 | Round32 sandbox winner failed external compare`
 10. `2026-03-20 | Post-R32 new sandbox branch is required`
 
-These items are date-prefixed and also carry the `Milestone Date` field so the
-Project can be viewed as a chronological research route instead of a flat note
-list.
+These items are date-prefixed and also carry:
+
+- `Milestone Date` for text sorting / quick reading
+- `Start Date` / `Target Date` for the actual GitHub `Roadmap` layout
+
+If the Project is opened in table view, `Milestone Date` is the easiest quick
+sort key. If the Project is opened in roadmap view, GitHub uses `Start Date` and
+`Target Date`.
 
 ## Manual Unblock For Future Project Automation
 

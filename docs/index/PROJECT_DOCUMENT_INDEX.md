@@ -35,6 +35,8 @@ Last updated: 2026-03-20
   研究路徑圖、Mermaid 可視化入口
 - `docs/index/PROJECT_DOCUMENT_INDEX.md`
   文件責任邊界與導覽索引
+- `docs/index/NEW_EXPERIMENT_SOP.md`
+  新增實驗時的 branch / issue / Project / doc / PR 操作清單
 - `docs/runtime/legacy/README.md`
   legacy runtime / root status curated copies 的保存規則
 
