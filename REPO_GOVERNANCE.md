@@ -11,6 +11,7 @@ The goal is to track:
 - formal project truth documents
 - governance and workflow policy
 - light, human-readable reports and manifests
+- small canonical sample fixtures when they are intentionally retained for reproducible references
 
 It intentionally excludes large or reproducible payloads such as:
 
@@ -20,6 +21,8 @@ It intentionally excludes large or reproducible payloads such as:
 - raw GMF result dumps
 - packaged runtimes and deployment bundles
 - backup/archive directories
+
+Small, deliberate, auditable sample fixtures are allowed when they provide a stable reference input for code, docs, or review. For example, `Model/Test_Image/VisionTop_20251029182653732.bmp` is retained as a canonical sample fixture rather than as bulk experiment output.
 
 ## Tracked Surface
 
@@ -65,9 +68,9 @@ This repository did not start with preserved git history.
 
 Therefore:
 
-- reconstructed branches must say that they are reconstructed
+- reconstructed branches must say that they are reconstructed governance/reference branches built on top of the curated import
 - semantic branches must say that they are semantic
-- no branch should claim to be the original historical git state without direct evidence
+- no branch should claim to be the original historical git state or a recovered historical tree without direct evidence
 
 ## Update Rules
 

@@ -109,7 +109,13 @@ D:\GMM_2_Final\
 - checkpoints / weights / artifacts / reconstructions / raw GMF dumps / runtime logs
 - local backup、portable runtime、editor state
 
-原則很簡單：可以重現、可外部保存、體積過大、或不適合進 code review 的內容，都不進 Git history。
+會被保留的例外：
+
+- 小型、刻意保留、可核對的 canonical sample fixtures 可以進版控
+- 例如 `Model/Test_Image/VisionTop_20251029182653732.bmp`
+- 這類檔案的用途是提供穩定、可引用的最小輸入樣本，不是保存 bulk experiment payload
+
+原則很簡單：可以重現、可外部保存、體積過大、或不適合進 code review 的內容，都不進 Git history；但少量、刻意保留的 canonical sample fixtures 可以保留在版控內。
 
 ## Branch Strategy
 
@@ -120,7 +126,7 @@ D:\GMM_2_Final\
 - `baseline/*`
   - 正式 production baseline
 - `reconstructed/*`
-  - 依正式文件重建的高價值歷史節點
+  - 建立在 curated import 之上的 evidence-backed reconstructed governance/reference branches
 - `research/*`
   - 有研究價值但不冒充原始 git 歷史的語意分支
 - `sandbox/*`
@@ -129,6 +135,7 @@ D:\GMM_2_Final\
 重建規則：
 
 - 若 branch 是 reconstructed，必須明確標示 reconstructed
+- reconstructed branch 預設是 governance/reference branch，不等於已復原的 historical tree
 - 若 branch 是 semantic / research，也必須明確標示它不是原始歷史快照
 - 本 repo 不會假造不存在的原始 git 歷史
 

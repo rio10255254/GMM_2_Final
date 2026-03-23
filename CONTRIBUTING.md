@@ -34,11 +34,11 @@ Start here when taking over the project:
 
 - `main`: curated shared mainline for tracked code, docs, and governance
 - `baseline/*`: production baselines
-- `reconstructed/*`: evidence-backed historical snapshots, clearly labeled as reconstructed
+- `reconstructed/*`: evidence-backed reconstructed governance/reference branches built on top of the curated `2026-03-23` import, clearly labeled as reconstructed and not as recovered historical trees unless that restoration is completed later
 - `research/*`: semantic research branches that preserve intent without pretending to be original git history
 - `sandbox/*`: isolated experimental surfaces such as `R32`
 
-Do not claim that a reconstructed branch is the original historical git state unless that state is verifiably preserved.
+Do not claim that a reconstructed branch is the original historical git state or a recovered historical tree unless that state is verifiably preserved or later restored file-for-file.
 
 ## Pull Requests
 
