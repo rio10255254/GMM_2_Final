@@ -153,3 +153,4 @@ flowchart TD
 
 GitHub-side ruleset / project 定義同步放在 `.github/governance/`。
 GitHub 研究控制台目前位於 `https://github.com/users/rio10255254/projects/1`。
+控制台目前已補成按日期排列的核心研究時間線，可直接用來看歷史演進。

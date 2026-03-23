@@ -59,13 +59,26 @@ conceptual fields:
   - `n/a`
 - `Branch`
 - `Round`
+- `Milestone Date`
+  - ISO `YYYY-MM-DD`
+  - used to sort the research route chronologically
 
-Initial project items should at minimum include:
+The current core timeline is intentionally kept to 10 high-value milestones:
 
-1. `Round30 / r30_b1_dironly` as the current production baseline
-2. `Round31` as a measured external regression line
-3. `Round32 / r32_real_eq_finetune` as an externally falsified sandbox line
-4. `R32 post-falsification` as the next required new branch / mechanism
+1. `2026-03-07 | First usable baseline scaffold established`
+2. `2026-03-09 | External GMF became the final gate`
+3. `2026-03-11 | Round14 corridor identified 0.8px as the bottleneck`
+4. `2026-03-12 | Round15 center-lock narrowed the target`
+5. `2026-03-14 | Round20 process probe falsified the baseline-lock hypothesis`
+6. `2026-03-17 | R26 sm035 confirmed as the generic step_mag optimum`
+7. `2026-03-18 | Round30 architecture breakthrough promoted r30_b1_dironly`
+8. `2026-03-19 | Round31 B1 hyperparameter tuning regressed externally`
+9. `2026-03-19 | Round32 sandbox winner failed external compare`
+10. `2026-03-20 | Post-R32 new sandbox branch is required`
+
+These items are date-prefixed and also carry the `Milestone Date` field so the
+Project can be viewed as a chronological research route instead of a flat note
+list.
 
 ## Manual Unblock For Future Project Automation
 
