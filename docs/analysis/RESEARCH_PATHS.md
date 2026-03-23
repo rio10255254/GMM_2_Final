@@ -1,11 +1,7 @@
-# Research Paths / 研究路徑
+# 研究路徑 / Research Paths
 
-這份文件提供 GitHub 可直接渲染的研究路徑圖，讓人不用翻完整歷史，
-也能快速理解目前 baseline、已被否定的分支、以及下一個合理方向。
-
-This file provides a GitHub-renderable research-path map so readers can
-understand the current baseline, the falsified branches, and the next sensible
-direction without reading the entire history first.
+這份文件提供 GitHub 可直接渲染的研究路徑圖，讓人不用翻完整歷史，也能快速理解目前 baseline、已被否定的分支、以及下一個合理方向。  
+This file provides a GitHub-renderable research-path map so readers can understand the current baseline, the falsified branches, and the next sensible direction without reading the entire history first.
 
 ## Current Path / 目前主路徑
 
@@ -22,20 +18,20 @@ flowchart TD
 ## Interpretation / 路徑解讀
 
 - `R26 / r26_sm035`
-  - 繁中：generic `step_mag` 路線的 externally verified optimum。
-  - English: The externally verified optimum of the generic `step_mag` line.
+  generic `step_mag` 路線的 externally verified optimum。  
+  The externally verified optimum of the generic `step_mag` line.
 - `Round30 / r30_b1_dironly`
-  - 繁中：目前正式的 production baseline。
-  - English: The current official production baseline.
+  目前正式的 production baseline。  
+  The current official production baseline.
 - `Round31`
-  - 繁中：沿 `B1 dironly` 主線做的微調，但 external 結果退步。
-  - English: A tuning line on top of `B1 dironly` that regressed externally.
+  沿 `B1 dironly` 主線做的微調，但 external 結果退步。  
+  A tuning line on top of `B1 dironly` that regressed externally.
 - `R32 Sandbox`
-  - 繁中：internal winner 通過 internal gate，但 external compare FAIL。
-  - English: The internal winner passed internal gates but failed external compare.
+  internal winner 通過 internal gate，但 external compare FAIL。  
+  The internal winner passed internal gates but failed external compare.
 - `Next step`
-  - 繁中：不能再延用 `r32_real_eq_finetune`，若要續做必須另立新的 sandbox branch / 新機制。
-  - English: `r32_real_eq_finetune` cannot remain the current promising line; any continuation must create a new sandbox branch or mechanism.
+  不能再延用 `r32_real_eq_finetune`，若要續做必須另立新的 sandbox branch / 新機制。  
+  `r32_real_eq_finetune` cannot remain the current promising line; any continuation must create a new sandbox branch or mechanism.
 
 ## How To Use This Map / 如何使用這張圖
 
