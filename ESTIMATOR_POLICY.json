@@ -10,7 +10,7 @@
     "round29_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\external_compare_r18_r22_r25_r26_r27_r28_r29\\reports\\EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_R29_SUMMARY.md",
     "tta_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\tta_experiment\\r26_tta_cross5\\reports\\TTA_VS_BASELINE_CROSS5_COMPARISON.md",
     "correlation_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\analysis\\INTERNAL_EXTERNAL_CORRELATION.md",
-    "round32_status_md": "D:\\GMM_2_Final\\000_LONGRUN_ROUND32_STATUS.md"
+    "round32_status_md": "D:\\GMM_2_Final\\docs\\runtime\\legacy\\root_status\\000_LONGRUN_ROUND32_STATUS.md"
   },
   "active_baseline_policy": {
     "status": "final_production_baseline",
@@ -119,7 +119,7 @@
     "round": "round32",
     "candidate": "r32_real_eq_finetune",
     "goal": "complete_round32_repair_then_beat_r30_external_0p8_step_std_0.167862",
-    "status_file": "D:\\GMM_2_Final\\000_LONGRUN_ROUND32_STATUS.md",
+    "status_file": "D:\\GMM_2_Final\\docs\\runtime\\legacy\\root_status\\000_LONGRUN_ROUND32_STATUS.md",
     "batch_root": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round32",
     "notes": "The first targeted rerun exposed a RealImageOnlyFolder NameError caused by an undefined _imread_gray helper. That bug is fixed, but the second rerun reached Epoch 13 and then failed in the real-domain EQ branch because it uses an undefined variable named device when moving real_batch onto CUDA."
   },

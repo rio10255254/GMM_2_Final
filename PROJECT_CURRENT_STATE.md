@@ -95,7 +95,7 @@ external compare 核心數字：
 
 - `D:\GMM_2_Final\Experiments\R32Sandbox\runtime\R32_STATUS.md`
 
-root 的 `000_LONGRUN_ROUND32_STATUS.*` 現在只保留為 legacy bridge，不再視為 canonical runtime state。
+Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。
 
 ## 4. External Validation Status
 

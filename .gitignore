@@ -54,3 +54,12 @@ Tools/PortableAgentEnv/portable-clean-bundle/
 
 # Generated terminal/watcher state
 Tools/AutoTuneTerminal/.output_window.pid
+
+# Root runtime status outputs are local-only; curated copies live under docs/runtime/legacy/
+/000_LONGRUN_*_STATUS.md
+/000_LONGRUN_*_STATUS.json
+/000_LONGRUN_*_RUNNING.txt
+/000_LONGRUN_STATUS.md
+/000_LONGRUN_STATUS.json
+/000_LONGRUN_RUNNING.txt
+/000_NOTIFY_CODEX_NOW.txt

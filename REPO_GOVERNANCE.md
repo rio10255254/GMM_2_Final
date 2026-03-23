@@ -29,6 +29,7 @@ Small, deliberate, auditable sample fixtures are allowed when they provide a sta
 The expected tracked surface is:
 
 - root formal docs and policy files
+- `docs/` navigation, history, analysis, and curated legacy references
 - `Model/`
 - `Tools/` excluding packaged bundles and local watcher state
 - `PSF_Fitting/`
@@ -41,6 +42,24 @@ The expected untracked surface is:
 - `_deployment_package/`
 - backup/archive directories
 - bulk subdirectories such as `weights/`, `artifacts/`, `logs/`, `reconstructions/`, `gmf_results/`
+- root runtime outputs such as regenerated `000_LONGRUN_*` status files
+
+## Documentation Layout
+
+This repository keeps the root intentionally small.
+
+- root
+  - entry-point docs, governance docs, machine-readable policy, and core code directories
+- `docs/history/`
+  - long-form historical narrative
+- `docs/index/`
+  - documentation responsibility map and navigation index
+- `docs/analysis/`
+  - research path maps and visual summaries
+- `docs/runtime/legacy/`
+  - curated, tracked copies of legacy root runtime status files
+
+If an older launcher recreates `000_LONGRUN_*` files at the repository root, treat them as local execution outputs only. The Git-tracked copies live under `docs/runtime/legacy/root_status/`.
 
 ## Branch Taxonomy
 
@@ -71,6 +90,18 @@ Therefore:
 - reconstructed branches must say that they are reconstructed governance/reference branches built on top of the curated import
 - semantic branches must say that they are semantic
 - no branch should claim to be the original historical git state or a recovered historical tree without direct evidence
+
+## Sync Cadence
+
+Push to GitHub when any of the following changes:
+
+- a major branch is created or materially reframed
+- a strategy attempt becomes formalized enough to deserve tracked docs
+- a baseline, verdict, or active direction changes
+- an important experiment analysis or decision memo is added
+- the repository information architecture or governance rules change
+
+Do not push day-to-day runtime log spam, ephemeral watcher output, or local execution noise just to keep the cloud “live.”
 
 ## Update Rules
 

@@ -12,20 +12,31 @@ Last updated: 2026-03-20
 2. `PROJECT_SESSION_CONTINUITY.md`
 3. `PROJECT_CURRENT_STATE.md`
 4. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-5. `PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
+5. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
 分工：
 
 - `README.md`
-  入口、閱讀順序、root 結構
+  入口、閱讀順序、root 入口層與 docs 導航
 - `PROJECT_SESSION_CONTINUITY.md`
   跨入口 handoff
 - `PROJECT_CURRENT_STATE.md`
   現在真相
 - `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
   穩定規則
-- `PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
+- `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
   完整歷史脈絡
+
+## Docs Surface
+
+- `docs/README.md`
+  docs 區入口與子目錄導覽
+- `docs/analysis/RESEARCH_PATHS.md`
+  研究路徑圖、Mermaid 可視化入口
+- `docs/index/PROJECT_DOCUMENT_INDEX.md`
+  文件責任邊界與導覽索引
+- `docs/runtime/legacy/README.md`
+  legacy runtime / root status curated copies 的保存規則
 
 ## Sandbox Surface
 
@@ -46,10 +57,10 @@ Last updated: 2026-03-20
 
 ## Legacy Bridge
 
-- `000_LONGRUN_ROUND32_STATUS.md`
-- `000_LONGRUN_ROUND32_STATUS.json`
+- `docs/runtime/legacy/root_status/000_LONGRUN_ROUND32_STATUS.md`
+- `docs/runtime/legacy/root_status/000_LONGRUN_ROUND32_STATUS.json`
 
-這兩份目前只保留為 **legacy bridge**，不再是長期 canonical runtime state，也不應用來判讀 `R32` external verdict。
+這兩份目前只保留為 **tracked legacy bridge copy**，不再是長期 canonical runtime state，也不應用來判讀 `R32` external verdict。若舊腳本在 root 再生成同名檔案，視為本地 runtime 輸出，不再進 Git。
 
 ## Archive / Non-Core
 

@@ -7,14 +7,14 @@
 1. `PROJECT_SESSION_CONTINUITY.md`
 2. `PROJECT_CURRENT_STATE.md`
 3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-4. `PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`（只有需要完整歷史時再看）
+4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`（只有需要完整歷史時再看）
 
 定位規則：
 
 - 想快速接手：看 `PROJECT_SESSION_CONTINUITY.md`
 - 想知道現在真相：看 `PROJECT_CURRENT_STATE.md`
 - 想知道穩定規則：看 `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-- 想補完整歷史：最後看 `PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
+- 想補完整歷史：最後看 `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
 ## One-Screen Snapshot
 
@@ -34,7 +34,9 @@
 
 工程上真正優化的不是「看起來更銳利」，而是 **whole-annulus geometry 是否更對 external GMF 友善**。
 
-## Root Structure
+## Root Surface
+
+root 現在只保留**入口層**與**治理層**：
 
 ```text
 D:\GMM_2_Final\
@@ -42,72 +44,75 @@ D:\GMM_2_Final\
 ├── PROJECT_SESSION_CONTINUITY.md
 ├── PROJECT_CURRENT_STATE.md
 ├── PROJECT_ARCHITECTURE_AND_DECISION_MAP.md
-├── PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md
-├── PROJECT_DOCUMENT_INDEX.md
 ├── ESTIMATOR_POLICY.json
+├── REPO_GOVERNANCE.md
+├── CONTRIBUTING.md
+├── AGENTS.md
+├── CLAUDE.md
 ├── Model\
-├── Training_Data\
-├── Traing_Progress\
-├── PSF_Fitting\
 ├── Tools\
+├── PSF_Fitting\
 ├── Experiments\
-├── Project_Archive\
-├── _deployment_package\
-└── Trash_Archive\
+└── docs\
 ```
 
-## Directory Roles
+## Docs Navigation
 
-- `Model\`
-  shared stable workflow 的訓練 / 推論 / longrun / audit 腳本
-- `Training_Data\`
-  訓練、sequence、real-image 資料
-- `Traing_Progress\`
-  shared mainline 的正式 round artifact / report / checkpoint / log
-- `Experiments\R32Sandbox\`
-  `Round32` 專用 sandbox；訓練、audit、runtime、external compare 都在這裡收斂
-- `PSF_Fitting\`
-  PSF 擬合與物理先驗流程
-- `Tools\`
-  shared watcher / helper scripts
-- `Project_Archive\`
-  非 current truth 的 archive / maintenance artifact
+```text
+docs\
+├── README.md
+├── analysis\
+│   └── RESEARCH_PATHS.md
+├── history\
+│   └── PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md
+├── index\
+│   └── PROJECT_DOCUMENT_INDEX.md
+└── runtime\
+    └── legacy\
+        ├── README.md
+        └── root_status\
+```
 
-## Current Workflow Boundaries
+用途分工：
 
-- root shared 主線不再繼續吸收 `R32` 專用 loader / audit / launcher / monitor
-- `R32` 專用執行面以 `Experiments\R32Sandbox\` 為 canonical surface
-- root `000_LONGRUN_ROUND32_STATUS.*` 只保留為 legacy bridge，不再是長期 canonical runtime state
-- `Traing_Progress\organized_YYYYMMDD\roundNN\` 仍是 shared mainline 的正式 round 組織入口
+- `docs/analysis/`
+  研究路徑圖、決策路徑總覽、GitHub 可視化入口
+- `docs/history/`
+  完整歷史敘事與研究反省
+- `docs/index/`
+  文件責任邊界與導航索引
+- `docs/runtime/legacy/`
+  已追蹤的 legacy root status 快照；不是當前 canonical runtime surface
 
-## Maintenance Rules
+## Research Path Overview
 
-1. `PROJECT_SESSION_CONTINUITY.md` 只做跨入口 handoff
-2. `PROJECT_CURRENT_STATE.md` 只寫現在真相與下一個決策邊界
-3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md` 只寫穩定架構與決策規則
-4. `PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` 只保留完整歷史與研究反省
-5. `PROJECT_DOCUMENT_INDEX.md` 只做文件分工索引
-6. shared mainline 與 sandbox 分流後，不把 `R32` 專用 runtime 細節再塞回 root shared 主線
+完整圖請看 `docs/analysis/RESEARCH_PATHS.md`。
 
-## GitHub Repository Scope
+```mermaid
+flowchart TD
+    R26["R26 / r26_sm035<br/>generic step_mag optimum"] --> R30["Round30 / r30_b1_dironly<br/>production baseline"]
+    R30 --> R31["Round31 B1 hyperparam tuning<br/>external regression"]
+    R30 --> R32["R32 Sandbox<br/>r32_real_eq_finetune external FAIL"]
+    R32 --> NEXT["Next: post-falsification<br/>new sandbox branch / new mechanism"]
+```
+
+## Sync Policy
 
 這個 GitHub 倉庫是**研究程式碼與正式文件的治理面**，不是磁碟內容的完整鏡像。
 
-會被追蹤進 Git 的內容：
+應該同步到 GitHub 的內容：
 
-- root 正式文件與 policy
-- `Model\`
-- `Tools\` 中的腳本、設定與說明
-- `PSF_Fitting\`
-- `Experiments\R32Sandbox\` 中的程式碼、README、runtime status、light reports、manifests
+- 重大 branch 建立與治理調整
+- 新策略嘗試的正式文檔化
+- baseline / verdict / active direction 的變更
+- 重要實驗分析、決策 memo、研究路徑圖
+- root canonical docs、policy、以及 `docs/` 內的導航/歷史/legacy curated copies
 
-不會被追蹤進 Git 的內容：
+不應該同步到 GitHub 的內容：
 
-- `Traing_Progress\`
-- `Training_Data\`
-- `_deployment_package\`
-- checkpoints / weights / artifacts / reconstructions / raw GMF dumps / runtime logs
-- local backup、portable runtime、editor state
+- 日常 runtime 狀態流
+- bulk logs、checkpoint、weights、artifacts、reconstructions、raw GMF dumps
+- 訓練資料、部署包、portable runtime、local backups
 
 會被保留的例外：
 
@@ -115,7 +120,12 @@ D:\GMM_2_Final\
 - 例如 `Model/Test_Image/VisionTop_20251029182653732.bmp`
 - 這類檔案的用途是提供穩定、可引用的最小輸入樣本，不是保存 bulk experiment payload
 
-原則很簡單：可以重現、可外部保存、體積過大、或不適合進 code review 的內容，都不進 Git history；但少量、刻意保留的 canonical sample fixtures 可以保留在版控內。
+## Current Workflow Boundaries
+
+- root shared 主線不再繼續吸收 `R32` 專用 loader / audit / launcher / monitor
+- `R32` 專用執行面以 `Experiments\R32Sandbox\` 為 canonical surface
+- 已追蹤的 root `000_LONGRUN_*_STATUS.*` 快照現已移到 `docs/runtime/legacy/root_status/`
+- 若舊腳本在 root 再生成 `000_LONGRUN_*`，那些檔案一律視為**本地 runtime 輸出**，不再是 Git-tracked canonical docs
 
 ## Branch Strategy
 
@@ -139,4 +149,4 @@ D:\GMM_2_Final\
 - 若 branch 是 semantic / research，也必須明確標示它不是原始歷史快照
 - 本 repo 不會假造不存在的原始 git 歷史
 
-詳見 `REPO_GOVERNANCE.md`。
+詳見 `REPO_GOVERNANCE.md` 與 `docs/index/PROJECT_DOCUMENT_INDEX.md`。

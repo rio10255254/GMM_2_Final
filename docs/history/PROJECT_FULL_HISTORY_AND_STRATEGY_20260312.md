@@ -2,6 +2,13 @@
 
 本文是 `D:\GMM_2_Final` 專案的**完整歷史、策略沿革與研究脈絡文件**。
 
+> **2026-03-23 repository IA note**
+>
+> - 這份 tracked canonical copy 現在位於 `docs/history/`
+> - 舊時代寫進本文的絕對路徑，可能仍反映當時 root layout
+> - 已追蹤的 legacy root status curated copies 現在統一放在 `docs/runtime/legacy/root_status/`
+> - 若歷史段落內提到 root `000_LONGRUN_*` 路徑，請先理解為原始時代路徑，再對照現在的 tracked curated copy 位置
+
 目前保存規則：
 
 - 這份文件需要**長期保留**

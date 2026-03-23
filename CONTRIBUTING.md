@@ -8,6 +8,7 @@ Tracked content:
 
 - source code in `Model/`, `Tools/`, and selected `Experiments/R32Sandbox/` code/docs
 - project truth docs and governance docs at the repo root
+- `docs/` navigation, analysis, historical narrative, and curated legacy references
 - light reports, manifests, and policies that explain decisions
 - PSF fitting source and supporting documentation
 
@@ -28,7 +29,7 @@ Start here when taking over the project:
 1. `PROJECT_SESSION_CONTINUITY.md`
 2. `PROJECT_CURRENT_STATE.md`
 3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-4. `PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
+4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
 ## Branch Strategy
 
@@ -45,8 +46,9 @@ Do not claim that a reconstructed branch is the original historical git state or
 Before opening a PR:
 
 1. Verify that no bulk artifacts or data are staged.
-2. Update the relevant formal docs if the baseline, verdict, or active experiment changed.
+2. Update the relevant formal docs if the baseline, verdict, active experiment, or repository information architecture changed.
 3. Explain the change in terms of external GMF truth, baseline policy, and branch taxonomy where relevant.
+4. If the change only affects day-to-day runtime outputs or log noise, keep it local instead of pushing it.
 
 ## Issues
 

@@ -188,6 +188,6 @@ internal surrogate 是代理，不是 external GMF 本身。
 - stable architecture / decision rules:
   `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
 - full historical narrative:
-  `PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
+  `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 - machine-readable policy truth:
   `ESTIMATOR_POLICY.json`
