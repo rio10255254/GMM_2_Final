@@ -111,3 +111,21 @@ When the project truth changes:
 2. update `PROJECT_CURRENT_STATE.md` if current truth or next decision boundary changed
 3. update `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md` if stable rules changed
 4. update this file if the tracked surface or branch taxonomy changed
+
+## GitHub Governance Surface
+
+The repository keeps the intended GitHub-side governance definition under:
+
+- `.github/governance/ruleset-main.json`
+- `.github/governance/ruleset-baseline.json`
+- `.github/governance/PROJECT_CONTROL_PLANE.md`
+
+These files document the server-side ruleset and project model so local and
+cloud governance stay aligned even when the GitHub API cannot be updated in the
+same session.
+
+Current status:
+
+- repository rulesets for `main` and `baseline/*` are already applied on GitHub
+- GitHub Project creation still requires a token with `project` / `read:project`
+  scope
