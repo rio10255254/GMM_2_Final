@@ -127,6 +127,8 @@ same session.
 Current status:
 
 - repository rulesets for `main` and `baseline/*` are already applied on GitHub
+- `baseline/*` is treated as a reserved reference namespace rather than a
+  normal collaboration branch family
 - GitHub Project `GMM Research Control Plane` exists at
   `https://github.com/users/rio10255254/projects/1`
 - future automated Project changes still require a token with `project` /
