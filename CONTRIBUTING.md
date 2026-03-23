@@ -41,6 +41,8 @@ Start here when taking over the project:
 
 Use `research/*` or `sandbox/*` for new research work. Treat `baseline/*` as a protected namespace, not as the default branch family for new experiments.
 
+For a step-by-step experiment workflow, see `docs/index/NEW_EXPERIMENT_SOP.md`.
+
 Do not claim that a reconstructed branch is the original historical git state or a recovered historical tree unless that state is verifiably preserved or later restored file-for-file.
 
 ## Pull Requests
@@ -51,6 +53,7 @@ Before opening a PR:
 2. Update the relevant formal docs if the baseline, verdict, active experiment, or repository information architecture changed.
 3. Explain the change in terms of external GMF truth, baseline policy, and branch taxonomy where relevant.
 4. If the change only affects day-to-day runtime outputs or log noise, keep it local instead of pushing it.
+5. If the PR is non-trivial, manually comment `@codex review` after opening it or marking it ready for review.
 
 ## Issues
 

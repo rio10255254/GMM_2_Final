@@ -13,6 +13,7 @@
 
 - Commands run:
 - Expected/observed result:
+- For non-trivial PRs, after opening or marking ready, manually comment `@codex review`
 
 ## History / Governance Impact
 
