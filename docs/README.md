@@ -9,9 +9,10 @@
 - `evidence/`
   - 小型、高價值、可核對的 curated experiment evidence copies
   - 進一步分成 `baseline/`、`historical_baselines/`、`falsified/`、
-    `side_directions/`、`analysis/`、`runtime/`
+    `side_directions/`、`analysis/`、`runtime/`、`visuals/`
   - 另有 `EVIDENCE_MAP.md` 說明每份關鍵 evidence 支撐哪個 baseline /
     falsified line / analysis 結論
+  - `visuals/README.md` 說明少量代表性 comparison sheets 的用途
 - `history/`
   - 長篇完整歷史敘事與研究反省
 - `index/`

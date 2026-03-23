@@ -21,6 +21,7 @@ flowchart TD
     B30 --> F32["Falsified line<br/>Round32 external FAIL"]
     B30 --> SD["Side-direction falsification<br/>TTA C2 rejected"]
     H29 --> AN["Analysis evidence<br/>internal-external correlation"]
+    B30 --> VIS["Visual evidence<br/>matched 0.8px comparison sheets"]
     F32 --> RT["Runtime truth<br/>R32 sandbox status"]
 ```
 
@@ -67,12 +68,21 @@ flowchart TD
 |---|---|---|
 | `runtime/R32_STATUS.md/json` | `Experiments/R32Sandbox/runtime/R32_STATUS.*` | Keeps a small, tracked copy of the canonical sandbox runtime truth for the post-falsification state. |
 
+## Visual Evidence
+
+| Evidence | Supports | Why it matters |
+|---|---|---|
+| `visuals/comparison_0p8px_case_01.png` | `R26`, `Round30 baseline`, `Round31 regression`, `Round32 fail` | A fair side-by-side comparison of one shared `0.8px` battlefield case across the four most important lines. |
+| `visuals/comparison_0p8px_case_02.png` | the same four lines on a second shared case | Provides a second matched case so the visual verdict is not hanging on a single image. |
+
 ## How To Read This With GitHub
 
 - Use the GitHub Project control plane to understand the **timeline**:
   `GMM Research Control Plane`
 - Use this file to understand the **evidence chain** behind each verdict.
 - Use `docs/evidence/README.md` to browse the curated files themselves.
+- Use `docs/evidence/visuals/README.md` when you want a quick visual
+  comparison rather than a report or JSON file.
 
 In short:
 
