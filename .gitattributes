@@ -1,0 +1,26 @@
+* text=auto
+
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.m text eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+*.bmp binary
+*.png binary
+*.gif binary
+*.pdf binary
+*.mat binary
+*.tif binary
+*.tiff binary
+*.zip binary
+*.tar binary
+*.pth binary
+*.pt binary
+*.pth.tar binary
+*.ckpt binary

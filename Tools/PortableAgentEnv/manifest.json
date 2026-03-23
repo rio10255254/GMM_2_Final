@@ -1,0 +1,25 @@
+{
+  "name": "portable-agent-env",
+  "version": "2026.03.18",
+  "description": "Portable Codex/PowerShell personalization package for Rio's workstation setup.",
+  "default_install_root": "%USERPROFILE%\\.portable-agent-env",
+  "default_codex_home": "%USERPROFILE%\\.codex",
+  "components": [
+    "bootstrap.ps1",
+    "verify.ps1",
+    "export-current-state.ps1",
+    "templates/codex.config.portable.toml",
+    "skills/portable-agent-env/SKILL.md"
+  ],
+  "state_files": [
+    "state/session_ai_titles.jsonl",
+    "state/codex.config.redacted.toml",
+    "state/pwsh_profile.current.ps1",
+    "state/windows_powershell_profile.current.ps1",
+    "state/default.rules.snapshot"
+  ],
+  "notes": [
+    "API keys and Telegram bot secrets are not exported by default.",
+    "The exported standalone bundle includes the current codex_resume_all.ps1 helper."
+  ]
+}

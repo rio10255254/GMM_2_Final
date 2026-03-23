@@ -1,0 +1,31 @@
+# Portable Codex config template
+# Copy or merge into %USERPROFILE%\.codex\config.toml
+# Fill in provider-specific values manually.
+
+model_provider = "replace_me"
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+model_context_window = 1000000
+model_auto_compact_token_limit = 900000
+service_tier = "fast"
+approvals_reviewer = "user"
+
+[windows]
+sandbox = "elevated"
+
+[features]
+fast_mode = true
+enable_request_compression = true
+multi_agent = true
+
+[tui]
+alternate_screen = "never"
+status_line = ["model-with-reasoning", "context-window-size", "context-remaining", "five-hour-limit", "weekly-limit"]
+
+[model_providers.replace_me]
+name = "replace_me"
+base_url = "https://example.invalid/codex"
+wire_api = "responses"
+experimental_bearer_token = "REPLACE_ME"
+requires_openai_auth = true
+

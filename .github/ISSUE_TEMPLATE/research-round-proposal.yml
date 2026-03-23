@@ -1,0 +1,53 @@
+name: Research round proposal
+description: Propose a new experimental round or sandbox branch.
+title: "[round] "
+labels:
+  - research
+body:
+  - type: markdown
+    attributes:
+      value: |
+        New rounds must challenge the current baseline with a new mechanism or a justified high-value micro-tuning.
+        Reference the current baseline and external GMF success criteria.
+  - type: input
+    id: proposed_round
+    attributes:
+      label: Proposed round or branch name
+      placeholder: "round33-new-mechanism / r32-post-falsification-branch"
+    validations:
+      required: true
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      placeholder: What new mechanism or decision boundary is being tested?
+    validations:
+      required: true
+  - type: input
+    id: baseline
+    attributes:
+      label: Baseline being challenged
+      placeholder: "Round30 / r30_b1_dironly"
+    validations:
+      required: true
+  - type: textarea
+    id: success
+    attributes:
+      label: Success criteria
+      placeholder: Include the external GMF target and any guard rails.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Historical evidence
+      placeholder: Reference the formal docs or reports that justify opening this round.
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifact policy
+      placeholder: Describe what will stay out of Git and where the bulky outputs will live.
+    validations:
+      required: true

@@ -1,0 +1,56 @@
+# Editor and local state
+.vscode/
+.history/
+*.pid
+*.tmp
+*.bak
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local backups, archives, packaged runtimes
+_codex_store_backups/
+_portable_env_sim_20260318/
+Project_Archive/
+Trash_Archive/
+_deployment_package/
+
+# Training data and bulk experiment outputs
+Training_Data/
+Traing_Progress/
+PSF_Fitting/Fits/
+PSF_Fitting/Deconvolution/
+PSF_Fitting/SimulatePSF/*.mat
+PSF_Fitting/Crop_circle_FreqFiltered/
+PSF_Fitting/SingleImage_Input/
+
+# Model checkpoints and generated experiment payloads
+*.pth
+*.pt
+*.pth.tar
+*.ckpt
+**/weights/
+**/artifacts/
+**/runs/
+**/checkpoints/
+**/logs/
+**/reconstructions/
+**/gmf_results/
+**/_repro/
+**/portable_runtime/
+**/monitor_snapshots/
+**/runtime/logs/
+
+# Tool packaging outputs
+Tools/PortableAgentEnv/*.zip
+Tools/PortableAgentEnv/portable-bundle/
+Tools/PortableAgentEnv/portable-clean-bundle/
+
+# Generated terminal/watcher state
+Tools/AutoTuneTerminal/.output_window.pid

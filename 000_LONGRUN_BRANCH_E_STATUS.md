@@ -1,0 +1,12 @@
+﻿state: completed
+step_index: 5
+active_label: decision_memo
+active_command: internal decision
+plan_done: 5
+plan_total: 5
+last_report: D:\GMM_2_Final\Traing_Progress\organized_20260314\branch_e\selected\reports\BRANCH_E_ESTIMATOR_PROBE_DECISION_20260315_152909.json
+last_exit: 0
+selected_candidate: be_soft_band
+selected_checkpoint: D:\GMM_2_Final\Traing_Progress\organized_20260314\branch_e\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453\weights\best_tradeoff.pth.tar
+note: Branch E automation completed | no estimator candidate cleared the 0.8px probe gate
+updated_at: 2026-03-15 15:29:09

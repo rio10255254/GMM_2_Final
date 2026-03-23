@@ -1,0 +1,12 @@
+state: completed
+step_index: 4
+active_label: round27_guard_8px
+active_command: internal audit
+plan_done: 4
+plan_total: 4
+last_report: D:\GMM_2_Final\Traing_Progress\organized_20260316\round27\selected\reports\ROUND27_STEP_MAG_RECOVERY_DECISION_20260316_204452.md
+last_exit: 0
+selected_candidate: r27_sm028
+selected_checkpoint: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r27sm028_20260316_202936\weights\best_tradeoff.pth.tar
+note: Round27 passed calibrated pairmix gate
+updated_at: 2026-03-16 20:44:52

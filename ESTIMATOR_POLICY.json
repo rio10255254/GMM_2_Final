@@ -1,0 +1,154 @@
+{
+  "generated_at": "2026-03-19 10:12:00",
+  "source": {
+    "round30_internal_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md",
+    "round30_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_EXTERNAL_COMPARE.md",
+    "round31_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\selected\\reports\\ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md",
+    "round31_summary_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\selected\\reports\\ROUND31_B1_HYPERPARAM_SUMMARY_20260318_113707.md",
+    "round31_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\selected\\reports\\ROUND31_EXTERNAL_COMPARE.md",
+    "round29_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round29\\selected\\reports\\ROUND29_STEP_MAG_UPPER_DECISION_20260317_124715.md",
+    "round29_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\external_compare_r18_r22_r25_r26_r27_r28_r29\\reports\\EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_R29_SUMMARY.md",
+    "tta_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\tta_experiment\\r26_tta_cross5\\reports\\TTA_VS_BASELINE_CROSS5_COMPARISON.md",
+    "correlation_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\analysis\\INTERNAL_EXTERNAL_CORRELATION.md",
+    "round32_status_md": "D:\\GMM_2_Final\\000_LONGRUN_ROUND32_STATUS.md"
+  },
+  "active_baseline_policy": {
+    "status": "final_production_baseline",
+    "selected_round": "round30",
+    "selected_candidate": "r30_b1_dironly",
+    "selection_basis": "external_gmf_main_battlefield",
+    "selected_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\archive\\runs\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913\\weights\\best_tradeoff.pth.tar",
+    "tiny_0p08": "edge_centroid",
+    "mid_0p8": "pairmix_algblend",
+    "macro_8px": "edge_band_refine",
+    "internal_metrics": {
+      "center_err_0p8": 0.0804,
+      "step_err_0p8": 0.0693
+    },
+    "external_gmf": {
+      "step_std_8px": 0.205193,
+      "step_std_0p8px": 0.167862,
+      "step_std_0p08px": 0.15772,
+      "lag1_autocorr_0p8px": 0.267027
+    },
+    "notes": "Round30 architecture breakthrough was the first externally validated branch to beat the R26 baseline on the main battlefield. Production promotion is based on external GMF, not internal family winner."
+  },
+  "latest_internal_frontier": {
+    "status": "round32_family_summary_complete_pending_repair_and_full_audit",
+    "round": "round32",
+    "candidate": "r32_long_from_r25",
+    "checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r32longr25_20260318_161243\\weights\\best_tradeoff.pth.tar",
+    "internal_metrics": {
+      "proxy_step_std_0p8": 0.17935973380357523,
+      "best_epoch": 8
+    },
+    "notes": "Round32 family summary preferred r32_long_from_r25 among completed sweep candidates, but the prior full audit run failed at r32_wider_b1 and the round is now in repair/rerun state."
+  },
+  "latest_falsified_branch": {
+    "status": "round31_b1_hyperparam_external_regression",
+    "round": "round31",
+    "branch_type": "b1_hyperparam_tuning",
+    "winner_baseline_kept": "r30_b1_dironly",
+    "challengers": {
+      "r31_eq_prob_up": {
+        "step_std_0p8px": 0.184867,
+        "delta_vs_b1_dironly": 0.017006
+      },
+      "r31_eq_weight_up": {
+        "step_std_0p8px": 0.185458,
+        "delta_vs_b1_dironly": 0.017596
+      },
+      "r31_edge_ratio_low": {
+        "step_std_0p8px": 0.179347,
+        "delta_vs_b1_dironly": 0.011486
+      },
+      "r31_eq_combo": {
+        "status": "missing_external_artifact",
+        "notes": "No GMF_score.txt was found under round31/gmf_results/raw/r31_eq_combo."
+      }
+    },
+    "notes": "All measured Round31 hyperparameter candidates regressed on the external 0.8px battlefield relative to Round30. The missing eq_combo artifact is tracked explicitly and is not treated as a measured failure."
+  },
+  "latest_analyses": {
+    "round31_external_compare": {
+      "status": "completed_measured_candidates_failed",
+      "baseline": "r30_b1_dironly",
+      "measured_candidates": {
+        "r31_eq_prob_up": {
+          "step_std_0p8px": 0.184867,
+          "delta_vs_r30": 0.017006
+        },
+        "r31_eq_weight_up": {
+          "step_std_0p8px": 0.185458,
+          "delta_vs_r30": 0.017596
+        },
+        "r31_edge_ratio_low": {
+          "step_std_0p8px": 0.179347,
+          "delta_vs_r30": 0.011486
+        }
+      },
+      "missing_candidate": "r31_eq_combo"
+    },
+    "tta_c2": {
+      "status": "completed_not_adopted",
+      "candidate": "r26_tta_cross5",
+      "external_gmf": {
+        "step_std_8px": 0.200948,
+        "step_std_0p8px": 0.214034,
+        "step_std_0p08px": 0.153058,
+        "lag1_autocorr_0p8px": 0.112999
+      },
+      "delta_vs_r26": {
+        "step_std_8px": -8.3e-05,
+        "step_std_0p8px": 0.022698,
+        "step_std_0p08px": -0.027255
+      },
+      "upgrade_decision": "rejected_due_to_0p8_regression"
+    },
+    "d2_internal_external_correlation": {
+      "status": "completed",
+      "sample_size": 5,
+      "best_screening_metric": "center_err",
+      "pearson_r": 0.5399,
+      "step_err_pearson_r": -0.3251,
+      "notes": "Use center_err as Tier2 screening only. External GMF remains the final gate."
+    }
+  },
+  "active_experiment": {
+    "status": "round32_repair_blocked_real_eq_device_nameerror",
+    "round": "round32",
+    "candidate": "r32_real_eq_finetune",
+    "goal": "complete_round32_repair_then_beat_r30_external_0p8_step_std_0.167862",
+    "status_file": "D:\\GMM_2_Final\\000_LONGRUN_ROUND32_STATUS.md",
+    "batch_root": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round32",
+    "notes": "The first targeted rerun exposed a RealImageOnlyFolder NameError caused by an undefined _imread_gray helper. That bug is fixed, but the second rerun reached Epoch 13 and then failed in the real-domain EQ branch because it uses an undefined variable named device when moving real_batch onto CUDA."
+  },
+  "historical_milestones": {
+    "round26_final_stepmag_baseline": {
+      "candidate": "r26_sm035",
+      "external_gmf_0p8_step_std": 0.191336
+    },
+    "round29_upper_sweep_falsified": {
+      "candidate": "r29_sm042",
+      "external_gmf_0p8_step_std": 0.21731
+    }
+  },
+  "control_relative_guard": {
+    "mid_0p8": {
+      "center_improvement_ratio_min": 0.25,
+      "step_err_max": 0.45
+    },
+    "macro_8px": {
+      "control_step_err": 0.17948414385318756,
+      "step_err_max": 0.29948414385318756,
+      "control_seq_sign_acc": 0.8059353232383728,
+      "seq_sign_acc_min": 0.7559353232383728
+    }
+  },
+  "notes": [
+    "Round30 / r30_b1_dironly is the current final production baseline.",
+    "Round31 measured external compare is formalized and does not change the baseline.",
+    "Round32 repair is currently blocked by a second real-domain EQ runtime bug: device is not defined.",
+    "Generic step_mag sweep from 0.28 to 0.42 is closed; the externally verified optimum within that line remains 0.35."
+  ]
+}

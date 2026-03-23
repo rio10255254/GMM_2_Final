@@ -1,0 +1,21 @@
+{
+  "expect_dy": 0.8,
+  "label": "AUDIT_0P8",
+  "rows": [
+    {
+      "candidate": "r32_real_eq_finetune",
+      "geom_method": "pairmix_algblend",
+      "audit_json": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\reports\\ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_real_eq_finetune_20260319_183506.json",
+      "audit_md": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\reports\\ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_real_eq_finetune_20260319_183506.md",
+      "best_epoch": 0,
+      "best_epoch_is_baseline": true,
+      "best_center_err": 0.20158666372299194,
+      "best_step_err": 0.10959148406982422,
+      "best_ann_sign": 1.0,
+      "best_seq_sign": 0.7050485610961914,
+      "process_score": 2.6823261976242065,
+      "checkpoint_path": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\artifacts\\training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431\\weights\\best_tradeoff.pth.tar"
+    }
+  ],
+  "selection_policy": "center primary, step secondary, signs tertiary"
+}

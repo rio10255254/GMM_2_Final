@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a defect in the tracked source, docs, or repo tooling.
+title: "[bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for defects in tracked source, documentation, or Git/GitHub governance.
+        Do not attach large artifacts here. Link to external storage or the relevant report instead.
+  - type: input
+    id: area
+    attributes:
+      label: Area
+      placeholder: "Model / Tools / PSF_Fitting / repo governance / docs"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What is wrong?
+      placeholder: Describe the observed behavior and why it is incorrect.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      placeholder: Provide commands, entry files, and any required setup.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: Describe the expected outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and references
+      placeholder: Link to reports, screenshots, logs, or docs. Avoid uploading bulk outputs.
