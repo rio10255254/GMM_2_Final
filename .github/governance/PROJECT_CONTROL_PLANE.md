@@ -32,9 +32,10 @@ The intended GitHub Project title is:
 Current status on `2026-03-23`:
 
 - repository rulesets: applied on GitHub
-- GitHub Project: not yet created via API because the available token only has
-  `gist`, `repo`, and `workflow` scopes, and GitHub Projects v2 creation
-  requires the `project` scope
+- GitHub Project: created on GitHub
+- project URL: `https://github.com/users/rio10255254/projects/1`
+- current automation note: creating or updating Projects v2 by automation still
+  requires a token with `project` / `read:project` scope
 
 The project should visualize the current research path using the following
 conceptual fields:
@@ -66,12 +67,11 @@ Initial project items should at minimum include:
 3. `Round32 / r32_real_eq_finetune` as an externally falsified sandbox line
 4. `R32 post-falsification` as the next required new branch / mechanism
 
-## Manual Unblock For Project Creation
+## Manual Unblock For Future Project Automation
 
-To create and manage the GitHub Project from automation, the token used on this
-machine must include the `project` scope. Once that is available, create the
-project with the title above and populate it using the field and item model in
-this file.
+To create or modify the GitHub Project from automation in future sessions, the
+token used on this machine must include the `project` scope. The current project
+already exists; the extra scope is only required for future automated changes.
 
 ## Sync Rule
 
