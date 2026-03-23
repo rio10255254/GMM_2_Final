@@ -1,0 +1,223 @@
+{
+  "title": "External GMF Four-Way Comparison: R18 vs R22h vs R25sw010 vs R26sm035",
+  "method": {
+    "posy_source": "GMF_score.txt -> PosY",
+    "step_definition": "step[i] = PosY[i+1] - PosY[i]",
+    "outlier_rule_for_0p8px": "|step - mean(step)| > 3 * std(step)",
+    "anchor_autocorr_definition": "lag-1 Pearson correlation of PosY residual after per-sequence linear detrending"
+  },
+  "models": [
+    "round18_baseline",
+    "round22_hold",
+    "r25_sw010",
+    "r26_sm035"
+  ],
+  "pitches": {
+    "8px": {
+      "label": "8px (pitch1um)",
+      "n_aligned_frames": 100,
+      "models": {
+        "round18_baseline": {
+          "n_frames": 100,
+          "n_steps_raw": 99,
+          "n_steps_used": 99,
+          "step_mean_raw": -8.023808080808081,
+          "step_std_raw": 0.2507193157462043,
+          "step_std": 0.2507193157462043,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": 0.05739032139339356,
+          "anchor_residual_std": 0.18256829052148268,
+          "trend_slope_per_frame": -8.020684098409838,
+          "trend_intercept": 1502.9666728712868
+        },
+        "round22_hold": {
+          "n_frames": 100,
+          "n_steps_raw": 99,
+          "n_steps_used": 99,
+          "step_mean_raw": -8.019767676767676,
+          "step_std_raw": 0.28865374833865876,
+          "step_std": 0.28865374833865876,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": -0.08426391561667168,
+          "anchor_residual_std": 0.19503488703960947,
+          "trend_slope_per_frame": -8.019767236723675,
+          "trend_intercept": 1506.490258217822
+        },
+        "r25_sw010": {
+          "n_frames": 100,
+          "n_steps_raw": 99,
+          "n_steps_used": 99,
+          "step_mean_raw": -8.016505050505051,
+          "step_std_raw": 0.21145820676157018,
+          "step_std": 0.21145820676157018,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": 0.10695663769175279,
+          "anchor_residual_std": 0.15851059904138612,
+          "trend_slope_per_frame": -8.020201926192616,
+          "trend_intercept": 1505.4095653465345
+        },
+        "r26_sm035": {
+          "n_frames": 100,
+          "n_steps_raw": 99,
+          "n_steps_used": 99,
+          "step_mean_raw": -8.019666666666666,
+          "step_std_raw": 0.2010306273464666,
+          "step_std": 0.2010306273464666,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": 0.08323278743522439,
+          "anchor_residual_std": 0.14774488507642755,
+          "trend_slope_per_frame": -8.019748676867687,
+          "trend_intercept": 1504.4014695049505
+        }
+      },
+      "comparisons": {
+        "r26_vs_r18_step_std_delta": -0.049688688399737724,
+        "r26_vs_r25_step_std_delta": -0.010427579415103583
+      }
+    },
+    "0p8px": {
+      "label": "0.8px (pitch0p1um)",
+      "n_aligned_frames": 60,
+      "models": {
+        "round18_baseline": {
+          "n_frames": 60,
+          "n_steps_raw": 59,
+          "n_steps_used": 59,
+          "step_mean_raw": -0.8039491525423728,
+          "step_std_raw": 0.28547013995228027,
+          "step_std": 0.28547013995228027,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": 0.15133173466167044,
+          "anchor_residual_std": 0.21970338994207125,
+          "trend_slope_per_frame": -0.8026714087246456,
+          "trend_intercept": 792.7613732240436
+        },
+        "round22_hold": {
+          "n_frames": 60,
+          "n_steps_raw": 59,
+          "n_steps_used": 59,
+          "step_mean_raw": -0.8015423728813569,
+          "step_std_raw": 0.28545327154971334,
+          "step_std": 0.28545327154971334,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": 0.20233426640963953,
+          "anchor_residual_std": 0.2242994105408777,
+          "trend_slope_per_frame": -0.8031442900805776,
+          "trend_intercept": 795.3543732240437
+        },
+        "r25_sw010": {
+          "n_frames": 60,
+          "n_steps_raw": 59,
+          "n_steps_used": 59,
+          "step_mean_raw": -0.8031694915254247,
+          "step_std_raw": 0.21197266793290367,
+          "step_std": 0.21197266793290367,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": 0.021065262322845228,
+          "anchor_residual_std": 0.15565226668597654,
+          "trend_slope_per_frame": -0.8022025006946372,
+          "trend_intercept": 793.8737737704918
+        },
+        "r26_sm035": {
+          "n_frames": 60,
+          "n_steps_raw": 59,
+          "n_steps_used": 59,
+          "step_mean_raw": -0.8021694915254233,
+          "step_std_raw": 0.19133608310079342,
+          "step_std": 0.19133608310079342,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": 0.22588556787990663,
+          "anchor_residual_std": 0.15317592960482876,
+          "trend_slope_per_frame": -0.8021416226729643,
+          "trend_intercept": 788.8976278688525
+        }
+      },
+      "comparisons": {
+        "r26_vs_r18_step_std_delta": -0.09413405685148685,
+        "r26_vs_r25_step_std_delta": -0.020636584832110255
+      }
+    },
+    "0p08px": {
+      "label": "0.08px (pitch0p01um)",
+      "n_aligned_frames": 40,
+      "models": {
+        "round18_baseline": {
+          "n_frames": 40,
+          "n_steps_raw": 39,
+          "n_steps_used": 39,
+          "step_mean_raw": -0.07476923076923214,
+          "step_std_raw": 0.20937311334483666,
+          "step_std": 0.20937311334483666,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": 0.19060038273953558,
+          "anchor_residual_std": 0.16287309281905557,
+          "trend_slope_per_frame": -0.07180028142589158,
+          "trend_intercept": 774.955230487805
+        },
+        "round22_hold": {
+          "n_frames": 40,
+          "n_steps_raw": 39,
+          "n_steps_used": 39,
+          "step_mean_raw": -0.069333333333335,
+          "step_std_raw": 0.18930254354194448,
+          "step_std": 0.18930254354194448,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": -0.09734145320891155,
+          "anchor_residual_std": 0.12671559319817616,
+          "trend_slope_per_frame": -0.06896613508442773,
+          "trend_intercept": 775.8375146341464
+        },
+        "r25_sw010": {
+          "n_frames": 40,
+          "n_steps_raw": 39,
+          "n_steps_used": 39,
+          "step_mean_raw": -0.08307692307692331,
+          "step_std_raw": 0.16476422698235185,
+          "step_std": 0.16476422698235185,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": -0.10098860329786051,
+          "anchor_residual_std": 0.11315331744195743,
+          "trend_slope_per_frame": -0.07580290806754238,
+          "trend_intercept": 770.4884317073171
+        },
+        "r26_sm035": {
+          "n_frames": 40,
+          "n_steps_raw": 39,
+          "n_steps_used": 39,
+          "step_mean_raw": -0.07389743589743748,
+          "step_std_raw": 0.18031251999022554,
+          "step_std": 0.18031251999022554,
+          "outlier_removed": 0,
+          "outlier_step_indices": [],
+          "anchor_lag1_autocorr": -0.01020529437175495,
+          "anchor_residual_std": 0.12539907138277287,
+          "trend_slope_per_frame": -0.0720207317073169,
+          "trend_intercept": 770.3467792682926
+        }
+      },
+      "comparisons": {
+        "r26_vs_r18_step_std_delta": -0.029060593354611114,
+        "r26_vs_r25_step_std_delta": 0.015548293007873693
+      }
+    }
+  },
+  "conclusion": {
+    "main_pitch": "0p8px",
+    "step_std_target_vs_r25": 0.212,
+    "r26_main_step_std": 0.19133608310079342,
+    "r26_beats_r25": true,
+    "r26_main_anchor_autocorr": 0.22588556787990663,
+    "recommendation": "升級 R26 sm035 為新 baseline"
+  }
+}

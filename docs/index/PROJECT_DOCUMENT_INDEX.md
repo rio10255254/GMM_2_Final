@@ -65,8 +65,14 @@ Last updated: 2026-03-20
   curated tracked copies 的總入口
 - `docs/evidence/baseline/`
   支撐目前 baseline promotion 的核心證據
+- `docs/evidence/historical_baselines/`
+  支撐 `R18/R22 -> Round25 -> R26 -> Round29` 的歷史 baseline path 證據
 - `docs/evidence/falsified/`
   支撐 Round31 / Round32 等正式否定性結果的核心證據
+- `docs/evidence/side_directions/`
+  支撐 `TTA C2` 等重要 side-direction falsifications
+- `docs/evidence/analysis/`
+  支撐 correlation / screening 等綜合分析證據
 - `docs/evidence/runtime/`
   小型 canonical runtime truth snapshots
 

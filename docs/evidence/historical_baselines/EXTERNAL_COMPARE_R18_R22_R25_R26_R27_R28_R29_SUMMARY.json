@@ -1,0 +1,188 @@
+{
+  "title": "External GMF Seven-Way Comparison: R18 vs R22h vs R25sw010 vs R26sm035 vs R27sm028 vs R28sm030 vs R29winner",
+  "method": {
+    "posy_source": "GMF_score.txt -> PosY",
+    "step_definition": "step[i] = PosY[i+1] - PosY[i]",
+    "outlier_rule_for_0p8px": "|step - mean(step)| > 3 * std(step)",
+    "anchor_autocorr_definition": "lag-1 Pearson correlation of PosY residual after per-sequence linear detrending"
+  },
+  "models": [
+    "round18_baseline",
+    "round22_hold",
+    "r25_sw010",
+    "r26_sm035",
+    "r27_sm028",
+    "r28_sm030",
+    "r29_winner"
+  ],
+  "results": {
+    "round18_baseline": {
+      "8px": {
+        "raw_step_std": 0.2507193157462043,
+        "filtered_step_std": 0.2507193157462043,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.057390321393432024,
+        "n_frames": 100
+      },
+      "0p8px": {
+        "raw_step_std": 0.28547013995228027,
+        "filtered_step_std": 0.28547013995228027,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.15133173466167044,
+        "n_frames": 60
+      },
+      "0p08px": {
+        "raw_step_std": 0.20937311334483666,
+        "filtered_step_std": 0.20937311334483666,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.19060038273953558,
+        "n_frames": 40
+      }
+    },
+    "round22_hold": {
+      "8px": {
+        "raw_step_std": 0.28865374833865876,
+        "filtered_step_std": 0.28865374833865876,
+        "outliers_removed": 0,
+        "lag1_autocorr": -0.0842639156166005,
+        "n_frames": 100
+      },
+      "0p8px": {
+        "raw_step_std": 0.28545327154971334,
+        "filtered_step_std": 0.28545327154971334,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.202334266409627,
+        "n_frames": 60
+      },
+      "0p08px": {
+        "raw_step_std": 0.18930254354194448,
+        "filtered_step_std": 0.18930254354194448,
+        "outliers_removed": 0,
+        "lag1_autocorr": -0.09734145320891155,
+        "n_frames": 40
+      }
+    },
+    "r25_sw010": {
+      "8px": {
+        "raw_step_std": 0.21145820676157018,
+        "filtered_step_std": 0.21145820676157018,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.10695663769168003,
+        "n_frames": 100
+      },
+      "0p8px": {
+        "raw_step_std": 0.21197266793290367,
+        "filtered_step_std": 0.21197266793290367,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.021065262322816105,
+        "n_frames": 60
+      },
+      "0p08px": {
+        "raw_step_std": 0.16476422698235185,
+        "filtered_step_std": 0.16476422698235185,
+        "outliers_removed": 0,
+        "lag1_autocorr": -0.10098860329786051,
+        "n_frames": 40
+      }
+    },
+    "r26_sm035": {
+      "8px": {
+        "raw_step_std": 0.2010306273464666,
+        "filtered_step_std": 0.2010306273464666,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.08323278743522439,
+        "n_frames": 100
+      },
+      "0p8px": {
+        "raw_step_std": 0.19133608310079342,
+        "filtered_step_std": 0.19133608310079342,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.22588556787990663,
+        "n_frames": 60
+      },
+      "0p08px": {
+        "raw_step_std": 0.18031251999022554,
+        "filtered_step_std": 0.18031251999022554,
+        "outliers_removed": 0,
+        "lag1_autocorr": -0.01020529437175495,
+        "n_frames": 40
+      }
+    },
+    "r27_sm028": {
+      "8px": {
+        "raw_step_std": 0.197978993504864,
+        "filtered_step_std": 0.197978993504864,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.10360793302081316,
+        "n_frames": 100
+      },
+      "0p8px": {
+        "raw_step_std": 0.19625727827542097,
+        "filtered_step_std": 0.19625727827542097,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.3526710960988512,
+        "n_frames": 60
+      },
+      "0p08px": {
+        "raw_step_std": 0.1724027096076911,
+        "filtered_step_std": 0.1724027096076911,
+        "outliers_removed": 0,
+        "lag1_autocorr": -0.12495997127272848,
+        "n_frames": 40
+      }
+    },
+    "r28_sm030": {
+      "8px": {
+        "raw_step_std": 0.220619426002046,
+        "filtered_step_std": 0.220619426002046,
+        "outliers_removed": 0,
+        "lag1_autocorr": -0.00717785966721463,
+        "n_frames": 100
+      },
+      "0p8px": {
+        "raw_step_std": 0.22818379121657925,
+        "filtered_step_std": 0.22818379121657925,
+        "outliers_removed": 0,
+        "lag1_autocorr": -0.12162816596757052,
+        "n_frames": 60
+      },
+      "0p08px": {
+        "raw_step_std": 0.1922278227304551,
+        "filtered_step_std": 0.1922278227304551,
+        "outliers_removed": 0,
+        "lag1_autocorr": -0.2441626320689275,
+        "n_frames": 40
+      }
+    },
+    "r29_winner": {
+      "8px": {
+        "raw_step_std": 0.205359321118682,
+        "filtered_step_std": 0.205359321118682,
+        "outliers_removed": 0,
+        "lag1_autocorr": 0.11952968317702106,
+        "n_frames": 100
+      },
+      "0p8px": {
+        "raw_step_std": 0.23475928493146309,
+        "filtered_step_std": 0.21730952406852758,
+        "outliers_removed": 1,
+        "lag1_autocorr": 0.13116805607936255,
+        "n_frames": 60
+      },
+      "0p08px": {
+        "raw_step_std": 0.13754473302589776,
+        "filtered_step_std": 0.13754473302589776,
+        "outliers_removed": 0,
+        "lag1_autocorr": -0.08158611803411583,
+        "n_frames": 40
+      }
+    }
+  },
+  "conclusion": {
+    "r29_main_step_std": 0.21730952406852758,
+    "r26_main_step_std": 0.19133608310079342,
+    "r29_better_than_r26": false,
+    "r29_autocorr_0p8px": 0.13116805607936255,
+    "recommendation": "hold_r26_sm035"
+  }
+}

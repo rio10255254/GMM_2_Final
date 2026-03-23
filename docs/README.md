@@ -8,6 +8,8 @@
   - 研究路徑圖、視覺化總覽、決策路徑摘要
 - `evidence/`
   - 小型、高價值、可核對的 curated experiment evidence copies
+  - 進一步分成 `baseline/`、`historical_baselines/`、`falsified/`、
+    `side_directions/`、`analysis/`、`runtime/`
 - `history/`
   - 長篇完整歷史敘事與研究反省
 - `index/`
