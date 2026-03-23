@@ -34,10 +34,12 @@ Start here when taking over the project:
 ## Branch Strategy
 
 - `main`: curated shared mainline for tracked code, docs, and governance
-- `baseline/*`: production baselines
+- `baseline/*`: reserved reference namespace for approved baseline milestones
 - `reconstructed/*`: evidence-backed reconstructed governance/reference branches built on top of the curated `2026-03-23` import, clearly labeled as reconstructed and not as recovered historical trees unless that restoration is completed later
-- `research/*`: semantic research branches that preserve intent without pretending to be original git history
-- `sandbox/*`: isolated experimental surfaces such as `R32`
+- `research/*`: semantic research branches for new experiments and strategy work that preserve intent without pretending to be original git history
+- `sandbox/*`: isolated experimental surfaces such as `R32` for work that should not be treated as a baseline candidate yet
+
+Use `research/*` or `sandbox/*` for new research work. Treat `baseline/*` as a protected namespace, not as the default branch family for new experiments.
 
 Do not claim that a reconstructed branch is the original historical git state or a recovered historical tree unless that state is verifiably preserved or later restored file-for-file.
 

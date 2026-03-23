@@ -68,8 +68,10 @@ If an older launcher recreates `000_LONGRUN_*` files at the repository root, tre
 - `snapshot/initial-import-2026-03-23`
   - the first curated Git import on `2026-03-23`
   - this is a repository snapshot of the tracked surface, not a byte-for-byte disk mirror
+- `baseline/*`
+  - reserved reference branches for approved baseline milestones, not the default namespace for new experiments
 - `baseline/r30-b1-dironly`
-  - the current production baseline
+  - the current production baseline within the reserved `baseline/*` namespace
 - `reconstructed/r26-sm035`
   - evidence-backed predecessor baseline
 - `reconstructed/round30-architecture-breakthrough`
@@ -90,6 +92,7 @@ Therefore:
 - reconstructed branches must say that they are reconstructed governance/reference branches built on top of the curated import
 - semantic branches must say that they are semantic
 - no branch should claim to be the original historical git state or a recovered historical tree without direct evidence
+- new research work should normally use `research/*` or `sandbox/*`; `baseline/*` is reserved for approved baseline milestones
 
 ## Sync Cadence
 
