@@ -1,16 +1,21 @@
 # Portable Agent Environment
 
-## Purpose
+## 目的 / Purpose
 
-This package turns the current Codex/PowerShell personalization into a movable workstation kit.
+這個套件把目前的 Codex / PowerShell 個人化環境整理成一個可攜式工作站組件。  
+This package turns the current Codex / PowerShell personalization into a portable workstation kit.
 
-The goal is:
+它的目標是：  
+Its goals are:
 
-- keep the current machine reproducible
-- let a new machine install the same terminal behavior quickly
-- let another AI agent read one place and follow the same setup
+- keep the current machine reproducible  
+  保持目前工作站可重現
+- let a new machine install the same terminal behavior quickly  
+  讓新機器能快速裝回同樣的終端機行為
+- let another AI agent read one place and follow the same setup  
+  讓其他 AI agent 能從單一入口理解並複製同樣設定
 
-## What This Package Covers
+## 這個套件涵蓋什麼 / What This Package Covers
 
 - PowerShell profile wrapper for `codex resume --all`
 - full on-disk Codex session listing
@@ -19,7 +24,7 @@ The goal is:
 - optional installation of a Codex skill that explains setup and repair
 - redacted config and current state export for migration
 
-## What This Package Does Not Auto-Migrate
+## 不會自動搬移的東西 / What This Package Does Not Auto-Migrate
 
 - API keys
 - provider bearer tokens
@@ -27,9 +32,10 @@ The goal is:
 - machine-specific scheduled tasks
 - machine-specific approval history
 
-Those stay manual on purpose.
+這些故意保留為手動處理。  
+These items remain manual on purpose.
 
-## Folder Layout
+## 資料夾結構 / Folder Layout
 
 ```text
 PortableAgentEnv/
@@ -45,7 +51,8 @@ PortableAgentEnv/
       SKILL.md
 ```
 
-When you run `export-current-state.ps1`, it creates a standalone bundle that also contains:
+當你執行 `export-current-state.ps1` 時，會另外產生一個可攜式 bundle，包含：  
+When you run `export-current-state.ps1`, it also creates a standalone migration bundle containing:
 
 ```text
 scripts/
@@ -58,15 +65,15 @@ state/
   default.rules.snapshot
 ```
 
-## Recommended Migration Workflow
+## 建議搬移流程 / Recommended Migration Workflow
 
-### On the current machine
+### 在目前機器上 / On the Current Machine
 
 1. Run `export-current-state.ps1`
 2. Copy the exported bundle to the new machine
 3. Manually add secrets on the new machine
 
-### On the new machine
+### 在新機器上 / On the New Machine
 
 1. Install PowerShell and Codex CLI
 2. Put the exported bundle anywhere convenient
@@ -74,7 +81,7 @@ state/
 4. Update `~/.codex/config.toml` with valid provider/auth settings
 5. Run `verify.ps1`
 
-## Current Machine Install
+## 目前機器安裝方式 / Current Machine Install
 
 Example:
 
@@ -107,7 +114,7 @@ The installer:
 - installs the `portable-agent-env` skill into `~/.codex/skills`
 - optionally imports state files from an exported bundle
 
-## Verify
+## 驗證 / Verify
 
 Example:
 
@@ -124,7 +131,7 @@ The verifier checks:
 - skill install exists
 - AI title cache exists and reports line count
 
-## Export
+## 匯出 / Export
 
 Example:
 
@@ -144,19 +151,22 @@ And also creates a zip package:
 .\Tools\PortableAgentEnv\portable-bundle.zip
 ```
 
-## Notes About Telegram Bridge
+## 關於 Telegram Bridge / Notes About Telegram Bridge
 
+Telegram bridge 被視為可選的附加元件。  
 Telegram bridge is treated as an optional companion component.
 
-This package does not auto-install the bridge because it needs:
+這個套件不會自動安裝 bridge，因為它需要：  
+This package does not auto-install the bridge because it depends on:
 
 - Telegram token
 - chat routing choices
 - scheduled task decisions
 
+如果需要，請用它自己的 installer 個別搬移，再讓它指向同一個 `~/.codex` home。  
 If needed, migrate the bridge separately with its own installer and then point it at the same `~/.codex` home.
 
-## Operational Rule
+## 維護規則 / Operational Rule
 
 For future maintenance:
 

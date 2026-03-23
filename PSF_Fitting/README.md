@@ -1,4 +1,4 @@
-# PSF_Fitting — 說明文件
+# PSF_Fitting — 說明文件 / Documentation
 
 ## 概覽
 
@@ -314,3 +314,172 @@ A: BADS 工具箱未安裝或未加入 Path。至 [BADS GitHub](https://github.c
 | 2025-09-24 | 單張版 (`HDR_fitting_2D.m`) 完成 2D 化 |
 | 2025-10 | WholeFOV 批次版加入 Warm-start、Precompute 優化、Tilt 鎖定 |
 | 2026-03-04 | 路徑全面改為相對路徑，整合至 `d:\GMM_2_Final\PSF_Fitting\`；新增本說明文件 |
+
+---
+
+## English Companion Guide
+
+### Overview
+
+This folder implements a full workflow for describing aberrations with Zernike
+polynomials, fitting a 2D PSF with BADS optimization, and validating the fitted
+PSF through Wiener deconvolution.
+
+The overall workflow has three stages:
+
+1. **PSF simulation**
+   - generate a theoretical PSF as the optical baseline
+2. **PSF aberration fitting**
+   - fit Zernike coefficients so the simulated image matches measured data
+3. **Deconvolution validation**
+   - use the fitted PSF in Wiener deconvolution and compare against SEM ground
+     truth
+
+### Folder Structure
+
+Important top-level files:
+
+- `HDR_fitting_2D.m`
+  - single-image PSF fitting
+- `HDR_fitting_2D_WholeFOV.m`
+  - full-FOV batch PSF fitting (recommended main path)
+- `README.md`
+  - this document
+
+Important subfolders:
+
+- `SimulatePSF/`
+  - theoretical PSF simulation inputs and outputs
+- `Crop_circle_FreqFiltered/`
+  - full-FOV batch input images and fitting outputs
+- `SingleImage_Input/`
+  - single-image fitting input set
+- `Deconvolution/`
+  - Wiener deconvolution validation assets and outputs
+
+### Before You Start
+
+Make sure:
+
+1. MATLAB current folder is set to:
+   `d:\GMM_2_Final\PSF_Fitting\`
+2. `SimulatePSF/` is added to the MATLAB path so `normlz.m` can be resolved
+3. required toolboxes / packages are available:
+   - BADS
+   - Image Processing Toolbox
+   - Parallel Computing Toolbox (for GPU-enabled fitting)
+
+### Stage 1: PSF Simulation
+
+Main script:
+
+- `SimulatePSF/psf_multiwavelength_2D.m`
+
+Use it when you need to regenerate the theoretical PSF from optical system
+parameters such as NA, magnification, wavelength, and sampling resolution.
+
+The main output is:
+
+- `SimulatePSF/psf_multi.mat`
+
+If the optical setup has not changed, you can usually reuse the existing
+`psf_multi.mat`.
+
+### Stage 2A: Single-Image PSF Fitting
+
+Main script:
+
+- `HDR_fitting_2D.m`
+
+Inputs:
+
+- theoretical PSF from `SimulatePSF/psf_multi.mat`
+- measured image from `SingleImage_Input/`
+- GT image from `SingleImage_Input/GT/`
+
+This path fits one image at a time and writes a fitted PSF `.mat` file such as
+`PSF_fitted_2D_0924.mat`.
+
+### Stage 2B: Whole-FOV Batch Fitting
+
+Main script:
+
+- `HDR_fitting_2D_WholeFOV.m`
+
+Inputs:
+
+- theoretical PSF
+- 100 full-FOV BMP images in `Crop_circle_FreqFiltered/`
+- GT image in `Crop_circle_FreqFiltered/GT/`
+
+This is the recommended path because it:
+
+- processes the full 10x10 FOV grid
+- supports warm-starting from the previous image
+- precomputes shared pieces for speed
+- stores the final result as a structured FOV PSF stack
+
+Main outputs:
+
+- `Crop_circle_FreqFiltered/Fits/batch_results.csv`
+- `Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
+
+### Visualizing the Fitted FOV Grid
+
+The repository root provides:
+
+- `visualize_fitted_psf_grid.m`
+
+Use it to render the fitted FOV stack as a compact 2D visualization. This is
+useful for quickly seeing whether the PSF shape varies smoothly or irregularly
+across the full field of view.
+
+### Stage 3: Wiener Deconvolution Validation
+
+This stage lives in Section 2 of the fitting scripts and can be run separately.
+
+Inputs:
+
+- fitted PSF
+- test image
+- SEM ground truth
+
+The validation searches for a good Wiener NSR setting and writes the final
+deconvolved image to:
+
+- `Deconvolution/Results/deconv_result_2D.tiff`
+
+### Single-Image vs Whole-FOV Difference
+
+The two fitting scripts differ in important ways:
+
+- the single-image version fits one image only
+- the WholeFOV version fits 100 images in a 10x10 grid
+- the WholeFOV version uses warm-starting and precompute
+- the mapping / handling of tilt terms differs
+- the weighting of gradient-related fitting terms also differs
+
+If you are working with the repository as it is used today, the batch
+WholeFOV path is the more important operational workflow.
+
+### Common Issues
+
+Typical setup problems include:
+
+- MATLAB cannot find `normlz`
+- current folder is not `PSF_Fitting/`
+- the expected 10x10 image count is wrong
+- GPU / `gpuArray` support is unavailable
+- BADS is not installed or not on the MATLAB path
+
+These are usually environment or path issues rather than fitting-logic issues.
+
+### Version Notes
+
+- `2025-09-24`
+  - single-image 2D fitting version completed
+- `2025-10`
+  - WholeFOV batch fitting added warm-start, precompute, and tilt locking
+- `2026-03-04`
+  - paths were normalized to relative-path usage under
+    `d:\GMM_2_Final\PSF_Fitting\` and this documentation was added
