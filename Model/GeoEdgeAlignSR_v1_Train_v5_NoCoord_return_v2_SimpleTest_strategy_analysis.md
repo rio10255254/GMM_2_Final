@@ -1,4 +1,4 @@
-# 訓練策略分析 (v5 SimpleTest)
+# 訓練策略分析 (v5 SimpleTest) / Training Strategy Analysis
 
 分析目標: `Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py`
 
@@ -254,3 +254,121 @@ E10 之後:
 在這個「E1-5 關閉 Eq、E6 開始 ramp Eq」的精確 schedule 下，最站得住腳的解釋是:
 
 > 邊緣變厚/發散的主要原因，是 epoch 5 之後啟動的位移等變幾何正則 (`EqGeom`) 會自然偏好較低的 subpixel 敏感度 (常見實現方式就是較厚/較平滑的邊)。E10 之後 physics/weak-PSF 與 detail 機制的介入，會進一步影響中後期的邊緣型態。
+
+---
+
+## English Companion Summary
+
+### Goal of This Note
+
+This note explains why the `v5 SimpleTest` training script can produce very
+sharp reconstructions in early epochs and then gradually drift toward thicker,
+blurrier edges later.
+
+Observed behavior:
+
+- Epoch 1-5: reconstructions look very sharp and clean
+- Later epochs: edges become thicker, softer, and more diffuse
+
+### Main Interpretation
+
+The most likely reason is the **EqGeom schedule**.
+
+In this script:
+
+- epochs 1-5 keep the equivariance term effectively off
+- after epoch 5, the geometry-only shift-equivariance regularizer begins to ramp
+- after epoch 10, additional physics-related constraints and weak-PSF schedules
+  start to matter more
+
+That combination encourages a solution that is more stable under subpixel
+shifts, but often less razor-sharp visually.
+
+### What the Script Is Really Optimizing
+
+The script is not trying to maximize visual sharpness at all costs.
+It is trying to find a stable basin that balances:
+
+- registration / phase consistency
+- low artifact behavior
+- physically plausible reconstruction
+- supervised pixel and edge recovery
+
+So if a sharper edge becomes too unstable under the equivariance geometry term,
+the optimizer may prefer a slightly thicker edge that is more predictable under
+subpixel warps.
+
+### Why Epoch 5 Is the Turning Point
+
+This is the key schedule interaction:
+
+- **E1-E5**
+  - equivariance geometry pressure is effectively off
+- **E6-E20**
+  - equivariance geometry ramps up
+- **E11+**
+  - physics-forward and weak-PSF schedules start to become more active
+
+That timing matches the reported visual transition very closely.
+
+### Practical Reading of the Loss Design
+
+The dominant parts of the loss in `SimpleTest` are:
+
+- reconstruction
+- gradient magnitude matching
+- simple edge orientation alignment
+- geometry-only shift-equivariant consistency
+- statistical and band consistency
+- high-frequency Laplacian detail terms
+- physics-forward consistency
+- edge-local detail rescue terms
+
+The important point is that these terms do **not** all push in the same visual
+direction. A term that rewards consistency under subpixel shift can naturally
+push against maximum apparent sharpness.
+
+### What Likely Causes the Edge Thickening
+
+The strongest explanation is:
+
+1. the equivariant geometry term starts ramping after epoch 5
+2. subpixel warping and interpolation punish overly sharp, unstable edge peaks
+3. the model learns a compromise with lower subpixel sensitivity
+4. visually, that compromise appears as thicker / smoother edges
+
+Later schedules involving physics and weak-PSF modules may further reinforce
+that behavior.
+
+### How To Validate This Hypothesis Without Editing Code
+
+Good checks include:
+
+- inspect console logs for the equivariance factor ramp
+- inspect batch logs for `loss_eqgeom` and related terms
+- inspect guard triggers such as thickening or band guards
+- compare monitor outputs around the epoch-5 to epoch-20 range
+
+If visual degradation correlates strongly with the EqGeom ramp, the diagnosis is
+much more convincing.
+
+### If You Want To Preserve Early Sharpness Longer
+
+The most plausible adjustment directions would be:
+
+- lower `W_EQ_GEOM`
+- lower `EQ_PROB`
+- delay the equivariance schedule
+- shrink the equivariant shift range
+- make thickening guards trigger earlier or more reliably
+- carefully strengthen detail rescue terms without reintroducing artifacts
+
+Even without code changes, another practical workaround is simply selecting an
+earlier checkpoint if that checkpoint gives the best trade-off for your actual
+downstream use.
+
+### One-Sentence Bottom Line
+
+The sharp-to-thick transition is most plausibly caused by the post-epoch-5
+equivariance geometry regularizer, with later physics / weak-PSF schedules
+further shaping the mid-to-late training edge profile.

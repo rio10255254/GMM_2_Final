@@ -1,4 +1,4 @@
-# Model — 說明文件
+# Model — 說明文件 / Documentation
 
 ## 概覽
 
@@ -319,3 +319,174 @@ A: 確認使用 `ShiftSafeUpsample`（預設 `use_upsample_conv=True`）而非�
 | v5_NoCoord | 2025-10 | 移除 CoordConv（發現對邊界對齊無益） |
 | return_v2_SimpleTest | 2025-11 | Zeros padding + mask erosion 修正邊界偽影；GMF 指標監控 |
 | 2026-03-04 | — | 整合至 `d:\GMM_2_Final\`，新增本說明文件 |
+
+---
+
+## English Companion Guide
+
+### Overview
+
+This folder contains the PSF-informed boundary-faithful super-resolution /
+deconvolution model family used in this repository.
+
+Model name: **GeoEdgeAlignSR_v1_v5_NoCoord**
+
+Core design goals:
+
+- **Boundary geometry fidelity**: edge position and width should not drift or blur because of the model
+- **PSF-informed physics prior**: Wiener-style deconvolution is injected before the U-Net so optical blur can be reversed in a physically guided way
+- **Translation equivariance**: anti-aliasing upsampling is used to suppress checkerboard artifacts and reduce subpixel sensitivity
+
+### File Layout
+
+Main files in this folder:
+
+- `GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py`
+  - model definition
+- `GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py`
+  - training entry point
+- `GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py`
+  - inference entry point
+- `GeoEdgeAlignSR_v1_Utils.py`
+  - helper utilities
+- `Test_Image/VisionTop_20251029182653732.bmp`
+  - a small canonical sample image kept for quick checks
+
+Related paths outside this folder:
+
+- `Training_Data/`
+  - supervised source / label training data
+- `PSF_Fitting/`
+  - fitted PSF artifacts used by the model
+- `Traing_Progress/`
+  - training outputs such as checkpoints and logs
+- `Reconstruct_Progress/`
+  - inference outputs
+
+> Note: `Traing_Progress/` is intentionally misspelled for historical
+> compatibility. Do not rename it unless all dependent code is updated.
+
+### Architecture Summary
+
+The model is a U-Net-like SR backbone with optional physics-guided modules:
+
+- `PSFDeconvPhysics`
+  - a strong Wiener-style deconvolution layer before the encoder
+- `WeakPSFDeconvBlock`
+  - a lighter PSF-aware decoder-side deblur module
+- `ShiftSafeUpsample`
+  - anti-aliasing upsampling designed to reduce checkerboard artifacts
+- `OpticalBandpassFilter`
+  - a training-time optical cutoff simulator that suppresses non-physical high frequencies
+
+In short, the model is not optimized only for visual sharpness. It is designed
+to preserve geometry in a way that remains useful for downstream registration /
+GMF-style localization.
+
+### Training
+
+Typical training command:
+
+```bash
+cd d:\GMM_2_Final\Model
+python GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py
+```
+
+Before training, confirm:
+
+1. `Training_Data/tra_src_ring/` and `Training_Data/tra_lbl_ring/` both exist
+2. `PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat` exists
+
+Important training facts:
+
+- Python 3.12
+- CUDA GPU expected for training
+- `TrainConfig` controls LR, crop size, epochs, PSF path, and weak-PSF settings
+- outputs are written under `../Traing_Progress/`
+
+The training loss is a weighted mixture of:
+
+- reconstruction
+- gradient magnitude matching
+- edge orientation alignment
+- translation-equivariant geometry consistency
+- statistical / band consistency
+- high-frequency Laplacian recovery
+
+### Inference
+
+Typical inference command:
+
+```bash
+cd d:\GMM_2_Final\Model
+python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py
+```
+
+Inference behavior:
+
+- automatically finds the latest `best_tradeoff.pth.tar` under
+  `../Traing_Progress/` unless you override it
+- defaults to `../Training_Data/tra_src_ring/` as input
+- writes outputs under `../Reconstruct_Progress/reconstruct_progress_{timestamp}/`
+
+Useful CLI options include:
+
+- `--weights`
+- `--input-dir`
+- `--device`
+- `--select-mode`
+- `--psf-from-ckpt`
+- `--psf-fitted-path`
+
+### Key Utilities
+
+Frequently used helper functions in `GeoEdgeAlignSR_v1_Utils.py` include:
+
+- `read_gray_u8`
+- `write_gray_u8`
+- `pad_to_multiple`
+- `unpad`
+- `shift_tensor_subpixel`
+- `sobel_magnitude`
+- `apply_hann_and_mask`
+
+### Data Format
+
+Training data convention:
+
+- source images:
+  `../Training_Data/tra_src_ring/`
+- target images:
+  `../Training_Data/tra_lbl_ring/`
+
+Images are grayscale and are typically trained with random `256x256` patches.
+
+### FAQ
+
+**Q: Training cannot find the PSF file.**  
+A: Check that
+`PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
+exists.
+
+**Q: Inference cannot find a checkpoint.**  
+A: Pass `--weights` explicitly if the automatic search under
+`../Traing_Progress/` does not find a valid run.
+
+**Q: I see a PSF shape mismatch.**  
+A: Inference defaults to `--psf-from-ckpt`. If needed, switch to an explicit
+PSF file with `--no-psf-from-ckpt --psf-fitted-path ...`.
+
+**Q: Output shows checkerboard artifacts.**  
+A: Confirm the model is using `ShiftSafeUpsample` rather than the older
+upsampling path.
+
+### Version Notes
+
+- `v5`
+  - weak PSF block, ShiftSafeUpsample, and scheduled EQ loss
+- `v5_NoCoord`
+  - CoordConv removed because it did not help boundary alignment
+- `return_v2_SimpleTest`
+  - boundary artifact fixes and GMF-oriented monitoring
+- `2026-03-04`
+  - integrated into `d:\GMM_2_Final\` and documented here
