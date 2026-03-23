@@ -63,6 +63,8 @@ docs\
 ├── README.md
 ├── analysis\
 │   └── RESEARCH_PATHS.md
+├── evidence\
+│   └── README.md
 ├── history\
 │   └── PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md
 ├── index\
@@ -77,6 +79,8 @@ docs\
 
 - `docs/analysis/`
   研究路徑圖、決策路徑總覽、GitHub 可視化入口
+- `docs/evidence/`
+  精選實驗證據層；追蹤小型、高價值、可核對的正式證據副本
 - `docs/history/`
   完整歷史敘事與研究反省
 - `docs/index/`
@@ -106,6 +110,7 @@ flowchart TD
 - 新策略嘗試的正式文檔化
 - baseline / verdict / active direction 的變更
 - 重要實驗分析、決策 memo、研究路徑圖
+- `docs/evidence/` 內的小型正式證據層
 - root canonical docs、policy、以及 `docs/` 內的導航/歷史/legacy curated copies
 
 不應該同步到 GitHub 的內容：
@@ -157,3 +162,4 @@ GitHub-side ruleset / project 定義同步放在 `.github/governance/`。
 GitHub 研究控制台目前位於 `https://github.com/users/rio10255254/projects/1`。
 控制台目前已補成按日期排列的核心研究時間線，可直接用來看歷史演進。
 新增實驗時的單頁流程請看 `docs/index/NEW_EXPERIMENT_SOP.md`。
+重要實驗證據的 curated tracked copies 請看 `docs/evidence/README.md`。

@@ -33,6 +33,8 @@ Last updated: 2026-03-20
   docs 區入口與子目錄導覽
 - `docs/analysis/RESEARCH_PATHS.md`
   研究路徑圖、Mermaid 可視化入口
+- `docs/evidence/README.md`
+  精選實驗證據層的入口與用途說明
 - `docs/index/PROJECT_DOCUMENT_INDEX.md`
   文件責任邊界與導覽索引
 - `docs/index/NEW_EXPERIMENT_SOP.md`
@@ -56,6 +58,17 @@ Last updated: 2026-03-20
 - `ESTIMATOR_POLICY.json`
 
 這份檔案仍是 shared mainline 的 machine-readable policy truth。
+
+## Evidence Surface
+
+- `docs/evidence/README.md`
+  curated tracked copies 的總入口
+- `docs/evidence/baseline/`
+  支撐目前 baseline promotion 的核心證據
+- `docs/evidence/falsified/`
+  支撐 Round31 / Round32 等正式否定性結果的核心證據
+- `docs/evidence/runtime/`
+  小型 canonical runtime truth snapshots
 
 ## Legacy Bridge
 
