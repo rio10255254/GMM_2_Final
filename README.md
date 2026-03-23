@@ -150,3 +150,5 @@ flowchart TD
 - 本 repo 不會假造不存在的原始 git 歷史
 
 詳見 `REPO_GOVERNANCE.md` 與 `docs/index/PROJECT_DOCUMENT_INDEX.md`。
+
+GitHub-side ruleset / project 定義同步放在 `.github/governance/`。
