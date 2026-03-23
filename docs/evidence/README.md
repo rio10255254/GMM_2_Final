@@ -66,6 +66,9 @@ conclusions, and runtime truth.
   - evidence that supports screening logic or cross-run analytical conclusions
 - `runtime/`
   - small canonical runtime truth snapshots that are worth tracking
+- `visuals/`
+  - compact side-by-side comparison sheets for a very small number of
+    representative image cases
 - `EVIDENCE_MAP.md`
   - one-file map of which evidence supports which verdict or branch
 
@@ -119,6 +122,18 @@ conclusions, and runtime truth.
 - `side_directions/TTA_VS_BASELINE_CROSS5_COMPARISON.json`
   - preserves the formal rejection of the `TTA C2` side direction
 
+## Visual Evidence
+
+- `visuals/comparison_0p8px_case_01.png`
+  - compares `R26`, `Round30 baseline`, `Round31 regression`, and `Round32 fail`
+    on `VisionTop_20251029185330879.bmp`
+- `visuals/comparison_0p8px_case_02.png`
+  - repeats the same four-line comparison on
+    `VisionTop_20251029185655191.bmp`
+
+See `visuals/README.md` for the visual curation rule and why the repository
+keeps compact PNG sheets instead of raw BMP collections.
+
 ## Curation Rule
 
 This directory is intentionally selective.
@@ -126,6 +141,8 @@ This directory is intentionally selective.
 - It should grow when a document materially supports the current baseline,
   a key historical baseline transition, a major falsified line, or a durable
   analytical conclusion.
+- Visual evidence should stay extremely small and selective: a few labeled
+  comparison sheets are useful, but raw reconstruction sets do not belong here.
 - It should not grow just because a report exists in an experiment directory.
 - Per-candidate audits, batch manifests, auto-tune noise, images, and bulk
   raw outputs stay outside Git unless there is a strong reviewable reason to

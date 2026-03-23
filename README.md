@@ -172,3 +172,4 @@ GitHub 研究控制台目前位於 `https://github.com/users/rio10255254/project
 新增實驗時的單頁流程請看 `docs/index/NEW_EXPERIMENT_SOP.md`。
 重要實驗證據的 curated tracked copies 請看 `docs/evidence/README.md`。
 如果要一眼看懂「哪份證據支撐哪個結論」，請看 `docs/evidence/EVIDENCE_MAP.md`。
+如果要直接看代表性影像對照，請看 `docs/evidence/visuals/README.md`。
