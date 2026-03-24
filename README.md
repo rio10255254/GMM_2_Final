@@ -37,10 +37,10 @@ This is not a generic image-enhancement project.
 真正目標是：  
 The actual goal is:
 
-- 對 annulus 邊界做可定位的幾何重建  
-- to reconstruct annulus boundaries in a geometrically localizable way
-- 讓固定 external GMF 在不同位移尺度下都能穩定定位  
-- to keep a fixed external GMF stable across multiple displacement scales
+- 對 annulus 邊界做可定位的幾何重建
+  to reconstruct annulus boundaries in a geometrically localizable way
+- 讓固定 external GMF 在不同位移尺度下都能穩定定位
+  to keep a fixed external GMF stable across multiple displacement scales
 
 工程上真正優化的不是「看起來更銳利」，而是 **whole-annulus geometry 是否更對 external GMF 友善**。  
 In practice, the real optimization target is not “making the image look sharper”, but **making the whole-annulus geometry more GMF-friendly**.
@@ -96,16 +96,16 @@ docs\
 用途分工如下：  
 The docs tree is divided as follows:
 
-- `docs/analysis/`：研究路徑圖、決策路徑總覽、GitHub 可視化入口  
-- `docs/analysis/`: research-path and visualization material
-- `docs/evidence/`：精選實驗證據層；追蹤小型、高價值、可核對的正式證據副本  
-- `docs/evidence/`: curated formal evidence copies
-- `docs/history/`：完整歷史敘事與研究反省  
-- `docs/history/`: the long historical narrative
-- `docs/index/`：文件責任邊界與導航索引  
-- `docs/index/`: navigation and responsibility mapping
-- `docs/runtime/legacy/`：已追蹤的 legacy root status 快照；不是當前 canonical runtime surface  
-- `docs/runtime/legacy/`: tracked legacy runtime snapshots, not current canonical runtime truth
+- `docs/analysis/`：研究路徑圖、決策路徑總覽、GitHub 可視化入口
+  `docs/analysis/`: research-path and visualization material
+- `docs/evidence/`：精選實驗證據層；追蹤小型、高價值、可核對的正式證據副本
+  `docs/evidence/`: curated formal evidence copies
+- `docs/history/`：完整歷史敘事與研究反省
+  `docs/history/`: the long historical narrative
+- `docs/index/`：文件責任邊界與導航索引
+  `docs/index/`: navigation and responsibility mapping
+- `docs/runtime/legacy/`：已追蹤的 legacy root status 快照；不是當前 canonical runtime surface
+  `docs/runtime/legacy/`: tracked legacy runtime snapshots, not current canonical runtime truth
 
 ## Research Path Overview
 
@@ -152,14 +152,14 @@ The following remain as intentional exceptions:
 
 ## Current Workflow Boundaries
 
-- root shared 主線不再繼續吸收 `R32` 專用 loader / audit / launcher / monitor  
-- the root shared mainline no longer absorbs `R32`-specific loader / audit / launcher / monitor logic
-- `R32` 專用執行面以 `Experiments\R32Sandbox\` 為 canonical surface  
-- the dedicated `R32` execution surface is `Experiments\R32Sandbox\`
-- 已追蹤的 root `000_LONGRUN_*_STATUS.*` 快照現已移到 `docs/runtime/legacy/root_status/`  
-- tracked root `000_LONGRUN_*_STATUS.*` snapshots now live under `docs/runtime/legacy/root_status/`
-- 若舊腳本在 root 再生成 `000_LONGRUN_*`，那些檔案一律視為**本地 runtime 輸出**，不再是 Git-tracked canonical docs  
-- if older scripts regenerate `000_LONGRUN_*` at the root, treat them as local runtime outputs only
+- root shared 主線不再繼續吸收 `R32` 專用 loader / audit / launcher / monitor
+  the root shared mainline no longer absorbs `R32`-specific loader / audit / launcher / monitor logic
+- `R32` 專用執行面以 `Experiments\R32Sandbox\` 為 canonical surface
+  the dedicated `R32` execution surface is `Experiments\R32Sandbox\`
+- 已追蹤的 root `000_LONGRUN_*_STATUS.*` 快照現已移到 `docs/runtime/legacy/root_status/`
+  tracked root `000_LONGRUN_*_STATUS.*` snapshots now live under `docs/runtime/legacy/root_status/`
+- 若舊腳本在 root 再生成 `000_LONGRUN_*`，那些檔案一律視為**本地 runtime 輸出**，不再是 Git-tracked canonical docs
+  if older scripts regenerate `000_LONGRUN_*` at the root, treat them as local runtime outputs only
 
 ## Branch Strategy
 

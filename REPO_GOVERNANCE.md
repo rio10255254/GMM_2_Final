@@ -50,12 +50,12 @@ Expected untracked content:
 - `Traing_Progress/`
 - `Training_Data/`
 - `_deployment_package/`
-- 各類 backup / archive  
-- backup / archive directories
-- `weights/`、`artifacts/`、`logs/`、`reconstructions/`、`gmf_results/` 等 bulk 子目錄  
-- bulk subdirectories such as `weights/`, `artifacts/`, `logs/`, `reconstructions/`, and `gmf_results/`
-- root 再生成的 `000_LONGRUN_*` runtime outputs  
-- regenerated root runtime outputs such as `000_LONGRUN_*`
+- 各類 backup / archive
+  backup / archive directories
+- `weights/`、`artifacts/`、`logs/`、`reconstructions/`、`gmf_results/` 等 bulk 子目錄
+  bulk subdirectories such as `weights/`, `artifacts/`, `logs/`, `reconstructions/`, and `gmf_results/`
+- root 再生成的 `000_LONGRUN_*` runtime outputs
+  regenerated root runtime outputs such as `000_LONGRUN_*`
 
 ## Documentation Layout / 文件分層
 
@@ -121,16 +121,16 @@ This repository did not start from a preserved original git history.
 因此：  
 Therefore:
 
-- reconstructed branches 必須清楚說明自己是 reconstructed governance/reference branches  
-- reconstructed branches must explicitly identify themselves as reconstructed governance/reference branches
-- semantic branches 必須清楚說明自己是 semantic  
-- semantic branches must explicitly identify themselves as semantic
-- 任何 branch 都不能假裝自己是原始歷史 git state，除非有直接證據  
-- no branch should claim to be the original historical git state or a recovered historical tree without direct evidence
-- 新研究工作預設應使用 `research/*` 或 `sandbox/*`  
-- new research work should normally use `research/*` or `sandbox/*`
-- `baseline/*` 只保留給已核准 baseline 里程碑  
-- `baseline/*` is reserved for approved baseline milestones only
+- reconstructed branches 必須清楚說明自己是 reconstructed governance/reference branches
+  reconstructed branches must explicitly identify themselves as reconstructed governance/reference branches
+- semantic branches 必須清楚說明自己是 semantic
+  semantic branches must explicitly identify themselves as semantic
+- 任何 branch 都不能假裝自己是原始歷史 git state，除非有直接證據
+  no branch should claim to be the original historical git state or a recovered historical tree without direct evidence
+- 新研究工作預設應使用 `research/*` 或 `sandbox/*`
+  new research work should normally use `research/*` or `sandbox/*`
+- `baseline/*` 只保留給已核准 baseline 里程碑
+  `baseline/*` is reserved for approved baseline milestones only
 
 ## Sync Cadence / 同步節奏
 
@@ -175,11 +175,11 @@ They keep local documentation aligned with GitHub server-side rulesets and the p
 目前狀態：  
 Current status:
 
-- `main` 與 `baseline/*` 的 rulesets 已經套用在 GitHub 上  
-- repository rulesets for `main` and `baseline/*` are already applied on GitHub
-- `baseline/*` 已被視為保留的 reference namespace，不是一般 collaboration branch family  
-- `baseline/*` is treated as a reserved reference namespace rather than a normal collaboration branch family
-- GitHub Project `GMM Research Control Plane` 已存在：`https://github.com/users/rio10255254/projects/1`  
-- the GitHub Project `GMM Research Control Plane` exists at `https://github.com/users/rio10255254/projects/1`
-- 之後若還要自動修改 Project，仍需要具有 `project` / `read:project` scope 的 token  
-- future automated Project changes still require a token with `project` / `read:project` scope
+- `main` 與 `baseline/*` 的 rulesets 已經套用在 GitHub 上
+  repository rulesets for `main` and `baseline/*` are already applied on GitHub
+- `baseline/*` 已被視為保留的 reference namespace，不是一般 collaboration branch family
+  `baseline/*` is treated as a reserved reference namespace rather than a normal collaboration branch family
+- GitHub Project `GMM Research Control Plane` 已存在：`https://github.com/users/rio10255254/projects/1`
+  the GitHub Project `GMM Research Control Plane` exists at `https://github.com/users/rio10255254/projects/1`
+- 之後若還要自動修改 Project，仍需要具有 `project` / `read:project` scope 的 token
+  future automated Project changes still require a token with `project` / `read:project` scope

@@ -16,12 +16,12 @@ This folder implements a full workflow for describing aberrations with Zernike p
 └─────────────────────┘     └──────────────────────────┘     └─────────────────────┘
 ```
 
-- **階段 1** 根據光學系統參數計算理論（無像差）PSF 作為初始基底  
-- **Stage 1** generates a theoretical aberration-free PSF from the optical system parameters.
-- **階段 2** 在此基底上加入 Zernike 像差擾動，令模擬影像與量測影像的 Loss 最小化  
-- **Stage 2** perturbs that baseline PSF with Zernike aberrations and minimizes the loss between simulated and measured images.
-- **階段 3** 用擬合出的 PSF 對實驗影像執行 Wiener 反捲積，並與 SEM Ground Truth 比較  
-- **Stage 3** applies Wiener deconvolution with the fitted PSF and compares the result against SEM ground truth.
+- **階段 1** 根據光學系統參數計算理論（無像差）PSF 作為初始基底
+  **Stage 1** generates a theoretical aberration-free PSF from the optical system parameters.
+- **階段 2** 在此基底上加入 Zernike 像差擾動，令模擬影像與量測影像的 Loss 最小化
+  **Stage 2** perturbs that baseline PSF with Zernike aberrations and minimizes the loss between simulated and measured images.
+- **階段 3** 用擬合出的 PSF 對實驗影像執行 Wiener 反捲積，並與 SEM Ground Truth 比較
+  **Stage 3** applies Wiener deconvolution with the fitted PSF and compares the result against SEM ground truth.
 
 ---
 
@@ -67,18 +67,18 @@ PSF_Fitting/
         └── deconv_result_2D.tiff
 ```
 
-- `HDR_fitting_2D.m`：單張影像 PSF 擬合主程式。  
-- `HDR_fitting_2D.m`: Main entry point for single-image PSF fitting.
-- `HDR_fitting_2D_WholeFOV.m`：全 FOV 批次 PSF 擬合主程式，也是目前推薦的主要路徑。  
-- `HDR_fitting_2D_WholeFOV.m`: Main entry point for full-FOV batch PSF fitting and the recommended primary workflow.
-- `SimulatePSF/`：理論 PSF 模擬輸入與輸出。  
-- `SimulatePSF/`: Inputs and outputs for theoretical PSF simulation.
-- `Crop_circle_FreqFiltered/`：全 FOV 批次擬合的輸入影像與 fitting 輸出。  
-- `Crop_circle_FreqFiltered/`: Input images and fitting outputs for the full-FOV batch workflow.
-- `SingleImage_Input/`：單張版擬合的輸入集合。  
-- `SingleImage_Input/`: Input set for the single-image fitting path.
-- `Deconvolution/`：Wiener 反捲積驗證相關資產與輸出。  
-- `Deconvolution/`: Wiener deconvolution validation assets and outputs.
+- `HDR_fitting_2D.m`：單張影像 PSF 擬合主程式。
+  `HDR_fitting_2D.m`: Main entry point for single-image PSF fitting.
+- `HDR_fitting_2D_WholeFOV.m`：全 FOV 批次 PSF 擬合主程式，也是目前推薦的主要路徑。
+  `HDR_fitting_2D_WholeFOV.m`: Main entry point for full-FOV batch PSF fitting and the recommended primary workflow.
+- `SimulatePSF/`：理論 PSF 模擬輸入與輸出。
+  `SimulatePSF/`: Inputs and outputs for theoretical PSF simulation.
+- `Crop_circle_FreqFiltered/`：全 FOV 批次擬合的輸入影像與 fitting 輸出。
+  `Crop_circle_FreqFiltered/`: Input images and fitting outputs for the full-FOV batch workflow.
+- `SingleImage_Input/`：單張版擬合的輸入集合。
+  `SingleImage_Input/`: Input set for the single-image fitting path.
+- `Deconvolution/`：Wiener 反捲積驗證相關資產與輸出。
+  `Deconvolution/`: Wiener deconvolution validation assets and outputs.
 
 ---
 
@@ -203,12 +203,12 @@ Main script: `HDR_fitting_2D.m`
 輸入包括：  
 Inputs include:
 
-- `SimulatePSF/psf_multi.mat` 的理論 PSF  
-- the theoretical PSF from `SimulatePSF/psf_multi.mat`
-- `SingleImage_Input/` 的量測影像  
-- the measured image from `SingleImage_Input/`
-- `SingleImage_Input/GT/` 的 GT 影像  
-- the GT image from `SingleImage_Input/GT/`
+- `SimulatePSF/psf_multi.mat` 的理論 PSF
+  the theoretical PSF from `SimulatePSF/psf_multi.mat`
+- `SingleImage_Input/` 的量測影像
+  the measured image from `SingleImage_Input/`
+- `SingleImage_Input/GT/` 的 GT 影像
+  the GT image from `SingleImage_Input/GT/`
 
 這條流程一次只擬合一張影像，並輸出一份 fitted PSF `.mat`，例如 `PSF_fitted_2D_0924.mat`。  
 This path fits one image at a time and writes one fitted PSF `.mat` file, such as `PSF_fitted_2D_0924.mat`.
