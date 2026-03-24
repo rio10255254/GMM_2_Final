@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/Scripts/python.exe \"D:/GMM_2_Final/_deployment_package/GeoEdge_R26_使用包/輸出結果/驗證分析/R26_external_single_bundle/generate_advanced_analysis.py\")",
+      "Bash(.venv/Scripts/python.exe -c \":*)",
+      "Bash(sort -k2)",
+      "Bash(cd:*)",
+      "Bash(find /d/GMM_2_Final/_deployment_package/GeoEdge_R26_使用包/docs/evidence/ -name *R18*R26* -o -name *EXTERNAL_COMPARE*)"
+    ]
+  }
+}
