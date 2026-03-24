@@ -24,10 +24,14 @@ For the full historical context, read `docs/history/PROJECT_FULL_HISTORY_AND_STR
 
 ## One-Screen Snapshot / 一頁快照
 
-- production baseline / 目前 production baseline：`Round30 / r30_b1_dironly`
-- `Round32` lives in `Experiments/R32Sandbox/`
-- `Round32` internal winner `r32_real_eq_finetune` completed external compare and the verdict is **FAIL**
-- if `R32` continues, the next step must be a new sandbox branch or new mechanism, not a repair of the falsified winner
+- 目前 production baseline：`Round30 / r30_b1_dironly`
+  The current production baseline is `Round30 / r30_b1_dironly`.
+- `Round32` 已切到 `Experiments/R32Sandbox/`
+  `Round32` lives in `Experiments/R32Sandbox/`.
+- `Round32` internal winner `r32_real_eq_finetune` 已完成 external compare，結論是 **FAIL**
+  The `Round32` internal winner `r32_real_eq_finetune` completed external compare and the verdict is **FAIL**.
+- 若要續做 `R32`，下一步必須是新的 sandbox branch / 新機制，不是延用這個 winner
+  If `R32` continues, the next step must be a new sandbox branch or new mechanism, not a repair of the falsified winner.
 
 ## Project Goal / 專案目標
 
@@ -131,24 +135,36 @@ This GitHub repository is the governance-facing surface for research code and fo
 應該同步到 GitHub 的內容：
 
 - 重大 branch 建立與治理調整
+  Major branch creation and governance changes.
 - 新策略嘗試的正式文檔化
+  Formal documentation of new strategy attempts.
 - baseline / verdict / active direction 的變更
+  Baseline, verdict, or active-direction changes.
 - 重要實驗分析、決策 memo、研究路徑圖
+  Important experiment analyses, decision memos, and research-path material.
 - `docs/evidence/` 內的小型正式證據層
+  The small formal evidence layer under `docs/evidence/`.
 - root canonical docs、policy、以及 `docs/` 內的導航/歷史/legacy curated copies
+  Root canonical docs, policy files, and the navigation / history / legacy curated copies under `docs/`.
 
 不應該同步到 GitHub 的內容：
 
 - 日常 runtime 狀態流
+  Day-to-day runtime status noise.
 - bulk logs、checkpoint、weights、artifacts、reconstructions、raw GMF dumps
+  Bulk logs, checkpoints, weights, artifacts, reconstructions, and raw GMF dumps.
 - 訓練資料、部署包、portable runtime、local backups
+  Training data, deployment bundles, portable runtimes, and local backups.
 
 會被保留的例外如下：  
 The following remain as intentional exceptions:
 
 - 小型、刻意保留、可核對的 canonical sample fixtures 可以進版控
+  Small, deliberately retained, auditable canonical sample fixtures may stay in Git.
 - 例如 `Model/Test_Image/VisionTop_20251029182653732.bmp`
+  For example, `Model/Test_Image/VisionTop_20251029182653732.bmp`.
 - 這類檔案的用途是提供穩定、可引用的最小輸入樣本，不是保存 bulk experiment payload
+  Their role is to provide stable, referenceable sample inputs, not to preserve bulk experiment payloads.
 
 ## Current Workflow Boundaries
 
@@ -181,11 +197,17 @@ This repository uses a mixed branch strategy:
 The reconstruction rules are:
 
 - 若 branch 是 reconstructed，必須明確標示 reconstructed
+  Reconstructed branches must explicitly identify themselves as reconstructed.
 - reconstructed branch 預設是 governance/reference branch，不等於已復原的 historical tree
+  A reconstructed branch is a governance/reference branch by default, not a restored historical tree.
 - 若 branch 是 semantic / research，也必須明確標示它不是原始歷史快照
+  Semantic or research branches must clearly state that they are not original historical snapshots.
 - 本 repo 不會假造不存在的原始 git 歷史
+  This repository does not fabricate git history that never existed.
 - 新的研究工作預設應使用 `research/*` 或 `sandbox/*`
+  New research work should normally use `research/*` or `sandbox/*`.
 - `baseline/*` 不是日常開發用的普通合作 branch family，而是受保護的 reference namespace
+  `baseline/*` is a protected reference namespace, not a normal day-to-day collaboration branch family.
 
 詳見 `REPO_GOVERNANCE.md` 與 `docs/index/PROJECT_DOCUMENT_INDEX.md`。
 See `REPO_GOVERNANCE.md` and `docs/index/PROJECT_DOCUMENT_INDEX.md` for the fuller governance map.
