@@ -9,16 +9,16 @@ This document describes the **stable architecture and decision rules** only.
 它回答：  
 It answers:
 
-- 系統真正目標是什麼  
-- what the true system goal is
-- external truth 與 internal surrogate 的關係  
-- how external truth relates to internal surrogates
-- 目前正式 baseline policy 是什麼  
-- what the current baseline policy is
-- 什麼情況下才值得立新 round  
-- when a new round is worth starting
-- 升級 baseline 的必要條件是什麼  
-- what conditions are required to promote a new baseline
+- 系統真正目標是什麼
+  what the true system goal is
+- external truth 與 internal surrogate 的關係
+  how external truth relates to internal surrogates
+- 目前正式 baseline policy 是什麼
+  what the current baseline policy is
+- 什麼情況下才值得立新 round
+  when a new round is worth starting
+- 升級 baseline 的必要條件是什麼
+  what conditions are required to promote a new baseline
 
 它**不**負責展開當前 round 的逐步進度，也**不**負責做跨入口 handoff。  
 It does **not** expand step-by-step progress for the current round, and it does **not** serve as the cross-interface handoff file.
