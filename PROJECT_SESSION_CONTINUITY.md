@@ -1,5 +1,5 @@
 # PROJECT SESSION CONTINUITY / 專案會話銜接文件
-Last updated: 2026-03-20
+Last updated: 2026-03-27
 
 ## Purpose / 用途
 
@@ -36,11 +36,13 @@ Recommended fixed read order:
 - latest verified verdict / 最近已驗證 verdict:
   `r32_real_eq_finetune` external FAIL；`Round30 / r30_b1_dironly` baseline unchanged
 - current active direction / 目前 active 方向:
-  `R32 post-falsification branch design`（若續做，需另立新分支 / 新機制）
-- current sandbox verdict carrier / 目前 sandbox verdict carrier:
-  `Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.md`
-- current live runtime / 目前 live runtime:
-  `Experiments\R32Sandbox\runtime\R32_STATUS.md`
+  `R26NewPSFCheck sandbox`（2026-03-26 啟動，等待外部 GMF 結果回填）
+- PSF policy / PSF 政策:
+  新 Whole-FOV PSF 已於 2026-03-27 成為 `current standard`；舊 PSF 轉為 `legacy empirical baseline`
+- current sandbox verdict carrier / 目前 sandbox verdict carrier（R32）:
+  `Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.md`（已關閉）
+- current active sandbox / 目前 active sandbox:
+  `Experiments\R26NewPSFCheck\`
 - tracked legacy bridge copy / 已追蹤 legacy bridge 副本:
   `docs/runtime/legacy/root_status/000_LONGRUN_ROUND32_STATUS.*`
 
@@ -52,6 +54,8 @@ Recommended fixed read order:
 - `R32 real_eq` should now be treated as an externally falsified experimental branch / 這條線應視為 externally falsified experimental branch
 - `A1 / A5 / S1 / TTA` are not current upgrade directions / 都不是目前升級方向
 - the generic `step_mag` sweep is closed, and the externally verified optimum remains `0.35` / generic `step_mag` sweep 已封閉，externally verified optimum 仍是 `0.35`
+- the new Whole-FOV PSF is the `current standard` for R26 research as of 2026-03-27; the old PSF is the `legacy empirical baseline` / 新 Whole-FOV PSF 自 2026-03-27 起為 R26 研究的 current standard；舊 PSF 轉為 legacy empirical baseline
+- `R26NewPSFCheck` is the current active sandbox; external GMF results are pending / 是目前 active sandbox；外部 GMF 結果等待中
 
 ## Formal Entry Points / 正式入口
 
@@ -59,15 +63,19 @@ Recommended fixed read order:
   `D:\GMM_2_Final\PROJECT_CURRENT_STATE.md`
 - stable rules / 穩定規則:
   `D:\GMM_2_Final\PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-- machine-readable policy / 機器可讀政策:
+- machine-readable baseline policy / 機器可讀 baseline 政策:
   `D:\GMM_2_Final\ESTIMATOR_POLICY.json`
+- PSF policy transition / PSF 政策切換說明:
+  `D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md`
+- machine-readable PSF policy / 機器可讀 PSF 政策:
+  `D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json`
 - long history / 完整歷史:
   `D:\GMM_2_Final\docs\history\PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
-- sandbox overview / sandbox 總入口:
+- active sandbox overview / 目前 active sandbox 總入口:
+  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\README.md`
+- R32 sandbox overview（closed） / R32 sandbox 總入口（已關閉）:
   `D:\GMM_2_Final\Experiments\R32Sandbox\README.md`
-- sandbox runtime / sandbox runtime:
-  `D:\GMM_2_Final\Experiments\R32Sandbox\runtime\R32_STATUS.md`
-- sandbox external compare verdict / sandbox external compare verdict:
+- R32 external compare verdict（closed） / R32 外部比較 verdict（已關閉）:
   `D:\GMM_2_Final\Experiments\R32Sandbox\external_compare\README.md`
 
 ## Current Working Rule / 目前工作規則
@@ -79,8 +87,8 @@ When a new assistant or agent takes over, follow these rules first:
    Read this file and `PROJECT_CURRENT_STATE.md` first.
 2. 以 repo 內正式文件為準，不以 `.codex` 內部 session 檔為準  
    Treat the repository’s formal docs as the source of truth, not internal `.codex` session files.
-3. 不要把 live process-level 狀態手抄回 root prose；active sandbox 直接看 `Experiments\R32Sandbox\runtime\`  
-   Do not copy live process-level status back into root prose docs; for active sandbox status, read `Experiments\R32Sandbox\runtime\` directly.
+3. 不要把 live process-level 狀態手抄回 root prose；active sandbox 直接看 `Experiments\R26NewPSFCheck\`；R32 已關閉，看 `Experiments\R32Sandbox\runtime\` 只是查歷史
+   Do not copy live process-level status back into root prose docs; for active sandbox status, read `Experiments\R26NewPSFCheck\` directly; `Experiments\R32Sandbox\runtime\` is historical only.
 4. tracked 的 legacy root status 快照放在 `docs/runtime/legacy/root_status/`；若 root 再出現 `000_LONGRUN_*`，視為本地 runtime 輸出  
    Tracked legacy root-status snapshots live under `docs/runtime/legacy/root_status/`; if `000_LONGRUN_*` reappears at the root, treat it as local runtime output.
 5. baseline、verdict、active experiment 有變時，優先回寫這份文件與 `PROJECT_CURRENT_STATE.md`  

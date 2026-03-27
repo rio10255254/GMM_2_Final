@@ -256,7 +256,7 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py \
 --psf-fitted-path path/to/PSF_fitted_2D_FOVstack.mat
 ```
 
-目前訓練入口與 `R32Sandbox` 訓練入口都會直接讀取
+目前訓練入口都會直接讀取
 `../PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`，
 因此當該路徑的 Whole-FOV 擬合結果被正式更新時，新的訓練 run 會自動吃到新 PSF。
 
@@ -269,6 +269,10 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py \
 - 舊 checkpoint 推論：預設保持使用當時 checkpoint 內封存的 PSF。
 - 若你要拿舊 checkpoint 額外比較「套用最新正式 PSF」的效果，必須明確加上
   `--no-psf-from-ckpt --psf-fitted-path ...`。
+
+**PSF 政策現況（2026-03-27）**：`PSF_fitted_2D_FOVstack.mat` 目前儲存的是**新 Whole-FOV PSF（current standard）**。
+2026-03-27 之前訓練的 checkpoint，其 PSF buffer 攜帶的是**舊 PSF（legacy empirical baseline）**。
+詳見 `docs/policy/PSF_POLICY_TRANSITION_R26.md` 與 `docs/policy/PSF_STANDARD_POLICY.json`。
 
 **推論輸出結構：**
 
@@ -339,6 +343,8 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py \
 
 **Q: 為什麼舊 checkpoint 沒有跟著新的 PSF 更新？**
 A: 這是刻意保留的歷史可重現性設計。舊 checkpoint 推論預設仍使用 checkpoint 內封存的 PSF buffer，不會因外部 `.mat` 更新而改變。只有新的訓練 run 會自然吃到最新正式 PSF；若你想拿舊 checkpoint 額外測最新 PSF，請明確加 `--no-psf-from-ckpt --psf-fitted-path ...`。
+
+2026-03-27 PSF 政策切換後，`PSF_fitted_2D_FOVstack.mat` 已更新為**新 Whole-FOV PSF（current standard）**；2026-03-27 之前的 checkpoint 攜帶的是**舊 PSF（legacy empirical baseline）**。詳見 `docs/policy/PSF_POLICY_TRANSITION_R26.md`。
 
 **Q: PSF shape mismatch 錯誤**
 A: 若你是在重現舊 checkpoint，先保留預設 `--psf-from-ckpt`。若你是刻意比較最新正式 PSF，則改用 `--no-psf-from-ckpt --psf-fitted-path path/to/PSF_fitted_2D_FOVstack.mat`，並確認該 `.mat` 仍維持目前正式 Whole-FOV 版型。

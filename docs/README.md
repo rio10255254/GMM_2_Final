@@ -26,8 +26,11 @@ Its purpose is to keep the root as a clean entry surface instead of turning it i
 - `index/`
   文件責任邊界、操作流程、與導航索引。  
   Documentation responsibility maps, workflow guides, and navigation indexes.
+- `policy/`
+  正式政策文件，包含 PSF 政策切換說明與機器可讀 PSF policy。
+  Formal policy documents, including the PSF policy transition rationale and machine-readable PSF policy.
 - `runtime/legacy/`
-  已追蹤的 legacy runtime / root status curated copies。  
+  已追蹤的 legacy runtime / root status curated copies。
   Tracked curated copies of legacy runtime and root status files.
 
 ## Reading Guide / 建議閱讀順序

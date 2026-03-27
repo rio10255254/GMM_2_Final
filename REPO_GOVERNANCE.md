@@ -42,7 +42,9 @@ Expected tracked content:
 - `Model/`
 - `Tools/`（不含打包輸出與本地 watcher state）
 - `PSF_Fitting/`
-- `Experiments/R32Sandbox/` 中的程式、說明、runtime status、manifest 與輕量報告
+- `Experiments/R32Sandbox/` 中的程式、說明、runtime status、manifest 與輕量報告（已關閉沙盒）
+- `Experiments/R26NewPSFCheck/` 中的程式、說明、audit、報告與輕量 artifacts（目前 active 沙盒）
+- `docs/policy/` 中的正式政策文件（PSF policy 等）
 
 預期不追蹤的內容：  
 Expected untracked content:
@@ -72,6 +74,8 @@ The repository root is intentionally kept as an entry surface rather than a docu
   - 研究路徑圖與分析摘要
 - `docs/evidence/`
   - 小型正式證據副本與 evidence chain
+- `docs/policy/`
+  - 正式政策文件，如 PSF 政策切換說明與機器可讀 PSF policy
 - `docs/runtime/legacy/`
   - legacy root runtime status 的 curated tracked copies
 
@@ -110,8 +114,11 @@ The Git-tracked copies live under `docs/runtime/legacy/root_status/`.
   - `R32Sandbox` 的隔離執行面  
   - the isolated `R32Sandbox` execution surface
 - `research/r32-post-falsification`
-  - `R32` 外部失敗後的下一步語意分支  
+  - `R32` 外部失敗後的下一步語意分支
   - the semantic next-step branch after the `R32` external fail
+- `codex/*`
+  - AI agent 工作分支（例如目前的 `codex/r26-psf-representative-sync`）
+  - AI agent working branches
 
 ## Reconstruction Honesty Rule / reconstructed 分支誠實原則
 

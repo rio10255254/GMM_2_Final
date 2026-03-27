@@ -406,13 +406,17 @@ WholeFOV path is the more important operational workflow.
 ### 與下游模型同步的規則
 
 - `Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat` 是目前正式 Whole-FOV PSF 輸出位置。
-- `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py` 與
-  `D:\GMM_2_Final\Experiments\R32Sandbox\Model\train_r32.py`
-  都直接讀取這個正式路徑，因此未來新的訓練 run 會自然吃到最新正式 PSF。
+- `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py`
+  直接讀取這個正式路徑，因此未來新的訓練 run 會自然吃到最新正式 PSF。
 - 但已存在的舊 checkpoint 不應被回頭改寫；它們的推論預設應維持使用 checkpoint 當時封存的 PSF buffer，
   以保留 git / 實驗歷史的可重現性。
 - 若要故意拿舊 checkpoint 比較「套用最新正式 PSF」的效果，應在推論時明確指定外部 `.mat` 路徑，
   而不是靠更改舊 checkpoint 的預設語意。
+
+**PSF 政策現況（2026-03-27）**：`PSF_fitted_2D_FOVstack.mat` 目前儲存的是**新 Whole-FOV PSF（current standard）**，
+於 2026-03-26 完成正式擬合並於 2026-03-27 切換為正式標準。
+2026-03-27 之前訓練的 checkpoint 攜帶的是**舊 PSF（legacy empirical baseline）**。
+正式政策文件：`docs/policy/PSF_POLICY_TRANSITION_R26.md`；機器可讀政策：`docs/policy/PSF_STANDARD_POLICY.json`。
 
 ### 測試整理說明
 

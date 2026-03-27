@@ -1,6 +1,6 @@
 # 文件索引 / PROJECT DOCUMENT INDEX
 
-Last updated: 2026-03-20
+Last updated: 2026-03-27
 
 這份文件只做一件事：把 **canonical docs**、**sandbox docs**、**evidence docs**、與 **archive docs** 的責任邊界講清楚。  
 This file does one job: clarify the responsibility boundaries between the canonical docs, sandbox docs, evidence docs, and archive docs.
@@ -38,48 +38,70 @@ Their roles are:
 ## Docs Surface / 導航文件層
 
 - `docs/README.md`
-  docs 區入口與子目錄導覽。  
+  docs 區入口與子目錄導覽。
   Entry point and directory guide for the `docs/` area.
 - `docs/analysis/RESEARCH_PATHS.md`
-  研究路徑圖與 Mermaid 可視化入口。  
-  Research-path map and Mermaid visualization entry.
+  研究路徑圖與 Mermaid 可視化入口（含里程碑數字表格）。
+  Research-path map and Mermaid visualization entry (including milestone numbers table).
 - `docs/evidence/README.md`
-  精選實驗證據層的入口與用途說明。  
+  精選實驗證據層的入口與用途說明。
   Entry point and purpose guide for the curated evidence layer.
 - `docs/evidence/EVIDENCE_MAP.md`
-  一頁式證據鏈地圖，回答每份 evidence 支撐哪個 baseline、falsified line、或 analysis 結論。  
+  一頁式證據鏈地圖，回答每份 evidence 支撐哪個 baseline、falsified line、或 analysis 結論。
   A one-page evidence-chain map showing which evidence supports which baseline, falsified line, or analytical conclusion.
+- `docs/policy/PSF_POLICY_TRANSITION_R26.md`
+  R26 PSF 政策切換說明（2026-03-27）；說明新 PSF 成為 current standard 的理由與舊 PSF 的 legacy 定位。
+  R26 PSF policy transition rationale (2026-03-27); explains why the new PSF is now the current standard and the legacy role of the old PSF.
+- `docs/policy/PSF_STANDARD_POLICY.json`
+  機器可讀的 PSF policy。
+  Machine-readable PSF policy.
 - `docs/index/PROJECT_DOCUMENT_INDEX.md`
-  文件責任邊界與導航索引。  
+  文件責任邊界與導航索引。
   Documentation responsibility map and navigation index.
 - `docs/index/NEW_EXPERIMENT_SOP.md`
-  新增實驗時的 branch、issue、Project、doc、與 PR 操作清單。  
+  新增實驗時的 branch、issue、Project、doc、與 PR 操作清單。
   The operational checklist for adding a new experiment, including branches, issues, Project updates, docs, and PRs.
 - `docs/runtime/legacy/README.md`
-  legacy runtime / root status curated copies 的保存規則。  
+  legacy runtime / root status curated copies 的保存規則。
   Preservation rules for legacy runtime and root-status curated copies.
 
 ## Sandbox Surface / Sandbox 文件層
 
-`R32` 專用入口：  
-The `R32`-specific entry surface is:
+### R26NewPSFCheck（目前 active sandbox）
+
+- `Experiments\R26NewPSFCheck\README.md`
+  sandbox 完整說明（流程、目錄結構、執行方式）。
+  Full sandbox description including workflow, directory structure, and how to run.
+- `Experiments\R26NewPSFCheck\reports\STATUS_20260326.md`
+  整體進度摘要（2026-03-26 快照）。
+  Overall progress summary (snapshot as of 2026-03-26).
+- `Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md`
+  新 PSF same-recipe promote 比較報告（verdict：PROMOTE，2026-03-27）。
+  New PSF same-recipe promote comparison report (verdict: PROMOTE, 2026-03-27).
+- `Experiments\R26NewPSFCheck\psf_audit\PSF_FORMAL_AUDIT_20260326.md`
+  PSF 正式擬合流程的完整審核記錄。
+  Complete audit record for the PSF formal fitting workflow.
+
+### R32 Sandbox（已關閉，external FAIL 2026-03-20）
 
 - `Experiments\R32Sandbox\README.md`
-  sandbox 的總入口。  
-  Main entry point for the sandbox.
+  sandbox 的總入口與完整歷史記錄。
+  Main entry point and full historical record for the sandbox.
 - `Experiments\R32Sandbox\runtime\R32_STATUS.md`
-  sandbox runtime truth。  
-  Sandbox runtime truth.
+  sandbox 最終 runtime truth（已定案）。
+  Final sandbox runtime truth (closed).
 - `Experiments\R32Sandbox\external_compare\README.md`
-  external compare 流程與 final verdict carrier。  
-  External compare flow and final-verdict carrier.
+  external compare 流程與 final verdict carrier（FAIL）。
+  External compare flow and final-verdict carrier (FAIL).
 
 ## Machine-Readable Policy / 機器可讀政策層
 
 - `ESTIMATOR_POLICY.json`
-
-這份檔案仍是 shared mainline 的 machine-readable policy truth。  
-This file remains the machine-readable policy truth for the shared mainline.
+  shared mainline 的 machine-readable baseline policy truth。
+  Machine-readable baseline policy truth for the shared mainline.
+- `docs/policy/PSF_STANDARD_POLICY.json`
+  R26 PSF 政策的 machine-readable truth（current standard vs. legacy empirical baseline）。
+  Machine-readable PSF policy truth for R26 (current standard vs. legacy empirical baseline).
 
 ## Evidence Surface / 證據文件層
 
