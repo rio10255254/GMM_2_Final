@@ -1,0 +1,73 @@
+{
+  "sample": "VisionTop_20251029182653732.bmp",
+  "paths": {
+    "raw": "C:\\Users\\Rio\\Downloads\\NTU_ImageDataset\\Pitch1um_Y_100\\Cropped_Output\\VisionTop_20251029182653732.bmp",
+    "old_r26": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\external_compare_r18_r22_r25_r26\\r26_sm035\\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260316_190408\\pitch1um_y_100_odd\\VisionTop_20251029182653732.bmp",
+    "new_psf_retrain": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\external_compare\\newpsf_r26_retrain\\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260326_115148\\pitch1um_y_100_odd\\VisionTop_20251029182653732.bmp",
+    "old_psf": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\artifacts\\package_cleanup_archive_20260326\\psf_swap_20260326_093203\\PSF_fitted_2D_FOVstack.package_old.mat",
+    "new_psf": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\Fits\\PSF_fitted_2D_FOVstack.mat"
+  },
+  "image_summary": {
+    "raw": {
+      "mean": 138.7161407470703,
+      "std": 25.89063262939453,
+      "grad_mean": 13.346142768859863,
+      "grad_p95": 26.832815170288086,
+      "lap_var": 178.2320556640625
+    },
+    "old_r26": {
+      "mean": 141.05941772460938,
+      "std": 30.90325927734375,
+      "grad_mean": 2.629713296890259,
+      "grad_p95": 10.0,
+      "lap_var": 2.092020273208618
+    },
+    "new_psf_retrain": {
+      "mean": 128.47061157226562,
+      "std": 26.357006072998047,
+      "grad_mean": 2.1058120727539062,
+      "grad_p95": 9.899495124816895,
+      "lap_var": 1.5350526571273804
+    },
+    "old_vs_new_mae": 12.889548301696777,
+    "old_vs_new_rmse": 17.027555465698242
+  },
+  "psf_summary": {
+    "old_mean_psf": {
+      "cy": 49.4601871017397,
+      "cx": 50.53826178176482,
+      "r50": 5.481090815990775,
+      "r90": 16.754600505210707,
+      "peak": 0.0077245749400403005,
+      "peak_y": 49,
+      "peak_x": 51
+    },
+    "new_mean_psf": {
+      "cy": 49.989971146120915,
+      "cx": 49.4887585464698,
+      "r50": 5.393410863557617,
+      "r90": 16.766573386794573,
+      "peak": 0.007712021664015031,
+      "peak_y": 50,
+      "peak_x": 50
+    }
+  },
+  "checkpoint_scalars": {
+    "old_r26": {
+      "physics_layer.alpha": 0.10000184178352356,
+      "physics_layer.reg": 10.0,
+      "weak_psf_block.beta": 0.01999194175004959,
+      "weak_psf_block.beta_scale": 0.061297494918107986,
+      "weak_psf_block.beta_scale_max": 0.3499999940395355,
+      "weak_psf_block.reg": 30.0
+    },
+    "new_psf_retrain": {
+      "physics_layer.alpha": 0.10018984973430634,
+      "physics_layer.reg": 10.0,
+      "weak_psf_block.beta": 0.018709983676671982,
+      "weak_psf_block.beta_scale": 0.08561093360185623,
+      "weak_psf_block.beta_scale_max": 0.3499999940395355,
+      "weak_psf_block.reg": 30.0
+    }
+  }
+}

@@ -1,4 +1,5 @@
 # Editor and local state
+.claude/
 .vscode/
 .history/
 *.pid
@@ -46,6 +47,24 @@ PSF_Fitting/SingleImage_Input/
 **/portable_runtime/
 **/monitor_snapshots/
 **/runtime/logs/
+
+# Curated evidence tracking boundaries
+Experiments/R26NewPSFCheck/external_compare/**/reconstruct_progress_*/
+Experiments/R26NewPSFCheck/formal_newpsf_candidate/package_clone/
+Experiments/R26NewPSFCheck/package_cleanup_release_archive_*/
+Experiments/R26NewPSFCheck/package_final_cleanup_archive_*/
+Experiments/R26NewPSFCheck/package_policy_transition/
+PSF_Fitting/PSF_Fitting_ValidationLab/outputs/
+PSF_Fitting/PSF_Report_Helper/outputs/
+docs/superpowers/
+
+# Re-include curated R26 evidence that would otherwise be hidden by generic rules
+!Experiments/R26NewPSFCheck/pure_psf_control/artifacts/
+!Experiments/R26NewPSFCheck/pure_psf_control/artifacts/**
+!Experiments/R26NewPSFCheck/pure_psf_control/reconstructions/
+!Experiments/R26NewPSFCheck/pure_psf_control/reconstructions/**
+!Experiments/R26NewPSFCheck/policy_transition_archive_20260327/package_ckpt_legacy/
+!Experiments/R26NewPSFCheck/policy_transition_archive_20260327/package_ckpt_legacy/r26_sm035_best_tradeoff_legacy_empirical.pth.tar
 
 # Tool packaging outputs
 Tools/PortableAgentEnv/*.zip
