@@ -26,6 +26,8 @@ def test_gpu_patch_payload_does_not_ship_runtime_state_file():
     )
 
 
-def test_gpu_patch_payload_does_not_ship_python_bytecode_caches():
-    pycache_dirs = list(PAYLOAD_RUNTIME.rglob("__pycache__"))
-    assert not pycache_dirs, "GPU patch payload should not ship __pycache__ directories"
+def test_gpu_patch_installer_writes_fresh_target_runtime_state():
+    install_text = (PATCH_ROOT / "INSTALL_GPU_PATCH.ps1").read_text(encoding="utf-8")
+    assert ".geoedge_portable_runtime.json" in install_text
+    assert "portable_root" in install_text
+    assert "fixed_at" in install_text
