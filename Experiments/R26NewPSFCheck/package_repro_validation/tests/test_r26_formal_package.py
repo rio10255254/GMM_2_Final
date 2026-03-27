@@ -13,6 +13,8 @@ PACKAGE_ROOT = Path(
 INTERNAL_ROOT = PACKAGE_ROOT / "內部檔案"
 NEW_STANDARD_PSF_HASH = "BAFF1039744ED17CFFBA3D9F36A2535A7171BAC74E4B67669EDE412FB4B44F08"
 NEW_STANDARD_CKPT_HASH = "0D68897E2F649111ACAE7B59D46F77F1F48EF4A2E0FB32F14C8C5FFDF014FE50"
+LEGACY_PSF_HASH = "3AAB9CC1ED9EE0EB9C85227D026A3A8D86D0C035B8D06A46EB688551EFAE79CD"
+LEGACY_CKPT_HASH = "1057F98B9B074621F1D8E7AEAD3D51545D839C79008E35011433868CA7E78CB0"
 
 
 def test_formal_recipe_manifest_exists():
@@ -29,8 +31,8 @@ def test_formal_recipe_manifest_exists():
     assert data["deterministic"] is True
     assert data["hashes"]["official_psf_sha256"] == NEW_STANDARD_PSF_HASH
     assert data["hashes"]["official_deploy_checkpoint_sha256"] == NEW_STANDARD_CKPT_HASH
-    assert "legacy_psf_sha256" not in data["hashes"]
-    assert "legacy_deploy_checkpoint_sha256" not in data["hashes"]
+    assert data["hashes"]["legacy_psf_sha256"] == LEGACY_PSF_HASH
+    assert data["hashes"]["legacy_deploy_checkpoint_sha256"] == LEGACY_CKPT_HASH
     assert "policy_status" not in data
     assert "TRAIN_INCLUDE_SUBDIRS" in data["overrides"]
     assert "SEQ_INCLUDE_SUBDIRS" in data["overrides"]
@@ -90,7 +92,6 @@ def test_cleanup_removed_nonformal_package_artifacts():
     removed_paths = [
         PACKAGE_ROOT / "RUN_QUICK_TRAIN.bat",
         PACKAGE_ROOT / "檔案結構說明.md",
-        PACKAGE_ROOT / "參考文件",
         PACKAGE_ROOT / "容器進階",
         PACKAGE_ROOT / "輸出結果" / "驗證分析",
         INTERNAL_ROOT / "analysis_scripts",
@@ -103,11 +104,17 @@ def test_cleanup_removed_nonformal_package_artifacts():
         / "Crop_circle_FreqFiltered"
         / "Fits"
         / "legacy_baseline",
-        PACKAGE_ROOT / "參考文件" / "R26_LEGACY_BASELINE_MANIFEST.md",
         PACKAGE_ROOT / "參考文件" / "R26_PACKAGE_NOTES.md",
     ]
     still_present = [str(path) for path in removed_paths if path.exists()]
     assert not still_present, f"package should not retain cleanup targets: {still_present}"
+
+
+def test_policy_transition_docs_present():
+    docs_root = PACKAGE_ROOT / "參考文件"
+    manifest = docs_root / "R26_LEGACY_BASELINE_MANIFEST.md"
+    assert docs_root.exists(), "package should retain the policy-transition reference docs root"
+    assert manifest.exists(), "package should retain the legacy baseline manifest after the PSF policy transition"
 
 
 def test_formal_train_adapter_uses_pretrained_seed_not_resume():

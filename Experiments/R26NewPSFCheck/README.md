@@ -6,6 +6,10 @@
 > 2026-03-27 之後的 `current standard` / `legacy baseline` 政策，
 > 請以 `D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md`
 > 與 `D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json` 為準。
+>
+> 本文件描述的是 sandbox 的**完整本地執行面**，不是 Git-tracked surface 的一比一清單。
+> checkpoint snapshots、GMF drop-ins、package clone、cleanup archives 等 bulk 內容在本地可能存在，
+> 但不一定會被追蹤進 GitHub。
 
 ---
 
@@ -115,7 +119,7 @@ R26NewPSFCheck/
 │
 ├── README.md                            ← 本文件，sandbox 的完整說明
 │
-├── artifacts/
+├── artifacts/                       ← 本地 checkpoint 快照（local-only，不追蹤）
 │   └── newpsf_r26_retrain/
 │       ├── weights/
 │       │   └── best_tradeoff.pth.tar   ← 新 PSF 重訓最佳 checkpoint 快照
@@ -124,7 +128,7 @@ R26NewPSFCheck/
 ├── external_compare/
 │   └── newpsf_r26_retrain/             ← 外部三尺度重建的工作目錄
 │       ├── batch_manifest.json         ← 記錄本次重建使用的 checkpoint、資料集、時間戳記
-│       ├── gmf_results/
+│       ├── gmf_results/             ← 外部 GMF drop-in 位置（local-only，不追蹤）
 │       │   └── raw/
 │       │       ├── pitch8px/           ← 等待 GMF_score.txt 回填（對應 Pitch1um_Y_100）
 │       │       ├── pitch0p8px/         ← 等待 GMF_score.txt 回填（對應 Pitch0.1um_Y_60）
@@ -141,7 +145,7 @@ R26NewPSFCheck/
 │
 ├── formal_newpsf_candidate/            ← 以 r26_sm035 recipe 為基底、只換 PSF 的候選驗證資料
 │   ├── candidate_manifest.json         ← hash 記錄、來源路徑、promote 歷程
-│   ├── package_clone/                  ← candidate smoke 驗證用的封包副本
+│   ├── package_clone/                  ← candidate smoke 驗證用的封包副本（local-only，不追蹤）
 │   └── reports/
 │       └── NEW_PSF_FORMAL_R26_COMPARE.md  ← new-vs-legacy promotion 比較摘要
 │
@@ -155,7 +159,7 @@ R26NewPSFCheck/
 │
 ├── runtime/                            ← 執行期暫存（腳本執行中產生的臨時檔案）
 │
-├── package_policy_transition/          ← 封包政策轉換相關存檔
+├── package_policy_transition/          ← 封包政策轉換相關存檔（local-only，不追蹤）
 ├── package_repro_validation/           ← 封包可重現性驗證存檔
 ├── policy_transition_archive_*/        ← 政策轉換的封存快照
 ├── package_cleanup_release_archive_*/  ← 封包清理與 release 的歷史存檔
@@ -168,10 +172,10 @@ R26NewPSFCheck/
 ### 各主要資料夾的白話說明
 
 **`artifacts/`**
-存放從封包複製過來的 checkpoint 快照。這裡的 `best_tradeoff.pth.tar` 是本次實驗的**起點**：它是以新 PSF 重訓後，整體表現最均衡的那個模型存檔。之所以要複製到這裡而不直接從封包路徑讀取，是為了確保即使封包日後被移動或清理，本 sandbox 的實驗依然能被重現。
+存放從封包複製過來的 checkpoint 快照。這裡的 `best_tradeoff.pth.tar` 是本次實驗的**起點**：它是以新 PSF 重訓後，整體表現最均衡的那個模型存檔。這一層屬於本地 execution surface，**不作為 Git-tracked sandbox surface 的必要部分**。
 
 **`external_compare/`**
-外部重建和 GMF 評分的工作目錄。分三個 pitch 尺度分別存放重建輸出，並預留了等待 GMF_score.txt 回填的位置。外部 GMF 工具的運算結果需要人工對接，完成後才能進行正式的新舊比較。
+外部重建和 GMF 評分的工作目錄。分三個 pitch 尺度分別存放重建輸出，並預留了等待 GMF_score.txt 回填的位置。外部 GMF 工具的運算結果需要人工對接，完成後才能進行正式的新舊比較。`gmf_results/raw/` 屬於本地 drop-in surface，**預設不追蹤進 Git**。
 
 **`reports/`**
 本次實驗的分析報告。目前有兩份：一份是「新 PSF 重訓 vs 舊 R26」在 Demo 影像上的詳細比較（已完成），另一份是整體進度摘要。
@@ -180,7 +184,7 @@ R26NewPSFCheck/
 PSF 正式擬合流程的審核記錄。記錄了對 `PSF_Fitting/` 根目錄程式邏輯、測試、ValidationLab 聚合結果的逐項檢查結論。
 
 **`formal_newpsf_candidate/`**
-這個資料夾的責任更窄、更嚴格：它只測試「在完全不改動訓練 recipe 的前提下，只把 PSF 換成新版」這一個變量，確認新 PSF 封包是否可以正常使用，並形成正式 promote 的來源記錄。
+這個資料夾的責任更窄、更嚴格：它只測試「在完全不改動訓練 recipe 的前提下，只把 PSF 換成新版」這一個變量，確認新 PSF 封包是否可以正常使用，並形成正式 promote 的來源記錄。`package_clone/` 屬於本地 smoke 驗證副本，**不屬於 Git-tracked minimal evidence surface**。
 
 **`Tools/`**
 本 sandbox 專用的重跑腳本，主要是 `run_external_recon_newpsf.ps1`。

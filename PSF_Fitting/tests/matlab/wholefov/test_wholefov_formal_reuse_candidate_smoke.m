@@ -5,12 +5,7 @@ addpath(project_root);
 addpath(fullfile(project_root, 'PSF_Fitting_ValidationLab', 'scripts'));
 
 candidate_root = fullfile(project_root, 'PSF_Fitting_ValidationLab', 'outputs', 'reasonable_smoke');
-if ~isfile(fullfile(candidate_root, 'batch_results.csv'))
-    HDR_fitting_2D_WholeFOV_reasonable_v1( ...
-        'subset_indices', [1], ...
-        'output_root', candidate_root, ...
-        'use_gpu', false);
-end
+assert(isfile(fullfile(candidate_root, 'batch_results.csv')), 'Tracked reasonable_smoke fixture should exist.');
 
 output_root = fullfile(project_root, 'tests', 'artifacts', 'wholefov_formal_reuse_smoke');
 if ~exist(output_root, 'dir')

@@ -6,13 +6,14 @@
     "label": "new_physically_justified_psf",
     "psf_path": "D:/GMM_2_Final/PSF_Fitting/PSF_Fitting_ValidationLab/outputs/final_candidate_full100/PSF_fitted_2D_FOVstack.mat",
     "psf_sha256": "BAFF1039744ED17CFFBA3D9F36A2535A7171BAC74E4B67669EDE412FB4B44F08",
+    "runtime_default_psf_path": "D:/GMM_2_Final/PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat",
     "replacement_checkpoint_path": "D:/GMM_2_Final/Experiments/R26NewPSFCheck/pure_psf_control/runs/new_psf/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_PURE_new_psf_SWP_new_psf_20260326_165848/weights/best_tradeoff.pth.tar",
     "replacement_checkpoint_sha256": "0D68897E2F649111ACAE7B59D46F77F1F48EF4A2E0FB32F14C8C5FFDF014FE50",
     "recipe_basis": "same historical r26_sm035 recipe, new PSF only"
   },
   "legacy_baseline": {
     "label": "old_empirical_baseline",
-    "psf_path": "D:/GMM_2_Final/PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat",
+    "psf_path": "D:/GMM_2_Final/Experiments/R26NewPSFCheck/policy_transition_archive_20260327/root_psf_legacy/PSF_fitted_2D_FOVstack_legacy_empirical.mat",
     "psf_sha256": "3AAB9CC1ED9EE0EB9C85227D026A3A8D86D0C035B8D06A46EB688551EFAE79CD",
     "deployed_checkpoint_path": "D:/GMM_2_Final/Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar",
     "deployed_checkpoint_sha256": "1057F98B9B074621F1D8E7AEAD3D51545D839C79008E35011433868CA7E78CB0"
