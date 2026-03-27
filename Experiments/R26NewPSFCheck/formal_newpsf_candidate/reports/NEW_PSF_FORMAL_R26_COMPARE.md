@@ -32,15 +32,18 @@ pure control 的核心結論仍成立：
 
 已完成以下 fresh 驗證：
 
-- `pytest Experiments/R26NewPSFCheck/package_policy_transition/tests/test_psf_policy_transition.py -q`
-- `pytest Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py -q`
+- repo-tracked validation:
+  - `pytest Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py -q`
 - `GeoEdge_R26_FormalTrain.ps1 -Action dry-run`
 - `GeoEdge_R26_FormalInfer.ps1 -Action dry-run-demo`
 - `GeoEdge_PackageSmokeTest.ps1 -InferenceSampleCount 1 -SkipTrain`
+- local-only package policy guard:
+  - `pytest Experiments/R26NewPSFCheck/package_policy_transition/tests/test_psf_policy_transition.py -q`
+  - 此 guard 依賴本地 `_deployment_package` metadata，並未追蹤進 Git
 
 結果：
 
-- transition policy gate：PASS
+- transition policy gate（local-only）：PASS
 - package formal validation：PASS
 - wrapper dry-run：PASS
 - package smoke inference：PASS

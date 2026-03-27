@@ -1,0 +1,48 @@
+{
+  "experiment_name": "alignment_subset",
+  "subset_indices": [
+    1,
+    56,
+    60,
+    100
+  ],
+  "warm_start": true,
+  "pre_alignment": true,
+  "lock_tilt": true,
+  "output_dir": "D:\\GMM_2_Final\\PSF_Fitting\\PSF_Fitting_ValidationLab\\outputs\\experiments\\alignment_subset",
+  "project_root": "D:\\GMM_2_Final\\PSF_Fitting",
+  "gt_path": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\GT\\GT_901_with_Block_proc.bmp",
+  "input_folder": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered",
+  "use_gpu": true,
+  "generated_at": "2026-03-25 13:36:13",
+  "matlab_release": "2025b",
+  "bads_path": "D:\\GMM_2_Final\\PSF_Fitting\\bads-1.1.3\\bads.m",
+  "batch_results_csv": "D:\\GMM_2_Final\\PSF_Fitting\\PSF_Fitting_ValidationLab\\outputs\\experiments\\alignment_subset\\batch_results.csv",
+  "stack_path": "D:\\GMM_2_Final\\PSF_Fitting\\PSF_Fitting_ValidationLab\\outputs\\experiments\\alignment_subset\\PSF_fitted_2D_FOVstack.mat",
+  "prealign_search_values": [
+    -2,
+    -1,
+    0,
+    1,
+    2
+  ],
+  "prealign_crop_size": 257,
+  "file_names": [
+    "VisionTop_20250903160550_1.bmp",
+    "VisionTop_20250903162115_56.bmp",
+    "VisionTop_20250903162201_60.bmp",
+    "VisionTop_20250903163126_100.bmp"
+  ],
+  "file_rows": [
+    1,
+    6,
+    6,
+    10
+  ],
+  "file_cols": [
+    1,
+    6,
+    10,
+    10
+  ]
+}

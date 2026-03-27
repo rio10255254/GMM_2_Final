@@ -58,3 +58,16 @@
 - 文件明確說明 old/new 的 current-vs-legacy 身份
 
 並且保留一份 legacy baseline manifest，避免之後再次混淆正式標準與歷史 baseline。
+
+## 路徑語意 / Path Semantics
+
+- `current_standard.psf_path`
+  - Git 內保留的 canonical current-standard PSF copy
+- `current_standard.runtime_default_psf_path`
+  - root shared mainline 預設會讀到的正式 PSF 路徑
+- `legacy_baseline.psf_path`
+  - 保留在 `policy_transition_archive_20260327/` 的 legacy empirical baseline copy
+
+因此，自 2026-03-27 政策切換後，
+`Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat` 代表的是 **current standard**，
+不應再被寫成 legacy baseline 路徑。

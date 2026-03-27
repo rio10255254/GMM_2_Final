@@ -1,0 +1,17 @@
+{
+  "entry_point": "HDR_fitting_2D_WholeFOV_reasonable_v1",
+  "description": "ValidationLab reasonable Whole-FOV fitting candidate with refined pre-alignment and tilt locked.",
+  "subset_indices": 1,
+  "warm_start": true,
+  "pre_alignment": true,
+  "lock_tilt": true,
+  "prealign_search_radius": 2,
+  "prealign_search_step": 0.25,
+  "prealign_crop_size": 257,
+  "output_root": "D:\\GMM_2_Final\\PSF_Fitting\\PSF_Fitting_ValidationLab\\outputs\\reasonable_smoke",
+  "generated_at": "2026-03-27 17:37:14",
+  "lab_root": "D:\\GMM_2_Final\\PSF_Fitting\\PSF_Fitting_ValidationLab",
+  "candidate_config_path": "D:\\GMM_2_Final\\PSF_Fitting\\PSF_Fitting_ValidationLab\\outputs\\reasonable_smoke\\candidate_config.json",
+  "batch_results_path": "D:\\GMM_2_Final\\PSF_Fitting\\PSF_Fitting_ValidationLab\\outputs\\reasonable_smoke\\batch_results.csv",
+  "stack_path": "D:\\GMM_2_Final\\PSF_Fitting\\PSF_Fitting_ValidationLab\\outputs\\reasonable_smoke\\PSF_fitted_2D_FOVstack.mat"
+}

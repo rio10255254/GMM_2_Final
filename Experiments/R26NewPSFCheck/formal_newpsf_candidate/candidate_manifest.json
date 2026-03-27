@@ -2,6 +2,7 @@
   "created_at": "2026-03-27",
   "source_package_path": "D:/GMM_2_Final/_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包",
   "candidate_clone_path": "D:/GMM_2_Final/Experiments/R26NewPSFCheck/formal_newpsf_candidate/package_clone/GeoEdge_R26_使用包",
+  "candidate_clone_tracked": false,
   "policy_basis_path": "D:/GMM_2_Final/docs/policy/PSF_STANDARD_POLICY.json",
   "legacy_baseline": {
     "psf_sha256": "3AAB9CC1ED9EE0EB9C85227D026A3A8D86D0C035B8D06A46EB688551EFAE79CD",
@@ -19,7 +20,9 @@
   "recipe_parity_statement": "Candidate must keep the same historical r26_sm035 recipe and change only PSF-backed formal assets.",
   "validation": {
     "same_recipe_basis": "confirmed via pure_psf_control",
-    "package_transition_test": "passed",
+    "package_transition_test": "local_only_guard_passed",
+    "package_transition_test_tracked": false,
+    "package_transition_test_notes": "This guard depends on local deployment-package metadata and is not tracked inside the Git repository.",
     "package_repro_validation_test": "passed",
     "package_smoke_test": "passed",
     "package_smoke_demo_output": "D:/GMM_2_Final/_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/_smoketest_demo/reconstruct_progress_r26_sm035_best_tradeoff_in_input_subset_20260327_101759",

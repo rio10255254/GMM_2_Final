@@ -67,8 +67,8 @@ Key performance metrics (all from the external GMF evaluator):
 
 ## 目前狀態快照 / Current Status Snapshot
 
-> 以下數字為截至 2026-03-26 的最新狀態。詳細資料請看 `PROJECT_CURRENT_STATE.md`。
-> Numbers below are current as of 2026-03-26. For full detail, see `PROJECT_CURRENT_STATE.md`.
+> 以下數字為截至 2026-03-27 的最新狀態。詳細資料請看 `PROJECT_CURRENT_STATE.md`。
+> Numbers below are current as of 2026-03-27. For full detail, see `PROJECT_CURRENT_STATE.md`.
 
 ### 正式 Baseline / Production Baseline
 
