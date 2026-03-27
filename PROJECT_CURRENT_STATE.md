@@ -1,5 +1,5 @@
 # PROJECT CURRENT STATE / 專案目前狀態
-Last updated: 2026-03-20
+Last updated: 2026-03-27
 
 Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
 
@@ -109,17 +109,30 @@ This is not a marginal failure. The `0.8px` battlefield deteriorated sharply rel
 目前 active 主線是 / The current active state is：
 
 - **沒有可直接挑戰 baseline 的 current winning line**
-- `R32 real_eq` 這條線已完成 external FAIL
-- 若要續做 `R32`，下一步必須是新的 sandbox branch / 新機制
+- `R32 real_eq` 這條線已完成 external FAIL，R32 Sandbox 已關閉
+- **目前 active 沙盒：`R26NewPSFCheck`**（2026-03-26 啟動，外部 GMF 結果等待中）
 
-目前沒有任何可直接挑戰 baseline 的 winning line；`R32 real_eq` 已外部失敗，若要續做只能開新 sandbox branch / 新機制。  
-There is currently no winning line that can directly challenge the baseline. `R32 real_eq` has already failed externally, so any continuation must start as a new sandbox branch or new mechanism.
+### R26NewPSFCheck 現況（2026-03-27）
 
-現在 process-level / runtime truth 入口是 / The current process-level runtime truth entry point is：
+| 項目 | 狀態 |
+|------|------|
+| 新 Whole-FOV PSF 擬合 | ✓ 完成（2026-03-26） |
+| 新 PSF 重訓模型 checkpoint | ✓ 已建立並快照至 sandbox |
+| 外部三尺度重建（external recon） | ✓ 已完成 |
+| PSF 正式流程審核 | ✓ 已完成，無執行層面問題 |
+| pure_psf_control 對照實驗 | ✓ 已完成，確認新 PSF 本身不是崩壞原因 |
+| formal_newpsf_candidate promote | ✓ 已完成，verdict：PROMOTE |
+| PSF 政策切換 | ✓ **2026-03-27 正式切換**，見下方 Section 6 |
+| 外部 GMF 結果（主要比較） | ⏳ 等待中（GMF 工具由外部執行） |
 
-- `D:\GMM_2_Final\Experiments\R32Sandbox\runtime\R32_STATUS.md`
+正式入口 / Formal entry points：
 
-Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。  
+- sandbox 說明：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\README.md`
+- 整體進度摘要：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\reports\STATUS_20260326.md`
+- PSF 審核記錄：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\psf_audit\PSF_FORMAL_AUDIT_20260326.md`
+- promote 比較報告：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md`
+
+Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。
 The Git-tracked `000_LONGRUN_ROUND32_STATUS.*` files are now kept under `docs/runtime/legacy/root_status/` as a legacy bridge only; if the same filenames reappear at the repository root, treat them as local runtime output rather than canonical truth.
 
 ## 4. External Validation Status / 外部驗證狀態
@@ -147,11 +160,31 @@ The external validation is fully closed. Both the human-readable Markdown and th
 - `Round30 / r30_b1_dironly` baseline unchanged
 - 若要續做 `R32`，需要**另立新分支 / 新機制**
 
-## 5. Next Decision Boundary / 下一個決策邊界
+## 5. PSF Policy Status / PSF 政策狀態（2026-03-27）
+
+R26 研究線的 PSF 已於 2026-03-27 正式完成政策切換。
+
+| 身份 | PSF | 說明 |
+|------|-----|------|
+| **current standard** | 新 Whole-FOV PSF（2026-03-26 完成） | 物理上較合理；same-recipe 對照確認不引發崩壞；為目前研究採用的正式 PSF |
+| **legacy empirical baseline** | 舊 PSF | 歷史上取得較好經驗數值；保留用於引用與對照，不刪除，不再作為正式預設 |
+
+切換依據 / Basis for transition：
+- pure_psf_control 實驗確認：old_recipe + new_psf 到 epoch 40 不重現先前崩壞
+- 先前崩壞根因是「PSF 變更 + recipe drift」共同造成，非 PSF 本身問題
+- formal_newpsf_candidate 已完成 same-recipe promote 驗證，verdict：PROMOTE
+- physics-first 原則下，物理上較合理的 PSF 應成為目前標準
+
+機器可讀 PSF 政策 / Machine-readable PSF policy：`D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json`
+詳細說明 / Full details：`D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md`
+
+## 6. Next Decision Boundary / 下一個決策邊界
 
 下一個決策邊界只有一個 / There is only one next decision boundary:
 
-**下一個 `R32` 候選若要成立，必須是新的 sandbox branch / 新機制，並在 external GMF 主戰場 `0.8px` 擊敗 `R30 B1 dironly = 0.167862`。**
+**任何新候選若要升級 baseline，必須在 external GMF 主戰場 `0.8px` 擊敗 `R30 B1 dironly = 0.167862`。**
+
+這包含 `R26NewPSFCheck` 的外部 GMF 結果（等待中）以及任何未來的新候選。
 
 正式升級條件 / Formal promotion conditions：
 
@@ -159,5 +192,5 @@ The external validation is fully closed. Both the human-readable Markdown and th
 2. `8px` 不能明顯退步
 3. `0.08px` 改善不能補償 `0.8px` 主戰場退步
 
-未來任何 `R32` 候選都必須在 external `0.8px` battlefield 擊敗 `0.167862`，同時不能用 `8px` 退步或主戰場退步去換取 `0.08px` 改善。  
-Any future `R32` candidate must beat `0.167862` on the external `0.8px` battlefield, avoid meaningful `8px` regression, and cannot trade away the main battlefield just to improve `0.08px`.
+任何候選都必須在 external `0.8px` battlefield 擊敗 `0.167862`，同時不能用 `8px` 退步或主戰場退步去換取 `0.08px` 改善。
+Any candidate must beat `0.167862` on the external `0.8px` battlefield, avoid meaningful `8px` regression, and cannot trade away the main battlefield just to improve `0.08px`.

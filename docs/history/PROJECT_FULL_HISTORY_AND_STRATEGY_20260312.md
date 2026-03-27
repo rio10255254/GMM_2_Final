@@ -44,8 +44,23 @@
 - `Round30 / r30_b1_dironly` 已由 external GMF 正式確認為 production baseline
 - `Round31` measured hyperparam candidates 已完成 external compare，全部在主戰場 `0.8px` regression
 - `r31_eq_combo` 缺 external artifact，因此明確標為 `external artifact missing`，而不是硬寫成 measured failure
-- `Round32` 目前仍是 active 主線，但性質是 `repair / rerun`，不是已完成的新 baseline 決策
-- `Round32` 到目前暴露的問題，主要是 real-domain EQ 新路徑的工程整合 bug，而不是既有 `R26 / R30` baseline 主線被推翻
+- `Round32` 已切入 `Experiments/R32Sandbox/` 獨立沙盒，正在執行 real-domain EQ finetune 實驗
+
+## 2026-03-20 Update Note
+
+- `Round32` external compare 已完成，`r32_real_eq_finetune` 在主戰場 `0.8px` 惡化 +97.7%（0.1679 → 0.3318），三個尺度全部失守
+- `r32_real_eq_finetune` 確認 externally falsified，**不能升級 baseline**
+- `Round30 / r30_b1_dironly` 仍是唯一 production baseline
+- R32 Sandbox 已關閉；若要續做 R32，必須另立新的 sandbox branch / 新機制，不應延用 `r32_real_eq_finetune`
+- 根目錄共用主線已完成清理，不再含 R32 專用 loader / audit / monitor
+
+## 2026-03-27 Update Note
+
+- `R26NewPSFCheck` sandbox 於 2026-03-26 啟動，目標是驗證新 Whole-FOV PSF 重訓模型是否優於舊 R26 封包，以及審核 PSF 正式流程
+- 外部三尺度重建已完成（步驟 1–4），等待外部 GMF 結果回填
+- PSF 政策正式切換（2026-03-27）：新 Whole-FOV PSF 成為 R26 研究線的 `current standard`，舊 PSF 降為 `legacy empirical baseline`
+- 切換依據：pure_psf_control 實驗確認 old_recipe + new_psf 到 epoch 40 不重現崩壞；先前崩壞根因是 PSF 變更 + recipe drift 共同造成
+- 詳見 `docs/policy/PSF_POLICY_TRANSITION_R26.md`
 
 如果你是新接手者，閱讀順序仍然是：
 
