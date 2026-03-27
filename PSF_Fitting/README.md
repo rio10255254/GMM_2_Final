@@ -32,7 +32,11 @@ PSF_Fitting/
 │
 ├── README.md                           ← 本文件
 ├── HDR_fitting_2D.m                    ← 主程式 A：單張影像 PSF 擬合
-├── HDR_fitting_2D_WholeFOV.m           ← 主程式 B：全 FOV 批次 PSF 擬合（推薦）
+├── HDR_fitting_2D_WholeFOV.m           ← 主程式 B：全 FOV 批次 PSF 擬合（正式入口）
+├── HDR_fitting_2D_WholeFOV_impl.m      ← 正式實作核心（供主程式 B 呼叫）
+├── legacy/
+│   └── HDR_fitting_2D_WholeFOV_legacy_pre_prealign_fix_20260325.m
+│                                        ← 修正前舊版 Whole-FOV 主程式封存
 │
 ├── SimulatePSF/                        ← [階段 1] PSF 理論模擬
 │   ├── psf_multiwavelength_2D.m        ← 執行此檔以重新產生 PSF（詳見階段 1）
@@ -56,21 +60,44 @@ PSF_Fitting/
 │   └── GT/
 │       └── GT_901_with_Block_proc.bmp  ← Ground Truth（同上）
 │
-└── Deconvolution/                      ← [階段 3] 反捲積驗證
-    ├── GT/
-    │   └── pillar_30_SEM.tiff          ← SEM Ground Truth（用於驗證誤差）
-    ├── TestImages/
-    │   └── 30.tiff                     ← 待反捲積的實驗影像
-    ├── PSF/
-    │   └── PSF_fitted_2D.mat           ← 預先擬合好的 PSF（可直接跳至階段 3）
-    └── Results/                        ← ★ [階段 3 輸出] 程式執行後自動建立
-        └── deconv_result_2D.tiff
+├── Deconvolution/                      ← [階段 3] 反捲積驗證
+│   ├── GT/
+│   │   └── pillar_30_SEM.tiff          ← SEM Ground Truth（用於驗證誤差）
+│   ├── TestImages/
+│   │   └── 30.tiff                     ← 待反捲積的實驗影像
+│   ├── PSF/
+│   │   └── PSF_fitted_2D.mat           ← 預先擬合好的 PSF（可直接跳至階段 3）
+│   └── Results/                        ← ★ [階段 3 輸出] 程式執行後自動建立
+│       └── deconv_result_2D.tiff
+│
+├── PSF_Report_Helper/                  ← 報告撰寫輔助分析與輸出
+│   ├── README_TW.md
+│   ├── run_report_analysis.py
+│   └── outputs/
+│
+├── PSF_Fitting_ValidationLab/          ← Whole-FOV 修正驗證與歷史比較
+│   ├── README_TW.md
+│   ├── run_validation_lab.ps1
+│   ├── run_reasonable_fit.ps1
+│   ├── scripts/
+│   └── outputs/
+│
+└── tests/                              ← 專案自有測試集中區
+    ├── README_TW.md
+    ├── run_matlab_smoke_tests.m
+    ├── matlab/
+    ├── python/
+    └── artifacts/
 ```
 
 - `HDR_fitting_2D.m`：單張影像 PSF 擬合主程式。
   `HDR_fitting_2D.m`: Main entry point for single-image PSF fitting.
-- `HDR_fitting_2D_WholeFOV.m`：全 FOV 批次 PSF 擬合主程式，也是目前推薦的主要路徑。
-  `HDR_fitting_2D_WholeFOV.m`: Main entry point for full-FOV batch PSF fitting and the recommended primary workflow.
+- `HDR_fitting_2D_WholeFOV.m`：全 FOV 批次 PSF 擬合正式入口，現已採用 refined pre-alignment 的合理版主流程。
+  `HDR_fitting_2D_WholeFOV.m`: Formal entry point for full-FOV batch PSF fitting, now promoted to the refined pre-alignment main workflow.
+- `HDR_fitting_2D_WholeFOV_impl.m`：目前正式版核心實作，維持原輸出格式與資料夾結構。
+  `HDR_fitting_2D_WholeFOV_impl.m`: Current formal implementation that preserves the legacy output contract.
+- `legacy/HDR_fitting_2D_WholeFOV_legacy_pre_prealign_fix_20260325.m`：導入 pre-alignment 修正前的舊版 Whole-FOV 主程式封存。
+  `legacy/HDR_fitting_2D_WholeFOV_legacy_pre_prealign_fix_20260325.m`: Archived Whole-FOV script from before the pre-alignment fix.
 - `SimulatePSF/`：理論 PSF 模擬輸入與輸出。
   `SimulatePSF/`: Inputs and outputs for theoretical PSF simulation.
 - `Crop_circle_FreqFiltered/`：全 FOV 批次擬合的輸入影像與 fitting 輸出。
@@ -79,6 +106,12 @@ PSF_Fitting/
   `SingleImage_Input/`: Input set for the single-image fitting path.
 - `Deconvolution/`：Wiener 反捲積驗證相關資產與輸出。
   `Deconvolution/`: Wiener deconvolution validation assets and outputs.
+- `PSF_Report_Helper/`：用既有 Whole-FOV 輸出生成報告圖表、表格與繁中草稿。
+  `PSF_Report_Helper/`: Report-oriented helper that converts existing Whole-FOV outputs into figures, tables, and Traditional Chinese drafts.
+- `PSF_Fitting_ValidationLab/`：Whole-FOV 修正驗證、比較與歷史依據。
+  `PSF_Fitting_ValidationLab/`: Validation and historical experiment area for the Whole-FOV fitting fix.
+- `tests/`：本專案自有的 MATLAB / Python 測試與最小 smoke artifacts。
+  `tests/`: Centralized MATLAB/Python tests and minimal smoke-test artifacts for this project.
 
 ---
 
@@ -231,8 +264,10 @@ This path fits one image at a time and writes one fitted PSF `.mat` file, such a
 
 **最佳化設定：**
 - 最佳化變數：15 個（同上）
-- `x(1:14)` → 直接映射為 Zernike Z2~Z15，其中 **Z2（Y-tilt）與 Z3（X-tilt）在函式內部強制為 0**（防止優化結果退化為純平移）
+- `x(1:14)` → 直接映射為 Zernike Z2~Z15，其中 **Z2（Y-tilt）與 Z3（X-tilt）在函式內部強制為 0**
 - `x(15)` → 振幅縮放 `AC`
+- 在進入 fitting 前，會先對 raw image 與 GT 做 refined pre-alignment（預設搜尋步距 `0.25 px`）
+- `warm-start` 維持開啟，以前一張 FOV 的解作為下一張的起點
 
 **Loss 函數：**
 ```
@@ -309,6 +344,7 @@ This is the recommended path because it:
 - processes the full 10x10 FOV grid
 - supports warm-starting from the previous image
 - precomputes shared pieces for speed
+- performs refined raw/GT pre-alignment before fitting
 - stores the final result as a structured FOV PSF stack
 
 Main outputs:
@@ -333,6 +369,7 @@ across the full field of view.
 | 處理影像數 | 1 張（寫死路徑） | 100 張（自動掃描資料夾） |
 | Zernike 映射 | 非直觀重映射（C 向量重排） | 直接映射 Z2~Z15 |
 | Tilt 鎖定 | 否（Z1, Z2 為優化目標） | 是（Z2=0, Z3=0 強制鎖死） |
+| 預對齊 | 否 | 是（refined pre-alignment，預設 `0.25 px`） |
 | Warm-start | 否（每次從 x0 開始） | 是（以前一張結果作初始點） |
 | PSF Precompute | 否 | 是（FFT、pupil grid 只算一次） |
 | Loss 梯度權重 | 2×10⁵ | 8×10⁴ |
@@ -354,6 +391,40 @@ WholeFOV path is the more important operational workflow.
 ### 階段 3：Wiener 反捲積驗證
 
 位於 `HDR_fitting_2D.m` 或 `HDR_fitting_2D_WholeFOV.m` 的 **Section 2**（第二個 `%%` 之後）。可獨立執行，不依賴 Section 1 的結果（直接讀取 `Deconvolution/PSF/PSF_fitted_2D.mat`）。
+
+### Whole-FOV 正式替換說明
+
+- `HDR_fitting_2D_WholeFOV.m` 已在 2026-03-25 升級為較合理的正式版流程。
+- 舊版主程式已封存於 `legacy/HDR_fitting_2D_WholeFOV_legacy_pre_prealign_fix_20260325.m`。
+- 正式版維持原本主要輸出：
+  - `Crop_circle_FreqFiltered/Fits/batch_results.csv`
+  - `Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
+  - `Crop_circle_FreqFiltered/Fits/formal_config.json`
+- 驗證與實驗紀錄保留在 `PSF_Fitting_ValidationLab/`，不作為日常主入口。
+- `visualize_fitted_psf_grid.m` 可直接重畫 `Crop_circle_FreqFiltered/Fits/fitted_psf_grid_crop31.png` 等全視野總覽圖。
+
+### 與下游模型同步的規則
+
+- `Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat` 是目前正式 Whole-FOV PSF 輸出位置。
+- `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py` 與
+  `D:\GMM_2_Final\Experiments\R32Sandbox\Model\train_r32.py`
+  都直接讀取這個正式路徑，因此未來新的訓練 run 會自然吃到最新正式 PSF。
+- 但已存在的舊 checkpoint 不應被回頭改寫；它們的推論預設應維持使用 checkpoint 當時封存的 PSF buffer，
+  以保留 git / 實驗歷史的可重現性。
+- 若要故意拿舊 checkpoint 比較「套用最新正式 PSF」的效果，應在推論時明確指定外部 `.mat` 路徑，
+  而不是靠更改舊 checkpoint 的預設語意。
+
+### 測試整理說明
+
+- 本專案自行新增的測試已統一集中到 `tests/`。
+- MATLAB 測試分為：
+  - `tests/matlab/wholefov/`
+  - `tests/matlab/validationlab/`
+- Python 測試集中在：
+  - `tests/python/`
+- `tests/artifacts/` 保留 smoke tests 產生的最小輸出樣本，避免散落到主流程資料夾。
+- 第三方套件 `bads-1.1.3/` 內建測試不屬於本專案整理範圍，維持原位。
+- 測試執行方式詳見 `tests/README_TW.md`。
 
 **輸入：**
 
@@ -437,6 +508,7 @@ These are usually environment or path issues rather than fitting-logic issues.
 | 日期 | 內容 |
 |------|------|
 | 2025-09-24 | 單張版 (`HDR_fitting_2D.m`) 完成 2D 化 |
+| 2026-03-25 | Whole-FOV 正式主線升級為 refined pre-alignment 版，舊版封存至 `legacy/`，正式輸出維持相容格式 |
 | 2025-10 | WholeFOV 批次版加入 Warm-start、Precompute 優化、Tilt 鎖定 |
 | 2026-03-04 | 路徑全面改為相對路徑，整合至 `d:\GMM_2_Final\PSF_Fitting\`；新增本說明文件 |
 
