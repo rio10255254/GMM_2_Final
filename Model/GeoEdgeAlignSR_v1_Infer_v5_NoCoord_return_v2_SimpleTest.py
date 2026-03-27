@@ -34,8 +34,9 @@ if str(SCRIPT_DIR) not in sys.path:
 
 try:
     from GeoEdgeAlignSR_v1_ModelA_v5_NoCoord import GeoEdgeAlignSR_v1_v5_NoCoord
+    from GeoEdgeAlignSR_v1_Utils import imread_unicode, imwrite_unicode
 except ImportError:
-    print("Error: GeoEdgeAlignSR_v1_ModelA_v5_NoCoord module not found.")
+    print("Error: required GeoEdgeAlignSR modules not found.")
     sys.exit(1)
 
 
@@ -393,7 +394,7 @@ def resolve_psf_path(args: argparse.Namespace, ckpt_obj, state_dict: dict):
 
 
 def read_image_keep_dtype(path: Path):
-    img = cv2.imread(str(path), cv2.IMREAD_UNCHANGED)
+    img = imread_unicode(str(path), cv2.IMREAD_UNCHANGED)
     if img is None:
         raise ValueError(f"Failed to read image: {path}")
     original_dtype = img.dtype
@@ -516,9 +517,11 @@ def run_one(model: torch.nn.Module, device: torch.device, in_path: Path, out_pat
 
     if np.issubdtype(dtype, np.floating):
         out_u8 = (pred_np * 255.0).round().clip(0, 255).astype(np.uint8)
-        cv2.imwrite(str(out_path), out_u8)
+        if not imwrite_unicode(str(out_path), out_u8):
+            raise OSError(f"Failed to write image: {out_path}")
     else:
-        cv2.imwrite(str(out_path), out)
+        if not imwrite_unicode(str(out_path), out):
+            raise OSError(f"Failed to write image: {out_path}")
 
     if gt_path is None or (not gt_path.exists()):
         return None

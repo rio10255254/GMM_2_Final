@@ -140,6 +140,22 @@ Python 3.12，需 NVIDIA GPU（CUDA）進行訓練。
 
 ---
 
+### 訓練語意邊界
+
+本 repo 內目前有兩種不同的訓練語意，請不要混用：
+
+- **完整重新訓練 baseline**
+  - 目的是讓使用者或研究者以歷史上被驗證過的 `R26 / r26_sm035` baseline 作為起點，完整訓練並自由選 best checkpoint
+  - 這種語意不應帶 `12 epoch`、`56 batches/epoch`、early fast-val 等搜尋約束
+- **autotune / candidate search**
+  - 目的是在固定 budget 下比較多個 candidate
+  - `12 epoch sweep`、early batch budget、fast validation、best window `[2, 12]` 都屬於這一層
+
+也就是說，`sweep constraints` 是搜尋機制，不是模型本體。  
+之後若要新增或維護一般訓練入口，應以「完整重新訓練 baseline」為準；只有 autotune / search 專用流程才應保留 sweep 約束。
+
+---
+
 ### 訓練
 
 **執行前確認：**
@@ -229,12 +245,30 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py \
 **PSF 相關參數（推論時）：**
 
 ```bash
-# 從 checkpoint 中直接還原 PSF buffers（預設）
+# 預設優先使用 checkpoint 內封存的 PSF buffers
 --psf-from-ckpt
 
-# 或明確指定 PSF 路徑
+# 若要改成使用目前 repo 內最新正式 PSF
+--no-psf-from-ckpt \
+--psf-fitted-path ../PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat
+
+# 或明確指定其他 PSF 路徑
 --psf-fitted-path path/to/PSF_fitted_2D_FOVstack.mat
 ```
+
+目前訓練入口與 `R32Sandbox` 訓練入口都會直接讀取
+`../PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`，
+因此當該路徑的 Whole-FOV 擬合結果被正式更新時，新的訓練 run 會自動吃到新 PSF。
+
+但推論入口預設仍保留「以 checkpoint 自己攜帶的 PSF 為準」的歷史語意，
+避免舊 checkpoint 因外部 `.mat` 被更新而悄悄改變行為。
+
+因此目前規則是：
+
+- 新訓練 run：會自然吃到最新正式 PSF。
+- 舊 checkpoint 推論：預設保持使用當時 checkpoint 內封存的 PSF。
+- 若你要拿舊 checkpoint 額外比較「套用最新正式 PSF」的效果，必須明確加上
+  `--no-psf-from-ckpt --psf-fitted-path ...`。
 
 **推論輸出結構：**
 
@@ -303,8 +337,11 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py \
     --weights d:\GMM_2_Final\Traing_Progress\training_progress_xxx\weights\best_tradeoff.pth.tar
 ```
 
+**Q: 為什麼舊 checkpoint 沒有跟著新的 PSF 更新？**
+A: 這是刻意保留的歷史可重現性設計。舊 checkpoint 推論預設仍使用 checkpoint 內封存的 PSF buffer，不會因外部 `.mat` 更新而改變。只有新的訓練 run 會自然吃到最新正式 PSF；若你想拿舊 checkpoint 額外測最新 PSF，請明確加 `--no-psf-from-ckpt --psf-fitted-path ...`。
+
 **Q: PSF shape mismatch 錯誤**
-A: 推論時預設 `--psf-from-ckpt`，會從 checkpoint buffer 重建 PSF，不需要外部 `.mat` 檔。若仍出錯，嘗試加上 `--no-psf-from-ckpt --psf-fitted-path path/to/PSF.mat`。
+A: 若你是在重現舊 checkpoint，先保留預設 `--psf-from-ckpt`。若你是刻意比較最新正式 PSF，則改用 `--no-psf-from-ckpt --psf-fitted-path path/to/PSF_fitted_2D_FOVstack.mat`，並確認該 `.mat` 仍維持目前正式 Whole-FOV 版型。
 
 **Q: 模型輸出有明顯 checkerboard 偽影**
 A: 確認使用 `ShiftSafeUpsample`（預設 `use_upsample_conv=True`）而非舊版 `UpsampleConv`。
