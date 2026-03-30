@@ -1,0 +1,202 @@
+{
+  "image": "VisionTop_20251029182653732.bmp",
+  "model": "r26_sm035 (R26 正式交付版, Whole-FOV PSF)",
+  "image_size_hw": [
+    2180,
+    1520
+  ],
+  "annulus_geometry": {
+    "center_xy": [
+      771.65,
+      1508.0
+    ],
+    "r_inner": 485.45,
+    "r_outer": 597.04,
+    "ring_width": 111.59,
+    "status": "ok",
+    "method": "coarse_mask_seed+local_refine",
+    "warnings": []
+  },
+  "edge_sharpness": {
+    "outer_edge_width_input_px": 35.584,
+    "outer_edge_width_output_px": 22.596,
+    "inner_edge_width_input_px": 36.181,
+    "inner_edge_width_output_px": 22.795,
+    "outer_sharpening_ratio": 1.575,
+    "gradient_boost_ratio": 0.793
+  },
+  "circle_fit": {
+    "input": {
+      "status": "ok",
+      "warnings": [],
+      "center_offset_px": 0.3089,
+      "inner": {
+        "center": [
+          771.897,
+          1506.22
+        ],
+        "radius": 489.252,
+        "residual_std_px": 6.253,
+        "residual_max_px": 20.905,
+        "valid_angles": 324,
+        "total_angles": 360,
+        "coverage_ratio": 0.9,
+        "status": "ok",
+        "warnings": []
+      },
+      "outer": {
+        "center": [
+          772.179,
+          1506.347
+        ],
+        "radius": 594.315,
+        "residual_std_px": 6.4523,
+        "residual_max_px": 18.8003,
+        "valid_angles": 324,
+        "total_angles": 360,
+        "coverage_ratio": 0.9,
+        "status": "ok",
+        "warnings": []
+      }
+    },
+    "output": {
+      "status": "ok",
+      "warnings": [],
+      "center_offset_px": 0.7527,
+      "inner": {
+        "center": [
+          771.042,
+          1508.796
+        ],
+        "radius": 485.4,
+        "residual_std_px": 2.9539,
+        "residual_max_px": 19.8403,
+        "valid_angles": 324,
+        "total_angles": 360,
+        "coverage_ratio": 0.9,
+        "status": "ok",
+        "warnings": []
+      },
+      "outer": {
+        "center": [
+          771.779,
+          1508.64
+        ],
+        "radius": 597.278,
+        "residual_std_px": 2.6322,
+        "residual_max_px": 11.2448,
+        "valid_angles": 324,
+        "total_angles": 360,
+        "coverage_ratio": 0.9,
+        "status": "ok",
+        "warnings": []
+      }
+    }
+  },
+  "frequency_analysis": {
+    "hf_energy_pct_input": 0.004,
+    "hf_energy_pct_output": 0.0,
+    "hf_boost": 0.029
+  },
+  "background": {
+    "std_input": 9.99,
+    "std_output": 8.915,
+    "uniformity_change_pct": 10.76,
+    "contrast_input": 71.94,
+    "contrast_output": 80.76
+  },
+  "artifacts": {
+    "ringing_score_input": 1.5608,
+    "ringing_score_output": 0.4974,
+    "ringing_ratio": 0.319
+  },
+  "edge_width_uniformity_cv_pct": {
+    "outer_input": 10.86,
+    "outer_output": 16.77
+  },
+  "residual_harmonics": {
+    "input_outer_dominant_k": 15,
+    "input_outer_energy": {
+      "lo_pct": 1.43,
+      "hi_pct": 98.57,
+      "lo_ci_95": [
+        0.9,
+        8.15
+      ],
+      "hi_ci_95": [
+        91.85,
+        99.1
+      ]
+    },
+    "input_inner_dominant_k": 4,
+    "input_inner_energy": {
+      "lo_pct": 1.06,
+      "hi_pct": 98.94,
+      "lo_ci_95": [
+        0.69,
+        7.71
+      ],
+      "hi_ci_95": [
+        92.29,
+        99.31
+      ]
+    },
+    "output_outer_dominant_k": 4,
+    "output_outer_energy": {
+      "lo_pct": 11.13,
+      "hi_pct": 88.87,
+      "lo_ci_95": [
+        9.86,
+        18.34
+      ],
+      "hi_ci_95": [
+        81.66,
+        90.14
+      ]
+    },
+    "output_inner_dominant_k": 2,
+    "output_inner_energy": {
+      "lo_pct": 23.1,
+      "hi_pct": 76.9,
+      "lo_ci_95": [
+        15.06,
+        33.34
+      ],
+      "hi_ci_95": [
+        66.66,
+        84.94
+      ]
+    }
+  },
+  "hotspot_clusters": {
+    "threshold_pct": 75,
+    "input_outer": {
+      "threshold_px": 7.17,
+      "n_high_res": 81,
+      "total_arc_deg": 145.0,
+      "n_clusters": 20,
+      "max_cluster_deg": 28.0
+    },
+    "input_inner": {
+      "threshold_px": 7.014,
+      "n_high_res": 81,
+      "total_arc_deg": 132.0,
+      "n_clusters": 27,
+      "max_cluster_deg": 34.0
+    },
+    "output_outer": {
+      "threshold_px": 2.359,
+      "n_high_res": 81,
+      "total_arc_deg": 96.0,
+      "n_clusters": 17,
+      "max_cluster_deg": 49.0
+    },
+    "output_inner": {
+      "threshold_px": 2.654,
+      "n_high_res": 81,
+      "total_arc_deg": 109.0,
+      "n_clusters": 14,
+      "max_cluster_deg": 29.0
+    }
+  }
+}

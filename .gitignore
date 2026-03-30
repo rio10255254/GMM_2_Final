@@ -94,3 +94,11 @@ Tools/AutoTuneTerminal/.output_window.pid
 /000_LONGRUN_STATUS.json
 /000_LONGRUN_RUNNING.txt
 /000_NOTIFY_CODEX_NOW.txt
+
+# Legacy root-level analysis scratch dirs replaced by AnalysisLab
+/_analysis_sequence_test/
+/_analysis_single_image_test/
+
+# AnalysisLab local caches
+Experiments/AnalysisLab/**/__pycache__/
+Experiments/AnalysisLab/**/.pytest_cache/
