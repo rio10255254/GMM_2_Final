@@ -1,6 +1,6 @@
 # AnalysisLab
 
-`Experiments/AnalysisLab/` 是常駐、版本優先的分析資料入口。
+`AnalysisLab/` 是常駐、版本優先的分析資料入口。
 
 設計原則：
 - 單一入口：所有可長期保留的分析 fixture、腳本、測試、結果與報告都收在這裡

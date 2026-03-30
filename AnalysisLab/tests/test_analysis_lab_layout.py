@@ -10,10 +10,12 @@ def test_analysis_lab_root_contract():
     assert (root / "README.md").exists()
     index_path = root / "index.json"
     assert index_path.exists()
+    assert root.parent.name != "Experiments"
 
     data = json.loads(index_path.read_text(encoding="utf-8"))
     assert "versions" in data
     assert "r26" in data["versions"]
+    assert data["entry_point"] == "AnalysisLab/README.md"
 
 
 def test_r26_single_image_and_sequence_contract():
@@ -26,4 +28,3 @@ def test_r26_single_image_and_sequence_contract():
         assert (analysis_root / "tests").is_dir()
         assert (analysis_root / "results").is_dir()
         assert (analysis_root / "reports").is_dir()
-
