@@ -180,10 +180,11 @@ D:\GMM_2_Final\
 │
 ├── Tools/                             ← 執行輔助腳本（PowerShell）
 │
+├── AnalysisLab/                       ← 常駐分析資料入口（版本優先；single_image / sequence）
+│   ├── README.md
+│   └── r26/
+│
 ├── Experiments/                       ← 獨立實驗 sandbox 區
-│   ├── AnalysisLab/                   ← 常駐分析資料入口（版本優先；single_image / sequence）
-│   │   ├── README.md
-│   │   └── r26/
 │   ├── R32Sandbox/                    ← Round32 隔離沙盒（external FAIL，已關閉）
 │   │   ├── README.md
 │   │   ├── Model/                     ← R32 專用訓練/稽核腳本
