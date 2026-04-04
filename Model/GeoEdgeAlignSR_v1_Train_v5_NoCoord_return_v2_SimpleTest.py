@@ -790,6 +790,10 @@ class TrainConfig:
     DETAIL_CB_REDUCE_STEP: float = 0.25
     DETAIL_CB_MIN_MULT: float = 0.50
 
+    # ---- R33 Robust Loss: Winsorize spatial losses to de-emphasize outlier pixels ----
+    ROBUST_LOSS_PERCENTILE: float = 1.0   # 1.0 = disabled (identity); 0.90 = cap top 10%
+    ROBUST_LOSS_WARMUP: int = 10          # skip Winsorize for first N epochs
+
     ENABLE_PSF_GUARD_ONLY: bool = False
     PSF_GUARD_MAX_EPOCHS: int = 10
     PSF_GUARD_ON_ARTIFACT_SPIKE: bool = True
@@ -2237,6 +2241,29 @@ def _masked_mean(x: torch.Tensor, mask: torch.Tensor, eps: float = 1e-6) -> torc
     return (x * m).sum() / denom
 
 
+def _winsorize(x: torch.Tensor, mask: torch.Tensor, percentile: float) -> torch.Tensor:
+    """Cap per-pixel loss values at *percentile* within the masked region.
+
+    When *percentile* >= 1.0, returns *x* unchanged (zero overhead).
+    The cap is computed under ``torch.no_grad`` so it cannot be gamed
+    by the optimiser.
+    """
+    if percentile >= 1.0:
+        return x
+    with torch.no_grad():
+        m = mask
+        if m is not None:
+            if m.ndim == 3:
+                m = m.unsqueeze(1)
+            valid = x[m > 0.5]
+        else:
+            valid = x.flatten()
+        if valid.numel() < 2:
+            return x
+        cap = torch.quantile(valid, percentile)
+    return torch.clamp(x, max=cap)
+
+
 def _masked_l1(a: torch.Tensor, b: torch.Tensor, mask: torch.Tensor, eps: float = 1e-6) -> torch.Tensor:
     return _masked_mean(torch.abs(a - b), mask, eps=eps)
 
@@ -2303,10 +2330,13 @@ def band_energy_proxy(x01: torch.Tensor, mask: torch.Tensor = None) -> torch.Ten
     return torch.mean(num / den)
 
 
-def laplacian_hf_loss(pred01: torch.Tensor, tgt01: torch.Tensor, mask: torch.Tensor = None) -> torch.Tensor:
+def laplacian_hf_loss(pred01: torch.Tensor, tgt01: torch.Tensor, mask: torch.Tensor = None,
+                      robust_pct: float = 1.0) -> torch.Tensor:
     hp_pred = _laplacian(pred01)
     hp_tgt = _laplacian(tgt01)
-    return _masked_mean(torch.abs(hp_pred - hp_tgt), mask)
+    diff = torch.abs(hp_pred - hp_tgt)
+    diff = _winsorize(diff, mask, robust_pct)
+    return _masked_mean(diff, mask)
 
 
 def _psf_forward_available(model: nn.Module) -> Tuple[bool, str]:
@@ -2361,11 +2391,13 @@ def get_phys_weight(epoch1: int) -> float:
     return float(CFG.W_PHYS_MAX) * max(0.0, min(1.0, t))
 
 
-def gradient_magnitude_loss(pred01: torch.Tensor, tgt01: torch.Tensor, mask: torch.Tensor = None) -> torch.Tensor:
+def gradient_magnitude_loss(pred01: torch.Tensor, tgt01: torch.Tensor, mask: torch.Tensor = None,
+                            robust_pct: float = 1.0) -> torch.Tensor:
     eps = float(max(1e-6, CFG.EDGE_CHARB_EPS))
     g_pred = sobel_magnitude(pred01)
     g_tgt = sobel_magnitude(tgt01)
     diff = torch.sqrt((g_pred - g_tgt) ** 2 + eps * eps)
+    diff = _winsorize(diff, mask, robust_pct)
     return _masked_mean(diff, mask)
 
 
@@ -5978,14 +6010,15 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                 src01 = src.float().clamp(0.0, 1.0)
                 l_pix, ssim_v, l_ssim_raw = reconstruction_terms(pred01, lbl01, huber, ssim)
                 l_rec = l_pix + float(w_ssim) * l_ssim_raw
-                l_gradmag = gradient_magnitude_loss(pred01, lbl01, mask_valid)
+                _rpct = CFG.ROBUST_LOSS_PERCENTILE if epoch1 > CFG.ROBUST_LOSS_WARMUP else 1.0
+                l_gradmag = gradient_magnitude_loss(pred01, lbl01, mask_valid, robust_pct=_rpct)
                 l_edge_ori = edge_orientation_loss(pred01, lbl01, mask_valid) if w_edge_ori > 0.0 else pred01.new_tensor(0.0)
                 pred_mean_mask, pred_std_mask = masked_mean_std(pred01, mask_valid)
                 gt_mean_mask, gt_std_mask = masked_mean_std(lbl01, mask_valid)
                 l_stat = torch.abs(pred_mean_mask - gt_mean_mask) + torch.abs(pred_std_mask - gt_std_mask)
                 l_ssim = ssim_v
                 hf = hf_ratio(pred01, mask_valid)
-                l_hf_lap = laplacian_hf_loss(pred01, lbl01, mask_valid)
+                l_hf_lap = laplacian_hf_loss(pred01, lbl01, mask_valid, robust_pct=_rpct)
                 l_edge_local_lap = pred01.new_tensor(0.0)
                 if bool(enable_edge_local_lap) and (float(w_edge_local_lap_epoch) > 0.0):
                     edge_mask = _edge_mask_from_gt(
