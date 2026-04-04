@@ -124,8 +124,8 @@ The Git-tracked copies live under `docs/runtime/legacy/root_status/`.
   - `R32` 外部失敗後的下一步語意分支
   - the semantic next-step branch after the `R32` external fail
 - `codex/*`
-  - AI agent 工作分支（例如目前的 `codex/r26-psf-representative-sync`）
-  - AI agent working branches
+  - AI agent 工作分支，合併後即刪除
+  - AI agent working branches, deleted after merge
 
 ## Reconstruction Honesty Rule / reconstructed 分支誠實原則
 
