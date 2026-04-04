@@ -22,7 +22,7 @@
     },
     "improvement_pct": 98.0,
     "gmf_step_std": 0.201031,
-    "gmf_baseline_step_std": 0.205
+    "gmf_baseline_step_std": 0.205193
   },
   "k2_stability": {
     "input_outer": {
@@ -111,5 +111,12 @@
       "mean_persistence": 0.1798,
       "max_persistence": 1.0
     }
+  },
+  "environment": {
+    "python": "3.12.9",
+    "numpy": "2.2.3",
+    "scipy": "1.15.2",
+    "matplotlib": "3.10.1",
+    "opencv": "4.11.0"
   }
 }
