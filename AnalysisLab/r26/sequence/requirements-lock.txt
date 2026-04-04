@@ -1,0 +1,12 @@
+# Exact dependency versions for reproducible sequence analysis results.
+# Generated: 2026-04-04
+# Run:  pip install -r requirements-lock.txt
+#
+# These pins ensure that scipy.optimize.least_squares and numpy numerical
+# routines produce bit-identical circle-fit results across machines.
+
+python==3.12.9       # enforced via runtime check, not pip-installable
+numpy==2.2.3
+scipy==1.15.2
+matplotlib==3.10.1
+opencv-python-headless==4.11.0.86

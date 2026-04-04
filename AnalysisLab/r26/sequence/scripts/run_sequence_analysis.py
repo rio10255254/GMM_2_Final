@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import platform
 import re
 import sys
 import time
@@ -41,6 +42,18 @@ summarize_circle_fits = _sia.summarize_circle_fits
 compute_residual_harmonics = _sia.compute_residual_harmonics
 compute_hotspot_clusters = _sia.compute_hotspot_clusters
 measure_edge_width = _sia.measure_edge_width
+
+def _collect_env_versions() -> dict:
+    """Return pinned dependency versions for reproducibility tracking."""
+    versions: dict[str, str] = {"python": platform.python_version()}
+    for pkg in ("numpy", "scipy", "matplotlib", "cv2"):
+        try:
+            mod = importlib.import_module(pkg)
+            versions[pkg.replace("cv2", "opencv")] = getattr(mod, "__version__", "unknown")
+        except ImportError:
+            versions[pkg.replace("cv2", "opencv")] = "not_installed"
+    return versions
+
 
 # Local config
 ROOT_DIR = Path(__file__).resolve().parents[1]
@@ -956,14 +969,18 @@ def main(
                 stripped.append(s)
             return stripped
 
+        env_versions = _collect_env_versions()
+
         with open(ds_dir / "per_frame_metrics.json", "w", encoding="utf-8") as f:
             json.dump({
+                "environment": env_versions,
                 "input": _strip_signals(inp_metrics),
                 "output": _strip_signals(out_metrics),
             }, f, indent=2, ensure_ascii=False)
 
         # Strip persistence_profile from summary for readability
         summary_clean = json.loads(json.dumps(summary))
+        summary_clean["environment"] = env_versions
         for key in list(summary_clean.get("hotspot_persistence", {}).keys()):
             summary_clean["hotspot_persistence"][key].pop("persistence_profile", None)
         with open(ds_dir / "sequence_summary.json", "w", encoding="utf-8") as f:
@@ -1007,7 +1024,10 @@ def main(
                 for key in list(sc.get("hotspot_persistence", {}).keys()):
                     sc["hotspot_persistence"][key].pop("persistence_profile", None)
                 clean.append(sc)
-            json.dump(clean, f, indent=2, ensure_ascii=False)
+            json.dump({
+                "environment": _collect_env_versions(),
+                "datasets": clean,
+            }, f, indent=2, ensure_ascii=False)
 
         plot_08_cross_scale_step_std(all_summaries, cross_dir / "08_cross_scale_step_std.png")
         log("\n  -> cross_dataset/08_cross_scale_step_std.png")
