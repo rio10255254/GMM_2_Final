@@ -21,8 +21,10 @@ performance/
 │   └── device_config.py              # ★ 唯一需要改的檔案 ★
 ├── results/
 │   ├── <DEVICE_NAME>/               # 每台設備一個子目錄
-│   │   ├── inference_benchmark.json
-│   │   └── training_benchmark.json
+│   │   ├── inference_benchmark.json # 推論 benchmark 的機器可讀結果
+│   │   ├── inference_summary.md     # 推論 benchmark 的人類可讀摘要
+│   │   ├── training_benchmark.json  # 訓練 benchmark 的機器可讀結果（若有跑）
+│   │   └── training_summary.md      # 訓練 benchmark 的人類可讀摘要（若有跑）
 │   └── cross_device/                 # 匯總比較結果
 │       ├── device_comparison.json
 │       └── *.png
@@ -45,7 +47,7 @@ python AnalysisLab/r26/performance/scripts/run_inference_benchmark.py
 python AnalysisLab/r26/performance/scripts/run_training_benchmark.py
 ```
 
-結果會自動存到 `results/<DEVICE_NAME>/`。
+結果會自動存到 `results/<DEVICE_NAME>/`，其中 JSON 給腳本/CI 用，Markdown summary 給人直接讀。
 
 ---
 
@@ -125,6 +127,8 @@ python AnalysisLab/r26/performance/scripts/setup_device.py
 腳本會自動：
 - 檢查必要檔案是否存在
 - 偵測 GPU 資訊
+- 若 benchmark package 旁邊已經有 `best_tradeoff.pth.tar` / `PSF_fitted_2D_FOVstack.mat` / 訓練資料，會直接採用
+- 否則再詢問你模型資產所在路徑
 - 產生正確的 `configs/device_config.py`
 - 告訴你下一步要跑什麼
 
@@ -161,7 +165,18 @@ python AnalysisLab/r26/performance/scripts/run_inference_benchmark.py --device c
 
 ### 第四步：把結果送回來
 
-結果存在 `results/<DEVICE_NAME>/` 裡，是純 JSON 檔。
+結果存在 `results/<DEVICE_NAME>/` 裡，通常包含：
+
+- `inference_benchmark.json`
+- `inference_summary.md`
+- `training_benchmark.json`（只有真的跑了 training benchmark 才會有）
+- `training_summary.md`（只有真的跑了 training benchmark 才會有）
+
+另外要注意：
+
+- 如果你用 `--device cuda:0` 或 `--device cpu`，結果只會包含你指定的裝置
+- 如果你用 `--no-cpu`，則該次結果不會包含 CPU baseline
+- 因此 `results/<DEVICE_NAME>/` 不保證永遠同時含 GPU 與 CPU、也不保證 inference/training 一定都存在
 
 **方法 A：Git commit + push（推薦）**
 
@@ -173,7 +188,8 @@ git push
 
 **方法 B：手動複製**
 
-把 `results/<DEVICE_NAME>/` 整個資料夾複製回本機的對應位置。
+把 `results/<DEVICE_NAME>/` 整個資料夾複製回本機的對應位置。  
+建議連同 `.json` 和 `.md` 一起帶回來，避免只剩機器可讀結果、沒有摘要。
 
 ### 第五步：跨設備比較
 
@@ -190,7 +206,7 @@ python AnalysisLab/r26/performance/scripts/run_cross_device_compare.py
 - `device_comparison.json`：完整比較數據
 - `01_inference_latency_comparison.png`：推論延遲對比
 - `02_inference_throughput_comparison.png`：推論吞吐量對比
-- `03_training_throughput_comparison.png`：訓練吞吐量對比
+- `03_training_throughput_comparison.png`：訓練吞吐量對比（至少有一台設備提供 training JSON 才會產生）
 - `04_gpu_memory_comparison.png`：GPU 記憶體對比
 
 ---
@@ -210,6 +226,8 @@ python AnalysisLab/r26/performance/scripts/run_cross_device_compare.py
 | `gpu_memory_peak_mb` | GPU 記憶體峰值 |
 | `output_hash` | 輸出影像的 SHA256（用於跨設備數值一致性檢查） |
 
+目前 script 不再把 `checkpoint`、`test_input_dir`、`all_latencies_ms` 一起寫進結果 JSON，避免把本機絕對路徑和冗長原始 latency 陣列綁進已追蹤 artifacts。
+
 ### 訓練 Benchmark
 
 | 指標 | 說明 |
@@ -223,7 +241,7 @@ python AnalysisLab/r26/performance/scripts/run_cross_device_compare.py
 
 ### 數值一致性
 
-跨設備比較會自動檢查 `output_hash`。如果不同設備的 hash 不同，代表浮點運算在不同 GPU 架構上有差異。這是正常的（不同 GPU 的浮點行為略有不同），但差異太大需要注意。
+跨設備比較會自動檢查 `output_hash`。如果不同設備的 hash 不同，代表浮點運算在不同 GPU / CPU 架構上有差異。這是正常的（不同硬體的浮點行為略有不同），但若差異持續擴大或只在某一台設備上出現，仍需要追查。
 
 ---
 

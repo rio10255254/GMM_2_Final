@@ -33,8 +33,16 @@ RESULTS_ROOT = PERF_ROOT / "results"
 # Add configs to sys.path for import
 sys.path.insert(0, str(CONFIGS_DIR))
 
-# Add Model/ to sys.path so inference helpers can be imported
-MODEL_DIR = PERF_ROOT.parents[2] / "Model"
+# Add Model/ to sys.path so inference helpers can be imported.
+# Search upward from script dir to support both repo layout and standalone package.
+def _find_model_dir() -> Path:
+    for ancestor in [PERF_ROOT] + list(PERF_ROOT.parents):
+        candidate = ancestor / "Model"
+        if candidate.is_dir() and (candidate / "GeoEdgeAlignSR_v1_Utils.py").exists():
+            return candidate
+    raise FileNotFoundError("Cannot find Model/ directory. Make sure it exists.")
+
+MODEL_DIR = _find_model_dir()
 if str(MODEL_DIR) not in sys.path:
     sys.path.insert(0, str(MODEL_DIR))
 
@@ -226,8 +234,6 @@ def benchmark_on_device(device: torch.device, images: list[Path],
     result = {
         "device": str(device),
         "device_info": collect_device_info(device),
-        "checkpoint": str(CHECKPOINT),
-        "test_input_dir": str(TEST_INPUT_DIR),
         "num_test_images": len(images),
         "warmup_runs": warmup,
         "benchmark_runs": runs,
@@ -241,7 +247,6 @@ def benchmark_on_device(device: torch.device, images: list[Path],
         "throughput_fps": round(1000.0 / float(latencies_arr.mean()), 2),
         "gpu_memory_peak_mb": gpu_memory_peak_mb,
         "output_hash": output_hashes[0] if output_hashes else None,
-        "all_latencies_ms": [round(x, 2) for x in latencies],
     }
 
     # --- Print summary ---
@@ -330,10 +335,52 @@ def main():
     # Save results
     out_dir = RESULTS_ROOT / DEVICE_NAME
     out_dir.mkdir(parents=True, exist_ok=True)
+
     out_path = out_dir / "inference_benchmark.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2, ensure_ascii=False)
-    print(f"\nResults saved to: {out_path}")
+
+    # Human-readable summary (Markdown, Chinese)
+    summary_path = out_dir / "inference_summary.md"
+    with open(summary_path, "w", encoding="utf-8") as f:
+        f.write(f"# GeoEdge R26 推論效能報告\n\n")
+        f.write(f"- **設備名稱：** {DEVICE_NAME}\n")
+        f.write(f"- **測試日期：** {time.strftime('%Y-%m-%d %H:%M')}\n\n")
+        for dev_key, r in all_results.items():
+            info = r.get("device_info", {})
+            gpu = info.get("gpu_name", "CPU")
+            f.write(f"## {gpu} (`{dev_key}`)\n\n")
+            f.write(f"### 效能指標\n\n")
+            f.write(f"| 指標 | 數值 | 說明 |\n")
+            f.write(f"|------|------|------|\n")
+            f.write(f"| 模型載入時間 | {r['model_load_time_ms']:.1f} ms | 從讀取 checkpoint 到模型可推論的時間 |\n")
+            f.write(f"| 首次推論延遲 | {r['first_inference_ms']:.1f} ms | 第一次推論（含 CUDA JIT 編譯暖機） |\n")
+            f.write(f"| **平均推論延遲** | **{r['mean_inference_ms']:.1f} ms** | **暖機後每張影像的平均處理時間** |\n")
+            f.write(f"| 延遲標準差 | {r['std_inference_ms']:.1f} ms | 推論時間的穩定程度，越小越穩定 |\n")
+            f.write(f"| P95 延遲 | {r['p95_inference_ms']:.1f} ms | 95% 的推論都在此時間內完成（最差情況參考） |\n")
+            f.write(f"| **吞吐量** | **{r['throughput_fps']:.1f} FPS** | **每秒可處理的影像數** |\n")
+            if r.get("gpu_memory_peak_mb"):
+                f.write(f"| GPU 記憶體峰值 | {r['gpu_memory_peak_mb']:.1f} MB | 推論過程中 GPU 顯存的最大佔用量 |\n")
+            f.write(f"| 輸出雜湊 | `{r['output_hash'][:16]}...` | 輸出影像的 SHA256，用於跨設備數值一致性比對 |\n")
+            f.write(f"\n### 測試環境\n\n")
+            f.write(f"| 項目 | 數值 |\n")
+            f.write(f"|------|------|\n")
+            f.write(f"| PyTorch 版本 | {info.get('torch_version', '?')} |\n")
+            f.write(f"| CUDA 版本 | {info.get('cuda_version', 'N/A')} |\n")
+            f.write(f"| cuDNN 版本 | {info.get('cudnn_version', 'N/A')} |\n")
+            f.write(f"| Python 版本 | {info.get('python_version', '?')} |\n")
+            f.write(f"| 作業系統 | {info.get('platform', '?')} |\n")
+            f.write(f"| 處理器 | {info.get('processor', '?')} |\n")
+            if info.get("gpu_memory_total_mb"):
+                f.write(f"| GPU 總顯存 | {info['gpu_memory_total_mb']:.0f} MB |\n")
+            f.write(f"| 測試影像數量 | {r['num_test_images']} |\n")
+            f.write(f"| 暖機次數 | {r['warmup_runs']} |\n")
+            f.write(f"| 計時次數 | {r['benchmark_runs']} |\n")
+            f.write(f"\n")
+
+    print(f"\nResults saved to:")
+    print(f"  {out_path}")
+    print(f"  {summary_path}")
 
 
 if __name__ == "__main__":

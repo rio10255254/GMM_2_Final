@@ -6,7 +6,7 @@
       "torch_device": "cuda:0",
       "torch_version": "2.3.0+cu121",
       "cuda_available": true,
-      "python_version": "3.12.9",
+      "python_version": "3.12.7",
       "platform": "Windows-11-10.0.26200-SP0",
       "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
       "machine": "AMD64",
@@ -24,14 +24,14 @@
     "num_trainable_params": 4011331,
     "total_samples_processed": 3300,
     "epoch_times_sec": [
-      20.213,
-      19.892,
-      20.033
+      19.89,
+      19.808,
+      19.852
     ],
-    "mean_epoch_time_sec": 20.046,
-    "std_epoch_time_sec": 0.132,
-    "throughput_samples_per_sec": 54.87,
-    "total_time_sec": 60.139,
+    "mean_epoch_time_sec": 19.85,
+    "std_epoch_time_sec": 0.034,
+    "throughput_samples_per_sec": 55.42,
+    "total_time_sec": 59.55,
     "gpu_memory_peak_mb": 1914.7
   }
 }

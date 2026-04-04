@@ -8,11 +8,11 @@
       "device_config_name": "RTX_A6000_Main",
       "torch_device": "cuda:0",
       "gpu_name": "NVIDIA RTX A6000",
-      "model_load_time_ms": 221.46,
-      "mean_inference_ms": 382.48,
-      "std_inference_ms": 4.8,
-      "p95_inference_ms": 393.2,
-      "throughput_fps": 2.61,
+      "model_load_time_ms": 215.54,
+      "mean_inference_ms": 377.22,
+      "std_inference_ms": 1.49,
+      "p95_inference_ms": 379.63,
+      "throughput_fps": 2.65,
       "gpu_memory_peak_mb": 6111.2,
       "output_hash": "06a602f98ddf68c6c788296cb86ac7f24774adcaa9e84ad7b8038541dbc1a54e"
     }
@@ -24,10 +24,10 @@
       "gpu_name": "NVIDIA RTX A6000",
       "mode": "quick",
       "epochs_run": 3,
-      "mean_epoch_time_sec": 20.046,
-      "throughput_samples_per_sec": 54.87,
+      "mean_epoch_time_sec": 19.85,
+      "throughput_samples_per_sec": 55.42,
       "gpu_memory_peak_mb": 1914.7,
-      "total_time_sec": 60.139
+      "total_time_sec": 59.55
     }
   ],
   "numerical_consistency": {
