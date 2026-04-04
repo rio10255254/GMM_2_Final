@@ -27,6 +27,7 @@ CANDIDATES = {
 
 
 def main():
+    # Parse our own args first, pass the rest to the trainer
     parser = argparse.ArgumentParser(description="R33 Robust Loss launcher")
     parser.add_argument(
         "--candidate",
@@ -36,7 +37,10 @@ def main():
     )
     parser.add_argument("--num-epoch", type=int, default=100)
     parser.add_argument("--device", type=str, default="cuda:0")
-    args = parser.parse_args()
+    args, remaining = parser.parse_known_args()
+
+    # Patch sys.argv so trainer.parse_args() only sees remaining args
+    sys.argv = [sys.argv[0]] + remaining
 
     # Import training module (triggers CFG creation)
     import GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest as trainer
