@@ -39,4 +39,3 @@
 | 作業系統 | Windows-11-10.0.26200-SP0 |
 | 處理器 | Intel64 Family 6 Model 183 Stepping 1, GenuineIntel |
 | GPU 總顯存 | 49140 MB |
-
