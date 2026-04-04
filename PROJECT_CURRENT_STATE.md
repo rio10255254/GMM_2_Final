@@ -1,5 +1,5 @@
 # PROJECT CURRENT STATE / 專案目前狀態
-Last updated: 2026-03-27
+Last updated: 2026-04-05
 
 Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
 
@@ -111,6 +111,7 @@ This is not a marginal failure. The `0.8px` battlefield deteriorated sharply rel
 - **沒有可直接挑戰 baseline 的 current winning line**
 - `R32 real_eq` 這條線已完成 external FAIL，R32 Sandbox 已關閉
 - **目前 active 沙盒：`R26NewPSFCheck`**（2026-03-26 啟動，外部 GMF 結果等待中）
+- **新實驗沙盒：`R33RobustLoss`**（2026-04-05 啟動，Winsorize 空間損失降權缺陷離群值）
 
 ### R26NewPSFCheck 現況（2026-03-27）
 
@@ -131,6 +132,19 @@ This is not a marginal failure. The `0.8px` battlefield deteriorated sharply rel
 - 整體進度摘要：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\reports\STATUS_20260326.md`
 - PSF 審核記錄：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\psf_audit\PSF_FORMAL_AUDIT_20260326.md`
 - promote 比較報告：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md`
+
+### R33RobustLoss 現況（2026-04-05）
+
+| 項目 | 狀態 |
+|------|------|
+| 假說 | residual_std 2.9 px 的瓶頸源於不可修缺陷像素的離群梯度拉扯 |
+| 機制 | 對 W_GRADMAG + W_HF_LAP 做 per-pixel Winsorize（截尾） |
+| 候選 | p90 / p85 / p95 三個 percentile，warmup=10 epoch |
+| 程式碼修改 | `_winsorize()` 函式 + 2 個 loss 函式加 robust_pct 參數 |
+| 訓練 | ⏳ 尚未開始 |
+| 分支 | `sandbox/r33` |
+
+正式入口：`D:\GMM_2_Final\Experiments\R33RobustLoss\README.md`
 
 Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。
 The Git-tracked `000_LONGRUN_ROUND32_STATUS.*` files are now kept under `docs/runtime/legacy/root_status/` as a legacy bridge only; if the same filenames reappear at the repository root, treat them as local runtime output rather than canonical truth.
