@@ -22,4 +22,4 @@ Claude may analyze requirements, edit files, run shell commands, and verify resu
 
 - Keep changes scoped to the request.
 - Run relevant checks before reporting completion.
-- Summarize the outcome briefly and call out any remaining risks.
+- Summarize the outcome with enough detail for the user to understand what changed and why; call out any remaining risks.

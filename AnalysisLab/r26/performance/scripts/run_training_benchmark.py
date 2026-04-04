@@ -39,7 +39,15 @@ RESULTS_ROOT = PERF_ROOT / "results"
 
 sys.path.insert(0, str(CONFIGS_DIR))
 
-MODEL_DIR = PERF_ROOT.parents[2] / "Model"
+# Search upward from script dir to support both repo layout and standalone package.
+def _find_model_dir() -> Path:
+    for ancestor in [PERF_ROOT] + list(PERF_ROOT.parents):
+        candidate = ancestor / "Model"
+        if candidate.is_dir() and (candidate / "GeoEdgeAlignSR_v1_Utils.py").exists():
+            return candidate
+    raise FileNotFoundError("Cannot find Model/ directory. Make sure it exists.")
+
+MODEL_DIR = _find_model_dir()
 if str(MODEL_DIR) not in sys.path:
     sys.path.insert(0, str(MODEL_DIR))
 
@@ -425,10 +433,58 @@ def main():
     # Save results
     out_dir = RESULTS_ROOT / DEVICE_NAME
     out_dir.mkdir(parents=True, exist_ok=True)
+
     out_path = out_dir / "training_benchmark.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2, ensure_ascii=False)
-    print(f"\nResults saved to: {out_path}")
+
+    # Human-readable summary (Markdown, Chinese)
+    summary_path = out_dir / "training_summary.md"
+    with open(summary_path, "w", encoding="utf-8") as f:
+        f.write(f"# GeoEdge R26 訓練效能報告\n\n")
+        f.write(f"- **設備名稱：** {DEVICE_NAME}\n")
+        f.write(f"- **測試日期：** {time.strftime('%Y-%m-%d %H:%M')}\n\n")
+        for dev_key, r in all_results.items():
+            info = r.get("device_info", {})
+            gpu = info.get("gpu_name", "CPU")
+            f.write(f"## {gpu} (`{dev_key}`)\n\n")
+            f.write(f"### 效能指標\n\n")
+            f.write(f"| 指標 | 數值 | 說明 |\n")
+            f.write(f"|------|------|------|\n")
+            mode_zh = "快速模式（少量 epoch 估算）" if r['mode'] == "quick" else "完整訓練"
+            f.write(f"| 測試模式 | {r['mode']} | {mode_zh} |\n")
+            f.write(f"| 訓練輪數 | {r['epochs_run']} | 本次實際執行的 epoch 數 |\n")
+            f.write(f"| 批次大小 | {r['batch_size']} | 每次送入 GPU 的影像數量 |\n")
+            amp_zh = "開啟（FP16 加速）" if r['use_amp'] else "關閉（純 FP32）"
+            f.write(f"| 混合精度（AMP） | {r['use_amp']} | {amp_zh} |\n")
+            f.write(f"| 模型參數量 | {r['num_params']:,} | 模型的總可學習參數數量 |\n")
+            f.write(f"| **平均每輪時間** | **{r['mean_epoch_time_sec']:.1f} s** | **跑完一個 epoch 的平均秒數** |\n")
+            f.write(f"| 每輪時間標準差 | {r['std_epoch_time_sec']:.3f} s | epoch 間的時間波動，越小越穩定 |\n")
+            f.write(f"| **訓練吞吐量** | **{r['throughput_samples_per_sec']:.1f} samples/sec** | **每秒處理的訓練樣本數** |\n")
+            f.write(f"| 總測試時間 | {r['total_time_sec']:.1f} s | 所有 epoch 的總執行時間 |\n")
+            if r.get("gpu_memory_peak_mb"):
+                f.write(f"| GPU 記憶體峰值 | {r['gpu_memory_peak_mb']:.1f} MB | 訓練過程中 GPU 顯存的最大佔用量 |\n")
+            f.write(f"\n### 逐輪明細\n\n")
+            f.write(f"| Epoch | 時間 (秒) |\n")
+            f.write(f"|-------|----------|\n")
+            for i, t in enumerate(r["epoch_times_sec"], 1):
+                f.write(f"| {i} | {t:.3f} |\n")
+            f.write(f"\n### 測試環境\n\n")
+            f.write(f"| 項目 | 數值 |\n")
+            f.write(f"|------|------|\n")
+            f.write(f"| PyTorch 版本 | {info.get('torch_version', '?')} |\n")
+            f.write(f"| CUDA 版本 | {info.get('cuda_version', 'N/A')} |\n")
+            f.write(f"| cuDNN 版本 | {info.get('cudnn_version', 'N/A')} |\n")
+            f.write(f"| Python 版本 | {info.get('python_version', '?')} |\n")
+            f.write(f"| 作業系統 | {info.get('platform', '?')} |\n")
+            f.write(f"| 處理器 | {info.get('processor', '?')} |\n")
+            if info.get("gpu_memory_total_mb"):
+                f.write(f"| GPU 總顯存 | {info['gpu_memory_total_mb']:.0f} MB |\n")
+            f.write(f"\n")
+
+    print(f"\nResults saved to:")
+    print(f"  {out_path}")
+    print(f"  {summary_path}")
 
 
 if __name__ == "__main__":

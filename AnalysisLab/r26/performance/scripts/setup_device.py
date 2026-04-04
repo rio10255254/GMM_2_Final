@@ -25,8 +25,23 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 PERF_ROOT = SCRIPT_DIR.parent
 CONFIG_PATH = PERF_ROOT / "configs" / "device_config.py"
-MODEL_DIR = PERF_ROOT.parents[2] / "Model"
-DEFAULT_TEST_INPUT = PERF_ROOT.parent / "single_image" / "inputs"
+
+# Find Model/ and test inputs by searching upward (works in both repo and standalone package)
+def _find_dir(name: str, marker: str | None = None) -> Path | None:
+    for ancestor in [PERF_ROOT] + list(PERF_ROOT.parents):
+        candidate = ancestor / name
+        if candidate.is_dir():
+            if marker is None or (candidate / marker).exists():
+                return candidate
+    return None
+
+MODEL_DIR = _find_dir("Model", "GeoEdgeAlignSR_v1_Utils.py")
+DEFAULT_TEST_INPUT = (
+    _find_dir("test_inputs")  # standalone package layout
+    or PERF_ROOT.parent / "single_image" / "inputs"  # repo layout
+)
+# Standalone package: assets are next to Model/ and performance/
+PACKAGE_ROOT = PERF_ROOT.parent if MODEL_DIR and MODEL_DIR.parent == PERF_ROOT.parent else None
 
 REQUIRED_FILES = {
     "best_tradeoff.pth.tar": "R26 model checkpoint",
@@ -177,9 +192,9 @@ def main():
 
     # --- Step 2: Check Model/ code ---
     print("[2/5] Checking model code...")
-    if not MODEL_DIR.is_dir():
-        print(f"  ERROR: Model/ directory not found at {MODEL_DIR}")
-        print("  Make sure you cloned the full repo.")
+    if MODEL_DIR is None or not MODEL_DIR.is_dir():
+        print(f"  ERROR: Model/ directory not found.")
+        print("  Make sure Model/ exists in the package or repo.")
         sys.exit(1)
     key_files = [
         "GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py",
@@ -195,25 +210,36 @@ def main():
 
     # --- Step 3: Locate assets ---
     print("[3/5] Locating model assets...")
-    print("  The benchmark needs these files (not included in git):")
-    print()
-    for f, desc in REQUIRED_FILES.items():
-        print(f"    [required] {f}  ({desc})")
-    for d, desc in OPTIONAL_DIRS.items():
-        print(f"    [optional] {d}/  ({desc})")
-    print()
-    print("  These should be on a USB drive, cloud folder, or local path.")
 
-    source_path_str = ask("  Enter the path to the folder containing these files")
-    if not source_path_str:
-        print("  ERROR: No path provided.")
-        sys.exit(1)
-    source_dir = Path(source_path_str).resolve()
-    if not source_dir.is_dir():
-        print(f"  ERROR: Not a directory: {source_dir}")
-        sys.exit(1)
+    # First, check if assets are bundled in the same package (standalone mode)
+    found: dict = {}
+    source_dir: Path | None = None
+    if PACKAGE_ROOT is not None:
+        found = find_assets(PACKAGE_ROOT)
+        if all(f in found for f in REQUIRED_FILES):
+            source_dir = PACKAGE_ROOT
+            print("  Standalone package detected - assets found alongside code.")
 
-    found = find_assets(source_dir)
+    # If not found locally, ask the user
+    if not source_dir:
+        print("  The benchmark needs these files:")
+        print()
+        for f, desc in REQUIRED_FILES.items():
+            print(f"    [required] {f}  ({desc})")
+        for d, desc in OPTIONAL_DIRS.items():
+            print(f"    [optional] {d}/  ({desc})")
+        print()
+        print("  These should be on a USB drive, cloud folder, or local path.")
+
+        source_path_str = ask("  Enter the path to the folder containing these files")
+        if not source_path_str:
+            print("  ERROR: No path provided.")
+            sys.exit(1)
+        source_dir = Path(source_path_str).resolve()
+        if not source_dir.is_dir():
+            print(f"  ERROR: Not a directory: {source_dir}")
+            sys.exit(1)
+        found = find_assets(source_dir)
     print()
     print("  Found:")
     for name in list(REQUIRED_FILES) + list(OPTIONAL_DIRS):
