@@ -795,6 +795,12 @@ class TrainConfig:
     ROBUST_LOSS_WARMUP: int = 10          # skip Winsorize for first N epochs
     ROBUST_LOSS_MODE: str = "hard"        # "hard" = clamp (Winsorize), "soft" = Charbonnier softclip
 
+    # ---- R34 Frequency-Split Robust Loss ----
+    ROBUST_FREQ_SPLIT: bool = False       # False = R33 behavior, True = freq-split gradient loss
+    ROBUST_FREQ_SIGMA: float = 1.5        # Gaussian sigma for lo/hi frequency separation
+    ROBUST_FREQ_W_LO: float = 0.5         # weight for lo-freq (position stability, Winsorized)
+    ROBUST_FREQ_W_HI: float = 0.5         # weight for hi-freq (edge sharpness, NOT Winsorized)
+
     ENABLE_PSF_GUARD_ONLY: bool = False
     PSF_GUARD_MAX_EPOCHS: int = 10
     PSF_GUARD_ON_ARTIFACT_SPIKE: bool = True
@@ -2445,6 +2451,41 @@ def gradient_magnitude_loss(pred01: torch.Tensor, tgt01: torch.Tensor, mask: tor
     diff = torch.sqrt((g_pred - g_tgt) ** 2 + eps * eps)
     diff = _robust_clip(diff, mask, robust_pct)
     return _masked_mean(diff, mask)
+
+
+def gradient_magnitude_loss_freq_split(
+    pred01: torch.Tensor, tgt01: torch.Tensor, mask: torch.Tensor = None,
+    robust_pct: float = 1.0,
+) -> torch.Tensor:
+    """Frequency-split gradient magnitude loss (R34).
+
+    Low-freq component (boundary position): Sobel on blurred images, then Winsorize.
+    High-freq component (edge sharpness): Sobel on residual, NO Winsorize.
+    """
+    sigma = float(CFG.ROBUST_FREQ_SIGMA)
+    eps = float(max(1e-6, CFG.EDGE_CHARB_EPS))
+
+    pred_lo = gaussian_blur(pred01, sigma=sigma)
+    tgt_lo = gaussian_blur(tgt01, sigma=sigma)
+    pred_hi = pred01 - pred_lo
+    tgt_hi = tgt01 - tgt_lo
+
+    # Low-freq: Winsorize to stabilize boundary position
+    g_pred_lo = sobel_magnitude(pred_lo)
+    g_tgt_lo = sobel_magnitude(tgt_lo)
+    diff_lo = torch.sqrt((g_pred_lo - g_tgt_lo) ** 2 + eps * eps)
+    diff_lo = _robust_clip(diff_lo, mask, robust_pct)
+    l_lo = _masked_mean(diff_lo, mask)
+
+    # High-freq: full gradient signal to preserve edge sharpness
+    g_pred_hi = sobel_magnitude(pred_hi)
+    g_tgt_hi = sobel_magnitude(tgt_hi)
+    diff_hi = torch.sqrt((g_pred_hi - g_tgt_hi) ** 2 + eps * eps)
+    l_hi = _masked_mean(diff_hi, mask)
+
+    w_lo = float(CFG.ROBUST_FREQ_W_LO)
+    w_hi = float(CFG.ROBUST_FREQ_W_HI)
+    return w_lo * l_lo + w_hi * l_hi
 
 
 def compute_shift_eq_losses(
@@ -6057,7 +6098,10 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                 l_pix, ssim_v, l_ssim_raw = reconstruction_terms(pred01, lbl01, huber, ssim)
                 l_rec = l_pix + float(w_ssim) * l_ssim_raw
                 _rpct = CFG.ROBUST_LOSS_PERCENTILE if epoch1 > CFG.ROBUST_LOSS_WARMUP else 1.0
-                l_gradmag = gradient_magnitude_loss(pred01, lbl01, mask_valid, robust_pct=_rpct)
+                if CFG.ROBUST_FREQ_SPLIT and _rpct < 1.0:
+                    l_gradmag = gradient_magnitude_loss_freq_split(pred01, lbl01, mask_valid, robust_pct=_rpct)
+                else:
+                    l_gradmag = gradient_magnitude_loss(pred01, lbl01, mask_valid, robust_pct=_rpct)
                 l_edge_ori = edge_orientation_loss(pred01, lbl01, mask_valid) if w_edge_ori > 0.0 else pred01.new_tensor(0.0)
                 pred_mean_mask, pred_std_mask = masked_mean_std(pred01, mask_valid)
                 gt_mean_mask, gt_std_mask = masked_mean_std(lbl01, mask_valid)
