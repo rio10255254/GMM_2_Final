@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-27 00:00:00",
+  "generated_at": "2026-04-05 00:00:00",
   "source": {
     "round30_internal_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md",
     "round30_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_EXTERNAL_COMPARE.md",
@@ -34,14 +34,33 @@
     "notes": "Round30 architecture breakthrough was the first externally validated branch to beat the R26 baseline on the main battlefield. Production promotion is based on external GMF, not internal family winner."
   },
   "latest_internal_frontier": {
-    "status": "no_current_winning_line_after_round32_external_fail",
-    "round": "round32",
-    "candidate": "r32_real_eq_finetune",
-    "checkpoint": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\artifacts\\training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431\\weights\\best_tradeoff.pth.tar",
+    "status": "r33_robust_p95_external_pass_baseline_upgrade_candidate",
+    "round": "round33",
+    "candidate": "r33_robust_p95",
+    "checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941\\weights\\best_tradeoff.pth.tar",
+    "mechanism": "Winsorize spatial losses (ROBUST_LOSS_PERCENTILE=0.95, WARMUP=10)",
     "internal_metrics": {
-      "internal_gate_passed": true
+      "internal_step_std_y_0p8": 0.1289,
+      "internal_step_std_y_0p08": 0.1145,
+      "internal_step_std_y_8px": 0.1737,
+      "note": "SimpleTest GMF proxy not configured (EXPECT_DX/DY=None); internal gate numbers from sequence analysis only"
     },
-    "notes": "Round32 internal winner was r32_real_eq_finetune, but it completed external compare and failed. There is currently no winning line that can challenge the Round30 baseline."
+    "external_gmf": {
+      "step_std_8px": 0.153343,
+      "step_std_0p8px": 0.119049,
+      "step_std_0p08px": 0.086274,
+      "lag1_autocorr_0p8px": -0.5549,
+      "outliers_8px": 2,
+      "outliers_0p8px": 0,
+      "outliers_0p08px": 0
+    },
+    "delta_vs_r30": {
+      "step_std_8px": -0.05185,
+      "step_std_0p8px": -0.048813,
+      "step_std_0p08px": -0.071446,
+      "delta_pct_0p8px": -29.1
+    },
+    "notes": "Round33 robust_p95 passed all four baseline promotion conditions: (1) external 0.8px 0.119 < 0.168 target, (2) 8px improved 25%, (3) 0.08px improved 45%, (4) no side-scale trade-off. Lag-1 autocorrelation flipped from +0.27 (R30) to -0.55 (R33)."
   },
   "latest_falsified_branch": {
     "status": "round32_real_eq_external_fail",
@@ -60,6 +79,28 @@
     "notes": "Round32 internal winner r32_real_eq_finetune completed the external final gate and failed badly on the main 0.8px battlefield. The Round30 baseline remains unchanged."
   },
   "latest_analyses": {
+    "round33_external_compare": {
+      "status": "completed_pass_all_scales",
+      "baseline": "r30_b1_dironly",
+      "candidate": "r33_robust_p95",
+      "external_gmf": {
+        "step_std_8px": 0.153343,
+        "step_std_0p8px": 0.119049,
+        "step_std_0p08px": 0.086274,
+        "lag1_autocorr_0p8px": -0.5549
+      },
+      "delta_vs_r30": {
+        "step_std_8px": -0.05185,
+        "step_std_0p8px": -0.048813,
+        "step_std_0p08px": -0.071446
+      },
+      "delta_pct_vs_r30": {
+        "step_std_8px_pct": -25.3,
+        "step_std_0p8px_pct": -29.1,
+        "step_std_0p08px_pct": -45.3
+      },
+      "upgrade_decision": "pass_pending_formal_promotion"
+    },
     "round32_external_compare": {
       "status": "completed_failed",
       "baseline": "r30_b1_dironly",
@@ -122,19 +163,20 @@
     }
   },
   "active_experiment": {
-    "status": "r26_newpsf_check_awaiting_external_gmf",
-    "sandbox": "R26NewPSFCheck",
-    "started": "2026-03-26",
-    "goal": "validate whether the new Whole-FOV PSF retrain improves downstream GMF performance vs. the legacy R26 package; PSF formal flow audit also completed",
-    "psf_policy_switched": "2026-03-27",
-    "psf_current_standard": "new Whole-FOV PSF (2026-03-26)",
-    "psf_legacy_baseline": "old PSF (pre-2026-03-26)",
-    "promote_verdict": "PROMOTE (formal_newpsf_candidate same-recipe, 2026-03-27)",
-    "external_gmf_status": "pending",
-    "status_file": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\reports\\STATUS_20260326.md",
-    "batch_root": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck",
-    "psf_policy_file": "D:\\GMM_2_Final\\docs\\policy\\PSF_STANDARD_POLICY.json",
-    "notes": "R26NewPSFCheck sandbox is active. PSF policy has been formally switched to new Whole-FOV PSF as current standard (2026-03-27). External GMF scoring is pending. Round32 real_eq remains externally falsified; no R32 continuation is currently active."
+    "status": "r33_robust_p95_external_pass_pending_baseline_promotion",
+    "sandbox": "R33RobustLoss",
+    "started": "2026-04-05",
+    "goal": "Winsorize spatial losses (gradient_magnitude + laplacian_hf) to redirect model capacity from unfixable defect pixels to clean regions",
+    "mechanism": "Per-pixel loss Winsorize at 95th percentile, warmup 10 epochs",
+    "winner": "r33_robust_p95",
+    "external_gmf_status": "completed_all_pass",
+    "external_gmf_date": "2026-04-05",
+    "batch_root": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss",
+    "report": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\reports\\R33_EXPERIMENT_SUMMARY.md",
+    "previous_sandbox": {
+      "R26NewPSFCheck": "still pending external GMF; PSF policy switch remains effective regardless"
+    },
+    "notes": "R33 robust_p95 achieved external 0.8px step_std 0.119049, beating R30 baseline (0.167862) by 29.1%. All three scales improved 25-45%. Pending formal baseline promotion decision."
   },
   "historical_milestones": {
     "round26_final_stepmag_baseline": {
@@ -159,14 +201,15 @@
     }
   },
   "notes": [
-    "Round30 / r30_b1_dironly is the current final production baseline.",
+    "Round30 / r30_b1_dironly is the current formal production baseline (pending R33 promotion decision).",
+    "Round33 / r33_robust_p95 passed external GMF on all three scales (2026-04-05): 0.8px 0.119 (-29%), 8px 0.153 (-25%), 0.08px 0.086 (-45%).",
+    "Round33 mechanism: Winsorize gradient_magnitude_loss and laplacian_hf_loss at 95th percentile to redirect capacity from structural defects to clean regions.",
+    "Round33 is the first line since R30 to achieve external improvement on the main 0.8px battlefield.",
     "Round31 measured external compare is formalized and does not change the baseline.",
     "Round32 internal winner r32_real_eq_finetune completed external compare and failed; it cannot be promoted.",
-    "There is currently no winning line that can challenge the Round30 baseline on external 0.8px.",
     "Generic step_mag sweep from 0.28 to 0.42 is closed; the externally verified optimum within that line remains 0.35.",
-    "R26NewPSFCheck sandbox launched 2026-03-26: testing new Whole-FOV PSF retrain vs. legacy R26 package.",
-    "PSF policy switched 2026-03-27: new Whole-FOV PSF is now the current standard; old PSF is the legacy empirical baseline.",
-    "PSF promote verdict: PROMOTE (formal_newpsf_candidate same-recipe validation passed, 2026-03-27).",
-    "External GMF scoring for R26NewPSFCheck is pending as of 2026-03-27."
+    "R26NewPSFCheck sandbox launched 2026-03-26: PSF policy switched 2026-03-27. External GMF for R26NewPSFCheck is still pending.",
+    "PSF policy: new Whole-FOV PSF is the current standard (2026-03-27); old PSF is the legacy empirical baseline.",
+    "R33 lag-1 autocorrelation is -0.55 (R30 was +0.27); step oscillation pattern noted but does not affect step_std target."
   ]
 }

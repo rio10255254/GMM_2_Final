@@ -37,6 +37,13 @@ flowchart TD
 | `baseline/ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md/json` | `baseline/r30-b1-dironly` | 記錄 Round30 breakthrough 線被正式選為主線的 internal decision。 / Captures the formal internal decision that selected the Round30 breakthrough line. |
 | `baseline/ROUND30_EXTERNAL_COMPARE.md` | `baseline/r30-b1-dironly` | 記錄 `r30_b1_dironly` 如何通過 external compare 並升級成目前 production baseline。 / Captures the external promotion proof that made `r30_b1_dironly` the current production baseline. |
 
+## R33 Baseline 升級候選證據 / R33 Baseline Upgrade Candidate Proof
+
+| 證據 / Evidence | 支撐對象 / Supports | 為何重要 / Why it matters |
+|---|---|---|
+| `Experiments/R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md` | `sandbox/r33` | R33 完整實驗記錄：假說、訓練、內部分析、外部 GMF 三尺度全通過。 / Complete R33 experiment record: hypothesis, training, analysis, external GMF pass on all three scales. |
+| `Experiments/R33RobustLoss/results/external_gmf/` | `sandbox/r33` external proof | 外部 GMF 原始評分檔（三尺度）。 / Raw external GMF score files for all three scales. |
+
 ## 歷史基準演進路徑 / Historical Baseline Path
 
 | 證據 / Evidence | 支撐對象 / Supports | 為何重要 / Why it matters |

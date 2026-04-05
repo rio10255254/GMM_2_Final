@@ -123,6 +123,9 @@ The Git-tracked copies live under `docs/runtime/legacy/root_status/`.
 - `research/r32-post-falsification`
   - `R32` 外部失敗後的下一步語意分支
   - the semantic next-step branch after the `R32` external fail
+- `sandbox/r33`
+  - `R33RobustLoss` 的隔離執行面（外部 GMF 已通過，pending baseline promotion）
+  - the `R33RobustLoss` execution surface (external GMF passed, pending baseline promotion)
 - `codex/*`
   - AI agent 工作分支，合併後即刪除
   - AI agent working branches, deleted after merge
