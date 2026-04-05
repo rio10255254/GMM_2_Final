@@ -210,6 +210,7 @@
     "Generic step_mag sweep from 0.28 to 0.42 is closed; the externally verified optimum within that line remains 0.35.",
     "R26NewPSFCheck sandbox launched 2026-03-26: PSF policy switched 2026-03-27. External GMF for R26NewPSFCheck is still pending.",
     "PSF policy: new Whole-FOV PSF is the current standard (2026-03-27); old PSF is the legacy empirical baseline.",
-    "R33 lag-1 autocorrelation is -0.55 (R30 was +0.27); step oscillation pattern noted but does not affect step_std target."
+    "R33 lag-1 autocorrelation is -0.55 (R30 was +0.27); step oscillation pattern noted but does not affect step_std target.",
+    "R33 TRADE-OFF: visual sharpness regressed (gradient -32%, Laplacian -47%, contrast -24%) while GMF step_std improved -29%. Softer but more frame-consistent edges yield better geometric localization. If future use cases require both sharpness and stability, consider p97/p98 or two-stage training."
   ]
 }

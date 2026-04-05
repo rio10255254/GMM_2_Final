@@ -154,6 +154,7 @@ This is not a marginal failure. The `0.8px` battlefield deteriorated sharply rel
 注意事項：
 - lag-1 autocorrelation 從 R30 的 +0.267 翻轉為 R33 的 -0.555（步伐交替震盪）
 - outer residual_std 在內部分析中退步 10-30%，但未影響外部 GMF 表現
+- **視覺銳度退步**：gradient magnitude -32%、Laplacian -47%、對比度 -24%。R33 的邊界更柔但幀間更一致——GMF 在乎位置穩定而非邊緣銳度。如���未來需兼顧銳度和穩定性，可探索 p97/p98 或兩階段訓練
 
 正式入口：`D:\GMM_2_Final\Experiments\R33RobustLoss\reports\R33_EXPERIMENT_SUMMARY.md`
 

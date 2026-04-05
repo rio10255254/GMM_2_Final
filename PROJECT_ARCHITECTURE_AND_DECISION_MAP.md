@@ -258,6 +258,7 @@ D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
 | External final gate 仍然是 whole-annulus GMF | Sandbox 化不改變這個原則 |
 | 內外部��分布差異可導致 internal pass / external fail | R32 案例；但 R33 證明合理的 loss 調整可以 internal/external 同步改善 |
 | R33 lag-1 autocorrelation 翻轉為負值（-0.55） | 步伐交替震盪模式；step_std 已達標但趨勢形態不同於 R30（+0.27） |
+| R33 視覺銳度退步但 GMF 定位改善 | gradient magnitude -32%、Laplacian -47%、對比度 -24%；更柔的邊界在幀間更一致，GMF 在乎位置穩定而非邊緣銳度 |
 
 ---
 
