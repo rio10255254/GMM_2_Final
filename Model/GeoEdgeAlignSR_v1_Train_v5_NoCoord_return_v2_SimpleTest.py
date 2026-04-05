@@ -793,6 +793,7 @@ class TrainConfig:
     # ---- R33 Robust Loss: Winsorize spatial losses to de-emphasize outlier pixels ----
     ROBUST_LOSS_PERCENTILE: float = 1.0   # 1.0 = disabled (identity); 0.90 = cap top 10%
     ROBUST_LOSS_WARMUP: int = 10          # skip Winsorize for first N epochs
+    ROBUST_LOSS_MODE: str = "hard"        # "hard" = clamp (Winsorize), "soft" = Charbonnier softclip
 
     ENABLE_PSF_GUARD_ONLY: bool = False
     PSF_GUARD_MAX_EPOCHS: int = 10
@@ -2264,6 +2265,51 @@ def _winsorize(x: torch.Tensor, mask: torch.Tensor, percentile: float) -> torch.
     return torch.clamp(x, max=cap)
 
 
+def _softclip(x: torch.Tensor, mask: torch.Tensor, percentile: float) -> torch.Tensor:
+    """Charbonnier soft-compression of per-pixel loss values.
+
+    Values below the *percentile* threshold pass through unchanged.
+    Values above are smoothly compressed via ``cap * sqrt(1 + ((x-cap)/cap)^2)``
+    so that gradient direction is preserved but magnitude is dampened.
+
+    When *percentile* >= 1.0, returns *x* unchanged (zero overhead).
+    """
+    if percentile >= 1.0:
+        return x
+    with torch.no_grad():
+        m = mask
+        if m is not None:
+            if m.ndim == 3:
+                m = m.unsqueeze(1)
+            valid = x[m > 0.5]
+        else:
+            valid = x.flatten()
+        if valid.numel() < 2:
+            return x
+        cap = torch.quantile(valid, percentile)
+    # Below cap: identity.  Above cap: Charbonnier compression.
+    above = x > cap
+    if not above.any():
+        return x
+    excess = (x[above] - cap) / cap.clamp_min(1e-8)
+    # Charbonnier: cap * sqrt(1 + excess^2)  → approaches cap for small excess,
+    # grows sublinearly for large excess.  Subtract cap so the baseline is zero,
+    # then add cap back → net value = cap * sqrt(1 + excess^2).
+    compressed = cap * torch.sqrt(1.0 + excess * excess)
+    out = x.clone()
+    out[above] = compressed
+    return out
+
+
+def _robust_clip(x: torch.Tensor, mask: torch.Tensor, percentile: float) -> torch.Tensor:
+    """Dispatch to hard Winsorize or soft Charbonnier based on CFG.ROBUST_LOSS_MODE."""
+    if percentile >= 1.0:
+        return x
+    if CFG.ROBUST_LOSS_MODE == "soft":
+        return _softclip(x, mask, percentile)
+    return _winsorize(x, mask, percentile)
+
+
 def _masked_l1(a: torch.Tensor, b: torch.Tensor, mask: torch.Tensor, eps: float = 1e-6) -> torch.Tensor:
     return _masked_mean(torch.abs(a - b), mask, eps=eps)
 
@@ -2335,7 +2381,7 @@ def laplacian_hf_loss(pred01: torch.Tensor, tgt01: torch.Tensor, mask: torch.Ten
     hp_pred = _laplacian(pred01)
     hp_tgt = _laplacian(tgt01)
     diff = torch.abs(hp_pred - hp_tgt)
-    diff = _winsorize(diff, mask, robust_pct)
+    diff = _robust_clip(diff, mask, robust_pct)
     return _masked_mean(diff, mask)
 
 
@@ -2397,7 +2443,7 @@ def gradient_magnitude_loss(pred01: torch.Tensor, tgt01: torch.Tensor, mask: tor
     g_pred = sobel_magnitude(pred01)
     g_tgt = sobel_magnitude(tgt01)
     diff = torch.sqrt((g_pred - g_tgt) ** 2 + eps * eps)
-    diff = _winsorize(diff, mask, robust_pct)
+    diff = _robust_clip(diff, mask, robust_pct)
     return _masked_mean(diff, mask)
 
 
