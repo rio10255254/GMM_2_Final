@@ -158,6 +158,26 @@ step_std 已大幅改善，但若未來需要更平滑的趨勢，可以考慮�
 
 **結論**：W_GRADMAG 的 Winsorize 是 R33 p95 成功的核心——不能移除。視覺銳度退步（gradient -32%、Laplacian -47%）是達到 GMF 穩定性 -29% 改善的必要代價。
 
+## Ablation: soft_p95 — Charbonnier Softclip (WORSE THAN HARD)
+
+**假說**：用 Charbonnier soft-compression 取代硬截尾，保留大梯度的方向信號但壓縮強度，以兼顧銳度和穩定性。
+
+**GradMag 佔比**：E011 = 21.4%（hard 是 10.9%，baseline 是 23.5%）→ 確實保留了更多梯度信號。
+
+**結果**：比 hard_p95 全面更差。
+
+| 指標 (0.8px) | R30 | hard_p95 | soft_p95 |
+|-------------|-----|----------|----------|
+| step_std_y | 0.205 | **0.129** | 0.144 |
+| outer res_std | 2.599 | 2.905 | **4.356** |
+| inner res_std | 2.894 | 2.684 | **3.804** |
+| gradient mag | 3.46 | 2.36 (-32%) | **2.29 (-34%)** |
+| 8px k2 verdict | stable | moderate | **volatile_risk** |
+
+**根因**：Charbonnier 讓大梯度以衰減強度繼續流入，但這些衰減信號反而干擾了模型學到的一致性模式。硬截尾給模型一個明確的「不管這些像素」的信號，比「繼續管但少管一點」更有效。
+
+**結論**：硬截尾（Winsorize）是正確的機制。soft compression 不能改善 sharpness-stability trade-off。
+
 ## Historical Context
 
 | Round | 做了什麼 | Internal | External 0.8px | 結果 |
