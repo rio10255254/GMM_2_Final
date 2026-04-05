@@ -14,6 +14,7 @@ flowchart TD
     R30 --> R32["R32 Sandbox / r32_real_eq_finetune ❌<br/>external FAIL — 0.8px = 0.3318 (+97.7%)"]
     R32 --> CLOSED["R32 closed (2026-03-20)"]
     R26 --> R26PSF["R26NewPSFCheck 🔬<br/>new Whole-FOV PSF retrain<br/>awaiting external GMF (2026-03-26)"]
+    R30 --> R33["Round33 / r33_robust_p95 ✅<br/>Winsorize spatial loss<br/>0.8px = 0.1190 (-29.1%)"]
 ```
 
 ## Milestone Numbers / 里程碑數字
@@ -25,6 +26,7 @@ flowchart TD
 | **R30（目前 baseline）** | `r30_b1_dironly` | **`0.167862`** | 首個外部驗證超越 R26；B1 dironly 有效 |
 | R31（B1 hyperparam） | 三個候選 | `0.179` ~ `0.185` | 全部外部退步，baseline 不變 |
 | R32 sandbox | `r32_real_eq_finetune` | `0.331821` | 外部惡化 +97.7%，FAIL，沙盒關閉 |
+| **R33（Robust Loss）** | **`r33_robust_p95`** | **`0.119049`** | **三尺度全通過；首個全面超越 R30 的候選** |
 | R26NewPSFCheck | 新 PSF 重訓候選 | 待定（等待 GMF 回填） | 進行中（2026-03-26 啟動） |
 
 ## Interpretation / 路徑解讀
@@ -44,6 +46,11 @@ flowchart TD
 - `R32 Sandbox`（已關閉）
   internal winner（`r32_real_eq_finetune`）通過所有內部合成探針，但 external compare 在主戰場 0.8px 惡化 +97.7%，確認 FAIL。2026-03-20 關閉沙盒。
   The internal winner passed all synthetic probes but failed external compare badly (+97.7% on 0.8px). Sandbox closed 2026-03-20.
+
+- `Round33 / r33_robust_p95`（外部通過，2026-04-05）
+  在 R30 B1 dironly recipe 上加入 Winsorize 空間損失（95th percentile 截尾），降權不可修復缺陷像素的梯度。
+  外部 GMF 結果：0.8px **0.119049**（-29.1%）、8px 0.153343（-25.3%）、0.08px 0.086274（-45.3%）。三尺度全面改善。
+  R33 is the first candidate since R30 to improve on all three external scales. Mechanism: Winsorize gradient_magnitude_loss and laplacian_hf_loss at 95th percentile.
 
 - `R26NewPSFCheck`（進行中）
   2026-03-26 啟動。以新 Whole-FOV PSF 從頭重訓 R26 模型，等待外部 GMF 結果回填。同時也完成了 PSF 正式流程審核。

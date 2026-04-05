@@ -31,31 +31,36 @@ Recommended fixed read order:
 
 ## Handoff Snapshot / 交接快照
 
-- current production baseline / 目前正式 production baseline: `Round30 / r30_b1_dironly`
-- latest completed external compare / 最近完成的 external compare: `Round32 sandbox external GMF compare`
+- current production baseline / 目前正式 production baseline: `Round30 / r30_b1_dironly`（pending R33 promotion）
+- latest completed external compare / 最近完成的 external compare: **`Round33 R33RobustLoss external GMF — ALL PASS`**
 - latest verified verdict / 最近已驗證 verdict:
+  **`r33_robust_p95` external PASS：0.8px 0.119（-29%）、8px 0.153（-25%）、0.08px 0.086（-45%）**
+- previous verdict / 前一次 verdict:
   `r32_real_eq_finetune` external FAIL；`Round30 / r30_b1_dironly` baseline unchanged
 - current active direction / 目前 active 方向:
-  `R26NewPSFCheck sandbox`（2026-03-26 啟動，等待外部 GMF 結果回填）
+  `R33RobustLoss sandbox/r33`（2026-04-05 完成外部驗證）
 - PSF policy / PSF 政策:
   新 Whole-FOV PSF 已於 2026-03-27 成為 `current standard`；舊 PSF 轉為 `legacy empirical baseline`
-- current sandbox verdict carrier / 目前 sandbox verdict carrier（R32）:
-  `Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.md`（已關閉）
-- current active sandbox / 目前 active sandbox:
-  `Experiments\R26NewPSFCheck\`
+- R33 verdict carrier / R33 verdict carrier:
+  `Experiments\R33RobustLoss\reports\R33_EXPERIMENT_SUMMARY.md`
+- R33 checkpoint / R33 checkpoint:
+  `Traing_Progress\training_progress_..._20260405_091941\weights\best_tradeoff.pth.tar`
+- previous sandbox / 前一個 sandbox:
+  `Experiments\R26NewPSFCheck\`（PSF 已切換；外部 GMF 仍待定）
 - tracked legacy bridge copy / 已追蹤 legacy bridge 副本:
   `docs/runtime/legacy/root_status/000_LONGRUN_ROUND32_STATUS.*`
 
 ## Conversation-Safe Verdict / 可安全沿用於對話的結論
 
-- `Round30 / r30_b1_dironly` remains the formal production baseline / 仍是正式 production baseline
-- `Round31` did not produce an upgrade; `r31_eq_combo` is missing an external artifact and must not be written as a measured verdict / 沒有形成升級；`r31_eq_combo` 缺 external artifact，不能硬寫成 measured verdict
-- `Round32` internal winner completed the external gate, but the external verdict is FAIL / internal winner 已完成 external gate，但 external 結論是 FAIL
-- `R32 real_eq` should now be treated as an externally falsified experimental branch / 這條線應視為 externally falsified experimental branch
-- `A1 / A5 / S1 / TTA` are not current upgrade directions / 都不是目前升級方向
-- the generic `step_mag` sweep is closed, and the externally verified optimum remains `0.35` / generic `step_mag` sweep 已封閉，externally verified optimum 仍是 `0.35`
-- the new Whole-FOV PSF is the `current standard` for R26 research as of 2026-03-27; the old PSF is the `legacy empirical baseline` / 新 Whole-FOV PSF 自 2026-03-27 起為 R26 研究的 current standard；舊 PSF 轉為 legacy empirical baseline
-- `R26NewPSFCheck` is the current active sandbox; external GMF results are pending / 是目前 active sandbox；外部 GMF 結果等待中
+- **`Round33 / r33_robust_p95` has passed external GMF on all three scales** (2026-04-05) / 已通過三尺度外部 GMF
+- `Round30 / r30_b1_dironly` is still the formal production baseline pending R33 promotion / 在 R33 正式 promote 前仍是正式 baseline
+- `Round33` mechanism: Winsorize spatial losses at 95th percentile (ROBUST_LOSS_PERCENTILE=0.95) / 機制：空間損失截尾
+- `Round31` did not produce an upgrade / 沒有形成升級
+- `Round32` internal winner completed the external gate, but the external verdict is FAIL / external 結論是 FAIL
+- the generic `step_mag` sweep is closed; the externally verified optimum remains `0.35` / 已封閉
+- the new Whole-FOV PSF is the `current standard` as of 2026-03-27 / 新 PSF 是 current standard
+- `R26NewPSFCheck` external GMF results are still pending / 外部 GMF 結果仍待定
+- R33 lag-1 autocorrelation is -0.55 (R30 was +0.27); noted but does not affect target / 已記錄但不影響目標
 
 ## Formal Entry Points / 正式入口
 

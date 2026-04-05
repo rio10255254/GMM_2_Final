@@ -1,5 +1,5 @@
 # PROJECT CURRENT STATE / 專案目前狀態
-Last updated: 2026-04-05
+Last updated: 2026-04-05 (R33 external GMF results received)
 
 Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
 
@@ -111,7 +111,7 @@ This is not a marginal failure. The `0.8px` battlefield deteriorated sharply rel
 - **沒有可直接挑戰 baseline 的 current winning line**
 - `R32 real_eq` 這條線已完成 external FAIL，R32 Sandbox 已關閉
 - **目前 active 沙盒：`R26NewPSFCheck`**（2026-03-26 啟動，外部 GMF 結果等待中）
-- **新實驗沙盒：`R33RobustLoss`**（2026-04-05 啟動，Winsorize 空間損失降權缺陷離群值）
+- **R33RobustLoss 外部 GMF 通過：0.8px 0.119（-29%）、8px 0.153（-25%）、0.08px 0.086（-45%）**
 
 ### R26NewPSFCheck 現況（2026-03-27）
 
@@ -133,18 +133,29 @@ This is not a marginal failure. The `0.8px` battlefield deteriorated sharply rel
 - PSF 審核記錄：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\psf_audit\PSF_FORMAL_AUDIT_20260326.md`
 - promote 比較報告：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md`
 
-### R33RobustLoss 現況（2026-04-05）
+### R33RobustLoss 現況（2026-04-05）— 外部 GMF 全通過
 
 | 項目 | 狀態 |
 |------|------|
 | 假說 | residual_std 2.9 px 的瓶頸源於不可修缺陷像素的離群梯度拉扯 |
-| 機制 | 對 W_GRADMAG + W_HF_LAP 做 per-pixel Winsorize（截尾） |
-| 候選 | p90 / p85 / p95 三個 percentile，warmup=10 epoch |
-| 程式碼修改 | `_winsorize()` 函式 + 2 個 loss 函式加 robust_pct 參數 |
-| 訓練 | ⏳ 尚未開始 |
-| 分支 | `sandbox/r33` |
+| 機制 | 對 W_GRADMAG + W_HF_LAP 做 per-pixel Winsorize（截尾 95th percentile） |
+| 訓練 | ✓ p90 和 p95 兩個候選皆已完成（100 epoch） |
+| Winner | **r33_robust_p95** |
+| 外部 GMF | ✓ **三尺度全面通過**（2026-04-05） |
 
-正式入口：`D:\GMM_2_Final\Experiments\R33RobustLoss\README.md`
+**外部 GMF 結果**：
+
+| 尺度 | R30 baseline | R33 p95 | 改善 |
+|------|-------------|---------|------|
+| **0.8px** | **0.167862** | **0.119049** | **-29.1%** |
+| 0.08px | 0.157720 | 0.086274 | -45.3% |
+| 8px | 0.205193 | 0.153343 | -25.3% |
+
+注意事項：
+- lag-1 autocorrelation 從 R30 的 +0.267 翻轉為 R33 的 -0.555（步伐交替震盪）
+- outer residual_std 在內部分析中退步 10-30%，但未影響外部 GMF 表現
+
+正式入口：`D:\GMM_2_Final\Experiments\R33RobustLoss\reports\R33_EXPERIMENT_SUMMARY.md`
 
 Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。
 The Git-tracked `000_LONGRUN_ROUND32_STATUS.*` files are now kept under `docs/runtime/legacy/root_status/` as a legacy bridge only; if the same filenames reappear at the repository root, treat them as local runtime output rather than canonical truth.
