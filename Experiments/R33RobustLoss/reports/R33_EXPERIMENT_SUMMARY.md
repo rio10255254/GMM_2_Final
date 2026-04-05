@@ -141,6 +141,23 @@ step_std 已大幅改善，但若未來需要更平滑的趨勢，可以考慮�
    - 不影響 step_std 達標
    - 值得後續觀察是否影響下游應用
 
+## Ablation: lap_only_p95 — W_HF_LAP only Winsorize (FAILED)
+
+**假說**：只對 W_HF_LAP (0.15) 做 Winsorize，保留 W_GRADMAG (0.8) 完整信號，以保留邊緣銳度。
+
+**結果**：完全失敗。
+
+| 指標 (0.8px) | R30 | p95 (both) | lap_only | 判斷 |
+|-------------|-----|-----------|----------|------|
+| step_std_y | 0.205 | **0.129** | 0.350 (+71%) | 大幅退步 |
+| outer res_std | 2.599 | 2.905 | **6.619** (+155%) | 幾乎沒學到反卷積 |
+| inner res_std | 2.894 | 2.684 | **6.367** (+120%) | 同上 |
+| outer improvement | 59.7% | 55.0% | **-2.5%** | 完全無效 |
+
+**根因**：W_HF_LAP 只佔 total loss ~10%，Winsorize 它幾乎不改變訓練動態。而且單獨截斷 Laplacian 信號破壞了高頻學習的平衡，連基本邊緣都學不好（best epoch 32 但品質極差）。
+
+**結論**：W_GRADMAG 的 Winsorize 是 R33 p95 成功的核心——不能移除。視覺銳度退步（gradient -32%、Laplacian -47%）是達到 GMF 穩定性 -29% 改善的必要代價。
+
 ## Historical Context
 
 | Round | 做了什麼 | Internal | External 0.8px | 結果 |
