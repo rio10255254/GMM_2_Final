@@ -21,6 +21,8 @@ class PSFDeconvPhysics(nn.Module):
       - PSF-guided Wiener-style inverse filtering in frequency domain
       - small residual strength alpha
     '''
+    _FREQ_RHO_CACHE: dict = {}
+
     def __init__(
         self,
         psf_path: str,
@@ -32,6 +34,11 @@ class PSFDeconvPhysics(nn.Module):
         alpha_init: float = 0.10,
         alpha_min: float = 0.05,
         alpha_max: float = 0.35,
+        # R37: Frequency-dependent regularization
+        freq_reg_enable: bool = False,
+        freq_reg_sigma: float = 0.15,
+        freq_reg_lo_mult: float = 2.0,
+        freq_reg_hi_floor: float = 0.3,
     ):
         super().__init__()
         if not psf_path:
@@ -57,6 +64,13 @@ class PSFDeconvPhysics(nn.Module):
         self.alpha = nn.Parameter(torch.tensor(float(alpha_init)))
         self.alpha_min = float(alpha_min)
         self.alpha_max = float(alpha_max)
+
+        # R37: Frequency-dependent regularization
+        self.freq_reg_enable = bool(freq_reg_enable)
+        if self.freq_reg_enable:
+            self.freq_reg_sigma = nn.Parameter(torch.tensor(float(freq_reg_sigma)))
+            self.freq_reg_lo_mult = nn.Parameter(torch.tensor(float(freq_reg_lo_mult)))
+            self.freq_reg_hi_floor = nn.Parameter(torch.tensor(float(freq_reg_hi_floor)))
 
     @staticmethod
     def _load_psf_stack(
@@ -119,6 +133,30 @@ class PSFDeconvPhysics(nn.Module):
         reg = torch.clamp(self.reg, min=1e-6)
         return reg.to(device=device, dtype=torch.float32)
 
+    def _get_freq_reg(self, h: int, w: int, device: torch.device) -> torch.Tensor:
+        """Frequency-dependent regularization (R37).
+
+        Low freq: high reg → conservative deconvolution → stable position.
+        High freq: low reg → aggressive deconvolution → sharper edges.
+        """
+        key = (h, w, device)
+        if key not in DepthwiseDeblurPhysics._FREQ_RHO_CACHE:
+            fy = torch.fft.fftfreq(h, device=device, dtype=torch.float32)
+            fx = torch.fft.rfftfreq(w, device=device, dtype=torch.float32)
+            FY, FX = torch.meshgrid(fy, fx, indexing='ij')
+            rho = torch.sqrt(FY ** 2 + FX ** 2)
+            rho_n = rho / rho.max().clamp_min(1e-6)
+            DepthwiseDeblurPhysics._FREQ_RHO_CACHE[key] = rho_n
+        rho_n = DepthwiseDeblurPhysics._FREQ_RHO_CACHE[key]
+
+        sigma = torch.clamp(self.freq_reg_sigma, 0.05, 0.5)
+        lo_mult = torch.clamp(self.freq_reg_lo_mult, 0.5, 5.0)
+        hi_floor = torch.clamp(self.freq_reg_hi_floor, 0.1, 1.0)
+
+        reg_base = torch.clamp(self.reg, min=1e-6)
+        profile = lo_mult * torch.exp(-(rho_n / sigma) ** 2) + hi_floor
+        return reg_base * profile
+
     def forward(self, x: torch.Tensor, psf_rc: Optional[Tuple[int, int]] = None) -> torch.Tensor:
         psf = self._select_psf(psf_rc)
         b, c, h, w = x.shape
@@ -144,7 +182,10 @@ class PSFDeconvPhysics(nn.Module):
             )
             psf_f = fft.rfft2(psf_pad)
             img_f = fft.rfft2(x_float)
-            reg = self._get_reg(x.device)
+            if self.freq_reg_enable:
+                reg = self._get_freq_reg(h, w, x.device)
+            else:
+                reg = self._get_reg(x.device)
             denom = torch.conj(psf_f) * psf_f + reg + 1e-6
             g = torch.conj(psf_f) / denom
             deconv = fft.irfft2(img_f * g, s=(h, w))
@@ -530,6 +571,11 @@ class GeoEdgeAlignSR_v1_v5_NoCoord(nn.Module):
         # A5: Squeeze-Excitation attention after bottleneck
         use_bottleneck_se: bool = False,
         bottleneck_se_reduction: int = 4,
+        # R37: Frequency-dependent PSF regularization
+        freq_reg_enable: bool = False,
+        freq_reg_sigma: float = 0.15,
+        freq_reg_lo_mult: float = 2.0,
+        freq_reg_hi_floor: float = 0.3,
     ):
         super().__init__()
         self.use_physics_layer = bool(use_physics_layer)
@@ -550,6 +596,10 @@ class GeoEdgeAlignSR_v1_v5_NoCoord(nn.Module):
                 alpha_init=psf_phys_alpha_init,
                 alpha_min=psf_phys_alpha_min,
                 alpha_max=psf_phys_alpha_max,
+                freq_reg_enable=freq_reg_enable,
+                freq_reg_sigma=freq_reg_sigma,
+                freq_reg_lo_mult=freq_reg_lo_mult,
+                freq_reg_hi_floor=freq_reg_hi_floor,
             )
         else:
             self.physics_layer = nn.Identity()

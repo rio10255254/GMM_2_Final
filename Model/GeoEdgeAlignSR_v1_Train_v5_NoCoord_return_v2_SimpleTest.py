@@ -795,6 +795,12 @@ class TrainConfig:
     ROBUST_LOSS_WARMUP: int = 10          # skip Winsorize for first N epochs
     ROBUST_LOSS_MODE: str = "hard"        # "hard" = clamp (Winsorize), "soft" = Charbonnier softclip
 
+    # ---- R37 Frequency-Dependent PSF Regularization ----
+    PSF_FREQ_REG_ENABLE: bool = False
+    PSF_FREQ_REG_SIGMA: float = 0.15       # transition width in normalized freq
+    PSF_FREQ_REG_LO_MULT: float = 2.0      # low-freq reg multiplier
+    PSF_FREQ_REG_HI_FLOOR: float = 0.3     # high-freq reg floor
+
     ENABLE_PSF_GUARD_ONLY: bool = False
     PSF_GUARD_MAX_EPOCHS: int = 10
     PSF_GUARD_ON_ARTIFACT_SPIKE: bool = True
@@ -6950,6 +6956,10 @@ def _build_model_from_cfg() -> nn.Module:
         weak_psf_beta_min=CFG.WEAK_PSF_BETA_MIN,
         weak_psf_beta_max=CFG.WEAK_PSF_BETA_MAX,
         weak_psf_beta_scale_max=CFG.WEAK_PSF_BETA_SCALE_MAX,
+        freq_reg_enable=bool(getattr(CFG, "PSF_FREQ_REG_ENABLE", False)),
+        freq_reg_sigma=float(getattr(CFG, "PSF_FREQ_REG_SIGMA", 0.15)),
+        freq_reg_lo_mult=float(getattr(CFG, "PSF_FREQ_REG_LO_MULT", 2.0)),
+        freq_reg_hi_floor=float(getattr(CFG, "PSF_FREQ_REG_HI_FLOOR", 0.3)),
         learnable_blur=bool(getattr(CFG, "LEARNABLE_BLUR", False)),
         use_bottleneck_se=bool(getattr(CFG, "USE_BOTTLENECK_SE", False)),
         bottleneck_se_reduction=int(getattr(CFG, "BOTTLENECK_SE_REDUCTION", 4)),
