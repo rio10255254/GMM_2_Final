@@ -359,6 +359,8 @@ class TrainConfig:
     ENABLE_SHIFT_EQ: bool = True
     EQ_PROB: float = 0.25
     SEQ_ENABLE: bool = False
+    SEQ_SRC_DIR: str = ""             # R38: independent seq src dir (empty = TRAIN_SRC_DIR)
+    SEQ_LBL_DIR: str = ""             # R38: independent seq lbl dir (empty = TRAIN_LBL_DIR)
     SEQ_INCLUDE_SUBDIRS: Tuple[str, ...] = ()
     SEQ_LOSS_WEIGHT: float = 0.0
     SEQ_GRAD_WEIGHT: float = 0.0
@@ -1444,9 +1446,11 @@ def make_sequence_loader():
     if not include_subdirs:
         return None
 
+    seq_src = str(getattr(CFG, "SEQ_SRC_DIR", "")).strip() or TRAIN_SRC_DIR
+    seq_lbl = str(getattr(CFG, "SEQ_LBL_DIR", "")).strip() or TRAIN_LBL_DIR
     seq_ds = SequencePairGrayFolder(
-        TRAIN_SRC_DIR,
-        TRAIN_LBL_DIR,
+        seq_src,
+        seq_lbl,
         crop_size=int(CFG.CROP_SIZE),
         include_subdirs=include_subdirs,
         random_crop=True,
