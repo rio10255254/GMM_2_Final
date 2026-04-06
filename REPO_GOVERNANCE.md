@@ -126,6 +126,15 @@ The Git-tracked copies live under `docs/runtime/legacy/root_status/`.
 - `sandbox/r33`
   - `R33RobustLoss` 的隔離執行面（外部 GMF 已通過，pending baseline promotion）
   - the `R33RobustLoss` execution surface (external GMF passed, pending baseline promotion)
+- `sandbox/r34`
+  - `R34FreqSplit` loss 層頻域分離實驗（已否定）
+  - R34 frequency-split gradient loss experiment (falsified)
+- `sandbox/r35`
+  - `R35AlphaBoost` physics alpha 提升實驗（已否定）
+  - R35 physics layer alpha boost experiment (falsified)
+- `sandbox/r37`
+  - `R37FreqReg` PSF 頻率依賴正則化實驗（已否定）
+  - R37 frequency-dependent PSF regularization experiment (falsified)
 - `codex/*`
   - AI agent 工作分支，合併後即刪除
   - AI agent working branches, deleted after merge

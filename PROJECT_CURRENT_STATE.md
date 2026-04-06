@@ -1,5 +1,5 @@
 # PROJECT CURRENT STATE / 專案目前狀態
-Last updated: 2026-04-05 (R33 external GMF results received)
+Last updated: 2026-04-06 (R33-R37 series complete)
 
 Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
 
@@ -157,6 +157,20 @@ This is not a marginal failure. The `0.8px` battlefield deteriorated sharply rel
 - **視覺銳度退步**：gradient magnitude -32%、Laplacian -47%、對比度 -24%。R33 的邊界更柔但幀間更一致——GMF 在乎位置穩定而非邊緣銳度。如���未來需兼顧銳度和穩定性，可探索 p97/p98 或兩階段訓練
 
 正式入口：`D:\GMM_2_Final\Experiments\R33RobustLoss\reports\R33_EXPERIMENT_SUMMARY.md`
+
+### R34-R37 後續嘗試（2026-04-05~06）— 全部失敗
+
+R33 p95 通過外部 GMF 後，進行了三輪嘗試打破銳度-穩定性 trade-off：
+
+| Round | 方向 | 結果 | 失敗原因 |
+|-------|------|------|---------|
+| R34 | loss 層 Gaussian 分頻 | step 0.141，銳度 -32%，8px 退步 | lo/hi Sobel 梯度在 256×256 patch 高度相關 |
+| R35 | Physics alpha 0.10→0.25 | step 0.229，全面退步 | 均勻放大含噪聲高頻，腐蝕 encoder 訓練 |
+| R37 | PSF 頻率依賴正則化 | step 0.138，銳度 -34% | 高頻低 reg 放大 Wiener 噪聲 → 反而更糊 |
+
+**結論**：銳度 -32% 是 Winsorize 機制的固有代價。在目前架構（single-crop + spatial loss + Wiener physics）下無法兩者兼顧。
+
+完整系列報告：`Experiments/R33RobustLoss/reports/R33_R37_COMPLETE_EXPERIMENT_SERIES.md`
 
 Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。
 The Git-tracked `000_LONGRUN_ROUND32_STATUS.*` files are now kept under `docs/runtime/legacy/root_status/` as a legacy bridge only; if the same filenames reappear at the repository root, treat them as local runtime output rather than canonical truth.

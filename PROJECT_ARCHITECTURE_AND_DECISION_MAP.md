@@ -246,6 +246,10 @@ D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
 | `A1 / A5 / S1` side-direction | 均未擊敗 B1 dironly |
 | Round31 B1 hyperparam 微調（全部） | 三個候選外部 0.8px 全部退步（+6.8% ~ +10.5%） |
 | `R32 sandbox r32_real_eq_finetune` | 外部 0.8px 惡化 +97.7%，FAIL |
+| R34 loss 層頻域分離（Gaussian split） | 256×256 patch 上 lo/hi Sobel 梯度高度相關，無法有效分頻 |
+| R35 physics layer alpha 均勻提升（0.10→0.25） | 均勻放大含噪高頻，腐蝕 encoder 訓練，8px step 暴增至 1.645 |
+| R37 PSF 頻率依賴正則化（lo reg=23, hi reg=3） | 高頻低 reg 放大 Wiener 噪聲，Winsorize 截更多，反而更糊 |
+| 在 single-crop + spatial loss 框架內打破銳度-穩定性 trade-off | R33-R37 五輪實驗全面驗證為根本性限制 |
 
 ### 已確認的注意事項（Caution）
 

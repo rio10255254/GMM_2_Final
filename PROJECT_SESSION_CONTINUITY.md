@@ -61,6 +61,10 @@ Recommended fixed read order:
 - the new Whole-FOV PSF is the `current standard` as of 2026-03-27 / 新 PSF 是 current standard
 - `R26NewPSFCheck` external GMF results are still pending / 外部 GMF 結果仍待定
 - R33 lag-1 autocorrelation is -0.55 (R30 was +0.27); noted but does not affect target / 已記錄但不影響目標
+- R33 visual sharpness regressed -32% (gradient) / -47% (Laplacian); this trade-off is confirmed fundamental / 銳度退步是根本性 trade-off
+- R34 (loss freq-split), R35 (alpha boost), R37 (PSF freq-reg) all FAILED to break the sharpness-stability trade-off / 三輪嘗試全部失敗
+- the sharpness-stability trade-off is fundamental to single-crop + spatial-loss architecture; next directions require sequence training or architectural changes / 需要架構級改變
+- full series report: `Experiments/R33RobustLoss/reports/R33_R37_COMPLETE_EXPERIMENT_SERIES.md`
 
 ## Formal Entry Points / 正式入口
 

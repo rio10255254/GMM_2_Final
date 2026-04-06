@@ -15,6 +15,12 @@ flowchart TD
     R32 --> CLOSED["R32 closed (2026-03-20)"]
     R26 --> R26PSF["R26NewPSFCheck 🔬<br/>new Whole-FOV PSF retrain<br/>awaiting external GMF (2026-03-26)"]
     R30 --> R33["Round33 / r33_robust_p95 ✅<br/>Winsorize spatial loss<br/>0.8px = 0.1190 (-29.1%)"]
+    R33 --> R34["R34 freq-split ❌<br/>loss 層分頻無效"]
+    R33 --> R35["R35 alpha-boost ❌<br/>均勻放大噪聲"]
+    R33 --> R37["R37 freq-reg ❌<br/>HF noise 放大"]
+    R34 --> TRADEOFF["銳度-穩定性 trade-off<br/>confirmed fundamental (2026-04-06)"]
+    R35 --> TRADEOFF
+    R37 --> TRADEOFF
 ```
 
 ## Milestone Numbers / 里程碑數字
@@ -27,6 +33,9 @@ flowchart TD
 | R31（B1 hyperparam） | 三個候選 | `0.179` ~ `0.185` | 全部外部退步，baseline 不變 |
 | R32 sandbox | `r32_real_eq_finetune` | `0.331821` | 外部惡化 +97.7%，FAIL，沙盒關閉 |
 | **R33（Robust Loss）** | **`r33_robust_p95`** | **`0.119049`** | **三尺度全通過；首個全面超越 R30 的候選** |
+| R34（freq-split） | loss 層 Gaussian 分頻 | 0.141（internal） | 無改善，8px 退步。lo/hi 梯度在 patch 上高度相關 |
+| R35（alpha-boost） | physics alpha 0.25 | 0.229（internal） | 失敗。均勻放大含噪 HF，腐蝕 encoder |
+| R37（freq-reg） | PSF 頻率依賴 reg | 0.138（internal） | 比 R33 差。HF 低 reg 放大 Wiener 噪聲 |
 | R26NewPSFCheck | 新 PSF 重訓候選 | 待定（等待 GMF 回填） | 進行中（2026-03-26 啟動） |
 
 ## Interpretation / 路徑解讀

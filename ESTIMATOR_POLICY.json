@@ -211,6 +211,11 @@
     "R26NewPSFCheck sandbox launched 2026-03-26: PSF policy switched 2026-03-27. External GMF for R26NewPSFCheck is still pending.",
     "PSF policy: new Whole-FOV PSF is the current standard (2026-03-27); old PSF is the legacy empirical baseline.",
     "R33 lag-1 autocorrelation is -0.55 (R30 was +0.27); step oscillation pattern noted but does not affect step_std target.",
-    "R33 TRADE-OFF: visual sharpness regressed (gradient -32%, Laplacian -47%, contrast -24%) while GMF step_std improved -29%. Softer but more frame-consistent edges yield better geometric localization. If future use cases require both sharpness and stability, consider p97/p98 or two-stage training."
+    "R33 TRADE-OFF: visual sharpness regressed (gradient -32%, Laplacian -47%, contrast -24%) while GMF step_std improved -29%. Softer but more frame-consistent edges yield better geometric localization.",
+    "R34 freq-split (loss-layer Gaussian split) FAILED: identical sharpness to R33, 8px step_std regression to 0.370. Lo/hi Sobel gradients highly correlated on 256x256 patches.",
+    "R35 alpha-boost (physics alpha 0.10→0.25) FAILED: all metrics regressed. Uniform alpha amplifies HF noise, corrupting encoder training. 8px step_std catastrophic at 1.645.",
+    "R37 freq-dependent PSF reg (lo reg=23, hi reg=3) FAILED: worse than R33 on all metrics. Lowering HF regularization amplifies Wiener HF noise → more Winsorize capping → net softening.",
+    "R33-R37 series conclusion: the sharpness-stability trade-off is fundamental to the single-crop + spatial-loss + Wiener-physics architecture. Breaking it requires sequence training, dual-output heads, or annulus-aware architecture.",
+    "Full series report: Experiments/R33RobustLoss/reports/R33_R37_COMPLETE_EXPERIMENT_SERIES.md"
   ]
 }
