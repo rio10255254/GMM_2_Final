@@ -379,6 +379,8 @@ class TrainConfig:
     SEQ_EVERY_N_BATCH: int = 2
     SEQ_BATCH_SIZE: int = 2
     SEQ_MAX_PAIRS: int = 0
+    SEQ_MIN_DELTA_THRESHOLD: float = 0.0    # R38v2: skip seq_loss when delta < threshold (0=disabled)
+    SEQ_WARMUP_EPOCH: int = 0               # R38v2: skip seq_loss for first N epochs (0=disabled)
     EQ_WARMUP_OFF_E: int = 10
     EQ_RAMP_START_E: int = 11
     EQ_RAMP_END_E: int = 30
@@ -6089,7 +6091,8 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                 l_seq_grad = pred01.new_tensor(0.0)
                 l_seq_geom = pred01.new_tensor(0.0)
                 l_seq_abs_center = pred01.new_tensor(0.0)
-                if (seq_iter is not None) and ((b % seq_every_n) == 0):
+                _seq_warmup = int(getattr(CFG, "SEQ_WARMUP_EPOCH", 0))
+                if (seq_iter is not None) and ((b % seq_every_n) == 0) and (epoch1 > _seq_warmup):
                     try:
                         seq_src_a, seq_src_b, seq_lbl_a, seq_lbl_b = next(seq_iter)
                     except StopIteration:
@@ -6108,14 +6111,20 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                     seq_delta_pred = seq_pred_b - seq_pred_a
                     seq_delta_lbl = seq_lbl_b - seq_lbl_a
                     seq_mask = make_valid_mask(seq_delta_pred)
-                    seq_delta_base = seq_delta_lbl.abs().mean().clamp_min(0.01)
-                    l_seq_delta = _masked_mean(F.smooth_l1_loss(seq_delta_pred, seq_delta_lbl, reduction="none"), seq_mask) / seq_delta_base
-                    if seq_grad_weight > 0.0:
-                        l_seq_grad_raw = gradient_magnitude_loss(seq_delta_pred, seq_delta_lbl, seq_mask)
-                        dx_lbl = seq_delta_lbl[:, :, :, 1:] - seq_delta_lbl[:, :, :, :-1]
-                        dy_lbl = seq_delta_lbl[:, :, 1:, :] - seq_delta_lbl[:, :, :-1, :]
-                        grad_base = 0.5 * (dx_lbl.abs().mean() + dy_lbl.abs().mean()).clamp_min(0.01)
-                        l_seq_grad = l_seq_grad_raw / grad_base
+                    # R38v2: signal-strength gate — skip when delta is too small
+                    _seq_delta_raw = seq_delta_lbl.abs().mean()
+                    _seq_min_delta = float(getattr(CFG, "SEQ_MIN_DELTA_THRESHOLD", 0.0))
+                    if _seq_min_delta <= 0 or _seq_delta_raw >= _seq_min_delta:
+                        seq_delta_base = _seq_delta_raw.clamp_min(0.01)
+                        l_seq_delta = _masked_mean(F.smooth_l1_loss(seq_delta_pred, seq_delta_lbl, reduction="none"), seq_mask) / seq_delta_base
+                        if seq_grad_weight > 0.0:
+                            l_seq_grad_raw = gradient_magnitude_loss(seq_delta_pred, seq_delta_lbl, seq_mask)
+                            dx_lbl = seq_delta_lbl[:, :, :, 1:] - seq_delta_lbl[:, :, :, :-1]
+                            dy_lbl = seq_delta_lbl[:, :, 1:, :] - seq_delta_lbl[:, :, :-1, :]
+                            _grad_raw = 0.5 * (dx_lbl.abs().mean() + dy_lbl.abs().mean())
+                            if _seq_min_delta <= 0 or _grad_raw >= _seq_min_delta:
+                                grad_base = _grad_raw.clamp_min(0.01)
+                                l_seq_grad = l_seq_grad_raw / grad_base
                     if seq_geom_active:
                         _seq_geom_method = str(getattr(CFG, "SEQ_GEOM_METHOD", "soft_centroid"))
                         _seq_mono_weight = float(getattr(CFG, "SEQ_MONO_WEIGHT", 0.0))
