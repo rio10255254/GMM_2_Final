@@ -233,6 +233,8 @@ D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
 | `B1 dironly` 機制（只保留方向性特徵）有效 | Round30 外部比較確認，首次擊敗 R26 |
 | `Winsorize spatial loss` 機制有效（R33） | Round33 外部比較確認：0.8px -29%、8px -25%、0.08px -45% |
 | `r33_robust_p95` 是首個在三尺度全面改善的候選 | 2026-04-05 外部 GMF 確認 |
+| `Seq training with signal gate + warmup` 機制有效（R38v2） | 均衡型候選：GMF -20% + steepness +89%。2026-04-07 外部 GMF 確認 |
+| R38v2 的三重修復（warmup + gate + 8px-only）是 seq training 成功的必要條件 | R38 原版（無修復）失敗；三者缺一不可 |
 | `center_err` 是目前最有價值的 Tier-2 screening 指標 | 內外部相關分析（Pearson r=0.5399） |
 | 新 Whole-FOV PSF（2026-03-26）是目前物理上較合理的標準 | PSF_POLICY_TRANSITION_R26.md，pure_psf_control 驗證 |
 

@@ -101,6 +101,41 @@
       },
       "upgrade_decision": "pass_pending_formal_promotion"
     },
+    "round38v2_external_compare": {
+      "status": "completed_pass_all_scales",
+      "baseline": "r30_b1_dironly",
+      "candidate": "r38v2_8px_gate",
+      "mechanism": "Sequence consistency training (8px stages only, signal gate 0.002, warmup 15 epochs, no Winsorize)",
+      "external_gmf": {
+        "step_std_8px": 0.143988,
+        "step_std_0p8px": 0.134205,
+        "step_std_0p08px": 0.106457,
+        "lag1_autocorr_0p8px": -0.5459
+      },
+      "delta_vs_r30": {
+        "step_std_8px": -0.061205,
+        "step_std_0p8px": -0.033657,
+        "step_std_0p08px": -0.051263
+      },
+      "delta_pct_vs_r30": {
+        "step_std_8px_pct": -29.8,
+        "step_std_0p8px_pct": -20.1,
+        "step_std_0p08px_pct": -32.5
+      },
+      "visual_quality_vs_r30": {
+        "edge_steepness_pct": 89.4,
+        "edge_contrast_pct": -13.0,
+        "gradient_mag_pct": -22.8,
+        "contrast_std_pct": -10.7
+      },
+      "upgrade_decision": "pass_balanced_candidate",
+      "notes": "R38v2 is the balanced candidate: GMF -20% with near-R30 visual quality. R33 remains the GMF-extreme candidate (-29%). R38v2 achieves 8px best-ever (0.144, better than R33 0.153)."
+    },
+    "round34_35_37_38_falsified": {
+      "status": "all_failed_to_break_sharpness_stability_tradeoff",
+      "rounds": ["R34 freq-split", "R35 alpha-boost", "R37 freq-reg", "R38 seq-all-stages", "R33c contrast-fix"],
+      "notes": "5 attempts to recover R33's sharpness loss all failed. R38v2 (8px-only seq + gate + warmup) succeeded by taking a different path: preserving sharpness via warmup-first reconstruction, then adding stability via clean seq signal."
+    },
     "round32_external_compare": {
       "status": "completed_failed",
       "baseline": "r30_b1_dironly",
@@ -211,6 +246,12 @@
     "R26NewPSFCheck sandbox launched 2026-03-26: PSF policy switched 2026-03-27. External GMF for R26NewPSFCheck is still pending.",
     "PSF policy: new Whole-FOV PSF is the current standard (2026-03-27); old PSF is the legacy empirical baseline.",
     "R33 lag-1 autocorrelation is -0.55 (R30 was +0.27); step oscillation pattern noted but does not affect step_std target.",
-    "R33 TRADE-OFF: visual sharpness regressed (gradient -32%, Laplacian -47%, contrast -24%) while GMF step_std improved -29%. Softer but more frame-consistent edges yield better geometric localization. If future use cases require both sharpness and stability, consider p97/p98 or two-stage training."
+    "R33 TRADE-OFF: visual sharpness regressed (gradient -32%, steepness -22%, contrast -43%) while GMF step_std improved -29%.",
+    "R34 (freq-split), R35 (alpha-boost), R37 (freq-reg), R38 (seq-all-stages), R33c (contrast-fix) all FAILED to recover sharpness.",
+    "R38v2 (8px-only seq + signal gate 0.002 + warmup 15 epochs) PASSED external GMF (2026-04-07): 0.8px 0.134 (-20%), 8px 0.144 (-30%), 0.08px 0.106 (-33%).",
+    "R38v2 is the BALANCED candidate: GMF -20% with near-R30 visual quality (steepness +89%, contrast -13%). R33 remains GMF-EXTREME: -29% but steepness -22%.",
+    "R38v2 success factors: warmup preserves encoder sharpness, signal gate removes noise from weak-delta stages, 8px-only provides clean consistency signal.",
+    "Two production candidates: R33 p95 (max GMF precision) and R38v2 8px_gate (balanced GMF + visual quality).",
+    "Full series report: Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md"
   ]
 }

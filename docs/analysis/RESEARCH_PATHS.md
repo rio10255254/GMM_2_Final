@@ -15,6 +15,9 @@ flowchart TD
     R32 --> CLOSED["R32 closed (2026-03-20)"]
     R26 --> R26PSF["R26NewPSFCheck 🔬<br/>new Whole-FOV PSF retrain<br/>awaiting external GMF (2026-03-26)"]
     R30 --> R33["Round33 / r33_robust_p95 ✅<br/>Winsorize spatial loss<br/>0.8px = 0.1190 (-29.1%)"]
+    R33 --> R34_37["R34/R35/R37 ❌<br/>freq-split / alpha / freq-reg<br/>all failed to recover sharpness"]
+    R33 --> R38["R38 seq-all ⚠<br/>8px good but 0.8px weak<br/>noise from tiny-delta stages"]
+    R38 --> R38v2["R38v2 / 8px_gate ✅<br/>seq 8px + gate + warmup<br/>0.8px = 0.1342 (-20.1%)<br/>steepness +89%"]
 ```
 
 ## Milestone Numbers / 里程碑數字
@@ -26,7 +29,10 @@ flowchart TD
 | **R30（目前 baseline）** | `r30_b1_dironly` | **`0.167862`** | 首個外部驗證超越 R26；B1 dironly 有效 |
 | R31（B1 hyperparam） | 三個候選 | `0.179` ~ `0.185` | 全部外部退步，baseline 不變 |
 | R32 sandbox | `r32_real_eq_finetune` | `0.331821` | 外部惡化 +97.7%，FAIL，沙盒關閉 |
-| **R33（Robust Loss）** | **`r33_robust_p95`** | **`0.119049`** | **三尺度全通過；首個全面超越 R30 的候選** |
+| **R33（Robust Loss）** | **`r33_robust_p95`** | **`0.119049`** | **GMF 極致型：三尺度全通過，銳度 -22%** |
+| R34/R35/R37 | freq-split / alpha / freq-reg | — (internal) | 全部失敗，無法恢復銳度 |
+| R38 | seq_only (all stages) | — (internal 0.159) | 8px 好，0.8px 弱（噪聲干擾） |
+| **R38v2（Seq Fixed）** | **`r38v2_8px_gate`** | **`0.134205`** | **均衡型：GMF -20% + steepness +89%** |
 | R26NewPSFCheck | 新 PSF 重訓候選 | 待定（等待 GMF 回填） | 進行中（2026-03-26 啟動） |
 
 ## Interpretation / 路徑解讀

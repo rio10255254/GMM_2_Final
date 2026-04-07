@@ -44,6 +44,14 @@ flowchart TD
 | `Experiments/R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md` | `sandbox/r33` | R33 完整實驗記錄：假說、訓練、內部分析、外部 GMF 三尺度全通過。 / Complete R33 experiment record: hypothesis, training, analysis, external GMF pass on all three scales. |
 | `Experiments/R33RobustLoss/results/external_gmf/` | `sandbox/r33` external proof | 外部 GMF 原始評分檔（三尺度）。 / Raw external GMF score files for all three scales. |
 
+## R38v2 均衡型候選證據 / R38v2 Balanced Candidate Proof
+
+| 證據 / Evidence | 支撐對象 / Supports | 為何重要 / Why it matters |
+|---|---|---|
+| `Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md` | `sandbox/r38v2` | R38v2 完整實驗記錄：三重修復設計、外部 GMF 結果、視覺品質恢復證據。 |
+| `Experiments/R38v2SeqFixed/results/external_gmf/` | `sandbox/r38v2` external proof | R38v2 外部 GMF 原始評分檔（三尺度）。 |
+| `Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md` | R33-R38v2 系列 | 12 候選 7 輪完整實驗歷程：失敗分析、根因、關鍵洞察。 |
+
 ## 歷史基準演進路徑 / Historical Baseline Path
 
 | 證據 / Evidence | 支撐對象 / Supports | 為何重要 / Why it matters |

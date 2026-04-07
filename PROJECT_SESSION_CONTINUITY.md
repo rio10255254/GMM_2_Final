@@ -32,21 +32,16 @@ Recommended fixed read order:
 ## Handoff Snapshot / 交接快照
 
 - current production baseline / 目前正式 production baseline: `Round30 / r30_b1_dironly`（pending R33 promotion）
-- latest completed external compare / 最近完成的 external compare: **`Round33 R33RobustLoss external GMF — ALL PASS`**
-- latest verified verdict / 最近已驗證 verdict:
-  **`r33_robust_p95` external PASS：0.8px 0.119（-29%）、8px 0.153（-25%）、0.08px 0.086（-45%）**
-- previous verdict / 前一次 verdict:
-  `r32_real_eq_finetune` external FAIL；`Round30 / r30_b1_dironly` baseline unchanged
-- current active direction / 目前 active 方向:
-  `R33RobustLoss sandbox/r33`（2026-04-05 完成外部驗證）
-- PSF policy / PSF 政策:
-  新 Whole-FOV PSF 已於 2026-03-27 成為 `current standard`；舊 PSF 轉為 `legacy empirical baseline`
-- R33 verdict carrier / R33 verdict carrier:
-  `Experiments\R33RobustLoss\reports\R33_EXPERIMENT_SUMMARY.md`
-- R33 checkpoint / R33 checkpoint:
-  `Traing_Progress\training_progress_..._20260405_091941\weights\best_tradeoff.pth.tar`
-- previous sandbox / 前一個 sandbox:
-  `Experiments\R26NewPSFCheck\`（PSF 已切換；外部 GMF 仍待定）
+- latest completed external compare / 最近完成的 external compare: **`R38v2 external GMF — ALL PASS`** (2026-04-07)
+- **two production candidates / 兩個生產候選**:
+  - **R33 hard_p95（GMF 極致型）**: 0.8px 0.119 (-29%), steepness -22%
+  - **R38v2 8px_gate（均衡型）**: 0.8px 0.134 (-20%), steepness **+89%**
+- R33 checkpoint: `Traing_Progress/..._20260405_091941/weights/best_tradeoff.pth.tar`
+- R38v2 checkpoint: `Traing_Progress/..._20260406_235957/weights/best_tradeoff.pth.tar`
+- falsified directions (R34-R37, R38, R33c): 5 rounds all failed to break sharpness-stability trade-off
+- R38v2 success mechanism: warmup 15 epochs → signal gate 0.002 → 8px-only seq training
+- PSF policy: 新 Whole-FOV PSF 自 2026-03-27 為 current standard
+- previous sandbox: `R26NewPSFCheck`（PSF 已切換；外部 GMF 仍待定）
 - tracked legacy bridge copy / 已追蹤 legacy bridge 副本:
   `docs/runtime/legacy/root_status/000_LONGRUN_ROUND32_STATUS.*`
 
