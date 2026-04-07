@@ -252,6 +252,11 @@
     "R38v2 is the BALANCED candidate: GMF -20% with near-R30 visual quality (steepness +89%, contrast -13%). R33 remains GMF-EXTREME: -29% but steepness -22%.",
     "R38v2 success factors: warmup preserves encoder sharpness, signal gate removes noise from weak-delta stages, 8px-only provides clean consistency signal.",
     "Two production candidates: R33 p95 (max GMF precision) and R38v2 8px_gate (balanced GMF + visual quality).",
+    "QUANTIZATION FIX (2026-04-08): denormalize_to_dtype changed from truncation to np.rint (rounding). Impact varies by model:",
+    "  R33 quantfix: 0.8px 0.119->0.117 (-1.7% improved), 8px 0.153->0.172 (outliers 2->0, actually more robust), 0.08px 0.086->0.086 (-0.7%).",
+    "  R38v2 quantfix: 0.8px 0.134->0.147 (+9.3% regressed, steep edges sensitive to quantization), 8px 0.144->0.122 (-15.3% improved).",
+    "  Quantization fix is mathematically correct but affects edgel detection differently per model. Steep edges (R38v2) are more sensitive to +1 grey level shift.",
+    "  Full analysis: Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md",
     "Full series report: Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md"
   ]
 }

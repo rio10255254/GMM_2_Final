@@ -49,3 +49,17 @@ PSF: PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat
 
 - **短期**：問題不影響已驗證的外部 GMF 結果（R33/R38v2 都 PASS）
 - **長期（架構重構時）**：用新 PSF 重新生成完整訓練資料集（tra_src_ring 的替代品），確保全鏈一致
+
+## 量化修復補充（2026-04-08）
+
+推理腳本 `denormalize_to_dtype()` 從 `.astype(uint8)` 截斷改為 `np.rint()` 四捨五入。
+
+影響：50% 像素值 +1 grey level。對 GMF edgel detection 有可測量影響：
+- R33（steepness -22%, 柔邊緣）：0.8px 微幅改善 -1.7%，對量化不敏感
+- R38v2（steepness +89%, 陡邊緣）：0.8px 退步 +9.3%，陡邊緣的 edgel 位置對 ±1 grey level 敏感
+
+量化修復後的重建影像存放在：
+- `R33RobustLoss/results/p95_recon_quantfix/`
+- `R38v2SeqFixed/results/8px_gate_recon_quantfix/`
+
+完整分析：`R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md`

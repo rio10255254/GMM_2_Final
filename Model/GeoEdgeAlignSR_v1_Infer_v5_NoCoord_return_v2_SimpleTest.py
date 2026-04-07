@@ -432,7 +432,7 @@ def denormalize_to_dtype(pred01: np.ndarray, dtype: np.dtype) -> np.ndarray:
     if np.issubdtype(dtype, np.integer):
         info = np.iinfo(dtype)
         out = pred01 * float(info.max - info.min) + float(info.min)
-        return np.clip(out, info.min, info.max).astype(dtype)
+        return np.clip(np.rint(out), info.min, info.max).astype(dtype)
     return pred01.astype(np.float32)
 
 
