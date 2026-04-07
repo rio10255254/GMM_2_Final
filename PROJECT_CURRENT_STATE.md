@@ -1,5 +1,5 @@
 # PROJECT CURRENT STATE / 專案目前狀態
-Last updated: 2026-04-07 (R33-R38v2 series complete, two production candidates)
+Last updated: 2026-04-08 (quantization fix applied and evaluated)
 
 Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
 
@@ -182,6 +182,19 @@ R38v2 透過三重修復（warmup + signal gate + 8px-only）走出不同路線�
 
 完整系列報告：`Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
 R38v2 報告：`Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md`
+
+### 量化修復（2026-04-08）
+
+推理腳本 `denormalize_to_dtype()` 從截斷改為四捨五入（`np.rint`）。
+影響 50% 像素值 +1 grey level。
+
+| 候選 | 0.8px | 8px | 結論 |
+|------|-------|-----|------|
+| R33 修復後 | 0.117 (-1.7%) | 0.172 (outlier 2→0，更穩健) | 改善 |
+| R38v2 修復後 | 0.147 (+9.3%) | 0.122 (-15.3%) | 8px 改善但 0.8px 退步 |
+
+R38v2 的 0.8px 退步源於其高 steepness (+89%) 對量化敏感。
+完整分析：`Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md`
 
 Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。
 The Git-tracked `000_LONGRUN_ROUND32_STATUS.*` files are now kept under `docs/runtime/legacy/root_status/` as a legacy bridge only; if the same filenames reappear at the repository root, treat them as local runtime output rather than canonical truth.

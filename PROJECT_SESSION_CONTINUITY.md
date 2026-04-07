@@ -42,6 +42,9 @@ Recommended fixed read order:
 - R38v2 success mechanism: warmup 15 epochs → signal gate 0.002 → 8px-only seq training
 - PSF policy: 新 Whole-FOV PSF 自 2026-03-27 為 current standard
 - previous sandbox: `R26NewPSFCheck`（PSF 已切換；外部 GMF 仍待定）
+- **quantization fix (2026-04-08)**: 推理 denormalize 從截斷改為四捨五入（np.rint）
+  - R33: 0.8px 0.119→0.117 改善；8px outlier 消除（更穩健）
+  - R38v2: 8px 0.144→0.122 大幅改善；0.8px 0.134→0.147 退步（steep edge 對量化敏感）
 - tracked legacy bridge copy / 已追蹤 legacy bridge 副本:
   `docs/runtime/legacy/root_status/000_LONGRUN_ROUND32_STATUS.*`
 

@@ -51,6 +51,9 @@ flowchart TD
 | `Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md` | `sandbox/r38v2` | R38v2 完整實驗記錄：三重修復設計、外部 GMF 結果、視覺品質恢復證據。 |
 | `Experiments/R38v2SeqFixed/results/external_gmf/` | `sandbox/r38v2` external proof | R38v2 外部 GMF 原始評分檔（三尺度）。 |
 | `Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md` | R33-R38v2 系列 | 12 候選 7 輪完整實驗歷程：失敗分析、根因、關鍵洞察。 |
+| `Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md` | 推理量化修復 | 截斷→四捨五入的影響分析：R33 改善、R38v2 混合結果、steep edge 量化敏感度。 |
+| `Experiments/R33RobustLoss/results/external_gmf_quantfix/` | R33 量化修復 GMF | 量化修復後 R33 的三尺度 GMF 原始評分。 |
+| `Experiments/R38v2SeqFixed/results/external_gmf_quantfix/` | R38v2 量化修復 GMF | 量化修復後 R38v2 的三尺度 GMF 原始評分。 |
 
 ## 歷史基準演進路徑 / Historical Baseline Path
 
