@@ -67,50 +67,44 @@ Key performance metrics (all from the external GMF evaluator):
 
 ## 目前狀態快照 / Current Status Snapshot
 
-> 以下數字為截至 2026-03-27 的最新狀態。詳細資料請看 `PROJECT_CURRENT_STATE.md`。
-> Numbers below are current as of 2026-03-27. For full detail, see `PROJECT_CURRENT_STATE.md`.
+> 以下數字為截至 2026-04-08 的最新狀態。詳細資料請看 `PROJECT_CURRENT_STATE.md`。
+> Numbers below are current as of 2026-04-08. For full detail, see `PROJECT_CURRENT_STATE.md`.
 
 ### 正式 Baseline / Production Baseline
 
-**`Round30 / r30_b1_dironly`** — 唯一正式 production baseline / the only formal production baseline
+**`Round30 / r30_b1_dironly`** — 正式 production baseline（兩個升級候選待定）
 
-| 指標 / Metric | 數值 / Value |
-|--------------|-------------|
-| external `8px` step std | `0.205193` |
-| external `0.8px` step std | **`0.167862`**（主戰場硬邊界 / main battlefield hard boundary） |
-| external `0.08px` step std | `0.157720` |
-| internal `center_err` | `0.0804` |
-| internal `step_err` | `0.0693` |
+| 指標 / Metric | R30 baseline | R33 p95（GMF 極致型） | R38v2（均衡型） |
+|--------------|-------------|---------------------|---------------|
+| external `0.8px` step std | **`0.167862`** | **`0.117`** (-30%) | **`0.134`** (-20%) |
+| external `8px` step std | `0.205` | `0.172` | **`0.122`** (-41%) |
+| external `0.08px` step std | `0.158` | **`0.086`** (-46%) | `0.109` (-31%) |
+| Edge steepness (vs R30) | baseline | -22% | **+89%** |
+| Visual quality | baseline | 退步（柔化） | **接近 R30** |
 
 ### 研究歷程最新結論 / Latest Research Verdicts
 
 | Round | 結論 / Verdict |
 |-------|---------------|
-| **R26** (`r26_sm035`) | 歷史基準，step_mag optimum = `0.35`，已被 R30 超越 |
-| **R29** (`r29_sm042`) | step_mag upper sweep 否定；`0.8px` = `0.21731`，不如 R30 |
-| **R30** (`r30_b1_dironly`) | ✅ **現 production baseline**；首個在主戰場超越 R26 的外部驗證結果 |
-| **R31** | B1 hyperparam 微調三個候選均外部退步（+6.8% ~ +10.5%）；baseline 未變 |
-| **R32** (`r32_real_eq_finetune`) | 內部全通過；外部 `0.8px` 退步 **+97.7%**，FAIL — baseline 未變 |
+| **R30** | ✅ **現 production baseline**；B1 dironly 機制首次在主戰場超越 R26 |
+| **R31** | ❌ B1 hyperparam 微調三個候選均外部退步 |
+| **R32** | ❌ domain rebalancing 外部 `0.8px` 退步 +97.7% |
+| **R33** | ✅ **GMF 極致型候選**：Winsorize spatial loss → 0.8px -30%，但視覺銳度 -22% |
+| R34/R35/R37 | ❌ 三輪嘗試恢復銳度全部失敗（freq-split / alpha-boost / freq-reg） |
+| **R38v2** | ✅ **均衡型候選**：Seq training (8px-only + signal gate + warmup) → 0.8px -20% + steepness +89% |
 
-### 目前 Active 實驗 / Current Active Experiment
+### 兩個生產候選 / Two Production Candidates
 
-**`Experiments/R26NewPSFCheck/`**（2026-03-26 啟動）
+**R33 p95**：GMF 定位精度最佳（0.8px -30%），但邊緣銳度退步 22%。適合純 GMF 定位場景。
 
-- **工作一**：以 2026-03-26 完成的新 Whole-FOV PSF 從頭重訓，測試重訓後模型效果是否優於舊版 R26 封包。
-- **工作二**：在不覆寫正式輸出的前提下，審核 `PSF_Fitting/` 正式流程的執行正確性。
-- **等待中**：外部 GMF 結果回填（需外部工具跑完三個 pitch 尺度的重建評分）。
+**R38v2 8px_gate**：GMF 改善 20% 且視覺品質接近 R30（steepness +89%、contrast -13%）。適合需要人眼判讀的場景。
 
-若要了解詳情：`Experiments/R26NewPSFCheck/README.md`
+完整實驗系列報告：`Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
 
 ### 下一個決策邊界 / Next Decision Boundary
 
-**任何新候選若要升級 baseline，必須在外部 GMF 主戰場：**
-
-```
-external 0.8px step std < 0.167862
-```
-
-同時：`8px` 不能明顯退步，且不能用 `0.08px` 改善去換主戰場退步。
+R33 和 R38v2 都已通過 `external 0.8px < 0.167862` 的硬邊界。
+下一步是選擇生產候選，並執行架構重構計畫中的零風險改善（量化修復已完成）。
 
 ---
 

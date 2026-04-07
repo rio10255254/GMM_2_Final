@@ -6,8 +6,16 @@
 >
 > - 這份 tracked canonical copy 現在位於 `docs/history/`
 > - 舊時代寫進本文的絕對路徑，可能仍反映當時 root layout
-> - 已追蹤的 legacy root status curated copies 現在統一放在 `docs/runtime/legacy/root_status/`
-> - 若歷史段落內提到 root `000_LONGRUN_*` 路徑，請先理解為原始時代路徑，再對照現在的 tracked curated copy 位置
+> - 已追蹤的 legacy root status curated copies 已於 2026-04-08 封存至 `docs/archive/legacy_runtime_status/`
+> - 若歷史段落內提到 root `000_LONGRUN_*` 路徑，請先理解為原始時代路徑
+
+> **2026-04-08 歷史延續說明**
+>
+> 本文件記錄到 2026-03-12 為止的歷史。之後的發展（R33-R38v2，2026-04-05~08）：
+> - 完整系列報告：`Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
+> - 兩個外部 GMF 通過的新候選：R33 p95（GMF -30%）和 R38v2（GMF -20% + 銳度 +89%）
+> - 量化修復分析：`Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md`
+> - 12 候選、7 輪實驗的完整 checkpoint 對照表在系列報告中
 
 目前保存規則：
 
