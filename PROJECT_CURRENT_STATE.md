@@ -1,5 +1,5 @@
 # PROJECT CURRENT STATE / 專案目前狀態
-Last updated: 2026-04-05 (R33 external GMF results received)
+Last updated: 2026-04-07 (R33-R38v2 series complete, two production candidates)
 
 Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
 
@@ -157,6 +157,31 @@ This is not a marginal failure. The `0.8px` battlefield deteriorated sharply rel
 - **視覺銳度退步**：gradient magnitude -32%、Laplacian -47%、對比度 -24%。R33 的邊界更柔但幀間更一致——GMF 在乎位置穩定而非邊緣銳度。如���未來需兼顧銳度和穩定性，可探索 p97/p98 或兩階段訓練
 
 正式入口：`D:\GMM_2_Final\Experiments\R33RobustLoss\reports\R33_EXPERIMENT_SUMMARY.md`
+
+### R38v2 Sequence Consistency（2026-04-07）— 外部 GMF 全通過（均衡型候選）
+
+R38v2 = Seq training 修復版（8px-only + signal gate + warmup 15 epochs，無 Winsorize）
+
+| 尺度 | R30 baseline | R33 p95（極致型） | R38v2（均衡型） |
+|------|-------------|-----------------|---------------|
+| **0.8px** | 0.167862 | **0.119049 (-29%)** | 0.134205 (-20%) |
+| 8px | 0.205193 | 0.153343 (-25%) | **0.143988 (-30%)** |
+| 0.08px | 0.157720 | **0.086274 (-45%)** | 0.106457 (-33%) |
+
+視覺品質比較（vs R30）：
+| 指標 | R33 p95 | R38v2 |
+|------|---------|-------|
+| Edge steepness | -22% | **+89%** |
+| Edge contrast | -43% | **-13%** |
+| Gradient mag | -32% | -23% |
+
+**R33 = GMF 極致型（-29%），R38v2 = 均衡型（GMF -20% + 視覺接近 R30）。**
+
+R34-R37 + R38 + R33c 共 5 輪嘗試打破銳度-穩定性 trade-off 全部失敗。
+R38v2 透過三重修復（warmup + signal gate + 8px-only）走出不同路線成功。
+
+完整系列報告：`Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
+R38v2 報告：`Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md`
 
 Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。
 The Git-tracked `000_LONGRUN_ROUND32_STATUS.*` files are now kept under `docs/runtime/legacy/root_status/` as a legacy bridge only; if the same filenames reappear at the repository root, treat them as local runtime output rather than canonical truth.

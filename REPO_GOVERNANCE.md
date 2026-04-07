@@ -124,8 +124,20 @@ The Git-tracked copies live under `docs/runtime/legacy/root_status/`.
   - `R32` 外部失敗後的下一步語意分支
   - the semantic next-step branch after the `R32` external fail
 - `sandbox/r33`
-  - `R33RobustLoss` 的隔離執行面（外部 GMF 已通過，pending baseline promotion）
-  - the `R33RobustLoss` execution surface (external GMF passed, pending baseline promotion)
+  - `R33RobustLoss` GMF 極致型候選（外部 GMF 通過：0.8px -29%，銳度 -22%）
+  - R33 GMF-extreme candidate (external pass: 0.8px -29%, steepness -22%)
+- `sandbox/r33-contrast`
+  - R33 對比度修復嘗試（否定）
+  - R33 contrast fix attempt (falsified)
+- `sandbox/r34` / `sandbox/r35` / `sandbox/r37`
+  - R34-R37 銳度恢復嘗試（全部否定）
+  - R34-R37 sharpness recovery attempts (all falsified)
+- `sandbox/r38`
+  - R38 seq training 全 stages（部分成功，8px 好但 0.8px 弱）
+  - R38 seq training all stages (partial: 8px good, 0.8px weak)
+- `sandbox/r38v2`
+  - R38v2 均衡型候選（外部 GMF 通過：0.8px -20%，銳度 +89%）
+  - R38v2 balanced candidate (external pass: 0.8px -20%, steepness +89%)
 - `codex/*`
   - AI agent 工作分支，合併後即刪除
   - AI agent working branches, deleted after merge
