@@ -23,7 +23,7 @@ CANDIDATES = {
     "r33_robust_p90": {"ROBUST_LOSS_PERCENTILE": 0.90, "ROBUST_LOSS_WARMUP": 10},
     "r33_robust_p85": {"ROBUST_LOSS_PERCENTILE": 0.85, "ROBUST_LOSS_WARMUP": 10},
     "r33_robust_p95": {"ROBUST_LOSS_PERCENTILE": 0.95, "ROBUST_LOSS_WARMUP": 10},
-    "r33_lap_only_p95": {"ROBUST_LOSS_PERCENTILE": 0.95, "ROBUST_LOSS_WARMUP": 10},
+    "r33_lap_only_p95": {"ROBUST_LOSS_PERCENTILE": 0.95, "ROBUST_LOSS_WARMUP": 10, "ROBUST_LOSS_GRADMAG": False},
     "r33_soft_p95": {"ROBUST_LOSS_PERCENTILE": 0.95, "ROBUST_LOSS_WARMUP": 10, "ROBUST_LOSS_MODE": "soft"},
     "r33_soft_p90": {"ROBUST_LOSS_PERCENTILE": 0.90, "ROBUST_LOSS_WARMUP": 10, "ROBUST_LOSS_MODE": "soft"},
 }
@@ -57,6 +57,7 @@ def main():
 
     # Set run tag for output dir naming
     CFG.MODEL_NAME = f"GESR_v1_v5_ST0p8_SWP_{args.candidate}"
+    trainer.MODEL_NAME_BASE = CFG.MODEL_NAME  # fix: ensure run_meta/progress_dir use candidate name
     CFG.NUM_EPOCH = args.num_epoch
     CFG.DEVICE = args.device
 

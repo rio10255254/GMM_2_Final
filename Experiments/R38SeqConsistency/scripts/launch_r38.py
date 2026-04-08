@@ -61,6 +61,7 @@ def main():
     for key, val in CANDIDATES[args.candidate].items():
         setattr(CFG, key, val)
     CFG.MODEL_NAME = f"GESR_v1_v5_ST0p8_SWP_{args.candidate}"
+    trainer.MODEL_NAME_BASE = CFG.MODEL_NAME  # fix: ensure run_meta/progress_dir use candidate name
     CFG.NUM_EPOCH = args.num_epoch
     CFG.DEVICE = args.device
 
