@@ -30,7 +30,7 @@ This file clarifies the responsibility boundaries between the canonical docs, sa
 - `docs/index/NEW_EXPERIMENT_SOP.md` — 新增實驗操作清單
 - `docs/index/NAMING_CONVENTIONS.md` — 命名規範（實驗目錄、報告檔名、分支命名）
 - `docs/index/EXPERIMENT_TEMPLATE.md` — 新實驗目錄結構模板 + README/Launcher 模板
-- `docs/index/LEGACY_ROUNDS_OPERATIONS.md` — `R23-R30` legacy rounds 操作導引
+- `docs/index/LEGACY_ROUNDS_OPERATIONS.md` — `organized_20260313-20260316` legacy batches 操作導引
 - `docs/index/QUIRKS_AND_CONVENTIONS.md` — 歷史遺留與已知特殊狀況（9 項）
 - `docs/index/SOURCE_OF_TRUTH_POLICY.md` — 可編輯真源 vs 鏡像定義（哪裡改、哪裡不改）
 
