@@ -28,6 +28,9 @@ This file clarifies the responsibility boundaries between the canonical docs, sa
 - `docs/policy/PSF_STANDARD_POLICY.json` — 機器可讀 PSF policy
 - `docs/index/PROJECT_DOCUMENT_INDEX.md` — 本文件
 - `docs/index/NEW_EXPERIMENT_SOP.md` — 新增實驗操作清單
+- `docs/index/NAMING_CONVENTIONS.md` — 命名規範（實驗目錄、報告檔名、分支命名）
+- `docs/index/EXPERIMENT_TEMPLATE.md` — 新實驗目錄結構模板 + README/Launcher 模板
+- `docs/index/QUIRKS_AND_CONVENTIONS.md` — 歷史遺留與已知特殊狀況（9 項）
 
 ## Experiment Surface / 實驗文件層
 
