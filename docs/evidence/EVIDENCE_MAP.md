@@ -56,6 +56,7 @@ flowchart TD
 | `Experiments/R38v2SeqFixed/results/external_gmf_quantfix/` | R38v2 量化修復 GMF | 量化修復後 R38v2 的三尺度 GMF 原始評分。 |
 | `Experiments/R38v2SeqFixed/reports/COMBO_RESULTS.md` | COMBO 最均衡型候選 | Winsorize + seq 組合結果：0.8px -22%, steepness +89%, residual_std 歷史最佳。 |
 | `Experiments/R38v2SeqFixed/results/external_gmf_combo/` | COMBO 外部 GMF | COMBO 的三尺度 GMF 原始評分。 |
+| `Experiments/R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md` | Internal/External 偏差分析 | Circle-fit 噪聲地板導致 internal 系統性高估；COMBO ratio 1.35；改善路線 A 方案。 |
 
 ## 歷史基準演進路徑 / Historical Baseline Path
 

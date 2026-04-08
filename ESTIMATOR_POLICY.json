@@ -287,6 +287,8 @@
     "  R38v2 quantfix: 0.8px 0.134->0.147 (+9.3% regressed, steep edges sensitive to quantization), 8px 0.144->0.122 (-15.3% improved).",
     "  Quantization fix is mathematically correct but affects edgel detection differently per model. Steep edges (R38v2) are more sensitive to +1 grey level shift.",
     "  Full analysis: Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md",
-    "Full series report: Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md"
+    "Full series report: Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
+    "INTERNAL-EXTERNAL DIVERGENCE (2026-04-08): Internal step_std systematically overestimates external GMF. Ratio grows from 1.22 (R30) to 1.35 (COMBO) as model quality improves. Root cause: circle-fit noise floor (~0.17 px) dominates internal when real step variance < 0.15 px. Internal step_std is NO LONGER a reliable hard gate for candidates with residual_std < 2.5. Analysis: Experiments/R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md",
+    "ACTION ITEM: Improve internal measurement — increase angular sampling (360->720+) and/or implement weighted circle fit to lower noise floor. Current circle-fit precision is the bottleneck, not model quality."
   ]
 }
