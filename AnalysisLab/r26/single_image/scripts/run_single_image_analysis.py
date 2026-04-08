@@ -104,28 +104,55 @@ def profile_half_value_edges(profile: np.ndarray) -> dict[str, object]:
     }
 
 
-def fit_circle(points_xy: list[tuple[float, float]] | np.ndarray) -> dict[str, object]:
+def fit_circle(
+    points_xy: list[tuple[float, float]] | np.ndarray,
+    weights: np.ndarray | None = None,
+    robust_loss: str | None = None,
+) -> dict[str, object]:
+    """Fit a circle to 2D points via least squares.
+
+    Parameters
+    ----------
+    weights : optional per-point weights for weighted least squares.
+    robust_loss : optional scipy loss name ('soft_l1', 'cauchy', etc.).
+        When set, scipy handles outlier downweighting automatically.
+    """
     pts = np.asarray(points_xy, dtype=np.float64)
     if len(pts) < 3:
         raise ValueError("Need at least 3 points for circle fit.")
     x = pts[:, 0]
     y = pts[:, 1]
 
+    if weights is not None:
+        w = np.asarray(weights, dtype=np.float64)
+        sqrt_w = np.sqrt(np.maximum(w, 1e-12))
+    else:
+        w = None
+        sqrt_w = None
+
     def calc_r(xc: float, yc: float) -> np.ndarray:
         return np.sqrt((x - xc) ** 2 + (y - yc) ** 2)
 
     def residual_func(center: np.ndarray) -> np.ndarray:
         radii = calc_r(center[0], center[1])
+        if w is not None:
+            mean_r = float(np.sum(w * radii) / np.sum(w))
+            return sqrt_w * (radii - mean_r)
         return radii - radii.mean()
 
-    result = optimize.least_squares(residual_func, [np.mean(x), np.mean(y)])
+    loss = robust_loss if robust_loss else "linear"
+    result = optimize.least_squares(residual_func, [np.mean(x), np.mean(y)], loss=loss)
     xc, yc = result.x
     radii = calc_r(xc, yc)
-    residuals = radii - radii.mean()
+    if w is not None:
+        mean_r = float(np.sum(w * radii) / np.sum(w))
+    else:
+        mean_r = float(radii.mean())
+    residuals = radii - mean_r
     return {
         "cx": float(xc),
         "cy": float(yc),
-        "r": float(radii.mean()),
+        "r": mean_r,
         "residuals": residuals,
         "res_std": float(np.std(residuals)),
         "res_max": float(np.max(np.abs(residuals))),
