@@ -39,6 +39,17 @@
 - 前後抵消（-6.5 + 6.5 ≈ 0），確認是同一次 GMF 定位偏差
 - 移除這 2 幀後 raw 0.933 → 0.153
 
+## Repo 內不同腳本的 outlier 方法
+
+| 腳本 | 方法 | 用途 | 狀態 |
+|------|------|------|------|
+| R33-R38v2 inline analysis | raw std (z>5 移除 GMF failure) | **R33-COMBO headline 數字** | 目前使用 |
+| ExternalGMFFiveWayComparison.py | 3-sigma (`|step-mean|<=3*sd`) | R26-R32 歷史比較 | 歷史遺留，不用於 R33+ |
+| ExternalGMFSixWayComparison.py | 同上 | 同上 | 同上 |
+| ExternalGMFSevenWayComparison.py | 同上 | 同上 | 同上 |
+
+**舊腳本不修改**——它們產出的 R26-R32 歷史結果已定案。R33+ 的分析不經過這些腳本。
+
 ## COMBO 0.8px 的 borderline step
 
 - Frame 18→19: step=-0.404 (mean=-0.800, z=3.01) — 步長偏小但在合理範圍
