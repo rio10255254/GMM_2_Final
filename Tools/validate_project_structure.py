@@ -13,12 +13,41 @@ Run: python Tools/validate_project_structure.py
 from __future__ import annotations
 
 import re
+import subprocess
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 WARNINGS: list[str] = []
+LEGACY_BATCH_DIR = Path("Traing_Progress") / "organized_20260316"
+LEGACY_ROUND_DIRS = [
+    "round23",
+    "round24",
+    "round25",
+    "round26",
+    "round27",
+    "round28",
+    "round29",
+    "round30",
+]
+LEGACY_COMPARE_DIRS = [
+    "external_compare_round18_round22",
+    "external_compare_r18_r22_r25",
+    "external_compare_r18_r22_r25_r26",
+    "external_compare_r18_r22_r25_r26_r27",
+    "external_compare_r18_r22_r25_r26_r27_r28",
+    "external_compare_r18_r22_r25_r26_r27_r28_r29",
+    "external_compare_r18_r22_r25_r26r18_highcenter",
+    "external_compare_r18_r22_r25_r26r22_hold",
+    "external_compare_r18_r22_r25_r26r25_sw010",
+    "external_compare_r18_r22_r25_r26r26_sm035",
+]
+LEGACY_SIDE_DIRS = [
+    "analysis",
+    "tta_experiment",
+    "tta_experiment/r26_tta_cross5",
+]
 
 
 def error(msg: str):
@@ -120,12 +149,53 @@ def check_inference_quantfix():
             error(f"Missing np.rint in {f.relative_to(REPO)}")
 
 
+def check_legacy_governance():
+    print("=== Check 6: Legacy batch governance ===")
+    legacy_root = REPO / LEGACY_BATCH_DIR
+    guide = REPO / "docs" / "index" / "LEGACY_ROUNDS_OPERATIONS.md"
+
+    if not guide.exists():
+        error("docs/index/LEGACY_ROUNDS_OPERATIONS.md is missing")
+    if not (legacy_root / "MANIFEST.md").exists():
+        error(f"{LEGACY_BATCH_DIR / 'MANIFEST.md'} is missing")
+
+    guide_text = guide.read_text(encoding="utf-8") if guide.exists() else ""
+    tracked_targets = [legacy_root / "README.md", legacy_root / "MANIFEST.md"]
+    for dirname in LEGACY_ROUND_DIRS + LEGACY_COMPARE_DIRS + LEGACY_SIDE_DIRS:
+        surface = legacy_root / dirname
+        if not surface.is_dir():
+            error(f"Legacy surface missing: {LEGACY_BATCH_DIR / dirname}")
+            continue
+        readme = surface / "README.md"
+        manifest = surface / "MANIFEST.md"
+        if not readme.exists():
+            error(f"{LEGACY_BATCH_DIR / dirname / 'README.md'} is missing")
+        if not manifest.exists():
+            error(f"{LEGACY_BATCH_DIR / dirname / 'MANIFEST.md'} is missing")
+        tracked_targets.extend([readme, manifest])
+        surface_name = Path(dirname).name
+        if guide_text and surface_name not in guide_text:
+            warn(f"LEGACY_ROUNDS_OPERATIONS.md does not mention {dirname}")
+
+    for target in tracked_targets:
+        result = subprocess.run(
+            ["git", "check-ignore", "-q", str(target)],
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode == 0:
+            error(f"Legacy governance file is ignored by git: {target.relative_to(REPO)}")
+
+
 def main():
     check_experiment_dirs()
     check_index_references()
     check_report_links()
     check_claude_agents_sync()
     check_inference_quantfix()
+    check_legacy_governance()
 
     print()
     print(f"Results: {len(ERRORS)} errors, {len(WARNINGS)} warnings")
