@@ -151,3 +151,40 @@ A1 最簡單（改一個 n_angles 參數），A2 次之，A3 最複雜。
 - COMBO 從 1.35 降到 1.15——仍有 15% 高估，可能需要 A2（加權 fit）進一步改善
 - **COMBO 的 720-angle internal 0.151 < 0.168 門檻——不會再被錯誤丟棄**
 - R38v2 仍高估 22%——其 residual_std 較高（3.15），噪聲來源不只是角度不足
+
+## A2 實施結果：IRLS + soft_l1 測試（2026-04-08）
+
+### IRLS（Tukey biweight）
+
+在 `summarize_boundary_fit` 中加入兩遍 fit：unweighted → 算 Tukey 權重 → weighted refit。
+
+| 候選 | 720 unwgt/Ext | 720 IRLS/Ext | IRLS 改善？ |
+|------|-------------|-------------|-----------|
+| R30 | **1.035** | 1.093 | 退步 |
+| R33 | **1.045** | 1.185 | 退步 |
+| R38v2 | 1.222 | **1.115** | 改善 |
+| COMBO | 1.147 | **1.057** | 改善 |
+
+### soft_l1（scipy 內建 robust loss）
+
+| 候選 | 720 unwgt/Ext | 720 soft_l1/Ext | soft_l1 改善？ |
+|------|-------------|----------------|--------------|
+| R30 | **1.035** | 1.109 | 退步 |
+| R33 | **1.045** | 1.142 | 退步 |
+| R38v2 | 1.222 | 1.176 | 改善但不如 IRLS |
+| COMBO | 1.147 | 1.068 | 改善但不如 IRLS |
+
+### 結論
+
+**A2 無法一致性地改善所有候選**：
+- IRLS/soft_l1 在高 steepness 模型（R38v2/COMBO）有效
+- 但在低 residual 模型（R30/R33）反而退步
+- 原因：R30/R33 的 residual 分佈接近正態，robust downweighting 把正常角度也降權了
+
+**決定：保持 unweighted（720-angle）作為預設**。
+`fit_circle` 保留 `weights` 和 `robust_loss` 參數供未來選用，但預設不啟用。
+720-angle unweighted 的 ratio 在 R30 (1.035)、R33 (1.045) 上已經很好。
+COMBO 的 1.147 比原始 360-angle 的 1.349 大幅改善。
+
+**A2 的正確使用場景**：只在已知模型有高缺陷角度槓桿效應時手動啟用 IRLS。
+不適合作為全局預設。
