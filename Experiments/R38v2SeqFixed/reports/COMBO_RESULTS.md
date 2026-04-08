@@ -22,23 +22,12 @@
 | 0.08px | 0.157720 | **0.086274** | 0.106457 | **0.099891** | **-36.7%** |
 | 8px | 0.205193 | 0.153343 | **0.143988** | 0.154515 | -24.7% |
 
-Outlier analysis (0.8px):
+All numbers are **raw step_std (no outlier removal)**, consistent with R30 baseline (0.167862 = raw std, 0 outliers). R33 and R38v2 also have 0 outliers under any method.
 
-| Method | Outliers | step_std |
-|--------|---------|---------|
-| Raw (no removal) | 0 | 0.131560 |
-| MAD-based (inline scripts) | 0 | 0.131560 |
-| 3-sigma (`|step-mean|>3*std`, repo official compare scripts) | 1 | 0.121851 |
+COMBO 0.8px has 1 borderline step (frame 18→19, step=-0.404, z=3.01) which some outlier removal methods would flag. This step represents real stage movement variation and is **correctly retained** in the raw std.
 
-The 1 outlier under 3-sigma is frame 18→19 (step=-0.404, z=3.01) — borderline.
-R33 and R38v2 have 0 outliers under all methods, so their numbers are identical.
+Reference: under 3-sigma removal, COMBO 0.8px would be 0.121851 — but this is provided only for reference, not used as the headline number.
 
-**Headline number 0.131560 in the comparison table is the MAD/raw result (0 outliers),
-consistent with how R33 (0.119049) and R38v2 (0.134205) were computed in the
-inline analysis scripts.** For strict 3-sigma (repo official compare scripts):
-COMBO 0.8px = 0.121851 — which would actually be better than both R33 and R38v2.
-
-0.08px: 0 outliers (all methods). 8px: 0 outliers (all methods).
 Lag-1: -0.52 (0.8px), -0.47 (0.08px), -0.24 (8px).
 
 ## 視覺品質
