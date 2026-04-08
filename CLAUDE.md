@@ -48,6 +48,14 @@ When recording experiment results, update ALL of:
 - `docs/evidence/EVIDENCE_MAP.md` (evidence pointers)
 - `Experiments/INDEX.md` (experiment index)
 
+## Source of truth policy
+
+Read `docs/index/SOURCE_OF_TRUTH_POLICY.md` before editing any file that might have copies elsewhere.
+- `Experiments/*/reports/` is the only editable location for experiment reports
+- `docs/evidence/` contains mirrors/curated copies — edit the canonical source first, then sync
+- `Model/GeoEdgeAlignSR_v1_Infer_v5_*.py` is canonical; deployment/package copies must be synced manually
+- When in doubt about which copy is canonical, check the policy file or ask the user
+
 ## Known quirks
 
 Read `docs/index/QUIRKS_AND_CONVENTIONS.md` before making changes that touch:
