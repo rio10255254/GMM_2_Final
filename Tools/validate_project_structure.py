@@ -188,6 +188,21 @@ def check_legacy_governance():
         if result.returncode == 0:
             error(f"Legacy governance file is ignored by git: {target.relative_to(REPO)}")
 
+    blocked_targets = [
+        legacy_root / "round23" / "archive" / "future_note" / "README.md",
+        legacy_root / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
+    ]
+    for target in blocked_targets:
+        result = subprocess.run(
+            ["git", "check-ignore", "-q", str(target)],
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode != 0:
+            error(f"Legacy artifact-side doc is unexpectedly trackable: {target.relative_to(REPO)}")
+
 
 def main():
     check_experiment_dirs()

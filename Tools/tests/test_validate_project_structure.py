@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import subprocess
 from pathlib import Path
 
 
@@ -71,3 +72,35 @@ def test_validator_declares_legacy_surfaces():
     assert module.LEGACY_COMPARE_DIRS == LEGACY_COMPARE_DIRS
     assert hasattr(module, "LEGACY_SIDE_DIRS")
     assert module.LEGACY_SIDE_DIRS == LEGACY_SIDE_DIRS
+
+
+def test_legacy_gitignore_only_allows_whitelisted_governance_docs():
+    allowed = [
+        REPO / "Traing_Progress" / "organized_20260316" / "round23" / "README.md",
+        REPO / "Traing_Progress" / "organized_20260316" / "external_compare_r18_r22_r25" / "MANIFEST.md",
+        REPO / "Traing_Progress" / "organized_20260316" / "tta_experiment" / "r26_tta_cross5" / "README.md",
+    ]
+    blocked = [
+        REPO / "Traing_Progress" / "organized_20260316" / "round23" / "archive" / "future_note" / "README.md",
+        REPO / "Traing_Progress" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
+    ]
+
+    for path in allowed:
+        result = subprocess.run(
+            ["git", "check-ignore", "-q", str(path)],
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        assert result.returncode == 1, f"Expected tracked governance doc, but gitignore still hides {path}"
+
+    for path in blocked:
+        result = subprocess.run(
+            ["git", "check-ignore", "-q", str(path)],
+            cwd=REPO,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        assert result.returncode == 0, f"Expected ignored artifact-side doc, but gitignore re-opened {path}"
