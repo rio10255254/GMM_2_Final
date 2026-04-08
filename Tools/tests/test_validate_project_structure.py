@@ -37,6 +37,7 @@ LEGACY_BATCH_SPECS = {
         "round28",
         "round29",
         "round30",
+        "round31",
         "external_compare_round18_round22",
         "external_compare_r18_r22_r25",
         "external_compare_r18_r22_r25_r26",
@@ -91,6 +92,7 @@ def test_legacy_gitignore_only_allows_whitelisted_governance_docs():
         REPO / "Traing_Progress" / "organized_20260314" / "round20" / "MANIFEST.md",
         REPO / "Traing_Progress" / "organized_20260315" / "pairwise_delta_probe" / "README.md",
         REPO / "Traing_Progress" / "organized_20260316" / "round23" / "README.md",
+        REPO / "Traing_Progress" / "organized_20260316" / "round31" / "MANIFEST.md",
         REPO / "Traing_Progress" / "organized_20260316" / "external_compare_r18_r22_r25" / "MANIFEST.md",
         REPO / "Traing_Progress" / "organized_20260316" / "tta_experiment" / "r26_tta_cross5" / "README.md",
     ]
@@ -99,6 +101,7 @@ def test_legacy_gitignore_only_allows_whitelisted_governance_docs():
         REPO / "Traing_Progress" / "organized_20260314" / "branch_e" / "archive" / "future_note" / "MANIFEST.md",
         REPO / "Traing_Progress" / "organized_20260315" / "round22" / "selected" / "reports" / "extra" / "README.md",
         REPO / "Traing_Progress" / "organized_20260316" / "round23" / "archive" / "future_note" / "README.md",
+        REPO / "Traing_Progress" / "organized_20260316" / "round31" / "archive" / "future_note" / "README.md",
         REPO / "Traing_Progress" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
     ]
 

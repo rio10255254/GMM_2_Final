@@ -13,7 +13,7 @@ under:
 - `Traing_Progress/organized_20260316/`
 
 Use this guide when you need to:
-- safely reopen `Round16` through `Round30`
+- safely reopen `Round16` through `Round31`
 - find the canonical decision and compare artifacts for a legacy round
 - follow the handoff path from `round18` and `round22` into the later external compare chain
 - distinguish editable historical truth from curated mirrors in `docs/evidence/`
@@ -28,14 +28,16 @@ Phase-1 / phase-2 legacy governance covers:
 - `organized_20260313` (`round16`-`round19`, `root_status_legacy`)
 - `organized_20260314` (`round20`, `diagnostics`, `branch_e`)
 - `organized_20260315` (`round21`, `round22`, `pairwise_delta_probe`, `branch_e_followup`, `estimator_formula_probe`)
-- `organized_20260316` (`round23`-`round30`, compare chain, `analysis`, `tta_experiment`)
+- `organized_20260316` (`round23`-`round31`, compare chain, `analysis`, `tta_experiment`)
 
 Still not covered by this guide:
-- `round31`
+- `round32/` payloads preserved under `organized_20260316/`
 - `Experiments/R32Sandbox/`
 
-Those two rounds already flow into later governance surfaces (`PROJECT_CURRENT_STATE.md`,
-`docs/evidence/`, `Experiments/R32Sandbox/`) and will be handled separately if needed.
+`Round31` remains a governed legacy round in `organized_20260316/`.
+`Round32` already flows into later governance surfaces (`PROJECT_CURRENT_STATE.md`,
+`docs/evidence/`, `Experiments/R32Sandbox/`) and is handled there instead of
+by this guide.
 
 ## Support Levels
 
@@ -99,6 +101,7 @@ Those two rounds already flow into later governance surfaces (`PROJECT_CURRENT_S
 | `round28/` | `step_mag < 0.35` downsweep falsification | falsified | `partial` |
 | `round29/` | `step_mag > 0.35` upper sweep falsification | falsified | `partial` |
 | `round30/` | architecture breakthrough | promoted to `r30_b1_dironly` baseline | `partial` |
+| `round31/` | B1 hyperparameter follow-up | completed external compare, no promotion | `partial` |
 
 ## organized_20260316 Compare Surfaces
 
