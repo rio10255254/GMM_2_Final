@@ -22,11 +22,11 @@
 | 0.08px | 0.157720 | **0.086274** | 0.106457 | **0.099891** | **-36.7%** |
 | 8px | 0.205193 | 0.153343 | **0.143988** | 0.154515 | -24.7% |
 
-All numbers are **raw step_std (no outlier removal)**, consistent with R30 baseline (0.167862 = raw std, 0 outliers). R33 and R38v2 also have 0 outliers under any method.
-
-COMBO 0.8px has 1 borderline step (frame 18→19, step=-0.404, z=3.01) which some outlier removal methods would flag. This step represents real stage movement variation and is **correctly retained** in the raw std.
-
-Reference: under 3-sigma removal, COMBO 0.8px would be 0.121851 — but this is provided only for reference, not used as the headline number.
+Outlier policy: only remove GMF tool failures (z > 5). See `GMF_STEP_STD_METHODOLOGY.md`.
+- R30, R38v2, COMBO: all scales 0 outliers → headline = raw std.
+- **R33 8px is the sole exception**: raw 0.932763, 2 GMF failures (z=6.98, 6.90) removed → headline 0.153343.
+- R33 0.8px and 0.08px: 0 outliers → headline = raw std.
+- COMBO 0.8px borderline step (z=3.01) is real stage variation, correctly retained.
 
 Lag-1: -0.52 (0.8px), -0.47 (0.08px), -0.24 (8px).
 
