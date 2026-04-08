@@ -106,7 +106,12 @@ def check_claude_agents_sync():
 
 def check_inference_quantfix():
     print("=== Check 5: Inference quantization fix consistency ===")
+    # Check all Infer_v5 copies
     infer_files = list(REPO.rglob("GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py"))
+    # Also check TTA canonical script
+    tta = REPO / "Model" / "GeoEdgeAlignSR_v1_Infer_TTA.py"
+    if tta.exists():
+        infer_files.append(tta)
     # Exclude .claude worktrees
     infer_files = [f for f in infer_files if ".claude" not in str(f)]
     for f in infer_files:

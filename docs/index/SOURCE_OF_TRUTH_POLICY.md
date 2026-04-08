@@ -19,7 +19,8 @@ Last updated: 2026-04-08
 | R30 baseline proof | — (來源在 Traing_Progress/) | `docs/evidence/baseline/ROUND30_EXTERNAL_COMPARE.md`（curated copy） |
 
 **規則**：
-- `Experiments/*/reports/` 是所有實驗報告的**唯一可編輯位置**
+- `Experiments/*/reports/` 是 R33+ 實驗報告的**主要可編輯位置**
+- **R26 例外**：R26NewPSFCheck 的 canonical 報告分佈在多個子目錄（`psf_audit/`、`formal_newpsf_candidate/reports/`、`pure_psf_control/reports/`、`root_cause_centering/reports/`），這些都是 canonical，不是 mirror。R26 的結構是歷史產物，見 `QUIRKS_AND_CONVENTIONS.md` §4。
 - `docs/evidence/` 是 curated copy / mirror，從 canonical source 複製而來
 - 如果要修改 evidence 層的內容，先改 canonical source，再更新 mirror
 - `docs/evidence/` 裡的 R30/R31 檔案是從 `Traing_Progress/` 複製的歷史 curated copy，原始來源不在 Experiments/
