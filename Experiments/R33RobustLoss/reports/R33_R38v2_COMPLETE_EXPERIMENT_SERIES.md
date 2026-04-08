@@ -12,7 +12,7 @@
 |---|-------|------|------|-----------|----------|-----------|------|
 | 1 | R33 | hard_p90 | Winsorize all at p90 | 0.146 int | — | — | 次佳 |
 | **2** | **R33** | **hard_p95** | **Winsorize all at p95** | **0.119 ext** | **2.36 (-32%)** | **3.16 (-22%)** | **GMF 極致型** |
-| 3 | R33 | lap_only_p95 | 只截 Laplacian | 0.350 int | — | — | 徹底失敗 |
+| 3 | R33 | lap_only_p95 | 只截 Laplacian (*) | 0.350 int | — | — | 徹底失敗 |
 | 4 | R33 | soft_p95 | Charbonnier softclip | 0.144 int | 2.29 (-34%) | — | 比 hard 差 |
 | 5 | R34 | freq_split_s15_p95 | loss 層 Gaussian 分頻 | 0.141 int | 2.36 (-32%) | — | 無改善 |
 | 6 | R35 | alpha025_p95 | Physics alpha 0.25 | 0.229 int | 2.33 (-33%) | — | 失敗 |

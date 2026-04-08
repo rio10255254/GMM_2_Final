@@ -22,7 +22,7 @@
 | 0.08px | 0.157720 | **0.086274** | 0.106457 | **0.099891** | **-36.7%** |
 | 8px | 0.205193 | 0.153343 | **0.143988** | 0.154515 | -24.7% |
 
-Zero outliers across all scales. Lag-1: -0.52 (0.8px), -0.47 (0.08px), -0.24 (8px).
+Zero outliers (MAD-based removal method) across all scales. Note: 0.8px has 1 borderline step at z=3.01 under 3-sigma criterion (frame 18→19, step=-0.404) but is retained by the MAD method used in all comparisons. Lag-1: -0.52 (0.8px), -0.47 (0.08px), -0.24 (8px).
 
 ## 視覺品質
 

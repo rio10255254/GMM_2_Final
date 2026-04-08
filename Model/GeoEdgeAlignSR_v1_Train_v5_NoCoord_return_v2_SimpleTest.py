@@ -798,6 +798,7 @@ class TrainConfig:
     ROBUST_LOSS_PERCENTILE: float = 1.0   # 1.0 = disabled (identity); 0.90 = cap top 10%
     ROBUST_LOSS_WARMUP: int = 10          # skip Winsorize for first N epochs
     ROBUST_LOSS_MODE: str = "hard"        # "hard" = clamp (Winsorize), "soft" = Charbonnier softclip
+    ROBUST_LOSS_GRADMAG: bool = True      # True = apply robust clip to gradient_magnitude_loss; False = lap only
 
     ENABLE_PSF_GUARD_ONLY: bool = False
     PSF_GUARD_MAX_EPOCHS: int = 10
@@ -6063,7 +6064,8 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                 l_pix, ssim_v, l_ssim_raw = reconstruction_terms(pred01, lbl01, huber, ssim)
                 l_rec = l_pix + float(w_ssim) * l_ssim_raw
                 _rpct = CFG.ROBUST_LOSS_PERCENTILE if epoch1 > CFG.ROBUST_LOSS_WARMUP else 1.0
-                l_gradmag = gradient_magnitude_loss(pred01, lbl01, mask_valid, robust_pct=_rpct)
+                _rpct_gm = _rpct if bool(getattr(CFG, "ROBUST_LOSS_GRADMAG", True)) else 1.0
+                l_gradmag = gradient_magnitude_loss(pred01, lbl01, mask_valid, robust_pct=_rpct_gm)
                 l_edge_ori = edge_orientation_loss(pred01, lbl01, mask_valid) if w_edge_ori > 0.0 else pred01.new_tensor(0.0)
                 pred_mean_mask, pred_std_mask = masked_mean_std(pred01, mask_valid)
                 gt_mean_mask, gt_std_mask = masked_mean_std(lbl01, mask_valid)

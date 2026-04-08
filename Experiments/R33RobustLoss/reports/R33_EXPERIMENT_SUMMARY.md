@@ -158,6 +158,11 @@ step_std 已大幅改善，但若未來需要更平滑的趨勢，可以考慮�
 
 **結論**：W_GRADMAG 的 Winsorize 是 R33 p95 成功的核心——不能移除。視覺銳度退步（gradient -32%、Laplacian -47%）是達到 GMF 穩定性 -29% 改善的必要代價。
 
+> **可重現性備註（2026-04-08 修正）**：lap_only_p95 的原始實驗是透過臨時修改訓練迴圈
+> 將 gradient_magnitude_loss 的 robust_pct 硬設為 1.0 來實現的，該修改在實驗後被回退。
+> 現已新增 `ROBUST_LOSS_GRADMAG: bool` config 參數，launcher 中 `r33_lap_only_p95`
+> 設 `ROBUST_LOSS_GRADMAG=False`，可從 repo 正確重跑。原始 checkpoint 和結果不受影響。
+
 ## Ablation: soft_p95 — Charbonnier Softclip (WORSE THAN HARD)
 
 **假說**：用 Charbonnier soft-compression 取代硬截尾，保留大梯度的方向信號但壓縮強度，以兼顧銳度和穩定性。
