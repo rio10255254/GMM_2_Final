@@ -1,5 +1,5 @@
 # PROJECT CURRENT STATE / 專案目前狀態
-Last updated: 2026-04-08 (quantization fix applied and evaluated)
+Last updated: 2026-04-08 (COMBO external GMF pass — three production candidates)
 
 Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
 
@@ -195,6 +195,23 @@ R38v2 報告：`Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md`
 
 R38v2 的 0.8px 退步源於其高 steepness (+89%) 對量化敏感。
 完整分析：`Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md`
+
+### COMBO: Winsorize + Seq（2026-04-08）— 最均衡型候選
+
+COMBO = R33 的 Winsorize p95 + R38v2 的 seq 8px gate + warmup 15 同時啟用。
+
+| 尺度 | R30 | R33 | R38v2 | **COMBO** | vs R30 |
+|------|-----|-----|-------|----------|--------|
+| **0.8px** | 0.168 | **0.119** | 0.134 | **0.132** | **-21.6%** |
+| 0.08px | 0.158 | **0.086** | 0.106 | **0.100** | -36.7% |
+| 8px | 0.205 | 0.153 | **0.144** | 0.155 | -24.7% |
+
+- 0.8px 打敗 R38v2（0.132 vs 0.134），接近 R33（0.119）
+- 視覺品質和 R38v2 一樣好（steepness +89%、contrast std 32.35）
+- **residual_std 全面歷史最佳**（0.8px inner 2.044, -29% vs R30）
+- Internal step_std 0.178 嚴重高估 → external 0.132（低 residual 讓 GMF 更精確）
+
+COMBO 報告：`Experiments/R38v2SeqFixed/reports/COMBO_RESULTS.md`
 
 Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。
 The Git-tracked `000_LONGRUN_ROUND32_STATUS.*` files are now kept under `docs/runtime/legacy/root_status/` as a legacy bridge only; if the same filenames reappear at the repository root, treat them as local runtime output rather than canonical truth.

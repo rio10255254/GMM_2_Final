@@ -18,6 +18,8 @@ flowchart TD
     R33 --> R34_37["R34/R35/R37 ❌<br/>freq-split / alpha / freq-reg<br/>all failed to recover sharpness"]
     R33 --> R38["R38 seq-all ⚠<br/>8px good but 0.8px weak<br/>noise from tiny-delta stages"]
     R38 --> R38v2["R38v2 / 8px_gate ✅<br/>seq 8px + gate + warmup<br/>0.8px = 0.1342 (-20.1%)<br/>steepness +89%"]
+    R33 --> COMBO["COMBO ✅<br/>Winsorize + seq 8px gate<br/>0.8px = 0.1316 (-21.6%)<br/>steepness +89%, best residual"]
+    R38v2 --> COMBO
 ```
 
 ## Milestone Numbers / 里程碑數字
@@ -32,7 +34,8 @@ flowchart TD
 | **R33（Robust Loss）** | **`r33_robust_p95`** | **`0.119049`** | **GMF 極致型：三尺度全通過，銳度 -22%** |
 | R34/R35/R37 | freq-split / alpha / freq-reg | — (internal) | 全部失敗，無法恢復銳度 |
 | R38 | seq_only (all stages) | — (internal 0.159) | 8px 好，0.8px 弱（噪聲干擾） |
-| **R38v2（Seq Fixed）** | **`r38v2_8px_gate`** | **`0.134205`** | **均衡型：GMF -20% + steepness +89%** |
+| **R38v2（Seq Fixed）** | **`r38v2_8px_gate`** | **`0.134205`** | **視覺優先型：GMF -20% + steepness +89%** |
+| **COMBO** | **`r38v2_8px_gate_p95`** | **`0.131560`** | **最均衡型：GMF -22% + steepness +89% + residual 歷史最佳** |
 | R26NewPSFCheck | 新 PSF 重訓候選 | 待定（等待 GMF 回填） | 進行中（2026-03-26 啟動） |
 
 ## Interpretation / 路徑解讀
