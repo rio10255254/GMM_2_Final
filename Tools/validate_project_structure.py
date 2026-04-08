@@ -49,6 +49,7 @@ LEGACY_BATCH_SPECS = {
         "round28",
         "round29",
         "round30",
+        "round31",
         "external_compare_round18_round22",
         "external_compare_r18_r22_r25",
         "external_compare_r18_r22_r25_r26",
@@ -220,6 +221,7 @@ def check_legacy_governance():
         REPO / "Traing_Progress" / "organized_20260314" / "branch_e" / "archive" / "future_note" / "MANIFEST.md",
         REPO / "Traing_Progress" / "organized_20260315" / "round22" / "selected" / "reports" / "extra" / "README.md",
         REPO / "Traing_Progress" / "organized_20260316" / "round23" / "archive" / "future_note" / "README.md",
+        REPO / "Traing_Progress" / "organized_20260316" / "round31" / "archive" / "future_note" / "README.md",
         REPO / "Traing_Progress" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
     ]
     for target in blocked_targets:

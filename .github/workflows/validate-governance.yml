@@ -1,0 +1,31 @@
+name: Validate Governance
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - sandbox/r38v2
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install test dependency
+        run: python -m pip install pytest
+
+      - name: Run governance tests
+        run: python -m pytest Tools/tests/test_validate_project_structure.py -q
+
+      - name: Run structure validator
+        run: python Tools/validate_project_structure.py

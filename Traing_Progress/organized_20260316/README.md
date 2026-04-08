@@ -12,9 +12,14 @@
 - `Round28`：`step_mag < 0.35` downsweep falsification
 - `Round29`：`step_mag > 0.35` upper sweep falsification
 - `Round30`：architecture breakthrough，external 正式升級 baseline
-- `Round31`：B1 hyperparam tuning，internal 已完成、external 待驗證
+- `Round31`：B1 hyperparam tuning，external compare 已完成且未形成升級
 - `tta_experiment`：`R26 + TTA C2` 驗證
 - `analysis`：`D2 internal-external correlation`
+
+附註：
+
+- `round32/` 目錄仍保留在這個 batch 內作為歷史 payload / runtime bridge
+- 但 `Round32` 的 canonical 治理面已轉到 `Experiments\R32Sandbox\`
 
 ## Recommended Reading Order
 
@@ -27,11 +32,11 @@
 
 ## Legacy Governance Entry Points
 
-For safe legacy-round operations on `Round23`-`Round30`, also use:
+For safe legacy-round operations on `Round23`-`Round31`, also use:
 
 1. `MANIFEST.md` — batch identity and scope boundaries
 2. `..\..\docs\index\LEGACY_ROUNDS_OPERATIONS.md` — canonical operational guide
-3. `round23\README.md` through `round30\README.md` — per-round start-here guides
+3. `round23\README.md` through `round31\README.md` — per-round start-here guides
 4. `external_compare_*\README.md` — compare-chain guides
 
 These files are additive governance surfaces. They do not replace the original reports.
@@ -79,9 +84,12 @@ These files are additive governance surfaces. They do not replace the original r
 
 ### round31
 - 角色：B1 hyperparam tuning on top of `r30_b1_dironly`
-- 狀態：**internal complete / external compare running**
+- 狀態：**external compare complete / no promotion**
 - selected candidate：`r31_eq_prob_up`
-- 關鍵事實：四個候選 internal 指標完全同值；目前尚無 external compare
+- 關鍵事實：
+  - 四個候選 internal 指標完全同值
+  - measured candidates external 全部退步
+  - `r31_eq_combo` 缺 `GMF_score.txt`，屬 artifact missing，不是 measured regression
 
 ## Analysis / Side Experiments
 
@@ -111,6 +119,6 @@ These files are additive governance surfaces. They do not replace the original r
 ## Current Verdict
 
 - current production baseline: `Round30 / r30_b1_dironly`
-- latest completed internal-only probe: `Round31 / r31_eq_prob_up`
+- latest completed legacy follow-up: `Round31 / r31_eq_prob_up`
 - latest falsified production side-branch: `Round30 A1/A5/S1 side-directions`
-- next action: `Round31 external compare`（running）
+- next governed surface: `Experiments\R32Sandbox\README.md`
