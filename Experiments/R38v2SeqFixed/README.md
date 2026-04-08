@@ -12,15 +12,23 @@ R38v2 透過三重修復解決：
 
 ## 結果
 
-外部 GMF 三尺度全通過（均衡型候選）：
-- 0.8px: 0.134 (-20%)，Edge steepness: +89% vs R30
-- 8px: 0.144 (-30%)，比 R33 還好
+此目錄包含兩個生產候選：
+
+### R38v2（視覺優先型）
+- 機制：Seq 8px-only + gate + warmup，**無 Winsorize**
+- 0.8px: **0.134** (-20%)，Edge steepness: **+89%** vs R30
+- Checkpoint: `Traing_Progress/..._20260406_235957/weights/best_tradeoff.pth.tar`
+
+### COMBO（最均衡型）
+- 機制：R38v2 的 seq + R33 的 Winsorize p95（`r38v2_8px_gate_p95`）
+- 0.8px: **0.132** (-22%)，Edge steepness: **+89%**，Residual_std 歷史最佳
+- Checkpoint: `Traing_Progress/..._20260408_003525/weights/best_tradeoff.pth.tar`
+- COMBO 同時繼承 R33 和 R38v2 的機制——詳見 `reports/COMBO_RESULTS.md`
 
 ## 資料
 
-- Checkpoint: `Traing_Progress/..._20260406_235957/weights/best_tradeoff.pth.tar`
 - Seq data: `Training_Data/generated_convolved/stage_25,26/`（用新 PSF 重新卷積 2026-04-06）
-- External GMF: `results/external_gmf/`
+- External GMF: `results/external_gmf/`（R38v2）、`results/external_gmf_combo/`（COMBO）
 
 ## 分支
 
