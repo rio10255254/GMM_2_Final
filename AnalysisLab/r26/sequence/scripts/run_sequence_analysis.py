@@ -121,9 +121,10 @@ def analyze_frame(
         "annulus_status": ref["status"],
     }
 
-    # Edge extraction + circle fit
+    # Edge extraction + circle fit (720 angles for lower circle-fit noise floor)
     edge_data = extract_radial_edge_candidates(
-        img, ref["cx"], ref["cy"], ref["r_inner"], ref["r_outer"]
+        img, ref["cx"], ref["cy"], ref["r_inner"], ref["r_outer"],
+        n_angles=720,
     )
     fits = summarize_circle_fits(edge_data, ref["cx"], ref["cy"])
 

@@ -107,7 +107,8 @@ Key performance metrics (all from the external GMF evaluator):
 ### 下一個決策邊界 / Next Decision Boundary
 
 三個候選都已通過 `external 0.8px < 0.167862` 的硬邊界。
-量化修復已完成。下一步是選擇生產候選並執行架構重構。
+量化修復已完成。**重要發現**：internal step_std 系統性高估 external GMF（COMBO: internal 0.178 vs external 0.132，比率 1.35）。
+根因是 circle-fit 噪聲地板（~0.17 px）主導了 internal 量測。下一步：改善 internal 量測精度（增加角度取樣 360→720+）。
 
 ---
 

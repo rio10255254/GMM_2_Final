@@ -40,6 +40,10 @@ Recommended fixed read order:
 - R33 checkpoint: `Traing_Progress/..._20260405_091941/weights/best_tradeoff.pth.tar`
 - R38v2 checkpoint: `Traing_Progress/..._20260406_235957/weights/best_tradeoff.pth.tar`
 - COMBO checkpoint: `Traing_Progress/..._20260408_003525/weights/best_tradeoff.pth.tar`
+- **CRITICAL**: internal step_std 不再適合作為硬門檻（circle-fit 噪聲地板 ~0.17 px 主導 internal）
+  - COMBO internal 0.178 > 門檻，但 external 0.132 大幅通過
+  - 改善方向：增加角度取樣 360→720+，或用加權 circle fit
+  - 分析：`Experiments/R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md`
 - falsified directions (R34-R37, R38, R33c): 5 rounds all failed to break sharpness-stability trade-off
 - R38v2 success mechanism: warmup 15 epochs → signal gate 0.002 → 8px-only seq training
 - PSF policy: 新 Whole-FOV PSF 自 2026-03-27 為 current standard
