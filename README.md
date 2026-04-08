@@ -74,13 +74,14 @@ Key performance metrics (all from the external GMF evaluator):
 
 **`Round30 / r30_b1_dironly`** — 正式 production baseline（兩個升級候選待定）
 
-| 指標 / Metric | R30 baseline | R33 p95（GMF 極致型） | R38v2（均衡型） |
-|--------------|-------------|---------------------|---------------|
-| external `0.8px` step std | **`0.167862`** | **`0.117`** (-30%) | **`0.134`** (-20%) |
-| external `8px` step std | `0.205` | `0.172` | **`0.122`** (-41%) |
-| external `0.08px` step std | `0.158` | **`0.086`** (-46%) | `0.109` (-31%) |
-| Edge steepness (vs R30) | baseline | -22% | **+89%** |
-| Visual quality | baseline | 退步（柔化） | **接近 R30** |
+| 指標 / Metric | R30 baseline | R33 p95（極致型） | R38v2（視覺優先） | COMBO（最均衡） |
+|--------------|-------------|------------------|-----------------|---------------|
+| external `0.8px` step std | **`0.168`** | **`0.119`** (-29%) | `0.134` (-20%) | **`0.132`** (-22%) |
+| external `8px` step std | `0.205` | `0.153` | **`0.144`** (-30%) | `0.155` (-25%) |
+| external `0.08px` step std | `0.158` | **`0.086`** (-45%) | `0.106` (-33%) | **`0.100`** (-37%) |
+| Edge steepness (vs R30) | baseline | -22% | **+89%** | **+89%** |
+| Contrast std | 34.6 | 26.5 (-24%) | 30.9 (-11%) | **32.4** (-7%) |
+| Residual_std (0.8px inner) | 2.89 | 2.68 | 3.19 | **2.04** (-29%) |
 
 ### 研究歷程最新結論 / Latest Research Verdicts
 
@@ -93,18 +94,20 @@ Key performance metrics (all from the external GMF evaluator):
 | R34/R35/R37 | ❌ 三輪嘗試恢復銳度全部失敗（freq-split / alpha-boost / freq-reg） |
 | **R38v2** | ✅ **均衡型候選**：Seq training (8px-only + signal gate + warmup) → 0.8px -20% + steepness +89% |
 
-### 兩個生產候選 / Two Production Candidates
+### 三個生產候選 / Three Production Candidates
 
-**R33 p95**：GMF 定位精度最佳（0.8px -30%），但邊緣銳度退步 22%。適合純 GMF 定位場景。
+**R33 p95**（GMF 極致型）：0.8px **-29%**，但視覺銳度退步 22%。適合純 GMF 定位場景。
 
-**R38v2 8px_gate**：GMF 改善 20% 且視覺品質接近 R30（steepness +89%、contrast -13%）。適合需要人眼判讀的場景。
+**R38v2 8px_gate**（視覺優先型）：0.8px -20%，steepness **+89%**。適合需要人眼判讀的場景。
+
+**COMBO r38v2_8px_gate_p95**（最均衡型）：0.8px **-22%**，steepness **+89%**，residual_std **歷史最佳**（-29% vs R30）。同時兼顧 GMF 精度和視覺品質。
 
 完整實驗系列報告：`Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
 
 ### 下一個決策邊界 / Next Decision Boundary
 
-R33 和 R38v2 都已通過 `external 0.8px < 0.167862` 的硬邊界。
-下一步是選擇生產候選，並執行架構重構計畫中的零風險改善（量化修復已完成）。
+三個候選都已通過 `external 0.8px < 0.167862` 的硬邊界。
+量化修復已完成。下一步是選擇生產候選並執行架構重構。
 
 ---
 

@@ -131,6 +131,35 @@
       "upgrade_decision": "pass_balanced_candidate",
       "notes": "R38v2 is the balanced candidate: GMF -20% with near-R30 visual quality. R33 remains the GMF-extreme candidate (-29%). R38v2 achieves 8px best-ever (0.144, better than R33 0.153)."
     },
+    "combo_external_compare": {
+      "status": "completed_pass_all_scales",
+      "baseline": "r30_b1_dironly",
+      "candidate": "r38v2_8px_gate_p95 (COMBO: Winsorize p95 + seq 8px gate + warmup)",
+      "external_gmf": {
+        "step_std_8px": 0.154515,
+        "step_std_0p8px": 0.131560,
+        "step_std_0p08px": 0.099891,
+        "lag1_autocorr_0p8px": -0.5176
+      },
+      "delta_vs_r30": {
+        "step_std_8px": -0.050678,
+        "step_std_0p8px": -0.036302,
+        "step_std_0p08px": -0.057829
+      },
+      "delta_pct_vs_r30": {
+        "step_std_8px_pct": -24.7,
+        "step_std_0p8px_pct": -21.6,
+        "step_std_0p08px_pct": -36.7
+      },
+      "visual_quality_vs_r30": {
+        "edge_steepness_pct": 89.4,
+        "contrast_std_pct": -6.6,
+        "gradient_mag_pct": -19.7
+      },
+      "residual_std_all_time_best": true,
+      "upgrade_decision": "pass_most_balanced_candidate",
+      "notes": "COMBO achieves best-ever residual_std (0.8px inner 2.044, -29% vs R30), near-best 0.8px GMF (0.132, beats R38v2 0.134), and full R38v2-level visual quality. Internal step_std 0.178 overpredicted external 0.132 — low residual_std makes GMF more precise."
+    },
     "round34_35_37_38_falsified": {
       "status": "all_failed_to_break_sharpness_stability_tradeoff",
       "rounds": ["R34 freq-split", "R35 alpha-boost", "R37 freq-reg", "R38 seq-all-stages", "R33c contrast-fix"],
@@ -251,7 +280,8 @@
     "R38v2 (8px-only seq + signal gate 0.002 + warmup 15 epochs) PASSED external GMF (2026-04-07): 0.8px 0.134 (-20%), 8px 0.144 (-30%), 0.08px 0.106 (-33%).",
     "R38v2 is the BALANCED candidate: GMF -20% with near-R30 visual quality (steepness +89%, contrast -13%). R33 remains GMF-EXTREME: -29% but steepness -22%.",
     "R38v2 success factors: warmup preserves encoder sharpness, signal gate removes noise from weak-delta stages, 8px-only provides clean consistency signal.",
-    "Two production candidates: R33 p95 (max GMF precision) and R38v2 8px_gate (balanced GMF + visual quality).",
+    "Three production candidates: R33 p95 (GMF extreme), R38v2 8px_gate (visual priority), COMBO r38v2_8px_gate_p95 (most balanced).",
+    "COMBO (2026-04-08): Winsorize p95 + seq 8px gate + warmup. External 0.8px 0.132 (-22%), steepness +89%, residual_std all-time best. Beats R38v2 on 0.8px (0.132 vs 0.134) while maintaining same visual quality.",
     "QUANTIZATION FIX (2026-04-08): denormalize_to_dtype changed from truncation to np.rint (rounding). Impact varies by model:",
     "  R33 quantfix: 0.8px 0.119->0.117 (-1.7% improved), 8px 0.153->0.172 (outliers 2->0, actually more robust), 0.08px 0.086->0.086 (-0.7%).",
     "  R38v2 quantfix: 0.8px 0.134->0.147 (+9.3% regressed, steep edges sensitive to quantization), 8px 0.144->0.122 (-15.3% improved).",

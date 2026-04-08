@@ -1,0 +1,356 @@
+{
+  "environment": {
+    "python": "3.12.9",
+    "numpy": "2.2.3",
+    "scipy": "1.15.2",
+    "matplotlib": "3.10.1",
+    "opencv": "4.11.0"
+  },
+  "datasets": [
+    {
+      "dataset": "Pitch1um_Y_100",
+      "short_name": "pitch1um_y_100",
+      "n_frames": 101,
+      "expected_step_px": 8.0,
+      "step_stability": {
+        "input": {
+          "step_y_mean": -2.9304,
+          "step_y_std": 9.9105,
+          "step_y_cv_pct": 338.2,
+          "step_x_mean": -0.6542,
+          "step_x_std": 10.2505,
+          "internal_step_std_y": 9.9105
+        },
+        "output": {
+          "step_y_mean": -8.0377,
+          "step_y_std": 0.1399,
+          "step_y_cv_pct": 1.74,
+          "step_x_mean": -0.0705,
+          "step_x_std": 0.1422,
+          "internal_step_std_y": 0.1399
+        },
+        "improvement_pct": 98.59,
+        "gmf_step_std": 0.201031,
+        "gmf_baseline_step_std": 0.205193
+      },
+      "k2_stability": {
+        "input_outer": {
+          "k2_amp_mean": 1.2926,
+          "k2_amp_std": 0.8386,
+          "k2_amp_cv_pct": 64.88,
+          "k2_phase_circ_std_deg": 104.46
+        },
+        "input_inner": {
+          "k2_amp_mean": 1.821,
+          "k2_amp_std": 0.8442,
+          "k2_amp_cv_pct": 46.36,
+          "k2_phase_circ_std_deg": 72.71
+        },
+        "output_outer": {
+          "k2_amp_mean": 1.2018,
+          "k2_amp_std": 0.2719,
+          "k2_amp_cv_pct": 22.62,
+          "k2_phase_circ_std_deg": 8.51
+        },
+        "output_inner": {
+          "k2_amp_mean": 1.0267,
+          "k2_amp_std": 0.2208,
+          "k2_amp_cv_pct": 21.51,
+          "k2_phase_circ_std_deg": 8.15
+        },
+        "verdict": "moderate"
+      },
+      "center_offset_drift": {
+        "input": {
+          "mean": 1.9431,
+          "std": 0.9904,
+          "trend_px_per_frame": 0.000611
+        },
+        "output": {
+          "mean": 0.6139,
+          "std": 0.184,
+          "trend_px_per_frame": 0.000842
+        },
+        "verdict": "fixed_bias"
+      },
+      "residual_consistency": {
+        "outer": {
+          "input_mean": 9.1124,
+          "output_mean": 2.1915,
+          "improvement_mean_pct": 75.85,
+          "improvement_std_pct": 1.77,
+          "improvement_min_pct": 67.3,
+          "improvement_max_pct": 78.47
+        },
+        "inner": {
+          "input_mean": 9.113,
+          "output_mean": 1.9995,
+          "improvement_mean_pct": 77.89,
+          "improvement_std_pct": 2.84,
+          "improvement_min_pct": 60.24,
+          "improvement_max_pct": 81.61
+        }
+      },
+      "hotspot_persistence": {
+        "input_outer": {
+          "threshold_px": 14.3351,
+          "n_persistent_angles_gt50pct": 0,
+          "persistent_angle_fraction_gt50pct": 0.0,
+          "mean_persistence": 0.1003,
+          "max_persistence": 0.1828
+        },
+        "input_inner": {
+          "threshold_px": 14.2599,
+          "n_persistent_angles_gt50pct": 0,
+          "persistent_angle_fraction_gt50pct": 0.0,
+          "mean_persistence": 0.1004,
+          "max_persistence": 0.2333
+        },
+        "output_outer": {
+          "threshold_px": 3.3497,
+          "n_persistent_angles_gt50pct": 37,
+          "persistent_angle_fraction_gt50pct": 0.1028,
+          "mean_persistence": 0.2705,
+          "max_persistence": 1.0
+        },
+        "output_inner": {
+          "threshold_px": 2.9656,
+          "n_persistent_angles_gt50pct": 40,
+          "persistent_angle_fraction_gt50pct": 0.112,
+          "mean_persistence": 0.2569,
+          "max_persistence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "Pitch0.1um_Y_60",
+      "short_name": "pitch0p1um_y_60",
+      "n_frames": 61,
+      "expected_step_px": 0.8,
+      "step_stability": {
+        "input": {
+          "step_y_mean": -0.8098,
+          "step_y_std": 2.9397,
+          "step_y_cv_pct": 363.01,
+          "step_x_mean": -0.0343,
+          "step_x_std": 3.549,
+          "internal_step_std_y": 2.9397
+        },
+        "output": {
+          "step_y_mean": -0.7979,
+          "step_y_std": 0.1775,
+          "step_y_cv_pct": 22.25,
+          "step_x_mean": -0.0096,
+          "step_x_std": 0.1362,
+          "internal_step_std_y": 0.1775
+        },
+        "improvement_pct": 93.96,
+        "gmf_step_std": 0.191336,
+        "gmf_baseline_step_std": 0.167862
+      },
+      "k2_stability": {
+        "input_outer": {
+          "k2_amp_mean": 1.1116,
+          "k2_amp_std": 0.4815,
+          "k2_amp_cv_pct": 43.31,
+          "k2_phase_circ_std_deg": 39.67
+        },
+        "input_inner": {
+          "k2_amp_mean": 1.4882,
+          "k2_amp_std": 0.5461,
+          "k2_amp_cv_pct": 36.69,
+          "k2_phase_circ_std_deg": 31.68
+        },
+        "output_outer": {
+          "k2_amp_mean": 1.073,
+          "k2_amp_std": 0.3497,
+          "k2_amp_cv_pct": 32.59,
+          "k2_phase_circ_std_deg": 6.51
+        },
+        "output_inner": {
+          "k2_amp_mean": 1.0143,
+          "k2_amp_std": 0.1049,
+          "k2_amp_cv_pct": 10.34,
+          "k2_phase_circ_std_deg": 9.1
+        },
+        "verdict": "stable_offset"
+      },
+      "center_offset_drift": {
+        "input": {
+          "mean": 0.8448,
+          "std": 0.3668,
+          "trend_px_per_frame": 0.001882
+        },
+        "output": {
+          "mean": 0.2708,
+          "std": 0.107,
+          "trend_px_per_frame": -0.001053
+        },
+        "verdict": "dynamic_drift"
+      },
+      "residual_consistency": {
+        "outer": {
+          "input_mean": 6.4696,
+          "output_mean": 2.3292,
+          "improvement_mean_pct": 63.89,
+          "improvement_std_pct": 2.0,
+          "improvement_min_pct": 60.36,
+          "improvement_max_pct": 70.53
+        },
+        "inner": {
+          "input_mean": 6.6225,
+          "output_mean": 2.0438,
+          "improvement_mean_pct": 69.06,
+          "improvement_std_pct": 2.26,
+          "improvement_min_pct": 59.02,
+          "improvement_max_pct": 74.01
+        }
+      },
+      "hotspot_persistence": {
+        "input_outer": {
+          "threshold_px": 10.8035,
+          "n_persistent_angles_gt50pct": 0,
+          "persistent_angle_fraction_gt50pct": 0.0,
+          "mean_persistence": 0.1108,
+          "max_persistence": 0.3269
+        },
+        "input_inner": {
+          "threshold_px": 11.0736,
+          "n_persistent_angles_gt50pct": 0,
+          "persistent_angle_fraction_gt50pct": 0.0,
+          "mean_persistence": 0.1106,
+          "max_persistence": 0.381
+        },
+        "output_outer": {
+          "threshold_px": 3.5184,
+          "n_persistent_angles_gt50pct": 41,
+          "persistent_angle_fraction_gt50pct": 0.1185,
+          "mean_persistence": 0.4927,
+          "max_persistence": 1.0
+        },
+        "output_inner": {
+          "threshold_px": 3.0678,
+          "n_persistent_angles_gt50pct": 37,
+          "persistent_angle_fraction_gt50pct": 0.1057,
+          "mean_persistence": 0.4595,
+          "max_persistence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "Pitch0.01um_Y_40",
+      "short_name": "pitch0p01um_y_40",
+      "n_frames": 41,
+      "expected_step_px": 0.08,
+      "step_stability": {
+        "input": {
+          "step_y_mean": -0.0205,
+          "step_y_std": 3.877,
+          "step_y_cv_pct": 18928.96,
+          "step_x_mean": -0.0163,
+          "step_x_std": 4.1686,
+          "internal_step_std_y": 3.877
+        },
+        "output": {
+          "step_y_mean": -0.0808,
+          "step_y_std": 0.1318,
+          "step_y_cv_pct": 163.12,
+          "step_x_mean": -0.004,
+          "step_x_std": 0.1563,
+          "internal_step_std_y": 0.1318
+        },
+        "improvement_pct": 96.6,
+        "gmf_step_std": 0.180313,
+        "gmf_baseline_step_std": 0.15772
+      },
+      "k2_stability": {
+        "input_outer": {
+          "k2_amp_mean": 1.4073,
+          "k2_amp_std": 0.8992,
+          "k2_amp_cv_pct": 63.9,
+          "k2_phase_circ_std_deg": 42.28
+        },
+        "input_inner": {
+          "k2_amp_mean": 1.5663,
+          "k2_amp_std": 0.5437,
+          "k2_amp_cv_pct": 34.71,
+          "k2_phase_circ_std_deg": 35.57
+        },
+        "output_outer": {
+          "k2_amp_mean": 1.0286,
+          "k2_amp_std": 0.3232,
+          "k2_amp_cv_pct": 31.42,
+          "k2_phase_circ_std_deg": 7.5
+        },
+        "output_inner": {
+          "k2_amp_mean": 1.0746,
+          "k2_amp_std": 0.123,
+          "k2_amp_cv_pct": 11.44,
+          "k2_phase_circ_std_deg": 8.16
+        },
+        "verdict": "stable_offset"
+      },
+      "center_offset_drift": {
+        "input": {
+          "mean": 1.0321,
+          "std": 0.49,
+          "trend_px_per_frame": -0.002655
+        },
+        "output": {
+          "mean": 0.3183,
+          "std": 0.1092,
+          "trend_px_per_frame": 6.4e-05
+        },
+        "verdict": "dynamic_drift"
+      },
+      "residual_consistency": {
+        "outer": {
+          "input_mean": 6.5288,
+          "output_mean": 2.335,
+          "improvement_mean_pct": 64.05,
+          "improvement_std_pct": 2.58,
+          "improvement_min_pct": 58.87,
+          "improvement_max_pct": 72.78
+        },
+        "inner": {
+          "input_mean": 6.8352,
+          "output_mean": 2.102,
+          "improvement_mean_pct": 69.11,
+          "improvement_std_pct": 2.65,
+          "improvement_min_pct": 62.93,
+          "improvement_max_pct": 74.7
+        }
+      },
+      "hotspot_persistence": {
+        "input_outer": {
+          "threshold_px": 10.7839,
+          "n_persistent_angles_gt50pct": 0,
+          "persistent_angle_fraction_gt50pct": 0.0,
+          "mean_persistence": 0.1168,
+          "max_persistence": 0.3438
+        },
+        "input_inner": {
+          "threshold_px": 11.3696,
+          "n_persistent_angles_gt50pct": 0,
+          "persistent_angle_fraction_gt50pct": 0.0,
+          "mean_persistence": 0.117,
+          "max_persistence": 0.4737
+        },
+        "output_outer": {
+          "threshold_px": 3.5359,
+          "n_persistent_angles_gt50pct": 39,
+          "persistent_angle_fraction_gt50pct": 0.1137,
+          "mean_persistence": 0.5462,
+          "max_persistence": 1.0
+        },
+        "output_inner": {
+          "threshold_px": 3.1495,
+          "n_persistent_angles_gt50pct": 37,
+          "persistent_angle_fraction_gt50pct": 0.1063,
+          "mean_persistence": 0.5268,
+          "max_persistence": 1.0
+        }
+      }
+    }
+  ]
+}

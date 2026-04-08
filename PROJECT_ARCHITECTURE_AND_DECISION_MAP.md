@@ -236,6 +236,8 @@ D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
 | `Seq training with signal gate + warmup` 機制有效（R38v2） | 均衡型候選：GMF -20% + steepness +89%。2026-04-07 外部 GMF 確認 |
 | R38v2 的三重修復（warmup + gate + 8px-only）是 seq training 成功的必要條件 | R38 原版（無修復）失敗；三者缺一不可 |
 | 推理量化方式（截斷 vs 四捨五入）對 GMF 有可測量影響 | 修正後 R33 0.8px -1.7%（改善）、R38v2 0.8px +9.3%（退步）；steep edge 對量化更敏感 |
+| COMBO（Winsorize + seq）的 residual_std 是所有候選中最低 | 0.8px inner 2.044（-29% vs R30）；低 residual 讓 GMF edgel detection 更精確，internal 高估 external |
+| Winsorize + seq training 可以同時使用且互補 | COMBO 在 0.8px 打敗純 R38v2（0.132 vs 0.134），同時保持 R38v2 的視覺品質 |
 | `center_err` 是目前最有價值的 Tier-2 screening 指標 | 內外部相關分析（Pearson r=0.5399） |
 | 新 Whole-FOV PSF（2026-03-26）是目前物理上較合理的標準 | PSF_POLICY_TRANSITION_R26.md，pure_psf_control 驗證 |
 
