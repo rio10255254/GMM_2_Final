@@ -1,247 +1,207 @@
 # PROJECT CURRENT STATE / 專案目前狀態
-Last updated: 2026-04-08 (COMBO external GMF pass — three production candidates)
+Last updated: 2026-04-09 (COMBO promoted to formal baseline)
 
 Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
 
-## 1. Current Adopted Baseline / 目前正式 baseline
+## 1. Current Formal Baseline / 目前正式 baseline
 
-目前正式 baseline：**Round30 / `r30_b1_dironly`**  
-The current adopted baseline is **Round30 / `r30_b1_dironly`**.
+目前正式 baseline：**COMBO / `r38v2_8px_gate_p95`**
+The formal production baseline is now **COMBO / `r38v2_8px_gate_p95`**.
 
-| 指標 | R30 B1 dironly |
-|------|-----------|
-| internal `0.8px center_err` | `0.0804` |
-| internal `0.8px step_err` | `0.0693` |
+升級生效日期 / Promotion effective date：**2026-04-08**
+
+| 指標 | COMBO |
+|------|-------|
+| external `8px step std` | `0.154515` |
+| external `0.8px step std` | `0.131560` |
+| external `0.08px step std` | `0.099891` |
+| `0.8px` lag-1 autocorr | `-0.5176` |
+| edge steepness vs R30 | `+89.4%` |
+| contrast std vs R30 | `-6.6%` |
+| gradient magnitude vs R30 | `-19.7%` |
+| residual std (`0.8px` inner) | `2.044` |
+
+正式入口 / Formal entry points：
+
+- checkpoint:
+  `D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\weights\best_tradeoff.pth.tar`
+- promoted baseline report:
+  `D:\GMM_2_Final\Experiments\R38v2SeqFixed\reports\COMBO_RESULTS.md`
+- complete series context:
+  `D:\GMM_2_Final\Experiments\R33RobustLoss\reports\R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
+- machine-readable truth:
+  `D:\GMM_2_Final\ESTIMATOR_POLICY.json`
+
+COMBO 之所以被升級，不是因為它在單一 GMF 指標上最極端，而是因為它在 `0.8px` 主戰場、`8px` 宏觀守門、視覺 steepness、以及 residual_std 四個面向同時最均衡。
+COMBO was promoted not because it is the most extreme on any single metric, but because it best balances the `0.8px` battlefield, the `8px` guard, visual steepness, and residual quality.
+
+### Former Baseline / 前任 baseline
+
+前任正式 baseline：**Round30 / `r30_b1_dironly`**
+Former formal baseline: **Round30 / `r30_b1_dironly`**.
+
+| 指標 | R30 former baseline |
+|------|---------------------|
 | external `8px step std` | `0.205193` |
 | external `0.8px step std` | `0.167862` |
 | external `0.08px step std` | `0.157720` |
 | `0.8px` lag-1 autocorr | `0.267027` |
 
+## 2. Approved Alternates / 已核准特化候選
+
+### R33 / r33_robust_p95 — GMF Extreme Alternate
+
+一句話定位：**GMF 極致型特化候選；不是正式 baseline。**
+One-line role: **GMF-extreme approved alternate; not the formal baseline.**
+
+| 指標 | R33 |
+|------|-----|
+| external `8px step std` | `0.153343` |
+| external `0.8px step std` | `0.119049` |
+| external `0.08px step std` | `0.086274` |
+| `0.8px` lag-1 autocorr | `-0.5549` |
+| edge steepness vs R30 | `-22%` |
+
+適用場景 / Recommended use：
+- 以 GMF 幾何精度為唯一主目標
+- 可以接受視覺邊界更柔
+
+正式入口 / Formal entry points：
+- report:
+  `D:\GMM_2_Final\Experiments\R33RobustLoss\reports\R33_EXPERIMENT_SUMMARY.md`
+- checkpoint:
+  `D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941\weights\best_tradeoff.pth.tar`
+
+### R38v2 / r38v2_8px_gate — Visual Priority Alternate
+
+一句話定位：**視覺優先型特化候選；不是正式 baseline。**
+One-line role: **visual-priority approved alternate; not the formal baseline.**
+
+| 指標 | R38v2 |
+|------|-------|
+| external `8px step std` | `0.143988` |
+| external `0.8px step std` | `0.134205` |
+| external `0.08px step std` | `0.106457` |
+| `0.8px` lag-1 autocorr | `-0.5459` |
+| edge steepness vs R30 | `+89.4%` |
+
+適用場景 / Recommended use：
+- 需要外部 GMF 改善，同時維持接近 R30 的視覺銳度
+- 視覺品質比極致 GMF 更重要
+
+正式入口 / Formal entry points：
+- report:
+  `D:\GMM_2_Final\Experiments\R38v2SeqFixed\reports\R38v2_RESULTS.md`
+- checkpoint:
+  `D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957\weights\best_tradeoff.pth.tar`
+
+## 3. Current Promoted State / 目前正式狀態
+
+目前 mainline 狀態是 / The current mainline state is：
+
+- **formal production baseline 已升級為 COMBO**
+- `R33` 與 `R38v2` 已收斂為 approved alternates，而不是 open challengers
+- **目前沒有開放中的 baseline challenger**
+- `Round31` 已關閉，`Round32` 已關閉
+- `R26NewPSFCheck` 仍保留為 **open side track**，但不是 active mainline
+
+### Closed Follow-up: Round31
+
+一句話 verdict：**measured B1 hyperparam candidates external 全部退步；沒有形成升級。**
+One-line verdict: **all measured Round31 B1 hyperparameter candidates regressed externally; no upgrade was produced.**
+
 正式入口 / Formal entry points：
 
-- seed: `D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\selected\current_round30_arch_breakthrough_seed.json`
-- internal decision: `D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\selected\reports\ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md`
-- external compare: `D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\selected\reports\ROUND30_EXTERNAL_COMPARE.md`
-
-這三份檔案分別對應目前正式 baseline 的 seed、internal decision 與 external compare 證據。  
-These three files are the formal seed, internal decision, and external compare artifacts for the currently adopted baseline.
-
-## 2. Latest Verified Outcomes / 最近已驗證結果
-
-### Round31 / Round31
-
-一句話 verdict：**measured B1 hyperparam candidates external 全部退步；baseline 維持 `Round30 / r30_b1_dironly`。**  
-One-line verdict: **all measured Round31 B1 hyperparameter candidates regressed externally; the baseline remains `Round30 / r30_b1_dironly`.**
-
-正式入口 / Formal entry points：
-
-- decision: `D:\GMM_2_Final\Traing_Progress\organized_20260316\round31\selected\reports\ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md`
-- external compare: `D:\GMM_2_Final\Traing_Progress\organized_20260316\round31\selected\reports\ROUND31_EXTERNAL_COMPARE.md`
-
-Round31 是沿 B1 主線做的正式 follow-up，但 measured candidates 在 external `0.8px` battlefield 全部退步。  
-Round31 is a formal B1-line follow-up, but its measured candidates regressed on the external `0.8px` battlefield.
+- decision:
+  `D:\GMM_2_Final\Traing_Progress\organized_20260316\round31\selected\reports\ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md`
+- external compare:
+  `D:\GMM_2_Final\Traing_Progress\organized_20260316\round31\selected\reports\ROUND31_EXTERNAL_COMPARE.md`
 
 measured candidates / 已量測候選：
 
-| candidate | external `0.8px step std` | vs `R30` |
+| candidate | external `0.8px step std` | vs former baseline `R30` |
 |------|-----------|-----------|
 | `r31_eq_prob_up` | `0.184867` | `+10.1%` |
 | `r31_eq_weight_up` | `0.185458` | `+10.5%` |
 | `r31_edge_ratio_low` | `0.179347` | `+6.8%` |
 
 artifact caveat / artifact 注意事項：
-
 - `r31_eq_combo` 缺 `GMF_score.txt`
-- 判定：**external artifact missing**，不是 measured regression
+- 判定：**artifact missing**，不是 measured regression
 
-`r31_eq_combo` 被明確記為 artifact missing，而不是 measured failure。  
-`r31_eq_combo` is explicitly tracked as an artifact-missing case, not as a measured failure.
+### Closed Sandbox: Round32
 
-### Round32 / Round32
+一句話 verdict：**`R32Sandbox` internal winner external FAIL；sandbox 已關閉。**
+One-line verdict: **the `R32Sandbox` internal winner failed the final external gate; the sandbox is closed.**
 
-一句話 verdict：**`Round32` 已切到 `Experiments\R32Sandbox`；internal winner 是 `r32_real_eq_finetune`，但 external GMF compare 已確認 FAIL，不能升級 baseline。**  
-One-line verdict: **`Round32` has moved into `Experiments\R32Sandbox`; the internal winner is `r32_real_eq_finetune`, but the external GMF compare confirmed FAIL, so it cannot be promoted.**
-
-internal chain 正式入口 / Formal internal-chain entry points：
+正式入口 / Formal entry points：
 
 - sandbox README:
   `D:\GMM_2_Final\Experiments\R32Sandbox\README.md`
 - decision memo:
   `D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md`
-- runtime status:
-  `D:\GMM_2_Final\Experiments\R32Sandbox\runtime\R32_STATUS.md`
+- final external compare:
+  `D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.md`
 
-這些檔案承載 `R32Sandbox` 的正式 internal decision path 與 canonical runtime truth。  
-These files carry the formal internal decision path for the `R32Sandbox` line and the canonical runtime truth for the sandbox.
+核心數字 / Core numbers：
 
-已確認事實 / Confirmed facts：
-
-- shared mainline 已還原，不再混 `R32` 專用 loader / audit / monitor
-- sandbox internal winner：`r32_real_eq_finetune`
-- selected checkpoint：
-  `D:\GMM_2_Final\Experiments\R32Sandbox\artifacts\training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431\weights\best_tradeoff.pth.tar`
-- `0.8px` / `8px` internal audits 已完成
-- decision memo 已確認 `r32_real_eq_finetune` 通過 calibrated pairmix / macro guard
-- external compare 已完成，verdict = FAIL
-
-internal winner 的確存在且通過 internal chain，但 final external compare 已完成且失敗。  
-The internal winner exists and passed the internal chain, but the final external compare has already completed and failed.
-
-external compare 核心數字 / Core external compare numbers：
-
-| scale | baseline `r30_b1_dironly` | `r32_real_eq_finetune` | delta |
+| scale | former baseline `R30` | `r32_real_eq_finetune` | delta |
 |------|-----------|-----------|-----------|
 | `8px` | `0.205193` | `0.319667` | `+0.114475` |
 | `0.8px` | `0.167862` | `0.331821` | `+0.163960` |
 | `0.08px` | `0.157720` | `0.230119` | `+0.072399` |
 
-補充 / Additional notes：
+## 4. Open Side Track / 開放中的 side track
 
-- `0.8px` outlier filtered 仍是 `0.303349`
-- `0.8px` main battlefield 相對 `R30` 惡化 `+97.7%`
-- `8px` guard 也失守
+### R26NewPSFCheck
 
-這不是邊際失敗；`0.8px` 主戰場相對 `Round30` 明顯惡化，`8px` guard 也一起失守。  
-This is not a marginal failure. The `0.8px` battlefield deteriorated sharply relative to `Round30`, and the `8px` guard also failed.
-
-## 3. Current Active State / 目前 active 狀態
-
-目前 active 主線是 / The current active state is：
-
-- **沒有可直接挑戰 baseline 的 current winning line**
-- `R32 real_eq` 這條線已完成 external FAIL，R32 Sandbox 已關閉
-- **目前 active 沙盒：`R26NewPSFCheck`**（2026-03-26 啟動，外部 GMF 結果等待中）
-- **R33RobustLoss 外部 GMF 通過：0.8px 0.119（-29%）、8px 0.153（-25%）、0.08px 0.086（-45%）**
-
-### R26NewPSFCheck 現況（2026-03-27）
+一句話定位：**PSF 驗證 side track；pending external GMF；不是 active mainline。**
+One-line role: **PSF-validation side track; pending external GMF; not the active mainline.**
 
 | 項目 | 狀態 |
 |------|------|
 | 新 Whole-FOV PSF 擬合 | ✓ 完成（2026-03-26） |
-| 新 PSF 重訓模型 checkpoint | ✓ 已建立並快照至 sandbox |
+| 新 PSF 重訓模型 checkpoint | ✓ 已建立 |
 | 外部三尺度重建（external recon） | ✓ 已完成 |
-| PSF 正式流程審核 | ✓ 已完成，無執行層面問題 |
-| pure_psf_control 對照實驗 | ✓ 已完成，確認新 PSF 本身不是崩壞原因 |
+| PSF 正式流程審核 | ✓ 已完成 |
+| pure_psf_control 對照實驗 | ✓ 已完成 |
 | formal_newpsf_candidate promote | ✓ 已完成，verdict：PROMOTE |
-| PSF 政策切換 | ✓ **2026-03-27 正式切換**，見下方 Section 6 |
-| 外部 GMF 結果（主要比較） | ⏳ 等待中（GMF 工具由外部執行） |
+| 外部 GMF 結果 | ⏳ 等待中 |
 
 正式入口 / Formal entry points：
 
-- sandbox 說明：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\README.md`
-- 整體進度摘要：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\reports\STATUS_20260326.md`
-- PSF 審核記錄：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\psf_audit\PSF_FORMAL_AUDIT_20260326.md`
-- promote 比較報告：`D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md`
+- sandbox README:
+  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\README.md`
+- status:
+  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\reports\STATUS_20260326.md`
+- PSF audit:
+  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\psf_audit\PSF_FORMAL_AUDIT_20260326.md`
+- promote compare:
+  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md`
 
-### R33RobustLoss 現況（2026-04-05）— 外部 GMF 全通過
+## 5. Measurement Policy Status / 量測政策狀態
 
-| 項目 | 狀態 |
-|------|------|
-| 假說 | residual_std 2.9 px 的瓶頸源於不可修缺陷像素的離群梯度拉扯 |
-| 機制 | 對 W_GRADMAG + W_HF_LAP 做 per-pixel Winsorize（截尾 95th percentile） |
-| 訓練 | ✓ p90 和 p95 兩個候選皆已完成（100 epoch） |
-| Winner | **r33_robust_p95** |
-| 外部 GMF | ✓ **三尺度全面通過**（2026-04-05） |
+目前穩定結論 / Current stable conclusion：
 
-**外部 GMF 結果**：
-
-| 尺度 | R30 baseline | R33 p95 | 改善 |
-|------|-------------|---------|------|
-| **0.8px** | **0.167862** | **0.119049** | **-29.1%** |
-| 0.08px | 0.157720 | 0.086274 | -45.3% |
-| 8px | 0.205193 | 0.153343 | -25.3% |
-
-注意事項：
-- lag-1 autocorrelation 從 R30 的 +0.267 翻轉為 R33 的 -0.555（步伐交替震盪）
-- outer residual_std 在內部分析中退步 10-30%，但未影響外部 GMF 表現
-- **視覺銳度退步**：gradient magnitude -32%、Laplacian -47%、對比度 -24%。R33 的邊界更柔但幀間更一致——GMF 在乎位置穩定而非邊緣銳度。如���未來需兼顧銳度和穩定性，可探索 p97/p98 或兩階段訓練
-
-正式入口：`D:\GMM_2_Final\Experiments\R33RobustLoss\reports\R33_EXPERIMENT_SUMMARY.md`
-
-### R38v2 Sequence Consistency（2026-04-07）— 外部 GMF 全通過（均衡型候選）
-
-R38v2 = Seq training 修復版（8px-only + signal gate + warmup 15 epochs，無 Winsorize）
-
-| 尺度 | R30 baseline | R33 p95（極致型） | R38v2（均衡型） |
-|------|-------------|-----------------|---------------|
-| **0.8px** | 0.167862 | **0.119049 (-29%)** | 0.134205 (-20%) |
-| 8px | 0.205193 | 0.153343 (-25%) | **0.143988 (-30%)** |
-| 0.08px | 0.157720 | **0.086274 (-45%)** | 0.106457 (-33%) |
-
-視覺品質比較（vs R30）：
-| 指標 | R33 p95 | R38v2 |
-|------|---------|-------|
-| Edge steepness | -22% | **+89%** |
-| Edge contrast | -43% | **-13%** |
-| Gradient mag | -32% | -23% |
-
-**R33 = GMF 極致型（-29%），R38v2 = 均衡型（GMF -20% + 視覺接近 R30）。**
-
-R34-R37 + R38 + R33c 共 5 輪嘗試打破銳度-穩定性 trade-off 全部失敗。
-R38v2 透過三重修復（warmup + signal gate + 8px-only）走出不同路線成功。
-
-完整系列報告：`Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
-R38v2 報告：`Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md`
-
-### 量化修復（2026-04-08）
-
-推理腳本 `denormalize_to_dtype()` 從截斷改為四捨五入（`np.rint`）。
-影響 50% 像素值 +1 grey level。
-
-| 候選 | 0.8px | 8px | 結論 |
-|------|-------|-----|------|
-| R33 修復後 | 0.117 (-1.7%) | 0.172 (outlier 2→0，更穩健) | 改善 |
-| R38v2 修復後 | 0.147 (+9.3%) | 0.122 (-15.3%) | 8px 改善但 0.8px 退步 |
-
-R38v2 的 0.8px 退步源於其高 steepness (+89%) 對量化敏感。
-完整分析：`Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md`
-
-### COMBO: Winsorize + Seq（2026-04-08）— 最均衡型候選
-
-COMBO = R33 的 Winsorize p95 + R38v2 的 seq 8px gate + warmup 15 同時啟用。
-
-| 尺度 | R30 | R33 | R38v2 | **COMBO** | vs R30 |
-|------|-----|-----|-------|----------|--------|
-| **0.8px** | 0.168 | **0.119** | 0.134 | **0.132** | **-21.6%** |
-| 0.08px | 0.158 | **0.086** | 0.106 | **0.100** | -36.7% |
-| 8px | 0.205 | 0.153 | **0.144** | 0.155 | -24.7% |
-
-- 0.8px 打敗 R38v2（0.132 vs 0.134），接近 R33（0.119）
-- 視覺品質和 R38v2 一樣好（steepness +89%、contrast std 32.35）
-- **residual_std 全面歷史最佳**（0.8px inner 2.044, -29% vs R30）
-- Internal step_std 0.178 嚴重高估 → external 0.132（低 residual 讓 GMF 更精確）
-
-COMBO 報告：`Experiments/R38v2SeqFixed/reports/COMBO_RESULTS.md`
-
-Git-tracked 的 `000_LONGRUN_ROUND32_STATUS.*` 現在保留於 `docs/runtime/legacy/root_status/` 作為 legacy bridge，不再視為 canonical runtime state；若 root 再生成同名檔案，視為本地 runtime 輸出即可。
-The Git-tracked `000_LONGRUN_ROUND32_STATUS.*` files are now kept under `docs/runtime/legacy/root_status/` as a legacy bridge only; if the same filenames reappear at the repository root, treat them as local runtime output rather than canonical truth.
-
-## 4. External Validation Status / 外部驗證狀態
-
-`Round32` external validation 已完成 / `Round32` external validation is complete:
-
-- selected candidate 的三個 pitch reconstruction 已生成
-- sandbox external compare 已完成並確認 FAIL
+- **external GMF remains the final gate**
+- internal step_std **不再適合作為硬門檻**，尤其在 residual_std 進入低噪聲區後
+- 720-angle unweighted circle fit 已驗證能降低 internal/external gap
+- weighted fit 可用，但不是統一預設
 
 正式入口 / Formal entry points：
 
-- external compare README:
-  `D:\GMM_2_Final\Experiments\R32Sandbox\external_compare\README.md`
-- final compare markdown:
-  `D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.md`
-- final compare json:
-  `D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.json`
+- divergence analysis:
+  `D:\GMM_2_Final\Experiments\R33RobustLoss\reports\INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md`
+- machine-readable policy:
+  `D:\GMM_2_Final\ESTIMATOR_POLICY.json`
 
-外部驗證已完全關閉，Markdown 與 JSON verdict artifacts 都已具備。  
-The external validation is fully closed. Both the human-readable Markdown and the machine-readable JSON verdict artifacts are available.
+量化修復狀態 / Quantization policy：
 
-目前真正的結論是 / The real conclusion is：
+- canonical inference now uses `np.rint`
+- R33 修復後 `0.8px` 改善，R38v2 修復後 `8px` 改善但 `0.8px` 退步
+- 這個差異被視為 **model-dependent quantization sensitivity**，不推翻 COMBO promotion
 
-- `r32_real_eq_finetune` 不能升級
-- `Round30 / r30_b1_dironly` baseline unchanged
-- 若要續做 `R32`，需要**另立新分支 / 新機制**
-
-## 5. PSF Policy Status / PSF 政策狀態（2026-03-27）
+## 6. PSF Policy Status / PSF 政策狀態（2026-03-27）
 
 R26 研究線的 PSF 已於 2026-03-27 正式完成政策切換。
 
@@ -250,28 +210,28 @@ R26 研究線的 PSF 已於 2026-03-27 正式完成政策切換。
 | **current standard** | 新 Whole-FOV PSF（2026-03-26 完成） | 物理上較合理；same-recipe 對照確認不引發崩壞；為目前研究採用的正式 PSF |
 | **legacy empirical baseline** | 舊 PSF | 歷史上取得較好經驗數值；保留用於引用與對照，不刪除，不再作為正式預設 |
 
-切換依據 / Basis for transition：
-- pure_psf_control 實驗確認：old_recipe + new_psf 到 epoch 40 不重現先前崩壞
-- 先前崩壞根因是「PSF 變更 + recipe drift」共同造成，非 PSF 本身問題
-- formal_newpsf_candidate 已完成 same-recipe promote 驗證，verdict：PROMOTE
-- physics-first 原則下，物理上較合理的 PSF 應成為目前標準
+機器可讀 PSF 政策 / Machine-readable PSF policy：
+`D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json`
 
-機器可讀 PSF 政策 / Machine-readable PSF policy：`D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json`
-詳細說明 / Full details：`D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md`
+詳細說明 / Full details：
+`D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md`
 
-## 6. Next Decision Boundary / 下一個決策邊界
+## 7. Next Decision Boundary / 下一個決策邊界
 
-下一個決策邊界只有一個 / There is only one next decision boundary:
+下一個決策邊界已經不再是「三候選誰升級」，因為這件事已完成。
+The next decision boundary is no longer “which of the three candidates gets promoted,” because that decision is now closed.
 
-**任何新候選若要升級 baseline，必須在 external GMF 主戰場 `0.8px` 擊敗 `R30 B1 dironly = 0.167862`。**
+接下來只在以下情況才值得立新 round：
 
-這包含 `R26NewPSFCheck` 的外部 GMF 結果（等待中）以及任何未來的新候選。
+1. 有明確新機制，不是 R33/R38v2/COMBO 的微幅重掃
+2. 有 deployment-specific 需求，足以合理地偏向某個 alternate 或新線
+3. 能同時說清楚 external GMF 目標、`8px` guard、與視覺取捨
 
-正式升級條件 / Formal promotion conditions：
+不再合理的下一步 / What is no longer a sensible next step：
 
-1. external `0.8px step std < 0.167862`
-2. `8px` 不能明顯退步
-3. `0.08px` 改善不能補償 `0.8px` 主戰場退步
+- 把 `R26NewPSFCheck` 寫成 active mainline
+- 把 `R33` 或 `R38v2` 繼續寫成 pending promotion
+- 把 720-angle 當成未完成 action item
 
-任何候選都必須在 external `0.8px` battlefield 擊敗 `0.167862`，同時不能用 `8px` 退步或主戰場退步去換取 `0.08px` 改善。
-Any candidate must beat `0.167862` on the external `0.8px` battlefield, avoid meaningful `8px` regression, and cannot trade away the main battlefield just to improve `0.08px`.
+目前真正的決策邊界是：
+**若要再開新 round，必須是新的機制或新的 deployment 條件，而不是重複討論已完成的 baseline promotion。**

@@ -18,6 +18,8 @@ import json
 import time
 from pathlib import Path
 
+from GeoEdgeAlignSR_v1_PolicyAccess import load_estimator_policy
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PHASE2_REPORT_ROOT = (
@@ -230,46 +232,21 @@ def main() -> int:
     )
     reeval_md.write_text("\n".join(md_lines), encoding="utf-8")
 
-    policy_payload = {
-        "generated_at": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-        "source": {
-            "phase2_reevaluation_json": str(reeval_json),
-            "phase2_reevaluation_md": str(reeval_md),
-        },
-        "active_baseline_policy": {
-            "status": "current_adopted_baseline",
-            "tiny_0p08": "edge_centroid",
-            "mid_0p8": "edge_centroid",
-            "macro_8px": "edge_centroid",
-            "notes": "Round18 remains current adopted baseline until a hybrid policy clears the calibrated internal gate.",
-        },
-        "provisional_hybrid_policy": {
-            "status": "not_confirmed",
-            "round21_ready": bool(reevaluation_pass),
-            "mid_0p8": "soft_band_refine",
-            "macro_8px": str(macro_policy["macro_policy_estimator"]),
-            "tiny_0p08": "edge_centroid",
-            "mid_center_improvement_ratio": center_improvement_ratio,
-            "mid_step_err": _safe_float(best_08["best_step_err"]),
-            "macro_guard_pass": bool(macro_guard_pass),
-            "blocked_reason": (
-                ""
-                if reevaluation_pass
-                else "soft_band_refine has strong 0.8px center advantage, but the candidate still fails the calibrated Round21 gate."
-            ),
-        },
-        "control_relative_guard": {
-            "mid_0p8": {
-                "center_improvement_ratio_min": 0.25,
-                "step_err_max": 0.45,
-            },
-            "macro_8px": {
-                "control_step_err": control_guard_step,
-                "step_err_max": guard_step_limit,
-                "control_seq_sign_acc": control_guard_seq_sign,
-                "seq_sign_acc_min": guard_seq_sign_floor,
-            },
-        },
+    policy_payload = load_estimator_policy(POLICY_PATH)
+    policy_payload["meta"]["generated_at"] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    policy_payload.setdefault("sources", {}).setdefault("legacy", {})
+    policy_payload["sources"]["legacy"]["phase2_reevaluation_json"] = str(reeval_json)
+    policy_payload["sources"]["legacy"]["phase2_reevaluation_md"] = str(reeval_md)
+    policy_payload.setdefault("measurement_policy", {}).setdefault("guardrails", {})
+    policy_payload["measurement_policy"]["guardrails"]["mid_0p8"] = {
+        "center_improvement_ratio_min": 0.25,
+        "step_err_max": 0.45
+    }
+    policy_payload["measurement_policy"]["guardrails"]["macro_8px"] = {
+        "control_step_err": control_guard_step,
+        "step_err_max": guard_step_limit,
+        "control_seq_sign_acc": control_guard_seq_sign,
+        "seq_sign_acc_min": guard_seq_sign_floor
     }
     POLICY_PATH.write_text(json.dumps(policy_payload, indent=2), encoding="utf-8")
 

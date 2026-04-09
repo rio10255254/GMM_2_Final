@@ -1,5 +1,5 @@
 # PROJECT ARCHITECTURE AND DECISION MAP / 專案架構與決策地圖
-Last updated: 2026-03-27
+Last updated: 2026-04-09
 
 ## 這份文件的用途 / Purpose
 
@@ -78,11 +78,11 @@ Internal surrogates are proxies for rapid candidate filtering and hypothesis tes
 
 目前真正的主要優化目標已收斂為三件事：
 
-1. **維持並超越** `Round30 / r30_b1_dironly` 在外部 GMF 主戰場 `0.8px` 的優勢（step std < 0.167862）
-2. **不犧牲** `8px` macro guard（大尺度追蹤穩定性不能退步）
-3. **只在有新機制或高價值可驗證微調**時才開新 round，不做重複性掃描
+1. **維持正式 baseline `COMBO / r38v2_8px_gate_p95` 的平衡優勢**
+2. **在 deployment-specific 需求下，明確區分 formal baseline 與 approved alternates（R33 / R38v2）**
+3. **只在有新機制或新部署條件**時才開新 round，不做已完成 promotion 決策的重複掃描
 
-The current optimization target is narrow and practical: maintain and improve the `Round30` advantage on the external `0.8px` battlefield; preserve the `8px` guard; only open a new round when there is a genuinely new mechanism or a verifiable, cost-effective refinement.
+The current optimization target is narrow and practical: preserve the balanced advantage of the formal COMBO baseline, keep the alternate taxonomy explicit for deployment-specific needs, and only open new rounds when there is a genuinely new mechanism or deployment requirement.
 
 ---
 
@@ -173,11 +173,11 @@ R32 sandbox-specific artifact 清單：
 | `Experiments/R32Sandbox/runtime/R32_STATUS.md` | R32 runtime 最終狀態（human-readable） |
 | `Experiments/R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md` | R32 外部比較最終報告 |
 
-### R26NewPSFCheck Sandbox（進行中）
+### R26NewPSFCheck Side Track（開放中，但非主線）
 
 **位置**：`Experiments/R26NewPSFCheck/`
 
-**狀態**：2026-03-26 啟動，外部 GMF 結果等待中
+**狀態**：2026-03-26 啟動，外部 GMF 結果等待中；保留為 open side track
 
 **研究問題**：
 1. 使用 2026-03-26 新 Whole-FOV PSF 從頭重訓的模型，效果是否優於舊版 R26 封包？
@@ -193,17 +193,16 @@ R32 sandbox-specific artifact 清單：
 
 | 欄位 | 值 |
 |------|-----|
-| **Baseline 名稱** | `Round30 / r30_b1_dironly` |
-| **Baseline 狀態** | `final_production_baseline` |
+| **Baseline 名稱** | `COMBO / r38v2_8px_gate_p95` |
+| **Baseline 狀態** | `formal_production_baseline` |
 | **0.08px 估測器** | `edge_centroid` |
 | **0.8px 估測器** | `pairmix_algblend` |
 | **8px 估測器** | `edge_band_refine` |
-| **Internal center_err (0.8px)** | `0.0804` |
-| **Internal step_err (0.8px)** | `0.0693` |
-| **External 8px step std** | `0.205193` |
-| **External 0.8px step std** | `0.167862`（主戰場硬邊界） |
-| **External 0.08px step std** | `0.157720` |
-| **0.8px lag-1 autocorr** | `0.267027` |
+| **External 8px step std** | `0.154515` |
+| **External 0.8px step std** | `0.131560` |
+| **External 0.08px step std** | `0.099891` |
+| **0.8px lag-1 autocorr** | `-0.5176` |
+| **Role** | `most_balanced_formal_baseline` |
 
 ### 機器可讀 baseline truth
 
@@ -214,8 +213,7 @@ R32 sandbox-specific artifact 清單：
 ### Baseline checkpoint 路徑
 
 ```
-D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
-    training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913\
+D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\
         weights\best_tradeoff.pth.tar
 ```
 
@@ -229,7 +227,9 @@ D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
 |------|---------|
 | `pairwise delta reconciliation` 是有效方向 | 多 round 持續支持 |
 | `pairmix_algblend` 是 0.8px 主戰場最佳估測器 | Round 25/26/30 外部 GMF 支持 |
-| `Round30 / r30_b1_dironly` 是 current production baseline（pending R33 promotion） | Round30 外部比較確認 |
+| `COMBO / r38v2_8px_gate_p95` 是 current formal production baseline | COMBO 結果 + promotion decision |
+| `R33 / r33_robust_p95` 是 GMF extreme approved alternate | R33 外部比較確認 |
+| `R38v2 / r38v2_8px_gate` 是 visual-priority approved alternate | R38v2 外部比較確認 |
 | `B1 dironly` 機制（只保留方向性特徵）有效 | Round30 外部比較確認，首次擊敗 R26 |
 | `Winsorize spatial loss` 機制有效（R33） | Round33 外部比較確認：0.8px -29%、8px -25%、0.08px -45% |
 | `r33_robust_p95` 是首個在三尺度全面改善的候選 | 2026-04-05 外部 GMF 確認 |
@@ -239,7 +239,7 @@ D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
 | COMBO（Winsorize + seq）的 residual_std 是所有候選中最低 | 0.8px inner 2.044（-29% vs R30）；低 residual 讓 GMF edgel detection 更精確 |
 | Winsorize + seq training 可以同時使用且互補 | COMBO 在 0.8px 打敗純 R38v2（0.132 vs 0.134），同時保持 R38v2 的視覺品質 |
 | **Internal step_std 不再適合作為硬門檻**（residual < 2.5 時） | Circle-fit 噪聲地板 ~0.17 px 主導 internal；COMBO internal 0.178 > 門檻 0.168 但 external 0.132 大幅通過。詳見分析報告。 |
-| Circle-fit 精度是目前的量測瓶頸，不是模型品質 | 360 角度 + residual 2.3 → 噪聲 0.17 px；需增加角度取樣或改用加權 fit |
+| Circle-fit 精度是目前的量測瓶頸，不是模型品質 | 720-angle 已驗證可改善；weighted fit 可用但不是統一預設 |
 | `center_err` 是目前最有價值的 Tier-2 screening 指標 | 內外部相關分析（Pearson r=0.5399） |
 | 新 Whole-FOV PSF（2026-03-26）是目前物理上較合理的標準 | PSF_POLICY_TRANSITION_R26.md，pure_psf_control 驗證 |
 
@@ -278,7 +278,7 @@ D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
 | 條件 | 細節 |
 |------|------|
 | **1. Internal calibrated gate 通過** | pairmix_algblend 探針：`mid_center ratio > 0.25` 且 `mid_step < 0.45`；edge_band_refine 探針：`macro_step < 0.2995` 且 `macro_seq_sign > 0.7559` |
-| **2. External 0.8px 硬邊界** | `external 0.8px step std < 0.167862`，在主戰場明確不差於現 baseline |
+| **2. External 0.8px 硬邊界** | `external 0.8px step std < current formal baseline 0.131560`，或在 deployment-specific 條件下提出明確 alternate-selection 理由 |
 | **3. 8px macro guard 不明顯退步** | 大尺度追蹤穩定性不能為了換主戰場而犧牲 |
 | **4. Side-scale trade-off 需有工程理由** | `0.08px` 改善不能補償 `0.8px` 主戰場退步 |
 
@@ -296,11 +296,11 @@ D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
 - 只靠 internal gate 就預設 external 會變好
 - 延用已 external FAIL 的方向（如 `r32_real_eq_finetune`）做修補
 
-### 硬邊界（截至 2026-03-27）
+### 硬邊界（截至 2026-04-09）
 
 ```
 任何候選要升級 baseline，必須：
-  external 0.8px step std < 0.167862
+  external 0.8px step std < 0.131560
 ```
 
 這個數字只有在新 baseline 被正式採納後才會更新。
@@ -339,13 +339,14 @@ D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\
 
 ## 目前穩定判讀摘要 / Current Stable-Rule Reading
 
-截至 2026-03-27，穩定規則層的判讀如下：
+截至 2026-04-09，穩定規則層的判讀如下：
 
-1. `Round30 / r30_b1_dironly` 仍是唯一 production baseline
-2. `R32 real_eq` 已 externally falsified，**不應再被描述成 promising line**
-3. R26 的 PSF 正式標準已切換為新 Whole-FOV PSF（current standard），舊版轉為 legacy empirical baseline
-4. `R26NewPSFCheck` sandbox 目前是 active 研究方向，等待外部 GMF 結果回填
-5. 若要挑戰 baseline，必須：新機制 + internal 全過 + external 0.8px < 0.167862 + 8px 不退步
-6. 已否定的方向（step_mag sweep、TTA C2、A1/A5/S1、R31/R32 當前線）不應重開
+1. `COMBO / r38v2_8px_gate_p95` 是唯一 formal production baseline
+2. `R33` 與 `R38v2` 是 approved alternates，不是 pending promotion
+3. `Round30 / r30_b1_dironly` 是歷史前任 baseline
+4. `R32 real_eq` 已 externally falsified，**不應再被描述成 promising line**
+5. R26 的 PSF 正式標準已切換為新 Whole-FOV PSF（current standard），`R26NewPSFCheck` 只保留為 open side track
+6. 若要挑戰 baseline，必須：新機制或新部署需求 + external final gate 明確勝出
+7. 已否定的方向（step_mag sweep、TTA C2、A1/A5/S1、R31/R32 當前線）不應重開
 
-The stable rules as of 2026-03-27: Round30 remains the only production baseline; R32 real_eq is externally falsified; R26 PSF has been formally transitioned to the new Whole-FOV standard; R26NewPSFCheck is the current active sandbox awaiting external GMF results; any challenger must present a new mechanism, pass internal gates, beat 0.167862 on external 0.8px, and not regress on 8px; falsified directions must not be reopened.
+The stable rules as of 2026-04-09: COMBO is the only formal production baseline; R33 and R38v2 are approved alternates; Round30 is the former baseline; R32 real_eq is externally falsified; the new Whole-FOV PSF remains the current standard while R26NewPSFCheck is only an open side track; any future challenger must justify itself with a new mechanism or deployment-specific need and still clear the external final gate.

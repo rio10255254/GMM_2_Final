@@ -26,6 +26,12 @@ from r32_status import load_round32_status, process_alive, write_round32_status
 SANDBOX_ROOT = Path(__file__).resolve().parents[1]
 PROJECT_ROOT = SANDBOX_ROOT
 SHARED_ROOT = Path(__file__).resolve().parents[3]
+SHARED_MODEL_ROOT = SHARED_ROOT / "Model"
+if str(SHARED_MODEL_ROOT) not in sys.path:
+    sys.path.insert(0, str(SHARED_MODEL_ROOT))
+
+from GeoEdgeAlignSR_v1_PolicyAccess import load_probe_policy_pack
+
 REPORT_ROOT = SANDBOX_ROOT / "reports"
 LOG_ROOT = SANDBOX_ROOT / "runtime" / "logs"
 SELECTED_DIR = SANDBOX_ROOT / "runtime"
@@ -239,45 +245,8 @@ def _preflight_real_eq_dir() -> None:
     print(f"[ROUND32][PREFLIGHT] REAL_EQ_DIR ready: {ROUND32_REAL_EQ_DIR} ({image_count} bmp)")
 
 
-def _resolve_control_center_ref(policy: dict) -> float:
-    source = policy.get("source", {})
-    reevaluation_json = source.get("phase2_reevaluation_json")
-    if reevaluation_json:
-        try:
-            reevaluation = _load_json(Path(str(reevaluation_json)))
-            return _safe_float(reevaluation.get("control_0p8", {}).get("best_center_err"), 1.0)
-        except Exception:
-            pass
-
-    round26_decision_md = source.get("round26_decision_md")
-    if round26_decision_md:
-        round26_decision_json = Path(str(round26_decision_md)).with_suffix(".json")
-        try:
-            decision_payload = _load_json(round26_decision_json)
-            return _safe_float(decision_payload.get("control_center_ref"), 1.0)
-        except Exception:
-            pass
-
-    return 1.0
-
-
 def _load_policy() -> dict:
-    policy = _load_json(POLICY_PATH)
-    macro_estimator = str(
-        policy.get("provisional_hybrid_policy", {}).get(
-            "macro_8px",
-            policy.get("active_baseline_policy", {}).get("macro_8px", "edge_band_refine"),
-        )
-    )
-    return {
-        "policy": policy,
-        "mid_center_ratio_min": _safe_float(policy["control_relative_guard"]["mid_0p8"]["center_improvement_ratio_min"], 0.25),
-        "mid_step_max": _safe_float(policy["control_relative_guard"]["mid_0p8"]["step_err_max"], 0.45),
-        "macro_step_max": _safe_float(policy["control_relative_guard"]["macro_8px"]["step_err_max"], 0.30),
-        "macro_seq_sign_min": _safe_float(policy["control_relative_guard"]["macro_8px"]["seq_sign_acc_min"], 0.75),
-        "macro_estimator": macro_estimator,
-        "control_center_ref": _resolve_control_center_ref(policy),
-    }
+    return load_probe_policy_pack(POLICY_PATH)
 
 
 def _family_score(summary: dict) -> float:

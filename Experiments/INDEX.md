@@ -1,19 +1,19 @@
 # 實驗索引 / Experiment Index
 
-Last updated: 2026-04-08
+Last updated: 2026-04-09
 
 一頁式快速索引——看這張表就能知道所有實驗的身份、狀態、關鍵路徑。
 One-page index for all experiments in this project.
 
 ---
 
-## 生產候選（External GMF 通過）
+## 正式 baseline 與核准候選（External GMF 通過）
 
 | Round | 目錄 | Branch | 機制 | 0.8px GMF | 視覺 | 定位 |
 |-------|------|--------|------|----------|------|------|
-| **R33** | `R33RobustLoss/` | `sandbox/r33` | Winsorize spatial loss p95 | **0.119** (-29%) | steep -22% | GMF 極致型 |
-| **R38v2** | `R38v2SeqFixed/` | `sandbox/r38v2` | Seq 8px gate + warmup 15, no Winsorize | **0.134** (-20%) | steep +89% | 視覺優先型 |
-| **COMBO** | `R38v2SeqFixed/` | `sandbox/r38v2` | Winsorize p95 + seq 8px gate + warmup | **0.132** (-22%) | steep +89%, best res | 最均衡型 |
+| **R33** | `R33RobustLoss/` | `sandbox/r33` | Winsorize spatial loss p95 | **0.119** (-29%) | steep -22% | approved GMF extreme alternate |
+| **R38v2** | `R38v2SeqFixed/` | `sandbox/r38v2` | Seq 8px gate + warmup 15, no Winsorize | **0.134** (-20%) | steep +89% | approved visual-priority alternate |
+| **COMBO** | `R38v2SeqFixed/` | `sandbox/r38v2` | Winsorize p95 + seq 8px gate + warmup | **0.132** (-22%) | steep +89%, best res | formal adopted baseline |
 
 ## 否定實驗（Internal 或方法論層面失敗）
 
@@ -27,11 +27,12 @@ One-page index for all experiments in this project.
 | R37 | *(sandbox/r37 only)* | `sandbox/r37` | PSF 頻率依賴 reg | HF 低 reg 放大 Wiener 噪聲 |
 | R38 | `R38SeqConsistency/` | `sandbox/r38` | Seq 全 stages, no gate | 0.8px delta 太小，噪聲梯度干擾 |
 
-## 歷史實驗（R33 之前）
+## 歷史實驗（promotion 前主線與 side track）
 
 | Round | 目錄 | Branch | 狀態 | 說明 |
 |-------|------|--------|------|------|
-| R26 PSF | `R26NewPSFCheck/` | — (merged to main) | PSF 政策已切換 | Whole-FOV PSF 驗證 + formal audit |
+| R30 former baseline | *(legacy mainline)* | — | former production baseline | B1 dironly breakthrough before COMBO promotion |
+| R26 PSF | `R26NewPSFCheck/` | — (merged to main) | open side track | Whole-FOV PSF 驗證 + formal audit |
 | R32 | `R32Sandbox/` | `sandbox/r32` | External FAIL | domain rebalancing, 0.8px +97.7% |
 
 ## Checkpoint 對照表

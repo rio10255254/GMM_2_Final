@@ -7,11 +7,14 @@ Checks:
 3. Key cross-references in INDEX.md point to existing files
 4. CLAUDE.md and AGENTS.md have identical convention sections
 5. Inference script copies are in sync (quantization fix)
+6. Legacy governance surfaces exist and stay whitelisted
+7. Truth-plane docs and ESTIMATOR_POLICY schema stay aligned
 
 Run: python Tools/validate_project_structure.py
 """
 from __future__ import annotations
 
+import json
 import re
 import subprocess
 import sys
@@ -20,6 +23,36 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 WARNINGS: list[str] = []
+TRUTH_PLANE_DOCS = [
+    "PROJECT_SESSION_CONTINUITY.md",
+    "PROJECT_CURRENT_STATE.md",
+    "README.md",
+    "PROJECT_ARCHITECTURE_AND_DECISION_MAP.md",
+]
+REQUIRED_TRUTH_PLANE_KEYS = {
+    "meta",
+    "formal_baseline",
+    "approved_alternates",
+    "research_state",
+    "open_side_tracks",
+    "closed_lines",
+    "measurement_policy",
+    "sources",
+    "notes",
+}
+FORBIDDEN_TRUTH_PLANE_KEYS = {
+    "active_baseline_policy",
+    "latest_internal_frontier",
+    "latest_falsified_branch",
+    "active_experiment",
+}
+TRUTH_PLANE_FORBIDDEN_PHRASES = [
+    "pending R33 promotion",
+    "active sandbox overview",
+    "360→720+",
+    "目前 active 沙盒：`R26NewPSFCheck`",
+    "current winning line",
+]
 LEGACY_BATCH_SPECS = {
     "organized_20260313": [
         "root_status_legacy",
@@ -236,6 +269,50 @@ def check_legacy_governance():
             error(f"Legacy artifact-side doc is unexpectedly trackable: {target.relative_to(REPO)}")
 
 
+def check_truth_plane():
+    print("=== Check 7: Truth-plane policy and root docs ===")
+    policy_path = REPO / "ESTIMATOR_POLICY.json"
+    if not policy_path.exists():
+        error("ESTIMATOR_POLICY.json is missing")
+        return
+
+    try:
+        policy = json.loads(policy_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        error(f"ESTIMATOR_POLICY.json is not valid JSON: {exc}")
+        return
+
+    if not REQUIRED_TRUTH_PLANE_KEYS.issubset(policy):
+        missing = sorted(REQUIRED_TRUTH_PLANE_KEYS - set(policy))
+        error(f"ESTIMATOR_POLICY.json missing truth-plane keys: {missing}")
+    unexpected = sorted(FORBIDDEN_TRUTH_PLANE_KEYS.intersection(policy))
+    if unexpected:
+        error(f"ESTIMATOR_POLICY.json still exposes deprecated top-level keys: {unexpected}")
+
+    formal = policy.get("formal_baseline", {})
+    if formal.get("candidate_id") != "COMBO":
+        error("ESTIMATOR_POLICY.json formal_baseline.candidate_id must be COMBO")
+    if formal.get("status") != "formal_production_baseline":
+        error("ESTIMATOR_POLICY.json formal_baseline.status must be formal_production_baseline")
+
+    alternates = policy.get("approved_alternates", [])
+    alt_ids = [item.get("candidate_id") for item in alternates]
+    if alt_ids != ["R33", "R38v2"]:
+        error(f"ESTIMATOR_POLICY.json approved_alternates must be ['R33', 'R38v2'], got {alt_ids}")
+
+    side_tracks = policy.get("open_side_tracks", [])
+    if not side_tracks or side_tracks[0].get("candidate_id") != "R26NewPSFCheck":
+        error("ESTIMATOR_POLICY.json open_side_tracks must begin with R26NewPSFCheck")
+
+    for doc_name in TRUTH_PLANE_DOCS:
+        text = (REPO / doc_name).read_text(encoding="utf-8")
+        if "COMBO" not in text:
+            error(f"{doc_name} must mention COMBO")
+        for phrase in TRUTH_PLANE_FORBIDDEN_PHRASES:
+            if phrase in text:
+                error(f"{doc_name} contains stale truth-plane phrase: {phrase}")
+
+
 def main():
     check_experiment_dirs()
     check_index_references()
@@ -243,6 +320,7 @@ def main():
     check_claude_agents_sync()
     check_inference_quantfix()
     check_legacy_governance()
+    check_truth_plane()
 
     print()
     print(f"Results: {len(ERRORS)} errors, {len(WARNINGS)} warnings")

@@ -53,6 +53,36 @@ LEGACY_BATCH_SPECS = {
         "tta_experiment/r26_tta_cross5",
     ],
 }
+TRUTH_PLANE_DOCS = [
+    "PROJECT_SESSION_CONTINUITY.md",
+    "PROJECT_CURRENT_STATE.md",
+    "README.md",
+    "PROJECT_ARCHITECTURE_AND_DECISION_MAP.md",
+]
+REQUIRED_TRUTH_PLANE_KEYS = {
+    "meta",
+    "formal_baseline",
+    "approved_alternates",
+    "research_state",
+    "open_side_tracks",
+    "closed_lines",
+    "measurement_policy",
+    "sources",
+    "notes",
+}
+FORBIDDEN_TRUTH_PLANE_KEYS = {
+    "active_baseline_policy",
+    "latest_internal_frontier",
+    "latest_falsified_branch",
+    "active_experiment",
+}
+TRUTH_PLANE_FORBIDDEN_PHRASES = [
+    "pending R33 promotion",
+    "active sandbox overview",
+    "360→720+",
+    "目前 active 沙盒：`R26NewPSFCheck`",
+    "current winning line",
+]
 
 
 def load_validator_module():
@@ -84,6 +114,10 @@ def test_validator_declares_legacy_surfaces():
 
     assert hasattr(module, "LEGACY_BATCH_SPECS")
     assert module.LEGACY_BATCH_SPECS == LEGACY_BATCH_SPECS
+    assert module.TRUTH_PLANE_DOCS == TRUTH_PLANE_DOCS
+    assert module.REQUIRED_TRUTH_PLANE_KEYS == REQUIRED_TRUTH_PLANE_KEYS
+    assert module.FORBIDDEN_TRUTH_PLANE_KEYS == FORBIDDEN_TRUTH_PLANE_KEYS
+    assert module.TRUTH_PLANE_FORBIDDEN_PHRASES == TRUTH_PLANE_FORBIDDEN_PHRASES
 
 
 def test_legacy_gitignore_only_allows_whitelisted_governance_docs():
@@ -124,3 +158,17 @@ def test_legacy_gitignore_only_allows_whitelisted_governance_docs():
             check=False,
         )
         assert result.returncode == 0, f"Expected ignored artifact-side doc, but gitignore re-opened {path}"
+
+
+def test_truth_plane_docs_and_policy_contract():
+    policy = (REPO / "ESTIMATOR_POLICY.json").read_text(encoding="utf-8")
+    for key in REQUIRED_TRUTH_PLANE_KEYS:
+        assert f"\"{key}\"" in policy
+    for key in FORBIDDEN_TRUTH_PLANE_KEYS:
+        assert f"\"{key}\"" not in policy
+
+    for doc_name in TRUTH_PLANE_DOCS:
+        text = (REPO / doc_name).read_text(encoding="utf-8")
+        assert "COMBO" in text, f"{doc_name} should mention COMBO"
+        for phrase in TRUTH_PLANE_FORBIDDEN_PHRASES:
+            assert phrase not in text, f"{doc_name} still contains stale phrase: {phrase}"

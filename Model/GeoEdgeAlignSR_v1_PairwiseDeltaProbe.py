@@ -6,6 +6,8 @@ import sys
 import time
 from pathlib import Path
 
+from GeoEdgeAlignSR_v1_PolicyAccess import get_macro_estimator, get_measurement_guardrails, load_estimator_policy
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PROCESS_AUDIT = PROJECT_ROOT / "Model" / "GeoEdgeAlignSR_v1_ProcessProbeAudit.py"
@@ -97,13 +99,14 @@ def main() -> None:
     output_root = args.output_root
     output_root.mkdir(parents=True, exist_ok=True)
     checkpoint = resolve_round18_checkpoint()
-    policy = _load_json(POLICY_JSON)
+    policy = load_estimator_policy(POLICY_JSON)
+    guardrails = get_measurement_guardrails(policy)
 
-    mid_center_ratio_min = float(policy["control_relative_guard"]["mid_0p8"]["center_improvement_ratio_min"])
-    mid_step_max = float(policy["control_relative_guard"]["mid_0p8"]["step_err_max"])
-    macro_step_max = float(policy["control_relative_guard"]["macro_8px"]["step_err_max"])
-    macro_seq_sign_min = float(policy["control_relative_guard"]["macro_8px"]["seq_sign_acc_min"])
-    macro_geom_method = str(policy["provisional_hybrid_policy"]["macro_8px"])
+    mid_center_ratio_min = float(guardrails["mid_0p8"]["center_improvement_ratio_min"])
+    mid_step_max = float(guardrails["mid_0p8"]["step_err_max"])
+    macro_step_max = float(guardrails["macro_8px"]["step_err_max"])
+    macro_seq_sign_min = float(guardrails["macro_8px"]["seq_sign_acc_min"])
+    macro_geom_method = get_macro_estimator(policy)
 
     candidates = [
         ("edge_ctrl", "edge_centroid"),
