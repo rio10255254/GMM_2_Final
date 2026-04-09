@@ -25,7 +25,7 @@ jobs:
         run: python -m pip install pytest
 
       - name: Run governance tests
-        run: python -m pytest Tools/tests/test_validate_project_structure.py -q
+        run: python -m pytest Tools/tests/ -q
 
       - name: Run structure validator
         run: python Tools/validate_project_structure.py
