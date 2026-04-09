@@ -46,7 +46,7 @@ Expected tracked content:
   - 例如 `candidate_smoke/`、`reasonable_smoke/`、`experiments/`、`final_candidate_full100/`
 - `AnalysisLab/` 中按版本收納的常駐分析腳本、測試、結果與報告
 - `Experiments/R32Sandbox/` 中的程式、說明、runtime status、manifest 與輕量報告（已關閉沙盒）
-- `Experiments/R26NewPSFCheck/` 中的程式、說明、audit、報告與輕量 artifacts（目前 active 沙盒）
+- `Experiments/R26NewPSFCheck/` 中的程式、說明、audit、報告與輕量 artifacts（open side track，pending external GMF）
 - `docs/policy/` 中的正式政策文件（PSF policy 等）
 
 預期不追蹤的內容：  
