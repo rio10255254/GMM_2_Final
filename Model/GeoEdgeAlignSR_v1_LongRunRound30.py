@@ -22,6 +22,8 @@ import sys
 import time
 from pathlib import Path
 
+from GeoEdgeAlignSR_v1_PolicyAccess import load_probe_policy_pack
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REPORT_ROOT = PROJECT_ROOT / "Traing_Progress" / "auto_tune_reports"
@@ -194,45 +196,8 @@ def _run_subprocess(cmd: list[str], cwd: Path) -> int:
     return proc.wait()
 
 
-def _resolve_control_center_ref(policy: dict) -> float:
-    source = policy.get("source", {})
-    reevaluation_json = source.get("phase2_reevaluation_json")
-    if reevaluation_json:
-        try:
-            reevaluation = _load_json(Path(str(reevaluation_json)))
-            return _safe_float(reevaluation.get("control_0p8", {}).get("best_center_err"), 1.0)
-        except Exception:
-            pass
-
-    round26_decision_md = source.get("round26_decision_md")
-    if round26_decision_md:
-        round26_decision_json = Path(str(round26_decision_md)).with_suffix(".json")
-        try:
-            decision_payload = _load_json(round26_decision_json)
-            return _safe_float(decision_payload.get("control_center_ref"), 1.0)
-        except Exception:
-            pass
-
-    return 1.0
-
-
 def _load_policy() -> dict:
-    policy = _load_json(POLICY_PATH)
-    macro_estimator = str(
-        policy.get("provisional_hybrid_policy", {}).get(
-            "macro_8px",
-            policy.get("active_baseline_policy", {}).get("macro_8px", "edge_band_refine"),
-        )
-    )
-    return {
-        "policy": policy,
-        "mid_center_ratio_min": _safe_float(policy["control_relative_guard"]["mid_0p8"]["center_improvement_ratio_min"], 0.25),
-        "mid_step_max": _safe_float(policy["control_relative_guard"]["mid_0p8"]["step_err_max"], 0.45),
-        "macro_step_max": _safe_float(policy["control_relative_guard"]["macro_8px"]["step_err_max"], 0.30),
-        "macro_seq_sign_min": _safe_float(policy["control_relative_guard"]["macro_8px"]["seq_sign_acc_min"], 0.75),
-        "macro_estimator": macro_estimator,
-        "control_center_ref": _resolve_control_center_ref(policy),
-    }
+    return load_probe_policy_pack(POLICY_PATH)
 
 
 def _family_score(summary: dict) -> float:

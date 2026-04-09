@@ -1,7 +1,7 @@
 # 研究路徑 / Research Paths
 
-這份文件提供 GitHub 可直接渲染的研究路徑圖，讓人不用翻完整歷史，也能快速理解目前 baseline、已被否定的分支、以及下一個合理方向。  
-This file provides a GitHub-renderable research-path map so readers can understand the current baseline, the falsified branches, and the next sensible direction without reading the entire history first.
+這份文件提供 GitHub 可直接渲染的研究路徑圖，讓人不用翻完整歷史，也能快速理解 formal baseline、approved alternates、已被否定的分支、以及現在真正值得開新 round 的條件。
+This file provides a GitHub-renderable research-path map so readers can understand the formal baseline, approved alternates, falsified branches, and the real threshold for opening a new round without reading the full history first.
 
 ## Current Path / 目前主路徑
 
@@ -9,70 +9,65 @@ This file provides a GitHub-renderable research-path map so readers can understa
 flowchart TD
     R14["Round14 corridor<br/>identified 0.8px as the bottleneck"] --> R15["Round15 center-lock<br/>narrowed target to 0.8px center stability"]
     R15 --> R26["R26 / r26_sm035<br/>externally verified step_mag optimum<br/>0.8px = 0.1913"]
-    R26 --> R30["Round30 / r30_b1_dironly ✅<br/>PRODUCTION BASELINE<br/>0.8px = 0.1679"]
-    R30 --> R31["Round31 B1 hyperparam tuning<br/>all 3 candidates: external regression<br/>0.8px = 0.179–0.185"]
-    R30 --> R32["R32 Sandbox / r32_real_eq_finetune ❌<br/>external FAIL — 0.8px = 0.3318 (+97.7%)"]
-    R32 --> CLOSED["R32 closed (2026-03-20)"]
-    R26 --> R26PSF["R26NewPSFCheck 🔬<br/>new Whole-FOV PSF retrain<br/>awaiting external GMF (2026-03-26)"]
-    R30 --> R33["Round33 / r33_robust_p95 ✅<br/>Winsorize spatial loss<br/>0.8px = 0.1190 (-29.1%)"]
-    R33 --> R34_37["R34/R35/R37 ❌<br/>freq-split / alpha / freq-reg<br/>all failed to recover sharpness"]
-    R33 --> R38["R38 seq-all ⚠<br/>8px good but 0.8px weak<br/>noise from tiny-delta stages"]
-    R38 --> R38v2["R38v2 / 8px_gate ✅<br/>seq 8px + gate + warmup<br/>0.8px = 0.1342 (-20.1%)<br/>steepness +89%"]
-    R33 --> COMBO["COMBO ✅<br/>Winsorize + seq 8px gate<br/>0.8px = 0.1316 (-21.6%)<br/>steepness +89%, best residual"]
+    R26 --> R30["Round30 / r30_b1_dironly<br/>former baseline<br/>0.8px = 0.1679"]
+    R30 --> R31["Round31 B1 hyperparam tuning ❌<br/>all measured candidates regressed<br/>0.8px = 0.179–0.185"]
+    R30 --> R32["R32 Sandbox ❌<br/>external FAIL<br/>0.8px = 0.3318 (+97.7%)"]
+    R30 --> R33["R33 / r33_robust_p95 ✅<br/>GMF extreme alternate<br/>0.8px = 0.1190"]
+    R33 --> R34_37["R34/R35/R37 ❌<br/>all failed to recover sharpness"]
+    R33 --> R38["R38 seq-all ❌<br/>weak-delta noise corrupted 0.8px"]
+    R38 --> R38v2["R38v2 / 8px_gate ✅<br/>visual priority alternate<br/>0.8px = 0.1342<br/>steepness +89%"]
+    R33 --> COMBO["COMBO ✅<br/>FORMAL PRODUCTION BASELINE<br/>0.8px = 0.1316<br/>steepness +89%, best residual"]
     R38v2 --> COMBO
+    R26 --> R26PSF["R26NewPSFCheck 🔬<br/>open side track<br/>pending external GMF"]
+    COMBO --> NEXT["Next round only if:<br/>new mechanism OR<br/>deployment-specific need"]
 ```
 
 ## Milestone Numbers / 里程碑數字
 
-| Round | 候選 | External 0.8px step std | 結論 |
-|-------|------|------------------------|------|
-| R26（generic 基準） | `r26_sm035` | `0.191336` | step_mag 最佳值 = 0.35，舊基準 |
-| R29（upper sweep） | `r29_sm042` | `0.217310` | 否定 step_mag > 0.35 方向 |
-| **R30（目前 baseline）** | `r30_b1_dironly` | **`0.167862`** | 首個外部驗證超越 R26；B1 dironly 有效 |
-| R31（B1 hyperparam） | 三個候選 | `0.179` ~ `0.185` | 全部外部退步，baseline 不變 |
-| R32 sandbox | `r32_real_eq_finetune` | `0.331821` | 外部惡化 +97.7%，FAIL，沙盒關閉 |
-| **R33（Robust Loss）** | **`r33_robust_p95`** | **`0.119049`** | **GMF 極致型：三尺度全通過，銳度 -22%** |
-| R34/R35/R37 | freq-split / alpha / freq-reg | — (internal) | 全部失敗，無法恢復銳度 |
-| R38 | seq_only (all stages) | — (internal 0.159) | 8px 好，0.8px 弱（噪聲干擾） |
-| **R38v2（Seq Fixed）** | **`r38v2_8px_gate`** | **`0.134205`** | **視覺優先型：GMF -20% + steepness +89%** |
-| **COMBO** | **`r38v2_8px_gate_p95`** | **`0.131560`** | **最均衡型：GMF -22% + steepness +89% + residual 歷史最佳** |
-| R26NewPSFCheck | 新 PSF 重訓候選 | 待定（等待 GMF 回填） | 進行中（2026-03-26 啟動） |
+| Round | 候選 | External `0.8px` step std | 角色 / Verdict |
+|-------|------|--------------------------|----------------|
+| R26（generic 基準） | `r26_sm035` | `0.191336` | step_mag 線 externally verified optimum |
+| R29（upper sweep） | `r29_sm042` | `0.217310` | 否定 `step_mag > 0.35` |
+| **R30** | `r30_b1_dironly` | `0.167862` | former production baseline |
+| R31 | 三個 measured 候選 | `0.179` ~ `0.185` | 外部退步，closed follow-up |
+| R32 sandbox | `r32_real_eq_finetune` | `0.331821` | external FAIL，sandbox closed |
+| **R33** | `r33_robust_p95` | `0.119049` | approved GMF extreme alternate |
+| R34/R35/R37 | freq-split / alpha / freq-reg | — | 全部失敗，無法恢復銳度 |
+| R38 | `seq_only` | — (internal only) | 全 stages noise 干擾，falsified |
+| **R38v2** | `r38v2_8px_gate` | `0.134205` | approved visual-priority alternate |
+| **COMBO** | `r38v2_8px_gate_p95` | `0.131560` | **formal production baseline** |
+| R26NewPSFCheck | 新 PSF 重訓候選 | 待定 | open side track，pending GMF |
 
 ## Interpretation / 路徑解讀
 
 - `R26 / r26_sm035`
-  generic `step_mag` 路線的 externally verified optimum，外部 0.8px = 0.191336。
-  The externally verified optimum of the generic `step_mag` line.
+  generic `step_mag` 路線的 externally verified optimum。這條線已封閉，但仍是歷史基準鏈的重要節點。
 
 - `Round30 / r30_b1_dironly`
-  目前正式的 production baseline，外部 0.8px = 0.167862，是首個超越 R26 基準線的外部驗證結果。
-  The current official production baseline. First line to beat R26 on the external battlefield.
+  前任正式 baseline。它是第一個在 external `0.8px` 主戰場超越 R26 的線，但現在已被 COMBO 取代。
 
 - `Round31`
-  沿 `B1 dironly` 主線做的超參數微調，但三個候選在外部 0.8px 全部退步。
-  Hyperparameter tuning on the B1 dironly line; all three candidates regressed on external 0.8px.
+  `B1 dironly` 主線上的 follow-up 微調。measured candidates 全部 external regression，已關閉。
 
-- `R32 Sandbox`（已關閉）
-  internal winner（`r32_real_eq_finetune`）通過所有內部合成探針，但 external compare 在主戰場 0.8px 惡化 +97.7%，確認 FAIL。2026-03-20 關閉沙盒。
-  The internal winner passed all synthetic probes but failed external compare badly (+97.7% on 0.8px). Sandbox closed 2026-03-20.
+- `R32 Sandbox`
+  internal winner `r32_real_eq_finetune` external FAIL，sandbox 已關閉。
 
-- `Round33 / r33_robust_p95`（外部通過，2026-04-05）
-  在 R30 B1 dironly recipe 上加入 Winsorize 空間損失（95th percentile 截尾），降權不可修復缺陷像素的梯度。
-  外部 GMF 結果：0.8px **0.119049**（-29.1%）、8px 0.153343（-25.3%）、0.08px 0.086274（-45.3%）。三尺度全面改善。
-  R33 is the first candidate since R30 to improve on all three external scales. Mechanism: Winsorize gradient_magnitude_loss and laplacian_hf_loss at 95th percentile.
+- `R33 / r33_robust_p95`
+  Winsorize spatial loss 帶來最強 GMF 改善，但視覺銳度退步，因此保留為 `GMF extreme` alternate，而不是 formal baseline。
 
-- `R26NewPSFCheck`（進行中）
-  2026-03-26 啟動。以新 Whole-FOV PSF 從頭重訓 R26 模型，等待外部 GMF 結果回填。同時也完成了 PSF 正式流程審核。
-  Started 2026-03-26. Retrains the R26 model with the new Whole-FOV PSF; awaiting external GMF scores. PSF formal-flow audit also completed.
+- `R38v2 / r38v2_8px_gate`
+  seq 8px-only + signal gate + warmup 15 成功保住視覺 steepness，因此保留為 `visual priority` alternate。
 
-- PSF 政策（2026-03-27）
-  R26 研究線的 PSF 正式標準切換為新 Whole-FOV PSF（current standard），舊版轉為 legacy empirical baseline。詳見 `docs/policy/PSF_POLICY_TRANSITION_R26.md`。
-  R26 PSF standard switched to the new Whole-FOV PSF (current standard); the old PSF becomes the legacy empirical baseline. See `docs/policy/PSF_POLICY_TRANSITION_R26.md`.
+- `COMBO / r38v2_8px_gate_p95`
+  Winsorize + seq 8px gate + warmup 的組合。不是單一指標最極端，但在 `0.8px`、`8px`、steepness、residual_std 上最均衡，因此於 2026-04-08 升級為 formal production baseline。
+
+- `R26NewPSFCheck`
+  與 mainline promotion 解耦的 PSF 驗證 side track。它仍有研究價值，但不是目前 active baseline challenger。
 
 ## How To Use This Map / 如何使用這張圖
 
-- 在 GitHub 首頁快速看方向：先看 `README.md` 裡的簡圖。  
-  For a quick direction check on GitHub, start with the small map in `README.md`.
+- 在 GitHub 首頁快速看方向：先看 `README.md` 裡的縮略圖。
+  For a quick direction check on GitHub, start with the smaller map in `README.md`.
 - 如果要看比較完整的研究脈絡：看這份文件。  
   For a fuller research-path explanation, read this file.
 - 如果要看完整歷史原文：看 `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`。  

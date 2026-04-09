@@ -1,294 +1,245 @@
 {
-  "generated_at": "2026-04-05 00:00:00",
-  "source": {
-    "round30_internal_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md",
-    "round30_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_EXTERNAL_COMPARE.md",
-    "round31_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\selected\\reports\\ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md",
-    "round31_summary_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\selected\\reports\\ROUND31_B1_HYPERPARAM_SUMMARY_20260318_113707.md",
-    "round31_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\selected\\reports\\ROUND31_EXTERNAL_COMPARE.md",
-    "round29_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round29\\selected\\reports\\ROUND29_STEP_MAG_UPPER_DECISION_20260317_124715.md",
-    "round29_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\external_compare_r18_r22_r25_r26_r27_r28_r29\\reports\\EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_R29_SUMMARY.md",
-    "tta_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\tta_experiment\\r26_tta_cross5\\reports\\TTA_VS_BASELINE_CROSS5_COMPARISON.md",
-    "correlation_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\analysis\\INTERNAL_EXTERNAL_CORRELATION.md",
-    "round32_status_md": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\runtime\\R32_STATUS.md"
+  "meta": {
+    "schema_version": "2.0",
+    "generated_at": "2026-04-09 00:00:00",
+    "decision_effective_date": "2026-04-08",
+    "policy_owner": "GMM_2_Final truth plane"
   },
-  "active_baseline_policy": {
-    "status": "final_production_baseline",
-    "selected_round": "round30",
-    "selected_candidate": "r30_b1_dironly",
-    "selection_basis": "external_gmf_main_battlefield",
-    "selected_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\archive\\runs\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913\\weights\\best_tradeoff.pth.tar",
-    "tiny_0p08": "edge_centroid",
-    "mid_0p8": "pairmix_algblend",
-    "macro_8px": "edge_band_refine",
-    "internal_metrics": {
-      "center_err_0p8": 0.0804,
-      "step_err_0p8": 0.0693
+  "formal_baseline": {
+    "candidate_id": "COMBO",
+    "model_name": "r38v2_8px_gate_p95",
+    "round": "COMBO",
+    "experiment": "Experiments/R38v2SeqFixed",
+    "role": "most_balanced_production_baseline",
+    "status": "formal_production_baseline",
+    "decision_effective_date": "2026-04-08",
+    "checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\\weights\\best_tradeoff.pth.tar",
+    "reports": {
+      "results_md": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\reports\\COMBO_RESULTS.md",
+      "series_md": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\reports\\R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
+      "external_gmf_dir": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\results\\external_gmf_combo"
+    },
+    "estimators": {
+      "tiny_0p08": "edge_centroid",
+      "mid_0p8": "pairmix_algblend",
+      "macro_8px": "edge_band_refine"
     },
     "external_gmf": {
-      "step_std_8px": 0.205193,
-      "step_std_0p8px": 0.167862,
-      "step_std_0p08px": 0.15772,
-      "lag1_autocorr_0p8px": 0.267027
+      "step_std_8px": 0.154515,
+      "step_std_0p8px": 0.13156,
+      "step_std_0p08px": 0.099891,
+      "lag1_autocorr_0p8px": -0.5176
     },
-    "notes": "Round30 architecture breakthrough was the first externally validated branch to beat the R26 baseline on the main battlefield. Production promotion is based on external GMF, not internal family winner."
+    "visual_profile": {
+      "edge_steepness_vs_r30_pct": 89.4,
+      "contrast_std_vs_r30_pct": -6.6,
+      "gradient_mag_vs_r30_pct": -19.7,
+      "residual_std_0p8_inner": 2.044,
+      "residual_std_all_time_best": true
+    },
+    "promotion_basis": "Selected as the formal production baseline because it is the most balanced candidate: external 0.8px improves 21.6% vs R30, visual steepness stays +89%, and residual_std is the best on record."
   },
-  "latest_internal_frontier": {
-    "status": "r33_robust_p95_external_pass_baseline_upgrade_candidate",
-    "round": "round33",
-    "candidate": "r33_robust_p95",
-    "checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941\\weights\\best_tradeoff.pth.tar",
-    "mechanism": "Winsorize spatial losses (ROBUST_LOSS_PERCENTILE=0.95, WARMUP=10)",
-    "internal_metrics": {
-      "internal_step_std_y_0p8": 0.1289,
-      "internal_step_std_y_0p08": 0.1145,
-      "internal_step_std_y_8px": 0.1737,
-      "note": "SimpleTest GMF proxy not configured (EXPECT_DX/DY=None); internal gate numbers from sequence analysis only"
-    },
-    "external_gmf": {
-      "step_std_8px": 0.153343,
-      "step_std_0p8px": 0.119049,
-      "step_std_0p08px": 0.086274,
-      "lag1_autocorr_0p8px": -0.5549,
-      "outliers_8px": 2,
-      "outliers_0p8px": 0,
-      "outliers_0p08px": 0
-    },
-    "delta_vs_r30": {
-      "step_std_8px": -0.05185,
-      "step_std_0p8px": -0.048813,
-      "step_std_0p08px": -0.071446,
-      "delta_pct_0p8px": -29.1
-    },
-    "notes": "Round33 robust_p95 passed all four baseline promotion conditions: (1) external 0.8px 0.119 < 0.168 target, (2) 8px improved 25%, (3) 0.08px improved 45%, (4) no side-scale trade-off. Lag-1 autocorrelation flipped from +0.27 (R30) to -0.55 (R33)."
-  },
-  "latest_falsified_branch": {
-    "status": "round32_real_eq_external_fail",
-    "round": "round32",
-    "branch_type": "sandbox_real_eq_finetune",
-    "winner_baseline_kept": "r30_b1_dironly",
-    "challengers": {
-      "r32_real_eq_finetune": {
-        "step_std_8px": 0.319667,
-        "step_std_0p8px": 0.331821,
-        "step_std_0p08px": 0.230119,
-        "delta_vs_b1_dironly_0p8px": 0.16396,
-        "verdict": "external_fail"
-      }
-    },
-    "notes": "Round32 internal winner r32_real_eq_finetune completed the external final gate and failed badly on the main 0.8px battlefield. The Round30 baseline remains unchanged."
-  },
-  "latest_analyses": {
-    "round33_external_compare": {
-      "status": "completed_pass_all_scales",
-      "baseline": "r30_b1_dironly",
-      "candidate": "r33_robust_p95",
+  "approved_alternates": [
+    {
+      "candidate_id": "R33",
+      "model_name": "r33_robust_p95",
+      "round": "R33",
+      "experiment": "Experiments/R33RobustLoss",
+      "role": "gmf_extreme_alternate",
+      "status": "approved_alternate",
+      "recommended_for": "GMF-priority deployments where geometric precision is more important than visual sharpness",
+      "checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941\\weights\\best_tradeoff.pth.tar",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\reports\\R33_EXPERIMENT_SUMMARY.md",
+        "series_md": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\reports\\R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
+        "external_gmf_dir": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\results\\external_gmf"
+      },
       "external_gmf": {
         "step_std_8px": 0.153343,
         "step_std_0p8px": 0.119049,
         "step_std_0p08px": 0.086274,
         "lag1_autocorr_0p8px": -0.5549
       },
-      "delta_vs_r30": {
-        "step_std_8px": -0.05185,
-        "step_std_0p8px": -0.048813,
-        "step_std_0p08px": -0.071446
-      },
-      "delta_pct_vs_r30": {
-        "step_std_8px_pct": -25.3,
-        "step_std_0p8px_pct": -29.1,
-        "step_std_0p08px_pct": -45.3
-      },
-      "upgrade_decision": "pass_pending_formal_promotion"
+      "visual_profile": {
+        "edge_steepness_vs_r30_pct": -22.0,
+        "edge_contrast_vs_r30_pct": -43.0,
+        "gradient_mag_vs_r30_pct": -32.0,
+        "contrast_std_vs_r30_pct": -24.0
+      }
     },
-    "round38v2_external_compare": {
-      "status": "completed_pass_all_scales",
-      "baseline": "r30_b1_dironly",
-      "candidate": "r38v2_8px_gate",
-      "mechanism": "Sequence consistency training (8px stages only, signal gate 0.002, warmup 15 epochs, no Winsorize)",
+    {
+      "candidate_id": "R38v2",
+      "model_name": "r38v2_8px_gate",
+      "round": "R38v2",
+      "experiment": "Experiments/R38v2SeqFixed",
+      "role": "visual_priority_alternate",
+      "status": "approved_alternate",
+      "recommended_for": "Visual-priority deployments that still need an externally validated GMF improvement",
+      "checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957\\weights\\best_tradeoff.pth.tar",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\reports\\R38v2_RESULTS.md",
+        "series_md": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\reports\\R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
+        "external_gmf_dir": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\results\\external_gmf"
+      },
       "external_gmf": {
         "step_std_8px": 0.143988,
         "step_std_0p8px": 0.134205,
         "step_std_0p08px": 0.106457,
         "lag1_autocorr_0p8px": -0.5459
       },
-      "delta_vs_r30": {
-        "step_std_8px": -0.061205,
-        "step_std_0p8px": -0.033657,
-        "step_std_0p08px": -0.051263
-      },
-      "delta_pct_vs_r30": {
-        "step_std_8px_pct": -29.8,
-        "step_std_0p8px_pct": -20.1,
-        "step_std_0p08px_pct": -32.5
-      },
-      "visual_quality_vs_r30": {
-        "edge_steepness_pct": 89.4,
-        "edge_contrast_pct": -13.0,
-        "gradient_mag_pct": -22.8,
-        "contrast_std_pct": -10.7
-      },
-      "upgrade_decision": "pass_balanced_candidate",
-      "notes": "R38v2 is the balanced candidate: GMF -20% with near-R30 visual quality. R33 remains the GMF-extreme candidate (-29%). R38v2 achieves 8px best-ever (0.144, better than R33 0.153)."
-    },
-    "combo_external_compare": {
-      "status": "completed_pass_all_scales",
-      "baseline": "r30_b1_dironly",
-      "candidate": "r38v2_8px_gate_p95 (COMBO: Winsorize p95 + seq 8px gate + warmup)",
-      "external_gmf": {
-        "step_std_8px": 0.154515,
-        "step_std_0p8px": 0.131560,
-        "step_std_0p08px": 0.099891,
-        "lag1_autocorr_0p8px": -0.5176
-      },
-      "delta_vs_r30": {
-        "step_std_8px": -0.050678,
-        "step_std_0p8px": -0.036302,
-        "step_std_0p08px": -0.057829
-      },
-      "delta_pct_vs_r30": {
-        "step_std_8px_pct": -24.7,
-        "step_std_0p8px_pct": -21.6,
-        "step_std_0p08px_pct": -36.7
-      },
-      "visual_quality_vs_r30": {
-        "edge_steepness_pct": 89.4,
-        "contrast_std_pct": -6.6,
-        "gradient_mag_pct": -19.7
-      },
-      "residual_std_all_time_best": true,
-      "upgrade_decision": "pass_most_balanced_candidate",
-      "notes": "COMBO achieves best-ever residual_std (0.8px inner 2.044, -29% vs R30), near-best 0.8px GMF (0.132, beats R38v2 0.134), and full R38v2-level visual quality. Internal step_std 0.178 overpredicted external 0.132 — low residual_std makes GMF more precise."
-    },
-    "round34_35_37_38_falsified": {
-      "status": "all_failed_to_break_sharpness_stability_tradeoff",
-      "rounds": ["R34 freq-split", "R35 alpha-boost", "R37 freq-reg", "R38 seq-all-stages", "R33c contrast-fix"],
-      "notes": "5 attempts to recover R33's sharpness loss all failed. R38v2 (8px-only seq + gate + warmup) succeeded by taking a different path: preserving sharpness via warmup-first reconstruction, then adding stability via clean seq signal."
-    },
-    "round32_external_compare": {
-      "status": "completed_failed",
-      "baseline": "r30_b1_dironly",
-      "candidate": "r32_real_eq_finetune",
-      "external_gmf": {
-        "step_std_8px": 0.319667,
-        "step_std_0p8px": 0.331821,
-        "step_std_0p08px": 0.230119,
-        "step_std_0p8px_outlier_filtered": 0.303349
-      },
-      "delta_vs_r30": {
-        "step_std_8px": 0.114475,
-        "step_std_0p8px": 0.16396,
-        "step_std_0p08px": 0.072399
-      },
-      "upgrade_decision": "rejected_due_to_external_fail"
-    },
-    "round31_external_compare": {
-      "status": "completed_measured_candidates_failed",
-      "baseline": "r30_b1_dironly",
-      "measured_candidates": {
-        "r31_eq_prob_up": {
-          "step_std_0p8px": 0.184867,
-          "delta_vs_r30": 0.017006
-        },
-        "r31_eq_weight_up": {
-          "step_std_0p8px": 0.185458,
-          "delta_vs_r30": 0.017596
-        },
-        "r31_edge_ratio_low": {
-          "step_std_0p8px": 0.179347,
-          "delta_vs_r30": 0.011486
-        }
-      },
-      "missing_candidate": "r31_eq_combo"
-    },
-    "tta_c2": {
-      "status": "completed_not_adopted",
-      "candidate": "r26_tta_cross5",
-      "external_gmf": {
-        "step_std_8px": 0.200948,
-        "step_std_0p8px": 0.214034,
-        "step_std_0p08px": 0.153058,
-        "lag1_autocorr_0p8px": 0.112999
-      },
-      "delta_vs_r26": {
-        "step_std_8px": -8.3e-05,
-        "step_std_0p8px": 0.022698,
-        "step_std_0p08px": -0.027255
-      },
-      "upgrade_decision": "rejected_due_to_0p8_regression"
-    },
-    "d2_internal_external_correlation": {
-      "status": "completed",
-      "sample_size": 5,
-      "best_screening_metric": "center_err",
-      "pearson_r": 0.5399,
-      "step_err_pearson_r": -0.3251,
-      "notes": "Use center_err as Tier2 screening only. External GMF remains the final gate."
+      "visual_profile": {
+        "edge_steepness_vs_r30_pct": 89.4,
+        "edge_contrast_vs_r30_pct": -13.0,
+        "gradient_mag_vs_r30_pct": -22.8,
+        "contrast_std_vs_r30_pct": -10.7
+      }
+    }
+  ],
+  "research_state": {
+    "baseline_challenger_status": "none_open",
+    "current_mainline_status": "promoted",
+    "next_round_policy": "new_mechanism_or_deployment_specific_need_only",
+    "former_baseline": {
+      "candidate_id": "R30",
+      "model_name": "r30_b1_dironly",
+      "round": "Round30",
+      "experiment_surface": "Traing_Progress/organized_20260316/round30",
+      "external_gmf_0p8px": 0.167862
     }
   },
-  "active_experiment": {
-    "status": "r33_robust_p95_external_pass_pending_baseline_promotion",
-    "sandbox": "R33RobustLoss",
-    "started": "2026-04-05",
-    "goal": "Winsorize spatial losses (gradient_magnitude + laplacian_hf) to redirect model capacity from unfixable defect pixels to clean regions",
-    "mechanism": "Per-pixel loss Winsorize at 95th percentile, warmup 10 epochs",
-    "winner": "r33_robust_p95",
-    "external_gmf_status": "completed_all_pass",
-    "external_gmf_date": "2026-04-05",
-    "batch_root": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss",
-    "report": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\reports\\R33_EXPERIMENT_SUMMARY.md",
-    "previous_sandbox": {
-      "R26NewPSFCheck": "still pending external GMF; PSF policy switch remains effective regardless"
+  "open_side_tracks": [
+    {
+      "candidate_id": "R26NewPSFCheck",
+      "round": "R26 PSF",
+      "experiment": "Experiments/R26NewPSFCheck",
+      "status": "pending_external_gmf",
+      "mainline_status": "open_side_track",
+      "goal": "Validate the new Whole-FOV PSF under the formal R26 retrain workflow without reclassifying the active mainline",
+      "reports": {
+        "status_md": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\reports\\STATUS_20260326.md",
+        "formal_compare_md": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\formal_newpsf_candidate\\reports\\NEW_PSF_FORMAL_R26_COMPARE.md",
+        "psf_audit_md": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\psf_audit\\PSF_FORMAL_AUDIT_20260326.md"
+      },
+      "notes": "Keep tracked as an open PSF side track. It is not the active mainline and not part of the COMBO promotion decision."
+    }
+  ],
+  "closed_lines": [
+    {
+      "candidate_id": "Round31",
+      "status": "closed_follow_up",
+      "verdict": "external_regression",
+      "report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\selected\\reports\\ROUND31_EXTERNAL_COMPARE.md"
     },
-    "notes": "R33 robust_p95 achieved external 0.8px step_std 0.119049, beating R30 baseline (0.167862) by 29.1%. All three scales improved 25-45%. Pending formal baseline promotion decision."
-  },
-  "historical_milestones": {
-    "round26_final_stepmag_baseline": {
-      "candidate": "r26_sm035",
-      "external_gmf_0p8_step_std": 0.191336
+    {
+      "candidate_id": "Round32",
+      "status": "closed_sandbox",
+      "verdict": "external_fail",
+      "report_md": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\reports\\ROUND32_EXTERNAL_COMPARE.md"
     },
-    "round29_upper_sweep_falsified": {
-      "candidate": "r29_sm042",
-      "external_gmf_0p8_step_std": 0.21731
+    {
+      "candidate_id": "R34",
+      "status": "falsified",
+      "verdict": "freq_split_did_not_recover_sharpness"
+    },
+    {
+      "candidate_id": "R35",
+      "status": "falsified",
+      "verdict": "alpha_boost_amplified_artifacts"
+    },
+    {
+      "candidate_id": "R37",
+      "status": "falsified",
+      "verdict": "frequency_regularization_increased_hf_noise"
+    },
+    {
+      "candidate_id": "R38",
+      "status": "falsified",
+      "verdict": "seq_all_stages_added_weak_delta_noise"
+    },
+    {
+      "candidate_id": "R33c",
+      "status": "falsified",
+      "verdict": "contrast_fix_failed_to_restore_visual_quality"
+    },
+    {
+      "candidate_id": "TTA C2",
+      "status": "falsified",
+      "verdict": "0p8_main_battlefield_regression",
+      "report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\tta_experiment\\r26_tta_cross5\\reports\\TTA_VS_BASELINE_CROSS5_COMPARISON.md"
+    }
+  ],
+  "measurement_policy": {
+    "external_gmf_is_final": true,
+    "internal_gate_status": "advisory_only_for_low_residual_regime",
+    "guardrails": {
+      "mid_0p8": {
+        "center_improvement_ratio_min": 0.25,
+        "step_err_max": 0.45
+      },
+      "macro_8px": {
+        "control_step_err": 0.17948414385318756,
+        "step_err_max": 0.29948414385318756,
+        "control_seq_sign_acc": 0.8059353232383728,
+        "seq_sign_acc_min": 0.7559353232383728
+      }
+    },
+    "quantization_policy": {
+      "status": "canonical_rounding_enabled",
+      "effective_date": "2026-04-08",
+      "method": "np.rint",
+      "notes": "Canonical inference uses rounding instead of truncation. Quantization sensitivity is model-dependent and is documented, not used to overturn the COMBO promotion decision."
+    },
+    "internal_external_divergence": {
+      "status": "measurement_bottleneck_confirmed",
+      "analysis_report_md": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\reports\\INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md",
+      "root_cause": "Circle-fit noise floor dominates internal step_std once real step variance drops below ~0.15 px.",
+      "validated_default": "720-angle unweighted circle fit",
+      "weighted_fit_status": "available_but_not_default",
+      "advisory_cutoff_residual_std": 2.5
     }
   },
-  "control_relative_guard": {
-    "mid_0p8": {
-      "center_improvement_ratio_min": 0.25,
-      "step_err_max": 0.45
+  "sources": {
+    "formal_baseline": {
+      "results_md": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\reports\\COMBO_RESULTS.md",
+      "series_md": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\reports\\R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
+      "external_gmf_dir": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\results\\external_gmf_combo"
     },
-    "macro_8px": {
-      "control_step_err": 0.17948414385318756,
-      "step_err_max": 0.29948414385318756,
-      "control_seq_sign_acc": 0.8059353232383728,
-      "seq_sign_acc_min": 0.7559353232383728
+    "approved_alternates": {
+      "R33": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\reports\\R33_EXPERIMENT_SUMMARY.md",
+        "external_gmf_dir": "D:\\GMM_2_Final\\Experiments\\R33RobustLoss\\results\\external_gmf"
+      },
+      "R38v2": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\reports\\R38v2_RESULTS.md",
+        "external_gmf_dir": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\results\\external_gmf"
+      }
+    },
+    "side_tracks": {
+      "R26NewPSFCheck": {
+        "status_md": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\reports\\STATUS_20260326.md",
+        "formal_compare_md": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\formal_newpsf_candidate\\reports\\NEW_PSF_FORMAL_R26_COMPARE.md"
+      }
+    },
+    "legacy": {
+      "phase2_reevaluation_json": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260315\\branch_e_followup\\selected\\reports\\BRANCH_E_PHASE2_REEVALUATION_20260315_203359.json",
+      "phase2_reevaluation_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260315\\branch_e_followup\\selected\\reports\\BRANCH_E_PHASE2_REEVALUATION_20260315_203359.md",
+      "round26_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round26\\selected\\reports\\ROUND26_STEP_RECOVERY_DECISION_20260316_191450.md",
+      "round29_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round29\\selected\\reports\\ROUND29_STEP_MAG_UPPER_DECISION_20260317_124715.md",
+      "round30_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md",
+      "round30_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round30\\selected\\reports\\ROUND30_EXTERNAL_COMPARE.md",
+      "round31_decision_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\selected\\reports\\ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md",
+      "round31_external_compare_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\round31\\selected\\reports\\ROUND31_EXTERNAL_COMPARE.md",
+      "round32_external_compare_md": "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\reports\\ROUND32_EXTERNAL_COMPARE.md",
+      "tta_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\tta_experiment\\r26_tta_cross5\\reports\\TTA_VS_BASELINE_CROSS5_COMPARISON.md",
+      "correlation_report_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260316\\analysis\\INTERNAL_EXTERNAL_CORRELATION.md"
     }
   },
   "notes": [
-    "Round30 / r30_b1_dironly is the current formal production baseline (pending R33 promotion decision).",
-    "Round33 / r33_robust_p95 passed external GMF on all three scales (2026-04-05): 0.8px 0.119 (-29%), 8px 0.153 (-25%), 0.08px 0.086 (-45%).",
-    "Round33 mechanism: Winsorize gradient_magnitude_loss and laplacian_hf_loss at 95th percentile to redirect capacity from structural defects to clean regions.",
-    "Round33 is the first line since R30 to achieve external improvement on the main 0.8px battlefield.",
-    "Round31 measured external compare is formalized and does not change the baseline.",
-    "Round32 internal winner r32_real_eq_finetune completed external compare and failed; it cannot be promoted.",
-    "Generic step_mag sweep from 0.28 to 0.42 is closed; the externally verified optimum within that line remains 0.35.",
-    "R26NewPSFCheck sandbox launched 2026-03-26: PSF policy switched 2026-03-27. External GMF for R26NewPSFCheck is still pending.",
-    "PSF policy: new Whole-FOV PSF is the current standard (2026-03-27); old PSF is the legacy empirical baseline.",
-    "R33 lag-1 autocorrelation is -0.55 (R30 was +0.27); step oscillation pattern noted but does not affect step_std target.",
-    "R33 TRADE-OFF: visual sharpness regressed (gradient -32%, steepness -22%, contrast -43%) while GMF step_std improved -29%.",
-    "R34 (freq-split), R35 (alpha-boost), R37 (freq-reg), R38 (seq-all-stages), R33c (contrast-fix) all FAILED to recover sharpness.",
-    "R38v2 (8px-only seq + signal gate 0.002 + warmup 15 epochs) PASSED external GMF (2026-04-07): 0.8px 0.134 (-20%), 8px 0.144 (-30%), 0.08px 0.106 (-33%).",
-    "R38v2 is the BALANCED candidate: GMF -20% with near-R30 visual quality (steepness +89%, contrast -13%). R33 remains GMF-EXTREME: -29% but steepness -22%.",
-    "R38v2 success factors: warmup preserves encoder sharpness, signal gate removes noise from weak-delta stages, 8px-only provides clean consistency signal.",
-    "Three production candidates: R33 p95 (GMF extreme), R38v2 8px_gate (visual priority), COMBO r38v2_8px_gate_p95 (most balanced).",
-    "COMBO (2026-04-08): Winsorize p95 + seq 8px gate + warmup. External 0.8px 0.132 (-22%), steepness +89%, residual_std all-time best. Beats R38v2 on 0.8px (0.132 vs 0.134) while maintaining same visual quality.",
-    "QUANTIZATION FIX (2026-04-08): denormalize_to_dtype changed from truncation to np.rint (rounding). Impact varies by model:",
-    "  R33 quantfix: 0.8px 0.119->0.117 (-1.7% improved), 8px 0.153->0.172 (outliers 2->0, actually more robust), 0.08px 0.086->0.086 (-0.7%).",
-    "  R38v2 quantfix: 0.8px 0.134->0.147 (+9.3% regressed, steep edges sensitive to quantization), 8px 0.144->0.122 (-15.3% improved).",
-    "  Quantization fix is mathematically correct but affects edgel detection differently per model. Steep edges (R38v2) are more sensitive to +1 grey level shift.",
-    "  Full analysis: Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md",
-    "Full series report: Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
-    "INTERNAL-EXTERNAL DIVERGENCE (2026-04-08): Internal step_std systematically overestimates external GMF. Ratio grows from 1.22 (R30) to 1.35 (COMBO) as model quality improves. Root cause: circle-fit noise floor (~0.17 px) dominates internal when real step variance < 0.15 px. Internal step_std is NO LONGER a reliable hard gate for candidates with residual_std < 2.5. Analysis: Experiments/R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md",
-    "ACTION ITEM: Improve internal measurement — increase angular sampling (360->720+) and/or implement weighted circle fit to lower noise floor. Current circle-fit precision is the bottleneck, not model quality."
+    "COMBO is the only formal production baseline as of 2026-04-08.",
+    "R33 remains the GMF-extreme approved alternate and R38v2 remains the visual-priority approved alternate.",
+    "R30 is preserved as the historical former baseline that COMBO replaces.",
+    "R26NewPSFCheck remains an open PSF side track and is not the active mainline.",
+    "Round31 and Round32 stay closed; neither changes the promoted baseline.",
+    "External GMF is always the final gate. Internal step_std is advisory-only once residual_std enters the low-noise regime."
   ]
 }

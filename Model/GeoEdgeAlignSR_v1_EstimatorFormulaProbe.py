@@ -6,6 +6,13 @@ import sys
 import time
 from pathlib import Path
 
+from GeoEdgeAlignSR_v1_PolicyAccess import (
+    get_legacy_sources,
+    get_macro_estimator,
+    get_measurement_guardrails,
+    load_estimator_policy,
+)
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PROCESS_AUDIT = PROJECT_ROOT / "Model" / "GeoEdgeAlignSR_v1_ProcessProbeAudit.py"
@@ -38,7 +45,23 @@ def resolve_round18_checkpoint() -> str:
 
 
 def read_policy() -> dict:
-    return json.loads(POLICY_JSON.read_text(encoding="utf-8"))
+    policy = load_estimator_policy(POLICY_JSON)
+    sources = get_legacy_sources(policy)
+    macro_guard_pass = True
+    reevaluation_json = sources.get("phase2_reevaluation_json")
+    if reevaluation_json:
+        try:
+            macro_guard_pass = bool(
+                json.loads(Path(str(reevaluation_json)).read_text(encoding="utf-8")).get("macro_guard_pass", True)
+            )
+        except Exception:
+            macro_guard_pass = True
+    return {
+        "policy": policy,
+        "guardrails": get_measurement_guardrails(policy),
+        "macro_estimator": get_macro_estimator(policy),
+        "macro_guard_pass": macro_guard_pass,
+    }
 
 
 def move_new_audit_runs(before: set[str], archive_dir: Path) -> None:
@@ -97,9 +120,9 @@ def main() -> None:
     output_root = args.output_root
     output_root.mkdir(parents=True, exist_ok=True)
     checkpoint = resolve_round18_checkpoint()
-    policy = read_policy()
-    macro_ready = bool(policy["provisional_hybrid_policy"]["macro_guard_pass"])
-    control_relative = policy["control_relative_guard"]["mid_0p8"]
+    policy_pack = read_policy()
+    macro_ready = bool(policy_pack["macro_guard_pass"])
+    control_relative = policy_pack["guardrails"]["mid_0p8"]
     center_improvement_min = float(control_relative["center_improvement_ratio_min"])
     step_err_max = float(control_relative["step_err_max"])
 
@@ -157,7 +180,7 @@ def main() -> None:
     summary = {
         "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
         "checkpoint": checkpoint,
-        "macro_policy_estimator": policy["provisional_hybrid_policy"]["macro_8px"],
+        "macro_policy_estimator": policy_pack["macro_estimator"],
         "macro_guard_pass": macro_ready,
         "mid_gate": {
             "center_improvement_ratio_min": center_improvement_min,

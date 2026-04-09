@@ -1,6 +1,6 @@
 # 文件索引 / PROJECT DOCUMENT INDEX
 
-Last updated: 2026-04-08
+Last updated: 2026-04-09
 
 這份文件把 **canonical docs**、**sandbox docs**、**evidence docs**、與 **archive docs** 的責任邊界講清楚。
 This file clarifies the responsibility boundaries between the canonical docs, sandbox docs, evidence docs, and archive docs.
@@ -36,7 +36,7 @@ This file clarifies the responsibility boundaries between the canonical docs, sa
 
 ## Experiment Surface / 實驗文件層
 
-### R33 RobustLoss（GMF 極致型候選，external PASS）
+### R33 RobustLoss（GMF extreme alternate）
 
 - `Experiments/R33RobustLoss/README.md` — 實驗說明
 - `Experiments/R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md` — 完整結果（含外部 GMF + 視覺分析）
@@ -45,7 +45,7 @@ This file clarifies the responsibility boundaries between the canonical docs, sa
 - `Experiments/R33RobustLoss/results/external_gmf/` — 原始外部 GMF scores
 - `Experiments/R33RobustLoss/results/external_gmf_quantfix/` — 量化修復後 GMF scores
 
-### R38v2 SeqFixed（均衡型候選，external PASS）
+### R38v2 SeqFixed（formal baseline + visual priority alternate）
 
 - `Experiments/R38v2SeqFixed/README.md` — 實驗說明
 - `Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md` — 完整結果
@@ -53,7 +53,7 @@ This file clarifies the responsibility boundaries between the canonical docs, sa
 - `Experiments/R38v2SeqFixed/results/external_gmf/` — 原始外部 GMF scores
 - `Experiments/R38v2SeqFixed/results/external_gmf_quantfix/` — 量化修復後 GMF scores
 
-### R26NewPSFCheck（PSF 驗證，external GMF 待定）
+### R26NewPSFCheck（open PSF side track，external GMF 待定）
 
 - `Experiments/R26NewPSFCheck/README.md` — sandbox 說明
 - `Experiments/R26NewPSFCheck/reports/STATUS_20260326.md` — 進度摘要
@@ -75,7 +75,7 @@ This file clarifies the responsibility boundaries between the canonical docs, sa
 
 ## Machine-Readable Policy / 機器可讀政策層
 
-- `ESTIMATOR_POLICY.json` — baseline policy + 所有 external compare 結果 + 量化修復記錄
+- `ESTIMATOR_POLICY.json` — machine-readable decision control plane（formal baseline、approved alternates、side tracks、measurement policy）
 - `docs/policy/PSF_STANDARD_POLICY.json` — PSF 政策
 
 ## Evidence Surface / 證據文件層

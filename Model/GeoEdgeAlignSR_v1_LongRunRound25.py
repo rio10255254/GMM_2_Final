@@ -18,6 +18,8 @@ import sys
 import time
 from pathlib import Path
 
+from GeoEdgeAlignSR_v1_PolicyAccess import load_probe_policy_pack
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REPORT_ROOT = PROJECT_ROOT / "Traing_Progress" / "auto_tune_reports"
@@ -157,17 +159,7 @@ def _run_subprocess(cmd: list[str], cwd: Path) -> int:
 
 
 def _load_policy() -> dict:
-    policy = _load_json(POLICY_PATH)
-    reevaluation = _load_json(Path(policy["source"]["phase2_reevaluation_json"]))
-    return {
-        "policy": policy,
-        "mid_center_ratio_min": _safe_float(policy["control_relative_guard"]["mid_0p8"]["center_improvement_ratio_min"], 0.25),
-        "mid_step_max": _safe_float(policy["control_relative_guard"]["mid_0p8"]["step_err_max"], 0.45),
-        "macro_step_max": _safe_float(policy["control_relative_guard"]["macro_8px"]["step_err_max"], 0.30),
-        "macro_seq_sign_min": _safe_float(policy["control_relative_guard"]["macro_8px"]["seq_sign_acc_min"], 0.75),
-        "macro_estimator": str(policy["provisional_hybrid_policy"]["macro_8px"]),
-        "control_center_ref": _safe_float(reevaluation["control_0p8"]["best_center_err"], 1.0),
-    }
+    return load_probe_policy_pack(POLICY_PATH)
 
 
 def _family_score(summary: dict) -> float:

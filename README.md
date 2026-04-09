@@ -57,7 +57,7 @@ Key performance metrics (all from the external GMF evaluator):
 | **GMF（幾何匹配函數）** | 外部幾何定位評分工具。GMF 分越好（step std 越小），代表模型輸出對邊界定位越有幫助。<br>External geometric evaluator. Lower step std = better boundary localization. |
 | **external compare** | 用訓練好的模型重建真實影像後，送 GMF 打分，與 baseline 比較的最終驗收流程。<br>The final acceptance test: reconstruct real images, run GMF, compare with baseline. |
 | **internal audit** | 在合成資料上做的初篩稽核（pairmix_algblend、edge_band_refine 探針）。通過 internal audit 是必要條件，但不等於外部成功。<br>A synthetic-data screening step. Necessary but not sufficient. |
-| **baseline / r30_b1_dironly** | 目前唯一正式的 production baseline，是 Round30 訓練出的「只保留方向性特徵（dironly）的 B1 架構版本」。<br>The current formal production baseline from Round 30. |
+| **baseline / COMBO** | 目前正式的 production baseline，是 `r38v2_8px_gate_p95`（COMBO）。它是 Winsorize + seq 8px gate + warmup 的最均衡組合。<br>The current formal production baseline is `r38v2_8px_gate_p95` (COMBO). |
 | **checkpoint（.pth.tar）** | 模型訓練途中儲存的參數快照。`best_tradeoff.pth.tar` 是整體指標最均衡的那份。<br>A saved snapshot of model weights. `best_tradeoff.pth.tar` is the primary checkpoint used. |
 | **sandbox** | 隔離的實驗目錄，讓新的研究方向不影響主線穩定工作流程。<br>An isolated experiment directory, keeping research changes away from the stable mainline. |
 | **step std** | 連續幀之間位移差的標準差。越小 = 定位越穩定。<br>Standard deviation of displacement differences between frames. Smaller = more stable localization. |
@@ -67,48 +67,56 @@ Key performance metrics (all from the external GMF evaluator):
 
 ## 目前狀態快照 / Current Status Snapshot
 
-> 以下數字為截至 2026-04-08 的最新狀態。詳細資料請看 `PROJECT_CURRENT_STATE.md`。
-> Numbers below are current as of 2026-04-08. For full detail, see `PROJECT_CURRENT_STATE.md`.
+> 以下數字為截至 2026-04-09 的最新狀態。詳細資料請看 `PROJECT_CURRENT_STATE.md`。
+> Numbers below are current as of 2026-04-09. For full detail, see `PROJECT_CURRENT_STATE.md`.
 
 ### 正式 Baseline / Production Baseline
 
-**`Round30 / r30_b1_dironly`** — 正式 production baseline（兩個升級候選待定）
+**`COMBO / r38v2_8px_gate_p95`** — 正式 production baseline（effective 2026-04-08）
 
-| 指標 / Metric | R30 baseline | R33 p95（極致型） | R38v2（視覺優先） | COMBO（最均衡） |
-|--------------|-------------|------------------|-----------------|---------------|
-| external `0.8px` step std | **`0.168`** | **`0.119`** (-29%) | `0.134` (-20%) | **`0.132`** (-22%) |
-| external `8px` step std | `0.205` | `0.153` | **`0.144`** (-30%) | `0.155` (-25%) |
-| external `0.08px` step std | `0.158` | **`0.086`** (-45%) | `0.106` (-33%) | **`0.100`** (-37%) |
-| Edge steepness (vs R30) | baseline | -22% | **+89%** | **+89%** |
-| Contrast std | 34.6 | 26.5 (-24%) | 30.9 (-11%) | **32.4** (-7%) |
-| Residual_std (0.8px inner) | 2.89 | 2.68 | 3.19 | **2.04** (-29%) |
+| 指標 / Metric | COMBO baseline | R33（GMF extreme alternate） | R38v2（visual priority alternate） | R30 former baseline |
+|--------------|----------------|------------------------------|-----------------------------------|---------------------|
+| external `0.8px` step std | **`0.132`** | **`0.119`** (-9.5% vs COMBO) | `0.134` (+2.0% vs COMBO) | `0.168` (+27.6% vs COMBO) |
+| external `8px` step std | `0.155` | `0.153` | **`0.144`** | `0.205` |
+| external `0.08px` step std | `0.100` | **`0.086`** | `0.106` | `0.158` |
+| Edge steepness (vs R30) | **+89%** | -22% | **+89%** | baseline |
+| Contrast std (vs R30) | **-7%** | -24% | -11% | baseline |
+| Residual_std (0.8px inner) | **2.04** | 2.68 | 3.19 | 2.89 |
 
 ### 研究歷程最新結論 / Latest Research Verdicts
 
 | Round | 結論 / Verdict |
 |-------|---------------|
-| **R30** | ✅ **現 production baseline**；B1 dironly 機制首次在主戰場超越 R26 |
+| **COMBO** | ✅ **正式 production baseline**；最均衡的外部 GMF / 視覺 / residual 組合 |
+| **R30** | ✅ **歷史前任 baseline**；B1 dironly 機制首次在主戰場超越 R26 |
 | **R31** | ❌ B1 hyperparam 微調三個候選均外部退步 |
 | **R32** | ❌ domain rebalancing 外部 `0.8px` 退步 +97.7% |
-| **R33** | ✅ **GMF 極致型候選**：Winsorize spatial loss → 0.8px -30%，但視覺銳度 -22% |
+| **R33** | ✅ **GMF extreme alternate**：Winsorize spatial loss → 0.8px -30%，但視覺銳度 -22% |
 | R34/R35/R37 | ❌ 三輪嘗試恢復銳度全部失敗（freq-split / alpha-boost / freq-reg） |
-| **R38v2** | ✅ **均衡型候選**：Seq training (8px-only + signal gate + warmup) → 0.8px -20% + steepness +89% |
+| **R38v2** | ✅ **visual priority alternate**：Seq training (8px-only + signal gate + warmup) → 0.8px -20% + steepness +89% |
 
-### 三個生產候選 / Three Production Candidates
+### 正式 baseline 與特化候選 / Formal Baseline and Approved Alternates
 
-**R33 p95**（GMF 極致型）：0.8px **-29%**，但視覺銳度退步 22%。適合純 GMF 定位場景。
+**COMBO r38v2_8px_gate_p95**（正式 baseline）：0.8px **-22%**，steepness **+89%**，residual_std **歷史最佳**（-29% vs R30）。預設推薦線。
 
-**R38v2 8px_gate**（視覺優先型）：0.8px -20%，steepness **+89%**。適合需要人眼判讀的場景。
+**R33 p95**（GMF extreme alternate）：0.8px **-29%**，但視覺銳度退步 22%。適合純 GMF 定位場景。
 
-**COMBO r38v2_8px_gate_p95**（最均衡型）：0.8px **-22%**，steepness **+89%**，residual_std **歷史最佳**（-29% vs R30）。同時兼顧 GMF 精度和視覺品質。
+**R38v2 8px_gate**（visual priority alternate）：0.8px -20%，steepness **+89%**。適合需要人眼判讀的場景。
 
 完整實驗系列報告：`Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
 
 ### 下一個決策邊界 / Next Decision Boundary
 
-三個候選都已通過 `external 0.8px < 0.167862` 的硬邊界。
-量化修復已完成。**重要發現**：internal step_std 系統性高估 external GMF（COMBO: internal 0.178 vs external 0.132，比率 1.35）。
-根因是 circle-fit 噪聲地板（~0.17 px）主導了 internal 量測。下一步：改善 internal 量測精度（增加角度取樣 360→720+）。
+三候選 promotion 已完成。下一個決策邊界不再是「誰升級 baseline」，而是：
+
+- 是否有**新機制**值得立新 round
+- 是否有**deployment-specific 需求**，足以偏向 `R33` 或 `R38v2`
+- 是否需要在 formal baseline 之外建立新的特化部署面
+
+重要發現：
+- internal step_std 在低 residual regime 已是 **advisory-only**
+- 720-angle unweighted fit 已驗證可降低 internal/external gap
+- weighted fit 可用，但不是統一預設
 
 ---
 
@@ -129,7 +137,7 @@ Read in this order when taking over the project:
 - 想快速接手 → `PROJECT_SESSION_CONTINUITY.md`
 - 想知道現在數字 → `PROJECT_CURRENT_STATE.md`
 - 想知道穩定規則 → `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
-- 機器可讀 baseline policy → `ESTIMATOR_POLICY.json`
+- 機器可讀 decision control plane → `ESTIMATOR_POLICY.json`
 - 補完整歷史 → `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
 ---
@@ -143,7 +151,7 @@ D:\GMM_2_Final\
 ├── PROJECT_SESSION_CONTINUITY.md      ← 跨入口 handoff 文件
 ├── PROJECT_CURRENT_STATE.md           ← 目前狀態與最新數字
 ├── PROJECT_ARCHITECTURE_AND_DECISION_MAP.md  ← 穩定架構與決策規則
-├── ESTIMATOR_POLICY.json              ← 機器可讀 baseline policy
+├── ESTIMATOR_POLICY.json              ← 機器可讀 decision control plane
 ├── REPO_GOVERNANCE.md                 ← Git/GitHub 治理規則
 ├── CONTRIBUTING.md                    ← 貢獻指南
 ├── AGENTS.md                          ← AI agent 協作規則
@@ -182,7 +190,9 @@ D:\GMM_2_Final\
 │   ├── README.md
 │   └── r26/
 │
-├── Experiments/                       ← 獨立實驗 sandbox 區
+├── Experiments/                       ← 獨立實驗與正式候選 surface
+│   ├── R33RobustLoss/                 ← GMF extreme alternate
+│   ├── R38v2SeqFixed/                 ← formal baseline（COMBO）+ visual priority alternate
 │   ├── R32Sandbox/                    ← Round32 隔離沙盒（external FAIL，已關閉）
 │   │   ├── README.md
 │   │   ├── Model/                     ← R32 專用訓練/稽核腳本
@@ -192,7 +202,7 @@ D:\GMM_2_Final\
 │   │   ├── reports/                   ← 稽核報告與決策備忘
 │   │   └── external_compare/          ← 外部比較中間產物
 │   │
-│   └── R26NewPSFCheck/                ← Round26 新 PSF 驗證沙盒（2026-03-26，進行中）
+│   └── R26NewPSFCheck/                ← open PSF side track（pending external GMF）
 │       ├── README.md
 │       └── ...
 │
@@ -301,8 +311,8 @@ flowchart TD
     r29_sm042 → FAIL
     external 0.8px = 0.2173 ↑"]
 
-    R30["Round30 / r30_b1_dironly ✅
-    PRODUCTION BASELINE
+    R30["Round30 / r30_b1_dironly
+    former baseline
     external 0.8px = 0.1679"]
 
     R31["Round31 / B1 hyperparam tuning
@@ -314,13 +324,17 @@ flowchart TD
     external 0.8px = 0.3318 (+97.7%)"]
 
     R26PSF["R26NewPSFCheck 🔬
-    (2026-03-26, 進行中 / Active)
+    open side track
     新 Whole-FOV PSF 重訓驗證
-    等待外部 GMF 結果"]
+    pending external GMF"]
+
+    COMBO["COMBO ✅
+    FORMAL PRODUCTION BASELINE
+    external 0.8px = 0.1316"]
 
     NEXT["下一步 / Next
-    需要新 sandbox branch
-    或新機制才能挑戰 baseline"]
+    只有新機制或 deployment-specific 需求
+    才值得再開新 round"]
 
     R26 --> R30
     R26 --> R29
@@ -329,8 +343,9 @@ flowchart TD
     R31 -- all fail --> R30
     R30 --> R32
     R32 -- external FAIL --> NEXT
+    R30 --> COMBO
     R26 --> R26PSF
-    R26PSF -- 等待 GMF 結果 --> R30
+    COMBO --> NEXT
 ```
 
 ### 已確認有效的方向 / Confirmed Effective
@@ -359,8 +374,8 @@ All four conditions must be met simultaneously to promote a new candidate:
    `pairmix_algblend` 探針 `mid_center ratio > 0.25` 且 `mid_step < 0.45`；
    `edge_band_refine` 探針 `macro_step < 0.2995` 且 `macro_seq_sign > 0.7559`
 
-2. **External `0.8px step std < 0.167862`**（當前硬邊界）
-   在主戰場明確不差於現 baseline
+2. **External `0.8px step std < 0.131560`**（當前 formal baseline 硬邊界）
+   在主戰場明確擊敗 COMBO，或在 deployment-specific 條件下提出明確 alternate-selection 理由
 
 3. **`8px` macro guard 不明顯退步**
    大尺度穩定性不能為了換主戰場而犧牲
@@ -487,7 +502,7 @@ When a new assistant or agent takes over, follow these rules:
    以 repo 正式文件為準，不以 `.codex` 或 `.claude` 內部 session 檔為準。
 
 2. **不要把 live process 狀態手抄回 root prose**
-   sandbox runtime 真相在 `Experiments\R32Sandbox\runtime\R32_STATUS.md`。
+   closed sandbox runtime 真相看 `Experiments\R32Sandbox\runtime\R32_STATUS.md`；open side track 則看 `Experiments\R26NewPSFCheck\`。
 
 3. **legacy root status 快照在 `docs/runtime/legacy/root_status/`**
    若 root 再出現 `000_LONGRUN_*`，視為本地 runtime 輸出，不是 canonical docs。
@@ -497,4 +512,4 @@ When a new assistant or agent takes over, follow these rules:
 5. **已 external FAIL 的候選不能再被描述成 current promising line**
    `r32_real_eq_finetune` 已是 externally falsified experimental branch。
 
-6. **機器可讀 baseline truth 唯一來源是 `ESTIMATOR_POLICY.json`**
+6. **機器可讀 decision truth 唯一來源是 `ESTIMATOR_POLICY.json`**
