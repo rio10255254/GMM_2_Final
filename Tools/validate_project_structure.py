@@ -23,6 +23,12 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 WARNINGS: list[str] = []
+CANONICAL_INFERENCE_SCRIPTS = [
+    "Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+    "Model/GeoEdgeAlignSR_v1_Infer_TTA.py",
+]
+CANONICAL_SEQUENCE_ANALYSIS_SCRIPT = "AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py"
+REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT = 720
 TRUTH_PLANE_DOCS = [
     "PROJECT_SESSION_CONTINUITY.md",
     "PROJECT_CURRENT_STATE.md",
@@ -185,24 +191,47 @@ def check_claude_agents_sync():
 
 def check_inference_quantfix():
     print("=== Check 5: Inference quantization fix consistency ===")
-    # Check all Infer_v5 copies
-    infer_files = list(REPO.rglob("GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py"))
-    # Also check TTA canonical script
-    tta = REPO / "Model" / "GeoEdgeAlignSR_v1_Infer_TTA.py"
-    if tta.exists():
-        infer_files.append(tta)
+    infer_files: list[Path] = []
+    for rel_path in CANONICAL_INFERENCE_SCRIPTS:
+        path = REPO / rel_path
+        if not path.exists():
+            error(f"Canonical inference script missing: {rel_path}")
+            continue
+        infer_files.append(path)
+
+    # Also check any copied main inference scripts outside the canonical Model/ path.
+    infer_files.extend(
+        f
+        for f in REPO.rglob("GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py")
+        if f.relative_to(REPO).as_posix() != CANONICAL_INFERENCE_SCRIPTS[0]
+    )
     # Exclude .claude worktrees
-    infer_files = [f for f in infer_files if ".claude" not in str(f)]
+    infer_files = sorted({f for f in infer_files if ".claude" not in str(f)})
     for f in infer_files:
         text = f.read_text(encoding="utf-8", errors="replace")
         if "np.rint" not in text and "denormalize_to_dtype" in text:
             error(f"Missing np.rint in {f.relative_to(REPO)}")
 
 
+def check_sequence_analysis_contract():
+    print("=== Check 6: Sequence analysis contract ===")
+    script = REPO / CANONICAL_SEQUENCE_ANALYSIS_SCRIPT
+    if not script.exists():
+        error(f"Canonical sequence analysis script missing: {CANONICAL_SEQUENCE_ANALYSIS_SCRIPT}")
+        return
+    text = script.read_text(encoding="utf-8", errors="replace")
+    required_token = f"n_angles={REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT}"
+    if required_token not in text:
+        error(
+            "Sequence analysis angle count drifted: "
+            f"{CANONICAL_SEQUENCE_ANALYSIS_SCRIPT} must contain {required_token}"
+        )
+
+
 def check_legacy_governance():
     guide = REPO / "docs" / "index" / "LEGACY_ROUNDS_OPERATIONS.md"
 
-    print("=== Check 6: Legacy batch governance ===")
+    print("=== Check 7: Legacy batch governance ===")
     if not guide.exists():
         error("docs/index/LEGACY_ROUNDS_OPERATIONS.md is missing")
     guide_text = guide.read_text(encoding="utf-8") if guide.exists() else ""
@@ -270,7 +299,7 @@ def check_legacy_governance():
 
 
 def check_truth_plane():
-    print("=== Check 7: Truth-plane policy and root docs ===")
+    print("=== Check 8: Truth-plane policy and root docs ===")
     policy_path = REPO / "ESTIMATOR_POLICY.json"
     if not policy_path.exists():
         error("ESTIMATOR_POLICY.json is missing")
@@ -319,6 +348,7 @@ def main():
     check_report_links()
     check_claude_agents_sync()
     check_inference_quantfix()
+    check_sequence_analysis_contract()
     check_legacy_governance()
     check_truth_plane()
 
