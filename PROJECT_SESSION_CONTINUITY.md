@@ -37,6 +37,8 @@ Recommended fixed read order:
   - `R33 / r33_robust_p95` — GMF extreme
   - `R38v2 / r38v2_8px_gate` — visual priority
 - latest promotion decision / 最近正式決策: `COMBO` promoted from three externally verified candidates
+- original winning experiment branch / 原始 winning experiment branch:
+  `sandbox/r38v2`（the winning run came from this experiment branch; the required training/inference code is now present on `main`）
 - COMBO checkpoint:
   `D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\weights\best_tradeoff.pth.tar`
 - R33 checkpoint:

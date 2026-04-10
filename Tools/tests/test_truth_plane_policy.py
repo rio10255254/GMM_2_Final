@@ -98,6 +98,7 @@ def test_root_truth_docs_reflect_combo_promotion():
     assert "approved alternates" in session or "特化候選" in session
     assert "active sandbox overview" not in session
     assert "Experiments\\R26NewPSFCheck\\" not in session
+    assert "sandbox/r38v2" in session
 
     assert "formal production baseline" in current
     assert "COMBO" in current
@@ -107,4 +108,3 @@ def test_root_truth_docs_reflect_combo_promotion():
     assert "COMBO" in readme
     assert "historical former baseline" in readme or "歷史前任 baseline" in readme
     assert "R26NewPSFCheck/                ← Round26 新 PSF 驗證沙盒（2026-03-26，進行中）" not in readme
-

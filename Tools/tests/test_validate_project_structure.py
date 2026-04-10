@@ -83,6 +83,12 @@ TRUTH_PLANE_FORBIDDEN_PHRASES = [
     "目前 active 沙盒：`R26NewPSFCheck`",
     "current winning line",
 ]
+CANONICAL_INFERENCE_SCRIPTS = [
+    "Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+    "Model/GeoEdgeAlignSR_v1_Infer_TTA.py",
+]
+CANONICAL_SEQUENCE_ANALYSIS_SCRIPT = "AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py"
+REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT = 720
 
 
 def load_validator_module():
@@ -114,6 +120,9 @@ def test_validator_declares_legacy_surfaces():
 
     assert hasattr(module, "LEGACY_BATCH_SPECS")
     assert module.LEGACY_BATCH_SPECS == LEGACY_BATCH_SPECS
+    assert module.CANONICAL_INFERENCE_SCRIPTS == CANONICAL_INFERENCE_SCRIPTS
+    assert module.CANONICAL_SEQUENCE_ANALYSIS_SCRIPT == CANONICAL_SEQUENCE_ANALYSIS_SCRIPT
+    assert module.REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT == REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT
     assert module.TRUTH_PLANE_DOCS == TRUTH_PLANE_DOCS
     assert module.REQUIRED_TRUTH_PLANE_KEYS == REQUIRED_TRUTH_PLANE_KEYS
     assert module.FORBIDDEN_TRUTH_PLANE_KEYS == FORBIDDEN_TRUTH_PLANE_KEYS
@@ -172,3 +181,9 @@ def test_truth_plane_docs_and_policy_contract():
         assert "COMBO" in text, f"{doc_name} should mention COMBO"
         for phrase in TRUTH_PLANE_FORBIDDEN_PHRASES:
             assert phrase not in text, f"{doc_name} still contains stale phrase: {phrase}"
+
+
+def test_sequence_analysis_contract():
+    script = REPO / CANONICAL_SEQUENCE_ANALYSIS_SCRIPT
+    text = script.read_text(encoding="utf-8")
+    assert f"n_angles={REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT}" in text
