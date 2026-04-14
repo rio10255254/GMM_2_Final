@@ -108,7 +108,7 @@ def load_validator_module():
 
 
 def test_legacy_operations_docs_contract():
-    assert (REPO / "docs" / "index" / "LEGACY_ROUNDS_OPERATIONS.md").exists()
+    assert (REPO / "docs" / "operations" / "LEGACY_ROUNDS_OPERATIONS.md").exists()
     for batch_name, surfaces in LEGACY_BATCH_SPECS.items():
         legacy_root = REPO / "Traing_Progress" / batch_name
         assert legacy_root.is_dir(), f"Missing legacy batch: {batch_name}"

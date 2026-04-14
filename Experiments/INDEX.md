@@ -64,6 +64,6 @@ One-page index for all experiments in this project.
 ## 規範文件
 
 新實驗建立前請先讀：
-- `docs/index/NAMING_CONVENTIONS.md` — 命名規則
-- `docs/index/EXPERIMENT_TEMPLATE.md` — 目錄結構模板
-- `docs/index/QUIRKS_AND_CONVENTIONS.md` — 歷史遺留事項
+- `docs/operations/STARTING_NEW_EXPERIMENT.md` — 命名規則
+- `docs/operations/STARTING_NEW_EXPERIMENT.md` — 目錄結構模板
+- `docs/operations/QUIRKS.md` — 歷史遺留事項

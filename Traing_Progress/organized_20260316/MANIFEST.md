@@ -5,7 +5,7 @@
 | Batch | `Traing_Progress/organized_20260316` |
 | Scope | `Round23`-`Round31` legacy mainline + external compare chain + analysis + TTA side direction |
 | Status | Historical mainline batch preserved in place |
-| Canonical batch guide | `docs/index/LEGACY_ROUNDS_OPERATIONS.md` |
+| Canonical batch guide | `docs/operations/LEGACY_ROUNDS_OPERATIONS.md` |
 | Narrative history | `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` |
 | Current truth | `PROJECT_STATE.md` |
 | Replay policy | Use per-surface `README.md` / `MANIFEST.md`; do not assume whole-batch replay is self-contained |
@@ -13,7 +13,7 @@
 ## Start Here
 
 1. `README.md` — batch context and round roles
-2. `docs/index/LEGACY_ROUNDS_OPERATIONS.md` — operational guide for legacy surfaces
+2. `docs/operations/LEGACY_ROUNDS_OPERATIONS.md` — operational guide for legacy surfaces
 3. `round30/README.md` — final baseline-winning round in this batch
 4. `round31/README.md` — formal B1 follow-up that closed the legacy mainline
 5. `external_compare_r18_r22_r25_r26_r27_r28_r29/README.md` — final generic step_mag compare chain

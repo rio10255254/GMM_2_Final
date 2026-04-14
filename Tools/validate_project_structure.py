@@ -236,11 +236,11 @@ def check_sequence_analysis_contract():
 
 
 def check_legacy_governance():
-    guide = REPO / "docs" / "index" / "LEGACY_ROUNDS_OPERATIONS.md"
+    guide = REPO / "docs" / "operations" / "LEGACY_ROUNDS_OPERATIONS.md"
 
     print("=== Check 7: Legacy batch governance ===")
     if not guide.exists():
-        error("docs/index/LEGACY_ROUNDS_OPERATIONS.md is missing")
+        error("docs/operations/LEGACY_ROUNDS_OPERATIONS.md is missing")
     guide_text = guide.read_text(encoding="utf-8") if guide.exists() else ""
     tracked_targets: list[Path] = []
     for batch_name, surfaces in LEGACY_BATCH_SPECS.items():

@@ -18,4 +18,4 @@
 3. `psf_audit/PSF_FORMAL_AUDIT_20260326.md` — PSF 流程審核結果
 4. `formal_newpsf_candidate/reports/NEW_PSF_FORMAL_R26_COMPARE.md` — promote 比較
 
-**新實驗不需要模仿此結構**。見 `docs/index/EXPERIMENT_TEMPLATE.md`。
+**新實驗不需要模仿此結構**。見 `docs/operations/STARTING_NEW_EXPERIMENT.md`。
