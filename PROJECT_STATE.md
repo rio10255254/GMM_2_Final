@@ -1,9 +1,45 @@
-# PROJECT CURRENT STATE / 專案目前狀態
-Last updated: 2026-04-09 (COMBO promoted to formal baseline)
+# PROJECT STATE / 專案狀態
 
-Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
+Last updated: 2026-04-14 (merged from SESSION_CONTINUITY + CURRENT_STATE)
 
-專案控制與整體巡檢請使用 `python Tools/project_control_center.py`；它是官方控制入口，但不是新的真相來源。
+專案控制與整體巡檢請使用 `python Tools/project_control_center.py`。
+機器真相：`ESTIMATOR_POLICY.json`。
+
+<!-- QUICK_HANDOFF_START -->
+## 🟢 Quick Handoff (3-min read)
+
+### Current Formal Baseline
+**COMBO / r38v2_8px_gate_p95** (effective 2026-04-08)
+
+### Approved Alternates
+- `R33 / r33_robust_p95` — GMF extreme alternate
+- `R38v2 / r38v2_8px_gate` — visual priority alternate
+
+### Former Baseline
+`Round30 / r30_b1_dironly` — historical former baseline (歷史前任 baseline)
+
+### Open Side Tracks
+- `R26NewPSFCheck` (pending external GMF; **not** the active mainline)
+
+### Closed Lines
+`Round31`（external regression）、`Round32`（external FAIL）、`R34/R35/R37/R38/R33c`（falsified）
+
+### Working Rules (6)
+1. 先讀本檔 Quick Handoff 區完整理解現況
+2. 以 repo 正式文件為準，不以 `.codex` / `.claude` 內部 session 檔為準
+3. root prose current state 以 COMBO + approved alternates 為主，R26NewPSFCheck 不是 active mainline
+4. legacy root runtime 快照已封存到 `docs/archive/legacy_runtime_status/`
+5. baseline / verdict / taxonomy 有變時，優先更新本檔 + `ESTIMATOR_POLICY.json`
+6. external FAIL 或 closed 的候選，不再以 promising / active 的語氣描述
+
+### Canonical sandbox branch
+`sandbox/r38v2`（COMBO 的 origin experiment branch）
+
+<!-- QUICK_HANDOFF_END -->
+
+---
+
+## Full Current State / 完整現況
 
 ## 1. Current Formal Baseline / 目前正式 baseline
 
@@ -221,7 +257,7 @@ R26 研究線的 PSF 已於 2026-03-27 正式完成政策切換。
 ## 7. Next Decision Boundary / 下一個決策邊界
 
 下一個決策邊界已經不再是「三候選誰升級」，因為這件事已完成。
-The next decision boundary is no longer “which of the three candidates gets promoted,” because that decision is now closed.
+The next decision boundary is no longer "which of the three candidates gets promoted," because that decision is now closed.
 
 接下來只在以下情況才值得立新 round：
 
