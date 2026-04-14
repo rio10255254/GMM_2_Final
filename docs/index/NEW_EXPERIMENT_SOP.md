@@ -64,10 +64,10 @@ Use the following defaults when the line is still in progress:
 當工作跨過正式決策邊界時，再更新下列文件：  
 Update these docs when the work crosses a formal boundary:
 
-- `PROJECT_CURRENT_STATE.md`
+- `PROJECT_STATE.md`
   當 current truth、adopted baseline、或下一個決策邊界改變時。  
   Update it when current truth, the adopted baseline, or the next decision boundary changes.
-- `PROJECT_SESSION_CONTINUITY.md`
+- `PROJECT_STATE.md`
   當 handoff 真相或 canonical 入口改變時。  
   Update it when handoff truth or canonical entry points change.
 - `PROJECT_ARCHITECTURE.md`

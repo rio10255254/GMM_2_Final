@@ -69,7 +69,7 @@
 
 如果你只想掌握這一天的主線：
 
-1. `..\..\..\PROJECT_CURRENT_STATE.md`
+1. `..\..\..\PROJECT_STATE.md`
 2. `round21\ROUND21_POSTMORTEM.md`
 3. `pairwise_delta_probe\selected\reports\PAIRWISE_DELTA_PROBE_SUMMARY_20260315_224024.md`
 4. `round22\ROUND22_POSTMORTEM.md`

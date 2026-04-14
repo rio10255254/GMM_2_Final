@@ -35,7 +35,7 @@ Still not covered by this guide:
 - `Experiments/R32Sandbox/`
 
 `Round31` remains a governed legacy round in `organized_20260316/`.
-`Round32` already flows into later governance surfaces (`PROJECT_CURRENT_STATE.md`,
+`Round32` already flows into later governance surfaces (`PROJECT_STATE.md`,
 `docs/evidence/`, `Experiments/R32Sandbox/`) and is handled there instead of
 by this guide.
 

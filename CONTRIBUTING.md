@@ -38,10 +38,9 @@ If a result can be reproduced from tracked code or belongs in external storage, 
 新接手時請依照這個順序閱讀：  
 When taking over the project, read these files in order:
 
-1. `PROJECT_SESSION_CONTINUITY.md`
-2. `PROJECT_CURRENT_STATE.md`
-3. `PROJECT_ARCHITECTURE.md`
-4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
+1. `PROJECT_STATE.md`
+2. `PROJECT_ARCHITECTURE.md`
+3. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
 ## Branch Strategy / 分支策略
 

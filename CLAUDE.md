@@ -4,8 +4,7 @@ You are Claude Code working in this repository.
 
 Before planning or summarizing current state, read:
 
-1. `PROJECT_SESSION_CONTINUITY.md`
-2. `PROJECT_CURRENT_STATE.md`
+1. `PROJECT_STATE.md`
 
 ## Primary role
 
@@ -41,8 +40,7 @@ When creating a new experiment:
 
 When recording experiment results, update ALL of:
 - `ESTIMATOR_POLICY.json` (external compare + notes)
-- `PROJECT_CURRENT_STATE.md` (results section)
-- `PROJECT_SESSION_CONTINUITY.md` (handoff snapshot)
+- `PROJECT_STATE.md` (results section) + (handoff snapshot)
 - `PROJECT_ARCHITECTURE.md` (findings + cautions)
 - `docs/analysis/RESEARCH_PATHS.md` (flowchart + milestone table)
 - `docs/evidence/EVIDENCE_MAP.md` (evidence pointers)

@@ -96,13 +96,13 @@ Use these layers together on GitHub:
   Use this file to understand the **evidence chain** behind each baseline, alternate, side track, or closed line
 - 用 `docs/evidence/README.md` 直接瀏覽 curated evidence files  
   Use `docs/evidence/README.md` to browse the curated files themselves
-- 用 `PROJECT_CURRENT_STATE.md` 理解目前的正式角色分配
-  Use `PROJECT_CURRENT_STATE.md` to understand the current formal role assignments
+- 用 `PROJECT_STATE.md` 理解目前的正式角色分配
+  Use `PROJECT_STATE.md` to understand the current formal role assignments
 
 總結來說：  
 In short:
 
-- `PROJECT_CURRENT_STATE.md` 回答 **現在正式決策是什麼**
-  `PROJECT_CURRENT_STATE.md` answers **what the current formal decision is**
+- `PROJECT_STATE.md` 回答 **現在正式決策是什麼**
+  `PROJECT_STATE.md` answers **what the current formal decision is**
 - `EVIDENCE_MAP.md` 回答 **哪份證據證明了它**  
   `EVIDENCE_MAP.md` answers **which files prove it**

@@ -37,10 +37,10 @@ Its purpose is to keep the root as a clean entry surface instead of turning it i
 
 1. 先看 root 的 `README.md`  
    First read the root `README.md`.
-2. 再看 `PROJECT_SESSION_CONTINUITY.md`  
-   Then read `PROJECT_SESSION_CONTINUITY.md`.
-3. 需要補決策脈絡時，看 `PROJECT_CURRENT_STATE.md` 與 `PROJECT_ARCHITECTURE.md`  
-   For decision context, read `PROJECT_CURRENT_STATE.md` and `PROJECT_ARCHITECTURE.md`.
+2. 再看 `PROJECT_STATE.md`  
+   Then read `PROJECT_STATE.md`.
+3. 需要補決策脈絡時，看 `PROJECT_STATE.md` 與 `PROJECT_ARCHITECTURE.md`  
+   For decision context, read `PROJECT_STATE.md` and `PROJECT_ARCHITECTURE.md`.
 4. 需要完整脈絡時，再進 `history/`  
    Only move into `history/` when you need the full narrative.
 

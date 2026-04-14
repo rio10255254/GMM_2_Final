@@ -19,8 +19,8 @@ It does not create a new truth plane. It organizes the existing truth, architect
 
 - 它不是新的真相來源
 - 它不取代 `ESTIMATOR_POLICY.json`
-- 它不取代 `PROJECT_CURRENT_STATE.md`
-- 它不取代 `PROJECT_SESSION_CONTINUITY.md`
+- 它不取代 `PROJECT_STATE.md`
+- 它不取代 `PROJECT_STATE.md`
 - 它不直接啟動訓練、推論或實驗
 
 ## 怎麼用 / How To Use It
@@ -85,11 +85,10 @@ python Tools/project_control_center.py --view overview --format json
 
 ## 正式閱讀順序 / Formal Reading Order
 
-1. `PROJECT_SESSION_CONTINUITY.md`
-2. `PROJECT_CURRENT_STATE.md`
-3. `PROJECT_ARCHITECTURE.md`
-4. `ESTIMATOR_POLICY.json`
-5. `docs/evidence/EVIDENCE_MAP.md`
+1. `PROJECT_STATE.md`
+2. `PROJECT_ARCHITECTURE.md`
+3. `ESTIMATOR_POLICY.json`
+4. `docs/evidence/EVIDENCE_MAP.md`
 
 如果你只想先看全貌，就先跑控制中心；如果你要修改正式結論，還是回到上述正式真相文件。  
 If you only need the whole picture, start with the control center. If you need to change formal conclusions, go back to the source-of-truth files above.

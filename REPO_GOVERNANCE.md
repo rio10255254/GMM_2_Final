@@ -182,10 +182,10 @@ Do not push day-to-day runtime log spam, watcher output, or temporary execution 
 當 project truth 有變時：  
 When project truth changes:
 
-1. 更新 `PROJECT_SESSION_CONTINUITY.md`（若 handoff truth 改變）  
-   update `PROJECT_SESSION_CONTINUITY.md` if cross-interface handoff truth changed
-2. 更新 `PROJECT_CURRENT_STATE.md`（若 current truth 或 next decision boundary 改變）  
-   update `PROJECT_CURRENT_STATE.md` if current truth or the next decision boundary changed
+1. 更新 `PROJECT_STATE.md`（若 handoff truth 改變）  
+   update `PROJECT_STATE.md` if cross-interface handoff truth changed
+2. 更新 `PROJECT_STATE.md`（若 current truth 或 next decision boundary 改變）  
+   update `PROJECT_STATE.md` if current truth or the next decision boundary changed
 3. 更新 `PROJECT_ARCHITECTURE.md`（若穩定規則改變）  
    update `PROJECT_ARCHITECTURE.md` if stable rules changed
 4. 更新這份文件（若 tracked surface 或 branch taxonomy 改變）  

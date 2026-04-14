@@ -22,7 +22,7 @@
 - 這份文件需要**長期保留**
 - 它負責完整歷史與策略反省
 - 它**不是** current truth
-- current truth 請先讀 `PROJECT_CURRENT_STATE.md`
+- current truth 請先讀 `PROJECT_STATE.md`
 - 穩定規則請讀 `PROJECT_ARCHITECTURE.md`
 
 本文件主體內容截至 `2026-03-14` 建立，但文件前言會持續補充較新的正式里程碑摘要。
@@ -35,7 +35,7 @@
 > | 🔬 研究假說/反思 | 設計原理、技術選擇理由、尚未完全確認的推論 | Sec 1–4, 6–35 |
 > | 🔄 進行中記錄 | 當前 active round 的設計與執行筆記 | 無（round17/18 已完成，下一輪開始時補 Sec 43） |
 >
-> **快速入口**：只需要看現況請先讀 `PROJECT_CURRENT_STATE.md`（根目錄）。
+> **快速入口**：只需要看現況請先讀 `PROJECT_STATE.md`（根目錄）。
 
 本版主體已補更新到：
 
@@ -72,10 +72,9 @@
 
 如果你是新接手者，閱讀順序仍然是：
 
-1. `PROJECT_SESSION_CONTINUITY.md`
-2. `PROJECT_CURRENT_STATE.md`
-3. `PROJECT_ARCHITECTURE.md`
-4. 最後才回來讀這份完整歷史
+1. `PROJECT_STATE.md`
+2. `PROJECT_ARCHITECTURE.md`
+3. 最後才回來讀這份完整歷史
 
 這份文件的用途不是單純列出檔案，而是把整個專案在這段期間內實際發生過的事情、技術決策、錯誤判斷、修正方向、外部驗證結果、檔案整理邏輯與目前真正的瓶頸，一次講清楚。
 
@@ -2779,7 +2778,7 @@ Codex 提出的結構批評（正確）：
 - round17_resume_init.pth.tar → organized_20260313/round17/archive/resume_cache/
 
 **新增**：
-- `PROJECT_CURRENT_STATE.md`（根目錄快速入口文件）
+- `PROJECT_STATE.md`（根目錄快速入口文件）
 
 ### 42.4 重整後 Traing_Progress 根目錄（最終）
 
@@ -3270,7 +3269,7 @@ organized_20260314/round20/
 
 截至 2026-03-14，專案文件層次正式定義如下：
 
-1. `PROJECT_CURRENT_STATE.md`
+1. `PROJECT_STATE.md`
 - 只寫現在真相
 - 只回答：
   - 現在採用哪一顆
