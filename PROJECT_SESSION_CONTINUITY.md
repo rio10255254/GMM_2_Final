@@ -26,7 +26,7 @@ Recommended fixed read order:
 
 1. `PROJECT_SESSION_CONTINUITY.md`
 2. `PROJECT_CURRENT_STATE.md`
-3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+3. `PROJECT_ARCHITECTURE.md`
 4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
 整體掌控與總體巡檢請使用 `python Tools/project_control_center.py`；它是官方控制入口，但不是新的 truth plane。
@@ -73,7 +73,7 @@ Recommended fixed read order:
 - current truth / 現況真相:
   `D:\GMM_2_Final\PROJECT_CURRENT_STATE.md`
 - stable rules / 穩定規則:
-  `D:\GMM_2_Final\PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+  `D:\GMM_2_Final\PROJECT_ARCHITECTURE.md`
 - machine-readable decision control plane / 機器可讀決策控制面:
   `D:\GMM_2_Final\ESTIMATOR_POLICY.json`
 - formal baseline report / 正式 baseline 報告:

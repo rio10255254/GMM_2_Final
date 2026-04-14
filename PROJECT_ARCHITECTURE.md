@@ -313,7 +313,7 @@ D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_Si
 |------|------------|
 | 我現在要快速接手，先讀什麼？ | `PROJECT_SESSION_CONTINUITY.md` |
 | 現在的數字和結論是什麼？ | `PROJECT_CURRENT_STATE.md` |
-| 穩定架構規則和決策邊界是什麼？ | **這份文件**（`PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`） |
+| 穩定架構規則和決策邊界是什麼？ | **這份文件**（`PROJECT_ARCHITECTURE.md`） |
 | 機器可讀的 baseline policy 在哪？ | `ESTIMATOR_POLICY.json` |
 | PSF 政策切換的細節？ | `docs/policy/PSF_POLICY_TRANSITION_R26.md` |
 | 機器可讀的 PSF policy？ | `docs/policy/PSF_STANDARD_POLICY.json` |

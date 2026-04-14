@@ -186,8 +186,8 @@ When project truth changes:
    update `PROJECT_SESSION_CONTINUITY.md` if cross-interface handoff truth changed
 2. 更新 `PROJECT_CURRENT_STATE.md`（若 current truth 或 next decision boundary 改變）  
    update `PROJECT_CURRENT_STATE.md` if current truth or the next decision boundary changed
-3. 更新 `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`（若穩定規則改變）  
-   update `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md` if stable rules changed
+3. 更新 `PROJECT_ARCHITECTURE.md`（若穩定規則改變）  
+   update `PROJECT_ARCHITECTURE.md` if stable rules changed
 4. 更新這份文件（若 tracked surface 或 branch taxonomy 改變）  
    update this file if the tracked surface or branch taxonomy changed
 

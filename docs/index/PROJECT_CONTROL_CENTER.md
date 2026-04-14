@@ -87,7 +87,7 @@ python Tools/project_control_center.py --view overview --format json
 
 1. `PROJECT_SESSION_CONTINUITY.md`
 2. `PROJECT_CURRENT_STATE.md`
-3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+3. `PROJECT_ARCHITECTURE.md`
 4. `ESTIMATOR_POLICY.json`
 5. `docs/evidence/EVIDENCE_MAP.md`
 

@@ -43,7 +43,7 @@ When recording experiment results, update ALL of:
 - `ESTIMATOR_POLICY.json` (external compare + notes)
 - `PROJECT_CURRENT_STATE.md` (results section)
 - `PROJECT_SESSION_CONTINUITY.md` (handoff snapshot)
-- `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md` (findings + cautions)
+- `PROJECT_ARCHITECTURE.md` (findings + cautions)
 - `docs/analysis/RESEARCH_PATHS.md` (flowchart + milestone table)
 - `docs/evidence/EVIDENCE_MAP.md` (evidence pointers)
 - `Experiments/INDEX.md` (experiment index)

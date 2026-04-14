@@ -23,7 +23,7 @@
 - 它負責完整歷史與策略反省
 - 它**不是** current truth
 - current truth 請先讀 `PROJECT_CURRENT_STATE.md`
-- 穩定規則請讀 `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+- 穩定規則請讀 `PROJECT_ARCHITECTURE.md`
 
 本文件主體內容截至 `2026-03-14` 建立，但文件前言會持續補充較新的正式里程碑摘要。
 
@@ -74,7 +74,7 @@
 
 1. `PROJECT_SESSION_CONTINUITY.md`
 2. `PROJECT_CURRENT_STATE.md`
-3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+3. `PROJECT_ARCHITECTURE.md`
 4. 最後才回來讀這份完整歷史
 
 這份文件的用途不是單純列出檔案，而是把整個專案在這段期間內實際發生過的事情、技術決策、錯誤判斷、修正方向、外部驗證結果、檔案整理邏輯與目前真正的瓶頸，一次講清楚。
@@ -3277,7 +3277,7 @@ organized_20260314/round20/
   - 最新完成 round 是什麼
   - 目前真正的主瓶頸是什麼
 
-2. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+2. `PROJECT_ARCHITECTURE.md`
 - 只寫穩定架構與決策層次
 - 不混入逐輪執行細節
 

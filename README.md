@@ -131,14 +131,14 @@ Read in this order when taking over the project:
 |------|------|------|
 | 1 | `PROJECT_SESSION_CONTINUITY.md` | 跨入口 handoff，三分鐘掌握目前狀況 / Cross-interface handoff in 3 minutes |
 | 2 | `PROJECT_CURRENT_STATE.md` | 目前數字與結論的完整真相 / Full current numbers and verdicts |
-| 3 | `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md` | 穩定架構規則、決策邊界 / Stable rules and decision boundaries |
+| 3 | `PROJECT_ARCHITECTURE.md` | 穩定架構規則、決策邊界 / Stable rules and decision boundaries |
 | 4 | `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` | 只有需要完整歷史時再看 / Only if you need the full historical narrative |
 
 快速索引：
 
 - 想快速接手 → `PROJECT_SESSION_CONTINUITY.md`
 - 想知道現在數字 → `PROJECT_CURRENT_STATE.md`
-- 想知道穩定規則 → `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+- 想知道穩定規則 → `PROJECT_ARCHITECTURE.md`
 - 機器可讀 decision control plane → `ESTIMATOR_POLICY.json`
 - 補完整歷史 → `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
@@ -152,7 +152,7 @@ D:\GMM_2_Final\
 ├── README.md                          ← 你現在在看這份（入口總覽）
 ├── PROJECT_SESSION_CONTINUITY.md      ← 跨入口 handoff 文件
 ├── PROJECT_CURRENT_STATE.md           ← 目前狀態與最新數字
-├── PROJECT_ARCHITECTURE_AND_DECISION_MAP.md  ← 穩定架構與決策規則
+├── PROJECT_ARCHITECTURE.md  ← 穩定架構與決策規則
 ├── ESTIMATOR_POLICY.json              ← 機器可讀 decision control plane
 ├── REPO_GOVERNANCE.md                 ← Git/GitHub 治理規則
 ├── CONTRIBUTING.md                    ← 貢獻指南
