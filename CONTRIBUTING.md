@@ -61,8 +61,8 @@ Use `research/*` or `sandbox/*` for new work by default.
 `baseline/*` 是受保護的命名空間，不是新實驗的預設 branch family。  
 Treat `baseline/*` as a protected namespace, not as the normal branch family for new experiments.
 
-若你需要一步一步的實驗流程，請直接看 `docs/index/NEW_EXPERIMENT_SOP.md`。  
-For the step-by-step experiment workflow, see `docs/index/NEW_EXPERIMENT_SOP.md`.
+若你需要一步一步的實驗流程，請直接看 `docs/operations/STARTING_NEW_EXPERIMENT.md`。  
+For the step-by-step experiment workflow, see `docs/operations/STARTING_NEW_EXPERIMENT.md`.
 
 不要把 reconstructed branch 寫成原始歷史 git state，除非那個狀態真的被完整保留，或之後已經 file-for-file 復原。  
 Do not describe a reconstructed branch as the original historical git state or a recovered historical tree unless that state is verifiably preserved or later restored file-for-file.

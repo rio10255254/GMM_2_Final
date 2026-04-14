@@ -75,8 +75,8 @@ The repository root is intentionally kept as an entry surface rather than a docu
   - 入口文件、治理文件、machine-readable policy、核心程式資料夾
 - `docs/history/`
   - 長篇歷史敘事
-- `docs/index/`
-  - 文件責任邊界與導航索引
+- `docs/operations/`
+  - 操作指引層（新實驗 SOP、quirks、source-of-truth 政策、legacy 操作、控制中心說明）
 - `docs/analysis/`
   - 研究路徑圖與分析摘要
 - `docs/evidence/`

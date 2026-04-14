@@ -54,7 +54,7 @@ Last updated: 2026-04-08
 - `external_compare_round18_round22/` 與 `external_compare_*` 的 canonical compare surface 在各自的 `reports/`；沒有 `reports/` 的 payload-only compare directories 只保留 raw recon / GMF，不是 mirror。
 - `docs/evidence/` 對這批 legacy batches 仍是 curated mirror / index，除非 policy 明確說它本身就是索引層（例如 `EVIDENCE_MAP.md`）。
 - `round32/` 雖然仍保留在 `Traing_Progress/organized_20260316/`，但 canonical 治理面已移到 `Experiments/R32Sandbox/`，不要在兩處同時維護。
-- 操作入口請先看 `docs/index/LEGACY_ROUNDS_OPERATIONS.md`，不要直接把長河歷史文件當成 editable source。
+- 操作入口請先看 `docs/operations/LEGACY_ROUNDS_OPERATIONS.md`，不要直接把長河歷史文件當成 editable source。
 
 ### 治理文件
 

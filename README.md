@@ -130,7 +130,7 @@ D:\GMM_2_Final\
 │   ├── evidence/                      ← 策展後的證據引用錨點
 │   ├── history/                       ← 完整歷史敘事
 │   ├── policy/                        ← 正式政策（PSF 等）
-│   └── archive/                       ← 封存內容
+│   └── archive/legacy_runtime_status/ ← 封存的 R20-R32 legacy root status 快照
 │
 └── _deployment_package/               ← R26 正式交付封包（不追蹤）
 ```
@@ -212,5 +212,6 @@ The system has three interlocking modules:
 | 開新實驗完整指南（命名 / 模板 / SOP） | `docs/operations/STARTING_NEW_EXPERIMENT.md` |
 | AI agent 行為契約 | `CLAUDE.md` / `AGENTS.md` |
 | 整體巡檢（控制中心）| `python Tools/project_control_center.py` |
+| Legacy R20-R32 root status 快照 | `docs/archive/legacy_runtime_status/` |
 
 GitHub 研究控制台：`https://github.com/users/rio10255254/projects/1`
