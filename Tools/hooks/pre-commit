@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Pre-commit hook: run project structure validator before allowing commit.
+#
+# Install: python Tools/install_hooks.py
+# Skip once (emergency): git commit --no-verify
+# Uninstall: rm .git/hooks/pre-commit
+
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+echo "[pre-commit] running project structure validator..."
+
+if ! python Tools/validate_project_structure.py > /tmp/validate_project_structure.log 2>&1; then
+    echo "[pre-commit] FAILED — validator reported errors:"
+    echo ""
+    cat /tmp/validate_project_structure.log
+    echo ""
+    echo "[pre-commit] Fix the errors above, or bypass with: git commit --no-verify"
+    exit 1
+fi
+
+# Validator exited 0 (either all-pass or only warnings). Show warnings if any.
+if grep -q "warnings" /tmp/validate_project_structure.log; then
+    tail -5 /tmp/validate_project_structure.log
+fi
+
+echo "[pre-commit] OK"
+exit 0

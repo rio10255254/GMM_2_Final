@@ -32,6 +32,79 @@ Small sample fixtures may remain in the repository when they provide stable, aud
 例如：`Model/Test_Image/VisionTop_20251029182653732.bmp`。  
 Example: `Model/Test_Image/VisionTop_20251029182653732.bmp`.
 
+## Documentation Design Principles / 文件設計原則
+
+這套文件組織跟著三條原則走。任何未來重構都應該先對照這三條，不要無意間違背。
+The documentation layout follows three principles. Any future refactor should check against these before changing structure.
+
+### 1. Single Update Reason / 單一更新理由
+
+每份文件只為**一個更新理由**存在。
+Each file exists for exactly **one update reason**.
+
+- 若兩份文件常為同一件事一起改 → 應該合併
+  If two files are regularly edited together for the same reason, they should be merged.
+- 若一份文件為兩件不同的事被改 → 應該拆分
+  If one file is edited for two distinct reasons, it should be split.
+- 若一份文件塞了它不該管的事 → 應該重新定位
+  If a file has absorbed content outside its purpose, that content should move.
+
+`PROJECT_STATE.md` 的「Quick Handoff + Full Current State」是例外：兩者本質是同一件事（現況），只是對不同注意力預算服務。以 TOC 分段 + CI lint 守門保證「短讀版本」不會膨脹。
+`PROJECT_STATE.md` keeps a Quick Handoff + Full Current State together because they are the *same* reason (current truth) served at two attention budgets; a CI lint (`check_quick_handoff_length`) enforces the short-read contract.
+
+### 2. Axis = Update Frequency × Audience / 以更新頻率 × 讀者分層
+
+文件**不**按主題切分（交接、現況、架構、治理 ...），那會導致主題重疊與內容漂移。
+Documents are **not** sliced by topic (handoff, state, architecture, governance ...); topics overlap, causing duplication and drift.
+
+正確切分軸線：
+The correct axis:
+
+| 軸線 / Axis | 代表文件 / Files |
+|------|------|
+| 高頻 × 機器 / high-frequency × machine | `ESTIMATOR_POLICY.json` |
+| 高頻 × 人類 / high-frequency × human | `PROJECT_STATE.md` |
+| 低頻 × 人類 / low-frequency × human | `PROJECT_ARCHITECTURE.md`, `REPO_GOVERNANCE.md` |
+| 極低頻 × AI / very-low-frequency × AI | `CLAUDE.md`, `AGENTS.md` |
+| 一次性 × 參考 / one-time × reference | `docs/history/`, `docs/evidence/`, `docs/policy/` |
+
+### 3. Short-Read Guarantee = Machine / 短讀屬性靠機器，不靠自律
+
+若某區段需要「維持精短」（例如 handoff），**不要**靠人類記得——應由 CI lint 強制。
+Any "must stay short" region (handoff summaries, TOC stubs) is **enforced by CI lint**, never by human discipline.
+
+目前的實作：`Tools/validate_project_structure.py` 的 `check_quick_handoff_length()` 把 `PROJECT_STATE.md` 的 `QUICK_HANDOFF_START/END` 區硬限制在 60 行。
+Current implementation: `check_quick_handoff_length()` hard-caps the `PROJECT_STATE.md` Quick Handoff region at 60 interior lines.
+
+### Red Flags When Designing New Docs / 新文件的警示燈
+
+在新增或合併文件前，先檢查：
+Before adding or merging a document, check:
+
+- 是否會跟某份既有文件為同一件事被改？→ 合併，不新增
+  Will it be edited together with an existing file for the same reason? Merge instead of adding.
+- 事實性內容是否已經在 `ESTIMATOR_POLICY.json`？→ 引用，不複製
+  Is the factual content already in `ESTIMATOR_POLICY.json`? Reference, don't copy.
+- 是否引入新的「必須同步的鏡像」？→ 不要做，或規則放寬為「可 drift」
+  Does it create a "must-sync mirror"? Don't; or relax the rule to "may drift".
+- 短讀 / 摘要型區段有沒有機器守門？→ 沒有就加 CI lint
+  Any short-read / summary region without a machine check? Add a CI lint.
+
+### Local Enforcement / 本地驗證
+
+安裝 pre-commit hook（只需要做一次）：
+Install the pre-commit hook (one-time per clone):
+
+```bash
+python Tools/install_hooks.py
+```
+
+這會把 `Tools/hooks/pre-commit` 複製到 `.git/hooks/pre-commit`，每次 `git commit` 會自動跑 `python Tools/validate_project_structure.py`，不通過就擋下。
+It copies `Tools/hooks/pre-commit` into `.git/hooks/pre-commit`. Every `git commit` then runs the validator and blocks on errors.
+
+緊急情況可用 `git commit --no-verify` 繞過；但請在後續 commit 修正，不要讓 main 帶著違規狀態。
+In emergencies use `git commit --no-verify`; fix the violation in a follow-up commit — don't let `main` carry a broken state.
+
 ## Tracked Surface / 追蹤範圍
 
 預期會被追蹤的內容：  
