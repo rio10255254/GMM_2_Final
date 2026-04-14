@@ -187,85 +187,15 @@ R32 sandbox-specific artifact 清單：
 
 ---
 
-## 目前正式 Baseline Policy / Current Baseline Policy
+## 目前 Baseline
 
-### 正式 production baseline
-
-| 欄位 | 值 |
-|------|-----|
-| **Baseline 名稱** | `COMBO / r38v2_8px_gate_p95` |
-| **Baseline 狀態** | `formal_production_baseline` |
-| **0.08px 估測器** | `edge_centroid` |
-| **0.8px 估測器** | `pairmix_algblend` |
-| **8px 估測器** | `edge_band_refine` |
-| **External 8px step std** | `0.154515` |
-| **External 0.8px step std** | `0.131560` |
-| **External 0.08px step std** | `0.099891` |
-| **0.8px lag-1 autocorr** | `-0.5176` |
-| **Role** | `most_balanced_formal_baseline` |
-
-### 機器可讀 baseline truth
-
-**唯一機器可讀來源**：`D:\GMM_2_Final\ESTIMATOR_POLICY.json`
-
-所有文件、對話、自動化腳本在引用 baseline 數字時，最終以 `ESTIMATOR_POLICY.json` 為準。
-
-### Baseline checkpoint 路徑
-
-```
-D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\
-        weights\best_tradeoff.pth.tar
-```
+當前正式 baseline 名稱、數字、checkpoint 路徑以 `ESTIMATOR_POLICY.json` 與 `PROJECT_STATE.md` 為準。本檔只保留穩定規則。
 
 ---
 
-## 已確認結論 / Confirmed Findings
+## 已確認結論
 
-### 已確認有效的方向
-
-| 結論 | 支持來源 |
-|------|---------|
-| `pairwise delta reconciliation` 是有效方向 | 多 round 持續支持 |
-| `pairmix_algblend` 是 0.8px 主戰場最佳估測器 | Round 25/26/30 外部 GMF 支持 |
-| `COMBO / r38v2_8px_gate_p95` 是 current formal production baseline | COMBO 結果 + promotion decision |
-| `R33 / r33_robust_p95` 是 GMF extreme approved alternate | R33 外部比較確認 |
-| `R38v2 / r38v2_8px_gate` 是 visual-priority approved alternate | R38v2 外部比較確認 |
-| `B1 dironly` 機制（只保留方向性特徵）有效 | Round30 外部比較確認，首次擊敗 R26 |
-| `Winsorize spatial loss` 機制有效（R33） | Round33 外部比較確認：0.8px -29%、8px -25%、0.08px -45% |
-| `r33_robust_p95` 是首個在三尺度全面改善的候選 | 2026-04-05 外部 GMF 確認 |
-| `Seq training with signal gate + warmup` 機制有效（R38v2） | 均衡型候選：GMF -20% + steepness +89%。2026-04-07 外部 GMF 確認 |
-| R38v2 的三重修復（warmup + gate + 8px-only）是 seq training 成功的必要條件 | R38 原版（無修復）失敗；三者缺一不可 |
-| 推理量化方式（截斷 vs 四捨五入）對 GMF 有可測量影響 | 修正後 R33 0.8px -1.7%（改善）、R38v2 0.8px +9.3%（退步）；steep edge 對量化更敏感 |
-| COMBO（Winsorize + seq）的 residual_std 是所有候選中最低 | 0.8px inner 2.044（-29% vs R30）；低 residual 讓 GMF edgel detection 更精確 |
-| Winsorize + seq training 可以同時使用且互補 | COMBO 在 0.8px 打敗純 R38v2（0.132 vs 0.134），同時保持 R38v2 的視覺品質 |
-| **Internal step_std 不再適合作為硬門檻**（residual < 2.5 時） | Circle-fit 噪聲地板 ~0.17 px 主導 internal；COMBO internal 0.178 > 門檻 0.168 但 external 0.132 大幅通過。詳見分析報告。 |
-| Circle-fit 精度是目前的量測瓶頸，不是模型品質 | 720-angle 已驗證可改善；weighted fit 可用但不是統一預設 |
-| `center_err` 是目前最有價值的 Tier-2 screening 指標 | 內外部相關分析（Pearson r=0.5399） |
-| 新 Whole-FOV PSF（2026-03-26）是目前物理上較合理的標準 | PSF_POLICY_TRANSITION_R26.md，pure_psf_control 驗證 |
-
-### 已確認被否定的方向
-
-| 結論 | 說明 |
-|------|------|
-| `step_mag < 0.35` downsweep | 無法改善 R26 |
-| `step_mag > 0.35` upper sweep | Round29 確認，`r29_sm042` external 0.8px = 0.21731，不如 R30 |
-| `TTA C2`（Test-Time Augmentation） | `r26_tta_cross5` 在主戰場 0.8px 退步 |
-| `A1 / A5 / S1` side-direction | 均未擊敗 B1 dironly |
-| Round31 B1 hyperparam 微調（全部） | 三個候選外部 0.8px 全部退步（+6.8% ~ +10.5%） |
-| `R32 sandbox r32_real_eq_finetune` | 外部 0.8px 惡化 +97.7%，FAIL |
-
-### 已確認的注意事項（Caution）
-
-| 注意事項 | 原因 |
-|---------|------|
-| Internal gate 是必要條件，不是充分條件 | R32 全過 internal 但 external 大失敗即為反例 |
-| `step_err` 不能單獨預測 external GMF | 相關分析顯示 Pearson r = -0.3251，預測力弱 |
-| `center_err` 雖是目前最佳 Tier-2 predictor，但不能替代 external | Pearson r = 0.5399，樣本 n=5，僅供初篩 |
-| 缺 artifact 的候選不能被硬寫成 external verdict | `r31_eq_combo` 案例：artifact missing ≠ measured regression |
-| External final gate 仍然是 whole-annulus GMF | Sandbox 化不改變這個原則 |
-| 內外部��分布差異可導致 internal pass / external fail | R32 案例；但 R33 證明合理的 loss 調整可以 internal/external 同步改善 |
-| R33 lag-1 autocorrelation 翻轉為負值（-0.55） | 步伐交替震盪模式；step_std 已達標但趨勢形態不同於 R30（+0.27） |
-| R33 視覺銳度退步但 GMF 定位改善 | gradient magnitude -32%、Laplacian -47%、對比度 -24%；更柔的邊界在幀間更一致，GMF 在乎位置穩定而非邊緣銳度 |
+當前已確認的有效方向、被否定方向、與注意事項（caution）以 `PROJECT_STATE.md` §§2-6 與 `ESTIMATOR_POLICY.json` `notes` 欄位為準。本檔只保留方法論層面的穩定規則。
 
 ---
 
@@ -307,46 +237,6 @@ D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_Si
 
 ---
 
-## 真相來源導覽 / Source of Truth Map
+## 真相來源導覽
 
-| 問題 | 去看哪份文件 |
-|------|------------|
-| 我現在要快速接手，先讀什麼？ | `PROJECT_STATE.md` |
-| 現在的數字和結論是什麼？ | `PROJECT_STATE.md` |
-| 穩定架構規則和決策邊界是什麼？ | **這份文件**（`PROJECT_ARCHITECTURE.md`） |
-| 機器可讀的 baseline policy 在哪？ | `ESTIMATOR_POLICY.json` |
-| PSF 政策切換的細節？ | `docs/policy/PSF_POLICY_TRANSITION_R26.md` |
-| 機器可讀的 PSF policy？ | `docs/policy/PSF_STANDARD_POLICY.json` |
-| 完整研究歷史敘事？ | `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` |
-| R32 完整實驗記錄？ | `Experiments/R32Sandbox/README.md` |
-| R26 新 PSF 驗證沙盒現況？ | `Experiments/R26NewPSFCheck/README.md` |
-| 研究路徑圖與里程碑演進？ | `docs/analysis/RESEARCH_PATHS.md` |
-| 完整歷史敘事（策略脈絡）？ | `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` |
-
-### 各文件的責任邊界（白話版）
-
-- **`PROJECT_STATE.md`**：你接手一個 session 時最先讀的。它給你三分鐘的快照——現在 baseline 是誰、最近的 verdict 是什麼、有哪些工作規則不能搞錯。
-
-- **`PROJECT_STATE.md`**：現況細節的完整清單。有表格、有數字、有正式入口路徑。比 session continuity 更完整，但不定義規則。
-
-- **這份文件**：穩定規則層。架構怎麼設計、各層指標的解讀方式、決策條件、已確認的結論清單。不隨 round 進度動，只在重大結構決策改變時更新。
-
-- **`ESTIMATOR_POLICY.json`**：機器可讀的 baseline policy。程式碼引用 baseline 數字時，唯一可信來源。
-
-- **`docs/policy/PSF_POLICY_TRANSITION_R26.md`**：PSF 政策切換的正式記錄（2026-03-27）。說明為什麼切換、如何切換、舊 baseline 的定位。
-
----
-
-## 目前穩定判讀摘要 / Current Stable-Rule Reading
-
-截至 2026-04-09，穩定規則層的判讀如下：
-
-1. `COMBO / r38v2_8px_gate_p95` 是唯一 formal production baseline
-2. `R33` 與 `R38v2` 是 approved alternates，不是 pending promotion
-3. `Round30 / r30_b1_dironly` 是歷史前任 baseline
-4. `R32 real_eq` 已 externally falsified，**不應再被描述成 promising line**
-5. R26 的 PSF 正式標準已切換為新 Whole-FOV PSF（current standard），`R26NewPSFCheck` 只保留為 open side track
-6. 若要挑戰 baseline，必須：新機制或新部署需求 + external final gate 明確勝出
-7. 已否定的方向（step_mag sweep、TTA C2、A1/A5/S1、R31/R32 當前線）不應重開
-
-The stable rules as of 2026-04-09: COMBO is the only formal production baseline; R33 and R38v2 are approved alternates; Round30 is the former baseline; R32 real_eq is externally falsified; the new Whole-FOV PSF remains the current standard while R26NewPSFCheck is only an open side track; any future challenger must justify itself with a new mechanism or deployment-specific need and still clear the external final gate.
+見 `docs/README.md` 與 `docs/operations/PROJECT_CONTROL_CENTER.md`。
