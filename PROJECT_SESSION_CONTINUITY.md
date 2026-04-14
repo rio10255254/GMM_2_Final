@@ -29,6 +29,8 @@ Recommended fixed read order:
 3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
 4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
+整體掌控與總體巡檢請使用 `python Tools/project_control_center.py`；它是官方控制入口，但不是新的 truth plane。
+
 ## Handoff Snapshot / 交接快照
 
 - formal production baseline / 正式 production baseline: **`COMBO / r38v2_8px_gate_p95`**（effective 2026-04-08）
@@ -52,7 +54,7 @@ Recommended fixed read order:
 - closed lines / 已關閉主線:
   `Round31` no upgrade, `Round32` external FAIL
 - tracked legacy bridge copy / 已追蹤 legacy bridge 副本:
-  `docs/runtime/legacy/root_status/000_LONGRUN_ROUND32_STATUS.*`
+  `docs/archive/legacy_runtime_status/000_LONGRUN_ROUND32_STATUS.*`
 
 ## Conversation-Safe Verdict / 可安全沿用於對話的結論
 
@@ -97,8 +99,8 @@ When a new assistant or agent takes over, follow these rules first:
    Treat the repository’s formal docs as the source of truth, not internal `.codex` session files.
 3. root prose 的 current state 以 **COMBO + two approved alternates** 為主，不要再把 `R26NewPSFCheck` 描述成 active mainline
    Root prose current-state docs should center on **COMBO + two approved alternates**, not `R26NewPSFCheck` as an active mainline.
-4. tracked 的 legacy root status 快照放在 `docs/runtime/legacy/root_status/`；若 root 再出現 `000_LONGRUN_*`，視為本地 runtime 輸出  
-   Tracked legacy root-status snapshots live under `docs/runtime/legacy/root_status/`; if `000_LONGRUN_*` reappears at the root, treat it as local runtime output.
+4. tracked 的 legacy root status 快照已封存到 `docs/archive/legacy_runtime_status/`；若 root 再出現 `000_LONGRUN_*`，視為本地 runtime 輸出  
+   Tracked legacy root-status snapshots now live under `docs/archive/legacy_runtime_status/`; if `000_LONGRUN_*` reappears at the root, treat it as local runtime output.
 5. baseline、verdict、alternate taxonomy 有變時，優先回寫這份文件、`PROJECT_CURRENT_STATE.md`、與 `ESTIMATOR_POLICY.json`
    When the baseline, verdict, or alternate taxonomy changes, update this file, `PROJECT_CURRENT_STATE.md`, and `ESTIMATOR_POLICY.json` first.
 6. 當某條線被正式關閉或被降級為 side track 後，不要再用 active / promising line 的語言描述它

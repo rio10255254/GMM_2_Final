@@ -83,14 +83,16 @@ The repository root is intentionally kept as an entry surface rather than a docu
   - 小型正式證據副本與 evidence chain
 - `docs/policy/`
   - 正式政策文件，如 PSF 政策切換說明與機器可讀 PSF policy
+- `docs/archive/legacy_runtime_status/`
+  - archived legacy root runtime status snapshots
 - `docs/runtime/legacy/`
-  - legacy root runtime status 的 curated tracked copies
+  - relocation note for the retired legacy runtime location
 
 如果舊 launcher 在 root 再生成 `000_LONGRUN_*`，請把它們當作本地執行輸出，不要當成 canonical tracked docs。  
 If older launchers recreate `000_LONGRUN_*` files at the repository root, treat them as local execution outputs only.
 
-Git-tracked 版本放在 `docs/runtime/legacy/root_status/`。  
-The Git-tracked copies live under `docs/runtime/legacy/root_status/`.
+Git-tracked 版本已封存到 `docs/archive/legacy_runtime_status/`。  
+The Git-tracked copies now live under `docs/archive/legacy_runtime_status/`.
 
 ## Branch Taxonomy / 分支分類
 

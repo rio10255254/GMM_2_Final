@@ -3,6 +3,8 @@ Last updated: 2026-04-09 (COMBO promoted to formal baseline)
 
 Cross-interface entry / 跨入口入口：`PROJECT_SESSION_CONTINUITY.md`
 
+專案控制與整體巡檢請使用 `python Tools/project_control_center.py`；它是官方控制入口，但不是新的真相來源。
+
 ## 1. Current Formal Baseline / 目前正式 baseline
 
 目前正式 baseline：**COMBO / `r38v2_8px_gate_p95`**

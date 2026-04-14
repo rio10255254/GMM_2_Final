@@ -26,6 +26,7 @@ This file clarifies the responsibility boundaries between the canonical docs, sa
 - `docs/evidence/README.md` — 精選實驗證據層入口
 - `docs/policy/PSF_POLICY_TRANSITION_R26.md` — PSF 政策切換（2026-03-27）
 - `docs/policy/PSF_STANDARD_POLICY.json` — 機器可讀 PSF policy
+- `docs/index/PROJECT_CONTROL_CENTER.md` — 官方控制入口說明
 - `docs/index/PROJECT_DOCUMENT_INDEX.md` — 本文件
 - `docs/index/NEW_EXPERIMENT_SOP.md` — 新增實驗操作清單
 - `docs/index/NAMING_CONVENTIONS.md` — 命名規範（實驗目錄、報告檔名、分支命名）
@@ -77,6 +78,11 @@ This file clarifies the responsibility boundaries between the canonical docs, sa
 
 - `ESTIMATOR_POLICY.json` — machine-readable decision control plane（formal baseline、approved alternates、side tracks、measurement policy）
 - `docs/policy/PSF_STANDARD_POLICY.json` — PSF 政策
+
+## Official Control Entry / 官方控制入口
+
+- `python Tools/project_control_center.py` — 專案控制、總體巡檢、風險與入口總覽
+- `docs/index/PROJECT_CONTROL_CENTER.md` — 人讀導覽頁
 
 ## Evidence Surface / 證據文件層
 

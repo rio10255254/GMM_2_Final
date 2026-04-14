@@ -3,6 +3,8 @@
 這份文件是整個專案的**入口總覽**。如果你是第一次接觸這個專案，從這裡開始讀。
 This is the top-level overview for the project. If you are new, start here.
 
+專案控制與整體巡檢請使用 `python Tools/project_control_center.py`；它是官方控制入口，但不是新的真相來源。
+
 ---
 
 ## 目錄 / Table of Contents
@@ -478,8 +480,10 @@ docs\
 ├── index\
 │   ├── PROJECT_DOCUMENT_INDEX.md      ← 文件責任邊界與導航
 │   └── NEW_EXPERIMENT_SOP.md          ← 新實驗標準流程
+├── archive\
+│   └── legacy_runtime_status\         ← 已封存的 legacy root 狀態快照
 └── runtime\legacy\
-    └── root_status\                   ← 已追蹤的 legacy root 狀態快照
+    └── README.md                      ← 舊位置搬遷說明
 ```
 
 | 路徑 | 用途 |
@@ -489,7 +493,8 @@ docs\
 | `docs/history/` | 完整歷史敘事，不需要每次都看 |
 | `docs/index/` | 文件責任邊界與新實驗 SOP |
 | `docs/policy/` | 正式政策文件（PSF 政策切換等） |
-| `docs/runtime/legacy/` | 已追蹤的 legacy root status 快照，不是 canonical runtime truth |
+| `docs/archive/legacy_runtime_status/` | 已封存的 legacy root status 快照，不是 canonical runtime truth |
+| `docs/runtime/legacy/` | 舊位置搬遷說明，不再存放 tracked root-status 快照 |
 
 ---
 
@@ -504,7 +509,7 @@ When a new assistant or agent takes over, follow these rules:
 2. **不要把 live process 狀態手抄回 root prose**
    closed sandbox runtime 真相看 `Experiments\R32Sandbox\runtime\R32_STATUS.md`；open side track 則看 `Experiments\R26NewPSFCheck\`。
 
-3. **legacy root status 快照在 `docs/runtime/legacy/root_status/`**
+3. **legacy root status 快照已封存到 `docs/archive/legacy_runtime_status/`**
    若 root 再出現 `000_LONGRUN_*`，視為本地 runtime 輸出，不是 canonical docs。
 
 4. **baseline / verdict 有變時，優先更新 `PROJECT_CURRENT_STATE.md` 與 `PROJECT_SESSION_CONTINUITY.md`**
