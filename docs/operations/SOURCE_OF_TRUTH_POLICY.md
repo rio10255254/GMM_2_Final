@@ -68,8 +68,7 @@ Last updated: 2026-04-08
 | 文件 | 角色 | 編輯規則 |
 |------|------|---------|
 | `ESTIMATOR_POLICY.json` | Machine-readable baseline truth | 直接編輯 |
-| `PROJECT_STATE.md` | Human-readable current state | 直接編輯 |
-| `PROJECT_STATE.md` | Cross-session handoff | 直接編輯 |
+| `PROJECT_STATE.md` | Human-readable current state + Quick Handoff（短讀區 ≤ 60 行由 CI lint 守門）| 直接編輯 |
 | `PROJECT_ARCHITECTURE.md` | Stable rules | 直接編輯 |
 | `docs/analysis/RESEARCH_PATHS.md` | Research path visualization | 直接編輯 |
 | `docs/evidence/EVIDENCE_MAP.md` | Evidence chain index | 直接編輯（它是索引，不是內容） |

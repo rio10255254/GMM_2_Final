@@ -11,7 +11,7 @@ Last updated: 2026-04-09
 4. PSF（點擴散函數）在整個系統中扮演什麼角色？架構邊界怎麼劃分？
 5. 什麼情況下才值得立新 round？升級 baseline 需要滿足哪些條件？
 
-**這份文件不負責的事**：展開當前 round 的逐步進度、記錄即時執行狀態、或作為跨入口交接用途。那些事分別由 `PROJECT_STATE.md` 和 `PROJECT_STATE.md` 負責。
+**這份文件不負責的事**：展開當前 round 的逐步進度、記錄即時執行狀態、或作為跨入口交接用途。那些事由 `PROJECT_STATE.md`（含 Quick Handoff 區與 Full Current State 區）負責。
 
 This document records **stable architectural design and decision rules**. It answers five core questions: what the true system goal is; how external truth relates to internal surrogates; what the current baseline policy is; what role PSF plays and where the architecture boundaries are; and when a new round is worth starting or a baseline is worth promoting.
 

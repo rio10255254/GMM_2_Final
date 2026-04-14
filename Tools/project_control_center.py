@@ -28,6 +28,7 @@ DOCS_SCAN_PATHS = [
     REPO / "PROJECT_STATE.md",
     REPO / "README.md",
     REPO / "REPO_GOVERNANCE.md",
+    REPO / "docs" / "README.md",
     REPO / "docs" / "operations" / "SOURCE_OF_TRUTH_POLICY.md",
 ]
 CORE_DOC_PATHS = [

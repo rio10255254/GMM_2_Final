@@ -64,6 +64,7 @@ LEGACY_RUNTIME_FORMAL_DOCS = [
     "PROJECT_STATE.md",
     "README.md",
     "REPO_GOVERNANCE.md",
+    "docs/README.md",
     "docs/operations/SOURCE_OF_TRUTH_POLICY.md",
 ]
 REQUIRED_TRUTH_PLANE_KEYS = {

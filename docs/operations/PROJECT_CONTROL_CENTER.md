@@ -20,7 +20,7 @@ It does not create a new truth plane. It organizes the existing truth, architect
 - 它不是新的真相來源
 - 它不取代 `ESTIMATOR_POLICY.json`
 - 它不取代 `PROJECT_STATE.md`
-- 它不取代 `PROJECT_STATE.md`
+- 它不取代 `PROJECT_ARCHITECTURE.md`
 - 它不直接啟動訓練、推論或實驗
 
 ## 怎麼用 / How To Use It

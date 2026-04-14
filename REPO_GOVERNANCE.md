@@ -252,16 +252,16 @@ Do not push day-to-day runtime log spam, watcher output, or temporary execution 
 
 ## Update Rules / 更新規則
 
-當 project truth 有變時：  
+當 project truth 有變時：
 When project truth changes:
 
-1. 更新 `PROJECT_STATE.md`（若 handoff truth 改變）  
-   update `PROJECT_STATE.md` if cross-interface handoff truth changed
-2. 更新 `PROJECT_STATE.md`（若 current truth 或 next decision boundary 改變）  
-   update `PROJECT_STATE.md` if current truth or the next decision boundary changed
-3. 更新 `PROJECT_ARCHITECTURE.md`（若穩定規則改變）  
+1. 更新 `PROJECT_STATE.md`（包含 Quick Handoff 區與 Full Current State 區；handoff / current truth / next decision boundary 皆在此）
+   update `PROJECT_STATE.md` (covers both Quick Handoff and Full Current State — handoff, current truth, and next decision boundary all live here)
+2. 更新 `PROJECT_ARCHITECTURE.md`（若穩定規則改變）
    update `PROJECT_ARCHITECTURE.md` if stable rules changed
-4. 更新這份文件（若 tracked surface 或 branch taxonomy 改變）  
+3. 更新 `ESTIMATOR_POLICY.json`（若 formal baseline / alternates / closed lines 清單改變）
+   update `ESTIMATOR_POLICY.json` if the formal baseline / alternates / closed-lines taxonomy changed
+4. 更新這份文件（若 tracked surface 或 branch taxonomy 改變）
    update this file if the tracked surface or branch taxonomy changed
 
 ## GitHub Governance Surface / GitHub 端治理介面
