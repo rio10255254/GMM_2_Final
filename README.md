@@ -11,15 +11,11 @@ This is the top-level overview for the project. If you are new, start here.
 
 1. [專案是在做什麼 / What This Project Does](#專案是在做什麼--what-this-project-does)
 2. [核心名詞速查 / Key Terminology](#核心名詞速查--key-terminology)
-3. [目前狀態快照 / Current Status Snapshot](#目前狀態快照--current-status-snapshot)
-4. [完整文件閱讀順序 / Canonical Reading Order](#完整文件閱讀順序--canonical-reading-order)
+3. [目前 Baseline / Current Baseline](#目前-baseline--current-baseline)
+4. [閱讀順序 / Reading Order](#閱讀順序--reading-order)
 5. [目錄結構 / Directory Structure](#目錄結構--directory-structure)
 6. [系統整體流程 / System Pipeline Overview](#系統整體流程--system-pipeline-overview)
-7. [研究歷程圖 / Research Path Overview](#研究歷程圖--research-path-overview)
-8. [升級 baseline 的條件 / Baseline Promotion Rules](#升級-baseline-的條件--baseline-promotion-rules)
-9. [分支策略 / Branch Strategy](#分支策略--branch-strategy)
-10. [文件同步政策 / Sync Policy](#文件同步政策--sync-policy)
-11. [文件導覽 / Docs Navigation](#文件導覽--docs-navigation)
+7. [延伸連結 / More Docs](#延伸連結--more-docs)
 
 ---
 
@@ -67,79 +63,22 @@ Key performance metrics (all from the external GMF evaluator):
 
 ---
 
-## 目前狀態快照 / Current Status Snapshot
+## 目前 Baseline / Current Baseline
 
-> 以下數字為截至 2026-04-09 的最新狀態。詳細資料請看 `PROJECT_STATE.md`。
-> Numbers below are current as of 2026-04-09. For full detail, see `PROJECT_STATE.md`.
-
-### 正式 Baseline / Production Baseline
-
-**`COMBO / r38v2_8px_gate_p95`** — 正式 production baseline（effective 2026-04-08）
-
-| 指標 / Metric | COMBO baseline | R33（GMF extreme alternate） | R38v2（visual priority alternate） | R30 former baseline |
-|--------------|----------------|------------------------------|-----------------------------------|---------------------|
-| external `0.8px` step std | **`0.132`** | **`0.119`** (-9.5% vs COMBO) | `0.134` (+2.0% vs COMBO) | `0.168` (+27.6% vs COMBO) |
-| external `8px` step std | `0.155` | `0.153` | **`0.144`** | `0.205` |
-| external `0.08px` step std | `0.100` | **`0.086`** | `0.106` | `0.158` |
-| Edge steepness (vs R30) | **+89%** | -22% | **+89%** | baseline |
-| Contrast std (vs R30) | **-7%** | -24% | -11% | baseline |
-| Residual_std (0.8px inner) | **2.04** | 2.68 | 3.19 | 2.89 |
-
-### 研究歷程最新結論 / Latest Research Verdicts
-
-| Round | 結論 / Verdict |
-|-------|---------------|
-| **COMBO** | ✅ **正式 production baseline**；最均衡的外部 GMF / 視覺 / residual 組合 |
-| **R30** | ✅ **歷史前任 baseline**；B1 dironly 機制首次在主戰場超越 R26 |
-| **R31** | ❌ B1 hyperparam 微調三個候選均外部退步 |
-| **R32** | ❌ domain rebalancing 外部 `0.8px` 退步 +97.7% |
-| **R33** | ✅ **GMF extreme alternate**：Winsorize spatial loss → 0.8px -30%，但視覺銳度 -22% |
-| R34/R35/R37 | ❌ 三輪嘗試恢復銳度全部失敗（freq-split / alpha-boost / freq-reg） |
-| **R38v2** | ✅ **visual priority alternate**：Seq training (8px-only + signal gate + warmup) → 0.8px -20% + steepness +89% |
-
-### 正式 baseline 與特化候選 / Formal Baseline and Approved Alternates
-
-**COMBO r38v2_8px_gate_p95**（正式 baseline）：0.8px **-22%**，steepness **+89%**，residual_std **歷史最佳**（-29% vs R30）。預設推薦線。
-
-**R33 p95**（GMF extreme alternate）：0.8px **-29%**，但視覺銳度退步 22%。適合純 GMF 定位場景。
-
-**R38v2 8px_gate**（visual priority alternate）：0.8px -20%，steepness **+89%**。適合需要人眼判讀的場景。
-
-完整實驗系列報告：`Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
-
-### 下一個決策邊界 / Next Decision Boundary
-
-三候選 promotion 已完成。下一個決策邊界不再是「誰升級 baseline」，而是：
-
-- 是否有**新機制**值得立新 round
-- 是否有**deployment-specific 需求**，足以偏向 `R33` 或 `R38v2`
-- 是否需要在 formal baseline 之外建立新的特化部署面
-
-重要發現：
-- internal step_std 在低 residual regime 已是 **advisory-only**
-- 720-angle unweighted fit 已驗證可降低 internal/external gap
-- weighted fit 可用，但不是統一預設
+Formal production baseline: **COMBO / r38v2_8px_gate_p95** (effective 2026-04-08).
+Round30 is the historical former baseline (歷史前任 baseline).
+See `PROJECT_STATE.md` for full current state, numbers, and working rules.
 
 ---
 
-## 完整文件閱讀順序 / Canonical Reading Order
+## 閱讀順序 / Reading Order
 
-接手時依這個順序讀，可以在最短時間內建立完整上下文：
-Read in this order when taking over the project:
+從 `PROJECT_STATE.md` 開始（前 50 行 Quick Handoff 區 3 分鐘讀完）。完整文件責任邊界與延伸文件見 `docs/README.md`。
 
-| 步驟 | 文件 | 目的 |
-|------|------|------|
-| 1 | `PROJECT_STATE.md` | 跨入口 handoff，三分鐘掌握目前狀況 / Cross-interface handoff in 3 minutes |
-| 3 | `PROJECT_ARCHITECTURE.md` | 穩定架構規則、決策邊界 / Stable rules and decision boundaries |
-| 4 | `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` | 只有需要完整歷史時再看 / Only if you need the full historical narrative |
-
-快速索引：
-
-- 想快速接手 → `PROJECT_STATE.md`
-- 想知道現在數字 → `PROJECT_STATE.md`
-- 想知道穩定規則 → `PROJECT_ARCHITECTURE.md`
-- 機器可讀 decision control plane → `ESTIMATOR_POLICY.json`
-- 補完整歷史 → `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
+- 想看現況 / 接手 → `PROJECT_STATE.md`
+- 想看穩定規則 → `PROJECT_ARCHITECTURE.md`
+- 機器可讀 decision truth → `ESTIMATOR_POLICY.json`
+- 完整歷史敘事 → `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
 ---
 
@@ -149,9 +88,8 @@ Read in this order when taking over the project:
 D:\GMM_2_Final\
 │
 ├── README.md                          ← 你現在在看這份（入口總覽）
-├── PROJECT_STATE.md      ← 跨入口 handoff 文件
-├── PROJECT_STATE.md           ← 目前狀態與最新數字
-├── PROJECT_ARCHITECTURE.md  ← 穩定架構與決策規則
+├── PROJECT_STATE.md                   ← 現況 + handoff + working rules
+├── PROJECT_ARCHITECTURE.md            ← 穩定架構與決策規則
 ├── ESTIMATOR_POLICY.json              ← 機器可讀 decision control plane
 ├── REPO_GOVERNANCE.md                 ← Git/GitHub 治理規則
 ├── CONTRIBUTING.md                    ← 貢獻指南
@@ -163,67 +101,36 @@ D:\GMM_2_Final\
 │   ├── GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py     ← 模型定義
 │   ├── GeoEdgeAlignSR_v1_Train_*.py               ← 訓練入口
 │   ├── GeoEdgeAlignSR_v1_Infer_*.py               ← 推論入口
-│   ├── GeoEdgeAlignSR_v1_AutoTuneTrain.py         ← 超參數自動掃描
-│   ├── GeoEdgeAlignSR_v1_ExternalGMF*.py          ← 外部 GMF 比較腳本群
-│   ├── GeoEdgeAlignSR_v1_ProcessProbeAudit.py     ← 內部探針稽核
-│   ├── GeoEdgeAlignSR_v1_Utils.py                 ← 工具函式庫
-│   └── Test_Image/                                ← 單張快速測試圖
+│   └── ... (training / audit / external compare scripts)
 │
 ├── PSF_Fitting/                       ← PSF 擬合流程（MATLAB）
 │   ├── README.md                      ← PSF 模組完整說明
-│   ├── HDR_fitting_2D.m               ← 單張影像 PSF 擬合
-│   ├── HDR_fitting_2D_WholeFOV.m      ← 全 FOV 批次 PSF 擬合（推薦正式入口）
-│   ├── HDR_fitting_2D_WholeFOV_impl.m ← 正式版核心實作
-│   ├── visualize_fitted_psf_grid.m    ← PSF grid 視覺化輔助
-│   ├── SimulatePSF/                   ← 理論 PSF 模擬（Gibson-Lanni 模型）
-│   ├── Crop_circle_FreqFiltered/      ← 全 FOV 批次擬合輸入影像與輸出
-│   │   └── Fits/                      ← ★ 正式 PSF 輸出（PSF_fitted_2D_FOVstack.mat）
-│   ├── SingleImage_Input/             ← 單張版擬合輸入
-│   ├── Deconvolution/                 ← Wiener 反捲積驗證
-│   ├── PSF_Report_Helper/             ← 報告輔助工具
-│   ├── PSF_Fitting_ValidationLab/     ← Whole-FOV 修正驗證歷史
-│   ├── tests/                         ← MATLAB/Python 測試集中區
-│   └── legacy/                        ← 舊版主程式封存
+│   ├── HDR_fitting_2D_WholeFOV.m      ← 全 FOV 批次 PSF 擬合（正式入口）
+│   └── Crop_circle_FreqFiltered/Fits/ ← 正式 PSF 輸出
 │
-├── Tools/                             ← 執行輔助腳本（PowerShell）
+├── Tools/                             ← 控制中心 + 驗證腳本
+│   ├── project_control_center.py      ← 官方控制入口
+│   └── validate_project_structure.py  ← 結構驗證
 │
-├── AnalysisLab/                       ← 常駐分析資料入口（版本優先；single_image / sequence）
-│   ├── README.md
-│   └── r26/
+├── AnalysisLab/                       ← 常駐分析資料入口
 │
 ├── Experiments/                       ← 獨立實驗與正式候選 surface
 │   ├── R33RobustLoss/                 ← GMF extreme alternate
 │   ├── R38v2SeqFixed/                 ← formal baseline（COMBO）+ visual priority alternate
-│   ├── R32Sandbox/                    ← Round32 隔離沙盒（external FAIL，已關閉）
-│   │   ├── README.md
-│   │   ├── Model/                     ← R32 專用訓練/稽核腳本
-│   │   ├── Tools/                     ← R32 專用啟動腳本
-│   │   ├── runtime/                   ← 即時執行狀態（R32_STATUS.md/.json）
-│   │   ├── artifacts/                 ← 訓練輸出（.gitignore 追蹤）
-│   │   ├── reports/                   ← 稽核報告與決策備忘
-│   │   └── external_compare/          ← 外部比較中間產物
-│   │
-│   └── R26NewPSFCheck/                ← open PSF side track（pending external GMF）
-│       ├── README.md
-│       └── ...
+│   ├── R32Sandbox/                    ← Round32 隔離沙盒（已關閉）
+│   └── R26NewPSFCheck/                ← open PSF side track
 │
 ├── Training_Data/                     ← 訓練資料（不追蹤）
-│   ├── tra_src_ring/                  ← 輸入影像（量測圖）
-│   └── tra_lbl_ring/                  ← Ground Truth 影像
-│
 ├── Traing_Progress/                   ← 訓練輸出（不追蹤；注意拼字）
-│   └── organized_20260316/            ← 整理後的 round 選取記錄
 │
-├── docs/                              ← 研究文件與證據庫
-│   ├── README.md
-│   ├── analysis/                      ← 研究路徑圖、決策總覽
-│   ├── evidence/                      ← 精選正式證據副本
+├── docs/                              ← 研究文件、證據、政策、歷史
+│   ├── README.md                      ← docs 區入口
+│   ├── operations/                    ← 操作指引（新實驗 SOP、quirks、治理）
+│   ├── analysis/                      ← 研究路徑圖
+│   ├── evidence/                      ← 策展後的證據引用錨點
 │   ├── history/                       ← 完整歷史敘事
-│   ├── index/                         ← 文件責任邊界與導航索引
-│   ├── policy/                        ← 正式政策文件（PSF policy 等）
-│   │   ├── PSF_POLICY_TRANSITION_R26.md  ← R26 PSF 政策切換說明（2026-03-27）
-│   │   └── PSF_STANDARD_POLICY.json      ← 機器可讀 PSF policy
-│   └── runtime/legacy/                ← 已追蹤的 legacy root status 快照
+│   ├── policy/                        ← 正式政策（PSF 等）
+│   └── archive/                       ← 封存內容
 │
 └── _deployment_package/               ← R26 正式交付封包（不追蹤）
 ```
@@ -294,226 +201,16 @@ The system has three interlocking modules:
 
 ---
 
-## 研究歷程圖 / Research Path Overview
+## 延伸連結 / More Docs
 
-完整圖請看 `docs/analysis/RESEARCH_PATHS.md`。
-See `docs/analysis/RESEARCH_PATHS.md` for the fuller research-path map.
-
-以下是從 R26 基準線到目前狀態的最短路徑：
-Below is the shortest path from the R26 baseline to the current state:
-
-```mermaid
-flowchart TD
-    R26["R26 / r26_sm035
-    step_mag=0.35 generic optimum
-    external 0.8px = 0.1913"]
-
-    R29["R29 / step_mag upper sweep
-    r29_sm042 → FAIL
-    external 0.8px = 0.2173 ↑"]
-
-    R30["Round30 / r30_b1_dironly
-    former baseline
-    external 0.8px = 0.1679"]
-
-    R31["Round31 / B1 hyperparam tuning
-    3 candidates → all FAIL
-    external 0.8px > 0.179 ↑"]
-
-    R32["R32 Sandbox
-    r32_real_eq_finetune → external FAIL
-    external 0.8px = 0.3318 (+97.7%)"]
-
-    R26PSF["R26NewPSFCheck 🔬
-    open side track
-    新 Whole-FOV PSF 重訓驗證
-    pending external GMF"]
-
-    COMBO["COMBO ✅
-    FORMAL PRODUCTION BASELINE
-    external 0.8px = 0.1316"]
-
-    NEXT["下一步 / Next
-    只有新機制或 deployment-specific 需求
-    才值得再開新 round"]
-
-    R26 --> R30
-    R26 --> R29
-    R29 -- falsified --> R30
-    R30 --> R31
-    R31 -- all fail --> R30
-    R30 --> R32
-    R32 -- external FAIL --> NEXT
-    R30 --> COMBO
-    R26 --> R26PSF
-    COMBO --> NEXT
-```
-
-### 已確認有效的方向 / Confirmed Effective
-
-- `pairmix_algblend`（`0.8px` 主戰場 estimator）→ R25/26/30 外部驗證支持
-- `B1 dironly` 機制 → Round30 外部驗證支持
-- `center_err` 作為 Tier-2 screening 指標（不能取代外部驗收）
-
-### 已確認失敗的方向 / Confirmed Falsified
-
-- `step_mag < 0.35` downsweep
-- `step_mag > 0.35` upper sweep（R29）
-- TTA C2（`r26_tta_cross5`）
-- A1 / A5 / S1 side-directions
-- Round31 B1 hyperparam 微調（全部外部退步）
-- Round32 real_eq finetune（外部主戰場 +97.7%）
-
----
-
-## 升級 Baseline 的條件 / Baseline Promotion Rules
-
-只有**同時**滿足以下四個條件，才能把新候選升級為 production baseline：
-All four conditions must be met simultaneously to promote a new candidate:
-
-1. **Internal calibrated gate 通過**
-   `pairmix_algblend` 探針 `mid_center ratio > 0.25` 且 `mid_step < 0.45`；
-   `edge_band_refine` 探針 `macro_step < 0.2995` 且 `macro_seq_sign > 0.7559`
-
-2. **External `0.8px step std < 0.131560`**（當前 formal baseline 硬邊界）
-   在主戰場明確擊敗 COMBO，或在 deployment-specific 條件下提出明確 alternate-selection 理由
-
-3. **`8px` macro guard 不明顯退步**
-   大尺度穩定性不能為了換主戰場而犧牲
-
-4. **若 side-scale 有 trade-off，必須有明確工程理由**
-   `0.08px` 改善不能補償主戰場退步
-
-### 何時值得開新 Round / When to Start a New Round
-
-**值得開的情況**：
-- 有一個與現有失敗分支不同的新機制假說
-- 在已成功主線上做可驗證、成本合理的微調
-- 比較對象明確包含現 baseline
-
-**不應再開的情況**：
-- 重掃已否定的 `step_mag` 範圍
-- 重開 Round23/24 型 fine-tune abs/anchor branch
-- 只靠 internal gate 預設 external 會變好
-
----
-
-## 分支策略 / Branch Strategy
-
-```
-main
- └── 當前整理後的 shared mainline
-
-baseline/*
- └── 已核准的 baseline 里程碑（受保護的 reference namespace，不是日常開發分支）
-
-reconstructed/*
- └── 建立在 curated import 之上的 evidence-backed governance/reference branches
-
-research/*
- └── 新研究與策略嘗試的主要分支類型
-
-sandbox/*
- └── 已隔離的實驗面（例如 R32Sandbox）
-
-codex/*
- └── AI agent 工作分支
-```
-
-**重建規則**：
-- reconstructed branch 必須明確標示為 reconstructed（不是原始歷史快照）
-- 本 repo 不偽造不存在的原始 git 歷史
-- 新研究工作預設使用 `research/*` 或 `sandbox/*`
-
-詳見 `REPO_GOVERNANCE.md` 與 `docs/index/PROJECT_DOCUMENT_INDEX.md`。
-See `REPO_GOVERNANCE.md` and `docs/index/PROJECT_DOCUMENT_INDEX.md` for the fuller governance map.
+| 主題 | 去哪看 |
+|------|--------|
+| 研究歷程圖 / research path map | `docs/analysis/RESEARCH_PATHS.md` |
+| 升級 baseline 條件、新 round 立案規則 | `PROJECT_ARCHITECTURE.md` |
+| 分支策略、同步政策、追蹤範圍 | `REPO_GOVERNANCE.md` |
+| 文件責任邊界、docs 區導覽 | `docs/README.md` |
+| 開新實驗完整指南（命名 / 模板 / SOP） | `docs/operations/STARTING_NEW_EXPERIMENT.md` |
+| AI agent 行為契約 | `CLAUDE.md` / `AGENTS.md` |
+| 整體巡檢（控制中心）| `python Tools/project_control_center.py` |
 
 GitHub 研究控制台：`https://github.com/users/rio10255254/projects/1`
-新實驗單頁 SOP：`docs/index/NEW_EXPERIMENT_SOP.md`
-證據鏈：`docs/evidence/EVIDENCE_MAP.md`
-
----
-
-## 文件同步政策 / Sync Policy
-
-這個 GitHub 倉庫是**研究程式碼與正式文件的治理面**，不是磁碟內容的完整鏡像。
-This repository is the governance surface for research code and formal documentation — not a full disk mirror.
-
-### 應該同步 / Should Sync
-
-- 原始碼（`Model/`、`Tools/`、`PSF_Fitting/`、`Experiments/*/Model/`）
-- root canonical docs 與 policy 檔（`PROJECT_*.md`、`ESTIMATOR_POLICY.json`、`REPO_GOVERNANCE.md`）
-- 重大 branch 建立與治理調整
-- baseline / verdict / active direction 變更
-- `docs/` 內的導航、歷史、分析、證據層、curated legacy copies
-- 小型、可核對的 canonical sample fixtures（如 `Model/Test_Image/VisionTop_*.bmp`）
-
-### 不應同步 / Should Not Sync
-
-- `Traing_Progress/`（訓練輸出）
-- `Training_Data/`（訓練資料）
-- `_deployment_package/`（交付封包）
-- `weights/`、`artifacts/`、`logs/`、`reconstructions/`、`gmf_results/` 等 bulk 子目錄
-- root 再生成的 `000_LONGRUN_*` runtime outputs
-
----
-
-## 文件導覽 / Docs Navigation
-
-```text
-docs\
-├── README.md
-├── analysis\
-│   └── RESEARCH_PATHS.md              ← 完整研究路徑圖
-├── evidence\
-│   ├── README.md
-│   ├── EVIDENCE_MAP.md                ← 哪份證據支撐哪個結論
-│   ├── baseline\                      ← baseline 正式證據
-│   ├── historical_baselines\
-│   ├── falsified\                     ← 被否定的方向證據
-│   ├── side_directions\
-│   ├── analysis\
-│   └── runtime\
-├── history\
-│   └── PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md
-├── index\
-│   ├── PROJECT_DOCUMENT_INDEX.md      ← 文件責任邊界與導航
-│   └── NEW_EXPERIMENT_SOP.md          ← 新實驗標準流程
-├── archive\
-│   └── legacy_runtime_status\         ← 已封存的 legacy root 狀態快照
-└── runtime\legacy\
-    └── README.md                      ← 舊位置搬遷說明
-```
-
-| 路徑 | 用途 |
-|------|------|
-| `docs/analysis/` | 研究路徑圖、GitHub 可視化入口 |
-| `docs/evidence/` | 小型正式證據層，可核對、可引用 |
-| `docs/history/` | 完整歷史敘事，不需要每次都看 |
-| `docs/index/` | 文件責任邊界與新實驗 SOP |
-| `docs/policy/` | 正式政策文件（PSF 政策切換等） |
-| `docs/archive/legacy_runtime_status/` | 已封存的 legacy root status 快照，不是 canonical runtime truth |
-| `docs/runtime/legacy/` | 舊位置搬遷說明，不再存放 tracked root-status 快照 |
-
----
-
-## 工作流程規則 / Operating Rules
-
-新接手的 assistant / agent 請遵守：
-When a new assistant or agent takes over, follow these rules:
-
-1. **先讀 `PROJECT_STATE.md`**
-   以 repo 正式文件為準，不以 `.codex` 或 `.claude` 內部 session 檔為準。
-
-2. **不要把 live process 狀態手抄回 root prose**
-   closed sandbox runtime 真相看 `Experiments\R32Sandbox\runtime\R32_STATUS.md`；open side track 則看 `Experiments\R26NewPSFCheck\`。
-
-3. **legacy root status 快照已封存到 `docs/archive/legacy_runtime_status/`**
-   若 root 再出現 `000_LONGRUN_*`，視為本地 runtime 輸出，不是 canonical docs。
-
-4. **baseline / verdict 有變時，優先更新 `PROJECT_STATE.md`**
-
-5. **已 external FAIL 的候選不能再被描述成 current promising line**
-   `r32_real_eq_finetune` 已是 externally falsified experimental branch。
-
-6. **機器可讀 decision truth 唯一來源是 `ESTIMATOR_POLICY.json`**
