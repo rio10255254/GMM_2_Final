@@ -365,6 +365,48 @@ def check_legacy_runtime_archive_paths():
             )
 
 
+QUICK_HANDOFF_MAX_LINES = 60
+
+
+def check_quick_handoff_length():
+    """Enforce PROJECT_STATE.md Quick Handoff region <= 60 interior lines.
+
+    Reads the file at REPO / 'PROJECT_STATE.md', locates the
+    <!-- QUICK_HANDOFF_START --> and <!-- QUICK_HANDOFF_END --> markers, and
+    errors if the number of lines strictly between the markers exceeds
+    QUICK_HANDOFF_MAX_LINES. This is the machine-enforced short-read contract.
+    """
+    print("=== Check 10: PROJECT_STATE Quick Handoff region length ===")
+    state_path = REPO / "PROJECT_STATE.md"
+    if not state_path.exists():
+        error("PROJECT_STATE.md does not exist")
+        return
+
+    text = state_path.read_text(encoding="utf-8")
+    lines = text.splitlines()
+
+    start_idx = None
+    end_idx = None
+    for i, line in enumerate(lines):
+        if "QUICK_HANDOFF_START" in line and start_idx is None:
+            start_idx = i
+        elif "QUICK_HANDOFF_END" in line and end_idx is None:
+            end_idx = i
+
+    if start_idx is None or end_idx is None:
+        error(
+            "PROJECT_STATE.md missing QUICK_HANDOFF_START or QUICK_HANDOFF_END marker"
+        )
+        return
+
+    interior_lines = end_idx - start_idx - 1
+    if interior_lines > QUICK_HANDOFF_MAX_LINES:
+        error(
+            f"PROJECT_STATE.md Quick Handoff region has {interior_lines} lines, "
+            f"exceeds limit {QUICK_HANDOFF_MAX_LINES}. Trim before committing."
+        )
+
+
 def run_validator() -> dict[str, list[str]]:
     ERRORS.clear()
     WARNINGS.clear()
@@ -378,6 +420,7 @@ def run_validator() -> dict[str, list[str]]:
     check_legacy_governance()
     check_truth_plane()
     check_legacy_runtime_archive_paths()
+    check_quick_handoff_length()
 
     return {
         "errors": list(ERRORS),

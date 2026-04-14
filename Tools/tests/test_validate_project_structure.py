@@ -197,3 +197,41 @@ def test_sequence_analysis_contract():
     script = REPO / CANONICAL_SEQUENCE_ANALYSIS_SCRIPT
     text = script.read_text(encoding="utf-8")
     assert f"n_angles={REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT}" in text
+
+
+def _load_validator_module(repo_dir: Path):
+    spec = importlib.util.spec_from_file_location("vps", VALIDATOR_PATH)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    module.REPO = repo_dir
+    module.ERRORS.clear()
+    module.WARNINGS.clear()
+    return module
+
+
+def test_quick_handoff_region_within_limit(tmp_path):
+    (tmp_path / "PROJECT_STATE.md").write_text(
+        "# state\n"
+        "<!-- QUICK_HANDOFF_START -->\n"
+        + "line\n" * 30
+        + "<!-- QUICK_HANDOFF_END -->\n"
+        "rest\n",
+        encoding="utf-8",
+    )
+    module = _load_validator_module(tmp_path)
+    module.check_quick_handoff_length()
+    assert not module.ERRORS, f"30 lines should pass, got errors: {module.ERRORS}"
+
+
+def test_quick_handoff_region_exceeds_limit(tmp_path):
+    (tmp_path / "PROJECT_STATE.md").write_text(
+        "# state\n"
+        "<!-- QUICK_HANDOFF_START -->\n"
+        + "line\n" * 70
+        + "<!-- QUICK_HANDOFF_END -->\n",
+        encoding="utf-8",
+    )
+    module = _load_validator_module(tmp_path)
+    module.check_quick_handoff_length()
+    assert any("Quick Handoff" in err for err in module.ERRORS), \
+        f"Expected Quick Handoff error, got: {module.ERRORS}"
