@@ -84,6 +84,17 @@ def test_policy_accessor_contract():
     assert control_center_ref > 0.0
 
 
+def _extract_quick_handoff(state_text: str) -> str:
+    """Return the QUICK_HANDOFF region (between markers) of PROJECT_STATE.md."""
+    start_marker = "<!-- QUICK_HANDOFF_START -->"
+    end_marker = "<!-- QUICK_HANDOFF_END -->"
+    start = state_text.find(start_marker)
+    end = state_text.find(end_marker)
+    assert start != -1 and end != -1 and start < end, \
+        "PROJECT_STATE.md missing QUICK_HANDOFF markers"
+    return state_text[start:end]
+
+
 def test_root_truth_docs_reflect_combo_promotion():
     state = (REPO / "PROJECT_STATE.md").read_text(encoding="utf-8")
     readme = (REPO / "README.md").read_text(encoding="utf-8")
@@ -93,16 +104,18 @@ def test_root_truth_docs_reflect_combo_promotion():
         assert "pending R33 promotion" not in text
         assert "360→720+" not in text
 
-    # Quick Handoff 區必須含 COMBO + approved alternates + sandbox branch
-    assert "COMBO" in state
+    # Quick Handoff 區必須含 COMBO + approved alternates + sandbox branch；
+    # 且不能以 mainline 語氣描述 R26NewPSFCheck 或 active sandbox overview。
+    quick = _extract_quick_handoff(state)
+    assert "COMBO" in quick
     assert (
-        "approved alternates" in state
-        or "特化候選" in state
-        or "Approved Alternates" in state
+        "approved alternates" in quick
+        or "特化候選" in quick
+        or "Approved Alternates" in quick
     )
-    assert "sandbox/r38v2" in state
-    assert "active sandbox overview" not in state
-    assert "Experiments\\R26NewPSFCheck\\" not in state
+    assert "sandbox/r38v2" in quick
+    assert "active sandbox overview" not in quick
+    assert "Experiments\\R26NewPSFCheck\\" not in quick
 
     # Full current state 必須保留 formal production baseline 字樣
     assert "formal production baseline" in state

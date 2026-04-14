@@ -1,4 +1,4 @@
-# PROJECT ARCHITECTURE AND DECISION MAP / 專案架構與決策地圖
+# PROJECT ARCHITECTURE / 專案架構與決策地圖
 Last updated: 2026-04-09
 
 ## 這份文件的用途 / Purpose
