@@ -22,10 +22,17 @@ Last updated: 2026-04-08
 
 **規則**：
 - `Experiments/*/reports/` 是 R33+ 實驗報告的**主要可編輯位置**
-- **R26 例外**：R26NewPSFCheck 的 canonical 報告分佈在多個子目錄（`psf_audit/`、`formal_newpsf_candidate/reports/`、`pure_psf_control/reports/`、`root_cause_centering/reports/`），這些都是 canonical，不是 mirror。R26 的結構是歷史產物，見 `QUIRKS_AND_CONVENTIONS.md` §4。
-- `docs/evidence/` 是 curated copy / mirror，從 canonical source 複製而來
-- 如果要修改 evidence 層的內容，先改 canonical source，再更新 mirror
+- **R26 例外**：R26NewPSFCheck 的 canonical 報告分佈在多個子目錄（`psf_audit/`、`formal_newpsf_candidate/reports/`、`pure_psf_control/reports/`、`root_cause_centering/reports/`），這些都是 canonical，不是 mirror。R26 的結構是歷史產物，見 `docs/operations/QUIRKS.md` §4。
 - `docs/evidence/` 裡的 R30/R31 檔案是從 `Traing_Progress/` 複製的歷史 curated copy，原始來源不在 Experiments/
+
+### docs/evidence/ 鏡像政策（2026-04-14 更新）
+
+`docs/evidence/*` 下的 20 份 curated copy 是**可能與 canonical drift 的穩定引用錨點**，專供論文、對外報告的穩定路徑使用。
+
+- **以 canonical 為準**：任何分析結論要以 canonical source 為依據，不以 mirror 為準
+- **不強制同步**：修改 canonical 後**不需要**同步 mirror（CLAUDE.md 的 Documentation update policy 已將此項移出 mandatory 列表）
+- **mirror 可落後**：只有當 mirror 與 canonical 的差異顯著影響引用理解時，才手動 refresh
+- canonical source 見下方各類型的 canonical location 欄位
 
 ### Legacy batches (`organized_20260313`-`organized_20260316`)
 
