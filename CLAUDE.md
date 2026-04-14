@@ -27,7 +27,7 @@ Claude may analyze requirements, edit files, run shell commands, and verify resu
 
 When creating a new experiment:
 
-1. **Read first**: `docs/operations/STARTING_NEW_EXPERIMENT.md` for naming rules, `docs/operations/STARTING_NEW_EXPERIMENT.md` for structure template.
+1. **Read first**: `docs/operations/STARTING_NEW_EXPERIMENT.md` — the full guide (naming rules, directory template, SOP steps).
 2. **Directory**: `Experiments/R##_Description/` with `README.md` + `scripts/` + `reports/` + `results/`.
 3. **Launcher**: Must include `trainer.MODEL_NAME_BASE = CFG.MODEL_NAME` to ensure artifact identity.
 4. **Branch**: `sandbox/r##` from the appropriate base branch.
@@ -38,19 +38,23 @@ When creating a new experiment:
 
 ## Documentation update policy
 
-When recording experiment results, update ALL of:
+When recording experiment results, update these **5 mandatory files**:
 - `ESTIMATOR_POLICY.json` (external compare + notes)
-- `PROJECT_STATE.md` (results section) + (handoff snapshot)
-- `PROJECT_ARCHITECTURE.md` (findings + cautions)
-- `docs/analysis/RESEARCH_PATHS.md` (flowchart + milestone table)
-- `docs/evidence/EVIDENCE_MAP.md` (evidence pointers)
+- `PROJECT_STATE.md` (Quick Handoff region + relevant Full Current State section)
+- `PROJECT_ARCHITECTURE.md` (only if stable rules changed)
 - `Experiments/INDEX.md` (experiment index)
+- The relevant experiment's `reports/` canonical file
+
+**Optional** (no longer mandatory; update when it helps readers):
+- `docs/analysis/RESEARCH_PATHS.md` — update flowchart when a line is promoted/closed
+- `docs/evidence/EVIDENCE_MAP.md` — update evidence pointers when canonical reports move
+- `docs/evidence/*` mirrors — may drift from canonical; canonical is authoritative
 
 ## Source of truth policy
 
 Read `docs/operations/SOURCE_OF_TRUTH_POLICY.md` before editing any file that might have copies elsewhere.
 - For R33+ experiments, `Experiments/*/reports/` is the only editable location for experiment reports
-- `docs/evidence/` contains mirrors/curated copies — edit the canonical source first, then sync
+- `docs/evidence/` contains curated copies used as stable citation anchors — may drift from canonical; canonical is authoritative
 - `Model/GeoEdgeAlignSR_v1_Infer_v5_*.py` is canonical; deployment/package copies must be synced manually
 - For legacy batches under `Traing_Progress/organized_20260313-20260316/`, use `docs/operations/LEGACY_ROUNDS_OPERATIONS.md` before editing legacy surfaces
 - When in doubt about which copy is canonical, check the policy file or ask the user
