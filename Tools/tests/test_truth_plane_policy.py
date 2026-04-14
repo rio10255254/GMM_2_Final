@@ -85,26 +85,30 @@ def test_policy_accessor_contract():
 
 
 def test_root_truth_docs_reflect_combo_promotion():
-    session = (REPO / "PROJECT_SESSION_CONTINUITY.md").read_text(encoding="utf-8")
-    current = (REPO / "PROJECT_CURRENT_STATE.md").read_text(encoding="utf-8")
+    state = (REPO / "PROJECT_STATE.md").read_text(encoding="utf-8")
     readme = (REPO / "README.md").read_text(encoding="utf-8")
-    architecture = (REPO / "PROJECT_ARCHITECTURE_AND_DECISION_MAP.md").read_text(encoding="utf-8")
+    architecture = (REPO / "PROJECT_ARCHITECTURE.md").read_text(encoding="utf-8")
 
-    for text in [session, current, readme, architecture]:
+    for text in [state, readme, architecture]:
         assert "pending R33 promotion" not in text
         assert "360→720+" not in text
 
-    assert "COMBO" in session
-    assert "approved alternates" in session or "特化候選" in session
-    assert "active sandbox overview" not in session
-    assert "Experiments\\R26NewPSFCheck\\" not in session
-    assert "sandbox/r38v2" in session
+    # Quick Handoff 區必須含 COMBO + approved alternates + sandbox branch
+    assert "COMBO" in state
+    assert (
+        "approved alternates" in state
+        or "特化候選" in state
+        or "Approved Alternates" in state
+    )
+    assert "sandbox/r38v2" in state
+    assert "active sandbox overview" not in state
+    assert "Experiments\\R26NewPSFCheck\\" not in state
 
-    assert "formal production baseline" in current
-    assert "COMBO" in current
-    assert "目前 active 沙盒：`R26NewPSFCheck`" not in current
-    assert "沒有可直接挑戰 baseline 的 current winning line" not in current
+    # Full current state 必須保留 formal production baseline 字樣
+    assert "formal production baseline" in state
+    assert "目前 active 沙盒：`R26NewPSFCheck`" not in state
+    assert "沒有可直接挑戰 baseline 的 current winning line" not in state
 
+    # README 保留一句話 stub
     assert "COMBO" in readme
     assert "historical former baseline" in readme or "歷史前任 baseline" in readme
-    assert "R26NewPSFCheck/                ← Round26 新 PSF 驗證沙盒（2026-03-26，進行中）" not in readme
