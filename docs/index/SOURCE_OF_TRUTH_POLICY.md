@@ -6,6 +6,8 @@ Last updated: 2026-04-08
 
 **只在 canonical source 編輯。鏡像只讀、只引用，不直接修改。**
 
+專案控制與整體巡檢請使用 `python Tools/project_control_center.py`；它只整合這份政策與其他正式文件，不取代它們。
+
 ## 分類
 
 ### 實驗報告
@@ -29,7 +31,7 @@ Last updated: 2026-04-08
 
 | 類型 | Canonical (可編輯) | Mirror (只讀) |
 |------|-------------------|--------------|
-| `organized_20260313/root_status_legacy` 狀態快照 | `Traing_Progress/organized_20260313/root_status_legacy/*.md/json` | `docs/runtime/legacy/root_status/*` curated copies where present |
+| `organized_20260313/root_status_legacy` 狀態快照 | `Traing_Progress/organized_20260313/root_status_legacy/*.md/json` | `docs/archive/legacy_runtime_status/*` curated copies where present |
 | `Round16`-`Round19` 決策鏈 | `Traing_Progress/organized_20260313/roundXX/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
 | `Round20` process probe | `Traing_Progress/organized_20260314/round20/ROUND20_POSTMORTEM.md`, `Traing_Progress/organized_20260314/round20/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
 | `diagnostics` 分支決策 | `Traing_Progress/organized_20260314/diagnostics/*.md/json` | `docs/evidence/*` curated copies where present |

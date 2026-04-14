@@ -7,9 +7,10 @@ scripts_dir = fullfile(lab_root, 'scripts');
 addpath(scripts_dir);
 
 experiment_names = ["baseline_rep16", "alignment_rep16", "alignment_tilt_rep16", "alignment_subpixel_rep16"];
-summary = vlab_aggregate_existing_results(lab_root, 'experiment_names', experiment_names);
+output_root = vlab_test_output_root(lab_root);
+summary = vlab_aggregate_existing_results(lab_root, 'experiment_names', experiment_names, 'output_root', output_root);
 
-comparison_path = fullfile(lab_root, 'outputs', 'tables', 'experiment_comparison.csv');
+comparison_path = fullfile(output_root, 'tables', 'experiment_comparison.csv');
 assert(isfile(comparison_path), 'comparison csv should be regenerated.');
 
 comparison_tbl = readtable(comparison_path, TextType = "string");

@@ -5,6 +5,8 @@
 本資料夾實現「以 Zernike 多項式描述像差，並透過 BADS 最佳化演算法擬合 2D PSF」的完整工作流程，最終以擬合結果執行 Wiener 反捲積驗證。
 This folder implements a full workflow for describing aberrations with Zernike polynomials, fitting a 2D PSF with BADS optimization, and validating the fitted PSF through Wiener deconvolution.
 
+整體導覽與總體健康請回 `python Tools/project_control_center.py`；本 README 只負責 PSF 模組自己的日常入口。
+
 **整體三階段流程：**
 **Three-stage workflow:**
 

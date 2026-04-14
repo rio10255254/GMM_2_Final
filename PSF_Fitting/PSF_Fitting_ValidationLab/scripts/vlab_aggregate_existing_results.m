@@ -2,10 +2,12 @@ function summary = vlab_aggregate_existing_results(lab_root, varargin)
 parser = inputParser;
 parser.addRequired('lab_root', @(x) ischar(x) || isstring(x));
 parser.addParameter('experiment_names', strings(0, 1), @(x) isstring(x) || ischar(x) || iscellstr(x));
+parser.addParameter('output_root', fullfile(char(lab_root), 'outputs'), @(x) ischar(x) || isstring(x));
 parser.parse(lab_root, varargin{:});
 
 lab_root = char(parser.Results.lab_root);
 requested_names = parser.Results.experiment_names;
+outputs_root = char(parser.Results.output_root);
 if ischar(requested_names)
     requested_names = string({requested_names});
 elseif iscell(requested_names)
@@ -14,7 +16,6 @@ else
     requested_names = string(requested_names);
 end
 
-outputs_root = fullfile(lab_root, 'outputs');
 experiments_root = fullfile(outputs_root, 'experiments');
 tables_dir = fullfile(outputs_root, 'tables');
 figures_dir = fullfile(outputs_root, 'figures');

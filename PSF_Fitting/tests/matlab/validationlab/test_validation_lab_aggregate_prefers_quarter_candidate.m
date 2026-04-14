@@ -6,8 +6,10 @@ scripts_dir = fullfile(lab_root, 'scripts');
 
 addpath(scripts_dir);
 
+output_root = vlab_test_output_root(lab_root);
 summary = vlab_aggregate_existing_results(lab_root, ...
-    'experiment_names', string({'baseline_rep16', 'alignment_rep16', 'alignment_subpixel_rep16', 'alignment_quarter_rep16', 'alignment_tilt_rep16'}));
+    'experiment_names', string({'baseline_rep16', 'alignment_rep16', 'alignment_subpixel_rep16', 'alignment_quarter_rep16', 'alignment_tilt_rep16'}), ...
+    'output_root', output_root);
 
 summary_text = fileread(summary.validation_summary_path);
 recommendation_text = fileread(summary.next_recommendation_path);

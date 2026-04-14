@@ -35,6 +35,14 @@ TRUTH_PLANE_DOCS = [
     "README.md",
     "PROJECT_ARCHITECTURE_AND_DECISION_MAP.md",
 ]
+LEGACY_RUNTIME_OLD_ROOT = "docs/runtime/legacy/root_status/"
+LEGACY_RUNTIME_ARCHIVE_ROOT = "docs/archive/legacy_runtime_status/"
+LEGACY_RUNTIME_FORMAL_DOCS = [
+    "PROJECT_SESSION_CONTINUITY.md",
+    "README.md",
+    "REPO_GOVERNANCE.md",
+    "docs/index/SOURCE_OF_TRUTH_POLICY.md",
+]
 REQUIRED_TRUTH_PLANE_KEYS = {
     "meta",
     "formal_baseline",
@@ -342,7 +350,26 @@ def check_truth_plane():
                 error(f"{doc_name} contains stale truth-plane phrase: {phrase}")
 
 
-def main():
+def check_legacy_runtime_archive_paths():
+    print("=== Check 9: Legacy runtime archive references ===")
+    for doc_name in LEGACY_RUNTIME_FORMAL_DOCS:
+        text = (REPO / doc_name).read_text(encoding="utf-8")
+        if LEGACY_RUNTIME_OLD_ROOT in text:
+            error(
+                f"{doc_name} still points to the retired legacy runtime path "
+                f"{LEGACY_RUNTIME_OLD_ROOT}"
+            )
+        if LEGACY_RUNTIME_ARCHIVE_ROOT not in text:
+            warn(
+                f"{doc_name} does not mention the current legacy runtime archive path "
+                f"{LEGACY_RUNTIME_ARCHIVE_ROOT}"
+            )
+
+
+def run_validator() -> dict[str, list[str]]:
+    ERRORS.clear()
+    WARNINGS.clear()
+
     check_experiment_dirs()
     check_index_references()
     check_report_links()
@@ -351,13 +378,23 @@ def main():
     check_sequence_analysis_contract()
     check_legacy_governance()
     check_truth_plane()
+    check_legacy_runtime_archive_paths()
+
+    return {
+        "errors": list(ERRORS),
+        "warnings": list(WARNINGS),
+    }
+
+
+def main():
+    results = run_validator()
 
     print()
-    print(f"Results: {len(ERRORS)} errors, {len(WARNINGS)} warnings")
-    if ERRORS:
+    print(f"Results: {len(results['errors'])} errors, {len(results['warnings'])} warnings")
+    if results["errors"]:
         print("ERRORS must be fixed before committing.")
         sys.exit(1)
-    elif WARNINGS:
+    elif results["warnings"]:
         print("Warnings are advisory — review but not blocking.")
         sys.exit(0)
     else:

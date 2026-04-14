@@ -47,7 +47,10 @@ for ci = 1:numel(configs)
 end
 experiment_results = [experiment_results{:}];
 
-summary = vlab_aggregate_existing_results(lab_root, 'experiment_names', string({configs.name}));
+summary = vlab_aggregate_existing_results( ...
+    lab_root, ...
+    'experiment_names', string({configs.name}), ...
+    'output_root', opts.output_root);
 
 VLAB_CONTEXT = [];
 VLAB_STATE = [];

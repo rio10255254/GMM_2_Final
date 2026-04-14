@@ -8,6 +8,8 @@ GeoEdge 是一個 AI 超解析模型，用來對顯微鏡拍攝的環形結構�
 
 本目錄收納所有版本的模型分析——包括分析腳本、自動化測試、圖表結果、JSON 數據摘要、以及人類可讀的中文分析報告。設計上確保即使不跑任何程式碼，只看 `results/` 裡的圖片和 `reports/` 裡的 Markdown 報告，就能完整理解每個版本的幾何品質。
 
+整體導覽與總體健康請回 `python Tools/project_control_center.py`；本 README 只負責 AnalysisLab 自己的分析入口。
+
 ## 設計原則
 
 ### 版本優先（Version-First Layout）
@@ -89,6 +91,8 @@ AnalysisLab/
 `index.json` 是機器可讀的結構索引，記錄每個版本的每條分析線的入口路徑（script、test、report、results_dir）。用途是讓 CI、Claude Code、或其他工具能自動找到正確的檔案，不需要硬寫路徑。
 
 ## 快速開始
+
+整體巡檢請回控制中心；下面這些命令只針對 AnalysisLab。
 
 ```bash
 # 跑所有測試（驗證結構合約 + 分析正確性）
