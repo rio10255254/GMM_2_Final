@@ -11,7 +11,7 @@ Last updated: 2026-04-09
 4. PSF（點擴散函數）在整個系統中扮演什麼角色？架構邊界怎麼劃分？
 5. 什麼情況下才值得立新 round？升級 baseline 需要滿足哪些條件？
 
-**這份文件不負責的事**：展開當前 round 的逐步進度、記錄即時執行狀態、或作為跨入口交接用途。那些事分別由 `PROJECT_CURRENT_STATE.md` 和 `PROJECT_SESSION_CONTINUITY.md` 負責。
+**這份文件不負責的事**：展開當前 round 的逐步進度、記錄即時執行狀態、或作為跨入口交接用途。那些事分別由 `PROJECT_STATE.md` 和 `PROJECT_STATE.md` 負責。
 
 This document records **stable architectural design and decision rules**. It answers five core questions: what the true system goal is; how external truth relates to internal surrogates; what the current baseline policy is; what role PSF plays and where the architecture boundaries are; and when a new round is worth starting or a baseline is worth promoting.
 
@@ -311,8 +311,8 @@ D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_Si
 
 | 問題 | 去看哪份文件 |
 |------|------------|
-| 我現在要快速接手，先讀什麼？ | `PROJECT_SESSION_CONTINUITY.md` |
-| 現在的數字和結論是什麼？ | `PROJECT_CURRENT_STATE.md` |
+| 我現在要快速接手，先讀什麼？ | `PROJECT_STATE.md` |
+| 現在的數字和結論是什麼？ | `PROJECT_STATE.md` |
 | 穩定架構規則和決策邊界是什麼？ | **這份文件**（`PROJECT_ARCHITECTURE.md`） |
 | 機器可讀的 baseline policy 在哪？ | `ESTIMATOR_POLICY.json` |
 | PSF 政策切換的細節？ | `docs/policy/PSF_POLICY_TRANSITION_R26.md` |
@@ -325,9 +325,9 @@ D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_Si
 
 ### 各文件的責任邊界（白話版）
 
-- **`PROJECT_SESSION_CONTINUITY.md`**：你接手一個 session 時最先讀的。它給你三分鐘的快照——現在 baseline 是誰、最近的 verdict 是什麼、有哪些工作規則不能搞錯。
+- **`PROJECT_STATE.md`**：你接手一個 session 時最先讀的。它給你三分鐘的快照——現在 baseline 是誰、最近的 verdict 是什麼、有哪些工作規則不能搞錯。
 
-- **`PROJECT_CURRENT_STATE.md`**：現況細節的完整清單。有表格、有數字、有正式入口路徑。比 session continuity 更完整，但不定義規則。
+- **`PROJECT_STATE.md`**：現況細節的完整清單。有表格、有數字、有正式入口路徑。比 session continuity 更完整，但不定義規則。
 
 - **這份文件**：穩定規則層。架構怎麼設計、各層指標的解讀方式、決策條件、已確認的結論清單。不隨 round 進度動，只在重大結構決策改變時更新。
 

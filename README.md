@@ -69,8 +69,8 @@ Key performance metrics (all from the external GMF evaluator):
 
 ## 目前狀態快照 / Current Status Snapshot
 
-> 以下數字為截至 2026-04-09 的最新狀態。詳細資料請看 `PROJECT_CURRENT_STATE.md`。
-> Numbers below are current as of 2026-04-09. For full detail, see `PROJECT_CURRENT_STATE.md`.
+> 以下數字為截至 2026-04-09 的最新狀態。詳細資料請看 `PROJECT_STATE.md`。
+> Numbers below are current as of 2026-04-09. For full detail, see `PROJECT_STATE.md`.
 
 ### 正式 Baseline / Production Baseline
 
@@ -129,15 +129,14 @@ Read in this order when taking over the project:
 
 | 步驟 | 文件 | 目的 |
 |------|------|------|
-| 1 | `PROJECT_SESSION_CONTINUITY.md` | 跨入口 handoff，三分鐘掌握目前狀況 / Cross-interface handoff in 3 minutes |
-| 2 | `PROJECT_CURRENT_STATE.md` | 目前數字與結論的完整真相 / Full current numbers and verdicts |
+| 1 | `PROJECT_STATE.md` | 跨入口 handoff，三分鐘掌握目前狀況 / Cross-interface handoff in 3 minutes |
 | 3 | `PROJECT_ARCHITECTURE.md` | 穩定架構規則、決策邊界 / Stable rules and decision boundaries |
 | 4 | `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` | 只有需要完整歷史時再看 / Only if you need the full historical narrative |
 
 快速索引：
 
-- 想快速接手 → `PROJECT_SESSION_CONTINUITY.md`
-- 想知道現在數字 → `PROJECT_CURRENT_STATE.md`
+- 想快速接手 → `PROJECT_STATE.md`
+- 想知道現在數字 → `PROJECT_STATE.md`
 - 想知道穩定規則 → `PROJECT_ARCHITECTURE.md`
 - 機器可讀 decision control plane → `ESTIMATOR_POLICY.json`
 - 補完整歷史 → `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
@@ -150,8 +149,8 @@ Read in this order when taking over the project:
 D:\GMM_2_Final\
 │
 ├── README.md                          ← 你現在在看這份（入口總覽）
-├── PROJECT_SESSION_CONTINUITY.md      ← 跨入口 handoff 文件
-├── PROJECT_CURRENT_STATE.md           ← 目前狀態與最新數字
+├── PROJECT_STATE.md      ← 跨入口 handoff 文件
+├── PROJECT_STATE.md           ← 目前狀態與最新數字
 ├── PROJECT_ARCHITECTURE.md  ← 穩定架構與決策規則
 ├── ESTIMATOR_POLICY.json              ← 機器可讀 decision control plane
 ├── REPO_GOVERNANCE.md                 ← Git/GitHub 治理規則
@@ -503,7 +502,7 @@ docs\
 新接手的 assistant / agent 請遵守：
 When a new assistant or agent takes over, follow these rules:
 
-1. **先讀 `PROJECT_SESSION_CONTINUITY.md` 與 `PROJECT_CURRENT_STATE.md`**
+1. **先讀 `PROJECT_STATE.md`**
    以 repo 正式文件為準，不以 `.codex` 或 `.claude` 內部 session 檔為準。
 
 2. **不要把 live process 狀態手抄回 root prose**
@@ -512,7 +511,7 @@ When a new assistant or agent takes over, follow these rules:
 3. **legacy root status 快照已封存到 `docs/archive/legacy_runtime_status/`**
    若 root 再出現 `000_LONGRUN_*`，視為本地 runtime 輸出，不是 canonical docs。
 
-4. **baseline / verdict 有變時，優先更新 `PROJECT_CURRENT_STATE.md` 與 `PROJECT_SESSION_CONTINUITY.md`**
+4. **baseline / verdict 有變時，優先更新 `PROJECT_STATE.md`**
 
 5. **已 external FAIL 的候選不能再被描述成 current promising line**
    `r32_real_eq_finetune` 已是 externally falsified experimental branch。

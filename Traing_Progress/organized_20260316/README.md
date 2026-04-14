@@ -23,8 +23,8 @@
 
 ## Recommended Reading Order
 
-1. `..\..\PROJECT_SESSION_CONTINUITY.md`
-2. `..\..\PROJECT_CURRENT_STATE.md`
+1. `..\..\PROJECT_STATE.md`
+2. `..\..\PROJECT_STATE.md`
 3. `round30\selected\reports\ROUND30_EXTERNAL_COMPARE.md`
 4. `round31\selected\reports\ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md`
 5. `tta_experiment\r26_tta_cross5\reports\TTA_VS_BASELINE_CROSS5_COMPARISON.md`

@@ -10,10 +10,9 @@ This file clarifies the responsibility boundaries between the canonical docs, sa
 這五份是接手主入口：
 
 1. `README.md` — 總入口、閱讀順序
-2. `PROJECT_SESSION_CONTINUITY.md` — 跨 session 交接快照
-3. `PROJECT_CURRENT_STATE.md` — 目前真相
-4. `PROJECT_ARCHITECTURE.md` — 穩定規則與決策邊界
-5. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` — 完整歷史（至 2026-03-12）
+2. `PROJECT_STATE.md` — 跨 session 交接快照
+3. `PROJECT_ARCHITECTURE.md` — 穩定規則與決策邊界
+4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` — 完整歷史（至 2026-03-12）
 
 > R33-R38v2（2026-04-05~08）的歷史記錄在實驗報告中，不在上述歷史文件裡。
 > 完整系列報告：`Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`

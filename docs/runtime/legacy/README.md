@@ -10,5 +10,5 @@
 
 現在的 runtime truth 應看：
 - `ESTIMATOR_POLICY.json`（機器可讀 baseline 政策）
-- `PROJECT_CURRENT_STATE.md`（人類可讀現況）
+- `PROJECT_STATE.md`（人類可讀現況）
 - `Experiments/R33RobustLoss/` 和 `Experiments/R38v2SeqFixed/`（最新實驗）
