@@ -18,22 +18,21 @@ REPO = Path(__file__).resolve().parents[1]
 VALIDATOR_PATH = REPO / "Tools" / "validate_project_structure.py"
 POLICY_ACCESSOR_PATH = REPO / "Model" / "GeoEdgeAlignSR_v1_PolicyAccess.py"
 POLICY_PATH = REPO / "ESTIMATOR_POLICY.json"
-CONTROL_CENTER_DOC = REPO / "docs" / "index" / "PROJECT_CONTROL_CENTER.md"
+CONTROL_CENTER_DOC = REPO / "docs" / "operations" / "PROJECT_CONTROL_CENTER.md"
 ANALYSIS_INDEX_PATH = REPO / "AnalysisLab" / "index.json"
 EVIDENCE_MAP_PATH = REPO / "docs" / "evidence" / "EVIDENCE_MAP.md"
 WORKFLOW_PATH = REPO / ".github" / "workflows" / "validate-governance.yml"
 LEGACY_RUNTIME_OLD_ROOT = "docs/runtime/legacy/root_status/"
 LEGACY_RUNTIME_ARCHIVE_ROOT = "docs/archive/legacy_runtime_status/"
 DOCS_SCAN_PATHS = [
-    REPO / "PROJECT_SESSION_CONTINUITY.md",
+    REPO / "PROJECT_STATE.md",
     REPO / "README.md",
     REPO / "REPO_GOVERNANCE.md",
-    REPO / "docs" / "index" / "SOURCE_OF_TRUTH_POLICY.md",
+    REPO / "docs" / "operations" / "SOURCE_OF_TRUTH_POLICY.md",
 ]
 CORE_DOC_PATHS = [
-    REPO / "PROJECT_CURRENT_STATE.md",
-    REPO / "PROJECT_SESSION_CONTINUITY.md",
-    REPO / "PROJECT_ARCHITECTURE_AND_DECISION_MAP.md",
+    REPO / "PROJECT_STATE.md",
+    REPO / "PROJECT_ARCHITECTURE.md",
     POLICY_PATH,
     EVIDENCE_MAP_PATH,
     ANALYSIS_INDEX_PATH,
@@ -597,9 +596,8 @@ def build_truth_sources(repo: Path, policy: dict[str, Any]) -> dict[str, Any]:
             for item in policy["open_side_tracks"]
         ],
         "source_docs": [
-            {"label": "current state", "path": relpath(repo / "PROJECT_CURRENT_STATE.md")},
-            {"label": "session continuity", "path": relpath(repo / "PROJECT_SESSION_CONTINUITY.md")},
-            {"label": "architecture map", "path": relpath(repo / "PROJECT_ARCHITECTURE_AND_DECISION_MAP.md")},
+            {"label": "project state", "path": relpath(repo / "PROJECT_STATE.md")},
+            {"label": "architecture", "path": relpath(repo / "PROJECT_ARCHITECTURE.md")},
             {"label": "evidence map", "path": relpath(EVIDENCE_MAP_PATH)},
             {"label": "analysis index", "path": relpath(ANALYSIS_INDEX_PATH)},
         ],
