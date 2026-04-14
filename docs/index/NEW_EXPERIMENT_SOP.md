@@ -70,7 +70,7 @@ Update these docs when the work crosses a formal boundary:
 - `PROJECT_SESSION_CONTINUITY.md`
   當 handoff 真相或 canonical 入口改變時。  
   Update it when handoff truth or canonical entry points change.
-- `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+- `PROJECT_ARCHITECTURE.md`
   當穩定規則、branch policy、或治理規則改變時。  
   Update it when stable rules or branch/governance policy changes.
 

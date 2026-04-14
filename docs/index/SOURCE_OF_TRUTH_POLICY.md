@@ -63,7 +63,7 @@ Last updated: 2026-04-08
 | `ESTIMATOR_POLICY.json` | Machine-readable baseline truth | 直接編輯 |
 | `PROJECT_CURRENT_STATE.md` | Human-readable current state | 直接編輯 |
 | `PROJECT_SESSION_CONTINUITY.md` | Cross-session handoff | 直接編輯 |
-| `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md` | Stable rules | 直接編輯 |
+| `PROJECT_ARCHITECTURE.md` | Stable rules | 直接編輯 |
 | `docs/analysis/RESEARCH_PATHS.md` | Research path visualization | 直接編輯 |
 | `docs/evidence/EVIDENCE_MAP.md` | Evidence chain index | 直接編輯（它是索引，不是內容） |
 | `Experiments/INDEX.md` | Experiment quick reference | 直接編輯 |

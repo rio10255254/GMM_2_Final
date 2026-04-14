@@ -40,7 +40,7 @@ When taking over the project, read these files in order:
 
 1. `PROJECT_SESSION_CONTINUITY.md`
 2. `PROJECT_CURRENT_STATE.md`
-3. `PROJECT_ARCHITECTURE_AND_DECISION_MAP.md`
+3. `PROJECT_ARCHITECTURE.md`
 4. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
 ## Branch Strategy / 分支策略
