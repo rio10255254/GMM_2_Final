@@ -4,6 +4,8 @@ Last updated: 2026-04-14
 
 一頁式快速索引——完整數字、checkpoint 路徑、外部 GMF 結果見 `ESTIMATOR_POLICY.json` 與各實驗 `reports/`。
 
+視覺 demo 圖（每輪代表性重建圖 / 指標圖）見 `RECON_GALLERY.md`。
+
 ---
 
 ## Active（formal baseline + approved alternates）
