@@ -97,6 +97,7 @@ CANONICAL_INFERENCE_SCRIPTS = [
 ]
 CANONICAL_SEQUENCE_ANALYSIS_SCRIPT = "AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py"
 REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT = 720
+OFFICIAL_STANDARD_HEALTH_COMMAND = "python Tools/project_control_center.py --view health --health-level standard"
 
 
 def load_validator_module():
@@ -198,6 +199,11 @@ def test_sequence_analysis_contract():
     script = REPO / CANONICAL_SEQUENCE_ANALYSIS_SCRIPT
     text = script.read_text(encoding="utf-8")
     assert f"n_angles={REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT}" in text
+
+
+def test_pre_commit_template_runs_official_standard_health():
+    hook = (REPO / "Tools" / "hooks" / "pre-commit").read_text(encoding="utf-8")
+    assert OFFICIAL_STANDARD_HEALTH_COMMAND in hook
 
 
 def _load_validator_module(repo_dir: Path):

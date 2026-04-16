@@ -22,8 +22,20 @@ CONTROL_CENTER_DOC = REPO / "docs" / "operations" / "PROJECT_CONTROL_CENTER.md"
 ANALYSIS_INDEX_PATH = REPO / "AnalysisLab" / "index.json"
 EVIDENCE_MAP_PATH = REPO / "docs" / "evidence" / "EVIDENCE_MAP.md"
 WORKFLOW_PATH = REPO / ".github" / "workflows" / "validate-governance.yml"
+PRE_COMMIT_TEMPLATE_PATH = REPO / "Tools" / "hooks" / "pre-commit"
+MATLAB_AGGREGATE_SCRIPT_PATH = (
+    REPO
+    / "PSF_Fitting"
+    / "PSF_Fitting_ValidationLab"
+    / "scripts"
+    / "vlab_aggregate_existing_results.m"
+)
+MATLAB_SMOKE_TEST_PATH = REPO / "PSF_Fitting" / "tests" / "run_matlab_smoke_tests.m"
 LEGACY_RUNTIME_OLD_ROOT = "docs/runtime/legacy/root_status/"
 LEGACY_RUNTIME_ARCHIVE_ROOT = "docs/archive/legacy_runtime_status/"
+OFFICIAL_STANDARD_HEALTH_COMMAND = (
+    "python Tools/project_control_center.py --view health --health-level standard"
+)
 DOCS_SCAN_PATHS = [
     REPO / "PROJECT_STATE.md",
     REPO / "README.md",
@@ -129,12 +141,20 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(list(argv) if argv is not None else None)
 
 
-def resolve_health_level(args: argparse.Namespace) -> str:
+def resolve_health_level(
+    args: argparse.Namespace,
+    requested_modules: Sequence[str] | None = None,
+) -> str:
     if args.health_level:
-        return args.health_level
-    if args.view == "health":
-        return "standard"
-    return "quick"
+        level = args.health_level
+    elif args.view == "health":
+        level = "standard"
+    else:
+        level = "quick"
+
+    if args.view == "health" and requested_modules and "matlab" in requested_modules:
+        return "deep"
+    return level
 
 
 def resolve_requested_modules(args: argparse.Namespace) -> list[str]:
@@ -160,6 +180,25 @@ def load_policy() -> dict[str, Any]:
 
 def load_analysis_index() -> dict[str, Any]:
     return json.loads(ANALYSIS_INDEX_PATH.read_text(encoding="utf-8"))
+
+
+def summarize_analysis_index(index: dict[str, Any]) -> dict[str, Any]:
+    versions: list[dict[str, Any]] = []
+    for version_name, version_data in index.get("versions", {}).items():
+        analyses = version_data.get("analyses", {})
+        versions.append(
+            {
+                "version": version_name,
+                "readme": version_data.get("readme"),
+                "analysis_count": len(analyses),
+                "analysis_names": sorted(analyses.keys()),
+            }
+        )
+    return {
+        "entry_point": index.get("entry_point"),
+        "layout_policy": index.get("layout_policy"),
+        "versions": versions,
+    }
 
 
 def relpath(path: Path) -> str:
@@ -436,9 +475,15 @@ def run_matlab_checks(level: str) -> dict[str, Any]:
     if level != "deep":
         return {
             "module": "matlab",
-            "status": "PASS",
-            "checks": [],
-            "issues": [],
+            "status": "FAIL",
+            "checks": [
+                {
+                    "name": "matlab_smoke_tests",
+                    "status": "FAIL",
+                    "details": "MATLAB checks only run at deep level.",
+                }
+            ],
+            "issues": ["MATLAB checks require deep level"],
         }
 
     matlab_exe = find_matlab_executable()
@@ -569,7 +614,7 @@ def run_health(level: str, requested_modules: Sequence[str] | None = None) -> di
     return summary
 
 
-def build_truth_sources(repo: Path, policy: dict[str, Any]) -> dict[str, Any]:
+def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict[str, Any]) -> dict[str, Any]:
     formal = policy["formal_baseline"]
     return {
         "formal_baseline": {
@@ -602,6 +647,7 @@ def build_truth_sources(repo: Path, policy: dict[str, Any]) -> dict[str, Any]:
             {"label": "evidence map", "path": relpath(EVIDENCE_MAP_PATH)},
             {"label": "analysis index", "path": relpath(ANALYSIS_INDEX_PATH)},
         ],
+        "analysis": summarize_analysis_index(analysis_index),
     }
 
 
@@ -655,14 +701,28 @@ def build_entrypoints_view() -> dict[str, Any]:
 def build_risks_view(repo: Path) -> dict[str, Any]:
     stale_refs = scan_files_for_legacy_runtime_refs(DOCS_SCAN_PATHS)
     workflow_text = WORKFLOW_PATH.read_text(encoding="utf-8") if WORKFLOW_PATH.exists() else ""
+    hook_text = (
+        PRE_COMMIT_TEMPLATE_PATH.read_text(encoding="utf-8")
+        if PRE_COMMIT_TEMPLATE_PATH.exists()
+        else ""
+    )
     aggregate_text = (
-        repo
-        / "PSF_Fitting"
-        / "PSF_Fitting_ValidationLab"
-        / "scripts"
-        / "vlab_aggregate_existing_results.m"
-    ).read_text(encoding="utf-8")
+        MATLAB_AGGREGATE_SCRIPT_PATH.read_text(encoding="utf-8")
+        if MATLAB_AGGREGATE_SCRIPT_PATH.exists()
+        else ""
+    )
+    smoke_text = (
+        MATLAB_SMOKE_TEST_PATH.read_text(encoding="utf-8")
+        if MATLAB_SMOKE_TEST_PATH.exists()
+        else ""
+    )
     model_tests_exist = any((repo / "Model").glob("test_*.py")) or (repo / "Model" / "tests").exists()
+    ci_uses_official_standard = OFFICIAL_STANDARD_HEALTH_COMMAND in workflow_text
+    local_hook_uses_official_standard = OFFICIAL_STANDARD_HEALTH_COMMAND in hook_text
+    matlab_output_isolated = (
+        "parser.addParameter('output_root'" in aggregate_text
+        and "VLAB_TEST_OUTPUT_ROOT" in smoke_text
+    )
 
     return {
         "items": [
@@ -682,14 +742,17 @@ def build_risks_view(repo: Path) -> dict[str, Any]:
             },
             {
                 "id": "ci_scope",
-                "status": "MANAGED"
-                if "project_control_center.py" in workflow_text and "--view health" in workflow_text
-                else "ACTIVE",
+                "status": "MANAGED" if ci_uses_official_standard else "ACTIVE",
                 "details": "GitHub validation should run the control center standard health path.",
             },
             {
+                "id": "local_guardrail_scope",
+                "status": "MANAGED" if local_hook_uses_official_standard else "ACTIVE",
+                "details": "The tracked pre-commit hook should match the same official standard health path as CI.",
+            },
+            {
                 "id": "matlab_tracked_output_coupling",
-                "status": "MANAGED" if "output_root" in aggregate_text else "ACTIVE",
+                "status": "MANAGED" if matlab_output_isolated else "ACTIVE",
                 "details": "Deep health checks must isolate ValidationLab report outputs away from tracked summaries.",
             },
             {
@@ -739,14 +802,14 @@ def build_payload(
     requested_modules: Sequence[str],
 ) -> dict[str, Any]:
     policy = load_policy()
-    _ = load_analysis_index()
+    analysis_index = load_analysis_index()
     if view in {"overview", "health"}:
         health = run_health(health_level, requested_modules)
     else:
         health = build_health_placeholder(health_level)
     return {
         "summary": build_summary(policy, view, health, requested_modules),
-        "truth_sources": build_truth_sources(repo, policy),
+        "truth_sources": build_truth_sources(repo, policy, analysis_index),
         "architecture": build_architecture_view(policy),
         "entrypoints": build_entrypoints_view(),
         "risks": build_risks_view(repo),
@@ -769,6 +832,16 @@ def render_text(payload: dict[str, Any], view: str) -> str:
         lines.append("Truth")
         lines.append(f"- Formal baseline report: {truth['formal_baseline']['report']}")
         lines.append(f"- Machine truth: {truth['formal_baseline']['machine_truth']}")
+        lines.append(
+            f"- Analysis hub: {truth['analysis']['entry_point']} ({truth['analysis']['layout_policy']})"
+        )
+        lines.append(
+            "- Analysis versions: "
+            + ", ".join(
+                f"{item['version']} ({item['analysis_count']} analyses)"
+                for item in truth["analysis"]["versions"]
+            )
+        )
         lines.append(
             "- Approved alternates: "
             + ", ".join(item["candidate_id"] for item in truth["approved_alternates"])
@@ -841,8 +914,8 @@ def determine_exit_code(payload: dict[str, Any], view: str) -> int:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = parse_args(argv)
-    health_level = resolve_health_level(args)
     requested_modules = resolve_requested_modules(args)
+    health_level = resolve_health_level(args, requested_modules)
     payload = build_payload(
         REPO,
         view=args.view,

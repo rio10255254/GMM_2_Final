@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Pre-commit hook: run project structure validator before allowing commit.
+# Pre-commit hook: run the official standard health check before allowing commit.
 #
 # Install: python Tools/install_hooks.py
 # Skip once (emergency): git commit --no-verify
@@ -10,20 +10,20 @@ set -e
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
-echo "[pre-commit] running project structure validator..."
+echo "[pre-commit] running project control center standard health..."
 
-if ! python Tools/validate_project_structure.py > /tmp/validate_project_structure.log 2>&1; then
-    echo "[pre-commit] FAILED — validator reported errors:"
+if ! python Tools/project_control_center.py --view health --health-level standard > /tmp/project_control_center_health.log 2>&1; then
+    echo "[pre-commit] FAILED — standard health reported problems:"
     echo ""
-    cat /tmp/validate_project_structure.log
+    cat /tmp/project_control_center_health.log
     echo ""
     echo "[pre-commit] Fix the errors above, or bypass with: git commit --no-verify"
     exit 1
 fi
 
-# Validator exited 0 (either all-pass or only warnings). Show warnings if any.
-if grep -q "warnings" /tmp/validate_project_structure.log; then
-    tail -5 /tmp/validate_project_structure.log
+# Standard health exited 0. Show the final summary lines for quick visibility.
+if grep -q "Health:" /tmp/project_control_center_health.log; then
+    tail -8 /tmp/project_control_center_health.log
 fi
 
 echo "[pre-commit] OK"
