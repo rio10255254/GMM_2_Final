@@ -50,6 +50,9 @@ python Tools/project_control_center.py --view health --health-level quick
 # 跑深檢（含 MATLAB，本機用）
 python Tools/project_control_center.py --view health --health-level deep
 
+# 只查 MATLAB 時，會自動升到 deep，避免假綠燈
+python Tools/project_control_center.py --view health --module matlab
+
 # 只看某些模組
 python Tools/project_control_center.py --view health --module docs --module python
 
@@ -83,6 +86,9 @@ python Tools/project_control_center.py --view overview --format json
   - MATLAB 煙霧檢查
   - ValidationLab 輸出會改走臨時位置，不覆寫正式摘要
 
+只要明確指定 `--module matlab`，控制中心就會自動用 `deep` 執行，避免出現「看似通過、其實沒跑」的假綠燈。
+Whenever `--module matlab` is explicitly requested, the control center automatically runs it at `deep` to avoid false-green results.
+
 ## 正式閱讀順序 / Formal Reading Order
 
 1. `PROJECT_STATE.md`
@@ -92,6 +98,9 @@ python Tools/project_control_center.py --view overview --format json
 
 如果你只想先看全貌，就先跑控制中心；如果你要修改正式結論，還是回到上述正式真相文件。  
 If you only need the whole picture, start with the control center. If you need to change formal conclusions, go back to the source-of-truth files above.
+
+若你要在本地提交前就用同一套標準守門，請先執行一次 `python Tools/install_hooks.py`。
+If you want the same standard gate before each local commit, install the hook once with `python Tools/install_hooks.py`.
 
 ## 邊界提醒 / Boundary Notes
 

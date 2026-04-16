@@ -42,6 +42,26 @@ When taking over the project, read these files in order:
 2. `PROJECT_ARCHITECTURE.md`
 3. `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md`
 
+## Official Control Entry / 官方控制入口
+
+整體導覽與日常巡檢，請以專案控制中心為準：
+For overall orientation and routine checks, use the project control center:
+
+```bash
+python Tools/project_control_center.py
+python Tools/project_control_center.py --view health --health-level standard
+```
+
+第一次 clone 後，請安裝本地 hook：
+After cloning, install the local hook once:
+
+```bash
+python Tools/install_hooks.py
+```
+
+安裝後，每次 `git commit` 都會先跑和 GitHub 同一條官方日常檢查。
+After installation, each `git commit` runs the same official standard-health path used in GitHub.
+
 ## Branch Strategy / 分支策略
 
 - `main`：目前整理後的 shared mainline，放追蹤中的程式、說明與治理內容

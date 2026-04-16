@@ -99,8 +99,11 @@ Install the pre-commit hook (one-time per clone):
 python Tools/install_hooks.py
 ```
 
-這會把 `Tools/hooks/pre-commit` 複製到 `.git/hooks/pre-commit`，每次 `git commit` 會自動跑 `python Tools/validate_project_structure.py`，不通過就擋下。
-It copies `Tools/hooks/pre-commit` into `.git/hooks/pre-commit`. Every `git commit` then runs the validator and blocks on errors.
+這會把 `Tools/hooks/pre-commit` 複製到 `.git/hooks/pre-commit`，每次 `git commit` 會自動跑 `python Tools/project_control_center.py --view health --health-level standard`，不通過就擋下。
+It copies `Tools/hooks/pre-commit` into `.git/hooks/pre-commit`. Every `git commit` then runs `python Tools/project_control_center.py --view health --health-level standard` and blocks on failures.
+
+`Tools/validate_project_structure.py` 仍然保留，但現在是這條官方日常檢查裡的一個子檢查，不再是單獨對外的主要守門入口。
+`Tools/validate_project_structure.py` still remains in use, but it is now one sub-check inside the official standard-health path rather than the standalone public gate.
 
 緊急情況可用 `git commit --no-verify` 繞過；但請在後續 commit 修正，不要讓 main 帶著違規狀態。
 In emergencies use `git commit --no-verify`; fix the violation in a follow-up commit — don't let `main` carry a broken state.
