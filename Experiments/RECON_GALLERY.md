@@ -36,62 +36,145 @@ _Last updated: 2026-04-17_
 
 ## 🟢 COMBO
 
-![🟢 COMBO cross-scale step std](R38v2SeqFixed/results/720angle_analysis/COMBO/cross_dataset/08_cross_scale_step_std.png)
+![🟢 COMBO 跨尺度步距標準差](R38v2SeqFixed/results/720angle_analysis/COMBO/cross_dataset/08_cross_scale_step_std.png)
 
 > [!TIP]
-> **`r38v2_8px_gate_p95`** · formal baseline (2026-04-08) · 0.8px **`0.132`** · steepness **+89%** · residual 2.044 (歷史最佳)
+> **`r38v2_8px_gate_p95`** · formal baseline (2026-04-08) · 0.8px **`0.132`** · steepness **+89%** · residual 2.044（歷史最佳）
+
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-| 0.08 px (子像素) | 0.8 px (主戰場) | 8 px (guard) |
-|:---:|:---:|:---:|
-| <img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270"> | <img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270"> | <img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270"> |
-| [📁 41 frames →](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/) | [📁 61 frames →](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/) | [📁 101 frames →](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/) |
+三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+
+<p align="center">
+  <img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
+  <img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
+  <img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
+</p>
+
+📁 完整重建序列：
+
+- [41 frames · 0.08 px 子像素](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/)
+
 
 <details>
-<summary>📈 所有 24 張 720-angle 指標 + 量化修復 recon + 其他方法論版本</summary>
+<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
 
-**Cross-scale：** [08 step std](R38v2SeqFixed/results/720angle_analysis/COMBO/cross_dataset/08_cross_scale_step_std.png) · [09 residual](R38v2SeqFixed/results/720angle_analysis/COMBO/cross_dataset/09_cross_scale_residual_improvement.png) · [10 k2](R38v2SeqFixed/results/720angle_analysis/COMBO/cross_dataset/10_cross_scale_k2_stability.png)
+**跨尺度總結：**
 
-**Per-pitch 7 張指標：**
-- `pitch0p01um_y_40`: [01](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/07_center_offset_drift.png)
-- `pitch0p1um_y_60`: [01](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/07_center_offset_drift.png)
-- `pitch1um_y_100`: [01](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/07_center_offset_drift.png)
+- [跨尺度步距標準差（08）](R38v2SeqFixed/results/720angle_analysis/COMBO/cross_dataset/08_cross_scale_step_std.png)
+- [跨尺度 Residual 改善（09）](R38v2SeqFixed/results/720angle_analysis/COMBO/cross_dataset/09_cross_scale_residual_improvement.png)
+- [跨尺度 K2 穩定性（10）](R38v2SeqFixed/results/720angle_analysis/COMBO/cross_dataset/10_cross_scale_k2_stability.png)
+
+**Per-pitch 詳細指標（每 pitch 7 張）：**
+
+- **0.08 px 子像素（`pitch0p01um_y_40`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p01um_y_40/07_center_offset_drift.png)
+- **0.8 px 主戰場（`pitch0p1um_y_60`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch0p1um_y_60/07_center_offset_drift.png)
+- **8 px guard（`pitch1um_y_100`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/COMBO/pitch1um_y_100/07_center_offset_drift.png)
 
 **量化修復（np.rint）後的 recon 與其他方法論版本：**
-- [`8px_gate_recon_quantfix/`](R38v2SeqFixed/results/8px_gate_recon_quantfix/) · [`720angle_irls_analysis/COMBO/`](R38v2SeqFixed/results/720angle_irls_analysis/COMBO/) · [`720angle_soft_l1/COMBO/`](R38v2SeqFixed/results/720angle_soft_l1/COMBO/) · [`combo_sequence_analysis/`](R38v2SeqFixed/results/combo_sequence_analysis/)
+
+- [量化修復版 recon（`8px_gate_recon_quantfix/`）](R38v2SeqFixed/results/8px_gate_recon_quantfix/)
+- [720-angle IRLS 分析](R38v2SeqFixed/results/720angle_irls_analysis/COMBO/)
+- [720-angle Soft-L1 分析](R38v2SeqFixed/results/720angle_soft_l1/COMBO/)
+- [獨立 sequence_analysis](R38v2SeqFixed/results/combo_sequence_analysis/)
 
 </details>
 
-📄 [COMBO_RESULTS](R38v2SeqFixed/reports/COMBO_RESULTS.md) · [Complete series](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md)
+📄 [COMBO_RESULTS](R38v2SeqFixed/reports/COMBO_RESULTS.md) · [完整系列報告](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md)
 
 ---
 
 ## 🟢 R38v2
 
-![🟢 R38v2 cross-scale step std](R38v2SeqFixed/results/720angle_analysis/R38v2/cross_dataset/08_cross_scale_step_std.png)
+![🟢 R38v2 跨尺度步距標準差](R38v2SeqFixed/results/720angle_analysis/R38v2/cross_dataset/08_cross_scale_step_std.png)
 
 > [!TIP]
-> **`r38v2_8px_gate`** · visual priority alternate · 0.8px **`0.134`** · steepness **+89%** · seq training (8px-only + signal gate + warmup 15，未加 Winsorize)
+> **`r38v2_8px_gate`** · visual priority alternate · 0.8px **`0.134`** · steepness **+89%** · Seq training（8px-only + signal gate + warmup 15，未加 Winsorize）
+
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-| 0.08 px (子像素) | 0.8 px (主戰場) | 8 px (guard) |
-|:---:|:---:|:---:|
-| <img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270"> | <img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270"> | <img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270"> |
-| [📁 41 frames →](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/) | [📁 61 frames →](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/) | [📁 101 frames →](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/) |
+三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+
+<p align="center">
+  <img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
+  <img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
+  <img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
+</p>
+
+📁 完整重建序列：
+
+- [41 frames · 0.08 px 子像素](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/)
+
 
 <details>
-<summary>📈 所有 24 張 720-angle 指標 + 量化修復 recon + 其他方法論版本</summary>
+<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
 
-**Cross-scale：** [08 step std](R38v2SeqFixed/results/720angle_analysis/R38v2/cross_dataset/08_cross_scale_step_std.png) · [09 residual](R38v2SeqFixed/results/720angle_analysis/R38v2/cross_dataset/09_cross_scale_residual_improvement.png) · [10 k2](R38v2SeqFixed/results/720angle_analysis/R38v2/cross_dataset/10_cross_scale_k2_stability.png)
+**跨尺度總結：**
 
-**Per-pitch：**
-- `pitch0p01um_y_40`: [01](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/07_center_offset_drift.png)
-- `pitch0p1um_y_60`: [01](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/07_center_offset_drift.png)
-- `pitch1um_y_100`: [01](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/07_center_offset_drift.png)
+- [跨尺度步距標準差（08）](R38v2SeqFixed/results/720angle_analysis/R38v2/cross_dataset/08_cross_scale_step_std.png)
+- [跨尺度 Residual 改善（09）](R38v2SeqFixed/results/720angle_analysis/R38v2/cross_dataset/09_cross_scale_residual_improvement.png)
+- [跨尺度 K2 穩定性（10）](R38v2SeqFixed/results/720angle_analysis/R38v2/cross_dataset/10_cross_scale_k2_stability.png)
 
-**其他方法論版本：** [`720angle_irls_analysis/R38v2/`](R38v2SeqFixed/results/720angle_irls_analysis/R38v2/) · [`720angle_soft_l1/R38v2/`](R38v2SeqFixed/results/720angle_soft_l1/R38v2/) · [`sequence_analysis/`](R38v2SeqFixed/results/sequence_analysis/) · [`8px_gate_recon_quantfix/`](R38v2SeqFixed/results/8px_gate_recon_quantfix/)
+**Per-pitch 詳細指標（每 pitch 7 張）：**
+
+- **0.08 px 子像素（`pitch0p01um_y_40`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p01um_y_40/07_center_offset_drift.png)
+- **0.8 px 主戰場（`pitch0p1um_y_60`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch0p1um_y_60/07_center_offset_drift.png)
+- **8 px guard（`pitch1um_y_100`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/R38v2/pitch1um_y_100/07_center_offset_drift.png)
+
+**其他方法論版本：**
+
+- [720-angle IRLS 分析](R38v2SeqFixed/results/720angle_irls_analysis/R38v2/)
+- [720-angle Soft-L1 分析](R38v2SeqFixed/results/720angle_soft_l1/R38v2/)
+- [通用 sequence_analysis](R38v2SeqFixed/results/sequence_analysis/)
+- [量化修復版 recon（`8px_gate_recon_quantfix/`）](R38v2SeqFixed/results/8px_gate_recon_quantfix/)
 
 </details>
 
@@ -101,33 +184,73 @@ _Last updated: 2026-04-17_
 
 ## 🟢 R33
 
-![🟢 R33 cross-scale step std](R38v2SeqFixed/results/720angle_analysis/R33/cross_dataset/08_cross_scale_step_std.png)
+![🟢 R33 跨尺度步距標準差](R38v2SeqFixed/results/720angle_analysis/R33/cross_dataset/08_cross_scale_step_std.png)
 
 > [!TIP]
-> **`r33_robust_p95`** · GMF extreme alternate · 0.8px **`0.119`** (三尺度全面最低) · 視覺銳度 -22% · Winsorize spatial loss p95
+> **`r33_robust_p95`** · GMF extreme alternate · 0.8px **`0.119`**（三尺度全面最低）· 視覺銳度 -22% · Winsorize spatial loss p95
+
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-| 0.08 px (子像素) | 0.8 px (主戰場) | 8 px (guard) |
-|:---:|:---:|:---:|
-| <img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270"> | <img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270"> | <img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270"> |
-| [📁 41 frames →](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/) | [📁 61 frames →](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/) | [📁 101 frames →](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/) |
+三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+
+<p align="center">
+  <img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
+  <img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
+  <img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
+</p>
+
+📁 完整重建序列：
+
+- [41 frames · 0.08 px 子像素](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/)
+
 
 <details>
-<summary>📈 所有 24 張 720-angle 指標 + 量化修復 recon + 其他方法論版本</summary>
+<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
 
-**Cross-scale：** [08 step std](R38v2SeqFixed/results/720angle_analysis/R33/cross_dataset/08_cross_scale_step_std.png) · [09 residual](R38v2SeqFixed/results/720angle_analysis/R33/cross_dataset/09_cross_scale_residual_improvement.png) · [10 k2](R38v2SeqFixed/results/720angle_analysis/R33/cross_dataset/10_cross_scale_k2_stability.png)
+**跨尺度總結：**
 
-**Per-pitch：**
-- `pitch0p01um_y_40`: [01](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/07_center_offset_drift.png)
-- `pitch0p1um_y_60`: [01](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/07_center_offset_drift.png)
-- `pitch1um_y_100`: [01](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/07_center_offset_drift.png)
+- [跨尺度步距標準差（08）](R38v2SeqFixed/results/720angle_analysis/R33/cross_dataset/08_cross_scale_step_std.png)
+- [跨尺度 Residual 改善（09）](R38v2SeqFixed/results/720angle_analysis/R33/cross_dataset/09_cross_scale_residual_improvement.png)
+- [跨尺度 K2 穩定性（10）](R38v2SeqFixed/results/720angle_analysis/R33/cross_dataset/10_cross_scale_k2_stability.png)
 
-**R33 候選獨立 sequence_analysis（24 張）：** [`p95_sequence_analysis/`](R33RobustLoss/results/p95_sequence_analysis/) · **量化修復：** [`p95_recon_quantfix/`](R33RobustLoss/results/p95_recon_quantfix/)
+**Per-pitch 詳細指標（每 pitch 7 張）：**
+
+- **0.08 px 子像素（`pitch0p01um_y_40`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p01um_y_40/07_center_offset_drift.png)
+- **0.8 px 主戰場（`pitch0p1um_y_60`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/R33/pitch0p1um_y_60/07_center_offset_drift.png)
+- **8 px guard（`pitch1um_y_100`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/R33/pitch1um_y_100/07_center_offset_drift.png)
+
+**R33 候選獨立 sequence_analysis 與量化修復：**
+
+- [R33 候選獨立 sequence_analysis（24 張）](R33RobustLoss/results/p95_sequence_analysis/)
+- [量化修復版 recon（`p95_recon_quantfix/`）](R33RobustLoss/results/p95_recon_quantfix/)
 
 </details>
 
-📄 [R33_SUMMARY](R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md) · [Complete series](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md) · [GMF methodology](R33RobustLoss/reports/GMF_STEP_STD_METHODOLOGY.md) · [Quantization fix](R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md) · [Internal/External divergence](R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md)
+📄 [R33_EXPERIMENT_SUMMARY](R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md) · [完整系列報告](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md) · [GMF 方法論](R33RobustLoss/reports/GMF_STEP_STD_METHODOLOGY.md) · [量化修復分析](R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md) · [Internal/External 偏差分析](R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md)
 
 ---
 
@@ -148,30 +271,65 @@ _Last updated: 2026-04-17_
 
 ## 🔵 R30
 
-![R30 cross-scale step std](R38v2SeqFixed/results/720angle_analysis/R30/cross_dataset/08_cross_scale_step_std.png)
+![R30 跨尺度步距標準差](R38v2SeqFixed/results/720angle_analysis/R30/cross_dataset/08_cross_scale_step_std.png)
 
 > [!NOTE]
-> **`r30_b1_dironly`** · historical former baseline (pre-COMBO) · 0.8px **`0.168`** · B1 dironly 首次在主戰場超越 R26
+> **`r30_b1_dironly`** · historical former baseline（pre-COMBO）· 0.8px **`0.168`** · B1 dironly 首次在主戰場超越 R26
 >
-> R30 的 recon BMP 在 legacy batch 內且未 tracked，本輪只有 720-angle 跨候選比較的指標圖。
+> R30 的 recon BMP 在 legacy batch 內且未 tracked；本輪只有 720-angle 跨候選比較的指標圖。
+
 
 ### 📈 Per-pitch 指標縮圖（720-angle analysis）
 
-| 0.08 px | 0.8 px (主戰場) | 8 px |
-|:---:|:---:|:---:|
-| <img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/02_step_stability.png" width="270"> | <img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/02_step_stability.png" width="270"> | <img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/02_step_stability.png" width="270"> |
+三尺度的步距穩定性並排比較：
+
+<p align="center">
+  <img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/02_step_stability.png" width="270" alt="R30 0.08 px 步距穩定性">
+  <img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/02_step_stability.png" width="270" alt="R30 0.8 px 步距穩定性">
+  <img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/02_step_stability.png" width="270" alt="R30 8 px guard 步距穩定性">
+</p>
+
 
 <details>
-<summary>📈 所有 24 張 720-angle 指標 + 其他方法論版本</summary>
+<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
 
-**Cross-scale：** [08 step std](R38v2SeqFixed/results/720angle_analysis/R30/cross_dataset/08_cross_scale_step_std.png) · [09 residual](R38v2SeqFixed/results/720angle_analysis/R30/cross_dataset/09_cross_scale_residual_improvement.png) · [10 k2](R38v2SeqFixed/results/720angle_analysis/R30/cross_dataset/10_cross_scale_k2_stability.png)
+**跨尺度總結：**
 
-**Per-pitch：**
-- `pitch0p01um_y_40`: [01](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/07_center_offset_drift.png)
-- `pitch0p1um_y_60`: [01](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/07_center_offset_drift.png)
-- `pitch1um_y_100`: [01](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/01_center_trajectory.png) · [02](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/02_step_stability.png) · [03](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/03_residual_std_timeseries.png) · [04](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/05_hotspot_persistence.png) · [06](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/06_edge_width_consistency.png) · [07](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/07_center_offset_drift.png)
+- [跨尺度步距標準差（08）](R38v2SeqFixed/results/720angle_analysis/R30/cross_dataset/08_cross_scale_step_std.png)
+- [跨尺度 Residual 改善（09）](R38v2SeqFixed/results/720angle_analysis/R30/cross_dataset/09_cross_scale_residual_improvement.png)
+- [跨尺度 K2 穩定性（10）](R38v2SeqFixed/results/720angle_analysis/R30/cross_dataset/10_cross_scale_k2_stability.png)
 
-**其他方法論版本：** [`720angle_irls_analysis/R30/`](R38v2SeqFixed/results/720angle_irls_analysis/R30/) · [`720angle_soft_l1/R30/`](R38v2SeqFixed/results/720angle_soft_l1/R30/)
+**Per-pitch 詳細指標（每 pitch 7 張）：**
+
+- **0.08 px 子像素（`pitch0p01um_y_40`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/07_center_offset_drift.png)
+- **0.8 px 主戰場（`pitch0p1um_y_60`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/07_center_offset_drift.png)
+- **8 px guard（`pitch1um_y_100`）**
+  - [中心軌跡](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/01_center_trajectory.png)
+  - [步距穩定性](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/02_step_stability.png)
+  - [Residual std 時序](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/07_center_offset_drift.png)
+
+**其他方法論版本：**
+
+- [720-angle IRLS 分析](R38v2SeqFixed/results/720angle_irls_analysis/R30/)
+- [720-angle Soft-L1 分析](R38v2SeqFixed/results/720angle_soft_l1/R30/)
 
 </details>
 
@@ -272,27 +430,66 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ## 🔴 R33c
 
-![🔴 R33c cross-scale step std](R33ContrastFix/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png)
+![🔴 R33c 跨尺度步距標準差](R33ContrastFix/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png)
 
 > [!CAUTION]
-> **`R33ContrastFix / stat03`** · **Closed · falsified** · W_STAT 提高 (0.30) 反而讓 contrast 更差 — 視覺與指標同時退步
+> **`R33ContrastFix / stat03`** · **Closed · falsified** · W_STAT 提高（0.30）反而讓 contrast 更差 — 視覺與指標同時退步
+
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-| 0.08 px (子像素) | 0.8 px (主戰場) | 8 px (guard) |
-|:---:|:---:|:---:|
-| <img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270"> | <img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270"> | <img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270"> |
-| [📁 41 frames →](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/) | [📁 61 frames →](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/) | [📁 101 frames →](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/) |
+三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+
+<p align="center">
+  <img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
+  <img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
+  <img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
+</p>
+
+📁 完整重建序列：
+
+- [41 frames · 0.08 px 子像素](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/)
+
 
 <details>
-<summary>📈 所有 24 張 720-angle 指標 + 量化修復 recon + 其他方法論版本</summary>
+<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
 
-**Cross-scale：** [08 step std](R33ContrastFix/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png) · [09 residual](R33ContrastFix/results/sequence_analysis/cross_dataset/09_cross_scale_residual_improvement.png) · [10 k2](R33ContrastFix/results/sequence_analysis/cross_dataset/10_cross_scale_k2_stability.png)
+**跨尺度總結：**
 
-**Per-pitch：**
-- `pitch0p01um_y_40`: [01](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/01_center_trajectory.png) · [02](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/02_step_stability.png) · [03](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/03_residual_std_timeseries.png) · [04](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/04_k2_amplitude_timeseries.png) · [05](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/05_hotspot_persistence.png) · [06](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/06_edge_width_consistency.png) · [07](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/07_center_offset_drift.png)
-- `pitch0p1um_y_60`: [01](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/01_center_trajectory.png) · [02](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/02_step_stability.png) · [03](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/03_residual_std_timeseries.png) · [04](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/04_k2_amplitude_timeseries.png) · [05](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/05_hotspot_persistence.png) · [06](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/06_edge_width_consistency.png) · [07](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/07_center_offset_drift.png)
-- `pitch1um_y_100`: [01](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/01_center_trajectory.png) · [02](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/02_step_stability.png) · [03](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/03_residual_std_timeseries.png) · [04](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/05_hotspot_persistence.png) · [06](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/06_edge_width_consistency.png) · [07](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/07_center_offset_drift.png)
+- [跨尺度步距標準差（08）](R33ContrastFix/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png)
+- [跨尺度 Residual 改善（09）](R33ContrastFix/results/sequence_analysis/cross_dataset/09_cross_scale_residual_improvement.png)
+- [跨尺度 K2 穩定性（10）](R33ContrastFix/results/sequence_analysis/cross_dataset/10_cross_scale_k2_stability.png)
+
+**Per-pitch 詳細指標（每 pitch 7 張）：**
+
+- **0.08 px 子像素（`pitch0p01um_y_40`）**
+  - [中心軌跡](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/01_center_trajectory.png)
+  - [步距穩定性](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/02_step_stability.png)
+  - [Residual std 時序](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/06_edge_width_consistency.png)
+  - [中心偏移漂移](R33ContrastFix/results/sequence_analysis/pitch0p01um_y_40/07_center_offset_drift.png)
+- **0.8 px 主戰場（`pitch0p1um_y_60`）**
+  - [中心軌跡](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/01_center_trajectory.png)
+  - [步距穩定性](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/02_step_stability.png)
+  - [Residual std 時序](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/06_edge_width_consistency.png)
+  - [中心偏移漂移](R33ContrastFix/results/sequence_analysis/pitch0p1um_y_60/07_center_offset_drift.png)
+- **8 px guard（`pitch1um_y_100`）**
+  - [中心軌跡](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/01_center_trajectory.png)
+  - [步距穩定性](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/02_step_stability.png)
+  - [Residual std 時序](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/06_edge_width_consistency.png)
+  - [中心偏移漂移](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/07_center_offset_drift.png)
+
+
 
 </details>
 
@@ -302,27 +499,66 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ## 🔴 R38 seq-all-stages
 
-![🔴 R38 seq-all-stages cross-scale step std](R38SeqConsistency/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png)
+![🔴 R38 seq-all-stages 跨尺度步距標準差](R38SeqConsistency/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png)
 
 > [!CAUTION]
-> **`R38SeqConsistency / seq_only`** · **Closed · falsified** · R38v2 的前身：0.8px delta 太小被噪聲梯度干擾 — 三重修復 (warmup + gate + 8px-only) → R38v2 才成功
+> **`R38SeqConsistency / seq_only`** · **Closed · falsified** · R38v2 的前身：0.8px delta 太小被噪聲梯度干擾 — 三重修復（warmup + gate + 8px-only）→ R38v2 才成功
+
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-| 0.08 px (子像素) | 0.8 px (主戰場) | 8 px (guard) |
-|:---:|:---:|:---:|
-| <img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270"> | <img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270"> | <img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270"> |
-| [📁 41 frames →](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/) | [📁 61 frames →](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/) | [📁 101 frames →](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/) |
+三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+
+<p align="center">
+  <img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
+  <img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
+  <img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
+</p>
+
+📁 完整重建序列：
+
+- [41 frames · 0.08 px 子像素](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/)
+
 
 <details>
-<summary>📈 所有 24 張 720-angle 指標 + 量化修復 recon + 其他方法論版本</summary>
+<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
 
-**Cross-scale：** [08 step std](R38SeqConsistency/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png) · [09 residual](R38SeqConsistency/results/sequence_analysis/cross_dataset/09_cross_scale_residual_improvement.png) · [10 k2](R38SeqConsistency/results/sequence_analysis/cross_dataset/10_cross_scale_k2_stability.png)
+**跨尺度總結：**
 
-**Per-pitch：**
-- `pitch0p01um_y_40`: [01](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/01_center_trajectory.png) · [02](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/02_step_stability.png) · [03](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/03_residual_std_timeseries.png) · [04](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/04_k2_amplitude_timeseries.png) · [05](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/05_hotspot_persistence.png) · [06](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/06_edge_width_consistency.png) · [07](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/07_center_offset_drift.png)
-- `pitch0p1um_y_60`: [01](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/01_center_trajectory.png) · [02](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/02_step_stability.png) · [03](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/03_residual_std_timeseries.png) · [04](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/04_k2_amplitude_timeseries.png) · [05](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/05_hotspot_persistence.png) · [06](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/06_edge_width_consistency.png) · [07](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/07_center_offset_drift.png)
-- `pitch1um_y_100`: [01](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/01_center_trajectory.png) · [02](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/02_step_stability.png) · [03](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/03_residual_std_timeseries.png) · [04](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/05_hotspot_persistence.png) · [06](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/06_edge_width_consistency.png) · [07](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/07_center_offset_drift.png)
+- [跨尺度步距標準差（08）](R38SeqConsistency/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png)
+- [跨尺度 Residual 改善（09）](R38SeqConsistency/results/sequence_analysis/cross_dataset/09_cross_scale_residual_improvement.png)
+- [跨尺度 K2 穩定性（10）](R38SeqConsistency/results/sequence_analysis/cross_dataset/10_cross_scale_k2_stability.png)
+
+**Per-pitch 詳細指標（每 pitch 7 張）：**
+
+- **0.08 px 子像素（`pitch0p01um_y_40`）**
+  - [中心軌跡](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/01_center_trajectory.png)
+  - [步距穩定性](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/02_step_stability.png)
+  - [Residual std 時序](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38SeqConsistency/results/sequence_analysis/pitch0p01um_y_40/07_center_offset_drift.png)
+- **0.8 px 主戰場（`pitch0p1um_y_60`）**
+  - [中心軌跡](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/01_center_trajectory.png)
+  - [步距穩定性](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/02_step_stability.png)
+  - [Residual std 時序](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38SeqConsistency/results/sequence_analysis/pitch0p1um_y_60/07_center_offset_drift.png)
+- **8 px guard（`pitch1um_y_100`）**
+  - [中心軌跡](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/01_center_trajectory.png)
+  - [步距穩定性](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/02_step_stability.png)
+  - [Residual std 時序](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/03_residual_std_timeseries.png)
+  - [K2 振幅時序](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/04_k2_amplitude_timeseries.png)
+  - [熱點持久性](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/05_hotspot_persistence.png)
+  - [邊緣寬度一致性](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/06_edge_width_consistency.png)
+  - [中心偏移漂移](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/07_center_offset_drift.png)
+
+
 
 </details>
 
