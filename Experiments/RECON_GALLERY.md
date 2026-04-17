@@ -1,42 +1,51 @@
 # 實驗重建影像 Gallery / Experiment Recon Gallery
 
-Last updated: 2026-04-16
+_Last updated: 2026-04-17_
 
 這份文件收集**每一輪實驗所有 tracked 的重建影像、指標圖表、分析圖**，供 demo / report 時快速查閱。
 所有連結皆為 git 追蹤檔案的相對路徑，GitHub 上會自動渲染圖片。
 
----
+## 🎨 色彩圖例 / Color Legend
+
+| 色圓 | 狀態 | 含義 |
+|------|------|------|
+| 🟢 | active | 正式 baseline 或 approved alternate — 目前可安全引用 |
+| 🟡 | open side track | 研究中的 side track，尚未完成外部驗證 |
+| 🔵 | historical | 前任 baseline 或歷史基準線（保留作參考，已被取代）|
+| 🔴 | closed / falsified | 已經否定或 external FAIL，不可再引用為 active line |
 
 ## 📑 快速導覽 / Table of Contents
 
-點擊跳到對應輪次：
-
-| Round | 角色 / 狀態 | 測試重建影像 | 指標圖表 | 分析圖 |
-|-------|-------------|-------------|---------|--------|
-| [COMBO](#combo) | formal production baseline (2026-04-08) | ✓ 203 frames × 3 pitches | ✓ 720-angle + sequence | — |
-| [R38v2](#r38v2) | visual priority alternate | ✓ 203 frames × 3 pitches | ✓ 720-angle + sequence | — |
-| [R33](#r33) | GMF extreme alternate | ✓ 203 frames × 3 pitches | ✓ 720-angle + sequence | — |
-| [R33 ablations](#r33-ablations) | lap_only / soft_p95 / hard_p90（closed） | ✓ | ✓ | — |
-| [R30](#r30) | historical former baseline | — (reference only) | ✓（720-angle 併入 R38v2SeqFixed） | — |
-| [R26 sm035](#r26-sm035) | 歷史 step_mag=0.35 基準線 | ✓（AnalysisLab/r26）| ✓（sequence + single_image）| ✓（performance benchmark）|
-| [R26NewPSFCheck](#r26newpsfcheck) | open side track（PSF 政策切換）| ✓（ablation + pure_psf_control）| — | ✓（PSF 新舊比對 + centering 審計）|
-| [R33c](#r33c) | 對比度修復失敗，closed | ✓ 203 frames × 3 pitches | ✓ sequence_analysis | — |
-| [R38 seq-all-stages](#r38-seq-all-stages) | seq 全 stages noise 干擾，closed | ✓ 203 frames × 3 pitches | ✓ sequence_analysis | — |
-| [R32](#r32) | domain rebalancing external FAIL，closed | — (artifacts gitignored) | — | — |
-| [R34 / R35 / R37](#r34--r35--r37) | sandbox-only falsified | — | — | — |
-| [Legacy visuals](#legacy-visuals) | R18/R22/R25 0.8px 比較 | — | ✓ (2 張 comparison sheets) | — |
-| [Adding new entries](#adding-new-entries) | 新輪次的補充指引 | — | — | — |
+| 色 | Round | 角色 | 關鍵數字（external 0.8px step std）|
+|----|-------|------|-----------------------------------|
+| 🟢 | [**COMBO**](#-combo) | formal production baseline (2026-04-08) | **`0.132`** · steepness +89% · residual 歷史最佳 |
+| 🟢 | [**R38v2**](#-r38v2) | visual priority alternate | `0.134` · steepness +89% |
+| 🟢 | [**R33**](#-r33) | GMF extreme alternate | **`0.119`** · 三尺度全面最低 |
+| 🔴 | [R33 ablations](#-r33-ablations) | lap_only / soft_p95 / hard_p90 — closed | — |
+| 🔵 | [**R30**](#-r30) | historical former baseline (pre-COMBO) | `0.168` · B1 dironly |
+| 🔵 | [**R26 sm035**](#-r26-sm035) | 歷史 step_mag=0.35 基準線 | `0.191` |
+| 🟡 | [**R26NewPSFCheck**](#-r26newpsfcheck) | open side track — PSF 政策切換 | pending external GMF |
+| 🔴 | [R33c](#-r33c) | 對比度修復失敗 | 視覺 + 指標雙退步 |
+| 🔴 | [R38 seq-all-stages](#-r38-seq-all-stages) | seq 全 stages 噪聲干擾 | 8px 好但 0.8px 弱 |
+| 🔴 | [R32](#-r32) | domain rebalancing external FAIL | `0.332` (+97.7%) |
+| 🔴 | [R34 / R35 / R37](#-r34--r35--r37) | sandbox-only 銳度修復 — 全部失敗 | — |
+| 📚 | [Legacy visuals](#-legacy-visuals) | R18/R22/R25 0.8px 比較（封存） | — |
 
 ---
 
-## COMBO
 
-**`r38v2_8px_gate_p95`** — formal production baseline（effective 2026-04-08）。Winsorize p95 + seq 8px gate + warmup 的最均衡組合：0.8px -22% · steepness +89% · residual_std 歷史最佳。
+## 🟢 COMBO
 
-> 正式報告：[`R38v2SeqFixed/reports/COMBO_RESULTS.md`](R38v2SeqFixed/reports/COMBO_RESULTS.md)
-> 系列報告：[`R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md)
+> [!TIP]
+> **`r38v2_8px_gate_p95`** · formal production baseline · effective **2026-04-08**
+>
+> Winsorize p95 + seq 8px gate + warmup — 三尺度最均衡組合
+>
+> external 0.8px **`0.132`** (-22% vs R30) · steepness **+89%** · residual_std **2.044** (歷史最佳)
 
-### 測試重建影像
+📄 Reports: [COMBO_RESULTS](R38v2SeqFixed/reports/COMBO_RESULTS.md) · [Complete series](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md)
+
+### 📊 測試重建影像
 
 代表樣本（`pitch1um_y_100_odd` 第一幀）：
 
@@ -52,7 +61,7 @@ Last updated: 2026-04-16
 
 量化修復（np.rint）後的 recon：[`8px_gate_recon_quantfix/`](R38v2SeqFixed/results/8px_gate_recon_quantfix/)
 
-### 指標圖表（720-angle analysis）
+### 📈 指標圖表（720-angle analysis）
 
 **Cross-scale 總結**（三尺度並列）：
 
@@ -106,13 +115,18 @@ Last updated: 2026-04-16
 
 ---
 
-## R38v2
+## 🟢 R38v2
 
-**`r38v2_8px_gate`** — visual priority alternate。Seq training（8px-only + signal gate + warmup 15，未加 Winsorize）。0.8px -20% + steepness +89%。
+> [!TIP]
+> **`r38v2_8px_gate`** · visual priority alternate
+>
+> Seq training (8px-only + signal gate + warmup 15，未加 Winsorize)
+>
+> external 0.8px **`0.134`** (-20% vs R30) · steepness **+89%**
 
-> 正式報告：[`R38v2SeqFixed/reports/R38v2_RESULTS.md`](R38v2SeqFixed/reports/R38v2_RESULTS.md)
+📄 Reports: [R38v2_RESULTS](R38v2SeqFixed/reports/R38v2_RESULTS.md)
 
-### 測試重建影像
+### 📊 測試重建影像
 
 ![R38v2 sample recon](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/VisionTop_20251029182653732.bmp)
 
@@ -122,7 +136,7 @@ Last updated: 2026-04-16
 | `pitch0p1um_y_60_odd` | [`8px_gate_recon/.../pitch0p1um_y_60_odd/`](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/) | 同上 |
 | `pitch1um_y_100_odd` | [`8px_gate_recon/.../pitch1um_y_100_odd/`](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/) | 同上 |
 
-### 指標圖表（720-angle analysis）
+### 📈 指標圖表（720-angle analysis）
 
 ![R38v2 step std](R38v2SeqFixed/results/720angle_analysis/R38v2/cross_dataset/08_cross_scale_step_std.png)
 
@@ -140,15 +154,18 @@ Last updated: 2026-04-16
 
 ---
 
-## R33
+## 🟢 R33
 
-**`r33_robust_p95`** — GMF extreme alternate。Winsorize spatial loss p95 → 0.8px -29%（三尺度全面改善），但視覺銳度 -22%。
+> [!TIP]
+> **`r33_robust_p95`** · GMF extreme alternate
+>
+> Winsorize spatial loss p95 — 三尺度全面改善
+>
+> external 0.8px **`0.119`** (-29% vs R30) · 視覺銳度 -22% (適合純 GMF 定位場景)
 
-> 正式報告：[`R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md`](R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md)
-> 系列報告：[`R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md)
-> 方法論：[GMF step_std](R33RobustLoss/reports/GMF_STEP_STD_METHODOLOGY.md) · [Quantization fix](R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md) · [Internal/External divergence](R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md)
+📄 Reports: [R33_SUMMARY](R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md) · [Complete series](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md) · [GMF methodology](R33RobustLoss/reports/GMF_STEP_STD_METHODOLOGY.md) · [Quantization fix](R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md) · [Internal/External divergence](R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md)
 
-### 測試重建影像
+### 📊 測試重建影像
 
 ![R33 sample recon](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/VisionTop_20251029182653732.bmp)
 
@@ -158,7 +175,7 @@ Last updated: 2026-04-16
 | `pitch0p1um_y_60_odd` | [`p95_recon/.../pitch0p1um_y_60_odd/`](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/) | 同上 |
 | `pitch1um_y_100_odd` | [`p95_recon/.../pitch1um_y_100_odd/`](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/) | 同上 |
 
-### 指標圖表（720-angle analysis）
+### 📈 指標圖表（720-angle analysis）
 
 ![R33 step std](R38v2SeqFixed/results/720angle_analysis/R33/cross_dataset/08_cross_scale_step_std.png)
 
@@ -176,9 +193,10 @@ R33 候選獨立 sequence_analysis（24 張）：[`p95_sequence_analysis/`](R33R
 
 ---
 
-## R33 ablations
+## 🔴 R33 ablations
 
-R33 系列的三個否定分支，保留作為「為什麼 p95 才成立」的對照。
+> [!NOTE]
+> R33 系列的三個否定分支，保留作為「為什麼 p95 才成立」的對照。
 
 | 候選 | verdict | recon 目錄 | sequence analysis |
 |------|---------|-----------|-------------------|
@@ -190,15 +208,20 @@ R33 系列的三個否定分支，保留作為「為什麼 p95 才成立」的�
 
 ---
 
-## R30
+## 🔵 R30
 
-**`r30_b1_dironly`** — 歷史前任 baseline（COMBO promote 前的正式 baseline）。B1 dironly 機制首次在主戰場超越 R26。
+> [!NOTE]
+> **`r30_b1_dironly`** · historical former baseline (COMBO promote 前的正式 baseline)
+>
+> B1 dironly 機制首次在主戰場超越 R26
+>
+> external 0.8px **`0.168`**
 
-> 正式證據：[`docs/evidence/baseline/ROUND30_EXTERNAL_COMPARE.md`](../docs/evidence/baseline/ROUND30_EXTERNAL_COMPARE.md) · [Architecture breakthrough decision](../docs/evidence/baseline/ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md)
+📄 Evidence: [External compare](../docs/evidence/baseline/ROUND30_EXTERNAL_COMPARE.md) · [Architecture breakthrough decision](../docs/evidence/baseline/ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md)
 
 R30 的 recon BMP 在 legacy batch（`Traing_Progress/organized_20260316/round30/`）內、未追蹤入 Git。但 R30 被納入 R38v2SeqFixed 的 720-angle 交叉比較，指標圖保留如下。
 
-### 指標圖表（720-angle analysis，跨候選比較版本）
+### 📈 指標圖表（720-angle analysis，跨候選比較版本）
 
 ![R30 step std](R38v2SeqFixed/results/720angle_analysis/R30/cross_dataset/08_cross_scale_step_std.png)
 
@@ -216,20 +239,25 @@ R30 的 recon BMP 在 legacy batch（`Traing_Progress/organized_20260316/round30
 
 ---
 
-## R26 sm035
+## 🔵 R26 sm035
 
-`r26_sm035` — 歷史 step_mag=0.35 基準線（R14–R29 線的 externally verified optimum）。已被 R30 取代；AnalysisLab 保留了完整的 single_image + sequence 分析作為研究參考。
+> [!NOTE]
+> **`r26_sm035`** · 歷史 step_mag=0.35 基準線 (R14–R29 線的 externally verified optimum)
+>
+> 已被 R30 取代。AnalysisLab 保留完整 single_image + sequence 分析作為研究參考
+>
+> external 0.8px **`0.191`**
 
-> AnalysisLab 入口：[`AnalysisLab/r26/README.md`](../AnalysisLab/r26/README.md)
+📄 Entry: [AnalysisLab/r26/README](../AnalysisLab/r26/README.md)
 
-### 測試重建影像（single-image demo）
+### 📊 測試重建影像（single-image demo）
 
 ![R26 single-image output](../AnalysisLab/r26/single_image/recon/output_preview.png)
 
 - Input：[`VisionTop_20251029182653732.bmp`](../AnalysisLab/r26/single_image/inputs/VisionTop_20251029182653732.bmp) · [preview](../AnalysisLab/r26/single_image/inputs/input_preview.png)
 - Output (r26_sm035 best_tradeoff)：[`VisionTop_*.bmp`](../AnalysisLab/r26/single_image/recon/reconstruct_progress_r26_sm035_best_tradeoff_in_Demo_Input_20260327_122202/VisionTop_20251029182653732.bmp) · [preview](../AnalysisLab/r26/single_image/recon/output_preview.png)
 
-### 指標圖表（single_image analysis，8 張）
+### 📈 指標圖表（single_image analysis，8 張）
 
 完整報告：[`AnalysisLab/r26/single_image/reports/R26_SingleImage_Analysis_Report.md`](../AnalysisLab/r26/single_image/reports/R26_SingleImage_Analysis_Report.md)
 
@@ -242,7 +270,7 @@ R30 的 recon BMP 在 legacy batch（`Traing_Progress/organized_20260316/round30
 - [07 residual harmonics](../AnalysisLab/r26/single_image/results/07_residual_harmonics.png)
 - [08 residual hotspot](../AnalysisLab/r26/single_image/results/08_residual_hotspot.png)
 
-### 指標圖表（sequence analysis）
+### 📈 指標圖表（sequence analysis）
 
 完整報告：[`AnalysisLab/r26/sequence/reports/R26_Sequence_Analysis_Report.md`](../AnalysisLab/r26/sequence/reports/R26_Sequence_Analysis_Report.md)
 
@@ -256,7 +284,7 @@ R30 的 recon BMP 在 legacy batch（`Traing_Progress/organized_20260316/round30
 - `pitch1um_y_100`: [01](../AnalysisLab/r26/sequence/results/pitch1um_y_100/01_center_trajectory.png) · [02](../AnalysisLab/r26/sequence/results/pitch1um_y_100/02_step_stability.png) · [03](../AnalysisLab/r26/sequence/results/pitch1um_y_100/03_residual_std_timeseries.png) · [04](../AnalysisLab/r26/sequence/results/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](../AnalysisLab/r26/sequence/results/pitch1um_y_100/05_hotspot_persistence.png) · [06](../AnalysisLab/r26/sequence/results/pitch1um_y_100/06_edge_width_consistency.png) · [07](../AnalysisLab/r26/sequence/results/pitch1um_y_100/07_center_offset_drift.png)
 </details>
 
-### 分析圖（performance benchmark）
+### 🔍 分析圖（performance benchmark）
 
 - [01 inference latency comparison](../AnalysisLab/r26/performance/results/cross_device/01_inference_latency_comparison.png)
 - [02 inference throughput comparison](../AnalysisLab/r26/performance/results/cross_device/02_inference_throughput_comparison.png)
@@ -265,15 +293,16 @@ R30 的 recon BMP 在 legacy batch（`Traing_Progress/organized_20260316/round30
 
 ---
 
-## R26NewPSFCheck
+## 🟡 R26NewPSFCheck
 
-PSF 政策切換驗證 side track（pending external GMF；**不是** active mainline）。新 Whole-FOV PSF（2026-03-26 完成）取代舊 empirical PSF，作為目前物理上較合理的標準。
+> [!IMPORTANT]
+> **Open side track** · pending external GMF · **不是** active mainline
+>
+> 新 Whole-FOV PSF (2026-03-26 完成) 取代舊 empirical PSF，作為目前物理上較合理的標準
 
-> Status：[`reports/STATUS_20260326.md`](R26NewPSFCheck/reports/STATUS_20260326.md)
-> PSF audit：[`psf_audit/PSF_FORMAL_AUDIT_20260326.md`](R26NewPSFCheck/psf_audit/PSF_FORMAL_AUDIT_20260326.md)
-> Promote compare：[`formal_newpsf_candidate/reports/NEW_PSF_FORMAL_R26_COMPARE.md`](R26NewPSFCheck/formal_newpsf_candidate/reports/NEW_PSF_FORMAL_R26_COMPARE.md)
+📄 Reports: [STATUS](R26NewPSFCheck/reports/STATUS_20260326.md) · [PSF audit](R26NewPSFCheck/psf_audit/PSF_FORMAL_AUDIT_20260326.md) · [Promote compare](R26NewPSFCheck/formal_newpsf_candidate/reports/NEW_PSF_FORMAL_R26_COMPARE.md)
 
-### 測試重建影像（ablation 2×2）
+### 📊 測試重建影像（ablation 2×2）
 
 舊 vs 新 checkpoint × 舊 vs 新 PSF 四象限對照。每張都是同一張 `VisionTop_20251029182653732.bmp` 輸入。
 
@@ -284,14 +313,14 @@ PSF 政策切換驗證 side track（pending external GMF；**不是** active mai
 
 原始 input：[`ablation_single_sample/input/VisionTop_20251029182653732.bmp`](R26NewPSFCheck/ablation_single_sample/input/VisionTop_20251029182653732.bmp)
 
-### 測試重建影像（pure PSF control，epoch 進度）
+### 📊 測試重建影像（pure PSF control，epoch 進度）
 
 Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前「新 PSF 重訓崩壞」的模式。
 
 - Old PSF：[epoch 10](R26NewPSFCheck/pure_psf_control/reconstructions/old_psf/epoch_010.bmp) · [epoch 20](R26NewPSFCheck/pure_psf_control/reconstructions/old_psf/epoch_020.bmp) · [epoch 40](R26NewPSFCheck/pure_psf_control/reconstructions/old_psf/epoch_040.bmp)
 - New PSF：[epoch 10](R26NewPSFCheck/pure_psf_control/reconstructions/new_psf/epoch_010.bmp) · [epoch 20](R26NewPSFCheck/pure_psf_control/reconstructions/new_psf/epoch_020.bmp) · [epoch 40](R26NewPSFCheck/pure_psf_control/reconstructions/new_psf/epoch_040.bmp)
 
-### 分析圖
+### 🔍 分析圖
 
 ![PSF old vs new investigation](R26NewPSFCheck/reports/psf_old_vs_new_investigation_20260326.png)
 
@@ -301,13 +330,16 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ---
 
-## R33c
+## 🔴 R33c
 
-**`R33ContrastFix / stat03`** — 試圖修復 R33 視覺銳度退步的 side attempt。W_STAT 提高（0.30）反而讓 contrast 更差。已 closed。
+> [!CAUTION]
+> **`R33ContrastFix / stat03`** · **Closed · falsified**
+>
+> 試圖修復 R33 視覺銳度退步的 side attempt — W_STAT 提高 (0.30) 反而讓 contrast 更差
 
-> 結果目錄：[`R33ContrastFix/results/`](R33ContrastFix/results/)
+📄 Results: [R33ContrastFix/results](R33ContrastFix/results/)
 
-### 測試重建影像
+### 📊 測試重建影像
 
 ![R33c sample recon](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/VisionTop_20251029182653732.bmp)
 
@@ -317,7 +349,7 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 | `pitch0p1um_y_60_odd` | [`stat03_recon/.../pitch0p1um_y_60_odd/`](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/) |
 | `pitch1um_y_100_odd` | [`stat03_recon/.../pitch1um_y_100_odd/`](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/) |
 
-### 指標圖表（sequence_analysis）
+### 📈 指標圖表（sequence_analysis）
 
 ![R33c step std](R33ContrastFix/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png)
 
@@ -333,13 +365,18 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ---
 
-## R38 seq-all-stages
+## 🔴 R38 seq-all-stages
 
-**`R38SeqConsistency / seq_only`** — R38v2 的前身：所有 stages 都用 seq loss，沒有 8px gate 也沒有 signal gate。0.8px delta 太小被噪聲梯度干擾。三重修復（warmup + gate + 8px-only）→ R38v2 才成功。
+> [!CAUTION]
+> **`R38SeqConsistency / seq_only`** · **Closed · falsified**
+>
+> R38v2 的前身：所有 stages 都用 seq loss，沒有 8px gate 也沒有 signal gate
+>
+> 0.8px delta 太小被噪聲梯度干擾 — 三重修復 (warmup + gate + 8px-only) → R38v2 才成功
 
-> 結果報告：[`R38SeqConsistency/reports/R38_RESULTS.md`](R38SeqConsistency/reports/R38_RESULTS.md)
+📄 Reports: [R38_RESULTS](R38SeqConsistency/reports/R38_RESULTS.md)
 
-### 測試重建影像
+### 📊 測試重建影像
 
 ![R38 sample recon](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/VisionTop_20251029182653732.bmp)
 
@@ -349,7 +386,7 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 | `pitch0p1um_y_60_odd` | [`seq_only_recon/.../pitch0p1um_y_60_odd/`](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/) |
 | `pitch1um_y_100_odd` | [`seq_only_recon/.../pitch1um_y_100_odd/`](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/) |
 
-### 指標圖表（sequence_analysis）
+### 📈 指標圖表（sequence_analysis）
 
 ![R38 step std](R38SeqConsistency/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png)
 
@@ -365,21 +402,27 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ---
 
-## R32
+## 🔴 R32
 
-**`r32_real_eq_finetune`** — domain rebalancing sandbox。Internal winner 但 external 0.8px 惡化 +97.7%。Sandbox 已關閉；「internal pass ≠ external pass」的反例。
+> [!CAUTION]
+> **`r32_real_eq_finetune`** · **External FAIL · Closed sandbox**
+>
+> Internal winner 但 external 0.8px 惡化 **+97.7%** (`0.332`)
+>
+> 「internal pass ≠ external pass」的反例
 
-> 外部比較：[`R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md`](R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md)
-> 決策備忘：[`R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md`](R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md)
-> Runtime status：[`R32Sandbox/runtime/R32_STATUS.md`](R32Sandbox/runtime/R32_STATUS.md)
+📄 Reports: [External compare](R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md) · [Decision memo](R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md) · [Runtime status](R32Sandbox/runtime/R32_STATUS.md)
 
 **視覺輸出**：`R32Sandbox/artifacts/` 下有 process probe 的 loss curve 與 GMF proxy metrics PNG，但這些 artifacts 目錄**被 gitignore 排除**，不在 tracked 範圍。本地執行可看：`R32Sandbox/artifacts/training_progress_process_probe_r32_real_eq_finetune_*`。
 
 ---
 
-## R34 / R35 / R37
+## 🔴 R34 / R35 / R37
 
-三輪嘗試恢復 R33 視覺銳度的 side attempt，全部 falsified：
+> [!CAUTION]
+> 三輪嘗試恢復 R33 視覺銳度的 side attempt · **全部 falsified** · 只存在於 sandbox 分支 · **無 tracked 視覺輸出**
+
+三輪的否定結論：
 
 - **R34 freq-split**（`sandbox/r34`）：loss 層 Gaussian 分頻，lo/hi 梯度在 patch 上高度相關，無效
 - **R35 alpha-boost 0.25**（`sandbox/r35`）：physics alpha 提升，均勻放大含噪 HF
@@ -389,9 +432,10 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ---
 
-## Legacy visuals
+## 📚 Legacy visuals
 
-`docs/archive/legacy_visuals/` 保存了 R18/R22/R25 時代的 0.8px 主戰場對比表（2026-04-08 封存）：
+> [!NOTE]
+> R18/R22/R25 時代的 0.8px 主戰場對比表（2026-04-08 封存於 `docs/archive/legacy_visuals/`）。
 
 - [`comparison_0p8px_case_01.png`](../docs/archive/legacy_visuals/comparison_0p8px_case_01.png)
 - [`comparison_0p8px_case_02.png`](../docs/archive/legacy_visuals/comparison_0p8px_case_02.png)
