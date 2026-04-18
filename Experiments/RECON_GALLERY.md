@@ -1,6 +1,6 @@
 # 實驗重建影像 Gallery / Experiment Recon Gallery
 
-_Last updated: 2026-04-17_
+_Last updated: 2026-04-18_
 
 這份文件收集**每一輪實驗所有 tracked 的重建影像、指標圖表、分析圖**，供 demo / report 時快速查閱。
 所有連結皆為 git 追蹤檔案的相對路徑，GitHub 上會自動渲染圖片。
@@ -48,15 +48,15 @@ _Last updated: 2026-04-17_
 
 **0.08 px 子像素**
 
-<img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+![](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-<img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+![](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-<img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
+![](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
@@ -65,8 +65,7 @@ _Last updated: 2026-04-17_
 - [101 frames · 8 px guard](R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/)
 
 
-<details>
-<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
+### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
 
 **跨尺度總結：**
 
@@ -108,7 +107,6 @@ _Last updated: 2026-04-17_
 - [720-angle Soft-L1 分析](R38v2SeqFixed/results/720angle_soft_l1/COMBO/)
 - [獨立 sequence_analysis](R38v2SeqFixed/results/combo_sequence_analysis/)
 
-</details>
 
 📄 [COMBO_RESULTS](R38v2SeqFixed/reports/COMBO_RESULTS.md) · [完整系列報告](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md)
 
@@ -128,15 +126,15 @@ _Last updated: 2026-04-17_
 
 **0.08 px 子像素**
 
-<img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+![](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-<img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+![](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-<img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
+![](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
@@ -145,8 +143,7 @@ _Last updated: 2026-04-17_
 - [101 frames · 8 px guard](R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/)
 
 
-<details>
-<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
+### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
 
 **跨尺度總結：**
 
@@ -188,7 +185,6 @@ _Last updated: 2026-04-17_
 - [通用 sequence_analysis](R38v2SeqFixed/results/sequence_analysis/)
 - [量化修復版 recon（`8px_gate_recon_quantfix/`）](R38v2SeqFixed/results/8px_gate_recon_quantfix/)
 
-</details>
 
 📄 [R38v2_RESULTS](R38v2SeqFixed/reports/R38v2_RESULTS.md)
 
@@ -208,15 +204,15 @@ _Last updated: 2026-04-17_
 
 **0.08 px 子像素**
 
-<img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+![](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-<img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+![](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-<img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
+![](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
@@ -225,8 +221,7 @@ _Last updated: 2026-04-17_
 - [101 frames · 8 px guard](R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/)
 
 
-<details>
-<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
+### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
 
 **跨尺度總結：**
 
@@ -266,7 +261,6 @@ _Last updated: 2026-04-17_
 - [R33 候選獨立 sequence_analysis（24 張）](R33RobustLoss/results/p95_sequence_analysis/)
 - [量化修復版 recon（`p95_recon_quantfix/`）](R33RobustLoss/results/p95_recon_quantfix/)
 
-</details>
 
 📄 [R33_EXPERIMENT_SUMMARY](R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md) · [完整系列報告](R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md) · [GMF 方法論](R33RobustLoss/reports/GMF_STEP_STD_METHODOLOGY.md) · [量化修復分析](R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md) · [Internal/External 偏差分析](R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md)
 
@@ -303,19 +297,18 @@ _Last updated: 2026-04-17_
 
 **0.08 px 子像素**
 
-<img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/02_step_stability.png" width="360">
+![](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/02_step_stability.png)
 
 **0.8 px 主戰場**
 
-<img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/02_step_stability.png" width="360">
+![](R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/02_step_stability.png)
 
 **8 px guard**
 
-<img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/02_step_stability.png" width="360">
+![](R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/02_step_stability.png)
 
 
-<details>
-<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
+### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
 
 **跨尺度總結：**
 
@@ -355,7 +348,6 @@ _Last updated: 2026-04-17_
 - [720-angle IRLS 分析](R38v2SeqFixed/results/720angle_irls_analysis/R30/)
 - [720-angle Soft-L1 分析](R38v2SeqFixed/results/720angle_soft_l1/R30/)
 
-</details>
 
 📄 [External compare](../docs/evidence/baseline/ROUND30_EXTERNAL_COMPARE.md) · [Architecture breakthrough decision](../docs/evidence/baseline/ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md)
 
@@ -398,13 +390,10 @@ _Last updated: 2026-04-17_
 
 - Cross-scale：[08 step std](../AnalysisLab/r26/sequence/results/cross_dataset/08_cross_scale_step_std.png) · [09 residual](../AnalysisLab/r26/sequence/results/cross_dataset/09_cross_scale_residual_improvement.png) · [10 k2](../AnalysisLab/r26/sequence/results/cross_dataset/10_cross_scale_k2_stability.png)
 
-<details>
-<summary>Per-pitch（21 張）</summary>
-
+### Per-pitch（21 張）
 - `pitch0p01um_y_40`: [01](../AnalysisLab/r26/sequence/results/pitch0p01um_y_40/01_center_trajectory.png) · [02](../AnalysisLab/r26/sequence/results/pitch0p01um_y_40/02_step_stability.png) · [03](../AnalysisLab/r26/sequence/results/pitch0p01um_y_40/03_residual_std_timeseries.png) · [04](../AnalysisLab/r26/sequence/results/pitch0p01um_y_40/04_k2_amplitude_timeseries.png) · [05](../AnalysisLab/r26/sequence/results/pitch0p01um_y_40/05_hotspot_persistence.png) · [06](../AnalysisLab/r26/sequence/results/pitch0p01um_y_40/06_edge_width_consistency.png) · [07](../AnalysisLab/r26/sequence/results/pitch0p01um_y_40/07_center_offset_drift.png)
 - `pitch0p1um_y_60`: [01](../AnalysisLab/r26/sequence/results/pitch0p1um_y_60/01_center_trajectory.png) · [02](../AnalysisLab/r26/sequence/results/pitch0p1um_y_60/02_step_stability.png) · [03](../AnalysisLab/r26/sequence/results/pitch0p1um_y_60/03_residual_std_timeseries.png) · [04](../AnalysisLab/r26/sequence/results/pitch0p1um_y_60/04_k2_amplitude_timeseries.png) · [05](../AnalysisLab/r26/sequence/results/pitch0p1um_y_60/05_hotspot_persistence.png) · [06](../AnalysisLab/r26/sequence/results/pitch0p1um_y_60/06_edge_width_consistency.png) · [07](../AnalysisLab/r26/sequence/results/pitch0p1um_y_60/07_center_offset_drift.png)
 - `pitch1um_y_100`: [01](../AnalysisLab/r26/sequence/results/pitch1um_y_100/01_center_trajectory.png) · [02](../AnalysisLab/r26/sequence/results/pitch1um_y_100/02_step_stability.png) · [03](../AnalysisLab/r26/sequence/results/pitch1um_y_100/03_residual_std_timeseries.png) · [04](../AnalysisLab/r26/sequence/results/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](../AnalysisLab/r26/sequence/results/pitch1um_y_100/05_hotspot_persistence.png) · [06](../AnalysisLab/r26/sequence/results/pitch1um_y_100/06_edge_width_consistency.png) · [07](../AnalysisLab/r26/sequence/results/pitch1um_y_100/07_center_offset_drift.png)
-</details>
 
 ### 🔍 分析圖（performance benchmark）
 
@@ -466,15 +455,15 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 **0.08 px 子像素**
 
-<img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+![](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-<img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+![](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-<img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
+![](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
@@ -483,8 +472,7 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 - [101 frames · 8 px guard](R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/)
 
 
-<details>
-<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
+### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
 
 **跨尺度總結：**
 
@@ -520,9 +508,6 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
   - [中心偏移漂移](R33ContrastFix/results/sequence_analysis/pitch1um_y_100/07_center_offset_drift.png)
 
 
-
-</details>
-
 📄 [R33ContrastFix/results](R33ContrastFix/results/)
 
 ---
@@ -541,15 +526,15 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 **0.08 px 子像素**
 
-<img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+![](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-<img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+![](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-<img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
+![](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
@@ -558,8 +543,7 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 - [101 frames · 8 px guard](R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/)
 
 
-<details>
-<summary>📈 所有 24 張 720-angle 指標圖 + 其他方法論版本</summary>
+### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
 
 **跨尺度總結：**
 
@@ -594,9 +578,6 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
   - [邊緣寬度一致性](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/06_edge_width_consistency.png)
   - [中心偏移漂移](R38SeqConsistency/results/sequence_analysis/pitch1um_y_100/07_center_offset_drift.png)
 
-
-
-</details>
 
 📄 [R38_RESULTS](R38SeqConsistency/reports/R38_RESULTS.md)
 
@@ -646,14 +627,17 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ## Adding new entries
 
-新完成一輪實驗後，請依以下格式在**對應分類區段**底下新增 `## <Round>` section：
+新完成一輪實驗後，請依以下格式在**對應分類區段**底下新增 `## <emoji> <Round>` section，全部使用純 markdown 語法（不要再引入 HTML）：
 
-1. 一句話描述角色 / 結論
-2. 連結正式報告
-3. **測試重建影像**：代表樣本內嵌 + per-pitch 目錄表
-4. **指標圖表**：cross-scale 內嵌 + per-pitch 折疊清單（用 `<details>`）
-5. **分析圖**（可選）：ad-hoc 的 PSF/centering/contrast 相關圖
-6. 在最上面的 TOC 加一行
+1. Section heading 前綴 emoji 對應輪次狀態（🟢 active / 🟡 open / 🔵 historical / 🔴 closed / 📚 legacy）
+2. Hero 大圖：`![alt](path)` — 選本輪最具代表性的跨尺度總結圖
+3. GitHub Alert block（`> [!TIP]` / `[!NOTE]` / `[!IMPORTANT]` / `[!CAUTION]`）一行摘要 + 關鍵數字
+4. `### 📊 測試重建影像（實際模型輸出 BMP）` — 三個尺度各一張代表樣本，用 `**0.08 px 子像素**` 等粗體小標加 `![](path)`
+5. `📁 完整重建序列：` + bullet 清單（每 pitch 一個目錄連結）
+6. `### 📈 所有指標圖 + 方法論版本` — bullet 清單，使用中文標籤（例如「中心軌跡」、「步距穩定性」），每 pitch 一組 7 張
+7. `📄 Reports:` 連結
+8. 底部 `---` 分隔線
+9. 在最上面 TOC 加一行
 
 所有路徑用**相對於本檔目錄（`Experiments/`）的相對路徑**；跨到其他 tracked 目錄（`AnalysisLab/`、`docs/archive/`）時用 `../` 前綴。
 
