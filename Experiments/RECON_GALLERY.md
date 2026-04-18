@@ -44,13 +44,19 @@ _Last updated: 2026-04-17_
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+三個尺度的重建樣本（每張圖取重建序列的中間一幀）：
 
-<p align="center">
-  <img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
-  <img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
-  <img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
-</p>
+**0.08 px 子像素**
+
+<img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+
+**0.8 px 主戰場**
+
+<img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+
+**8 px guard**
+
+<img src="R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
 
 📁 完整重建序列：
 
@@ -118,13 +124,19 @@ _Last updated: 2026-04-17_
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+三個尺度的重建樣本（每張圖取重建序列的中間一幀）：
 
-<p align="center">
-  <img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
-  <img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
-  <img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
-</p>
+**0.08 px 子像素**
+
+<img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+
+**0.8 px 主戰場**
+
+<img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+
+**8 px guard**
+
+<img src="R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
 
 📁 完整重建序列：
 
@@ -192,13 +204,19 @@ _Last updated: 2026-04-17_
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+三個尺度的重建樣本（每張圖取重建序列的中間一幀）：
 
-<p align="center">
-  <img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
-  <img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
-  <img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
-</p>
+**0.08 px 子像素**
+
+<img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+
+**0.8 px 主戰場**
+
+<img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+
+**8 px guard**
+
+<img src="R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
 
 📁 完整重建序列：
 
@@ -281,13 +299,19 @@ _Last updated: 2026-04-17_
 
 ### 📈 Per-pitch 指標縮圖（720-angle analysis）
 
-三尺度的步距穩定性並排比較：
+三個尺度的步距穩定性圖（720-angle analysis）：
 
-<p align="center">
-  <img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/02_step_stability.png" width="270" alt="R30 0.08 px 步距穩定性">
-  <img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/02_step_stability.png" width="270" alt="R30 0.8 px 步距穩定性">
-  <img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/02_step_stability.png" width="270" alt="R30 8 px guard 步距穩定性">
-</p>
+**0.08 px 子像素**
+
+<img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p01um_y_40/02_step_stability.png" width="360">
+
+**0.8 px 主戰場**
+
+<img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch0p1um_y_60/02_step_stability.png" width="360">
+
+**8 px guard**
+
+<img src="R38v2SeqFixed/results/720angle_analysis/R30/pitch1um_y_100/02_step_stability.png" width="360">
 
 
 <details>
@@ -438,13 +462,19 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+三個尺度的重建樣本（每張圖取重建序列的中間一幀）：
 
-<p align="center">
-  <img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
-  <img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
-  <img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
-</p>
+**0.08 px 子像素**
+
+<img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+
+**0.8 px 主戰場**
+
+<img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+
+**8 px guard**
+
+<img src="R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
 
 📁 完整重建序列：
 
@@ -507,13 +537,19 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ### 📊 測試重建影像（實際模型輸出 BMP）
 
-三尺度並排：**0.08 px 子像素** · **0.8 px 主戰場** · **8 px guard**
+三個尺度的重建樣本（每張圖取重建序列的中間一幀）：
 
-<p align="center">
-  <img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="270" alt="0.08 px 重建樣本">
-  <img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="270" alt="0.8 px 重建樣本">
-  <img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="270" alt="8 px guard 重建樣本">
-</p>
+**0.08 px 子像素**
+
+<img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp" width="360">
+
+**0.8 px 主戰場**
+
+<img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp" width="360">
+
+**8 px guard**
+
+<img src="R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp" width="360">
 
 📁 完整重建序列：
 
