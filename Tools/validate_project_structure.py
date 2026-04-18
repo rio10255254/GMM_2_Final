@@ -368,6 +368,66 @@ def check_legacy_runtime_archive_paths():
 
 QUICK_HANDOFF_MAX_LINES = 60
 
+# HTML block tags that are forbidden inside RECON_GALLERY.md (we want pure
+# markdown in that file so the raw source reads naturally). Opening tags are
+# matched case-insensitively with a trailing word boundary (space, '>', or '/').
+RECON_GALLERY_FORBIDDEN_HTML = [
+    "<table",
+    "<tr>",
+    "<tr ",
+    "<td>",
+    "<td ",
+    "<sub>",
+    "<sub ",
+    "<p ",
+    "<p>",
+    "<div",
+    "<details>",
+    "<details ",
+    "<summary>",
+    "<summary ",
+    "<img ",
+    "<img>",
+    "<a href",
+]
+
+
+def check_recon_gallery_format():
+    """Enforce pure-markdown in RECON_GALLERY.md.
+
+    The gallery file at repo root is allowed to grow (new experiment rounds
+    should add sections), but every contribution must stay in pure markdown.
+    This check fails if any HTML block tag is found outside of code spans.
+
+    The gallery itself is optional (not in the 5 mandatory docs), so a missing
+    file is silently skipped — only present files are format-checked.
+    """
+    print("=== Check 11: RECON_GALLERY.md pure-markdown format ===")
+    gallery = REPO / "RECON_GALLERY.md"
+    if not gallery.exists():
+        # Optional file — absence is fine, do not emit error or warning.
+        return
+
+    text = gallery.read_text(encoding="utf-8")
+
+    # Strip fenced code blocks (``` ... ```) and inline code spans (` ... `)
+    # so instructional mentions of tags inside backticks are not flagged.
+    import re as _re
+    stripped = _re.sub(r"```.*?```", "", text, flags=_re.DOTALL)
+    stripped = _re.sub(r"`[^`]*`", "", stripped)
+
+    violations: list[str] = []
+    for tag in RECON_GALLERY_FORBIDDEN_HTML:
+        if tag.lower() in stripped.lower():
+            violations.append(tag)
+
+    if violations:
+        error(
+            "RECON_GALLERY.md contains forbidden HTML tag(s): "
+            + ", ".join(sorted(set(violations)))
+            + " — use pure markdown (![]()  /  ### heading  /  pipe table  /  bullet list) instead."
+        )
+
 
 def check_quick_handoff_length():
     """Enforce PROJECT_STATE.md Quick Handoff region <= 60 interior lines.
@@ -422,6 +482,7 @@ def run_validator() -> dict[str, list[str]]:
     check_truth_plane()
     check_legacy_runtime_archive_paths()
     check_quick_handoff_length()
+    check_recon_gallery_format()
 
     return {
         "errors": list(ERRORS),
