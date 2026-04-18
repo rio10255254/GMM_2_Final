@@ -49,6 +49,7 @@ When recording experiment results, update these **5 mandatory files**:
 - `docs/analysis/RESEARCH_PATHS.md` — update flowchart when a line is promoted/closed
 - `docs/evidence/EVIDENCE_MAP.md` — update evidence pointers when canonical reports move
 - `docs/evidence/*` mirrors — may drift from canonical; canonical is authoritative
+- `RECON_GALLERY.md` (repo root) — add a section with representative recon BMPs + metric plots when a new round produces visual output. **Must stay pure markdown** (no `<table>`, `<p>`, `<details>`, `<img>`, `<div>`, `<a href>`). Enforced by `check_recon_gallery_format()` in the validator.
 
 ## Source of truth policy
 

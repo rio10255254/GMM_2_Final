@@ -278,6 +278,10 @@ If Codex leaves actionable comments, follow up in the PR with:
 - [ ] 完成後加入 `Experiments/INDEX.md`
 - [ ] 更新 `PROJECT_STATE.md` 僅在 baseline / verdict / taxonomy 改變時
 - [ ] PR 透過 `@codex review` 觸發非 trivial review
-- [ ] **（強烈建議，非 mandatory）** 若本輪產生可展示的視覺輸出（recon 圖、指標對比圖等），在 `Experiments/RECON_GALLERY.md` 新增一個 section 收錄 2-3 張代表圖——demo / 會議時會省下翻 `results/` 子樹的時間
+- [ ] **（強烈建議，非 mandatory）** 若本輪產生可展示的視覺輸出（recon 圖、指標對比圖等），在根目錄的 `RECON_GALLERY.md` 新增一個 section 收錄代表圖——demo / 會議時會省下翻 `results/` 子樹的時間
+  - 格式嚴格要求**純 markdown**（`![]()`、`###`、`>` alert、pipe table、bullet list）
+  - 不得引入 HTML block 標籤（`<table>`、`<tr>`、`<td>`、`<p>`、`<div>`、`<details>`、`<summary>`、`<img>`、`<a>`）
+  - 違規會被 `Tools/validate_project_structure.py` 的 `check_recon_gallery_format()` 擋下，pre-commit hook 也會 fail
+  - 圖表連結請用中文標籤（例如「中心軌跡」而非 `01_center_trajectory`）
 
 以上流程需要**更新正式 docs 的時機**：只在正式真相改變時（baseline、approved alternates、side track 狀態）才更新 `PROJECT_STATE.md` 與 `ESTIMATOR_POLICY.json`。日常 runtime 噪音不要碰 canonical docs。

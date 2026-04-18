@@ -242,3 +242,59 @@ def test_quick_handoff_region_exceeds_limit(tmp_path):
     module.check_quick_handoff_length()
     assert any("Quick Handoff" in err for err in module.ERRORS), \
         f"Expected Quick Handoff error, got: {module.ERRORS}"
+
+
+def test_recon_gallery_format_pure_markdown_passes(tmp_path):
+    (tmp_path / "RECON_GALLERY.md").write_text(
+        "# Gallery\n\n"
+        "## 🟢 Example\n\n"
+        "![alt](path/to/image.png)\n\n"
+        "> [!TIP]\n> summary\n\n"
+        "- [中心軌跡](path/to/chart.png)\n",
+        encoding="utf-8",
+    )
+    module = _load_validator_module(tmp_path)
+    module.check_recon_gallery_format()
+    assert not module.ERRORS, f"Pure markdown should pass, got: {module.ERRORS}"
+
+
+def test_recon_gallery_format_rejects_html_table(tmp_path):
+    (tmp_path / "RECON_GALLERY.md").write_text(
+        "# Gallery\n\n"
+        "<table>\n<tr><td>cell</td></tr>\n</table>\n",
+        encoding="utf-8",
+    )
+    module = _load_validator_module(tmp_path)
+    module.check_recon_gallery_format()
+    assert any("HTML" in err for err in module.ERRORS), \
+        f"Expected HTML violation error, got: {module.ERRORS}"
+
+
+def test_recon_gallery_format_rejects_img_tag(tmp_path):
+    (tmp_path / "RECON_GALLERY.md").write_text(
+        '# Gallery\n\n<img src="x.png" width="300">\n',
+        encoding="utf-8",
+    )
+    module = _load_validator_module(tmp_path)
+    module.check_recon_gallery_format()
+    assert any("HTML" in err for err in module.ERRORS), \
+        f"Expected HTML violation error, got: {module.ERRORS}"
+
+
+def test_recon_gallery_format_rejects_details(tmp_path):
+    (tmp_path / "RECON_GALLERY.md").write_text(
+        "# Gallery\n\n<details>\n<summary>x</summary>\ncontent\n</details>\n",
+        encoding="utf-8",
+    )
+    module = _load_validator_module(tmp_path)
+    module.check_recon_gallery_format()
+    assert any("HTML" in err for err in module.ERRORS), \
+        f"Expected HTML violation error, got: {module.ERRORS}"
+
+
+def test_recon_gallery_format_missing_file(tmp_path):
+    # No RECON_GALLERY.md present — should emit a warning, not an error,
+    # because the gallery is optional (not in the 5 mandatory docs).
+    module = _load_validator_module(tmp_path)
+    module.check_recon_gallery_format()
+    assert not module.ERRORS, "Missing optional gallery should not be an error"
