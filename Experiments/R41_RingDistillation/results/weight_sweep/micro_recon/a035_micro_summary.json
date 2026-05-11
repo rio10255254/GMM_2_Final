@@ -1,0 +1,68 @@
+{
+  "profile": "micro_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r41_ring_distillation",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep\\micro_recon\\a035",
+  "total_count": 100,
+  "overall_avg_psnr": 25.20921066591963,
+  "overall_avg_ssim": 0.899436843179977,
+  "overall_high_frequency_retention": 0.25617789537891744,
+  "overall_edge_retention": 0.7027489582632466,
+  "overall_contrast_retention": 0.9469410060129576,
+  "stages": [
+    {
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "count": 20,
+      "avg_psnr": 18.68928714035585,
+      "avg_ssim": 0.6418974536408555,
+      "avg_high_frequency_retention": 0.11656105359485314,
+      "avg_edge_retention": 0.3402744040528535,
+      "avg_contrast_retention": 0.6613348235743415,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep\\micro_recon\\a035\\reconstruct_progress_best_tradeoff_in_stage_29_micro_lines_grid_20260505_120205\\micro_val_unseen_stage_29_micro_lines_grid_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "count": 20,
+      "avg_psnr": 26.623276960401682,
+      "avg_ssim": 0.9748092838923531,
+      "avg_high_frequency_retention": 0.40987728346903224,
+      "avg_edge_retention": 1.160635971936442,
+      "avg_contrast_retention": 1.0423795107138483,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep\\micro_recon\\a035\\reconstruct_progress_best_tradeoff_in_stage_30_micro_large_regions_20260505_120205\\micro_val_unseen_stage_30_micro_large_regions_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "count": 20,
+      "avg_psnr": 29.35501787701032,
+      "avg_ssim": 0.9412355149229603,
+      "avg_high_frequency_retention": 0.2444648755699308,
+      "avg_edge_retention": 0.7482667075972081,
+      "avg_contrast_retention": 0.9607817249068009,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep\\micro_recon\\a035\\reconstruct_progress_best_tradeoff_in_stage_31_micro_textures_20260505_120205\\micro_val_unseen_stage_31_micro_textures_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "count": 20,
+      "avg_psnr": 26.83464151127909,
+      "avg_ssim": 0.9757201768064878,
+      "avg_high_frequency_retention": 0.30499646690849125,
+      "avg_edge_retention": 1.020412241612925,
+      "avg_contrast_retention": 1.0745771715785124,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep\\micro_recon\\a035\\reconstruct_progress_best_tradeoff_in_stage_32_micro_edge_defects_20260505_120205\\micro_val_unseen_stage_32_micro_edge_defects_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "count": 20,
+      "avg_psnr": 24.543829840551204,
+      "avg_ssim": 0.963521786637228,
+      "avg_high_frequency_retention": 0.2049897973522797,
+      "avg_edge_retention": 0.244155466116804,
+      "avg_contrast_retention": 0.9956317992912851,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep\\micro_recon\\a035\\reconstruct_progress_best_tradeoff_in_stage_33_micro_mixed_fields_20260505_120205\\micro_val_unseen_stage_33_micro_mixed_fields_best_tradeoff.pth"
+    }
+  ]
+}

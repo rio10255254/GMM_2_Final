@@ -1,0 +1,94 @@
+{
+  "candidate": "r39r40_avg_a050",
+  "external_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\external_recon\\a050\\external_gmf",
+  "scales": {
+    "8px": {
+      "subdir": "pitch8px",
+      "expected_step_px": 8.0,
+      "n_frames": 100,
+      "first_filename": "VisionTop_20251029182704617.bmp",
+      "last_filename": "VisionTop_20251029184451292.bmp",
+      "stats": {
+        "n_pos_samples": 100,
+        "n_steps": 99,
+        "median_step": -8.019000000000005,
+        "raw_std": 0.15136452378044746,
+        "filtered_std": 0.15136452378044746,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    },
+    "0p8px": {
+      "subdir": "pitch0p8px",
+      "expected_step_px": 0.8,
+      "n_frames": 60,
+      "first_filename": "VisionTop_20251029185341723.bmp",
+      "last_filename": "VisionTop_20251029190416478.bmp",
+      "stats": {
+        "n_pos_samples": 60,
+        "n_steps": 59,
+        "median_step": -0.7849999999999682,
+        "raw_std": 0.14920853340434456,
+        "filtered_std": 0.14920853340434456,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    },
+    "0p08px": {
+      "subdir": "pitch0p08px",
+      "expected_step_px": 0.08,
+      "n_frames": 40,
+      "first_filename": "VisionTop_20251029193126446.bmp",
+      "last_filename": "VisionTop_20251029193825916.bmp",
+      "stats": {
+        "n_pos_samples": 40,
+        "n_steps": 39,
+        "median_step": -0.07799999999997453,
+        "raw_std": 0.09317741978711844,
+        "filtered_std": 0.09317741978711844,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    }
+  },
+  "headline_step_std": {
+    "8px": 0.15136452378044746,
+    "0p8px": 0.14920853340434456,
+    "0p08px": 0.09317741978711844
+  },
+  "combo_step_std": {
+    "8px": 0.154515,
+    "0p8px": 0.13156,
+    "0p08px": 0.099891
+  },
+  "verdict": {
+    "overall": "RESEARCH_CAPACITY_ONLY",
+    "upgrade_cap_pct": 3.0,
+    "per_scale": {
+      "8px": {
+        "candidate": 0.15136452378044746,
+        "combo": 0.154515,
+        "delta": -0.003150476219552556,
+        "delta_pct": -2.038945228329001,
+        "status": "IMPROVED"
+      },
+      "0p8px": {
+        "candidate": 0.14920853340434456,
+        "combo": 0.13156,
+        "delta": 0.017648533404344552,
+        "delta_pct": 13.414817120967278,
+        "status": "REGRESSED"
+      },
+      "0p08px": {
+        "candidate": 0.09317741978711844,
+        "combo": 0.099891,
+        "delta": -0.006713580212881556,
+        "delta_pct": -6.7209060004220165,
+        "status": "IMPROVED"
+      }
+    }
+  }
+}

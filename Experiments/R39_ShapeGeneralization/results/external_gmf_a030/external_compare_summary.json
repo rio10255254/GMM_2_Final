@@ -1,0 +1,94 @@
+{
+  "candidate": "r39_combo_strong_avg_a030",
+  "a030_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\external_gmf_a030",
+  "scales": {
+    "8px": {
+      "subdir": "pitch8px",
+      "expected_step_px": 8.0,
+      "n_frames": 100,
+      "first_filename": "VisionTop_20251029182704617.bmp",
+      "last_filename": "VisionTop_20251029184451292.bmp",
+      "stats": {
+        "n_pos_samples": 100,
+        "n_steps": 99,
+        "median_step": -8.039999999999964,
+        "raw_std": 0.14379380480457632,
+        "filtered_std": 0.14379380480457632,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    },
+    "0p8px": {
+      "subdir": "pitch0p8px",
+      "expected_step_px": 0.8,
+      "n_frames": 60,
+      "first_filename": "VisionTop_20251029185341723.bmp",
+      "last_filename": "VisionTop_20251029190416478.bmp",
+      "stats": {
+        "n_pos_samples": 60,
+        "n_steps": 59,
+        "median_step": -0.7980000000000018,
+        "raw_std": 0.1400076043406102,
+        "filtered_std": 0.1400076043406102,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    },
+    "0p08px": {
+      "subdir": "pitch0p08px",
+      "expected_step_px": 0.08,
+      "n_frames": 40,
+      "first_filename": "VisionTop_20251029193126446.bmp",
+      "last_filename": "VisionTop_20251029193825916.bmp",
+      "stats": {
+        "n_pos_samples": 40,
+        "n_steps": 39,
+        "median_step": -0.06200000000001182,
+        "raw_std": 0.08394069789236364,
+        "filtered_std": 0.08394069789236364,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    }
+  },
+  "headline_step_std": {
+    "8px": 0.14379380480457632,
+    "0p8px": 0.1400076043406102,
+    "0p08px": 0.08394069789236364
+  },
+  "combo_step_std": {
+    "8px": 0.154515,
+    "0p8px": 0.13156,
+    "0p08px": 0.099891
+  },
+  "verdict": {
+    "overall": "PASS_TRADEOFF",
+    "tradeoff_max_pct": 7.0,
+    "per_scale": {
+      "8px": {
+        "a030": 0.14379380480457632,
+        "combo": 0.154515,
+        "delta": -0.010721195195423694,
+        "delta_pct": -6.938611264552757,
+        "status": "IMPROVED"
+      },
+      "0p8px": {
+        "a030": 0.1400076043406102,
+        "combo": 0.13156,
+        "delta": 0.008447604340610176,
+        "delta_pct": 6.4211039378307815,
+        "status": "TRADEOFF_OK"
+      },
+      "0p08px": {
+        "a030": 0.08394069789236364,
+        "combo": 0.099891,
+        "delta": -0.015950302107636358,
+        "delta_pct": -15.96770690816626,
+        "status": "IMPROVED"
+      }
+    }
+  }
+}

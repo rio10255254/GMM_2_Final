@@ -616,6 +616,30 @@ def run_health(level: str, requested_modules: Sequence[str] | None = None) -> di
 
 def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict[str, Any]) -> dict[str, Any]:
     formal = policy["formal_baseline"]
+
+    def preferred_report_path(item: dict[str, Any]) -> str:
+        def format_report(value: str) -> str:
+            path = Path(value)
+            if path.is_absolute():
+                return relpath(path)
+            return path.as_posix()
+
+        reports = item.get("reports", {})
+        for key in (
+            "status_md",
+            "results_md",
+            "capability_eval_md",
+            "summary_md",
+            "external_compare_md",
+            "sweep_results_md",
+            "weight_sweep_summary_md",
+        ):
+            if key in reports:
+                return format_report(reports[key])
+        if reports:
+            return format_report(next(iter(reports.values())))
+        return ""
+
     return {
         "formal_baseline": {
             "candidate_id": formal["candidate_id"],
@@ -629,7 +653,7 @@ def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict
             {
                 "candidate_id": item["candidate_id"],
                 "model_name": item["model_name"],
-                "report": relpath(Path(item["reports"]["results_md"])),
+                "report": preferred_report_path(item),
             }
             for item in policy["approved_alternates"]
         ],
@@ -637,7 +661,7 @@ def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict
             {
                 "candidate_id": item["candidate_id"],
                 "status": item["status"],
-                "report": relpath(Path(item["reports"]["status_md"])),
+                "report": preferred_report_path(item),
             }
             for item in policy["open_side_tracks"]
         ],

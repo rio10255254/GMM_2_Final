@@ -48,12 +48,14 @@ def test_policy_uses_truth_plane_schema():
     assert formal["decision_effective_date"] == "2026-04-08"
 
     approved = policy["approved_alternates"]
-    assert [item["candidate_id"] for item in approved] == ["R33", "R38v2"]
+    assert [item["candidate_id"] for item in approved] == ["R33", "R38v2", "R39R40_avg_a025"]
 
     side_tracks = policy["open_side_tracks"]
-    assert len(side_tracks) == 1
-    assert side_tracks[0]["candidate_id"] == "R26NewPSFCheck"
-    assert side_tracks[0]["mainline_status"] == "open_side_track"
+    side_track_by_id = {item["candidate_id"]: item for item in side_tracks}
+    assert "R26NewPSFCheck" in side_track_by_id
+    assert side_track_by_id["R26NewPSFCheck"]["mainline_status"] == "open_side_track"
+    assert "R45_family_boundary_adapter" in side_track_by_id
+    assert "R44_motion_fidelity" in side_track_by_id
 
     research_state = policy["research_state"]
     assert research_state["baseline_challenger_status"] == "none_open"

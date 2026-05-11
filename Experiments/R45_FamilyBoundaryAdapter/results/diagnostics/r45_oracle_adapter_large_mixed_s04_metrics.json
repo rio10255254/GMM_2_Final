@@ -1,0 +1,172 @@
+{
+  "tag": "r45_oracle_adapter_large_mixed_s04",
+  "profile": "motion_val_unseen",
+  "baseline": {
+    "folder": "r44_motion_from_r42_best_e24",
+    "motion": {
+      "profile": "motion_val_unseen",
+      "data_root": "D:\\GMM_2_Final\\Training_Data\\r44_universal_boundary_motion",
+      "recon_root": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\motion_recon\\r44_motion_from_r42_best_e24",
+      "total_pairs": 840,
+      "overall_motion_vector_error_px": 0.38133009689458236,
+      "overall_boundary_motion_distance_px": 3.7276147159692345,
+      "overall_grid_phase_motion_error_px": 0.24000000000000002,
+      "stages": [
+        {
+          "stage": "stage_41_motion_lines",
+          "feature_family": "thin_lines",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.0719320079471589,
+          "avg_boundary_motion_distance_px": 2.3367893745501838,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_42_motion_grids",
+          "feature_family": "grids",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 2.2456988228482384,
+          "avg_boundary_motion_distance_px": 0.3973617756661649,
+          "avg_grid_phase_motion_error_px": 0.24000000000000002
+        },
+        {
+          "stage": "stage_43_motion_junctions",
+          "feature_family": "junctions",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.06089078891433346,
+          "avg_boundary_motion_distance_px": 1.630270274852713,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_44_motion_curves",
+          "feature_family": "curves",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.0808308509955491,
+          "avg_boundary_motion_distance_px": 1.8527783611168465,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_45_motion_regions",
+          "feature_family": "large_regions",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.0753475163769553,
+          "avg_boundary_motion_distance_px": 7.58775595848759,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_46_motion_defects",
+          "feature_family": "defects",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.0683169158526863,
+          "avg_boundary_motion_distance_px": 5.368168931206068,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_47_motion_mixed",
+          "feature_family": "mixed_fields",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.0662937753271548,
+          "avg_boundary_motion_distance_px": 6.920178335905075,
+          "avg_grid_phase_motion_error_px": 0.24000000000000002
+        }
+      ]
+    },
+    "target_shape": {
+      "model": "R44B from R42",
+      "target_family_count": 2,
+      "target_shape_error_score": 0.33838990311423867,
+      "target_boundary_f_score": 0.8027095062702334,
+      "target_density_ratio": 1.001177952694047,
+      "target_fragmentation_ratio": 5.94849748508171,
+      "target_straight_edge_coverage": 0.7901054464313949,
+      "target_corner_retention": 0.7436112830482844
+    }
+  },
+  "trial": {
+    "folder": "r45_oracle_adapter_large_mixed_s04",
+    "motion": {
+      "profile": "motion_val_unseen",
+      "data_root": "D:\\GMM_2_Final\\Training_Data\\r44_universal_boundary_motion",
+      "recon_root": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\results\\motion_recon\\r45_oracle_adapter_large_mixed_s04",
+      "total_pairs": 840,
+      "overall_motion_vector_error_px": 0.3814374589258039,
+      "overall_boundary_motion_distance_px": 3.725203690792079,
+      "overall_grid_phase_motion_error_px": 0.24000000000000002,
+      "stages": [
+        {
+          "stage": "stage_41_motion_lines",
+          "feature_family": "thin_lines",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.0719320079471589,
+          "avg_boundary_motion_distance_px": 2.3367893745501838,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_42_motion_grids",
+          "feature_family": "grids",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 2.2456988228482384,
+          "avg_boundary_motion_distance_px": 0.3973617756661649,
+          "avg_grid_phase_motion_error_px": 0.24000000000000002
+        },
+        {
+          "stage": "stage_43_motion_junctions",
+          "feature_family": "junctions",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.06089078891433346,
+          "avg_boundary_motion_distance_px": 1.630270274852713,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_44_motion_curves",
+          "feature_family": "curves",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.0808308509955491,
+          "avg_boundary_motion_distance_px": 1.8527783611168465,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_45_motion_regions",
+          "feature_family": "large_regions",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.0757565969874439,
+          "avg_boundary_motion_distance_px": 7.5639544609934095,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_46_motion_defects",
+          "feature_family": "defects",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.0683169158526863,
+          "avg_boundary_motion_distance_px": 5.368168931206068,
+          "avg_grid_phase_motion_error_px": null
+        },
+        {
+          "stage": "stage_47_motion_mixed",
+          "feature_family": "mixed_fields",
+          "pair_count": 120,
+          "avg_motion_vector_error_px": 0.06663622893521709,
+          "avg_boundary_motion_distance_px": 6.927102657159169,
+          "avg_grid_phase_motion_error_px": 0.24000000000000002
+        }
+      ]
+    },
+    "target_shape": {
+      "model": "r45_oracle_adapter_large_mixed_s04",
+      "target_family_count": 2,
+      "target_shape_error_score": 0.341758176783855,
+      "target_boundary_f_score": 0.8028069252635197,
+      "target_density_ratio": 1.001067864351377,
+      "target_fragmentation_ratio": 5.99587656099503,
+      "target_straight_edge_coverage": 0.7903592166448654,
+      "target_corner_retention": 0.7396508613906416
+    }
+  },
+  "verdict": {
+    "is_better": false,
+    "reason": "目標形狀改善不足",
+    "target_shape_improvement_pct": -0.995382438606399,
+    "motion_regression_pct": 0.02815461776970755,
+    "min_target_shape_improvement_pct": 3.0,
+    "max_motion_regression_pct": 10.0
+  }
+}

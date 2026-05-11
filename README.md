@@ -23,16 +23,16 @@ This is the top-level overview for the project. If you are new, start here.
 
 ### 白話版說明
 
-這個專案的目標是：讓顯微鏡拍攝的環形結構（annulus）影像，在做幾何定位時能更加精準。
+這個專案的長期目標是：讓顯微鏡影像中的各種結構，在重建後能保留正確的邊界位置與細節。環形結構（annulus）是目前最完整、最可比較的正式測試代理，但不是唯一關心的顯微結構。
 
 更具體地說——
-顯微鏡拍出來的影像因為光學模糊（PSF 效應），邊界形狀會失真。我們訓練一個 AI 超解析模型（`GeoEdgeAlignSR`），讓它把這層模糊還原，並讓還原後的影像「更有利於下游幾何匹配工具（GMF）定位環形邊界」。
+顯微鏡拍出來的影像因為光學模糊（PSF 效應），邊界形狀會失真。我們訓練一個 AI 超解析模型（`GeoEdgeAlignSR`），讓它把這層模糊還原，並讓還原後的影像「更有利於下游幾何匹配工具（GMF）做穩定的幾何定位」。
 
-**重要：這不是普通的影像銳化專案。** 視覺上「看起來更清晰」不等於「幾何定位更準」。我們最終衡量的是：在 GMF 外部評分工具打分時，annulus 邊界的定位標準差（step std）能否降低。
+**重要：這不是普通的影像銳化專案。** 視覺上「看起來更清晰」不等於「幾何定位更準」。正式 baseline 的最終驗收仍看外部 GMF 在三尺度環形資料上的 step std；R39-R43 另外開出顯微泛化研究線，用來探索格線、紋理、缺陷、曲線與混合場景的通用邊界忠實度。
 
 ### Technical Version
 
-The goal is to improve the geometric localization accuracy of annulus boundary images captured by a microscope, by training a physics-informed deep learning super-resolution model.
+The long-term goal is faithful geometric reconstruction of microscopy structures. Annulus data is the current formal external gate because it has stable historical GMF comparisons, but it is a proxy for the broader microscopy-boundary objective.
 
 The optimization target is not generic visual sharpness.
 It is: **whole-annulus GMF geometry** — how well the reconstructed image supports the downstream geometric matching function (GMF) in localizing the annulus boundary at multiple displacement scales.

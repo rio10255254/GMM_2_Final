@@ -1,0 +1,89 @@
+{
+  "profile": "boundary_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\boundary_recon\\a005",
+  "total_count": 140,
+  "overall_avg_psnr": 21.00943721780541,
+  "overall_hf_retention": 0.22135437710768469,
+  "overall_boundary_distance_px": 7.540247517398425,
+  "overall_boundary_fscore_t1p0": 0.6517880529931199,
+  "stages": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "count": 20,
+      "avg_psnr": 20.653351965460168,
+      "avg_hf_retention": 0.20840761654868611,
+      "avg_boundary_distance_px": 7.138623189926148,
+      "avg_boundary_fscore_t1p0": 0.714088079807436,
+      "avg_centerline_distance_px": 17.114045548439027,
+      "avg_grid_pitch_error_px": 33.52777777777778,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\boundary_recon\\a005\\reconstruct_progress_best_tradeoff_in_stage_34_boundary_lines_20260505_170219\\boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "count": 20,
+      "avg_psnr": 16.570716600445994,
+      "avg_hf_retention": 0.11491396615227997,
+      "avg_boundary_distance_px": 1.2020009011030197,
+      "avg_boundary_fscore_t1p0": 0.7286356019519797,
+      "avg_centerline_distance_px": 2.810521298646927,
+      "avg_grid_pitch_error_px": 14.1125,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\boundary_recon\\a005\\reconstruct_progress_best_tradeoff_in_stage_35_boundary_grids_20260505_170219\\boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "count": 20,
+      "avg_psnr": 19.384011704045307,
+      "avg_hf_retention": 0.20032481091462334,
+      "avg_boundary_distance_px": 6.430565977096558,
+      "avg_boundary_fscore_t1p0": 0.7043185880506643,
+      "avg_centerline_distance_px": 12.76039490699768,
+      "avg_grid_pitch_error_px": 34.266666666666666,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\boundary_recon\\a005\\reconstruct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260505_170219\\boundary_val_unseen_stage_36_boundary_junctions_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "count": 20,
+      "avg_psnr": 19.646715894863767,
+      "avg_hf_retention": 0.20041247459999584,
+      "avg_boundary_distance_px": 8.664923560619354,
+      "avg_boundary_fscore_t1p0": 0.7013796364907532,
+      "avg_centerline_distance_px": 16.792066836357115,
+      "avg_grid_pitch_error_px": 88.375,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\boundary_recon\\a005\\reconstruct_progress_best_tradeoff_in_stage_37_boundary_curves_20260505_170219\\boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "count": 20,
+      "avg_psnr": 23.80977730060207,
+      "avg_hf_retention": 0.2686702008024118,
+      "avg_boundary_distance_px": 9.555983453989029,
+      "avg_boundary_fscore_t1p0": 0.5811841525239648,
+      "avg_centerline_distance_px": 10.486578242480755,
+      "avg_grid_pitch_error_px": 100.15625,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\boundary_recon\\a005\\reconstruct_progress_best_tradeoff_in_stage_38_boundary_regions_20260505_170219\\boundary_val_unseen_stage_38_boundary_regions_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "count": 20,
+      "avg_psnr": 23.786489205694068,
+      "avg_hf_retention": 0.30179450040299377,
+      "avg_boundary_distance_px": 9.67554714679718,
+      "avg_boundary_fscore_t1p0": 0.576712833268128,
+      "avg_centerline_distance_px": 11.072421956062318,
+      "avg_grid_pitch_error_px": 95.66666666666667,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\boundary_recon\\a005\\reconstruct_progress_best_tradeoff_in_stage_39_boundary_defects_20260505_170219\\boundary_val_unseen_stage_39_boundary_defects_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "count": 20,
+      "avg_psnr": 23.2149978535265,
+      "avg_hf_retention": 0.25495707033280207,
+      "avg_boundary_distance_px": 10.11408839225769,
+      "avg_boundary_fscore_t1p0": 0.5561974788589137,
+      "avg_centerline_distance_px": 13.515616655349731,
+      "avg_grid_pitch_error_px": 51.8125,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\boundary_recon\\a005\\reconstruct_progress_best_tradeoff_in_stage_40_boundary_mixed_20260505_170219\\boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pth"
+    }
+  ]
+}

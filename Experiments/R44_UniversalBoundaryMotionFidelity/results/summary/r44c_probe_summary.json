@@ -1,0 +1,57 @@
+[
+  {
+    "model": "R42 best",
+    "recon_folder": "r42_best",
+    "overall_motion_vector_error_px": "0.46092651621342806",
+    "overall_boundary_motion_distance_px": "3.672599570351165",
+    "grid_motion_vector_error_px": "2.791110692598324",
+    "thin_line_boundary_distance_px": "2.4190484836697577",
+    "large_region_boundary_distance_px": "7.340139581511418",
+    "mixed_boundary_distance_px": "6.691522035996119",
+    "defect_boundary_distance_px": "5.347068424026172"
+  },
+  {
+    "model": "R44B from R42",
+    "recon_folder": "r44_motion_from_r42_best_e24",
+    "overall_motion_vector_error_px": "0.38133009689458236",
+    "overall_boundary_motion_distance_px": "3.7276147159692345",
+    "grid_motion_vector_error_px": "2.2456988228482384",
+    "thin_line_boundary_distance_px": "2.3367893745501838",
+    "large_region_boundary_distance_px": "7.58775595848759",
+    "mixed_boundary_distance_px": "6.920178335905075",
+    "defect_boundary_distance_px": "5.368168931206068"
+  },
+  {
+    "model": "R44C low motion static guard",
+    "recon_folder": "r44c_low_motion_static_guard",
+    "overall_motion_vector_error_px": 0.4115490695290437,
+    "overall_boundary_motion_distance_px": 3.7399245295518386,
+    "grid_motion_vector_error_px": 2.461482850577844,
+    "thin_line_boundary_distance_px": 2.364862286671996,
+    "large_region_boundary_distance_px": 7.6881818174074095,
+    "mixed_boundary_distance_px": 6.830211536089579,
+    "defect_boundary_distance_px": 5.351430487632752
+  },
+  {
+    "model": "R44C family holdout motion",
+    "recon_folder": "r44c_family_holdout_motion",
+    "overall_motion_vector_error_px": 0.4904161520945119,
+    "overall_boundary_motion_distance_px": 3.7342072632585075,
+    "grid_motion_vector_error_px": 3.0116879362615774,
+    "thin_line_boundary_distance_px": 2.330101472015182,
+    "large_region_boundary_distance_px": 7.721606305614114,
+    "mixed_boundary_distance_px": 6.864533657828967,
+    "defect_boundary_distance_px": 5.344200118382772
+  },
+  {
+    "model": "R44C static heavy all motion",
+    "recon_folder": "r44c_static_heavy_all_motion",
+    "overall_motion_vector_error_px": 0.40108678965233113,
+    "overall_boundary_motion_distance_px": 3.7197733348590276,
+    "grid_motion_vector_error_px": 2.381987611612748,
+    "thin_line_boundary_distance_px": 2.3291459205249945,
+    "large_region_boundary_distance_px": 7.7097870703786615,
+    "mixed_boundary_distance_px": 6.799410186211268,
+    "defect_boundary_distance_px": 5.346902800599734
+  }
+]

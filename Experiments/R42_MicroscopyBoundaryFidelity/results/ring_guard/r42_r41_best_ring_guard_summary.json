@@ -1,0 +1,42 @@
+{
+  "candidate": "r42_r41_best",
+  "status": "local_ring_guard_failed_external_gmf_not_recommended",
+  "external_gmf_required_for_promotion": false,
+  "combo_reference": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\results\\720angle_analysis\\COMBO\\cross_dataset\\cross_dataset_comparison.json",
+  "datasets": [
+    {
+      "short_name": "pitch1um_y_100",
+      "n_frames": 101,
+      "expected_step_px": 8.0,
+      "r42_internal_step_std_y": 0.1715,
+      "combo_internal_step_std_y": 0.1389,
+      "delta_internal_step_std_y": 0.0326,
+      "relative_delta_vs_combo_pct": 23.5,
+      "local_guard_relative_limit_pct": 3.0,
+      "local_guard_pass": false
+    },
+    {
+      "short_name": "pitch0p1um_y_60",
+      "n_frames": 61,
+      "expected_step_px": 0.8,
+      "r42_internal_step_std_y": 0.2121,
+      "combo_internal_step_std_y": 0.1509,
+      "delta_internal_step_std_y": 0.0612,
+      "relative_delta_vs_combo_pct": 40.6,
+      "local_guard_relative_limit_pct": 7.0,
+      "local_guard_pass": false
+    },
+    {
+      "short_name": "pitch0p01um_y_40",
+      "n_frames": 41,
+      "expected_step_px": 0.08,
+      "r42_internal_step_std_y": 0.1673,
+      "combo_internal_step_std_y": 0.1185,
+      "delta_internal_step_std_y": 0.0488,
+      "relative_delta_vs_combo_pct": 41.2,
+      "local_guard_relative_limit_pct": 7.0,
+      "local_guard_pass": false
+    }
+  ],
+  "local_ring_guard_pass": false
+}

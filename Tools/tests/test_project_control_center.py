@@ -76,6 +76,70 @@ def test_truth_sources_expose_analysis_summary():
     assert analysis["versions"][0]["analysis_count"] >= 1
 
 
+def test_truth_sources_accept_open_side_track_results_report():
+    module = load_control_center_module()
+
+    policy = {
+        "formal_baseline": {
+            "candidate_id": "COMBO",
+            "model_name": "combo",
+            "decision_effective_date": "2026-04-08",
+            "reports": {"results_md": "Experiments/R38v2SeqFixed/reports/COMBO_RESULTS.md"},
+        },
+        "approved_alternates": [],
+        "open_side_tracks": [
+            {
+                "candidate_id": "R41_direct_best",
+                "status": "weight_sweep_complete_no_guarded_tradeoff",
+                "reports": {"results_md": "Experiments/R41_RingDistillation/reports/R41_RESULTS.md"},
+            }
+        ],
+    }
+    analysis_index = {"entry_point": "AnalysisLab/README.md", "layout_policy": "version_first", "versions": {}}
+
+    sources = module.build_truth_sources(REPO, policy, analysis_index)
+
+    assert sources["open_side_tracks"][0]["report"] == "Experiments/R41_RingDistillation/reports/R41_RESULTS.md"
+
+
+def test_truth_sources_accept_approved_alternate_capability_eval_report():
+    module = load_control_center_module()
+
+    policy = {
+        "formal_baseline": {
+            "candidate_id": "COMBO",
+            "model_name": "combo",
+            "decision_effective_date": "2026-04-08",
+            "reports": {"results_md": "Experiments/R38v2SeqFixed/reports/COMBO_RESULTS.md"},
+        },
+        "approved_alternates": [
+            {
+                "candidate_id": "R39R40_avg_a025",
+                "model_name": "r39r40_complementary_avg_a025",
+                "reports": {
+                    "capability_eval_md": (
+                        "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/"
+                        "reports/R39R40_AVG_a025_CAPABILITY_EVAL.md"
+                    ),
+                    "external_compare_md": (
+                        "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/"
+                        "reports/R39R40_AVG_a025_EXTERNAL_COMPARE.md"
+                    ),
+                },
+            }
+        ],
+        "open_side_tracks": [],
+    }
+    analysis_index = {"entry_point": "AnalysisLab/README.md", "layout_policy": "version_first", "versions": {}}
+
+    sources = module.build_truth_sources(REPO, policy, analysis_index)
+
+    assert sources["approved_alternates"][0]["report"] == (
+        "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/"
+        "reports/R39R40_AVG_a025_CAPABILITY_EVAL.md"
+    )
+
+
 def test_docs_scan_detects_stale_legacy_runtime_path(tmp_path: Path):
     module = load_control_center_module()
 

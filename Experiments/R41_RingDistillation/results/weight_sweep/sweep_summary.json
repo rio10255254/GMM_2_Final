@@ -1,0 +1,444 @@
+{
+  "candidate": "r41_kd_from_a045",
+  "combo_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\\weights\\best_tradeoff.pth.tar",
+  "candidate_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\\weights\\best_tradeoff.pth.tar",
+  "thresholds": {
+    "min_micro_psnr": 26.0,
+    "min_high_frequency_retention": 0.3,
+    "max_8px": 0.159,
+    "max_0p8px": 0.141,
+    "max_0p08px": 0.107
+  },
+  "rows": [
+    {
+      "alpha": 0.1,
+      "alpha_tag": "a010",
+      "micro_overall_psnr": 23.228234700151898,
+      "micro_overall_ssim": 0.869347729558384,
+      "micro_high_frequency_retention": 0.22932313417327208,
+      "micro_edge_retention": 0.6786635514866102,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 17.843010079452817,
+          "ssim": 0.5782955736323584,
+          "high_frequency_retention": 0.05775659728555754,
+          "edge_retention": 0.2503604824198384,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 23.857269254074843,
+          "ssim": 0.9552935327126384,
+          "high_frequency_retention": 0.38847259201450945,
+          "edge_retention": 1.2154675233388867,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 27.666639215376353,
+          "ssim": 0.9125720759627027,
+          "high_frequency_retention": 0.16759023909326046,
+          "edge_retention": 0.6201466152101107,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 24.199643663875534,
+          "ssim": 0.9559788160309666,
+          "high_frequency_retention": 0.37521029989148513,
+          "edge_retention": 1.0715074746133253,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 22.574611287979938,
+          "ssim": 0.9445986494532537,
+          "high_frequency_retention": 0.15758594258154784,
+          "edge_retention": 0.2358356618508898,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1413,
+      "ring_0p8px_step_std": 0.1464,
+      "ring_0p08px_step_std": 0.1202
+    },
+    {
+      "alpha": 0.15,
+      "alpha_tag": "a015",
+      "micro_overall_psnr": 23.535022756112962,
+      "micro_overall_ssim": 0.8750085377873843,
+      "micro_high_frequency_retention": 0.23229436291822583,
+      "micro_edge_retention": 0.6852463242439631,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 17.953555444353164,
+          "ssim": 0.5890369513291323,
+          "high_frequency_retention": 0.06457403096951278,
+          "edge_retention": 0.2650557511595649,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 24.282663883792466,
+          "ssim": 0.9591537280387638,
+          "high_frequency_retention": 0.3956331234249981,
+          "edge_retention": 1.2135416055184662,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 27.976059419620526,
+          "ssim": 0.9186975201059662,
+          "high_frequency_retention": 0.18004092591537232,
+          "edge_retention": 0.6441201753486885,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 24.524221921471856,
+          "ssim": 0.9591808383211795,
+          "high_frequency_retention": 0.35990985043128426,
+          "edge_retention": 1.0658576335828278,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 22.93861311132681,
+          "ssim": 0.9489736511418796,
+          "high_frequency_retention": 0.16131388384996165,
+          "edge_retention": 0.23765645561026835,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1394,
+      "ring_0p8px_step_std": 0.1562,
+      "ring_0p08px_step_std": 0.1326
+    },
+    {
+      "alpha": 0.2,
+      "alpha_tag": "a020",
+      "micro_overall_psnr": 23.89266449933093,
+      "micro_overall_ssim": 0.8810261435228195,
+      "micro_high_frequency_retention": 0.23563853864960616,
+      "micro_edge_retention": 0.6902826666639313,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 18.10440613415203,
+          "ssim": 0.601194911706232,
+          "high_frequency_retention": 0.07474045455869877,
+          "edge_retention": 0.2827754945141895,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 24.772196660205438,
+          "ssim": 0.9631495056498525,
+          "high_frequency_retention": 0.4005612134871421,
+          "edge_retention": 1.2024930542797656,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 28.292092134087262,
+          "ssim": 0.9245797956942707,
+          "high_frequency_retention": 0.19313187808912147,
+          "edge_retention": 0.6700405045479073,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 24.972669974183177,
+          "ssim": 0.9631325155475354,
+          "high_frequency_retention": 0.34243515652714096,
+          "edge_retention": 1.0560400983126836,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 23.321957594026763,
+          "ssim": 0.9530739890162069,
+          "high_frequency_retention": 0.16732399058592767,
+          "edge_retention": 0.24006418166511087,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1395,
+      "ring_0p8px_step_std": 0.1598,
+      "ring_0p08px_step_std": 0.1304
+    },
+    {
+      "alpha": 0.25,
+      "alpha_tag": "a025",
+      "micro_overall_psnr": 24.29719375733238,
+      "micro_overall_ssim": 0.8872101716837929,
+      "micro_high_frequency_retention": 0.23984981264186372,
+      "micro_edge_retention": 0.6937756650193841,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 18.284507235017355,
+          "ssim": 0.6142343903003571,
+          "high_frequency_retention": 0.08639393150660205,
+          "edge_retention": 0.30079717022192287,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 25.337973785372103,
+          "ssim": 0.9672281808220451,
+          "high_frequency_retention": 0.40126532002178206,
+          "edge_retention": 1.1875170425329327,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 28.622816601237407,
+          "ssim": 0.9302836030576526,
+          "high_frequency_retention": 0.20888469195513557,
+          "edge_retention": 0.6961769851572437,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 25.517072509293044,
+          "ssim": 0.9674029901616242,
+          "high_frequency_retention": 0.3269270920569486,
+          "edge_retention": 1.0429685209893091,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 23.72359865574199,
+          "ssim": 0.9569016940772856,
+          "high_frequency_retention": 0.1757780276688505,
+          "edge_retention": 0.2414186061955131,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1503,
+      "ring_0p8px_step_std": 0.1473,
+      "ring_0p08px_step_std": 0.141
+    },
+    {
+      "alpha": 0.3,
+      "alpha_tag": "a030",
+      "micro_overall_psnr": 24.740499359891643,
+      "micro_overall_ssim": 0.8933425107717661,
+      "micro_high_frequency_retention": 0.24572031300390423,
+      "micro_edge_retention": 0.6977655588323417,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 18.478869101723962,
+          "ssim": 0.6276087248914338,
+          "high_frequency_retention": 0.10018000407845555,
+          "edge_retention": 0.3195522432510234,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 25.97026062754937,
+          "ssim": 0.9712141265804407,
+          "high_frequency_retention": 0.40115457115959324,
+          "edge_retention": 1.1721333869777575,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 28.973355032412126,
+          "ssim": 0.9357947028461963,
+          "high_frequency_retention": 0.22584190045193578,
+          "edge_retention": 0.7226135486691183,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 26.142075864775553,
+          "ssim": 0.9716772639314339,
+          "high_frequency_retention": 0.3135518808256988,
+          "edge_retention": 1.032001114091884,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 24.1379361729972,
+          "ssim": 0.9604177356093258,
+          "high_frequency_retention": 0.18787320850383787,
+          "edge_retention": 0.2425275011719248,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1454,
+      "ring_0p8px_step_std": 0.1409,
+      "ring_0p08px_step_std": 0.1378
+    },
+    {
+      "alpha": 0.35,
+      "alpha_tag": "a035",
+      "micro_overall_psnr": 25.20921066591963,
+      "micro_overall_ssim": 0.899436843179977,
+      "micro_high_frequency_retention": 0.25617789537891744,
+      "micro_edge_retention": 0.7027489582632466,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 18.68928714035585,
+          "ssim": 0.6418974536408555,
+          "high_frequency_retention": 0.11656105359485314,
+          "edge_retention": 0.3402744040528535,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 26.623276960401682,
+          "ssim": 0.9748092838923531,
+          "high_frequency_retention": 0.40987728346903224,
+          "edge_retention": 1.160635971936442,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 29.35501787701032,
+          "ssim": 0.9412355149229603,
+          "high_frequency_retention": 0.2444648755699308,
+          "edge_retention": 0.7482667075972081,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 26.83464151127909,
+          "ssim": 0.9757201768064878,
+          "high_frequency_retention": 0.30499646690849125,
+          "edge_retention": 1.020412241612925,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 24.543829840551204,
+          "ssim": 0.963521786637228,
+          "high_frequency_retention": 0.2049897973522797,
+          "edge_retention": 0.244155466116804,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1477,
+      "ring_0p8px_step_std": 0.1517,
+      "ring_0p08px_step_std": 0.1294
+    },
+    {
+      "alpha": 0.4,
+      "alpha_tag": "a040",
+      "micro_overall_psnr": 25.694135027623577,
+      "micro_overall_ssim": 0.905457326543023,
+      "micro_high_frequency_retention": 0.2743161931945274,
+      "micro_edge_retention": 0.7095060273123144,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 18.917902918208227,
+          "ssim": 0.6570738470828551,
+          "high_frequency_retention": 0.13725636123458626,
+          "edge_retention": 0.36378415342067766,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 27.26967608938576,
+          "ssim": 0.9779962353987297,
+          "high_frequency_retention": 0.43487274164877904,
+          "edge_retention": 1.1541753561582468,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 29.77839546572679,
+          "ssim": 0.946682462460758,
+          "high_frequency_retention": 0.26352160042843925,
+          "edge_retention": 0.772685347569708,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 27.575567053577657,
+          "ssim": 0.9793413570282702,
+          "high_frequency_retention": 0.3083821747210055,
+          "edge_retention": 1.0111006903500088,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 24.929133611219445,
+          "ssim": 0.966192730744502,
+          "high_frequency_retention": 0.22754808793982684,
+          "edge_retention": 0.24578458906293082,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.156,
+      "ring_0p8px_step_std": 0.1481,
+      "ring_0p08px_step_std": 0.1389
+    }
+  ],
+  "verdict": {
+    "found": false,
+    "best": null,
+    "capacity_only_best": {
+      "alpha": 0.4,
+      "alpha_tag": "a040",
+      "micro_overall_psnr": 25.694135027623577,
+      "micro_overall_ssim": 0.905457326543023,
+      "micro_high_frequency_retention": 0.2743161931945274,
+      "micro_edge_retention": 0.7095060273123144,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 18.917902918208227,
+          "ssim": 0.6570738470828551,
+          "high_frequency_retention": 0.13725636123458626,
+          "edge_retention": 0.36378415342067766,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 27.26967608938576,
+          "ssim": 0.9779962353987297,
+          "high_frequency_retention": 0.43487274164877904,
+          "edge_retention": 1.1541753561582468,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 29.77839546572679,
+          "ssim": 0.946682462460758,
+          "high_frequency_retention": 0.26352160042843925,
+          "edge_retention": 0.772685347569708,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 27.575567053577657,
+          "ssim": 0.9793413570282702,
+          "high_frequency_retention": 0.3083821747210055,
+          "edge_retention": 1.0111006903500088,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 24.929133611219445,
+          "ssim": 0.966192730744502,
+          "high_frequency_retention": 0.22754808793982684,
+          "edge_retention": 0.24578458906293082,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.156,
+      "ring_0p8px_step_std": 0.1481,
+      "ring_0p08px_step_std": 0.1389
+    },
+    "reason": "no alpha satisfies both microscopy-capacity and ring-guard thresholds"
+  },
+  "generated_at": "2026-05-05 12:20:24"
+}

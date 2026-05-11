@@ -1,0 +1,64 @@
+**********************
+Windows PowerShell 轉譯開始
+開始時間: 20260505142257
+使用者名稱: DESKTOP-5J1NJ2L\Rio
+RunAs 使用者: DESKTOP-5J1NJ2L\Rio
+設定名稱:
+電腦: DESKTOP-5J1NJ2L (Microsoft Windows NT 10.0.26200.0)
+主應用程式: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoExit -ExecutionPolicy Bypass -Command Set-Location 'D:\GMM_2_Final'
+$ErrorActionPreference = 'Stop'
+Start-Transcript -Path 'D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_training_foreground_20260505_142255.log'
+Write-Host '[R42] Formal training started at:' (Get-Date)
+Write-Host '[R42] Candidate 1/2: r42_boundary_from_combo'
+python Experiments\R42_MicroscopyBoundaryFidelity\scripts\launch_r42.py --candidate r42_boundary_from_combo --num-epoch 50 --device cuda:0
+if ($LASTEXITCODE -ne 0) { throw 'r42_boundary_from_combo failed with exit code ' + $LASTEXITCODE }
+Write-Host '[R42] Candidate 2/2: r42_boundary_from_r41'
+python Experiments\R42_MicroscopyBoundaryFidelity\scripts\launch_r42.py --candidate r42_boundary_from_r41 --num-epoch 50 --device cuda:0
+if ($LASTEXITCODE -ne 0) { throw 'r42_boundary_from_r41 failed with exit code ' + $LASTEXITCODE }
+Write-Host '[R42] Formal training finished at:' (Get-Date)
+Stop-Transcript
+處理序識別碼: 6924
+PSVersion: 5.1.26100.8115
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8115
+BuildVersion: 10.0.26100.8115
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+已啟動轉譯，輸出檔為 D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_training_foreground_20260505_142255.log
+[R42] Formal training started at: 2026/5/5 下午 02:22:57
+[R42] Candidate 1/2: r42_boundary_from_combo
+[SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SUMMARY] Best epoch = 21, tradeoff = -0.0433, gmf_obj = -0.0433, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000
+, gain_p10 = 0.0000, best_val_rec = 0.003757, best_val_ssim = 0.9434
+
+Starting Epoch 49/50
+[WEIGHT][E049] w_rec=1.000 w_ssim=0.050 w_gradmag=0.800 w_edgeori=0.300 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_la
+p=0.150 w_edgeLocalLap=0.060 w_phys=0.050 eq_factor=0.910
+[SIMPLETEST][E049] Rec=0.003388 (8.7%) GradMag=0.029246 (60.4%) EdgeOri=0.038808 (30.0%) EqGeom=0.000328 (0.8%) Total=0.
+059668 time=33.1s
+[VAL][E049] skipped by FAST_VAL_EVERY_EPOCH=2
+[SUMMARY] Best epoch = 21, tradeoff = -0.0433, gmf_obj = -0.0433, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000
+, gain_p10 = 0.0000, best_val_rec = 0.003757, best_val_ssim = 0.9434
+
+Starting Epoch 50/50
+[WEIGHT][E050] w_rec=1.000 w_ssim=0.050 w_gradmag=0.800 w_edgeori=0.300 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_la
+p=0.150 w_edgeLocalLap=0.060 w_phys=0.050 eq_factor=0.900
+[SIMPLETEST][E050] Rec=0.003313 (8.7%) GradMag=0.028946 (60.8%) EdgeOri=0.037595 (29.6%) EqGeom=0.000337 (0.9%) Total=0.
+058810 time=33.2s
+[MONITOR][E050] range[0.1670,0.8912] mean=0.5376 std=0.1112 cb=0.00171 hf_ratio=0.000 edgeW=5.5022
+-> Epoch 50 Val Done. Total=0.050950 | Rec=0.002899 | Edge=0.042129 | EdgeProf=0.000000 | PSNR=28.73 | SSIM=0.9554 | FFT
+Shape=0.000000 | CB=0.000000 | HF=0.009
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SUMMARY] Best epoch = 21, tradeoff = -0.0433, gmf_obj = -0.0433, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000
+, gain_p10 = 0.0000, best_val_rec = 0.003757, best_val_ssim = 0.9434
+[R42] Candidate 2/2: r42_boundary_from_r41
+
+[R42] Formal training finished at: 2026/5/5 下午 03:25:56
+**********************
+Windows PowerShell 轉譯結束
+結束時間: 20260505152556
+**********************

@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "2.0",
-    "generated_at": "2026-04-09 00:00:00",
+    "generated_at": "2026-05-09 16:15:00",
     "decision_effective_date": "2026-04-08",
     "policy_owner": "GMM_2_Final truth plane"
   },
@@ -93,6 +93,169 @@
         "gradient_mag_vs_r30_pct": -22.8,
         "contrast_std_vs_r30_pct": -10.7
       }
+    },
+    {
+      "candidate_id": "R39R40_avg_a025",
+      "model_name": "r39r40_complementary_avg_a025",
+      "round": "R39 a030 x R40 a043 cross-round weight averaging sweep",
+      "experiment_path": "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep",
+      "role": "balanced_full_spectrum_alternate",
+      "status": "approved_alternate",
+      "promotion_effective_date": "2026-05-11",
+      "promoted_from": "open_side_track",
+      "recommended_for": "Deployments that need the cleanest external GMF profile (all three scales within 3% of COMBO) plus improved shape generalisation (7-class held-out PSNR +2.67 dB vs COMBO) and microscopy feature capacity (5-class held-out PSNR +2.68 dB vs COMBO).  Lowest-risk alternate when no single-axis specialisation is needed.  Complements R33 (GMF extreme) and R38v2 (visual priority) by occupying the 'balanced full-spectrum' slot.",
+      "derivation": "Linear state_dict interpolation at alpha=0.25 between R39 a030 and R40 a043. alpha=0.25 means 75% a030 + 25% a043. Produced 2026-05-11 by Experiments/R39_ShapeGeneralization/scripts/r39r40_complementary_average.py.",
+      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\checkpoints\\a025\\best_tradeoff.pth.tar",
+      "source_checkpoints": {
+        "a030": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\checkpoints\\a030\\best_tradeoff.pth.tar",
+        "a043": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\\a043\\best_tradeoff.pth.tar"
+      },
+      "external_gmf": {
+        "step_std_8px": 0.146505,
+        "step_std_0p8px": 0.133546,
+        "step_std_0p08px": 0.1004,
+        "delta_vs_combo_pct": {
+          "8px": -5.18,
+          "0p8px": 1.51,
+          "0p08px": 0.51
+        },
+        "verdict": "PASS_UPGRADE_GUARD",
+        "upgrade_cap_pct_used": 3.0,
+        "measured_at": "2026-05-11",
+        "note": "First candidate in project history to clear the 3% upgrade guard on all three external GMF scales simultaneously."
+      },
+      "visual_profile": {
+        "measured_at": "2026-05-11",
+        "method": "frame-wise mean over ring reconstructions at three pitches; grayscale Sobel + percentile",
+        "delta_vs_combo_pct": {
+          "gradient_magnitude_mean": -2.01,
+          "edge_steepness_p95": -5.94,
+          "contrast_std": -0.58,
+          "edge_contrast_p99_minus_p1": -1.0
+        },
+        "edge_steepness_vs_r30_estimated_pct": 78.1,
+        "band_classification": "sharp_band",
+        "interpretation": "Edge steepness at -5.94% vs COMBO is comparable to a030 (-5.60%) and a043 (-5.37%); transitively estimated +78.1% vs R30 places a025 firmly in the COMBO/R38v2 sharp band, far from the R33 soft band (-22%)."
+      },
+      "capability_evaluation": {
+        "evaluated_at": "2026-05-11",
+        "r40_micro_val_unseen": {
+          "count": 100,
+          "stages": 5,
+          "overall_psnr": 25.4091,
+          "overall_ssim": 0.8968,
+          "overall_high_frequency_retention": 0.2428,
+          "overall_edge_retention": 0.6434,
+          "overall_contrast_retention": 0.9348,
+          "overall_boundary_f_score": 0.5635,
+          "overall_shape_error_score": 0.6989,
+          "delta_psnr_vs_combo_db": 2.68,
+          "delta_psnr_vs_a030_db": 0.38,
+          "stage_psnr_wins_over_combo": "5/5",
+          "stage_psnr_wins_over_a030": "5/5"
+        },
+        "r39_shape_val_unseen": {
+          "count": 210,
+          "stages": 7,
+          "overall_psnr": 25.5098,
+          "overall_ssim": 0.9512,
+          "overall_high_frequency_retention": 0.474,
+          "overall_edge_retention": 0.9087,
+          "overall_contrast_retention": 0.9072,
+          "overall_boundary_f_score": 0.8816,
+          "overall_shape_error_score": 0.2683,
+          "delta_psnr_vs_combo_db": 2.67,
+          "delta_psnr_vs_a030_db": 0.48,
+          "stage_psnr_wins_over_combo": "7/7",
+          "stage_psnr_wins_over_a030": "7/7"
+        },
+        "summary": "All 12 categories (5 microscopy + 7 shape) PSNR > COMBO and > a030.  No collapsed category."
+      },
+      "reports": {
+        "capability_eval_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\reports\\R39R40_AVG_a025_CAPABILITY_EVAL.md",
+        "sweep_results_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\reports\\R39R40_COMPLEMENTARY_AVG_RESULTS.md",
+        "external_compare_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\reports\\R39R40_AVG_a025_EXTERNAL_COMPARE.md",
+        "external_compare_summary_json": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\external_recon\\a025\\external_compare_summary.json",
+        "capability_summary_json": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\capability_eval\\capability_summary.json",
+        "averaging_script": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\scripts\\r39r40_complementary_average.py",
+        "capability_eval_script": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\scripts\\r39r40_a025_capability_eval.py",
+        "visual_compare_script": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\scripts\\r39r40_a025_visual_compare.py",
+        "contact_sheet_micro_five_panel": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\visuals\\contact_sheet_a025_micro_five_panel.png",
+        "contact_sheet_shape_five_panel": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\visuals\\contact_sheet_a025_shape_five_panel.png",
+        "contact_sheet_a025_four_panel": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\visuals\\contact_sheet_a025_four_panel.png"
+      },
+      "promotion_basis": "Four-way validation passed on 2026-05-11: (1) external GMF three-scale PASS_UPGRADE_GUARD (all within 3% upgrade cap, first project candidate to do so); (2) shape generalisation 7-class wins all over both COMBO and a030 with +2.67 dB PSNR vs COMBO; (3) microscopy feature capacity 5-class wins all over both COMBO and a030 with +2.68 dB PSNR vs COMBO; (4) visual profile remains in the sharp band (edge_steepness ~+78.1% vs R30, comparable to COMBO/R38v2). Promoted to balanced_full_spectrum_alternate, complementing R33 (GMF extreme) and R38v2 (visual priority).",
+      "sweep_context": {
+        "method": "5-point linear interpolation between R39 a030 (alpha=0) and R40 a043 (alpha=1); intermediate alphas 0.25 / 0.50 / 0.75 newly computed 2026-05-11.",
+        "points": [
+          {
+            "alpha": 0.0,
+            "candidate": "r39_combo_strong_avg_a030",
+            "step_std_8px": 0.143794,
+            "step_std_0p8px": 0.140008,
+            "step_std_0p08px": 0.083941,
+            "delta_vs_combo_pct": {
+              "8px": -6.94,
+              "0p8px": 6.42,
+              "0p08px": -15.97
+            },
+            "verdict": "PASS_TRADEOFF"
+          },
+          {
+            "alpha": 0.25,
+            "candidate": "r39r40_complementary_avg_a025",
+            "step_std_8px": 0.146505,
+            "step_std_0p8px": 0.133546,
+            "step_std_0p08px": 0.1004,
+            "delta_vs_combo_pct": {
+              "8px": -5.18,
+              "0p8px": 1.51,
+              "0p08px": 0.51
+            },
+            "verdict": "PASS_UPGRADE_GUARD"
+          },
+          {
+            "alpha": 0.5,
+            "candidate": "r39r40_complementary_avg_a050",
+            "step_std_8px": 0.151365,
+            "step_std_0p8px": 0.149209,
+            "step_std_0p08px": 0.093177,
+            "delta_vs_combo_pct": {
+              "8px": -2.01,
+              "0p8px": 13.42,
+              "0p08px": -6.73
+            },
+            "verdict": "RESEARCH_CAPACITY_ONLY"
+          },
+          {
+            "alpha": 0.75,
+            "candidate": "r39r40_complementary_avg_a075",
+            "step_std_8px": 0.144254,
+            "step_std_0p8px": 0.152095,
+            "step_std_0p08px": 0.111468,
+            "delta_vs_combo_pct": {
+              "8px": -6.62,
+              "0p8px": 15.61,
+              "0p08px": 11.59
+            },
+            "verdict": "RESEARCH_CAPACITY_ONLY"
+          },
+          {
+            "alpha": 1.0,
+            "candidate": "r40_combo_best_avg_a043",
+            "step_std_8px": 0.145379,
+            "step_std_0p8px": 0.127411,
+            "step_std_0p08px": 0.121382,
+            "delta_vs_combo_pct": {
+              "8px": -5.91,
+              "0p8px": -3.15,
+              "0p08px": 21.52
+            },
+            "verdict": "RESEARCH_CAPACITY_ONLY"
+          }
+        ],
+        "non_linear_observation": "Intermediate alphas do not follow linear interpolation of the two endpoints. 0.8 px bulges up to +13-15% at alpha=0.5 / 0.75 (both endpoints are within +/-7%), and 0.08 px crosses zero at alpha=0.25 instead of the predicted -6.6%. Confirms the weight-averaging trade-off space is non-smooth along alpha; see measurement_policy.internal_external_divergence.alpha_linear_extrapolation_caveat."
+      }
     }
   ],
   "research_state": {
@@ -105,6 +268,12 @@
       "round": "Round30",
       "experiment_surface": "Traing_Progress/organized_20260316/round30",
       "external_gmf_0p8px": 0.167862
+    },
+    "approved_alternate_count": 3,
+    "last_promotion": {
+      "candidate_id": "R39R40_avg_a025",
+      "promotion_effective_date": "2026-05-11",
+      "role": "balanced_full_spectrum_alternate"
     }
   },
   "open_side_tracks": [
@@ -121,6 +290,1218 @@
         "psf_audit_md": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\psf_audit\\PSF_FORMAL_AUDIT_20260326.md"
       },
       "notes": "Keep tracked as an open PSF side track. It is not the active mainline and not part of the COMBO promotion decision."
+    },
+    {
+      "candidate_id": "R45_family_boundary_adapter",
+      "model_name": "r45_oracle_adapter_large_mixed / scale sweep s04-s18",
+      "round": "R45 family boundary adapter",
+      "experiment": "Experiments/R45_FamilyBoundaryAdapter",
+      "status": "r45a_and_r45b_complete_negative_research_result_not_promotion_candidate",
+      "mainline_status": "research_complete_not_promotion_candidate",
+      "goal": "Test whether a single outward model entry with frozen R44B from R42 plus small family-routed output adapters can gather large-region and mixed-field boundary ability without damaging motion fidelity.",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\reports\\R45_RESULTS.md",
+        "manifest_md": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\MANIFEST.md",
+        "scale_sweep_csv": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\results\\diagnostics\\r45_adapter_scale_sweep_summary.csv",
+        "scale_sweep_json": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\results\\diagnostics\\r45_adapter_scale_sweep_summary.json",
+        "visual_compare": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\results\\visual_samples\\r45_s08_vs_r44b_target_compare.png",
+        "r45b_teacher_diagnostics_md": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\reports\\R45B_TEACHER_DIAGNOSTICS.md",
+        "r45b_oracle_summary_json": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\results\\r45b_teacher_diagnostics\\r45b_oracle_summary.json",
+        "r45b_target_rank_csv": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\results\\r45b_teacher_diagnostics\\r45b_target_rank.csv",
+        "r45b_residual_summary_csv": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\results\\r45b_teacher_diagnostics\\r45b_residual_summary.csv",
+        "r45b_visual_sheet": "D:\\GMM_2_Final\\Experiments\\R45_FamilyBoundaryAdapter\\results\\visual_samples\\r45b_teacher_diagnostics_sheet.png"
+      },
+      "base_model": {
+        "candidate": "R44B from R42",
+        "checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801\\weights\\best_tradeoff.pth.tar",
+        "frozen": true
+      },
+      "data_packages": {
+        "train_profile": "D:\\GMM_2_Final\\Training_Data\\r44_universal_boundary_motion\\r44_motion_research_train",
+        "validation_profile": "D:\\GMM_2_Final\\Training_Data\\r44_universal_boundary_motion\\motion_val_unseen",
+        "target_stages": [
+          "stage_45_motion_regions",
+          "stage_47_motion_mixed"
+        ],
+        "train_pairs": 960,
+        "validation_frames": 980,
+        "validation_motion_pairs": 840
+      },
+      "trial_results": {
+        "baseline_r44b_from_r42": {
+          "target_shape_error_score": 0.33838990311423867,
+          "overall_motion_vector_error_px": 0.38133009689458236
+        },
+        "scale_sweep": {
+          "s04": {
+            "target_shape_error_score": 0.341758,
+            "target_shape_delta_pct_vs_r44b": -0.995382438606399,
+            "overall_motion_vector_error_px": 0.381437,
+            "motion_delta_pct_vs_r44b": 0.02815461776970755,
+            "verdict": "FAIL"
+          },
+          "s08": {
+            "target_shape_error_score": 0.340286,
+            "target_shape_delta_pct_vs_r44b": -0.5602851476166704,
+            "overall_motion_vector_error_px": 0.381685,
+            "motion_delta_pct_vs_r44b": 0.09297496886438769,
+            "verdict": "FAIL"
+          },
+          "s12": {
+            "target_shape_error_score": 0.344523,
+            "target_shape_delta_pct_vs_r44b": -1.8125284793590768,
+            "overall_motion_vector_error_px": 0.381704,
+            "motion_delta_pct_vs_r44b": 0.09807579554042498,
+            "verdict": "FAIL"
+          },
+          "s18": {
+            "target_shape_error_score": 0.349675,
+            "target_shape_delta_pct_vs_r44b": -3.3349780103223536,
+            "overall_motion_vector_error_px": 0.382155,
+            "motion_delta_pct_vs_r44b": 0.21635944095283718,
+            "verdict": "FAIL"
+          }
+        },
+        "r45b_teacher_diagnostics": {
+          "base_target_shape_error_score": 0.3383899031142387,
+          "frame_oracle_shape_error_score": 0.22529152399055835,
+          "frame_oracle_improvement_pct": 33.42250406493332,
+          "family_oracle_shape_error_score": 0.29678047479634656,
+          "family_oracle_improvement_pct": 12.296297240241541,
+          "family_oracle": [
+            {
+              "feature_family": "large_regions",
+              "oracle_model": "R44B from COMBO",
+              "avg_shape_error_score": 0.37550500250182356,
+              "case_count": 140
+            },
+            {
+              "feature_family": "mixed_fields",
+              "oracle_model": "R44C static heavy",
+              "avg_shape_error_score": 0.21805594709086942,
+              "case_count": 140
+            }
+          ],
+          "teacher_verdicts": [
+            {
+              "teacher": "R44B from R40",
+              "transferable": false,
+              "reason": "殘差方向不穩；位移退步過大",
+              "target_shape_delta_pct": 8.10200484209017,
+              "mean_error_reduction": -0.027364640639695736,
+              "teacher_better_fraction": 0.18440727847051008,
+              "motion_regression_pct": 138.3069363659382
+            },
+            {
+              "teacher": "R41 direct",
+              "transferable": false,
+              "reason": "殘差方向不穩；位移退步過大",
+              "target_shape_delta_pct": 7.830258359502546,
+              "mean_error_reduction": -0.13242636937648056,
+              "teacher_better_fraction": 0.09016354192800465,
+              "motion_regression_pct": 281.3871714745023
+            },
+            {
+              "teacher": "R44B from COMBO",
+              "transferable": false,
+              "reason": "形狀優勢不足；殘差方向不穩；位移退步過大",
+              "target_shape_delta_pct": 2.847824994584568,
+              "mean_error_reduction": -0.035613159003800576,
+              "teacher_better_fraction": 0.1746520556887307,
+              "motion_regression_pct": 39.32838371759013
+            },
+            {
+              "teacher": "R42 best",
+              "transferable": false,
+              "reason": "形狀優勢不足；殘差方向不穩；位移退步過大",
+              "target_shape_delta_pct": 2.526816574685787,
+              "mean_error_reduction": -0.004349431808636187,
+              "teacher_better_fraction": 0.2327119658141144,
+              "motion_regression_pct": 20.873364039988143
+            },
+            {
+              "teacher": "R44C static heavy",
+              "transferable": false,
+              "reason": "形狀優勢不足；殘差方向不穩",
+              "target_shape_delta_pct": 1.13702213112319,
+              "mean_error_reduction": -0.0018292136081527132,
+              "teacher_better_fraction": 0.2970379549330204,
+              "motion_regression_pct": 5.180994869967071
+            },
+            {
+              "teacher": "R44H StepB region KD",
+              "transferable": false,
+              "reason": "形狀優勢不足；殘差方向不穩",
+              "target_shape_delta_pct": -2.866422155155118,
+              "mean_error_reduction": 0.001852525716744172,
+              "teacher_better_fraction": 0.46079644010341925,
+              "motion_regression_pct": 0.6146824145328779
+            }
+          ]
+        }
+      },
+      "verdict": "R45A output-end adapters preserved motion but did not improve target boundary shape. R45B confirms meaningful oracle headroom, but teacher advantages are not clean in boundary-band residual space; do not use output-end KD. Next single-entry attempt should use intermediate feature adapters plus local teacher selection."
+    },
+    {
+      "candidate_id": "R44_motion_fidelity",
+      "model_name": "r44_motion_from_r42_best / r44_motion_from_r40_a045 / r44_motion_from_combo",
+      "round": "R44 universal boundary motion fidelity",
+      "experiment": "Experiments/R44_UniversalBoundaryMotionFidelity",
+      "status": "r44a_to_r44h_stepb_complete_research_success_not_promotion_candidate",
+      "mainline_status": "research_complete_not_promotion_candidate",
+      "goal": "Measure and train universal microscopy boundary motion fidelity across lines, grids, junctions, curves, regions, defects, and mixed scenes under known displacement.",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44_RESULTS.md",
+        "external_compare_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44_EXTERNAL_COMPARE.md",
+        "manifest_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\MANIFEST.md",
+        "summary_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\summary\\r44_motion_summary_all.csv",
+        "summary_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\summary\\r44_motion_summary_all.json",
+        "visual_sheet": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\visual_samples\\r44_motion_r42_vs_r44_contact_sheet.png",
+        "local_ring_guard_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\ring_guard\\r44_motion_from_r42_best_e24_ring_guard_summary.json",
+        "r44c_probe_plan_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44C_PROBE_PLAN.md",
+        "r44c_summary_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\summary\\r44c_probe_summary.csv",
+        "r44c_summary_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\summary\\r44c_probe_summary.json",
+        "r44c_visual_sheet": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\visual_samples\\r44c_probe_r42_r44b_r44c_sheet.png",
+        "r44c_local_ring_guard_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\ring_guard\\r44c_static_heavy_all_motion_ring_guard_summary.json",
+        "r44d_family_diagnostic_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44D_FAMILY_DIAGNOSTIC.md",
+        "r44d_family_scorecard_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44d_family_scorecard.csv",
+        "r44d_shift_scorecard_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44d_shift_scorecard.csv",
+        "r44d_best_by_family_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44d_best_by_family.csv",
+        "r44d_metric_discrimination_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44d_metric_discrimination.csv",
+        "r44d_summary_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44d_summary.json",
+        "r44d_boundary_heatmap": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44d_boundary_heatmap.png",
+        "r44d_motion_heatmap": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44d_motion_heatmap.png",
+        "r44e_targeted_probe_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44E_TARGETED_PROBE.md",
+        "r44e_summary_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\summary\\r44e_probe_summary.csv",
+        "r44e_summary_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\summary\\r44e_probe_summary.json",
+        "r44e_best_by_metric_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\summary\\r44e_best_by_metric.json",
+        "r44e_visual_sheet": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\visual_samples\\r44e_region_mixed_probe_sheet.png",
+        "r44f_error_diagnostic_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44F_ERROR_DIAGNOSTIC.md",
+        "r44f_selected_cases_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44f_selected_cases.csv",
+        "r44f_selected_cases_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44f_selected_cases.json",
+        "r44f_metric_stress_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44f_metric_stress.csv",
+        "r44f_metric_stress_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44f_metric_stress.json",
+        "r44f_metric_stress_summary_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44f_metric_stress_summary.csv",
+        "r44f_visual_sheet": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\visual_samples\\r44f_error_dissection_sheet.png",
+        "r44g_boundary_shape_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44G_BOUNDARY_SHAPE_METRICS.md",
+        "r44g_boundary_shape_rows_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44g_boundary_shape_rows.csv",
+        "r44g_boundary_shape_scorecard_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44g_boundary_shape_scorecard.csv",
+        "r44g_boundary_shape_target_rank_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44g_boundary_shape_target_rank.csv",
+        "r44g_boundary_shape_scorecard_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44g_boundary_shape_scorecard.json",
+        "r44g_boundary_shape_heatmap": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\visual_samples\\r44g_boundary_shape_heatmap.png",
+        "r44h_stepa_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44H_STEPA_FAMILY_AVERAGE.md",
+        "r44h_stepa_summary_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\r44h_family_average\\r44h_stepa_summary.csv",
+        "r44h_stepa_summary_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\r44h_family_average\\r44h_stepa_summary.json",
+        "r44h_family_average_script": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\scripts\\r44h_family_average.py",
+        "r44h_family_scorecard_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44h_family_scorecard.csv",
+        "r44h_boundary_shape_scorecard_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44h_boundary_shape_scorecard.csv",
+        "r44h_boundary_shape_target_rank_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\diagnostics\\r44h_boundary_shape_target_rank.csv",
+        "r44h_stepb_plan_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44H_STEPB_REGION_KD_PLAN.md",
+        "r44h_stepb_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44H_STEPB_REGION_KD.md",
+        "r44_history_traceability_audit_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44_HISTORY_TRACEABILITY_AUDIT.md",
+        "r44h_stepb_launcher": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\scripts\\launch_r44h_stepb.py",
+        "r44h_stepb_motion_summary_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\r44h_stepb_region_kd\\r44h_stepb_motion_summary.json",
+        "r44h_stepb_motion_rows_csv": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\r44h_stepb_region_kd\\r44h_stepb_motion_rows.csv",
+        "r44h_stepb_ring_guard_json": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\r44h_stepb_region_kd\\r44h_stepb_ring_guard_summary.json",
+        "r44h_stepb_checkpoint": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\r44h_stepb_region_kd\\checkpoints\\r44h_stepb_region_kd_main_latest.pth.tar"
+      },
+      "data_packages": {
+        "motion_train": "D:\\GMM_2_Final\\Training_Data\\r44_universal_boundary_motion\\r44_motion_research_train",
+        "motion_val_unseen": "D:\\GMM_2_Final\\Training_Data\\r44_universal_boundary_motion\\motion_val_unseen",
+        "motion_geometry_sidecars": "D:\\GMM_2_Final\\Training_Data\\r44_motion_geometry",
+        "static_boundary_train": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\r42_boundary_research_train",
+        "train_frames": 3920,
+        "validation_frames": 980,
+        "geometry_sequences": 700
+      },
+      "training_status": {
+        "formal_training": "complete",
+        "r44a_diagnostic": "complete",
+        "r44b_training": "complete",
+        "smoke_test": "passed",
+        "epochs_per_candidate": 24,
+        "max_train_batches_per_epoch": 160,
+        "candidates": {
+          "r44_motion_from_r42_best": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801",
+            "best_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801\\weights\\best_tradeoff.pth.tar",
+            "verdict": "best_research_candidate"
+          },
+          "r44_motion_from_r40_a045": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143",
+            "best_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143\\weights\\best_tradeoff.pth.tar",
+            "verdict": "mixed_scene_boundary_reference_not_main_candidate"
+          },
+          "r44_motion_from_combo": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231",
+            "best_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231\\weights\\best_tradeoff.pth.tar",
+            "verdict": "large_region_boundary_reference_not_main_candidate"
+          },
+          "r44c_low_motion_static_guard": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44c_low_motion_static_guard_20260506_230332",
+            "best_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44c_low_motion_static_guard_20260506_230332\\weights\\best_tradeoff.pth.tar",
+            "verdict": "probe_complete_not_best"
+          },
+          "r44c_family_holdout_motion": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44c_family_holdout_motion_20260506_230836",
+            "best_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44c_family_holdout_motion_20260506_230836\\weights\\best_tradeoff.pth.tar",
+            "verdict": "negative_probe_family_holdout_did_not_help"
+          },
+          "r44c_static_heavy_all_motion": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44c_static_heavy_all_motion_20260506_231357",
+            "best_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44c_static_heavy_all_motion_20260506_231357\\weights\\best_tradeoff.pth.tar",
+            "verdict": "best_r44c_probe_research_only_small_balance_gain"
+          },
+          "r44e_region_mix_repair_from_r44b_r42": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_mix_repair_from_r44b_r42_20260507_035322",
+            "eval_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_mix_repair_from_r44b_r42_20260507_035322\\weights\\latest.pth.tar",
+            "verdict": "closest_r44e_probe_but_not_candidate_region_boundary_worse"
+          },
+          "r44e_region_prior_from_r41": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_prior_from_r41_20260507_035819",
+            "eval_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_prior_from_r41_20260507_035819\\weights\\latest.pth.tar",
+            "verdict": "negative_probe_grid_and_overall_motion_regressed"
+          },
+          "r44e_mixed_prior_from_r44b_r40": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44e_mixed_prior_from_r44b_r40_20260507_040148",
+            "eval_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44e_mixed_prior_from_r44b_r40_20260507_040148\\weights\\latest.pth.tar",
+            "verdict": "negative_probe_target_families_slightly_better_but_grid_and_overall_motion_regressed"
+          }
+        },
+        "r44c_probe_training": "complete",
+        "r44c_probe_epochs_per_candidate": 21,
+        "r44c_probe_max_train_batches_per_epoch": 80,
+        "r44d_family_diagnostic": "complete_no_training",
+        "r44e_probe_training": "complete",
+        "r44e_probe_epochs_per_candidate": 14,
+        "r44e_probe_max_train_batches_per_epoch": 60,
+        "r44e_probe_eval_checkpoint_policy": "latest_checkpoint_used_because_probe_epochs_are_below_best_epoch_min",
+        "r44f_error_diagnostic": "complete_no_training",
+        "r44g_boundary_shape_diagnostic": "complete_no_training",
+        "r44h_stepa_family_average": "complete_no_training",
+        "r44h_stepa_candidates": 4,
+        "r44h_stepa_verdict": "family_average_improves_shape_but_regresses_motion_not_next_start"
+      },
+      "evaluation_policy": {
+        "external_gmf_role": "record_only_not_research_rejection",
+        "primary_target": "known-displacement microscopy boundary motion fidelity",
+        "ring_role": "legacy ability record only for R44 research"
+      },
+      "notes": "R44 已完成 R44A/R44B/R44C/R44D/R44E/R44F/R44G、R44H Step A 與 Step B。Step A 顯示 R44B 家族平均能改善大區塊/混合形狀但會犧牲位移；Step B 單一老師局部蒸餾守住位移（0.3837 px vs R44B from R42 0.3813 px），但目標形狀錯誤變差（0.3481 vs 0.3384），因此不建議進 Step C 多老師全模型蒸餾。",
+      "r44a_baselines": {
+        "combo": {
+          "overall_motion_px": 0.8253,
+          "boundary_dist_px": 9.8284,
+          "grid_motion_px": 5.3567
+        },
+        "r39_a030": {
+          "overall_motion_px": 1.0481,
+          "boundary_dist_px": 8.1015,
+          "grid_motion_px": 6.9042
+        },
+        "r40_a045": {
+          "overall_motion_px": 1.3904,
+          "boundary_dist_px": 7.0905,
+          "grid_motion_px": 9.3451
+        },
+        "r41_direct": {
+          "overall_motion_px": 1.4543,
+          "boundary_dist_px": 5.5602,
+          "grid_motion_px": 9.6433
+        },
+        "r42_best": {
+          "overall_motion_px": 0.4609,
+          "boundary_dist_px": 3.6726,
+          "grid_motion_px": 2.7911
+        }
+      },
+      "r44b_results": {
+        "r44_motion_from_r42_best": {
+          "overall_motion_px": 0.3813,
+          "boundary_dist_px": 3.7276,
+          "grid_motion_px": 2.2457,
+          "thin_boundary_px": 2.3368,
+          "region_boundary_px": 7.5878,
+          "mixed_boundary_px": 6.9202,
+          "verdict": "best_motion_candidate_research_only"
+        },
+        "r44_motion_from_r40_a045": {
+          "overall_motion_px": 0.9087,
+          "boundary_dist_px": 3.7808,
+          "grid_motion_px": 5.9051,
+          "thin_boundary_px": 2.9695,
+          "region_boundary_px": 6.9774,
+          "mixed_boundary_px": 5.9151,
+          "verdict": "not_main_candidate"
+        },
+        "r44_motion_from_combo": {
+          "overall_motion_px": 0.5313,
+          "boundary_dist_px": 3.9081,
+          "grid_motion_px": 3.2741,
+          "thin_boundary_px": 2.9714,
+          "region_boundary_px": 5.9436,
+          "mixed_boundary_px": 6.9901,
+          "verdict": "not_main_candidate"
+        }
+      },
+      "local_ring_guard": {
+        "candidate": "r44_motion_from_r42_best_e24",
+        "external_gmf_sent": false,
+        "pitch8px": {
+          "candidate_step_std_y": 0.2015,
+          "combo_step_std_y": 0.1389,
+          "relative_change_vs_combo_pct": 45.1
+        },
+        "pitch0p8px": {
+          "candidate_step_std_y": 0.2214,
+          "combo_step_std_y": 0.1509,
+          "relative_change_vs_combo_pct": 46.7
+        },
+        "pitch0p08px": {
+          "candidate_step_std_y": 0.1568,
+          "combo_step_std_y": 0.1185,
+          "relative_change_vs_combo_pct": 32.3
+        }
+      },
+      "conclusion": {
+        "verdict": "research_success_not_promotable_no_r45_yet",
+        "summary": "R44B from R42 remains the best known-displacement universal motion candidate. R44E did not produce a usable repair. R44F confirms the next gap is boundary-shape fidelity for large regions and mixed scenes, not merely a bad metric. R44G quantifies that gap and shows the useful abilities are distributed across multiple candidates.",
+        "next_step": "Do not run another small fine-tune. Use the R44G boundary-thickness, fragmentation, corner, and straight-edge metrics to design family-aware training or family-aware model selection."
+      },
+      "r44c_probe_results": {
+        "r44c_low_motion_static_guard": {
+          "overall_motion_px": 0.4115,
+          "boundary_dist_px": 3.7399,
+          "grid_motion_px": 2.4615,
+          "thin_boundary_px": 2.3649,
+          "region_boundary_px": 7.6882,
+          "mixed_boundary_px": 6.8302,
+          "defect_boundary_px": 5.3514,
+          "verdict": "not_best"
+        },
+        "r44c_family_holdout_motion": {
+          "overall_motion_px": 0.4904,
+          "boundary_dist_px": 3.7342,
+          "grid_motion_px": 3.0117,
+          "thin_boundary_px": 2.3301,
+          "region_boundary_px": 7.7216,
+          "mixed_boundary_px": 6.8645,
+          "defect_boundary_px": 5.3442,
+          "verdict": "negative_probe_excluding_families_did_not_save_regions_or_mixed_scenes"
+        },
+        "r44c_static_heavy_all_motion": {
+          "overall_motion_px": 0.4011,
+          "boundary_dist_px": 3.7198,
+          "grid_motion_px": 2.382,
+          "thin_boundary_px": 2.3291,
+          "region_boundary_px": 7.7098,
+          "mixed_boundary_px": 6.7994,
+          "defect_boundary_px": 5.3469,
+          "verdict": "best_r44c_probe_but_not_promotable"
+        }
+      },
+      "local_ring_guard_r44c": {
+        "candidate": "r44c_static_heavy_all_motion",
+        "external_gmf_sent": false,
+        "pitch8px": {
+          "candidate_step_std_y": 0.1897,
+          "combo_step_std_y": 0.1389,
+          "relative_change_vs_combo_pct": 36.6
+        },
+        "pitch0p8px": {
+          "candidate_step_std_y": 0.2222,
+          "combo_step_std_y": 0.1509,
+          "relative_change_vs_combo_pct": 47.2
+        },
+        "pitch0p08px": {
+          "candidate_step_std_y": 0.1585,
+          "combo_step_std_y": 0.1185,
+          "relative_change_vs_combo_pct": 33.8
+        }
+      },
+      "r44d_family_diagnostic": {
+        "status": "complete_no_training",
+        "rows_analyzed": 9240,
+        "family_rows": 77,
+        "shift_rows": 462,
+        "best_single_boundary_model": "R42 best",
+        "best_single_boundary_avg_px": 3.6726,
+        "family_oracle_boundary_avg_px": 3.2038,
+        "family_oracle_gain_vs_best_single_pct": 12.77,
+        "boundary_best_by_family": {
+          "curves": {
+            "model": "R44C static heavy",
+            "boundary_px": 1.8398
+          },
+          "defects": {
+            "model": "R44C family holdout",
+            "boundary_px": 5.3442
+          },
+          "grids": {
+            "model": "R42 best",
+            "boundary_px": 0.3806
+          },
+          "junctions": {
+            "model": "R44C family holdout",
+            "boundary_px": 1.6259
+          },
+          "large_regions": {
+            "model": "R41 direct",
+            "boundary_px": 4.9915
+          },
+          "mixed_fields": {
+            "model": "R44B from R40",
+            "boundary_px": 5.9151
+          },
+          "thin_lines": {
+            "model": "R44C static heavy",
+            "boundary_px": 2.3291
+          }
+        },
+        "metric_note": "grid_phase_motion_error_px is non-discriminative in current R44 rows; it is nearly identical across models and should not be used for model ranking.",
+        "next_step": "Stay inside R44. Run a small R44E probe focused only on large-region and mixed-scene boundary protection if training is needed."
+      },
+      "r44e_probe_results": {
+        "r44e_region_mix_repair_from_r44b_r42": {
+          "overall_motion_px": 0.382,
+          "boundary_dist_px": 3.7421,
+          "grid_motion_px": 2.242,
+          "region_boundary_px": 7.7581,
+          "mixed_boundary_px": 6.606,
+          "verdict": "closest_r44e_probe_but_not_usable_candidate"
+        },
+        "r44e_region_prior_from_r41": {
+          "overall_motion_px": 1.3705,
+          "boundary_dist_px": 5.9104,
+          "grid_motion_px": 9.1453,
+          "region_boundary_px": 7.2545,
+          "mixed_boundary_px": 7.1743,
+          "verdict": "negative_probe_overall_and_grid_motion_regressed"
+        },
+        "r44e_mixed_prior_from_r44b_r40": {
+          "overall_motion_px": 1.0646,
+          "boundary_dist_px": 4.1191,
+          "grid_motion_px": 6.9561,
+          "region_boundary_px": 7.2954,
+          "mixed_boundary_px": 6.622,
+          "verdict": "negative_probe_overall_and_grid_motion_regressed"
+        },
+        "interpretation": "No R44E probe is recommended for external GMF or longer training. The result is useful as a falsification of simple targeted fine-tune repair."
+      },
+      "r44f_error_diagnostic": {
+        "status": "complete_no_training",
+        "rows_loaded": 9240,
+        "selected_cases": 16,
+        "metric_stress_rows": 192,
+        "large_regions_metric_stress": {
+          "shift_1px_boundary_distance_px": 0.5335,
+          "shift_5px_boundary_distance_px": 2.5477,
+          "dilate_3_boundary_distance_px": 1.5596
+        },
+        "mixed_fields_metric_stress": {
+          "shift_1px_boundary_distance_px": 0.5673,
+          "shift_5px_boundary_distance_px": 2.6217,
+          "dilate_3_boundary_distance_px": 1.5794
+        },
+        "interpretation": "Boundary distance is sensitive to true pixel shifts and also to thick/noisy/missing boundaries. The remaining R44 weakness is boundary-shape fidelity, not failure to move the whole structure."
+      },
+      "r44g_boundary_shape_diagnostic": {
+        "status": "complete_no_training",
+        "rows_scored": 11760,
+        "target_families": [
+          "large_regions",
+          "mixed_fields"
+        ],
+        "combined_target_shape_rank_top3": [
+          {
+            "model": "R44B from R40",
+            "shape_error_score": 0.311,
+            "boundary_f_score": 0.8114,
+            "fragmentation_ratio": 4.3366,
+            "straight_edge_coverage": 0.8023,
+            "corner_retention": 0.7413
+          },
+          {
+            "model": "R41 direct",
+            "shape_error_score": 0.3119,
+            "boundary_f_score": 0.8304,
+            "fragmentation_ratio": 4.1915,
+            "straight_edge_coverage": 0.8313,
+            "corner_retention": 0.7371
+          },
+          {
+            "model": "R44E mixed prior from R44B/R40",
+            "shape_error_score": 0.3284,
+            "boundary_f_score": 0.8002,
+            "fragmentation_ratio": 4.7702,
+            "straight_edge_coverage": 0.7868,
+            "corner_retention": 0.7283
+          }
+        ],
+        "best_large_region_shape": {
+          "model": "R44B from COMBO",
+          "shape_error_score": 0.3755
+        },
+        "best_mixed_field_shape": {
+          "model": "R44C static heavy",
+          "shape_error_score": 0.2181
+        },
+        "interpretation": "The project does have usable sub-abilities, but they are distributed across candidates. The next useful step is family-aware boundary-shape training or selection, not another global-weight small probe."
+      },
+      "r44h_stepa_family_average": {
+        "status": "complete_no_training",
+        "r44c_static_heavy_clean_for_mixed_teacher": true,
+        "r44c_mixed_shape_error": 0.2181,
+        "r44b_r42_mixed_shape_error": 0.223,
+        "r44c_max_motion_regression_pct_on_relevant_families": 6.07,
+        "baseline_motion_px_r44b_r42": 0.3813,
+        "strong_shape_reference_r44b_r40": 0.311,
+        "candidates": {
+          "r44h_b42_bcombo_a050": {
+            "target_shape_error": 0.2955,
+            "overall_motion_px": 0.5298,
+            "ring_8px": 0.2385,
+            "ring_0p8px": 0.1902,
+            "ring_0p08px": 0.1768,
+            "verdict": "shape_best_but_motion_regressed"
+          },
+          "r44h_b42_bcombo_a030": {
+            "target_shape_error": 0.3036,
+            "overall_motion_px": 0.5115,
+            "ring_8px": 0.1882,
+            "ring_0p8px": 0.1865,
+            "ring_0p08px": 0.1695,
+            "verdict": "shape_improved_but_motion_regressed"
+          },
+          "r44h_b42_b40_bcombo_050_025_025": {
+            "target_shape_error": 0.3093,
+            "overall_motion_px": 0.6277,
+            "ring_8px": 0.2295,
+            "ring_0p8px": 0.1907,
+            "ring_0p08px": 0.1878,
+            "verdict": "shape_near_best_but_motion_regressed"
+          },
+          "r44h_b42_b40_a030": {
+            "target_shape_error": 0.3262,
+            "overall_motion_px": 0.4843,
+            "ring_8px": 0.1904,
+            "ring_0p8px": 0.2168,
+            "ring_0p08px": 0.1593,
+            "verdict": "weak_shape_improvement_but_motion_regressed"
+          }
+        },
+        "interpretation": "簡單 R44B 家族權重平均有診斷價值，但不適合作為下一步訓練起點。下一個有價值的測試，是從 R44B from R42 出發，先做單一老師的局部遮罩式蒸餾。"
+      },
+      "progress": {
+        "r44h_stepb_region_kd": "complete_training_and_full_local_eval",
+        "r44h_stepb_verdict": "failed_concept_validation_shape_worse_motion_preserved",
+        "r44h_stepb_epochs": 12,
+        "r44h_stepb_max_train_batches_per_epoch": 50,
+        "r44h_stepb_eval_checkpoint_policy": "latest_checkpoint_used_because_probe_epochs_are_below_best_epoch_min",
+        "candidates": {
+          "r44h_stepb_region_kd_main": {
+            "run_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r44h_stepb_region_kd_main_20260509_102558",
+            "eval_checkpoint": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\results\\r44h_stepb_region_kd\\checkpoints\\r44h_stepb_region_kd_main_latest.pth.tar",
+            "verdict": "negative_probe_motion_preserved_but_target_shape_worse"
+          }
+        }
+      },
+      "r44h_stepb_metrics": {
+        "overall_motion_vector_error_px": 0.38367406594151454,
+        "overall_boundary_motion_distance_px": 3.6648474948525074,
+        "grid_motion_error_px": 2.239329130010201,
+        "target_shape_error_score": 0.34808958626791314,
+        "target_shape_error_baseline_r44b_from_r42": 0.33838990311423867,
+        "large_region_shape_error": 0.46674276025860095,
+        "mixed_shape_error": 0.22943641227722533,
+        "ring_local_step_std_8px": 0.2016,
+        "ring_local_step_std_0p8px": 0.2146,
+        "ring_local_step_std_0p08px": 0.1623,
+        "verdict": "concept_validation_failed"
+      }
+    },
+    {
+      "candidate_id": "R43A_usability_audit",
+      "round": "R43 candidate usability audit",
+      "experiment": "Experiments/R43_CandidateUsabilityAudit",
+      "status": "analysis_complete_no_new_model",
+      "mainline_status": "analysis_only_not_promotion_candidate",
+      "goal": "Compare recent COMBO/R33/R38v2/R39/R40/R41/R42 candidates on formal usability, microscopy reconstruction value, boundary fidelity value, and next-round starting-point value.",
+      "reports": {
+        "audit_md": "D:\\GMM_2_Final\\Experiments\\R43_CandidateUsabilityAudit\\reports\\R43A_USABILITY_AUDIT.md",
+        "scorecard_json": "D:\\GMM_2_Final\\Experiments\\R43_CandidateUsabilityAudit\\results\\candidate_usability\\usability_scorecard.json",
+        "scorecard_csv": "D:\\GMM_2_Final\\Experiments\\R43_CandidateUsabilityAudit\\results\\candidate_usability\\usability_scorecard.csv",
+        "manifest_md": "D:\\GMM_2_Final\\Experiments\\R43_CandidateUsabilityAudit\\MANIFEST.md",
+        "visual_review_dir": "D:\\GMM_2_Final\\Experiments\\R43_CandidateUsabilityAudit\\results\\visual_review"
+      },
+      "conclusion": {
+        "formal_baseline": "COMBO remains the formal baseline.",
+        "most_usable_recent_alternate": "R39 a030 is the closest recent candidate for formal alternate discussion.",
+        "best_microscopy_boundary_research": "R42 full endpoints are the strongest microscopy-boundary research / manual-inspection candidates, but R42 external GMF follow-up confirms they are not formal measurement replacements.",
+        "not_useful_tradeoff": "R42 low-alpha checkpoints preserve old guard behavior only when they bring almost no boundary gain."
+      },
+      "notes": "R43A is analysis-only. It does not add a checkpoint, does not change the formal baseline, and does not promote any candidate. It includes the R42 external GMF follow-up and three visual review sheets."
+    },
+    {
+      "candidate_id": "R42_boundary_research",
+      "model_name": "r42_boundary_from_combo / r42_boundary_from_r41",
+      "round": "R42 microscopy boundary fidelity",
+      "experiment": "Experiments/R42_MicroscopyBoundaryFidelity",
+      "status": "external_followup_complete_research_success_not_measurement_candidate",
+      "mainline_status": "research_complete_not_measurement_replacement",
+      "goal": "General microscopy boundary fidelity across lines, grids, junctions, curves, regions, defects, and mixed scenes; ring remains a legacy guard only.",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\reports\\R42_RESULTS.md",
+        "manifest_md": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\MANIFEST.md",
+        "representative_visual_sheet": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_representative_boundary_sheet.png",
+        "boundary_recon_dir": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon",
+        "ring_guard_dir": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\ring_guard",
+        "low_alpha_sweep_summary_md": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\sweep_summary.md",
+        "low_alpha_sweep_summary_json": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\sweep_summary.json",
+        "guarded_kd_boundary_recon_dir": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon_guarded_kd_probe",
+        "guarded_kd_ring_guard_dir": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\ring_guard_guarded_kd_probe",
+        "external_compare_md": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\reports\\R42_EXTERNAL_COMPARE.md",
+        "external_compare_all_json": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\external_gmf\\external_compare_all_summary.json",
+        "external_gmf_dir": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\external_gmf"
+      },
+      "data_packages": {
+        "train": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\r42_boundary_research_train",
+        "boundary_val_unseen": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen",
+        "geometry_sidecars": "D:\\GMM_2_Final\\Training_Data\\r42_boundary_geometry",
+        "guarded_kd_probe_train": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\r42_guarded_kd_probe_train"
+      },
+      "training_status": {
+        "formal_training": "complete",
+        "candidates": [
+          "r42_boundary_from_combo",
+          "r42_boundary_from_r41"
+        ],
+        "epochs_each": 50,
+        "smoke_test": "r42_boundary_from_combo 1 epoch / 1 batch CPU smoke passed",
+        "deep_followups": [
+          "COMBO-to-r42_r41_best low-alpha weight sweep at 0.01, 0.02, 0.03, 0.05",
+          "r42_guarded_kd_probe smoke test and 8-epoch diagnostic training"
+        ]
+      },
+      "notes": "R42 證明通用顯微邊界忠實度可以被合成幾何資料推起來，但不進 approved alternate，也不能取代 COMBO。低 alpha 權重平均沒有共同通過點；守門 KD 保留邊界能力但讓本地三尺度環形守門更差；2026-05-06 外部 GMF 補測三個候選後，最佳 r42_r41_best 仍在 8px +24.63%、0.8px +94.33%、0.08px +98.87%，所以不建議作量測替代。",
+      "checkpoint_references": {
+        "r42_combo_best": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301\\weights\\best_tradeoff.pth.tar",
+        "r42_combo_latest": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301\\weights\\latest.pth.tar",
+        "r42_r41_best": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\\weights\\best_tradeoff.pth.tar",
+        "r42_r41_latest": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\\weights\\latest.pth.tar"
+      },
+      "boundary_validation": {
+        "profile": "boundary_val_unseen",
+        "count": 140,
+        "combo": {
+          "psnr": 20.55,
+          "hf_retention": 0.2,
+          "boundary_distance_px": 7.82,
+          "boundary_f1_t1px": 0.63
+        },
+        "r42_combo_best": {
+          "psnr": 31.81,
+          "hf_retention": 0.7,
+          "boundary_distance_px": 3.35,
+          "boundary_f1_t1px": 0.87
+        },
+        "r42_combo_latest": {
+          "psnr": 34.09,
+          "hf_retention": 0.75,
+          "boundary_distance_px": 3.48,
+          "boundary_f1_t1px": 0.87
+        },
+        "r42_r41_best": {
+          "psnr": 32.89,
+          "hf_retention": 0.75,
+          "boundary_distance_px": 3.48,
+          "boundary_f1_t1px": 0.87
+        },
+        "r42_r41_latest": {
+          "psnr": 34.18,
+          "hf_retention": 0.8,
+          "boundary_distance_px": 3.6,
+          "boundary_f1_t1px": 0.87
+        },
+        "interpretation": "R42 clearly improves unseen microscopy boundary reconstruction; representative images confirm grids, curves, defects, and mixed scenes are much closer to target than COMBO/R39/R40/R41."
+      },
+      "local_ring_guard": {
+        "combo_reference": {
+          "8px": 0.1389,
+          "0p8px": 0.1509,
+          "0p08px": 0.1185
+        },
+        "r42_combo_best": {
+          "8px": 9.5592,
+          "0p8px": 0.3621,
+          "0p08px": 0.6579,
+          "verdict": "fail_catastrophic"
+        },
+        "r42_combo_latest": {
+          "8px": 0.1807,
+          "0p8px": 0.2158,
+          "0p08px": 0.2132,
+          "verdict": "fail"
+        },
+        "r42_r41_best": {
+          "8px": 0.1715,
+          "0p8px": 0.2121,
+          "0p08px": 0.1673,
+          "verdict": "best_r42_local_guard_but_fail"
+        },
+        "r42_r41_latest": {
+          "8px": 0.2442,
+          "0p8px": 0.2513,
+          "0p08px": 0.2154,
+          "verdict": "fail"
+        },
+        "interpretation": "所有 R42 權重在本地三尺度環形守門都比 COMBO 退步；後續外部補測確認這不是只有本地分析才會出現的現象。"
+      },
+      "low_alpha_sweep": {
+        "status": "complete_no_guarded_tradeoff",
+        "alphas_completed": [
+          0.01,
+          0.02,
+          0.03,
+          0.05
+        ],
+        "best_boundary_only_alpha": 0.05,
+        "best_boundary_only": {
+          "psnr": 21.0094,
+          "hf_retention": 0.2214,
+          "boundary_distance_px": 7.5402,
+          "boundary_f1_t1px": 0.6518,
+          "ring_8px": 0.1483,
+          "ring_0p8px": 0.1555,
+          "ring_0p08px": 0.1291,
+          "verdict": "boundary_gain_too_small_and_ring_guard_fails"
+        },
+        "best_guarded_alpha": 0.03,
+        "best_guarded": {
+          "psnr": 20.8252,
+          "hf_retention": 0.2127,
+          "boundary_distance_px": 7.5293,
+          "boundary_f1_t1px": 0.642,
+          "ring_8px": 0.1399,
+          "ring_0p8px": 0.1487,
+          "ring_0p08px": 0.1232,
+          "verdict": "ring_closer_but_boundary_stays_near_combo"
+        },
+        "interpretation": "Low-alpha mixing cannot carry meaningful R42 boundary ability back into COMBO while preserving the local ring guard."
+      },
+      "guarded_kd_probe": {
+        "status": "complete_boundary_preserved_ring_guard_failed",
+        "training": {
+          "epochs": 8,
+          "max_train_batches_per_epoch": 120,
+          "start_checkpoint_role": "r42_r41_best",
+          "combo_teacher_weight": 0.2,
+          "capacity_teacher_weight": 0.05
+        },
+        "boundary_validation": {
+          "count": 140,
+          "psnr": 32.6607,
+          "hf_retention": 0.7591,
+          "boundary_distance_px": 3.5353,
+          "boundary_f1_t1px": 0.8705
+        },
+        "local_ring_guard": {
+          "8px": 0.2108,
+          "0p8px": 0.4257,
+          "0p08px": 0.1986,
+          "delta_vs_combo_pct": {
+            "8px": 51.8,
+            "0p8px": 182.1,
+            "0p08px": 67.6
+          },
+          "verdict": "fail_all_scales"
+        },
+        "interpretation": "Static teacher anchoring preserves single-image boundary quality but does not solve sequence position stability; ring guard gets worse than r42_r41_best."
+      },
+      "external_gmf": {
+        "status": "complete_all_tested_candidates_regressed",
+        "method": "R33+ 外部 GMF step_std 方法；只在 |z| > 5 的明顯 GMF 失敗 step 才移除。本次 R42 外部補測沒有移除任何 outlier。",
+        "combo_reference": {
+          "step_std_8px": 0.154515,
+          "step_std_0p8px": 0.13156,
+          "step_std_0p08px": 0.099891
+        },
+        "tested_candidates": {
+          "r42_r41_best": {
+            "step_std_8px": 0.192577,
+            "delta_8px_vs_combo_pct": 24.63,
+            "step_std_0p8px": 0.255665,
+            "delta_0p8px_vs_combo_pct": 94.33,
+            "step_std_0p08px": 0.198651,
+            "delta_0p08px_vs_combo_pct": 98.87,
+            "outliers_removed": 0,
+            "verdict": "研究用途，不可作量測替代"
+          },
+          "r42_combo_latest": {
+            "step_std_8px": 0.286248,
+            "delta_8px_vs_combo_pct": 85.26,
+            "step_std_0p8px": 0.274479,
+            "delta_0p8px_vs_combo_pct": 108.63,
+            "step_std_0p08px": 0.251685,
+            "delta_0p08px_vs_combo_pct": 151.96,
+            "outliers_removed": 0,
+            "verdict": "研究用途，不可作量測替代"
+          },
+          "r42_r41_latest": {
+            "step_std_8px": 0.279891,
+            "delta_8px_vs_combo_pct": 81.14,
+            "step_std_0p8px": 0.208713,
+            "delta_0p8px_vs_combo_pct": 58.64,
+            "step_std_0p08px": 0.22573,
+            "delta_0p08px_vs_combo_pct": 125.98,
+            "outliers_removed": 0,
+            "verdict": "研究用途，不可作量測替代"
+          }
+        },
+        "best_external_candidate": "r42_r41_best",
+        "verdict": "研究成功但不可作量測替代",
+        "interpretation": "R42 可作顯微邊界研究與人工視覺參考，但外部 0.8px 與 0.08px 退步過大，不適合作為量測流程替代。"
+      },
+      "suggested_role": "顯微邊界能力研究與代表圖參考"
+    },
+    {
+      "candidate_id": "R39_a030",
+      "model_name": "r39_combo_strong_avg_a030",
+      "round": "R39 weight-averaging sweep",
+      "experiment": "Experiments/R39_ShapeGeneralization",
+      "derivation": "Linear interpolation of the COMBO checkpoint and the r39_shape_mix_strong checkpoint at alpha=0.30 (no retraining).",
+      "status": "external_gmf_complete_alternate_grade_pending_promotion",
+      "mainline_status": "open_side_track",
+      "goal": "Combine COMBO ring stability with R39 shape generalisation via weight averaging; reach alternate-grade external GMF without retraining.",
+      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\checkpoints\\a030\\best_tradeoff.pth.tar",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\reports\\R39_RESULTS.md",
+        "external_compare_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\reports\\R39_EXTERNAL_COMPARE.md",
+        "weight_sweep_summary_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\sweep_summary.md",
+        "weight_sweep_tradeoff_png": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\sweep_tradeoff.png",
+        "external_gmf_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\external_gmf_a030",
+        "external_compare_summary_json": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\external_gmf_a030\\external_compare_summary.json"
+      },
+      "external_gmf": {
+        "step_std_8px": 0.143794,
+        "step_std_0p8px": 0.140008,
+        "step_std_0p08px": 0.083941,
+        "delta_vs_combo_pct": {
+          "8px": -6.94,
+          "0p8px": 6.42,
+          "0p08px": -15.97
+        },
+        "verdict": "PASS_TRADEOFF",
+        "tradeoff_max_pct": 7.0,
+        "outliers_removed_per_scale": {
+          "8px": 0,
+          "0p8px": 0,
+          "0p08px": 0
+        }
+      },
+      "shape_generalization": {
+        "held_out_psnr": 25.0326,
+        "held_out_ssim": 0.8798,
+        "held_out_psnr_delta_vs_combo": 2.1915
+      },
+      "visual_profile_vs_combo": {
+        "method": "frame-wise mean over the same 203 ring BMPs at three pitches; grayscale Sobel for gradient_magnitude and edge_steepness_p95, std and p99-p1 for contrast",
+        "evaluated_at": "2026-05-02",
+        "averaged_delta_pct_over_three_pitches": {
+          "gradient_magnitude_mean": -2.97,
+          "edge_steepness_p95": -5.64,
+          "contrast_std": -2.0,
+          "edge_contrast_p99_minus_p1": -2.64
+        },
+        "interpretation": "Sharp band, sits between COMBO/R38v2 (sharp) and R33 (-22% on edge_steepness vs R30, soft). Transitive estimate vs R30 ~+78.8% on edge_steepness. No visual collapse.",
+        "reproduction": "Inline snippet documented in Experiments/R39_ShapeGeneralization/reports/R39_RESULTS.md section 'Visual Profile Comparison (a030 vs COMBO)'."
+      },
+      "suggested_role": "shape_generalization_endpoint_alternate; with sharp visual band, can also cover the visual_priority slot",
+      "cross_dataset_followup_2026_05_10": {
+        "report_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\reports\\R39_A030_MICROSCOPY_EVALUATION.md",
+        "produced_at": "2026-05-10",
+        "method": "Re-used existing reconstructions; no new training. Added R44G boundary-F1 and shape-error-score on top of R40 micro_metrics PSNR/SSIM/HF/edge/contrast.",
+        "headline": {
+          "shape_val_unseen_overall_psnr": 25.0326,
+          "shape_val_unseen_overall_ssim": 0.9461,
+          "shape_val_unseen_overall_hf_retention": 0.4598,
+          "shape_val_unseen_overall_edge_retention": 0.8797,
+          "shape_val_unseen_overall_contrast_retention": 0.8864,
+          "shape_val_unseen_overall_boundary_f_score": 0.8752,
+          "shape_val_unseen_overall_shape_error_score": 0.2718,
+          "micro_val_unseen_overall_psnr": 25.0323,
+          "micro_val_unseen_overall_ssim": 0.8904,
+          "micro_val_unseen_overall_hf_retention": 0.2206,
+          "micro_val_unseen_overall_edge_retention": 0.6181,
+          "micro_val_unseen_overall_contrast_retention": 0.9252,
+          "micro_val_unseen_overall_boundary_f_score": 0.5454,
+          "micro_val_unseen_overall_shape_error_score": 0.702,
+          "in_out_distribution_psnr_gap_db": 0.0003
+        },
+        "per_stage_psnr_delta_vs_combo_min_max_db": {
+          "shape_val_unseen": {
+            "min": 1.5601,
+            "max": 2.8004,
+            "wins_over_combo": "7/7"
+          },
+          "micro_val_unseen": {
+            "min": 0.6194,
+            "max": 3.6663,
+            "wins_over_combo": "5/5"
+          }
+        },
+        "interpretation": "R39 a030 在 R39 shape_val_unseen 七類純幾何形狀全部 PSNR 高過 COMBO（+1.56 至 +2.80 dB）；在 R40 micro_val_unseen 五類顯微結構也全部高過 COMBO（+0.62 至 +3.67 dB）。a030 整體 PSNR 在訓練分布內（R39）跟分布外（R40）幾乎相同（差 ~0.00 dB），但細線/格類絕對 PSNR 仍偏低（18.33）。已知合成 microscopy demo 高密度 IC + grid + 紋理 + 缺陷組合場景仍受限。本紀錄為交叉觀察，不改 alternate-grade pending promotion 狀態。"
+      },
+      "notes": "PASS_TRADEOFF on external GMF (two scales improved, 0.8px regressed within the alternate band). 0.08px result is the lowest external step_std recorded across the project so far. Visual quality stays in the sharp band (only -3% to -6% vs COMBO across four standard statistics, well above the R33 soft band). Promotion into approved_alternates is a project-owner decision; do not auto-promote.",
+      "cross_round_followup_2026_05_11": {
+        "experiment": "R39 a030 x R40 a043 cross-round weight averaging sweep",
+        "produced_at": "2026-05-11",
+        "result_summary": "Averaged with R40 a043 at five alphas (0/0.25/0.5/0.75/1). alpha=0.25 cleared the 3% upgrade guard on all three external scales (8px -5.18%, 0.8px +1.51%, 0.08px +0.51%); see open_side_tracks[].candidate_id = 'R39R40_avg_a025'.",
+        "results_report_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\reports\\R39R40_COMPLEMENTARY_AVG_RESULTS.md"
+      }
+    },
+    {
+      "candidate_id": "R40_a045",
+      "model_name": "r40_combo_best_avg_a045",
+      "round": "R40 microscopy-feature capacity weight average",
+      "experiment": "Experiments/R40_MicroscopyFeatureCoverage",
+      "derivation": "Linear interpolation of the COMBO checkpoint and the r40_micro_capacity_combo best checkpoint at alpha=0.45 (no retraining).",
+      "status": "external_gmf_complete_research_capacity_only_not_promotable",
+      "mainline_status": "research_complete_not_promotion_candidate",
+      "goal": "Measure whether microscopy-feature synthetic coverage can improve reconstruction clarity while attempting to preserve COMBO ring behavior through weight averaging.",
+      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\\a045\\best_tradeoff.pth.tar",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\reports\\R40_RESULTS.md",
+        "external_compare_md": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\reports\\R40_EXTERNAL_COMPARE.md",
+        "external_compare_summary_json": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\external_gmf\\external_compare_summary.json",
+        "external_step_audit_summary_json": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\external_gmf\\step_audit\\step_audit_summary.json",
+        "representative_visual_sheet": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\weight_sweep\\combo_best_low_alpha\\r40_a045_micro_comparison_sheet.png"
+      },
+      "external_gmf": {
+        "step_std_8px": 0.18975014261062645,
+        "step_std_0p8px": 0.13331412147330798,
+        "step_std_0p08px": 0.09704848080500314,
+        "delta_vs_combo_pct": {
+          "8px": 22.803703595525633,
+          "0p8px": 1.3333243184159116,
+          "0p08px": -2.845620921801618
+        },
+        "verdict": "RESEARCH_CAPACITY_ONLY",
+        "promotion_blocker": "8px external GMF regressed beyond the 3% upgrade cap",
+        "upgrade_cap_pct": 3.0,
+        "outliers_removed_per_scale": {
+          "8px": 0,
+          "0p8px": 0,
+          "0p08px": 0
+        },
+        "step_count_per_scale": {
+          "8px": 99,
+          "0p8px": 59,
+          "0p08px": 39
+        }
+      },
+      "microscopy_feature_validation": {
+        "held_out_psnr": 26.8911,
+        "held_out_ssim": 0.9199,
+        "high_frequency_retention": 0.3414,
+        "edge_retention": 0.7458,
+        "interpretation": "Clearly improves held-out microscopy-feature reconstruction over COMBO and R39 a030, especially grids, texture, and small defect preservation."
+      },
+      "local_ring_guard": {
+        "step_std_8px": 0.151,
+        "step_std_0p8px": 0.1379,
+        "step_std_0p08px": 0.1199,
+        "interpretation": "Best local guarded trade-off found in R40, but local safety did not transfer to the external 8px GMF gate."
+      },
+      "suggested_role": "research_capacity_reference_only",
+      "cross_dataset_followup_2026_05_10": {
+        "report_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\reports\\R39_A030_MICROSCOPY_EVALUATION.md",
+        "produced_at": "2026-05-10",
+        "method": "2026-05-10 補跑 R40 a045 在 R39 shape_val_unseen 的 inference（210 張），合併既有 R40 micro_val_unseen 重建做三方對比（COMBO / a030 / R40 a045）。",
+        "headline": {
+          "shape_val_unseen_overall_psnr": 26.9147,
+          "shape_val_unseen_overall_ssim": 0.9633,
+          "shape_val_unseen_overall_hf_retention": 0.5083,
+          "shape_val_unseen_overall_edge_retention": 0.9925,
+          "shape_val_unseen_overall_contrast_retention": 0.9643,
+          "shape_val_unseen_overall_boundary_f_score": 0.9009,
+          "shape_val_unseen_overall_shape_error_score": 0.2526,
+          "micro_val_unseen_overall_psnr": 26.8911,
+          "micro_val_unseen_overall_ssim": 0.9199,
+          "micro_val_unseen_overall_hf_retention": 0.3414,
+          "micro_val_unseen_overall_edge_retention": 0.7459,
+          "micro_val_unseen_overall_contrast_retention": 0.9554,
+          "micro_val_unseen_overall_boundary_f_score": 0.6164,
+          "micro_val_unseen_overall_shape_error_score": 0.683,
+          "in_out_distribution_psnr_gap_db": -0.0236
+        },
+        "per_stage_psnr_delta_vs_combo_min_max_db": {
+          "shape_val_unseen": {
+            "min": 3.0071,
+            "max": 5.0699,
+            "wins_over_combo": "7/7",
+            "wins_over_a030": "7/7"
+          },
+          "micro_val_unseen": {
+            "min": 1.8327,
+            "max": 5.5105,
+            "wins_over_combo": "5/5",
+            "wins_over_a030": "5/5"
+          }
+        },
+        "interpretation": "R40 a045 在 R39 shape_val_unseen 七類 + R40 micro_val_unseen 五類共 12 個分類上，PSNR / SSIM / HF retention / Edge retention / Contrast retention / 邊界 F1 / 形狀錯誤都比 COMBO 跟 a030 高（形狀錯誤更低）。整體 PSNR 兩資料集落差 -0.02 dB。也就是 R40 訓練資料加進顯微特徵覆蓋之後，模型在純幾何形狀上不僅沒退步，反而比 a030 更強。但本紀錄不改變外部 GMF 8 px +22.80% 的升級瓶頸，狀態維持 RESEARCH_CAPACITY_ONLY。"
+      },
+      "alpha_refinement_sweep_2026_05_11": {
+        "purpose": "Tighter alpha grid (0.42 / 0.43 / 0.44) between 0.40 and 0.45 to test whether a sweet spot exists that brings 8px external back inside the 7% alternate tolerance while preserving R40 microscopy capacity.",
+        "produced_at": "2026-05-11",
+        "candidates": {
+          "r40_combo_best_avg_a042": {
+            "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\u0007042\best_tradeoff.pth.tar",
+            "local_micro_psnr": 26.6228,
+            "local_hf_retention": 0.3172,
+            "local_edge_retention": 0.7343,
+            "local_ring_8px": 0.1524,
+            "local_ring_0p8px": 0.1448,
+            "local_ring_0p08px": 0.1337,
+            "local_guard_pass": true,
+            "external_step_std": {
+              "8px": 0.127574,
+              "0p8px": 0.141836,
+              "0p08px": 0.111166
+            },
+            "external_delta_vs_combo_pct": {
+              "8px": -17.44,
+              "0p8px": 7.81,
+              "0p08px": 11.29
+            },
+            "verdict": "RESEARCH_CAPACITY_ONLY",
+            "report_md": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\reports\\R40_EXTERNAL_COMPARE_a042.md"
+          },
+          "r40_combo_best_avg_a043": {
+            "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\u0007043\best_tradeoff.pth.tar",
+            "local_micro_psnr": 26.715,
+            "local_hf_retention": 0.325,
+            "local_edge_retention": 0.7386,
+            "local_ring_8px": 0.1495,
+            "local_ring_0p8px": 0.1448,
+            "local_ring_0p08px": 0.1255,
+            "local_guard_pass": true,
+            "external_step_std": {
+              "8px": 0.145379,
+              "0p8px": 0.127411,
+              "0p08px": 0.121382
+            },
+            "external_delta_vs_combo_pct": {
+              "8px": -5.91,
+              "0p8px": -3.15,
+              "0p08px": 21.52
+            },
+            "verdict": "RESEARCH_CAPACITY_ONLY",
+            "report_md": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\reports\\R40_EXTERNAL_COMPARE_a043.md"
+          },
+          "r40_combo_best_avg_a044": {
+            "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\u0007044\best_tradeoff.pth.tar",
+            "local_micro_psnr": 26.8039,
+            "local_hf_retention": 0.3332,
+            "local_edge_retention": 0.7417,
+            "local_ring_8px": 0.163,
+            "local_ring_0p8px": 0.1411,
+            "local_ring_0p08px": 0.124,
+            "local_guard_pass": false,
+            "external_recon_sent": false,
+            "verdict": "skipped_local_8px_failed"
+          }
+        },
+        "trade_off_pattern_observation": {
+          "alpha_0p42": "8 px −17.44% (large gain), 0.8 px +7.81%, 0.08 px +11.29% — trades small-scale stability for large-scale gain",
+          "alpha_0p43": "8 px −5.91%, 0.8 px −3.15%, 0.08 px +21.52% — improves two scales but 0.08 px takes the hit",
+          "alpha_0p45_existing": "8 px +22.80% (loss), 0.8 px +1.33%, 0.08 px −2.85% — opposite pattern from 0.42/0.43; trades large-scale for small-scale stability"
+        },
+        "interpretation": "Tighter alpha grid did NOT find a sweet spot that fits all three external scales within 7% tolerance.  However the sweep revealed a non-linear structure: weight averaging at different alphas produces distinct trade-off patterns rather than a smooth interpolation.  Linear extrapolation from α=0.45 (×1.257 local→external ratio) predicted α=0.43 external 8 px ≈ 0.188 / +21.6%; actual was 0.145 / −5.91%, off by a wide margin.  This suggests R40 weight averaging has multiple local optima across the alpha axis — α=0.43 and α=0.45 sit in opposite trade-off subspaces.  All three alphas remain RESEARCH_CAPACITY_ONLY, but the new evidence reshapes the picture of R40's failure mode: it is not simply 'R40 weight averaging cannot pass external GMF', it is 'no single alpha point fits all three scales simultaneously'.",
+        "next_step_hint_only": "Combining α=0.43-style 8 px / 0.8 px improvement with a030-style 0.08 px improvement (a030 is +6.42% on 0.8 px but −15.97% on 0.08 px) could theoretically cover all three scales; experimentally untested.  Not a recommendation, just an observation that the two side tracks now occupy complementary trade-off subspaces."
+      },
+      "notes": "R40 confirms the model can learn clearer microscopy-feature reconstruction from controlled synthetic coverage. It is not an approved alternate and must not replace COMBO because the 8px external guard regressed by +22.80%.",
+      "cross_round_followup_2026_05_11": {
+        "experiment": "R40 a043 x R39 a030 cross-round weight averaging sweep",
+        "produced_at": "2026-05-11",
+        "result_summary": "R40 a043 averaged with R39 a030 at five alphas (0/0.25/0.5/0.75/1). alpha=0.25 (closer to a030) cleared the 3% upgrade guard. R40 a045 itself is not on this sweep trajectory; the new candidate sits in a different trade-off subspace.",
+        "results_report_md": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\reports\\R39R40_COMPLEMENTARY_AVG_RESULTS.md"
+      }
+    },
+    {
+      "candidate_id": "R41_direct_best",
+      "model_name": "r41_kd_from_a045",
+      "round": "R41 ring-anchored distillation",
+      "experiment": "Experiments/R41_RingDistillation",
+      "derivation": "Fine-tune from the R40 a045 guarded average using explicit ring/micro teacher anchoring and a 700 ring / 250 shape / 250 microscopy replay package.",
+      "status": "weight_sweep_complete_no_guarded_tradeoff",
+      "mainline_status": "research_complete_not_promotion_candidate",
+      "goal": "Recover ring behavior while keeping the microscopy-feature reconstruction capacity proven by R40.",
+      "checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\\weights\\best_tradeoff.pth.tar",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\reports\\R41_RESULTS.md",
+        "external_compare_md": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\reports\\R41_EXTERNAL_COMPARE.md",
+        "micro_summary_json": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\micro_recon\\r41_kd_from_a045_best_summary.json",
+        "local_ring_guard_summary_json": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\ring_guard\\r41_kd_from_a045_best_ring_guard_summary.json",
+        "weight_sweep_summary_md": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep\\sweep_summary.md",
+        "weight_sweep_summary_json": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep\\sweep_summary.json",
+        "high_alpha_diagnostic_summary_md": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep_ext_high_alpha\\sweep_summary.md",
+        "high_alpha_diagnostic_summary_json": "D:\\GMM_2_Final\\Experiments\\R41_RingDistillation\\results\\weight_sweep_ext_high_alpha\\sweep_summary.json"
+      },
+      "microscopy_feature_validation": {
+        "held_out_psnr": 29.4556,
+        "held_out_ssim": 0.9513,
+        "high_frequency_retention": 0.7241,
+        "edge_retention": 0.9706,
+        "contrast_retention": 1.0026,
+        "interpretation": "Strongly passes the R41 microscopy targets and improves over the R40 a045 held-out microscopy result."
+      },
+      "local_ring_guard": {
+        "step_std_8px": 0.1628,
+        "step_std_0p8px": 0.1652,
+        "step_std_0p08px": 0.1543,
+        "combo_local_reference": {
+          "8px": 0.1389,
+          "0p8px": 0.1509,
+          "0p08px": 0.1185
+        },
+        "interpretation": "Direct best checkpoint regresses local ring guard at all three scales and is not promotable without weight averaging."
+      },
+      "weight_sweep": {
+        "status": "complete_no_guarded_tradeoff",
+        "primary_grid": {
+          "alpha_min": 0.1,
+          "alpha_max": 0.4,
+          "best_capacity_only_alpha": 0.4,
+          "best_capacity_only_micro_psnr": 25.6941,
+          "best_capacity_only_high_frequency_retention": 0.2743,
+          "best_capacity_only_ring_8px": 0.156,
+          "best_capacity_only_ring_0p8px": 0.1481,
+          "best_capacity_only_ring_0p08px": 0.1389
+        },
+        "high_alpha_diagnostic": {
+          "alpha_0p45": {
+            "micro_psnr": 26.184,
+            "high_frequency_retention": 0.3012,
+            "ring_8px": 0.1577,
+            "ring_0p8px": 0.1515,
+            "ring_0p08px": 0.1322
+          },
+          "alpha_0p50": {
+            "micro_psnr": 26.6662,
+            "high_frequency_retention": 0.3358,
+            "ring_8px": 0.1534,
+            "ring_0p8px": 0.1595,
+            "ring_0p08px": 0.1475
+          }
+        },
+        "interpretation": "Low alphas preserve ring better but fail microscopy capacity; high alphas pass microscopy but fail 0.8px and 0.08px ring guard. No local candidate is eligible for external GMF."
+      },
+      "external_gmf": {
+        "status": "not_run_no_local_guarded_candidate"
+      },
+      "suggested_role": "research_capacity_reference_only",
+      "notes": "R41 direct best preserves microscopy-feature gains, but neither the direct endpoint nor the COMBO/R41 averaged checkpoints recover ring behavior enough. No averaged alpha passes both microscopy and local ring guard, so R41 is research-only and should not be sent to external GMF unless the policy is changed."
     }
   ],
   "closed_lines": [
@@ -195,7 +1576,14 @@
       "root_cause": "Circle-fit noise floor dominates internal step_std once real step variance drops below ~0.15 px.",
       "validated_default": "720-angle unweighted circle fit",
       "weighted_fit_status": "available_but_not_default",
-      "advisory_cutoff_residual_std": 2.5
+      "advisory_cutoff_residual_std": 2.5,
+      "alpha_linear_extrapolation_caveat": {
+        "noted_at": "2026-05-11",
+        "context": "Triggered by R40 alpha refinement sweep (alpha_refinement_sweep_2026_05_11 under R40_a045).",
+        "observation": "Linear extrapolation from a single (alpha, external) pair to a neighbouring alpha is unreliable. Predicted vs actual on R40 alpha sweep: predicted alpha=0.43 external 8 px ≈ 0.188 (+21.6% vs COMBO) using the ×1.257 local→external ratio from alpha=0.45; actual alpha=0.43 external 8 px = 0.1454 (−5.91% vs COMBO). Direction reversed.",
+        "explanation": "Weight averaging at different alpha values can land in distinct trade-off subspaces rather than smoothly interpolating. Three R40 alphas (0.42 / 0.43 / 0.45) showed three different external Δ patterns: alpha=0.42 trades 0.8 px and 0.08 px for large 8 px gain; alpha=0.43 improves both 8 px and 0.8 px but hurts 0.08 px; alpha=0.45 improves 0.08 px but hurts 8 px.  No monotonic alpha→external relationship was observed.",
+        "guidance": "Do not extrapolate external GMF outcomes from local ring guard numbers, or from a single neighbouring alpha, when local step_std is near the circle-fit noise floor (~0.15 px). Run the external GMF measurement on the actual checkpoint before drawing trade-off conclusions."
+      }
     }
   },
   "sources": {
@@ -218,6 +1606,17 @@
       "R26NewPSFCheck": {
         "status_md": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\reports\\STATUS_20260326.md",
         "formal_compare_md": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\formal_newpsf_candidate\\reports\\NEW_PSF_FORMAL_R26_COMPARE.md"
+      },
+      "R43A_usability_audit": {
+        "audit_md": "D:\\GMM_2_Final\\Experiments\\R43_CandidateUsabilityAudit\\reports\\R43A_USABILITY_AUDIT.md",
+        "scorecard_json": "D:\\GMM_2_Final\\Experiments\\R43_CandidateUsabilityAudit\\results\\candidate_usability\\usability_scorecard.json",
+        "visual_review_dir": "D:\\GMM_2_Final\\Experiments\\R43_CandidateUsabilityAudit\\results\\visual_review"
+      },
+      "R44_motion_fidelity": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\reports\\R44_RESULTS.md",
+        "manifest_md": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\MANIFEST.md",
+        "motion_data_script": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\scripts\\r44_motion_data.py",
+        "launcher": "D:\\GMM_2_Final\\Experiments\\R44_UniversalBoundaryMotionFidelity\\scripts\\launch_r44.py"
       }
     },
     "legacy": {
@@ -240,6 +1639,27 @@
     "R30 is preserved as the historical former baseline that COMBO replaces.",
     "R26NewPSFCheck remains an open PSF side track and is not the active mainline.",
     "Round31 and Round32 stay closed; neither changes the promoted baseline.",
-    "External GMF is always the final gate. Internal step_std is advisory-only once residual_std enters the low-noise regime."
+    "External GMF is always the final gate. Internal step_std is advisory-only once residual_std enters the low-noise regime.",
+    "R39 Shape Generalization: trained endpoints (r39_shape_mix_safe, r39_shape_mix_strong) regress local ring guard and are not promotion candidates. The COMBO ↔ r39_shape_mix_strong weight average at alpha=0.30 (r39_combo_strong_avg_a030) is a local Pareto improvement (shape PSNR +2.19 vs COMBO with all three local ring scales ≤ COMBO).",
+    "R39_a030 external GMF (2026-05-02): PASS_TRADEOFF — 8px 0.143794 (-6.94% vs COMBO), 0.08px 0.083941 (-15.97% vs COMBO and project all-time low), 0.8px 0.140008 (+6.42% vs COMBO, within +7% alternate band anchored to R38v2's worst regression). Tracked under open_side_tracks with status external_gmf_complete_alternate_grade_pending_promotion; promotion into approved_alternates is a separate project-owner decision.",
+    "R39_a030 visual profile (2026-05-02): -2.97% gradient_magnitude, -5.64% edge_steepness_p95, -2.00% contrast_std, -2.64% edge_contrast (averaged over three pitches, 203 ring BMP frames). Stays in the sharp band with COMBO and R38v2; not in the R33 soft band (R33 is -22% edge_steepness vs R30). Confirmed no visual collapse from weight averaging at alpha=0.30.",
+    "R39 closing finding (2026-05-03, synthetic microscopy demo): on synthetic content outside the R39 training distribution (IC chip + bright grid + textured surface + edge defects), both a030 and COMBO show a hard capability ceiling — grid pattern is erased, texture is filtered away as noise, IC edges have ringing. Lighter input noise (alpha=160 vs 100) does not improve reconstruction, ruling out noise as the bottleneck. The limit is set by R39 training stages 1-9 only covering 'clean geometric primitives on neutral-gray background'. a030's promotion case within its actual scope (ring + simple shapes) is unaffected, but a030 should not be treated as a general microscopy reconstruction model. This finding became the R40 training-data coverage round (periodic structures, texture surfaces, large bright IC-style regions, irregular edge defects) — still controlled synthetic, no real-machine images in training. Details in Experiments/R39_ShapeGeneralization/reports/R39_RESULTS.md section 'Synthetic Microscopy Demo'.",
+    "R40 Microscopy Feature Coverage (2026-05-05): r40_combo_best_avg_a045 improves held-out microscopy-feature reconstruction (PSNR 26.8911, SSIM 0.9199, high-frequency retention 0.3414) but fails promotion because external 8px GMF regressed to 0.189750 (+22.80% vs COMBO 0.154515). 0.8px is within tradeoff (+1.33%) and 0.08px improves (-2.85%). Verdict: RESEARCH_CAPACITY_ONLY; COMBO remains formal baseline and R40 is not an approved alternate.",
+    "R41 Ring Distillation (2026-05-05): infrastructure, data, tests, smoke, formal training, held-out microscopy validation, local ring guard, and COMBO/R41 weight sweep completed for r41_kd_from_a045. Direct best checkpoint strongly passes micro targets (PSNR 29.4556, SSIM 0.9513, high-frequency retention 0.7241), but local ring guard regresses at 8px 0.1628, 0.8px 0.1652, and 0.08px 0.1543 vs local COMBO 0.1389 / 0.1509 / 0.1185. Weight sweep alpha 0.10-0.40 finds no guarded tradeoff; diagnostic alpha 0.45/0.50 passes microscopy (0.45 PSNR 26.1840 / HF 0.3012; 0.50 PSNR 26.6662 / HF 0.3358) but fails ring 0.8px and 0.08px. Verdict: RESEARCH_ONLY_NO_EXTERNAL_GMF_CANDIDATE; next round needs a different ring constraint mechanism.",
+    "R43A Candidate Usability Audit (2026-05-06): analysis-only scorecard and visual review completed. No recent candidate fully replaces COMBO. R39 a030 is the most usable recent formal-alternate candidate; R42 full endpoints are the strongest microscopy-boundary research/manual-inspection candidates, but R42 external GMF follow-up confirms they are not formal measurement replacements; R42 low-alpha checkpoints are not useful tradeoffs because they retain little boundary gain.",
+    "R44 Universal Boundary Motion Fidelity (2026-05-09): R44A-R44H Step B complete. R44B from R42 remains the best universal motion candidate. Step A family averaging improved target shape but regressed motion; Step B single-teacher region-masked KD preserved motion (0.3837 px) but worsened target shape (0.3481 vs 0.3384). R44 is research-success but not promotable; do not proceed to Step C multi-teacher full-model KD without a new mechanism.",
+    "Cross-dataset followup (2026-05-10): R39 a030 multi-microscopy evaluation + R40 a045 補測 produced D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\reports\\R39_A030_MICROSCOPY_EVALUATION.md. R40 a045 wins all 12 stages (R39 7-class shapes + R40 5-class microscopy) on PSNR/SSIM/HF/edge/contrast/boundary-F1/shape-error vs both COMBO and a030; in/out-distribution overall PSNR gap is -0.02 dB. External 8px regression +22.80% remains the upgrade blocker, so R40 a045 stays RESEARCH_CAPACITY_ONLY.",
+    "Alpha refinement sweep (2026-05-11): tested α=0.42/0.43/0.44 between existing 0.40 and 0.45 for R40 weight averaging. α=0.42 external delta 8px −17.44% / 0.8px +7.81% / 0.08px +11.29%; α=0.43 external delta 8px −5.91% / 0.8px −3.15% / 0.08px +21.52%; α=0.44 8 px local guard failed (not sent external). All three remain RESEARCH_CAPACITY_ONLY. The sweep revealed non-linear trade-off pattern across alpha: α=0.43 and α=0.45 trade opposite scales rather than smoothly interpolating. Linear extrapolation from α=0.45 was far off the actual external numbers.",
+    "Methodology caveat (2026-05-11): linear extrapolation from a single alpha's local→external ratio to neighbouring alphas is unreliable for weight averaging sweeps. Documented under measurement_policy.internal_external_divergence.alpha_linear_extrapolation_caveat. Trigger: R40 alpha 0.42/0.43/0.44 sweep produced external GMF deltas in three different sign patterns.",
+    "Cross-round complementary averaging (2026-05-11): R39 a030 averaged with R40 a043 at five alphas. alpha=0.25 candidate (R39R40_avg_a025) cleared the 3% upgrade guard on all three external GMF scales (8px -5.18%, 0.8px +1.51%, 0.08px +0.51%) -- first project candidate to do so. Intermediate alphas 0.5 / 0.75 did NOT follow linear interpolation between the two endpoints (0.8 px bulges to +13-15%), reinforcing the alpha_linear_extrapolation_caveat. R39R40_avg_a025 added under open_side_tracks pending project-owner promotion decision; microscopy/shape capacity evaluation at alpha=0.25 still outstanding.",
+    "Promotion (2026-05-11): R39R40_avg_a025 promoted from open_side_track to approved_alternate (role: balanced_full_spectrum_alternate). Basis: PASS_UPGRADE_GUARD on external GMF three scales (8 px -5.18%, 0.8 px +1.51%, 0.08 px +0.51%, all within 3% cap); won all 12 capability categories (5 microscopy + 7 shape) on PSNR vs both COMBO and a030; visual profile remains in sharp band (edge_steepness ~+78.1% vs R30). Complements R33 (GMF extreme) and R38v2 (visual priority) by occupying a previously empty 'balanced full-spectrum' slot. Formal baseline remains COMBO."
+  ],
+  "artifact_index": {},
+  "audit_trail": [
+    "R44H Step A（2026-05-08）：R44B 家族平均診斷完成。形狀可明顯改善（最佳目標形狀錯誤 0.2955），但四個平均候選都讓位移退步超過 Step A 上限；不建議把平均 checkpoint 當下一步起點。R44C static heavy 可暫保留為混合場景局部老師。",
+    "R44H Step B（2026-05-09）：單一老師局部蒸餾完成。位移幾乎守住（0.3837 px vs 0.3813 px），但大區塊/混合形狀錯誤變差（0.3481 vs 0.3384）；概念驗證失敗，不建議進 Step C 多老師全模型蒸餾。"
+  ],
+  "decision_notes": [
+    "R44 Universal Boundary Motion Fidelity (2026-05-09): R44A-R44H Step B complete; Step B preserves motion but worsens target shape, so do not proceed to multi-teacher full-model KD."
   ]
 }

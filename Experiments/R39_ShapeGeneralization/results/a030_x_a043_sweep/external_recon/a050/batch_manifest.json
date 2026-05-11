@@ -1,0 +1,24 @@
+﻿{
+    "started_at":  "2026-05-11 15:22:23",
+    "weights_path":  "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\checkpoints\\a050\\best_tradeoff.pth.tar",
+    "infer_script":  "D:\\GMM_2_Final\\Model\\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+    "recon_root":  "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\external_recon\\a050",
+    "datasets":  [
+                     {
+                         "name":  "Pitch1um_Y_100",
+                         "input_dir":  "C:\\Users\\Rio\\Downloads\\NTU_ImageDataset\\Pitch1um_Y_100\\Cropped_Output",
+                         "output_name":  "pitch1um_y_100_odd"
+                     },
+                     {
+                         "name":  "Pitch0.1um_Y_60",
+                         "input_dir":  "C:\\Users\\Rio\\Downloads\\NTU_ImageDataset\\Pitch0.1um_Y_60\\Cropped_Output",
+                         "output_name":  "pitch0p1um_y_60_odd"
+                     },
+                     {
+                         "name":  "Pitch0.01um_Y_40",
+                         "input_dir":  "C:\\Users\\Rio\\Downloads\\NTU_ImageDataset\\Pitch0.01um_Y_40\\Cropped_Output",
+                         "output_name":  "pitch0p01um_y_40_odd"
+                     }
+                 ],
+    "completed_at":  "2026-05-11 15:23:39"
+}

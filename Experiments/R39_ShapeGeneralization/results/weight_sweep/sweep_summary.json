@@ -1,0 +1,606 @@
+{
+  "candidate": "r39_shape_mix_strong",
+  "combo_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\\weights\\best_tradeoff.pth.tar",
+  "candidate_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728\\weights\\best_tradeoff.pth.tar",
+  "thresholds": {
+    "min_shape_psnr": 24.84,
+    "max_8px": 0.155,
+    "max_0p8px": 0.155,
+    "max_0p08px": 0.135
+  },
+  "rows": [
+    {
+      "alpha": 0.0,
+      "alpha_tag": "a000",
+      "shape_overall_psnr": 22.841142621412367,
+      "shape_overall_ssim": 0.8501741591308798,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 22.67209755969026,
+          "ssim": 0.8121366461118062,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 23.139457860531916,
+          "ssim": 0.8872738808393479,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 22.25201779458607,
+          "ssim": 0.8118515027066072,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 25.397339365205152,
+          "ssim": 0.9237222482760747,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 22.557454057011423,
+          "ssim": 0.8685519933700562,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 22.57997662920511,
+          "ssim": 0.8332514097293218,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 21.289655083656648,
+          "ssim": 0.8144314328829447,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1389,
+      "ring_0p8px_step_std": 0.1509,
+      "ring_0p08px_step_std": 0.1185,
+      "ring_8px_outer_residual_mean": 2.1938,
+      "ring_0p8px_outer_residual_mean": 2.3254,
+      "ring_0p08px_outer_residual_mean": 2.3346
+    },
+    {
+      "alpha": 0.1,
+      "alpha_tag": "a010",
+      "shape_overall_psnr": 23.532942932999678,
+      "shape_overall_ssim": 0.860370780687247,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 23.134811442571717,
+          "ssim": 0.8197049554437399,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 24.059493685743213,
+          "ssim": 0.8982414871454238,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 22.70566944121106,
+          "ssim": 0.8215889990329742,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 26.007579325961466,
+          "ssim": 0.9316337416569392,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 23.450333034372814,
+          "ssim": 0.8804750919342041,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 23.429003422164914,
+          "ssim": 0.8445129414399465,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 21.943710178972577,
+          "ssim": 0.8264382481575012,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1409,
+      "ring_0p8px_step_std": 0.154,
+      "ring_0p08px_step_std": 0.1184,
+      "ring_8px_outer_residual_mean": 2.284,
+      "ring_0p8px_outer_residual_mean": 2.3961,
+      "ring_0p08px_outer_residual_mean": 2.4028
+    },
+    {
+      "alpha": 0.2,
+      "alpha_tag": "a020",
+      "shape_overall_psnr": 24.253842671427506,
+      "shape_overall_ssim": 0.87019114756868,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 23.66304847756915,
+          "ssim": 0.8275964063902695,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 24.990937731280482,
+          "ssim": 0.9083272169033686,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 23.217436035425802,
+          "ssim": 0.8318662715454896,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 26.64785208622219,
+          "ssim": 0.9391238570213318,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 24.33884337751226,
+          "ssim": 0.891203694542249,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 24.307340084463213,
+          "ssim": 0.855486978093783,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 22.61144090751946,
+          "ssim": 0.8377336084842681,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.138,
+      "ring_0p8px_step_std": 0.164,
+      "ring_0p08px_step_std": 0.1157,
+      "ring_8px_outer_residual_mean": 2.361,
+      "ring_0p8px_outer_residual_mean": 2.4459,
+      "ring_0p08px_outer_residual_mean": 2.4484
+    },
+    {
+      "alpha": 0.3,
+      "alpha_tag": "a030",
+      "shape_overall_psnr": 25.032644768139953,
+      "shape_overall_ssim": 0.8798362616981779,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 24.28273191836913,
+          "ssim": 0.836073270936807,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 25.939926457287697,
+          "ssim": 0.9176754901806513,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 23.812100721758117,
+          "ssim": 0.8427983885010083,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 27.362974364338182,
+          "ssim": 0.9462653408447902,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 25.276440593649664,
+          "ssim": 0.900929112235705,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 25.23474937815777,
+          "ssim": 0.8663895070552826,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 23.319589943419082,
+          "ssim": 0.8487227221330007,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1384,
+      "ring_0p8px_step_std": 0.1507,
+      "ring_0p08px_step_std": 0.1114,
+      "ring_8px_outer_residual_mean": 2.4375,
+      "ring_0p8px_outer_residual_mean": 2.4912,
+      "ring_0p08px_outer_residual_mean": 2.499
+    },
+    {
+      "alpha": 0.4,
+      "alpha_tag": "a040",
+      "shape_overall_psnr": 25.889355696466946,
+      "shape_overall_ssim": 0.889339398237921,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 25.000670632051655,
+          "ssim": 0.8451337618132432,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 26.93871607413326,
+          "ssim": 0.9265495955944061,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 24.486475519949035,
+          "ssim": 0.8541714757680893,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 28.165695704498212,
+          "ssim": 0.9528649330139161,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 26.31437305559484,
+          "ssim": 0.9099239478508632,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 26.230920864576994,
+          "ssim": 0.8767984012762705,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 24.088638024464622,
+          "ssim": 0.8599336723486583,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1379,
+      "ring_0p8px_step_std": 0.1605,
+      "ring_0p08px_step_std": 0.1082,
+      "ring_8px_outer_residual_mean": 2.5008,
+      "ring_0p8px_outer_residual_mean": 2.5214,
+      "ring_0p08px_outer_residual_mean": 2.5161
+    },
+    {
+      "alpha": 0.5,
+      "alpha_tag": "a050",
+      "shape_overall_psnr": 26.826179439459686,
+      "shape_overall_ssim": 0.8987205985756147,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 25.815606224232095,
+          "ssim": 0.8546388561526934,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 28.022320817335462,
+          "ssim": 0.935276186466217,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 25.229363687655756,
+          "ssim": 0.8656571298837662,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 29.056503347405616,
+          "ssim": 0.9589163462320963,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 27.46613054279614,
+          "ssim": 0.918418996532758,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 27.272098087573948,
+          "ssim": 0.8866177330414454,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 24.92123336921878,
+          "ssim": 0.8715189417203267,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1552,
+      "ring_0p8px_step_std": 0.1487,
+      "ring_0p08px_step_std": 0.122,
+      "ring_8px_outer_residual_mean": 2.5614,
+      "ring_0p8px_outer_residual_mean": 2.5532,
+      "ring_0p08px_outer_residual_mean": 2.5468
+    },
+    {
+      "alpha": 0.6,
+      "alpha_tag": "a060",
+      "shape_overall_psnr": 27.805312159639957,
+      "shape_overall_ssim": 0.9077675914480573,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 26.69435656024751,
+          "ssim": 0.8642920638124149,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 29.17366156450038,
+          "ssim": 0.9435185372829438,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 26.01612943852503,
+          "ssim": 0.8771610165635745,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 29.985217529171713,
+          "ssim": 0.9644112050533294,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 28.67917937962033,
+          "ssim": 0.9260535856088002,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 28.318694263911482,
+          "ssim": 0.8961018681526184,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 25.76994638150325,
+          "ssim": 0.8828348636627197,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1629,
+      "ring_0p8px_step_std": 0.1552,
+      "ring_0p08px_step_std": 0.1203,
+      "ring_8px_outer_residual_mean": 2.6283,
+      "ring_0p8px_outer_residual_mean": 2.5825,
+      "ring_0p08px_outer_residual_mean": 2.5663
+    },
+    {
+      "alpha": 0.7,
+      "alpha_tag": "a070",
+      "shape_overall_psnr": 28.74560822667356,
+      "shape_overall_ssim": 0.9159898824635007,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 27.583482338836948,
+          "ssim": 0.8736732160051663,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 30.2870429417355,
+          "ssim": 0.9504408478736878,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 26.803763002814232,
+          "ssim": 0.8883965070048968,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 30.906789080959392,
+          "ssim": 0.9691979587078094,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 29.846942461262277,
+          "ssim": 0.9323253611723582,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 29.254120999351063,
+          "ssim": 0.9048681477705638,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 26.53711676175551,
+          "ssim": 0.8930271387100219,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1679,
+      "ring_0p8px_step_std": 0.1567,
+      "ring_0p08px_step_std": 0.1233,
+      "ring_8px_outer_residual_mean": 2.6994,
+      "ring_0p8px_outer_residual_mean": 2.6101,
+      "ring_0p08px_outer_residual_mean": 2.6034
+    },
+    {
+      "alpha": 0.8,
+      "alpha_tag": "a080",
+      "shape_overall_psnr": 29.534934285763807,
+      "shape_overall_ssim": 0.923020233675128,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 28.418027855497638,
+          "ssim": 0.8823264899353186,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 31.228968584091465,
+          "ssim": 0.9558192769686381,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 27.53094031934025,
+          "ssim": 0.8987603212396303,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 31.75279461898526,
+          "ssim": 0.9731967329978943,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 30.791554669714845,
+          "ssim": 0.9370699733495712,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 29.908616070942564,
+          "ssim": 0.9123783032099406,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 27.113637881774615,
+          "ssim": 0.9015905380249023,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1858,
+      "ring_0p8px_step_std": 0.1491,
+      "ring_0p08px_step_std": 0.1431,
+      "ring_8px_outer_residual_mean": 2.7877,
+      "ring_0p8px_outer_residual_mean": 2.64,
+      "ring_0p08px_outer_residual_mean": 2.6348
+    },
+    {
+      "alpha": 0.9,
+      "alpha_tag": "a090",
+      "shape_overall_psnr": 30.02267827395008,
+      "shape_overall_ssim": 0.9286187539498011,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 29.081735178571567,
+          "ssim": 0.889816726744175,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 31.82188484034623,
+          "ssim": 0.9596701224644979,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 28.11011952342491,
+          "ssim": 0.9076483840743701,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 32.39691698706022,
+          "ssim": 0.9762033740679423,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 31.247416988291537,
+          "ssim": 0.9404291192690531,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 30.114006096766403,
+          "ssim": 0.918425836165746,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 27.386668303189698,
+          "ssim": 0.9081377148628235,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1875,
+      "ring_0p8px_step_std": 0.1629,
+      "ring_0p08px_step_std": 0.1601,
+      "ring_8px_outer_residual_mean": 2.8942,
+      "ring_0p8px_outer_residual_mean": 2.6959,
+      "ring_0p08px_outer_residual_mean": 2.6905
+    },
+    {
+      "alpha": 1.0,
+      "alpha_tag": "a100",
+      "shape_overall_psnr": 30.07218164656666,
+      "shape_overall_ssim": 0.9326128288039139,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 29.439190677974906,
+          "ssim": 0.8957892142236232,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 31.83647839648686,
+          "ssim": 0.9619907001654308,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 28.445047695589313,
+          "ssim": 0.9146327937642733,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 32.67650530406567,
+          "ssim": 0.9780772586663564,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 31.019479918011662,
+          "ssim": 0.9424528161684672,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 29.798900897288686,
+          "ssim": 0.9228498299916585,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 27.289668636549504,
+          "ssim": 0.9124971886475881,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.2004,
+      "ring_0p8px_step_std": 0.1691,
+      "ring_0p08px_step_std": 0.175,
+      "ring_8px_outer_residual_mean": 3.0183,
+      "ring_0p8px_outer_residual_mean": 2.7615,
+      "ring_0p08px_outer_residual_mean": 2.7546
+    }
+  ],
+  "verdict": {
+    "found": true,
+    "best": {
+      "alpha": 0.3,
+      "alpha_tag": "a030",
+      "shape_overall_psnr": 25.032644768139953,
+      "shape_overall_ssim": 0.8798362616981779,
+      "shape_per_stage": {
+        "stage_01_triangles": {
+          "psnr": 24.28273191836913,
+          "ssim": 0.836073270936807,
+          "count": 30
+        },
+        "stage_02_circles": {
+          "psnr": 25.939926457287697,
+          "ssim": 0.9176754901806513,
+          "count": 30
+        },
+        "stage_03_rectangles": {
+          "psnr": 23.812100721758117,
+          "ssim": 0.8427983885010083,
+          "count": 30
+        },
+        "stage_04_ellipses": {
+          "psnr": 27.362974364338182,
+          "ssim": 0.9462653408447902,
+          "count": 30
+        },
+        "stage_05_polygons": {
+          "psnr": 25.276440593649664,
+          "ssim": 0.900929112235705,
+          "count": 30
+        },
+        "stage_06_mixed_simple": {
+          "psnr": 25.23474937815777,
+          "ssim": 0.8663895070552826,
+          "count": 30
+        },
+        "stage_07_mixed_complex": {
+          "psnr": 23.319589943419082,
+          "ssim": 0.8487227221330007,
+          "count": 30
+        }
+      },
+      "ring_8px_step_std": 0.1384,
+      "ring_0p8px_step_std": 0.1507,
+      "ring_0p08px_step_std": 0.1114,
+      "ring_8px_outer_residual_mean": 2.4375,
+      "ring_0p8px_outer_residual_mean": 2.4912,
+      "ring_0p08px_outer_residual_mean": 2.499
+    },
+    "reason": "sweet spot found at alpha=0.30"
+  },
+  "generated_at": "2026-04-30 13:28:10"
+}

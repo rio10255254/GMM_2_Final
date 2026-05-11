@@ -1,6 +1,6 @@
 # 實驗重建影像 Gallery / Experiment Recon Gallery
 
-_Last updated: 2026-04-18_
+_Last updated: 2026-05-11_
 
 這份文件收集**每一輪實驗所有 tracked 的重建影像、指標圖表、分析圖**，供 demo / report 時快速查閱。
 所有連結皆為 git 追蹤檔案的相對路徑，GitHub 上會自動渲染圖片。
@@ -21,10 +21,12 @@ _Last updated: 2026-04-18_
 | 🟢 | [**COMBO**](#-combo) | formal production baseline (2026-04-08) | **`0.132`** · steepness +89% · residual 歷史最佳 |
 | 🟢 | [**R38v2**](#-r38v2) | visual priority alternate | `0.134` · steepness +89% |
 | 🟢 | [**R33**](#-r33) | GMF extreme alternate | **`0.119`** · 三尺度全面最低 |
+| 🟢 | [**R39R40_avg_a025**](#-r39r40_avg_a025) | balanced full-spectrum alternate (2026-05-11) | `0.134` · 三尺度都在 ±5.18% · 12 分類 PSNR 全勝 COMBO/a030 |
 | 🔴 | [R33 ablations](#-r33-ablations) | lap_only / soft_p95 / hard_p90 — closed | — |
 | 🔵 | [**R30**](#-r30) | historical former baseline (pre-COMBO) | `0.168` · B1 dironly |
 | 🔵 | [**R26 sm035**](#-r26-sm035) | 歷史 step_mag=0.35 基準線 | `0.191` |
 | 🟡 | [**R26NewPSFCheck**](#-r26newpsfcheck) | open side track — PSF 政策切換 | pending external GMF |
+| 🟡 | [**R39-R45 microscopy generalization**](#-r39-r45-microscopy-generalization) | 形狀、顯微特徵、邊界、位移與分族校正研究線 | R39 a030 可討論；R45 確認輸出端小校正不足以匯聚能力 |
 | 🔴 | [R33c](#-r33c) | 對比度修復失敗 | 視覺 + 指標雙退步 |
 | 🔴 | [R38 seq-all-stages](#-r38-seq-all-stages) | seq 全 stages 噪聲干擾 | 8px 好但 0.8px 弱 |
 | 🔴 | [R32](#-r32) | domain rebalancing external FAIL | `0.332` (+97.7%) |
@@ -266,6 +268,70 @@ _Last updated: 2026-04-18_
 
 ---
 
+## 🟢 R39R40_avg_a025
+
+![🟢 R39R40_avg_a025 R40 micro 五聯對比](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_micro_five_panel.png)
+
+> [!TIP]
+> **`r39r40_complementary_avg_a025`** · balanced full-spectrum alternate（2026-05-11 升級）· 外部 GMF 三尺度 Δ 都在 ±5.18% 內（8 px `−5.18%` / 0.8 px `+1.51%` / 0.08 px `+0.51%`，verdict `PASS_UPGRADE_GUARD`）· 12 顯微/形狀分類 PSNR 全勝 COMBO 與 a030 · 視覺在 sharp band（vs R30 推算 +78.1%）
+
+
+### 📊 五聯視覺對比
+
+R39 a030 與 R40 a043 在 α=0.25（75% a030 + 25% a043）的跨輪權重平均：
+
+- [R40 micro_val_unseen 五聯](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_micro_five_panel.png) — GT / COMBO / a030 / R40 a043 / a025；5 顯微類 × 4 frame
+- [R39 shape_val_unseen 五聯](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_shape_five_panel.png) — GT / COMBO / a030 / R40 a043 / a025；7 形狀類 × 3 frame
+- [R40 micro_val_unseen 四聯](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_four_panel.png) — GT / COMBO / a030 / a025；cell 較大（320×320）
+
+
+### 📊 測試重建影像（實際模型輸出 BMP）
+
+外部三尺度 ring 重建：
+
+- [`8 px`（Pitch1um_Y_100）101 frames](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a025/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845/pitch1um_y_100_odd/)
+- [`0.8 px`（Pitch0.1um_Y_60）61 frames](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a025/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845/pitch0p1um_y_60_odd/)
+- [`0.08 px`（Pitch0.01um_Y_40）41 frames](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a025/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845/pitch0p01um_y_40_odd/)
+
+合成顯微特徵 5 類重建：
+
+- [`stage_29_micro_lines_grid`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_29_micro_lines_grid_20260511_151845/)
+- [`stage_30_micro_large_regions`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_30_micro_large_regions_20260511_151845/)
+- [`stage_31_micro_textures`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_31_micro_textures_20260511_151845/)
+- [`stage_32_micro_edge_defects`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_32_micro_edge_defects_20260511_151845/)
+- [`stage_33_micro_mixed_fields`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_33_micro_mixed_fields_20260511_151845/)
+
+合成幾何形狀 7 類重建：
+
+- [`stage_01_triangles`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_01_triangles_20260511_151845/)
+- [`stage_02_circles`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_02_circles_20260511_151845/)
+- [`stage_03_rectangles`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_03_rectangles_20260511_151845/)
+- [`stage_04_ellipses`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_04_ellipses_20260511_151845/)
+- [`stage_05_polygons`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_05_polygons_20260511_151845/)
+- [`stage_06_mixed_simple`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_06_mixed_simple_20260511_151845/)
+- [`stage_07_mixed_complex`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_07_mixed_complex_20260511_151845/)
+
+
+### 📈 升級依據與評估報告
+
+- [Capability eval（升級依據）](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_CAPABILITY_EVAL.md) — 四項驗證（外部 GMF + R40 顯微 + R39 形狀 + 視覺四項）
+- [Sweep 5 點 trade-off 結果](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_COMPLEMENTARY_AVG_RESULTS.md) — α=0 / 0.25 / 0.5 / 0.75 / 1.0 跨輪 sweep
+- [外部 GMF 解析（α=0.25）](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_EXTERNAL_COMPARE.md)
+
+
+### 📈 指標 CSV / JSON
+
+- [Per-pair 指標](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/per_pair_metrics.csv)（4 候選 × 310 對逐張）
+- [逐 stage 平均](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/stage_summary.csv)
+- [整體平均](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/overall_summary.csv)
+- [視覺四項統計](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/visual_stats.csv)
+- [Capability summary JSON](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/capability_summary.json)
+
+
+📄 [Capability eval](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_CAPABILITY_EVAL.md) · [Sweep 結果](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_COMPLEMENTARY_AVG_RESULTS.md) · [外部 GMF](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_EXTERNAL_COMPARE.md)
+
+---
+
 ## 🔴 R33 ablations
 
 > [!NOTE]
@@ -438,6 +504,83 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 - [PSF old vs new investigation](Experiments/R26NewPSFCheck/reports/psf_old_vs_new_investigation_20260326.png) · [ASCII 版](Experiments/R26NewPSFCheck/reports/psf_old_vs_new_investigation_ascii_20260326.png)
 - [Old vs new recon investigation](Experiments/R26NewPSFCheck/reports/old_vs_new_recon_investigation_20260326.png) · [ASCII 版](Experiments/R26NewPSFCheck/reports/old_vs_new_recon_investigation_ascii_20260326.png)
 - [Root cause centering — selector audit key epochs](Experiments/R26NewPSFCheck/root_cause_centering/figures/selector_audit_key_epochs_20260326.png)
+
+---
+
+## 🟡 R39-R45 Microscopy Generalization
+
+> [!IMPORTANT]
+> **Open research side track** · 目標是通用顯微結構忠實重建，不只是環形。環形外部 GMF 仍保留作正式量測守門，但 R39-R45 的主要價值是理解多形狀、多顯微特徵、邊界位置、已知位移忠實度與單一入口分族校正是否能推高。
+
+### 近期結論
+
+| Round | 主要用途 | 關鍵結論 |
+|---|---|---|
+| R39 | 多形狀泛化 | `r39_combo_strong_avg_a030` 外部 GMF 在替代容忍帶內：8px -6.94%、0.8px +6.42%、0.08px -15.97%。這是近期最接近正式替代討論的候選。 |
+| R40 | 顯微特徵能力上限 | 顯微測試明顯改善，但最佳折衷外部 8px 退步 +22.80%，研究用。 |
+| R41 | 知識蒸餾回拉 | 顯微能力仍強，但沒有找到同時守住本地環形與顯微能力的折衷點，研究用。 |
+| R42 | 顯微邊界忠實度 | 邊界測試大幅勝過 COMBO，但後補外部 GMF 三尺度都退步；最佳外部候選 `r42_r41_best` 為 8px +24.63%、0.8px +94.33%、0.08px +98.87%。 |
+| R43 | 堪用性盤點 | 確認沒有新候選可全面取代 COMBO；R39 a030 最可討論，R42 最適合顯微邊界研究與人工檢查。 |
+| R44 | 通用邊界位移忠實度 | `r44_motion_from_r42_best` 把整體位移誤差降到 `0.3813 px`、格線位移誤差降到 `2.2457 px`；R44G 顯示大區塊/混合場景形狀能力分散在不同候選，沒有單一現成模型全面勝出，研究用。 |
+| R45 | 分族邊界校正模組 | R45A 輸出端小校正守住位移但沒改善形狀；R45B 顯示逐張 oracle 有 `33.42%` 上限、固定分族 oracle 有 `12.30%`，但老師殘差不乾淨，研究負結果。 |
+
+### R43 肉眼檢查圖
+
+**顯微特徵總覽**
+
+![](Experiments/R43_CandidateUsabilityAudit/results/visual_review/micro_feature_visual_sheet.png)
+
+**邊界特徵總覽**
+
+![](Experiments/R43_CandidateUsabilityAudit/results/visual_review/boundary_feature_visual_sheet.png)
+
+**邊界局部放大**
+
+![](Experiments/R43_CandidateUsabilityAudit/results/visual_review/boundary_zoom_visual_sheet.png)
+
+### R42 邊界代表圖
+
+![](Experiments/R42_MicroscopyBoundaryFidelity/results/boundary_recon/r42_representative_boundary_sheet.png)
+
+### R44 位移代表圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44_motion_r42_vs_r44_contact_sheet.png)
+
+### R44C 探針代表圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44c_probe_r42_r44b_r44c_sheet.png)
+
+### R44D 分族診斷熱圖
+
+**邊界距離**
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/diagnostics/r44d_boundary_heatmap.png)
+
+**位移誤差**
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/diagnostics/r44d_motion_heatmap.png)
+
+### R44E 大區塊與混合場景探針代表圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44e_region_mixed_probe_sheet.png)
+
+### R44F 錯誤解剖代表圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44f_error_dissection_sheet.png)
+
+### R44G 邊界形狀熱圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44g_boundary_shape_heatmap.png)
+
+### R45 分族校正代表圖
+
+![](Experiments/R45_FamilyBoundaryAdapter/results/visual_samples/r45_s08_vs_r44b_target_compare.png)
+
+### R45B 老師診斷代表圖
+
+![](Experiments/R45_FamilyBoundaryAdapter/results/visual_samples/r45b_teacher_diagnostics_sheet.png)
+
+📄 Reports: [R39_RESULTS](Experiments/R39_ShapeGeneralization/reports/R39_RESULTS.md) · [R40_RESULTS](Experiments/R40_MicroscopyFeatureCoverage/reports/R40_RESULTS.md) · [R41_RESULTS](Experiments/R41_RingDistillation/reports/R41_RESULTS.md) · [R42_RESULTS](Experiments/R42_MicroscopyBoundaryFidelity/reports/R42_RESULTS.md) · [R42_EXTERNAL_COMPARE](Experiments/R42_MicroscopyBoundaryFidelity/reports/R42_EXTERNAL_COMPARE.md) · [R43A_USABILITY_AUDIT](Experiments/R43_CandidateUsabilityAudit/reports/R43A_USABILITY_AUDIT.md) · [R44_RESULTS](Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44_RESULTS.md) · [R44E_TARGETED_PROBE](Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44E_TARGETED_PROBE.md) · [R44F_ERROR_DIAGNOSTIC](Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44F_ERROR_DIAGNOSTIC.md) · [R44G_BOUNDARY_SHAPE_METRICS](Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44G_BOUNDARY_SHAPE_METRICS.md) · [R45_RESULTS](Experiments/R45_FamilyBoundaryAdapter/reports/R45_RESULTS.md) · [R45B_TEACHER_DIAGNOSTICS](Experiments/R45_FamilyBoundaryAdapter/reports/R45B_TEACHER_DIAGNOSTICS.md)
 
 ---
 

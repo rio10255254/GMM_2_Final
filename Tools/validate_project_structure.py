@@ -334,8 +334,9 @@ def check_truth_plane():
 
     alternates = policy.get("approved_alternates", [])
     alt_ids = [item.get("candidate_id") for item in alternates]
-    if alt_ids != ["R33", "R38v2"]:
-        error(f"ESTIMATOR_POLICY.json approved_alternates must be ['R33', 'R38v2'], got {alt_ids}")
+    expected_alt_ids = ["R33", "R38v2", "R39R40_avg_a025"]
+    if alt_ids != expected_alt_ids:
+        error(f"ESTIMATOR_POLICY.json approved_alternates must be {expected_alt_ids}, got {alt_ids}")
 
     side_tracks = policy.get("open_side_tracks", [])
     if not side_tracks or side_tracks[0].get("candidate_id") != "R26NewPSFCheck":

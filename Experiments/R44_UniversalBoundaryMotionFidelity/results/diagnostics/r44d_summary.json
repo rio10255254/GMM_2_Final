@@ -1,0 +1,5178 @@
+{
+  "family_scorecard": [
+    {
+      "model": "COMBO",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.08661430719327722,
+      "avg_boundary_motion_distance_px": 11.737555266420047,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.05712815789918609,
+      "avg_boundary_motion_distance_px": 11.170303404331207,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 5.35670273138029,
+      "avg_boundary_motion_distance_px": 1.2314419955015183,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06629862458357146,
+      "avg_boundary_motion_distance_px": 7.656793254613876,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06857749981705737,
+      "avg_boundary_motion_distance_px": 11.329707650343577,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06074341638217769,
+      "avg_boundary_motion_distance_px": 13.794694105784098,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.08083869521015724,
+      "avg_boundary_motion_distance_px": 11.87811560233434,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.08990672882692544,
+      "avg_boundary_motion_distance_px": 9.419784382979076,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06350375428035457,
+      "avg_boundary_motion_distance_px": 9.580075150728225,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 6.904159610077275,
+      "avg_boundary_motion_distance_px": 1.1044870495796204,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0659392518890456,
+      "avg_boundary_motion_distance_px": 7.193017961581548,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07043897965169221,
+      "avg_boundary_motion_distance_px": 8.222991964221,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06301280634724048,
+      "avg_boundary_motion_distance_px": 10.099822878837585,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07992104750184265,
+      "avg_boundary_motion_distance_px": 11.089976769685745,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07837542804258278,
+      "avg_boundary_motion_distance_px": 7.490283897022406,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.05191671615813164,
+      "avg_boundary_motion_distance_px": 8.311559172471364,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 9.345135113252297,
+      "avg_boundary_motion_distance_px": 1.005651835600535,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.05870743616825293,
+      "avg_boundary_motion_distance_px": 6.8741387784481045,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06130332513839349,
+      "avg_boundary_motion_distance_px": 6.392099907000859,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.056429585880147966,
+      "avg_boundary_motion_distance_px": 9.396434044837951,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.08105163965337127,
+      "avg_boundary_motion_distance_px": 10.163121368736029,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06885786663379555,
+      "avg_boundary_motion_distance_px": 5.923521114637454,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.04303102203307885,
+      "avg_boundary_motion_distance_px": 6.2775608142217,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 9.643261814117812,
+      "avg_boundary_motion_distance_px": 0.9798795645435651,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.05983022719121468,
+      "avg_boundary_motion_distance_px": 6.0936970800161365,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07135611950771606,
+      "avg_boundary_motion_distance_px": 4.991532254964113,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.04470639540036115,
+      "avg_boundary_motion_distance_px": 6.3884138802687325,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.24936504880660784,
+      "avg_boundary_motion_distance_px": 8.266781354198853,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.08420301168260684,
+      "avg_boundary_motion_distance_px": 1.8642806882659595,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06822312455184408,
+      "avg_boundary_motion_distance_px": 5.347068424026172,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 2.791110692598324,
+      "avg_boundary_motion_distance_px": 0.38060234043126306,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0649624497127838,
+      "avg_boundary_motion_distance_px": 1.6655354385574659,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0763088451703493,
+      "avg_boundary_motion_distance_px": 7.340139581511418,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06847110119380304,
+      "avg_boundary_motion_distance_px": 6.691522035996119,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0732063885842854,
+      "avg_boundary_motion_distance_px": 2.4190484836697577,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.10073328321475747,
+      "avg_boundary_motion_distance_px": 1.9692266857872407,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06693373190468602,
+      "avg_boundary_motion_distance_px": 6.958893473943075,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 3.2740596344578594,
+      "avg_boundary_motion_distance_px": 0.5598656969765822,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.05880118481930267,
+      "avg_boundary_motion_distance_px": 1.9637473101417224,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07431670755664382,
+      "avg_boundary_motion_distance_px": 5.943589834993085,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06661387201080343,
+      "avg_boundary_motion_distance_px": 6.990124497810999,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0776490104595404,
+      "avg_boundary_motion_distance_px": 2.97137301278611,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.10086048894019997,
+      "avg_boundary_motion_distance_px": 1.9393822396794955,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0687538713119296,
+      "avg_boundary_motion_distance_px": 6.245265421271324,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 5.905100343714944,
+      "avg_boundary_motion_distance_px": 0.5317181585977475,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06539201058396986,
+      "avg_boundary_motion_distance_px": 1.887015408774217,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07705516085150824,
+      "avg_boundary_motion_distance_px": 6.977356979468216,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0688941158000453,
+      "avg_boundary_motion_distance_px": 5.915142052372297,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07509650825260415,
+      "avg_boundary_motion_distance_px": 2.9694828261931736,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0808308509955491,
+      "avg_boundary_motion_distance_px": 1.8527783611168465,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0683169158526863,
+      "avg_boundary_motion_distance_px": 5.368168931206068,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 2.2456988228482384,
+      "avg_boundary_motion_distance_px": 0.3973617756661649,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06089078891433346,
+      "avg_boundary_motion_distance_px": 1.630270274852713,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0753475163769553,
+      "avg_boundary_motion_distance_px": 7.58775595848759,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0662937753271548,
+      "avg_boundary_motion_distance_px": 6.920178335905075,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0719320079471589,
+      "avg_boundary_motion_distance_px": 2.3367893745501838,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07961143813460624,
+      "avg_boundary_motion_distance_px": 1.8692592610915502,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06722436346601213,
+      "avg_boundary_motion_distance_px": 5.344200118382772,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 3.0116879362615774,
+      "avg_boundary_motion_distance_px": 0.38383028586395085,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06125613322555184,
+      "avg_boundary_motion_distance_px": 1.6259197420130174,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07511905368948354,
+      "avg_boundary_motion_distance_px": 7.721606305614114,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0658317869413225,
+      "avg_boundary_motion_distance_px": 6.864533657828967,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07218235294303006,
+      "avg_boundary_motion_distance_px": 2.330101472015182,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0796400196707798,
+      "avg_boundary_motion_distance_px": 1.901495508228739,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06708565865399573,
+      "avg_boundary_motion_distance_px": 5.351430487632752,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 2.461482850577844,
+      "avg_boundary_motion_distance_px": 0.38688934285504123,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.061118227889693816,
+      "avg_boundary_motion_distance_px": 1.6564007279773554,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07387817015335153,
+      "avg_boundary_motion_distance_px": 7.6881818174074095,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06549976033412372,
+      "avg_boundary_motion_distance_px": 6.830211536089579,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07213879942351696,
+      "avg_boundary_motion_distance_px": 2.364862286671996,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "curves",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.08093434448609868,
+      "avg_boundary_motion_distance_px": 1.839821981266141,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "defects",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.0672683675755257,
+      "avg_boundary_motion_distance_px": 5.346902800599734,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "grids",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 2.381987611612748,
+      "avg_boundary_motion_distance_px": 0.38512189717342454,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "junctions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06254052226272173,
+      "avg_boundary_motion_distance_px": 1.628223487858971,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "large_regions",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07568142668503891,
+      "avg_boundary_motion_distance_px": 7.7097870703786615,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "mixed_fields",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.06626543950494401,
+      "avg_boundary_motion_distance_px": 6.799410186211268,
+      "avg_grid_phase_motion_error_px": 0.24000000000000002
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "thin_lines",
+      "pair_count": 120,
+      "avg_motion_vector_error_px": 0.07292981543924089,
+      "avg_boundary_motion_distance_px": 2.3291459205249945,
+      "avg_grid_phase_motion_error_px": NaN
+    }
+  ],
+  "shift_scorecard": [
+    {
+      "model": "COMBO",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05789243067339352,
+      "avg_boundary_motion_distance_px": 10.703254735469818,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06867202895925481,
+      "avg_boundary_motion_distance_px": 11.172401276230811,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11107382233762375,
+      "avg_boundary_motion_distance_px": 12.67020067870617,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.12230713382478009,
+      "avg_boundary_motion_distance_px": 9.241407290101051,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10627916640961148,
+      "avg_boundary_motion_distance_px": 12.552286472916602,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.053461260954999576,
+      "avg_boundary_motion_distance_px": 14.085781145095826,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04625140601369416,
+      "avg_boundary_motion_distance_px": 10.923064637184144,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05077862129753237,
+      "avg_boundary_motion_distance_px": 11.405770754814148,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06985729237970442,
+      "avg_boundary_motion_distance_px": 11.332531666755676,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06354560392936706,
+      "avg_boundary_motion_distance_px": 10.429992198944092,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05799228152328786,
+      "avg_boundary_motion_distance_px": 10.521445250511169,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05434374225153068,
+      "avg_boundary_motion_distance_px": 12.409015917778015,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 1.382304711700169,
+      "avg_boundary_motion_distance_px": 1.2254169911146164,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 1.253777230934276,
+      "avg_boundary_motion_distance_px": 1.2193266570568084,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.14531115328243152,
+      "avg_boundary_motion_distance_px": 1.22323696911335,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.14507174095112169,
+      "avg_boundary_motion_distance_px": 1.2052071064710617,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 7.310976440982635,
+      "avg_boundary_motion_distance_px": 1.2342120707035065,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 21.902775110431108,
+      "avg_boundary_motion_distance_px": 1.2812521785497666,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0471074680316765,
+      "avg_boundary_motion_distance_px": 6.302332103252411,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04543785342654949,
+      "avg_boundary_motion_distance_px": 7.260230684280396,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08873275602400726,
+      "avg_boundary_motion_distance_px": 7.284339833259582,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10938793228199144,
+      "avg_boundary_motion_distance_px": 6.112963104248047,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07895791651860985,
+      "avg_boundary_motion_distance_px": 8.981656694412232,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.02816782121859423,
+      "avg_boundary_motion_distance_px": 9.999237108230592,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05405837745062271,
+      "avg_boundary_motion_distance_px": 10.825798791646957,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.061227524359975395,
+      "avg_boundary_motion_distance_px": 10.092537400126457,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07156070651555033,
+      "avg_boundary_motion_distance_px": 10.08113506436348,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08774261670929709,
+      "avg_boundary_motion_distance_px": 10.24049753844738,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07025315508451294,
+      "avg_boundary_motion_distance_px": 9.359724283218384,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06662261878238576,
+      "avg_boundary_motion_distance_px": 17.378552824258804,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.050495998724922865,
+      "avg_boundary_motion_distance_px": 13.319061017036438,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0537269898819223,
+      "avg_boundary_motion_distance_px": 13.692570805549622,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05994381347692799,
+      "avg_boundary_motion_distance_px": 13.181645512580872,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09478558446462214,
+      "avg_boundary_motion_distance_px": 13.038463997840882,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06941665735060427,
+      "avg_boundary_motion_distance_px": 14.871736311912537,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03609145439406654,
+      "avg_boundary_motion_distance_px": 14.66468698978424,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06299392065609868,
+      "avg_boundary_motion_distance_px": 9.611194401979446,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06058308074236698,
+      "avg_boundary_motion_distance_px": 11.382506769895553,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07637544488392696,
+      "avg_boundary_motion_distance_px": 11.172093313932418,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10080856712163526,
+      "avg_boundary_motion_distance_px": 9.4552381336689,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09878754988666696,
+      "avg_boundary_motion_distance_px": 14.12816163301468,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08548360797024859,
+      "avg_boundary_motion_distance_px": 15.519499361515045,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05667834636383362,
+      "avg_boundary_motion_distance_px": 7.504746568202973,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06801941456685263,
+      "avg_boundary_motion_distance_px": 9.056287753582001,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1255131690681291,
+      "avg_boundary_motion_distance_px": 10.80704343020916,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.14798079998522612,
+      "avg_boundary_motion_distance_px": 7.327723249793053,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1026652116903796,
+      "avg_boundary_motion_distance_px": 9.729674768447875,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.038583431287131445,
+      "avg_boundary_motion_distance_px": 12.093230527639388,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03833179389206523,
+      "avg_boundary_motion_distance_px": 9.255834031105042,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05094746881396245,
+      "avg_boundary_motion_distance_px": 9.704474639892577,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07185721564978917,
+      "avg_boundary_motion_distance_px": 9.196978449821472,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10189846783077579,
+      "avg_boundary_motion_distance_px": 8.900447261333465,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07906351635510685,
+      "avg_boundary_motion_distance_px": 9.348020100593567,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03892406314042796,
+      "avg_boundary_motion_distance_px": 11.07469642162323,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.14723106360800628,
+      "avg_boundary_motion_distance_px": 1.082503792643547,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.9278684780975979,
+      "avg_boundary_motion_distance_px": 1.080725821852684,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 1.371136976805362,
+      "avg_boundary_motion_distance_px": 1.0718628019094467,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 1.813610921587389,
+      "avg_boundary_motion_distance_px": 1.0958930164575578,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 9.347667548110843,
+      "avg_boundary_motion_distance_px": 1.134605097770691,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 27.81744267225445,
+      "avg_boundary_motion_distance_px": 1.1613317668437957,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04164947617460011,
+      "avg_boundary_motion_distance_px": 5.931582140922546,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04656807078961628,
+      "avg_boundary_motion_distance_px": 6.841914463043213,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08627487548318655,
+      "avg_boundary_motion_distance_px": 6.8352127313613895,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10584349199087528,
+      "avg_boundary_motion_distance_px": 5.590054392814636,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07889696982107905,
+      "avg_boundary_motion_distance_px": 8.438045704364777,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.036402627074916385,
+      "avg_boundary_motion_distance_px": 9.521298336982728,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0468573349954212,
+      "avg_boundary_motion_distance_px": 7.50260488986969,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04333841115337169,
+      "avg_boundary_motion_distance_px": 7.337906348705292,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08420922066211466,
+      "avg_boundary_motion_distance_px": 6.912498900294304,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10759031780246678,
+      "avg_boundary_motion_distance_px": 7.08624786734581,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09118099223574697,
+      "avg_boundary_motion_distance_px": 6.02708323597908,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04945760106103201,
+      "avg_boundary_motion_distance_px": 14.471610543131828,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.031286472182222955,
+      "avg_boundary_motion_distance_px": 8.871260476112365,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05070368919444383,
+      "avg_boundary_motion_distance_px": 10.044101190567016,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0772459896387367,
+      "avg_boundary_motion_distance_px": 9.789825940132141,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10437190690930256,
+      "avg_boundary_motion_distance_px": 9.210855865478516,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08775655992398915,
+      "avg_boundary_motion_distance_px": 11.46759774684906,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.02671222023474763,
+      "avg_boundary_motion_distance_px": 11.215296053886414,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.052464485511837966,
+      "avg_boundary_motion_distance_px": 8.783459874987603,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.059031702576474485,
+      "avg_boundary_motion_distance_px": 10.155402863025666,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0810944509351157,
+      "avg_boundary_motion_distance_px": 10.25512499511242,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10641369713416629,
+      "avg_boundary_motion_distance_px": 8.798925739526748,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10018523853332054,
+      "avg_boundary_motion_distance_px": 13.572470819950103,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R39 a030",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0803367103201409,
+      "avg_boundary_motion_distance_px": 14.974476325511933,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05081309322844514,
+      "avg_boundary_motion_distance_px": 6.112144602835178,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05678769139796971,
+      "avg_boundary_motion_distance_px": 7.15785035341978,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10605004507939242,
+      "avg_boundary_motion_distance_px": 7.534498056769371,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1248807868364602,
+      "avg_boundary_motion_distance_px": 5.371108376979828,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08770456351835934,
+      "avg_boundary_motion_distance_px": 8.147774952650071,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04401638819486983,
+      "avg_boundary_motion_distance_px": 10.61832703948021,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0324247009245917,
+      "avg_boundary_motion_distance_px": 7.971501266956329,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03898012952209823,
+      "avg_boundary_motion_distance_px": 8.313143444061279,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.061111239343801214,
+      "avg_boundary_motion_distance_px": 7.9998558282852175,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07904203546167633,
+      "avg_boundary_motion_distance_px": 7.764907860755921,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0688775894654523,
+      "avg_boundary_motion_distance_px": 8.077684271335603,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03106460223117007,
+      "avg_boundary_motion_distance_px": 9.742262363433838,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 1.386402057501998,
+      "avg_boundary_motion_distance_px": 0.9897901862859726,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 2.848157423553277,
+      "avg_boundary_motion_distance_px": 0.9427964746952057,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.14022493516487972,
+      "avg_boundary_motion_distance_px": 0.9714047014713287,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 3.3908067352716778,
+      "avg_boundary_motion_distance_px": 1.0350668221712112,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 13.735045253311034,
+      "avg_boundary_motion_distance_px": 1.0273206502199173,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 34.570174274710915,
+      "avg_boundary_motion_distance_px": 1.0675321787595748,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.037983895866450484,
+      "avg_boundary_motion_distance_px": 5.566381430625915,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04009987063025161,
+      "avg_boundary_motion_distance_px": 6.506117987632751,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06840850613580138,
+      "avg_boundary_motion_distance_px": 6.507152247428894,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09301501337654353,
+      "avg_boundary_motion_distance_px": 5.240685391426086,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07206084792869702,
+      "avg_boundary_motion_distance_px": 8.177912545204162,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04067648307177354,
+      "avg_boundary_motion_distance_px": 9.24658306837082,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.030061438691443444,
+      "avg_boundary_motion_distance_px": 5.2478642731904985,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.044757714565945766,
+      "avg_boundary_motion_distance_px": 5.731123015284538,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06743858184497029,
+      "avg_boundary_motion_distance_px": 4.6893418490886685,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08919984244234162,
+      "avg_boundary_motion_distance_px": 5.019273173809052,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08488649884874758,
+      "avg_boundary_motion_distance_px": 4.248063296079636,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.051475874436912206,
+      "avg_boundary_motion_distance_px": 13.416933834552765,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03210784313099373,
+      "avg_boundary_motion_distance_px": 8.380371832847596,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.052303210133550083,
+      "avg_boundary_motion_distance_px": 9.239107036590577,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06194987777921089,
+      "avg_boundary_motion_distance_px": 9.010209703445435,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08146087888566936,
+      "avg_boundary_motion_distance_px": 8.598839330673218,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08275995205523436,
+      "avg_boundary_motion_distance_px": 10.831741213798523,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.027995753296229393,
+      "avg_boundary_motion_distance_px": 10.318335151672363,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05527577948485439,
+      "avg_boundary_motion_distance_px": 7.970208281278611,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0473555309916738,
+      "avg_boundary_motion_distance_px": 9.286913397908211,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10524262852621344,
+      "avg_boundary_motion_distance_px": 9.556024335324764,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10563840419371458,
+      "avg_boundary_motion_distance_px": 8.101436251401902,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09955123521577855,
+      "avg_boundary_motion_distance_px": 12.518430852890015,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R40 a045",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07324625950799275,
+      "avg_boundary_motion_distance_px": 13.545715093612671,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04184945462995009,
+      "avg_boundary_motion_distance_px": 4.368996703624726,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05414672361136404,
+      "avg_boundary_motion_distance_px": 5.192584571242333,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07494529680154158,
+      "avg_boundary_motion_distance_px": 5.835902190208435,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10164660030887515,
+      "avg_boundary_motion_distance_px": 4.288499289751053,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07140664305343582,
+      "avg_boundary_motion_distance_px": 6.601941354572773,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06915248139760663,
+      "avg_boundary_motion_distance_px": 9.253202578425407,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.023199391395240455,
+      "avg_boundary_motion_distance_px": 6.041964375972748,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.02965822593877749,
+      "avg_boundary_motion_distance_px": 6.25323977470398,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04441298350819804,
+      "avg_boundary_motion_distance_px": 5.932506740093231,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0514526078506547,
+      "avg_boundary_motion_distance_px": 5.490187871456146,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05781305675407254,
+      "avg_boundary_motion_distance_px": 6.118689322471619,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05164986675152988,
+      "avg_boundary_motion_distance_px": 7.828776800632477,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11207867888657559,
+      "avg_boundary_motion_distance_px": 0.9834910988807678,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.9132942402802158,
+      "avg_boundary_motion_distance_px": 0.877440071105957,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.8752224595562568,
+      "avg_boundary_motion_distance_px": 0.9458800941705704,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.9431082444035465,
+      "avg_boundary_motion_distance_px": 1.0387611001729966,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 19.580118422803565,
+      "avg_boundary_motion_distance_px": 1.0149215161800385,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 35.43574883877672,
+      "avg_boundary_motion_distance_px": 1.0187835067510604,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04144727863180891,
+      "avg_boundary_motion_distance_px": 4.901347559690476,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04151504649874109,
+      "avg_boundary_motion_distance_px": 5.7155529201030735,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05493307395245319,
+      "avg_boundary_motion_distance_px": 5.792727154493332,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08160521763543857,
+      "avg_boundary_motion_distance_px": 4.534899377822876,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07127825927951825,
+      "avg_boundary_motion_distance_px": 7.310295724868775,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06820248714932807,
+      "avg_boundary_motion_distance_px": 8.307359743118287,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03884374189436711,
+      "avg_boundary_motion_distance_px": 4.1507258981466295,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05135815080097363,
+      "avg_boundary_motion_distance_px": 3.902386039495468,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05862212521382245,
+      "avg_boundary_motion_distance_px": 3.9847643464803695,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11085871254477475,
+      "avg_boundary_motion_distance_px": 3.676657922565937,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09502034632774459,
+      "avg_boundary_motion_distance_px": 2.8403474360704424,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07343364026461383,
+      "avg_boundary_motion_distance_px": 11.394311887025832,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.023881960875678364,
+      "avg_boundary_motion_distance_px": 5.268109393119812,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04457550981702954,
+      "avg_boundary_motion_distance_px": 6.352914237976075,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04270218715114517,
+      "avg_boundary_motion_distance_px": 6.265189039707184,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.049650719873410756,
+      "avg_boundary_motion_distance_px": 6.051812136173249,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06312603476041688,
+      "avg_boundary_motion_distance_px": 7.573069107532501,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04430195992448618,
+      "avg_boundary_motion_distance_px": 6.819389367103577,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07043105810048811,
+      "avg_boundary_motion_distance_px": 6.132377555966377,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07400394730519075,
+      "avg_boundary_motion_distance_px": 7.49255094230175,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10817208550884505,
+      "avg_boundary_motion_distance_px": 7.866965487599373,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.15457596177401522,
+      "avg_boundary_motion_distance_px": 6.044856540858746,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.4395872636229,
+      "avg_boundary_motion_distance_px": 10.354709124565124,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R41 direct",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.6494199765282079,
+      "avg_boundary_motion_distance_px": 11.70922847390175,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.044174802531907045,
+      "avg_boundary_motion_distance_px": 0.4223588049411774,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.056674573279207704,
+      "avg_boundary_motion_distance_px": 0.7582000210881233,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11667691102112558,
+      "avg_boundary_motion_distance_px": 0.7962281689047813,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.15618565329001893,
+      "avg_boundary_motion_distance_px": 0.5646538704633712,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10071283402944446,
+      "avg_boundary_motion_distance_px": 2.6087508141994475,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.030793295943937267,
+      "avg_boundary_motion_distance_px": 6.035492449998856,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03791805056466636,
+      "avg_boundary_motion_distance_px": 5.21656574010849,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.053350797915673875,
+      "avg_boundary_motion_distance_px": 5.465746593475342,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09046081830892021,
+      "avg_boundary_motion_distance_px": 4.743549406528473,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10807950020566896,
+      "avg_boundary_motion_distance_px": 4.671902322769165,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0910228035551201,
+      "avg_boundary_motion_distance_px": 5.0409901440143585,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.028506776761014967,
+      "avg_boundary_motion_distance_px": 6.9436563372612,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.13653056345055312,
+      "avg_boundary_motion_distance_px": 0.43760305531322957,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.12159884214035836,
+      "avg_boundary_motion_distance_px": 0.30265389680862426,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.20732313695667273,
+      "avg_boundary_motion_distance_px": 0.24641149565577508,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 1.08814581633225,
+      "avg_boundary_motion_distance_px": 0.44051229655742646,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 9.708971110976544,
+      "avg_boundary_motion_distance_px": 0.43103779684752225,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 5.484094685733567,
+      "avg_boundary_motion_distance_px": 0.4253955014050007,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.039991945492384474,
+      "avg_boundary_motion_distance_px": 0.761243711411953,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0548871823026594,
+      "avg_boundary_motion_distance_px": 1.0099215134978294,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08331674671334362,
+      "avg_boundary_motion_distance_px": 0.9641412287950516,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1029252700399671,
+      "avg_boundary_motion_distance_px": 0.7562487468123436,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07265595304329914,
+      "avg_boundary_motion_distance_px": 2.4259311258792877,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.035997600685049,
+      "avg_boundary_motion_distance_px": 4.07572630494833,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.045541399195044394,
+      "avg_boundary_motion_distance_px": 7.7718977451324465,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05283559360561504,
+      "avg_boundary_motion_distance_px": 6.9004380136728285,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09069187268334063,
+      "avg_boundary_motion_distance_px": 4.982128684222698,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.12778123611277864,
+      "avg_boundary_motion_distance_px": 5.367657735943794,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09213685353842288,
+      "avg_boundary_motion_distance_px": 5.212979443371296,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.048866115886894254,
+      "avg_boundary_motion_distance_px": 13.805735866725446,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04129805795524588,
+      "avg_boundary_motion_distance_px": 6.558592486381531,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05104010889167706,
+      "avg_boundary_motion_distance_px": 6.781632685661316,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07737008168476776,
+      "avg_boundary_motion_distance_px": 5.984300851821899,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11368501435202896,
+      "avg_boundary_motion_distance_px": 5.751669704914093,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10032974955982996,
+      "avg_boundary_motion_distance_px": 7.623883152008057,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.027103594719268587,
+      "avg_boundary_motion_distance_px": 7.449053335189819,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04466788059461442,
+      "avg_boundary_motion_distance_px": 0.9083289675414562,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05622663634403493,
+      "avg_boundary_motion_distance_px": 1.0115963339805603,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07756771861316751,
+      "avg_boundary_motion_distance_px": 1.3381895408034326,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.13037523656421154,
+      "avg_boundary_motion_distance_px": 1.4411426492035389,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08198141916642342,
+      "avg_boundary_motion_distance_px": 3.9066377967596053,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R42 best",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0484194402232606,
+      "avg_boundary_motion_distance_px": 5.908395613729954,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06296939979157605,
+      "avg_boundary_motion_distance_px": 0.6177023708820343,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06259331192810122,
+      "avg_boundary_motion_distance_px": 0.9010760799050331,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1306781641974475,
+      "avg_boundary_motion_distance_px": 0.8593599550426007,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.16186481383272924,
+      "avg_boundary_motion_distance_px": 0.6628403350710869,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1308548064639544,
+      "avg_boundary_motion_distance_px": 2.7334732323884965,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.055439203074736446,
+      "avg_boundary_motion_distance_px": 6.040908141434192,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.035544056950448745,
+      "avg_boundary_motion_distance_px": 6.5168702602386475,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.049389222092280215,
+      "avg_boundary_motion_distance_px": 6.870610415935516,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09118715478277653,
+      "avg_boundary_motion_distance_px": 6.68478045463562,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11066445526068451,
+      "avg_boundary_motion_distance_px": 6.446746027469635,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0884224345459177,
+      "avg_boundary_motion_distance_px": 6.690703725814819,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0263950677960084,
+      "avg_boundary_motion_distance_px": 8.54364995956421,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 1.3878938272841197,
+      "avg_boundary_motion_distance_px": 0.6211203280836344,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.9267746570196345,
+      "avg_boundary_motion_distance_px": 0.4663606628775597,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.9294107453239683,
+      "avg_boundary_motion_distance_px": 0.4527056306600571,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.23427476146808918,
+      "avg_boundary_motion_distance_px": 0.581297567486763,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 7.4889228748979235,
+      "avg_boundary_motion_distance_px": 0.5959935151040554,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 8.677080940753424,
+      "avg_boundary_motion_distance_px": 0.6417164776474238,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04258671324384589,
+      "avg_boundary_motion_distance_px": 1.0073866829276086,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.048403561691715766,
+      "avg_boundary_motion_distance_px": 1.3038442760705948,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07678777365133703,
+      "avg_boundary_motion_distance_px": 1.329177138209343,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07462320793323261,
+      "avg_boundary_motion_distance_px": 0.9981774821877479,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07299683463302899,
+      "avg_boundary_motion_distance_px": 2.8083514302968977,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03740901776265572,
+      "avg_boundary_motion_distance_px": 4.335546851158142,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04148257934939724,
+      "avg_boundary_motion_distance_px": 5.291972824931145,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04460593309350135,
+      "avg_boundary_motion_distance_px": 4.872332981228828,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10017786761507128,
+      "avg_boundary_motion_distance_px": 4.059201972931623,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11963277512191646,
+      "avg_boundary_motion_distance_px": 4.650134438276291,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09959749778306706,
+      "avg_boundary_motion_distance_px": 4.396146266162395,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04040359237690962,
+      "avg_boundary_motion_distance_px": 12.391750526428222,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.030704270703851122,
+      "avg_boundary_motion_distance_px": 6.052873635292054,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05137232970633014,
+      "avg_boundary_motion_distance_px": 6.7637317180633545,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08424543093611603,
+      "avg_boundary_motion_distance_px": 6.721770703792572,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11693720745237646,
+      "avg_boundary_motion_distance_px": 6.5805614471435545,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09221826287005198,
+      "avg_boundary_motion_distance_px": 8.054054069519044,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.024205730396094822,
+      "avg_boundary_motion_distance_px": 7.76775541305542,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06220046845752915,
+      "avg_boundary_motion_distance_px": 1.3735601127147674,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04843670568016771,
+      "avg_boundary_motion_distance_px": 1.703337899595499,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08738786010765515,
+      "avg_boundary_motion_distance_px": 1.6983609423041344,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.12850790963435846,
+      "avg_boundary_motion_distance_px": 1.7335001289844514,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08572039446555826,
+      "avg_boundary_motion_distance_px": 4.442485851049423,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from COMBO",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.053640724411973636,
+      "avg_boundary_motion_distance_px": 6.876993142068386,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07095748703472178,
+      "avg_boundary_motion_distance_px": 0.6388457968831063,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06449800057676576,
+      "avg_boundary_motion_distance_px": 0.7830965526401996,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.13828922814524724,
+      "avg_boundary_motion_distance_px": 0.8980968162417412,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.16476767726274183,
+      "avg_boundary_motion_distance_px": 0.6804144904017448,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.13243587568053222,
+      "avg_boundary_motion_distance_px": 2.636432162672281,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03421466494119099,
+      "avg_boundary_motion_distance_px": 5.9994076192379,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.033449714566898166,
+      "avg_boundary_motion_distance_px": 6.017722856998444,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05368734501574429,
+      "avg_boundary_motion_distance_px": 6.193595290184021,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09322950150181933,
+      "avg_boundary_motion_distance_px": 5.624814176559449,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11594648016701437,
+      "avg_boundary_motion_distance_px": 5.80916690826416,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08916801404463201,
+      "avg_boundary_motion_distance_px": 5.6852382004261015,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.027042172575469463,
+      "avg_boundary_motion_distance_px": 8.141055095195771,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 1.3983569432922116,
+      "avg_boundary_motion_distance_px": 0.5958235338330269,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.14878112811355496,
+      "avg_boundary_motion_distance_px": 0.4455931276082993,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.17766652771336824,
+      "avg_boundary_motion_distance_px": 0.4309442713856697,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.9443039130087542,
+      "avg_boundary_motion_distance_px": 0.5538113437592983,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 11.915846003089513,
+      "avg_boundary_motion_distance_px": 0.5709036327898502,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 20.845647547072254,
+      "avg_boundary_motion_distance_px": 0.5932330422103405,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04583176489123488,
+      "avg_boundary_motion_distance_px": 0.9478510186076164,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.058338288712380046,
+      "avg_boundary_motion_distance_px": 1.2407020017504693,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08501248564167849,
+      "avg_boundary_motion_distance_px": 1.3141992062330246,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0979731359976669,
+      "avg_boundary_motion_distance_px": 0.8957792609930039,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07335654954308495,
+      "avg_boundary_motion_distance_px": 2.678846296668053,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03183983871777388,
+      "avg_boundary_motion_distance_px": 4.244714668393135,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.048670411049129676,
+      "avg_boundary_motion_distance_px": 6.336319632828236,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05499351281144914,
+      "avg_boundary_motion_distance_px": 5.737981395423413,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09173040750675612,
+      "avg_boundary_motion_distance_px": 4.978257986716926,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11501415041253435,
+      "avg_boundary_motion_distance_px": 6.1648412078619,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09503466130770642,
+      "avg_boundary_motion_distance_px": 4.864458180963993,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05688782202147373,
+      "avg_boundary_motion_distance_px": 13.782283473014832,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03233738224089538,
+      "avg_boundary_motion_distance_px": 5.121990609169006,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05623620179245213,
+      "avg_boundary_motion_distance_px": 5.6226636409759525,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08713861103994035,
+      "avg_boundary_motion_distance_px": 5.018936342000961,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11854800112144837,
+      "avg_boundary_motion_distance_px": 5.328810048103333,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09237653704921692,
+      "avg_boundary_motion_distance_px": 7.3467813372612,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.026727961556318625,
+      "avg_boundary_motion_distance_px": 7.051670336723328,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05405222316185576,
+      "avg_boundary_motion_distance_px": 1.4601609461009502,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05269299102758327,
+      "avg_boundary_motion_distance_px": 1.7794187568128108,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08784952404337172,
+      "avg_boundary_motion_distance_px": 2.332111755013466,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10942441936752108,
+      "avg_boundary_motion_distance_px": 1.6826795160770416,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09754416983393144,
+      "avg_boundary_motion_distance_px": 4.236128741502762,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R40",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.049015722081361734,
+      "avg_boundary_motion_distance_px": 6.326397241652012,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04316682372200835,
+      "avg_boundary_motion_distance_px": 0.4086608462035656,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05609710182831805,
+      "avg_boundary_motion_distance_px": 0.732053117454052,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10975425486179284,
+      "avg_boundary_motion_distance_px": 0.7056271716952324,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.15026011713480164,
+      "avg_boundary_motion_distance_px": 0.5519797965884209,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09464808403079851,
+      "avg_boundary_motion_distance_px": 2.5759751230478285,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.031058724395575173,
+      "avg_boundary_motion_distance_px": 6.142374111711979,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03577814687712001,
+      "avg_boundary_motion_distance_px": 5.334727293252945,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05120271443160011,
+      "avg_boundary_motion_distance_px": 5.395175170898438,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09502409269630584,
+      "avg_boundary_motion_distance_px": 4.699701392650605,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10813200405091057,
+      "avg_boundary_motion_distance_px": 4.490396642684937,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08970719684305278,
+      "avg_boundary_motion_distance_px": 5.213212275505066,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.030057340217128425,
+      "avg_boundary_motion_distance_px": 7.075800812244415,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.14146927534548168,
+      "avg_boundary_motion_distance_px": 0.4563827032689005,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.12485492178469706,
+      "avg_boundary_motion_distance_px": 0.30397289684042333,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.20735497833423677,
+      "avg_boundary_motion_distance_px": 0.2718404080718756,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.28681405276379957,
+      "avg_boundary_motion_distance_px": 0.4753551661968231,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 9.710395986257296,
+      "avg_boundary_motion_distance_px": 0.44758938569575546,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 3.0033037226039196,
+      "avg_boundary_motion_distance_px": 0.4290300939232111,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04022859772710235,
+      "avg_boundary_motion_distance_px": 0.7406243331730366,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05294735331828591,
+      "avg_boundary_motion_distance_px": 0.940726711601019,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07361566347253526,
+      "avg_boundary_motion_distance_px": 0.9297117158770561,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09449873814603896,
+      "avg_boundary_motion_distance_px": 0.7198981657624245,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0674112400294961,
+      "avg_boundary_motion_distance_px": 2.3903198577463627,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03664314079254215,
+      "avg_boundary_motion_distance_px": 4.060340864956379,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04580159384958627,
+      "avg_boundary_motion_distance_px": 8.023715856671334,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0507901580476134,
+      "avg_boundary_motion_distance_px": 7.140027807652951,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09059965804376797,
+      "avg_boundary_motion_distance_px": 5.104857513308525,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1263566867854405,
+      "avg_boundary_motion_distance_px": 5.957456167042255,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08860298615391099,
+      "avg_boundary_motion_distance_px": 5.662326143682003,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.049934015381412775,
+      "avg_boundary_motion_distance_px": 13.638152262568473,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.037201888706741064,
+      "avg_boundary_motion_distance_px": 6.746324443817139,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0487662051230145,
+      "avg_boundary_motion_distance_px": 6.795313024520874,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07970436897722552,
+      "avg_boundary_motion_distance_px": 5.936662423610687,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10977060041538203,
+      "avg_boundary_motion_distance_px": 6.128460502624511,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09768953091509094,
+      "avg_boundary_motion_distance_px": 8.09498975276947,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.024630057825474713,
+      "avg_boundary_motion_distance_px": 7.819319868087769,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04616548470299914,
+      "avg_boundary_motion_distance_px": 0.8427476145327091,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05249960516297579,
+      "avg_boundary_motion_distance_px": 0.8582506097853184,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07568009457246598,
+      "avg_boundary_motion_distance_px": 1.1264260783791542,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.13098053214061037,
+      "avg_boundary_motion_distance_px": 1.4306906268000603,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07944311413031094,
+      "avg_boundary_motion_distance_px": 3.8473543897271156,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44B from R42",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04682321697359124,
+      "avg_boundary_motion_distance_px": 5.915266928076744,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04032304804919171,
+      "avg_boundary_motion_distance_px": 0.4183842785656452,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.055295107990332146,
+      "avg_boundary_motion_distance_px": 0.741383246332407,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1075295162626646,
+      "avg_boundary_motion_distance_px": 0.7326297156512738,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.15180579441107744,
+      "avg_boundary_motion_distance_px": 0.5703463643789292,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09088173315711973,
+      "avg_boundary_motion_distance_px": 2.5754700019955634,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03183342893725179,
+      "avg_boundary_motion_distance_px": 6.177341959625482,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03425648278295463,
+      "avg_boundary_motion_distance_px": 5.285193389654159,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05115253005162164,
+      "avg_boundary_motion_distance_px": 5.318648457527161,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09294901488103684,
+      "avg_boundary_motion_distance_px": 4.669314885139466,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10720669757052678,
+      "avg_boundary_motion_distance_px": 4.639772289991379,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0885982146619452,
+      "avg_boundary_motion_distance_px": 5.179772663116455,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.02918324084798769,
+      "avg_boundary_motion_distance_px": 6.972499024868012,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.13026432401838717,
+      "avg_boundary_motion_distance_px": 0.44423118270933626,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.12850008294551457,
+      "avg_boundary_motion_distance_px": 0.29670108305290344,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.20752643012854438,
+      "avg_boundary_motion_distance_px": 0.2548050057142973,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 1.099221305600617,
+      "avg_boundary_motion_distance_px": 0.45225016921758654,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 9.72579632076414,
+      "avg_boundary_motion_distance_px": 0.4343886537477374,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 6.778819154112258,
+      "avg_boundary_motion_distance_px": 0.42060562074184416,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03804804968026809,
+      "avg_boundary_motion_distance_px": 0.7173164822161198,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05302930137682159,
+      "avg_boundary_motion_distance_px": 0.9866381004452706,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07638706568205286,
+      "avg_boundary_motion_distance_px": 0.8831801474094391,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09695582323288778,
+      "avg_boundary_motion_distance_px": 0.7065483033657074,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06603675746739933,
+      "avg_boundary_motion_distance_px": 2.431404388695955,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0370798019138814,
+      "avg_boundary_motion_distance_px": 4.030431029945612,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.047830815708489925,
+      "avg_boundary_motion_distance_px": 7.926048982143402,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05259131874276165,
+      "avg_boundary_motion_distance_px": 7.3645265877246855,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09281918887814254,
+      "avg_boundary_motion_distance_px": 5.106546398997307,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.12205017082205186,
+      "avg_boundary_motion_distance_px": 5.885667508095503,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08514395707032912,
+      "avg_boundary_motion_distance_px": 5.8528165996074675,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05027887091512625,
+      "avg_boundary_motion_distance_px": 14.194031757116317,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03784787912330758,
+      "avg_boundary_motion_distance_px": 6.694529515504837,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.049804083210709636,
+      "avg_boundary_motion_distance_px": 6.722637820243835,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07965577681959511,
+      "avg_boundary_motion_distance_px": 5.683979743719101,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10969902647612725,
+      "avg_boundary_motion_distance_px": 6.106243890523911,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09472927494488353,
+      "avg_boundary_motion_distance_px": 8.310547471046448,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.023254681073311866,
+      "avg_boundary_motion_distance_px": 7.669263505935669,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.045376896676849694,
+      "avg_boundary_motion_distance_px": 0.8381825029850006,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05193313764410782,
+      "avg_boundary_motion_distance_px": 0.8916735328733921,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07620369258751206,
+      "avg_boundary_motion_distance_px": 1.15722563713789,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1324363717191725,
+      "avg_boundary_motion_distance_px": 1.431294997036457,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07857439008603173,
+      "avg_boundary_motion_distance_px": 3.831649088859558,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C family holdout",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04856962894450653,
+      "avg_boundary_motion_distance_px": 5.830583073198795,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04096066571922431,
+      "avg_boundary_motion_distance_px": 0.4849833033978939,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.055119446389189496,
+      "avg_boundary_motion_distance_px": 0.7559192426502704,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10826464204889526,
+      "avg_boundary_motion_distance_px": 0.7416576460003853,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.15085922929005421,
+      "avg_boundary_motion_distance_px": 0.6240622162818908,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09082718069267706,
+      "avg_boundary_motion_distance_px": 2.5834822960197927,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03180895388463847,
+      "avg_boundary_motion_distance_px": 6.2188683450222015,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0344228599348803,
+      "avg_boundary_motion_distance_px": 5.341723668575287,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05231512582180091,
+      "avg_boundary_motion_distance_px": 5.387849283218384,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09426351709398308,
+      "avg_boundary_motion_distance_px": 4.69419252872467,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10560994720081877,
+      "avg_boundary_motion_distance_px": 4.534217017889023,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08674569657485155,
+      "avg_boundary_motion_distance_px": 5.096285945177078,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.02915680529763976,
+      "avg_boundary_motion_distance_px": 7.0543144822120665,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.12370589488442194,
+      "avg_boundary_motion_distance_px": 0.44826232055202125,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.13638510727950115,
+      "avg_boundary_motion_distance_px": 0.2991304645314813,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.20852252584052047,
+      "avg_boundary_motion_distance_px": 0.2564543290063739,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.2783739257933297,
+      "avg_boundary_motion_distance_px": 0.45752411484718325,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 9.729306561901648,
+      "avg_boundary_motion_distance_px": 0.4368042664602399,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 4.292603087767642,
+      "avg_boundary_motion_distance_px": 0.4231605617329478,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0380047517237267,
+      "avg_boundary_motion_distance_px": 0.7526167228817939,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05218828593578615,
+      "avg_boundary_motion_distance_px": 1.0027852959930896,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07693835712433048,
+      "avg_boundary_motion_distance_px": 0.9029751256108284,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09881243687782754,
+      "avg_boundary_motion_distance_px": 0.7386500731110572,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06423607430259345,
+      "avg_boundary_motion_distance_px": 2.444453301280737,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03652946137389858,
+      "avg_boundary_motion_distance_px": 4.096923848986625,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05062645323435725,
+      "avg_boundary_motion_distance_px": 7.811273732781411,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04680897052782014,
+      "avg_boundary_motion_distance_px": 7.415852684527636,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09213892715714192,
+      "avg_boundary_motion_distance_px": 5.1018883600831035,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.12034447350217266,
+      "avg_boundary_motion_distance_px": 5.7471929550170895,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08610795748010275,
+      "avg_boundary_motion_distance_px": 5.864420288801194,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0472422390185145,
+      "avg_boundary_motion_distance_px": 14.188462883234024,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.037578950359676226,
+      "avg_boundary_motion_distance_px": 6.625978535413742,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.047436108795025196,
+      "avg_boundary_motion_distance_px": 6.87261917591095,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08055972541299514,
+      "avg_boundary_motion_distance_px": 5.674808752536774,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11034275166631961,
+      "avg_boundary_motion_distance_px": 5.984398114681244,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0948909521510251,
+      "avg_boundary_motion_distance_px": 8.22601016163826,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.022190073619701055,
+      "avg_boundary_motion_distance_px": 7.597454476356506,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04456896511093424,
+      "avg_boundary_motion_distance_px": 0.8881404064595699,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05167786265278148,
+      "avg_boundary_motion_distance_px": 0.8953479781746865,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07543975060677348,
+      "avg_boundary_motion_distance_px": 1.2070691630244255,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1329456971791208,
+      "avg_boundary_motion_distance_px": 1.43920306712389,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08112090472800212,
+      "avg_boundary_motion_distance_px": 3.856541134417057,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C low motion",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.047079616263489665,
+      "avg_boundary_motion_distance_px": 5.902871970832348,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "curves",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04151114537349901,
+      "avg_boundary_motion_distance_px": 0.41381855085492136,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "curves",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0563492431616215,
+      "avg_boundary_motion_distance_px": 0.702405323088169,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "curves",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10996323537421786,
+      "avg_boundary_motion_distance_px": 0.688907828181982,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "curves",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.15355073767040536,
+      "avg_boundary_motion_distance_px": 0.5354040786623955,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "curves",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09169955874520254,
+      "avg_boundary_motion_distance_px": 2.5557611621916294,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "curves",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03253214659164589,
+      "avg_boundary_motion_distance_px": 6.142634944617749,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "defects",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03503081394680981,
+      "avg_boundary_motion_distance_px": 5.29571236371994,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "defects",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.052600748076464754,
+      "avg_boundary_motion_distance_px": 5.352818500995636,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "defects",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09172510987716878,
+      "avg_boundary_motion_distance_px": 4.686833024024963,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "defects",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10692638131376449,
+      "avg_boundary_motion_distance_px": 4.601985955238343,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "defects",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08864625790749048,
+      "avg_boundary_motion_distance_px": 5.088078385591507,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "defects",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.02868089433145593,
+      "avg_boundary_motion_distance_px": 7.0559885740280155,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "grids",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1322724231428692,
+      "avg_boundary_motion_distance_px": 0.44819902200251815,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "grids",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.9341931236680459,
+      "avg_boundary_motion_distance_px": 0.30045393761247396,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "grids",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.20210327551515647,
+      "avg_boundary_motion_distance_px": 0.25270568784326314,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "grids",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.2856603245409295,
+      "avg_boundary_motion_distance_px": 0.45370472967624664,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "grids",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 9.732067949661824,
+      "avg_boundary_motion_distance_px": 0.43543649688363073,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "grids",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 3.0056285731476637,
+      "avg_boundary_motion_distance_px": 0.4202315090224147,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "junctions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.039151103816326464,
+      "avg_boundary_motion_distance_px": 0.7155859619379044,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "junctions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05298658107748426,
+      "avg_boundary_motion_distance_px": 0.9577866487205029,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "junctions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07824706169781775,
+      "avg_boundary_motion_distance_px": 0.8781327843666077,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "junctions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.1001829210766797,
+      "avg_boundary_motion_distance_px": 0.7170106500387192,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "junctions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.06644048422432923,
+      "avg_boundary_motion_distance_px": 2.4309367977082728,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "junctions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03823498168369298,
+      "avg_boundary_motion_distance_px": 4.069888084381819,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "large_regions",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.05194074189459026,
+      "avg_boundary_motion_distance_px": 7.857660380005837,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "large_regions",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04953438345396945,
+      "avg_boundary_motion_distance_px": 7.269161128997803,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "large_regions",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09197595743432657,
+      "avg_boundary_motion_distance_px": 5.216250116378069,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "large_regions",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.11861490359411393,
+      "avg_boundary_motion_distance_px": 5.998139595985412,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "large_regions",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09266671931530279,
+      "avg_boundary_motion_distance_px": 5.862912794947624,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "large_regions",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.049355854417930466,
+      "avg_boundary_motion_distance_px": 14.054598405957222,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.03986385327111506,
+      "avg_boundary_motion_distance_px": 6.700255841016769,
+      "avg_grid_phase_motion_error_px": 0.42000000000000004
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.04902240172030925,
+      "avg_boundary_motion_distance_px": 6.517951112985611,
+      "avg_grid_phase_motion_error_px": 0.08
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.08097678639010186,
+      "avg_boundary_motion_distance_px": 5.68890135884285,
+      "avg_grid_phase_motion_error_px": 0.24
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "mixed_fields",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.10818213267502792,
+      "avg_boundary_motion_distance_px": 6.05277892947197,
+      "avg_grid_phase_motion_error_px": 0.4
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "mixed_fields",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.09470492820661247,
+      "avg_boundary_motion_distance_px": 8.19707545042038,
+      "avg_grid_phase_motion_error_px": 0.30000000000000004
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "mixed_fields",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.024842534766497525,
+      "avg_boundary_motion_distance_px": 7.6394984245300295,
+      "avg_grid_phase_motion_error_px": 0.0
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.08,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.046091095476993034,
+      "avg_boundary_motion_distance_px": 0.8353284895420074,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.16,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.054266091834195965,
+      "avg_boundary_motion_distance_px": 0.8691927321255207,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.4,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.07687279881466264,
+      "avg_boundary_motion_distance_px": 1.14115956351161,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "thin_lines",
+      "target_position_px": 0.8,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.13147385733942385,
+      "avg_boundary_motion_distance_px": 1.4302393704652787,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "thin_lines",
+      "target_position_px": 2.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.0785147243879612,
+      "avg_boundary_motion_distance_px": 3.8245213255286217,
+      "avg_grid_phase_motion_error_px": NaN
+    },
+    {
+      "model": "R44C static heavy",
+      "feature_family": "thin_lines",
+      "target_position_px": 8.0,
+      "pair_count": 20,
+      "avg_motion_vector_error_px": 0.050360324782208685,
+      "avg_boundary_motion_distance_px": 5.8744340419769285,
+      "avg_grid_phase_motion_error_px": NaN
+    }
+  ],
+  "best_by_family": [
+    {
+      "feature_family": "curves",
+      "metric": "motion_vector_error_px",
+      "best_model": "R41 direct",
+      "best_value": 0.06885786663379555,
+      "second_model": "R40 a045",
+      "second_value": 0.07837542804258278,
+      "gap_to_second": 0.009517561408787234
+    },
+    {
+      "feature_family": "curves",
+      "metric": "boundary_motion_distance_px",
+      "best_model": "R44C static heavy",
+      "best_value": 1.839821981266141,
+      "second_model": "R44B from R42",
+      "second_value": 1.8527783611168465,
+      "gap_to_second": 0.012956379850705524
+    },
+    {
+      "feature_family": "defects",
+      "metric": "motion_vector_error_px",
+      "best_model": "R41 direct",
+      "best_value": 0.04303102203307885,
+      "second_model": "R40 a045",
+      "second_value": 0.05191671615813164,
+      "gap_to_second": 0.008885694125052794
+    },
+    {
+      "feature_family": "defects",
+      "metric": "boundary_motion_distance_px",
+      "best_model": "R44C family holdout",
+      "best_value": 5.344200118382772,
+      "second_model": "R44C static heavy",
+      "second_value": 5.346902800599734,
+      "gap_to_second": 0.0027026822169622378
+    },
+    {
+      "feature_family": "grids",
+      "metric": "motion_vector_error_px",
+      "best_model": "R44B from R42",
+      "best_value": 2.2456988228482384,
+      "second_model": "R44C static heavy",
+      "second_value": 2.381987611612748,
+      "gap_to_second": 0.13628878876450967
+    },
+    {
+      "feature_family": "grids",
+      "metric": "boundary_motion_distance_px",
+      "best_model": "R42 best",
+      "best_value": 0.38060234043126306,
+      "second_model": "R44C family holdout",
+      "second_value": 0.38383028586395085,
+      "gap_to_second": 0.0032279454326877843
+    },
+    {
+      "feature_family": "grids",
+      "metric": "grid_phase_motion_error_px",
+      "best_model": "COMBO",
+      "best_value": 0.24000000000000002,
+      "second_model": "R39 a030",
+      "second_value": 0.24000000000000002,
+      "gap_to_second": 0.0
+    },
+    {
+      "feature_family": "junctions",
+      "metric": "motion_vector_error_px",
+      "best_model": "R40 a045",
+      "best_value": 0.05870743616825293,
+      "second_model": "R44B from COMBO",
+      "second_value": 0.05880118481930267,
+      "gap_to_second": 9.374865104973956e-05
+    },
+    {
+      "feature_family": "junctions",
+      "metric": "boundary_motion_distance_px",
+      "best_model": "R44C family holdout",
+      "best_value": 1.6259197420130174,
+      "second_model": "R44C static heavy",
+      "second_value": 1.628223487858971,
+      "gap_to_second": 0.0023037458459536087
+    },
+    {
+      "feature_family": "large_regions",
+      "metric": "motion_vector_error_px",
+      "best_model": "R40 a045",
+      "best_value": 0.06130332513839349,
+      "second_model": "COMBO",
+      "second_value": 0.06857749981705737,
+      "gap_to_second": 0.007274174678663876
+    },
+    {
+      "feature_family": "large_regions",
+      "metric": "boundary_motion_distance_px",
+      "best_model": "R41 direct",
+      "best_value": 4.991532254964113,
+      "second_model": "R44B from COMBO",
+      "second_value": 5.943589834993085,
+      "gap_to_second": 0.9520575800289715
+    },
+    {
+      "feature_family": "mixed_fields",
+      "metric": "motion_vector_error_px",
+      "best_model": "R41 direct",
+      "best_value": 0.04470639540036115,
+      "second_model": "R40 a045",
+      "second_value": 0.056429585880147966,
+      "gap_to_second": 0.011723190479786816
+    },
+    {
+      "feature_family": "mixed_fields",
+      "metric": "boundary_motion_distance_px",
+      "best_model": "R44B from R40",
+      "best_value": 5.915142052372297,
+      "second_model": "R41 direct",
+      "second_value": 6.3884138802687325,
+      "gap_to_second": 0.4732718278964354
+    },
+    {
+      "feature_family": "mixed_fields",
+      "metric": "grid_phase_motion_error_px",
+      "best_model": "COMBO",
+      "best_value": 0.24000000000000002,
+      "second_model": "R39 a030",
+      "second_value": 0.24000000000000002,
+      "gap_to_second": 0.0
+    },
+    {
+      "feature_family": "thin_lines",
+      "metric": "motion_vector_error_px",
+      "best_model": "R44B from R42",
+      "best_value": 0.0719320079471589,
+      "second_model": "R44C low motion",
+      "second_value": 0.07213879942351696,
+      "gap_to_second": 0.00020679147635806194
+    },
+    {
+      "feature_family": "thin_lines",
+      "metric": "boundary_motion_distance_px",
+      "best_model": "R44C static heavy",
+      "best_value": 2.3291459205249945,
+      "second_model": "R44C family holdout",
+      "second_value": 2.330101472015182,
+      "gap_to_second": 0.0009555514901875561
+    }
+  ],
+  "metric_discrimination": [
+    {
+      "feature_family": "curves",
+      "metric": "motion_vector_error_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 0.06885786663379555,
+      "max_value": 0.10086048894019997
+    },
+    {
+      "feature_family": "curves",
+      "metric": "boundary_motion_distance_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 1.839821981266141,
+      "max_value": 11.737555266420047
+    },
+    {
+      "feature_family": "curves",
+      "metric": "grid_phase_motion_error_px",
+      "finite_model_count": 0,
+      "unique_value_count": 0,
+      "model_discriminative": false,
+      "min_value": NaN,
+      "max_value": NaN
+    },
+    {
+      "feature_family": "defects",
+      "metric": "motion_vector_error_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 0.04303102203307885,
+      "max_value": 0.0687538713119296
+    },
+    {
+      "feature_family": "defects",
+      "metric": "boundary_motion_distance_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 5.344200118382772,
+      "max_value": 11.170303404331207
+    },
+    {
+      "feature_family": "defects",
+      "metric": "grid_phase_motion_error_px",
+      "finite_model_count": 0,
+      "unique_value_count": 0,
+      "model_discriminative": false,
+      "min_value": NaN,
+      "max_value": NaN
+    },
+    {
+      "feature_family": "grids",
+      "metric": "motion_vector_error_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 2.2456988228482384,
+      "max_value": 9.643261814117812
+    },
+    {
+      "feature_family": "grids",
+      "metric": "boundary_motion_distance_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 0.38060234043126306,
+      "max_value": 1.2314419955015183
+    },
+    {
+      "feature_family": "grids",
+      "metric": "grid_phase_motion_error_px",
+      "finite_model_count": 11,
+      "unique_value_count": 1,
+      "model_discriminative": false,
+      "min_value": 0.24000000000000002,
+      "max_value": 0.24000000000000002
+    },
+    {
+      "feature_family": "junctions",
+      "metric": "motion_vector_error_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 0.05870743616825293,
+      "max_value": 0.06629862458357146
+    },
+    {
+      "feature_family": "junctions",
+      "metric": "boundary_motion_distance_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 1.6259197420130174,
+      "max_value": 7.656793254613876
+    },
+    {
+      "feature_family": "junctions",
+      "metric": "grid_phase_motion_error_px",
+      "finite_model_count": 0,
+      "unique_value_count": 0,
+      "model_discriminative": false,
+      "min_value": NaN,
+      "max_value": NaN
+    },
+    {
+      "feature_family": "large_regions",
+      "metric": "motion_vector_error_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 0.06130332513839349,
+      "max_value": 0.07705516085150824
+    },
+    {
+      "feature_family": "large_regions",
+      "metric": "boundary_motion_distance_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 4.991532254964113,
+      "max_value": 11.329707650343577
+    },
+    {
+      "feature_family": "large_regions",
+      "metric": "grid_phase_motion_error_px",
+      "finite_model_count": 0,
+      "unique_value_count": 0,
+      "model_discriminative": false,
+      "min_value": NaN,
+      "max_value": NaN
+    },
+    {
+      "feature_family": "mixed_fields",
+      "metric": "motion_vector_error_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 0.04470639540036115,
+      "max_value": 0.0688941158000453
+    },
+    {
+      "feature_family": "mixed_fields",
+      "metric": "boundary_motion_distance_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 5.915142052372297,
+      "max_value": 13.794694105784098
+    },
+    {
+      "feature_family": "mixed_fields",
+      "metric": "grid_phase_motion_error_px",
+      "finite_model_count": 11,
+      "unique_value_count": 1,
+      "model_discriminative": false,
+      "min_value": 0.24000000000000002,
+      "max_value": 0.24000000000000002
+    },
+    {
+      "feature_family": "thin_lines",
+      "metric": "motion_vector_error_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 0.0719320079471589,
+      "max_value": 0.24936504880660784
+    },
+    {
+      "feature_family": "thin_lines",
+      "metric": "boundary_motion_distance_px",
+      "finite_model_count": 11,
+      "unique_value_count": 11,
+      "model_discriminative": true,
+      "min_value": 2.3291459205249945,
+      "max_value": 11.87811560233434
+    },
+    {
+      "feature_family": "thin_lines",
+      "metric": "grid_phase_motion_error_px",
+      "finite_model_count": 0,
+      "unique_value_count": 0,
+      "model_discriminative": false,
+      "min_value": NaN,
+      "max_value": NaN
+    }
+  ],
+  "oracle_boundary": {
+    "best_single_model": "R42 best",
+    "best_single_model_boundary_avg_px": 3.672599570351165,
+    "family_oracle_boundary_avg_px": 3.203766344279228,
+    "family_oracle_gain_vs_best_single_pct": 12.765704975212097,
+    "families": [
+      "curves",
+      "defects",
+      "grids",
+      "junctions",
+      "large_regions",
+      "mixed_fields",
+      "thin_lines"
+    ],
+    "model_boundary_averages": [
+      {
+        "model": "COMBO",
+        "boundary_avg_px": 9.828373039904095
+      },
+      {
+        "model": "R39 a030",
+        "boundary_avg_px": 8.101450879658971
+      },
+      {
+        "model": "R40 a045",
+        "boundary_avg_px": 7.090469857731036
+      },
+      {
+        "model": "R41 direct",
+        "boundary_avg_px": 5.5601980089786505
+      },
+      {
+        "model": "R42 best",
+        "boundary_avg_px": 3.672599570351165
+      },
+      {
+        "model": "R44B from COMBO",
+        "boundary_avg_px": 3.908117216062688
+      },
+      {
+        "model": "R44B from R40",
+        "boundary_avg_px": 3.7807661551937817
+      },
+      {
+        "model": "R44B from R42",
+        "boundary_avg_px": 3.7276147159692345
+      },
+      {
+        "model": "R44C family holdout",
+        "boundary_avg_px": 3.7342072632585075
+      },
+      {
+        "model": "R44C low motion",
+        "boundary_avg_px": 3.739924529551839
+      },
+      {
+        "model": "R44C static heavy",
+        "boundary_avg_px": 3.7197733348590276
+      }
+    ]
+  }
+}

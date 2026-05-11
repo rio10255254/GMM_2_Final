@@ -1,0 +1,39 @@
+{
+  "patch_064": {
+    "patch_size": 64,
+    "row_count": 336,
+    "residual_row_count": 288,
+    "patch_count": 48,
+    "base_avg_shape_error": 0.8980850371194697,
+    "oracle_avg_shape_error": 0.19813990567873585,
+    "improvement_pct": 77.93751176233239,
+    "patch_oracle_model_counts": {
+      "R44B from COMBO": 21,
+      "R41 direct": 18,
+      "R44B from R42": 4,
+      "R44B from R40": 4,
+      "R44C static heavy": 1
+    },
+    "by_family": {
+      "large_regions": {
+        "patch_count": 48,
+        "base_avg_shape_error": 0.8980850371194697,
+        "oracle_avg_shape_error": 0.19813990567873585,
+        "improvement_pct": 77.93751176233239,
+        "patch_oracle_model_counts": {
+          "R44B from COMBO": 21,
+          "R41 direct": 18,
+          "R44B from R42": 4,
+          "R44B from R40": 4,
+          "R44C static heavy": 1
+        }
+      }
+    },
+    "cleaning_patches_with_teacher_oracle": 44,
+    "cleaning_clean_mean_reduction_pct": 0.0,
+    "cleaning_clean_better_fraction_pct": 0.0,
+    "cleaning_clean_both_pct": 0.0,
+    "cleaning_avg_mean_error_reduction": -0.10064489215040918,
+    "cleaning_avg_teacher_better_fraction": 0.059652997588100914
+  }
+}

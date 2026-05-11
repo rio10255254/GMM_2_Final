@@ -1,0 +1,12 @@
+# Validation experiment outputs are large and reproducible — do not version control.
+# Keep markdown reports and metadata (manifest.json) which document what was done.
+
+*/outputs/
+
+# Inside outputs/, allow only documentation/metadata to ever sneak back in if someone force-adds:
+!*/outputs/manifest.json
+!*/outputs/L0_noise_floor_report.md
+!*/outputs/**/*.md
+
+# Generic safety net
+*.mat

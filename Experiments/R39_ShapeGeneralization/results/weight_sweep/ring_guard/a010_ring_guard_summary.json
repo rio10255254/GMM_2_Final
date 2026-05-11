@@ -1,0 +1,51 @@
+{
+  "candidate": "a010",
+  "status": "local_ring_guard_complete_external_gmf_pending",
+  "external_gmf_required": true,
+  "external_gmf_note": "Promotion still requires external GMF_score.txt for R39 outputs; this file records local 720-angle ring analysis only.",
+  "combo_reference": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\results\\720angle_analysis\\COMBO\\cross_dataset\\cross_dataset_comparison.json",
+  "datasets": [
+    {
+      "short_name": "pitch1um_y_100",
+      "n_frames": 101,
+      "expected_step_px": 8.0,
+      "r39_input_step_std_y": 9.8446,
+      "r39_internal_step_std_y": 0.1409,
+      "combo_internal_step_std_y": 0.1389,
+      "delta_internal_step_std_y": 0.002,
+      "formal_combo_external_step_std": 0.154515,
+      "r39_outer_residual_mean": 2.284,
+      "combo_outer_residual_mean": 2.1938,
+      "r39_inner_residual_mean": 2.0286,
+      "combo_inner_residual_mean": 1.9751
+    },
+    {
+      "short_name": "pitch0p1um_y_60",
+      "n_frames": 61,
+      "expected_step_px": 0.8,
+      "r39_input_step_std_y": 2.7964,
+      "r39_internal_step_std_y": 0.154,
+      "combo_internal_step_std_y": 0.1509,
+      "delta_internal_step_std_y": 0.0031,
+      "formal_combo_external_step_std": 0.13156,
+      "r39_outer_residual_mean": 2.3961,
+      "combo_outer_residual_mean": 2.3254,
+      "r39_inner_residual_mean": 2.0882,
+      "combo_inner_residual_mean": 2.0783
+    },
+    {
+      "short_name": "pitch0p01um_y_40",
+      "n_frames": 41,
+      "expected_step_px": 0.08,
+      "r39_input_step_std_y": 3.8807,
+      "r39_internal_step_std_y": 0.1184,
+      "combo_internal_step_std_y": 0.1185,
+      "delta_internal_step_std_y": -0.0001,
+      "formal_combo_external_step_std": 0.099891,
+      "r39_outer_residual_mean": 2.4028,
+      "combo_outer_residual_mean": 2.3346,
+      "r39_inner_residual_mean": 2.1404,
+      "combo_inner_residual_mean": 2.135
+    }
+  ]
+}

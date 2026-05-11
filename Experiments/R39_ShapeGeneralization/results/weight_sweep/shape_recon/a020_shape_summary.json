@@ -1,0 +1,59 @@
+{
+  "profile": "shape_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a020",
+  "total_count": 210,
+  "overall_avg_psnr": 24.253842671427506,
+  "overall_avg_ssim": 0.87019114756868,
+  "stages": [
+    {
+      "stage": "stage_01_triangles",
+      "count": 30,
+      "avg_psnr": 23.66304847756915,
+      "avg_ssim": 0.8275964063902695,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a020\\reconstruct_progress_best_tradeoff_in_stage_01_triangles_20260430_121011\\shape_val_unseen_stage_01_triangles_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_02_circles",
+      "count": 30,
+      "avg_psnr": 24.990937731280482,
+      "avg_ssim": 0.9083272169033686,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a020\\reconstruct_progress_best_tradeoff_in_stage_02_circles_20260430_121011\\shape_val_unseen_stage_02_circles_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_03_rectangles",
+      "count": 30,
+      "avg_psnr": 23.217436035425802,
+      "avg_ssim": 0.8318662715454896,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a020\\reconstruct_progress_best_tradeoff_in_stage_03_rectangles_20260430_121011\\shape_val_unseen_stage_03_rectangles_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_04_ellipses",
+      "count": 30,
+      "avg_psnr": 26.64785208622219,
+      "avg_ssim": 0.9391238570213318,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a020\\reconstruct_progress_best_tradeoff_in_stage_04_ellipses_20260430_121011\\shape_val_unseen_stage_04_ellipses_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_05_polygons",
+      "count": 30,
+      "avg_psnr": 24.33884337751226,
+      "avg_ssim": 0.891203694542249,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a020\\reconstruct_progress_best_tradeoff_in_stage_05_polygons_20260430_121011\\shape_val_unseen_stage_05_polygons_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_06_mixed_simple",
+      "count": 30,
+      "avg_psnr": 24.307340084463213,
+      "avg_ssim": 0.855486978093783,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a020\\reconstruct_progress_best_tradeoff_in_stage_06_mixed_simple_20260430_121011\\shape_val_unseen_stage_06_mixed_simple_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_07_mixed_complex",
+      "count": 30,
+      "avg_psnr": 22.61144090751946,
+      "avg_ssim": 0.8377336084842681,
+      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a020\\reconstruct_progress_best_tradeoff_in_stage_07_mixed_complex_20260430_121011\\shape_val_unseen_stage_07_mixed_complex_best_tradeoff.pth"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "best_by_metric": [
+    {
+      "metric": "overall_motion_vector_error_px",
+      "best_model": "R44B from R42",
+      "value": 0.38133009689458236
+    },
+    {
+      "metric": "overall_boundary_motion_distance_px",
+      "best_model": "R42 best",
+      "value": 3.672599570351165
+    },
+    {
+      "metric": "grid_motion_vector_error_px",
+      "best_model": "R44E repair from R44B/R42",
+      "value": 2.241968814910494
+    },
+    {
+      "metric": "grid_boundary_distance_px",
+      "best_model": "R44E repair from R44B/R42",
+      "value": 0.3781806827057153
+    },
+    {
+      "metric": "line_boundary_distance_px",
+      "best_model": "R44C static heavy",
+      "value": 2.3291459205249945
+    },
+    {
+      "metric": "junction_boundary_distance_px",
+      "best_model": "R44E repair from R44B/R42",
+      "value": 1.609239704782764
+    },
+    {
+      "metric": "curve_boundary_distance_px",
+      "best_model": "R44C static heavy",
+      "value": 1.839821981266141
+    },
+    {
+      "metric": "region_boundary_distance_px",
+      "best_model": "R41 direct",
+      "value": 4.991532254964113
+    },
+    {
+      "metric": "defect_boundary_distance_px",
+      "best_model": "R44C family holdout",
+      "value": 5.344200118382772
+    },
+    {
+      "metric": "mixed_boundary_distance_px",
+      "best_model": "R44B from R40",
+      "value": 5.915142052372297
+    }
+  ]
+}

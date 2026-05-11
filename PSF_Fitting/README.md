@@ -77,6 +77,14 @@ PSF_Fitting/
 │   ├── run_report_analysis.py
 │   └── outputs/
 │
+├── PSF_Fitting_Tutorial/               ← 可打包、可從頭跑的 PSF 流程教材
+│   ├── README_TW.md
+│   ├── PSF_full_workflow_tutorial_tw.ipynb
+│   ├── run_tutorial_smoke.py
+│   ├── data/
+│   ├── scripts/
+│   └── outputs/
+│
 ├── PSF_Fitting_ValidationLab/          ← Whole-FOV 修正驗證與歷史比較
 │   ├── README_TW.md
 │   ├── run_validation_lab.ps1
@@ -110,6 +118,8 @@ PSF_Fitting/
   `Deconvolution/`: Wiener deconvolution validation assets and outputs.
 - `PSF_Report_Helper/`：用既有 Whole-FOV 輸出生成報告圖表、表格與繁中草稿。
   `PSF_Report_Helper/`: Report-oriented helper that converts existing Whole-FOV outputs into figures, tables, and Traditional Chinese drafts.
+- `PSF_Fitting_Tutorial/`：可打包、可從頭跑的繁中 notebook 教材，內含小型真實範例資料、GT 與 PSF 基底。
+  `PSF_Fitting_Tutorial/`: Self-contained Traditional Chinese notebook tutorial with packaged sample data, GT, and initial PSF.
 - `PSF_Fitting_ValidationLab/`：Whole-FOV 修正驗證、比較與歷史依據。
   `PSF_Fitting_ValidationLab/`: Validation and historical experiment area for the Whole-FOV fitting fix.
 - `tests/`：本專案自有的 MATLAB / Python 測試與最小 smoke artifacts。
@@ -432,6 +442,23 @@ WholeFOV path is the more important operational workflow.
 - 第三方套件 `bads-1.1.3/` 內建測試不屬於本專案整理範圍，維持原位。
 - 測試執行方式詳見 `tests/README_TW.md`。
 
+### 可打包教材
+
+- `PSF_Fitting_Tutorial/` 提供一份可丟給別人的 notebook 型教材，形式類似課堂 tutorial：一段說明、一段可執行程式、一段圖像結果。
+- 教材自帶 5 張真實範例影像、GT 與初始 PSF，預設不依賴本機正式輸出。
+- 教材會從資料讀取、預先對齊、PSF 擬合、結果視覺化一路跑到反捲積示範。
+- 建議先執行：
+
+```powershell
+python .\PSF_Fitting_Tutorial\run_tutorial_smoke.py
+```
+
+- 再用 Jupyter 開啟：
+
+```powershell
+jupyter notebook .\PSF_Fitting_Tutorial\PSF_full_workflow_tutorial_tw.ipynb
+```
+
 **輸入：**
 
 | 檔案 | 路徑 |
@@ -515,6 +542,7 @@ These are usually environment or path issues rather than fitting-logic issues.
 |------|------|
 | 2025-09-24 | 單張版 (`HDR_fitting_2D.m`) 完成 2D 化 |
 | 2026-03-25 | Whole-FOV 正式主線升級為 refined pre-alignment 版，舊版封存至 `legacy/`，正式輸出維持相容格式 |
+| 2026-04-30 | 更新 `PSF_Fitting_Tutorial/` 為可打包、可從頭跑的 PSF 全流程 notebook 教材 |
 | 2025-10 | WholeFOV 批次版加入 Warm-start、Precompute 優化、Tilt 鎖定 |
 | 2026-03-04 | 路徑全面改為相對路徑，整合至 `d:\GMM_2_Final\PSF_Fitting\`；新增本說明文件 |
 

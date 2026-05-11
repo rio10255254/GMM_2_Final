@@ -381,6 +381,38 @@ class TrainConfig:
     SEQ_MAX_PAIRS: int = 0
     SEQ_MIN_DELTA_THRESHOLD: float = 0.0    # R38v2: skip seq_loss when delta < threshold (0=disabled)
     SEQ_WARMUP_EPOCH: int = 0               # R38v2: skip seq_loss for first N epochs (0=disabled)
+    KD_ENABLE: bool = False
+    KD_COMBO_PATH: str = ""
+    KD_R40_PATH: str = ""
+    KD_WEIGHT_COMBO: float = 0.0
+    KD_WEIGHT_R40: float = 0.0
+    KD_WARMUP_EPOCH: int = 0
+    REGION_KD_ENABLE: bool = False
+    REGION_KD_TEACHER_PATH: str = ""
+    REGION_KD_WEIGHT: float = 0.0
+    REGION_KD_WARMUP_EPOCH: int = 0
+    REGION_KD_BAND_PX: float = 5.0
+    BOUNDARY_GEOM_ENABLE: bool = False
+    BOUNDARY_GEOM_DIR: str = ""
+    BOUNDARY_LOSS_WEIGHT: float = 0.0
+    CENTERLINE_LOSS_WEIGHT: float = 0.0
+    DISTANCE_EDGE_LOSS_WEIGHT: float = 0.0
+    BOUNDARY_LOSS_WARMUP_EPOCH: int = 0
+    BOUNDARY_DISTANCE_SIGMA: float = 2.0
+    BOUNDARY_DISTANCE_CLIP: float = 8.0
+    MOTION_ENABLE: bool = False
+    MOTION_SRC_DIR: str = ""
+    MOTION_LBL_DIR: str = ""
+    MOTION_GEOM_DIR: str = ""
+    MOTION_META_DIR: str = ""
+    MOTION_INCLUDE_SUBDIRS: Tuple[str, ...] = ()
+    MOTION_LOSS_WEIGHT: float = 0.0
+    MOTION_BOUNDARY_WEIGHT: float = 1.0
+    MOTION_RECON_WEIGHT: float = 0.0
+    MOTION_WARMUP_EPOCH: int = 0
+    MOTION_EVERY_N_BATCH: int = 2
+    MOTION_BATCH_SIZE: int = 2
+    MOTION_MAX_PAIRS: int = 0
     EQ_WARMUP_OFF_E: int = 10
     EQ_RAMP_START_E: int = 11
     EQ_RAMP_END_E: int = 30
@@ -918,6 +950,9 @@ class TrainConfig:
 
 
 CFG = TrainConfig()
+KD_TEACHER_COMBO: Optional[nn.Module] = None
+KD_TEACHER_R40: Optional[nn.Module] = None
+REGION_KD_TEACHER: Optional[nn.Module] = None
 
 
 # ============================================================
@@ -978,6 +1013,7 @@ RUN_TS = None
 
 TRAIN_SRC_DIR = os.path.join(SCRIPT_DIR, "..", "Training_Data", "tra_src_ring")
 TRAIN_LBL_DIR = os.path.join(SCRIPT_DIR, "..", "Training_Data", "tra_lbl_ring")
+TRAIN_GEOM_DIR = ""
 
 PROGRESS_DIR = os.path.join(TRAINING_PROGRESS_ROOT, f"training_progress_{RUN_TAG_BASE}")
 PRETRAINED_DIR = os.path.join(PROGRESS_DIR, "weights")
@@ -1123,11 +1159,36 @@ def collect_image_paths(root_dir: str, recursive: bool = True):
     return sorted(paths)
 
 
+DATA_ROLE_RING = 0
+DATA_ROLE_SHAPE = 1
+DATA_ROLE_MICRO = 2
+DATA_ROLE_BOUNDARY = 3
+
+_SHAPE_ROLE_PREFIXES = tuple(f"stage_{i:02d}" for i in range(1, 8))
+_MICRO_ROLE_PREFIXES = tuple(f"stage_{i:02d}" for i in range(29, 34))
+_BOUNDARY_ROLE_PREFIXES = tuple(f"stage_{i:02d}" for i in range(34, 41))
+
+
+def _infer_data_role_from_path(path: str) -> Optional[int]:
+    parts = [part.lower() for part in Path(path).parts]
+    for part in parts:
+        if part == "ring":
+            return DATA_ROLE_RING
+        if part.startswith(_SHAPE_ROLE_PREFIXES):
+            return DATA_ROLE_SHAPE
+        if part.startswith(_MICRO_ROLE_PREFIXES):
+            return DATA_ROLE_MICRO
+        if part.startswith(_BOUNDARY_ROLE_PREFIXES):
+            return DATA_ROLE_BOUNDARY
+    return None
+
+
 class PairedGrayFolder(Dataset):
     def __init__(self, src_dir: str, lbl_dir: str, crop_size: int = 256,
-                 src_paths=None, random_crop: bool = True):
+                 src_paths=None, random_crop: bool = True, geom_dir: str | None = None):
         self.src_dir = os.path.abspath(src_dir)
         self.lbl_dir = os.path.abspath(lbl_dir)
+        self.geom_dir = os.path.abspath(geom_dir) if geom_dir else ""
         if src_paths is None:
             self.src_paths = collect_image_paths(self.src_dir, recursive=True)
         else:
@@ -1140,6 +1201,20 @@ class PairedGrayFolder(Dataset):
         self._pair_cache = OrderedDict()
         if len(self.src_paths) == 0:
             raise RuntimeError(f"No training images found in {self.src_dir}")
+        inferred_roles = [_infer_data_role_from_path(p) for p in self.src_paths]
+        if all(role is None for role in inferred_roles):
+            self.role_ids = None
+        elif any(role is None for role in inferred_roles):
+            examples = [
+                p for p, role in zip(self.src_paths, inferred_roles)
+                if role is None
+            ][:5]
+            raise RuntimeError(
+                "Mixed role-labelled and unlabelled data paths are not supported. "
+                f"Unlabelled examples: {examples}"
+            )
+        else:
+            self.role_ids = [int(role) for role in inferred_roles]
 
     def __len__(self):
         return len(self.src_paths)
@@ -1185,19 +1260,56 @@ class PairedGrayFolder(Dataset):
                 self._pair_cache.popitem(last=False)
         return src, lbl
 
-    def _pad_if_needed(self, src: np.ndarray, lbl: np.ndarray):
-        h, w = src.shape
+    @staticmethod
+    def _read_geom_mask(path: str) -> np.ndarray:
+        img = imread_unicode(path, cv2.IMREAD_UNCHANGED)
+        if img is None:
+            raise RuntimeError(f"Failed to read geometry mask: {path}")
+        if img.ndim == 3:
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        if img.dtype == np.uint16:
+            img = img.astype(np.float32) / 65535.0
+        else:
+            img = img.astype(np.float32) / 255.0
+        return img
+
+    def _load_geometry(self, src_path: str) -> Optional[dict[str, np.ndarray]]:
+        if not self.geom_dir:
+            return None
+        rel_path = os.path.relpath(src_path, self.src_dir)
+        rel_no_ext = os.path.splitext(rel_path)[0]
+        boundary_path = os.path.join(self.geom_dir, "boundary", rel_path)
+        centerline_path = os.path.join(self.geom_dir, "centerline", rel_path)
+        distance_path = os.path.join(self.geom_dir, "distance", rel_no_ext + ".npy")
+        missing = [p for p in (boundary_path, centerline_path, distance_path) if not os.path.exists(p)]
+        if missing:
+            raise RuntimeError(f"Missing geometry sidecar(s) for {rel_path}: {missing}")
+        distance = np.load(distance_path).astype(np.float32, copy=False)
+        return {
+            "boundary": self._read_geom_mask(boundary_path),
+            "centerline": self._read_geom_mask(centerline_path),
+            "distance": distance,
+        }
+
+    def _pad_if_needed(self, *arrs: np.ndarray):
+        h, w = arrs[0].shape
         cs = self.crop_size
         if (h < cs) or (w < cs):
             pad_h = max(0, cs - h)
             pad_w = max(0, cs - w)
-            src = np.pad(src, ((0, pad_h), (0, pad_w)), mode="reflect")
-            lbl = np.pad(lbl, ((0, pad_h), (0, pad_w)), mode="reflect")
-        return src, lbl
+            arrs = tuple(np.pad(arr, ((0, pad_h), (0, pad_w)), mode="reflect") for arr in arrs)
+        return arrs
 
     def __getitem__(self, idx: int):
         src, lbl = self._load_pair(self.src_paths[idx])
-        src, lbl = self._pad_if_needed(src, lbl)
+        geom = self._load_geometry(self.src_paths[idx])
+        if geom is None:
+            src, lbl = self._pad_if_needed(src, lbl)
+        else:
+            src, lbl, boundary, centerline, distance = self._pad_if_needed(
+                src, lbl, geom["boundary"], geom["centerline"], geom["distance"]
+            )
+            geom = {"boundary": boundary, "centerline": centerline, "distance": distance}
         h, w = src.shape
         cs = self.crop_size
         if self.random_crop:
@@ -1209,10 +1321,19 @@ class PairedGrayFolder(Dataset):
 
         src = src[y0:y0 + cs, x0:x0 + cs]
         lbl = lbl[y0:y0 + cs, x0:x0 + cs]
+        if geom is not None:
+            geom = {k: v[y0:y0 + cs, x0:x0 + cs] for k, v in geom.items()}
 
         src_t = torch.from_numpy(src).unsqueeze(0)
         lbl_t = torch.from_numpy(lbl).unsqueeze(0)
+        if geom is not None:
+            role_t = torch.tensor(self.role_ids[idx] if self.role_ids is not None else -1, dtype=torch.long)
+            geom_t = {k: torch.from_numpy(v.astype(np.float32, copy=False)).unsqueeze(0) for k, v in geom.items()}
+            return {"src": src_t, "lbl": lbl_t, "role": role_t, "geom": geom_t}
 
+        if self.role_ids is not None:
+            role_t = torch.tensor(self.role_ids[idx], dtype=torch.long)
+            return src_t, lbl_t, role_t
         return src_t, lbl_t
 
 
@@ -1305,6 +1426,173 @@ class SequencePairGrayFolder(Dataset):
         )
 
 
+class MotionPairGrayFolder(Dataset):
+    _SEQ_RE = re.compile(r"_seq(?P<seq>\d+)_f(?P<frame>\d+)", re.IGNORECASE)
+
+    def __init__(
+        self,
+        src_dir: str,
+        lbl_dir: str,
+        geom_dir: str,
+        crop_size: int = 256,
+        include_subdirs=(),
+        random_crop: bool = True,
+    ):
+        self.src_dir = os.path.abspath(src_dir)
+        self.lbl_dir = os.path.abspath(lbl_dir)
+        self.geom_dir = os.path.abspath(geom_dir)
+        self.crop_size = int(crop_size)
+        self.random_crop = bool(random_crop)
+        include_subdirs = tuple(str(s).strip().lower() for s in include_subdirs if str(s).strip())
+        src_paths = collect_image_paths(self.src_dir, recursive=True)
+        if include_subdirs:
+            filtered = []
+            for p in src_paths:
+                parts = {part.lower() for part in Path(p).parts}
+                if any(tag in parts for tag in include_subdirs):
+                    filtered.append(p)
+            src_paths = filtered
+        self.pairs = self._build_pairs(src_paths)
+        if len(self.pairs) == 0:
+            raise RuntimeError("No motion image pairs found for R44 motion-aware training.")
+
+    @staticmethod
+    def _imread_gray(path: str) -> np.ndarray:
+        return PairedGrayFolder._imread_gray(path)
+
+    @staticmethod
+    def _read_geom_mask(path: str) -> np.ndarray:
+        return PairedGrayFolder._read_geom_mask(path)
+
+    @classmethod
+    def _build_pairs(cls, src_paths):
+        grouped = {}
+        for src_path in src_paths:
+            base = os.path.basename(src_path)
+            m = cls._SEQ_RE.search(base)
+            if m is None:
+                continue
+            key = (os.path.dirname(src_path), m.group("seq"))
+            grouped.setdefault(key, []).append((int(m.group("frame")), src_path))
+        out = []
+        for _, items in grouped.items():
+            items.sort(key=lambda x: x[0])
+            for i in range(len(items) - 1):
+                out.append((items[i][1], items[i + 1][1]))
+        return out
+
+    def __len__(self):
+        return len(self.pairs)
+
+    def _matching_lbl(self, src_path: str) -> str:
+        rel_path = os.path.relpath(src_path, self.src_dir)
+        lbl_candidates = [os.path.join(self.lbl_dir, rel_path), os.path.join(self.lbl_dir, os.path.basename(src_path))]
+        for cand in lbl_candidates:
+            if os.path.exists(cand):
+                return cand
+        raise RuntimeError(f"Label not found for motion path: {src_path}")
+
+    def _matching_geom(self, src_path: str) -> dict[str, np.ndarray]:
+        rel_path = os.path.relpath(src_path, self.src_dir)
+        rel_no_ext = os.path.splitext(rel_path)[0]
+        boundary_path = os.path.join(self.geom_dir, "boundary", rel_path)
+        centerline_path = os.path.join(self.geom_dir, "centerline", rel_path)
+        distance_path = os.path.join(self.geom_dir, "distance", rel_no_ext + ".npy")
+        missing = [p for p in (boundary_path, centerline_path, distance_path) if not os.path.exists(p)]
+        if missing:
+            raise RuntimeError(f"Missing motion geometry sidecar(s) for {rel_path}: {missing}")
+        return {
+            "boundary": self._read_geom_mask(boundary_path),
+            "centerline": self._read_geom_mask(centerline_path),
+            "distance": np.load(distance_path).astype(np.float32, copy=False),
+        }
+
+    def _matching_meta(self, src_path: str) -> dict:
+        rel_path = os.path.relpath(src_path, self.src_dir)
+        rel_no_ext = os.path.splitext(rel_path)[0]
+        meta_path = os.path.join(self.geom_dir, "meta", rel_no_ext + ".json")
+        if not os.path.exists(meta_path):
+            raise RuntimeError(f"Missing motion metadata sidecar for {rel_path}: {meta_path}")
+        with open(meta_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    def _pad_if_needed(self, *arrs):
+        h, w = arrs[0].shape
+        cs = self.crop_size
+        if (h >= cs) and (w >= cs):
+            return arrs
+        pad_h = max(0, cs - h)
+        pad_w = max(0, cs - w)
+        return tuple(np.pad(a, ((0, pad_h), (0, pad_w)), mode="reflect") for a in arrs)
+
+    def __getitem__(self, idx: int):
+        src_a_path, src_b_path = self.pairs[idx]
+        src_a = self._imread_gray(src_a_path)
+        src_b = self._imread_gray(src_b_path)
+        lbl_a = self._imread_gray(self._matching_lbl(src_a_path))
+        lbl_b = self._imread_gray(self._matching_lbl(src_b_path))
+        geom_a = self._matching_geom(src_a_path)
+        geom_b = self._matching_geom(src_b_path)
+        meta_b = self._matching_meta(src_b_path)
+        arrs = self._pad_if_needed(
+            src_a,
+            src_b,
+            lbl_a,
+            lbl_b,
+            geom_a["boundary"],
+            geom_a["centerline"],
+            geom_a["distance"],
+            geom_b["boundary"],
+            geom_b["centerline"],
+            geom_b["distance"],
+        )
+        (
+            src_a,
+            src_b,
+            lbl_a,
+            lbl_b,
+            geom_a_boundary,
+            geom_a_centerline,
+            geom_a_distance,
+            geom_b_boundary,
+            geom_b_centerline,
+            geom_b_distance,
+        ) = arrs
+        h, w = src_a.shape
+        cs = self.crop_size
+        if self.random_crop:
+            y0 = np.random.randint(0, h - cs + 1)
+            x0 = np.random.randint(0, w - cs + 1)
+        else:
+            y0 = max(0, (h - cs) // 2)
+            x0 = max(0, (w - cs) // 2)
+
+        def crop(arr):
+            return arr[y0:y0 + cs, x0:x0 + cs]
+
+        delta = meta_b.get("delta_from_prev_px", {})
+        sample = {
+            "src_a": torch.from_numpy(crop(src_a)).unsqueeze(0),
+            "src_b": torch.from_numpy(crop(src_b)).unsqueeze(0),
+            "lbl_a": torch.from_numpy(crop(lbl_a)).unsqueeze(0),
+            "lbl_b": torch.from_numpy(crop(lbl_b)).unsqueeze(0),
+            "dx": torch.tensor(float(delta.get("dx", 0.0)), dtype=torch.float32),
+            "dy": torch.tensor(float(delta.get("dy", 0.0)), dtype=torch.float32),
+            "feature_family": str(meta_b.get("feature_family", "")),
+            "geom_a": {
+                "boundary": torch.from_numpy(crop(geom_a_boundary).astype(np.float32, copy=False)).unsqueeze(0),
+                "centerline": torch.from_numpy(crop(geom_a_centerline).astype(np.float32, copy=False)).unsqueeze(0),
+                "distance": torch.from_numpy(crop(geom_a_distance).astype(np.float32, copy=False)).unsqueeze(0),
+            },
+            "geom_b": {
+                "boundary": torch.from_numpy(crop(geom_b_boundary).astype(np.float32, copy=False)).unsqueeze(0),
+                "centerline": torch.from_numpy(crop(geom_b_centerline).astype(np.float32, copy=False)).unsqueeze(0),
+                "distance": torch.from_numpy(crop(geom_b_distance).astype(np.float32, copy=False)).unsqueeze(0),
+            },
+        }
+        return sample
+
+
 def make_train_val_loaders():
     all_src_paths = collect_image_paths(TRAIN_SRC_DIR, recursive=True)
     if len(all_src_paths) == 0:
@@ -1390,12 +1678,17 @@ def make_train_val_loaders():
     val_paths = [all_src_paths[int(i)] for i in val_idx.tolist()]
     if len(train_paths) == 0:
         raise RuntimeError("[FATAL] Empty training split; adjust VAL_RATIO or dataset size.")
+    geom_dir = ""
+    if bool(getattr(CFG, "BOUNDARY_GEOM_ENABLE", False)):
+        geom_dir = str(getattr(CFG, "BOUNDARY_GEOM_DIR", "")).strip() or str(TRAIN_GEOM_DIR).strip()
+    geom_dir_arg = geom_dir if geom_dir else None
 
     train_ds = PairedGrayFolder(
         TRAIN_SRC_DIR, TRAIN_LBL_DIR,
         crop_size=CFG.CROP_SIZE,
         src_paths=train_paths,
         random_crop=True,
+        geom_dir=geom_dir_arg,
     )
 
     train_loader_kwargs = dict(
@@ -1422,6 +1715,7 @@ def make_train_val_loaders():
         crop_size=CFG.CROP_SIZE,
         src_paths=val_paths,
         random_crop=False,
+        geom_dir=geom_dir_arg,
     )
     val_loader_kwargs = dict(
         dataset=val_ds,
@@ -1493,6 +1787,62 @@ def make_sequence_loader():
     return DataLoader(**loader_kwargs)
 
 
+def make_motion_loader():
+    if not bool(getattr(CFG, "MOTION_ENABLE", False)):
+        return None
+    motion_weight = float(getattr(CFG, "MOTION_LOSS_WEIGHT", 0.0))
+    motion_recon = float(getattr(CFG, "MOTION_RECON_WEIGHT", 0.0))
+    if motion_weight <= 0.0 and motion_recon <= 0.0:
+        return None
+    motion_src = str(getattr(CFG, "MOTION_SRC_DIR", "")).strip()
+    motion_lbl = str(getattr(CFG, "MOTION_LBL_DIR", "")).strip()
+    motion_geom = str(getattr(CFG, "MOTION_GEOM_DIR", "")).strip()
+    if not motion_src or not motion_lbl or not motion_geom:
+        raise RuntimeError("MOTION_ENABLE=True requires MOTION_SRC_DIR, MOTION_LBL_DIR, and MOTION_GEOM_DIR.")
+    include_subdirs = tuple(str(s).strip().lower() for s in getattr(CFG, "MOTION_INCLUDE_SUBDIRS", ()) if str(s).strip())
+    motion_ds = MotionPairGrayFolder(
+        motion_src,
+        motion_lbl,
+        motion_geom,
+        crop_size=int(CFG.CROP_SIZE),
+        include_subdirs=include_subdirs,
+        random_crop=True,
+    )
+    max_pairs = max(0, int(getattr(CFG, "MOTION_MAX_PAIRS", 0)))
+    if max_pairs > 0 and len(motion_ds.pairs) > max_pairs:
+        motion_ds.pairs = motion_ds.pairs[:max_pairs]
+
+    use_repro = bool(CFG.REPRO_MODE) or bool(getattr(CFG, "SEED_DETERMINISTIC", False))
+    seed = int(getattr(CFG, "SEED_ACTIVE", 0))
+    if seed <= 0:
+        seed = int(CFG.REPRO_SEED if CFG.REPRO_MODE else CFG.SPLIT_SEED)
+    num_workers = int(CFG.REPRO_NUM_WORKERS if use_repro else CFG.NUM_WORKERS)
+
+    g = None
+    worker_init_fn = None
+    if use_repro:
+        g = torch.Generator()
+        g.manual_seed(seed + 24631)
+        worker_init_fn = _make_worker_init_fn(seed + 24631)
+
+    loader_kwargs = dict(
+        dataset=motion_ds,
+        batch_size=max(1, int(getattr(CFG, "MOTION_BATCH_SIZE", 2))),
+        shuffle=True,
+        num_workers=num_workers,
+        pin_memory=True,
+        drop_last=False,
+    )
+    if g is not None:
+        loader_kwargs["generator"] = g
+    if worker_init_fn is not None:
+        loader_kwargs["worker_init_fn"] = worker_init_fn
+    if int(num_workers) > 0:
+        loader_kwargs["persistent_workers"] = bool(getattr(CFG, "DATALOADER_PERSISTENT_WORKERS", True))
+        loader_kwargs["prefetch_factor"] = max(2, int(getattr(CFG, "DATALOADER_PREFETCH_FACTOR", 2)))
+    return DataLoader(**loader_kwargs)
+
+
 def make_sequence_val_loader():
     if not bool(getattr(CFG, "SEQ_VAL_ENABLE", False)):
         return None
@@ -1546,13 +1896,81 @@ def _unpack_batch(batch):
     if isinstance(batch, dict):
         src = batch.get("src")
         lbl = batch.get("lbl")
-        return src, lbl
+        role = batch.get("role")
+        geom = batch.get("geom")
+        return src, lbl, role, geom
     if isinstance(batch, (list, tuple)):
         if len(batch) == 2:
-            return batch[0], batch[1]
+            return batch[0], batch[1], None, None
         if len(batch) >= 3:
-            return batch[0], batch[1]
+            geom = batch[3] if len(batch) >= 4 else None
+            return batch[0], batch[1], batch[2], geom
     raise ValueError(f"Unsupported batch format: {type(batch)}")
+
+
+def kd_role_masks(role: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+    role_flat = role.to(dtype=torch.long).view(-1)
+    combo_mask = (role_flat == DATA_ROLE_RING) | (role_flat == DATA_ROLE_SHAPE)
+    capacity_mask = (role_flat == DATA_ROLE_MICRO) | (role_flat == DATA_ROLE_BOUNDARY)
+    return combo_mask, capacity_mask
+
+
+def _prepare_region_kd_mask(mask: torch.Tensor, pred_like: torch.Tensor) -> torch.Tensor:
+    mask = mask.to(device=pred_like.device, dtype=pred_like.dtype)
+    if mask.ndim == 2:
+        mask = mask.unsqueeze(0).unsqueeze(0)
+    elif mask.ndim == 3:
+        mask = mask.unsqueeze(1)
+    if mask.ndim != 4:
+        raise ValueError(f"region KD mask must be 2D/3D/4D, got shape={tuple(mask.shape)}")
+    if mask.shape[0] == 1 and pred_like.shape[0] != 1:
+        mask = mask.expand(pred_like.shape[0], -1, -1, -1)
+    if mask.shape[0] != pred_like.shape[0]:
+        raise ValueError(f"region KD mask batch mismatch: mask={tuple(mask.shape)} pred={tuple(pred_like.shape)}")
+    if mask.shape[-2:] != pred_like.shape[-2:]:
+        raise ValueError(f"region KD mask spatial mismatch: mask={tuple(mask.shape)} pred={tuple(pred_like.shape)}")
+    if mask.shape[1] == 1 and pred_like.shape[1] != 1:
+        mask = mask.expand(-1, pred_like.shape[1], -1, -1)
+    if mask.shape[1] != pred_like.shape[1]:
+        raise ValueError(f"region KD mask channel mismatch: mask={tuple(mask.shape)} pred={tuple(pred_like.shape)}")
+    return mask.clamp(0.0, 1.0)
+
+
+def region_kd_boundary_band_mask(geom: Optional[dict], pred_like: torch.Tensor, band_px: float) -> Optional[torch.Tensor]:
+    if geom is None:
+        return None
+    band_px = max(0.0, float(band_px))
+    distance = geom.get("distance")
+    if distance is not None:
+        mask = (distance.to(device=pred_like.device, dtype=pred_like.dtype) <= band_px).to(dtype=pred_like.dtype)
+        return _prepare_region_kd_mask(mask, pred_like)
+    boundary = geom.get("boundary")
+    if boundary is None:
+        return None
+    mask = (boundary.to(device=pred_like.device, dtype=pred_like.dtype) > 0.05).to(dtype=pred_like.dtype)
+    mask = _prepare_region_kd_mask(mask, pred_like)
+    radius = int(round(band_px))
+    if radius > 0:
+        k = radius * 2 + 1
+        mask = F.max_pool2d(mask, kernel_size=k, stride=1, padding=radius)
+    return mask.clamp(0.0, 1.0)
+
+
+def region_masked_teacher_mse(
+    pred01: torch.Tensor,
+    teacher_pred01: torch.Tensor,
+    mask: Optional[torch.Tensor],
+) -> torch.Tensor:
+    if mask is None:
+        return pred01.sum() * 0.0
+    mask = _prepare_region_kd_mask(mask, pred01)
+    if teacher_pred01.shape != pred01.shape:
+        raise ValueError(f"teacher/student shape mismatch: teacher={tuple(teacher_pred01.shape)} pred={tuple(pred01.shape)}")
+    denom = mask.sum()
+    if float(denom.detach().item()) <= 0.0:
+        return pred01.sum() * 0.0
+    loss_map = (pred01 - teacher_pred01.detach().to(device=pred01.device, dtype=pred01.dtype)) ** 2
+    return (loss_map * mask).sum() / denom
 
 
 # ============================================================
@@ -2335,6 +2753,117 @@ def _edge_mask_from_gt(gt01: torch.Tensor, thr: float, dilate: int) -> torch.Ten
         k = 2 * d + 1
         edge = F.max_pool2d(edge, kernel_size=k, stride=1, padding=d)
     return (edge > 0.5).to(dtype=gt01.dtype)
+
+
+def _normalize_edge_map(edge: torch.Tensor) -> torch.Tensor:
+    denom = edge.amax(dim=(-2, -1), keepdim=True).clamp_min(1e-6)
+    return (edge / denom).clamp(0.0, 1.0)
+
+
+def boundary_geometry_loss(
+    pred01: torch.Tensor,
+    lbl01: torch.Tensor,
+    geom: Optional[dict],
+) -> tuple[torch.Tensor, dict[str, torch.Tensor]]:
+    z = pred01.new_tensor(0.0)
+    parts = {"boundary": z, "centerline": z, "distance_edge": z}
+    if (not bool(getattr(CFG, "BOUNDARY_GEOM_ENABLE", False))) or geom is None:
+        return z, parts
+
+    w_boundary = float(getattr(CFG, "BOUNDARY_LOSS_WEIGHT", 0.0))
+    w_centerline = float(getattr(CFG, "CENTERLINE_LOSS_WEIGHT", 0.0))
+    w_distance = float(getattr(CFG, "DISTANCE_EDGE_LOSS_WEIGHT", 0.0))
+    if (w_boundary <= 0.0) and (w_centerline <= 0.0) and (w_distance <= 0.0):
+        return z, parts
+
+    boundary = geom.get("boundary")
+    centerline = geom.get("centerline")
+    distance = geom.get("distance")
+    pred_edge = _normalize_edge_map(sobel_magnitude(pred01))
+    lbl_edge = _normalize_edge_map(sobel_magnitude(lbl01))
+
+    if boundary is not None and w_boundary > 0.0:
+        boundary = boundary.to(device=pred01.device, dtype=pred01.dtype)
+        parts["boundary"] = _masked_l1(pred_edge, lbl_edge, (boundary > 0.05).to(dtype=pred01.dtype))
+
+    if centerline is not None and w_centerline > 0.0:
+        centerline = centerline.to(device=pred01.device, dtype=pred01.dtype)
+        parts["centerline"] = _masked_l1(pred01, lbl01, (centerline > 0.05).to(dtype=pred01.dtype))
+
+    if distance is not None and w_distance > 0.0:
+        distance = distance.to(device=pred01.device, dtype=pred01.dtype)
+        sigma = max(1e-3, float(getattr(CFG, "BOUNDARY_DISTANCE_SIGMA", 2.0)))
+        clip = max(sigma, float(getattr(CFG, "BOUNDARY_DISTANCE_CLIP", 8.0)))
+        dist_w = torch.exp(-distance.clamp(0.0, clip) / sigma)
+        parts["distance_edge"] = _masked_l1(pred_edge, lbl_edge, dist_w)
+
+    total = (
+        pred01.new_tensor(w_boundary) * parts["boundary"]
+        + pred01.new_tensor(w_centerline) * parts["centerline"]
+        + pred01.new_tensor(w_distance) * parts["distance_edge"]
+    )
+    return total, parts
+
+
+def warp_tensor_by_dxdy(x: torch.Tensor, dx: torch.Tensor, dy: torch.Tensor) -> torch.Tensor:
+    if x.ndim != 4:
+        raise ValueError(f"expected BCHW tensor, got shape={tuple(x.shape)}")
+    b, _c, h, w = x.shape
+    dx = dx.to(device=x.device, dtype=x.dtype).view(-1)
+    dy = dy.to(device=x.device, dtype=x.dtype).view(-1)
+    if dx.numel() == 1 and b > 1:
+        dx = dx.expand(b)
+    if dy.numel() == 1 and b > 1:
+        dy = dy.expand(b)
+    if dx.numel() != b or dy.numel() != b:
+        raise ValueError(f"dx/dy batch mismatch: b={b}, dx={dx.numel()}, dy={dy.numel()}")
+    yy, xx = torch.meshgrid(
+        torch.arange(h, device=x.device, dtype=x.dtype),
+        torch.arange(w, device=x.device, dtype=x.dtype),
+        indexing="ij",
+    )
+    xx = xx.unsqueeze(0).expand(b, -1, -1) - dx.view(b, 1, 1)
+    yy = yy.unsqueeze(0).expand(b, -1, -1) - dy.view(b, 1, 1)
+    x_norm = (2.0 * (xx + 0.5) / float(w)) - 1.0
+    y_norm = (2.0 * (yy + 0.5) / float(h)) - 1.0
+    grid = torch.stack((x_norm, y_norm), dim=-1)
+    return F.grid_sample(x, grid, mode="bilinear", padding_mode="zeros", align_corners=False)
+
+
+def generic_motion_consistency_loss(
+    pred_a: torch.Tensor,
+    pred_b: torch.Tensor,
+    dx: torch.Tensor,
+    dy: torch.Tensor,
+    mask: Optional[torch.Tensor] = None,
+) -> torch.Tensor:
+    warped_a = warp_tensor_by_dxdy(pred_a, dx, dy)
+    loss_map = F.smooth_l1_loss(warped_a, pred_b, reduction="none")
+    if mask is None:
+        return loss_map.mean()
+    mask = mask.to(device=loss_map.device, dtype=loss_map.dtype)
+    if mask.ndim == 3:
+        mask = mask.unsqueeze(1)
+    if mask.shape[-2:] != loss_map.shape[-2:]:
+        raise ValueError(f"motion mask shape mismatch: mask={tuple(mask.shape)} loss={tuple(loss_map.shape)}")
+    if mask.shape[1] == 1 and loss_map.shape[1] != 1:
+        mask = mask.expand(-1, loss_map.shape[1], -1, -1)
+    denom = mask.sum().clamp_min(1.0)
+    return (loss_map * mask).sum() / denom
+
+
+def motion_boundary_mask(geom_b: Optional[dict], *, boundary_weight: float = 1.0) -> Optional[torch.Tensor]:
+    if geom_b is None:
+        return None
+    masks = []
+    if "boundary" in geom_b:
+        masks.append(geom_b["boundary"].float().clamp(0.0, 1.0) * float(boundary_weight))
+    if "centerline" in geom_b:
+        masks.append(geom_b["centerline"].float().clamp(0.0, 1.0))
+    if not masks:
+        return None
+    mask = torch.stack(masks, dim=0).amax(dim=0)
+    return mask.clamp(0.0, max(1.0, float(boundary_weight)))
 
 
 def masked_mean_std(x: torch.Tensor, mask: torch.Tensor, eps: float = 1e-6) -> Tuple[torch.Tensor, torch.Tensor]:
@@ -4435,7 +4964,7 @@ def run_gmf_proxy_validation(
             print("[PROXY] No monitor sequence available and no val_loader fallback; proxy metrics disabled.")
             return _proxy_default_with_ab()
         for batch in val_loader:
-            src, _ = _unpack_batch(batch)
+            src, _, _role, _geom = _unpack_batch(batch)
             src = src.to(device, non_blocking=True)
             with torch.cuda.amp.autocast(enabled=CFG.use_amp):
                 pred = model(src)
@@ -5939,7 +6468,8 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                     ema_model: Optional[nn.Module] = None,
                     ema_decay: float = 0.0,
                     max_batches_per_epoch: Optional[int] = None,
-                    seq_loader: Optional[DataLoader] = None):
+                    seq_loader: Optional[DataLoader] = None,
+                    motion_loader: Optional[DataLoader] = None):
     model.train()
     if not torch.is_grad_enabled():
         torch.set_grad_enabled(True)
@@ -5953,7 +6483,10 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
         "total": 0.0, "rec": 0.0, "gradmag": 0.0, "edge_ori": 0.0, "eq_total": 0.0,
         "loss_stat": 0.0, "loss_band": 0.0, "loss_hf_lap": 0.0, "loss_phys": 0.0,
         "loss_edgeLocalLap": 0.0, "loss_detail": 0.0,
+        "loss_boundary_geom": 0.0, "loss_boundary_mask": 0.0,
+        "loss_centerline": 0.0, "loss_distance_edge": 0.0,
         "loss_seq_delta": 0.0, "loss_seq_grad": 0.0, "loss_seq_geom": 0.0, "loss_seq_abs_center": 0.0,
+        "loss_kd_combo": 0.0, "loss_kd_r40": 0.0, "loss_region_kd": 0.0, "loss_motion": 0.0,
         "pred_mean_mask": 0.0, "pred_std_mask": 0.0,
         "eq_pix": 0.0, "eq_edge": 0.0, "eq_grad": 0.0,
         "eq_edgew_mean": 0.0, "eq_edgew_p95": 0.0,
@@ -6033,13 +6566,37 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
         or (seq_geom_single_abs_center_w > 0.0)
     )
     seq_iter = iter(seq_loader) if seq_loader is not None and (seq_loss_weight > 0.0 or seq_grad_weight > 0.0 or seq_geom_active) else None
+    kd_enable = bool(getattr(CFG, "KD_ENABLE", False)) and (epoch1 > int(getattr(CFG, "KD_WARMUP_EPOCH", 0)))
+    kd_weight_combo = float(getattr(CFG, "KD_WEIGHT_COMBO", 0.0))
+    kd_weight_r40 = float(getattr(CFG, "KD_WEIGHT_R40", 0.0))
+    region_kd_weight = float(getattr(CFG, "REGION_KD_WEIGHT", 0.0))
+    region_kd_active = (
+        bool(getattr(CFG, "REGION_KD_ENABLE", False))
+        and (epoch1 > int(getattr(CFG, "REGION_KD_WARMUP_EPOCH", 0)))
+        and (region_kd_weight > 0.0)
+        and (REGION_KD_TEACHER is not None)
+    )
+    motion_loss_weight = float(getattr(CFG, "MOTION_LOSS_WEIGHT", 0.0))
+    motion_recon_weight = float(getattr(CFG, "MOTION_RECON_WEIGHT", 0.0))
+    motion_every_n = max(1, int(getattr(CFG, "MOTION_EVERY_N_BATCH", 2)))
+    motion_active = (
+        motion_loader is not None
+        and bool(getattr(CFG, "MOTION_ENABLE", False))
+        and (epoch1 > int(getattr(CFG, "MOTION_WARMUP_EPOCH", 0)))
+        and ((motion_loss_weight > 0.0) or (motion_recon_weight > 0.0))
+    )
+    motion_iter = iter(motion_loader) if motion_active else None
 
     for b, batch in pbar:
         if b >= effective_batches:
             break
-        src, lbl = _unpack_batch(batch)
+        src, lbl, role, geom = _unpack_batch(batch)
         src = src.to(CFG.DEVICE, non_blocking=True)
         lbl = lbl.to(CFG.DEVICE, non_blocking=True)
+        if role is not None:
+            role = role.to(CFG.DEVICE, non_blocking=True)
+        if geom is not None:
+            geom = {k: v.to(CFG.DEVICE, non_blocking=True) for k, v in geom.items()}
         bs = src.size(0)
 
         with torch.enable_grad():
@@ -6051,6 +6608,47 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
             with torch.cuda.amp.autocast(enabled=False):
                 pred01 = pred.float().clamp(0.0, 1.0)
                 lbl01 = lbl.float().clamp(0.0, 1.0)
+                l_kd_combo = pred01.new_tensor(0.0)
+                l_kd_r40 = pred01.new_tensor(0.0)
+                l_region_kd = pred01.new_tensor(0.0)
+                if kd_enable and (role is not None):
+                    combo_mask, micro_mask = kd_role_masks(role.to(device=pred01.device))
+                    if kd_weight_combo > 0.0 and KD_TEACHER_COMBO is not None:
+                        if bool(combo_mask.any().item()):
+                            with torch.no_grad():
+                                with torch.cuda.amp.autocast(enabled=use_amp):
+                                    teacher_combo_pred = KD_TEACHER_COMBO(src[combo_mask])
+                            teacher_combo_pred = teacher_combo_pred.float().clamp(0.0, 1.0)
+                            l_kd_combo = pred01.new_tensor(kd_weight_combo) * F.mse_loss(
+                                pred01[combo_mask],
+                                teacher_combo_pred,
+                            )
+                    if kd_weight_r40 > 0.0 and KD_TEACHER_R40 is not None:
+                        if bool(micro_mask.any().item()):
+                            with torch.no_grad():
+                                with torch.cuda.amp.autocast(enabled=use_amp):
+                                    teacher_r40_pred = KD_TEACHER_R40(src[micro_mask])
+                            teacher_r40_pred = teacher_r40_pred.float().clamp(0.0, 1.0)
+                            l_kd_r40 = pred01.new_tensor(kd_weight_r40) * F.mse_loss(
+                                pred01[micro_mask],
+                                teacher_r40_pred,
+                            )
+                if region_kd_active and (geom is not None):
+                    region_mask = region_kd_boundary_band_mask(
+                        geom,
+                        pred01,
+                        float(getattr(CFG, "REGION_KD_BAND_PX", 5.0)),
+                    )
+                    if region_mask is not None:
+                        with torch.no_grad():
+                            with torch.cuda.amp.autocast(enabled=use_amp):
+                                teacher_region_pred = REGION_KD_TEACHER(src)
+                        teacher_region_pred = teacher_region_pred.float().clamp(0.0, 1.0)
+                        l_region_kd = pred01.new_tensor(region_kd_weight) * region_masked_teacher_mse(
+                            pred01,
+                            teacher_region_pred,
+                            region_mask,
+                        )
 
                 with torch.no_grad():
                     sr_mean = pred01.mean()
@@ -6085,6 +6683,14 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                     lap_pred = _laplacian(pred01)
                     lap_gt = _laplacian(lbl01)
                     l_edge_local_lap = _masked_l1(lap_pred, lap_gt, edge_mask)
+                l_boundary_geom = pred01.new_tensor(0.0)
+                boundary_parts = {
+                    "boundary": pred01.new_tensor(0.0),
+                    "centerline": pred01.new_tensor(0.0),
+                    "distance_edge": pred01.new_tensor(0.0),
+                }
+                if epoch1 > int(getattr(CFG, "BOUNDARY_LOSS_WARMUP_EPOCH", 0)):
+                    l_boundary_geom, boundary_parts = boundary_geometry_loss(pred01, lbl01, geom)
 
                 l_detail = pred01.new_tensor(0.0)
                 if (w_detail_base > 0.0) and (epoch1 >= int(getattr(CFG, "DETAIL_START_EPOCH", 0))):
@@ -6093,6 +6699,7 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                 l_seq_grad = pred01.new_tensor(0.0)
                 l_seq_geom = pred01.new_tensor(0.0)
                 l_seq_abs_center = pred01.new_tensor(0.0)
+                l_motion = pred01.new_tensor(0.0)
                 _seq_warmup = int(getattr(CFG, "SEQ_WARMUP_EPOCH", 0))
                 if (seq_iter is not None) and ((b % seq_every_n) == 0) and (epoch1 > _seq_warmup):
                     try:
@@ -6147,6 +6754,45 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                             + seq_geom_single_abs_center_w * seq_geom_losses["single_abs_center"]
                         )
                         l_seq_abs_center = seq_geom_losses["abs_center"]
+
+                if (motion_iter is not None) and ((b % motion_every_n) == 0):
+                    try:
+                        motion_batch = next(motion_iter)
+                    except StopIteration:
+                        motion_iter = iter(motion_loader)
+                        motion_batch = next(motion_iter)
+
+                    motion_src_a = motion_batch["src_a"].to(CFG.DEVICE, non_blocking=True)
+                    motion_src_b = motion_batch["src_b"].to(CFG.DEVICE, non_blocking=True)
+                    motion_lbl_a = motion_batch["lbl_a"].to(CFG.DEVICE, non_blocking=True).float().clamp(0.0, 1.0)
+                    motion_lbl_b = motion_batch["lbl_b"].to(CFG.DEVICE, non_blocking=True).float().clamp(0.0, 1.0)
+                    motion_dx = motion_batch["dx"].to(CFG.DEVICE, non_blocking=True)
+                    motion_dy = motion_batch["dy"].to(CFG.DEVICE, non_blocking=True)
+                    motion_geom_b = motion_batch.get("geom_b")
+                    if motion_geom_b is not None:
+                        motion_geom_b = {k: v.to(CFG.DEVICE, non_blocking=True) for k, v in motion_geom_b.items()}
+                    with torch.cuda.amp.autocast(enabled=use_amp):
+                        motion_pred_a = model(motion_src_a)
+                        motion_pred_b = model(motion_src_b)
+                    motion_pred_a = motion_pred_a.float().clamp(0.0, 1.0)
+                    motion_pred_b = motion_pred_b.float().clamp(0.0, 1.0)
+                    motion_mask = motion_boundary_mask(
+                        motion_geom_b,
+                        boundary_weight=float(getattr(CFG, "MOTION_BOUNDARY_WEIGHT", 1.0)),
+                    )
+                    l_motion = generic_motion_consistency_loss(
+                        motion_pred_a,
+                        motion_pred_b,
+                        motion_dx,
+                        motion_dy,
+                        mask=motion_mask,
+                    )
+                    if motion_recon_weight > 0.0:
+                        l_motion_recon = 0.5 * (
+                            F.smooth_l1_loss(motion_pred_a, motion_lbl_a)
+                            + F.smooth_l1_loss(motion_pred_b, motion_lbl_b)
+                        )
+                        l_motion = l_motion + pred01.new_tensor(motion_recon_weight) * l_motion_recon
 
                 band_n = max(1, int(getattr(CFG, "BAND_LOSS_EVERY_N_BATCH", 2)))
                 do_band = ((b % band_n) == 0)
@@ -6204,10 +6850,15 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                     + float(w_hf_lap) * l_hf_lap
                     + float(w_phys_epoch) * l_phys
                     + float(w_edge_local_lap_epoch) * l_edge_local_lap
+                    + l_boundary_geom
                     + float(w_detail_base) * float(detail_rescue_mult) * l_detail
                     + float(seq_loss_weight) * l_seq_delta
                     + float(seq_grad_weight) * l_seq_grad
                     + l_seq_geom
+                    + l_kd_combo
+                    + l_kd_r40
+                    + l_region_kd
+                    + float(motion_loss_weight) * l_motion
                 )
 
                 last_weak = get_weak_psf_stats(model)
@@ -6245,11 +6896,19 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
                 float(l_hf_lap.item()),
                 float(l_phys.item()),
                 float(l_edge_local_lap.item()),
+                float(l_boundary_geom.item()),
+                float(boundary_parts["boundary"].item()),
+                float(boundary_parts["centerline"].item()),
+                float(boundary_parts["distance_edge"].item()),
                 float(l_detail.item()),
                 float(l_seq_delta.item()),
                 float(l_seq_grad.item()),
                 float(l_seq_geom.item()),
                 float(l_seq_abs_center.item()),
+                float(l_kd_combo.item()),
+                float(l_kd_r40.item()),
+                float(l_region_kd.item()),
+                float(l_motion.item()),
                 float(w_edge_local_lap_epoch),
                 float(pred_mean_mask.item()),
                 float(pred_std_mask.item()),
@@ -6281,11 +6940,19 @@ def train_one_epoch(model, loader, optimizer, scaler, huber, ssim,
             running["loss_hf_lap"] += float(l_hf_lap.item()) * bs
             running["loss_phys"] += float(l_phys.item()) * bs
             running["loss_edgeLocalLap"] += float(l_edge_local_lap.item()) * bs
+            running["loss_boundary_geom"] += float(l_boundary_geom.item()) * bs
+            running["loss_boundary_mask"] += float(boundary_parts["boundary"].item()) * bs
+            running["loss_centerline"] += float(boundary_parts["centerline"].item()) * bs
+            running["loss_distance_edge"] += float(boundary_parts["distance_edge"].item()) * bs
             running["loss_detail"] += float(l_detail.item()) * bs
             running["loss_seq_delta"] += float(l_seq_delta.item()) * bs
             running["loss_seq_grad"] += float(l_seq_grad.item()) * bs
             running["loss_seq_geom"] += float(l_seq_geom.item()) * bs
             running["loss_seq_abs_center"] += float(l_seq_abs_center.item()) * bs
+            running["loss_kd_combo"] += float(l_kd_combo.item()) * bs
+            running["loss_kd_r40"] += float(l_kd_r40.item()) * bs
+            running["loss_region_kd"] += float(l_region_kd.item()) * bs
+            running["loss_motion"] += float(l_motion.item()) * bs
             running["pred_mean_mask"] += float(pred_mean_mask.item()) * bs
             running["pred_std_mask"] += float(pred_std_mask.item()) * bs
             running["eq_total"] += float(l_eq_total.item()) * bs
@@ -6403,7 +7070,7 @@ def validate_one_epoch(model, loader, huber, ssim, epoch_idx: int):
     n_samples = 0
 
     for batch in loader:
-        src, lbl = _unpack_batch(batch)
+        src, lbl, _role, _geom = _unpack_batch(batch)
         src = src.to(CFG.DEVICE, non_blocking=True)
         lbl = lbl.to(CFG.DEVICE, non_blocking=True)
         bs = src.size(0)
@@ -6753,7 +7420,10 @@ _PROXY_BASE_KEYS = (
 _BATCH_LOG_HEADER_V5 = [
     "epoch", "batch",
     "loss_total", "loss_rec", "loss_gradmag", "loss_edgeori", "loss_eqgeom", "loss_eqgrad",
-    "loss_stat", "loss_band", "loss_hf_lap", "loss_phys", "loss_edgeLocalLap", "loss_detail", "loss_seq_delta", "loss_seq_grad", "loss_seq_geom", "loss_seq_abs_center", "w_edgeLocalLap",
+    "loss_stat", "loss_band", "loss_hf_lap", "loss_phys", "loss_edgeLocalLap",
+    "loss_boundary_geom", "loss_boundary_mask", "loss_centerline", "loss_distance_edge",
+    "loss_detail", "loss_seq_delta", "loss_seq_grad", "loss_seq_geom", "loss_seq_abs_center",
+    "loss_kd_combo", "loss_kd_r40", "loss_region_kd", "loss_motion", "w_edgeLocalLap",
     "pred_mean_mask", "pred_std_mask", "bandE_pred", "bandE_gt", "phys_weight",
     "eq_shift_r_min", "eq_shift_r_max", "eq_factor",
     "weak_psf_beta", "weak_psf_beta_scale", "weak_psf_entropy", "weak_psf_top1", "weak_psf_bypass",
@@ -6766,12 +7436,14 @@ _VAL_WEIGHT_KEYS = ("w_rec", "w_consistency_eff", "w_smooth_eff", "w_cap_eff", "
 _VAL_FLAG_KEYS = ("flag_thicken_guard", "flag_oversmooth_guard", "flag_lap_guard", "flag_psf_guard")
 _VAL_LOSS_SUMMARY_KEYS = (
     "rec", "gradmag", "edge_ori", "eq_total", "loss_stat", "loss_band", "loss_hf_lap", "loss_phys",
-    "loss_edgeLocalLap", "loss_detail", "loss_seq_delta", "loss_seq_grad", "loss_seq_geom", "loss_seq_abs_center",
+    "loss_edgeLocalLap", "loss_boundary_geom", "loss_boundary_mask", "loss_centerline", "loss_distance_edge",
+    "loss_detail", "loss_seq_delta", "loss_seq_grad", "loss_seq_geom", "loss_seq_abs_center",
     "pred_mean_mask", "pred_std_mask", "bandE_pred", "bandE_gt",
 )
 _VAL_LOSS_HEADER_KEYS = (
     "loss_rec", "loss_gradmag", "loss_edgeori", "loss_eqgeom", "loss_stat", "loss_band", "loss_hf_lap", "loss_phys",
-    "loss_edgeLocalLap", "loss_detail", "loss_seq_delta", "loss_seq_grad", "loss_seq_geom", "loss_seq_abs_center",
+    "loss_edgeLocalLap", "loss_boundary_geom", "loss_boundary_mask", "loss_centerline", "loss_distance_edge",
+    "loss_detail", "loss_seq_delta", "loss_seq_grad", "loss_seq_geom", "loss_seq_abs_center",
     "pred_mean_mask", "pred_std_mask", "bandE_pred", "bandE_gt",
 )
 _VAL_RAW_METRIC_KEYS = ("total", "rec", "edge", "edge_profile", "psnr", "ssim", "fft_shape", "cb", "hf_ratio")
@@ -6972,6 +7644,49 @@ def _build_model_from_cfg() -> nn.Module:
     if not any(p.requires_grad for p in model.parameters()):
         raise RuntimeError("[FATAL] No trainable parameters found; check freeze settings.")
     return model
+
+
+def _build_frozen_teacher_from_ckpt(checkpoint_path: str, label: str) -> nn.Module:
+    path = str(checkpoint_path).strip()
+    if not path:
+        raise ValueError(f"{label} teacher path is empty")
+    if not os.path.isfile(path):
+        raise FileNotFoundError(f"{label} teacher checkpoint not found: {path}")
+    teacher = _build_model_from_cfg()
+    load_ckpt(path, teacher, optimizer=None, ema_model=None)
+    teacher.eval()
+    for param in teacher.parameters():
+        param.requires_grad_(False)
+    print(f"[KD] loaded frozen {label} teacher: {path}")
+    return teacher
+
+
+def _init_kd_teachers() -> None:
+    global KD_TEACHER_COMBO, KD_TEACHER_R40, REGION_KD_TEACHER
+    KD_TEACHER_COMBO = None
+    KD_TEACHER_R40 = None
+    REGION_KD_TEACHER = None
+    if not bool(getattr(CFG, "KD_ENABLE", False)):
+        pass
+    else:
+        if float(getattr(CFG, "KD_WEIGHT_COMBO", 0.0)) > 0.0:
+            KD_TEACHER_COMBO = _build_frozen_teacher_from_ckpt(CFG.KD_COMBO_PATH, "COMBO")
+        if float(getattr(CFG, "KD_WEIGHT_R40", 0.0)) > 0.0:
+            KD_TEACHER_R40 = _build_frozen_teacher_from_ckpt(CFG.KD_R40_PATH, "R40")
+        print(
+            "[KD] enabled: "
+            f"combo_weight={float(getattr(CFG, 'KD_WEIGHT_COMBO', 0.0)):.4f} "
+            f"r40_weight={float(getattr(CFG, 'KD_WEIGHT_R40', 0.0)):.4f} "
+            f"warmup_epoch={int(getattr(CFG, 'KD_WARMUP_EPOCH', 0))}"
+        )
+    if bool(getattr(CFG, "REGION_KD_ENABLE", False)) and float(getattr(CFG, "REGION_KD_WEIGHT", 0.0)) > 0.0:
+        REGION_KD_TEACHER = _build_frozen_teacher_from_ckpt(CFG.REGION_KD_TEACHER_PATH, "REGION_KD")
+        print(
+            "[REGION_KD] enabled: "
+            f"weight={float(getattr(CFG, 'REGION_KD_WEIGHT', 0.0)):.4f} "
+            f"band_px={float(getattr(CFG, 'REGION_KD_BAND_PX', 5.0)):.2f} "
+            f"warmup_epoch={int(getattr(CFG, 'REGION_KD_WARMUP_EPOCH', 0))}"
+        )
 
 
 def _build_optimizer(model: nn.Module) -> optim.Optimizer:
@@ -8100,6 +8815,7 @@ def run_one_seed(seed: int, args: Optional[argparse.Namespace] = None):
     # Data
     train_loader, val_loader = make_train_val_loaders()
     seq_loader = make_sequence_loader()
+    motion_loader = make_motion_loader()
     seq_val_loader = make_sequence_val_loader()
     _log_data_and_loss_setup(train_loader, val_loader, phys_forward_runtime, seq_val_loader=seq_val_loader)
     if seq_loader is None:
@@ -8110,6 +8826,15 @@ def run_one_seed(seed: int, args: Optional[argparse.Namespace] = None):
         print(
             f"[INFO] Sequence pairs: ENABLED "
             f"(pairs={seq_pairs}, batches={len(seq_loader)}, batch_size={int(getattr(CFG, 'SEQ_BATCH_SIZE', 2))})"
+        )
+    if motion_loader is None:
+        print("[INFO] R44 motion pairs: DISABLED")
+    else:
+        motion_ds = getattr(motion_loader, "dataset", None)
+        motion_pairs = len(motion_ds) if motion_ds is not None else 0
+        print(
+            f"[INFO] R44 motion pairs: ENABLED "
+            f"(pairs={motion_pairs}, batches={len(motion_loader)}, batch_size={int(getattr(CFG, 'MOTION_BATCH_SIZE', 2))})"
         )
 
     # Resume
@@ -8165,6 +8890,7 @@ def run_one_seed(seed: int, args: Optional[argparse.Namespace] = None):
     best_gmf_obj = None
 
     start_epoch = _resume_training_state(model, optimizer, ema_model)
+    _init_kd_teachers()
 
     # Monitor reference must be built after checkpoint resume, otherwise guards compare
     # against the wrong model state.
@@ -8334,6 +9060,7 @@ def run_one_seed(seed: int, args: Optional[argparse.Namespace] = None):
                 ema_decay=float(getattr(CFG, "EMA_DECAY", 0.0)) if ema_model is not None else 0.0,
                 max_batches_per_epoch=epoch_batch_budget,
                 seq_loader=seq_loader,
+                motion_loader=motion_loader,
             )
             summary["sched_consist_factor"] = float(consist_factor_eff)
             summary["sched_cap_factor"] = float(cap_factor_epoch)

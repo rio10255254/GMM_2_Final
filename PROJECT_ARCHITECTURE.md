@@ -1,5 +1,5 @@
 # PROJECT ARCHITECTURE / 專案架構與決策地圖
-Last updated: 2026-04-09
+Last updated: 2026-05-06
 
 ## 這份文件的用途 / Purpose
 
@@ -21,11 +21,17 @@ This document records **stable architectural design and decision rules**. It ans
 
 ### 最終衡量標準是什麼
 
-最終真值**永遠只有一個**：外部 GMF 工具在 whole-annulus 真實資料上對模型輸出的幾何定位評分。
+正式 baseline 與量測替代候選的最終真值**永遠只有一個**：外部 GMF 工具在 whole-annulus 真實資料上對模型輸出的幾何定位評分。
 
 白話說：把訓練好的模型拿去重建真實顯微鏡影像，再用外部 GMF（幾何匹配函數）工具測量「重建後的影像，在三種不同位移尺度下，定位環形邊界的穩定度有多高」。分數越好（step std 越小），代表模型越有用。
 
 The final truth is always the external GMF's whole-annulus geometric localization score on real-world data. In plain terms: take the trained model, reconstruct real microscope images, then measure with an external Geometric Matching Function (GMF) tool how stably the model's output localizes the annulus boundary across three displacement scales.
+
+### 顯微結構通用目標與環形代理
+
+專案真正關心的長期能力不是「只把環形重建好」，而是模型遇到各種顯微結構時，都能忠實重建邊界位置與細節：線條、格線、曲線、晶片區塊、缺口、刮痕、亮暗點、紋理與混合場景都算在內。
+
+目前外部 GMF 仍以環形資料作為正式守門，原因是它有穩定的真實資料、連續位移序列與長期可比較的歷史數字。也就是說，環形 GMF 是正式量測流程的代理測試，不等於專案全部科學目標。R39-R43 的定位就是在不動正式 baseline 的前提下，探索通用顯微邊界忠實度。
 
 ### 外部 GMF 真正優化的是什麼
 
@@ -83,6 +89,8 @@ Internal surrogates are proxies for rapid candidate filtering and hypothesis tes
 3. **只在有新機制或新部署條件**時才開新 round，不做已完成 promotion 決策的重複掃描
 
 The current optimization target is narrow and practical: preserve the balanced advantage of the formal COMBO baseline, keep the alternate taxonomy explicit for deployment-specific needs, and only open new rounds when there is a genuinely new mechanism or deployment requirement.
+
+研究層面另有一條已確認方向：通用顯微結構邊界忠實度。這條線可以允許環形代理測試出現有限退步來換取多特徵能力，但若要進入正式量測替代，仍必須回到外部 GMF 與專案 owner 的升級判斷。
 
 ---
 

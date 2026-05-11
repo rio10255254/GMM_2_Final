@@ -1,0 +1,42 @@
+[
+  {
+    "scale": "0.04",
+    "tag": "r45_oracle_adapter_large_mixed_s04",
+    "target_shape_error_score": 0.341758176783855,
+    "target_shape_delta_pct_vs_r44b": -0.995382438606399,
+    "overall_motion_vector_error_px": 0.3814374589258039,
+    "motion_delta_pct_vs_r44b": 0.02815461776970755,
+    "verdict": "FAIL",
+    "reason": "目標形狀改善不足"
+  },
+  {
+    "scale": "0.08",
+    "tag": "r45_oracle_adapter_large_mixed_s08",
+    "target_shape_error_score": 0.3402858514824222,
+    "target_shape_delta_pct_vs_r44b": -0.5602851476166704,
+    "overall_motion_vector_error_px": 0.38168463843344064,
+    "motion_delta_pct_vs_r44b": 0.09297496886438769,
+    "verdict": "FAIL",
+    "reason": "目標形狀改善不足"
+  },
+  {
+    "scale": "0.12",
+    "tag": "r45_oracle_adapter_large_mixed_s12",
+    "target_shape_error_score": 0.34452331647945983,
+    "target_shape_delta_pct_vs_r44b": -1.8125284793590768,
+    "overall_motion_vector_error_px": 0.3817040894207468,
+    "motion_delta_pct_vs_r44b": 0.09807579554042498,
+    "verdict": "FAIL",
+    "reason": "目標形狀改善不足"
+  },
+  {
+    "scale": "0.18",
+    "tag": "r45_oracle_adapter_large_mixed",
+    "target_shape_error_score": 0.34967513197224964,
+    "target_shape_delta_pct_vs_r44b": -3.3349780103223536,
+    "overall_motion_vector_error_px": 0.3821551405604084,
+    "motion_delta_pct_vs_r44b": 0.21635944095283718,
+    "verdict": "FAIL",
+    "reason": "目標形狀改善不足"
+  }
+]

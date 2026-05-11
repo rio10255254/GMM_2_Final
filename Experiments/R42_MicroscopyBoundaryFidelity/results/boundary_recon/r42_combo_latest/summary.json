@@ -1,0 +1,89 @@
+{
+  "profile": "boundary_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest",
+  "total_count": 140,
+  "overall_avg_psnr": 34.090168249264075,
+  "overall_hf_retention": 0.7509367092275333,
+  "overall_boundary_distance_px": 3.4776865226502456,
+  "overall_boundary_fscore_t1p0": 0.8680446867751813,
+  "stages": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "count": 20,
+      "avg_psnr": 32.821094746934676,
+      "avg_hf_retention": 0.6697058216483638,
+      "avg_boundary_distance_px": 1.0719224154949187,
+      "avg_boundary_fscore_t1p0": 0.9298600015498308,
+      "avg_centerline_distance_px": 10.18716242313385,
+      "avg_grid_pitch_error_px": 28.416666666666668,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct_progress_latest_in_stage_34_boundary_lines_20260505_142301\\boundary_val_unseen_stage_34_boundary_lines_latest.pth"
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "count": 20,
+      "avg_psnr": 27.596852580298936,
+      "avg_hf_retention": 0.856409662313844,
+      "avg_boundary_distance_px": 0.19382347363498412,
+      "avg_boundary_fscore_t1p0": 0.9857121936055206,
+      "avg_centerline_distance_px": 1.5495050847530365,
+      "avg_grid_pitch_error_px": 13.5,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct_progress_latest_in_stage_35_boundary_grids_20260505_142301\\boundary_val_unseen_stage_35_boundary_grids_latest.pth"
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "count": 20,
+      "avg_psnr": 32.41410445200208,
+      "avg_hf_retention": 0.6819811850744913,
+      "avg_boundary_distance_px": 1.2211057990789413,
+      "avg_boundary_fscore_t1p0": 0.9225497341980798,
+      "avg_centerline_distance_px": 7.480598175525666,
+      "avg_grid_pitch_error_px": 29.2,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct_progress_latest_in_stage_36_boundary_junctions_20260505_142301\\boundary_val_unseen_stage_36_boundary_junctions_latest.pth"
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "count": 20,
+      "avg_psnr": 36.046854834570766,
+      "avg_hf_retention": 0.7447973604570398,
+      "avg_boundary_distance_px": 0.5297937728464603,
+      "avg_boundary_fscore_t1p0": 0.9407124243386322,
+      "avg_centerline_distance_px": 10.714740967750549,
+      "avg_grid_pitch_error_px": 79.40277777777777,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct_progress_latest_in_stage_37_boundary_curves_20260505_142301\\boundary_val_unseen_stage_37_boundary_curves_latest.pth"
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "count": 20,
+      "avg_psnr": 37.58708198149854,
+      "avg_hf_retention": 0.804833914469713,
+      "avg_boundary_distance_px": 8.737152141332626,
+      "avg_boundary_fscore_t1p0": 0.7674194918264853,
+      "avg_centerline_distance_px": 7.491349995136261,
+      "avg_grid_pitch_error_px": 109.73214285714286,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct_progress_latest_in_stage_38_boundary_regions_20260505_142301\\boundary_val_unseen_stage_38_boundary_regions_latest.pth"
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "count": 20,
+      "avg_psnr": 36.36937481736359,
+      "avg_hf_retention": 0.7494010661899799,
+      "avg_boundary_distance_px": 5.980795443058014,
+      "avg_boundary_fscore_t1p0": 0.77558442966214,
+      "avg_centerline_distance_px": 7.773373568058014,
+      "avg_grid_pitch_error_px": 123.13235294117646,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct_progress_latest_in_stage_39_boundary_defects_20260505_142301\\boundary_val_unseen_stage_39_boundary_defects_latest.pth"
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "count": 20,
+      "avg_psnr": 35.795814332179944,
+      "avg_hf_retention": 0.7494279544393019,
+      "avg_boundary_distance_px": 6.609212613105774,
+      "avg_boundary_fscore_t1p0": 0.7544745322455807,
+      "avg_centerline_distance_px": 9.698059475421905,
+      "avg_grid_pitch_error_px": 26.0375,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct_progress_latest_in_stage_40_boundary_mixed_20260505_142301\\boundary_val_unseen_stage_40_boundary_mixed_latest.pth"
+    }
+  ]
+}

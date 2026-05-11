@@ -1,0 +1,35 @@
+{
+  "candidate": "r44_motion_from_r42_best_e24",
+  "status": "ring_guard_recorded_research_only",
+  "external_gmf_required_for_promotion": false,
+  "combo_reference": "D:\\GMM_2_Final\\Experiments\\R38v2SeqFixed\\results\\720angle_analysis\\COMBO\\cross_dataset\\cross_dataset_comparison.json",
+  "datasets": [
+    {
+      "short_name": "pitch1um_y_100",
+      "n_frames": 101,
+      "expected_step_px": 8.0,
+      "r44_internal_step_std_y": 0.2015,
+      "combo_internal_step_std_y": 0.1389,
+      "delta_internal_step_std_y": 0.0626,
+      "relative_delta_vs_combo_pct": 45.1
+    },
+    {
+      "short_name": "pitch0p1um_y_60",
+      "n_frames": 61,
+      "expected_step_px": 0.8,
+      "r44_internal_step_std_y": 0.2214,
+      "combo_internal_step_std_y": 0.1509,
+      "delta_internal_step_std_y": 0.0705,
+      "relative_delta_vs_combo_pct": 46.7
+    },
+    {
+      "short_name": "pitch0p01um_y_40",
+      "n_frames": 41,
+      "expected_step_px": 0.08,
+      "r44_internal_step_std_y": 0.1568,
+      "combo_internal_step_std_y": 0.1185,
+      "delta_internal_step_std_y": 0.0383,
+      "relative_delta_vs_combo_pct": 32.3
+    }
+  ]
+}
