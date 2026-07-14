@@ -1,0 +1,57 @@
+{
+  "quantity": "absolute two-dimensional FFT amplitude for supplied image and floating-point sources",
+  "normalization": "20*log10(abs(fftshift(fft2(image/255)))/pixel_count); 0 dBFS is a full-scale constant image",
+  "wiener_source_normalization": "20*log10(abs(fftshift(fft2(restored)))/pixel_count); 0 dBFS is a constant floating-point image with value 1.0",
+  "wiener_array": "restored",
+  "wiener_full_scale_reference": 1.0,
+  "per_image_peak_normalization": false,
+  "window": "none",
+  "mean_subtraction": false,
+  "smoothing": "none",
+  "display_limits_dbfs": [
+    -80.0,
+    0.0
+  ],
+  "shared_display_scale": "all six spectra",
+  "display_floor_note": "values below -80 dBFS use the darkest display color; exact unclipped values are stored in NPZ",
+  "records": {
+    "20x": {
+      "shape_yx": [
+        104,
+        104
+      ],
+      "captured_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\figures\\center9_pillar_fit_20x_50x\\20x\\05_original_pillar_3x3.bmp",
+      "v42_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\figures\\center9_pillar_fit_20x_50x\\20x\\06_v42_e120_reconstruction_pillar_3x3.bmp",
+      "captured_dbfs_min": -339.9474499799112,
+      "captured_dbfs_max": -6.48968297493399,
+      "v42_dbfs_min": -113.91991497273744,
+      "v42_dbfs_max": -6.490174941529849,
+      "wiener_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\source_data\\center9_pillar_fit_20x_50x\\psf_deconvolution_cd\\20x_wiener_deconvolution.mat",
+      "wiener_array": "restored",
+      "wiener_nsr": 0.08,
+      "wiener_full_scale_reference": 1.0,
+      "deconvolved_dbfs_min": -102.78921615816829,
+      "deconvolved_dbfs_max": -7.134184622215113,
+      "numeric_output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\source_data\\center9_pillar_fit_20x_50x\\spectra\\20x_absolute_spectra.npz"
+    },
+    "50x": {
+      "shape_yx": [
+        256,
+        257
+      ],
+      "captured_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\figures\\center9_pillar_fit_20x_50x\\50x\\05_original_pillar_3x3.bmp",
+      "v42_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\figures\\center9_pillar_fit_20x_50x\\50x\\06_v42_e120_reconstruction_pillar_3x3.bmp",
+      "captured_dbfs_min": -130.49448002638883,
+      "captured_dbfs_max": -2.6043278199004223,
+      "v42_dbfs_min": -135.19355302360077,
+      "v42_dbfs_max": -2.6053739010616317,
+      "wiener_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\source_data\\center9_pillar_fit_20x_50x\\psf_deconvolution_cd\\50x_wiener_deconvolution.mat",
+      "wiener_array": "restored",
+      "wiener_nsr": 0.08,
+      "wiener_full_scale_reference": 1.0,
+      "deconvolved_dbfs_min": -120.20879827565903,
+      "deconvolved_dbfs_max": -3.267920701757755,
+      "numeric_output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\source_data\\center9_pillar_fit_20x_50x\\spectra\\50x_absolute_spectra.npz"
+    }
+  }
+}
