@@ -22,7 +22,7 @@ python Tools/restore_pi_acquisition.py --archive downloads/20260902_100MF_uncert
 ## 保存與使用紀錄
 
 - [原件逐檔核對清單](ORIGINAL_ACQUISITION_MANIFEST.json)記錄930張照片與30份原始平台CSV。
-- [當時凍結的拍攝清單](original_frozen_capture_plan.json)保留舊路徑與原檔身分；舊下載位置目前已失效，不能把路徑文字當成檔案仍存在。
+- [當時凍結的拍攝清單](original_frozen_capture_plan.json)保留舊路徑與原檔身分；原下載資料夾當時已不存在；本次核對後建立了指向保護工作來源的新入口，不能把新入口當成原來仍留在C槽的舊原件。
 - [可改位置使用的拍攝清單](portable_capture_plan.json)使用資料夾內的相對位置。
 - [引用實驗清單](referencing_experiments.json)區分來源引用與完成實拍驗證，不能把兩者混為一談。
 
@@ -31,3 +31,5 @@ python Tools/restore_pi_acquisition.py --archive downloads/20260902_100MF_uncert
 原始ZIP與逐檔核對清單必須共同保存。`raw/`是本機解開後的工作副本，不重複放進一般Git歷史；完整原始ZIP隨GitHub版本附件保存。
 
 2026年10月16日已從GitHub下載照片ZIP、拍攝清單與恢復程式，在無法讀取舊D/H資料的另一位置完整還原960份原件。全部通過，見[取回重做核對](GITHUB_ROUNDTRIP_VERIFIED.json)。
+
+為維持既有實驗查找方式，原C槽拍攝位置已建立指向D槽保護原件的資料夾入口，全部960份檔案按歷史路徑核對通過；C槽沒有另一套完整照片。[原位置相容核對](HISTORICAL_PATH_COMPATIBILITY_VERIFIED.json)。

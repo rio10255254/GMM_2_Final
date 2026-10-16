@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "dataset": "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\GITHUB_R61_generated\\r61_universal_boundary_train_motion_texture_step_guard_v16",
+  "total_pairs": 20296,
+  "role_counts": {
+    "legacy_shape": 800,
+    "motion_synthetic": 4800,
+    "motion_texture_synthetic": 4800,
+    "sem_truth_anchor": 1400,
+    "sequence_guard": 1200,
+    "step_guard_motion_texture_synthetic": 3200,
+    "universal_synthetic": 4096
+  },
+  "checked_training_files": 114283,
+  "identical_training_files": 114283,
+  "file_failures": [],
+  "unexpected_files": [],
+  "missing_files": [],
+  "manifest_metadata_equal_except_generation_time_and_source_location": true,
+  "train_count": 18266,
+  "validation_count": 2030,
+  "group_overlap_count": 0,
+  "fixed_split_counts_match": true,
+  "inputs": {
+    "checked_input_files": 17004,
+    "failures": []
+  }
+}

@@ -121,10 +121,11 @@ def build(root: Path, catalog: Path, output: Path, write_docs: bool):
                 documents.append(path)
         elif role == 'results_and_provenance' and metadata_keep(path):
             top_level = len(PurePosixPath(path).parts) == 1
+            governance = path.startswith('docs/operations/') and path.lower().endswith('.json') and size <= 2*1024**2
             small_settings = size <= 200*1024 and any(x in path.lower() for x in ['/config/', '/configs/', '/calibration/', '/evaluation/'])
             canonical_summary = size <= 2*1024**2 and ('/reports/data/' in path or '/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/' in path)
             choose(path, size, role, '保存逐筆結果、排除原因、分組、訓練曲線與來源核對',
-                   force_payload=not (top_level or small_settings or canonical_summary))
+                   force_payload=not (top_level or governance or small_settings or canonical_summary))
         elif role == 'numeric_array_candidate':
             keep, reason = array_keep(root, path, size)
             if keep:
@@ -226,7 +227,10 @@ def build(root: Path, catalog: Path, output: Path, write_docs: bool):
                  'download_research_assets.py', 'research_asset_bundle.py', 'complete_recovery_navigation.py']:
         p = root/'Tools'/name
         choose(p.relative_to(root).as_posix(),p.stat().st_size,'recovery_tool','收集、核對與恢復工具；沒有刪除功能')
-    for name in ['test_research_recovery.py', 'test_restore_pi_acquisition.py', 'test_research_asset_bundle.py']:
+    for name in ['publish_research_assets.py', 'restore_research_aliases.py']:
+        p = root/'Tools'/name
+        choose(p.relative_to(root).as_posix(),p.stat().st_size,'recovery_tool','驗證後保存附件，恢復專案內共用來源；保留原件')
+    for name in ['test_research_recovery.py', 'test_restore_pi_acquisition.py', 'test_research_asset_bundle.py', 'test_restore_research_aliases.py']:
         p=root/'Tools/tests'/name
         choose(p.relative_to(root).as_posix(),p.stat().st_size,'recovery_tool_test','恢復越界、覆寫與變更偵測的實測')
     for scope in scopes:

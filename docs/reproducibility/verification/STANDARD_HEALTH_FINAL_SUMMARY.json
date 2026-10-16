@@ -1,0 +1,77 @@
+{
+  "status": "PASS_WITH_EXPECTED_EXISTING_WORKTREE_WARNING",
+  "modules": [
+    {
+      "module": "docs",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "core_docs_exist",
+          "status": "PASS",
+          "details": "All control-center source docs exist."
+        },
+        {
+          "name": "legacy_runtime_refs",
+          "status": "PASS",
+          "details": "Formal docs now point to docs/archive/legacy_runtime_status/"
+        },
+        {
+          "name": "structure_validator",
+          "status": "PASS",
+          "details": "Project structure validator passed."
+        }
+      ]
+    },
+    {
+      "module": "entrypoints",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "entrypoint_files",
+          "status": "PASS",
+          "details": "All declared entrypoints exist."
+        },
+        {
+          "name": "train_main_help",
+          "status": "PASS",
+          "details": "help opened successfully"
+        },
+        {
+          "name": "infer_main_help",
+          "status": "PASS",
+          "details": "help opened successfully"
+        },
+        {
+          "name": "infer_tta_help",
+          "status": "PASS",
+          "details": "help opened successfully"
+        },
+        {
+          "name": "storage_guard_help",
+          "status": "PASS",
+          "details": "help opened successfully"
+        }
+      ]
+    },
+    {
+      "module": "python",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "python_tests",
+          "status": "PASS",
+          "details": "150 passed, 1 skipped, 2 warnings in 57.25s"
+        },
+        {
+          "name": "compileall",
+          "status": "PASS",
+          "details": "compileall passed"
+        }
+      ]
+    }
+  ],
+  "issues": [
+    "tracked worktree was already dirty at start"
+  ],
+  "existing_worktree_changes_preserved": true
+}

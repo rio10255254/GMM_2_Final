@@ -90,8 +90,14 @@ def main():
         assert actual['sha256'] == expected['sha256'] and actual['bytes'] == expected['bytes']
     sums = args.bundle / 'SHA256SUMS.txt'
     if not sums.exists():
-        sums.write_text(''.join(digest(path)+'  '+path.name+'\n' for path in sorted(args.bundle.iterdir())
-                                if path.suffix == '.zip' or path.name in {'RESEARCH_ASSETS.json.gz','BUNDLE_SUMMARY.json'}), encoding='utf-8')
+        # Every part was already hashed locally and matched against GitHub's
+        # digest above. Reuse those checked identities instead of reading tens
+        # of gigabytes once more just to format a checksum text file.
+        checksums = list(summary['assets']) + [
+            {'name': name, 'sha256': digest(args.bundle / name)}
+            for name in ['RESEARCH_ASSETS.json.gz', 'BUNDLE_SUMMARY.json']]
+        sums.write_text(''.join(row['sha256']+'  '+row['name']+'\n'
+                                for row in sorted(checksums, key=lambda row: row['name'].casefold())), encoding='utf-8')
     for name in ['RESEARCH_ASSETS.json.gz','BUNDLE_SUMMARY.json','SHA256SUMS.txt']:
         rows.append(upload_one(args.repo, args.tag, args.bundle / name))
     write_json(receipt, {'status':'PASS','repo':args.repo,'tag':args.tag,

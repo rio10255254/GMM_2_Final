@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "unique_original_paths": 225848,
+  "release_path_records": 208123,
+  "duplicate_identical_paths": 1558,
+  "conflicts": [],
+  "all_11_internal_shared_targets_available": [
+    {
+      "path": "Experiments/R119_SequenceGeometryValidation/data/package",
+      "target": "Experiments/R118_PhysicalCoordinateRepairScratch/data/package",
+      "frozen_target_files_available": 71657
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/data",
+      "target": "Experiments/R130_Clean/data",
+      "frozen_target_files_available": 1537
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/data",
+      "target": "Experiments/R130_Clean/data",
+      "frozen_target_files_available": 1537
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/data",
+      "target": "Experiments/R130_Clean/data",
+      "frozen_target_files_available": 1537
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/data",
+      "target": "Experiments/R130_Clean/data",
+      "frozen_target_files_available": 1537
+    },
+    {
+      "path": "Experiments/R140_StableUNet/data",
+      "target": "Experiments/R130_Clean/data",
+      "frozen_target_files_available": 1537
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/data/payload",
+      "target": "Experiments/R148_MeasurementStableNativePSF/data/payload",
+      "frozen_target_files_available": 1537
+    },
+    {
+      "path": "Experiments/R149_MatchedGeometryLocalBoundary/data/base_geometry",
+      "target": "Experiments/R148v2_HybridContextNativePSF/data/geometry",
+      "frozen_target_files_available": 769
+    },
+    {
+      "path": "Experiments/R149_MatchedGeometryLocalBoundary/data/base_payload",
+      "target": "Experiments/R148_MeasurementStableNativePSF/data/payload",
+      "frozen_target_files_available": 1537
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/data",
+      "target": "Experiments/R149_MatchedGeometryLocalBoundary/data",
+      "frozen_target_files_available": 2596
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/evaluation",
+      "target": "Experiments/R148v2_HybridContextNativePSF/evaluation",
+      "frozen_target_files_available": 915
+    }
+  ]
+}

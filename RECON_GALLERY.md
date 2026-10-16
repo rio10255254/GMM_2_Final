@@ -969,3 +969,25 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 ![位移與重拍波動](Experiments/R130_Clean/reports/figures/displacement.png)
 
 ![相同區域的重建](Experiments/R130_Clean/reports/figures/native_nine_example.png)
+
+## 2026-10-16 保存整理：原始影像與失敗案例
+
+這裡重新整理既有研究影像及真正的原始拍攝示例，沒有新增科學判決。完整數值、原始來源、不同曝光與不利結果隨[逐輪保存入口](docs/reproducibility/README.md)保存。
+
+### 實際相機原圖
+
+9月3日第1趟起點，直接複製原始拍攝ZIP中的BMP，未做影像處理。完整930張及30份原始平台紀錄見[共用原始資料](Shared_Sources/PI_Repeatability_20260903/README.md)。
+
+![第1趟起點相機原件](Shared_Sources/PI_Repeatability_20260903/preview/original_001804_XY_0_1.bmp)
+
+### 低倍率細節損失
+
+R75v2的5倍細網格在512切片下被抹平；768與1024追加對照也保留。原圖、三個設定與同區域放大一起呈現，不只保存較好的1024結果。
+
+![原圖與三個切片設定對照](Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/results/figures/05_followup_5x_tile_sensitivity.png)
+
+### 未採用模型的量測結果
+
+R139只產生固定亮度偏移的失敗，當年的完整位移曲線與[因果診斷](Experiments/R139_UNetRecurrentPrototype/reports/R139_CAUSAL_AUDIT.md)共同保存。
+
+![R139與原圖及對照模型的位移曲線](Experiments/R139_UNetRecurrentPrototype/reports/figures/displacement.png)

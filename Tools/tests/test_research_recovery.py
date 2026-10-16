@@ -1,5 +1,6 @@
 """Safety checks for export/restore of irreplaceable research artifacts."""
 import hashlib
+import gzip
 import importlib.util
 import json
 from pathlib import Path
@@ -65,6 +66,18 @@ class RecoverySafetyTests(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 MODULE.verify_files(base, manifest, report)
             self.assertEqual(report.read_bytes(), receipt)
+
+    def test_downloaded_compressed_catalog_verifies_the_exact_saved_measurement(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            base = Path(temporary)
+            data = b'scan,error_nm\n1,-2.75\n'
+            (base / 'measure.csv').write_bytes(data)
+            manifest = base / 'REPOSITORY_FILES.json.gz'
+            with gzip.open(manifest, 'wt', encoding='utf-8') as stream:
+                json.dump({'files': [{'path': 'measure.csv', 'bytes': len(data),
+                                      'sha256': hashlib.sha256(data).hexdigest()}]}, stream)
+            self.assertEqual(MODULE.verify_files(base, manifest, base / 'verified.json'), 0)
+            self.assertEqual((base / 'measure.csv').read_bytes(), data)
 
 
 if __name__ == '__main__':

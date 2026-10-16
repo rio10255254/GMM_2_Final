@@ -37,6 +37,9 @@ BULK = {'arrays', 'reconstructions', 'reconstruction', 'reconstruct_progress',
 
 
 def read_json(path: Path):
+    if path.suffix.lower() == '.gz':
+        with gzip.open(path, 'rt', encoding='utf-8-sig') as stream:
+            return json.load(stream)
     return json.loads(path.read_text(encoding='utf-8-sig'))
 
 

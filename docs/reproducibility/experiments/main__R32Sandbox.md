@@ -16,16 +16,24 @@ R30起始模型、真實訓練影像、固定合成資料與外部GMF原始回�
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_SUMMARY_20260319_183506.md](../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_SUMMARY_20260319_183506.md)
-- [ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_real_eq_finetune_20260319_183506.md](../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_real_eq_finetune_20260319_183506.md)
-- [ROUND32_DOMAIN_CAPACITY_AUDIT_8P0_SUMMARY_20260319_183546.md](../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_8P0_SUMMARY_20260319_183546.md)
-- [ROUND32_DOMAIN_CAPACITY_AUDIT_8P0_r32_real_eq_finetune_20260319_183546.md](../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_8P0_r32_real_eq_finetune_20260319_183546.md)
-- [ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md](../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md)
-- [ROUND32_DOMAIN_CAPACITY_SUMMARY_20260319_183506.md](../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_SUMMARY_20260319_183506.md)
-- [ROUND32_EXTERNAL_COMPARE.md](../../../Experiments/R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md)
+- [原始報告：ROUND32_DOMAIN_CAPACITY AUDIT_0P8 Summary](<../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_SUMMARY_20260319_183506.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_real_eq_finetune_20260319_183506.md>)
+- [原始報告：ROUND32_DOMAIN_CAPACITY AUDIT_8P0 Summary](<../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_8P0_SUMMARY_20260319_183546.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_8P0_r32_real_eq_finetune_20260319_183546.md>)
+- [原始報告：ROUND32_DOMAIN_CAPACITY Decision Memo](<../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md>)
+- [原始報告：ROUND32_DOMAIN_CAPACITY Summary](<../../../Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_SUMMARY_20260319_183506.md>)
+- [原始報告：Round32 External GMF Compare: R30 B1 dironly vs R32 Sandbox Winner](<../../../Experiments/R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md>)
 
 ## 重做與驗證範圍
 
 程式、設定、完整表格與選定影像依保存清單收錄；大型必要來源和固定模型由附件恢復。
 本次沒有重跑這一輪全部歷史訓練。可攜執行、完整數值重算與來源逐份核對的實測範圍，請看總入口的驗證紀錄。
 任何仍須讀取僅存在D／H原工作區的檔案，都不能列為僅靠GitHub已完整重現。
+
+## 2026年10月16日保存核對
+
+本輪入選的方法、設定、完整數值與代表影像已完成逐份內容核對並保存到GitHub；共用來源與先前移到H槽的歷史版本，按總入口的附件索引取回。
+
+本次完成保存與完整檔案內容核對，沒有重跑本輪全部歷史訓練；原成功、失敗、中止及限制照原報告保留。
+
+D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理。

@@ -16,21 +16,29 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [R152_COMPLETE_MODEL_AND_EXPERIMENT_RECORD_20260929.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_COMPLETE_MODEL_AND_EXPERIMENT_RECORD_20260929.md)
-- [R152_DATA_GENERATION_REPRODUCTION_20261004.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md)
-- [R152_DESIGN_AND_PREFLIGHT.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DESIGN_AND_PREFLIGHT.md)
-- [R152_FULL_REAL_VALIDATION.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_FULL_REAL_VALIDATION.md)
-- [REPORT.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/REPORT.md)
-- [START_HERE.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/START_HERE.md)
-- [R152_SINGLE_SCAN_STEP_SD_20260930.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_SINGLE_SCAN_STEP_SD_20260930.md)
-- [R152_STANDALONE_PACKAGE_20261004.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md)
-- [FIGURE_NOTES.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)
-- [README_TW.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/calibration/README_TW.md)
-- [R152_TIFF_TRAINING_PACKAGE_20261004.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)
-- [R152_TRAINING_RESULTS.md](../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TRAINING_RESULTS.md)
+- [原始報告：R152 模型架構與完整實驗資料紀錄](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_COMPLETE_MODEL_AND_EXPERIMENT_RECORD_20260929.md>)
+- [原始報告：R152完整訓練影像生成程式與重新生成核對](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md>)
+- [原始報告：R152：保留 R148v2 效果的自適應 PSF 安全擴充](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DESIGN_AND_PREFLIGHT.md>)
+- [原始報告：R152 完整實拍驗證](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_FULL_REAL_VALIDATION.md>)
+- [原始報告：R152 與 RAW 完整研究設計及驗證紀錄](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/REPORT.md>)
+- [原始報告：R152與RAW研究紀錄閱讀入口](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/START_HERE.md>)
+- [原始報告：30 趟重拍的單趟 30 步位移波動](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_SINGLE_SCAN_STEP_SD_20260930.md>)
+- [原始報告：R152獨立模型與完整訓練資料包](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md>)
+- [原始報告：R152論文三項實際圖像補件](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md>)
+- [原始報告：2026-09-24：讓 SEM 外框卷積後更接近完整實拍柱子](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/calibration/README_TW.md>)
+- [原始報告：R152正式訓練改讀TIFF影像檔](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md>)
+- [原始報告：R152 完整訓練結果與完成後核對](<../../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TRAINING_RESULTS.md>)
 
 ## 重做與驗證範圍
 
 程式、設定、完整表格與選定影像依保存清單收錄；大型必要來源和固定模型由附件恢復。
 本次沒有重跑這一輪全部歷史訓練。可攜執行、完整數值重算與來源逐份核對的實測範圍，請看總入口的驗證紀錄。
 任何仍須讀取僅存在D／H原工作區的檔案，都不能列為僅靠GitHub已完整重現。
+
+## 2026年10月16日保存核對
+
+本輪入選的方法、設定、完整數值與代表影像已完成逐份內容核對並保存到GitHub；共用來源與先前移到H槽的歷史版本，按總入口的附件索引取回。
+
+本次已實跑本輪的完整資料生成或保存觀測重算；實測範圍見總入口，並不表示重跑過所有歷史訓練。
+
+D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理。

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "command": [
+    "C:\\Users\\Rio\\anaconda3\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\github_training_kits_restored\\Deliverables\\R61_TrainingData_Regenerator_20261004\\regenerate_r61.py",
+    "--verify-only",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\GITHUB_R61_generated\\r61_universal_boundary_train_motion_texture_step_guard_v16",
+    "--report",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\GITHUB_R61_generated\\REBUILD_VERIFIED.json"
+  ],
+  "blocked_original_roots": [
+    "D:\\GMM_2_Final",
+    "H:\\GMM_2_Final_Archive",
+    "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty"
+  ],
+  "allowed_copied_roots": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\github_training_kits_restored",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\GITHUB_R61_generated"
+  ],
+  "python_workers_inherit_guard": true,
+  "seconds": 455.47706031799316
+}

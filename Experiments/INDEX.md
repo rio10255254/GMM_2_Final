@@ -1,6 +1,6 @@
 # 實驗索引 / Experiment Index
 
-Last updated: 2026-10-16（共用原始資料及逐輪重做入口整理中）
+Last updated: 2026-10-16（研究保存及核心重做核對完成；D清理被工具拒絕）
 
 MOSR口試補充比較進行中：[平均／中位數完整重算](R153_MeanExternalBenchmark/reports/MEAN_MEDIAN_RESULTS.md)／[自動訓練監看與接續](R153_MeanExternalBenchmark/reports/TRAINING_MONITOR.md)。七個官方架構從零一般訓練；兩個官方後端環境阻礙完整保留。巡檢改為預估完成加緩衝時檢查；尚未開始方法最多8輪，實際訓練時間差異明列。平均數第一部分交接已完成：[可供網頁對話修改論文的完整文件](R153_MeanExternalBenchmark/reports/MOSR_MEAN_THESIS_HANDOFF_20261005/MOSR_MEAN_THESIS_HANDOFF.md)；全部外部實拍benchmark尚未完成。
 
@@ -323,3 +323,7 @@ R147診斷後的獨立版本：取消縮圖／放大主幹，以全原尺寸多�
 | [R97_DirectCausalPhaseScratch/](R97_DirectCausalPhaseScratch/) | 直接預測每分支實際施加的修正 | [來源、結果與限制](../docs/reproducibility/experiments/main__R97_DirectCausalPhaseScratch.md) |
 | [R98_AggressiveTextureScratch/](R98_AggressiveTextureScratch/) | 增加可見多尺度紋理的恢復強度 | [來源、結果與限制](../docs/reproducibility/experiments/main__R98_AggressiveTextureScratch.md) |
 | [R99_GeometryTextureCoherentScratch/](R99_GeometryTextureCoherentScratch/) | 把亮暗、幾何、邊緣與紋理動作依序分開 | [來源、結果與限制](../docs/reproducibility/experiments/main__R99_GeometryTextureCoherentScratch.md) |
+
+## 2026-10-16 GitHub保存收尾
+
+[177個實驗／歷史批次的保存入口](../docs/reproducibility/EXPERIMENTS.md)與[完整下載、生成及數值重算](../docs/reproducibility/README.md)已完成。原實拍960檔、R61全部114283資料檔、R152全部9216 TIFF與十方法完整重算均由GitHub取回核對通過；各輪失敗及限制保留。D副本清理被執行工具拒絕，實際回收0，[收尾記錄](../docs/operations/GITHUB_PRESERVATION_CLOSEOUT_20261016.md)。

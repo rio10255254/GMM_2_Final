@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "actual_project_aliases_created_or_exact_existing_copies_reused": 11,
+  "real_frozen_source_files_read_through_aliases": [
+    {
+      "alias": "Experiments/R119_SequenceGeometryValidation/data/package",
+      "target": "Experiments/R118_PhysicalCoordinateRepairScratch/data/package",
+      "real_source_file": "records/000501.json",
+      "sha256": "4a92bf7bd1a3d00b2896bc6c31ef19fe40872bcd6b3c31a1af6fb41629190c1e"
+    },
+    {
+      "alias": "Experiments/R137_WeakPSFFeature/data",
+      "target": "Experiments/R130_Clean/data",
+      "real_source_file": "dev/0028.json",
+      "sha256": "62dd93c08a04cfa65eaf9dee3c518aa45c0435b55ad75efa53297bdf7ac9afa1"
+    },
+    {
+      "alias": "Experiments/R138_V42PSF8/data",
+      "target": "Experiments/R130_Clean/data",
+      "real_source_file": "dev/0028.json",
+      "sha256": "62dd93c08a04cfa65eaf9dee3c518aa45c0435b55ad75efa53297bdf7ac9afa1"
+    },
+    {
+      "alias": "Experiments/R139_UNetRecurrentPrototype/data",
+      "target": "Experiments/R130_Clean/data",
+      "real_source_file": "dev/0028.json",
+      "sha256": "62dd93c08a04cfa65eaf9dee3c518aa45c0435b55ad75efa53297bdf7ac9afa1"
+    },
+    {
+      "alias": "Experiments/R140v2_StableUNet/data",
+      "target": "Experiments/R130_Clean/data",
+      "real_source_file": "dev/0028.json",
+      "sha256": "62dd93c08a04cfa65eaf9dee3c518aa45c0435b55ad75efa53297bdf7ac9afa1"
+    },
+    {
+      "alias": "Experiments/R140_StableUNet/data",
+      "target": "Experiments/R130_Clean/data",
+      "real_source_file": "dev/0028.json",
+      "sha256": "62dd93c08a04cfa65eaf9dee3c518aa45c0435b55ad75efa53297bdf7ac9afa1"
+    },
+    {
+      "alias": "Experiments/R148v2_HybridContextNativePSF/data/payload",
+      "target": "Experiments/R148_MeasurementStableNativePSF/data/payload",
+      "real_source_file": "dev/0024.json",
+      "sha256": "b9ad19ee23091fa1f1b8e54e0c0ea18159c92c04ab10e18c892f3a12298c4615"
+    },
+    {
+      "alias": "Experiments/R149_MatchedGeometryLocalBoundary/data/base_geometry",
+      "target": "Experiments/R148v2_HybridContextNativePSF/data/geometry",
+      "real_source_file": "dev/0002.npz",
+      "sha256": "225b7eeb78fef7a395ddc1dc14368c03a6a34de0792ab94a04278da7542ccea4"
+    },
+    {
+      "alias": "Experiments/R149_MatchedGeometryLocalBoundary/data/base_payload",
+      "target": "Experiments/R148_MeasurementStableNativePSF/data/payload",
+      "real_source_file": "dev/0024.json",
+      "sha256": "b9ad19ee23091fa1f1b8e54e0c0ea18159c92c04ab10e18c892f3a12298c4615"
+    },
+    {
+      "alias": "Experiments/R150_MatchedGeometryMeanPSF/data",
+      "target": "Experiments/R149_MatchedGeometryLocalBoundary/data",
+      "real_source_file": "base_geometry/dev/0002.npz",
+      "sha256": "225b7eeb78fef7a395ddc1dc14368c03a6a34de0792ab94a04278da7542ccea4"
+    },
+    {
+      "alias": "Experiments/R152_R148v2_SafeAdaptivePSF/evaluation",
+      "target": "Experiments/R148v2_HybridContextNativePSF/evaluation",
+      "real_source_file": "__init__.py",
+      "sha256": "d0f3c0cd4e439fbdff5b369d1089507117968f095c8f2afcc4fc30e122db796e"
+    }
+  ],
+  "external_archive_dependencies_created": 0,
+  "original_D_or_H_sources_modified": false
+}

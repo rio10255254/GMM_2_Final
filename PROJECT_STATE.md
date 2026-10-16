@@ -1,6 +1,6 @@
 # PROJECT STATE / 專案狀態
 
-Last updated: 2026-10-16（共用相機原始資料已追回並核對；GitHub重現整理執行中）
+Last updated: 2026-10-16（GitHub研究保存與核心重做核對完成；D副本清理遭執行工具拒絕）
 
 專案控制與整體巡檢請使用 `python Tools/project_control_center.py`。
 機器真相：`ESTIMATOR_POLICY.json`。
@@ -21,7 +21,8 @@ Last updated: 2026-10-16（共用相機原始資料已追回並核對；GitHub�
 - 先前R139恢復副本與原始ZIP全部相同；正式來源使用直接從原始ZIP取出的檔案。
 - 177個實驗或歷史批次的保存判讀已建立；[逐輪入口](docs/reproducibility/EXPERIMENTS.md)。檔案整理與完整重跑訓練分別標示。
 - 本次R61在另一位置完整重建114283檔全部相同；R152完整重建9216 TIFF全部相同，均禁止讀取舊研究資料。
-- 原始30趟資料已發布GitHub並取回完整重做960檔通過；十方法270指標／18000筆位移／162區間重算通過。其餘來源與模型附件保存、整份取回核對仍執行中；本次尚未清理D槽舊副本。
+- 五組來源／模型／結果版本已發布GitHub；原件960檔、R61完整114283資料檔、R152全部9216 TIFF及十方法完整數值取回重做均通過。
+- D清理被自動審查以blocked by policy拒絕；本次0檔／0 bytes回收。兩批54個目錄的D/H完整備份/H工作副本已重新核對，[收尾狀態](docs/operations/GITHUB_PRESERVATION_CLOSEOUT_20261016.md)。
 ### 容量與保護
 - 20261016完整盤點3592327檔、零讀取錯誤；不追蹤31個外部資料入口，不把H資料重算成D負擔。
 - C槽R152 UI訓練持續保護；驗證輸出使用H槽，沒有啟動另一個GPU訓練。
@@ -31,6 +32,7 @@ Last updated: 2026-10-16（共用相機原始資料已追回並核對；GitHub�
 - [機器真相](ESTIMATOR_POLICY.json)、[完整現況](#full-current-state--完整現況)、[實驗索引](Experiments/INDEX.md)。
 - [封存與恢復索引](docs/operations/PROJECT_ARCHIVE_INDEX.md)、[來源政策](docs/operations/SOURCE_OF_TRUTH_POLICY.md)。
 - [整理前的完整交接原文](docs/history/PROJECT_STATE_HANDOFF_BEFORE_RECOVERY_20261016.md)。
+- [早期執行狀態快照](docs/archive/legacy_runtime_status/)只供歷史查找，原實驗報告優先。
 <!-- QUICK_HANDOFF_END -->
 
 ---
@@ -43,7 +45,7 @@ Last updated: 2026-10-16（共用相機原始資料已追回並核對；GitHub�
 
 本次逐輪判讀177個範圍，補建缺失的導引而不補造原登錄。R61完整114283檔與R152完整9216 TIFF另址生成完全一致；十方法完整270指標、18000位移、162完整趟次配對區間及平均／中位數36區間另址重算通過。沒有重跑全部歷史訓練、輪廓重新擬合或改動正式基準。
 
-必要原始照片、SEM、固定來源、完整結果與模型附件正在逐檔保存與GitHub核對。原分支與既有工作狀態保留，保存快照使用codex/research-recovery-20261016。本次D清理須待整份驗證、活動／相依檢查與精確清單完成；C槽正在訓練的獨立包持續保護。[總入口](docs/reproducibility/README.md)。
+必要原始照片、SEM、固定來源、完整結果與模型附件已發布五個GitHub版本；208123個附件原位置與一般倉庫合併核對225848個原位置，全部內容一致且無衝突。GitHub取回R61／R152完整資料重建與十方法完整重算通過。原分支與既有工作狀態保留，保存快照使用codex/research-recovery-20261016。R87與20x／5x兩批54個D目錄三方核對通過，但原生R87刪除指令在程序啟動前被自動審查拒絕；本次D原件未清理、實際回收0。C槽正在訓練的獨立包持續保護。[總入口](docs/reproducibility/README.md)。
 
 
 ### Committee-response mean aggregation and external benchmark (2026-10-05)

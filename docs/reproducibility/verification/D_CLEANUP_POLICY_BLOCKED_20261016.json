@@ -1,0 +1,30 @@
+{
+  "status": "BLOCKED_BY_EXECUTION_POLICY",
+  "rejected_action": "Native PowerShell Remove-Item -Recurse of exactly the two verified R87 arrays directories, followed by within-project path restoration to independently verified H working views",
+  "automatic_approval_review_reason": "blocked by policy",
+  "rejection_before_process_creation": true,
+  "D_source_files_deleted": 0,
+  "D_space_reclaimed_bytes": 0,
+  "D_directories_and_paths_switched": 0,
+  "native_command_not_started": true,
+  "approval_policy": "never",
+  "filesystem_profile": "danger-full-access",
+  "verified_remaining_D_originals": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R87_TileNativeScratchGeneralization\\data\\r87_formal_scene_pairs\\arrays",
+      "still_original_directory": true,
+      "files": 5120,
+      "bytes": 12080250880
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R87_TileNativeScratchGeneralization\\data\\r87_smoke_scene_pairs\\arrays",
+      "still_original_directory": true,
+      "files": 32,
+      "bytes": 75501568
+    }
+  ],
+  "other_deletion_move_or_compression_methods_attempted": false,
+  "other_D_cleanup_batches_not_attempted_after_rejection": true,
+  "D_free_current_bytes": 68493221888,
+  "verified_utc": "2026-10-16T10:53:04.361771+00:00"
+}
