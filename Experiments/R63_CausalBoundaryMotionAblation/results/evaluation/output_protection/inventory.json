@@ -1,0 +1,117 @@
+{
+  "checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\results\\training_results\\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\\epoch_120.pth.tar",
+  "records": [
+    {
+      "mode": "full",
+      "reconstruction_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\full\\reconstructions",
+      "metric_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\full\\metrics",
+      "metric_status": {
+        "synthetic_shift": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\full\\metrics\\synthetic_shift\\synthetic_shift_summary.csv",
+          "exit_code": 0
+        },
+        "static_cd": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\full\\metrics\\static_cd\\static_cd_summary.csv",
+          "exit_code": 0
+        },
+        "displacement": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\full\\metrics\\displacement\\displacement_summary_top30.csv",
+          "exit_code": 0
+        }
+      }
+    },
+    {
+      "mode": "no_boundary",
+      "reconstruction_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_boundary\\reconstructions",
+      "metric_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_boundary\\metrics",
+      "metric_status": {
+        "synthetic_shift": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_boundary\\metrics\\synthetic_shift\\synthetic_shift_summary.csv",
+          "exit_code": 0
+        },
+        "static_cd": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_boundary\\metrics\\static_cd\\static_cd_summary.csv",
+          "exit_code": 0
+        },
+        "displacement": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_boundary\\metrics\\displacement\\displacement_summary_top30.csv",
+          "exit_code": 0
+        }
+      }
+    },
+    {
+      "mode": "no_anchor",
+      "reconstruction_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_anchor\\reconstructions",
+      "metric_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_anchor\\metrics",
+      "metric_status": {
+        "synthetic_shift": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_anchor\\metrics\\synthetic_shift\\synthetic_shift_summary.csv",
+          "exit_code": 0
+        },
+        "static_cd": {
+          "status": "invalid",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_anchor\\metrics\\static_cd\\static_cd_summary.csv",
+          "exit_code": 1,
+          "reason": "locked evaluator rejected this inference-only output"
+        },
+        "displacement": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_anchor\\metrics\\displacement\\displacement_summary_top30.csv",
+          "exit_code": 0
+        }
+      }
+    },
+    {
+      "mode": "no_gate",
+      "reconstruction_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_gate\\reconstructions",
+      "metric_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_gate\\metrics",
+      "metric_status": {
+        "synthetic_shift": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_gate\\metrics\\synthetic_shift\\synthetic_shift_summary.csv",
+          "exit_code": 0
+        },
+        "static_cd": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_gate\\metrics\\static_cd\\static_cd_summary.csv",
+          "exit_code": 0
+        },
+        "displacement": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_gate\\metrics\\displacement\\displacement_summary_top30.csv",
+          "exit_code": 0
+        }
+      }
+    },
+    {
+      "mode": "no_all",
+      "reconstruction_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_all\\reconstructions",
+      "metric_root": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_all\\metrics",
+      "metric_status": {
+        "synthetic_shift": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_all\\metrics\\synthetic_shift\\synthetic_shift_summary.csv",
+          "exit_code": 0
+        },
+        "static_cd": {
+          "status": "invalid",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_all\\metrics\\static_cd\\static_cd_summary.csv",
+          "exit_code": 1,
+          "reason": "locked evaluator rejected this inference-only output"
+        },
+        "displacement": {
+          "status": "complete",
+          "sentinel": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\output_protection\\no_all\\metrics\\displacement\\displacement_summary_top30.csv",
+          "exit_code": 0
+        }
+      }
+    }
+  ]
+}

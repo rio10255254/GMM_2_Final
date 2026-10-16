@@ -1,0 +1,13 @@
+圖名：L1 三次拍攝散布與 L0 底噪比較
+
+這張圖在講什麼：
+這張圖是新 L1 最適合放簡報的核心結果。每個視野位置都有兩根柱：藍色是 L0
+自己重跑造成的波動，橘色是三次拍攝之間的波動。橘色普遍比藍色小，表示拍攝重複性沒有超過擬合自己的底噪。
+
+簡報可以怎麼用：
+放在 L1 結果頁，直接回答「三次拍攝是否穩定」。
+
+使用時要注意：
+這裡只畫 9 個代表 FOV，不是 121 格全部；完整資料仍在來源 JSON/CSV。
+
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json

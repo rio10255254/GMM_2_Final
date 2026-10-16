@@ -1,0 +1,10 @@
+{
+  "parent": "config/motion_protocol.json",
+  "reason": "V1 rejects16 near-perfect real-texture crop controls with a fixed0.02score-gap threshold and has up to0.319px admitted error from interpolating a filtered score surface. Preserve both failures.",
+  "localization": "Same unbounded-by-answer finite NCC search and50percent overlap; require intensity/signed-gradient integer peaks within1.5px",
+  "ambiguity": "(best-second)/max(1-best,1e-6)>=0.5 for each feature; score>=0.75. This is an explicit engineering test, not statistical confidence.",
+  "refinement": "Fit original pixel values on a fixed valid overlap with cubic interpolation, gain/offset nuisance fit, at most1px from located integer peak",
+  "controls": "Re-run original72 controls; then a separately seeded unseen-parameter validation set before real candidate scores",
+  "engineering_accuracy_and_coverage_limits_unchanged": true,
+  "real_results_used_for_revision": false
+}

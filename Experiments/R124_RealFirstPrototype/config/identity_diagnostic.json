@@ -1,0 +1,11 @@
+{
+  "calibration_id": "r124_identity_arithmetic_only",
+  "qualification": "unqualified_diagnostic",
+  "purpose": "Untrained identity and interface smoke; not measured microscope optics",
+  "kernel_convention": "physical_psf",
+  "kernel": {"type": "identity"},
+  "sampling_factor": 2,
+  "gain": 1.0,
+  "bias": 0.0,
+  "noise_variance": 0.00006151480199923106
+}

@@ -1,0 +1,59 @@
+{
+  "count": 25,
+  "kernel_shape": [
+    101,
+    101
+  ],
+  "bank_sha256": "4435f52a5d0f3ee31b5fbcbfbf13817d4ce2cabeeb2279b64b9492f9f3e4af7b",
+  "source_mat_path": "D:\\GMM_2_Final\\PSF_Fitting\\output\\20260924_center9_psf\\PSF_20260924_center9_25_normalized.mat",
+  "source_mat_sha256": "a41413274d4134588070216f9699fd985b986c2419ae895ef6eabce0d0937231",
+  "origin": "2026-09-24 corrected current-20x center-nine 25-frame fit",
+  "index_order": "row-major 5x5, index=row*5+column",
+  "source_image_names_row_major": [
+    "134822.bmp",
+    "134836.bmp",
+    "134851.bmp",
+    "134902.bmp",
+    "134913.bmp",
+    "134942.bmp",
+    "134953.bmp",
+    "135003.bmp",
+    "135014.bmp",
+    "135026.bmp",
+    "135111.bmp",
+    "135133.bmp",
+    "135148.bmp",
+    "135201.bmp",
+    "135213.bmp",
+    "135302.bmp",
+    "135320.bmp",
+    "135335.bmp",
+    "135348.bmp",
+    "135401.bmp",
+    "135436.bmp",
+    "135451.bmp",
+    "135459.bmp",
+    "135511.bmp",
+    "135523.bmp"
+  ],
+  "object_um_per_px": 0.1725,
+  "psf_calibration_uses_sem_diameters": true,
+  "sem_size_targets_in_training": false,
+  "sem_reference": "SEM data!J8:L10, nine pillar diameter disks",
+  "source_files_hash_verified": 28,
+  "retained_brightness_factors_outside_kernel": true,
+  "intensity_centroid_x_mean_px": 0.17762827993184402,
+  "intensity_centroid_y_mean_px": -0.005269511142143983,
+  "intensity_centroid_x_range_px": [
+    0.16013406894629156,
+    0.18209591214328924
+  ],
+  "intensity_centroid_y_range_px": [
+    -0.10138811399906444,
+    0.12424867792947225
+  ],
+  "minimum_pairwise_cosine": 0.9982864912490164,
+  "fitter_bound_scale": 2,
+  "warning": "Known SEM disk diameters calibrate the PSF; synthetic clear images remain the neural training targets. Reuse of the same SEM table is a calibration-conditioned size check, not independent external validation",
+  "created_utc": "2026-09-24T07:48:46.782221+00:00"
+}

@@ -1,0 +1,3 @@
+# R146 結果存放
+
+研究版 PSF、768 組配對、8192 次訓練、930 張實拍與 8370 顆圓量測均已完成。`preflight.json` 保存來源與逐場景對照；`data_training_chain_audit.json` 從指定 MAT 全數重播模糊、雜訊、清晰答案及訓練順序，`epoch_noise_replay_audit.json` 抽查實際批次入口。`deep_diagnosis/` 保存 PSF 可辨識訊號、光學分支運算及 12 張開關明細；`reconstruction/` 是通往 H 槽的連結，保存浮點影像和逐張收據。`centers/`、`comparison/` 保存同讀法九顆圓與全部方法比較；`position_stability_followup.json`、`displacement_repeatability_intervals.json`、`diameter_shift_intervals.json` 保存逐圓及完整趟次核對。`edge_response_r145_r146.csv`、`edge_variability_audit.json` 保存新舊 8370 顆圓的邊緣穩定性。最終完整性見 `final_audit.json`，判讀以 `../reports/R146_RESULTS.md` 與 `../reports/R146_CAUSAL_AUDIT.md` 為準。

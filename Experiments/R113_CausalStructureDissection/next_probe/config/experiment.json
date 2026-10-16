@@ -1,0 +1,165 @@
+{
+  "experiment": "R113_MinimalBoundedDetailRendererMicroprobe",
+  "status": "supervised_formal_authorized_by_user_request_20260830",
+  "formal_training_authorized": true,
+  "decision_source": "../results/r109_expressivity/upper_bound_decision.json",
+  "seed": 113204,
+  "arms": [
+    "width_shift",
+    "bounded_detail",
+    "bounded_detail_supervised"
+  ],
+  "reference_arms": [
+    "width_shift",
+    "bounded_detail"
+  ],
+  "fairness": {
+    "scratch_only": true,
+    "resume_allowed": false,
+    "teacher_allowed": false,
+    "checkpoint_inheritance_allowed": false,
+    "identical_initial_state": true,
+    "identical_data_order": true,
+    "identical_optimizer_steps": true,
+    "identical_base_losses": true,
+    "external_gmf_in_training_or_selection": false
+  },
+  "data": {
+    "package_root": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/data/package",
+    "source_manifest_sha256": "f10eb706d215b021856bd9ebe4589508d796b5bbb4ddc4b7ee1ee9a5667993ef",
+    "selection_file": "data/selection.json",
+    "train_count": 1024,
+    "validation_count": 128,
+    "canvas_size": 256,
+    "supersample_factor": 8,
+    "training_patch_size": 256,
+    "forbidden_sources": [
+      "real microscopy pixels as labels",
+      "SEM pixels as labels",
+      "HS100MG structures as labels",
+      "JunHua frames as labels"
+    ],
+    "challenge_families": [
+      "standard",
+      "low_contrast",
+      "uneven_illumination",
+      "asymmetric_blur_halo",
+      "boundary_fade",
+      "mixed_hard"
+    ],
+    "degradation": {
+      "blur_sigma_px": [0.65, 5.5],
+      "anisotropy": [0.55, 1.6],
+      "motion_blur_lengths": [3, 5, 7, 9, 13, 17],
+      "motion_blur_probability": 0.35,
+      "ghost_probability": 0.2,
+      "ghost_mix": [0.02, 0.12],
+      "halo_probability": 0.28,
+      "halo_strength": [0.12, 0.65],
+      "noise_sigma": [0.0015, 0.035],
+      "row_noise_sigma": [0.0, 0.0045],
+      "column_noise_sigma": [0.0, 0.003],
+      "contrast_scale": [0.42, 0.92],
+      "illumination_amplitude": [0.0, 0.13],
+      "boundary_fade_strength": [0.25, 0.85]
+    }
+  },
+  "locked_challenge": {
+    "arrays": "../results/r109_expressivity/experiment_arrays.npz",
+    "manifest": "../results/r109_expressivity/scene_manifest.csv",
+    "expected_scenes": 24
+  },
+  "model": {
+    "base_channels": 48,
+    "dilations": [1, 2, 4, 8, 8, 4, 2, 1],
+    "blur_scales_px": [0.8, 1.6, 3.2, 6.4],
+    "maximum_normal_shift_px": 1.5,
+    "minimum_width_gain": 1.0,
+    "maximum_width_gain": 3.5,
+    "local_range_window_px": 21,
+    "alignment_multiple": 8,
+    "minimum_halo_px": 192,
+    "detail": {
+      "maximum_amplitude_gray_levels": 18.0,
+      "zero_local_mean_sigma_px": 3.0,
+      "source_support_required": true,
+      "carrier_half_bound": true
+    },
+    "global_pooling": false,
+    "global_fft": false
+  },
+  "training": {
+    "formal_epochs": 8,
+    "detector_epochs": 2,
+    "batch_size": 6,
+    "workers": 3,
+    "amp": false,
+    "minimum_gpu_free_before_start_gib": 7.0,
+    "detector_learning_rate": 0.00035,
+    "renderer_learning_rate": 0.0003,
+    "minimum_learning_rate": 0.000025,
+    "weight_decay": 0.00001,
+    "gradient_clip": 5.0,
+    "auxiliary_frequency": {
+      "translation_every_steps": 8,
+      "exposure_every_steps": 8,
+      "tile_every_steps": 16
+    },
+    "loss_weights": {
+      "contour": 0.6,
+      "contour_bce": 0.12,
+      "area": 0.22,
+      "centroid": 0.16,
+      "direct": 0.9,
+      "reconstruction": 0.42,
+      "gradient": 0.18,
+      "identity": 1.5,
+      "parameter_smoothness": 0.035,
+      "width_target": 0.05,
+      "translation": 0.12,
+      "exposure": 0.1,
+      "tile": 0.15,
+      "detail_low_frequency": 0.08,
+      "detail_energy": 0.012,
+      "detail_identity": 0.3
+    },
+    "bounded_detail_supervision": {
+      "enabled_arm": "bounded_detail_supervised",
+      "target": "bounded zero-local-mean residual after detached base width-plus-shift output",
+      "identity_target_is_zero": true,
+      "smooth_l1_beta_gray_levels": 0.25,
+      "carrier_auxiliary_weight": 0.75,
+      "renderer_epoch_weights": [2.0, 1.5, 1.0, 0.65, 0.4, 0.25]
+    }
+  },
+  "smoke": {
+    "epochs": 3,
+    "detector_epochs": 1,
+    "steps_per_epoch": 2,
+    "data_limit": 24,
+    "validation_limit": 12,
+    "batch_size": 2,
+    "workers": 0
+  },
+  "selection": {
+    "primary": "known_truth_worst_case_first",
+    "axes": [
+      "locked_contour_assd",
+      "locked_iou",
+      "locked_boundary_mae",
+      "locked_high_frequency_rmse",
+      "same_shape_condition_invariance",
+      "different_shape_retention",
+      "identity_change",
+      "tile_parity"
+    ],
+    "promotion_requires": [
+      "no worse thin-ring/crescent/close-pair catastrophic case",
+      "material hard-case contour or high-frequency improvement",
+      "no shape collapse",
+      "no identity or tile regression"
+    ],
+    "cd_is_secondary": true,
+    "gmf_is_compatibility_only": true
+  }
+}

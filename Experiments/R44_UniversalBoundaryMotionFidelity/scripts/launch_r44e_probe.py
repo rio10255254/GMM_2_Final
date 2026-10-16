@@ -34,23 +34,29 @@ TARGET_MOTION_STAGES = (
 BASE_CHECKPOINTS = {
     "r44b_from_r42": (
         REPO_ROOT
-        / "Traing_Progress"
+        / "Experiments"
+        / "R44_UniversalBoundaryMotionFidelity"
+        / "results"
+        / "archive_retained_20260824"
+        / "training_checkpoints"
         / "training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801"
-        / "weights"
         / "best_tradeoff.pth.tar"
     ),
     "r41_direct": (
         REPO_ROOT
-        / "Traing_Progress"
-        / "training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028"
-        / "weights"
+        / "Experiments"
+        / "R41_RingDistillation"
+        / "selected_checkpoint"
         / "best_tradeoff.pth.tar"
     ),
     "r44b_from_r40": (
         REPO_ROOT
-        / "Traing_Progress"
+        / "Experiments"
+        / "R44_UniversalBoundaryMotionFidelity"
+        / "results"
+        / "archive_retained_20260824"
+        / "training_checkpoints"
         / "training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143"
-        / "weights"
         / "best_tradeoff.pth.tar"
     ),
 }

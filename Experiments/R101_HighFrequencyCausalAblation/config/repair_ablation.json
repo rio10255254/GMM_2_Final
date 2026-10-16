@@ -1,0 +1,52 @@
+{
+  "experiment_id": "R101_BranchActivationRepair",
+  "parent_experiment": "R101_HighFrequencyCausalAblation",
+  "purpose": "Test whether branch-level supervision and usable symmetric gates remove the identity shortcut.",
+  "training": {
+    "seed": 101201,
+    "steps_per_arm": 400,
+    "batch_size": 8,
+    "model_width": 16,
+    "learning_rate": 0.0002,
+    "minimum_learning_rate": 0.00002,
+    "weight_decay": 0.0001,
+    "precision": "bfloat16",
+    "gradient_clip": 1.0,
+    "checkpoint_steps": [0, 100, 200, 300, 400],
+    "stream_cycle": ["boundary", "detail", "consistency"]
+  },
+  "branch_learning_rate_multipliers": {
+    "backbone": 1.0,
+    "radiometry_head": 0.25,
+    "denoise_head": 2.0,
+    "edge_head": 3.0,
+    "edge_mix_head": 3.0,
+    "band_gain_head": 3.0,
+    "innovation_head": 12.0,
+    "texture_head": 3.0
+  },
+  "branch_supervision_weights": {
+    "low": 0.35,
+    "edge": 1.50,
+    "material_detail": 1.00,
+    "highpass_output": 0.80,
+    "highpass_phase": 0.05,
+    "highpass_energy": 0.02,
+    "clear_identity": 0.50,
+    "innovation_residual": 1.50
+  },
+  "arms": {
+    "D": "R100 directions with active gates and direct branch supervision",
+    "E": "D plus independently controlled zero-phase edge bands",
+    "F": "Parallel zero-phase band synthesis without serial denoise and texture conflict",
+    "G": "F plus a learned zero-mean high-frequency innovation path"
+  },
+  "data_contract": {
+    "dataset": "data/continuous_pairs.npz",
+    "batch_schedule": "data/batch_schedule.npy",
+    "same_as_abc": true,
+    "checkpoint_loading": false,
+    "resume": false,
+    "real_sem_training_pixels": false
+  }
+}

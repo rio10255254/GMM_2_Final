@@ -1,0 +1,123 @@
+function out = make_center9_cd_error_reduction_figures(write_figures)
+% Create compact MATLAB figures that emphasize paired CD-error reduction.
+if nargin < 1, write_figures = true; end
+
+root = fullfile('D:', 'GMM_2_Final', 'Thesis_MOSR_Evidence', ...
+    'Final_Data_Figures', '03_PSF_EXPERIMENT_RESULTS', ...
+    '01_global_bads_fit');
+table_path = fullfile(root, 'tables', 'center9_pillar_fit_20x_50x', ...
+    'cd_before_after_per_pillar.csv');
+figure_root = fullfile(root, 'figures', 'center9_pillar_fit_20x_50x');
+T = readtable(table_path, 'TextType', 'string');
+
+labels = ["20x", "50x"];
+paths = strings(numel(labels), 1);
+metrics = repmat(struct(), numel(labels), 1);
+for k = 1:numel(labels)
+    label = labels(k);
+    rows = T(T.magnification == label, :);
+    rows = sortrows(rows, 'pillar_image_index');
+    assert(height(rows) == 9, '%s must contain exactly nine pillars.', label);
+
+    raw_error = abs(rows.raw_abs_error_nm);
+    restored_error = abs(rows.deconvolved_abs_error_nm);
+    reduction = raw_error - restored_error;
+    metrics(k).magnification = label;
+    metrics(k).raw_mae_nm = mean(raw_error);
+    metrics(k).deconvolved_mae_nm = mean(restored_error);
+    metrics(k).mae_reduction_nm = mean(reduction);
+    metrics(k).mae_reduction_percent = 100 * mean(reduction) / mean(raw_error);
+    metrics(k).raw_max_abs_error_nm = max(raw_error);
+    metrics(k).deconvolved_max_abs_error_nm = max(restored_error);
+    metrics(k).max_error_reduction_nm = max(raw_error) - max(restored_error);
+    metrics(k).max_error_reduction_percent = ...
+        100 * metrics(k).max_error_reduction_nm / max(raw_error);
+    metrics(k).pillars_improved = sum(reduction > 0);
+    metrics(k).reduction_nm = reduction;
+    metrics(k).remaining_error_percent = 100 * restored_error ./ raw_error;
+
+    paths(k) = fullfile(figure_root, label, ...
+        '12_cd_before_after_vs_sem.png');
+    if write_figures
+        render_reduction_figure(rows.pillar_image_index, reduction, ...
+            metrics(k), paths(k));
+    end
+end
+
+out = struct('metrics', metrics, 'figure_paths', paths, ...
+    'source_table', table_path);
+end
+
+function render_reduction_figure(index, reduction, metric, path)
+fig = figure('Visible', 'off', 'Color', 'w', 'Units', 'inches', ...
+    'Position', [1, 1, 7.4, 5.7]);
+ax = axes(fig, 'Position', [0.105, 0.27, 0.855, 0.61]);
+hold(ax, 'on'); box(ax, 'off');
+
+blue = [0.00, 0.35, 0.67];
+blue_dark = [0.00, 0.24, 0.48];
+gray = [0.43, 0.47, 0.52];
+gray_light = [0.68, 0.71, 0.75];
+remaining = metric.remaining_error_percent;
+
+for k = 1:numel(index)
+    plot(ax, [index(k), index(k)], [100, remaining(k)], '-', ...
+        'Color', gray_light, 'LineWidth', 1.3, 'HandleVisibility', 'off');
+end
+plot(ax, index, 100 * ones(size(index)), 's', ...
+    'Color', gray, 'MarkerFaceColor', 'white', 'MarkerSize', 7.2, ...
+    'LineWidth', 1.4, 'LineStyle', 'none', 'DisplayName', 'Captured error');
+plot(ax, index, remaining, 'o', 'Color', blue_dark, ...
+    'MarkerFaceColor', blue, 'MarkerSize', 7.2, 'LineWidth', 1.1, ...
+    'LineStyle', 'none', 'DisplayName', 'Deconvolved error');
+yline(ax, 100, ':', 'Color', gray, 'LineWidth', 1.2, ...
+    'HandleVisibility', 'off');
+
+for k = 1:numel(index)
+    text(ax, index(k), remaining(k) - 0.32, sprintf('%.1f%%', remaining(k)), ...
+        'HorizontalAlignment', 'center', 'VerticalAlignment', 'top', ...
+        'FontName', 'Arial', 'FontSize', 8.3, 'Color', blue_dark);
+end
+
+xlim(ax, [0.4, 9.6]);
+ylim(ax, [88, 102]);
+xticks(ax, 1:9);
+yticks(ax, 88:2:102);
+xlabel(ax, 'Pillar position (image order, 1-9)', ...
+    'FontName', 'Arial', 'FontSize', 10.5);
+ylabel(ax, 'Absolute CD error (% of captured)', ...
+    'FontName', 'Arial', 'FontSize', 10.5);
+title(ax, sprintf('%s paired CD-error comparison', ...
+    display_label(metric.magnification)), 'FontName', 'Arial', ...
+    'FontSize', 14, 'FontWeight', 'normal');
+subtitle(ax, sprintf('Captured = 100%%; all 9 pillars improved after deconvolution (-%.2f%% MAE)', ...
+    metric.mae_reduction_percent), ...
+    'FontName', 'Arial', 'FontSize', 9.5, 'FontWeight', 'normal');
+set(ax, 'FontName', 'Arial', 'FontSize', 9.5, 'LineWidth', 1.0, ...
+    'TickDir', 'out', 'YGrid', 'on', 'XGrid', 'off', ...
+    'GridColor', [0.84, 0.86, 0.89], 'GridAlpha', 0.8, 'Layer', 'top');
+legend(ax, 'Location', 'southwest', 'Box', 'off', 'FontName', 'Arial', ...
+    'FontSize', 9.2);
+
+summary_text = sprintf([ ...
+    'Mean absolute error: %.1f → %.1f nm  (-%.2f%%)\n', ...
+    'Maximum absolute error: %.1f → %.1f nm  (-%.2f%%)\n', ...
+    'Improved pillars: %d / 9'], ...
+    metric.raw_mae_nm, metric.deconvolved_mae_nm, ...
+    metric.mae_reduction_percent, metric.raw_max_abs_error_nm, ...
+    metric.deconvolved_max_abs_error_nm, ...
+    metric.max_error_reduction_percent, metric.pillars_improved);
+annotation(fig, 'textbox', [0.105, 0.045, 0.855, 0.145], ...
+    'String', summary_text, 'FitBoxToText', 'off', ...
+    'HorizontalAlignment', 'center', 'VerticalAlignment', 'middle', ...
+    'FontName', 'Arial', 'FontSize', 9.5, 'Color', [0.13, 0.13, 0.13], ...
+    'BackgroundColor', [0.965, 0.972, 0.980], ...
+    'EdgeColor', [0.78, 0.81, 0.85], 'LineWidth', 0.8, 'Margin', 5);
+
+exportgraphics(fig, path, 'Resolution', 220, 'BackgroundColor', 'white');
+close(fig);
+end
+
+function label = display_label(raw)
+label = strrep(char(raw), 'x', '×');
+end

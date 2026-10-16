@@ -1,0 +1,15 @@
+{
+  "experiment_id": "R97_DirectCausalPhaseScratch",
+  "status": "r97_end_to_end_smoke_passed",
+  "passed": true,
+  "device": "NVIDIA RTX A6000",
+  "total_memory_gib": 47.9878,
+  "selected_scene_batches": {
+    "512": 4,
+    "768": 2,
+    "896": 1
+  },
+  "selection_note": "Batch 8 at patch 512 is permanently forbidden after a VIDEO_TDR_FAILURE with only 84 MiB free. Safe candidates must leave at least 6 GiB during the guarded benchmark.",
+  "smoke_gpu_peak_gib": 2.0877304077148438,
+  "acceleration_benchmark_passed": true
+}

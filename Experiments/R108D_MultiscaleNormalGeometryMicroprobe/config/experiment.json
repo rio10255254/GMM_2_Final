@@ -1,0 +1,14 @@
+{
+  "experiment_id": "R108D_MultiscaleNormalGeometryMicroprobe",
+  "seed": 108910,
+  "training_steps": 1600,
+  "batch_size": 24,
+  "patch_size": 128,
+  "edge_scales_px": [0.6, 1.2, 2.4, 4.8],
+  "max_normal_shift_px": 1.75,
+  "training_source": "verified R108B supersampled generic targets only",
+  "real_training_pixels": false,
+  "old_weight_or_teacher_used_for_training": false,
+  "comparison_only_checkpoint": "R108C edge specialist",
+  "decision": "microprobe only; no formal model or delivery promotion"
+}

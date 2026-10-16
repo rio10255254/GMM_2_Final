@@ -1,0 +1,20 @@
+{
+  "purpose": "Quantify the effect of selecting thirty displacement steps after inspecting MOSR results, with emphasis on the real 0.5 um sequences.",
+  "primary_population": "The same end-frame indices are applied to all methods. Circular-feature candidates must be valid for all five methods and both pillar and via measurements. Line candidates must be valid for all five methods.",
+  "selection_rules": {
+    "acquisition_spread30": "Thirty steps spread through acquisition order; does not inspect reconstructed results or nominal error.",
+    "timestamp_qc_spread30": "Reject adjacent captures separated by more than 30 seconds as acquisition interruptions, then spread thirty steps through the remaining acquisition order. The rule does not inspect any reconstruction output.",
+    "time_regular30": "Thirty steps whose acquisition gap is closest to the within-sequence median; does not inspect reconstructed results.",
+    "existing_formal_common": "The thesis's existing Raw-motion-ranked choices, restricted to strict common-valid steps. This may contain fewer than thirty steps after the common-valid restriction.",
+    "mosr_internal30": "Thirty steps with the lowest MOSR internal feature-to-feature spread. This is method-dependent outcome selection.",
+    "mosr_nominal30": "Thirty steps with the lowest MOSR error relative to commanded displacement. This is an oracle upper bound and is not a fair primary evaluation.",
+    "all_common_valid": "Every strict common-valid within-session step."
+  },
+  "reference_limit": "Absolute error is calculated against nominal commanded motion because the current mapping tables do not contain per-frame numeric PI feedback.",
+  "paired_uncertainty": "Paired MOSR-minus-baseline advantages use 10000 fixed-seed bootstrap resamples of the same selected method-common observations. Positive advantage means lower MOSR error or spread.",
+  "pixel_equivalent": {
+    "50x_0.5um": 7.246376811594202,
+    "20x_0.5um": 2.8985507246376816
+  },
+  "thesis_recommendation": "Use timestamp_qc_spread30, or replace it with a predeclared numeric PI-feedback quality rule when the feedback log is recovered. MOSR-dependent selections may be reported only as exploratory sensitivity or upper-bound results."
+}

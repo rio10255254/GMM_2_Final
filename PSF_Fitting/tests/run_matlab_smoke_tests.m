@@ -5,6 +5,7 @@ prepare_validationlab_output_override(tests_root);
 
 test_names = {
     'test_wholefov_formal_script_smoke'
+    'test_manual_psf_fitting_entrypoint_smoke'
     'test_wholefov_formal_compat_smoke'
     'test_wholefov_formal_reuse_candidate_smoke'
     'test_validation_lab_smoke'

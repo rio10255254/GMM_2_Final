@@ -3,6 +3,7 @@
 # NOTE: Added optional "use_sigmoid_output" for better high-frequency learning.
 # Default keeps original behavior (sigmoid).
 
+import math
 from pathlib import Path
 from typing import Optional, Tuple
 
@@ -481,6 +482,216 @@ class SqueezeExcitation(nn.Module):
         return x * w
 
 
+class RawAnchorOutputAdapter(nn.Module):
+    """Keep raw low-frequency position while allowing bounded reconstruction detail."""
+    def __init__(
+        self,
+        mode: str = "none",
+        alpha: float = 0.10,
+        sigma: float = 2.0,
+        detail_gain: float = 0.35,
+    ):
+        super().__init__()
+        if mode not in {"none", "blend", "detail"}:
+            raise ValueError("mode must be none, blend, or detail")
+        if not 0.0 <= float(alpha) <= 1.0:
+            raise ValueError("alpha must be between 0 and 1")
+        if float(sigma) <= 0.0:
+            raise ValueError("sigma must be positive")
+        self.mode = str(mode)
+        self.alpha = float(alpha)
+        self.sigma = float(sigma)
+        self.detail_gain = float(detail_gain)
+
+    def _gaussian_blur(self, x: torch.Tensor) -> torch.Tensor:
+        sigma = max(float(self.sigma), 1e-6)
+        radius = max(1, int(math.ceil(3.0 * sigma)))
+        k = 2 * radius + 1
+        coords = torch.arange(k, device=x.device, dtype=x.dtype) - radius
+        kernel_1d = torch.exp(-(coords * coords) / (2.0 * sigma * sigma))
+        kernel_1d = kernel_1d / kernel_1d.sum().clamp_min(1e-12)
+        c = int(x.shape[1])
+        ky = kernel_1d.view(1, 1, k, 1).repeat(c, 1, 1, 1)
+        kx = kernel_1d.view(1, 1, 1, k).repeat(c, 1, 1, 1)
+        pad_mode = "reflect" if x.shape[-2] > radius and x.shape[-1] > radius else "replicate"
+        y = F.pad(x, (0, 0, radius, radius), mode=pad_mode)
+        y = F.conv2d(y, ky, groups=c)
+        y = F.pad(y, (radius, radius, 0, 0), mode=pad_mode)
+        return F.conv2d(y, kx, groups=c)
+
+    def forward(self, raw: torch.Tensor, pred: torch.Tensor) -> torch.Tensor:
+        if raw.shape != pred.shape:
+            raise ValueError(f"shape mismatch: raw={tuple(raw.shape)} pred={tuple(pred.shape)}")
+        if self.mode == "none":
+            return pred
+        raw_f = raw.float()
+        pred_f = pred.float()
+        if self.mode == "blend":
+            out = (1.0 - self.alpha) * raw_f + self.alpha * pred_f
+        else:
+            pred_low = self._gaussian_blur(pred_f)
+            pred_high = pred_f - pred_low
+            out = raw_f + self.detail_gain * pred_high
+            out = out + (raw_f.mean(dim=(-2, -1), keepdim=True) - out.mean(dim=(-2, -1), keepdim=True))
+        return torch.clamp(out, 0.0, 1.0).to(dtype=pred.dtype)
+
+
+class BoundaryResidualAdapter(nn.Module):
+    """Small local correction head initialized as an exact no-op."""
+    def __init__(
+        self,
+        feature_ch: int,
+        hidden_ch: int = 16,
+        max_residual: float = 0.025,
+        gate_bias: float = -2.0,
+        delta_bias: bool = True,
+        zero_mean_delta: bool = False,
+        edge_gate_enable: bool = False,
+        polarity_split: bool = False,
+        orientation_inputs: bool = False,
+    ):
+        super().__init__()
+        hidden_ch = max(4, int(hidden_ch))
+        self.zero_mean_delta = bool(zero_mean_delta)
+        self.edge_gate_enable = bool(edge_gate_enable)
+        self.polarity_split = bool(polarity_split)
+        self.orientation_inputs = bool(orientation_inputs)
+        self.register_buffer("max_residual", torch.tensor(float(max_residual)))
+        sobel_x = torch.tensor(
+            [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], dtype=torch.float32
+        ).view(1, 1, 3, 3) / 8.0
+        sobel_y = torch.tensor(
+            [[-1, -2, -1], [0, 0, 0], [1, 2, 1]], dtype=torch.float32
+        ).view(1, 1, 3, 3) / 8.0
+        self.register_buffer("_sobel_x", sobel_x, persistent=False)
+        self.register_buffer("_sobel_y", sobel_y, persistent=False)
+        extra_ch = 3 if self.orientation_inputs else 0
+        self.body = nn.Sequential(
+            nn.Conv2d(feature_ch + 1 + extra_ch, hidden_ch, 3, padding=1),
+            nn.SiLU(inplace=True),
+            nn.Conv2d(hidden_ch, hidden_ch, 3, padding=1),
+            nn.SiLU(inplace=True),
+        )
+        self.gate = nn.Conv2d(hidden_ch, 1, 1)
+        delta_modes = 2 if self.polarity_split else 1
+        self.delta = nn.Conv2d(hidden_ch, delta_modes, 1, bias=bool(delta_bias))
+        if self.polarity_split:
+            self.polarity_gate = nn.Conv2d(hidden_ch, 2, 1)
+            nn.init.zeros_(self.polarity_gate.weight)
+            nn.init.zeros_(self.polarity_gate.bias)
+        else:
+            self.polarity_gate = None
+        nn.init.zeros_(self.delta.weight)
+        if self.delta.bias is not None:
+            nn.init.zeros_(self.delta.bias)
+        nn.init.zeros_(self.gate.weight)
+        nn.init.constant_(self.gate.bias, float(gate_bias))
+
+    def _fixed_edge_gate(self, base_out: torch.Tensor) -> torch.Tensor:
+        x = base_out.float()
+        kx = self._sobel_x.to(device=x.device, dtype=x.dtype)
+        ky = self._sobel_y.to(device=x.device, dtype=x.dtype)
+        gx = F.conv2d(x, kx, padding=1)
+        gy = F.conv2d(x, ky, padding=1)
+        mag = torch.sqrt(gx * gx + gy * gy + 1e-12)
+        denom = torch.amax(mag, dim=(-2, -1), keepdim=True).clamp_min(1e-6)
+        return (mag / denom).clamp(0.0, 1.0).to(dtype=base_out.dtype)
+
+    def _orientation_features(self, base_out: torch.Tensor) -> torch.Tensor:
+        x = base_out.float()
+        kx = self._sobel_x.to(device=x.device, dtype=x.dtype)
+        ky = self._sobel_y.to(device=x.device, dtype=x.dtype)
+        gx = F.conv2d(x, kx, padding=1)
+        gy = F.conv2d(x, ky, padding=1)
+        mag = torch.sqrt(gx * gx + gy * gy + 1e-12)
+        norm = mag.clamp_min(1e-6)
+        nx = gx / norm
+        ny = gy / norm
+        mag_norm = mag / torch.amax(mag, dim=(-2, -1), keepdim=True).clamp_min(1e-6)
+        return torch.cat([nx, ny, mag_norm.clamp(0.0, 1.0)], dim=1).to(dtype=base_out.dtype)
+
+    def forward(self, features: torch.Tensor, base_out: torch.Tensor) -> torch.Tensor:
+        body_inputs = [features, base_out]
+        if self.orientation_inputs:
+            body_inputs.append(self._orientation_features(base_out))
+        h = self.body(torch.cat(body_inputs, dim=1))
+        gate = torch.sigmoid(self.gate(h))
+        if self.edge_gate_enable:
+            gate = gate * self._fixed_edge_gate(base_out)
+        delta_logits = self.delta(h)
+        if self.zero_mean_delta:
+            delta_logits = delta_logits - delta_logits.mean(dim=(-2, -1), keepdim=True)
+        delta = torch.tanh(delta_logits) * self.max_residual.to(device=base_out.device, dtype=base_out.dtype)
+        if self.polarity_split:
+            mix = torch.softmax(self.polarity_gate(h), dim=1)
+            delta = torch.sum(delta * mix, dim=1, keepdim=True)
+        return torch.clamp(base_out + gate * delta, 0.0, 1.0)
+
+
+class ImageQualityGate(nn.Module):
+    """SNR-inspired scalar gate for conservative output residual scaling."""
+
+    def __init__(
+        self,
+        in_ch: int = 1,
+        hidden_ch: int = 8,
+        scale_min: float = 0.75,
+        scale_max: float = 1.08,
+    ):
+        super().__init__()
+        self.scale_min = float(scale_min)
+        self.scale_max = float(scale_max)
+        hidden_ch = max(2, int(hidden_ch))
+        self.offset = nn.Sequential(
+            nn.Conv2d(1, hidden_ch, 1),
+            nn.SiLU(),
+            nn.Conv2d(hidden_ch, 1, 1),
+        )
+        nn.init.zeros_(self.offset[-1].weight)
+        nn.init.zeros_(self.offset[-1].bias)
+        self.last_quality_score: Optional[torch.Tensor] = None
+
+    @staticmethod
+    def estimate_quality_score(x: torch.Tensor) -> torch.Tensor:
+        x_f = x.float().clamp(0.0, 1.0)
+        b, c, _, _ = x_f.shape
+        sobel_x = torch.tensor(
+            [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]],
+            dtype=torch.float32,
+            device=x_f.device,
+        ).view(1, 1, 3, 3) / 8.0
+        sobel_y = sobel_x.transpose(-1, -2)
+        sobel_x = sobel_x.repeat(c, 1, 1, 1)
+        sobel_y = sobel_y.repeat(c, 1, 1, 1)
+        gx = F.conv2d(x_f, sobel_x, padding=1, groups=c)
+        gy = F.conv2d(x_f, sobel_y, padding=1, groups=c)
+        mag = torch.sqrt(gx * gx + gy * gy + 1e-8)
+
+        flat_mag = mag.flatten(2)
+        k = max(1, int(flat_mag.shape[-1] * 0.05))
+        signal = torch.topk(flat_mag, k=k, dim=-1).values.mean(dim=-1, keepdim=True)
+        signal = signal.mean(dim=1, keepdim=True).view(b, 1, 1, 1)
+
+        local_mean = F.avg_pool2d(x_f, kernel_size=5, stride=1, padding=2)
+        high = torch.abs(x_f - local_mean)
+        mag_mean = mag.mean(dim=(-2, -1), keepdim=True)
+        interior_weight = torch.exp(-8.0 * mag / (mag_mean + 1e-6)).detach()
+        noise = (high * interior_weight).sum(dim=(-2, -1), keepdim=True)
+        noise = noise / (interior_weight.sum(dim=(-2, -1), keepdim=True) + 1e-6)
+        noise = noise.mean(dim=1, keepdim=True)
+
+        score = signal / (signal + 3.0 * noise + 1e-6)
+        return score.clamp(0.0, 1.0)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        base_score = self.estimate_quality_score(x)
+        learned_offset = 0.20 * torch.tanh(self.offset(base_score))
+        quality = (base_score + learned_offset).clamp(0.0, 1.0)
+        self.last_quality_score = quality.detach()
+        scale = self.scale_min + (self.scale_max - self.scale_min) * quality
+        return scale.to(dtype=x.dtype)
+
+
 class GeoEdgeAlignSR_v1_v5_NoCoord(nn.Module):
     '''
     Practical U-like encoder-decoder designed to preserve boundary geometry:
@@ -530,6 +741,23 @@ class GeoEdgeAlignSR_v1_v5_NoCoord(nn.Module):
         # A5: Squeeze-Excitation attention after bottleneck
         use_bottleneck_se: bool = False,
         bottleneck_se_reduction: int = 4,
+        boundary_residual_adapter_enable: bool = False,
+        boundary_residual_adapter_hidden: int = 16,
+        boundary_residual_adapter_max: float = 0.025,
+        boundary_residual_adapter_gate_bias: float = -2.0,
+        boundary_residual_adapter_delta_bias: bool = True,
+        boundary_residual_adapter_zero_mean: bool = False,
+        boundary_residual_adapter_edge_gate: bool = False,
+        boundary_residual_adapter_polarity_split: bool = False,
+        boundary_residual_adapter_orientation_inputs: bool = False,
+        raw_anchor_output_mode: str = "none",
+        raw_anchor_output_alpha: float = 0.10,
+        raw_anchor_output_sigma: float = 2.0,
+        raw_anchor_output_detail_gain: float = 0.35,
+        quality_gate_enable: bool = False,
+        quality_gate_hidden: int = 8,
+        quality_gate_scale_min: float = 0.75,
+        quality_gate_scale_max: float = 1.08,
     ):
         super().__init__()
         self.use_physics_layer = bool(use_physics_layer)
@@ -538,6 +766,10 @@ class GeoEdgeAlignSR_v1_v5_NoCoord(nn.Module):
         self.use_band_limit = bool(use_band_limit)
         self.learnable_blur = bool(learnable_blur)
         self.use_bottleneck_se = bool(use_bottleneck_se)
+        self.boundary_residual_adapter_enable = bool(boundary_residual_adapter_enable)
+        self.raw_anchor_output_mode = str(raw_anchor_output_mode)
+        self.quality_gate_enable = bool(quality_gate_enable)
+        self.last_quality_gate: Optional[torch.Tensor] = None
 
         if use_physics_layer:
             self.physics_layer = DepthwiseDeblurPhysics(
@@ -623,6 +855,35 @@ class GeoEdgeAlignSR_v1_v5_NoCoord(nn.Module):
         self.p1 = nn.Sequential(ConvBlock(base + base, base), ResBlock(base))
 
         self.out = nn.Conv2d(base, 1, 1)
+        if self.boundary_residual_adapter_enable:
+            self.boundary_adapter = BoundaryResidualAdapter(
+                feature_ch=base,
+                hidden_ch=boundary_residual_adapter_hidden,
+                max_residual=boundary_residual_adapter_max,
+                gate_bias=boundary_residual_adapter_gate_bias,
+                delta_bias=boundary_residual_adapter_delta_bias,
+                zero_mean_delta=boundary_residual_adapter_zero_mean,
+                edge_gate_enable=boundary_residual_adapter_edge_gate,
+                polarity_split=boundary_residual_adapter_polarity_split,
+                orientation_inputs=boundary_residual_adapter_orientation_inputs,
+            )
+        else:
+            self.boundary_adapter = None
+        self.raw_anchor_output = RawAnchorOutputAdapter(
+            mode=raw_anchor_output_mode,
+            alpha=raw_anchor_output_alpha,
+            sigma=raw_anchor_output_sigma,
+            detail_gain=raw_anchor_output_detail_gain,
+        )
+        if self.quality_gate_enable:
+            self.quality_gate = ImageQualityGate(
+                in_ch=in_ch,
+                hidden_ch=quality_gate_hidden,
+                scale_min=quality_gate_scale_min,
+                scale_max=quality_gate_scale_max,
+            )
+        else:
+            self.quality_gate = None
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x0 = self.physics_layer(x)
@@ -658,6 +919,16 @@ class GeoEdgeAlignSR_v1_v5_NoCoord(nn.Module):
         if self.use_sigmoid_output:
             out = torch.sigmoid(out)
 
+        if self.boundary_adapter is not None:
+            out = self.boundary_adapter(y1, out)
+
+        out = self.raw_anchor_output(x, out)
+        if self.quality_gate is not None:
+            scale = self.quality_gate(x)
+            self.last_quality_gate = self.quality_gate.last_quality_score
+            out = torch.clamp(x + scale * (out - x), 0.0, 1.0)
+        else:
+            self.last_quality_gate = None
         return out
 
 

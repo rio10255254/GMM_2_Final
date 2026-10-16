@@ -1,6 +1,10 @@
 # Validation experiment outputs are large and reproducible — do not version control.
 # Keep markdown reports and metadata (manifest.json) which document what was done.
 
+Circle_Round*/
+L0_newdata_round*/inputs_primary/
+archive_L0_legacy_*/
+
 */outputs/
 
 # Inside outputs/, allow only documentation/metadata to ever sneak back in if someone force-adds:

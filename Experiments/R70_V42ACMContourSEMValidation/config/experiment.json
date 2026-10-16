@@ -1,0 +1,41 @@
+{
+  "experiment_id": "R70_V42ACMContourSEMValidation",
+  "created_date": "2026-07-30",
+  "model": {
+    "name": "V42E120",
+    "role": "thesis_adopted_model",
+    "checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\results\\training_results\\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\\epoch_120.pth.tar",
+    "inference_script": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\infer_v42.py",
+    "inference_mode": "official_checkpoint_defaults_with_checkpoint_psf"
+  },
+  "shared_reference": {
+    "r69_root": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation",
+    "raw_input_dir": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack",
+    "sem_dir": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data",
+    "optical_exposures": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+    "physical_pillars": 36
+  },
+  "inference": {
+    "python": "C:\\Users\\Rio\\anaconda3\\python.exe",
+    "device": "cuda:0",
+    "output_name": "v42e120_sem_paired_50x",
+    "reconstruction_dir": "D:\\GMM_2_Final\\Experiments\\R70_V42ACMContourSEMValidation\\results\\inference_runs\\reconstruct_progress_epoch_120_in_sem_paired_50x_exposure_stack_20260709_202713\\v42e120_sem_paired_50x"
+  },
+  "contour": {
+    "method": "Chan-Vese",
+    "iterations": 200,
+    "smooth_factor": 1.0,
+    "seed_radius_px": 40,
+    "support_radius_px": 45,
+    "alignment": "translation_only",
+    "scale_fitting": false,
+    "rotation_fitting": false
+  },
+  "statistics": {
+    "independent_unit": "physical_pillar",
+    "independent_pillar_count": 36,
+    "repeated_exposure_count": 12,
+    "bootstrap_repetitions": 20000,
+    "random_seed": 20260730
+  }
+}

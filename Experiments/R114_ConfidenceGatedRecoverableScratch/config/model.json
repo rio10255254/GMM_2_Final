@@ -1,0 +1,32 @@
+{
+  "name": "R114ConfidenceGatedRecoverableMOSR",
+  "input_channels": 1,
+  "base_channels": 48,
+  "dilations": [1, 2, 4, 8, 8, 4, 2, 1],
+  "blur_scales_px": [0.8, 1.6, 3.2, 6.4],
+  "local_range_window_px": 21,
+  "normalization": "channel_only_rms",
+  "spatial_groupnorm": false,
+  "global_pooling": false,
+  "global_fft": false,
+  "terminal_tanh_on_backbone": false,
+  "raw_gradient_forced_support_floor": false,
+  "controller_outputs": [
+    "normalized_sdf",
+    "normal_x",
+    "normal_y",
+    "boundary_confidence",
+    "correction_need",
+    "recoverability_uncertainty"
+  ],
+  "minimum_width_gain": 1.0,
+  "maximum_width_gain": 3.5,
+  "maximum_normal_shift_px": 1.5,
+  "detail": {
+    "enabled_in_formal_only_if_probe_passes": true,
+    "maximum_amplitude_gray_levels": 18.0,
+    "zero_local_mean_sigma_px": 2.0
+  },
+  "alignment_multiple": 8,
+  "minimum_halo_px": 192
+}

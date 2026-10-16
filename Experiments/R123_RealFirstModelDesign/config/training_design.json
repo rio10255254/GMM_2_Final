@@ -1,0 +1,107 @@
+{
+  "status": "proposal_not_executed",
+  "initialization": "scratch",
+  "teacher_models": [],
+  "existing_real_development_sources_allowed_as_training": false,
+  "groups_split_before_derivation": [
+    "physical_sample_or_latent_object_id",
+    "acquisition_session",
+    "data_and_teacher_ancestry"
+  ],
+  "data_recipe": {
+    "initial_procedural_scene_weights": {
+      "irregular_curved_objects": 0.2,
+      "corners_lines_junctions": 0.2,
+      "dense_close_or_touching_structures": 0.2,
+      "textured_edges_and_interiors": 0.2,
+      "already_clean_identity": 0.1,
+      "flat_negative": 0.1
+    },
+    "independently_varied_factors": [
+      "shape_and_dimension",
+      "edge_intrinsic_transition",
+      "texture",
+      "polarity",
+      "contrast_and_offset",
+      "illumination",
+      "PSF_width_anisotropy_asymmetry",
+      "noise",
+      "subpixel_motion"
+    ],
+    "sequence_order": "continuous object -> physical shift -> fixed within-sequence optics -> pixel integration -> radiometry/noise/quantization",
+    "coverage_policy": "match observed real failure types, not fixed SEM evaluation shapes or copied evaluation pixels",
+    "real_training_extension": "only new/source-disjoint acquisitions; noisy-repeat targets may teach denoising if independence holds, not unknown geometry or super-resolution truth",
+    "real_SEM_training_extension": "only independent training objects; geometry supervision not SEM-to-optical grayscale copying",
+    "synthetic_fidelity_does_not_establish_real_usefulness": true
+  },
+  "first_bounded_comparison": {
+    "models": [
+      "matched_learned_iterations_no_observation_step",
+      "iterative_without_geometry",
+      "iterative_with_geometry"
+    ],
+    "shared_initialization_seeds": [
+      1235001,
+      1235002
+    ],
+    "training_scenes": 512,
+    "paired_observations_per_scene": 2,
+    "scene_batch_size": 1,
+    "passes_over_scenes": 2,
+    "updates_per_model_seed": 1024,
+    "real_evaluation_checkpoints_updates": [
+      0,
+      256,
+      512,
+      1024
+    ],
+    "all_models_same_training_samples_and_losses_except_declared_mechanism": true,
+    "learning_rate": 0.0001,
+    "optimizer": "AdamW, numerical proposal pending gradient and memory smoke checks",
+    "input_patch_native_px": 640,
+    "supervised_center_native_px": 128,
+    "context_per_side_native_px": 256,
+    "runtime_and_GPU_memory": "not_measured; do not promise completion time",
+    "equal_compute_claim": false,
+    "report_compute_and_capacity": true,
+    "activation_checkpointing": "per iteration and residual blocks; actual memory must be profiled before launch",
+    "primary_comparison_checkpoint_updates": 1024,
+    "early_checkpoint_role": "diagnostic development only; no cherry-picked early-versus-final model comparison",
+    "core_coverage": "Log shape/texture/edge pixels inside the 128 native supervised center; reject or resample empty/mislabelled cores before training based only on generator truth",
+    "control_definition": "All three use the same 2x state, four shared prior calls, residual feature inputs and observation training loss. First control omits only explicit observation-gradient steps. This is not a claim that all physical information is removed.",
+    "shared_weight_identity": "Construct common tensor bank once per seed and copy/check every shared tensor; use independent sample RNG. Seed equality alone is insufficient.",
+    "geometry_control": "Allocate geometry head for all models; only the declared geometry-supervision and consistency losses differ in final arm; no head output enters external scorer.",
+    "sample_budget": "512 scenes, 2 full passes, 1 scene per update =1024; two views of each scene paired in a microbatch. Activation checkpointing permitted, no silent effective-batch changes."
+  },
+  "loss_contract": {
+    "image": "known optical target after native integration; foreground and texture strata retained separately",
+    "observation": "qualified measured-noise likelihood in native sensor units",
+    "geometry": "independent latent truth; never fit production objects to SEM answers",
+    "motion": "known synthetic motion or source-disjoint independently measured real motion; real command alone not exact label",
+    "identity": "no invented structure for already-correct/flat inputs",
+    "weights": "freeze after implementation-only dimensional/gradient checks, before the first real candidate comparison; no tuning to synthetic position score"
+  },
+  "trace_required_each_actual_batch": [
+    "run_id",
+    "optimizer_update",
+    "loader_id",
+    "sample_and_ancestor_ids",
+    "split",
+    "augmentation_and_physics_parameters",
+    "target_truth_kind",
+    "loss_components",
+    "active_modules",
+    "parameter_update_or_gradient_norms"
+  ],
+  "checkpoint_trace": [
+    "weights_and_source_identity",
+    "intermediate_reconstructions",
+    "forward_observation_predictions",
+    "parameter_changes",
+    "actual_real_panel_outputs_and_external_metrics",
+    "all_failure_reasons"
+  ],
+  "long_training": "not scheduled; unset application thresholds mean exploratory short runs only. A decision-bearing real run must freeze primary benefit and promotion/guard limits before its first outputs are observed.",
+  "calibration_ancestry": "Track separately. The same explicitly independent instrument calibration may be shared across sample splits; calibration fitted from evaluated objects is forbidden. New-calibration generalization is a distinct claim.",
+  "initial_training_source_availability": "Only new independently generated scenes are specified as immediately constructible. New real training acquisitions and independently paired SEM training objects have not been acquired/admitted."
+}

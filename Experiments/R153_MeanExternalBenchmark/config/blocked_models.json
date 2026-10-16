@@ -1,0 +1,17 @@
+{
+  "U-Net": {
+    "status": "blocked",
+    "source": "https://github.com/lmb-freiburg/Unet-Segmentation",
+    "reason": "作者官方版本依賴caffe_unet/Linux後端；本機沒有Caffe、沒有可用WSL發行版，Docker Linux後端也無法連線。目前環境無法直接執行作者官方版本。未以自行簡化的網路替代。",
+    "evidence": "results/backend_checks/environment.json",
+    "completed_training_updates": 0,
+    "historical_reason_before_user_ordinary_recipe_choice": "作者官方版本依賴caffe_unet/Linux後端；本機沒有Caffe、沒有可用WSL發行版，Docker Linux後端也無法連線。無法在目前環境直接執行官方版本及共同PyTorch訓練目標。未以自行簡化的網路替代。"
+  },
+  "MambaIRv2": {
+    "status": "blocked",
+    "source": "https://github.com/csguoh/MambaIR",
+    "reason": "已嘗試PyPI版本、作者完整來源、既有CUDA相容MSVC 14.44工具組與Windows標準數學常數設定。官方selective-scan CUDA程式仍出現C2975編譯期模板常數錯誤並累積超過100個錯誤，未取得可用後端；本機無可用Linux/WSL或Docker後端。保留錯誤與來源，不以其他模型替代。",
+    "evidence": "results/backend_checks/mamba_windows_math_build.log",
+    "completed_training_updates": 0
+  }
+}

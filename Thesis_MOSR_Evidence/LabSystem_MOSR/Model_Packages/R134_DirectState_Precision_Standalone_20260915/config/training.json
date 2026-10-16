@@ -1,0 +1,65 @@
+{
+  "model_name": "R134_Precision_LongTraining",
+  "seed": 1342001,
+  "order_seed": 1349002,
+  "noise_seed": 1349003,
+  "splits": {
+    "train": 512,
+    "dev": 128,
+    "test": 128
+  },
+  "updates": 8192,
+  "epochs": 16,
+  "save_every": 128,
+  "optimizer": {
+    "name": "AdamW",
+    "peak_lr": 0.0001,
+    "minimum_lr": 1e-05,
+    "warmup_updates": 128,
+    "weight_decay": 1e-05,
+    "gradient_clip": 5
+  },
+  "dev_steps": [
+    0,
+    512,
+    1024,
+    1536,
+    2048,
+    2560,
+    3072,
+    3584,
+    4096,
+    4608,
+    5120,
+    5632,
+    6144,
+    6656,
+    7168,
+    7680,
+    8192
+  ],
+  "real_steps": [
+    0,
+    512,
+    2048,
+    4096,
+    8192
+  ],
+  "loss": {
+    "image": 1.0,
+    "gradient": 0.2,
+    "pair": 0.2
+  },
+  "initial_weights": "weights/initial_r134p.pth",
+  "training_inputs": "Source images only plus fixed inherited optical calibration buffers",
+  "continuation": "Same R134 C after512updates;8192additionalupdates, optimizerreset; no inherited legacy neural weights",
+  "physical_calibration_qualified": false,
+  "real_panel_is_reused_development": true,
+  "generated_test_is_historical_not_new_holdout": true,
+  "selection": "All scheduled checkpoints reported; final8192 is planned endpoint, no automatic deployment change",
+  "source_data_note": "512 procedural parent pairs; new independent noise every epoch, not8192independentgeometries",
+  "training_target_note": "Unchanged native image+0.2gradient+0.2paired residual; no new geometric objective",
+  "data_fit_limits": "Fixed measured prior is not the true per-scene PSF; diverse source blur is robustness training, not proof of instrument fit",
+  "architecture_changes": false,
+  "readout": "Exact float32npy reloaded for motion; normalized optical SEM cells retained asdouble;8bitpreviews never measurement inputs"
+}

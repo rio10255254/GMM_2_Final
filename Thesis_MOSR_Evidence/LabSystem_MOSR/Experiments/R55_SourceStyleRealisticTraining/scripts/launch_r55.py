@@ -1,0 +1,394 @@
+"""R55 source-style realistic training launcher for LabSystem_MOSR."""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import sys
+from pathlib import Path
+
+
+LAB_ROOT = Path(__file__).resolve().parents[3]
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
+MODEL_DIR = PROJECT_ROOT / "Model"
+LAB_TRAINING_PROGRESS_ROOT = LAB_ROOT / "Traing_Progress"
+LAB_CHECKPOINT_CACHE = LAB_TRAINING_PROGRESS_ROOT / "_checkpoint_cache"
+LAB_PSF_PATH = (
+    LAB_ROOT
+    / "psf_calibration"
+    / "results"
+    / "20250605_inner_circle_roi_fine_prealign_fit"
+    / "PSF_fitted_2D_FOVstack.mat"
+)
+DEFAULT_OUTPUT_ROOT = LAB_ROOT / "Training_Data" / "r55_source_style_rebuild" / "r53_realistic_dataset_calibration"
+
+sys.path.insert(0, str(MODEL_DIR))
+
+SEQ_8PX_STAGES = (
+    "stage_25_annulus_gmf_sequence_macro_clean",
+    "stage_26_annulus_gmf_sequence_macro_defect",
+)
+
+PROFILE_BY_CANDIDATE = {
+    "r55_source_style_r53_scratch": "r53_realistic_calibrated_train_6000",
+}
+
+CANDIDATE_NOTES = {
+    "r55_source_style_r53_scratch": (
+        "Scratch Lab R55 run on the source-style repaired R53 package with standard boundary geometry sidecars."
+    ),
+}
+
+BASE_OVERRIDES = {
+    "LOAD_MODEL": False,
+    "LOAD_RESET_OPTIMIZER": False,
+    "LOAD_RESET_EPOCH": False,
+    "RESUME_CHECKPOINT": "",
+    "SEQ_ENABLE": True,
+    "SEQ_SRC_DIR": str(LAB_ROOT / "Training_Data" / "generated_convolved"),
+    "SEQ_LBL_DIR": str(LAB_ROOT / "Training_Data" / "generated"),
+    "SEQ_INCLUDE_SUBDIRS": SEQ_8PX_STAGES,
+    "SEQ_LOSS_WEIGHT": 0.3,
+    "SEQ_GRAD_WEIGHT": 0.1,
+    "SEQ_EVERY_N_BATCH": 2,
+    "SEQ_MIN_DELTA_THRESHOLD": 0.002,
+    "SEQ_WARMUP_EPOCH": 8,
+    "ROBUST_LOSS_PERCENTILE": 0.95,
+    "ROBUST_LOSS_WARMUP": 8,
+    "TRAIN_INCLUDE_SUBDIRS": (),
+    "TRAIN_EXCLUDE_SUBDIRS": (),
+    "PSF_FITTED_PATH": str(LAB_PSF_PATH),
+    "PHYS_FORWARD_ENABLE": False,
+    "W_PHYS_MAX": 0.0,
+    "BATCH_SIZE": 16,
+    "VAL_BATCH_SIZE": 4,
+    "NUM_WORKERS": 4,
+    "DATALOADER_PERSISTENT_WORKERS": False,
+    "DATALOADER_PREFETCH_FACTOR": 2,
+    "CROP_SIZE": 256,
+    "SEQ_BATCH_SIZE": 4,
+    "MOTION_BATCH_SIZE": 4,
+    "W_REC": 1.0,
+    "W_GRADMAG": 0.72,
+    "W_EDGE_ORI_SIMPLE": 0.22,
+    "W_HF_LAP": 0.06,
+    "ENABLE_EDGELOCAL_LAPLACIAN": True,
+    "W_EDGELOCAL_LAP_START": 0.0,
+    "W_EDGELOCAL_LAP_END": 0.022,
+    "EDGELOCAL_LAP_RAMP_E1": 8,
+    "EDGELOCAL_LAP_RAMP_E2": 35,
+    "BOUNDARY_GEOM_ENABLE": True,
+    "BOUNDARY_GEOM_DIR": "",
+    "BOUNDARY_LOSS_WEIGHT": 0.025,
+    "CENTERLINE_LOSS_WEIGHT": 0.015,
+    "DISTANCE_EDGE_LOSS_WEIGHT": 0.01,
+    "BOUNDARY_LOSS_WARMUP_EPOCH": 8,
+    "BOUNDARY_DISTANCE_SIGMA": 2.0,
+    "BOUNDARY_DISTANCE_CLIP": 8.0,
+    "MOTION_ENABLE": False,
+    "KD_ENABLE": False,
+    "REGION_KD_ENABLE": False,
+    "BEST_EPOCH_MIN": 15,
+}
+
+PSF_BUFFER_KEYS = (
+    "physics_layer.PSFs",
+    "physics_layer.PSF_mean",
+    "physics_layer.PSF_center",
+    "weak_psf_block.PSFs",
+)
+
+
+def _load_manifest(path: Path) -> dict:
+    if not path.exists():
+        raise FileNotFoundError(path)
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _require_lab_assets() -> None:
+    if not MODEL_DIR.is_dir():
+        raise FileNotFoundError(f"main model directory not found: {MODEL_DIR}")
+    if not LAB_PSF_PATH.exists():
+        raise FileNotFoundError(f"Lab PSF file not found: {LAB_PSF_PATH}")
+
+
+def _cache_key_for_checkpoint(base_checkpoint: Path) -> str:
+    base_stat = base_checkpoint.stat()
+    psf_stat = LAB_PSF_PATH.stat()
+    payload = "|".join(
+        [
+            str(base_checkpoint.resolve()),
+            str(base_stat.st_size),
+            str(base_stat.st_mtime_ns),
+            str(LAB_PSF_PATH.resolve()),
+            str(psf_stat.st_size),
+            str(psf_stat.st_mtime_ns),
+            ",".join(PSF_BUFFER_KEYS),
+        ]
+    )
+    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:12]
+
+
+def _shape_of(value) -> list[int] | str:
+    shape = getattr(value, "shape", None)
+    if shape is None:
+        return type(value).__name__
+    return [int(v) for v in shape]
+
+
+def prepare_lab_checkpoint(base_checkpoint: Path) -> Path:
+    """Create a Lab-compatible checkpoint that reloads current Lab PSF buffers."""
+    _require_lab_assets()
+    source = Path(base_checkpoint).resolve()
+    if not source.exists():
+        raise FileNotFoundError(f"checkpoint not found: {source}")
+
+    cache_name = f"{source.stem}_labpsf_{_cache_key_for_checkpoint(source)}{source.suffix}"
+    cache_path = LAB_CHECKPOINT_CACHE / cache_name
+    if cache_path.exists():
+        return cache_path
+
+    import torch
+
+    ckpt = torch.load(source, map_location="cpu")
+    removed: dict[str, list[dict]] = {}
+    for section in ("state_dict", "ema_state_dict"):
+        state = ckpt.get(section)
+        if not state:
+            continue
+        section_removed = []
+        for key in PSF_BUFFER_KEYS:
+            if key in state:
+                section_removed.append({"key": key, "shape": _shape_of(state[key])})
+                del state[key]
+        if section_removed:
+            removed[section] = section_removed
+
+    ckpt["lab_psf_checkpoint_filter"] = {
+        "source_checkpoint": str(source),
+        "lab_psf": str(LAB_PSF_PATH),
+        "removed": removed,
+    }
+    LAB_CHECKPOINT_CACHE.mkdir(parents=True, exist_ok=True)
+    tmp_path = cache_path.with_suffix(cache_path.suffix + ".tmp")
+    torch.save(ckpt, tmp_path)
+    os.replace(tmp_path, cache_path)
+    return cache_path
+
+
+def _count_files(root: Path) -> int:
+    return sum(1 for p in root.rglob("*") if p.is_file())
+
+
+def ensure_data_package(profile_name: str, output_root: Path) -> tuple[Path, dict]:
+    package_dir = Path(output_root) / profile_name
+    manifest = _load_manifest(package_dir / "manifest.json")
+    pairs = manifest.get("pairs", [])
+    total_pairs = int(manifest.get("total_pairs", -1))
+    if total_pairs <= 0 or total_pairs != len(pairs):
+        raise RuntimeError(f"manifest pair count mismatch in {package_dir}")
+    for leaf in ("src", "lbl"):
+        if not (package_dir / leaf).is_dir():
+            raise RuntimeError(f"missing {leaf} folder in {package_dir}")
+    geom_dir = Path(str(manifest.get("geom_dir", package_dir / "geom")))
+    if not geom_dir.is_absolute():
+        geom_dir = package_dir / geom_dir
+    if manifest.get("geometry_sidecars") is not True or int(manifest.get("geometry_count", 0)) != total_pairs:
+        raise RuntimeError(f"geometry sidecars are not ready in {package_dir}")
+    for leaf in ("boundary", "centerline", "distance"):
+        if not (geom_dir / leaf).is_dir():
+            raise RuntimeError(f"missing geometry {leaf} folder in {geom_dir}")
+    if _count_files(geom_dir / "boundary") < total_pairs or _count_files(geom_dir / "centerline") < total_pairs:
+        raise RuntimeError(f"geometry image sidecars are incomplete in {geom_dir}")
+    if _count_files(geom_dir / "distance") < total_pairs:
+        raise RuntimeError(f"geometry distance sidecars are incomplete in {geom_dir}")
+    return package_dir, manifest
+
+
+def _set_lab_progress_root(trainer) -> None:
+    if hasattr(trainer, "_set_training_progress_root"):
+        trainer._set_training_progress_root(str(LAB_TRAINING_PROGRESS_ROOT))
+        return
+    trainer.TRAINING_PROGRESS_ROOT = str(LAB_TRAINING_PROGRESS_ROOT)
+
+
+def configure_trainer(trainer, args: argparse.Namespace, data_dir: Path) -> None:
+    _require_lab_assets()
+    CFG = trainer.CFG
+    for key, val in BASE_OVERRIDES.items():
+        setattr(CFG, key, val)
+
+    _set_lab_progress_root(trainer)
+    checkpoint = Path(args.base_checkpoint).resolve() if args.base_checkpoint is not None else None
+    if checkpoint is not None:
+        if not checkpoint.exists():
+            raise FileNotFoundError(f"base checkpoint not found: {checkpoint}")
+        lab_checkpoint = prepare_lab_checkpoint(checkpoint)
+        CFG.LOAD_MODEL = True
+        CFG.LOAD_RESET_OPTIMIZER = True
+        CFG.LOAD_RESET_EPOCH = True
+        CFG.RESUME_CHECKPOINT = str(lab_checkpoint)
+        CFG.LAB_SOURCE_CHECKPOINT = str(checkpoint)
+    else:
+        CFG.LOAD_MODEL = False
+        CFG.LOAD_RESET_OPTIMIZER = False
+        CFG.LOAD_RESET_EPOCH = False
+        CFG.RESUME_CHECKPOINT = ""
+        CFG.LAB_SOURCE_CHECKPOINT = ""
+
+    run_suffix = str(getattr(args, "run_suffix", "") or "").strip()
+    if run_suffix:
+        safe_suffix = "".join(ch if ch.isalnum() or ch in {"_", "-"} else "_" for ch in run_suffix)
+        run_suffix = f"_{safe_suffix}"
+    CFG.MODEL_NAME = f"LAB_GESR_v1_v5_ST0p8_SWP_{args.candidate}{run_suffix}"
+    trainer.MODEL_NAME_BASE = CFG.MODEL_NAME
+    CFG.NUM_EPOCH = int(args.num_epoch)
+    CFG.SIMPLETEST_MAX_EPOCH = int(args.num_epoch)
+    CFG.DEVICE = str(args.device)
+
+    if args.max_train_batches is not None:
+        CFG.MAX_TRAIN_BATCHES_PER_EPOCH = int(args.max_train_batches)
+    if args.val_ratio is not None:
+        CFG.VAL_RATIO = float(args.val_ratio)
+    if args.batch_size is not None:
+        CFG.BATCH_SIZE = int(args.batch_size)
+    if args.val_batch_size is not None:
+        CFG.VAL_BATCH_SIZE = int(args.val_batch_size)
+    if args.num_workers is not None:
+        CFG.NUM_WORKERS = int(args.num_workers)
+    if args.crop_size is not None:
+        CFG.CROP_SIZE = int(args.crop_size)
+    if args.seq_batch_size is not None:
+        CFG.SEQ_BATCH_SIZE = int(args.seq_batch_size)
+
+    trainer.TRAIN_SRC_DIR = str(data_dir / "src")
+    trainer.TRAIN_LBL_DIR = str(data_dir / "lbl")
+    trainer.TRAIN_GEOM_DIR = str(data_dir / "geom")
+    CFG.BOUNDARY_GEOM_DIR = str(data_dir / "geom")
+
+
+def _dry_run_data_missing_summary(*, args: argparse.Namespace, profile_name: str, error: Exception) -> dict:
+    checkpoint = Path(args.base_checkpoint).resolve() if args.base_checkpoint is not None else None
+    return {
+        "candidate": args.candidate,
+        "note": CANDIDATE_NOTES[args.candidate],
+        "profile": profile_name,
+        "training_ready": False,
+        "reason": "data package is not ready",
+        "data_error": str(error),
+        "data_root": str(Path(args.data_root).resolve()),
+        "base_checkpoint": str(checkpoint) if checkpoint is not None else "",
+        "base_checkpoint_exists": checkpoint.exists() if checkpoint is not None else False,
+        "scratch_training": checkpoint is None,
+        "num_epoch": int(args.num_epoch),
+        "batch_size": int(args.batch_size),
+        "val_batch_size": int(args.val_batch_size),
+        "num_workers": int(args.num_workers),
+        "crop_size": int(args.crop_size),
+        "lab_psf": str(LAB_PSF_PATH),
+        "lab_psf_exists": LAB_PSF_PATH.exists(),
+        "boundary_geom_enable": True,
+        "source_style_rebuild": True,
+    }
+
+
+def build_arg_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Lab R55 source-style realistic training launcher")
+    parser.add_argument("--candidate", required=True, choices=sorted(PROFILE_BY_CANDIDATE))
+    parser.add_argument("--num-epoch", type=int, default=50)
+    parser.add_argument("--device", default="cuda:0")
+    parser.add_argument("--base-checkpoint", type=Path, default=None)
+    parser.add_argument("--data-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
+    parser.add_argument("--run-suffix", default="")
+    parser.add_argument("--max-train-batches", type=int, default=None)
+    parser.add_argument("--val-ratio", type=float, default=None)
+    parser.add_argument("--batch-size", type=int, default=16)
+    parser.add_argument("--val-batch-size", type=int, default=4)
+    parser.add_argument("--num-workers", type=int, default=4)
+    parser.add_argument("--crop-size", type=int, default=256)
+    parser.add_argument("--seq-batch-size", type=int, default=4)
+    parser.add_argument("--dry-run", action="store_true")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_arg_parser()
+    args, remaining = parser.parse_known_args(argv)
+    sys.argv = [sys.argv[0]] + remaining
+
+    profile_name = PROFILE_BY_CANDIDATE[args.candidate]
+    try:
+        data_dir, manifest = ensure_data_package(profile_name, args.data_root)
+    except (FileNotFoundError, RuntimeError, ValueError) as exc:
+        if args.dry_run:
+            print(
+                json.dumps(
+                    _dry_run_data_missing_summary(args=args, profile_name=profile_name, error=exc),
+                    indent=2,
+                    ensure_ascii=False,
+                )
+            )
+            print("[R55][Lab] dry run complete; training cannot start until data is ready.")
+            return 0
+        raise
+
+    import GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest as trainer
+
+    configure_trainer(trainer, args, data_dir)
+    CFG = trainer.CFG
+    summary = {
+        "candidate": args.candidate,
+        "note": CANDIDATE_NOTES[args.candidate],
+        "profile": profile_name,
+        "data_dir": str(data_dir),
+        "total_pairs": manifest["total_pairs"],
+        "count_by_stage": manifest.get("count_by_stage", {}),
+        "repaired_pairs": manifest.get("repaired_pairs", 0),
+        "geometry_count": manifest.get("geometry_count", 0),
+        "base_checkpoint": str(Path(args.base_checkpoint).resolve()) if args.base_checkpoint is not None else "",
+        "scratch_training": args.base_checkpoint is None,
+        "lab_compatible_checkpoint": CFG.RESUME_CHECKPOINT,
+        "model_name": CFG.MODEL_NAME,
+        "num_epoch": CFG.NUM_EPOCH,
+        "simpletest_max_epoch": CFG.SIMPLETEST_MAX_EPOCH,
+        "device": CFG.DEVICE,
+        "batch_size": CFG.BATCH_SIZE,
+        "val_batch_size": CFG.VAL_BATCH_SIZE,
+        "num_workers": CFG.NUM_WORKERS,
+        "crop_size": CFG.CROP_SIZE,
+        "lab_psf": CFG.PSF_FITTED_PATH,
+        "training_progress_root": str(LAB_TRAINING_PROGRESS_ROOT),
+        "seq_stages": list(CFG.SEQ_INCLUDE_SUBDIRS),
+        "boundary_geom_enable": bool(CFG.BOUNDARY_GEOM_ENABLE),
+        "boundary_geom_dir": CFG.BOUNDARY_GEOM_DIR,
+        "phys_forward_enable": bool(CFG.PHYS_FORWARD_ENABLE),
+        "w_phys_max": float(CFG.W_PHYS_MAX),
+        "boundary_weights": {
+            "boundary": CFG.BOUNDARY_LOSS_WEIGHT,
+            "centerline": CFG.CENTERLINE_LOSS_WEIGHT,
+            "distance_edge": CFG.DISTANCE_EDGE_LOSS_WEIGHT,
+            "warmup_epoch": CFG.BOUNDARY_LOSS_WARMUP_EPOCH,
+        },
+        "robust_loss_percentile": CFG.ROBUST_LOSS_PERCENTILE,
+        "edge_weights": {
+            "w_gradmag": CFG.W_GRADMAG,
+            "w_edge_ori_simple": CFG.W_EDGE_ORI_SIMPLE,
+            "w_hf_lap": CFG.W_HF_LAP,
+            "w_edgelocal_lap_end": CFG.W_EDGELOCAL_LAP_END,
+        },
+        "max_train_batches": getattr(CFG, "MAX_TRAIN_BATCHES_PER_EPOCH", None),
+        "source_style_rebuild": True,
+    }
+    print(json.dumps(summary, indent=2, ensure_ascii=False))
+
+    if args.dry_run:
+        print("[R55][Lab] dry run complete; training was not started.")
+        return 0
+
+    trainer.main()
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,256 @@
+{
+  "status": "fixed_before_formal_training",
+  "user_confirmed_ordinary_training": true,
+  "common": {
+    "seed": 1482101,
+    "image_order_seed": 1482102,
+    "noise_seed": 1481003,
+    "training_scenes": 512,
+    "views_per_scene": 4,
+    "images_per_epoch": 2048,
+    "batch_size": 4,
+    "input_size": 384,
+    "supervised_core": [
+      144,
+      240
+    ],
+    "min_epochs": 8,
+    "max_epochs": 32,
+    "early_stop_patience_epochs": 5,
+    "meaningful_PSNR_improvement_dB": 0.02,
+    "lr_plateau_patience_epochs": 2,
+    "lr_reduction_factor": 0.5,
+    "minimum_lr": 1e-06,
+    "validation_scenes": 128,
+    "test_scenes": 128,
+    "validation_every_epochs": 1,
+    "selection": "highest synthetic validation mean per-image core PSNR; no real-data selection",
+    "stopping": "at least 8 epochs, then 5 epochs without a 0.02 dB validation improvement, or 32-epoch cap",
+    "precision": "FP32; TF32 disabled",
+    "pretrained_weights": false,
+    "training_unit": "one independent image/clear pair; all 2048 views shuffled each epoch",
+    "extra_training_geometry_pair_observation_losses": false,
+    "evaluation_losses": "original five MOSR task terms reported as common diagnostics only",
+    "scope": "ordinary author loss/optimizer adapted to fixed grayscale x1 data and common valid supervision region"
+  },
+  "per_model": {
+    "EDSR-x1": {
+      "loss": "L1",
+      "optimizer": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0,
+      "clip_norm": null,
+      "ema": 0.0
+    },
+    "RDN-x1": {
+      "loss": "L1",
+      "optimizer": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0,
+      "clip_norm": null,
+      "ema": 0.0
+    },
+    "RCAN-x1": {
+      "loss": "L1",
+      "optimizer": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0,
+      "clip_norm": null,
+      "ema": 0.0
+    },
+    "NAFNet": {
+      "loss": "author_PSNRLoss",
+      "optimizer": "AdamW",
+      "lr": 0.001,
+      "betas": [
+        0.9,
+        0.9
+      ],
+      "weight_decay": 0.001,
+      "clip_norm": 0.01,
+      "ema": 0.0
+    },
+    "SwinIR": {
+      "loss": "author_Charbonnier",
+      "charbonnier_eps": 1e-09,
+      "optimizer": "Adam",
+      "lr": 0.0002,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0,
+      "clip_norm": null,
+      "ema": 0.999
+    },
+    "Restormer": {
+      "loss": "L1",
+      "optimizer": "AdamW",
+      "lr": 0.0003,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0001,
+      "clip_norm": 0.01,
+      "ema": 0.0
+    },
+    "USRNet-x1": {
+      "loss": "L1",
+      "optimizer": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0,
+      "clip_norm": null,
+      "ema": 0.0,
+      "initialization": "author_orthogonal_gain_0.2"
+    }
+  },
+  "architectures": {
+    "EDSR-x1": {
+      "family": "residual CNN",
+      "variant": "author EDSR baseline",
+      "n_resblocks": 16,
+      "n_feats": 64,
+      "res_scale": 1
+    },
+    "RDN-x1": {
+      "family": "dense feature fusion CNN",
+      "variant": "author-linked PyTorch configuration A",
+      "G0": 64,
+      "D": 20,
+      "C": 6,
+      "G": 32
+    },
+    "RCAN-x1": {
+      "family": "channel attention CNN",
+      "variant": "author G10R20",
+      "n_resgroups": 10,
+      "n_resblocks": 20,
+      "n_feats": 64,
+      "reduction": 16
+    },
+    "NAFNet": {
+      "family": "image restoration CNN",
+      "variant": "author GoPro width32 with TLC",
+      "width": 32,
+      "enc_blk_nums": [
+        1,
+        1,
+        1,
+        28
+      ],
+      "middle_blk_num": 1,
+      "dec_blk_nums": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "SwinIR": {
+      "family": "window Transformer",
+      "variant": "author grayscale denoising",
+      "embed_dim": 180,
+      "depths": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "num_heads": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "window_size": 8,
+      "mlp_ratio": 2
+    },
+    "Restormer": {
+      "family": "restoration Transformer",
+      "variant": "author Gaussian grayscale architecture",
+      "dim": 48,
+      "num_blocks": [
+        4,
+        6,
+        6,
+        8
+      ],
+      "num_refinement_blocks": 4,
+      "heads": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "ffn_expansion_factor": 2.66,
+      "LayerNorm_type": "BiasFree"
+    },
+    "USRNet-x1": {
+      "family": "PSF deep unfolding",
+      "variant": "author full model",
+      "n_iter": 8,
+      "h_nc": 64,
+      "nc": [
+        64,
+        128,
+        256,
+        512
+      ],
+      "nb": 2,
+      "sigma_gray": 1.5
+    }
+  },
+  "adapters": {
+    "EDSR-x1": [
+      "Author scale=1 identity upsampler; one input/output channel.",
+      "RGB fixed mean is replaced by fixed grayscale mean 0.5; no per-image normalization."
+    ],
+    "RDN-x1": [
+      "RDN author README links this EDSR-PyTorch implementation.",
+      "Enable r=1 in the existing r=2/3 tail branch; PixelShuffle(1) is identity. One input/output channel."
+    ],
+    "RCAN-x1": [
+      "Author scale=1 identity upsampler; one input/output channel.",
+      "RGB fixed mean is replaced by fixed grayscale mean 0.5; no per-image normalization."
+    ],
+    "NAFNet": [
+      "Author NAFNetLocal, grayscale channels and train_size=(1,1,384,384).",
+      "Only package imports are redirected; official LayerNorm and local-pooling implementations retained."
+    ],
+    "SwinIR": [
+      "Native author grayscale denoising head: scale=1, no upsampler, image range 1.",
+      "Official checkpointing is enabled for training memory; full architecture retained."
+    ],
+    "Restormer": [
+      "Native official grayscale input/output configuration; all blocks retained."
+    ],
+    "USRNet-x1": [
+      "Use author network_usrnet_v1 for modern torch.fft; scale factor 1 is native.",
+      "Grayscale prior has 2 input channels (image and noise map), 1 output channel.",
+      "Training kernel follows the common known/mean operator selection; evaluation uses mean PSF.",
+      "Sigma input fixed at 1.5 gray / 255; no true test noise metadata or per-image tuning."
+    ]
+  },
+  "real_images_used_for_selection": false
+}

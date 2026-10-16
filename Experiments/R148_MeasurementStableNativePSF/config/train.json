@@ -1,0 +1,23 @@
+{
+  "model_seed": 1481001,
+  "order_seed": 1481002,
+  "noise_seed": 1481003,
+  "operator_seed": 1481004,
+  "splits": {"train": 512, "dev": 128, "test": 128},
+  "views_per_parent": 4,
+  "updates": 8192,
+  "epochs": 16,
+  "warmup": 128,
+  "save_every": 128,
+  "dev_every": 512,
+  "optimizer": {"name": "AdamW", "max_lr": 0.0003, "min_lr": 0.000003, "weight_decay": 0.00001, "gradient_clip": 1.0},
+  "loss": {"image": 1.0, "gradient": 0.2, "pair_output": 0.25, "moments": 0.15, "observation": 0.02},
+  "stage_weights": [0.15, 0.2, 0.25, 0.4],
+  "known_operator_probability": 0.25,
+  "precision": "FP32",
+  "tf32": false,
+  "deterministic": true,
+  "device": "cuda",
+  "train_crop": [32, 352, 32, 352],
+  "supervised_core": [96, 224]
+}

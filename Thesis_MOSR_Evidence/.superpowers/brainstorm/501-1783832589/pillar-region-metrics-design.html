@@ -1,0 +1,73 @@
+<style>
+  .samples { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:18px 0 26px; }
+  .sample { border:1px solid #d7dce1; background:#fff; padding:9px; }
+  .sample-view { height:220px; overflow:hidden; position:relative; background:#222; }
+  .sample-view img { width:100%; height:100%; object-fit:cover; display:block; }
+  .pick { position:absolute; border:4px solid #13a17d; width:28%; aspect-ratio:1/1; left:36%; top:32%; box-shadow:0 0 0 999px rgba(0,0,0,.13); }
+  .pick::after { content:"中心優先的有效 3×3"; position:absolute; left:-4px; bottom:-27px; color:#08735d; background:#fff; padding:3px 6px; font-size:12px; white-space:nowrap; }
+  .sample h3 { margin:10px 0 4px; }
+  .sample p { margin:0; color:#59636c; font-size:13px; }
+  .metric-grid { display:grid; grid-template-columns:1.25fr 1fr 1fr; gap:14px; margin:18px 0 24px; }
+  .metric { border:1px solid #d7dce1; background:#fff; padding:18px; }
+  .metric.primary { border-top:6px solid #16856d; }
+  .metric.secondary { border-top:6px solid #3f83b8; }
+  .metric.guard { border-top:6px solid #d4a62f; }
+  .formula { font-size:21px; color:#28323a; background:#f4f6f7; padding:12px; margin:12px 0; text-align:center; }
+  .why { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0; }
+  .why div { background:#f5f8f7; border-left:4px solid #16856d; padding:12px 14px; }
+  .decision { margin-top:24px; }
+  @media(max-width:900px){ .samples,.metric-grid,.why{grid-template-columns:1fr;} }
+</style>
+
+<h2>B 方案定稿第二層：選哪九顆、主打哪個數字</h2>
+<p class="subtitle">區域選擇只看第一張 Raw 的圓柱完整度與影像中心位置，完全不看 Raw/V42 誰的位移結果較好。</p>
+
+<div class="samples">
+  <div class="sample">
+    <div class="sample-view"><img src="/files/50x_raw_pillar_roi.png" alt="50x raw pillar region"><span class="pick"></span></div>
+    <h3>50×</h3><p>圓柱直徑像素數充足，主驗證局部邊界中心的次像素能力。</p>
+  </div>
+  <div class="sample">
+    <div class="sample-view"><img src="/files/20x_raw_pillar_roi.png" alt="20x raw pillar region"><span class="pick"></span></div>
+    <h3>20×</h3><p>先避開污染與缺柱，再選最靠近視野中心的完整 3×3。</p>
+  </div>
+  <div class="sample">
+    <div class="sample-view"><img src="/files/5x_raw_pillar_roi.png" alt="5x raw pillar region"><span class="pick"></span></div>
+    <h3>5×</h3><p>每顆只有少量像素，仍維持相同九顆主規則；另以 5×5 作敏感度檢查，不取代主結果。</p>
+  </div>
+</div>
+
+<div class="why">
+  <div><strong>固定選區規則</strong><br>候選 3×3 先按距離視野中心排序；跳過不完整、污染過重或圓柱間距失常者，取第一個合格區。</div>
+  <div><strong>跨資料共用</strong><br>同倍率的 0.5 與 1 µm 第一張影像先對齊，再轉移同一組圓柱格點，不重新挑一個更漂亮的區。</div>
+</div>
+
+<div class="metric-grid">
+  <div class="metric primary">
+    <div class="label">論文主指標</div>
+    <h3>九顆圓柱的同時位移一致性</h3>
+    <div class="formula">每顆位移 − 九顆共同中位數</div>
+    <p>同一次平台移動對九顆圓柱完全相同；扣掉共同移動後，剩下的分散就是局部邊界定位抖動。這最直接對應 V42 的邊界優勢，也不會被平台本身某一步走多或走少掩蓋。</p>
+  </div>
+  <div class="metric secondary">
+    <div class="label">實際應用指標</div>
+    <h3>最終步距穩定性</h3>
+    <div class="formula">九顆共識位移的標準差</div>
+    <p>報告 0.5 與 1 µm 全部步數的 Raw/V42 標準差、平均偏差及與指定步距的誤差。</p>
+  </div>
+  <div class="metric guard">
+    <div class="label">可信度護欄</div>
+    <h3>有效圓柱與失敗率</h3>
+    <div class="formula">有效顆數 ≥ 5 / 9</div>
+    <p>同時報告有效顆數、離群顆數與圓柱間殘差；Raw/V42 必須共用同一批有效影格，不單獨刪除不利步數。</p>
+  </div>
+</div>
+
+<div class="options decision">
+  <div class="option" data-choice="approve-region-metrics" onclick="toggleSelect(this)">
+    <div class="letter">✓</div><div class="content"><h3>同意選區與指標設計</h3><p>下一步整理成正式規格，再進入完整實作與六組資料驗證。</p></div>
+  </div>
+  <div class="option" data-choice="adjust-region-metrics" onclick="toggleSelect(this)">
+    <div class="letter">↺</div><div class="content"><h3>需要調整</h3><p>回到終端說明要改選區原則、圓柱數量或論文主指標。</p></div>
+  </div>
+</div>

@@ -97,7 +97,7 @@ Step B 最重要的訊號不是「老師蒸餾完全沒用」，而是目前這�
 - Step B 計畫：`reports/R44H_STEPB_REGION_KD_PLAN.md`
 - Step B 啟動腳本：`scripts/launch_r44h_stepb.py`
 - Step B 測試：`tests/test_r44h_region_kd.py`、`tests/test_r44h_stepb_launcher.py`
-- 訓練 run：`Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44h_stepb_region_kd_main_20260509_102558/`
+- 訓練 run：完整歷史依 `../ARCHIVE_POINTER_20260824.md` 從 H 槽恢復；D 槽保留 `results/r44h_stepb_region_kd/` 的代表模型與結果。
 - 評估 checkpoint：`results/r44h_stepb_region_kd/checkpoints/r44h_stepb_region_kd_main_latest.pth.tar`
 - 位移摘要：`results/r44h_stepb_region_kd/r44h_stepb_motion_summary.json`
 - 位移逐項表：`results/r44h_stepb_region_kd/r44h_stepb_motion_rows.csv`

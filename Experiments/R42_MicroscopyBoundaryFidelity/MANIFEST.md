@@ -38,15 +38,15 @@
 
 | 類型 | 位置 | 說明 |
 |------|------|------|
-| R42 訓練輸出 | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/` | 從 COMBO 出發的正式訓練 |
-| R42 訓練輸出 | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/` | 從 R41 出發的正式訓練 |
+| R42 訓練輸出 | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/` | D 保留代表模型；完整 run 依 `ARCHIVE_POINTER_20260824.md` 從 H 恢復 |
+| R42 訓練輸出 | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/` | D 保留代表模型；完整 run 依 `ARCHIVE_POINTER_20260824.md` 從 H 恢復 |
 | 邊界重建結果 | `results/boundary_recon/` | 8 組顯微邊界重建與摘要 |
 | 代表圖 | `results/boundary_recon/r42_representative_boundary_sheet.png` | Grid / Curve / Defect / Mixed 代表圖 |
 | 指標除錯圖 | `results/boundary_recon/r42_curve_metric_debug_0080.png` | 曲線指標修正用檢查圖 |
 | 環形重建結果 | `results/ring_recon/` | R42 四個權重的三尺度環形重建 |
 | 環形守門摘要 | `results/ring_guard/*_ring_guard_summary.json` | R42 四個權重的本地環形守門結果 |
 | 低 alpha 權重平均 | `results/weight_sweep/r42_r41_best_lowalpha/` | COMBO ↔ `r42_r41_best` 低比例平均、邊界驗證與本地環形守門 |
-| 守門 KD 診斷訓練 | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe_20260505_172101/` | 8 epoch 短訓練診斷輸出 |
+| 守門 KD 診斷訓練 | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe_20260505_172101/latest.pth.tar` | D 保留 latest；完整 8 epoch run 從 H 恢復 |
 | 守門 KD 邊界驗證 | `results/boundary_recon_guarded_kd_probe/` | `latest` 權重的未看過邊界驗證結果 |
 | 守門 KD 環形守門 | `results/ring_guard_guarded_kd_probe/` | `latest` 權重的本地三尺度環形守門結果 |
 | 外部 GMF 影像與分數 | `results/external_gmf/` | 三個 R42 候選的外部送測影像、`GMF_score.txt` 與比較摘要 |

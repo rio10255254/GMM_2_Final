@@ -1,0 +1,25 @@
+# R128 — Source-only full training
+
+Self-contained experiment on branch codex/r128-full-training. The user authorized completing preparation and then starting the full planned training. Physical instrument certification limits claims, and is not a prerequisite for this source-isolated research training.
+
+Final deployment requirement, reaffirmed2026-09-09: deliver one selected model with one usage entry point. The four training results are internal research comparisons; the assistant is responsible for evaluating and selecting, not handing four alternatives to the user. Selection must be supported by the complete fixed real microscopy/SEM evaluation and failure cases. The frozen training length and evaluation protocol remain in force; completion alone is not adoption.
+
+Status2026-09-09 final review: all4runs completed8192updates each and all scheduled evaluations.32768unique updates plus224exact recovery replays reconciled; all288final SEM rows independently reproduced. Retain only P_s1285002step8192for further repair; no production adoption because all candidates worsen dark-interior size comparisons and modify clean controls. See [final results](reports/R128_RESULTS.md) and [audit](reports/R128_FINAL_AUDIT.md). Original frozen sources, settings and evidence remain unchanged.
+
+The model receives only the observed image. Four shared learned reconstruction updates retain a4xintensity representation with2xneural computation. There are no untrained geometry/confidence outputs and no assumed real PSF inside the network. Two matched training arms differ only in a post-forward true-simulator consistency objective; no simulation truth reaches the model input.
+
+Completed data:512training parents,128development parents and128final generated-test parents. All768parents passed the unchanged formation checks;691nonflat geometries are unique. Independent parent geometry/seeds and controls were audited before training. Real/SEM images remain reused development evaluation only. Full planned training is8192updates per arm/seed, two arms and two independent starts, not an automatically promoted model.
+
+Budget24GiB registered before allocation. Source contexts are newly rendered, not padded/resized old data. See the canonical methodology and preparation records for exact frozen settings, readiness and execution status.
+
+Application scope clarified after review: the user can control acquisition and retake dark images. Prioritize qualified normal conditions and nearby real variation; extreme-dark images are an applicability-boundary test. This is not a retroactive pass or a claimed implemented rejection gate. See [application scope](reports/R128_APPLICATION_SCOPE.md).
+
+2026-09-10 nearby-brightness development check:13/14/15each improve36/36SEM-defined object comparisons, with all16interior objects included. These are repeated observations of36objects, not independent qualification. A fixed single-candidate research trial is available at [trial usage](trial/README.md); see [checked scope and results](reports/R128_NEARBY_BRIGHTNESS_TRIAL.md). No new training or production adoption.
+
+2026-09-10 structure inspection complete:12/12first/last real motion pairs remain source-consistent, but known-sharp boundaries change. Crop/periodic-correspondence false flags and generic-feature/corner semantics are documented. Retain one research trial only; prioritize sharp-boundary preservation, with no model change or new training. See [structure report](reports/R128_STRUCTURE_CHECK.md).
+
+Complete-contour follow-up2026-09-10:normal13/14/15outer contours improve against both fixed SEMreference sets (primaryglobal-pitch counts36/35/36). This is a separate completeACMtest, not the earlier size-ratio metric. HistoricalRawmask parity and independent metrics verified; local maxima/fine-shape measures are not universally better. See [paired full-contour report](reports/R128_FULL_CONTOUR_SEM.md). No new training or universal production qualification.
+
+2026-09-10 matched competitive review: five fixed methods on the same36pillars xnormal13/14/15, with common Raw-derived alignment and both fixedSEMreferences. All1080rows independently verified. R128has best aggregateboundary/area/perimeter among listedRaw/R61/R109/R119/R128methods; circularityremains reference-sensitive and localworstcases canworsen. Historical120-pairLSC summaries reproduce, but R128has no same-protocolLSC result; the0.01319pxRaw-relative registrationdifference is notLSC improvement. See [comparison and next decision](reports/R128_COMPETITIVE_REVIEW.md). No newtraining or promotion.
+
+2026-09-10 LSC follow-up complete: same159nativeframes/120Raw-lockedpairs/four sequences/ninepillars forR128andR61. OriginalRawreaderparity,4exactR61full-image replays,5724independentcirclefits,159R128outputchecksandworstpairpublictrialreplay completed. See [full R61/LSC/contour comparison](reports/R128_LSC_R61_COMPARISON.md). This supersedes prior pending-LSCstatus;originalreportsremain unchanged. One researchcandidate,no training/promotion;FOVguard-off isdiagnostic only.

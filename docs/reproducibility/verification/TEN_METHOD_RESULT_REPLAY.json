@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "command": [
+    "C:\\Users\\Rio\\anaconda3\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\thesis_result_replay\\replay_thesis_results.py",
+    "--root",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\thesis_result_replay",
+    "--spec",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\thesis_result_replay\\replay_spec.json",
+    "--output",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\thesis_replayed"
+  ],
+  "blocked_original_roots": [
+    "D:\\GMM_2_Final",
+    "H:\\GMM_2_Final_Archive"
+  ],
+  "allowed_copied_roots": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\thesis_result_replay",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\thesis_replayed"
+  ],
+  "python_workers_inherit_guard": true,
+  "seconds": 9.516420125961304
+}

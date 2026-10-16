@@ -1,0 +1,63 @@
+{
+  "version": 2,
+  "decision": "Whether R109 E48 should replace V42 E120 as the thesis results model",
+  "primary_outcomes": [
+    {
+      "name": "SEM ACM full-contour fidelity",
+      "definition": "Translation-only full-contour agreement against the same 36 physical SEM pillars across exposures 13-24",
+      "primary_readouts": [
+        "mean_boundary_distance_pitch_pct",
+        "iou",
+        "dark_exposure_behavior"
+      ],
+      "diagnostics": [
+        "area_error_pct",
+        "perimeter_error_pct",
+        "per_exposure_direction"
+      ]
+    },
+    {
+      "name": "External GMF displacement stability",
+      "definition": "Same 101 JunHua frames, same filenames and external tool; compare the common 99 consecutive reported steps",
+      "primary_readouts": [
+        "y_step_std_px",
+        "y_error_mae_px",
+        "wrong_direction_steps"
+      ],
+      "diagnostics": [
+        "x_step_std_px",
+        "detrended_y_coordinate_std_px",
+        "score_median",
+        "endpoint_bias"
+      ]
+    },
+    {
+      "name": "Frozen thesis displacement consistency",
+      "definition": "The exact Raw-selected 120 steps and nine fixed SEM-mapped pillars used by the thesis",
+      "primary_readouts": [
+        "within_grid_mean_nm",
+        "command_mae_nm",
+        "evaluable_step_count"
+      ],
+      "diagnostics": [
+        "per_sequence_step_sd_nm",
+        "paired_win_count"
+      ]
+    }
+  ],
+  "supporting_evidence": [
+    "50x line-pattern sharpness and displacement",
+    "R73/R74 unseen-shape contour behavior",
+    "large-image execution and tested tile-grid parity",
+    "model size and training-data independence"
+  ],
+  "guardrails": [
+    "no dark rings or off-source strong edges",
+    "no hidden image or step reselection",
+    "no loss of evaluable measurements",
+    "systematic displacement bias remains visible",
+    "CD is reported as dimensional compatibility but does not control model selection"
+  ],
+  "cd_role": "secondary legacy dimensional-compatibility evidence only",
+  "aggregation_rule": "No single weighted score. Decide worst-case-first across the three primary outcomes, then use supporting evidence to interpret close tradeoffs."
+}

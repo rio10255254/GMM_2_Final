@@ -1,0 +1,15 @@
+{
+  "calibration_id": "r125_assumed_gaussian_4x",
+  "qualification": "unqualified_diagnostic",
+  "purpose": "SameassumedphysicalGaussianasR124,4xdiscretizationrequiredbyR125representationrepair; notcalibratedorfitfromrealoutputs",
+  "kernel_convention": "physical_psf",
+  "kernel": {
+    "type": "gaussian",
+    "sigma_native_px": 0.8,
+    "radius_native_px": 2
+  },
+  "sampling_factor": 4,
+  "gain": 1.0,
+  "bias": 0.0,
+  "noise_variance": 6.151480199923106e-05
+}

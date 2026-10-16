@@ -1,0 +1,217 @@
+{
+  "experiment_id": "R121_BoundaryAnchorFactorial",
+  "seed": 1196001,
+  "source_package": "D:/GMM_2_Final/Experiments/R117_CenterLockedSubpixelScratch/data/package",
+  "source_manifest_sha256": "d721a57cadd855b4ce9bb4d835d5b1ba239180dfe41b8ebe1c19af261d207887",
+  "data": {
+    "package_root": "D:\\GMM_2_Final\\Experiments\\R118_PhysicalCoordinateRepairScratch\\data\\package",
+    "train_scenes": 5000,
+    "validation_scenes": 512,
+    "canvas_size": 256,
+    "label_supersample_factor": 8,
+    "families": [
+      "circle",
+      "ellipse",
+      "rectangle",
+      "polygon",
+      "ring",
+      "crescent",
+      "lobed",
+      "thin_neck",
+      "thin_bar",
+      "dense_array",
+      "mixed_field",
+      "irregular_blob"
+    ],
+    "role_weights": {
+      "edge": 0.62,
+      "textured_edge": 0.18,
+      "identity": 0.1,
+      "flat_negative": 0.1
+    },
+    "target": {
+      "transition_width_px": [
+        0.45,
+        1.15
+      ],
+      "contrast": [
+        0.24,
+        0.68
+      ],
+      "texture_amplitude": [
+        0,
+        0.055
+      ],
+      "shared_contrast": [
+        0.76,
+        1.24
+      ],
+      "shared_gamma": [
+        0.82,
+        1.18
+      ],
+      "shared_illumination_amplitude": [
+        0,
+        0.11
+      ]
+    },
+    "blur_sigma_px": [
+      0.4,
+      3.2
+    ],
+    "noise_sigma_gray": [
+      0.3,
+      3
+    ],
+    "views_per_scene": 2,
+    "sampling": "family_interleaved_without_replacement",
+    "boundary_weighting": "normalize_each_scene_before_batch_average",
+    "source_photometry": "shared_with_reference_before_optical_blur",
+    "distance_orientation": "foreground"
+  },
+  "model": {
+    "base_channels": 48,
+    "action_channels": 32,
+    "detail_channels": 24,
+    "detector_dilations": [
+      1,
+      2,
+      4,
+      8,
+      8,
+      4,
+      2,
+      1
+    ],
+    "action_dilations": [
+      1,
+      2,
+      4,
+      2,
+      1
+    ],
+    "detail_dilations": [
+      1,
+      2,
+      4,
+      2,
+      1
+    ],
+    "blur_scales_px": [
+      0.8,
+      1.6,
+      3.2,
+      6.4
+    ],
+    "maximum_sdf_px": 16,
+    "maximum_normal_shift_px": 1.5,
+    "maximum_width_gain": 3.5,
+    "maximum_detail_gray": 24,
+    "local_range_window": 21,
+    "minimum_halo_px": 224,
+    "alignment_multiple": 8,
+    "detail_mode": "bounded_local_residual",
+    "normal_source": "gradient_of_consistently_oriented_distance",
+    "global_normalization": false,
+    "global_fft": false
+  },
+  "training": {
+    "formal_epochs": 42,
+    "batch_size_scenes": 12,
+    "workers": 4,
+    "learning_rate": 0.0003,
+    "geometry_lr_multiplier": 0.5,
+    "detail_lr_multiplier": 1,
+    "weight_decay": 1e-05,
+    "gradient_clip": 5,
+    "preview_every_epochs": 3,
+    "save_every_epochs": 3,
+    "minimum_free_gpu_gib": 4,
+    "weights": {
+      "geometry_sdf": 0.15,
+      "geometry_boundary": 0.12,
+      "geometry_normal": 0.03,
+      "image_reference": 1,
+      "gradient_reference": 0.7,
+      "location_xy": 0.15,
+      "local_edge_error": 0.1,
+      "pair_reference_error": 0.2,
+      "pair_geometry": 0.08,
+      "pair_location_xy": 0.15,
+      "identity": 0.3,
+      "observable_reference_error": 0.25
+    },
+    "stages": [
+      {
+        "epochs": [
+          1,
+          6
+        ],
+        "active": [
+          "geometry"
+        ],
+        "purpose": "learn geometric coordinates"
+      },
+      {
+        "epochs": [
+          7,
+          24
+        ],
+        "active": [
+          "geometry",
+          "action"
+        ],
+        "purpose": "restore with geometry still learning"
+      },
+      {
+        "epochs": [
+          25,
+          42
+        ],
+        "active": [
+          "geometry",
+          "action",
+          "detail"
+        ],
+        "purpose": "detail with all shape and pair losses retained"
+      }
+    ]
+  },
+  "validation": {
+    "development_reuse": "R73 R74 SEM and prior validation scenes are development evidence, not fresh holdouts",
+    "external_gmf": "not_used_for_thesis_selection",
+    "real_raw_inputs": [
+      {
+        "name": "5x_dense",
+        "path": "D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/validation/inputs/Raw/5x_dense_raw.bmp",
+        "sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+        "original_path": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/data/live_validation/5x_dense_raw.bmp"
+      },
+      {
+        "name": "20x_mixed",
+        "path": "D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/validation/inputs/Raw/20x_mixed_raw.bmp",
+        "sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+        "original_path": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/data/live_validation/20x_mixed_raw.bmp"
+      },
+      {
+        "name": "50x_array",
+        "path": "D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/validation/inputs/Raw/50x_array_raw.bmp",
+        "sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+        "original_path": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/data/live_validation/50x_array_raw.bmp"
+      },
+      {
+        "name": "pillar_center9_50x",
+        "path": "D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/validation/inputs/Raw/pillar_center9_50x_raw.bmp",
+        "sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+        "original_path": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/data/live_validation/pillar_center9_50x_raw.bmp"
+      }
+    ]
+  },
+  "provenance": {
+    "scratch_only": true,
+    "teacher_weights": false,
+    "real_pixels_in_training": false,
+    "sem_structure_in_training": false,
+    "formal_training_started": false
+  }
+}

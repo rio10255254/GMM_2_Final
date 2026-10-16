@@ -1,0 +1,53 @@
+{
+  "selection": "hard_failure_then_worst_case_then_distribution",
+  "single_aggregate_score": false,
+  "cd_is_secondary": true,
+  "external_gmf_is_last_compatibility_check": true,
+  "suites": {
+    "R73": "D:/GMM_2_Final/Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val",
+    "R74": "D:/GMM_2_Final/Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val",
+    "SEM": "H:/From_2TB_D_disk/13_thesis/SEM_data",
+    "real_5x": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp",
+    "real_20x": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
+    "real_50x": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
+    "junhua_raw": "D:/NTU_ImageDataset/Pitch1um_Y_100/Raw"
+  },
+  "tile_tests": {
+    "core_sizes": [768, 1024],
+    "halos": [192, 224],
+    "origin_offsets": [[0, 0], [137, 91]],
+    "profiles": [
+      {"name": "grid_a", "core": 768, "halo": 192, "overlap": 0, "origin": [0, 0]},
+      {"name": "grid_b_shifted_overlap", "core": 768, "halo": 192, "overlap": 192, "origin": [137, 91]},
+      {"name": "grid_c_large_core", "core": 1024, "halo": 224, "overlap": 256, "origin": [0, 0]}
+    ],
+    "compare_full_when_memory_allows": true
+  },
+  "required_internal_maps": [
+    "normalized_sdf",
+    "normal_x",
+    "normal_y",
+    "boundary_confidence",
+    "correction_need",
+    "recoverability",
+    "geometry_gate",
+    "detail_gate",
+    "width_gain",
+    "normal_shift"
+  ],
+  "structural_tolerances_gray": {
+    "tile_mean": 0.05,
+    "tile_p99": 0.25,
+    "tile_absolute": 1.0
+  },
+  "every_four_epochs": [
+    "pillar_grid_9",
+    "R73_fixed_subset",
+    "R74_five_family_subset",
+    "real_5x_20x_50x_representatives",
+    "clear_flat_identity",
+    "two_tile_grids",
+    "internal_maps",
+    "family_gradient_share"
+  ]
+}

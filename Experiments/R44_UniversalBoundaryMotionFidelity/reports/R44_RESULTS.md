@@ -86,9 +86,9 @@ R44A 判讀：
 
 | 候選 | 起點 | checkpoint |
 |---|---|---|
-| `r44_motion_from_r42_best` | R42 `r42_boundary_from_r41` | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801/weights/best_tradeoff.pth.tar` |
-| `r44_motion_from_r40_a045` | R40 a045 | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143/weights/best_tradeoff.pth.tar` |
-| `r44_motion_from_combo` | COMBO | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231/weights/best_tradeoff.pth.tar` |
+| `r44_motion_from_r42_best` | R42 `r42_boundary_from_r41` | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801/best_tradeoff.pth.tar` |
+| `r44_motion_from_r40_a045` | R40 a045 | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143/best_tradeoff.pth.tar` |
+| `r44_motion_from_combo` | COMBO | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231/best_tradeoff.pth.tar` |
 
 R44A + R44B 總表：
 

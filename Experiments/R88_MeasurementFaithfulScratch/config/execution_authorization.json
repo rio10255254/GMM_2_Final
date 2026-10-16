@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R88_MeasurementFaithfulScratch",
+  "authorization_status": "authorized",
+  "authorized_at": "2026-08-10T00:00:00+08:00",
+  "authorization_source": "User message: 那你可以開始執行了",
+  "branch": "sandbox/r88-measurement-faithful-scratch",
+  "authorized_scope": [
+    "implementation",
+    "smoke_dataset_generation",
+    "smoke_training",
+    "formal_dataset_generation",
+    "locked_holdout_generation_and_sealing",
+    "one_100_epoch_random_initialization_training_run"
+  ],
+  "formal_run_limit": 1,
+  "checkpoint_inheritance_allowed": false,
+  "resume_allowed": false,
+  "teacher_or_pseudo_label_allowed": false,
+  "sem_or_real_sample_training_pixels_allowed": false,
+  "formal_baseline_promotion_authorized": false,
+  "external_gmf_waiver_authorized": false,
+  "locked_files": {
+    "config/experiment_design.json": "be12679f76423739ea916193004ceb3a395b3cc91a89f1e4632e48d0a44259f2",
+    "config/acceptance_gates.json": "35324171a48d3765e0b575f83c5e95589eb1a7036e059d1872fb410078b03452",
+    "reports/R88_PROBLEM_LEDGER.md": "bc83b75aa7c0084067434a370ded761b01901cbd5486709809f9a81491bd71d8",
+    "reports/R88_EXPERIMENT_DESIGN.md": "b5f204309a3fbbe28a90c8ef3f11375a1a13d71e07deb8e0c86968f0ee84a554"
+  },
+  "run_registry": "runs/formal_run_registry.json",
+  "notes": "The locked design remains immutable with formal_runs_authorized=0 because it records the pre-authorization state. This separate file records the later user authorization and is checked before any formal generation or training starts."
+}

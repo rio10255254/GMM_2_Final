@@ -125,6 +125,7 @@ D:\GMM_2_Final\
 │
 ├── docs/                              ← 研究文件、證據、政策、歷史
 │   ├── README.md                      ← docs 區入口
+│   ├── navigation/PROJECT_MAP.md      ← 跨工作區檔案與正式入口地圖
 │   ├── operations/                    ← 操作指引（新實驗 SOP、quirks、治理）
 │   ├── analysis/                      ← 研究路徑圖
 │   ├── evidence/                      ← 策展後的證據引用錨點
@@ -209,6 +210,7 @@ The system has three interlocking modules:
 | 升級 baseline 條件、新 round 立案規則 | `PROJECT_ARCHITECTURE.md` |
 | 分支策略、同步政策、追蹤範圍 | `REPO_GOVERNANCE.md` |
 | 文件責任邊界、docs 區導覽 | `docs/README.md` |
+| 不知道內容位於哪個工作區 | `docs/navigation/PROJECT_MAP.md` |
 | 開新實驗完整指南（命名 / 模板 / SOP） | `docs/operations/STARTING_NEW_EXPERIMENT.md` |
 | AI agent 行為契約 | `CLAUDE.md` / `AGENTS.md` |
 | 整體巡檢（控制中心）| `python Tools/project_control_center.py` |

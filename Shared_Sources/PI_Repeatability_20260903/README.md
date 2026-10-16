@@ -6,7 +6,7 @@
 
 ## 取得與恢復
 
-GitHub共用資料版本：`shared-pi-20260903-v1`。下載該版本的原始ZIP與核對資料，不需要原電腦的D槽、H槽或Google Drive同步資料夾。
+GitHub共用資料版本：[shared-pi-20260903-v1](https://github.com/rio10255254/GMM_2_Final/releases/tag/shared-pi-20260903-v1)。下載該版本的原始ZIP與核對資料，不需要原電腦的D槽、H槽或Google Drive同步資料夾。
 
 已登入GitHub CLI時，在專案根目錄執行：
 
@@ -29,3 +29,5 @@ python Tools/restore_pi_acquisition.py --archive downloads/20260902_100MF_uncert
 2026年10月16日從原始Google Drive ZIP取回，全部960份原檔與歷史清單一致。先前曾從R139失敗模型的固定亮度偏移輸出恢復930張副本；這些副本亦與原始ZIP逐檔一致，但正式共用來源採用本次直接從原始ZIP取出的檔案。
 
 原始ZIP與逐檔核對清單必須共同保存。`raw/`是本機解開後的工作副本，不重複放進一般Git歷史；完整原始ZIP隨GitHub版本附件保存。
+
+2026年10月16日已從GitHub下載照片ZIP、拍攝清單與恢復程式，在無法讀取舊D/H資料的另一位置完整還原960份原件。全部通過，見[取回重做核對](GITHUB_ROUNDTRIP_VERIFIED.json)。

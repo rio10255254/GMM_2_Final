@@ -1,0 +1,58 @@
+# L0 New-Data Noise Floor Report - Circle_Round3
+
+- Generated: 2026-07-07T23:18:03
+- Trials: 15
+- FOV points: 9 (1, 6, 11, 56, 61, 66, 111, 116, 121)
+- Data rule: 11x11, 2 frames/position, using frame 1
+- Repeat rule: Circle_Round1/2/3 are capture repeats; two frames per position are duplicate frames
+- Target: circle_boundary_only
+- Center block handling: filled_in_prepared_inputs_and_excluded_by_circle_edge_mask
+- Source JSON: L0_newdata_noise_floor.json
+
+## Main Readout
+
+- Clean noise floor median: 0.027294 (mean 0.058550)
+- Trustworthy coefficients: 6/15
+- FOV clean-noise consistency max/min: 1.194
+- Fit value range: 13647.92 to 16412.93; mean 14793.45
+
+## FOV Clean Noise
+
+| FOV | Clean std | Full mean std |
+|---|---:|---:|
+| #1 (row 1, col 1) | 0.066666 | 0.058871 |
+| #6 (row 1, col 6) | 0.062431 | 0.053773 |
+| #11 (row 1, col 11) | 0.058511 | 0.054245 |
+| #56 (row 6, col 1) | 0.056735 | 0.053289 |
+| #61 (row 6, col 6) | 0.057283 | 0.051906 |
+| #66 (row 6, col 11) | 0.056549 | 0.051771 |
+| #111 (row 11, col 1) | 0.055853 | 0.051872 |
+| #116 (row 11, col 6) | 0.056154 | 0.051802 |
+| #121 (row 11, col 11) | 0.056767 | 0.053170 |
+
+## Coefficient Classification
+
+| Coefficient | Status | Overall std | Bound % | Reason |
+|---|---|---:|---:|---|
+| x1 -> Z2 Y-tilt (locked=0) | locked | 0.183468 | 11.1% | tilt is locked by the fitter, so this coefficient is not a useful noise-floor source |
+| x2 -> Z3 X-tilt (locked=0) | locked | 0.223689 | 25.9% | tilt is locked by the fitter, so this coefficient is not a useful noise-floor source |
+| x3 -> Z4 astig 45deg | trustworthy | 0.040617 | 3.7% | values vary inside the search range |
+| x4 -> Z5 defocus | trustworthy | 0.246932 | 18.5% | values vary inside the search range |
+| x5 -> Z6 astig 0deg | dead | 0.000000 | 100.0% | all trials converged to nearly the same value |
+| x6 -> Z7 trefoil | bound_saturated | 0.029621 | 95.6% | most values sit on the search boundary |
+| x7 -> Z8 coma Y | dead | 0.000000 | 100.0% | all trials converged to nearly the same value |
+| x8 -> Z9 coma X | dead | 0.000000 | 100.0% | all trials converged to nearly the same value |
+| x9 -> Z10 trefoil | bound_saturated | 0.000001 | 100.0% | most values sit on the search boundary |
+| x10 -> Z11 quadrafoil | trustworthy | 0.007160 | 54.8% | values vary inside the search range |
+| x11 -> Z12 secondary astig | trustworthy | 0.006726 | 14.1% | values vary inside the search range |
+| x12 -> Z13 spherical | trustworthy | 0.036870 | 0.0% | values vary inside the search range |
+| x13 -> Z14 secondary astig | dead | 0.000000 | 100.0% | all trials converged to nearly the same value |
+| x14 -> Z15 quadrafoil | bound_saturated | 0.005007 | 100.0% | most values sit on the search boundary |
+| x15 -> AC amplitude | trustworthy | 0.013178 | 68.1% | values vary inside the search range |
+
+## Notes
+
+- This is a within-capture repeated-fit readout on one capture round.
+- For the corrected experiment definition, Circle_Round1 is the formal L0 anchor; Circle_Round2/3 are L1 source diagnostics.
+- Circle_Round1/2/3 are handled as the three capture repeats; the paired frames inside each position are not the main repeat axis here.
+- The square blocks at the center are excluded by the fitting mask, so the circle boundary controls the fit.

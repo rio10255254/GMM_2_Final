@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "status": "required_for_next_independent_training_run",
+  "created_at": "2026-08-11T14:03:16+08:00",
+  "reference_device": "NVIDIA RTX A6000",
+  "reference_total_memory_gib": 47.98779296875,
+  "user_minimum_free_memory_gib": 7.0,
+  "background_and_runtime_margin_gib": 3.0,
+  "required_benchmark_headroom_gib": 10.0,
+  "unsafe_observation": {
+    "patch_size": 1024,
+    "core_size": 512,
+    "scene_batch_size": 7,
+    "gradient_accumulation": 2,
+    "effective_scene_batch": 14,
+    "benchmark_peak_allocated_gib": 42.800381660461426,
+    "benchmark_peak_reserved_gib": 47.228515625,
+    "runtime_dedicated_usage_gib": 46.74,
+    "runtime_shared_usage_gib": 3.76,
+    "result": "rejected_due_to_severe_system_unresponsiveness"
+  },
+  "tested_safe_profile": {
+    "primary": {
+      "patch_size": 1024,
+      "core_size": 512,
+      "scene_batch_size": 5,
+      "gradient_accumulation": 3,
+      "effective_scene_batch": 15
+    },
+    "alternate": {
+      "patch_size": 768,
+      "core_size": 384,
+      "scene_batch_size": 6,
+      "gradient_accumulation": 3,
+      "effective_scene_batch": 18
+    },
+    "measured_primary_peak_allocated_gib": 30.567930221557617,
+    "measured_primary_peak_reserved_gib": 32.443359375,
+    "measured_primary_allocator_headroom_gib": 15.54443359375,
+    "gradients_finite": true
+  },
+  "rejected_borderline_profile": {
+    "patch_size": 1024,
+    "core_size": 512,
+    "scene_batch_size": 6,
+    "gradient_accumulation": 2,
+    "measured_peak_reserved_gib": 38.9140625,
+    "measured_allocator_headroom_gib": 9.07373046875,
+    "reason": "It does not retain the additional three-GiB background and runtime margin needed to guarantee seven GiB remains free system-wide."
+  },
+  "mandatory_rules": [
+    "Do not resume or alter the stopped R90 formal run; preserve its frozen implementation and epoch-55 evidence.",
+    "Start the next training as a new independent scratch experiment.",
+    "Run a real forward-backward memory benchmark before launch.",
+    "Reject any stage whose measured reserved-memory headroom is below 10 GiB on the reference GPU.",
+    "Stop automatically before shared GPU memory is used."
+  ]
+}

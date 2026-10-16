@@ -1,0 +1,49 @@
+{
+  "model_name": "R130_CleanV42",
+  "seed": 1309001,
+  "epochs": 32,
+  "parents_per_epoch": 512,
+  "parents_per_update": 4,
+  "images_per_update": 8,
+  "updates": 4096,
+  "order_seed": 1299002,
+  "noise_seed": 1299003,
+  "optimizer": {
+    "peak_lr": 0.0003,
+    "minimum_lr": 1e-05,
+    "warmup_updates": 128,
+    "weight_decay": 1e-05,
+    "gradient_clip": 5.0
+  },
+  "splits": {
+    "train": 512,
+    "dev": 128,
+    "test": 128
+  },
+  "data_root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\training_data",
+  "validation_epochs": [
+    0,
+    8,
+    16,
+    24,
+    32
+  ],
+  "final_continuous_frames": 201,
+  "loss": {
+    "image": 1.0,
+    "gradient": 0.2,
+    "pair": 0.2
+  },
+  "model_initialization": "Fresh constructor, no legacy learned tensor or teacher transferred",
+  "fixed_reference": "Existing R129 final8192 unchanged",
+  "shared_calibration_limitation": "Same inherited V42 optical data as R129; not newly independently calibrated or free of all historical SEM ancestry",
+  "weak_branch_policy": "Fresh V42 constructor beta_scale=1, effective clamp.35; legacy saved beta_scale0 is not copied. No extra R129 neural modules",
+  "inference": "Native full field, reflect pad to multiple8 for V42 encoder, crop back; same final80/16Raw boundary rule as frozenR129",
+  "primary_endpoint": 32,
+  "selection": "Report fixed32epoch endpoint and all scheduled real checks; no best-step substitution",
+  "comparison": "Practical fixedR129 versus source-only freshV42, not fully balanced causal architecture comparison",
+  "training_budget_note": "16384parent pairs, close to R129 lineage8192R128+24pilot+8192long=16408; batching/optimizer/objectives differ",
+  "no_R129_changes": true,
+  "no_teacher": true,
+  "no_real_or_SEM_training_targets": true
+}

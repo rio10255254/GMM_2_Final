@@ -124,9 +124,9 @@
 | R44E 探針總表 JSON | `results/summary/r44e_probe_summary.json` | 同一份結果的機器可讀版本 |
 | R44E 最佳指標表 | `results/summary/r44e_best_by_metric.json` | 各分項指標目前最佳來源 |
 | R44E 代表圖 | `results/visual_samples/r44e_region_mixed_probe_sheet.png` | 大區塊與混合場景的 R42/R44B/R44C/R44E 對照 |
-| R44E repair checkpoint | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_mix_repair_from_r44b_r42_20260507_035322/weights/latest.pth.tar` | R44E 探針；短訓練評估使用 latest |
-| R44E region-prior checkpoint | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_prior_from_r41_20260507_035819/weights/latest.pth.tar` | R44E 探針；短訓練評估使用 latest |
-| R44E mixed-prior checkpoint | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_mixed_prior_from_r44b_r40_20260507_040148/weights/latest.pth.tar` | R44E 探針；短訓練評估使用 latest |
+| R44E repair checkpoint | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_mix_repair_from_r44b_r42_20260507_035322/latest.pth.tar` | R44E 探針；D 保留 latest |
+| R44E region-prior checkpoint | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_prior_from_r41_20260507_035819/latest.pth.tar` | R44E 探針；D 保留 latest |
+| R44E mixed-prior checkpoint | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_mixed_prior_from_r44b_r40_20260507_040148/latest.pth.tar` | R44E 探針；D 保留 latest |
 | R44F selected cases | `results/diagnostics/r44f_selected_cases.csv` | 大區塊/混合場景錯誤案例表 |
 | R44F selected cases JSON | `results/diagnostics/r44f_selected_cases.json` | 同一份結果的機器可讀版本 |
 | R44F metric stress | `results/diagnostics/r44f_metric_stress.csv` | 人工偏移、邊界變厚/變薄/缺角壓力測試 |
@@ -155,12 +155,12 @@
 | R44H 邊界形狀分族表 | `results/diagnostics/r44h_boundary_shape_scorecard.csv` | R44B/R44C/R44H 候選的邊界形狀分項分數 |
 | R44H 目標分族排名 | `results/diagnostics/r44h_boundary_shape_target_rank.csv` | 大區塊與混合場景合併後排名 |
 | R44H 本地環形代理 | `results/ring_guard/r44h_*_ring_guard_summary.json` | 四個平均候選的三尺度本地環形代理紀錄 |
-| R44B from R42 checkpoint | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801/weights/best_tradeoff.pth.tar` | 主研究候選 |
-| R44B from R40 checkpoint | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143/weights/best_tradeoff.pth.tar` | 對照候選 |
-| R44B from COMBO checkpoint | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231/weights/best_tradeoff.pth.tar` | 保守起點對照 |
-| R44C low-motion checkpoint | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_low_motion_static_guard_20260506_230332/weights/best_tradeoff.pth.tar` | R44C 探針 |
-| R44C family-holdout checkpoint | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_family_holdout_motion_20260506_230836/weights/best_tradeoff.pth.tar` | R44C 探針 |
-| R44C static-heavy checkpoint | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_static_heavy_all_motion_20260506_231357/weights/best_tradeoff.pth.tar` | R44C 最佳探針 |
+| R44B from R42 checkpoint | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801/best_tradeoff.pth.tar` | 主研究候選 |
+| R44B from R40 checkpoint | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143/best_tradeoff.pth.tar` | 對照候選 |
+| R44B from COMBO checkpoint | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231/best_tradeoff.pth.tar` | 保守起點對照 |
+| R44C low-motion checkpoint | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_low_motion_static_guard_20260506_230332/latest.pth.tar` | R44C 探針；短訓練使用 latest |
+| R44C family-holdout checkpoint | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_family_holdout_motion_20260506_230836/latest.pth.tar` | R44C 探針；短訓練使用 latest |
+| R44C static-heavy checkpoint | `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_static_heavy_all_motion_20260506_231357/latest.pth.tar` | R44C 最佳探針；D 保留 latest |
 
 ## 注意事項
 

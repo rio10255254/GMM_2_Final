@@ -1,0 +1,27 @@
+{
+  "scope": "prototype_mechanics_not_model_efficacy",
+  "default_model": {"channels": 64, "iterations": 4, "dilations": [1, 2, 4, 2]},
+  "tile_test": {
+    "nonneutral_prior_head_std": 0.02,
+    "default_absolute_tolerance": 0.000002,
+    "max_kernel_absolute_tolerance": 0.000005,
+    "default_cases": [[128, 0, 0], [173, 17, 31]],
+    "max_kernel_case": {"channels": 8, "iterations": 4, "radius_native": 16, "core": 320, "origin": [17, 31]},
+    "check_global_edges_and_internal_tiles": true,
+    "require_nonzero_output_change": true,
+    "no_halo_control_is_expected_to_differ": true
+  },
+  "backward_smoke": {
+    "batch_observations": 2,
+    "native_shape": [640, 640],
+    "center_supervision_native": 128,
+    "checkpoint_blocks": true,
+    "optimizer_updates": 0,
+    "input": "two actual reused real optical exposures, not SEM target labels",
+    "maximum_allocated_gib": 44.0,
+    "objective": "engineering-only differentiability scalar; not scientific training loss"
+  },
+  "real_smoke": {"images": 6, "profiles": 2, "learned_weights": false, "calibration_qualified": false},
+  "cuda_precision": "FP32, TF32 disabled during parity/backward qualification",
+  "no_confirmation_payload_access": true
+}

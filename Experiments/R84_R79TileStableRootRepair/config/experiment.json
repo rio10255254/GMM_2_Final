@@ -1,0 +1,94 @@
+{
+  "experiment_id": "R84_R79TileStableRootRepair",
+  "created_date": "2026-08-09",
+  "status": "protocol_locked_preimplementation",
+  "formal_baseline_unchanged": true,
+  "parent": {
+    "name": "R79 epoch 23 EMA",
+    "checkpoint": "weights/seed/r79e23_ema_seed.pth.tar",
+    "checkpoint_sha256": "8aaaa9a85a0a86e77eeb4368bdbc1dd706c8fd9f9654ddd9c6498bd8697f367a",
+    "state_key": "ema_state_dict",
+    "must_remain_untouched": true
+  },
+  "root_cause": {
+    "spatial_group_norm_layers": 23,
+    "global_input_physics": true,
+    "global_weak_psf_path": true,
+    "finding": "The inherited model changes its normalization and global operations when the visible image extent changes, so full-frame and tiled inference are not equivalent."
+  },
+  "repair": {
+    "name": "local_context_r79",
+    "spatial_group_norm_replacement": "per-pixel grouped channel normalization",
+    "input_physics_policy": "bypass global FFT physics inside the neural path",
+    "weak_psf_policy": "bypass the global weak-PSF path",
+    "weight_initialization": "reuse every shape-compatible R79 EMA tensor exactly",
+    "teacher_or_pseudo_label_allowed": false,
+    "real_image_training_allowed": false,
+    "tile_engine": {
+      "core_size": 512,
+      "halo": 192,
+      "phase_multiple": 8,
+      "canvas_padding": "reflect_to_core_multiple_then_crop",
+      "stitching": "nonoverlapping core crops",
+      "reason": "The halo exceeds the derived local receptive-field radius and all offsets remain aligned to the three downsampling stages."
+    }
+  },
+  "data": {
+    "pilot_package": "D:/GMM_2_Final/Experiments/R83_R79SevereMicroscopyStrengthening/data/r83_pilot_severe_microscopy",
+    "pilot_manifest_sha256": "6fcdcdf42c42226850fa85c36e917e5a5d3659202e6695ace069b86730190cdc",
+    "formal_package": "D:/GMM_2_Final/Experiments/R83_R79SevereMicroscopyStrengthening/data/r83_formal_severe_microscopy",
+    "formal_manifest_sha256": "ea0d61557661d64ec4db05d7358388d7cd58b6247340c052188eb574a37817f1",
+    "formal_pairs": 5120,
+    "formal_split": {"train": 4096, "validation": 512, "internal_test": 512},
+    "source_policy": "procedural geometry only; no SEM, HS100MG, real microscope pixels, legacy pairs, teacher outputs, or pseudo labels",
+    "new_locked_holdout": {
+      "seed_offset": 84900000,
+      "expected_pairs": 384,
+      "selection_allowed": false,
+      "generation_must_finish_before_first_training_update": true
+    }
+  },
+  "training": {
+    "seed": 840917,
+    "pilot_epochs": 5,
+    "formal_epochs": 20,
+    "batch_size": 8,
+    "validation_batch_size": 2,
+    "learning_rates": {
+      "norm_tail": 0.00001,
+      "all_low_lr": 0.000002
+    },
+    "pilot_candidates": {
+      "norm_tail": ["all local-normalization affine parameters", "boundary_adapter", "p1", "out"],
+      "all_low_lr": ["all parameters except bypassed global physics paths"]
+    },
+    "selection_inputs": ["procedural validation split", "development tile-consistency fixtures only"],
+    "selection_ranking": ["tile gate must pass", "lowest validation edge MAE", "lowest validation MAE", "least trainable parameters"],
+    "external_or_reserved_results_allowed_for_selection": false
+  },
+  "final_confirmation": {
+    "locked_before_outputs": true,
+    "tile_consistency": {
+      "samples": "same fixed 18 R83 samples plus the new locked synthetic holdout",
+      "full_reference": "canonical padded full-frame R84 inference",
+      "tiled_candidate": "512 core with 192 halo",
+      "mean_absolute_gray_max": 0.1,
+      "p99_absolute_gray_max": 1.0,
+      "maximum_absolute_gray_max": 3.0,
+      "all_samples_must_pass": true
+    },
+    "new_locked_synthetic": {
+      "pairs": 384,
+      "median_mae_relative_to_r79_max": 1.05,
+      "median_edge_mae_relative_to_r79_max": 1.08,
+      "acm_boundary_relative_to_r79_max": 1.08,
+      "acm_success_required": 1.0,
+      "no_post_hoc_exclusions": true
+    },
+    "R73": {"median_boundary_px_max": 0.30, "acm_success_required": 1.0},
+    "R74": {"median_boundary_relative_to_r79_max": 1.05, "acm_success_required": 1.0},
+    "SEM": {"pillar_ids": "all 36", "median_boundary_relative_to_r79_max": 1.10},
+    "real_motion": {"frames": 301, "sequences_required": "6/6", "same_locked_measurements": true},
+    "promotion_rule": "R84 is promoted only if every structural, synthetic, contour, SEM, and motion gate passes. Otherwise R79 remains the recommendation."
+  }
+}

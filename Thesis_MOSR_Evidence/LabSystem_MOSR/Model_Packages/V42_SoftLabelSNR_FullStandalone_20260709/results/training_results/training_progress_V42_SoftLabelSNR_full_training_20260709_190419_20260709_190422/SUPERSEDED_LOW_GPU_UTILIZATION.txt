@@ -1,0 +1,3 @@
+Superseded at 2026-07-09 20:23:53
+Reason: launcher did not pass batch-size/num-workers, so the run used batch=2 and workers=0.
+Action: stopped before epoch completion and restarted with explicit fast I/O parameters.

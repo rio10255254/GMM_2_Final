@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-09-13T15:41:41.934895+00:00",
+  "plan": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\config\\final_evaluation_plan.json",
+    "sha256": "be64798d99d73f79d35c369c9b7c938e51872b7882648bc84ed56882f53e505c"
+  },
+  "sources": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\continuous.py",
+      "sha256": "917b142de861fdd1cfee3af6c43e2feba6ba3551050f47d1917495158688e4cb"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\io_retry.py",
+      "sha256": "4a44762bb6354690435a873e83f977618d4fbc6956b4b599f8e809613ec165eb"
+    }
+  ],
+  "retry_scope": "Only mutable evaluation status; no model/data/measurement change"
+}

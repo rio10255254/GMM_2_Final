@@ -1,0 +1,57 @@
+function run_contour_check()
+root='D:/GMM_2_Final/Experiments/R128_SourceOnlyFullTraining';out=fullfile(root,'results','full_contour');
+assert(isfile(fullfile(out,'plan.json')));assert(~isfile(fullfile(out,'measurements.csv')));
+input=load(fullfile(out,'inputs.mat'));
+old=load('D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat');
+alt=load('D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/pitch_matched_reference.mat');
+names={'Raw','R128_PNG','R128_float'};reference_names={'historical','global_pitch_matched'};preset_names={'primary','less_smooth','more_smooth'};
+iterations=[200 150 250];smoothness=[1.0 0.5 2.0];exps=[13 14 15];
+refs=cat(4,old.truth_masks,alt.truth_masks);sem_cells=cat(4,old.truth_cells,alt.truth_cells);
+masks=false(104,104,36,3,3,3);cells=zeros(104,104,36,3,3);raw_parity=zeros(36,3);
+shifts=zeros(36,3,2,2);rows=cell(1944,19);k=0;
+for preset=1:3
+ for e=1:3
+  images={input.raw_images(:,:,e),input.candidate_u8_images(:,:,e),input.candidate_float_images(:,:,e)};
+  for gy=1:6
+   for gx=1:6
+    id=double(old.global_index(gy,gx));center=old.opt_centers((gy-1)*6+gx,:);
+    for m=1:3
+     valid=true;problem="";mask=false(104);touch=0;
+     try
+      im=extract_padded_cell(images{m},center,52);
+      mask=segment_acm(im,40,iterations(preset),smoothness(preset),45);
+      masks(:,:,id,e,m,preset)=mask;
+      if preset==1,cells(:,:,id,e,m)=im;end
+      [xx,yy]=meshgrid(1:104,1:104);touch=nnz(mask & ((xx-52.5).^2+(yy-52.5).^2>=44^2));
+      if m==1 && preset==1,raw_parity(id,e)=nnz(mask~=old.raw_masks(:,:,id,exps(e)-12));end
+     catch ME
+      valid=false;problem=string(ME.message);
+     end
+     for ref=1:2
+      k=k+1;vals=nan(1,8);dx=nan;dy=nan;
+      if valid
+       truth=refs(:,:,id,ref);tp=regionprops(truth,'Centroid');rp=regionprops(old.raw_masks(:,:,id,exps(e)-12),'Centroid');
+       shift=round(tp(1).Centroid-rp(1).Centroid);dx=shift(1);dy=shift(2);shifts(id,e,ref,:)=[dx dy];
+       aligned=shift_binary(mask,dx,dy);met=contour_metrics(truth,aligned,old.opt_pitch);
+       vals=[met.mean_distance_px,met.mean_distance_pitch_pct,met.hd95_px,met.iou,met.dice,met.area_error_pct,met.perimeter_error_pct,met.circularity_abs_error];
+      end
+      rows(k,:)={string(preset_names{preset}),string(reference_names{ref}),exps(e),id,gy,gx,string(names{m}),valid,problem,vals(1),vals(2),vals(3),vals(4),vals(5),vals(6),vals(7),vals(8),dx,dy};
+     end
+     if touch>0,fprintf('Support contact %d: preset %d exposure %d pillar %d method %d\n',touch,preset,exps(e),id,m);end
+    end
+   end
+  end
+  fprintf('Preset %s exposure %d complete\n',preset_names{preset},exps(e));
+ end
+end
+assert(k==1944);
+table_out=cell2table(rows,'VariableNames',{'preset','reference','exposure','pillar','grid_row','grid_col','method','valid','failure','mean_boundary_px','mean_boundary_pitch_pct','hd95_px','iou','dice','area_error_pct','perimeter_error_pct','circularity_error','Raw_shift_x','Raw_shift_y'});
+writetable(table_out,fullfile(out,'measurements.csv'));
+truth_masks=refs;opt_pitch=old.opt_pitch;global_index=old.global_index;opt_centers=old.opt_centers;
+save(fullfile(out,'masks.mat'),'masks','cells','truth_masks','sem_cells','shifts','raw_parity','opt_pitch','global_index','opt_centers','exps','names','preset_names','reference_names','-v7');
+summary=struct('extraction_complete',true,'metric_rows',k,'Raw_primary_mismatched_pixels',sum(raw_parity,'all'),'Raw_primary_exact',all(raw_parity==0,'all'),'matlab_version',version,'image_processing_toolbox',ver('images'));
+fid=fopen(fullfile(out,'extraction_summary.json'),'w');fprintf(fid,'%s',jsonencode(summary,PrettyPrint=true));fclose(fid);
+assert(all(raw_parity==0,'all'),'Raw primary mask parity failed; old expected evidence must not be rebaselined');
+fprintf('Complete: %d metric rows; Raw primary masks reproduce exactly.\n',k);
+end
+

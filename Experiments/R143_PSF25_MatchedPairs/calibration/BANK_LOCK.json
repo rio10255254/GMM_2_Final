@@ -1,0 +1,9 @@
+{
+  "count": 25,
+  "kernel_shape": [101, 101],
+  "bank_sha256": "25cc6c95a224caae0e4a0380a88980551586a35cdb34eebde2635639e2c29553",
+  "origin": "R140v2 measured PSF bank copied byte-for-byte",
+  "physical_independence_from_SEM": false,
+  "adaptive_identifiability_from_current25": false,
+  "note": "All 25 kernels are almost identical; adaptive selection is not validated on this bank."
+}

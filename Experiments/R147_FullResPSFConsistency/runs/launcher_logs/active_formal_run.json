@@ -1,0 +1,16 @@
+{
+  "state": "training_complete",
+  "model": "R147-FullResPSFConsistency",
+  "run": "formal_8192",
+  "updates_expected": 8192,
+  "data_manifest_sha256": "4fd42ef7b4f1458181e3af6c5da096e95904211991c84c6a18a77ae70f390913",
+  "bank_sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+  "psf_mode": "fixed_bank_mean_native_pixel_data_consistency",
+  "started_utc": "2026-09-25T01:30:11.913679+00:00",
+  "checkpoint": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\runs\\formal_8192\\checkpoints\\step08192.pth",
+    "step": 8192,
+    "sha256": "0e0c5a78d6fbb450a026289a177f7b5f50c10f6ea0564ab505382435af8ea4d0"
+  },
+  "completed_utc": "2026-09-25T02:20:01.835703+00:00"
+}

@@ -1,0 +1,57 @@
+{
+  "protocol_id": "R100_epoch040_posttraining_validation",
+  "locked_before_new_posttraining_outputs": true,
+  "locked_at": "2026-08-15T08:32:58+08:00",
+  "primary_checkpoint_epoch": 40,
+  "checkpoint_state": "ema_state_dict",
+  "checkpoint": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_040.pth.tar",
+  "diagnostic_checkpoints": {
+    "32": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_032.pth.tar",
+    "36": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_036.pth.tar",
+    "40": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_040.pth.tar"
+  },
+  "selection_policy": "Epoch 40 is the fixed formal endpoint selected before these external tests. Epochs 32 and 36 are trajectory diagnostics only and cannot replace it after real or SEM results are seen.",
+  "internal_test_arm": {
+    "source_package": "D:/GMM_2_Final/Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
+    "split": "internal_test",
+    "all_observations": true,
+    "checkpoints": [32, 36, 40],
+    "patch_size": 768,
+    "core_size": 384,
+    "scene_batch_size": 2,
+    "precision": "float32",
+    "device": "cuda:0"
+  },
+  "real_microscope_arm": {
+    "source_sequence_config": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json",
+    "locked_raw_measurements": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv",
+    "prior_real_results": "D:/GMM_2_Final/Experiments/R97_DirectCausalPhaseScratch/results/posttraining_validation/real_generalization",
+    "sequences": ["5x_0p5um", "5x_1um", "20x_0p5um", "20x_1um", "50x_0p5um", "50x_1um"],
+    "frames": "all_301_unique_frames",
+    "motion_measurements": "all_preexisting_raw_selected_tiles_and_eligible_adjacent_pairs",
+    "fixed_visual_indices": [0, 12, 24, 36, -1],
+    "comparators": ["Raw", "R61v16", "R96E44", "R97E48"],
+    "inference": {"core_size": 512, "halo": 192, "tile_batch": 1, "device": "cuda:0", "precision": "float32"}
+  },
+  "sem_contour_arm": {
+    "raw_input_dir": "D:/GMM_2_Final/Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack",
+    "sem_dir": "H:/From_2TB_D_disk/13_thesis/SEM_data",
+    "ordering_mapping": "H:/From_2TB_D_disk/13_thesis/SEM_data/ordering_result_20260729/SEM_center36_file_mapping.csv",
+    "prior_six_method_tables": "D:/GMM_2_Final/Experiments/R97_DirectCausalPhaseScratch/results/posttraining_validation/sem_contour/results/tables",
+    "prior_masks": "D:/GMM_2_Final/Experiments/R97_DirectCausalPhaseScratch/results/posttraining_validation/sem_contour/results/masks/acm_primary_masks.mat",
+    "exposures": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+    "physical_pillars": 36,
+    "contour_method": "Chan-Vese active contour",
+    "alignment": "translation_only",
+    "scale_fitting": false,
+    "rotation_fitting": false,
+    "comparators": ["Raw", "R61v16", "V42E120", "R75v2E100", "R96E44", "R97E48"],
+    "independent_unit": "physical_pillar",
+    "repeated_observation": "12_exposures"
+  },
+  "model_internal_arm": {
+    "images": ["5x_dense_raw", "20x_mixed_raw", "50x_array_raw", "pillar_center9_50x_raw"],
+    "measure": ["per_operator_correction", "operator_cancellation", "edge_and_flat_region_change", "full_vs_tiled_parity", "component_centroid_and_area_change"]
+  },
+  "claim_boundary": "Synthetic internal-test data has latent truth. Real optical images do not provide clean optical truth, so appearance-to-Raw values measure change and artifacts rather than accuracy. Locked adjacent-frame tracking measures stability relative to Raw. SEM supplies shape truth only for the paired central 36 pillars."
+}

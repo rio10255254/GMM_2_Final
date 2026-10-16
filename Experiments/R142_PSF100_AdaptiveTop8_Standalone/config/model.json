@@ -1,0 +1,39 @@
+{
+  "model_name": "PSF100_AdaptiveTop8",
+  "architecture": "R140v2_recurrent_unet_with_true_bankwide_straight_through_topk",
+  "channels": [
+    32,
+    64,
+    96,
+    128
+  ],
+  "iterations": 4,
+  "r_max": 0.35,
+  "eta_max": 0.25,
+  "eta_initial": 0.05,
+  "checkpoint_blocks": true,
+  "output_logit_gain": 0.1,
+  "psf_bank": "calibration/measured_psf_bank.npz",
+  "psf_count": 100,
+  "psf_topk": 8,
+  "initial_prior_indices": [
+    0,
+    14,
+    28,
+    42,
+    57,
+    71,
+    85,
+    99
+  ],
+  "psf_regularization": 30.0,
+  "psf_beta_initial": 0.02,
+  "psf_lowfreq_ratio": 0.25,
+  "selector_temperature": 1.0,
+  "psf_lr_multiplier": 0.2,
+  "psf_first_enabled_epoch": 2,
+  "psf_scale_target": 0.28,
+  "psf_scale_ramp_end_epoch": 8,
+  "selection_scope": "one learned top8 subset per image; all100 candidate logits receive surrogate gradients",
+  "spatially_varying_within_image": false
+}

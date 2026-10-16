@@ -1,0 +1,22 @@
+{
+  "run_id": "20250605_standard_wholefov",
+  "method": "project_standard_wholefov_zernike_bads",
+  "status": "blocked_missing_lab_gt",
+  "source_image_date": "2026-06-05",
+  "measurement_input_dir": "LabSystem_MOSR/psf_calibration/inputs/20250605_standard_wholefov/measured",
+  "measurement_image_count": 25,
+  "measurement_grid_rows": 5,
+  "measurement_grid_cols": 5,
+  "requires_gt": true,
+  "gt_path": "LabSystem_MOSR/psf_calibration/inputs/20250605_standard_wholefov/GT/LAB_GT_REQUIRED.bmp",
+  "dependency_root": "D:/GMM_2_Final/PSF_Fitting",
+  "psf_basis_path": "D:/GMM_2_Final/PSF_Fitting/SimulatePSF/psf_multi.mat",
+  "copied_fitter_dir": "LabSystem_MOSR/psf_calibration/scripts/standard_wholefov",
+  "output_dir": "LabSystem_MOSR/psf_calibration/results/20250605_standard_wholefov",
+  "notes": [
+    "This is the formal lab-system PSF path.",
+    "It reuses the original project Whole-FOV Zernike/BADS fitting workflow.",
+    "It must not be run with the old industry-project GT.",
+    "The earlier edge-derived Gaussian result is exploratory only."
+  ]
+}

@@ -39,17 +39,19 @@
 
 ## 主要產物
 
+> Storage note (2026-08-01): 完整歷史已逐檔核對封存。D 槽保留 canonical 報告、程式、測試、數字摘要與代表模型；完整位置、清單及恢復方式見 `ARCHIVE_POINTER.md`。
+
 | 類型 | 位置 | 說明 |
 |---|---|---|
-| 訓練 run | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/` | 30 epoch 正式訓練 |
-| Direct best checkpoint | 上述 run 的 `weights/best_tradeoff.pth.tar` | R41 主候選 |
-| 微觀重建 | `results/micro_recon/r41_kd_from_a045_best/` | held-out microscopy 重建 |
+| 訓練 run | H 槽完整封存；見 `ARCHIVE_POINTER.md` | 30 epoch 正式訓練 |
+| Direct best checkpoint | D 槽 `selected_checkpoint/best_tradeoff.pth.tar`；完整訓練亦在 H 槽 | R41 研究候選，未升級 |
+| 微觀重建 | H 槽 `experiment/results/micro_recon/r41_kd_from_a045_best/` | held-out microscopy 完整重建 |
 | 微觀彙總 | `results/micro_recon/r41_kd_from_a045_best_summary.json` | 微觀指標 JSON |
-| Ring 重建 | `results/ring_recon/r41_kd_from_a045_best/` | local 三尺度 ring 重建 |
+| Ring 重建 | H 槽 `experiment/results/ring_recon/r41_kd_from_a045_best/` | local 三尺度 ring 完整重建 |
 | Ring guard 彙總 | `results/ring_guard/r41_kd_from_a045_best_ring_guard_summary.json` | ring guard 結果 |
-| 正式權重 sweep | `results/weight_sweep/` | alpha `0.10`–`0.40` |
+| 正式權重 sweep | D 槽保留摘要；完整內容在 H 槽 | alpha `0.10`–`0.40` |
 | 正式 sweep 摘要 | `results/weight_sweep/sweep_summary.md` / `sweep_summary.json` | sweep 結論 |
-| 高 alpha 診斷 sweep | `results/weight_sweep_ext_high_alpha/` | alpha `0.45` / `0.50` |
+| 高 alpha 診斷 sweep | D 槽保留摘要；完整內容在 H 槽 | alpha `0.45` / `0.50` |
 | 高 alpha 診斷摘要 | `results/weight_sweep_ext_high_alpha/sweep_summary.md` / `.json` | 診斷結論 |
 | 外部 GMF drop folder | `results/external_gmf/pitch{8px,0p8px,0p08px}` | 預留位置（目前未送） |
 

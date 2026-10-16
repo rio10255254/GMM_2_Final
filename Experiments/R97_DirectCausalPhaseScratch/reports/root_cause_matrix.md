@@ -1,0 +1,17 @@
+# R97 root-cause matrix
+
+This file records why each change exists. It is a design audit, not a result claim.
+
+| Observed evidence | Root cause | R97 correction | Direct verification |
+|---|---|---|---|
+| R96 need separation ended at 0.00195 and detail/texture interventions were much smaller than their raw branch predictions. | A learned need map and a learned evidence map multiplied an already supervised correction a second time. | Remove both amplitude gates. Every branch predicts the applied correction directly for noisy S, noise-free B and clear T. | Architecture contract, S/B/T direct-target dataset fields, branch-gradient microfit. |
+| R96 texture gradients were orders of magnitude smaller than the main image objective. | Sparse target amplitude determined gradient scale; common-descent projection then further reduced conflicting small tasks. | Normalize each scene/branch by its own target energy, keep an absolute anchor, and update one aligned additive objective without common-descent projection. | Per-branch gradient norms and short overfit improvement. |
+| Opening all R96 gates made radiometry/nuisance worse on real images. | Ungated branches were not trained as reliable inference-time corrections on clear and intermediate observations. | Train the actual branch output on all S/B/T views, including exact zero corrections for T and cause-specific zeros for B. | Counterfactual triplet microfit and clean identity audit. |
+| A symmetric zero-phase detail boost improved 5x/20x/50x appearance without harming internal motion. | Sharpness and motion are compatible when detail stays anchored to observed phase. | Texture can only mix three symmetric source-derived bands with slowly varying coefficients; it cannot paint a free residual image. | Source-band recomposition, phase-anchor loss, translation equivariance. |
+| External GMF frames 26/29 selected a result about one 72 px pitch away while image-to-image comparison did not show that translation. | A periodic matcher can lock onto a neighbouring repeat; centroid-only training and score-only interpretation miss this failure. | Add analytic periodic patterns with generic unique anchors and a true-vs-adjacent-period correlation margin. Keep score separate from displacement accuracy. | Wrong-pitch rate and true-match margin on a locked synthetic panel; external GMF only after checkpoint freeze. |
+| Full/tiled R96 parity was exact and must not be lost. | Local fully convolutional processing plus canonical canvas/halo is sound. | Preserve the same local backbone and canonical halo inference unchanged. | Nonzero-head bit-exact full-vs-tiled test and multiple core sizes after training. |
+| R96 was natural and avoided dark halos, but was too conservative against SEM contour and real detail. | Strong safety representation was useful, but useful corrections were attenuated and texture had no effective learning signal. | Preserve envelope-limited symmetric boundary restoration, remove amplitude attenuation, strengthen direct texture/gradient objectives. | Live 5x/20x/50x previews, ACM contour, dark-edge/off-source-edge diagnostics. |
+
+## Claim boundary
+
+R97 still uses only generic procedural training pixels. Real microscopy, SEM and HS100MG images remain validation-only. The periodic generator uses bars, dots, rings and rectangular lattices with randomized periods and generic anchors; it does not reproduce the real specimen layout.

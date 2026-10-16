@@ -1,0 +1,26 @@
+# main/R42_MicroscopyBoundaryFidelity 研究與重做紀錄
+
+直接提升通用顯微邊界，而非只優化環形
+
+清楚的單張邊界未帶來穩定位移；外部三尺度退步限制使用
+
+## 必要來源
+
+R41起點、通用邊界生成、固定量測與完整外部回傳
+
+## 影像保存理由
+
+清晰度優勢和連續位移失敗同時展示
+
+## 原始方法與結果
+
+下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
+
+- [R42_EXTERNAL_COMPARE.md](../../../Experiments/R42_MicroscopyBoundaryFidelity/reports/R42_EXTERNAL_COMPARE.md)
+- [R42_RESULTS.md](../../../Experiments/R42_MicroscopyBoundaryFidelity/reports/R42_RESULTS.md)
+
+## 重做與驗證範圍
+
+程式、設定、完整表格與選定影像依保存清單收錄；大型必要來源和固定模型由附件恢復。
+本次沒有重跑這一輪全部歷史訓練。可攜執行、完整數值重算與來源逐份核對的實測範圍，請看總入口的驗證紀錄。
+任何仍須讀取僅存在D／H原工作區的檔案，都不能列為僅靠GitHub已完整重現。

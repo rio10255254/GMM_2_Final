@@ -1,0 +1,23 @@
+{
+  "model_name": "R139-UNetRecurrentPrototype",
+  "status": "architecture_prototype_untrained",
+  "channels": [32, 64, 96, 128],
+  "iterations": 4,
+  "r_max": 0.35,
+  "eta_max": 0.25,
+  "eta_initial": 0.05,
+  "psf_bank": "config/measured_psf_bank.npz",
+  "psf_mode": "V42_auto8_at_half_resolution_decoder_final_iteration",
+  "psf_count": 25,
+  "psf_candidates": 8,
+  "psf_first_enabled_epoch": 2,
+  "psf_scale_target": 0.28,
+  "psf_scale_ramp_end_epoch": 8,
+  "psf_lr_multiplier": 0.05,
+  "psf_beta_projected_after_optimizer_step": true,
+  "anti_aliasing": "fixed_binomial_blur_before_downsample_and_after_bilinear_upsample",
+  "prediction_precision": "FP32",
+  "tf32": false,
+  "real_validation_state": "not_run",
+  "training_state": "not_run"
+}

@@ -1,0 +1,13 @@
+{
+  "frozen_before_any_photometry_final_checkpoint": true,
+  "source_indices": [0,1,2,3,4,5],
+  "conditions": ["original", "dark_low_contrast", "bright_full_contrast"],
+  "dark_low_contrast": {"contrast_scale":0.125,"placement_fraction":0.0},
+  "bright_full_contrast": {"contrast_scale":1.0,"placement_fraction":1.0},
+  "noise_seed": "1269900 +10*source_index +condition_index",
+  "models": "One shared P/Q initial per each of two seeds, plus all four final128 models",
+  "role": "Post-training known-simulation diagnostic on the same18 conditions for every model; reused geometry, not an independent holdout or checkpoint selector",
+  "metrics": ["native reference MAE gray", "latent reference MAE gray", "noise-free observation MAE gray"],
+  "targets_enter_forward": false,
+  "real_data_training": false
+}

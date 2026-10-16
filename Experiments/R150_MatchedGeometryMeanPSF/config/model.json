@@ -1,0 +1,30 @@
+{
+  "model_name": "R150-MatchedGeometryMeanPSF",
+  "architecture": "one_pass_context_unet_features_plus_three_independent_native_boundary_stages",
+  "context_channels": [
+    24,
+    40,
+    64
+  ],
+  "context_output_channels": 16,
+  "context_gain": 0.05,
+  "native_channels": 64,
+  "native_dilations": [
+    1,
+    2,
+    4,
+    2
+  ],
+  "native_stages": 3,
+  "r_max": 0.35,
+  "eta_max": 0.25,
+  "eta_initial": 0.05,
+  "checkpoint_blocks": true,
+  "output_logit_gain": 0.1,
+  "psf_bank": "calibration/measured_psf_bank.npz",
+  "psf_count": 25,
+  "psf_mode": "fixed_mean_input_cue_and_observation_for_training_and_inference",
+  "optical_feature_gain": 0.1,
+  "inference_core": 512,
+  "inference_halo": 24
+}

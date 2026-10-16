@@ -1,0 +1,13 @@
+{
+  "reason": "Both completed A controls improve only about9.84percent after128 updates. Image-only and full losses behave similarly; test update scale with all weights and data otherwise fixed.",
+  "freeze_timing": "After A image/full diagnostics, before B controls completed and before follow-up optimizer updates",
+  "arms": ["A", "B"],
+  "seed": 1265001,
+  "updates": 128,
+  "learning_rate": 0.001,
+  "loss": "same full R125 non-geometry objective",
+  "all_other_conditions": "unchanged from fixed-example protocol",
+  "use_final_checkpoint_only": true,
+  "real_result_selection": false,
+  "scope": "Additional256 diagnostic updates; not a generalization or model selection study"
+}

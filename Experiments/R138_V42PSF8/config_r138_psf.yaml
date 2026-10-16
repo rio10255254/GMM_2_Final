@@ -1,0 +1,111 @@
+{
+  "model_name": "R138-V42PSF8",
+  "model": {
+    "channels": 64,
+    "dilations": [
+      1,
+      2,
+      4,
+      2
+    ],
+    "iterations": 4,
+    "eta_max": 0.25,
+    "eta_initial": 0.05,
+    "r_max": 0.35,
+    "optical_mode": "v42_select8",
+    "checkpoint_blocks": true,
+    "psf_bank": "calibration/measured_psf_bank.npz",
+    "psf_count": 25,
+    "weak_psf": {
+      "reg_init": 30.0,
+      "beta_init": 0.02,
+      "gating_temp": 1.5,
+      "entropy_mix": 0.0,
+      "deconv_mode": "clamp",
+      "trainable_reg": false,
+      "lowfreq_ratio": 0.25,
+      "beta_min": 0.0,
+      "beta_max": 0.1,
+      "beta_scale_max": 1.0
+    }
+  },
+  "initialization": "scratch",
+  "checkpoint": null,
+  "resume": false,
+  "pretrained": false,
+  "teacher": null,
+  "model_seed": 1309001,
+  "order_seed": 1309002,
+  "noise_seed": 1309003,
+  "splits": {
+    "train": 512,
+    "dev": 128,
+    "test": 128
+  },
+  "source_native_size": 384,
+  "training_crop": [
+    32,
+    352,
+    32,
+    352
+  ],
+  "supervised_core": [
+    96,
+    224
+  ],
+  "updates": 8192,
+  "epochs": 16,
+  "warmup": 128,
+  "save_every": 128,
+  "dev_every": 512,
+  "optimizer": {
+    "name": "AdamW",
+    "max_lr": 0.001,
+    "min_lr": 1e-05,
+    "weight_decay": 1e-05,
+    "gradient_clip": 5.0
+  },
+  "loss": {
+    "image": 1.0,
+    "gradient": 0.2,
+    "pair": 0.2
+  },
+  "precision": "FP32",
+  "tf32": false,
+  "deterministic": true,
+  "sanity_updates": 8,
+  "inference": {
+    "mode": "full",
+    "tile_core": 512,
+    "halo": 96,
+    "feather_blending": false,
+    "global_raw_retention": false,
+    "tiled_supported": false
+  },
+  "preflight_tolerances": {
+    "full_tile_abs": 2e-06,
+    "context_output_abs": 2e-06,
+    "context_gradient_relative": 5e-05
+  },
+  "dataset_source": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\data",
+  "dataset_copy_policy": "Extract unchanged source/noiseless/target only; omit stored synthetic kernel4 and latent/geometry arrays; no regeneration.",
+  "real_evaluation_after_final_checkpoint_only": true,
+  "comparisons": [
+    "Raw",
+    "R129",
+    "R130-Clean",
+    "R137-WeakPSF",
+    "R138-V42PSF8"
+  ],
+  "automatic_extension": false,
+  "decisions": {
+    "scope": "User requests originalR137 with V42 weakPSF8 module, full retraining and validation. Existing25kernels, automatic8 evenly spaced candidates, no grid mapping inferred.",
+    "training": "Scratch8192 with common backbone initialization/order/noise/loss; new gating starts uniform. beta trainable .02 initial, clamp0..0.1, beta_scale_max1 preserves initial effective .02.",
+    "architecture": "Original V42 WeakPSFDeconvBlock on64channel stem features at each shared iteration; not whole V42 architecture. Original numerical origin, regularizer30, lowfreq0.25, temperature1.5 retained.",
+    "context": "V42 global feature pooling and FFT make total model nonlocal. Same320input/128central loss as before, but no finite-context or tile equivalence claims. Full native inference only.",
+    "timing": "Concurrent GPU workload not controlled; execution time not matched model efficiency evidence.",
+    "device": "User requested CPU because GPU occupied; CUDA_VISIBLE_DEVICES=-1, no automatic GPU switch. Formal8192 unchanged. CPU8update sanity plus previous interrupted GPU32 discarded."
+  },
+  "device": "cpu",
+  "cpu_threads": 8
+}

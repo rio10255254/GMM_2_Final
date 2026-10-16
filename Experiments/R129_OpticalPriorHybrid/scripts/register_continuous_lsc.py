@@ -1,0 +1,39 @@
+"""Record completed continuous readouts without changing the model or old evidence."""
+import sys,json,shutil
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
+from continuous_common import *
+def main():
+    audit=load(OUT/'analysis_verified.json');replay=load(OUT/'worst_replay_verified.json');pub=load(OUT/'published.json');plan=load(OUT/'plan.json')
+    assert audit['frames_per_method']==201 and len(replay['records'])==2
+    for item in plan['protected_sources']+[plan['checkpoint']]:assert sha(item['path'])==item['sha256']
+    report=Path(pub['report']['path']);assert sha(report)==pub['report']['sha256'];rel=report.relative_to(REPO).as_posix()
+    summary=pd.read_csv(OUT/'comparison_summary.csv');p=summary[(summary.scope=='all_four_sequences')&(summary.population=='locked120')].set_index('method');f=summary[(summary.scope=='all_four_sequences')&(summary.population=='within_session194')].set_index('method')
+    r=p.loc['R129'];r128=p.loc['R128_P_s1285002'];r61=p.loc['R61v16_PSFOFF']
+    backups=OUT/'current_index_before';backups.mkdir(exist_ok=False)
+    paths=[REPO/'PROJECT_STATE.md',REPO/'ESTIMATOR_POLICY.json',REPO/'Experiments/INDEX.md',REPO/'docs/operations/PROJECT_STORAGE_REGISTRY.json',ROOT/'README.md',ROOT/'MANIFEST.md',ROOT/'reports/R129_RESULTS.md']
+    for i,path in enumerate(paths):(backups/f'{i}_{path.name}').write_bytes(path.read_bytes())
+    path=REPO/'ESTIMATOR_POLICY.json';policy=load(path);baseline=policy['formal_baseline'].copy();entry=next(x for x in policy['open_side_tracks'] if x.get('round')=='R129')
+    entry['continuous_lsc']=dict(status='complete_not_promoted',report=rel,frames=201,centers_per_method=1809,locked_pairs=120,within_session_pairs=194,repositioning_pairs=3,locked_R129={k:float(r[k]) for k in ['step_sd_nm','mean_nominal_abs_error_nm','median_within_grid_sd_nm','median_cross_axis_abs_nm']},within_session_R129={k:float(f.loc['R129',k]) for k in ['step_sd_nm','mean_nominal_abs_error_nm','median_within_grid_sd_nm','median_cross_axis_abs_nm']},operational_boundary_rules_differ=True,prior_SEM_size_regression_still_applies=True,model_promoted=False)
+    assert policy['formal_baseline']==baseline;path.write_text(json.dumps(policy,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    path=REPO/'PROJECT_STATE.md';lines=path.read_text(encoding='utf-8-sig').splitlines();lines[2]='Last updated: 2026-09-13（R129完成201張原生影像重建與LSC；固定120對及完整194對分開報告，沒有模型升級）'
+    for i,line in enumerate(lines):
+        if line.startswith('- **R129 long training complete'):
+            lines[i]=f'- **R129 continuous LSC complete, not promoted (2026-09-13):** [201-frame reconstruction and readouts]({rel}). All201native2048x1536 fields reconstructed,Raw/R129each1809centers. Same120lockedpairs: R129stepSD{r.step_sd_nm:.4f}nm vsR128{r128.step_sd_nm:.4f}/R61{r61.step_sd_nm:.4f};R129nominal{r.mean_nominal_abs_error_nm:.4f},within-grid{r.median_within_grid_sd_nm:.4f},cross{r.median_cross_axis_abs_nm:.4f}nm. Full194within-sessionpairs separately:RawSD{f.loc["Raw","step_sd_nm"]:.4f},R129{f.loc["R129","step_sd_nm"]:.4f};3recordedrepositioningtransitionsretained. Directfullforwardhit32bitindexlimit; globaloptics/state/quality plusvalidatedfinite-supportprior tiling preservesnativecoordinates.3618savedcircles independently refitted;worstpair publicfullfieldreplay exact. PriorSEMsize-regression remains; original model/defaults unchanged.'
+    text='\n'.join(lines)+'\n';needle='### R129 V42-design integration: completed bounded pilot, retained prototype (2026-09-12)\n\n'
+    note=f'2026-09-13 continuous sequence completion: [{rel}]({rel}). Fixedlong-trainedD8192 reconstructsall201sources in4sequences,with201RawandR129LSCreads/1809centers each. Primarysame120Raw-selectedpairs yieldR129stepSD{r.step_sd_nm:.6f}nm,R128{r128.step_sd_nm:.6f},R61{r61.step_sd_nm:.6f};nominal{r.mean_nominal_abs_error_nm:.6f},within{r.median_within_grid_sd_nm:.6f},cross{r.median_cross_axis_abs_nm:.6f}. Secondary194allwithin-sessionpairs vsRaw only,3pre-existingrecordedrepositioningpairs separatelykept. No model-based frame rejection. Source-definedcommonFOV-context subset reported asdiagnosticbecauseR129uses80/16guardversusR12864/16. DirectfullNNdepthwiseoperationfailed32bitindexlimit; originalfailure preserved. Separateglobaloptics/features/state/quality andlocalpriorcore512/halo16executionverified onreal fields/random input anddifferentcores,alltested8bitpixels equal,smallfloatdifferencesrecorded. All3618circles independentlyrefitted,634pair-table calculations(394unique method/adjacentpairs)recomputed,Raw1431oldcenters reproduce,andworstR129-vsR128pairpublicentry/LSCreplayed. Newportableaddon addedwithouteditingfrozenpackage files. No training/promotion oroldconfirmationaccess; priorSEMsizeissueisnotresolvedbyLSCresults.\n\n'
+    assert needle in text;text=text.replace(needle,needle+note,1);assert len(text.split('<!-- QUICK_HANDOFF_START -->')[1].split('<!-- QUICK_HANDOFF_END -->')[0].splitlines())<=60;path.write_text(text,encoding='utf-8')
+    path=REPO/'Experiments/INDEX.md';lines=path.read_text(encoding='utf-8-sig').splitlines()
+    for i,line in enumerate(lines):
+        if line.startswith('| R129 架構與獨立長訓練 |'):
+            lines[i]=f'| R129 架構與獨立長訓練 | [201張連續LSC結果](R129_OpticalPriorHybrid/reports/R129_CONTINUOUS_LSC_RESULTS.md)・[長訓練](R129_OpticalPriorHybrid/reports/R129_LONG_TRAINING_RESULTS.md) | 全部201張原生重建及LSC完成；固定120對R129步距波動{r.step_sd_nm:.3f}nm，R128{r128.step_sd_nm:.3f}、R61{r61.step_sd_nm:.3f}。另報完整194對與3次重新定位。原尺寸退步仍需處理，無新訓練或升級 |'
+    path.write_text('\n'.join(lines)+'\n',encoding='utf-8')
+    path=REPO/'docs/operations/PROJECT_STORAGE_REGISTRY.json';registry=load(path);entry=next(x for x in registry['entries'] if x.get('id')=='r129_optical_prior_hybrid');entry.update(state='continuous_lsc_complete_research_only',report=rel,actual_gib=sum(x.stat().st_size for x in ROOT.rglob('*') if x.is_file())/1024**3);registry['updated_at']=now();path.write_text(json.dumps(registry,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    for name,text in [('README.md','\n## Continuous real LSC completed\n\nAll201nativefields and1809circles perRaw/R129 method are complete. [Full result](reports/R129_CONTINUOUS_LSC_RESULTS.md) separates120historicalmatchedpairs from194completewithin-sessionpairs and3repositioningtransitions. The portable package has a separately versioned addons/full_field entry; no old model/source hashes changed.\n'),('MANIFEST.md','\nContinuousLSC20260913: results/continuous_lsc contains201full-native reconstructions,Raw/R129centers/points,locked120andwithin-session194pair results,3separate repositioning transitions,source-context strata,independent audit andworst public replay. All sources and old checkpoint unchanged; no model promotion.\n'),('reports/R129_RESULTS.md','\n## 2026-09-13 完整連續影像LSC\n\n[201張重建與完整LSC結果](R129_CONTINUOUS_LSC_RESULTS.md) 已完成。固定120對同舊模型比較；完整194對與3次重新定位另外保留。這項位移補測不代表上一輪尺寸退步已解決，未更換模型。\n')]:
+        with (ROOT/name).open('a',encoding='utf-8') as file:file.write(text)
+    pkg=Path(plan['package']);copy=pkg/'results/continuous_lsc_review_20260913';(copy/'figures').mkdir(parents=True,exist_ok=False);shutil.copy2(report,copy/'REPORT.md')
+    for item in pub['figures']:shutil.copy2(item['path'],copy/'figures'/Path(item['path']).name)
+    save(copy/'SOURCE.json',dict(canonical_report=record(report),copy_sha256=sha(copy/'REPORT.md'),full_reconstructions=str(OUT/'images'),measurements=str(OUT/'measurements'),read_only_report_copy=True))
+    save(OUT/'registration.json',dict(completed_utc=now(),source=record(__file__),report=record(report),updated_files=[record(p) for p in paths],package_report_copy=record(copy/'REPORT.md'),original_model_and_default_unchanged=True))
+    print('Continuous results registered; research identity and defaults preserved')
+if __name__=='__main__':main()

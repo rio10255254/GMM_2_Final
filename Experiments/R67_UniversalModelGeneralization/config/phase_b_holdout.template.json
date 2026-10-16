@@ -1,0 +1,22 @@
+{
+  "phase": "B_sealed_unseen_domain",
+  "independent_holdout": true,
+  "sealed_before_inference": true,
+  "required_scene_axes": [
+    "new_sample_lot",
+    "new_field_of_view",
+    "magnification",
+    "motion_size",
+    "motion_direction",
+    "focus_or_aberration_state",
+    "signal_level",
+    "pillar_via_line_morphology"
+  ],
+  "truth_requirements": {
+    "motion": "independent encoder or calibrated stage readout; commanded motion alone is insufficient",
+    "critical_dimension": "registered SEM or another independent reference",
+    "minimum_repeats_per_cell": 3
+  },
+  "sequences": {}
+}
+

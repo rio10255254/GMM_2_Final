@@ -1,0 +1,1 @@
+`pilot_256.json`是正式訓練前的可丟棄短測；`reconstruction`連到H槽本輪專用路徑。完整訓練及驗證結果完成後才在canonical報告發表。

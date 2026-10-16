@@ -1,0 +1,27 @@
+{
+  "policy_id": "R96_FORMAL_EXECUTION_V1",
+  "hard_stop_on_low_free_memory": false,
+  "soft_warning_free_gib": 1.0,
+  "scene_batch_overrides": {
+    "512": 4,
+    "768": 2,
+    "896": 1
+  },
+  "oom_fallback_scene_batches": {
+    "512": [2, 1],
+    "768": [1],
+    "896": [1]
+  },
+  "maximum_automatic_oom_restarts": 2,
+  "preserve_target_effective_scene_batch": true,
+  "split_large_patch_common_descent": true,
+  "split_common_descent_start_epoch": 27,
+  "split_common_descent_min_patch": 896,
+  "write_recoverable_latest_checkpoint_every_epoch": true,
+  "cpu_threads": 8,
+  "background_prefetch": true,
+  "online_validation_every_epochs": 4,
+  "online_validation_scenes_per_role": 4,
+  "live_real_preview_every_epochs": 8,
+  "final_validation_scenes_per_role": 8
+}

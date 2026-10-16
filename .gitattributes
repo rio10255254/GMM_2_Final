@@ -27,3 +27,7 @@
 
 # Original acquisition metadata has historical file fingerprints. Preserve its bytes.
 /Shared_Sources/** -text
+
+# Frozen research files retain their original bytes for source-lock verification.
+# This includes historical code, settings and records; diff rendering is unchanged.
+* -text

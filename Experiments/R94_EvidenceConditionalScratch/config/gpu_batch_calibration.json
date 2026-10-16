@@ -1,0 +1,53 @@
+{
+  "experiment_id": "R94_EvidenceConditionalScratch",
+  "device": "NVIDIA RTX A6000",
+  "total_memory_gib": 47.98779296875,
+  "minimum_memory_left_for_desktop_gib": 9.0,
+  "selected_scene_batches": {
+    "512": 2,
+    "768": 2,
+    "896": 2
+  },
+  "results": [
+    {
+      "patch": 512,
+      "core": 256,
+      "scene_batch": 2,
+      "flattened_s_views": 2,
+      "seconds": 0.9571264999685809,
+      "peak_allocated_gib": 10.266263961791992,
+      "peak_reserved_gib": 10.6796875,
+      "baseline_used_gib": 1.55908203125,
+      "estimated_peak_free_gib": 35.7490234375,
+      "minimum_required_free_gib": 9.0,
+      "safe": true
+    },
+    {
+      "patch": 768,
+      "core": 384,
+      "scene_batch": 2,
+      "flattened_s_views": 2,
+      "seconds": 1.4557072999887168,
+      "peak_allocated_gib": 22.88549518585205,
+      "peak_reserved_gib": 23.970703125,
+      "baseline_used_gib": 1.63720703125,
+      "estimated_peak_free_gib": 22.3798828125,
+      "minimum_required_free_gib": 9.0,
+      "safe": true
+    },
+    {
+      "patch": 896,
+      "core": 512,
+      "scene_batch": 2,
+      "flattened_s_views": 2,
+      "seconds": 1.9723485999275,
+      "peak_allocated_gib": 31.246809005737305,
+      "peak_reserved_gib": 32.41796875,
+      "baseline_used_gib": 1.63720703125,
+      "estimated_peak_free_gib": 13.9326171875,
+      "minimum_required_free_gib": 9.0,
+      "safe": true
+    }
+  ],
+  "passed": true
+}

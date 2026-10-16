@@ -1,0 +1,42 @@
+{
+  "experiment_id": "R113_R109SEMInterventionACM",
+  "models": {
+    "full": {
+      "role": "frozen_intervention"
+    },
+    "no_shift": {
+      "role": "frozen_intervention"
+    },
+    "no_width": {
+      "role": "frozen_intervention"
+    },
+    "learned_support_only": {
+      "role": "frozen_intervention"
+    },
+    "smoothed_controls": {
+      "role": "frozen_intervention"
+    }
+  },
+  "sem_acm": {
+    "raw_input_dir": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack",
+    "sem_dir": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data",
+    "optical_exposures": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "physical_pillars": 36,
+    "alignment": "translation_only",
+    "scale_fitting": false,
+    "rotation_fitting": false
+  }
+}

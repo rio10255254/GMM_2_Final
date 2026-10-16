@@ -1,0 +1,36 @@
+{
+  "purpose": "Modern-model CD comparison using the same thesis protocol as the earlier CD checks",
+  "methods": [
+    "Raw",
+    "NAFNet",
+    "EDSR",
+    "MOSR"
+  ],
+  "magnifications": [
+    "50x",
+    "20x"
+  ],
+  "morphologies": [
+    "pillar",
+    "via"
+  ],
+  "center_rule": "One Raw-defined center set is reused unchanged by every method",
+  "sem_rule": "SEM values are diameters; source radii are doubled before comparison",
+  "pillar_orientation_rule": "The capture-specific center order supplies the stable pillar ID; SEM diameter is looked up by that ID so 20x flip-y and 50x identity views retain the same physical reference",
+  "radial_edge_rule": "The legacy radial profile is retained; only the unused outer background radius is shortened when a center is close to an image edge",
+  "measurement_modes": [
+    "horizontal_strip",
+    "radial_mean"
+  ],
+  "thresholds": [
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65
+  ],
+  "primary_metric": "pooled_median_abs_error_nm",
+  "expected_observations_per_method_condition": 126
+}

@@ -24,23 +24,32 @@ DEFAULT_RING_GUARD_ROOT = EXPERIMENT_ROOT / "results" / "ring_guard"
 
 R44B_R42_CHECKPOINT = (
     REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "R44_UniversalBoundaryMotionFidelity"
+    / "results"
+    / "archive_retained_20260824"
+    / "training_checkpoints"
     / "training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801"
-    / "weights"
     / "best_tradeoff.pth.tar"
 )
 R44B_R40_CHECKPOINT = (
     REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "R44_UniversalBoundaryMotionFidelity"
+    / "results"
+    / "archive_retained_20260824"
+    / "training_checkpoints"
     / "training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143"
-    / "weights"
     / "best_tradeoff.pth.tar"
 )
 R44B_COMBO_CHECKPOINT = (
     REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "R44_UniversalBoundaryMotionFidelity"
+    / "results"
+    / "archive_retained_20260824"
+    / "training_checkpoints"
     / "training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231"
-    / "weights"
     / "best_tradeoff.pth.tar"
 )
 

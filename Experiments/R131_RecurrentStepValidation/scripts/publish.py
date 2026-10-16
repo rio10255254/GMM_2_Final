@@ -1,0 +1,112 @@
+"""Publish measured tables only after all diagnostics finish; no model adoption."""
+from study import *
+
+def main():
+    verified=load(ROOT/'results/analysis_verified.json');timed=load(ROOT/'results/runtime_verified.json');verify_sources()
+    sem=pd.read_csv(ROOT/'results/sem/summary.csv');paired=pd.read_csv(ROOT/'results/sem/paired_changes.csv')
+    motion=pd.read_csv(ROOT/'results/motion_summary.csv');combined=motion[motion.scope=='all_four_sequences']
+    runtime_table=pd.read_csv(ROOT/'results/runtime.csv');timing=runtime_table.groupby(['case','step']).seconds.agg(['median','min','max']).reset_index()
+    timing.to_csv(ROOT/'results/runtime_summary.csv',index=False)
+    rawsource=ROOT.parent/'R128_SourceOnlyFullTraining/results/thesis_v34_review_20260912/normal_sem_fine_v2/summary.csv'
+    rawsem=pd.read_csv(rawsource);rawsem=rawsem[rawsem.method=='Raw'].iloc[0]
+    headers={'step':'修復次數','radial_nm':'輪廓差距nm','diameter_error_nm':'尺寸差距nm','centered_shape_nm':'細形狀差距nm','MZC_error_nm':'非圓起伏差距nm','correlation':'形狀相關'}
+    semtable=sem[['step','radial_nm','diameter_error_nm','centered_shape_nm','MZC_error_nm','correlation']].rename(columns=headers).to_markdown(index=False,floatfmt='.4f')
+    four3=paired[(paired.candidate==4)&(paired.reference==3)].drop(columns=['candidate','reference']).to_markdown(index=False,floatfmt='.4f')
+    columns=['step','step_sd_nm','mean_nominal_abs_error_nm','median_within_grid_sd_nm','median_cross_axis_abs_nm']
+    headings=['次數','步距波動nm','與名義步距差距nm','九柱不一致nm','橫向偏移nm']
+    mt={}
+    for population in ['locked120','within_session194']:
+        t=combined[combined.population==population][columns].copy();t.columns=headings;mt[population]=t.to_markdown(index=False,floatfmt='.4f')
+    rt=timing[timing.case=='full_field'][['step','median','min','max']].rename(columns={'step':'次數','median':'中位秒數','min':'最短秒數','max':'最長秒數'}).to_markdown(index=False,floatfmt='.4f')
+    bysequence=motion[(motion.scope=='per_sequence')&(motion.population=='locked120')].pivot(index='sequence',columns='step',values='step_sd_nm').to_markdown(floatfmt='.4f')
+    s=sem.set_index('step');tr=timing[timing.case=='full_field'].set_index('step')
+    shape_gain=100*(1-s.loc[4,'centered_shape_nm']/s.loc[3,'centered_shape_nm']);time_saved=100*(1-tr.loc[3,'median']/tr.loc[4,'median'])
+    text=f'''# R131：R129 四次反覆修復的實際驗證
+
+## 完成範圍與可以回答的問題
+
+同一份 R129 長訓練第8192次權重，保持光學、輸入、每次作用量及最後輸出方式不變，分別停在零、一、二、三、四次修復。完成正常SEM對應照片13–15、全部36顆柱，以及完整201張原生連續影像。共1020張輸出、540筆SEM量測及9045個LSC圓心；全部保存。
+
+本次沒有重新訓練、修改原R129或採用新模型。它能回答「目前這份模型提前結束會有什麼得失」，不能證明重新訓練的一／二／三次架構上限，也沒有測試五次以上是否更好。因此不能把這份結果寫成四次已是理論或全域最佳。
+
+零次仍保留同一套光學與最後原圖參照處理，並非完全原圖。每個中間狀態各自經相同最後處理；這些展示輸出不會被回灌下一步。逐次修復共享同一套網路，並不是四個模型。
+
+固定計畫：[比較方法](R131_METHODOLOGY.md)、[原始條件與保護來源](../config/protocol.json)。全部資料都是已使用的實拍開發資料，沒有讀取或重命名舊144場景確認集。
+
+## 正常SEM：第四次仍帶來細形狀收益，尺寸問題較早已出現
+
+先對每顆柱取三曝光中位數，再跨36顆彙整。誤差越低越好，形狀相關越高越好。
+
+{semtable}
+
+同量法既有原圖的輪廓差距為{rawsem.radial_shape_mae_nm:.4f}nm、尺寸差距{rawsem.lsc_abs_error_nm:.4f}nm。零次仍會處理影像，因此與原圖數值略有差別。五組尺寸偏差的中位數都顯示光學輪廓比SEM參考大，但並非每增加一次修復就更大；這是固定SEM／光學讀法的差異，不是已認證的材料尺寸誤差。
+
+三次到四次，整體細形狀差距降低約{shape_gain:.2f}%；逐顆33/36顆改善，尺寸差距30/36顆改善。第四次對非圓起伏量則只有16/36顆改善、20/36顆退步，儘管整體中位數較低；配對差與兩個總體中位數相減不同，兩者都保留。
+
+{four3}
+
+「非圓」是對實際SEM起伏的差距，不是要求變成正圓。尺寸差距在第一次就增加，前面幾次逐漸變大，第四次反而略拉回。因此不能把現有尺寸問題單獨怪在第四次，也不能以細形狀改善宣布尺寸已解決。
+
+![逐次SEM變化](figures/sem_steps.png)
+
+![固定同顆實拍影像](figures/pillar18_steps.png)
+
+![固定同顆起伏](figures/pillar18_shape.png)
+
+## 位移：同一固定120對
+
+{mt['locked120']}
+
+四組序列各30對，沿用原圖事先決定的同一份名單。步距波動為四序列標準差的平均，其餘欄依既有共同量法計算。相鄰影格會共用照片，不視為120次獨立試驗。平台名義設定不是獨立量到的真實位移。
+
+逐組步距波動如下，欄0–4代表修復次數，單位奈米。各組都保留，不以整體摘要掩蓋反向結果。
+
+{bysequence}
+
+這份固定120對中，三次的步距波動6.9211nm低於四次6.9911nm，與名義步距差距及橫向偏移也略低；四次的九柱不一致則由三次4.5270降至4.2037nm。第四次不是所有位移指標的共同最佳。20倍0.5微米那組，四次步距波動15.0305nm，高於三次14.5684nm；其他組的方向也全部列出。
+
+## 位移：完整194對同拍攝段落
+
+{mt['within_session194']}
+
+201張形成197對相鄰影格；原始紀錄的3次重新定位全數另存，不當作正常小步距。194對保留原固定120對以外的較差影格，沒有依任一修復次數剔除資料。
+
+完整194對中，四次的步距波動與九柱一致性又比三次略好，名義步距差距仍略高。這是不同範圍的描述性結果，不以其中一張表取代另一張，也不把小數差宣稱為跨樣品的顯著勝負。
+
+![完整位移對照](figures/motion_steps.png)
+
+各倍率、步距與最差案例見[全部摘要](../results/motion_summary.csv)、[逐對得失](../results/motion_paired_changes.csv)、[最差與錯方向數量](../results/motion_worst.csv)。主結果含原定邊界保護；五組一律相同80像素保留、16像素過渡，沒有為較少次數改規則。
+
+## 速度：真正提前結束的流程
+
+{rt}
+
+同一完整2048×1536影像、同一RTX A6000、FP32／TF32關閉，每種先暖身一次、正式量三次，順序打散；不計讀寫與中間圖匯出。三次相對四次節省約{time_saved:.2f}%的此次中位時間。另有SEM大小影像的完整數值；不是跨硬體速度保證。
+
+用來计時的程式僅改原流程的反覆次數，最後處理只算一次。兩種尺寸的零至四次共10份影像與正式保存PNG完全相同。不能拿本次保存五份中間圖的總時間，當作只輸出一次的使用成本。
+
+## 獨立核對及保留的失敗
+
+- 隨機奇數尺寸的每個中間狀態，另由原模型觀察到的狀態重建；最大差在事先1e-6浮點容差內。完整四次的SEM測試精確重現原流程。
+- 全201張的第四次PNG逐張與既有R129完全相同；1809個第四次圓心／半徑與既有結果重現，沒有換量法來製造收益。
+- 540筆SEM用另一種圓擬合與起伏插值重算，最大指標差{load(ROOT/'results/sem/independent_verified.json')['max_metric_difference']:.9g}。非圓起伏的原演算法共用，沒有宣稱獨立重寫。
+- 9045個保存邊界點集合另外擬合圓心，最大差{verified['max_motion_refit_difference_px']:.9g}px；1585筆位移表算術及各序列／整體摘要重算相符。位移只算下一張圓心減上一張圓心一次。
+- 初始前置檢查曾把不同大小卷積的浮點結果誤要求逐位一致而停止；差異約1.19e-7。原錯誤檢查與失敗保存，改按原計畫已明定的1e-6比較，沒有放寬原定條件。正式201張第四次PNG的一致要求保持不變。
+- 所讀取的R129模型、既有成像與量测程式及固定來源核對未變，沒有刷新任何舊驗收的期待值。
+
+完成核對：[量測獨立覆算](../results/analysis_verified.json)、[計時與一致性](../results/runtime_verified.json)、[全部影像完成紀錄](../results/inference_complete.json)。
+
+## 判讀界線
+
+第四次已顯示真實輪廓上的額外作用與多數柱體收益，不能當作已證明可直接刪掉的冗餘。不過每項指標沒有全勝，整體仍有尺寸偏差與計算成本。前幾次是從四次訓練模型截取的中間結果，不能宣稱較少次數從零訓練也只能做到這些。
+
+這次的具體判斷是：保留四次作目前R129的完整研究參考。它以更多時間換取較好的細形狀、較小的三次終點尺寸差距及較好的九柱一致性；三次則是值得進一步公平訓練比較的效率選項，並在固定120對的一些位移摘要較好。本次不足以宣稱四次已最優或自動把預設改成三次。
+
+本輪不更換套件預設、不推廣到正式基準、不重寫R129的歷史結果。後續若要縮減次數，必須以本次實拍得失為依據，再用相同資料與明確成本條件訓練較少次數的對照；不可單凭少參數、速度或某一漂亮分數作決定。
+'''
+    p=ROOT/'reports/R131_RESULTS.md'
+    with p.open('x',encoding='utf-8') as f:f.write(text)
+    save(ROOT/'results/published.json',dict(utc=now(),report=rec(p),raw_reference=rec(rawsource),source=rec(__file__),model_adopted=False))
+    print('Published measured report; no adoption',flush=True)
+
+if __name__=='__main__':main()

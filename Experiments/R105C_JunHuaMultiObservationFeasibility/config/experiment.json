@@ -1,0 +1,19 @@
+{
+  "experiment_id": "R105C_JunHuaMultiObservationFeasibility",
+  "created_date": "2026-08-24",
+  "status": "complete_n2_source_approved",
+  "source": "D:\\NTU_ImageDataset\\Pitch1um_Y_100\\Raw",
+  "source_policy": "read_only",
+  "pairing": "Filename-sorted images [2k, 2k+1] are one nominal stage position.",
+  "purpose": "Audit whether the 202-image JunHua sequence is suitable as the only real multi-observation source for a first N=2 experiment, without using the poor-quality laboratory PI motion sequence.",
+  "formal_model_training": false,
+  "external_gmf_claim": false,
+  "final_decision": {
+    "junhua_even_odd_pairs_approved_for_n2_engineering": true,
+    "cross_position_n4_approved_for_formal_gmf": false,
+    "cross_position_n4_approved_for_model_research": true,
+    "current_r105b_probe_proves_real_n4_accuracy_gain": false,
+    "laboratory_pi_sequence_in_scope": false,
+    "reason": "All 101 even/odd pairs are co-located and consistent. All 100 adjacent-position bundles can also be registered with very high structural agreement and preserve fitted ring geometry. The procedural R105B probe reads real N4 safely but changes N2 by only about 0.098 gray on median, so a real accuracy gain is not established. Sliding N4 still shares source frames between neighboring outputs and remains excluded from formal GMF until an external non-shared control is available."
+  }
+}

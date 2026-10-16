@@ -17,6 +17,41 @@ def load_control_center_module():
     return module
 
 
+def test_command_preserves_utf8_and_native_windows_output(monkeypatch):
+    """Native Big5 stderr must not crash a UTF-8 parent's reader thread."""
+    import sys
+
+    module = load_control_center_module()
+    monkeypatch.setattr(module.locale, "getencoding", lambda: "cp950")
+    result = module.run_command([
+        sys.executable, "-c",
+        "import sys;sys.stdout.buffer.write('原始照片'.encode('utf-8'));"
+        "sys.stderr.buffer.write('位置紀錄'.encode('cp950'))",
+    ])
+    assert result["returncode"] == 0
+    assert result["stdout"] == "原始照片"
+    assert result["stderr"] == "位置紀錄"
+
+
+def test_recent_direct_report_record_is_available_in_both_views():
+    module = load_control_center_module()
+    policy = {
+        "formal_baseline": {
+            "candidate_id": "COMBO", "model_name": "combo",
+            "decision_effective_date": "2026-04-08",
+            "reports": {"results_md": "Experiments/R38v2SeqFixed/reports/COMBO_RESULTS.md"},
+        },
+        "approved_alternates": [], "closed_lines": [],
+        "open_side_tracks": [{"candidate_id": "R139", "status": "complete_degenerate_not_adopted",
+                              "report": "Experiments/R139_UNetRecurrentPrototype/reports/R139_RESULTS.md"}],
+    }
+    truth = module.build_truth_sources(REPO, policy, {"versions": {}})
+    assert truth["open_side_tracks"][0]["report"].endswith("/R139_RESULTS.md")
+    architecture = module.build_architecture_view(policy)
+    assert architecture["side_tracks"][0]["location"] == "Experiments/R139_UNetRecurrentPrototype"
+    assert architecture["side_tracks"][0]["status"] == "complete_degenerate_not_adopted"
+
+
 def test_default_cli_overview_uses_quick_health_summary():
     module = load_control_center_module()
 
@@ -62,6 +97,34 @@ def test_payload_always_exposes_fixed_top_level_keys():
         "risks",
         "health",
     }
+
+
+def test_storage_guard_is_a_declared_entrypoint():
+    module = load_control_center_module()
+
+    entrypoints = module.build_entrypoints_view()["items"]
+    storage = next(item for item in entrypoints if item["id"] == "storage_guard")
+
+    assert storage["exists"] is True
+    assert storage["path"] == "Tools/project_storage_guard.py"
+
+
+def test_archive_index_is_a_core_document():
+    module = load_control_center_module()
+
+    assert module.ARCHIVE_INDEX_PATH in module.CORE_DOC_PATHS
+    assert module.ARCHIVE_INDEX_PATH.is_file()
+
+
+def test_storage_registry_and_lifecycle_are_core_documents():
+    module = load_control_center_module()
+
+    assert module.STORAGE_REGISTRY_PATH in module.CORE_DOC_PATHS
+    assert module.STORAGE_LIFECYCLE_PATH in module.CORE_DOC_PATHS
+    assert module.STORAGE_REGISTRY_PATH.is_file()
+    assert module.STORAGE_LIFECYCLE_PATH.is_file()
+    assert module.QUARANTINE_INDEX_PATH in module.CORE_DOC_PATHS
+    assert module.QUARANTINE_INDEX_PATH.is_file()
 
 
 def test_truth_sources_expose_analysis_summary():

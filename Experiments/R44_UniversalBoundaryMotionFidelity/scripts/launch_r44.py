@@ -46,9 +46,12 @@ R40_A045_CHECKPOINT = (
 )
 R42_R41_BEST_CHECKPOINT = (
     REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "R42_MicroscopyBoundaryFidelity"
+    / "results"
+    / "archive_retained_20260824"
+    / "training_checkpoints"
     / "training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229"
-    / "weights"
     / "best_tradeoff.pth.tar"
 )
 

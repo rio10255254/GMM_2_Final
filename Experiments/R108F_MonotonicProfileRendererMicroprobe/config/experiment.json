@@ -1,0 +1,19 @@
+{
+  "experiment_id": "R108F_MonotonicProfileRendererMicroprobe",
+  "seed": 109110,
+  "detector_steps": 900,
+  "renderer_steps": 1200,
+  "batch_size": 24,
+  "training_data_sha256": "3e3ed993a03a0b354888b3d28edc4d2edcc26ee624f317e4615bfcb5a41b7663",
+  "renderer_constraints": [
+    "local smooth warp",
+    "positive multiscale optical basis",
+    "local observed-range clamp",
+    "frozen necessity map",
+    "no free pixel residual"
+  ],
+  "scratch_weights": true,
+  "real_training_pixels": false,
+  "sem_training_pixels": false,
+  "old_weight_or_teacher_used_for_training": false
+}

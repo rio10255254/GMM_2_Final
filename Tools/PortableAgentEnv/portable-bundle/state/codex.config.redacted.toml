@@ -1,0 +1,37 @@
+﻿model_provider = "yunyi"
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+model_context_window = 1000000
+model_auto_compact_token_limit = 900000
+service_tier = "fast"
+
+[model_providers.yunyi]
+name = "yunyi"
+base_url = "https://cdn2.yunyi.cfd/codex"
+wire_api = "responses"
+experimental_bearer_token = "REPLACE_ME"
+requires_openai_auth = true
+
+personality = "pragmatic"
+
+[windows]
+sandbox = "elevated"
+
+[features]
+fast_mode = true
+enable_request_compression = true
+multi_agent = true
+
+[projects.'D:\GMM_2_Final']
+trust_level = "trusted"
+
+[projects.'C:\Users\Rio']
+trust_level = "trusted"
+
+[projects.'C:\temp\codex_test']
+trust_level = "trusted"
+
+[tui]
+alternate_screen = "never"
+status_line = ["model-with-reasoning", "context-window-size", "context-remaining", "five-hour-limit", "weekly-limit"]
+

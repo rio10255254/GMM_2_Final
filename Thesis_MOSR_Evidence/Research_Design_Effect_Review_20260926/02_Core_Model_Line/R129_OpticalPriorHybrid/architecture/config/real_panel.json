@@ -1,0 +1,172 @@
+{
+  "created_utc": "2026-09-12T08:25:42.895677+00:00",
+  "motion": [
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 0,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+        "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b"
+      },
+      "box": [
+        933,
+        482,
+        1406,
+        948
+      ]
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 1,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0001.bmp",
+        "sha256": "50e80951df01f69f26c589556e4ae3a16dee058b0a8a6cb18e3a1883cbd9f5a2"
+      },
+      "box": [
+        933,
+        482,
+        1406,
+        948
+      ]
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 3,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0003.bmp",
+        "sha256": "67251ba10f35ec907719be221b796654e5334690992d42e1d1e4a5a57f59ae85"
+      },
+      "box": [
+        883,
+        478,
+        1365,
+        944
+      ]
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0004.bmp",
+        "sha256": "ff66d2a5519128002a6fac9660a67f9fabc86286d35b55f5d8b6606c6270b5f3"
+      },
+      "box": [
+        883,
+        478,
+        1365,
+        944
+      ]
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 0,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0000.bmp",
+        "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74"
+      },
+      "box": [
+        1799,
+        703,
+        2048,
+        1082
+      ]
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 1,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0001.bmp",
+        "sha256": "d710c9eedb21819a3cad43f1a31c72b10b1665d9d0225c174bbf4c29308ee405"
+      },
+      "box": [
+        1799,
+        703,
+        2048,
+        1082
+      ]
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0004.bmp",
+        "sha256": "3b2a4dde15175b15e0dbc2f946e3964fd6a6f76774c5f2822f3692874c25921c"
+      },
+      "box": [
+        1773,
+        703,
+        2048,
+        1082
+      ]
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 5,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0005.bmp",
+        "sha256": "ebcca5fe5cb325ca3a2ded196784be4b6925b9a083bcf4d5962c30b350d69ce3"
+      },
+      "box": [
+        1773,
+        703,
+        2048,
+        1082
+      ]
+    }
+  ],
+  "sem": [
+    {
+      "exposure": 13,
+      "source": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+        "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88"
+      }
+    },
+    {
+      "exposure": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\14.bmp",
+        "sha256": "d25366ad663741d56b7d32bf42c6d44a1904789a5f36cd4563951218d6ac3ec1"
+      }
+    },
+    {
+      "exposure": 15,
+      "source": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\15.bmp",
+        "sha256": "441133eabd7f650150331bf408e7d16ff50c3629b0f0d3461b79150bf8cd6dbe"
+      }
+    }
+  ],
+  "sequence_config": {
+    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\01_CURRENT_THESIS_RESULTS_V42_CENTER9\\config\\sequence_center9_50x20x.json",
+    "sha256": "e7bd2e86490882ee23b65ecf467624df69546fd51b76e51b12232142a34f8601"
+  },
+  "motion_plan": [
+    {
+      "sequence": "50x_x_0p5um",
+      "start": 0,
+      "end": 1
+    },
+    {
+      "sequence": "50x_x_1um",
+      "start": 3,
+      "end": 4
+    },
+    {
+      "sequence": "20x_0p5um",
+      "start": 0,
+      "end": 1
+    },
+    {
+      "sequence": "20x_1um",
+      "start": 4,
+      "end": 5
+    }
+  ],
+  "scope": "fixed pilot ROIs,not thesis fullFOV120pairs",
+  "guard": "Rawthroughdistance80,transition16,common all arms/reference",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\evaluate_real.py",
+    "sha256": "b89c0884600628193a685c2808e215fe0ee51b87c21e6816e342e7826105f412"
+  }
+}

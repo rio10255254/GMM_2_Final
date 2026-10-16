@@ -1,0 +1,28 @@
+# main/R150_MatchedGeometryMeanPSF 研究與重做紀錄
+
+保持架構，測新排列與訓練推論共用平均PSF
+
+短步與去尺寸形狀小改善，直徑重拍／輪廓／SEM退步；兩因素仍未分離
+
+## 必要來源
+
+R149鎖定資料、原全局要求、8192模型及固定930驗收
+
+## 影像保存理由
+
+跨趟尺度漂移與短步收益共同展示
+
+## 原始方法與結果
+
+下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
+
+- [R150_METHODOLOGY.md](../../../Experiments/R150_MatchedGeometryMeanPSF/reports/R150_METHODOLOGY.md)
+- [R150_REAL_VALIDATION_RESULTS.md](../../../Experiments/R150_MatchedGeometryMeanPSF/reports/R150_REAL_VALIDATION_RESULTS.md)
+- [R150_RESULTS.md](../../../Experiments/R150_MatchedGeometryMeanPSF/reports/R150_RESULTS.md)
+- [R150_VALIDATION_PLAN.md](../../../Experiments/R150_MatchedGeometryMeanPSF/reports/R150_VALIDATION_PLAN.md)
+
+## 重做與驗證範圍
+
+程式、設定、完整表格與選定影像依保存清單收錄；大型必要來源和固定模型由附件恢復。
+本次沒有重跑這一輪全部歷史訓練。可攜執行、完整數值重算與來源逐份核對的實測範圍，請看總入口的驗證紀錄。
+任何仍須讀取僅存在D／H原工作區的檔案，都不能列為僅靠GitHub已完整重現。

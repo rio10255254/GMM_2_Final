@@ -1,0 +1,5 @@
+# Preserved initial calibration failure
+
+The initial real_profiles.py stopped at its known-reference calibration before any optical comparison. A raster SEM contour represented by marching-squares straight segments is not exactly the bilinear isocontour of the mask-derived smooth reference. All 720 profiles were valid; corner offsets reached approximately 0.0994 pixels, exceeding the declared 0.04 pixel maximum. The median offset was approximately zero. No optical result was accepted, and no masks or expected hashes changed.
+
+real_profiles_v2.py instead refines sampling coordinates on the SAME synthetic mask-derived reference, using no optical inputs or reconstruction results. Its check is stricter (0.004 pixel). This is a distinct documented readout version, not a relaxation of the original threshold. It retains the reference definition and a single common Raw-centroid translation for all optical methods. The raster-to-continuous interpolation assumption remains a limitation of absolute SEM/optical edge comparison.

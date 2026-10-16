@@ -1,0 +1,454 @@
+PSF L0/L1 簡報素材包圖像說明
+建立時間：2026-06-23 23:25:47
+素材包位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1
+
+使用方式：每張圖旁邊都有同名 .txt 說明檔；這份 IMAGE_GUIDE.txt 則是全部圖的總表。
+注意：舊 L0 圖只當概念與歷史參考；新 L0/L1 正式簡報建議優先使用 04_generated_summary_charts 裡的新圖。
+
+[01] PSF 擬合後的形狀總覽
+分類：既有擬合/舊 L0 結果圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\01_existing_result_figures\01_fitted_psf_grid_crop31.png
+說明：這張圖把擬合後得到的 PSF 形狀排成一個總覽。它不是單張原始照片，而是擬合結果的視覺化，適合讓聽眾先看到這次到底在估一個怎樣的光學模糊形狀。
+簡報用法：放在方法或結果開頭，當作「PSF 擬合結果長相」的代表圖。
+注意：這張圖來自既有 PSF 擬合輸出，不是新 L1 三輪拍攝的統計圖。
+原始來源：D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\fitted_psf_grid_crop31.png
+
+[02] 舊 L0 重複擬合的分群結果
+分類：既有擬合/舊 L0 結果圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\01_existing_result_figures\02_legacy_l0_basin_scatter.png
+說明：這張散點圖顯示舊 L0 裡多次重複擬合後，結果會落在不同穩定區域。白話來說，同一批資料反覆擬合，不一定每次都停在完全同一個解，但會聚成幾個有規律的位置。
+簡報用法：用來說明為什麼需要做 L0：先看演算法自己重跑時會有多少自然波動。
+注意：這是封存的舊 L0 結果，只能當概念與歷史參考，不能直接當新 L1 的判定圖。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\fig_4sets_basin_scatter.png
+
+[03] 舊 L0 分群對齊示意
+分類：既有擬合/舊 L0 結果圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\01_existing_result_figures\03_legacy_l0_basin_alignment.png
+說明：這張圖在說明一件很重要的事：不同批次的分群編號不一定能直接對上，要看它們在參數空間裡的位置。也就是說，不能只看第 1 群、第 2 群這種名字，要看實際落點。
+簡報用法：放在解釋分析方法時，說明為什麼舊資料需要先做群的位置對齊。
+注意：這張圖是舊資料的方法說明，不代表新資料仍然有完全相同的分群門檻。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\fig_basin_alignment.png
+
+[04] 舊 L0 群內與群間距離證據圖
+分類：既有擬合/舊 L0 結果圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\01_existing_result_figures\04_legacy_l0_centroid_distance_proof_v2.png
+說明：這張圖把同一群內的距離與不同群之間的距離放在一起比較。重點是舊資料裡群內比較近、群間比較遠，所以當時的分群不是肉眼硬切，而是有距離證據支持。
+簡報用法：用來當「舊 L0 分群真的有分開」的證據圖。
+注意：這是 v2 版本，比原始版本更適合簡報；但仍是舊 L0，不是新 L0/L1 的正式門檻。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\fig_centroid_distance_proof_v2.png
+
+[05] 舊 L0 群距離證據圖原始版
+分類：既有擬合/舊 L0 結果圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\01_existing_result_figures\05_legacy_l0_centroid_distance_proof_original.png
+說明：這是上一張群內與群間距離證據圖的原始版本。內容方向相同，主要是保留以免之後想比較不同版本。
+簡報用法：通常簡報用 v2 就好；這張可以當備用圖或附錄圖。
+注意：與 v2 重複度高，正式簡報不一定需要兩張都放。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\fig_centroid_distance_proof.png
+
+[06] 原始 GT：圓形目標中間有方塊
+分類：新資料目標與前處理
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\01_gt_original_with_center_blocks.png
+說明：這張是同一個圓形樣本的原始目標圖。可以清楚看到中心區域有方塊結構，這也是為什麼後面不能把整個中心都拿來硬擬合，而要把真正穩定的圓形邊界當成主要目標。
+簡報用法：放在問題說明：這次影像有點歪，而且中心方塊會干擾，所以擬合目標改成圓邊界。
+注意：這張是目標圖，不是實際拍攝影像，也不是擬合結果。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\GT\GT_901_original_with_blocks.bmp
+
+[07] 處理後 GT：中心方塊被填平
+分類：新資料目標與前處理
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\02_gt_processed_center_filled.png
+說明：這張顯示中心干擾被處理後的目標圖。它的用意是讓擬合更專注在圓形輪廓，而不是被中心方塊拖著跑。
+簡報用法：放在方法流程，接在原始 GT 後面，說明處理前後差異。
+注意：它是處理後的目標圖，不是新的實驗照片。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\GT\GT_901_with_Block_proc.bmp
+
+[08] 真正拿來看的圓形邊界遮罩
+分類：新資料目標與前處理
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\03_circle_edge_mask.png
+說明：白色的環就是分析時真正關心的區域。簡單講，這張圖把「我要讓擬合看哪裡」標出來：看圓邊界，不看中心方塊。
+簡報用法：非常適合放在方法頁，直接說明這次不是拿整張圖硬套，而是只讓圓邊界主導擬合。
+注意：遮罩本身不是影像內容，而是一張告訴分析程式該看哪裡的輔助圖。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\GT\circle_edge_mask.bmp
+
+[09] 新資料處理後輸入影像範例：Round1 第 1 格
+分類：新資料目標與前處理
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\04_prepared_input_round1_pos001.png
+說明：這張是新資料正式進入擬合前的處理後輸入影像。可以看到圓形邊界還在，中心干擾已經被弱化或填平，符合這次的擬合策略。
+簡報用法：放在資料處理流程最後，說明原始資料最後變成什麼樣子才送進擬合。
+注意：這是處理後輸入，不是原始相機大圖，也不是擬合輸出。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_001.bmp
+
+[10] 舊資料參考裁切影像：編號 1
+分類：舊資料參考裁切影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\05_legacy_reference_crop_001.png
+說明：這張是舊資料夾裡保留下來的同一圓形樣本裁切影像，編號 1。它可以跟新資料一起放，幫聽眾理解這次用的樣本其實和過去的 GT 是同一類圓形目標。
+簡報用法：適合放在補充頁，說明新舊資料的樣本連續性。
+注意：這是舊資料的影像，不是這次 Round1/2/3 的新拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\VisionTop_20250903160550_1.bmp
+
+[11] 舊資料參考裁切影像：編號 31
+分類：舊資料參考裁切影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\05_legacy_reference_crop_031.png
+說明：這張是舊資料夾裡保留下來的同一圓形樣本裁切影像，編號 31。它可以跟新資料一起放，幫聽眾理解這次用的樣本其實和過去的 GT 是同一類圓形目標。
+簡報用法：適合放在補充頁，說明新舊資料的樣本連續性。
+注意：這是舊資料的影像，不是這次 Round1/2/3 的新拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\VisionTop_20250903161519_31.bmp
+
+[12] 舊資料參考裁切影像：編號 61
+分類：舊資料參考裁切影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\05_legacy_reference_crop_061.png
+說明：這張是舊資料夾裡保留下來的同一圓形樣本裁切影像，編號 61。它可以跟新資料一起放，幫聽眾理解這次用的樣本其實和過去的 GT 是同一類圓形目標。
+簡報用法：適合放在補充頁，說明新舊資料的樣本連續性。
+注意：這是舊資料的影像，不是這次 Round1/2/3 的新拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\VisionTop_20250903162302_61.bmp
+
+[13] 舊資料參考裁切影像：編號 91
+分類：舊資料參考裁切影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\05_legacy_reference_crop_091.png
+說明：這張是舊資料夾裡保留下來的同一圓形樣本裁切影像，編號 91。它可以跟新資料一起放，幫聽眾理解這次用的樣本其實和過去的 GT 是同一類圓形目標。
+簡報用法：適合放在補充頁，說明新舊資料的樣本連續性。
+注意：這是舊資料的影像，不是這次 Round1/2/3 的新拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\VisionTop_20250903162943_91.bmp
+
+[14] 舊資料參考裁切影像：編號 100
+分類：舊資料參考裁切影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\05_legacy_reference_crop_100.png
+說明：這張是舊資料夾裡保留下來的同一圓形樣本裁切影像，編號 100。它可以跟新資料一起放，幫聽眾理解這次用的樣本其實和過去的 GT 是同一類圓形目標。
+簡報用法：適合放在補充頁，說明新舊資料的樣本連續性。
+注意：這是舊資料的影像，不是這次 Round1/2/3 的新拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\VisionTop_20250903163126_100.bmp
+
+[15] Round1 第 1 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round1_selected_FOVs\round1_fov001.png
+說明：這張是第 1 次拍攝中，第 1 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 1 列第 1 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_001.bmp
+
+[16] Round1 第 6 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round1_selected_FOVs\round1_fov006.png
+說明：這張是第 1 次拍攝中，第 6 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 1 列第 6 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_006.bmp
+
+[17] Round1 第 11 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round1_selected_FOVs\round1_fov011.png
+說明：這張是第 1 次拍攝中，第 11 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 1 列第 11 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_011.bmp
+
+[18] Round1 第 56 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round1_selected_FOVs\round1_fov056.png
+說明：這張是第 1 次拍攝中，第 56 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 6 列第 1 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_056.bmp
+
+[19] Round1 第 61 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round1_selected_FOVs\round1_fov061.png
+說明：這張是第 1 次拍攝中，第 61 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 6 列第 6 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_061.bmp
+
+[20] Round1 第 66 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round1_selected_FOVs\round1_fov066.png
+說明：這張是第 1 次拍攝中，第 66 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 6 列第 11 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_066.bmp
+
+[21] Round1 第 111 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round1_selected_FOVs\round1_fov111.png
+說明：這張是第 1 次拍攝中，第 111 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 11 列第 1 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_111.bmp
+
+[22] Round1 第 116 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round1_selected_FOVs\round1_fov116.png
+說明：這張是第 1 次拍攝中，第 116 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 11 列第 6 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_116.bmp
+
+[23] Round1 第 121 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round1_selected_FOVs\round1_fov121.png
+說明：這張是第 1 次拍攝中，第 121 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 11 列第 11 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_121.bmp
+
+[24] Round2 第 1 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round2_selected_FOVs\round2_fov001.png
+說明：這張是第 2 次拍攝中，第 1 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 1 列第 1 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_001.bmp
+
+[25] Round2 第 6 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round2_selected_FOVs\round2_fov006.png
+說明：這張是第 2 次拍攝中，第 6 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 1 列第 6 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_006.bmp
+
+[26] Round2 第 11 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round2_selected_FOVs\round2_fov011.png
+說明：這張是第 2 次拍攝中，第 11 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 1 列第 11 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_011.bmp
+
+[27] Round2 第 56 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round2_selected_FOVs\round2_fov056.png
+說明：這張是第 2 次拍攝中，第 56 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 6 列第 1 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_056.bmp
+
+[28] Round2 第 61 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round2_selected_FOVs\round2_fov061.png
+說明：這張是第 2 次拍攝中，第 61 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 6 列第 6 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_061.bmp
+
+[29] Round2 第 66 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round2_selected_FOVs\round2_fov066.png
+說明：這張是第 2 次拍攝中，第 66 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 6 列第 11 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_066.bmp
+
+[30] Round2 第 111 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round2_selected_FOVs\round2_fov111.png
+說明：這張是第 2 次拍攝中，第 111 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 11 列第 1 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_111.bmp
+
+[31] Round2 第 116 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round2_selected_FOVs\round2_fov116.png
+說明：這張是第 2 次拍攝中，第 116 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 11 列第 6 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_116.bmp
+
+[32] Round2 第 121 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round2_selected_FOVs\round2_fov121.png
+說明：這張是第 2 次拍攝中，第 121 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 11 列第 11 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_121.bmp
+
+[33] Round3 第 1 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round3_selected_FOVs\round3_fov001.png
+說明：這張是第 3 次拍攝中，第 1 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 1 列第 1 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_001.bmp
+
+[34] Round3 第 6 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round3_selected_FOVs\round3_fov006.png
+說明：這張是第 3 次拍攝中，第 6 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 1 列第 6 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_006.bmp
+
+[35] Round3 第 11 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round3_selected_FOVs\round3_fov011.png
+說明：這張是第 3 次拍攝中，第 11 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 1 列第 11 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_011.bmp
+
+[36] Round3 第 56 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round3_selected_FOVs\round3_fov056.png
+說明：這張是第 3 次拍攝中，第 56 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 6 列第 1 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_056.bmp
+
+[37] Round3 第 61 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round3_selected_FOVs\round3_fov061.png
+說明：這張是第 3 次拍攝中，第 61 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 6 列第 6 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_061.bmp
+
+[38] Round3 第 66 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round3_selected_FOVs\round3_fov066.png
+說明：這張是第 3 次拍攝中，第 66 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 6 列第 11 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_066.bmp
+
+[39] Round3 第 111 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round3_selected_FOVs\round3_fov111.png
+說明：這張是第 3 次拍攝中，第 111 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 11 列第 1 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_111.bmp
+
+[40] Round3 第 116 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round3_selected_FOVs\round3_fov116.png
+說明：這張是第 3 次拍攝中，第 116 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 11 列第 6 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_116.bmp
+
+[41] Round3 第 121 格處理後影像
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\Round3_selected_FOVs\round3_fov121.png
+說明：這張是第 3 次拍攝中，第 121 個視野位置的處理後輸入影像；它位在 11x11 視野切分中的第 11 列第 11 欄。這類圖可以用來說明這次不是只看中心，而是用整個視野中不同位置來檢查擬合穩定性。
+簡報用法：可放在附錄或方法頁，當作 11x11 視野切分後的代表位置影像。
+注意：這是送入擬合前的處理後影像，不是原始相機大圖；Round1/2/3 是三次重複拍攝。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_121.bmp
+
+[42] 新資料 L0/L1 重點摘要
+分類：新畫的 L0/L1 統計圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\04_generated_summary_charts\chart_01_key_takeaways_scorecard.png
+說明：這是一張給簡報用的總結圖，把最重要的幾個數字集中在同一頁。核心訊息是：新資料的 L1 三次拍攝差異，整體沒有超過 L0 自己重跑造成的自然波動。
+簡報用法：可以放在結果總結頁，讓聽眾先抓到結論。
+注意：這張是從 JSON 摘要檔重畫的簡報圖，不是原始程式自動輸出的舊圖。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json
+
+[43] L0 三輪各自的重複擬合底噪
+分類：新畫的 L0/L1 統計圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\04_generated_summary_charts\chart_02_l0_noise_floor_by_round.png
+說明：這張圖比較三輪資料各自重複擬合 15 次時的自然波動。可以看到三輪的中位底噪都很小，而且量級接近，代表每一輪資料自己拿去重跑時都算穩。
+簡報用法：放在 L0 結果頁，說明 L0 是「同一批資料自己重跑」得到的底噪，不是三輪拍攝互相比。
+注意：正式 L0 錨點仍是 Round1；Round2/Round3 這裡只是輔助檢查。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json
+
+[44] L1 三次拍攝散布與 L0 底噪比較
+分類：新畫的 L0/L1 統計圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\04_generated_summary_charts\chart_03_l1_capture_vs_l0_floor_by_fov.png
+說明：這張圖是新 L1 最適合放簡報的核心結果。每個視野位置都有兩根柱：藍色是 L0 自己重跑造成的波動，橘色是三次拍攝之間的波動。橘色普遍比藍色小，表示拍攝重複性沒有超過擬合自己的底噪。
+簡報用法：放在 L1 結果頁，直接回答「三次拍攝是否穩定」。
+注意：這裡只畫 9 個代表 FOV，不是 121 格全部；完整資料仍在來源 JSON/CSV。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json
+
+[45] L1 各係數相對 L0 底噪的變化
+分類：新畫的 L0/L1 統計圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\04_generated_summary_charts\chart_04_l1_abs_z_by_coefficient.png
+說明：這張圖把每個係數的三次拍攝差異換成相對於 L0 底噪的讀法。藍色可信係數都遠低於 2，代表主要可讀係數沒有出現超過自身底噪的大幅漂移。
+簡報用法：放在 L1 細節頁，補充不是只有平均穩，而是各主要係數也沒有明顯失控。
+注意：灰色係數不是主要判讀依據，因為有些係數被鎖住、貼邊或幾乎不動。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json
+
+[46] L1 可信係數與視野位置熱圖
+分類：新畫的 L0/L1 統計圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\04_generated_summary_charts\chart_05_l1_capture_std_heatmap.png
+說明：這張圖把 L1 的拍攝間散布拆成「係數 × 視野位置」來看。它可以幫你說明穩定性不是只看一個總平均，而是檢查每個位置、每個主要係數。
+簡報用法：放在附錄或技術結果頁，作為比較完整的 L1 細節圖。
+注意：這張圖只包含可信係數；被鎖住或貼邊的係數不適合作主要讀數。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json
+
+[47] 連拍兩張：圓邊界區域的影像差異
+分類：新畫的連拍補充圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\04_generated_summary_charts\chart_06_paired_frame_edge_diff_heatmap.png
+說明：這張熱圖是在看每個位置連拍兩張影像的圓邊界亮度差異。白話來說，它回答「同一位置馬上拍兩張，邊界區域像不像」。數字多落在相近範圍，代表連拍差異主要是影像層的小變化。
+簡報用法：放在補充實驗頁，說明兩張連拍影像被當成額外檢查，而不是主 L1 軸。
+注意：這是影像差異檢查，不是第二張也拿去做 PSF 擬合後的結果。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_metrics.csv
+
+[48] 連拍兩張：估計中心位移量
+分類：新畫的連拍補充圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\04_generated_summary_charts\chart_07_paired_frame_center_shift_heatmap.png
+說明：這張熱圖在看同一位置連拍兩張時，中心估計會差多少像素。大多數位置差異很小，可用來支持拍攝本身沒有劇烈跳動。
+簡報用法：放在補充實驗頁，搭配上一張邊界差異熱圖一起講。
+注意：這裡的中心位移是影像層估計，不等於最終 PSF 係數漂移。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_metrics.csv
+
+[49] 三輪連拍影像差異分布
+分類：新畫的連拍補充圖
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\04_generated_summary_charts\chart_08_paired_frame_distribution_by_round.png
+說明：這張圖把所有 363 組連拍影像整理成分布。左邊看圓邊界亮度差異，右邊看估計中心位移。它的價值是把連拍影像本身的穩定性用一頁講完。
+簡報用法：放在補充結果頁，回答「每個位置拍兩張到底差多少」。
+注意：這仍是影像層補充檢查，不是主 L1 的 PSF 擬合比較。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_metrics.csv
+
+[50] 新資料擬合目標處理流程總覽
+分類：新資料目標與前處理
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\02_current_experiment_target_and_processing\06_processing_pipeline_panel.png
+說明：這張把原始 GT、處理後 GT、圓邊界遮罩、處理後輸入，以及遮罩疊圖放在同一排。它非常適合用一張圖講清楚：為什麼這次不看中心方塊，而是看圓形邊界。
+簡報用法：放在方法流程頁，當作最主要的資料處理說明圖。
+注意：這張是我由多張來源圖合成的簡報圖；各來源圖也有單獨放在同一資料夾。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\GT\GT_901_original_with_blocks.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\GT\GT_901_with_Block_proc.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\GT\circle_edge_mask.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_061.bmp
+
+[51] Round1/Round2/Round3 中心位置並排
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\round1_round2_round3_fov061_panel.png
+說明：這張把三次拍攝中同一個中心位置 #61 並排。它可以用來白話說明 L1 的意義：不是同一張圖重跑，而是同條件下重新拍三次後再比較。
+簡報用法：放在 L1 實驗設計頁，解釋三個影像集就是三次同條件重複拍攝。
+注意：這是處理後輸入影像並排，不是原始相機大圖。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_061.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_061.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_061.bmp
+
+[52] Round1 九個代表視野總覽
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\round1_selected_9_fov_contact_sheet.png
+說明：這張把 Round1 的九個代表位置排成 3x3：四角、邊中、中心都有。它適合快速說明這次雖然完整 FOV 是 121 格，但正式分析先選了能代表全場的 9 個位置。
+簡報用法：放在資料設計或附錄頁，讓聽眾看到取樣位置的影像樣貌。
+注意：這是代表 9 格的總覽，不是 121 格全圖；完整 121 張仍在原資料夾。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_001.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_006.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_011.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_056.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_061.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_066.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_111.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_116.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\VisionTop_Circle_Round1_121.bmp
+
+[53] Round2 九個代表視野總覽
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\round2_selected_9_fov_contact_sheet.png
+說明：這張把 Round2 的九個代表位置排成 3x3：四角、邊中、中心都有。它適合快速說明這次雖然完整 FOV 是 121 格，但正式分析先選了能代表全場的 9 個位置。
+簡報用法：放在資料設計或附錄頁，讓聽眾看到取樣位置的影像樣貌。
+注意：這是代表 9 格的總覽，不是 121 格全圖；完整 121 張仍在原資料夾。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_001.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_006.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_011.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_056.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_061.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_066.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_111.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_116.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\VisionTop_Circle_Round2_121.bmp
+
+[54] Round3 九個代表視野總覽
+分類：三輪拍攝的代表視野影像
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\03_current_round_examples\round3_selected_9_fov_contact_sheet.png
+說明：這張把 Round3 的九個代表位置排成 3x3：四角、邊中、中心都有。它適合快速說明這次雖然完整 FOV 是 121 格，但正式分析先選了能代表全場的 9 個位置。
+簡報用法：放在資料設計或附錄頁，讓聽眾看到取樣位置的影像樣貌。
+注意：這是代表 9 格的總覽，不是 121 格全圖；完整 121 張仍在原資料夾。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_001.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_006.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_011.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_056.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_061.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_066.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_111.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_116.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\VisionTop_Circle_Round3_121.bmp
+
+[55] Round1 第 1 格原始連拍差異圖
+分類：原始連拍影像範例
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\05_raw_paired_frame_examples\raw_round1_pos001_frame_pair_diff.png
+說明：這張從原始相機大圖做成簡報用縮圖：左邊是同一位置的第一張，中央是第二張，右邊把兩張差異放大顯示。它能直觀說明每個位置其實有連拍兩張，而這兩張主要拿來做影像層補充檢查。
+簡報用法：放在補充實驗頁，解釋「每個位置拍兩張」這件事。
+注意：右邊差異圖為了看得清楚有放大差異，不代表實際亮度差那麼強。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\Circle_Round1\VisionTop_20260615163217629.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\Circle_Round1\VisionTop_20260615163220351.bmp
+
+[56] 三輪原始大圖中心位置並排
+分類：原始連拍影像範例
+檔案：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\05_raw_paired_frame_examples\raw_rounds_fov061_frame1_panel.png
+說明：這張用原始相機大圖的縮圖來看三次拍攝的中心位置。它比處理後小圖更接近實際拍攝現場，可以拿來說明這次 Round1/2/3 是同條件重新拍攝。
+簡報用法：放在實驗設計頁或補充頁，讓人看到原始拍攝資料的樣貌。
+注意：這是縮小後的簡報圖；原始 BMP 很大，完整原檔仍保留在來源資料夾。
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\Circle_Round1\VisionTop_20260615164405026.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\Circle_Round2\VisionTop_20260615170029781.bmp; D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\Circle_Round3\VisionTop_20260615171735249.bmp

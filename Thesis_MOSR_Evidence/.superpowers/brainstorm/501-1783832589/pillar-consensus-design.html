@@ -1,0 +1,78 @@
+<style>
+  .flow { display:grid; grid-template-columns:1.05fr 64px 1.2fr 64px 1.1fr; gap:8px; align-items:center; margin:20px 0 28px; }
+  .panel { border:1px solid #d6dbe0; background:#fff; padding:18px; min-height:250px; }
+  .arrow { text-align:center; font-size:38px; color:#66717b; }
+  .grid9 { display:grid; grid-template-columns:repeat(3,58px); gap:18px; justify-content:center; margin:22px auto; }
+  .p { width:58px; height:58px; border-radius:50%; background:#333940; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; position:relative; }
+  .p.selected { outline:4px solid #16856d; outline-offset:4px; }
+  .pillar-large { width:150px; height:150px; border-radius:50%; background:#343a40; margin:22px auto; position:relative; }
+  .chord { position:absolute; left:-22px; width:194px; height:2px; background:#e7b44b; }
+  .chord::before,.chord::after { content:""; position:absolute; top:-7px; width:4px; height:16px; background:#dd5535; }
+  .chord::before { left:31px; } .chord::after { right:31px; }
+  .centerline { position:absolute; left:73px; top:-10px; width:4px; height:170px; background:#2783c5; }
+  .result-row { display:flex; gap:14px; align-items:flex-end; justify-content:center; height:156px; padding-top:22px; }
+  .dot { width:18px; border-radius:5px 5px 0 0; background:#99a2aa; position:relative; }
+  .dot.good { background:#16856d; }
+  .median { height:4px; background:#e05b38; width:180px; position:absolute; margin-top:-78px; }
+  .rules { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:18px 0; }
+  .rule { border-left:4px solid #16856d; background:#f5f8f7; padding:12px 14px; }
+  .rule strong { display:block; margin-bottom:4px; }
+  .approve { margin-top:24px; }
+  @media(max-width:950px){ .flow{grid-template-columns:1fr;} .arrow{transform:rotate(90deg);} .rules{grid-template-columns:1fr;} }
+</style>
+
+<h2>B 方案定稿第一層：圓柱怎麼被量測</h2>
+<p class="subtitle">每個倍率只在第一張 Raw 影像選一次 3×3 圓柱；之後 Raw 與 V42、0.5 與 1 µm 都沿用同一組圓柱編號與搜尋範圍。</p>
+
+<div class="flow">
+  <div class="panel">
+    <div class="label">1　固定圓柱身分</div>
+    <div class="grid9">
+      <span class="p selected">P1</span><span class="p selected">P2</span><span class="p selected">P3</span>
+      <span class="p selected">P4</span><span class="p selected">P5</span><span class="p selected">P6</span>
+      <span class="p selected">P7</span><span class="p selected">P8</span><span class="p selected">P9</span>
+    </div>
+    <p>先建立九顆固定編號；每顆只在自己的小窗內搜尋，因此不會跳到隔壁重複圖樣。</p>
+  </div>
+  <div class="arrow">→</div>
+  <div class="panel">
+    <div class="label">2　每顆使用成對邊界</div>
+    <div class="pillar-large">
+      <span class="centerline"></span>
+      <span class="chord" style="top:36px"></span>
+      <span class="chord" style="top:56px"></span>
+      <span class="chord" style="top:75px"></span>
+      <span class="chord" style="top:94px"></span>
+      <span class="chord" style="top:114px"></span>
+    </div>
+    <p>沿五條水平切線找左右邊界，兩側中點就是圓柱中心。圓柱同時變大或變小時，中點仍不會移動。</p>
+  </div>
+  <div class="arrow">→</div>
+  <div class="panel">
+    <div class="label">3　九顆形成共同位移</div>
+    <div class="result-row">
+      <span class="dot good" style="height:86px"></span><span class="dot good" style="height:82px"></span>
+      <span class="dot good" style="height:84px"></span><span class="dot" style="height:126px"></span>
+      <span class="dot good" style="height:83px"></span><span class="dot good" style="height:87px"></span>
+      <span class="dot good" style="height:81px"></span><span class="dot good" style="height:85px"></span>
+      <span class="dot good" style="height:82px"></span>
+    </div>
+    <p>九顆位移取穩健中位數；污染、缺角或明顯離群的圓柱被標記，但不會拉走整體答案。</p>
+  </div>
+</div>
+
+<div class="rules">
+  <div class="rule"><strong>同一區域</strong>同倍率的 0.5 與 1 µm 使用同一個 3×3 結構，不為每組資料重新挑框。</div>
+  <div class="rule"><strong>同一身分</strong>以圓柱間距建立固定格點，每步搜尋範圍小於半個間距，避免週期錯配。</div>
+  <div class="rule"><strong>同一判定</strong>Raw 與 V42 共用相同圓柱、相同切線與相同排除條件。</div>
+  <div class="rule"><strong>同時保留可信度</strong>除最終位移外，也輸出九顆之間的分散程度與有效圓柱數，避免只留下漂亮平均。</div>
+</div>
+
+<div class="options approve">
+  <div class="option" data-choice="approve-geometry" onclick="toggleSelect(this)">
+    <div class="letter">✓</div><div class="content"><h3>同意這個量測幾何</h3><p>下一層決定如何選三種倍率的實際圓柱區域，以及論文主表要報哪些數字。</p></div>
+  </div>
+  <div class="option" data-choice="adjust-geometry" onclick="toggleSelect(this)">
+    <div class="letter">↺</div><div class="content"><h3>需要調整</h3><p>回到終端告訴我想改單顆數量、切線方式或圓柱區域。</p></div>
+  </div>
+</div>

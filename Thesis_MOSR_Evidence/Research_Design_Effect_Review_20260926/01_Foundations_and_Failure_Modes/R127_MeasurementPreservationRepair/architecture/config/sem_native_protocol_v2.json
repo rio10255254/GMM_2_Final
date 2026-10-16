@@ -1,0 +1,9 @@
+{
+  "parent": "config/sem_native_protocol.json",
+  "reason": "Native noisy SEM02 generates8false Hough circles with sigma1 initializer. Preserve original failure; use same sigma3 center initializer for all9native images, while720ray measurement remains unchanged. No neural result inputs.",
+  "initialization_gaussian_sigma_native": 3,
+  "Hough_edge_threshold": 40,
+  "Hough_vote_threshold": 40,
+  "all_other_parameters_unchanged": true,
+  "output": "results/sem_native_v2"
+}

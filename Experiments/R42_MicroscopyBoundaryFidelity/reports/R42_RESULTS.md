@@ -22,8 +22,8 @@ R42 的目標是把專案焦點從「環形代理測試」推向「通用顯微�
 
 訓練輸出：
 
-- `r42_boundary_from_combo`：`Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/`
-- `r42_boundary_from_r41`：`Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/`
+- `r42_boundary_from_combo`：代表模型在 `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/`；完整 run 依 `ARCHIVE_POINTER_20260824.md` 從 H 槽恢復。
+- `r42_boundary_from_r41`：代表模型在 `results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/`；完整 run 依 `ARCHIVE_POINTER_20260824.md` 從 H 槽恢復。
 
 注意：舊的 `best_tradeoff.pth.tar` 選擇規則仍偏向舊環形代理邏輯，不完全符合 R42 的邊界目標。因此本報告同時評估 `best_tradeoff.pth.tar` 與 `latest.pth.tar`。
 

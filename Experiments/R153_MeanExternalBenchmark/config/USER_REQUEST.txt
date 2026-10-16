@@ -1,0 +1,296 @@
+請先完整閱讀我提供的最新版論文、2026-10-02的REPORT.md、口試紀錄，以及目前電腦中對應的模型、量測程式與資料，再開始工作。
+
+這次不要重新設計我的MOSR，也不要修改原始論文。我要你完成兩件事情，目的是回應口試委員留下的兩個問題：
+
+1. 九顆柱體的位移目前使用中位數彙整，但口委建議若資料沒有明顯離群值或偏態，應改用平均數。
+2. 口委認為目前模型比較不夠多元，因此需要補完整的外部模型benchmark。
+
+論文目前只提出一個模型：MOSR。
+RAW只是原始影像基準。
+R140、R148、R150、R152等名稱都是內部開發代號，只可以幫你在電腦中找到正確資料，禁止出現在最後要給論文使用的圖、表與文字中。
+
+--------------------------------------------------
+第一件事：重新計算九顆柱體的平均位移
+--------------------------------------------------
+
+請找到目前正式30次掃描的LSC圓心資料與PI平台回授。
+
+資料為：
+- 30次掃描
+- 每次31張影像
+- 固定9顆柱體
+- 每次包含30個相鄰步距
+- 固定尺度0.1725 μm/pixel
+- 使用目前既定的移動方向
+- RAW與MOSR必須使用完全相同的量測資料與規則
+
+目前舊算法是：
+每顆柱體先算圓心位移，再對九顆的x與y分量分別取中位數，最後投影到移動方向。
+
+請先重現舊結果，確認你找到的是正確資料。
+
+之後改成：
+
+每一步先計算九顆柱體各自的LSC圓心位移，
+再將九個二維位移向量直接取算術平均，
+最後投影到固定移動方向。
+
+也就是新的主要位移應為：
+
+mean displacement vector
+= mean of the 9 pillar displacement vectors
+
+不要重新計算LSC，不要改輪廓，不要改比例，不要改PI，也不要重新推論MOSR。
+
+重新計算之後，至少輸出：
+
+1. 每一趟30個相鄰步距的sample standard deviation
+2. 30趟的pooled within-scan SD
+3. adjacent displacement相對PI的MAE
+4. RMSE
+5. signed bias
+6. maximum absolute error
+7. relative-to-start displacement error
+8. endpoint error
+9. 九顆柱體在同一步的位移離散程度
+
+其中最主要的指標仍然是：
+
+「一次掃描中30個相鄰步距的standard deviation」
+
+30次掃描會得到30個SD，再計算：
+
+pooled SD = sqrt(mean(SD_each_scan^2))
+
+請同時保留舊median版本，做mean vs median sensitivity comparison。
+
+平均數版本要作為新的主要分析。
+如果平均數算出來後MOSR的改善百分比或30/30趟改善結論改變，就直接使用新的真實結果，不可以沿用舊數字。
+
+--------------------------------------------------
+第二件事：補完整的外部模型benchmark
+--------------------------------------------------
+
+這次benchmark固定比較以下12種方法：
+
+1. RAW
+2. Wiener
+3. U-Net
+4. EDSR-x1
+5. RDN-x1
+6. RCAN-x1
+7. NAFNet
+8. SwinIR
+9. Restormer
+10. MambaIRv2
+11. USRNet-x1
+12. MOSR
+
+這些方法的目的不是全部都要贏MOSR，而是要建立一個足夠多元的公平比較。
+
+它們分別代表：
+
+- RAW：未重建基準
+- Wiener：傳統PSF反卷積
+- U-Net：一般encoder-decoder
+- EDSR：residual CNN
+- RDN：dense feature fusion
+- RCAN：channel attention CNN
+- NAFNet：現代image restoration CNN
+- SwinIR：window-based Transformer
+- Restormer：image restoration Transformer
+- MambaIRv2：state-space / Mamba類image restoration
+- USRNet：結合PSF forward model與deep unfolding的重建方法
+- MOSR：本文提出的方法
+
+請優先使用各方法作者的官方程式。
+不要使用公開pretrained weights。
+所有外部神經網路都必須使用本研究相同的合成資料重新訓練。
+
+如果某個官方模型真的無法在目前環境中合理執行，請清楚記錄原因並標記blocked，不要自己寫一個簡化CNN冒充該模型。
+
+--------------------------------------------------
+Benchmark公平條件
+--------------------------------------------------
+
+所有外部神經模型使用相同的目前研究訓練資料：
+
+- 512 training scenes
+- 128 validation scenes
+- 128 test scenes
+- 每個scene有4張具有已知相對位移的影像
+
+使用相同的合成影像形成方式，包括：
+- 實測PSF模糊
+- 位移
+- brightness / contrast
+- noise
+- pixel integration
+- quantization
+
+不要加入930張實拍、PI或SEM資料做訓練。
+
+所有外部神經模型使用相同的主要訓練目標：
+
+L_image
++ 0.2 L_gradient
++ 0.2 L_pair
++ 0.2 L_boundary
++ 0.01 L_observation
+
+請直接沿用目前研究程式中這些loss的正式定義，不要自己重新設計loss。
+
+各模型從零訓練。
+使用相同training budget與固定random seed。
+不要看930張實拍結果來挑checkpoint或調參。
+
+MOSR本身保持現在正式權重，不重訓、不修改。
+
+--------------------------------------------------
+930張實拍比較
+--------------------------------------------------
+
+所有完成的模型都必須處理同一批930張實拍。
+
+所有模型使用完全相同的後續量測程序：
+
+RAW固定物件對應
+→ Chan–Vese ACM粗輪廓
+→ 沿法線搜尋最大灰階梯度
+→ 取得64個亞像素邊界點
+→ LSC圓心與半徑
+→ 相同尺度與相同移動方向
+→ PI只在最後作參照
+
+禁止各模型自己調整ACM、比例、位置、PI或尺寸。
+
+不要做額外sharpen、registration、diameter correction或per-image contrast normalization。
+
+--------------------------------------------------
+Benchmark主要比較指標
+--------------------------------------------------
+
+論文主benchmark只需要抓住三個主要指標：
+
+1. Within-scan displacement SD
+   一次掃描30個步距的標準差及30次掃描的pooled SD
+
+2. Adjacent displacement PI MAE
+   相鄰位移相對PI回授的平均絕對差
+
+3. Contour repeatability SD
+   相同pillar、相同位置在30次掃描中的完整輪廓重複量測標準差
+
+另外補充：
+
+- diameter repeatability SD
+- mean-radius-removed contour shape repeatability
+- nine-pillar displacement dispersion
+- relative-to-start error
+- endpoint error
+- SEM diameter difference
+- SEM contour difference
+- parameter count
+- inference time
+- GPU memory
+- measurement failure rate
+
+合成test set另外計算PSNR、SSIM及各loss。
+
+實拍資料沒有clean ground truth，所以不要拿RAW當GT計算PSNR或SSIM。
+
+--------------------------------------------------
+統計
+--------------------------------------------------
+
+主要實拍結果請以完整scan為配對單位做paired bootstrap。
+
+不要把：
+- 900個步距
+- 9顆pillar
+- 720個輪廓方向
+
+當作獨立重複實驗。
+
+請對MOSR相對RAW與每個外部方法計算主要指標差值與95% paired interval。
+
+若區間跨零就照實寫。
+
+--------------------------------------------------
+效率比較
+--------------------------------------------------
+
+所有神經模型要在同一GPU、FP32、batch=1條件下重新量一次。
+
+不要搬以前不同日期的runtime來比較。
+
+請報：
+
+- parameter count
+- inference time
+- peak allocated GPU memory
+- peak reserved GPU memory
+
+所有模型使用相同幾張固定實拍作速度測試。
+
+--------------------------------------------------
+最後我要你交付
+--------------------------------------------------
+
+第一部分：
+
+一份mean vs median報告，清楚告訴我：
+
+- 改成mean後RAW結果是多少
+- MOSR結果是多少
+- 原本median結果是多少
+- 主要結論有沒有改變
+- 哪些scan或pillar造成mean與median差異
+
+第二部分：
+
+一份完整benchmark報告，列出：
+
+- 12種方法的設定
+- 哪些模型成功完成
+- 哪些blocked
+- synthetic test結果
+- 三個主要實拍指標
+- geometry與SEM結果
+- runtime / parameters / memory
+- failure rate
+- MOSR在哪些指標較好
+- 哪些外部模型在哪些指標優於MOSR
+
+不要為了讓MOSR看起來比較好而修改比較規則。
+
+第三部分：
+
+建立THESIS_UPDATE_MAP.md。
+
+告訴我之後最新版論文需要：
+
+- 哪些mean/median公式與數字要改
+- benchmark應該插入第六章哪裡
+- 主表應該放哪些指標
+- 哪些詳細結果建議移到附錄
+- 幫我擬好正式論文用繁體中文敘述
+
+本輪先不要修改我的Word。
+
+--------------------------------------------------
+最重要的原則
+--------------------------------------------------
+
+這次不是要證明MOSR所有項目第一。
+
+而是要正式回應口試委員：
+
+1. 為什麼九顆位移要用mean或median？
+2. MOSR與不同類型的重建模型相比，到底表現如何？
+
+所以請公平比較。
+
+如果別的模型某項比MOSR好，就直接報告。
+
+不要改資料、改metric、改樣品或刪掉不利結果來保護MOSR。

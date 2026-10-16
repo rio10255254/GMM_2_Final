@@ -1,0 +1,205 @@
+{
+  "experiment_id": "R75v2_R61ArchitectureScratchGeneralization",
+  "created_date": "2026-07-31",
+  "status": "formal_training_complete_100_epochs_analysis_complete",
+  "scientific_question": "Can the unchanged R61v16 architecture become more broadly usable when scratch-trained on exposure-decoupled, noncircular, multi-object, boundary-fade, composite-degradation, and conservative identity examples?",
+  "architecture": {
+    "source_file": "model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py",
+    "class_name": "GeoEdgeAlignSR_v1_v5_NoCoord",
+    "base_channels": 48,
+    "full_network_trainable": true,
+    "architecture_changed_from_r75": false,
+    "checkpoint_loading_allowed": false,
+    "teacher_models_allowed": false,
+    "boundary_adapter": {
+      "enabled": true,
+      "hidden_channels": 16,
+      "max_residual": 0.018,
+      "gate_bias": -2.0,
+      "orientation_inputs": true,
+      "polarity_split": false
+    },
+    "psf_policy": "Nine fully analytic Gaussian kernels generated inside each data package; no fitted or measured PSF is used."
+  },
+  "source_isolation": {
+    "required_provenance_kind": "procedural_primitive",
+    "required_generator": "r75v2_diverse_primitives_supersampled_v3",
+    "real_image_pixels_allowed": false,
+    "sem_structure_allowed": false,
+    "hs100mg_structure_allowed": false,
+    "legacy_training_pairs_allowed": false,
+    "pseudo_labels_allowed": false,
+    "forbidden_value_tokens": [
+      "sem",
+      "hs100mg",
+      "100mg",
+      "real_microscope",
+      "real_crop",
+      "basler",
+      "pillar",
+      "teacher",
+      "pseudo_label"
+    ],
+    "forbidden_record_keys": [
+      "source_package",
+      "source_path",
+      "sem_reference_id",
+      "sem_radius_nm",
+      "target_radius_nm",
+      "real_crop_path",
+      "checkpoint",
+      "teacher_checkpoint"
+    ]
+  },
+  "dataset": {
+    "generator_version": "r75v2_diverse_primitives_supersampled_v3",
+    "image_size": 256,
+    "label_supersample_factor": 8,
+    "label_downsample_method": "area_average",
+    "label_edge_policy": "Exact geometry is drawn at 8x. A mild recorded optical edge band-limit is applied at 8x before area downsampling; the exact binary contour is retained separately for geometry loss.",
+    "split_seed": 752031,
+    "split_ratios": {
+      "train": 0.8,
+      "validation": 0.1,
+      "internal_test": 0.1
+    },
+    "split_unit": "geometry_id",
+    "stage_name": "stage_r75v2_diverse_primitives",
+    "roles": {
+      "basic_geometry": {
+        "renderings_per_geometry": 8,
+        "description": "Elementary analytic shapes across independent polarity, exposure, contrast, and composite degradation."
+      },
+      "fine_noncircular": {
+        "renderings_per_geometry": 8,
+        "description": "Concave, lobed, narrow-neck, hollow, rough, and asymmetric procedural shapes."
+      },
+      "multi_object_layout": {
+        "renderings_per_geometry": 8,
+        "description": "Sparse and dense multi-object fields, multiple scales, staggered layouts, and crop-edge truncation."
+      },
+      "exposure_sequence": {
+        "renderings_per_geometry": 10,
+        "description": "Five ordered exposure levels for both bright and dark objects while keeping the geometry fixed."
+      },
+      "boundary_fade_mixed": {
+        "renderings_per_geometry": 8,
+        "description": "Local boundary disappearance plus co-occurring blur, asymmetric halo, shadow, noise, and illumination effects."
+      },
+      "identity_guard": {
+        "renderings_per_geometry": 8,
+        "description": "Four exact identity and four near-identity pairs per geometry to teach conservative behavior."
+      }
+    },
+    "profiles": {
+      "smoke": {
+        "role_geometry_counts": {
+          "basic_geometry": 3,
+          "fine_noncircular": 3,
+          "multi_object_layout": 3,
+          "exposure_sequence": 3,
+          "boundary_fade_mixed": 3,
+          "identity_guard": 3
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 1, "validation": 1, "internal_test": 1},
+          "fine_noncircular": {"train": 1, "validation": 1, "internal_test": 1},
+          "multi_object_layout": {"train": 1, "validation": 1, "internal_test": 1},
+          "exposure_sequence": {"train": 1, "validation": 1, "internal_test": 1},
+          "boundary_fade_mixed": {"train": 1, "validation": 1, "internal_test": 1},
+          "identity_guard": {"train": 1, "validation": 1, "internal_test": 1}
+        },
+        "expected_pairs": 150
+      },
+      "pilot": {
+        "role_geometry_counts": {
+          "basic_geometry": 12,
+          "fine_noncircular": 12,
+          "multi_object_layout": 12,
+          "exposure_sequence": 12,
+          "boundary_fade_mixed": 12,
+          "identity_guard": 12
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 8, "validation": 2, "internal_test": 2},
+          "fine_noncircular": {"train": 8, "validation": 2, "internal_test": 2},
+          "multi_object_layout": {"train": 8, "validation": 2, "internal_test": 2},
+          "exposure_sequence": {"train": 8, "validation": 2, "internal_test": 2},
+          "boundary_fade_mixed": {"train": 8, "validation": 2, "internal_test": 2},
+          "identity_guard": {"train": 8, "validation": 2, "internal_test": 2}
+        },
+        "expected_pairs": 600
+      },
+      "formal": {
+        "role_geometry_counts": {
+          "basic_geometry": 112,
+          "fine_noncircular": 144,
+          "multi_object_layout": 96,
+          "exposure_sequence": 128,
+          "boundary_fade_mixed": 64,
+          "identity_guard": 64
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 90, "validation": 11, "internal_test": 11},
+          "fine_noncircular": {"train": 114, "validation": 15, "internal_test": 15},
+          "multi_object_layout": {"train": 76, "validation": 10, "internal_test": 10},
+          "exposure_sequence": {"train": 104, "validation": 12, "internal_test": 12},
+          "boundary_fade_mixed": {"train": 51, "validation": 7, "internal_test": 6},
+          "identity_guard": {"train": 51, "validation": 6, "internal_test": 7}
+        },
+        "expected_pairs": 5120
+      }
+    },
+    "formal_role_pair_counts": {
+      "basic_geometry": 896,
+      "fine_noncircular": 1152,
+      "multi_object_layout": 768,
+      "exposure_sequence": 1280,
+      "boundary_fade_mixed": 512,
+      "identity_guard": 512
+    },
+    "training_shape_scope": "Only analytic and stochastic procedural geometry; no measured outline, crop, sample radius list, exact sample pitch, or externally extracted contour.",
+    "rendering_scope": "Independent foreground polarity and background exposure plus composite blur, defocus, asymmetric halo, ghosting, local boundary fade, shadow, vignetting, gamma, saturation, quantization, Poisson/read noise, banding, and fixed-pattern texture."
+  },
+  "held_out_evaluation": {
+    "internal_test_usage": "Unseen geometry IDs kept out of training and validation by a fixed geometry-grouped split.",
+    "previous_external_suites_role": "Development evidence only because their failure modes informed this dataset design.",
+    "final_external_rule": "Promotion requires a newly frozen synthetic contour suite and an independent real optical/SEM confirmation set not used to design this dataset."
+  },
+  "live_validation": {
+    "enabled": true,
+    "relative_image_path": "data/live_validation/pillar_center9_50x_raw.bmp",
+    "every_n_epochs": 5,
+    "role": "observation_only_no_loss_no_selection_no_training_control",
+    "pillar_ids": [22, 23, 24, 28, 29, 30, 34, 35, 36]
+  },
+  "training": {
+    "formal_epochs": 100,
+    "learning_rate": 0.00002,
+    "amp_enabled": false,
+    "batch_size": 8,
+    "validation_batch_size": 2,
+    "crop_size": 256,
+    "seed": 752031,
+    "stability_seeds": [752031, 752032, 752033],
+    "deterministic_split": true,
+    "group_balancing_keys": [
+      "training_role",
+      "polarity",
+      "shape_family",
+      "degradation_family",
+      "exposure_level"
+    ],
+    "primary_selection_metrics": [
+      "validation reconstruction error",
+      "validation edge error",
+      "internal-test ACM contour IoU",
+      "internal-test mean symmetric boundary distance",
+      "identity drift",
+      "halo score",
+      "worst exposure bin",
+      "worst shape family"
+    ]
+  },
+  "promotion_rule": "R75-v2 remains a research candidate until it passes the grouped internal test, a newly frozen external synthetic contour suite, and independent real imaging confirmation without identity drift, halo growth, or family-level collapse."
+}

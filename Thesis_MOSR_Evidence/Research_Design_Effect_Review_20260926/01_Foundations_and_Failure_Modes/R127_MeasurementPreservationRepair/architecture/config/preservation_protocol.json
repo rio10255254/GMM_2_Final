@@ -1,0 +1,9 @@
+{
+  "intervention": "Operator-aware exact preservation, not an image sharpness classifier",
+  "activate_only_if": "Known procedural physical operator has unit1x1kernel, gain1,bias0 and independently declared actual sensor noise0; numerical likelihood variance floor is not the actual sensor noise",
+  "other_cases": "Execute unchanged R126 reconstruction; noisy identity and noiseless blur must not be bypassed",
+  "weights": "Frozen R126 Q seed1265002 final128; no weight tuning and no additional optimizer updates",
+  "checks": "All6original procedural identity scenes;100new arbitrary gray inputs; noisy identity; representative blurred and flat controls; all6fixed real full images with unknown physical noise; refusal of unsupported qualification",
+  "require": "Exact native preservation for covered cases, unchanged base outputs elsewhere, actual restoration still executed for noisy/blurred cases",
+  "limitations": "Cannot prove an arbitrary real input is clean without trustworthy imaging/noise information. Preserving all inputs would fail usefulness. This does not repair every real restoration defect or promote R126."
+}

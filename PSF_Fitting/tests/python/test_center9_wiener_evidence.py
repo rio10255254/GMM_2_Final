@@ -1,6 +1,7 @@
 import csv
 import json
 import math
+import re
 from pathlib import Path
 
 import numpy as np
@@ -29,7 +30,7 @@ def read_csv(name: str) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def test_center9_wiener_outputs_are_sharper_and_cd_moves_toward_sem() -> None:
+def test_center9_wiener_outputs_match_frozen_parameters_and_all_pillar_results() -> None:
     summaries = read_csv("cd_before_after_summary.csv")
     per_pillar = read_csv("cd_before_after_per_pillar.csv")
     sensitivity = read_csv("cd_threshold_sensitivity.csv")
@@ -39,9 +40,12 @@ def test_center9_wiener_outputs_are_sharper_and_cd_moves_toward_sem() -> None:
     assert len(per_pillar) == 18
     assert len(sensitivity) == 6
 
+    recipe = (SOURCE_ROOT / "run_wiener_deconvolution.m").read_text(encoding="utf-8")
+    fixed_nsr = float(re.search(r"calibrated_common_nsr\s*=\s*([0-9.]+)", recipe).group(1))
+    assert fixed_nsr == 0.05
     for row in summaries:
         required = [
-            "fixed_aggressive_nsr",
+            "calibrated_common_nsr",
             "raw_mean_edge_width_px",
             "deconvolved_mean_edge_width_px",
             "edge_width_change_percent",
@@ -51,9 +55,21 @@ def test_center9_wiener_outputs_are_sharper_and_cd_moves_toward_sem() -> None:
         ]
         values = [float(row[name]) for name in required]
         assert all(math.isfinite(value) for value in values)
-        assert math.isclose(float(row["fixed_aggressive_nsr"]), 0.08, abs_tol=1e-12)
+        assert math.isclose(float(row["calibrated_common_nsr"]), fixed_nsr, abs_tol=1e-12)
         assert float(row["edge_width_change_percent"]) < 0
-        assert float(row["mae_change_percent"]) < 0
+        # Integrity checks must retain an adverse result rather than require a
+        # scientific win. This frozen 50x result is sharper but worse in CD.
+        pillars = [p for p in per_pillar if p["magnification"] == row["magnification"]]
+        assert len(pillars) == 9
+        raw_errors = np.array([abs(float(p["raw_cd_nm"]) - float(p["sem_cd_nm"])) for p in pillars])
+        restored_errors = np.array([abs(float(p["deconvolved_cd_nm"]) - float(p["sem_cd_nm"])) for p in pillars])
+        np.testing.assert_allclose(raw_errors, [float(p["raw_abs_error_nm"]) for p in pillars], atol=1e-10, rtol=0)
+        np.testing.assert_allclose(restored_errors, [float(p["deconvolved_abs_error_nm"]) for p in pillars], atol=1e-10, rtol=0)
+        assert math.isclose(float(row["raw_mae_nm"]), float(raw_errors.mean()), abs_tol=1e-10)
+        assert math.isclose(float(row["deconvolved_mae_nm"]), float(restored_errors.mean()), abs_tol=1e-10)
+        assert int(float(row["pillars_improved"])) == int(np.count_nonzero(restored_errors < raw_errors))
+        expected_change = 100 * (restored_errors.mean() / raw_errors.mean() - 1)
+        assert math.isclose(float(row["mae_change_percent"]), float(expected_change), abs_tol=1e-10)
         assert int(float(row["deconvolved_inverted_centers"])) == 0
 
     expected_png = [
@@ -112,7 +128,8 @@ def test_spectra_use_absolute_dbfs_without_per_image_normalization() -> None:
         wiener_path = WIENER_ROOT / f"{magnification}_wiener_deconvolution.mat"
         result = loadmat(wiener_path)
         restored = np.asarray(result["restored"], dtype=float)
-        assert float(np.asarray(result["nsr"]).squeeze()) == 0.08
+        assert float(np.asarray(result["nsr"]).squeeze()) == 0.05
+        assert "background" in result and "restored_contrast" in result
         assert restored.ndim == 2
         assert np.isfinite(restored).all()
 
@@ -164,7 +181,7 @@ def test_spectra_use_absolute_dbfs_without_per_image_normalization() -> None:
         record = manifest["records"][magnification]
         assert record["wiener_source"] == str(wiener_path)
         assert record["wiener_array"] == "restored"
-        assert record["wiener_nsr"] == 0.08
+        assert record["wiener_nsr"] == 0.05
 
         for name in (
             "07_original_pillar_3x3_spectrum.png",

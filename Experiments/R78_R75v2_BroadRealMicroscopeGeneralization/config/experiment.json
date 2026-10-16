@@ -1,0 +1,115 @@
+{
+  "experiment_id": "R78_R75v2_BroadRealMicroscopeGeneralization",
+  "eligibility_lock": {
+    "locked_at": "2026-08-01T00:00:00+08:00",
+    "locked_before_r75v2_output_review": true,
+    "policy": "Reuse the R68 Raw-selected tiles, adjacent-pair timing exclusions, and Raw eligibility unchanged for both models.",
+    "primary_independent_unit": "sequence",
+    "secondary_unit": "tile-pair measurement"
+  },
+  "claim_boundaries": {
+    "acm_sem_arm": "Shape accuracy on 36 central pillars across 12 exposures using real SEM contours.",
+    "real_fov_arm": "Motion and structure stability on 301 real microscope frames across six sequences.",
+    "not_claimed": "Universal performance on every future sample, material, instrument, or unseen morphology."
+  },
+  "r75v2": {
+    "label": "R75v2E100",
+    "checkpoint": "D:/GMM_2_Final/Experiments/R75v2_R61ArchitectureScratchGeneralization/runs/training_progress_LAB_GESR_v1_v5_R75v2_scratch_formal_seed752031_diverse_data_e100_20260731_163219/epoch_100.pth.tar",
+    "checkpoint_sha256": "475794ea253d0cc1ac1e866a0e2a19610dc1ecb9292c145d55e3003d2c585eae",
+    "inference_script": "D:/GMM_2_Final/Experiments/R75v2_R61ArchitectureScratchGeneralization/inference/infer_r75v2.py",
+    "device": "cuda:0",
+    "tile_size": 512,
+    "overlap": 64
+  },
+  "r61": {
+    "label": "R61v16",
+    "checkpoint": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar"
+  },
+  "locked_r68_evidence": {
+    "config": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json",
+    "config_sha256": "15420258b61fa80a8630e2ab0b9627e0222dda95e9a7a05062c161e8070e1632",
+    "measurements": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv",
+    "measurements_sha256": "3f48cdebfd032e3231c6b1ba6315fd10535125675d99dbbb0f92dfe8a49fb7d4",
+    "summary": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/sequence_summary.csv",
+    "summary_sha256": "6b8b47e6278b6d64a1d5f21038f0d6a1a9919b479b4435dec4af5e9bc7672e1d"
+  },
+  "acm_sem_evidence": {
+    "decision": "D:/GMM_2_Final/Experiments/R77_R75v2ACMContourSEMValidation/results/decision.json",
+    "per_pillar_summary": "D:/GMM_2_Final/Experiments/R77_R75v2ACMContourSEMValidation/results/tables/six_method_per_pillar_summary.csv",
+    "per_pillar_summary_sha256": "d4621707dfa3d4425cc4d2d5904fb33cec210d9a1d38ff45366aa5d1dbe50d52",
+    "report": "D:/GMM_2_Final/Experiments/R77_R75v2ACMContourSEMValidation/reports/R77_RESULTS_TW.md"
+  },
+  "tile_grid": {
+    "columns": 8,
+    "rows": 6,
+    "selected_tiles": 24
+  },
+  "motion_gates": {
+    "minimum_valid_fraction": 0.9,
+    "minimum_direction_agreement": 0.95,
+    "maximum_median_scale_error_fraction": 0.1,
+    "maximum_median_difference_of_step": 0.1,
+    "maximum_p95_difference_of_step": 0.25,
+    "minimum_median_response_ratio": 0.65,
+    "minimum_median_ecc": 0.9
+  },
+  "artifact_diagnostic": {
+    "frame_indices": [0, 12, 24, 36, -1],
+    "primary_raw_edge_percentile": 85,
+    "primary_reconstruction_edge_percentile": 95,
+    "primary_distance_px": 3,
+    "raw_edge_percentile_sensitivity": [80, 85, 90],
+    "distance_px_sensitivity": [2, 3, 4],
+    "interpretation": "Diagnostic only. A high value flags strong reconstructed edges far from strong Raw edges; it is not a truth-based accuracy gate."
+  },
+  "sequences": {
+    "5x_0p5um": {
+      "magnification": 5,
+      "nominal_step_um": 0.5,
+      "frame_count": 50,
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp",
+      "r61_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um/bmp",
+      "r61_manifest": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um_manifest.json"
+    },
+    "5x_1um": {
+      "magnification": 5,
+      "nominal_step_um": 1.0,
+      "frame_count": 50,
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp",
+      "r61_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp",
+      "r61_manifest": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um_manifest.json"
+    },
+    "20x_0p5um": {
+      "magnification": 20,
+      "nominal_step_um": 0.5,
+      "frame_count": 50,
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
+      "r61_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um/bmp",
+      "r61_manifest": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um_manifest.json"
+    },
+    "20x_1um": {
+      "magnification": 20,
+      "nominal_step_um": 1.0,
+      "frame_count": 50,
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
+      "r61_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp",
+      "r61_manifest": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um_manifest.json"
+    },
+    "50x_0p5um": {
+      "magnification": 50,
+      "nominal_step_um": 0.5,
+      "frame_count": 51,
+      "raw_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
+      "r61_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um/bmp",
+      "r61_manifest": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um_manifest.json"
+    },
+    "50x_1um": {
+      "magnification": 50,
+      "nominal_step_um": 1.0,
+      "frame_count": 50,
+      "raw_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
+      "r61_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp",
+      "r61_manifest": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um_manifest.json"
+    }
+  }
+}

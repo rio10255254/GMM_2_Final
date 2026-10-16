@@ -1,0 +1,53 @@
+{
+  "model_key": "nafnet",
+  "model_spec": {
+    "name": "Compact NAFNet",
+    "family": "NAFNet",
+    "year": 2022,
+    "category": "modern restoration CNN",
+    "kwargs": {
+      "image_channels": 1,
+      "width": 20,
+      "middle_blocks": 4,
+      "encoder_blocks": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "decoder_blocks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "source": "Chen et al., ECCV 2022",
+    "adaptation": "existing MOSR benchmark checkpoint"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\nafnet\\best_nafnet.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.09859058935593203,
+    "l1": 0.06578511640472164,
+    "rmse": 0.09319968368596769,
+    "ssim": 0.8360734494055009
+  },
+  "parameter_count": 4182141,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.1661638499936089,
+  "median_displacement_roi_inference_seconds": 0.05781149999529589
+}

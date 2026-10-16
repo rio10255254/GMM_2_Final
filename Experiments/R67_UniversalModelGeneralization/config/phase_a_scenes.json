@@ -1,0 +1,23 @@
+{
+  "phase": "A_current_development_domain",
+  "independent_holdout": false,
+  "sequences": {
+    "50x_x_0p5um": {
+      "raw_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
+      "frame_count": 51
+    },
+    "50x_x_1um": {
+      "raw_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
+      "frame_count": 50
+    },
+    "20x_0p5um": {
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
+      "frame_count": 50
+    },
+    "20x_1um": {
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
+      "frame_count": 50
+    }
+  }
+}
+

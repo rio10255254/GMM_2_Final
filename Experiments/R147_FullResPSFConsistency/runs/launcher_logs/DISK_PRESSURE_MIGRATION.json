@@ -1,0 +1,10 @@
+{
+  "reason": "D-drive free space falling during separate concurrent write; preserve checkpoint and resume from last complete step",
+  "checkpoint_step": 2944,
+  "checkpoint_sha256": "cb3359b2ffd92aec3a8826ea678972eef05576a37523e3397fc41678db808cdb",
+  "logged_steps_before": 3047,
+  "preserved_uncheckpointed_steps": 103,
+  "preserved_log_tail": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\runs\\launcher_logs\\uncheckpointed_steps_02945_03047.jsonl",
+  "resumable_log_steps": 2944,
+  "original_run": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\runs\\formal_8192"
+}

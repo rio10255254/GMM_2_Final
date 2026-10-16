@@ -1,53 +1,315 @@
 # PROJECT STATE / 專案狀態
 
-Last updated: 2026-05-11（R39R40_avg_a025 升為 approved alternate；balanced full-spectrum slot）
+Last updated: 2026-10-16（共用相機原始資料已追回並核對；GitHub重現整理執行中）
 
 專案控制與整體巡檢請使用 `python Tools/project_control_center.py`。
 機器真相：`ESTIMATOR_POLICY.json`。
 
 <!-- QUICK_HANDOFF_START -->
-## 🟢 Quick Handoff (3-min read)
-
-### Current Formal Baseline
-**COMBO / r38v2_8px_gate_p95** (effective 2026-04-08)
-
-### Approved Alternates
-- `R33 / r33_robust_p95` — GMF extreme alternate
-- `R38v2 / r38v2_8px_gate` — visual priority alternate
-- `R39R40_avg_a025 / r39r40_complementary_avg_a025` — **balanced full-spectrum alternate（2026-05-11 升級）**；R39 a030 與 R40 a043 跨輪權重平均 α=0.25 點；外部 GMF 三尺度都在 ±5.18% 內（首個過 3% 升級上限的候選）；12 個顯微/形狀分類 PSNR 全勝 COMBO 跟 a030；視覺在 sharp band（vs R30 約 +78.1%）
-
-### Former Baseline
-`Round30 / r30_b1_dironly` — historical former baseline (歷史前任 baseline)
-
-### Open Research / Side Tracks
-- `R45_FamilyBoundaryAdapter` — R45A/R45B 完成：輸出端小校正守住位移但沒有改善大區塊/混合形狀；R45B 診斷確認能力分散存在（逐張 oracle `0.2253` vs R44B `0.3384`，改善 `33.42%`；固定分族 oracle `0.2968`，改善 `12.30%`），但老師優勢不乾淨，多數老師在邊界像素殘差方向比 R44B 更差；**研究負結果，不送外部 GMF。下一步若繼續單一入口，應做中間特徵層小分支 + 局部選擇器，而不是輸出端校正或全圖蒸餾**
-- `R44_UniversalBoundaryMotionFidelity` — R44A-R44H Step B 皆完成；`r44_motion_from_r42_best` 仍是最佳通用位移候選（整體位移 `0.3813 px`、格線位移 `2.2457 px`）。R44H Step A 顯示家族平均可改善大區塊/混合形狀但會犧牲位移；Step B 單一老師局部蒸餾守住位移（`0.3837 px`）但形狀錯誤變差（`0.3481` vs `0.3384`）；**研究成功但不可升級，不建議進 Step C 多老師全模型蒸餾，下一步應轉向 adapter / 分族小頭 / 分族選擇**
-- `R43_CandidateUsabilityAudit` — analysis-only 近期候選堪用性盤點與肉眼檢查圖已完成；結論是沒有新候選可全面取代 COMBO，但 `R39 a030` 是目前最接近正式替代討論的近期候選，`R42` full endpoints 是顯微邊界重建最有價值的研究/人工檢查候選；完整表見 `reports/R43A_USABILITY_AUDIT.md`
-- `R42_MicroscopyBoundaryFidelity` — 訓練、本地分析、低比例權重平均、守門 KD 診斷與外部 GMF 補測皆已完成；未看過顯微邊界重建明顯改善（`PSNR 34.18`、boundary F1 `0.87`，COMBO 為 `20.55` / `0.63`），但最佳外部候選 `r42_r41_best` 仍退步過大（8px +24.63%、0.8px +94.33%、0.08px +98.87%）；**研究用途，不可作量測替代**
-- `R41_RingDistillation` — training + COMBO/R41 sweep complete; direct endpoint proves microscopy capacity (`PSNR 29.4556`, HF `0.7241`), but no alpha passes both microscopy and local ring guard; high-alpha 0.45/0.50 passes microscopy but fails ring 0.8px/0.08px; **research-only, no external GMF candidate**
-- `R39_ShapeGeneralization` — `r39_combo_strong_avg_a030`（COMBO 與 R39_strong 在 α=0.30 的權重平均）external GMF **PASS_TRADEOFF**（8px −6.94%、0.08px −15.97%、0.8px +6.42%）；0.08px 為專案歷史最低；視覺在 sharp band（edge_steepness 比 COMBO 退 5.64%，遠優於 R33 −22%）；**alternate-grade，等專案決策是否升級為 approved alternate**
-- `R40_MicroscopyFeatureCoverage` — 顯微特徵能力上限成立,`r40_combo_best_avg_a045` 明顯改善格線/紋理/缺陷驗證,但 external GMF 8px `0.189750` vs COMBO `0.154515`（+22.80%）;**research-only,不升級**。α 補密 sweep（2026-05-11）跑 `0.42`/`0.43`/`0.44`：α=0.43 外部 8 px `−5.91%` / 0.8 px `−3.15%` 但 0.08 px `+21.52%`，三個 α 都仍 RESEARCH_CAPACITY_ONLY；揭露 weight averaging trade-off 在 α 軸上非線性
-- `R26NewPSFCheck` (pending external GMF; **not** the active mainline)
-
-### Closed Lines
-`Round31`（external regression）、`Round32`（external FAIL）、`R34/R35/R37/R38/R33c`（falsified）
-
-### Working Rules (6)
-1. 先讀本檔 Quick Handoff 區完整理解現況
-2. 以 repo 正式文件為準，不以 `.codex` / `.claude` 內部 session 檔為準
-3. root prose current state 以 COMBO + approved alternates 為主，R26NewPSFCheck 不是 active mainline
-4. legacy root runtime 快照已封存到 `docs/archive/legacy_runtime_status/`
-5. baseline / verdict / taxonomy 有變時，優先更新本檔 + `ESTIMATOR_POLICY.json`
-6. external FAIL 或 closed 的候選，不再以 promising / active 的語氣描述
-
-### Canonical sandbox branch
-`sandbox/r38v2`（COMBO 的 origin experiment branch）
-
+## Quick Handoff
+### 正式身分
+- 正式基準仍為 **COMBO / r38v2_8px_gate_p95**；容量整理及可攜包不改變任何研究判決。
+- Approved Alternates：R33、R38v2、R39R40_avg_a025；正式基準分支`sandbox/r38v2`。
+- 論文目前研究採用R152／RAW，R153保存十方法完整比較。原論文、採用模型與量測資料保護。
+### 已完成研究
+- 十方法各930張、8370讀值、30有效趟及150次效率已核對；兩官方後端受阻如實保留。
+- [完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。
+- R152資料重建與模型獨立包已完成；尺寸偏差、速度代價與SEM參照限制保留。
+### 共用原始資料與GitHub整理 20261016
+- 30趟實拍原始ZIP已從Google Drive取回；930相機BMP與30原始位置CSV全部符合歷史原檔核對碼，PI／時間／影格／曝光逐筆相同。
+- D槽保護工作副本：[共用原始資料](Shared_Sources/PI_Repeatability_20260903/README.md)；H槽保留原始ZIP及核對紀錄。
+- 先前R139恢復副本與原始ZIP全部相同；正式來源使用直接從原始ZIP取出的檔案。
+- 177個實驗或歷史批次的保存判讀已建立；[逐輪入口](docs/reproducibility/EXPERIMENTS.md)。檔案整理與完整重跑訓練分別標示。
+- 本次R61在另一位置完整重建114283檔全部相同；R152完整重建9216 TIFF全部相同，均禁止讀取舊研究資料。
+- 原始30趟資料已發布GitHub並取回完整重做960檔通過；十方法270指標／18000筆位移／162區間重算通過。其餘來源與模型附件保存、整份取回核對仍執行中；本次尚未清理D槽舊副本。
+### 容量與保護
+- 20261016完整盤點3592327檔、零讀取錯誤；不追蹤31個外部資料入口，不把H資料重算成D負擔。
+- C槽R152 UI訓練持續保護；驗證輸出使用H槽，沒有啟動另一個GPU訓練。
+- 既有R53／R56清理與H完整備份已結案，不能重算本次回收量。
+- 20x／5x、R87及其他舊資料須重新核對備份、相依與保留清單，不能憑舊容量報告刪除。
+### 閱讀順序
+- [機器真相](ESTIMATOR_POLICY.json)、[完整現況](#full-current-state--完整現況)、[實驗索引](Experiments/INDEX.md)。
+- [封存與恢復索引](docs/operations/PROJECT_ARCHIVE_INDEX.md)、[來源政策](docs/operations/SOURCE_OF_TRUTH_POLICY.md)。
+- [整理前的完整交接原文](docs/history/PROJECT_STATE_HANDOFF_BEFORE_RECOVERY_20261016.md)。
 <!-- QUICK_HANDOFF_END -->
 
 ---
 
 ## Full Current State / 完整現況
+
+### GitHub研究保存與原始來源追回（2026-10-16）
+
+[原始相機資料](https://github.com/rio10255254/GMM_2_Final/releases/tag/shared-pi-20260903-v1)已發布：原ZIP直接取自Google Drive；930相機BMP與30原始CSV與歷史凍結清單完全相同。已從GitHub下載原ZIP、清單與恢復程式另址重做，阻擋原D/H讀取仍通過。D保護工作來源為Shared_Sources/PI_Repeatability_20260903；不是由模型重建圖取代原件。先前R139恢復的副本亦與實際原ZIP一致，取得方式分別記錄。
+
+本次逐輪判讀177個範圍，補建缺失的導引而不補造原登錄。R61完整114283檔與R152完整9216 TIFF另址生成完全一致；十方法完整270指標、18000位移、162完整趟次配對區間及平均／中位數36區間另址重算通過。沒有重跑全部歷史訓練、輪廓重新擬合或改動正式基準。
+
+必要原始照片、SEM、固定來源、完整結果與模型附件正在逐檔保存與GitHub核對。原分支與既有工作狀態保留，保存快照使用codex/research-recovery-20261016。本次D清理須待整份驗證、活動／相依檢查與精確清單完成；C槽正在訓練的獨立包持續保護。[總入口](docs/reproducibility/README.md)。
+
+
+### Committee-response mean aggregation and external benchmark (2026-10-05)
+
+2026-10-07 14:34：十種可執行方法完整比較已核對，每方法930張／8370讀值／30有效趟，零失敗；150次效率、162組配對區間、完整模型架構／訓練設定／合成及SEM數據／灰階圖／原生影像／修改指南齊全。SwinIR8輪／選第8輪，1800筆位移與18組區間獨立重算通過。九方法舊包與135次效率保持原樣；原論文、模型、既有量測與尺度／方向／PI不變。U-Net／MambaIRv2官方後端受阻不列為已驗證；可執行範圍已完成，監看結束，正式基準未改。[最新完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)／[全部圖表與數據](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF.zip)。
+
+2026-10-07 08:06：SwinIR已完成8輪／4096次更新，合成驗證選第8輪EMA及128場景完整測試已核對；同條件15次效率完成。七個可訓練外部模型全部完成，現只新增SwinIR原生整張930張重建及8370固定讀值（巡檢已成功230張、失敗0），再彙整十方法結果。九方法原完整論文包／135次效率保留；不改原論文、MOSR、RAW/MOSR保存量測、尺度／PI／方向。完整比較尚未完成，下一次預估檢查 2026-10-07T14:15:00+08:00（含20分鐘緩衝、非保證）。[訓練完成核對](Experiments/R153_MeanExternalBenchmark/runs/launcher_logs/SwinIR_training_complete_verified_20261007.json)。
+
+2026-10-06 16:45：九方法完整論文包已核對交付並保留原樣。使用者直接授權續訓SwinIR，已從保存step256恢復原佇列並確認進至step272，總上限仍8輪；相同來源與設定已核對。完成後只新增SwinIR效率15次及930張／8370讀值，再重用九方法資料彙整十方法。原論文／MOSR／比例／方向／PI不變；監看恢復，下一次估計檢查 2026-10-07T08:00:00+08:00（非保證）。[九方法論文交接](Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF/REPORT.md)／[續訓紀錄](Experiments/R153_MeanExternalBenchmark/config/USER_RESUME_20261006.json)。
+
+2026-10-06 14:58：使用者指定的九方法完整論文交付已完成並核對。六外部模型＋RAW／Wiener／MOSR，每方法930張／8370讀值／30有效趟，零失敗；144組配對區間、135次效率、全部模型設定／合成測試／SEM／灰階圖／同區域影像與修改指南齊全。獨立重算主要位移與16組區間通過，原檔未改。SwinIR保存step256、未完成且不列入比較；保持暫停不自動續訓，監看已停止。[完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF/REPORT.md)／[附件包](Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF.zip)。
+
+2026-10-06：使用者要求暫停SwinIR並先交付已完成模型的完整論文紀錄。SwinIR保存step256且不自動續訓；六外部模型加RAW/Wiener/MOSR共九方法，只補Restormer／USRNet的930張驗證，原七結果重用。九方法135次效率已完成；USRNet曾驅動退出，原生檢查及相同設定重測通過，錯誤保留。完整九方法實拍／圖表／論文包仍執行中，預估15:00檢查。
+
+2026-10-06 03:27：七方法完整實拍與效率比較完成並核對，全部30趟有效、無量測失敗；4650份新重建、41850筆新讀值，RAW/MOSR保存量測重用，108組配對區間與105次效率實測。MOSR位移波動與相鄰PI差最低，輪廓與EDSR差異未確定；形狀NAF/EDSR較好、SEM尺寸RAW較好，均完整保留。Restormer已自動續訓，完整benchmark仍待後續模型完成。[完整階段交接](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE/REPORT.md)／[附件包](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE.zip)。
+
+2026-10-05晚間：使用者授權先暫停訓練釋放GPU，Restormer保存step896。七方法同GPU／FP32／batch1共105次效率實測完成；Wiener930張／8370量測已完成且無失敗，EDSR等四個外部模型實拍驗證依序執行。完成本階段核對後自動續訓，完整benchmark仍未完成。[效率報告](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_EFFICIENCY.md)／[階段論文資料](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_PROGRESS/REPORT.md)。
+
+User-confirmed ordinary external training supersedes the initial common-five-loss training request. Same fixed TIFF bank and synthetic validation, from scratch, adaptive epoch stopping; all five task terms remain synthetic evaluation diagnostics. Sequential queue is EDSR-x1 → NAFNet → RDN-x1 → RCAN-x1 → Restormer → USRNet-x1 → SwinIR. Official U-Net/MambaIRv2 backend failures remain recorded. Verified live manager/worker and duplicate prevention; heartbeat automation `mosr` checks near estimated active-model completion plus buffer in the original chat and continues the remaining authorized benchmark work. Mean aggregation is primary: RAW/MOSR SD8.780826/4.272773nm, adjacent PI MAE6.969175/3.598341nm; long-distance mean-MAE interval crosses zero. No source circle refits, scale/PI/direction changes, or thesis/model edits. Mean-only thesis handoff and THESIS_UPDATE_MAP.md are complete; full real930 comparison and fresh runtime remain incomplete. User caps unstarted external models at8 epochs; completed32-epoch EDSR/NAFNet and14-full-epoch RDN results are retained with actual durations reported. See [monitor](Experiments/R153_MeanExternalBenchmark/reports/TRAINING_MONITOR.md).
+
+### R152 formal TIFF-image training package (2026-10-04)
+
+同日新增generate_data.py及generation/五份當初原始程式，從固定種子重新生成全部768母場景／9216 TIFF，阻擋舊實驗及現成影像讀取仍通過；所有像素、TIFF內容、完整實際輸入及前四次CUDA更新均相同。另址無訓練影像時可生成，--data-dir可直接正式訓練新資料。最新包35個PY、9257檔約476.5MB，ZIP約457.5MB，outputs空白。[完整生成與驗證紀錄](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md)。
+
+最新交付為Deliverables/R152_Standalone_ImageFiles_20261004，正式Bank.read從TIFF直接讀取，不依賴NPZ訓練容器。3072清楚／3072無噪模糊／3072幾何標記，原float16轉訓練FP32的數值完整保存於TIFF32，索引及向量標記為PY。全905969664影像值的PNG16測試有144073個還原差，故選浮點TIFF；使用者指定不附PNG。全部3072實際輸入／目標／幾何／算子均與原版完全相同，CUDA前4次損失、停2次接續至4次與連續4次亦完全相同。35個PY、9257檔約476.5MB，ZIP約457.5MB；模型／權重／PSF未改，沒有新的正式訓練。[報告](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)。
+
+### R152 clean Python standalone package (2026-10-04)
+
+Deliverables/R152_Standalone_20261004包含完整3072視圖和768組幾何資料，原FP16儲存保持逐陣列完全相同，讀取後FP32與在線加噪／分組／算子選擇忠於原配方。只有PY控制檔，NPZ/PTH/BMP保留必要資料；無外部連結、快取及驗證試跑結果。訓練預設載入包內已訓練主體做8192次擴充，可用--from-scratch完整兩階段各8192；續訓支持正常中斷及完成更新後的評估接續。所有3072輸入、209張量、原前4次損失和原生整張示例均精確一致；兩階段短測、異址拒絕來源讀取、CPU／CUDA、8／16位元讀取及ZIP逐檔核對均通過。原來源只有已授權報告更新的封存雜湊過期，本次僅更新該文件來源鎖，其他33檔保持一致。新包裝不是重新正式訓練或模型升級。[交付與驗證](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md)。
+
+### R152 actual thesis visual evidence (2026-10-03)
+
+完成第6.1節／圖6-3實際25核響應、第6.2.3節同區域RAW與MOSR原生輸出、第6.2.4節同物件30條實測輪廓。PSF原MAT101×101×5×5逐行堆疊與實際銀行逐元素相同，部署float32核轉型後亦完全相同；25個CSV原矩陣逐檔精確回讀。影像固定第16趟起點004246_XY_0/1.bmp、共同亮度範圍與相同129×129裁切，5／50µm比例尺；輪廓固定物件5、起點、全部30趟64原始邊界點，只減已保存LSC圓心，不改尺寸或方向。另列九顆起點共34560個兩方法邊界點；中心物件局部輪廓重拍RAW62.750035／R15217.987640nm，不替代全資料63.758／18.600nm。五頁PDF逐頁渲染查看通過，六個PDF、PNG、SVG、中英文圖說、原MAT／校正紀錄與原生影像資料完整封存；70個壓縮檔成員均核對。[補件說明](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)；[資料包](Deliverables/R152_THESIS_VISUAL_EVIDENCE_20261003.zip)。沒有新訓練或重建後校正。
+
+### R152 RAW complete research record and within-scan recalculation (2026-10-02)
+
+使用者指定論文只比較RAW與R152，以單趟30步波動為主，30趟用於改善範圍。由兩方法各30份中心CSV和64點輪廓NPZ完整重算3600筆位移、16740個圓及720方向插值輪廓。34份封存來源、930張RAW、930份R152原生浮點輸出及保存點逐檔重驗通過。單趟波動合併10.199758→4.864821nm，降低52.3045%，30/30趟改善；20000次整趟配對、種子20261002，改善率95%區間49.6679%～55.0380%。直徑／輪廓／去尺寸重拍降低59.5%／70.8%／71.8%；SEM表直徑差增加34.397279nm，終點有號偏差及終點SD的配對區間跨零，無全面準度改善主張。主文件涵蓋兩階段訓練、一次U-Net脈絡與三個獨立原尺寸階段、受限25PSF支路、完整定義及逐趟／逐位置表；資料附件只含RAW／R152。這是既有實拍的重新計算，沒有新拍攝、重新訓練或基準升級。[主文件](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/REPORT.md)；[完整附件包](Deliverables/R152_RAW_COMPLETE_RESEARCH_RECORD_20261002.zip)。
+
+### R147 native-image PSF consistency and internal audit (2026-09-26)
+
+第8192次固定模型、930張實拍與8370圓全部核對；單張入口重播與批次浮點輸出差0。短步MAE／重拍4.537／4.720nm，直徑／輪廓重拍16.336／19.751nm，起點相對MAE／重拍18.120／10.279nm，SEM外框平均直徑差+207.067nm；尺寸重拍改善而短步退步，不全面採用。內部診斷完成4320筆階段圓、1134筆位移控制、810筆裁切、1134筆成像擾動、108筆R137格點控制、14組實際訓練梯度及768組資料核對。原尺寸對齊裁切影響極小；1像素平移R147平均額外圓心差0.865nm，8像素0.000305nm，R137接近數值精度；該弱點在R140v2也存在，不能當作全部退步原因。R147對比提高20%時圓心平均變化3.897nm，R146為1.632nm；添加0.5像素模糊的直徑變化R1473.543nm，R1466.579nm。第四次在30張中的18張使再成像差增加，仍改變邊界；合成配對最多1.233像素，实拍每步约5.8像素，每母場景模糊與亮暗固定。改良計畫分開檢驗取樣穩定路徑、跨成像狀態資料與量測要求，未新訓練或依診斷提前停步採用。D/H成果與狀態已對齊，原資料／權重／正式基準保留。[完整診斷](Experiments/R147_FullResPSFConsistency/reports/R147_INTERNAL_AUDIT.md)
+
+### R146 actual-SEM core-halo PSF matched pairs (2026-09-25)
+
+研究版MAT標記`research_only=1`，九顆SEM外框校準，25張PSF來源驗證通過；預先封存六視角、18個留出圓外觀中，新模型平方差0.001791，較原BADS0.002997及單一高斯0.002105低。與R145固定相同768母場景、分組、雜訊、逐場景PSF索引、模型及8192次更新，只換銀行與模糊配對；固定930張及8370圓完整量測、單張入口逐值重播及最終稽核通過。R146短步PI平均差／重拍4.313／4.459nm，較R145的3.990／4.016nm退步；直徑／輪廓重拍23.082／20.371nm，較R145的21.013／16.001nm退步；起點相對位移重拍10.369nm較R145的11.216nm低，但平均絕對差18.220nm未優於18.070nm。同九顆SEM外框參照平均直徑差R146+218.744、R145+207.186、RAW+185.182nm；Excel表版本分開保存。逐圓固定步進重拍8.837nm，比R145的7.933nm高；270組中203組較差。生成測試PSF首選10/206，實拍全930張首選第8顆；有效光學混入僅0.93%，12張實拍關閉分支的逐顆直徑最大差0.360nm，量測改變主要來自重新訓練的主網路。SEM外框不是神經清晰答案，研究版來源不能自動晉升正式PSF，正式基準不變。[完整結果](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_RESULTS.md) · [原因核對](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_CAUSAL_AUDIT.md)
+
+追加來源與穩定性核對：768組清晰目標全與R145逐值相同；692組新PSF卷積及76組清晰對照的1536張影像、雜訊與8192筆訓練順序獨立重播完全相同，並抽查21個實際訓練批次。R146實拍邊緣平均較窄，但固定位置／圓的邊寬重拍起伏0.090像素，R145為0.025；279/279組R146較不穩。原圖跨趟模糊變化與R146輸出邊寬相關0.968，R145為0.476。這是輪廓退步的影像機制線索，仍不能獨自指認焦距或照明。[資料鏈稽核](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/data_training_chain_audit.json) · [邊緣圖與數值](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/figures/edge_width_repeatability.png)
+
+### R145 corrected center-nine PSF matched pairs (2026-09-24)
+
+修正後來源MAT通過28份照片與九顆SEM身分來源核對，R145以同768個清楚母場景、分組及逐場景PSF索引更換25顆銀行與卷積模糊，完整完成8192次、930張及8370圓；`results/final_audit.json` 通過。短步PI差3.990nm、重拍4.016nm，較R143的4.425／4.290nm改善，仍比R140v2的3.640／3.530nm高。逐顆固定步進重拍標準差7.933nm，介於R143的8.413與R140v2的6.829nm。直徑重拍21.013nm也介於兩者；輪廓重拍16.001nm及去尺寸形狀12.153nm較兩者低。新銀行減少R143的大幅平均圓心修正，未消除逐圓位置波動。依新PSF校準所用SEM Excel值，平均直徑差R145+191.887nm、RAW+169.883nm、R143+95.230nm；校準值均值2629.737nm，舊輪廓參照均值2614.439nm，不混用。SEM尺寸是PSF校準輸入而非神經清楚標籤，同九顆比較不作獨立尺寸準確度宣稱。選擇器測試6/206首選，實拍930張全首選第24顆。新增的後驗檢查以模型實際運算重現PSF頻域錯位、約1.59%光學混入及只剩3.23%的零頻反推；12張實拍開關分支的平均直徑差僅0.35–0.50nm；206組保留場景的PSF差異全部低於各自雜訊。PSF來源與驗證照片的亮度／對比亦有差異，來源單次擬合不可直接保證逐張量測。自適應效益未證實，正式基準不變。[完整報告](Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_RESULTS.md) · [原因分析](Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_PSF_LIMITING_MECHANISMS.md)
+
+### R136 十字中心九顆
+
+R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 [R129交接入口](Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920/START_HERE.md)
+
+R128修正取樣位置論文交接包（2026-09-20）：Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。
+
+R136新十字九顆Raw/R128完整對照交付：10張圖（新增平均±1SD疊圖）、3600合併位移／32400逐顆位移／16740輪廓。R128短步PI差降低54.6%、短步重拍61.9%、輪廓重拍78.3%；SEM平均尺寸偏大差距185.182→222.040nm及終點偏差未改善亦完整保留。 [Raw/R128完整比較](Experiments/R136_PIRepeatability/reports/R136_RAW_R128_CORNER9_RESULTS.md)
+
+R136最新十字九顆的R128專頁完成：位移30次曲線、60位置詳表、8370輪廓、逐顆及逐方向表、4張科學圖。短步重拍3.708nm，輪廓13.835nm；30μm終點偏差+41.966nm／重拍14.193nm，完整保留。 [R128詳表與圖](Experiments/R136_PIRepeatability/reports/R136_R128_CORNER9_DETAIL.md)
+
+R136方向補查：已核對暗柱／亮孔；整視野較支持左右鏡像，暫用22,23,24／28,29,30／34,35,36。相同十字區域兩候選近乎同分，屬推定而非唯一證實；保留90度候選敏感度。 [方向依據](Experiments/R136_PIRepeatability/reports/R136_SEM_DIRECTION_RESULTS.md)
+
+R136十字中心九顆重算完成（2026-09-19）：四組各930張／8370圓心；R128短步差3.708nm、尺寸波動9.527nm最小；SEM九顆集合均徑差R61+115.803nm、R128+222.040nm。集合22,23,24,28,29,30,34,35,36；逐顆方向保留兩候選。舊九顆有影像與PI但未配SEM，不混成尺寸真值證據。 [新九顆報告](Experiments/R136_PIRepeatability/reports/R136_SEM_CORNER9_RESULTS.md)
+
+### R136 SEM追加對照
+
+R136 SEM追加核對（2026-09-19）：找回P/V各9張、三處副本18/18一致；舊配對36顆×3曝光×4方法完成，R128直徑差76.326nm、R129原80/16為96.624nm。使用者確認同片；九月九顆與舊SEM逐顆位置尚未建立，初步為不同區域；不混入30次統計。 [SEM核對報告](Experiments/R136_PIRepeatability/reports/R136_SEM_REFERENCE_RESULTS.md)
+
+### R136 輪廓與尺寸重拍驗證
+
+R136輪廓／形狀／尺寸重拍驗證：四組33480輪廓完成，R128尺寸／形狀波動13.558／13.560nm最小；實物準確度待使用者提供已確認存在的同批參考，不升級模型。 [驗證報告](Experiments/R136_PIRepeatability/reports/R136_SHAPE_SIZE_RESULTS.md)
+
+### R136 R128追加完成
+
+**R136四組LSC完成（2026-09-18）：** 新增固定R128，全四組各930張／8370圓心。短步MAE原圖／R61／R129／R128=8.667／5.160／4.092／4.025nm；長距離17.738／15.267／15.712／15.496nm。R128與R129差距未明確，最差短步R129較低；不作全面升級。新影像放H槽，舊三組資料及PDF/ZIP保持不變。[四組報告](Experiments/R136_PIRepeatability/reports/R136_LSC_FOUR_MODEL_RESULTS.md)
+
+### R136 LSC圓心位移比較
+
+R129不確定度補充：已完成60個固定位置的資料內重拍分量與時間模型平均值評估；1μm步距s=3.115–5.475nm，30μm終點s=15.810nm、平均PI差值+15.560nm。PI／尺度校正缺項保留未知，完整總不確定度未定，不以MAE代替。[計算報告](Experiments/R136_PIRepeatability/reports/R136_R129_UNCERTAINTY_RESULTS.md)
+
+**R136 LSC完整結果（2026-09-17）：** 原圖／R61／R129各930張、8370圓心完成；短步平均絕對PI差距8.667／5.160／4.092nm，起點相對17.738／15.267／15.712nm。R129短步優於R61；長距離兩模型差距未明確，不能全面排名。全部25110圓心獨立重算、5400合併位移與PI對應核對。R61既有PDF包保留。無模型升級。[三組LSC結果](Experiments/R136_PIRepeatability/reports/R136_LSC_RESULTS.md)
+
+<!-- R135_START -->
+**R135：** R135：六個固定模型加原圖的同精度比較，完成7/7組；舊V42含資料重疊標記，無訓練或升級。 [結果](Experiments/R135_UnifiedModelComparison/reports/R135_RESULTS.md)
+**R61資料審查（2026-09-16）：** 已確認目前36顆SEM尺寸表中35顆數值用於R61訓練目標，另有全體平均尺寸監督；1284筆SEM答案相關資料在末階段訓練名單，852裁切／目標逐像素重現。R61不可視為排除評估答案後的乾淨替代品；原分數不改，未證明目前201張位移照片全部直接進訓練，完整祖譜未封閉。[審查](Experiments/R135_UnifiedModelComparison/reports/R135_R61_TRAINING_AUDIT.md)
+<!-- R135_END -->
+
+### R134 complete full201 screening, not admitted (2026-09-15)
+
+<!-- R134P1_START -->
+**R134 P1：** 保留精度版本長訓練及最終比較完成，尚未採用為正式模型。[保留精度驗證](Experiments/R134_DirectStateRepair/reports/R134_PRECISION_REVALIDATION.md)。原8bit未通過判定保留，新版本需全部合格並單獨打包實測才長訓練。
+<!-- R134P1_END -->
+
+Follow-up diagnosis: [R134_CROSS_AXIS_DIAGNOSIS.md](Experiments/R134_DirectStateRepair/reports/R134_CROSS_AXIS_DIAGNOSIS.md). Same C checkpoint/image/reader: Raw43.240395nm, model float44.019181nm, exported8bit48.665763nm. Quantization adds4.646583of5.425369nm (85.65%for this case only). Actual16bitPNGreadback44.039084nm. Both Cseeds show pattern; sixfullframePNG replays and702independentcircle refits pass. Neighbor18to19 and19to20 retain7.331/6.418nm extra side displacement at float. No independent realYtruth; rigid image registrationRaw/Cfloat53.697/53.896nm, so a Raw-relative gate cannot identify true model error. Original8bitnegative admission preserved; full201highprecision requalification has NOT run. No optical removal, step-count reduction, newtraining or promotion.
+
+All201 images were computed; closeout failed because a NumPy boolean could not be serialized. The original partial JSON and every output remain unchanged. Independent recovery refit1809centers and recomputed634candidate/Raw pair rows, using unchanged prospective thresholds.19/20checks pass; locked120maximum cross-axis48.665763nm vsRaw43.240395nm (same20x_0p5umframes16to17), ratio1.125470 exceeds1.10. No long package or long training, no alternate-seed substitution or promotion. Canonical report: Experiments/R134_DirectStateRepair/reports/R134_RESULTS.md. Correct recovery is results/full_motion_recovery_v2/complete.json, referenced by long_admission.json; do not parse the retained incomplete original as a completion. Original A/C short results remain valid within their scope. B/D unexecuted pending independent calibration.
+
+### R133 size-mechanism diagnosis and repair design complete (2026-09-14)
+
+Canonical results: [Experiments/R133_SizeMechanismDiagnosis/reports/R133_RESULTS.md](Experiments/R133_SizeMechanismDiagnosis/reports/R133_RESULTS.md); repair design: [Experiments/R133_SizeMechanismDiagnosis/reports/R133_REPAIR_DESIGN.md](Experiments/R133_SizeMechanismDiagnosis/reports/R133_REPAIR_DESIGN.md). FrozenR129long8192, ninearms:Raw,Optics,Neural,Final,NoOptics,ResidualHP,DirectResidual andtwoRMSmatchedFinalcontrols. All128generatedparents/256views,64area-renderedcircleconditions/640readouts,normal3SEMfields/972rows complete. FinalreproducesR132W16. ControlFinalabsdiametermedian.03952px vsRaw.05088;41improve23worsen,worst.70739. CleanTargetreaderitselfranges−.03217to+.04708;8vs16formationmaxdiameterdifference.000442. Idealbluroftenmakesmeasuredcircletoosmall andmodelmovesoutward, unlike already-large realSEMopticalreadout. This supports imaging/reference mismatch, not an identified allocation among material response, scale and reader definitions.
+
+Realstage diameter medians:Raw88.204,Optics81.083,Neural101.492,Final102.232nm. Within-exposurepairedFinal-Raw median12.122nm all36increase;Neural-Optics18.905,Final-Neural.687nm. Head/opticsinterventionsremain101–102nm; nofrozenreplacementadopted. RMSmatchingbeforeFOV~.99857–1,actualafterFOV~.98896–1.01257:approximate, notexact; wordingcorrectionandinitialdraftretained. GeneratedFinalMAE1.831vsResidualHP2.682/DirectResidual4.377;Neural29.329,mean-aligned16.509. Internalimagescannotbeclaimedcleanphysicalreconstructionswithoutdirectsupervision; geometryinformationmaystillbeuseful.
+
+Neutraloutputcontractandnonzero/finite-differencegradients verified; oldobjectivehascorrectradiusgradient, whileconsistent2pxdiameterbiasgiveszeropairloss. Qualifiedtwo-levelcoverageobjectiveisprototype-only,notvalidforunknownrealmaterialmapping. Initialneutralroundofffailureandtwoorchestrationwaitfailurespreserved; intendedstrictneutralcontractfixedbeforemainruns,originalweights/sourcesunchanged. Independent972SEM/640controlfitsand2304image metrics pass. No training, oldconfirmationaccess ordefaultchange. Proposednextwork: qualify reference/forward-data relationship, retainfoursharedupdates/AA/measuredopticalinformation whilemakingimage/outputsemanticsneutralanddirect, thenmatcheddata×interfaceprobes, followedbyseparatequalifiedgeometrylosscomparison. No new trainedreplacementexists.
+
+### R132 boundary-policy research complete (2026-09-14)
+
+Canonical report: [Experiments/R132_BoundaryPolicyStudy/reports/R132_RESULTS.md](Experiments/R132_BoundaryPolicyStudy/reports/R132_RESULTS.md). SameR129long8192checkpoint/foursteps, vary only finalRawretention widths80/64/32/16/0; nonzero16transition,zero means no retention. Reuse verifiedpre-guard fields,201x5PNGs andall9045LSCcenters;540primarynormalSEM reads+75samepillar contextreads. Currentfullforward verifies storedpre-guard semantics;80float/PNG/SEM/centers reproduce. All615SEM valid,independent615SEM/9045circle fits and1585paircalculations passed. Outer20 shape/correlation/MZC allimprove at16,diameter allworsen;central16 unchanged. All36shape16.397→8.411nm,MZC62.651→9.268,diameter96.380→102.232. Locked120SD6.991→6.929,within4.204→3.808;full194cross7.974→8.069worsens andlockedmaxcross59.088→60.292. Not uniform superiority.
+
+Real context: centralpillar16 at3exposures,measurement-window leftmargins0/16/32/64/96,15currentforwards; actualopticalcontourclosest14.5–15.4pxinside edge. Crop changesglobaloptical/qualitycontexttoo. Pre-guard errorvsfullfield fallsfrommaxwindowmean.188gray/maxpixel14.90 atmargin0 to.00495/.01953 atmargin16;80blending substantiallychanges same-object shape. Existing-normal-field evidence supports16researchtrial,not universalpixel-edge safety. PublicSEM/fullfieldreplay exact; fractionmap isnotconfidence. No training/defaultmodelchange/oldhashrebaseline/confirmationaccess. Sizebias remains a separate model/reference problem; do not compare new16numbers directly toold80counterparts without matching policy.
+
+### R131 frozen recurrent-step validation complete (2026-09-14)
+
+Display follow-up: [Experiments/R131_RecurrentStepValidation/reports/R131_BOUNDARY_OUTPUT_AUDIT.md](Experiments/R131_RecurrentStepValidation/reports/R131_BOUNDARY_OUTPUT_AUDIT.md). Three-exposure exact replay and independent spatial blending confirm gallerypillar18 is partially replaced by Raw at the final80/16FOV guard, not a missing neural forward. Central16measurementwindows are fullymodel, outer20partiallyretained. Added labeled full-field map and centralpillar16 example; oldfigures/results preserved. Pre-guard reconstructions are diagnostic only; no defaultchange. Inner16four-vs-three improves shape/diameter/radial16/16, but cannot replace the36-pillar primary population.
+
+Canonical report: [Experiments/R131_RecurrentStepValidation/reports/R131_RESULTS.md](Experiments/R131_RecurrentStepValidation/reports/R131_RESULTS.md). User requested checking four repeated refinements. The frozen R129 long-training8192 checkpoint is evaluated at0–4learned updates, always retaining the same global optical conditioning, final original-image anchor and80/16FOV guard. Zero is not Raw; intermediate final outputs never feed the next iteration. All201nativeframes plus3normalSEM fields at5prefixes yield1020PNGs,540SEM rows and9045LSC centers. Existingfour-stepoutputreproducedonall201frames, oldLSCcenters reproduced. Fourthversusthird: centeredshape33/36better,diameter30/36better, butMZC20/36worse despite loweroverallmedian. Fullsame120pair and194within-session results,3recordedrepositionings andworstcases remain separate. Standaloneprefix timing excludes intermediate exports and matches savedPNGs onSEM/full-fieldcases.
+
+Independent540SEMmetric recomputations and9045circle refits,1585pair-arithmetic checks andaggregate recomputations complete. Initial random-inputpreflight mistakenly askedbitidentityacrossdifferentconvolutionshapes; failedsource/logpreserved, actual1.19e-7difference iswithinoriginal1e-6protocol. No historicalexpectedhashreset. Allreadsource/protectedbindings preserved. This isfrozencheckpointusagediagnostic,notfromscratcharchitecturecomparisonorproofthatfourisoptimal. No training,default replacement,promotionoroldconfirmationaccess. See canonical tables for model,shape,motion andruntime tradeoffs.
+
+### R130 clean V42 practical comparison complete (2026-09-14)
+
+Canonical report: [Experiments/R130_CleanV42Comparison/reports/R130_RESULTS.md](Experiments/R130_CleanV42Comparison/reports/R130_RESULTS.md). User explicitly requested keeping R129 unchanged and training only a fresh pure V42 for tens of epochs on similar clean data. Preserved V42 encoder-decoder/AA/directional boundary/Raw-anchor/quality architecture, fresh seed1309001, no legacy neural weights or teacher. Fixed legacy PSF buffers are shared with R129; new V42 constructor weak scale is active(.35effective), unlike old saved0. Deterministic pad/bilinear backward adaptation preserves original forward. Same512/128/128 source-only split,32epochs,4parents/update,4096updates,16384parents. R129 lineage has16408parents but different batch/optimizer/objectives and prior selection; not a fully balanced architecture causal experiment.
+
+All33dev,5realSEM panels andfinalgeneratedtest complete;all201nativefields and1809LSCcenters,locked120andall194within-sessionpairs measured with matching reader/FOV rule. FinalV42/R129 radial46.392/49.523nm,diameter91.951/96.380,correlation.7473/.6919,centeredshape16.425/16.397,MZCerror66.351/62.651. Paired V42 improves diameter29/36,centeredshape25/36,MZC24/36,despite slightly worse overall shape/MZCmedians. Locked120stepSD6.919/6.991,nominal6.200/6.302,within4.682/4.204,cross5.237/4.798nm. Full194SD29.308/29.098. Sameimage FP32 one-warmup/three-repeat timing.428sV42/9.976sR129. OldV42shape6.810nm advantage not reproduced, but differences cannot solely be assigned to answer removal because data/initialization/training/inference differ.
+
+WinError5 status-file lock afterstep1538: checkpoint1536 intact. Preserve allfailurefiles andoriginalfrozen sources; process-local IOretry wrapper resumed unchanged computations, actualreadlock testpassed. Steps1537/1538 replay exactly;4098calls but4096uniqueupdates. Freshinit reproduced,256parent inputs independently rebuilt,108finalSEM contours and1809LSCcircles independently refitted,publicSEM14replay exact. R129files andmetadata entry unchanged;no model promotion or oldconfirmation access. Both models remain research references; independent calibration/new physical samples and sizebias remain open.
+
+### R129 V42-design integration: completed bounded pilot, retained prototype (2026-09-12)
+
+2026-09-13 continuous sequence completion: [Experiments/R129_OpticalPriorHybrid/reports/R129_CONTINUOUS_LSC_RESULTS.md](Experiments/R129_OpticalPriorHybrid/reports/R129_CONTINUOUS_LSC_RESULTS.md). Fixedlong-trainedD8192 reconstructsall201sources in4sequences,with201RawandR129LSCreads/1809centers each. Primarysame120Raw-selectedpairs yieldR129stepSD6.991056nm,R1286.872913,R617.220139;nominal6.302470,within4.203669,cross4.798278. Secondary194allwithin-sessionpairs vsRaw only,3pre-existingrecordedrepositioningpairs separatelykept. No model-based frame rejection. Source-definedcommonFOV-context subset reported asdiagnosticbecauseR129uses80/16guardversusR12864/16. DirectfullNNdepthwiseoperationfailed32bitindexlimit; originalfailure preserved. Separateglobaloptics/features/state/quality andlocalpriorcore512/halo16executionverified onreal fields/random input anddifferentcores,alltested8bitpixels equal,smallfloatdifferencesrecorded. All3618circles independentlyrefitted,634pair-table calculations(394unique method/adjacentpairs)recomputed,Raw1431oldcenters reproduce,andworstR129-vsR128pairpublicentry/LSCreplayed. Newportableaddon addedwithouteditingfrozenpackage files. No training/promotion oroldconfirmationaccess; priorSEMsizeissueisnotresolvedbyLSCresults.
+
+2026-09-13 completed long-run audit: [Experiments/R129_OpticalPriorHybrid/reports/R129_LONG_TRAINING_RESULTS.md](Experiments/R129_OpticalPriorHybrid/reports/R129_LONG_TRAINING_RESULTS.md). One8192-update continuation finished2026-09-12T14:20:12UTC. All8192rowsunique/inorder,all512parents per16epochs;64actualinputs independently rebuilt.24completion records and1603package resources unchanged; checkpoint/optimizer at8192. Full17dev,5real andfinaltest present. Native dev4.87358→2.68142, but SEM radius41.579→49.523nm anddiameter80.679→96.380nm worsen. Centeredshape21.352→16.397nm improvesall36;MZCerror86.605→62.651 improves31/36, diameter worsens31/36. Four-pairwithin-grid8.828→7.434, nominal6.746→6.970,cross6.933→7.721nm;no temporalSD. Independent540-rowcircle-refit/20pairarithmetic andpublicfinalSEM14replay pass. First inference invocation returnedexit1withoutdiagnostics; initialreviewstoppedonmissingimage; separate retry/v2passedunchangedtests, failures retained. No endpoint adoption, auto-default replacement, oldexpectedhashrefresh or confirmationaccess. KeepR129design; address sizebias with bounded causal checks instead of more epochs by default.
+
+2026-09-12 standalone training follow-up: [Experiments/R129_OpticalPriorHybrid/reports/R129_STANDALONE_TRAINING.md](Experiments/R129_OpticalPriorHybrid/reports/R129_STANDALONE_TRAINING.md). User requested a manually operated independent package and start of full training. All768source parents copied with hashes; hostPython/CUDA andMATLAB remain external software dependencies. SingleD continuation,16epochs/8192new updates,128-update saves,128devcases every512,real3SEM/4motionpairs at0/512/2048/4096/8192; native image+gradient+pair loss matches pilot. All inputs/code/weights local, full audit,16discarded probe updates, exact optimizer resume and original real-reader parity pass. Package physically relocated for public dry-run/inference/menu checks, then restored. Real training paused/saved at4 and resumed; observed44/8192 at2026-09-12T09:40:14.834275+00:00, PID5596. Current status file is inside package results/training/r129_long_01. This is a verified start, not training completion, superiority or production promotion. Default inference remains originalD; old records and confirmation remain untouched.
+
+2026-09-12 organization follow-up: [Experiments/R129_OpticalPriorHybrid/reports/R129_ARCHITECTURE.md](Experiments/R129_OpticalPriorHybrid/reports/R129_ARCHITECTURE.md). User retains R129 as the next architecture; do not switch back to the old V42 backbone by default. Split optics/shared reconstruction/original-image output into an organized package without changing arithmetic, registered parameter names, checkpoint or active modules. All8 saved states have exact forward/input-gradient/parameter-gradient agreement; D three full SEM fields and eight fixed motion ROIs match old float outputs and historical PNGs exactly. Four observed intermediate states match independently reconstructed old states, and mutation of observation copies does not affect output. Existing source/weights remain unchanged. A new tested image entry uses the same D checkpoint. This does not implement the missing direction-specific branch, per-step full physical correction or uncertainty estimate, and does not establish speedup or new scientific efficacy. Zero new training; previous mixed-result verdict and qualification limits remain.
+
+Canonical report: [Experiments/R129_OpticalPriorHybrid/reports/R129_RESULTS.md](Experiments/R129_OpticalPriorHybrid/reports/R129_RESULTS.md). User requested preserving measured optical fusion and improved upsampling as thesis design requirements. New isolated D checkpoint retains both; A/B/C are experimental controls only. Four matched 24-update runs completed 96 updates, with actual initial tensors and all 24 consumed inputs independently rebuilt. V42 E120 calibration buffers alone are imported: 25 measured 101x101 kernels plus 4 very similar candidates; saved legacy adaptive beta_scale=0, so its default-loaded branch was inactive. New input-stage optics correct centroid origin/DC gain and remain active; V42-style AA matches the legacy operator. This is an adaptation, not a complete exact V42 transplant or new novelty proof.
+
+Normal SEM 13-15: 36 pillars, 864 valid reads across all four arms before/after training. D24 radial/shape-correlation/CD/centered-shape/MZC-error medians = 41.579nm/0.668942/80.679nm/21.352nm/86.605nm; A24 = 41.869/0.643638/80.607/22.304/82.747. D improves centered shape on 27/36 but radial on only 16/36 and diameter on 15/36. D remains weaker than original R128/V42 on fine shape. All arms share a converted decoder and new Raw anchor: A is already weaker than original R128 at initialization, so total differences cannot be causally assigned to added optics/AA. Four ROI motion pairs only: D nominal/within-grid/cross-axis 6.746/8.828/6.933nm vs A 6.942/8.434/7.245; no temporal SD or complete thesis120-pair claim.
+
+Full D SEM14 replay exact; disabling optics or AA changes output. Learned versus uniform optical weights changes that image by at most 1.1921e-7 (0-1 scale), so adaptive selection's independent benefit is not established. 864 contour rows refitted by independent two-parameter circle method, all 36 motion pairs recomputed, and 51 recorded source paths unchanged. Original deterministic-backward failure and original plan/source are retained; separate v2 preserves forward/criteria. Keep D as the user's requested architecture prototype; first repair conversion/output retention and verify meaningful instrument-specific optical variation before a justified larger training study. No model promotion, old-confirmation reuse, old evidence rebaselining or thesis edit.
+
+### R128 completed four-run study, one follow-up candidate, no production adoption (2026-09-09)
+
+2026-09-12 full annotated-v34thesis review and replacement assessment: Experiments/R128_SourceOnlyFullTraining/reports/R128_THESIS_V34_REPLACEMENT_ASSESSMENT_VERIFIED.md. Read7chapters,111referenceentries,252livecommentsandannotationindex,viewed60embeddedfigures andkeyrenderedpages. Source13,121,560bytes/SHA256d85a7987bbea8f5f58585334104f9d0425f3a42a92e51bbbb187cca2c5a9fc12capturedread-only;originalDOCXnotedited. Thev34modelisV42E120anditsclaimchainincludesmeasuredPSFfusion,AAupsampling,raw-anchoroutput,refinedSEMshape/MZC,LSC/MZCchoice,eight-modelcomparisonandruntime. R128hasdifferentimage-only4sharedupdatesandsimulationobservationsupervision,notalloldmodules. Traceabilityisnotcompletephysicalinterpretability.
+
+Actualv34bridge uses166frames/120pairs,only87pairscommonwithSep10R128study.22newfullR128images+144verifiedreuses;Raw/V42all2988centersreproducev34to4.55e-13px. NewR128LSC7.250296nmstepSD,5.767442nominalMAE,3.416135within-grid,6.764177crossaxis;V427.292303/5.742972/4.885544/6.551281. ReplacingV42inold7baselinecomparison yieldsranks3/1/3,notpurearchitecturecomparison. Oldv34readerprocessing-orderstate isexplicit;do notmixwithSep10per-pillar-resetreader.
+
+FineSEMnormal3exposure bridge usesexactlegacyper-cellnormalizationandmaxgradientcontours,180SEM/144opticalpointsand720radialsignature. Initialnativecellparityfailureisretained;separatev2restoresdocumentedim2uint8(mat2gray(cell))andall108Rawcellsreproduce. All216Raw/V42metricrowsreproduce;324rowsretained. R128vsV42radialMAE38.705044vs43.324390nm,CD76.646764vs86.295184nm;correlation.767368vs.942754(all36worse),MZCerror50.989858vs5.816055nm(33/36worse). CenteredshapeMAEdiagnostic16.118916vs6.809732nm;R128reducessizebiasbutdoesnotpreserveirregularshapeaswellintheseexistingreferences. SEMnonroundnessisnotperfect-circlepreference. Only13–15testedhere,notwhole12exposurepaperclaim.
+
+FreshA6000strictFP32pairedcommonrecipe(tile256,overlap128,batch8,2warmups/8runs):V422341.82msvsR12828066.46ms,about11.98times. R128validatedfullFOVcore256/halo64/Rawguardpipeline16834.22msmedian(1warmup/3runs),outputbitwiseequaltoexisting. Differentrecipeoutputqualitynotpromoted;donotmixnewtimeswitholdpaper1102.3ms/oldsevenmodelranks. Modelparametercountsmallerdoesnotimplyfaster. Decision:retainR128researchdirectionbutdonotimmediatelyreplacev34;prioritizeirregularshapeandcostbeforeadaptingclaims. PreserveoriginalPSF/systemworkasactualcharacterizationandWienerreference;do notclaimcurrentR128ingestsmeasuredPSFbank. No training,checkpointchange,sourceDOCXedit,oldexpectedhashreplacementorproductionpromotion.
+
+2026-09-10 same-protocol LSC completion: Experiments/R128_SourceOnlyFullTraining/reports/R128_LSC_R61_COMPARISON.md. This supersedes the earlier pending-LSC status below, while preserving those time-stamped reports. 159nativeframes (150newR128forwards+9verifiedreused),120fixedRaw-selectedpairs,4sequencesand9pillars. HistoricalR61v16PSF-offcheckpoint verified andonefullframepersequence reproduces saved8bitoutputs exactly. Raw159frames/1431centers reproduce historicalreader values to about4.55e-13px. R128andR61each add1431centersand120pair measurements;withRawreplayandfinalFOVguarddiagnostic,5724saved-boundarycircles independently refitted,all pair arithmetic independently recomputed. All7primarymethods use identicalpairs;nofailed/missingrowsorposthocframechoice. WorstpairvsR61replayed through the publictrialentry with exactfloat/neural/PNGoutputs andmatchingLSC.
+
+完整同條件比較已完成。R128 相對 R61 的整體位移波動由 7.220 降至 6.873 奈米，改善約 4.8%；不同柱體量出位移的不一致由 5.823 降至 3.416 奈米，改善約 41%。結合較好的配對 SEM 輪廓、周長與圓度表現，R128 是更值得保留的單一綜合研究候選，但橫向偏移、個別影格及圓度相對原圖仍有退步或不確定性，沒有正式精密量測升級。
+
+PrimarymeansequenceSDnm:Raw9.745101,Wiener7.391651,R617.220139,R1097.002564,R1197.260884,R1286.872913. R128medianwithin-gridSD3.415735nm;nominalMAE6.162762nm;cross-axis5.152931nm. Preserve per-sequence andworst-case findings in report. Source-definedFOVcontext:all50xwindowsfullyneural;20x0.5um180/306fullyneuraland27fullyRaw,20x1um333/360and3fullyRaw. Both-frameall-nine-neural diagnostic subset95pairs, neverreplacesmain120. Guard-off is sameforwarddiagnostic,notanothertrainedmodeloradoptedoutput. SEMpairedspecimen is separatefrommotionimages;no same-pillarSEMtruthclaimforLSC. V42trainingoverlap andR119causalauditcorrection remain authoritative. No training/modelchanges,oldhashreplacement,productionpromotionoroldconfirmationaccess.
+
+2026-09-10 matched competitive review: Experiments/R128_SourceOnlyFullTraining/reports/R128_COMPETITIVE_REVIEW.md. Reused identical Raw/SEMmask sources for36pillars xnormal13/14/15 xRaw,R61v16,R109E48,R119E42,R128PNG x2references. No per-model alignment fitting. All1080rows independently recomputed;432previousRaw/R128rows reproduce. After median per-pillar across3exposures, R128historical/global boundary medians0.585814/0.375708px vsRaw0.769901/0.508201 andR1090.690251/0.442433. R128boundary beatsR109on33/36pillars with bothreferences and remains strongest aggregateboundary/area/perimeter among listedmethods in the16fully-neuralinterior. Circularity medianerrorsRaw0.016188toR1280.012494historical,but0.011769to0.015056global. Predictedcircularity is identicalacrossrefs;SEMreference per-object absolute difference median0.014586shows referenceconstruction sensitivity. Worstlocalerror canincrease. These are one reuseddevelopment specimen,notfreshconfirmation or universal geometry certification.
+
+LSC summaries independently recomputed from the same120Raw-lockedpairs: mean per-sequence stepSDRaw9.745101,Wiener7.391651,V42E1206.922744,R109E487.002564,R119E427.260884nm. R128was notrun through this protocol; its0.013190pxfull-fieldRaw-relative registrationdifference is notformalLSC improvement. V42specifictrainingdataoverlap andR119causalauditcorrection remain authoritative. Nextdecision: same120-pairLSCevaluation of the singleP_s1285002model with Raw,Wiener,R109references and worst-case inspection,then resolve reference-sensitivecircularity before precisionadoption. No newinference/training,promotionor oldconfirmationaccess in thisreview.
+
+2026-09-10 full-contour follow-up: Experiments/R128_SourceOnlyFullTraining/reports/R128_FULL_CONTOUR_SEM.md. Prior36/36claims were diameter/pitch readouts, not completeContour; this distinct supplemental test now extracts all36outer contours on normal13/14/15with unchanged historical ACMhelpers. PrimaryRaw200iterations/smooth1masks match all108oldRaw masks bitwise. Same Raw-derived integer shifts are applied to Raw,PNGandfloat outputs; fixed historical and R121global-pitch SEMreferences are unchanged. No per-candidate scale/rotation/translation fit. All1944rows valid across3predefined extraction presets,3image representations and2references; independent boundary/HD95/IoU/area checks agree within1e-6,zero support contacts.
+
+PrimaryPNGfull-contour mean-distance/IoU improvements:historical36/36for each exposure;global-pitch36/36,35/36,36/36. Global-reference mean-distance mediansRaw0.514/0.513/0.508toR1280.363/0.382/0.365px. All16fully-neural interior objects improve for all3exposures/bothreferences. The worst mean-distance case,pillar12/exposure14/globalreference,worsens0.527834to0.539109px and is displayed. Perimeter/circularity and maximum local distance do not improve universally (globalexposure13worst2.236to2.828px). This establishes tested coarse pillar outer-contour benefit, not all local geometry or absolute material-edge truth. Existing structure-risk evidence and sole trial candidate remain unchanged.
+
+2026-09-10 structure check complete: Experiments/R128_SourceOnlyFullTraining/reports/R128_STRUCTURE_CHECK.md. Raw-only feature/source plan preceded analysis;15new full-image inferences plus12verified reused outputs cover27real frames. Six motion suites at first/last adjacent pairs all12remain source-consistent,max0.0131902847px.12profile strips at3levels/two normalizations show12count flags, all resolved as original-domain endpoint crossings using actual context.12true checker junctions have max0.4679pxfixed-aperture readout change, strongly aperture-sensitive;32automatic square-region responses are diagnostic features, not all physical corners, and the2.237pxmaximum is a smallspot.
+
+Known-reference controls:6clean,26corners/junctions,26dense. Exact nearest-line-segment contour distances with32pixels of actual surrounding context replace the imprecise sampled-point comparison in the final interpretation; all original values retained. Six clean cases have mean0.0328413pxunnecessary contour error,max0.535591px; contrast106-174cases have mean0.009894-0.015052px,max0.178328-0.258026px. Blurred corner mean improves0.173932to0.144400pxbut11/26worsen. Dense common25cases improve0.248982to0.157972pxbut9worsen; one low-contrast case has no candidate half-level contours and remains explicit. No claim of38pxobject displacement from periodic ordered matching. A new1pixel component at cropped boundary belongs to an existing243pixelneighbor in expanded context. No training/model changes. Continue soleP_s1285002research trial; prioritize clear boundary/corner protection and stable local readouts before precision adoption.
+
+2026-09-10 normal-scope follow-up: source-only prospective development check names13/14/15before new outputs; P_s1285002improves36/36objects and16/16interior objects in all3. These are36physical objects repeated, not108independent cases or a qualified normal operating range. Single-candidate trial/restore.py was executed on full optical image14:float/PNGoutput matches the independent result exactly; source preserved, overwriting and unsupported input types rejected. Input brightness rejection is not implemented; clean controls and noncircular-detail preservation remain to be assessed. No new training or scientific-protocol rewrite.
+
+Application scope clarified after final review: the user can fix camera/lighting and retake dark images. Prioritize normal controlled acquisition and realistic nearby variation; extreme-dark images define a retake/out-of-scope boundary. Do not retroactively relabel R128 failures as passing or pick normal inputs by candidate scores. Actual operating limits, input-quality rejection, normal-scene preservation and metrological qualification remain to be verified. The only follow-up candidate stays P_s1285002; final deployment remains one model. See Experiments/R128_SourceOnlyFullTraining/reports/R128_APPLICATION_SCOPE.md and config/application_scope.json.
+
+Final review: all4runs completed at2026-09-09T13:55:38UTC. Execution audit confirms32768unique steps,224exact duplicated recovery calls, original frozen identities, all768data parents and5403historical protected files. All arms/seeds consumed identical recorded photos/order,64independent consumed-input replays cover16passes, and all12trained real evaluations were verified. Final288SEM rows were recomputed; complete dark-image inference and worst source-relative motion for P_s1285002were rerun and reproduce saved results.
+
+Retain only P_s1285002step8192as the engineering follow-up candidate, not an adopted application model:43/72SEM comparisons improve,29worsen,0unmeasurable; normal36/36improve and dark29/36worsen. All4candidates worsen all16fully-neural dark objects. All24final motion pairs remain Raw-consistent (max0.005946px), which is not stage accuracy. Generated-test mean improves but all6clean controls are modified. Reference definitions and physical calibration remain unqualified. Production selection is null; no extra training was launched. Full result and audit supersede stale running-only status below while retaining interruption history.
+
+The new301,832parameter model reads only images through four shared updates. I/P use identical initializations, scenes/noise/order, optimizer and validation; their only difference is0.02weighted true-simulator observation supervision after forward. The complete768parent procedural bank passes the unchanged data screens, with512training/128development/128final-generated-test parents. Four fresh runs each use8192updates/16passes,32768planned updates total. No real/SEM/teacher answers enter training.
+
+The initial nondeterministic resume failure remains retained. The repaired constant-translation/deterministic runtime passes exact next-update resume, actual128update learning, complete physical-context output/loss/gradient checks and the full6image/6motion-pair/two-exposure36objectSEM evaluation for Raw and a nonneutral model. All5403protected files remain unchanged. Candidate failures and global-boundary coverage are explicit.
+
+The background runner has produced actual training updates. Current progress: Experiments/R128_SourceOnlyFullTraining/reports/TRAINING_PROGRESS.md; canonical preparation: Experiments/R128_SourceOnlyFullTraining/reports/R128_RESULTS.md. Training is running, not complete or adopted. Existing real data remain reused development, the old144confirmation is not reused or relabeled, and independent physical qualification remains open. COMBO and historicalV42roles are unchanged.
+
+2026-09-09 follow-up: the original first run executed1393updates but its last status recorded1392; a Windows sharing violation replacing status.json stopped it at01:18Taipei. No run completed. A separately versioned operational adapter now retries transient metadata reads/writes; a real Windows lock reproduces the original failure,200concurrent writes/readers preserve whole documents, and replay1281-1284matches original learning fields exactly. Original frozen source and expected hashes are retained; recovery identity is additional, not substituted. The same four-run study resumed from checkpoint1280 at05:58Taipei. Prior failure, old progress snapshots and ledgers remain preserved; replayed calls are not new unique steps. See the canonical recovery report and live process-backed progress.
+
+2026-09-09 17:12Taipei follow-up: first2runs are fully reconciled through8192updates, final optimizer states, all scheduled real evaluations and128final-generated-test parents/run. The third run stopped after5359updates at14:21:39with both processes absent and no new exception record. System events show the start of a Codex update and an NVIDIA event at the same second; this is temporal evidence, not unique causal proof. Original checkpoint5248 and135third-runfiles were retained. A one-off Windows-service-parented launch, outside the application job, reproduces5249-5252exactly and resumes the same unchanged frozen coordinator/trainer. It introduces no recurring schedule or model/data/loss/evaluation change. Fourth run remains queued; no final single-model selection is made yet.
+
+### R127 completed software repairs with explicit physical limits (2026-09-08)
+
+Experiments/R127_MeasurementPreservationRepair provides a tested image-pair CLI for8/16bit images and explicit ROI/context scope, a native SEM relative-size diagnostic and a conditional preservation controller around the unchanged R126weights. It does not introduce a newly trained model. The3GiB budget is respected; all earlier failures and historical source identities remain retained.
+
+The native SEM audit uses original9images and36objects, obtaining optical pitch134.4284px/nativeSEM pitch431.0545px and a relative transfer factor0.3118594(+0.7306% from historical1/3.23). LegacyP pairing declares an unused3.2507variable but applies1/3.230. Resizing plus re-segmentation adds differences beyond scale; native ratio/rim-band comparisons avoid mixing those operations. The720-ray statistic and inner/rim/outer definition band are explicitly operational, not qualified material-edge truth. Under this native size definition, both Qdark models enlarge the optical size statistic on36/36objects; no model is adopted.
+
+The motion reader keeps invalid local estimates unavailable and adds actual spatial information. A third new-parameter72case check passes with max0.015998px error and all unobservable/unrelated negatives rejected; earlier failed validation informed development and is not re-labelled unseen. Actual local128and saved-context checks support10/30and20/30pairs. Full-fieldRaw supports6/6, so all4R126final models are reconstructed on all12original full frames. All48original cores are bitwise identical. The24full-field model translations differ from corresponding full-fieldRaw estimates by at most0.000511px. This is dominant-image-translation consistency, not independently measured stage error, individual-ROI accuracy or complete301frame validation. R126's old local phase numbers remain historical outputs; their large jumps no longer support a claim of a comparable whole-image movement.
+
+The preservation controller returns exact native input only for known procedural unit-identity optics, gain1,bias0 and actual sensor noise0.6identity parents and100arbitrary inputs pass exactly; noisy identity and noiseless blur still execute unchanged reconstruction and improve the tested errors. Unknown real inputs remain unqualified. An identical-observation counterexample establishes why image-only universal clean detection cannot be asserted from this evidence. No weights were updated. A profile-definition probe also shows Qdark30%crossings move outward while70%crossings move inward: transition-shape changes must not be mistaken for a unique material-edge improvement.
+
+Independent audit recomputes correlation algebra, native scale/band arithmetic,24full-field differences and all48old-core parities, and verifies5,242older files unchanged. The canonical execution notes preserve failures; the acquisition plan identifies the missing physical correspondence/actual-position evidence. Availability of existing independent position records has been requested from the user. Baseline/alternates and V42's historical thesis role remain unchanged.
+
+### R126 completed learnability repair and matched photometry experiment (2026-09-08)
+
+The latest learned research checkpoints are the four `Experiments/R126_LearnabilityPhotometry/runs/photo_{P|Q}_s{1265001|1265002}/step0128.pth` artifacts. None is adopted. Six fixed-example controls establish a causal update-scale effect under a single known generated geometry: changing only1e-4 to1e-3 improves native error reductions from9.84/7.21percent(A/B full) to38.13/61.17percent. The numerical derivative sweep, original inadequate runs and first launcher failure are retained. This does not establish an optimal general learning rate or unseen performance.
+
+The separately frozen P/Q study compares original and expanded photometry on the same64 procedural parents, two presentations each, with identical geometry/optics/motion and matched sensor-noise draws. Both use the unchanged R125 B architecture, fixed geometry parameters, same full non-geometry objectives and two matched starts. All256 treatment conditions(512views) pass unchanged data-fit screens; independent8x replay agrees within0.00000844gray. Q reduces common dark simulation-reference MAE18–19percent relative to P, but introduces about0.391gray error on an originally exact clean input versus0.129for P. Data coverage helps, but does not ensure preservation or real physical applicability.
+
+All four initial real evaluations precede photometry training, and all four final checkpoints use the same reused real panel. The1152common-population SEM rows show improvement under globally pitch-matched references, while historical dark-reference comparisons reverse the Q/P conclusion. The48motion records preserve weak/negative responses and new Q Raw-relative jumps36.83–36.94px. Independent phase-surface reconstruction identifies maximum-selection changes; neither the old12px nor new37px differences are treated as known stage movement. Qualified SEM/optical correspondence, reliable displacement readouts and preservation mechanisms remain next requirements. No fullACM, full301-frame evaluation, new physical confirmation or model promotion.
+
+Execution audit verifies1280updates(768fixed plus512photometry),256independent actual-input rebuilds,144real float outputs and3431unchanged older files including132original R119 controls. Learned strict-FP32 tile tests pass on two real windows. The initial learned real trace fails a cross-runtime comparison and is preserved; a four-setting diagnosis identifies the evaluator's deterministic/default-TF32 setup, and a separate same-runtime trace reproduces the saved image exactly without changing weights, images, expectations or tolerance. This distinction is explicit in `reports/R126_EXECUTION_NOTES.md`. Detailed scientific outcome and final verification remain separate.
+
+### R125 completed data repair and bounded exploratory learning (2026-09-08)
+
+R125's learned research artifacts are under `Experiments/R125_DataAlignedPilot/runs/{A|B|C}_s{1235001|1235002}/checkpoints/step0064.pth`. These are six exploratory checkpoints, not adopted models. The first generated package remains rejected:2xwithin-cell information loss exceeded predefined model-fit screens in three cases, and one Float32geometry cell was inconsistent with independent precision replay. The repaired package preserves all64physical conditions, uses8xFloat64 observations and4xlatent targets, and passes all128cores under the same limits. The network preserves4xoptical degrees of freedom while its neural prior remains2x. Exact original kernels are retained beside bounded factorized computation; context reduction is independently checked against full640input with the same128supervised core.
+
+The full actual matrix is64updates x3arms x2starts, not the proposed512-scene/1024-update R123 comparison. Per-step source/profile/target-use ledgers and checkpoints were independently reconciled:384updates,64identical inputs/orders perrun,21/22/26changedparameter tensors forA/B/C, intended fixed modules unchanged. All12initial/final real evaluations are complete. The fixed SEM half-readout shows A normal-exposure improvement but dark-exposure regression; B/C do not show reliable benefit. Real phase-matching discrepancies/low responses are preserved and not called true stage motion. Existing real sources remain reused development; no fullACM, full301-frame evaluation, qualified physical mapping or new confirmation claim was made.
+
+Post-pilot source diagnostics show training target levels/contrast do not cover either SEM exposure's Raw plateau envelope; dark real contrast is20gray versus training94–163gray. This is not proof that photometry alone caused failure. A fixed-six training-reference check also lacks clear image-error reduction. Decision: no adopted model or long training; next work addresses learnability and real coverage/calibration. See `reports/R125_DATA_FIT.md`, executed notebook `reports/R125_DATA_FIT.ipynb`, reader `reports/R125_REPORT.html` and `results/final_verification.json` within R125. Original failures, old protected evidence and the consumed confirmation state remain unchanged.
+
+### R124 implemented prototype and completed mechanical verification (2026-09-08)
+
+The current executable prototype is `Experiments/R124_RealFirstPrototype`, implementing R123's full2D iterative direction. `README.md` documents single-file/folder CLI and Python usage. Only diagnostic identity/assumed Gaussian observations are admitted; a qualified-calibration string is rejected because instrument admission is not implemented. Geometry cannot overwrite the image, and scale proxies are not calibrated uncertainty. There is no trained model or optimizer update; nonzero-prior test states are unsaved stress fixtures.
+
+All26 behavior/operator/artifact tests pass. Actual paired640-native-pixel forward/backward fits on the A6000 at22.57GiB allocated peak; tile parity is established for the exact tested computation, not arbitrary future support or nonlinear optics. Untrained actual outputs were passed through fixed SEM-linked half-contrast readings for exposures13/24, all36 pillars under two references. Raw replay is exact; Gaussian assumptions slightly increase observed distance. Original denominator-floor sensitivity and an unjustified monotonic sampling assertion were preserved and diagnosed without editing old expectations. The prototype's half-readout connection is not complete ACM or full301-frame motion evaluation. Next work is the source-independent scientific data/loss/ledger pipeline, qualified observation/readout semantics and bounded learning with immediate real-first evaluation; R124 mechanical completion does not promote that work to done.
+
+### R123 real-first model and data design (2026-09-08)
+
+The user's updated priority is real microscopy and SEM comparison from the first short candidate, including real full-field motion, corners, lines, gaps and defects. R73/R74 are synthetic diagnostics, not real-acquisition primary evidence. The selected architecture proposal uses a full 2D optical-intensity state, four shared learned updates and explicit qualified observation corrections, with no unchecked final detail patch. Geometry and uncertainty remain externally audited; internal geometry cannot substitute for measurements from the actual output image. The prototype is not implemented. Design verification includes source/ROI inventory, historical real-score replay and limited observation-operator arithmetic, not new model performance.
+
+Read `Experiments/R123_RealFirstModelDesign/reports/R123_RESULTS.md` for completed scope. Training data initially mean new independent generated scenes, not the current real development sources or their SEM answers. New real training acquisitions are an extension not yet admitted. All short model variants use the same visible real development panel; the proposed final 1024-update point is the main comparison. Unset application tolerances allow exploration only, not automatic long training. Qualified calibration and image/SEM correspondence are needed before physical accuracy claims; 364 existing optical files and 144 full-field ROIs are not independent new samples. R123's 144 ROIs are unrelated to the consumed old 144-scene confirmation.
+
+### R122 verified principles and corrected V42 evidence scope (2026-09-08)
+
+Read `Experiments/R122_OperatorPrinciples/reports/R122_RESULTS.md` for executed diagnostics and `reports/MODEL_DESIGN.md` in that experiment for the next design contract. V42 retains its identity as the model used for historical thesis results; those reused motion/static samples must not be described as independent unseen evidence. Normal supervised labels are legitimate; source reuse across an independence claim is the issue. The audit binds current E120, its actual split, original loader construction and source pixel/SEM-answer lineage. It does not reconstruct every historical batch or every ancestor teacher run.
+
+R122 preserves the negative sampled-renderer results and initial binary-raster failure. Area-integrating v2 resolves the simulator's artificial motion error, but the simple straight-edge estimator still fails 119 absolute-position and 47 motion cases of 360. This is evidence about assumptions and limits, not an adopted model. Continuous 1D oracle operation is verified; predicting the parameters, handling 2D geometry/texture/tiles, calibrating optics and demonstrating independent real usefulness remain work to do. Raw and independently generated known truth are the primary next references. No further neural training or confirmation evaluation happened in R122. The 144-scene confirmation remains consumed.
+
+### R109/R119 readout and operator comparison (2026-09-07)
+
+The new frozen comparison under R119 `analysis/R109_comparison_20260907` uses the same Raw-derived integer alignment for ACM, half-contrast and steepest-edge readouts, retaining legacy alignment separately for parity. Under both SEM references, R109 wins against Raw on ACM for all 36 pillar medians but loses on half-contrast for all 36; this is not an alignment or single-scale artifact. R119 loses to R109 on both reliable comparisons. Primary steepest-edge Raw coverage is inadequate; a predeclared smoother sensitivity and separately labeled model-only population do not substitute for the three-way comparison.
+
+Within each frozen model, removing the R119 position path improves ACM and midpoint error in every exposure median, while removing R109 position generally worsens them. These path effects are not pure translation: real and clean synthetic tests show position fields also compress edge transitions, with a larger effect in R119. This invalidates interpreting a position-path switch as a pure displacement experiment, not the stored numerical observations. R109 is a comparison model, not physical ground truth. The next operation design must separate profile translation from width compression and keep readout definitions explicit before additional training. All 132 protected inputs are unchanged. Existing R119 causal corrections, consumed confirmation and R121 negative outcome remain in force.
+
+### R121 complete bounded comparison, not adopted (2026-09-06)
+
+The four-arm experiment is `Experiments/R121_BoundaryAnchorFactorial`; valid results use `config/protocol_v2.json` and `results/matrix_finished_v2.json`. Eight valid runs completed 12 epochs and 768 updates each, with 24 checked checkpoints and one common validation bank. C v1 was interrupted after an independent fixture showed pure-width/position confounding; it is excluded, its records retained, and its unaffected A/B controls were reused only after exact loss/gradient parity checks. Valid C/D use symmetric reference-centered profiles.
+
+SEM reference replay recovered all 36 original masks exactly. Fixed historical scaling leaves SEM pitch 0.623%-1.099% below optical pitch; a separate global factor 1.009233335 was determined from center spacing before evaluating new candidates. It explains part of the shared size bias but does not rescue B/C/D: all three lose to A for every pillar's across-exposure median under both references and both seeds. All 7,776 shape measurements were independently recomputed. The new position factor improves simple synthetic boundary scores but degrades true-reference texture error and real SEM contours in this twelve-epoch budget. No intervention meets the predeclared combined gate, so conditional real LSC and long training are not triggered. The underlying universal-model goal is not claimed solved; COMBO, V42 and existing research roles are unchanged. The canonical report is `reports/R121_RESULTS.md` within R121.
+
+### R119 controlled blur, radiometry and motion decision (2026-09-06)
+
+The controlled study under `Experiments/R119_SequenceGeometryValidation/analysis/controlled_boundary_factors_20260906` separates blur, gain and true object translation before sensor integration. The three simple geometries pass the declared readout calibration; all 340 synthetic cases retain 720 common-valid profiles for seven output paths. Standard blurred circles benefit from outward correction, whereas existing real Raw profiles already lie outward relative to the current SEM digital reference. This is a data/reference discrepancy to resolve, not proof that a fixed inward offset or new loss weight is correct. The independent-level follow-up exposes brightness/contrast dependence but does not fully reproduce real expansion. The chosen priority is the optical/SEM reference contract and independently varied intensity/contrast coverage; no architecture change, training, confirmation access or promotion occurred. See `reports/R119_CONTROLLED_BOUNDARY_FACTORS.md` within R119 for preserved initial calibration failures, revised geometry-only readout calibration, invalid-profile counts and the distinction from locked ACM/LSC metrics.
+
+### R119 training-position diagnostic extension (2026-09-06)
+
+See `Experiments/R119_SequenceGeometryValidation/reports/R119_TRAINING_POSITION_DIAGNOSIS.md` and its `analysis/training_position_diagnosis_20260906` data. Four known-answer cases show that center/pair consistency misses common dilation while local image/edge losses penalize it; equal-output position/detail compensation is not identified by the current objective. These are operator counterexamples, not proof of learned historical compensation. Fixed synthetic tests and real SEM operator-field measurements further narrow the question to necessary versus unnecessary displacement under different imaging conditions. No complete training root cause, new model, or universal solution is claimed. Earlier cross-exposure and causal-audit corrections remain valid.
+
+### R119 cross-exposure diagnostic extension (2026-09-06)
+
+The fixed-E42 position-path diagnosis now covers 36 pillars in all 12 existing SEM-linked exposures. See `Experiments/R119_SequenceGeometryValidation/reports/R119_CROSS_EXPOSURE_POSITION_AUDIT.md` and `analysis/sem_position_audit_20260906` within that experiment. Full / position-off / Raw pooled median contour errors are 0.66176 / 0.58756 / 0.57419 percent of pitch. The within-pillar paired median effect is -0.07691 pitch-percentage-points; a pillar-level bootstrap gives [-0.07976, -0.07112] within this sample only. There is one adverse full-vs-position-off observation (exposure 22, pillar 6). The exact additive detail is retained but output texture changes, so no lossless-detail claim is made. This diagnoses a harmful contribution of the existing position path; it does not justify globally disabling position correction or starting a long training run. Earlier causal corrections and consumed-confirmation status remain in force. All old scientific evidence and receipts are preserved.
+
+### R119 research correction (2026-09-06)
+
+The canonical causal review is `Experiments/R119_SequenceGeometryValidation/reports/R119_CAUSAL_AUDIT.md`, with reproducible diagnostics under that experiment's `analysis/causal_audit_20260905`. It supersedes the earlier coherent-sequence success explanation and the approximately 0.9-pixel confirmation position error. The actual checkpoint and locked ACM/SEM/LSC observations are retained; training/data/weights were not changed by the review. Further design should first restore the intended physical observation and fair-control contracts, then verify local boundary motion independently of width/detail. COMBO production roles are unchanged.
 
 ## 1. Current Formal Baseline / 目前正式 baseline
 
@@ -202,6 +464,14 @@ R39 a030（COMBO ↔ R39_strong α=0.30 權重平均）與 R40 a043（COMBO ↔ 
 - `R43_CandidateUsabilityAudit` 已完成 analysis-only 盤點：沒有新候選可全面取代 COMBO；`R39 a030` 最接近正式替代討論，`R42` full endpoints 可作顯微邊界研究/人工檢查候選
 - `R44_UniversalBoundaryMotionFidelity` 已完成 R44A 診斷、R44B 三候選訓練、R44C 三個短探針、R44D 分族診斷、R44E 專項探針、R44F 錯誤解剖、R44G 邊界形狀體檢、R44H Step A 家族平均探測與 Step B 局部老師蒸餾：通用位移忠實度有進展，但仍未找到可直接堪用或可升級的平衡模型；研究成功但不可升級
 - `R45_FamilyBoundaryAdapter` 已完成 R45A 單一入口小模組驗證與 R45B 老師殘差診斷：輸出端小校正可守住位移但沒有改善大區塊/混合場景；能力分散有 oracle 上限，但老師優勢不乾淨，不能直接拿來輸出端蒸餾
+- `LabSystem_MOSR / R51_BlurSourceProbe` 是論文 Lab-system blur-source 小訓練探針：Gaussian、weak-BADS alpha `0.50`、mixed-PSF 三組短訓練與 real `20250605_checkboard` 重建/角點驗證皆完成。最佳 R51 是 mixed-PSF `best_tradeoff`，median corner shift `2.828 px`，優於 Lab R40 control `4.243 px`，但 large-shift corner rate `36.872%` 仍差於 R40 的 `24.581%`；方向有幫助但不可升級，下一步需加入真實角點穩定守門
+- `LabSystem_MOSR / R52_CornerStabilityGuard` 是論文 Lab-system formal long run：R52 以 R51 mixed-PSF `best_tradeoff` 為起點，加入 4000-pair corner-stability training data 與 geometry sidecars，完成 100 epochs、真實 `20250605_checkboard` 重建與角點驗證。最佳 R52 是 epoch-100 `latest`，median corner shift `3.606 px` 優於 Lab R40 control `4.243 px`，但 large-shift corner rate `30.447%` 仍差於 R40 的 `24.581%`；R52 failed real-corner gate，不升級，不當 Lab baseline
+- `LabSystem_MOSR / R53_RealisticDatasetCalibration` 是論文 Lab-system realistic-data formal round：R53 以 6000-pair main-project-like Lab training mix 從頭訓練 100 epochs，內部驗證到 epoch 100 仍改善（`PSNR 26.39` / `SSIM 0.9353`），但真實 `20250605_checkboard` 重建與角點驗證失敗。R53 `best_tradeoff` median corner shift `3.606 px`，但 large-shift corner rate `40.782%` 差於 Lab R40 的 `24.581%`；R53 `latest` 更退到 median `9.220 px` / `58.939%` large-shift corners。R53 不升級，不當 Lab baseline
+- `LabSystem_MOSR / R54_GeometryRootCauseProbe` 是論文 Lab-system root-cause diagnostic + masked small-overfit probe：R54 先確認重建本身正在傷害真實角點（raw input >5 px 角點 `1.676%`，Lab R40 `24.581%`，R53 latest `58.939%`），再用 20260613 strict-rectangle CAD GT 做 edge-band masked small-overfit。小探針能成功貼近 CAD 監督（inside MAE input `61.145` -> R54 epoch20 `9.268`），但套到真實 `20250605_checkboard` 失敗：R54 epoch20 median corner shift `9.220 px`、>5 px `60.056%`，比 Lab R40 `4.243 px` / `24.581%` 更差。R54 證明問題不是「模型完全學不動 CAD 邊」，而是小範圍 CAD 適應會造成真實影像輸出漂移；不可作 Lab baseline
+- `LabSystem_MOSR / R56_LabelCoreRepairTraining` 是論文 Lab-system label-core repair follow-up：R56 使用 R53/R55 source-style 6000-pair package 的 label-core 修復版本，完成 50 epoch scratch training，內部驗證到 epoch 50 仍改善（`PSNR 26.40` / `SSIM 0.9333`），但真實 `20250605_checkboard` 角點驗證失敗。R56 `best_tradeoff` median corner shift `2.828 px` 與 R55 best 相同，但 tail shift `9.899 px` 與 >5 px corners `26.816%` 都比 R55 best 的 `3.606 px` / `21.788%` 更差；R56 `latest` 更退到 median `9.899 px` / `59.777%` >5 px corners。R56 不採用，不送外部 GMF；R55 best 仍是目前較好的 Lab 候選
+- `LabSystem_MOSR / R50_PSFControlDiagnosis` 是論文 Lab-system PSF/degradation 診斷：real Lab checkboard edge-width proxy 是 `7.0 px`，formal BADS 是 `11.0 px`，Gaussian 是 `9.0 px`，weak-BADS alpha `0.50` 是 `7.0 px`；結論是 BADS PSF 可用但不適合作為唯一 checkboard-corner blur truth，並已導向 R51 Gaussian / weak-BADS / mixed-PSF 小訓練探針
+- `LabSystem_MOSR / R49_CADAnchorRealGeometry` 是論文 Lab-system replication side track：R49 CAD-anchor data/geometry packages, formal 100-epoch training, real Lab checkboard reconstruction, and real-corner validation are complete; validation failed (best R49 median corner shift `9.000 px` vs Lab R40 control `4.243 px`), so it remains negative method-transfer evidence and not a main-project baseline challenger. Full history is hash-verified on H; D keeps canonical context and restore instructions
+- `LabSystem_MOSR / R48_RealCornerTransfer` 是論文 Lab-system replication side track：R48 data/geometry packages, formal 200-epoch training, real Lab checkboard reconstruction, and real-corner validation are complete; validation failed, so it remains negative method-transfer evidence and not a main-project baseline challenger
 - `Round31` 已關閉，`Round32` 已關閉
 - `R26NewPSFCheck` 仍保留為 **open side track**，但不是 active mainline
 
@@ -477,6 +747,8 @@ One-line verdict: **R41 training and weight sweep are complete; microscopy-featu
 R41 在 ESTIMATOR_POLICY.json 的位置：`open_side_tracks[].candidate_id = "R41_direct_best"`，狀態 `weight_sweep_complete_no_guarded_tradeoff`。COMBO 仍是正式 baseline；R41 不是 approved alternate。
 
 R41 當前 finding：知識蒸餾加強了顯微能力保留，沒有把 R40 的顯微能力洗掉，甚至在 unseen micro validation 上高於 R40 a045。但這條路線沒有產生 ring/micro 共同通過點。低 alpha 守環形較好但顯微不夠；0.45/0.50 顯微過線但 0.8px / 0.08px 環形不過。下一輪若要繼續，應改機制，不要只沿 R41 的 teacher anchoring + weight averaging 加測。
+
+Storage note (2026-08-01)：R41 封存前完整快照、正式訓練與專用資料共 6,075 個檔案，已透過三份 SHA-256 清單核對後保存到 `H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history`。D 槽的 `Experiments/R41_RingDistillation/ARCHIVE_POINTER.md` 保留完整恢復方式；此存放變更不改變上述研究 verdict。
 
 ### R42 Microscopy Boundary Fidelity
 

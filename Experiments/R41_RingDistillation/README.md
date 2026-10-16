@@ -85,6 +85,8 @@ R41 證明 KD anchoring 能保住 R40 的 microscopy capacity，甚至略有強�
 
 ## 主要資料與產物
 
+2026-08-01 起，完整候選重建、掃描權重、正式訓練過程與 R41 專用資料已核對封存到 H 槽。D 槽保留正式報告、程式、測試、數字摘要與一份代表模型。完整位置及恢復方法見 `ARCHIVE_POINTER.md`。
+
 | 類型 | 位置 |
 |---|---|
 | 資料 builder | `scripts/r41_data.py` |
@@ -96,11 +98,12 @@ R41 證明 KD anchoring 能保住 R40 的 microscopy capacity，甚至略有強�
 | 外部比較 | `scripts/r41_external_compare.py` |
 | 主結果報告 | `reports/R41_RESULTS.md` |
 | 外部紀錄 | `reports/R41_EXTERNAL_COMPARE.md` |
-| 訓練 run | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/` |
+| 訓練 run | 已封存；見 `ARCHIVE_POINTER.md` |
+| D 槽代表模型 | `selected_checkpoint/best_tradeoff.pth.tar`（研究用途，未升級） |
 | Direct best 摘要 | `results/micro_recon/r41_kd_from_a045_best_summary.json` |
 | Ring guard 摘要 | `results/ring_guard/r41_kd_from_a045_best_ring_guard_summary.json` |
-| 正式 sweep | `results/weight_sweep/sweep_summary.md` |
-| 高 alpha 診斷 | `results/weight_sweep_ext_high_alpha/sweep_summary.md` |
+| 正式 sweep | `results/weight_sweep/sweep_summary.md`；完整重建與 checkpoint 已封存 |
+| 高 alpha 診斷 | `results/weight_sweep_ext_high_alpha/sweep_summary.md`；完整重建與 checkpoint 已封存 |
 
 ## 分支
 

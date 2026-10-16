@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "decision": "Whether R109 E48 should replace V42 E120 as the thesis results model",
+  "primary_outcomes": [
+    {
+      "name": "SEM ACM full-contour fidelity",
+      "readouts": [
+        "mean boundary distance",
+        "IoU",
+        "perimeter error",
+        "dark-exposure and worst-case behavior"
+      ]
+    },
+    {
+      "name": "Thesis LSC-center displacement stability",
+      "definition": "ACM coarse contour, maximum-gradient inflection points, least-squares-circle center, and the current Chapter 6.2 Raw-locked 30 pairs per sequence",
+      "readouts": [
+        "four-sequence mean step standard deviation",
+        "nominal-step mean absolute error",
+        "median nine-pillar dispersion",
+        "median cross-axis displacement"
+      ]
+    },
+    {
+      "name": "External GMF displacement stability",
+      "readouts": [
+        "Y-step standard deviation",
+        "Y-step mean absolute error",
+        "wrong-direction steps",
+        "cross-axis spread",
+        "GMF score"
+      ]
+    }
+  ],
+  "supporting_evidence": [
+    "boundary-consensus displacement on the same 120 steps",
+    "50x line-pattern sharpness and displacement",
+    "unseen-shape and dark-exposure behavior",
+    "large-image execution and tile-grid parity",
+    "model size and training-data independence"
+  ],
+  "guardrails": [
+    "fixed Raw-selected populations",
+    "fixed curvature-operator phase before every LSC measurement",
+    "no missing measurements",
+    "no dark rings or off-source strong edges",
+    "systematic displacement bias remains visible",
+    "CD remains secondary dimensional compatibility only"
+  ],
+  "cd_role": "secondary legacy dimensional-compatibility evidence only",
+  "decision_rule": "No weighted aggregate. A replacement must not materially weaken either LSC or external-GMF displacement and should improve ACM robustness."
+}

@@ -1,0 +1,88 @@
+{
+  "experiment_id": "R114_R74_SplitProfile_LockedACM_Full_R116E42_no_shift",
+  "dataset": {
+    "root": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val",
+    "generator_version": "r74_hard_microscopy_v1",
+    "generator_seed": 2026073001,
+    "image_size": 512,
+    "images_per_family": 20,
+    "total_images": 100,
+    "families": [
+      {
+        "name": "low_contrast",
+        "label_tw": "極低對比",
+        "stage": "stage_r74_low_contrast"
+      },
+      {
+        "name": "uneven_illumination",
+        "label_tw": "照明不均",
+        "stage": "stage_r74_uneven_illumination"
+      },
+      {
+        "name": "asymmetric_blur_halo",
+        "label_tw": "非對稱模糊與光暈",
+        "stage": "stage_r74_asymmetric_blur_halo"
+      },
+      {
+        "name": "boundary_fade",
+        "label_tw": "局部邊界消失",
+        "stage": "stage_r74_boundary_fade"
+      },
+      {
+        "name": "mixed_hard",
+        "label_tw": "混合困難",
+        "stage": "stage_r74_mixed_hard"
+      }
+    ],
+    "shape_families": [
+      "fourier_lobed",
+      "deep_notches",
+      "thin_necks",
+      "crescent_bodies",
+      "rough_boundaries"
+    ],
+    "mask_semantics": "one connected, simply connected closed object per image",
+    "created_after_checkpoint": true,
+    "difficulty_freeze_rule": "Raw-only ACM is calibrated before any R61 reconstruction; overall median IoU must be 0.70-0.95, each challenge median must be below 0.97, and at least four challenge medians must be 0.65-0.95"
+  },
+  "acm": {
+    "implementation": "MATLAB activecontour",
+    "method": "Chan-Vese",
+    "iterations": 100,
+    "smooth_factor": 1.0,
+    "contraction_bias": 0.0,
+    "intensity_preprocessing": "mat2gray then 1st-to-99th-percentile contrast normalization",
+    "initialization": "polarity-independent automatic inner seed after mild Gaussian denoising, with a fixed centered coarse-disk fallback only when thresholding has no valid component; no truth geometry is used",
+    "initialization_mode": "smoothed_otsu",
+    "seed_radius_fraction": 0.2,
+    "initialization_uses_truth_shape": false,
+    "primary_truth": "exact generator geometry mask",
+    "truth_image_acm_role": "independent extraction QA only",
+    "primary_alignment": "translation_only",
+    "secondary_alignment": "fixed_pixel_coordinates",
+    "scale_fitting": false,
+    "rotation_fitting": false,
+    "sensitivity_presets": [
+      {
+        "name": "low_smooth",
+        "iterations": 100,
+        "smooth_factor": 0.75
+      },
+      {
+        "name": "primary",
+        "iterations": 100,
+        "smooth_factor": 1.0
+      },
+      {
+        "name": "high_smooth",
+        "iterations": 100,
+        "smooth_factor": 1.5
+      }
+    ],
+    "sensitivity_filenames": [
+      "0000.bmp",
+      "0007.bmp",
+      "0014.bmp"
+    ]
+  }
+}

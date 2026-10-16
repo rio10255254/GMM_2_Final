@@ -1,0 +1,21 @@
+{
+  "model_name": "R148-MeasurementStableNativePSF",
+  "architecture": "native_grid_dilated_recurrent_with_measured_psf_consistency",
+  "channels": 80,
+  "dilations": [1, 2, 4, 8, 8, 4, 2, 1],
+  "iterations": 4,
+  "r_max": 0.35,
+  "eta_max": 0.25,
+  "eta_initial": 0.05,
+  "checkpoint_blocks": true,
+  "output_logit_gain": 0.1,
+  "psf_bank": "calibration/measured_psf_bank.npz",
+  "psf_count": 25,
+  "psf_mode": "known_or_mean_native_pixel_consistency",
+  "optical_feature_gain": 0.1,
+  "optical_step_initial": 0.02,
+  "optical_step_max": 0.1,
+  "optical_lr_multiplier": 0.2,
+  "inference_core": 512,
+  "inference_halo": 64
+}

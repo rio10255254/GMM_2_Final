@@ -1,0 +1,40 @@
+{
+  "model_key": "srcnn",
+  "model_spec": {
+    "name": "SRCNN-x1",
+    "family": "SRCNN",
+    "year": 2014,
+    "category": "classic CNN",
+    "kwargs": {
+      "features1": 64,
+      "features2": 32
+    },
+    "source": "Dong et al., ECCV 2014 / TPAMI 2016",
+    "adaptation": "one-channel same-resolution residual output"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\srcnn\\best_srcnn.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.14109209034013254,
+    "l1": 0.09806935062915961,
+    "rmse": 0.12697001811284933,
+    "ssim": 0.7850246394030436
+  },
+  "parameter_count": 57281,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.10246934999304358,
+  "median_displacement_roi_inference_seconds": 0.02193194998835679
+}

@@ -1,0 +1,100 @@
+{
+  "experiment_id": "R114C_DeploymentAlignedBoundedProfileScratch",
+  "status": "repaired_after_e24_causal_diagnosis",
+  "scratch_only": true,
+  "foreign_checkpoint_loading": false,
+  "seed": 1144201,
+  "precision": "stagewise_fp32_controller_bf16_actions",
+  "batch_candidates": [12],
+  "default_batch_size": 12,
+  "microbatching": {
+    "logical_batch_size": 12,
+    "high_memory_stages": ["oracle_geometry", "predicted_geometry", "joint_refinement"],
+    "default_microbatch_size": 6,
+    "one_optimizer_step_per_logical_batch": true,
+    "scene_count_weighted_accumulation": true
+  },
+  "workers": 4,
+  "minimum_gpu_free_gib": 7.0,
+  "profile_sampling": {
+    "maximum_boundary_points_per_scene": 512,
+    "offset_min_px": -12,
+    "offset_max_px": 12,
+    "offset_step_px": 1,
+    "smoothing_sigmas_px": [0.85, 1.45]
+  },
+  "action_bounds": {
+    "minimum_width_gain": 1.0,
+    "maximum_width_gain": 3.5,
+    "maximum_normal_shift_px": 1.5,
+    "midpoint_offset_gray": 24.0,
+    "signed_contrast_gray": 72.0,
+    "minimum_profile_width_px": 0.8,
+    "maximum_profile_width_px": 3.5,
+    "maximum_profile_delta_gray": 48.0,
+    "profile_full_strength_radius_px": 10.0,
+    "profile_outer_band_radius_px": 14.0
+  },
+  "campaigns": {
+    "reliability_probe": {
+      "epochs": 6,
+      "stages": {"reliability": 6},
+      "formal": false
+    },
+    "split_profile_probe": {
+      "epochs": 28,
+      "stages": {
+        "reliability": 8,
+        "oracle_geometry": 4,
+        "predicted_geometry": 8,
+        "profile": 6,
+        "joint_refinement": 2
+      },
+      "formal": false
+    },
+    "formal": {
+      "epochs": 40,
+      "stages": {
+        "reliability": 8,
+        "oracle_geometry": 4,
+        "predicted_geometry": 14,
+        "profile": 10,
+        "joint_refinement": 4
+      },
+      "formal": true
+    }
+  },
+  "learning_rates": {
+    "reliability": 0.00035,
+    "geometry": 0.00028,
+    "controller_during_predicted_geometry": 0.00006,
+    "profile": 0.00025,
+    "joint_refinement": 0.00004,
+    "minimum": 0.000025
+  },
+  "objective_cycles": {
+    "reliability": ["base_geometry", "width_reliability", "shift_reliability", "need_clear_counterfactual"],
+    "oracle_geometry": ["width_fit", "shift_fit", "render_contour", "translation", "exposure"],
+    "predicted_geometry": ["width_fit", "shift_fit", "render_contour", "translation", "exposure"],
+    "profile": ["profile_parameters", "profile_visibility", "profile_render", "profile_identity"],
+    "joint_refinement": ["geometry_guard", "profile_guard", "translation", "exposure"]
+  },
+  "loss_contract": {
+    "normalize_every_scene_before_batch_mean": true,
+    "width_and_shift_never_share_one_optimizer_step": true,
+    "render_loss_cannot_train_reliability_heads_during_predicted_gate_warmup": true,
+    "identity_action_is_zero": true,
+    "flat_action_is_zero": true,
+    "profile_optimizer_matches_full_profile_parameter_contract": true,
+    "profile_visibility_uses_deployment_coordinate_counterfactual": true,
+    "profile_render_loss_scores_actual_final_output": true,
+    "profile_gate_does_not_repeat_need_or_recoverability": true,
+    "unreliable_width_neutral": 1.0,
+    "unreliable_shift_neutral": 0.0
+  },
+  "gradient_clip": 5.0,
+  "weight_decay": 0.00001,
+  "checkpoint_every_epochs": 2,
+  "preview_every_epochs": 4,
+  "validation_every_epochs": 4
+}

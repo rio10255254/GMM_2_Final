@@ -1,0 +1,210 @@
+{
+  "experiment_id": "R98_AggressiveTextureScratch",
+  "model_name": "R98_AggressiveTextureScratch",
+  "status": "preflight_passed_formal_training_authorized",
+  "formal_training_authorized": true,
+  "formal_training_blocker": null,
+  "scientific_question": "Can a broader source-locked texture basis, deterministic texture-role coverage, and lower branch conflict produce a deliberately more aggressive reconstruction while retaining R97 displacement and exact tiled consistency?",
+  "independence": {
+    "random_initialization_required": true,
+    "checkpoint_resume_forbidden": true,
+    "teacher_or_pseudo_label_forbidden": true,
+    "real_training_pixels_forbidden": true,
+    "sem_or_hs100mg_geometry_forbidden": true,
+    "optimizer_reuse_forbidden": true,
+    "formal_run_count": 1,
+    "seed": 980047
+  },
+  "architecture": {
+    "model_width": 19,
+    "parameter_count": 2435373,
+    "parameter_budget_max": 2500000,
+    "parent": "R97_DirectCausalPhaseScratch",
+    "preserve": [
+      "local_fully_convolutional_processing",
+      "normalization_free_residual_blocks",
+      "anti_aliased_encoder_decoder",
+      "private_causal_towers",
+      "symmetric_zero_phase_boundary_filters",
+      "canonical_halo_tiling",
+      "direct_applied_correction_learning"
+    ],
+    "texture_representation": "slow coefficients over six symmetric zero-DC source bands with local source-texture energy features",
+    "texture_cannot_freely_repaint_phase": true,
+    "boundary_cannot_create_new_local_extrema": true,
+    "raw_identity_at_initialization": true,
+    "minimum_halo_px": 192,
+    "alignment_multiple": 8,
+    "combined_correction_bound": 0.42
+  },
+  "data": {
+    "scene_count": 1250,
+    "stored_observation_count": 5000,
+    "train_scenes": 1000,
+    "validation_scenes": 125,
+    "sealed_internal_test_scenes": 125,
+    "source_package": "D:/GMM_2_Final/Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal",
+    "source_content_sha256": "6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5",
+    "reuse_existing_arrays_without_regeneration": true,
+    "label_supersample_factor": 8,
+    "training_pixels_are_procedural_only": true,
+    "texture_focus_roles": [
+      "recoverable_detail",
+      "persistent_detail_bundle",
+      "cross_tile_dense",
+      "severe_recoverable"
+    ]
+  },
+  "training": {
+    "planned_epochs": 48,
+    "batches_per_epoch": 96,
+    "texture_focus_batches_per_epoch": 16,
+    "model_width": 19,
+    "optimizer": "AdamW",
+    "peak_learning_rate": 0.00018,
+    "minimum_learning_rate": 3e-05,
+    "weight_decay": 8e-05,
+    "precision": "bfloat16",
+    "validation_precision": "float32",
+    "ema_decay": 0.992,
+    "checkpoint_every_epochs": 2,
+    "validation_every_epochs": 4,
+    "live_real_preview_every_epochs": 4,
+    "online_validation_scenes_per_role": 2,
+    "final_validation_scenes_per_role": 4,
+    "periodic_every_batches": 4,
+    "counterfactual_calibration_every_batches": 3,
+    "geometry_train_until_epoch": 16,
+    "periodic_scene_batch": 2,
+    "periodic_patch_size": 256,
+    "loss_weights": {
+      "pixel": 1.1,
+      "multiscale": 0.45,
+      "gradient": 1.35,
+      "texture": 1.75,
+      "contour": 0.7,
+      "phase": 0.28,
+      "cancellation": 0.55,
+      "texture_branch": 2.2,
+      "boundary_branch": 1.15,
+      "other_branch": 1.0,
+      "motion": 0.24,
+      "translation": 0.18,
+      "periodic": 0.55
+    },
+    "learning_rate_anchors": [
+      {
+        "epoch": 1,
+        "learning_rate": 0.00013
+      },
+      {
+        "epoch": 3,
+        "learning_rate": 0.00018
+      },
+      {
+        "epoch": 16,
+        "learning_rate": 0.00014
+      },
+      {
+        "epoch": 32,
+        "learning_rate": 8e-05
+      },
+      {
+        "epoch": 42,
+        "learning_rate": 5e-05
+      },
+      {
+        "epoch": 48,
+        "learning_rate": 3e-05
+      }
+    ],
+    "phases": [
+      {
+        "epoch_start": 1,
+        "epoch_end": 8,
+        "name": "direct_causal_decomposition",
+        "stage_truth_input_fraction": 1.0
+      },
+      {
+        "epoch_start": 9,
+        "epoch_end": 16,
+        "name": "aggressive_texture_activation",
+        "stage_truth_input_fraction_linear": [
+          1.0,
+          0.55
+        ]
+      },
+      {
+        "epoch_start": 17,
+        "epoch_end": 32,
+        "name": "phase_safe_detail_composition",
+        "stage_truth_input_fraction_linear": [
+          0.55,
+          0.1
+        ]
+      },
+      {
+        "epoch_start": 33,
+        "epoch_end": 42,
+        "name": "large_context_texture_retention",
+        "stage_truth_input_fraction_linear": [
+          0.1,
+          0.0
+        ]
+      },
+      {
+        "epoch_start": 43,
+        "epoch_end": 48,
+        "name": "aggressive_detail_hold",
+        "stage_truth_input_fraction": 0.0
+      }
+    ],
+    "patch_schedule": [
+      {
+        "epoch_start": 1,
+        "epoch_end": 8,
+        "patch_size": 512,
+        "core_size": 256,
+        "candidate_scene_batch": 4,
+        "target_effective_scene_batch": 4,
+        "target_scene_exposures_per_epoch": 384
+      },
+      {
+        "epoch_start": 9,
+        "epoch_end": 32,
+        "patch_size": 768,
+        "core_size": 384,
+        "candidate_scene_batch": 2,
+        "target_effective_scene_batch": 4,
+        "target_scene_exposures_per_epoch": 192
+      },
+      {
+        "epoch_start": 33,
+        "epoch_end": 48,
+        "patch_size": 896,
+        "core_size": 512,
+        "candidate_scene_batch": 1,
+        "target_effective_scene_batch": 3,
+        "target_scene_exposures_per_epoch": 96
+      }
+    ]
+  },
+  "validation": {
+    "fixed_endpoint": {
+      "epoch": 48,
+      "state": "ema_state_dict"
+    },
+    "reference_candidate": "R97 epoch 48 EMA",
+    "locked_axes": [
+      "real_5x_20x_50x_edge_and_fine_energy",
+      "dedicated_texture_branch_activity",
+      "branch_cancellation_fraction",
+      "boundary_position_and_acm_contour",
+      "signed_motion_bias_spread_and_tail",
+      "periodic_wrong_pitch_rate",
+      "full_vs_tiled_exact_parity",
+      "dark_and_bright_halo_diagnostics"
+    ],
+    "external_gmf_after_checkpoint_freeze": true
+  }
+}

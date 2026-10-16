@@ -1,0 +1,81 @@
+{
+  "created_at_utc": "2026-09-06T13:04:35.842340+00:00",
+  "experiment": "R121_BoundaryAnchorFactorial",
+  "type": "bounded_2x2_factorial",
+  "arms": {
+    "A": {
+      "data": "R120 corrected physical control",
+      "position_anchor": false
+    },
+    "B": {
+      "data": "independent affine midpoint/contrast",
+      "position_anchor": false
+    },
+    "C": {
+      "data": "R120 corrected physical control",
+      "position_anchor": true
+    },
+    "D": {
+      "data": "independent affine midpoint/contrast",
+      "position_anchor": true
+    }
+  },
+  "model_seeds": [
+    1215001,
+    1215002
+  ],
+  "data_seed": 1196001,
+  "sampler_seed": 1197001,
+  "epochs": 12,
+  "training_scenes": 512,
+  "batch_size": 8,
+  "steps_per_run": 768,
+  "initialization": "fresh; paired exactly within seed, independent between seeds",
+  "learning_rate": 0.0003,
+  "stage_epochs": [
+    4,
+    4,
+    4
+  ],
+  "new_position_terms": {
+    "weight_each": 0.02,
+    "reference_anchors_per_view": 128,
+    "reference_normal_range_px": [
+      -6,
+      6
+    ],
+    "samples_per_profile": 25,
+    "scale_px": 0.1,
+    "before_detail": true,
+    "after_detail": true,
+    "photometric_gain_offset_projected_out": true,
+    "reference_information_only": true,
+    "project_to_reference_boundary_before_sampling": true
+  },
+  "new_data": "Positive affine transforms of common latent/optical arrays; independently sampled midpoint [0.12,0.88] and contrast [0.08,min(0.70,2*(midpoint-0.03),2*(0.97-midpoint))]. Same geometry, optics, temporal schedule and absolute sensor-noise draws. No SEM-derived scale or shrink labels.",
+  "evaluation": {
+    "unchanged_development": "same 96 R118 development scenes (192 views), with image and target-relative gradient/high-pass errors by role",
+    "controlled_geometry_motion": "all 240 R119 controlled physical conditions + 100 radiometry conditions, shared inputs, final float outputs, per-profile validity retained",
+    "real_shape": "all 12 exposures x 36 pillars with unchanged historical ACM reference plus separately generated one-factor global pitch-matched reference, no per-pillar shape fitting",
+    "real_displacement": "If an intervention is supported by both seeds on shape, synthetic motion and texture, run full Raw-locked real LSC for the supported arm and matched control before calling it ready for further training."
+  },
+  "decision": {
+    "paired_primary": "Both seeds must improve pillar-paired SEM boundary error vs corresponding A on BOTH references; worst exposure median may not regress by >0.01 pitch percentage points vs A.",
+    "motion_guard": "Worst controlled relative-motion error <= matched A +0.01 px; no increase in invalid profiles.",
+    "texture_guard": "Mean target-relative high-pass error on fixed textured-edge development views <= matched A *1.02.",
+    "absolute_guard": "Report comparisons to Raw explicitly; no replacement or long training solely from relative improvement.",
+    "if_unsupported": "Preserve all results, do not extend epochs or retune weights to force a pass."
+  },
+  "confirmation": "144-scene old confirmation remains consumed; no access/evaluation. No new unseen holdout claim.",
+  "storage_budget_gib": 8,
+  "historical_evidence": "never overwritten or rebaselined",
+  "source_freeze": "after CPU behavior checks and GPU smoke, before matrix launch",
+  "revision": "v2_centered_reference_profiles",
+  "previous_protocol_sha256": "ed60760f69bccceb85e0fddb42d279c2782f34a70e1cc4b32bd53175ae411d0c",
+  "revision_reason": "V1 local image windows confounded pure width changes with position. The interrupted C v1 run is invalid for comparison and retained. V2 uses symmetric profiles at reference boundary points and passes pure-width, photometric and real-shift fixtures.",
+  "reused_controls": [
+    "probe_A_s1215001",
+    "probe_B_s1215001"
+  ],
+  "reuse_reason": "A/B never execute the position factor; model/data/optimizer/steps are unchanged. Paired initialization identity will be checked against newly executed C/D."
+}

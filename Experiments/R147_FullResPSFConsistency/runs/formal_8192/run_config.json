@@ -1,0 +1,76 @@
+{
+  "model_config": {
+    "model_name": "R147-FullResPSFConsistency",
+    "architecture": "R140v2_recurrent_unet_with_native_pixel_fixed_mean_PSF_consistency",
+    "channels": [
+      32,
+      64,
+      96,
+      128
+    ],
+    "iterations": 4,
+    "r_max": 0.35,
+    "eta_max": 0.25,
+    "eta_initial": 0.05,
+    "checkpoint_blocks": true,
+    "output_logit_gain": 0.1,
+    "psf_bank": "calibration/measured_psf_bank.npz",
+    "psf_count": 25,
+    "psf_mode": "fixed_bank_mean_native_pixel_data_consistency",
+    "optical_step_initial": 0.3,
+    "optical_step_max": 0.8,
+    "optical_lr_multiplier": 0.2,
+    "optical_iterations": 4,
+    "spatially_varying_within_image": false
+  },
+  "train_config": {
+    "model_seed": 1309001,
+    "order_seed": 1309002,
+    "noise_seed": 1309003,
+    "splits": {
+      "train": 512,
+      "dev": 128,
+      "test": 128
+    },
+    "updates": 8192,
+    "epochs": 16,
+    "warmup": 128,
+    "save_every": 128,
+    "dev_every": 512,
+    "optimizer": {
+      "name": "AdamW",
+      "max_lr": 0.0003,
+      "min_lr": 3e-06,
+      "weight_decay": 1e-05,
+      "gradient_clip": 1.0
+    },
+    "loss": {
+      "image": 1.0,
+      "gradient": 0.2,
+      "pair": 0.2
+    },
+    "precision": "FP32",
+    "tf32": false,
+    "deterministic": true,
+    "device": "cuda",
+    "train_crop": [
+      32,
+      352,
+      32,
+      352
+    ],
+    "supervised_core": [
+      96,
+      224
+    ],
+    "adaptive_training_requires_real_psf_labels": false,
+    "psf_selection_policy": "fixed mean of the user-supplied 25-kernel research bank"
+  },
+  "init": "scratch",
+  "psf_label_records": 512,
+  "psf_selection": "fixed_bank_mean",
+  "data_root": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\data",
+  "bank_sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+  "source_data_manifest_sha256": "4fd42ef7b4f1458181e3af6c5da096e95904211991c84c6a18a77ae70f390913",
+  "started_utc": "2026-09-25T01:30:12.997600+00:00"
+}

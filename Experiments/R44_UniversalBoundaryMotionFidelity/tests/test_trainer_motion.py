@@ -1,5 +1,6 @@
 from pathlib import Path
 import sys
+from types import SimpleNamespace
 
 import cv2
 import numpy as np
@@ -83,3 +84,125 @@ def test_generic_motion_consistency_loss_is_small_for_matching_shift_and_positiv
 
     assert ok.item() < 1e-4
     assert bad.item() > 0.01
+
+
+def test_motion_edge_center_consistency_loss_tracks_known_shift():
+    import GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest as trainer
+
+    pred_a = torch.zeros(1, 1, 32, 32)
+    pred_a[:, :, 9:15, 10:14] = 1.0
+    pred_b_ok = torch.zeros_like(pred_a)
+    pred_b_ok[:, :, 9:15, 12:16] = 1.0
+    pred_b_bad = torch.zeros_like(pred_a)
+    pred_b_bad[:, :, 9:15, 15:19] = 1.0
+
+    geom_a = {"boundary": (pred_a > 0.5).float(), "centerline": (pred_a > 0.5).float()}
+    geom_b = {"boundary": (pred_b_ok > 0.5).float(), "centerline": (pred_b_ok > 0.5).float()}
+    dx = torch.tensor([2.0])
+    dy = torch.tensor([0.0])
+
+    ok = trainer.motion_edge_center_consistency_loss(pred_a, pred_b_ok, dx, dy, geom_a=geom_a, geom_b=geom_b)
+    bad = trainer.motion_edge_center_consistency_loss(pred_a, pred_b_bad, dx, dy, geom_a=geom_a, geom_b=geom_b)
+
+    assert ok.item() < 1e-4
+    assert bad.item() > 0.01
+
+
+def test_motion_local_edge_center_loss_catches_balanced_local_drift():
+    import GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest as trainer
+
+    pred_a = torch.zeros(1, 1, 32, 32)
+    pred_a[:, :, 10:16, 7:11] = 1.0
+    pred_a[:, :, 10:16, 21:25] = 1.0
+    pred_b_ok = torch.zeros_like(pred_a)
+    pred_b_ok[:, :, 10:16, 9:13] = 1.0
+    pred_b_ok[:, :, 10:16, 23:27] = 1.0
+    pred_b_bad = torch.zeros_like(pred_a)
+    pred_b_bad[:, :, 10:16, 7:11] = 1.0
+    pred_b_bad[:, :, 10:16, 25:29] = 1.0
+
+    geom_a = {"boundary": (pred_a > 0.5).float(), "centerline": (pred_a > 0.5).float()}
+    geom_b = {"boundary": (pred_b_ok > 0.5).float(), "centerline": (pred_b_ok > 0.5).float()}
+    dx = torch.tensor([2.0])
+    dy = torch.tensor([0.0])
+
+    global_bad = trainer.motion_edge_center_consistency_loss(
+        pred_a,
+        pred_b_bad,
+        dx,
+        dy,
+        geom_a=geom_a,
+        geom_b=geom_b,
+    )
+    local_ok = trainer.motion_local_edge_center_consistency_loss(
+        pred_a,
+        pred_b_ok,
+        dx,
+        dy,
+        geom_a=geom_a,
+        geom_b=geom_b,
+        grid_size=2,
+    )
+    local_bad = trainer.motion_local_edge_center_consistency_loss(
+        pred_a,
+        pred_b_bad,
+        dx,
+        dy,
+        geom_a=geom_a,
+        geom_b=geom_b,
+        grid_size=2,
+    )
+
+    assert global_bad.item() < 1e-4
+    assert local_ok.item() < 1e-4
+    assert local_bad.item() > 0.01
+
+
+def test_motion_input_lowfreq_consistency_allows_detail_but_rejects_body_shift():
+    import GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest as trainer
+
+    yy, xx = torch.meshgrid(torch.arange(48), torch.arange(48), indexing="ij")
+    yy = yy.float().view(1, 1, 48, 48)
+    xx = xx.float().view(1, 1, 48, 48)
+    src = torch.exp(-(((xx - 22.0) ** 2) + ((yy - 24.0) ** 2)) / (2.0 * 5.0 * 5.0))
+    detail = 0.06 * torch.sin(xx * 2.7) * torch.sin(yy * 2.3)
+    pred_detail_only = (src + detail).clamp(0.0, 1.0)
+    pred_shifted_body = torch.exp(-(((xx - 25.0) ** 2) + ((yy - 24.0) ** 2)) / (2.0 * 5.0 * 5.0))
+
+    detail_loss = trainer.motion_input_lowfreq_consistency_loss(pred_detail_only, src, sigma=2.0)
+    shifted_loss = trainer.motion_input_lowfreq_consistency_loss(pred_shifted_body, src, sigma=2.0)
+
+    assert detail_loss.item() < 0.01
+    assert shifted_loss.item() > detail_loss.item() * 4.0
+
+
+def test_motion_supervision_is_active_when_only_lowfreq_anchor_is_enabled():
+    import GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest as trainer
+
+    cfg = SimpleNamespace(
+        MOTION_LOSS_WEIGHT=0.0,
+        MOTION_RECON_WEIGHT=0.0,
+        MOTION_CENTER_WEIGHT=0.0,
+        MOTION_LOCAL_CENTER_WEIGHT=0.0,
+        MOTION_INPUT_LOWFREQ_WEIGHT=0.2,
+    )
+
+    assert trainer.motion_supervision_has_enabled_loss(cfg)
+
+
+def test_checkpoint_config_records_raw_anchor_output_settings(monkeypatch):
+    import GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest as trainer
+
+    monkeypatch.setattr(trainer.CFG, "RAW_ANCHOR_OUTPUT_MODE", "detail", raising=False)
+    monkeypatch.setattr(trainer.CFG, "RAW_ANCHOR_OUTPUT_ALPHA", 0.1, raising=False)
+    monkeypatch.setattr(trainer.CFG, "RAW_ANCHOR_OUTPUT_SIGMA", 2.0, raising=False)
+    monkeypatch.setattr(trainer.CFG, "RAW_ANCHOR_OUTPUT_DETAIL_GAIN", 0.35, raising=False)
+
+    config = trainer._checkpoint_model_config()
+
+    assert config["raw_anchor_output"] == {
+        "mode": "detail",
+        "alpha": 0.1,
+        "sigma": 2.0,
+        "detail_gain": 0.35,
+    }

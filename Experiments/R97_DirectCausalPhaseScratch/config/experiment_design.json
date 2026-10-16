@@ -1,0 +1,220 @@
+{
+  "experiment_id": "R97_DirectCausalPhaseScratch",
+  "status": "preflight_passed_formal_training_authorized",
+  "formal_training_authorized": true,
+  "formal_training_blocker": null,
+  "scientific_question": "Can direct applied-correction learning and source-phase-locked detail restore stronger contour and microscopy texture without weakening tile consistency or allowing one-period localization errors?",
+  "independence": {
+    "random_initialization_required": true,
+    "checkpoint_resume_forbidden": true,
+    "teacher_or_pseudo_label_forbidden": true,
+    "real_training_pixels_forbidden": true,
+    "sem_or_hs100mg_geometry_forbidden": true,
+    "optimizer_reuse_forbidden": true,
+    "formal_run_count": 1,
+    "seed": 970043
+  },
+  "architecture": {
+    "model_width": 19,
+    "parameter_count": 2433774,
+    "parameter_budget_max": 2500000,
+    "preserve": [
+      "local_fully_convolutional_processing",
+      "normalization_free_residual_blocks",
+      "anti_aliased_encoder_decoder",
+      "private_causal_towers",
+      "symmetric_zero_phase_boundary_filters",
+      "canonical_halo_tiling"
+    ],
+    "removed": [
+      "learned_need_tower",
+      "learned_evidence_tower",
+      "need_times_evidence_output_attenuation",
+      "free_image_texture_residual",
+      "common_descent_projection"
+    ],
+    "private_learned_towers": [
+      "geometry",
+      "sensor_nuisance",
+      "radiometry",
+      "local_contrast",
+      "boundary",
+      "texture"
+    ],
+    "branches_predict_applied_correction_directly": true,
+    "same_scene_s_b_t_direct_branch_supervision": true,
+    "texture_representation": "slow coefficients over three symmetric zero-DC source bands",
+    "texture_cannot_freely_repaint_phase": true,
+    "boundary_cannot_create_new_local_extrema": true,
+    "normalization_layers": 0,
+    "global_pooling_layers": 0,
+    "raw_identity_at_initialization": true,
+    "minimum_halo_px": 192,
+    "alignment_multiple": 8,
+    "combined_correction_bound": 0.34
+  },
+  "data": {
+    "scene_count": 1250,
+    "stored_observation_count": 5000,
+    "train_scenes": 1000,
+    "validation_scenes": 125,
+    "sealed_internal_test_scenes": 125,
+    "source_package": "D:/GMM_2_Final/Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal",
+    "source_content_sha256": "6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5",
+    "reuse_existing_arrays_without_regeneration": true,
+    "label_supersample_factor": 8,
+    "training_pixels_are_procedural_only": true,
+    "periodic_disambiguation": {
+      "stored_extra_images": 0,
+      "generated_on_demand": true,
+      "families": [
+        "bars",
+        "dots",
+        "rings",
+        "rectangular_lattices"
+      ],
+      "random_period_px": [
+        24,
+        170
+      ],
+      "unique_generic_anchors_per_scene": 5,
+      "real_sample_pixels_or_geometry_used": false
+    }
+  },
+  "training": {
+    "planned_epochs": 48,
+    "batches_per_epoch": 96,
+    "model_width": 19,
+    "optimizer": "AdamW",
+    "peak_learning_rate": 0.00016,
+    "minimum_learning_rate": 1.2e-05,
+    "weight_decay": 0.0001,
+    "precision": "bfloat16",
+    "validation_precision": "float32",
+    "ema_decay": 0.995,
+    "checkpoint_every_epochs": 2,
+    "validation_every_epochs": 4,
+    "live_real_preview_every_epochs": 4,
+    "online_validation_scenes_per_role": 2,
+    "final_validation_scenes_per_role": 4,
+    "periodic_every_batches": 4,
+    "counterfactual_calibration_every_batches": 4,
+    "geometry_train_until_epoch": 12,
+    "periodic_scene_batch": 2,
+    "periodic_patch_size": 256,
+    "learning_rate_anchors": [
+      {
+        "epoch": 1,
+        "learning_rate": 0.00012
+      },
+      {
+        "epoch": 3,
+        "learning_rate": 0.00016
+      },
+      {
+        "epoch": 16,
+        "learning_rate": 0.00011
+      },
+      {
+        "epoch": 32,
+        "learning_rate": 5e-05
+      },
+      {
+        "epoch": 42,
+        "learning_rate": 2.5e-05
+      },
+      {
+        "epoch": 48,
+        "learning_rate": 1.2e-05
+      }
+    ],
+    "phases": [
+      {
+        "epoch_start": 1,
+        "epoch_end": 8,
+        "name": "direct_causal_decomposition",
+        "stage_truth_input_fraction": 1.0,
+        "purpose": "learn actual applied corrections for S, B and T with equalized sparse branch scale"
+      },
+      {
+        "epoch_start": 9,
+        "epoch_end": 16,
+        "name": "direct_output_composition",
+        "stage_truth_input_fraction_linear": [
+          1.0,
+          0.45
+        ],
+        "purpose": "compose detail, contour, radiometry and nuisance without an amplitude gate"
+      },
+      {
+        "epoch_start": 17,
+        "epoch_end": 32,
+        "name": "phase_and_period_discrimination",
+        "stage_truth_input_fraction_linear": [
+          0.45,
+          0.0
+        ],
+        "purpose": "add signed motion, phase conservation and hard one-period negatives"
+      },
+      {
+        "epoch_start": 33,
+        "epoch_end": 42,
+        "name": "large_context_native_cascade",
+        "stage_truth_input_fraction": 0.0,
+        "purpose": "train the inference-time cascade on large context and tile-crossing structures"
+      },
+      {
+        "epoch_start": 43,
+        "epoch_end": 48,
+        "name": "low_rate_consolidation",
+        "stage_truth_input_fraction": 0.0,
+        "purpose": "retain clarity while consolidating identity, periodic localization and tile consistency"
+      }
+    ],
+    "patch_schedule": [
+      {
+        "epoch_start": 1,
+        "epoch_end": 8,
+        "patch_size": 512,
+        "core_size": 256,
+        "candidate_scene_batch": 6,
+        "target_effective_scene_batch": 6,
+        "target_scene_exposures_per_epoch": 384
+      },
+      {
+        "epoch_start": 9,
+        "epoch_end": 32,
+        "patch_size": 768,
+        "core_size": 384,
+        "candidate_scene_batch": 3,
+        "target_effective_scene_batch": 6,
+        "target_scene_exposures_per_epoch": 192
+      },
+      {
+        "epoch_start": 33,
+        "epoch_end": 48,
+        "patch_size": 896,
+        "core_size": 512,
+        "candidate_scene_batch": 2,
+        "target_effective_scene_batch": 4,
+        "target_scene_exposures_per_epoch": 96
+      }
+    ]
+  },
+  "validation": {
+    "locked_axes": [
+      "native_visual_detail",
+      "boundary_position_and_acm_contour",
+      "exact_clear_change",
+      "signed_motion_bias_spread_and_tail",
+      "periodic_true_match_margin_and_wrong_pitch_rate",
+      "full_vs_tiled_exact_parity",
+      "tile_seam_residual",
+      "5x_20x_50x_real_appearance",
+      "external_gmf_after_checkpoint_freeze"
+    ],
+    "external_gmf_score_is_not_displacement_accuracy": true,
+    "periodic_wrong_match_cannot_be_interpreted_as_model_translation_without_image_registration": true,
+    "selection": "remove dominated checkpoints, then minimize worst normalized regret across locked axes without hard pass gates"
+  }
+}

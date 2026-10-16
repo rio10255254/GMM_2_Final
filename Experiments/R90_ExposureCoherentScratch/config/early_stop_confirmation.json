@@ -1,0 +1,31 @@
+{
+  "confirmation_id": "R90_E045_CONFIRMATION_20260811",
+  "source_protocol": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/config/early_stop_validation.json",
+  "source_protocol_sha256": "44cf225cbb7d2d58ddc1de25672709b71fc05cd6a7d109cbeb5e993d15d7378b",
+  "selected_epoch": 45,
+  "checkpoint": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/weights/formal/seed_900041/R90_scratch_seed900041_20260811_104322/weights/epoch_045.pth.tar",
+  "checkpoint_sha256": "8ca8e8968cbf9f9da36f8525820ff112df492775a05e74214972adeb86ea7861",
+  "role": "frozen confirmation candidate; not yet approved for delivery or as the formal project baseline",
+  "selection_reason": {
+    "positive": [
+      "It is the last checkpoint before the clearly visible rise in the 5x dark-edge warning at epoch 50.",
+      "It increases median fine-detail energy at 5x, 20x and 50x to 1.066, 1.445 and 1.270 times Raw on the fixed real frames.",
+      "Across all 36 SEM pillars and 12 exposures, median IoU is 0.960665 and median boundary distance is 0.423864 percent of pitch, both slightly better than R61v16."
+    ],
+    "known_risk": [
+      "Exposure 18 remains a severe failure: median SEM IoU 0.815145 and boundary distance 2.578661 percent of pitch.",
+      "The optical midpoint moves outward by 3 pixels at exposure 18, independently supporting a real edge-position shift rather than only an ACM artifact.",
+      "This checkpoint cannot be called universally exposure-safe unless confirmation or a later model resolves this failure."
+    ],
+    "why_not_epoch50_or55": "Epoch 50 begins the 5x dark-edge regression; epoch 55 worsens it across magnifications and also has poorer overall and worst-exposure SEM results.",
+    "why_not_epoch30_orEarlier": "Earlier checkpoints preserve exposure 18 better, but epoch 30 has essentially no 50x fine-detail gain and epochs 20 to 25 are too close to identity for an enhancement delivery."
+  },
+  "confirmation_arms": {
+    "real_sequences": "All 301 frames from the six locked 5x, 20x and 50x motion sequences.",
+    "motion_policy": "Reuse the fixed Raw-selected tiles, frame pairs and timing exclusions without model-output-based filtering.",
+    "tile_policy": "Compare full-canvas reference against core sizes 256, 384 and 512 with halo 192 on 5x and 50x images.",
+    "onnx_policy": "Only perform a technical export/parity test after real-motion and tile confirmation. A delivery ZIP is allowed only if scientific risks are acceptable."
+  },
+  "formal_project_baseline_unchanged": "COMBO",
+  "delivery_fallback": "MOSR_R61_ONNX remains the validated emergency package until this candidate passes or a later scratch model resolves the exposure failure."
+}

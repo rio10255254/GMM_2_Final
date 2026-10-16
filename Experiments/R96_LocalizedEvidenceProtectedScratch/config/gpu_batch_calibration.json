@@ -1,0 +1,20 @@
+{
+  "experiment_id": "R96_LocalizedEvidenceProtectedScratch",
+  "device": "NVIDIA RTX A6000",
+  "total_memory_gib": 47.98779296875,
+  "minimum_memory_left_for_desktop_gib": 1.0,
+  "selected_scene_batches": {
+    "512": 4,
+    "768": 2,
+    "896": 1
+  },
+  "measurements": {
+    "phase1_512_candidate_scene_batch_2_peak_allocated_gib": 12.096690654754639,
+    "late_phase_896_scene_batch_1_peak_allocated_gib": 18.491671085357666,
+    "late_phase_896_scene_batch_1_peak_reserved_gib": 19.775390625,
+    "late_phase_full_protected_objectives_passed": true
+  },
+  "selection_note": "512 and 768 retain previously measured stable batches; 896 was remeasured with all R96 protected objectives. Gradient accumulation preserves the target effective batch.",
+  "maximum_automatic_oom_restarts": 2,
+  "passed": true
+}

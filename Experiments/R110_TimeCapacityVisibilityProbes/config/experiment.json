@@ -1,0 +1,15 @@
+{
+  "experiment_id": "R110_TimeCapacityVisibilityProbes",
+  "created_date": "2026-08-26",
+  "r109_root": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch",
+  "r109_selected_checkpoint": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
+  "r109_selected_sha256": "77ff8611e764e1350d60592f5d8a25d6786db17897eadce189185cdc4dbc87fc",
+  "data_manifest_sha256": "f10eb706d215b021856bd9ebe4589508d796b5bbb4ddc4b7ee1ee9a5667993ef",
+  "probes": {
+    "continuation": {"source_epoch": 48, "extra_epochs": 8, "learning_rate": 0.00001, "train_scenes": 5000, "batch_size": 8, "inherited_weight_diagnostic": true},
+    "capacity64": {"base_channels": 64, "detector_epochs": 1, "renderer_epochs": 4, "train_scenes": 1000, "batch_size": 8, "scratch": true},
+    "visibility": {"base_channels": 48, "detector_epochs": 1, "renderer_epochs": 4, "train_scenes": 1000, "batch_size": 8, "visibility_gain_range": [1.0, 2.0], "scratch": true}
+  },
+  "real_training_pixels": false,
+  "sem_training_pixels": false
+}

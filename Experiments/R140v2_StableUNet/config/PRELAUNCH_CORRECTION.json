@@ -1,0 +1,8 @@
+{
+  "original_attempt": "D:\\GMM_2_Final\\Experiments\\R140_StableUNet",
+  "original_attempt_lock_sha256": "7d11cedaabd15e189a71b4095f1ba2adfa745dab096c417dd2f8fc170d68079f",
+  "original_attempt_formal_updates": 0,
+  "issue": "Canonical R130 reader/loss contents matched but Windows newline bytes differed, so source hash comparison correctly rejected formal launch.",
+  "correction": "Create independent R140v2 with exact byte copies; rerun short pilot and create new lock only after passing.",
+  "original_lock_not_rebased": true
+}

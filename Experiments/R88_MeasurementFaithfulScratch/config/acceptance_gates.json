@@ -1,0 +1,101 @@
+{
+  "experiment_id": "R88_MeasurementFaithfulScratch",
+  "status": "locked_before_dataset_generation",
+  "all_domains_must_pass": true,
+  "no_posthoc_average_override": true,
+  "gates": {
+    "tile_consistency": {
+      "cases_min": 192,
+      "tile_schemes": [[896, 512], [768, 384], [640, 256]],
+      "mean_abs_gray_max": 0.1,
+      "p99_abs_gray_max": 1.0,
+      "max_abs_gray_max": 3.0,
+      "seam_to_interior_error_ratio_max": 1.1,
+      "all_cases_required": true
+    },
+    "new_locked_synthetic": {
+      "median_boundary_distance_px_max": 0.30,
+      "p95_hausdorff_px_max": 1.50,
+      "median_boundary_iou_min": 0.95,
+      "acm_strict_pass_rate_min": 0.90,
+      "added_or_missing_component_count_max": 0,
+      "added_or_missing_hole_count_max": 0,
+      "worst_family_raw_regression_fraction_max": 0.02
+    },
+    "R87_internal_development": {
+      "strict_pass_count_min": 43,
+      "valid_case_count": 50,
+      "catastrophic_count_max": 6,
+      "raw_pass_to_model_fail_max": 2
+    },
+    "R73_development": {
+      "strict_pass_count_min": 95,
+      "case_count": 100,
+      "raw_pass_to_model_fail_max": 2,
+      "catastrophic_count_max": 1,
+      "each_shape_family_noninferior_to_raw": true
+    },
+    "R74_development": {
+      "median_iou_min": 0.8814,
+      "median_boundary_distance_px_max": 7.2418,
+      "catastrophic_count_max": 70,
+      "condition_families_improved_min": 3,
+      "each_condition_boundary_ratio_to_raw_max": 1.05
+    },
+    "SEM_36_pillars": {
+      "median_boundary_pitch_percent_max": 0.2525,
+      "median_iou_min": 0.975,
+      "physical_pillar_count": 36,
+      "aggregate_repeated_exposures_per_pillar_first": true,
+      "added_topology_error_max": 0
+    },
+    "synthetic_motion": {
+      "magnitude_range_px": [0.125, 2.0],
+      "absolute_signed_bias_each_axis_px_max": 0.01,
+      "mae_px_max": 0.03,
+      "p95_abs_error_px_max": 0.08,
+      "calibration_slope_min": 0.995,
+      "calibration_slope_max": 1.005,
+      "absolute_intercept_px_max": 0.01,
+      "zero_motion_sd_px_max": 0.02,
+      "positive_negative_bias_gap_px_max": 0.01
+    },
+    "real_motion_301_frames": {
+      "sequences_required": 6,
+      "worst_median_difference_of_step_fraction_max": 0.03,
+      "worst_p95_difference_of_step_fraction_max": 0.12,
+      "worst_median_scale_error_fraction_max": 0.01,
+      "same_locked_raw_eligible_pairs_required": true,
+      "no_sequence_worse_than_R79E23": true
+    },
+    "reference_circle_measurement": {
+      "nominal_displacement_mae_nm_max": 5.73,
+      "step_sd_nm_max": 7.03,
+      "within_grid_dispersion_nm_max": 3.06,
+      "claim_limit": "PI nominal step is not independent interferometer truth"
+    },
+    "synthetic_texture": {
+      "high_frequency_correlation_min": 0.95,
+      "detail_energy_ratio_min": 0.85,
+      "detail_energy_ratio_max": 1.15,
+      "spectral_log_amplitude_mae_max": 0.10,
+      "unrecoverable_band_gain_max": 1.05
+    },
+    "identity_and_real_texture_safety": {
+      "identity_mean_abs_gray_change_max": 2.0,
+      "identity_p99_abs_gray_change_max": 8.0,
+      "off_source_strong_edge_fraction_max": 0.01,
+      "registered_burst_proxy_sequences_improved_min": 4,
+      "registered_burst_proxy_total_sequences": 6,
+      "single_sequence_texture_metric_regression_max": 0.02,
+      "hallucinated_hole_component_or_edge_is_hard_failure": true
+    },
+    "external_GMF": {
+      "required_for_promotion": true,
+      "may_be_deferred_at_training_completion": true,
+      "can_be_waived_for_promotion": false,
+      "status": "pending_valid_license",
+      "locked_package_and_settings_required": true
+    }
+  }
+}

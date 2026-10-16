@@ -1,0 +1,31 @@
+{
+  "contract_version": "r83_same_architecture_as_r79_v1",
+  "created_date": "2026-08-09",
+  "model_class": "GeoEdgeAlignSR_v1_v5_NoCoord",
+  "architecture_source": "model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py",
+  "architecture_source_sha256": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242",
+  "utility_source": "model/GeoEdgeAlignSR_v1_Utils.py",
+  "utility_source_sha256": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16",
+  "analytic_psf_source": "model/analytic_psf_bank.mat",
+  "analytic_psf_source_sha256": "ba476b405251d192ad39fc1c9750648b26ed4bba9165582ad2ab8018d4474677",
+  "trainer_source": "training/runtime/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py",
+  "trainer_source_sha256": "c4f2bc7e5444032f271af0af1194887e5dc65848a31da38b54393f5ddf85e7da",
+  "trainer_delta_from_r79": "Epoch-zero fallback capture accepts an explicit reset resume checkpoint; the loaded weak-PSF state is held fixed; and frozen parameters are copied exactly into EMA so the tail-only contract remains true.",
+  "expected_parameter_count": 4024213,
+  "expected_fixed_architecture_kernels": {
+    "u3.blur.weight": 1728,
+    "u2.blur.weight": 864,
+    "u1.blur.weight": 432
+  },
+  "boundary_adapter": {
+    "enabled": true,
+    "max_residual": 0.018,
+    "orientation_inputs": true
+  },
+  "quality_gate": {
+    "enabled": false,
+    "reason": "kept off unless the developmental blend screen proves no SEM regression"
+  },
+  "checkpoint_loading": "R79 epoch-23 EMA exact reset seed only",
+  "teacher_loading": false
+}

@@ -1,0 +1,66 @@
+{
+  "scratch_only": true,
+  "resume_from_foreign_checkpoint": false,
+  "teacher_checkpoint": false,
+  "default_batch_size": 16,
+  "batch_fallback": 12,
+  "workers": 4,
+  "minimum_gpu_free_gib": 7.0,
+  "precision": "stagewise_fp32_controller_bf16_renderer",
+  "bf16_requires_parity_probe": true,
+  "channels_last": false,
+  "optimizer": "adamw",
+  "weight_decay": 0.00001,
+  "gradient_clip": 5.0,
+  "learning_rates": {
+    "controller": 0.00035,
+    "geometry": 0.0003,
+    "controller_during_geometry": 0.00008,
+    "detail": 0.00025,
+    "joint_refinement": 0.00005,
+    "minimum": 0.000025
+  },
+  "campaigns": {
+    "controller_probe": {
+      "epochs": 8,
+      "stages": {"controller": 8},
+      "formal": false
+    },
+    "geometry_probe": {
+      "epochs": 20,
+      "stages": {"controller": 8, "geometry": 12},
+      "formal": false
+    },
+    "detail_probe_geometry_only": {
+      "epochs": 24,
+      "stages": {"controller": 8, "geometry": 12, "detail": 4},
+      "detail_enabled": false,
+      "formal": false
+    },
+    "detail_probe_recoverable": {
+      "epochs": 24,
+      "stages": {"controller": 8, "geometry": 12, "detail": 4},
+      "detail_enabled": true,
+      "formal": false
+    },
+    "formal": {
+      "epochs": 40,
+      "stages": {"controller": 8, "geometry": 20, "detail": 8, "joint_refinement": 4},
+      "formal": true
+    }
+  },
+  "objective_schedule": {
+    "controller": ["sdf_normal", "boundary_confidence", "need_recoverability"],
+    "geometry": ["spatial_width_shift", "render_contour", "identity_safety"],
+    "detail": ["recoverable_detail", "geometry_guard"],
+    "all_losses_permanently_summed": false,
+    "per_scene_normalization": true
+  },
+  "checkpoint_every_epochs": 2,
+  "preview_every_epochs": 4,
+  "validation_every_epochs": 4,
+  "tile_loss_in_training": false,
+  "persistent_workers": true,
+  "pin_memory": true,
+  "prefetch_factor": 3
+}

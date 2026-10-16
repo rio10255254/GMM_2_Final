@@ -1,0 +1,40 @@
+{
+  "model_key": "vdsr",
+  "model_spec": {
+    "name": "VDSR-x1",
+    "family": "VDSR",
+    "year": 2016,
+    "category": "classic deep CNN",
+    "kwargs": {
+      "features": 64,
+      "depth": 20
+    },
+    "source": "Kim et al., CVPR 2016",
+    "adaptation": "one-channel same-resolution output"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\vdsr\\best_vdsr.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.09264140223694929,
+    "l1": 0.06277449118772105,
+    "rmse": 0.08921744367381079,
+    "ssim": 0.8508136560427093
+  },
+  "parameter_count": 665921,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.09092660000897013,
+  "median_displacement_roi_inference_seconds": 0.07702274998882785
+}

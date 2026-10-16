@@ -1,0 +1,18 @@
+Validated: 2026-07-16T18:47:26+08:00
+Fixed NSR: 0.05 at 20x and 50x
+PSF validation: 18 pillar measurements recomputed with the same fixed NSR
+PSF edge narrowing: 9/9 pillars at both magnifications
+PSF threshold audit: 6 magnification-threshold summaries
+Revised PSF figures: 7 English MATLAB figures plus refreshed absolute spectra
+Word structure: one revised 6.1.2 section, one 6.2 section, 48 embedded figures
+Word terminology: no obsolete NSR 0.0565 or visible internal model label
+Primary displacement rows: 120 (30 per sequence)
+Primary valid pillars: 9 in every Raw, Wiener, and MOSR measurement
+Nominal CD crossings: 9/9 valid in all three methods
+Per-pillar CD chart: full lower-upper bounds from 14 observations; no central Raw, Wiener, or MOSR operating point
+CD sensitivity records: 126 per method
+Supplementary 20x CD check: 126 observations per method on a non-PSF-calibration frame
+Final figures: 31 PNG files; all at least 900 x 700 pixels
+Final tables: 19 CSV files
+Obsolete two-way artifacts: absent
+Independent metric recomputation: passed

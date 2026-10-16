@@ -1,0 +1,30 @@
+{
+  "purpose": "SEM-referenced CD and sharpness comparison for pillar and via",
+  "methods": [
+    "Base U-Net",
+    "EDSR",
+    "MOSR",
+    "NAFNet",
+    "Raw"
+  ],
+  "magnifications": [
+    "20x",
+    "50x"
+  ],
+  "contrast_thresholds": [
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65
+  ],
+  "cd_primary_readout": "Lower and upper apparent CD across the fixed 35%-65% contrast thresholds",
+  "cd_measurement": "Median of 180 opposite-angle paired radial diameters",
+  "edge_width": "Median 10%-90% radial transition width; lower is sharper",
+  "ringing": "Inward variation divided by outward transition variation on the median radial profile",
+  "center_rule": "The same Raw-defined center coordinates are used for every method",
+  "sem_rule": "Both workbook pillar and via values are radii and are doubled before CD comparison",
+  "missing_during_run": []
+}

@@ -1,0 +1,745 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-20T10:24:36.883559+00:00",
+  "snapshot": {
+    "repository_size_gib": 1073.0,
+    "d_free_gib": 202.594,
+    "archive_free_gib": 2574.214,
+    "note": "The 1073.0 GiB repository total is retained from the 2026-08-11 inventory and is not a current total. Free-space values were refreshed after the verified R1-R51 cleanup on 2026-08-24. Four new execution batches added 116.3116 GiB of H-drive history and measured 80.8936 GiB reclaimed at deletion time; after restoring compatibility checkpoints and compact evidence, net D free-space gain was 79.6502 GiB. No active or unresolved run marker blocked the work. Git pack files, R26/R33/R38v2/R39/R40 cores, Lab R39/R40/R51, newer rounds and unmapped legacy histories remain outside the deletion scope."
+  },
+  "allowed_tiers": [
+    "active",
+    "formal",
+    "raw",
+    "archive",
+    "rebuildable"
+  ],
+  "entries": [
+    {
+      "id": "r121_boundary_anchor_factorial",
+      "path": "Experiments/R121_BoundaryAnchorFactorial",
+      "tier": "active",
+      "state": "bounded_factorial_evaluated_not_adopted",
+      "size_gib_snapshot": 0.12,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Registered before training/data generation. Four arms x two fresh initializations, same twelve-epoch budget. Immutable R118 arrays and R120 physical sequences referenced without duplication. New output budget 8 GiB. Preserve source, tests, failures, reference audit, run checkpoints and common evaluation. No long training or model promotion is authorized by completion markers.",
+      "blocked_by": []
+    },
+    {
+      "id": "r120_physical_sequence_repair",
+      "path": "Experiments/R120_PhysicalSequenceRepair",
+      "tier": "active",
+      "state": "physical_data_and_readout_repair_validation",
+      "size_gib_snapshot": 0.0,
+      "action": "protect",
+      "priority": 0,
+      "keep": "R120 isolated repairs and bounded verification; immutable R118 base referenced without copying. New generated payload budget 8 GiB; no cleanup or formal promotion.",
+      "blocked_by": []
+    },
+    {
+      "id": "r119_sequence_geometry_validation",
+      "path": "Experiments/R119_SequenceGeometryValidation",
+      "tier": "active",
+      "state": "formal_complete_p12_confirmation_consumed_research_candidate",
+      "size_gib_snapshot": 4.38,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Protect the isolated R119 design, source snapshot, frozen scene IDs, measurement contracts, probe matrix, checkpoints, validation and failure receipts. The base package is reused through an immutable reference; new sidecars are budgeted at 8 GiB before generation.",
+      "blocked_by": []
+    },
+    {
+      "id": "r98_aggressive_texture_scratch",
+      "path": "Experiments/R98_AggressiveTextureScratch",
+      "tier": "active",
+      "state": "preflight_in_progress_formal_training_authorized_by_user",
+      "size_gib_snapshot": 0.005,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Protect the independent R98 design, source files, shared procedural-data identity, preflight evidence, unique formal run, checkpoints, live real-image previews and final validation. R98 references the existing R93 procedural payload and does not duplicate it. Expected new runtime output is below 1.5 GiB.",
+      "blocked_by": []
+    },
+    {
+      "id": "r95_counterfactual_gate_repair_scratch",
+      "path": "Experiments/R95_CounterfactualGateRepairScratch",
+      "tier": "active",
+      "state": "formal_training_complete_48_of_48_required_outputs_verified",
+      "size_gib_snapshot": 0.237,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Protect the locked design, referenced R93 dataset identity, run state, continuation audit, logs and all R95 checkpoints. The one formal run completed 48/48 and its summary, final checkpoints, previews and internal audits were verified. R95 remained untouched during R52 thinning.",
+      "blocked_by": []
+    },
+    {
+      "id": "r84_active_training",
+      "path": "Experiments/R84_R79TileStableRootRepair",
+      "tier": "active",
+      "state": "closed_not_promoted_followup_complete",
+      "size_gib_snapshot": 2.6589,
+      "action": "protect",
+      "priority": 0,
+      "keep": "The recovery training, continuation, four-part final-confirmation evaluation and later SEM strength-sweep follow-up completed. R84 is closed and not promoted; retain its data, histories, checkpoints, closeout and evaluation evidence.",
+      "blocked_by": []
+    },
+    {
+      "id": "r79_active_training",
+      "path": "Experiments/R79_R75v3_DenseMicroscopyScratchGeneralization",
+      "tier": "formal",
+      "state": "training_complete_pending_evaluation",
+      "size_gib_snapshot": 4.26,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Training completed at 100 epochs. Keep reports, dataset and export manifests, selected checkpoints and representative results pending evaluation closeout.",
+      "blocked_by": []
+    },
+    {
+      "id": "r87_active_training",
+      "path": "Experiments/R87_TileNativeScratchGeneralization",
+      "tier": "active",
+      "state": "training_and_locked_evaluation_complete_not_promoted",
+      "size_gib_snapshot": 11.765,
+      "action": "protect",
+      "priority": 0,
+      "keep": "The one authorized 100-epoch scratch run and locked evaluation completed. Protect the procedural dataset, scratch audit, selected checkpoint, tile-consistency evidence, negative external ACM stress evidence and the R88 texture-preservation design. R87 is not promoted.",
+      "blocked_by": []
+    },
+    {
+      "id": "r88_measurement_faithful_scratch",
+      "path": "Experiments/R88_MeasurementFaithfulScratch",
+      "tier": "active",
+      "state": "stopped_at_epoch_87_preserved_failure_evidence",
+      "size_gib_snapshot": 0.0001,
+      "action": "protect_design",
+      "priority": 0,
+      "keep": "R88 stopped after completed epoch 87 and is preserved as failure evidence. Protect its locked problem ledger, experiment contract, procedural data identity, run evidence and checkpoints; R89 does not use its weights.",
+      "blocked_by": []
+    },
+    {
+      "id": "r91_detail_decoupled_scratch",
+      "path": "Experiments/R91_DetailDecoupledScratch",
+      "tier": "active",
+      "state": "formal_training_complete_60_of_60_pending_full_analysis",
+      "size_gib_snapshot": 20.8016,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Protect the complete procedural data, run state, all checkpoints and validation outputs until the 60-epoch process exits and R91 is fully analyzed.",
+      "blocked_by": []
+    },
+    {
+      "id": "r92_physical_transition_balanced_scratch",
+      "path": "Experiments/R92_PhysicalTransitionBalancedScratch",
+      "tier": "active",
+      "state": "implementation_frozen_smoke_and_full_gpu_benchmark_passed_formal_not_authorized",
+      "size_gib_snapshot": 0.0713,
+      "action": "protect_design",
+      "priority": 0,
+      "keep": "Protect the frozen implementation, audited smoke data, setup and full GPU benchmarks, smoke checkpoint and root-cause-derived experiment contract. Formal data and the single scratch run remain blocked pending explicit authorization.",
+      "blocked_by": [
+        "explicit_formal_dataset_and_training_authorization"
+      ]
+    },
+    {
+      "id": "r89_failed_generation_payload",
+      "path": "Experiments/R89_MeasurementNativeScratch/runs/failed_data_generation",
+      "tier": "rebuildable",
+      "state": "two_superseded_failed_generation_payloads",
+      "size_gib_snapshot": 15.5257,
+      "action": "record_then_cleanup",
+      "priority": 1,
+      "keep": "Retain a compact incident record with failure reason, generator hashes, partial scene counts, exact original paths and linkage to the successful R89 formal manifest and audit. The partial arrays and superseded smoke payload are not valid training evidence.",
+      "blocked_by": [
+        "explicit_r89_failed_payload_removal_approval"
+      ]
+    },
+    {
+      "id": "r63_completed_causal_ablation",
+      "path": "Experiments/R63_CausalBoundaryMotionAblation",
+      "tier": "archive",
+      "state": "complete_full_payload_on_d_archive_candidate",
+      "size_gib_snapshot": 51.4805,
+      "action": "archive_full_then_thin",
+      "priority": 1,
+      "archive_location": "H:\\GMM_2_Final_Archive\\experiments\\R63_CausalBoundaryMotionAblation\\20260811_full_history",
+      "keep": "D must retain the answer-first and portable reports, protocol and revision log, scripts, tests, configuration snapshots, aggregate finding tables, figure package, training manifest, QA receipts and a restore pointer. H must retain a hash-verified copy of all training runs and evaluation reconstructions before any D payload is removed.",
+      "blocked_by": [
+        "hash_verified_h_archive_copy",
+        "explicit_r63_payload_removal_approval"
+      ]
+    },
+    {
+      "id": "lab_r46_archived",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune",
+      "tier": "archive",
+      "state": "archived_thin_context_on_d",
+      "size_gib_snapshot": 2.7608,
+      "action": "archive_complete",
+      "priority": 0,
+      "archive_location": "H:\\GMM_2_Final_Archive\\lab_system\\R46_CornerAwareFineTune\\20260824_full_history",
+      "manifest_glob": "H:\\GMM_2_Final_Archive\\manifests\\Lab_R46_*_20260824.csv",
+      "d_logical_removed_gib": 2.6018,
+      "keep": "D retains canonical reports, scripts, tests, training logs, two data manifests, three representative checkpoints, complete corner validation and the restore pointer. H retains all 11 source histories.",
+      "blocked_by": []
+    },
+    {
+      "id": "lab_r47_archived",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization",
+      "tier": "archive",
+      "state": "archived_thin_context_on_d",
+      "size_gib_snapshot": 6.3279,
+      "action": "archive_complete",
+      "priority": 0,
+      "archive_location": "H:\\GMM_2_Final_Archive\\lab_system\\R47_RealisticBoundaryGeneralization\\20260824_full_history",
+      "manifest_glob": "H:\\GMM_2_Final_Archive\\manifests\\Lab_R47_*_20260824.csv",
+      "d_logical_removed_gib": 6.1533,
+      "keep": "D retains canonical negative-result reports, scripts, tests, training logs, two data manifests, three representative checkpoints, complete corner validation and the restore pointer. H retains all 10 source histories.",
+      "blocked_by": []
+    },
+    {
+      "id": "lab_r48_archived",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer",
+      "tier": "archive",
+      "state": "archived_thin_context_on_d",
+      "size_gib_snapshot": 18.4698,
+      "action": "archive_complete",
+      "priority": 0,
+      "archive_location": "H:\\GMM_2_Final_Archive\\lab_system\\R48_RealCornerTransfer\\20260801_full_history",
+      "manifest_glob": "H:\\GMM_2_Final_Archive\\manifests\\Lab_R48_*_20260801.csv",
+      "d_reclaimed_gib": 14.9774,
+      "keep": "D retains canonical reports, package manifests, scripts, tests, training logs and curves, corner evidence and restore pointers. H retains the full payload.",
+      "blocked_by": []
+    },
+    {
+      "id": "lab_r49_archived",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry",
+      "tier": "archive",
+      "state": "archived_thin_context_on_d",
+      "size_gib_snapshot": 11.1838,
+      "action": "archive_complete",
+      "priority": 0,
+      "archive_location": "H:\\GMM_2_Final_Archive\\lab_system\\R49_CADAnchorRealGeometry\\20260809_full_history",
+      "manifest_glob": "H:\\GMM_2_Final_Archive\\manifests\\Lab_R49_*_20260809.csv",
+      "d_reclaimed_gib": 8.7816,
+      "keep": "D retains the canonical negative-result reports, package manifests, scripts, tests, training logs and curves, corner evidence, inference logs and restore pointers. H retains the full payload; restore the R49 source package before rebuilding R53.",
+      "blocked_by": []
+    },
+    {
+      "id": "lab_r52_archived",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard",
+      "tier": "archive",
+      "state": "archived_thin_context_on_d",
+      "size_gib_snapshot": 11.87,
+      "action": "archive_complete",
+      "priority": 0,
+      "archive_location": "H:\\GMM_2_Final_Archive\\lab_system\\R52_CornerStabilityGuard\\20260813_full_history",
+      "manifest_glob": "H:\\GMM_2_Final_Archive\\manifests\\Lab_R52_*_20260813.csv",
+      "d_reclaimed_gib": 9.4306,
+      "keep": "D retains canonical negative-result reports, scripts, tests, data manifests, training logs and curves, three representative checkpoints, complete corner-validation evidence, the restore pointer and final execution record. H retains the final 23,858-file verified payload; seven exact large D sources were removed after pre/post verification.",
+      "blocked_by": []
+    },
+    {
+      "id": "formal_truth",
+      "path": "ESTIMATOR_POLICY.json",
+      "tier": "formal",
+      "state": "current",
+      "size_gib_snapshot": 0.0,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Machine-readable model roles and checkpoint pointers.",
+      "blocked_by": []
+    },
+    {
+      "id": "lab_training_data",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data",
+      "tier": "archive",
+      "state": "review_by_round_r46_r49_r52_thinned",
+      "size_gib_snapshot": 339.71,
+      "action": "archive_by_round",
+      "priority": 1,
+      "archive_queue": "docs/operations/LABSYSTEM_ARCHIVE_QUEUE.md",
+      "keep": "Current thesis datasets, source manifests, generators and exact adopted-data pointers; archive completed or superseded round datasets.",
+      "blocked_by": []
+    },
+    {
+      "id": "lab_training_runs",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress",
+      "tier": "archive",
+      "state": "review_by_round_r46_r49_r52_thinned",
+      "size_gib_snapshot": 56.06,
+      "action": "archive_by_round",
+      "priority": 1,
+      "archive_queue": "docs/operations/LABSYSTEM_ARCHIVE_QUEUE.md",
+      "keep": "Adopted, latest and one diagnostic checkpoint per closed round plus reports and settings.",
+      "blocked_by": []
+    },
+    {
+      "id": "lab_experiment_outputs",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments",
+      "tier": "archive",
+      "state": "review_by_round_r46_r49_r52_contexts_thin",
+      "size_gib_snapshot": 20.84,
+      "action": "archive_selected_outputs",
+      "priority": 2,
+      "archive_queue": "docs/operations/LABSYSTEM_ARCHIVE_QUEUE.md",
+      "keep": "Canonical reports, manifests, source data pointers and representative figures.",
+      "blocked_by": [
+        "active_formal_training"
+      ]
+    },
+    {
+      "id": "lab_model_packages",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages",
+      "tier": "formal",
+      "state": "thesis_current_review",
+      "size_gib_snapshot": 18.68,
+      "action": "review",
+      "priority": 2,
+      "keep": "V42 thesis package source manifest and adopted checkpoint; review duplicate packaged reconstructions separately.",
+      "blocked_by": [
+        "active_formal_training"
+      ]
+    },
+    {
+      "id": "lab_reconstructions",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress",
+      "tier": "archive",
+      "state": "review_selected_outputs",
+      "size_gib_snapshot": 10.54,
+      "action": "archive_selected_outputs",
+      "priority": 2,
+      "keep": "Final thesis figures and the exact reconstructions cited by reports.",
+      "blocked_by": [
+        "active_formal_training"
+      ]
+    },
+    {
+      "id": "analysis_20x_5x",
+      "path": "20260704_20x_5x_analysis",
+      "tier": "archive",
+      "state": "review_selected_outputs",
+      "size_gib_snapshot": 91.52,
+      "action": "archive_selected_outputs",
+      "priority": 2,
+      "keep": "Raw inputs, final analysis tables, selected reconstructions and external GMF evidence.",
+      "blocked_by": [
+        "active_formal_training"
+      ]
+    },
+    {
+      "id": "analysis_100mg",
+      "path": "20260702_100MG_displacement_analysis",
+      "tier": "archive",
+      "state": "review_selected_outputs",
+      "size_gib_snapshot": 50.36,
+      "action": "archive_selected_outputs",
+      "priority": 2,
+      "keep": "Raw inputs, final analysis tables, selected reconstructions and external GMF evidence.",
+      "blocked_by": [
+        "active_formal_training"
+      ]
+    },
+    {
+      "id": "step_analysis",
+      "path": "Step_analysis_20260623",
+      "tier": "archive",
+      "state": "review_selected_outputs",
+      "size_gib_snapshot": 61.02,
+      "action": "archive_selected_outputs",
+      "priority": 2,
+      "keep": "Curated final package, calibration reports, raw source pointers and the reconstruction package cited by the thesis.",
+      "blocked_by": [
+        "active_formal_training"
+      ]
+    },
+    {
+      "id": "main_experiments",
+      "path": "Experiments",
+      "tier": "archive",
+      "state": "mixed_protected_and_closed_r32_r46_closed_payloads_thinned",
+      "size_gib_snapshot": 315.6,
+      "action": "archive_by_round",
+      "priority": 3,
+      "keep": "Protect newer experiments and all canonical reports, manifests, formal and approved checkpoints and representative outputs. R32/R33Contrast/R38Seq/R42/R44/R45/R46 full histories are verified on H and their large closed payloads are thin on D.",
+      "blocked_by": []
+    },
+    {
+      "id": "main_training_history",
+      "path": "Traing_Progress",
+      "tier": "archive",
+      "state": "full_h_snapshot_verified_61_closed_runs_thinned",
+      "size_gib_snapshot": 30.3062,
+      "action": "review_remaining_protected",
+      "priority": 3,
+      "archive_location": "H:\\GMM_2_Final_Archive\\main_training_history\\20260824_full_snapshot",
+      "manifest_glob": "H:\\GMM_2_Final_Archive\\manifests\\Traing_Progress_20260824_full.csv",
+      "d_reclaimed_gib": 22.4152,
+      "keep": "Formal COMBO, R33, R38v2 and R39/R40 checkpoints, thin legacy canonical surfaces and unmapped historical directories remain on D. Sixty-one closed, failed, probe or ablation runs are restorable from H.",
+      "blocked_by": []
+    },
+    {
+      "id": "git_storage",
+      "path": ".git",
+      "tier": "archive",
+      "state": "maintenance_required",
+      "size_gib_snapshot": 80.45,
+      "action": "git_maintenance",
+      "priority": 1,
+      "keep": "All reachable history; quarantine interrupted pack garbage before removal.",
+      "blocked_by": [
+        "git_process"
+      ]
+    },
+    {
+      "id": "main_training_data",
+      "path": "Training_Data",
+      "tier": "formal",
+      "state": "protected_review_generated_subsets",
+      "size_gib_snapshot": 32.26,
+      "action": "review",
+      "priority": 3,
+      "keep": "Current shared training data, generators and manifests; archive completed experiment-specific generated subsets only after source mapping.",
+      "blocked_by": [
+        "active_formal_training"
+      ]
+    },
+    {
+      "id": "raw_step",
+      "path": "Step",
+      "tier": "raw",
+      "state": "protected",
+      "size_gib_snapshot": 19.24,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Irreplaceable acquisition data.",
+      "blocked_by": []
+    },
+    {
+      "id": "psf_fitting",
+      "path": "PSF_Fitting",
+      "tier": "raw",
+      "state": "protected_with_scratch_candidates",
+      "size_gib_snapshot": 21.27,
+      "action": "review",
+      "priority": 2,
+      "keep": "Formal fitting code, quick recalibration evidence and canonical PSF outputs; quarantine editor scratch separately.",
+      "blocked_by": []
+    },
+    {
+      "id": "thesis_pytest_cache",
+      "path": "Thesis_MOSR_Evidence/.tmp",
+      "tier": "rebuildable",
+      "state": "cleanup_ready_after_process_check",
+      "size_gib_snapshot": 2.25,
+      "action": "bulk_cleanup",
+      "priority": 1,
+      "keep": "Only non-cache inputs under .tmp if referenced; pytest caches are rebuildable.",
+      "blocked_by": [
+        "pytest_process"
+      ]
+    },
+    {
+      "id": "psf_codex_tmp",
+      "path": "PSF_Fitting/.codex_tmp",
+      "tier": "rebuildable",
+      "state": "quarantined_d_copy_removed",
+      "expected_exists": false,
+      "size_gib_snapshot": 0.43,
+      "action": "quarantine_complete",
+      "priority": 0,
+      "keep": "H-drive quarantine until 2026-08-31.",
+      "blocked_by": []
+    },
+    {
+      "id": "psf_codex_work",
+      "path": "PSF_Fitting/.codex_work",
+      "tier": "rebuildable",
+      "state": "quarantined_d_copy_removed",
+      "expected_exists": false,
+      "size_gib_snapshot": 0.88,
+      "action": "quarantine_complete",
+      "priority": 0,
+      "keep": "H-drive quarantine until 2026-08-31.",
+      "blocked_by": []
+    },
+    {
+      "id": "psf_codex_docx_work",
+      "path": "PSF_Fitting/.codex_docx_work",
+      "tier": "rebuildable",
+      "state": "quarantined_d_copy_removed",
+      "expected_exists": false,
+      "size_gib_snapshot": 0.47,
+      "action": "quarantine_complete",
+      "priority": 0,
+      "keep": "H-drive quarantine until 2026-08-31.",
+      "blocked_by": []
+    },
+    {
+      "id": "r122_operator_principles",
+      "path": "Experiments/R122_OperatorPrinciples",
+      "tier": "active",
+      "state": "diagnostic_verified_design_specified_no_model_trained",
+      "size_gib_snapshot": 0.00409,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Retain full source, protocol, provenance, numerical tables, figures and preserved failed diagnostics. Budget 0.5 GiB; actual output below budget. No weights or duplicated raw datasets. Current physical results are area_render_v2; initial raster failure preserved. No training or model promotion.",
+      "blocked_by": []
+    },
+    {
+      "id": "r123_real_first_design",
+      "path": "Experiments/R123_RealFirstModelDesign",
+      "tier": "active",
+      "state": "design_verified_model_not_implemented_or_trained",
+      "size_gib_snapshot": 0.00131,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Retain complete small design, initial challenged draft, real source/ROI inventory, old-result replay, math checks, figures and input fingerprints. Budget 0.25 GiB. Raw data referenced in place; no training, model or independent confirmation results.",
+      "blocked_by": []
+    },
+    {
+      "id": "r124_real_first_prototype",
+      "path": "Experiments/R124_RealFirstPrototype",
+      "tier": "active",
+      "state": "prototype_implemented_verified_untrained",
+      "size_gib_snapshot": 1.15552,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Retain source/tests, untrained initializations, full native outputs/traces, bounded SEM readout arrays, original failure sources/logs and verification. Within2GiB budget. Raw inputs referenced in place; no optimizer updates, instrument qualification, model promotion or old-confirmation image access.",
+      "blocked_by": []
+    },
+    {
+      "id": "r125_data_aligned_pilot",
+      "path": "Experiments/R125_DataAlignedPilot",
+      "tier": "active",
+      "state": "completed_bounded_pilot_not_adopted",
+      "size_gib_snapshot": 3.37466,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Keeprejectedv1 andadmittedv2data, frozenmodel/loss/panelcode,all6initial/final checkpoints,384sampleledgers,216realoutputs,independentaudits,executednotebookandreport.12GiBbudget retained;actualpayloadbelowbudget. Noexternalarchive/deletion or oldevidencerebaseline. Thisiscompleted64-updatepilot, notfullR123study.",
+      "blocked_by": []
+    },
+    {
+      "id": "r126_learnability_photometry",
+      "path": "Experiments/R126_LearnabilityPhotometry",
+      "tier": "active",
+      "state": "bounded_comparison_completed_not_adopted",
+      "size_gib_snapshot": 0.222536,
+      "budget_gib": 4.0,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Retain full bounded round within4GiB: six fixed diagnostic runs, four matched photometry runs, all8 real evaluations, independent input/source audits, original failed traces and same-runtime repair, stage arrays, figures and reports. No model adoption, old-evidence rebaseline, confirmation payload access, deletion or archive. R125 data referenced in place.",
+      "blocked_by": []
+    },
+    {
+      "id": "r127_measurement_preservation",
+      "path": "Experiments/R127_MeasurementPreservationRepair",
+      "tier": "active",
+      "state": "completed_software_repairs_physical_qualification_open",
+      "size_gib_snapshot": 0.489802,
+      "budget_gib": 3,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Retain native SEM sources/definition results, all failed reader versions and checks, prospective verification, conditional preservation controls,30local/context and24fullfield comparisons,48full outputs and exactold-core parity.0new training. Budget3GiB; old sources referenced in place, no archive/deletion or oldevidence rebaseline.",
+      "blocked_by": []
+    },
+    {
+      "id": "r128_full_training",
+      "path": "Experiments/R128_SourceOnlyFullTraining",
+      "tier": "active",
+      "state": "full_contour_followup_complete_restricted_trial",
+      "size_gib_snapshot": 9.410019,
+      "budget_gib": 24,
+      "action": "protect",
+      "priority": 0,
+      "keep": "New768parent procedural package, independent splits, frozen image-only recurrent architecture, matched image/physics-supervised full training2armsx2seedsx8192updates, checkpoints, data-consumption ledgers and fixed real evaluations. Budget24GiB. No old evidence overwrites, teacher/real-answer training, confirmation reuse or automatic adoption.",
+      "blocked_by": []
+    },
+    {
+      "id": "r129_optical_prior_hybrid",
+      "path": "Experiments/R129_OpticalPriorHybrid",
+      "tier": "active",
+      "state": "continuous_lsc_complete_research_only",
+      "budget_gib": 6,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Measured-prior and AA integration, active-module tests, four matched24-update pilot arms, original R128 reference. Shared data in place; preserve all adverse results. No automatic promotion. Continuous201fullframes plus exactreader centers/points, fixed120 andwithin-session194 pairs; preserve failures and all original data.",
+      "blocked_by": [],
+      "report": "Experiments/R129_OpticalPriorHybrid/reports/R129_CONTINUOUS_LSC_RESULTS.md",
+      "actual_gib": 4.095447006635368
+    },
+    {
+      "id": "r129_standalone_long_training",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912",
+      "tier": "active",
+      "state": "long_training_complete_not_adopted",
+      "budget_gib": 12,
+      "action": "protect",
+      "priority": 0,
+      "keep": "User-requested independent package copy of all R128 source data, organized R129 D, fixed calibration and real development panel; one8192-update continuation; retain originals and all adverse results",
+      "blocked_by": [],
+      "size_gib_snapshot": 4.684436617419124,
+      "report": "Experiments/R129_OpticalPriorHybrid/reports/R129_LONG_TRAINING_RESULTS.md"
+    },
+    {
+      "id": "r130_clean_v42",
+      "path": "Experiments/R130_CleanV42Comparison",
+      "tier": "active",
+      "state": "32epoch_comparison_complete_research_only",
+      "budget_gib": 5,
+      "action": "protect",
+      "priority": 0,
+      "keep": "FreshV42 only;shared clean data referenced,originalR129/V42 untouched;32epochs and fixed real comparison;retain failures and checkpoints",
+      "blocked_by": [],
+      "report": "Experiments/R130_CleanV42Comparison/reports/R130_RESULTS.md",
+      "actual_gib": 1.811764420941472
+    },
+    {
+      "id": "r131_recurrent_steps",
+      "path": "Experiments/R131_RecurrentStepValidation",
+      "tier": "active",
+      "state": "frozen_prefix_validation_complete",
+      "budget_gib": 12,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Preserve all step comparisons, failures and source references. No original R129 changes.",
+      "blocked_by": [],
+      "report": "Experiments/R131_RecurrentStepValidation/reports/R131_RESULTS.md",
+      "actual_gib": 1.4860914954915643
+    },
+    {
+      "id": "r132_boundary_policy",
+      "path": "Experiments/R132_BoundaryPolicyStudy",
+      "tier": "active",
+      "state": "complete_research_width16_trial",
+      "budget_gib": 8,
+      "action": "protect",
+      "priority": 0,
+      "keep": "All guard comparisons and context tests; source float data referenced without duplication; no old overwrite.",
+      "blocked_by": [],
+      "report": "Experiments/R132_BoundaryPolicyStudy/reports/R132_RESULTS.md",
+      "actual_gib": 1.226160597987473
+    },
+    {
+      "id": "r133_size_mechanism",
+      "path": "Experiments/R133_SizeMechanismDiagnosis",
+      "tier": "active",
+      "state": "diagnosis_and_repair_design_complete",
+      "budget_gib": 4,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Frozen interventions, synthetictruth, realSEM, allfailures; no originalchanges",
+      "blocked_by": [],
+      "report": "Experiments/R133_SizeMechanismDiagnosis/reports/R133_RESULTS.md",
+      "actual_gib": 0.24028792046010494
+    },
+    {
+      "id": "r134_direct_state",
+      "path": "Experiments/R134_DirectStateRepair",
+      "tier": "active",
+      "state": "full201_recovered_not_admitted",
+      "budget_gib": 12,
+      "action": "protect",
+      "priority": 0,
+      "keep": "MatchedA/Cshorttrials;longqualifiedgenerationsseparatepackages;preserveoriginals",
+      "blocked_by": [],
+      "report": "Experiments/R134_DirectStateRepair/reports/R134_RESULTS.md",
+      "live_status": "Experiments/R134_DirectStateRepair/results/continuation/status.json",
+      "actual_gib": 0.7522447761148214,
+      "diagnosis": "complete_case_precision_followup",
+      "precision_revision": "active_user_authorized_revalidation"
+    },
+    {
+      "id": "r134_precision_package",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915",
+      "tier": "active",
+      "state": "building_qualified_precision_revision",
+      "budget_gib": 12,
+      "action": "protect",
+      "priority": 0,
+      "keep": "One R134 C precision-preserved standalone generation; original models and negative8bitqualification retained",
+      "blocked_by": []
+    },
+    {
+      "id": "r135_unified_comparison",
+      "path": "Experiments/R135_UnifiedModelComparison",
+      "tier": "active",
+      "state": "comparison_complete_no_promotion",
+      "budget_gib": 26,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Read-only fixed model comparison including overlap-affected oldV42; preserve adverse results and all source checkpoints",
+      "blocked_by": [],
+      "live_status": "Experiments/R135_UnifiedModelComparison/results/status.json",
+      "report": "Experiments/R135_UnifiedModelComparison/reports/R135_RESULTS.md",
+      "actual_gib": 14.576157414354384
+    },
+    {
+      "id": "r136_pi_repeatability",
+      "path": "Experiments/R136_PIRepeatability",
+      "tier": "active",
+      "state": "complete_three_method_LSC_research_results",
+      "action": "protect",
+      "priority": 0,
+      "estimated_gib": 30,
+      "keep": "Two fixed models,930frames each; source images referenced; retain values,readouts,figures,provenance. No automatic cleanup.",
+      "blocked_by": [],
+      "report": "Experiments/R136_PIRepeatability/reports/R136_LSC_RESULTS.md",
+      "actual_gib_snapshot": 15.733311526477337
+    },
+    {
+      "id": "r136_r128_extension",
+      "path": "Experiments/R136_PIRepeatability/results/R128",
+      "physical_path": "H:\\GMM_2_Final_Archive\\active_runs\\R136_R128_20260918",
+      "tier": "active",
+      "state": "complete_four_method_LSC_research_only",
+      "estimated_gib": 16,
+      "action": "protect",
+      "keep": "R128full930results onH withDjunction; originalthree-methoddata andpackages retained; no deletion",
+      "report": "Experiments/R136_PIRepeatability/reports/R136_LSC_FOUR_MODEL_RESULTS.md"
+    },
+    {
+      "id": "r130_clean_native_scratch",
+      "path": "Experiments/R130_Clean",
+      "tier": "active",
+      "state": "completed_training_and_fixed_real_comparison_not_promoted",
+      "size_gib_snapshot": 0.8198698218911886,
+      "action": "protect",
+      "priority": 0,
+      "keep": "User 20260920 specification. Self-contained native-resolution scratch model; PSF off. D budget4GiB for source, stripped unchanged synthetic pairs and checkpoints; H active output budget30GiB for930full reconstructions. Preserve R129 and earlier R130_CleanV42Comparison. No deletion or baseline promotion.",
+      "blocked_by": [],
+      "output_archive_path": "H:/GMM_2_Final_Archive/active_runs/R130_Clean_20260920",
+      "active_bulk_gib_snapshot": 13.630467552691698
+    },
+    {
+      "id": "r137_weak_psf_feature",
+      "path": "Experiments/R137_WeakPSFFeature",
+      "tier": "active",
+      "state": "complete_verified_research_not_promoted",
+      "size_gib_snapshot": 0,
+      "action": "protect",
+      "priority": 0,
+      "keep": "User-authorized weak existing25PSF feature test. Budget D2GiB,H16GiB. Shared immutable R130 training arrays, separate scratch8192 run and full930 evaluation. Preserve all prior evidence.",
+      "blocked_by": []
+    },
+    {
+      "id": "r138_v42_psf8",
+      "path": "Experiments/R138_V42PSF8",
+      "tier": "active",
+      "state": "complete_research_not_promoted",
+      "size_gib_snapshot": 0,
+      "action": "protect",
+      "priority": 0,
+      "keep": "Scratch8192 + full930 validation; original V42 class auto8 from existing25. D2GiB H16GiB budget; shared R130 immutable training arrays; original models protected.",
+      "blocked_by": []
+    },
+    {
+      "id": "r139_unet_recurrent",
+      "path": "Experiments/R139_UNetRecurrentPrototype",
+      "tier": "active",
+      "state": "complete_degenerate_not_promoted",
+      "size_gib_snapshot": 0,
+      "action": "protect",
+      "priority": 0,
+      "keep": "User-authorized full scratch8192 and 930 real images with U-Net recurrent + decoder PSF. Estimate D3GiB plus H18GiB. Shared immutable R130 train arrays, separate protected R139 outputs; preserve all earlier evidence. No baseline promotion by completion marker.",
+      "blocked_by": []
+    }
+  ]
+}

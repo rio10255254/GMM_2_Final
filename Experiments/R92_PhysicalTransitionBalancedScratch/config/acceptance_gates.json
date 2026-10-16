@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R92_PhysicalTransitionBalancedScratch",
+  "status": "diagnostic_reference_not_checkpoint_gate",
+  "checkpoint_selection_uses_hard_rejection": false,
+  "training_diagnostic_references": {
+    "tile_mean_abs_gray": 0.10,
+    "identity_mean_abs_gray": 2.0,
+    "clear_texture_change_gray": 1.25,
+    "degraded_texture_error_ratio": 1.0,
+    "physical_transition_profile_error": 0.08,
+    "raw_clear_added_topology_failures": 2,
+    "motion_mae_px": 0.10,
+    "motion_p95_px": 0.25,
+    "absolute_signed_bias_each_axis_px": 0.05,
+    "cross_observation_boundary_gray": 0.80,
+    "low_branch_edge_leakage_gray": 0.50,
+    "raw_geometry_regression": 0.002,
+    "low_branch_geometry_regression": 0.001,
+    "exposure_worst_path_boundary_ratio": 1.05,
+    "exposure_bundle_update_share": 0.18
+  },
+  "fatal_execution_conditions": [
+    "non_finite_loss_or_weight",
+    "wrong_output_shape",
+    "tile_contract_code_path_failure",
+    "checkpoint_or_real_training_pixel_leakage",
+    "formal_dataset_hash_mismatch",
+    "gpu_reserved_headroom_below_10_gib"
+  ],
+  "final_evaluation_policy": {
+    "use_continuous_metrics": true,
+    "small_local_flaws_are_tradeoffs_not_automatic_rejections": true,
+    "report_raw_and_model_per_scene": true,
+    "report_acm_contour_motion_texture_and_tile_domains_separately": true,
+    "do_not_promote_from_one_average": true,
+    "external_gmf_status": "pending_valid_license"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "model_key": "rcan",
+  "model_spec": {
+    "name": "Compact RCAN-x1",
+    "family": "RCAN",
+    "year": 2018,
+    "category": "classic attention SR CNN",
+    "kwargs": {
+      "num_feat": 64,
+      "num_group": 4,
+      "num_block": 12,
+      "squeeze_factor": 16,
+      "upscale": 1,
+      "res_scale": 1.0,
+      "img_range": 1.0,
+      "rgb_mean": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "source": "Zhang et al., ECCV 2018; BasicSR reference implementation",
+    "adaptation": "three tied grayscale channels with x1 output"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\rcan\\best_rcan.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.08239601281789546,
+    "l1": 0.05784685325221497,
+    "rmse": 0.08174658297449777,
+    "ssim": 0.8772542117404869
+  },
+  "parameter_count": 3761091,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.21471025001665112,
+  "median_displacement_roi_inference_seconds": 0.1290518999885535
+}

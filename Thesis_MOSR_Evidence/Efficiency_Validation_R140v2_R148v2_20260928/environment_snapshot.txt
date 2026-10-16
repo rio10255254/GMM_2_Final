@@ -1,0 +1,61 @@
+Captured: 2026-09-28T09:57:53.0268269+08:00
+GPU snapshot:
+Mon Sep 28 09:57:53 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 582.16                 Driver Version: 582.16         CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A6000             WDDM  |   00000000:01:00.0  On |                  Off |
+| 65%   84C    P2            234W /  300W |    4814MiB /  49140MiB |     64%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            1916    C+G   ...\cef.win64\steamwebhelper.exe      N/A      |
+|    0   N/A  N/A            4276    C+G   ...xyewy\ShellExperienceHost.exe      N/A      |
+|    0   N/A  N/A            7212    C+G   C:\Windows\explorer.exe               N/A      |
+|    0   N/A  N/A            9056    C+G   ...X Experience\NVIDIA Share.exe      N/A      |
+|    0   N/A  N/A           12424    C+G   ...\codex-computer-use-swift.exe      N/A      |
+|    0   N/A  N/A           15268    C+G   ....0.4234.48\msedgewebview2.exe      N/A      |
+|    0   N/A  N/A           16864    C+G   ...mba6cd70vzyy\ArmouryCrate.exe      N/A      |
+|    0   N/A  N/A           17632    C+G   ..._cw5n1h2txyewy\SearchHost.exe      N/A      |
+|    0   N/A  N/A           18472    C+G   ...y\StartMenuExperienceHost.exe      N/A      |
+|    0   N/A  N/A           19992    C+G   ...5n1h2txyewy\TextInputHost.exe      N/A      |
+|    0   N/A  N/A           21544    C+G   ...yApp\MicrosoftSecurityApp.exe      N/A      |
+|    0   N/A  N/A           30656    C+G   ...Chrome\Application\chrome.exe      N/A      |
+|    0   N/A  N/A           30928    C+G   ....0.4234.48\msedgewebview2.exe      N/A      |
+|    0   N/A  N/A           34288    C+G   ...2txyewy\CrossDeviceResume.exe      N/A      |
+|    0   N/A  N/A           34608    C+G   ...em32\ApplicationFrameHost.exe      N/A      |
+|    0   N/A  N/A           35020    C+G   ...2p2nqsd0c76g0\app\ChatGPT.exe      N/A      |
+|    0   N/A  N/A           43224    C+G   ...x64__8wekyb3d8bbwe\Photos.exe      N/A      |
+|    0   N/A  N/A           45168    C+G   ...yb3d8bbwe\WindowsTerminal.exe      N/A      |
+|    0   N/A  N/A           47888    C+G   ...dzpwqaze\app\Twinkle Tray.exe      N/A      |
+|    0   N/A  N/A           48284    C+G   ...ogram Files\DeskIn\DeskIn.exe      N/A      |
+|    0   N/A  N/A           49496    C+G   ...8bbwe\PhoneExperienceHost.exe      N/A      |
+|    0   N/A  N/A           50212    C+G   ...ntrolPanel\SystemSettings.exe      N/A      |
+|    0   N/A  N/A           51748    C+G   ...les\TeamViewer\TeamViewer.exe      N/A      |
+|    0   N/A  N/A           56580    C+G   ...SnippingTool\SnippingTool.exe      N/A      |
+|    0   N/A  N/A           58644    C+G   ...lus\logioptionsplus_agent.exe      N/A      |
+|    0   N/A  N/A           59944    C+G   ...indows\System32\ShellHost.exe      N/A      |
+|    0   N/A  N/A           61412    C+G   ....0.4234.48\msedgewebview2.exe      N/A      |
+|    0   N/A  N/A           64708      C   ...ependencies\python\python.exe      N/A      |
+|    0   N/A  N/A           64888    C+G   ...xyewy\AccountsControlHost.exe      N/A      |
++-----------------------------------------------------------------------------------------+
+Active Python:
+
+   Id      CPU WorkingSet64 StartTime
+   --      --- ------------ ---------
+  796   238.33     37064704 2026/9/27 上午 03:03:51
+12912   649.55    794861568 2026/9/27 下午 01:41:48
+13540    30.56     33300480 2026/9/26 下午 06:36:10
+28220    14.28     23961600 2026/9/27 上午 12:26:19
+64708 71861.05   2135531520 2026/9/27 下午 01:43:33
+
+

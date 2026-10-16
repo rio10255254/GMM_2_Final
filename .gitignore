@@ -25,6 +25,7 @@ _deployment_package/
 # Training data and bulk experiment outputs
 Training_Data/
 Traing_Progress/
+Reconstruct_Progress/
 PSF_Fitting/Fits/
 PSF_Fitting/Deconvolution/
 PSF_Fitting/SimulatePSF/*.mat
@@ -217,3 +218,7 @@ Tools/AutoTuneTerminal/.output_window.pid
 # AnalysisLab local caches
 AnalysisLab/**/__pycache__/
 AnalysisLab/**/.pytest_cache/
+
+# Shared camera originals are preserved in verified GitHub release archives.
+Shared_Sources/**/raw/
+Shared_Sources/**/*.zip

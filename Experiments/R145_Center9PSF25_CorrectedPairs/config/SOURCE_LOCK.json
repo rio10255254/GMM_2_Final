@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-09-24T07:52:43.252921+00:00",
+  "purpose": "one R145 scratch8192 run using corrected center9 PSF",
+  "architecture_source": "R141_PSF25_AdaptiveTop4_Standalone",
+  "files": {
+    "model.py": "eb362516a9bcd7e3b4e78de26fc5168bea0acb175bdbbbf77ad3b9e4962828a4",
+    "dataset.py": "e5b609c9e7be8e65b2f0012c62814caa8474aedc7ff7e1453bfaf2f1c76f76e0",
+    "train.py": "5d95bb211f2ce4b4e6e9fbd6452702798874ca23d0a9dec6379d62b4844f90fd",
+    "losses.py": "2130e1954ffb2b462a2b090d0ab0c9b573645f982a914e7a3057aa6331c2a1de",
+    "training_policy.py": "ab20c8f54de0e34d2aa6d288aa770bcbd847f140d3a60b4f05a9ed83095a5ae1",
+    "utils.py": "b3587981c06ff44ad013aa1a1b21bc6018898696253303038ab5b703597fcc12",
+    "infer.py": "9ab3b2d250cf7ef2af9847fc43e710e82d80f31526c8bf32de749662b23fe4dd",
+    "verify_package.py": "b8fff2063efbd54073bc0824de23bac6383fb843ae9eb40b0379cf5340edb919",
+    "optical/adaptive_psf.py": "51cb686ff1a8ca7443db31118997ba9769bfda3832b3077324b52eb99fabb66a",
+    "config/model.json": "e7d484dd7727af7383aeb62bd0e0ed710ea2d1636093f66793b1c57c68fd74e5",
+    "config/train.json": "7ac14a062d1314e4c503f474adf568caf2814011f561f36337c5091c16b64e7e",
+    "calibration/measured_psf_bank.npz": "4435f52a5d0f3ee31b5fbcbfbf13817d4ce2cabeeb2279b64b9492f9f3e4af7b",
+    "calibration/BANK_LOCK.json": "fa96ddab971959f3f19e68799c6d86edcc4798c1ca1df05538afd4bcf0c018f9",
+    "data/manifest.json": "7a928e7f7f792cf567fe846f6848b5bad9ae01db325d700e8c39b88d6a08dc21",
+    "scripts/make_data.py": "f062aebd7fa26ba31c7a4cfa3454ed7cd4afa704f7d0f1bb7a8412f22f1b3319",
+    "scripts/preflight.py": "937de2187b6a041e467a9054cd0db01054db97327d04a76740baee3246186d0a",
+    "scripts/launch_r145.py": "65b016be53478ec1d394907f3c24b6af2d25298513c7479a293218df0ccac699",
+    "scripts/install_center9_bank.py": "ad0514c7556ad9e4f3d9401a3331eb76a7ed6e737a62febf8a4a398dde67c5ed"
+  }
+}

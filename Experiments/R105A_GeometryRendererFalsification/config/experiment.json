@@ -1,0 +1,82 @@
+{
+  "experiment_id": "R105A_GeometryRendererFalsification",
+  "created_date": "2026-08-24",
+  "revision": 3,
+  "purpose": "Matched short experiment testing whether an actionable signed-distance renderer improves boundary sharpness without moving the boundary center, relative to an image-residual output with identical data, backbone, heads, initialization and update schedule.",
+  "status": "complete_falsified_no_formal_r105",
+  "not_a_formal_model_round": true,
+  "final_decision": {
+    "full_r105_authorized": false,
+    "reason": "After clean supersampled labels, 1800 matched steps, held-out shapes, convergence checks, fixed source blending and residual-to-renderer blending, the renderer improved edge width and halo but did not preserve boundary center, contour distance, identity behavior or exposure consistency together."
+  },
+  "source_isolation": {
+    "checkpoint_loading_allowed": false,
+    "teacher_allowed": false,
+    "pseudo_labels_allowed": false,
+    "real_pixels_in_training": false,
+    "sem_or_hs100mg_structure_in_training": false
+  },
+  "data": {
+    "image_size": 128,
+    "supersample": 4,
+    "label_generation": "Draw binary geometry, compute signed distance, render the continuous target at 4x resolution, then area-downsample both target and signed distance. No low-resolution distance transform is used.",
+    "train_samples": 512,
+    "validation_samples": 128,
+    "test_samples": 192,
+    "train_shape_families": ["circle", "ellipse", "rectangle", "polygon", "ring"],
+    "heldout_shape_families": ["crescent", "lobed", "thin_neck"],
+    "identity_fraction": 0.15,
+    "exposure_levels": [0.70, 0.85, 1.00, 1.15, 1.30]
+  },
+  "model": {
+    "base_channels": 32,
+    "output_modes": ["residual", "renderer"],
+    "residual_bound": 0.35,
+    "sdf_bound_px": 24.0,
+    "renderer_band_px": 8.0,
+    "normalization": "none",
+    "global_pooling": false,
+    "global_fft": false
+  },
+  "training": {
+    "seed": 1050001,
+    "steps": 1800,
+    "convergence_extension_reason": "The clean 600-step renderer was still improving and already reduced image MAE, so both matched arms are rerun from scratch for 1800 steps before any mechanism decision.",
+    "batch_size": 16,
+    "learning_rate": 0.0008,
+    "weight_decay": 0.00005,
+    "precision": "float32",
+    "log_every": 50
+  },
+  "loss_weights": {
+    "output_charbonnier": 1.0,
+    "output_gradient": 0.25,
+    "sdf": 0.35,
+    "width": 0.10,
+    "inside_level": 0.05,
+    "outside_level": 0.05,
+    "identity": 0.20
+  },
+  "evaluation": {
+    "decompositions": [
+      "oracle_renderer",
+      "learned_sdf_true_width_true_levels",
+      "learned_sdf_learned_width_true_levels",
+      "full_learned_renderer",
+      "matched_residual"
+    ],
+    "metrics": [
+      "contour_iou",
+      "symmetric_boundary_distance_px",
+      "centroid_error_px",
+      "transition_center_error_px",
+      "transition_width_error_px",
+      "halo_overshoot_fraction",
+      "identity_mae_gray",
+      "known_motion_error_px",
+      "exposure_center_spread_px",
+      "full_tiled_max_abs_gray"
+    ],
+    "selection": "Renderer must show a consistent Pareto improvement in center/width/halo over the residual baseline; no single aggregate score can authorize a full R105."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "purpose": "Fair multimethod displacement comparison across pillar and via",
+  "manifest": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\MOSR_CheckpointConfig_Diagnostic_20260724\\evaluation_manifest_checkpoint_config.json",
+  "methods": [
+    "Base U-Net",
+    "EDSR",
+    "MOSR",
+    "NAFNet",
+    "Raw"
+  ],
+  "morphologies": [
+    "pillar",
+    "via"
+  ],
+  "selection": "Exactly 30 Raw-motion-ranked adjacent pairs per sequence",
+  "primary_population": "Common-valid intersection across all available methods",
+  "stage_reference": "PI commanded displacement is treated as the experimental position reference",
+  "files": {
+    "long": "displacement_step_measurements.csv",
+    "availability": "displacement_availability.csv",
+    "summary": "displacement_summary.csv",
+    "pooled": "displacement_pooled_common_valid.csv"
+  }
+}

@@ -1,6 +1,150 @@
 # 實驗重建影像 Gallery / Experiment Recon Gallery
 
-_Last updated: 2026-05-11_
+_Last updated: 2026-10-03_
+
+## R152：論文實際PSF、同視野重建與30次實測輪廓（2026-10-03）
+
+圖使用真正的部署PSF矩陣與原生R152輸出；RAW和MOSR共用同一顯示尺度及裁切範圍。輪廓為同一中央物件起點的30次實測64點，只移除平移、保留尺寸及方向。[圖說與原始數據](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)
+
+![R152實際使用的25顆PSF響應](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/figures/Fig6_3_PSF25_actual_response.png)
+
+![同張RAW與MOSR原生影像及相同座標局部放大](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/figures/Sect6_2_3_RAW_MOSR_same_region.png)
+
+![同物件30條實際測得輪廓及同邊界局部放大](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/figures/Sect6_2_4_30_measured_contours.png)
+
+## R147：原尺寸PSF的量測取捨與模型內部剖析（2026-09-26）
+
+完整8192次訓練、930張實拍完成；直徑重拍16.336nm比R146的23.082nm低，短步PI差4.537nm卻比4.313nm高。逐步、格點、成像擾動與歷史對照已核對，不以某一控制替代實拍。[完整結果](Experiments/R147_FullResPSFConsistency/reports/R147_RESULTS.md) · [深度診斷](Experiments/R147_FullResPSFConsistency/reports/R147_INTERNAL_AUDIT.md)
+
+![固定資料逐步位移、直徑與成像差](Experiments/R147_FullResPSFConsistency/reports/figures/R147_internal_stages.png)
+
+![三模型對整數移動的反應](Experiments/R147_FullResPSFConsistency/reports/figures/R147_grid_sensitivity.png)
+
+![同一張照片在成像擾動下的圓心變化](Experiments/R147_FullResPSFConsistency/reports/figures/R147_nuisance_response.png)
+
+## R146：真實SEM外框研究PSF的來源與量測取捨（2026-09-25）
+
+新研究PSF在預先封存照片的圓外觀預測較準；同條件完整訓練與930張實拍後，短步PI差4.313nm、直徑重拍23.082nm及輪廓重拍20.371nm，均不及R145的3.990／21.013／16.001nm。起點相對位移重拍較穩，但平均絕對差未改善。SEM真實外框只校準PSF，未作神經清晰答案；本輪仍是研究版。[完整結果](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_RESULTS.md) · [原因核對](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_CAUSAL_AUDIT.md)
+
+![同張照片的RAW與R145及R146重建](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/figures/sample_center9_comparison.png)
+
+![30趟短步位移與完整訓練](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/figures/training_and_short_step.png)
+
+![直徑輪廓重拍與SEM外框尺寸差](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/figures/size_contour_tradeoffs.png)
+
+![平均邊緣更窄卻在30趟中更不穩](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/figures/edge_width_repeatability.png)
+
+## R145：修正九顆圓編號後的實測PSF完整比較（2026-09-24）
+
+新25顆PSF同時用於配對資料與模型，完成8192次訓練、930張實拍及8370顆圓量測。短步PI差3.990nm比R143的4.425nm低，仍高於R140v2的3.640nm；輪廓重拍較穩，但對PSF校準所用SEM尺寸的平均差+191.887nm比RAW的+169.883nm大。相同九顆SEM是校準參照，不作獨立尺寸準確度宣稱。[完整結果](Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_RESULTS.md)與[穩定性追查](Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_STABILITY_FOLLOWUP.md)。
+
+![原圖與兩版PSF模型的同區域重建](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/sample_center9_comparison.png)
+
+![完整訓練與30趟短步位移](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/training_and_short_step.png)
+
+![直徑輪廓重拍與SEM尺寸對照](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/size_contour_tradeoffs.png)
+
+同一模型的深入審查發現PSF頻域原點錯位、作用強度偏低及不同PSF的訓練影像差異低於雜訊。[完整原因分析](Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_PSF_LIMITING_MECHANISMS.md)
+
+![測試點在目前PSF反推運算中移到角落](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/optical_phase_spot.png)
+
+![舊版與修正版PSF寬度及細節傳遞差異](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/psf_bandwidth_comparison.png)
+
+## R129：保留論文設計的短程原型（2026-09-12）
+
+實測光學融合與改善上取樣已接入並可訓練。相對同底版對照，27/36 顆細部形狀誤差改善，但目前未超過既有 R128/V42；只完成每組24次的短測。保留兩項設計，不宣稱已完成正式替代。見 [完整實作、數字與限制](Experiments/R129_OpticalPriorHybrid/reports/R129_RESULTS.md)。
+
+![正常拍攝全部柱子比較](Experiments/R129_OpticalPriorHybrid/results/figures/normal_sem_comparison.png)
+
+![固定第18顆柱子實拍比較](Experiments/R129_OpticalPriorHybrid/results/figures/pillar18_example.png)
+
+## R128與v34論文模型的真正取捨（2026-09-12）
+
+按論文真正名單和量法重比：R128跨柱一致性較好，平均尺寸與輪廓位置改善；細部非圓起伏與共同條件下的速度較弱。暫不直接替換整篇論文。見 [完整評估](Experiments/R128_SourceOnlyFullTraining/reports/R128_THESIS_V34_REPLACEMENT_ASSESSMENT_VERIFIED.md)。
+
+![相同條件下的模型取捨](Experiments/R128_SourceOnlyFullTraining/reports/figures/R128_v34_replacement_tradeoffs.png)
+
+![同顆柱體的非圓起伏](Experiments/R128_SourceOnlyFullTraining/reports/figures/R128_v34_nonround_profile_verified.png)
+
+## R128 — 補齊與R61的LSC及輪廓對照（2026-09-10）
+
+完整同條件比較已完成。R128 相對 R61 的整體位移波動由 7.220 降至 6.873 奈米，改善約 4.8%；不同柱體量出位移的不一致由 5.823 降至 3.416 奈米，改善約 41%。結合較好的配對 SEM 輪廓、周長與圓度表現，R128 是更值得保留的單一綜合研究候選，但橫向偏移、個別影格及圓度相對原圖仍有退步或不確定性，沒有正式精密量測升級。 見 [完整結果](Experiments/R128_SourceOnlyFullTraining/reports/R128_LSC_R61_COMPARISON.md)。
+
+![相同120對位移比較](Experiments/R128_SourceOnlyFullTraining/reports/figures/R128_R61_LSC_comparison.png)
+
+![R61與R128配對SEM輪廓](Experiments/R128_SourceOnlyFullTraining/reports/figures/R61_R128_SEM_comparison.png)
+
+## R128 — 與近期模型的同條件比較（2026-09-10）
+
+同一試片36顆柱體、三張正常拍攝照片：R128的整體輪廓、面積與周長領先所列舊候選，圓度卻隨SEM參考輪廓改變結論。同流程LSC尚未測，不能把之前的原圖位移一致性當成LSC勝出。見 [完整比較與下一個判斷](Experiments/R128_SourceOnlyFullTraining/reports/R128_COMPETITIVE_REVIEW.md)。
+
+![相同照片的輪廓與圓度比較](Experiments/R128_SourceOnlyFullTraining/reports/figures/competitive_contour_circularity.png)
+
+## R128 — 配對SEM上的完整外輪廓（2026-09-10）
+
+同一個保留模型在一般亮度照片13–15的完整外輪廓平均更貼近SEM；兩套固定參考都成立，但仍有局部退步。圖左為先前展示的柱體，圖右是不利案例，兩套參考標示在圖中。詳見 [完整核對](Experiments/R128_SourceOnlyFullTraining/reports/R128_FULL_CONTOUR_SEM.md)。
+
+![SEM與原圖及重建輪廓](Experiments/R128_SourceOnlyFullTraining/reports/figures/full_contour_SEM_overlay_labeled.png)
+
+[全部36顆疊圖](Experiments/R128_SourceOnlyFullTraining/reports/figures/full_contour_all36.png)
+
+## R128 — 正常條件的結構檢查（2026-09-10）
+
+12組實拍位移與原圖最大差約0.0132像素；清楚控制影像仍會被修圓。下圖採對比明顯的已知清楚影像，藍線為參考、橙虛線為模型讀值。只留第四版本試用，尚不直接用於精密局部量測。見 [完整結構檢查](Experiments/R128_SourceOnlyFullTraining/reports/R128_STRUCTURE_CHECK.md)。
+
+![清楚角落與輪廓改動](Experiments/R128_SourceOnlyFullTraining/reports/figures/structure_clean_control.png)
+
+![實拍線條剖面](Experiments/R128_SourceOnlyFullTraining/reports/figures/structure_real_line_profile.png)
+
+![實拍棋盤交點讀值](Experiments/R128_SourceOnlyFullTraining/reports/figures/structure_checker_junction.png)
+
+先前四組SEM結果保留於 [完整訓練結果](Experiments/R128_SourceOnlyFullTraining/reports/R128_RESULTS.md)。
+
+## R127 — 對照與位移讀法修正（2026-09-08）
+
+完整視野提供了小區塊缺少的配對線索；48份重算保留原來小區塊的每個像素，24組模型全圖位移與相同讀法下的Raw最大差0.000511像素。這是影像前後一致性，不是位移台絕對精度。SEM亮邊的定義範圍另行保留；核心模型尚未採用。見 [完整結果與限制](Experiments/R127_MeasurementPreservationRepair/reports/R127_RESULTS.md)。
+
+![影像範圍與配對資訊](Experiments/R127_MeasurementPreservationRepair/reports/figures/motion_information_scope.png)
+
+![原生SEM邊界定義](Experiments/R127_MeasurementPreservationRepair/reports/figures/native_SEM_edge_definitions.png)
+
+## R126 — 學習改善，實拍量測仍未可靠（2026-09-08）
+
+同一固定例子只調整學習幅度，誤差下降由約7–10%提高至38–61%；這不是實拍改善率。亮暗擴充對照顯示暗例子有幫助，但真實SEM的對照方式會影響結論，位移匹配也會跳值。四個模型均未採用。見 [完整驗證與限制](Experiments/R126_LearnabilityPhotometry/reports/R126_RESULTS.md)。
+
+![固定例子的學習對照](Experiments/R126_LearnabilityPhotometry/reports/figures/fixed_learning.png)
+
+![同一批實拍與SEM的完整對照](Experiments/R126_LearnabilityPhotometry/results/real_comparison/bounded_sem_comparison.png)
+
+## R125 — 資料修正後的六組小試：不採用（2026-09-08）
+
+已完成六組各64次更新及全部初始／最終實拍評估。A正常曝光稍好、暗曝光退步；B/C未顯示可靠改善。此圖是固定SEM參考的半對比讀值，未完成物理材料邊界資格判定。見 [R125 完整結果](Experiments/R125_DataAlignedPilot/reports/R125_RESULTS.md)。
+
+![同一共同人口下的小試結果](Experiments/R125_DataAlignedPilot/results/real_comparison/bounded_sem_comparison.png)
+
+## R124 — 未訓練原型的實際輸出與SEM讀值（2026-09-08）
+
+模型已實作，以下是沒有訓練、沒有儀器校準的工程輸出，不能當作改善證據。六張實拍走過兩個設定；SEM參考半對比讀值在假設Gaussian設定下略增加。完整範圍見 [R124 原型驗證](Experiments/R124_RealFirstPrototype/reports/R124_RESULTS.md)。
+
+![未訓練的實拍預覽](Experiments/R124_RealFirstPrototype/results/real_smoke_v1/untrained_real_previews.png)
+
+![未訓練SEM參考讀值，並非效益通過](Experiments/R124_RealFirstPrototype/results/sem_smoke_v1/followup_v2/untrained_sem_half_readout.png)
+
+## R123 — 下一代設計與真實開發面板（2026-09-08）
+
+本輪只有設計與既有資料核對，沒有新模型重建圖。主要開發光學資料為12張SEM對應曝光、301張全視野序列、51張棋盤；既有模型的兩種讀法矛盾也重新核算。見 [R123 本輪完成範圍](Experiments/R123_RealFirstModelDesign/reports/R123_RESULTS.md)。
+
+![實際原圖面板，非新模型输出](Experiments/R123_RealFirstModelDesign/results/real_input_panel.png)
+
+![既有模型真實讀法矛盾重算](Experiments/R123_RealFirstModelDesign/results/real_baseline_replay.png)
+
+## R122 — 成像歧義與量測原理診斷（2026-09-08）
+
+本輪是診斷，沒有新模型。不同物體可能產生相同觀測；位移穩定也不保證絕對邊界正確。圖表與失敗条件見 [R122 原理驗證報告](Experiments/R122_OperatorPrinciples/reports/R122_RESULTS.md)。下列物理結果使用修正後的面積積分模擬器；第一版離散化失敗另行保留。
+
+![不同物體的相同觀測](Experiments/R122_OperatorPrinciples/results/identifiability.png)
+
+![修正後成像與位置／位移誤差](Experiments/R122_OperatorPrinciples/results/area_render_v2/physical_fit.png)
 
 這份文件收集**每一輪實驗所有 tracked 的重建影像、指標圖表、分析圖**，供 demo / report 時快速查閱。
 所有連結皆為 git 追蹤檔案的相對路徑，GitHub 上會自動渲染圖片。
@@ -785,3 +929,43 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 所有路徑用**相對於本檔目錄（`Experiments/`）的相對路徑**；跨到其他 tracked 目錄（`AnalysisLab/`、`docs/archive/`）時用 `../` 前綴。
 
 **這份文件不是 mandatory 更新項**（不列入 `CLAUDE.md` 的 5 項強制清單），但**強烈建議**在每輪有視覺輸出時更新——demo / 會議 / PR review 時會非常省時。
+
+
+## R121：四組修正短測的負結果（2026-09-06）
+
+八次有效短測完成；資料、位置與合併改動均未同時保住真實輪廓和細節，不採用、不進長訓練。
+
+- [兩套 SEM 參考的配對輪廓結果](Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/paired_sem_effects.png)
+- [細節與位移條件](Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/quality_guards.png)
+- [固定真實影像對照](Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/fixed_real_examples.png)
+- [完整結果與失敗紀錄](Experiments/R121_BoundaryAnchorFactorial/reports/R121_RESULTS.md)
+
+
+## R109／R119：讀法差異與位置寬度耦合（2026-09-07）
+
+固定模型與共同對齊，分開檢查輪廓、中點、最陡點的可靠性。沒有新訓練或升級。
+
+- [讀法與有效覆蓋](Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/readout_comparison.png)
+- [位置路徑影響](Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/position_path_effects.png)
+- [位置也會壓窄邊緣](Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/position_width_coupling.png)
+- [完整比較報告](Experiments/R119_SequenceGeometryValidation/reports/R119_R109_READOUT_COMPARISON.md)
+
+
+## R135 含舊V42的統一精度比較
+
+固定同一顆pillar18、正常曝光14；舊V42有評估來源重疊，所有模型維持事先指定的使用設定。
+
+![同顆實拍比較](Experiments/R135_UnifiedModelComparison/reports/figures/pillar18.png)
+
+[共同量測結果](Experiments/R135_UnifiedModelComparison/reports/R135_RESULTS.md)
+
+
+### R130-Clean 原尺寸從零訓練
+
+2026-09-20：PSF關閉、scratch8192更新，同一930張實拍。短步差4.121nm與R129相近，尺寸重拍16.422nm較低，尺寸偏大仍在。未升級正式基準。
+
+[完整結果](Experiments/R130_Clean/reports/R130_CLEAN_RESULTS.md)
+
+![位移與重拍波動](Experiments/R130_Clean/reports/figures/displacement.png)
+
+![相同區域的重建](Experiments/R130_Clean/reports/figures/native_nine_example.png)

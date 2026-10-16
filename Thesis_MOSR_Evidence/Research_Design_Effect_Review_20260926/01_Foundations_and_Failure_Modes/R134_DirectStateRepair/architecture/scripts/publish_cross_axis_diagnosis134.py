@@ -1,0 +1,25 @@
+"""Publish the limited causal finding without changing the original negative admission."""
+from pathlib import Path
+import sys,re,shutil
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from rt import *
+
+def main():
+    result=load(ROOT/'results/cross_axis_analysis/complete.json');assert result['independent_center_refits']==702 and result['original_negative_admission_unchanged']
+    admission=record(ROOT/'results/long_admission.json');assert not load(admission['path'])['eligible']
+    repo=ROOT.parent.parent;before=ROOT/'results/cross_axis_analysis/index_before';before.mkdir(exist_ok=False)
+    files=[repo/'PROJECT_STATE.md',repo/'ESTIMATOR_POLICY.json',repo/'Experiments/INDEX.md',repo/'docs/operations/PROJECT_STORAGE_REGISTRY.json',ROOT/'reports/R134_RESULTS.md',ROOT/'README.md',ROOT/'MANIFEST.md',ROOT/'results/continuation/status.json']
+    for i,p in enumerate(files):shutil.copy2(p,before/f'{i}_{p.name}')
+    p=ROOT/'reports/R134_RESULTS.md';t=p.read_text(encoding='utf-8');head,body=t.split('\n',1);t=head+'\n\n**後續診斷已完成：** [側向偏移原因與修正順序](R134_CROSS_AXIS_DIAGNOSIS.md)。同例保留模型計算精度為44.019nm，存成256階後48.666nm；原圖43.240nm。該例新增偏移約85.65%出現在輸出量化，不能直接歸為模型真實誤差。鄰近影格仍有未解差異，新的全201張精度比較尚未執行。以下原始256階未通過判定仍保留。\n'+body;p.write_text(t,encoding='utf-8')
+    p=repo/'PROJECT_STATE.md';t=p.read_text(encoding='utf-8-sig');t=re.sub(r'(?m)^Last updated:.*$', 'Last updated: 2026-09-15（R134側移診斷：該例85.65%新增差異來自256階輸出；未升級或長訓練）',t,count=1)
+    marker='### R134 complete full201 screening, not admitted (2026-09-15)';assert marker in t
+    t=t.replace(marker,marker+'\n\nFollow-up diagnosis: [R134_CROSS_AXIS_DIAGNOSIS.md](Experiments/R134_DirectStateRepair/reports/R134_CROSS_AXIS_DIAGNOSIS.md). Same C checkpoint/image/reader: Raw43.240395nm, model float44.019181nm, exported8bit48.665763nm. Quantization adds4.646583of5.425369nm (85.65%for this case only). Actual16bitPNGreadback44.039084nm. Both Cseeds show pattern; sixfullframePNG replays and702independentcircle refits pass. Neighbor18to19 and19to20 retain7.331/6.418nm extra side displacement at float. No independent realYtruth; rigid image registrationRaw/Cfloat53.697/53.896nm, so a Raw-relative gate cannot identify true model error. Original8bitnegative admission preserved; full201highprecision requalification has NOT run. No optical removal, step-count reduction, newtraining or promotion.',1)
+    t=re.sub(r'\*\*R134（2026-09-15）：\*\*.*?(?= \*\*R133)', '**R134（2026-09-15）：** [側移診斷完成](Experiments/R134_DirectStateRepair/reports/R134_CROSS_AXIS_DIAGNOSIS.md)：該例原圖43.240、模型計算精度44.019、256階輸出48.666nm；新增差異85.65%來自存圖量化。鄰近影格仍有差異；保留原19/20未通過判定，未做全201張高精度新比較或長訓練。',t,count=1);p.write_text(t,encoding='utf-8')
+    p=repo/'ESTIMATOR_POLICY.json';v=load(p);x=next(x for x in v['open_side_tracks'] if x.get('candidate_id')=='R134_direct_state');x.update(diagnosis_report='Experiments/R134_DirectStateRepair/reports/R134_CROSS_AXIS_DIAGNOSIS.md',diagnosis_status='case_quantization_effect_identified_full_precision201_pending',original_admission_preserved=True,original_admission_output='uint8',float_full201_requalified=False,model_promoted=False);atomic(p,v)
+    p=repo/'Experiments/INDEX.md';t=p.read_text(encoding='utf-8-sig');t=re.sub(r'(?m)^\| R134 .*$', '| R134 直接影像狀態修正 | [側移原因診斷](R134_DirectStateRepair/reports/R134_CROSS_AXIS_DIAGNOSIS.md) | 該例新增偏移85.65%來自256階輸出；鄰近影格仍有差異；保留原未通過結果，未长訓練 |',t);p.write_text(t,encoding='utf-8')
+    p=ROOT/'README.md';t=p.read_text(encoding='utf-8');head,body=t.split('\n',1);p.write_text(head+'\n\n**最新：** [偏移原因已查明一部分](reports/R134_CROSS_AXIS_DIAGNOSIS.md)。卡關例子主要受存圖精度影響；已驗證保留精度的存檔讀回，但全部201張的新精度驗證尚未執行。\n'+body,encoding='utf-8')
+    p=ROOT/'MANIFEST.md';p.write_text(p.read_text(encoding='utf-8')+'\nCross-axis follow-up: cross_axis_diagnosis (468centerrows), cross_axis_precision_v2 (234centerrows), cross_axis_analysis (702independentrefits, figures, cohort context); retain initial precision-test failure. Canonical R134_CROSS_AXIS_DIAGNOSIS.md. Original admission and frozen packaging sources unchanged; no long training triggered.\n',encoding='utf-8')
+    p=ROOT/'results/continuation/status.json';v=load(p);v.update(diagnosis='case_quantization_effect_identified_full_precision201_pending',diagnosis_report=str(ROOT/'reports/R134_CROSS_AXIS_DIAGNOSIS.md'),updated_utc=now());atomic(p,v)
+    p=repo/'docs/operations/PROJECT_STORAGE_REGISTRY.json';v=load(p);x=next(x for x in v['entries'] if x['id']=='r134_direct_state');x.update(diagnosis='complete_case_precision_followup',actual_gib=sum(p.stat().st_size for p in ROOT.rglob('*') if p.is_file())/2**30);atomic(p,v)
+    verify();assert sha(admission['path'])==admission['sha256'];assert all(sha(x['path'])==x['sha256'] for x in load(ROOT/'config/packaging_source_binding.json')['sources']);save(ROOT/'results/cross_axis_analysis/publication_verified.json',dict(original_admission_unchanged=True,frozen_source_binding_unchanged=True,model_promoted=False,report=record(ROOT/'reports/R134_CROSS_AXIS_DIAGNOSIS.md')));print('Diagnosis published without changing original admission or frozen model sources')
+if __name__=='__main__':main()

@@ -1,0 +1,215 @@
+{
+  "revision": "R134_P1_precision_preserved",
+  "created_utc": "2026-09-15T14:48:08.082482+00:00",
+  "origin": "User-authorized post-diagnosis development revalidation; not unseen confirmation",
+  "model_changed": false,
+  "training_changed": false,
+  "selected_seed": 1342001,
+  "measurement": "Reload exact float32 model values from lossless npy; uint8 preview not admitted as measurement input",
+  "motion": "All201 Cselected frames plus original24fullframes each for matchedAseed1,Aseed2,Cseed2; same12pairs and all original120/194/3populations",
+  "sem": "Both A/C seeds and Raw, all3normalexposures/36pillars; preserve values through crop normalization, all arms same extraction; fixed existingSEMreference remains unchanged",
+  "rules": {
+    "created_for": "prospective full-field research admission, before any R134 candidate motion results",
+    "population": "all201frames, existinglocked120andall194within-sessionpairs; original3repositionings retained separately",
+    "reference_for_admission": "Raw; existingR129W16is context, not required to be beaten after a512updateprobe",
+    "requirements": {
+      "all_frames_and_centers_valid": true,
+      "wrong_direction_count_not_above_Raw": true,
+      "each_sequence_step_sd_max_ratio_to_Raw": 1.05,
+      "aggregate_nominal_within_cross_max_ratio_to_Raw": 1.05,
+      "maximum_nominal_and_cross_error_max_ratio_to_Raw": 1.1
+    },
+    "scopes_applied_separately": [
+      "locked120",
+      "within_session194"
+    ],
+    "threshold_meaning": "Prospective provisional engineering safety screen for long research training; not certified material size or actual stage accuracy. No post-result relaxation.",
+    "seed_selection": "C seed selected by held-out generated dev MAE after both seeds pass initialSEM/learning screen",
+    "long_training": "Only after all required screens and independent arithmetic/input checks pass; separate standalone package required"
+  },
+  "original_stage1": {
+    "type": "Prospective engineering screening for worthiness of long research training, NOT physical accuracy certification",
+    "generated": "Bothseeds devMAE belowRaw; cleanidentity devMAE<=1gray",
+    "sem": "Bothseeds C vsA: median paired size andcenteredshape deterioration<=2percent ofmatchedA; at least one ofthese medianpairedimprovement>=5percent. C notworse thanRaw by>2percent onbothsize andcenteredshape. All36valid.",
+    "next": "Only a C that passesbothseeds proceeds to12source-fixedfull-fieldmotionpairs vsA andRaw; then fixeddev-selectedseed toall201 againstexistingRaw/R129 references before longtraining package.",
+    "motion": "On12pairs C median nominal/within-grid/cross-axis metrics<=1.05 timesmatchedA orRaw(bestbaseline not required); no increase in invalidpairs orwrongdirections. These are provisional research tolerances.",
+    "no_posthoc_relaxation": true
+  },
+  "reuse_generated_validation": "Network and training objective unchanged, retain all original two-seed generated/clean results and dev-based seed choice",
+  "long_training": "Only if both-seed SEM/12pair and selected full201 pass same thresholds; independent precision-aware package and actual package tests before8192additionalupdates",
+  "B_D": "unexecuted pending independent calibration",
+  "protected": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\results\\long_admission.json",
+      "sha256": "c2d5c61251dd5cebdef873ee3f0c2d808ed1f761c8c7da96ceadb82197031e8b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\config\\full_motion_admission.json",
+      "sha256": "0ddbf49cb22ae1d8deaf81d99835672ed8d4d415dd6f9d5e961458f25739f543"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\config\\study.json",
+      "sha256": "ed2fb60040099611b1fc5fd987cb9379d17464a431890f52c281cb213ffde945"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\net\\hybrid.py",
+      "sha256": "49ef06e0e6061b8106fc89523b95d26de318a4a235acd2f8613a23aa2b86d7df"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\net\\inference_policy.py",
+      "sha256": "bac2d488114f6d600e8cf0536088bad93f17d6e56337acc2f39b06e109d6d314"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\net\\network.py",
+      "sha256": "bafff424fb16448292520648c3e4967da080bbd02cbc0bbb01f4fe3d3ba127ba"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\net\\operators.py",
+      "sha256": "e3285675114037317c8ab30fb87f18a9d19cab451230fb11c4c14fca2bab6c07"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\net\\optics.py",
+      "sha256": "676bbb35d5e86c1b41fbdbe046263b7e9b207a9de0cef87e68c8468aae5ac4a8"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\net\\output_policy.py",
+      "sha256": "ab70c2deb34b24739d54242dfef7c571122a9386833e6b032d8208c849d13591"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\net\\reconstruction.py",
+      "sha256": "71594f2cf78a2b2cb4dc17213a670532e51b9b240cfde3aab767ad95f7f8dab6"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\net\\__init__.py",
+      "sha256": "c9bee3382295dcc511cdbd5d642e32df449ee55d0107b98171566446f80c9233"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\assess134.py",
+      "sha256": "972b121b757f223974bde8235469a008d6da6b9f22a10788102fefd886ca0d39"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\audit_motion134.py",
+      "sha256": "0e4170965f269dcef462971b0af3863ade5549c7298c762f3f1008d3e0d703b7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\build_long_package134.py",
+      "sha256": "5a9529871850d50d77206a0fc61799a073578f372a7ef0605bcd5bb21b854d73"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\compare_long134.py",
+      "sha256": "70a97e802bd350576a9bd4bdc1fa2f0382e3ac3102a1ec54279b05576539b9ca"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\continue_qualified134.py",
+      "sha256": "8729bfc1afc5c1dc3504d069e5b0699d70e0ce70211f9e00c92437b1273c3b70"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\full_motion134.py",
+      "sha256": "7f0c08801ff84ee9f6930d3fdd1664ccc62bd08b03e3fbaddfa4c6c37b462301"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\geometry_checks134.py",
+      "sha256": "f57590de1e45342c2f108968e6028c4a887d457f719926b9bdd4cd606cd7cf5a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\infer134.py",
+      "sha256": "54c3ae634eb235bcae38d4e007cc1f8267f2cfcdde2a3b556d7affabb69037e2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\launch134.py",
+      "sha256": "41c70142085dbc0940723eca5cd7a52a8bd54d83ffe7bfb012404c1b13c69d27"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\motion134.py",
+      "sha256": "cfb7235fcceff316ddb35d1b5a1428f85892486b4f5d37ae35fe441ec1230c45"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\preflight134.py",
+      "sha256": "07b497c5a33709cb4c60a6360a14ca223e5aa699985df28e91a66601f74a60aa"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\prepare134.py",
+      "sha256": "eeabbb76b8ac51fe562cf470e0e230442494d5839a70c15139265cdadc897cfc"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\prepare_motion134.py",
+      "sha256": "d961532864cf4874b2e74be281658ba26f963eb6712bb98d2c16d8f9a1f37c00"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\replay_native_calibration.py",
+      "sha256": "ba7765adf3e8064d7d81298b479b6fea301f43de25f2037678da444016131c9e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\report134.py",
+      "sha256": "38081fcfeaac0a31f21f9a22af24c8fde944b8b5a97e6150d2ddc0ad7f501af9"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\sem134.py",
+      "sha256": "f868b67baf99070cce9f248c191fe3f3e44135d52b5c2f34f8855e0e3ed8717a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\test_package_contract134.py",
+      "sha256": "39b372112bf8aeade9ba2202a9e203bc0cb863d08d987cfe895eaff8b059ff4a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\test_staged134.py",
+      "sha256": "159d61abcdbdf61b71065bf7b50b3bba415a9e9e559b4000a879efd5b7c57ad2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\package_templates\\preflight.py",
+      "sha256": "a282590bb10a25f99df6e3f2b852a6eab95db911f38d83613597c6b34348c794"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\package_templates\\verify_package.py",
+      "sha256": "cd4884cde4726b74708169ad25b5d976f1af376144dfc9568e7ecd6acfd69b8e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\rt.py",
+      "sha256": "367df8d8f444d3621daa766e139ab3461e33aeaf770d15f4586a15233cefd0a8"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\tiled.py",
+      "sha256": "d4024d3ae21cb64a093c7d8f752d04c98c196e2011b792228ef0aa8b5d9c061b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\config\\study.json",
+      "sha256": "ed2fb60040099611b1fc5fd987cb9379d17464a431890f52c281cb213ffde945"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\config\\full_motion_admission.json",
+      "sha256": "0ddbf49cb22ae1d8deaf81d99835672ed8d4d415dd6f9d5e961458f25739f543"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\config\\motion_panel.json",
+      "sha256": "6ec93983f6674108d19f267185563982e00a82349c9ac866e138372ddcf58630"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\runs\\R134_A_s1342001\\step0512.pth",
+      "sha256": "8316a815764d1ff09f95b6392c93f2e85707d87020a1f3730337d4d00108585e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\runs\\R134_A_s1342002\\step0512.pth",
+      "sha256": "48e610e9750da22eb6d3bede8108e76680c9c87846e30b8f2fdf74c510755c92"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\runs\\R134_C_s1342001\\step0512.pth",
+      "sha256": "52152dcbf1c2eadcb4556ac6e30bb5c682858dedbd12f2ba74c6b38a59524b05"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\runs\\R134_C_s1342002\\step0512.pth",
+      "sha256": "fd6fc357da730d3470b1593d1605c894fa0067088784a59ead88dfcc4f9233f7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\plan.json",
+      "sha256": "ada63da7a81fb1755349d9402601718777534ffe224c541cc7c07b4e5b3e42d3"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\01_CURRENT_THESIS_RESULTS_V42_CENTER9\\config\\sequence_center9_50x20x.json",
+      "sha256": "e7bd2e86490882ee23b65ecf467624df69546fd51b76e51b12232142a34f8601"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\01_CURRENT_THESIS_RESULTS_V42_CENTER9\\diagnostics\\unified_displacement_step_audit\\tables\\session_anchor_summary.csv",
+      "sha256": "78b6c17363bc8dd3b8881becc99f7cc38d197796dc8801f4ddb3dc8cf87b1f32"
+    }
+  ]
+}

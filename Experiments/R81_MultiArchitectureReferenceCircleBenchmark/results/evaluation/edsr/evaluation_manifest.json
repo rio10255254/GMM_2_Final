@@ -1,0 +1,43 @@
+{
+  "model_key": "edsr",
+  "model_spec": {
+    "name": "Compact EDSR-x1",
+    "family": "EDSR",
+    "year": 2017,
+    "category": "classic residual SR CNN",
+    "kwargs": {
+      "input_channels": 1,
+      "output_channels": 1,
+      "features": 96,
+      "blocks": 24,
+      "residual_scale": 0.1
+    },
+    "source": "Lim et al., CVPR Workshops 2017",
+    "adaptation": "existing MOSR benchmark checkpoint"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\edsr\\best_edsr.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.09783094004329905,
+    "l1": 0.06826803031855488,
+    "rmse": 0.09372735038498362,
+    "ssim": 0.8521855487171547
+  },
+  "parameter_count": 4070785,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.1398534500040114,
+  "median_displacement_roi_inference_seconds": 0.09288014999765437
+}

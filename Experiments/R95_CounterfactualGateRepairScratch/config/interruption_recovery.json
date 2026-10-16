@@ -1,0 +1,57 @@
+{
+  "policy_id": "R95_SAME_RUN_ACCELERATED_RECOVERY_V2",
+  "authorized": true,
+  "authorized_at": "2026-08-13T07:41:20.3386437+08:00",
+  "run_id": "R95_scratch_seed950041_20260813_003125",
+  "reason": "Continue the same R95 formal run with an authorized execution-only acceleration after epoch 11 was fully committed.",
+  "acceleration_authorized_at": "2026-08-13T08:22:52.0143718+08:00",
+  "authorized_interruption_statuses": [
+    "interrupted_for_authorized_acceleration"
+  ],
+  "authorized_continuation_checkpoint_sha256": "96ab86ef7462c7c13eebeeb71079b2d7ea5a21c6ecb1ee957a2d7d53a21683f2",
+  "authorized_continuation_epoch": 32,
+  "allowed_failure_markers": [
+    "measured free at peak",
+    "CUDA out of memory"
+  ],
+  "initial_continuation_checkpoint": "D:\\GMM_2_Final\\Experiments\\R95_CounterfactualGateRepairScratch\\weights\\formal\\seed_950041\\R95_scratch_seed950041_20260813_003125\\weights\\latest.pth.tar",
+  "initial_continuation_checkpoint_sha256": "2e4575ceab7b877f8c461cc12284dadefe415e198deefe1998db3dabab8c60f7",
+  "initial_continuation_epoch": 8,
+  "hard_stop_on_low_free_memory": false,
+  "soft_warning_free_gib": 1.0,
+  "scene_batch_overrides": {
+    "512": 4,
+    "768": 2,
+    "896": 1
+  },
+  "oom_fallback_scene_batches": {
+    "512": [
+      2,
+      1
+    ],
+    "768": [
+      1
+    ],
+    "896": [
+      1
+    ]
+  },
+  "maximum_automatic_oom_restarts": 2,
+  "preserve_target_effective_scene_batch": true,
+  "split_large_patch_common_descent": true,
+  "split_common_descent_start_epoch": 27,
+  "split_common_descent_min_patch": 896,
+  "write_recoverable_latest_checkpoint_every_epoch": true,
+  "cpu_threads": 8,
+  "background_prefetch": true,
+  "online_validation_every_epochs": 4,
+  "online_validation_scenes_per_role": 4,
+  "live_real_preview_every_epochs": 8,
+  "deferred_full_validation_required": true,
+  "final_validation_scenes_per_role": 8,
+  "memory_repair_authorized_at": "2026-08-13T10:35:54.401259",
+  "memory_repair_reason": "Authorized execution-only large-patch memory repair after epoch 33 entered WDDM shared-memory paging; epoch 32 remained fully committed",
+  "memory_repair_equivalence_max_abs": 0.0,
+  "memory_repair_benchmark_peak_reserved_gib": 19.76953125,
+  "memory_repair_benchmark_seconds_per_batch": 2.938843399984762
+}

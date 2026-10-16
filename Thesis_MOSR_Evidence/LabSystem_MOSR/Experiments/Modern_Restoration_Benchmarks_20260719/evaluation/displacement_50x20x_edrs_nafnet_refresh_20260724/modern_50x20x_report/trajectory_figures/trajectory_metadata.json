@@ -1,0 +1,7 @@
+{
+  "purpose": "Thirty-step trajectory figures for Raw, EDSR-x1, NAFNet, and MOSR",
+  "x_axis": "The selected 30 adjacent-pair measurements in chronological end-frame order; the original raw-motion quality ranks are retained as data but are not used as the x-axis.",
+  "y_axis": "Absolute measured displacement amplitude in um; the dashed reference is the absolute PI displacement reference.",
+  "selection": "Exactly the same 30 Raw-motion-ranked adjacent pairs used by all methods in each sequence.",
+  "missing_data": "A method is plotted as a gap when a selected step is not evaluable; it is never interpolated."
+}

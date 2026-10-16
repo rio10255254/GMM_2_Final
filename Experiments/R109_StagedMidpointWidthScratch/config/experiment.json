@@ -1,0 +1,79 @@
+{
+  "experiment_id": "R109_StagedMidpointWidthScratch",
+  "created_date": "2026-08-26",
+  "status": "prepared_design",
+  "source_isolation": {
+    "checkpoint_loading_allowed": false,
+    "resume_allowed": false,
+    "teacher_allowed": false,
+    "real_pixels_in_training": false,
+    "sem_or_hs100mg_structure_in_training": false,
+    "external_suites_validation_only": true
+  },
+  "data": {
+    "source_package": "D:/GMM_2_Final/Experiments/R107A_SingleImageEdgeGeometryProbe/data/package",
+    "source_manifest_sha256": "f10eb706d215b021856bd9ebe4589508d796b5bbb4ddc4b7ee1ee9a5667993ef",
+    "package_root": "data/package",
+    "seed": 1093001,
+    "train_scenes": 5000,
+    "validation_scenes": 512,
+    "canvas_size": 256,
+    "training_patch_size": 256,
+    "label_supersample_factor": 8,
+    "degradation_families": ["standard", "low_contrast", "uneven_illumination", "asymmetric_blur_halo", "boundary_fade", "mixed_hard"],
+    "degradation": {
+      "blur_sigma_px": [0.65, 5.5],
+      "anisotropy": [0.55, 1.60],
+      "motion_blur_lengths": [3, 5, 7, 9, 13, 17],
+      "motion_blur_probability": 0.35,
+      "ghost_probability": 0.20,
+      "ghost_mix": [0.02, 0.12],
+      "halo_probability": 0.28,
+      "halo_strength": [0.12, 0.65],
+      "noise_sigma": [0.0015, 0.035],
+      "row_noise_sigma": [0.0, 0.0045],
+      "column_noise_sigma": [0.0, 0.0030],
+      "contrast_scale": [0.42, 0.92],
+      "illumination_amplitude": [0.0, 0.13],
+      "boundary_fade_strength": [0.25, 0.85]
+    }
+  },
+  "model": {
+    "base_channels": 48,
+    "dilations": [1, 2, 4, 8, 8, 4, 2, 1],
+    "blur_scales_px": [0.8, 1.6, 3.2, 6.4],
+    "maximum_normal_shift_px": 1.5,
+    "minimum_width_gain": 1.0,
+    "maximum_width_gain": 3.5,
+    "local_range_window_px": 21,
+    "minimum_halo_px": 192,
+    "alignment_multiple": 8,
+    "normalization": "none",
+    "global_pooling": false,
+    "global_fft": false,
+    "free_image_residual": false
+  },
+  "training": {
+    "epochs": 48,
+    "detector_epochs": 6,
+    "batch_size": 8,
+    "workers": 4,
+    "detector_learning_rate": 0.00035,
+    "renderer_learning_rate": 0.00030,
+    "minimum_learning_rate": 0.000025,
+    "weight_decay": 0.00001,
+    "gradient_clip": 5.0,
+    "amp": false,
+    "save_every_epochs": 4,
+    "preview_every_epochs": 4,
+    "auxiliary_frequency": {"translation_every_steps": 8, "exposure_every_steps": 8, "tile_every_steps": 16},
+    "renderer_loss_weights": {"contour": 0.60, "contour_bce": 0.12, "area": 0.22, "centroid": 0.16, "direct": 0.90, "reconstruction": 0.42, "gradient": 0.18, "identity": 1.50, "parameter_smoothness": 0.035, "width_target": 0.05, "translation": 0.12, "exposure": 0.10, "tile": 0.15}
+  },
+  "inference": {"core_size": 1024, "halo": 192, "input_range": [0.0, 1.0], "output_range": [0.0, 1.0]},
+  "selection": {
+    "primary": "worst_case_first",
+    "axes": ["R73_boundary", "R74_each_family", "SEM_per_pillar_boundary", "perimeter", "identity", "tile", "real_motion", "appearance"],
+    "no_single_aggregate_score": true,
+    "real_validation_after_checkpoint_lock": true
+  }
+}

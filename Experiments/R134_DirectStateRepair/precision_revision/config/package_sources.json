@@ -1,0 +1,102 @@
+{
+  "created_utc": "2026-09-15T15:09:23.285115+00:00",
+  "scope": "Current source freeze for future independent package construction; original qualification start records remain separate",
+  "sources": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\audit.py",
+      "sha256": "f49fd3d74ca74ad0ad0d9247801831a4232859038fba48212b49018431ccc9ff"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\build_package.py",
+      "sha256": "feb74284348d1991fd0ead137199a88465f3bd68ae3048135574d5d1de795c35"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\common.py",
+      "sha256": "04021f912bef91d8d85313cdf2377005a61e324418590a91dc3c80809bad4e40"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\continue_run.py",
+      "sha256": "29e1bf19b1ba3d24203549d8c0d0a1276adba9a63ce12fef8191a8ace6a01ca7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\final_compare.py",
+      "sha256": "c5eccb8843c2bd5113a9e7dd681b257e4d01226dd4f07ad8a6d654c1742aa8a2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\package_evaluate.py",
+      "sha256": "86b2dcff308152af124dcbf0a84d54713ca460b78c1d1261c2e3b544699a589b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\package_infer.py",
+      "sha256": "745dd5a7ef1c8145946f1ece7241bac027b0a2daadeffb381e003a82b28e1f3f"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\package_preflight.py",
+      "sha256": "830df92989d4a68b83a8a3de3edb565062a314159158db8b277b6bd6b3c2ca4f"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\precision_io.py",
+      "sha256": "f1f23bc07b79481dcd8b8f4442830616850ecaaa303b638ce5097744f14fbb60"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\preflight.py",
+      "sha256": "88ff0317107e0fb891e624aae470a890f3029a17d56fccecbc4a00a502c12d88"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\prepare.py",
+      "sha256": "624c03976b2d4407fd460455be6d5febc62b84da0f2ce949c1cac3377e3e0dd2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\qualify_motion.py",
+      "sha256": "e9cb80d9cec7c3ba26028a8e23411ae1908d2d3f4c71db689a050de14eaea127"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\qualify_sem.py",
+      "sha256": "1f54cfadb94b16bf420804d548aeb5c6c597fcfca56ea7c979ca9c3ede7bc102"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\readout.py",
+      "sha256": "4fd698760e640cd561fe9e08bbe6a780742be111bea0ce2b8a6b331cdd0225c8"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\report.py",
+      "sha256": "8c5efba320c74dcec993aa9a44df40f2c6814abdb63fa6c2a504bd7e3c625014"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\sem_metrics.py",
+      "sha256": "7c3d51055b0525332c75d1f944e0af44949ea3dab41222311de6d43891d9787a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\test_package_plan.py",
+      "sha256": "04f6220d5c30b48223ef1c56b13c72ddf0f7cd7fcdbf1c0af7af4d1ea5d80030"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\validation\\extract_sem_precise.m",
+      "sha256": "413e4f4a9c59c98e40d6e48e0e3a9ccebe2700a6517cbcbe615adbe0de5c696e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\validation\\readout_helpers.py",
+      "sha256": "f95599246689dabf286adc2bc9b56acc079f2c43cd7cdcd0fca53add9da1ab57"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\validation\\reference_circle_core.py",
+      "sha256": "76e1fe615128cbf9bb19c9775b990a055d73f5e086986a04368f78ca7008248c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\validation\\sem_reference.mat",
+      "sha256": "329ebe6444095ae21f1579d0779b5fc948d9af828848440217ff902bd71f529b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\validation\\sessions.csv",
+      "sha256": "78b6c17363bc8dd3b8881becc99f7cc38d197796dc8801f4ddb3dc8cf87b1f32"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\validation\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\precision_revision\\config\\protocol.json",
+      "sha256": "8b259b20f00aed4efc01be93f5626b98043a71ac858c7a18432b91208ff3acba"
+    }
+  ]
+}

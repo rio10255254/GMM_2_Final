@@ -1,0 +1,39 @@
+{
+  "model_key": "unet",
+  "model_spec": {
+    "name": "Base U-Net",
+    "family": "U-Net",
+    "year": 2015,
+    "category": "classic encoder-decoder CNN",
+    "kwargs": {
+      "base": 48
+    },
+    "source": "Ronneberger et al., MICCAI 2015; existing MOSR base-U-Net definition",
+    "adaptation": "ordinary three-level U-like network without metrology-specific modules"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\unet\\best_unet.pth.tar",
+  "checkpoint_epoch": 12,
+  "checkpoint_validation": {
+    "loss": 0.07158357743357169,
+    "l1": 0.05087618961424947,
+    "rmse": 0.07187507201936802,
+    "ssim": 0.8964630631395297
+  },
+  "parameter_count": 4010689,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.14997544999641832,
+  "median_displacement_roi_inference_seconds": 0.08218310002121143
+}

@@ -1,0 +1,11 @@
+{
+  "freeze_before_real_reader_results": true,
+  "reader": "motion_reader_v3",
+  "scope": "All6frozen R126pairs, Raw and all4final models; retain local128readout plus larger actually saved context",
+  "valid_context": "Remove80native pixels from each saved context edge, matching the frozen R126model halo. Apply identical crop to Raw and all candidates.",
+  "support": "Full-field Raw pair independently estimates dominant source motion. It does not supply a desired search location or physical ground truth.",
+  "return_context_displacement_only_if": "Unique joint match, positive fit, forward/reverse sum<=0.1px, valid full-field source match and context agreement with full-field Raw<=0.5px",
+  "local128": "Always retain its estimate and validity. A rejected local128 reading is not silently converted into a valid local result by the broader context.",
+  "all_declined_cases": "Return no reportable displacement, preserve diagnostic numbers and reasons",
+  "interpretation": "Conditional dominant translation consistency on reused real photographs; not absolute measured stage motion or proof that image geometry is correct"
+}

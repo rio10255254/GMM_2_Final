@@ -1,0 +1,66 @@
+{
+  "run_id": "20250605_inner_circle_roi_fine_prealign_fit",
+  "method": "project_standard_wholefov_zernike_bads",
+  "status": "validated_ready_for_lab_data_generation",
+  "comparison_to": "20250605_inner_circle_roi_standard_fit",
+  "source_image_date": "2026-06-05",
+  "purpose": "Repeat the validated inner-circle ROI PSF fit with finer pre-alignment to check whether the earlier BADS-vs-Gaussian gap was a local fitting artifact.",
+  "camera_model": "Basler acA2040-120um",
+  "camera_pixel_size_um": 3.45,
+  "objective_magnification": 20,
+  "effective_pixel_size_um": 0.1725,
+  "target_feature": "CHART-009 phi 0.1 mm inner white disk",
+  "target_diameter_um": 100.0,
+  "target_diameter_px": 579.7101449275361,
+  "measurement_input_dir": "LabSystem_MOSR/psf_calibration/inputs/20250605_inner_circle_roi/measured",
+  "measurement_image_count": 25,
+  "measurement_grid_rows": 5,
+  "measurement_grid_cols": 5,
+  "gt_path": "LabSystem_MOSR/psf_calibration/inputs/20250605_inner_circle_roi/GT/LAB_INNER_CIRCLE_GT_901.bmp",
+  "roi_manifest": "LabSystem_MOSR/psf_calibration/inputs/20250605_inner_circle_roi/MANIFEST.json",
+  "dependency_root": "D:/GMM_2_Final/PSF_Fitting",
+  "psf_basis_path": "D:/GMM_2_Final/PSF_Fitting/SimulatePSF/psf_multi.mat",
+  "copied_fitter_dir": "LabSystem_MOSR/psf_calibration/scripts/standard_wholefov",
+  "run_script": "LabSystem_MOSR/psf_calibration/scripts/run_lab_inner_circle_roi_fine_prealign_fit.m",
+  "output_dir": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit",
+  "fit_summary": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/fit_summary.json",
+  "psf_output": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+  "batch_results": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/batch_results.csv",
+  "prealign_search_radius": 2,
+  "prealign_search_step": 0.1,
+  "prealign_crop_size": 385,
+  "notes": [
+    "This run keeps the same GT, measured ROI images, Zernike/BADS fitter, 5x5 layout, warm start, and tilt lock as the validated standard run.",
+    "The only intended fitting changes are finer pre-alignment step and a larger pre-alignment crop.",
+    "Do not promote this run until it is validated against the standard run and the Gaussian control."
+  ],
+  "validation": {
+    "verdict": "validated",
+    "summary": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_validation/validation_summary.json",
+    "report": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_validation/VALIDATION_REPORT.md",
+    "next_action": "advance_to_lab_data_generation_psf_ready"
+  },
+  "fit_result_summary": {
+    "image_count": 25,
+    "psf_shape": [
+      101,
+      101,
+      5,
+      5
+    ],
+    "seconds_total": 919.9288905000001,
+    "seconds_median": 33.7001083,
+    "fval_median": 5033.15651812549,
+    "iterations_median": 477.0
+  },
+  "comparison_result": {
+    "standard_edge_rmse": 0.10198076660346045,
+    "fine_edge_rmse": 0.1017898745123472,
+    "edge_rmse_delta_pct": -0.18718440493344923,
+    "standard_gap_vs_gaussian_pct": 9.447229130421722,
+    "fine_gap_vs_gaussian_pct": 9.242360985857795,
+    "standard_centroid_span_px": 1.1023281116945398,
+    "fine_centroid_span_px": 0.038050783350030315,
+    "decision": "Use this fine-prealign BADS PSF as the BADS candidate for lab data generation, but keep the 3.5 px Gaussian control because it still has lower median edge RMSE."
+  }
+}

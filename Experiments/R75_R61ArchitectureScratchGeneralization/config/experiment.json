@@ -1,0 +1,149 @@
+{
+  "experiment_id": "R75_R61ArchitectureScratchGeneralization",
+  "created_date": "2026-07-30",
+  "status": "formal_training_running_100_epochs_safe_full_precision",
+  "scientific_question": "Can the R61v16 architecture learn a broadly reusable reconstruction rule from random initialization using only procedural primitive shapes and synthetic image formation?",
+  "architecture": {
+    "source_file": "model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py",
+    "class_name": "GeoEdgeAlignSR_v1_v5_NoCoord",
+    "base_channels": 48,
+    "full_network_trainable": true,
+    "fixed_nonlearned_kernels": "The three built-in interpolation blur kernels remain fixed exactly as in the source architecture; every learnable layer is open for training.",
+    "checkpoint_loading_allowed": false,
+    "teacher_models_allowed": false,
+    "boundary_adapter": {
+      "enabled": true,
+      "hidden_channels": 16,
+      "max_residual": 0.018,
+      "gate_bias": -2.0,
+      "orientation_inputs": true,
+      "polarity_split": false
+    },
+    "psf_policy": "Nine fully analytic Gaussian kernels generated inside each data package; no fitted or measured PSF is used."
+  },
+  "source_isolation": {
+    "required_provenance_kind": "procedural_primitive",
+    "required_generator": "r75_pure_primitives_supersampled_v2",
+    "real_image_pixels_allowed": false,
+    "sem_structure_allowed": false,
+    "hs100mg_structure_allowed": false,
+    "legacy_training_pairs_allowed": false,
+    "forbidden_value_tokens": [
+      "sem",
+      "hs100mg",
+      "100mg",
+      "real_microscope",
+      "real_crop",
+      "basler",
+      "pillar"
+    ],
+    "forbidden_record_keys": [
+      "source_package",
+      "source_path",
+      "sem_reference_id",
+      "sem_radius_nm",
+      "target_radius_nm",
+      "real_crop_path",
+      "checkpoint"
+    ]
+  },
+  "dataset": {
+    "generator_version": "r75_pure_primitives_supersampled_v2",
+    "image_size": 256,
+    "label_supersample_factor": 4,
+    "label_downsample_method": "area_average",
+    "shape_families": [
+      "disk",
+      "ellipse",
+      "rectangle",
+      "rounded_rectangle",
+      "trapezoid",
+      "regular_polygon",
+      "annulus",
+      "capsule",
+      "cross",
+      "l_shape",
+      "t_shape",
+      "paired_disks",
+      "three_disks",
+      "parallel_bars",
+      "ring_with_disk",
+      "sector"
+    ],
+    "training_shape_scope": "Only elementary analytic primitives and simple unions; no measured sample outline, crop, radius list, or SEM-derived template.",
+    "rendering_scope": "Procedural intensity fields plus Gaussian, anisotropic, motion, defocus, halo, ghosting, contrast, illumination, Poisson, and Gaussian noise.",
+    "split_seed": 750031,
+    "split_ratios": {
+      "train": 0.8,
+      "validation": 0.1,
+      "internal_test": 0.1
+    },
+    "split_unit": "geometry_id",
+    "profiles": {
+      "smoke": {
+        "geometry_count_per_family": 5,
+        "renderings_per_geometry": 2,
+        "expected_pairs": 160
+      },
+      "pilot": {
+        "geometry_count_per_family": 8,
+        "renderings_per_geometry": 2,
+        "expected_pairs": 256
+      },
+      "formal": {
+        "geometry_count_per_family": 80,
+        "renderings_per_geometry": 4,
+        "expected_pairs": 5120
+      }
+    }
+  },
+  "held_out_evaluation": {
+    "internal_test_usage": "Same primitive families, unseen geometry IDs and unseen renderings; never passed to the trainer.",
+    "external_synthetic_packages": [
+      "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val",
+      "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val"
+    ],
+    "external_shape_families": [
+      "fourier_lobed",
+      "deep_notches",
+      "thin_necks",
+      "crescent_bodies",
+      "rough_boundaries"
+    ],
+    "rule": "External packages are evaluation-only and are not addressable from the training launcher."
+  },
+  "live_validation": {
+    "enabled": true,
+    "relative_image_path": "data/live_validation/pillar_center9_50x_raw.bmp",
+    "every_n_epochs": 5,
+    "role": "observation_only_no_loss_no_selection_no_training_control",
+    "pillar_ids": [22, 23, 24, 28, 29, 30, 34, 35, 36]
+  },
+  "training": {
+    "formal_epochs": 100,
+    "learning_rate": 0.00002,
+    "amp_enabled": false,
+    "batch_size": 8,
+    "validation_batch_size": 2,
+    "crop_size": 256,
+    "seed": 750031,
+    "stability_seeds": [
+      750031,
+      750032,
+      750033
+    ],
+    "deterministic_split": true,
+    "group_balancing_keys": [
+      "polarity",
+      "shape_family",
+      "degradation_family"
+    ],
+    "primary_selection_metrics": [
+      "validation reconstruction error",
+      "validation edge error",
+      "internal-test ACM contour IoU",
+      "internal-test mean symmetric boundary distance"
+    ]
+  },
+  "promotion_rule": "Preparation and a smoke run do not replace R61v16. A scratch model becomes a candidate only after the internal test and both frozen external synthetic contour suites pass without family-level collapse."
+}

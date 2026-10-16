@@ -1,0 +1,15 @@
+{
+  "experiment_id": "R98_AggressiveTextureScratch",
+  "status": "r98_end_to_end_smoke_passed",
+  "passed": true,
+  "device": "NVIDIA RTX A6000",
+  "total_memory_gib": 47.9878,
+  "selected_scene_batches": {
+    "512": 6,
+    "768": 2,
+    "896": 1
+  },
+  "selection_note": "R98 measured every formal patch stage. Selected batches maximize measured throughput while retaining at least 2 GiB free; 512 batch 8 remains forbidden after the prior system crash.",
+  "smoke_gpu_peak_gib": 2.0987915992736816,
+  "acceleration_benchmark_passed": true
+}

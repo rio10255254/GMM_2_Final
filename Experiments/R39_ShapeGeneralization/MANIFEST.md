@@ -18,6 +18,7 @@
 - `scripts/r39r40_a025_capability_eval.py` — R39R40_avg_a025 全方位能力評估腳本，含 R40 micro_val_unseen 跟 R39 shape_val_unseen 詳細指標、視覺四項統計，產出 capability_eval 報告。
 - `scripts/r39r40_a025_four_panel_contact.py` — R40 micro_val_unseen 上 GT / COMBO / a030 / a025 四聯對比 sheet。
 - `scripts/r39r40_a025_visual_compare.py` — R40 micro + R39 shape 五聯對比 sheet（GT / COMBO / a030 / a043 / a025）。
+- `scripts/make_a025_presentation_microscopy_figures.py` — 從 a025 ONNX vs COMBO ONNX 內部比較結果挑選簡報用案例，產出中文標註版 PNG、總覽圖與索引。
 - `tests/test_r39_shape_data.py` — 資料包配對、held-out split 隔離、manifest 建立的單元測試。
 - `tests/test_r39_ring_guard.py` — ring guard 資料集挑選與 compact summary 的單元測試。
 - `tests/test_r39_weight_sweep.py` — 權重 sweep pure logic 單元測試。
@@ -30,6 +31,7 @@
 - `results/a030_x_a043_sweep/reports/R39R40_AVG_a025_EXTERNAL_COMPARE.md` — α=0.25 外部 GMF 解析報告（r40_external_compare.py 產出）。
 - `results/a030_x_a043_sweep/reports/R39R40_AVG_a050_EXTERNAL_COMPARE.md` — α=0.5 同上。
 - `results/a030_x_a043_sweep/reports/R39R40_AVG_a075_EXTERNAL_COMPARE.md` — α=0.75 同上。
+- `results/a030_x_a043_sweep/reports/R39R40_A025_ONNX_PACKAGE_CONTENT_AUDIT_20260513.md` — a025 ONNX 公司交付包內容審核；確認 `outputs/` 內部測試資料已移至實驗區，交付包只保留模型、runner、sample、README、驗證報告與 smoke test。
 - `results/.gitkeep` — 為未來 R39 結果留位置用。
 - `results/shape_recon/shape_val_unseen_combo_baseline_summary.json` — held-out 形狀集的 COMBO baseline 彙總。
 - `results/shape_recon/shape_val_unseen_r39_shape_mix_safe_summary.json` — safe 候選的 held-out 形狀彙總。
@@ -66,6 +68,8 @@
 - `results/a030_x_a043_sweep/visuals/contact_sheet_a025_micro_five_panel.png` — R40 micro 五聯 sheet（含 a043）。
 - `results/a030_x_a043_sweep/visuals/contact_sheet_a025_shape_five_panel.png` — R39 shape 五聯 sheet（含 a043）。
 - `results/a030_x_a043_sweep/README.md` — sweep dispatch 說明（怎麼把 BMP 送外部 GMF、怎麼解析 GMF_score.txt）。
+- `results/a030_x_a043_sweep/delivery_audit/a025_onnx_internal_eval_20260513/moved_from_delivery_package_outputs/` — 從 a025 ONNX 交付包移出的內部顯微測試、a025 vs COMBO 比較與快速驗證輸出；不屬於公司交付包內容，但保留在實驗區供追溯。
+- `results/a030_x_a043_sweep/presentation_microscopy_selected_20260513/` — a025 vs COMBO 顯微重建比較的簡報素材；包含主簡報 PNG、內部風險備用圖、總覽 contact sheet、README 與 selected_cases.csv。
 - `results/synthetic_microscopy_demo/gt/0001.bmp` — 為「訓練分布限制」這個發現手做的合成 IC 風格 GT。
 - `results/synthetic_microscopy_demo/input/0001.bmp` — PSF blur + Poisson-Gaussian noise 後的輸入(使用 lighter-noise 版,alpha=160, sigma=1.0)。
 - `results/synthetic_microscopy_demo/comparison.png` — 4 連格並列(GT / blurred / COMBO recon / a030 recon)。

@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "command": [
+    "C:\\Users\\Rio\\anaconda3\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\R61\\regenerate_r61.py",
+    "--output-root",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\R61_generated",
+    "--report",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\R61_full_rebuild.json"
+  ],
+  "blocked_original_roots": [
+    "D:\\GMM_2_Final",
+    "H:\\GMM_2_Final_Archive"
+  ],
+  "allowed_copied_roots": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation"
+  ],
+  "python_workers_inherit_guard": true,
+  "seconds": 963.8096926212311
+}

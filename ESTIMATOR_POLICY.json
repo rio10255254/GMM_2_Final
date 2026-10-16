@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": "2.0",
-    "generated_at": "2026-05-09 16:15:00",
+    "generated_at": "2026-09-27 03:00:00",
     "decision_effective_date": "2026-04-08",
     "policy_owner": "GMM_2_Final truth plane"
   },
@@ -290,6 +290,2148 @@
         "psf_audit_md": "D:\\GMM_2_Final\\Experiments\\R26NewPSFCheck\\psf_audit\\PSF_FORMAL_AUDIT_20260326.md"
       },
       "notes": "Keep tracked as an open PSF side track. It is not the active mainline and not part of the COMBO promotion decision."
+    },
+    {
+      "candidate_id": "R150_MatchedGeometryMeanPSF",
+      "round": "R150",
+      "experiment": "Experiments/R150_MatchedGeometryMeanPSF",
+      "status": "training_and_930_frame_validation_complete_not_promoted",
+      "mainline_status": "research_tradeoff_not_promoted",
+      "training": {
+        "initialization": "scratch",
+        "pretrained": false,
+        "updates_expected": 8192,
+        "matched_circle_overlays": 96,
+        "model_operator": "fixed_mean_psf_train_and_inference",
+        "real_or_sem_or_pi_answers_used": false,
+        "updates": 8192,
+        "final_checkpoint_sha256": "1ce02e2c7f25bc88677212d02ee7116bef4dc61c45558f0dc135cee3e2d31e27",
+        "fixed_dev_initial": 7.811771367676556,
+        "fixed_dev_final": 1.7447121848235838,
+        "fixed_test_final": 1.6566273606731556
+      },
+      "evidence": {
+        "two_exact_design_controls_final_dev": [
+          5.418709594756365,
+          5.46566653624177
+        ],
+        "r150_smoke_initial": 8.017467007040977,
+        "r150_smoke_final": 7.862127885222435
+      },
+      "reports": {
+        "methodology": "Experiments/R150_MatchedGeometryMeanPSF/reports/R150_METHODOLOGY.md",
+        "validation_plan": "Experiments/R150_MatchedGeometryMeanPSF/reports/R150_VALIDATION_PLAN.md",
+        "results": "Experiments/R150_MatchedGeometryMeanPSF/reports/R150_RESULTS.md",
+        "real_validation": "Experiments/R150_MatchedGeometryMeanPSF/reports/R150_REAL_VALIDATION_RESULTS.md"
+      },
+      "generated_comparison_vs_R148v2": {
+        "same_R150_test_all_pct": -6.4524352653,
+        "matched_circle_pct": -13.8540356788,
+        "unchanged_112_pct": -5.2031933232,
+        "matched_local_boundary_pct": -16.5838626186,
+        "matched_signed_boundary_magnitude_pct": -58.2704643811
+      },
+      "real_evaluation": {
+        "images": 930,
+        "circles": 8370,
+        "short_step_mae_nm": 3.8757579516356935,
+        "long_distance_mae_nm": 18.134236675180528,
+        "diameter_repeatability_nm": 22.38878159517268,
+        "contour_repeatability_nm": 19.896675164845213,
+        "shape_repeatability_nm": 16.482575495949394,
+        "sem_mean_diameter_error_nm": 220.32413056460476,
+        "verdict": "short_step_and_de_sized_shape_gain_but_size_contour_sem_tradeoff_no_promotion"
+      }
+    },
+    {
+      "candidate_id": "R149_MatchedGeometryLocalBoundary",
+      "round": "R149",
+      "experiment": "Experiments/R149_MatchedGeometryLocalBoundary",
+      "status": "bounded_preflight_failed_no_formal_training",
+      "mainline_status": "research_negative_no_promotion",
+      "evidence": {
+        "pilot1_common_local_boundary_improvement_pct": 0.7457594345,
+        "pilot2_common_local_boundary_improvement_pct": 0.8143680037,
+        "required_improvement_pct": 3.0,
+        "formal_checkpoint_exists": false
+      },
+      "report": "Experiments/R149_MatchedGeometryLocalBoundary/reports/R149_AUDIT.md"
+    },
+    {
+      "candidate_id": "R130_Clean_NativeScratch",
+      "round": "R130-Clean user specification 20260920",
+      "experiment": "Experiments/R130_Clean",
+      "status": "completed_clean_scratch_research_not_promoted",
+      "mainline_status": "research_only_formal_baseline_unchanged",
+      "training": {
+        "initialization": "scratch",
+        "pretrained": false,
+        "PSF": "off",
+        "real_training": false,
+        "updates": 8192,
+        "final_checkpoint_sha256": "559afeff214ff15e92ce910d7df7ead12994074b6173dabe9a7f21a8b40372cc"
+      },
+      "evaluation": {
+        "images": 930,
+        "circles": 8370,
+        "source_scope": "existing corrected corner9,30scans,20x",
+        "adjacent_mae_nm": 4.121476417521702,
+        "diameter_repeatability_nm": 16.42178578889621,
+        "interpretation": "值得保留為快速、來源乾淨的純神經研究版本；已保留R129的主要位移穩定性，但沒有解決尺寸偏大，也不是所有形狀指標都更好。"
+      },
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\reports\\R130_CLEAN_RESULTS.md",
+        "provenance_md": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\reports\\TRAINING_PROVENANCE.md"
+      }
+    },
+    {
+      "candidate_id": "r136_pi_repeatability",
+      "round": "R136",
+      "experiment": "Experiments/R136_PIRepeatability",
+      "status": "four_method_LSC_complete_research_only",
+      "report": "Experiments/R136_PIRepeatability/reports/R136_LSC_FOUR_MODEL_RESULTS.md",
+      "models_completed": [
+        "Raw",
+        "R61",
+        "R129",
+        "R128"
+      ],
+      "scans": 30,
+      "frames_per_method": 930,
+      "main_results": [
+        {
+          "view": "nominal_all30",
+          "kind": "adjacent",
+          "model": "Raw",
+          "scans": 30,
+          "mae_nm": 8.667305772,
+          "bias_nm": 0.5440396736,
+          "repeatability_nm": 10.45182601,
+          "maximum_error_nm": 36.67580348
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "adjacent",
+          "model": "R61",
+          "scans": 30,
+          "mae_nm": 5.160403203,
+          "bias_nm": 0.5103479413,
+          "repeatability_nm": 5.194955243,
+          "maximum_error_nm": 19.9895411
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "adjacent",
+          "model": "R129",
+          "scans": 30,
+          "mae_nm": 4.091768152,
+          "bias_nm": 0.4894244705,
+          "repeatability_nm": 4.379029584,
+          "maximum_error_nm": 16.10393838
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "adjacent",
+          "model": "R128",
+          "scans": 30,
+          "mae_nm": 4.024566735,
+          "bias_nm": 0.5481799055,
+          "repeatability_nm": 4.181839728,
+          "maximum_error_nm": 17.30524645
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "start",
+          "model": "Raw",
+          "scans": 30,
+          "mae_nm": 17.73802816,
+          "bias_nm": -8.808513737,
+          "repeatability_nm": 14.79648983,
+          "maximum_error_nm": 62.55255999
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "start",
+          "model": "R61",
+          "scans": 30,
+          "mae_nm": 15.2674119,
+          "bias_nm": -6.768553376,
+          "repeatability_nm": 11.87037697,
+          "maximum_error_nm": 47.43245913
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "start",
+          "model": "R129",
+          "scans": 30,
+          "mae_nm": 15.71155993,
+          "bias_nm": -7.168521641,
+          "repeatability_nm": 11.07775335,
+          "maximum_error_nm": 48.77269192
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "start",
+          "model": "R128",
+          "scans": 30,
+          "mae_nm": 15.4960228,
+          "bias_nm": -7.913112729,
+          "repeatability_nm": 10.56977906,
+          "maximum_error_nm": 47.75064749
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "adjacent",
+          "model": "Raw",
+          "scans": 24,
+          "mae_nm": 8.892274917,
+          "bias_nm": 0.8457512546,
+          "repeatability_nm": 10.67760069,
+          "maximum_error_nm": 36.55994632
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "adjacent",
+          "model": "R61",
+          "scans": 24,
+          "mae_nm": 4.951903786,
+          "bias_nm": 0.6528222477,
+          "repeatability_nm": 5.12838944,
+          "maximum_error_nm": 19.19827601
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "adjacent",
+          "model": "R129",
+          "scans": 24,
+          "mae_nm": 4.296470112,
+          "bias_nm": 0.6418273733,
+          "repeatability_nm": 4.612006295,
+          "maximum_error_nm": 15.98551912
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "adjacent",
+          "model": "R128",
+          "scans": 24,
+          "mae_nm": 4.24241518,
+          "bias_nm": 0.6747294836,
+          "repeatability_nm": 4.360068841,
+          "maximum_error_nm": 17.42764899
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "start",
+          "model": "Raw",
+          "scans": 24,
+          "mae_nm": 18.42417647,
+          "bias_nm": -7.154515884,
+          "repeatability_nm": 15.65884092,
+          "maximum_error_nm": 62.68528952
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "start",
+          "model": "R61",
+          "scans": 24,
+          "mae_nm": 16.15457244,
+          "bias_nm": -5.312129849,
+          "repeatability_nm": 12.83061662,
+          "maximum_error_nm": 51.04671417
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "start",
+          "model": "R129",
+          "scans": 24,
+          "mae_nm": 16.51474148,
+          "bias_nm": -5.469220068,
+          "repeatability_nm": 12.15498363,
+          "maximum_error_nm": 52.14654511
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "start",
+          "model": "R128",
+          "scans": 24,
+          "mae_nm": 16.1795589,
+          "bias_nm": -6.200600904,
+          "repeatability_nm": 11.56748527,
+          "maximum_error_nm": 51.24471915
+        }
+      ],
+      "model_promoted": false,
+      "total_expanded_uncertainty_available": false,
+      "notes": "Complete30capture,common9circle thesisLSC. R129shortstepsimprovevsR61;longdistance differences inconclusive. Prior phase readout separate. PriorR61PDFpackagepreserved. No modelpromotion.",
+      "phase_correlation_supplement": {
+        "report": "Experiments/R136_PIRepeatability/reports/R136_R61_RESULTS.md",
+        "main_results": [
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "scans": 30,
+            "raw_mae_nm": 7.956799003,
+            "r61_mae_nm": 4.777029018,
+            "mae_change_percent": -39.96292961278917,
+            "raw_repeatability_nm": 3.916997156,
+            "r61_repeatability_nm": 2.245546067,
+            "raw_max_nm": 21.38249313,
+            "r61_max_nm": 14.34757774,
+            "improved_scans": 30,
+            "worsened_scans": 0,
+            "mae_delta_ci": [
+              -4.313264475,
+              -2.137007058
+            ],
+            "mae_delta_block_ci": [
+              -5.164907264,
+              -1.511941024
+            ],
+            "repeatability_delta_ci": [
+              -2.086084983,
+              -1.119086837
+            ]
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "scans": 30,
+            "raw_mae_nm": 14.7686154,
+            "r61_mae_nm": 15.08771572,
+            "mae_change_percent": 2.160665108795512,
+            "raw_repeatability_nm": 10.09028528,
+            "r61_repeatability_nm": 10.2293151,
+            "raw_max_nm": 50.95847282,
+            "r61_max_nm": 45.90503377,
+            "improved_scans": 18,
+            "worsened_scans": 12,
+            "mae_delta_ci": [
+              -0.1584893342,
+              0.8400632395
+            ],
+            "mae_delta_block_ci": [
+              -0.3835222841,
+              1.170788331
+            ],
+            "repeatability_delta_ci": [
+              -0.1434894141,
+              0.4224873717
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "scans": 24,
+            "raw_mae_nm": 8.680528756,
+            "r61_mae_nm": 4.788418224,
+            "mae_change_percent": -44.83725175508191,
+            "raw_repeatability_nm": 3.836547025,
+            "r61_repeatability_nm": 2.227568649,
+            "raw_max_nm": 21.35004124,
+            "r61_max_nm": 14.3153624,
+            "improved_scans": 24,
+            "worsened_scans": 0,
+            "mae_delta_ci": [
+              -5.133596718,
+              -2.751779984
+            ],
+            "mae_delta_block_ci": [
+              -6.083116517,
+              -1.986798375
+            ],
+            "repeatability_delta_ci": [
+              -2.004080121,
+              -1.085992735
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "scans": 24,
+            "raw_mae_nm": 15.55463067,
+            "r61_mae_nm": 15.92808024,
+            "mae_change_percent": 2.4008899852586474,
+            "raw_repeatability_nm": 11.04737236,
+            "r61_repeatability_nm": 11.19537025,
+            "raw_max_nm": 50.00392939,
+            "r61_max_nm": 45.01417735,
+            "improved_scans": 14,
+            "worsened_scans": 10,
+            "mae_delta_ci": [
+              -0.2132766233,
+              1.03296438
+            ],
+            "mae_delta_block_ci": [
+              -0.4874733829,
+              1.422334581
+            ],
+            "repeatability_delta_ci": [
+              -0.1793251394,
+              0.4694638704
+            ]
+          }
+        ],
+        "intensity_reader": {
+          "raw_mae_nm": 2.695604549,
+          "r61_mae_nm": 4.04130021,
+          "r61_improved_scans": 0,
+          "r61_worsened_scans": 30,
+          "difference_ci95": [
+            1.233067994,
+            1.456591804
+          ]
+        }
+      },
+      "method": "thesis_inflection_LSC_center9_median",
+      "centers_per_model": 8370,
+      "comparisons": [
+        {
+          "view": "nominal_all30",
+          "kind": "adjacent",
+          "model": "R61",
+          "mae_reduction_percent": 40.461276678724744,
+          "repeatability_reduction_percent": 50.29619476989361,
+          "improved_scans": 30,
+          "worsened_scans": 0,
+          "mae_improvement_ci95": [
+            2.879609335,
+            4.139921617
+          ],
+          "mae_improvement_block_ci95": [
+            2.58108827,
+            4.468067373
+          ],
+          "repeatability_improvement_ci95": [
+            4.552063103,
+            5.664649658
+          ]
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "adjacent",
+          "model": "R129",
+          "mae_reduction_percent": 52.79077190032243,
+          "repeatability_reduction_percent": 58.10273171587173,
+          "improved_scans": 30,
+          "worsened_scans": 0,
+          "mae_improvement_ci95": [
+            4.17393387,
+            4.963242148
+          ],
+          "mae_improvement_block_ci95": [
+            4.162662079,
+            4.991951014
+          ],
+          "repeatability_improvement_ci95": [
+            5.476041213,
+            6.367492926
+          ]
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "adjacent",
+          "model": "R128",
+          "mae_reduction_percent": 53.566115689589644,
+          "repeatability_reduction_percent": 59.98938631394228,
+          "improved_scans": 30,
+          "worsened_scans": 0,
+          "mae_improvement_ci95": [
+            4.171666591,
+            5.112563985
+          ],
+          "mae_improvement_block_ci95": [
+            4.10949787,
+            5.177960362
+          ],
+          "repeatability_improvement_ci95": [
+            5.596491795,
+            6.612565619
+          ]
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "start",
+          "model": "R61",
+          "mae_reduction_percent": 13.928359103473188,
+          "repeatability_reduction_percent": 19.77572311824446,
+          "improved_scans": 24,
+          "worsened_scans": 6,
+          "mae_improvement_ci95": [
+            1.089168673,
+            3.891183328
+          ],
+          "mae_improvement_block_ci95": [
+            1.322978433,
+            3.654601024
+          ],
+          "repeatability_improvement_ci95": [
+            1.232648087,
+            4.381454799
+          ]
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "start",
+          "model": "R129",
+          "mae_reduction_percent": 11.42442785478135,
+          "repeatability_reduction_percent": 25.13255861846526,
+          "improved_scans": 21,
+          "worsened_scans": 9,
+          "mae_improvement_ci95": [
+            0.7832522007,
+            3.406634069
+          ],
+          "mae_improvement_block_ci95": [
+            0.7859808601,
+            3.316973078
+          ],
+          "repeatability_improvement_ci95": [
+            2.078113729,
+            5.16597744
+          ]
+        },
+        {
+          "view": "nominal_all30",
+          "kind": "start",
+          "model": "R128",
+          "mae_reduction_percent": 12.639541102183017,
+          "repeatability_reduction_percent": 28.565631569119255,
+          "improved_scans": 24,
+          "worsened_scans": 6,
+          "mae_improvement_ci95": [
+            0.9171273221,
+            3.704159522
+          ],
+          "mae_improvement_block_ci95": [
+            0.8251475281,
+            3.775772588
+          ],
+          "repeatability_improvement_ci95": [
+            2.335210013,
+            5.898378949
+          ]
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "adjacent",
+          "model": "R61",
+          "mae_reduction_percent": 44.312295422478556,
+          "repeatability_reduction_percent": 51.970582260086374,
+          "improved_scans": 24,
+          "worsened_scans": 0,
+          "mae_improvement_ci95": [
+            3.268870768,
+            4.639211802
+          ],
+          "mae_improvement_block_ci95": [
+            2.992884392,
+            4.876325067
+          ],
+          "repeatability_improvement_ci95": [
+            4.70870991,
+            5.984507882
+          ]
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "adjacent",
+          "model": "R129",
+          "mae_reduction_percent": 51.68311650164876,
+          "repeatability_reduction_percent": 56.80671689362454,
+          "improved_scans": 24,
+          "worsened_scans": 0,
+          "mae_improvement_ci95": [
+            4.1397246,
+            5.039280691
+          ],
+          "mae_improvement_block_ci95": [
+            4.056569377,
+            5.107400006
+          ],
+          "repeatability_improvement_ci95": [
+            5.300829204,
+            6.398017016
+          ]
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "adjacent",
+          "model": "R128",
+          "mae_reduction_percent": 52.29100292559028,
+          "repeatability_reduction_percent": 59.166211889873544,
+          "improved_scans": 24,
+          "worsened_scans": 0,
+          "mae_improvement_ci95": [
+            4.086928899,
+            5.217226377
+          ],
+          "mae_improvement_block_ci95": [
+            3.972860623,
+            5.319728559
+          ],
+          "repeatability_improvement_ci95": [
+            5.462689402,
+            6.720865733
+          ]
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "start",
+          "model": "R61",
+          "mae_reduction_percent": 12.31861860254968,
+          "repeatability_reduction_percent": 18.061517544301097,
+          "improved_scans": 19,
+          "worsened_scans": 5,
+          "mae_improvement_ci95": [
+            0.8178575896,
+            3.859595766
+          ],
+          "mae_improvement_block_ci95": [
+            1.073885141,
+            3.50263975
+          ],
+          "repeatability_improvement_ci95": [
+            0.8774620352,
+            4.56771495
+          ]
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "start",
+          "model": "R129",
+          "mae_reduction_percent": 10.363746749327563,
+          "repeatability_reduction_percent": 22.376223808013496,
+          "improved_scans": 16,
+          "worsened_scans": 8,
+          "mae_improvement_ci95": [
+            0.6084082267,
+            3.449195889
+          ],
+          "mae_improvement_block_ci95": [
+            0.5746956079,
+            3.376342368
+          ],
+          "repeatability_improvement_ci95": [
+            1.662231314,
+            5.180102061
+          ]
+        },
+        {
+          "view": "calibrated_late24",
+          "kind": "start",
+          "model": "R128",
+          "mae_reduction_percent": 12.18300081772935,
+          "repeatability_reduction_percent": 26.1280874548919,
+          "improved_scans": 18,
+          "worsened_scans": 6,
+          "mae_improvement_ci95": [
+            0.8177662295,
+            3.91392682
+          ],
+          "mae_improvement_block_ci95": [
+            0.6899567561,
+            3.938759906
+          ],
+          "repeatability_improvement_ci95": [
+            1.911473184,
+            6.057685481
+          ]
+        }
+      ],
+      "uncertainty_assessment": {
+        "status": "data_based_TypeA_complete_total_not_identified",
+        "report": "Experiments/R136_PIRepeatability/reports/R136_R129_UNCERTAINTY_RESULTS.md",
+        "full_combined_u": null,
+        "full_expanded_U": null,
+        "PI_and_scale_calibration_missing": true,
+        "time_model_conditional": true
+      },
+      "previous_three_method_report": "Experiments/R136_PIRepeatability/reports/R136_LSC_RESULTS.md",
+      "previous_three_method_results": {
+        "main_results": [
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "Raw",
+            "scans": 30,
+            "mae_nm": 8.667305772,
+            "bias_nm": 0.5440396736,
+            "repeatability_nm": 10.45182601,
+            "maximum_error_nm": 36.67580348
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R61",
+            "scans": 30,
+            "mae_nm": 5.160403203,
+            "bias_nm": 0.5103479413,
+            "repeatability_nm": 5.194955243,
+            "maximum_error_nm": 19.9895411
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R129",
+            "scans": 30,
+            "mae_nm": 4.091768152,
+            "bias_nm": 0.4894244705,
+            "repeatability_nm": 4.379029584,
+            "maximum_error_nm": 16.10393838
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "Raw",
+            "scans": 30,
+            "mae_nm": 17.73802816,
+            "bias_nm": -8.808513737,
+            "repeatability_nm": 14.79648983,
+            "maximum_error_nm": 62.55255999
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R61",
+            "scans": 30,
+            "mae_nm": 15.2674119,
+            "bias_nm": -6.768553376,
+            "repeatability_nm": 11.87037697,
+            "maximum_error_nm": 47.43245913
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R129",
+            "scans": 30,
+            "mae_nm": 15.71155993,
+            "bias_nm": -7.168521641,
+            "repeatability_nm": 11.07775335,
+            "maximum_error_nm": 48.77269192
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "Raw",
+            "scans": 24,
+            "mae_nm": 8.892274917,
+            "bias_nm": 0.8457512546,
+            "repeatability_nm": 10.67760069,
+            "maximum_error_nm": 36.55994632
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R61",
+            "scans": 24,
+            "mae_nm": 4.951903786,
+            "bias_nm": 0.6528222477,
+            "repeatability_nm": 5.12838944,
+            "maximum_error_nm": 19.19827601
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R129",
+            "scans": 24,
+            "mae_nm": 4.296470112,
+            "bias_nm": 0.6418273733,
+            "repeatability_nm": 4.612006295,
+            "maximum_error_nm": 15.98551912
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "Raw",
+            "scans": 24,
+            "mae_nm": 18.42417647,
+            "bias_nm": -7.154515884,
+            "repeatability_nm": 15.65884092,
+            "maximum_error_nm": 62.68528952
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R61",
+            "scans": 24,
+            "mae_nm": 16.15457244,
+            "bias_nm": -5.312129849,
+            "repeatability_nm": 12.83061662,
+            "maximum_error_nm": 51.04671417
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R129",
+            "scans": 24,
+            "mae_nm": 16.51474148,
+            "bias_nm": -5.469220068,
+            "repeatability_nm": 12.15498363,
+            "maximum_error_nm": 52.14654511
+          }
+        ],
+        "comparisons": [
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R61",
+            "mae_reduction_percent": 40.461276678724744,
+            "repeatability_reduction_percent": 50.29619476989361,
+            "improved_scans": 30,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              2.879609335,
+              4.139921617
+            ],
+            "mae_improvement_block_ci95": [
+              2.58108827,
+              4.468067373
+            ],
+            "repeatability_improvement_ci95": [
+              4.552063103,
+              5.664649658
+            ]
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R129",
+            "mae_reduction_percent": 52.79077190032243,
+            "repeatability_reduction_percent": 58.10273171587173,
+            "improved_scans": 30,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              4.17393387,
+              4.963242148
+            ],
+            "mae_improvement_block_ci95": [
+              4.162662079,
+              4.991951014
+            ],
+            "repeatability_improvement_ci95": [
+              5.476041213,
+              6.367492926
+            ]
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R61",
+            "mae_reduction_percent": 13.928359103473188,
+            "repeatability_reduction_percent": 19.77572311824446,
+            "improved_scans": 24,
+            "worsened_scans": 6,
+            "mae_improvement_ci95": [
+              1.089168673,
+              3.891183328
+            ],
+            "mae_improvement_block_ci95": [
+              1.322978433,
+              3.654601024
+            ],
+            "repeatability_improvement_ci95": [
+              1.232648087,
+              4.381454799
+            ]
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R129",
+            "mae_reduction_percent": 11.42442785478135,
+            "repeatability_reduction_percent": 25.13255861846526,
+            "improved_scans": 21,
+            "worsened_scans": 9,
+            "mae_improvement_ci95": [
+              0.7832522007,
+              3.406634069
+            ],
+            "mae_improvement_block_ci95": [
+              0.7859808601,
+              3.316973078
+            ],
+            "repeatability_improvement_ci95": [
+              2.078113729,
+              5.16597744
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R61",
+            "mae_reduction_percent": 44.312295422478556,
+            "repeatability_reduction_percent": 51.970582260086374,
+            "improved_scans": 24,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              3.268870768,
+              4.639211802
+            ],
+            "mae_improvement_block_ci95": [
+              2.992884392,
+              4.876325067
+            ],
+            "repeatability_improvement_ci95": [
+              4.70870991,
+              5.984507882
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R129",
+            "mae_reduction_percent": 51.68311650164876,
+            "repeatability_reduction_percent": 56.80671689362454,
+            "improved_scans": 24,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              4.1397246,
+              5.039280691
+            ],
+            "mae_improvement_block_ci95": [
+              4.056569377,
+              5.107400006
+            ],
+            "repeatability_improvement_ci95": [
+              5.300829204,
+              6.398017016
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R61",
+            "mae_reduction_percent": 12.31861860254968,
+            "repeatability_reduction_percent": 18.061517544301097,
+            "improved_scans": 19,
+            "worsened_scans": 5,
+            "mae_improvement_ci95": [
+              0.8178575896,
+              3.859595766
+            ],
+            "mae_improvement_block_ci95": [
+              1.073885141,
+              3.50263975
+            ],
+            "repeatability_improvement_ci95": [
+              0.8774620352,
+              4.56771495
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R129",
+            "mae_reduction_percent": 10.363746749327563,
+            "repeatability_reduction_percent": 22.376223808013496,
+            "improved_scans": 16,
+            "worsened_scans": 8,
+            "mae_improvement_ci95": [
+              0.6084082267,
+              3.449195889
+            ],
+            "mae_improvement_block_ci95": [
+              0.5746956079,
+              3.376342368
+            ],
+            "repeatability_improvement_ci95": [
+              1.662231314,
+              5.180102061
+            ]
+          }
+        ]
+      },
+      "r128_extension": {
+        "status": "complete_research_only",
+        "report": "Experiments/R136_PIRepeatability/reports/R136_LSC_FOUR_MODEL_RESULTS.md",
+        "models": [
+          "Raw",
+          "R61",
+          "R129",
+          "R128"
+        ],
+        "centers_each": 8370,
+        "main_results": [
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "Raw",
+            "scans": 30,
+            "mae_nm": 8.667305772,
+            "bias_nm": 0.5440396736,
+            "repeatability_nm": 10.45182601,
+            "maximum_error_nm": 36.67580348
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R61",
+            "scans": 30,
+            "mae_nm": 5.160403203,
+            "bias_nm": 0.5103479413,
+            "repeatability_nm": 5.194955243,
+            "maximum_error_nm": 19.9895411
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R129",
+            "scans": 30,
+            "mae_nm": 4.091768152,
+            "bias_nm": 0.4894244705,
+            "repeatability_nm": 4.379029584,
+            "maximum_error_nm": 16.10393838
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R128",
+            "scans": 30,
+            "mae_nm": 4.024566735,
+            "bias_nm": 0.5481799055,
+            "repeatability_nm": 4.181839728,
+            "maximum_error_nm": 17.30524645
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "Raw",
+            "scans": 30,
+            "mae_nm": 17.73802816,
+            "bias_nm": -8.808513737,
+            "repeatability_nm": 14.79648983,
+            "maximum_error_nm": 62.55255999
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R61",
+            "scans": 30,
+            "mae_nm": 15.2674119,
+            "bias_nm": -6.768553376,
+            "repeatability_nm": 11.87037697,
+            "maximum_error_nm": 47.43245913
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R129",
+            "scans": 30,
+            "mae_nm": 15.71155993,
+            "bias_nm": -7.168521641,
+            "repeatability_nm": 11.07775335,
+            "maximum_error_nm": 48.77269192
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R128",
+            "scans": 30,
+            "mae_nm": 15.4960228,
+            "bias_nm": -7.913112729,
+            "repeatability_nm": 10.56977906,
+            "maximum_error_nm": 47.75064749
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "Raw",
+            "scans": 24,
+            "mae_nm": 8.892274917,
+            "bias_nm": 0.8457512546,
+            "repeatability_nm": 10.67760069,
+            "maximum_error_nm": 36.55994632
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R61",
+            "scans": 24,
+            "mae_nm": 4.951903786,
+            "bias_nm": 0.6528222477,
+            "repeatability_nm": 5.12838944,
+            "maximum_error_nm": 19.19827601
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R129",
+            "scans": 24,
+            "mae_nm": 4.296470112,
+            "bias_nm": 0.6418273733,
+            "repeatability_nm": 4.612006295,
+            "maximum_error_nm": 15.98551912
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R128",
+            "scans": 24,
+            "mae_nm": 4.24241518,
+            "bias_nm": 0.6747294836,
+            "repeatability_nm": 4.360068841,
+            "maximum_error_nm": 17.42764899
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "Raw",
+            "scans": 24,
+            "mae_nm": 18.42417647,
+            "bias_nm": -7.154515884,
+            "repeatability_nm": 15.65884092,
+            "maximum_error_nm": 62.68528952
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R61",
+            "scans": 24,
+            "mae_nm": 16.15457244,
+            "bias_nm": -5.312129849,
+            "repeatability_nm": 12.83061662,
+            "maximum_error_nm": 51.04671417
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R129",
+            "scans": 24,
+            "mae_nm": 16.51474148,
+            "bias_nm": -5.469220068,
+            "repeatability_nm": 12.15498363,
+            "maximum_error_nm": 52.14654511
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R128",
+            "scans": 24,
+            "mae_nm": 16.1795589,
+            "bias_nm": -6.200600904,
+            "repeatability_nm": 11.56748527,
+            "maximum_error_nm": 51.24471915
+          }
+        ],
+        "comparisons": [
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R61",
+            "mae_reduction_percent": 40.461276678724744,
+            "repeatability_reduction_percent": 50.29619476989361,
+            "improved_scans": 30,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              2.879609335,
+              4.139921617
+            ],
+            "mae_improvement_block_ci95": [
+              2.58108827,
+              4.468067373
+            ],
+            "repeatability_improvement_ci95": [
+              4.552063103,
+              5.664649658
+            ]
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R129",
+            "mae_reduction_percent": 52.79077190032243,
+            "repeatability_reduction_percent": 58.10273171587173,
+            "improved_scans": 30,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              4.17393387,
+              4.963242148
+            ],
+            "mae_improvement_block_ci95": [
+              4.162662079,
+              4.991951014
+            ],
+            "repeatability_improvement_ci95": [
+              5.476041213,
+              6.367492926
+            ]
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "adjacent",
+            "model": "R128",
+            "mae_reduction_percent": 53.566115689589644,
+            "repeatability_reduction_percent": 59.98938631394228,
+            "improved_scans": 30,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              4.171666591,
+              5.112563985
+            ],
+            "mae_improvement_block_ci95": [
+              4.10949787,
+              5.177960362
+            ],
+            "repeatability_improvement_ci95": [
+              5.596491795,
+              6.612565619
+            ]
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R61",
+            "mae_reduction_percent": 13.928359103473188,
+            "repeatability_reduction_percent": 19.77572311824446,
+            "improved_scans": 24,
+            "worsened_scans": 6,
+            "mae_improvement_ci95": [
+              1.089168673,
+              3.891183328
+            ],
+            "mae_improvement_block_ci95": [
+              1.322978433,
+              3.654601024
+            ],
+            "repeatability_improvement_ci95": [
+              1.232648087,
+              4.381454799
+            ]
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R129",
+            "mae_reduction_percent": 11.42442785478135,
+            "repeatability_reduction_percent": 25.13255861846526,
+            "improved_scans": 21,
+            "worsened_scans": 9,
+            "mae_improvement_ci95": [
+              0.7832522007,
+              3.406634069
+            ],
+            "mae_improvement_block_ci95": [
+              0.7859808601,
+              3.316973078
+            ],
+            "repeatability_improvement_ci95": [
+              2.078113729,
+              5.16597744
+            ]
+          },
+          {
+            "view": "nominal_all30",
+            "kind": "start",
+            "model": "R128",
+            "mae_reduction_percent": 12.639541102183017,
+            "repeatability_reduction_percent": 28.565631569119255,
+            "improved_scans": 24,
+            "worsened_scans": 6,
+            "mae_improvement_ci95": [
+              0.9171273221,
+              3.704159522
+            ],
+            "mae_improvement_block_ci95": [
+              0.8251475281,
+              3.775772588
+            ],
+            "repeatability_improvement_ci95": [
+              2.335210013,
+              5.898378949
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R61",
+            "mae_reduction_percent": 44.312295422478556,
+            "repeatability_reduction_percent": 51.970582260086374,
+            "improved_scans": 24,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              3.268870768,
+              4.639211802
+            ],
+            "mae_improvement_block_ci95": [
+              2.992884392,
+              4.876325067
+            ],
+            "repeatability_improvement_ci95": [
+              4.70870991,
+              5.984507882
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R129",
+            "mae_reduction_percent": 51.68311650164876,
+            "repeatability_reduction_percent": 56.80671689362454,
+            "improved_scans": 24,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              4.1397246,
+              5.039280691
+            ],
+            "mae_improvement_block_ci95": [
+              4.056569377,
+              5.107400006
+            ],
+            "repeatability_improvement_ci95": [
+              5.300829204,
+              6.398017016
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "adjacent",
+            "model": "R128",
+            "mae_reduction_percent": 52.29100292559028,
+            "repeatability_reduction_percent": 59.166211889873544,
+            "improved_scans": 24,
+            "worsened_scans": 0,
+            "mae_improvement_ci95": [
+              4.086928899,
+              5.217226377
+            ],
+            "mae_improvement_block_ci95": [
+              3.972860623,
+              5.319728559
+            ],
+            "repeatability_improvement_ci95": [
+              5.462689402,
+              6.720865733
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R61",
+            "mae_reduction_percent": 12.31861860254968,
+            "repeatability_reduction_percent": 18.061517544301097,
+            "improved_scans": 19,
+            "worsened_scans": 5,
+            "mae_improvement_ci95": [
+              0.8178575896,
+              3.859595766
+            ],
+            "mae_improvement_block_ci95": [
+              1.073885141,
+              3.50263975
+            ],
+            "repeatability_improvement_ci95": [
+              0.8774620352,
+              4.56771495
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R129",
+            "mae_reduction_percent": 10.363746749327563,
+            "repeatability_reduction_percent": 22.376223808013496,
+            "improved_scans": 16,
+            "worsened_scans": 8,
+            "mae_improvement_ci95": [
+              0.6084082267,
+              3.449195889
+            ],
+            "mae_improvement_block_ci95": [
+              0.5746956079,
+              3.376342368
+            ],
+            "repeatability_improvement_ci95": [
+              1.662231314,
+              5.180102061
+            ]
+          },
+          {
+            "view": "calibrated_late24",
+            "kind": "start",
+            "model": "R128",
+            "mae_reduction_percent": 12.18300081772935,
+            "repeatability_reduction_percent": 26.1280874548919,
+            "improved_scans": 18,
+            "worsened_scans": 6,
+            "mae_improvement_ci95": [
+              0.8177662295,
+              3.91392682
+            ],
+            "mae_improvement_block_ci95": [
+              0.6899567561,
+              3.938759906
+            ],
+            "repeatability_improvement_ci95": [
+              1.911473184,
+              6.057685481
+            ]
+          }
+        ],
+        "r128_vs_r129_superiority_not_established": true,
+        "model_promoted": false
+      },
+      "latest_report": "Experiments/R136_PIRepeatability/reports/R136_LSC_FOUR_MODEL_RESULTS.md",
+      "shape_size_validation": {
+        "status": "repeatability_complete_reference_pending",
+        "report": "Experiments/R136_PIRepeatability/reports/R136_SHAPE_SIZE_RESULTS.md",
+        "note": "R136輪廓／形狀／尺寸重拍驗證：四組33480輪廓完成，R128尺寸／形狀波動13.558／13.560nm最小；實物準確度待使用者提供已確認存在的同批參考，不升級模型。",
+        "formal_promotion": false
+      },
+      "sem_reference_followup": {
+        "status": "historical_pillar_complete_current_nine_identity_unresolved",
+        "report": "Experiments/R136_PIRepeatability/reports/R136_SEM_REFERENCE_RESULTS.md",
+        "note": "R136 SEM追加核對（2026-09-19）：找回P/V各9張、三處副本18/18一致；舊配對36顆×3曝光×4方法完成，R128直徑差76.326nm、R129原80/16為96.624nm。使用者確認同片；九月九顆與舊SEM逐顆位置尚未建立，初步為不同區域；不混入30次統計。",
+        "formal_promotion": false
+      },
+      "sem_corner9": {
+        "status": "repeated_measurements_and_group_sem_comparison_complete",
+        "report": "Experiments/R136_PIRepeatability/reports/R136_SEM_CORNER9_RESULTS.md",
+        "note": "R136十字中心九顆重算完成（2026-09-19）：四組各930張／8370圓心；R128短步差3.708nm、尺寸波動9.527nm最小；SEM九顆集合均徑差R61+115.803nm、R128+222.040nm。集合22,23,24,28,29,30,34,35,36；逐顆方向保留兩候選。舊九顆有影像與PI但未配SEM，不混成尺寸真值證據。",
+        "formal_promotion": false
+      },
+      "sem_direction_inference": {
+        "status": "horizontal_mirror_working_inference_not_unique_proof",
+        "note": "R136方向補查：已核對暗柱／亮孔；整視野較支持左右鏡像，暫用22,23,24／28,29,30／34,35,36。相同十字區域兩候選近乎同分，屬推定而非唯一證實；保留90度候選敏感度。",
+        "report": "Experiments/R136_PIRepeatability/reports/R136_SEM_DIRECTION_RESULTS.md"
+      },
+      "r128_corner9_detail": {
+        "report": "Experiments/R136_PIRepeatability/reports/R136_R128_CORNER9_DETAIL.md",
+        "package": "D:\\GMM_2_Final\\Experiments\\R136_PIRepeatability\\output\\R136_R128_Corner9_Detailed_Results.zip",
+        "note": "R136最新十字九顆的R128專頁完成：位移30次曲線、60位置詳表、8370輪廓、逐顆及逐方向表、4張科學圖。短步重拍3.708nm，輪廓13.835nm；30μm終點偏差+41.966nm／重拍14.193nm，完整保留。"
+      },
+      "raw_r128_corner9_comparison": {
+        "report": "Experiments/R136_PIRepeatability/reports/R136_RAW_R128_CORNER9_RESULTS.md",
+        "package": "D:\\GMM_2_Final\\Experiments\\R136_PIRepeatability\\output\\R136_Raw_R128_Corner9_Complete_Comparison.zip",
+        "note": "R136新十字九顆Raw/R128完整對照交付：10張圖（新增平均±1SD疊圖）、3600合併位移／32400逐顆位移／16740輪廓。R128短步PI差降低54.6%、短步重拍61.9%、輪廓重拍78.3%；SEM平均尺寸偏大差距185.182→222.040nm及終點偏差未改善亦完整保留。",
+        "formal_promotion": false,
+        "overlay_package": "D:\\GMM_2_Final\\Experiments\\R136_PIRepeatability\\output\\R136_Raw_R128_Corner9_Comparison_With_Overlay.zip",
+        "overlay_figure": "results/sem_corner9/Raw_R128_comparison/figures/09_mean_error_sd_overlay.png"
+      },
+      "r128_thesis_handoff": {
+        "path": "D:\\GMM_2_Final\\Deliverables\\R128_Corrected_Corner9_Thesis_Handoff_20260920",
+        "entry": "START_HERE.md",
+        "instructions": "HANDOFF_FOR_THESIS.md",
+        "date": "2026-09-20",
+        "verification": "279 payload files hash verified; 280 files including manifest"
+      },
+      "r129_corrected_revalidation": {
+        "date": "2026-09-20",
+        "status": "verified_current_corner9",
+        "note": "R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。",
+        "report": "Experiments/R136_PIRepeatability/reports/R136_RAW_R129_CORNER9_RESULTS.md",
+        "handoff": "D:\\GMM_2_Final\\Deliverables\\R129_Corrected_Corner9_Thesis_Handoff_20260920",
+        "formal_promotion": false,
+        "SEM_direction": "working inference remains, not uniquely confirmed",
+        "full_total_uncertainty": null
+      }
+    },
+    {
+      "candidate_id": "r135_comparison",
+      "round": "R135",
+      "status": "complete",
+      "completed_methods": [
+        "Raw",
+        "V42_old",
+        "V42_clean",
+        "R61",
+        "R128",
+        "R129_W16",
+        "R134_P1"
+      ],
+      "report": "Experiments/R135_UnifiedModelComparison/reports/R135_RESULTS.md",
+      "training_updates": 0,
+      "model_promoted": false,
+      "oldV42_overlap_disclosed": true,
+      "r61_same_SEM_reference_in_training": true,
+      "r61_individual_eval_pillar_ids_in_final_train": 35,
+      "r61_training_audit": "Experiments/R135_UnifiedModelComparison/reports/R135_R61_TRAINING_AUDIT.md",
+      "r61_current201_direct_photo_reuse_not_established": true
+    },
+    {
+      "round": "R134",
+      "candidate_id": "R134_direct_state",
+      "experiment": "Experiments/R134_DirectStateRepair",
+      "status": "full201_recovered_not_admitted",
+      "mainline_status": "not_promoted",
+      "report": "Experiments/R134_DirectStateRepair/reports/R134_RESULTS.md",
+      "planned_A_C_updates": 2048,
+      "calibrated_B_D_not_fabricated": true,
+      "long_training_packages": "Each scientifically screened long-worthy generation must receive its own self-contained manual training package",
+      "model_promoted": false,
+      "completed_short_updates": 2048,
+      "B_D_complete": false,
+      "full201_complete": true,
+      "full201_checks_passed": 19,
+      "full201_checks_total": 20,
+      "long_training_started": false,
+      "long_package_created": false,
+      "recovery": "Experiments/R134_DirectStateRepair/results/full_motion_recovery_v2/complete.json",
+      "diagnosis_report": "Experiments/R134_DirectStateRepair/reports/R134_CROSS_AXIS_DIAGNOSIS.md",
+      "diagnosis_status": "case_quantization_effect_identified_full_precision201_pending",
+      "original_admission_preserved": true,
+      "original_admission_output": "uint8",
+      "float_full201_requalified": false,
+      "precision_revision_status": "complete",
+      "precision_revision_report": "Experiments/R134_DirectStateRepair/reports/R134_PRECISION_REVALIDATION.md"
+    },
+    {
+      "candidate_id": "R133_size_mechanism_diagnosis",
+      "round": "R133",
+      "experiment": "Experiments/R133_SizeMechanismDiagnosis",
+      "status": "frozen_diagnosis_and_repair_design_complete",
+      "mainline_status": "no_replacement_model",
+      "report": "Experiments/R133_SizeMechanismDiagnosis/reports/R133_RESULTS.md",
+      "repair_design": "Experiments/R133_SizeMechanismDiagnosis/reports/R133_REPAIR_DESIGN.md",
+      "training_updates": 0,
+      "known_geometry_controls": 64,
+      "generated_test_parents": 128,
+      "real_SEM_rows": 972,
+      "controls_improved_vs_Raw": 41,
+      "controls_worsened_vs_Raw": 23,
+      "paired_actual_model_size_increment_nm": 12.122171,
+      "findings": "Ideal blur often underestimates size; learned outward correction can help controls but aggravates already-outward realSEM discrepancy. Dataset/reference mismatch supported, exact physical shares unresolved. Frozen head/optics changes do not repair realsize.",
+      "prototype": "Neutral residual outputs and qualified coverage-gradient contracts tested; not a trained architecture. Frozen replacements worsen generated image fidelity.",
+      "model_promoted": false,
+      "original_defaults_unchanged": true
+    },
+    {
+      "candidate_id": "R132_R129_boundary16_trial",
+      "round": "R132",
+      "experiment": "Experiments/R132_BoundaryPolicyStudy",
+      "status": "fixed_guard_and_real_context_study_complete",
+      "mainline_status": "research_trial_not_promoted",
+      "report": "Experiments/R132_BoundaryPolicyStudy/reports/R132_RESULTS.md",
+      "widths": [
+        80,
+        64,
+        32,
+        16,
+        0
+      ],
+      "selected_research_width": 16,
+      "transition": 16,
+      "checkpoint": {
+        "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+        "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
+      },
+      "training_updates": 0,
+      "frames_per_width": 201,
+      "SEM_rows": 615,
+      "LSC_centers": 9045,
+      "findings": "Broad80Raw blending degrades outer shape;16trial restores shape but increases size discrepancy. Full194cross-axis and some worst cases still worsen. Independent current/crop/source replay passed.",
+      "scope": "Existing normal microscopy; no unseen qualification; cropped optical contour still>=14.5pixels inside edge",
+      "original_package_default_unchanged": true,
+      "model_promoted": false
+    },
+    {
+      "candidate_id": "R131_R129_frozen_prefixes",
+      "round": "R131",
+      "experiment": "Experiments/R131_RecurrentStepValidation",
+      "status": "frozen_zero_to_four_steps_real_validation_complete",
+      "mainline_status": "diagnostic_not_promoted",
+      "report": "Experiments/R131_RecurrentStepValidation/reports/R131_RESULTS.md",
+      "training_updates": 0,
+      "checkpoint": {
+        "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+        "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
+      },
+      "recurrent_prefixes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "real_frames_per_prefix": 201,
+      "normal_SEM_rows": 540,
+      "LSC_centers": 9045,
+      "original_R129_preserved": true,
+      "model_promoted": false,
+      "claim": "Existing four-step-trained model truncation, not separately trained architecture optimum. See all paired geometry/motion/cost tradeoffs.",
+      "boundary_display_diagnostic": {
+        "report": "Experiments/R131_RecurrentStepValidation/reports/R131_BOUNDARY_OUTPUT_AUDIT.md",
+        "pillar18_crop_raw_retained_fraction": 0.5865384615384616,
+        "transition_fraction": 0.14423076923076922,
+        "full_model_fraction": 0.2692307692307692,
+        "fully_model_crops": 16,
+        "partly_raw_crops": 20,
+        "original_outputs_unchanged": true,
+        "pre_guard_outputs_diagnostic_only": true
+      }
+    },
+    {
+      "candidate_id": "R130_clean_V42",
+      "round": "R130",
+      "experiment": "Experiments/R130_CleanV42Comparison",
+      "status": "32epoch_fresh_training_and_real_comparison_complete",
+      "mainline_status": "research_not_promoted",
+      "report": "Experiments/R130_CleanV42Comparison/reports/R130_RESULTS.md",
+      "epochs": 32,
+      "unique_updates": 4096,
+      "actual_update_calls": 4098,
+      "replayed_updates": [
+        1537,
+        1538
+      ],
+      "unique_parent_pairs": 16384,
+      "source_only_targets": true,
+      "no_legacy_learned_weights_or_teacher": true,
+      "shared_historical_calibration_is_a_limit": true,
+      "comparison": "Fixed existing R129 versus fresh V42; not fully matched training histories",
+      "real_SEM": {
+        "V42_diameter_nm": 91.95135619036304,
+        "R129_diameter_nm": 96.38029372672358,
+        "V42_centered_shape_nm": 16.425487791000695,
+        "R129_centered_shape_nm": 16.397177134895387
+      },
+      "locked120_LSC": {
+        "V42_step_sd_nm": 6.919372715755828,
+        "R129_step_sd_nm": 6.991056173178826,
+        "V42_within_nm": 4.6821259256152405,
+        "R129_within_nm": 4.203668723685402
+      },
+      "inference_seconds": {
+        "V42": 0.42785920001915656,
+        "R129": 9.975710300001083
+      },
+      "R129_unchanged": true,
+      "model_promoted": false
+    },
+    {
+      "candidate_id": "R129_optical_prior_hybrid",
+      "round": "R129",
+      "experiment": "Experiments/R129_OpticalPriorHybrid",
+      "status": "long_training_complete_mixed_results_not_adopted",
+      "mainline_status": "research_prototype_not_promoted",
+      "report": "Experiments/R129_OpticalPriorHybrid/reports/R129_RESULTS.md",
+      "primary_architecture": "D: measured optics and V42-style AA retained by user requirement",
+      "optimizer_updates": 96,
+      "updates_per_arm": 24,
+      "SEM_objects": 36,
+      "normal_exposures": [
+        13,
+        14,
+        15
+      ],
+      "SEM_measurements": 864,
+      "motion_pairs_per_method": 4,
+      "conclusion": "Active/trainable modules; D improves centered shape on 27/36 vs converted control A but no overall replacement advantage; adaptive candidate selection has negligible effect on checked real image",
+      "limits": [
+        "Not full training",
+        "A differs from original R128 in common head and output anchor",
+        "Reused real/SEM development; inherited calibration",
+        "No temporal displacement SD from one pair per sequence",
+        "No academic novelty established"
+      ],
+      "checkpoint": "Experiments/R129_OpticalPriorHybrid/runs/D/step24.pth",
+      "production_adoption": false,
+      "old_confirmation_access": false,
+      "organization": {
+        "date": "2026-09-12",
+        "status": "verified_behavior_preserving_organization",
+        "report": "Experiments/R129_OpticalPriorHybrid/reports/R129_ARCHITECTURE.md",
+        "implementation": "Experiments/R129_OpticalPriorHybrid/model/organized/hybrid.py",
+        "inference": "Experiments/R129_OpticalPriorHybrid/scripts/infer_organized.py",
+        "same_D_checkpoint": true,
+        "exact_real_images": 11,
+        "exact_forward_backward_checkpoints": 8,
+        "new_training_updates": 0,
+        "missing_modules_not_claimed_implemented": true,
+        "scientific_verdict_unchanged": true
+      },
+      "prior_pilot_status": "bounded_pilot_complete_mixed_real_results",
+      "long_training": {
+        "package": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912",
+        "report": "Experiments/R129_OpticalPriorHybrid/reports/R129_LONG_TRAINING_RESULTS.md",
+        "run": "r129_long_01",
+        "planned_updates": 8192,
+        "observed_updates": 8192,
+        "observed_utc": "2026-09-12T14:20:12.463340+00:00",
+        "observed_pid": 5596,
+        "status": "complete_not_adopted",
+        "live_status": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\status.json",
+        "all_data_local": true,
+        "preflight_passed": true,
+        "relocation_passed": true,
+        "manual_pause_resume_passed": true,
+        "default_model_not_replaced": true,
+        "full_training_complete": true,
+        "model_promoted": false,
+        "result_summary": "Centered shape improves on36/36, diameter worsens on31/36; partial motion benefit; no default model replacement",
+        "audit": "Experiments/R129_OpticalPriorHybrid/results/long_training_review_20260913_v2/verification.json"
+      },
+      "continuous_lsc": {
+        "status": "complete_not_promoted",
+        "report": "Experiments/R129_OpticalPriorHybrid/reports/R129_CONTINUOUS_LSC_RESULTS.md",
+        "frames": 201,
+        "centers_per_method": 1809,
+        "locked_pairs": 120,
+        "within_session_pairs": 194,
+        "repositioning_pairs": 3,
+        "locked_R129": {
+          "step_sd_nm": 6.991056173178826,
+          "mean_nominal_abs_error_nm": 6.30247024608874,
+          "median_within_grid_sd_nm": 4.203668723685402,
+          "median_cross_axis_abs_nm": 4.798277776581473
+        },
+        "within_session_R129": {
+          "step_sd_nm": 29.09774356142286,
+          "mean_nominal_abs_error_nm": 13.904826369528726,
+          "median_within_grid_sd_nm": 3.971022569217011,
+          "median_cross_axis_abs_nm": 7.974308214778034
+        },
+        "operational_boundary_rules_differ": true,
+        "prior_SEM_size_regression_still_applies": true,
+        "model_promoted": false
+      }
+    },
+    {
+      "candidate_id": "R128_source_only_full_training",
+      "round": "R128",
+      "experiment": "Experiments/R128_SourceOnlyFullTraining",
+      "status": "paired_pillar_outer_contour_benefit_verified_research_trial",
+      "mainline_status": "research_candidate_not_promoted",
+      "reports": {
+        "results": "Experiments/R128_SourceOnlyFullTraining/reports/R128_RESULTS.md",
+        "live_progress": "Experiments/R128_SourceOnlyFullTraining/reports/TRAINING_PROGRESS.md",
+        "methodology": "Experiments/R128_SourceOnlyFullTraining/reports/R128_METHODOLOGY.md",
+        "final_audit": "Experiments/R128_SourceOnlyFullTraining/reports/R128_FINAL_AUDIT.md"
+      },
+      "planned_runs": 4,
+      "updates_per_run": 8192,
+      "planned_optimizer_updates": 32768,
+      "training_splits": {
+        "train": 512,
+        "dev": 128,
+        "test": 128
+      },
+      "data_admission_passed": true,
+      "protected_files_unchanged": 5403,
+      "actual_first_run_updates_observed": 116,
+      "progress_snapshot_utc": "2026-09-08T16:41:53.786347+00:00",
+      "progress_record": "Experiments/R128_SourceOnlyFullTraining/runs/launcher_logs/active_formal_run.json",
+      "physical_accuracy_qualified": false,
+      "new_real_holdout": false,
+      "model_promoted": false,
+      "last_interruption": {
+        "actual_update": 1393,
+        "last_reported_update": 1392,
+        "last_durable_checkpoint": 1280,
+        "completed_runs": 0,
+        "cause": "Windows sharing denial replacing mutable progress JSON"
+      },
+      "recovery": {
+        "report": "Experiments/R128_SourceOnlyFullTraining/reports/R128_RECOVERY_20260909.md",
+        "manifest": "Experiments/R128_SourceOnlyFullTraining/recovery/20260909_progress_io_v1/recovery_manifest.json",
+        "original_frozen_hashes_preserved": true,
+        "scientific_training_unchanged": true,
+        "exact_replay_verified": [
+          1281,
+          1282,
+          1283,
+          1284
+        ]
+      },
+      "current_progress_snapshot": {
+        "utc": "2026-09-09T13:55:38.383074+00:00",
+        "updates": 32768,
+        "completed_runs": 4
+      },
+      "completed_runs_verified": 4,
+      "latest_interruption": {
+        "run": "I_s1285002",
+        "actual_update": 5359,
+        "durable_checkpoint": 5248,
+        "local_time": "2026-09-09T14:21:39+08:00",
+        "cause": "Both processes absent near Codex update and NVIDIA event; unique cause not established"
+      },
+      "independent_launch": {
+        "manifest": "Experiments/R128_SourceOnlyFullTraining/recovery/20260909_external_stop/launch_manifest.json",
+        "report": "Experiments/R128_SourceOnlyFullTraining/reports/R128_RUNTIME_CHECK_20260909.md",
+        "outside_application_job_verified": true,
+        "exact_replay": [
+          5249,
+          5250,
+          5251,
+          5252
+        ],
+        "original_scientific_identity_unchanged": true
+      },
+      "actual_unique_optimizer_updates": 32768,
+      "replayed_optimizer_calls": 224,
+      "total_full_training_optimizer_calls": 32992,
+      "selected_for_further_repair": "P_s1285002_step8192",
+      "selected_for_production": null,
+      "final_review": {
+        "execution_audit": "Experiments/R128_SourceOnlyFullTraining/results/final_review/execution_audit.json",
+        "comparison_verification": "Experiments/R128_SourceOnlyFullTraining/results/final_review/comparison_verification.json",
+        "selection": "Experiments/R128_SourceOnlyFullTraining/results/final_review/selection.json",
+        "all288_SEM_rows_recomputed": true,
+        "selected_candidate_normal_improved": 36,
+        "selected_candidate_dark_worsened": 29,
+        "all_models_dark_interior_worsened": 16,
+        "physical_accuracy_qualified": false
+      },
+      "application_scope": {
+        "recorded_utc": "2026-09-09T15:52:49.754803+00:00",
+        "user_confirmation": "可以，主要處理正常拍攝條件",
+        "controlled_camera_and_lighting": true,
+        "underexposed_images_can_be_retaken": true,
+        "final_application_models": 1,
+        "primary_scope": "Normal controlled acquisition and realistic nearby variation",
+        "extreme_dark_role": "Applicability boundary and retake case; not a mandatory restoration target",
+        "normal_operating_range_and_quality_limits_not_yet_qualified": true,
+        "automatic_input_rejection_not_yet_implemented": true,
+        "post_experiment_scope_clarification_not_retroactive_pass": true,
+        "original_results_retained": true,
+        "formal_model_adopted": false,
+        "report": "Experiments/R128_SourceOnlyFullTraining/reports/R128_APPLICATION_SCOPE.md"
+      },
+      "normal_scope_followup": {
+        "report": "Experiments/R128_SourceOnlyFullTraining/reports/R128_NEARBY_BRIGHTNESS_TRIAL.md",
+        "observations": [
+          13,
+          14,
+          15
+        ],
+        "improved_objects_per_observation": [
+          36,
+          36,
+          36
+        ],
+        "independent_physical_objects": 36,
+        "trial_entry": "Experiments/R128_SourceOnlyFullTraining/trial/restore.py",
+        "trial_verified": true,
+        "automatic_brightness_rejection": false,
+        "normal_range_qualified": false,
+        "formal_model_adopted": false
+      },
+      "structure_check": {
+        "report": "Experiments/R128_SourceOnlyFullTraining/reports/R128_STRUCTURE_CHECK.md",
+        "verification": "Experiments/R128_SourceOnlyFullTraining/results/structure_check/verification.json",
+        "real_frames": 27,
+        "motion_pairs": 12,
+        "motion_pairs_Raw_consistent": 12,
+        "max_motion_change_px": 0.013190284663064765,
+        "profiles": 12,
+        "confirmed_checker_junction_observations": 12,
+        "additional_generic_features": 32,
+        "known_reference_parents": 58,
+        "clean_control_mean_contour_error_px": 0.03284127555034586,
+        "clean_control_max_contour_error_px": 0.535590698560398,
+        "automatic_feature_motion_is_not_physical_corner_truth": true,
+        "crop_flags_resolved": true,
+        "original_results_retained": true,
+        "next_priority": "Protect already-sharp boundaries and qualify local geometric readouts",
+        "new_training_updates": 0,
+        "production_adopted": false
+      },
+      "full_contour_followup": {
+        "report": "Experiments/R128_SourceOnlyFullTraining/reports/R128_FULL_CONTOUR_SEM.md",
+        "verification": "Experiments/R128_SourceOnlyFullTraining/results/full_contour/verification.json",
+        "tested_exposures": [
+          13,
+          14,
+          15
+        ],
+        "physical_specimens": 1,
+        "objects": 36,
+        "historical_reference_improved_counts": [
+          36,
+          36,
+          36
+        ],
+        "global_pitch_reference_improved_counts": [
+          36,
+          35,
+          36
+        ],
+        "Raw_primary_masks_exact": 108,
+        "metric_rows": 1944,
+        "coarse_outer_contour_benefit": true,
+        "all_local_shape_metrics_improved": false,
+        "physical_accuracy_qualified": false,
+        "original_expected_hashes_unchanged": true
+      },
+      "competitive_review": {
+        "report": "Experiments/R128_SourceOnlyFullTraining/reports/R128_COMPETITIVE_REVIEW.md",
+        "verification": "Experiments/R128_SourceOnlyFullTraining/results/competitive_review/verification.json",
+        "measured_contour_rows": 1080,
+        "same_physical_specimens": 1,
+        "pillars": 36,
+        "repeated_exposures": [
+          13,
+          14,
+          15
+        ],
+        "models": [
+          "Raw",
+          "R61v16",
+          "R109_E48",
+          "R119_E42",
+          "R128_P_s1285002"
+        ],
+        "R128_best_aggregate_boundary_area_perimeter_among_listed": true,
+        "R128_vs_R109_improved_pillar_boundary_medians": [
+          33,
+          33
+        ],
+        "circularity_reference_sensitive": true,
+        "all_local_contour_errors_improved": false,
+        "LSC_existing_pairs_recomputed": 120,
+        "R128_same_protocol_LSC_measured": false,
+        "Raw_relative_registration_is_not_LSC_score": true,
+        "next_action": "Evaluate the existing single R128 with the same locked LSC pairs and reader; qualify SEM circularity reference before precision claims",
+        "new_training_updates": 0,
+        "production_adopted": false,
+        "original_expected_hashes_unchanged": true,
+        "pending_LSC_status_superseded_by": "lsc_followup"
+      },
+      "lsc_followup": {
+        "completed_utc": "2026-09-10T10:05:43.270906+00:00",
+        "report": "Experiments/R128_SourceOnlyFullTraining/reports/R128_LSC_R61_COMPARISON.md",
+        "verification": "Experiments/R128_SourceOnlyFullTraining/results/lsc_comparison/verification.json",
+        "R128_same_protocol_LSC_measured": true,
+        "common_pairs": 120,
+        "native_frames": 159,
+        "reused_R128_outputs": 9,
+        "R61_full_frame_replays_exact": 4,
+        "independently_refitted_circles": 5724,
+        "primary_metrics": {
+          "Raw": {
+            "step_sd_nm": 9.745101010150108,
+            "mean_nominal_abs_error_nm": 8.387570072471508,
+            "median_within_grid_sd_nm": 13.966446294885838,
+            "median_cross_axis_abs_nm": 6.009480206001342
+          },
+          "Wiener": {
+            "step_sd_nm": 7.391650855589676,
+            "mean_nominal_abs_error_nm": 6.387200695635811,
+            "median_within_grid_sd_nm": 6.040713669745054,
+            "median_cross_axis_abs_nm": 4.140500900904954
+          },
+          "R61v16_PSFOFF": {
+            "step_sd_nm": 7.220139175917496,
+            "mean_nominal_abs_error_nm": 6.484517537683009,
+            "median_within_grid_sd_nm": 5.823493852002368,
+            "median_cross_axis_abs_nm": 5.071070354196564
+          },
+          "R109 E48": {
+            "step_sd_nm": 7.002564497637127,
+            "mean_nominal_abs_error_nm": 6.347342169314351,
+            "median_within_grid_sd_nm": 4.398425713878044,
+            "median_cross_axis_abs_nm": 5.312085591190509
+          },
+          "R119_B_E42": {
+            "step_sd_nm": 7.26088386424727,
+            "mean_nominal_abs_error_nm": 6.654923759698416,
+            "median_within_grid_sd_nm": 5.012789264031573,
+            "median_cross_axis_abs_nm": 4.226730301110366
+          },
+          "R128_P_s1285002": {
+            "step_sd_nm": 6.872913141988417,
+            "mean_nominal_abs_error_nm": 6.162761563288439,
+            "median_within_grid_sd_nm": 3.41573479936263,
+            "median_cross_axis_abs_nm": 5.152931378741415
+          }
+        },
+        "source_defined_all_neural_pair_subset": 95,
+        "guard_off_diagnostic_only": true,
+        "worst_pair_public_trial_replay_exact": true,
+        "decision": "Retain singleR128researchtrial: modest aggregateLSCstep gain and stronger inter-pillar consistency versusR61; SEMshape gains retained. Transverse/worst-case risks and reference-sensitivecircularity remain;no productionpromotion or guard removal.",
+        "new_training_updates": 0,
+        "production_adopted": false,
+        "physical_accuracy_qualified": false,
+        "original_expected_hashes_unchanged": true,
+        "primary_new_R128_forwards": 150,
+        "worst_case_R128_replay_forwards": 2,
+        "total_R128_forwards_this_followup": 152
+      },
+      "thesis_v34_assessment": {
+        "completed_utc": "2026-09-12T07:44:58.962752+00:00",
+        "report": "Experiments/R128_SourceOnlyFullTraining/reports/R128_THESIS_V34_REPLACEMENT_ASSESSMENT_VERIFIED.md",
+        "source_docx_sha256": "d85a7987bbea8f5f58585334104f9d0425f3a42a92e51bbbb187cca2c5a9fc12",
+        "source_docx_edited": false,
+        "actual_thesis_pairs": 120,
+        "actual_thesis_frames": 166,
+        "pairs_shared_with_prior_study": 87,
+        "new_R128_inference_frames": 22,
+        "reused_R128_frames": 144,
+        "R128_v34_LSC": {
+          "step_sd_nm": 7.250296,
+          "nominal_mae_nm": 5.767442,
+          "within_grid_nm": 3.416135,
+          "cross_axis_nm": 6.764177,
+          "replacement_ranks": [
+            3,
+            1,
+            3
+          ]
+        },
+        "refined_SEM_normal_exposures": [
+          13,
+          14,
+          15
+        ],
+        "refined_SEM_all36_correlation_worse_than_V42": true,
+        "refined_SEM_MZC_worse_pillars": 33,
+        "runtime_common_R128_ms": 28066.46155,
+        "runtime_common_V42_ms": 2341.82,
+        "runtime_validated_R128_ms": 16834.2197,
+        "decision": "No immediate drop-in replacement of v34. Retain R128researchdirection; improve irregular-shape preservation and validated cost,thenrewrite architecture/data/claims.",
+        "traceable_training_not_full_physical_interpretability": true,
+        "old_coarse_metrics_do_not_equal_thesis_refined_metrics": true,
+        "new_training_updates": 0,
+        "production_adopted": false
+      }
+    },
+    {
+      "candidate_id": "R127_measurement_preservation",
+      "round": "R127 measurement and conditional preservation repair",
+      "experiment": "Experiments/R127_MeasurementPreservationRepair",
+      "status": "completed_software_repairs_physical_qualification_open",
+      "mainline_status": "research_tools_no_model_promotion",
+      "reports": {
+        "results": "Experiments/R127_MeasurementPreservationRepair/reports/R127_RESULTS.md",
+        "methodology": "Experiments/R127_MeasurementPreservationRepair/reports/R127_METHODOLOGY.md",
+        "usage": "Experiments/R127_MeasurementPreservationRepair/reports/R127_USAGE.md",
+        "physical_requirements": "Experiments/R127_MeasurementPreservationRepair/reports/R127_ACQUISITION_PLAN.md"
+      },
+      "optimizer_updates": 0,
+      "fullfield_outputs": 48,
+      "fullfield_model_pairs": 24,
+      "maximum_change_from_fullfield_Raw_px": 0.0005107885817138956,
+      "old_core_parity": "all48bitwise_equal",
+      "physical_accuracy_qualified": false,
+      "universal_real_clean_detection": false,
+      "model_promoted": false,
+      "notes": "Native SEM size/pitch and explicit rim definitions separate scaling from segmentation. A third prospectively frozen72case image/continuous control check passes at0.015998px maximum error; earlier failures remain. All4R126models are rerun on12full source frames, yielding24valid dominant-translation comparisons within0.000511px of full-fieldRaw and exact old-core parity. R126local phase jumps are not evidence of comparable whole-image displacement. Conditional exact preservation covers6known identity parents plus100arbitrary inputs, with ordinary noisy/blurred restoration retained; unknown real inputs never certified clean.5242older files unchanged. Material-edge correspondence, actual-position evidence and qualified model usefulness remain open."
+    },
+    {
+      "candidate_id": "R126_learnability_photometry",
+      "round": "R126 learnability and matched photometry",
+      "experiment": "Experiments/R126_LearnabilityPhotometry",
+      "status": "bounded_comparison_complete_not_adopted",
+      "mainline_status": "research_only_no_promotion",
+      "reports": {
+        "results": "Experiments/R126_LearnabilityPhotometry/reports/R126_RESULTS.md",
+        "methodology": "Experiments/R126_LearnabilityPhotometry/reports/R126_METHODOLOGY.md",
+        "principles": "Experiments/R126_LearnabilityPhotometry/reports/R126_LEARNING_AND_READOUT.md"
+      },
+      "executed_updates": 1280,
+      "fixed_diagnostic_updates": 768,
+      "photometry_updates": 512,
+      "real_evaluations": 8,
+      "external_gmf": "not_performed",
+      "calibration_qualified": false,
+      "formal_promotion": false,
+      "notes": "A fixed-example update-scale intervention improves learning; expanded photometry improves shared dark simulation references18-19percent but increases exact-identity drift. Four128-update P/Q x2start runs and all8real evaluations complete. SEM results depend on reference; historical dark Q/P comparisons reverse globally pitch-matched improvements. Raw-relative matching jumps36.83-36.94px are not known physical stage movement. All1280updates,256independent input replays,144real outputs and3431old files verified; original failures and cross-runtime trace discrepancy preserved with separately matched-runtime diagnosis. No adoption, fullACM/full301motion, old-confirmation access or new unseen claim. Next: independent SEM/optical mapping, reliable motion readout and preservation of correct inputs.",
+      "interpretation_followup": "R127 full-field same-weight evaluation resolves the old local-readout jumps as insufficient evidence of whole-image displacement; size/physical-target issues still prevent adoption. See R127 canonical results."
+    },
+    {
+      "candidate_id": "R125_data_aligned_pilot",
+      "round": "R125 data repair and bounded exploratory learning",
+      "experiment": "Experiments/R125_DataAlignedPilot",
+      "status": "completed_bounded_pilot_not_adopted",
+      "mainline_status": "research_negative_no_promotion",
+      "reports": {
+        "results": "Experiments/R125_DataAlignedPilot/reports/R125_RESULTS.md",
+        "data_fit": "Experiments/R125_DataAlignedPilot/reports/R125_DATA_FIT.md",
+        "methodology": "Experiments/R125_DataAlignedPilot/reports/R125_METHODOLOGY.md",
+        "reader": "Experiments/R125_DataAlignedPilot/reports/R125_REPORT.html"
+      },
+      "notes": "Initial data rejected and preserved;8xFloat64 generation,4x optical representation/2xprior retains all64conditions and passes unchanged model-fit screens. Six64-update runs completed384updates; independent audit verifies actualsource/order/parameters and216real outputs. All12 real evaluations usefixedpanels/commonSEM populations. A improvesnormalbutregressesdark; B/Cshow no reliablebenefit. Low phase responses/discrepancies predatelearning. Trainingphotometry missesreallevels/contrast andfixed-six trainingreferenceerror barelychanges. Noadoptedmodel,longtraining,fullACM/full301motion or newconfirmationclaim; proceedonly after learnability/coverage/calibration work."
+    },
+    {
+      "candidate_id": "R124_real_first_prototype",
+      "round": "R124 executable real-first model prototype",
+      "experiment": "Experiments/R124_RealFirstPrototype",
+      "status": "prototype_implemented_mechanically_verified_untrained",
+      "mainline_status": "research_prototype_no_promotion",
+      "reports": {
+        "results": "Experiments/R124_RealFirstPrototype/reports/R124_RESULTS.md",
+        "implementation": "Experiments/R124_RealFirstPrototype/reports/R124_IMPLEMENTATION.md"
+      },
+      "notes": "301212-parameter four-step shared2D model implemented. 26 tests pass; paired640px FP32 backward peak22.57GiB, zero optimizer updates. Nonneutral tile error<=1.19e-7; maximum support separately uses8channels. Six real optical images produce12 explicitly untrained/unqualified outputs; bounded SEM half-readout adapter yields432 rows and144 exact Raw parity cases. AssumedGaussian distances slightly worsen; no efficacy claim, fullACM or full-motion evaluation. Four historical floor-sensitive crossings and sampling truncation sensitivity retained, no old expectations changed. Scientific data/loss/ledger pipeline and instrument/uncertainty qualifications remain to implement."
+    },
+    {
+      "candidate_id": "R123_real_first_model_design",
+      "round": "R123 real-first architecture and data design",
+      "experiment": "Experiments/R123_RealFirstModelDesign",
+      "status": "design_verified_model_not_implemented_or_trained",
+      "mainline_status": "research_design_no_promotion",
+      "reports": {
+        "results": "Experiments/R123_RealFirstModelDesign/reports/R123_RESULTS.md",
+        "architecture": "Experiments/R123_RealFirstModelDesign/reports/R123_DESIGN.md",
+        "data_validation": "Experiments/R123_RealFirstModelDesign/reports/R123_DATA_AND_VALIDATION.md"
+      },
+      "notes": "Real microscopy + SEM and real motion/structure panels are primary at every short candidate; synthetic performance does not gate access. Proposed full 2D shared iterative reconstruction with qualified observation updates and independently audited geometry. 438 source files and 144 legacy Raw ROIs verified; historical real readout conflicts replayed, no new model predictions. Current data are reused development, not unseen. Calibration/readout qualification, pre-output decision thresholds, runtime/tile verification and fresh physical confirmation remain needed. V42 is not a teacher or required target."
+    },
+    {
+      "candidate_id": "R122_operator_principles",
+      "round": "R122 operator principles and source audit",
+      "experiment": "Experiments/R122_OperatorPrinciples",
+      "status": "diagnostics_verified_continuous_2d_renderer_pending_no_training",
+      "mainline_status": "research_diagnostic_no_promotion",
+      "reports": {
+        "results": "Experiments/R122_OperatorPrinciples/reports/R122_RESULTS.md",
+        "design": "Experiments/R122_OperatorPrinciples/reports/MODEL_DESIGN.md"
+      },
+      "notes": "7776 operator cases and 360 corrected physical cases executed. Continuous oracle separation is conditional; direct pixel interpolation fails. Preserve initial binary-raster confound and repaired area-integrated v2. V42 E120 actual split reuses ancestors of all 201 thesis motion evaluation frames and all nine current SEM radius answers; 835 crops have exact source pixels. All 1000 auxiliary validation pairs also appear in both auxiliary training pair lists. Same-source performance is not unseen generalization. Next: continuous 2D renderer and independent clean-data prediction; V42 is not the required benchmark. No new model, confirmation verdict or promotion."
+    },
+    {
+      "candidate_id": "R121_boundary_anchor_factorial",
+      "round": "R121 bounded factorial repair",
+      "experiment": "Experiments/R121_BoundaryAnchorFactorial",
+      "status": "bounded_comparison_complete_not_adopted",
+      "mainline_status": "research_negative_no_promotion",
+      "reports": {
+        "results": "Experiments/R121_BoundaryAnchorFactorial/reports/R121_RESULTS.md",
+        "reference_audit": "Experiments/R121_BoundaryAnchorFactorial/reports/R121_REFERENCE_AUDIT.md",
+        "methodology": "Experiments/R121_BoundaryAnchorFactorial/reports/R121_METHODOLOGY.md"
+      },
+      "notes": "Eight valid 12-epoch runs, two matched initializations. B independent radiometry, C centered profile position supervision, and D both each worsen all 36 pillar medians versus A under both historical and global pitch-matched SEM references in both seeds. Texture high-pass error rises 8.80-17.95%; controlled motion alone remains within the declared guard. No supported intervention, so no conditional real LSC or long training. A remains an experimental control, not a promoted baseline. C v1 was interrupted for a pure-width confound and preserved; valid C/D use v2. All old R118/R119 evidence and receipts remain unchanged."
+    },
+    {
+      "candidate_id": "R118_verified_repair_probe_next_design_handoff",
+      "round": "R118 physical coordinate repair",
+      "experiment": "Experiments/R118_PhysicalCoordinateRepairScratch",
+      "status": "r119_training_complete_execution_contract_deviations_verified_not_promoted",
+      "mainline_status": "thesis_research_not_production_promotion",
+      "goal": "Accurate ACM shape, stable displacement and faithful detail for single-image tile-safe microscopy reconstruction",
+      "reports": {
+        "entry": "Experiments/R118_PhysicalCoordinateRepairScratch/NEXT_STEPS.md",
+        "canonical_handoff": "Experiments/R118_PhysicalCoordinateRepairScratch/reports/R118_EXECUTION_HANDOFF.md",
+        "machine_plan": "Experiments/R118_PhysicalCoordinateRepairScratch/reports/next_design_plan.json",
+        "verified_probe": "Experiments/R118_PhysicalCoordinateRepairScratch/READY.json",
+        "causal_review": "Experiments/R119_SequenceGeometryValidation/reports/R119_CAUSAL_AUDIT.md",
+        "cross_exposure_position_review": "Experiments/R119_SequenceGeometryValidation/reports/R119_CROSS_EXPOSURE_POSITION_AUDIT.md",
+        "training_position_review": "Experiments/R119_SequenceGeometryValidation/reports/R119_TRAINING_POSITION_DIAGNOSIS.md",
+        "controlled_boundary_factors_review": "Experiments/R119_SequenceGeometryValidation/reports/R119_CONTROLLED_BOUNDARY_FACTORS.md",
+        "R109_readout_comparison": "Experiments/R119_SequenceGeometryValidation/reports/R119_R109_READOUT_COMPARISON.md"
+      },
+      "readout_comparison_20260907": {
+        "scope": "Frozen R109 E48/R119 E42; same 36 pillars and 12 exposures; no training or promotion",
+        "finding": "Common-alignment ACM ranks R109 above Raw, while half-contrast position ranks Raw above R109; both rank R119 below R109. Primary steepest-point three-way coverage is inadequate, not certified consensus. Position paths also compress transition width, more strongly in R119, including clean correct-target fixtures.",
+        "decision": "Do not equate any single readout with physical edge truth or transplant R109 as an oracle. Define/calibrate readouts and test genuinely separate translation/width operators before more training. Existing causal-audit correction and R121 negative result remain valid."
+      },
+      "cross_exposure_position_diagnosis_20260906": {
+        "scope": "One fixed E42 model, 36 pillars in one sample, all 12 existing SEM-linked exposures; no training, promotion or new confirmation",
+        "paired_improved_vs_full": 431,
+        "paired_worsened_vs_full": 1,
+        "paired_improved_vs_global_amplitude_control": 430,
+        "paired_worse_than_raw": 282,
+        "exposures_with_improved_paired_median": 12,
+        "pillars_with_improved_paired_median": 36,
+        "mean_boundary_distance_pooled_median_pitch_pct": {
+          "Raw": 0.5741941630840306,
+          "full_E42": 0.66175577044487,
+          "position_off": 0.5875619649887085,
+          "global_attenuation": 0.65443167090416
+        },
+        "interpretation": "Position-path removal consistently reduces contour expansion in this sample, but does not establish a better-than-Raw deployable model. Additive detail is retained exactly; final texture changes and modified-output displacement stability remain unqualified. Earlier causal-audit correction is not revoked."
+      },
+      "notes": "2026-09-06 source and numerical audit supersedes prior full-contract/coherent-sequence claims. R119 B E42 completed 42 epochs, but B shares photometry/noise sigma instead of implementing the planned fixed-optics sequence bank; D/control/readout confounds were reproduced. Confirmation was consumed but did not include every required readout; its old approximately 0.9px position error used a double-subtracted displacement. Locked ACM/SEM/LSC point estimates and checkpoints are retained. A 36-pillar exposure-13 frozen path test implicates normal-position correction in SEM expansion, with detail retained. No new training or promotion. COMBO and approved alternates remain unchanged; external GMF is not a thesis gate."
     },
     {
       "candidate_id": "R45_family_boundary_adapter",
@@ -1356,7 +3498,7 @@
         "produced_at": "2026-05-11",
         "candidates": {
           "r40_combo_best_avg_a042": {
-            "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\u0007042\best_tradeoff.pth.tar",
+            "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\\a042\\best_tradeoff.pth.tar",
             "local_micro_psnr": 26.6228,
             "local_hf_retention": 0.3172,
             "local_edge_retention": 0.7343,
@@ -1375,10 +3517,10 @@
               "0p08px": 11.29
             },
             "verdict": "RESEARCH_CAPACITY_ONLY",
-            "report_md": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\reports\\R40_EXTERNAL_COMPARE_a042.md"
+            "report_md": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\reports\\R40_EXTERNAL_COMPARE_a042.md"
           },
           "r40_combo_best_avg_a043": {
-            "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\u0007043\best_tradeoff.pth.tar",
+            "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\\a043\\best_tradeoff.pth.tar",
             "local_micro_psnr": 26.715,
             "local_hf_retention": 0.325,
             "local_edge_retention": 0.7386,
@@ -1397,10 +3539,10 @@
               "0p08px": 21.52
             },
             "verdict": "RESEARCH_CAPACITY_ONLY",
-            "report_md": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\reports\\R40_EXTERNAL_COMPARE_a043.md"
+            "report_md": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\reports\\R40_EXTERNAL_COMPARE_a043.md"
           },
           "r40_combo_best_avg_a044": {
-            "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\u0007044\best_tradeoff.pth.tar",
+            "checkpoint": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\weight_sweep\\combo_best_low_alpha\\checkpoints\\a044\\best_tradeoff.pth.tar",
             "local_micro_psnr": 26.8039,
             "local_hf_retention": 0.3332,
             "local_edge_retention": 0.7417,
@@ -1502,6 +3644,424 @@
       },
       "suggested_role": "research_capacity_reference_only",
       "notes": "R41 direct best preserves microscopy-feature gains, but neither the direct endpoint nor the COMBO/R41 averaged checkpoints recover ring behavior enough. No averaged alpha passes both microscopy and local ring guard, so R41 is research-only and should not be sent to external GMF unless the policy is changed."
+    },
+    {
+      "candidate_id": "LabSystem_MOSR_R48_RealCornerTransfer",
+      "round": "LabSystem R48 real-corner transfer",
+      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer",
+      "status": "completed_negative_real_corner_validation",
+      "mainline_status": "lab_method_transfer_side_track_not_main_baseline_candidate",
+      "goal": "Test whether Lab checkboard-like real-corner data plus geometry sidecars can fix the rounded-corner failure seen after moving MOSR to the laboratory optical system.",
+      "reports": {
+        "checkboard_validation_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R48_RealCornerTransfer\\reports\\R48_CHECKBOARD_VALIDATION_20260613.md",
+        "experiment_manifest_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R48_RealCornerTransfer\\MANIFEST.md",
+        "data_report_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\reports\\LAB_R48_REAL_CORNER_DATA_20260613.md"
+      },
+      "training": {
+        "completed_epochs": 200,
+        "latest_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_resume_e120_to200_20260613_235726\\weights\\latest.pth.tar",
+        "best_tradeoff_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644\\weights\\best_tradeoff.pth.tar",
+        "best_detail_guarded_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644\\weights\\best_detail_guarded.pth.tar"
+      },
+      "real_corner_validation": {
+        "frames_checked": 51,
+        "raw_corners_checked": 358,
+        "best_previous_control": "Lab R40 tradeoff",
+        "best_previous_median_corner_shift_px": 4.243,
+        "best_r48_checkpoint": "Lab R48 best_detail_guarded",
+        "best_r48_median_corner_shift_px": 6.708,
+        "best_r48_pct_peak_shift_gt_5px": 61.453,
+        "verdict": "FAIL"
+      },
+      "notes": "R48 completed training and reconstruction, but all tested R48 checkpoints worsened the real checkboard corner metric and visual corner artifacts versus earlier Lab controls. It is not promotable and should be treated as negative Lab-system transfer evidence."
+    },
+    {
+      "candidate_id": "LabSystem_MOSR_R49_CADAnchorRealGeometry",
+      "round": "LabSystem R49 CAD-anchor real-geometry transfer",
+      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry",
+      "status": "completed_negative_real_corner_validation",
+      "mainline_status": "lab_method_transfer_side_track_not_main_baseline_candidate",
+      "goal": "Test whether a small real Lab CAD-anchor checkboard slice plus geometry sidecars can fix the rounded-corner failure after R48.",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R49_CADAnchorRealGeometry\\reports\\R49_RESULTS_20260614.md",
+        "checkboard_validation_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R49_CADAnchorRealGeometry\\reports\\R49_CHECKBOARD_VALIDATION_20260614.md",
+        "experiment_manifest_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R49_CADAnchorRealGeometry\\MANIFEST.md"
+      },
+      "training": {
+        "completed_epochs": 100,
+        "formal_run": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324",
+        "latest_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324\\weights\\latest.pth.tar",
+        "best_tradeoff_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324\\weights\\best_tradeoff.pth.tar",
+        "best_detail_guarded_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324\\weights\\best_detail_guarded.pth.tar",
+        "internal_best_epoch": 50
+      },
+      "real_corner_validation": {
+        "frames_checked": 51,
+        "raw_corners_checked": 358,
+        "best_previous_control": "Lab R40 tradeoff",
+        "best_previous_median_corner_shift_px": 4.243,
+        "best_r48_checkpoint": "Lab R48 best_detail_guarded",
+        "best_r48_median_corner_shift_px": 6.708,
+        "best_r49_checkpoint": "Lab R49 latest E100",
+        "best_r49_median_corner_shift_px": 9.0,
+        "best_r49_pct_peak_shift_gt_5px": 85.475,
+        "verdict": "FAIL"
+      },
+      "notes": "R49 completed 100-epoch CAD-anchor training and reconstructed the real checkboard sequence, but all tested checkpoints worsened real corner geometry versus the previous Lab control and best R48. It is not promotable and should be treated as negative Lab-system transfer evidence."
+    },
+    {
+      "candidate_id": "LabSystem_MOSR_R50_PSFControlDiagnosis",
+      "round": "LabSystem R50 PSF/degradation control diagnosis",
+      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis",
+      "status": "completed_psf_control_diagnostic_not_training_candidate",
+      "mainline_status": "lab_method_transfer_diagnostic_not_main_baseline_candidate",
+      "goal": "Check whether the selected Lab BADS PSF is too soft as the single degradation truth for real Lab checkboard-corner training.",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R50_PSFControlDiagnosis\\reports\\R50_RESULTS.md",
+        "experiment_manifest_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R50_PSFControlDiagnosis\\MANIFEST.md",
+        "summary_json": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R50_PSFControlDiagnosis\\results\\psf_control_diagnosis\\summary.json"
+      },
+      "diagnostic_metrics": {
+        "real_checkboard_images": 51,
+        "synthetic_control_images_per_set": 500,
+        "real_median_edge_width_px": 7.0,
+        "formal_bads_median_edge_width_px": 11.0,
+        "gaussian_median_edge_width_px": 9.0,
+        "weak_bads_alpha050_median_edge_width_px": 7.0,
+        "weak_bads_alpha075_median_edge_width_px": 9.0,
+        "psf_validation_median_edge_rmse_gaussian": 0.093178,
+        "psf_validation_median_edge_rmse_bads": 0.10179,
+        "verdict": "BADS_USABLE_BUT_TOO_SOFT_AS_ONLY_CHECKBOARD_CORNER_BLUR_TRUTH"
+      },
+      "notes": "R50 is a diagnostic and should not be promoted as a model candidate. It found that formal BADS is usable but wider/softer than the real Lab checkboard edge-width proxy. This directly led to the R51 Gaussian, weak-BADS, and mixed-PSF probe; after R51, the next Lab step should add a real-corner stability guard rather than only changing blur sources."
+    },
+    {
+      "candidate_id": "LabSystem_MOSR_R51_BlurSourceProbe",
+      "round": "LabSystem R51 blur-source training probe",
+      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe",
+      "status": "completed_directional_probe_not_promoted",
+      "mainline_status": "lab_method_transfer_probe_not_main_baseline_candidate",
+      "goal": "Compare Gaussian, weak-BADS alpha 0.50, and mixed-PSF corner blur sources before committing to another long Lab-system training run.",
+      "reports": {
+        "checkboard_validation_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R51_BlurSourceProbe\\reports\\R51_CHECKBOARD_VALIDATION.md",
+        "experiment_manifest_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R51_BlurSourceProbe\\MANIFEST.md",
+        "corner_summary_csv": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\corner_geometry_validation_r51_20260614\\corner_metrics_summary.csv",
+        "corner_summary_json": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\corner_geometry_validation_r51_20260614\\corner_validation_summary.json",
+        "results_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R51_BlurSourceProbe\\reports\\R51_RESULTS.md"
+      },
+      "data_packages": {
+        "root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r51_blur_source_probe",
+        "gaussian_probe_pairs": 1550,
+        "weak_bads_probe_pairs": 1550,
+        "mixed_psf_probe_pairs": 1550,
+        "held_out_mixed_corner_val_pairs": 100
+      },
+      "training": {
+        "source_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153\\weights\\best_tradeoff.pth.tar",
+        "epochs": 12,
+        "max_train_batches_per_epoch": 80,
+        "runs": {
+          "gaussian": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_gaussian_corner_probe_short_e012_b080_20260614_215954",
+          "weak_bads": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_weak_bads_corner_probe_short_e012_b080_20260614_220314",
+          "mixed_psf": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602"
+        }
+      },
+      "real_corner_validation": {
+        "frames_checked": 51,
+        "raw_corners_checked": 358,
+        "previous_control": "Lab R40 tradeoff",
+        "previous_control_median_corner_shift_px": 4.243,
+        "previous_control_pct_peak_shift_gt_5px": 24.581,
+        "best_r51_checkpoint": "Lab R51 mixed-PSF best_tradeoff",
+        "best_r51_median_corner_shift_px": 2.828,
+        "best_r51_pct_peak_shift_gt_5px": 36.872,
+        "verdict": "DIRECTIONAL_IMPROVEMENT_NOT_STABLE_ENOUGH_FOR_PROMOTION"
+      },
+      "notes": "R51 improved the typical real checkboard corner shift but still produced too many large-shift corners. Keep mixed-PSF as a useful direction, but add a real-corner stability guard before any next long Lab training run."
+    },
+    {
+      "candidate_id": "LabSystem_MOSR_R52_CornerStabilityGuard",
+      "round": "LabSystem R52 corner-stability guard formal training",
+      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard",
+      "status": "completed_real_corner_gate_failed_not_promoted",
+      "mainline_status": "lab_method_transfer_formal_run_not_main_baseline_candidate",
+      "goal": "Test whether a larger mixed-PSF plus real-corner stability package can preserve R51 median-corner gains while reducing large real-corner shifts.",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R52_CornerStabilityGuard\\reports\\R52_RESULTS.md",
+        "checkboard_validation_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R52_CornerStabilityGuard\\reports\\R52_CHECKBOARD_VALIDATION.md",
+        "experiment_manifest_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R52_CornerStabilityGuard\\MANIFEST.md",
+        "corner_summary_csv": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\corner_geometry_validation_r52_20260615\\corner_metrics_summary.csv",
+        "pairwise_json": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\corner_geometry_validation_r52_20260615\\r52_pairwise_corner_comparison.json"
+      },
+      "data_packages": {
+        "root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r52_corner_stability_guard",
+        "formal_train_pairs": 4000,
+        "held_out_validation_pairs": 700,
+        "train_geometry_sidecars": 4000,
+        "validation_geometry_sidecars": 700
+      },
+      "training": {
+        "source_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602\\weights\\best_tradeoff.pth.tar",
+        "completed_epochs": 100,
+        "formal_run": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415",
+        "internal_best_epoch": 23,
+        "best_tradeoff_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415\\weights\\best_tradeoff.pth.tar",
+        "latest_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415\\weights\\latest.pth.tar"
+      },
+      "real_corner_validation": {
+        "frames_checked": 51,
+        "raw_corners_checked": 358,
+        "control": "Lab R40 tradeoff",
+        "control_median_corner_shift_px": 4.243,
+        "control_pct_peak_shift_gt_5px": 24.581,
+        "r51_mixed_best_median_corner_shift_px": 2.828,
+        "r51_mixed_best_pct_peak_shift_gt_5px": 36.872,
+        "best_r52_checkpoint": "Lab R52 latest",
+        "best_r52_median_corner_shift_px": 3.606,
+        "best_r52_pct_peak_shift_gt_5px": 30.447,
+        "best_r52_p75_corner_shift_px": 8.485,
+        "r52_latest_better_than_r40_count": 90,
+        "r52_latest_worse_than_r40_count": 132,
+        "r52_latest_worse_than_r51_mixed_count": 212,
+        "verdict": "DIRECTIONAL_MEDIAN_IMPROVEMENT_BUT_REAL_CORNER_GATE_FAILED"
+      },
+      "external_gmf": {
+        "status": "gmf_ready_image_folders_created_no_r52_score_text_present",
+        "gmf_cases": [
+          "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\gmf_cases\\lab_r52_stability_best_tradeoff",
+          "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\gmf_cases\\lab_r52_stability_latest"
+        ]
+      },
+      "notes": "R52 completed the formal long run and reconstructed the real Lab checkboard sequence. The latest checkpoint improved median shift versus R40 but still raised the large-shift corner rate and created new outlier corners. It is useful failure evidence but not a Lab baseline."
+    },
+    {
+      "candidate_id": "LabSystem_MOSR_R53_RealisticDatasetCalibration",
+      "round": "LabSystem R53 realistic dataset calibration",
+      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration",
+      "status": "completed_real_corner_gate_failed_not_promoted",
+      "mainline_status": "lab_method_transfer_formal_run_not_main_baseline_candidate",
+      "goal": "Test whether a main-project-like Lab training mix with gray textures, microscopy detail, varied geometry, mixed-PSF corners, and masked real CAD anchors improves real Lab checker-corner reconstruction.",
+      "reports": {
+        "results_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R53_RealisticDatasetCalibration\\reports\\R53_RESULTS.md",
+        "checkboard_validation_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R53_RealisticDatasetCalibration\\reports\\R53_CHECKBOARD_VALIDATION.md",
+        "experiment_manifest_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R53_RealisticDatasetCalibration\\MANIFEST.md",
+        "corner_summary_csv": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\corner_geometry_validation_r53_20260616\\corner_metrics_summary.csv",
+        "pairwise_json": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\corner_geometry_validation_r53_20260616\\r53_pairwise_corner_comparison.json"
+      },
+      "data_packages": {
+        "root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r53_realistic_dataset_calibration",
+        "formal_train_pairs": 6000,
+        "held_out_validation_pairs": 1740,
+        "train_mix": {
+          "ring": 700,
+          "shape": 700,
+          "micro_detail": 900,
+          "mixed_psf_corner": 300,
+          "realistic_boundary": 2050,
+          "real_background_texture": 950,
+          "masked_cad_anchor": 400
+        },
+        "corner_blur_sources": {
+          "formal_bads": 100,
+          "gaussian": 100,
+          "weak_bads_alpha050": 100
+        }
+      },
+      "training": {
+        "source": "scratch",
+        "completed_epochs": 100,
+        "formal_run": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939",
+        "batch_size": 16,
+        "num_workers": 4,
+        "psf_forward_loss": "disabled",
+        "lab_psf_path_configured": true,
+        "epoch100_val_total": 0.045247,
+        "epoch100_psnr": 26.39,
+        "epoch100_ssim": 0.9353,
+        "best_tradeoff_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939\\weights\\best_tradeoff.pth.tar",
+        "latest_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939\\weights\\latest.pth.tar"
+      },
+      "real_corner_validation": {
+        "frames_checked": 51,
+        "raw_corners_checked": 358,
+        "control": "Lab R40 tradeoff",
+        "control_median_corner_shift_px": 4.243,
+        "control_pct_peak_shift_gt_5px": 24.581,
+        "r52_latest_median_corner_shift_px": 3.606,
+        "r52_latest_pct_peak_shift_gt_5px": 30.447,
+        "r53_best_median_corner_shift_px": 3.606,
+        "r53_best_pct_peak_shift_gt_5px": 40.782,
+        "r53_best_p75_corner_shift_px": 9.899,
+        "r53_latest_median_corner_shift_px": 9.22,
+        "r53_latest_pct_peak_shift_gt_5px": 58.939,
+        "r53_latest_p75_corner_shift_px": 9.899,
+        "r53_latest_worse_than_r40_count": 237,
+        "r53_latest_worse_than_r52_latest_count": 209,
+        "verdict": "REAL_CORNER_GATE_FAILED_INTERNAL_VALIDATION_DID_NOT_TRANSFER"
+      },
+      "external_gmf": {
+        "status": "gmf_ready_image_folders_created_no_r53_score_text_present",
+        "gmf_cases": [
+          "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\gmf_cases\\lab_r53_realistic_best_tradeoff",
+          "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\gmf_cases\\lab_r53_realistic_latest"
+        ]
+      },
+      "notes": "R53 completed a more realistic, main-project-like Lab data mix and reached better internal validation at epoch 100, but the real Lab checkboard corner validation regressed. The latest checkpoint is especially unsafe on real corners; R53 is failure evidence, not a Lab baseline."
+    },
+    {
+      "candidate_id": "LabSystem_MOSR_R54_GeometryRootCauseProbe",
+      "round": "LabSystem R54 geometry root-cause probe",
+      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe",
+      "status": "completed_small_probe_real_checkboard_failed",
+      "mainline_status": "lab_method_transfer_diagnostic_not_main_baseline_candidate",
+      "goal": "Determine whether repeated Lab checkboard failures are caused by reconstruction geometry damage, generic data insufficiency, CAD GT reliability, or PSF-only mismatch before launching another long training run.",
+      "reports": {
+        "diagnostic_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R54_GeometryRootCauseProbe\\reports\\R54_DIAGNOSTIC.md",
+        "masked_small_probe_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R54_GeometryRootCauseProbe\\reports\\R54_MASKED_SMALL_PROBE.md",
+        "checkboard_validation_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R54_GeometryRootCauseProbe\\reports\\R54_CHECKBOARD_VALIDATION.md",
+        "diagnosis_json": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R54_GeometryRootCauseProbe\\results\\root_cause_probe\\r54_root_cause_diagnosis.json",
+        "selected_probe_pairs_csv": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R54_GeometryRootCauseProbe\\results\\root_cause_probe\\r54_small_overfit_probe_pairs.csv",
+        "masked_eval_summary_csv": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R54_GeometryRootCauseProbe\\results\\masked_overfit_probe\\r54_edgeband_eval_summary.csv",
+        "experiment_manifest_md": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R54_GeometryRootCauseProbe\\MANIFEST.md"
+      },
+      "corner_damage_diagnosis": {
+        "raw_input_pct_peak_shift_gt_5px": 1.676,
+        "best_reconstruction_control": "Lab R40 tradeoff",
+        "best_reconstruction_pct_peak_shift_gt_5px": 24.581,
+        "worst_reconstruction": "Lab R53 latest",
+        "worst_reconstruction_pct_peak_shift_gt_5px": 58.939,
+        "r53_latest_over5_delta_vs_r40_percentage_points": 34.358,
+        "verdict": "RECONSTRUCTION_ITSELF_DAMAGES_REAL_CHECKBOARD_CORNERS"
+      },
+      "cad_reference_diagnosis": {
+        "source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20260613_checkboard_cad_reference_strict_rect",
+        "valid_pair_count": 36,
+        "high_quality_probe_pair_count": 36,
+        "median_reliable_mask_coverage": 0.0161,
+        "max_edge_p95_px": 1.91,
+        "label_policy": "cad_gt_inside_reliable_mask_plus_cad_edge_band_source_elsewhere",
+        "verdict": "PROBE_READY_AS_MASKED_LOCAL_SUPERVISION_NOT_FULL_FRAME_GT"
+      },
+      "masked_small_overfit_probe": {
+        "status": "passed_on_masked_cad_package_only",
+        "source_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153\\weights\\best_tradeoff.pth.tar",
+        "run_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650",
+        "checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650\\epoch_020.pth.tar",
+        "epochs": 20,
+        "pairs": 72,
+        "input_inside_mae_to_label": 61.145,
+        "r40_inside_mae_to_label": 50.053,
+        "r54_epoch20_inside_mae_to_label": 9.268,
+        "r54_epoch20_inside_improvement_vs_input_pct": 84.839,
+        "outside_drift_epoch20": 7.174,
+        "verdict": "LOCAL_CAD_EDGE_LEARNING_CONFIRMED_NOT_DEPLOYMENT_READY"
+      },
+      "real_checkboard_validation": {
+        "frames_checked": 51,
+        "raw_corners_checked": 358,
+        "control": "Lab R40 tradeoff",
+        "control_median_corner_shift_px": 4.243,
+        "control_pct_peak_shift_gt_5px": 24.581,
+        "r54_median_corner_shift_px": 9.22,
+        "r54_pct_peak_shift_gt_5px": 60.056,
+        "r54_mean_abs_change_vs_raw": 7.2685,
+        "r54_worse_than_r40_count": 219,
+        "r54_gt5_while_r40_le5_count": 155,
+        "verdict": "REAL_CHECKBOARD_GATE_FAILED_SMALL_PROBE_DID_NOT_GENERALIZE"
+      },
+      "external_gmf": {
+        "status": "gmf_ready_image_folder_created_no_r54_score_text_present",
+        "gmf_case": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20250605_checkboard_external_gmf_prepare\\gmf_cases\\lab_r54_edgeband_epoch020"
+      },
+      "next_gate": {
+        "status": "do_not_continue_from_r54_edgeband_as_training_candidate",
+        "required_probe": "a constrained real-domain adaptation that improves masked CAD edges without increasing real checkboard corner shifts",
+        "failure_implication": "the current failure is generalization and output-drift, not inability to fit the CAD target"
+      },
+      "notes": "R54 now has two parts. The diagnostic confirmed reconstruction geometry damage, and the edge-band masked small-overfit probe proved the model can fit local CAD edge supervision. However, the same epoch20 checkpoint failed on the real 20250605 checkboard sequence, with worse median corner shift and more >5 px corners than Lab R40. Treat R54 as root-cause evidence, not a usable Lab model."
+    },
+    {
+      "candidate_id": "R137_WeakPSFFeature",
+      "status": "complete_research_not_promoted",
+      "report": "Experiments/R137_WeakPSFFeature/reports/R137_RESULTS.md",
+      "note": "Legacy25 PSF feature gain0.02; scratch8192/full930 complete. Short-step and repeatability improve modestly vs R130; SEM diameter bias worsens slightly; runtime comparison is historical, not a matched causal benchmark."
+    },
+    {
+      "candidate_id": "R138_V42PSF8",
+      "status": "complete_research_not_promoted",
+      "report": "Experiments/R138_V42PSF8/reports/R138_RESULTS.md",
+      "note": "CPU scratch8192, full930, V42 auto8 from original25. All gating records retained. See metrics before judging benefit; no baseline promotion."
+    },
+    {
+      "candidate_id": "R139_UNetRecurrent",
+      "status": "complete_degenerate_not_adopted",
+      "report": "Experiments/R139_UNetRecurrentPrototype/reports/R139_RESULTS.md",
+      "note": "Full8192/full930 execution passed accounting, but U-Net logits saturated tanh by checkpoint128; after checkpoint512 only step strengths and scheduled PSF scale changed. Final output is Raw minus ~2.287 gray, PSF on/off identical, no practical reconstruction gain. Causal audit supersedes auto completion interpretation.",
+      "audit": "Experiments/R139_UNetRecurrentPrototype/reports/R139_CAUSAL_AUDIT.md"
+    },
+    {
+      "candidate_id": "R140v2_StableUNet",
+      "status": "complete_research_not_promoted",
+      "report": "Experiments/R140v2_StableUNet/reports/R140v2_RESULTS.md",
+      "note": "Pixel-local normalized U-Net + shared4 refinements + V42-style decoder PSF; early saturation gates passed before full8192 and930. Assess practical metrics and PSF effect in report. No formal promotion."
+    },
+    {
+      "candidate_id": "R143_PSF25_MatchedPairs",
+      "status": "complete_research_not_promoted_selector_unvalidated",
+      "report": "Experiments/R143_PSF25_MatchedPairs/reports/R143_RESULTS.md",
+      "diagnosis_report": "Experiments/R143_PSF25_MatchedPairs/reports/R143_STABILITY_DIAGNOSIS.md",
+      "note": "R141 architecture, same R128 clear parents and splits, existing25 measured PSFs randomly balanced into nonidentity training pairs; scratch8192 and fixed930/8370 evaluation complete. Short-step PI MAE 4.425nm and repeatability 4.290nm worsen vs R140v2 3.640/3.530nm; diameter repeatability 24.161nm worsens vs18.581nm. Old SEM mean diameter gap 110.529nm is smaller than Raw185.182nm, but same-sample calibration comparison and physical scale do not establish independent absolute size accuracy. Diagnosis links off-center PSF training, unstable per-circle location and edge response, and scan-dependent raw blur; subpixel test interpolation dependence prevents sole-cause attribution. Synthetic PSF top1 6/206 and real top1 same index on all930; no adaptive-selector or baseline promotion claim."
+    },
+    {
+      "candidate_id": "R145_Center9PSF25_CorrectedPairs",
+      "status": "complete_research_not_promoted_selector_unvalidated",
+      "experiment": "Experiments/R145_Center9PSF25_CorrectedPairs",
+      "report": "Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_RESULTS.md",
+      "diagnosis_report": "Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_STABILITY_FOLLOWUP.md",
+      "deep_diagnosis_report": "Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_PSF_LIMITING_MECHANISMS.md",
+      "psf_fit_scope_note": "Corrected PSF beats July PSF on held-out actual-SEM-contour forward checks (MSE 0.00238 vs 0.00472), but a simple Gaussian tuned only on six training pillars is slightly better (0.00220); physical PSF shape is not uniquely identified.",
+      "note": "Verified corrected 20260924 center-nine 25-PSF MAT a4141327... used in both 768 matched synthetic pairs and R141 optical bank; scratch8192, fixed930 real reconstruction, 8370 circles and final audit complete. Short-step PI MAE/repeatability 3.990/4.016nm improves vs R143 4.425/4.290nm but trails R140v2 3.640/3.530nm. Diameter repeatability 21.013nm improves vs R143 24.161nm but trails R140v2 18.581nm; contour repeatability 16.001nm improves vs both. Mean diameter gap against the SEM Excel diameters used for PSF calibration is +191.887nm vs Raw +169.883nm, worse by 22.003nm; these diameters calibrated the PSF, not neural clear targets, and same-nine size readout is not independent absolute accuracy validation. Legacy SEM contour reference mean differs by 15.299nm. Post-training diagnosis finds incorrect PSF FFT origin, strong regularization and 1.59% optical mix, while 206/206 synthetic parents have typical inter-PSF signal below injected noise; 12 real on/off frames change mean diameter under 0.5nm. Synthetic PSF top1 6/206 and all930 real top1 index24; no adaptive-selector or baseline promotion claim."
+    },
+    {
+      "candidate_id": "R148v2_HybridContextNativePSF",
+      "status": "formal_scratch8192_background_training_active_checkpoint128_verified",
+      "experiment": "Experiments/R148v2_HybridContextNativePSF",
+      "implementation_report": "Experiments/R148v2_HybridContextNativePSF/reports/R148v2_IMPLEMENTATION.md",
+      "validation_plan": "Experiments/R148v2_HybridContextNativePSF/reports/R148v2_VALIDATION_PLAN.md",
+      "data_manifest_sha256": "902299ce2d1a9355a8cf1b16db79b380ce7ec2fee299ebf88e16498887d964e3",
+      "geometry_manifest_sha256": "e7da057f8176bf184dc12ac7a1622cba31b245dc475f679a639bf044c6a86509",
+      "note": "Architecture correction after R148 stopped at62/no checkpoint. One low-gain multiscale context pass plus three independent native boundary stages; fixed single PSF cue. Dependency110px fits144px training margin. Matched512-update two-seed dev: native5.2127/5.1536, hybrid5.1266/5.1311; mean hybrid advantage1.05%, learned 1px center error<=1.08e-05px. Source19 files locked and formal hybrid scratch8192 launched as a hidden background process. No formal/real930 result or promotion until completion and audit."
+    },
+    {
+      "candidate_id": "R148_MeasurementStableNativePSF",
+      "status": "formal_stopped_at62_no_checkpoint_architecture_revision_required",
+      "experiment": "Experiments/R148_MeasurementStableNativePSF",
+      "implementation_report": "Experiments/R148_MeasurementStableNativePSF/reports/R148_IMPLEMENTATION.md",
+      "validation_plan": "Experiments/R148_MeasurementStableNativePSF/reports/R148_VALIDATION_PLAN.md",
+      "data_manifest_sha256": "902299ce2d1a9355a8cf1b16db79b380ce7ec2fee299ebf88e16498887d964e3",
+      "architecture_audit": "Experiments/R148_MeasurementStableNativePSF/results/architecture_audit.json",
+      "note": "User-authorized native-grid measurement-stable follow-up. 768 locked parents rebuilt as3072 views; initial and64-update smoke gates passed. First formal process wrote62 rows then ended before checkpoint. Architecture audit found current shared dilated refiner radius62 plus repeated PSF residual/backprojection yields worst-case dependency growth162px per iteration/cumulative648px, exceeding the96px training answer margin. The frozen design is intentionally not resumed. No formal model, real930 result or promotion claim. Preserve data,62 rows, source lock and failures for corrected hybrid design."
+    },
+    {
+      "candidate_id": "R147_FullResPSFConsistency",
+      "status": "complete_research_not_promoted_internal_audit_complete",
+      "experiment": "Experiments/R147_FullResPSFConsistency",
+      "report": "Experiments/R147_FullResPSFConsistency/reports/R147_RESULTS.md",
+      "diagnosis_report": "Experiments/R147_FullResPSFConsistency/reports/R147_INTERNAL_AUDIT.md",
+      "optimization_plan": "Experiments/R147_FullResPSFConsistency/reports/R147_OPTIMIZATION_PLAN.md",
+      "checkpoint_sha256": "0e0c5a78d6fbb450a026289a177f7b5f50c10f6ea0564ab505382435af8ea4d0",
+      "note": "Exact R146 research25 bank and 768 pairs; native fixed-mean PSF consistency replaces weak half-resolution selector path. Scratch8192/full930/8370 complete, final audit and exact native CLI replay passed. Short PI MAE/repeatability 4.537/4.720nm worsens vs R146 4.313/4.459nm; diameter repeatability improves 23.082 to16.336nm, contour20.371 to19.751nm. SEM contour mean gap +207.067nm still worse than Raw+185.182nm. Frozen internal audit: 30 stage frames, six-frame integer/subpixel/crop/contrast/blur/noise controls across R140/R146/R147, R137 native-grid control, 768 metadata/data hashes and independent stage displacement arithmetic verified. PSF-feature neural response dominates instantaneous geometry; fourth iteration trades short-step behavior for diameter stability. Grid dependence is shared, not sole-cause proof; contrast/noise sensitivity and fixed per-parent PSF/photometry plus motion coverage gap justify matched optimization controls. No new training, early-stop promotion or formal baseline change. H active payloads complete; canonical D reports synchronized after disk-space recovery."
+    },
+    {
+      "candidate_id": "R146_SEMCoreHaloPSF25_MatchedPairs",
+      "status": "complete_research_not_promoted_selector_unvalidated",
+      "experiment": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "report": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_RESULTS.md",
+      "diagnosis_report": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_CAUSAL_AUDIT.md",
+      "data_chain_audit": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/data_training_chain_audit.json",
+      "edge_variability_audit": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/edge_variability_audit.json",
+      "psf_fit_scope_note": "User-specified research_only actual P-SEM-silhouette core-halo 25-PSF MAT 0d85d63c... beats original BADS and Gaussian on 18/18 held-out pillar appearances across six frozen views (MSE 0.001791 vs 0.002997/0.002105), but all views reuse one physical nine-pillar set and do not prove independent specimen trueness.",
+      "note": "R141/R145 architecture, same 768 R128 clear targets, splits, noise and per-parent PSF indices; only research bank and blurred pairs changed. Scratch8192 and fixed930/8370 evaluation complete with final audit. Short-step PI MAE/repeatability 4.313/4.459nm worsens vs R145 3.990/4.016nm; diameter/contour repeatability 23.082/20.371nm worsens vs R145 21.013/16.001nm. Start-relative repeatability 10.369nm improves vs R145 11.216nm but start-relative MAE 18.220nm does not improve vs 18.070nm. Same-nine SEM contour mean diameter gap +218.744nm vs R145 +207.186nm and Raw +185.182nm; Excel reference +203.445 vs +191.887/+169.883nm. Actual SEM geometry calibrated PSF, never neural clear targets; same-nine size comparison is calibration-conditioned. Synthetic selector top1 10/206, all930 real top1 index8; effective optical mix 0.93% with inherited FFT-origin and scale limitations. Preserve research_only source and prior baselines; no adaptive-selector or baseline promotion claim."
     }
   ],
   "closed_lines": [
@@ -1584,6 +4144,24 @@
         "explanation": "Weight averaging at different alpha values can land in distinct trade-off subspaces rather than smoothly interpolating. Three R40 alphas (0.42 / 0.43 / 0.45) showed three different external Δ patterns: alpha=0.42 trades 0.8 px and 0.08 px for large 8 px gain; alpha=0.43 improves both 8 px and 0.8 px but hurts 0.08 px; alpha=0.45 improves 0.08 px but hurts 8 px.  No monotonic alpha→external relationship was observed.",
         "guidance": "Do not extrapolate external GMF outcomes from local ring guard numbers, or from a single neighbouring alpha, when local step_std is near the circle-fit noise floor (~0.15 px). Run the external GMF measurement on the actual checkpoint before drawing trade-off conclusions."
       }
+    },
+    "thesis_evidence_scope": {
+      "review_date": "2026-09-08",
+      "model_identity": "V42 E120 remains the historical thesis-results model",
+      "independence_status": "audited thesis motion and static samples are reused/adapted sources, not independent unseen evidence",
+      "report": "Experiments/R122_OperatorPrinciples/reports/R122_RESULTS.md",
+      "limitations": "No per-batch historical access log or complete V41/teacher ancestry reconstruction. No conclusion about intent. Historical numerical results retained with this scope correction.",
+      "future_primary_comparison": "Raw and independent known truth; beating V42 is not required"
+    },
+    "next_thesis_model_validation_priority": {
+      "effective_date": "2026-09-08",
+      "primary": "real_microscopy_SEM_motion_and_difficult_structures",
+      "synthetic_role": "training_sources_and_implementation_diagnostics_not_primary_success",
+      "every_short_candidate_real_evaluation": true,
+      "existing_real_sources": "reused_development",
+      "primary_benefit_and_threshold_lock": "before first decision-bearing real candidate output",
+      "unset_tolerances_allow_long_training": false,
+      "report": "Experiments/R123_RealFirstModelDesign/reports/R123_DATA_AND_VALIDATION.md"
     }
   },
   "sources": {
@@ -1652,12 +4230,273 @@
     "Alpha refinement sweep (2026-05-11): tested α=0.42/0.43/0.44 between existing 0.40 and 0.45 for R40 weight averaging. α=0.42 external delta 8px −17.44% / 0.8px +7.81% / 0.08px +11.29%; α=0.43 external delta 8px −5.91% / 0.8px −3.15% / 0.08px +21.52%; α=0.44 8 px local guard failed (not sent external). All three remain RESEARCH_CAPACITY_ONLY. The sweep revealed non-linear trade-off pattern across alpha: α=0.43 and α=0.45 trade opposite scales rather than smoothly interpolating. Linear extrapolation from α=0.45 was far off the actual external numbers.",
     "Methodology caveat (2026-05-11): linear extrapolation from a single alpha's local→external ratio to neighbouring alphas is unreliable for weight averaging sweeps. Documented under measurement_policy.internal_external_divergence.alpha_linear_extrapolation_caveat. Trigger: R40 alpha 0.42/0.43/0.44 sweep produced external GMF deltas in three different sign patterns.",
     "Cross-round complementary averaging (2026-05-11): R39 a030 averaged with R40 a043 at five alphas. alpha=0.25 candidate (R39R40_avg_a025) cleared the 3% upgrade guard on all three external GMF scales (8px -5.18%, 0.8px +1.51%, 0.08px +0.51%) -- first project candidate to do so. Intermediate alphas 0.5 / 0.75 did NOT follow linear interpolation between the two endpoints (0.8 px bulges to +13-15%), reinforcing the alpha_linear_extrapolation_caveat. R39R40_avg_a025 added under open_side_tracks pending project-owner promotion decision; microscopy/shape capacity evaluation at alpha=0.25 still outstanding.",
-    "Promotion (2026-05-11): R39R40_avg_a025 promoted from open_side_track to approved_alternate (role: balanced_full_spectrum_alternate). Basis: PASS_UPGRADE_GUARD on external GMF three scales (8 px -5.18%, 0.8 px +1.51%, 0.08 px +0.51%, all within 3% cap); won all 12 capability categories (5 microscopy + 7 shape) on PSNR vs both COMBO and a030; visual profile remains in sharp band (edge_steepness ~+78.1% vs R30). Complements R33 (GMF extreme) and R38v2 (visual priority) by occupying a previously empty 'balanced full-spectrum' slot. Formal baseline remains COMBO."
+    "Promotion (2026-05-11): R39R40_avg_a025 promoted from open_side_track to approved_alternate (role: balanced_full_spectrum_alternate). Basis: PASS_UPGRADE_GUARD on external GMF three scales (8 px -5.18%, 0.8 px +1.51%, 0.08 px +0.51%, all within 3% cap); won all 12 capability categories (5 microscopy + 7 shape) on PSNR vs both COMBO and a030; visual profile remains in sharp band (edge_steepness ~+78.1% vs R30). Complements R33 (GMF extreme) and R38v2 (visual priority) by occupying a previously empty 'balanced full-spectrum' slot. Formal baseline remains COMBO.",
+    "LabSystem R51 BlurSourceProbe (2026-06-14): Gaussian, weak-BADS, and mixed-PSF short probes completed. Mixed-PSF best_tradeoff improved median real-corner shift to 2.828 px vs Lab R40 4.243 px, but large-shift corner rate worsened to 36.872% vs R40 24.581%; directional only, not promoted.",
+    "LabSystem R52 CornerStabilityGuard (2026-06-15): formal 100-epoch long run completed from R51 mixed-PSF best. Latest checkpoint improved median real-corner shift to 3.606 px vs Lab R40 4.243 px, but large-shift corner rate stayed worse at 30.447% vs R40 24.581%; real-corner gate failed, not promoted. GMF-ready image folders created, but no R52 external GMF score text is present yet.",
+    "LabSystem R53 RealisticDatasetCalibration (2026-06-16): formal 100-epoch scratch run completed with a 6000-pair realistic Lab data mix. Internal validation improved through epoch 100 (PSNR 26.39 / SSIM 0.9353), but real Lab checkboard validation failed: R53 best median 3.606 px with 40.782% >5px corners, and R53 latest median 9.220 px with 58.939% >5px corners versus Lab R40 4.243 px / 24.581%. Not promoted; do not use as Lab baseline.",
+    "LabSystem R54 GeometryRootCauseProbe (2026-06-16): diagnostic plus masked small-overfit probe completed. The edge-band small probe fit local CAD supervision strongly (inside MAE 61.145 input -> 9.268 at epoch20), proving capacity is not the bottleneck. But the same checkpoint failed the real 20250605 checkboard corner gate: median shift 9.220 px and 60.056% >5px corners vs Lab R40 4.243 px and 24.581%. R54 is root-cause evidence, not a usable Lab model; next work must prevent real-image output drift while adapting to CAD edge supervision.",
+    "LabSystem R55 SourceStyleRealisticTraining (2026-06-18): 50-epoch scratch run on the source-style repaired R53 6000-pair package completed. R55 best_tradeoff passed the real 20250605 checkboard corner gate versus Lab R40 (median 2.828 px vs 4.243 px, >5px corners 21.788% vs 24.581%, tail 3.606 px vs 5.000 px) and improved 59.5% of measured corners against R40. R55 latest failed badly (median 8.485 px, >5px corners 51.397%), confirming overtraining/oversmoothing risk. R55 best is a Lab-only candidate for external GMF follow-up, not a main-project baseline or approved alternate.",
+    "LabSystem R56 LabelCoreRepairTraining (2026-06-18): 50-epoch scratch run on the R56 label-core repaired R53/R55 source-style 6000-pair package completed. Internal validation improved through epoch 50 (PSNR 26.40 / SSIM 0.9333), but real 20250605 checkboard corner gate failed. R56 best_tradeoff matched R55 best median shift (2.828 px) but worsened >5px corners to 26.816% and tail shift to 9.899 px versus R55 best 21.788% / 3.606 px. R56 latest failed badly (median 9.899 px, >5px corners 59.777%). Verdict: not adopted; do not replace R55 best and do not send R56 to external GMF unless specifically needed as negative evidence.",
+    "2026-09-08 R126: completed learnability and matched photometry diagnostics with1280total updates and8reused real evaluations; useful learning/data signals but reference-dependent SEM outcomes, matching jumps and exact-identity degradation prevent adoption. Formal baseline, alternates and V42 historical thesis role unchanged.",
+    "2026-09-08 R127: completed bounded measurement and conditional preservation repairs,0newoptimizer updates. Native SEM reference definitions are explicit, full-fieldsame-weight R126motion is consistent withRaw, and exactknown-noiselessidentity preservation is verified. No physical-stage accuracy, universal real clean detection, new unseen confirmation or model promotion is claimed.",
+    "2026-09-09 R128: all executed preparation passed and full research training started with actual updates. Plan32768updates, not completed/adopted; no old-evidence rebaseline. Missing physical certification does not block this authorized research training.",
+    "2026-09-09 R128 completion check found an interruption, not completion:1393updates executed, checkpoint1280 intact, other3runs unstarted. Separately tested mutable-I/O retry layer resumes the same frozen study; original code/expected hashes remain unchanged. No completed-training, usefulness or model-adoption claim.",
+    "2026-09-09 17:12 R128:2runs fully verified complete. Third stopped after5359updates with both processes absent near app-update/GPU events; causal attribution limited. Same5248checkpoint resumed through tested one-off independent launch; fourth queued. No model/data/loss/evaluation edits or original-hash replacement, no completed-study or final-model claim.",
+    "2026-09-09 R128 final review:4runs/32768unique updates complete,224recovery replays excluded from unique count. Real/SEM outputs independently verified. P_s1285002retained only for further repair; all4models worsen all16dark interior size comparisons and modify clean controls. No model adopted or extra training launched; final delivery goal remains one supported model.",
+    "2026-09-20 R130-Clean: new native-resolution scratch model per user specification; no historical neural weights or explicit PSF, no real/SEM/PI training.8192updates and930-image fixed-reader comparison complete. PI accuracy similar toR129, diameter repeatability improves, shape-repeatability and worst adjacent error trade off;SEM size bias unresolved. No formal promotion or thesis-model replacement. Historical evidence preserved.",
+    "2026-10-02 RAW/R152 complete research record: primary displacement fluctuation is within one 30-step scan. 30 paired scans are used for the empirical improvement range. Complete saved-readout recalculation and 930 RAW/930 native-output hashes passed; pooled SD 10.199758 to 4.864821 nm, all 30 scans improved. Size/contour repeatability improved, SEM size difference increased, endpoint bias and SD differences remain inconclusive. Canonical report and full data/figure/source reading archive are registered. This records the user-selected thesis model, without changing formal production roles.",
+    "2026-10-03 R152 thesis actual visual evidence completed: exact 25 PSF matrices and calibration records, identical-coordinate RAW/native-MOSR real image and enlargement, and all 30 saved 64-point contours of fixed object 5 at the start position, with all-nine supplement. Common display scale; contour translation only. Five PDF pages rendered/reviewed; full source and ZIP contents verified. Visual evidence complements, rather than replaces, the complete 930-frame numerical validation.",
+    "2026-10-04 R152 independent Python-only control/configuration package completed with all 768 parents/3072 views and geometry, actual PSFs, frozen-base and deployed weights. All source inputs and 209 published tensors, first four loss rows and whole real-frame native output match exactly. Resume, two-stage short run, post-update assessment continuation, CPU/CUDA, 8/16-bit image loading and alternate-location execution with original experiment reads denied passed. No original trained tensors/data changed and no formal 8192-update retraining was run; only the previously authorized report documentation hash was refreshed in the old source lock. Package and archive are registered without changing production roles.",
+    "2026-10-04 user-selected TIFF-only R152 training delivery completed: the formal reader opens 3072 clear, 3072 blur and 3072 geometry TIFF images directly, with fixed labels/metadata in Python. No training NPZ containers or PNG previews remain. All original training float32 values and 3072 inputs, original first-four losses and 2+2 resume match exactly. The existing model/PSF/weights are unchanged; this converts data storage rather than creating a new trained model. Previous NPZ delivery is preserved as provenance.",
+    "2026-10-04 R152 TIFF package now includes five unchanged historical image-generation programs and a portable Python entry. All 768 parents and 9216 TIFFs were regenerated from original seeds with old-source/bundled-TIFF reads denied; all pixels and TIFF bytes match. Moved no-image-source generation, all actual training inputs and first-four CUDA update losses passed. Model/weights/PSF and formal baseline roles are unchanged.",
+    "2026-10-05 committee-response study: nine-vector mean is now primary, with saved-LSC median parity and all 30 scans retained. Mean RAW/MOSR within-scan pooled SD is 8.780826/4.272773 nm, 30/30 scans improve; adjacent PI MAE 6.969175/3.598341 nm. User clarified ordinary author training recipes and epoch/validation stopping for external models; seven eligible neural methods run in a sequential queue. Same-thread 15-minute heartbeat mosr and live duplicate-safe monitor are active. U-Net/MambaIRv2 official backend failures are preserved. Real930 benchmark and thesis update map remain unfinished; no original thesis/model or formal baseline role changed.",
+    "2026-10-05 user changed same-thread MOSR training heartbeat to hourly. Sequential automatic training remains active; only monitoring cadence changed.",
+    "2026-10-05 mean-only thesis handoff delivered: portable MD, all12 CSV tables, grayscale replacement Figures6-12/13/14, source arrays, independent recalculation of7200 displacements and36 paired intervals, ZIP hashes verified. RAW/MOSR mean SD8.780826/4.272773nm; adjacent PI MAE6.969175/3.598341nm. Start-relative MAE interval crosseszero; geometry/SEM unchanged and adverse size result retained. Original thesis/model untouched. User shortened unstarted external methods to8 epochs and switched monitoring to estimated completion plus buffer; full external real930 benchmark still incomplete.",
+    "2026-10-05 user authorizes pausing training to releaseGPU for completed-model real930 validation and matched efficiency. Restormer saved atstep896; no changes to training recipe. Seven-method matched FP32/batch1 runtime completed105 samples. Wiener930/8370 real readouts completed without failures; RAW/MOSR saved readouts reused and mean/geometry/paired-interval parity verified. Available-model phase supervised; training resumes after its result audit. External neural real930 results still running; no full benchmark completion claim.",
+    "2026-10-06 03:27Taipei available seven-method stage complete: all930/readout8370 per method, all30 validscans, no failures;108 whole-scan paired intervals and105 matched runtime measurements, complete paper ZIP audited. MOSR lowest stepSD/adjacentPI MAE among these methods; contourSD vsEDSR interval crosseszero; NAF/EDSR de-size shape better, RAW SEM diameter difference lower; preserve unequal epoch budgets and all adverse metrics. Restormer resumes savedstep896,max8, remainingUSRNet/SwinIR queued; full benchmark still incomplete. Next check07:45Taipei.",
+    "2026-10-06 14:58 user-requested completed-model scope finished:9 methods,each930 images/8370 readouts/30 validscans,zero failures,144 whole-scan paired intervals,135 matched FP32/batch1 efficiency samples. Independent7-new-method primary metrics and16 primary paired CIs checked; all sources,packet hashes,links,tables,grayscale figures and same-region native images reviewed. Complete paper handoff includes architecture,ordinary training recipes/actual unequal epochs,synthetic/real/SEM/efficiency and update guide. SwinIR preservedpaused atstep256,notcompared,notautomatically resumed; twoofficial backend blocks honest. Automationmosr stopped(PAUSED) afterscope delivery; originalthesis/model/scales/direction/PI untouched.",
+    "2026-10-06 user directly authorizes resuming SwinIR after nine-method paper delivery. Verifiedsavedstep256, source/recipe/RNG/optimizer resume signature and frozen backup; maximumtotal8epochs unchanged. Removed active userstop marker with its historical record retained, restored existingqueue, finalwatcher onlyaddsSwinIR15runtime samples and930 native outputs/8370 fixed readouts after training exits. Verifiednine-method archive unchanged; monitoring ACTIVE, nextETA check 2026-10-07T08:10:00+08:00. Originalthesis/MOSR/scale/direction/PI and oldreadouts unchanged; fullten-method benchmark still pending.",
+    "2026-10-07 08:00Taipei: SwinIR completed8epochs/4096updates at06:08, selectedEMAepoch8 via syntheticvalidation only; allsource/signature/pausedhistory/test128 andweight identities verified. Matching15runtime samples complete, nativefull1544x2064. All7 eligibleexternal trainings complete; finalwatcher automaticallyprocessingSwinIR930 realframes, 230 succeeded/no failures atcheck. Oldnine-method archive and135efficiency preserved. OnlySw new15samples/930outputs/8370readouts; full10-method benchmark/report still pending. Adaptive nextcheck 2026-10-07T14:15:00+08:00 includesremaining reconstruction measuredspeed, fixedreadout and report preparation plus20min buffer; no duplicatedGPUwork.",
+    "2026-10-07 14:34Taipei: complete10 executable-method scope verified and paper handoffready. Each930/8370/all30validscans,zero failures;150 matchedruntime samples and162 whole-scan intervals. SwinIR8epoch selected8 complete; independent1800 displacement/18metrics/18CI checks maxerrors3.15e-12/2.76e-12nm. Alloldnine metrics/144CI/135runtime unchanged, archive11e5138a preserved. Source/weight/readout/nativeROI/grayscale/link/manifest/ZIP verified; nativeROI2x5 paperlayout reviewed. MOSR stepSD4.273/adjMAE3.598lowest inbatch, contour18.600pointlowest butvsEDSR CIcrosseszero; favorableSwSEM201.159vsMOSR204.281nm retained, RAW169.883bestSEM, EDSR/NAF/Rest shapeadvantages preserved. MOSR1.461s vsSw27.171s,ED/NAFfaster andreservedmemorylower; unequalepochs andsourcepriors explicit. Finalpacketsha 75bb544e4962d0465b2ec66bca78a94b5a440ab10a3490463c543f2c7ca03aa5. Originalthesis/MOSR/RAWreadouts/scale/direction/PI untouched; no baseline promotion. Remove automation afterdelivery; two officialbackend blockers honestly recorded, not counted ascomplete."
   ],
-  "artifact_index": {},
+  "artifact_index": {
+    "R152_RAW_complete_research_record_20261002": {
+      "date": "2026-10-02",
+      "status": "complete",
+      "role": "thesis research record",
+      "methods": [
+        "RAW",
+        "R152"
+      ],
+      "canonical_report": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/REPORT.md",
+      "complete_archive": "Deliverables/R152_RAW_COMPLETE_RESEARCH_RECORD_20261002.zip",
+      "paired_scans": 30,
+      "images_per_method": 930,
+      "circles_per_method": 8370,
+      "primary_definition": "sample SD of 30 observed adjacent steps within each scan; pooled after within-scan centering",
+      "RAW_pooled_within_scan_sd_nm": 10.199758113309851,
+      "R152_pooled_within_scan_sd_nm": 4.864821280613461,
+      "improved_scans": 30,
+      "per_scan_improvement_range_percent": [
+        36.87575475075556,
+        64.5620707095379
+      ],
+      "SEM_workbook_size_difference_worsens": true,
+      "new_training_or_acquisition": false,
+      "report_sha256": "60cf2805bff5be71422600fbf600ad939ff0ad354e9122b08c926d490eba6748",
+      "archive_sha256": "1283567074fdf2cc8142b02ecf8b5da959c5d90c6cf29d9e2d17f1ee50d5ae3f"
+    },
+    "R152_thesis_visual_evidence_20261003": {
+      "date": "2026-10-03",
+      "status": "complete",
+      "role": "thesis actual-image and response figures",
+      "canonical_report": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md",
+      "combined_figures_pdf": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/THESIS_VISUAL_FIGURES.pdf",
+      "archive": "Deliverables/R152_THESIS_VISUAL_EVIDENCE_20261003.zip",
+      "archive_sha256": "a95561cfd2646f924136449d552718658035b17cb18a0bf774619f66f3394d14",
+      "PSF_count": 25,
+      "PSF_matrix_shape": [
+        101,
+        101
+      ],
+      "PSF_bank_sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+      "source_MAT_sha256": "0d85d63c08a943a56d6fd74d2ce250b0d656d1170e7ab185e95d2ff369a797e6",
+      "native_image_frame": "004246_XY_0/1.bmp",
+      "native_R152_checkpoint_sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61",
+      "image_display_range": [
+        0,
+        1
+      ],
+      "contours": {
+        "scans": 30,
+        "fixed_frame_index": 0,
+        "main_object": 5,
+        "all9_supplement": true,
+        "points_per_contour": 64,
+        "alignment": "translation only"
+      },
+      "section_placements": [
+        "6.1 Figure 6-3",
+        "after 6.2.3",
+        "6.2.4"
+      ],
+      "PDF_rendered_pages_checked": 5,
+      "new_training": false,
+      "image_postprocessing": false
+    },
+    "R152_python_standalone_20261004": {
+      "date": "2026-10-04",
+      "status": "complete",
+      "role": "portable model training/inference delivery",
+      "package": "Deliverables/R152_Standalone_20261004",
+      "archive": "Deliverables/R152_Standalone_20261004.zip",
+      "report": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md",
+      "training_entry": "Deliverables/R152_Standalone_20261004/train.py",
+      "inference_entry": "Deliverables/R152_Standalone_20261004/infer.py",
+      "all_control_files_python": true,
+      "training_parents": 768,
+      "training_views": 3072,
+      "published_weight_tensors_exact": 209,
+      "published_native_sample_inference_exact": true,
+      "source_input_views_exact": true,
+      "resume_and_relocated_runtime_verified": true,
+      "bytes": 350510995,
+      "archive_sha256": "e6437277e2036e9377e97d5997651fdcc13bd3f01e4994d24724e68fc3c6da72",
+      "packaging_not_new_formal_training": true
+    },
+    "R152_TIFF_training_standalone_20261004": {
+      "date": "2026-10-04",
+      "status": "complete",
+      "role": "latest formal-training image-file delivery",
+      "package": "Deliverables/R152_Standalone_ImageFiles_20261004",
+      "archive": "Deliverables/R152_Standalone_ImageFiles_20261004.zip",
+      "report": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md",
+      "entry": "Deliverables/R152_Standalone_ImageFiles_20261004/train.py",
+      "all_controls_python": true,
+      "formal_data_format": "TIFF float32",
+      "clear_images": 3072,
+      "blur_images": 3072,
+      "geometry_images": 3072,
+      "training_NPZ_files": 0,
+      "training_PNG_files": 0,
+      "all_original_training_inputs_exact": true,
+      "first_four_update_losses_exact": true,
+      "resume_exact": true,
+      "model_and_weights_unchanged": true,
+      "archive_sha256": "3dbde8f7b6f574546f5be53d560fac9e19b34801aaac4891e8dd90a153368c7b",
+      "generation_entry": "Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py",
+      "generation_guide": "Deliverables/R152_Standalone_ImageFiles_20261004/generation_guide.py",
+      "generation_report": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md",
+      "original_generation_sources_preserved": 5,
+      "complete_generation_from_fixed_seeds_verified": true,
+      "regenerated_TIFFs_exact": 9216,
+      "regenerated_inputs_and_first4_losses_exact": true,
+      "no_external_training_images_needed": true
+    },
+    "MOSR_mean_external_benchmark_monitor_20261005": {
+      "date": "2026-10-07",
+      "status": "all_ten_executable_methods_verified_complete",
+      "role": "committee-requested mean aggregation and external benchmark; not a baseline promotion",
+      "root": "Experiments/R153_MeanExternalBenchmark",
+      "mean_report": "Experiments/R153_MeanExternalBenchmark/reports/MEAN_MEDIAN_RESULTS.md",
+      "monitor_report": "Experiments/R153_MeanExternalBenchmark/reports/TRAINING_MONITOR.md",
+      "monitor_snapshot": "Experiments/R153_MeanExternalBenchmark/runs/launcher_logs/monitor_snapshot.json",
+      "ordinary_training_protocol": "Experiments/R153_MeanExternalBenchmark/config/NORMAL_TRAINING_PROTOCOL.json",
+      "automation_id": "mosr",
+      "heartbeat_minutes": null,
+      "current_model": null,
+      "eligible_training_queue": [
+        "EDSR-x1",
+        "NAFNet",
+        "RDN-x1",
+        "RCAN-x1",
+        "Restormer",
+        "USRNet-x1",
+        "SwinIR"
+      ],
+      "blocked_official_backends": [
+        "U-Net",
+        "MambaIRv2"
+      ],
+      "mean_results_verified": true,
+      "full_benchmark_complete": true,
+      "original_thesis_and_MOSR_unchanged": true,
+      "monitoring_schedule": "estimated active-model completion plus buffer",
+      "next_check_taipei": null,
+      "duration_override": "Experiments/R153_MeanExternalBenchmark/config/TIME_BUDGET_OVERRIDE.json",
+      "mean_thesis_handoff": "Experiments/R153_MeanExternalBenchmark/reports/MOSR_MEAN_THESIS_HANDOFF_20261005/MOSR_MEAN_THESIS_HANDOFF.md",
+      "mean_thesis_handoff_zip": "Experiments/R153_MeanExternalBenchmark/reports/MOSR_MEAN_THESIS_HANDOFF_20261005.zip",
+      "mean_handoff_independent_verification": "Experiments/R153_MeanExternalBenchmark/results/analysis/mean_thesis_handoff_delivery_verified.json",
+      "mean_handoff_complete": true,
+      "thesis_update_map_complete": true,
+      "completed_external_trainings": [
+        "EDSR-x1",
+        "NAFNet",
+        "RDN-x1",
+        "RCAN-x1",
+        "Restormer",
+        "USRNet-x1",
+        "SwinIR"
+      ],
+      "available_validation_supervisor": "Experiments/R153_MeanExternalBenchmark/scripts/validate_available_queue.py",
+      "available_validation_status": "Experiments/R153_MeanExternalBenchmark/runs/validation_logs/status.json",
+      "available_efficiency_report": "Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_EFFICIENCY.md",
+      "available_paper_progress": "Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_PROGRESS/REPORT.md",
+      "available_real_complete": true,
+      "available_real_validated_methods": [
+        "RAW",
+        "Wiener",
+        "EDSR-x1",
+        "NAFNet",
+        "RDN-x1",
+        "RCAN-x1",
+        "Restormer",
+        "USRNet-x1",
+        "MOSR"
+      ],
+      "available_efficiency_complete": true,
+      "available_efficiency_samples": 105,
+      "available_paper_complete": "Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE/REPORT.md",
+      "available_stage_archive": "Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE.zip",
+      "Restormer_epochs_verified": 8,
+      "Restormer_selected_epoch_verified": 8,
+      "final_validation_watcher": "Experiments/R153_MeanExternalBenchmark/scripts/run_final_validation.py --watch",
+      "final_validation_status": "Experiments/R153_MeanExternalBenchmark/runs/final_validation_logs/status.json",
+      "current_user_scope": "Resume saved SwinIR to maximum8 totalepochs, then SwinIR-only fullvalidation and ten-method paper summary; deliverednine-method scope preserved",
+      "paused_methods": [],
+      "automatic_training_resume_allowed": false,
+      "completed_only_scope": "Experiments/R153_MeanExternalBenchmark/config/COMPLETED_ONLY_SCOPE.json",
+      "completed_validation_status": "Experiments/R153_MeanExternalBenchmark/runs/completed_validation_logs/status.json",
+      "completed_models_user_scope_complete": true,
+      "automation_status": "DELETED",
+      "completed_paper_handoff": "Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF/REPORT.md",
+      "completed_archive": "Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF.zip",
+      "completed_models_audit": "Experiments/R153_MeanExternalBenchmark/results/completed_models/final_audit.json",
+      "resume_authorization": "Experiments/R153_MeanExternalBenchmark/config/USER_RESUME_20261006.json",
+      "completed_efficiency_samples": 135,
+      "completed_nine_scope_unchanged": true,
+      "observed_resumed_step": 272,
+      "resume_verification": "Experiments/R153_MeanExternalBenchmark/runs/launcher_logs/SwinIR_user_pause/resume_verified.json",
+      "all_eligible_training_verified_complete": true,
+      "SwinIR_epochs_verified": 8,
+      "SwinIR_selected_epoch_verified": 8,
+      "SwinIR_checkpoint_sha256": "331e1d9e5c2a25971d661a6adcbf70e7e792f6e2311b8b20ca760940c3d4b80b",
+      "SwinIR_training_verification": "Experiments/R153_MeanExternalBenchmark/runs/launcher_logs/SwinIR_training_complete_verified_20261007.json",
+      "final_efficiency_samples_verified": 150,
+      "SwinIR_real_reconstruction_status": "complete",
+      "SwinIR_real_reconstruction_completed_at_check": 930,
+      "current_stage": "complete and delivered; monitoring removed",
+      "full_real_validated_methods": [
+        "RAW",
+        "Wiener",
+        "EDSR-x1",
+        "NAFNet",
+        "RDN-x1",
+        "RCAN-x1",
+        "Restormer",
+        "USRNet-x1",
+        "SwinIR",
+        "MOSR"
+      ],
+      "full_real_frames_per_method": 930,
+      "full_readouts_per_method": 8370,
+      "complete_valid_scans_per_method": 30,
+      "measurement_failures": 0,
+      "final_paired_intervals_verified": 162,
+      "final_paper_handoff": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md",
+      "final_archive": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF.zip",
+      "final_archive_sha256": "75bb544e4962d0465b2ec66bca78a94b5a440ab10a3490463c543f2c7ca03aa5",
+      "final_delivery_verification": "Experiments/R153_MeanExternalBenchmark/results/full_benchmark/delivery_verified.json",
+      "final_delivery_visually_verified": true
+    }
+  },
   "audit_trail": [
     "R44H Step A（2026-05-08）：R44B 家族平均診斷完成。形狀可明顯改善（最佳目標形狀錯誤 0.2955），但四個平均候選都讓位移退步超過 Step A 上限；不建議把平均 checkpoint 當下一步起點。R44C static heavy 可暫保留為混合場景局部老師。",
-    "R44H Step B（2026-05-09）：單一老師局部蒸餾完成。位移幾乎守住（0.3837 px vs 0.3813 px），但大區塊/混合形狀錯誤變差（0.3481 vs 0.3384）；概念驗證失敗，不建議進 Step C 多老師全模型蒸餾。"
+    "R44H Step B（2026-05-09）：單一老師局部蒸餾完成。位移幾乎守住（0.3837 px vs 0.3813 px），但大區塊/混合形狀錯誤變差（0.3481 vs 0.3384）；概念驗證失敗，不建議進 Step C 多老師全模型蒸餾。",
+    "2026-09-08 R122: restrict V42 thesis evidence to reused/adapted samples after actual split and source audit. Preserve historical numerical records and R119 protected evidence. No baseline change or new trained model.",
+    "2026-09-08 R123: user sets real microscopy/SEM first for next-model research. Concrete full-2D iterative design and read-only real panel verified; no model implemented/trained or promoted. Formal GMF baseline remains unchanged.",
+    "2026-09-08 R124: implement and verify untrained2D prototype, actual GPU/backward/tile/CLI and real/SEM half-readout connection. Zero optimizer updates, no calibration/efficacy/promotion or confirmation-image verdict; preserve old R118-R123 evidence.",
+    "2026-09-08 R125: complete64-scene data-admission repair and six64-update exploratory runs.384actual updates and12real evaluations verified. Data fits the implemented simulator but real coverage/benefit remains insufficient; no model adopted or larger training launched. All initial failures and old evidence preserved."
   ],
   "decision_notes": [
     "R44 Universal Boundary Motion Fidelity (2026-05-09): R44A-R44H Step B complete; Step B preserves motion but worsens target shape, so do not proceed to multi-teacher full-model KD."

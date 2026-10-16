@@ -1,0 +1,73 @@
+{
+  "source_package": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/data/package",
+  "source_manifest_sha256": "f10eb706d215b021856bd9ebe4589508d796b5bbb4ddc4b7ee1ee9a5667993ef",
+  "seed": 1143001,
+  "canvas_size": 256,
+  "label_supersample_factor": 8,
+  "target_train_scenes": 5000,
+  "target_validation_scenes": 512,
+  "reuse_existing_arrays_read_only": true,
+  "regenerate_existing_targets": false,
+  "real_pixels_in_training": false,
+  "supplemental_families": [
+    "close_pair",
+    "narrow_gap",
+    "micro_notch",
+    "rough_fourier",
+    "ultra_thin_ring"
+  ],
+  "batch_composition": {
+    "batch_16": {
+      "general_geometry": 6,
+      "hard_geometry": 4,
+      "textured_multiscale": 2,
+      "dense_array": 1,
+      "flat_negative": 1,
+      "clear_identity": 2
+    },
+    "batch_12": {
+      "general_geometry": 4,
+      "hard_geometry": 3,
+      "textured_multiscale": 2,
+      "dense_array": 1,
+      "flat_negative": 1,
+      "clear_identity": 1
+    }
+  },
+  "general_families": ["circle", "ellipse", "polygon", "rectangle", "lobed", "irregular_blob"],
+  "hard_families": ["ring", "crescent", "thin_bar", "thin_neck", "close_pair", "narrow_gap", "micro_notch", "rough_fourier", "ultra_thin_ring"],
+  "dense_families": ["dense_array"],
+  "degradation_families": [
+    "standard",
+    "low_contrast",
+    "uneven_illumination",
+    "asymmetric_blur_halo",
+    "boundary_fade",
+    "mixed_hard",
+    "colored_noise",
+    "band_limited_noise",
+    "fixed_pattern",
+    "five_x_dense",
+    "nonuniform_psf"
+  ],
+  "degradation": {
+    "blur_sigma_px": [0.65, 5.5],
+    "anisotropy": [0.55, 1.6],
+    "motion_blur_lengths": [3, 5, 7, 9, 13, 17],
+    "motion_blur_probability": 0.35,
+    "ghost_probability": 0.2,
+    "ghost_mix": [0.02, 0.12],
+    "halo_probability": 0.28,
+    "halo_strength": [0.12, 0.65],
+    "white_noise_sigma": [0.0015, 0.035],
+    "colored_noise_sigma": [0.001, 0.025],
+    "band_limited_noise_sigma": [0.001, 0.02],
+    "row_noise_sigma": [0.0, 0.0045],
+    "column_noise_sigma": [0.0, 0.003],
+    "fixed_pattern_amplitude": [0.0, 0.018],
+    "contrast_scale": [0.42, 0.92],
+    "illumination_amplitude": [0.0, 0.16],
+    "boundary_fade_strength": [0.25, 0.85],
+    "nonuniform_psf_sigma_delta": [0.3, 2.0]
+  }
+}
