@@ -1,0 +1,127 @@
+{
+  "kind": "declared_source_references_not_a_claim_that_every_model_completed_validation",
+  "experiments": [
+    {
+      "experiment": "R130_Clean",
+      "source_record": "Experiments/R130_Clean/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R137_WeakPSFFeature",
+      "source_record": "Experiments/R137_WeakPSFFeature/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R138_V42PSF8",
+      "source_record": "Experiments/R138_V42PSF8/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R139_UNetRecurrentPrototype",
+      "source_record": "Experiments/R139_UNetRecurrentPrototype/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R140v2_StableUNet",
+      "source_record": "Experiments/R140v2_StableUNet/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R140_StableUNet",
+      "source_record": "Experiments/R140_StableUNet/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R141_PSF25_AdaptiveTop4_Standalone",
+      "source_record": "Experiments/R141_PSF25_AdaptiveTop4_Standalone/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R142_PSF100_AdaptiveTop8_Standalone",
+      "source_record": "Experiments/R142_PSF100_AdaptiveTop8_Standalone/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R143_PSF25_MatchedPairs",
+      "source_record": "Experiments/R143_PSF25_MatchedPairs/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R144_Center9PSF25_MatchedPairs",
+      "source_record": "Experiments/R144_Center9PSF25_MatchedPairs/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R145_Center9PSF25_CorrectedPairs",
+      "source_record": "Experiments/R145_Center9PSF25_CorrectedPairs/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R146_SEMCoreHaloPSF25_MatchedPairs",
+      "source_record": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R147_FullResPSFConsistency",
+      "source_record": "Experiments/R147_FullResPSFConsistency/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R148v2_HybridContextNativePSF",
+      "source_record": "Experiments/R148v2_HybridContextNativePSF/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R148_MeasurementStableNativePSF",
+      "source_record": "Experiments/R148_MeasurementStableNativePSF/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R150_MatchedGeometryMeanPSF",
+      "source_record": "Experiments/R150_MatchedGeometryMeanPSF/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R152_R148v2_SafeAdaptivePSF",
+      "source_record": "Experiments/R152_R148v2_SafeAdaptivePSF/evaluation/capture_plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R136_PIRepeatability",
+      "source_record": "Experiments/R136_PIRepeatability/config/plan.json",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R153_MeanExternalBenchmark",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/study.py",
+      "relationship": "indirect: MOSR_SOURCE uses the frozen R152 capture plan",
+      "frames": 930,
+      "runs": 30
+    },
+    {
+      "experiment": "R151_R148v2_AdaptivePSFFusion",
+      "source_record": "Experiments/R151_R148v2_AdaptivePSFFusion/scripts/smoke_real_frame.py",
+      "relationship": "one native frame smoke test from this acquisition, not full930 validation",
+      "frames": 1,
+      "runs": 1
+    }
+  ]
+}

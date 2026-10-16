@@ -24,3 +24,6 @@
 *.pt binary
 *.pth.tar binary
 *.ckpt binary
+
+# Original acquisition metadata has historical file fingerprints. Preserve its bytes.
+/Shared_Sources/** -text
