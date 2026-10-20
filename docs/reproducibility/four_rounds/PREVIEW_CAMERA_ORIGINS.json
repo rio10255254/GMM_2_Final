@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "all_four_previews_are_exact_unmodified_camera_image_crops": true,
+  "all_16_preview_files_match_original_camera_crops": true,
+  "new_missing_source_recovered": "2026-06-18 original camera frame was absent from previous source/assets catalogs",
+  "previews": [
+    {
+      "preview_name": "5x_dense_raw.bmp",
+      "original_camera_source": "20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0000.bmp",
+      "original_camera_sha256": "bef753f80e26a2f3e09db6cd590250d7f8ee42b53da34f9177c3ed759c1a1ed6",
+      "source_shape_hw": [
+        1536,
+        2048
+      ],
+      "crop_xywh": [
+        1280,
+        160,
+        512,
+        512
+      ],
+      "all_four_rounds_preview_paths": [
+        "Experiments/R94_EvidenceConditionalScratch/data/live_validation/5x_dense_raw.bmp",
+        "Experiments/R95_CounterfactualGateRepairScratch/data/live_validation/5x_dense_raw.bmp",
+        "Experiments/R97_DirectCausalPhaseScratch/data/live_validation/5x_dense_raw.bmp",
+        "Experiments/R98_AggressiveTextureScratch/data/live_validation/5x_dense_raw.bmp"
+      ],
+      "crop_pixels_and_BMP_bytes_exact": true,
+      "preview_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "GitHub": {
+        "release": "four-round-preview-origins-20261021",
+        "restore_path": "20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0000.bmp",
+        "asset": "research-four-round-preview-camera-001.zip",
+        "sha256": "bef753f80e26a2f3e09db6cd590250d7f8ee42b53da34f9177c3ed759c1a1ed6",
+        "bytes": 3146806
+      }
+    },
+    {
+      "preview_name": "20x_mixed_raw.bmp",
+      "original_camera_source": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+      "original_camera_sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
+      "source_shape_hw": [
+        1536,
+        2048
+      ],
+      "crop_xywh": [
+        176,
+        496,
+        512,
+        512
+      ],
+      "all_four_rounds_preview_paths": [
+        "Experiments/R94_EvidenceConditionalScratch/data/live_validation/20x_mixed_raw.bmp",
+        "Experiments/R95_CounterfactualGateRepairScratch/data/live_validation/20x_mixed_raw.bmp",
+        "Experiments/R97_DirectCausalPhaseScratch/data/live_validation/20x_mixed_raw.bmp",
+        "Experiments/R98_AggressiveTextureScratch/data/live_validation/20x_mixed_raw.bmp"
+      ],
+      "crop_pixels_and_BMP_bytes_exact": true,
+      "preview_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "GitHub": {
+        "release": "four-round-preview-origins-20261021",
+        "restore_path": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+        "asset": "research-four-round-preview-camera-001.zip",
+        "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
+        "bytes": 3146806
+      }
+    },
+    {
+      "preview_name": "50x_array_raw.bmp",
+      "original_camera_source": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "original_camera_sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
+      "source_shape_hw": [
+        1536,
+        2048
+      ],
+      "crop_xywh": [
+        1088,
+        112,
+        512,
+        512
+      ],
+      "all_four_rounds_preview_paths": [
+        "Experiments/R94_EvidenceConditionalScratch/data/live_validation/50x_array_raw.bmp",
+        "Experiments/R95_CounterfactualGateRepairScratch/data/live_validation/50x_array_raw.bmp",
+        "Experiments/R97_DirectCausalPhaseScratch/data/live_validation/50x_array_raw.bmp",
+        "Experiments/R98_AggressiveTextureScratch/data/live_validation/50x_array_raw.bmp"
+      ],
+      "crop_pixels_and_BMP_bytes_exact": true,
+      "preview_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "GitHub": {
+        "release": "four-round-preview-origins-20261021",
+        "restore_path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+        "asset": "research-four-round-preview-camera-001.zip",
+        "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
+        "bytes": 3146806
+      }
+    },
+    {
+      "preview_name": "pillar_center9_50x_raw.bmp",
+      "original_camera_source": "Thesis_MOSR_Evidence/20260618_100MG/Image__2026-06-18__17-10-31.bmp",
+      "original_camera_sha256": "b909a8827f2292a9d8981f995f86e3cb59787ef619d27bb3ef36cf6bc812010f",
+      "source_shape_hw": [
+        1536,
+        2048
+      ],
+      "crop_xywh": [
+        713,
+        628,
+        232,
+        232
+      ],
+      "all_four_rounds_preview_paths": [
+        "Experiments/R94_EvidenceConditionalScratch/data/live_validation/pillar_center9_50x_raw.bmp",
+        "Experiments/R95_CounterfactualGateRepairScratch/data/live_validation/pillar_center9_50x_raw.bmp",
+        "Experiments/R97_DirectCausalPhaseScratch/data/live_validation/pillar_center9_50x_raw.bmp",
+        "Experiments/R98_AggressiveTextureScratch/data/live_validation/pillar_center9_50x_raw.bmp"
+      ],
+      "crop_pixels_and_BMP_bytes_exact": true,
+      "preview_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "GitHub": {
+        "release": "four-round-preview-origins-20261021",
+        "restore_path": "Thesis_MOSR_Evidence/20260618_100MG/Image__2026-06-18__17-10-31.bmp",
+        "asset": "research-four-round-preview-camera-001.zip",
+        "sha256": "b909a8827f2292a9d8981f995f86e3cb59787ef619d27bb3ef36cf6bc812010f",
+        "bytes": 3146806
+      },
+      "historical_crop_program": "Experiments/R75v2_R61ArchitectureScratchGeneralization/tools/prepare_live_validation.py"
+    }
+  ]
+}
