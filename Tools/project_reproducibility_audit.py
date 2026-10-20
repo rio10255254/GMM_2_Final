@@ -100,7 +100,9 @@ def known_manifests(root,archive):
     old=archive/'reproducibility/20261016_github_reproduction'
     prior=archive/'reproducibility/20261020_github_reproduction'
     four=archive/'reproducibility/20261021_four_round_github_reproduction'
-    return [(root/'docs/reproducibility/REPOSITORY_FILES.json.gz','research-preservation-20261021'),
+    repository_manifest=root/'docs/reproducibility/REPOSITORY_FILES.json.gz'
+    repository_release=read_json(repository_manifest).get('fixed_release','research-preservation-20261021')
+    return [(repository_manifest,repository_release),
       (old/'training_source_kit_bundle/RESEARCH_ASSETS.json.gz','research-training-kits-20261016'),
       (old/'shared_source_bundle_v2/RESEARCH_ASSETS.json.gz','research-shared-sources-20261016'),
       (old/'results_models_bundle/RESTORE_MANIFEST_20261016.json.gz','research-results-models-20261016'),
