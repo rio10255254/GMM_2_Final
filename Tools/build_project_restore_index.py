@@ -84,14 +84,15 @@ def main():
             large_package_sources[key]=package
     canonical={};captured=0;missing=[];excluded=[]
     def insert(row,path=None,replace=False):
-        relative=safe_relative(path or row['path']).as_posix();key=relative.casefold();value={'path':relative,'sha256':row['sha256'],'bytes':row['bytes'],'scope':row.get('scope','research'),'role':row.get('role',row.get('kind','research'))}
+        relative=safe_relative(path or row['path']).as_posix();key=relative.casefold();value={'path':relative,'sha256':row['sha256'],'bytes':row['bytes'],'scope':row.get('scope','research'),'role':row.get('role',row.get('kind','research')),
+          'source_origin':row.get('origin',row.get('source_origin','previous_GitHub_publication'))}
         old=canonical.get(key)
         if old and old['sha256']!=value['sha256'] and not replace:raise ValueError('Unresolved restore path versions: '+relative)
         canonical[key]=value
     for row in base_files:
         key=row['path'].casefold()
         if key in repo_current and repo_current[key]!=row['sha256']:
-            insert(row,'Historical_Publications/preserved_before_current_source/'+row['path']);continue
+            insert(row,'Historical_Publications/'+row['sha256'][:16]+'/'+row['path']);continue
         if key in canonical and canonical[key]['sha256']!=row['sha256']:
             insert(row,'Historical_Publications/'+row['sha256'][:12]+'/'+row['path'])
         else:insert(row)
@@ -117,12 +118,15 @@ def main():
                 # source catalog; earlier task states remain in Git history.
                 if key in repo_current:continue
             old=canonical.get(key)
-            if row['origin']!='D_worktree' and old and old['sha256']!=row['sha256']:
+            is_current=row['origin'] in {'D_worktree','registered_H_reference'}
+            if not is_current and old and old['sha256']!=row['sha256']:
                 relative='Historical_Archive/'+Path(row['source']).relative_to(archive).as_posix();key=relative.casefold()
-            elif row['origin']=='D_worktree' and old and old['sha256']!=row['sha256']:
+            elif is_current and old and old['sha256']!=row['sha256']:
                 if key in repo_current:raise ValueError('Current Git source differs from a non-owned captured local file: '+relative)
-                insert(old,'Historical_Publications/'+old['sha256'][:12]+'/'+old['path'])
-            insert({**row,'path':relative},replace=row['origin']=='D_worktree')
+                if old.get('source_origin') in {'D_worktree','registered_H_reference'}:
+                    raise ValueError('Two captured current source locations disagree: '+relative)
+                insert(old,'Historical_Publications/'+old['sha256'][:16]+'/'+old['path'])
+            insert({**row,'path':relative},replace=is_current)
             if row['origin']!='D_worktree':
                 physical=Path(row['source'])
                 for projection in projections:
@@ -132,8 +136,16 @@ def main():
                     alias=(Path(projection['project_prefix'])/tail).as_posix();current=canonical.get(alias.casefold())
                     # A later current report/config wins; the historical bytes
                     # stay preserved under their archived version path above.
-                    if current is None or current['sha256']==row['sha256']:
-                        insert({**row,'path':alias,'scope':projection['scope']})
+                    authoritative=projection.get('projection_role')=='current_registered_H_reference'
+                    if current and current['sha256']!=row['sha256'] and authoritative:
+                        if current.get('source_origin') in {'D_worktree','registered_H_reference'}:
+                            raise ValueError('A registered current archive alias conflicts with a current source: '+alias)
+                        if alias.casefold() in repo_current:
+                            raise ValueError('A registered current archive alias differs from the fixed Git source: '+alias)
+                        insert(current,'Historical_Publications/'+current['sha256'][:16]+'/'+current['path'])
+                    if current is None or current['sha256']==row['sha256'] or authoritative:
+                        insert({**row,'path':alias,'scope':projection['scope'],
+                          'origin':'registered_H_reference' if authoritative else row['origin']},replace=authoritative)
     a.output.mkdir(parents=True);groups=defaultdict(list);repo_aliases=[];large_packages=[]
     for row in canonical.values():
         provider=providers.get((row['sha256'],row['bytes']))

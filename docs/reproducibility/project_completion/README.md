@@ -56,3 +56,16 @@
 ## 第二批：原始紀錄與論文版本
 
 [182,471個原位置的研究脈絡補件](CONTEXT_RECORDS.md)已從GitHub取回並逐份相同，包含原始訓練標記、執行與失敗紀錄、原程式、舊報告和論文草稿。不同版本保留原身分；不把草稿當成目前論文採用稿。其他大型來源與模型仍在繼續核對。
+
+## 完整程式取回、歷史與原位置
+
+已另建一份實際GitHub全新程式副本，當次22,218份、6,679,152,130 bytes逐份符合固定清單；讀取舊研究磁碟被禁止。[當次取回證據](SOURCE_CATALOG_RETRIEVAL_VERIFIED.json)。後續新增說明與工具仍須接續核對，這也不是全部大型資料已完成的證據。
+
+主專案原79個有名稱分支以外，另找出2026-03-24暫存的兩份文件版本；已保留成[歷史閱讀分支](https://github.com/rio10255254/GMM_2_Final/tree/codex/history-20261021/stash--temp-domain-doc-reflow)，並實際取回兩份原文相同，原暫存狀態沒改動。四個正式第三方來源各固定原版本，沒有本機獨有提交或修改；版本與原授權隨來源保存。[文件暫存證據](GITHUB_STASH_HISTORY_VERIFIED.json)／[第三方版本核對](NESTED_THIRD_PARTY_HISTORY_AUDIT.json)。
+
+原專案33個共用資料位置包含11個專案內引用與22個H槽目標；[原位置對照](REGISTERED_DIRECTORY_REFERENCES.json)與恢復規劃一起保存。現在工作區的移出結果、較舊歷史與一般程式來源分開處理，新舊內容不能悄悄覆蓋同一路徑。完整資料的實際恢復仍逐批驗證。
+
+## 方法與判讀補充
+
+- [Round12–15的模型選擇](../legacy_multiscale/README.md)：方法組初排和固定模型再審分開，Round15同分保留原排序。207個分數與五次原選擇已從GitHub取回重算；早期Round13另外9個總分的舊版公式未找回，原值與限制保留。
+- [光學校正來源審查](../../../PSF_Fitting/docs/PSF_GITHUB_PRESERVATION_AUDIT_20261021.md)：正式擬合、早期L0、後來三次拍攝比較與Python流程預覽分開；另依原始來源位置排列100份PSF，保留原儲存版圖。小包的GitHub取回驗證由[光學入口](../optical_calibration/README.md)單獨記錄。

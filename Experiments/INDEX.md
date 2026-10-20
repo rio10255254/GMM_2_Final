@@ -9,6 +9,8 @@ Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重�
 
 完整數字、模型身分和外部GMF結果以 `ESTIMATOR_POLICY.json` 與各輪正式報告為準。[逐輪保存判讀](../docs/reproducibility/EXPERIMENTS.md)說明方法、來源和影像選擇；[原代表圖冊](../RECON_GALLERY.md)保留歷史順序。
 
+保存續查另核對全新GitHub程式副本22218檔，補回兩份原文件暫存歷史及33個共用位置對照。[早期Round12–15](../docs/reproducibility/legacy_multiscale/README.md)的207分數與五次原選擇已取回重算，9個早期公式缺件明列；R88沿用未建資料／啟動中的舊文字已依原87輪停止紀錄修正並保存舊文。完整大型資料保存仍在進行，沒有重跑歷史訓練或升級模型。
+
 **位移波動定義：**固定步數位置比較不同重拍趟次，與單趟走完30步的波動不同。[單趟完整重算與16方法比較](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md)保留原定義及逐趟結果。
 
 ## Active（formal baseline + approved alternates）
@@ -55,7 +57,7 @@ RAW／R152論文與網頁對話交接入口：[完整設計、訓練、驗證、
 | R119 訓練位置分工診斷 | [已知答案與固定模型診斷](R119_SequenceGeometryValidation/reports/R119_TRAINING_POSITION_DIAGNOSIS.md) | 現有要求會罰最終影像膨脹，但無法區分相同輸出的位移／細節補償。固定 E42 關閉位置後，合成影像誤差在多數抽查場景反而增加；真實操作量則一致向外。原因範圍縮小，尚未證明單一訓練根因；無新訓練 |
 | R119 跨曝光位置修正診斷 | [完整診斷結果](R119_SequenceGeometryValidation/reports/R119_CROSS_EXPOSURE_POSITION_AUDIT.md) | 固定 E42、12 曝光 × 36 柱；只關閉位置修正後 431/432 次輪廓改善、36/36 顆跨曝光中位數改善，但 282/432 次仍不如 Raw。位置路徑造成膨脹的證據跨曝光成立；細節保真與修改後位移未證實。舊證據不變，無新訓練或升級 |
 | R118 / R119 Physical Coordinate Repair | [因果剖析與更正](R119_SequenceGeometryValidation/reports/R119_CAUSAL_AUDIT.md); `R118_PhysicalCoordinateRepairScratch/`; `R119_SequenceGeometryValidation/` | R119 B E42 訓練完成，但「忠實完成 P00–P12」已撤回：固定光學序列未接入訓練、對照與量測有混淆。保留實測 ACM/LSC 能力；單曝光真實 SEM 拆解指向邊界位置修正造成膨脹，並非證明必須犧牲細節。研究候選，不升級 |
-| R88 Measurement Faithful Scratch | `R88_MeasurementFaithfulScratch/` | 設計與門檻已鎖定，尚未建立資料或訓練。預計以 5,120 個帶紋理程式觀察，從零同時約束邊界、ACM、正負次像素位移、系統偏差、真實紋理安全與分塊一致性；正式基準不變 |
+| R88 Measurement Faithful Scratch | `R88_MeasurementFaithfulScratch/` | [87輪停止的失敗案例](R88_MeasurementFaithfulScratch/reports/R88_ABORTED_AT_E87.md)：原100輪計畫完成87輪，停止紀錄記最後保存第85輪。真實50倍輸出接近原圖且無驗證輪次通過；不續跑、不作下一輪初值，不改正式基準。已生成5,120正式觀察與384封存場景，不再沿用尚未建資料的舊規劃文字 |
 | R87 Tile Native Scratch Generalization | `R87_TileNativeScratchGeneralization/` | 單次 100 輪從零訓練完成；分塊一致性與自身內部 ACM 通過，但 R73 新形狀與 R74 困難顯微明顯退化並產生假孔洞，因此不升級。保留為切片穩定研究模型與 R88 問題證據 |
 | R83 R79 Severe Microscopy Strengthening | `R83_R79SevereMicroscopyStrengthening/` | 已完成但不升級。兩種乾淨微調都未超過 R79；保守整圖輸出在 R74 輪廓改善 23.42%，並通過 384 組保留合成影像、24 顆保留 SEM 與 6/6 真實位移，但 512 切片一致性失敗。因此預設仍為 R79，保守輸出只留作整張影像的受限選項，COMBO 正式 baseline 不變 |
 | R79 R75v3 Dense Microscopy Scratch Generalization | `R79_R75v3_DenseMicroscopyScratchGeneralization/` | 第 23 輪 EMA 是目前研究線的強顯微候選，尚未取代正式 COMBO。R84-R86 已確認任何切片都會改變 R79 結果，因此來源入口與 ONNX 交付已根治為單次完整影像重建；12/12 跨場景逐像素對照通過，最大差 1 階灰階 |

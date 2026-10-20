@@ -4261,7 +4261,8 @@
     "2026-10-20 R93 reproducibility audit: actual formal seed930041,1250scenes/5000observations,64planned/60stopped,balanced internal epoch48. Original template identity corrected with old text retained. All saved R93 model/visual history and a36KB original-result replay supplement are published separately; shared R93/R94/R95/R97/R98 input recovery is tested without retraining. Formal/alternate estimator values unchanged.",
     "2026-10-21 R94/R95/R97/R98 complete-record preservation: all 1092 original locations,107 saved model files and663 images restored from GitHub;32 native CPU model/input outputs exact,119 historical summary values replayed,15004 shared-bank files and36 native prepared samples verified. Four full camera originals,including the previously missing June18 capture,were recovered;all16 preview crops reproduce exact BMP bytes. R95 rollback/optimizer reset,R97 separate incidents,R98 incomplete external-suite scope and earlier source revision gaps preserved. No D cleanup, GPU work or estimator promotion.",
     "2026-10-21 whole-project preservation audit in progress: all79 named local branch heads are available in GitHub history after preserving10 local-only branches;18 unique historical source/design blobs downloaded from GitHub and matched. Full D research metadata and registered H histories are being checked against published content. First28 training-run supplement and remaining project content are not yet claimed complete. No D cleanup, GPU work or scientific model changes.",
-    "2026-10-21 early training supplement:851 original locations,367 saved-state files,460 images and24 actual split-index files restored from GitHub. Twelve saved872/46 splits checked; six fixed R33p95/COMBO/R39strong E5/E100 native CPU outputs match original CPU references. A405MB self-contained replay kit was actually downloaded/executed. This verifies preservation/portability, not re-selection, retraining or full-project completion."
+    "2026-10-21 early training supplement:851 original locations,367 saved-state files,460 images and24 actual split-index files restored from GitHub. Twelve saved872/46 splits checked; six fixed R33p95/COMBO/R39strong E5/E100 native CPU outputs match original CPU references. A405MB self-contained replay kit was actually downloaded/executed. This verifies preservation/portability, not re-selection, retraining or full-project completion.",
+    "2026-10-21 preservation context follow-up: full22218-file GitHub source clone checked; original saved-document state adds2 downloaded blobs;33 directory references mapped. Legacy207scores/5choices replayed with9earlier R13 formula gaps explicit. R88 stale start-only README/index reconciled to original87-epoch failure; old text preserved, no scientific verdict changed. Optical45-fit/100-position local saved-result replay passes; GitHub optical-kit replay stillpending. Whole-project large-content verification remainsinprogress; no D cleanup or GPU work."
   ],
   "artifact_index": {
     "R152_RAW_complete_research_record_20261002": {
@@ -4565,7 +4566,39 @@
         "svg_documents_checked": 221,
         "retraining_repeated": false,
         "original_scientific_verdicts_unchanged": true
-      }
+      },
+      "source_clone_full_catalog_verified": {
+        "commit": "5d1f79bf76b61cbd362ef9fb4df33235ca9898f9",
+        "files": 22218,
+        "bytes": 6679152130,
+        "receipt": "docs/reproducibility/project_completion/SOURCE_CATALOG_RETRIEVAL_VERIFIED.json"
+      },
+      "additional_saved_document_history": {
+        "unique_original_blobs": 2,
+        "original_stash_unchanged": true,
+        "receipt": "docs/reproducibility/project_completion/GITHUB_STASH_HISTORY_VERIFIED.json"
+      },
+      "registered_directory_references": {
+        "total": 33,
+        "inside_project": 11,
+        "archive_targets": 22
+      },
+      "legacy_selection_replay": {
+        "numbers_recomputed": 207,
+        "choices_reconstructed": 5,
+        "earlier_R13_total_formula_gaps_preserved": 9,
+        "guide": "docs/reproducibility/legacy_multiscale/README.md"
+      },
+      "optical_saved_result_replay": {
+        "status": "local_verified_GitHub_retrieval_pending",
+        "original_inputs_and_code": 102,
+        "original_L1_numeric_fields": 2016,
+        "original_reader_CPU_summary_fields": 48,
+        "PSF_optimization_repeated": false,
+        "GPU_used": false,
+        "guide": "docs/reproducibility/optical_calibration/README.md"
+      },
+      "R88_reading_status_reconciled": "unchanged canonical abort87/100; last saved85; not continued or promoted"
     }
   },
   "audit_trail": [
@@ -4578,7 +4611,8 @@
     "2026-10-20 R93 reproducibility audit: actual formal seed930041,1250scenes/5000observations,64planned/60stopped,balanced internal epoch48. Original template identity corrected with old text retained. All saved R93 model/visual history and a36KB original-result replay supplement are published separately; shared R93/R94/R95/R97/R98 input recovery is tested without retraining. Formal/alternate estimator values unchanged.",
     "2026-10-21 R94/R95/R97/R98 complete-record preservation: all 1092 original locations,107 saved model files and663 images restored from GitHub;32 native CPU model/input outputs exact,119 historical summary values replayed,15004 shared-bank files and36 native prepared samples verified. Four full camera originals,including the previously missing June18 capture,were recovered;all16 preview crops reproduce exact BMP bytes. R95 rollback/optimizer reset,R97 separate incidents,R98 incomplete external-suite scope and earlier source revision gaps preserved. No D cleanup, GPU work or estimator promotion.",
     "2026-10-21 whole-project preservation audit in progress: all79 named local branch heads are available in GitHub history after preserving10 local-only branches;18 unique historical source/design blobs downloaded from GitHub and matched. Full D research metadata and registered H histories are being checked against published content. First28 training-run supplement and remaining project content are not yet claimed complete. No D cleanup, GPU work or scientific model changes.",
-    "2026-10-21 early training supplement:851 original locations,367 saved-state files,460 images and24 actual split-index files restored from GitHub. Twelve saved872/46 splits checked; six fixed R33p95/COMBO/R39strong E5/E100 native CPU outputs match original CPU references. A405MB self-contained replay kit was actually downloaded/executed. This verifies preservation/portability, not re-selection, retraining or full-project completion."
+    "2026-10-21 early training supplement:851 original locations,367 saved-state files,460 images and24 actual split-index files restored from GitHub. Twelve saved872/46 splits checked; six fixed R33p95/COMBO/R39strong E5/E100 native CPU outputs match original CPU references. A405MB self-contained replay kit was actually downloaded/executed. This verifies preservation/portability, not re-selection, retraining or full-project completion.",
+    "2026-10-21 preservation context follow-up: full22218-file GitHub source clone checked; original saved-document state adds2 downloaded blobs;33 directory references mapped. Legacy207scores/5choices replayed with9earlier R13 formula gaps explicit. R88 stale start-only README/index reconciled to original87-epoch failure; old text preserved, no scientific verdict changed. Optical45-fit/100-position local saved-result replay passes; GitHub optical-kit replay stillpending. Whole-project large-content verification remainsinprogress; no D cleanup or GPU work."
   ],
   "decision_notes": [
     "R44 Universal Boundary Motion Fidelity (2026-05-09): R44A-R44H Step B complete; Step B preserves motion but worsens target shape, so do not proceed to multi-teacher full-model KD."

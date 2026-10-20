@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "actual_original_position_count": 100,
+  "all_original_kernel_values_checked": 1020100,
+  "original_storage_shape": [
+    101,
+    101,
+    1,
+    100
+  ],
+  "recorded_physical_shape": [
+    101,
+    101,
+    10,
+    10
+  ],
+  "invalid_source_maps_rejected": [
+    "duplicate_recorded_position",
+    "CSV_and_MAT_disagree"
+  ],
+  "original_source_arrays_modified": false
+}
