@@ -130,22 +130,24 @@
     {
       "id": "r87_active_training",
       "path": "Experiments/R87_TileNativeScratchGeneralization",
-      "tier": "active",
-      "state": "D_arrays_preserved_H_and_GitHub_verified_cleanup_execution_blocked_20261016",
+      "tier": "archive",
+      "state": "D_arrays_removed_native_once_H_working_paths_verified_20261020",
       "size_gib_snapshot": 11.765,
       "action": "protect",
       "priority": 0,
-      "keep": "Keep all D originals and formal evidence. Fresh three-copy verification passed for5152 arrays, original reader from independent H working view matched, sources/models/results published to GitHub. Native scoped recursive removal was rejected before process creation on2026-10-16;0 D files removed and0 bytes reclaimed.",
-      "blocked_by": [
-        "execution_tool_policy_requires_formal_approval"
-      ],
+      "keep": "Retain R87 models, scientific reports, configuration and original full H archive. On2026-10-20, all5152 array files matched D/full H archive/independent H working view; one native removal succeeded with never/danger-full-access and no manual approval. Original D lookup paths now point only to the verified H working arrays. Both formal and smoke native CPU readers matched at first/middle/last, and438 retained files passed content checks before the archive pointer update. Active H R152 v8, thesis and original camera sources were excluded.",
+      "blocked_by": [],
       "archive_location": "H:\\GMM_2_Final_Archive\\experiments\\R87_TileNativeScratchGeneralization\\20260926_full_history",
       "archive_manifest": "H:\\GMM_2_Final_Archive\\experiments\\R87_TileNativeScratchGeneralization\\20260926_full_history\\source_manifest.csv",
       "verified_snapshot_files": 5588,
       "verified_snapshot_bytes": 12632596515,
-      "d_cleanup_reclaimed_bytes": 0,
+      "d_cleanup_reclaimed_bytes": 12176003072,
+      "d_cleanup_removed_files": 5152,
+      "d_cleanup_logical_file_bytes": 12155752448,
+      "d_cleanup_reclaimed_measurement": "Whole-drive free-space increase during the operation; distinct from logical file bytes.",
       "independent_working_view": "H:/GMM_2_Final_Archive/compatibility_views/R87_TileNativeScratchGeneralization/20261016/data",
-      "latest_closeout": "docs/operations/GITHUB_PRESERVATION_CLOSEOUT_20261016.md"
+      "latest_closeout": "Experiments/R87_TileNativeScratchGeneralization/ARCHIVE_POINTER_R87_20260926.md",
+      "cleanup_receipt": "H:/GMM_2_Final_Archive/operation_logs/R87_Cleanup_Trial_20261020/post_cleanup_verified.json"
     },
     {
       "id": "r88_measurement_faithful_scratch",

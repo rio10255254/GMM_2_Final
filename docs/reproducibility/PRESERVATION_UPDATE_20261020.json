@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "update_date": "2026-10-20",
+  "prior_fixed_release": "research-preservation-20261016",
+  "new_fixed_release": "research-preservation-20261020",
+  "new_record_release": "r93-complete-record-20261020",
+  "scope": [
+    "R93_RecoverableDetailSeparatedScratch",
+    "R94_EvidenceConditionalScratch",
+    "R95_CounterfactualGateRepairScratch",
+    "R97_DirectCausalPhaseScratch",
+    "R98_AggressiveTextureScratch"
+  ],
+  "canonical_report": "Experiments/R93_RecoverableDetailSeparatedScratch/reports/R93_AUDIT.md",
+  "guide": "docs/reproducibility/r93_shared/README.md",
+  "verification": "docs/reproducibility/r93_shared/VERIFICATION_20261020.json",
+  "source_code_algorithms_changed": false,
+  "R93_template_identity_corrected": true,
+  "historical_original_texts_preserved": true,
+  "new_record_original_paths": 600,
+  "fixed_shared_files_downloaded_and_verified": 15004,
+  "native_prepared_samples_checked": 45,
+  "reconstructed_images_bit_exact": 8,
+  "small_result_replay_bytes": 36022,
+  "full_historical_training_repeated": false,
+  "formal_baseline_changed": false,
+  "new_D_research_files_deleted_this_update": 0,
+  "prior_R87_cleanup_is_separate": true,
+  "original_user_branch_and_index_must_be_preserved": true
+}

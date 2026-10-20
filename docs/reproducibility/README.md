@@ -2,6 +2,8 @@
 
 本次逐輪整理177個主專案、Lab系統實驗或早期歷史批次。目標是保留「當時想解決什麼、實際做了什麼、用過哪些來源、全部結果與限制」，並讓必要來源可以從GitHub取回。
 
+2026-10-20 續整重點是 GitHub 能否真正取回使用。已補足 R93 的第48輪綜合候選與完整既存模型／影像歷程，另提供約36KB的原結果重算包；並核對R93、R94、R95、R97、R98的共用資料鏈。[新的重做入口](r93_shared/README.md)／[R93原圖與副作用](r93_shared/GALLERY.md)。
+
 [逐輪研究入口](EXPERIMENTS.md)按實驗說明判讀、必要來源與選圖理由；各輪原始正式報告仍是科學結論的依據。整理不改變COMBO正式基準，也不把研究模型自動升級。
 
 ## 來源與附件
@@ -10,6 +12,7 @@
 |---|---|---|
 | 9月3日30步、30趟原始拍攝 | 930張相機BMP與30份原始平台位置紀錄，多輪實驗共同使用，不能由模型或合成資料取代 | [已發布原始資料](https://github.com/rio10255254/GMM_2_Final/releases/tag/shared-pi-20260903-v1) |
 | R61／R152固定來源 | R61早期繼承的影像與幾何標記不能只靠重新推算取代；R152保留實際PSF與原模型 | [固定來源](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016) |
+| R93完整歷程與簡便重算 | 補上綜合候選、全部保存的模型檔和245張原results圖；不下載大型資料也能由約36KB包重算原選擇與數字 | [R93完整紀錄](https://github.com/rio10255254/GMM_2_Final/releases/tag/r93-complete-record-20261020) |
 | 共用實拍與實體參照 | Step完整788張、多倍率連拍、六組外部照片、18張P/V SEM、原始工作表與對應光學圖 | [共用來源](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-shared-sources-20261016) |
 | 完整逐輪結果與固定模型 | 逐筆結果、圓心／邊界、訓練紀錄、失敗與選模依據，包含實際被引用的中途模型 | [結果與模型](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) |
 | 先前已封存的結果與必要補件 | 保留H槽舊版本的身分與完整數值，不覆蓋較新的正式報告 | [歷史結果與補件](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-historical-evidence-20261016) |
@@ -34,7 +37,7 @@
 先取得本次保存分支的程式與說明，再按需要下載附件。倉庫維持私人狀態，需使用具有權限的GitHub帳號。
 
 ```powershell
-git clone -c core.longpaths=true --branch research-preservation-20261016 https://github.com/rio10255254/GMM_2_Final.git
+git clone -c core.longpaths=true --depth 1 --single-branch --branch research-preservation-20261020 https://github.com/rio10255254/GMM_2_Final.git
 cd GMM_2_Final
 python Tools/download_research_assets.py --repo rio10255254/GMM_2_Final --tag research-training-kits-20261016 --output downloads/training-kits
 python Tools/research_asset_bundle.py restore --manifest downloads/training-kits/RESEARCH_ASSETS.json.gz --assets downloads/training-kits --destination . --keep-identical-existing
@@ -59,7 +62,7 @@ python Tools/replay_thesis_results.py --root Shared_Sources/TenMethod_SavedObser
 
 ## D槽清理條件
 
-原始相機資料、論文需要的資料、正式採用與對照模型、正在訓練的資料保持保護。兩批合計54個舊目錄已重新完成D原件、H完整備份與獨立H工作副本比對。R87的原生刪除指令被執行工具的自動審查以`blocked by policy`拒絕，程序沒有啟動；本次D副本未刪、清理回收0 bytes。精確狀態見[收尾紀錄](../operations/GITHUB_PRESERVATION_CLOSEOUT_20261016.md)。
+原始相機資料、論文需要的資料、正式採用與對照模型、正在訓練的資料保持保護。R87已於2026-10-20以前述原模式完成單次清理，原路徑仍可讀取H工作副本；其餘52個20x／5x目錄本輪僅重核，沒有刪除。使用者再次明確指定GitHub為首要目標後，本次續整以補件及GitHub取回重做為主，不把釋放D空間當成果。[R87已完成狀態](../../Experiments/R87_TileNativeScratchGeneralization/ARCHIVE_POINTER_R87_20260926.md)／[10月16日歷史收尾](../operations/GITHUB_PRESERVATION_CLOSEOUT_20261016.md)。
 
 ## 不需要完整資料時重算論文結果
 

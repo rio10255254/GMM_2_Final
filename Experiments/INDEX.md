@@ -315,7 +315,7 @@ R147診斷後的獨立版本：取消縮圖／放大主幹，以全原尺寸多�
 | [R90_ExposureCoherentScratch/](R90_ExposureCoherentScratch/) | 讓同一物體在四種曝光保持相同輪廓 | [來源、結果與限制](../docs/reproducibility/experiments/main__R90_ExposureCoherentScratch.md) |
 | [R91_DetailDecoupledScratch/](R91_DetailDecoupledScratch/) | 分開紋理恢復與輪廓／曝光約束 | [來源、結果與限制](../docs/reproducibility/experiments/main__R91_DetailDecoupledScratch.md) |
 | [R92_PhysicalTransitionBalancedScratch/](R92_PhysicalTransitionBalancedScratch/) | 補足物理邊緣過渡與平衡曝光取樣 | [來源、結果與限制](../docs/reproducibility/experiments/main__R92_PhysicalTransitionBalancedScratch.md) |
-| [R93_RecoverableDetailSeparatedScratch/](R93_RecoverableDetailSeparatedScratch/) | 拆開可恢復細節及清楚輸入保護 | [來源、結果與限制](../docs/reproducibility/experiments/main__R93_RecoverableDetailSeparatedScratch.md) |
+| [R93_RecoverableDetailSeparatedScratch/](R93_RecoverableDetailSeparatedScratch/) | 拆開可恢復細節及清楚輸入保護；64輪計畫、實際60輪停止，綜合候選48 | [來源、結果與限制](../docs/reproducibility/experiments/main__R93_RecoverableDetailSeparatedScratch.md)／[原始身分與GitHub重做審查](R93_RecoverableDetailSeparatedScratch/reports/R93_AUDIT.md) |
 | [R94_EvidenceConditionalScratch/](R94_EvidenceConditionalScratch/) | 按成像順序分工並直接教何時需要修正 | [來源、結果與限制](../docs/reproducibility/experiments/main__R94_EvidenceConditionalScratch.md) |
 | [R95_CounterfactualGateRepairScratch/](R95_CounterfactualGateRepairScratch/) | 修復R94修正閘與訓練動力問題 | [來源、結果與限制](../docs/reproducibility/experiments/main__R95_CounterfactualGateRepairScratch.md) |
 | [R96_Design_Archive/](R96_Design_Archive/) | 保存R96正式設計前的舊方案 | [來源、結果與限制](../docs/reproducibility/experiments/main__R96_Design_Archive.md) |

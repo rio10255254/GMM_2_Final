@@ -1,4 +1,20 @@
-# Round 92 — Physical Transition Balanced Scratch
+# Round 93 — Recoverable Detail Separated Scratch
+
+## Verified identity and recovery entry (2026-10-20)
+
+The frozen data, actual execution design and stopped-run records take precedence over the older design text below. The actual R93 formal bank uses **seed 930041**, **1,250 procedural scenes**, four observations per scene, and **5,000 observations**. Its content identity is `6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5`. It is shared by R94, R95, R97 and R98; it is synthetic training data, not the September 3 camera repeatability acquisition.
+
+The actual formal run was planned for **64 epochs** and stopped by the user after the complete **60th epoch**. The original internal selection over observed epochs 32–60 chose epoch **48** as the balanced candidate; detail was best at 44, identity/motion at 52, and contour/exposure at 60. These are internal procedural results; R93 was not promoted to the COMBO baseline.
+
+The earlier heading “Round 92”, the old seed 920041 in MANIFEST, and the proposed 80-epoch sentence were inherited design text. Their unmodified versions are preserved in [the old README](../../docs/history/R93_README_BEFORE_PROVENANCE_AUDIT_20261020.md) and [the old MANIFEST](../../docs/history/R93_MANIFEST_BEFORE_PROVENANCE_AUDIT_20261020.md).
+
+- [Verified source, original results, image choices and limits](reports/R93_AUDIT.md)
+- [GitHub-only recovery and result replay](../../docs/reproducibility/r93_shared/README.md)
+- [Original image gallery with real and synthetic inputs labeled](../../docs/reproducibility/r93_shared/GALLERY.md)
+
+## Earlier design narrative (preserved historical text)
+
+The following proposal remains as history. Its proposed run length and inherited identity labels do not supersede the frozen dataset or the actual 64-planned/60-stopped execution above.
 
 ## Purpose
 

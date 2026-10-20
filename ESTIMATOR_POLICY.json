@@ -4257,7 +4257,8 @@
     "2026-10-06 14:58 user-requested completed-model scope finished:9 methods,each930 images/8370 readouts/30 validscans,zero failures,144 whole-scan paired intervals,135 matched FP32/batch1 efficiency samples. Independent7-new-method primary metrics and16 primary paired CIs checked; all sources,packet hashes,links,tables,grayscale figures and same-region native images reviewed. Complete paper handoff includes architecture,ordinary training recipes/actual unequal epochs,synthetic/real/SEM/efficiency and update guide. SwinIR preservedpaused atstep256,notcompared,notautomatically resumed; twoofficial backend blocks honest. Automationmosr stopped(PAUSED) afterscope delivery; originalthesis/model/scales/direction/PI untouched.",
     "2026-10-06 user directly authorizes resuming SwinIR after nine-method paper delivery. Verifiedsavedstep256, source/recipe/RNG/optimizer resume signature and frozen backup; maximumtotal8epochs unchanged. Removed active userstop marker with its historical record retained, restored existingqueue, finalwatcher onlyaddsSwinIR15runtime samples and930 native outputs/8370 fixed readouts after training exits. Verifiednine-method archive unchanged; monitoring ACTIVE, nextETA check 2026-10-07T08:10:00+08:00. Originalthesis/MOSR/scale/direction/PI and oldreadouts unchanged; fullten-method benchmark still pending.",
     "2026-10-07 08:00Taipei: SwinIR completed8epochs/4096updates at06:08, selectedEMAepoch8 via syntheticvalidation only; allsource/signature/pausedhistory/test128 andweight identities verified. Matching15runtime samples complete, nativefull1544x2064. All7 eligibleexternal trainings complete; finalwatcher automaticallyprocessingSwinIR930 realframes, 230 succeeded/no failures atcheck. Oldnine-method archive and135efficiency preserved. OnlySw new15samples/930outputs/8370readouts; full10-method benchmark/report still pending. Adaptive nextcheck 2026-10-07T14:15:00+08:00 includesremaining reconstruction measuredspeed, fixedreadout and report preparation plus20min buffer; no duplicatedGPUwork.",
-    "2026-10-07 14:34Taipei: complete10 executable-method scope verified and paper handoffready. Each930/8370/all30validscans,zero failures;150 matchedruntime samples and162 whole-scan intervals. SwinIR8epoch selected8 complete; independent1800 displacement/18metrics/18CI checks maxerrors3.15e-12/2.76e-12nm. Alloldnine metrics/144CI/135runtime unchanged, archive11e5138a preserved. Source/weight/readout/nativeROI/grayscale/link/manifest/ZIP verified; nativeROI2x5 paperlayout reviewed. MOSR stepSD4.273/adjMAE3.598lowest inbatch, contour18.600pointlowest butvsEDSR CIcrosseszero; favorableSwSEM201.159vsMOSR204.281nm retained, RAW169.883bestSEM, EDSR/NAF/Rest shapeadvantages preserved. MOSR1.461s vsSw27.171s,ED/NAFfaster andreservedmemorylower; unequalepochs andsourcepriors explicit. Finalpacketsha 75bb544e4962d0465b2ec66bca78a94b5a440ab10a3490463c543f2c7ca03aa5. Originalthesis/MOSR/RAWreadouts/scale/direction/PI untouched; no baseline promotion. Remove automation afterdelivery; two officialbackend blockers honestly recorded, not counted ascomplete."
+    "2026-10-07 14:34Taipei: complete10 executable-method scope verified and paper handoffready. Each930/8370/all30validscans,zero failures;150 matchedruntime samples and162 whole-scan intervals. SwinIR8epoch selected8 complete; independent1800 displacement/18metrics/18CI checks maxerrors3.15e-12/2.76e-12nm. Alloldnine metrics/144CI/135runtime unchanged, archive11e5138a preserved. Source/weight/readout/nativeROI/grayscale/link/manifest/ZIP verified; nativeROI2x5 paperlayout reviewed. MOSR stepSD4.273/adjMAE3.598lowest inbatch, contour18.600pointlowest butvsEDSR CIcrosseszero; favorableSwSEM201.159vsMOSR204.281nm retained, RAW169.883bestSEM, EDSR/NAF/Rest shapeadvantages preserved. MOSR1.461s vsSw27.171s,ED/NAFfaster andreservedmemorylower; unequalepochs andsourcepriors explicit. Finalpacketsha 75bb544e4962d0465b2ec66bca78a94b5a440ab10a3490463c543f2c7ca03aa5. Originalthesis/MOSR/RAWreadouts/scale/direction/PI untouched; no baseline promotion. Remove automation afterdelivery; two officialbackend blockers honestly recorded, not counted ascomplete.",
+    "2026-10-20 R93 reproducibility audit: actual formal seed930041,1250scenes/5000observations,64planned/60stopped,balanced internal epoch48. Original template identity corrected with old text retained. All saved R93 model/visual history and a36KB original-result replay supplement are published separately; shared R93/R94/R95/R97/R98 input recovery is tested without retraining. Formal/alternate estimator values unchanged."
   ],
   "artifact_index": {
     "R152_RAW_complete_research_record_20261002": {
@@ -4488,6 +4489,24 @@
       "final_archive_sha256": "75bb544e4962d0465b2ec66bca78a94b5a440ab10a3490463c543f2c7ca03aa5",
       "final_delivery_verification": "Experiments/R153_MeanExternalBenchmark/results/full_benchmark/delivery_verified.json",
       "final_delivery_visually_verified": true
+    },
+    "R93_R98_shared_recovery_20261020": {
+      "date": "2026-10-20",
+      "status": "verified_original_records_and_recovery",
+      "role": "provenance_and_GitHub_replay_not_model_promotion",
+      "canonical_report": "Experiments/R93_RecoverableDetailSeparatedScratch/reports/R93_AUDIT.md",
+      "recovery_guide": "docs/reproducibility/r93_shared/README.md",
+      "verification": "docs/reproducibility/r93_shared/VERIFICATION_20261020.json",
+      "formal_data_release": "research-shared-sources-20261016",
+      "record_release": "r93-complete-record-20261020",
+      "formal_seed": 930041,
+      "formal_scenes": 1250,
+      "formal_observations": 5000,
+      "actual_completed_epochs": 60,
+      "planned_epochs": 64,
+      "balanced_internal_candidate_epoch": 48,
+      "baseline_changed": false,
+      "historical_training_repeated": false
     }
   },
   "audit_trail": [
@@ -4496,7 +4515,8 @@
     "2026-09-08 R122: restrict V42 thesis evidence to reused/adapted samples after actual split and source audit. Preserve historical numerical records and R119 protected evidence. No baseline change or new trained model.",
     "2026-09-08 R123: user sets real microscopy/SEM first for next-model research. Concrete full-2D iterative design and read-only real panel verified; no model implemented/trained or promoted. Formal GMF baseline remains unchanged.",
     "2026-09-08 R124: implement and verify untrained2D prototype, actual GPU/backward/tile/CLI and real/SEM half-readout connection. Zero optimizer updates, no calibration/efficacy/promotion or confirmation-image verdict; preserve old R118-R123 evidence.",
-    "2026-09-08 R125: complete64-scene data-admission repair and six64-update exploratory runs.384actual updates and12real evaluations verified. Data fits the implemented simulator but real coverage/benefit remains insufficient; no model adopted or larger training launched. All initial failures and old evidence preserved."
+    "2026-09-08 R125: complete64-scene data-admission repair and six64-update exploratory runs.384actual updates and12real evaluations verified. Data fits the implemented simulator but real coverage/benefit remains insufficient; no model adopted or larger training launched. All initial failures and old evidence preserved.",
+    "2026-10-20 R93 reproducibility audit: actual formal seed930041,1250scenes/5000observations,64planned/60stopped,balanced internal epoch48. Original template identity corrected with old text retained. All saved R93 model/visual history and a36KB original-result replay supplement are published separately; shared R93/R94/R95/R97/R98 input recovery is tested without retraining. Formal/alternate estimator values unchanged."
   ],
   "decision_notes": [
     "R44 Universal Boundary Motion Fidelity (2026-05-09): R44A-R44H Step B complete; Step B preserves motion but worsens target shape, so do not proceed to multi-teacher full-model KD."

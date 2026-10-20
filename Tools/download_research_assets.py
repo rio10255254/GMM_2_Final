@@ -5,6 +5,7 @@ Existing verified files are reused; existing unverified final files are refused.
 """
 import argparse
 import concurrent.futures
+import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -12,6 +13,8 @@ import subprocess
 import time
 
 import requests
+
+from research_recovery import safe_relative
 
 
 def sha(path):
@@ -98,12 +101,41 @@ def download_asset(repo, asset, output, token):
             'asset_id': asset['id'], 'verified_from_github': True}
 
 
+def select_prefix_assets(manifest, release_assets, prefixes):
+    """Select complete ZIP objects by a project path, without downloading other rounds."""
+    if manifest.get('state') != 'complete' or not prefixes:
+        raise ValueError('A complete manifest and explicit source prefix are required')
+    roots = [safe_relative(prefix) for prefix in prefixes]
+    selected = [row for row in manifest['files']
+                if any(safe_relative(row['path']).is_relative_to(root) for root in roots)]
+    if not selected:
+        raise ValueError('No research sources match the requested prefix')
+    specifications = {row['name']: row for row in manifest['assets']}
+    available = {row['name']: row for row in release_assets}
+    if len(specifications) != len(manifest['assets']) or len(available) != len(release_assets):
+        raise ValueError('Duplicate release asset names')
+    result = []
+    for name in sorted({row['asset'] for row in selected}):
+        if Path(name).name != name or ':' in name or name not in specifications or name not in available:
+            raise ValueError('A selected research asset is missing or unsafe')
+        spec = specifications[name]
+        actual = available[name]
+        if actual.get('digest') != 'sha256:' + spec['sha256'] or actual['size'] != spec['bytes']:
+            raise ValueError('Release asset differs from the selected source manifest: ' + name)
+        result.append(actual)
+    return result, len(selected)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo', required=True)
     parser.add_argument('--tag', required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--workers', type=int, default=2)
+    parser.add_argument('--prefix', action='append', default=[],
+                        help='Download only assets needed for this project-relative source path')
+    parser.add_argument('--manifest-name', default='RESEARCH_ASSETS.json.gz',
+                        help='Release manifest used for --prefix selection')
     args = parser.parse_args()
     token = subprocess.check_output(['gh', 'auth', 'token'], text=True).strip()
     identity = json.loads(subprocess.check_output(
@@ -118,11 +150,32 @@ def main():
     if report.exists():
         raise FileExistsError('Verification receipt already exists')
     started = time.perf_counter()
+    assets = release['assets']
+    rows = []
+    selected_files = None
+    if args.prefix:
+        # Validate user input before any source-data request. The small manifest
+        # is itself downloaded from GitHub and matched to the server digest.
+        for prefix in args.prefix:
+            safe_relative(prefix)
+        if Path(args.manifest_name).name != args.manifest_name or ':' in args.manifest_name:
+            raise ValueError('Unsafe manifest filename')
+        matches = [asset for asset in assets if asset['name'] == args.manifest_name]
+        if len(matches) != 1:
+            raise ValueError('The requested source manifest is missing or ambiguous')
+        rows.append(download_asset(args.repo, matches[0], args.output, token))
+        with gzip.open(args.output / args.manifest_name, 'rt', encoding='utf-8') as stream:
+            manifest = json.load(stream)
+        assets, selected_files = select_prefix_assets(manifest, release['assets'], args.prefix)
+        print('SELECTED_SOURCE_FILES', selected_files, 'ASSETS', len(assets), flush=True)
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures = [pool.submit(download_asset, args.repo, asset, args.output, token) for asset in release['assets']]
-        rows = [future.result() for future in futures]
+        futures = [pool.submit(download_asset, args.repo, asset, args.output, token) for asset in assets]
+        rows.extend(future.result() for future in futures)
     report.write_text(json.dumps({'status': 'PASS', 'repo': args.repo, 'tag': args.tag,
                                   'release_was_draft': release['draft'], 'assets': rows,
+                                  'selected_prefixes': args.prefix,
+                                  'selected_source_files': selected_files,
+                                  'selection_manifest': args.manifest_name if args.prefix else None,
                                   'seconds': time.perf_counter() - started},
                                  ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 

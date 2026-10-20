@@ -1,6 +1,6 @@
 # PROJECT STATE / 專案狀態
 
-Last updated: 2026-10-16（GitHub研究保存與核心重做核對完成；D副本清理遭執行工具拒絕）
+Last updated: 2026-10-20（GitHub優先續整：R93完整歷程補件、五輪共用資料與固定模型重做核對；R87前批已完成）
 
 專案控制與整體巡檢請使用 `python Tools/project_control_center.py`。
 機器真相：`ESTIMATOR_POLICY.json`。
@@ -16,18 +16,19 @@ Last updated: 2026-10-16（GitHub研究保存與核心重做核對完成；D副�
 - [完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。
 - R152資料重建與模型獨立包已完成；尺寸偏差、速度代價與SEM參照限制保留。
 ### 共用原始資料與GitHub整理 20261016
+- 20261020續整以GitHub為主：補R93全部既存模型／影像歷程及36KB原數字重算包，修正舊模板的輪次／種子；[五輪共用來源新入口](docs/reproducibility/r93_shared/README.md)。沒有重跑歷史訓練或改科學判決。
 - 30趟實拍原始ZIP已從Google Drive取回；930相機BMP與30原始位置CSV全部符合歷史原檔核對碼，PI／時間／影格／曝光逐筆相同。
 - D槽保護工作副本：[共用原始資料](Shared_Sources/PI_Repeatability_20260903/README.md)；H槽保留原始ZIP及核對紀錄。
 - 先前R139恢復副本與原始ZIP全部相同；正式來源使用直接從原始ZIP取出的檔案。
 - 177個實驗或歷史批次的保存判讀已建立；[逐輪入口](docs/reproducibility/EXPERIMENTS.md)。檔案整理與完整重跑訓練分別標示。
 - 本次R61在另一位置完整重建114283檔全部相同；R152完整重建9216 TIFF全部相同，均禁止讀取舊研究資料。
 - 五組來源／模型／結果版本已發布GitHub；原件960檔、R61完整114283資料檔、R152全部9216 TIFF及十方法完整數值取回重做均通過。
-- D清理被自動審查以blocked by policy拒絕；本次0檔／0 bytes回收。兩批54個目錄的D/H完整備份/H工作副本已重新核對，[收尾狀態](docs/operations/GITHUB_PRESERVATION_CLOSEOUT_20261016.md)。
+- 20261020 R87 維持原模式、不改人工核准，三份5,152檔重核後單次原生刪除成功；D實測增加11.3398 GiB，舊位置讀取H工作副本通過。[最新R87封存入口](Experiments/R87_TileNativeScratchGeneralization/ARCHIVE_POINTER_R87_20260926.md)。20x/5x仍保留D原件。
 ### 容量與保護
 - 20261016完整盤點3592327檔、零讀取錯誤；不追蹤31個外部資料入口，不把H資料重算成D負擔。
-- C槽R152 UI訓練持續保護；驗證輸出使用H槽，沒有啟動另一個GPU訓練。
+- 20261020 H槽R152 v8獨立訓練持續保護；原C槽獨立包與論文來源保留，沒有啟動另一個GPU訓練。
 - 既有R53／R56清理與H完整備份已結案，不能重算本次回收量。
-- 20x／5x、R87及其他舊資料須重新核對備份、相依與保留清單，不能憑舊容量報告刪除。
+- 20x／5x及其他舊資料仍須另行核對備份、相依與保留清單；R87本次完成範圍只有兩個舊合成陣列副本。
 ### 閱讀順序
 - [機器真相](ESTIMATOR_POLICY.json)、[完整現況](#full-current-state--完整現況)、[實驗索引](Experiments/INDEX.md)。
 - [封存與恢復索引](docs/operations/PROJECT_ARCHIVE_INDEX.md)、[來源政策](docs/operations/SOURCE_OF_TRUTH_POLICY.md)。
@@ -38,6 +39,20 @@ Last updated: 2026-10-16（GitHub研究保存與核心重做核對完成；D副�
 ---
 
 ## Full Current State / 完整現況
+
+### GitHub優先續整：R93完整歷程及五輪共用資料（2026-10-20）
+
+使用者再次指定首要目標為從GitHub理解及重做各輪實驗。本次新的D清理全部暫緩：20x／5x只重核，R93原資料也沒有刪除。R87前一批已完成的清理不重算成本次成果。
+
+R93真正固定來源為種子930041、1250場景／5000觀測，原設計64輪、使用者在完整60輪後停止；32至60輪的15個已觀察候選重算選出48輪，與原分析一致。舊README／MANIFEST沿用前輪標題及種子的問題已更正，舊文原封保留歷史。GitHub附件原來缺少該48輪模型和245張results圖，本次完整紀錄補齊所有34個模型檔及250張比較／測試圖、完整原表與必要小輸入；另有36KB包可不下載大資料便重算當時選擇與18個數字。
+
+R93 formal的15004檔已從GitHub取回逐份相同；在新CPU環境及原D／H不可讀條件下，核對R93／R94／R95／R97／R98原生資料準備。R93固定48與60輪模型、四個實拍預覽輸入和原推論程式從GitHub取回後另址重做；與原程式CPU參照比較，不把原GPU監看圖冒稱已逐位元重現。詳細範圍及收據見[新入口](docs/reproducibility/r93_shared/README.md)和[R93正式審查](Experiments/R93_RecoverableDetailSeparatedScratch/reports/R93_AUDIT.md)。
+
+### R87 原模式單次刪除與保留核對（2026-10-20）
+
+依使用者要求不切換人工核准，先完整重核兩個 R87 陣列目錄的 D 原件、H 不可變封存與 H 獨立工作副本，5,152 檔全部相同。原生刪除只嘗試一次並成功，移除 D 邏輯檔案 12,155,752,448 bytes；同期間 D 可用空間實測增加 12,176,003,072 bytes（11.3398 GiB），不可混為相同數字。
+
+原 D 資料入口現讀取獨立 H 工作副本，正式／smoke 原生讀取程式首、中、尾全部相同；原保留 438 檔內容核對通過後只更新封存說明。R87 模型／科學報告、原始照片、R152/R153 論文來源及正在 H 槽執行的 R152 v8 均保留。20x/5x 與其他批次未清理。先前 blocked by policy 為歷史拒絕；本次成功不作內部拒絕成因已查明的主張。[精確範圍與完成收據](Experiments/R87_TileNativeScratchGeneralization/ARCHIVE_POINTER_R87_20260926.md)。
 
 ### GitHub研究保存與原始來源追回（2026-10-16）
 

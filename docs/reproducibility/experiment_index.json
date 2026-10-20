@@ -2694,6 +2694,7 @@
     "necessary_sources": "精確5000觀測生成／修復記錄、來源清單與各下游約定",
     "image_decision": "細節退步、清楚輸入改動及分支抵消",
     "authoritative_documents": [
+      "Experiments/R93_RecoverableDetailSeparatedScratch/reports/R93_AUDIT.md",
       "Experiments/R93_RecoverableDetailSeparatedScratch/MANIFEST.md",
       "Experiments/R93_RecoverableDetailSeparatedScratch/README.md"
     ],
@@ -2702,11 +2703,26 @@
     "verification": {
       "file_export": "PASS all selected original contents and source-to-asset mapping",
       "full_historical_training_repeated": false,
-      "portable_execution": "not_yet_verified",
+      "portable_execution": "verified_frozen_input_preparation_and_fixed_model_CPU_replay",
       "github_publication": "PUBLISHED",
-      "selected_original_paths_verified": 18179
+      "selected_original_paths_verified": 18179,
+      "github_shared_source_roundtrip_20261020": {
+        "full_formal_files_restored": 15004,
+        "native_readers": 5,
+        "prepared_samples": 45,
+        "per_reader_roles": 8,
+        "historical_training_repeated": false,
+        "guide": "docs/reproducibility/r93_shared/README.md"
+      }
     },
-    "cleanup_allowed": false
+    "cleanup_allowed": false,
+    "preservation_update_20261020": {
+      "new_focused_record_paths": 600,
+      "model_files_including_aliases_and_smoke": 34,
+      "original_result_images": 245,
+      "small_result_replay_bytes": 36022,
+      "record_tag": "r93-complete-record-20261020"
+    }
   },
   {
     "id": "main/R94_EvidenceConditionalScratch",
@@ -2726,9 +2742,17 @@
     "verification": {
       "file_export": "PASS all selected original contents and source-to-asset mapping",
       "full_historical_training_repeated": false,
-      "portable_execution": "not_yet_verified",
+      "portable_execution": "verified_shared_input_preparation_only",
       "github_publication": "PUBLISHED",
-      "selected_original_paths_verified": 123
+      "selected_original_paths_verified": 123,
+      "github_shared_source_roundtrip_20261020": {
+        "full_formal_files_restored": 15004,
+        "native_readers": 5,
+        "prepared_samples": 45,
+        "per_reader_roles": 8,
+        "historical_training_repeated": false,
+        "guide": "docs/reproducibility/r93_shared/README.md"
+      }
     },
     "cleanup_allowed": false
   },
@@ -2749,9 +2773,17 @@
     "verification": {
       "file_export": "PASS all selected original contents and source-to-asset mapping",
       "full_historical_training_repeated": false,
-      "portable_execution": "not_yet_verified",
+      "portable_execution": "verified_shared_input_preparation_only",
       "github_publication": "PUBLISHED",
-      "selected_original_paths_verified": 160
+      "selected_original_paths_verified": 160,
+      "github_shared_source_roundtrip_20261020": {
+        "full_formal_files_restored": 15004,
+        "native_readers": 5,
+        "prepared_samples": 45,
+        "per_reader_roles": 8,
+        "historical_training_repeated": false,
+        "guide": "docs/reproducibility/r93_shared/README.md"
+      }
     },
     "cleanup_allowed": false
   },
@@ -2817,9 +2849,17 @@
     "verification": {
       "file_export": "PASS all selected original contents and source-to-asset mapping",
       "full_historical_training_repeated": false,
-      "portable_execution": "not_yet_verified",
+      "portable_execution": "verified_shared_input_preparation_only",
       "github_publication": "PUBLISHED",
-      "selected_original_paths_verified": 103
+      "selected_original_paths_verified": 103,
+      "github_shared_source_roundtrip_20261020": {
+        "full_formal_files_restored": 15004,
+        "native_readers": 5,
+        "prepared_samples": 45,
+        "per_reader_roles": 8,
+        "historical_training_repeated": false,
+        "guide": "docs/reproducibility/r93_shared/README.md"
+      }
     },
     "cleanup_allowed": false
   },
@@ -2839,9 +2879,17 @@
     "verification": {
       "file_export": "PASS all selected original contents and source-to-asset mapping",
       "full_historical_training_repeated": false,
-      "portable_execution": "not_yet_verified",
+      "portable_execution": "verified_shared_input_preparation_only",
       "github_publication": "PUBLISHED",
-      "selected_original_paths_verified": 51
+      "selected_original_paths_verified": 51,
+      "github_shared_source_roundtrip_20261020": {
+        "full_formal_files_restored": 15004,
+        "native_readers": 5,
+        "prepared_samples": 45,
+        "per_reader_roles": 8,
+        "historical_training_repeated": false,
+        "guide": "docs/reproducibility/r93_shared/README.md"
+      }
     },
     "cleanup_allowed": false
   },
