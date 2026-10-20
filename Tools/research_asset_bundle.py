@@ -112,7 +112,8 @@ def pack(root, selection, output, part_limit, workers=4):
 
 
 def restore(manifest_path, assets, destination, prefixes=(), keep_identical_existing=False):
-    if destination.exists() and any(destination.iterdir()) and not keep_identical_existing:
+    existing_content = destination.exists() and any(destination.iterdir())
+    if existing_content and not keep_identical_existing:
         raise FileExistsError('Restore destination must be new or empty')
     with gzip.open(manifest_path, 'rt', encoding='utf-8') as stream:
         manifest = json.load(stream)
@@ -141,19 +142,28 @@ def restore(manifest_path, assets, destination, prefixes=(), keep_identical_exis
             raise ValueError('Research asset changed: ' + name)
     resolved_destination = destination.resolve()
     reused = set()
+    checked_parents = set()
     # Existing clone metadata can be reused only if every byte is identical.
     # Preflight every path before creating any additional output file.
     for rows in groups.values():
         for row in rows:
             target = destination / safe_relative(row['path'])
-            if not target.resolve().is_relative_to(resolved_destination):
-                raise ValueError('Existing path redirects outside the restore directory')
-            if target.exists():
+            # A new empty output has no pre-existing child redirects. For a
+            # clone, resolve each shared parent once, then inspect any existing
+            # file separately. Never resolve millions of nonexistent file paths.
+            if existing_content and target.parent not in checked_parents:
+                if not target.parent.resolve().is_relative_to(resolved_destination):
+                    raise ValueError('Existing parent redirects outside the restore directory')
+                checked_parents.add(target.parent)
+            if existing_content and (target.exists() or target.is_symlink()):
+                if not target.resolve().is_relative_to(resolved_destination):
+                    raise ValueError('Existing path redirects outside the restore directory')
                 if not keep_identical_existing or not target.is_file() or target.stat().st_size != row['bytes'] or digest(target) != row['sha256']:
                     raise FileExistsError('Existing restore file differs: ' + row['path'])
                 reused.add(row['path'])
     destination.mkdir(parents=True, exist_ok=True)
     checked = 0; total = 0
+    created_parents = set()
     for name, rows in groups.items():
         with zipfile.ZipFile(assets / name) as archive:
             for row in rows:
@@ -161,7 +171,9 @@ def restore(manifest_path, assets, destination, prefixes=(), keep_identical_exis
                     checked += 1; total += row['bytes']
                     continue
                 target = destination / safe_relative(row['path'])
-                target.parent.mkdir(parents=True, exist_ok=True)
+                if target.parent not in created_parents:
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    created_parents.add(target.parent)
                 calculated = hashlib.sha256(); size = 0
                 with archive.open('objects/' + row['sha256']) as stream, target.open('xb') as output:
                     while block := stream.read(4 * 1024**2):

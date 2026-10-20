@@ -22,8 +22,8 @@ IMAGE_SUBTITLE = (
     "no window, mean subtraction, or peak normalization"
 )
 WIENER_SUBTITLE = (
-    "Absolute FFT amplitude from unclipped Wiener result; "
-    "NSR=0.08; shared -80 to 0 dBFS scale"
+    "Absolute FFT amplitude from unclipped background-normalized Wiener result; "
+    "NSR=0.05; shared -80 to 0 dBFS scale"
 )
 
 
@@ -112,9 +112,9 @@ def main() -> None:
         if "restored" not in wiener_result or "nsr" not in wiener_result:
             raise RuntimeError(f"{wiener_path} is missing restored or nsr")
         wiener_nsr = float(np.asarray(wiener_result["nsr"]).squeeze())
-        if wiener_nsr != 0.08:
+        if not np.isclose(wiener_nsr, 0.05):
             raise RuntimeError(
-                f"{magnification} Wiener source used NSR {wiener_nsr}, not 0.08"
+                f"{magnification} Wiener source used NSR {wiener_nsr}, not 0.05"
             )
         restored = np.asarray(wiener_result["restored"], dtype=float)
         deconvolved_amplitude, deconvolved_dbfs = absolute_fft_amplitude_array(

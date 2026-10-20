@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "command": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\cpu_env\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\verify_native_mini_from_github.py"
+  ],
+  "blocked_original_roots": [
+    "D:\\GMM_2_Final",
+    "H:\\GMM_2_Final_Archive",
+    "C:\\曾泰明"
+  ],
+  "allowed_copied_roots": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\cpu_env"
+  ],
+  "python_workers_inherit_guard": true,
+  "seconds": 95.0789315700531
+}

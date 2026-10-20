@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "command": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\cpu_env\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\github_native_stage2_tools\\Tools\\replay_shared_model_history.py",
+    "--code-root",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\github_legacy_native_source",
+    "--data-root",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\github_training_history_workspace",
+    "--input",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\github_legacy_native_source\\Model\\Test_Image\\VisionTop_20251029182653732.bmp",
+    "--output",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\github_shared_native_CPU_replay",
+    "--reference",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\original_shared_native_CPU_reference\\LEGACY_NATIVE_REPLAY_VERIFIED.json"
+  ],
+  "blocked_original_roots": [
+    "D:\\GMM_2_Final",
+    "H:\\GMM_2_Final_Archive",
+    "C:\\曾泰明"
+  ],
+  "allowed_copied_roots": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\cpu_env"
+  ],
+  "python_workers_inherit_guard": true,
+  "seconds": 15.491639852523804
+}

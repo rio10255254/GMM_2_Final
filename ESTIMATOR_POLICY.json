@@ -4260,7 +4260,8 @@
     "2026-10-07 14:34Taipei: complete10 executable-method scope verified and paper handoffready. Each930/8370/all30validscans,zero failures;150 matchedruntime samples and162 whole-scan intervals. SwinIR8epoch selected8 complete; independent1800 displacement/18metrics/18CI checks maxerrors3.15e-12/2.76e-12nm. Alloldnine metrics/144CI/135runtime unchanged, archive11e5138a preserved. Source/weight/readout/nativeROI/grayscale/link/manifest/ZIP verified; nativeROI2x5 paperlayout reviewed. MOSR stepSD4.273/adjMAE3.598lowest inbatch, contour18.600pointlowest butvsEDSR CIcrosseszero; favorableSwSEM201.159vsMOSR204.281nm retained, RAW169.883bestSEM, EDSR/NAF/Rest shapeadvantages preserved. MOSR1.461s vsSw27.171s,ED/NAFfaster andreservedmemorylower; unequalepochs andsourcepriors explicit. Finalpacketsha 75bb544e4962d0465b2ec66bca78a94b5a440ab10a3490463c543f2c7ca03aa5. Originalthesis/MOSR/RAWreadouts/scale/direction/PI untouched; no baseline promotion. Remove automation afterdelivery; two officialbackend blockers honestly recorded, not counted ascomplete.",
     "2026-10-20 R93 reproducibility audit: actual formal seed930041,1250scenes/5000observations,64planned/60stopped,balanced internal epoch48. Original template identity corrected with old text retained. All saved R93 model/visual history and a36KB original-result replay supplement are published separately; shared R93/R94/R95/R97/R98 input recovery is tested without retraining. Formal/alternate estimator values unchanged.",
     "2026-10-21 R94/R95/R97/R98 complete-record preservation: all 1092 original locations,107 saved model files and663 images restored from GitHub;32 native CPU model/input outputs exact,119 historical summary values replayed,15004 shared-bank files and36 native prepared samples verified. Four full camera originals,including the previously missing June18 capture,were recovered;all16 preview crops reproduce exact BMP bytes. R95 rollback/optimizer reset,R97 separate incidents,R98 incomplete external-suite scope and earlier source revision gaps preserved. No D cleanup, GPU work or estimator promotion.",
-    "2026-10-21 whole-project preservation audit in progress: all79 named local branch heads are available in GitHub history after preserving10 local-only branches;18 unique historical source/design blobs downloaded from GitHub and matched. Full D research metadata and registered H histories are being checked against published content. First28 training-run supplement and remaining project content are not yet claimed complete. No D cleanup, GPU work or scientific model changes."
+    "2026-10-21 whole-project preservation audit in progress: all79 named local branch heads are available in GitHub history after preserving10 local-only branches;18 unique historical source/design blobs downloaded from GitHub and matched. Full D research metadata and registered H histories are being checked against published content. First28 training-run supplement and remaining project content are not yet claimed complete. No D cleanup, GPU work or scientific model changes.",
+    "2026-10-21 early training supplement:851 original locations,367 saved-state files,460 images and24 actual split-index files restored from GitHub. Twelve saved872/46 splits checked; six fixed R33p95/COMBO/R39strong E5/E100 native CPU outputs match original CPU references. A405MB self-contained replay kit was actually downloaded/executed. This verifies preservation/portability, not re-selection, retraining or full-project completion."
   ],
   "artifact_index": {
     "R152_RAW_complete_research_record_20261002": {
@@ -4541,7 +4542,19 @@
       "R33_identity_audit": "Experiments/R33RobustLoss/reports/R33_HISTORY_PRESERVATION_AUDIT_20261021.md",
       "D_cleanup_allowed": false,
       "GPU_work_allowed": false,
-      "scientific_policy_changed": false
+      "scientific_policy_changed": false,
+      "first_training_supplement": {
+        "status": "GitHub_download_restore_and_native_CPU_verified",
+        "paths": 851,
+        "model_files": 367,
+        "images": 460,
+        "stored_split_index_files": 24,
+        "split_groups": 12,
+        "native_CPU_cases": 6,
+        "small_native_kit_bytes": 405044795,
+        "D_cleanup": false,
+        "full_project_complete": false
+      }
     }
   },
   "audit_trail": [
@@ -4553,7 +4566,8 @@
     "2026-09-08 R125: complete64-scene data-admission repair and six64-update exploratory runs.384actual updates and12real evaluations verified. Data fits the implemented simulator but real coverage/benefit remains insufficient; no model adopted or larger training launched. All initial failures and old evidence preserved.",
     "2026-10-20 R93 reproducibility audit: actual formal seed930041,1250scenes/5000observations,64planned/60stopped,balanced internal epoch48. Original template identity corrected with old text retained. All saved R93 model/visual history and a36KB original-result replay supplement are published separately; shared R93/R94/R95/R97/R98 input recovery is tested without retraining. Formal/alternate estimator values unchanged.",
     "2026-10-21 R94/R95/R97/R98 complete-record preservation: all 1092 original locations,107 saved model files and663 images restored from GitHub;32 native CPU model/input outputs exact,119 historical summary values replayed,15004 shared-bank files and36 native prepared samples verified. Four full camera originals,including the previously missing June18 capture,were recovered;all16 preview crops reproduce exact BMP bytes. R95 rollback/optimizer reset,R97 separate incidents,R98 incomplete external-suite scope and earlier source revision gaps preserved. No D cleanup, GPU work or estimator promotion.",
-    "2026-10-21 whole-project preservation audit in progress: all79 named local branch heads are available in GitHub history after preserving10 local-only branches;18 unique historical source/design blobs downloaded from GitHub and matched. Full D research metadata and registered H histories are being checked against published content. First28 training-run supplement and remaining project content are not yet claimed complete. No D cleanup, GPU work or scientific model changes."
+    "2026-10-21 whole-project preservation audit in progress: all79 named local branch heads are available in GitHub history after preserving10 local-only branches;18 unique historical source/design blobs downloaded from GitHub and matched. Full D research metadata and registered H histories are being checked against published content. First28 training-run supplement and remaining project content are not yet claimed complete. No D cleanup, GPU work or scientific model changes.",
+    "2026-10-21 early training supplement:851 original locations,367 saved-state files,460 images and24 actual split-index files restored from GitHub. Twelve saved872/46 splits checked; six fixed R33p95/COMBO/R39strong E5/E100 native CPU outputs match original CPU references. A405MB self-contained replay kit was actually downloaded/executed. This verifies preservation/portability, not re-selection, retraining or full-project completion."
   ],
   "decision_notes": [
     "R44 Universal Boundary Motion Fidelity (2026-05-09): R44A-R44H Step B complete; Step B preserves motion but worsens target shape, so do not proceed to multi-teacher full-model KD."

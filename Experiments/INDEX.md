@@ -5,7 +5,7 @@ Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重�
 
 最新論文比較已於2026-10-07完成：十方法各930張、8370讀值、30有效趟及零量測失敗，150次效率與162組完整趟次配對區間已核對。[完整交接與全部結果](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)／[修改指南](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/PAPER_UPDATE_GUIDE.md)。另兩官方後端受阻如實保留；監看已結束。原先七／九方法、暫停、恢復與追加SwinIR的順序見[整理前原索引](../docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md)，不再以舊「進行中」文字當目前狀態。
 
-全專案GitHub保存續查進行中：[實際內容與完成條件](../docs/reproducibility/project_completion/README.md)。除實驗目錄外亦查共用訓練、光學校正、論文草稿／交接、原始資料和已搬到H槽的歷史；已補10條本機獨有版本歷史，18份原程式／設計取回相同。第一批模型歷程補件尚在取回驗證，全專案尚未宣稱完成。
+全專案GitHub保存續查進行中：[實際內容與完成條件](../docs/reproducibility/project_completion/README.md)。除實驗目錄外亦查共用訓練、光學校正、論文草稿／交接、原始資料和已搬到H槽的歷史；已補10條本機獨有版本歷史，18份原程式／設計取回相同。第一批851個補件位置已取回相同，含367份模型狀態、460張影像及24份分組資料；六份模型原生CPU執行及約405MB小包重做通過。全專案其他內容仍在核對，不宣稱全部完成。
 
 完整數字、模型身分和外部GMF結果以 `ESTIMATOR_POLICY.json` 與各輪正式報告為準。[逐輪保存判讀](../docs/reproducibility/EXPERIMENTS.md)說明方法、來源和影像選擇；[原代表圖冊](../RECON_GALLERY.md)保留歷史順序。
 

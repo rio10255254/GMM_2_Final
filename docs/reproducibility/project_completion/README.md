@@ -43,4 +43,12 @@
 
 特別保留一處來源矛盾：舊 R33 系列報告將 `20260405_073230` 寫為啟動失敗，但目前原資料夾內有1至100輪紀錄，且原第100輪模型內也記錄100。原文和原件均保留；在查明前不把這份紀錄重新指派為已接受的 R33 實驗結果。見[正式保存審查](../../../Experiments/R33RobustLoss/reports/R33_HISTORY_PRESERVATION_AUDIT_20261021.md)。
 
-此批只有完成 GitHub 上傳、實際取回、內容與模型檢查後才列為完成；目前不以打包或上傳進度代替完成證據。
+本批851個補件位置、367份保存狀態與460張原影像已全部從GitHub取回，內容核對相同；所有模型狀態可載入且其中數值有限。另以當前原讀取程式執行R33 p95、COMBO、R39 strong各第5及100輪共六份固定模型，完整小數輸出與BMP均符合本機原程式CPU參照；舊D／H研究讀取被禁止。這是保存與執行核對，沒有重選第100輪或重跑歷史訓練。[原影像與判讀](GALLERY.md)／[取回收據](TRAINING_HISTORY_RECOVERY_VERIFIED.json)／[六份執行核對](SHARED_NATIVE_REPLAY_VERIFIED.json)。
+
+全部研究補查仍在進行。這一批補齊的是28次舊訓練目前本機檔案中的缺件，先前已保存的261項由原版本引用；不能將這個局部完成推定為整個專案都已完成。
+
+## 不下載全部資料也能執行
+
+[六份舊模型的小型執行包](https://github.com/rio10255254/GMM_2_Final/releases/download/research-training-history-supplement-20261021/shared-native-models-replay.zip)約405MB，包含三條路線各第5／100輪、原光學輸入、原程式與CPU參照。解開後依START_HERE.md執行即可，不需要舊D／H研究資料；原完整小數輸出與BMP皆已由實際下載的小包重做相同。[小包取回執行收據](SMALL_NATIVE_KIT_VERIFIED.json)。
+
+本批還補上24份原訓練／驗證分組資料，共12組，每組872個訓練位置與46個驗證位置、沒有重複。這是當時實際分組，不用種子猜回去；分組位置不重複本身不證明實體樣本獨立。[逐組核對](TRAIN_VAL_MEMBERSHIP_VERIFIED.json)。

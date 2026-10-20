@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "key": "R33_p95_E005",
+      "weights": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/epoch_005.pth.tar",
+      "weights_sha256": "6513fb2af2487a8585e457aaa5da6762815cdab350fb477e3c0e198c112fb0a0",
+      "source_sha256": {
+        "GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py": "d02db8bde29ab835bd00e2a56ea139700082f9aaa0155e59e04107595147edb8",
+        "GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242",
+        "GeoEdgeAlignSR_v1_Utils.py": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16"
+      },
+      "input_sha256": "2a9dadc128b00a4bb285736eeb62405b08843ec8d3d90d807638a4fb3dcdf77f",
+      "crop_xywh": [
+        632,
+        962,
+        256,
+        256
+      ],
+      "crop_bmp_sha256": "6c9a3be0c07424707a7e4b37ca75b5d6a7182d5437c0141effe8d09e59e14782",
+      "state_used_by_unchanged_native_reader": "state_dict",
+      "output_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "full_native_forward_float32_sha256": "a6e0f29eec58a1177e433f0e36c9398fee0c899617ef44884b2f29f8f3f2a45d",
+      "bmp_sha256": "eea4eb2c0d4a348daf70704ac93f02317f7ce5dec32f7807d151e803599bf695",
+      "all_outputs_finite": true
+    },
+    {
+      "key": "R33_p95_E100",
+      "weights": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/epoch_100.pth.tar",
+      "weights_sha256": "af55a0bf1826f5d33434ad1c3bf29649df4d2b58df853ed2fa165c566442adae",
+      "source_sha256": {
+        "GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py": "d02db8bde29ab835bd00e2a56ea139700082f9aaa0155e59e04107595147edb8",
+        "GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242",
+        "GeoEdgeAlignSR_v1_Utils.py": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16"
+      },
+      "input_sha256": "2a9dadc128b00a4bb285736eeb62405b08843ec8d3d90d807638a4fb3dcdf77f",
+      "crop_xywh": [
+        632,
+        962,
+        256,
+        256
+      ],
+      "crop_bmp_sha256": "6c9a3be0c07424707a7e4b37ca75b5d6a7182d5437c0141effe8d09e59e14782",
+      "state_used_by_unchanged_native_reader": "state_dict",
+      "output_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "full_native_forward_float32_sha256": "b54d82b23163cfe2e0ec21efdd5edebc9b3edb20c3226c2d5588199d6d13c71e",
+      "bmp_sha256": "ad10b3da78a90310d934bb8b4ae48e6c5e93aea7867cdf59b48e697693f998aa",
+      "all_outputs_finite": true
+    },
+    {
+      "key": "COMBO_E005",
+      "weights": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/epoch_005.pth.tar",
+      "weights_sha256": "e02db41574fed7f6554ff1226897c883064943547e78894087ef2c96bae95c49",
+      "source_sha256": {
+        "GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py": "d02db8bde29ab835bd00e2a56ea139700082f9aaa0155e59e04107595147edb8",
+        "GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242",
+        "GeoEdgeAlignSR_v1_Utils.py": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16"
+      },
+      "input_sha256": "2a9dadc128b00a4bb285736eeb62405b08843ec8d3d90d807638a4fb3dcdf77f",
+      "crop_xywh": [
+        632,
+        962,
+        256,
+        256
+      ],
+      "crop_bmp_sha256": "6c9a3be0c07424707a7e4b37ca75b5d6a7182d5437c0141effe8d09e59e14782",
+      "state_used_by_unchanged_native_reader": "state_dict",
+      "output_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "full_native_forward_float32_sha256": "ca9c3d5352a24f4a2286c213de0652dc26b4c1d7507ec58e8080401a71ec413c",
+      "bmp_sha256": "9724dabba8cfcb18f66d9495a08a2e7e348d42ce11846eb69a388248cacf6f58",
+      "all_outputs_finite": true
+    },
+    {
+      "key": "COMBO_E100",
+      "weights": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/epoch_100.pth.tar",
+      "weights_sha256": "bef77fac61597b2f41c651d15a4a5cf6a2f91926edd979e454c177fc86586f28",
+      "source_sha256": {
+        "GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py": "d02db8bde29ab835bd00e2a56ea139700082f9aaa0155e59e04107595147edb8",
+        "GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242",
+        "GeoEdgeAlignSR_v1_Utils.py": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16"
+      },
+      "input_sha256": "2a9dadc128b00a4bb285736eeb62405b08843ec8d3d90d807638a4fb3dcdf77f",
+      "crop_xywh": [
+        632,
+        962,
+        256,
+        256
+      ],
+      "crop_bmp_sha256": "6c9a3be0c07424707a7e4b37ca75b5d6a7182d5437c0141effe8d09e59e14782",
+      "state_used_by_unchanged_native_reader": "state_dict",
+      "output_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "full_native_forward_float32_sha256": "083fa284f70302cca0fd045ee33b7b4b6aba3790fc3945267c6e5353e0a3f1c9",
+      "bmp_sha256": "c5a72724f9160e5b347c3334475c6b027409866a6f2f3cb0fbbfc6982b4a612e",
+      "all_outputs_finite": true
+    },
+    {
+      "key": "R39_strong_E005",
+      "weights": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/epoch_005.pth.tar",
+      "weights_sha256": "02cf69ea7b21de14082543b2e20cae7fb9eefff50d9d96d143f9acf338ea8d5b",
+      "source_sha256": {
+        "GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py": "d02db8bde29ab835bd00e2a56ea139700082f9aaa0155e59e04107595147edb8",
+        "GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242",
+        "GeoEdgeAlignSR_v1_Utils.py": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16"
+      },
+      "input_sha256": "2a9dadc128b00a4bb285736eeb62405b08843ec8d3d90d807638a4fb3dcdf77f",
+      "crop_xywh": [
+        632,
+        962,
+        256,
+        256
+      ],
+      "crop_bmp_sha256": "6c9a3be0c07424707a7e4b37ca75b5d6a7182d5437c0141effe8d09e59e14782",
+      "state_used_by_unchanged_native_reader": "state_dict",
+      "output_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "full_native_forward_float32_sha256": "49bd009299f184ea4c380b34a2e56747d9b74ec2475867b0da6358ae57e63c4e",
+      "bmp_sha256": "a222b9f30fd74aec8645d41df72a8f3e793e8ac5b31bddce04227675702f60d9",
+      "all_outputs_finite": true
+    },
+    {
+      "key": "R39_strong_E100",
+      "weights": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/epoch_100.pth.tar",
+      "weights_sha256": "7973e037f9fcb057cab6864dbabe1208354c19fac161ab513fbf819160f72e64",
+      "source_sha256": {
+        "GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py": "d02db8bde29ab835bd00e2a56ea139700082f9aaa0155e59e04107595147edb8",
+        "GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242",
+        "GeoEdgeAlignSR_v1_Utils.py": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16"
+      },
+      "input_sha256": "2a9dadc128b00a4bb285736eeb62405b08843ec8d3d90d807638a4fb3dcdf77f",
+      "crop_xywh": [
+        632,
+        962,
+        256,
+        256
+      ],
+      "crop_bmp_sha256": "6c9a3be0c07424707a7e4b37ca75b5d6a7182d5437c0141effe8d09e59e14782",
+      "state_used_by_unchanged_native_reader": "state_dict",
+      "output_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "full_native_forward_float32_sha256": "17cb0ccba45483685f70717ade0b4c1f1f33b825b8a047edbf7b84343c85874a",
+      "bmp_sha256": "8a37af4adf4205f5a208b13468ea2e75a51ec1851784b431888bd08e89457a1c",
+      "all_outputs_finite": true
+    }
+  ],
+  "device": "cpu",
+  "torch": "2.3.0+cpu",
+  "torch_cuda_build": null,
+  "original_CPU_reference_matched": true,
+  "formal_checkpoint_selection_changed": false,
+  "training_repeated": false,
+  "historical_GPU_previews_claimed_bit_exact": false
+}
