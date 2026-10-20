@@ -6,7 +6,7 @@
 
 ![依原來源位置排回10×10的100份既存PSF](figures/psf_recorded_physical_positions.png)
 
-小型結果重算包預定提供在[光學校正重算版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-optical-calibration-replay-20261021)。本頁在實際從GitHub取回執行後才會標記為已驗證發布。完整實拍、SEM、原模型與其他歷史依[全專案入口](../project_completion/README.md)另行核對。
+[光學校正重算版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-optical-calibration-replay-20261021)已發布，約39.5MB小包已實際重新下載、逐份核對並另址重算通過，禁止讀取舊D／H研究資料。[發布與實測收據](GITHUB_REPLAY_PUBLISHED_VERIFIED.json)／[104份包內檔案核對](GITHUB_PACKAGE_FILES_VERIFIED.json)。完整實拍、SEM、原模型與其他歷史依[全專案入口](../project_completion/README.md)另行核對。
 
 解開包後使用Python3.12，安裝包內列出的固定版本，再執行：
 

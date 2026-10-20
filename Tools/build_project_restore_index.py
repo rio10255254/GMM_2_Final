@@ -7,7 +7,7 @@ native scientific validation for every historical experiment.
 import argparse,gzip,json,subprocess,hashlib
 from pathlib import Path
 from collections import defaultdict
-from project_reproducibility_audit import known_manifests
+from project_reproducibility_audit import known_manifests,owner
 from research_recovery import safe_relative,write_json
 
 def read(path):
@@ -24,12 +24,29 @@ def git_tree(root,ref):
         if kind=='blob':values[name.decode('utf-8')]=oid
     return values
 
+def verify_exact_batch_receipt(manifest,verified):
+    if verified.get('status')!='PASS_FILE_IDENTITY_AND_RESTORATION':
+        raise ValueError('A batch has not passed actual byte restoration')
+    expected={(row['sha256'],row['bytes']) for row in manifest['files']}
+    checks=verified.get('checks',[])
+    if len(checks)!=len(expected) or {(r['sha256'],r['bytes']) for r in checks}!=expected:
+        raise ValueError('A restoration receipt does not cover the exact declared objects')
+    if any(r.get('exact_file_bytes_restored') is not True for r in checks):
+        raise ValueError('A declared object was not actually restored with exact bytes')
+    def parts(rows):return {(r['name'],r['bytes'],r['sha256']) for r in rows}
+    if parts(verified.get('assets',[]))!=parts(manifest['assets']):
+        raise ValueError('A restoration receipt belongs to different archive parts')
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--operation',type=Path,required=True)
     p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--output',type=Path,required=True)
     a=p.parse_args();op=a.operation;root=a.root;archive=Path(r'H:\GMM_2_Final_Archive')
     if a.output.exists():raise FileExistsError('Keep the earlier reviewed restore index')
     if not (op/'ALL_RESEARCH_CONTENT_HASHED.json').exists():raise ValueError('Complete all content-family checks before the master index')
+    full_check=read(op/'ALL_RESEARCH_CONTENT_HASHED.json')
+    if full_check.get('status')!='ALL_REQUESTED_FAMILIES_CONTENT_CHECKED':raise ValueError('The complete content check has not passed')
+    expected_exports={r['family']:r['files'] for r in full_check['families']}
+    if set(expected_exports)!={'context','models','numeric','images','packages'}:raise ValueError('A requested content family is missing')
     providers={};specs={};base_files=[];new_tags=set();batch_checks=[]
     def add_bundle(path,tag,new=False):
         m=read(path)
@@ -62,16 +79,25 @@ def main():
         new_tags.add(plan['tag'])
         for batch in plan['batches']:
             work=Path(batch['folder']);receipt=work/'BATCH_GITHUB_RESTORE_VERIFIED.json'
-            if not receipt.exists() or read(receipt)['status']!='PASS_FILE_IDENTITY_AND_RESTORATION':raise ValueError('A reviewed batch has not been actually retrieved: '+batch['batch'])
-            add_bundle(work/'bundle/RESEARCH_ASSETS.json.gz',plan['tag'],new=True)
+            if not receipt.exists():raise ValueError('A reviewed batch has not been actually retrieved: '+batch['batch'])
+            component=work/'bundle/RESEARCH_ASSETS.json.gz'
+            verify_exact_batch_receipt(read(component),read(receipt))
+            add_bundle(component,plan['tag'],new=True)
             batch_checks.append({'batch':batch['batch'],'tag':plan['tag'],'verification_sha256':hashlib.sha256(receipt.read_bytes()).hexdigest()})
+    extra_scopes=read(op/'EXTRA_SCOPE_COLLECTIONS.json')['collections'] if (op/'EXTRA_SCOPE_COLLECTIONS.json').exists() else []
+    for extra in extra_scopes:
+        component=Path(extra['bundle_manifest']);receipt=Path(extra['verification'])
+        verify_exact_batch_receipt(read(component),read(receipt))
+        add_bundle(component,extra['tag'],new=True);new_tags.add(extra['tag'])
+        batch_checks.append({'batch':extra['id'],'tag':extra['tag'],'verification_sha256':hashlib.sha256(receipt.read_bytes()).hexdigest()})
     # Exact current and historical code objects remain available even when the
     # current README/config differs from an older captured version.
     current_catalog=read(root/'docs/reproducibility/REPOSITORY_FILES.json.gz')
     current_tree=git_tree(root,current_catalog['source_snapshot_commit']);repo_current={}
+    source_scopes=sorted([(r['scope'].casefold(),r['id']) for r in read(root/'docs/reproducibility/experiment_index.json')],key=lambda r:-len(r[0]))
     for row in current_catalog['files']:
         key=(row['sha256'],row['bytes']);value={'kind':'repository_blob','provider_path':row['path'],'git_blob':current_tree[row['path']]}
-        providers.setdefault(key,value);repo_current[row['path'].casefold()]=row['sha256'];base_files.append({**row,'scope':'repository_source'})
+        providers.setdefault(key,value);repo_current[row['path'].casefold()]=row['sha256'];base_files.append({**row,'scope':owner(row['path'],source_scopes)})
     old_catalog_raw=subprocess.check_output(['git','show','6782071d67f5d8d71fa798f7a8926b16804c06b3:docs/reproducibility/REPOSITORY_FILES.json.gz'],cwd=root)
     old_catalog=json.loads(gzip.decompress(old_catalog_raw));old_tree=git_tree(root,old_catalog['source_snapshot_commit'])
     for row in old_catalog['files']:
@@ -107,10 +133,13 @@ def main():
             own.add(relative.casefold())
     projection_file=root/'docs/reproducibility/project_completion/HISTORICAL_PATH_PROJECTIONS.json'
     projections=read(projection_file)['projections'] if projection_file.exists() else []
-    for family in ['context','models','numeric','images','packages']:
-        with gzip.open(op/('HASHED_'+family.upper()+'_FILES.jsonl.gz'),'rt',encoding='utf-8') as stream:
+    export_sources=[(family,op/('HASHED_'+family.upper()+'_FILES.jsonl.gz'),expected_exports[family]) for family in ['context','models','numeric','images','packages']]
+    export_sources += [(extra['id'],Path(extra['export']),read(Path(extra['source_audit']))['locations']) for extra in extra_scopes]
+    for family,export_path,expected_count in export_sources:
+        observed_count=0
+        with gzip.open(export_path,'rt',encoding='utf-8') as stream:
           for line in stream:
-            row=json.loads(line);captured+=1;relative=row['logical_path'];key=relative.casefold()
+            row=json.loads(line);captured+=1;observed_count+=1;relative=row['logical_path'];key=relative.casefold()
             if '/portable_runtime/' in '/'+key:
                 excluded.append({'path':relative,'reason':'generic reinstallable runtime'});continue
             if row['origin']=='D_worktree' and (key in own or key.startswith('docs/reproducibility/project_completion/')):
@@ -146,6 +175,7 @@ def main():
                     if current is None or current['sha256']==row['sha256'] or authoritative:
                         insert({**row,'path':alias,'scope':projection['scope'],
                           'origin':'registered_H_reference' if authoritative else row['origin']},replace=authoritative)
+        if observed_count!=expected_count:raise ValueError('A frozen content-family export is incomplete: '+family)
     a.output.mkdir(parents=True);groups=defaultdict(list);repo_aliases=[];large_packages=[]
     for row in canonical.values():
         provider=providers.get((row['sha256'],row['bytes']))
@@ -171,6 +201,9 @@ def main():
     save(a.output/'REPOSITORY_CONTENT_ALIASES.json.gz',{'schema':1,'state':'complete','files':repo_aliases})
     write_json(a.output/'MASTER_RESTORE_INDEX.json',{'schema':1,'state':'complete','components':components,'repository_alias_manifest':'REPOSITORY_CONTENT_ALIASES.json.gz',
       'repository_alias_manifest_sha256':hashlib.sha256((a.output/'REPOSITORY_CONTENT_ALIASES.json.gz').read_bytes()).hexdigest(),
+      'source_repository_catalog_sha256':hashlib.sha256((root/'docs/reproducibility/REPOSITORY_FILES.json.gz').read_bytes()).hexdigest(),
+      'source_repository_snapshot_commit':current_catalog['source_snapshot_commit'],
+      'within_project_references_manifest':'docs/reproducibility/research_path_aliases.json',
       'original_large_packages':large_packages,
       'captured_physical_files':captured,'normalized_logical_locations':len(canonical),'repository_alias_locations':len(repo_aliases),
       'excluded_generic_dependency_files':len(excluded),'scientific_validation_scope':'File preservation verified; native/rebuild/numeric replays separately described',

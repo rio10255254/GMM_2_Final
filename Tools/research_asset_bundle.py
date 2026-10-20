@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+import uuid
 import zipfile
 
 from research_recovery import digest, external_output, safe_relative, write_json
@@ -119,7 +120,13 @@ def restore(manifest_path, assets, destination, prefixes=(), keep_identical_exis
         manifest = json.load(stream)
     receipt = destination / ('RESTORE_' + digest(manifest_path)[:12] + '_VERIFIED.json')
     if receipt.exists():
-        raise FileExistsError('Restore receipt already exists')
+        if not keep_identical_existing:
+            raise FileExistsError('Restore receipt already exists')
+        # A second requested scope or an interrupted/repeated recovery still
+        # preflights every selected existing file. Retain the earlier receipt
+        # instead of blocking a valid continuation or replacing its evidence.
+        receipt = destination / ('RESTORE_' + digest(manifest_path)[:12] +
+                                 '_RECHECK_' + uuid.uuid4().hex[:16] + '_VERIFIED.json')
     if manifest.get('state') != 'complete':
         raise ValueError('Incomplete research bundle')
     prefix_roots = [safe_relative(value) for value in prefixes]

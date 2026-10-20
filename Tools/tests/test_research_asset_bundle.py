@@ -68,3 +68,22 @@ def test_clone_overlay_keeps_identical_files_and_refuses_changes(tmp_path):
     with pytest.raises(FileExistsError, match='differs'):
         restore(assets / 'RESEARCH_ASSETS.json.gz', assets, changed, keep_identical_existing=True)
     assert list(changed.iterdir()) == [changed / 'one.csv']
+
+
+def test_second_scope_and_retry_preserve_first_receipt_and_user_changes(tmp_path):
+    root, assets, _ = specimen(tmp_path)
+    target = tmp_path / 'restored'
+    manifest = assets / 'RESEARCH_ASSETS.json.gz'
+    first = restore(manifest, assets, target, prefixes=('one.csv',))
+    assert first['files_restored_and_verified'] == 1
+    original_receipts = {p: p.read_bytes() for p in target.glob('RESTORE_*_VERIFIED.json')}
+    second = restore(manifest, assets, target, prefixes=('camera.bmp',), keep_identical_existing=True)
+    assert second['files_restored_and_verified'] == 1
+    retry = restore(manifest, assets, target, prefixes=('camera.bmp',), keep_identical_existing=True)
+    assert retry['identical_existing_files_reused'] == 1
+    assert all(path.read_bytes() == data for path, data in original_receipts.items())
+    assert (target / 'one.csv').read_bytes() == (root / 'one.csv').read_bytes()
+    (target / 'camera.bmp').write_bytes(b'new user edit after a valid restore')
+    with pytest.raises(FileExistsError, match='differs'):
+        restore(manifest, assets, target, prefixes=('camera.bmp',), keep_identical_existing=True)
+    assert (target / 'camera.bmp').read_bytes() == b'new user edit after a valid restore'

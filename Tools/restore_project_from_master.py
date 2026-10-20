@@ -4,7 +4,7 @@ The master metadata must first be downloaded from its fixed GitHub release.
 All parts are checked against current GitHub digests. Existing different files
 are protected; no old D/H location is consulted or recreated as a dependency.
 """
-import argparse,gzip,json,subprocess,sys,hashlib
+import argparse,gzip,json,subprocess,sys,hashlib,uuid
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from download_research_assets import download_asset,select_prefix_assets,select_manifest_assets
@@ -19,6 +19,14 @@ def main():
     if a.report.exists():raise FileExistsError('Keep the prior master recovery report')
     master=json.loads(a.master_index.read_text(encoding='utf-8-sig'))
     if master.get('state')!='complete':raise ValueError('The complete verified master index is required')
+    expected_catalog=master.get('source_repository_catalog_sha256')
+    if expected_catalog:
+        catalog=a.root/'docs/reproducibility/REPOSITORY_FILES.json.gz'
+        if not catalog.is_file() or digest(catalog)!=expected_catalog:
+            raise ValueError('Use a fresh clone of the fixed master source version before restoring its data')
+    # Each scope or retry retains its own receipt. A prior R93 recovery must
+    # not prevent the same download cache from later restoring R94 aliases.
+    run_id=uuid.uuid4().hex[:16]
     prefixes=[safe_relative(value) for value in a.prefix]
     token=subprocess.check_output(['gh','auth','token'],text=True).strip();release_cache={};components=[]
     def release(tag):
@@ -42,7 +50,7 @@ def main():
         components.append({'tag':component['tag'],'downloaded_parts':downloaded,'restoration':result})
     aliases=a.master_index.parent/safe_relative(master['repository_alias_manifest'])
     if digest(aliases)!=master['repository_alias_manifest_sha256']:raise ValueError('Repository alias metadata differs from the master index')
-    alias_report=a.downloads/'REPOSITORY_ALIASES_RESTORED.json';a.downloads.mkdir(parents=True,exist_ok=True)
+    alias_report=a.downloads/('REPOSITORY_ALIASES_RESTORED_'+run_id+'.json');a.downloads.mkdir(parents=True,exist_ok=True)
     command=[sys.executable,str(Path(__file__).with_name('restore_repository_content_aliases.py')),'--repo',a.repo,
       '--root',str(a.root),'--manifest',str(aliases),'--report',str(alias_report)]
     for prefix in a.prefix:command+=['--prefix',prefix]
@@ -64,12 +72,21 @@ def main():
         if output.exists():
             if output.stat().st_size!=package['original_bytes'] or digest(output)!=package['original_sha256']:raise FileExistsError('Existing original package differs')
             large.append({'path':package['path'],'identical_existing':True});continue
-        report=folder/(package['original_sha256'][:16]+'_RESTORED.json')
+        report=folder/(package['original_sha256'][:16]+'_RESTORED_'+run_id+'.json')
         subprocess.run([sys.executable,str(Path(__file__).with_name('restore_original_package_parts.py')),'--manifest',str(manifest),
           '--parts',str(folder),'--output',str(output),'--report',str(report)],check=True)
         large.append(json.loads(report.read_text(encoding='utf-8-sig')))
+    shared_references={'status':'NOT_REQUESTED_FOR_SELECTED_PREFIXES'}
+    if not a.prefix and master.get('within_project_references_manifest'):
+        manifest=a.root/safe_relative(master['within_project_references_manifest'])
+        if not manifest.is_file():raise ValueError('The fixed within-project reference metadata is missing from the source clone')
+        shared_report=a.downloads/('WITHIN_PROJECT_REFERENCES_'+run_id+'.json')
+        subprocess.run([sys.executable,str(Path(__file__).with_name('restore_research_aliases.py')),'--root',str(a.root),
+          '--manifest',str(manifest),'--report',str(shared_report)],check=True)
+        shared_references=json.loads(shared_report.read_text(encoding='utf-8-sig'))
     write_json(a.report,{'status':'PASS','master_index_sha256':digest(a.master_index),'requested_prefixes':a.prefix,
       'components':components,'repository_aliases':json.loads(alias_report.read_text(encoding='utf-8-sig')),'original_large_packages':large,
+      'within_project_references':shared_references,
       'old_research_drive_fallback':False,'existing_differing_files_overwritten':False})
     print('MASTER_PROJECT_RESTORE_VERIFIED',len(components),flush=True)
 

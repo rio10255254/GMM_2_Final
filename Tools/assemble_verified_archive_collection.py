@@ -3,6 +3,8 @@
 Only objects newly preserved by this collection are included. Earlier release
 objects retain their earlier immutable providers in the full master map. This
 creates reviewable metadata and does not publish or declare the project done.
+Plan-time paths remain provisional: the final published component uses the
+global master map, which resolves current relocated H results and shared aliases.
 """
 import argparse,gzip,json,hashlib
 from pathlib import Path
@@ -58,7 +60,7 @@ def main():
               'reason':'Existing complete source/result/state bytes, with original scope and identity retained; no scientific promotion inferred'}
             scopes[source['scope']]+=1;seen_objects.add(source['sha256'])
     if seen_objects!=set(objects):raise ValueError('A packed object has no preserved original source location')
-    rows=list(paths.values());manifest={'schema':1,'state':'complete','files':rows,'assets':list(parts.values()),'paths':len(rows),
+    rows=list(paths.values());manifest={'schema':1,'state':'complete_objects_path_review_pending','files':rows,'assets':list(parts.values()),'paths':len(rows),
       'unique_objects':len(objects),'original_bytes':sum(r['bytes'] for r in rows),'unique_bytes':sum(r['bytes'] for r in objects.values()),
       'packed_bytes':sum(r['bytes'] for r in parts.values()),'full_historical_training_repeated':False,'deletion_authorized_by_this_manifest':False,
       'scientific_failures_preserved_not_repaired':len(issues)}
@@ -67,7 +69,8 @@ def main():
     write_json(a.output/'BUNDLE_SUMMARY.json',{k:v for k,v in manifest.items() if k!='files'})
     write_json(a.output/'COLLECTION_VERIFICATION.json',{'status':'ALL_BATCH_OBJECTS_ACTUALLY_DOWNLOADED_RESTORED_VERIFIED',
       'tag':plan['tag'],'batch_receipts':receipts,'source_scope_counts':dict(scopes),'historical_inspection_issues_retained':issues,
-      'paths':len(rows),'unique_objects':len(objects),'project_complete':False,'collection_publication_pending':True})
+      'paths':len(rows),'unique_objects':len(objects),'project_complete':False,'collection_publication_pending':True,
+      'global_master_path_binding_required':True})
     print('VERIFIED_COLLECTION_ASSEMBLED_WITH_ORIGINAL_PATHS',plan['tag'],len(rows),len(objects),flush=True)
 
 if __name__=='__main__':main()

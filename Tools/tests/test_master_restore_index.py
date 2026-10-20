@@ -45,9 +45,9 @@ def fixture(tmp_path, monkeypatch, conflicting_git_source=False):
     dump(op / "training_history_bundle/RESEARCH_ASSETS.json.gz", archive_manifest)
     dump(op / "context_batch_001_bundle/RESEARCH_ASSETS.json.gz", {"state": "complete", "files": [], "assets": []})
     dump(op / "GITHUB_CONTEXT_FAST_ISOLATED_GUARD.json", {"status": "PASS"})
-    dump(op / "ALL_RESEARCH_CONTENT_HASHED.json", {"status": "fixture-only"})
     dump(op / "FIRST_SOURCE_COMMIT.json", {"files": []})
     dump(root / "docs/reproducibility/REPOSITORY_FILES.json.gz", {"source_snapshot_commit": "fixture", "files": [current]})
+    dump(root / "docs/reproducibility/experiment_index.json", [])
     archive = Path(r"H:\GMM_2_Final_Archive")
     target = archive / "active_runs/test_current/centers"
     dump(root / "docs/reproducibility/project_completion/HISTORICAL_PATH_PROJECTIONS.json", {"projections": [{
@@ -73,6 +73,8 @@ def fixture(tmp_path, monkeypatch, conflicting_git_source=False):
         with gzip.open(op / ("HASHED_" + family.upper() + "_FILES.jsonl.gz"), "wt", encoding="utf-8") as stream:
             for value in values:
                 stream.write(json.dumps(value) + "\n")
+    dump(op / "ALL_RESEARCH_CONTENT_HASHED.json", {"status": "ALL_REQUESTED_FAMILIES_CONTENT_CHECKED",
+         "families": [{"family": family, "files": len(values)} for family, values in rows.items()]})
     for family in ["model", "numeric", "image", "package"]:
         dump(op / (family + "_batches") / "PLAN.json", {"tag": "fixture-" + family, "batches": []})
     monkeypatch.setattr(builder, "known_manifests", lambda root, archive: [])
@@ -103,3 +105,15 @@ def test_changed_current_source_requires_review(tmp_path, monkeypatch):
     fixture(tmp_path, monkeypatch, conflicting_git_source=True)
     with pytest.raises(ValueError, match="Current Git source differs"):
         builder.main()
+
+
+def test_receipt_from_a_different_object_set_cannot_approve_a_component():
+    row = item("data/original.npy", "original observation")
+    part = {"name": "original.zip", "bytes": 123, "sha256": "a" * 64}
+    manifest = {"files": [row], "assets": [part]}
+    valid = {"status": "PASS_FILE_IDENTITY_AND_RESTORATION", "assets": [part],
+             "checks": [{**row, "exact_file_bytes_restored": True}]}
+    builder.verify_exact_batch_receipt(manifest, valid)
+    wrong = {**valid, "checks": [{**item("data/other.npy", "different observation"), "exact_file_bytes_restored": True}]}
+    with pytest.raises(ValueError, match="exact declared objects"):
+        builder.verify_exact_batch_receipt(manifest, wrong)
