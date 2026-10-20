@@ -1,28 +1,16 @@
-# R94 Manifest
+# R94 保存與來源清單
 
-| Item | Role | State |
-|---|---|---|
-| `config/experiment_design.json` | Locked architecture, data, training and validation contract | locked |
-| `config/prototype_contract.json` | Architecture prototype completion checks | implemented |
-| `model/r94_model.py` | Five-stage evidence-controlled tile-safe model | implemented and verified |
-| `training/causal_stage_replay.py` | Exact hidden-stage replay and shape/material/fade decomposition | implemented and verified |
-| `training/counterfactual_targets.py` | Same-scene T/P/O/B/S supervision builder | implemented and verified |
-| `training/common_descent.py` | Non-opposing cross-objective update utility | implemented and verified |
-| `inference/reconstruct.py` | Canonical full/tiled inference path | implemented and verified |
-| `scripts/run_prototype_checks.py` | Architecture, routing, identity, translation and tiling checks | passed 17/17 |
-| `scripts/validate_causal_replay.py` | Stored B-stage replay audit | passed 64/64 exactly |
-| `scripts/validate_optical_layer_decomposition.py` | Causal target recomposition and crop parity | passed |
-| `scripts/analyze_branch_expressivity.py` | Full validation capacity decomposition | passed 838 views |
-| `scripts/analyze_oracle_targets.py` | Full target joint-improvement ceiling | passed 838 views |
-| `scripts/analyze_locked_acm_ceiling.py` | Independent locked ACM target-direction check | passed 100 images |
-| `scripts/validate_locked_design.py` | Fail-closed aggregate design audit | passed |
-| `reports/prototype_report.json` | Generated architecture evidence | current |
-| `reports/causal_replay_validation.json` | Generated stage-replay evidence | current |
-| `reports/optical_layer_decomposition_validation.json` | Generated layer-label evidence | current |
-| `reports/branch_expressivity_analysis.json` | Generated branch-capacity evidence | current |
-| `reports/oracle_target_validation.json` | Generated joint-target ceiling | current |
-| `reports/locked_acm_clean_ceiling.json` | Generated independent ACM ceiling | current |
-| `reports/locked_design_audit.json` | Aggregate pass/fail audit | passed |
-| formal trainer | Complete executable training loop | not implemented yet |
-| GPU batch calibration | 9 GiB desktop-headroom calibration | waits for R93 GPU release |
-| formal scratch weights | One new random initialization only | intentionally empty |
+seed 940041；2,303,717 參數。計畫 48 輪，完整保存 1–8 輪；第 9 輪已進入計算，但在提交該輪之前由記憶體估算保護停止，沒有第 9 輪模型。
+
+| 類別 | 實際保存 |
+|---|---|
+| 原設計與方法 | config、model、training、inference、scripts、tests；原始碼不因整理改變 |
+| 原輸入 | 本輪四張固定預覽；R93 共用合成庫另有完整 GitHub 附件 |
+| 生成紀錄 | 151 個原位置、416149400 bytes |
+| 模型檔 | 20；包含原測試／別名，不能算成獨立訓練數 |
+| 影像 | 51，含全部現存比較與重建 |
+| 完整固定清單 | docs/reproducibility/four_rounds/R94_RECORD_MANIFEST.json.gz |
+| 正式審查 | reports/R94_AUDIT.md |
+| GitHub 固定版本 | r94-complete-record-20261021 |
+
+原 MANIFEST 在 `docs/history/R94_MANIFEST_BEFORE_PROVENANCE_AUDIT_20261021.md` 原封保留。保存不授權刪除，也不更改科學判決。

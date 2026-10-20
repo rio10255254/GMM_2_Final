@@ -1,25 +1,14 @@
-# R97 Direct Causal Phase Scratch
+# R97：直接修正與週期位置辨識
 
-R97 is a clean, independent experiment built after the R96 internal and external-GMF diagnosis. It keeps the reliable local/tiled backbone but removes the learned amplitude gates that suppressed useful corrections.
+這輪接在 R96 診斷之後，不是 R95 模型續訓。移除再次縮小輸出的幅度控制，讓每個分支直接學實際施加的修正；以每場景答案能量調整稀疏分支的學習尺度，紋理由原圖對稱頻帶組成。另在記憶體產生條紋、點、圓環與矩形格，教模型區分正確位置與相鄰一個週期的錯配。保留局部處理及固定邊緣留白。
 
-## What is different
+seed 970043；2,433,774 參數。48 輪完成；正式執行在第 1 輪後遇到檔案存取拒絕，從同一輪模型恢復一次，原表 1–48 無重複。後訓練協定固定第 48 輪平均權重，較早模型只作歷程分析。
 
-- Each causal branch predicts the correction actually applied to the output.
-- No R96/R61/V42 checkpoint, teacher or pseudo-label can be loaded.
-- The same procedural scene supplies noisy, noise-free and clear counterexamples in every update.
-- Texture enhancement is tied to symmetric bands already visible in the source.
-- A generic on-demand periodic panel teaches the correct location to beat adjacent-repeat matches.
-- Full/tiled inference remains the canonical reconstruction path.
+正式訓練前另有過高顯卡批量造成的 Windows 顯示驅動逾時與重新開機，不能混同於正式第 1 輪的檔案存取問題。保存事故、保守批量測試、有限值梯度修補與恢復驗證。301 張實拍可見邊緣／細節增加，但不構成乾淨真值；週期測試沒有錯一格也不代表真實位移絕對準確。
 
-## Data boundary
+- [方法、實際歷程、完整保存與限制](reports/R97_AUDIT.md)
+- [四輪 GitHub 取回與重做入口](../../docs/reproducibility/four_rounds/README.md)
+- [重要原圖與不利案例](../../docs/reproducibility/four_rounds/GALLERY.md#r97)
+- [本輪全部模型、影像、數據與失敗紀錄](https://github.com/rio10255254/GMM_2_Final/releases/tag/r97-complete-record-20261021)
 
-The hash-locked 5,000-observation R93 procedural package is reused without regenerating or duplicating its arrays. Labels were produced at 8x resolution and reduced with anti-aliasing. Additional periodic scenes are generated in memory from analytic primitives only. Real microscopy, SEM and HS100MG images are not training pixels.
-
-## Safe workflow
-
-1. Run `scripts/run_preflight.py`. It executes unit tests and a real GPU smoke update.
-2. Inspect `reports/preflight_report.json`. Formal training is authorized only when every check passes.
-3. Start the sole 48-epoch scratch run with `scripts/start_formal_training.ps1`.
-4. Open `Open_Training_Monitor.cmd` for the compact dynamic monitor.
-
-The formal launcher refuses to run before preflight and refuses a second formal run in this folder.
+原指南完整保留於 `docs/history/R97_README_BEFORE_PROVENANCE_AUDIT_20261021.md`。`config/experiment_design.json` 是當年設計；實際完成以原表、模型與上述審查為準。不要直接在保存的歷史目錄開新訓練，重做請使用另外的工作目錄。
