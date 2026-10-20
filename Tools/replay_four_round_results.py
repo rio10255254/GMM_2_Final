@@ -87,6 +87,11 @@ def recover(root):
             raise ValueError('Unexpected rollback history')
         current = rows[-1]['values']; checks = 0
         final = active.get('final_validation', {})
+        if number == 94:
+            progress = read_json(record_dir/'run_progress.json')
+            if progress['completed_epoch'] != endpoint:
+                raise ValueError('R94 last committed progress does not match its saved endpoint')
+            final = progress['latest_metrics']['validation']
         mapping = ({'val_detail_axis':'detail_axis','val_contour_axis':'contour_axis',
                     'val_identity_axis':'identity_axis','val_motion_axis':'motion_axis','val_worst_axis':'worst_axis'}
                    if number <= 95 else {'val_texture':'texture','val_contour':'contour',
