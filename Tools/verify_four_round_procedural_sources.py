@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 from collections import Counter
+import csv
 from dataclasses import fields
 import importlib.util
 import os
@@ -40,14 +41,20 @@ def main():
     package=a.root/'Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal'
     manifest=read_json(package/'manifest.json')
     source=folder/'training/r98_dataset.py';module=load('r98_preserved_focus_dataset',source)
-    for epoch,patch,core in [(1,512,256),(17,768,384),(48,896,512)]:
+    active=read_json(folder/'runs/active_run.json')
+    with (folder/'runs'/('training_'+active['run_id'])/'training_log.csv').open(encoding='utf-8-sig',newline='') as stream:
+        observed={int(row['epoch']):row for row in csv.DictReader(stream)}
+    for epoch in [1,17,48]:
+        row=observed[epoch]
+        patch,core,scene_batch=(int(row[key]) for key in ['patch','core','scene_batch'])
         seed=design['independence']['seed']
         dataset=module.R98SceneDataset(package,manifest,'train',patch,core,epoch,master_seed=seed+170003)
-        sampler=module.TextureFocusBatchSampler(dataset,1,seed+epoch*1009,design['data']['texture_focus_roles'],16)
+        sampler=module.TextureFocusBatchSampler(dataset,scene_batch,seed+epoch*1009,design['data']['texture_focus_roles'],16)
         batches=list(sampler);roles=[dataset.role_at(i) for batch in batches for i in batch]
         if len(batches)!=16 or set(roles)!=set(design['data']['texture_focus_roles']):
             raise ValueError('Supplemental texture-role coverage changed')
-        result['R98_texture_focus'][str(epoch)]={'batches':batches,'roles':roles,'role_counts':dict(sorted(Counter(roles).items()))}
+        result['R98_texture_focus'][str(epoch)]={'patch':patch,'core':core,'observed_scene_batch':scene_batch,
+            'batches':batches,'roles':roles,'role_counts':dict(sorted(Counter(roles).items()))}
     if a.reference and result!=read_json(a.reference)['values']:
         raise ValueError('Independent periodic/sampling replay differs')
     write_json(out/'PROCEDURAL_SOURCE_VERIFIED.json',{'status':'PASS','device':'cpu','historical_training_repeated':False,
