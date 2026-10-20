@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "current_formal_scientific_source_matches_original_run": [
+    {
+      "round": 94,
+      "path": "Experiments/R94_EvidenceConditionalScratch/model/r94_model.py",
+      "sha256": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "recorded_at_run": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "matches_original_run": true
+    },
+    {
+      "round": 94,
+      "path": "Experiments/R94_EvidenceConditionalScratch/training/train_r94.py",
+      "sha256": "c6a5f180d0d33e130e59d1ad1257fc1de5eeae75782cd08609bfaa1ae5a851f8",
+      "recorded_at_run": "c6a5f180d0d33e130e59d1ad1257fc1de5eeae75782cd08609bfaa1ae5a851f8",
+      "matches_original_run": true
+    },
+    {
+      "round": 94,
+      "path": "Experiments/R94_EvidenceConditionalScratch/config/experiment_design.json",
+      "sha256": "6b1f6accb35fc42c52730ad431b979bb817fc9acf734a01fda82b130a319167c",
+      "recorded_at_run": "6b1f6accb35fc42c52730ad431b979bb817fc9acf734a01fda82b130a319167c",
+      "matches_original_run": true
+    },
+    {
+      "round": 95,
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/model/r95_model.py",
+      "sha256": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "recorded_at_run": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "matches_original_run": true
+    },
+    {
+      "round": 95,
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/training/train_r95.py",
+      "sha256": "eccc245fef76a605d99d1e5e912f0b52fb0faaec554ad8bfc8e44e504d1018ad",
+      "recorded_at_run": "eccc245fef76a605d99d1e5e912f0b52fb0faaec554ad8bfc8e44e504d1018ad",
+      "matches_original_run": true
+    },
+    {
+      "round": 95,
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/config/experiment_design.json",
+      "sha256": "a4b100491941d35ec915f487bc5c7666c442b0641afc9c852d4eb0ae8abc2d2e",
+      "recorded_at_run": "a4b100491941d35ec915f487bc5c7666c442b0641afc9c852d4eb0ae8abc2d2e",
+      "matches_original_run": true
+    },
+    {
+      "round": 97,
+      "path": "Experiments/R97_DirectCausalPhaseScratch/model/r97_model.py",
+      "sha256": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "recorded_at_run": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "matches_original_run": true
+    },
+    {
+      "round": 97,
+      "path": "Experiments/R97_DirectCausalPhaseScratch/training/train_r97_core.py",
+      "sha256": "a11a81f05b3d55317d480bdf79c86c425254a7130d7938bd9dabf0440255b721",
+      "recorded_at_run": "a11a81f05b3d55317d480bdf79c86c425254a7130d7938bd9dabf0440255b721",
+      "matches_original_run": true
+    },
+    {
+      "round": 97,
+      "path": "Experiments/R97_DirectCausalPhaseScratch/config/experiment_design.json",
+      "sha256": "9254791bd31cb6200eab8eb3ef696de593ce2c70f48d62d5dbc86ac8bdd0f0fa",
+      "recorded_at_run": "9254791bd31cb6200eab8eb3ef696de593ce2c70f48d62d5dbc86ac8bdd0f0fa",
+      "matches_original_run": true
+    },
+    {
+      "round": 98,
+      "path": "Experiments/R98_AggressiveTextureScratch/model/r98_model.py",
+      "sha256": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "recorded_at_run": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "matches_original_run": true
+    },
+    {
+      "round": 98,
+      "path": "Experiments/R98_AggressiveTextureScratch/training/train_r98_core.py",
+      "sha256": "e586e16727b30379663b7a7cd0d0be35a0d436ffaf17dba15aa3825e0614baf4",
+      "recorded_at_run": "e586e16727b30379663b7a7cd0d0be35a0d436ffaf17dba15aa3825e0614baf4",
+      "matches_original_run": true
+    },
+    {
+      "round": 98,
+      "path": "Experiments/R98_AggressiveTextureScratch/config/experiment_design.json",
+      "sha256": "8d2155f4e39f33238249d7011e2fca37b85e825451d70dd4a03e5258874640d0",
+      "recorded_at_run": "8d2155f4e39f33238249d7011e2fca37b85e825451d70dd4a03e5258874640d0",
+      "matches_original_run": true
+    }
+  ],
+  "R95_earlier_trainer_revisions": {
+    "recorded_hashes": {
+      "eccc245fef76a605d99d1e5e912f0b52fb0faaec554ad8bfc8e44e504d1018ad": [
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/active_run.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/batch_progress.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/run_progress.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/run_summary.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/startup_trace.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_03/continuation_audit.json:trainer_sha256"
+      ],
+      "d0cb1a2759e5b9e26d21af29f6d0aec7d6b4daaff5a8e1c555db682d039e7c96": [
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/active_run.json:origin_trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/batch_progress.json:origin_trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/run_progress.json:origin_trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/run_summary.json:origin_trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/startup_trace.json:origin_trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_081318_authorized_acceleration/interruption_audit.json:accelerated_trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_02/continuation_audit.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_03/continuation_audit.json:origin_trainer_sha256"
+      ],
+      "810f04e36a0ecc4e6148609871f089cc4008a69ebc3e940cd6cb8672bb2f4f8a": [
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002234/run_progress.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002234/run_summary.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002234/scratch_initialization_audit.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002234/startup_trace.json:trainer_sha256"
+      ],
+      "6d48d629fee007f278b5cc3ac218f499bb684ab48d143165ca47075bc2cddef7": [
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002539/run_progress.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002539/run_summary.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002539/scratch_initialization_audit.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002539/startup_trace.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/scratch_initialization_audit.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_014928_memory_guard/failure.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_014928_memory_guard/run_progress_epoch9.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_014928_memory_guard/startup_trace_epoch10.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_081318_authorized_acceleration/active_run_epoch011.json:origin_trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_01/continuation_audit.json:origin_trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_01/failure.json:trainer_sha256"
+      ],
+      "6e04d61c1bb848d4adb40d9adbb4f928d70936b3721d825c09d24904708bcf1b": [
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_081318_authorized_acceleration/active_run_epoch011.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_01/continuation_audit.json:trainer_sha256",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_02/continuation_audit.json:origin_trainer_sha256"
+      ]
+    },
+    "available_in_Git_history": [
+      "eccc245fef76a605d99d1e5e912f0b52fb0faaec554ad8bfc8e44e504d1018ad"
+    ],
+    "not_found_in_current_four_round_tree_or_Git_history": [
+      "6d48d629fee007f278b5cc3ac218f499bb684ab48d143165ca47075bc2cddef7",
+      "6e04d61c1bb848d4adb40d9adbb4f928d70936b3721d825c09d24904708bcf1b",
+      "810f04e36a0ecc4e6148609871f089cc4008a69ebc3e940cd6cb8672bb2f4f8a",
+      "d0cb1a2759e5b9e26d21af29f6d0aec7d6b4daaff5a8e1c555db682d039e7c96"
+    ],
+    "limitation": "Current final trainer and all saved histories are preserved; unavailable earlier trainer bytes prevent a claim of exact full historical training replay."
+  }
+}

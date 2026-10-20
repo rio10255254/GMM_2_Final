@@ -1,11 +1,112 @@
 {
   "schema": 1,
-  "status": "IN_PROGRESS",
+  "status": "PASS",
   "date": "2026-10-21",
-  "rounds": [94, 95, 97, 98],
+  "rounds": [
+    94,
+    95,
+    97,
+    98
+  ],
+  "source_commit_used_for_native_model_and_dataset_replay": "c7172875062f06d03b1e75181ba1b2071767f3dd",
+  "source_commit_with_R94_last_committed_result_replay": "f372ded740882b6c7248795f83f83c6b6cbaf210",
+  "source_commit_with_R98_actual_recorded_stage_sampling": "3d74614cd1bdf87c1a13ba24d9bbd3e51a50954b",
+  "original_locations_freshly_downloaded_from_GitHub_restored_and_verified": 1092,
+  "original_location_bytes": 4851357322,
+  "saved_model_files_including_smoke_and_aliases": 107,
+  "original_images_restored_and_decoded": 663,
+  "important_original_images_in_repository": 26,
+  "additional_full_camera_originals_restored": 4,
+  "all_16_previews_recreated_exactly_from_camera_originals": true,
+  "missing_June18_full_camera_original_now_preserved": true,
+  "incorrect_camera_crop_origin_rejected_and_existing_report_protected": true,
+  "all_107_checkpoint_tensors_finite": true,
+  "native_model_checkpoints_replayed": 8,
+  "fixed_model_input_pairs_exact": 32,
+  "float_array_and_BMP_files_identical": 64,
+  "numeric_result_replay_from_fresh_GitHub_mini_package": "PASS",
+  "committed_training_epochs_replayed": {
+    "94": 8,
+    "95": 48,
+    "97": 48,
+    "98": 48
+  },
+  "R95_raw_rows": 49,
+  "R95_committed_rows": 48,
+  "R95_superseded_epoch_9_preserved": true,
+  "original_summary_scalar_checks": 119,
+  "SEM_repeats_grouped_by_36_physical_pillars": true,
+  "shared_bank_files_restored_from_previous_actual_GitHub_downloads_and_freshly_verified": 15004,
+  "shared_bank_bytes": 29704604438,
+  "previous_GitHub_asset_server_digests_freshly_confirmed": 15,
+  "native_readers_verified": 4,
+  "prepared_train_samples_exact": 36,
+  "all_eight_roles_per_reader": true,
+  "on_demand_periodic_batches_exact": 8,
+  "R98_texture_focus_schedules_exact": [
+    1,
+    17,
+    48
+  ],
+  "R98_texture_focus_observed_scene_batches": [
+    6,
+    2,
+    1
+  ],
+  "old_D_and_archive_roots_denied_in_native_replay": true,
+  "CPU_environment_created_fresh": true,
+  "historical_GPU_training_repeated": false,
+  "historical_GPU_preview_bitwise_claim": false,
+  "R98_full_R97_external_suite_claimed": false,
+  "earlier_source_revision_gaps_disclosed": true,
+  "formal_baseline_or_thesis_selection_changed": false,
   "D_deletion_performed": false,
   "GPU_training_or_inference_started": false,
-  "historical_training_repeated": false,
-  "native_model_GitHub_replay": "pending",
-  "full_GitHub_restore": "pending"
+  "current_user_HEAD_preserved": "f0183af6e03954804d0ad82b2687149623e94700",
+  "current_user_index_sha256_preserved": "378db159b34a3742f51a91669e22e2b62da4dbfb973263ebc8734a5b6567f901",
+  "component_releases": [
+    "r94-complete-record-20261021",
+    "r95-complete-record-20261021",
+    "r97-complete-record-20261021",
+    "r98-complete-record-20261021"
+  ],
+  "camera_originals_release": "four-round-preview-origins-20261021",
+  "master_release": "research-preservation-20261021",
+  "assets": [
+    {
+      "name": "research-r94-complete-record-001.zip",
+      "bytes": 379043464,
+      "sha256": "883f17dc74988a2191fec05cbbb2c7eca9bd940e85d319950b1bdc93fd406dd4",
+      "objects": 141,
+      "collection": "r94-complete-record"
+    },
+    {
+      "name": "research-r95-complete-record-001.zip",
+      "bytes": 1024875578,
+      "sha256": "b61b029527cf0f46733e7d05168f7e898f39e4404aa83792a38e7343681bf524",
+      "objects": 295,
+      "collection": "r95-complete-record"
+    },
+    {
+      "name": "research-r97-complete-record-001.zip",
+      "bytes": 1403257555,
+      "sha256": "4873c2057535ee9d94bbb2629c51ef6e8f15329e21ca0c2596a66e7a7d8ca003",
+      "objects": 429,
+      "collection": "r97-complete-record"
+    },
+    {
+      "name": "research-r97-complete-record-002.zip",
+      "bytes": 249204859,
+      "sha256": "2fc0e6289dcbb443a1fc3b89f4be8521ee9d8c7e0a61e2e1005ad5f86ffe3f47",
+      "objects": 74,
+      "collection": "r97-complete-record"
+    },
+    {
+      "name": "research-r98-complete-record-001.zip",
+      "bytes": 1023599809,
+      "sha256": "4c288b36a69352cf29a9ed48c7367e4a6009380ac521c3165608a4c7aa0e87bd",
+      "objects": 120,
+      "collection": "r98-complete-record"
+    }
+  ]
 }

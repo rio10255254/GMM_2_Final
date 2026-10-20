@@ -123,7 +123,19 @@
         "sha256": "b909a8827f2292a9d8981f995f86e3cb59787ef619d27bb3ef36cf6bc812010f",
         "bytes": 3146806
       },
-      "historical_crop_program": "Experiments/R75v2_R61ArchitectureScratchGeneralization/tools/prepare_live_validation.py"
+      "historical_crop_program": "Experiments/R75v2_R61ArchitectureScratchGeneralization/tools/prepare_live_validation.py",
+      "historical_pillar_ids_from_crop_program": [
+        22,
+        23,
+        24,
+        28,
+        29,
+        30,
+        34,
+        35,
+        36
+      ],
+      "mapping_scope": "Historical crop-program metadata only; this audit verifies camera/crop bytes, not a new SEM mapping. The filename center9 must not substitute for coordinates or pillar IDs."
     }
   ]
 }

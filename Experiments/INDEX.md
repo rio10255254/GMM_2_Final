@@ -1,6 +1,7 @@
 # 實驗索引 / Experiment Index
 
-Last updated: 2026-10-16（研究保存及核心重做核對完成；D清理被工具拒絕）
+Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重做；本輪不清D）
+2026-10-21：[R94／R95／R97／R98完整方法、原模型、數據與失敗歷程](../docs/reproducibility/four_rounds/README.md)已補齊，GitHub取回1,092個原位置、32組原模型輸出相同；保留不利結果及缺件界限，沒有重新訓練或清理D。
 
 MOSR口試補充比較進行中：[平均／中位數完整重算](R153_MeanExternalBenchmark/reports/MEAN_MEDIAN_RESULTS.md)／[自動訓練監看與接續](R153_MeanExternalBenchmark/reports/TRAINING_MONITOR.md)。七個官方架構從零一般訓練；兩個官方後端環境阻礙完整保留。巡檢改為預估完成加緩衝時檢查；尚未開始方法最多8輪，實際訓練時間差異明列。平均數第一部分交接已完成：[可供網頁對話修改論文的完整文件](R153_MeanExternalBenchmark/reports/MOSR_MEAN_THESIS_HANDOFF_20261005/MOSR_MEAN_THESIS_HANDOFF.md)；全部外部實拍benchmark尚未完成。
 

@@ -1,5 +1,7 @@
 # 各輪研究與重做入口
 
+2026-10-21新增：[R94／R95／R97／R98完整紀錄與實際取回核對](four_rounds/README.md)，逐輪補正實際完成、恢復與失敗，全部原模型及影像保留。
+
 這裡按實驗逐輪說明研究問題、實際結果、必要來源及選圖理由。正式結論仍以各輪原始報告為準。
 
 「已整理」不等於已重新訓練；各輪驗證範圍與缺件另列，原始成功、失敗與中止狀態全部保留。
@@ -123,12 +125,12 @@
 | [main/R91_DetailDecoupledScratch](experiments/main__R91_DetailDecoupledScratch.md) | 分開紋理恢復與輪廓／曝光約束 | 分開報告退化影像恢復與清楚輸入被改動的代價 |
 | [main/R92_PhysicalTransitionBalancedScratch](experiments/main__R92_PhysicalTransitionBalancedScratch.md) | 補足物理邊緣過渡與平衡曝光取樣 | 生成修復、真實光學統計及精度差異需隨結果保留 |
 | [main/R93_RecoverableDetailSeparatedScratch](experiments/main__R93_RecoverableDetailSeparatedScratch.md) | 拆開可恢復細節及清楚輸入保護 | 實際60輪停止；此輪資料被R94到98共用，D路徑有下游相依 |
-| [main/R94_EvidenceConditionalScratch](experiments/main__R94_EvidenceConditionalScratch.md) | 按成像順序分工並直接教何時需要修正 | 第8輪失敗後結案；失敗紀錄是R95修復依據 |
-| [main/R95_CounterfactualGateRepairScratch](experiments/main__R95_CounterfactualGateRepairScratch.md) | 修復R94修正閘與訓練動力問題 | 獨立48輪，不繼承R94權重；保留每分支的收益與後期退步 |
+| [main/R94_EvidenceConditionalScratch](experiments/main__R94_EvidenceConditionalScratch.md) | 按成像順序分工並直接教何時需要修正 | 完整8輪；第9輪未提交即停止，所有原失敗與空啟動保留 |
+| [main/R95_CounterfactualGateRepairScratch](experiments/main__R95_CounterfactualGateRepairScratch.md) | 修復R94修正閘與訓練動力問題 | 48輪完成；首度恢復重建更新狀態，49列原表及第9輪取代脈絡完整保留 |
 | [main/R96_Design_Archive](experiments/main__R96_Design_Archive.md) | 保存R96正式設計前的舊方案 | 內含仍標示R95的設定與效能讀值，屬前置設計歷史，不能當成R96正式跑過的結果 |
 | [main/R96_LocalizedEvidenceProtectedScratch](experiments/main__R96_LocalizedEvidenceProtectedScratch.md) | 防止聯合訓練抵消各局部分支的目標 | 44輪獨立訓練，與舊設計目錄分開 |
-| [main/R97_DirectCausalPhaseScratch](experiments/main__R97_DirectCausalPhaseScratch.md) | 直接預測每分支實際施加的修正 | 移除壓制有效修正的振幅閘；從零訓練且需保留週期誤配問題 |
-| [main/R98_AggressiveTextureScratch](experiments/main__R98_AggressiveTextureScratch.md) | 增加可見多尺度紋理的恢復強度 | 設計理由與實際結案分開，不能把首頁訓練中當目前狀態 |
+| [main/R97_DirectCausalPhaseScratch](experiments/main__R97_DirectCausalPhaseScratch.md) | 直接預測每分支實際施加的修正 | 48輪完成；固定48輪後測、兩種事故及細節／量測限制分別保存 |
+| [main/R98_AggressiveTextureScratch](experiments/main__R98_AggressiveTextureScratch.md) | 增加可見多尺度紋理的恢復強度 | 48輪完成並補正舊結果報告；SEM不利結果、驗證裁切不同及缺少整套後測明列 |
 | [main/R99_GeometryTextureCoherentScratch](experiments/main__R99_GeometryTextureCoherentScratch.md) | 把亮暗、幾何、邊緣與紋理動作依序分開 | 實際41輪停止；保留與計畫48輪的差別 |
 | [lab/BaseUNet_Baseline_20260718](experiments/lab__BaseUNet_Baseline_20260718.md) | 以基礎U-Net作參數與訓練資料受控比較 | 不同資料量／固定光學／切片與輪次版本分開；輸出報告沿用V42欄名需核對實際方法身分 |
 | [lab/Modern_Restoration_Benchmarks_20260719](experiments/lab__Modern_Restoration_Benchmarks_20260719.md) | 比較柱、孔、線三形貌的EDSR／NAFNet等方法 | 30輪NAFNet與15輪EDSR各取最低驗證模型；同系統轉移且含固定光學轉換，不宣稱所有指標第一 |

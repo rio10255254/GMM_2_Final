@@ -1,0 +1,2477 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "device": "cpu",
+  "torch": "2.3.0+cu121",
+  "torch_cuda_build": "12.1",
+  "numpy": "1.26.4",
+  "opencv": "4.12.0",
+  "historical_GPU_panels_used_as_pixel_reference": false,
+  "training_repeated": false,
+  "checkpoints": [
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/formal/seed_940041/R94_scratch_seed940041_20260812_191954/weights/epoch_001.pth.tar",
+      "sha256": "e1ac7f3dd6ced8899c67b8816a5c9e3b96047fa3690ed90a28dc3ada37ea7f47",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/formal/seed_940041/R94_scratch_seed940041_20260812_191954/weights/epoch_002.pth.tar",
+      "sha256": "8e1029b016bab8be3731237771f65f56a49517a1b1b5adde98d59ae5c18d0285",
+      "epoch": 2,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/formal/seed_940041/R94_scratch_seed940041_20260812_191954/weights/epoch_004.pth.tar",
+      "sha256": "e0e84835ae42a4c259a282b046a006fdafb86a0108b261b91eb79e82cf8bd300",
+      "epoch": 4,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/formal/seed_940041/R94_scratch_seed940041_20260812_191954/weights/epoch_006.pth.tar",
+      "sha256": "a74a894c6a8c8fe13422ea0512556aad2844091fc782d5a44442d8f6c070ef81",
+      "epoch": 6,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/formal/seed_940041/R94_scratch_seed940041_20260812_191954/weights/epoch_008.pth.tar",
+      "sha256": "66be7dc62bde72d795dd24bb11acb17a3ad30ed2ea484e268a5553ea8ffdcdcf",
+      "epoch": 8,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/formal/seed_940041/R94_scratch_seed940041_20260812_191954/weights/latest.pth.tar",
+      "sha256": "d42dade201a8ffcb2ed43d98f88637ed058f68afd6bb89d72c0c893312c3581e",
+      "epoch": 8,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_181537/weights/epoch_001.pth.tar",
+      "sha256": "858f95106921bcbd477b2acc71f2dc35b77f2a12d77548d57199ec4e0cc76ce2",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_181537/weights/latest.pth.tar",
+      "sha256": "46f58f015634cb131aa40978ebdfcee8b37e0e656ada13161aa1b1df1abc7ebd",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_183038/weights/epoch_001.pth.tar",
+      "sha256": "fae01e7c0a41c0204b4ce8f4d4f97d30993a32ef3824670fe85e863a3f935597",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_183038/weights/latest.pth.tar",
+      "sha256": "28a6fe9bc53950cc0f6099cc2eeef8eb6012a3539835de4fee55c963175636ad",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_183348/weights/epoch_001.pth.tar",
+      "sha256": "283f64a1c362bbbd7324feb514b7775e394345a5c85c840b5250dc590ad1d487",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_183348/weights/latest.pth.tar",
+      "sha256": "7ae4996091d4ae04379ef9d08aae9bd92e73fe9e5bd472381f6faf14f8796740",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_183529/weights/epoch_001.pth.tar",
+      "sha256": "3649b50b1d4ea63e8e00981e1b6493cec26f991cc2d55479892af0398f62b1d6",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_183529/weights/latest.pth.tar",
+      "sha256": "cf62669ed871ec161e9745ae77cf2b8f36af9aaff710a6ec98c3100a0fc32d0f",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_184512/weights/epoch_001.pth.tar",
+      "sha256": "732975c05d2db0470c3d925a67ff6f922078770584dcf8acab4e6a6f3ae96c62",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_184512/weights/latest.pth.tar",
+      "sha256": "bc5f8045d17936b20353a0b9bef7b874565e1877b8e97d591c4c8234323bc9f6",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_185402/weights/epoch_001.pth.tar",
+      "sha256": "f5d51b0b84f286bc26c0d03dfd29dc7c6d6cbf51f059599f6ef66fa0e5cf2de5",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_185402/weights/latest.pth.tar",
+      "sha256": "65ac8652f229328345f1e06bdc696ac0770f2c42455ab9b73c03513f7141df35",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_190117/weights/epoch_001.pth.tar",
+      "sha256": "2ca532007212cd821c676d64fe020ac5153114d1c125b647106d671c2e4c07c3",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/weights/smoke/seed_940041/R94_scratch_seed940041_20260812_190117/weights/latest.pth.tar",
+      "sha256": "f1f17dfb0eefde3a5bcea7e836820b306cb92ebfb0a3758e085828e8d9a8e6fc",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_001.pth.tar",
+      "sha256": "63ff6e11318510bdfc51fc3250837caaefb194df87db9479c6452a87251d222e",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_002.pth.tar",
+      "sha256": "d249d3f3a9f8b9dca82943555b68efd61b00657c14a350ad25cb96b6300de824",
+      "epoch": 2,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_004.pth.tar",
+      "sha256": "ca50b0fc13a157766cfc6e3fc07cd26b8b805fc6a16b1b00458806ef60f89263",
+      "epoch": 4,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_006.pth.tar",
+      "sha256": "f5e8e3b6fb440e7b39f8dbc17cf215adf10944f37c482458c6a34a342c1258ba",
+      "epoch": 6,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_008.pth.tar",
+      "sha256": "721b8c1ab5d8b8f6ecc9bb11fe2fec4a9a743969fd888ec27033490bed5560a3",
+      "epoch": 8,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_010.pth.tar",
+      "sha256": "1d9a927ec75a0162665d5808c925ab9a186b2890d6153c5f0bebf458b63f22b0",
+      "epoch": 10,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_011_pre_acceleration.pth.tar",
+      "sha256": "f265ff041f73d0f5344f1d71dc19154b2475ad65a923d06199c676233f635671",
+      "epoch": 11,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_012.pth.tar",
+      "sha256": "217dc2191bfbf096aa9c4b9353001d7e3850a71d2a84fd9d80c8186100763858",
+      "epoch": 12,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_014.pth.tar",
+      "sha256": "463ad88e213d6306ce4c3737356bc0be5da5218e3fe2527d9779462a7f079e87",
+      "epoch": 14,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_016.pth.tar",
+      "sha256": "3a704aee24229f99fd0357dd16fb3aa5342a2c59997a429c78387c03be06da66",
+      "epoch": 16,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_018.pth.tar",
+      "sha256": "9c7fe0a3504664e2d21a62de355f08824177dc96d9466e69f92cc27c1f24f1c0",
+      "epoch": 18,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_020.pth.tar",
+      "sha256": "cccb40e6737c58c6bdc0bf6915a43e9ca28eae66dfbb61f2a55627f194b7aa47",
+      "epoch": 20,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_022.pth.tar",
+      "sha256": "c0634266f29506c5e2794897f5117c0eb6d4e093763a7e9b8d17b370104e5aa2",
+      "epoch": 22,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_024.pth.tar",
+      "sha256": "5a26d7fc1e4c1a99d30d0c527f459eb596865719c5ca76fad30c9dbec6186a8c",
+      "epoch": 24,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_026.pth.tar",
+      "sha256": "08026313c215f3a949451e2c896c557c0921b8f467122e252a917faeacc718e1",
+      "epoch": 26,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_028.pth.tar",
+      "sha256": "9302a63264e25592289a134f0b01e5ddd4738e5baa8b1eae6c80a931e28bac5c",
+      "epoch": 28,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_030.pth.tar",
+      "sha256": "632ac880ceb305413190e00b559507484c135f91bb4f4248d2e9fae568da9d55",
+      "epoch": 30,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_032.pth.tar",
+      "sha256": "a7e387241a8abb00c7934bd10c5d881cbd1996cbaa0f8f0dc94db064fe666ea0",
+      "epoch": 32,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_034.pth.tar",
+      "sha256": "a1f7f8a4d7febe3b3aa33bc48d2f495d2d1df87d4814d02785a58c888f1c8e3a",
+      "epoch": 34,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_036.pth.tar",
+      "sha256": "a82560440e95076d501f2b18868deb84b6475f80a948b84294e7cda55b06d3e4",
+      "epoch": 36,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_038.pth.tar",
+      "sha256": "8cbf9ab09106b5477061ac40b2310a9847dbd787f6ab4ab7ef1fa4b91fc558f1",
+      "epoch": 38,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_040.pth.tar",
+      "sha256": "c7bf6a5b61c1ac4f58cef96d36bf83f6b9d288b05dc2ce993e4bc6f614d73203",
+      "epoch": 40,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_042.pth.tar",
+      "sha256": "51a8db8ddf382f0d44bb827daf14654bdcdf001c4b573aa67dced8479290444d",
+      "epoch": 42,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_044.pth.tar",
+      "sha256": "af97a230b849b9a31633a678e590f767f63a8508182b8293de431e53e8c50da9",
+      "epoch": 44,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_046.pth.tar",
+      "sha256": "41326dc5505ae8cc875bebb737b41b5e999b903d0fc3acb7133fb9ba1c172dd7",
+      "epoch": 46,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/epoch_048.pth.tar",
+      "sha256": "ebc5c9db204f1841cdfa688d7f5250af26849b6f431683e56fc60117ac5570b8",
+      "epoch": 48,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/formal/seed_950041/R95_scratch_seed950041_20260813_003125/weights/latest.pth.tar",
+      "sha256": "53667a6cbd3c4b4d1431c8a471d38133fc99a29bf5d28d94fdf5d3d33e66d395",
+      "epoch": 48,
+      "finite_tensors": 2086,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "current_ema_decay",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates",
+        "rng_state",
+        "same_run_continuation_capable"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/smoke/seed_950041/R95_scratch_seed950041_20260813_002234/weights/epoch_001.pth.tar",
+      "sha256": "a9628cea27f8a1f186e288d13b5b0402fafb216ed4b3f691786e424fc5b92a6c",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/smoke/seed_950041/R95_scratch_seed950041_20260813_002234/weights/latest.pth.tar",
+      "sha256": "0a9e96d381b72af8a923a30d6a8f3a844ad7bc406b7f2eff1a4b03e21e41df7c",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/smoke/seed_950041/R95_scratch_seed950041_20260813_002539/weights/epoch_001.pth.tar",
+      "sha256": "8140bae6ef82a2319a33a76d20317570f496452d28f19f79285ee1ccea5be9db",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/weights/smoke/seed_950041/R95_scratch_seed950041_20260813_002539/weights/latest.pth.tar",
+      "sha256": "c0faa6b5d60206973f4cca76ca27232382d2f9afd7684686262d2f6285ebaefb",
+      "epoch": 1,
+      "finite_tensors": 932,
+      "has_optimizer_state": false,
+      "top_level_keys": [
+        "checkpoint_loaded",
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "resume_source"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_001.pth.tar",
+      "sha256": "8f5c80a251b113581e818e934fa5bf8257da19a61a3e445452b0d41f68948c0b",
+      "epoch": 1,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_002.pth.tar",
+      "sha256": "78672978aad1a23fa8ded1d421614fa06a835057ff8eaf93e4f9a411357758be",
+      "epoch": 2,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_004.pth.tar",
+      "sha256": "96e207e3ed6ec126ea0b11b21586f035b8f90c362b8d938333a87faa96d55427",
+      "epoch": 4,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_006.pth.tar",
+      "sha256": "64ab5771f3c358fa85d9db4ec87e11771f4a25eff71a491adb73655b399cca6a",
+      "epoch": 6,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_008.pth.tar",
+      "sha256": "2bc58d54e5a690e7673eeb94b2881c6c294946caeb321cfe13af0708e4d39bf2",
+      "epoch": 8,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_010.pth.tar",
+      "sha256": "03144ef6747a424a38e372d064ea9c4a426d1cfaba715faa6db14f007e34c91c",
+      "epoch": 10,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_012.pth.tar",
+      "sha256": "1efc2221ce79c42d6b033964f546ecd2901b40a5f9c09a8a52e0834619773880",
+      "epoch": 12,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_014.pth.tar",
+      "sha256": "36125b6adf6ac5b57a85205576d546ff183c8350282b503bd9901dd3a29ee566",
+      "epoch": 14,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_016.pth.tar",
+      "sha256": "d168cc49afb3cf32c8cd4f0e8a09a073e92a90efe8f36daea746e686e747ddaa",
+      "epoch": 16,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_018.pth.tar",
+      "sha256": "beb7271339404c835560b9026e862080e56965c93f225e561be5e0b878e8274a",
+      "epoch": 18,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_020.pth.tar",
+      "sha256": "abc91c8ffd71f46d5a61f29e6f3e296a0471128eed0e1e0555d4cad32aa4b247",
+      "epoch": 20,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_022.pth.tar",
+      "sha256": "80736b592d61893afcb209b9ac2f98672b605c1a68f1b302b66be10f50898f11",
+      "epoch": 22,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_024.pth.tar",
+      "sha256": "38e2b33139dae10c3f5b248a4d0c3e7a9c72a93ff215f36638d4e9b178f2cccb",
+      "epoch": 24,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_026.pth.tar",
+      "sha256": "8f700b7e2d26a42b0e9e0c59ef85d9989c19bf232327b34b2f9825c30a56b3da",
+      "epoch": 26,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_028.pth.tar",
+      "sha256": "b2fe04aaa124be73f94fce221b6baa278cd1c03ca65963fab70ea15d74d25341",
+      "epoch": 28,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_030.pth.tar",
+      "sha256": "c85410932e66fdc03bcb612a539ae9008b09dab27e5e85bf9dbda9c7385e9867",
+      "epoch": 30,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_032.pth.tar",
+      "sha256": "d9eca822d5d08b160abd8003a2c0f550a6fc7f3b80c6091b3244f23927f952d9",
+      "epoch": 32,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_034.pth.tar",
+      "sha256": "dc1a16e43d4953a52f7b91f1759f0e0dc91c5ac4f2b8eca567155736837ee750",
+      "epoch": 34,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_036.pth.tar",
+      "sha256": "f0200bf9b4d570cd606a00afdeb3e728c36e108f6673da21fb7ac22d6e094d1b",
+      "epoch": 36,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_038.pth.tar",
+      "sha256": "10a3485a15e9d0e71bf9c7d5e48955b410e8660c1c644cb50ca85299a142f517",
+      "epoch": 38,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_040.pth.tar",
+      "sha256": "e2602e585078bb817e968816cabd58f2cb914b3cc3039496eb4d528d216e8dc6",
+      "epoch": 40,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_042.pth.tar",
+      "sha256": "d46309b6ef96e01d96f7924465ab6971ee043a3cd36b0eea067026a1c64e1122",
+      "epoch": 42,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_044.pth.tar",
+      "sha256": "2ecf9c4b450a35b29bcdc7651d982b9266a099b145daf5dca36f838b8c1ffc32",
+      "epoch": 44,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_046.pth.tar",
+      "sha256": "26fc97766a680e052873f2496c81b0c42a78fa8bcbd5cd9bb3d2a18d31f019dc",
+      "epoch": 46,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_048.pth.tar",
+      "sha256": "842875924d2be546e9283bc7b2986e3487dc37cf38845e69415228ce8bd2cc13",
+      "epoch": 48,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/latest.pth.tar",
+      "sha256": "15d7b915641aa8342f0d3963ca5dd765c8f9942b073925d6a2b4cbdc01eb45ff",
+      "epoch": 48,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/smoke/seed_970043/R97_scratch_seed970043_20260813_200604/weights/epoch_001.pth.tar",
+      "sha256": "408e27fceb5cad96a8ff7f3d123d82d8a41c6c5a847acf899aab7c6659162a01",
+      "epoch": 1,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R97_DirectCausalPhaseScratch/weights/smoke/seed_970043/R97_scratch_seed970043_20260813_200604/weights/latest.pth.tar",
+      "sha256": "80e755707ce2955e0ff8170358f640f9d96fbe9bcef90125db1d6f077f26b11e",
+      "epoch": 1,
+      "finite_tensors": 1588,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_001.pth.tar",
+      "sha256": "1b1bfbd04c96704aa0690f3d66cf69dd0ab1fdc7b11592a7c17a7e07bb8f3bfa",
+      "epoch": 1,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_002.pth.tar",
+      "sha256": "0e61f21f9b1d73c1d3c6af936a21466bc8fa632112867732a21e74a1b8a45bcf",
+      "epoch": 2,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_004.pth.tar",
+      "sha256": "ba48c909b78be3507883c03067d7ed7c71166333e01144595f89e7d83f5e003d",
+      "epoch": 4,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_006.pth.tar",
+      "sha256": "724ae7b7293c2b7bbbf1aaa8ab787fd9f095455004c5cd61734dd2d4aea1dbec",
+      "epoch": 6,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_008.pth.tar",
+      "sha256": "b551e80ce56e8318f26a235f3cbf4ae7d2b8baadbb28727c71cf15875222fc6a",
+      "epoch": 8,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_010.pth.tar",
+      "sha256": "0df33fd37fa5fca614ffe12081fb86cac6e257291171f9b6b5bb5c98429ba4d5",
+      "epoch": 10,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_012.pth.tar",
+      "sha256": "187ca4e4a38c5a0b874af442e02590f4cd2bb19016014b75078da868c81eeaa9",
+      "epoch": 12,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_014.pth.tar",
+      "sha256": "dc17d457c751ec6fd91ca72124ab07a4ab342e334dcaed400e2ecda1c095f15f",
+      "epoch": 14,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_016.pth.tar",
+      "sha256": "de7951cffd30bc80dbbfb39ad482e53a212fda48ab1ebfc5302ea7a1ce497339",
+      "epoch": 16,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_018.pth.tar",
+      "sha256": "215c775030b45c45038a15ad8b4f23f1594a2ec712c3981387c8a87df3bcdd02",
+      "epoch": 18,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_020.pth.tar",
+      "sha256": "75398532b988bce9cac27607876a74c363ed45fabab1ef442b70714d4f419446",
+      "epoch": 20,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_022.pth.tar",
+      "sha256": "64508effa113324932db8d1c5fec3de6098d7c409e45d33c27c261af85fec85e",
+      "epoch": 22,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_024.pth.tar",
+      "sha256": "19b195af32b8f871c104297b885656cedbc7ca0fa5cfec088802903faac69b0f",
+      "epoch": 24,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_026.pth.tar",
+      "sha256": "d1e6f8c84c3e9b6ed1e5447d8e4ee2d47676b06c8b85515349c98f3da6cd7885",
+      "epoch": 26,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_028.pth.tar",
+      "sha256": "7db9d00a2da1502f544c5d25c58041fcdd85f6e54e1050dbbd4e8e7d72a28db7",
+      "epoch": 28,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_030.pth.tar",
+      "sha256": "f6306f5d5bf1b98b38a7c00eb128a09ab77826b9d3b185475e46aea4ef53b7c4",
+      "epoch": 30,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_032.pth.tar",
+      "sha256": "55c0d035235417b76cc10d9f2f7f6986d1345beef38ba5006ad70d7bba5c67cd",
+      "epoch": 32,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_034.pth.tar",
+      "sha256": "5700e28a9421bae685e81b31e7a50e40d53d3fd374ebdf0d580fe1f7776c7c9e",
+      "epoch": 34,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_036.pth.tar",
+      "sha256": "e81cfd928a842c3eb2d45dbd9a9082da197858124a3155648209b90079e57e41",
+      "epoch": 36,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_038.pth.tar",
+      "sha256": "cf8bd44b65c5cf29a9e7c1e773cb03d424f86dffda491736559e512a3e84cf42",
+      "epoch": 38,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_040.pth.tar",
+      "sha256": "f2ebf93fdcd8116864f5b5309db0349d4ef8f2df216367e7ed902143aaa0c943",
+      "epoch": 40,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_042.pth.tar",
+      "sha256": "b45ad415542e762ccf18a81a93874054232ea43d25f2c771d44f9d45151f44b3",
+      "epoch": 42,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_044.pth.tar",
+      "sha256": "bd3691d43a39e2ecd45c3babae7f99e65726a38d8493be63339a55975823eefb",
+      "epoch": 44,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_046.pth.tar",
+      "sha256": "ff369729e265b942fac8a15e3df8f6cd1b23ff59e283c0583a5d737812b24c7f",
+      "epoch": 46,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/epoch_048.pth.tar",
+      "sha256": "a6ce19f3891180c415aa7ae4d4f34471351799e3d1fc894c81d7d8084e409ec3",
+      "epoch": 48,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/formal/seed_980047/R98_scratch_seed980047_20260814_005824/weights/latest.pth.tar",
+      "sha256": "f3c77f80ff92e0dac501733c3f1e1d71bc9d4ea3511b1baa2e82a52ce5adde30",
+      "epoch": 48,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/smoke/seed_980047/R98_scratch_seed980047_20260814_005609/weights/epoch_001.pth.tar",
+      "sha256": "1e3359cabed75796f30aa452b6075909105702398baa5182c9723cf3a49ccba1",
+      "epoch": 1,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    },
+    {
+      "path": "Experiments/R98_AggressiveTextureScratch/weights/smoke/seed_980047/R98_scratch_seed980047_20260814_005609/weights/latest.pth.tar",
+      "sha256": "7b323c374332a5dfad14fdba0fe8ccc171544ef7e0c0299e30dc78c7750bdea7",
+      "epoch": 1,
+      "finite_tensors": 1592,
+      "has_optimizer_state": true,
+      "top_level_keys": [
+        "ema_state_dict",
+        "epoch",
+        "experiment_id",
+        "metadata",
+        "metrics",
+        "model_state_dict",
+        "optimizer_state_dict",
+        "optimizer_updates"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "R94_epoch004_20x_mixed_raw",
+      "round": 94,
+      "epoch": 4,
+      "checkpoint_sha256": "e0e84835ae42a4c259a282b046a006fdafb86a0108b261b91eb79e82cf8bd300",
+      "model_source_sha256": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "native_inference_sha256": "5d6321a5dadf36a143151849479ce4e6b31c9b9dbe01fc9b8a7b466a9a6cc953",
+      "input_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "8f580463ecbce0105af3a4e8e619a2791e1a5fbc497a7b7fb1a9b05712720430",
+      "bmp_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R94_epoch004_50x_array_raw",
+      "round": 94,
+      "epoch": 4,
+      "checkpoint_sha256": "e0e84835ae42a4c259a282b046a006fdafb86a0108b261b91eb79e82cf8bd300",
+      "model_source_sha256": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "native_inference_sha256": "5d6321a5dadf36a143151849479ce4e6b31c9b9dbe01fc9b8a7b466a9a6cc953",
+      "input_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "3f0ee5033ce7243e2489e16258a683e92bfb567d0ce3571cb36677111b69565e",
+      "bmp_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R94_epoch004_5x_dense_raw",
+      "round": 94,
+      "epoch": 4,
+      "checkpoint_sha256": "e0e84835ae42a4c259a282b046a006fdafb86a0108b261b91eb79e82cf8bd300",
+      "model_source_sha256": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "native_inference_sha256": "5d6321a5dadf36a143151849479ce4e6b31c9b9dbe01fc9b8a7b466a9a6cc953",
+      "input_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "68c813c0f7c015b131e88ea692b07c4029a4f3cfaf8fe928efc662e5deac0450",
+      "bmp_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R94_epoch004_pillar_center9_50x_raw",
+      "round": 94,
+      "epoch": 4,
+      "checkpoint_sha256": "e0e84835ae42a4c259a282b046a006fdafb86a0108b261b91eb79e82cf8bd300",
+      "model_source_sha256": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "native_inference_sha256": "5d6321a5dadf36a143151849479ce4e6b31c9b9dbe01fc9b8a7b466a9a6cc953",
+      "input_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "shape": [
+        232,
+        232
+      ],
+      "float32_sha256": "f1d97aa5dc9c5aa443fb0ef269e1f90a8fb7ef1953a2d3ee93f2523cdd2f9686",
+      "bmp_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R94_epoch008_20x_mixed_raw",
+      "round": 94,
+      "epoch": 8,
+      "checkpoint_sha256": "66be7dc62bde72d795dd24bb11acb17a3ad30ed2ea484e268a5553ea8ffdcdcf",
+      "model_source_sha256": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "native_inference_sha256": "5d6321a5dadf36a143151849479ce4e6b31c9b9dbe01fc9b8a7b466a9a6cc953",
+      "input_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "dcf8cc112b8ccdf0a6c89e712f5324ca9b8366e3cbf720a7290f661ce1417f69",
+      "bmp_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R94_epoch008_50x_array_raw",
+      "round": 94,
+      "epoch": 8,
+      "checkpoint_sha256": "66be7dc62bde72d795dd24bb11acb17a3ad30ed2ea484e268a5553ea8ffdcdcf",
+      "model_source_sha256": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "native_inference_sha256": "5d6321a5dadf36a143151849479ce4e6b31c9b9dbe01fc9b8a7b466a9a6cc953",
+      "input_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "3b4e5bfdb1e7162ac92103335e41973af0cedcfdd95d22287333762344151cca",
+      "bmp_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R94_epoch008_5x_dense_raw",
+      "round": 94,
+      "epoch": 8,
+      "checkpoint_sha256": "66be7dc62bde72d795dd24bb11acb17a3ad30ed2ea484e268a5553ea8ffdcdcf",
+      "model_source_sha256": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "native_inference_sha256": "5d6321a5dadf36a143151849479ce4e6b31c9b9dbe01fc9b8a7b466a9a6cc953",
+      "input_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "c5461a018f21e5bf259f9cf35ad3f63102d8302ee670ee4deff93d2c53c36bda",
+      "bmp_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R94_epoch008_pillar_center9_50x_raw",
+      "round": 94,
+      "epoch": 8,
+      "checkpoint_sha256": "66be7dc62bde72d795dd24bb11acb17a3ad30ed2ea484e268a5553ea8ffdcdcf",
+      "model_source_sha256": "22637847664414389cc1d9efaeacac31ec9df30fff16f37c4fc336f3a526392e",
+      "native_inference_sha256": "5d6321a5dadf36a143151849479ce4e6b31c9b9dbe01fc9b8a7b466a9a6cc953",
+      "input_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "shape": [
+        232,
+        232
+      ],
+      "float32_sha256": "168564f5278786653ec62af5b553ff6f4906bc25019c3b8104aed6058b58db07",
+      "bmp_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R95_epoch040_20x_mixed_raw",
+      "round": 95,
+      "epoch": 40,
+      "checkpoint_sha256": "c7bf6a5b61c1ac4f58cef96d36bf83f6b9d288b05dc2ce993e4bc6f614d73203",
+      "model_source_sha256": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "native_inference_sha256": "a27a67934f701f8a00a790639f38eb0c67f915e40b5135c97508afe071d681af",
+      "input_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "965843e758ba39337f577681d6027e7c899e630ae84fd516231e4ba495529c90",
+      "bmp_sha256": "0f0e4f312e3fabc7b92ae0d212da941ed551b72866b637574f3ef024e8523229",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R95_epoch040_50x_array_raw",
+      "round": 95,
+      "epoch": 40,
+      "checkpoint_sha256": "c7bf6a5b61c1ac4f58cef96d36bf83f6b9d288b05dc2ce993e4bc6f614d73203",
+      "model_source_sha256": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "native_inference_sha256": "a27a67934f701f8a00a790639f38eb0c67f915e40b5135c97508afe071d681af",
+      "input_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "a298ba3743b705044cf19101f9ab250757b771c1d8f79567e51e3bb703f4e6f8",
+      "bmp_sha256": "2d64a8653d13c243e3279dddbe6f5aa2df6aaf9be362a4ae2b068767e852ab3f",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R95_epoch040_5x_dense_raw",
+      "round": 95,
+      "epoch": 40,
+      "checkpoint_sha256": "c7bf6a5b61c1ac4f58cef96d36bf83f6b9d288b05dc2ce993e4bc6f614d73203",
+      "model_source_sha256": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "native_inference_sha256": "a27a67934f701f8a00a790639f38eb0c67f915e40b5135c97508afe071d681af",
+      "input_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "60d947196b87f753e7fa176923ac4e09b7cc19a8161dc908ebdabcb5c2496831",
+      "bmp_sha256": "699a5bf1ec9a41115ef3de1fb67c04a19acac4c12cb33997fa60c3354a1f5376",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R95_epoch040_pillar_center9_50x_raw",
+      "round": 95,
+      "epoch": 40,
+      "checkpoint_sha256": "c7bf6a5b61c1ac4f58cef96d36bf83f6b9d288b05dc2ce993e4bc6f614d73203",
+      "model_source_sha256": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "native_inference_sha256": "a27a67934f701f8a00a790639f38eb0c67f915e40b5135c97508afe071d681af",
+      "input_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "shape": [
+        232,
+        232
+      ],
+      "float32_sha256": "0d6408a2d2d06b5bd9cade98ff91d163547eba07c82dc39638323138d6be829a",
+      "bmp_sha256": "726f26bf6e1184a5b9ec61ae46f6e8cda4bb9dd26b4645480f95b04169193aba",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R95_epoch048_20x_mixed_raw",
+      "round": 95,
+      "epoch": 48,
+      "checkpoint_sha256": "ebc5c9db204f1841cdfa688d7f5250af26849b6f431683e56fc60117ac5570b8",
+      "model_source_sha256": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "native_inference_sha256": "a27a67934f701f8a00a790639f38eb0c67f915e40b5135c97508afe071d681af",
+      "input_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "b295951cff34d3397b3e1bcaca7acc6c2655276f6ecb1984266472b752aea472",
+      "bmp_sha256": "0ab37bdb7f0f381d5b4d0dc75b4a30ab5d6fac4613c55cb5dd91cc8f535ce429",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R95_epoch048_50x_array_raw",
+      "round": 95,
+      "epoch": 48,
+      "checkpoint_sha256": "ebc5c9db204f1841cdfa688d7f5250af26849b6f431683e56fc60117ac5570b8",
+      "model_source_sha256": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "native_inference_sha256": "a27a67934f701f8a00a790639f38eb0c67f915e40b5135c97508afe071d681af",
+      "input_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "bf99fef2c22368052f2482c6de4b3742cdc63521fc98c9e1b542151a0da3b8c9",
+      "bmp_sha256": "d03fd06ded913d09d3bde762b3ee52863a2371f2bf399c39c7e4ece5a728cbe3",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R95_epoch048_5x_dense_raw",
+      "round": 95,
+      "epoch": 48,
+      "checkpoint_sha256": "ebc5c9db204f1841cdfa688d7f5250af26849b6f431683e56fc60117ac5570b8",
+      "model_source_sha256": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "native_inference_sha256": "a27a67934f701f8a00a790639f38eb0c67f915e40b5135c97508afe071d681af",
+      "input_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "eafdc3b4aa820f40ed4ced6cc276caa777d2577461ffb3bc4255a38fd3ac7e36",
+      "bmp_sha256": "96ddc5a09d1a688bfebc364e69928b2eb21c70c38603760060a14b880752932b",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R95_epoch048_pillar_center9_50x_raw",
+      "round": 95,
+      "epoch": 48,
+      "checkpoint_sha256": "ebc5c9db204f1841cdfa688d7f5250af26849b6f431683e56fc60117ac5570b8",
+      "model_source_sha256": "b39e625b280857d41781a3928cac057c21560c12a45d541205d98025b4bbe8e4",
+      "native_inference_sha256": "a27a67934f701f8a00a790639f38eb0c67f915e40b5135c97508afe071d681af",
+      "input_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "shape": [
+        232,
+        232
+      ],
+      "float32_sha256": "970f24e498c94b86dc3b09a1ae246d52d5dc8dfc76b9fff3ab895e14c5118b71",
+      "bmp_sha256": "f626d50e195c4fb86a4fc33a559ca6d3ed35237b246a95baabc06104aa92a5a1",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R97_epoch044_20x_mixed_raw",
+      "round": 97,
+      "epoch": 44,
+      "checkpoint_sha256": "2ecf9c4b450a35b29bcdc7651d982b9266a099b145daf5dca36f838b8c1ffc32",
+      "model_source_sha256": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "native_inference_sha256": "c87718837b08d899235b3cd3df22461d1275a79314ce9fbce68eaddd078e7d12",
+      "input_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "0b9eae6f753a9bcbf4216c5fd03ce4911d5d7dc9fe11a36489bfbc45fedc93ab",
+      "bmp_sha256": "0741859b5a9fc0b99b2760b8b915c37a2700f4ff8f6a1912e5dbb3b5298e60db",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R97_epoch044_50x_array_raw",
+      "round": 97,
+      "epoch": 44,
+      "checkpoint_sha256": "2ecf9c4b450a35b29bcdc7651d982b9266a099b145daf5dca36f838b8c1ffc32",
+      "model_source_sha256": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "native_inference_sha256": "c87718837b08d899235b3cd3df22461d1275a79314ce9fbce68eaddd078e7d12",
+      "input_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "c253edf34e9800ca6c498bb45a5447a5cd9ca41034a04fcad179e88bccc67186",
+      "bmp_sha256": "da7b002f4f9eb3a7ca43bc1126b15da969f045959e5f522b54b6faa391e4120f",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R97_epoch044_5x_dense_raw",
+      "round": 97,
+      "epoch": 44,
+      "checkpoint_sha256": "2ecf9c4b450a35b29bcdc7651d982b9266a099b145daf5dca36f838b8c1ffc32",
+      "model_source_sha256": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "native_inference_sha256": "c87718837b08d899235b3cd3df22461d1275a79314ce9fbce68eaddd078e7d12",
+      "input_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "46ccd54f2cb017185878fc6573e1f8e5fc83583b3bf51a5cbac996d605edd0d2",
+      "bmp_sha256": "6a67885b5484540f159d63d737bce170bf5685084f4bf7d62254b1808e4cde86",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R97_epoch044_pillar_center9_50x_raw",
+      "round": 97,
+      "epoch": 44,
+      "checkpoint_sha256": "2ecf9c4b450a35b29bcdc7651d982b9266a099b145daf5dca36f838b8c1ffc32",
+      "model_source_sha256": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "native_inference_sha256": "c87718837b08d899235b3cd3df22461d1275a79314ce9fbce68eaddd078e7d12",
+      "input_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "shape": [
+        232,
+        232
+      ],
+      "float32_sha256": "656822f55e05d11fe98cce675dbf760997cfc6172ca722d7c30fc06cc0c0c52c",
+      "bmp_sha256": "ac5780c06d4a839c0c567807819e13d4d507c67d80880ae76e8fa19d399bcf93",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R97_epoch048_20x_mixed_raw",
+      "round": 97,
+      "epoch": 48,
+      "checkpoint_sha256": "842875924d2be546e9283bc7b2986e3487dc37cf38845e69415228ce8bd2cc13",
+      "model_source_sha256": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "native_inference_sha256": "c87718837b08d899235b3cd3df22461d1275a79314ce9fbce68eaddd078e7d12",
+      "input_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "cc552175664b58aa25881233a4ab8b145be5bf93625939863aa322070012c768",
+      "bmp_sha256": "1a1cddc45d73759e85b1b487cc4c48ad9e87875ba797a6133747baf9b087f2fa",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R97_epoch048_50x_array_raw",
+      "round": 97,
+      "epoch": 48,
+      "checkpoint_sha256": "842875924d2be546e9283bc7b2986e3487dc37cf38845e69415228ce8bd2cc13",
+      "model_source_sha256": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "native_inference_sha256": "c87718837b08d899235b3cd3df22461d1275a79314ce9fbce68eaddd078e7d12",
+      "input_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "65724a15b31b992995c24c642013f2c875fcfd917b53473d692325cf7c516c3d",
+      "bmp_sha256": "115d5d2917aa88d2800034a8961760728f3a2531d6f9ea9dbb0d63ed08576918",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R97_epoch048_5x_dense_raw",
+      "round": 97,
+      "epoch": 48,
+      "checkpoint_sha256": "842875924d2be546e9283bc7b2986e3487dc37cf38845e69415228ce8bd2cc13",
+      "model_source_sha256": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "native_inference_sha256": "c87718837b08d899235b3cd3df22461d1275a79314ce9fbce68eaddd078e7d12",
+      "input_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "c3895bfcb8977af74f8f64ce3a3a0810ba28170f3ca3c96a8a68ca7606d4aad4",
+      "bmp_sha256": "b3af0121098c2f685e3330757e21579a3cf2372e2845e13b2f66444b30028492",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R97_epoch048_pillar_center9_50x_raw",
+      "round": 97,
+      "epoch": 48,
+      "checkpoint_sha256": "842875924d2be546e9283bc7b2986e3487dc37cf38845e69415228ce8bd2cc13",
+      "model_source_sha256": "57d2724900a21f8e759f816c28056e9b9bce2b53e4aa3c0eac314fc219f86f13",
+      "native_inference_sha256": "c87718837b08d899235b3cd3df22461d1275a79314ce9fbce68eaddd078e7d12",
+      "input_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "shape": [
+        232,
+        232
+      ],
+      "float32_sha256": "3c5322ffb5d0bd19cc40462c690e966470a63fd7239a791f2d9c4fc0a28a03f0",
+      "bmp_sha256": "035c3ed897233dbea6cd17d3b9fe7f58a3fb66f53b63e61f5e3587dc2e37d90e",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R98_epoch044_20x_mixed_raw",
+      "round": 98,
+      "epoch": 44,
+      "checkpoint_sha256": "bd3691d43a39e2ecd45c3babae7f99e65726a38d8493be63339a55975823eefb",
+      "model_source_sha256": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "native_inference_sha256": "e5e8c39d5864d7406f5fc662bc36d99192d94a73cdceea80adef062313d77169",
+      "input_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "247155bf75be034305f4cf0a8fe4fbfd10075780f23ee387905a2166de59cc0b",
+      "bmp_sha256": "27791e7459a773d5de2fc3cc3fbef7e9c61dac8b9592b7351a2a0cfd64f4c369",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R98_epoch044_50x_array_raw",
+      "round": 98,
+      "epoch": 44,
+      "checkpoint_sha256": "bd3691d43a39e2ecd45c3babae7f99e65726a38d8493be63339a55975823eefb",
+      "model_source_sha256": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "native_inference_sha256": "e5e8c39d5864d7406f5fc662bc36d99192d94a73cdceea80adef062313d77169",
+      "input_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "c92490d5d879a18416620c4ad877bf53ce051a24f0c04da6a94afcb7b214a489",
+      "bmp_sha256": "ca72d538e582278ac2178c40233056bf71972c330f8e6e60c2d39c11725e43db",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R98_epoch044_5x_dense_raw",
+      "round": 98,
+      "epoch": 44,
+      "checkpoint_sha256": "bd3691d43a39e2ecd45c3babae7f99e65726a38d8493be63339a55975823eefb",
+      "model_source_sha256": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "native_inference_sha256": "e5e8c39d5864d7406f5fc662bc36d99192d94a73cdceea80adef062313d77169",
+      "input_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "db626cdfc296d53c7ab02e8446a22b7a591e71a51c30b1cffc41445b8e7e2a2a",
+      "bmp_sha256": "402cd412b1c04176a5551eca8b231afc4bb7668a59c00962a4b1e0ef50589278",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R98_epoch044_pillar_center9_50x_raw",
+      "round": 98,
+      "epoch": 44,
+      "checkpoint_sha256": "bd3691d43a39e2ecd45c3babae7f99e65726a38d8493be63339a55975823eefb",
+      "model_source_sha256": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "native_inference_sha256": "e5e8c39d5864d7406f5fc662bc36d99192d94a73cdceea80adef062313d77169",
+      "input_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "shape": [
+        232,
+        232
+      ],
+      "float32_sha256": "f26a195aed61148bf45afafd2b110b7c71264c1ee991ae3fbd2402097e42ee7e",
+      "bmp_sha256": "35c4fe83e2bf86b0dd469fcb9519e6c45b1015ee7b0a32dc8ce736cdd0c94c63",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R98_epoch048_20x_mixed_raw",
+      "round": 98,
+      "epoch": 48,
+      "checkpoint_sha256": "a6ce19f3891180c415aa7ae4d4f34471351799e3d1fc894c81d7d8084e409ec3",
+      "model_source_sha256": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "native_inference_sha256": "e5e8c39d5864d7406f5fc662bc36d99192d94a73cdceea80adef062313d77169",
+      "input_sha256": "368b6d0ef05506fa670194693d23c902499077c317885a541182a0b0a1c8f5f1",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "3f928d6be5f08c6f024f83de4bf3f1a80d18218967b9754724926f6ea9805b0f",
+      "bmp_sha256": "89f6f31317db375fb6dbc54a3a7cf7830db7cc52f9f6212b0fcbb911337f1403",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R98_epoch048_50x_array_raw",
+      "round": 98,
+      "epoch": 48,
+      "checkpoint_sha256": "a6ce19f3891180c415aa7ae4d4f34471351799e3d1fc894c81d7d8084e409ec3",
+      "model_source_sha256": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "native_inference_sha256": "e5e8c39d5864d7406f5fc662bc36d99192d94a73cdceea80adef062313d77169",
+      "input_sha256": "7870b966340457c931c8033a7a6244fe5a0dd09ff84b1047f9d857cda2634934",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "8bcd8b95667b00a806a8d3b7db68f5e46c1aeb2a8c6ce880327bdd76ef5523e2",
+      "bmp_sha256": "e76729ce122add0f2ab4e9a007395dca671749cbddbbd96f894564c6b88f46bd",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R98_epoch048_5x_dense_raw",
+      "round": 98,
+      "epoch": 48,
+      "checkpoint_sha256": "a6ce19f3891180c415aa7ae4d4f34471351799e3d1fc894c81d7d8084e409ec3",
+      "model_source_sha256": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "native_inference_sha256": "e5e8c39d5864d7406f5fc662bc36d99192d94a73cdceea80adef062313d77169",
+      "input_sha256": "19408465e133c056db4bdee2dc3f5291dcf74a491326339a4b1ec3001cd0c914",
+      "shape": [
+        512,
+        512
+      ],
+      "float32_sha256": "f0919d150069b2056c6d995a9dc441d4437edd14b53c57fc81518ee44ef6ecf3",
+      "bmp_sha256": "acf5f3c7b74fe416381608fc08e074f2064818095025ce54307a45b6ba98ea1f",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    },
+    {
+      "key": "R98_epoch048_pillar_center9_50x_raw",
+      "round": 98,
+      "epoch": 48,
+      "checkpoint_sha256": "a6ce19f3891180c415aa7ae4d4f34471351799e3d1fc894c81d7d8084e409ec3",
+      "model_source_sha256": "8ddcf34977b1b7b8be0acd43bf610694f9d22c7ad52ea734b75fc44fb0f33d53",
+      "native_inference_sha256": "e5e8c39d5864d7406f5fc662bc36d99192d94a73cdceea80adef062313d77169",
+      "input_sha256": "32c265e510e84b346b2b9eb1b845a0c084103648660be438c9c39d7a2d783d77",
+      "shape": [
+        232,
+        232
+      ],
+      "float32_sha256": "f97db28bcbad8b3bfd80483d395c71a82255b9fb5ef1062cbe34488ab3291a6d",
+      "bmp_sha256": "8a162b13d30af97913a7c780a7ddba1d7ce6780d6d932cf7e33f6c503f6c2da0",
+      "state": "ema_state_dict",
+      "core": 512,
+      "halo": 192
+    }
+  ],
+  "independent_reference_matched": false
+}

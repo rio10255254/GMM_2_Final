@@ -1,5 +1,7 @@
 # 研究保存與重做入口
 
+2026-10-21最新：[R94／R95／R97／R98完整保存與另址重做](four_rounds/README.md)。完整模型、663張原影像、失敗與恢復歷程已取回核對，32組原推論輸出相同；[本次GitHub總入口](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-preservation-20261021)。
+
 本次逐輪整理177個主專案、Lab系統實驗或早期歷史批次。目標是保留「當時想解決什麼、實際做了什麼、用過哪些來源、全部結果與限制」，並讓必要來源可以從GitHub取回。
 
 2026-10-20 續整重點是 GitHub 能否真正取回使用。已補足 R93 的第48輪綜合候選與完整既存模型／影像歷程，另提供約36KB的原結果重算包；並核對R93、R94、R95、R97、R98的共用資料鏈。[新的重做入口](r93_shared/README.md)／[R93原圖與副作用](r93_shared/GALLERY.md)。
@@ -37,7 +39,7 @@
 先取得本次保存分支的程式與說明，再按需要下載附件。倉庫維持私人狀態，需使用具有權限的GitHub帳號。
 
 ```powershell
-git clone -c core.longpaths=true --depth 1 --single-branch --branch research-preservation-20261020 https://github.com/rio10255254/GMM_2_Final.git
+git clone -c core.longpaths=true --depth 1 --single-branch --branch research-preservation-20261021 https://github.com/rio10255254/GMM_2_Final.git
 cd GMM_2_Final
 python Tools/download_research_assets.py --repo rio10255254/GMM_2_Final --tag research-training-kits-20261016 --output downloads/training-kits
 python Tools/research_asset_bundle.py restore --manifest downloads/training-kits/RESEARCH_ASSETS.json.gz --assets downloads/training-kits --destination . --keep-identical-existing

@@ -18,8 +18,32 @@
           "sha256": "a818778abd4913dbdc3f893d9c252c0f2a62a721817b2a5572ff1cacb29b2fd6"
         }
       ],
-      "final_recorded_validation": {},
-      "final_csv_numbers_checked": 0,
+      "final_recorded_validation": {
+        "pixel": 0.046790942587499273,
+        "multiscale": 0.07505841162032804,
+        "gradient": 0.023258991024654563,
+        "texture": 0.025198935239285625,
+        "contour": 0.03431999534103388,
+        "cancellation": 7.592147654259899e-06,
+        "identity": 5.356579668121715e-06,
+        "branch_nuisance": 0.01800989676832913,
+        "branch_radiometry": 0.03577152097836089,
+        "branch_local_contrast": 0.0014226459390152904,
+        "branch_boundary": 0.009077567538989454,
+        "branch_texture": 0.0009427152378755995,
+        "need": 0.47897988369610783,
+        "evidence": 0.3055052222528805,
+        "geometry": 0.6927558928728104,
+        "geometry_boundary": 0.6930044178540508,
+        "motion": 0.014844987072137883,
+        "motion_p95_proxy": 0.051513152197003136,
+        "detail_axis": 0.025198935239285625,
+        "contour_axis": 0.03431999534103388,
+        "identity_axis": 0.0013659278153710375,
+        "motion_axis": 0.014844987072137883,
+        "worst_axis": 0.03431999534103388
+      },
+      "final_csv_numbers_checked": 5,
       "best_observed_per_axis_without_reselection": {
         "val_detail_axis": {
           "epoch": 1,

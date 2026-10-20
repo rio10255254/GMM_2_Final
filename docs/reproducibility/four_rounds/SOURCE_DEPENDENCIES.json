@@ -3533,5 +3533,36 @@
   ],
   "missing": [],
   "shared_training_content_sha256": "6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5",
-  "shared_training_release": "research-shared-sources-20261016"
+  "shared_training_release": "research-shared-sources-20261016",
+  "fixed_preview_camera_sources": [
+    {
+      "release": "four-round-preview-origins-20261021",
+      "restore_path": "20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0000.bmp",
+      "asset": "research-four-round-preview-camera-001.zip",
+      "sha256": "bef753f80e26a2f3e09db6cd590250d7f8ee42b53da34f9177c3ed759c1a1ed6",
+      "bytes": 3146806
+    },
+    {
+      "release": "four-round-preview-origins-20261021",
+      "restore_path": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+      "asset": "research-four-round-preview-camera-001.zip",
+      "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
+      "bytes": 3146806
+    },
+    {
+      "release": "four-round-preview-origins-20261021",
+      "restore_path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "asset": "research-four-round-preview-camera-001.zip",
+      "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
+      "bytes": 3146806
+    },
+    {
+      "release": "four-round-preview-origins-20261021",
+      "restore_path": "Thesis_MOSR_Evidence/20260618_100MG/Image__2026-06-18__17-10-31.bmp",
+      "asset": "research-four-round-preview-camera-001.zip",
+      "sha256": "b909a8827f2292a9d8981f995f86e3cb59787ef619d27bb3ef36cf6bc812010f",
+      "bytes": 3146806
+    }
+  ],
+  "camera_origin_provenance": "PREVIEW_CAMERA_ORIGINS.json"
 }

@@ -2728,10 +2728,11 @@
     "id": "main/R94_EvidenceConditionalScratch",
     "scope": "Experiments/R94_EvidenceConditionalScratch",
     "question": "按成像順序分工並直接教何時需要修正",
-    "interpretation": "第8輪失敗後結案；失敗紀錄是R95修復依據",
+    "interpretation": "完整8輪；第9輪未提交即停止，所有原失敗與空啟動保留",
     "necessary_sources": "R93鎖定資料、初值與第8輪錯誤／梯度診斷",
     "image_decision": "接近原圖的輸出與未生效修正",
     "authoritative_documents": [
+      "Experiments/R94_EvidenceConditionalScratch/reports/R94_AUDIT.md",
       "Experiments/R94_EvidenceConditionalScratch/MANIFEST.md",
       "Experiments/R94_EvidenceConditionalScratch/README.md",
       "Experiments/R94_EvidenceConditionalScratch/data/README.md",
@@ -2742,7 +2743,7 @@
     "verification": {
       "file_export": "PASS all selected original contents and source-to-asset mapping",
       "full_historical_training_repeated": false,
-      "portable_execution": "verified_shared_input_preparation_only",
+      "portable_execution": "verified_fixed_native_models_shared_inputs_and_numeric_replay",
       "github_publication": "PUBLISHED",
       "selected_original_paths_verified": 123,
       "github_shared_source_roundtrip_20261020": {
@@ -2752,6 +2753,19 @@
         "per_reader_roles": 8,
         "historical_training_repeated": false,
         "guide": "docs/reproducibility/r93_shared/README.md"
+      },
+      "github_complete_record_20261021": {
+        "status": "PASS",
+        "guide": "docs/reproducibility/four_rounds/README.md",
+        "release": "r94-complete-record-20261021",
+        "all_saved_models_and_images_preserved": true,
+        "native_fixed_model_input_outputs_exact": 8,
+        "full_historical_training_repeated": false,
+        "earlier_source_revision_gaps_disclosed": true,
+        "record_paths": 151,
+        "saved_model_files": 20,
+        "original_images": 51,
+        "prepared_training_samples_exact": 9
       }
     },
     "cleanup_allowed": false
@@ -2760,10 +2774,11 @@
     "id": "main/R95_CounterfactualGateRepairScratch",
     "scope": "Experiments/R95_CounterfactualGateRepairScratch",
     "question": "修復R94修正閘與訓練動力問題",
-    "interpretation": "獨立48輪，不繼承R94權重；保留每分支的收益與後期退步",
+    "interpretation": "48輪完成；首度恢復重建更新狀態，49列原表及第9輪取代脈絡完整保留",
     "necessary_sources": "R93資料、固定反事實設定及本輪完整48輪歷程",
     "image_decision": "各修正分支、清楚控制與後期紋理變化",
     "authoritative_documents": [
+      "Experiments/R95_CounterfactualGateRepairScratch/reports/R95_AUDIT.md",
       "Experiments/R95_CounterfactualGateRepairScratch/MANIFEST.md",
       "Experiments/R95_CounterfactualGateRepairScratch/README.md",
       "Experiments/R95_CounterfactualGateRepairScratch/data/README.md"
@@ -2773,7 +2788,7 @@
     "verification": {
       "file_export": "PASS all selected original contents and source-to-asset mapping",
       "full_historical_training_repeated": false,
-      "portable_execution": "verified_shared_input_preparation_only",
+      "portable_execution": "verified_fixed_native_models_shared_inputs_and_numeric_replay",
       "github_publication": "PUBLISHED",
       "selected_original_paths_verified": 160,
       "github_shared_source_roundtrip_20261020": {
@@ -2783,6 +2798,19 @@
         "per_reader_roles": 8,
         "historical_training_repeated": false,
         "guide": "docs/reproducibility/r93_shared/README.md"
+      },
+      "github_complete_record_20261021": {
+        "status": "PASS",
+        "guide": "docs/reproducibility/four_rounds/README.md",
+        "release": "r95-complete-record-20261021",
+        "all_saved_models_and_images_preserved": true,
+        "native_fixed_model_input_outputs_exact": 8,
+        "full_historical_training_repeated": false,
+        "earlier_source_revision_gaps_disclosed": true,
+        "record_paths": 308,
+        "saved_model_files": 31,
+        "original_images": 148,
+        "prepared_training_samples_exact": 9
       }
     },
     "cleanup_allowed": false
@@ -2836,10 +2864,11 @@
     "id": "main/R97_DirectCausalPhaseScratch",
     "scope": "Experiments/R97_DirectCausalPhaseScratch",
     "question": "直接預測每分支實際施加的修正",
-    "interpretation": "移除壓制有效修正的振幅閘；從零訓練且需保留週期誤配問題",
+    "interpretation": "48輪完成；固定48輪後測、兩種事故及細節／量測限制分別保存",
     "necessary_sources": "R93資料、線上程序週期樣本、48輪設定",
     "image_decision": "週期錯峰、細節與修正抵消",
     "authoritative_documents": [
+      "Experiments/R97_DirectCausalPhaseScratch/reports/R97_AUDIT.md",
       "Experiments/R97_DirectCausalPhaseScratch/reports/gpu_incident_20260813.md",
       "Experiments/R97_DirectCausalPhaseScratch/reports/recovery_validation_20260813.md",
       "Experiments/R97_DirectCausalPhaseScratch/reports/root_cause_matrix.md"
@@ -2849,7 +2878,7 @@
     "verification": {
       "file_export": "PASS all selected original contents and source-to-asset mapping",
       "full_historical_training_repeated": false,
-      "portable_execution": "verified_shared_input_preparation_only",
+      "portable_execution": "verified_fixed_native_models_shared_inputs_and_numeric_replay",
       "github_publication": "PUBLISHED",
       "selected_original_paths_verified": 103,
       "github_shared_source_roundtrip_20261020": {
@@ -2859,6 +2888,19 @@
         "per_reader_roles": 8,
         "historical_training_repeated": false,
         "guide": "docs/reproducibility/r93_shared/README.md"
+      },
+      "github_complete_record_20261021": {
+        "status": "PASS",
+        "guide": "docs/reproducibility/four_rounds/README.md",
+        "release": "r97-complete-record-20261021",
+        "all_saved_models_and_images_preserved": true,
+        "native_fixed_model_input_outputs_exact": 8,
+        "full_historical_training_repeated": false,
+        "earlier_source_revision_gaps_disclosed": true,
+        "record_paths": 512,
+        "saved_model_files": 28,
+        "original_images": 396,
+        "prepared_training_samples_exact": 9
       }
     },
     "cleanup_allowed": false
@@ -2867,10 +2909,11 @@
     "id": "main/R98_AggressiveTextureScratch",
     "scope": "Experiments/R98_AggressiveTextureScratch",
     "question": "增加可見多尺度紋理的恢復強度",
-    "interpretation": "設計理由與實際結案分開，不能把首頁訓練中當目前狀態",
+    "interpretation": "48輪完成並補正舊結果報告；SEM不利結果、驗證裁切不同及缺少整套後測明列",
     "necessary_sources": "共享R93／R97來源、六頻帶及固定48輪設定",
     "image_decision": "紋理收益、邊界代價與不同倍率",
     "authoritative_documents": [
+      "Experiments/R98_AggressiveTextureScratch/reports/R98_AUDIT.md",
       "Experiments/R98_AggressiveTextureScratch/reports/R98_METHODOLOGY.md",
       "Experiments/R98_AggressiveTextureScratch/reports/R98_RESULTS.md"
     ],
@@ -2879,7 +2922,7 @@
     "verification": {
       "file_export": "PASS all selected original contents and source-to-asset mapping",
       "full_historical_training_repeated": false,
-      "portable_execution": "verified_shared_input_preparation_only",
+      "portable_execution": "verified_fixed_native_models_shared_inputs_and_numeric_replay",
       "github_publication": "PUBLISHED",
       "selected_original_paths_verified": 51,
       "github_shared_source_roundtrip_20261020": {
@@ -2889,6 +2932,19 @@
         "per_reader_roles": 8,
         "historical_training_repeated": false,
         "guide": "docs/reproducibility/r93_shared/README.md"
+      },
+      "github_complete_record_20261021": {
+        "status": "PASS",
+        "guide": "docs/reproducibility/four_rounds/README.md",
+        "release": "r98-complete-record-20261021",
+        "all_saved_models_and_images_preserved": true,
+        "native_fixed_model_input_outputs_exact": 8,
+        "full_historical_training_repeated": false,
+        "earlier_source_revision_gaps_disclosed": true,
+        "record_paths": 121,
+        "saved_model_files": 28,
+        "original_images": 68,
+        "prepared_training_samples_exact": 9
       }
     },
     "cleanup_allowed": false

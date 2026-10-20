@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "command": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\cpu_env\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\github_workspace\\Tools\\replay_four_round_models.py",
+    "--root",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\github_workspace",
+    "--output",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\github_CPU_replay",
+    "--audit-all-checkpoints"
+  ],
+  "blocked_original_roots": [
+    "D:\\GMM_2_Final",
+    "H:\\GMM_2_Final_Archive",
+    "C:\\曾泰明"
+  ],
+  "allowed_copied_roots": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction"
+  ],
+  "python_workers_inherit_guard": true,
+  "seconds": 2169.567230939865
+}
