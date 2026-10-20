@@ -9,10 +9,40 @@ from pathlib import Path
 from research_recovery import digest,write_json
 from verify_research_checkpoint_history import summarize
 
+def inspect_data_format(path,relative):
+    import numpy as np
+    suffix=Path(relative).suffix.lower()
+    try:
+        if suffix=='.npy':
+            with path.open('rb') as stream:
+                version=np.lib.format.read_magic(stream)
+                shape,fortran,dtype=np.lib.format._read_array_header(stream,version)
+            return {'format_status':'NUMPY_HEADER_READABLE','shape':list(shape),'dtype':str(dtype),'fortran_order':bool(fortran)}
+        if suffix=='.npz':
+            arrays=[]
+            with zipfile.ZipFile(path) as archive:
+                for info in archive.infolist():
+                    if not info.filename.endswith('.npy'):continue
+                    with archive.open(info) as stream:
+                        version=np.lib.format.read_magic(stream);shape,fortran,dtype=np.lib.format._read_array_header(stream,version)
+                    arrays.append({'name':info.filename,'shape':list(shape),'dtype':str(dtype)})
+            return {'format_status':'NUMPY_ARCHIVE_HEADERS_READABLE','arrays':arrays}
+        if suffix in {'.bmp','.png','.jpg','.jpeg','.tif','.tiff','.webp','.gif'}:
+            import cv2
+            image=cv2.imdecode(np.fromfile(path,dtype=np.uint8),cv2.IMREAD_UNCHANGED)
+            if image is None:return {'format_status':'IMAGE_DECODE_FAILURE_PRESERVED'}
+            return {'format_status':'IMAGE_DECODED','shape':list(image.shape),'dtype':str(image.dtype)}
+        if suffix=='.mat':
+            import scipy.io
+            return {'format_status':'MATLAB_VARIABLE_HEADERS_READABLE','variables':[{'name':name,'shape':list(shape),'type':kind} for name,shape,kind in scipy.io.whosmat(path)]}
+        return {'format_status':'EXACT_BYTES_PRESERVED_FORMAT_NOT_APPLICABLE'}
+    except Exception as error:return {'format_status':'HISTORICAL_FORMAT_OR_ENVIRONMENT_FAILURE_RECORDED','format_error_type':type(error).__name__}
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--manifest',type=Path,required=True)
     p.add_argument('--assets',type=Path,required=True);p.add_argument('--buffer-dir',type=Path,required=True)
-    p.add_argument('--report',type=Path,required=True);a=p.parse_args()
+    p.add_argument('--report',type=Path,required=True)
+    p.add_argument('--inspect-data-formats',action='store_true');a=p.parse_args()
     if a.report.exists() or a.buffer_dir.exists():raise FileExistsError('Use new batch validation paths')
     a.buffer_dir.mkdir(parents=True);buffer=a.buffer_dir/'verified_object.pth.tar'
     os.environ['CUDA_VISIBLE_DEVICES']=''
@@ -45,7 +75,9 @@ def main():
                         value=torch.load(buffer,map_location='cpu',weights_only=False)
                         record.update(summarize(value,torch));record['load_status']='LOADABLE';del value;gc.collect()
                     except Exception as error:record['load_status']='LOAD_ERROR_PRESERVED';record['error_type']=type(error).__name__
-                else:record['load_status']='NON_TORCH_FORMAT_PRESERVED_NO_TORCH_CLAIM'
+                else:
+                    record['load_status']='NON_TORCH_FORMAT_PRESERVED_NO_TORCH_CLAIM'
+                    if a.inspect_data_formats:record.update(inspect_data_format(buffer,row['path']))
                 checked.append(record)
                 if len(checked)%20==0:print('DOWNLOADED_MODEL_OBJECTS_RESTORED_INSPECTED',len(checked),len(objects),flush=True)
         assets.append(spec)

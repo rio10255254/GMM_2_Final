@@ -10,11 +10,14 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import threading
 import time
 
 import requests
 
 from research_recovery import safe_relative
+
+_range_sessions = threading.local()
 
 
 def sha(path):
@@ -24,7 +27,11 @@ def sha(path):
 
 def bounded_range(url, headers, offset, end, size):
     headers = dict(headers, Range=f'bytes={offset}-{end}')
-    with requests.get(url, headers=headers, stream=True, timeout=(30, 60)) as response:
+    session = getattr(_range_sessions, 'session', None)
+    if session is None:
+        session = requests.Session()
+        _range_sessions.session = session
+    with session.get(url, headers=headers, stream=True, timeout=(30, 60)) as response:
         if response.status_code == 206:
             if response.headers.get('Content-Range') != f'bytes {offset}-{end}/{size}':
                 raise ValueError('Unexpected partial download range')
@@ -71,19 +78,19 @@ def download_asset(repo, asset, output, token):
                 # Bounded ranges also work through connections that stall on
                 # a multi-gigabyte streaming response. Each written range is
                 # complete, so retries can resume from an exact byte offset.
-                with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ranges:
+                with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ranges, partial.open('ab') as stream:
                     while offset < asset['size']:
-                        starts = range(offset, min(offset + 32 * 1024**2, asset['size']), 1024**2)
+                        starts = range(offset, min(offset + 64 * 1024**2, asset['size']), 4 * 1024**2)
                         futures = [ranges.submit(bounded_range, url, headers, start,
-                                                 min(start + 1024**2, asset['size']) - 1,
+                                                 min(start + 4 * 1024**2, asset['size']) - 1,
                                                  asset['size']) for start in starts]
                         for future in futures:
                             data = future.result()
-                            with partial.open('ab') as stream:
-                                stream.write(data)
+                            stream.write(data)
                             offset += len(data)
                             if offset // (256 * 1024**2) != (offset - len(data)) // (256 * 1024**2):
                                 print('GITHUB_ASSET_PROGRESS', name, offset, asset['size'], flush=True)
+                        stream.flush()
                 if partial.stat().st_size != asset['size']:
                     raise ValueError('Incomplete asset: ' + name)
                 if sha(partial) != expected:
@@ -126,6 +133,31 @@ def select_prefix_assets(manifest, release_assets, prefixes):
     return result, len(selected)
 
 
+def select_manifest_assets(manifest, release_assets):
+    """Use a newly verified restore map with immutable older release objects."""
+    if manifest.get('state') != 'complete':
+        raise ValueError('Incomplete local restore manifest')
+    available = {row['name']: row for row in release_assets}
+    if len(available) != len(release_assets):
+        raise ValueError('Duplicate release asset names')
+    selected = []
+    names = set()
+    for row in manifest['files']:
+        safe_relative(row['path'])
+        names.add(row['asset'])
+    specifications = {row['name']: row for row in manifest['assets']}
+    if len(specifications) != len(manifest['assets']) or not names:
+        raise ValueError('Invalid local restore asset index')
+    for name in sorted(names):
+        if Path(name).name != name or ':' in name or name not in specifications or name not in available:
+            raise ValueError('A recorded restore asset is missing or unsafe')
+        expected = specifications[name]; actual = available[name]
+        if actual.get('digest') != 'sha256:' + expected['sha256'] or actual['size'] != expected['bytes']:
+            raise ValueError('Older release object differs from the current restore map')
+        selected.append(actual)
+    return selected, len(manifest['files'])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo', required=True)
@@ -136,6 +168,8 @@ def main():
                         help='Download only assets needed for this project-relative source path')
     parser.add_argument('--manifest-name', default='RESEARCH_ASSETS.json.gz',
                         help='Release manifest used for --prefix selection')
+    parser.add_argument('--manifest-path', type=Path,
+                        help='Verified local restore manifest from the master release; reuse immutable older component ZIPs')
     args = parser.parse_args()
     token = subprocess.check_output(['gh', 'auth', 'token'], text=True).strip()
     identity = json.loads(subprocess.check_output(
@@ -153,7 +187,15 @@ def main():
     assets = release['assets']
     rows = []
     selected_files = None
-    if args.prefix:
+    if args.manifest_path:
+        with gzip.open(args.manifest_path, 'rt', encoding='utf-8-sig') as stream:
+            manifest = json.load(stream)
+        if args.prefix:
+            assets, selected_files = select_prefix_assets(manifest, release['assets'], args.prefix)
+        else:
+            assets, selected_files = select_manifest_assets(manifest, release['assets'])
+        print('SELECTED_RESTORE_MAP_FILES', selected_files, 'ASSETS', len(assets), flush=True)
+    elif args.prefix:
         # Validate user input before any source-data request. The small manifest
         # is itself downloaded from GitHub and matched to the server digest.
         for prefix in args.prefix:
@@ -175,7 +217,8 @@ def main():
                                   'release_was_draft': release['draft'], 'assets': rows,
                                   'selected_prefixes': args.prefix,
                                   'selected_source_files': selected_files,
-                                  'selection_manifest': args.manifest_name if args.prefix else None,
+                                  'selection_manifest': str(args.manifest_path) if args.manifest_path else args.manifest_name if args.prefix else None,
+                                  'local_restore_map_sha256': sha(args.manifest_path) if args.manifest_path else None,
                                   'seconds': time.perf_counter() - started},
                                  ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
