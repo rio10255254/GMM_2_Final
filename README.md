@@ -1,5 +1,14 @@
 # GMM_2_Final
 
+## 研究保存與目前結果入口（2026-10-21）
+
+- [已驗證的研究保存入口](https://github.com/rio10255254/GMM_2_Final/blob/research-preservation-20261021/docs/reproducibility/README.md)：原始拍攝、必要來源、模型與完整結果，以及實際從GitHub取回的核對。
+- [逐輪研究脈絡](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/EXPERIMENTS.md)：方法、來源、成功、失敗與影像選擇。
+- [全專案補查進度](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/project_completion/README.md)：正在把本機及已搬走的歷史逐項比對，尚未宣稱全專案完成。
+- [目前論文十方法完整結果](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)：R152／RAW與外部方法的完整圖表、數字及限制。
+
+下方保留原通用專案說明；最新狀態與重做方式由上述固定版本及保存分支提供。正式使用基準仍為COMBO。
+
 這份文件是整個專案的**入口總覽**。如果你是第一次接觸這個專案，從這裡開始讀。
 This is the top-level overview for the project. If you are new, start here.
 
