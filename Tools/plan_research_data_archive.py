@@ -16,10 +16,10 @@ def main():
     p.add_argument('--family',choices=['numeric','images','packages'],required=True);p.add_argument('--batch-bytes',type=int,default=16_000_000_000)
     a=p.parse_args();op=a.operation
     if not (op/('CONTENT_'+a.family.upper()+'_HASHED.json')).exists():raise ValueError('Finish this complete content family before planning')
-    known=set()
+    known=set();published_by_path={}
     with gzip.open(op/'PUBLISHED_CATALOG.jsonl.gz','rt',encoding='utf-8') as stream:
         for line in stream:
-            row=json.loads(line);known.add((row['sha256'],row['bytes']))
+            row=json.loads(line);known.add((row['sha256'],row['bytes']));published_by_path[row['path'].casefold()]=row['sha256']
     for folder in ['training_history_bundle','context_batch_001_bundle']:
         known.update((row['sha256'],row['bytes']) for row in manifest(op/folder/'RESEARCH_ASSETS.json.gz')['files'])
     for folder in ['model_batches','numeric_batches','image_batches','package_batches']:
@@ -63,8 +63,17 @@ def main():
               'collection':'project-'+a.family+'-'+str(i).zfill(3)})
         write_json(folder/'SELECTION.json',{'reviewed':True,'files':selection,'source_family':a.family})
         plans.append({'batch':label,'folder':str(folder),'objects':len(group),'bytes':sum(r['bytes'] for r in group)})
+    canonical={r['path_key']:r['sha256'] for r in rows if r['origin']=='D_worktree'}
+    archive=Path(r'H:\GMM_2_Final_Archive');destinations={}
     with gzip.open(out/'ALL_ORIGINAL_LOCATIONS.jsonl.gz','wt',encoding='utf-8',compresslevel=1) as stream:
-        for row in rows:stream.write(json.dumps(row,ensure_ascii=False,separators=(',',':'))+'\n')
+        for row in rows:
+            relative=row['logical_path'];key=relative.casefold()
+            if row['origin']!='D_worktree' and ((key in canonical and canonical[key]!=row['sha256']) or (key in published_by_path and published_by_path[key]!=row['sha256']) or (key in destinations and destinations[key]!=row['sha256'])):
+                relative='Historical_Archive/'+Path(row['source']).relative_to(archive).as_posix();key=relative.casefold()
+            previous=destinations.get(key)
+            if previous is not None and previous!=row['sha256']:raise ValueError('Unresolved captured historical source versions')
+            destinations[key]=row['sha256']
+            stream.write(json.dumps({**row,'restore_path':relative},ensure_ascii=False,separators=(',',':'))+'\n')
     report={'status':'REVIEWED_PLAN_NOT_YET_PUBLISHED','family':a.family,'tag':tag,'new_unique_objects':len(objects),
       'new_unique_bytes':sum(r['bytes'] for r in objects.values()),'batches':plans,'excluded_generic_dependencies':excluded,
       'large_original_containers_require_separate_chunk_preservation':too_large,'original_source_files_changed':False}

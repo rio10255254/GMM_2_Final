@@ -97,6 +97,15 @@ def main():
         else:insert(row)
     own={r['path'].casefold() for r in read(op/'FIRST_SOURCE_COMMIT.json')['files']}
     own.update(['tools/cleanup_verified_preservation_staging.ps1','tools/hash_research_inventory_in_memory.py'])
+    owned_additions=op/'TASK_OWNED_SOURCE_CHANGES.json'
+    if owned_additions.exists():
+        for change in read(owned_additions)['files']:
+            relative=safe_relative(change['path']).as_posix()
+            if hashlib.sha256((root/relative).read_bytes()).hexdigest()!=change['after_sha256']:
+                raise ValueError('A recorded preservation-only source edit changed again: '+relative)
+            own.add(relative.casefold())
+    projection_file=root/'docs/reproducibility/project_completion/HISTORICAL_PATH_PROJECTIONS.json'
+    projections=read(projection_file)['projections'] if projection_file.exists() else []
     for family in ['context','models','numeric','images','packages']:
         with gzip.open(op/('HASHED_'+family.upper()+'_FILES.jsonl.gz'),'rt',encoding='utf-8') as stream:
           for line in stream:
@@ -114,6 +123,17 @@ def main():
                 if key in repo_current:raise ValueError('Current Git source differs from a non-owned captured local file: '+relative)
                 insert(old,'Historical_Publications/'+old['sha256'][:12]+'/'+old['path'])
             insert({**row,'path':relative},replace=row['origin']=='D_worktree')
+            if row['origin']!='D_worktree':
+                physical=Path(row['source'])
+                for projection in projections:
+                    prefix=archive/Path(projection['archive_relative_prefix'])
+                    try:tail=physical.relative_to(prefix).as_posix()
+                    except ValueError:continue
+                    alias=(Path(projection['project_prefix'])/tail).as_posix();current=canonical.get(alias.casefold())
+                    # A later current report/config wins; the historical bytes
+                    # stay preserved under their archived version path above.
+                    if current is None or current['sha256']==row['sha256']:
+                        insert({**row,'path':alias,'scope':projection['scope']})
     a.output.mkdir(parents=True);groups=defaultdict(list);repo_aliases=[];large_packages=[]
     for row in canonical.values():
         provider=providers.get((row['sha256'],row['bytes']))
