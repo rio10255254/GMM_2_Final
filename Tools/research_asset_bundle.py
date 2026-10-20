@@ -25,6 +25,10 @@ def inspect(row, root):
     after = source.stat()
     if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
         raise RuntimeError('Source changed while hashing: ' + relative)
+    if row.get('sha256') is not None and row['sha256'] != checksum:
+        raise ValueError('Source differs from its reviewed content identity: ' + relative)
+    if row.get('bytes') is not None and row['bytes'] != before.st_size:
+        raise ValueError('Source differs from its reviewed byte count: ' + relative)
     return {**row, 'path': relative, 'bytes': before.st_size, 'sha256': checksum,
             '_source': str(source), '_mtime_ns': before.st_mtime_ns}
 

@@ -281,7 +281,7 @@ def inventory(root,archive,output,resume=False):
                 if counter%50000==0:db.commit();print('PROJECT_FILES_INVENTORIED',counter,round(time.time()-started,1),flush=True)
         db.commit()
     summary=[]
-    for scope,kind,state,count,size in db.execute('SELECT scope,kind,published_state,COUNT(*),SUM(bytes) FROM files GROUP BY scope,kind,published_state'):
+    for scope,kind,state,count,size in db.execute('SELECT scope,kind,published_state,COUNT(*),SUM(bytes) FROM files NOT INDEXED GROUP BY scope,kind,published_state'):
         summary.append({'scope':scope,'kind':kind,'publication_state':state,'files':count,'bytes':size})
     errors=db.execute('SELECT COUNT(*) FROM errors').fetchone()[0]
     write_json(output/'SCOPE_INVENTORY.json',{'status':'METADATA_INVENTORY_ONLY_NOT_REPRODUCTION_COMPLETE','files':db.execute('SELECT COUNT(*) FROM files').fetchone()[0],
@@ -293,6 +293,13 @@ def inventory(root,archive,output,resume=False):
 
 def verify(root,output,kinds,workers=2):
     db=sqlite3.connect(output/'inventory.sqlite',timeout=120);db.row_factory=sqlite3.Row
+    db.execute('PRAGMA cache_size=-262144')
+    # The published catalog is small compared with the research payload. Keeping
+    # it in memory avoids two random archive-disk lookups per tiny data file.
+    published_paths={};published_objects={}
+    for value in db.execute('SELECT path_key,bytes,sha256,release FROM published'):
+        entry=dict(value);published_paths[entry['path_key']]=entry
+        published_objects.setdefault((entry['sha256'],entry['bytes']),entry)
     where=','.join('?' for _ in kinds)
     total=db.execute(f'SELECT COUNT(*) FROM files WHERE kind IN ({where}) AND sha256 IS NULL',kinds).fetchone()[0]
     # Bound memory even for several million image paths. File ID order keeps
@@ -310,7 +317,10 @@ def verify(root,output,kinds,workers=2):
     with ThreadPoolExecutor(max_workers=workers) as pool:
       def results():
           while batch:=cursor.fetchmany(512):
-              yield from pool.map(inspect,batch)
+              # The archive is a shared spinning disk. Parallel reads there
+              # amplify seeking and can stall the protected training's I/O.
+              iterator=pool.map(inspect,batch) if all(r['origin']=='D_worktree' for r in batch) else map(inspect,batch)
+              yield from iterator
       for row,digest,error in results():
         if error:
             if error=='changed':changed.append(row['source'])
@@ -319,10 +329,10 @@ def verify(root,output,kinds,workers=2):
                 db.execute('INSERT INTO errors VALUES (?,?,?)',(row['source'],'hash',error))
             continue
         else:
-            published=db.execute('SELECT bytes,sha256,release FROM published WHERE path_key=?',(row['path_key'],)).fetchone()
+            published=published_paths.get(row['path_key'])
             state=coverage(row['bytes'],digest,published['bytes'] if published else None,published['sha256'] if published else None)
             if state!='SHA256_VERIFIED':
-                alternate=db.execute('SELECT path,release FROM published WHERE sha256=? AND bytes=?',(digest,row['bytes'])).fetchone()
+                alternate=published_objects.get((digest,row['bytes']))
                 if alternate:state='SHA256_PRESENT_OTHER_PATH_alias_needed'
             db.execute('UPDATE files SET sha256=?,published_state=? WHERE id=?',(digest,state,row['id']));count+=1
             if count%200==0:db.commit()
