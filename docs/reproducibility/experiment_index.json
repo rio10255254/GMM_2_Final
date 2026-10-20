@@ -2650,6 +2650,7 @@
     "necessary_sources": "1250場景／5000觀測的本輪配方與四曝光驗證",
     "image_decision": "暗邊、細節與清楚影像改動",
     "authoritative_documents": [
+      "Experiments/R91_DetailDecoupledScratch/reports/R91_PRESERVATION_AUDIT_20261021.md",
       "Experiments/R91_DetailDecoupledScratch/MANIFEST.md",
       "Experiments/R91_DetailDecoupledScratch/README.md"
     ],
@@ -2660,7 +2661,14 @@
       "full_historical_training_repeated": false,
       "portable_execution": "not_yet_verified",
       "github_publication": "PUBLISHED",
-      "selected_original_paths_verified": 50
+      "selected_original_paths_verified": 50,
+      "original_completion_reconciliation_20261021": {
+        "source_summary_status": "complete",
+        "unique_contiguous_epoch_rows": 60,
+        "unchanged_progress_snapshot_status": "active",
+        "numeric_fields_crosschecked": 14,
+        "full_historical_training_repeated": false
+      }
     },
     "cleanup_allowed": false
   },
@@ -2672,6 +2680,7 @@
     "necessary_sources": "本輪生成器與實際接受參數，不用後代資料替換",
     "image_decision": "不同過渡位置、曝光最差端點及精度比較",
     "authoritative_documents": [
+      "Experiments/R92_PhysicalTransitionBalancedScratch/reports/R92_PRESERVATION_AUDIT_20261021.md",
       "Experiments/R92_PhysicalTransitionBalancedScratch/MANIFEST.md",
       "Experiments/R92_PhysicalTransitionBalancedScratch/README.md"
     ],
@@ -2682,7 +2691,14 @@
       "full_historical_training_repeated": false,
       "portable_execution": "not_yet_verified",
       "github_publication": "PUBLISHED",
-      "selected_original_paths_verified": 68
+      "selected_original_paths_verified": 68,
+      "original_completion_reconciliation_20261021": {
+        "source_summary_status": "complete",
+        "unique_contiguous_epoch_rows": 80,
+        "unchanged_progress_snapshot_status": "active",
+        "numeric_fields_crosschecked": 20,
+        "full_historical_training_repeated": false
+      }
     },
     "cleanup_allowed": false
   },

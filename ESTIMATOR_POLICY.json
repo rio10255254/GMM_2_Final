@@ -4625,6 +4625,15 @@
         "new_unique_bytes_to_preserve": 428940418565,
         "archive_batches": 31,
         "publication_complete": false
+      },
+      "R91_R92_completion_reconciliation": {
+        "R91_complete_epochs": 60,
+        "R92_complete_epochs": 80,
+        "last_recorded_values_checked": 34,
+        "original_progress_files_unchanged": true,
+        "guide": "docs/reproducibility/scratch_lineage/README.md",
+        "proof": "docs/reproducibility/scratch_lineage/COMPLETION_RECORDS_VERIFIED.json",
+        "model_promotion": false
       }
     }
   },
@@ -4641,7 +4650,8 @@
     "2026-10-21 early training supplement:851 original locations,367 saved-state files,460 images and24 actual split-index files restored from GitHub. Twelve saved872/46 splits checked; six fixed R33p95/COMBO/R39strong E5/E100 native CPU outputs match original CPU references. A405MB self-contained replay kit was actually downloaded/executed. This verifies preservation/portability, not re-selection, retraining or full-project completion.",
     "2026-10-21 preservation context follow-up: full22218-file GitHub source clone checked; original saved-document state adds2 downloaded blobs;33 directory references mapped. Legacy207scores/5choices replayed with9earlier R13 formula gaps explicit. R88 stale start-only README/index reconciled to original87-epoch failure; old text preserved, no scientific verdict changed. Optical45-fit/100-position local saved-result replay passes; GitHub optical-kit replay stillpending. Whole-project large-content verification remainsinprogress; no D cleanup or GPU work.",
     "2026-10-21 optical replay complete:39,498,227-byte published kit freshlydownloaded,104filesverified, oldresearchrootsblocked. OriginalL1 summary/arrays2016numericfields and full100 original-readerCPU48fields match;100sourcepositions/1020100kernelvalues unchanged. No opticalfitting or GPUwork; wholeprojectlarge-content preservation stillinprogress.",
-    "2026-10-21 actual GitHub source recovery: two R95 trainer blobs exactly match original startup/continuation hashes. Earlier checkpoint code lacks optimizer/RNG fields; later recovered version stores them. Remaining22 earlier source identities stay unavailable. Registered editor history6854positions/4249newobjects actuallyretrieved;869699numericfiles SHAchecked and428940418565newuniquebytes being archived. Current two spectra files differ from older Git contents; both preserved with exact version identity. No original research data or formal policy changed."
+    "2026-10-21 actual GitHub source recovery: two R95 trainer blobs exactly match original startup/continuation hashes. Earlier checkpoint code lacks optimizer/RNG fields; later recovered version stores them. Remaining22 earlier source identities stay unavailable. Registered editor history6854positions/4249newobjects actuallyretrieved;869699numericfiles SHAchecked and428940418565newuniquebytes being archived. Current two spectra files differ from older Git contents; both preserved with exact version identity. No original research data or formal policy changed.",
+    "2026-10-21 archive-status reconciliation: R91/R92 original summaries and unique contiguous CSV rows verify60/80completedepochs;14/20lastrecordedvalidationvaluesanddiagnosticflagsmatch. Original active progress snapshots retained. R91 exposure-audit interpretation vs R92 actual source-only repair histories distinguished; data/input/code/model identities preserved, no retraining or promotion."
   ],
   "decision_notes": [
     "R44 Universal Boundary Motion Fidelity (2026-05-09): R44A-R44H Step B complete; Step B preserves motion but worsens target shape, so do not proceed to multi-teacher full-model KD."

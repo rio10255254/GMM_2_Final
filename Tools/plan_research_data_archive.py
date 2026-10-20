@@ -41,6 +41,12 @@ def main():
             row=json.loads(line);known.add((row['sha256'],row['bytes']));published_by_path[row['path'].casefold()]=row['sha256']
     for folder in ['training_history_bundle','context_batch_001_bundle']:
         known.update((row['sha256'],row['bytes']) for row in manifest(op/folder/'RESEARCH_ASSETS.json.gz')['files'])
+    extra_index=op/'EXTRA_SCOPE_COLLECTIONS.json'
+    if extra_index.exists():
+        for extra in json.loads(extra_index.read_text(encoding='utf-8'))['collections']:
+            proof=json.loads(Path(extra['verification']).read_text(encoding='utf-8'))
+            if proof.get('status')!='PASS_FILE_IDENTITY_AND_RESTORATION':raise ValueError('An extra source collection is not yet actually recovered')
+            known.update((row['sha256'],row['bytes']) for row in manifest(Path(extra['bundle_manifest']))['files'])
     for folder in ['model_batches','numeric_batches','image_batches','package_batches']:
         root=op/folder
         if root.exists():

@@ -1,5 +1,15 @@
 # R91 Detail-Decoupled Scratch
 
+## 已核對的完成狀態（2026-10-21）
+
+原結束摘要與完整逐輪表確認：本輪已完成60／60輪，沒有缺輪或重複；舊進度快照仍寫active，原件保留，不以它判斷目前仍在訓練。完成訓練與通過全部診斷、實體驗證或正式採用分開。
+
+[完成與來源審查](reports/R91_PRESERVATION_AUDIT_20261021.md)／[R89到R93的設計演進](../../docs/reproducibility/scratch_lineage/README.md)。原逐筆數字、模型與資料保持原樣，本次不重新訓練或清理D。
+
+## 原方法與歷史操作說明
+
+下文保留原啟動前的設計與操作紀錄；修正前首頁的原始位元組見[歷史副本](../../docs/history/R91_README_BEFORE_STATUS_RECONCILIATION_20261021.md)。
+
 R91 is one independent scratch experiment. It does not load R90, R61, V42, SEM, HS100MG, or any other model output as training material. R90 epoch 45 is only a later comparison reference.
 
 ## Purpose

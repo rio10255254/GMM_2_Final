@@ -1,5 +1,15 @@
 # Round 92 — Physical Transition Balanced Scratch
 
+## 已核對的完成狀態（2026-10-21）
+
+原結束摘要與完整逐輪表確認：本輪已完成80／80輪，沒有缺輪或重複；舊進度快照仍寫active，原件保留，不以它判斷目前仍在訓練。完成訓練與通過全部診斷、實體驗證或正式採用分開。
+
+[完成與來源審查](reports/R92_PRESERVATION_AUDIT_20261021.md)／[R89到R93的設計演進](../../docs/reproducibility/scratch_lineage/README.md)。原逐筆數字、模型與資料保持原樣，本次不重新訓練或清理D。
+
+## 原方法與歷史操作說明
+
+下文保留原啟動前的設計與操作紀錄；修正前首頁的原始位元組見[歷史副本](../../docs/history/R92_README_BEFORE_STATUS_RECONCILIATION_20261021.md)。
+
 ## Purpose
 
 R92 is an independent scratch experiment that corrects the causes identified in R91 while preserving the same local, tile-safe model backbone. It does not load R91, R90, R61, V42, or any other checkpoint.
@@ -33,7 +43,7 @@ The experiment targets four coupled goals:
 - anonymous aggregate optical scalars may shape nuisance distributions only;
 - no checkpoint, resume, teacher, or pseudo-label input exists in the trainer.
 
-## Current state
+## Historical pre-launch state
 
 The R91-informed design revision, smoke validation and full GPU safety/precision benchmark are complete. One independent 80-epoch formal scratch run is explicitly authorized. Its learning rate reaches the former late-training range by epoch 50 and then decays through a restrained 30-epoch tail instead of stretching the aggressive part of training.
 

@@ -13,6 +13,8 @@ Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重�
 
 續查已[補回R95兩版早期訓練程式](R95_CounterfactualGateRepairScratch/archive/recovered_training_sources_20261021/README.md)，均符合原登記並實際從GitHub取回；原更新狀態保存方式與第一次接續差異可直接追查。其他早期缺件保留，完整數值與影像仍逐批核對，不把找到兩份原程式當成全部舊訓練已重現。
 
+[R89到R93的方法脈絡](../docs/reproducibility/scratch_lineage/README.md)已補完成狀態與來源判讀：R91／R92原結束摘要及逐輪表確認完整60／80輪，原進度active不改寫；R91只是檢查讀法對照，R92有光度／曝光修復與原件備份。原不利讀值、資料差異和未完成外部範圍保留。
+
 **位移波動定義：**固定步數位置比較不同重拍趟次，與單趟走完30步的波動不同。[單趟完整重算與16方法比較](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md)保留原定義及逐趟結果。
 
 ## Active（formal baseline + approved alternates）
