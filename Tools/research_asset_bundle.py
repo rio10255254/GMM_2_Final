@@ -122,6 +122,7 @@ def restore(manifest_path, assets, destination, prefixes=(), keep_identical_exis
         raise FileExistsError('Restore receipt already exists')
     if manifest.get('state') != 'complete':
         raise ValueError('Incomplete research bundle')
+    prefix_roots = [safe_relative(value) for value in prefixes]
     paths = set(); groups = defaultdict(list)
     for row in manifest['files']:
         relative = safe_relative(row['path'])
@@ -129,7 +130,7 @@ def restore(manifest_path, assets, destination, prefixes=(), keep_identical_exis
         if normalized in paths or not re.fullmatch('[0-9a-f]{64}', row['sha256']):
             raise ValueError('Duplicate path or invalid object identity')
         paths.add(normalized)
-        if not prefixes or any(relative.as_posix().startswith(prefix) for prefix in prefixes):
+        if not prefix_roots or any(relative.is_relative_to(prefix) for prefix in prefix_roots):
             groups[row['asset']].append(row)
     specifications = {row['name']: row for row in manifest['assets']}
     if not groups or len(specifications) != len(manifest['assets']):

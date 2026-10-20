@@ -52,3 +52,7 @@
 [六份舊模型的小型執行包](https://github.com/rio10255254/GMM_2_Final/releases/download/research-training-history-supplement-20261021/shared-native-models-replay.zip)約405MB，包含三條路線各第5／100輪、原光學輸入、原程式與CPU參照。解開後依START_HERE.md執行即可，不需要舊D／H研究資料；原完整小數輸出與BMP皆已由實際下載的小包重做相同。[小包取回執行收據](SMALL_NATIVE_KIT_VERIFIED.json)。
 
 本批還補上24份原訓練／驗證分組資料，共12組，每組872個訓練位置與46個驗證位置、沒有重複。這是當時實際分組，不用種子猜回去；分組位置不重複本身不證明實體樣本獨立。[逐組核對](TRAIN_VAL_MEMBERSHIP_VERIFIED.json)。
+
+## 第二批：原始紀錄與論文版本
+
+[182,471個原位置的研究脈絡補件](CONTEXT_RECORDS.md)已從GitHub取回並逐份相同，包含原始訓練標記、執行與失敗紀錄、原程式、舊報告和論文草稿。不同版本保留原身分；不把草稿當成目前論文採用稿。其他大型來源與模型仍在繼續核對。

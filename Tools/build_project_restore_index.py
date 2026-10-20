@@ -76,6 +76,12 @@ def main():
     old_catalog=json.loads(gzip.decompress(old_catalog_raw));old_tree=git_tree(root,old_catalog['source_snapshot_commit'])
     for row in old_catalog['files']:
         providers.setdefault((row['sha256'],row['bytes']),{'kind':'repository_blob','provider_path':row['path'],'git_blob':old_tree[row['path']]})
+    large_package_sources={}
+    if (op/'LARGE_ORIGINAL_PACKAGES_GITHUB_VERIFIED.json').exists():
+        for package in read(op/'LARGE_ORIGINAL_PACKAGES_GITHUB_VERIFIED.json')['packages']:
+            key=(package['original_sha256'],package['original_bytes'])
+            providers[key]={'kind':'original_package_parts',**package}
+            large_package_sources[key]=package
     canonical={};captured=0;missing=[];excluded=[]
     def insert(row,path=None,replace=False):
         relative=safe_relative(path or row['path']).as_posix();key=relative.casefold();value={'path':relative,'sha256':row['sha256'],'bytes':row['bytes'],'scope':row.get('scope','research'),'role':row.get('role',row.get('kind','research'))}
@@ -108,13 +114,18 @@ def main():
                 if key in repo_current:raise ValueError('Current Git source differs from a non-owned captured local file: '+relative)
                 insert(old,'Historical_Publications/'+old['sha256'][:12]+'/'+old['path'])
             insert({**row,'path':relative},replace=row['origin']=='D_worktree')
-    a.output.mkdir(parents=True);groups=defaultdict(list);repo_aliases=[]
+    a.output.mkdir(parents=True);groups=defaultdict(list);repo_aliases=[];large_packages=[]
     for row in canonical.values():
         provider=providers.get((row['sha256'],row['bytes']))
         if provider is None:missing.append(row);continue
         if provider['kind']=='repository_blob':
             if repo_current.get(row['path'].casefold())==row['sha256']:continue
             repo_aliases.append({**row,**provider})
+        elif provider['kind']=='original_package_parts':
+            index=Path(provider['manifest_path']);name=index.name
+            (a.output/name).write_bytes(index.read_bytes())
+            large_packages.append({'path':row['path'],'tag':provider['tag'],'manifest':name,'manifest_sha256':hashlib.sha256(index.read_bytes()).hexdigest(),
+              'original_sha256':row['sha256'],'original_bytes':row['bytes'],'downloaded_parts':provider['downloaded_assets']})
         else:groups[provider['tag']].append({**row,'asset':provider['asset']})
     if missing:
         write_json(a.output/'MISSING_PUBLIC_OBJECTS_REQUIRING_REVIEW.json',{'files':missing});raise ValueError('Some exact source objects still lack a verified GitHub provider')
@@ -127,6 +138,8 @@ def main():
         save(a.output/name,m);components.append({'tag':tag,'restore_manifest':name,'files':len(rows),'manifest_sha256':hashlib.sha256((a.output/name).read_bytes()).hexdigest(),'new_collection':tag in new_tags})
     save(a.output/'REPOSITORY_CONTENT_ALIASES.json.gz',{'schema':1,'state':'complete','files':repo_aliases})
     write_json(a.output/'MASTER_RESTORE_INDEX.json',{'schema':1,'state':'complete','components':components,'repository_alias_manifest':'REPOSITORY_CONTENT_ALIASES.json.gz',
+      'repository_alias_manifest_sha256':hashlib.sha256((a.output/'REPOSITORY_CONTENT_ALIASES.json.gz').read_bytes()).hexdigest(),
+      'original_large_packages':large_packages,
       'captured_physical_files':captured,'normalized_logical_locations':len(canonical),'repository_alias_locations':len(repo_aliases),
       'excluded_generic_dependency_files':len(excluded),'scientific_validation_scope':'File preservation verified; native/rebuild/numeric replays separately described',
       'batch_checks':batch_checks,'active_training_and_thesis_originals_protected':True,'D_cleanup_authorized':False})
