@@ -3,31 +3,13 @@
 Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重做；本輪不清D）
 2026-10-21：[R94／R95／R97／R98完整方法、原模型、數據與失敗歷程](../docs/reproducibility/four_rounds/README.md)已補齊，GitHub取回1,092個原位置、32組原模型輸出相同；保留不利結果及缺件界限，沒有重新訓練或清理D。
 
-MOSR口試補充比較進行中：[平均／中位數完整重算](R153_MeanExternalBenchmark/reports/MEAN_MEDIAN_RESULTS.md)／[自動訓練監看與接續](R153_MeanExternalBenchmark/reports/TRAINING_MONITOR.md)。七個官方架構從零一般訓練；兩個官方後端環境阻礙完整保留。巡檢改為預估完成加緩衝時檢查；尚未開始方法最多8輪，實際訓練時間差異明列。平均數第一部分交接已完成：[可供網頁對話修改論文的完整文件](R153_MeanExternalBenchmark/reports/MOSR_MEAN_THESIS_HANDOFF_20261005/MOSR_MEAN_THESIS_HANDOFF.md)；全部外部實拍benchmark尚未完成。
+最新論文比較已於2026-10-07完成：十方法各930張、8370讀值、30有效趟及零量測失敗，150次效率與162組完整趟次配對區間已核對。[完整交接與全部結果](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)／[修改指南](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/PAPER_UPDATE_GUIDE.md)。另兩官方後端受阻如實保留；監看已結束。原先七／九方法、暫停、恢復與追加SwinIR的順序見[整理前原索引](../docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md)，不再以舊「進行中」文字當目前狀態。
 
+全專案GitHub保存續查進行中：[實際內容與完成條件](../docs/reproducibility/project_completion/README.md)。除實驗目錄外亦查共用訓練、光學校正、論文草稿／交接、原始資料和已搬到H槽的歷史；已補10條本機獨有版本歷史，18份原程式／設計取回相同。第一批模型歷程補件尚在取回驗證，全專案尚未宣稱完成。
 
-一頁式快速索引——完整數字、checkpoint 路徑、外部 GMF 結果見 `ESTIMATOR_POLICY.json` 與各實驗 `reports/`。
+完整數字、模型身分和外部GMF結果以 `ESTIMATOR_POLICY.json` 與各輪正式報告為準。[逐輪保存判讀](../docs/reproducibility/EXPERIMENTS.md)說明方法、來源和影像選擇；[原代表圖冊](../RECON_GALLERY.md)保留歷史順序。
 
-視覺 demo 圖（每輪代表性重建圖 / 指標圖）見根目錄的 [`RECON_GALLERY.md`](../RECON_GALLERY.md)。
-
-**位移波動定義更正：**過去各列的「短步重拍波動」是固定步數位置、比較不同重拍趟次；它不是單趟走完 30 步的波動。依後者重新計算的同批 16 種方法與逐趟改善範圍，見[完整重算表](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md)。舊值保留原定義，不再拿來當作單趟波動排名。
-
----
-
-
-已完成模型實拍比較現正優先執行，訓練保存暫停；[七方法新效率結果](R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_EFFICIENCY.md)已核對，完整實拍方法覆蓋與未完成部分見[階段交接](R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_PROGRESS/REPORT.md)。
-
-
-七方法完整階段已完成：[論文交接](R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE/REPORT.md)與[完整包](R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE.zip)，後續三模型仍在訓練，整個benchmark未完成。
-
-
-最新九方法完整交付已完成：[完整論文交接](R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF/REPORT.md)／[全部圖表與數據ZIP](R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF.zip)。每方法930張、30有效趟、零失敗；144組配對區間與135次效率核對。SwinIR使用者暫停不比較，監看已停止，原論文未修改。
-
-最新續訓（2026-10-06）：九方法論文資料已交付後，使用者直接授權SwinIR從step256恢復，總上限8輪不变。監看與只補SwinIR之完整驗證接續已恢復；九方法交接包保留，十方法比較尚未完成。見[續訓授權紀錄](R153_MeanExternalBenchmark/config/USER_RESUME_20261006.json)。
-
-2026-10-07：SwinIR8輪訓練及15次效率已核對，七個可訓練外部模型全部完成；只追加SwinIR的930張實拍與固定讀值，十方法最終報告仍執行中。已交付九方法包完整保留，下一次預估14:15檢查。
-
-2026-10-07 最終完整比較已完成：十方法各930張／8370讀值／30有效趟、零失敗，150次效率與162組區間。最新[論文完整交接](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)／[完整附件包](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF.zip)／[修改指南](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/PAPER_UPDATE_GUIDE.md)。九方法舊包保留，原論文／模型未改；監看結束，另兩官方後端阻礙如實記錄。
+**位移波動定義：**固定步數位置比較不同重拍趟次，與單趟走完30步的波動不同。[單趟完整重算與16方法比較](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md)保留原定義及逐趟結果。
 
 ## Active（formal baseline + approved alternates）
 

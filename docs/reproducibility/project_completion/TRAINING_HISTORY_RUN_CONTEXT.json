@@ -1,0 +1,930 @@
+{
+  "status": "IDENTITY_REVIEW_IN_PROGRESS",
+  "runs": [
+    {
+      "run": "Traing_Progress/organized_20260314/branch_e/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453",
+      "new_paths": 4,
+      "new_model_paths": 1,
+      "original_run_metadata": {
+        "seed": 1261205,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_besb_20260315_152453",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_besb",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-15T07:24:53Z",
+        "timestamp_local": "2026-03-15 15:24:53"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/organized_20260314/branch_e/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453/GESR_v1_v5_ST0p8_SWP_besb_val_log_v5.csv",
+          "rows": 6,
+          "first_epoch": 1,
+          "last_epoch": 6,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419",
+      "new_paths": 4,
+      "new_model_paths": 1,
+      "original_run_metadata": {
+        "seed": 1261202,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r20ca",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-14T12:44:19Z",
+        "timestamp_local": "2026-03-14 20:44:19"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/GESR_v1_v5_ST0p8_SWP_r20ca_val_log_v5.csv",
+          "rows": 4,
+          "first_epoch": 1,
+          "last_epoch": 4,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/organized_20260315/branch_e_followup/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929",
+      "new_paths": 4,
+      "new_model_paths": 1,
+      "original_run_metadata": {
+        "seed": 1261206,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_bece_20260315_152929",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_bece",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-15T07:29:29Z",
+        "timestamp_local": "2026-03-15 15:29:29"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/organized_20260315/branch_e_followup/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929/GESR_v1_v5_ST0p8_SWP_bece_val_log_v5.csv",
+          "rows": 10,
+          "first_epoch": 1,
+          "last_epoch": 10,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238",
+      "new_paths": 4,
+      "new_model_paths": 1,
+      "original_run_metadata": {
+        "seed": 1261209,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r21mcg",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-15T13:52:38Z",
+        "timestamp_local": "2026-03-15 21:52:38"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238/GESR_v1_v5_ST0p8_SWP_r21mcg_val_log_v5.csv",
+          "rows": 8,
+          "first_epoch": 1,
+          "last_epoch": 8,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625",
+      "new_paths": 4,
+      "new_model_paths": 1,
+      "original_run_metadata": {
+        "seed": 1261216,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r22ps",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-15T14:56:25Z",
+        "timestamp_local": "2026-03-15 22:56:25"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/GESR_v1_v5_ST0p8_SWP_r22ps_val_log_v5.csv",
+          "rows": 8,
+          "first_epoch": 1,
+          "last_epoch": 8,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/organized_20260316/round29/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056",
+      "new_paths": 4,
+      "new_model_paths": 1,
+      "original_run_metadata": {
+        "seed": 1261829,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r29sm042",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-17T03:40:56Z",
+        "timestamp_local": "2026-03-17 11:40:56"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/organized_20260316/round29/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056/GESR_v1_v5_ST0p8_SWP_r29sm042_val_log_v5.csv",
+          "rows": 12,
+          "first_epoch": 1,
+          "last_epoch": 12,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311",
+      "new_paths": 4,
+      "new_model_paths": 1,
+      "original_run_metadata": {
+        "seed": 1261830,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r31eqprobup",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-18T03:03:11Z",
+        "timestamp_local": "2026-03-18 11:03:11"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311/GESR_v1_v5_ST0p8_SWP_r31eqprobup_val_log_v5.csv",
+          "rows": 15,
+          "first_epoch": 1,
+          "last_epoch": 15,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-04T23:32:30Z",
+        "timestamp_local": "2026-04-05 07:32:30"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-04T23:39:06Z",
+        "timestamp_local": "2026-04-05 07:39:06"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-05T01:19:41Z",
+        "timestamp_local": "2026-04-05 09:19:41"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-05T03:48:24Z",
+        "timestamp_local": "2026-04-05 11:48:24"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-05T07:38:26Z",
+        "timestamp_local": "2026-04-05 15:38:26"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-05T14:50:24Z",
+        "timestamp_local": "2026-04-05 22:50:24"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-05T15:54:55Z",
+        "timestamp_local": "2026-04-05 23:54:55"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-05T16:48:33Z",
+        "timestamp_local": "2026-04-06 00:48:33"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-06T04:28:42Z",
+        "timestamp_local": "2026-04-06 12:28:42"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-06T14:24:04Z",
+        "timestamp_local": "2026-04-06 22:24:04"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-06T15:59:57Z",
+        "timestamp_local": "2026-04-06 23:59:57"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525",
+      "new_paths": 48,
+      "new_model_paths": 21,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525",
+        "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-04-07T16:35:25Z",
+        "timestamp_local": "2026-04-08 00:35:25"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833",
+      "new_paths": 16,
+      "new_model_paths": 5,
+      "original_run_metadata": {
+        "seed": 1261830,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833",
+        "model_name": "GESR_v1_v5_ST0p8_FIN_r30b1a1",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-17T07:08:33Z",
+        "timestamp_local": "2026-03-17 15:08:33"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833/GESR_v1_v5_ST0p8_FIN_r30b1a1_val_log_v5.csv",
+          "rows": 10,
+          "first_epoch": 1,
+          "last_epoch": 10,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250",
+      "new_paths": 16,
+      "new_model_paths": 5,
+      "original_run_metadata": {
+        "seed": 1261830,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250",
+        "model_name": "GESR_v1_v5_ST0p8_FIN_r30b1a1",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-17T07:52:50Z",
+        "timestamp_local": "2026-03-17 15:52:50"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250/GESR_v1_v5_ST0p8_FIN_r30b1a1_val_log_v5.csv",
+          "rows": 10,
+          "first_epoch": 1,
+          "last_epoch": 10,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032",
+      "new_paths": 5,
+      "new_model_paths": 2,
+      "original_run_metadata": {
+        "seed": 1261830,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r30b1a1",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-17T07:00:32Z",
+        "timestamp_local": "2026-03-17 15:00:32"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032/GESR_v1_v5_ST0p8_SWP_r30b1a1_val_log_v5.csv",
+          "rows": 15,
+          "first_epoch": 1,
+          "last_epoch": 15,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245",
+      "new_paths": 5,
+      "new_model_paths": 2,
+      "original_run_metadata": {
+        "seed": 1261830,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r30b1dir",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-17T06:52:45Z",
+        "timestamp_local": "2026-03-17 14:52:45"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245/GESR_v1_v5_ST0p8_SWP_r30b1dir_val_log_v5.csv",
+          "rows": 15,
+          "first_epoch": 1,
+          "last_epoch": 15,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116",
+      "new_paths": 5,
+      "new_model_paths": 2,
+      "original_run_metadata": {
+        "seed": 1261830,
+        "seed_deterministic": true,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r30b1dir",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116\\weights",
+        "device": "cuda:0",
+        "amp": false,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "torch_version": "2.6.0+cu126",
+        "cuda_version": "12.6",
+        "cudnn_version": 90501,
+        "timestamp_utc": "2026-03-17T07:21:16Z",
+        "timestamp_local": "2026-03-17 15:21:16"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116/GESR_v1_v5_ST0p8_SWP_r30b1dir_val_log_v5.csv",
+          "rows": 13,
+          "first_epoch": 1,
+          "last_epoch": 13,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958",
+      "new_paths": 50,
+      "new_model_paths": 23,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.3.0+cu121",
+        "cuda_version": "12.1",
+        "cudnn_version": 8801,
+        "timestamp_utc": "2026-04-28T08:59:58Z",
+        "timestamp_local": "2026-04-28 16:59:58"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728",
+      "new_paths": 50,
+      "new_model_paths": 23,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.3.0+cu121",
+        "cuda_version": "12.1",
+        "cudnn_version": 8801,
+        "timestamp_utc": "2026-04-28T10:07:28Z",
+        "timestamp_local": "2026-04-28 18:07:28"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537",
+      "new_paths": 50,
+      "new_model_paths": 23,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.3.0+cu121",
+        "cuda_version": "12.1",
+        "cudnn_version": 8801,
+        "timestamp_utc": "2026-05-04T05:45:37Z",
+        "timestamp_local": "2026-05-04 13:45:37"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537/GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    },
+    {
+      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920",
+      "new_paths": 50,
+      "new_model_paths": 23,
+      "original_run_metadata": {
+        "seed": 1261200,
+        "seed_deterministic": false,
+        "run_tag": "GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920",
+        "model_name": "GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo",
+        "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920",
+        "pretrained_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920\\weights",
+        "device": "cuda:0",
+        "amp": true,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": true,
+        "tf32_matmul": true,
+        "tf32_cudnn": true,
+        "torch_version": "2.3.0+cu121",
+        "cuda_version": "12.1",
+        "cudnn_version": 8801,
+        "timestamp_utc": "2026-05-04T06:59:20Z",
+        "timestamp_local": "2026-05-04 14:59:20"
+      },
+      "validation_logs": [
+        {
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_val_log_v5.csv",
+          "rows": 100,
+          "first_epoch": 1,
+          "last_epoch": 100,
+          "duplicate_epoch_rows": 0
+        }
+      ]
+    }
+  ],
+  "historical_report_conflict": "20260405_073230 is labelled failed-launcher in the old series report, while current logs and epoch_100 checkpoint both retain 100 epochs. Preserve without assigning those results to an accepted R33 candidate."
+}

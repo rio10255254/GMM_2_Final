@@ -1,6 +1,6 @@
 # 專案地圖
 
-Last updated: 2026-08-13
+Last updated: 2026-10-21
 
 這是整個專案唯一的跨區域人工導航。它只回答「先去哪裡找」與「新內容歸誰」，不複製研究結論，也不取代正式狀態、模型政策、實驗索引或各輪報告。
 
@@ -14,8 +14,9 @@ Last updated: 2026-08-13
 | 哪個模型是正式版本 | `ESTIMATOR_POLICY.json` | `PROJECT_STATE.md` 與模型所屬實驗報告 |
 | 已生效的穩定規則 | `PROJECT_ARCHITECTURE.md` | `docs/operations/SOURCE_OF_TRUTH_POLICY.md` |
 | 某一輪實驗的結論 | `Experiments/INDEX.md` | 該輪 `reports` |
+| 不靠舊磁碟從GitHub理解及取回研究 | [研究保存入口](../reproducibility/README.md) | [全專案實際內容核對](../reproducibility/project_completion/README.md)、逐輪方法及各版本附件 |
 | 如何建立新實驗 | `docs/operations/STARTING_NEW_EXPERIMENT.md` | 未來結構與容量藍圖 |
-| 論文目前採用的模型、主張與圖表 | `Thesis_MOSR_Evidence/README.md` 與 `HANDOFF_MASTER.md` | `Final_Data_Figures` 各區說明 |
+| 論文目前採用的模型、主張與圖表 | `PROJECT_STATE.md` 的最新論文交接 | R153完整交接與原始實驗報告；舊README／HANDOFF只按日期作歷史閱讀 |
 | LabSystem 的研究歷史 | `Thesis_MOSR_Evidence/LabSystem_MOSR/README.md` | 該區的實驗與正式報告 |
 | PSF 擬合與正式入口 | `PSF_Fitting/README.md` | Whole-FOV 流程與驗證說明 |
 | 大型區塊能不能動 | `docs/operations/PROJECT_STORAGE_REGISTRY.json` | 容量政策、活動標記與生命週期計畫 |

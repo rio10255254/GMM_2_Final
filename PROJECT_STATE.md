@@ -16,6 +16,7 @@ Last updated: 2026-10-21（GitHub優先：R94／R95／R97／R98完整紀錄與�
 - [完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。
 - R152資料重建與模型獨立包已完成；尺寸偏差、速度代價與SEM參照限制保留。
 ### 共用原始資料與GitHub整理 20261016
+- 20261021全專案續查進行中：補回10條本機獨有版本歷史，18份原程式／設計從GitHub取回相同；其餘本機及H歷史逐項核對。[範圍與完成條件](docs/reproducibility/project_completion/README.md)。尚未宣稱全專案完成。
 - 20261021 R94／R95／R97／R98完整紀錄1,092位置、107模型檔、663影像從GitHub取回；32組原模型輸出相同，原數字與四輪共用輸入核對通過。[四輪方法與重做入口](docs/reproducibility/four_rounds/README.md)。本輪不清D、不使用訓練顯卡。
 - 20261020續整以GitHub為主：補R93全部既存模型／影像歷程及36KB原數字重算包，修正舊模板的輪次／種子；[五輪共用來源新入口](docs/reproducibility/r93_shared/README.md)。沒有重跑歷史訓練或改科學判決。
 - 30趟實拍原始ZIP已從Google Drive取回；930相機BMP與30原始位置CSV全部符合歷史原檔核對碼，PI／時間／影格／曝光逐筆相同。
@@ -40,6 +41,12 @@ Last updated: 2026-10-21（GitHub優先：R94／R95／R97／R98完整紀錄與�
 ---
 
 ## Full Current State / 完整現況
+
+### 全專案GitHub保存續查（2026-10-21，進行中）
+
+本輪以實際本機內容核對，不以177個閱讀範圍或既有附件清單推定完整。範圍包括共用訓練、光學校正、論文草稿／交接、早期分析、獨立包及先前搬到H槽的歷史。本機79個有名稱分支的歷史已可從GitHub取得：其中10條原本獨有歷史補上保存入口，18份獨有程式／設計均實際從GitHub取回相同。
+
+第一批28次早期訓練的模型歷程補件仍在上傳與取回核對；未完成不列為完成。發現R33舊報告將20260405_073230列為啟動失敗，但原表及原模型保留100輪，已另記來源矛盾，沒有自動指派為接受候選。原文、科學判決、論文及活動訓練保留；本輪不清D、不使用GPU。[全專案核對](docs/reproducibility/project_completion/README.md)／[R33來源審查](Experiments/R33RobustLoss/reports/R33_HISTORY_PRESERVATION_AUDIT_20261021.md)。
 
 ### GitHub優先：R94／R95／R97／R98完整歷程（2026-10-21）
 
