@@ -117,3 +117,24 @@ def test_receipt_from_a_different_object_set_cannot_approve_a_component():
     wrong = {**valid, "checks": [{**item("data/other.npy", "different observation"), "exact_file_bytes_restored": True}]}
     with pytest.raises(ValueError, match="exact declared objects"):
         builder.verify_exact_batch_receipt(manifest, wrong)
+
+
+def test_batch_release_shards_keep_their_exact_object_providers(tmp_path, monkeypatch):
+    out, array, image, _, _ = fixture(tmp_path, monkeypatch)
+    batches = []
+    for number, (row, tag) in enumerate([(array, 'fixture-images'), (image, 'fixture-images-02')], 1):
+        folder = tmp_path / 'operation/image_batches' / f'B{number}'
+        part = {'name': 'same-part-name.zip', 'bytes': number * 100, 'sha256': str(number) * 64}
+        saved = {**row, 'asset': part['name']}
+        dump(folder / 'bundle/RESEARCH_ASSETS.json.gz', {'state': 'complete', 'files': [saved], 'assets': [part]})
+        dump(folder / 'BATCH_GITHUB_RESTORE_VERIFIED.json', {
+            'status': 'PASS_FILE_IDENTITY_AND_RESTORATION', 'assets': [part],
+            'checks': [{**saved, 'exact_file_bytes_restored': True}]})
+        batches.append({'batch': f'B{number}', 'folder': str(folder), 'tag': tag})
+    dump(tmp_path / 'operation/image_batches/PLAN.json', {'tag': 'fixture-images', 'batches': batches})
+    builder.main()
+    master = builder.read(out / 'MASTER_RESTORE_INDEX.json')
+    components = {row['tag']: builder.read(out / row['restore_manifest']) for row in master['components']}
+    assert next(row for row in components['fixture-images']['files'] if row['path'] == 'data/fixed.npy')['sha256'] == array['sha256']
+    assert next(row for row in components['fixture-images-02']['files'] if row['path'] == 'results/centers/image.bmp')['sha256'] == image['sha256']
+    assert components['fixture-images']['assets'][0]['sha256'] != components['fixture-images-02']['assets'][0]['sha256']

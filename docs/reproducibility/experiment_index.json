@@ -2811,6 +2811,12 @@
         "saved_model_files": 31,
         "original_images": 148,
         "prepared_training_samples_exact": 9
+      },
+      "earlier_source_recovery_20261021": {
+        "exact_old_trainer_versions_recovered_and_downloaded": 2,
+        "global_earlier_source_versions_still_unavailable": 22,
+        "proof": "docs/reproducibility/four_rounds/R95_EARLY_SOURCES_RECOVERED_VERIFIED.json",
+        "full_earlier_training_repeated": false
       }
     },
     "cleanup_allowed": false

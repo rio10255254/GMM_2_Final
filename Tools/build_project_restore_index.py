@@ -76,14 +76,14 @@ def main():
         plan=read(folder/'PLAN.json')
         if plan.get('large_original_containers_require_separate_chunk_preservation'):
             if not (op/'LARGE_ORIGINAL_PACKAGES_GITHUB_VERIFIED.json').exists():raise ValueError('Large original distribution containers remain unfinished')
-        new_tags.add(plan['tag'])
         for batch in plan['batches']:
+            batch_tag=batch.get('tag',plan['tag']);new_tags.add(batch_tag)
             work=Path(batch['folder']);receipt=work/'BATCH_GITHUB_RESTORE_VERIFIED.json'
             if not receipt.exists():raise ValueError('A reviewed batch has not been actually retrieved: '+batch['batch'])
             component=work/'bundle/RESEARCH_ASSETS.json.gz'
             verify_exact_batch_receipt(read(component),read(receipt))
-            add_bundle(component,plan['tag'],new=True)
-            batch_checks.append({'batch':batch['batch'],'tag':plan['tag'],'verification_sha256':hashlib.sha256(receipt.read_bytes()).hexdigest()})
+            add_bundle(component,batch_tag,new=True)
+            batch_checks.append({'batch':batch['batch'],'tag':batch_tag,'verification_sha256':hashlib.sha256(receipt.read_bytes()).hexdigest()})
     extra_scopes=read(op/'EXTRA_SCOPE_COLLECTIONS.json')['collections'] if (op/'EXTRA_SCOPE_COLLECTIONS.json').exists() else []
     for extra in extra_scopes:
         component=Path(extra['bundle_manifest']);receipt=Path(extra['verification'])

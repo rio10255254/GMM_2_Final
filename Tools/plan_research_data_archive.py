@@ -11,6 +11,25 @@ from research_recovery import write_json
 def manifest(path):
     with gzip.open(path,'rt',encoding='utf-8-sig') as stream:return json.load(stream)
 
+def predicted_parts(rows,limit=1_800_000_000):
+    """Use the exact byte grouping/order and 256-byte allowance of the packer."""
+    parts=0;size=0;nonempty=False
+    for row in sorted(rows,key=lambda r:r['sha256']):
+        if nonempty and size+row['bytes']+256>limit:
+            parts+=1;size=0;nonempty=False
+        size+=row['bytes']+256;nonempty=True
+    return parts+int(nonempty)
+
+def assign_release_shards(batches,base_tag,maximum_batch_assets=900):
+    shard=1;used=0;releases={}
+    for batch in batches:
+        count=batch['predicted_parts']+3 # unique per-batch manifest, summary, sums
+        if count>maximum_batch_assets:raise ValueError('One batch is too large for a release')
+        if used and used+count>maximum_batch_assets:shard+=1;used=0
+        tag=base_tag if shard==1 else base_tag+'-'+str(shard).zfill(2)
+        batch['tag']=tag;used+=count;releases[tag]=used
+    return [{'tag':tag,'planned_batch_assets':count,'space_reserved_for_final_metadata':100} for tag,count in releases.items()]
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--operation',type=Path,required=True)
     p.add_argument('--family',choices=['numeric','images','packages'],required=True);p.add_argument('--batch-bytes',type=int,default=16_000_000_000)
@@ -62,7 +81,9 @@ def main():
               'reason':'Preserve existing raw/frozen input or complete stored result bytes, including adverse and failed cases; source roles and original locations remain distinct.',
               'collection':'project-'+a.family+'-'+str(i).zfill(3)})
         write_json(folder/'SELECTION.json',{'reviewed':True,'files':selection,'source_family':a.family})
-        plans.append({'batch':label,'folder':str(folder),'objects':len(group),'bytes':sum(r['bytes'] for r in group)})
+        plans.append({'batch':label,'folder':str(folder),'objects':len(group),'bytes':sum(r['bytes'] for r in group),
+          'predicted_parts':predicted_parts(group)})
+    releases=assign_release_shards(plans,tag)
     canonical={r['path_key']:r['sha256'] for r in rows if r['origin']=='D_worktree'}
     archive=Path(r'H:\GMM_2_Final_Archive');destinations={}
     with gzip.open(out/'ALL_ORIGINAL_LOCATIONS.jsonl.gz','wt',encoding='utf-8',compresslevel=1) as stream:
@@ -75,7 +96,9 @@ def main():
             destinations[key]=row['sha256']
             stream.write(json.dumps({**row,'restore_path':relative},ensure_ascii=False,separators=(',',':'))+'\n')
     report={'status':'REVIEWED_PLAN_NOT_YET_PUBLISHED','family':a.family,'tag':tag,'new_unique_objects':len(objects),
-      'new_unique_bytes':sum(r['bytes'] for r in objects.values()),'batches':plans,'excluded_generic_dependencies':excluded,
+      'new_unique_bytes':sum(r['bytes'] for r in objects.values()),'batches':plans,'releases':releases,
+      'release_limit_source':'https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases',
+      'excluded_generic_dependencies':excluded,
       'large_original_containers_require_separate_chunk_preservation':too_large,'original_source_files_changed':False}
     write_json(out/'PLAN.json',report);print('RESEARCH_DATA_BATCHES_PLANNED',a.family,len(objects),report['new_unique_bytes'],len(plans),'large_containers',len(too_large),flush=True)
 

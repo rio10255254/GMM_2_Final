@@ -1,0 +1,41 @@
+{
+  "status": "EXACT_RECORDED_HISTORICAL_SOURCE_BYTES_PUBLISHED_AND_ACTUALLY_DOWNLOADED",
+  "source_commit": "d8b1ba3061ff26723194a64f336b47ff531c857b",
+  "files": [
+    {
+      "round": 95,
+      "kind": "trainer_sha256",
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/archive/recovered_training_sources_20261021/6d48d629fee007f278b5cc3ac218f499bb684ab48d143165ca47075bc2cddef7/train_r95.py",
+      "sha256": "6d48d629fee007f278b5cc3ac218f499bb684ab48d143165ca47075bc2cddef7",
+      "git_blob": "716d2b5b81db5ba7544df0b862807b57942944de",
+      "bytes": 54037,
+      "normalization_required": false,
+      "original_record_examples": [
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002539/run_progress.json",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002539/run_summary.json",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002539/scratch_initialization_audit.json",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002539/startup_trace.json",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/scratch_initialization_audit.json",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_014928_memory_guard/failure.json",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_014928_memory_guard/run_progress_epoch9.json",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_014928_memory_guard/startup_trace_epoch10.json",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_01/failure.json"
+      ]
+    },
+    {
+      "round": 95,
+      "kind": "trainer_sha256",
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/archive/recovered_training_sources_20261021/6e04d61c1bb848d4adb40d9adbb4f928d70936b3721d825c09d24904708bcf1b/train_r95.py",
+      "sha256": "6e04d61c1bb848d4adb40d9adbb4f928d70936b3721d825c09d24904708bcf1b",
+      "git_blob": "83e33d5f0299e22255a6310a54b9fbe3f03f1484",
+      "bytes": 68870,
+      "normalization_required": false,
+      "original_record_examples": [
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/20260813_081318_authorized_acceleration/active_run_epoch011.json",
+        "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_01/continuation_audit.json"
+      ]
+    }
+  ],
+  "current_trainer_or_models_changed": false,
+  "earlier_GPU_training_repeated": false
+}

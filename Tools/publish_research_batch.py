@@ -28,12 +28,16 @@ def main():
     if existing.returncode:
         command(['release','create',a.tag,'--repo',a.repo,'--draft','--target',a.target,'--title',a.title,
           '--notes','逐批保存與實際取回核對中；尚未宣稱全專案完成。'])
-    if not release_state(a.repo,a.tag)['isDraft']:raise ValueError('Never append archive work to a published collection')
+    state=release_state(a.repo,a.tag)
+    if not state['isDraft']:raise ValueError('Never append archive work to a published collection')
     summary=json.loads((a.bundle/'BUNDLE_SUMMARY.json').read_text(encoding='utf-8-sig'))
     if summary.get('state')!='complete':raise ValueError('Pack and verify the reviewed batch first')
     receipt=a.bundle/'GITHUB_BATCH_UPLOADED_VERIFIED.json'
     if receipt.exists():raise FileExistsError('Batch upload receipt already exists')
     names=[row['name'] for row in summary['assets']]
+    planned=set(names)|{a.batch+'_'+suffix for suffix in ['RESEARCH_ASSETS.json.gz','BUNDLE_SUMMARY.json','SHA256SUMS.txt']}
+    if len({r['name'] for r in state['assets']}|planned)>990:
+        raise ValueError('A reviewed additional release shard is needed before uploading this batch')
     with ThreadPoolExecutor(max_workers=a.workers) as pool:
         results=list(pool.map(lambda name:upload_one(a.repo,a.tag,a.bundle/name),names))
     for expected in summary['assets']:

@@ -11,6 +11,8 @@ Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重�
 
 保存續查另核對全新GitHub程式副本22218檔，補回兩份原文件暫存歷史及33個共用位置對照。[早期Round12–15](../docs/reproducibility/legacy_multiscale/README.md)的207分數與五次原選擇已取回重算，9個早期公式缺件明列；R88沿用未建資料／啟動中的舊文字已依原87輪停止紀錄修正並保存舊文。完整大型資料保存仍在進行，沒有重跑歷史訓練或升級模型。
 
+續查已[補回R95兩版早期訓練程式](R95_CounterfactualGateRepairScratch/archive/recovered_training_sources_20261021/README.md)，均符合原登記並實際從GitHub取回；原更新狀態保存方式與第一次接續差異可直接追查。其他早期缺件保留，完整數值與影像仍逐批核對，不把找到兩份原程式當成全部舊訓練已重現。
+
 **位移波動定義：**固定步數位置比較不同重拍趟次，與單趟走完30步的波動不同。[單趟完整重算與16方法比較](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md)保留原定義及逐趟結果。
 
 ## Active（formal baseline + approved alternates）

@@ -46,3 +46,7 @@ R93 固定來源已從 GitHub 完整取回，15,004 檔逐份相同。本輪原�
 48輪完成；首度恢復重建更新狀態，49列原表及第9輪取代脈絡完整保留。所有現存模型、原表、影像與失敗紀錄完整保存；本輪兩個正式端點×四個固定實拍輸入的8組原推論，從GitHub取回後在新CPU環境重做，完整輸出與原程式CPU參照相同。舊D／H研究位置不可讀、四輪共用輸入及數字小包重算也通過。沒有清理D、沒有重跑歷史訓練；較早程式版本缺件明列。
 
 [本輪完整審查](../../../Experiments/R95_CounterfactualGateRepairScratch/reports/R95_AUDIT.md)／[取得方法與收據](../four_rounds/README.md)。
+
+## 2026年10月21日：補回兩版早期訓練程式
+
+兩份原始程式已從本機舊保存物件找回，與當年登記內容完全相同，並實際從GitHub取回。較早版本沒有保存更新及隨機狀態，後一版本才加入，補強第一次第8輪回復時重建更新狀態的來源證據。此處沒有啟動訓練或更換最後版本；[原階段與差異](../../../Experiments/R95_CounterfactualGateRepairScratch/archive/recovered_training_sources_20261021/README.md)與[正式來源審查](../../../Experiments/R95_CounterfactualGateRepairScratch/reports/R95_AUDIT.md)保留其餘缺件界限。
