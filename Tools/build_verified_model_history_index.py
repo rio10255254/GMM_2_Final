@@ -75,20 +75,33 @@ def build(plan_path, output):
             objects[row['sha256']] = record
     if len(objects) != plan['new_unique_objects']:
         raise ValueError('The restored object total differs from the reviewed plan')
+    planned_locations = {}
+    normalized_count = 0
+    with gzip.open(plan_path.parent / 'ALL_MODEL_LOCATIONS.jsonl.gz', 'rt', encoding='utf-8') as stream:
+        for line in stream:
+            row = json.loads(line)
+            normalized_count += 1
+            planned_locations[(row['logical_path'].casefold(), row['sha256'])] = row.get('restore_path', row['logical_path'])
+    if normalized_count != plan['normalized_restore_locations']:
+        raise ValueError('The normalized model-location plan is incomplete')
     other_objects = set()
     source_positions = 0
-    for line in gzip.open(plan_path.parent / 'ALL_MODEL_LOCATIONS.jsonl.gz', 'rt', encoding='utf-8'):
-        row = json.loads(line)
-        source_positions += 1
-        if row['sha256'] not in objects:
-            other_objects.add((row['sha256'], row['bytes']))
-            continue
-        if row['bytes'] != objects[row['sha256']]['bytes']:
-            raise ValueError('An original model position has a conflicting size')
-        relative = safe_relative(row['logical_path']).as_posix()
-        objects[row['sha256']]['original_locations'].append({
-            'logical_path': relative, 'origin': row['origin'], 'scope': row['scope'],
-            'plan_restore_path_not_final': row.get('restore_path', relative)})
+    with gzip.open(plan_path.parent.parent / 'HASHED_MODELS_FILES.jsonl.gz', 'rt', encoding='utf-8') as stream:
+        for line in stream:
+            row = json.loads(line)
+            source_positions += 1
+            if row['sha256'] not in objects:
+                other_objects.add((row['sha256'], row['bytes']))
+                continue
+            if row['bytes'] != objects[row['sha256']]['bytes']:
+                raise ValueError('An original model position has a conflicting size')
+            relative = safe_relative(row['logical_path']).as_posix()
+            planned = planned_locations.get((relative.casefold(), row['sha256']))
+            if planned is None:
+                raise ValueError('A captured new-model alias has no planned recovery position')
+            objects[row['sha256']]['original_locations'].append({
+                'logical_path': relative, 'captured_source_path': row['source'],
+                'origin': row['origin'], 'scope': row['scope'], 'plan_restore_path_not_final': planned})
     if source_positions != plan['source_files'] or any(not row['original_locations'] for row in objects.values()):
         raise ValueError('The index does not cover the captured original model positions')
     rows = [objects[key] for key in sorted(objects)]
@@ -99,6 +112,7 @@ def build(plan_path, output):
     summary = {'status': 'ALL_NEW_MODEL_OBJECTS_ACTUALLY_RECOVERED_AND_CONTENT_INDEXED',
                'collection_tag': plan['tag'], 'actual_recovery_batches': len(receipts),
                'captured_all_model_positions': source_positions,
+               'normalized_model_plan_locations': normalized_count,
                'new_unique_objects_indexed': len(rows),
                'new_object_original_positions': sum(len(row['original_locations']) for row in rows),
                'other_already_preserved_unique_objects_not_reinspected_by_this_index': len(other_objects),
@@ -107,6 +121,7 @@ def build(plan_path, output):
                'loadable_objects_with_finite_tensors': sum(row.get('all_tensors_finite') is True for row in rows),
                'objects_with_saved_optimizer': sum(row.get('has_optimizer_state') is True for row in rows),
                'objects_with_recorded_epoch': sum('recorded_epoch' in row for row in rows),
+               'objects_with_recorded_model_tensor_fingerprints': sum(bool(row.get('state_dict_fingerprints')) for row in rows),
                'tensor_equivalent_groups_with_multiple_serialized_files': sum(row['different_serialized_files'] > 1 for row in groups),
                'exact_filename_vs_recorded_epoch_differences': differences,
                'source_scope_counts': dict(scope_counts), 'batch_receipts': receipts,

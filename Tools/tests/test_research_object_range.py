@@ -48,3 +48,28 @@ def test_wrong_original_identity_never_receives_a_final_name(tmp_path):
     with pytest.raises(ValueError, match='absent, ambiguous or differs'):
         restore_member(reader, sha, len(wanted) + 1, tmp_path / 'wrong.onnx')
     assert not (tmp_path / 'wrong.onnx').exists()
+
+
+def test_valid_zip_crc_cannot_hide_changed_original_file_bytes(tmp_path):
+    original = b'original weights'
+    sha = hashlib.sha256(original).hexdigest()
+    target = tmp_path / 'corrupt.onnx'
+    stream = io.BytesIO()
+    with zipfile.ZipFile(stream, 'w') as archive:
+        archive.writestr('objects/' + sha, b'changed weights!')
+    data = stream.getvalue()
+    with pytest.raises(ValueError, match='frozen identity'):
+        restore_member(RangeReader(len(data), lambda a, b: data[a:b+1]), sha, len(original), target)
+    assert not target.exists()
+
+
+def test_user_file_created_during_download_is_never_overwritten(tmp_path):
+    data, wanted, sha = sample_archive()
+    target = tmp_path / 'concurrent.onnx'
+    def fetch(start, end):
+        if not target.exists():
+            target.write_bytes(b'user file created while downloading')
+        return data[start:end+1]
+    with pytest.raises(FileExistsError):
+        restore_member(RangeReader(len(data), fetch), sha, len(wanted), target)
+    assert target.read_bytes() == b'user file created while downloading'
