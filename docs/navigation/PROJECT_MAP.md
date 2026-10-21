@@ -15,6 +15,12 @@ Last updated: 2026-10-21
 | 已生效的穩定規則 | `PROJECT_ARCHITECTURE.md` | `docs/operations/SOURCE_OF_TRUTH_POLICY.md` |
 | 某一輪實驗的結論 | `Experiments/INDEX.md` | 該輪 `reports` |
 | 不靠舊磁碟從GitHub理解及取回研究 | [研究保存入口](../reproducibility/README.md) | [全專案實際內容核對](../reproducibility/project_completion/README.md)、逐輪方法及各版本附件 |
+| 文獻依據與研究設計理由 | 所屬輪次的原文獻整理與設計報告，例如[R88文獻綜整](../../Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md) | 文獻原方法與本專案設計推論分開；原文連結保留，沒有本機全文的文獻不冒稱已收錄全文 |
+| 各輪程式、完整數據與失敗紀錄 | [逐輪問題、方法及來源](../reproducibility/EXPERIMENTS.md) | 先讀正式報告，再找該輪程式、完整數表與保存附件；不只留挑選過的好結果 |
+| 原始相機照片、SEM與必要共用輸入 | [來源與影像保存判斷](../reproducibility/SOURCE_AND_IMAGE_DECISIONS.md) | 原拍與模型重建分開；多輪共用的原件保留一次，所有需要的原位置仍可對應 |
+| 固定模型、初始化與中途歷程 | [模型身分及歷程](../reproducibility/project_completion/MODEL_HISTORY.md) | 原輪次、選模與未採用原因一起保存；名稱相似不代表相同模型 |
+| 重要比較圖、失敗影像與選圖理由 | [共用訓練圖冊](../reproducibility/project_completion/GALLERY.md)、[R93圖冊](../reproducibility/r93_shared/GALLERY.md)、[R94／95／97／98圖冊](../reproducibility/four_rounds/GALLERY.md) | 原圖與完整影像附件並存，代表圖只用來幫助閱讀，不取代完整數據 |
+| 原有論文文件、草稿及編輯歷史 | [文件與必要原始紀錄](../reproducibility/project_completion/CONTEXT_RECORDS.md)、[較早編輯歷史](../reproducibility/project_completion/EDITOR_HISTORY.md) | 各版按原日期和身分保留；目前論文結論仍回到最新R153交接 |
 | 如何建立新實驗 | `docs/operations/STARTING_NEW_EXPERIMENT.md` | 未來結構與容量藍圖 |
 | 論文目前採用的模型、主張與圖表 | `PROJECT_STATE.md` 的最新論文交接 | R153完整交接與原始實驗報告；舊README／HANDOFF只按日期作歷史閱讀 |
 | LabSystem 的研究歷史 | `Thesis_MOSR_Evidence/LabSystem_MOSR/README.md` | 該區的實驗與正式報告 |

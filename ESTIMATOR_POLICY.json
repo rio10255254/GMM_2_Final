@@ -4262,7 +4262,8 @@
     "2026-10-21 R94/R95/R97/R98 complete-record preservation: all 1092 original locations,107 saved model files and663 images restored from GitHub;32 native CPU model/input outputs exact,119 historical summary values replayed,15004 shared-bank files and36 native prepared samples verified. Four full camera originals,including the previously missing June18 capture,were recovered;all16 preview crops reproduce exact BMP bytes. R95 rollback/optimizer reset,R97 separate incidents,R98 incomplete external-suite scope and earlier source revision gaps preserved. No D cleanup, GPU work or estimator promotion.",
     "2026-10-21 whole-project preservation audit in progress: all79 named local branch heads are available in GitHub history after preserving10 local-only branches;18 unique historical source/design blobs downloaded from GitHub and matched. Full D research metadata and registered H histories are being checked against published content. First28 training-run supplement and remaining project content are not yet claimed complete. No D cleanup, GPU work or scientific model changes.",
     "2026-10-21 early training supplement:851 original locations,367 saved-state files,460 images and24 actual split-index files restored from GitHub. Twelve saved872/46 splits checked; six fixed R33p95/COMBO/R39strong E5/E100 native CPU outputs match original CPU references. A405MB self-contained replay kit was actually downloaded/executed. This verifies preservation/portability, not re-selection, retraining or full-project completion.",
-    "2026-10-21 preservation context follow-up: full22218-file GitHub source clone checked; original saved-document state adds2 downloaded blobs;33 directory references mapped. Legacy207scores/5choices replayed with9earlier R13 formula gaps explicit. R88 stale start-only README/index reconciled to original87-epoch failure; old text preserved, no scientific verdict changed. Optical45-fit/100-position local saved-result replay passes; GitHub optical-kit replay stillpending. Whole-project large-content verification remainsinprogress; no D cleanup or GPU work."
+    "2026-10-21 preservation context follow-up: full22218-file GitHub source clone checked; original saved-document state adds2 downloaded blobs;33 directory references mapped. Legacy207scores/5choices replayed with9earlier R13 formula gaps explicit. R88 stale start-only README/index reconciled to original87-epoch failure; old text preserved, no scientific verdict changed. Optical45-fit/100-position local saved-result replay passes; GitHub optical-kit replay stillpending. Whole-project large-content verification remainsinprogress; no D cleanup or GPU work.",
+    "2026-10-21使用者確認GitHub整理與上傳為主；檢查限查漏、內容完整及必要取回，不額外擴充測試或實驗重算。原科學判決、論文、訓練資料與D槽保護不變。"
   ],
   "artifact_index": {
     "R152_RAW_complete_research_record_20261002": {
@@ -4797,6 +4798,16 @@
         "science_sources_modified": false,
         "receipt": "docs/reproducibility/project_completion/D_CURRENT_SOURCE_DELTA_VERIFIED.json",
         "repeat_at_final_delivery": true
+      },
+      "user_confirmed_delivery_scope": {
+        "date": "2026-10-21",
+        "priority": "organize_and_upload_literature_documents_code_full_results_required_models_and_important_images",
+        "guide": "docs/reproducibility/project_completion/README.md",
+        "navigation": "docs/navigation/PROJECT_MAP.md",
+        "checks_support_upload_completeness_and_necessary_retrieval_only": true,
+        "extra_workflow_tests_or_experiment_replays_required": false,
+        "existing_verified_results_remain_original_scope": true,
+        "automatic_continuation_authorized": true
       }
     }
   },
