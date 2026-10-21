@@ -1,0 +1,43 @@
+{
+  "status": "PASS_ALL_DECLARED_SERVER_ATTACHMENTS_EXACT",
+  "preliminary_draft_check": true,
+  "components": [
+    {
+      "tag": "research-package-additions-20261021",
+      "assets": [
+        {
+          "name": "research-project-packages-001-001.zip",
+          "asset_id": 660915617,
+          "bytes": 1466072541,
+          "sha256": "8c968fa46176d3127e9fa852bac2b6fa05149087b397011f361bcdff5cbd8fea"
+        },
+        {
+          "name": "research-project-packages-001-002.zip",
+          "asset_id": 660915632,
+          "bytes": 1440611450,
+          "sha256": "089b1fe5d5026f64c2ab9e2a0834e74d7583ce3cc15efeaa8272da150de1af07"
+        },
+        {
+          "name": "research-project-packages-001-003.zip",
+          "asset_id": 660960118,
+          "bytes": 1178332111,
+          "sha256": "cd6cd1cc1b3f47bd7ba122e1ad4c12212579c9bf633d3f1c717285ce00b37f53"
+        }
+      ]
+    }
+  ],
+  "actual_paginated_releases": [
+    {
+      "tag": "research-package-additions-20261021",
+      "release_id": 419017835,
+      "draft": true,
+      "tag_commit": null,
+      "server_pages": 1
+    }
+  ],
+  "actual_server_asset_totals": {
+    "research-package-additions-20261021": 6
+  },
+  "already_required_download_restore_receipts_replaced_by_this_check": false,
+  "whole_project_complete": false
+}

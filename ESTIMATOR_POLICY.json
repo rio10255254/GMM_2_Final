@@ -4696,7 +4696,18 @@
         "revised_package_actual_objects_restored": 396,
         "master_binding_and_final_publication_pending": true,
         "original_deliveries_receipt": "docs/reproducibility/project_completion/ORIGINAL_DELIVERY_PACKAGES_VERIFIED.json"
-      }
+      },
+      "registered_current_H_delta_check": {
+        "status": "NO_UNPRESERVED_REGISTERED_H_DELTA",
+        "logical_reference_targets": 22,
+        "physical_roots": 19,
+        "files": 29609,
+        "read_or_reference_errors": 0,
+        "source_or_training_modified": false,
+        "original_full_hashes_reused_only_with_unchanged_metadata": true,
+        "receipt": "docs/reproducibility/project_completion/REGISTERED_H_DELTA_VERIFIED.json"
+      },
+      "final_delivery_protocol": "docs/reproducibility/project_completion/FINAL_PUBLICATION_PROTOCOL.md"
     }
   },
   "audit_trail": [
