@@ -1,0 +1,32 @@
+{
+  "state": "passed",
+  "checked_utc": "2026-10-07T00:04:15.992761+00:00",
+  "method": "SwinIR",
+  "epochs": 8,
+  "updates": 4096,
+  "selected_epoch": 8,
+  "selected_step": 4096,
+  "selected_parameters": "EMA",
+  "selected_checkpoint_sha256": "331e1d9e5c2a25971d661a6adcbf70e7e792f6e2311b8b20ca760940c3d4b80b",
+  "all_eight_epoch_synthetic_validations_present": true,
+  "selected_from_highest_synthetic_validation_only": true,
+  "full_synthetic_test_mean": {
+    "task": 1.8331045559607446,
+    "image": 1.5754803847521544,
+    "gradient": 0.9751613010012079,
+    "pair_output": 0.11789701946690911,
+    "boundary": 0.1401822372135939,
+    "observation": 1.0976041625253856,
+    "PSNR_core_dB": 40.284572340958675,
+    "SSIM_core": 0.9763676169961855,
+    "PSNR_full_dB": 36.329802127921894
+  },
+  "paused_history_first256_exactly_preserved": true,
+  "training_recipe_and_source_unchanged": true,
+  "protected_sources_unchanged": true,
+  "prior_nine_method_archive_unchanged": true,
+  "real_validation_still_pending": true,
+  "full_synthetic_test_parents_verified": 128,
+  "matched_runtime_samples_verified": 15,
+  "native_real_inference_mode_verified": "native_full_frame"
+}

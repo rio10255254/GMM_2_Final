@@ -1,0 +1,47 @@
+{
+  "passed": false,
+  "verdict": "do_not_resume_the_current_frozen_design_before_architecture_correction",
+  "current_design": "shared native-grid dilated residual refiner repeated four times with state-dependent PSF residual/backprojection",
+  "is_plain_resnet": false,
+  "is_close_to_recurrent_resnet": true,
+  "parameter_count": 932889,
+  "per_iteration_neural_radius_px": 62,
+  "psf_kernel_declared_radius_px": 50,
+  "per_iteration_worst_case_dependency_growth_px": 162,
+  "cumulative_worst_case_radius_px_by_iteration": [
+    162,
+    324,
+    486,
+    648
+  ],
+  "train_crop_px": 320,
+  "supervised_core_px": 128,
+  "available_training_margin_px": 96,
+  "theoretical_margin_sufficient": false,
+  "mean_psf_energy_radius_px": {
+    "0.5": 2.8284271247461903,
+    "0.9": 7.615773105863909,
+    "0.99": 13.152946437965905,
+    "0.999": 17.029386365926403
+  },
+  "mean_backprojection_energy_radius_px": {
+    "0.5": 4.242640687119285,
+    "0.9": 10.295630140987,
+    "0.99": 16.55294535724685,
+    "0.999": 21.93171219946131
+  },
+  "native_dilation_reachable_min": -62,
+  "native_dilation_reachable_max": 62,
+  "native_dilation_missing_integer_offsets": 0,
+  "r137_per_iteration_radius_px": 20,
+  "r137_declared_total_dependency_radius_px": 82,
+  "r137_fits_96px_margin": true,
+  "formal_process_alive": false,
+  "formal_rows_before_stop": 62,
+  "formal_checkpoint_exists": false,
+  "formal_marker_was_stale": true,
+  "source_model_sha256": "d9155b4c2f008dac606d867672904d16c279e051a3e7747b263cabee01460968",
+  "source_config_sha256": "b7d06583262b99371007d280b3f4bd20ab0e72b737325071c5e4131e2c17e1eb",
+  "note": "Worst-case support is conservative; energy radii show most PSF mass is narrower, but repeated learned dependencies can still exceed the fixed crop margin. The existing full/tile gate tests inference equivalence, not train-crop/full-image equivalence.",
+  "completed_utc": "2026-09-26T04:08:02.385521+00:00"
+}

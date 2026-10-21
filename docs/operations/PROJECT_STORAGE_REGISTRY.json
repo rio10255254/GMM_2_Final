@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-16",
+  "updated_at": "2026-10-22",
   "snapshot": {
     "repository_size_gib": 1073.0,
     "d_free_gib": 355.1372528076172,
@@ -361,24 +361,27 @@
       "id": "analysis_20x_5x",
       "path": "20260704_20x_5x_analysis",
       "tier": "archive",
-      "state": "52_historical_dirs_freshly_three_copy_verified_D_switch_not_executed_20261016",
+      "state": "52_historical_D_copies_removed_original_paths_verified_20261021",
       "size_gib_snapshot": 91.52,
       "action": "protect",
       "priority": 2,
-      "keep": "D originals remain.52 historical reconstruction directories/10500 files freshly matched immutable H archive and separate H working view. No path switch or deletion attempted after the R87 native cleanup command was rejected.",
-      "blocked_by": [
-        "requires_approved_path_preserving_switch"
-      ],
+      "keep": "Keep original camera inputs, formal tables, external measurement packages, R61 thesis results and all other files. Only the exact 52 historical reconstruction directories were switched to independently verified H working copies; full immutable archive remains separate.",
+      "blocked_by": [],
       "archive_location": "H:\\GMM_2_Final_Archive\\analyses\\20260704_20x_5x_analysis\\20260926_full_history",
       "archive_manifest": "H:\\GMM_2_Final_Archive\\analyses\\20260704_20x_5x_analysis\\20260926_full_history\\source_manifest.csv",
       "verified_snapshot_files": 32262,
       "verified_snapshot_bytes": 98265907879,
-      "d_cleanup_reclaimed_bytes": 0,
+      "d_cleanup_reclaimed_bytes": 33073446912,
       "compatibility_view": "H:\\GMM_2_Final_Archive\\compatibility_views\\20260704_20x_5x_analysis\\20260926\\reconstructions",
       "compatibility_view_manifest": "H:\\GMM_2_Final_Archive\\operation_logs\\Analysis_20260704_20x_5x_20260926\\reconstruction_compatibility_view_verification.json",
       "compatibility_view_files": 10500,
       "compatibility_view_bytes": 33041463000,
-      "latest_closeout": "docs/operations/GITHUB_PRESERVATION_CLOSEOUT_20261016.md"
+      "latest_closeout": "docs/operations/D_DRIVE_CLEANUP_20261021.md",
+      "d_cleanup_removed_files": 10500,
+      "d_cleanup_logical_bytes": 33041463000,
+      "retained_files_verified_20261021": 21763,
+      "cleanup_receipt": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup\\POST_CLEANUP_VERIFIED.json",
+      "original_path_map": "20260704_20x_5x_analysis/ARCHIVE_SCOPE_20261021.json"
     },
     {
       "id": "analysis_100mg",
@@ -435,14 +438,15 @@
       "id": "git_storage",
       "path": ".git",
       "tier": "archive",
-      "state": "maintenance_required",
+      "state": "verified_unreferenced_loose_duplicates_migrating_to_H_without_repacking_D_history",
       "size_gib_snapshot": 80.45,
       "action": "git_maintenance",
       "priority": 1,
-      "keep": "All reachable history; quarantine interrupted pack garbage before removal.",
+      "keep": "Keep original reachable history, old D pack files, working branch and original index. Only D loose duplicates already content-verified in independently recoverable H packs are cleared. Native alternate lookup supplies archived cached objects; H object pool must remain.",
       "blocked_by": [
         "git_process"
-      ]
+      ],
+      "cleanup_progress": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued\\CURRENT_CONTINUATION_STATE.json"
     },
     {
       "id": "main_training_data",
@@ -483,14 +487,15 @@
       "id": "thesis_pytest_cache",
       "path": "Thesis_MOSR_Evidence/.tmp",
       "tier": "rebuildable",
-      "state": "cleanup_ready_after_process_check",
+      "state": "two_inactive_generated_test_caches_removed_20261021",
       "size_gib_snapshot": 2.25,
-      "action": "bulk_cleanup",
+      "action": "protect",
       "priority": 1,
-      "keep": "Only non-cache inputs under .tmp if referenced; pytest caches are rebuildable.",
-      "blocked_by": [
-        "pytest_process"
-      ]
+      "keep": "Only pytest and pytest-of-Rio removed. Other sources under .tmp remain.",
+      "blocked_by": [],
+      "d_cleanup_removed_files": 147093,
+      "d_cleanup_reclaimed_bytes": 2835431424,
+      "cleanup_receipt": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup\\TEST_CACHE_NORMAL_RESULT.json"
     },
     {
       "id": "psf_codex_tmp",
@@ -976,6 +981,22 @@
       "priority": 0,
       "keep": "Protect the original930 camera BMPs and30 original instrument CSVs, exact frozen capture plan, source provenance and historical lookup compatibility. Full original ZIP and verification metadata are published privately on GitHub and restored independently. Do not thin camera originals or substitute model reconstructions.",
       "blocked_by": []
+    },
+    {
+      "id": "r93_shared_fixed_data_arrays_archived_20261022",
+      "path": "Experiments/R93_RecoverableDetailSeparatedScratch/data",
+      "tier": "archive",
+      "state": "D_metadata_and_smoke_live_inputs_kept_full_arrays_on_verified_H_snapshot",
+      "action": "protect",
+      "priority": 0,
+      "keep": "Shared fixed formal6494719a and locked-holdout2f726d80 remain complete on H; all D models, results, records and sealed rules remain. Restore before future old full training/data-validation. Formal is also published once; not R92 and not actual camera originals.",
+      "blocked_by": [],
+      "archive_location": "H:/GMM_2_Final_Archive/experiments/R93_RecoverableDetailSeparatedScratch/20260925_full_history/data",
+      "d_cleanup_removed_files": 18072,
+      "d_cleanup_logical_bytes": 35770416112,
+      "d_cleanup_reclaimed_bytes": 35844415488,
+      "latest_closeout": "Experiments/R93_RecoverableDetailSeparatedScratch/data/ARCHIVE_POINTER_20261022.md",
+      "cleanup_receipt": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued\\R93_DATA_ARRAY_POST_CLEANUP_VERIFIED.json"
     }
   ],
   "latest_preservation": {
@@ -985,5 +1006,27 @@
     "canonical_closeout": "docs/operations/GITHUB_PRESERVATION_CLOSEOUT_20261016.md",
     "D_reclaimed_bytes": 0,
     "D_cleanup_execution_blocked": true
+  },
+  "latest_cleanup": {
+    "date": "2026-10-21",
+    "status": "verified_selected_targets_complete",
+    "removed_D_copy_files": 157593,
+    "measured_native_free_increase_bytes": 35908878336,
+    "manual_approval_used": false,
+    "permission_configuration_changed": false,
+    "canonical_closeout": "docs/operations/D_DRIVE_CLEANUP_20261021.md"
+  },
+  "latest_cleanup_continuation": {
+    "date": "2026-10-22",
+    "status": "in_progress",
+    "completed_native_free_increase_bytes": 125325656064,
+    "prior_round_free_increase_bytes": 35908878336,
+    "records": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued",
+    "H_minimum_free_bytes": 1099511627776,
+    "old_historical_model_training_not_repeated": true,
+    "current_D_free_bytes": 244087812096,
+    "current_H_free_bytes": 1265257099264,
+    "last_checked_local": "2026-10-22 01:20:14",
+    "restore_guide": "docs/operations/D_DRIVE_FULL_CLEANUP_20261022.md"
   }
 }

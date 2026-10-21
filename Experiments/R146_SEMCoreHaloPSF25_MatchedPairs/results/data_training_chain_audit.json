@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "source_mat_sha256": "0d85d63c08a943a56d6fd74d2ce250b0d656d1170e7ab185e95d2ff369a797e6",
+  "bank_sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+  "checkpoint_sha256": "17807a1ff81df08f7d31a3de40d099a01ee33c96208048a659994902fc4a95c9",
+  "parents": 768,
+  "split_counts": {
+    "train": 512,
+    "dev": 128,
+    "test": 128
+  },
+  "blurred_parents": 692,
+  "identity_parents": 76,
+  "clear_targets_bit_identical_to_R145": 768,
+  "regenerated_noiseless_views_exact": 1536,
+  "regenerated_noiseless_views_with_tolerance": 1536,
+  "max_noiseless_difference": 0.0,
+  "stored_noisy_views_exact": 1536,
+  "logged_updates_with_correct_parent_order": 8192,
+  "scratch_initializer_verified": true,
+  "completed_utc": "2026-09-25T00:22:15.442190+00:00"
+}

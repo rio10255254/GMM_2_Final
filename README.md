@@ -15,6 +15,7 @@
 | 完整數表與不利結果 | [常用原結果與失敗脈絡](docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)、[全部研究保存入口](docs/reproducibility/README.md) |
 | 實際原拍與重要比較圖 | [共用原始來源](docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)、[原結果圖冊](RECON_GALLERY.md) |
 | 保存了什麼、哪些大檔只留方法 | [精選固定內容與已知缺件](docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md) |
+| 本機清理了什麼、資料如何取回 | [清理去向及保留範圍](docs/operations/D_DRIVE_FULL_CLEANUP_20261022.md)、[R93固定資料恢復](Experiments/R93_RecoverableDetailSeparatedScratch/data/ARCHIVE_POINTER_20261022.md) |
 
 可再生的大型訓練資料、逐張重建及中間陣列留生產程式、設定和必要來源；原拍、原始量測、人工來源、完整結果及少數關鍵模型另行保存。9月3日930張實拍與30份原始位置紀錄共用一次，不拿模型重建冒充原拍。
 

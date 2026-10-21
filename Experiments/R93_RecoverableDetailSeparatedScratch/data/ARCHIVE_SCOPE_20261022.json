@@ -1,0 +1,67 @@
+{
+  "status": "D_DUPLICATE_ARRAYS_REMOVED_H_FIXED_INPUTS_PRESERVED",
+  "time": "2026-10-22 00:22:17",
+  "datasets": [
+    {
+      "D_arrays": "D:\\GMM_2_Final\\Experiments\\R93_RecoverableDetailSeparatedScratch\\data\\r93_formal\\arrays",
+      "H_arrays": "H:\\GMM_2_Final_Archive\\experiments\\R93_RecoverableDetailSeparatedScratch\\20260925_full_history\\data\\r93_formal\\arrays",
+      "files": 15000,
+      "bytes": 29689925894,
+      "content_sha256": "6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5",
+      "manifest_sha256": "bc0f8c9d4774ff5ca441c45414d131a62f2c2c893596d5599ba64678116d1a76",
+      "verification_manifest": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued\\r93_formal_D_H_arrays_verified.csv",
+      "full_D_H_hash_comparison": "PASS",
+      "original_manifest_array_hashes": "PASS",
+      "actual_formal_restore_samples": [
+        {
+          "file": "scene_0000/mask.npy",
+          "shape": [
+            1536,
+            1536
+          ],
+          "dtype": "uint8",
+          "actual_H_restore_sha256": "1b31f002a284427e8db75e3d03303151dfc2d178abb4e170e9d69b56bbb5ff6d"
+        },
+        {
+          "file": "scene_0625/mask.npy",
+          "shape": [
+            1536,
+            1536
+          ],
+          "dtype": "uint8",
+          "actual_H_restore_sha256": "9746e41a4241484d1ded1f87c7fbbb4c81beb13c2e094e93f6459c81f3139b33"
+        },
+        {
+          "file": "scene_1249/target.npy",
+          "shape": [
+            1536,
+            1536
+          ],
+          "dtype": "uint8",
+          "actual_H_restore_sha256": "af29ef718d4d3e0ae9eb9d57f3c27924579376298724fdd5153eaa037279a15e"
+        }
+      ]
+    },
+    {
+      "D_arrays": "D:\\GMM_2_Final\\Experiments\\R93_RecoverableDetailSeparatedScratch\\data\\r93_locked_holdout\\arrays",
+      "H_arrays": "H:\\GMM_2_Final_Archive\\experiments\\R93_RecoverableDetailSeparatedScratch\\20260925_full_history\\data\\r93_locked_holdout\\arrays",
+      "files": 3072,
+      "bytes": 6080490218,
+      "content_sha256": "2f726d80f21e052786b18511dcc5f5821cc3948f00476d0ff3af873a2c7a5664",
+      "manifest_sha256": "659c4dbd52f5f1d36d338b160870ab6bd48fc5f70f0d1b29d4f636d04942d707",
+      "verification_manifest": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued\\r93_locked_holdout_D_H_arrays_verified.csv",
+      "full_D_H_hash_comparison": "PASS",
+      "original_manifest_array_hashes": "PASS",
+      "actual_formal_restore_samples": []
+    }
+  ],
+  "H_archive": "H:\\GMM_2_Final_Archive\\experiments\\R93_RecoverableDetailSeparatedScratch\\20260925_full_history",
+  "formal_published_tag": "research-shared-sources-20261016",
+  "keep_models_results_reports_manifest_audit_previews_and_original_camera_inputs": true,
+  "locked_holdout_not_evaluated": true,
+  "restore_required_before_future_full_training_at_original_D_path": true,
+  "verification_receipt": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued\\R93_DATA_ARRAY_CLEANUP_PREFLIGHT.json",
+  "actual_native_removal_receipt": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued\\R93_DATA_ARRAY_NATIVE_RESULT.json",
+  "actual_removed_files": 18072,
+  "measured_D_free_increase_bytes": 35844415488
+}

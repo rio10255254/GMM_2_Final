@@ -1,0 +1,76 @@
+{
+  "scope": "One inherited R61 training example; historical regeneration provenance only, not physical accuracy or new model evaluation",
+  "historical_raw_generator_rebuild": "114268 of114283 identical;15 differences over5 file names and3 geometric sidecar types",
+  "historical_fixed_input_rebuild": "114283 of114283 identical after importing3400 inherited original geometries, not rewriting old answers",
+  "source_records_original_date_preserved": "2026-10-04",
+  "files": [
+    {
+      "file": "boundary_recomputed.bmp",
+      "original_source": "H:\\GMM_2_Final_Archive\\validation_history\\R61_Regenerator_20261004_cleanup_20261021\\original_15_geometry_differences\\generated\\geom\\boundary\\stage_36_r61_sem_truth_anchor\\stage_60_hs100mg_real_crop\\via\\real_via_036_r00_0070.bmp",
+      "role": "recomputed_boundary",
+      "bytes": 66614,
+      "sha256": "f1b8462fd37d3f1b645551af4dd1cd96e3e160fcba0bc0b87b0f4d2f3c778a55"
+    },
+    {
+      "file": "boundary_historical.bmp",
+      "original_source": "H:\\GMM_2_Final_Archive\\validation_history\\R61_Regenerator_20261004_cleanup_20261021\\original_15_geometry_differences\\generated_v2\\geom\\boundary\\stage_36_r61_sem_truth_anchor\\stage_60_hs100mg_real_crop\\via\\real_via_036_r00_0070.bmp",
+      "role": "historical_boundary",
+      "bytes": 66614,
+      "sha256": "1601ed6bf7dc702e0f399889115ee829deed03b532c75af825a7b13876782f52"
+    },
+    {
+      "file": "centerline_recomputed.bmp",
+      "original_source": "H:\\GMM_2_Final_Archive\\validation_history\\R61_Regenerator_20261004_cleanup_20261021\\original_15_geometry_differences\\generated\\geom\\centerline\\stage_36_r61_sem_truth_anchor\\stage_60_hs100mg_real_crop\\via\\real_via_036_r00_0070.bmp",
+      "role": "recomputed_centerline",
+      "bytes": 66614,
+      "sha256": "e490c83dfa77cec74ca2771dbe8748dbc00ac5bc2344103af5f22bbff1036eb7"
+    },
+    {
+      "file": "centerline_historical.bmp",
+      "original_source": "H:\\GMM_2_Final_Archive\\validation_history\\R61_Regenerator_20261004_cleanup_20261021\\original_15_geometry_differences\\generated_v2\\geom\\centerline\\stage_36_r61_sem_truth_anchor\\stage_60_hs100mg_real_crop\\via\\real_via_036_r00_0070.bmp",
+      "role": "historical_centerline",
+      "bytes": 66614,
+      "sha256": "9e3cda85f5a6abf4760021eca2d70abfdd80e4e29934138e66a6c810b3a329dd"
+    },
+    {
+      "file": "distance_recomputed.npy",
+      "original_source": "H:\\GMM_2_Final_Archive\\validation_history\\R61_Regenerator_20261004_cleanup_20261021\\original_15_geometry_differences\\generated\\geom\\distance\\stage_36_r61_sem_truth_anchor\\stage_60_hs100mg_real_crop\\via\\real_via_036_r00_0070.npy",
+      "role": "recomputed_distance",
+      "bytes": 262272,
+      "sha256": "a6dd0bad52ab3eebd24166535c3d728f7773f624a4174b52ca19926902d2ef2b"
+    },
+    {
+      "file": "distance_historical.npy",
+      "original_source": "H:\\GMM_2_Final_Archive\\validation_history\\R61_Regenerator_20261004_cleanup_20261021\\original_15_geometry_differences\\generated_v2\\geom\\distance\\stage_36_r61_sem_truth_anchor\\stage_60_hs100mg_real_crop\\via\\real_via_036_r00_0070.npy",
+      "role": "historical_distance",
+      "bytes": 262272,
+      "sha256": "91ff67a808ff9aa77beb1440ab845d205d3a0903bc0dabc7dc0ec0564a80cf30"
+    },
+    {
+      "file": "training_input_crop.bmp",
+      "original_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_motion_texture_step_guard_v16\\src\\stage_36_r61_sem_truth_anchor\\stage_60_hs100mg_real_crop\\via\\real_via_036_r00_0070.bmp",
+      "role": "inherited_training_crop_not_new_camera_acquisition",
+      "bytes": 66614,
+      "sha256": "22ae8d6305c46aeec267ea54832ed6139746cc86160d8d8e1b1ee7a45704d003"
+    },
+    {
+      "file": "training_target_crop.bmp",
+      "original_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_motion_texture_step_guard_v16\\lbl\\stage_36_r61_sem_truth_anchor\\stage_60_hs100mg_real_crop\\via\\real_via_036_r00_0070.bmp",
+      "role": "inherited_training_crop_not_new_camera_acquisition",
+      "bytes": 66614,
+      "sha256": "79e9643adda4027c91f78f69400cd4a266bd90e0559b1a4453d0cd8876747a37"
+    }
+  ],
+  "comparisons": [
+    {
+      "sidecar": "boundary",
+      "different_pixel_values": 37
+    },
+    {
+      "sidecar": "centerline",
+      "different_pixel_values": 37
+    }
+  ],
+  "no_images_recompressed_cropped_or_changed": true,
+  "no_training_inference_or_full_dataset_regeneration_for_this_example": true
+}

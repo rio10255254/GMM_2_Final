@@ -36,6 +36,10 @@
 
 Bulk data, runs, results, and weights remain experiment-local and outside Git. No R91 payload is copied into R93. Old experiment payloads may be archived only through a hash-verified, reversible operation.
 
+### 2026-10-22 storage update
+
+Only the duplicate D `data/r93_formal/arrays` and `data/r93_locked_holdout/arrays` have been removed after all 18,072 files matched the fixed H archive and the original generator's array-content hashes. Models, complete result tables, reports, data records, the holdout seal, previews, smoke data and original camera inputs remain. Restore the fixed arrays before using the original full-training or data-validation paths for R93 or its R94–R98 dependents; follow [the archive and restore guide](data/ARCHIVE_POINTER_20261022.md). This storage operation does not evaluate the sealed holdout or change any scientific verdict. The earlier experiment-local storage statement above is the historical contract.
+
 ## 2026-10-20 provenance correction
 
 The actual formal dataset contains 15,004 files, 29,704,604,438 bytes and content identity `6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5`. Its 1,250 scenes split into 1,000 train, 125 validation and 125 internal-test scenes. The separate sealed holdout is not part of the new replay checks.

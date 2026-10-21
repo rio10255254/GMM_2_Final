@@ -1,6 +1,6 @@
 # PROJECT STATE / 專案狀態
 
-Last updated: 2026-10-21（GitHub優先：R94／R95／R97／R98完整紀錄與另址重做核對）
+Last updated: 2026-10-22（GitHub精選已保存；完整盤點後的安全清理續行中）
 
 專案控制與整體巡檢請使用 `python Tools/project_control_center.py`。
 機器真相：`ESTIMATOR_POLICY.json`。
@@ -23,14 +23,28 @@ Last updated: 2026-10-21（GitHub優先：R94／R95／R97／R98完整紀錄與�
 - 原盤點中的程式／文件／數表已由已發布內容或原Git歷史對應；1,258份可再安裝的舊套件檔只留環境版本與用途。
 - 四份超量草稿約385GB仍凍結，未刪除；它們不是精選必傳內容。既有完整取回／執行證據保留原時間及範圍，舊全量排程禁止重啟。
 ### 保護與閱讀順序
-- 原D工作分支與索引、正式模型、論文及訓練資料保護；本次不清D、不刪D/H研究原件、不啟動訓練或推論，H至少留1TiB。
-- 原R87／R53／R56較早清理保留原結案事實，不重算為本輪成果；20x／5x等研究原件不動。
+- 使用者2026-10-21最新授權先清理D槽已確認安全的暫存與完整備份副本；原工作分支／索引、正式模型、論文、原拍及活動訓練來源保護，H至少留1TiB；不啟動訓練或推論。
+- 前一輪35.91GB之後，完整盤點清理正續行，本輪成功操作已新增約125.33GB；R61重建測試副本與過大閱讀草稿已清，R93固定共用大陣列留H，舊完整訓練前先按恢復入口取回。
 - [研究保存入口](docs/reproducibility/README.md)、[每輪方法與結果](docs/reproducibility/EXPERIMENTS.md)、[生產方法](docs/reproducibility/GENERATION_GUIDE.md)、[文獻及官方來源](docs/reproducibility/LITERATURE_GUIDE.md)。
 <!-- QUICK_HANDOFF_END -->
 
 ---
 
 ## Full Current State / 完整現況
+
+更早的程序狀態已歸入 `docs/archive/legacy_runtime_status/`，只作歷史查閱；不能以其中的進行中標記取代本頁目前的正式身分與最新實際收據。
+
+### 完整盤點清理續行（2026-10-22，進行中）
+
+本輪已完成目前D專案3,484,211份實體檔案的唯讀容量盤點，不穿越H資料入口。已實際清掉R61兩套可重建驗證輸出、停止使用的過大閱讀副本，以及D/H完整相同的R93 formal／locked_holdout大陣列；原生成程式、必要來源、15份R61標記差異與對照、R93模型／完整原表／修復紀錄／SEALED及實拍／smoke保留。R93原舊訓練或資料驗證入口前須按 [資料保存與恢復](Experiments/R93_RecoverableDetailSeparatedScratch/data/ARCHIVE_POINTER_20261022.md) 取回同一固定資料，不以R92互換。封存組只核對完整性，沒有模型評估。
+
+版本工具未引用的本機副本先存成H獨立可恢復封包；僅以原生工具移除已完整核對的D重複副本，舊有D歷史封包、原分支／Git索引／Git設定檔不重寫。新增標準本機物件查找入口讓舊暫存讀取仍可由H供應；原分支／索引需要的資料不在移除集合中。這輪目前成功操作量測約125.33GB，和前一輪合計約161.23GB；不把中途其他程式造成的全碟空間變化算作本輪成果。正在繼續備份及清理，尚未宣稱全盤完成。
+
+本次同時回收已發布、已實際取回驗證的H臨時下載／打包副本；保留研究原件、恢復報告與GitHub附件。只操作本對話原驗證工作區，不碰H外部同名R152訓練及其資料。H至少留1TiB，不啟動新訓練、推論、資料生成或研究重算。實際進度與逐項去向在 `H:/GMM_2_Final_Archive/reproducibility/20261021_d_cleanup_continued/`。
+
+### 使用者最新授權：D槽安全清理（2026-10-21，選定批次完成）
+
+本輪直接指示取代較早「不清D」的任務限制，其他保護仍有效。兩批147,093份舊測試暫存與52個歷史重建目錄的10,500份D副本已移除，三次成功操作合計多出約35.91GB；昨天R87及更早R53／R56不重算。原始照片、正式數表、R61論文成果及其他21,763份分析區檔案保留，原D讀取位置接到已核對的獨立H工作副本；H完整封存另留。今天帶強制選項的兩次指令被執行前政策拒絕，恢復一般原生刪除後成功；沒有改設定或人工核准，不能把被擋概括成整體無法刪檔。原工作分支及索引、模型、論文、訓練來源與既有GitHub附件保持。本輪完成的是已列明批次，不宣稱D全碟都已整理完。[實際結果與恢復](docs/operations/D_DRIVE_CLEANUP_20261021.md)。
 
 ### GitHub精選研究固定來源（2026-10-21）
 
@@ -111,17 +125,17 @@ R93 formal的15004檔已從GitHub取回逐份相同；在新CPU環境及原D／H
 
 ### Committee-response mean aggregation and external benchmark (2026-10-05)
 
-2026-10-07 14:34：十種可執行方法完整比較已核對，每方法930張／8370讀值／30有效趟，零失敗；150次效率、162組配對區間、完整模型架構／訓練設定／合成及SEM數據／灰階圖／原生影像／修改指南齊全。SwinIR8輪／選第8輪，1800筆位移與18組區間獨立重算通過。九方法舊包與135次效率保持原樣；原論文、模型、既有量測與尺度／方向／PI不變。U-Net／MambaIRv2官方後端受阻不列為已驗證；可執行範圍已完成，監看結束，正式基準未改。[最新完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)／[全部圖表與數據](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF.zip)。
+2026-10-07 14:34：十種可執行方法完整比較已核對，每方法930張／8370讀值／30有效趟，零失敗；150次效率、162組配對區間、完整模型架構／訓練設定／合成及SEM數據／灰階圖／原生影像／修改指南齊全。SwinIR8輪／選第8輪，1800筆位移與18組區間獨立重算通過。九方法舊包與135次效率保持原樣；原論文、模型、既有量測與尺度／方向／PI不變。U-Net／MambaIRv2官方後端受阻不列為已驗證；可執行範圍已完成，監看結束，正式基準未改。[最新完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)／`Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF.zip`（原本機包；[GitHub閱讀入口](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)）。
 
 2026-10-07 08:06：SwinIR已完成8輪／4096次更新，合成驗證選第8輪EMA及128場景完整測試已核對；同條件15次效率完成。七個可訓練外部模型全部完成，現只新增SwinIR原生整張930張重建及8370固定讀值（巡檢已成功230張、失敗0），再彙整十方法結果。九方法原完整論文包／135次效率保留；不改原論文、MOSR、RAW/MOSR保存量測、尺度／PI／方向。完整比較尚未完成，下一次預估檢查 2026-10-07T14:15:00+08:00（含20分鐘緩衝、非保證）。[訓練完成核對](Experiments/R153_MeanExternalBenchmark/runs/launcher_logs/SwinIR_training_complete_verified_20261007.json)。
 
 2026-10-06 16:45：九方法完整論文包已核對交付並保留原樣。使用者直接授權續訓SwinIR，已從保存step256恢復原佇列並確認進至step272，總上限仍8輪；相同來源與設定已核對。完成後只新增SwinIR效率15次及930張／8370讀值，再重用九方法資料彙整十方法。原論文／MOSR／比例／方向／PI不變；監看恢復，下一次估計檢查 2026-10-07T08:00:00+08:00（非保證）。[九方法論文交接](Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF/REPORT.md)／[續訓紀錄](Experiments/R153_MeanExternalBenchmark/config/USER_RESUME_20261006.json)。
 
-2026-10-06 14:58：使用者指定的九方法完整論文交付已完成並核對。六外部模型＋RAW／Wiener／MOSR，每方法930張／8370讀值／30有效趟，零失敗；144組配對區間、135次效率、全部模型設定／合成測試／SEM／灰階圖／同區域影像與修改指南齊全。獨立重算主要位移與16組區間通過，原檔未改。SwinIR保存step256、未完成且不列入比較；保持暫停不自動續訓，監看已停止。[完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF/REPORT.md)／[附件包](Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF.zip)。
+2026-10-06 14:58：使用者指定的九方法完整論文交付已完成並核對。六外部模型＋RAW／Wiener／MOSR，每方法930張／8370讀值／30有效趟，零失敗；144組配對區間、135次效率、全部模型設定／合成測試／SEM／灰階圖／同區域影像與修改指南齊全。獨立重算主要位移與16組區間通過，原檔未改。SwinIR保存step256、未完成且不列入比較；保持暫停不自動續訓，監看已停止。[完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF/REPORT.md)／`Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF.zip`（原本機包；[GitHub閱讀入口](Experiments/R153_MeanExternalBenchmark/reports/COMPLETED_MODELS_THESIS_HANDOFF/REPORT.md)）。
 
 2026-10-06：使用者要求暫停SwinIR並先交付已完成模型的完整論文紀錄。SwinIR保存step256且不自動續訓；六外部模型加RAW/Wiener/MOSR共九方法，只補Restormer／USRNet的930張驗證，原七結果重用。九方法135次效率已完成；USRNet曾驅動退出，原生檢查及相同設定重測通過，錯誤保留。完整九方法實拍／圖表／論文包仍執行中，預估15:00檢查。
 
-2026-10-06 03:27：七方法完整實拍與效率比較完成並核對，全部30趟有效、無量測失敗；4650份新重建、41850筆新讀值，RAW/MOSR保存量測重用，108組配對區間與105次效率實測。MOSR位移波動與相鄰PI差最低，輪廓與EDSR差異未確定；形狀NAF/EDSR較好、SEM尺寸RAW較好，均完整保留。Restormer已自動續訓，完整benchmark仍待後續模型完成。[完整階段交接](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE/REPORT.md)／[附件包](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE.zip)。
+2026-10-06 03:27：七方法完整實拍與效率比較完成並核對，全部30趟有效、無量測失敗；4650份新重建、41850筆新讀值，RAW/MOSR保存量測重用，108組配對區間與105次效率實測。MOSR位移波動與相鄰PI差最低，輪廓與EDSR差異未確定；形狀NAF/EDSR較好、SEM尺寸RAW較好，均完整保留。Restormer已自動續訓，完整benchmark仍待後續模型完成。[完整階段交接](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE/REPORT.md)／`Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE.zip`（原本機包；[GitHub閱讀入口](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_COMPLETE/REPORT.md)）。
 
 2026-10-05晚間：使用者授權先暫停訓練釋放GPU，Restormer保存step896。七方法同GPU／FP32／batch1共105次效率實測完成；Wiener930張／8370量測已完成且無失敗，EDSR等四個外部模型實拍驗證依序執行。完成本階段核對後自動續訓，完整benchmark仍未完成。[效率報告](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_EFFICIENCY.md)／[階段論文資料](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_PROGRESS/REPORT.md)。
 
@@ -139,11 +153,11 @@ Deliverables/R152_Standalone_20261004包含完整3072視圖和768組幾何資料
 
 ### R152 actual thesis visual evidence (2026-10-03)
 
-完成第6.1節／圖6-3實際25核響應、第6.2.3節同區域RAW與MOSR原生輸出、第6.2.4節同物件30條實測輪廓。PSF原MAT101×101×5×5逐行堆疊與實際銀行逐元素相同，部署float32核轉型後亦完全相同；25個CSV原矩陣逐檔精確回讀。影像固定第16趟起點004246_XY_0/1.bmp、共同亮度範圍與相同129×129裁切，5／50µm比例尺；輪廓固定物件5、起點、全部30趟64原始邊界點，只減已保存LSC圓心，不改尺寸或方向。另列九顆起點共34560個兩方法邊界點；中心物件局部輪廓重拍RAW62.750035／R15217.987640nm，不替代全資料63.758／18.600nm。五頁PDF逐頁渲染查看通過，六個PDF、PNG、SVG、中英文圖說、原MAT／校正紀錄與原生影像資料完整封存；70個壓縮檔成員均核對。[補件說明](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)；[資料包](Deliverables/R152_THESIS_VISUAL_EVIDENCE_20261003.zip)。沒有新訓練或重建後校正。
+完成第6.1節／圖6-3實際25核響應、第6.2.3節同區域RAW與MOSR原生輸出、第6.2.4節同物件30條實測輪廓。PSF原MAT101×101×5×5逐行堆疊與實際銀行逐元素相同，部署float32核轉型後亦完全相同；25個CSV原矩陣逐檔精確回讀。影像固定第16趟起點004246_XY_0/1.bmp、共同亮度範圍與相同129×129裁切，5／50µm比例尺；輪廓固定物件5、起點、全部30趟64原始邊界點，只減已保存LSC圓心，不改尺寸或方向。另列九顆起點共34560個兩方法邊界點；中心物件局部輪廓重拍RAW62.750035／R15217.987640nm，不替代全資料63.758／18.600nm。五頁PDF逐頁渲染查看通過，六個PDF、PNG、SVG、中英文圖說、原MAT／校正紀錄與原生影像資料完整封存；70個壓縮檔成員均核對。[補件說明](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)；`Deliverables/R152_THESIS_VISUAL_EVIDENCE_20261003.zip`（原本機包；[GitHub閱讀入口](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)）。沒有新訓練或重建後校正。
 
 ### R152 RAW complete research record and within-scan recalculation (2026-10-02)
 
-使用者指定論文只比較RAW與R152，以單趟30步波動為主，30趟用於改善範圍。由兩方法各30份中心CSV和64點輪廓NPZ完整重算3600筆位移、16740個圓及720方向插值輪廓。34份封存來源、930張RAW、930份R152原生浮點輸出及保存點逐檔重驗通過。單趟波動合併10.199758→4.864821nm，降低52.3045%，30/30趟改善；20000次整趟配對、種子20261002，改善率95%區間49.6679%～55.0380%。直徑／輪廓／去尺寸重拍降低59.5%／70.8%／71.8%；SEM表直徑差增加34.397279nm，終點有號偏差及終點SD的配對區間跨零，無全面準度改善主張。主文件涵蓋兩階段訓練、一次U-Net脈絡與三個獨立原尺寸階段、受限25PSF支路、完整定義及逐趟／逐位置表；資料附件只含RAW／R152。這是既有實拍的重新計算，沒有新拍攝、重新訓練或基準升級。[主文件](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/REPORT.md)；[完整附件包](Deliverables/R152_RAW_COMPLETE_RESEARCH_RECORD_20261002.zip)。
+使用者指定論文只比較RAW與R152，以單趟30步波動為主，30趟用於改善範圍。由兩方法各30份中心CSV和64點輪廓NPZ完整重算3600筆位移、16740個圓及720方向插值輪廓。34份封存來源、930張RAW、930份R152原生浮點輸出及保存點逐檔重驗通過。單趟波動合併10.199758→4.864821nm，降低52.3045%，30/30趟改善；20000次整趟配對、種子20261002，改善率95%區間49.6679%～55.0380%。直徑／輪廓／去尺寸重拍降低59.5%／70.8%／71.8%；SEM表直徑差增加34.397279nm，終點有號偏差及終點SD的配對區間跨零，無全面準度改善主張。主文件涵蓋兩階段訓練、一次U-Net脈絡與三個獨立原尺寸階段、受限25PSF支路、完整定義及逐趟／逐位置表；資料附件只含RAW／R152。這是既有實拍的重新計算，沒有新拍攝、重新訓練或基準升級。[主文件](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/REPORT.md)；`Deliverables/R152_RAW_COMPLETE_RESEARCH_RECORD_20261002.zip`（原本機包；[GitHub閱讀入口](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/REPORT.md)）。
 
 ### R147 native-image PSF consistency and internal audit (2026-09-26)
 

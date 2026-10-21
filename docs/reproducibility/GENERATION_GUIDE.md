@@ -70,10 +70,14 @@ R99至R104等原設定仍記當年的D槽基礎資料位置和固定內容身分
 
 R61與R152的獨立生產入口：
 
+R61不是只留程式和種子就足夠：早期繼承的幾何標記曾有不同歷史版本，固定匯入的來源仍須保存。[這個小型原檔對照](r61_regeneration_example/README.md)用一組當年訓練裁切與兩版標記說明原因，不把標記版本差異當成新的物理準確度比較。
+
 ```powershell
 python Deliverables/R61_TrainingData_Regenerator_20261004/regenerate_r61.py --output-root YOUR_NEW_R61_FOLDER --report YOUR_NEW_R61_REPORT.json
 python Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py --workers 2 --output-dir YOUR_NEW_R152_FOLDER
 ```
+
+本機2026-10-22清理後，R93的formal／locked_holdout大陣列保留在已核對的H固定封存，D只清掉重複副本；R94／95／96／97／98舊完整訓練或資料驗證前，須先依[R93取回說明](../../Experiments/R93_RecoverableDetailSeparatedScratch/data/ARCHIVE_POINTER_20261022.md)恢復同一份固定資料。生成器、原設定、修正、模型、數表及封存規則保留；不以R92替代，也不把封存組的儲存核對當成已做模型評估。
 
 ## 每輪程式、設定與來源索引
 

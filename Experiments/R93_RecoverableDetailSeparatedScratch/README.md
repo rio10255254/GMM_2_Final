@@ -1,5 +1,7 @@
 # Round 93 — Recoverable Detail Separated Scratch
 
+> 本機儲存調整（2026-10-22）：共用大陣列已完成D/H核對，清理執行狀態與恢復命令見 [資料封存入口](data/ARCHIVE_POINTER_20261022.md)。模型、原結果與科學判決不變；舊完整訓練／資料驗證前須先恢復原資料。
+
 ## Verified identity and recovery entry (2026-10-20)
 
 The frozen data, actual execution design and stopped-run records take precedence over the older design text below. The actual R93 formal bank uses **seed 930041**, **1,250 procedural scenes**, four observations per scene, and **5,000 observations**. Its content identity is `6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5`. It is shared by R94, R95, R97 and R98; it is synthetic training data, not the September 3 camera repeatability acquisition.
