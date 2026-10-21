@@ -9,7 +9,7 @@ Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重�
 
 來源全內容核對完成3820382個原位置；大型附件仍持續實際取回，不宣稱全專案完成。另保存光學頻譜新舊圖，並以原小型來源重算16份陣列458832數值相同；[版本與重算說明](../docs/reproducibility/optical_calibration/SPECTRA.md)。
 
-原工具登入／工作清單備份原件留本機，已從私人草稿撤下並排除；研究原件、模型與論文不變，交付包重新取回核對。[保留界線](../docs/reproducibility/project_completion/README.md#私人工具備份不屬於實驗保存)。
+原工具登入／工作清單備份原件留本機，已從私人草稿撤下並排除；研究原件、模型與論文不變，396份交付原件已重新從GitHub取回核對，39份原ZIP檢查與大型R61原ZIP合併檢查通過；總恢復入口仍未完成。[保留界線](../docs/reproducibility/project_completion/README.md#私人工具備份不屬於實驗保存)。
 
 完整數字、模型身分和外部GMF結果以 `ESTIMATOR_POLICY.json` 與各輪正式報告為準。[逐輪保存判讀](../docs/reproducibility/EXPERIMENTS.md)說明方法、來源和影像選擇；[原代表圖冊](../RECON_GALLERY.md)保留歷史順序。
 

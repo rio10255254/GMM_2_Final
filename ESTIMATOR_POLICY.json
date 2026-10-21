@@ -4689,10 +4689,13 @@
         "affected_unpublished_private_draft_assets_removed_and_checked": true,
         "revised_package_new_unique_objects": 396,
         "revised_package_new_unique_bytes": 4843116784,
-        "revised_package_actual_recovery_pending": true,
+        "revised_package_actual_recovery_pending": false,
         "policy": "docs/reproducibility/project_completion/EXCLUDED_PRIVATE_TOOL_BACKUPS.json",
         "remediation": "docs/reproducibility/project_completion/PRIVATE_BACKUP_DRAFT_WITHDRAWAL_VERIFIED.json",
-        "scientific_content_or_verdict_changed": false
+        "scientific_content_or_verdict_changed": false,
+        "revised_package_actual_objects_restored": 396,
+        "master_binding_and_final_publication_pending": true,
+        "original_deliveries_receipt": "docs/reproducibility/project_completion/ORIGINAL_DELIVERY_PACKAGES_VERIFIED.json"
       }
     }
   },
