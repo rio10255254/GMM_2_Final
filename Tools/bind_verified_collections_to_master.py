@@ -15,6 +15,27 @@ from build_project_restore_index import read, verify_exact_batch_receipt
 from research_recovery import safe_relative, write_json
 
 
+def format_inspection_summary(checks):
+    """Keep byte recovery and the narrower format checks as distinct evidence."""
+    counts = Counter(row.get('format_status', 'FORMAT_NOT_INSPECTED') for row in checks)
+    failures = []
+    for row in checks:
+        status = row.get('format_status', '')
+        if 'FAILURE' not in status and 'ERROR' not in status:
+            continue
+        failure = {key: row[key] for key in ['sha256', 'bytes', 'format_status', 'format_error_type',
+                   'error_type', 'member'] if key in row}
+        # This is the actual inspection's representative original position;
+        # the complete globally resolved positions remain in the final map.
+        failure['inspection_representative_path'] = row.get('original_project_path')
+        failures.append(failure)
+    return {'format_status_counts': dict(sorted(counts.items())),
+            'recorded_format_failures': failures,
+            'numpy_header_readability_does_not_establish_all_values_finite': True,
+            'image_decode_does_not_establish_all_pages_or_animation_frames_checked': True,
+            'historical_failure_bytes_kept_unchanged': True}
+
+
 def bind(operation, master_path, output):
     if output.exists():
         raise FileExistsError('Keep a preceding reviewed collection binding')
@@ -58,7 +79,8 @@ def bind(operation, master_path, output):
             receipts.append({'batch': batch, 'receipt_sha256': recorded_checks[(component['tag'], batch)],
                              'unique_objects_checked': len(inspection['checks']),
                              'original_load_errors_preserved': inspection.get('load_errors_preserved', 0),
-                             'original_nonfinite_states_preserved': inspection.get('nonfinite_histories_preserved', 0)})
+                             'original_nonfinite_states_preserved': inspection.get('nonfinite_histories_preserved', 0),
+                             'object_format_inspection': format_inspection_summary(inspection['checks'])})
         required = {(r['sha256'], r['bytes']) for r in value['files']}
         if not required <= verified_objects:
             raise ValueError('A final original path has no exactly restored object in this release')

@@ -1,0 +1,239 @@
+{
+  "status": "VERIFIED_COMPLETED_BATCH_FORMAT_INSPECTION_SNAPSHOT_NOT_FINAL_PUBLICATION",
+  "local_time": "2026-10-21T12:52:34.106514+08:00",
+  "families": [
+    {
+      "family": "model",
+      "verified_batches": 10,
+      "planned_batches": 10,
+      "verified_objects": 5394,
+      "batch_receipts": [
+        {
+          "batch": "MODELS_B001",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "4ff8659099f6426349c16ad2ae4c6f7a65c0c0d57028ec227343d14df2db6c92",
+          "unique_objects_actually_restored": 460
+        },
+        {
+          "batch": "MODELS_B002",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "af6374c0470a44be3c982971305f7275da2f74a13c50cf3acaa97fe7ffbbd872",
+          "unique_objects_actually_restored": 342
+        },
+        {
+          "batch": "MODELS_B003",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "f6eaeb9ce70eceb1d746d8150e43647855117d91f0f7bb7d5fcce93923dec6e2",
+          "unique_objects_actually_restored": 600
+        },
+        {
+          "batch": "MODELS_B004",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "827cd426e6b39065d5054b97a941a657251393f75dc1fce1ab96a616e01cab79",
+          "unique_objects_actually_restored": 1531
+        },
+        {
+          "batch": "MODELS_B005",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "64f1cac015dd61e3371986dbe4e0dfe4e3d00672ba4cbeb0d9a1601ed684ddcd",
+          "unique_objects_actually_restored": 565
+        },
+        {
+          "batch": "MODELS_B006",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "bfad8952ca247b112b109a94b0c7ee64b863ad07dd574beae2d36141567c43e7",
+          "unique_objects_actually_restored": 588
+        },
+        {
+          "batch": "MODELS_B007",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "f6cd59c6aad602fe75d6f65a5d5591a37a308ffdeb06e5c955ba1c01df816949",
+          "unique_objects_actually_restored": 279
+        },
+        {
+          "batch": "MODELS_B008",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "aab95636f0671b54bad966311cd52fdafbb7c3cb0fa2956e8c924e6f1bf8edb2",
+          "unique_objects_actually_restored": 383
+        },
+        {
+          "batch": "MODELS_B009",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "f30e5e2099c0dfad2f9c670e383669d0fe7041bc9cb3ad3018967a75195d3bd2",
+          "unique_objects_actually_restored": 410
+        },
+        {
+          "batch": "MODELS_B010",
+          "tag": "research-model-history-additions-20261021",
+          "verification_sha256": "3e95ffbf9cf4e2b061acacea56b3d16a40c73fb51b7139b832fd06744b70b75d",
+          "unique_objects_actually_restored": 236
+        }
+      ],
+      "format_status_counts": {
+        "FORMAT_NOT_INSPECTED": 5394
+      },
+      "recorded_format_failures": [],
+      "numpy_header_readability_does_not_establish_all_values_finite": true,
+      "image_decode_does_not_establish_all_pages_or_animation_frames_checked": true,
+      "historical_failure_bytes_kept_unchanged": true,
+      "model_load_failures": [
+        {
+          "sha256": "b5d54c39e66671c9731b9f471e585d8262cd4f54963f0c93082d8dcf334d4c78",
+          "bytes": 4,
+          "path": "Thesis_MOSR_Evidence/.tmp/pytest/test_dry_run_reports_missing_d0/base.pth.tar",
+          "error_type": "UnpicklingError"
+        }
+      ]
+    },
+    {
+      "family": "numeric",
+      "verified_batches": 9,
+      "planned_batches": 31,
+      "verified_objects": 32957,
+      "batch_receipts": [
+        {
+          "batch": "NUMERIC_B001",
+          "tag": "research-numeric-data-additions-20261021",
+          "verification_sha256": "f9a9747cacb998b92d559781d62d3530d354c3c94f02e60e7424b37ff28023bf",
+          "unique_objects_actually_restored": 12000
+        },
+        {
+          "batch": "NUMERIC_B002",
+          "tag": "research-numeric-data-additions-20261021",
+          "verification_sha256": "05f16a22eaee8f2452e6a3d5929c576bb5f98f41509d5d5ba2d2852b197db7c1",
+          "unique_objects_actually_restored": 7722
+        },
+        {
+          "batch": "NUMERIC_B003",
+          "tag": "research-numeric-data-additions-20261021",
+          "verification_sha256": "a10643aec62c1333c52c2ca930d3207bc9fff82440ce857fcb9d35967d00f9d5",
+          "unique_objects_actually_restored": 1555
+        },
+        {
+          "batch": "NUMERIC_B004",
+          "tag": "research-numeric-data-additions-20261021",
+          "verification_sha256": "36cae65eadac85e09302656d1d3b975a87f8ba5dd9b572b0ad98e7b6091de779",
+          "unique_objects_actually_restored": 1641
+        },
+        {
+          "batch": "NUMERIC_B005",
+          "tag": "research-numeric-data-additions-20261021",
+          "verification_sha256": "966da709131cb8e9484d1858f007e941f5dd20ef940e3795effafbe63ac8fbd9",
+          "unique_objects_actually_restored": 1638
+        },
+        {
+          "batch": "NUMERIC_B006",
+          "tag": "research-numeric-data-additions-20261021",
+          "verification_sha256": "6ccb583e52b504b5bdc91a3d5d73a910c99781a8c736d9e7fbc10302ed8b566e",
+          "unique_objects_actually_restored": 1572
+        },
+        {
+          "batch": "NUMERIC_B007",
+          "tag": "research-numeric-data-additions-20261021",
+          "verification_sha256": "9d24e9a70c3685093f185195825a2263898d20ddf48c20471d841ee9ec685dd5",
+          "unique_objects_actually_restored": 1490
+        },
+        {
+          "batch": "NUMERIC_B008",
+          "tag": "research-numeric-data-additions-20261021",
+          "verification_sha256": "37c5e81ea61fa173609027271a0cdf51d43e6cad8c494d23c839cd179adc2328",
+          "unique_objects_actually_restored": 2747
+        },
+        {
+          "batch": "NUMERIC_B009",
+          "tag": "research-numeric-data-additions-20261021",
+          "verification_sha256": "001b69f332a16d1cba6f469add80fe7c13d088a3bb8d93e0308a06cdf0f03312",
+          "unique_objects_actually_restored": 2592
+        }
+      ],
+      "format_status_counts": {
+        "MATLAB_VARIABLE_HEADERS_READABLE": 7,
+        "NUMPY_ARCHIVE_HEADERS_READABLE": 24110,
+        "NUMPY_HEADER_READABLE": 8840
+      },
+      "recorded_format_failures": [],
+      "numpy_header_readability_does_not_establish_all_values_finite": true,
+      "image_decode_does_not_establish_all_pages_or_animation_frames_checked": true,
+      "historical_failure_bytes_kept_unchanged": true,
+      "model_load_failures": []
+    },
+    {
+      "family": "image",
+      "verified_batches": 5,
+      "planned_batches": 59,
+      "verified_objects": 46872,
+      "batch_receipts": [
+        {
+          "batch": "IMAGES_B001",
+          "tag": "research-image-data-additions-20261021",
+          "verification_sha256": "a0265e414aafa1c03bc35b26c6232df0cb3560f5cf3266ba7fee630770e6d65c",
+          "unique_objects_actually_restored": 12000
+        },
+        {
+          "batch": "IMAGES_B002",
+          "tag": "research-image-data-additions-20261021",
+          "verification_sha256": "7c5fd484230bd35fa1d077568be641b0a7e6f4922eda60291af6fe8c27efef83",
+          "unique_objects_actually_restored": 10586
+        },
+        {
+          "batch": "IMAGES_B003",
+          "tag": "research-image-data-additions-20261021",
+          "verification_sha256": "2b7af974b9534caae21dd033d702692b6afb5b6896ab0bce02fae37fb72df45d",
+          "unique_objects_actually_restored": 11253
+        },
+        {
+          "batch": "IMAGES_B004",
+          "tag": "research-image-data-additions-20261021",
+          "verification_sha256": "d0b91c552086838fcf0c3c6ab3a6b50a6c5f65f0ed2bf592359d595af244318a",
+          "unique_objects_actually_restored": 7073
+        },
+        {
+          "batch": "IMAGES_B005",
+          "tag": "research-image-data-additions-20261021",
+          "verification_sha256": "8d010887bf824ca547489b9b2d8cd4fa7f963c4e0406e732330d2e5787661da2",
+          "unique_objects_actually_restored": 5960
+        }
+      ],
+      "format_status_counts": {
+        "IMAGE_DECODED": 46872
+      },
+      "recorded_format_failures": [],
+      "numpy_header_readability_does_not_establish_all_values_finite": true,
+      "image_decode_does_not_establish_all_pages_or_animation_frames_checked": true,
+      "historical_failure_bytes_kept_unchanged": true,
+      "model_load_failures": []
+    },
+    {
+      "family": "package",
+      "verified_batches": 1,
+      "planned_batches": 1,
+      "verified_objects": 396,
+      "batch_receipts": [
+        {
+          "batch": "PACKAGES_B001",
+          "tag": "research-package-additions-20261021",
+          "verification_sha256": "61850b1631e24b4f3f74971a8b458ab977e2cb598dd93c83ae07d1fd744eb47f",
+          "unique_objects_actually_restored": 396
+        }
+      ],
+      "format_status_counts": {
+        "EXACT_BYTES_PRESERVED_FORMAT_NOT_APPLICABLE": 118,
+        "GZIP_STREAM_CRC_READABLE": 3,
+        "MATLAB_VARIABLE_HEADERS_READABLE": 195,
+        "ORIGINAL_TORCH_PSF_CACHE_INSPECTED": 41,
+        "ORIGINAL_ZIP_ALL_MEMBERS_CRC_READABLE": 39
+      },
+      "recorded_format_failures": [],
+      "numpy_header_readability_does_not_establish_all_values_finite": true,
+      "image_decode_does_not_establish_all_pages_or_animation_frames_checked": true,
+      "historical_failure_bytes_kept_unchanged": true,
+      "model_load_failures": []
+    }
+  ],
+  "remaining_batches_not_covered": true,
+  "whole_project_complete": false,
+  "historical_failures_kept_with_exact_original_bytes": true,
+  "numpy_checks_are_headers_only_not_recalculated_research_values": true,
+  "model_state_finiteness_is_separate_from_numpy_header_readability": true,
+  "historical_GPU_training_repeated": false
+}
