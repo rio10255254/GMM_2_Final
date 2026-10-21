@@ -1,0 +1,371 @@
+{
+  "status": "FIVE_ORIGINAL_DEPLOYMENT_GRAPHS_ACTUALLY_RECOVERED_AND_CPU_EXECUTED",
+  "graphs": [
+    {
+      "id": "R90_ONNX_feasibility",
+      "original_path": "Experiments/R90_ExposureCoherentScratch/results/early_stop_confirmation/onnx_feasibility/model.onnx",
+      "graph_sha256": "ea9ca978bc02c53fe4266f50607a54379097d0dac2e50d6cddfcc25861adfad1",
+      "onnx_graph_checker_passed": true,
+      "opset_imports": [
+        {
+          "domain": "",
+          "version": 17
+        }
+      ],
+      "CPU_execution_providers": [
+        "CPUExecutionProvider"
+      ],
+      "input_shape": [
+        1,
+        1,
+        896,
+        896
+      ],
+      "source_crop_xywh": [
+        576,
+        320,
+        896,
+        896
+      ],
+      "input_float32_sha256": "d962619b1a49494ade5cd5825417bf6c293468fbb6b24a877113ff7ddfa9cfa5",
+      "outputs": [
+        {
+          "shape": [
+            1,
+            1,
+            896,
+            896
+          ],
+          "dtype": "float32",
+          "all_values_finite": true,
+          "minimum": 0.021841922774910927,
+          "maximum": 0.8745386600494385,
+          "exact_array_sha256": "856ab20f177de3625addecac0715e3c4f3f7281667afaa7bcf7ee0ffcccfe3fe"
+        }
+      ],
+      "declared_historical_role": "R90 early-stop confirmation ONNX feasibility artifact, without promotion or a new performance claim",
+      "native_model_parity_claimed": false
+    },
+    {
+      "id": "R99_preflight",
+      "original_path": "Experiments/R99_GeometryTextureCoherentScratch/results/preflight_r99_fixed256.onnx",
+      "graph_sha256": "6933127d7063e97d412812bb6073d5987c306f787384c0afbf79daf9135f2f5d",
+      "onnx_graph_checker_passed": true,
+      "opset_imports": [
+        {
+          "domain": "",
+          "version": 17
+        }
+      ],
+      "CPU_execution_providers": [
+        "CPUExecutionProvider"
+      ],
+      "input_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "source_crop_xywh": [
+        896,
+        640,
+        256,
+        256
+      ],
+      "input_float32_sha256": "0e2abe756a0a979608c201733d21c303059655f6030628788e11a53b6b7390bf",
+      "outputs": [
+        {
+          "shape": [
+            1,
+            1,
+            256,
+            256
+          ],
+          "dtype": "float32",
+          "all_values_finite": true,
+          "minimum": 0.3019607961177826,
+          "maximum": 0.8705882430076599,
+          "exact_array_sha256": "0e2abe756a0a979608c201733d21c303059655f6030628788e11a53b6b7390bf"
+        }
+      ],
+      "declared_historical_role": "R99 fixed256 pre-training export/readiness artifact, not evidence of the final trained R99 model",
+      "native_model_parity_claimed": false
+    },
+    {
+      "id": "R61_deployment_body",
+      "original_path": "Deliverables/MOSR_R61_ONNX/model.onnx",
+      "graph_sha256": "7baf6fda38a843deff0fb840a3821d44f09a69b1485b2a263281c5096f3f31d8",
+      "onnx_graph_checker_passed": true,
+      "opset_imports": [
+        {
+          "domain": "",
+          "version": 17
+        }
+      ],
+      "CPU_execution_providers": [
+        "CPUExecutionProvider"
+      ],
+      "input_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "source_crop_xywh": [
+        896,
+        640,
+        256,
+        256
+      ],
+      "input_float32_sha256": "0e2abe756a0a979608c201733d21c303059655f6030628788e11a53b6b7390bf",
+      "outputs": [
+        {
+          "shape": [
+            1,
+            1,
+            256,
+            256
+          ],
+          "dtype": "float32",
+          "all_values_finite": true,
+          "minimum": 0.24268066883087158,
+          "maximum": 0.9443725347518921,
+          "exact_array_sha256": "0f5ec17d09ba067d1e7b44fedb56a24e95c494a83e7e0e71a8b00eb2d9564366"
+        }
+      ],
+      "declared_historical_role": "R61 deployed neural-network graph; complete reconstruction also requires original Python optical processing and optics.npz",
+      "native_model_parity_claimed": false
+    },
+    {
+      "id": "COMBO_company_body",
+      "original_path": "_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
+      "graph_sha256": "9fe80f8ef1ef5a464f2bf9eec559337cd849fd0b792e97afb36eee83bd0e0d72",
+      "onnx_graph_checker_passed": true,
+      "opset_imports": [
+        {
+          "domain": "",
+          "version": 17
+        }
+      ],
+      "CPU_execution_providers": [
+        "CPUExecutionProvider"
+      ],
+      "input_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "source_crop_xywh": [
+        896,
+        640,
+        256,
+        256
+      ],
+      "input_float32_sha256": "0e2abe756a0a979608c201733d21c303059655f6030628788e11a53b6b7390bf",
+      "outputs": [
+        {
+          "shape": [
+            1,
+            1,
+            256,
+            256
+          ],
+          "dtype": "float32",
+          "all_values_finite": true,
+          "minimum": 0.16634827852249146,
+          "maximum": 0.8342700004577637,
+          "exact_array_sha256": "acb6b7911b06a667f309db050e78791dfe3ccdb3f6a8af3c4b38b3bbb1e76cda"
+        }
+      ],
+      "declared_historical_role": "Company package labeled COMBO: main network body; original report explicitly excludes weak-PSF graph block and retains Python optical preprocessing",
+      "native_model_parity_claimed": false
+    },
+    {
+      "id": "R39R40_a025_company_body",
+      "original_path": "_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
+      "graph_sha256": "c3f17abc87a09c0628ddc1d46e3e2fa858af8a21b3c649c6f4329c9638175f70",
+      "onnx_graph_checker_passed": true,
+      "opset_imports": [
+        {
+          "domain": "",
+          "version": 17
+        }
+      ],
+      "CPU_execution_providers": [
+        "CPUExecutionProvider"
+      ],
+      "input_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "source_crop_xywh": [
+        896,
+        640,
+        256,
+        256
+      ],
+      "input_float32_sha256": "0e2abe756a0a979608c201733d21c303059655f6030628788e11a53b6b7390bf",
+      "outputs": [
+        {
+          "shape": [
+            1,
+            1,
+            256,
+            256
+          ],
+          "dtype": "float32",
+          "all_values_finite": true,
+          "minimum": 0.21208453178405762,
+          "maximum": 0.8322443962097168,
+          "exact_array_sha256": "79c7609688b306be389ef3db31758c35f4fdadbe3154681893f7f8fca6b34171"
+        }
+      ],
+      "declared_historical_role": "Company package labeled R39R40 alpha0.25: saved delivery graph, with original preprocessing and reference differences retained; no new adoption decision",
+      "native_model_parity_claimed": false
+    }
+  ],
+  "original_R61_package_wrapper": {
+    "original_package_wrapper_and_optical_constants_executed": true,
+    "provider": "CPUExecutionProvider",
+    "full_image_processing": true,
+    "tiled_mode_repeated": false,
+    "original_example_reference_bmp_sha256": "bf36d1dadaf58c5bcc0864953582aa00e7c1472a58f157145754380d93d332c5",
+    "actual_bmp_sha256": "bf36d1dadaf58c5bcc0864953582aa00e7c1472a58f157145754380d93d332c5",
+    "reference_BMP_exact": true,
+    "maximum_pixel_difference": 0,
+    "mean_pixel_difference": 0.0,
+    "independent_physical_validation_or_new_camera_acquisition": false
+  },
+  "actual_GitHub_object_recovery": [
+    {
+      "status": "PASS_SELECTED_OBJECT_ACTUALLY_FETCHED_AND_RESTORED",
+      "repo": "rio10255254/GMM_2_Final",
+      "tag": "research-model-history-additions-20261021",
+      "asset": "research-project-models-006-009.zip",
+      "asset_id": 660837613,
+      "asset_bytes": 1597991580,
+      "asset_sha256_matched_to_server_metadata": "c17817858b66897256283cfb5993a93cb5234fc9ccbea8c1bac09804f903b17d",
+      "release_was_draft": true,
+      "actual_asset_listing_pages": 2,
+      "complete_archive_SHA256_recomputed_by_this_partial_operation": false,
+      "whole_project_complete": false,
+      "bytes": 9530773,
+      "sha256": "ea9ca978bc02c53fe4266f50607a54379097d0dac2e50d6cddfcc25861adfad1",
+      "range_bytes_received": 8764992,
+      "range_requests": 15,
+      "unique_archive_bytes_received": 8764972,
+      "entire_archive_part_downloaded": false
+    },
+    {
+      "status": "PASS_SELECTED_OBJECT_ACTUALLY_FETCHED_AND_RESTORED",
+      "repo": "rio10255254/GMM_2_Final",
+      "tag": "research-model-history-additions-20261021",
+      "asset": "research-project-models-006-004.zip",
+      "asset_id": 660827594,
+      "asset_bytes": 1596274803,
+      "asset_sha256_matched_to_server_metadata": "18838686f47a186c8a1d60387d1266f4873fcfc23e117b32c5c4e382181a4965",
+      "release_was_draft": true,
+      "actual_asset_listing_pages": 2,
+      "complete_archive_SHA256_recomputed_by_this_partial_operation": false,
+      "whole_project_complete": false,
+      "bytes": 9807256,
+      "sha256": "6933127d7063e97d412812bb6073d5987c306f787384c0afbf79daf9135f2f5d",
+      "range_bytes_received": 8882904,
+      "range_requests": 15,
+      "unique_archive_bytes_received": 8882884,
+      "entire_archive_part_downloaded": false
+    },
+    {
+      "status": "PASS_SELECTED_OBJECT_ACTUALLY_FETCHED_AND_RESTORED",
+      "repo": "rio10255254/GMM_2_Final",
+      "tag": "research-model-history-additions-20261021",
+      "asset": "research-project-models-006-005.zip",
+      "asset_id": 660832496,
+      "asset_bytes": 1622757227,
+      "asset_sha256_matched_to_server_metadata": "b74ac7ac14dbaf240e933a8a2b156742d6af717b06ecd7e8ae7198d69abea02f",
+      "release_was_draft": true,
+      "actual_asset_listing_pages": 2,
+      "complete_archive_SHA256_recomputed_by_this_partial_operation": false,
+      "whole_project_complete": false,
+      "bytes": 16151146,
+      "sha256": "7baf6fda38a843deff0fb840a3821d44f09a69b1485b2a263281c5096f3f31d8",
+      "range_bytes_received": 14799797,
+      "range_requests": 21,
+      "unique_archive_bytes_received": 14799777,
+      "entire_archive_part_downloaded": false
+    },
+    {
+      "status": "PASS_SELECTED_OBJECT_ACTUALLY_FETCHED_AND_RESTORED",
+      "repo": "rio10255254/GMM_2_Final",
+      "tag": "research-model-history-additions-20261021",
+      "asset": "research-project-models-010-005.zip",
+      "asset_id": 661219886,
+      "asset_bytes": 1603192052,
+      "asset_sha256_matched_to_server_metadata": "41ef35a4282b409b714a7d6f69ae2de4763a124b597fa173c2ac29e42e8f655b",
+      "release_was_draft": true,
+      "actual_asset_listing_pages": 2,
+      "complete_archive_SHA256_recomputed_by_this_partial_operation": false,
+      "whole_project_complete": false,
+      "bytes": 16105107,
+      "sha256": "9fe80f8ef1ef5a464f2bf9eec559337cd849fd0b792e97afb36eee83bd0e0d72",
+      "range_bytes_received": 14784249,
+      "range_requests": 21,
+      "unique_archive_bytes_received": 14784229,
+      "entire_archive_part_downloaded": false
+    },
+    {
+      "status": "PASS_SELECTED_OBJECT_ACTUALLY_FETCHED_AND_RESTORED",
+      "repo": "rio10255254/GMM_2_Final",
+      "tag": "research-model-history-additions-20261021",
+      "asset": "research-project-models-010-006.zip",
+      "asset_id": 661220525,
+      "asset_bytes": 1629837471,
+      "asset_sha256_matched_to_server_metadata": "aa97774072998b9ab54e5643d93967c78d2764a18a5f783aabfdf1eca440eec7",
+      "release_was_draft": true,
+      "actual_asset_listing_pages": 2,
+      "complete_archive_SHA256_recomputed_by_this_partial_operation": false,
+      "whole_project_complete": false,
+      "bytes": 16105107,
+      "sha256": "c3f17abc87a09c0628ddc1d46e3e2fa858af8a21b3c649c6f4329c9638175f70",
+      "range_bytes_received": 14764342,
+      "range_requests": 21,
+      "unique_archive_bytes_received": 14764322,
+      "entire_archive_part_downloaded": false
+    }
+  ],
+  "total_original_graph_bytes": 67699389,
+  "actual_bounded_range_bytes_received": 61996284,
+  "original_complete_batch_downloads_retained": true,
+  "this_partial_object_step_recomputed_whole_archive_digest": false,
+  "original_research_roots_blocked": true,
+  "R99_preflight_identity_on_this_example": true,
+  "old_graph_files_or_research_adoption_modified": false,
+  "GPU_or_training_used": false,
+  "onnx_version": "1.21.0",
+  "onnxruntime_version": "1.20.1",
+  "whole_project_complete": false,
+  "R61_historically_recorded_source_checkpoint_sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
+  "R61_exact_captured_source_checkpoint_locations": [
+    {
+      "logical_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+      "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
+      "bytes": 17517150,
+      "origin": "D_worktree"
+    },
+    {
+      "logical_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R61_STEP_Generalization_Standalone_20260910/weights/best_tradeoff.pth.tar",
+      "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
+      "bytes": 17517150,
+      "origin": "D_worktree"
+    },
+    {
+      "logical_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R61_STEP_Generalization_Standalone_20260910/weights/variants/R61_stepguard_v16_dpv96_best_tradeoff.pth.tar",
+      "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
+      "bytes": 17517150,
+      "origin": "D_worktree"
+    }
+  ]
+}

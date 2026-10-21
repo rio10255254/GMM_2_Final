@@ -31,6 +31,9 @@ Lab影像用途已按原紀錄釐清：126份數學平移輸入來自2張完整�
 
 [舊訓練表版本核對](../docs/reproducibility/project_completion/TRAINING_LOG_LAYOUTS.md)另核對699份原表及十份GitHub原寫入程式；原表欄名錯置、只有表頭、空檔和未寫出的量均按原身分保留，V42另存讀法不能代表所有歷史版本。
 
+
+保存續查的[完整模型補件與交付身分](../docs/reproducibility/project_completion/MODEL_HISTORY.md)已實際取回十批5,394份新增內容，五份部署圖CPU可執行；原15MB R61交付包也已從GitHub取回，以原光學／網路入口產生相同示例。全域位置及正式模型版本仍待全部資料，沒有重選模型或重跑訓練。
+
 ## Active（formal baseline + approved alternates）
 
 | Round | 目錄 | Branch | 角色 | 關鍵報告 |

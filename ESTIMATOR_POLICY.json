@@ -4767,6 +4767,26 @@
         "source_version_for_each_run_inferred_from_column_count": false,
         "guide": "docs/reproducibility/project_completion/TRAINING_LOG_LAYOUTS.md",
         "original_numeric_values_or_adoption_changed": false
+      },
+      "complete_new_model_object_recovery": {
+        "status": "all_10_batches_actually_downloaded_restored_and_current_server_assets_verified_final_master_binding_pending",
+        "new_unique_objects": 5394,
+        "new_unique_original_bytes": 156413520718,
+        "loadable_finite_saved_states": 5388,
+        "separately_executed_ONNX_graphs": 5,
+        "nonresearch_fake_test_object": 1,
+        "current_server_assets_checked": 120,
+        "actual_server_asset_pages": 2,
+        "captured_model_source_positions": 8850,
+        "new_model_source_positions": 6136,
+        "normalized_model_plan_locations": 8032,
+        "already_preserved_unique_objects_not_reinspected_here": 1780,
+        "guide": "docs/reproducibility/project_completion/MODEL_HISTORY.md",
+        "small_R61_original_delivery_tag": "research-r61-onnx-delivery-20261021",
+        "small_R61_original_delivery_bytes": 15075962,
+        "small_R61_original_example_BMP_exact": true,
+        "scientific_adoption_changed": false,
+        "training_repeated": false
       }
     }
   },

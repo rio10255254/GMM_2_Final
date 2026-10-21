@@ -43,6 +43,31 @@ def compare_file(path, relative, previous, repository_record):
     }
 
 
+def missing_captured_files(remaining, excluded_directories, unreadable_directories, private_policy):
+    """Distinguish absent originals from deliberately unscanned dependency trees."""
+    missing, skipped = [], {}
+    def ancestor_in(relative, prefixes):
+        if '' in prefixes or '.' in prefixes:
+            return True
+        parts = relative.casefold().split('/')
+        return any('/'.join(parts[:index]) in prefixes for index in range(1, len(parts)))
+    for key, previous in remaining.items():
+        relative = previous['path']
+        if private_excluded({'path': relative, **previous}, private_policy) or classify(relative) == 'private_excluded':
+            reason = 'private_nonresearch_source_excluded'
+        elif ancestor_in(key, excluded_directories):
+            reason = 'captured_source_inside_currently_excluded_or_referenced_directory'
+        elif ancestor_in(key, unreadable_directories):
+            reason = 'captured_source_not_rechecked_due_directory_read_error'
+        else:
+            missing.append({'path': relative, 'previous_sha256': previous['sha256'], 'bytes': previous['bytes'],
+                            'kind': classify(relative), 'state': 'missing_from_current_D_tree',
+                            'archived_original_not_removed_or_replaced_by_this_check': True})
+            continue
+        skipped[reason] = skipped.get(reason, 0) + 1
+    return missing, skipped
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, required=True)
@@ -63,12 +88,15 @@ def main():
                 if row['origin'] == 'D_worktree':
                     baseline[row['logical_path'].casefold()] = {
                         key: row[key] for key in ['bytes', 'mtime_ns', 'sha256']}
+                    baseline[row['logical_path'].casefold()]['path'] = row['logical_path']
     with gzip.open(root / 'docs/reproducibility/REPOSITORY_FILES.json.gz', 'rt', encoding='utf-8') as stream:
         source_catalog = json.load(stream)
     repository = {r['path'].casefold(): r for r in source_catalog['files']}
     source_catalog_relative = 'docs/reproducibility/REPOSITORY_FILES.json.gz'
     counts = {}
     findings, errors, edges = [], [], []
+    remaining = dict(baseline)
+    excluded_directories, unreadable_directories = set(), set()
     stack = [root]
     while stack:
         folder = stack.pop()
@@ -76,12 +104,14 @@ def main():
             entries = list(os.scandir(folder))
         except OSError as error:
             errors.append({'path': str(folder), 'error': type(error).__name__})
+            unreadable_directories.add(folder.relative_to(root).as_posix().casefold())
             continue
         for entry in entries:
             path = Path(entry.path)
             relative = path.relative_to(root).as_posix()
             if private_excluded({'path':relative},private_policy):
                 counts['private_nonresearch_backup_excluded']=counts.get('private_nonresearch_backup_excluded',0)+1
+                excluded_directories.add(relative.casefold())
                 continue
             try:
                 info = entry.stat(follow_symlinks=False)
@@ -89,14 +119,18 @@ def main():
                 if entry.is_dir(follow_symlinks=False) or (reparse and path.is_dir()):
                     if 'portable_runtime' in {part.casefold() for part in Path(relative).parts}:
                         counts['generic_portable_runtime_excluded']=counts.get('generic_portable_runtime_excluded',0)+1
+                        excluded_directories.add(relative.casefold())
                         continue
                     if dependency_directory(path, entry.name):
+                        excluded_directories.add(relative.casefold())
                         continue
                     if reparse:
                         edges.append({'path': relative, 'target': str(path.resolve())})
+                        excluded_directories.add(relative.casefold())
                     else:
                         stack.append(path)
                     continue
+                remaining.pop(relative.casefold(), None)
                 if reparse:
                     errors.append({'path': relative, 'error': 'new_reparse_file_requires_review'})
                     continue
@@ -117,15 +151,18 @@ def main():
     current = {r['path'].casefold(): os.path.normcase(r['target']) for r in edges}
     edge_changes = [{'path': key, 'previous': prior.get(key), 'current': current.get(key)}
                     for key in sorted(set(prior) | set(current)) if prior.get(key) != current.get(key)]
+    missing, skipped_missing = missing_captured_files(remaining, excluded_directories, unreadable_directories, private_policy)
     write_json(args.report, {
-        'status': 'NO_UNPRESERVED_RESEARCH_DELTA' if not findings and not errors and not edge_changes else 'DELTA_REQUIRES_PRESERVATION_REVIEW',
+        'status': 'NO_UNPRESERVED_RESEARCH_DELTA' if not findings and not missing and not errors and not edge_changes else 'DELTA_REQUIRES_PRESERVATION_REVIEW',
         'file_states': counts, 'new_or_changed_contents': findings, 'read_errors': errors,
+        'captured_sources_missing_from_current_D_tree': missing,
+        'captured_sources_in_currently_excluded_or_unreadable_trees': skipped_missing,
         'directory_reference_changes': edge_changes,
         'full_previous_content_hashes_reused_only_with_unchanged_metadata': True,
         'registered_H_payloads_not_rescanned_by_this_D_delta_check': True,
         'sources_or_processes_modified': False,
     })
-    print('FINAL_RESEARCH_DELTA_CHECK', len(findings), len(errors), len(edge_changes), flush=True)
+    print('FINAL_RESEARCH_DELTA_CHECK', len(findings), len(missing), len(errors), len(edge_changes), flush=True)
 
 
 if __name__ == '__main__':
