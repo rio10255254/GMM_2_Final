@@ -1,13 +1,25 @@
 # GMM_2_Final
 
-## 研究保存與目前結果入口（2026-10-21）
+## 目前精選研究入口（持續整理）
 
-- [已驗證的研究保存入口](https://github.com/rio10255254/GMM_2_Final/blob/research-preservation-20261021/docs/reproducibility/README.md)：原始拍攝、必要來源、模型與完整結果，以及實際從GitHub取回的核對。
-- [逐輪研究脈絡](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/EXPERIMENTS.md)：方法、來源、成功、失敗與影像選擇。
-- [全專案補查進度](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/project_completion/README.md)：正在把本機及已搬走的歷史逐項比對，尚未宣稱全專案完成。
-- [目前論文十方法完整結果](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)：R152／RAW與外部方法的完整圖表、數字及限制。
+保存原程式、資料生產方法、必要來源、完整結果與失敗脈絡。可再生的大型訓練資料和逐張重建不必整套下載；重要原拍共用一次，模型與圖片依用途精選。
 
-下方保留原通用專案說明；最新狀態與重做方式由上述固定版本及保存分支提供。正式使用基準仍為COMBO。
+- [精選研究總入口](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/README.md)
+- [訓練資料怎麼生產、真正用過哪些來源](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/GENERATION_GUIDE.md)
+- [文獻引用、設計推論與官方程式版本](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/LITERATURE_GUIDE.md)
+- [每輪研究問題、方法與結果](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/EXPERIMENTS.md)
+- [完整小型數據、曝光與SEM不利結果](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)
+- [目前整理範圍、已完成與尚待處理](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/project_completion/README.md)
+- [目前論文十方法完整結果與限制](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)
+- [9月3日30趟實拍：930張相機原圖與30份原始位置紀錄](https://github.com/rio10255254/GMM_2_Final/releases/tag/shared-pi-20260903-v1)
+
+目前論文採用R152／RAW，正式基準仍為COMBO。整理不改研究判決、不啟動訓練，也不刪D/H研究原件；已有超量草稿維持凍結，尚未刪除。
+
+這些入口指向目前精選內容；[本次已確認的固定來源快照](https://github.com/rio10255254/GMM_2_Final/tree/4472e2e8bb9db7f8d06743b9b874838753e33d2f)另保留查閱。177個研究範圍已有方法與來源索引，其中18條資料生產路線已按實際程式／設定確認，其餘未編造生成命令。全專案仍在逐輪整理，不把此版本宣稱為所有歷史實驗已重跑完成。
+
+---
+
+以下保留較早的通用專案說明。最新方法、原結果與取得方式請先用上方入口。
 
 這份文件是整個專案的**入口總覽**。如果你是第一次接觸這個專案，從這裡開始讀。
 This is the top-level overview for the project. If you are new, start here.
