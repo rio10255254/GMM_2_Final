@@ -1,0 +1,116 @@
+{
+  "status": "PASS_ORIGINAL_LOG_LAYOUT_AND_STDOUT",
+  "runs": [
+    {
+      "run": "full_120",
+      "epochs": 120,
+      "all_original_numeric_tokens_retained": true,
+      "stdout_numeric_fields_checked": 360,
+      "stdout_corroboration_available": true,
+      "last_validation": {
+        "epoch": "120",
+        "val_total": "0.2269242120774712",
+        "val_rec": "0.02780546761419872",
+        "val_psnr": "15.43748181649065",
+        "val_ssim": "0.7298154483629963",
+        "seq_val_score": "0.7467469573020935"
+      }
+    },
+    {
+      "run": "earlier_2",
+      "epochs": 2,
+      "all_original_numeric_tokens_retained": true,
+      "stdout_numeric_fields_checked": 0,
+      "stdout_corroboration_available": false,
+      "last_validation": {
+        "epoch": "2",
+        "val_total": "0.25655645409928274",
+        "val_rec": "0.02924998325953072",
+        "val_psnr": "15.285152318067672",
+        "val_ssim": "0.7111319512790155",
+        "seq_val_score": "0.7268433570861816"
+      }
+    }
+  ],
+  "original_header_columns": 177,
+  "original_value_columns": 169,
+  "missing_original_header_field": "loss_input_lowfreq",
+  "named_but_never_written_ANN_columns": [
+    "ann_seq_score",
+    "ann_seq_sign_acc",
+    "ann_seq_step_err_rel",
+    "ann_seq_center_err_px",
+    "ann_seq_radius_err_rel",
+    "ann_seq_thickness_err_rel",
+    "ann_seq_radius_drift_rel",
+    "ann_seq_thickness_drift_rel",
+    "ann_seq_pairs"
+  ],
+  "original_csv_or_trainer_modified": false,
+  "absent_ANN_values_fabricated": false,
+  "native_cases": [
+    {
+      "id": "best_E010_EMA_20x",
+      "checkpoint_sha256": "6d6eafba196340c7789f8762ab8ab6eaf40a337bee9e8b532771ab7dad91e70e",
+      "checkpoint_state_kind": "epoch10_EMA_stored_in_state_dict",
+      "input_crop_bmp_sha256": "38a402a2a291170cd8dbd06882f88ff0eec96262a3b52cfa14fafcb39d16bda1",
+      "shape": [
+        1,
+        1,
+        512,
+        512
+      ],
+      "all_outputs_finite": true,
+      "full_native_float32_sha256": "bb0c27cc0c8d135de5ff50c1f6bd2625ccf046c493e56f643dfd154d41c4a1d9",
+      "output_bmp_sha256": "84bc701d5af9fe7e82347dbfde4df7241fc319c93d5165dea30f5c28dcc1b513"
+    },
+    {
+      "id": "best_E010_EMA_50x",
+      "checkpoint_sha256": "6d6eafba196340c7789f8762ab8ab6eaf40a337bee9e8b532771ab7dad91e70e",
+      "checkpoint_state_kind": "epoch10_EMA_stored_in_state_dict",
+      "input_crop_bmp_sha256": "ababc002eeb25f2b648bb016dae21fdd2e51cfb43c18be0367f82c051f2aff1a",
+      "shape": [
+        1,
+        1,
+        512,
+        512
+      ],
+      "all_outputs_finite": true,
+      "full_native_float32_sha256": "417843be4d62f071d571b6afe684ae0d3e8269aa6a932013fde20acb1556c212",
+      "output_bmp_sha256": "63cfa164dd5c825ee1690048645fba08e39ec71a95191601ee69c266f470959c"
+    },
+    {
+      "id": "last_E120_raw_20x",
+      "checkpoint_sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
+      "checkpoint_state_kind": "epoch120_raw_network_state_dict",
+      "input_crop_bmp_sha256": "38a402a2a291170cd8dbd06882f88ff0eec96262a3b52cfa14fafcb39d16bda1",
+      "shape": [
+        1,
+        1,
+        512,
+        512
+      ],
+      "all_outputs_finite": true,
+      "full_native_float32_sha256": "ff31fc3ee2cd0f39755171fc9043a92f1432f9104612ffecd50e7d8925611840",
+      "output_bmp_sha256": "48e3e36beca2f946fa013d086601a11e63cc411c7f9e3161ed32e784af0bfc41"
+    },
+    {
+      "id": "last_E120_raw_50x",
+      "checkpoint_sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
+      "checkpoint_state_kind": "epoch120_raw_network_state_dict",
+      "input_crop_bmp_sha256": "ababc002eeb25f2b648bb016dae21fdd2e51cfb43c18be0367f82c051f2aff1a",
+      "shape": [
+        1,
+        1,
+        512,
+        512
+      ],
+      "all_outputs_finite": true,
+      "full_native_float32_sha256": "5c397efe48ff941bcde91966a499d9e7fb65e7d3d030fa9e11de1aced97cc765",
+      "output_bmp_sha256": "deba2a3d186a966bf057e25f2f5d2f9cbcafe8d973dea7ed9de58a4fd7378b8b"
+    }
+  ],
+  "CPU_reference_matched": true,
+  "training_repeated": false,
+  "historical_GPU_outputs_claimed_bit_exact": false
+}

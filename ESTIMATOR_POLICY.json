@@ -4728,6 +4728,22 @@
         "source_commit": "415ce617db99cebc7e8b72e82ad0a7ad03491748",
         "old_research_roots_blocked": true,
         "receipt": "docs/reproducibility/lab_comparisons/GITHUB_REPLAY_PUBLISHED_VERIFIED.json"
+      },
+      "V41_V42_historical_lineage": {
+        "status": "local_original_source_log_layout_and_four_CPU_cases_verified_GitHub_retrieval_pending",
+        "guide": "docs/reproducibility/lab_comparisons/V42_HISTORY.md",
+        "full_training_epochs": 120,
+        "best_saved_EMA_epoch": 10,
+        "default_smoke_epoch": 2,
+        "base_V41_epoch": 16,
+        "full_training_pairs": 11254,
+        "source_labels_softened_in_place": 180,
+        "original_CSV_header_columns": 177,
+        "actual_CSV_value_columns": 169,
+        "named_ANN_values_not_written": 9,
+        "original_logs_or_model_changed": false,
+        "training_repeated": false,
+        "receipt": "docs/reproducibility/lab_comparisons/V42_LOCAL_REPLAY_VERIFIED.json"
       }
     }
   },

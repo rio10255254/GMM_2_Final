@@ -104,3 +104,6 @@
 
 
 上述Lab小包現已[發布並實際取回重做](../lab_comparisons/GITHUB_REPLAY_PUBLISHED_VERIFIED.json)：4242188 bytes、21份包內檔案、原126份輸入完整相同、原四表346數值相同，舊研究位置不可讀且變動來源會被拒絕。大型影像／數值／模型保存仍按原批次持續，沒有把小包通過當成全案完成。
+
+
+另補[V41到V42的完整訓練與舊表正確讀法](../lab_comparisons/V42_HISTORY.md)。兩輪短測與120輪長訓練、第10輪EMA與同輪當下模型分開；原表177欄名／169值依原寫入程式解釋，120輪stdout的360數字核對一致，九個未寫出的ANN量不補造。已取回模型檢查中唯一不可載入項另確認為[測試用4-byte假檔](INSPECTION_EXCEPTION_REVIEWED.json)，不是實際研究模型損毀。

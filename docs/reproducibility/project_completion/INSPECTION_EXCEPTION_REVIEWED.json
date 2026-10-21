@@ -1,0 +1,14 @@
+{
+  "status": "KNOWN_NONRESEARCH_TEST_FIXTURE_CONFIRMED",
+  "exception": {
+    "path": "Thesis_MOSR_Evidence/.tmp/pytest/test_dry_run_reports_missing_d0/base.pth.tar",
+    "bytes": 4,
+    "sha256": "b5d54c39e66671c9731b9f471e585d8262cd4f54963f0c93082d8dcf334d4c78",
+    "content_is_literal_fake": true,
+    "source_test": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/tests/test_launch_r46.py"
+  },
+  "actual_batch": "MODELS_B006",
+  "GitHub_original_bytes_already_restored": true,
+  "interpretation": "Literal four-byte fake checkpoint created by dry-run path tests, not an unusable scientific model",
+  "real_training_or_model_modified": false
+}
