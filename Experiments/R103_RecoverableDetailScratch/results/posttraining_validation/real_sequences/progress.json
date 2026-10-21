@@ -1,0 +1,91 @@
+{
+  "status": "complete",
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\weights\\formal\\seed_1030053\\training_R103_scratch_seed1030053_20260815_151436\\epoch_048.pth.tar",
+  "checkpoint_sha256": "68d367aad179adc4549f86ce850338eaeb723e727fe1e4c0475ea95e5938d5ff",
+  "checkpoint_epoch": 48,
+  "formal_run_id": "training_R103_scratch_seed1030053_20260815_151436",
+  "frames": 301,
+  "motion_measurements": 6672,
+  "all_sequences_pass": true,
+  "sequence_decisions": [
+    {
+      "sequence": "5x_0p5um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "5x_1um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "50x_0p5um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "50x_1um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    }
+  ],
+  "elapsed_seconds": 507.8871993999928
+}

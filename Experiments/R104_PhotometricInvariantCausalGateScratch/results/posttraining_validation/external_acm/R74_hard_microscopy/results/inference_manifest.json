@@ -1,0 +1,25 @@
+{
+  "suite": "R74_hard_microscopy",
+  "methods": [
+    "Raw",
+    "R104E48"
+  ],
+  "output_dirs": {
+    "Raw": {
+      "low_contrast": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_low_contrast",
+      "uneven_illumination": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_uneven_illumination",
+      "asymmetric_blur_halo": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_asymmetric_blur_halo",
+      "boundary_fade": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_boundary_fade",
+      "mixed_hard": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_mixed_hard"
+    },
+    "R104E48": {
+      "low_contrast": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R104E48\\stage_r74_low_contrast",
+      "uneven_illumination": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R104E48\\stage_r74_uneven_illumination",
+      "asymmetric_blur_halo": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R104E48\\stage_r74_asymmetric_blur_halo",
+      "boundary_fade": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R104E48\\stage_r74_boundary_fade",
+      "mixed_hard": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R104E48\\stage_r74_mixed_hard"
+    }
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\weights\\formal\\seed_1040059\\training_R104_scratch_seed1040059_20260815_222803\\epoch_048.pth.tar",
+  "checkpoint_sha256": "6df1c02ee74c453dd650b516f28682442ac5b1451d37e7027610b91332f53b81"
+}

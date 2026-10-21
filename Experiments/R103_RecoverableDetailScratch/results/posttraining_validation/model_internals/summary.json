@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "checkpoint_epoch": 48,
+  "branch_median": {
+    "low_mean_signed": 0.0009586068044882268,
+    "contour_mean_signed": 0.0001684743801888544,
+    "texture_mean_signed": 0.00012552141015476082,
+    "low_mean_abs": 0.01107110921293497,
+    "contour_mean_abs": 0.007720033172518015,
+    "texture_mean_abs": 0.0041898093186318874,
+    "total_mean_signed": 0.0012029762146994472,
+    "total_mean_abs": 0.01833244599401951,
+    "cancellation_fraction": 0.2126705186274651,
+    "contour_confidence_mean": 0.2155054286122322,
+    "contour_confidence_std": 0.30062222480773926,
+    "texture_confidence_mean": 0.43992000818252563,
+    "texture_confidence_std": 0.15216853469610214,
+    "low_clip_fraction": 0.0,
+    "high_clip_fraction": 0.0002422332763671875
+  },
+  "translation_mean_abs_median": 4.05316586693516e-05,
+  "translation_mean_abs_max": 0.0027452504727989435,
+  "tile_mean_abs_median": 0.0,
+  "tile_mean_abs_max": 0.0,
+  "tile_max_abs_max": 0.0
+}

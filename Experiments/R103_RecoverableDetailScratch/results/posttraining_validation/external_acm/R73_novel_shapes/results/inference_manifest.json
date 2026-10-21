@@ -1,0 +1,25 @@
+{
+  "suite": "R73_novel_shapes",
+  "methods": [
+    "Raw",
+    "R103E48"
+  ],
+  "output_dirs": {
+    "Raw": {
+      "fourier_lobed": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_fourier_lobed",
+      "deep_notches": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_deep_notches",
+      "thin_necks": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_thin_necks",
+      "crescent_bodies": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_crescent_bodies",
+      "rough_boundaries": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_rough_boundaries"
+    },
+    "R103E48": {
+      "fourier_lobed": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R103E48\\stage_r73_fourier_lobed",
+      "deep_notches": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R103E48\\stage_r73_deep_notches",
+      "thin_necks": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R103E48\\stage_r73_thin_necks",
+      "crescent_bodies": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R103E48\\stage_r73_crescent_bodies",
+      "rough_boundaries": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R103E48\\stage_r73_rough_boundaries"
+    }
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\weights\\formal\\seed_1030053\\training_R103_scratch_seed1030053_20260815_151436\\epoch_048.pth.tar",
+  "checkpoint_sha256": "68d367aad179adc4549f86ce850338eaeb723e727fe1e4c0475ea95e5938d5ff"
+}

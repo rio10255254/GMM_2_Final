@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "image": "20x_mixed_raw",
+      "shape": [
+        512,
+        512
+      ],
+      "max_abs_float_difference": 0.0,
+      "mean_abs_float_difference": 0.0
+    },
+    {
+      "image": "50x_array_raw",
+      "shape": [
+        512,
+        512
+      ],
+      "max_abs_float_difference": 0.0,
+      "mean_abs_float_difference": 0.0
+    },
+    {
+      "image": "5x_dense_raw",
+      "shape": [
+        512,
+        512
+      ],
+      "max_abs_float_difference": 0.0,
+      "mean_abs_float_difference": 0.0
+    },
+    {
+      "image": "pillar_center9_50x_raw",
+      "shape": [
+        232,
+        232
+      ],
+      "max_abs_float_difference": 0.0,
+      "mean_abs_float_difference": 0.0
+    },
+    {
+      "image": "large_real_1024_crop",
+      "shape": [
+        1024,
+        1024
+      ],
+      "max_abs_float_difference": 1.7881393432617188e-07,
+      "mean_abs_float_difference": 1.758166945364792e-10
+    }
+  ]
+}

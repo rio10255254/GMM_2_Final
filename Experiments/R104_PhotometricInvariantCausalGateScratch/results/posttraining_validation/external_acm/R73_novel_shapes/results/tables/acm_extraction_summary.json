@@ -1,0 +1,29 @@
+{
+  "experiment_id": "R104_R73_novel_shapes",
+  "status": "complete",
+  "image_count": 100,
+  "family_count": 5,
+  "methods": [
+    "Raw",
+    "R104E48"
+  ],
+  "image_shape": [
+    512,
+    512
+  ],
+  "primary_iterations": 100,
+  "primary_smooth_factor": 1,
+  "initialization_mode": "automatic_otsu",
+  "initialization_uses_truth_shape": false,
+  "primary_truth": "exact generator geometry mask",
+  "primary_alignment": "translation_only",
+  "secondary_alignment": "fixed_pixel_coordinates",
+  "scale_fitting": false,
+  "rotation_fitting": false,
+  "primary_row_count": 400,
+  "truth_qa_row_count": 100,
+  "sensitivity_row_count": 90,
+  "primary_failure_rows": 0,
+  "sensitivity_failure_rows": 0,
+  "generated_at": "2026-08-16T04:08:50+08:00"
+}

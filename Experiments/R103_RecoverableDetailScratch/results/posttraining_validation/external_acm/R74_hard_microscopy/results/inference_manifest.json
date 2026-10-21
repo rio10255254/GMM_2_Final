@@ -1,0 +1,25 @@
+{
+  "suite": "R74_hard_microscopy",
+  "methods": [
+    "Raw",
+    "R103E48"
+  ],
+  "output_dirs": {
+    "Raw": {
+      "low_contrast": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_low_contrast",
+      "uneven_illumination": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_uneven_illumination",
+      "asymmetric_blur_halo": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_asymmetric_blur_halo",
+      "boundary_fade": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_boundary_fade",
+      "mixed_hard": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val\\src\\stage_r74_mixed_hard"
+    },
+    "R103E48": {
+      "low_contrast": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R103E48\\stage_r74_low_contrast",
+      "uneven_illumination": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R103E48\\stage_r74_uneven_illumination",
+      "asymmetric_blur_halo": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R103E48\\stage_r74_asymmetric_blur_halo",
+      "boundary_fade": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R103E48\\stage_r74_boundary_fade",
+      "mixed_hard": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\results\\posttraining_validation\\external_acm\\R74_hard_microscopy\\reconstructions\\R103E48\\stage_r74_mixed_hard"
+    }
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R103_RecoverableDetailScratch\\weights\\formal\\seed_1030053\\training_R103_scratch_seed1030053_20260815_151436\\epoch_048.pth.tar",
+  "checkpoint_sha256": "68d367aad179adc4549f86ce850338eaeb723e727fe1e4c0475ea95e5938d5ff"
+}

@@ -4850,6 +4850,20 @@
         "Git_history_rewritten": false,
         "scientific_adoption_changed": false,
         "all_round_selection_complete": false
+      },
+      "failure_lineage_small_records_20261021": {
+        "guide": "docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md",
+        "original_posttraining_records": 130,
+        "new_ordinary_source_records": 126,
+        "new_original_record_bytes": 15686868,
+        "new_image_or_weight_bytes": 0,
+        "three_exact_existing_model_references": true,
+        "R103_R104_same_301_input_sources_confirmed": true,
+        "R104_original_48_epoch_posttraining_records_override_earlier_README_progress_text": true,
+        "R103_exposure18_and_R104_SEM_regression_retained": true,
+        "scientific_adoption_changed": false,
+        "retraining_or_new_model_inference": false,
+        "full_project_complete": false
       }
     }
   },
