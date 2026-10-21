@@ -1,0 +1,144 @@
+{
+  "status": "PASS_SOURCE_RECORD_RECONCILIATION_NOT_RETRAINING",
+  "rounds": [
+    {
+      "round": 91,
+      "original_summary_status": "complete",
+      "unchanged_progress_status": "active",
+      "completed_epoch": 60,
+      "raw_CSV_rows": 60,
+      "all_epochs_unique_and_contiguous": true,
+      "last_epoch_model_paths_in_content_verified_inventory": [
+        {
+          "path": "Experiments/R91_DetailDecoupledScratch/weights/formal/seed_910041/R91_scratch_seed910041_20260811_180203/weights/epoch_060.pth.tar",
+          "source": "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\weights\\formal\\seed_910041\\R91_scratch_seed910041_20260811_180203\\weights\\epoch_060.pth.tar",
+          "bytes": 19183682,
+          "sha256": "78de82c65f9460fe72e4b96bff259c9a775fca71a64a3a0da533c6a53555a930"
+        },
+        {
+          "path": "Experiments/R91_DetailDecoupledScratch/weights/formal/seed_910041/R91_scratch_seed910041_20260811_180203/weights/epoch_060.pth.tar",
+          "source": "H:\\GMM_2_Final_Archive\\experiments\\R91_DetailDecoupledScratch\\20260925_full_history\\weights\\formal\\seed_910041\\R91_scratch_seed910041_20260811_180203\\weights\\epoch_060.pth.tar",
+          "bytes": 19183682,
+          "sha256": "78de82c65f9460fe72e4b96bff259c9a775fca71a64a3a0da533c6a53555a930"
+        }
+      ],
+      "dataset_content_sha256": "bcce2a7b3e4b4c87db2ae396d8786dbd51607208d8ab2efa55accf37f3f2d988",
+      "finished_at": "2026-08-11T23:28:00.766039",
+      "inputs": [
+        {
+          "path": "Experiments/R91_DetailDecoupledScratch/runs/training_R91_scratch_seed910041_20260811_180203/run_summary.json",
+          "sha256": "13535882a87f5c0230db7fc291c3868289609a2ecc7e504a8586e7f0b1d0fc0d"
+        },
+        {
+          "path": "Experiments/R91_DetailDecoupledScratch/runs/training_R91_scratch_seed910041_20260811_180203/run_progress.json",
+          "sha256": "b7c5b4b502d827560373621318c3e29d53b846120ae77b15d0c089991b5fd167"
+        },
+        {
+          "path": "Experiments/R91_DetailDecoupledScratch/runs/training_R91_scratch_seed910041_20260811_180203/training_log.csv",
+          "sha256": "3cf72c3e0900267848539db2063d216fd5a8b210ebacaa359e2a1ec4ca8fece0"
+        }
+      ],
+      "last_epoch_recorded_validation_fields_match_summary": {
+        "val_reference_score": 5.35068351010518,
+        "val_worst_domain": 7.538483628216849,
+        "val_mean_domain": 2.0689833329376794,
+        "val_tile_gray": 0.0,
+        "val_cross_observation_gray": 2.2794861881803645,
+        "val_low_branch_leakage_gray": 1.2675460956099265,
+        "val_identity_gray": 4.728666158020497,
+        "val_topology_mismatch": 297,
+        "val_added_topology_failures": 33,
+        "val_motion_mae": 0.15657145182291668,
+        "val_motion_p95": 0.46624679565429666,
+        "val_motion_regression_to_raw": -0.11311874389648438,
+        "val_motion_bias_x": -0.046374003092447914,
+        "val_motion_bias_y": -0.021558125813802082
+      },
+      "original_flags_match": true,
+      "original_diagnostic_flags": [
+        "identity_mean_abs_gray",
+        "raw_clear_added_topology_failures",
+        "motion_mae_px",
+        "motion_p95_px",
+        "cross_observation_contour_gray",
+        "low_branch_edge_leakage_gray"
+      ],
+      "fixed_clear_guard_pixel_ratio": 4.482137017763562,
+      "fixed_clear_guard_texture_ratio": 7.538483628216849
+    },
+    {
+      "round": 92,
+      "original_summary_status": "complete",
+      "unchanged_progress_status": "active",
+      "completed_epoch": 80,
+      "raw_CSV_rows": 80,
+      "all_epochs_unique_and_contiguous": true,
+      "last_epoch_model_paths_in_content_verified_inventory": [
+        {
+          "path": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_080.pth.tar",
+          "source": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_080.pth.tar",
+          "bytes": 19184706,
+          "sha256": "601ad1e9f5a433dd5ae4e9d07fe5637e36effb2b02e2519614fffc39542b6b12"
+        },
+        {
+          "path": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_080.pth.tar",
+          "source": "H:\\GMM_2_Final_Archive\\experiments\\R92_PhysicalTransitionBalancedScratch\\20260925_full_history\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_080.pth.tar",
+          "bytes": 19184706,
+          "sha256": "601ad1e9f5a433dd5ae4e9d07fe5637e36effb2b02e2519614fffc39542b6b12"
+        }
+      ],
+      "dataset_content_sha256": "260ccc5b4e31727e7fc97082b831717aa4c06d9f429ef98a5ce1210cb49bf5d5",
+      "finished_at": "2026-08-12T05:53:24.736385",
+      "inputs": [
+        {
+          "path": "Experiments/R92_PhysicalTransitionBalancedScratch/runs/training_R92_scratch_seed920041_20260812_015138/run_summary.json",
+          "sha256": "6e8a42be5d88bb4dbeeea4da34b36d1d806a3af63f1cc6c156731f3c0cd13403"
+        },
+        {
+          "path": "Experiments/R92_PhysicalTransitionBalancedScratch/runs/training_R92_scratch_seed920041_20260812_015138/run_progress.json",
+          "sha256": "b0cbbce6d426e84c0e4b87eb2d268ae189edde8df7608e3e3cf346eedb600fb8"
+        },
+        {
+          "path": "Experiments/R92_PhysicalTransitionBalancedScratch/runs/training_R92_scratch_seed920041_20260812_015138/training_log.csv",
+          "sha256": "6a178caea283ccf0b1f4fa91571b63d109b8bf1ba00000b06bd08b2889e8cb94"
+        }
+      ],
+      "last_epoch_recorded_validation_fields_match_summary": {
+        "val_reference_score": 0.8999743375742952,
+        "val_worst_domain": 0.9935073193309228,
+        "val_mean_domain": 0.7596748649393538,
+        "val_tile_gray": 0.0,
+        "val_cross_observation_gray": 1.6111311839065618,
+        "val_low_branch_leakage_gray": 0.015669314444029955,
+        "val_identity_gray": 2.688875258713961,
+        "val_topology_mismatch": 401,
+        "val_added_topology_failures": 7,
+        "val_motion_mae": 0.2865655081612723,
+        "val_motion_p95": 1.1064659118652338,
+        "val_motion_regression_to_raw": -0.15905788966587614,
+        "val_motion_bias_x": -0.040957132975260414,
+        "val_motion_bias_y": -0.09557596842447917,
+        "val_raw_geometry_regression": 0.0005554942902539855,
+        "val_low_branch_geometry_regression": 8.339064134266905e-05,
+        "val_exposure_worst_path_ratio": 0.4644970969485896,
+        "val_clear_texture_gray": 2.467955088801682,
+        "val_degraded_texture_ratio": 0.667730542631409,
+        "val_transition_profile": 0.16656681458695216
+      },
+      "original_flags_match": true,
+      "original_diagnostic_flags": [
+        "identity_mean_abs_gray",
+        "clear_texture_change_gray",
+        "physical_transition_profile_error",
+        "raw_clear_added_topology_failures",
+        "motion_mae_px",
+        "motion_p95_px",
+        "cross_observation_contour_gray",
+        "signed_motion_bias"
+      ],
+      "fixed_clear_guard_pixel_ratio": 2.959113466968066,
+      "fixed_clear_guard_texture_ratio": 7.678571317969056
+    }
+  ],
+  "original_files_modified": false
+}

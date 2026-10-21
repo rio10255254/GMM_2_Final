@@ -33,8 +33,9 @@ This folder implements a full workflow for describing aberrations with Zernike p
 PSF_Fitting/
 │
 ├── README.md                           ← 本文件
+├── run_psf_fitting_manual.m            ← ★ 手動擬合 PSF 的乾淨入口
 ├── HDR_fitting_2D.m                    ← 主程式 A：單張影像 PSF 擬合
-├── HDR_fitting_2D_WholeFOV.m           ← 主程式 B：全 FOV 批次 PSF 擬合（正式入口）
+├── HDR_fitting_2D_WholeFOV.m           ← 全 FOV 擬合相容入口（呼叫手動入口）
 ├── HDR_fitting_2D_WholeFOV_impl.m      ← 正式實作核心（供主程式 B 呼叫）
 ├── legacy/
 │   └── HDR_fitting_2D_WholeFOV_legacy_pre_prealign_fix_20260325.m
@@ -77,6 +78,14 @@ PSF_Fitting/
 │   ├── run_report_analysis.py
 │   └── outputs/
 │
+├── PSF_Fitting_Tutorial/               ← 可打包、可從頭跑的 PSF 流程教材
+│   ├── README_TW.md
+│   ├── PSF_full_workflow_tutorial_tw.ipynb
+│   ├── run_tutorial_smoke.py
+│   ├── data/
+│   ├── scripts/
+│   └── outputs/
+│
 ├── PSF_Fitting_ValidationLab/          ← Whole-FOV 修正驗證與歷史比較
 │   ├── README_TW.md
 │   ├── run_validation_lab.ps1
@@ -92,10 +101,12 @@ PSF_Fitting/
     └── artifacts/
 ```
 
-- `HDR_fitting_2D.m`：單張影像 PSF 擬合主程式。
+- `run_psf_fitting_manual.m`：目前日常手動擬合 PSF 的主要入口；它會自行設定路徑、檢查必要輸入，並呼叫正式 Whole-FOV 擬合核心。
+  `run_psf_fitting_manual.m`: Clean manual entry point for daily formal Whole-FOV PSF fitting.
+- `HDR_fitting_2D.m`：單張影像 PSF 擬合主程式，保留作為舊的單張流程。
   `HDR_fitting_2D.m`: Main entry point for single-image PSF fitting.
-- `HDR_fitting_2D_WholeFOV.m`：全 FOV 批次 PSF 擬合正式入口，現已採用 refined pre-alignment 的合理版主流程。
-  `HDR_fitting_2D_WholeFOV.m`: Formal entry point for full-FOV batch PSF fitting, now promoted to the refined pre-alignment main workflow.
+- `HDR_fitting_2D_WholeFOV.m`：保留在原位置的相容腳本；現在只負責呼叫 `run_psf_fitting_manual.m` 做 PSF 擬合。
+  `HDR_fitting_2D_WholeFOV.m`: Compatibility script that calls the clean manual entry point.
 - `HDR_fitting_2D_WholeFOV_impl.m`：目前正式版核心實作，維持原輸出格式與資料夾結構。
   `HDR_fitting_2D_WholeFOV_impl.m`: Current formal implementation that preserves the legacy output contract.
 - `legacy/HDR_fitting_2D_WholeFOV_legacy_pre_prealign_fix_20260325.m`：導入 pre-alignment 修正前的舊版 Whole-FOV 主程式封存。
@@ -110,6 +121,8 @@ PSF_Fitting/
   `Deconvolution/`: Wiener deconvolution validation assets and outputs.
 - `PSF_Report_Helper/`：用既有 Whole-FOV 輸出生成報告圖表、表格與繁中草稿。
   `PSF_Report_Helper/`: Report-oriented helper that converts existing Whole-FOV outputs into figures, tables, and Traditional Chinese drafts.
+- `PSF_Fitting_Tutorial/`：可打包、可從頭跑的繁中 notebook 教材，內含小型真實範例資料、GT 與 PSF 基底。
+  `PSF_Fitting_Tutorial/`: Self-contained Traditional Chinese notebook tutorial with packaged sample data, GT, and initial PSF.
 - `PSF_Fitting_ValidationLab/`：Whole-FOV 修正驗證、比較與歷史依據。
   `PSF_Fitting_ValidationLab/`: Validation and historical experiment area for the Whole-FOV fitting fix.
 - `tests/`：本專案自有的 MATLAB / Python 測試與最小 smoke artifacts。
@@ -121,25 +134,24 @@ PSF_Fitting/
 
 ### 1. MATLAB Current Folder / MATLAB Current Folder
 
-**執行任何程式前，必須將 MATLAB Current Folder 設為本資料夾：**
+若使用主要手動入口 `run_psf_fitting_manual.m`，不需要永久改 MATLAB Path；入口會自行加入需要的資料夾。  
+建議仍從本資料夾啟動，方便看輸出：
 
 ```
 d:\GMM_2_Final\PSF_Fitting\
 ```
 
-所有程式中的路徑均為相對此目錄的相對路徑。  
-All script paths are written relative to this directory.
+若從其他資料夾呼叫 `run_psf_fitting_manual.m`，相對輸出路徑仍會以本資料夾為基準，不會寫到目前工作資料夾底下。
 
 ### 2. 加入 MATLAB Path / Add MATLAB Path
 
-`normlz.m` 位於 `SimulatePSF/` 子資料夾，需加入 Path 才能被主程式呼叫：
+手動入口會自動加入 `SimulatePSF/`、ValidationLab scripts 與 BADS 路徑。若你直接跑舊的單張腳本，才需要手動加入：
 
 ```matlab
 addpath(fullfile(pwd, 'SimulatePSF'));
 ```
 
-建議在 MATLAB **Home → Set Path → Add Folder** 永久加入，避免每次重新執行。  
-It is recommended to add this folder permanently through **Home → Set Path → Add Folder** so you do not need to repeat it each run.
+不建議再靠永久 Path 來跑正式 Whole-FOV 流程；直接用 `run_psf_fitting_manual.m` 比較乾淨。
 
 ### 3. 必要工具箱與套件 / Required Toolboxes and Packages
 
@@ -152,11 +164,9 @@ It is recommended to add this folder permanently through **Home → Set Path →
 開始前請先確認：  
 Before you start, confirm the following:
 
-1. MATLAB current folder is set to `d:\GMM_2_Final\PSF_Fitting\`  
-   MATLAB 的 current folder 已設成 `d:\GMM_2_Final\PSF_Fitting\`
-2. `SimulatePSF/` is added to the MATLAB path so `normlz.m` can be resolved  
-   `SimulatePSF/` 已加入 MATLAB path，讓 `normlz.m` 能被找到
-3. Required toolboxes / packages are installed  
+1. `SimulatePSF/psf_multi.mat` 已存在，作為擬合起點
+2. `Crop_circle_FreqFiltered/` 內有 100 張 `VisionTop_*.bmp` 與 `GT/GT_901_with_Block_proc.bmp`
+3. Required toolboxes / packages are installed
    必要工具箱與套件已安裝
    - BADS
    - Image Processing Toolbox
@@ -252,7 +262,9 @@ This path fits one image at a time and writes one fitted PSF `.mat` file, such a
 
 ### 階段 2B：全 FOV 批次 PSF 擬合（推薦） / Stage 2B: Whole-FOV Batch Fitting (Recommended)
 
-**程式：** `HDR_fitting_2D_WholeFOV.m`（Section 1）
+**主要手動入口：** `run_psf_fitting_manual.m`
+
+`HDR_fitting_2D_WholeFOV.m` 仍保留在原本位置，但現在只是相容入口；正式日常手動使用請優先呼叫 `run_psf_fitting_manual.m`。
 
 **輸入：**
 
@@ -262,7 +274,24 @@ This path fits one image at a time and writes one fitted PSF `.mat` file, such a
 | 批次影像（100 張） | `Crop_circle_FreqFiltered/VisionTop_*.bmp` |
 | Ground Truth | `Crop_circle_FreqFiltered/GT/GT_901_with_Block_proc.bmp` |
 
-**執行方式：** 在 MATLAB 直接 `Run`，程式自動依序處理全部 100 張影像。
+**執行方式：** 在 MATLAB 或 `matlab -batch` 執行：
+
+```matlab
+summary = run_psf_fitting_manual();
+```
+
+這會處理完整 10×10 FOV，並寫到 `Crop_circle_FreqFiltered/Fits/`。
+
+若只想先做一張 CPU smoke check，可用：
+
+```matlab
+summary = run_psf_fitting_manual( ...
+    'subset_indices', 1, ...
+    'grid_rows', 1, ...
+    'grid_cols', 1, ...
+    'use_gpu', false, ...
+    'output_root', 'tests/artifacts/manual_one_image');
+```
 
 **最佳化設定：**
 - 最佳化變數：15 個（同上）
@@ -331,9 +360,9 @@ visualize_fitted_psf_grid([], ...
 - `NormalizeEachPSF=true`：逐顆以自身峰值正規化，較容易觀察形狀差異
 - `UseLogScale=true`：可進一步壓縮動態範圍，讓弱側瓣更明顯
 
-Main script:
+Main manual entry:
 
-- `HDR_fitting_2D_WholeFOV.m`
+- `run_psf_fitting_manual.m`
 
 Inputs:
 
@@ -392,11 +421,12 @@ WholeFOV path is the more important operational workflow.
 
 ### 階段 3：Wiener 反捲積驗證
 
-位於 `HDR_fitting_2D.m` 或 `HDR_fitting_2D_WholeFOV.m` 的 **Section 2**（第二個 `%%` 之後）。可獨立執行，不依賴 Section 1 的結果（直接讀取 `Deconvolution/PSF/PSF_fitted_2D.mat`）。
+舊的反捲積檢查仍保留在單張版腳本中。正式 Whole-FOV 手動入口現在只做 PSF 擬合，不會順手跑反捲積；這樣日常手動擬合時輸出會比較乾淨。
 
 ### Whole-FOV 正式替換說明
 
-- `HDR_fitting_2D_WholeFOV.m` 已在 2026-03-25 升級為較合理的正式版流程。
+- `run_psf_fitting_manual.m` 是目前手動擬合 PSF 的主要入口。
+- `HDR_fitting_2D_WholeFOV.m` 已在 2026-03-25 升級為較合理的正式版流程，現在保留為相容腳本並呼叫手動入口。
 - 舊版主程式已封存於 `legacy/HDR_fitting_2D_WholeFOV_legacy_pre_prealign_fix_20260325.m`。
 - 正式版維持原本主要輸出：
   - `Crop_circle_FreqFiltered/Fits/batch_results.csv`
@@ -431,6 +461,23 @@ WholeFOV path is the more important operational workflow.
 - `tests/artifacts/` 保留 smoke tests 產生的最小輸出樣本，避免散落到主流程資料夾。
 - 第三方套件 `bads-1.1.3/` 內建測試不屬於本專案整理範圍，維持原位。
 - 測試執行方式詳見 `tests/README_TW.md`。
+
+### 可打包教材
+
+- `PSF_Fitting_Tutorial/` 提供一份可丟給別人的 notebook 型教材，形式類似課堂 tutorial：一段說明、一段可執行程式、一段圖像結果。
+- 教材自帶 5 張真實範例影像、GT 與初始 PSF，預設不依賴本機正式輸出。
+- 教材會從資料讀取、預先對齊、PSF 擬合、結果視覺化一路跑到反捲積示範。
+- 建議先執行：
+
+```powershell
+python .\PSF_Fitting_Tutorial\run_tutorial_smoke.py
+```
+
+- 再用 Jupyter 開啟：
+
+```powershell
+jupyter notebook .\PSF_Fitting_Tutorial\PSF_full_workflow_tutorial_tw.ipynb
+```
 
 **輸入：**
 
@@ -515,6 +562,7 @@ These are usually environment or path issues rather than fitting-logic issues.
 |------|------|
 | 2025-09-24 | 單張版 (`HDR_fitting_2D.m`) 完成 2D 化 |
 | 2026-03-25 | Whole-FOV 正式主線升級為 refined pre-alignment 版，舊版封存至 `legacy/`，正式輸出維持相容格式 |
+| 2026-04-30 | 更新 `PSF_Fitting_Tutorial/` 為可打包、可從頭跑的 PSF 全流程 notebook 教材 |
 | 2025-10 | WholeFOV 批次版加入 Warm-start、Precompute 優化、Tilt 鎖定 |
 | 2026-03-04 | 路徑全面改為相對路徑，整合至 `d:\GMM_2_Final\PSF_Fitting\`；新增本說明文件 |
 

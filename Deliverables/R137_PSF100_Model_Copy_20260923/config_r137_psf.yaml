@@ -1,0 +1,33 @@
+{
+  "model_name": "R137-PSF100-InferenceCopy",
+  "source_model": "R137-WeakPSF",
+  "status": "awaiting_user_100_PSF_data_not_retrained",
+  "model": {
+    "channels": 64,
+    "dilations": [
+      1,
+      2,
+      4,
+      2
+    ],
+    "iterations": 4,
+    "eta_max": 0.25,
+    "eta_initial": 0.05,
+    "r_max": 0.35,
+    "optical_mode": "feature_single",
+    "checkpoint_blocks": true,
+    "optical_gain": 0.02,
+    "optical_reg": 0.0565,
+    "psf_bank": "calibration/psf_100.npz",
+    "psf_count": 100
+  },
+  "precision": "FP32",
+  "tf32": false,
+  "inference": {
+    "mode": "full",
+    "tile_core": 512,
+    "halo": 96,
+    "feather_blending": false,
+    "global_raw_retention": false
+  }
+}

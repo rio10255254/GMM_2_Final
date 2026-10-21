@@ -1,0 +1,56 @@
+{
+  "experiment_id": "R106A_MultiObservationShortValidation",
+  "created_date": "2026-08-24",
+  "status": "complete_short_gate_failed",
+  "not_a_formal_model_round": true,
+  "final_decision": {
+    "synthetic_gate_passed": false,
+    "junhua_gate_passed": false,
+    "full_r106_authorized": false,
+    "reason": "N2 reduced held-out boundary and image errors, but N4 did not continue improving contour or transition center even on clean bundles. Soft compatibility weights reduced but did not eliminate bad or mismatched observations. Exposure and leave-one-out uncertainty were not coherent. Real JunHua N4 remained geometrically safe and used the extra frames, but wrong bundles still changed the output too much."
+  },
+  "source_isolation": {
+    "checkpoint_loading_allowed": false,
+    "teacher_allowed": false,
+    "real_pixels_in_training": false,
+    "sem_or_junhua_structure_in_training": false,
+    "real_aggregate_statistics_allowed": true
+  },
+  "data": {
+    "image_size": 96,
+    "supersample": 4,
+    "observations": 4,
+    "train_samples": 640,
+    "validation_samples": 96,
+    "test_samples": 144,
+    "train_shape_families": ["circle", "ellipse", "rectangle", "polygon", "ring"],
+    "heldout_shape_families": ["crescent", "lobed", "thin_neck"],
+    "identity_fraction": 0.12,
+    "bad_bundle_fraction": 0.24,
+    "junhua_cross_shift_px": [-0.083, -7.886],
+    "junhua_within_pair_shift_median_px": 0.091,
+    "junhua_single_noise_std_gray": 0.631,
+    "junhua_pair_gain_median": 0.98594
+  },
+  "model": {
+    "base_channels": 24,
+    "residual_bound": 0.30,
+    "normalization": "none",
+    "global_pooling": false,
+    "global_fft": false,
+    "output_anchor": "first_reference_frame"
+  },
+  "training": {
+    "seed": 1060001,
+    "steps": 1500,
+    "batch_size": 12,
+    "learning_rate": 0.0008,
+    "weight_decay": 0.00005,
+    "precision": "float32",
+    "log_every": 100,
+    "observation_schedule": [1, 2, 4]
+  },
+  "decision": {
+    "full_r106_requires": "N2 must improve N1 and N4 must improve N2 on held-out geometry; mismatched observations must fall back near N1; motion, exposure, tile and reference-coordinate behavior must remain coherent; JunHua real N4 must be geometrically safe and materially use the extra observation."
+  }
+}

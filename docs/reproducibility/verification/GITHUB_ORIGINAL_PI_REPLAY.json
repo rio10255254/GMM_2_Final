@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "command": [
+    "C:\\Users\\Rio\\anaconda3\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\downloaded_from_github\\dataset_kit\\Tools\\restore_pi_acquisition.py",
+    "--archive",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\downloaded_from_github\\dataset_assets_direct\\20260902_100MF_uncertainty.zip",
+    "--plan",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\downloaded_from_github\\dataset_assets_direct\\original_frozen_capture_plan.json",
+    "--output",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\github_pi_replayed"
+  ],
+  "blocked_original_roots": [
+    "D:\\GMM_2_Final",
+    "H:\\GMM_2_Final_Archive"
+  ],
+  "allowed_copied_roots": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\downloaded_from_github\\dataset_kit",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\downloaded_from_github\\dataset_assets_direct",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261016_github_reproduction\\isolated_validation\\github_pi_replayed"
+  ],
+  "python_workers_inherit_guard": true,
+  "seconds": 30.987601041793823
+}

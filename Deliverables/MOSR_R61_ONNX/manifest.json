@@ -1,0 +1,82 @@
+{
+  "name": "MOSR R61",
+  "version": "1.1",
+  "format": "ONNX",
+  "opset": 17,
+  "source_checkpoint_sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
+  "mode": "locked measurement reconstruction",
+  "input": {
+    "image": "8-bit grayscale or color",
+    "minimum_size": [
+      101,
+      101
+    ]
+  },
+  "output": {
+    "image": "8-bit grayscale BMP",
+    "same_size_as_input": true
+  },
+  "defaults": {
+    "processing": "full image",
+    "tile_size": 0,
+    "large_image_tile_size": 640,
+    "large_image_halo": 192,
+    "tile_batch": 1
+  },
+  "validation": {
+    "onnx_structure": "pass",
+    "example_execution": "pass",
+    "cpu_reference_max_pixel_difference": 1,
+    "cpu_reference_mean_pixel_difference": 0.28338906325446644,
+    "cpu_reference_correlation": 0.9998677553145803,
+    "tested_full_image_size": [
+      2180,
+      1520
+    ],
+    "tiling_upgrade": {
+      "method": "phase-aligned reflected halo with core-only stitching",
+      "whole_frame_reference_frames": 3,
+      "maximum_mean_pixel_difference": 0.6810806977305649,
+      "maximum_pixel_difference": 11,
+      "maximum_p95_pixel_difference": 2,
+      "maximum_seam_to_interior_error_ratio": 1.0264373191245086,
+      "tile_batch_1_vs_2": "exact",
+      "tested_large_image_size": [
+        5120,
+        5120
+      ],
+      "large_image_execution": "pass",
+      "note": "R61 contains spatial GroupNorm and FFT optics, so tiled and whole-frame outputs are not claimed to be bit-exact."
+    }
+  },
+  "files": {
+    "model.onnx": {
+      "bytes": 16151146,
+      "sha256": "7baf6fda38a843deff0fb840a3821d44f09a69b1485b2a263281c5096f3f31d8"
+    },
+    "optics.npz": {
+      "bytes": 38032,
+      "sha256": "4249803fe7c0c8d5cab693fd41f3ca193933e759b292dc87b9ddbf5cb00186a7"
+    },
+    "run.py": {
+      "bytes": 10555,
+      "sha256": "ccc8bc58002593e9a881f18256b83d2f97188014e6d98d37570ed9b07c6125b6"
+    },
+    "requirements.txt": {
+      "bytes": 73,
+      "sha256": "05fdfe5ad254c7c0fb11a7e810087e309d41ca908c1dacea863d67e81577b333"
+    },
+    "README.md": {
+      "bytes": 1663,
+      "sha256": "2c204c5d5a286a1cb20b733538023b6a98f33c4a7d9b058d8207680bc84aae1d"
+    },
+    "example/input.bmp": {
+      "bytes": 263222,
+      "sha256": "ababc002eeb25f2b648bb016dae21fdd2e51cfb43c18be0367f82c051f2aff1a"
+    },
+    "example/output.bmp": {
+      "bytes": 263222,
+      "sha256": "bf36d1dadaf58c5bcc0864953582aa00e7c1472a58f157145754380d93d332c5"
+    }
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R92_PhysicalTransitionBalancedScratch",
+  "created_date": "2026-08-11",
+  "status": "formal_80epoch_run_authorized",
+  "formal_baseline_changed": false,
+  "scientific_question": "Can corrected physical transition synthesis, balanced exposure updates, continuous Raw-geometry preservation and separate degraded-detail versus clear-input objectives recover microscopic detail while preserving contour placement, motion stability and exact tiled reconstruction?",
+  "reference_only": {
+    "model": "R90 epoch 45 and R91 root-cause evidence",
+    "purpose": "reference metrics and problem diagnosis only",
+    "checkpoint_or_teacher_use": false
+  },
+  "source_isolation": {
+    "checkpoint_loading_allowed": false,
+    "resume_allowed": false,
+    "teacher_models_allowed": false,
+    "pseudo_labels_allowed": false,
+    "sem_pixels_allowed": false,
+    "sem_structure_allowed": false,
+    "hs100mg_structure_allowed": false,
+    "real_sample_pixels_stored_as_training_pairs": false,
+    "real_sample_contours_allowed": false,
+    "allowed_real_optical_statistics": [
+      "aggregate_noise_residual_percentiles",
+      "aggregate_radial_power_spectrum",
+      "aggregate_illumination_variation",
+      "aggregate_row_and_column_pattern_amplitude"
+    ],
+    "statistics_privacy_rule": "Only anonymous aggregate scalar distributions and radial spectra are used. No crop, phase, contour, position, spacing or individual real structure is retained or reconstructable.",
+    "procedural_latent_truth_required": true
+  },
+  "architecture": {
+    "working_name": "DetailDecoupledTileNet",
+    "parameter_budget_max": 2800000,
+    "backbone_policy": "Preserve the R90 local optical bank, encoder-decoder depth, anti-aliased sampling, normalization-free design and tiled inference contract.",
+    "random_initialization_only": true,
+    "fully_convolutional": true,
+    "spatial_reduction_normalization": false,
+    "global_pooling": false,
+    "global_fft_or_wiener": false,
+    "normalization_layers": "none",
+    "downsampling": "fixed_lowpass_then_stride2_convolution",
+    "upsampling": "bilinear_then_fixed_depthwise_lowpass_then_convolution",
+    "alignment_multiple": 8,
+    "local_optical_bank": {
+      "enabled": true,
+      "same_as_r90": true,
+      "mixing": "local_convex_weights_only",
+      "measured_psf_allowed": false
+    },
+    "output": {
+      "base": "raw_input",
+      "direct_residual": true,
+      "binary_confidence_gate": false,
+      "low_frequency_correction_bound": 0.28,
+      "detail_correction_bound": 0.12,
+      "edge_correction_bound": 0.08,
+      "combined_correction_bound": 0.35,
+      "low_frequency_branch_is_quarter_resolution_lowpass": true,
+      "detail_branch_is_multiscale_zero_dc": true,
+      "detail_bands": ["fine", "medium"],
+      "auxiliary_geometry_head": true,
+      "adversarial_or_generative_prior": false
+    },
+    "tile_contract": {
+      "all_operations_local": true,
+      "canonical_reflect_padding_once": true,
+      "tile_origins_phase_aligned": true,
+      "same_code_path_for_full_and_tiled": true,
+      "minimum_halo_px": 192,
+      "required_core_sizes": [256, 384, 512]
+    }
+  },
+  "optical_statistics": {
+    "output": "config/optical_statistics.json",
+    "source_sets": [
+      "D:/GMM_2_Final/20260704_5x",
+      "D:/GMM_2_Final/20260704_20x",
+      "D:/GMM_2_Final/20260702_100MG_位移_50x"
+    ],
+    "store_source_pixels": false,
+    "store_patch_coordinates": false
+  },
+  "dataset": {
+    "generator_version": "r92_physical_transition_balanced_v1",
+    "master_seed": 920041,
+    "canvas_size": 1536,
+    "scene_count": 1250,
+    "observations_per_scene": 4,
+    "total_observations": 5000,
+    "label_supersample_factor": 8,
+    "geometry_downsample": "area_average",
+    "target_policy": "All procedural geometry is drawn at 8x resolution and antialiased exactly once. A monotonic asymmetric transition profile is then applied so the recorded physical geometry remains exact while its boundary intensity fraction spans a procedural distribution. Persistent latent texture is shared by four observations while nuisance noise is independent.",
+    "storage_policy": "Store one latent target and exact mask per scene plus four observations. No real sample pixels or real structures are stored.",
+    "split_unit": "scene_id_and_texture_seed",
+    "split_counts": {
+      "train_scenes": 1000,
+      "validation_scenes": 125,
+      "internal_test_scenes": 125,
+      "train_observations": 4000,
+      "validation_observations": 500,
+      "internal_test_observations": 500
+    },
+    "roles": {
+      "textured_general_geometry": {"total": 300, "train": 240, "validation": 30, "internal_test": 30},
+      "identity_and_detail_guard": {"total": 200, "train": 160, "validation": 20, "internal_test": 20},
+      "exposure_coherent_bundle": {"total": 180, "train": 144, "validation": 18, "internal_test": 18},
+      "difficult_contour": {"total": 200, "train": 160, "validation": 20, "internal_test": 20},
+      "cross_tile_and_dense": {"total": 140, "train": 112, "validation": 14, "internal_test": 14},
+      "signed_subpixel_motion": {"total": 140, "train": 112, "validation": 14, "internal_test": 14},
+      "clean_contour_anchor": {"total": 90, "train": 72, "validation": 9, "internal_test": 9}
+    },
+    "degradation_observation_quotas": {
+      "identity_and_near_identity": 800,
+      "standard_blur_and_noise": 900,
+      "defocus_and_motion_blur": 750,
+      "low_contrast_and_uneven_illumination": 1050,
+      "halo_ghost_and_banding": 500,
+      "local_boundary_fade": 550,
+      "compound_severe_but_recoverable": 450
+    },
+    "physical_transition_profile": {
+      "method": "shifted_logit_on_supersampled_coverage",
+      "boundary_intensity_fraction_range": [0.46, 0.66],
+      "development_center": 0.58,
+      "development_spread": 0.045,
+      "holdout_range": [0.42, 0.70],
+      "geometry_coverage_at_boundary": 0.50,
+      "record_per_scene": true
+    },
+    "continuous_exposure_path": {
+      "labels": ["path_0", "path_1", "path_2", "path_3"],
+      "dark_exposure_range": [0.70, 0.86],
+      "bright_exposure_range": [1.12, 1.30],
+      "dark_gamma_range": [1.10, 1.28],
+      "bright_gamma_range": [0.82, 0.96],
+      "inner_path_position_ranges": [[0.22, 0.46], [0.54, 0.78]],
+      "photometric_jitter_fraction": 0.025,
+      "minimum_exposure_span": 0.30,
+      "span_repair_target": 0.31,
+      "post_generation_span_rerender_allowed": true,
+      "maximum_bundle_fraction_requiring_span_rerender": 0.05,
+      "span_rerender_requires_original_backup_and_full_rehash": true,
+      "mid_transition_required": true,
+      "source_contrast_gray_bands": [[18, 38], [38, 62], [62, 95], [95, 155]],
+      "validation_path_bins": [
+        {"name": "dark_endpoint", "minimum_inclusive": 0.0, "maximum_exclusive": 0.10},
+        {"name": "inner_dark", "minimum_inclusive": 0.10, "maximum_exclusive": 0.50},
+        {"name": "inner_bright", "minimum_inclusive": 0.50, "maximum_exclusive": 0.90},
+        {"name": "bright_endpoint", "minimum_inclusive": 0.90, "maximum_exclusive": 1.01}
+      ],
+      "source_contrast_band_order_randomized": true,
+      "target_mix_repair_allowed": false
+    },
+    "pairing": {
+      "tile_overlap_pair_kind": 0,
+      "signed_motion_pair_kind": 1,
+      "cross_observation_pair_kind": 2,
+      "four_view_bundle_pair_kind": 3,
+      "exposure_bundle_four_view_fraction": 1.0,
+      "general_scene_cross_observation_fraction": 0.5,
+      "cross_tile_role_always_uses_tile_overlap": true,
+      "cross_observation_same_crop_required": true,
+      "exposure_path_position_returned_per_view": true,
+      "independent_noise_between_observations": true
+    },
+    "sampling": {
+      "exposure_bundle_update_share": 0.16,
+      "exposure_bundle_rotation_across_epochs": true,
+      "regular_batch_requires_motion_scene": true,
+      "regular_batch_requires_identity_scene": true,
+      "homogeneous_view_count_batches": true
+    },
+    "recoverability_contract": {
+      "model_combined_bound": 0.35,
+      "maximum_source_target_gap": 0.34,
+      "maximum_fraction_above_model_bound": 0.16,
+      "adjustment_method": "global_photometric_parameter_projection_only_without_pixelwise_source_repair",
+      "robust_gap_percentile": 90.0,
+      "maximum_final_pixelwise_clip_fraction": 0.0,
+      "minimum_global_degradation_scale": 1.0,
+      "minimum_nonidentity_contrast": 0.060,
+      "target_mix_repair_allowed": false,
+      "maximum_observation_fraction_requiring_strength_projection": 0.10,
+      "post_generation_global_photometric_projection_allowed": true,
+      "projection_method": "global_affine_source_only_no_target_pixel_mix",
+      "projection_fraction_step": 0.025,
+      "maximum_projection_fraction": 0.80,
+      "maximum_mean_absolute_projection_gray": 28.0,
+      "projection_requires_original_backup_and_full_rehash": true,
+      "post_generation_same_family_parameter_rerender_allowed": true,
+      "same_family_rerender_method": "deterministic_same_family_full_forward_rerender",
+      "maximum_observation_fraction_requiring_same_family_rerender": 0.02,
+      "maximum_same_family_rerender_attempts": 64,
+      "same_family_parameter_seed_stride": 100003,
+      "same_family_noise_seed_stride": 100019,
+      "same_family_rerender_requires_original_backup_and_full_rehash": true
+    },
+    "motion": {
+      "magnitude_bins_px": [[0.125, 0.25], [0.25, 0.5], [0.5, 1.0], [1.0, 2.0]],
+      "directions": ["positive_x", "negative_x", "positive_y", "negative_y", "positive_diagonal", "negative_diagonal"],
+      "signed_pair_required": true,
+      "zero_motion_controls_required": true,
+      "independent_noise_between_frames": true,
+      "structure_aware_crop_required": true,
+      "crop_foreground_fraction_min": 0.02,
+      "crop_foreground_fraction_max": 0.75,
+      "crop_boundary_pixels_min": 128,
+      "crop_structure_margin_px": 24
+    },
+    "holdout": {
+      "new_locked_scene_count": 256,
+      "generator_seed": 929927,
+      "different_shape_compositions": true,
+      "different_degradation_compositions": true,
+      "manifest_hash_before_training": true,
+      "unread_until_checkpoint_frozen": true
+    }
+  },
+  "training": {
+    "formal_runs_authorized": 1,
+    "planned_formal_runs": 1,
+    "epochs": 80,
+    "seed": 920041,
+    "optimizer": "AdamW",
+    "learning_rate": 0.00015,
+    "minimum_learning_rate": 0.000012,
+    "learning_rate_anchors": [
+      {"epoch": 1, "learning_rate": 0.00005},
+      {"epoch": 3, "learning_rate": 0.00015},
+      {"epoch": 30, "learning_rate": 0.00008},
+      {"epoch": 50, "learning_rate": 0.000035},
+      {"epoch": 65, "learning_rate": 0.000020},
+      {"epoch": 80, "learning_rate": 0.000012}
+    ],
+    "weight_decay": 0.0001,
+    "precision": "bfloat16",
+    "validation_precision": "float32",
+    "ema_decay": 0.995,
+    "checkpoint_every_epochs": 2,
+    "validation_every_epochs": 2,
+    "synthetic_preview_every_epochs": 2,
+    "live_real_reconstruction_every_epochs": 5,
+    "external_live_validation_before_selection": false,
+    "stages": [
+      {"epoch_start": 1, "epoch_end": 8, "patch_size": 512, "core_size": 256, "scene_batch_size": 16, "gradient_accumulation": 1, "effective_scene_batch": 16},
+      {"epoch_start": 9, "epoch_end": 80, "patch_size": 768, "core_size": 384, "scene_batch_size": 6, "gradient_accumulation": 3, "effective_scene_batch": 18}
+    ],
+    "curriculum_anchors": [
+      {"epoch": 1, "geometry_factor": 0.68, "motion_factor": 0.30, "topology_factor": 0.00, "exposure_factor": 0.18, "branch_separation_factor": 0.55, "detail_factor": 0.74},
+      {"epoch": 8, "geometry_factor": 0.90, "motion_factor": 0.58, "topology_factor": 0.28, "exposure_factor": 0.45, "branch_separation_factor": 0.82, "detail_factor": 0.90},
+      {"epoch": 24, "geometry_factor": 1.00, "motion_factor": 0.88, "topology_factor": 0.72, "exposure_factor": 0.72, "branch_separation_factor": 1.00, "detail_factor": 1.02},
+      {"epoch": 38, "geometry_factor": 1.00, "motion_factor": 1.00, "topology_factor": 0.92, "exposure_factor": 0.82, "branch_separation_factor": 1.00, "detail_factor": 1.08},
+      {"epoch": 50, "geometry_factor": 1.00, "motion_factor": 1.00, "topology_factor": 0.96, "exposure_factor": 0.80, "branch_separation_factor": 1.00, "detail_factor": 1.08},
+      {"epoch": 65, "geometry_factor": 1.00, "motion_factor": 1.00, "topology_factor": 1.00, "exposure_factor": 0.80, "branch_separation_factor": 1.00, "detail_factor": 1.08},
+      {"epoch": 80, "geometry_factor": 1.00, "motion_factor": 1.00, "topology_factor": 1.00, "exposure_factor": 0.80, "branch_separation_factor": 1.00, "detail_factor": 1.08}
+    ],
+    "adaptive_detail_controller": {
+      "enabled": false,
+      "initial_multiplier": 1.0,
+      "minimum_multiplier": 1.0,
+      "maximum_multiplier": 1.0,
+      "update_rate": 0.0,
+      "trend_smoothing": 0.65,
+      "uses_continuous_trends_only": true,
+      "binary_stop_or_gate": false
+    },
+    "geometry_preservation": {
+      "confidence_source": "continuous_raw_soft_boundary_error",
+      "confidence_temperature": 0.012,
+      "model_noninferiority_margin": 0.0005,
+      "low_branch_noninferiority_margin": 0.00025,
+      "low_branch_neutrality_mode": "boundary_noninferiority_not_zero_correction",
+      "minimum_confidence": 0.0,
+      "binary_threshold": false,
+      "applies_to_all_exact_procedural_geometry": true
+    },
+    "loss_weights": {
+      "pixel_charbonnier": 1.0,
+      "low_band_l1": 0.20,
+      "gradient": 0.14,
+      "detail_l1": 0.34,
+      "detail_correlation": 0.13,
+      "detail_energy": 0.045,
+      "signed_distance_boundary": 0.22,
+      "soft_boundary_iou": 0.11,
+      "physical_transition_profile": 0.12,
+      "signed_boundary_bias": 0.045,
+      "auxiliary_geometry": 0.10,
+      "topology": 0.02,
+      "translation_equivariance": 0.08,
+      "signed_displacement": 0.10,
+      "signed_bias": 0.03,
+      "overlap_tile_consistency": 0.05,
+      "cross_observation_consistency": 0.05,
+      "bundle_soft_tail": 0.035,
+      "low_branch_edge_leakage": 0.055,
+      "low_branch_target": 0.08,
+      "detail_branch_target": 0.12,
+      "edge_branch_target": 0.08,
+      "detail_halo": 0.08,
+      "region_relationship": 0.06,
+      "raw_geometry_preservation": 0.18,
+      "low_branch_geometry_neutrality": 0.04,
+      "identity_guard": 0.30,
+      "clear_input_guard": 0.16
+    },
+    "loss_rules": {
+      "no_binary_confidence_gate": true,
+      "raw_noninferiority_only_on_clear_inputs": false,
+      "raw_geometry_noninferiority_is_continuous": true,
+      "per_exposure_path_geometry_is_reported": true,
+      "geometry_losses_only_when_exact_geometry_truth_exists": true,
+      "topology_loss_sample_frequency": 0.25,
+      "motion_loss_only_on_structure_qualified_pairs": true,
+      "cross_observation_weighted_by_continuous_recoverability": true,
+      "four_exposure_views_jointly_supervised": true,
+      "four_exposure_views_jointly_validated": true,
+      "branch_targets_are_frequency_separated": true,
+      "physical_transition_threshold_uses_recorded_fraction": true,
+      "detail_recovery_excludes_near_identity_denominators": true,
+      "halo_suppression_is_soft": true,
+      "role_balanced_sampling": true
+    },
+    "checkpoint_selection": {
+      "source": "synthetic_validation_only",
+      "hard_metric_rejection": false,
+      "maintain_pareto_archive": true,
+      "pareto_axes": ["degraded_detail", "contour", "clear_input", "motion", "exposure", "tile"],
+      "diagnostics_are_reported_not_used_as_binary_gates": true,
+      "nearby_checkpoint_average_candidate": true,
+      "external_suites_used_for_selection": false
+    },
+    "scratch_guards": {
+      "checkpoint_argument_exists": false,
+      "resume_argument_exists": false,
+      "optimizer_reuse_allowed": false,
+      "initial_parameter_hash_required": true,
+      "pre_first_batch_source_audit_required": true,
+      "existing_formal_output_directory_policy": "fail"
+    },
+    "gpu_policy": {
+      "minimum_free_memory_before_start_gib": 10,
+      "minimum_memory_left_for_desktop_gib": 7,
+      "required_reserved_headroom_gib": 10,
+      "stop_before_shared_gpu_memory": true
+    }
+  },
+  "evaluation": {
+    "canonical_acm_pipeline": "R74_R80_locked_ACM_with_three_smoothing_settings",
+    "acm_alignment": "translation_only_no_scale_no_rotation",
+    "raw_comparator_required": true,
+    "checkpoint_selection_is_continuous_and_predeclared": true,
+    "inference_contract": {
+      "primary_precision": "float32",
+      "primary_tile_batch": 1,
+      "bfloat16_opt_in_diagnostic_only": true,
+      "manifest_records_precision_and_tile_batch": true
+    },
+    "report_per_scene_and_per_family": true,
+    "required_domains": [
+      "new_synthetic_holdout",
+      "SEM_36_physical_pillars",
+      "real_5x_20x_50x_301_frames",
+      "known_subpixel_motion",
+      "full_vs_tiled_consistency",
+      "external_GMF_when_license_available"
+    ]
+  }
+}

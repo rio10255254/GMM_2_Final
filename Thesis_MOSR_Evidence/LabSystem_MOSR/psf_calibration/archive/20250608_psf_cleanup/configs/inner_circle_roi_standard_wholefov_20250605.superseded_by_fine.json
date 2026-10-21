@@ -1,0 +1,56 @@
+{
+  "run_id": "20250605_inner_circle_roi_standard_fit",
+  "method": "project_standard_wholefov_zernike_bads",
+  "status": "validated_ready_for_lab_data_generation",
+  "source_image_date": "2026-06-05",
+  "hardware_config": "LabSystem_MOSR/psf_calibration/configs/lab_optical_setup_20250605.json",
+  "camera_model": "Basler acA2040-120um",
+  "camera_pixel_size_um": 3.45,
+  "objective_magnification": 20,
+  "effective_pixel_size_um": 0.1725,
+  "target_feature": "CHART-009 phi 0.1 mm inner white disk",
+  "target_diameter_um": 100.0,
+  "target_diameter_px": 579.7101449275361,
+  "measurement_input_dir": "LabSystem_MOSR/psf_calibration/inputs/20250605_inner_circle_roi/measured",
+  "measurement_image_count": 25,
+  "measurement_grid_rows": 5,
+  "measurement_grid_cols": 5,
+  "gt_path": "LabSystem_MOSR/psf_calibration/inputs/20250605_inner_circle_roi/GT/LAB_INNER_CIRCLE_GT_901.bmp",
+  "roi_manifest": "LabSystem_MOSR/psf_calibration/inputs/20250605_inner_circle_roi/MANIFEST.json",
+  "overlay_contact": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi/inner_circle_roi_gt_overlay_contact.png",
+  "dependency_root": "D:/GMM_2_Final/PSF_Fitting",
+  "psf_basis_path": "D:/GMM_2_Final/PSF_Fitting/SimulatePSF/psf_multi.mat",
+  "copied_fitter_dir": "LabSystem_MOSR/psf_calibration/scripts/standard_wholefov",
+  "run_script": "LabSystem_MOSR/psf_calibration/scripts/run_lab_inner_circle_roi_standard_fit.m",
+  "preflight_script": "LabSystem_MOSR/psf_calibration/scripts/preflight_lab_inner_circle_roi_standard_fit.m",
+  "output_dir": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_standard_fit",
+  "fit_summary": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_standard_fit/fit_summary.json",
+  "psf_output": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_standard_fit/PSF_fitted_2D_FOVstack.mat",
+  "batch_results": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_standard_fit/batch_results.csv",
+  "psf_contact_sheet": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_standard_fit/psf_contact_sheet.png",
+  "fit_result_summary": {
+    "image_count": 25,
+    "psf_shape": [
+      101,
+      101,
+      5,
+      5
+    ],
+    "seconds_total": 791.5944918,
+    "seconds_median": 30.1702232,
+    "fval_median": 4919.56181438182,
+    "iterations_median": 499.0
+  },
+  "notes": [
+    "This is the prepared lab-system ROI run for the copied Whole-FOV Zernike/BADS fitter.",
+    "The full 2048x1536 chart images are not used directly because outer rings, labels, markers, and frame cuts contaminate the fit.",
+    "The ROI GT reuses the original project inner circle plus two-block template geometry, rescaled to phi 0.1 mm at 0.1725 um/px.",
+    "The earlier edge-derived Gaussian result was archived as exploratory only under psf_calibration/archive/20250608_psf_cleanup/."
+  ],
+  "validation": {
+    "verdict": "validated",
+    "summary": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_validation/validation_summary.json",
+    "report": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_validation/VALIDATION_REPORT.md",
+    "next_action": "advance_to_lab_data_generation_psf_ready"
+  }
+}

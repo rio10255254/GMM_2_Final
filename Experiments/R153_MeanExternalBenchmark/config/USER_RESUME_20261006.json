@@ -1,0 +1,31 @@
+{
+  "state": "resume_verified",
+  "user_instruction": "因為已完成所以你可以續訓了",
+  "recorded_utc": "2026-10-06T08:40:36.430684+00:00",
+  "method": "SwinIR",
+  "saved_step": 256,
+  "complete_epochs_before_resume": 0,
+  "maximum_total_epochs": 8,
+  "checkpoint_sha256": "95038f089dcfc07286e9b9cc70e66af6757a4b0909f84353e05b93fd8d0fd346",
+  "saved_recipe_and_source_verified_unchanged": true,
+  "previous_pause_marker": "User explicitly paused SwinIR; do not resume training without a new direct user instruction. Completed-model validation remains authorized.",
+  "previous_status": {
+    "state": "user_paused",
+    "method": "SwinIR",
+    "saved_step": 256,
+    "complete_epochs": 0,
+    "maximum_epochs": 8,
+    "saved_checkpoint": "D:\\GMM_2_Final\\Experiments\\R153_MeanExternalBenchmark\\runs\\SwinIR\\last.pth",
+    "automatic_resume_allowed": false,
+    "paused_utc": "2026-10-06T03:48:24.196874+00:00"
+  },
+  "completed_nine_method_archive": "D:\\GMM_2_Final\\Experiments\\R153_MeanExternalBenchmark\\reports\\COMPLETED_MODELS_THESIS_HANDOFF.zip",
+  "completed_nine_method_archive_sha256": "11e5138a174e49af6fe1a9198efc5c7dfbd6a6b833a342a1d303e61c4df497d9",
+  "next_validation": "SwinIR only: fresh 15 runtime samples, 930 native reconstructions and 8370 fixed readouts, then ten-method summary using all nine previously verified methods",
+  "original_thesis_model_readouts_and_scale_unchanged": true,
+  "source_lock_verified": true,
+  "automatic_training_resume_allowed": true,
+  "verification": "runs/launcher_logs/SwinIR_user_pause/resume_verified.json",
+  "observed_resumed_step": 272,
+  "verified_utc": "2026-10-06T08:46:30.136805+00:00"
+}

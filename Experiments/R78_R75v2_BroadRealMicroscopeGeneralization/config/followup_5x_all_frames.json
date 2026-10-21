@@ -1,0 +1,15 @@
+{
+  "status": "post_hoc_confirmatory",
+  "created_after_primary_result": true,
+  "trigger": "The predeclared 30-frame diagnostic and fixed first-frame contact sheet both showed a 5x-specific R75-v2 anomaly.",
+  "scope": ["5x_0p5um", "5x_1um"],
+  "coverage": "All 100 available 5x frames",
+  "metrics": {
+    "raw_edge_percentile": 85,
+    "model_edge_percentile": 95,
+    "distance_px": 3,
+    "warning_off_source_fraction": 0.05,
+    "warning_edge_gain": 0.5
+  },
+  "claim_limit": "This confirms whether the observed 5x anomaly repeats across the available frames; it is not a predeclared promotion gate."
+}

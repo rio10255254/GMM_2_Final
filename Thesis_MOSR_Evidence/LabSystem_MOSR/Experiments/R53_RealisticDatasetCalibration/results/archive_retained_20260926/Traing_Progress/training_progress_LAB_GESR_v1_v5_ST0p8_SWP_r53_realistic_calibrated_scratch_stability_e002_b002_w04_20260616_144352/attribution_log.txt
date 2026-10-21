@@ -1,0 +1,5 @@
+# Attribution correlation log
+# expect_dx_px=None expect_dy_px=None expected_step_px=0.000000 expected_enable=0
+# outlier_t=0.500000 outlier_t_rel=0.100000
+[ATTRIB][E002] win=2 VAL +: edge->kpi_step_std:+1.000, edge_ori->kpi_step_std:+1.000, hf_ratio->kpi_step_std:+1.000, weak_top1->kpi_step_std:+1.000, edge->kpi_step_mean_err:+0.000 | -: weak_entropy->kpi_step_std:-1.000, edge->kpi_step_mean_err:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000
+[ATTRIB][E002] win=2 TRN->VAL +: weak_top1->kpi_step_std:+1.000, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000 | -: edge_ori->kpi_step_std:-1.000, hf_ratio->kpi_step_std:-1.000, weak_entropy->kpi_step_std:-1.000, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000

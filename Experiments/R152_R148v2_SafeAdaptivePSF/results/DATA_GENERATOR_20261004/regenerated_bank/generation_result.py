@@ -1,0 +1,17 @@
+"""Complete generation and actual pixel-parity verification."""
+RESULT = {'state': 'complete',
+ 'parents': 768,
+ 'views': 3072,
+ 'clear_TIFFs': 3072,
+ 'blur_TIFFs': 3072,
+ 'geometry_TIFFs': 3072,
+ 'all_original_pixel_values_exact': True,
+ 'all_original_fixed_metadata_exact': True,
+ 'byte_identical_TIFFs': 9216,
+ 'no_original_training_image_files_read': True,
+ 'reused_verified_parents': 0,
+ 'workers': 4,
+ 'seconds': 561.1441997000948,
+ 'environment': {'Python': '3.12.7', 'numpy': '1.26.4', 'scipy': '1.13.1', 'Pillow': '10.4.0'},
+ 'recipe': 'original_seeded_8x_scene_to_4x_latent_to_measured_PSF25_to_native_TIFF',
+ 'noise': 'original_epoch-dependent_noise_and_uint8_quantization_in_core/dataset.py'}

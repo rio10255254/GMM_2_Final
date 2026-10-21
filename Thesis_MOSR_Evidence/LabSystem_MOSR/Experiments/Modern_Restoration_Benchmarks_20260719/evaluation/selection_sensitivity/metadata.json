@@ -1,0 +1,8 @@
+{
+  "purpose": "Diagnose displacement sensitivity to the preselected 30-step rule",
+  "formal_raw_ranked30": "Existing Raw local-motion error ranking; favors Raw by construction",
+  "time_regular30": "Thirty non-cross-session pairs with timestamp gaps closest to the sequence median",
+  "central_acquisition30": "Central thirty non-cross-session pairs in acquisition order; session-boundary pairs remain excluded",
+  "all_within_session": "All adjacent pairs that do not cross an acquisition-session boundary",
+  "important_limit": "All absolute errors still use the nominal commanded step because no per-frame numeric position-feedback column is present in the supplied mappings."
+}

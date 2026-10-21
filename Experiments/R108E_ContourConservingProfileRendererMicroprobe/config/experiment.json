@@ -1,0 +1,28 @@
+{
+  "experiment_id": "R108E_ContourConservingProfileRendererMicroprobe",
+  "seed": 109010,
+  "training_steps": 2100,
+  "batch_size": 24,
+  "patch_size": 128,
+  "training_variants_per_target": 2,
+  "training_families": [
+    "identity",
+    "low_contrast",
+    "uneven_illumination",
+    "asymmetric_blur_halo",
+    "boundary_fade",
+    "mixed_hard"
+  ],
+  "geometry_supervision": [
+    "boundary_band",
+    "soft_contour_overlap",
+    "area_conservation",
+    "centroid_conservation",
+    "edge_profile",
+    "identity_action"
+  ],
+  "real_training_pixels": false,
+  "sem_training_pixels": false,
+  "old_weight_or_teacher_used_for_training": false,
+  "decision": "microprobe only; no delivery promotion"
+}

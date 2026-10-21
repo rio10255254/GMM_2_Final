@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "methods": [
+    "RAW",
+    "Wiener",
+    "EDSR-x1",
+    "NAFNet",
+    "RDN-x1",
+    "RCAN-x1",
+    "Restormer",
+    "USRNet-x1",
+    "SwinIR",
+    "MOSR"
+  ],
+  "scans_per_method": 30,
+  "photographs_per_method": 930,
+  "object_readouts_per_method": 8370,
+  "independent_numeric_metrics_checked": 270,
+  "independent_displacements_checked": 18000,
+  "complete_scan_paired_intervals_checked": 162,
+  "maximum_metric_difference_nm": 3.637978807091713e-12,
+  "maximum_displacement_difference_nm": 1.0913936421275139e-11,
+  "maximum_interval_difference_nm": 1.2179146580137967e-12,
+  "bootstrap_draws": 20000,
+  "resampling_unit": "complete scan",
+  "saved_point_measurements_are_inputs": true,
+  "new_model_inferences": 0,
+  "new_contour_refits": 0,
+  "unfavorable_size_and_long_distance_results_retained": true,
+  "seconds": 13.70467850001296
+}

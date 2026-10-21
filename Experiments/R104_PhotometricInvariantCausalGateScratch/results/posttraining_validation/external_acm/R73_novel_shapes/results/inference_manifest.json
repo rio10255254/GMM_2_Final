@@ -1,0 +1,25 @@
+{
+  "suite": "R73_novel_shapes",
+  "methods": [
+    "Raw",
+    "R104E48"
+  ],
+  "output_dirs": {
+    "Raw": {
+      "fourier_lobed": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_fourier_lobed",
+      "deep_notches": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_deep_notches",
+      "thin_necks": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_thin_necks",
+      "crescent_bodies": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_crescent_bodies",
+      "rough_boundaries": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val\\src\\stage_r73_rough_boundaries"
+    },
+    "R104E48": {
+      "fourier_lobed": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R104E48\\stage_r73_fourier_lobed",
+      "deep_notches": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R104E48\\stage_r73_deep_notches",
+      "thin_necks": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R104E48\\stage_r73_thin_necks",
+      "crescent_bodies": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R104E48\\stage_r73_crescent_bodies",
+      "rough_boundaries": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\results\\posttraining_validation\\external_acm\\R73_novel_shapes\\reconstructions\\R104E48\\stage_r73_rough_boundaries"
+    }
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R104_PhotometricInvariantCausalGateScratch\\weights\\formal\\seed_1040059\\training_R104_scratch_seed1040059_20260815_222803\\epoch_048.pth.tar",
+  "checkpoint_sha256": "6df1c02ee74c453dd650b516f28682442ac5b1451d37e7027610b91332f53b81"
+}

@@ -1,0 +1,84 @@
+{
+  "experiment": "R113_R109RendererExpressivityUpperBound",
+  "seed": 113109,
+  "canvas_size": 128,
+  "supersample_factor": 8,
+  "scenes_per_shape": 3,
+  "shape_families": [
+    "ellipse",
+    "lobed",
+    "rough_fourier",
+    "concave_star",
+    "superellipse",
+    "crescent",
+    "thin_ring",
+    "close_pair"
+  ],
+  "degradation_families": [
+    "clear",
+    "standard",
+    "strong_blur",
+    "anisotropic_motion",
+    "halo_ghost",
+    "low_contrast_uneven",
+    "boundary_fade",
+    "mixed_hard"
+  ],
+  "r109_contract": {
+    "maximum_normal_shift_px": 1.5,
+    "minimum_width_gain": 1.0,
+    "maximum_width_gain": 3.5,
+    "local_range_window_px": 21,
+    "normal_blur_sigma_px": 1.6,
+    "context_blur_sigma_px": 6.4,
+    "boundary_support_scale": 0.85,
+    "boundary_support_dilation_px": 9
+  },
+  "optimization": {
+    "steps": 320,
+    "learning_rate_dense": 0.055,
+    "learning_rate_smooth": 0.085,
+    "learning_rate_global": 0.08,
+    "smooth_control_grid": 16,
+    "smooth_control_sigma_px": 1.4,
+    "loss_weights": {
+      "image": 1.0,
+      "edge_image": 2.5,
+      "gradient": 0.34,
+      "contour_bce": 0.055,
+      "contour_dice": 0.11
+    }
+  },
+  "detail_oracle": {
+    "maximum_amplitude_gray_levels": 18.0,
+    "zero_mean_sigma_px": 3.0,
+    "support_dilation_px": 7
+  },
+  "evaluation": {
+    "contour_threshold": 0.5,
+    "boundary_band_px": 4,
+    "texture_interior_erosion_px": 5,
+    "highpass_sigma_px": 2.0
+  },
+  "methods": [
+    "identity",
+    "learned_r109_e48",
+    "oracle_global_width_shift",
+    "oracle_width_only",
+    "oracle_shift_only",
+    "oracle_width_shift_dense",
+    "oracle_width_shift_smooth",
+    "oracle_smooth_plus_bounded_detail"
+  ],
+  "source": {
+    "r109_model_root": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch",
+    "r109_checkpoint": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
+    "r109_checkpoint_sha256": "77ff8611e764e1350d60592f5d8a25d6786db17897eadce189185cdc4dbc87fc"
+  },
+  "interpretation_guardrails": [
+    "Directly optimized controls use synthetic truth and are representation ceilings, not deployable estimators.",
+    "The bounded detail oracle also sees truth and tests missing output capacity, not recoverability from one image.",
+    "External GMF is not used in optimization or ranking.",
+    "Worst-case shape and degradation results must be reported with averages."
+  ]
+}

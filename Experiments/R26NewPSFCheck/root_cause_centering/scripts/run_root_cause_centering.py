@@ -33,9 +33,7 @@ LOGS = ROOT / "logs"
 RECONS = ROOT / "reconstructions"
 MANIFESTS = ROOT / "manifests"
 
-OLD_RUN = Path(
-    r"D:\GMM_2_Final\Traing_Progress\organized_20260316\round26\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408"
-)
+OLD_RUN = ROOT / "archived_inputs" / "r26sm035_recipe_profile_20260316"
 NEW_RUN = Path(
     r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223"
 )

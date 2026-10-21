@@ -1,0 +1,12 @@
+{
+  "reader": "Finite-overlap normalized spatial correlation, intensity-highpass and signed-gradient agreement",
+  "search": "Up to64native pixels in either direction, never limited around a wanted Raw/commanded answer; at least50percent overlap",
+  "features": "Gaussian1denoising, intensity minusGaussian8 background; independent signedSobelx/y comparison",
+  "acceptance": {"minimum_NCC":0.75,"minimum_peak_gap":0.02,"competing_peak_exclusion_radius_px":4,"maximum_feature_disagreement_px":0.5,"minimum_overlap_fraction":0.5},
+  "subpixel": "Local2D quadratic interpolation only when maximum curvature and offset are valid; exact affine-match peak stays integer",
+  "validity": "Local ambiguity is reported, not resolved by choosing the expected displacement. Full-field Raw pair is an additional independent-support check, not physical stage truth.",
+  "known_answer_checks": "Observable real-texture crop translations and independently noise-drawn controls; flat and exactly periodic negatives; separately generated continuous physical controls",
+  "engineering_check": "At least90percent nonperiodic crop controls admitted and maximum admitted displacement error<=0.1px; report failures without dropping them. This is not an application accuracy certification.",
+  "real_scope": "All6R126 fixed pairs, Raw and all4final models. Also6full-field Raw pairs from the frozen original files. Report all accepted and rejected rows, and retain old phase values.",
+  "physical_accuracy_qualified": false
+}

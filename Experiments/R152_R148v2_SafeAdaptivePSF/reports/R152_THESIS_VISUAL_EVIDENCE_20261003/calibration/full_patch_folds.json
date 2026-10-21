@@ -1,0 +1,133 @@
+{
+  "frozen_before_full_patch_model_search": true,
+  "observation_source": "35x35 real optical patches; score only central valid 25x25 square for each pillar",
+  "SEM_shape_reference": "Original P-SEM contour at nominal 20x scale",
+  "folds": {
+    "A": {
+      "frames": [
+        1,
+        13,
+        25
+      ],
+      "heldout_ids": [
+        36,
+        29,
+        22
+      ],
+      "role": "development",
+      "training_ids": [
+        35,
+        34,
+        30,
+        28,
+        24,
+        23
+      ],
+      "train_pixels": 3750,
+      "heldout_pixels": 1875
+    },
+    "B": {
+      "frames": [
+        4,
+        7,
+        12,
+        18,
+        23
+      ],
+      "heldout_ids": [
+        34,
+        30,
+        23
+      ],
+      "role": "development",
+      "training_ids": [
+        36,
+        35,
+        29,
+        28,
+        24,
+        22
+      ],
+      "train_pixels": 3750,
+      "heldout_pixels": 1875
+    },
+    "C": {
+      "frames": [
+        3,
+        8,
+        14,
+        20,
+        22
+      ],
+      "heldout_ids": [
+        35,
+        28,
+        24
+      ],
+      "role": "development_after_center_failure",
+      "training_ids": [
+        36,
+        34,
+        30,
+        29,
+        23,
+        22
+      ],
+      "train_pixels": 3750,
+      "heldout_pixels": 1875
+    },
+    "D": {
+      "frames": [
+        2,
+        6,
+        10,
+        15,
+        17,
+        24
+      ],
+      "heldout_ids": [
+        35,
+        30,
+        22
+      ],
+      "role": "full_patch_model_selection",
+      "training_ids": [
+        36,
+        34,
+        29,
+        28,
+        24,
+        23
+      ],
+      "train_pixels": 3750,
+      "heldout_pixels": 1875
+    },
+    "E": {
+      "frames": [
+        5,
+        9,
+        11,
+        16,
+        19,
+        21
+      ],
+      "heldout_ids": [
+        34,
+        29,
+        24
+      ],
+      "role": "frozen_final_confirmation",
+      "training_ids": [
+        36,
+        35,
+        30,
+        28,
+        23,
+        22
+      ],
+      "train_pixels": 3750,
+      "heldout_pixels": 1875
+    }
+  },
+  "final_fold_E_must_not_be_used_until_model_and_gates_are_locked": true
+}

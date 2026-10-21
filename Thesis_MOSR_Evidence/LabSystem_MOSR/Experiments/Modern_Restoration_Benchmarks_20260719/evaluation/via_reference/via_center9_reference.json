@@ -1,0 +1,469 @@
+{
+  "version": 1,
+  "purpose": "SEM-referenced center-nine via evaluation for 50x and 20x",
+  "sem_workbook": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\20260618_100MG\\SEM_data\\via_pilar.xlsx",
+  "sem_sheet": "SEM data",
+  "sem_cells": "G11:I13",
+  "sem_value_definition": "Workbook values are radii in nanometers; diameter equals two times radius",
+  "physical_selection": "Upper-right 3x3 corner of the lower-left via region, nearest the sample center",
+  "orientation_rule": "50x follows the physical orientation; 20x is vertically flipped, so physical SEM row 1 maps to the lowest optical row",
+  "sem_reference": [
+    [
+      {
+        "cell": "G11",
+        "radius_nm": 1645.1194470115447,
+        "diameter_um": 3.2902388940230893
+      },
+      {
+        "cell": "H11",
+        "radius_nm": 1646.0263374707242,
+        "diameter_um": 3.2920526749414485
+      },
+      {
+        "cell": "I11",
+        "radius_nm": 1651.8720702060252,
+        "diameter_um": 3.3037441404120504
+      }
+    ],
+    [
+      {
+        "cell": "G12",
+        "radius_nm": 1638.2370443866603,
+        "diameter_um": 3.2764740887733206
+      },
+      {
+        "cell": "H12",
+        "radius_nm": 1640.1513851290124,
+        "diameter_um": 3.2803027702580247
+      },
+      {
+        "cell": "I12",
+        "radius_nm": 1643.6772385357808,
+        "diameter_um": 3.2873544770715615
+      }
+    ],
+    [
+      {
+        "cell": "G13",
+        "radius_nm": 1642.1962568395086,
+        "diameter_um": 3.284392513679017
+      },
+      {
+        "cell": "H13",
+        "radius_nm": 1641.9336063795636,
+        "diameter_um": 3.283867212759127
+      },
+      {
+        "cell": "I13",
+        "radius_nm": 1651.4351256741954,
+        "diameter_um": 3.302870251348391
+      }
+    ]
+  ],
+  "sequences": {
+    "50x_x_0p5um": {
+      "dataset": "20260702_100MG",
+      "group": "x_0p5um",
+      "magnification": "50x",
+      "raw_dir": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp",
+      "mosr_dir": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions/50x_0p5um",
+      "first_frame": "frame_0000.bmp",
+      "frame_count": 51,
+      "object_um_per_px": 0.069,
+      "nominal_step_um": 0.5,
+      "expected_signed_dx_px": -7.246376811594202,
+      "capture_transform": "identity",
+      "polarity": "bright",
+      "pitch_px": 72.5,
+      "radius_px": 23.82140925414175,
+      "search_radius_px": 8.0,
+      "min_valid_features": 7,
+      "centers": [
+        {
+          "sem_cell": "G11",
+          "physical_row": 1,
+          "physical_column": 4,
+          "x": 798.6068355357714,
+          "y": 877.6695310174193,
+          "sem_radius_nm": 1645.1194470115447,
+          "sem_diameter_um": 3.2902388940230893
+        },
+        {
+          "sem_cell": "H11",
+          "physical_row": 1,
+          "physical_column": 5,
+          "x": 870.6223293131819,
+          "y": 876.6582519515272,
+          "sem_radius_nm": 1646.0263374707242,
+          "sem_diameter_um": 3.2920526749414485
+        },
+        {
+          "sem_cell": "I11",
+          "physical_row": 1,
+          "physical_column": 6,
+          "x": 942.9939686314436,
+          "y": 876.3266242773699,
+          "sem_radius_nm": 1651.8720702060252,
+          "sem_diameter_um": 3.3037441404120504
+        },
+        {
+          "sem_cell": "G12",
+          "physical_row": 2,
+          "physical_column": 4,
+          "x": 800.1645162358259,
+          "y": 949.1002144143068,
+          "sem_radius_nm": 1638.2370443866603,
+          "sem_diameter_um": 3.2764740887733206
+        },
+        {
+          "sem_cell": "H12",
+          "physical_row": 2,
+          "physical_column": 5,
+          "x": 871.2066457198827,
+          "y": 949.9027492866594,
+          "sem_radius_nm": 1640.1513851290124,
+          "sem_diameter_um": 3.2803027702580247
+        },
+        {
+          "sem_cell": "I12",
+          "physical_row": 2,
+          "physical_column": 6,
+          "x": 943.6617921338797,
+          "y": 949.1032243765447,
+          "sem_radius_nm": 1643.6772385357808,
+          "sem_diameter_um": 3.2873544770715615
+        },
+        {
+          "sem_cell": "G13",
+          "physical_row": 3,
+          "physical_column": 4,
+          "x": 800.1586223787173,
+          "y": 1023.0714106012745,
+          "sem_radius_nm": 1642.1962568395086,
+          "sem_diameter_um": 3.284392513679017
+        },
+        {
+          "sem_cell": "H13",
+          "physical_row": 3,
+          "physical_column": 5,
+          "x": 871.9894446956745,
+          "y": 1021.9979559126868,
+          "sem_radius_nm": 1641.9336063795636,
+          "sem_diameter_um": 3.283867212759127
+        },
+        {
+          "sem_cell": "I13",
+          "physical_row": 3,
+          "physical_column": 6,
+          "x": 944.3032408632957,
+          "y": 1021.2991614382224,
+          "sem_radius_nm": 1651.4351256741954,
+          "sem_diameter_um": 3.302870251348391
+        }
+      ]
+    },
+    "50x_x_1um": {
+      "dataset": "20260702_100MG",
+      "group": "x_1um",
+      "magnification": "50x",
+      "raw_dir": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp",
+      "mosr_dir": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions/50x_1um",
+      "first_frame": "frame_0000.bmp",
+      "frame_count": 50,
+      "object_um_per_px": 0.069,
+      "nominal_step_um": 1.0,
+      "expected_signed_dx_px": -14.492753623188404,
+      "capture_transform": "identity",
+      "polarity": "bright",
+      "pitch_px": 72.5,
+      "radius_px": 23.82140925414175,
+      "search_radius_px": 8.0,
+      "min_valid_features": 7,
+      "centers": [
+        {
+          "sem_cell": "G11",
+          "physical_row": 1,
+          "physical_column": 4,
+          "x": 800.7149811249378,
+          "y": 873.3463525935731,
+          "sem_radius_nm": 1645.1194470115447,
+          "sem_diameter_um": 3.2902388940230893
+        },
+        {
+          "sem_cell": "H11",
+          "physical_row": 1,
+          "physical_column": 5,
+          "x": 872.6867058329334,
+          "y": 872.3337263232705,
+          "sem_radius_nm": 1646.0263374707242,
+          "sem_diameter_um": 3.2920526749414485
+        },
+        {
+          "sem_cell": "I11",
+          "physical_row": 1,
+          "physical_column": 6,
+          "x": 945.126971697931,
+          "y": 872.0237090834571,
+          "sem_radius_nm": 1651.8720702060252,
+          "sem_diameter_um": 3.3037441404120504
+        },
+        {
+          "sem_cell": "G12",
+          "physical_row": 2,
+          "physical_column": 4,
+          "x": 802.2749911168546,
+          "y": 944.7851788600592,
+          "sem_radius_nm": 1638.2370443866603,
+          "sem_diameter_um": 3.2764740887733206
+        },
+        {
+          "sem_cell": "H12",
+          "physical_row": 2,
+          "physical_column": 5,
+          "x": 873.3194614948119,
+          "y": 945.5624771081549,
+          "sem_radius_nm": 1640.1513851290124,
+          "sem_diameter_um": 3.2803027702580247
+        },
+        {
+          "sem_cell": "I12",
+          "physical_row": 2,
+          "physical_column": 6,
+          "x": 945.7320875632781,
+          "y": 944.8030791481254,
+          "sem_radius_nm": 1643.6772385357808,
+          "sem_diameter_um": 3.2873544770715615
+        },
+        {
+          "sem_cell": "G13",
+          "physical_row": 3,
+          "physical_column": 4,
+          "x": 802.279176708054,
+          "y": 1018.7185005972945,
+          "sem_radius_nm": 1642.1962568395086,
+          "sem_diameter_um": 3.284392513679017
+        },
+        {
+          "sem_cell": "H13",
+          "physical_row": 3,
+          "physical_column": 5,
+          "x": 874.1057112013374,
+          "y": 1017.7405660440384,
+          "sem_radius_nm": 1641.9336063795636,
+          "sem_diameter_um": 3.283867212759127
+        },
+        {
+          "sem_cell": "I13",
+          "physical_row": 3,
+          "physical_column": 6,
+          "x": 946.3948188257634,
+          "y": 1017.0593876969886,
+          "sem_radius_nm": 1651.4351256741954,
+          "sem_diameter_um": 3.302870251348391
+        }
+      ]
+    },
+    "20x_0p5um": {
+      "dataset": "20260704_20x_5x",
+      "group": "20x_0p5um",
+      "magnification": "20x",
+      "raw_dir": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp",
+      "mosr_dir": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions/20x_0p5um",
+      "first_frame": "frame_0000.bmp",
+      "frame_count": 50,
+      "object_um_per_px": 0.1725,
+      "nominal_step_um": 0.5,
+      "expected_signed_dx_px": -2.898550724637681,
+      "capture_transform": "flip_y",
+      "polarity": "bright",
+      "pitch_px": 29.0,
+      "radius_px": 9.5285637016567,
+      "search_radius_px": 4.0,
+      "min_valid_features": 7,
+      "centers": [
+        {
+          "sem_cell": "G11",
+          "physical_row": 1,
+          "physical_column": 4,
+          "x": 1665.1825990510185,
+          "y": 740.1389703942775,
+          "sem_radius_nm": 1645.1194470115447,
+          "sem_diameter_um": 3.2902388940230893
+        },
+        {
+          "sem_cell": "H11",
+          "physical_row": 1,
+          "physical_column": 5,
+          "x": 1694.2136733221873,
+          "y": 740.0100994242033,
+          "sem_radius_nm": 1646.0263374707242,
+          "sem_diameter_um": 3.2920526749414485
+        },
+        {
+          "sem_cell": "I11",
+          "physical_row": 1,
+          "physical_column": 6,
+          "x": 1723.3151228426882,
+          "y": 740.0453350586821,
+          "sem_radius_nm": 1651.8720702060252,
+          "sem_diameter_um": 3.3037441404120504
+        },
+        {
+          "sem_cell": "G12",
+          "physical_row": 2,
+          "physical_column": 4,
+          "x": 1665.1515764121305,
+          "y": 711.1191010015907,
+          "sem_radius_nm": 1638.2370443866603,
+          "sem_diameter_um": 3.2764740887733206
+        },
+        {
+          "sem_cell": "H12",
+          "physical_row": 2,
+          "physical_column": 5,
+          "x": 1694.204575936423,
+          "y": 711.080397627772,
+          "sem_radius_nm": 1640.1513851290124,
+          "sem_diameter_um": 3.2803027702580247
+        },
+        {
+          "sem_cell": "I12",
+          "physical_row": 2,
+          "physical_column": 6,
+          "x": 1723.2534149146259,
+          "y": 710.9748659188626,
+          "sem_radius_nm": 1643.6772385357808,
+          "sem_diameter_um": 3.2873544770715615
+        },
+        {
+          "sem_cell": "G13",
+          "physical_row": 3,
+          "physical_column": 4,
+          "x": 1665.0561393293792,
+          "y": 682.0335083296503,
+          "sem_radius_nm": 1642.1962568395086,
+          "sem_diameter_um": 3.284392513679017
+        },
+        {
+          "sem_cell": "H13",
+          "physical_row": 3,
+          "physical_column": 5,
+          "x": 1694.1736055427114,
+          "y": 681.8984025797291,
+          "sem_radius_nm": 1641.9336063795636,
+          "sem_diameter_um": 3.283867212759127
+        },
+        {
+          "sem_cell": "I13",
+          "physical_row": 3,
+          "physical_column": 6,
+          "x": 1723.2161204354431,
+          "y": 682.0526841564478,
+          "sem_radius_nm": 1651.4351256741954,
+          "sem_diameter_um": 3.302870251348391
+        }
+      ]
+    },
+    "20x_1um": {
+      "dataset": "20260704_20x_5x",
+      "group": "20x_1um",
+      "magnification": "20x",
+      "raw_dir": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp",
+      "mosr_dir": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions/20x_1um",
+      "first_frame": "frame_0000.bmp",
+      "frame_count": 50,
+      "object_um_per_px": 0.1725,
+      "nominal_step_um": 1.0,
+      "expected_signed_dx_px": -5.797101449275362,
+      "capture_transform": "flip_y",
+      "polarity": "bright",
+      "pitch_px": 29.0,
+      "radius_px": 9.5285637016567,
+      "search_radius_px": 4.0,
+      "min_valid_features": 7,
+      "centers": [
+        {
+          "sem_cell": "G11",
+          "physical_row": 1,
+          "physical_column": 4,
+          "x": 1664.7137270819692,
+          "y": 740.0243634156088,
+          "sem_radius_nm": 1645.1194470115447,
+          "sem_diameter_um": 3.2902388940230893
+        },
+        {
+          "sem_cell": "H11",
+          "physical_row": 1,
+          "physical_column": 5,
+          "x": 1693.7263343042757,
+          "y": 739.939054678753,
+          "sem_radius_nm": 1646.0263374707242,
+          "sem_diameter_um": 3.2920526749414485
+        },
+        {
+          "sem_cell": "I11",
+          "physical_row": 1,
+          "physical_column": 6,
+          "x": 1722.8312938506538,
+          "y": 739.9459953055033,
+          "sem_radius_nm": 1651.8720702060252,
+          "sem_diameter_um": 3.3037441404120504
+        },
+        {
+          "sem_cell": "G12",
+          "physical_row": 2,
+          "physical_column": 4,
+          "x": 1664.7105735192883,
+          "y": 710.9995308845848,
+          "sem_radius_nm": 1638.2370443866603,
+          "sem_diameter_um": 3.2764740887733206
+        },
+        {
+          "sem_cell": "H12",
+          "physical_row": 2,
+          "physical_column": 5,
+          "x": 1693.7594438032443,
+          "y": 711.0039877398057,
+          "sem_radius_nm": 1640.1513851290124,
+          "sem_diameter_um": 3.2803027702580247
+        },
+        {
+          "sem_cell": "I12",
+          "physical_row": 2,
+          "physical_column": 6,
+          "x": 1722.77637741628,
+          "y": 710.9105838619761,
+          "sem_radius_nm": 1643.6772385357808,
+          "sem_diameter_um": 3.2873544770715615
+        },
+        {
+          "sem_cell": "G13",
+          "physical_row": 3,
+          "physical_column": 4,
+          "x": 1664.710073671861,
+          "y": 682.0244306067314,
+          "sem_radius_nm": 1642.1962568395086,
+          "sem_diameter_um": 3.284392513679017
+        },
+        {
+          "sem_cell": "H13",
+          "physical_row": 3,
+          "physical_column": 5,
+          "x": 1693.7332371542263,
+          "y": 681.9170755654663,
+          "sem_radius_nm": 1641.9336063795636,
+          "sem_diameter_um": 3.283867212759127
+        },
+        {
+          "sem_cell": "I13",
+          "physical_row": 3,
+          "physical_column": 6,
+          "x": 1722.7911169564275,
+          "y": 681.9213249066424,
+          "sem_radius_nm": 1651.4351256741954,
+          "sem_diameter_um": 3.302870251348391
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "candidate": "r42_r41_best_lowalpha",
+  "combo_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\\weights\\best_tradeoff.pth.tar",
+  "candidate_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\\weights\\best_tradeoff.pth.tar",
+  "thresholds": {
+    "min_boundary_psnr": 23.0,
+    "min_high_frequency_retention": 0.3,
+    "max_boundary_distance_px": 7.0,
+    "min_boundary_fscore_t1p0": 0.7,
+    "max_8px": 0.1431,
+    "max_0p8px": 0.1615,
+    "max_0p08px": 0.1268
+  },
+  "rows": [
+    {
+      "alpha": 0.01,
+      "alpha_tag": "a001",
+      "boundary_overall_psnr": 20.642306296998555,
+      "boundary_high_frequency_retention": 0.204755474970739,
+      "boundary_distance_px": 7.660874935984611,
+      "boundary_fscore_t1p0": 0.6309609675071484,
+      "boundary_per_stage": {
+        "stage_34_boundary_lines": {
+          "psnr": 20.285770578874864,
+          "high_frequency_retention": 0.197542405680686,
+          "boundary_distance_px": 7.229040467739106,
+          "boundary_fscore_t1p0": 0.6939094259692957,
+          "centerline_distance_px": 17.33384120464325,
+          "grid_pitch_error_px": 27.72222222222222,
+          "count": 20
+        },
+        "stage_35_boundary_grids": {
+          "psnr": 16.46484172621242,
+          "high_frequency_retention": 0.10563084713207249,
+          "boundary_distance_px": 1.2896635979413986,
+          "boundary_fscore_t1p0": 0.7076893262759381,
+          "centerline_distance_px": 2.9396119713783264,
+          "grid_pitch_error_px": 9.175,
+          "count": 20
+        },
+        "stage_36_boundary_junctions": {
+          "psnr": 19.041416037105186,
+          "high_frequency_retention": 0.1902647245402132,
+          "boundary_distance_px": 6.564391243457794,
+          "boundary_fscore_t1p0": 0.6855119439210454,
+          "centerline_distance_px": 12.822642612457276,
+          "grid_pitch_error_px": 41.416666666666664,
+          "count": 20
+        },
+        "stage_37_boundary_curves": {
+          "psnr": 19.30357675923025,
+          "high_frequency_retention": 0.18919828786418164,
+          "boundary_distance_px": 8.95037808418274,
+          "boundary_fscore_t1p0": 0.6822112547826772,
+          "centerline_distance_px": 16.982860231399535,
+          "grid_pitch_error_px": 76.6029411764706,
+          "count": 20
+        },
+        "stage_38_boundary_regions": {
+          "psnr": 23.34132306060942,
+          "high_frequency_retention": 0.2412145784004002,
+          "boundary_distance_px": 9.222850400209428,
+          "boundary_fscore_t1p0": 0.5495725333583573,
+          "centerline_distance_px": 10.434176887571812,
+          "grid_pitch_error_px": 96.53125,
+          "count": 20
+        },
+        "stage_39_boundary_defects": {
+          "psnr": 23.32413380036089,
+          "high_frequency_retention": 0.2760536289373627,
+          "boundary_distance_px": 9.639554095268249,
+          "boundary_fscore_t1p0": 0.5597444532463159,
+          "centerline_distance_px": 11.228617358207703,
+          "grid_pitch_error_px": 92.76785714285714,
+          "count": 20
+        },
+        "stage_40_boundary_mixed": {
+          "psnr": 22.73508211659686,
+          "high_frequency_retention": 0.23338385224025684,
+          "boundary_distance_px": 10.730246663093567,
+          "boundary_fscore_t1p0": 0.5380878349964091,
+          "centerline_distance_px": 13.520360517501832,
+          "grid_pitch_error_px": 44.43421052631579,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1387,
+      "ring_0p8px_step_std": 0.1567,
+      "ring_0p08px_step_std": 0.1121,
+      "ring_8px_delta_pct": -0.1,
+      "ring_0p8px_delta_pct": 3.8,
+      "ring_0p08px_delta_pct": -5.4,
+      "local_ring_guard_pass": true
+    },
+    {
+      "alpha": 0.02,
+      "alpha_tag": "a002",
+      "boundary_overall_psnr": 20.73367711377338,
+      "boundary_high_frequency_retention": 0.20867853186676225,
+      "boundary_distance_px": 7.553044631225722,
+      "boundary_fscore_t1p0": 0.6367914943366008,
+      "boundary_per_stage": {
+        "stage_34_boundary_lines": {
+          "psnr": 20.376064459380917,
+          "high_frequency_retention": 0.2000775191596688,
+          "boundary_distance_px": 7.212039023637772,
+          "boundary_fscore_t1p0": 0.6988270416281409,
+          "centerline_distance_px": 17.305382537841798,
+          "grid_pitch_error_px": 32.53125,
+          "count": 20
+        },
+        "stage_35_boundary_grids": {
+          "psnr": 16.49035150779611,
+          "high_frequency_retention": 0.10782449332280537,
+          "boundary_distance_px": 1.2677069634199143,
+          "boundary_fscore_t1p0": 0.7135600530400092,
+          "centerline_distance_px": 2.897721177339554,
+          "grid_pitch_error_px": 9.325,
+          "count": 20
+        },
+        "stage_36_boundary_junctions": {
+          "psnr": 19.127997730501974,
+          "high_frequency_retention": 0.19270391708126425,
+          "boundary_distance_px": 6.55053848028183,
+          "boundary_fscore_t1p0": 0.6901121135052595,
+          "centerline_distance_px": 12.812240958213806,
+          "grid_pitch_error_px": 33.05,
+          "count": 20
+        },
+        "stage_37_boundary_curves": {
+          "psnr": 19.401543726678604,
+          "high_frequency_retention": 0.19193036101338756,
+          "boundary_distance_px": 8.795923340320588,
+          "boundary_fscore_t1p0": 0.6871196791497711,
+          "centerline_distance_px": 16.87958166599274,
+          "grid_pitch_error_px": 66.36764705882354,
+          "count": 20
+        },
+        "stage_38_boundary_regions": {
+          "psnr": 23.454857557708046,
+          "high_frequency_retention": 0.24765298195273827,
+          "boundary_distance_px": 8.898933923244476,
+          "boundary_fscore_t1p0": 0.558422038259503,
+          "centerline_distance_px": 10.370903530716896,
+          "grid_pitch_error_px": 96.5625,
+          "count": 20
+        },
+        "stage_39_boundary_defects": {
+          "psnr": 23.43730033394947,
+          "high_frequency_retention": 0.2819649833770171,
+          "boundary_distance_px": 9.58483874797821,
+          "boundary_fscore_t1p0": 0.5646746175867836,
+          "centerline_distance_px": 11.165000486373902,
+          "grid_pitch_error_px": 92.73214285714286,
+          "count": 20
+        },
+        "stage_40_boundary_mixed": {
+          "psnr": 22.847624480398522,
+          "high_frequency_retention": 0.2385954671604546,
+          "boundary_distance_px": 10.561331939697265,
+          "boundary_fscore_t1p0": 0.5448249171867382,
+          "centerline_distance_px": 13.55757942199707,
+          "grid_pitch_error_px": 51.1,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1458,
+      "ring_0p8px_step_std": 0.1538,
+      "ring_0p08px_step_std": 0.114,
+      "ring_8px_delta_pct": 5.0,
+      "ring_0p8px_delta_pct": 1.9,
+      "ring_0p08px_delta_pct": -3.8,
+      "local_ring_guard_pass": false
+    },
+    {
+      "alpha": 0.03,
+      "alpha_tag": "a003",
+      "boundary_overall_psnr": 20.825176332944523,
+      "boundary_high_frequency_retention": 0.21268671264217925,
+      "boundary_distance_px": 7.529271797197206,
+      "boundary_fscore_t1p0": 0.642039340531359,
+      "boundary_per_stage": {
+        "stage_34_boundary_lines": {
+          "psnr": 20.46534420370879,
+          "high_frequency_retention": 0.20278709295806197,
+          "boundary_distance_px": 7.161881387233734,
+          "boundary_fscore_t1p0": 0.7041319714578208,
+          "centerline_distance_px": 17.321504878997803,
+          "grid_pitch_error_px": 33.0,
+          "count": 20
+        },
+        "stage_35_boundary_grids": {
+          "psnr": 16.516516758987617,
+          "high_frequency_retention": 0.11005024165053379,
+          "boundary_distance_px": 1.2399013131856917,
+          "boundary_fscore_t1p0": 0.7187487655747506,
+          "centerline_distance_px": 2.8731160283088686,
+          "grid_pitch_error_px": 10.075,
+          "count": 20
+        },
+        "stage_36_boundary_junctions": {
+          "psnr": 19.215329040073975,
+          "high_frequency_retention": 0.1952019350536661,
+          "boundary_distance_px": 6.526658725738526,
+          "boundary_fscore_t1p0": 0.6948105758972856,
+          "centerline_distance_px": 12.790106081962586,
+          "grid_pitch_error_px": 33.31666666666667,
+          "count": 20
+        },
+        "stage_37_boundary_curves": {
+          "psnr": 19.489428300921773,
+          "high_frequency_retention": 0.19448302756924002,
+          "boundary_distance_px": 8.72809317111969,
+          "boundary_fscore_t1p0": 0.6919665410802145,
+          "centerline_distance_px": 16.855692672729493,
+          "grid_pitch_error_px": 70.56944444444444,
+          "count": 20
+        },
+        "stage_38_boundary_regions": {
+          "psnr": 23.574917542458298,
+          "high_frequency_retention": 0.25423059387495306,
+          "boundary_distance_px": 9.09332042336464,
+          "boundary_fscore_t1p0": 0.5661810531438365,
+          "centerline_distance_px": 10.30910787731409,
+          "grid_pitch_error_px": 100.203125,
+          "count": 20
+        },
+        "stage_39_boundary_defects": {
+          "psnr": 23.5435067010904,
+          "high_frequency_retention": 0.28841211377232157,
+          "boundary_distance_px": 9.518628430366515,
+          "boundary_fscore_t1p0": 0.5694074595076929,
+          "centerline_distance_px": 11.140832924842835,
+          "grid_pitch_error_px": 92.69642857142857,
+          "count": 20
+        },
+        "stage_40_boundary_mixed": {
+          "psnr": 22.971191783370813,
+          "high_frequency_retention": 0.2436419836164784,
+          "boundary_distance_px": 10.436419129371643,
+          "boundary_fscore_t1p0": 0.5490290170579128,
+          "centerline_distance_px": 13.511794924736023,
+          "grid_pitch_error_px": 43.35,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1399,
+      "ring_0p8px_step_std": 0.1487,
+      "ring_0p08px_step_std": 0.1232,
+      "ring_8px_delta_pct": 0.7,
+      "ring_0p8px_delta_pct": -1.5,
+      "ring_0p08px_delta_pct": 4.0,
+      "local_ring_guard_pass": true
+    },
+    {
+      "alpha": 0.05,
+      "alpha_tag": "a005",
+      "boundary_overall_psnr": 21.00943721780541,
+      "boundary_high_frequency_retention": 0.22135437710768469,
+      "boundary_distance_px": 7.540247517398425,
+      "boundary_fscore_t1p0": 0.6517880529931199,
+      "boundary_per_stage": {
+        "stage_34_boundary_lines": {
+          "psnr": 20.653351965460168,
+          "high_frequency_retention": 0.20840761654868611,
+          "boundary_distance_px": 7.138623189926148,
+          "boundary_fscore_t1p0": 0.714088079807436,
+          "centerline_distance_px": 17.114045548439027,
+          "grid_pitch_error_px": 33.52777777777778,
+          "count": 20
+        },
+        "stage_35_boundary_grids": {
+          "psnr": 16.570716600445994,
+          "high_frequency_retention": 0.11491396615227997,
+          "boundary_distance_px": 1.2020009011030197,
+          "boundary_fscore_t1p0": 0.7286356019519797,
+          "centerline_distance_px": 2.810521298646927,
+          "grid_pitch_error_px": 14.1125,
+          "count": 20
+        },
+        "stage_36_boundary_junctions": {
+          "psnr": 19.384011704045307,
+          "high_frequency_retention": 0.20032481091462334,
+          "boundary_distance_px": 6.430565977096558,
+          "boundary_fscore_t1p0": 0.7043185880506643,
+          "centerline_distance_px": 12.76039490699768,
+          "grid_pitch_error_px": 34.266666666666666,
+          "count": 20
+        },
+        "stage_37_boundary_curves": {
+          "psnr": 19.646715894863767,
+          "high_frequency_retention": 0.20041247459999584,
+          "boundary_distance_px": 8.664923560619354,
+          "boundary_fscore_t1p0": 0.7013796364907532,
+          "centerline_distance_px": 16.792066836357115,
+          "grid_pitch_error_px": 88.375,
+          "count": 20
+        },
+        "stage_38_boundary_regions": {
+          "psnr": 23.80977730060207,
+          "high_frequency_retention": 0.2686702008024118,
+          "boundary_distance_px": 9.555983453989029,
+          "boundary_fscore_t1p0": 0.5811841525239648,
+          "centerline_distance_px": 10.486578242480755,
+          "grid_pitch_error_px": 100.15625,
+          "count": 20
+        },
+        "stage_39_boundary_defects": {
+          "psnr": 23.786489205694068,
+          "high_frequency_retention": 0.30179450040299377,
+          "boundary_distance_px": 9.67554714679718,
+          "boundary_fscore_t1p0": 0.576712833268128,
+          "centerline_distance_px": 11.072421956062318,
+          "grid_pitch_error_px": 95.66666666666667,
+          "count": 20
+        },
+        "stage_40_boundary_mixed": {
+          "psnr": 23.2149978535265,
+          "high_frequency_retention": 0.25495707033280207,
+          "boundary_distance_px": 10.11408839225769,
+          "boundary_fscore_t1p0": 0.5561974788589137,
+          "centerline_distance_px": 13.515616655349731,
+          "grid_pitch_error_px": 51.8125,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1483,
+      "ring_0p8px_step_std": 0.1555,
+      "ring_0p08px_step_std": 0.1291,
+      "ring_8px_delta_pct": 6.8,
+      "ring_0p8px_delta_pct": 3.0,
+      "ring_0p08px_delta_pct": 8.9,
+      "local_ring_guard_pass": false
+    }
+  ],
+  "verdict": {
+    "found": false,
+    "best": null,
+    "boundary_only_best": {
+      "alpha": 0.05,
+      "alpha_tag": "a005",
+      "boundary_overall_psnr": 21.00943721780541,
+      "boundary_high_frequency_retention": 0.22135437710768469,
+      "boundary_distance_px": 7.540247517398425,
+      "boundary_fscore_t1p0": 0.6517880529931199,
+      "boundary_per_stage": {
+        "stage_34_boundary_lines": {
+          "psnr": 20.653351965460168,
+          "high_frequency_retention": 0.20840761654868611,
+          "boundary_distance_px": 7.138623189926148,
+          "boundary_fscore_t1p0": 0.714088079807436,
+          "centerline_distance_px": 17.114045548439027,
+          "grid_pitch_error_px": 33.52777777777778,
+          "count": 20
+        },
+        "stage_35_boundary_grids": {
+          "psnr": 16.570716600445994,
+          "high_frequency_retention": 0.11491396615227997,
+          "boundary_distance_px": 1.2020009011030197,
+          "boundary_fscore_t1p0": 0.7286356019519797,
+          "centerline_distance_px": 2.810521298646927,
+          "grid_pitch_error_px": 14.1125,
+          "count": 20
+        },
+        "stage_36_boundary_junctions": {
+          "psnr": 19.384011704045307,
+          "high_frequency_retention": 0.20032481091462334,
+          "boundary_distance_px": 6.430565977096558,
+          "boundary_fscore_t1p0": 0.7043185880506643,
+          "centerline_distance_px": 12.76039490699768,
+          "grid_pitch_error_px": 34.266666666666666,
+          "count": 20
+        },
+        "stage_37_boundary_curves": {
+          "psnr": 19.646715894863767,
+          "high_frequency_retention": 0.20041247459999584,
+          "boundary_distance_px": 8.664923560619354,
+          "boundary_fscore_t1p0": 0.7013796364907532,
+          "centerline_distance_px": 16.792066836357115,
+          "grid_pitch_error_px": 88.375,
+          "count": 20
+        },
+        "stage_38_boundary_regions": {
+          "psnr": 23.80977730060207,
+          "high_frequency_retention": 0.2686702008024118,
+          "boundary_distance_px": 9.555983453989029,
+          "boundary_fscore_t1p0": 0.5811841525239648,
+          "centerline_distance_px": 10.486578242480755,
+          "grid_pitch_error_px": 100.15625,
+          "count": 20
+        },
+        "stage_39_boundary_defects": {
+          "psnr": 23.786489205694068,
+          "high_frequency_retention": 0.30179450040299377,
+          "boundary_distance_px": 9.67554714679718,
+          "boundary_fscore_t1p0": 0.576712833268128,
+          "centerline_distance_px": 11.072421956062318,
+          "grid_pitch_error_px": 95.66666666666667,
+          "count": 20
+        },
+        "stage_40_boundary_mixed": {
+          "psnr": 23.2149978535265,
+          "high_frequency_retention": 0.25495707033280207,
+          "boundary_distance_px": 10.11408839225769,
+          "boundary_fscore_t1p0": 0.5561974788589137,
+          "centerline_distance_px": 13.515616655349731,
+          "grid_pitch_error_px": 51.8125,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1483,
+      "ring_0p8px_step_std": 0.1555,
+      "ring_0p08px_step_std": 0.1291,
+      "ring_8px_delta_pct": 6.8,
+      "ring_0p8px_delta_pct": 3.0,
+      "ring_0p08px_delta_pct": 8.9,
+      "local_ring_guard_pass": false
+    },
+    "reason": "no alpha satisfies both boundary-capacity and local ring-guard thresholds"
+  },
+  "generated_at": "2026-05-05 17:11:39"
+}

@@ -1,0 +1,16 @@
+"""Delivery verification results; functional short runs do not replace the published weights."""
+VERIFIED = {'complete_source_data_parents': 768,
+ 'views': 3072,
+ 'all_source_input_views_exact': True,
+ 'published_weight_tensors_exact': 209,
+ 'original_full_frame_inference_exact': True,
+ 'resume_two_plus_two_matches_uninterrupted_four_exactly': True,
+ 'first_four_update_losses_match_published_run_exactly': True,
+ 'two_stage_training_and_deployment_selection_exercised': True,
+ 'completed_updates_pending_assessment_resume_exercised': True,
+ 'CPU_inference_checked': True,
+ 'CUDA_training_and_inference_checked': True,
+ 'relocated_runtime_with_original_experiment_reads_denied': True,
+ 'grayscale_uint8_uint16_IO_checked': True,
+ 'old_machine_paths_in_runtime': 0,
+ 'formal_8192_training_repeated_during_packaging': False}

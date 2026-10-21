@@ -1,0 +1,64 @@
+{
+  "model_key": "pft",
+  "model_spec": {
+    "name": "Compact PFT-SR-x1 adaptation",
+    "family": "PFT-SR",
+    "year": 2025,
+    "category": "recent transformer SR",
+    "kwargs": {
+      "img_size": 128,
+      "patch_size": 1,
+      "in_chans": 1,
+      "embed_dim": 32,
+      "depths": [
+        2,
+        2,
+        2
+      ],
+      "num_heads": 4,
+      "num_topk": [
+        64,
+        64,
+        32,
+        32,
+        16,
+        16
+      ],
+      "window_size": 8,
+      "convffn_kernel_size": 5,
+      "mlp_ratio": 1.0,
+      "upscale": 1,
+      "img_range": 1.0,
+      "upsampler": "pixelshuffledirect",
+      "resi_connection": "1conv",
+      "use_checkpoint": false
+    },
+    "source": "Long et al., CVPR 2025; official PFT-SR code",
+    "adaptation": "official progressive-focused core reduced to six layers and adapted to one-channel x1 restoration; trained from scratch"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\pft\\best_pft.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.12791420487885657,
+    "l1": 0.0854579256454172,
+    "rmse": 0.1160899042635196,
+    "ssim": 0.7877507735211762
+  },
+  "parameter_count": 87847,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": false,
+  "median_static_inference_seconds": 0.2673635499959346,
+  "median_displacement_roi_inference_seconds": 0.22329870000248775
+}

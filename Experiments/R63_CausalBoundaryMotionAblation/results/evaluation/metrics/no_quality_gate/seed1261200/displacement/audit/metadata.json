@@ -1,0 +1,33 @@
+{
+  "generated_utc": "2026-07-17T05:13:45.576118+00:00",
+  "sequences": [
+    "50x_x_0p5um",
+    "50x_x_1um",
+    "20x_0p5um",
+    "20x_1um"
+  ],
+  "sem_pillar_ids": [
+    22,
+    23,
+    24,
+    28,
+    29,
+    30,
+    34,
+    35,
+    36
+  ],
+  "primary_population": "platform_valid_25pct",
+  "tolerance_sensitivity": [
+    0.2,
+    0.25,
+    0.3
+  ],
+  "session_gap_seconds": 60.0,
+  "regular_cadence_seconds": 10.0,
+  "raw_lock_sha256": "44f77635aa2c189593bf626aa49e295eee1d3e566a65c60048dc4e5714772469",
+  "protected_inventory_count": 11,
+  "protected_inventory_digest_before": "702c2a5cdef26dc08da2d11689bb8c21e49864d701dd774fd4fbe97c1e4a5da0",
+  "v42_selection_role": "none; joined only after Raw lock",
+  "claim_limit": "repeatability and physical consistency, not independent stage truth"
+}

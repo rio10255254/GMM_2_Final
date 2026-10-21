@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "status": "PASS_ALL_FIVE_PUBLISHED_CONVENIENCE_DELIVERIES_KEEP_ORIGINAL_VERIFIED_SOURCE_PINS",
+  "local_time": "2026-10-21T12:59:26.226763+08:00",
+  "deliveries": [
+    {
+      "id": "shared_training",
+      "tag": "research-training-history-supplement-20261021",
+      "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-history-supplement-20261021",
+      "source_commit": "c6f63d2c832ae79896b1f3cbafb7887ade04d9cb",
+      "asset": {
+        "name": "shared-native-models-replay.zip",
+        "bytes": 405044795,
+        "sha256": "9b0bc28990314940da787cf18f59ba85876bcaf7c144889d8f9a4835d7e2c72e",
+        "github_asset_id": 660282991
+      },
+      "prior_actual_download_and_replay_proof": "docs/reproducibility/project_completion/SMALL_NATIVE_KIT_VERIFIED.json",
+      "prior_proof_sha256": "429831ea066e8205cb4c9b6b9c614d597cb176f955d9b5c4305ed8a38a37f8f4",
+      "published": true,
+      "actual_server_metadata_checked": true,
+      "tag_resolves_to_original_verified_source": true,
+      "same_as_previously_actually_downloaded_bytes": true,
+      "release_assets_pages_checked": 1,
+      "release_assets_returned": 24
+    },
+    {
+      "id": "optical_saved_results",
+      "tag": "research-optical-calibration-replay-20261021",
+      "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-optical-calibration-replay-20261021",
+      "source_commit": "2d78c170d412a0ecebc7f8ca456c6a00a11479b0",
+      "asset": {
+        "name": "psf-saved-results-replay.zip",
+        "bytes": 39498227,
+        "sha256": "526b6ea3a2e8ba55a9da5ae221cb859e9f1a669023e935eba05d6cc4ece7fbb1",
+        "github_asset_id": 660534862
+      },
+      "prior_actual_download_and_replay_proof": "docs/reproducibility/optical_calibration/GITHUB_REPLAY_PUBLISHED_VERIFIED.json",
+      "prior_proof_sha256": "14cfd3f61cf2198db75a48c1d2d664cc93fb0a7259eb9bb403b6bfd23187d25b",
+      "published": true,
+      "actual_server_metadata_checked": true,
+      "tag_resolves_to_original_verified_source": true,
+      "same_as_previously_actually_downloaded_bytes": true,
+      "release_assets_pages_checked": 1,
+      "release_assets_returned": 1
+    },
+    {
+      "id": "lab_subpixel",
+      "tag": "research-lab-subpixel-replay-20261021",
+      "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-lab-subpixel-replay-20261021",
+      "source_commit": "415ce617db99cebc7e8b72e82ad0a7ad03491748",
+      "asset": {
+        "name": "lab-subpixel-inputs-and-results-replay.zip",
+        "bytes": 4242188,
+        "sha256": "d8d468ac5420d17ffc701d36ffcc5e10a952d4028632323be35735746d2f83a6",
+        "github_asset_id": 661091138
+      },
+      "prior_actual_download_and_replay_proof": "docs/reproducibility/lab_comparisons/GITHUB_REPLAY_PUBLISHED_VERIFIED.json",
+      "prior_proof_sha256": "be5d923724ede1ad4ec21e28001cac6712040474d2d19b1b7fb4bb115cecd061",
+      "published": true,
+      "actual_server_metadata_checked": true,
+      "tag_resolves_to_original_verified_source": true,
+      "same_as_previously_actually_downloaded_bytes": true,
+      "release_assets_pages_checked": 1,
+      "release_assets_returned": 1
+    },
+    {
+      "id": "V42_history",
+      "tag": "research-v42-history-replay-20261021",
+      "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-v42-history-replay-20261021",
+      "source_commit": "f1549a4f1f3a34ca5a54678884b1397a1405d789",
+      "asset": {
+        "name": "v42-original-log-and-fixed-models-replay.zip",
+        "bytes": 54049547,
+        "sha256": "b63f8703c905b0773b73efa3166451a1e63a9ea58be306c3aafe671c1e021dcf",
+        "github_asset_id": 661174144
+      },
+      "prior_actual_download_and_replay_proof": "docs/reproducibility/lab_comparisons/V42_GITHUB_REPLAY_PUBLISHED_VERIFIED.json",
+      "prior_proof_sha256": "a957276b492ba8df3a4fb2af46f3f57a2b78a15bd6f171775b145fcceb7018b7",
+      "published": true,
+      "actual_server_metadata_checked": true,
+      "tag_resolves_to_original_verified_source": true,
+      "same_as_previously_actually_downloaded_bytes": true,
+      "release_assets_pages_checked": 1,
+      "release_assets_returned": 1
+    },
+    {
+      "id": "R61_original_ONNX_delivery",
+      "tag": "research-r61-onnx-delivery-20261021",
+      "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-r61-onnx-delivery-20261021",
+      "source_commit": "e21c634bbb510be2fe8b50e5ad64912a29f9e924",
+      "asset": {
+        "name": "R61-original-ONNX-delivery-verified.zip",
+        "bytes": 15075962,
+        "sha256": "c9470e653a864cccbab9405f8dbfe84b0eb8a84b7ccb54debc5f0eb99d8b2428",
+        "github_asset_id": 661315170
+      },
+      "prior_actual_download_and_replay_proof": "docs/reproducibility/project_completion/R61_ONNX_SMALL_DELIVERY_VERIFIED.json",
+      "prior_proof_sha256": "a4997a434c1b33d17bd2d0f131f4bf422a8cdb777801637c3a825375a769c14f",
+      "published": true,
+      "actual_server_metadata_checked": true,
+      "tag_resolves_to_original_verified_source": true,
+      "same_as_previously_actually_downloaded_bytes": true,
+      "release_assets_pages_checked": 1,
+      "release_assets_returned": 1
+    }
+  ],
+  "total_kit_zip_bytes": 517910719,
+  "new_large_downloads_repeated_for_this_metadata_check": false,
+  "prior_actual_download_and_execution_proofs_retained": true,
+  "kits_are_convenience_views_not_five_additional_independent_experiments": true,
+  "do_not_retarget_these_tags_to_final_master_source": true,
+  "master_full_project_preservation_still_pending": true
+}

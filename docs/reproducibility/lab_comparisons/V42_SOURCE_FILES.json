@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "trainer": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/train_v42.py",
+  "native_reader": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/infer_v42.py",
+  "runs": [
+    {
+      "id": "full_120",
+      "csv": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/V42_SoftLabelSNR_full_training_20260709_202710_val_log_v5.csv",
+      "stdout": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/run_logs/full_training_20260709_202710/train_stdout.log"
+    },
+    {
+      "id": "earlier_2",
+      "csv": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_190419_20260709_190422/V42_SoftLabelSNR_full_training_20260709_190419_val_log_v5.csv",
+      "stdout": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/run_logs/full_training_20260709_190419/train_stdout.log",
+      "original_stdout_empty": true
+    }
+  ],
+  "files": [
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/train_v42.py",
+      "bytes": 473677,
+      "sha256": "ff2334e4c2fb3d66eefe91436b01681690c5bf6b0eb33054b549caae1e84b2f2",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/infer_v42.py",
+      "bytes": 42729,
+      "sha256": "915d4913e37c675c19162c0cf7abef467b420d31ce0e3a789378c2133b633c3f",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py",
+      "bytes": 39390,
+      "sha256": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/utils_v42.py",
+      "bytes": 8251,
+      "sha256": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md",
+      "bytes": 3855,
+      "sha256": "f4e4f4e4b572fb55af0d6d44c18ed7ed48d24e15eabcac4a4c1c3af8c55eb552",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/CURRENT_FULL_TRAINING_RUN.json",
+      "bytes": 1658,
+      "sha256": "451aecb7e6a5b44995d425b1f027cc321e3bc47537918a24e18b6138a134d09b",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/docs/V42_FULL_DATASET_OVERLAY_REPORT.json",
+      "bytes": 1212,
+      "sha256": "5dbb43e3f66844a9a6672c0956708915f2594710f773ff197dfc463ae3c09d8d",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/training_data/manifest.json",
+      "bytes": 21346912,
+      "sha256": "c5a2d5504448d52f241e29a016d39835ded394c2809b0d2059145b63c56f0207",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/run_meta.json",
+      "bytes": 1024,
+      "sha256": "3698db82df09c8cacfeb16819d6abffa1f64a76a4a6511423821164b2870c3f2",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/V42_SoftLabelSNR_full_training_20260709_202710_val_log_v5.csv",
+      "bytes": 214665,
+      "sha256": "b7e9b35df1107e2208ce03c85cc1be4534e6092a44d8c25cad79bb1e1b42bb70",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/run_logs/full_training_20260709_202710/train_stdout.log",
+      "bytes": 126783,
+      "sha256": "922a0e01e995b1d57e80de81d98dcea350a9486b257641cb28521127f3b3666b",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_190419_20260709_190422/V42_SoftLabelSNR_full_training_20260709_190419_val_log_v5.csv",
+      "bytes": 6278,
+      "sha256": "de4663142a450f6d90a30d0f1f5c1866036e970fe6c05e408a85f3896c5586e3",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/run_logs/full_training_20260709_190419/train_stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+      "bytes": 3146806,
+      "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "bytes": 3146806,
+      "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
+      "role": "unchanged_original_V42_history_or_camera_source"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_190419_20260709_190422/SUPERSEDED_LOW_GPU_UTILIZATION.txt",
+      "bytes": 217,
+      "sha256": "7ecdd7aaa25ed5709d39406964205274350a7101e39590d46625fda97bb0767c",
+      "role": "unchanged_earlier_attempt_status_or_attribution"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_190419_20260709_190422/attribution_log.txt",
+      "bytes": 1617,
+      "sha256": "4bdf3ee588ba445b1958053cde6c55f20227dc1b6326ea0d86292459a5c0dd01",
+      "role": "unchanged_earlier_attempt_status_or_attribution"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone/logs/v41_standalone_20260708_100223_stdout.log",
+      "bytes": 27270,
+      "sha256": "bed421f6b69c364eb7658abb1490114fa6a651ff747f3073eb8ea03f4921ba1c",
+      "role": "unchanged_original_V41_completed_epoch16_log"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "20x",
+      "source": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+      "crop_xywh": [
+        768,
+        512,
+        512,
+        512
+      ]
+    },
+    {
+      "id": "50x",
+      "source": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "crop_xywh": [
+        768,
+        512,
+        512,
+        512
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/weights/best_tradeoff.pth.tar",
+      "bytes": 18202966,
+      "sha256": "6d6eafba196340c7789f8762ab8ab6eaf40a337bee9e8b532771ab7dad91e70e",
+      "role": "best_saved_ema_state_at_epoch10",
+      "id": "best_E010_EMA",
+      "state_kind": "epoch10_EMA_stored_in_state_dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
+      "bytes": 35591610,
+      "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
+      "role": "last_saved_raw_network_state_at_epoch120",
+      "id": "last_E120_raw",
+      "state_kind": "epoch120_raw_network_state_dict"
+    }
+  ],
+  "native_reference": [
+    {
+      "id": "best_E010_EMA_20x",
+      "checkpoint_sha256": "6d6eafba196340c7789f8762ab8ab6eaf40a337bee9e8b532771ab7dad91e70e",
+      "checkpoint_state_kind": "epoch10_EMA_stored_in_state_dict",
+      "input_crop_bmp_sha256": "38a402a2a291170cd8dbd06882f88ff0eec96262a3b52cfa14fafcb39d16bda1",
+      "shape": [
+        1,
+        1,
+        512,
+        512
+      ],
+      "all_outputs_finite": true,
+      "full_native_float32_sha256": "bb0c27cc0c8d135de5ff50c1f6bd2625ccf046c493e56f643dfd154d41c4a1d9",
+      "output_bmp_sha256": "84bc701d5af9fe7e82347dbfde4df7241fc319c93d5165dea30f5c28dcc1b513"
+    },
+    {
+      "id": "best_E010_EMA_50x",
+      "checkpoint_sha256": "6d6eafba196340c7789f8762ab8ab6eaf40a337bee9e8b532771ab7dad91e70e",
+      "checkpoint_state_kind": "epoch10_EMA_stored_in_state_dict",
+      "input_crop_bmp_sha256": "ababc002eeb25f2b648bb016dae21fdd2e51cfb43c18be0367f82c051f2aff1a",
+      "shape": [
+        1,
+        1,
+        512,
+        512
+      ],
+      "all_outputs_finite": true,
+      "full_native_float32_sha256": "417843be4d62f071d571b6afe684ae0d3e8269aa6a932013fde20acb1556c212",
+      "output_bmp_sha256": "63cfa164dd5c825ee1690048645fba08e39ec71a95191601ee69c266f470959c"
+    },
+    {
+      "id": "last_E120_raw_20x",
+      "checkpoint_sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
+      "checkpoint_state_kind": "epoch120_raw_network_state_dict",
+      "input_crop_bmp_sha256": "38a402a2a291170cd8dbd06882f88ff0eec96262a3b52cfa14fafcb39d16bda1",
+      "shape": [
+        1,
+        1,
+        512,
+        512
+      ],
+      "all_outputs_finite": true,
+      "full_native_float32_sha256": "ff31fc3ee2cd0f39755171fc9043a92f1432f9104612ffecd50e7d8925611840",
+      "output_bmp_sha256": "48e3e36beca2f946fa013d086601a11e63cc411c7f9e3161ed32e784af0bfc41"
+    },
+    {
+      "id": "last_E120_raw_50x",
+      "checkpoint_sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
+      "checkpoint_state_kind": "epoch120_raw_network_state_dict",
+      "input_crop_bmp_sha256": "ababc002eeb25f2b648bb016dae21fdd2e51cfb43c18be0367f82c051f2aff1a",
+      "shape": [
+        1,
+        1,
+        512,
+        512
+      ],
+      "all_outputs_finite": true,
+      "full_native_float32_sha256": "5c397efe48ff941bcde91966a499d9e7fb65e7d3d030fa9e11de1aced97cc765",
+      "output_bmp_sha256": "deba2a3d186a966bf057e25f2f5d2f9cbcafe8d973dea7ed9de58a4fd7378b8b"
+    }
+  ],
+  "training_repeated": false,
+  "historical_log_original_bytes_must_stay_unchanged": true
+}

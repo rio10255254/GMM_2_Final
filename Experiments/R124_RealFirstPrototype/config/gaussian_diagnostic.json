@@ -1,0 +1,11 @@
+{
+  "calibration_id": "r124_assumed_gaussian_engineering_only",
+  "qualification": "unqualified_diagnostic",
+  "purpose": "Nonidentity operator smoke; arbitrary assumed optics, not fit to real images or SEM",
+  "kernel_convention": "physical_psf",
+  "kernel": {"type": "gaussian", "sigma_native_px": 0.8, "radius_native_px": 2},
+  "sampling_factor": 2,
+  "gain": 1.0,
+  "bias": 0.0,
+  "noise_variance": 0.00006151480199923106
+}

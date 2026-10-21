@@ -1,0 +1,36 @@
+{
+  "run_id": "r122_diagnostic_20260908",
+  "training": false,
+  "confirmation_access": false,
+  "operator_test": {
+    "families": ["gaussian", "logistic", "asymmetric"],
+    "scales_px": [0.4, 0.8, 1.5, 3.0],
+    "phases_px": [-0.4, -0.3, -0.2, -0.1, 0.0, 0.1, 0.2, 0.3, 0.4],
+    "polarity": [-1, 1],
+    "level_pairs": [[0.15, 0.35], [0.1, 0.9]],
+    "translation_px": [-0.4, 0.0, 0.4],
+    "compression": [0.8, 1.0, 1.5],
+    "dense_step_px": 0.015625,
+    "position_tolerance_px": 0.02,
+    "width_tolerance_px": 0.03,
+    "interpretation": "Known-center oracle action test; dense and pixel-sampled cases separately reported. No prediction ability claimed."
+  },
+  "physical_fit": {
+    "shapes": ["line", "circle8", "circle16", "circle32"],
+    "psf_sigma_px": [0.8, 1.5, 3.0],
+    "phases_px": [-0.4, -0.2, 0.0, 0.2, 0.4],
+    "contrast_gray": [40, 120],
+    "noise_std_gray": [0.0, 0.5, 2.0],
+    "true_motion_px": 0.4,
+    "supersample": 8,
+    "seed": 1225001,
+    "position_tolerance_px": 0.1,
+    "motion_tolerance_px": 0.1,
+    "interpretation": "Fit pixel-integrated straight-edge model to 2D physically rendered inputs. Curved cases deliberately test mismatch. No fit uses target position."
+  },
+  "provenance": {
+    "checkpoint": "V42 full_training_20260709_202710 E120",
+    "scope": "Actual image split plus source lineage, thesis motion selections and static image. Auxiliary sequence loaders inspected; historical per-batch sampling and all ancestor pretraining are not fully reconstructed.",
+    "claim_rule": "Split membership means training eligibility, not proof that every eligible example was drawn. Repeated weighted sampling and final logs establish actual training mechanism; do not invent per-example access logs."
+  }
+}

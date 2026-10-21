@@ -1,0 +1,60 @@
+{
+  "model_key": "swinir",
+  "model_spec": {
+    "name": "Compact SwinIR-x1",
+    "family": "SwinIR",
+    "year": 2021,
+    "category": "transformer restoration",
+    "kwargs": {
+      "img_size": 128,
+      "patch_size": 1,
+      "in_chans": 1,
+      "embed_dim": 60,
+      "depths": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "num_heads": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "window_size": 8,
+      "mlp_ratio": 2.0,
+      "upscale": 1,
+      "img_range": 1.0,
+      "upsampler": "",
+      "resi_connection": "1conv"
+    },
+    "source": "Liang et al., ICCV Workshops 2021; BasicSR reference implementation",
+    "adaptation": "one-channel same-resolution compact configuration"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\swinir\\best_swinir.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.10349168030494449,
+    "l1": 0.07158431476522063,
+    "rmse": 0.09720776719624495,
+    "ssim": 0.8404635767810414
+  },
+  "parameter_count": 410161,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.2419182500016177,
+  "median_displacement_roi_inference_seconds": 0.12905390000378247
+}

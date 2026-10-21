@@ -1,0 +1,9 @@
+priority,evidence,mosr_result,comparison,interpretation
+1,50x pillar CD midpoint MAE,48.6 nm,Raw 46.3 nm,Preserves apparent CD while other learned baselines shift it more
+2,50x pillar CD interval width,81.8 nm,71.4% lower than Raw,Less threshold-dependent boundary placement
+3,50x pillar ringing ratio,0.00465,62.9% lower than Raw,Low radial ringing in the cleanest CD case
+4,Pillar formal P95 step error,17.94 nm,Best of five methods,Strong tail robustness on the stable-step subset
+5,Pillar all-session median error,5.53 nm,Best learned method,Robust center under a non-ranked selection audit
+6,Pillar all-session P95 error,28.16 nm,Best learned method,Robust tail under a non-ranked selection audit
+7,20x via CD midpoint MAE,224.2 nm,65.2% lower than Raw,"Best outer-boundary recovery, with severe ringing caveat"
+8,Equal-input direct latency,400.2 ms,Base U-Net 341.9 ms,Not intrinsically faster; deployment chart used different paths

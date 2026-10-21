@@ -1,0 +1,31 @@
+{
+  "prototype_id": "R95_CAUSAL_ROUTING_PROTOTYPE_V2",
+  "formal_training_allowed_by_this_file": false,
+  "checks": [
+    "model_is_exact_identity_at_initialization",
+    "need_and_recoverability_are_distinct_maps",
+    "boundary_and_texture_paths_are_separate",
+    "need_and_evidence_paths_are_separate",
+    "local_contrast_has_private_learned_tower",
+    "all_output_branches_are_controlled",
+    "no_independent_edge_painting_output_exists",
+    "counterfactual_clean_view_has_zero_branch_and_need_targets_and_unit_recoverability",
+    "counterfactual_branch_targets_sum_to_effective_target",
+    "control_tower_receives_no_reconstruction_shortcut_gradient",
+    "control_tower_receives_direct_supervision_gradient",
+    "common_descent_direction_is_nonopposing_to_every_objective",
+    "full_and_tiled_float32_outputs_are_exact",
+    "translated_input_produces_translated_branch_outputs_on_valid_interior"
+  ],
+  "representative_inputs": [
+    "procedural_clear",
+    "procedural_blur",
+    "procedural_noise",
+    "procedural_blur_plus_noise",
+    "real_5x_live_validation",
+    "real_20x_live_validation",
+    "real_50x_live_validation"
+  ],
+  "report": "reports/prototype_report.json"
+}
+

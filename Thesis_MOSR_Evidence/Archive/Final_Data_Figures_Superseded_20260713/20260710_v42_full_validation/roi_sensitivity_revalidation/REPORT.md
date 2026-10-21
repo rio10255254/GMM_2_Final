@@ -1,0 +1,65 @@
+# V42 ROI sensitivity revalidation
+
+Raw, V41, and V42 use identical frame pairs, identical ROI coordinates, and frozen-V41 shared edge positions. Three ROIs are reported for every dataset; no per-model ROI is selected.
+Measurements pinned to the edge-search boundary are treated as detector failures, not as zero-variance subpixel results. A step enters a comparison only when Raw, V41, and V42 all pass this rule.
+The primary error-aware total combines step RMSE to the commanded motion with boundary-localization uncertainty, so a stable but biased result cannot appear artificially strong.
+
+## Common-best-30 exact results
+
+| group     | roi_label                     |   raw_std_step_nm |   v42_std_step_nm |   v42_std_step_nm_improvement_vs_raw_pct |   raw_mean_bias_nm |   v42_mean_bias_nm |   raw_error_aware_total_nm |   v42_error_aware_total_nm |   v42_error_aware_total_nm_improvement_vs_raw_pct |   raw_n_valid |   v42_n_valid |
+|:----------|:------------------------------|------------------:|------------------:|-----------------------------------------:|-------------------:|-------------------:|---------------------------:|---------------------------:|--------------------------------------------------:|--------------:|--------------:|
+| x_0p5um   | A Legacy cross-pattern ROI    |             24.88 |             21.85 |                                    12.15 |             -30.31 |             -56.72 |                     216.43 |                     110.14 |                                             49.11 |         28.00 |         28.00 |
+| x_1um     | A Legacy cross-pattern ROI    |             20.78 |             18.76 |                                     9.71 |             -36.24 |             -26.80 |                     479.95 |                     214.19 |                                             55.37 |         29.00 |         29.00 |
+| 20x_0p5um | A Legacy cross-pattern ROI    |             20.70 |             16.04 |                                    22.51 |              -8.21 |               3.30 |                     203.95 |                     307.46 |                                            -50.75 |         30.00 |         30.00 |
+| 20x_1um   | A Legacy cross-pattern ROI    |             26.88 |             69.99 |                                  -160.40 |               7.73 |              26.41 |                     180.75 |                     124.98 |                                             30.86 |         28.00 |         28.00 |
+| 5x_0p5um  | A Legacy cross-pattern ROI    |              9.02 |              9.35 |                                    -3.67 |             -11.57 |             -13.05 |                     474.87 |                     328.77 |                                             30.77 |         30.00 |         30.00 |
+| 5x_1um    | A Legacy cross-pattern ROI    |             61.93 |             64.33 |                                    -3.88 |             -65.42 |             -63.57 |                     495.47 |                     349.24 |                                             29.51 |         30.00 |         30.00 |
+| x_0p5um   | B Clean pillar-grid ROI       |            nan    |            nan    |                                   nan    |             nan    |             nan    |                     nan    |                     nan    |                                            nan    |          0.00 |          0.00 |
+| x_1um     | B Clean pillar-grid ROI       |              5.64 |              6.11 |                                    -8.25 |             -83.79 |             -54.23 |                     503.24 |                     449.97 |                                             10.58 |         25.00 |         25.00 |
+| 20x_0p5um | B Clean pillar-grid ROI       |              7.06 |              7.66 |                                    -8.54 |              -6.53 |              -6.21 |                     167.69 |                      70.56 |                                             57.92 |         30.00 |         30.00 |
+| 20x_1um   | B Clean pillar-grid ROI       |              6.26 |              6.95 |                                   -11.00 |             -16.25 |             -41.56 |                     167.68 |                      87.77 |                                             47.66 |         30.00 |         30.00 |
+| x_0p5um   | C Clean vertical-line ROI     |              8.47 |             10.86 |                                   -28.18 |             -55.63 |             -28.12 |                     147.04 |                      57.62 |                                             60.81 |         30.00 |         30.00 |
+| x_1um     | C Clean vertical-line ROI     |             13.78 |             14.95 |                                    -8.50 |             -30.24 |             -16.16 |                     167.26 |                      78.49 |                                             53.08 |         30.00 |         30.00 |
+| 20x_0p5um | C Clean vertical-line ROI     |              7.12 |              7.68 |                                    -7.85 |               9.05 |               7.55 |                     125.37 |                      58.94 |                                             52.99 |         30.00 |         30.00 |
+| 20x_1um   | C Clean vertical-line ROI     |              6.82 |             11.62 |                                   -70.26 |             -14.64 |              -2.36 |                     126.22 |                      62.93 |                                             50.14 |         30.00 |         30.00 |
+| 5x_0p5um  | B Clean outer-grid ROI        |              6.90 |              7.97 |                                   -15.58 |              -7.32 |             -10.21 |                     298.89 |                     209.99 |                                             29.75 |         30.00 |         30.00 |
+| 5x_1um    | B Clean outer-grid ROI        |             58.88 |             59.30 |                                    -0.71 |             -53.38 |             -53.97 |                     312.62 |                     227.44 |                                             27.25 |         30.00 |         30.00 |
+| 5x_0p5um  | C Clean center micro-grid ROI |              6.88 |              6.34 |                                     7.85 |              -7.78 |              -7.15 |                     241.37 |                     234.78 |                                              2.73 |         30.00 |         30.00 |
+| 5x_1um    | C Clean center micro-grid ROI |             56.84 |             57.66 |                                    -1.45 |             -49.97 |             -52.65 |                     244.93 |                     238.08 |                                              2.80 |         30.00 |         30.00 |
+
+## ROI sensitivity classification
+
+| dataset         | group     |   roi_count | total_uncertainty_status   | error_aware_status   | step_sd_status     |   total_improvement_min_pct |   total_improvement_median_pct |   total_improvement_max_pct |   error_aware_improvement_min_pct |   error_aware_improvement_median_pct |   error_aware_improvement_max_pct |   step_sd_improvement_min_pct |   step_sd_improvement_median_pct |   step_sd_improvement_max_pct |
+|:----------------|:----------|------------:|:---------------------------|:---------------------|:-------------------|----------------------------:|-------------------------------:|----------------------------:|----------------------------------:|-------------------------------------:|----------------------------------:|------------------------------:|---------------------------------:|------------------------------:|
+| 20260702_100MG  | x_0p5um   |           3 | incomplete                 | incomplete           | incomplete         |                       55.91 |                          59.47 |                       63.02 |                             49.11 |                                54.96 |                             60.81 |                        -28.18 |                            -8.01 |                         12.15 |
+| 20260702_100MG  | x_1um     |           3 | robust_improvement         | robust_improvement   | roi_sensitive      |                        9.98 |                          53.29 |                       55.59 |                             10.58 |                                53.08 |                             55.37 |                         -8.50 |                            -8.25 |                          9.71 |
+| 20260704_20x_5x | 20x_0p5um |           3 | roi_sensitive              | roi_sensitive        | roi_sensitive      |                      -50.85 |                          53.24 |                       58.05 |                            -50.75 |                                52.99 |                             57.92 |                         -8.54 |                            -7.85 |                         22.51 |
+| 20260704_20x_5x | 20x_1um   |           3 | robust_improvement         | robust_improvement   | robust_degradation |                       31.99 |                          49.81 |                       53.67 |                             30.86 |                                47.66 |                             50.14 |                       -160.40 |                           -70.26 |                        -11.00 |
+| 20260704_20x_5x | 5x_0p5um  |           3 | robust_improvement         | robust_improvement   | roi_sensitive      |                        2.73 |                          29.81 |                       30.80 |                              2.73 |                                29.75 |                             30.77 |                        -15.58 |                            -3.67 |                          7.85 |
+| 20260704_20x_5x | 5x_1um    |           3 | robust_improvement         | robust_improvement   | robust_degradation |                        3.16 |                          28.23 |                       30.06 |                              2.80 |                                27.25 |                             29.51 |                         -3.88 |                            -1.45 |                         -0.71 |
+
+## Cross-structure displacement agreement
+
+This table measures how much the result changes when the same frame pair is measured on different structures. Lower cross-ROI SD is better.
+
+| dataset         | group     |   n_steps |   roi_count_min |   roi_count_max |   raw_median_cross_roi_sd_nm |   v41_median_cross_roi_sd_nm |   v42_median_cross_roi_sd_nm |   v42_improvement_vs_raw_pct |
+|:----------------|:----------|----------:|----------------:|----------------:|-----------------------------:|-----------------------------:|-----------------------------:|-----------------------------:|
+| 20260702_100MG  | x_0p5um   |        28 |               2 |               2 |                        25.68 |                        13.81 |                        18.00 |                        29.90 |
+| 20260702_100MG  | x_1um     |        30 |               2 |               3 |                        29.45 |                        39.98 |                        19.61 |                        33.41 |
+| 20260704_20x_5x | 20x_0p5um |        30 |               3 |               3 |                        11.63 |                        11.63 |                        10.47 |                         9.94 |
+| 20260704_20x_5x | 20x_1um   |        30 |               2 |               3 |                         8.94 |                        26.27 |                        25.99 |                      -190.83 |
+| 20260704_20x_5x | 5x_0p5um  |        30 |               3 |               3 |                         2.62 |                         5.44 |                         3.86 |                       -47.35 |
+| 20260704_20x_5x | 5x_1um    |        30 |               3 |               3 |                         8.94 |                         6.92 |                         8.09 |                         9.45 |
+
+## Interpretation rules
+
+- `robust_improvement`: V42 improves versus Raw in all three ROIs.
+- `robust_degradation`: V42 is worse in all three ROIs.
+- `roi_sensitive`: the sign changes when the ROI changes; no single headline number is robust.
+- `incomplete`: at least one ROI failed the detector validity gate and cannot support a three-ROI conclusion.
+- Step SD and total uncertainty are classified separately.
+- `error_aware_status` is the primary conclusion because it includes both accuracy and localization uncertainty.
+
+## Traceability
+
+See `visual_audit/VISUAL_INDEX.md` for full-frame ROI overlays, independent crops, actual edge locations, and representative frame-pair process images.

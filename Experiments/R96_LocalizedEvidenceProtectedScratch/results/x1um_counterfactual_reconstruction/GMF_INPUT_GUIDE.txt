@@ -1,0 +1,17 @@
+This folder contains the same 50-frame sequence in five matching subfolders.
+All files are named frame_0000.bmp through frame_0049.bmp in the original chronological order.
+
+Recommended external GMF order:
+1. 00_raw                  Original images (control)
+2. 01_r96                  Standard R96 E44 reconstruction
+3. 02_detail_gate_open     Model-internal counterfactual: detail correction no longer redundantly attenuated
+4. 04_phase_safe_detail    Symmetric detail-enhanced comparator designed not to move edge phase
+
+Optional causal negative control:
+5. 03_all_gate_open        Every correction branch forced open; this is intentionally diagnostic
+
+Please export one coordinate table per subfolder without changing frame order.
+The manifest.csv file maps every frame index to the original camera filename.
+
+Important claim boundary:
+Real microscope images do not provide known clean truth. The counterfactual folders apply correction rules motivated by the synthetic oracle audit, but they are not ground-truth reconstructions. External GMF remains the independent coordinate test.

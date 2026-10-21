@@ -1,0 +1,274 @@
+{
+  "audit_version": 1,
+  "benchmark_root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\Modern_Restoration_Benchmarks_20260719",
+  "overall_status": "PASS_WITH_MATERIAL_METHOD_CAVEATS",
+  "circular_cd_and_sharpness": {
+    "status": "PASS",
+    "thresholds": [
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65
+    ],
+    "feature_count": 180,
+    "interval_max_abs_difference": 9.094947017729282e-13,
+    "summary_max_abs_difference": 4.689582056016661e-13,
+    "interval_numeric_columns_checked": [
+      "angular_mad_nm",
+      "cd_interval_midpoint_nm",
+      "cd_interval_width_nm",
+      "cd_lower_nm",
+      "cd_upper_nm",
+      "distance_from_interval_nm",
+      "edge_width_nm",
+      "michelson_contrast",
+      "midpoint_absolute_error_nm",
+      "midpoint_error_nm",
+      "ringing_ratio",
+      "sem_cd_nm"
+    ],
+    "summary_numeric_columns_checked": [
+      "max_ringing_ratio",
+      "mean_angular_mad_nm",
+      "mean_cd_interval_width_nm",
+      "mean_distance_from_interval_nm",
+      "mean_edge_width_nm",
+      "mean_michelson_contrast",
+      "mean_ringing_ratio",
+      "median_distance_from_interval_nm",
+      "median_edge_width_nm",
+      "midpoint_bias_nm",
+      "midpoint_mae_nm",
+      "midpoint_rmse_nm",
+      "n_features",
+      "sem_interval_coverage_count",
+      "sem_interval_coverage_fraction"
+    ],
+    "interpretation_limit": "The arithmetic is reproducible. The 35%-65% threshold band is an analysis choice; unless it was fixed before inspecting outcomes, its midpoint should be described as exploratory."
+  },
+  "displacement": {
+    "status": "PASS_WITH_METHOD_CAVEATS",
+    "pooled_metric_max_abs_difference": 1.1368683772161603e-13,
+    "pooled_numeric_columns_checked": [
+      "error_sd_nm",
+      "mae_nm",
+      "mean_error_nm",
+      "mean_signed_step_nm",
+      "mean_within_grid_nm",
+      "median_absolute_error_nm",
+      "median_within_grid_nm",
+      "n",
+      "p95_absolute_error_nm",
+      "rmse_nm",
+      "signed_step_sd_nm"
+    ],
+    "selected_counts": {
+      "20x_0p5um": 30,
+      "20x_1um": 30,
+      "50x_x_0p5um": 30,
+      "50x_x_1um": 30
+    },
+    "raw_ranking_score_formula_max_abs_difference": 4.836575584477032e-12,
+    "selection_rule": "The formal 30-step subset is ranked by Raw deviation from the nominal command, so it is a stable-step subset and is not an unbiased method-ranking sample.",
+    "reference_columns_found": [],
+    "reference_limit": "The analysis table contains nominal commanded displacement but no numeric per-frame PI feedback. The current errors therefore quantify agreement with the command, not independently logged stage truth."
+  },
+  "line": {
+    "status": "PASS_WITH_METHOD_CAVEATS",
+    "by_sequence_max_abs_difference": 1.7763568394002505e-15,
+    "pooled_max_abs_difference": 4.440892098500626e-16,
+    "by_sequence_numeric_columns_checked": [
+      "boundary_bias_nm",
+      "boundary_error_sd_nm",
+      "boundary_mae_nm",
+      "boundary_rmse_nm",
+      "boundary_valid_steps",
+      "median_within_edge_mad_nm",
+      "nominal_step_um",
+      "profile_bias_nm",
+      "profile_error_sd_nm",
+      "profile_mae_nm",
+      "profile_rmse_nm",
+      "profile_valid_steps",
+      "step_count"
+    ],
+    "pooled_numeric_columns_checked": [
+      "boundary_bias_nm",
+      "boundary_error_sd_nm",
+      "boundary_mae_nm",
+      "boundary_median_absolute_error_nm",
+      "boundary_rmse_nm",
+      "boundary_valid_steps",
+      "median_within_edge_mad_nm",
+      "profile_bias_nm",
+      "profile_error_sd_nm",
+      "profile_mae_nm",
+      "profile_median_absolute_error_nm",
+      "profile_rmse_nm",
+      "profile_valid_steps",
+      "step_count"
+    ],
+    "interpretation_limit": "The line result uses the same Raw-ranked step subset and Raw-defined candidate edges for all methods. This preserves identity matching but does not constitute an independent selection rule."
+  },
+  "sem_and_pixel_scale": {
+    "status": "PASS_WITH_CALIBRATION_CAVEAT",
+    "pillar": {
+      "50x": {
+        "radius_to_diameter_max_abs_difference_nm": 0.0,
+        "same_nine_physical_radii": true,
+        "object_um_per_px": 0.069
+      },
+      "20x": {
+        "radius_to_diameter_max_abs_difference_nm": 0.0,
+        "same_nine_physical_radii": true,
+        "object_um_per_px": 0.17250000000000001
+      }
+    },
+    "via_radius_to_diameter_max_abs_difference_nm": 0.0,
+    "via_mean_diameter_nm": 3289.0330025851144,
+    "nominal_pixel_scales_um_per_px": {
+      "50x": 0.069,
+      "20x": 0.17250000000000001
+    },
+    "pixel_scale_formula_max_abs_difference_um_per_px": 0.0,
+    "orientation_check": "Both magnifications contain the same nine SEM radii after their recorded image-orientation transform.",
+    "scale_limit": "The conversion 3.45 um divided by nominal magnification is arithmetically correct, but no independent effective-magnification calibration was found in this benchmark package."
+  },
+  "runtime": {
+    "status": "PASS_WITH_COMPARISON_CAVEAT",
+    "throughput_formula_max_abs_difference": 8.881784197001252e-16,
+    "direct_full_frame_ranking": [
+      {
+        "method": "NAFNet",
+        "direct_median_ms": 152.73694999996223,
+        "direct_peak_gpu_memory_mb": 1992.39599609375
+      },
+      {
+        "method": "Base U-Net",
+        "direct_median_ms": 341.927499999656,
+        "direct_peak_gpu_memory_mb": 5068.6416015625
+      },
+      {
+        "method": "MOSR",
+        "direct_median_ms": 400.2338500013138,
+        "direct_peak_gpu_memory_mb": 5466.49462890625
+      },
+      {
+        "method": "EDSR",
+        "direct_median_ms": 915.58674999942,
+        "direct_peak_gpu_memory_mb": 3521.2041015625
+      }
+    ],
+    "same_patch_ranking": [
+      {
+        "method": "Base U-Net",
+        "patch_median_ms": 8.103199999823119
+      },
+      {
+        "method": "NAFNet",
+        "patch_median_ms": 9.544949998598897
+      },
+      {
+        "method": "MOSR",
+        "patch_median_ms": 13.109199999234988
+      },
+      {
+        "method": "EDSR",
+        "patch_median_ms": 20.27330000055372
+      }
+    ],
+    "interpretation_limit": "The original deployment table compares MOSR direct full-frame inference with tiled baseline inference. It is a practical pipeline-latency comparison, not a same-input architecture-speed comparison."
+  },
+  "formal_paired_comparisons": [
+    {
+      "morphology": "pillar",
+      "reference_method": "Raw",
+      "candidate_method": "MOSR",
+      "common_step_count": 118,
+      "candidate_minus_reference_mean_absolute_error_nm": -2.8934901745357493,
+      "paired_bootstrap_95ci_lower_nm": -4.139009954900755,
+      "paired_bootstrap_95ci_upper_nm": -1.670681131013543,
+      "wilcoxon_p_value": 9.344008973863527e-07
+    },
+    {
+      "morphology": "pillar",
+      "reference_method": "Base U-Net",
+      "candidate_method": "MOSR",
+      "common_step_count": 118,
+      "candidate_minus_reference_mean_absolute_error_nm": 0.4880320053326334,
+      "paired_bootstrap_95ci_lower_nm": 0.011513204344132793,
+      "paired_bootstrap_95ci_upper_nm": 0.9646342757571886,
+      "wilcoxon_p_value": 0.0640807944548997
+    },
+    {
+      "morphology": "pillar",
+      "reference_method": "NAFNet",
+      "candidate_method": "MOSR",
+      "common_step_count": 118,
+      "candidate_minus_reference_mean_absolute_error_nm": -4.183174438435216,
+      "paired_bootstrap_95ci_lower_nm": -5.905986817481348,
+      "paired_bootstrap_95ci_upper_nm": -2.555186054553478,
+      "wilcoxon_p_value": 1.9915479673061354e-05
+    },
+    {
+      "morphology": "pillar",
+      "reference_method": "EDSR",
+      "candidate_method": "MOSR",
+      "common_step_count": 118,
+      "candidate_minus_reference_mean_absolute_error_nm": 0.26321729956255524,
+      "paired_bootstrap_95ci_lower_nm": -0.4468758385834689,
+      "paired_bootstrap_95ci_upper_nm": 0.9881875836726542,
+      "wilcoxon_p_value": 0.28697519805449767
+    },
+    {
+      "morphology": "via",
+      "reference_method": "Raw",
+      "candidate_method": "MOSR",
+      "common_step_count": 120,
+      "candidate_minus_reference_mean_absolute_error_nm": -0.5525183956834953,
+      "paired_bootstrap_95ci_lower_nm": -1.53572800568694,
+      "paired_bootstrap_95ci_upper_nm": 0.4371542111112611,
+      "wilcoxon_p_value": 0.11309912752711622
+    },
+    {
+      "morphology": "via",
+      "reference_method": "Base U-Net",
+      "candidate_method": "MOSR",
+      "common_step_count": 120,
+      "candidate_minus_reference_mean_absolute_error_nm": 0.6141250081727061,
+      "paired_bootstrap_95ci_lower_nm": 0.059202834048351215,
+      "paired_bootstrap_95ci_upper_nm": 1.161048206519065,
+      "wilcoxon_p_value": 0.04134046346229136
+    },
+    {
+      "morphology": "via",
+      "reference_method": "NAFNet",
+      "candidate_method": "MOSR",
+      "common_step_count": 120,
+      "candidate_minus_reference_mean_absolute_error_nm": -0.13440694413305826,
+      "paired_bootstrap_95ci_lower_nm": -0.9099811891032704,
+      "paired_bootstrap_95ci_upper_nm": 0.6372718243257973,
+      "wilcoxon_p_value": 0.7732888689219024
+    },
+    {
+      "morphology": "via",
+      "reference_method": "EDSR",
+      "candidate_method": "MOSR",
+      "common_step_count": 120,
+      "candidate_minus_reference_mean_absolute_error_nm": 0.7717563685881459,
+      "paired_bootstrap_95ci_lower_nm": 0.18985321340538194,
+      "paired_bootstrap_95ci_upper_nm": 1.344649875126771,
+      "wilcoxon_p_value": 0.015416080887040525
+    }
+  ],
+  "overall_interpretation": [
+    "Saved aggregate values reproduce from their underlying rows.",
+    "The main risks are experimental-reference and comparison-design issues, not arithmetic errors.",
+    "Do not call nominal commanded motion per-frame PI feedback unless a numeric feedback log is joined to the evaluation.",
+    "Do not present the Raw-ranked 30-step subset as an unbiased ranking population.",
+    "Do not describe the original mixed direct/tiled runtime as intrinsic network speed."
+  ]
+}

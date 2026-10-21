@@ -1,0 +1,362 @@
+{
+  "experiment_id": "R83_R79SevereMicroscopyStrengthening",
+  "created_date": "2026-08-09",
+  "status": "complete_not_promoted",
+  "scientific_question": "Can a conservative fine-tune of the verified R79 epoch-23 EMA state repair severe low-contrast, blur, halo, noise, and local boundary-loss failures without sacrificing its SEM contour and real-motion strengths?",
+  "formal_baseline_unchanged": true,
+  "parent_model": {
+    "name": "R79 epoch 23",
+    "role": "research_candidate",
+    "state_key": "ema_state_dict",
+    "checkpoint": "D:/GMM_2_Final/Experiments/R79_R75v3_DenseMicroscopyScratchGeneralization/weights/formal/seed_752031/training_progress_LAB_GESR_v1_v5_R75v3_scratch_formal_seed752031_dense_multiscale_e100_20260801_150729/best_tradeoff.pth.tar",
+    "checkpoint_sha256": "7d4b2b3329b7b58338235433e140e542ea7d541b1796e4469ba92c71586ce509",
+    "expected_epoch": 23,
+    "seed_checkpoint": "weights/seed/r79e23_ema_exact_seed.pth.tar",
+    "seed_policy": "Copy the R79 epoch-23 EMA parameters into both train and EMA states, reset epoch and optimizer, and verify exact inference parity before any update."
+  },
+  "architecture": {
+    "source_file": "model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py",
+    "class_name": "GeoEdgeAlignSR_v1_v5_NoCoord",
+    "base_channels": 48,
+    "architecture_changed_from_r79": false,
+    "quality_gate_added": false,
+    "boundary_adapter": {
+      "enabled": true,
+      "hidden_channels": 16,
+      "max_residual": 0.018,
+      "gate_bias": -2.0,
+      "orientation_inputs": true,
+      "polarity_split": false
+    },
+    "psf_policy": "Use only the same local analytic Gaussian bank as R79; no measured or fitted PSF enters training."
+  },
+  "source_isolation": {
+    "required_provenance_kind": "procedural_primitive",
+    "required_generator": "r83_severe_microscopy_ambiguity_guard_v1",
+    "real_image_pixels_allowed": false,
+    "sem_structure_allowed": false,
+    "hs100mg_structure_allowed": false,
+    "legacy_training_pairs_allowed": false,
+    "pseudo_labels_allowed": false,
+    "forbidden_value_tokens": [
+      "sem",
+      "hs100mg",
+      "100mg",
+      "real_microscope",
+      "real_crop",
+      "basler",
+      "pillar",
+      "teacher",
+      "pseudo_label"
+    ],
+    "forbidden_record_keys": [
+      "source_package",
+      "source_path",
+      "sem_reference_id",
+      "sem_radius_nm",
+      "target_radius_nm",
+      "real_crop_path",
+      "checkpoint",
+      "teacher_checkpoint"
+    ]
+  },
+  "dataset": {
+    "generator_version": "r83_severe_microscopy_ambiguity_guard_v1",
+    "image_size": 256,
+    "label_supersample_factor": 8,
+    "label_downsample_method": "area_average",
+    "label_edge_policy": "Clean analytic geometry is drawn at 8x and area-downsampled. Recoverable examples use that clean label. Deliberately ambiguous examples use a recorded conservative blend between that label and the degraded procedural source so the model is not rewarded for inventing invisible boundaries.",
+    "split_seed": 830917,
+    "profile_seed_offsets": {
+      "smoke": 83000000,
+      "pilot": 83100000,
+      "formal": 83200000,
+      "locked_holdout": 83900000
+    },
+    "split_ratios": {
+      "train": 0.8,
+      "validation": 0.1,
+      "internal_test": 0.1
+    },
+    "split_unit": "geometry_id",
+    "stage_name": "stage_r83_severe_microscopy",
+    "dense_pitch_range_px": [5.0, 24.0],
+    "artifact_banding_period_range_px": [48.0, 128.0],
+    "severe_blur_sigma_range_px": [1.5, 7.5],
+    "severe_read_noise_sigma_range": [2.0, 10.0],
+    "severe_boundary_fade_zone_count": [3, 14],
+    "ambiguity_clean_target_weight_range": [0.15, 0.45],
+    "roles": {
+      "basic_geometry": {
+        "renderings_per_geometry": 8,
+        "description": "Broad elementary-shape replay anchor to prevent forgetting."
+      },
+      "fine_noncircular": {
+        "renderings_per_geometry": 8,
+        "description": "Concave, lobed, narrow-neck, hollow, rough, and asymmetric replay anchor."
+      },
+      "dense_periodic_layout": {
+        "renderings_per_geometry": 8,
+        "description": "Dense-detail replay anchor spanning generic 5-24 pixel layouts."
+      },
+      "multiscale_field": {
+        "renderings_per_geometry": 8,
+        "description": "Mixed-scale replay anchor to protect R79 low-magnification strengths."
+      },
+      "boundary_fade_mixed": {
+        "renderings_per_geometry": 8,
+        "description": "Half recoverable severe cases with clean labels and half low-observability cases with conservative targets; includes wider blur, noise, halo, illumination and 3-14 local fade zones."
+      },
+      "identity_guard": {
+        "renderings_per_geometry": 8,
+        "description": "Exact and near-identity procedural pairs dominated by dense and multiscale structure."
+      }
+    },
+    "profiles": {
+      "smoke": {
+        "role_geometry_counts": {
+          "basic_geometry": 3,
+          "fine_noncircular": 3,
+          "dense_periodic_layout": 3,
+          "multiscale_field": 3,
+          "boundary_fade_mixed": 3,
+          "identity_guard": 3
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 1, "validation": 1, "internal_test": 1},
+          "fine_noncircular": {"train": 1, "validation": 1, "internal_test": 1},
+          "dense_periodic_layout": {"train": 1, "validation": 1, "internal_test": 1},
+          "multiscale_field": {"train": 1, "validation": 1, "internal_test": 1},
+          "boundary_fade_mixed": {"train": 1, "validation": 1, "internal_test": 1},
+          "identity_guard": {"train": 1, "validation": 1, "internal_test": 1}
+        },
+        "expected_pairs": 144
+      },
+      "pilot": {
+        "role_geometry_counts": {
+          "basic_geometry": 12,
+          "fine_noncircular": 12,
+          "dense_periodic_layout": 12,
+          "multiscale_field": 12,
+          "boundary_fade_mixed": 20,
+          "identity_guard": 12
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 8, "validation": 2, "internal_test": 2},
+          "fine_noncircular": {"train": 8, "validation": 2, "internal_test": 2},
+          "dense_periodic_layout": {"train": 8, "validation": 2, "internal_test": 2},
+          "multiscale_field": {"train": 8, "validation": 2, "internal_test": 2},
+          "boundary_fade_mixed": {"train": 16, "validation": 2, "internal_test": 2},
+          "identity_guard": {"train": 8, "validation": 2, "internal_test": 2}
+        },
+        "expected_pairs": 640
+      },
+      "formal": {
+        "role_geometry_counts": {
+          "basic_geometry": 80,
+          "fine_noncircular": 100,
+          "dense_periodic_layout": 100,
+          "multiscale_field": 100,
+          "boundary_fade_mixed": 160,
+          "identity_guard": 100
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 64, "validation": 8, "internal_test": 8},
+          "fine_noncircular": {"train": 80, "validation": 10, "internal_test": 10},
+          "dense_periodic_layout": {"train": 80, "validation": 10, "internal_test": 10},
+          "multiscale_field": {"train": 80, "validation": 10, "internal_test": 10},
+          "boundary_fade_mixed": {"train": 128, "validation": 16, "internal_test": 16},
+          "identity_guard": {"train": 80, "validation": 10, "internal_test": 10}
+        },
+        "expected_pairs": 5120
+      },
+      "locked_holdout": {
+        "role_geometry_counts": {
+          "basic_geometry": 8,
+          "fine_noncircular": 8,
+          "dense_periodic_layout": 8,
+          "multiscale_field": 8,
+          "boundary_fade_mixed": 8,
+          "identity_guard": 8
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 0, "validation": 0, "internal_test": 8},
+          "fine_noncircular": {"train": 0, "validation": 0, "internal_test": 8},
+          "dense_periodic_layout": {"train": 0, "validation": 0, "internal_test": 8},
+          "multiscale_field": {"train": 0, "validation": 0, "internal_test": 8},
+          "boundary_fade_mixed": {"train": 0, "validation": 0, "internal_test": 8},
+          "identity_guard": {"train": 0, "validation": 0, "internal_test": 8}
+        },
+        "expected_pairs": 384
+      }
+    },
+    "formal_role_pair_counts": {
+      "basic_geometry": 640,
+      "fine_noncircular": 800,
+      "dense_periodic_layout": 800,
+      "multiscale_field": 800,
+      "boundary_fade_mixed": 1280,
+      "identity_guard": 800
+    }
+  },
+  "development_evidence": {
+    "R73_novel_shapes": "developmental because its failure types informed this design",
+    "R74_hard_microscopy": "developmental because its failure types and severity ranges informed this design",
+    "blend_gate_screen": "developmental only; decides whether an image-level conservative gate is worth keeping"
+  },
+  "locked_confirmation": {
+    "synthetic_holdout_profile": "locked_holdout",
+    "selection_use_allowed": false,
+    "real_fov": "rerun the frozen six-sequence suite with no frame or tile changes",
+    "sem_acm": {
+      "development_pillar_ids": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36],
+      "reserved_confirmation_pillar_ids": [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20, 22, 23, 25, 26, 28, 29, 31, 32, 34, 35],
+      "split_rule": "pillar_id modulo 3; locked before R83 blend or pilot SEM results were analyzed",
+      "same_mapping_and_acm_settings": true
+    },
+    "junhua": "local diagnostic only until the external key is available"
+  },
+  "live_validation": {
+    "enabled": true,
+    "image_dir": "data/live_validation",
+    "every_n_epochs": 2,
+    "role": "observation_only_no_loss_no_selection_no_training_control",
+    "images": [
+      {"name": "5x_dense", "relative_image_path": "data/live_validation/5x_dense_raw.bmp"},
+      {"name": "20x_mixed", "relative_image_path": "data/live_validation/20x_mixed_raw.bmp"},
+      {"name": "50x_array", "relative_image_path": "data/live_validation/50x_array_raw.bmp"}
+    ]
+  },
+  "training": {
+    "formal_epochs": 30,
+    "pilot_epochs": 4,
+    "learning_rate": 0.000005,
+    "amp_enabled": false,
+    "batch_size": 8,
+    "validation_batch_size": 2,
+    "crop_size": 256,
+    "seed": 830917,
+    "stability_seeds": [830917, 830918, 830919],
+    "deterministic_split": true,
+    "candidates": {
+      "adapter_only": {
+        "trainable_name_patterns": ["boundary_adapter"],
+        "purpose": "lowest-forgetting pilot"
+      },
+      "adapter_tail": {
+        "trainable_name_patterns": ["boundary_adapter", "p1", "out"],
+        "purpose": "primary repair candidate with a protected encoder and early decoder"
+      }
+    },
+    "group_balancing_keys": [
+      "training_role",
+      "target_policy",
+      "observability_class",
+      "polarity",
+      "shape_family",
+      "degradation_family",
+      "exposure_level",
+      "periodic_density_class"
+    ]
+  },
+  "acceptance_gates": {
+    "r74_median_boundary_distance_px_target": 7.2418,
+    "r74_median_boundary_distance_px_must_beat_r79": 11.2185,
+    "r73_median_boundary_distance_px_max": 0.30,
+    "sem_median_boundary_distance_pitch_pct_max": 0.2646,
+    "real_fov_motion_pass_required": "6/6",
+    "locked_holdout_no_post_hoc_exclusions": true,
+    "no_formal_baseline_change_without_full_confirmation": true
+  },
+  "formal_checkpoint_selection": {
+    "locked_before_first_saved_formal_checkpoint": true,
+    "eligible_epochs": [0, 5, 10, 15, 20, 25, 30],
+    "development_only_inputs": [
+      "R73_novel_shapes",
+      "R74_hard_microscopy",
+      "SEM development pillar IDs only"
+    ],
+    "eligibility_rules": {
+      "r74_boundary_px_must_beat_r79": 11.21847,
+      "r73_boundary_px_max": 0.30,
+      "r73_boundary_px_relative_to_r79_max": 1.05,
+      "sem_development_boundary_pitch_pct_relative_to_r79_max": 1.10,
+      "acm_success_required": 1.0
+    },
+    "ranking": [
+      "lowest R74 median boundary distance",
+      "lowest SEM development median boundary distance",
+      "lowest R73 median boundary distance",
+      "earliest epoch"
+    ],
+    "epoch_zero_fallback": "the exact R79 epoch-23 EMA reset seed",
+    "reserved_confirmation_data_allowed": false
+  },
+  "frozen_output_safety_policy": {
+    "status": "full_frame_only_not_promoted",
+    "name": "QualityModerate",
+    "formula": "alpha=0.20+0.80*sigmoid((quality-0.55)/0.07)",
+    "blend_definition": "output=raw+alpha*(model_output-raw)",
+    "selection_evidence": "R73, R74, and SEM development pillars only",
+    "reserved_confirmation_data_allowed": false,
+    "final_confirmation_required": false,
+    "final_confirmation_result": "All image, contour, reserved SEM, and six-sequence motion gates passed; the predeclared tile-consistency gate failed."
+  },
+  "final_confirmation_protocol": {
+    "locked_before_checkpoint_selection": true,
+    "methods": ["R79", "R83Direct", "R83Safe"],
+    "synthetic_holdout": {
+      "total_pairs": 384,
+      "all_pair_image_fidelity": true,
+      "acm_pair_rule": "basic_geometry and fine_noncircular, plus clean_analytic boundary_fade_mixed only",
+      "expected_acm_pairs": 160,
+      "no_post_hoc_exclusions": true,
+      "aggregation": "median across the predeclared pairs",
+      "direct_image_mae_relative_to_r79_max": 1.03,
+      "direct_acm_boundary_relative_to_r79_max": 1.05,
+      "safe_image_mae_relative_to_r79_max": 1.03,
+      "safe_acm_boundary_relative_to_r79_max": 1.05
+    },
+    "sem_reserved": {
+      "pillar_ids": [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20, 22, 23, 25, 26, 28, 29, 31, 32, 34, 35],
+      "direct_boundary_relative_to_r79_max": 1.10,
+      "safe_boundary_relative_to_r79_max": 1.10
+    },
+    "real_fov": {
+      "same_301_frames": true,
+      "same_locked_measurements": true,
+      "required_sequences_passed": "6/6"
+    },
+    "development_recheck": {
+      "r73_boundary_px_max": 0.30,
+      "safe_r74_boundary_relative_to_r79_max": 0.90,
+      "acm_success_required": 1.0
+    },
+    "tile_consistency": {
+      "primary": {"tile_size": 4096, "overlap": 0},
+      "secondary": {"tile_size": 512, "overlap": 64},
+      "mean_absolute_gray_level_max": 0.10,
+      "p99_absolute_gray_level_max": 1.0,
+      "maximum_absolute_gray_level_max": 3.0
+    },
+    "recommended_mode_rule": "R83Safe is recommended only if both R83Direct and R83Safe pass every confirmation gate and the already-frozen safety mapping retains its R74 advantage; otherwise use the safest passing direct or epoch-zero fallback."
+  },
+  "inference": {
+    "default_mode": "direct",
+    "optional_mode": "safe_full_frame_only",
+    "default_tile_size": 4096,
+    "default_overlap": 0,
+    "tiled_inference_requires_explicit_opt_in": true,
+    "required_secondary_check_tile_size": 512,
+    "required_secondary_check_overlap": 64
+  },
+  "closeout": {
+    "completed_date": "2026-08-09",
+    "recommended_model": "R79 epoch 23 EMA",
+    "fine_tuned_checkpoint_promoted": false,
+    "safe_mode_promoted_as_general_replacement": false,
+    "safe_mode_restricted_use": "Optional full-frame reconstruction when severe low-observability microscopy is expected.",
+    "nonpromotion_reason": "The model output changes materially with tile size because the inherited architecture uses image-dependent spatial normalization and global operations.",
+    "formal_project_baseline_changed": false
+  }
+}

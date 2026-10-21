@@ -1,0 +1,861 @@
+{
+  "state": "ALL_79_NAMED_LOCAL_BRANCH_HEADS_PRESERVED_ON_GITHUB_REMOTE_REF_CHECKED",
+  "all_remote_refs_considered": {
+    "refs/heads/baseline/r30-b1-dironly": "1af4f58fa09d68c6c9895558ed4e26febf4666f1",
+    "refs/heads/codex/research-preservation-20261020": "2c6cdc6838a372224271cea8f8e9d1cf25db0086",
+    "refs/heads/codex/research-preservation-20261021": "6782071d67f5d8d71fa798f7a8926b16804c06b3",
+    "refs/heads/codex/research-recovery-20261016": "dd364802fa6f18995d828ddff809c008a7df6b53",
+    "refs/heads/main": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+    "refs/heads/reconstructed/r26-sm035": "4de6b651fdc915bf04bf80aa1232a1d41c1e8828",
+    "refs/heads/reconstructed/round30-architecture-breakthrough": "81a5a6266df41a0c5905981f27cfb9e4e04f0600",
+    "refs/heads/research/r32-post-falsification": "e04f6039952046c59867f739fba0c7436680647a",
+    "refs/heads/research/round31-b1-hparam": "1e7fd5a2f402ffecb1fd2ff4c72720fdc18e8dd9",
+    "refs/heads/sandbox/r32": "c73f8f7a60a793243e06eb23cfcf2b49cef9dfc6",
+    "refs/heads/sandbox/r33": "04d2c99068903e8bbeb254c82de31b4d7fd05224",
+    "refs/heads/sandbox/r34": "5ab5b175b6f2a18457875d1ea8f34c94f11412ba",
+    "refs/heads/sandbox/r35": "1005e7bdc51291ef783f55a6911d84c7e98b0383",
+    "refs/heads/sandbox/r37": "2773b1a0fdd98fcdcdbf26880f0480f88a5b2f69",
+    "refs/heads/sandbox/r38": "303e82dbccf2b20490d1aa32b943e22495a851f6",
+    "refs/heads/sandbox/r38v2": "fdacf6de26d021da7c79d82b1087e06b04a765c5",
+    "refs/heads/snapshot/initial-import-2026-03-23": "9474f11fa6a11c3821f2e08136b3f0857d0df8d2",
+    "refs/tags/four-round-preview-origins-20261021": "6782071d67f5d8d71fa798f7a8926b16804c06b3",
+    "refs/tags/r93-complete-record-20261020": "f07c57d544f3dfc167bd49a01ac7c44a18e796bb",
+    "refs/tags/r94-complete-record-20261021": "6782071d67f5d8d71fa798f7a8926b16804c06b3",
+    "refs/tags/r95-complete-record-20261021": "6782071d67f5d8d71fa798f7a8926b16804c06b3",
+    "refs/tags/r97-complete-record-20261021": "6782071d67f5d8d71fa798f7a8926b16804c06b3",
+    "refs/tags/r98-complete-record-20261021": "6782071d67f5d8d71fa798f7a8926b16804c06b3",
+    "refs/tags/research-historical-evidence-20261016": "f07c57d544f3dfc167bd49a01ac7c44a18e796bb",
+    "refs/tags/research-preservation-20261016": "dd364802fa6f18995d828ddff809c008a7df6b53",
+    "refs/tags/research-preservation-20261020": "2c6cdc6838a372224271cea8f8e9d1cf25db0086",
+    "refs/tags/research-preservation-20261021": "6782071d67f5d8d71fa798f7a8926b16804c06b3",
+    "refs/tags/research-results-models-20261016": "f07c57d544f3dfc167bd49a01ac7c44a18e796bb",
+    "refs/tags/research-shared-sources-20261016": "f07c57d544f3dfc167bd49a01ac7c44a18e796bb",
+    "refs/tags/research-training-kits-20261016": "f07c57d544f3dfc167bd49a01ac7c44a18e796bb",
+    "refs/tags/shared-pi-20260903-v1": "12b851cb0ada906f23bf2d41d2c73f96ada3e004"
+  },
+  "local_branches": [
+    {
+      "local_ref": "refs/heads/backup/local-main-pre-safe-cleanup-20260327",
+      "commit": "57cf70e94652b0b68a5a13b196399f3b6c2c6164",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 2,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/baseline/r30-b1-dironly",
+      "commit": "1af4f58fa09d68c6c9895558ed4e26febf4666f1",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/claude/adoring-yonath",
+      "commit": "b487cc5ea61fb41a8eab9c4a36634c79890e89c3",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 3,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/claude/gifted-shaw-29b50a",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/claude/keen-blackwell",
+      "commit": "e6968018a7f0464a8ab543885a0962fc532045cd",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/claude/laughing-raman-440860",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/claude/sad-tereshkova-88dab2",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/claude/tender-hawking-40b4db",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/analysis-lab-r26",
+      "commit": "cfae666b1d66eb2743c4648fb5806a4464ae8a59",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 1,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/codex/analysis-root-entry",
+      "commit": "2c944357e47a71931e7364fb0bc45b1cf7e08fa7",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 1,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/codex/claude-doc-sync",
+      "commit": "86eab6fa146ca875fffe80a5c099cbb23ab17d75",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 1,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/codex/docs-nav-bilingual",
+      "commit": "a91697050f9f733010070f09fe41db56463f3426",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 1,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/codex/main-structure-audit",
+      "commit": "fe520e0e9ec581680dbd93b30896eedfa7382e37",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 1,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/codex/r121-boundary-anchor",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r122-operator-principles",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r123-real-first-design",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r124-real-first-prototype",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r125-data-aligned-pilot",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r126-learnability-photometry",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r127-measurement-preservation",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r128-full-training",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r129-optical-hybrid",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r130-clean",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r130-clean-v42",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r131-recurrent-steps",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r132-boundary-policy",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r133-size-mechanisms",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r134-direct-state",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r135-model-comparison",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r136-pi-repeatability",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r137-weak-psf",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r138-v42-psf8",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r139-unet-hybrid",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r140-stable-unet",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r140v2-stable-unet",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r26-curated-evidence",
+      "commit": "a9ad7014d1c34bedfa977a23d07584c493138185",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 1,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/codex/r26-psf-policy-transition",
+      "commit": "8d4c4a4f26d72625ade58162f230fe5e2b0b508a",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/r26-psf-representative-sync",
+      "commit": "cb0107dae5877235d93d59582770c55cea8cab72",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 4,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/codex/research-preservation-20261020",
+      "commit": "2c6cdc6838a372224271cea8f8e9d1cf25db0086",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/research-preservation-20261021",
+      "commit": "6782071d67f5d8d71fa798f7a8926b16804c06b3",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/codex/research-recovery-20261016",
+      "commit": "dd364802fa6f18995d828ddff809c008a7df6b53",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/main",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/reconstructed/r26-sm035",
+      "commit": "4de6b651fdc915bf04bf80aa1232a1d41c1e8828",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/reconstructed/round30-architecture-breakthrough",
+      "commit": "81a5a6266df41a0c5905981f27cfb9e4e04f0600",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/research/r32-post-falsification",
+      "commit": "e04f6039952046c59867f739fba0c7436680647a",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/research/round31-b1-hparam",
+      "commit": "1e7fd5a2f402ffecb1fd2ff4c72720fdc18e8dd9",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r143-psf25-matched-pairs",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r144-center9-psf25",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r145-center9-psf25-corrected",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r146-sem-core-halo-psf25",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r147-fullres-psf-consistency",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r148-measurement-stable-native",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r148v2-hybrid-context",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r150-matched-geometry-mean-psf",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r152-impact2026",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r153-mean-external-benchmark",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r32",
+      "commit": "c73f8f7a60a793243e06eb23cfcf2b49cef9dfc6",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r33",
+      "commit": "04d2c99068903e8bbeb254c82de31b4d7fd05224",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r33-contrast",
+      "commit": "a530f876c2cb0c512e768ff4c389c01c7ab4b413",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 1,
+      "head_on_github": false
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r34",
+      "commit": "5ab5b175b6f2a18457875d1ea8f34c94f11412ba",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r35",
+      "commit": "1005e7bdc51291ef783f55a6911d84c7e98b0383",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r37",
+      "commit": "2773b1a0fdd98fcdcdbf26880f0480f88a5b2f69",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r38",
+      "commit": "303e82dbccf2b20490d1aa32b943e22495a851f6",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r38v2",
+      "commit": "fdacf6de26d021da7c79d82b1087e06b04a765c5",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r39",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r40",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r41",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r42",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r44",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r45",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r67-universal-model-generalization",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r68-r61-real-fov",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r75-scratch-generalization",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r83-r79-strengthening",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r84-r79-tile-stable-root-repair",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r87-tile-native-scratch",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r88-measurement-faithful-scratch",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r98-aggressive-texture-scratch",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "same_remote_head": false,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    },
+    {
+      "local_ref": "refs/heads/snapshot/initial-import-2026-03-23",
+      "commit": "9474f11fa6a11c3821f2e08136b3f0857d0df8d2",
+      "same_remote_head": true,
+      "commits_missing_from_all_remote_refs": 0,
+      "head_on_github": true
+    }
+  ],
+  "local_only_refs": [
+    "refs/heads/backup/local-main-pre-safe-cleanup-20260327",
+    "refs/heads/claude/adoring-yonath",
+    "refs/heads/codex/analysis-lab-r26",
+    "refs/heads/codex/analysis-root-entry",
+    "refs/heads/codex/claude-doc-sync",
+    "refs/heads/codex/docs-nav-bilingual",
+    "refs/heads/codex/main-structure-audit",
+    "refs/heads/codex/r26-curated-evidence",
+    "refs/heads/codex/r26-psf-representative-sync",
+    "refs/heads/sandbox/r33-contrast"
+  ],
+  "new_objects": 72,
+  "new_blob_count": 18,
+  "new_blob_bytes": 153639,
+  "largest_new_blobs": [
+    {
+      "git_blob": "2aafc3c87adbaa55fe019d2fb77b46c5aa5bc252",
+      "bytes": 67913,
+      "historical_path": "AnalysisLab/r26/single_image/scripts/run_single_image_analysis.py"
+    },
+    {
+      "git_blob": "6f833d05f6ddb3f3d448bf06070c4effc7693544",
+      "bytes": 34488,
+      "historical_path": "docs/superpowers/plans/2026-03-24-r26-validation-complete.md"
+    },
+    {
+      "git_blob": "1f1cb9294cbda1bdb626f29b75da877cb6ef34c5",
+      "bytes": 9233,
+      "historical_path": "REPO_GOVERNANCE.md"
+    },
+    {
+      "git_blob": "d030d94c6301948dc49965d8528d8578337a91ad",
+      "bytes": 8780,
+      "historical_path": "docs/superpowers/specs/2026-03-24-r26-validation-complete-design.md"
+    },
+    {
+      "git_blob": "cf0eb393422532ec799bdbe9546a9799ac97a984",
+      "bytes": 5968,
+      "historical_path": "docs/index/PROJECT_DOCUMENT_INDEX.md"
+    },
+    {
+      "git_blob": "5f3419aeed6128ccf2214514e2ba9f1ab6472541",
+      "bytes": 4236,
+      "historical_path": "docs/index/NEW_EXPERIMENT_SOP.md"
+    },
+    {
+      "git_blob": "ce8becb3fc57c478922eba9a46bd703dc90293e0",
+      "bytes": 3628,
+      "historical_path": "內部檔案/analysis_scripts/step5_heatmap.py"
+    },
+    {
+      "git_blob": "42e14f703a774bdb0deb29b76bedecccf3bd9880",
+      "bytes": 3372,
+      "historical_path": "內部檔案/analysis_scripts/step6_aggregate.py"
+    },
+    {
+      "git_blob": "8f8fcf407cafca30730adda1a4e349d78b37ea2f",
+      "bytes": 3082,
+      "historical_path": "docs/README.md"
+    },
+    {
+      "git_blob": "e2fa4931c46cb3846a8607914067fe623e36f449",
+      "bytes": 2526,
+      "historical_path": "Experiments/R26NewPSFCheck/README.md"
+    },
+    {
+      "git_blob": "1388941e50d9c629e406f1eb9edc17f5b706c2f9",
+      "bytes": 2487,
+      "historical_path": "docs/analysis/RESEARCH_PATHS.md"
+    },
+    {
+      "git_blob": "7278e7c6b4d34ddf6dd547d4e90fb0c21a5eac37",
+      "bytes": 1862,
+      "historical_path": "Experiments/R33ContrastFix/scripts/launch_contrast.py"
+    },
+    {
+      "git_blob": "ee2c230f9a208d27f3cfa402c7f681522b0c4758",
+      "bytes": 1448,
+      "historical_path": "docs/runtime/legacy/README.md"
+    },
+    {
+      "git_blob": "965e7884dceea4da84b27ae968635209ccc187f4",
+      "bytes": 1242,
+      "historical_path": "AnalysisLab/index.json"
+    },
+    {
+      "git_blob": "a3200b02f5c765dc8490d4b2afe59f43c6a03b34",
+      "bytes": 1217,
+      "historical_path": "Experiments/R26NewPSFCheck/package_repro_validation/tests/test_gpu_patch_package.py"
+    },
+    {
+      "git_blob": "79e2863b39d3e0909476f5b69b6d937b6fb7aeaf",
+      "bytes": 870,
+      "historical_path": "AnalysisLab/README.md"
+    },
+    {
+      "git_blob": "0a8c932b933f4a75506324e99acf2701996cbb25",
+      "bytes": 828,
+      "historical_path": "CLAUDE.md"
+    },
+    {
+      "git_blob": "104901c7b0de885071028d8f90032218343b2a9d",
+      "bytes": 459,
+      "historical_path": ".claude/settings.local.json"
+    }
+  ],
+  "new_blobs": [
+    {
+      "git_blob": "7278e7c6b4d34ddf6dd547d4e90fb0c21a5eac37",
+      "bytes": 1862,
+      "historical_path": "Experiments/R33ContrastFix/scripts/launch_contrast.py",
+      "sha256": "55c009729ada3c93b56d82b1b71e68c34d644eef62b676120e8c47049cacc45d"
+    },
+    {
+      "git_blob": "79e2863b39d3e0909476f5b69b6d937b6fb7aeaf",
+      "bytes": 870,
+      "historical_path": "AnalysisLab/README.md",
+      "sha256": "3859190e086875a0d7362a765dd86a5bc58ce6b2adb232d257dcbf360e54fd9f"
+    },
+    {
+      "git_blob": "965e7884dceea4da84b27ae968635209ccc187f4",
+      "bytes": 1242,
+      "historical_path": "AnalysisLab/index.json",
+      "sha256": "92141622d4e3944c622cf8f93cd669d11abf621a59d448cf4147c6496aa1beb2"
+    },
+    {
+      "git_blob": "2aafc3c87adbaa55fe019d2fb77b46c5aa5bc252",
+      "bytes": 67913,
+      "historical_path": "AnalysisLab/r26/single_image/scripts/run_single_image_analysis.py",
+      "sha256": "62a877a851c43c8ebaf6358614f52046006cd7d3ddd532364b800ba352dfde15"
+    },
+    {
+      "git_blob": "0a8c932b933f4a75506324e99acf2701996cbb25",
+      "bytes": 828,
+      "historical_path": "CLAUDE.md",
+      "sha256": "d0244f0db113f14f224317d61d5fa9b28a8aee5ae2e1a483b393e60ea8cac9c9"
+    },
+    {
+      "git_blob": "1f1cb9294cbda1bdb626f29b75da877cb6ef34c5",
+      "bytes": 9233,
+      "historical_path": "REPO_GOVERNANCE.md",
+      "sha256": "67d124ff1f93e07dc72201b96a6a728c011c87941b5817ff705e19f21bcd1da0"
+    },
+    {
+      "git_blob": "e2fa4931c46cb3846a8607914067fe623e36f449",
+      "bytes": 2526,
+      "historical_path": "Experiments/R26NewPSFCheck/README.md",
+      "sha256": "2d46a189cac43a74085e817f4f3ff99dd30771ff2b6c03d9be4bb15eb7537cd5"
+    },
+    {
+      "git_blob": "a3200b02f5c765dc8490d4b2afe59f43c6a03b34",
+      "bytes": 1217,
+      "historical_path": "Experiments/R26NewPSFCheck/package_repro_validation/tests/test_gpu_patch_package.py",
+      "sha256": "45313c4a7b341029bb53d5ee4c6dc221c4d9092826e2a5c71fdf78a47e60af83"
+    },
+    {
+      "git_blob": "104901c7b0de885071028d8f90032218343b2a9d",
+      "bytes": 459,
+      "historical_path": ".claude/settings.local.json",
+      "sha256": "a84938eb728acc3e75900794f7d122bd0eb9fb7e9bfb704741cb58d49e3a810c"
+    },
+    {
+      "git_blob": "6f833d05f6ddb3f3d448bf06070c4effc7693544",
+      "bytes": 34488,
+      "historical_path": "docs/superpowers/plans/2026-03-24-r26-validation-complete.md",
+      "sha256": "4f6d291e01ef6e58dad3cdc55bbb05499c8c5aa200f538a4d18469095fe58f37"
+    },
+    {
+      "git_blob": "d030d94c6301948dc49965d8528d8578337a91ad",
+      "bytes": 8780,
+      "historical_path": "docs/superpowers/specs/2026-03-24-r26-validation-complete-design.md",
+      "sha256": "0c3e2ffaac37a81b37208b7bf6f31743ee5d97ed27f0a22c9a40b038e7909c6f"
+    },
+    {
+      "git_blob": "ce8becb3fc57c478922eba9a46bd703dc90293e0",
+      "bytes": 3628,
+      "historical_path": "內部檔案/analysis_scripts/step5_heatmap.py",
+      "sha256": "fd05ea3355f87bc500c3cf53b9ef7c225dd642461093fd66ec39d9f9f38fae6a"
+    },
+    {
+      "git_blob": "42e14f703a774bdb0deb29b76bedecccf3bd9880",
+      "bytes": 3372,
+      "historical_path": "內部檔案/analysis_scripts/step6_aggregate.py",
+      "sha256": "4291a46a5f4dd449ebe942bcb753500abdafbc6ccaac23d03f6a24f5bffe5113"
+    },
+    {
+      "git_blob": "8f8fcf407cafca30730adda1a4e349d78b37ea2f",
+      "bytes": 3082,
+      "historical_path": "docs/README.md",
+      "sha256": "9335e98e2b683ffbcdc0bad42cb176ace334d6688955f89239471be777d1215a"
+    },
+    {
+      "git_blob": "1388941e50d9c629e406f1eb9edc17f5b706c2f9",
+      "bytes": 2487,
+      "historical_path": "docs/analysis/RESEARCH_PATHS.md",
+      "sha256": "82ebb6269bee740461c046ac63a1bdc645e303a631e3689604169063d02dea92"
+    },
+    {
+      "git_blob": "5f3419aeed6128ccf2214514e2ba9f1ab6472541",
+      "bytes": 4236,
+      "historical_path": "docs/index/NEW_EXPERIMENT_SOP.md",
+      "sha256": "a926cb7a20e6667a9bf99992bcbefe0afc2e3a068251139c3ef9db9868f6a4a8"
+    },
+    {
+      "git_blob": "cf0eb393422532ec799bdbe9546a9799ac97a984",
+      "bytes": 5968,
+      "historical_path": "docs/index/PROJECT_DOCUMENT_INDEX.md",
+      "sha256": "cbd1be03c08f4971cccd8a1867e3709044900d14f171f24dbd4e6b210e5730c5"
+    },
+    {
+      "git_blob": "ee2c230f9a208d27f3cfa402c7f681522b0c4758",
+      "bytes": 1448,
+      "historical_path": "docs/runtime/legacy/README.md",
+      "sha256": "974970050589683d8f8e7a96ac509cb7b4b775949d94e2ceba81efc2e9a965cd"
+    }
+  ],
+  "preserved_remote_mappings": [
+    {
+      "local_ref": "refs/heads/backup/local-main-pre-safe-cleanup-20260327",
+      "commit": "57cf70e94652b0b68a5a13b196399f3b6c2c6164",
+      "github_ref": "refs/heads/codex/history-20261021/backup--local-main-pre-safe-cleanup-20260327"
+    },
+    {
+      "local_ref": "refs/heads/claude/adoring-yonath",
+      "commit": "b487cc5ea61fb41a8eab9c4a36634c79890e89c3",
+      "github_ref": "refs/heads/codex/history-20261021/claude--adoring-yonath"
+    },
+    {
+      "local_ref": "refs/heads/codex/analysis-lab-r26",
+      "commit": "cfae666b1d66eb2743c4648fb5806a4464ae8a59",
+      "github_ref": "refs/heads/codex/history-20261021/codex--analysis-lab-r26"
+    },
+    {
+      "local_ref": "refs/heads/codex/analysis-root-entry",
+      "commit": "2c944357e47a71931e7364fb0bc45b1cf7e08fa7",
+      "github_ref": "refs/heads/codex/history-20261021/codex--analysis-root-entry"
+    },
+    {
+      "local_ref": "refs/heads/codex/claude-doc-sync",
+      "commit": "86eab6fa146ca875fffe80a5c099cbb23ab17d75",
+      "github_ref": "refs/heads/codex/history-20261021/codex--claude-doc-sync"
+    },
+    {
+      "local_ref": "refs/heads/codex/docs-nav-bilingual",
+      "commit": "a91697050f9f733010070f09fe41db56463f3426",
+      "github_ref": "refs/heads/codex/history-20261021/codex--docs-nav-bilingual"
+    },
+    {
+      "local_ref": "refs/heads/codex/main-structure-audit",
+      "commit": "fe520e0e9ec581680dbd93b30896eedfa7382e37",
+      "github_ref": "refs/heads/codex/history-20261021/codex--main-structure-audit"
+    },
+    {
+      "local_ref": "refs/heads/codex/r26-curated-evidence",
+      "commit": "a9ad7014d1c34bedfa977a23d07584c493138185",
+      "github_ref": "refs/heads/codex/history-20261021/codex--r26-curated-evidence"
+    },
+    {
+      "local_ref": "refs/heads/codex/r26-psf-representative-sync",
+      "commit": "cb0107dae5877235d93d59582770c55cea8cab72",
+      "github_ref": "refs/heads/codex/history-20261021/codex--r26-psf-representative-sync"
+    },
+    {
+      "local_ref": "refs/heads/sandbox/r33-contrast",
+      "commit": "a530f876c2cb0c512e768ff4c389c01c7ab4b413",
+      "github_ref": "refs/heads/codex/history-20261021/sandbox--r33-contrast"
+    }
+  ],
+  "new_historical_source_blobs_disclosure_check": "PASS_18_SMALL_TEXT_BLOBS"
+}

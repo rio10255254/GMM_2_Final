@@ -1,0 +1,21 @@
+{
+  "model_seed": 1309001,
+  "order_seed": 1309002,
+  "noise_seed": 1309003,
+  "splits": {"train": 512, "dev": 128, "test": 128},
+  "updates": 8192,
+  "epochs": 16,
+  "warmup": 128,
+  "save_every": 128,
+  "dev_every": 512,
+  "optimizer": {"name": "AdamW", "max_lr": 0.0003, "min_lr": 0.000003, "weight_decay": 0.00001, "gradient_clip": 1.0},
+  "loss": {"image": 1.0, "gradient": 0.2, "pair": 0.2},
+  "precision": "FP32",
+  "tf32": false,
+  "deterministic": true,
+  "device": "cuda",
+  "train_crop": [32, 352, 32, 352],
+  "supervised_core": [96, 224],
+  "adaptive_training_requires_real_psf_labels": false,
+  "psf_selection_policy": "fixed mean of the user-supplied 25-kernel research bank"
+}

@@ -1,0 +1,96 @@
+{
+  "experiment_id": "R107A_SingleImageEdgeGeometryProbe",
+  "created_date": "2026-08-24",
+  "status": "ready_to_train_repaired",
+  "not_a_formal_model_round": true,
+  "purpose": "Prepare a complete single-image scratch model whose learned outputs parameterize a fixed-center local edge operator instead of a free image residual or global contour renderer.",
+  "source_isolation": {
+    "checkpoint_loading_allowed": false,
+    "teacher_allowed": false,
+    "real_pixels_in_training": false,
+    "sem_or_hs100mg_structure_in_training": false,
+    "real_images_validation_only": true
+  },
+  "data": {
+    "package_root": "data/package",
+    "seed": 1070001,
+    "train_scenes": 5000,
+    "validation_scenes": 512,
+    "canvas_size": 256,
+    "training_patch_size": 256,
+    "label_supersample_factor": 8,
+    "families": ["circle", "ellipse", "rectangle", "polygon", "ring", "crescent", "lobed", "thin_neck", "thin_bar", "dense_array", "mixed_field", "irregular_blob"],
+    "role_weights": {"edge": 0.62, "textured_edge": 0.18, "identity": 0.10, "flat_negative": 0.10},
+    "target": {
+      "transition_width_px": [0.45, 1.15],
+      "contrast": [0.24, 0.68],
+      "texture_amplitude": [0.0, 0.055],
+      "shared_contrast": [0.76, 1.24],
+      "shared_gamma": [0.82, 1.18],
+      "shared_illumination_amplitude": [0.0, 0.11]
+    },
+    "degradation": {
+      "blur_sigma_px": [0.65, 3.0],
+      "anisotropy": [0.65, 1.45],
+      "motion_blur_lengths": [3, 5, 7],
+      "motion_blur_probability": 0.22,
+      "ghost_probability": 0.16,
+      "ghost_mix": [0.02, 0.09],
+      "halo_probability": 0.18,
+      "noise_sigma": [0.0015, 0.022],
+      "row_noise_sigma": [0.0, 0.0035],
+      "column_noise_sigma": [0.0, 0.0020]
+    }
+  },
+  "model": {
+    "base_channels": 48,
+    "body_blocks": 8,
+    "body_dilations": [1, 2, 4, 8, 1, 2, 4, 8],
+    "endpoint_distances_px": [2.0, 4.0, 6.0],
+    "minimum_width_scale": 0.42,
+    "maximum_width_scale": 1.0,
+    "texture_gain_bound": 0.25,
+    "minimum_halo_px": 96,
+    "alignment_multiple": 8,
+    "normalization": "none",
+    "global_pooling": false,
+    "global_fft": false,
+    "free_image_residual": false,
+    "global_sdf_renderer": false
+  },
+  "training": {
+    "epochs": 60,
+    "batch_size": 8,
+    "workers": 4,
+    "learning_rate": 0.0006,
+    "minimum_learning_rate": 0.00003,
+    "weight_decay": 0.00005,
+    "gradient_clip": 5.0,
+    "amp": true,
+    "save_every_epochs": 5,
+    "preview_every_epochs": 5,
+    "auxiliary_frequency": {"translation_every_steps": 8, "exposure_every_steps": 8, "tile_every_steps": 16},
+    "loss_weights": {
+      "reconstruction": 1.0,
+      "gradient": 0.35,
+      "high_frequency": 0.20,
+      "contour": 0.45,
+      "center": 0.55,
+      "width_parameter": 0.18,
+      "reliability": 0.12,
+      "halo": 0.10,
+      "texture": 0.12,
+      "identity": 0.30,
+      "translation": 0.22,
+      "exposure": 0.18,
+      "tile": 0.20
+    }
+  },
+  "inference": {"core_size": 512, "halo": 96, "tile_batch": 1, "input_range": [0.0, 1.0], "output_range": [0.0, 1.0]},
+  "selection": {
+    "primary": "worst_case_first",
+    "axes": ["boundary_center", "transition_width", "contour_distance", "halo", "identity", "translation", "exposure", "tile", "texture"],
+    "no_single_aggregate_score": true,
+    "real_validation_after_checkpoint_lock": true
+  }
+}

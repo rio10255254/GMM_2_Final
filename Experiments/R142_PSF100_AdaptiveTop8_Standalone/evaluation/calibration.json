@@ -1,0 +1,59 @@
+{
+  "raw_calibration_runs": 6,
+  "evaluation_runs": 24,
+  "image_vector_px_per_um": [
+    -5.800401516475978,
+    0.09112293213592164
+  ],
+  "axis_unit_vector": [
+    -0.9998766245119538,
+    0.015707824629190823
+  ],
+  "transverse_unit_vector": [
+    -0.015707824629190823,
+    -0.9998766245119538
+  ],
+  "nominal_um_per_px": 0.1725,
+  "estimated_um_per_px": 0.17238058808029322,
+  "nominal_relative_scale_difference_percent": -0.06922430127929147,
+  "per_run": [
+    {
+      "run_index": 1,
+      "um_per_px": 0.17241219547721726,
+      "image_x_px_per_um": -5.799319681147848,
+      "image_y_px_per_um": 0.09227500536439853
+    },
+    {
+      "run_index": 2,
+      "um_per_px": 0.17237977873957808,
+      "image_x_px_per_um": -5.800430269849574,
+      "image_y_px_per_um": 0.09102656013854361
+    },
+    {
+      "run_index": 3,
+      "um_per_px": 0.17238784142705577,
+      "image_x_px_per_um": -5.80020255966789,
+      "image_y_px_per_um": 0.08820159132357715
+    },
+    {
+      "run_index": 4,
+      "um_per_px": 0.17237701662132088,
+      "image_x_px_per_um": -5.800519442059136,
+      "image_y_px_per_um": 0.09126807362308043
+    },
+    {
+      "run_index": 5,
+      "um_per_px": 0.1723750877190192,
+      "image_x_px_per_um": -5.800596562716746,
+      "image_y_px_per_um": 0.09048963504587992
+    },
+    {
+      "run_index": 6,
+      "um_per_px": 0.17235158113153248,
+      "image_x_px_per_um": -5.801340525286209,
+      "image_y_px_per_um": 0.09347652162705637
+    }
+  ],
+  "scope": "PI-referenced operational calibration,not SI-traceable independent scale calibration",
+  "transverse": "image perpendicular motion only;PI X direction and scale not independently excited"
+}

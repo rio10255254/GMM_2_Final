@@ -1,0 +1,34 @@
+{
+  "selection_frozen_before_E": true,
+  "model": "centered_unit_sum_two_gaussian_core_halo",
+  "optimizer": "bundled BADS 1.1.3",
+  "fit_truth": "actual matched P-SEM contours, resampled to nominal 20x physical scale",
+  "observation": "35x35 real optical pillar cutouts; score only the complete central 25x25 measured square",
+  "training": "six pillars per frame, one nonnegative brightness gain profiled from those six only",
+  "parameter_bounds": {
+    "sigma_core_px": [0.6, 5.0],
+    "sigma_halo_extra_px": [0.2, 22.0],
+    "core_energy_weight": [0.1, 0.95]
+  },
+  "bads_options": {
+    "UncertaintyHandling": false,
+    "MaxFunEvals": 1000,
+    "TolFun": 1e-7,
+    "Restarts": 1
+  },
+  "frozen_final_fold": {
+    "frames": [5, 9, 11, 16, 19, 21],
+    "heldout_sem_ids": [34, 29, 24]
+  },
+  "pass_gates": {
+    "mean_heldout_full_patch_mse_at_least_10_percent_lower_than_gaussian": true,
+    "mean_heldout_full_patch_mse_at_least_10_percent_lower_than_original_BADs": true,
+    "lower_full_patch_mse_than_gaussian_in_all_six_frames": true,
+    "mean_heldout_full_patch_gradient_error_lower_than_gaussian": true,
+    "all_peak_offsets_px": 0,
+    "max_centroid_offset_px": 0.1,
+    "max_outer_3px_PSF_energy_fraction": 0.001,
+    "BADS_exitflag_positive_for_all_six": true
+  },
+  "interpretation_limit": "Passing demonstrates prediction on new views of the same nine pillars, not independent specimen or certified physical PSF accuracy."
+}

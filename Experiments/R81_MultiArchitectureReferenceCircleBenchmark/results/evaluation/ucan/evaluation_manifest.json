@@ -1,0 +1,58 @@
+{
+  "model_key": "ucan",
+  "model_spec": {
+    "name": "UCAN-x1 adaptation",
+    "family": "UCAN",
+    "year": 2026,
+    "category": "latest hybrid lightweight SR",
+    "kwargs": {
+      "img_size": 128,
+      "patch_size": 1,
+      "in_chans": 1,
+      "embed_dim": 48,
+      "window_size": 16,
+      "mlp_ratio": 1.0,
+      "conv_depth": 5,
+      "share": [
+        "N",
+        "F",
+        "N",
+        "F"
+      ],
+      "mhsa_num_heads": 2,
+      "dfl_num_heads": 1,
+      "use_checkpoint": false,
+      "upscale": 1,
+      "img_range": 1.0,
+      "upsampler": null,
+      "resi_connection": "1conv"
+    },
+    "source": "Tan et al., CVPR 2026; official UCAN code",
+    "adaptation": "official convolution-attention core adapted to one-channel x1 restoration; trained from scratch"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\ucan\\best_ucan.pth.tar",
+  "checkpoint_epoch": 12,
+  "checkpoint_validation": {
+    "loss": 0.07900391545319368,
+    "l1": 0.05513563139448122,
+    "rmse": 0.07831979026843286,
+    "ssim": 0.8807811210133301
+  },
+  "parameter_count": 683817,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.7190979000006337,
+  "median_displacement_roi_inference_seconds": 0.7775440499972319
+}

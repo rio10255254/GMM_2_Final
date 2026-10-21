@@ -1,0 +1,40 @@
+{
+  "model_name": "R137-PSF100-V42-Select8",
+  "source_model": "R137-WeakPSF",
+  "status": "core_weights_reused_new_gating_untrained",
+  "model": {
+    "channels": 64,
+    "dilations": [
+      1,
+      2,
+      4,
+      2
+    ],
+    "iterations": 4,
+    "eta_max": 0.25,
+    "eta_initial": 0.05,
+    "r_max": 0.35,
+    "optical_mode": "v42_select8",
+    "checkpoint_blocks": true,
+    "psf_bank": "calibration/psf_100.npz",
+    "psf_count": 100,
+    "weak_psf": {
+      "reg_init": 30.0,
+      "beta_init": 0.02,
+      "gating_temp": 1.5,
+      "entropy_mix": 0.0,
+      "deconv_mode": "clamp",
+      "trainable_reg": false,
+      "lowfreq_ratio": 0.25,
+      "beta_min": 0.0,
+      "beta_max": 0.1,
+      "beta_scale_max": 1.0
+    }
+  },
+  "precision": "FP32",
+  "tf32": false,
+  "inference": {
+    "mode": "full",
+    "tiled_supported": false
+  }
+}

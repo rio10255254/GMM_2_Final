@@ -1,0 +1,210 @@
+{
+  "all_primary_values_finite": true,
+  "comparison": "full_control versus the identical locked Raw evaluation units",
+  "step_stability_definition": "within-sequence mean-centered absolute step SD",
+  "records": [
+    {
+      "metric": "cd_median_abs_error_nm",
+      "stratum": "50x",
+      "mean_improvement_vs_raw_pct": 18.478530082935304,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "cd_bound_width_nm",
+      "stratum": "50x",
+      "mean_improvement_vs_raw_pct": 67.4243766791466,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "edge_width_10_90_nm",
+      "stratum": "50x",
+      "mean_improvement_vs_raw_pct": 28.846521118833984,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "outer_ringing_energy",
+      "stratum": "50x",
+      "mean_improvement_vs_raw_pct": -86.14122758758063,
+      "both_seeds_not_worse_than_raw_by_15pct": false,
+      "both_seeds_improve_raw_by_10pct": false
+    },
+    {
+      "metric": "cd_median_abs_error_nm",
+      "stratum": "20x",
+      "mean_improvement_vs_raw_pct": 36.843977345346744,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "cd_bound_width_nm",
+      "stratum": "20x",
+      "mean_improvement_vs_raw_pct": 14.862324833229948,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "edge_width_10_90_nm",
+      "stratum": "20x",
+      "mean_improvement_vs_raw_pct": 23.5474830435796,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "outer_ringing_energy",
+      "stratum": "20x",
+      "mean_improvement_vs_raw_pct": 26.46701726652823,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_step_magnitude_nm",
+      "stratum": "50x_x_0p5um",
+      "mean_improvement_vs_raw_pct": 47.817712731052225,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_within_grid_nm",
+      "stratum": "50x_x_0p5um",
+      "mean_improvement_vs_raw_pct": 64.8242487608131,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_command_abs_error_nm",
+      "stratum": "50x_x_0p5um",
+      "mean_improvement_vs_raw_pct": 41.30321632593129,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_step_magnitude_nm",
+      "stratum": "50x_x_1um",
+      "mean_improvement_vs_raw_pct": 56.37711132420512,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_within_grid_nm",
+      "stratum": "50x_x_1um",
+      "mean_improvement_vs_raw_pct": 68.80311651366611,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_command_abs_error_nm",
+      "stratum": "50x_x_1um",
+      "mean_improvement_vs_raw_pct": 58.84552648483374,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_step_magnitude_nm",
+      "stratum": "20x_0p5um",
+      "mean_improvement_vs_raw_pct": 9.726151406694425,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": false
+    },
+    {
+      "metric": "displacement_within_grid_nm",
+      "stratum": "20x_0p5um",
+      "mean_improvement_vs_raw_pct": 55.64110912886872,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_command_abs_error_nm",
+      "stratum": "20x_0p5um",
+      "mean_improvement_vs_raw_pct": 10.636521367486033,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": false
+    },
+    {
+      "metric": "displacement_step_magnitude_nm",
+      "stratum": "20x_1um",
+      "mean_improvement_vs_raw_pct": 44.70719040607004,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_within_grid_nm",
+      "stratum": "20x_1um",
+      "mean_improvement_vs_raw_pct": 58.8880552616165,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_command_abs_error_nm",
+      "stratum": "20x_1um",
+      "mean_improvement_vs_raw_pct": 29.01196297593163,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_step_magnitude_nm",
+      "stratum": "50x_all",
+      "mean_improvement_vs_raw_pct": 52.28049496969915,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_within_grid_nm",
+      "stratum": "50x_all",
+      "mean_improvement_vs_raw_pct": 66.7361919498162,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_command_abs_error_nm",
+      "stratum": "50x_all",
+      "mean_improvement_vs_raw_pct": 51.313827352201315,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_step_magnitude_nm",
+      "stratum": "20x_all",
+      "mean_improvement_vs_raw_pct": 22.11770723798523,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_within_grid_nm",
+      "stratum": "20x_all",
+      "mean_improvement_vs_raw_pct": 57.09071364688644,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_command_abs_error_nm",
+      "stratum": "20x_all",
+      "mean_improvement_vs_raw_pct": 19.715512364437572,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_step_magnitude_nm",
+      "stratum": "all_sequences",
+      "mean_improvement_vs_raw_pct": 27.03183371604436,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_within_grid_nm",
+      "stratum": "all_sequences",
+      "mean_improvement_vs_raw_pct": 60.52312717741398,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    },
+    {
+      "metric": "displacement_command_abs_error_nm",
+      "stratum": "all_sequences",
+      "mean_improvement_vs_raw_pct": 29.84006498091273,
+      "both_seeds_not_worse_than_raw_by_15pct": true,
+      "both_seeds_improve_raw_by_10pct": true
+    }
+  ]
+}

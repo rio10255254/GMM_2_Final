@@ -1,0 +1,285 @@
+{
+  "status": "PASS",
+  "actual_GitHub_numpy_index_files": 24,
+  "groups": [
+    {
+      "source": "Traing_Progress\\organized_20260314\\branch_e\\selected\\runs\\training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453\\_repro\\GESR_v1_v5_ST0p8_SWP_besb",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\organized_20260314\\round20\\selected\\runs\\training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419\\_repro\\GESR_v1_v5_ST0p8_SWP_r20ca",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\organized_20260315\\branch_e_followup\\selected\\runs\\training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929\\_repro\\GESR_v1_v5_ST0p8_SWP_bece",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\organized_20260315\\round21\\selected\\runs\\training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238\\_repro\\GESR_v1_v5_ST0p8_SWP_r21mcg",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\organized_20260315\\round22\\selected\\runs\\training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625\\_repro\\GESR_v1_v5_ST0p8_SWP_r22ps",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\organized_20260316\\round29\\selected\\runs\\training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056\\_repro\\GESR_v1_v5_ST0p8_SWP_r29sm042",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\organized_20260316\\round31\\selected\\runs\\training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311\\_repro\\GESR_v1_v5_ST0p8_SWP_r31eqprobup",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833\\_repro\\GESR_v1_v5_ST0p8_FIN_r30b1a1",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250\\_repro\\GESR_v1_v5_ST0p8_FIN_r30b1a1",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032\\_repro\\GESR_v1_v5_ST0p8_SWP_r30b1a1",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245\\_repro\\GESR_v1_v5_ST0p8_SWP_r30b1dir",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    },
+    {
+      "source": "Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116\\_repro\\GESR_v1_v5_ST0p8_SWP_r30b1dir",
+      "training_entries": 872,
+      "validation_entries": 46,
+      "overlap": 0,
+      "complete_zero_based_sequence": true
+    }
+  ],
+  "files": [
+    {
+      "path": "Traing_Progress/organized_20260314/branch_e/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453/_repro/GESR_v1_v5_ST0p8_SWP_besb/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "5705e51a5fb0c12f0a3a615ffefed1f6c893c04b2200d9b4a13e22aa368694f5"
+    },
+    {
+      "path": "Traing_Progress/organized_20260314/branch_e/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453/_repro/GESR_v1_v5_ST0p8_SWP_besb/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 68,
+      "maximum": 886,
+      "sha256": "94f2bf25cd8b238edec0d914d50ac78735b2000bc44e7ab8c26c6f4caa339a8d"
+    },
+    {
+      "path": "Traing_Progress/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/_repro/GESR_v1_v5_ST0p8_SWP_r20ca/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "b7a89e83f7ca0f8c9670b1499b29b683bbc008612f3f3ed355c5aa6138a883e9"
+    },
+    {
+      "path": "Traing_Progress/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/_repro/GESR_v1_v5_ST0p8_SWP_r20ca/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 7,
+      "maximum": 893,
+      "sha256": "7c3d207e2f9d59569efd2fdbb79eed626b16d77785bd5f311a43f00617afbafb"
+    },
+    {
+      "path": "Traing_Progress/organized_20260315/branch_e_followup/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929/_repro/GESR_v1_v5_ST0p8_SWP_bece/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "c1dedb5c4383d4dc1d4b755f6cfe23ec89113a17c2948383dacce5c1fd4389d3"
+    },
+    {
+      "path": "Traing_Progress/organized_20260315/branch_e_followup/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929/_repro/GESR_v1_v5_ST0p8_SWP_bece/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 12,
+      "maximum": 916,
+      "sha256": "0c201d6380d7959a8a8f4baf4355dcb7c49abf844b6d1b60a0452cbbb8e7137b"
+    },
+    {
+      "path": "Traing_Progress/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238/_repro/GESR_v1_v5_ST0p8_SWP_r21mcg/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "27be41ff44b91b01e22e441b8a126a79f323f6168175d4a3bb5b091c162035bf"
+    },
+    {
+      "path": "Traing_Progress/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238/_repro/GESR_v1_v5_ST0p8_SWP_r21mcg/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 23,
+      "maximum": 869,
+      "sha256": "09940e65b533f52d057ee41d728e0e1325dd5771c948aa2c17f52ebcc46c2c13"
+    },
+    {
+      "path": "Traing_Progress/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/_repro/GESR_v1_v5_ST0p8_SWP_r22ps/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "4bec612f9ecf7b027bd05b9e167343737898d14d80c1d467da07fb9de9f4bfd6"
+    },
+    {
+      "path": "Traing_Progress/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/_repro/GESR_v1_v5_ST0p8_SWP_r22ps/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 5,
+      "maximum": 900,
+      "sha256": "a7998d9cd5e7878f5cb48903de07b0e6fbc0d77bc3fe4d4c02c2d6edb2435a15"
+    },
+    {
+      "path": "Traing_Progress/organized_20260316/round29/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056/_repro/GESR_v1_v5_ST0p8_SWP_r29sm042/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "da30426b99f31d9c14be497ef4691d20587c30e319b2cb083aa85df40433d9be"
+    },
+    {
+      "path": "Traing_Progress/organized_20260316/round29/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056/_repro/GESR_v1_v5_ST0p8_SWP_r29sm042/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 21,
+      "maximum": 893,
+      "sha256": "ca6fbfe8a05f136323724c04d4fb3edc573274b704b7f3a5210bef6c0d66593a"
+    },
+    {
+      "path": "Traing_Progress/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311/_repro/GESR_v1_v5_ST0p8_SWP_r31eqprobup/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "c301639c6a412727a8d4e91a75c0e748d0034fc6179f35f0379df04b570e23bf"
+    },
+    {
+      "path": "Traing_Progress/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311/_repro/GESR_v1_v5_ST0p8_SWP_r31eqprobup/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 1,
+      "maximum": 901,
+      "sha256": "636d4dd3e71403591da1f45425ba35ac0bc4851f16f431c774e62bd5fc988ae1"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833/_repro/GESR_v1_v5_ST0p8_FIN_r30b1a1/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "c301639c6a412727a8d4e91a75c0e748d0034fc6179f35f0379df04b570e23bf"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833/_repro/GESR_v1_v5_ST0p8_FIN_r30b1a1/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 1,
+      "maximum": 901,
+      "sha256": "636d4dd3e71403591da1f45425ba35ac0bc4851f16f431c774e62bd5fc988ae1"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250/_repro/GESR_v1_v5_ST0p8_FIN_r30b1a1/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "c301639c6a412727a8d4e91a75c0e748d0034fc6179f35f0379df04b570e23bf"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250/_repro/GESR_v1_v5_ST0p8_FIN_r30b1a1/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 1,
+      "maximum": 901,
+      "sha256": "636d4dd3e71403591da1f45425ba35ac0bc4851f16f431c774e62bd5fc988ae1"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032/_repro/GESR_v1_v5_ST0p8_SWP_r30b1a1/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "c301639c6a412727a8d4e91a75c0e748d0034fc6179f35f0379df04b570e23bf"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032/_repro/GESR_v1_v5_ST0p8_SWP_r30b1a1/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 1,
+      "maximum": 901,
+      "sha256": "636d4dd3e71403591da1f45425ba35ac0bc4851f16f431c774e62bd5fc988ae1"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245/_repro/GESR_v1_v5_ST0p8_SWP_r30b1dir/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "c301639c6a412727a8d4e91a75c0e748d0034fc6179f35f0379df04b570e23bf"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245/_repro/GESR_v1_v5_ST0p8_SWP_r30b1dir/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 1,
+      "maximum": 901,
+      "sha256": "636d4dd3e71403591da1f45425ba35ac0bc4851f16f431c774e62bd5fc988ae1"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116/_repro/GESR_v1_v5_ST0p8_SWP_r30b1dir/train_idx.npy",
+      "entries": 872,
+      "dtype": "int64",
+      "minimum": 0,
+      "maximum": 917,
+      "sha256": "c301639c6a412727a8d4e91a75c0e748d0034fc6179f35f0379df04b570e23bf"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116/_repro/GESR_v1_v5_ST0p8_SWP_r30b1dir/val_idx.npy",
+      "entries": 46,
+      "dtype": "int64",
+      "minimum": 1,
+      "maximum": 901,
+      "sha256": "636d4dd3e71403591da1f45425ba35ac0bc4851f16f431c774e62bd5fc988ae1"
+    }
+  ],
+  "scope": "Stored split membership; not a claim of independent samples or full historical retraining"
+}

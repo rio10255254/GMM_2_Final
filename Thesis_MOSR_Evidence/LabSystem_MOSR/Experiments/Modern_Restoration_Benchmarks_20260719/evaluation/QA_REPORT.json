@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "hard_failures": [],
+  "warnings": [],
+  "verified_facts": {
+    "via_sem_mean_diameter_nm": 3289.0330025851144,
+    "minimum_displacement_evaluable_fraction": 0.9333333333333332
+  },
+  "expected_methods": [
+    "Raw",
+    "Base U-Net",
+    "NAFNet",
+    "EDSR",
+    "MOSR"
+  ],
+  "expected_sequences": [
+    "50x_x_0p5um",
+    "50x_x_1um",
+    "20x_0p5um",
+    "20x_1um"
+  ]
+}

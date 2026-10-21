@@ -1,0 +1,15 @@
+{
+  "experiment_id": "R108G_MidpointWidthFactorizedProfileMicroprobe",
+  "seed": 109210,
+  "detector_steps": 900,
+  "renderer_steps": 1200,
+  "batch_size": 24,
+  "training_data_sha256": "3e3ed993a03a0b354888b3d28edc4d2edcc26ee624f317e4615bfcb5a41b7663",
+  "max_normal_shift_px": 1.5,
+  "width_gain_range": [1.0, 3.5],
+  "local_range_window_px": 21,
+  "scratch_weights": true,
+  "real_training_pixels": false,
+  "sem_training_pixels": false,
+  "old_weight_or_teacher_used_for_training": false
+}

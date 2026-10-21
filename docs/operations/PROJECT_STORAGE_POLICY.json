@@ -1,0 +1,218 @@
+{
+  "schema_version": 2,
+  "updated_at": "2026-10-16",
+  "registry": "docs/operations/PROJECT_STORAGE_REGISTRY.json",
+  "archive": {
+    "root": "H:\\GMM_2_Final_Archive",
+    "purpose": "verified long-term experiment history",
+    "minimum_free_gib": 1024
+  },
+  "space_thresholds_gib": {
+    "warning": 300,
+    "critical": 150
+  },
+  "bulk_action_guard": {
+    "block_when_active_run": true,
+    "blocked_actions": [
+      "git_maintenance",
+      "archive_by_round",
+      "archive_selected_outputs",
+      "bulk_cleanup"
+    ]
+  },
+  "active_marker_globs": [
+    "Experiments/*/runs/launcher_logs/active_formal_run.json",
+    "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/*/runs/launcher_logs/active_formal_run.json",
+    "Experiments/*/runs/active_run.json",
+    "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/*/runs/active_run.json"
+  ],
+  "active_status_prefixes": [
+    "active",
+    "running",
+    "resuming",
+    "continuing",
+    "started",
+    "in_progress"
+  ],
+  "incomplete_status_prefixes": [
+    "failed",
+    "stopped",
+    "cancelled",
+    "canceled",
+    "interrupted",
+    "aborted"
+  ],
+  "complete_status_prefixes": [
+    "complete",
+    "completed",
+    "closed",
+    "inactive"
+  ],
+  "protected_paths": [
+    {
+      "path": "ESTIMATOR_POLICY.json",
+      "reason": "machine-readable baseline truth"
+    },
+    {
+      "path": "PROJECT_STATE.md",
+      "reason": "human-readable project truth"
+    },
+    {
+      "path": "PROJECT_ARCHITECTURE.md",
+      "reason": "stable project rules"
+    },
+    {
+      "path": "Model",
+      "reason": "shared model mainline"
+    },
+    {
+      "path": "Tools",
+      "reason": "project control and verification tools"
+    },
+    {
+      "path": "PSF_Fitting/HDR_fitting_2D_WholeFOV.m",
+      "reason": "formal Whole-FOV PSF entry"
+    },
+    {
+      "path": "Experiments/R38v2SeqFixed",
+      "reason": "formal COMBO baseline evidence"
+    },
+    {
+      "path": "Experiments/R39_ShapeGeneralization",
+      "reason": "approved balanced alternate evidence"
+    },
+    {
+      "path": "Experiments/R75v2_R61ArchitectureScratchGeneralization",
+      "reason": "completed formal training pending evaluation and canonical closeout"
+    },
+    {
+      "path": "Experiments/R79_R75v3_DenseMicroscopyScratchGeneralization",
+      "reason": "completed 100-epoch formal R79 training; protect reports, manifests and exported checkpoints pending evaluation closeout"
+    },
+    {
+      "path": "Experiments/R84_R79TileStableRootRepair",
+      "reason": "closed R84 root-repair evidence; training, follow-up evaluation and final verdict are complete, not promoted"
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch",
+      "reason": "completed R95 48-epoch formal run; protect its locked design, continuation history, audits and checkpoints"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+      "reason": "formal COMBO checkpoint"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar",
+      "reason": "approved R33 checkpoint"
+    },
+    {
+      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar",
+      "reason": "approved R38v2 checkpoint"
+    },
+    {
+      "path": "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar",
+      "reason": "approved balanced R39R40 checkpoint"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures",
+      "reason": "current thesis figures and source material"
+    },
+    {
+      "path": "PSF_Fitting/quick_recalibration",
+      "reason": "current PSF recalibration evidence"
+    },
+    {
+      "path": "Step",
+      "reason": "raw Step acquisition"
+    },
+    {
+      "path": "Training_Data",
+      "reason": "main training source data"
+    },
+    {
+      "path": "Shared_Sources",
+      "reason": "shared original acquisition files and frozen source identity; do not thin camera originals"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF",
+      "reason": "current thesis model and original experiment evidence"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark",
+      "reason": "complete current thesis benchmark and all adverse results"
+    }
+  ],
+  "cleanup_candidates": [
+    {
+      "pattern": ".git/objects/pack/tmp_pack_*",
+      "kind": "git_interrupted_pack",
+      "action": "git_maintenance",
+      "requirements": [
+        "git fsck passes",
+        "git count-objects reports the file as garbage",
+        "no git process uses the repository"
+      ]
+    },
+    {
+      "pattern": "Thesis_MOSR_Evidence/.tmp/pytest",
+      "kind": "rebuildable_test_cache",
+      "action": "bulk_cleanup",
+      "requirements": [
+        "no pytest process uses the directory"
+      ]
+    },
+    {
+      "pattern": "Thesis_MOSR_Evidence/.tmp/pytest-of-Rio",
+      "kind": "rebuildable_test_cache",
+      "action": "bulk_cleanup",
+      "requirements": [
+        "no pytest process uses the directory"
+      ]
+    },
+    {
+      "pattern": "PSF_Fitting/.codex_tmp",
+      "kind": "document_editing_scratch",
+      "action": "quarantine_then_delete",
+      "requirements": [
+        "no Word, LibreOffice, document rendering, or Codex document process uses the directory",
+        "quarantine on H drive before deleting D copy"
+      ]
+    },
+    {
+      "pattern": "PSF_Fitting/.codex_work",
+      "kind": "document_editing_scratch",
+      "action": "quarantine_then_delete",
+      "requirements": [
+        "no Word, LibreOffice, document rendering, or Codex document process uses the directory",
+        "quarantine on H drive before deleting D copy"
+      ]
+    },
+    {
+      "pattern": "PSF_Fitting/.codex_docx_work",
+      "kind": "document_editing_scratch",
+      "action": "quarantine_then_delete",
+      "requirements": [
+        "no Word, LibreOffice, document rendering, or Codex document process uses the directory",
+        "quarantine on H drive before deleting D copy"
+      ]
+    },
+    {
+      "pattern": "_tmp_package_verify",
+      "kind": "empty_verification_directory",
+      "action": "simple_cleanup",
+      "requirements": [
+        "directory is empty"
+      ]
+    }
+  ],
+  "archive_requirements": [
+    "active process is absent",
+    "canonical report and manifest are identified",
+    "selected checkpoint and its configuration are identified",
+    "raw inputs and source pointers are preserved",
+    "archive manifest is created with hashes",
+    "archive copy passes manifest verification",
+    "storage registry and original-folder restore pointer are updated",
+    "deletion target is reviewed separately"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "purpose": "R148v2 matched hybrid formal scratch8192",
+  "files": {
+    "model.py": "e543e6bc03123db4abb16a242da31ab6f7cb2082f24f6692e06eba41c503997f",
+    "dataset.py": "e4f51b920681e625efb09036d54af4c06b1eb3f42a3a020d3f842b334d03917c",
+    "losses.py": "422879f3b641a2886d1887e9616108cb19e2282962c8d68f5e64109c86405beb",
+    "train.py": "f996068cd42b418b311dd1d2e08930abbe72de854b0c3210d3901b2e774ab8cb",
+    "training_policy.py": "58172d4aaadca2288c415756ace32a7e7b53f20193136eb98d8b2221cdf06792",
+    "infer.py": "a8ee142c9d0668a5b2f8fe6e8e4f28e4ab73ec8fae6b76572db56b17472ad283",
+    "utils.py": "4c4d6f8d48492b05f4543a91968b7dc556b7460d47db98c2a42055c5c9f68b3f",
+    "optical/fullres_psf.py": "9683a48d62ba7ef3bfb0ed125a1364233f4f486f5a05e0a93e64d22041207028",
+    "config/model.json": "4c5f291c2b6bc08167266e30eb8301bfa226ad8f96633d7b49058fc0ffada06a",
+    "config/train.json": "ad56b0a702e06dd592cc7dd7fff41091132c4ea7f9bb82efb4864cd5c2b3e477",
+    "config/data.json": "e5fcb7f4d23eca5ab10541fb794ea60cc1912f8df6cecf34d025a63cf7bbd4db",
+    "calibration/measured_psf_bank.npz": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+    "calibration/BANK_LOCK.json": "f85c320d3e56bf2a25f7c1af554ce4aec70518ad1f8d2cfedadcee0374bb770a",
+    "data/PAYLOAD_LOCK.json": "c63d80a9847f3ccdd3c81c256b894631c5833424d672c1b6c1f42cc09347d855",
+    "data/payload/manifest.json": "902299ce2d1a9355a8cf1b16db79b380ce7ec2fee299ebf88e16498887d964e3",
+    "data/geometry/manifest.json": "e7da057f8176bf184dc12ac7a1622cba31b245dc475f679a639bf044c6a86509",
+    "scripts/prepare_geometry.py": "784f9f23bb625cb46e1c921faf816e11298557549cd43d2962cc34b40579be52",
+    "scripts/preflight.py": "551a7853ae10249720fb3bea82e50d3bdc631228c16e4de19873d4e452e80f72",
+    "scripts/launch_r148v2.py": "8c332364906d7cb96afc9d8eff6d5cb7b024d94f56e98cbe37b1824e130fec3b"
+  },
+  "created_utc": "2026-09-26T05:24:57.784713+00:00"
+}

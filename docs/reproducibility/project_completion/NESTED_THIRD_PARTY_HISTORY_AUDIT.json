@@ -1,0 +1,57 @@
+{
+  "repositories": [
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer",
+      "upstream": "https://github.com/swz30/Restormer.git",
+      "commit": "68dc6ac472db26f16361150cb7a96a1bc87da93f",
+      "refs": [
+        "refs/heads/main 68dc6ac472db26f16361150cb7a96a1bc87da93f",
+        "refs/remotes/origin/HEAD 68dc6ac472db26f16361150cb7a96a1bc87da93f",
+        "refs/remotes/origin/main 68dc6ac472db26f16361150cb7a96a1bc87da93f"
+      ],
+      "local_only_commits": [],
+      "working_tree_changes": []
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet",
+      "upstream": "https://github.com/megvii-research/NAFNet.git",
+      "commit": "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+      "refs": [
+        "refs/heads/main 2b4af71ebe098a92a75910c233a3965a3e93ede4",
+        "refs/remotes/origin/HEAD 2b4af71ebe098a92a75910c233a3965a3e93ede4",
+        "refs/remotes/origin/main 2b4af71ebe098a92a75910c233a3965a3e93ede4"
+      ],
+      "local_only_commits": [],
+      "working_tree_changes": []
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/EDSR-PyTorch",
+      "upstream": "https://github.com/sanghyun-son/EDSR-PyTorch.git",
+      "commit": "8dba5581a7502b92de9641eb431130d6c8ca5d7f",
+      "refs": [
+        "refs/heads/master 8dba5581a7502b92de9641eb431130d6c8ca5d7f",
+        "refs/remotes/origin/HEAD 8dba5581a7502b92de9641eb431130d6c8ca5d7f",
+        "refs/remotes/origin/master 8dba5581a7502b92de9641eb431130d6c8ca5d7f"
+      ],
+      "local_only_commits": [],
+      "working_tree_changes": []
+    },
+    {
+      "path": "Experiments/R81_MultiArchitectureReferenceCircleBenchmark/third_party/ucan_official",
+      "upstream": "https://github.com/hokiyoshi/UCAN.git",
+      "commit": "b812c0adb8ce70d442973db5c87bab7d1e8c3333",
+      "refs": [
+        "refs/heads/main b812c0adb8ce70d442973db5c87bab7d1e8c3333",
+        "refs/remotes/origin/HEAD b812c0adb8ce70d442973db5c87bab7d1e8c3333",
+        "refs/remotes/origin/main b812c0adb8ce70d442973db5c87bab7d1e8c3333"
+      ],
+      "local_only_commits": [],
+      "working_tree_changes": []
+    }
+  ],
+  "nonrepositories_with_leftover_git_directories": [
+    "Thesis_MOSR_Evidence",
+    "PSF_Fitting"
+  ],
+  "root_saved_state_preserved": true
+}

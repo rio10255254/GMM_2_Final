@@ -1,0 +1,172 @@
+{
+  "experiment": "R128_SourceOnlyFullTraining",
+  "status": "specified_before_preparation_outputs",
+  "purpose": "Complete planned source-only research training after preparation",
+  "splits": {
+    "train": 512,
+    "dev": 128,
+    "test": 128
+  },
+  "split_seeds": {
+    "train": 128100000,
+    "dev": 128200000,
+    "test": 128300000
+  },
+  "categories": [
+    "irregular_curved",
+    "corners_lines_junctions",
+    "dense_close_structures",
+    "textured_edges",
+    "clean_identity",
+    "noisy_identity",
+    "flat_negative"
+  ],
+  "category_weights": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.05,
+    0.05,
+    0.1
+  ],
+  "native_field": 384,
+  "supervised_core": 128,
+  "render_factor": 8,
+  "latent_factor": 4,
+  "model": {
+    "channels": 64,
+    "dilations": [
+      1,
+      2,
+      4,
+      2
+    ],
+    "iterations": 4,
+    "checkpoint_blocks": true,
+    "maximum_step": 0.25,
+    "initial_fraction": 0.4
+  },
+  "model_inputs": [
+    "observed_image_only"
+  ],
+  "model_has_geometry_or_confidence_outputs": false,
+  "model_has_assumed_or_true_PSF_input": false,
+  "model_seeds": [
+    1285001,
+    1285002
+  ],
+  "arms": {
+    "I": {
+      "observation_loss_weight": 0.0
+    },
+    "P": {
+      "observation_loss_weight": 0.02
+    }
+  },
+  "updates_per_run": 8192,
+  "scene_pairs_per_update": 1,
+  "epochs_per_run": 16,
+  "order_seed": 1287001,
+  "online_noise_seed": 128800000,
+  "optimizer": {
+    "name": "AdamW",
+    "peak_lr": 0.001,
+    "minimum_lr": 1e-05,
+    "warmup_updates": 128,
+    "weight_decay": 1e-05,
+    "gradient_clip": 5.0,
+    "schedule": "linear_warmup_then_cosine"
+  },
+  "loss_weights": {
+    "image_gray": 1.0,
+    "latent_gray": 0.25,
+    "gradient_gray": 0.2,
+    "pair_reference_residual_gray": 0.2
+  },
+  "dev_checkpoints": [
+    0,
+    512,
+    1024,
+    2048,
+    4096,
+    6144,
+    8192
+  ],
+  "real_checkpoints": [
+    0,
+    1024,
+    4096,
+    8192
+  ],
+  "final_generated_test_checkpoints": [
+    8192
+  ],
+  "primary_checkpoint": 8192,
+  "checkpoint_selection": "Report all scheduled checkpoints; no after-the-fact best-step comparison",
+  "arithmetic": "Float32 train/inference, TF32off, deterministiccuDNN; fixed operator FFT equivalence separately checked",
+  "real_evaluation": "Same existing R127nativeSEM definitions and full-field/context-aware motion; six fixed optical images plus first2fullframes of each6motion suites",
+  "real_calibration_qualified": false,
+  "new_real_holdout": false,
+  "new_model_promoted": false,
+  "stop_conditions": [
+    "Nonfinite loss, gradients or parameters",
+    "Source/implementation/protocol identity mismatch",
+    "Insufficient valid physical context",
+    "Device/storage/IO failure"
+  ],
+  "application_accuracy_thresholds": "Not certified; research comparison only. Missing independent physical references do not block this training.",
+  "data_admission": {
+    "model_render_rms_noise_units_max": 0.25,
+    "model_render_p99_noise_units_max": 1.0,
+    "area_target_max_error": 2e-07,
+    "no_post_result_parent_rejection": true
+  },
+  "storage_budget_gib": 24,
+  "save_every_updates": 128,
+  "training_crop_native": [
+    32,
+    352,
+    32,
+    352
+  ],
+  "training_core_in_crop": [
+    96,
+    224,
+    96,
+    224
+  ],
+  "deterministic_algorithms_required": true,
+  "censored_sensor_loss": {
+    "interior": "Gaussian approximation with variance sigma^2 + 1/12 gray^2",
+    "saturation": "lower and upper tail probability at0.5 and254.5 gray",
+    "minimum_noise_scale_gray": 0.5
+  },
+  "real_boundary_rule": {
+    "global_only": true,
+    "retain_Raw_through_native_distance": 64,
+    "linear_transition_native_pixels": 16,
+    "motion_same_global_border_exclusion": 80,
+    "report_unguarded_neural_output": true,
+    "SEM_population": "All36perexposure, source-and-SEM-only rays; lost candidate rays are failures, never excluded silently",
+    "SEM_context_strata_fixed_before_training": true
+  },
+  "run_order": [
+    {
+      "arm": "I",
+      "seed": 1285001
+    },
+    {
+      "arm": "P",
+      "seed": 1285001
+    },
+    {
+      "arm": "I",
+      "seed": 1285002
+    },
+    {
+      "arm": "P",
+      "seed": 1285002
+    }
+  ]
+}

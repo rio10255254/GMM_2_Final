@@ -1,0 +1,50 @@
+{
+  "run_id": "20250605_inner_circle_roi",
+  "status": "prepared_for_inner_circle_roi_standard_fit",
+  "camera": {
+    "model": "Basler acA2040-120um",
+    "pixel_size_um": 3.45,
+    "resolution_px": [2048, 1536],
+    "official_spec_url": "https://docs.baslerweb.com/aca2040-120um",
+    "note": "The 120um suffix is the camera model suffix, not the sensor pixel size."
+  },
+  "objective": {
+    "magnification": 20
+  },
+  "optical_path": {
+    "relay_lens_magnification": 1.0,
+    "tube_lens_magnification": 1.0
+  },
+  "acquisition": {
+    "binning": 1,
+    "software_scaling": 1.0,
+    "rotation_deg": 0,
+    "flip": "none",
+    "crop": "none"
+  },
+  "target": {
+    "chart_id": "CHART-009",
+    "feature": "inner white disk inside the concentric-circle pattern",
+    "nominal_diameter_mm": 0.1,
+    "nominal_diameter_um": 100.0,
+    "detected_inner_circle_csv": "inputs/20250605_inner_circle_roi/detection/inner_white_disk_component.csv",
+    "measurement_grid_rows": 5,
+    "measurement_grid_cols": 5,
+    "image_order": "capture-time sorted 5x5 stage sweep"
+  },
+  "template": {
+    "source_gt_path": "D:/GMM_2_Final/PSF_Fitting/Crop_circle_FreqFiltered/GT/GT_901_with_Block_proc.bmp",
+    "source_circle_diameter_px": 801,
+    "reuse_scope": "Reuse original project inner circle plus two-block GT geometry; rescale to lab optical calibration."
+  },
+  "inputs": {
+    "raw_dir": "raw/20250605_PSF_Calibration"
+  },
+  "outputs": {
+    "gt_size_px": 901,
+    "gt_path": "inputs/20250605_inner_circle_roi/GT/LAB_INNER_CIRCLE_GT_901.bmp",
+    "measured_roi_dir": "inputs/20250605_inner_circle_roi/measured",
+    "manifest_path": "inputs/20250605_inner_circle_roi/MANIFEST.json",
+    "overlay_contact_path": "results/20250605_inner_circle_roi/inner_circle_roi_gt_overlay_contact.png"
+  }
+}

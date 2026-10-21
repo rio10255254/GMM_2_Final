@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+archive/
+data/r88_smoke/
+data/r88_formal/
+data/r88_locked_holdout/
+weights/smoke/
+weights/formal/
+runs/smoke_*/
+runs/training_*/
+runs/launcher_logs/*.json
+results/logs/*.log
+results/logs/*.pid
+results/synthetic_live_validation/

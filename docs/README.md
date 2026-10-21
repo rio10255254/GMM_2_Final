@@ -8,6 +8,9 @@ Its purpose is to keep the root as a clean entry surface instead of turning it i
 
 ## Layout / 目錄結構
 
+- `navigation/`
+  跨區域專案地圖與查找入口；只負責指出正式位置，不複製實驗結論。
+  Cross-area project map and findability entry points; it points to canonical locations without duplicating experiment verdicts.
 - `analysis/`
   研究路徑圖、視覺化總覽、決策路徑摘要。
   Research-path diagrams, visual overviews, and decision-path summaries.
@@ -43,9 +46,11 @@ Its purpose is to keep the root as a clean entry surface instead of turning it i
    First read the root `README.md`.
 2. 再看 `PROJECT_STATE.md`（前 50 行 Quick Handoff 區 3 分鐘讀完）
    Then read `PROJECT_STATE.md` (the first ~50 lines are the 3-minute Quick Handoff).
-3. 需要穩定規則時，看 `PROJECT_ARCHITECTURE.md`
+3. 不知道檔案在哪個工作區時，看 `navigation/PROJECT_MAP.md`
+   Use `navigation/PROJECT_MAP.md` when you do not know which workspace owns something.
+4. 需要穩定規則時，看 `PROJECT_ARCHITECTURE.md`
    For stable architecture rules and promotion conditions, read `PROJECT_ARCHITECTURE.md`.
-4. 需要完整歷史脈絡時，再進 `history/`
+5. 需要完整歷史脈絡時，再進 `history/`
    Only move into `history/` when you need the full narrative.
 
 ## Sync Rule / 同步規則

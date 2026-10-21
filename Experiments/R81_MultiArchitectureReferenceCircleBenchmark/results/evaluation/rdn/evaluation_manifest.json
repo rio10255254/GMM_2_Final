@@ -1,0 +1,42 @@
+{
+  "model_key": "rdn",
+  "model_spec": {
+    "name": "Compact RDN-x1",
+    "family": "RDN",
+    "year": 2018,
+    "category": "classic dense SR CNN",
+    "kwargs": {
+      "features": 64,
+      "growth_rate": 32,
+      "blocks": 8,
+      "layers_per_block": 6
+    },
+    "source": "Zhang et al., CVPR 2018",
+    "adaptation": "one-channel same-resolution compact configuration"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\rdn\\best_rdn.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.08599099508585353,
+    "l1": 0.060598646169518364,
+    "rmse": 0.08425334330918847,
+    "ssim": 0.8730383013603767
+  },
+  "parameter_count": 2231681,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.1760517500079004,
+  "median_displacement_roi_inference_seconds": 0.12334040000860114
+}

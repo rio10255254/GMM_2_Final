@@ -1,0 +1,139 @@
+{
+  "experiment_id": "R87_TileNativeScratchGeneralization",
+  "created_date": "2026-08-10",
+  "status": "authorized_build_and_single_formal_run",
+  "branch": "sandbox/r87-tile-native-scratch",
+  "scientific_question": "Can a locally normalized, tile-native MOSR model trained once from random initialization on paired views from large procedural scenes retain contour accuracy while making stitched inference agree with full-frame inference?",
+  "source_isolation": {
+    "procedural_only": true,
+    "real_microscope_pixels_allowed": false,
+    "sem_pixels_allowed": false,
+    "hs100mg_structure_allowed": false,
+    "measured_psf_allowed": false,
+    "legacy_pairs_allowed": false,
+    "checkpoint_loading_allowed": false,
+    "teacher_models_allowed": false,
+    "pseudo_labels_allowed": false
+  },
+  "architecture": {
+    "class_name": "TileNativeMOSR",
+    "base_channels": 32,
+    "downsample_levels": 3,
+    "spatial_reduction_normalization": false,
+    "global_pooling": false,
+    "fft_preconditioner": false,
+    "local_optical_features": true,
+    "raw_logit_anchor": true,
+    "alignment_multiple": 8,
+    "random_initialization_only": true
+  },
+  "dataset": {
+    "package_name": "r87_formal_scene_pairs",
+    "generator_version": "r87_large_scene_supersampled_v1",
+    "master_seed": 870031,
+    "canvas_size": 1536,
+    "label_supersample_factor": 8,
+    "label_downsample_method": "cv2.INTER_AREA",
+    "scene_count": 1280,
+    "renderings_per_scene": 2,
+    "views_per_rendering": 2,
+    "total_rendering_pairs": 2560,
+    "total_views": 5120,
+    "split_unit": "scene_id",
+    "split_counts": {
+      "train_scenes": 1024,
+      "validation_scenes": 128,
+      "internal_test_scenes": 128,
+      "train_views": 4096,
+      "validation_views": 512,
+      "internal_test_views": 512
+    },
+    "roles": {
+      "basic_geometry": 160,
+      "noncircular_complex": 200,
+      "thin_and_defect": 160,
+      "dense_periodic": 200,
+      "multiscale_field": 160,
+      "cross_tile_large": 240,
+      "texture_and_polarity": 80,
+      "known_subpixel_motion": 80
+    },
+    "degradation_quota_per_2560_renderings": {
+      "standard_recoverable": 768,
+      "defocus_and_motion": 512,
+      "illumination_and_exposure": 384,
+      "halo_ghost_and_banding": 384,
+      "severe_but_recoverable": 256,
+      "identity_and_near_identity": 256
+    }
+  },
+  "training": {
+    "seed": 870031,
+    "epochs": 100,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "minimum_learning_rate": 0.00001,
+    "weight_decay": 0.0001,
+    "amp_dtype": "bfloat16",
+    "validation_every": 5,
+    "checkpoint_every": 5,
+    "live_validation_every": 5,
+    "num_workers": 4,
+    "stages": [
+      {
+        "epoch_start": 1,
+        "epoch_end": 20,
+        "patch_size": 384,
+        "core_size": 256,
+        "scene_batch_size": 8,
+        "gradient_accumulation": 1
+      },
+      {
+        "epoch_start": 21,
+        "epoch_end": 50,
+        "patch_size": 640,
+        "core_size": 384,
+        "scene_batch_size": 4,
+        "gradient_accumulation": 1
+      },
+      {
+        "epoch_start": 51,
+        "epoch_end": 100,
+        "patch_size": 896,
+        "core_size": 512,
+        "scene_batch_size": 2,
+        "gradient_accumulation": 2
+      }
+    ],
+    "loss_weights": {
+      "reconstruction": 1.0,
+      "edge": 0.25,
+      "laplacian": 0.05,
+      "soft_contour": 0.1,
+      "paired_view_consistency": 0.2,
+      "identity_guard": 0.1
+    },
+    "scratch_guards": {
+      "checkpoint_argument_exists": false,
+      "resume_allowed": false,
+      "optimizer_reuse_allowed": false,
+      "initial_parameter_hash_required": true,
+      "pre_first_batch_audit_required": true,
+      "existing_output_directory_policy": "fail"
+    }
+  },
+  "evaluation": {
+    "checkpoint_selection_source": "synthetic_validation_only",
+    "internal_test_open_after_selection": true,
+    "external_real_images_used_for_loss": false,
+    "external_real_images_used_for_checkpoint_selection": false,
+    "required_outputs": [
+      "synthetic_reconstruction_metrics",
+      "ACM_contour_metrics",
+      "paired_view_consistency",
+      "full_frame_vs_tiled_consistency",
+      "live_5x_20x_50x_reconstructions"
+    ]
+  }
+}
+

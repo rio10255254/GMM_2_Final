@@ -1,0 +1,84 @@
+{
+  "candidate": "r42_r41_best",
+  "external_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\external_gmf\\r42_r41_best",
+  "headline_step_std": {
+    "8px": 0.19257713695607165,
+    "0p8px": 0.25566539577983377,
+    "0p08px": 0.19865145289430747
+  },
+  "combo_step_std": {
+    "8px": 0.154515,
+    "0p8px": 0.13156,
+    "0p08px": 0.099891
+  },
+  "scales": {
+    "8px": {
+      "subdir": "pitch8px",
+      "expected_step_px": 8.0,
+      "n_frames": 100,
+      "stats": {
+        "n_pos_samples": 100,
+        "n_steps": 99,
+        "median_step": -8.039999999999964,
+        "raw_std": 0.19257713695607165,
+        "filtered_std": 0.19257713695607165,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    },
+    "0p8px": {
+      "subdir": "pitch0p8px",
+      "expected_step_px": 0.8,
+      "n_frames": 60,
+      "stats": {
+        "n_pos_samples": 60,
+        "n_steps": 59,
+        "median_step": -0.8280000000000882,
+        "raw_std": 0.25566539577983377,
+        "filtered_std": 0.25566539577983377,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    },
+    "0p08px": {
+      "subdir": "pitch0p08px",
+      "expected_step_px": 0.08,
+      "n_frames": 40,
+      "stats": {
+        "n_pos_samples": 40,
+        "n_steps": 39,
+        "median_step": -0.07699999999999818,
+        "raw_std": 0.19865145289430747,
+        "filtered_std": 0.19865145289430747,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    }
+  },
+  "verdict": {
+    "overall": "RESEARCH_ONLY_RING_REGRESSION",
+    "per_scale": {
+      "8px": {
+        "candidate": 0.19257713695607165,
+        "combo": 0.154515,
+        "delta_pct": 24.63329576809477,
+        "status": "REGRESSED"
+      },
+      "0p8px": {
+        "candidate": 0.25566539577983377,
+        "combo": 0.13156,
+        "delta_pct": 94.33368484329108,
+        "status": "REGRESSED"
+      },
+      "0p08px": {
+        "candidate": 0.19865145289430747,
+        "combo": 0.099891,
+        "delta_pct": 98.86821925329356,
+        "status": "REGRESSED"
+      }
+    }
+  }
+}

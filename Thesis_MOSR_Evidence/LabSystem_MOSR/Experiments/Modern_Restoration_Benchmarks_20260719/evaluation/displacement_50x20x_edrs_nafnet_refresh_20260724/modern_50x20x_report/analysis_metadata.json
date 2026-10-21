@@ -1,0 +1,21 @@
+{
+  "purpose": "Strict same-step 50x/20x displacement comparison for Raw, EDSR-x1, NAFNet, and MOSR",
+  "source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\Modern_Restoration_Benchmarks_20260719\\evaluation\\displacement_50x20x_edrs_nafnet_refresh_20260724\\displacement_step_measurements.csv",
+  "methods": [
+    "Raw",
+    "EDSR-x1",
+    "NAFNet",
+    "MOSR"
+  ],
+  "selection": "30 Raw-motion-ranked adjacent pairs per sequence; 0.5 and 1.0 um sequences are pooled only after subtracting the PI-reference step",
+  "primary_population": "per-magnification common-valid intersection across Raw, EDSR-x1, NAFNet, and MOSR",
+  "primary_metrics": {
+    "step_error_sd_nm": "sample standard deviation of measured minus PI-reference displacement; lower is more stable",
+    "mae_nm": "mean absolute measured minus PI-reference displacement; lower is more accurate"
+  },
+  "ci": {
+    "method": "paired-step bootstrap percentile interval",
+    "iterations": 5000,
+    "seed": 20260724
+  }
+}

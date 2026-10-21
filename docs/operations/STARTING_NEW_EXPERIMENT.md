@@ -1,6 +1,6 @@
 # Starting a New Experiment / 新實驗完整指南
 
-Last updated: 2026-04-14
+Last updated: 2026-08-13
 
 這份文件彙整新實驗的**命名規則、目錄模板、與 SOP 流程**。以前分散在 `docs/index/` 的三份文件（`NAMING_CONVENTIONS.md`、`EXPERIMENT_TEMPLATE.md`、`NEW_EXPERIMENT_SOP.md`）合併於此，目的是讓接手者只讀一份就能開新實驗。
 
@@ -66,12 +66,15 @@ Last updated: 2026-04-14
 - Python：`lower_snake_case.py`（除 Model/ 以外，Model/ 用 PascalCase 前綴）
 - JSON：`lower_snake_case.json` 或 `UPPER_SNAKE_CASE.json`（政策文件）
 - 不在檔名中使用中文字元（目錄名可以，檔名不要）
+- 新檔案絕對路徑超過 180 字元先縮短，超過 220 字元不得新增
+- 單一檔名或資料夾名稱以 64 字元內為目標；完整參數與描述寫進 MANIFEST，不塞進路徑
+- 不使用 `final_final`、`new_new`、`backup2`、`copy` 或 `old2` 這類身分不明名稱
 
 ---
 
 ## 2. Directory Template / 目錄結構模板
 
-### 標準結構（必備 + 選用）
+### 所有新實驗的固定核心
 
 ```
 Experiments/R##_Description/
@@ -82,16 +85,41 @@ Experiments/R##_Description/
 ├── reports/
 │   └── R##_RESULTS.md               # [必備] 完整結果報告
 └── results/
-    ├── external_gmf/                 # [如果送了外部驗證]
-    │   ├── pitch0p8px/GMF_score.txt
-    │   ├── pitch0p08px/GMF_score.txt
-    │   └── pitch8px/GMF_score.txt
-    ├── sequence_analysis/            # [建議] 720-angle 內部分析
-    └── *_recon/                      # [如果有推理輸出]
-        ├── pitch0p1um_y_60_odd/
-        ├── pitch0p01um_y_40_odd/
-        └── pitch1um_y_100_odd/
+    └── ...                            # 依該輪研究內容命名
 ```
+
+這五個入口是共同契約。不要預先建立不會使用的空分類。若 `results` 超過三個一級項目或 1 GiB，增加 `results/README.md`，寫清楚哪些是正式結果、代表成果、活動中輸出與 H 槽封存候選。
+
+### 型態 A：共享主線實驗
+
+適合沿用根層 `Model`、`Training_Data` 與 `Traing_Progress` 的實驗。該輪保留 launcher、報告與結果；共享模型和資料不複製進實驗。需要時可增加：
+
+```text
+├── tests/
+└── runs/
+    └── launcher_logs/
+        └── active_formal_run.json
+```
+
+### 型態 B：自包含實驗
+
+適合需要隔離完整模型架構與訓練系統的研究。除了固定核心，可以增加：
+
+```text
+├── config/                            # 鎖定設計與執行設定
+├── model/                             # 本輪專屬模型
+├── training/                          # 本輪專屬訓練程式
+├── inference/                         # 本輪唯一推論入口
+├── tests/                             # 架構與行為回歸測試
+├── data/                              # payload、程序化資料或共享來源指標
+├── runs/launcher_logs/                # 活動標記與執行紀錄
+├── weights/                           # 活動 checkpoint 與收尾後精選權重
+└── logs/                              # 只有無法合理放進 runs 時才增加
+```
+
+README 或 MANIFEST 必須聲明採用哪一種型態。若有 `data`，必須說明它是實際 payload、可重新產生的資料，還是指向共享資料；連續輪次不得因複製方便而各存一份相同大型 payload。兩輪以上確實共用時，才提升為 `Training_Data` 的共享資料。
+
+正式工作開始前，兩種型態都要完成容量登錄並建立 `runs/launcher_logs/active_formal_run.json`。程序消失不代表完成；必須核對預定輪數、完成摘要與必要輸出後才收尾。
 
 ### README.md 模板
 
@@ -118,15 +146,20 @@ Experiments/R##_Description/
 
 ## 資料
 
-- Checkpoint: `Traing_Progress/..._YYYYMMDD_HHMMSS/weights/best_tradeoff.pth.tar`
-- External GMF: `results/external_gmf/`
+- Experiment profile: `shared-mainline` 或 `self-contained`
+- Training data: 實際 payload、可重建方式或共享來源與核對值
+- Checkpoint: `Traing_Progress/.../weights/...` 或本輪 `weights/...`
+- External GMF: `results/external_gmf/`（有送外部驗證時）
+- Closeout: D 槽保留內容、H 槽封存候選與恢復入口
 
 ## 分支
 
 `sandbox/r##`
 ```
 
-### Launcher 模板
+### 共享主線 Launcher 模板
+
+下例適用於沿用根層 `Model` 的型態 A。型態 B 使用本輪 `training` 內的唯一 launcher，但仍必須保留明確的 artifact identity，不能讓設定名稱與輸出模型名稱分離。
 
 ```python
 """Round ## — [Description] Launcher"""
@@ -267,9 +300,15 @@ If Codex leaves actionable comments, follow up in the PR with:
 新實驗建立後確認：
 
 - [ ] 目錄格式 `Experiments/R##_Description/`（或相容的歷史例外格式）
+- [ ] 已在 README 或 MANIFEST 聲明「共享主線」或「自包含」型態
 - [ ] `README.md` 寫了假說與設計
 - [ ] `MANIFEST.md` 已建立
 - [ ] Launcher 含 `trainer.MODEL_NAME_BASE = CFG.MODEL_NAME`（確保 artifact identity）
+- [ ] 正式工作開始前已在 `docs/operations/PROJECT_STORAGE_REGISTRY.json` 登記容量身分、預估容量與保留規則
+- [ ] 正式訓練與每次續訓都會更新 `runs/launcher_logs/active_formal_run.json`；程序退出後先核對預定輪數、完成摘要與必要輸出，再把標記改成完成
+- [ ] `data` 已聲明為 payload、可重建資料或共享來源指標，沒有無理由複製上一輪大型資料
+- [ ] `results` 超過三個一級項目或 1 GiB 時已有 `results/README.md` 與 D/H 保留說明
+- [ ] 新路徑沒有超過 220 字元，單一名稱以 64 字元內為目標
 - [ ] 分支命名 `sandbox/r##` 或 `research/r##`
 - [ ] Issue 用 `.github/ISSUE_TEMPLATE/research-round-proposal.yml` 建立
 - [ ] GitHub Project `GMM Research Control Plane` 已新增 item

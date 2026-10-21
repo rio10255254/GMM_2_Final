@@ -1,0 +1,5 @@
+Title: Paired-frame center shift by FOV
+What it shows: Shows the estimated center displacement between the two consecutive frames at each grid location.
+Slide use: Use this as a supporting figure for short-term image repeatability and sub-pixel capture stability.
+Caution: This center shift is an image-layer estimate, not the final PSF coefficient drift.
+Source: D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_metrics.csv

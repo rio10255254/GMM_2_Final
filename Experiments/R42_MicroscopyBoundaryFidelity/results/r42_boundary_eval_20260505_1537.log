@@ -1,0 +1,3026 @@
+**********************
+Windows PowerShell 轉譯開始
+開始時間: 20260505153639
+使用者名稱: DESKTOP-5J1NJ2L\Rio
+RunAs 使用者: DESKTOP-5J1NJ2L\Rio
+設定名稱:
+電腦: DESKTOP-5J1NJ2L (Microsoft Windows NT 10.0.26200.0)
+主應用程式: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -EncodedCommand UwBlAHQALQBMAG8AYwBhAHQAaQBvAG4AIAAnAEQAOgBcAEcATQBNAF8AMgBfAEYAaQBuAGEAbAAnAAoAJABFAHIAcgBvAHIAQQBjAHQAaQBvAG4AUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAdABvAHAAJwAKAFMAdABhAHIAdAAtAFQAcgBhAG4AcwBjAHIAaQBwAHQAIAAtAFAAYQB0AGgAIAAnAEQAOgBcAEcATQBNAF8AMgBfAEYAaQBuAGEAbABcAEUAeABwAGUAcgBpAG0AZQBuAHQAcwBcAFIANAAyAF8ATQBpAGMAcgBvAHMAYwBvAHAAeQBCAG8AdQBuAGQAYQByAHkARgBpAGQAZQBsAGkAdAB5AFwAcgBlAHMAdQBsAHQAcwBcAHIANAAyAF8AYgBvAHUAbgBkAGEAcgB5AF8AZQB2AGEAbABfADIAMAAyADYAMAA1ADAANQBfADEANQAzADcALgBsAG8AZwAnAAoAZgB1AG4AYwB0AGkAbwBuACAAUgB1AG4ALQBPAG4AZQAoACQAbgBhAG0AZQAsACAAJAB3AGUAaQBnAGgAdABzACkAIAB7AAoAIAAgAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAFsAUgA0ADIALQBFAFYAQQBMAF0AIABTAFQAQQBSAFQAIAAkAG4AYQBtAGUAIgAgACgARwBlAHQALQBEAGEAdABlACkACgAgACAAJAByAG8AbwB0ACAAPQAgACIARQB4AHAAZQByAGkAbQBlAG4AdABzAFwAUgA0ADIAXwBNAGkAYwByAG8AcwBjAG8AcAB5AEIAbwB1AG4AZABhAHIAeQBGAGkAZABlAGwAaQB0AHkAXAByAGUAcwB1AGwAdABzAFwAYgBvAHUAbgBkAGEAcgB5AF8AcgBlAGMAbwBuAFwAJABuAGEAbQBlACIACgAgACAAcAB5AHQAaABvAG4AIABFAHgAcABlAHIAaQBtAGUAbgB0AHMAXABSADQAMgBfAE0AaQBjAHIAbwBzAGMAbwBwAHkAQgBvAHUAbgBkAGEAcgB5AEYAaQBkAGUAbABpAHQAeQBcAHMAYwByAGkAcAB0AHMAXAByAHUAbgBfAHIANAAyAF8AYgBvAHUAbgBkAGEAcgB5AF8AcgBlAGMAbwBuAC4AcAB5ACAALQAtAHAAcgBvAGYAaQBsAGUAIABiAG8AdQBuAGQAYQByAHkAXwB2AGEAbABfAHUAbgBzAGUAZQBuACAALQAtAHcAZQBpAGcAaAB0AHMAIAAkAHcAZQBpAGcAaAB0AHMAIAAtAC0AcgBlAGMAbwBuAC0AcgBvAG8AdAAgACQAcgBvAG8AdAAgAC0ALQBkAGUAdgBpAGMAZQAgAGMAdQBkAGEAOgAwAAoAIAAgAGkAZgAgACgAJABMAEEAUwBUAEUAWABJAFQAQwBPAEQARQAgAC0AbgBlACAAMAApACAAewAgAHQAaAByAG8AdwAgACIAcgBlAGMAbwBuAHMAdAByAHUAYwB0AGkAbwBuACAAZgBhAGkAbABlAGQAOgAgACQAbgBhAG0AZQAiACAAfQAKACAAIABwAHkAdABoAG8AbgAgAEUAeABwAGUAcgBpAG0AZQBuAHQAcwBcAFIANAAyAF8ATQBpAGMAcgBvAHMAYwBvAHAAeQBCAG8AdQBuAGQAYQByAHkARgBpAGQAZQBsAGkAdAB5AFwAcwBjAHIAaQBwAHQAcwBcAHIANAAyAF8AYgBvAHUAbgBkAGEAcgB5AF8AbQBlAHQAcgBpAGMAcwAuAHAAeQAgAC0ALQBwAHIAbwBmAGkAbABlACAAYgBvAHUAbgBkAGEAcgB5AF8AdgBhAGwAXwB1AG4AcwBlAGUAbgAgAC0ALQByAGUAYwBvAG4ALQByAG8AbwB0ACAAJAByAG8AbwB0ACAALQAtAG8AdQB0AHAAdQB0AC0AagBzAG8AbgAgACIAJAByAG8AbwB0AFwAcwB1AG0AbQBhAHIAeQAuAGoAcwBvAG4AIgAKACAAIABpAGYAIAAoACQATABBAFMAVABFAFgASQBUAEMATwBEAEUAIAAtAG4AZQAgADAAKQAgAHsAIAB0AGgAcgBvAHcAIAAiAG0AZQB0AHIAaQBjAHMAIABmAGEAaQBsAGUAZAA6ACAAJABuAGEAbQBlACIAIAB9AAoAIAAgAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAFsAUgA0ADIALQBFAFYAQQBMAF0AIABEAE8ATgBFACAAJABuAGEAbQBlACIAIAAoAEcAZQB0AC0ARABhAHQAZQApAAoAfQAKAFIAdQBuAC0ATwBuAGUAIAAnAGMAbwBtAGIAbwAnACAAJwBjAG8AbQBiAG8AJwAKAFIAdQBuAC0ATwBuAGUAIAAnAHIAMwA5AF8AYQAwADMAMAAnACAAJwBhADAAMwAwACcACgBSAHUAbgAtAE8AbgBlACAAJwByADQAMABfAGEAMAA0ADUAJwAgACcAcgA0ADAAXwBhADAANAA1ACcACgBSAHUAbgAtAE8AbgBlACAAJwByADQAMQBfAGQAaQByAGUAYwB0ACcAIAAnAHIANAAxAF8AZABpAHIAZQBjAHQAJwAKAFIAdQBuAC0ATwBuAGUAIAAnAHIANAAyAF8AYwBvAG0AYgBvAF8AYgBlAHMAdAAnACAAJwBEADoAXABHAE0ATQBfADIAXwBGAGkAbgBhAGwAXABUAHIAYQBpAG4AZwBfAFAAcgBvAGcAcgBlAHMAcwBcAHQAcgBhAGkAbgBpAG4AZwBfAHAAcgBvAGcAcgBlAHMAcwBfAEcARQBTAFIAXwB2ADEAXwB2ADUAXwBTAFQAMABwADgAXwBTAFcAUABfAHIANAAyAF8AYgBvAHUAbgBkAGEAcgB5AF8AZgByAG8AbQBfAGMAbwBtAGIAbwBfADIAMAAyADYAMAA1ADAANQBfADEANAAyADMAMAAxAFwAdwBlAGkAZwBoAHQAcwBcAGIAZQBzAHQAXwB0AHIAYQBkAGUAbwBmAGYALgBwAHQAaAAuAHQAYQByACcACgBSAHUAbgAtAE8AbgBlACAAJwByADQAMgBfAGMAbwBtAGIAbwBfAGwAYQB0AGUAcwB0ACcAIAAnAEQAOgBcAEcATQBNAF8AMgBfAEYAaQBuAGEAbABcAFQAcgBhAGkAbgBnAF8AUAByAG8AZwByAGUAcwBzAFwAdAByAGEAaQBuAGkAbgBnAF8AcAByAG8AZwByAGUAcwBzAF8ARwBFAFMAUgBfAHYAMQBfAHYANQBfAFMAVAAwAHAAOABfAFMAVwBQAF8AcgA0ADIAXwBiAG8AdQBuAGQAYQByAHkAXwBmAHIAbwBtAF8AYwBvAG0AYgBvAF8AMgAwADIANgAwADUAMAA1AF8AMQA0ADIAMwAwADEAXAB3AGUAaQBnAGgAdABzAFwAbABhAHQAZQBzAHQALgBwAHQAaAAuAHQAYQByACcACgBSAHUAbgAtAE8AbgBlACAAJwByADQAMgBfAHIANAAxAF8AYgBlAHMAdAAnACAAJwBEADoAXABHAE0ATQBfADIAXwBGAGkAbgBhAGwAXABUAHIAYQBpAG4AZwBfAFAAcgBvAGcAcgBlAHMAcwBcAHQAcgBhAGkAbgBpAG4AZwBfAHAAcgBvAGcAcgBlAHMAcwBfAEcARQBTAFIAXwB2ADEAXwB2ADUAXwBTAFQAMABwADgAXwBTAFcAUABfAHIANAAyAF8AYgBvAHUAbgBkAGEAcgB5AF8AZgByAG8AbQBfAHIANAAxAF8AMgAwADIANgAwADUAMAA1AF8AMQA0ADUAMgAyADkAXAB3AGUAaQBnAGgAdABzAFwAYgBlAHMAdABfAHQAcgBhAGQAZQBvAGYAZgAuAHAAdABoAC4AdABhAHIAJwAKAFIAdQBuAC0ATwBuAGUAIAAnAHIANAAyAF8AcgA0ADEAXwBsAGEAdABlAHMAdAAnACAAJwBEADoAXABHAE0ATQBfADIAXwBGAGkAbgBhAGwAXABUAHIAYQBpAG4AZwBfAFAAcgBvAGcAcgBlAHMAcwBcAHQAcgBhAGkAbgBpAG4AZwBfAHAAcgBvAGcAcgBlAHMAcwBfAEcARQBTAFIAXwB2ADEAXwB2ADUAXwBTAFQAMABwADgAXwBTAFcAUABfAHIANAAyAF8AYgBvAHUAbgBkAGEAcgB5AF8AZgByAG8AbQBfAHIANAAxAF8AMgAwADIANgAwADUAMAA1AF8AMQA0ADUAMgAyADkAXAB3AGUAaQBnAGgAdABzAFwAbABhAHQAZQBzAHQALgBwAHQAaAAuAHQAYQByACcACgBXAHIAaQB0AGUALQBIAG8AcwB0ACAAJwBbAFIANAAyAC0ARQBWAEEATABdACAAQQBMAEwAIABEAE8ATgBFACcAIAAoAEcAZQB0AC0ARABhAHQAZQApAAoAUwB0AG8AcAAtAFQAcgBhAG4AcwBjAHIAaQBwAHQA
+處理序識別碼: 44640
+PSVersion: 5.1.26100.8115
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8115
+BuildVersion: 10.0.26100.8115
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+已啟動轉譯，輸出檔為 D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_boundary_eval_20260505_1537.log
+[R42-EVAL] START combo 2026/5/5 下午 03:36:39
+{
+  "profile": "boundary_val_unseen",
+  "weights": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_00352
+5\\weights\\best_tradeoff.pth.tar",
+  "jobs": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_34
+_boundary_lines",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_34_bo
+undary_lines",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo",
+      "output_name": "boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_35
+_boundary_grids",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_35_bo
+undary_grids",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo",
+      "output_name": "boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_36
+_boundary_junctions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_36_bo
+undary_junctions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo",
+      "output_name": "boundary_val_unseen_stage_36_boundary_junctions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_37
+_boundary_curves",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_37_bo
+undary_curves",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo",
+      "output_name": "boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_38
+_boundary_regions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_38_bo
+undary_regions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo",
+      "output_name": "boundary_val_unseen_stage_38_boundary_regions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_39
+_boundary_defects",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_39_bo
+undary_defects",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo",
+      "output_name": "boundary_val_unseen_stage_39_boundary_defects_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_40
+_boundary_mixed",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_40_bo
+undary_mixed",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo",
+      "output_name": "boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pth",
+      "image_pairs": 20
+    }
+  ]
+}
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\wei
+ghts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_wr60m2dq\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.100010
+-> Weak PSF active. beta_scale=0.171873, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260408_003525
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\reconstruct_progre
+ss_best_tradeoff_in_stage_34_boundary_lines_20260408_003525\boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pt
+h
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_34_boundary_lines
+[1/20] Processing 0080.bmp... Done. PSNR=17.12 SSIM=0.6572
+[2/20] Processing 0081.bmp... Done. PSNR=21.45 SSIM=0.8660
+[3/20] Processing 0082.bmp... Done. PSNR=18.83 SSIM=0.7799
+[4/20] Processing 0083.bmp... Done. PSNR=18.29 SSIM=0.7151
+[5/20] Processing 0084.bmp... Done. PSNR=18.34 SSIM=0.7095
+[6/20] Processing 0085.bmp... Done. PSNR=18.11 SSIM=0.7657
+[7/20] Processing 0086.bmp... Done. PSNR=19.62 SSIM=0.8566
+[8/20] Processing 0087.bmp... Done. PSNR=20.22 SSIM=0.8420
+[9/20] Processing 0088.bmp... Done. PSNR=22.83 SSIM=0.9165
+[10/20] Processing 0089.bmp... Done. PSNR=22.42 SSIM=0.9099
+[11/20] Processing 0090.bmp... Done. PSNR=19.93 SSIM=0.8222
+[12/20] Processing 0091.bmp... Done. PSNR=23.74 SSIM=0.9230
+[13/20] Processing 0092.bmp... Done. PSNR=20.33 SSIM=0.8725
+[14/20] Processing 0093.bmp... Done. PSNR=20.11 SSIM=0.8565
+[15/20] Processing 0094.bmp... Done. PSNR=17.82 SSIM=0.7027
+[16/20] Processing 0095.bmp... Done. PSNR=21.65 SSIM=0.8872
+[17/20] Processing 0096.bmp... Done. PSNR=22.49 SSIM=0.9127
+[18/20] Processing 0097.bmp... Done. PSNR=21.90 SSIM=0.8741
+[19/20] Processing 0098.bmp... Done. PSNR=18.73 SSIM=0.7792
+[20/20] Processing 0099.bmp... Done. PSNR=20.09 SSIM=0.8556
+-> Avg PSNR/SSIM over 20 pairs: PSNR=20.20 SSIM=0.8252
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\re
+construct_progress_best_tradeoff_in_stage_34_boundary_lines_20260408_003525\boundary_val_unseen_stage_34_boundary_lines_
+best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\wei
+ghts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_7od9b4rk\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.100010
+-> Weak PSF active. beta_scale=0.171873, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260408_003525
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\reconstruct_progre
+ss_best_tradeoff_in_stage_35_boundary_grids_20260408_003525\boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pt
+h
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_35_boundary_grids
+[1/20] Processing 0080.bmp... Done. PSNR=19.37 SSIM=0.7396
+[2/20] Processing 0081.bmp... Done. PSNR=16.78 SSIM=0.6707
+[3/20] Processing 0082.bmp... Done. PSNR=15.15 SSIM=0.4261
+[4/20] Processing 0083.bmp... Done. PSNR=18.73 SSIM=0.7140
+[5/20] Processing 0084.bmp... Done. PSNR=18.07 SSIM=0.5349
+[6/20] Processing 0085.bmp... Done. PSNR=20.15 SSIM=0.6364
+[7/20] Processing 0086.bmp... Done. PSNR=15.47 SSIM=0.4637
+[8/20] Processing 0087.bmp... Done. PSNR=15.01 SSIM=0.1590
+[9/20] Processing 0088.bmp... Done. PSNR=16.79 SSIM=0.5747
+[10/20] Processing 0089.bmp... Done. PSNR=16.21 SSIM=0.3083
+[11/20] Processing 0090.bmp... Done. PSNR=19.23 SSIM=0.7471
+[12/20] Processing 0091.bmp... Done. PSNR=10.64 SSIM=0.2509
+[13/20] Processing 0092.bmp... Done. PSNR=17.94 SSIM=0.7283
+[14/20] Processing 0093.bmp... Done. PSNR=15.10 SSIM=0.5156
+[15/20] Processing 0094.bmp... Done. PSNR=13.46 SSIM=0.2626
+[16/20] Processing 0095.bmp... Done. PSNR=17.59 SSIM=0.5549
+[17/20] Processing 0096.bmp... Done. PSNR=15.11 SSIM=0.6152
+[18/20] Processing 0097.bmp... Done. PSNR=18.67 SSIM=0.6067
+[19/20] Processing 0098.bmp... Done. PSNR=17.11 SSIM=0.6018
+[20/20] Processing 0099.bmp... Done. PSNR=12.21 SSIM=0.1670
+-> Avg PSNR/SSIM over 20 pairs: PSNR=16.44 SSIM=0.5139
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\re
+construct_progress_best_tradeoff_in_stage_35_boundary_grids_20260408_003525\boundary_val_unseen_stage_35_boundary_grids_
+best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\wei
+ghts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_ifwsv4x7\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.100010
+-> Weak PSF active. beta_scale=0.171873, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260408_003525
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\reconstruct_progre
+ss_best_tradeoff_in_stage_36_boundary_junctions_20260408_003525\boundary_val_unseen_stage_36_boundary_junctions_best_tra
+deoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_36_boundary_junct
+ions
+[1/20] Processing 0080.bmp... Done. PSNR=21.50 SSIM=0.8726
+[2/20] Processing 0081.bmp... Done. PSNR=16.80 SSIM=0.5849
+[3/20] Processing 0082.bmp... Done. PSNR=22.84 SSIM=0.9236
+[4/20] Processing 0083.bmp... Done. PSNR=19.95 SSIM=0.8356
+[5/20] Processing 0084.bmp... Done. PSNR=22.70 SSIM=0.9102
+[6/20] Processing 0085.bmp... Done. PSNR=18.36 SSIM=0.7555
+[7/20] Processing 0086.bmp... Done. PSNR=17.84 SSIM=0.6953
+[8/20] Processing 0087.bmp... Done. PSNR=16.98 SSIM=0.5389
+[9/20] Processing 0088.bmp... Done. PSNR=18.10 SSIM=0.7334
+[10/20] Processing 0089.bmp... Done. PSNR=16.65 SSIM=0.6171
+[11/20] Processing 0090.bmp... Done. PSNR=20.14 SSIM=0.8339
+[12/20] Processing 0091.bmp... Done. PSNR=21.24 SSIM=0.8820
+[13/20] Processing 0092.bmp... Done. PSNR=17.48 SSIM=0.6880
+[14/20] Processing 0093.bmp... Done. PSNR=16.58 SSIM=0.5386
+[15/20] Processing 0094.bmp... Done. PSNR=18.70 SSIM=0.7547
+[16/20] Processing 0095.bmp... Done. PSNR=21.23 SSIM=0.8678
+[17/20] Processing 0096.bmp... Done. PSNR=18.23 SSIM=0.7412
+[18/20] Processing 0097.bmp... Done. PSNR=19.13 SSIM=0.8023
+[19/20] Processing 0098.bmp... Done. PSNR=18.03 SSIM=0.7178
+[20/20] Processing 0099.bmp... Done. PSNR=16.78 SSIM=0.5872
+-> Avg PSNR/SSIM over 20 pairs: PSNR=18.96 SSIM=0.7440
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\re
+construct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260408_003525\boundary_val_unseen_stage_36_boundary_ju
+nctions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\wei
+ghts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_6qx51cjs\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.100010
+-> Weak PSF active. beta_scale=0.171873, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260408_003525
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\reconstruct_progre
+ss_best_tradeoff_in_stage_37_boundary_curves_20260408_003525\boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.
+pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_37_boundary_curve
+s
+[1/20] Processing 0080.bmp... Done. PSNR=21.69 SSIM=0.8610
+[2/20] Processing 0081.bmp... Done. PSNR=16.76 SSIM=0.5341
+[3/20] Processing 0082.bmp... Done. PSNR=19.07 SSIM=0.7056
+[4/20] Processing 0083.bmp... Done. PSNR=20.06 SSIM=0.8097
+[5/20] Processing 0084.bmp... Done. PSNR=20.51 SSIM=0.8456
+[6/20] Processing 0085.bmp... Done. PSNR=19.48 SSIM=0.6071
+[7/20] Processing 0086.bmp... Done. PSNR=16.41 SSIM=0.4772
+[8/20] Processing 0087.bmp... Done. PSNR=20.91 SSIM=0.8548
+[9/20] Processing 0088.bmp... Done. PSNR=17.40 SSIM=0.5582
+[10/20] Processing 0089.bmp... Done. PSNR=16.26 SSIM=0.4684
+[11/20] Processing 0090.bmp... Done. PSNR=16.37 SSIM=0.4761
+[12/20] Processing 0091.bmp... Done. PSNR=18.57 SSIM=0.6190
+[13/20] Processing 0092.bmp... Done. PSNR=19.45 SSIM=0.8206
+[14/20] Processing 0093.bmp... Done. PSNR=24.54 SSIM=0.9436
+[15/20] Processing 0094.bmp... Done. PSNR=16.57 SSIM=0.5490
+[16/20] Processing 0095.bmp... Done. PSNR=19.36 SSIM=0.7772
+[17/20] Processing 0096.bmp... Done. PSNR=16.80 SSIM=0.5744
+[18/20] Processing 0097.bmp... Done. PSNR=20.63 SSIM=0.8521
+[19/20] Processing 0098.bmp... Done. PSNR=23.40 SSIM=0.8996
+[20/20] Processing 0099.bmp... Done. PSNR=20.28 SSIM=0.8084
+-> Avg PSNR/SSIM over 20 pairs: PSNR=19.23 SSIM=0.7021
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\re
+construct_progress_best_tradeoff_in_stage_37_boundary_curves_20260408_003525\boundary_val_unseen_stage_37_boundary_curve
+s_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\wei
+ghts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_kmpf4veh\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.100010
+-> Weak PSF active. beta_scale=0.171873, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260408_003525
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\reconstruct_progre
+ss_best_tradeoff_in_stage_38_boundary_regions_20260408_003525\boundary_val_unseen_stage_38_boundary_regions_best_tradeof
+f.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_38_boundary_regio
+ns
+[1/20] Processing 0080.bmp... Done. PSNR=23.96 SSIM=0.8724
+[2/20] Processing 0081.bmp... Done. PSNR=25.90 SSIM=0.9161
+[3/20] Processing 0082.bmp... Done. PSNR=24.73 SSIM=0.8831
+[4/20] Processing 0083.bmp... Done. PSNR=19.18 SSIM=0.8405
+[5/20] Processing 0084.bmp... Done. PSNR=28.04 SSIM=0.9417
+[6/20] Processing 0085.bmp... Done. PSNR=22.64 SSIM=0.8508
+[7/20] Processing 0086.bmp... Done. PSNR=26.11 SSIM=0.9156
+[8/20] Processing 0087.bmp... Done. PSNR=19.90 SSIM=0.8146
+[9/20] Processing 0088.bmp... Done. PSNR=22.93 SSIM=0.8964
+[10/20] Processing 0089.bmp... Done. PSNR=26.47 SSIM=0.9415
+[11/20] Processing 0090.bmp... Done. PSNR=19.35 SSIM=0.8551
+[12/20] Processing 0091.bmp... Done. PSNR=22.36 SSIM=0.8924
+[13/20] Processing 0092.bmp... Done. PSNR=18.59 SSIM=0.6821
+[14/20] Processing 0093.bmp... Done. PSNR=20.63 SSIM=0.9278
+[15/20] Processing 0094.bmp... Done. PSNR=29.62 SSIM=0.9540
+[16/20] Processing 0095.bmp... Done. PSNR=26.42 SSIM=0.9130
+[17/20] Processing 0096.bmp... Done. PSNR=19.69 SSIM=0.6378
+[18/20] Processing 0097.bmp... Done. PSNR=22.85 SSIM=0.8451
+[19/20] Processing 0098.bmp... Done. PSNR=24.66 SSIM=0.9406
+[20/20] Processing 0099.bmp... Done. PSNR=20.55 SSIM=0.8543
+-> Avg PSNR/SSIM over 20 pairs: PSNR=23.23 SSIM=0.8688
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\re
+construct_progress_best_tradeoff_in_stage_38_boundary_regions_20260408_003525\boundary_val_unseen_stage_38_boundary_regi
+ons_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\wei
+ghts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_94x_ar6z\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.100010
+-> Weak PSF active. beta_scale=0.171873, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260408_003525
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\reconstruct_progre
+ss_best_tradeoff_in_stage_39_boundary_defects_20260408_003525\boundary_val_unseen_stage_39_boundary_defects_best_tradeof
+f.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_39_boundary_defec
+ts
+[1/20] Processing 0080.bmp... Done. PSNR=24.15 SSIM=0.9069
+[2/20] Processing 0081.bmp... Done. PSNR=26.73 SSIM=0.9271
+[3/20] Processing 0082.bmp... Done. PSNR=24.21 SSIM=0.9027
+[4/20] Processing 0083.bmp... Done. PSNR=23.03 SSIM=0.8891
+[5/20] Processing 0084.bmp... Done. PSNR=21.57 SSIM=0.8971
+[6/20] Processing 0085.bmp... Done. PSNR=21.65 SSIM=0.8641
+[7/20] Processing 0086.bmp... Done. PSNR=23.15 SSIM=0.9178
+[8/20] Processing 0087.bmp... Done. PSNR=25.66 SSIM=0.9177
+[9/20] Processing 0088.bmp... Done. PSNR=22.81 SSIM=0.7871
+[10/20] Processing 0089.bmp... Done. PSNR=25.53 SSIM=0.9250
+[11/20] Processing 0090.bmp... Done. PSNR=30.01 SSIM=0.9545
+[12/20] Processing 0091.bmp... Done. PSNR=21.79 SSIM=0.8945
+[13/20] Processing 0092.bmp... Done. PSNR=20.46 SSIM=0.6963
+[14/20] Processing 0093.bmp... Done. PSNR=20.43 SSIM=0.8511
+[15/20] Processing 0094.bmp... Done. PSNR=22.08 SSIM=0.8617
+[16/20] Processing 0095.bmp... Done. PSNR=25.54 SSIM=0.9083
+[17/20] Processing 0096.bmp... Done. PSNR=20.26 SSIM=0.9179
+[18/20] Processing 0097.bmp... Done. PSNR=24.43 SSIM=0.9222
+[19/20] Processing 0098.bmp... Done. PSNR=21.84 SSIM=0.8196
+[20/20] Processing 0099.bmp... Done. PSNR=18.81 SSIM=0.8509
+-> Avg PSNR/SSIM over 20 pairs: PSNR=23.21 SSIM=0.8806
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\re
+construct_progress_best_tradeoff_in_stage_39_boundary_defects_20260408_003525\boundary_val_unseen_stage_39_boundary_defe
+cts_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\wei
+ghts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_7v15dlu8\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.100010
+-> Weak PSF active. beta_scale=0.171873, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260408_003525
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\reconstruct_progre
+ss_best_tradeoff_in_stage_40_boundary_mixed_20260408_003525\boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pt
+h
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_40_boundary_mixed
+[1/20] Processing 0080.bmp... Done. PSNR=21.47 SSIM=0.7763
+[2/20] Processing 0081.bmp... Done. PSNR=23.62 SSIM=0.9107
+[3/20] Processing 0082.bmp... Done. PSNR=21.46 SSIM=0.9058
+[4/20] Processing 0083.bmp... Done. PSNR=19.59 SSIM=0.7298
+[5/20] Processing 0084.bmp... Done. PSNR=24.14 SSIM=0.8719
+[6/20] Processing 0085.bmp... Done. PSNR=22.76 SSIM=0.8224
+[7/20] Processing 0086.bmp... Done. PSNR=24.27 SSIM=0.9246
+[8/20] Processing 0087.bmp... Done. PSNR=19.59 SSIM=0.6396
+[9/20] Processing 0088.bmp... Done. PSNR=23.13 SSIM=0.9118
+[10/20] Processing 0089.bmp... Done. PSNR=19.61 SSIM=0.9298
+[11/20] Processing 0090.bmp... Done. PSNR=22.87 SSIM=0.9002
+[12/20] Processing 0091.bmp... Done. PSNR=24.25 SSIM=0.9361
+[13/20] Processing 0092.bmp... Done. PSNR=19.96 SSIM=0.6649
+[14/20] Processing 0093.bmp... Done. PSNR=23.62 SSIM=0.9376
+[15/20] Processing 0094.bmp... Done. PSNR=27.15 SSIM=0.9286
+[16/20] Processing 0095.bmp... Done. PSNR=24.31 SSIM=0.9043
+[17/20] Processing 0096.bmp... Done. PSNR=21.14 SSIM=0.7173
+[18/20] Processing 0097.bmp... Done. PSNR=20.86 SSIM=0.9117
+[19/20] Processing 0098.bmp... Done. PSNR=25.96 SSIM=0.9303
+[20/20] Processing 0099.bmp... Done. PSNR=22.57 SSIM=0.7881
+-> Avg PSNR/SSIM over 20 pairs: PSNR=22.62 SSIM=0.8521
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\re
+construct_progress_best_tradeoff_in_stage_40_boundary_mixed_20260408_003525\boundary_val_unseen_stage_40_boundary_mixed_
+best_tradeoff.pth
+{
+  "profile": "boundary_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo",
+  "total_count": 140,
+  "overall_avg_psnr": 20.55236694343157,
+  "overall_hf_retention": 0.20112460399498672,
+  "overall_boundary_distance_px": 13.963915345072746,
+  "overall_boundary_fscore_t1p0": 0.42500576951473645,
+  "stages": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "count": 20,
+      "avg_psnr": 20.19519162559308,
+      "avg_hf_retention": 0.1949149274482592,
+      "avg_boundary_distance_px": 12.833863258361816,
+      "avg_boundary_fscore_t1p0": 0.4618652583335556,
+      "avg_centerline_distance_px": 15.064927625656129,
+      "avg_grid_pitch_error_px": 309.8125,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo\\reconstruct_progress_b
+est_tradeoff_in_stage_34_boundary_lines_20260408_003525\\boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "count": 20,
+      "avg_psnr": 16.439656219297824,
+      "avg_hf_retention": 0.10351173366225386,
+      "avg_boundary_distance_px": 1.511847773194313,
+      "avg_boundary_fscore_t1p0": 0.6651098920007943,
+      "avg_centerline_distance_px": 2.013754940032959,
+      "avg_grid_pitch_error_px": 15.828947368421053,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo\\reconstruct_progress_b
+est_tradeoff_in_stage_35_boundary_grids_20260408_003525\\boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pth"
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "count": 20,
+      "avg_psnr": 18.96437813656774,
+      "avg_hf_retention": 0.1878705945324145,
+      "avg_boundary_distance_px": 16.39872736930847,
+      "avg_boundary_fscore_t1p0": 0.44426694574560005,
+      "avg_centerline_distance_px": 18.73553032875061,
+      "avg_grid_pitch_error_px": 429.0681818181818,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo\\reconstruct_progress_b
+est_tradeoff_in_stage_36_boundary_junctions_20260408_003525\\boundary_val_unseen_stage_36_boundary_junctions_best_tradeo
+ff.pth"
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "count": 20,
+      "avg_psnr": 19.227067780205413,
+      "avg_hf_retention": 0.18670814556376153,
+      "avg_boundary_distance_px": 39.77701005935669,
+      "avg_boundary_fscore_t1p0": 0.2625583428586845,
+      "avg_centerline_distance_px": 42.48109474182129,
+      "avg_grid_pitch_error_px": 292.625,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo\\reconstruct_progress_b
+est_tradeoff_in_stage_37_boundary_curves_20260408_003525\\boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.pth
+"
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "count": 20,
+      "avg_psnr": 23.229261951838943,
+      "avg_hf_retention": 0.23532984817285155,
+      "avg_boundary_distance_px": 9.153905498981477,
+      "avg_boundary_fscore_t1p0": 0.3876841035750242,
+      "avg_centerline_distance_px": 9.447977030277253,
+      "avg_grid_pitch_error_px": 89.15789473684211,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo\\reconstruct_progress_b
+est_tradeoff_in_stage_38_boundary_regions_20260408_003525\\boundary_val_unseen_stage_38_boundary_regions_best_tradeoff.p
+th"
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "count": 20,
+      "avg_psnr": 23.201025284916803,
+      "avg_hf_retention": 0.2704952029752914,
+      "avg_boundary_distance_px": 10.583228826522827,
+      "avg_boundary_fscore_t1p0": 0.3588011769552132,
+      "avg_centerline_distance_px": 9.833313035964967,
+      "avg_grid_pitch_error_px": 143.175,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo\\reconstruct_progress_b
+est_tradeoff_in_stage_39_boundary_defects_20260408_003525\\boundary_val_unseen_stage_39_boundary_defects_best_tradeoff.p
+th"
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "count": 20,
+      "avg_psnr": 22.609987605601177,
+      "avg_hf_retention": 0.22904177561007505,
+      "avg_boundary_distance_px": 7.488824629783631,
+      "avg_boundary_fscore_t1p0": 0.39475466713428314,
+      "avg_centerline_distance_px": 12.71427607536316,
+      "avg_grid_pitch_error_px": 86.7875,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\combo\\reconstruct_progress_b
+est_tradeoff_in_stage_40_boundary_mixed_20260408_003525\\boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pth"
+    }
+  ]
+}
+[R42] summary written to Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\combo\summary.json
+[R42-EVAL] DONE combo 2026/5/5 下午 03:37:06
+[R42-EVAL] START r39_a030 2026/5/5 下午 03:37:06
+{
+  "profile": "boundary_val_unseen",
+  "weights": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\checkpoints\\a030\\best_trad
+eoff.pth.tar",
+  "jobs": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_34
+_boundary_lines",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_34_bo
+undary_lines",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030",
+      "output_name": "boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_35
+_boundary_grids",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_35_bo
+undary_grids",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030",
+      "output_name": "boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_36
+_boundary_junctions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_36_bo
+undary_junctions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030",
+      "output_name": "boundary_val_unseen_stage_36_boundary_junctions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_37
+_boundary_curves",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_37_bo
+undary_curves",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030",
+      "output_name": "boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_38
+_boundary_regions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_38_bo
+undary_regions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030",
+      "output_name": "boundary_val_unseen_stage_38_boundary_regions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_39
+_boundary_defects",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_39_bo
+undary_defects",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030",
+      "output_name": "boundary_val_unseen_stage_39_boundary_defects_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_40
+_boundary_mixed",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_40_bo
+undary_mixed",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030",
+      "output_name": "boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pth",
+      "image_pairs": 20
+    }
+  ]
+}
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a030\best_tradeoff.pth.t
+ar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_u42zvcrn\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099960
+-> Weak PSF active. beta_scale=0.151731, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260430_121954
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030\reconstruct_pro
+gress_best_tradeoff_in_stage_34_boundary_lines_20260430_121954\boundary_val_unseen_stage_34_boundary_lines_best_tradeoff
+.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_34_boundary_lines
+[1/20] Processing 0080.bmp... Done. PSNR=19.36 SSIM=0.7546
+[2/20] Processing 0081.bmp... Done. PSNR=23.99 SSIM=0.9111
+[3/20] Processing 0082.bmp... Done. PSNR=21.48 SSIM=0.8615
+[4/20] Processing 0083.bmp... Done. PSNR=20.99 SSIM=0.8098
+[5/20] Processing 0084.bmp... Done. PSNR=20.94 SSIM=0.8036
+[6/20] Processing 0085.bmp... Done. PSNR=20.39 SSIM=0.8459
+[7/20] Processing 0086.bmp... Done. PSNR=22.20 SSIM=0.9167
+[8/20] Processing 0087.bmp... Done. PSNR=23.04 SSIM=0.9085
+[9/20] Processing 0088.bmp... Done. PSNR=25.40 SSIM=0.9444
+[10/20] Processing 0089.bmp... Done. PSNR=25.36 SSIM=0.9476
+[11/20] Processing 0090.bmp... Done. PSNR=23.05 SSIM=0.8942
+[12/20] Processing 0091.bmp... Done. PSNR=26.02 SSIM=0.9448
+[13/20] Processing 0092.bmp... Done. PSNR=22.92 SSIM=0.9242
+[14/20] Processing 0093.bmp... Done. PSNR=22.85 SSIM=0.9153
+[15/20] Processing 0094.bmp... Done. PSNR=20.33 SSIM=0.7975
+[16/20] Processing 0095.bmp... Done. PSNR=24.44 SSIM=0.9325
+[17/20] Processing 0096.bmp... Done. PSNR=25.55 SSIM=0.9474
+[18/20] Processing 0097.bmp... Done. PSNR=24.47 SSIM=0.9171
+[19/20] Processing 0098.bmp... Done. PSNR=21.11 SSIM=0.8608
+[20/20] Processing 0099.bmp... Done. PSNR=22.89 SSIM=0.9160
+-> Avg PSNR/SSIM over 20 pairs: PSNR=22.84 SSIM=0.8877
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+\reconstruct_progress_best_tradeoff_in_stage_34_boundary_lines_20260430_121954\boundary_val_unseen_stage_34_boundary_lin
+es_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a030\best_tradeoff.pth.t
+ar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_2fvl4fkt\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099960
+-> Weak PSF active. beta_scale=0.151731, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260430_121954
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030\reconstruct_pro
+gress_best_tradeoff_in_stage_35_boundary_grids_20260430_121954\boundary_val_unseen_stage_35_boundary_grids_best_tradeoff
+.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_35_boundary_grids
+[1/20] Processing 0080.bmp... Done. PSNR=19.31 SSIM=0.7416
+[2/20] Processing 0081.bmp... Done. PSNR=17.16 SSIM=0.7039
+[3/20] Processing 0082.bmp... Done. PSNR=15.29 SSIM=0.4511
+[4/20] Processing 0083.bmp... Done. PSNR=18.90 SSIM=0.7273
+[5/20] Processing 0084.bmp... Done. PSNR=18.80 SSIM=0.5862
+[6/20] Processing 0085.bmp... Done. PSNR=20.14 SSIM=0.6425
+[7/20] Processing 0086.bmp... Done. PSNR=15.92 SSIM=0.5190
+[8/20] Processing 0087.bmp... Done. PSNR=15.06 SSIM=0.1594
+[9/20] Processing 0088.bmp... Done. PSNR=17.45 SSIM=0.6532
+[10/20] Processing 0089.bmp... Done. PSNR=16.19 SSIM=0.3109
+[11/20] Processing 0090.bmp... Done. PSNR=19.77 SSIM=0.7922
+[12/20] Processing 0091.bmp... Done. PSNR=10.86 SSIM=0.2892
+[13/20] Processing 0092.bmp... Done. PSNR=18.81 SSIM=0.7913
+[14/20] Processing 0093.bmp... Done. PSNR=15.93 SSIM=0.6179
+[15/20] Processing 0094.bmp... Done. PSNR=13.47 SSIM=0.2728
+[16/20] Processing 0095.bmp... Done. PSNR=18.47 SSIM=0.6213
+[17/20] Processing 0096.bmp... Done. PSNR=15.88 SSIM=0.6928
+[18/20] Processing 0097.bmp... Done. PSNR=18.67 SSIM=0.6139
+[19/20] Processing 0098.bmp... Done. PSNR=17.58 SSIM=0.6439
+[20/20] Processing 0099.bmp... Done. PSNR=12.26 SSIM=0.1799
+-> Avg PSNR/SSIM over 20 pairs: PSNR=16.80 SSIM=0.5505
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+\reconstruct_progress_best_tradeoff_in_stage_35_boundary_grids_20260430_121954\boundary_val_unseen_stage_35_boundary_gri
+ds_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a030\best_tradeoff.pth.t
+ar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_odpl6l27\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099960
+-> Weak PSF active. beta_scale=0.151731, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260430_121954
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030\reconstruct_pro
+gress_best_tradeoff_in_stage_36_boundary_junctions_20260430_121954\boundary_val_unseen_stage_36_boundary_junctions_best_
+tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_36_boundary_junct
+ions
+[1/20] Processing 0080.bmp... Done. PSNR=24.65 SSIM=0.9281
+[2/20] Processing 0081.bmp... Done. PSNR=19.19 SSIM=0.6911
+[3/20] Processing 0082.bmp... Done. PSNR=25.95 SSIM=0.9577
+[4/20] Processing 0083.bmp... Done. PSNR=22.40 SSIM=0.8962
+[5/20] Processing 0084.bmp... Done. PSNR=25.49 SSIM=0.9456
+[6/20] Processing 0085.bmp... Done. PSNR=20.91 SSIM=0.8403
+[7/20] Processing 0086.bmp... Done. PSNR=20.31 SSIM=0.7899
+[8/20] Processing 0087.bmp... Done. PSNR=19.39 SSIM=0.6437
+[9/20] Processing 0088.bmp... Done. PSNR=20.66 SSIM=0.8236
+[10/20] Processing 0089.bmp... Done. PSNR=18.92 SSIM=0.7178
+[11/20] Processing 0090.bmp... Done. PSNR=22.93 SSIM=0.8969
+[12/20] Processing 0091.bmp... Done. PSNR=24.37 SSIM=0.9343
+[13/20] Processing 0092.bmp... Done. PSNR=19.88 SSIM=0.7862
+[14/20] Processing 0093.bmp... Done. PSNR=18.82 SSIM=0.6410
+[15/20] Processing 0094.bmp... Done. PSNR=21.15 SSIM=0.8359
+[16/20] Processing 0095.bmp... Done. PSNR=24.36 SSIM=0.9256
+[17/20] Processing 0096.bmp... Done. PSNR=20.71 SSIM=0.8301
+[18/20] Processing 0097.bmp... Done. PSNR=21.59 SSIM=0.8730
+[19/20] Processing 0098.bmp... Done. PSNR=20.53 SSIM=0.8111
+[20/20] Processing 0099.bmp... Done. PSNR=19.01 SSIM=0.6915
+-> Avg PSNR/SSIM over 20 pairs: PSNR=21.56 SSIM=0.8230
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+\reconstruct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260430_121954\boundary_val_unseen_stage_36_boundary
+_junctions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a030\best_tradeoff.pth.t
+ar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_fg8yanzv\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099960
+-> Weak PSF active. beta_scale=0.151731, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260430_121954
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030\reconstruct_pro
+gress_best_tradeoff_in_stage_37_boundary_curves_20260430_121954\boundary_val_unseen_stage_37_boundary_curves_best_tradeo
+ff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_37_boundary_curve
+s
+[1/20] Processing 0080.bmp... Done. PSNR=25.08 SSIM=0.9230
+[2/20] Processing 0081.bmp... Done. PSNR=19.37 SSIM=0.6415
+[3/20] Processing 0082.bmp... Done. PSNR=21.94 SSIM=0.8029
+[4/20] Processing 0083.bmp... Done. PSNR=22.98 SSIM=0.8818
+[5/20] Processing 0084.bmp... Done. PSNR=23.86 SSIM=0.9144
+[6/20] Processing 0085.bmp... Done. PSNR=21.93 SSIM=0.7014
+[7/20] Processing 0086.bmp... Done. PSNR=18.84 SSIM=0.5766
+[8/20] Processing 0087.bmp... Done. PSNR=23.88 SSIM=0.9161
+[9/20] Processing 0088.bmp... Done. PSNR=20.07 SSIM=0.6671
+[10/20] Processing 0089.bmp... Done. PSNR=18.55 SSIM=0.5670
+[11/20] Processing 0090.bmp... Done. PSNR=18.73 SSIM=0.5766
+[12/20] Processing 0091.bmp... Done. PSNR=21.35 SSIM=0.7251
+[13/20] Processing 0092.bmp... Done. PSNR=22.35 SSIM=0.8950
+[14/20] Processing 0093.bmp... Done. PSNR=28.20 SSIM=0.9713
+[15/20] Processing 0094.bmp... Done. PSNR=19.12 SSIM=0.6527
+[16/20] Processing 0095.bmp... Done. PSNR=22.40 SSIM=0.8660
+[17/20] Processing 0096.bmp... Done. PSNR=19.31 SSIM=0.6768
+[18/20] Processing 0097.bmp... Done. PSNR=23.55 SSIM=0.9099
+[19/20] Processing 0098.bmp... Done. PSNR=26.63 SSIM=0.9421
+[20/20] Processing 0099.bmp... Done. PSNR=23.34 SSIM=0.8832
+-> Avg PSNR/SSIM over 20 pairs: PSNR=22.07 SSIM=0.7845
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+\reconstruct_progress_best_tradeoff_in_stage_37_boundary_curves_20260430_121954\boundary_val_unseen_stage_37_boundary_cu
+rves_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a030\best_tradeoff.pth.t
+ar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_zbm2xb89\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099960
+-> Weak PSF active. beta_scale=0.151731, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260430_121954
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030\reconstruct_pro
+gress_best_tradeoff_in_stage_38_boundary_regions_20260430_121954\boundary_val_unseen_stage_38_boundary_regions_best_trad
+eoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_38_boundary_regio
+ns
+[1/20] Processing 0080.bmp... Done. PSNR=25.82 SSIM=0.9174
+[2/20] Processing 0081.bmp... Done. PSNR=26.86 SSIM=0.9303
+[3/20] Processing 0082.bmp... Done. PSNR=25.87 SSIM=0.9180
+[4/20] Processing 0083.bmp... Done. PSNR=24.50 SSIM=0.9003
+[5/20] Processing 0084.bmp... Done. PSNR=29.39 SSIM=0.9536
+[6/20] Processing 0085.bmp... Done. PSNR=26.01 SSIM=0.8963
+[7/20] Processing 0086.bmp... Done. PSNR=27.80 SSIM=0.9412
+[8/20] Processing 0087.bmp... Done. PSNR=23.40 SSIM=0.8802
+[9/20] Processing 0088.bmp... Done. PSNR=26.35 SSIM=0.9290
+[10/20] Processing 0089.bmp... Done. PSNR=29.04 SSIM=0.9514
+[11/20] Processing 0090.bmp... Done. PSNR=22.93 SSIM=0.9031
+[12/20] Processing 0091.bmp... Done. PSNR=27.27 SSIM=0.9383
+[13/20] Processing 0092.bmp... Done. PSNR=23.25 SSIM=0.7638
+[14/20] Processing 0093.bmp... Done. PSNR=26.50 SSIM=0.9594
+[15/20] Processing 0094.bmp... Done. PSNR=29.00 SSIM=0.9450
+[16/20] Processing 0095.bmp... Done. PSNR=26.43 SSIM=0.9313
+[17/20] Processing 0096.bmp... Done. PSNR=22.30 SSIM=0.7324
+[18/20] Processing 0097.bmp... Done. PSNR=26.30 SSIM=0.8978
+[19/20] Processing 0098.bmp... Done. PSNR=29.66 SSIM=0.9667
+[20/20] Processing 0099.bmp... Done. PSNR=25.19 SSIM=0.9112
+-> Avg PSNR/SSIM over 20 pairs: PSNR=26.19 SSIM=0.9083
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+\reconstruct_progress_best_tradeoff_in_stage_38_boundary_regions_20260430_121954\boundary_val_unseen_stage_38_boundary_r
+egions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a030\best_tradeoff.pth.t
+ar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_9qplaj2n\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099960
+-> Weak PSF active. beta_scale=0.151731, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260430_121954
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030\reconstruct_pro
+gress_best_tradeoff_in_stage_39_boundary_defects_20260430_121954\boundary_val_unseen_stage_39_boundary_defects_best_trad
+eoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_39_boundary_defec
+ts
+[1/20] Processing 0080.bmp... Done. PSNR=27.66 SSIM=0.9333
+[2/20] Processing 0081.bmp... Done. PSNR=28.32 SSIM=0.9450
+[3/20] Processing 0082.bmp... Done. PSNR=26.33 SSIM=0.9300
+[4/20] Processing 0083.bmp... Done. PSNR=26.82 SSIM=0.9363
+[5/20] Processing 0084.bmp... Done. PSNR=25.53 SSIM=0.9430
+[6/20] Processing 0085.bmp... Done. PSNR=24.59 SSIM=0.9142
+[7/20] Processing 0086.bmp... Done. PSNR=27.55 SSIM=0.9444
+[8/20] Processing 0087.bmp... Done. PSNR=27.34 SSIM=0.9335
+[9/20] Processing 0088.bmp... Done. PSNR=25.05 SSIM=0.8449
+[10/20] Processing 0089.bmp... Done. PSNR=27.12 SSIM=0.9448
+[11/20] Processing 0090.bmp... Done. PSNR=29.68 SSIM=0.9522
+[12/20] Processing 0091.bmp... Done. PSNR=26.53 SSIM=0.9313
+[13/20] Processing 0092.bmp... Done. PSNR=22.51 SSIM=0.7726
+[14/20] Processing 0093.bmp... Done. PSNR=23.05 SSIM=0.8994
+[15/20] Processing 0094.bmp... Done. PSNR=26.50 SSIM=0.9066
+[16/20] Processing 0095.bmp... Done. PSNR=26.86 SSIM=0.9239
+[17/20] Processing 0096.bmp... Done. PSNR=22.61 SSIM=0.9396
+[18/20] Processing 0097.bmp... Done. PSNR=27.76 SSIM=0.9459
+[19/20] Processing 0098.bmp... Done. PSNR=24.10 SSIM=0.8769
+[20/20] Processing 0099.bmp... Done. PSNR=24.36 SSIM=0.9129
+-> Avg PSNR/SSIM over 20 pairs: PSNR=26.01 SSIM=0.9165
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+\reconstruct_progress_best_tradeoff_in_stage_39_boundary_defects_20260430_121954\boundary_val_unseen_stage_39_boundary_d
+efects_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a030\best_tradeoff.pth.t
+ar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_waaor595\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099960
+-> Weak PSF active. beta_scale=0.151731, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260430_121954
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030\reconstruct_pro
+gress_best_tradeoff_in_stage_40_boundary_mixed_20260430_121954\boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff
+.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_40_boundary_mixed
+[1/20] Processing 0080.bmp... Done. PSNR=23.87 SSIM=0.8451
+[2/20] Processing 0081.bmp... Done. PSNR=26.67 SSIM=0.9171
+[3/20] Processing 0082.bmp... Done. PSNR=26.17 SSIM=0.9464
+[4/20] Processing 0083.bmp... Done. PSNR=23.36 SSIM=0.8061
+[5/20] Processing 0084.bmp... Done. PSNR=25.85 SSIM=0.8950
+[6/20] Processing 0085.bmp... Done. PSNR=25.05 SSIM=0.8679
+[7/20] Processing 0086.bmp... Done. PSNR=27.09 SSIM=0.9446
+[8/20] Processing 0087.bmp... Done. PSNR=22.53 SSIM=0.7244
+[9/20] Processing 0088.bmp... Done. PSNR=26.71 SSIM=0.9332
+[10/20] Processing 0089.bmp... Done. PSNR=22.32 SSIM=0.9453
+[11/20] Processing 0090.bmp... Done. PSNR=26.73 SSIM=0.9370
+[12/20] Processing 0091.bmp... Done. PSNR=28.00 SSIM=0.9479
+[13/20] Processing 0092.bmp... Done. PSNR=23.14 SSIM=0.7470
+[14/20] Processing 0093.bmp... Done. PSNR=28.58 SSIM=0.9485
+[15/20] Processing 0094.bmp... Done. PSNR=27.71 SSIM=0.9406
+[16/20] Processing 0095.bmp... Done. PSNR=26.42 SSIM=0.9300
+[17/20] Processing 0096.bmp... Done. PSNR=23.75 SSIM=0.7886
+[18/20] Processing 0097.bmp... Done. PSNR=23.94 SSIM=0.9433
+[19/20] Processing 0098.bmp... Done. PSNR=27.72 SSIM=0.9426
+[20/20] Processing 0099.bmp... Done. PSNR=24.87 SSIM=0.8435
+-> Avg PSNR/SSIM over 20 pairs: PSNR=25.52 SSIM=0.8897
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030
+\reconstruct_progress_best_tradeoff_in_stage_40_boundary_mixed_20260430_121954\boundary_val_unseen_stage_40_boundary_mix
+ed_best_tradeoff.pth
+{
+  "profile": "boundary_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030",
+  "total_count": 140,
+  "overall_avg_psnr": 22.999433177736076,
+  "overall_hf_retention": 0.375732077686344,
+  "overall_boundary_distance_px": 11.862371982846941,
+  "overall_boundary_fscore_t1p0": 0.44650383730188986,
+  "stages": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "count": 20,
+      "avg_psnr": 22.831595475271577,
+      "avg_hf_retention": 0.2573836922850286,
+      "avg_boundary_distance_px": 8.88079743385315,
+      "avg_boundary_fscore_t1p0": 0.5080334631769715,
+      "avg_centerline_distance_px": 10.855613708496094,
+      "avg_grid_pitch_error_px": 127.3125,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030\\reconstruct_progres
+s_best_tradeoff_in_stage_34_boundary_lines_20260430_121954\\boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pt
+h"
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "count": 20,
+      "avg_psnr": 16.79520283423025,
+      "avg_hf_retention": 0.13441452454794547,
+      "avg_boundary_distance_px": 1.3210733532905579,
+      "avg_boundary_fscore_t1p0": 0.7059567627195339,
+      "avg_centerline_distance_px": 1.8091352581977844,
+      "avg_grid_pitch_error_px": 14.7625,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030\\reconstruct_progres
+s_best_tradeoff_in_stage_35_boundary_grids_20260430_121954\\boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pt
+h"
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "count": 20,
+      "avg_psnr": 21.567471810303395,
+      "avg_hf_retention": 0.25400050329672463,
+      "avg_boundary_distance_px": 12.902793192863465,
+      "avg_boundary_fscore_t1p0": 0.4796849371488577,
+      "avg_centerline_distance_px": 14.9999094247818,
+      "avg_grid_pitch_error_px": 213.125,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030\\reconstruct_progres
+s_best_tradeoff_in_stage_36_boundary_junctions_20260430_121954\\boundary_val_unseen_stage_36_boundary_junctions_best_tra
+deoff.pth"
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "count": 20,
+      "avg_psnr": 22.074305111216034,
+      "avg_hf_retention": 0.27946854278193123,
+      "avg_boundary_distance_px": 36.62617120742798,
+      "avg_boundary_fscore_t1p0": 0.2695465026875488,
+      "avg_centerline_distance_px": 39.20503067970276,
+      "avg_grid_pitch_error_px": 276.125,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030\\reconstruct_progres
+s_best_tradeoff_in_stage_37_boundary_curves_20260430_121954\\boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.
+pth"
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "count": 20,
+      "avg_psnr": 26.19113299005567,
+      "avg_hf_retention": 0.6081880415179979,
+      "avg_boundary_distance_px": 8.201666390895843,
+      "avg_boundary_fscore_t1p0": 0.39632701375111423,
+      "avg_centerline_distance_px": 8.332493758201599,
+      "avg_grid_pitch_error_px": 67.63888888888889,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030\\reconstruct_progres
+s_best_tradeoff_in_stage_38_boundary_regions_20260430_121954\\boundary_val_unseen_stage_38_boundary_regions_best_tradeof
+f.pth"
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "count": 20,
+      "avg_psnr": 26.013696601490068,
+      "avg_hf_retention": 0.5774835708977781,
+      "avg_boundary_distance_px": 8.721941709518433,
+      "avg_boundary_fscore_t1p0": 0.36609356836782353,
+      "avg_centerline_distance_px": 8.168857848644256,
+      "avg_grid_pitch_error_px": 112.63888888888889,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030\\reconstruct_progres
+s_best_tradeoff_in_stage_39_boundary_defects_20260430_121954\\boundary_val_unseen_stage_39_boundary_defects_best_tradeof
+f.pth"
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "count": 20,
+      "avg_psnr": 25.522627421585547,
+      "avg_hf_retention": 0.5191856684770019,
+      "avg_boundary_distance_px": 6.382160592079162,
+      "avg_boundary_fscore_t1p0": 0.3998846132613797,
+      "avg_centerline_distance_px": 12.846159982681275,
+      "avg_grid_pitch_error_px": 62.28947368421053,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r39_a030\\reconstruct_progres
+s_best_tradeoff_in_stage_40_boundary_mixed_20260430_121954\\boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pt
+h"
+    }
+  ]
+}
+[R42] summary written to Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r39_a030\summary.json
+[R42-EVAL] DONE r39_a030 2026/5/5 下午 03:37:30
+[R42-EVAL] START r40_a045 2026/5/5 下午 03:37:30
+{
+  "profile": "boundary_val_unseen",
+  "weights": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\weight_sweep\\combo_best_low_alpha\\
+checkpoints\\a045\\best_tradeoff.pth.tar",
+  "jobs": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_34
+_boundary_lines",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_34_bo
+undary_lines",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045",
+      "output_name": "boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_35
+_boundary_grids",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_35_bo
+undary_grids",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045",
+      "output_name": "boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_36
+_boundary_junctions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_36_bo
+undary_junctions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045",
+      "output_name": "boundary_val_unseen_stage_36_boundary_junctions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_37
+_boundary_curves",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_37_bo
+undary_curves",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045",
+      "output_name": "boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_38
+_boundary_regions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_38_bo
+undary_regions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045",
+      "output_name": "boundary_val_unseen_stage_38_boundary_regions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_39
+_boundary_defects",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_39_bo
+undary_defects",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045",
+      "output_name": "boundary_val_unseen_stage_39_boundary_defects_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_40
+_boundary_mixed",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_40_bo
+undary_mixed",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045",
+      "output_name": "boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pth",
+      "image_pairs": 20
+    }
+  ]
+}
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\checkpoin
+ts\a045\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_r33i45ry\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099964
+-> Weak PSF active. beta_scale=0.136890, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260504_174058
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045\reconstruct_pro
+gress_best_tradeoff_in_stage_34_boundary_lines_20260504_174058\boundary_val_unseen_stage_34_boundary_lines_best_tradeoff
+.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_34_boundary_lines
+[1/20] Processing 0080.bmp... Done. PSNR=20.24 SSIM=0.8081
+[2/20] Processing 0081.bmp... Done. PSNR=23.90 SSIM=0.9185
+[3/20] Processing 0082.bmp... Done. PSNR=21.97 SSIM=0.8881
+[4/20] Processing 0083.bmp... Done. PSNR=21.85 SSIM=0.8486
+[5/20] Processing 0084.bmp... Done. PSNR=21.53 SSIM=0.8361
+[6/20] Processing 0085.bmp... Done. PSNR=21.18 SSIM=0.8826
+[7/20] Processing 0086.bmp... Done. PSNR=22.54 SSIM=0.9339
+[8/20] Processing 0087.bmp... Done. PSNR=23.25 SSIM=0.9266
+[9/20] Processing 0088.bmp... Done. PSNR=25.12 SSIM=0.9487
+[10/20] Processing 0089.bmp... Done. PSNR=25.06 SSIM=0.9496
+[11/20] Processing 0090.bmp... Done. PSNR=23.98 SSIM=0.9181
+[12/20] Processing 0091.bmp... Done. PSNR=25.85 SSIM=0.9470
+[13/20] Processing 0092.bmp... Done. PSNR=23.31 SSIM=0.9397
+[14/20] Processing 0093.bmp... Done. PSNR=23.37 SSIM=0.9314
+[15/20] Processing 0094.bmp... Done. PSNR=21.39 SSIM=0.8476
+[16/20] Processing 0095.bmp... Done. PSNR=24.47 SSIM=0.9440
+[17/20] Processing 0096.bmp... Done. PSNR=25.83 SSIM=0.9534
+[18/20] Processing 0097.bmp... Done. PSNR=24.12 SSIM=0.9207
+[19/20] Processing 0098.bmp... Done. PSNR=21.29 SSIM=0.8886
+[20/20] Processing 0099.bmp... Done. PSNR=23.43 SSIM=0.9335
+-> Avg PSNR/SSIM over 20 pairs: PSNR=23.18 SSIM=0.9082
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+\reconstruct_progress_best_tradeoff_in_stage_34_boundary_lines_20260504_174058\boundary_val_unseen_stage_34_boundary_lin
+es_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\checkpoin
+ts\a045\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_8mq_mvbi\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099964
+-> Weak PSF active. beta_scale=0.136890, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260504_174058
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045\reconstruct_pro
+gress_best_tradeoff_in_stage_35_boundary_grids_20260504_174058\boundary_val_unseen_stage_35_boundary_grids_best_tradeoff
+.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_35_boundary_grids
+[1/20] Processing 0080.bmp... Done. PSNR=19.76 SSIM=0.7825
+[2/20] Processing 0081.bmp... Done. PSNR=17.77 SSIM=0.7634
+[3/20] Processing 0082.bmp... Done. PSNR=15.52 SSIM=0.5149
+[4/20] Processing 0083.bmp... Done. PSNR=19.36 SSIM=0.7722
+[5/20] Processing 0084.bmp... Done. PSNR=19.28 SSIM=0.6528
+[6/20] Processing 0085.bmp... Done. PSNR=20.27 SSIM=0.6691
+[7/20] Processing 0086.bmp... Done. PSNR=16.39 SSIM=0.6011
+[8/20] Processing 0087.bmp... Done. PSNR=15.41 SSIM=0.2188
+[9/20] Processing 0088.bmp... Done. PSNR=18.39 SSIM=0.7681
+[10/20] Processing 0089.bmp... Done. PSNR=16.02 SSIM=0.3486
+[11/20] Processing 0090.bmp... Done. PSNR=20.81 SSIM=0.8644
+[12/20] Processing 0091.bmp... Done. PSNR=11.73 SSIM=0.4299
+[13/20] Processing 0092.bmp... Done. PSNR=19.73 SSIM=0.8527
+[14/20] Processing 0093.bmp... Done. PSNR=16.87 SSIM=0.7356
+[15/20] Processing 0094.bmp... Done. PSNR=13.45 SSIM=0.3155
+[16/20] Processing 0095.bmp... Done. PSNR=19.16 SSIM=0.6986
+[17/20] Processing 0096.bmp... Done. PSNR=17.05 SSIM=0.7863
+[18/20] Processing 0097.bmp... Done. PSNR=18.88 SSIM=0.6521
+[19/20] Processing 0098.bmp... Done. PSNR=18.13 SSIM=0.7136
+[20/20] Processing 0099.bmp... Done. PSNR=12.48 SSIM=0.2428
+-> Avg PSNR/SSIM over 20 pairs: PSNR=17.32 SSIM=0.6191
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+\reconstruct_progress_best_tradeoff_in_stage_35_boundary_grids_20260504_174058\boundary_val_unseen_stage_35_boundary_gri
+ds_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\checkpoin
+ts\a045\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_r3nhfjc1\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099964
+-> Weak PSF active. beta_scale=0.136890, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260504_174058
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045\reconstruct_pro
+gress_best_tradeoff_in_stage_36_boundary_junctions_20260504_174058\boundary_val_unseen_stage_36_boundary_junctions_best_
+tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_36_boundary_junct
+ions
+[1/20] Processing 0080.bmp... Done. PSNR=24.88 SSIM=0.9388
+[2/20] Processing 0081.bmp... Done. PSNR=19.97 SSIM=0.7422
+[3/20] Processing 0082.bmp... Done. PSNR=26.03 SSIM=0.9637
+[4/20] Processing 0083.bmp... Done. PSNR=22.84 SSIM=0.9160
+[5/20] Processing 0084.bmp... Done. PSNR=25.35 SSIM=0.9494
+[6/20] Processing 0085.bmp... Done. PSNR=21.71 SSIM=0.8734
+[7/20] Processing 0086.bmp... Done. PSNR=21.04 SSIM=0.8327
+[8/20] Processing 0087.bmp... Done. PSNR=20.31 SSIM=0.7009
+[9/20] Processing 0088.bmp... Done. PSNR=21.43 SSIM=0.8596
+[10/20] Processing 0089.bmp... Done. PSNR=19.82 SSIM=0.7717
+[11/20] Processing 0090.bmp... Done. PSNR=23.71 SSIM=0.9172
+[12/20] Processing 0091.bmp... Done. PSNR=24.56 SSIM=0.9442
+[13/20] Processing 0092.bmp... Done. PSNR=20.52 SSIM=0.8288
+[14/20] Processing 0093.bmp... Done. PSNR=19.61 SSIM=0.6966
+[15/20] Processing 0094.bmp... Done. PSNR=21.65 SSIM=0.8623
+[16/20] Processing 0095.bmp... Done. PSNR=24.68 SSIM=0.9373
+[17/20] Processing 0096.bmp... Done. PSNR=21.33 SSIM=0.8670
+[18/20] Processing 0097.bmp... Done. PSNR=22.09 SSIM=0.8973
+[19/20] Processing 0098.bmp... Done. PSNR=21.10 SSIM=0.8486
+[20/20] Processing 0099.bmp... Done. PSNR=19.71 SSIM=0.7440
+-> Avg PSNR/SSIM over 20 pairs: PSNR=22.12 SSIM=0.8546
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+\reconstruct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260504_174058\boundary_val_unseen_stage_36_boundary
+_junctions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\checkpoin
+ts\a045\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_y6m_a8yg\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099964
+-> Weak PSF active. beta_scale=0.136890, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260504_174058
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045\reconstruct_pro
+gress_best_tradeoff_in_stage_37_boundary_curves_20260504_174058\boundary_val_unseen_stage_37_boundary_curves_best_tradeo
+ff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_37_boundary_curve
+s
+[1/20] Processing 0080.bmp... Done. PSNR=25.51 SSIM=0.9345
+[2/20] Processing 0081.bmp... Done. PSNR=20.44 SSIM=0.6968
+[3/20] Processing 0082.bmp... Done. PSNR=22.59 SSIM=0.8334
+[4/20] Processing 0083.bmp... Done. PSNR=23.65 SSIM=0.9021
+[5/20] Processing 0084.bmp... Done. PSNR=24.78 SSIM=0.9331
+[6/20] Processing 0085.bmp... Done. PSNR=23.04 SSIM=0.7484
+[7/20] Processing 0086.bmp... Done. PSNR=19.91 SSIM=0.6317
+[8/20] Processing 0087.bmp... Done. PSNR=24.09 SSIM=0.9292
+[9/20] Processing 0088.bmp... Done. PSNR=20.90 SSIM=0.7177
+[10/20] Processing 0089.bmp... Done. PSNR=19.51 SSIM=0.6207
+[11/20] Processing 0090.bmp... Done. PSNR=19.68 SSIM=0.6329
+[12/20] Processing 0091.bmp... Done. PSNR=22.16 SSIM=0.7676
+[13/20] Processing 0092.bmp... Done. PSNR=22.97 SSIM=0.9175
+[14/20] Processing 0093.bmp... Done. PSNR=28.17 SSIM=0.9728
+[15/20] Processing 0094.bmp... Done. PSNR=20.34 SSIM=0.7086
+[16/20] Processing 0095.bmp... Done. PSNR=22.84 SSIM=0.8924
+[17/20] Processing 0096.bmp... Done. PSNR=20.52 SSIM=0.7302
+[18/20] Processing 0097.bmp... Done. PSNR=24.16 SSIM=0.9240
+[19/20] Processing 0098.bmp... Done. PSNR=26.80 SSIM=0.9475
+[20/20] Processing 0099.bmp... Done. PSNR=23.61 SSIM=0.9019
+-> Avg PSNR/SSIM over 20 pairs: PSNR=22.78 SSIM=0.8172
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+\reconstruct_progress_best_tradeoff_in_stage_37_boundary_curves_20260504_174058\boundary_val_unseen_stage_37_boundary_cu
+rves_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\checkpoin
+ts\a045\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_x_6wsoic\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099964
+-> Weak PSF active. beta_scale=0.136890, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260504_174058
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045\reconstruct_pro
+gress_best_tradeoff_in_stage_38_boundary_regions_20260504_174058\boundary_val_unseen_stage_38_boundary_regions_best_trad
+eoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_38_boundary_regio
+ns
+[1/20] Processing 0080.bmp... Done. PSNR=25.66 SSIM=0.9269
+[2/20] Processing 0081.bmp... Done. PSNR=26.36 SSIM=0.9307
+[3/20] Processing 0082.bmp... Done. PSNR=25.24 SSIM=0.9229
+[4/20] Processing 0083.bmp... Done. PSNR=25.82 SSIM=0.9147
+[5/20] Processing 0084.bmp... Done. PSNR=26.75 SSIM=0.9355
+[6/20] Processing 0085.bmp... Done. PSNR=25.62 SSIM=0.9063
+[7/20] Processing 0086.bmp... Done. PSNR=26.52 SSIM=0.9393
+[8/20] Processing 0087.bmp... Done. PSNR=25.20 SSIM=0.9071
+[9/20] Processing 0088.bmp... Done. PSNR=25.65 SSIM=0.9271
+[10/20] Processing 0089.bmp... Done. PSNR=27.63 SSIM=0.9422
+[11/20] Processing 0090.bmp... Done. PSNR=24.65 SSIM=0.9131
+[12/20] Processing 0091.bmp... Done. PSNR=27.91 SSIM=0.9457
+[13/20] Processing 0092.bmp... Done. PSNR=24.06 SSIM=0.7923
+[14/20] Processing 0093.bmp... Done. PSNR=28.61 SSIM=0.9601
+[15/20] Processing 0094.bmp... Done. PSNR=27.51 SSIM=0.9311
+[16/20] Processing 0095.bmp... Done. PSNR=25.33 SSIM=0.9263
+[17/20] Processing 0096.bmp... Done. PSNR=23.73 SSIM=0.7963
+[18/20] Processing 0097.bmp... Done. PSNR=26.59 SSIM=0.9096
+[19/20] Processing 0098.bmp... Done. PSNR=28.14 SSIM=0.9561
+[20/20] Processing 0099.bmp... Done. PSNR=26.86 SSIM=0.9291
+-> Avg PSNR/SSIM over 20 pairs: PSNR=26.19 SSIM=0.9156
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+\reconstruct_progress_best_tradeoff_in_stage_38_boundary_regions_20260504_174058\boundary_val_unseen_stage_38_boundary_r
+egions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\checkpoin
+ts\a045\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_4xlc1z4r\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099964
+-> Weak PSF active. beta_scale=0.136890, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260504_174058
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045\reconstruct_pro
+gress_best_tradeoff_in_stage_39_boundary_defects_20260504_174058\boundary_val_unseen_stage_39_boundary_defects_best_trad
+eoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_39_boundary_defec
+ts
+[1/20] Processing 0080.bmp... Done. PSNR=26.43 SSIM=0.9331
+[2/20] Processing 0081.bmp... Done. PSNR=27.06 SSIM=0.9366
+[3/20] Processing 0082.bmp... Done. PSNR=25.83 SSIM=0.9271
+[4/20] Processing 0083.bmp... Done. PSNR=27.77 SSIM=0.9482
+[5/20] Processing 0084.bmp... Done. PSNR=27.94 SSIM=0.9666
+[6/20] Processing 0085.bmp... Done. PSNR=25.70 SSIM=0.9309
+[7/20] Processing 0086.bmp... Done. PSNR=26.61 SSIM=0.9369
+[8/20] Processing 0087.bmp... Done. PSNR=26.03 SSIM=0.9283
+[9/20] Processing 0088.bmp... Done. PSNR=25.00 SSIM=0.8728
+[10/20] Processing 0089.bmp... Done. PSNR=27.26 SSIM=0.9409
+[11/20] Processing 0090.bmp... Done. PSNR=28.14 SSIM=0.9368
+[12/20] Processing 0091.bmp... Done. PSNR=26.85 SSIM=0.9344
+[13/20] Processing 0092.bmp... Done. PSNR=23.30 SSIM=0.8221
+[14/20] Processing 0093.bmp... Done. PSNR=24.35 SSIM=0.9235
+[15/20] Processing 0094.bmp... Done. PSNR=25.87 SSIM=0.9183
+[16/20] Processing 0095.bmp... Done. PSNR=26.53 SSIM=0.9280
+[17/20] Processing 0096.bmp... Done. PSNR=24.43 SSIM=0.9448
+[18/20] Processing 0097.bmp... Done. PSNR=27.12 SSIM=0.9409
+[19/20] Processing 0098.bmp... Done. PSNR=24.42 SSIM=0.9011
+[20/20] Processing 0099.bmp... Done. PSNR=26.09 SSIM=0.9214
+-> Avg PSNR/SSIM over 20 pairs: PSNR=26.14 SSIM=0.9246
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+\reconstruct_progress_best_tradeoff_in_stage_39_boundary_defects_20260504_174058\boundary_val_unseen_stage_39_boundary_d
+efects_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\checkpoin
+ts\a045\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_fvbeykqn\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099964
+-> Weak PSF active. beta_scale=0.136890, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260504_174058
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045\reconstruct_pro
+gress_best_tradeoff_in_stage_40_boundary_mixed_20260504_174058\boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff
+.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_40_boundary_mixed
+[1/20] Processing 0080.bmp... Done. PSNR=24.98 SSIM=0.8883
+[2/20] Processing 0081.bmp... Done. PSNR=25.39 SSIM=0.9037
+[3/20] Processing 0082.bmp... Done. PSNR=27.63 SSIM=0.9530
+[4/20] Processing 0083.bmp... Done. PSNR=24.16 SSIM=0.8199
+[5/20] Processing 0084.bmp... Done. PSNR=25.93 SSIM=0.9042
+[6/20] Processing 0085.bmp... Done. PSNR=25.33 SSIM=0.8874
+[7/20] Processing 0086.bmp... Done. PSNR=26.59 SSIM=0.9390
+[8/20] Processing 0087.bmp... Done. PSNR=23.80 SSIM=0.7768
+[9/20] Processing 0088.bmp... Done. PSNR=26.42 SSIM=0.9353
+[10/20] Processing 0089.bmp... Done. PSNR=23.81 SSIM=0.9427
+[11/20] Processing 0090.bmp... Done. PSNR=26.99 SSIM=0.9399
+[12/20] Processing 0091.bmp... Done. PSNR=26.79 SSIM=0.9361
+[13/20] Processing 0092.bmp... Done. PSNR=24.12 SSIM=0.7861
+[14/20] Processing 0093.bmp... Done. PSNR=27.20 SSIM=0.9366
+[15/20] Processing 0094.bmp... Done. PSNR=26.08 SSIM=0.9296
+[16/20] Processing 0095.bmp... Done. PSNR=26.74 SSIM=0.9355
+[17/20] Processing 0096.bmp... Done. PSNR=24.54 SSIM=0.8306
+[18/20] Processing 0097.bmp... Done. PSNR=25.88 SSIM=0.9508
+[19/20] Processing 0098.bmp... Done. PSNR=26.64 SSIM=0.9348
+[20/20] Processing 0099.bmp... Done. PSNR=25.20 SSIM=0.8742
+-> Avg PSNR/SSIM over 20 pairs: PSNR=25.71 SSIM=0.9002
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045
+\reconstruct_progress_best_tradeoff_in_stage_40_boundary_mixed_20260504_174058\boundary_val_unseen_stage_40_boundary_mix
+ed_best_tradeoff.pth
+{
+  "profile": "boundary_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045",
+  "total_count": 140,
+  "overall_avg_psnr": 23.348084866157556,
+  "overall_hf_retention": 0.5057682848079487,
+  "overall_boundary_distance_px": 10.391365732039723,
+  "overall_boundary_fscore_t1p0": 0.4654523218827874,
+  "stages": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "count": 20,
+      "avg_psnr": 23.183383849089893,
+      "avg_hf_retention": 0.3066400087753116,
+      "avg_boundary_distance_px": 6.1832205891609195,
+      "avg_boundary_fscore_t1p0": 0.5376166888606968,
+      "avg_centerline_distance_px": 7.977478647232056,
+      "avg_grid_pitch_error_px": 106.35714285714286,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045\\reconstruct_progres
+s_best_tradeoff_in_stage_34_boundary_lines_20260504_174058\\boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pt
+h"
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "count": 20,
+      "avg_psnr": 17.323128106936537,
+      "avg_hf_retention": 0.2061779546190675,
+      "avg_boundary_distance_px": 1.2260953038930893,
+      "avg_boundary_fscore_t1p0": 0.7667073828931461,
+      "avg_centerline_distance_px": 1.761691039800644,
+      "avg_grid_pitch_error_px": 23.4625,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045\\reconstruct_progres
+s_best_tradeoff_in_stage_35_boundary_grids_20260504_174058\\boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pt
+h"
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "count": 20,
+      "avg_psnr": 22.11550005809611,
+      "avg_hf_retention": 0.29596257348511956,
+      "avg_boundary_distance_px": 10.026884055137634,
+      "avg_boundary_fscore_t1p0": 0.5083286569556916,
+      "avg_centerline_distance_px": 11.977923965454101,
+      "avg_grid_pitch_error_px": 69.78571428571429,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045\\reconstruct_progres
+s_best_tradeoff_in_stage_36_boundary_junctions_20260504_174058\\boundary_val_unseen_stage_36_boundary_junctions_best_tra
+deoff.pth"
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "count": 20,
+      "avg_psnr": 22.783433719136127,
+      "avg_hf_retention": 0.3245673596063702,
+      "avg_boundary_distance_px": 33.87472267150879,
+      "avg_boundary_fscore_t1p0": 0.2783425419161669,
+      "avg_centerline_distance_px": 36.38939547538757,
+      "avg_grid_pitch_error_px": 286.1607142857143,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045\\reconstruct_progres
+s_best_tradeoff_in_stage_37_boundary_curves_20260504_174058\\boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.
+pth"
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "count": 20,
+      "avg_psnr": 26.190165173564935,
+      "avg_hf_retention": 0.8744626548003683,
+      "avg_boundary_distance_px": 7.911300528049469,
+      "avg_boundary_fscore_t1p0": 0.3938346833875029,
+      "avg_centerline_distance_px": 7.991674602031708,
+      "avg_grid_pitch_error_px": 50.03947368421053,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045\\reconstruct_progres
+s_best_tradeoff_in_stage_38_boundary_regions_20260504_174058\\boundary_val_unseen_stage_38_boundary_regions_best_tradeof
+f.pth"
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "count": 20,
+      "avg_psnr": 26.133020325577906,
+      "avg_hf_retention": 0.7771028691193892,
+      "avg_boundary_distance_px": 7.533819901943207,
+      "avg_boundary_fscore_t1p0": 0.36994159210926925,
+      "avg_centerline_distance_px": 7.216101253032685,
+      "avg_grid_pitch_error_px": 88.5625,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045\\reconstruct_progres
+s_best_tradeoff_in_stage_39_boundary_defects_20260504_174058\\boundary_val_unseen_stage_39_boundary_defects_best_tradeof
+f.pth"
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "count": 20,
+      "avg_psnr": 25.707962830701387,
+      "avg_hf_retention": 0.7554645732500143,
+      "avg_boundary_distance_px": 5.983517074584961,
+      "avg_boundary_fscore_t1p0": 0.403394707057038,
+      "avg_centerline_distance_px": 13.084363126754761,
+      "avg_grid_pitch_error_px": 51.776315789473685,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r40_a045\\reconstruct_progres
+s_best_tradeoff_in_stage_40_boundary_mixed_20260504_174058\\boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pt
+h"
+    }
+  ]
+}
+[R42] summary written to Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r40_a045\summary.json
+[R42-EVAL] DONE r40_a045 2026/5/5 下午 03:37:54
+[R42-EVAL] START r41_direct 2026/5/5 下午 03:37:54
+{
+  "profile": "boundary_val_unseen",
+  "weights": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\
+\weights\\best_tradeoff.pth.tar",
+  "jobs": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_34
+_boundary_lines",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_34_bo
+undary_lines",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct",
+      "output_name": "boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_35
+_boundary_grids",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_35_bo
+undary_grids",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct",
+      "output_name": "boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_36
+_boundary_junctions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_36_bo
+undary_junctions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct",
+      "output_name": "boundary_val_unseen_stage_36_boundary_junctions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_37
+_boundary_curves",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_37_bo
+undary_curves",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct",
+      "output_name": "boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_38
+_boundary_regions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_38_bo
+undary_regions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct",
+      "output_name": "boundary_val_unseen_stage_38_boundary_regions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_39
+_boundary_defects",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_39_bo
+undary_defects",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct",
+      "output_name": "boundary_val_unseen_stage_39_boundary_defects_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_40
+_boundary_mixed",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_40_bo
+undary_mixed",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct",
+      "output_name": "boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pth",
+      "image_pairs": 20
+    }
+  ]
+}
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\weigh
+ts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_y1ji34sh\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099932
+-> Weak PSF active. beta_scale=0.097321, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_103028
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct\reconstruct_p
+rogress_best_tradeoff_in_stage_34_boundary_lines_20260505_103028\boundary_val_unseen_stage_34_boundary_lines_best_tradeo
+ff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_34_boundary_lines
+[1/20] Processing 0080.bmp... Done. PSNR=21.32 SSIM=0.8955
+[2/20] Processing 0081.bmp... Done. PSNR=23.52 SSIM=0.9372
+[3/20] Processing 0082.bmp... Done. PSNR=23.31 SSIM=0.9419
+[4/20] Processing 0083.bmp... Done. PSNR=24.31 SSIM=0.9321
+[5/20] Processing 0084.bmp... Done. PSNR=23.50 SSIM=0.9207
+[6/20] Processing 0085.bmp... Done. PSNR=21.59 SSIM=0.9325
+[7/20] Processing 0086.bmp... Done. PSNR=21.64 SSIM=0.9472
+[8/20] Processing 0087.bmp... Done. PSNR=23.57 SSIM=0.9600
+[9/20] Processing 0088.bmp... Done. PSNR=23.38 SSIM=0.9461
+[10/20] Processing 0089.bmp... Done. PSNR=24.39 SSIM=0.9557
+[11/20] Processing 0090.bmp... Done. PSNR=25.94 SSIM=0.9625
+[12/20] Processing 0091.bmp... Done. PSNR=24.96 SSIM=0.9478
+[13/20] Processing 0092.bmp... Done. PSNR=22.36 SSIM=0.9482
+[14/20] Processing 0093.bmp... Done. PSNR=23.18 SSIM=0.9506
+[15/20] Processing 0094.bmp... Done. PSNR=22.95 SSIM=0.9295
+[16/20] Processing 0095.bmp... Done. PSNR=23.73 SSIM=0.9560
+[17/20] Processing 0096.bmp... Done. PSNR=26.22 SSIM=0.9610
+[18/20] Processing 0097.bmp... Done. PSNR=23.51 SSIM=0.9357
+[19/20] Processing 0098.bmp... Done. PSNR=21.29 SSIM=0.9342
+[20/20] Processing 0099.bmp... Done. PSNR=23.02 SSIM=0.9508
+-> Avg PSNR/SSIM over 20 pairs: PSNR=23.38 SSIM=0.9423
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_dire
+ct\reconstruct_progress_best_tradeoff_in_stage_34_boundary_lines_20260505_103028\boundary_val_unseen_stage_34_boundary_l
+ines_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\weigh
+ts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_klaj0p_e\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099932
+-> Weak PSF active. beta_scale=0.097321, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_103028
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct\reconstruct_p
+rogress_best_tradeoff_in_stage_35_boundary_grids_20260505_103028\boundary_val_unseen_stage_35_boundary_grids_best_tradeo
+ff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_35_boundary_grids
+[1/20] Processing 0080.bmp... Done. PSNR=18.65 SSIM=0.8074
+[2/20] Processing 0081.bmp... Done. PSNR=17.43 SSIM=0.8091
+[3/20] Processing 0082.bmp... Done. PSNR=15.55 SSIM=0.6362
+[4/20] Processing 0083.bmp... Done. PSNR=18.95 SSIM=0.8220
+[5/20] Processing 0084.bmp... Done. PSNR=20.00 SSIM=0.7763
+[6/20] Processing 0085.bmp... Done. PSNR=19.99 SSIM=0.7450
+[7/20] Processing 0086.bmp... Done. PSNR=16.84 SSIM=0.7311
+[8/20] Processing 0087.bmp... Done. PSNR=13.82 SSIM=0.3480
+[9/20] Processing 0088.bmp... Done. PSNR=17.68 SSIM=0.8422
+[10/20] Processing 0089.bmp... Done. PSNR=14.21 SSIM=0.4638
+[11/20] Processing 0090.bmp... Done. PSNR=17.92 SSIM=0.8371
+[12/20] Processing 0091.bmp... Done. PSNR=12.49 SSIM=0.6093
+[13/20] Processing 0092.bmp... Done. PSNR=17.45 SSIM=0.8246
+[14/20] Processing 0093.bmp... Done. PSNR=16.51 SSIM=0.8029
+[15/20] Processing 0094.bmp... Done. PSNR=13.34 SSIM=0.4490
+[16/20] Processing 0095.bmp... Done. PSNR=20.27 SSIM=0.8282
+[17/20] Processing 0096.bmp... Done. PSNR=16.76 SSIM=0.8192
+[18/20] Processing 0097.bmp... Done. PSNR=18.54 SSIM=0.7381
+[19/20] Processing 0098.bmp... Done. PSNR=17.90 SSIM=0.7886
+[20/20] Processing 0099.bmp... Done. PSNR=12.05 SSIM=0.3435
+-> Avg PSNR/SSIM over 20 pairs: PSNR=16.82 SSIM=0.7011
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_dire
+ct\reconstruct_progress_best_tradeoff_in_stage_35_boundary_grids_20260505_103028\boundary_val_unseen_stage_35_boundary_g
+rids_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\weigh
+ts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_h6kh5xlp\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099932
+-> Weak PSF active. beta_scale=0.097321, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_103028
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct\reconstruct_p
+rogress_best_tradeoff_in_stage_36_boundary_junctions_20260505_103028\boundary_val_unseen_stage_36_boundary_junctions_bes
+t_tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_36_boundary_junct
+ions
+[1/20] Processing 0080.bmp... Done. PSNR=26.29 SSIM=0.9718
+[2/20] Processing 0081.bmp... Done. PSNR=21.49 SSIM=0.8534
+[3/20] Processing 0082.bmp... Done. PSNR=25.37 SSIM=0.9685
+[4/20] Processing 0083.bmp... Done. PSNR=22.21 SSIM=0.9393
+[5/20] Processing 0084.bmp... Done. PSNR=25.06 SSIM=0.9618
+[6/20] Processing 0085.bmp... Done. PSNR=23.25 SSIM=0.9404
+[7/20] Processing 0086.bmp... Done. PSNR=22.31 SSIM=0.9108
+[8/20] Processing 0087.bmp... Done. PSNR=22.42 SSIM=0.8281
+[9/20] Processing 0088.bmp... Done. PSNR=22.75 SSIM=0.9269
+[10/20] Processing 0089.bmp... Done. PSNR=21.01 SSIM=0.8695
+[11/20] Processing 0090.bmp... Done. PSNR=24.65 SSIM=0.9529
+[12/20] Processing 0091.bmp... Done. PSNR=24.60 SSIM=0.9610
+[13/20] Processing 0092.bmp... Done. PSNR=21.52 SSIM=0.9123
+[14/20] Processing 0093.bmp... Done. PSNR=21.30 SSIM=0.8212
+[15/20] Processing 0094.bmp... Done. PSNR=22.47 SSIM=0.9185
+[16/20] Processing 0095.bmp... Done. PSNR=25.40 SSIM=0.9682
+[17/20] Processing 0096.bmp... Done. PSNR=22.08 SSIM=0.9295
+[18/20] Processing 0097.bmp... Done. PSNR=22.64 SSIM=0.9390
+[19/20] Processing 0098.bmp... Done. PSNR=22.12 SSIM=0.9188
+[20/20] Processing 0099.bmp... Done. PSNR=21.16 SSIM=0.8555
+-> Avg PSNR/SSIM over 20 pairs: PSNR=23.01 SSIM=0.9174
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_dire
+ct\reconstruct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260505_103028\boundary_val_unseen_stage_36_bounda
+ry_junctions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\weigh
+ts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_kqjj5ej8\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099932
+-> Weak PSF active. beta_scale=0.097321, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_103028
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct\reconstruct_p
+rogress_best_tradeoff_in_stage_37_boundary_curves_20260505_103028\boundary_val_unseen_stage_37_boundary_curves_best_trad
+eoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_37_boundary_curve
+s
+[1/20] Processing 0080.bmp... Done. PSNR=28.09 SSIM=0.9774
+[2/20] Processing 0081.bmp... Done. PSNR=23.21 SSIM=0.8292
+[3/20] Processing 0082.bmp... Done. PSNR=26.00 SSIM=0.9393
+[4/20] Processing 0083.bmp... Done. PSNR=26.21 SSIM=0.9574
+[5/20] Processing 0084.bmp... Done. PSNR=27.88 SSIM=0.9771
+[6/20] Processing 0085.bmp... Done. PSNR=27.00 SSIM=0.8945
+[7/20] Processing 0086.bmp... Done. PSNR=22.77 SSIM=0.7709
+[8/20] Processing 0087.bmp... Done. PSNR=24.60 SSIM=0.9622
+[9/20] Processing 0088.bmp... Done. PSNR=23.62 SSIM=0.8538
+[10/20] Processing 0089.bmp... Done. PSNR=21.90 SSIM=0.7505
+[11/20] Processing 0090.bmp... Done. PSNR=21.98 SSIM=0.7617
+[12/20] Processing 0091.bmp... Done. PSNR=25.46 SSIM=0.9078
+[13/20] Processing 0092.bmp... Done. PSNR=24.30 SSIM=0.9598
+[14/20] Processing 0093.bmp... Done. PSNR=29.16 SSIM=0.9815
+[15/20] Processing 0094.bmp... Done. PSNR=23.44 SSIM=0.8429
+[16/20] Processing 0095.bmp... Done. PSNR=24.43 SSIM=0.9553
+[17/20] Processing 0096.bmp... Done. PSNR=23.63 SSIM=0.8577
+[18/20] Processing 0097.bmp... Done. PSNR=25.84 SSIM=0.9579
+[19/20] Processing 0098.bmp... Done. PSNR=29.69 SSIM=0.9790
+[20/20] Processing 0099.bmp... Done. PSNR=25.37 SSIM=0.9588
+-> Avg PSNR/SSIM over 20 pairs: PSNR=25.23 SSIM=0.9037
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_dire
+ct\reconstruct_progress_best_tradeoff_in_stage_37_boundary_curves_20260505_103028\boundary_val_unseen_stage_37_boundary_
+curves_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\weigh
+ts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_anq1xlot\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099932
+-> Weak PSF active. beta_scale=0.097321, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_103028
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct\reconstruct_p
+rogress_best_tradeoff_in_stage_38_boundary_regions_20260505_103028\boundary_val_unseen_stage_38_boundary_regions_best_tr
+adeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_38_boundary_regio
+ns
+[1/20] Processing 0080.bmp... Done. PSNR=23.06 SSIM=0.9117
+[2/20] Processing 0081.bmp... Done. PSNR=23.94 SSIM=0.9224
+[3/20] Processing 0082.bmp... Done. PSNR=22.16 SSIM=0.9020
+[4/20] Processing 0083.bmp... Done. PSNR=23.11 SSIM=0.8973
+[5/20] Processing 0084.bmp... Done. PSNR=22.33 SSIM=0.8910
+[6/20] Processing 0085.bmp... Done. PSNR=22.71 SSIM=0.8875
+[7/20] Processing 0086.bmp... Done. PSNR=22.44 SSIM=0.9066
+[8/20] Processing 0087.bmp... Done. PSNR=25.59 SSIM=0.9156
+[9/20] Processing 0088.bmp... Done. PSNR=22.36 SSIM=0.8881
+[10/20] Processing 0089.bmp... Done. PSNR=23.30 SSIM=0.8995
+[11/20] Processing 0090.bmp... Done. PSNR=23.59 SSIM=0.8906
+[12/20] Processing 0091.bmp... Done. PSNR=23.83 SSIM=0.9168
+[13/20] Processing 0092.bmp... Done. PSNR=23.03 SSIM=0.8345
+[14/20] Processing 0093.bmp... Done. PSNR=25.11 SSIM=0.9298
+[15/20] Processing 0094.bmp... Done. PSNR=23.66 SSIM=0.9179
+[16/20] Processing 0095.bmp... Done. PSNR=22.23 SSIM=0.9007
+[17/20] Processing 0096.bmp... Done. PSNR=24.53 SSIM=0.8973
+[18/20] Processing 0097.bmp... Done. PSNR=24.26 SSIM=0.8997
+[19/20] Processing 0098.bmp... Done. PSNR=25.44 SSIM=0.9342
+[20/20] Processing 0099.bmp... Done. PSNR=23.51 SSIM=0.9018
+-> Avg PSNR/SSIM over 20 pairs: PSNR=23.51 SSIM=0.9022
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_dire
+ct\reconstruct_progress_best_tradeoff_in_stage_38_boundary_regions_20260505_103028\boundary_val_unseen_stage_38_boundary
+_regions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\weigh
+ts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_2n92i204\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099932
+-> Weak PSF active. beta_scale=0.097321, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_103028
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct\reconstruct_p
+rogress_best_tradeoff_in_stage_39_boundary_defects_20260505_103028\boundary_val_unseen_stage_39_boundary_defects_best_tr
+adeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_39_boundary_defec
+ts
+[1/20] Processing 0080.bmp... Done. PSNR=23.35 SSIM=0.9137
+[2/20] Processing 0081.bmp... Done. PSNR=24.05 SSIM=0.9152
+[3/20] Processing 0082.bmp... Done. PSNR=22.64 SSIM=0.8947
+[4/20] Processing 0083.bmp... Done. PSNR=24.72 SSIM=0.9303
+[5/20] Processing 0084.bmp... Done. PSNR=27.21 SSIM=0.9640
+[6/20] Processing 0085.bmp... Done. PSNR=26.28 SSIM=0.9443
+[7/20] Processing 0086.bmp... Done. PSNR=22.48 SSIM=0.8939
+[8/20] Processing 0087.bmp... Done. PSNR=22.44 SSIM=0.9062
+[9/20] Processing 0088.bmp... Done. PSNR=23.28 SSIM=0.8890
+[10/20] Processing 0089.bmp... Done. PSNR=24.53 SSIM=0.9302
+[11/20] Processing 0090.bmp... Done. PSNR=24.93 SSIM=0.9251
+[12/20] Processing 0091.bmp... Done. PSNR=23.36 SSIM=0.9024
+[13/20] Processing 0092.bmp... Done. PSNR=22.71 SSIM=0.8870
+[14/20] Processing 0093.bmp... Done. PSNR=22.92 SSIM=0.9297
+[15/20] Processing 0094.bmp... Done. PSNR=23.47 SSIM=0.9155
+[16/20] Processing 0095.bmp... Done. PSNR=24.35 SSIM=0.9243
+[17/20] Processing 0096.bmp... Done. PSNR=24.74 SSIM=0.9295
+[18/20] Processing 0097.bmp... Done. PSNR=23.15 SSIM=0.9070
+[19/20] Processing 0098.bmp... Done. PSNR=22.41 SSIM=0.9020
+[20/20] Processing 0099.bmp... Done. PSNR=23.26 SSIM=0.8864
+-> Avg PSNR/SSIM over 20 pairs: PSNR=23.81 SSIM=0.9145
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_dire
+ct\reconstruct_progress_best_tradeoff_in_stage_39_boundary_defects_20260505_103028\boundary_val_unseen_stage_39_boundary
+_defects_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028\weigh
+ts\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_nufj0xqu\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099932
+-> Weak PSF active. beta_scale=0.097321, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_103028
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct\reconstruct_p
+rogress_best_tradeoff_in_stage_40_boundary_mixed_20260505_103028\boundary_val_unseen_stage_40_boundary_mixed_best_tradeo
+ff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_40_boundary_mixed
+[1/20] Processing 0080.bmp... Done. PSNR=24.96 SSIM=0.9393
+[2/20] Processing 0081.bmp... Done. PSNR=21.96 SSIM=0.8688
+[3/20] Processing 0082.bmp... Done. PSNR=24.49 SSIM=0.9161
+[4/20] Processing 0083.bmp... Done. PSNR=22.74 SSIM=0.8323
+[5/20] Processing 0084.bmp... Done. PSNR=23.20 SSIM=0.8916
+[6/20] Processing 0085.bmp... Done. PSNR=23.21 SSIM=0.8929
+[7/20] Processing 0086.bmp... Done. PSNR=22.64 SSIM=0.8975
+[8/20] Processing 0087.bmp... Done. PSNR=23.72 SSIM=0.8601
+[9/20] Processing 0088.bmp... Done. PSNR=24.03 SSIM=0.9207
+[10/20] Processing 0089.bmp... Done. PSNR=23.20 SSIM=0.9167
+[11/20] Processing 0090.bmp... Done. PSNR=23.05 SSIM=0.9078
+[12/20] Processing 0091.bmp... Done. PSNR=23.37 SSIM=0.9070
+[13/20] Processing 0092.bmp... Done. PSNR=23.07 SSIM=0.8493
+[14/20] Processing 0093.bmp... Done. PSNR=23.02 SSIM=0.9034
+[15/20] Processing 0094.bmp... Done. PSNR=22.53 SSIM=0.9095
+[16/20] Processing 0095.bmp... Done. PSNR=23.77 SSIM=0.9182
+[17/20] Processing 0096.bmp... Done. PSNR=24.26 SSIM=0.8908
+[18/20] Processing 0097.bmp... Done. PSNR=24.83 SSIM=0.9300
+[19/20] Processing 0098.bmp... Done. PSNR=22.91 SSIM=0.8948
+[20/20] Processing 0099.bmp... Done. PSNR=22.49 SSIM=0.8864
+-> Avg PSNR/SSIM over 20 pairs: PSNR=23.37 SSIM=0.8967
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_dire
+ct\reconstruct_progress_best_tradeoff_in_stage_40_boundary_mixed_20260505_103028\boundary_val_unseen_stage_40_boundary_m
+ixed_best_tradeoff.pth
+{
+  "profile": "boundary_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct",
+  "total_count": 140,
+  "overall_avg_psnr": 22.731161492639423,
+  "overall_hf_retention": 0.9147739381763679,
+  "overall_boundary_distance_px": 8.635381852516106,
+  "overall_boundary_fscore_t1p0": 0.46636398644875876,
+  "stages": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "count": 20,
+      "avg_psnr": 23.38149925981309,
+      "avg_hf_retention": 0.430903446473576,
+      "avg_boundary_distance_px": 4.345414268970489,
+      "avg_boundary_fscore_t1p0": 0.555766020058152,
+      "avg_centerline_distance_px": 6.128045833110809,
+      "avg_grid_pitch_error_px": 28.875,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct\\reconstruct_progr
+ess_best_tradeoff_in_stage_34_boundary_lines_20260505_103028\\boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.
+pth"
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "count": 20,
+      "avg_psnr": 16.81753371108124,
+      "avg_hf_retention": 0.3024338895938269,
+      "avg_boundary_distance_px": 1.2410862728953362,
+      "avg_boundary_fscore_t1p0": 0.794857341351231,
+      "avg_centerline_distance_px": 1.875839763879776,
+      "avg_grid_pitch_error_px": 13.375,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct\\reconstruct_progr
+ess_best_tradeoff_in_stage_35_boundary_grids_20260505_103028\\boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.
+pth"
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "count": 20,
+      "avg_psnr": 23.003117125124767,
+      "avg_hf_retention": 0.43113259203526705,
+      "avg_boundary_distance_px": 7.640964686870575,
+      "avg_boundary_fscore_t1p0": 0.5219031235945266,
+      "avg_centerline_distance_px": 9.560457599163055,
+      "avg_grid_pitch_error_px": 60.475,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct\\reconstruct_progr
+ess_best_tradeoff_in_stage_36_boundary_junctions_20260505_103028\\boundary_val_unseen_stage_36_boundary_junctions_best_t
+radeoff.pth"
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "count": 20,
+      "avg_psnr": 25.225163283831307,
+      "avg_hf_retention": 0.48107746085437925,
+      "avg_boundary_distance_px": 32.01724274158478,
+      "avg_boundary_fscore_t1p0": 0.272554514466132,
+      "avg_centerline_distance_px": 34.51019024848938,
+      "avg_grid_pitch_error_px": 273.9807692307692,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct\\reconstruct_progr
+ess_best_tradeoff_in_stage_37_boundary_curves_20260505_103028\\boundary_val_unseen_stage_37_boundary_curves_best_tradeof
+f.pth"
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "count": 20,
+      "avg_psnr": 23.508261594921024,
+      "avg_hf_retention": 1.7879728861470228,
+      "avg_boundary_distance_px": 5.525496065616608,
+      "avg_boundary_fscore_t1p0": 0.36734451442086663,
+      "avg_centerline_distance_px": 5.62216340303421,
+      "avg_grid_pitch_error_px": 73.15,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct\\reconstruct_progr
+ess_best_tradeoff_in_stage_38_boundary_regions_20260505_103028\\boundary_val_unseen_stage_38_boundary_regions_best_trade
+off.pth"
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "count": 20,
+      "avg_psnr": 23.812094913143174,
+      "avg_hf_retention": 1.449457826628192,
+      "avg_boundary_distance_px": 5.136346387863159,
+      "avg_boundary_fscore_t1p0": 0.36497181170830706,
+      "avg_centerline_distance_px": 5.079086136817932,
+      "avg_grid_pitch_error_px": 67.0,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct\\reconstruct_progr
+ess_best_tradeoff_in_stage_39_boundary_defects_20260505_103028\\boundary_val_unseen_stage_39_boundary_defects_best_trade
+off.pth"
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "count": 20,
+      "avg_psnr": 23.370460560561344,
+      "avg_hf_retention": 1.5204394655023117,
+      "avg_boundary_distance_px": 4.541122543811798,
+      "avg_boundary_fscore_t1p0": 0.3871505795420958,
+      "avg_centerline_distance_px": 13.622227430343628,
+      "avg_grid_pitch_error_px": 30.0125,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r41_direct\\reconstruct_progr
+ess_best_tradeoff_in_stage_40_boundary_mixed_20260505_103028\\boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.
+pth"
+    }
+  ]
+}
+[R42] summary written to Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r41_direct\summary.json
+[R42-EVAL] DONE r41_direct 2026/5/5 下午 03:38:18
+[R42-EVAL] START r42_combo_best 2026/5/5 下午 03:38:18
+{
+  "profile": "boundary_val_unseen",
+  "weights": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_
+142301\\weights\\best_tradeoff.pth.tar",
+  "jobs": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_34
+_boundary_lines",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_34_bo
+undary_lines",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best",
+      "output_name": "boundary_val_unseen_stage_34_boundary_lines_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_35
+_boundary_grids",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_35_bo
+undary_grids",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best",
+      "output_name": "boundary_val_unseen_stage_35_boundary_grids_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_36
+_boundary_junctions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_36_bo
+undary_junctions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best",
+      "output_name": "boundary_val_unseen_stage_36_boundary_junctions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_37
+_boundary_curves",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_37_bo
+undary_curves",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best",
+      "output_name": "boundary_val_unseen_stage_37_boundary_curves_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_38
+_boundary_regions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_38_bo
+undary_regions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best",
+      "output_name": "boundary_val_unseen_stage_38_boundary_regions_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_39
+_boundary_defects",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_39_bo
+undary_defects",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best",
+      "output_name": "boundary_val_unseen_stage_39_boundary_defects_best_tradeoff.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_40
+_boundary_mixed",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_40_bo
+undary_mixed",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best",
+      "output_name": "boundary_val_unseen_stage_40_boundary_mixed_best_tradeoff.pth",
+      "image_pairs": 20
+    }
+  ]
+}
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf__9mn09cd\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099970
+-> Weak PSF active. beta_scale=0.100614, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best\reconstru
+ct_progress_best_tradeoff_in_stage_34_boundary_lines_20260505_142301\boundary_val_unseen_stage_34_boundary_lines_best_tr
+adeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_34_boundary_lines
+[1/20] Processing 0080.bmp... Done. PSNR=29.94 SSIM=0.9868
+[2/20] Processing 0081.bmp... Done. PSNR=30.64 SSIM=0.9824
+[3/20] Processing 0082.bmp... Done. PSNR=31.90 SSIM=0.9898
+[4/20] Processing 0083.bmp... Done. PSNR=31.69 SSIM=0.9886
+[5/20] Processing 0084.bmp... Done. PSNR=31.09 SSIM=0.9884
+[6/20] Processing 0085.bmp... Done. PSNR=28.92 SSIM=0.9830
+[7/20] Processing 0086.bmp... Done. PSNR=31.45 SSIM=0.9902
+[8/20] Processing 0087.bmp... Done. PSNR=32.16 SSIM=0.9905
+[9/20] Processing 0088.bmp... Done. PSNR=30.16 SSIM=0.9811
+[10/20] Processing 0089.bmp... Done. PSNR=33.39 SSIM=0.9921
+[11/20] Processing 0090.bmp... Done. PSNR=34.23 SSIM=0.9931
+[12/20] Processing 0091.bmp... Done. PSNR=30.45 SSIM=0.9797
+[13/20] Processing 0092.bmp... Done. PSNR=30.09 SSIM=0.9842
+[14/20] Processing 0093.bmp... Done. PSNR=30.16 SSIM=0.9859
+[15/20] Processing 0094.bmp... Done. PSNR=30.58 SSIM=0.9871
+[16/20] Processing 0095.bmp... Done. PSNR=31.70 SSIM=0.9889
+[17/20] Processing 0096.bmp... Done. PSNR=33.05 SSIM=0.9886
+[18/20] Processing 0097.bmp... Done. PSNR=30.28 SSIM=0.9804
+[19/20] Processing 0098.bmp... Done. PSNR=31.57 SSIM=0.9899
+[20/20] Processing 0099.bmp... Done. PSNR=32.64 SSIM=0.9903
+-> Avg PSNR/SSIM over 20 pairs: PSNR=31.31 SSIM=0.9870
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_best\reconstruct_progress_best_tradeoff_in_stage_34_boundary_lines_20260505_142301\boundary_val_unseen_stage_34_bounda
+ry_lines_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_oi5r_z_u\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099970
+-> Weak PSF active. beta_scale=0.100614, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best\reconstru
+ct_progress_best_tradeoff_in_stage_35_boundary_grids_20260505_142301\boundary_val_unseen_stage_35_boundary_grids_best_tr
+adeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_35_boundary_grids
+[1/20] Processing 0080.bmp... Done. PSNR=26.08 SSIM=0.9565
+[2/20] Processing 0081.bmp... Done. PSNR=22.78 SSIM=0.9311
+[3/20] Processing 0082.bmp... Done. PSNR=22.63 SSIM=0.9288
+[4/20] Processing 0083.bmp... Done. PSNR=25.10 SSIM=0.9437
+[5/20] Processing 0084.bmp... Done. PSNR=26.87 SSIM=0.9675
+[6/20] Processing 0085.bmp... Done. PSNR=24.92 SSIM=0.9199
+[7/20] Processing 0086.bmp... Done. PSNR=21.96 SSIM=0.9205
+[8/20] Processing 0087.bmp... Done. PSNR=17.41 SSIM=0.7335
+[9/20] Processing 0088.bmp... Done. PSNR=24.71 SSIM=0.9737
+[10/20] Processing 0089.bmp... Done. PSNR=19.28 SSIM=0.8093
+[11/20] Processing 0090.bmp... Done. PSNR=25.62 SSIM=0.9686
+[12/20] Processing 0091.bmp... Done. PSNR=21.81 SSIM=0.9571
+[13/20] Processing 0092.bmp... Done. PSNR=27.22 SSIM=0.9770
+[14/20] Processing 0093.bmp... Done. PSNR=25.59 SSIM=0.9832
+[15/20] Processing 0094.bmp... Done. PSNR=17.47 SSIM=0.8032
+[16/20] Processing 0095.bmp... Done. PSNR=27.55 SSIM=0.9715
+[17/20] Processing 0096.bmp... Done. PSNR=29.47 SSIM=0.9880
+[18/20] Processing 0097.bmp... Done. PSNR=24.65 SSIM=0.9346
+[19/20] Processing 0098.bmp... Done. PSNR=27.04 SSIM=0.9698
+[20/20] Processing 0099.bmp... Done. PSNR=16.53 SSIM=0.7940
+-> Avg PSNR/SSIM over 20 pairs: PSNR=23.73 SSIM=0.9216
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_best\reconstruct_progress_best_tradeoff_in_stage_35_boundary_grids_20260505_142301\boundary_val_unseen_stage_35_bounda
+ry_grids_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_2zx5vdv3\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099970
+-> Weak PSF active. beta_scale=0.100614, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best\reconstru
+ct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260505_142301\boundary_val_unseen_stage_36_boundary_junctions
+_best_tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_36_boundary_junct
+ions
+[1/20] Processing 0080.bmp... Done. PSNR=33.63 SSIM=0.9927
+[2/20] Processing 0081.bmp... Done. PSNR=29.51 SSIM=0.9819
+[3/20] Processing 0082.bmp... Done. PSNR=32.30 SSIM=0.9887
+[4/20] Processing 0083.bmp... Done. PSNR=29.09 SSIM=0.9796
+[5/20] Processing 0084.bmp... Done. PSNR=32.15 SSIM=0.9891
+[6/20] Processing 0085.bmp... Done. PSNR=30.36 SSIM=0.9869
+[7/20] Processing 0086.bmp... Done. PSNR=31.07 SSIM=0.9881
+[8/20] Processing 0087.bmp... Done. PSNR=30.85 SSIM=0.9751
+[9/20] Processing 0088.bmp... Done. PSNR=32.95 SSIM=0.9930
+[10/20] Processing 0089.bmp... Done. PSNR=30.44 SSIM=0.9852
+[11/20] Processing 0090.bmp... Done. PSNR=30.04 SSIM=0.9838
+[12/20] Processing 0091.bmp... Done. PSNR=33.27 SSIM=0.9922
+[13/20] Processing 0092.bmp... Done. PSNR=31.21 SSIM=0.9901
+[14/20] Processing 0093.bmp... Done. PSNR=29.01 SSIM=0.9716
+[15/20] Processing 0094.bmp... Done. PSNR=28.80 SSIM=0.9772
+[16/20] Processing 0095.bmp... Done. PSNR=33.10 SSIM=0.9917
+[17/20] Processing 0096.bmp... Done. PSNR=30.26 SSIM=0.9862
+[18/20] Processing 0097.bmp... Done. PSNR=29.88 SSIM=0.9838
+[19/20] Processing 0098.bmp... Done. PSNR=31.30 SSIM=0.9895
+[20/20] Processing 0099.bmp... Done. PSNR=30.00 SSIM=0.9836
+-> Avg PSNR/SSIM over 20 pairs: PSNR=30.96 SSIM=0.9855
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_best\reconstruct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260505_142301\boundary_val_unseen_stage_36_bo
+undary_junctions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_o51hkjyf\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099970
+-> Weak PSF active. beta_scale=0.100614, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best\reconstru
+ct_progress_best_tradeoff_in_stage_37_boundary_curves_20260505_142301\boundary_val_unseen_stage_37_boundary_curves_best_
+tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_37_boundary_curve
+s
+[1/20] Processing 0080.bmp... Done. PSNR=36.04 SSIM=0.9949
+[2/20] Processing 0081.bmp... Done. PSNR=33.75 SSIM=0.9776
+[3/20] Processing 0082.bmp... Done. PSNR=35.01 SSIM=0.9954
+[4/20] Processing 0083.bmp... Done. PSNR=33.71 SSIM=0.9920
+[5/20] Processing 0084.bmp... Done. PSNR=36.93 SSIM=0.9970
+[6/20] Processing 0085.bmp... Done. PSNR=33.42 SSIM=0.9790
+[7/20] Processing 0086.bmp... Done. PSNR=31.94 SSIM=0.9613
+[8/20] Processing 0087.bmp... Done. PSNR=32.99 SSIM=0.9918
+[9/20] Processing 0088.bmp... Done. PSNR=34.63 SSIM=0.9848
+[10/20] Processing 0089.bmp... Done. PSNR=30.66 SSIM=0.9484
+[11/20] Processing 0090.bmp... Done. PSNR=30.37 SSIM=0.9517
+[12/20] Processing 0091.bmp... Done. PSNR=34.14 SSIM=0.9911
+[13/20] Processing 0092.bmp... Done. PSNR=34.38 SSIM=0.9951
+[14/20] Processing 0093.bmp... Done. PSNR=35.96 SSIM=0.9949
+[15/20] Processing 0094.bmp... Done. PSNR=33.52 SSIM=0.9786
+[16/20] Processing 0095.bmp... Done. PSNR=34.86 SSIM=0.9951
+[17/20] Processing 0096.bmp... Done. PSNR=34.14 SSIM=0.9857
+[18/20] Processing 0097.bmp... Done. PSNR=33.08 SSIM=0.9911
+[19/20] Processing 0098.bmp... Done. PSNR=36.53 SSIM=0.9945
+[20/20] Processing 0099.bmp... Done. PSNR=33.24 SSIM=0.9890
+-> Avg PSNR/SSIM over 20 pairs: PSNR=33.97 SSIM=0.9844
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_best\reconstruct_progress_best_tradeoff_in_stage_37_boundary_curves_20260505_142301\boundary_val_unseen_stage_37_bound
+ary_curves_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_oh23ingd\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099970
+-> Weak PSF active. beta_scale=0.100614, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best\reconstru
+ct_progress_best_tradeoff_in_stage_38_boundary_regions_20260505_142301\boundary_val_unseen_stage_38_boundary_regions_bes
+t_tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_38_boundary_regio
+ns
+[1/20] Processing 0080.bmp... Done. PSNR=34.74 SSIM=0.9841
+[2/20] Processing 0081.bmp... Done. PSNR=36.63 SSIM=0.9866
+[3/20] Processing 0082.bmp... Done. PSNR=31.11 SSIM=0.9788
+[4/20] Processing 0083.bmp... Done. PSNR=36.27 SSIM=0.9895
+[5/20] Processing 0084.bmp... Done. PSNR=33.54 SSIM=0.9807
+[6/20] Processing 0085.bmp... Done. PSNR=33.72 SSIM=0.9814
+[7/20] Processing 0086.bmp... Done. PSNR=35.65 SSIM=0.9877
+[8/20] Processing 0087.bmp... Done. PSNR=36.19 SSIM=0.9891
+[9/20] Processing 0088.bmp... Done. PSNR=33.46 SSIM=0.9812
+[10/20] Processing 0089.bmp... Done. PSNR=34.06 SSIM=0.9803
+[11/20] Processing 0090.bmp... Done. PSNR=32.89 SSIM=0.9748
+[12/20] Processing 0091.bmp... Done. PSNR=34.39 SSIM=0.9867
+[13/20] Processing 0092.bmp... Done. PSNR=31.40 SSIM=0.9355
+[14/20] Processing 0093.bmp... Done. PSNR=34.81 SSIM=0.9897
+[15/20] Processing 0094.bmp... Done. PSNR=36.33 SSIM=0.9864
+[16/20] Processing 0095.bmp... Done. PSNR=31.66 SSIM=0.9819
+[17/20] Processing 0096.bmp... Done. PSNR=35.54 SSIM=0.9712
+[18/20] Processing 0097.bmp... Done. PSNR=36.45 SSIM=0.9834
+[19/20] Processing 0098.bmp... Done. PSNR=34.09 SSIM=0.9901
+[20/20] Processing 0099.bmp... Done. PSNR=34.74 SSIM=0.9859
+-> Avg PSNR/SSIM over 20 pairs: PSNR=34.38 SSIM=0.9813
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_best\reconstruct_progress_best_tradeoff_in_stage_38_boundary_regions_20260505_142301\boundary_val_unseen_stage_38_boun
+dary_regions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_g9oy7o3i\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099970
+-> Weak PSF active. beta_scale=0.100614, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best\reconstru
+ct_progress_best_tradeoff_in_stage_39_boundary_defects_20260505_142301\boundary_val_unseen_stage_39_boundary_defects_bes
+t_tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_39_boundary_defec
+ts
+[1/20] Processing 0080.bmp... Done. PSNR=36.04 SSIM=0.9848
+[2/20] Processing 0081.bmp... Done. PSNR=35.69 SSIM=0.9831
+[3/20] Processing 0082.bmp... Done. PSNR=31.03 SSIM=0.9715
+[4/20] Processing 0083.bmp... Done. PSNR=35.52 SSIM=0.9871
+[5/20] Processing 0084.bmp... Done. PSNR=36.34 SSIM=0.9926
+[6/20] Processing 0085.bmp... Done. PSNR=35.64 SSIM=0.9871
+[7/20] Processing 0086.bmp... Done. PSNR=32.85 SSIM=0.9779
+[8/20] Processing 0087.bmp... Done. PSNR=37.08 SSIM=0.9881
+[9/20] Processing 0088.bmp... Done. PSNR=34.34 SSIM=0.9799
+[10/20] Processing 0089.bmp... Done. PSNR=37.48 SSIM=0.9871
+[11/20] Processing 0090.bmp... Done. PSNR=36.57 SSIM=0.9862
+[12/20] Processing 0091.bmp... Done. PSNR=35.64 SSIM=0.9860
+[13/20] Processing 0092.bmp... Done. PSNR=33.74 SSIM=0.9761
+[14/20] Processing 0093.bmp... Done. PSNR=33.03 SSIM=0.9820
+[15/20] Processing 0094.bmp... Done. PSNR=32.69 SSIM=0.9829
+[16/20] Processing 0095.bmp... Done. PSNR=34.18 SSIM=0.9810
+[17/20] Processing 0096.bmp... Done. PSNR=33.93 SSIM=0.9843
+[18/20] Processing 0097.bmp... Done. PSNR=34.70 SSIM=0.9835
+[19/20] Processing 0098.bmp... Done. PSNR=34.16 SSIM=0.9801
+[20/20] Processing 0099.bmp... Done. PSNR=33.11 SSIM=0.9787
+-> Avg PSNR/SSIM over 20 pairs: PSNR=34.69 SSIM=0.9830
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_best\reconstruct_progress_best_tradeoff_in_stage_39_boundary_defects_20260505_142301\boundary_val_unseen_stage_39_boun
+dary_defects_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_0dol_h9p\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099970
+-> Weak PSF active. beta_scale=0.100614, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best\reconstru
+ct_progress_best_tradeoff_in_stage_40_boundary_mixed_20260505_142301\boundary_val_unseen_stage_40_boundary_mixed_best_tr
+adeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_40_boundary_mixed
+[1/20] Processing 0080.bmp... Done. PSNR=37.18 SSIM=0.9882
+[2/20] Processing 0081.bmp... Done. PSNR=31.10 SSIM=0.9662
+[3/20] Processing 0082.bmp... Done. PSNR=33.33 SSIM=0.9840
+[4/20] Processing 0083.bmp... Done. PSNR=31.56 SSIM=0.9342
+[5/20] Processing 0084.bmp... Done. PSNR=33.53 SSIM=0.9733
+[6/20] Processing 0085.bmp... Done. PSNR=33.93 SSIM=0.9776
+[7/20] Processing 0086.bmp... Done. PSNR=31.83 SSIM=0.9771
+[8/20] Processing 0087.bmp... Done. PSNR=32.42 SSIM=0.9534
+[9/20] Processing 0088.bmp... Done. PSNR=36.96 SSIM=0.9857
+[10/20] Processing 0089.bmp... Done. PSNR=31.75 SSIM=0.9847
+[11/20] Processing 0090.bmp... Done. PSNR=32.11 SSIM=0.9796
+[12/20] Processing 0091.bmp... Done. PSNR=37.84 SSIM=0.9866
+[13/20] Processing 0092.bmp... Done. PSNR=31.85 SSIM=0.9350
+[14/20] Processing 0093.bmp... Done. PSNR=36.01 SSIM=0.9865
+[15/20] Processing 0094.bmp... Done. PSNR=35.95 SSIM=0.9859
+[16/20] Processing 0095.bmp... Done. PSNR=33.90 SSIM=0.9802
+[17/20] Processing 0096.bmp... Done. PSNR=33.84 SSIM=0.9680
+[18/20] Processing 0097.bmp... Done. PSNR=34.45 SSIM=0.9864
+[19/20] Processing 0098.bmp... Done. PSNR=33.16 SSIM=0.9789
+[20/20] Processing 0099.bmp... Done. PSNR=32.54 SSIM=0.9686
+-> Avg PSNR/SSIM over 20 pairs: PSNR=33.76 SSIM=0.9740
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_best\reconstruct_progress_best_tradeoff_in_stage_40_boundary_mixed_20260505_142301\boundary_val_unseen_stage_40_bounda
+ry_mixed_best_tradeoff.pth
+{
+  "profile": "boundary_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best",
+
+  "total_count": 140,
+  "overall_avg_psnr": 31.8140639691664,
+  "overall_hf_retention": 0.7033467729742111,
+  "overall_boundary_distance_px": 15.340366777937327,
+  "overall_boundary_fscore_t1p0": 0.5008845509208625,
+  "stages": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "count": 20,
+      "avg_psnr": 31.297343632307353,
+      "avg_hf_retention": 0.6400183350858997,
+      "avg_boundary_distance_px": 10.192066323757171,
+      "avg_boundary_fscore_t1p0": 0.5432826073490782,
+      "avg_centerline_distance_px": 12.116840636730194,
+      "avg_grid_pitch_error_px": 47.75,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best\\reconstruct_p
+rogress_best_tradeoff_in_stage_34_boundary_lines_20260505_142301\\boundary_val_unseen_stage_34_boundary_lines_best_trade
+off.pth"
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "count": 20,
+      "avg_psnr": 23.735060564374994,
+      "avg_hf_retention": 0.7230743229264276,
+      "avg_boundary_distance_px": 0.46099529676139356,
+      "avg_boundary_fscore_t1p0": 0.9197534214866578,
+      "avg_centerline_distance_px": 1.2273940831422805,
+      "avg_grid_pitch_error_px": 29.425,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best\\reconstruct_p
+rogress_best_tradeoff_in_stage_35_boundary_grids_20260505_142301\\boundary_val_unseen_stage_35_boundary_grids_best_trade
+off.pth"
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "count": 20,
+      "avg_psnr": 30.950859043775818,
+      "avg_hf_retention": 0.6461692594630126,
+      "avg_boundary_distance_px": 13.714073586463929,
+      "avg_boundary_fscore_t1p0": 0.5280839419382705,
+      "avg_centerline_distance_px": 15.70019611120224,
+      "avg_grid_pitch_error_px": 135.70833333333334,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best\\reconstruct_p
+rogress_best_tradeoff_in_stage_36_boundary_junctions_20260505_142301\\boundary_val_unseen_stage_36_boundary_junctions_be
+st_tradeoff.pth"
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "count": 20,
+      "avg_psnr": 33.93341401828313,
+      "avg_hf_retention": 0.7046325483884005,
+      "avg_boundary_distance_px": 59.65475730895996,
+      "avg_boundary_fscore_t1p0": 0.23329388612231416,
+      "avg_centerline_distance_px": 62.372898483276366,
+      "avg_grid_pitch_error_px": 104.03571428571429,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best\\reconstruct_p
+rogress_best_tradeoff_in_stage_37_boundary_curves_20260505_142301\\boundary_val_unseen_stage_37_boundary_curves_best_tra
+deoff.pth"
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "count": 20,
+      "avg_psnr": 34.355366628122184,
+      "avg_hf_retention": 0.7976642473863267,
+      "avg_boundary_distance_px": 8.028618693351746,
+      "avg_boundary_fscore_t1p0": 0.4243887431747272,
+      "avg_centerline_distance_px": 7.454922473430633,
+      "avg_grid_pitch_error_px": 72.1625,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best\\reconstruct_p
+rogress_best_tradeoff_in_stage_38_boundary_regions_20260505_142301\\boundary_val_unseen_stage_38_boundary_regions_best_t
+radeoff.pth"
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "count": 20,
+      "avg_psnr": 34.67752317312418,
+      "avg_hf_retention": 0.6932067698081771,
+      "avg_boundary_distance_px": 8.98567886352539,
+      "avg_boundary_fscore_t1p0": 0.4115555173647499,
+      "avg_centerline_distance_px": 7.497139680385589,
+      "avg_grid_pitch_error_px": 65.38157894736842,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best\\reconstruct_p
+rogress_best_tradeoff_in_stage_39_boundary_defects_20260505_142301\\boundary_val_unseen_stage_39_boundary_defects_best_t
+radeoff.pth"
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "count": 20,
+      "avg_psnr": 33.748880724177155,
+      "avg_hf_retention": 0.7186619277612329,
+      "avg_boundary_distance_px": 6.346377372741699,
+      "avg_boundary_fscore_t1p0": 0.44583373901023976,
+      "avg_centerline_distance_px": 9.91693834066391,
+      "avg_grid_pitch_error_px": 30.61842105263158,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_best\\reconstruct_p
+rogress_best_tradeoff_in_stage_40_boundary_mixed_20260505_142301\\boundary_val_unseen_stage_40_boundary_mixed_best_trade
+off.pth"
+    }
+  ]
+}
+[R42] summary written to Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_best\summary.json
+[R42-EVAL] DONE r42_combo_best 2026/5/5 下午 03:38:42
+[R42-EVAL] START r42_combo_latest 2026/5/5 下午 03:38:42
+{
+  "profile": "boundary_val_unseen",
+  "weights": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_
+142301\\weights\\latest.pth.tar",
+  "jobs": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_34
+_boundary_lines",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_34_bo
+undary_lines",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest",
+      "output_name": "boundary_val_unseen_stage_34_boundary_lines_latest.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_35
+_boundary_grids",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_35_bo
+undary_grids",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest",
+      "output_name": "boundary_val_unseen_stage_35_boundary_grids_latest.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_36
+_boundary_junctions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_36_bo
+undary_junctions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest",
+      "output_name": "boundary_val_unseen_stage_36_boundary_junctions_latest.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_37
+_boundary_curves",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_37_bo
+undary_curves",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest",
+      "output_name": "boundary_val_unseen_stage_37_boundary_curves_latest.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_38
+_boundary_regions",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_38_bo
+undary_regions",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest",
+      "output_name": "boundary_val_unseen_stage_38_boundary_regions_latest.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_39
+_boundary_defects",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_39_bo
+undary_defects",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest",
+      "output_name": "boundary_val_unseen_stage_39_boundary_defects_latest.pth",
+      "image_pairs": 20
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\src\\stage_40
+_boundary_mixed",
+      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity\\boundary_val_unseen\\lbl\\stage_40_bo
+undary_mixed",
+      "recon_root": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest",
+      "output_name": "boundary_val_unseen_stage_40_boundary_mixed_latest.pth",
+      "image_pairs": 20
+    }
+  ]
+}
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\latest.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf__tmxicxr\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099832
+-> Weak PSF active. beta_scale=0.155632, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest\reconst
+ruct_progress_latest_in_stage_34_boundary_lines_20260505_142301\boundary_val_unseen_stage_34_boundary_lines_latest.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_34_boundary_lines
+[1/20] Processing 0080.bmp... Done. PSNR=32.08 SSIM=0.9921
+[2/20] Processing 0081.bmp... Done. PSNR=32.75 SSIM=0.9892
+[3/20] Processing 0082.bmp... Done. PSNR=33.90 SSIM=0.9937
+[4/20] Processing 0083.bmp... Done. PSNR=31.24 SSIM=0.9880
+[5/20] Processing 0084.bmp... Done. PSNR=32.93 SSIM=0.9927
+[6/20] Processing 0085.bmp... Done. PSNR=29.94 SSIM=0.9873
+[7/20] Processing 0086.bmp... Done. PSNR=33.88 SSIM=0.9950
+[8/20] Processing 0087.bmp... Done. PSNR=33.79 SSIM=0.9937
+[9/20] Processing 0088.bmp... Done. PSNR=31.39 SSIM=0.9870
+[10/20] Processing 0089.bmp... Done. PSNR=35.48 SSIM=0.9955
+[11/20] Processing 0090.bmp... Done. PSNR=35.92 SSIM=0.9956
+[12/20] Processing 0091.bmp... Done. PSNR=31.59 SSIM=0.9847
+[13/20] Processing 0092.bmp... Done. PSNR=31.85 SSIM=0.9897
+[14/20] Processing 0093.bmp... Done. PSNR=30.41 SSIM=0.9872
+[15/20] Processing 0094.bmp... Done. PSNR=31.62 SSIM=0.9896
+[16/20] Processing 0095.bmp... Done. PSNR=33.93 SSIM=0.9941
+[17/20] Processing 0096.bmp... Done. PSNR=34.19 SSIM=0.9919
+[18/20] Processing 0097.bmp... Done. PSNR=32.10 SSIM=0.9874
+[19/20] Processing 0098.bmp... Done. PSNR=33.22 SSIM=0.9933
+[20/20] Processing 0099.bmp... Done. PSNR=34.54 SSIM=0.9942
+-> Avg PSNR/SSIM over 20 pairs: PSNR=32.84 SSIM=0.9911
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_latest\reconstruct_progress_latest_in_stage_34_boundary_lines_20260505_142301\boundary_val_unseen_stage_34_boundary_li
+nes_latest.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\latest.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_1q_j45n_\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099832
+-> Weak PSF active. beta_scale=0.155632, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest\reconst
+ruct_progress_latest_in_stage_35_boundary_grids_20260505_142301\boundary_val_unseen_stage_35_boundary_grids_latest.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_35_boundary_grids
+[1/20] Processing 0080.bmp... Done. PSNR=30.38 SSIM=0.9884
+[2/20] Processing 0081.bmp... Done. PSNR=25.12 SSIM=0.9690
+[3/20] Processing 0082.bmp... Done. PSNR=27.34 SSIM=0.9840
+[4/20] Processing 0083.bmp... Done. PSNR=29.36 SSIM=0.9838
+[5/20] Processing 0084.bmp... Done. PSNR=28.97 SSIM=0.9822
+[6/20] Processing 0085.bmp... Done. PSNR=27.82 SSIM=0.9604
+[7/20] Processing 0086.bmp... Done. PSNR=25.72 SSIM=0.9740
+[8/20] Processing 0087.bmp... Done. PSNR=19.89 SSIM=0.8390
+[9/20] Processing 0088.bmp... Done. PSNR=30.29 SSIM=0.9906
+[10/20] Processing 0089.bmp... Done. PSNR=23.28 SSIM=0.9295
+[11/20] Processing 0090.bmp... Done. PSNR=31.21 SSIM=0.9909
+[12/20] Processing 0091.bmp... Done. PSNR=23.86 SSIM=0.9751
+[13/20] Processing 0092.bmp... Done. PSNR=34.23 SSIM=0.9948
+[14/20] Processing 0093.bmp... Done. PSNR=30.14 SSIM=0.9937
+[15/20] Processing 0094.bmp... Done. PSNR=20.31 SSIM=0.9118
+[16/20] Processing 0095.bmp... Done. PSNR=31.22 SSIM=0.9898
+[17/20] Processing 0096.bmp... Done. PSNR=32.40 SSIM=0.9951
+[18/20] Processing 0097.bmp... Done. PSNR=28.79 SSIM=0.9815
+[19/20] Processing 0098.bmp... Done. PSNR=32.80 SSIM=0.9955
+[20/20] Processing 0099.bmp... Done. PSNR=18.90 SSIM=0.8890
+-> Avg PSNR/SSIM over 20 pairs: PSNR=27.60 SSIM=0.9659
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_latest\reconstruct_progress_latest_in_stage_35_boundary_grids_20260505_142301\boundary_val_unseen_stage_35_boundary_gr
+ids_latest.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\latest.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_6fvg09z7\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099832
+-> Weak PSF active. beta_scale=0.155632, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest\reconst
+ruct_progress_latest_in_stage_36_boundary_junctions_20260505_142301\boundary_val_unseen_stage_36_boundary_junctions_late
+st.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_36_boundary_junct
+ions
+[1/20] Processing 0080.bmp... Done. PSNR=35.43 SSIM=0.9956
+[2/20] Processing 0081.bmp... Done. PSNR=30.19 SSIM=0.9857
+[3/20] Processing 0082.bmp... Done. PSNR=33.18 SSIM=0.9910
+[4/20] Processing 0083.bmp... Done. PSNR=30.50 SSIM=0.9859
+[5/20] Processing 0084.bmp... Done. PSNR=33.88 SSIM=0.9932
+[6/20] Processing 0085.bmp... Done. PSNR=31.53 SSIM=0.9904
+[7/20] Processing 0086.bmp... Done. PSNR=32.88 SSIM=0.9923
+[8/20] Processing 0087.bmp... Done. PSNR=32.93 SSIM=0.9931
+[9/20] Processing 0088.bmp... Done. PSNR=34.54 SSIM=0.9948
+[10/20] Processing 0089.bmp... Done. PSNR=32.44 SSIM=0.9920
+[11/20] Processing 0090.bmp... Done. PSNR=30.81 SSIM=0.9872
+[12/20] Processing 0091.bmp... Done. PSNR=34.75 SSIM=0.9949
+[13/20] Processing 0092.bmp... Done. PSNR=32.72 SSIM=0.9927
+[14/20] Processing 0093.bmp... Done. PSNR=31.01 SSIM=0.9886
+[15/20] Processing 0094.bmp... Done. PSNR=29.40 SSIM=0.9819
+[16/20] Processing 0095.bmp... Done. PSNR=34.10 SSIM=0.9938
+[17/20] Processing 0096.bmp... Done. PSNR=31.39 SSIM=0.9897
+[18/20] Processing 0097.bmp... Done. PSNR=31.51 SSIM=0.9893
+[19/20] Processing 0098.bmp... Done. PSNR=33.22 SSIM=0.9933
+[20/20] Processing 0099.bmp... Done. PSNR=32.19 SSIM=0.9928
+-> Avg PSNR/SSIM over 20 pairs: PSNR=32.43 SSIM=0.9909
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_latest\reconstruct_progress_latest_in_stage_36_boundary_junctions_20260505_142301\boundary_val_unseen_stage_36_boundar
+y_junctions_latest.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\latest.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_oe8aadn0\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099832
+-> Weak PSF active. beta_scale=0.155632, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest\reconst
+ruct_progress_latest_in_stage_37_boundary_curves_20260505_142301\boundary_val_unseen_stage_37_boundary_curves_latest.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_37_boundary_curve
+s
+[1/20] Processing 0080.bmp... Done. PSNR=37.74 SSIM=0.9967
+[2/20] Processing 0081.bmp... Done. PSNR=37.33 SSIM=0.9969
+[3/20] Processing 0082.bmp... Done. PSNR=35.72 SSIM=0.9938
+[4/20] Processing 0083.bmp... Done. PSNR=35.91 SSIM=0.9956
+[5/20] Processing 0084.bmp... Done. PSNR=37.48 SSIM=0.9974
+[6/20] Processing 0085.bmp... Done. PSNR=36.14 SSIM=0.9953
+[7/20] Processing 0086.bmp... Done. PSNR=35.06 SSIM=0.9928
+[8/20] Processing 0087.bmp... Done. PSNR=34.53 SSIM=0.9946
+[9/20] Processing 0088.bmp... Done. PSNR=37.03 SSIM=0.9979
+[10/20] Processing 0089.bmp... Done. PSNR=33.85 SSIM=0.9846
+[11/20] Processing 0090.bmp... Done. PSNR=32.82 SSIM=0.9869
+[12/20] Processing 0091.bmp... Done. PSNR=35.27 SSIM=0.9924
+[13/20] Processing 0092.bmp... Done. PSNR=36.38 SSIM=0.9969
+[14/20] Processing 0093.bmp... Done. PSNR=37.28 SSIM=0.9963
+[15/20] Processing 0094.bmp... Done. PSNR=36.93 SSIM=0.9962
+[16/20] Processing 0095.bmp... Done. PSNR=36.30 SSIM=0.9966
+[17/20] Processing 0096.bmp... Done. PSNR=37.39 SSIM=0.9972
+[18/20] Processing 0097.bmp... Done. PSNR=35.08 SSIM=0.9944
+[19/20] Processing 0098.bmp... Done. PSNR=38.80 SSIM=0.9969
+[20/20] Processing 0099.bmp... Done. PSNR=34.50 SSIM=0.9923
+-> Avg PSNR/SSIM over 20 pairs: PSNR=36.08 SSIM=0.9946
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_latest\reconstruct_progress_latest_in_stage_37_boundary_curves_20260505_142301\boundary_val_unseen_stage_37_boundary_c
+urves_latest.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\latest.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_qjfvbtzq\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099832
+-> Weak PSF active. beta_scale=0.155632, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest\reconst
+ruct_progress_latest_in_stage_38_boundary_regions_20260505_142301\boundary_val_unseen_stage_38_boundary_regions_latest.p
+th
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_38_boundary_regio
+ns
+[1/20] Processing 0080.bmp... Done. PSNR=37.27 SSIM=0.9892
+[2/20] Processing 0081.bmp... Done. PSNR=39.02 SSIM=0.9896
+[3/20] Processing 0082.bmp... Done. PSNR=33.56 SSIM=0.9863
+[4/20] Processing 0083.bmp... Done. PSNR=40.65 SSIM=0.9949
+[5/20] Processing 0084.bmp... Done. PSNR=36.56 SSIM=0.9902
+[6/20] Processing 0085.bmp... Done. PSNR=36.61 SSIM=0.9873
+[7/20] Processing 0086.bmp... Done. PSNR=36.57 SSIM=0.9921
+[8/20] Processing 0087.bmp... Done. PSNR=37.28 SSIM=0.9950
+[9/20] Processing 0088.bmp... Done. PSNR=36.70 SSIM=0.9881
+[10/20] Processing 0089.bmp... Done. PSNR=37.01 SSIM=0.9896
+[11/20] Processing 0090.bmp... Done. PSNR=34.71 SSIM=0.9863
+[12/20] Processing 0091.bmp... Done. PSNR=39.57 SSIM=0.9942
+[13/20] Processing 0092.bmp... Done. PSNR=34.92 SSIM=0.9733
+[14/20] Processing 0093.bmp... Done. PSNR=39.67 SSIM=0.9961
+[15/20] Processing 0094.bmp... Done. PSNR=40.90 SSIM=0.9943
+[16/20] Processing 0095.bmp... Done. PSNR=34.82 SSIM=0.9898
+[17/20] Processing 0096.bmp... Done. PSNR=41.81 SSIM=0.9958
+[18/20] Processing 0097.bmp... Done. PSNR=40.27 SSIM=0.9924
+[19/20] Processing 0098.bmp... Done. PSNR=37.28 SSIM=0.9963
+[20/20] Processing 0099.bmp... Done. PSNR=37.11 SSIM=0.9915
+-> Avg PSNR/SSIM over 20 pairs: PSNR=37.62 SSIM=0.9906
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_latest\reconstruct_progress_latest_in_stage_38_boundary_regions_20260505_142301\boundary_val_unseen_stage_38_boundary_
+regions_latest.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\latest.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_2n00nzyx\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099832
+-> Weak PSF active. beta_scale=0.155632, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest\reconst
+ruct_progress_latest_in_stage_39_boundary_defects_20260505_142301\boundary_val_unseen_stage_39_boundary_defects_latest.p
+th
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_39_boundary_defec
+ts
+[1/20] Processing 0080.bmp... Done. PSNR=35.85 SSIM=0.9887
+[2/20] Processing 0081.bmp... Done. PSNR=37.66 SSIM=0.9881
+[3/20] Processing 0082.bmp... Done. PSNR=33.09 SSIM=0.9792
+[4/20] Processing 0083.bmp... Done. PSNR=36.17 SSIM=0.9910
+[5/20] Processing 0084.bmp... Done. PSNR=37.62 SSIM=0.9937
+[6/20] Processing 0085.bmp... Done. PSNR=37.69 SSIM=0.9886
+[7/20] Processing 0086.bmp... Done. PSNR=35.13 SSIM=0.9858
+[8/20] Processing 0087.bmp... Done. PSNR=39.32 SSIM=0.9935
+[9/20] Processing 0088.bmp... Done. PSNR=35.96 SSIM=0.9890
+[10/20] Processing 0089.bmp... Done. PSNR=38.26 SSIM=0.9908
+[11/20] Processing 0090.bmp... Done. PSNR=39.15 SSIM=0.9897
+[12/20] Processing 0091.bmp... Done. PSNR=38.88 SSIM=0.9919
+[13/20] Processing 0092.bmp... Done. PSNR=35.74 SSIM=0.9881
+[14/20] Processing 0093.bmp... Done. PSNR=34.64 SSIM=0.9875
+[15/20] Processing 0094.bmp... Done. PSNR=34.45 SSIM=0.9881
+[16/20] Processing 0095.bmp... Done. PSNR=35.48 SSIM=0.9839
+[17/20] Processing 0096.bmp... Done. PSNR=33.63 SSIM=0.9904
+[18/20] Processing 0097.bmp... Done. PSNR=36.98 SSIM=0.9899
+[19/20] Processing 0098.bmp... Done. PSNR=36.09 SSIM=0.9859
+[20/20] Processing 0099.bmp... Done. PSNR=36.06 SSIM=0.9872
+-> Avg PSNR/SSIM over 20 pairs: PSNR=36.39 SSIM=0.9885
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_latest\reconstruct_progress_latest_in_stage_39_boundary_defects_20260505_142301\boundary_val_unseen_stage_39_boundary_
+defects_latest.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+1\weights\latest.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf__wo177ad\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099832
+-> Weak PSF active. beta_scale=0.155632, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_142301
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest\reconst
+ruct_progress_latest_in_stage_40_boundary_mixed_20260505_142301\boundary_val_unseen_stage_40_boundary_mixed_latest.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_40_boundary_mixed
+[1/20] Processing 0080.bmp... Done. PSNR=37.84 SSIM=0.9892
+[2/20] Processing 0081.bmp... Done. PSNR=33.46 SSIM=0.9777
+[3/20] Processing 0082.bmp... Done. PSNR=34.98 SSIM=0.9918
+[4/20] Processing 0083.bmp... Done. PSNR=34.22 SSIM=0.9647
+[5/20] Processing 0084.bmp... Done. PSNR=35.66 SSIM=0.9812
+[6/20] Processing 0085.bmp... Done. PSNR=36.41 SSIM=0.9875
+[7/20] Processing 0086.bmp... Done. PSNR=34.01 SSIM=0.9855
+[8/20] Processing 0087.bmp... Done. PSNR=35.41 SSIM=0.9834
+[9/20] Processing 0088.bmp... Done. PSNR=38.48 SSIM=0.9906
+[10/20] Processing 0089.bmp... Done. PSNR=30.74 SSIM=0.9893
+[11/20] Processing 0090.bmp... Done. PSNR=34.82 SSIM=0.9883
+[12/20] Processing 0091.bmp... Done. PSNR=39.32 SSIM=0.9912
+[13/20] Processing 0092.bmp... Done. PSNR=36.21 SSIM=0.9744
+[14/20] Processing 0093.bmp... Done. PSNR=37.42 SSIM=0.9922
+[15/20] Processing 0094.bmp... Done. PSNR=37.31 SSIM=0.9910
+[16/20] Processing 0095.bmp... Done. PSNR=37.21 SSIM=0.9882
+[17/20] Processing 0096.bmp... Done. PSNR=38.69 SSIM=0.9895
+[18/20] Processing 0097.bmp... Done. PSNR=34.09 SSIM=0.9913
+[19/20] Processing 0098.bmp... Done. PSNR=34.30 SSIM=0.9859
+[20/20] Processing 0099.bmp... Done. PSNR=35.90 SSIM=0.9822
+-> Avg PSNR/SSIM over 20 pairs: PSNR=35.82 SSIM=0.9858
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_comb
+o_latest\reconstruct_progress_latest_in_stage_40_boundary_mixed_20260505_142301\boundary_val_unseen_stage_40_boundary_mi
+xed_latest.pth
+{
+  "profile": "boundary_val_unseen",
+  "data_root": "D:\\GMM_2_Final\\Training_Data\\r42_microscopy_boundary_fidelity",
+  "recon_root": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest
+",
+  "total_count": 140,
+  "overall_avg_psnr": 34.090168249264075,
+  "overall_hf_retention": 0.7509367092275333,
+  "overall_boundary_distance_px": 16.714958434738218,
+  "overall_boundary_fscore_t1p0": 0.49902371252987304,
+  "stages": [
+    {
+      "stage": "stage_34_boundary_lines",
+      "count": 20,
+      "avg_psnr": 32.821094746934676,
+      "avg_hf_retention": 0.6697058216483638,
+      "avg_boundary_distance_px": 11.77275915145874,
+      "avg_boundary_fscore_t1p0": 0.5555051325296428,
+      "avg_centerline_distance_px": 13.805610990524292,
+      "avg_grid_pitch_error_px": 55.52777777777778,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct
+_progress_latest_in_stage_34_boundary_lines_20260505_142301\\boundary_val_unseen_stage_34_boundary_lines_latest.pth"
+    },
+    {
+      "stage": "stage_35_boundary_grids",
+      "count": 20,
+      "avg_psnr": 27.596852580298936,
+      "avg_hf_retention": 0.856409662313844,
+      "avg_boundary_distance_px": 0.45900495257228613,
+      "avg_boundary_fscore_t1p0": 0.917346328722941,
+      "avg_centerline_distance_px": 1.2543167889118194,
+      "avg_grid_pitch_error_px": 25.35,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct
+_progress_latest_in_stage_35_boundary_grids_20260505_142301\\boundary_val_unseen_stage_35_boundary_grids_latest.pth"
+    },
+    {
+      "stage": "stage_36_boundary_junctions",
+      "count": 20,
+      "avg_psnr": 32.41410445200208,
+      "avg_hf_retention": 0.6819811850744913,
+      "avg_boundary_distance_px": 18.016987490653992,
+      "avg_boundary_fscore_t1p0": 0.5135565550066798,
+      "avg_centerline_distance_px": 20.23599953651428,
+      "avg_grid_pitch_error_px": 78.07142857142857,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct
+_progress_latest_in_stage_36_boundary_junctions_20260505_142301\\boundary_val_unseen_stage_36_boundary_junctions_latest.
+pth"
+    },
+    {
+      "stage": "stage_37_boundary_curves",
+      "count": 20,
+      "avg_psnr": 36.046854834570766,
+      "avg_hf_retention": 0.7447973604570398,
+      "avg_boundary_distance_px": 55.25968647003174,
+      "avg_boundary_fscore_t1p0": 0.25221877971928713,
+      "avg_centerline_distance_px": 57.998429679870604,
+      "avg_grid_pitch_error_px": 157.265625,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct
+_progress_latest_in_stage_37_boundary_curves_20260505_142301\\boundary_val_unseen_stage_37_boundary_curves_latest.pth"
+    },
+    {
+      "stage": "stage_38_boundary_regions",
+      "count": 20,
+      "avg_psnr": 37.58708198149854,
+      "avg_hf_retention": 0.804833914469713,
+      "avg_boundary_distance_px": 11.963334000110626,
+      "avg_boundary_fscore_t1p0": 0.40511015746195983,
+      "avg_centerline_distance_px": 10.680254483222962,
+      "avg_grid_pitch_error_px": 47.97222222222222,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct
+_progress_latest_in_stage_38_boundary_regions_20260505_142301\\boundary_val_unseen_stage_38_boundary_regions_latest.pth"
+
+    },
+    {
+      "stage": "stage_39_boundary_defects",
+      "count": 20,
+      "avg_psnr": 36.36937481736359,
+      "avg_hf_retention": 0.7494010661899799,
+      "avg_boundary_distance_px": 11.593945562839508,
+      "avg_boundary_fscore_t1p0": 0.40523654848488333,
+      "avg_centerline_distance_px": 8.76041795015335,
+      "avg_grid_pitch_error_px": 46.38157894736842,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct
+_progress_latest_in_stage_39_boundary_defects_20260505_142301\\boundary_val_unseen_stage_39_boundary_defects_latest.pth"
+
+    },
+    {
+      "stage": "stage_40_boundary_mixed",
+      "count": 20,
+      "avg_psnr": 35.795814332179944,
+      "avg_hf_retention": 0.7494279544393019,
+      "avg_boundary_distance_px": 7.938991415500641,
+      "avg_boundary_fscore_t1p0": 0.44419248578371723,
+      "avg_centerline_distance_px": 7.219233608245849,
+      "avg_grid_pitch_error_px": 32.4125,
+      "output_dir": "Experiments\\R42_MicroscopyBoundaryFidelity\\results\\boundary_recon\\r42_combo_latest\\reconstruct
+_progress_latest_in_stage_40_boundary_mixed_20260505_142301\\boundary_val_unseen_stage_40_boundary_mixed_latest.pth"
+    }
+  ]
+}
+[R42] summary written to Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_combo_latest\summary.json
+[R42-EVAL] DONE r42_combo_latest 2026/5/5 下午 03:39:06
+[R42-EVAL] START r42_r41_best 2026/5/5 下午 03:39:06
+[19/20] Processing 0098.bmp... Done. PSNR=31.50 SSIM=0.9903
+[20/20] Processing 0099.bmp... Done. PSNR=32.89 SSIM=0.9915
+-> Avg PSNR/SSIM over 20 pairs: PSNR=31.43 SSIM=0.9879
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_
+best\reconstruct_progress_best_tradeoff_in_stage_34_boundary_lines_20260505_145229\boundary_val_unseen_stage_34_boundary
+_lines_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_7e_3609c\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099880
+-> Weak PSF active. beta_scale=0.092991, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_145229
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best\reconstruct
+_progress_best_tradeoff_in_stage_35_boundary_grids_20260505_145229\boundary_val_unseen_stage_35_boundary_grids_best_trad
+eoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_35_boundary_grids
+[1/20] Processing 0080.bmp... Done. PSNR=26.90 SSIM=0.9640
+[2/20] Processing 0081.bmp... Done. PSNR=23.24 SSIM=0.9425
+[3/20] Processing 0082.bmp... Done. PSNR=23.19 SSIM=0.9403
+[4/20] Processing 0083.bmp... Done. PSNR=26.12 SSIM=0.9572
+[5/20] Processing 0084.bmp... Done. PSNR=27.25 SSIM=0.9715
+[6/20] Processing 0085.bmp... Done. PSNR=26.02 SSIM=0.9389
+[7/20] Processing 0086.bmp... Done. PSNR=22.51 SSIM=0.9344
+[8/20] Processing 0087.bmp... Done. PSNR=18.51 SSIM=0.7899
+[9/20] Processing 0088.bmp... Done. PSNR=25.06 SSIM=0.9767
+[10/20] Processing 0089.bmp... Done. PSNR=20.11 SSIM=0.8385
+[11/20] Processing 0090.bmp... Done. PSNR=27.51 SSIM=0.9805
+[12/20] Processing 0091.bmp... Done. PSNR=21.41 SSIM=0.9537
+[13/20] Processing 0092.bmp... Done. PSNR=29.26 SSIM=0.9877
+[14/20] Processing 0093.bmp... Done. PSNR=25.60 SSIM=0.9845
+[15/20] Processing 0094.bmp... Done. PSNR=18.28 SSIM=0.8380
+[16/20] Processing 0095.bmp... Done. PSNR=28.17 SSIM=0.9770
+[17/20] Processing 0096.bmp... Done. PSNR=30.24 SSIM=0.9921
+[18/20] Processing 0097.bmp... Done. PSNR=25.40 SSIM=0.9478
+[19/20] Processing 0098.bmp... Done. PSNR=27.21 SSIM=0.9734
+[20/20] Processing 0099.bmp... Done. PSNR=17.16 SSIM=0.8220
+-> Avg PSNR/SSIM over 20 pairs: PSNR=24.46 SSIM=0.9355
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_
+best\reconstruct_progress_best_tradeoff_in_stage_35_boundary_grids_20260505_145229\boundary_val_unseen_stage_35_boundary
+_grids_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_c2k4zo73\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099880
+-> Weak PSF active. beta_scale=0.092991, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_145229
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best\reconstruct
+_progress_best_tradeoff_in_stage_36_boundary_junctions_20260505_145229\boundary_val_unseen_stage_36_boundary_junctions_b
+est_tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_36_boundary_junct
+ions
+[1/20] Processing 0080.bmp... Done. PSNR=33.83 SSIM=0.9933
+[2/20] Processing 0081.bmp... Done. PSNR=29.73 SSIM=0.9840
+[3/20] Processing 0082.bmp... Done. PSNR=32.53 SSIM=0.9896
+[4/20] Processing 0083.bmp... Done. PSNR=29.28 SSIM=0.9812
+[5/20] Processing 0084.bmp... Done. PSNR=32.38 SSIM=0.9900
+[6/20] Processing 0085.bmp... Done. PSNR=30.37 SSIM=0.9874
+[7/20] Processing 0086.bmp... Done. PSNR=30.91 SSIM=0.9883
+[8/20] Processing 0087.bmp... Done. PSNR=31.37 SSIM=0.9834
+[9/20] Processing 0088.bmp... Done. PSNR=32.67 SSIM=0.9929
+[10/20] Processing 0089.bmp... Done. PSNR=30.32 SSIM=0.9866
+[11/20] Processing 0090.bmp... Done. PSNR=30.27 SSIM=0.9853
+[12/20] Processing 0091.bmp... Done. PSNR=33.29 SSIM=0.9927
+[13/20] Processing 0092.bmp... Done. PSNR=31.19 SSIM=0.9907
+[14/20] Processing 0093.bmp... Done. PSNR=29.36 SSIM=0.9786
+[15/20] Processing 0094.bmp... Done. PSNR=28.92 SSIM=0.9788
+[16/20] Processing 0095.bmp... Done. PSNR=33.28 SSIM=0.9925
+[17/20] Processing 0096.bmp... Done. PSNR=30.29 SSIM=0.9867
+[18/20] Processing 0097.bmp... Done. PSNR=29.86 SSIM=0.9847
+[19/20] Processing 0098.bmp... Done. PSNR=31.07 SSIM=0.9892
+[20/20] Processing 0099.bmp... Done. PSNR=30.12 SSIM=0.9863
+-> Avg PSNR/SSIM over 20 pairs: PSNR=31.05 SSIM=0.9871
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_
+best\reconstruct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260505_145229\boundary_val_unseen_stage_36_boun
+dary_junctions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_0wmx1try\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099880
+-> Weak PSF active. beta_scale=0.092991, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_145229
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best\reconstruct
+_progress_best_tradeoff_in_stage_37_boundary_curves_20260505_145229\boundary_val_unseen_stage_37_boundary_curves_best_tr
+adeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_37_boundary_curve
+s
+[1/20] Processing 0080.bmp... Done. PSNR=36.59 SSIM=0.9958
+[2/20] Processing 0081.bmp... Done. PSNR=35.04 SSIM=0.9884
+[3/20] Processing 0082.bmp... Done. PSNR=35.12 SSIM=0.9951
+[4/20] Processing 0083.bmp... Done. PSNR=33.50 SSIM=0.9923
+[5/20] Processing 0084.bmp... Done. PSNR=37.15 SSIM=0.9972
+[6/20] Processing 0085.bmp... Done. PSNR=34.43 SSIM=0.9893
+[7/20] Processing 0086.bmp... Done. PSNR=33.13 SSIM=0.9773
+[8/20] Processing 0087.bmp... Done. PSNR=33.13 SSIM=0.9925
+[9/20] Processing 0088.bmp... Done. PSNR=35.85 SSIM=0.9926
+[10/20] Processing 0089.bmp... Done. PSNR=31.47 SSIM=0.9656
+[11/20] Processing 0090.bmp... Done. PSNR=31.09 SSIM=0.9673
+[12/20] Processing 0091.bmp... Done. PSNR=35.03 SSIM=0.9951
+[13/20] Processing 0092.bmp... Done. PSNR=34.37 SSIM=0.9953
+[14/20] Processing 0093.bmp... Done. PSNR=36.32 SSIM=0.9955
+[15/20] Processing 0094.bmp... Done. PSNR=34.87 SSIM=0.9896
+[16/20] Processing 0095.bmp... Done. PSNR=35.01 SSIM=0.9952
+[17/20] Processing 0096.bmp... Done. PSNR=34.86 SSIM=0.9923
+[18/20] Processing 0097.bmp... Done. PSNR=33.09 SSIM=0.9916
+[19/20] Processing 0098.bmp... Done. PSNR=37.08 SSIM=0.9954
+[20/20] Processing 0099.bmp... Done. PSNR=33.57 SSIM=0.9901
+-> Avg PSNR/SSIM over 20 pairs: PSNR=34.54 SSIM=0.9897
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_
+best\reconstruct_progress_best_tradeoff_in_stage_37_boundary_curves_20260505_145229\boundary_val_unseen_stage_37_boundar
+y_curves_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_a5d2ef10\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099880
+-> Weak PSF active. beta_scale=0.092991, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_145229
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best\reconstruct
+_progress_best_tradeoff_in_stage_38_boundary_regions_20260505_145229\boundary_val_unseen_stage_38_boundary_regions_best_
+tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_38_boundary_regio
+ns
+[1/20] Processing 0080.bmp... Done. PSNR=36.72 SSIM=0.9886
+[2/20] Processing 0081.bmp... Done. PSNR=38.97 SSIM=0.9910
+[3/20] Processing 0082.bmp... Done. PSNR=33.60 SSIM=0.9861
+[4/20] Processing 0083.bmp... Done. PSNR=39.51 SSIM=0.9938
+[5/20] Processing 0084.bmp... Done. PSNR=36.96 SSIM=0.9878
+[6/20] Processing 0085.bmp... Done. PSNR=35.88 SSIM=0.9865
+[7/20] Processing 0086.bmp... Done. PSNR=37.96 SSIM=0.9918
+[8/20] Processing 0087.bmp... Done. PSNR=38.46 SSIM=0.9944
+[9/20] Processing 0088.bmp... Done. PSNR=35.38 SSIM=0.9864
+[10/20] Processing 0089.bmp... Done. PSNR=38.24 SSIM=0.9881
+[11/20] Processing 0090.bmp... Done. PSNR=34.71 SSIM=0.9848
+[12/20] Processing 0091.bmp... Done. PSNR=36.74 SSIM=0.9912
+[13/20] Processing 0092.bmp... Done. PSNR=34.45 SSIM=0.9666
+[14/20] Processing 0093.bmp... Done. PSNR=36.96 SSIM=0.9953
+[15/20] Processing 0094.bmp... Done. PSNR=38.90 SSIM=0.9923
+[16/20] Processing 0095.bmp... Done. PSNR=33.21 SSIM=0.9872
+[17/20] Processing 0096.bmp... Done. PSNR=41.57 SSIM=0.9927
+[18/20] Processing 0097.bmp... Done. PSNR=40.05 SSIM=0.9915
+[19/20] Processing 0098.bmp... Done. PSNR=36.91 SSIM=0.9953
+[20/20] Processing 0099.bmp... Done. PSNR=36.20 SSIM=0.9900
+-> Avg PSNR/SSIM over 20 pairs: PSNR=37.07 SSIM=0.9891
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_
+best\reconstruct_progress_best_tradeoff_in_stage_38_boundary_regions_20260505_145229\boundary_val_unseen_stage_38_bounda
+ry_regions_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_xqxyq1xu\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099880
+-> Weak PSF active. beta_scale=0.092991, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_145229
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best\reconstruct
+_progress_best_tradeoff_in_stage_39_boundary_defects_20260505_145229\boundary_val_unseen_stage_39_boundary_defects_best_
+tradeoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_39_boundary_defec
+ts
+[1/20] Processing 0080.bmp... Done. PSNR=36.79 SSIM=0.9878
+[2/20] Processing 0081.bmp... Done. PSNR=37.53 SSIM=0.9872
+[3/20] Processing 0082.bmp... Done. PSNR=32.93 SSIM=0.9782
+[4/20] Processing 0083.bmp... Done. PSNR=36.81 SSIM=0.9906
+[5/20] Processing 0084.bmp... Done. PSNR=38.20 SSIM=0.9939
+[6/20] Processing 0085.bmp... Done. PSNR=37.37 SSIM=0.9900
+[7/20] Processing 0086.bmp... Done. PSNR=34.72 SSIM=0.9836
+[8/20] Processing 0087.bmp... Done. PSNR=39.22 SSIM=0.9924
+[9/20] Processing 0088.bmp... Done. PSNR=35.80 SSIM=0.9868
+[10/20] Processing 0089.bmp... Done. PSNR=38.25 SSIM=0.9896
+[11/20] Processing 0090.bmp... Done. PSNR=38.09 SSIM=0.9882
+[12/20] Processing 0091.bmp... Done. PSNR=37.91 SSIM=0.9909
+[13/20] Processing 0092.bmp... Done. PSNR=35.34 SSIM=0.9864
+[14/20] Processing 0093.bmp... Done. PSNR=33.83 SSIM=0.9858
+[15/20] Processing 0094.bmp... Done. PSNR=33.74 SSIM=0.9862
+[16/20] Processing 0095.bmp... Done. PSNR=35.39 SSIM=0.9845
+[17/20] Processing 0096.bmp... Done. PSNR=35.60 SSIM=0.9894
+[18/20] Processing 0097.bmp... Done. PSNR=37.11 SSIM=0.9881
+[19/20] Processing 0098.bmp... Done. PSNR=35.38 SSIM=0.9839
+[20/20] Processing 0099.bmp... Done. PSNR=35.11 SSIM=0.9850
+-> Avg PSNR/SSIM over 20 pairs: PSNR=36.26 SSIM=0.9874
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_
+best\reconstruct_progress_best_tradeoff_in_stage_39_boundary_defects_20260505_145229\boundary_val_unseen_stage_39_bounda
+ry_defects_best_tradeoff.pth
+-> Using device: cuda:0
+-> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+weights\best_tradeoff.pth.tar
+-> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_j2v5za6k\psf_from_ckpt.mat)
+-> Weights loaded successfully.
+-> Physics active. reg=10.000000, alpha=0.099880
+-> Weak PSF active. beta_scale=0.092991, entropy_mix=0.000000
+-> Output tag timestamp from weight source: 20260505_145229
+-> Found 20 images. Starting reconstruction...
+-> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best\reconstruct
+_progress_best_tradeoff_in_stage_40_boundary_mixed_20260505_145229\boundary_val_unseen_stage_40_boundary_mixed_best_trad
+eoff.pth
+-> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_best
+-> Align factor: 64
+-> GT dir: D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\boundary_val_unseen\lbl\stage_40_boundary_mixed
+[1/20] Processing 0080.bmp... Done. PSNR=38.12 SSIM=0.9912
+[2/20] Processing 0081.bmp... Done. PSNR=33.40 SSIM=0.9757
+[3/20] Processing 0082.bmp... Done. PSNR=35.36 SSIM=0.9903
+[4/20] Processing 0083.bmp... Done. PSNR=33.77 SSIM=0.9612
+[5/20] Processing 0084.bmp... Done. PSNR=34.78 SSIM=0.9792
+[6/20] Processing 0085.bmp... Done. PSNR=36.00 SSIM=0.9858
+[7/20] Processing 0086.bmp... Done. PSNR=33.57 SSIM=0.9828
+[8/20] Processing 0087.bmp... Done. PSNR=34.60 SSIM=0.9773
+[9/20] Processing 0088.bmp... Done. PSNR=38.94 SSIM=0.9899
+[10/20] Processing 0089.bmp... Done. PSNR=32.06 SSIM=0.9880
+[11/20] Processing 0090.bmp... Done. PSNR=34.38 SSIM=0.9857
+[12/20] Processing 0091.bmp... Done. PSNR=39.89 SSIM=0.9900
+[13/20] Processing 0092.bmp... Done. PSNR=33.89 SSIM=0.9613
+[14/20] Processing 0093.bmp... Done. PSNR=38.32 SSIM=0.9915
+[15/20] Processing 0094.bmp... Done. PSNR=37.27 SSIM=0.9899
+[16/20] Processing 0095.bmp... Done. PSNR=35.71 SSIM=0.9855
+[17/20] Processing 0096.bmp... Done. PSNR=36.60 SSIM=0.9836
+[18/20] Processing 0097.bmp... Done. PSNR=35.01 SSIM=0.9903
+[19/20] Processing 0098.bmp... Done. PSNR=35.19 SSIM=0.9849
+[20/20] Processing 0099.bmp... Done. PSNR=34.19 SSIM=0.9775
+-> Avg PSNR/SSIM over 20 pairs: PSNR=35.55 SSIM=0.9831
+-> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_r41_
+best\reconstruct_progress_best_tradeoff_in_stage_40_boundary_mixed_20260505_145229\boundary_val_unseen_stage_40_boundary
+_mixed_best_tradeoff.pth
+
+[R42-EVAL] DONE r42_r41_best 2026/5/5 下午 03:39:32
+[R42-EVAL] START r42_r41_latest 2026/5/5 下午 03:39:32
+
+
+[R42-EVAL] DONE r42_r41_latest 2026/5/5 下午 03:40:12
+[R42-EVAL] ALL DONE 2026/5/5 下午 03:40:12
+**********************
+Windows PowerShell 轉譯結束
+結束時間: 20260505154012
+**********************

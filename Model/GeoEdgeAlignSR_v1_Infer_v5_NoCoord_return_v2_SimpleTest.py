@@ -67,7 +67,7 @@ DEFAULT_PSF_PATH = PROJECT_ROOT / "PSF_Fitting" / "Crop_circle_FreqFiltered" / "
 DEFAULT_ALIGN_FACTOR = 64
 
 # Set to "all"/"odd"/"even" for hard override; set None to use CLI arg.
-MANUAL_SELECT_MODE = "odd"
+MANUAL_SELECT_MODE = None
 # Set to a path string or Path(...) for hard override; set None to use CLI/auto search.
 # Example:
 # MANUAL_WEIGHTS_PATH = Path(r"D:\GMM_2_Final\Traing_Progress\training_progress_xxx\weights\latest.pth.tar")
@@ -91,6 +91,15 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--align-factor", type=int, default=DEFAULT_ALIGN_FACTOR, help="Pad H/W to multiple of this value")
     p.add_argument("--exts", default=None, help="Comma-separated suffix list, e.g. .bmp,.png")
     p.add_argument("--select-mode", default="all", choices=["all", "odd", "even"], help="all/odd/even image selection")
+    p.add_argument(
+        "--anchor-output-mode",
+        default="none",
+        choices=["none", "blend", "detail"],
+        help="Keep raw low-frequency position while using reconstruction detail.",
+    )
+    p.add_argument("--anchor-alpha", type=float, default=0.10, help="Reconstruction fraction for anchor blend mode")
+    p.add_argument("--anchor-sigma", type=float, default=2.0, help="Gaussian sigma for anchor detail mode")
+    p.add_argument("--anchor-detail-gain", type=float, default=0.35, help="Detail gain for anchor detail mode")
 
     # PSF source
     p.add_argument("--psf-fitted-path", type=Path, default=None, help="Optional explicit PSF .mat path")
@@ -303,7 +312,7 @@ def tensor_scalar(state_dict: dict, key: str, default: float | None = None) -> f
     return default
 
 
-def infer_arch_from_state(state_dict: dict):
+def infer_arch_from_state(state_dict: dict, ckpt_obj=None):
     conv = state_dict.get("e1.0.conv.weight")
     in_ch = 1
     base = 48
@@ -314,11 +323,62 @@ def infer_arch_from_state(state_dict: dict):
     use_physics_layer = any(k.startswith("physics_layer.") for k in state_dict.keys())
     weak_psf_enable = any(k.startswith("weak_psf_block.") for k in state_dict.keys())
     use_band_limit = any(k.startswith("band_limit.") for k in state_dict.keys())
+    boundary_adapter_enable = any(k.startswith("boundary_adapter.") for k in state_dict.keys())
+    quality_gate_enable = any(k.startswith("quality_gate.") for k in state_dict.keys())
 
     weak_psf_k = 4
     weak_psf_psfs = state_dict.get("weak_psf_block.PSFs")
     if isinstance(weak_psf_psfs, torch.Tensor) and weak_psf_psfs.ndim == 4:
         weak_psf_k = int(weak_psf_psfs.shape[1])
+
+    boundary_adapter_hidden = 16
+    boundary_adapter_w = state_dict.get("boundary_adapter.body.0.weight")
+    if isinstance(boundary_adapter_w, torch.Tensor) and boundary_adapter_w.ndim == 4:
+        boundary_adapter_hidden = int(boundary_adapter_w.shape[0])
+    boundary_adapter_meta = {}
+    if isinstance(ckpt_obj, dict):
+        model_config = ckpt_obj.get("model_config", {})
+        if isinstance(model_config, dict):
+            value = model_config.get("boundary_residual_adapter", {})
+            if isinstance(value, dict):
+                boundary_adapter_meta = value
+    boundary_adapter_delta_bias = "boundary_adapter.delta.bias" in state_dict
+    if "delta_bias" in boundary_adapter_meta:
+        boundary_adapter_delta_bias = bool(boundary_adapter_meta["delta_bias"])
+    boundary_adapter_zero_mean = bool(boundary_adapter_meta.get("zero_mean", False))
+    boundary_adapter_edge_gate = bool(boundary_adapter_meta.get("edge_gate", False))
+    boundary_adapter_polarity_split = bool(boundary_adapter_meta.get("polarity_split", False))
+    boundary_adapter_orientation_inputs = bool(boundary_adapter_meta.get("orientation_inputs", False))
+    if isinstance(boundary_adapter_w, torch.Tensor) and boundary_adapter_w.ndim == 4:
+        expected_old_inputs = int(base) + 1
+        boundary_adapter_orientation_inputs = (
+            boundary_adapter_orientation_inputs
+            or int(boundary_adapter_w.shape[1]) >= expected_old_inputs + 3
+        )
+    boundary_adapter_delta_w = state_dict.get("boundary_adapter.delta.weight")
+    if isinstance(boundary_adapter_delta_w, torch.Tensor) and boundary_adapter_delta_w.ndim == 4:
+        boundary_adapter_polarity_split = boundary_adapter_polarity_split or int(boundary_adapter_delta_w.shape[0]) == 2
+    raw_anchor_meta = {}
+    if isinstance(ckpt_obj, dict):
+        model_config = ckpt_obj.get("model_config", {})
+        if isinstance(model_config, dict):
+            value = model_config.get("raw_anchor_output", {})
+            if isinstance(value, dict):
+                raw_anchor_meta = value
+    quality_gate_meta = {}
+    if isinstance(ckpt_obj, dict):
+        model_config = ckpt_obj.get("model_config", {})
+        if isinstance(model_config, dict):
+            value = model_config.get("quality_gate", {})
+            if isinstance(value, dict):
+                quality_gate_meta = value
+    quality_gate_enable = bool(quality_gate_meta.get("enable", quality_gate_enable))
+    quality_gate_hidden = int(quality_gate_meta.get("hidden", 8))
+    quality_gate_w = state_dict.get("quality_gate.offset.0.weight")
+    if isinstance(quality_gate_w, torch.Tensor) and quality_gate_w.ndim == 4:
+        quality_gate_hidden = int(quality_gate_w.shape[0])
+    quality_gate_scale_min = float(quality_gate_meta.get("scale_min", 0.75))
+    quality_gate_scale_max = float(quality_gate_meta.get("scale_max", 1.08))
 
     return {
         "in_ch": in_ch,
@@ -326,6 +386,23 @@ def infer_arch_from_state(state_dict: dict):
         "use_physics_layer": use_physics_layer,
         "weak_psf_enable": weak_psf_enable,
         "use_band_limit": use_band_limit,
+        "boundary_residual_adapter_enable": boundary_adapter_enable,
+        "boundary_residual_adapter_hidden": boundary_adapter_hidden,
+        "boundary_residual_adapter_max": tensor_scalar(state_dict, "boundary_adapter.max_residual", 0.025),
+        "boundary_residual_adapter_gate_bias": tensor_scalar(state_dict, "boundary_adapter.gate.bias", -2.0),
+        "boundary_residual_adapter_delta_bias": boundary_adapter_delta_bias,
+        "boundary_residual_adapter_zero_mean": boundary_adapter_zero_mean,
+        "boundary_residual_adapter_edge_gate": boundary_adapter_edge_gate,
+        "boundary_residual_adapter_polarity_split": boundary_adapter_polarity_split,
+        "boundary_residual_adapter_orientation_inputs": boundary_adapter_orientation_inputs,
+        "raw_anchor_output_mode": str(raw_anchor_meta.get("mode", "none")),
+        "raw_anchor_output_alpha": float(raw_anchor_meta.get("alpha", 0.10)),
+        "raw_anchor_output_sigma": float(raw_anchor_meta.get("sigma", 2.0)),
+        "raw_anchor_output_detail_gain": float(raw_anchor_meta.get("detail_gain", 0.35)),
+        "quality_gate_enable": quality_gate_enable,
+        "quality_gate_hidden": quality_gate_hidden,
+        "quality_gate_scale_min": quality_gate_scale_min,
+        "quality_gate_scale_max": quality_gate_scale_max,
         "weak_psf_k": weak_psf_k,
         "psf_deconv_reg": tensor_scalar(state_dict, "physics_layer.reg", 10.0),
         "psf_phys_alpha_init": tensor_scalar(state_dict, "physics_layer.alpha", 0.10),
@@ -436,6 +513,38 @@ def denormalize_to_dtype(pred01: np.ndarray, dtype: np.dtype) -> np.ndarray:
     return pred01.astype(np.float32)
 
 
+def apply_anchor_output(
+    raw01: np.ndarray,
+    pred01: np.ndarray,
+    *,
+    mode: str,
+    alpha: float = 0.10,
+    sigma: float = 2.0,
+    detail_gain: float = 0.35,
+) -> np.ndarray:
+    if raw01.shape != pred01.shape:
+        raise ValueError(f"shape mismatch: raw={raw01.shape} pred={pred01.shape}")
+    raw_f = raw01.astype(np.float32, copy=False)
+    pred_f = pred01.astype(np.float32, copy=False)
+
+    if mode == "none":
+        return np.clip(pred_f, 0.0, 1.0).astype(np.float32)
+    if mode == "blend":
+        if not 0.0 <= alpha <= 1.0:
+            raise ValueError("alpha must be between 0 and 1")
+        anchored = (1.0 - float(alpha)) * raw_f + float(alpha) * pred_f
+        return np.clip(anchored, 0.0, 1.0).astype(np.float32)
+    if mode == "detail":
+        if sigma <= 0:
+            raise ValueError("sigma must be positive")
+        pred_low = cv2.GaussianBlur(pred_f, (0, 0), float(sigma))
+        pred_high = pred_f - pred_low
+        anchored = raw_f + float(detail_gain) * pred_high
+        anchored += float(np.mean(raw_f) - np.mean(anchored))
+        return np.clip(anchored, 0.0, 1.0).astype(np.float32)
+    raise ValueError("mode must be none, blend, or detail")
+
+
 _SSIM_WINDOW_CACHE = {}
 
 
@@ -504,7 +613,18 @@ def load_weights(model: torch.nn.Module, state_dict: dict, strict: bool = False)
 
 
 @torch.inference_mode()
-def run_one(model: torch.nn.Module, device: torch.device, in_path: Path, out_path: Path, align_factor: int, gt_path: Path | None = None):
+def run_one(
+    model: torch.nn.Module,
+    device: torch.device,
+    in_path: Path,
+    out_path: Path,
+    align_factor: int,
+    gt_path: Path | None = None,
+    anchor_output_mode: str = "none",
+    anchor_alpha: float = 0.10,
+    anchor_sigma: float = 2.0,
+    anchor_detail_gain: float = 0.35,
+):
     raw, dtype = read_image_keep_dtype(in_path)
     x01 = normalize_to_01(raw, dtype)
     x_pad, h0, w0 = pad_to_multiple_np(x01, align_factor)
@@ -513,6 +633,14 @@ def run_one(model: torch.nn.Module, device: torch.device, in_path: Path, out_pat
     pred = model(x_t).clamp(0.0, 1.0)
     pred_np = pred[0, 0].detach().cpu().numpy().astype(np.float32)
     pred_np = pred_np[:h0, :w0]
+    pred_np = apply_anchor_output(
+        x01,
+        pred_np,
+        mode=anchor_output_mode,
+        alpha=anchor_alpha,
+        sigma=anchor_sigma,
+        detail_gain=anchor_detail_gain,
+    )
     out = denormalize_to_dtype(pred_np, dtype)
 
     if np.issubdtype(dtype, np.floating):
@@ -564,7 +692,7 @@ def main():
 
     ckpt_obj = torch.load(weights_path, map_location="cpu")
     state_dict = extract_state_dict(ckpt_obj)
-    arch = infer_arch_from_state(state_dict)
+    arch = infer_arch_from_state(state_dict, ckpt_obj=ckpt_obj)
     model_name_for_output = infer_model_name_for_output(ckpt_obj, weights_path)
     source_train_ts = infer_train_timestamp_from_weights_path(weights_path)
     output_dir = build_output_dir(
@@ -602,6 +730,26 @@ def main():
             print("-> Inferred model config from checkpoint:")
             print(f"   in_ch={arch['in_ch']} base={arch['base']}")
             print(f"   use_physics_layer={arch['use_physics_layer']} use_band_limit={use_band_limit} weak_psf_enable={weak_psf_enable}")
+            print(
+                f"   boundary_residual_adapter_enable={arch['boundary_residual_adapter_enable']} "
+                f"hidden={arch['boundary_residual_adapter_hidden']} "
+                f"delta_bias={arch['boundary_residual_adapter_delta_bias']} "
+                f"zero_mean={arch['boundary_residual_adapter_zero_mean']} "
+                f"edge_gate={arch['boundary_residual_adapter_edge_gate']} "
+                f"polarity_split={arch['boundary_residual_adapter_polarity_split']} "
+                f"orientation_inputs={arch['boundary_residual_adapter_orientation_inputs']}"
+            )
+            print(
+                f"   raw_anchor_output_mode={arch['raw_anchor_output_mode']} "
+                f"alpha={arch['raw_anchor_output_alpha']} "
+                f"sigma={arch['raw_anchor_output_sigma']} "
+                f"detail_gain={arch['raw_anchor_output_detail_gain']}"
+            )
+            print(
+                f"   quality_gate_enable={arch['quality_gate_enable']} "
+                f"hidden={arch['quality_gate_hidden']} "
+                f"scale=[{arch['quality_gate_scale_min']}, {arch['quality_gate_scale_max']}]"
+            )
             print(f"   weak_psf_k={weak_psf_k} weak_psf_beta_scale_max={weak_psf_beta_scale_max}")
 
         model = GeoEdgeAlignSR_v1_v5_NoCoord(
@@ -635,6 +783,23 @@ def main():
             weak_psf_beta_scale_max=float(weak_psf_beta_scale_max if weak_psf_beta_scale_max is not None else 0.35),
             weak_psf_deconv_mode=args.weak_psf_deconv_mode,
             weak_psf_inject=args.weak_psf_inject,
+            boundary_residual_adapter_enable=bool(arch["boundary_residual_adapter_enable"]),
+            boundary_residual_adapter_hidden=int(arch["boundary_residual_adapter_hidden"]),
+            boundary_residual_adapter_max=float(arch["boundary_residual_adapter_max"]),
+            boundary_residual_adapter_gate_bias=float(arch["boundary_residual_adapter_gate_bias"]),
+            boundary_residual_adapter_delta_bias=bool(arch["boundary_residual_adapter_delta_bias"]),
+            boundary_residual_adapter_zero_mean=bool(arch["boundary_residual_adapter_zero_mean"]),
+            boundary_residual_adapter_edge_gate=bool(arch["boundary_residual_adapter_edge_gate"]),
+            boundary_residual_adapter_polarity_split=bool(arch["boundary_residual_adapter_polarity_split"]),
+            boundary_residual_adapter_orientation_inputs=bool(arch["boundary_residual_adapter_orientation_inputs"]),
+            raw_anchor_output_mode=str(arch["raw_anchor_output_mode"]),
+            raw_anchor_output_alpha=float(arch["raw_anchor_output_alpha"]),
+            raw_anchor_output_sigma=float(arch["raw_anchor_output_sigma"]),
+            raw_anchor_output_detail_gain=float(arch["raw_anchor_output_detail_gain"]),
+            quality_gate_enable=bool(arch["quality_gate_enable"]),
+            quality_gate_hidden=int(arch["quality_gate_hidden"]),
+            quality_gate_scale_min=float(arch["quality_gate_scale_min"]),
+            quality_gate_scale_max=float(arch["quality_gate_scale_max"]),
         ).to(device)
         model.eval()
 
@@ -716,7 +881,18 @@ def main():
             try:
                 out_path = output_dir / p.name
                 gt_path = (gt_dir / p.name) if gt_dir is not None else None
-                metrics = run_one(model, device, p, out_path, align_factor=args.align_factor, gt_path=gt_path)
+                metrics = run_one(
+                    model,
+                    device,
+                    p,
+                    out_path,
+                    align_factor=args.align_factor,
+                    gt_path=gt_path,
+                    anchor_output_mode=args.anchor_output_mode,
+                    anchor_alpha=args.anchor_alpha,
+                    anchor_sigma=args.anchor_sigma,
+                    anchor_detail_gain=args.anchor_detail_gain,
+                )
                 if metrics:
                     metric_sum["psnr"] += metrics["psnr"]
                     metric_sum["ssim"] += metrics["ssim"]

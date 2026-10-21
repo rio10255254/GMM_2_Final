@@ -1,0 +1,79 @@
+{
+  "experiment_id": "R95_CounterfactualGateRepairScratch",
+  "device": "NVIDIA RTX A6000",
+  "total_memory_gib": 47.98779296875,
+  "minimum_memory_left_for_desktop_gib": 9.0,
+  "selected_scene_batches": {
+    "512": 4,
+    "768": 2,
+    "896": 1
+  },
+  "results": [
+    {
+      "patch": 512,
+      "core": 256,
+      "scene_batch": 4,
+      "flattened_s_views": 4,
+      "seconds": 1.5144808000186458,
+      "peak_allocated_gib": 23.099312782287598,
+      "peak_reserved_gib": 24.201171875,
+      "baseline_used_gib": 1.55908203125,
+      "estimated_peak_free_gib": 22.2275390625,
+      "minimum_required_free_gib": 9.0,
+      "safe": true
+    },
+    {
+      "patch": 768,
+      "core": 384,
+      "scene_batch": 3,
+      "flattened_s_views": 3,
+      "seconds": 1.9659456999506801,
+      "peak_allocated_gib": 38.93329906463623,
+      "peak_reserved_gib": 41.328125,
+      "baseline_used_gib": 1.63720703125,
+      "estimated_peak_free_gib": 5.0224609375,
+      "minimum_required_free_gib": 9.0,
+      "safe": false
+    },
+    {
+      "patch": 768,
+      "core": 384,
+      "scene_batch": 2,
+      "flattened_s_views": 2,
+      "seconds": 1.282417800044641,
+      "peak_allocated_gib": 25.97885227203369,
+      "peak_reserved_gib": 27.25,
+      "baseline_used_gib": 1.63720703125,
+      "estimated_peak_free_gib": 19.1005859375,
+      "minimum_required_free_gib": 9.0,
+      "safe": true
+    },
+    {
+      "patch": 896,
+      "core": 512,
+      "scene_batch": 2,
+      "flattened_s_views": 2,
+      "seconds": 1.7661196999251842,
+      "peak_allocated_gib": 35.47319507598877,
+      "peak_reserved_gib": 37.4921875,
+      "baseline_used_gib": 1.63720703125,
+      "estimated_peak_free_gib": 8.8583984375,
+      "minimum_required_free_gib": 9.0,
+      "safe": false
+    },
+    {
+      "patch": 896,
+      "core": 512,
+      "scene_batch": 1,
+      "flattened_s_views": 1,
+      "seconds": 0.916550499969162,
+      "peak_allocated_gib": 17.79054594039917,
+      "peak_reserved_gib": 19.017578125,
+      "baseline_used_gib": 1.63720703125,
+      "estimated_peak_free_gib": 27.3330078125,
+      "minimum_required_free_gib": 9.0,
+      "safe": true
+    }
+  ],
+  "passed": true
+}

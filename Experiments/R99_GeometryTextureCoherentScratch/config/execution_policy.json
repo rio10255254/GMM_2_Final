@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R99_GeometryTextureCoherentScratch",
+  "created_at": "2026-08-14T10:43:03.670194",
+  "selection_method": "highest measured training throughput while retaining requested free VRAM",
+  "leave_free_gib": 2.0,
+  "external_gpu_used_gib_at_calibration": 1.55908203125,
+  "scene_batch_overrides": {
+    "512": 16,
+    "768": 6,
+    "896": 5
+  },
+  "gradient_accumulation_from_design": true,
+  "channels_last": true,
+  "fused_adamw": true,
+  "bfloat16": true,
+  "crop_before_warp_data_path": true
+}

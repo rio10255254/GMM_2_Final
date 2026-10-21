@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R91_DetailDecoupledScratch",
+  "status": "frozen_before_formal_data",
+  "frozen_at": "2026-08-11T17:22:29.298960",
+  "branch": "sandbox/r88-measurement-faithful-scratch",
+  "files": {
+    "model/r91_model.py": "39d1923c9ba41b8d38d324ab6f5236e515d8632025d90fcc8f2ef0fd009cf90e",
+    "training/train_r91.py": "d71f3fcb9009f28652d727d61b50e46979f8c4d7d995eac57bcd90881ca5c2e4",
+    "inference/reconstruct.py": "0cf1028cd055e5177df208e73a72be30c96de94bbe828c26b1a81ce3a3d4a749",
+    "scripts/generate_dataset.py": "a12d0c5c7419b14eeea81b586ce1fc5d6dfe9cca68b308d45b83c72113d02e04",
+    "scripts/launch_r91.py": "3f254f30c5fa5fac5a85f700e657aa693afb3527c966254e5a1ed885c6d59e12",
+    "scripts/benchmark_r91.py": "c2398944721d556c85cdcb1c9e2f55a52f8d3f529a7bcc2dc7cf1f50b9cab79d",
+    "config/experiment_design.json": "9fea66f07c1e661ffe23f23578d9aabeaae391167d79a9e566321b74f6fa2a5d",
+    "config/acceptance_gates.json": "b89585c5e7193ca7506b5c90492b7a9dd9ef81a802ebb9c9536798e154159625",
+    "config/execution_authorization.json": "2b473f2f27a13ff168f335896a0f4945656ee5536da28f13a8ff92aceffb0b2e",
+    "config/optical_statistics.json": "dd7908e04c537f7a169c104a328f4c6f5908fc5f29b6cc28f501521c8ddbad4f",
+    "config/gpu_safety_profile.json": "0d392cae4ee15b3a532739a6b7960cbbc4a4fc26531ab04e978a6bf364b0db8a"
+  },
+  "preformal_benchmark_sha256": "9c037d9d209f89e19f535243561379ecb15ef13c82b3d3564b12f56ee1cafb2f",
+  "smoke_dataset_content_sha256": "ad05d369356e858e716418cf9f62ef4e9aa4bc1e35c760e3f9282f559bbfda38",
+  "smoke_audit_sha256": "01dbeb878291210e00886f059dd3fa36ee6d8ef43b3b54d42a25959ddf2ad0a9",
+  "formal_run_registry_empty": true
+}

@@ -1,0 +1,33 @@
+{
+  "policy_id": "R98_FORMAL_EXECUTION_V1",
+  "hard_stop_on_low_free_memory": false,
+  "soft_warning_free_gib": 4.0,
+  "minimum_free_vram_guard_gib": 2.0,
+  "forbidden_scene_batches": {
+    "512": [
+      8
+    ]
+  },
+  "scene_batch_overrides": {
+    "512": 6,
+    "768": 2,
+    "896": 1
+  },
+  "oom_fallback_scene_batches": {
+    "512": [
+      4,
+      2,
+      1
+    ],
+    "768": [
+      1
+    ],
+    "896": [
+      1
+    ]
+  },
+  "preserve_target_effective_scene_batch": true,
+  "write_latest_checkpoint_every_epoch": true,
+  "cpu_threads": 8,
+  "acceleration_benchmark": "D:\\GMM_2_Final\\Experiments\\R98_AggressiveTextureScratch\\reports\\acceleration_benchmark.json"
+}

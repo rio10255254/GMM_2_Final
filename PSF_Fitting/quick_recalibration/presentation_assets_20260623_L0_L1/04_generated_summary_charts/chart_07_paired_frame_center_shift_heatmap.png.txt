@@ -1,0 +1,12 @@
+圖名：連拍兩張：估計中心位移量
+
+這張圖在講什麼：
+這張熱圖在看同一位置連拍兩張時，中心估計會差多少像素。大多數位置差異很小，可用來支持拍攝本身沒有劇烈跳動。
+
+簡報可以怎麼用：
+放在補充實驗頁，搭配上一張邊界差異熱圖一起講。
+
+使用時要注意：
+這裡的中心位移是影像層估計，不等於最終 PSF 係數漂移。
+
+原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_metrics.csv

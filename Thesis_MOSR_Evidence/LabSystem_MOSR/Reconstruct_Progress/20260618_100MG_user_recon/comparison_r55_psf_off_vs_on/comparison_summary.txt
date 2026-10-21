@@ -1,0 +1,23 @@
+R55 best_tradeoff PSF-off vs PSF-on comparison
+
+Input: D:\GMM_2_Final\Thesis_MOSR_Evidence\20260618_100MG\Image__2026-06-18__17-10-31.bmp
+PSF-off output: D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20260618_100MG_user_recon\r55_best_tradeoff_psf_off\Image__2026-06-18__17-10-31.bmp
+PSF-on output: D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20260618_100MG_user_recon\r55_best_tradeoff_psf_on_ckpt\Image__2026-06-18__17-10-31.bmp
+PSF-on mode: checkpoint PSF buffers enabled; physics_layer and weak_psf_block loaded from R55 best_tradeoff.
+
+Image-level metrics:
+- Original: mean=85.273, std=31.862, edge_mean=0.070443, edge_p95=0.262306, lap_var=0.000699, hf_rms=0.008031
+- R55 PSF off: mean=92.576, std=42.611, edge_mean=0.090551, edge_p95=0.764716, lap_var=0.003019, hf_rms=0.031611
+- R55 PSF on: mean=83.969, std=38.358, edge_mean=0.082893, edge_p95=0.688635, lap_var=0.002264, hf_rms=0.028271
+
+Pairwise differences:
+- PSF off minus original: MAE=12.564 gray, RMSE=16.458, p99_abs=44.000, SSIM=0.833926
+- PSF on minus original: MAE=7.946 gray, RMSE=11.670, p99_abs=35.000, SSIM=0.842916
+- PSF on minus PSF off: MAE=8.608 gray, RMSE=9.645, p99_abs=15.000, SSIM=0.991646
+
+Region summary:
+- top-left dot field: on-off MAE=11.188, off edge=0.087423, on edge=0.079228, off std=38.667, on std=34.760
+- top-right vertical bars: on-off MAE=7.772, off edge=0.089982, on edge=0.083837, off std=40.194, on std=36.383
+- bottom-left horizontal bars: on-off MAE=8.497, off edge=0.086751, on edge=0.079728, off std=42.273, on std=38.069
+- bottom-right dot field: on-off MAE=6.973, off edge=0.096063, on edge=0.087011, off std=38.884, on std=35.015
+- whole image: on-off MAE=8.608, off edge=0.090551, on edge=0.082893, off std=42.611, on std=38.358

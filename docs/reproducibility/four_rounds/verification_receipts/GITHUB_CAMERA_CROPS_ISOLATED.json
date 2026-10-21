@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "command": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\cpu_env\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\github_workspace\\Tools\\verify_four_round_camera_origins.py",
+    "--report",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\GITHUB_CAMERA_CROPS_VERIFIED.json"
+  ],
+  "blocked_original_roots": [
+    "D:\\GMM_2_Final",
+    "H:\\GMM_2_Final_Archive",
+    "C:\\曾泰明"
+  ],
+  "allowed_copied_roots": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction"
+  ],
+  "python_workers_inherit_guard": true,
+  "seconds": 1.138608694076538
+}

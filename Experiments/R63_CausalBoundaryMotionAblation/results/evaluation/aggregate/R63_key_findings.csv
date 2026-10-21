@@ -1,0 +1,14 @@
+finding_id,comparison,metric,stratum,effect,effect_pct,ci_low,ci_high,interpretation,thesis_status
+overall_cd_50x,Full MOSR vs Raw,cd_median_abs_error_nm,50x,-17.8027,-18.4785,,,Full MOSR lowers median absolute CD error,safe
+overall_cd_20x,Full MOSR vs Raw,cd_median_abs_error_nm,20x,-70.1490,-36.8440,,,Full MOSR lowers median absolute CD error,safe
+overall_grid_all,Full MOSR vs Raw,displacement_within_grid_nm,all_sequences,-10.6676,-60.5231,,,Full MOSR lowers cross-pillar disagreement,safe
+overall_step_all,Full MOSR vs Raw,displacement_step_magnitude_nm,all_sequences,-3.1455,-27.0318,,,Full MOSR lowers step variability,safe
+raw_anchor_cd_20x,No Raw-position anchor vs Full,cd_median_abs_error_nm,20x,88.9402,73.9654,49.2923,125.2898,Anchor prevents a large 20x boundary error increase,safe_with_magnification_scope
+raw_anchor_cd_50x,No Raw-position anchor vs Full,cd_median_abs_error_nm,50x,-15.0915,-19.2151,-21.6129,-15.0915,CD direction reverses at 50x so benefit is not universal,limitation
+raw_anchor_ring_50x,No Raw-position anchor vs Full,outer_ringing_energy,50x,0.000328851,246.1588,0.000324154,0.000338344,Anchor strongly suppresses 50x ringing,safe
+raw_anchor_ring_20x,No Raw-position anchor vs Full,outer_ringing_energy,20x,0.000499400,392.3654,0.000463936,0.000559366,Anchor strongly suppresses 20x ringing,safe
+shiftsafe_grid_all,Ordinary vs ShiftSafe upsampling,displacement_within_grid_nm,all_sequences,0.9771,14.3104,0.2135,1.7144,ShiftSafe lowers cross-pillar disagreement,safe
+shiftsafe_grid_50x,Ordinary vs ShiftSafe upsampling,displacement_within_grid_nm,50x_all,0.6104,14.4670,0.1419,1.0914,ShiftSafe lowers 50x cross-pillar disagreement,safe
+shiftsafe_grid_20x,Ordinary vs ShiftSafe upsampling,displacement_within_grid_nm,20x_all,1.3439,14.2404,-0.0894,2.7987,Same direction but interval crosses zero,suggestive
+shiftsafe_step_all,Ordinary vs ShiftSafe upsampling,displacement_step_magnitude_nm,all_sequences,0.3954,4.6795,-0.2841,0.9954,Step variability effect is small,unsupported
+overall_ring_50x,Full MOSR vs Raw,outer_ringing_energy,50x,0.0000618,86.1412,,,Full MOSR raises 50x ringing,limitation

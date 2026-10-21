@@ -1,0 +1,10 @@
+{
+  "parent": "config/motion_protocol_v2.json",
+  "preserved_v2_failure": "83.3percent real-crop coverage and0.1116px maximum admitted error fail the unchanged90percent/0.1px requirements",
+  "change": "Use a joint intensity/signed-gradient correlation surface for uniqueness, retaining score0.75, relative-gap0.5, feature agreement1.5px and the same search/overlap. Refine symmetricallyGaussian1-smoothed pixels with8pixel preprocessing/interpolation margin.",
+  "known_answer_calibration": "Original72controls reused for calibration, not an independent test",
+  "independent_parameter_validation": "New continuous seeds1274001,24new scenes; same real source photos with shifted crop origins and previously unused integer displacements; all failures retained",
+  "accuracy_and_coverage_limits_unchanged": true,
+  "real_candidate_scores_seen": false,
+  "physical_accuracy_qualified": false
+}

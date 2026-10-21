@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "policy": "read_only_deduplicated_reference",
+  "package": "D:/GMM_2_Final/Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
+  "content_sha256": "260ccc5b4e31727e7fc97082b831717aa4c06d9f429ef98a5ce1210cb49bf5d5",
+  "scene_count": 1250,
+  "observations": 5000,
+  "label_supersample_factor": 8,
+  "full_array_hash_audit": true,
+  "source_isolation_pass": true,
+  "real_pixels_used_for_training": false,
+  "checkpoint_or_teacher_used": false,
+  "r100_target_adapter": "disabled; latent target arrays remain the exact labels",
+  "r100_detail_recovery_views": "training-only deterministic mild-blur low-noise observations generated in memory from procedural latent truth; stored arrays and validation remain unchanged",
+  "stored_arrays_modified": false,
+  "reason_not_copied": "Avoid a second 16.66 GiB copy while preserving exact byte-level identity and a clean experiment folder."
+}

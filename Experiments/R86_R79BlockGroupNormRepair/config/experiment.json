@@ -1,0 +1,23 @@
+{
+  "experiment_id": "R86_R79BlockGroupNormRepair",
+  "created_date": "2026-08-10",
+  "status": "zero_shot_probe_locked",
+  "parent_checkpoint": "weights/seed/r79e23_parent.pth.tar",
+  "parent_checkpoint_sha256": "8aaaa9a85a0a86e77eeb4368bdbc1dd706c8fd9f9654ddd9c6498bd8697f367a",
+  "repair": {
+    "normalization": "group statistics inside phase-locked 8x8 feature blocks",
+    "block_size": 8,
+    "input_phase_multiple": 64,
+    "shared_canvas_optical_preconditioner": true,
+    "model_weights_changed": false,
+    "training_allowed_before_zero_shot_decision": false
+  },
+  "zero_shot_eligibility": {
+    "procedural_median_mae_relative_to_R79_max": 1.10,
+    "procedural_median_edge_relative_to_R79_max": 1.10,
+    "tile_mean_max": 0.1,
+    "tile_p99_max": 1.0,
+    "tile_max_max": 3.0
+  },
+  "decision": "Proceed only if the zero-shot probe passes every eligibility gate."
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "only_two_historical_governance_snapshots_relocated": [
+    {
+      "original_path": "docs/operations/PROJECT_STORAGE_POLICY.json",
+      "restore_path": "Historical_Archive/pre_closeout_20261016/docs/operations/PROJECT_STORAGE_POLICY.json",
+      "sha256": "1962156958fe7cc10051157f762bc146db4e42d6392135c21eb52e4ddc3a1371",
+      "reason": "Preserve the original snapshot while retaining the current source-protection and blocked-cleanup settings supplied with code"
+    },
+    {
+      "original_path": "docs/operations/PROJECT_STORAGE_REGISTRY.json",
+      "restore_path": "Historical_Archive/pre_closeout_20261016/docs/operations/PROJECT_STORAGE_REGISTRY.json",
+      "sha256": "8e32f9ed844639b64931c294d6128f2f07830d9d39781774f63860437f8df887",
+      "reason": "Preserve the original snapshot while retaining the current source-protection and blocked-cleanup settings supplied with code"
+    }
+  ],
+  "all_61090_file_contents_and_all_28_archive_hashes_unchanged": true,
+  "original_manifest_preserved": true
+}

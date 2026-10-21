@@ -1,0 +1,72 @@
+{
+  "experiment_id": "R89_MeasurementNativeScratch",
+  "status": "locked_before_dataset_generation",
+  "all_domains_must_pass_for_promotion": true,
+  "no_posthoc_average_override": true,
+  "training_checkpoint_gates": {
+    "tile_mean_abs_gray_max": 0.10,
+    "identity_mean_abs_gray_max": 2.0,
+    "raw_clear_added_topology_failures_max": 2,
+    "motion_mae_px_max": 0.08,
+    "motion_p95_px_max": 0.20,
+    "absolute_signed_bias_each_axis_px_max": 0.04,
+    "motion_regression_to_raw_max_px": 0.02,
+    "worst_role_ratio_to_raw_max": 1.05
+  },
+  "final_gates": {
+    "tile_consistency": {
+      "cases_min": 192,
+      "tile_schemes": [[1024, 512], [896, 448], [768, 384]],
+      "mean_abs_gray_max": 0.10,
+      "p99_abs_gray_max": 1.0,
+      "max_abs_gray_max": 3.0,
+      "seam_to_interior_error_ratio_max": 1.10
+    },
+    "new_locked_synthetic": {
+      "median_boundary_distance_px_max": 0.35,
+      "p95_hausdorff_px_max": 1.75,
+      "median_boundary_iou_min": 0.94,
+      "acm_strict_pass_rate_min": 0.90,
+      "added_component_or_hole_failures_max": 2,
+      "worst_family_raw_regression_fraction_max": 0.02
+    },
+    "R73_development": {
+      "strict_pass_count_min": 95,
+      "case_count": 100,
+      "raw_pass_to_model_fail_max": 2,
+      "catastrophic_count_max": 1
+    },
+    "R74_development": {
+      "median_iou_min": 0.86,
+      "catastrophic_count_max": 70,
+      "condition_families_improved_min": 3,
+      "each_condition_boundary_ratio_to_raw_max": 1.05
+    },
+    "synthetic_motion": {
+      "mae_px_max": 0.08,
+      "p95_abs_error_px_max": 0.20,
+      "absolute_signed_bias_each_axis_px_max": 0.04,
+      "zero_motion_sd_px_max": 0.04,
+      "calibration_slope_min": 0.97,
+      "calibration_slope_max": 1.03
+    },
+    "synthetic_texture": {
+      "high_frequency_correlation_min": 0.93,
+      "detail_energy_ratio_min": 0.82,
+      "detail_energy_ratio_max": 1.18,
+      "unrecoverable_band_gain_max": 1.05
+    },
+    "identity_and_real_texture_safety": {
+      "identity_mean_abs_gray_change_max": 2.0,
+      "identity_p99_abs_gray_change_max": 8.0,
+      "off_source_strong_edge_fraction_max": 0.01,
+      "hallucinated_hole_component_or_edge_is_hard_failure": true
+    },
+    "external_GMF": {
+      "required_for_promotion": true,
+      "may_be_deferred_at_training_completion": true,
+      "can_be_waived_for_promotion": false,
+      "status": "pending_valid_license"
+    }
+  }
+}

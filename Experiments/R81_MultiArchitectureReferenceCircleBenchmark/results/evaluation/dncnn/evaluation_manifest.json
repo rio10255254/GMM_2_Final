@@ -1,0 +1,40 @@
+{
+  "model_key": "dncnn",
+  "model_spec": {
+    "name": "DnCNN",
+    "family": "DnCNN",
+    "year": 2017,
+    "category": "classic restoration CNN",
+    "kwargs": {
+      "features": 64,
+      "depth": 17
+    },
+    "source": "Zhang et al., TIP 2017",
+    "adaptation": "one-channel residual restoration"
+  },
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\dncnn\\best_dncnn.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.08203478368517857,
+    "l1": 0.057490610627726826,
+    "rmse": 0.0800581668852245,
+    "ssim": 0.8774047045513145
+  },
+  "parameter_count": 556097,
+  "static_pillars": 18,
+  "displacement_pairs": 120,
+  "displacement_sequences": 4,
+  "measurement_backend": "ACM + correct-polarity maximum-gradient inflection + LSC/MZC/MIC/MCC",
+  "grayscale_threshold_used": false,
+  "pair_selection": "Raw-only locked list before all learned model evaluation",
+  "formal_displacement_frames_have_training_package_crops": true,
+  "blind_external_generalization": false,
+  "static_center9_role": "PSF and scale calibration region, not an independent sample",
+  "stage_reference": "nominal platform setpoint, not independent interferometer truth",
+  "tile_size": 128,
+  "tile_overlap": 64,
+  "tile_batch": 32,
+  "amp_enabled": true,
+  "median_static_inference_seconds": 0.08975009998539463,
+  "median_displacement_roi_inference_seconds": 0.03489954999531619
+}

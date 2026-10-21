@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "plan_id": "r118-next-single-image-sequence-geometry-v1",
+  "status": "candidate_definitions_only_until_p04",
+  "arms": {
+    "A": {
+      "change": "none",
+      "model_source": "R118 numerical model/objective",
+      "observation_source": "original two-view schedule"
+    },
+    "B": {
+      "change": "coherent_sequence_observation_scheduling",
+      "model_source": "R118 numerical model/objective",
+      "observation_source": "same latent geometry, fixed-optics static/motion sequence"
+    },
+    "C": {
+      "change": "mechanism_selected_by_P04_only",
+      "allowed_mechanisms": ["tangent_coherence", "adaptive_endpoints", "none"],
+      "model_source": "R118 plus one supported mechanism"
+    },
+    "D": {
+      "change": "targeted_asymmetric_optical_observations",
+      "model_source": "R118 numerical model/objective",
+      "observation_source": "P04 failure slice, documented asymmetric-tail/rotated-anisotropic"
+    }
+  },
+  "probe": {
+    "scene_ids_file": "config/selected_scene_ids.json",
+    "model_seeds": [1185001, 1185002],
+    "data_seed": 1196001,
+    "sampler_seed": 1197001,
+    "bank_seed": 1198001,
+    "epochs": 12,
+    "stage_endpoints": [4, 8, 12],
+    "batch_size_scenes": 8,
+    "workers": 2,
+    "max_arms": 4
+  },
+  "formal": {
+    "epochs": 42,
+    "batch_size_scenes": 12,
+    "workers": 4,
+    "model_seed": 1195001,
+    "checkpoint_preview_every": 3,
+    "only_after": "P09 selected_arm with full_run_justified=true"
+  }
+}

@@ -1,0 +1,499 @@
+[0]  國立臺灣大學機械工程學系國立臺灣大學機械工程學系國立臺灣大學工學院機械工程學系
+
+[1]  碩士論文
+
+[2]  Department of Mechanical Engineering
+
+[3]  College of Engineering
+
+[4]  碩士論文        碩士論文        National Taiwan University
+
+[5]  Master’s Thesis
+
+[6]  結合點擴散函數先驗之量測導向顯微影像重建：關鍵尺寸與微位移量測結合點擴散函數先驗之量測導向顯微影像重建：關鍵尺寸與微位移量測
+
+[7]  結合點擴散函數先驗之量測導向顯微影像重建：
+關鍵尺寸與微位移量測
+
+[8]  Measurement-Oriented Microscopy Reconstruction with PSF Priors for Critical-Dimension and Micro-Displacement Metrology
+
+[9]  
+
+[10]  江彥諠
+
+[11]  Yen Hsuan Chiang
+
+[12]  
+
+[13]  指導教授﹕陳亮嘉 博士
+
+[14]  江彥諠  撰       江彥諠  撰       Advisor: Liang-Chia Chen, Ph.D
+
+[15]  
+
+[16]  中華民國 115 年 07 月
+
+[17]  July 2026
+
+[18] heading 1 摘要
+
+[19]  隨著半導體與精密製造的特徵尺寸持續縮小，顯微影像重建若要支援量測，不能只以影像銳利度判斷，也必須確認輪廓與相鄰影格位置是否穩定。本研究提出量測導向超解析（Measurement-Oriented Super-Resolution, MOSR），以點擴散函數先驗、抗混疊上取樣及以輸入影像為基準的殘差輸出，限制重建對原始幾何的非必要改動。
+
+[20]  所有方法只採一個代表性輪廓點：先由Chan–Vese主動輪廓模型取得完整粗輪廓，再沿局部法線取正確極性的最大灰階梯度位置作為亞像素量測點。LSC使用全部輪廓點提供位移中心，MZC評定最小區域圓度，MIC與MCC提供尺寸包絡；另以相同120組配對直接驗證LSC與MZC的中心適用性。
+
+[21]  在36顆pillar、12種曝光的SEM配對資料中，MOSR使徑向形狀誤差由48.4降至42.8 nm（降低11.6%），輪廓相關係數由0.557提高至0.877（提高57.5%），MZC圓度誤差由110.6降至26.5 nm（降低76.0%）。四組序列共120組鎖定配對中，MOSR相對Raw使逐步位移標準差、名義步距誤差及陣列內離散度分別降低17.9%、18.0%與61.1%；相對Wiener則降低7.8%、10.5%與18.4%。MZC圓心在Raw、Wiener與MOSR的三項位移指標均顯著高於LSC，確認LSC適合作為位移中心、MZC保留為圓度評定。
+
+COMMENTS 3
+
+[22]  八模型比較中，MOSR的名義步距誤差為5.74 nm、排名第1，逐步位移標準差為7.29 nm、排名第3。統一FP32效率測試顯示，MOSR處理2048×1536影像的中位時間為1.10 s、速度2.85 MP/s，在八模型中排名第4，且比同參數量級EDSR快5.23倍。MOSR因而呈現輪廓、位移與運算效率之間的量測導向平衡，而非僅改善視覺銳利度。
+
+COMMENTS 5
+
+[23]  關鍵字：量測導向超解析、主動輪廓、最大梯度位置、最小平方圓、最小區域圓、微位移量測。
+
+[24] heading 1 
+Abstract
+
+[25]  Microscopy reconstruction intended for metrology must be assessed by contour and inter-frame positional stability rather than visual sharpness alone. This thesis proposes Measurement-Oriented Super-Resolution (MOSR), combining point-spread-function priors, anti-aliased upsampling, and an input-referenced residual output to limit unnecessary changes to the measured geometry.
+
+[26]  All methods use one representative contour point. A Chan–Vese active contour supplies a complete coarse contour, after which the correct-polarity maximum-gradient location along each local normal defines the subpixel point. The LSC uses all contour points to provide the displacement center; MZC evaluates minimum-zone roundness, and MIC/MCC provide size envelopes. LSC and MZC center suitability is tested directly on the same 120 pairs.
+
+[27]  In the 36-pillar, 12-exposure SEM-paired data, MOSR reduced radial-shape error from 48.4 to 42.8 nm (11.6%), increased contour correlation from 0.557 to 0.877 (57.5%), and reduced MZC roundness error from 110.6 to 26.5 nm (76.0%). Across 120 locked displacement pairs, MOSR reduced step standard deviation, nominal-step error, and within-grid dispersion by 17.9%, 18.0%, and 61.1% relative to Raw, and by 7.8%, 10.5%, and 18.4% relative to Wiener. MZC centers produced significantly higher values than LSC centers for all three displacement metrics in Raw, Wiener, and MOSR, supporting LSC for displacement and MZC for roundness.
+
+COMMENTS 9
+
+[28]  In the eight-model comparison, MOSR ranked first in nominal-step error (5.74 nm) and third in step displacement standard deviation (7.29 nm). Under a uniform FP32 efficiency protocol, its median time for a 2048×1536 image was 1.10 s (2.85 MP/s), ranking fourth of eight and running 5.23 times faster than the similarly sized EDSR. MOSR therefore provides a measurement-oriented balance among contour fidelity, displacement stability, and computational efficiency rather than visual sharpening alone.
+
+COMMENTS 11
+
+[29]  Keywords: Measurement-Oriented Super-Resolution; Active Contour; Maximum-Gradient Location; Least-Squares Circle; Minimum-Zone Circle; Micro-Displacement Metrology.
+
+[30] TOC Heading 目錄
+
+[31] toc 1 	摘要	3
+
+[32] toc 1 	Abstract	5
+
+[33] toc 1 	第1章 緒論	20
+
+[34] toc 2 	1.1 研究背景	20
+
+[35] toc 2 	1.2 研究動機與目的	21
+
+[36] toc 2 	1.3 研究貢獻	22
+
+[37] toc 2 	1.4 論文架構	23
+
+[38] toc 1 	第2章 文獻回顧	25
+
+[39] toc 2 	2.1 點擴散函數（Point Spread Function, PSF）模型	25
+
+[40] toc 3 	2.1.1 基於光學理論的 PSF 模型	26
+
+[41] toc 3 	2.1.2 高斯近似 PSF 模型	28
+
+[42] toc 2 	2.2 點擴散函數之校正（PSF Calibration）	30
+
+[43] toc 2 	2.3 反卷積演算法	33
+
+[44] toc 3 	2.3.1 非盲反卷積：維納反卷積（Wiener Deconvolution）	34
+
+[45] toc 3 	2.3.2 迭代式反卷積：理查德森–露西演算法（Richardson–Lucy, RL）	34
+
+[46] toc 3 	2.3.3 比較性總結與銜接	36
+
+[47] toc 2 	2.4 卷積神經網路應用於影像超解析與重建	36
+
+[48] toc 3 	2.4.1 SRCNN 與 FSRCNN	36
+
+[49] toc 3 	2.4.2 ResNet 與 VDSR：殘差學習作為深網路訓練的關鍵	37
+
+[50] toc 3 	2.4.3 U-Net：編碼器–解碼器與多尺度特徵融合	37
+
+[51] toc 3 	2.4.4 EDSR 與 MDSR：針對 SR 任務改良的深度殘差網路	38
+
+[52] toc 3 	2.4.5 Transformer 架構：從局部卷積到全域注意力	38
+
+[53] toc 3 	2.4.6 小結與銜接	39
+
+[54] toc 2 	2.5 量測導向影像重建 (Measurement-Oriented Image Restoration)	39
+
+[55] toc 2 	2.6 物理約束神經網路與平移等變性 (Physics-Constrained Neural Networks and Translation Equivariance)	40
+
+[56] toc 2 	2.7 小結	41
+
+[57] toc 1 	第3章 理論背景	42
+
+[58] toc 2 	3.1 向量光學與純量光學 [6]	42
+
+[59] toc 3 	3.1.1 格林定理與克希何夫積分定理	42
+
+[60] toc 3 	3.1.2 經平面繞射的克希何夫積分與索默菲德輻射條件	45
+
+[61] toc 3 	3.1.3 菲涅耳–克希何夫繞射（Fresnel–Kirchhoff diffraction）	47
+
+[62] toc 3 	3.1.4 惠更斯–菲涅耳原理	48
+
+[63] toc 3 	3.1.5 菲涅耳繞射與夫朗何斐繞射	52
+
+[64] toc 2 	3.2 光學成像 [6]	53
+
+[65] toc 3 	3.2.1 薄透鏡理論	53
+
+[66] toc 3 	3.2.2 漢克爾轉換	58
+
+[67] toc 2 	3.3 像差與澤尼克像差模型（Zernike aberration model）	59
+
+[68] toc 2 	3.4 非同調系統的點擴散函數 [6]	62
+
+[69] toc 2 	3.5 系統解析能力	63
+
+[70] toc 3 	3.5.1 阿貝準則	63
+
+[71] toc 3 	3.5.2 瑞利準則	64
+
+[72] toc 3 	3.5.3 調變轉移函數	65
+
+[73] toc 2 	3.6 U-Net 卷積神經網路	66
+
+[74] toc 2 	3.7 BADS 最佳化演算法	69
+
+[75] toc 2 	3.8 平移等變性與成像量測的一致性	71
+
+[76] toc 3 	3.8.1 平移等變性的定義	71
+
+[77] toc 3 	3.8.2 卷積為什麼能保留平移關係	73
+
+[78] toc 3 	3.8.3 下取樣、上取樣與邊界處理造成的誤差	75
+
+[79] toc 3 	3.8.4 如何量化模型的平移等變性	77
+
+[80] toc 2 	3.9 小結	80
+
+[81] toc 1 	第4章 研究方法	81
+
+[82] toc 2 	4.1 研究問題與判定原則	82
+
+[83] toc 3 	4.1.1 顯微成像模糊與量測誤差	82
+
+[84] toc 3 	4.1.2 量測導向的問題定義與判定原則	84
+
+[85] toc 2 	4.2 座標系統與物體空間換算	86
+
+[86] toc 2 	4.3 局部 PSF 校正	90
+
+[87] toc 3 	4.3.1 參考區域、方向與逐顆幾何	90
+
+[88] toc 3 	4.3.2 SEM 半徑換算與逐顆參考幾何	91
+
+[89] toc 3 	4.3.3 參數化 PSF 與 BADS 擬合	91
+
+[90] toc 2 	4.4 量測導向單張影像重建模型	95
+
+[91] toc 3 	4.4.1 同尺寸編碼器—解碼器與抗混疊上取樣	96
+
+[92] toc 3 	4.4.2 空間變異 PSF 融合模組	97
+
+[93] toc 3 	4.4.3 方向感知且受限的邊界殘差	99
+
+[94] toc 3 	4.4.4 以輸入影像為基準的殘差輸出與受限高頻細節注入	100
+
+[95] toc 3 	4.4.5 輸入品質感知調節	102
+
+[96] toc 2 	4.5 訓練資料與監督來源	103
+
+[97] toc 3 	4.5.1 功能分離的多來源監督	103
+
+[98] toc 3 	4.5.2 資料組成與配對原則	104
+
+[99] toc 3 	4.5.3 軟性邊界標籤與幾何資訊	105
+
+[100] toc 3 	4.5.4 分組切分與適用範圍	106
+
+[101] toc 2 	4.6 量測導向損失函數與訓練策略	107
+
+[102] toc 3 	4.6.1 四組量測導向損失函數	107
+
+[103] toc 3 	4.6.2 運動一致性的實作：平移一致性損失	109
+
+[104] toc 3 	4.6.3 分階段微調策略	110
+
+[105] toc 2 	4.7 共同量測與比較架構	111
+
+[106] toc 3 	4.7.1 共同資料、尺度與鎖定規則	112
+
+[107] toc 3 	4.7.2 ACM粗輪廓與最大梯度轉折點	112
+
+[108] toc 3 	4.7.3 LSC、MZC、MIC與MCC參考圓	113
+
+[109] toc 3 	4.7.4 位移圓心的LSC／MZC選擇	114
+
+[110] toc 3 	4.7.5 統計與敏感度分析	114
+
+[111] toc 3 	4.7.6 量測品質控制與不確定度界線	115
+
+[112] toc 2 	4.8 本章小結	116
+
+[113] toc 1 	第5章 實驗系統與模型實作	117
+
+[114] toc 2 	5.1 光學系統	117
+
+[115] toc 3 	5.1.1 相機	119
+
+[116] toc 3 	5.1.2 筒鏡	121
+
+[117] toc 3 	5.1.3 物鏡	123
+
+[118] toc 3 	5.1.4 照明模組與光源	127
+
+[119] toc 3 	5.1.5 XY 軸壓電位移平台	130
+
+[120] toc 3 	5.1.6 Z 軸壓電位移平台	131
+
+[121] toc 3 	5.1.7 五軸手動平台	132
+
+[122] toc 2 	5.2 量測樣品與驗證儀器	133
+
+[123] toc 3 	5.2.1 BudgetSensors HS-100MG	133
+
+[124] toc 3 	5.2.2 場發射槍掃描式電子顯微鏡	135
+
+[125] toc 2 	5.3 MATLAB 環境	137
+
+[126] toc 2 	5.4 神經網路架構與訓練集	137
+
+[127] toc 3 	5.4.1 訓練環境與配置	137
+
+[128] toc 3 	5.4.2 模型架構	139
+
+[129] toc 3 	5.4.3 訓練資料組成與分組切分	143
+
+[130] toc 3 	5.4.4 微調設定與模型選擇	144
+
+[131] toc 3 	5.4.5 七種代表性外部架構的共同訓練配置	144
+
+[132] toc 3 	5.4.6 八模型的共同位移比較配置	146
+
+[133] toc 3 	5.4.7 抗混疊上取樣的配對消融配置	146
+
+[134] toc 2 	5.5 小結	147
+
+[135] toc 1 	第6章 實驗結果與分析	148
+
+[136] toc 2 	6.1點擴散函數校正	148
+
+[137] toc 3 	6.1.1點擴散函數擬合結果	150
+
+[138] toc 3 	6.1.2 Wiener反卷積基準的必要驗證	153
+
+[139] toc 2 	6.2 MOSR輪廓與位移量測結果	155
+
+[140] toc 3 	6.2.1 MOSR模型與訓練狀態	155
+
+[141] toc 3 	6.2.2 評估資料、尺度與共同規則	156
+
+[142] toc 3 	6.2.3 參考圓與圓心定位稽核	158
+
+[143] toc 3 	6.2.4 SEM 36顆pillar輪廓驗證	159
+
+[144] toc 3 	6.2.5 LSC圓心位移結果	161
+
+[145] toc 3 	6.2.6 抗混疊上取樣的配對消融	165
+
+[146] toc 3 	6.2.7 七種代表性外部架構與MOSR的共同位移比較	166
+
+[147] toc 3 	6.2.8 八模型推論效率比較	169
+
+[148] toc 3 	6.2.9 綜合討論	171
+
+[149] toc 1 	第7章 結論與未來工作	175
+
+[150] toc 2 	7.1 研究問題與主要結論	175
+
+[151] toc 2 	7.2 方法與實驗貢獻	176
+
+[152] toc 2 	7.3 主要量化結果	177
+
+[153] toc 2 	7.4 量測可信度與證據鏈	178
+
+[154] toc 2 	7.5 研究限制	179
+
+[155] toc 2 	7.6 未來工作	179
+
+[156] toc 2 	7.7 小結	180
+
+[157] toc 1 	參考文獻	181
+
+[158] TOC Heading 圖目錄
+
+[159] toc 1 	圖 2-1 Born–Wolf PSF模型（依據[22]重繪）	26
+
+[160] toc 1 	圖 2-2 Hopkins PSF模型（依據[23]重繪）	27
+
+[161] toc 1 	圖 2-3 Gibson–Lanni PSF模型（依據[24,25]重繪）	28
+
+[162] toc 1 	圖 2-4 高斯模型擬合 (a) 透過𝐿∞ norm的限制進行峰值與標準差擬合 (b)透過𝐿1 norm 的限制進行峰值與標準差擬合 [26]	29
+
+[163] toc 1 	圖 2-5 WFFM、LSCM和DSCM 在𝐿∞ norm限制下的高斯PSF擬合結果[26]  (a) WFFM PSF x-y 平面剖面圖 (b) LSCM PSF x-y 平面剖面圖  (c) DSCM PSF x-y 平面剖面圖 (d) WFFM PSF x-z 平面剖面圖  (e) LSCM PSF x-z 平面剖面圖 (f) DSCM PSF x-z 平面剖面圖	30
+
+[164] toc 1 	圖 3-1 格林定理欲進行面積分示意圖與各參數 [6]	43
+
+[165] toc 1 	圖 3-2 平面繞射的克希何夫積分示意圖 [6]	46
+
+[166] toc 1 	圖 3-3 點光源經一針孔照明示意圖（依據[6]重繪）	48
+
+[167] toc 1 	圖 3-4 瑞利–索默菲德繞射示意圖（依據[6]重繪）	50
+
+[168] toc 1 	圖 3-5 菲涅耳–惠更斯原理示意圖（依據[6]重繪）	51
+
+[169] toc 1 	圖 3-6 圓透鏡示意圖：(a) 正視圖；(b) 側視圖（依據[6]重繪）	54
+
+[170] toc 1 	圖 3-7 將圓透鏡分為三個部分：(a) 入光部分；(b) 中心部分；(c) 出光部分（依據[6]重繪）	55
+
+[171] toc 1 	圖 3-8 薄透鏡成像示意圖（依據[6]重繪）	56
+
+[172] toc 1 	圖 3-9 正規化單位圓示意圖（依據[81,82]重繪）	61
+
+[173] toc 1 	圖 3-10 各項多項式在正規化光瞳平面的光程差分布三維可視化（依據[81,82]繪製）	62
+
+[174] toc 1 	圖 3-11 兩點間距與可解析程度（依據[9]重繪）	65
+
+[175] toc 1 	圖 3-12 MTF隨空間頻率上升而衰減之示意圖（依據[6,80]重繪）	66
+
+[176] toc 1 	圖 3-13 U-Net網路架構示意圖（依據[51]重繪）	66
+
+[177] toc 1 	圖 3-14 卷積層運作原理（依據[84]繪製）	67
+
+[178] toc 1 	圖 3-15 最大池化層（左）與平均池化層（右）運作方式（依據[85]繪製）	68
+
+[179] toc 1 	圖 3-16 轉置卷積運作原理（依據[89]繪製）	69
+
+[180] toc 1 	圖 3-17 BADS最佳化之模型更新與候選點搜尋策略（依據[90]繪製）	70
+
+[181] toc 1 	圖 5-1 實驗系統整體架構（本研究繪製）	117
+
+[182] toc 1 	圖 5-2 實驗系統各元件配置（本研究拍攝與標示）	118
+
+[183] toc 1 	圖 5-3 Basler ace acA2040-120um工業相機（資料來源：[98]）	120
+
+[184] toc 1 	圖 5-4 Sony IMX252LLR-C感測器光譜響應（資料來源：[98]）	121
+
+[185] toc 1 	圖 5-5 Olympus U-TLU 1×筒鏡（資料來源：[99]）	122
+
+[186] toc 1 	圖 5-6 Olympus U-TLU筒鏡可見光穿透率（資料來源：[99]）	123
+
+[187] toc 1 	圖 5-7 Olympus MPLFLN5X2物鏡（資料來源：[100]）	124
+
+[188] toc 1 	圖 5-8 Olympus MPLN20X物鏡（資料來源：[100]）	125
+
+[189] toc 1 	圖 5-9 Olympus MPLN50X物鏡（資料來源：[100]）	126
+
+[190] toc 1 	圖 5-10 Olympus BX3M-RLA-S反射光照明模組（資料來源：[101]）	128
+
+[191] toc 1 	圖 5-11 Olympus BX3M-LEDR白光LED光源（資料來源：[101]）	129
+
+[192] toc 1 	圖 5-12 Olympus BX3M-LEDR光源光譜分布（資料來源：[101]）	129
+
+[193] toc 1 	圖 5-13 PI P-733.2CD XY軸壓電位移平台（資料來源：[102]）	130
+
+[194] toc 1 	圖 5-14 PI PIFOC P-725.4CD Z軸壓電位移平台（資料來源：[103]）	132
+
+[195] toc 1 	圖 5-15 樣品粗調與傾斜校正平台（元件資料來源：[104,105]）	133
+
+[196] toc 1 	圖 5-16 BudgetSensors HS-100MG標準樣品（資料來源：[106]）	134
+
+[197] toc 1 	圖 5-17 HS-100MG微結構分布（資料來源：[106]）	135
+
+[198] toc 1 	圖 5-18 JEOL JSM-7800F Prime場發射掃描式電子顯微鏡（設備資料來源：[107,108]）	136
+
+[199] toc 1 	圖 5-19 所提MOSR模型整體架構（本研究繪製）	139
+
+[200] toc 1 	圖 5-20 空間變異PSF融合之殘差式修正模組（本研究繪製）	140
+
+[201] toc 1 	圖 6-1 50倍物鏡拍攝影像與空間頻譜。左圖為用於PSF校正的中心3×3 pillar原始影像；右圖為其二維傅立葉幅值頻譜，統一以−80至0 dBFS色階顯示。	148
+
+[202] toc 1 	圖 6-2 20倍物鏡拍攝影像與空間頻譜。左圖為用於PSF校正的中心3×3 pillar原始影像；右圖為其二維傅立葉幅值頻譜，統一以−80至0 dBFS色階顯示。	149
+
+[203] toc 1 	圖 6-3 全視野點擴散函數排列。每一點對應全視野取樣位置的局部擬合PSF，用以呈現視野內模糊形狀的空間變化。	151
+
+[204] toc 1 	圖 6-4 50倍物鏡之局部擬合點擴散函數。PSF以總能量正規化後呈現，色階表示相對強度。	152
+
+[205] toc 1 	圖 6-5 20倍物鏡之局部擬合點擴散函數。PSF以總能量正規化後呈現，色階表示相對強度。	153
+
+[206] toc 1 	圖 6-6 20倍與50倍中心九顆pillar之Raw、固定Wiener與MOSR影像，以及共同最大灰階梯度輪廓。	154
+
+[207] toc 1 	圖 6-7 MOSR訓練期間各組損失的相對變化。曲線用於確認訓練收斂，不直接等同於CD或位移表現。	156
+
+[208] toc 1 	圖 6-8 ACM粗輪廓、最大灰階梯度位置與四種參考圓的共同量測流程。	158
+
+[209] toc 1 	圖 6-9 SEM、Raw與MOSR之最大灰階梯度輪廓及LSC代表例。	159
+
+[210] toc 1 	圖 6-10 36顆pillar在曝光13至24之輪廓、形狀與輔助尺寸結果。	160
+
+[211] toc 1 	圖 6-11 四組序列之LSC圓心逐步位移標準差、名義步距誤差與陣列內離散度。	161
+
+[212] toc 1 	圖 6-12 四組鎖定配對之LSC圓心位移軌跡。Raw、Wiener與MOSR共用相同影格名單。	162
+
+[213] toc 1 	圖 6-13 抗混疊上取樣與一般上取樣之LSC圓心位移配對消融。誤差線表示兩組固定訓練重複的標準差。	165
+
+[214] toc 1 	圖 6-14 八種學習式模型的共同LSC圓心位移結果。	167
+
+[215] toc 1 	圖 6-15 MOSR在SEM輪廓與位移指標之相對改善幅度摘要。	171
+
+[216] TOC Heading 表目錄
+
+[217]  
+
+[218] toc 1 	表 3-1 OSA/ANSI 標準 Zernike 模態順序（j = 0 至 14）[81,82]	60
+
+[219] toc 1 	表 5-1 實驗系統元件與編號	118
+
+[220] toc 1 	表 5-2 實驗系統元件製造商與型號	119
+
+[221] toc 1 	表 5-3 Basler ace acA2040-120um相機規格[98]	121
+
+[222] toc 1 	表 5-4 Olympus U-TLU筒鏡規格[99]	123
+
+[223] toc 1 	表 5-5 Olympus MPLFLN5X2物鏡規格[100]	125
+
+[224] toc 1 	表 5-6 Olympus MPLN20X物鏡規格[100]	126
+
+[225] toc 1 	表 5-7 Olympus MPLN50X物鏡規格[100]	127
+
+[226] toc 1 	表 5-8 PI P-733.2CD XY軸壓電位移平台規格[102]	131
+
+[227] toc 1 	表 5-9 PI PIFOC P-725.4CD Z軸壓電位移平台規格[103]	132
+
+[228] toc 1 	表 5-10 JEOL JSM-7800F Prime規格[107]	137
+
+[229] toc 1 	表 5-11 MATLAB與工具箱版本[109]	137
+
+[230] toc 1 	表 5-12 Python與深度學習套件版本[110]	139
+
+[231] toc 1 	表 5-13 編碼器層級參數	141
+
+[232] toc 1 	表 5-14 瓶頸層參數	141
+
+[233] toc 1 	表 5-15 解碼器、PSF修正與輸出層參數	142
+
+[234] toc 1 	表 5-16 八種學習式模型的年代、架構角色與可訓練參數量。	145
+
+[235] toc 1 	表 6-1 三種評估資料的物體空間尺度與用途。	156
+
+[236] toc 1 	表 6-2 參考圓、CD換算與LSC圓心定位的獨立稽核摘要。	158
+
+[237] toc 1 	表 6-3 36顆pillar之逐顆曝光中位數SEM配對結果。	160
+
+[238] toc 1 	表 6-4 36顆pillar之Raw–MOSR雙尾Wilcoxon配對檢定。	160
+
+[239] toc 1 	表 6-5 四組鎖定序列的LSC圓心位移結果。單位為nm。	163
+
+[240] toc 1 	表 6-6 相同120組配對中MZC相對LSC的位移指標差異（MZC－LSC，nm；中括號為95%重抽樣區間）。	164
+
+[241] toc 1 	表 6-7 抗混疊上取樣之配對消融結果。數值為兩組固定訓練重複的平均，單位為nm。	165
+
+[242] toc 1 	表 6-8 八種學習式模型之共同LSC圓心位移結果。單位均為nm。	168
+
+[243] toc 1 	表 6-9 相同顯示卡、影像、FP32精度與共同切片流程下之八模型推論效率。	170
+
+[244] toc 1 	表 7-1 研究問題、主要證據與可支持結論之對照。	177

@@ -1,0 +1,73 @@
+{
+  "status": "ALL_CURRENT_RESEARCH_SOURCE_VERSION_DIFFERENCES_RESOLVED",
+  "source_commit": "40ad0318fbd6c039b21744f27478a15a70413d0a",
+  "method": "Full frozen-export comparison followed by exact correction of its eleven differences; all other source catalog objects unchanged",
+  "prior_complete_scan_sha256": "b749d633ee476b738fcf5cd8590f4b8720af39fb69d21bcd4a17a3899163c871",
+  "prior_matched_current_locations_by_family": {
+    "context": 18003,
+    "models": 0,
+    "numeric": 774,
+    "images": 2864,
+    "packages": 99
+  },
+  "resolved_differences": [
+    {
+      "path": "Tools/tests/test_research_asset_bundle.py",
+      "reason": "exact recorded preservation-tool revision; original version actually fetched from earlier GitHub history",
+      "current_catalog_sha256": "9e8b53cc527135fba003e86c2586cc1a9d0cb7370daf77c3b337b0aea1d5b43e"
+    },
+    {
+      "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/r42_boundary_eval_20260505.log",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "e95479d806a21e88d63f5c8dd76715aeebc0cba2032fdaef466eaa766aba9ba6"
+    },
+    {
+      "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/r42_boundary_eval_20260505_1537.log",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "a7e7be010cd167b7d330a471275634ae0cabe5f2cb6675db8f71ad1bbb938d9e"
+    },
+    {
+      "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/r42_guarded_kd_probe_train_20260505_172058_stdout.log",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "44d199bc49d43a2f75bb0fd7f4e97c25a92b0323cdc9e9f7a383e4e2914fbec2"
+    },
+    {
+      "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/r42_ring_guard_20260505.log",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "59e3dbdf016d8ed5d6433bf4c212f0a19c96efa919a63e367970088cb3b11f72"
+    },
+    {
+      "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/r42_training_foreground_20260505_142255.log",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "05be9d64e225798608329ccd238df6f0ddadf8652bdaab3039915eb5227f73ab"
+    },
+    {
+      "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/weight_sweep/r42_r41_best_lowalpha_resume_stderr.log",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "b84055cdc2cdd81c0937644b5148be188e6037a0d26ae5064d7d1eb865d09ee3"
+    },
+    {
+      "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/weight_sweep/r42_r41_best_lowalpha_resume_stdout.log",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "74da28822c1fdc5c2583a8841b7e12bd6ee2fc5e9aa69402541c1077dc2516ad"
+    },
+    {
+      "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/weight_sweep/r42_r41_best_lowalpha_stderr.log",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "566bfb466807a04b24093acc89032a1672429156e459ec649b9f5f8b1ea54d76"
+    },
+    {
+      "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/weight_sweep/r42_r41_best_lowalpha_stdout.log",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "4d4bac24fa103cebb44d1665ea741f9a9ede7100ab6b5ac75ec273b5fbf0702f"
+    },
+    {
+      "path": "Tools/hooks/pre-commit",
+      "reason": "exact original captured byte form now in actual retrieved source",
+      "current_catalog_sha256": "f62fcee86c41051378821a3e1c15418eda5835e020d8dffdb40309edbe08d30a"
+    }
+  ],
+  "all_other_catalog_objects_unchanged": true,
+  "original_D_research_files_modified": false,
+  "whole_project_complete": false
+}

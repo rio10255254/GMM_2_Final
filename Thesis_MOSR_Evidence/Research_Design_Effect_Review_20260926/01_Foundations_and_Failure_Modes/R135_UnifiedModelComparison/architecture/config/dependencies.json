@@ -1,0 +1,542 @@
+{
+  "utc": "2026-09-16T08:31:44.919240+00:00",
+  "scope": "Current runtime dependencies recorded before remaining model runs; native oldV42 model/checkpoint were already protected in the plan",
+  "sources": [
+    {
+      "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\_r61_real_sample_runtime_20260702_210629\\runtime\\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+      "sha256": "3ed59e8f26fe0a1aa8afcce7e5bf51335d8e93b0d042d2e775b3a599efbcb2e7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\inference\\__init__.py",
+      "sha256": "d6db7e94b62f7948e81a48d58e3c201c146a0f28076a0cc264128c347ca541c2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\inference\\run.py",
+      "sha256": "76facb3ec95b2147f3805583d48e8cd7306178a590fc0e91191517ca05d13e29"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\inference\\tiling.py",
+      "sha256": "a03643583a6b365e083d5abec3fc67d8af4e2d376fee3b86d035687b8d8047b1"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\network.py",
+      "sha256": "ce90a7ae3eb2b0b7adaa5a33fa70551d152410320caefe23ed30ded706529880"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\observation.py",
+      "sha256": "6d521fa1f8ef2fac6af0f5af0b3ce0861d634c84c09730a4f936f9edb49e2801"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\comparison_summary.csv",
+      "sha256": "f8c29bf0d917466aed2cc630136503c37ec234822f8389d837edf82a85cbf066"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\long_training_review_20260913_v2\\trajectory.csv",
+      "sha256": "19aabeb3f8b95af7b1a24e3767cf6750b53ab05927d835c9cdf048c1bc6411e9"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\calibration\\shared_psf.mat",
+      "sha256": "04f53c4c2636b73f7c366a41698adfd8b385a1b3bd6aa4cfa816a36452327017"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\config\\architecture.json",
+      "sha256": "bff1f13db24091e223362fa409d517c16c8076d301e941d1f11b1542a1f7961c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\config\\evaluation_implementation.json",
+      "sha256": "6c56747b9a304de6b54351fcdb5d1d9c8c129c09ed206f841ecf4b9fa563f96d"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\config\\final_evaluation_plan.json",
+      "sha256": "be64798d99d73f79d35c369c9b7c938e51872b7882648bc84ed56882f53e505c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\config\\frozen.json",
+      "sha256": "ff80144f3026123a2b47b1064a4ed7f1cc34fd153426621e8d58e3c06e8a9813"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\config\\provenance.json",
+      "sha256": "fe0b5205510b83eb0a1904a517378185275860ef092f5453e43fbaa0a6802687"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\config\\storage_before.json",
+      "sha256": "cfe35d1455d95ad6e84c51a7bb5b92282dfed67c3a7fcf5c339bac2c568f6ae7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\config\\training.json",
+      "sha256": "c744e46711d498f5a8c1e8816e6ebbd226a00ae78b6e063a4380eca1c8fd8dea"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\model\\bilinear_adjoint.py",
+      "sha256": "66bb9401139b3a1cbc915b2459d6874f21bf10fcc38f39df3c88bf9ace4474c1"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\model\\deterministic_ops.py",
+      "sha256": "7fe8e9098cf210a1886662ab0f77c1225bfe9efd62aeadf70ac046773141192b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\model\\model_original.py",
+      "sha256": "a9ae5d62a51a81219d84f9b51699fec6aeacdf6c3afe34fe3f900b0cd4efbab3"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\model\\model_v42.py",
+      "sha256": "7e23d5d783001c9cab6990d34f7610ae7ab4818b0442b25f64a2b8783c15390e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\model\\output_guard.py",
+      "sha256": "bac2d488114f6d600e8cf0536088bad93f17d6e56337acc2f39b06e109d6d314"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\after_training.py",
+      "sha256": "89c2dd196344e88e30af737ee0bc84dd540033e6a107c6560a82be4e16791a38"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\audit_results.py",
+      "sha256": "0cc5223891c118912918d8e1cf04bed16d646aa4fb49fe39efd4d2a5b21b91aa"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\benchmark.py",
+      "sha256": "2fa7cf4a8bfbe86f11931045f7b4636665f390f3500593fe584cff48d4f54b4d"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\build_visual_v2.py",
+      "sha256": "caa746d3349fdfa03b5294335a80aa1a0d246016432d3320878f220b1d00880e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\common.py",
+      "sha256": "27cbfaa1a1391755868d60b930fa0aa1739ce6f48940c17f1d12a81f88d9b20a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\continuous.py",
+      "sha256": "917b142de861fdd1cfee3af6c43e2feba6ba3551050f47d1917495158688e4cb"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\evaluate_real.py",
+      "sha256": "d643bc7174635b7b0f373bb66829146adbadd7e39c0ffabcbeb3fca798fce45c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\freeze.py",
+      "sha256": "17301170c762a48b45c0592f633e3a78065b642b7ca8ecf305beef2dc3a97074"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\infer_image.py",
+      "sha256": "44ec1c5e9e9728bfc5ecb9fe3c9adeafdc952baeeb600fdcb15148606df6706d"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\io_retry.py",
+      "sha256": "4a44762bb6354690435a873e83f977618d4fbc6956b4b599f8e809613ec165eb"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\preflight.py",
+      "sha256": "f7cc5f5dc7d6b1e77ac6bbbd97a3386ea8e07b79bb97919017bf740a0b01fac5"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\prepare.py",
+      "sha256": "a6a7fd1d319455fc6603563abeca63ae5c1c7fce512360bada9313d85fadf738"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\prepare_final_evaluation.py",
+      "sha256": "a62fe6b9b167b77ff815883686d980046664032fda7f749e27662bf860935b7b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\publish.py",
+      "sha256": "f8595682a42bd1c817ca57b5a56914267516bf4339d592d57cb3bdbdd87852ae"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\register.py",
+      "sha256": "d99eaf9fb125ca9b954a56932a27bf1efa423df86b955648732fce441d22e18e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\resume_io_recovery.py",
+      "sha256": "4b0c4bfbcd851ea681f64cdd94f6d7d6acefb167798b5592284edd0f14eea33d"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\show_real_reconstructions.py",
+      "sha256": "3bc1f403d6b25234bca639375dccff63d718a1a7329b2b7cec9ffb572535f317"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\show_real_reconstructions_v2.py",
+      "sha256": "0c7fa88a751949d24747e83eab10aaf6402a76935c1054e9dad38cd4b274dd31"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\test_live_io_recovery.py",
+      "sha256": "7ee0715afd33d73728df27cb27f4a5f76e085567fd2ffc403be819adada1d312"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\train.py",
+      "sha256": "bcdc2115c33de353793dea28e12a86b07dd9fa5aa18cbafb26340a7cb5f6334a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\training\\data_bank.py",
+      "sha256": "d69acdb29e68129da7066c685e5e3d2fad7d1c62d64257676af20503b45dc09c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\training\\engine.py",
+      "sha256": "1f7fe390f88e0da6fadf9fba0c41cbc6ee2825c259256f1446835ebb03b6377d"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\training\\objectives_base.py",
+      "sha256": "3fca326de3f47a017daac85804d8801ea81202e76bf24e1dd228b25b8404420e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\extract_sem.m",
+      "sha256": "439e17c80d16d33ce7f067319c4031910bc508c3b894d012e42c8dc83b9bffef"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\20x_0p5um_0000.png",
+      "sha256": "d8cb12c4dcd558032b8d04af91640b93d1ac49f9faab132d8a8d49a051e54dd1"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\20x_0p5um_0001.png",
+      "sha256": "0c7ab2f40c5772b5f417bf472a2be00e176d51ddf3b1744806c0fc2782f8abf2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\20x_1um_0004.png",
+      "sha256": "1d8e69c18fc4e3fe9a4726a63d3b6cb784435d06624c0eb7fc46038f4c170264"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\20x_1um_0005.png",
+      "sha256": "66ea6d07b441dbe72d9a3801e147c9c2ff66530a63c79b5beb8a8648f604b2ed"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\50x_x_0p5um_0000.png",
+      "sha256": "89d64ca805c2cf46e431098dd2fb69b1b8d8aa00129e359b1f21775798bd09e7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\50x_x_0p5um_0001.png",
+      "sha256": "5e23d087a76afbbc98d8e0118fa06c068819609edc7fdfbc7d8c0872b9459057"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\50x_x_1um_0003.png",
+      "sha256": "127ef0fd73db74a0f52cb40fdfdc08f5be9fd9cc85c163e02722a253751737ab"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\50x_x_1um_0004.png",
+      "sha256": "16e1d96a15fb72c96fea25ecd0fc6a598ff2f0f3472f01db38a4b8f4229f1de9"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\sem13.png",
+      "sha256": "cb2585999c38f06314c1e345dc3381f1efa4cdb2bc85f5e730166f39c9c30391"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\sem14.png",
+      "sha256": "c2a57df81569aacffda841d2a1f199766d2a8015aad540c175e9f917098591b1"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\inputs\\sem15.png",
+      "sha256": "14e1bb6f4227bde5397337642acc9d0b97e68aaca7e96b460cc066aafdd8dbd6"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\panel.json",
+      "sha256": "5d47e12926c629e1ba1d815577f851048090f9b34224abe07ea08a8818ad2e1d"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\readout_helpers.py",
+      "sha256": "f95599246689dabf286adc2bc9b56acc079f2c43cd7cdcd0fca53add9da1ab57"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\reference_circle_core.py",
+      "sha256": "76e1fe615128cbf9bb19c9775b990a055d73f5e086986a04368f78ca7008248c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\validation\\sem_reference.mat",
+      "sha256": "329ebe6444095ae21f1579d0779b5fc948d9af828848440217ff902bd71f529b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\tiled.py",
+      "sha256": "d4024d3ae21cb64a093c7d8f752d04c98c196e2011b792228ef0aa8b5d9c061b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\calibration\\measured_psf_bank.npz",
+      "sha256": "25cc6c95a224caae0e4a0380a88980551586a35cdb34eebde2635639e2c29553"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\config\\training.json",
+      "sha256": "451caa6c917663a22d679d9e50ba1ee3f316b10137b43ae1255688b2ac72dae5"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\control.py",
+      "sha256": "eb2373ad127cedca22f7fe7087abccb4f15487b476b7e1e8a99e440e5a1a9c5a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\data.py",
+      "sha256": "8ba0d7469191db4ad1f1c249e786c928078128443891d71e8dff9c59b4918445"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\engine.py",
+      "sha256": "f1802b3790205bbdd569c3a9e484252157bd673e47ec95ee9ed469dc1b9809cb"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\ENVIRONMENT.json",
+      "sha256": "049f38db583d83583970e2cd509138255f7d35b044375dc5ce74da7cffd98ae5"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\evaluate_real.py",
+      "sha256": "6495c5a4af2f3b6dffc776e8413c4a56d98f1eff1b853ea6145e5fd5e06d31a4"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\infer_r129.py",
+      "sha256": "52eda1976acf3df6c5d1d5ab014e680ddb2a388a7f228456ba9a3e1d6e4814a6"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\__init__.py",
+      "sha256": "c9bee3382295dcc511cdbd5d642e32df449ee55d0107b98171566446f80c9233"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\hybrid.py",
+      "sha256": "49ef06e0e6061b8106fc89523b95d26de318a4a235acd2f8613a23aa2b86d7df"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\inference_policy.py",
+      "sha256": "bac2d488114f6d600e8cf0536088bad93f17d6e56337acc2f39b06e109d6d314"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\operators.py",
+      "sha256": "e3285675114037317c8ab30fb87f18a9d19cab451230fb11c4c14fca2bab6c07"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\optics.py",
+      "sha256": "676bbb35d5e86c1b41fbdbe046263b7e9b207a9de0cef87e68c8468aae5ac4a8"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\output_policy.py",
+      "sha256": "ab70c2deb34b24739d54242dfef7c571122a9386833e6b032d8208c849d13591"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\reconstruction.py",
+      "sha256": "71594f2cf78a2b2cb4dc17213a670532e51b9b240cfde3aab767ad95f7f8dab6"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\objectives.py",
+      "sha256": "3fca326de3f47a017daac85804d8801ea81202e76bf24e1dd228b25b8404420e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\PACKAGE_MANIFEST.json",
+      "sha256": "fe68b9f571d73dfa024ca864f877dd4343732841cbb63ef6b18b4b2344c5bd4a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\preflight.py",
+      "sha256": "13ae9eef3c11058ea1addd82eda1ae7e53120eb7f1d54f76acb402382b8a3441"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\PROVENANCE.json",
+      "sha256": "60ec91b51db381e3bb5f0767b7b2f9cfa44a3b4c8f11919bb9ec66545dece3a6"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+      "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\runtime.py",
+      "sha256": "43d46a7ec677abee221686c9341c207cf412dba626dddf39e3f44e1e1a0b9631"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\train_r129.py",
+      "sha256": "5748dd77083aeabe2be6372280dbed15e86e8a23aa5e56fdee2fc977dc8cfaa6"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\training_data\\manifest.json",
+      "sha256": "8cb7afc18a885f4dace5b5309e005c4b530c82d3f323e63441fea71174e1f889"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\extract_sem.m",
+      "sha256": "439e17c80d16d33ce7f067319c4031910bc508c3b894d012e42c8dc83b9bffef"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\readout_helpers.py",
+      "sha256": "f95599246689dabf286adc2bc9b56acc079f2c43cd7cdcd0fca53add9da1ab57"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\reference_circle_core.py",
+      "sha256": "76e1fe615128cbf9bb19c9775b990a055d73f5e086986a04368f78ca7008248c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\verify_package.py",
+      "sha256": "83b2fb97dd6c12ecbf0700a235b0d516a3f42c3dbf31557fb065672880d1c4bf"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\weights\\initial_r129.pth",
+      "sha256": "13d73d34f7aafc806bd2d56b7b1ac845d0b150d28fdc2fa9a07acc29cea838ee"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\calibration\\measured_psf_bank.npz",
+      "sha256": "25cc6c95a224caae0e4a0380a88980551586a35cdb34eebde2635639e2c29553"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\config\\training.json",
+      "sha256": "caeb10aea0ab35016a6c7a718aab401cacc84013fb4a157b393ecdbe08362a46"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\control.py",
+      "sha256": "9554121d468a8b0ae35ce012e113b76846bf0bfb0a7a86d4d10bc9971e65c685"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\data.py",
+      "sha256": "8ba0d7469191db4ad1f1c249e786c928078128443891d71e8dff9c59b4918445"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\engine.py",
+      "sha256": "f1802b3790205bbdd569c3a9e484252157bd673e47ec95ee9ed469dc1b9809cb"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\ENVIRONMENT.json",
+      "sha256": "049f38db583d83583970e2cd509138255f7d35b044375dc5ce74da7cffd98ae5"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\evaluate_real.py",
+      "sha256": "86b2dcff308152af124dcbf0a84d54713ca460b78c1d1261c2e3b544699a589b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\infer_r134p.py",
+      "sha256": "745dd5a7ef1c8145946f1ece7241bac027b0a2daadeffb381e003a82b28e1f3f"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\model\\__init__.py",
+      "sha256": "8f8b0565036c70087cce032380752259ae2da2153b1d295219a35e6690d96279"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\model\\hybrid.py",
+      "sha256": "49ef06e0e6061b8106fc89523b95d26de318a4a235acd2f8613a23aa2b86d7df"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\model\\inference_policy.py",
+      "sha256": "baec997c427f202621f787ee40d5c00203900ca93f746e81cf0feb839222871e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\model\\network.py",
+      "sha256": "bafff424fb16448292520648c3e4967da080bbd02cbc0bbb01f4fe3d3ba127ba"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\model\\operators.py",
+      "sha256": "e3285675114037317c8ab30fb87f18a9d19cab451230fb11c4c14fca2bab6c07"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\model\\optics.py",
+      "sha256": "676bbb35d5e86c1b41fbdbe046263b7e9b207a9de0cef87e68c8468aae5ac4a8"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\model\\output_policy.py",
+      "sha256": "ab70c2deb34b24739d54242dfef7c571122a9386833e6b032d8208c849d13591"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\model\\reconstruction.py",
+      "sha256": "71594f2cf78a2b2cb4dc17213a670532e51b9b240cfde3aab767ad95f7f8dab6"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\model\\staged.py",
+      "sha256": "d4024d3ae21cb64a093c7d8f752d04c98c196e2011b792228ef0aa8b5d9c061b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\objectives.py",
+      "sha256": "3fca326de3f47a017daac85804d8801ea81202e76bf24e1dd228b25b8404420e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\PACKAGE_MANIFEST.json",
+      "sha256": "3013f5f1e2d337de6cb3db825590047a8a329b28be4abc05e4f14f4e74072add"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\precision_io.py",
+      "sha256": "f1f23bc07b79481dcd8b8f4442830616850ecaaa303b638ce5097744f14fbb60"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\preflight.py",
+      "sha256": "830df92989d4a68b83a8a3de3edb565062a314159158db8b277b6bd6b3c2ca4f"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\PROVENANCE.json",
+      "sha256": "a4738e9393d09e5361a2ea0b253bf43766bdc97b3a8ab982fdf51dbe383850ef"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\readout.py",
+      "sha256": "4fd698760e640cd561fe9e08bbe6a780742be111bea0ce2b8a6b331cdd0225c8"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\runtime.py",
+      "sha256": "bf42dcea43d5785e45029df0c23624085e5c97b59eac3d5f3e509112b02ffc66"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\sem_metrics.py",
+      "sha256": "7c3d51055b0525332c75d1f944e0af44949ea3dab41222311de6d43891d9787a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\serialization.py",
+      "sha256": "a0bfc632b8842a5fb666551e58a1f903534a47db58d58ed6044a9b46925c45b7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\train_r134p.py",
+      "sha256": "dfc9003fb3988e0d6f3ac1df70b24e07a6fc293088b550195fc3a112ab608c32"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\validation\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\validation\\extract_sem_precise.m",
+      "sha256": "413e4f4a9c59c98e40d6e48e0e3a9ccebe2700a6517cbcbe615adbe0de5c696e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\validation\\readout_helpers.py",
+      "sha256": "f95599246689dabf286adc2bc9b56acc079f2c43cd7cdcd0fca53add9da1ab57"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\validation\\reference_circle_core.py",
+      "sha256": "76e1fe615128cbf9bb19c9775b990a055d73f5e086986a04368f78ca7008248c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\verify_package.py",
+      "sha256": "cd4884cde4726b74708169ad25b5d976f1af376144dfc9568e7ecd6acfd69b8e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\weights\\initial_r134p.pth",
+      "sha256": "52152dcbf1c2eadcb4556ac6e30bb5c682858dedbd12f2ba74c6b38a59524b05"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\CURRENT_FULL_TRAINING_RUN.json",
+      "sha256": "451aecb7e6a5b44995d425b1f027cc321e3bc47537918a24e18b6138a134d09b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\epoch_demo_monitor.py",
+      "sha256": "b4415dec323b2bd886d18b06b26d6e55cf83eb5b0cc7b2506076d32f3c236db7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\foreground_epoch_monitor.py",
+      "sha256": "3a7b0b15b85aeccc45abb4d798478b310956ef9d9913645963f6e82af3f5157f"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\infer_v42.py",
+      "sha256": "915d4913e37c675c19162c0cf7abef467b420d31ce0e3a789378c2133b633c3f"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\model_v42.py",
+      "sha256": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\PACKAGE_MANIFEST.json",
+      "sha256": "dff69b4e70e60f72a92092f6f3b3bbdb73a0c8d16c6ca046de3b56eb6be16167"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\results\\training_results\\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\\epoch_120.pth.tar",
+      "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\train_v42.py",
+      "sha256": "ff2334e4c2fb3d66eefe91436b01681690c5bf6b0eb33054b549caae1e84b2f2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\utils_v42.py",
+      "sha256": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16"
+    }
+  ]
+}

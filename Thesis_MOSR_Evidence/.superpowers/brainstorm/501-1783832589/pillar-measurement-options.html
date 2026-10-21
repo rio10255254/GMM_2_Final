@@ -1,0 +1,68 @@
+<style>
+  .image-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:18px 0 26px; }
+  .image-grid figure { margin:0; border:1px solid #d9dde2; background:#fff; padding:8px; }
+  .image-grid img { width:100%; height:190px; object-fit:cover; object-position:center; display:block; }
+  .image-grid figcaption { margin-top:7px; font-size:13px; color:#555; }
+  .scheme { height:132px; display:flex; align-items:center; justify-content:center; background:#f7f8fa; }
+  .pillars { display:grid; grid-template-columns:repeat(3,28px); gap:14px; }
+  .pillar { width:28px; height:28px; border-radius:50%; background:#31363b; position:relative; }
+  .pillar.edge::before,.pillar.edge::after { content:""; position:absolute; top:-5px; bottom:-5px; width:3px; background:#e05b38; }
+  .pillar.edge::before { left:-3px; } .pillar.edge::after { right:-3px; }
+  .single { width:72px; height:72px; border-radius:50%; background:#31363b; position:relative; }
+  .single::before,.single::after { content:""; position:absolute; top:7px; bottom:7px; width:4px; background:#e05b38; }
+  .single::before { left:-4px; } .single::after { right:-4px; }
+  .cross { position:absolute; width:16px; height:16px; left:28px; top:28px; border-left:2px solid #2b82c9; border-top:2px solid #2b82c9; transform:rotate(45deg); }
+  .template-grid { display:grid; grid-template-columns:repeat(5,20px); gap:8px; padding:14px; border:3px solid #2b82c9; }
+  .template-grid span { width:20px; height:20px; border-radius:50%; background:#31363b; }
+  .recommended { color:#08785f; font-weight:700; }
+  @media (max-width:900px){ .image-grid{grid-template-columns:1fr;} .image-grid img{height:auto;} }
+</style>
+
+<h2>圓柱位移量測：哪一種最適合論文？</h2>
+<p class="subtitle">目標不是單純讓數字漂亮，而是讓 V42 的邊界優勢能被量到，同時避免重複圖樣錯配與事後挑答案。</p>
+
+<div class="image-grid">
+  <figure><img src="50x_pillars.png" alt="50x pillar comparison"><figcaption>50×：單顆輪廓清楚，最適合驗證次像素邊界中心。</figcaption></figure>
+  <figure><img src="20x_pillars.png" alt="20x pillar comparison"><figcaption>20×：圓柱仍可逐顆編號，可做小群圓柱共識。</figcaption></figure>
+  <figure><img src="5x_pillars.png" alt="5x pillar comparison"><figcaption>5×：單顆較小，必須用多顆共同估計降低量化抖動。</figcaption></figure>
+</div>
+
+<div class="cards">
+  <div class="card" data-choice="single-pillar" onclick="toggleSelect(this)">
+    <div class="card-image scheme"><div class="single"><span class="cross"></span></div></div>
+    <div class="card-body">
+      <h3>A　單顆圓柱中心</h3>
+      <p>以左右兩側邊界的中點代表圓柱位置。最能放大局部邊界改善，但容易被單顆污染、缺陷或低倍率像素化影響。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="pillar-consensus" onclick="toggleSelect(this)">
+    <div class="card-image scheme">
+      <div class="pillars">
+        <span class="pillar edge"></span><span class="pillar edge"></span><span class="pillar edge"></span>
+        <span class="pillar edge"></span><span class="pillar edge"></span><span class="pillar edge"></span>
+        <span class="pillar edge"></span><span class="pillar edge"></span><span class="pillar edge"></span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B　3×3 圓柱雙邊中心共識 <span class="recommended">推薦</span></h3>
+      <p>每顆先用左右邊界中點求位移，再由九顆做穩健共識。能直接利用重建後較陡的圓柱邊界，又不會像整塊模板那樣讓 Raw 的紋理相關占盡優勢。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="whole-template" onclick="toggleSelect(this)">
+    <div class="card-image scheme"><div class="template-grid">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div></div>
+    <div class="card-body">
+      <h3>C　整塊圓柱模板定位</h3>
+      <p>以整片圓柱陣列做相關定位，通常最穩，但 Raw 本來就很強，也可能發生週期錯配；較難證明模型的邊界價值。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p><strong>我的建議：</strong>選 B。固定一塊 3×3 圓柱，三種倍率各自鎖住同一結構類型；每顆都有固定編號與小搜尋窗，因此不會跳到隔壁圓柱。圓柱尺寸變化會被左右邊界中點抵消，留下真正的平移。</p>
+</div>

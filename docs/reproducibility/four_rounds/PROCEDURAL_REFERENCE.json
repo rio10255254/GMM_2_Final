@@ -1,0 +1,779 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "historical_training_repeated": false,
+  "independent_reference_matched": false,
+  "values": {
+    "periodic": {
+      "97": {
+        "source_sha256": "2fcd51c7fe4e2bb49f41dae16b74e1264b0b0853ad24f818c6673391fd7c0d1f",
+        "samples": {
+          "train_e17_b4": {
+            "seed": 987200,
+            "fields": {
+              "source": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "2dbfce0f16232b9eb610aed046698c442544f69ba15cbd824008050a0ce30279"
+              },
+              "target": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "565363846d52ee87bb310aca02533b676c69bacfc08923e864915c195636aa6f"
+              },
+              "shift_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "ecd3eac42b78dbd12f0645511888d32c6a1989f28fbbfb50843f024b3f4d38be"
+              },
+              "period_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "727c0cb6c3b97a724c5d1c63aaca4116f074c88b3931b9b5aff5a5bc08e9f2e9"
+              }
+            }
+          },
+          "train_e33_b4": {
+            "seed": 1003344,
+            "fields": {
+              "source": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "8a6885289f5682773f3e64baf2a1b88140ae78a5f90fd1a593a713e073040dd3"
+              },
+              "target": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "9f92e0c14a3be79539aa5b402f5a63483789a63b9ae769eb275faf70ffd5544c"
+              },
+              "shift_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "8507ed85e76a627d1a7ec7d111d660938ac934286f00d468c1e0665ad152363d"
+              },
+              "period_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "a7d0c62819ac1a408eb4f198f3022be8d1c6bfcb4b55ccdb1d556c8eae557f59"
+              }
+            }
+          },
+          "train_e48_b4": {
+            "seed": 1018479,
+            "fields": {
+              "source": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "1534a37c4aa3008655a0bbb933e861fa2380e483470aa5631dbb6025a00fb506"
+              },
+              "target": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "1a5c62e040c90849a218ee785c708b457454e23daa0ad792b8ac128600d2f4e6"
+              },
+              "shift_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "74e321fd749bd2fb29a907ccbcd72a94ece28eaf6dacc239b4cbedff99a9cb86"
+              },
+              "period_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "4c89b233eb28b54a04016fdc63f967989f60be4dce0e44c74e6501f44fe87ad6"
+              }
+            }
+          },
+          "validation": {
+            "seed": 1940043,
+            "fields": {
+              "source": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "ad476162738ec099ce3c4a2de5d400e63f8fc2ca2a900cb390656d412b98f7c0"
+              },
+              "target": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "bd76c7ee34b28b842f8e7ad210b96b8cfc0494fe4d4bdd842f740f67f1915e46"
+              },
+              "shift_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "f114ae83545d36419742e9c28dcdb880827e12f4d5e332b8c5690d8187ce83e9"
+              },
+              "period_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "f34b2bc84b8e055c3de3d1cdd36ed4ba3290987b65d1bf1d475dccca0b9c75c0"
+              }
+            }
+          }
+        }
+      },
+      "98": {
+        "source_sha256": "c8749dfef308b2815ed136f6d01ac5845db881d5409e00557369b3c026c36583",
+        "samples": {
+          "train_e17_b4": {
+            "seed": 997204,
+            "fields": {
+              "source": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "775facaac7193bcdbda980d94b493da96c50a347280ab7e9a637b847043c3b59"
+              },
+              "target": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "8b28267dd1c8a3af43cf9c7c537bfd474f815b636edbe5f3901cd96302f0b05b"
+              },
+              "shift_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "c54437caa3d07a752775206a318e9a317667e54030eefb39b893fda2ac3f99db"
+              },
+              "period_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "847707721e77442e89fa2c5377edb3880ad645fc04138c4dfb9062ca869ed46d"
+              }
+            }
+          },
+          "train_e33_b4": {
+            "seed": 1013348,
+            "fields": {
+              "source": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "cd41209d2ab97ac2aecfc5bf53afe1277d706fb53f5b148d6692e7a6a5b2f540"
+              },
+              "target": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "0c09996361124606ebdf7d1521fb9d407aa07de4970f9c63d2875bda8a0f25eb"
+              },
+              "shift_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "8b8ef5a04b7080bdf24ddc1889c4a93edd0aa177474f537f84113e33c466d94b"
+              },
+              "period_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "3b6b9a6d136ca7e9744a78e0f42f2c4bf396cc165fa1f70282dcbc1976f6444e"
+              }
+            }
+          },
+          "train_e48_b4": {
+            "seed": 1028483,
+            "fields": {
+              "source": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "e43cfe1de8075fd82bd1f2553348b2834d360495ce687cace3710fc1181ad57d"
+              },
+              "target": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "ab22efc69d96f0fd6e9b0d4bc72a05effb2e68481e4e1392217a5ab6024565f5"
+              },
+              "shift_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "2e25c5fcbb560efc43445b299fdca54980711ed3ddab4a615151115291b81a4b"
+              },
+              "period_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "e5ed8d87a3783fd59c615b426b8e9be83ce3137d3e074d459da12ae7080e154c"
+              }
+            }
+          },
+          "validation": {
+            "seed": 1950047,
+            "fields": {
+              "source": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "14756fda9b9f53b300d02707a95a55d42bf03503880c21342d6b48f41c6da0e2"
+              },
+              "target": {
+                "dtype": "float32",
+                "shape": [
+                  4,
+                  1,
+                  256,
+                  256
+                ],
+                "sha256": "1ca7a5ccce714f86368335af7774200b52ae4171c7b3cd182a4e6db1443ec707"
+              },
+              "shift_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "a52da8cb62debba1976b928a5dd949ad51e948de98565cb81719b39c2f29c0f7"
+              },
+              "period_xy": {
+                "dtype": "float32",
+                "shape": [
+                  2,
+                  2
+                ],
+                "sha256": "17c4637bc83be94809fa474b1ab48b8038f94dd2c9af5c8c6b2980060ca46ff3"
+              }
+            }
+          }
+        }
+      }
+    },
+    "R98_texture_focus": {
+      "1": {
+        "patch": 512,
+        "core": 256,
+        "observed_scene_batch": 6,
+        "batches": [
+          [
+            56,
+            57,
+            58,
+            59,
+            60,
+            61
+          ],
+          [
+            296,
+            297,
+            298,
+            299,
+            300,
+            301
+          ],
+          [
+            876,
+            877,
+            878,
+            879,
+            880,
+            881
+          ],
+          [
+            996,
+            997,
+            998,
+            999,
+            940,
+            941
+          ],
+          [
+            62,
+            63,
+            64,
+            65,
+            66,
+            67
+          ],
+          [
+            302,
+            303,
+            304,
+            305,
+            306,
+            307
+          ],
+          [
+            882,
+            883,
+            884,
+            885,
+            886,
+            887
+          ],
+          [
+            942,
+            943,
+            944,
+            945,
+            946,
+            947
+          ],
+          [
+            68,
+            69,
+            70,
+            71,
+            72,
+            73
+          ],
+          [
+            308,
+            309,
+            310,
+            311,
+            312,
+            313
+          ],
+          [
+            888,
+            889,
+            890,
+            891,
+            892,
+            893
+          ],
+          [
+            948,
+            949,
+            950,
+            951,
+            952,
+            953
+          ],
+          [
+            74,
+            75,
+            76,
+            77,
+            78,
+            79
+          ],
+          [
+            314,
+            315,
+            316,
+            317,
+            318,
+            319
+          ],
+          [
+            894,
+            895,
+            896,
+            897,
+            898,
+            899
+          ],
+          [
+            954,
+            955,
+            956,
+            957,
+            958,
+            959
+          ]
+        ],
+        "roles": [
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable",
+          "severe_recoverable"
+        ],
+        "role_counts": {
+          "cross_tile_dense": 24,
+          "persistent_detail_bundle": 24,
+          "recoverable_detail": 24,
+          "severe_recoverable": 24
+        }
+      },
+      "17": {
+        "patch": 768,
+        "core": 384,
+        "observed_scene_batch": 2,
+        "batches": [
+          [
+            0,
+            1
+          ],
+          [
+            280,
+            281
+          ],
+          [
+            860,
+            861
+          ],
+          [
+            940,
+            941
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            282,
+            283
+          ],
+          [
+            862,
+            863
+          ],
+          [
+            942,
+            943
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            284,
+            285
+          ],
+          [
+            864,
+            865
+          ],
+          [
+            944,
+            945
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            286,
+            287
+          ],
+          [
+            866,
+            867
+          ],
+          [
+            946,
+            947
+          ]
+        ],
+        "roles": [
+          "recoverable_detail",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "severe_recoverable",
+          "recoverable_detail",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "severe_recoverable",
+          "recoverable_detail",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "severe_recoverable",
+          "recoverable_detail",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "severe_recoverable"
+        ],
+        "role_counts": {
+          "cross_tile_dense": 8,
+          "persistent_detail_bundle": 8,
+          "recoverable_detail": 8,
+          "severe_recoverable": 8
+        }
+      },
+      "48": {
+        "patch": 896,
+        "core": 512,
+        "observed_scene_batch": 1,
+        "batches": [
+          [
+            959
+          ],
+          [
+            79
+          ],
+          [
+            359
+          ],
+          [
+            939
+          ],
+          [
+            960
+          ],
+          [
+            80
+          ],
+          [
+            200
+          ],
+          [
+            860
+          ],
+          [
+            961
+          ],
+          [
+            81
+          ],
+          [
+            201
+          ],
+          [
+            861
+          ],
+          [
+            962
+          ],
+          [
+            82
+          ],
+          [
+            202
+          ],
+          [
+            862
+          ]
+        ],
+        "roles": [
+          "severe_recoverable",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "cross_tile_dense",
+          "severe_recoverable",
+          "recoverable_detail",
+          "persistent_detail_bundle",
+          "cross_tile_dense"
+        ],
+        "role_counts": {
+          "cross_tile_dense": 4,
+          "persistent_detail_bundle": 4,
+          "recoverable_detail": 4,
+          "severe_recoverable": 4
+        }
+      }
+    }
+  }
+}

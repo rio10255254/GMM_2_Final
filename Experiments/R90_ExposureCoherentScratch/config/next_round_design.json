@@ -1,0 +1,162 @@
+{
+  "proposed_experiment": "R91_ProfileCoherentScratch",
+  "status": "ready_for_implementation_review; training not started",
+  "objective": "Preserve R90 E45 detail, motion and exact tiling while preventing exposure-dependent contour expansion and late-stage dark outlines.",
+  "independence": {
+    "initialization": "random weights only",
+    "checkpoint_or_resume_input": null,
+    "teacher_or_pseudo_label": null,
+    "real_sem_or_hs100mg_pixels_in_training": false,
+    "real_sem_or_hs100mg_contours_in_training": false,
+    "formal_run_registration": "one scratch run; no inherited round weights"
+  },
+  "evidence_driving_the_design": {
+    "early_stop_transition": {
+      "epoch45": "Useful detail at all magnifications and no material 5x dark-edge warning, but exposure 18 already expands the contour.",
+      "epoch50": "Best overall SEM median, but 5x dark-edge warning begins sharply.",
+      "epoch55": "More apparent detail, but worse dark edges, clean-input preservation, motion development metrics and worst-exposure SEM."
+    },
+    "exposure18_branch_attribution_epoch45_gray": {
+      "low_branch_edge_annulus": 2.083826,
+      "low_branch_outside": 14.231331,
+      "edge_branch_edge_annulus": -0.783163,
+      "edge_branch_outside": 17.629742,
+      "detail_branch_edge_annulus": -0.000309,
+      "detail_branch_outside": 0.004118,
+      "combined_edge_annulus": 1.424034,
+      "combined_outside": 31.859637,
+      "interpretation": "The failure is an exposure-conditioned background-versus-boundary imbalance from the low and edge branches; it is not caused by the detail branch or by ACM alone."
+    },
+    "five_x_dark_edge_attribution_epoch50_gray": {
+      "low_branch_mean_on_dark_pixels": -5.741378,
+      "detail_branch_mean_on_dark_pixels": -5.925279,
+      "edge_branch_mean_on_dark_pixels": 0.480204,
+      "combined_mean_on_dark_pixels": -11.186772,
+      "interpretation": "The late dark outline is jointly formed by low and detail corrections; suppressing the edge branch would target the wrong component."
+    }
+  },
+  "training_data": {
+    "formal_scenes": 1250,
+    "observations_per_scene": 4,
+    "formal_observations": 5000,
+    "label_supersampling": 8,
+    "label_downsampling": "one antialiased reduction from the 8x canvas",
+    "scene_family_percent": {
+      "irregular_isolated_contours": 18,
+      "dense_arrays_and_grids": 18,
+      "line_space_and_anisotropic_patterns": 16,
+      "thin_curves_rings_and_open_contours": 16,
+      "porous_and_textured_composites": 16,
+      "defects_junctions_and_multiscale_shapes": 16
+    },
+    "procedural_texture_policy": {
+      "families": [
+        "one_over_f texture",
+        "anisotropic fibers and line texture",
+        "multiscale blobs and pores",
+        "scratches and sparse defects",
+        "locally varying contrast and illumination"
+      ],
+      "geometry_independence": "Texture random seeds are independent from shape seeds so the model cannot memorize a texture-to-contour shortcut."
+    },
+    "coherent_observation_bundle": [
+      "clean or near-clean identity view",
+      "low-contrast or low-light view",
+      "mid-background and mid-transition stress view modeled on the diagnosed failure mechanism without using real pixels",
+      "high-background, dark-background or mixed-illumination view"
+    ],
+    "critical_sampling_change": "Increase views in which boundary intensity lies near the midpoint between interior and exterior. Randomize gamma, black level, white level, background lift and blur independently while keeping one exact geometry label.",
+    "development_validation": {
+      "scenes": 256,
+      "seed_disjoint_from_training": true,
+      "contains_real_pixels": false,
+      "contains_worst-view coherent bundles": true,
+      "sealed_final_holdout_used_for_checkpoint_selection": false
+    }
+  },
+  "architecture": {
+    "backbone": "R90 encoder, decoder, local optical bank, residual output and tile-safe local operations remain unchanged.",
+    "micro_adjustment": "Generate the low-frequency correction at quarter resolution, bilinearly restore it, then apply a fixed broad binomial blur. This guarantees that the low branch cannot draw a narrow outline while preserving broad illumination correction.",
+    "detail_branch": "Keep the current zero-DC detail construction and capacity; address its negative halo through training signals rather than removing detail capacity.",
+    "edge_branch": "Keep the branch. Add profile supervision because the diagnosis shows it is not the source of the 5x dark outline but contributes to exposure-conditioned background imbalance.",
+    "normalization_and_global_pooling": "none",
+    "tiling_contract": {
+      "core_sizes": [256, 384, 512],
+      "halo": 192,
+      "required_result": "full-canvas and all core sizes remain exactly identical"
+    }
+  },
+  "training_objectives": {
+    "existing_objectives_retained": [
+      "pixel and low-band reconstruction",
+      "gradient and boundary geometry",
+      "local texture detail",
+      "identity preservation",
+      "cross-observation consistency",
+      "signed motion and bias",
+      "overlapping-tile consistency"
+    ],
+    "new_profile_midpoint_objective": "Sample normals from procedural label boundaries and penalize displacement of the 50 percent transition crossing, separately tracking inward and outward bias.",
+    "new_region_relationship_objective": "Preserve the relative interior, boundary-band and exterior photometry so a background lift cannot move the contour while improving average pixel loss.",
+    "new_bundle_worst_view_objective": "Use a smooth top-tail aggregation inside each coherent exposure bundle; one bad mid-exposure view can no longer hide behind three improved views.",
+    "strengthened_low_branch_objective": "Penalize edge-aligned gradient energy and boundary-versus-exterior imbalance in the low correction, in addition to the existing low-branch leakage measure.",
+    "new_detail_halo_objective": "Penalize paired negative and positive overshoot around label normals while preserving local band-pass energy and correlation with the target.",
+    "texture_objective": "Compare locally contrast-normalized band-pass structure so real-looking microtexture can improve without rewarding global sharpening halos.",
+    "weight_schedule": "All objectives are present from the beginning and change smoothly. Do not introduce a late hard switch that suddenly favors detail over safety."
+  },
+  "runtime_and_schedule": {
+    "maximum_epochs": 60,
+    "epoch_count_is_not_a_target": true,
+    "checkpoint_interval_epochs": 2,
+    "real_preview_interval_epochs": 5,
+    "real_previews_are_diagnostic_only": true,
+    "patch_plan": [
+      {
+        "epochs": "1-8",
+        "patch_size": 512,
+        "scene_batch": 12,
+        "gradient_accumulation": 1
+      },
+      {
+        "epochs": "9-60",
+        "patch_size": 768,
+        "scene_batch": 10,
+        "gradient_accumulation": 2,
+        "effective_scene_batch": 20
+      }
+    ],
+    "gpu_policy": {
+      "minimum_free_memory_before_start_gib": 8,
+      "target_peak_allocated_gib": 36,
+      "minimum_memory_left_for_desktop_gib": 10,
+      "abort_cleanly_on_memory_pressure": true
+    }
+  },
+  "early_stopping": {
+    "selection_data": "procedural development validation only",
+    "tracked_axes": [
+      "worst-view boundary midpoint error",
+      "worst-view contour and signed outward bias",
+      "identity texture preservation",
+      "useful detail across shape and texture families",
+      "motion stability and signed bias",
+      "low-branch leakage and halo polarity",
+      "exact tile consistency"
+    ],
+    "policy": "Maintain a Pareto archive. Stop when safety axes deteriorate across several checkpoints while detail improvement falls within its recent variability; choose the earliest checkpoint at the stable Pareto knee rather than a fixed epoch or one weighted average.",
+    "expected_useful_window": "approximately epochs 30 to 50, to be determined by the trajectory rather than assumed in advance"
+  },
+  "post_freeze_confirmation": {
+    "sem": "All 36 paired pillars and all 12 exposures with the frozen ACM rule plus independent radial transition diagnostics.",
+    "real_images": "All 301 frames across the six locked 5x, 20x and 50x sequences.",
+    "motion": "Locked Raw-selected tiles, frame pairs and timing exclusions; no model-output-based filtering.",
+    "tiling": "Full reference and core sizes 256, 384 and 512.",
+    "onnx": "Export only the frozen checkpoint, rerun SEM contour parity, full-image examples, manifest hashes and extracted-archive smoke testing.",
+    "external_gmf": "Retain as a future independent gate when the required license is available."
+  },
+  "current_delivery_decision": {
+    "r90_epoch45": "technically exportable but not approved as a universal enterprise package because exposure 18 remains a real contour failure",
+    "emergency_package": "keep the already validated R61 ONNX package",
+    "formal_project_baseline": "COMBO remains unchanged"
+  }
+}

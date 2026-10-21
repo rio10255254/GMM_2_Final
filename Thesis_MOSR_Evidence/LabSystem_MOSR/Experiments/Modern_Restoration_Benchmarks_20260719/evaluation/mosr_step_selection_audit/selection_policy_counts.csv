@@ -1,0 +1,43 @@
+measurement_family,sequence,selection_rule,selection_label,candidate_count,selected_count,uses_mosr_output,uses_nominal_target
+center-nine circular features,50x_x_0p5um,acquisition_spread30,Acquisition-spread 30 (model-blind),48,30,False,False
+center-nine circular features,50x_x_0p5um,timestamp_qc_spread30,Timestamp-QC spread 30 (model-blind),48,30,False,False
+center-nine circular features,50x_x_0p5um,time_regular30,Timing-consistent 30 (model-blind),48,30,False,False
+center-nine circular features,50x_x_0p5um,existing_formal_common,Existing Raw-ranked selection (common-valid only),48,30,False,True
+center-nine circular features,50x_x_0p5um,mosr_internal30,MOSR-low-internal-spread 30 (outcome-selected),48,30,True,False
+center-nine circular features,50x_x_0p5um,mosr_nominal30,MOSR-low-command-error 30 (oracle-selected),48,30,True,True
+center-nine circular features,50x_x_0p5um,all_common_valid,All common-valid steps,48,48,False,False
+center-nine circular features,20x_0p5um,acquisition_spread30,Acquisition-spread 30 (model-blind),31,30,False,False
+center-nine circular features,20x_0p5um,timestamp_qc_spread30,Timestamp-QC spread 30 (model-blind),31,30,False,False
+center-nine circular features,20x_0p5um,time_regular30,Timing-consistent 30 (model-blind),31,30,False,False
+center-nine circular features,20x_0p5um,existing_formal_common,Existing Raw-ranked selection (common-valid only),31,28,False,True
+center-nine circular features,20x_0p5um,mosr_internal30,MOSR-low-internal-spread 30 (outcome-selected),31,30,True,False
+center-nine circular features,20x_0p5um,mosr_nominal30,MOSR-low-command-error 30 (oracle-selected),31,30,True,True
+center-nine circular features,20x_0p5um,all_common_valid,All common-valid steps,31,31,False,False
+center-nine circular features,50x_x_1um,acquisition_spread30,Acquisition-spread 30 (model-blind),48,30,False,False
+center-nine circular features,50x_x_1um,timestamp_qc_spread30,Timestamp-QC spread 30 (model-blind),48,30,False,False
+center-nine circular features,50x_x_1um,time_regular30,Timing-consistent 30 (model-blind),48,30,False,False
+center-nine circular features,50x_x_1um,existing_formal_common,Existing Raw-ranked selection (common-valid only),48,30,False,True
+center-nine circular features,50x_x_1um,mosr_internal30,MOSR-low-internal-spread 30 (outcome-selected),48,30,True,False
+center-nine circular features,50x_x_1um,mosr_nominal30,MOSR-low-command-error 30 (oracle-selected),48,30,True,True
+center-nine circular features,50x_x_1um,all_common_valid,All common-valid steps,48,48,False,False
+center-nine circular features,20x_1um,acquisition_spread30,Acquisition-spread 30 (model-blind),49,30,False,False
+center-nine circular features,20x_1um,timestamp_qc_spread30,Timestamp-QC spread 30 (model-blind),49,30,False,False
+center-nine circular features,20x_1um,time_regular30,Timing-consistent 30 (model-blind),49,30,False,False
+center-nine circular features,20x_1um,existing_formal_common,Existing Raw-ranked selection (common-valid only),49,30,False,True
+center-nine circular features,20x_1um,mosr_internal30,MOSR-low-internal-spread 30 (outcome-selected),49,30,True,False
+center-nine circular features,20x_1um,mosr_nominal30,MOSR-low-command-error 30 (oracle-selected),49,30,True,True
+center-nine circular features,20x_1um,all_common_valid,All common-valid steps,49,49,False,False
+line edges,50x_x_0p5um,acquisition_spread30,Acquisition-spread 30 (model-blind),48,30,False,False
+line edges,50x_x_0p5um,timestamp_qc_spread30,Timestamp-QC spread 30 (model-blind),48,30,False,False
+line edges,50x_x_0p5um,time_regular30,Timing-consistent 30 (model-blind),48,30,False,False
+line edges,50x_x_0p5um,existing_formal_common,Existing Raw-ranked selection (common-valid only),48,30,False,True
+line edges,50x_x_0p5um,mosr_internal30,MOSR-low-internal-spread 30 (outcome-selected),48,30,True,False
+line edges,50x_x_0p5um,mosr_nominal30,MOSR-low-command-error 30 (oracle-selected),48,30,True,True
+line edges,50x_x_0p5um,all_common_valid,All common-valid steps,48,48,False,False
+line edges,50x_x_1um,acquisition_spread30,Acquisition-spread 30 (model-blind),48,30,False,False
+line edges,50x_x_1um,timestamp_qc_spread30,Timestamp-QC spread 30 (model-blind),48,30,False,False
+line edges,50x_x_1um,time_regular30,Timing-consistent 30 (model-blind),48,30,False,False
+line edges,50x_x_1um,existing_formal_common,Existing Raw-ranked selection (common-valid only),48,30,False,True
+line edges,50x_x_1um,mosr_internal30,MOSR-low-internal-spread 30 (outcome-selected),48,30,True,False
+line edges,50x_x_1um,mosr_nominal30,MOSR-low-command-error 30 (oracle-selected),48,30,True,True
+line edges,50x_x_1um,all_common_valid,All common-valid steps,48,48,False,False

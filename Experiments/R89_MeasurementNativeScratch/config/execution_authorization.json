@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R89_MeasurementNativeScratch",
+  "authorization_status": "authorized",
+  "authorized_at": "2026-08-11T00:08:00+08:00",
+  "authorization_source": "User requested stopping R88, correcting the root causes, and directly starting one complete clean training run.",
+  "authorized_scope": [
+    "stop_and_archive_R88",
+    "R89_implementation",
+    "aggregate_real_optical_statistics_without_pixels_or_structure",
+    "smoke_dataset_generation",
+    "smoke_training",
+    "formal_dataset_generation",
+    "locked_holdout_generation_and_sealing",
+    "one_100_epoch_random_initialization_training_run",
+    "live_reconstruction_monitoring"
+  ],
+  "formal_run_limit": 1,
+  "checkpoint_inheritance_allowed": false,
+  "resume_allowed": false,
+  "teacher_or_pseudo_label_allowed": false,
+  "sem_or_real_sample_training_pixels_allowed": false,
+  "real_optical_aggregate_statistics_allowed": true,
+  "formal_baseline_promotion_authorized": false,
+  "external_gmf_waiver_authorized": false,
+  "run_registry": "runs/formal_run_registry.json"
+}

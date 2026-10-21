@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "bytes": 3146806,
+      "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
+      "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
+    },
+    {
+      "path": "Deliverables/MOSR_R61_ONNX/README.md",
+      "bytes": 1663,
+      "sha256": "2c204c5d5a286a1cb20b733538023b6a98f33c4a7d9b058d8207680bc84aae1d",
+      "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
+    },
+    {
+      "path": "Deliverables/MOSR_R61_ONNX/requirements.txt",
+      "bytes": 73,
+      "sha256": "05fdfe5ad254c7c0fb11a7e810087e309d41ca908c1dacea863d67e81577b333",
+      "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
+    },
+    {
+      "path": "Deliverables/MOSR_R61_ONNX/run.py",
+      "bytes": 10555,
+      "sha256": "ccc8bc58002593e9a881f18256b83d2f97188014e6d98d37570ed9b07c6125b6",
+      "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
+    },
+    {
+      "path": "Deliverables/MOSR_R61_ONNX/manifest.json",
+      "bytes": 2515,
+      "sha256": "c4731ba41903fd2236588656c030a253c2aeec7879f42a7b7095b86b86750091",
+      "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
+    },
+    {
+      "path": "Deliverables/MOSR_R61_ONNX/optics.npz",
+      "bytes": 38032,
+      "sha256": "4249803fe7c0c8d5cab693fd41f3ca193933e759b292dc87b9ddbf5cb00186a7",
+      "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
+    },
+    {
+      "path": "Deliverables/MOSR_R61_ONNX/example/input.bmp",
+      "bytes": 263222,
+      "sha256": "ababc002eeb25f2b648bb016dae21fdd2e51cfb43c18be0367f82c051f2aff1a",
+      "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
+    },
+    {
+      "path": "Deliverables/MOSR_R61_ONNX/example/output.bmp",
+      "bytes": 263222,
+      "sha256": "bf36d1dadaf58c5bcc0864953582aa00e7c1472a58f157145754380d93d332c5",
+      "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
+    },
+    {
+      "path": "Experiments/R90_ExposureCoherentScratch/results/early_stop_confirmation/onnx_feasibility/model.onnx",
+      "sha256": "ea9ca978bc02c53fe4266f50607a54379097d0dac2e50d6cddfcc25861adfad1",
+      "bytes": 9530773,
+      "role": "exact_graph_object_to_fetch_from_GitHub"
+    },
+    {
+      "path": "Experiments/R99_GeometryTextureCoherentScratch/results/preflight_r99_fixed256.onnx",
+      "sha256": "6933127d7063e97d412812bb6073d5987c306f787384c0afbf79daf9135f2f5d",
+      "bytes": 9807256,
+      "role": "exact_graph_object_to_fetch_from_GitHub"
+    },
+    {
+      "path": "Deliverables/MOSR_R61_ONNX/model.onnx",
+      "sha256": "7baf6fda38a843deff0fb840a3821d44f09a69b1485b2a263281c5096f3f31d8",
+      "bytes": 16151146,
+      "role": "exact_graph_object_to_fetch_from_GitHub"
+    }
+  ],
+  "camera_source": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+  "graphs": [
+    {
+      "id": "R90_ONNX_feasibility",
+      "path": "Experiments/R90_ExposureCoherentScratch/results/early_stop_confirmation/onnx_feasibility/model.onnx",
+      "original_path": "Experiments/R90_ExposureCoherentScratch/results/early_stop_confirmation/onnx_feasibility/model.onnx",
+      "historical_role": "R90 early-stop confirmation ONNX feasibility artifact, without promotion or a new performance claim"
+    },
+    {
+      "id": "R99_preflight",
+      "path": "Experiments/R99_GeometryTextureCoherentScratch/results/preflight_r99_fixed256.onnx",
+      "original_path": "Experiments/R99_GeometryTextureCoherentScratch/results/preflight_r99_fixed256.onnx",
+      "historical_role": "R99 fixed256 pre-training export/readiness artifact, not evidence of the final trained R99 model"
+    },
+    {
+      "id": "R61_deployment_body",
+      "path": "Deliverables/MOSR_R61_ONNX/model.onnx",
+      "original_path": "Deliverables/MOSR_R61_ONNX/model.onnx",
+      "historical_role": "R61 deployed neural-network graph; complete reconstruction also requires original Python optical processing and optics.npz"
+    }
+  ],
+  "original_wrapper": "Deliverables/MOSR_R61_ONNX/run.py",
+  "original_wrapper_input": "Deliverables/MOSR_R61_ONNX/example/input.bmp",
+  "original_wrapper_reference": "Deliverables/MOSR_R61_ONNX/example/output.bmp",
+  "source_files_for_ordinary_git": [
+    "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+    "Deliverables/MOSR_R61_ONNX/README.md",
+    "Deliverables/MOSR_R61_ONNX/requirements.txt",
+    "Deliverables/MOSR_R61_ONNX/run.py",
+    "Deliverables/MOSR_R61_ONNX/manifest.json",
+    "Deliverables/MOSR_R61_ONNX/optics.npz",
+    "Deliverables/MOSR_R61_ONNX/example/input.bmp",
+    "Deliverables/MOSR_R61_ONNX/example/output.bmp"
+  ],
+  "graph_download_selection": [
+    {
+      "id": "R90_ONNX_feasibility",
+      "sha256": "ea9ca978bc02c53fe4266f50607a54379097d0dac2e50d6cddfcc25861adfad1",
+      "bytes": 9530773,
+      "manifest": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\model_batches\\MODELS_B006\\bundle\\RESEARCH_ASSETS.json.gz",
+      "tag": "research-model-history-additions-20261021",
+      "path": "Experiments/R90_ExposureCoherentScratch/results/early_stop_confirmation/onnx_feasibility/model.onnx"
+    },
+    {
+      "id": "R99_preflight",
+      "sha256": "6933127d7063e97d412812bb6073d5987c306f787384c0afbf79daf9135f2f5d",
+      "bytes": 9807256,
+      "manifest": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\model_batches\\MODELS_B006\\bundle\\RESEARCH_ASSETS.json.gz",
+      "tag": "research-model-history-additions-20261021",
+      "path": "Experiments/R99_GeometryTextureCoherentScratch/results/preflight_r99_fixed256.onnx"
+    },
+    {
+      "id": "R61_deployment_body",
+      "sha256": "7baf6fda38a843deff0fb840a3821d44f09a69b1485b2a263281c5096f3f31d8",
+      "bytes": 16151146,
+      "manifest": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\model_batches\\MODELS_B006\\bundle\\RESEARCH_ASSETS.json.gz",
+      "tag": "research-model-history-additions-20261021",
+      "path": "Deliverables/MOSR_R61_ONNX/model.onnx"
+    }
+  ],
+  "native_equivalence_or_all_historical_training_claimed": false
+}

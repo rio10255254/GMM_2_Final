@@ -1,0 +1,88 @@
+{
+  "experiment_id": "R83_locked_synthetic_confirmation_ACM",
+  "dataset": {
+    "root": "D:\\GMM_2_Final\\Experiments\\R83_R79SevereMicroscopyStrengthening\\results\\final_confirmation\\locked_synthetic_acm\\dataset",
+    "generator_version": "r83_severe_microscopy_ambiguity_guard_v1",
+    "generator_seed": 2026073001,
+    "image_size": 256,
+    "images_per_family": 32,
+    "total_images": 160,
+    "families": [
+      {
+        "name": "cohort_1",
+        "label_tw": "固定保留組 1",
+        "stage": "stage_r83_holdout_acm_1"
+      },
+      {
+        "name": "cohort_2",
+        "label_tw": "固定保留組 2",
+        "stage": "stage_r83_holdout_acm_2"
+      },
+      {
+        "name": "cohort_3",
+        "label_tw": "固定保留組 3",
+        "stage": "stage_r83_holdout_acm_3"
+      },
+      {
+        "name": "cohort_4",
+        "label_tw": "固定保留組 4",
+        "stage": "stage_r83_holdout_acm_4"
+      },
+      {
+        "name": "cohort_5",
+        "label_tw": "固定保留組 5",
+        "stage": "stage_r83_holdout_acm_5"
+      }
+    ],
+    "shape_families": [
+      "fourier_lobed",
+      "deep_notches",
+      "thin_necks",
+      "crescent_bodies",
+      "rough_boundaries"
+    ],
+    "mask_semantics": "one predeclared analytic object per image",
+    "created_after_checkpoint": true,
+    "difficulty_freeze_rule": "Raw-only ACM is calibrated before any R61 reconstruction; overall median IoU must be 0.70-0.95, each challenge median must be below 0.97, and at least four challenge medians must be 0.65-0.95"
+  },
+  "acm": {
+    "implementation": "MATLAB activecontour",
+    "method": "Chan-Vese",
+    "iterations": 100,
+    "smooth_factor": 1.0,
+    "contraction_bias": 0.0,
+    "intensity_preprocessing": "mat2gray then 1st-to-99th-percentile contrast normalization",
+    "initialization": "polarity-independent automatic inner seed after mild Gaussian denoising, with a fixed centered coarse-disk fallback only when thresholding has no valid component; no truth geometry is used",
+    "initialization_mode": "smoothed_otsu",
+    "seed_radius_fraction": 0.2,
+    "initialization_uses_truth_shape": false,
+    "primary_truth": "exact generator geometry mask",
+    "truth_image_acm_role": "independent extraction QA only",
+    "primary_alignment": "translation_only",
+    "secondary_alignment": "fixed_pixel_coordinates",
+    "scale_fitting": false,
+    "rotation_fitting": false,
+    "sensitivity_presets": [
+      {
+        "name": "low_smooth",
+        "iterations": 100,
+        "smooth_factor": 0.75
+      },
+      {
+        "name": "primary",
+        "iterations": 100,
+        "smooth_factor": 1.0
+      },
+      {
+        "name": "high_smooth",
+        "iterations": 100,
+        "smooth_factor": 1.5
+      }
+    ],
+    "sensitivity_filenames": [
+      "0000.bmp",
+      "0007.bmp",
+      "0014.bmp"
+    ]
+  }
+}

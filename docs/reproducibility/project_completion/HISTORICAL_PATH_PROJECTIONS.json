@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "purpose": "Verified original-path aliases for multi-root historical archives; never overwrite differing current files",
+  "projections": [
+    {
+      "archive_relative_prefix": "experiments/R41_RingDistillation/20260801_full_history/experiment",
+      "project_prefix": "Experiments/R41_RingDistillation",
+      "evidence": "Experiments/R41_RingDistillation/ARCHIVE_POINTER.md",
+      "scope": "main/R41_RingDistillation"
+    },
+    {
+      "archive_relative_prefix": "experiments/R41_RingDistillation/20260801_full_history/training_run",
+      "project_prefix": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028",
+      "evidence": "Experiments/R41_RingDistillation/ARCHIVE_POINTER.md",
+      "scope": "main/R41_RingDistillation"
+    },
+    {
+      "archive_relative_prefix": "experiments/R41_RingDistillation/20260801_full_history/training_data",
+      "project_prefix": "Training_Data/r41_ring_distillation",
+      "evidence": "Experiments/R41_RingDistillation/ARCHIVE_POINTER.md",
+      "scope": "main/R41_RingDistillation"
+    },
+    {
+      "archive_relative_prefix": "analyses/20260704_20x_5x_analysis/20260926_full_history/payload",
+      "project_prefix": "20260704_20x_5x_analysis",
+      "evidence": "20260704_20x_5x_analysis/ARCHIVE_POINTER_20260926.md",
+      "scope": "project/20260704_20x_5x_analysis"
+    },
+    {
+      "archive_relative_prefix": "compatibility_views/R87_TileNativeScratchGeneralization/20261016/data/r87_smoke_scene_pairs/arrays",
+      "project_prefix": "Experiments/R87_TileNativeScratchGeneralization/data/r87_smoke_scene_pairs/arrays",
+      "scope": "main/R87_TileNativeScratchGeneralization",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R87_TileNativeScratchGeneralization\\data\\r87_smoke_scene_pairs\\arrays",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "compatibility_views/R87_TileNativeScratchGeneralization/20261016/data/r87_formal_scene_pairs/arrays",
+      "project_prefix": "Experiments/R87_TileNativeScratchGeneralization/data/r87_formal_scene_pairs/arrays",
+      "scope": "main/R87_TileNativeScratchGeneralization",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R87_TileNativeScratchGeneralization\\data\\r87_formal_scene_pairs\\arrays",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R147_FullResPSFConsistency/results_root",
+      "project_prefix": "Experiments/R147_FullResPSFConsistency/results",
+      "scope": "main/R147_FullResPSFConsistency",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\results",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R147_FullResPSFConsistency/training_run",
+      "project_prefix": "Experiments/R147_FullResPSFConsistency/runs/formal_8192",
+      "scope": "main/R147_FullResPSFConsistency",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\runs\\formal_8192",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R147_FullResPSFConsistency/launcher_logs",
+      "project_prefix": "Experiments/R147_FullResPSFConsistency/runs/launcher_logs",
+      "scope": "main/R147_FullResPSFConsistency",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\runs\\launcher_logs",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R147_FullResPSFConsistency/centers",
+      "project_prefix": "Experiments/R147_FullResPSFConsistency/results_local_verified_copy/centers",
+      "scope": "main/R147_FullResPSFConsistency",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\results_local_verified_copy\\centers",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R147_FullResPSFConsistency/comparison",
+      "project_prefix": "Experiments/R147_FullResPSFConsistency/results_local_verified_copy/comparison",
+      "scope": "main/R147_FullResPSFConsistency",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\results_local_verified_copy\\comparison",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R147_FullResPSFConsistency/reconstruction",
+      "project_prefix": "Experiments/R147_FullResPSFConsistency/results_local_verified_copy/reconstruction",
+      "scope": "main/R147_FullResPSFConsistency",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\results_local_verified_copy\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R146_SEMCoreHaloPSF25_MatchedPairs/reconstruction",
+      "project_prefix": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R146_SEMCoreHaloPSF25_MatchedPairs\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R145_Center9PSF25_CorrectedPairs/reconstruction",
+      "project_prefix": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R145_Center9PSF25_CorrectedPairs\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R144_Center9PSF25_MatchedPairs/reconstruction",
+      "project_prefix": "Experiments/R144_Center9PSF25_MatchedPairs/results/reconstruction",
+      "scope": "main/R144_Center9PSF25_MatchedPairs",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R144_Center9PSF25_MatchedPairs\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R143_PSF25_MatchedPairs/reconstruction",
+      "project_prefix": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R143_PSF25_MatchedPairs\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R140_StableUNet_20260923/reconstruction",
+      "project_prefix": "Experiments/R140_StableUNet/results/reconstruction",
+      "scope": "main/R140_StableUNet",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R140_StableUNet\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R140v2_StableUNet_20260923/reconstruction",
+      "project_prefix": "Experiments/R140v2_StableUNet/results/reconstruction",
+      "scope": "main/R140v2_StableUNet",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R140v2_StableUNet\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R139_UNetRecurrent_20260923/reconstruction",
+      "project_prefix": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R139_UNetRecurrentPrototype\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R138_V42PSF8_20260923/reconstruction",
+      "project_prefix": "Experiments/R138_V42PSF8/results/reconstruction",
+      "scope": "main/R138_V42PSF8",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R138_V42PSF8\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R137_WeakPSF_20260921/reconstruction",
+      "project_prefix": "Experiments/R137_WeakPSFFeature/results/reconstruction",
+      "scope": "main/R137_WeakPSFFeature",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R137_WeakPSFFeature\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R136_R128_20260918",
+      "project_prefix": "Experiments/R136_PIRepeatability/results/R128",
+      "scope": "main/R136_PIRepeatability",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R136_PIRepeatability\\results\\R128",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R130_Clean_20260920/reconstruction",
+      "project_prefix": "Experiments/R130_Clean/results/reconstruction",
+      "scope": "main/R130_Clean",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: D:\\GMM_2_Final\\Experiments\\R130_Clean\\results\\reconstruction",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R147_FullResPSFConsistency/centers",
+      "project_prefix": "Experiments/R147_FullResPSFConsistency/results/centers",
+      "scope": "main/R147_FullResPSFConsistency",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\results_root\\centers",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R147_FullResPSFConsistency/comparison",
+      "project_prefix": "Experiments/R147_FullResPSFConsistency/results/comparison",
+      "scope": "main/R147_FullResPSFConsistency",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\results_root\\comparison",
+      "source_directory_was_not_modified": true
+    },
+    {
+      "archive_relative_prefix": "active_runs/R147_FullResPSFConsistency/reconstruction",
+      "project_prefix": "Experiments/R147_FullResPSFConsistency/results/reconstruction",
+      "scope": "main/R147_FullResPSFConsistency",
+      "projection_role": "current_registered_H_reference",
+      "evidence": "Original captured directory reference: H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\results_root\\reconstruction",
+      "source_directory_was_not_modified": true
+    }
+  ]
+}

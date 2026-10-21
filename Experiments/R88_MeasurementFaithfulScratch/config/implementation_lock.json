@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R88_MeasurementFaithfulScratch",
+  "status": "frozen_before_formal_data",
+  "frozen_at": "2026-08-10T20:18:57.867774",
+  "branch": "sandbox/r88-measurement-faithful-scratch",
+  "files": {
+    "model/r88_model.py": "d99eff6bda608631c2acf56ab686ca66cba689aeb5893301214a0557ce94dc30",
+    "training/train_r88.py": "4617798313cd63e378847640eb5d2347470fc7d0823a893c933b507c85c75946",
+    "inference/reconstruct.py": "a1442b536a66beeb4916d725f589e32ff505e254c0475291e5d233699253b0d3",
+    "scripts/generate_dataset.py": "d3159ad5aab830f064462b5f8dc8129f1e6b2d483742ee5399348d86eed8b492",
+    "scripts/launch_r88.py": "761b8c55eb73ae9a4c10b12f522fe98a913bdc8cbabd63642d8486962b2a8846",
+    "scripts/benchmark_r88.py": "b87996b943b1e32ea7558160901b379972a6d84462fe2f64df7fb2ac189eabef"
+  },
+  "preformal_benchmark_sha256": "0d0013205cf7ed4e3e8dad107a3ee5410bce7ece99a5f4cf32bc7bd9fd7459bb",
+  "smoke_dataset_content_sha256": "f7660282a26131a2341021c5a6975461832f6c415741f7a2af7b51c327e75a79",
+  "smoke_audit_sha256": "253367339d258c91c0adefce606cb563363ccb5edc34d1ce726fb5dd705e2e81",
+  "formal_run_registry_empty": true
+}

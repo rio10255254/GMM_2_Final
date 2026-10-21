@@ -5,6 +5,14 @@
 這份文件說明 `D:\GMM_2_Final` 這個 repository 的 Git / GitHub 治理方式。  
 This document defines the Git / GitHub governance model for `D:\GMM_2_Final`.
 
+## GitHub研究保存（2026-10-21）
+
+一般Git歷史保存程式、正式報告與閱讀導引；GitHub版本附件保存必要原拍、固定訓練來源、模型與完整數據。下文「不追蹤大型payload」指一般Git歷史，不表示這些研究內容可以從GitHub保存範圍省略。[保存與取回入口](docs/reproducibility/README.md)記錄已完成驗證，[本機全內容核對](docs/reproducibility/project_completion/README.md)另列本輪進度。
+
+相同內容共用物件時仍保留原位置、輪次與用途。較舊或不同的版本不得覆蓋目前正式來源；成功、失敗、草稿與未完成工作各自保留身分。保存分支、歷史分支與固定版本標記是長期引用入口，不適用一般工作分支「合併後刪除」慣例。
+
+正式模型仍為COMBO，R30是前任基準。論文目前採用與最新交接依`PROJECT_STATE.md`及原實驗報告；較早的目錄或分支說明按其歷史日期閱讀。
+
 這個 repo **不是**磁碟工作目錄的完整鏡像。  
 This repository is **not** a byte-for-byte mirror of the working directory on disk.
 
@@ -184,8 +192,8 @@ The Git-tracked copies now live under `docs/archive/legacy_runtime_status/`.
   - 保留的 reference namespace，只用於已核准 baseline 里程碑  
   - a reserved reference namespace for approved baseline milestones
 - `baseline/r30-b1-dironly`
-  - 目前正式 production baseline  
-  - the current production baseline
+  - 歷史前任 production baseline 的保留參照
+  - preserved reference for the former production baseline
 - `reconstructed/r26-sm035`
   - 有證據支撐的前一代 baseline  
   - the evidence-backed predecessor baseline
@@ -217,7 +225,7 @@ The Git-tracked copies now live under `docs/archive/legacy_runtime_status/`.
   - R38v2 均衡型候選（外部 GMF 通過：0.8px -20%，銳度 +89%）
   - R38v2 balanced candidate (external pass: 0.8px -20%, steepness +89%)
 - `codex/*`
-  - AI agent 工作分支，合併後即刪除
+  - 一般AI工作分支於合併後依需要清理；research-preservation、research-recovery及history保存分支持續保留
   - AI agent working branches, deleted after merge
 
 ## Reconstruction Honesty Rule / reconstructed 分支誠實原則

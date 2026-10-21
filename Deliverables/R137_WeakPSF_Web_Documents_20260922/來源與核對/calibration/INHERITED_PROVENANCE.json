@@ -1,0 +1,135 @@
+{
+  "source_checkpoint": {
+    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\results\\training_results\\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\\epoch_120.pth.tar",
+    "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83"
+  },
+  "source_model": {
+    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\model_v42.py",
+    "sha256": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242"
+  },
+  "source_state_key": "state_dict",
+  "only_calibration_buffers_transferred": true,
+  "learned_V42_weights_transferred": false,
+  "kernel_shape": [
+    25,
+    101,
+    101
+  ],
+  "candidate_shape": [
+    4,
+    101,
+    101
+  ],
+  "centroid_offsets_xy": [
+    [
+      -0.5524186629584733,
+      0.5499509321944842
+    ],
+    [
+      -0.5494275066477172,
+      0.5271147751416478
+    ],
+    [
+      -0.5493966053105481,
+      0.5386967303987831
+    ],
+    [
+      -0.549380102687806,
+      0.5426011347330899
+    ],
+    [
+      -0.5500198192642927,
+      0.5311264770726254
+    ],
+    [
+      -0.5521763908296862,
+      0.5493275729586671
+    ],
+    [
+      -0.552060650021879,
+      0.5491906375463458
+    ],
+    [
+      -0.5519322066428884,
+      0.549053665567655
+    ],
+    [
+      -0.5519116376989501,
+      0.5490233288946698
+    ],
+    [
+      -0.552139177925902,
+      0.5492864213604776
+    ],
+    [
+      -0.5521456657842378,
+      0.5492917195187275
+    ],
+    [
+      -0.5519209728089578,
+      0.549034365421754
+    ],
+    [
+      -0.5519246829843354,
+      0.549039914912953
+    ],
+    [
+      -0.551855720303621,
+      0.5489604236853296
+    ],
+    [
+      -0.5521348636211627,
+      0.5492831533503164
+    ],
+    [
+      -0.5521112567798738,
+      0.5492473070828439
+    ],
+    [
+      -0.5517379373825264,
+      0.548850714774197
+    ],
+    [
+      -0.514384999272508,
+      0.5488997606023389
+    ],
+    [
+      -0.5517209219145727,
+      0.5488384278336156
+    ],
+    [
+      -0.5520556817452089,
+      0.5491727662640145
+    ],
+    [
+      -0.5524347166329804,
+      0.5498399141360366
+    ],
+    [
+      -0.5491302804366995,
+      0.5519289937796117
+    ],
+    [
+      -0.5493167582330898,
+      0.5520838979119276
+    ],
+    [
+      -0.5492206177362178,
+      0.5503816168458044
+    ],
+    [
+      -0.549860252000137,
+      0.5523214241188796
+    ]
+  ],
+  "stored_adaptive_beta": 0.019960692152380943,
+  "stored_adaptive_beta_scale": 0.0,
+  "stored_effective_adaptive_strength": 0.0,
+  "current_origin": "Measured kernels unchanged; Fourierphase defines intensitycentroid as origin in the new operator. This is an explicit new convention,not exactlegacyFFTcode.",
+  "independent_physical_calibration_qualified": false,
+  "calibration_vs_training": "Prior may derive from oldSEM-basedcalibration; real/SEM image targets are not introduced. Do not claimfullyindependentSEMconfirmation.",
+  "bank": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\data\\measured_psf_bank.npz",
+    "sha256": "25cc6c95a224caae0e4a0380a88980551586a35cdb34eebde2635639e2c29553"
+  }
+}

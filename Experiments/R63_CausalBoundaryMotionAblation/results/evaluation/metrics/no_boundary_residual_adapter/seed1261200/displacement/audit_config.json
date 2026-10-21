@@ -1,0 +1,287 @@
+{
+  "version": 2,
+  "locked_before_v42_measurement": true,
+  "selection_rule": "Use the physical center-facing 3x3 corner of the pillar region. Pillar identities come from SEM cells J8:L10 and indices 22-24, 28-30, 34-36.",
+  "primary_population": "Exactly 30 Raw-motion-ranked usable pairs per sequence after the 25% platform gate; V42 performance is not used for ranking",
+  "case_rule": "Raw defines the shared identity prediction windows. Raw and V42 use identical filenames, pillar identities, prediction windows, and validity gates.",
+  "rejection_rule": "Reject rather than substitute when fewer than seven common pillars are valid, prediction continuity is unsafe, a search reaches half a pitch, or real-crop synthetic recovery fails.",
+  "stage_truth_limit": "Commanded motion is a nominal reference, not independent stage-position truth.",
+  "sequences": {
+    "50x_x_0p5um": {
+      "dataset": "20260702_100MG",
+      "group": "x_0p5um",
+      "magnification": "50x",
+      "raw_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
+      "v42_dir": "D:/GMM_2_Final/Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/reconstructions/no_boundary_residual_adapter/seed1261200/50x_x_0p5um",
+      "frame_count": 51,
+      "first_frame": "frame_0000.bmp",
+      "last_frame": "frame_0050.bmp",
+      "object_um_per_px": 0.069,
+      "nominal_step_um": 0.5,
+      "expected_signed_dx_px": -7.246376811594202,
+      "pillar_quadrant": "upper_right",
+      "inner_corner": "lower_left",
+      "capture_transform": "identity",
+      "polarity": "dark",
+      "radius_px": 19.5,
+      "pitch_px": 72.5,
+      "search_radius_px": 8.0,
+      "min_valid_pillars": 7,
+      "min_edge_strength": 2.0,
+      "centers": [
+        [
+          24,
+          1100.5,
+          642.5
+        ],
+        [
+          23,
+          1173.5,
+          642.5
+        ],
+        [
+          22,
+          1244.5,
+          642.5
+        ],
+        [
+          30,
+          1100.5,
+          714.5
+        ],
+        [
+          29,
+          1173.5,
+          714.5
+        ],
+        [
+          28,
+          1244.5,
+          714.5
+        ],
+        [
+          36,
+          1100.5,
+          786.5
+        ],
+        [
+          35,
+          1173.5,
+          786.5
+        ],
+        [
+          34,
+          1244.5,
+          786.5
+        ]
+      ]
+    },
+    "50x_x_1um": {
+      "dataset": "20260702_100MG",
+      "group": "x_1um",
+      "magnification": "50x",
+      "raw_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
+      "v42_dir": "D:/GMM_2_Final/Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/reconstructions/no_boundary_residual_adapter/seed1261200/50x_x_1um",
+      "frame_count": 50,
+      "first_frame": "frame_0000.bmp",
+      "last_frame": "frame_0049.bmp",
+      "object_um_per_px": 0.069,
+      "nominal_step_um": 1.0,
+      "expected_signed_dx_px": -14.492753623188404,
+      "pillar_quadrant": "upper_right",
+      "inner_corner": "lower_left",
+      "capture_transform": "identity",
+      "polarity": "dark",
+      "radius_px": 19.5,
+      "pitch_px": 72.5,
+      "search_radius_px": 8.0,
+      "min_valid_pillars": 7,
+      "min_edge_strength": 2.0,
+      "centers": [
+        [
+          24,
+          1102.0,
+          637.5
+        ],
+        [
+          23,
+          1176.0,
+          637.5
+        ],
+        [
+          22,
+          1247.0,
+          637.5
+        ],
+        [
+          30,
+          1102.0,
+          710.5
+        ],
+        [
+          29,
+          1176.0,
+          710.5
+        ],
+        [
+          28,
+          1247.0,
+          710.5
+        ],
+        [
+          36,
+          1102.0,
+          781.5
+        ],
+        [
+          35,
+          1176.0,
+          781.5
+        ],
+        [
+          34,
+          1247.0,
+          781.5
+        ]
+      ]
+    },
+    "20x_0p5um": {
+      "dataset": "20260704_20x_5x",
+      "group": "20x_0p5um",
+      "magnification": "20x",
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
+      "v42_dir": "D:/GMM_2_Final/Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/reconstructions/no_boundary_residual_adapter/seed1261200/20x_0p5um",
+      "frame_count": 50,
+      "first_frame": "frame_0000.bmp",
+      "last_frame": "frame_0049.bmp",
+      "object_um_per_px": 0.1725,
+      "nominal_step_um": 0.5,
+      "expected_signed_dx_px": -2.898550724637681,
+      "pillar_quadrant": "lower_right",
+      "inner_corner": "upper_left",
+      "capture_transform": "flip_y",
+      "polarity": "dark",
+      "radius_px": 7.6,
+      "pitch_px": 29.0,
+      "search_radius_px": 4.0,
+      "min_valid_pillars": 7,
+      "min_edge_strength": 2.0,
+      "centers": [
+        [
+          36,
+          1962.8,
+          863.0
+        ],
+        [
+          35,
+          1991.8,
+          863.0
+        ],
+        [
+          34,
+          2020.8,
+          863.0
+        ],
+        [
+          30,
+          1962.8,
+          892.0
+        ],
+        [
+          29,
+          1991.8,
+          892.0
+        ],
+        [
+          28,
+          2020.8,
+          892.0
+        ],
+        [
+          24,
+          1962.8,
+          921.0
+        ],
+        [
+          23,
+          1991.8,
+          921.0
+        ],
+        [
+          22,
+          2020.8,
+          921.0
+        ]
+      ]
+    },
+    "20x_1um": {
+      "dataset": "20260704_20x_5x",
+      "group": "20x_1um",
+      "magnification": "20x",
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
+      "v42_dir": "D:/GMM_2_Final/Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/reconstructions/no_boundary_residual_adapter/seed1261200/20x_1um",
+      "frame_count": 50,
+      "first_frame": "frame_0000.bmp",
+      "last_frame": "frame_0049.bmp",
+      "object_um_per_px": 0.1725,
+      "nominal_step_um": 1.0,
+      "expected_signed_dx_px": -5.797101449275362,
+      "pillar_quadrant": "lower_right",
+      "inner_corner": "upper_left",
+      "capture_transform": "flip_y",
+      "polarity": "dark",
+      "radius_px": 7.6,
+      "pitch_px": 29.0,
+      "search_radius_px": 4.0,
+      "min_valid_pillars": 7,
+      "min_edge_strength": 2.0,
+      "centers": [
+        [
+          36,
+          1962.4,
+          863.0
+        ],
+        [
+          35,
+          1991.4,
+          863.0
+        ],
+        [
+          34,
+          2020.4,
+          863.0
+        ],
+        [
+          30,
+          1962.4,
+          892.0
+        ],
+        [
+          29,
+          1991.4,
+          892.0
+        ],
+        [
+          28,
+          2020.4,
+          892.0
+        ],
+        [
+          24,
+          1962.4,
+          921.0
+        ],
+        [
+          23,
+          1991.4,
+          921.0
+        ],
+        [
+          22,
+          2020.4,
+          921.0
+        ]
+      ]
+    }
+  }
+}

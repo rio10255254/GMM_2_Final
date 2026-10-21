@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "excluded_path_prefixes": [
+    "_codex_store_backups"
+  ],
+  "excluded_content_objects": [
+    {
+      "path": "_codex_store_backups/20260319_002714/codex_runtime_retired.zip",
+      "sha256": "fdef3484db5294aa9b416bfd8e3659c4c21b4079ae7491b8d470562e54b19724",
+      "bytes": 2361238
+    },
+    {
+      "path": "_codex_store_backups/20260319_002714/session_index.jsonl.bak",
+      "sha256": "ca0ef4fb34d47a8f847352ac19c4b28fad39a476e0dfafd6a28c56c5af5e0599",
+      "bytes": 5831
+    }
+  ],
+  "reason": "Retired agent login/session backups are private nonresearch content and unnecessary for experiment reproduction. Originals retained locally; no credential values recorded.",
+  "affected_private_draft_assets_removed": true,
+  "published_historical_releases_changed": false
+}

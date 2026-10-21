@@ -1,0 +1,27 @@
+{
+  "status": "research_candidate_not_formal_baseline",
+  "source_acquisition_frames": 25,
+  "frozen_E_verdict": "PASS_predictive_research_PSF",
+  "all_25_BADs_exitflags_positive": true,
+  "all_25_peaks_centered": true,
+  "max_centroid_offset_px": 2.6637536647646633e-16,
+  "max_outer_3px_energy_fraction": 2.6553771185287685e-20,
+  "sigma_core_px_range": [
+    1.65869425330311,
+    1.96772948512807
+  ],
+  "sigma_halo_px_range": [
+    4.71858277937883,
+    5.17845503985882
+  ],
+  "core_energy_weight_range": [
+    0.643995231166014,
+    0.705279923498165
+  ],
+  "median_in_sample_mse_core_halo": 0.001288117462277265,
+  "median_in_sample_mse_original_BADs": 0.0026180283988064767,
+  "median_in_sample_mse_tuned_gaussian": 0.001562551592113955,
+  "core_halo_better_than_original_in_sample": 25,
+  "core_halo_better_than_gaussian_in_sample": 25,
+  "median_fit_seconds_per_frame": 0.7424891
+}

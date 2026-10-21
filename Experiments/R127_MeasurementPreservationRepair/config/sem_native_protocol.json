@@ -1,0 +1,12 @@
+{
+  "role": "Relative size and edge-definition audit; not an absolute physical-boundary certificate",
+  "inputs": "Original9SEM images and Raw optical exposure13; archive optical centers initialize search windows only",
+  "scale_estimator": "Median optical adjacent-center distance / median nativeSEM adjacent-center distance, independent of neural outputs and pillar radii",
+  "SEM_center": "Native bright-rim Hough initialization followed by720-ray first-harmonic center refinement",
+  "SEM_boundary": "Bright rim maximum; inner/outer half-height around the same rim are a definition-sensitivity band, not a statistical confidence interval",
+  "size_comparison": "Equivalent diameter from enclosed radial area divided by center pitch; no resizing or optical-grid segmentation ofSEM",
+  "optical_boundary": "Per-ray half-contrast with Raw-derived centers and plateaus frozen across models; no per-model rescaling or fitting",
+  "parameters": {"angles":720,"SEM_radius_range":[85,155],"SEM_radial_step":0.25,"SEM_smoothing_sigma_native":1.0,"optical_radius_range":[20,55],"optical_radial_step":0.125,"center_iterations":3},
+  "scale_bar": "Inspect all original footers; metadata DPI is display metadata and must not be treated as physical pixel size",
+  "old_references": "Retained unchanged for historical replay; do not require two differently-scaled references to be equally valid physical rulers"
+}

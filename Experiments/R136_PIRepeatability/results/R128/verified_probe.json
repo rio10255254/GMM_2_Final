@@ -1,0 +1,13 @@
+{
+  "alternate_core_max_abs_error": 0.0,
+  "required_halo": 64,
+  "boundary_transition": 16,
+  "network": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\network.py",
+    "sha256": "ce90a7ae3eb2b0b7adaa5a33fa70551d152410320caefe23ed30ded706529880"
+  },
+  "tiling": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\inference\\tiling.py",
+    "sha256": "a03643583a6b365e083d5abec3fc67d8af4e2d376fee3b86d035687b8d8047b1"
+  }
+}

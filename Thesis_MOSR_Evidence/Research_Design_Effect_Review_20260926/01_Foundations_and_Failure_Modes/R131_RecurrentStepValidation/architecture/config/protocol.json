@@ -1,0 +1,191 @@
+{
+  "created_utc": "2026-09-14T02:24:17.013668+00:00",
+  "question": "Does the current frozen four-step R129 benefit from each recurrent step?",
+  "design": "Frozen prefix n=0,1,2,3,4; identical checkpoint, optics, input-derived features, per-step scalars, final anchor and FOV guard. No retraining; not causal proof of separately trained architecture superiority.",
+  "primary": [
+    "SEM normal13-15 all36: radial, signed diameter, centered shape, MZC",
+    "Same locked120LSC; all194within-session pairs and3repositioning separately",
+    "Standalone0-4 runtime on same full image"
+  ],
+  "sources": "Previously used development scenes, never unseen holdout",
+  "frames": 201,
+  "sem_exposures": [
+    13,
+    14,
+    15
+  ],
+  "steps": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "zero_definition": "Skip learned updates; keep optical conditioning and final anchor. Raw is a separate reference.",
+  "numerical_tolerance": 1e-06,
+  "require_four_step_PNG_parity": true,
+  "decision": "Report all endpoints, paired gains and tradeoffs. Fewer steps are supported for further testing only if primary geometry/motion do not worsen meaningfully; no posthoc composite score or automatic adoption. No application equivalence margin is invented.",
+  "completion": "Preflight prefix equivalence, all204images*5prefixes,108SEMrows*5,1809LSCcenters*5,all populations, timing, independent saved-point refits and source integrity. Failures retained.",
+  "checkpoint": {
+    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+    "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
+  },
+  "protected_sources": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\plan.json",
+      "sha256": "fdeb720f8d91cd2dcd06688200e4eb9f5286c0cefa97a1df4883030bb581ceba"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\01_CURRENT_THESIS_RESULTS_V42_CENTER9\\config\\sequence_center9_50x20x.json",
+      "sha256": "e7bd2e86490882ee23b65ecf467624df69546fd51b76e51b12232142a34f8601"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\01_CURRENT_THESIS_RESULTS_V42_CENTER9\\diagnostics\\unified_displacement_step_audit\\tables\\session_anchor_summary.csv",
+      "sha256": "78b6c17363bc8dd3b8881becc99f7cc38d197796dc8801f4ddb3dc8cf87b1f32"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\locked_pairs.csv",
+      "sha256": "fe9986e12e9eac590b6efc53ec31aad6be66eec0e88d901fd4e8b4d274c897ba"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\sequence_inference.py",
+      "sha256": "d4024d3ae21cb64a093c7d8f752d04c98c196e2011b792228ef0aa8b5d9c061b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\continuous_common.py",
+      "sha256": "73405c7ec6083fff893e7a7c0d55a3d0c7c5476a445a99830419921449812361"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\lsc_comparison\\measure.py",
+      "sha256": "60b35b04e792cd2fe2dd3db71e80e013a0d9971a472a31afcc100bbc0e077344"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R80_InflectionReferenceCircleSEMValidation\\scripts\\run_displacement_lsc.py",
+      "sha256": "b9489e34e352743c82a05a38356997ea224e7bfc78053e15b610d22d96c8b0bd"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R80_InflectionReferenceCircleSEMValidation\\scripts\\reference_circle_core.py",
+      "sha256": "76e1fe615128cbf9bb19c9775b990a055d73f5e086986a04368f78ca7008248c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R116_CoherentGeometryAnchorScratch\\validation\\run_lsc_e42.py",
+      "sha256": "c355bb2bb3934d1f29eb4dd14b53b287201a57bc96a5fabeaab261c6532c9655"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\Raw\\centers.csv",
+      "sha256": "c952618958ef0cf65febca9ce066c74f7f9e271e4812c3465a02e07cf66a42a9"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\Raw\\per_pair.csv",
+      "sha256": "8806b36423a00f9e7bcfdb7bf0f3ddb154a1b5467b265103eb90c4ca2488a549"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\Raw\\summary.csv",
+      "sha256": "be44950975101b1d8f5c9f493b85f2d3cc7e089fa82b90778182c237fd1504ab"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R128_P_s1285002\\centers.csv",
+      "sha256": "a896feca06f4daf64565be500ab25d6e38959e3ab68997225b041839ab5f8b45"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R128_P_s1285002\\per_pair.csv",
+      "sha256": "5567b35b8e1cab1dd533b721d31518346f8d8d90e77876a73a7e7177d570cc39"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R128_P_s1285002\\summary.csv",
+      "sha256": "98c96ed570df3309d50974b7e654eeb192bb27ac0d9bfbf46a9c76af3e7f9693"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\centers.csv",
+      "sha256": "a2d01e3756c360e6c3b1df3250036cfd23e7993b186c35b1f6aee8465cb3b6b2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\per_pair.csv",
+      "sha256": "442ba08f2c3d74a8a529fcf6edcde648466c8538ab890a8e64a14f883b2b6a62"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\summary.csv",
+      "sha256": "4fbe54cc4ca6b563c7343a6a2bc68ec23ab3606f8e7f746245920a0929377e23"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+      "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\hybrid.py",
+      "sha256": "49ef06e0e6061b8106fc89523b95d26de318a4a235acd2f8613a23aa2b86d7df"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\inference_policy.py",
+      "sha256": "bac2d488114f6d600e8cf0536088bad93f17d6e56337acc2f39b06e109d6d314"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\operators.py",
+      "sha256": "e3285675114037317c8ab30fb87f18a9d19cab451230fb11c4c14fca2bab6c07"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\optics.py",
+      "sha256": "676bbb35d5e86c1b41fbdbe046263b7e9b207a9de0cef87e68c8468aae5ac4a8"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\output_policy.py",
+      "sha256": "ab70c2deb34b24739d54242dfef7c571122a9386833e6b032d8208c849d13591"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\reconstruction.py",
+      "sha256": "71594f2cf78a2b2cb4dc17213a670532e51b9b240cfde3aab767ad95f7f8dab6"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\__init__.py",
+      "sha256": "c9bee3382295dcc511cdbd5d642e32df449ee55d0107b98171566446f80c9233"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\runtime.py",
+      "sha256": "43d46a7ec677abee221686c9341c207cf412dba626dddf39e3f44e1e1a0b9631"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\panel.json",
+      "sha256": "5d47e12926c629e1ba1d815577f851048090f9b34224abe07ea08a8818ad2e1d"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\sem_reference.mat",
+      "sha256": "329ebe6444095ae21f1579d0779b5fc948d9af828848440217ff902bd71f529b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\reference_circle_core.py",
+      "sha256": "76e1fe615128cbf9bb19c9775b990a055d73f5e086986a04368f78ca7008248c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\readout_helpers.py",
+      "sha256": "f95599246689dabf286adc2bc9b56acc079f2c43cd7cdcd0fca53add9da1ab57"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\extract_sem.m",
+      "sha256": "439e17c80d16d33ce7f067319c4031910bc508c3b894d012e42c8dc83b9bffef"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\common.py",
+      "sha256": "f51097afaca79bf3b51dec445f39e29da73ddc45b3efc217289e76223472bcc1"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\plan.json",
+      "sha256": "ada63da7a81fb1755349d9402601718777534ffe224c541cc7c07b4e5b3e42d3"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\comparison_summary.csv",
+      "sha256": "f8c29bf0d917466aed2cc630136503c37ec234822f8389d837edf82a85cbf066"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem13.png",
+      "sha256": "cb2585999c38f06314c1e345dc3381f1efa4cdb2bc85f5e730166f39c9c30391"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem14.png",
+      "sha256": "c2a57df81569aacffda841d2a1f199766d2a8015aad540c175e9f917098591b1"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem15.png",
+      "sha256": "14e1bb6f4227bde5397337642acc9d0b97e68aaca7e96b460cc066aafdd8dbd6"
+    }
+  ]
+}

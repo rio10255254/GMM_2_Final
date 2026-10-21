@@ -1,0 +1,141 @@
+{
+  "files": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\config\\model.json",
+      "sha256": "d2a6e0d5a9b183695bcacaf91a06073859f295b1ddc7c8b0eded4873202b05ca"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\config\\train.json",
+      "sha256": "42bff0208b6631a7401bc31a4316d57c89d237cc3b198e656b2d7bfb3839347d"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\config\\data.json",
+      "sha256": "50e386775e1a4a5fe133b8332afc4656cbb8d0ec5e5bdf7c19d8ad88f782e21f"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\capture_plan.json",
+      "sha256": "de64aa958abb134e3fc6783850c8d34d4ad64224b9267cb5ce8d1e0b5031cc73"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\calibration.json",
+      "sha256": "931e8b4460730a306ebafa7683cc7600f639f37d54250352a890ba4ac1047f4a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\tracking.csv",
+      "sha256": "c8662e4a232dd47c6499c5cafc0f9e8d48d2abb40f928fa65e48f40ee6ccb13b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\measurement_config.json",
+      "sha256": "01a9e40af5612f9f5887c9254af7ee87d787d950afe1ef39e04bdcadd57f55b3"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\sem_mapping_candidates.json",
+      "sha256": "8a2e4bbd6894323e5bb3b37390832bde9b4e912a1a846186a4a8750bf2593cc7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\sem_current_center9_mapping.csv",
+      "sha256": "a71469bcc9105a77aa6b1a4a00af38433ededf673f8bae1f2f193520d9cd89b7"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\sem_points.npz",
+      "sha256": "c71468a9fd3a406456b3b52025344d39d9dabede3fdd18f773cab53c1dfe2797"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\sem_scale.json",
+      "sha256": "219db0cc70980fbdda3b02b15b114d54aff0f422848957d2cb58243fb68b773a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\measurement_interface.py",
+      "sha256": "c355d10dd01b8701ed82e9259ec0c09099a3041853f1fa4258bf8daa0fdd3cb2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation\\reference_circle_core.py",
+      "sha256": "76e1fe615128cbf9bb19c9775b990a055d73f5e086986a04368f78ca7008248c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\models\\adaptive_fourier_psf.py",
+      "sha256": "d4bba4ff2586e0cf4480ef2525bebd7c72051587ad19501811864a1eb66284a1"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\models\\base_model.py",
+      "sha256": "b2016267104a90214e198ae698017c939fa3cc01e397241486d23f3a68b01c1b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\models\\fullres_psf.py",
+      "sha256": "a5ac6b40e3f41fa3f00524638162e50838fcc1c13a3dfa770d2d313b62e4f943"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\models\\r152_model.py",
+      "sha256": "765c1e2aaf6b27dd1bf482da5ec44c3c10ea39723069f11f4357a76a9ca32431"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\models\\__init__.py",
+      "sha256": "8ba37a8e61d365b341464da2c84a5dfa31a7cd3c1a64c2c5b0e9b4d0673d17c4"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\core\\base_losses.py",
+      "sha256": "426ac7cd2435bb210e0efc1bd602c95cad091af70e48eea424620a0f94b9baad"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\core\\dataset.py",
+      "sha256": "58b04da5bb64c5ee41b9257bf180be317ebbb18ca3d26852e661ee13b5ede2fc"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\core\\losses.py",
+      "sha256": "0b87ed8a5bbf3b5501be1e133c16322059f26b48a37f1b9bea71b77a20428ffc"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\core\\runtime.py",
+      "sha256": "42300461aa6cea4553896a532e382bf84e02640530fce97b15a7472a2173b410"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\core\\training.py",
+      "sha256": "d749ca15ebef65cd4e8d2cb0dcaa591070813bf0ff73acf19d5fc4a0a8904d93"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\core\\__init__.py",
+      "sha256": "6e5e231d8d339f02c7d6f055f9eea66ad72706033938a8d2b958d778894d8c54"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\weights\\base_reference.pth",
+      "sha256": "4661bdfccc9d55c3e3d946ccfbf549d9ae9d8f3b8463ef836e40b2ac7140f88f"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\weights\\r152_deployed.pth",
+      "sha256": "2932f79d29a51be2350addf189e9ef635f038a542df55957de1749c0c0dc950c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\weights\\r152_training_complete.pth",
+      "sha256": "750da359a4048c6a2233681258678585e62d8e51ef0b083f42dca24dfd67ae4b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\calibration\\psf25_bank.npz",
+      "sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\settings.py",
+      "sha256": "769fb9ca78d0a7190d2a9b3520504a8bb9263c648b18e2c1e09026f4b2c43cd4"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\data_index.py",
+      "sha256": "6ee82169ba57daa733c6db9b96b9956f477b321a77b4301adc1e66fc91e130a1"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Deliverables\\R152_Standalone_ImageFiles_20261004\\manifest.py",
+      "sha256": "a066274d734dfc88bd089392f2f5d7784f9ddf13125abc9e1cd4fa9bf8db9fc2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\REPORT.md",
+      "sha256": "60cf2805bff5be71422600fbf600ad939ff0ad354e9122b08c926d490eba6748"
+    },
+    {
+      "path": "C:\\Users\\Rio\\.codex\\attachments\\b441e865-4b4b-428e-9316-ceb52865b9db\\MOSR_論文_格式與正式用語校訂版_20261004.pdf",
+      "sha256": "a781532144e81003ca15905c42cd1d087d4a3de742ac484a4d20adc75f497874"
+    },
+    {
+      "path": "C:\\Users\\Rio\\OneDrive\\學業\\碩班\\論文\\可用\\Rio_口試紀錄_整理版.pdf",
+      "sha256": "ef929bb40d33e1d954cec6ac4a79aa66e96c83c2ff98ad427da4050de5d07506"
+    }
+  ],
+  "modified_sources_permitted": false
+}

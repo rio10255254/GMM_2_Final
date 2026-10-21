@@ -1,0 +1,212 @@
+{
+  "status": "BOTH_VERSIONS_IDENTIFIED_AND_OLD_BYTES_RETAINED",
+  "versions": [
+    {
+      "current_project_path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/20x_absolute_spectra.npz",
+      "current_sha256": "9f0f787bad3966953bdb249202cd34e2eb9af39ba1225e6c3e49636ca02dd1bc",
+      "previous_GitHub_source_commit": "5d1f79bf76b61cbd362ef9fb4df33235ca9898f9",
+      "old_preserved_project_path": "docs/history/PSF_SPECTRA_BEFORE_COMPLETION_20261021/20x_absolute_spectra.npz",
+      "previous_sha256": "d4816287f2c73ab6f116941d845af6b0290de0436d9555c33c52fd046af88578",
+      "fields": [
+        {
+          "field": "captured_amplitude",
+          "old_shape": [
+            104,
+            104
+          ],
+          "new_shape": [
+            104,
+            104
+          ],
+          "identical_values": true,
+          "max_absolute_difference": 0.0
+        },
+        {
+          "field": "captured_dbfs",
+          "old_shape": [
+            104,
+            104
+          ],
+          "new_shape": [
+            104,
+            104
+          ],
+          "identical_values": true,
+          "max_absolute_difference": 0.0
+        },
+        {
+          "field": "deconvolved_amplitude",
+          "old_shape": [
+            104,
+            104
+          ],
+          "new_shape": [
+            104,
+            104
+          ],
+          "identical_values": false,
+          "max_absolute_difference": 0.030065997226837116
+        },
+        {
+          "field": "deconvolved_dbfs",
+          "old_shape": [
+            104,
+            104
+          ],
+          "new_shape": [
+            104,
+            104
+          ],
+          "identical_values": false,
+          "max_absolute_difference": 32.69613373564776
+        },
+        {
+          "field": "fx_cycles_per_pixel",
+          "old_shape": [
+            104
+          ],
+          "new_shape": [
+            104
+          ],
+          "identical_values": true,
+          "max_absolute_difference": 0.0
+        },
+        {
+          "field": "fy_cycles_per_pixel",
+          "old_shape": [
+            104
+          ],
+          "new_shape": [
+            104
+          ],
+          "identical_values": true,
+          "max_absolute_difference": 0.0
+        },
+        {
+          "field": "v42_amplitude",
+          "old_shape": [
+            104,
+            104
+          ],
+          "new_shape": [
+            104,
+            104
+          ],
+          "identical_values": false,
+          "max_absolute_difference": 0.002480400802838447
+        },
+        {
+          "field": "v42_dbfs",
+          "old_shape": [
+            104,
+            104
+          ],
+          "new_shape": [
+            104,
+            104
+          ],
+          "identical_values": false,
+          "max_absolute_difference": 32.334977327443255
+        }
+      ],
+      "current_research_source_modified": false
+    },
+    {
+      "current_project_path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/50x_absolute_spectra.npz",
+      "current_sha256": "159ada4c624812a57102ab2196fdc52a0b907254b54c450febe2b2dea53c898b",
+      "previous_GitHub_source_commit": "5d1f79bf76b61cbd362ef9fb4df33235ca9898f9",
+      "old_preserved_project_path": "docs/history/PSF_SPECTRA_BEFORE_COMPLETION_20261021/50x_absolute_spectra.npz",
+      "previous_sha256": "c9468b2e8b8061ba85a848356a9d2fa31a691fbf27255e81140a20794c0e4d5f",
+      "fields": [
+        {
+          "field": "captured_amplitude",
+          "old_shape": [
+            256,
+            257
+          ],
+          "new_shape": [
+            256,
+            256
+          ]
+        },
+        {
+          "field": "captured_dbfs",
+          "old_shape": [
+            256,
+            257
+          ],
+          "new_shape": [
+            256,
+            256
+          ]
+        },
+        {
+          "field": "deconvolved_amplitude",
+          "old_shape": [
+            256,
+            257
+          ],
+          "new_shape": [
+            256,
+            256
+          ]
+        },
+        {
+          "field": "deconvolved_dbfs",
+          "old_shape": [
+            256,
+            257
+          ],
+          "new_shape": [
+            256,
+            256
+          ]
+        },
+        {
+          "field": "fx_cycles_per_pixel",
+          "old_shape": [
+            257
+          ],
+          "new_shape": [
+            256
+          ]
+        },
+        {
+          "field": "fy_cycles_per_pixel",
+          "old_shape": [
+            256
+          ],
+          "new_shape": [
+            256
+          ],
+          "identical_values": true,
+          "max_absolute_difference": 0.0
+        },
+        {
+          "field": "v42_amplitude",
+          "old_shape": [
+            256,
+            257
+          ],
+          "new_shape": [
+            256,
+            256
+          ]
+        },
+        {
+          "field": "v42_dbfs",
+          "old_shape": [
+            256,
+            257
+          ],
+          "new_shape": [
+            256,
+            256
+          ]
+        }
+      ],
+      "current_research_source_modified": false
+    }
+  ],
+  "scientific_reinterpretation_or_policy_change": false
+}

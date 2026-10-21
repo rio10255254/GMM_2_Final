@@ -1,0 +1,122 @@
+{
+  "regularization": 0.01,
+  "mean_PSNR_dB": 31.544161376372422,
+  "method": "Wiener",
+  "selection_set": "128 fixed synthetic validation scenes, 512 images",
+  "operator": "fixed mean of the measured 25 PSFs",
+  "formula": "conj(H)/(abs(H)^2 + regularization)",
+  "boundary": "50-pixel reflection",
+  "extra_contrast_normalization": false,
+  "output_clipping": false,
+  "candidates": [
+    {
+      "regularization": 0.0,
+      "mean_PSNR_dB": -110.48381499064541
+    },
+    {
+      "regularization": 1e-06,
+      "mean_PSNR_dB": 1.3319290823354906
+    },
+    {
+      "regularization": 1.778279410038923e-06,
+      "mean_PSNR_dB": 3.8297087143520465
+    },
+    {
+      "regularization": 3.162277660168379e-06,
+      "mean_PSNR_dB": 6.324284504831423
+    },
+    {
+      "regularization": 5.623413251903491e-06,
+      "mean_PSNR_dB": 8.813045581639443
+    },
+    {
+      "regularization": 1e-05,
+      "mean_PSNR_dB": 11.290510544970576
+    },
+    {
+      "regularization": 1.778279410038923e-05,
+      "mean_PSNR_dB": 13.746859808963606
+    },
+    {
+      "regularization": 3.1622776601683795e-05,
+      "mean_PSNR_dB": 16.16700575079868
+    },
+    {
+      "regularization": 5.623413251903491e-05,
+      "mean_PSNR_dB": 18.529749173400873
+    },
+    {
+      "regularization": 0.0001,
+      "mean_PSNR_dB": 20.80654892055963
+    },
+    {
+      "regularization": 0.00017782794100389227,
+      "mean_PSNR_dB": 22.9620423887228
+    },
+    {
+      "regularization": 0.00031622776601683794,
+      "mean_PSNR_dB": 24.958322065341203
+    },
+    {
+      "regularization": 0.0005623413251903491,
+      "mean_PSNR_dB": 26.759467358975506
+    },
+    {
+      "regularization": 0.001,
+      "mean_PSNR_dB": 28.333416270402857
+    },
+    {
+      "regularization": 0.0017782794100389228,
+      "mean_PSNR_dB": 29.652454005156862
+    },
+    {
+      "regularization": 0.0031622776601683794,
+      "mean_PSNR_dB": 30.686955401908833
+    },
+    {
+      "regularization": 0.005623413251903491,
+      "mean_PSNR_dB": 31.37188479971133
+    },
+    {
+      "regularization": 0.01,
+      "mean_PSNR_dB": 31.544161376372422
+    },
+    {
+      "regularization": 0.01778279410038923,
+      "mean_PSNR_dB": 30.956777535286598
+    },
+    {
+      "regularization": 0.03162277660168379,
+      "mean_PSNR_dB": 29.43856206952102
+    },
+    {
+      "regularization": 0.05623413251903491,
+      "mean_PSNR_dB": 27.038710994750744
+    },
+    {
+      "regularization": 0.0565,
+      "mean_PSNR_dB": 27.015959619596075
+    },
+    {
+      "regularization": 0.1,
+      "mean_PSNR_dB": 23.979592655177534
+    },
+    {
+      "regularization": 0.1778279410038923,
+      "mean_PSNR_dB": 20.560992578901168
+    },
+    {
+      "regularization": 0.31622776601683794,
+      "mean_PSNR_dB": 17.127261118474564
+    },
+    {
+      "regularization": 0.5623413251903491,
+      "mean_PSNR_dB": 13.985932622158044
+    },
+    {
+      "regularization": 1.0,
+      "mean_PSNR_dB": 11.357608146438526
+    }
+  ],
+  "real_data_used_for_selection": false
+}

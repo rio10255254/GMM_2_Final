@@ -1,6 +1,152 @@
 # 實驗重建影像 Gallery / Experiment Recon Gallery
 
-_Last updated: 2026-04-18_
+_Last updated: 2026-10-21_
+
+早期R33至COMBO代表圖已集中到精選閱讀區，內容為未改動的原模型輸出。[每項用途、失敗影格及完整原數表](docs/reproducibility/project_completion/curated/EARLY_RECON_SELECTION.md)；下面「完整序列」連到精簡前的固定歷史，沒有刪本機原件。
+
+## R152：論文實際PSF、同視野重建與30次實測輪廓（2026-10-03）
+
+圖使用真正的部署PSF矩陣與原生R152輸出；RAW和MOSR共用同一顯示尺度及裁切範圍。輪廓為同一中央物件起點的30次實測64點，只移除平移、保留尺寸及方向。[圖說與原始數據](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)
+
+![R152實際使用的25顆PSF響應](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/figures/Fig6_3_PSF25_actual_response.png)
+
+![同張RAW與MOSR原生影像及相同座標局部放大](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/figures/Sect6_2_3_RAW_MOSR_same_region.png)
+
+![同物件30條實際測得輪廓及同邊界局部放大](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/figures/Sect6_2_4_30_measured_contours.png)
+
+## R147：原尺寸PSF的量測取捨與模型內部剖析（2026-09-26）
+
+完整8192次訓練、930張實拍完成；直徑重拍16.336nm比R146的23.082nm低，短步PI差4.537nm卻比4.313nm高。逐步、格點、成像擾動與歷史對照已核對，不以某一控制替代實拍。[完整結果](Experiments/R147_FullResPSFConsistency/reports/R147_RESULTS.md) · [深度診斷](Experiments/R147_FullResPSFConsistency/reports/R147_INTERNAL_AUDIT.md)
+
+![固定資料逐步位移、直徑與成像差](Experiments/R147_FullResPSFConsistency/reports/figures/R147_internal_stages.png)
+
+![三模型對整數移動的反應](Experiments/R147_FullResPSFConsistency/reports/figures/R147_grid_sensitivity.png)
+
+![同一張照片在成像擾動下的圓心變化](Experiments/R147_FullResPSFConsistency/reports/figures/R147_nuisance_response.png)
+
+## R146：真實SEM外框研究PSF的來源與量測取捨（2026-09-25）
+
+新研究PSF在預先封存照片的圓外觀預測較準；同條件完整訓練與930張實拍後，短步PI差4.313nm、直徑重拍23.082nm及輪廓重拍20.371nm，均不及R145的3.990／21.013／16.001nm。起點相對位移重拍較穩，但平均絕對差未改善。SEM真實外框只校準PSF，未作神經清晰答案；本輪仍是研究版。[完整結果](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_RESULTS.md) · [原因核對](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_CAUSAL_AUDIT.md)
+
+![同張照片的RAW與R145及R146重建](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/figures/sample_center9_comparison.png)
+
+![30趟短步位移與完整訓練](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/figures/training_and_short_step.png)
+
+![直徑輪廓重拍與SEM外框尺寸差](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/figures/size_contour_tradeoffs.png)
+
+![平均邊緣更窄卻在30趟中更不穩](Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/reports/figures/edge_width_repeatability.png)
+
+## R145：修正九顆圓編號後的實測PSF完整比較（2026-09-24）
+
+新25顆PSF同時用於配對資料與模型，完成8192次訓練、930張實拍及8370顆圓量測。短步PI差3.990nm比R143的4.425nm低，仍高於R140v2的3.640nm；輪廓重拍較穩，但對PSF校準所用SEM尺寸的平均差+191.887nm比RAW的+169.883nm大。相同九顆SEM是校準參照，不作獨立尺寸準確度宣稱。[完整結果](Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_RESULTS.md)與[穩定性追查](Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_STABILITY_FOLLOWUP.md)。
+
+![原圖與兩版PSF模型的同區域重建](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/sample_center9_comparison.png)
+
+![完整訓練與30趟短步位移](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/training_and_short_step.png)
+
+![直徑輪廓重拍與SEM尺寸對照](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/size_contour_tradeoffs.png)
+
+同一模型的深入審查發現PSF頻域原點錯位、作用強度偏低及不同PSF的訓練影像差異低於雜訊。[完整原因分析](Experiments/R145_Center9PSF25_CorrectedPairs/reports/R145_PSF_LIMITING_MECHANISMS.md)
+
+![測試點在目前PSF反推運算中移到角落](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/optical_phase_spot.png)
+
+![舊版與修正版PSF寬度及細節傳遞差異](Experiments/R145_Center9PSF25_CorrectedPairs/reports/figures/psf_bandwidth_comparison.png)
+
+## R129：保留論文設計的短程原型（2026-09-12）
+
+實測光學融合與改善上取樣已接入並可訓練。相對同底版對照，27/36 顆細部形狀誤差改善，但目前未超過既有 R128/V42；只完成每組24次的短測。保留兩項設計，不宣稱已完成正式替代。見 [完整實作、數字與限制](Experiments/R129_OpticalPriorHybrid/reports/R129_RESULTS.md)。
+
+![正常拍攝全部柱子比較](Experiments/R129_OpticalPriorHybrid/results/figures/normal_sem_comparison.png)
+
+![固定第18顆柱子實拍比較](Experiments/R129_OpticalPriorHybrid/results/figures/pillar18_example.png)
+
+## R128與v34論文模型的真正取捨（2026-09-12）
+
+按論文真正名單和量法重比：R128跨柱一致性較好，平均尺寸與輪廓位置改善；細部非圓起伏與共同條件下的速度較弱。暫不直接替換整篇論文。見 [完整評估](Experiments/R128_SourceOnlyFullTraining/reports/R128_THESIS_V34_REPLACEMENT_ASSESSMENT_VERIFIED.md)。
+
+![相同條件下的模型取捨](Experiments/R128_SourceOnlyFullTraining/reports/figures/R128_v34_replacement_tradeoffs.png)
+
+![同顆柱體的非圓起伏](Experiments/R128_SourceOnlyFullTraining/reports/figures/R128_v34_nonround_profile_verified.png)
+
+## R128 — 補齊與R61的LSC及輪廓對照（2026-09-10）
+
+完整同條件比較已完成。R128 相對 R61 的整體位移波動由 7.220 降至 6.873 奈米，改善約 4.8%；不同柱體量出位移的不一致由 5.823 降至 3.416 奈米，改善約 41%。結合較好的配對 SEM 輪廓、周長與圓度表現，R128 是更值得保留的單一綜合研究候選，但橫向偏移、個別影格及圓度相對原圖仍有退步或不確定性，沒有正式精密量測升級。 見 [完整結果](Experiments/R128_SourceOnlyFullTraining/reports/R128_LSC_R61_COMPARISON.md)。
+
+![相同120對位移比較](Experiments/R128_SourceOnlyFullTraining/reports/figures/R128_R61_LSC_comparison.png)
+
+![R61與R128配對SEM輪廓](Experiments/R128_SourceOnlyFullTraining/reports/figures/R61_R128_SEM_comparison.png)
+
+## R128 — 與近期模型的同條件比較（2026-09-10）
+
+同一試片36顆柱體、三張正常拍攝照片：R128的整體輪廓、面積與周長領先所列舊候選，圓度卻隨SEM參考輪廓改變結論。同流程LSC尚未測，不能把之前的原圖位移一致性當成LSC勝出。見 [完整比較與下一個判斷](Experiments/R128_SourceOnlyFullTraining/reports/R128_COMPETITIVE_REVIEW.md)。
+
+![相同照片的輪廓與圓度比較](Experiments/R128_SourceOnlyFullTraining/reports/figures/competitive_contour_circularity.png)
+
+## R128 — 配對SEM上的完整外輪廓（2026-09-10）
+
+同一個保留模型在一般亮度照片13–15的完整外輪廓平均更貼近SEM；兩套固定參考都成立，但仍有局部退步。圖左為先前展示的柱體，圖右是不利案例，兩套參考標示在圖中。詳見 [完整核對](Experiments/R128_SourceOnlyFullTraining/reports/R128_FULL_CONTOUR_SEM.md)。
+
+![SEM與原圖及重建輪廓](Experiments/R128_SourceOnlyFullTraining/reports/figures/full_contour_SEM_overlay_labeled.png)
+
+[全部36顆疊圖](Experiments/R128_SourceOnlyFullTraining/reports/figures/full_contour_all36.png)
+
+## R128 — 正常條件的結構檢查（2026-09-10）
+
+12組實拍位移與原圖最大差約0.0132像素；清楚控制影像仍會被修圓。下圖採對比明顯的已知清楚影像，藍線為參考、橙虛線為模型讀值。只留第四版本試用，尚不直接用於精密局部量測。見 [完整結構檢查](Experiments/R128_SourceOnlyFullTraining/reports/R128_STRUCTURE_CHECK.md)。
+
+![清楚角落與輪廓改動](Experiments/R128_SourceOnlyFullTraining/reports/figures/structure_clean_control.png)
+
+![實拍線條剖面](Experiments/R128_SourceOnlyFullTraining/reports/figures/structure_real_line_profile.png)
+
+![實拍棋盤交點讀值](Experiments/R128_SourceOnlyFullTraining/reports/figures/structure_checker_junction.png)
+
+先前四組SEM結果保留於 [完整訓練結果](Experiments/R128_SourceOnlyFullTraining/reports/R128_RESULTS.md)。
+
+## R127 — 對照與位移讀法修正（2026-09-08）
+
+完整視野提供了小區塊缺少的配對線索；48份重算保留原來小區塊的每個像素，24組模型全圖位移與相同讀法下的Raw最大差0.000511像素。這是影像前後一致性，不是位移台絕對精度。SEM亮邊的定義範圍另行保留；核心模型尚未採用。見 [完整結果與限制](Experiments/R127_MeasurementPreservationRepair/reports/R127_RESULTS.md)。
+
+![影像範圍與配對資訊](Experiments/R127_MeasurementPreservationRepair/reports/figures/motion_information_scope.png)
+
+![原生SEM邊界定義](Experiments/R127_MeasurementPreservationRepair/reports/figures/native_SEM_edge_definitions.png)
+
+## R126 — 學習改善，實拍量測仍未可靠（2026-09-08）
+
+同一固定例子只調整學習幅度，誤差下降由約7–10%提高至38–61%；這不是實拍改善率。亮暗擴充對照顯示暗例子有幫助，但真實SEM的對照方式會影響結論，位移匹配也會跳值。四個模型均未採用。見 [完整驗證與限制](Experiments/R126_LearnabilityPhotometry/reports/R126_RESULTS.md)。
+
+![固定例子的學習對照](Experiments/R126_LearnabilityPhotometry/reports/figures/fixed_learning.png)
+
+![同一批實拍與SEM的完整對照](Experiments/R126_LearnabilityPhotometry/results/real_comparison/bounded_sem_comparison.png)
+
+## R125 — 資料修正後的六組小試：不採用（2026-09-08）
+
+已完成六組各64次更新及全部初始／最終實拍評估。A正常曝光稍好、暗曝光退步；B/C未顯示可靠改善。此圖是固定SEM參考的半對比讀值，未完成物理材料邊界資格判定。見 [R125 完整結果](Experiments/R125_DataAlignedPilot/reports/R125_RESULTS.md)。
+
+![同一共同人口下的小試結果](Experiments/R125_DataAlignedPilot/results/real_comparison/bounded_sem_comparison.png)
+
+## R124 — 未訓練原型的實際輸出與SEM讀值（2026-09-08）
+
+模型已實作，以下是沒有訓練、沒有儀器校準的工程輸出，不能當作改善證據。六張實拍走過兩個設定；SEM參考半對比讀值在假設Gaussian設定下略增加。完整範圍見 [R124 原型驗證](Experiments/R124_RealFirstPrototype/reports/R124_RESULTS.md)。
+
+![未訓練的實拍預覽](Experiments/R124_RealFirstPrototype/results/real_smoke_v1/untrained_real_previews.png)
+
+![未訓練SEM參考讀值，並非效益通過](Experiments/R124_RealFirstPrototype/results/sem_smoke_v1/followup_v2/untrained_sem_half_readout.png)
+
+## R123 — 下一代設計與真實開發面板（2026-09-08）
+
+本輪只有設計與既有資料核對，沒有新模型重建圖。主要開發光學資料為12張SEM對應曝光、301張全視野序列、51張棋盤；既有模型的兩種讀法矛盾也重新核算。見 [R123 本輪完成範圍](Experiments/R123_RealFirstModelDesign/reports/R123_RESULTS.md)。
+
+![實際原圖面板，非新模型输出](Experiments/R123_RealFirstModelDesign/results/real_input_panel.png)
+
+![既有模型真實讀法矛盾重算](Experiments/R123_RealFirstModelDesign/results/real_baseline_replay.png)
+
+## R122 — 成像歧義與量測原理診斷（2026-09-08）
+
+本輪是診斷，沒有新模型。不同物體可能產生相同觀測；位移穩定也不保證絕對邊界正確。圖表與失敗条件見 [R122 原理驗證報告](Experiments/R122_OperatorPrinciples/reports/R122_RESULTS.md)。下列物理結果使用修正後的面積積分模擬器；第一版離散化失敗另行保留。
+
+![不同物體的相同觀測](Experiments/R122_OperatorPrinciples/results/identifiability.png)
+
+![修正後成像與位置／位移誤差](Experiments/R122_OperatorPrinciples/results/area_render_v2/physical_fit.png)
 
 這份文件收集**每一輪實驗所有 tracked 的重建影像、指標圖表、分析圖**，供 demo / report 時快速查閱。
 所有連結皆為 git 追蹤檔案的相對路徑，GitHub 上會自動渲染圖片。
@@ -21,10 +167,12 @@ _Last updated: 2026-04-18_
 | 🟢 | [**COMBO**](#-combo) | formal production baseline (2026-04-08) | **`0.132`** · steepness +89% · residual 歷史最佳 |
 | 🟢 | [**R38v2**](#-r38v2) | visual priority alternate | `0.134` · steepness +89% |
 | 🟢 | [**R33**](#-r33) | GMF extreme alternate | **`0.119`** · 三尺度全面最低 |
+| 🟢 | [**R39R40_avg_a025**](#-r39r40_avg_a025) | balanced full-spectrum alternate (2026-05-11) | `0.134` · 三尺度都在 ±5.18% · 12 分類 PSNR 全勝 COMBO/a030 |
 | 🔴 | [R33 ablations](#-r33-ablations) | lap_only / soft_p95 / hard_p90 — closed | — |
 | 🔵 | [**R30**](#-r30) | historical former baseline (pre-COMBO) | `0.168` · B1 dironly |
 | 🔵 | [**R26 sm035**](#-r26-sm035) | 歷史 step_mag=0.35 基準線 | `0.191` |
 | 🟡 | [**R26NewPSFCheck**](#-r26newpsfcheck) | open side track — PSF 政策切換 | pending external GMF |
+| 🟡 | [**R39-R45 microscopy generalization**](#-r39-r45-microscopy-generalization) | 形狀、顯微特徵、邊界、位移與分族校正研究線 | R39 a030 可討論；R45 確認輸出端小校正不足以匯聚能力 |
 | 🔴 | [R33c](#-r33c) | 對比度修復失敗 | 視覺 + 指標雙退步 |
 | 🔴 | [R38 seq-all-stages](#-r38-seq-all-stages) | seq 全 stages 噪聲干擾 | 8px 好但 0.8px 弱 |
 | 🔴 | [R32](#-r32) | domain rebalancing external FAIL | `0.332` (+97.7%) |
@@ -48,21 +196,21 @@ _Last updated: 2026-04-18_
 
 **0.08 px 子像素**
 
-![](Experiments/R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
+![](docs/reproducibility/selected_images/early_recon/R38v2SeqFixed_20260408_003525/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-![](Experiments/R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
+![](docs/reproducibility/selected_images/early_recon/R38v2SeqFixed_20260408_003525/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-![](Experiments/R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
+![](docs/reproducibility/selected_images/early_recon/R38v2SeqFixed_20260408_003525/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
-- [41 frames · 0.08 px 子像素](Experiments/R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/)
-- [61 frames · 0.8 px 主戰場](Experiments/R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/)
-- [101 frames · 8 px guard](Experiments/R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/)
+- [41 frames · 0.08 px 子像素](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38v2SeqFixed/results/combo_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260408_003525/pitch1um_y_100_odd/)
 
 
 ### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
@@ -102,7 +250,7 @@ _Last updated: 2026-04-18_
 
 **量化修復（np.rint）後的 recon 與其他方法論版本：**
 
-- [量化修復版 recon（`8px_gate_recon_quantfix/`）](Experiments/R38v2SeqFixed/results/8px_gate_recon_quantfix/)
+- [量化修復版 recon（`8px_gate_recon_quantfix/`）](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38v2SeqFixed/results/8px_gate_recon_quantfix/)
 - [720-angle IRLS 分析](Experiments/R38v2SeqFixed/results/720angle_irls_analysis/COMBO/)
 - [720-angle Soft-L1 分析](Experiments/R38v2SeqFixed/results/720angle_soft_l1/COMBO/)
 - [獨立 sequence_analysis](Experiments/R38v2SeqFixed/results/combo_sequence_analysis/)
@@ -126,21 +274,21 @@ _Last updated: 2026-04-18_
 
 **0.08 px 子像素**
 
-![](Experiments/R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
+![](docs/reproducibility/selected_images/early_recon/R38v2SeqFixed_20260406_235957/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-![](Experiments/R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
+![](docs/reproducibility/selected_images/early_recon/R38v2SeqFixed_20260406_235957/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-![](Experiments/R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
+![](docs/reproducibility/selected_images/early_recon/R38v2SeqFixed_20260406_235957/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
-- [41 frames · 0.08 px 子像素](Experiments/R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/)
-- [61 frames · 0.8 px 主戰場](Experiments/R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/)
-- [101 frames · 8 px guard](Experiments/R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/)
+- [41 frames · 0.08 px 子像素](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38v2SeqFixed/results/8px_gate_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_235957/pitch1um_y_100_odd/)
 
 
 ### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
@@ -183,7 +331,7 @@ _Last updated: 2026-04-18_
 - [720-angle IRLS 分析](Experiments/R38v2SeqFixed/results/720angle_irls_analysis/R38v2/)
 - [720-angle Soft-L1 分析](Experiments/R38v2SeqFixed/results/720angle_soft_l1/R38v2/)
 - [通用 sequence_analysis](Experiments/R38v2SeqFixed/results/sequence_analysis/)
-- [量化修復版 recon（`8px_gate_recon_quantfix/`）](Experiments/R38v2SeqFixed/results/8px_gate_recon_quantfix/)
+- [量化修復版 recon（`8px_gate_recon_quantfix/`）](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38v2SeqFixed/results/8px_gate_recon_quantfix/)
 
 
 📄 [R38v2_RESULTS](Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md)
@@ -204,21 +352,21 @@ _Last updated: 2026-04-18_
 
 **0.08 px 子像素**
 
-![](Experiments/R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
+![](docs/reproducibility/selected_images/early_recon/R33RobustLoss_20260405_091941/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-![](Experiments/R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
+![](docs/reproducibility/selected_images/early_recon/R33RobustLoss_20260405_091941/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-![](Experiments/R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
+![](docs/reproducibility/selected_images/early_recon/R33RobustLoss_20260405_091941/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
-- [41 frames · 0.08 px 子像素](Experiments/R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/)
-- [61 frames · 0.8 px 主戰場](Experiments/R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/)
-- [101 frames · 8 px guard](Experiments/R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/)
+- [41 frames · 0.08 px 子像素](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R33RobustLoss/results/p95_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941/pitch1um_y_100_odd/)
 
 
 ### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
@@ -259,10 +407,74 @@ _Last updated: 2026-04-18_
 **R33 候選獨立 sequence_analysis 與量化修復：**
 
 - [R33 候選獨立 sequence_analysis（24 張）](Experiments/R33RobustLoss/results/p95_sequence_analysis/)
-- [量化修復版 recon（`p95_recon_quantfix/`）](Experiments/R33RobustLoss/results/p95_recon_quantfix/)
+- [量化修復版 recon（`p95_recon_quantfix/`）](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R33RobustLoss/results/p95_recon_quantfix/)
 
 
 📄 [R33_EXPERIMENT_SUMMARY](Experiments/R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md) · [完整系列報告](Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md) · [GMF 方法論](Experiments/R33RobustLoss/reports/GMF_STEP_STD_METHODOLOGY.md) · [量化修復分析](Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md) · [Internal/External 偏差分析](Experiments/R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md)
+
+---
+
+## 🟢 R39R40_avg_a025
+
+![🟢 R39R40_avg_a025 R40 micro 五聯對比](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_micro_five_panel.png)
+
+> [!TIP]
+> **`r39r40_complementary_avg_a025`** · balanced full-spectrum alternate（2026-05-11 升級）· 外部 GMF 三尺度 Δ 都在 ±5.18% 內（8 px `−5.18%` / 0.8 px `+1.51%` / 0.08 px `+0.51%`，verdict `PASS_UPGRADE_GUARD`）· 12 顯微/形狀分類 PSNR 全勝 COMBO 與 a030 · 視覺在 sharp band（vs R30 推算 +78.1%）
+
+
+### 📊 五聯視覺對比
+
+R39 a030 與 R40 a043 在 α=0.25（75% a030 + 25% a043）的跨輪權重平均：
+
+- [R40 micro_val_unseen 五聯](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_micro_five_panel.png) — GT / COMBO / a030 / R40 a043 / a025；5 顯微類 × 4 frame
+- [R39 shape_val_unseen 五聯](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_shape_five_panel.png) — GT / COMBO / a030 / R40 a043 / a025；7 形狀類 × 3 frame
+- [R40 micro_val_unseen 四聯](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_four_panel.png) — GT / COMBO / a030 / a025；cell 較大（320×320）
+
+
+### 📊 測試重建影像（實際模型輸出 BMP）
+
+外部三尺度 ring 重建：
+
+- [`8 px`（Pitch1um_Y_100）101 frames](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a025/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845/pitch1um_y_100_odd/)
+- [`0.8 px`（Pitch0.1um_Y_60）61 frames](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a025/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845/pitch0p1um_y_60_odd/)
+- [`0.08 px`（Pitch0.01um_Y_40）41 frames](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a025/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845/pitch0p01um_y_40_odd/)
+
+合成顯微特徵 5 類重建：
+
+- [`stage_29_micro_lines_grid`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_29_micro_lines_grid_20260511_151845/)
+- [`stage_30_micro_large_regions`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_30_micro_large_regions_20260511_151845/)
+- [`stage_31_micro_textures`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_31_micro_textures_20260511_151845/)
+- [`stage_32_micro_edge_defects`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_32_micro_edge_defects_20260511_151845/)
+- [`stage_33_micro_mixed_fields`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/micro_recon/a025/reconstruct_progress_best_tradeoff_in_stage_33_micro_mixed_fields_20260511_151845/)
+
+合成幾何形狀 7 類重建：
+
+- [`stage_01_triangles`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_01_triangles_20260511_151845/)
+- [`stage_02_circles`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_02_circles_20260511_151845/)
+- [`stage_03_rectangles`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_03_rectangles_20260511_151845/)
+- [`stage_04_ellipses`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_04_ellipses_20260511_151845/)
+- [`stage_05_polygons`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_05_polygons_20260511_151845/)
+- [`stage_06_mixed_simple`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_06_mixed_simple_20260511_151845/)
+- [`stage_07_mixed_complex`](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/shape_recon/a025/reconstruct_progress_best_tradeoff_in_stage_07_mixed_complex_20260511_151845/)
+
+
+### 📈 升級依據與評估報告
+
+- [Capability eval（升級依據）](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_CAPABILITY_EVAL.md) — 四項驗證（外部 GMF + R40 顯微 + R39 形狀 + 視覺四項）
+- [Sweep 5 點 trade-off 結果](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_COMPLEMENTARY_AVG_RESULTS.md) — α=0 / 0.25 / 0.5 / 0.75 / 1.0 跨輪 sweep
+- [外部 GMF 解析（α=0.25）](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_EXTERNAL_COMPARE.md)
+
+
+### 📈 指標 CSV / JSON
+
+- [Per-pair 指標](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/per_pair_metrics.csv)（4 候選 × 310 對逐張）
+- [逐 stage 平均](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/stage_summary.csv)
+- [整體平均](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/overall_summary.csv)
+- [視覺四項統計](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/visual_stats.csv)
+- [Capability summary JSON](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/capability_summary.json)
+
+
+📄 [Capability eval](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_CAPABILITY_EVAL.md) · [Sweep 結果](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_COMPLEMENTARY_AVG_RESULTS.md) · [外部 GMF](Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_EXTERNAL_COMPARE.md)
 
 ---
 
@@ -273,7 +485,7 @@ _Last updated: 2026-04-18_
 
 | 候選 | verdict | recon 目錄 | sequence analysis |
 |------|---------|-----------|-------------------|
-| `hard_p90`（internal only） | 未送外部 GMF | [`reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_073906/`](Experiments/R33RobustLoss/results/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_073906/) | [`sequence_analysis/`](Experiments/R33RobustLoss/results/sequence_analysis/) |
+| `hard_p90`（internal only） | 未送外部 GMF | [`reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_073906/`](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R33RobustLoss/results/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_073906/) | [`sequence_analysis/`](Experiments/R33RobustLoss/results/sequence_analysis/) |
 | `lap_only`（Laplacian 單獨） | W_GRADMAG 不能拿掉 | [`lap_only_recon/`](Experiments/R33RobustLoss/results/lap_only_recon/) | [`lap_only_sequence_analysis/`](Experiments/R33RobustLoss/results/lap_only_sequence_analysis/) |
 | `soft_p95`（Charbonnier 軟 p95） | 比 hard 更差 | [`soft_p95_recon/`](Experiments/R33RobustLoss/results/soft_p95_recon/) | [`soft_p95_sequence_analysis/`](Experiments/R33RobustLoss/results/soft_p95_sequence_analysis/) |
 
@@ -441,6 +653,83 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 ---
 
+## 🟡 R39-R45 Microscopy Generalization
+
+> [!IMPORTANT]
+> **Open research side track** · 目標是通用顯微結構忠實重建，不只是環形。環形外部 GMF 仍保留作正式量測守門，但 R39-R45 的主要價值是理解多形狀、多顯微特徵、邊界位置、已知位移忠實度與單一入口分族校正是否能推高。
+
+### 近期結論
+
+| Round | 主要用途 | 關鍵結論 |
+|---|---|---|
+| R39 | 多形狀泛化 | `r39_combo_strong_avg_a030` 外部 GMF 在替代容忍帶內：8px -6.94%、0.8px +6.42%、0.08px -15.97%。這是近期最接近正式替代討論的候選。 |
+| R40 | 顯微特徵能力上限 | 顯微測試明顯改善，但最佳折衷外部 8px 退步 +22.80%，研究用。 |
+| R41 | 知識蒸餾回拉 | 顯微能力仍強，但沒有找到同時守住本地環形與顯微能力的折衷點，研究用。 |
+| R42 | 顯微邊界忠實度 | 邊界測試大幅勝過 COMBO，但後補外部 GMF 三尺度都退步；最佳外部候選 `r42_r41_best` 為 8px +24.63%、0.8px +94.33%、0.08px +98.87%。 |
+| R43 | 堪用性盤點 | 確認沒有新候選可全面取代 COMBO；R39 a030 最可討論，R42 最適合顯微邊界研究與人工檢查。 |
+| R44 | 通用邊界位移忠實度 | `r44_motion_from_r42_best` 把整體位移誤差降到 `0.3813 px`、格線位移誤差降到 `2.2457 px`；R44G 顯示大區塊/混合場景形狀能力分散在不同候選，沒有單一現成模型全面勝出，研究用。 |
+| R45 | 分族邊界校正模組 | R45A 輸出端小校正守住位移但沒改善形狀；R45B 顯示逐張 oracle 有 `33.42%` 上限、固定分族 oracle 有 `12.30%`，但老師殘差不乾淨，研究負結果。 |
+
+### R43 肉眼檢查圖
+
+**顯微特徵總覽**
+
+![](Experiments/R43_CandidateUsabilityAudit/results/visual_review/micro_feature_visual_sheet.png)
+
+**邊界特徵總覽**
+
+![](Experiments/R43_CandidateUsabilityAudit/results/visual_review/boundary_feature_visual_sheet.png)
+
+**邊界局部放大**
+
+![](Experiments/R43_CandidateUsabilityAudit/results/visual_review/boundary_zoom_visual_sheet.png)
+
+### R42 邊界代表圖
+
+![](Experiments/R42_MicroscopyBoundaryFidelity/results/boundary_recon/r42_representative_boundary_sheet.png)
+
+### R44 位移代表圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44_motion_r42_vs_r44_contact_sheet.png)
+
+### R44C 探針代表圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44c_probe_r42_r44b_r44c_sheet.png)
+
+### R44D 分族診斷熱圖
+
+**邊界距離**
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/diagnostics/r44d_boundary_heatmap.png)
+
+**位移誤差**
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/diagnostics/r44d_motion_heatmap.png)
+
+### R44E 大區塊與混合場景探針代表圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44e_region_mixed_probe_sheet.png)
+
+### R44F 錯誤解剖代表圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44f_error_dissection_sheet.png)
+
+### R44G 邊界形狀熱圖
+
+![](Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44g_boundary_shape_heatmap.png)
+
+### R45 分族校正代表圖
+
+![](Experiments/R45_FamilyBoundaryAdapter/results/visual_samples/r45_s08_vs_r44b_target_compare.png)
+
+### R45B 老師診斷代表圖
+
+![](Experiments/R45_FamilyBoundaryAdapter/results/visual_samples/r45b_teacher_diagnostics_sheet.png)
+
+📄 Reports: [R39_RESULTS](Experiments/R39_ShapeGeneralization/reports/R39_RESULTS.md) · [R40_RESULTS](Experiments/R40_MicroscopyFeatureCoverage/reports/R40_RESULTS.md) · [R41_RESULTS](Experiments/R41_RingDistillation/reports/R41_RESULTS.md) · [R42_RESULTS](Experiments/R42_MicroscopyBoundaryFidelity/reports/R42_RESULTS.md) · [R42_EXTERNAL_COMPARE](Experiments/R42_MicroscopyBoundaryFidelity/reports/R42_EXTERNAL_COMPARE.md) · [R43A_USABILITY_AUDIT](Experiments/R43_CandidateUsabilityAudit/reports/R43A_USABILITY_AUDIT.md) · [R44_RESULTS](Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44_RESULTS.md) · [R44E_TARGETED_PROBE](Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44E_TARGETED_PROBE.md) · [R44F_ERROR_DIAGNOSTIC](Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44F_ERROR_DIAGNOSTIC.md) · [R44G_BOUNDARY_SHAPE_METRICS](Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44G_BOUNDARY_SHAPE_METRICS.md) · [R45_RESULTS](Experiments/R45_FamilyBoundaryAdapter/reports/R45_RESULTS.md) · [R45B_TEACHER_DIAGNOSTICS](Experiments/R45_FamilyBoundaryAdapter/reports/R45B_TEACHER_DIAGNOSTICS.md)
+
+---
+
 ## 🔴 R33c
 
 ![🔴 R33c 跨尺度步距標準差](Experiments/R33ContrastFix/results/sequence_analysis/cross_dataset/08_cross_scale_step_std.png)
@@ -455,21 +744,21 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 **0.08 px 子像素**
 
-![](Experiments/R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
+![](docs/reproducibility/selected_images/early_recon/R33ContrastFix_20260406_222404/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-![](Experiments/R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
+![](docs/reproducibility/selected_images/early_recon/R33ContrastFix_20260406_222404/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-![](Experiments/R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
+![](docs/reproducibility/selected_images/early_recon/R33ContrastFix_20260406_222404/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
-- [41 frames · 0.08 px 子像素](Experiments/R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/)
-- [61 frames · 0.8 px 主戰場](Experiments/R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/)
-- [101 frames · 8 px guard](Experiments/R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/)
+- [41 frames · 0.08 px 子像素](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R33ContrastFix/results/stat03_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_222404/pitch1um_y_100_odd/)
 
 
 ### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
@@ -526,21 +815,21 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 
 **0.08 px 子像素**
 
-![](Experiments/R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
+![](docs/reproducibility/selected_images/early_recon/R38SeqConsistency_20260406_122842/pitch0p01um_y_40_odd/VisionTop_20251029193450691.bmp)
 
 **0.8 px 主戰場**
 
-![](Experiments/R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
+![](docs/reproducibility/selected_images/early_recon/R38SeqConsistency_20260406_122842/pitch0p1um_y_60_odd/VisionTop_20251029185853613.bmp)
 
 **8 px guard**
 
-![](Experiments/R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
+![](docs/reproducibility/selected_images/early_recon/R38SeqConsistency_20260406_122842/pitch1um_y_100_odd/VisionTop_20251029183552176.bmp)
 
 📁 完整重建序列：
 
-- [41 frames · 0.08 px 子像素](Experiments/R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/)
-- [61 frames · 0.8 px 主戰場](Experiments/R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/)
-- [101 frames · 8 px guard](Experiments/R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/)
+- [41 frames · 0.08 px 子像素](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p01um_y_40_odd/)
+- [61 frames · 0.8 px 主戰場](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch0p1um_y_60_odd/)
+- [101 frames · 8 px guard](https://github.com/rio10255254/GMM_2_Final/tree/ff4adf9af2a1ec1bd178e6d80d864d03d34fbd94/Experiments/R38SeqConsistency/results/seq_only_recon/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260406_122842/pitch1um_y_100_odd/)
 
 
 ### 📈 所有 24 張 720-angle 指標圖 + 其他方法論版本
@@ -642,3 +931,65 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 所有路徑用**相對於本檔目錄（`Experiments/`）的相對路徑**；跨到其他 tracked 目錄（`AnalysisLab/`、`docs/archive/`）時用 `../` 前綴。
 
 **這份文件不是 mandatory 更新項**（不列入 `CLAUDE.md` 的 5 項強制清單），但**強烈建議**在每輪有視覺輸出時更新——demo / 會議 / PR review 時會非常省時。
+
+
+## R121：四組修正短測的負結果（2026-09-06）
+
+八次有效短測完成；資料、位置與合併改動均未同時保住真實輪廓和細節，不採用、不進長訓練。
+
+- [兩套 SEM 參考的配對輪廓結果](Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/paired_sem_effects.png)
+- [細節與位移條件](Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/quality_guards.png)
+- [固定真實影像對照](Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/fixed_real_examples.png)
+- [完整結果與失敗紀錄](Experiments/R121_BoundaryAnchorFactorial/reports/R121_RESULTS.md)
+
+
+## R109／R119：讀法差異與位置寬度耦合（2026-09-07）
+
+固定模型與共同對齊，分開檢查輪廓、中點、最陡點的可靠性。沒有新訓練或升級。
+
+- [讀法與有效覆蓋](Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/readout_comparison.png)
+- [位置路徑影響](Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/position_path_effects.png)
+- [位置也會壓窄邊緣](Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/position_width_coupling.png)
+- [完整比較報告](Experiments/R119_SequenceGeometryValidation/reports/R119_R109_READOUT_COMPARISON.md)
+
+
+## R135 含舊V42的統一精度比較
+
+固定同一顆pillar18、正常曝光14；舊V42有評估來源重疊，所有模型維持事先指定的使用設定。
+
+![同顆實拍比較](Experiments/R135_UnifiedModelComparison/reports/figures/pillar18.png)
+
+[共同量測結果](Experiments/R135_UnifiedModelComparison/reports/R135_RESULTS.md)
+
+
+### R130-Clean 原尺寸從零訓練
+
+2026-09-20：PSF關閉、scratch8192更新，同一930張實拍。短步差4.121nm與R129相近，尺寸重拍16.422nm較低，尺寸偏大仍在。未升級正式基準。
+
+[完整結果](Experiments/R130_Clean/reports/R130_CLEAN_RESULTS.md)
+
+![位移與重拍波動](Experiments/R130_Clean/reports/figures/displacement.png)
+
+![相同區域的重建](Experiments/R130_Clean/reports/figures/native_nine_example.png)
+
+## 2026-10-16 保存整理：原始影像與失敗案例
+
+這裡重新整理既有研究影像及真正的原始拍攝示例，沒有新增科學判決。完整數值、原始來源、不同曝光與不利結果隨[逐輪保存入口](docs/reproducibility/README.md)保存。
+
+### 實際相機原圖
+
+9月3日第1趟起點，直接複製原始拍攝ZIP中的BMP，未做影像處理。完整930張及30份原始平台紀錄見[共用原始資料](Shared_Sources/PI_Repeatability_20260903/README.md)。
+
+![第1趟起點相機原件](Shared_Sources/PI_Repeatability_20260903/preview/original_001804_XY_0_1.bmp)
+
+### 低倍率細節損失
+
+R75v2的5倍細網格在512切片下被抹平；768與1024追加對照也保留。原圖、三個設定與同區域放大一起呈現，不只保存較好的1024結果。
+
+![原圖與三個切片設定對照](Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/results/figures/05_followup_5x_tile_sensitivity.png)
+
+### 未採用模型的量測結果
+
+R139只產生固定亮度偏移的失敗，當年的完整位移曲線與[因果診斷](Experiments/R139_UNetRecurrentPrototype/reports/R139_CAUSAL_AUDIT.md)共同保存。
+
+![R139與原圖及對照模型的位移曲線](Experiments/R139_UNetRecurrentPrototype/reports/figures/displacement.png)

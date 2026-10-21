@@ -1,0 +1,35 @@
+{
+  "experiment": "R112_V42R109GMFMechanismDecomposition",
+  "purpose": "Identify the V42 model mechanisms associated with stronger external-GMF stability and determine which can be integrated into R109 without losing ACM, dark-exposure, line-pattern, or tile-safe behavior.",
+  "models": {
+    "Raw": {
+      "image_dir": "D:/GMM_2_Final/Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/pitch1um_y100_raw/bmp",
+      "score": "D:/GMM_2_Final/Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/_gmf_scores/pitch1um_y100_raw/GMF_score.txt"
+    },
+    "V42 E120": {
+      "image_dir": "D:/GMM_2_Final/Experiments/R111_R109V42ThesisReplacementQualification/external_gmf_v42/pitch1um_y100_v42_e120_tiled/bmp",
+      "score": "D:/GMM_2_Final/Experiments/R111_R109V42ThesisReplacementQualification/external_gmf_v42/_gmf_scores/pitch1um_y100_v42_e120_tiled/GMF_score.txt",
+      "checkpoint": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar"
+    },
+    "R109 E48": {
+      "image_dir": "D:/GMM_2_Final/Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/pitch1um_y100_r109_e48/bmp",
+      "score": "D:/GMM_2_Final/Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/_gmf_scores/pitch1um_y100_r109_e48/GMF_score.txt",
+      "checkpoint": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth"
+    }
+  },
+  "population": {
+    "coordinate_frames": "frame_0001.bmp through frame_0100.bmp",
+    "coordinate_rows": 100,
+    "consecutive_steps": 99,
+    "nominal_y_step_px": -8.0,
+    "image_shape": [5120, 5120]
+  },
+  "diagnostic_contract": {
+    "no_training": true,
+    "no_weight_edits": true,
+    "no_external_score_relabeling": true,
+    "surrogate_must_reproduce_external_arm_ranking": true,
+    "component_probes_are_directional_until_external_GMF_confirms_them": true,
+    "preserve_single_image_and_tile_safe_deployment": true
+  }
+}

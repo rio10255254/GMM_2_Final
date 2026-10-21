@@ -1,0 +1,90 @@
+{
+  "source_path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\scripts\\evaluate_real_pilot_v2.py",
+  "source_sha256": "dfb8a50728a3b8664f81cf481e9b0d4ee35f3f3412f40a753be51a41b70cb4fe",
+  "adapted_path": "D:\\GMM_2_Final\\Experiments\\R126_LearnabilityPhotometry\\scripts\\evaluate_real.py",
+  "adapted_sha256": "1ec30476e8532845e21fad1377e49056269642b87f46c28f070a4c4eb3d04b37",
+  "replacements": [
+    {
+      "old": "EXPS = ROOT.parent",
+      "new": "EXPS = ROOT.parent\nR125 = EXPS / \"R125_DataAlignedPilot\"",
+      "count": 1
+    },
+    {
+      "old": "PROFILE = ROOT / \"config\"",
+      "new": "PROFILE = R125 / \"config\"",
+      "count": 1
+    },
+    {
+      "old": "PREVIOUS_PANEL = ROOT / \"results\"",
+      "new": "PREVIOUS_PANEL = R125 / \"results\"",
+      "count": 1
+    },
+    {
+      "old": "PANEL = ROOT / \"results\"",
+      "new": "PANEL = R125 / \"results\"",
+      "count": 1
+    },
+    {
+      "old": "str(ROOT)",
+      "new": "str(R125)",
+      "count": 1
+    },
+    {
+      "old": "ROOT / \"prototype\"",
+      "new": "R125 / \"prototype\"",
+      "count": 2
+    },
+    {
+      "old": "inside R125/results/real_*",
+      "new": "inside R126/results/real_*",
+      "count": 1
+    },
+    {
+      "old": "len(evaluations) != 12 or len(combinations) != 6 or {arm for arm, _ in combinations} != {\"A\", \"B\", \"C\"}",
+      "new": "len(evaluations) != 8 or len(combinations) != 4 or {arm for arm, _ in combinations} != {\"P\", \"Q\"}",
+      "count": 1
+    },
+    {
+      "old": "all three arms, two seeds, each initial and step64 separately (12 evaluations)",
+      "new": "both photometry arms, two seeds, each initial and step128 separately (8 evaluations)",
+      "count": 1
+    },
+    {
+      "old": "{0, 64}",
+      "new": "{0, 128}",
+      "count": 1
+    },
+    {
+      "old": "seed, 64]",
+      "new": "seed, 128]",
+      "count": 1
+    },
+    {
+      "old": "step64",
+      "new": "step128",
+      "count": 2
+    },
+    {
+      "old": "all12",
+      "new": "all8",
+      "count": 8
+    },
+    {
+      "old": "colors = {\"A\": \"#32638a\", \"B\": \"#d98b27\", \"C\": \"#6b8b3d\"}",
+      "new": "colors = {\"P\": \"#32638a\", \"Q\": \"#d98b27\"}",
+      "count": 1
+    },
+    {
+      "old": "[0, 64], [\"Initial\", \"64 updates\"]",
+      "new": "[0, 128], [\"Initial\", \"128 updates\"]",
+      "count": 1
+    },
+    {
+      "old": "R125 bounded exploratory pilot",
+      "new": "R126 matched photometry pilot",
+      "count": 1
+    }
+  ],
+  "archived_sem_and_phase_calculation_functions_changed": false,
+  "panel": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_panel_v2\\frozen_panel.json"
+}

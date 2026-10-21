@@ -1,0 +1,108 @@
+{
+  "model_id": "r123_proposed_full2d_iterative_geometry",
+  "status": "design_only_not_implemented_or_trained",
+  "input": {
+    "images_at_inference": 1,
+    "channels": 1,
+    "optional_metadata": [
+      "instrument_calibration_id",
+      "camera_response_id",
+      "exposure_setting"
+    ],
+    "forbidden_inputs": [
+      "SEM_of_evaluation_object",
+      "test_shape_or_size",
+      "test_stage_position_truth",
+      "teacher_output_from_evaluation_source",
+      "image_or_sample_identity_as_prediction_feature"
+    ]
+  },
+  "image_state": {
+    "dimensions": 2,
+    "internal_sampling_factor": 2,
+    "basis": "piecewise-constant cell averages as initial prototype; compare against refined integration, no claim of 2x physical resolution",
+    "output": "sensor-area-integrated image on original native pixel grid",
+    "initialization": "repeat native cell averages on 2x cells, exact native identity under integration",
+    "free_final_detail_addition": false,
+    "independent_position_width_action_heads": false,
+    "latent_definition": "ideal pre-acquisition optical intensity with intrinsic material/intensity transition retained; F applies acquisition optics once, not a second target blur"
+  },
+  "iterations": {
+    "outer_steps": 4,
+    "weights_shared": true,
+    "proposal": "p_t = x_t + alpha_t R_theta(x_t, U(y), U(y-F_kappa(x_t)), calibration, local noise cues)",
+    "observation_step": "x_next = p_t - eta_t grad_x L_observed(F_kappa(p_t), y); no ineffective proximity term",
+    "observation_gradient_steps": 1,
+    "step_size_rule": "For initial calibrated linear/quadratic likelihood, positive eta <= 1/L with an independent upper bound for the implemented noise-weighted F including boundaries. Record a finite calibrated variance floor. Nonlinear/censored likelihood needs its own bound; otherwise no qualified step.",
+    "trace": [
+      "x_t",
+      "p_t_minus_x_t",
+      "F_kappa(x_t)",
+      "observed_residual",
+      "observation_correction",
+      "native_output",
+      "geometry_readout_change"
+    ],
+    "identity_contract": "Initialization integrates exactly to Raw. Whole-model no-op is required for identity optics/noiseless correct input or explicit unchanged-output fallback, not for arbitrary blurred Raw under nonidentity F."
+  },
+  "learned_prior": {
+    "channels": 64,
+    "residual_block_dilations": [
+      1,
+      2,
+      4,
+      2
+    ],
+    "convolutions_per_block": 2,
+    "kernel_size": 3,
+    "stem_radius_internal_px": 1,
+    "head_radius_internal_px": 1,
+    "strided_downsampling": false,
+    "global_attention_or_pooling": false,
+    "spatial_global_normalization": false,
+    "activation": "SiLU; exact choice engineering proposal, not a validated advantage",
+    "all_update_channels_auditable": true
+  },
+  "forward_model": {
+    "qualified_calibration_required": true,
+    "current_instrument_qualification": "unresolved",
+    "initial_family": "local intensity PSF, pixel area integration, measured radiometric response and noise likelihood",
+    "max_kernel_radius_native_px": 16,
+    "kernel_truncation_requires_tail_error_evidence": true,
+    "psf_centroid": "measured calibration datum; cannot float per evaluated object or be silently recentered",
+    "online_free_psf_shift_or_width_fit": false,
+    "fallback_when_mismatched": "report unqualified; direct reconstruction may remain an exploratory control, never relabel it as physics-qualified",
+    "saturation": "censored likelihood or explicit unsupported flag; never treat clipped value as exact latent truth"
+  },
+  "geometry": {
+    "representation": "general boundary likelihood and signed distance plus position/size uncertainty",
+    "role": "training auxiliary and exposed diagnostic; does not freely warp or overwrite the image",
+    "fixed_circle_or_grid_template": false,
+    "supervision": "independent synthetic geometry and, only when available, separately sourced real training SEM correspondences",
+    "image_consistency": "two-way comparison of geometry and actual rendered image; independent external measurement remains decisive",
+    "confidence_from_observation_residual_alone": false,
+    "head_radius_internal_px": 2,
+    "consistency_convention": "Compare a fixed qualified observation/geometry mapping; until qualified retain disagreement as diagnostic, never equate SEM material edge automatically to optical half-level.",
+    "head_inputs": "final latent image x_T and fixed local intensity cues, two 3x3 convolutions, no extra learned warp",
+    "evaluation": "fixed external image metrics first; head agreement is diagnostic until independently qualified mapping/tolerance exists"
+  },
+  "tiling": {
+    "maximum_local_conditioner_radius_native_px": 8,
+    "initial_conservative_halo_native_px": 256,
+    "tile_origin": "fixed original-image native pixel coordinates",
+    "global_solve_or_fft": false,
+    "required_checks": [
+      "exact adjoint test",
+      "native identity",
+      "finite-difference gradients",
+      "full-image versus tiles",
+      "different tile origins and sizes",
+      "kernel-tail qualification",
+      "2x versus finer area integration"
+    ],
+    "halo_status": "analytical design bound only; runtime impulse/gradient and tile tests still required",
+    "bound_includes_current_forward_residual_input": true,
+    "proof_recipe": "rF = sampling_factor*kernel_radius + sampling_factor-1; rPrior = stem+head+2*sum(dilations); conservative native radius = ceil(outer_steps*(3*rF+rPrior)/sampling_factor)+conditioner_radius+ceil(geometry_head_radius/sampling_factor)+1"
+  },
+  "precision": "Observation/geometry arithmetic FP32; optional prior AMP must pass parity and memory smoke tests for every compared model before protocol freeze"
+}

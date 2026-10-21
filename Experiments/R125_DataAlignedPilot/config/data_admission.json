@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "frozen_before_new_package_measurements": true,
+  "decision_scope": "admission for an initial pipeline pilot with known simulated optics only",
+  "real_calibration_qualified": false,
+  "real_application_threshold": false,
+  "model_discrepancy_comparison": {
+    "left": "frozen R124 2x acquisition applied to stored 2x latent target",
+    "right": "independent 4x physical rendering followed by native area integration",
+    "region": "both views, native supervised core rows 256:384 and columns 256:384",
+    "rms_over_declared_noise_sigma_max": 0.25,
+    "absolute_p99_over_declared_noise_sigma_max": 1.0,
+    "absolute_max_reported_separately": true,
+    "interpretation": "RMS screen allows at most 6.25 percent additional mean-square discrepancy relative to declared noise variance; p99 protects localized mismatch. These are engineering screens, not a physics theorem.",
+    "on_breach": "stop admission recommendation, preserve failure, inspect physical cause; do not fit evaluation answers or increase thresholds"
+  },
+  "identity": {
+    "separate_stratum": true,
+    "source_equal_target_in_native_float32_units": true,
+    "zero_actual_added_noise": true,
+    "zero_pair_motion": true,
+    "identity_optics": true
+  },
+  "structural_gates": {
+    "complete_package_files_and_hashes": true,
+    "native_input_shape": [2, 640, 640],
+    "latent_target_shape": [2, 1280, 1280],
+    "source_dtype": "uint8",
+    "continuous_target_dtype": "float32",
+    "source_context_must_be_physically_generated": true,
+    "supervised_core": [256, 384, 256, 384],
+    "target_equals_area_integrated_latent_max_abs": 2e-7,
+    "sdf_foreground_positive_independent_of_intensity_polarity": true,
+    "nonflat_core_contains_declared_geometry": true,
+    "same_optics_for_both_physical_positions": true,
+    "motion_order": "continuous geometry and texture translated before optics, native integration, noise, quantization",
+    "quantization_and_actual_noise_separately_recorded": true,
+    "no_real_evaluation_input_or_SEM_target_or_teacher_ancestry": true,
+    "new_procedural_ancestors_are_explicit": true,
+    "bright_and_dark_and_flat_are_reported_separately": true
+  },
+  "limitations": [
+    "Passing this screen admits only a bounded engineering training pilot.",
+    "Known simulated PSFs are not independent calibration of real microscopy.",
+    "Real microscopy and SEM remain the primary usefulness evaluation.",
+    "Native interpolation motion checks are approximate diagnostics and cannot replace a physical-order source review."
+  ]
+}

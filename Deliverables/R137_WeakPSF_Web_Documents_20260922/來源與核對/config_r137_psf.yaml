@@ -1,0 +1,98 @@
+{
+  "model_name": "R137-WeakPSF",
+  "model": {
+    "channels": 64,
+    "dilations": [
+      1,
+      2,
+      4,
+      2
+    ],
+    "iterations": 4,
+    "eta_max": 0.25,
+    "eta_initial": 0.05,
+    "r_max": 0.35,
+    "optical_mode": "feature_single",
+    "checkpoint_blocks": true,
+    "optical_gain": 0.02,
+    "optical_reg": 0.0565,
+    "psf_bank": "calibration/measured_psf_bank.npz"
+  },
+  "initialization": "scratch",
+  "checkpoint": null,
+  "resume": false,
+  "pretrained": false,
+  "teacher": null,
+  "model_seed": 1309001,
+  "order_seed": 1309002,
+  "noise_seed": 1309003,
+  "splits": {
+    "train": 512,
+    "dev": 128,
+    "test": 128
+  },
+  "source_native_size": 384,
+  "training_crop": [
+    32,
+    352,
+    32,
+    352
+  ],
+  "supervised_core": [
+    96,
+    224
+  ],
+  "updates": 8192,
+  "epochs": 16,
+  "warmup": 128,
+  "save_every": 128,
+  "dev_every": 512,
+  "optimizer": {
+    "name": "AdamW",
+    "max_lr": 0.001,
+    "min_lr": 1e-05,
+    "weight_decay": 1e-05,
+    "gradient_clip": 5.0
+  },
+  "loss": {
+    "image": 1.0,
+    "gradient": 0.2,
+    "pair": 0.2
+  },
+  "precision": "FP32",
+  "tf32": false,
+  "deterministic": true,
+  "sanity_updates": 32,
+  "inference": {
+    "mode": "full",
+    "tile_core": 512,
+    "halo": 96,
+    "feather_blending": false,
+    "global_raw_retention": false
+  },
+  "preflight_tolerances": {
+    "full_tile_abs": 2e-06,
+    "context_output_abs": 2e-06,
+    "context_gradient_relative": 5e-05
+  },
+  "dataset_source": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\data",
+  "dataset_copy_policy": "Extract unchanged source/noiseless/target only; omit stored synthetic kernel4 and latent/geometry arrays; no regeneration.",
+  "real_evaluation_after_final_checkpoint_only": true,
+  "comparisons": [
+    "Raw",
+    "R129",
+    "R130-Clean",
+    "R137-WeakPSF"
+  ],
+  "automatic_extension": false,
+  "decisions": {
+    "one_tanh": "Shared backbone returns logits; exactly one tanh bounds each proposed correction.",
+    "residual_bound": "0.35 frozen before any learning; chosen near the prior design's documented correction scale, without loading prior parameters.",
+    "step_initial": "0.05, corresponding to sigmoid(s)=0.2; independent fresh learnable scalars.",
+    "no_new_holdout_claim": "Existing real set is a fixed post-training comparison, not an unseen holdout.",
+    "branch": "codex/r130-clean created at current HEAD; existing dirty checkout is not switched or reset.",
+    "PSF": "User explicitly selected the existing 25-PSF bank for a weak test; normalize each kernel then average; no invented spatial mapping.",
+    "optical_scope": "Global FFT cue calculated once on complete available observation; feature-level gain .02, bounded adapter; Raw unmodified. Training cue computed on original384 field then cropped to320.",
+    "locality": "Neural readout remains local conditional on fixed optical cue; total optical path is global. Do not reuse pure-R130 global locality claims."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-09-25T00:57:56.848026+00:00",
+  "purpose": "one R147 scratch8192 native-grid PSF consistency run",
+  "architecture_source": "R146_SEMCoreHaloPSF25_MatchedPairs, repaired optics",
+  "files": {
+    "model.py": "39cba7e2204e4c06088ca4e63df988ce20110368eb4fcfed599ceb3080fe8af7",
+    "dataset.py": "e5b609c9e7be8e65b2f0012c62814caa8474aedc7ff7e1453bfaf2f1c76f76e0",
+    "train.py": "745786b1d08bc41d3e79eec25695f327be4b1e3be5a19f7f21bc419a452d698c",
+    "losses.py": "2130e1954ffb2b462a2b090d0ab0c9b573645f982a914e7a3057aa6331c2a1de",
+    "training_policy.py": "e575b903b3d14380d4403ab505e28ca21d30b8b47a029ad1ee124bb0b3a092f7",
+    "utils.py": "b3587981c06ff44ad013aa1a1b21bc6018898696253303038ab5b703597fcc12",
+    "infer.py": "bbfe9334e3c4d5836d47c1532adfde8219bfec3ddbe0cef297eb82ab958d476c",
+    "verify_package.py": "a393e36cfbd9db2ede629a637387a7851a9e37e96d0e8210f1892f25d1e782ed",
+    "optical/fullres_psf.py": "3a37e50b49031366bcc34bb997d92623d095de523ce2ddbfd0442b19b086f278",
+    "config/model.json": "f147974db23d395e7ca3d0549ed567d3bab3c5e7c053185f70e49cf8d9e017c6",
+    "config/train.json": "4e71448d404feee9826bda4eb7f143332df8d114c77a3afdb608b39fe522cbd0",
+    "calibration/measured_psf_bank.npz": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+    "calibration/BANK_LOCK.json": "f85c320d3e56bf2a25f7c1af554ce4aec70518ad1f8d2cfedadcee0374bb770a",
+    "data/manifest.json": "4fd42ef7b4f1458181e3af6c5da096e95904211991c84c6a18a77ae70f390913",
+    "scripts/preflight.py": "6248dc07c46bcceb57883ff8abfe03466ab0f94aa6249cea2cf0915b08535659",
+    "scripts/launch_r147.py": "ba4ad3bd0daae8e754a113b1a55e547da516bb7a6fd11089cb73a0b16709614e",
+    "results/native_psf_operator_validation.json": "c7b27f9b751994d477b730291fb4f5d2eef1fc3ef1b8ee675313d6bd57b855bc",
+    "results/optical_step_preflight.json": "126053ccd81ba398803881d3514f3d23ba4d56abb1c0a3b7ef0f2a31d7db0b52"
+  }
+}

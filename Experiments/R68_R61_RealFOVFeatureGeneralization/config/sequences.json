@@ -1,0 +1,71 @@
+{
+  "checkpoint": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+  "tile_grid": {"columns": 8, "rows": 6, "selected_tiles": 24},
+  "max_time_gap_seconds": 30,
+  "minimum_phase_response": 0.10,
+  "gates": {
+    "minimum_valid_fraction": 0.90,
+    "minimum_direction_agreement": 0.95,
+    "maximum_median_scale_error_fraction": 0.10,
+    "maximum_median_difference_of_step": 0.10,
+    "maximum_p95_difference_of_step": 0.25,
+    "minimum_median_response_ratio": 0.65,
+    "minimum_median_ecc": 0.90
+  },
+  "sequences": {
+    "5x_0p5um": {
+      "magnification": 5,
+      "nominal_step_um": 0.5,
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp",
+      "recon_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um/bmp",
+      "mapping_csv": "D:/GMM_2_Final/20260704_20x_5x_analysis/input_mapping.csv",
+      "source_manifest": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um_manifest.json",
+      "frame_count": 50
+    },
+    "5x_1um": {
+      "magnification": 5,
+      "nominal_step_um": 1.0,
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp",
+      "recon_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp",
+      "mapping_csv": "D:/GMM_2_Final/20260704_20x_5x_analysis/input_mapping.csv",
+      "source_manifest": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um_manifest.json",
+      "frame_count": 50
+    },
+    "20x_0p5um": {
+      "magnification": 20,
+      "nominal_step_um": 0.5,
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
+      "recon_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um/bmp",
+      "mapping_csv": "D:/GMM_2_Final/20260704_20x_5x_analysis/input_mapping.csv",
+      "source_manifest": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um_manifest.json",
+      "frame_count": 50
+    },
+    "20x_1um": {
+      "magnification": 20,
+      "nominal_step_um": 1.0,
+      "raw_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
+      "recon_dir": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp",
+      "mapping_csv": "D:/GMM_2_Final/20260704_20x_5x_analysis/input_mapping.csv",
+      "source_manifest": "D:/GMM_2_Final/20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um_manifest.json",
+      "frame_count": 50
+    },
+    "50x_0p5um": {
+      "magnification": 50,
+      "nominal_step_um": 0.5,
+      "raw_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
+      "recon_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um/bmp",
+      "mapping_csv": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/input_mapping.csv",
+      "source_manifest": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um_manifest.json",
+      "frame_count": 51
+    },
+    "50x_1um": {
+      "magnification": 50,
+      "nominal_step_um": 1.0,
+      "raw_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
+      "recon_dir": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp",
+      "mapping_csv": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/input_mapping.csv",
+      "source_manifest": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um_manifest.json",
+      "frame_count": 50
+    }
+  }
+}

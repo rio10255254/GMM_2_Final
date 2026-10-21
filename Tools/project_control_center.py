@@ -5,6 +5,7 @@ import contextlib
 import importlib.util
 import io
 import json
+import locale
 import os
 import shutil
 import subprocess
@@ -19,6 +20,13 @@ VALIDATOR_PATH = REPO / "Tools" / "validate_project_structure.py"
 POLICY_ACCESSOR_PATH = REPO / "Model" / "GeoEdgeAlignSR_v1_PolicyAccess.py"
 POLICY_PATH = REPO / "ESTIMATOR_POLICY.json"
 CONTROL_CENTER_DOC = REPO / "docs" / "operations" / "PROJECT_CONTROL_CENTER.md"
+STORAGE_POLICY_PATH = REPO / "docs" / "operations" / "PROJECT_STORAGE_POLICY.json"
+STORAGE_POLICY_DOC = REPO / "docs" / "operations" / "PROJECT_STORAGE_AND_ARCHIVE_POLICY.md"
+ARCHIVE_INDEX_PATH = REPO / "docs" / "operations" / "PROJECT_ARCHIVE_INDEX.md"
+STORAGE_REGISTRY_PATH = REPO / "docs" / "operations" / "PROJECT_STORAGE_REGISTRY.json"
+STORAGE_LIFECYCLE_PATH = REPO / "docs" / "operations" / "PROJECT_STORAGE_LIFECYCLE_PLAN.md"
+QUARANTINE_INDEX_PATH = REPO / "docs" / "operations" / "PROJECT_QUARANTINE_INDEX.md"
+STORAGE_GUARD_PATH = REPO / "Tools" / "project_storage_guard.py"
 ANALYSIS_INDEX_PATH = REPO / "AnalysisLab" / "index.json"
 EVIDENCE_MAP_PATH = REPO / "docs" / "evidence" / "EVIDENCE_MAP.md"
 WORKFLOW_PATH = REPO / ".github" / "workflows" / "validate-governance.yml"
@@ -50,6 +58,12 @@ CORE_DOC_PATHS = [
     EVIDENCE_MAP_PATH,
     ANALYSIS_INDEX_PATH,
     CONTROL_CENTER_DOC,
+    STORAGE_POLICY_PATH,
+    STORAGE_POLICY_DOC,
+    ARCHIVE_INDEX_PATH,
+    STORAGE_REGISTRY_PATH,
+    STORAGE_LIFECYCLE_PATH,
+    QUARANTINE_INDEX_PATH,
 ]
 HEALTH_LEVEL_MODULES = {
     "quick": ["docs", "entrypoints"],
@@ -116,6 +130,13 @@ ENTRYPOINT_SPECS = [
         "role": "human guide",
         "path": CONTROL_CENTER_DOC,
         "help_command": None,
+    },
+    {
+        "id": "storage_guard",
+        "label": "storage and archive guard",
+        "role": "capacity monitoring and archive verification",
+        "path": STORAGE_GUARD_PATH,
+        "help_command": [sys.executable, "Tools/project_storage_guard.py", "--help"],
     },
 ]
 MATLAB_SMOKE_TEST_BATCH = (
@@ -237,14 +258,26 @@ def run_command(
         cwd=cwd,
         env=env,
         capture_output=True,
-        text=True,
+        text=False,
         check=False,
         timeout=timeout,
     )
+    def decode_output(value: bytes | str | None) -> str:
+        if value is None:
+            return ""
+        if isinstance(value, str):
+            return value.strip()
+        try:
+            return value.decode("utf-8").strip()
+        except UnicodeDecodeError:
+            # Windows native programs and Python children without UTF-8 mode
+            # can emit the system code page even when this parent uses -X utf8.
+            return value.decode(locale.getencoding(), errors="replace").strip()
+
     return {
         "returncode": completed.returncode,
-        "stdout": completed.stdout.strip(),
-        "stderr": completed.stderr.strip(),
+        "stdout": decode_output(completed.stdout),
+        "stderr": decode_output(completed.stderr),
         "command": list(command),
     }
 
@@ -616,6 +649,32 @@ def run_health(level: str, requested_modules: Sequence[str] | None = None) -> di
 
 def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict[str, Any]) -> dict[str, Any]:
     formal = policy["formal_baseline"]
+
+    def preferred_report_path(item: dict[str, Any]) -> str:
+        def format_report(value: str) -> str:
+            path = Path(value)
+            if path.is_absolute():
+                return relpath(path)
+            return path.as_posix()
+
+        reports = item.get("reports", {})
+        for key in (
+            "status_md",
+            "results_md",
+            "capability_eval_md",
+            "summary_md",
+            "external_compare_md",
+            "sweep_results_md",
+            "weight_sweep_summary_md",
+        ):
+            if key in reports:
+                return format_report(reports[key])
+        if reports:
+            return format_report(next(iter(reports.values())))
+        if item.get("report"):
+            return format_report(item["report"])
+        return ""
+
     return {
         "formal_baseline": {
             "candidate_id": formal["candidate_id"],
@@ -629,7 +688,7 @@ def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict
             {
                 "candidate_id": item["candidate_id"],
                 "model_name": item["model_name"],
-                "report": relpath(Path(item["reports"]["results_md"])),
+                "report": preferred_report_path(item),
             }
             for item in policy["approved_alternates"]
         ],
@@ -637,7 +696,7 @@ def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict
             {
                 "candidate_id": item["candidate_id"],
                 "status": item["status"],
-                "report": relpath(Path(item["reports"]["status_md"])),
+                "report": preferred_report_path(item),
             }
             for item in policy["open_side_tracks"]
         ],
@@ -646,12 +705,24 @@ def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict
             {"label": "architecture", "path": relpath(repo / "PROJECT_ARCHITECTURE.md")},
             {"label": "evidence map", "path": relpath(EVIDENCE_MAP_PATH)},
             {"label": "analysis index", "path": relpath(ANALYSIS_INDEX_PATH)},
+            {"label": "storage policy", "path": relpath(STORAGE_POLICY_PATH)},
+            {"label": "storage registry", "path": relpath(STORAGE_REGISTRY_PATH)},
+            {"label": "storage lifecycle", "path": relpath(STORAGE_LIFECYCLE_PATH)},
+            {"label": "quarantine index", "path": relpath(QUARANTINE_INDEX_PATH)},
         ],
         "analysis": summarize_analysis_index(analysis_index),
     }
 
 
 def build_architecture_view(policy: dict[str, Any]) -> dict[str, Any]:
+    def experiment_location(item: dict[str, Any]) -> str:
+        if item.get("experiment"):
+            return item["experiment"]
+        # Recent research records also use a direct canonical report field.
+        # Derive a location only from that explicit reports directory.
+        report = str(item.get("report", "")).replace("\\", "/")
+        return report.split("/reports/", 1)[0] if "/reports/" in report else ""
+
     return {
         "mainline": {
             "label": "root shared mainline",
@@ -662,7 +733,7 @@ def build_architecture_view(policy: dict[str, Any]) -> dict[str, Any]:
             {
                 "candidate_id": item["candidate_id"],
                 "status": item["status"],
-                "location": item["experiment"],
+                "location": experiment_location(item),
             }
             for item in policy["open_side_tracks"]
         ],

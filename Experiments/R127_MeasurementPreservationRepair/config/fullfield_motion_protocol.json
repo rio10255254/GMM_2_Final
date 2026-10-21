@@ -1,0 +1,11 @@
+{
+  "reason": "All6full-field Raw pairs have a unique reversible match; the saved smaller contexts still reject20x_1um and50x_0p5um for all5methods. Use available full images to provide the missing spatial information.",
+  "scope": "All4frozen R126final models on all12source frames(6suites x2), not just failing cases",
+  "weights_or_training_changes": false,
+  "inference": "Same R125model and assumed real Gaussian, tile256halo80, deterministiccuDNN,TF32True matching R126primary runtime",
+  "checks": "Compare each original128core with its saved R126value; report numerical parity at3e-6. Apply unchanged V3reader and reverse consistency0.1px, then source-global consistency0.5px. No desired-shift search restriction.",
+  "old_local_and_context_failures": "Retained and not relabelled as successful local measurements",
+  "new_acquisition": false,
+  "physical_accuracy_qualified": false,
+  "model_promoted": false
+}

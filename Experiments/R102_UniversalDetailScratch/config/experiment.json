@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R102_UniversalDetailScratch",
+  "created_date": "2026-08-15",
+  "purpose": "Scratch-trained microscopy reconstruction with independent radiometry, contour, and generative texture innovation paths.",
+  "formal_baseline_changed": false,
+  "source_isolation": {
+    "checkpoint_loading_allowed": false,
+    "resume_allowed": false,
+    "teacher_allowed": false,
+    "pseudo_labels_allowed": false,
+    "real_pixels_in_training": false,
+    "sem_or_hs100mg_structure_in_training": false,
+    "procedural_truth_only": true
+  },
+  "data": {
+    "base_package": "D:/GMM_2_Final/Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
+    "base_content_sha256": "260ccc5b4e31727e7fc97082b831717aa4c06d9f429ef98a5ce1210cb49bf5d5",
+    "scene_count": 1250,
+    "observations": 5000,
+    "canvas_size": 1536,
+    "label_supersample_factor": 8,
+    "reuse_read_only": true,
+    "augmentation_seed": 1020041,
+    "augmentation": {
+      "innovation_probability": 0.42,
+      "identity_probability": 0.16,
+      "flat_negative_probability": 0.08,
+      "analytic_texture_period_px": [2.6, 11.0],
+      "target_texture_amplitude": [0.018, 0.085],
+      "source_texture_transfer": [0.12, 0.68]
+    },
+    "split_unit": "scene_id",
+    "training_scenes": 1000,
+    "validation_scenes": 125,
+    "internal_test_scenes": 125
+  },
+  "model": {
+    "name": "ParallelInnovationMOSR",
+    "base_channels": 32,
+    "alignment_multiple": 8,
+    "minimum_halo_px": 128,
+    "fully_convolutional": true,
+    "global_pooling": false,
+    "global_fft": false,
+    "coordinate_channels": false,
+    "normalization": "per_pixel_channel_groups",
+    "branch_bounds": {
+      "radiometry": 0.18,
+      "contour": 0.16,
+      "texture": 0.14,
+      "combined": 0.36
+    },
+    "initial_output": "exact_identity"
+  },
+  "training": {
+    "formal_run_limit": 1,
+    "epochs": 48,
+    "seed": 1020053,
+    "optimizer": "AdamW_fused_when_available",
+    "learning_rate": 0.00018,
+    "minimum_learning_rate": 0.000012,
+    "weight_decay": 0.00008,
+    "precision": "bfloat16",
+    "ema_decay": 0.996,
+    "num_workers": 4,
+    "cpu_threads": 8,
+    "validation_every_epochs": 2,
+    "preview_every_epochs": 2,
+    "checkpoint_every_epochs": 2,
+    "stages": [
+      {"start": 1, "end": 8, "patch_size": 256, "core_size": 192, "batch_size": 20},
+      {"start": 9, "end": 32, "patch_size": 320, "core_size": 256, "batch_size": 14},
+      {"start": 33, "end": 48, "patch_size": 384, "core_size": 288, "batch_size": 10}
+    ],
+    "auxiliary_frequency": {
+      "translation_every_steps": 4,
+      "tile_every_steps": 8
+    },
+    "loss_weights": {
+      "reconstruction": 1.0,
+      "low_frequency": 0.22,
+      "gradient": 0.32,
+      "high_frequency": 0.52,
+      "high_frequency_correlation": 0.20,
+      "contour": 0.34,
+      "branch_targets": 0.34,
+      "paired_observation": 0.10,
+      "identity": 0.22,
+      "flat_negative": 0.18,
+      "translation": 0.08,
+      "tile": 0.06
+    }
+  },
+  "validation": {
+    "synthetic_samples": 96,
+    "axes": [
+      "reconstruction",
+      "contour",
+      "texture",
+      "identity",
+      "flat_negative",
+      "paired_observation",
+      "displacement",
+      "tile_consistency"
+    ],
+    "real_preview_sources": [
+      "D:/GMM_2_Final/Experiments/R99_GeometryTextureCoherentScratch/data/live_validation/5x_dense_raw.bmp",
+      "D:/GMM_2_Final/Experiments/R99_GeometryTextureCoherentScratch/data/live_validation/20x_mixed_raw.bmp",
+      "D:/GMM_2_Final/Experiments/R99_GeometryTextureCoherentScratch/data/live_validation/50x_array_raw.bmp",
+      "D:/GMM_2_Final/Experiments/R99_GeometryTextureCoherentScratch/data/live_validation/pillar_center9_50x_raw.bmp"
+    ],
+    "real_images_are_evaluation_only": true
+  }
+}

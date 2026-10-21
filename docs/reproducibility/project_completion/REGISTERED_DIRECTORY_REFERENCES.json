@@ -1,0 +1,207 @@
+{
+  "status": "ALL_CAPTURED_REFERENCES_ACCOUNTED_FOR",
+  "directory_edges": 33,
+  "inside_project_references": 11,
+  "archive_reference_projections": 22,
+  "edges": [
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R87_TileNativeScratchGeneralization\\data\\r87_smoke_scene_pairs\\arrays",
+      "logical_path": "Experiments/R87_TileNativeScratchGeneralization/data/r87_smoke_scene_pairs/arrays",
+      "target": "H:\\GMM_2_Final_Archive\\compatibility_views\\R87_TileNativeScratchGeneralization\\20261016\\data\\r87_smoke_scene_pairs\\arrays",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R87_TileNativeScratchGeneralization\\data\\r87_formal_scene_pairs\\arrays",
+      "logical_path": "Experiments/R87_TileNativeScratchGeneralization/data/r87_formal_scene_pairs/arrays",
+      "target": "H:\\GMM_2_Final_Archive\\compatibility_views\\R87_TileNativeScratchGeneralization\\20261016\\data\\r87_formal_scene_pairs\\arrays",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\evaluation",
+      "logical_path": "Experiments/R152_R148v2_SafeAdaptivePSF/evaluation",
+      "target": "D:\\GMM_2_Final\\Experiments\\R148v2_HybridContextNativePSF\\evaluation",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R150_MatchedGeometryMeanPSF\\data",
+      "logical_path": "Experiments/R150_MatchedGeometryMeanPSF/data",
+      "target": "D:\\GMM_2_Final\\Experiments\\R149_MatchedGeometryLocalBoundary\\data",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R149_MatchedGeometryLocalBoundary\\data\\base_geometry",
+      "logical_path": "Experiments/R149_MatchedGeometryLocalBoundary/data/base_geometry",
+      "target": "D:\\GMM_2_Final\\Experiments\\R148v2_HybridContextNativePSF\\data\\geometry",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R149_MatchedGeometryLocalBoundary\\data\\base_payload",
+      "logical_path": "Experiments/R149_MatchedGeometryLocalBoundary/data/base_payload",
+      "target": "D:\\GMM_2_Final\\Experiments\\R148_MeasurementStableNativePSF\\data\\payload",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R148v2_HybridContextNativePSF\\data\\payload",
+      "logical_path": "Experiments/R148v2_HybridContextNativePSF/data/payload",
+      "target": "D:\\GMM_2_Final\\Experiments\\R148_MeasurementStableNativePSF\\data\\payload",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\results",
+      "logical_path": "Experiments/R147_FullResPSFConsistency/results",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\results_root",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\runs\\formal_8192",
+      "logical_path": "Experiments/R147_FullResPSFConsistency/runs/formal_8192",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\training_run",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\runs\\launcher_logs",
+      "logical_path": "Experiments/R147_FullResPSFConsistency/runs/launcher_logs",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\launcher_logs",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\results_local_verified_copy\\centers",
+      "logical_path": "Experiments/R147_FullResPSFConsistency/results_local_verified_copy/centers",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\centers",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\results_local_verified_copy\\comparison",
+      "logical_path": "Experiments/R147_FullResPSFConsistency/results_local_verified_copy/comparison",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\comparison",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R147_FullResPSFConsistency\\results_local_verified_copy\\reconstruction",
+      "logical_path": "Experiments/R147_FullResPSFConsistency/results_local_verified_copy/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R146_SEMCoreHaloPSF25_MatchedPairs\\results\\reconstruction",
+      "logical_path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R146_SEMCoreHaloPSF25_MatchedPairs\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R145_Center9PSF25_CorrectedPairs\\results\\reconstruction",
+      "logical_path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R145_Center9PSF25_CorrectedPairs\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R144_Center9PSF25_MatchedPairs\\results\\reconstruction",
+      "logical_path": "Experiments/R144_Center9PSF25_MatchedPairs/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R144_Center9PSF25_MatchedPairs\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R143_PSF25_MatchedPairs\\results\\reconstruction",
+      "logical_path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R143_PSF25_MatchedPairs\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R140_StableUNet\\data",
+      "logical_path": "Experiments/R140_StableUNet/data",
+      "target": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\data",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R140_StableUNet\\results\\reconstruction",
+      "logical_path": "Experiments/R140_StableUNet/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R140_StableUNet_20260923\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R140v2_StableUNet\\data",
+      "logical_path": "Experiments/R140v2_StableUNet/data",
+      "target": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\data",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R140v2_StableUNet\\results\\reconstruction",
+      "logical_path": "Experiments/R140v2_StableUNet/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R140v2_StableUNet_20260923\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R139_UNetRecurrentPrototype\\data",
+      "logical_path": "Experiments/R139_UNetRecurrentPrototype/data",
+      "target": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\data",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R139_UNetRecurrentPrototype\\results\\reconstruction",
+      "logical_path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R139_UNetRecurrent_20260923\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R138_V42PSF8\\data",
+      "logical_path": "Experiments/R138_V42PSF8/data",
+      "target": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\data",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R138_V42PSF8\\results\\reconstruction",
+      "logical_path": "Experiments/R138_V42PSF8/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R138_V42PSF8_20260923\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R137_WeakPSFFeature\\data",
+      "logical_path": "Experiments/R137_WeakPSFFeature/data",
+      "target": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\data",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R137_WeakPSFFeature\\results\\reconstruction",
+      "logical_path": "Experiments/R137_WeakPSFFeature/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R137_WeakPSF_20260921\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R136_PIRepeatability\\results\\R128",
+      "logical_path": "Experiments/R136_PIRepeatability/results/R128",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R136_R128_20260918",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\results\\reconstruction",
+      "logical_path": "Experiments/R130_Clean/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R130_Clean_20260920\\reconstruction",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\data\\package",
+      "logical_path": "Experiments/R119_SequenceGeometryValidation/data/package",
+      "target": "D:\\GMM_2_Final\\Experiments\\R118_PhysicalCoordinateRepairScratch\\data\\package",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\results_root\\centers",
+      "logical_path": "Experiments/R147_FullResPSFConsistency/results/centers",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\centers",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\results_root\\comparison",
+      "logical_path": "Experiments/R147_FullResPSFConsistency/results/comparison",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\comparison",
+      "kind": "directory_reference"
+    },
+    {
+      "source": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\results_root\\reconstruction",
+      "logical_path": "Experiments/R147_FullResPSFConsistency/results/reconstruction",
+      "target": "H:\\GMM_2_Final_Archive\\active_runs\\R147_FullResPSFConsistency\\reconstruction",
+      "kind": "directory_reference"
+    }
+  ],
+  "originals_changed": false
+}

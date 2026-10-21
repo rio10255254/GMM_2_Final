@@ -1,0 +1,59 @@
+**********************
+Windows PowerShell 轉譯開始
+開始時間: 20260505153601
+使用者名稱: DESKTOP-5J1NJ2L\Rio
+RunAs 使用者: DESKTOP-5J1NJ2L\Rio
+設定名稱:
+電腦: DESKTOP-5J1NJ2L (Microsoft Windows NT 10.0.26200.0)
+主應用程式: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command Set-Location 'D:\GMM_2_Final'
+$ErrorActionPreference = 'Stop'
+Start-Transcript -Path 'D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_boundary_eval_20260505.log'
+function Run-One($name, $weights) {
+ Write-Host [R42-EVAL] START $name (Get-Date)
+ $root = Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\$name
+ python Experiments\R42_MicroscopyBoundaryFidelity\scripts\run_r42_boundary_recon.py --profile boundary_val_unseen --weights $weights --recon-root $root --device cuda:0
+ if ($LASTEXITCODE -ne 0) { throw reconstruction failed: $name }
+ python Experiments\R42_MicroscopyBoundaryFidelity\scripts\r42_boundary_metrics.py --profile boundary_val_unseen --recon-root $root --output-json $root\summary.json
+ if ($LASTEXITCODE -ne 0) { throw metrics failed: $name }
+ Write-Host [R42-EVAL] DONE $name (Get-Date)
+}
+Run-One 'combo' 'combo'
+Run-One 'r39_a030' 'a030'
+Run-One 'r40_a045' 'r40_a045'
+Run-One 'r41_direct' 'r41_direct'
+Run-One 'r42_combo_best' 'D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301\weights\best_tradeoff.pth.tar'
+Run-One 'r42_combo_latest' 'D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301\weights\latest.pth.tar'
+Run-One 'r42_r41_best' 'D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\weights\best_tradeoff.pth.tar'
+Run-One 'r42_r41_latest' 'D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\weights\latest.pth.tar'
+Write-Host '[R42-EVAL] ALL DONE' (Get-Date)
+Stop-Transcript
+處理序識別碼: 65860
+PSVersion: 5.1.26100.8115
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8115
+BuildVersion: 10.0.26100.8115
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+已啟動轉譯，輸出檔為 D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_boundary_eval_20260505.log
+[R42-EVAL] START combo 2026/5/5 下午 03:36:01
+PS>終止錯誤(): "無法載入模組 'Experiments'。如需詳細資訊，請執行 'Import-Module Experiments'。"
+>> 終止錯誤(): "無法載入模組 'Experiments'。如需詳細資訊，請執行 'Import-Module Experiments'。"
+無法載入模組 'Experiments'。如需詳細資訊，請執行 'Import-Module Experiments'。
+Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\$name : 無法載入模組 'Experiments'。如需詳細資訊，請
+執行 'Import-Module Experiments'。
+位於 線路:6 字元:10
++  $root = Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_ ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Experiments\R42...ary_recon\$name:String) [], ParentContainsErrorRecord
+   Exception
+    + FullyQualifiedErrorId : CouldNotAutoLoadModule
+
+PS>$global:?
+False
+**********************
+Windows PowerShell 轉譯結束
+結束時間: 20260505153601
+**********************

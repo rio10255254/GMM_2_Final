@@ -22,6 +22,21 @@ flowchart TD
     COMBO --> NEXT["Next round only if:<br/>new mechanism OR<br/>deployment-specific need"]
 ```
 
+## Post-COMBO 顯微泛化研究線
+
+這條線從 R39 開始，不再把「環形」當成唯一研究目標。真正目標是讓模型碰到各種顯微結構時，都能忠實重建邊界位置；環形外部 GMF 仍是正式量測守門，但它只是代理測試。
+
+```mermaid
+flowchart TD
+    COMBO2["COMBO<br/>正式 baseline"] --> R39["R39 Shape Generalization<br/>多形狀資料<br/>a030 外部 tradeoff 可討論"]
+    R39 --> R40["R40 Microscopy Feature Coverage<br/>顯微特徵能力上限<br/>micro PSNR/HF 大幅提升"]
+    R40 --> R41["R41 Ring Distillation<br/>蒸餾回拉舊能力<br/>未找到可升級折衷"]
+    R41 --> R42["R42 Microscopy Boundary Fidelity<br/>邊界忠實度大幅提升<br/>external GMF 退步過大"]
+    R42 --> R43["R43 Candidate Usability Audit<br/>近期候選堪用性盤點<br/>R39 最可討論，R42 研究/人工檢查用"]
+    R43 --> R44["R44 Universal Boundary Motion Fidelity<br/>R44A-R44H Step A complete<br/>位移忠實度改善但不可升級"]
+    R44 --> NEXT_MICRO["Next microscopy decision<br/>不靠全域平均<br/>需局部蒸餾或分族機制"]
+```
+
 ## Milestone Numbers / 里程碑數字
 
 | Round | 候選 | External `0.8px` step std | 角色 / Verdict |
@@ -36,6 +51,12 @@ flowchart TD
 | R38 | `seq_only` | — (internal only) | 全 stages noise 干擾，falsified |
 | **R38v2** | `r38v2_8px_gate` | `0.134205` | approved visual-priority alternate |
 | **COMBO** | `r38v2_8px_gate_p95` | `0.131560` | **formal production baseline** |
+| R39 | `r39_combo_strong_avg_a030` | `0.140008` | 近期最接近替代討論；形狀泛化改善，0.8px 在 alternate band 內 |
+| R40 | `r40_combo_best_avg_a045` | `0.133314` | 顯微特徵能力提升，但 external 8px +22.80%，research-only |
+| R41 | `r41_*` | 未送外部 | 顯微能力強，但沒有通過本地三尺度折衷，research-only |
+| R42 | `r42_r41_best` | `0.255665` | 邊界重建大幅改善，但 external 三尺度退步過大，research-only |
+| R43 | analysis-only | — | 近期候選堪用性盤點；沒有新候選全面取代 COMBO |
+| R44 | `r44_motion_from_r42_best` / R44C-R44H diagnostics | 未送外部 | R44A-R44H Step A 完成；R44B from R42 仍是最佳通用位移候選（整體位移 `0.3813 px`、格線位移 `2.2457 px`）。R44H 家族平均可把大區塊/混合形狀錯誤推到 `0.2955`，但位移退到 `0.5298 px` 以上，不能作後續起點；research-only |
 | R26NewPSFCheck | 新 PSF 重訓候選 | 待定 | open side track，pending GMF |
 
 ## Interpretation / 路徑解讀
@@ -63,6 +84,9 @@ flowchart TD
 
 - `R26NewPSFCheck`
   與 mainline promotion 解耦的 PSF 驗證 side track。它仍有研究價值，但不是目前 active baseline challenger。
+
+- `R39-R44 microscopy generalization`
+  這條線證明模型可以學到更多形狀、顯微紋理與邊界特徵，但也證明「單張重建更清楚」不等於「連續位移時位置穩定」。目前 R39 a030 是唯一接近正式替代討論的近期候選；R40/R41/R42 是能力材料，R44 已確認已知位移資料能改善整體位移與格線位移。R44C 否定了「只降低 motion」與「把大區塊/混合場景排除 motion」兩個簡單策略；R44D 確認短期不該快速開 R45；R44E 又確認只針對大區塊/混合場景做短訓練修補仍不夠；R44F 確認問題不是單純指標誤判；R44G 補上邊界厚度、碎裂、角點/直邊保持指標，確認現成候選能力分散；R44H Step A 又確認 R44B 家族全域平均雖能改善形狀，卻會犧牲位移。下一步若要訓練，必須是局部蒸餾或分族邊界形狀機制，而不是小幅權重微調或全域平均。
 
 ## How To Use This Map / 如何使用這張圖
 

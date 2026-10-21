@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R104_PhotometricInvariantCausalGateScratch",
+  "created_date": "2026-08-15",
+  "status": "formal_training_authorized_runtime_preflight_passed",
+  "purpose": "Preserve R103 real-detail, motion, and tile behavior while removing exposure-triggered contour flips, uneven-illumination failure, and unnecessary correction on already-clear inputs.",
+  "formal_baseline_changed": false,
+  "parent_evidence_only": {
+    "experiment": "R103_RecoverableDetailScratch",
+    "checkpoint_for_diagnosis_only": "epoch_048",
+    "weights_may_be_loaded_for_r104_training": false
+  },
+  "source_isolation": {
+    "checkpoint_loading_allowed": false,
+    "resume_allowed": false,
+    "teacher_allowed": false,
+    "pseudo_labels_allowed": false,
+    "real_pixels_in_training": false,
+    "sem_or_hs100mg_structure_in_training": false,
+    "procedural_truth_only": true,
+    "real_aggregate_photometric_statistics_allowed": true
+  },
+  "diagnosis": {
+    "r103_gate_cannot_turn_off": "R103 confidence only scales proposals from 0.75x to 1.25x.",
+    "r103_exposure_transition": "Contour confidence jumps at exposure 18 despite unchanged geometry.",
+    "r103_illumination_target_mismatch": "Shared illumination teaches preservation, not illumination-invariant shape recovery.",
+    "r103_boundary_loss_limitation": "One image-wide intensity midpoint is not valid under local shading and halos.",
+    "r103_native_texture_overlay": "Some innovation textures are added at native resolution after the supersampled base truth.",
+    "causal_alpha_oracle": "Across clean shapes Raw is optimal for 48 percent of images; across hard microscopy Raw is optimal for 23 percent; at SEM exposure 18 Raw is optimal for all 36 pillars. Correction strength must therefore be selected per observation rather than forced globally.",
+    "retained_strengths": [
+      "anti-aliased downsampling",
+      "shift-safe upsampling",
+      "fully convolutional local inference",
+      "same-content clear counterfactuals",
+      "paired motion supervision",
+      "tile consistency supervision",
+      "separate low, contour, and texture proposals"
+    ]
+  },
+  "data": {
+    "base_package": "D:/GMM_2_Final/Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
+    "base_content_sha256": "260ccc5b4e31727e7fc97082b831717aa4c06d9f429ef98a5ce1210cb49bf5d5",
+    "reuse_read_only": true,
+    "scene_count": 1250,
+    "observations_per_epoch": 5000,
+    "canvas_size": 1536,
+    "base_label_supersample_factor": 8,
+    "added_texture_supersample_factor": 4,
+    "split_unit": "scene_id",
+    "training_scenes": 1000,
+    "validation_scenes": 125,
+    "internal_test_scenes": 125,
+    "online_mode_probabilities": {
+      "recoverable_blur_noise": 0.22,
+      "recoverable_microtexture": 0.18,
+      "exposure_coherent_bundle": 0.18,
+      "zero_mean_spatial_illumination": 0.16,
+      "identity_or_near_identity": 0.18,
+      "flat_negative": 0.08
+    },
+    "pair_type_probabilities": {
+      "degraded_and_same_photometry_clear": 0.42,
+      "same_geometry_different_photometry": 0.30,
+      "known_subpixel_motion": 0.20,
+      "cross_tile_context": 0.08
+    },
+    "photometry": {
+      "shared_global_gain": [0.50, 1.60],
+      "shared_global_offset": [-0.08, 0.08],
+      "shared_gamma": [0.68, 1.48],
+      "shared_contrast": [0.50, 1.55],
+      "correctable_spatial_illumination_amplitude": [0.0, 0.30],
+      "correctable_spatial_scale_px": [96, 720],
+      "correctable_field_zero_mean": true,
+      "preserve_global_exposure_in_target": true,
+      "never_require_arbitrary_global_exposure_guess": true
+    },
+    "degradation": {
+      "blur_sigma_px": [0.25, 2.60],
+      "anisotropy_ratio": [0.55, 1.65],
+      "motion_length_px": [0.0, 7.0],
+      "ghost_mix": [0.0, 0.10],
+      "noise_sigma": [0.0008, 0.014],
+      "row_column_noise_sigma": [0.0, 0.0045],
+      "local_boundary_fade_probability": 0.18,
+      "compound_probability": 0.20
+    },
+    "texture": {
+      "period_px": [1.8, 14.0],
+      "amplitude": [0.008, 0.075],
+      "families": [
+        "band_limited_granular",
+        "supersampled_line_and_grid",
+        "oriented_scratches",
+        "edge_attached_texture",
+        "sparse_microdefects"
+      ],
+      "render_large_then_downsample": true
+    }
+  },
+  "model": {
+    "name": "PhotometricInvariantCausalGateMOSR",
+    "base_channels": 32,
+    "target_parameter_ceiling": 2700000,
+    "alignment_multiple": 8,
+    "minimum_halo_px": 160,
+    "fully_convolutional": true,
+    "global_pooling": false,
+    "global_fft": false,
+    "coordinate_channels": false,
+    "normalization": "raw_backbone_none_local_invariant_cues_only",
+    "retained_backbone": "R103 anti-aliased encoder and shift-safe decoder",
+    "new_components": {
+      "local_photometric_invariant_cues": [17, 33, 65],
+      "shape_and_gate_path_can_read_raw_amplitude": false,
+      "signed_distance_shape_head": true,
+      "broad_spatial_illumination_branch_supervised_from_zero_mean_fields": true,
+      "directly_supervised_contour_proposal": true,
+      "directly_supervised_texture_proposal": true,
+      "true_radiometry_need_gate": [0.0, 1.15],
+      "true_illumination_need_gate": [0.0, 1.15],
+      "true_contour_need_gate": [0.0, 1.15],
+      "true_texture_need_gate": [0.0, 1.15],
+      "gate_supervision_uses_continuous_local_recoverability": true
+    },
+    "branch_bounds": {
+      "radiometry": 0.14,
+      "illumination": 0.12,
+      "contour_proposal": 0.18,
+      "texture_proposal": 0.16,
+      "combined": 0.38
+    },
+    "initial_output": "near_identity_active_proposals_low_gate_probability",
+    "gate_initial_probability": 0.12
+  },
+  "training": {
+    "formal_run_limit": 1,
+    "formal_training_authorized": true,
+    "epochs": 48,
+    "seed": 1040059,
+    "optimizer": "AdamW_fused_when_available",
+    "learning_rate": 0.00014,
+    "minimum_learning_rate": 0.000006,
+    "weight_decay": 0.00002,
+    "precision": "bfloat16",
+    "ema_decay": 0.99,
+    "num_workers": 8,
+    "cpu_threads": 12,
+    "batch_autotune": {
+      "enabled": true,
+      "minimum_free_gpu_gib": 4.0,
+      "candidate_scene_batches": {
+        "256": [64, 56, 48, 40],
+        "320": [44, 36, 32, 28],
+        "384": [30, 26, 24, 20]
+      }
+    },
+    "stages": [
+      {"start": 1, "end": 6, "patch_size": 256, "core_size": 192, "focus": "gate calibration and simple recoverable detail"},
+      {"start": 7, "end": 26, "patch_size": 320, "core_size": 256, "focus": "full mixed restoration"},
+      {"start": 27, "end": 40, "patch_size": 384, "core_size": 288, "focus": "exposure illumination motion and tile consolidation"},
+      {"start": 41, "end": 48, "patch_size": 384, "core_size": 288, "focus": "low learning rate detail consolidation"}
+    ],
+    "curriculum": [
+      {
+        "start": 1,
+        "end": 6,
+        "online_mode_probabilities": {
+          "recoverable_blur_noise": 0.28,
+          "recoverable_microtexture": 0.08,
+          "exposure_coherent_bundle": 0.18,
+          "zero_mean_spatial_illumination": 0.12,
+          "identity_or_near_identity": 0.26,
+          "flat_negative": 0.08
+        },
+        "pair_type_probabilities": {
+          "degraded_and_same_photometry_clear": 0.48,
+          "same_geometry_different_photometry": 0.32,
+          "known_subpixel_motion": 0.12,
+          "cross_tile_context": 0.08
+        }
+      },
+      {
+        "start": 7,
+        "end": 26,
+        "online_mode_probabilities": {
+          "recoverable_blur_noise": 0.22,
+          "recoverable_microtexture": 0.18,
+          "exposure_coherent_bundle": 0.18,
+          "zero_mean_spatial_illumination": 0.16,
+          "identity_or_near_identity": 0.18,
+          "flat_negative": 0.08
+        },
+        "pair_type_probabilities": {
+          "degraded_and_same_photometry_clear": 0.42,
+          "same_geometry_different_photometry": 0.30,
+          "known_subpixel_motion": 0.20,
+          "cross_tile_context": 0.08
+        }
+      },
+      {
+        "start": 27,
+        "end": 40,
+        "online_mode_probabilities": {
+          "recoverable_blur_noise": 0.18,
+          "recoverable_microtexture": 0.18,
+          "exposure_coherent_bundle": 0.24,
+          "zero_mean_spatial_illumination": 0.22,
+          "identity_or_near_identity": 0.12,
+          "flat_negative": 0.06
+        },
+        "pair_type_probabilities": {
+          "degraded_and_same_photometry_clear": 0.30,
+          "same_geometry_different_photometry": 0.32,
+          "known_subpixel_motion": 0.24,
+          "cross_tile_context": 0.14
+        }
+      },
+      {
+        "start": 41,
+        "end": 48,
+        "online_mode_probabilities": {
+          "recoverable_blur_noise": 0.18,
+          "recoverable_microtexture": 0.30,
+          "exposure_coherent_bundle": 0.18,
+          "zero_mean_spatial_illumination": 0.14,
+          "identity_or_near_identity": 0.14,
+          "flat_negative": 0.06
+        },
+        "pair_type_probabilities": {
+          "degraded_and_same_photometry_clear": 0.38,
+          "same_geometry_different_photometry": 0.22,
+          "known_subpixel_motion": 0.24,
+          "cross_tile_context": 0.16
+        }
+      }
+    ],
+    "loss_weights": {
+      "reconstruction": 1.1,
+      "low_frequency": 0.12,
+      "gradient": 0.80,
+      "high_frequency": 1.30,
+      "signed_distance_shape": 0.18,
+      "shape_normal": 0.04,
+      "boundary_band_reconstruction": 0.50,
+      "proposal_supervision": 1.60,
+      "gate_supervision": 0.10,
+      "spatial_illumination": 0.35,
+      "exposure_shape_consistency": 0.32,
+      "exposure_gate_consistency": 0.18,
+      "identity_output": 1.40,
+      "identity_gate": 1.20,
+      "flat_negative": 0.14,
+      "paired_observation": 0.42,
+      "translation": 0.08,
+      "tile": 0.06
+    },
+    "objective_policy": {
+      "fixed_causal_weights": true,
+      "log_per_objective_gradient_norms": true,
+      "automatic_scalar_loss_balancing": false,
+      "hard_quality_thresholds_for_checkpoint_selection": false
+    },
+    "runtime_optimization": {
+      "virtual_scene_pairs_per_epoch": 2500,
+      "distinct_augmentation_for_repeated_scene": true,
+      "exact_windowed_sdf_loading": true,
+      "channels_last": true,
+      "pinned_memory": true,
+      "persistent_workers": true,
+      "prefetch_factor": 3,
+      "cudnn_benchmark": true,
+      "torch_compile_policy": "enable_only_after_timed_parity_test_shows_a_real_gain"
+    },
+    "monitoring": {
+      "checkpoint_every_epochs": 1,
+      "lightweight_validation_every_epochs": 2,
+      "fixed_synthetic_preview_every_epochs": 2,
+      "fixed_real_preview_every_epochs": 2,
+      "full_locked_external_validation_during_training": false,
+      "dynamic_eta": true,
+      "log_fields": [
+        "all_objectives",
+        "per_objective_gradient_norms",
+        "proposal_magnitudes",
+        "active_vs_identity_gate_separation",
+        "exposure_shape_consistency",
+        "exposure_gate_spatial_consistency",
+        "known_motion_error",
+        "tile_overlap_error",
+        "identity_change",
+        "gpu_peak_and_free_memory"
+      ]
+    }
+  },
+  "validation": {
+    "checkpoint_candidates": [24, 32, 40, 44, 48],
+    "selection": "continuous multi-axis evidence plus fixed visual panels; no single hard score",
+    "required_axes": [
+      "reconstruction",
+      "boundary_position",
+      "texture",
+      "clean_identity",
+      "exposure_consistency",
+      "illumination_invariance",
+      "motion",
+      "tile_consistency"
+    ],
+    "locked_external_suites": [
+      "R73 novel clean shapes",
+      "R74 hard microscopy",
+      "SEM central 36 across exposures 13-24",
+      "301-frame real 5x 20x 50x motion set",
+      "large-frame direct tile parity"
+    ],
+    "real_images_are_evaluation_only": true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "experiment_id": "R100_DesignValidation",
+  "status": "analysis_only_no_training",
+  "created_date": "2026-08-14",
+  "question": "What evidence must be true before the next scratch model design is fixed?",
+  "source_isolation": {
+    "training_started": false,
+    "checkpoint_created": false,
+    "real_pixels_used_for_training": false,
+    "sem_structure_used_for_training": false,
+    "large_source_arrays_copied": false
+  },
+  "comparators": [
+    "Raw",
+    "R99 epoch 24",
+    "R99 epoch 40",
+    "globally fitted symmetric band operator",
+    "per-image symmetric band oracle",
+    "fixed symmetric detail-gain sweep"
+  ],
+  "synthetic_source": "D:/GMM_2_Final/Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
+  "real_sources": {
+    "5x": "D:/GMM_2_Final/20260704_5x",
+    "20x": "D:/GMM_2_Final/20260704_20x",
+    "50x": "D:/GMM_2_Final/20260702_100MG_位移_50x",
+    "x1um": "D:/GMM_2_Final/20260702_100MG_位移_50x/x_1um"
+  },
+  "sample_contract": {
+    "synthetic_views_per_role_per_split": 28,
+    "real_frames_per_magnification": 12,
+    "real_patches_per_frame": 5,
+    "acm_shapes": 8,
+    "acm_photometric_variants": 6,
+    "acm_smoothness_presets": [0.75, 1.0, 1.5]
+  },
+  "decision_rule": "No single aggregate score decides the design. Geometry semantics, detail fidelity, contour location, motion stability, tiling, real intervention and ACM sensitivity are reviewed separately."
+}
+

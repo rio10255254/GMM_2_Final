@@ -1,0 +1,62 @@
+{
+  "model_seed": 1500101,
+  "order_seed": 1500102,
+  "noise_seed": 1500103,
+  "operator_seed": 1500104,
+  "splits": {
+    "train": 512,
+    "dev": 128,
+    "test": 128
+  },
+  "views_per_parent": 4,
+  "updates": 8192,
+  "epochs": 16,
+  "warmup": 128,
+  "save_every": 128,
+  "dev_every": 512,
+  "optimizer": {
+    "name": "AdamW",
+    "max_lr": 0.0003,
+    "min_lr": 3E-06,
+    "weight_decay": 1E-05,
+    "gradient_clip": 1.0
+  },
+  "loss": {
+    "image": 1.0,
+    "gradient": 0.2,
+    "pair_output": 0.2,
+    "boundary": 0.2,
+    "observation": 0.01
+  },
+  "stage_weights": [
+    0.25,
+    0.35,
+    0.4
+  ],
+  "known_operator_probability": 0.0,
+  "precision": "FP32",
+  "tf32": false,
+  "deterministic": true,
+  "device": "cuda",
+  "train_crop": [
+    0,
+    384,
+    0,
+    384
+  ],
+  "supervised_core": [
+    144,
+    240
+  ],
+  "observation_core": [
+    160,
+    224
+  ],
+  "local_boundary_mix": 0.0,
+  "local_boundary_cell_px": 12,
+  "matched_geometry_replacements": {
+    "test": 16,
+    "train": 64,
+    "dev": 16
+  }
+}

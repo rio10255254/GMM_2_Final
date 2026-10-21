@@ -25,6 +25,7 @@ _deployment_package/
 # Training data and bulk experiment outputs
 Training_Data/
 Traing_Progress/
+Reconstruct_Progress/
 PSF_Fitting/Fits/
 PSF_Fitting/Deconvolution/
 PSF_Fitting/SimulatePSF/*.mat
@@ -142,6 +143,27 @@ Traing_Progress/organized_20260316/**/*
 **/monitor_snapshots/
 **/runtime/logs/
 
+# Modern experiment bulk outputs: keep reports, scripts, summaries, GMF text,
+# and selected visual sheets; leave full reconstruction batches local-only.
+Experiments/*/results/**/reconstruct_progress_*/
+Experiments/*/results/**/ring_recon/
+Experiments/*/results/**/motion_recon/
+Experiments/*/results/**/*_sequence_analysis/
+Experiments/*/results/external_gmf/**/*.bmp
+Experiments/R44_UniversalBoundaryMotionFidelity/results/diagnostics/*_rows.csv
+Experiments/R45_FamilyBoundaryAdapter/results/r45b_teacher_diagnostics/r45b_shape_rows.csv
+Experiments/R45_FamilyBoundaryAdapter/results/r45c_region_oracle/r45c_patch_rows_*.csv
+Experiments/R45_FamilyBoundaryAdapter/results/r45c_region_oracle/r45c_patch_residuals_*.csv
+
+# Local PSF tutorial and recalibration run outputs.
+PSF_Fitting/PSF_Fitting_Tutorial/bads-1.1.3/
+PSF_Fitting/PSF_Fitting_Tutorial/Crop_circle_FreqFiltered/
+PSF_Fitting/PSF_Fitting_Tutorial/Deconvolution/
+PSF_Fitting/PSF_Fitting_Tutorial/PSF_Fitting_ValidationLab/
+PSF_Fitting/PSF_Fitting_Tutorial/SimulatePSF/
+PSF_Fitting/PSF_Fitting_Tutorial/outputs/
+PSF_Fitting/quick_recalibration/validation_experiments/**/outputs/trial_*/
+
 # Curated evidence tracking boundaries
 Experiments/R26NewPSFCheck/external_compare/**/reconstruct_progress_*/
 Experiments/R26NewPSFCheck/formal_newpsf_candidate/package_clone/
@@ -196,3 +218,7 @@ Tools/AutoTuneTerminal/.output_window.pid
 # AnalysisLab local caches
 AnalysisLab/**/__pycache__/
 AnalysisLab/**/.pytest_cache/
+
+# Shared camera originals are preserved in verified GitHub release archives.
+Shared_Sources/**/raw/
+Shared_Sources/**/*.zip

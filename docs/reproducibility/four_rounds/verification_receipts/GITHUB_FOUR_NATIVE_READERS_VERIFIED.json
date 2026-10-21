@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "dataset_content_sha256": "6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5",
+  "full_frozen_file_set_verified": true,
+  "files_verified": 15004,
+  "readers_verified": [
+    "R94_EvidenceConditionalScratch",
+    "R95_CounterfactualGateRepairScratch",
+    "R97_DirectCausalPhaseScratch",
+    "R98_AggressiveTextureScratch"
+  ],
+  "representative_samples_verified": 36,
+  "all_eight_training_roles_covered_per_reader": true,
+  "all_prepared_input_target_branch_and_metadata_values_exact": true,
+  "environment": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "opencv": "4.12.0",
+    "torch": "2.3.0+cpu",
+    "torch_cuda_runtime": null
+  },
+  "historical_training_repeated": false,
+  "sealed_holdout_read": false
+}

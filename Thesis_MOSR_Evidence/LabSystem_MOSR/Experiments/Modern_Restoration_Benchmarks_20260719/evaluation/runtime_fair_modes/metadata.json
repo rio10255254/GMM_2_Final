@@ -1,0 +1,14 @@
+{
+  "purpose": "Separate model compute from deployed inference-path overhead",
+  "input": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+  "shape": [
+    1536,
+    2048
+  ],
+  "gpu": "NVIDIA RTX A6000",
+  "precision": "CUDA automatic mixed precision",
+  "patch": "All models use the same 256x256 batch-one patch",
+  "direct": "All models use one direct 2048x1536 forward",
+  "tiled": "All models use 256-pixel tiles, 128-pixel overlap, batch 32",
+  "note": "Direct and tiled modes are diagnostic compute comparisons; they do not replace each model's formal deployed output path."
+}

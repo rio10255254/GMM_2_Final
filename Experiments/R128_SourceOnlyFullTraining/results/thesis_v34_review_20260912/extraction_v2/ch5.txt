@@ -1,0 +1,587 @@
+[953] heading 1 實驗系統與模型實作
+
+[954] heading 2 5.1 光學系統
+
+[955]  本研究使用的光學量測系統如圖5-1所示。系統以白光照明，並可搭配50倍、20倍及5倍物鏡。拍攝前先以五軸手動平台將待測區域移入視野，再利用XY軸壓電位移平台控制平面方向的微小位移。
+
+[956]  
+
+IMAGES ['media/image23.png']
+
+[957] Figure Caption 圖 5-1 實驗系統整體架構（本研究繪製）
+
+[958]  圖5-2呈現各元件的配置位置，表5-1列出圖中編號對應的元件名稱，表5-2則整理各元件的製造商與型號。
+
+[959]  
+
+IMAGES ['media/image24.png']
+
+[960] Figure Caption 圖 5-2 實驗系統各元件配置（本研究拍攝與標示）
+
+[961] TABLE 83
+編號 | 名稱 | 編號 | 名稱
+1 | 相機 | 7 | XY軸壓電位移平台
+2 | C-mount 相機轉接筒 | 8 | 雙軸手動傾斜平台
+3 | 1×筒鏡 | 9 | 三軸手動位移平台
+4 | 鼻輪 | 10 | 照明模組
+5 | Z軸壓電位移平台 | 11 | 花崗岩基座
+6 | 明暗場物鏡 | 12 | 白光LED光源
+
+[962] Table Caption 表 5-1 實驗系統元件與編號
+
+[963] TABLE 84
+名稱 | 部件製造商與型號
+相機 | Basler ace acA2040-120um
+C-mount 相機轉接筒 | Olympus U-TV1x-2 & U-CMAD3
+1×筒鏡 | Olympus U-TLU
+鼻輪 | Olympus U-5RE-2
+50×物鏡 | Olympus MPLN-50x
+20×物鏡 | Olympus MPLN-20X
+5×物鏡 | Olympus MPLFLN-5X
+照明模組 | Olympus BX3M-RLA-S
+Z軸壓電位移平台 | PI PIFOC P-725.4CD
+XY軸壓電位移平台 | PI P-733.2CD
+雙軸手動傾斜平台 | Unice 06GOM2-6050M
+三軸手動位移平台 | Unice 06FAS-3RNM
+花崗岩基座 | OPUS
+白光LED光源 | Olympus BX3M-LEDR & BX3M-PSLED
+
+[964] Table Caption 表 5-2 實驗系統元件製造商與型號
+
+[965] heading 3 5.1.1 相機
+
+[966]  圖5-3為本研究所使用之Basler ace acA2040-120um工業相機。由於本研究需要以影像資料進行PSF擬合，因此相機之取像品質會直接影響後續分析結果，其中像素大小、解析度與取像穩定性皆為系統建置時的重要考量。Basler ace acA2040-120um相機採用Sony IMX252LLR-C單色CMOS感測器，預設解析度為2048×1536 pixels，像素大小為3.45 µm×3.45 µm，其詳細規格如表5-3所示[98]。
+
+[967]  相機像素尺寸為 3.45 µm。搭配5倍、20倍與50倍物鏡時，物體空間的名義取樣間距分別為 690、172.5 與 69 nm/pixel；相關物鏡型號、數值孔徑、視場數與瑞利解析度分析詳見第5.1.3節。
+
+[968]  圖5-4為Basler ace acA2040-120um相機所使用之Sony IMX252LLR-C感測器光譜響應曲線[98]。該曲線可用於評估不同波長光線進入相機後的相對響應程度，並作為本研究選擇照明條件與分析影像亮度分布之參考。本研究主要以相機光譜響應、光源光譜分布以及物鏡之可見光適用範圍，作為照明條件設定與影像響應分析之依據。
+
+[969]  
+
+IMAGES ['media/image25.png']
+
+[970] Figure Caption 圖 5-3 Basler ace acA2040-120um工業相機（資料來源：[98]）
+
+[971] TABLE 85
+項目 | 規格
+Sensor type | Sony IMX252LLR-C Progressive scan CMOS, Global shutter
+Color / Mono | Mono
+Resolution (Pixel) | 2048 × 1536（default resolution）；2064 × 1544（full resolution）
+Pixel size | 3.45 µm × 3.45 µm
+Optical Size | 7.07 mm × 5.30 mm
+Sensor format | 1/1.8"
+Frame rate freerun mode | 120 fps
+Exposure time (minimum - maximum) | Standard exposure time mode：約20/21 µs - 10,000,000 µs；Ultra Short exposure time mode：2 µs - 14 µs
+Color depth (camera) | 10 bit / 12 bit
+Interface | USB 3.0
+Lens mount | C-mount
+
+[972] Table Caption 表 5-3 Basler ace acA2040-120um相機規格[98]
+
+[973]  
+
+IMAGES ['media/image26.png']
+
+[974] Figure Caption 圖 5-4 Sony IMX252LLR-C感測器光譜響應（資料來源：[98]）
+
+[975] heading 3 5.1.2 筒鏡
+
+[976]  圖5-5為本研究所使用的Olympus U-TLU 1×筒鏡。系統採用同系列筒鏡與物鏡，以維持無限遠校正光路的相容性；其焦距、視場數、入瞳直徑與可見光適用範圍依製造商規格整理於表5-4[99]。
+
+[977]  圖5-6呈現Olympus U-TLU筒鏡於可見光波段之穿透率曲線。由該曲線可觀察到，在400 nm至700 nm範圍內，U-TLU筒鏡的穿透率變化幅度相對有限，表示其在可見光波段內具有較穩定的光通過能力。因此，本研究在樣品設計與後續影像分析中，並未將筒鏡於可見光波段內的穿透率差異納入主要修正項。
+
+COMMENTS 479
+
+[978]  
+
+IMAGES ['media/image27.png']
+
+[979] Figure Caption 圖 5-5 Olympus U-TLU 1×筒鏡（資料來源：[99]）
+
+[980]  
+
+[981] TABLE 86
+項目 | 規格
+Magnification | 1×
+Focal Length (FL) | 180 mm
+Projection area | Φ22 mm
+Focal plane position | 102 mm from TV mount surface
+Weight | 350 g
+
+[982] Table Caption 表 5-4 Olympus U-TLU筒鏡規格[99]
+
+[983]  
+
+IMAGES ['media/image28.png']
+
+[984] Figure Caption 圖 5-6 Olympus U-TLU筒鏡可見光穿透率（資料來源：[99]）
+
+[985]  
+
+[986] heading 3 5.1.3 物鏡
+
+[987]  圖5-7至圖5-9為本研究所使用之三顆Olympus/Evident物鏡，分別為MPLFLN5X2（MPlanFL N 5x/0.15）、MPLN20X（MPlan N 20x/0.40）以及MPLN50X（MPlan N 50x/0.75）。本研究使用不同倍率之物鏡進行量測，主要目的在於配合不同尺度下的影像觀察與PSF分析需求。其中，5倍物鏡具有較大的觀測視野與較長的工作距離，適合用於樣品定位與大範圍觀察；20倍物鏡可在視野範圍與解析能力之間取得折衷，適合作為中倍率量測條件；50倍物鏡則具有較高的數值孔徑，可提供較佳的橫向解析能力，因此適合用於局部細節觀察與PSF擬合分析。
+
+[988]  本研究所使用的三顆物鏡皆為無限遠校正物鏡，並可搭配Olympus U-TLU 1×筒鏡使用。MPLFLN5X2屬於MPlanFL N系列，其色差校正等級為Semi-apochromat（Fluorite）；MPLN20X與MPLN50X則屬於MPlan N系列，其色差校正等級為Achromat（ACH）。三顆物鏡皆採用Air/Dry設計，量測時不需要使用浸液，因此可降低樣品表面污染與實驗操作的不確定性。各物鏡之詳細規格如表5-5至表5-7所示[100]。
+
+[989]  另外，Evident公開資料中雖有提供MPLN20X與MPLN50X之Transmittance/Wavelength項目，但目前本研究所使用三顆物鏡之完整逐波長穿透率曲線並不一致或不易取得。因此，本研究在後續樣品設計與影像分析中，主要以物鏡之倍率、數值孔徑、工作距離與可見光適用範圍作為系統評估依據，並未將物鏡穿透率隨波長變化的影響納入主要修正項。表5-5至表5-7的景深數值是以λ=550 nm與空氣中折射率近似值，依繞射成像關係計算的理論估計[6]，不是製造商保證值。
+
+COMMENTS 489
+
+[990]  
+
+IMAGES ['media/image29.jpeg']
+
+[991] Figure Caption 圖 5-7 Olympus MPLFLN5X2物鏡（資料來源：[100]）
+
+[992] TABLE 87
+項目 | 規格
+Magnification | 5x
+Focal Length (FL) | 36 mm
+Numerical aperture | 0.15
+Working distance | 20 mm
+Objective Field Number | 26.5
+Immersion medium | Air/Dry
+Correction level of chromatic aberration | Semi-apochromat（Fluorite）
+Parfocalizing distance | 45 mm
+Back focal plane (BFP) position | -8.0 mm
+Depth of Field (DOF) | 約12.22 µm
+
+[993] Table Caption 表 5-5 Olympus MPLFLN5X2物鏡規格[100]
+
+[994]  
+
+IMAGES ['media/image30.jpeg']
+
+[995] Figure Caption 圖 5-8 Olympus MPLN20X物鏡（資料來源：[100]）
+
+[996] TABLE 88
+項目 | 規格
+Magnification | 20x
+Focal Length (FL) | 9 mm
+Numerical aperture | 0.40
+Working distance | 1.3 mm
+Objective Field Number | 22
+Immersion medium | Air/Dry
+Correction level of chromatic aberration | Achromat（ACH）
+Parfocalizing distance | 45 mm
+Back focal plane (BFP) position | -20.6 mm
+Depth of Field (DOF) | 約1.72 µm
+
+[997] Table Caption 表 5-6 Olympus MPLN20X物鏡規格[100]
+
+[998]  
+
+IMAGES ['media/image31.jpeg']
+
+[999] Figure Caption 圖 5-9 Olympus MPLN50X物鏡（資料來源：[100]）
+
+[1000] TABLE 89
+項目 | 規格
+Magnification | 50x
+Focal Length (FL) | 3.6 mm
+Numerical aperture | 0.75
+Working distance | 0.38 mm
+Objective Field Number | 22
+Immersion medium | Air/Dry
+Correction level of chromatic aberration | Achromat（ACH）
+Parfocalizing distance | 45 mm
+Back focal plane (BFP) position | -18.6 mm
+Depth of Field (DOF) | 約0.49 µm
+
+[1001] Table Caption 表 5-7 Olympus MPLN50X物鏡規格[100]
+
+[1002] heading 3 5.1.4 照明模組與光源
+
+[1003]  圖5-10為本研究所使用之Olympus BX3M-RLA-S反射光照明模組[101]。此模組安裝於顯微鏡主光路中，主要提供同軸反射式照明，並可依實驗需求切換明場與暗場照明模式。由於本研究需要在不同倍率物鏡下取得清晰且穩定的樣品影像，照明模組的光強控制與光圈調整會直接影響影像亮度、對比度以及PSF擬合品質。Olympus BX3M-RLA-S內部配置可手動切換之中性密度濾光片（ND filter）與可手動調整之光圈，因此操作者可依據樣品反射特性與相機曝光條件調整入射光強與照明孔徑。在本研究中，為了提高系統之橫向解析能力，照明光圈原則上設定於較大開口，使物鏡可接收較高角度範圍內的反射光，進而提升影像中細節結構的辨識能力。
+
+[1004]  
+
+IMAGES ['media/image32.png']
+
+[1005] Figure Caption 圖 5-10 Olympus BX3M-RLA-S反射光照明模組（資料來源：[101]）
+
+[1006]  本研究採用Olympus BX3M-LEDR作為顯微照明光源，並搭配其對應之電源供應器BX3M-PSLED使用，如圖5-11所示[101]。該光源與前述反射光照明模組同屬Olympus BX3M系列，因此可與本研究所使用之顯微鏡光學架構相互整合。BX3M-LEDR為白光LED光源，其特性包含亮度高、發光效率佳以及輸出穩定等優點，可提供顯微觀察與影像擷取所需之連續照明條件。相較於單一波長光源，白光LED具有較寬的可見光光譜範圍，因此較適合用於一般明場觀察與反射式顯微成像。
+
+[1007]  圖5-12為Olympus BX3M-LEDR光源之光譜分布[101]。由光譜曲線可觀察到，該白光LED主要由藍光峰值與受藍光激發後產生之黃色螢光組成，兩者經由互補色混合後形成白光輸出。由於藍光與黃色螢光為此光源光譜中的主要能量分布區域，因此本研究所使用之抗反射鍍膜設計將針對上述波段降低背景反射強度，以減少非待測訊號對影像亮度與後續分析結果造成的影響。
+
+COMMENTS 507
+
+[1008]  
+
+IMAGES ['media/image33.png']
+
+[1009] Figure Caption 圖 5-11 Olympus BX3M-LEDR白光LED光源（資料來源：[101]）
+
+[1010]  
+
+IMAGES ['media/image34.png']
+
+[1011] Figure Caption 圖 5-12 Olympus BX3M-LEDR光源光譜分布（資料來源：[101]）
+
+[1012]  
+
+[1013] heading 3 5.1.5 XY 軸壓電位移平台
+
+[1014]  圖5-13為本研究所使用之XY軸壓電位移平台。由於本研究之顯微量測系統具有較高的空間解析能力，因此樣品在視野中的位置變化會對影像擷取與後續分析造成明顯影響。若僅透過手動位移平台進行調整，操作者較難將待測區域精確移動至指定位置，也較不易控制微小位移量。因此，本研究在完成樣品位置的初步調整後，進一步使用XY軸壓電位移平台進行平面方向上的精密位移控制，以提升樣品定位的準確性與量測過程的可重複性。該位移平台之詳細規格整理如表5-8所示[102]。
+
+[1015]  
+
+IMAGES ['media/image35.png']
+
+[1016] Figure Caption 圖 5-13 PI P-733.2CD XY軸壓電位移平台（資料來源：[102]）
+
+[1017]  
+
+[1018] TABLE 90
+項目 | 規格
+Active axes | X, Y
+Travel range in X | 100 µm
+Travel range in Y | 100 µm
+Linearity error in X | 0.03 %
+Linearity error in Y | 0.03 %
+Angular error E_CX (yaw) | ±10 µrad
+Angular error E_CY (yaw) | ±10 µrad
+Angular error E_AY (pitch) | ±3 µrad
+Angular error E_BX (pitch) | ±3 µrad
+Unidirectional repeatability in X | ±2 nm
+Unidirectional repeatability in Y | ±2 nm
+Integrated sensor | Capacitive
+Resonant frequency in X, under load with 200 g | 340 Hz
+Resonant frequency in Y, under load with 200 g | 340 Hz
+
+[1019] Table Caption 表 5-8 PI P-733.2CD XY軸壓電位移平台規格[102]
+
+[1020] heading 3 5.1.6 Z 軸壓電位移平台
+
+[1021]  圖5-14為本研究所使用之Z軸壓電位移平台PI PIFOC P-725.4CD。由於本研究採用之物鏡具有較大的數值孔徑，系統景深相對較淺，因此樣品與物鏡之間的軸向位置變化會明顯影響成像清晰度與PSF分布。在此條件下，若僅依靠手動方式調整焦平面，操作者較難穩定控制微小的軸向位移。因此，本研究使用PI PIFOC P-725.4CD進行Z方向的精密位移控制，以支援聚焦調整。
+
+[1022]  PI PIFOC P-725.4CD的閉迴路行程為400 µm，製造商列示的全行程重複性典型值為±5 nm，可提供本研究聚焦時所需的細微位移能力[103]。因此，該平台適合用於高倍率顯微成像條件下的焦平面控制，其詳細規格如表5-9所示。
+
+[1023]  
+
+IMAGES ['media/image36.png']
+
+[1024] Figure Caption 圖 5-14 PI PIFOC P-725.4CD Z軸壓電位移平台（資料來源：[103]）
+
+[1025]  
+
+[1026] TABLE 91
+項目 | 規格
+Active axes | Z
+Travel range in Z | 400 µm
+Closed-loop linearity (typ.) | 0.03 %
+Runout θX (typ.) | 10 µrad
+Runout θY (typ.) | 45 µrad
+Full-range repeatability (typ.) | ±5 nm
+Integrated sensor | Capacitive
+Closed-loop resolution (typ.) | 1.25 nm
+Objective diameter | 39 mm
+Operating temperature | -20 to 80 °C
+
+[1027] Table Caption 表 5-9 PI PIFOC P-725.4CD Z軸壓電位移平台規格[103]
+
+[1028] heading 3 5.1.7 五軸手動平台
+
+[1029]  雖然本研究已配置XY軸與Z軸壓電位移平台，以進行橫向的精密定位，但壓電平台主要適用於微小位移控制，其可移動行程有限，並不適合用於樣品初始定位或大範圍搜尋待測結構。因此，在進行顯微影像擷取前，本研究先透過手動調整機構完成樣品的粗略定位，使待測區域能夠進入相機視野範圍內。此外，為了降低樣品表面傾斜對聚焦狀態與影像分析結果造成的影響，樣品拍攝前也需要進行平台傾角校正。基於上述需求，本研究採用雙軸手動傾斜平台Unice 06GOM2-6050M與三軸手動位移平台Unice 06FAS-3RNM作為粗調機構，用於大行程位置調整與樣品姿態修正，其系統配置如圖5-15所示[104,105]。
+
+[1030]  
+
+IMAGES ['media/image37.png']
+
+[1031] Figure Caption 圖 5-15 樣品粗調與傾斜校正平台（元件資料來源：[104,105]）
+
+[1032]  
+
+[1033] heading 2 5.2 量測樣品與驗證儀器
+
+[1034]  本節說明研究使用的標準樣品與獨立參考儀器。HS-100MG提供規則排列的微結構，場發射槍掃描式電子顯微鏡則提供較高解析度的邊界與尺寸參考，兩者共同支援後續PSF擬合及CD驗證。
+
+COMMENTS 531
+
+[1035] heading 3 5.2.1 BudgetSensors HS-100MG
+
+[1036]  圖5-16為本研究所使用之HS-100MG標準校正片。該樣品由BudgetSensors公司製造，主要用於原子力顯微鏡（Atomic Force Microscopy, AFM）之高度校正。HS-100MG採用微影製程，將高度為100 nm的二氧化矽微結構陣列製作於矽晶圓表面[106]。由於此結構高度遠小於本研究顯微成像系統的有效景深，因此量測時可將樣品表面上不同結構近似視為位於相同聚焦條件下，進而降低局部失焦對影像擷取與後續分析結果造成的影響。
+
+[1037]  HS-100MG之結構分布示意圖如圖5-17所示。此校正片的主要微結構集中於樣品中央約1 mm × 1 mm的區域內，並包含多種週期性圖案，例如方形凸塊、方形凹槽、圓柱、圓孔，以及沿X方向與Y方向排列的線條結構。其中，位於中央500 µm × 500 µm區域內的圓柱、圓孔與線條結構具有5 µm的週期；外圍較大的方形結構則具有10 µm的週期。本研究主要以中央區域內的圓柱與圓孔作為分析對象，並針對其影像邊界與半徑量測結果進行後續評估[106]。
+
+[1038]  
+
+IMAGES ['media/image38.png']
+
+[1039] Figure Caption 圖 5-16 BudgetSensors HS-100MG標準樣品（資料來源：[106]）
+
+[1040]  
+
+[1041]  
+
+IMAGES ['media/image39.png']
+
+[1042] Figure Caption 圖 5-17 HS-100MG微結構分布（資料來源：[106]）
+
+[1043]  
+
+[1044] heading 3 5.2.2 場發射槍掃描式電子顯微鏡
+
+[1045]  本研究以掃描式電子顯微鏡影像作為圓柱與圓孔結構邊界與半徑比較的高解析參考。由於本研究所建置之顯微成像系統在50倍物鏡下的數位取樣間距約為69 nm，參考影像需具備更高的空間解析能力。因此，本研究選用國立臺灣大學之JEOL JSM-7800F Prime場發射掃描式電子顯微鏡進行參考影像擷取，如圖5-18所示，其規格整理如表5-10[107,108]。
+
+COMMENTS 541
+
+[1046]  JEOL JSM-7800F Prime的製造商標示最高解析度為0.7 nm，其細節觀察能力高於本研究的光學取樣條件[107]。本研究因而以該SEM影像作為圓形微結構邊界與半徑的比較基準；但SEM影像仍受取像條件、邊界判定與尺度校正影響，本文不將其視為可追溯的絕對尺寸真值。
+
+COMMENTS 543
+
+[1047]  
+
+IMAGES ['media/image40.jpeg']
+
+[1048] Figure Caption 圖 5-18 JEOL JSM-7800F Prime場發射掃描式電子顯微鏡（設備資料來源：[107,108]）
+
+[1049]  
+
+[1050] TABLE 92
+項目 | 規格
+Resolution (nm) | 0.7（15 kV）；0.7（1 kV）；3.0（5 kV, 5 nA, WD 10 mm）
+Magnification | 25× to 1,000,000×
+Accelerating Voltage (kV) | 0.01–30
+Probe current | Several pA to 500 nA
+Image display (Pixel) | 1280×960, 800×600
+Movement range (mm) | X:70, Y:50
+Tilt (°) | -5 to +70
+Rotation (°) | 360
+Working distance (mm) | 2 to 25
+
+[1051] Table Caption 表 5-10 JEOL JSM-7800F Prime規格[107]
+
+[1052] heading 2 5.3 MATLAB 環境
+
+[1053]  影像前處理、PSF分析、BADS最佳化與訓練資料建立均在MATLAB中完成，部分矩陣與最佳化運算使用GPU加速。為便於重現實驗，表5-11列出使用的MATLAB版本與相關工具箱[109]。
+
+[1054] TABLE 93
+Name | Version
+MATLAB | R2025b Update 4
+Image Processing Toolbox | 25.2
+Parallel Computing Toolbox | 25.2
+BADS | 1.1.3
+
+[1055] Table Caption 表 5-11 MATLAB與工具箱版本[109]
+
+[1056] heading 2 5.4 神經網路架構與訓練集
+
+[1057] heading 3 5.4.1 訓練環境與配置
+
+[1058]  本研究之機器學習模型以PyTorch框架進行實作[110]。模型訓練過程中，卷積運算、上取樣、PSF 修正以及誤差反向傳播等主要計算流程皆由GPU執行，以提升訓練效率；訓練資料的讀取、批次整理與前處理則主要由中央處理器（Central Processing Unit, CPU）負責。本文所使用之運算主機搭載Intel® Core™ i7-13700K 3.4 GHz處理器與NVIDIA RTX A6000 48 GB顯示卡，可提供本研究深度學習模型訓練所需之運算資源。Python開發環境與主要函式庫版本資訊整理如表5-12所示。
+
+[1059] TABLE 94
+Name | Version
+Python | 3.12.7
+CUDA（PyTorch 使用版本） | 12.1
+CUDA Toolkit | 12.6.85
+torch | 2.3.0+cu121
+torchvision | 0.18.0+cu121
+torchmetrics | 1.8.2
+NumPy | 1.26.4
+opencv-python | 4.12.0.88
+SciPy | 1.13.1
+Matplotlib | 3.9.2
+tqdm | 4.66.5
+pandas | 2.2.2
+Pillow | 10.4.0
+
+[1060] Table Caption 表 5-12 Python與深度學習套件版本[110]
+
+[1061] heading 3 5.4.2 模型架構
+
+[1062]  
+
+IMAGES ['media/image41.png']
+
+[1063]  
+
+IMAGES ['media/image42.png']
+
+[1064] Figure Caption 圖 5-19 所提MOSR模型整體架構（本研究繪製）
+
+COMMENTS 563
+
+[1065]  重建網路以編碼器—解碼器與跳接結構為主體，包含抗混疊上取樣、以輸入影像為基準的殘差輸出、邊界殘差分支與空間變異PSF融合模組。圖5-19呈現各模組在特徵擷取、解析度恢復、光學修正與最終輸出中的位置。
+
+[1066]  編碼器以多層卷積、正規化、啟動函數與殘差卷積提取不同尺度的影像特徵。下取樣後，特徵圖尺寸縮小而感受野增加，可整合較大範圍的結構關係；跳接則保留淺層邊界資訊。編碼器各層參數列於表5-13。
+
+[1067]  解碼器逐步將深層特徵恢復至原始解析度，並透過跳接融合淺層邊界資訊。抗混疊上取樣先進行雙線性內插，再以逐通道低通濾波抑制混疊，最後使用卷積整合特徵。解碼器與上取樣層的參數列於表5-15。
+
+[1068]  空間變異PSF融合模組以殘差方式加入光學資訊。固定路徑提供多位置PSF的共同修正，自適應路徑則依輸入特徵調整候選PSF的權重，兩者最後與主幹特徵相加。
+
+[1069]  圖5-20呈現空間變異PSF融合模組。輸入特徵分為主幹與PSF修正路徑；各候選PSF的頻域響應轉回空間域後，由權重估計區塊計算融合比例，再以加權方式形成單一修正特徵。
+
+IMAGES ['media/image43.png']
+
+[1070] Figure Caption 圖 5-20 空間變異PSF融合之殘差式修正模組（本研究繪製）
+
+[1071] Table Caption 表 5-13 編碼器層級參數
+
+[1072] TABLE 95
+Layer name | Input channel | Output channel | Kernel size | Stride | Padding
+Input image | 1 | 1 | - | - | -
+Encoder Convolution 1 | 1 | 48 | 3 | 1 | 1
+Encoder Residual Block 1-1 | 48 | 48 | 3 | 1 | 1
+Encoder Residual Block 1-2 | 48 | 48 | 3 | 1 | 1
+Downsampling 1 | 48 | 48 | 3 | 2 | 1
+Encoder Convolution 2 | 48 | 96 | 3 | 1 | 1
+Encoder Residual Block 2-1 | 96 | 96 | 3 | 1 | 1
+Encoder Residual Block 2-2 | 96 | 96 | 3 | 1 | 1
+Downsampling 2 | 96 | 96 | 3 | 2 | 1
+Encoder Convolution 3 | 96 | 192 | 3 | 1 | 1
+Encoder Residual Block 3-1 | 192 | 192 | 3 | 1 | 1
+Encoder Residual Block 3-2 | 192 | 192 | 3 | 1 | 1
+Downsampling 3 | 192 | 192 | 3 | 2 | 1
+
+[1073] Table Caption 表 5-14 瓶頸層參數
+
+[1074] TABLE 96
+Layer name | Input channel | Output channel | Kernel size | Stride | Padding
+Bottleneck Convolution | 192 | 192 | 3 | 1 | 1
+Bottleneck Residual Block 1-1 | 192 | 192 | 3 | 1 | 1
+Bottleneck Residual Block 1-2 | 192 | 192 | 3 | 1 | 1
+Bottleneck Residual Block 2-1 | 192 | 192 | 3 | 1 | 1
+Bottleneck Residual Block 2-2 | 192 | 192 | 3 | 1 | 1
+
+[1075] Table Caption 表 5-15 解碼器、PSF修正與輸出層參數
+
+[1076] TABLE 97
+Layer name | Input channel | Output channel | Kernel size | Stride | Padding
+Anti-aliased Upsampling 1 - Low-pass Filter | 192 | 192 | 3 | 1 | 1
+Anti-aliased Upsampling 1 - Convolution | 192 | 96 | 3 | 1 | 1
+Decoder Convolution 1 | 288 | 96 | 3 | 1 | 1
+Decoder Residual Block 1-1 | 96 | 96 | 3 | 1 | 1
+Decoder Residual Block 1-2 | 96 | 96 | 3 | 1 | 1
+Anti-aliased Upsampling 2 - Low-pass Filter | 96 | 96 | 3 | 1 | 1
+Anti-aliased Upsampling 2 - Convolution | 96 | 48 | 3 | 1 | 1
+Decoder Convolution 2 | 144 | 48 | 3 | 1 | 1
+Decoder Residual Block 2-1 | 48 | 48 | 3 | 1 | 1
+Decoder Residual Block 2-2 | 48 | 48 | 3 | 1 | 1
+PSF Residual Correction 1 | 48 | 12 | 1 | 1 | 0
+PSF Residual Correction 2 | 12 | 4 | 1 | 1 | 0
+Anti-aliased Upsampling 3 - Low-pass Filter | 48 | 48 | 3 | 1 | 1
+Anti-aliased Upsampling 3 - Convolution | 48 | 48 | 3 | 1 | 1
+Decoder Convolution 3 | 96 | 48 | 3 | 1 | 1
+Decoder Residual Block 3-1 | 48 | 48 | 3 | 1 | 1
+Decoder Residual Block 3-2 | 48 | 48 | 3 | 1 | 1
+Output Convolution | 48 | 1 | 1 | 1 | 0
+Boundary Residual Branch 1 | 52 | 16 | 3 | 1 | 1
+Boundary Residual Branch 2 | 16 | 16 | 3 | 1 | 1
+Boundary Gating | 16 | 1 | 1 | 1 | 0
+Boundary Residual Output | 16 | 1 | 1 | 1 | 0
+
+[1077]  權重估計區塊由全域池化、卷積、SiLU、溫度縮放與softmax組成，將輸入特徵轉換為各候選PSF的非負融合權重；加權融合再把多個修正響應整合為單一特徵。
+
+[1078]  固定融合路徑以參數α控制共同光學修正強度；自適應融合路徑則以參數β控制其殘差比例。兩者皆採殘差形式，使光學資訊以受控方式加入主幹特徵。
+
+[1079]  模型輸出前設有邊界殘差分支，預測幅度受限的局部修正；接著以以輸入影像為基準的殘差輸出維持低頻輪廓與主要亮暗，只加入受限的高頻成分。品質感知調節則依邊界訊號與平坦區雜訊調整整體修正幅度。
+
+[1080]  整體網路以編碼器—解碼器與抗混疊上取樣完成同尺寸重建，以空間變異PSF融合導入光學先驗，再由邊界殘差、輸入基準殘差輸出與品質感知調節限制最終輸出。本文先以完整模型檢查輪廓與位移，再於第6.2.6節報告抗混疊上取樣的配對消融，第6.2.7節以七種代表性外部架構界定MOSR在多模型比較中的位置。
+
+[1081] heading 3 5.4.3 訓練資料組成與分組切分
+
+[1082]  模型使用11,254組影像配對進行量測導向訓練，依封裝後的來源群組分為9,857組訓練與1,397組內部驗證資料，兩集合的群組代碼沒有交疊。須特別說明，同一實體位移影格可能因不同裁切、角色或衍生配對出現在封裝資料中；本研究四組正式位移序列的所有入選影格均可在訓練封裝中找到對應裁切。因此這個切分只用於內部選模，不是以實體影格隔離的盲測切分。
+
+COMMENTS 575,577
+
+[1083]  另選取180組訓練樣本進行軟性邊界標籤處理，涵蓋15類資料、每類12組。軟化只作用於標註邊界，原始輸入影像不變；處理採2像素寬的邊界帶與0.75像素標準差的局部平滑，以減少硬邊界在較粗取樣影像中形成階梯狀標籤。
+
+COMMENTS 579
+
+[1084] heading 3 5.4.4 微調設定與模型選擇
+
+[1085]  模型採同一架構的連續分階段訓練：先由基礎階段建立顯微影像重建能力，再延續其參數進行量測導向加強訓練。第二階段主要更新品質感知調節、邊界修正與輸出相關層；最佳化採Adam，初始學習率為2×10⁻⁷，影像批次為8，驗證批次與序列配對批次皆為2，共訓練120個訓練週期。訓練過程記錄各損失項與固定監測影像的灰階範圍、輪廓連續性及高頻比例。
+
+COMMENTS 583
+
+[1086]  第六章的MOSR正式結果固定使用第120訓練週期權重，並在所有輪廓與位移指標間維持同一模型。訓練曲線只用來確認最佳化過程是否穩定；模型是否具有量測效益，仍由共同輪廓點與LSC圓心結果判定。
+
+COMMENTS 585
+
+[1087] heading 3 5.4.5 七種代表性外部架構的共同訓練配置
+
+[1088]  外部對照涵蓋SRCNN-x1、VDSR-x1、Base U-Net、Compact EDSR-x1、Compact RDN-x1、Compact NAFNet與Compact PFT-SR-x1，共七種代表性架構[45–47,51–54]。選擇範圍包含MOSR所依循的編碼器—解碼器基礎、早期超解析CNN、殘差與密集連接架構，以及現代復原CNN與近期注意力架構。
+
+[1089]  模型資格在正式量測前固定：必須能以單張影像作確定性重建、可由公開方法重現、可在本研究資料上重新訓練，並能輸出與輸入相同的單通道像素網格。需要大規模外部生成式預訓練、文字條件或多步隨機取樣的方法不納入，避免外部資料量與人工細節成為無法控制的差異。
+
+COMMENTS 588
+
+[1090]  七種外部架構均從隨機初始化開始，不使用公開預訓練權重；共用9,857組訓練與1,397組驗證資料、群組切分、固定光學輸入、128×128裁切、L1加SSIM目標、AdamW、隨機種子、最多15個訓練週期、每3個週期驗證及最佳驗證權重選取規則。這組設定用來控制外部架構間的資料與訓練差異。
+
+COMMENTS 590
+
+[1091]  本節所稱『外部架構』只表示模型設計來自本文以外，不表示外部資料驗證。資料稽核顯示，四組正式位移序列入選後共有44、42、39與41張不重複影格，全部都能在訓練封裝中找到對應裁切；故後續八模型表格定位為同系統、同影格的受控重建比較，不宣稱盲測泛化能力。
+
+COMMENTS 592
+
+[1092]  PFT-SR原本用於影像放大，本文只保留其主要運算核心並改為單通道、輸入輸出同尺寸，採六層精簡配置，並在全文以星號標示。其結果只代表本研究重新訓練的等尺寸配置，不是原論文在自然影像放大資料集上的官方成績。
+
+COMMENTS 594
+
+[1093]  MOSR保留120個訓練週期的量測導向訓練，未假裝與一般重建目標具有完全相同的最佳化條件。因此正式結論只比較八種已固定輸出在同一測試影像與量測後端的結果；不把不同訓練目標的差異說成純架構因果。
+
+COMMENTS 596
+
+[1094] Table Caption 表 5-16 八種學習式模型的年代、架構角色與可訓練參數量。
+
+[1095] TABLE 98
+模型 | 年份 | 架構角色 | 參數量 (M)
+SRCNN-x1 | 2014 | 早期淺層CNN | 0.057
+Base U-Net | 2015 | 編碼器—解碼器 | 4.011
+VDSR-x1 | 2016 | 深層殘差CNN | 0.666
+Compact EDSR-x1 | 2017 | 殘差超解析CNN | 4.071
+Compact RDN-x1 | 2018 | 密集殘差CNN | 2.232
+Compact NAFNet | 2022 | 現代復原CNN | 4.182
+Compact PFT-SR-x1* | 2025 | 漸進聚焦Transformer | 0.088
+MOSR | 2026 | 本文量測導向模型 | 4.021
+
+[1096]  表中星號表示為配合本研究任務所作的單通道等尺寸配置。參數量只用來交代模型規模，不作為量測勝負的替代指標。
+
+COMMENTS 600
+
+[1097] heading 3 5.4.6 八模型的共同位移比較配置
+
+[1098]  八種學習式模型的主比較只使用四組位移序列、每組30個在查看Raw後預先鎖定的相鄰影格配對，共120組。任何模型不得重新選擇影格、pillar或裁切位置。中心九顆靜態資料屬於PSF與尺度校準區域，因此不放入八模型主排名。
+
+COMMENTS 603
+
+[1099]  所有輸出只使用同一ACM粗輪廓、正確極性的最大灰階梯度位置與LSC圓心。正式表格分別列出逐步位移標準差、相對名義步距的平均絕對誤差，以及九顆pillar陣列內位移離散度；三項結果不事後平均成總分。MZC、MIC、MCC與輔助直徑仍可由同一輪廓重算，但不加入多模型主比較。
+
+COMMENTS 605
+
+[1100]  Raw是取像參考，Wiener是校準區域內的傳統處理參考，兩者用來回答MOSR相對未學習處理的改善。八種學習式模型則用來提供架構脈絡；這兩組比較回答不同問題，不混成同一排名。平台設定步距只作共同名義條件，不視為獨立干涉儀真值。
+
+COMMENTS 607
+
+[1101]  正式位移序列的入選影格均能在訓練封裝中找到對應裁切，因此八模型表格定位為同系統、同影格的受控輸出比較，不宣稱盲測泛化能力。via與線條影像只保留為補充觀察，不混入正式pillar位移表。
+
+COMMENTS 609
+
+[1102] heading 3 5.4.7 抗混疊上取樣的配對消融配置
+
+[1103]  為確認抗混疊上取樣是否與位移穩定有直接關係，另建立Shift-safe與一般上取樣的參數量匹配比較。兩組模型由相同起始權重出發，固定訓練資料切分、兩組隨機種子、訓練週期、批次、最佳權重選取規則及PSF光學先驗，只更換解碼器的上取樣方式。
+
+[1104]  這項消融屬配對式加強訓練，不等同所有模型由隨機初始化完整重訓。其目的在估計相同MOSR訓練脈絡下，保留抗混疊上取樣的邊際作用；因此消融模型的絕對數值不取代第6.2.5節正式MOSR結果。
+
+COMMENTS 612
+
+[1105]  評估資料固定為第6.2.5節相同的四組位移序列。每一序列先依Raw條件鎖定30組相鄰影格，兩個候選上取樣配置都不能改變名單。每一影格的九顆pillar均重新使用ACM粗輪廓、最大灰階梯度位置與LSC圓心計算，沒有沿用早期量測表。
+
+COMMENTS 614
+
+[1106]  主要觀察量為四序列平均逐步位移標準差、相對名義步距的平均絕對誤差，以及120組配對的九顆pillar陣列內離散度中位數。兩組訓練重複分開保留，再報告平均差異；配對不確定範圍以固定種子重抽樣4,000次估計[111]。
+
+COMMENTS 616
+
+[1107]  這項配置只檢查上取樣方式。其他損失或輸出模組在現行LSC後端下沒有完成同等條件的獨立證明，因此本文不恢復逐項有利結論，也不以少數指標推論完整MOSR的全部改善來源。
+
+COMMENTS 618
+
+[1108] heading 2 5.5 小結
+
+[1109]  本章說明實驗所使用的顯微光學系統、標準樣品、SEM參考量測與軟硬體環境，並將相機取樣尺度、物鏡條件與白光照明對後續PSF及尺寸分析的影響加以區分。
+
+[1110]  模型部分說明實際資料數量、分組切分、軟性邊界標籤、MOSR訓練設定，以及七種外部架構的共同訓練配置。八種學習式模型均固定評估影像、結構身分、輪廓點與參考圓，使方法可在相同物體空間尺度下比較。

@@ -1,0 +1,27 @@
+{
+  "contract_version": "r75_architecture_contract_v1",
+  "created_date": "2026-07-30",
+  "model_class": "GeoEdgeAlignSR_v1_v5_NoCoord",
+  "architecture_source": "model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py",
+  "architecture_source_sha256": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242",
+  "utility_source": "model/GeoEdgeAlignSR_v1_Utils.py",
+  "utility_source_sha256": "3a892294ea68598c32624e4b8fb822a87d9f7e81a41f0a68d6006b83ce5d1a16",
+  "analytic_psf_source": "model/analytic_psf_bank.mat",
+  "analytic_psf_source_sha256": "ba476b405251d192ad39fc1c9750648b26ed4bba9165582ad2ab8018d4474677",
+  "trainer_source": "training/runtime/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py",
+  "trainer_source_sha256": "379f0de5b339a72f928924aeb01a4e5b9f37ec1236889dbafbf64934c5027c00",
+  "expected_parameter_count": 4024213,
+  "expected_trainable_parameter_count": 4021189,
+  "expected_fixed_architecture_kernels": {
+    "u3.blur.weight": 1728,
+    "u2.blur.weight": 864,
+    "u1.blur.weight": 432
+  },
+  "boundary_adapter": {
+    "enabled": true,
+    "max_residual": 0.018,
+    "orientation_inputs": true
+  },
+  "checkpoint_loading": false,
+  "teacher_loading": false
+}

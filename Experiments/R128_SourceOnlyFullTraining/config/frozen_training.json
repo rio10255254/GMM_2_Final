@@ -1,0 +1,118 @@
+{
+  "frozen_utc": "2026-09-08T16:37:36.779957+00:00",
+  "purpose": "Four full planned research runs, no automatic model adoption",
+  "implementation_sha256": {
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\network.py": "ce90a7ae3eb2b0b7adaa5a33fa70551d152410320caefe23ed30ded706529880",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\observation.py": "6d521fa1f8ef2fac6af0f5af0b3ce0861d634c84c09730a4f936f9edb49e2801",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\training\\data.py": "dfbe0325fce0ec682b787d2a6c6afe6e30a85e86d0c4ecaec4bd215703f8e9ca",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\training\\engine.py": "ccf9a8851cc3b18c1e17691a97836586cc0d476878a23b786968ab22d4669e31",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\training\\objectives.py": "4571936080ecf5feb6094c4159033e64b364202abc8743cb48ae7d0fc5f6d59b",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\training\\__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\evaluation\\generated.py": "e08893dd06ab7b58003fad26667d4c0119d5b03f549ff2babde1cf684c4c3317",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\evaluation\\real.py": "1bc55f3fa6d8269186c7f9ef7b35ff9cf4856bc238dd0187825b0d2812ba893e",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\evaluation\\__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\build_data.py": "e96c4c3f3768919489b142de8f799108c6cce37173bab6ea33f1176733ce4e4f",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\check_training_data.py": "9598d35ed493ce9a68ad94e880f1c85c37167d2e9bf500ce03fc2a69ca6c8203",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\common.py": "863b53bdddad3613d564e39b94460dc5c5f1c4bdedabdf4d1f3d28bd4d03973f",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\coordinator.py": "99930db1a670497b01b7c6c2a5b4652b597bd24d2d224e6bf0604ed3c8c82fda",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\freeze_study.py": "ccaf71344ad959aa0aeed9b64229868d1fea6f25c6d485560096f5b2aa5c1fa3",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\plot_preparation.py": "fc527b5efa5c5b79a1c480db9eac444a9b16cc52994f93878c0e17de18eb8742",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\preflight.py": "e058bc63a1597d90a95bfd023d1b38354f2b1b3bcf22f9aeaa06c4f20a52cfad",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\prepare_real.py": "213530b99e4078b6e31a0deb792ad573c5edbe083d33caba02a3dcda7926cc0b",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\run_integration.py": "98b910062bb0af55251d9a3874d46491529354105819d4f6c293e3f9ea5d81c8",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\scripts\\train.py": "60a04837fc54911501c6f45951ffade282b6de0a8ba79daa85326be276bd28cd",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\data\\generator.py": "93f443920148b2d2440e1e19c6d3192eb0adec879644bf404b2c058af458062c",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\data\\__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\data\\generator_v2.py": "89a98fe8e5f595691a973b7e699e47fca84eacc822f065155b4880039471bcb5",
+    "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\inference\\tiling.py": "a03643583a6b365e083d5abec3fc67d8af4e2d376fee3b86d035687b8d8047b1",
+    "D:\\GMM_2_Final\\Experiments\\R127_MeasurementPreservationRepair\\scripts\\motion_reader.py": "5c385549c6f8e5d6e7895e92916c703a4be30edcaf36731c4e7da0ce2ab615a5",
+    "D:\\GMM_2_Final\\Experiments\\R127_MeasurementPreservationRepair\\scripts\\motion_reader_v2.py": "6213354ccc6a427b047f845a18c1b74004d44c3ebf51d31fdd00cfc80df368d5",
+    "D:\\GMM_2_Final\\Experiments\\R127_MeasurementPreservationRepair\\scripts\\motion_reader_v3.py": "37b6f02f3304dfe1410133a27f1333816df5c8cc7b24ce5bb47e78f0f80d33a9"
+  },
+  "required_records": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\data_audit.json",
+      "sha256": "1f16d8d46f49500bcb7573910818f8ec9ee84b915795190a3c0eb8ff3f888b41"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\engineering_preflight.json",
+      "sha256": "9dcaffbaeb03a696324afe3460825e0ee658995cf7173d982f02ebdd132124a9"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\real_evaluator_preflight.json",
+      "sha256": "f48912d28bbdfd3287a17163795293ebecb9853e067b3b5fa1364b7a088506a2"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\nonneutral_integration.json",
+      "sha256": "b42bb5ec05fa2373f355c18792b84021e9a3216636830610cfda546764f2072c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\training_data_consumer_preflight.json",
+      "sha256": "7061f2f471d8c778ff34da32811b810b67c14f8d5bc9d3df6731681e91c17abc"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\config\\study.json",
+      "sha256": "f4d4ef0eaffb62be1eba9615eeb39d97b4fbfe5cc52c25f561041a3f4fa0dd2e"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\config\\initial_states.json",
+      "sha256": "877698d7c9a43753ed3caebfd653b990ae3e8c9f2b5abfe3e57ac54eb64f2b46"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\data\\package\\manifest.json",
+      "sha256": "8cb7afc18a885f4dace5b5309e005c4b530c82d3f323e63441fea71174e1f889"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\data\\package\\plan.json",
+      "sha256": "b243dcd7e21575d6c64ace850e26a1472aeef02de57bca95075dda1fb33e3da0"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\real_baseline\\verification.json",
+      "sha256": "98b8f8c74140f3c5b09a31b2307301becb40c10a63db96a88c641b69aa3125d4"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\historical_integrity_before_training.json",
+      "sha256": "00b1cb13521784fb44071d8988ae578ca15025fb5b3048d94ea9a2197acf7d42"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_panel_v2\\frozen_panel.json",
+      "sha256": "f16cda0509e9861df3b8b61ef4e1cfc1c4ccdaecd393dba7ef0b0f3fe7843e49"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R127_MeasurementPreservationRepair\\results\\sem_native_v2\\native_references.npz",
+      "sha256": "1d4cd1e4a86cb11f2249006f0ad37a33ef528554f7e60991e5b9a5fb28e4842b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R127_MeasurementPreservationRepair\\results\\sem_native_v2\\native_SEM_objects.csv",
+      "sha256": "cd3e9151143bf424e633a588175064fbfcf3e83cc94dec15f4bc444947f7c918"
+    }
+  ],
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "torch": "2.3.0+cu121",
+  "CUDA": "12.1",
+  "device": "NVIDIA RTX A6000",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "free_bytes_before_training": 119131172864,
+  "planned_runs": [
+    {
+      "arm": "I",
+      "seed": 1285001
+    },
+    {
+      "arm": "P",
+      "seed": 1285001
+    },
+    {
+      "arm": "I",
+      "seed": 1285002
+    },
+    {
+      "arm": "P",
+      "seed": 1285002
+    }
+  ],
+  "planned_total_updates": 32768,
+  "old_evidence_unchanged": true,
+  "real_holdout_claim": false
+}

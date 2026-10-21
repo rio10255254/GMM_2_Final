@@ -1,0 +1,545 @@
+{
+  "canonical_report": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md",
+  "original_tables": [
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/all_displacements.csv",
+      "bytes": 2620815,
+      "sha256": "95c0a2db634bb4e6f3aa2a6df42d38bddf6c152ac8743f3c0dbb7c0450492d1f",
+      "data_rows": 18000,
+      "columns": [
+        "method",
+        "run",
+        "scan",
+        "kind",
+        "step",
+        "displacement_nm",
+        "PI_displacement_nm",
+        "error_nm",
+        "dx_px",
+        "dy_px",
+        "transverse_nm"
+      ],
+      "already_in_ordinary_source": false,
+      "action": "add_original_small_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/failures.csv",
+      "bytes": 430,
+      "sha256": "81c54a164f764a72451f76af2be28a5d2e464f608f42ffe8059708f15f0fbaac",
+      "data_rows": 10,
+      "columns": [
+        "method",
+        "images",
+        "attempted_pillars",
+        "failed_pillars",
+        "failure_rate",
+        "complete_valid_scans",
+        "all30_primary_metrics_available"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/paired_intervals.csv",
+      "bytes": 23838,
+      "sha256": "2c03ac7fc0f1b7c838e07d5f4470bab5b62991017ae04cfbe8396ba675bfd312",
+      "data_rows": 162,
+      "columns": [
+        "reference_method",
+        "comparison",
+        "metric",
+        "reference",
+        "MOSR",
+        "difference",
+        "CI95_low",
+        "CI95_high"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/per_pillar_geometry.csv",
+      "bytes": 7703,
+      "sha256": "2f76b5aedf10438ba60e19cd3908fbf22aa906d5597a2ce3e4ca68c4ac98cd6e",
+      "data_rows": 90,
+      "columns": [
+        "method",
+        "pillar",
+        "mean_diameter_nm",
+        "diameter_repeat_sd_nm",
+        "contour_repeat_sd_nm",
+        "shape_repeat_sd_nm"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/per_position.csv",
+      "bytes": 55670,
+      "sha256": "48d669588f2fc44d01e802a4ca25f67fb334c5a840870bffec5d9d443ada9133",
+      "data_rows": 600,
+      "columns": [
+        "method",
+        "kind",
+        "step",
+        "mean_displacement_nm",
+        "displacement_sd_nm",
+        "mean_error_nm",
+        "error_sd_nm"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/per_scan.csv",
+      "bytes": 52124,
+      "sha256": "cf1ebfea52d62391a792c2476d3849866cadefa67b79195b6ba87e2f429ad383",
+      "data_rows": 600,
+      "columns": [
+        "method",
+        "run",
+        "scan",
+        "kind",
+        "mae_nm",
+        "bias_nm",
+        "within_scan_sd_nm",
+        "endpoint_error_nm"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/runtime_samples.csv",
+      "bytes": 11379,
+      "sha256": "99bd3e21301f4f7bb548cd25b35d3590345b28fcbfdae379ca06ba8d37c81462",
+      "data_rows": 150,
+      "columns": [
+        "method",
+        "run",
+        "index",
+        "repetition",
+        "forward_seconds",
+        "baseline_allocated_bytes",
+        "peak_allocated_bytes",
+        "peak_reserved_bytes"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/runtime_summary.csv",
+      "bytes": 2059,
+      "sha256": "4ffb73d0e311edaec66287c82e31a3102a7af7655e649cf545f14d08af22aab9",
+      "data_rows": 10,
+      "columns": [
+        "method",
+        "parameters",
+        "mean_seconds",
+        "median_seconds",
+        "sd_seconds",
+        "minimum_seconds",
+        "maximum_seconds",
+        "peak_allocated_GiB",
+        "peak_reserved_GiB",
+        "mode",
+        "gpu",
+        "precision",
+        "images",
+        "repetitions_per_image"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/scan_improvement_comparison.csv",
+      "bytes": 561,
+      "sha256": "c3f546f46ba971d8ad456107a418129eaa142eb6726dc751fffefce7a72cb80b",
+      "data_rows": 9,
+      "columns": [
+        "比較方法",
+        "MOSR波動較低趟數",
+        "總趟數",
+        "逐趟降低率最小%",
+        "逐趟降低率最大%"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/SEM_shape.csv",
+      "bytes": 1025,
+      "sha256": "b2bbae009f95a52712d83e2f67b6bbdced45dff5119fc7af3b7574606a8101e4",
+      "data_rows": 20,
+      "columns": [
+        "method",
+        "mapping_candidate",
+        "full_radial_difference_nm",
+        "de_size_shape_difference_nm"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/SEM_size_by_pillar.csv",
+      "bytes": 14174,
+      "sha256": "4664b2bbba0ec19359b31585573af03f8d5425ca2c8a6d381b5e5187a6c2e925",
+      "data_rows": 180,
+      "columns": [
+        "method",
+        "reference",
+        "pillar",
+        "reference_diameter_nm",
+        "observed_diameter_nm",
+        "signed_difference_nm"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/summary.csv",
+      "bytes": 5616,
+      "sha256": "731917f61536a58216ab6641b88d9eae40a33deef3105c2b625bca4fcb9e19a5",
+      "data_rows": 10,
+      "columns": [
+        "method",
+        "state",
+        "valid_scans",
+        "mean_diameter_nm",
+        "diameter_repeat_sd_nm",
+        "contour_repeat_sd_nm",
+        "shape_repeat_sd_nm",
+        "maximum_diameter_deviation_nm",
+        "adjacent_mae_nm",
+        "adjacent_rmse_nm",
+        "adjacent_bias_nm",
+        "adjacent_maximum_abs_error_nm",
+        "pooled_within_scan_sd_nm",
+        "mean_scan_sd_nm",
+        "sd_of_scan_sds_nm",
+        "start_mae_nm",
+        "start_rmse_nm",
+        "start_bias_nm",
+        "start_maximum_abs_error_nm",
+        "endpoint_bias_nm",
+        "endpoint_mae_nm",
+        "endpoint_rmse_nm",
+        "endpoint_error_sd_nm",
+        "SEM_workbook_diameter_MAE_nm",
+        "SEM_contour_diameter_MAE_nm",
+        "SEM_candidate1_full_radial_difference_nm",
+        "SEM_candidate1_de_size_shape_difference_nm",
+        "SEM_candidate2_full_radial_difference_nm",
+        "SEM_candidate2_de_size_shape_difference_nm"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/synthetic_test_summary.csv",
+      "bytes": 1882,
+      "sha256": "21bf0c12783077cc35d264c65f4be881544f3ffead736d92c7a430ea75e98449",
+      "data_rows": 10,
+      "columns": [
+        "method",
+        "task",
+        "image",
+        "gradient",
+        "pair_output",
+        "boundary",
+        "observation",
+        "PSNR_core_dB",
+        "SSIM_core",
+        "PSNR_full_dB"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_efficiency/all150_samples.csv",
+      "bytes": 11379,
+      "sha256": "99bd3e21301f4f7bb548cd25b35d3590345b28fcbfdae379ca06ba8d37c81462",
+      "data_rows": 150,
+      "columns": [
+        "method",
+        "run",
+        "index",
+        "repetition",
+        "forward_seconds",
+        "baseline_allocated_bytes",
+        "peak_allocated_bytes",
+        "peak_reserved_bytes"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_efficiency/summary.csv",
+      "bytes": 1748,
+      "sha256": "fe2375681a68aa9321b39dbf36244aa4d9dcbd7df221baf6b34c368678edc0d8",
+      "data_rows": 10,
+      "columns": [
+        "method",
+        "parameters",
+        "seconds_mean",
+        "seconds_sd",
+        "seconds_median",
+        "seconds_min",
+        "seconds_max",
+        "peak_allocated_GiB",
+        "peak_reserved_GiB",
+        "mode"
+      ],
+      "already_in_ordinary_source": true,
+      "action": "reference_existing_table"
+    }
+  ],
+  "figures": [
+    {
+      "scope": "main/R153_MeanExternalBenchmark",
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/figures/full_efficiency/time_memory.png",
+      "bytes": 122982,
+      "sha256": "0e124175557664051b576f3d93218961704ae83a50a15fbd3eacc3498add5b9e",
+      "caption": "灰階效率比較",
+      "source_report": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md",
+      "action": "link_existing_original_figure_do_not_duplicate_upload",
+      "semantic_limits": "短步、輪廓重複性、SEM尺寸差與速度代價分開；代表圖不取代完整數表。"
+    },
+    {
+      "scope": "main/R153_MeanExternalBenchmark",
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/figures/full_benchmark/primary_results.png",
+      "bytes": 153129,
+      "sha256": "f7f9a46aee8187fe8ae1a4e58dd4d1fc4ae9299c93c73c23b672cf087c3e7b11",
+      "caption": "主要結果灰階比較",
+      "source_report": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md",
+      "action": "link_existing_original_figure_do_not_duplicate_upload",
+      "semantic_limits": "短步、輪廓重複性、SEM尺寸差與速度代價分開；代表圖不取代完整數表。"
+    },
+    {
+      "scope": "main/R153_MeanExternalBenchmark",
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/figures/fixed_region_comparison.png",
+      "bytes": 86951,
+      "sha256": "07f20c7fb7479396b732edd37afd0c361cca6db3718bb3969795af1b1046c3c4",
+      "caption": "固定中央物件影像比較",
+      "source_report": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md",
+      "action": "link_existing_original_figure_do_not_duplicate_upload",
+      "semantic_limits": "短步、輪廓重複性、SEM尺寸差與速度代價分開；代表圖不取代完整數表。"
+    }
+  ],
+  "selected_models": [
+    {
+      "case": "EDSR-x1",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/selected.pth",
+      "bytes": 4904616,
+      "sha256": "478ae0817a35837fe0c2980725388fd6463f2e0cb24b1678c8f2f152cb693b27",
+      "selected_epoch": 30,
+      "epochs_trained": 32,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/best_validation.pth",
+          "asset": "research-fixed-models-007.zip",
+          "bytes": 4904616,
+          "sha256": "478ae0817a35837fe0c2980725388fd6463f2e0cb24b1678c8f2f152cb693b27"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/selected.pth",
+          "asset": "research-fixed-models-007.zip",
+          "bytes": 4904616,
+          "sha256": "478ae0817a35837fe0c2980725388fd6463f2e0cb24b1678c8f2f152cb693b27"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "NAFNet",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/selected.pth",
+      "bytes": 68655586,
+      "sha256": "fd4ecd94395ff4508af81a3ca7a84209ab4a11469c1b052fc923d8a4bf83d604",
+      "selected_epoch": 31,
+      "epochs_trained": 32,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/best_validation.pth",
+          "asset": "research-fixed-models-023.zip",
+          "bytes": 68655586,
+          "sha256": "fd4ecd94395ff4508af81a3ca7a84209ab4a11469c1b052fc923d8a4bf83d604"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/selected.pth",
+          "asset": "research-fixed-models-023.zip",
+          "bytes": 68655586,
+          "sha256": "fd4ecd94395ff4508af81a3ca7a84209ab4a11469c1b052fc923d8a4bf83d604"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "RDN-x1",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/selected.pth",
+      "bytes": 22033642,
+      "sha256": "9f080b316b4cfd2c2f81243c947eeaa773270676d13c63ff78073880aa635221",
+      "selected_epoch": 14,
+      "epochs_trained": 14,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/best_validation.pth",
+          "asset": "research-fixed-models-015.zip",
+          "bytes": 22033642,
+          "sha256": "9f080b316b4cfd2c2f81243c947eeaa773270676d13c63ff78073880aa635221"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/selected.pth",
+          "asset": "research-fixed-models-015.zip",
+          "bytes": 22033642,
+          "sha256": "9f080b316b4cfd2c2f81243c947eeaa773270676d13c63ff78073880aa635221"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/launcher_logs/time_budget_change/RDN_best_validation.pth",
+          "asset": "research-fixed-models-015.zip",
+          "bytes": 22033642,
+          "sha256": "9f080b316b4cfd2c2f81243c947eeaa773270676d13c63ff78073880aa635221"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "RCAN-x1",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/selected.pth",
+      "bytes": 61705340,
+      "sha256": "0fb6ce878e584ee13df394eaa055eb8ee9ca3541ef1d0465d86603e5596c3ca2",
+      "selected_epoch": 7,
+      "epochs_trained": 8,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/best_validation.pth",
+          "asset": "research-fixed-models-002.zip",
+          "bytes": 61705340,
+          "sha256": "0fb6ce878e584ee13df394eaa055eb8ee9ca3541ef1d0465d86603e5596c3ca2"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/selected.pth",
+          "asset": "research-fixed-models-002.zip",
+          "bytes": 61705340,
+          "sha256": "0fb6ce878e584ee13df394eaa055eb8ee9ca3541ef1d0465d86603e5596c3ca2"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "Restormer",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/selected.pth",
+      "bytes": 104571350,
+      "sha256": "247f403c5b7f9efed556429c90f323d14e73b2f969d83f7a051e87e34b974b19",
+      "selected_epoch": 8,
+      "epochs_trained": 8,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/best_validation.pth",
+          "asset": "research-fixed-models-004.zip",
+          "bytes": 104571350,
+          "sha256": "247f403c5b7f9efed556429c90f323d14e73b2f969d83f7a051e87e34b974b19"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/selected.pth",
+          "asset": "research-fixed-models-004.zip",
+          "bytes": 104571350,
+          "sha256": "247f403c5b7f9efed556429c90f323d14e73b2f969d83f7a051e87e34b974b19"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "USRNet-x1",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/selected.pth",
+      "bytes": 68070792,
+      "sha256": "9ac1cb36366bf8c654c72c2b309f01b438139fa47cb730d4cb257d8c4c67ea9f",
+      "selected_epoch": 8,
+      "epochs_trained": 8,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/best_validation.pth",
+          "asset": "research-fixed-models-014.zip",
+          "bytes": 68070792,
+          "sha256": "9ac1cb36366bf8c654c72c2b309f01b438139fa47cb730d4cb257d8c4c67ea9f"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/selected.pth",
+          "asset": "research-fixed-models-014.zip",
+          "bytes": 68070792,
+          "sha256": "9ac1cb36366bf8c654c72c2b309f01b438139fa47cb730d4cb257d8c4c67ea9f"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "SwinIR",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/selected.pth",
+      "bytes": 122844690,
+      "sha256": "331e1d9e5c2a25971d661a6adcbf70e7e792f6e2311b8b20ca760940c3d4b80b",
+      "selected_epoch": 8,
+      "epochs_trained": 8,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/best_validation.pth",
+          "asset": "research-fixed-models-005.zip",
+          "bytes": 122844690,
+          "sha256": "331e1d9e5c2a25971d661a6adcbf70e7e792f6e2311b8b20ca760940c3d4b80b"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/selected.pth",
+          "asset": "research-fixed-models-005.zip",
+          "bytes": 122844690,
+          "sha256": "331e1d9e5c2a25971d661a6adcbf70e7e792f6e2311b8b20ca760940c3d4b80b"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    }
+  ],
+  "adjacent_and_start_referenced_displacements_share_the_same_scans": true,
+  "external_models_have_different_training_epochs": true,
+  "blocked_UNet_and_MambaIRv2_remain_uncompleted": true,
+  "unfavorable_SEM_size_speed_and_long_distance_results_preserved": true,
+  "dense_per_frame_arrays_stay_in_local_archive": true
+}

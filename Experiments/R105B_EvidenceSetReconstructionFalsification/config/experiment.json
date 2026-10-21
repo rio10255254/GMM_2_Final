@@ -1,0 +1,61 @@
+{
+  "experiment_id": "R105B_EvidenceSetReconstructionFalsification",
+  "created_date": "2026-08-24",
+  "status": "complete_direction_supported_not_formal_model",
+  "not_a_formal_model_round": true,
+  "final_decision": {
+    "next_stage_eligible": true,
+    "formal_model_authorized": false,
+    "reason": "Two and four compatible observations produced monotonic held-out geometry gains beyond frame repetition and simple averaging. Local tile behavior and motion remained safe. Candidate-head disagreement was not a valid uncertainty measure, but pre-fusion structural admission plus observation-jackknife uncertainty detected mismatched bundles and safely fell back to one observation. Real-image alignment, nuisance estimation, sequence output and external GMF remain unvalidated."
+  },
+  "question": "Does one variable-observation evidence-set model become more geometrically reliable when given four aligned observations of the same latent scene, and does multiple-hypothesis physics selection add value beyond a matched single-answer arm?",
+  "source_isolation": {
+    "checkpoint_loading_allowed": false,
+    "teacher_allowed": false,
+    "real_pixels_in_training": false,
+    "sem_or_hs100mg_structure_in_training": false
+  },
+  "data": {
+    "image_size": 96,
+    "supersample": 4,
+    "observations": 4,
+    "train_samples": 512,
+    "validation_samples": 96,
+    "test_samples": 144,
+    "train_shape_families": ["circle", "ellipse", "rectangle", "polygon", "ring"],
+    "heldout_shape_families": ["crescent", "lobed", "thin_neck"],
+    "identity_fraction": 0.12,
+    "blur_sigmas_px": [0.80, 1.15, 1.55, 2.00]
+  },
+  "model": {
+    "base_channels": 24,
+    "candidates": 4,
+    "residual_bound": 0.32,
+    "local_evidence_window": 9,
+    "physics_temperature": 0.018,
+    "normalization": "none",
+    "global_pooling": false,
+    "global_fft": false
+  },
+  "training": {
+    "seed": 1051001,
+    "steps": 900,
+    "batch_size": 12,
+    "learning_rate": 0.0008,
+    "weight_decay": 0.00005,
+    "precision": "float32",
+    "log_every": 75,
+    "evidence_observation_schedule": [1, 2, 4]
+  },
+  "evaluation": {
+    "arms": [
+      "matched_point_single",
+      "evidence_set_single",
+      "evidence_set_four",
+      "evidence_set_four_physics_candidate",
+      "evidence_set_four_oracle_candidate"
+    ],
+    "heldout_first": true,
+    "full_model_authorization": "The four-observation evidence output must reduce held-out contour and transition-center errors relative to both its one-observation mode and the matched point arm, while uncertainty, motion, exposure and tile behavior remain coherent."
+  }
+}

@@ -51,6 +51,14 @@ When recording experiment results, update these **5 mandatory files**:
 - `docs/evidence/*` mirrors — may drift from canonical; canonical is authoritative
 - `RECON_GALLERY.md` (repo root) — add a section with representative recon BMPs + metric plots when a new round produces visual output. **Must stay pure markdown** (no `<table>`, `<p>`, `<details>`, `<img>`, `<div>`, `<a href>`). Enforced by `check_recon_gallery_format()` in the validator.
 
+## Reminders (not hard rules)
+
+These two are easy to forget and have bitten the project before. They are reminders, not enforcement.
+
+**Visual-collapse check before recommending alternate-grade promotion.** External GMF measures geometric precision only — a candidate can pass GMF and still be visually soft (R33 was the cautionary case). When a candidate reaches `PASS_TRADEOFF` or higher, it helps to also report a quick `visual_profile_vs_combo` (typically `gradient_magnitude_mean`, an edge-sharpness statistic, `contrast_std`, dynamic range) in the canonical `R##_RESULTS.md`, and mirror those numbers in the candidate's `ESTIMATOR_POLICY.json` entry. The decision to promote is still the project owner's; this just keeps visual quality from being silently skipped.
+
+**Don't reflexively spawn a new analysis script per question.** If the calculation is short (~30 lines) and one-shot, prefer inlining it in the canonical markdown report with a reproduction snippet so it stays runnable. If the calculation will recur across rounds or candidates, that is the right moment to lift it into `Tools/` (or another shared analysis directory) instead of an experiment's `scripts/`. The trigger is "this will run again on a future candidate", not "I need to answer this right now".
+
 ## Source of truth policy
 
 Read `docs/operations/SOURCE_OF_TRUTH_POLICY.md` before editing any file that might have copies elsewhere.

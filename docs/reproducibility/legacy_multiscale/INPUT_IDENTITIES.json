@@ -1,0 +1,35 @@
+{
+  "files": [
+    {
+      "path": "Model/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py",
+      "bytes": 14444,
+      "sha256": "7974d965b8b8c10623adc12e942af548e937b49d8d7e16dc14b750da69006ad8"
+    },
+    {
+      "path": "Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_131800.json",
+      "bytes": 55248,
+      "sha256": "63d53ad4e3e5132d7bd696adf6630e5b93912f6cd5450be43259cfd1b0cd4763"
+    },
+    {
+      "path": "Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.json",
+      "bytes": 55255,
+      "sha256": "e343c930f27d5889f0b6c3b0f54cf4fbc992bb4c011a700c42ca33c3c8ab6c20"
+    },
+    {
+      "path": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_164239.json",
+      "bytes": 73517,
+      "sha256": "73fd731131860a81b92d4e25d78ff7d711bc336bcdcf9337f6650ed641c0ab41"
+    },
+    {
+      "path": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_174207.json",
+      "bytes": 73735,
+      "sha256": "8a699aa3dbed1133bd04054f95bff13e31b361d5346f0e05403d9fadfcd460d7"
+    },
+    {
+      "path": "Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.json",
+      "bytes": 73796,
+      "sha256": "63cc6ad2b613850420a928861c0aa6c6fb8d150ae9367bd02b9e68db92056e34"
+    }
+  ],
+  "reason": "Fixed original arithmetic and complete saved per-model evaluation records; no training main is imported"
+}

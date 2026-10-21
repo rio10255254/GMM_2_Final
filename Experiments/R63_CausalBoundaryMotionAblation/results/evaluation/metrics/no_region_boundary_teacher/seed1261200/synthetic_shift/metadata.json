@@ -1,0 +1,25 @@
+{
+  "method": "no_region_boundary_teacher",
+  "recon_dir": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\reconstructions\\no_region_boundary_teacher\\seed1261200\\synthetic_50x_unseen",
+  "case_count_per_method": 360,
+  "pillar_count": 9,
+  "magnitudes_px": [
+    0.08,
+    0.4,
+    0.8,
+    2.0,
+    8.0
+  ],
+  "directions_deg": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    225,
+    270,
+    315
+  ],
+  "center_estimator": "local darkness centroid in predeclared expected window",
+  "radial_samples_per_radius": 720
+}

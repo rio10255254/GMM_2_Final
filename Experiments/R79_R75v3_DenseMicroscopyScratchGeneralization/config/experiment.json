@@ -1,0 +1,221 @@
+{
+  "experiment_id": "R79_R75v3_DenseMicroscopyScratchGeneralization",
+  "created_date": "2026-08-01",
+  "status": "formal_training_running",
+  "scientific_question": "Can the unchanged R75-v2 architecture retain broad shape reconstruction while learning to preserve low-magnification dense periodic microscopy structures from procedural data alone?",
+  "architecture": {
+    "source_file": "model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py",
+    "class_name": "GeoEdgeAlignSR_v1_v5_NoCoord",
+    "base_channels": 48,
+    "full_network_trainable": true,
+    "architecture_changed_from_r75v2": false,
+    "checkpoint_loading_allowed": false,
+    "teacher_models_allowed": false,
+    "boundary_adapter": {
+      "enabled": true,
+      "hidden_channels": 16,
+      "max_residual": 0.018,
+      "gate_bias": -2.0,
+      "orientation_inputs": true,
+      "polarity_split": false
+    },
+    "psf_policy": "Nine fully analytic Gaussian kernels generated inside each data package; no fitted or measured PSF is used."
+  },
+  "source_isolation": {
+    "required_provenance_kind": "procedural_primitive",
+    "required_generator": "r75v3_dense_multiscale_supersampled_v1",
+    "real_image_pixels_allowed": false,
+    "sem_structure_allowed": false,
+    "hs100mg_structure_allowed": false,
+    "legacy_training_pairs_allowed": false,
+    "pseudo_labels_allowed": false,
+    "forbidden_value_tokens": [
+      "sem",
+      "hs100mg",
+      "100mg",
+      "real_microscope",
+      "real_crop",
+      "basler",
+      "pillar",
+      "teacher",
+      "pseudo_label"
+    ],
+    "forbidden_record_keys": [
+      "source_package",
+      "source_path",
+      "sem_reference_id",
+      "sem_radius_nm",
+      "target_radius_nm",
+      "real_crop_path",
+      "checkpoint",
+      "teacher_checkpoint"
+    ]
+  },
+  "dataset": {
+    "generator_version": "r75v3_dense_multiscale_supersampled_v1",
+    "image_size": 256,
+    "label_supersample_factor": 8,
+    "label_downsample_method": "area_average",
+    "label_edge_policy": "Exact geometry is drawn at 8x. A mild recorded optical edge band-limit is applied at 8x before area downsampling; the exact binary contour is retained separately for geometry loss.",
+    "split_seed": 752031,
+    "split_ratios": {
+      "train": 0.8,
+      "validation": 0.1,
+      "internal_test": 0.1
+    },
+    "split_unit": "geometry_id",
+    "stage_name": "stage_r75v3_dense_multiscale",
+    "dense_pitch_range_px": [5.0, 24.0],
+    "artifact_banding_period_range_px": [48.0, 128.0],
+    "roles": {
+      "basic_geometry": {
+        "renderings_per_geometry": 8,
+        "description": "Elementary analytic shapes retained as a broad-shape anchor."
+      },
+      "fine_noncircular": {
+        "renderings_per_geometry": 8,
+        "description": "Concave, lobed, narrow-neck, hollow, rough, and asymmetric procedural shapes."
+      },
+      "dense_periodic_layout": {
+        "renderings_per_geometry": 8,
+        "description": "Procedural dot, square, polygon, line, checker, staggered, missing-element, and pitch-gradient fields spanning 5-24 pixels."
+      },
+      "multiscale_field": {
+        "renderings_per_geometry": 8,
+        "description": "Procedural multi-panel and nested fields containing multiple pitches, orientations, polarities, macro boundaries, and local defects in one view."
+      },
+      "boundary_fade_mixed": {
+        "renderings_per_geometry": 8,
+        "description": "Local boundary disappearance with blur, halo, shadow, noise, and illumination effects; periodic banding is restricted away from the dense-structure band."
+      },
+      "identity_guard": {
+        "renderings_per_geometry": 8,
+        "description": "Four exact and four near-identity pairs per geometry, dominated by dense and multiscale fields so genuine fine structure is preserved."
+      }
+    },
+    "profiles": {
+      "smoke": {
+        "role_geometry_counts": {
+          "basic_geometry": 3,
+          "fine_noncircular": 3,
+          "dense_periodic_layout": 3,
+          "multiscale_field": 3,
+          "boundary_fade_mixed": 3,
+          "identity_guard": 3
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 1, "validation": 1, "internal_test": 1},
+          "fine_noncircular": {"train": 1, "validation": 1, "internal_test": 1},
+          "dense_periodic_layout": {"train": 1, "validation": 1, "internal_test": 1},
+          "multiscale_field": {"train": 1, "validation": 1, "internal_test": 1},
+          "boundary_fade_mixed": {"train": 1, "validation": 1, "internal_test": 1},
+          "identity_guard": {"train": 1, "validation": 1, "internal_test": 1}
+        },
+        "expected_pairs": 144
+      },
+      "pilot": {
+        "role_geometry_counts": {
+          "basic_geometry": 12,
+          "fine_noncircular": 12,
+          "dense_periodic_layout": 12,
+          "multiscale_field": 12,
+          "boundary_fade_mixed": 12,
+          "identity_guard": 12
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 8, "validation": 2, "internal_test": 2},
+          "fine_noncircular": {"train": 8, "validation": 2, "internal_test": 2},
+          "dense_periodic_layout": {"train": 8, "validation": 2, "internal_test": 2},
+          "multiscale_field": {"train": 8, "validation": 2, "internal_test": 2},
+          "boundary_fade_mixed": {"train": 8, "validation": 2, "internal_test": 2},
+          "identity_guard": {"train": 8, "validation": 2, "internal_test": 2}
+        },
+        "expected_pairs": 576
+      },
+      "formal": {
+        "role_geometry_counts": {
+          "basic_geometry": 80,
+          "fine_noncircular": 80,
+          "dense_periodic_layout": 200,
+          "multiscale_field": 100,
+          "boundary_fade_mixed": 60,
+          "identity_guard": 120
+        },
+        "role_split_geometry_counts": {
+          "basic_geometry": {"train": 64, "validation": 8, "internal_test": 8},
+          "fine_noncircular": {"train": 64, "validation": 8, "internal_test": 8},
+          "dense_periodic_layout": {"train": 160, "validation": 20, "internal_test": 20},
+          "multiscale_field": {"train": 80, "validation": 10, "internal_test": 10},
+          "boundary_fade_mixed": {"train": 48, "validation": 6, "internal_test": 6},
+          "identity_guard": {"train": 96, "validation": 12, "internal_test": 12}
+        },
+        "expected_pairs": 5120
+      }
+    },
+    "formal_role_pair_counts": {
+      "basic_geometry": 640,
+      "fine_noncircular": 640,
+      "dense_periodic_layout": 1600,
+      "multiscale_field": 800,
+      "boundary_fade_mixed": 480,
+      "identity_guard": 960
+    },
+    "training_shape_scope": "Only analytic and stochastic procedural geometry. Dense pitches are sampled continuously over the declared generic range; no measured outline, crop, sample radius list, exact sample pitch list, or externally extracted contour is imported.",
+    "rendering_scope": "Independent foreground polarity and background exposure plus bounded blur, defocus, halo, ghosting, local boundary fade, shadow, vignetting, gamma, saturation, quantization, Poisson/read noise, high-period banding, and fixed-pattern texture."
+  },
+  "held_out_evaluation": {
+    "internal_test_usage": "Unseen geometry IDs kept out of training and validation by a fixed geometry-grouped split.",
+    "previous_external_suites_role": "Development evidence only because the observed failure mode informed the declared 5-24 pixel generic training range.",
+    "final_external_rule": "Promotion requires rerunning the frozen R78 real 5x, 20x, 50x suite and the independent SEM shape comparison without changing eligibility or thresholds."
+  },
+  "live_validation": {
+    "enabled": true,
+    "image_dir": "data/live_validation",
+    "every_n_epochs": 5,
+    "role": "observation_only_no_loss_no_selection_no_training_control",
+    "images": [
+      {"name": "5x_dense", "relative_image_path": "data/live_validation/5x_dense_raw.bmp"},
+      {"name": "20x_mixed", "relative_image_path": "data/live_validation/20x_mixed_raw.bmp"},
+      {"name": "50x_array", "relative_image_path": "data/live_validation/50x_array_raw.bmp"}
+    ]
+  },
+  "training": {
+    "formal_epochs": 100,
+    "learning_rate": 0.00002,
+    "amp_enabled": false,
+    "batch_size": 8,
+    "validation_batch_size": 2,
+    "crop_size": 256,
+    "seed": 752031,
+    "stability_seeds": [752031, 752032, 752033],
+    "deterministic_split": true,
+    "group_balancing_keys": [
+      "training_role",
+      "polarity",
+      "shape_family",
+      "degradation_family",
+      "exposure_level",
+      "periodic_density_class"
+    ],
+    "primary_selection_metrics": [
+      "validation reconstruction error",
+      "validation edge error",
+      "internal-test contour overlap",
+      "internal-test mean symmetric boundary distance",
+      "dense-pattern detail retention",
+      "identity drift",
+      "halo score",
+      "worst exposure bin",
+      "worst shape family"
+    ]
+  },
+  "inference": {
+    "mode": "single_full_frame_only",
+    "minimum_side": 21,
+    "maximum_side": 2180,
+    "maximum_pixels": 3313600,
+    "tiling_allowed": false,
+    "reason": "R79 output is spatial-extent dependent; tiled inference changes the reconstruction."
+  },
+  "promotion_rule": "R75-v3 remains a research candidate until it passes the grouped internal test, the frozen R78 5x/20x/50x suite, and the independent SEM shape comparison without dense-detail loss, identity drift, halo growth, or family-level collapse."
+}

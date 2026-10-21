@@ -1,0 +1,107 @@
+{
+  "priority": "real_microscopy_and_SEM_first",
+  "version": "r123_design_20260908",
+  "every_short_candidate_runs_real_panel": true,
+  "synthetic_performance_gates_access_to_real_panel": false,
+  "synthetic_implementation_tests_required": true,
+  "new_confirmation_access": false,
+  "existing_sources_status": "reused_development_not_unseen",
+  "primary_benefit": "geometry and size under a calibrated microscopy-SEM correspondence, or a separately declared real measurement benefit; never sharpness alone",
+  "required_panels": [
+    "sem_paired_exposures",
+    "real_six_motion_suites",
+    "real_checkerboard",
+    "real_nonpillar_full_fields"
+  ],
+  "fixed_comparison": {
+    "reference_outputs": [
+      "Raw",
+      "qualified_classical_method",
+      "matched_learned_iterations_no_observation_step",
+      "iterative_without_geometry",
+      "iterative_with_geometry"
+    ],
+    "historical_context_only": [
+      "R109",
+      "R119",
+      "R121_A"
+    ],
+    "V42_required_to_beat": false,
+    "V42_as_teacher": false,
+    "common_coordinate_transform": true,
+    "per_candidate_or_per_object_scale_fit": false,
+    "source_of_truth_cannot_be_model_internal_geometry": true,
+    "primary_checkpoint_updates": 1024,
+    "early_checkpoints": "diagnostic development only unless a common selection rule is frozen before all outputs"
+  },
+  "geometry": {
+    "material_optical_mapping_status": "unresolved",
+    "intended_primary": "common-coordinate SEM boundary distance after independent readout qualification",
+    "mandatory_secondary": [
+      "signed_boundary_bias",
+      "dimension_and_area_error",
+      "p95_and_maximum_error",
+      "actual_output_image_geometry",
+      "coverage_and_failure_counts"
+    ],
+    "until_mapping_qualified": "ACM and half-contrast are noninterchangeable observations; contradictory directions mean unresolved, not success",
+    "legacy_and_pitch_matched_references": "both retained as current sensitivity conditions, not alternative scores to choose after results",
+    "steepest_point": "fixed settings with ambiguity and common coverage; never rescue an invalid primary population by dropping Raw"
+  },
+  "motion": {
+    "current_absolute_truth": "not_independently_measured",
+    "valid_current_claims": [
+      "repeatability",
+      "cross-object_motion_agreement",
+      "deviation_from_nominal_command",
+      "change_relative_to_Raw"
+    ],
+    "forbidden_current_claim": "absolute_stage_motion_accuracy_certified"
+  },
+  "detail": {
+    "SEM_grayscale_is_optical_texture_truth": false,
+    "current_nonpillar_truth": "no_independent_correspondence_verified",
+    "current_evidence": [
+      "cross-frame_structure_preservation",
+      "false_structure_review",
+      "real_corners_lines_gaps_preservation"
+    ],
+    "full_restoration_claim_requires": "independent optical reference or independently verified physical structures"
+  },
+  "aggregation": {
+    "levels": [
+      "physical_sample",
+      "acquisition_session",
+      "object_or_ROI",
+      "exposure_or_frame"
+    ],
+    "SEM_432_observations_are_432_independent_samples": false,
+    "single_sample_population_inference": false,
+    "all_inputs_in_denominator": true,
+    "report_fallback_to_raw": true,
+    "identity_alone_counts_as_useful": false,
+    "weighted_score_may_hide_guardrail_failure": false
+  },
+  "application_thresholds": {
+    "status": "unset: exploratory comparisons only; decision-bearing short-run promotion limits must be fixed before first real outputs, not postponed until confirmation",
+    "minimum_useful_improvement": null,
+    "geometry_noninferiority": null,
+    "motion_noninferiority": null,
+    "detail_noninferiority": null,
+    "minimum_corrected_coverage": null,
+    "maximum_major_failure_rate": null,
+    "maximum_useful_uncertainty_width": null,
+    "unset_allows_long_training_promotion": false
+  },
+  "decision_states": [
+    "implementation_invalid",
+    "real_benefit_absent",
+    "real_guardrail_failed",
+    "readout_correspondence_unresolved",
+    "promising_on_reused_real_development",
+    "independent_confirmation_pending"
+  ],
+  "no_final_usefulness_claim_from_this_design_round": true,
+  "primary_benefit_lock_time": "before first decision-bearing real candidate output is observed",
+  "ROI_panel_status": "Existing sources inventoried. Reuse Raw-selected fixed R68 ROIs when verified; additional SEM/corner/gap masks and eligibility must be frozen from Raw/use case before candidate outputs."
+}

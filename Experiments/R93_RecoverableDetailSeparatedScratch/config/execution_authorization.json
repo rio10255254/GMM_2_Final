@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R93_RecoverableDetailSeparatedScratch",
+  "authorization_status": "formal_authorized",
+  "authorized_at": "2026-08-12T00:00:00+08:00",
+  "authorization_source": "User explicitly requested that the deeply redesigned R93 be implemented and immediately start one complete independent training run.",
+  "authorized_scope": [
+    "R93_independent_implementation",
+    "aggregate_real_optical_statistics_without_pixels_or_structure",
+    "smoke_dataset_generation",
+    "smoke_training_and_reconstruction",
+    "formal_5000_observation_dataset_generation_and_full_hash_audit",
+    "sealed_independent_holdout_generation",
+    "one_independent_64_epoch_formal_training_run"
+  ],
+  "formal_run_limit": 1,
+  "formal_dataset_generation_authorized": true,
+  "locked_holdout_generation_authorized": true,
+  "formal_training_authorized": true,
+  "checkpoint_inheritance_allowed": false,
+  "resume_allowed": false,
+  "teacher_or_pseudo_label_allowed": false,
+  "sem_or_real_sample_training_pixels_allowed": false,
+  "real_optical_aggregate_statistics_allowed": true,
+  "formal_baseline_promotion_authorized": false,
+  "external_gmf_waiver_authorized": false,
+  "run_registry": "runs/formal_run_registry.json"
+}

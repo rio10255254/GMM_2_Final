@@ -1,0 +1,16 @@
+{
+  "created_for": "prospective full-field research admission, before any R134 candidate motion results",
+  "population": "all201frames, existinglocked120andall194within-sessionpairs; original3repositionings retained separately",
+  "reference_for_admission": "Raw; existingR129W16is context, not required to be beaten after a512updateprobe",
+  "requirements": {
+    "all_frames_and_centers_valid": true,
+    "wrong_direction_count_not_above_Raw": true,
+    "each_sequence_step_sd_max_ratio_to_Raw": 1.05,
+    "aggregate_nominal_within_cross_max_ratio_to_Raw": 1.05,
+    "maximum_nominal_and_cross_error_max_ratio_to_Raw": 1.1
+  },
+  "scopes_applied_separately": ["locked120", "within_session194"],
+  "threshold_meaning": "Prospective provisional engineering safety screen for long research training; not certified material size or actual stage accuracy. No post-result relaxation.",
+  "seed_selection": "C seed selected by held-out generated dev MAE after both seeds pass initialSEM/learning screen",
+  "long_training": "Only after all required screens and independent arithmetic/input checks pass; separate standalone package required"
+}

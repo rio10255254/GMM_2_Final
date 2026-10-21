@@ -1,0 +1,64 @@
+{
+  "created_utc": "2026-09-16T15:37:05.045241+00:00",
+  "core_source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R80_InflectionReferenceCircleSEMValidation\\scripts\\reference_circle_core.py",
+    "sha256": "76e1fe615128cbf9bb19c9775b990a055d73f5e086986a04368f78ca7008248c"
+  },
+  "thesis_reader_source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\lsc_comparison\\measure.py",
+    "sha256": "60b35b04e792cd2fe2dd3db71e80e013a0d9971a472a31afcc100bbc0e077344"
+  },
+  "base_centers": [
+    [
+      1010.1954545454546,
+      408.4545454545455
+    ],
+    [
+      1039.2165898617511,
+      408.4331797235023
+    ],
+    [
+      1068.2790697674418,
+      408.4
+    ],
+    [
+      1010.4018264840183,
+      437.53881278538813
+    ],
+    [
+      1039.2752293577983,
+      437.36238532110093
+    ],
+    [
+      1068.3243243243244,
+      437.36036036036035
+    ],
+    [
+      1010.4906542056075,
+      466.56542056074767
+    ],
+    [
+      1039.4520547945206,
+      466.44292237442926
+    ],
+    [
+      1068.388888888889,
+      466.41203703703707
+    ]
+  ],
+  "pitch_px": 28.933063776210922,
+  "radius_px": 8.33015937350939,
+  "patch_half": 14,
+  "sample_count": 64,
+  "acm_iterations": 13,
+  "normal_half_width_px": 2.4,
+  "profile_step_px": 0.1,
+  "profile_sigma_px": 0.65,
+  "object_um_per_px": 0.1725,
+  "pillars": 9,
+  "polarity": "dark",
+  "tracking": "Raw threshold components; nearest unique consecutive image correspondence;no PI or reconstructed-image selection",
+  "aggregation": "componentwise median of9circle-center differences,matching existing thesis pipeline",
+  "complete_scans": 30,
+  "frames_per_model": 930
+}

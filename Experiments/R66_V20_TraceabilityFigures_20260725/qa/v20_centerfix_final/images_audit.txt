@@ -1,0 +1,60 @@
+IMAGE KINDS
+- inline: 123
+- anchor: 6
+
+ROWS (part | kind | size | target)
+- word/document.xml | inline | 2.82 x 2.01 | media/image1.png
+- word/document.xml | inline | 3.25 x 2.39 | media/image2.png
+- word/document.xml | inline | 4.03 x 2.39 | media/image3.png
+- word/document.xml | inline | 5.77 x 2.83 | media/image4.png
+- word/document.xml | inline | 5.77 x 3.72 | media/image5.png
+- word/document.xml | inline | 2.74 x 3.30 | media/image6.png
+- word/document.xml | inline | 3.27 x 3.66 | media/image7.png
+- word/document.xml | inline | 3.48 x 3.04 | media/image8.png
+- word/document.xml | inline | 3.43 x 2.94 | media/image9.png
+- word/document.xml | inline | 4.38 x 2.71 | media/image10.png
+- word/document.xml | inline | 3.70 x 1.85 | media/image11.png
+- word/document.xml | inline | 3.83 x 2.71 | media/image12.png
+- word/document.xml | inline | 3.88 x 2.98 | media/image13.png
+- word/document.xml | inline | 3.19 x 3.00 | media/image14.png
+- word/document.xml | inline | 5.77 x 3.44 | media/image15.png
+- word/document.xml | inline | 5.77 x 2.44 | media/image16.png
+- word/document.xml | inline | 3.83 x 2.04 | media/image17.png
+- word/document.xml | inline | 5.77 x 2.88 | media/image18.png
+- word/document.xml | inline | 3.54 x 3.00 | media/image19.png
+- word/document.xml | inline | 4.03 x 2.54 | media/image20.png
+- word/document.xml | inline | 4.56 x 3.21 | media/image21.png
+- word/document.xml | inline | 5.77 x 2.71 | media/image22.png
+- word/document.xml | inline | 3.70 x 4.80 | media/image23.png
+- word/document.xml | inline | 3.10 x 3.25 | media/image24.png
+- word/document.xml | inline | 2.92 x 2.43 | media/image25.png
+- word/document.xml | inline | 5.77 x 3.51 | media/image26.png
+- word/document.xml | inline | 2.67 x 2.47 | media/image27.png
+- word/document.xml | inline | 5.77 x 3.53 | media/image28.png
+- word/document.xml | inline | 2.65 x 1.83 | media/image29.jpeg
+- word/document.xml | inline | 2.86 x 2.23 | media/image30.jpeg
+- word/document.xml | inline | 2.86 x 2.23 | media/image31.jpeg
+- word/document.xml | inline | 3.73 x 3.49 | media/image32.png
+- word/document.xml | inline | 5.77 x 2.52 | media/image33.png
+- word/document.xml | inline | 5.77 x 4.47 | media/image34.png
+- word/document.xml | inline | 3.83 x 2.79 | media/image35.png
+- word/document.xml | inline | 3.00 x 2.46 | media/image36.png
+- word/document.xml | inline | 5.77 x 2.08 | media/image37.png
+- word/document.xml | inline | 4.48 x 3.36 | media/image38.png
+- word/document.xml | inline | 3.41 x 4.88 | media/image39.png
+- word/document.xml | inline | 2.45 x 3.97 | media/image40.jpeg
+- word/document.xml | inline | 5.77 x 2.16 | media/image41.png
+- word/document.xml | inline | 2.72 x 0.93 | media/image42.png
+- word/document.xml | inline | 5.77 x 2.71 | media/image43.png
+- word/document.xml | inline | 2.49 x 2.48 | media/image44.png
+- word/document.xml | inline | 2.81 x 2.50 | media/image45.png
+- word/document.xml | inline | 2.49 x 2.49 | media/image46.png
+- word/document.xml | inline | 2.85 x 2.53 | media/image47.png
+- word/document.xml | inline | 2.92 x 2.92 | media/image48.png
+- word/document.xml | inline | 3.11 x 2.71 | media/image49.png
+- word/document.xml | inline | 3.17 x 2.78 | media/image50.png
+- ... (79 more)
+
+WARNING
+- Floating/anchored images detected (wp:anchor). These are the most common Word-vs-LO mismatch.
+  Strongly recommend: render to PNG and check placement on every affected page.

@@ -1,5 +1,19 @@
 # PROJECT ARCHITECTURE / 專案架構與決策地圖
-Last updated: 2026-04-09
+Last updated: 2026-10-21
+
+## 研究保存邊界（2026-10-21）
+
+GitHub保存須包含理解與重做研究所需的實際來源、方法、模型、完整數字、重要影像及失敗脈絡。一般Git歷史與大型版本附件分工，內容核對與實際取回重做分別記錄；索引存在或H槽備份存在均不能代替GitHub驗證。無法精確重做的歷史輸入保存原檔，生成程式與種子本身不構成完整重做證據。
+
+相同內容可集中保存，但須保留原用途、來源關係與可恢復的位置；複製品不增加獨立證據。不同歷史版本不覆蓋正式來源。原論文與活動訓練受保護，本輪GitHub整理不授權D槽清理，也不改變COMBO或論文採用身分。[保存與取回](docs/reproducibility/README.md)／[全內容核對](docs/reproducibility/project_completion/README.md)。
+
+影像的儲存分類不能當成相機原拍證據。已查明用途按原位置及內容身分綁定原設計／生成紀錄；同名但不同內容不能繼承該用途。衍生裁切、數學平移、訓練品質預覽與模型輸出分開標示，重複區域不增加獨立拍攝數；原圖與較早分類留歷史。[用途證據](docs/reproducibility/project_completion/IMAGE_ROLE_EVIDENCE_20261021.json)。
+
+目前專案內指向H槽的資料入口，須按其當前指向保留可恢復位置；不能只因實體資料位於H槽就當作較舊版本。較舊快照、現在工作來源與GitHub舊版若同名而不同，分別保存並明確列出來源，不能靠掃描順序決定覆蓋。
+
+## 目前 MOSR 論文研究的驗證優先順序（2026-09-08）
+
+依使用者指定，下一代模型每個短候選即以真實顯微影像與 SEM 對照、真實位移序列及真實困難結構作主要開發驗證。合成資料可作訓練與實作檢查，不能作為先贏合成才准看真實的選模關卡。SEM 材料幾何、光學細節與實際位移的答案資格分開；指標矛盾不能挑有利讀法，既有樣品不能重新命名為未見確認。正式 COMBO／approved alternates 的外部 GMF 升級規則仍屬下述正式使用路線。完整契約見 [R123 真實優先設計](Experiments/R123_RealFirstModelDesign/reports/R123_DATA_AND_VALIDATION.md)。
 
 ## 這份文件的用途 / Purpose
 
@@ -21,11 +35,17 @@ This document records **stable architectural design and decision rules**. It ans
 
 ### 最終衡量標準是什麼
 
-最終真值**永遠只有一個**：外部 GMF 工具在 whole-annulus 真實資料上對模型輸出的幾何定位評分。
+正式 baseline 與量測替代候選的最終真值**永遠只有一個**：外部 GMF 工具在 whole-annulus 真實資料上對模型輸出的幾何定位評分。
 
 白話說：把訓練好的模型拿去重建真實顯微鏡影像，再用外部 GMF（幾何匹配函數）工具測量「重建後的影像，在三種不同位移尺度下，定位環形邊界的穩定度有多高」。分數越好（step std 越小），代表模型越有用。
 
 The final truth is always the external GMF's whole-annulus geometric localization score on real-world data. In plain terms: take the trained model, reconstruct real microscope images, then measure with an external Geometric Matching Function (GMF) tool how stably the model's output localizes the annulus boundary across three displacement scales.
+
+### 顯微結構通用目標與環形代理
+
+專案真正關心的長期能力不是「只把環形重建好」，而是模型遇到各種顯微結構時，都能忠實重建邊界位置與細節：線條、格線、曲線、晶片區塊、缺口、刮痕、亮暗點、紋理與混合場景都算在內。
+
+目前外部 GMF 仍以環形資料作為正式守門，原因是它有穩定的真實資料、連續位移序列與長期可比較的歷史數字。也就是說，環形 GMF 是正式量測流程的代理測試，不等於專案全部科學目標。R39-R43 的定位就是在不動正式 baseline 的前提下，探索通用顯微邊界忠實度。
 
 ### 外部 GMF 真正優化的是什麼
 
@@ -83,6 +103,8 @@ Internal surrogates are proxies for rapid candidate filtering and hypothesis tes
 3. **只在有新機制或新部署條件**時才開新 round，不做已完成 promotion 決策的重複掃描
 
 The current optimization target is narrow and practical: preserve the balanced advantage of the formal COMBO baseline, keep the alternate taxonomy explicit for deployment-specific needs, and only open new rounds when there is a genuinely new mechanism or deployment requirement.
+
+研究層面另有一條已確認方向：通用顯微結構邊界忠實度。這條線可以允許環形代理測試出現有限退步來換取多特徵能力，但若要進入正式量測替代，仍必須回到外部 GMF 與專案 owner 的升級判斷。
 
 ---
 
@@ -193,6 +215,22 @@ R32 sandbox-specific artifact 清單：
 
 ---
 
+## Layer E — 容量與歷史保存 / Storage Lifecycle
+
+專案資料固定分成四層：活動中、正式保留、歷史封存、可重建內容。
+
+- 活動中工作不可移動、改名或刪除，必須同時檢查活動標記與實際程序。
+- 正式訓練、續訓、長時間重建與大量資料產生必須在啟動前登記目前程序；程序退出後要先核對預定工作與輸出完整性，才能解除大型整理阻擋。
+- 正式 baseline、核准替代模型、原始影像、正式 PSF、論文採用證據及其來源數據永久保護。
+- 已完成或失敗的實驗保留正式報告、manifest、採用權重、代表圖、原始輸入位置與重做方法；完整過程可在驗證後移到外部封存。
+- 測試快取、臨時渲染與可重建候選輸出只有在沒有程序使用、正式替代品存在且重做條件完整時才能刪除。
+- 外部封存必須先建立含雜湊值的清單，複製後驗證通過，再另外確認原工作區的刪除目標。
+- D 槽剩餘容量低於 300 GiB 進入警告；低於 150 GiB 時不開始新的長訓練。
+
+完整規則與巡檢入口見 `docs/operations/PROJECT_STORAGE_AND_ARCHIVE_POLICY.md`。
+
+---
+
 ## 已確認結論
 
 當前已確認的有效方向、被否定方向、與注意事項（caution）以 `PROJECT_STATE.md` §§2-6 與 `ESTIMATOR_POLICY.json` `notes` 欄位為準。本檔只保留方法論層面的穩定規則。
@@ -240,3 +278,11 @@ R32 sandbox-specific artifact 清單：
 ## 真相來源導覽
 
 見 `docs/README.md` 與 `docs/operations/PROJECT_CONTROL_CENTER.md`。
+
+## 共用來源與GitHub研究保存（2026-10-16）
+
+共用相機與儀器原件、SEM及固定光學來源依內容核對值集中保存一次；各輪仍保留原檔名、用途、分組、實際模型與完整結果的對應。大型必要來源及固定模型隨私人GitHub版本附件保存，一般倉庫保留方法、索引、完整表格及代表性比較影像。
+
+原始拍攝、裁切或轉換、凍結生成資料、模型重建、後來恢復的副本分別標示；相同內容不抹去取得來源。附件恢復須核對完整檔案內容，任何已有的不同檔案不能覆蓋。
+
+研究保存檔保留原始位元組，不在Git存取時自動轉換換行，以維持既有來源鎖與全檔案核對。這項存放規則不變更正式基準、採用身分或科學指標。逐輪入口與驗證見[研究保存](docs/reproducibility/README.md)。

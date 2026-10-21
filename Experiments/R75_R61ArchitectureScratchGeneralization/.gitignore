@@ -1,0 +1,16 @@
+# Locally generated datasets and long training outputs.
+data/r75_*/
+data/live_validation/*.bmp
+runs/
+results/*
+!results/README.md
+
+# Keep the folder guide, but leave generated checkpoints local-only.
+!weights/
+weights/*
+!weights/README.md
+
+# Keep the deterministic visual sample and small audit reports.
+!reports/figures/
+!reports/figures/r75_pilot_preview.png
+!reports/figures/r75_antialias_edge_zoom.png

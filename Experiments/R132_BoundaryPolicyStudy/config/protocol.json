@@ -1,0 +1,83 @@
+{
+  "utc": "2026-09-14T13:38:34.705798+00:00",
+  "question": "Is the fixed80px Raw retention necessary, overly broad, or masking underlying size bias?",
+  "widths": [
+    80,
+    64,
+    32,
+    16,
+    0
+  ],
+  "transition": 16,
+  "zero_means": "No retention and no transition: exact pre-guard output",
+  "checkpoint": {
+    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+    "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
+  },
+  "steps": 4,
+  "training_updates": 0,
+  "populations": {
+    "normal_SEM": "exposures13/14/15, same36 pillars; outer20 and inner16 from source grid",
+    "motion": "all201frames; locked120 and all194within-session;3repositionings retained",
+    "crop_context": "same centralpillar16, left crop measurement-window margins0/16/32/64/96 for each of3 exposures; original fullfield reference retained"
+  },
+  "crop_limit": "Crop tests change actual FOV and therefore global optical/quality statistics too; they test operational context sensitivity, not only neural padding. No independent new physical sample.",
+  "metrics": [
+    "same fineSEM+signed size and centered shape",
+    "same LSC+worst pairs and source-defined edge windows",
+    "same-object cropped-vs-full appearance andSEM"
+  ],
+  "decision": "No composite score or invented application tolerance. Prefer complete object treatment; do not declare all pixel borders safe from pillars tens of pixels inside. Existing model unchanged until evidence interpreted. Report all tradeoffs.",
+  "required": {
+    "whole_SEM_rows": 540,
+    "crop_SEM_rows": 75,
+    "motion_centers": 9045,
+    "frames_per_width": 201
+  },
+  "sources": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R131_RecurrentStepValidation\\config\\protocol.json",
+      "sha256": "3297558fca85b2b345f1f77ad3a95deffa64aee51286a9e1125c575296d347bb"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\extract_sem.m",
+      "sha256": "439e17c80d16d33ce7f067319c4031910bc508c3b894d012e42c8dc83b9bffef"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\sem_reference.mat",
+      "sha256": "329ebe6444095ae21f1579d0779b5fc948d9af828848440217ff902bd71f529b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R131_RecurrentStepValidation\\results\\edge_diagnostic\\exposure13.npz",
+      "sha256": "9282d5f867e3adccdb2252c95bdbbffcbc47191958bbbc6af278e88f83de74b5"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R131_RecurrentStepValidation\\results\\edge_diagnostic\\exposure14.npz",
+      "sha256": "72f890a25f80de24e3f8d18e96df0541ccd1fc8f935a1e254c7326b999524c48"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R131_RecurrentStepValidation\\results\\edge_diagnostic\\exposure15.npz",
+      "sha256": "749b04aac1a556dc40cc3220f25734bd56ac08f6cbd49f307b39f3ab6df74184"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R131_RecurrentStepValidation\\results\\edge_diagnostic\\verified.json",
+      "sha256": "b3509a4fb41dfc51ce6f00fb8221bd2bc8c2ab1523bffc42466b3bfa39e61258"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+      "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\Final_Data_Figures\\01_CURRENT_THESIS_RESULTS_V42_CENTER9\\config\\sequence_center9_50x20x.json",
+      "sha256": "e7bd2e86490882ee23b65ecf467624df69546fd51b76e51b12232142a34f8601"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\locked_pairs.csv",
+      "sha256": "fe9986e12e9eac590b6efc53ec31aad6be66eec0e88d901fd4e8b4d274c897ba"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\all_adjacent_pairs.csv",
+      "sha256": "4f9d03430aeb0ae0865d244b06d3235e823e8b1123ac98573fa6ee20e75fb268"
+    }
+  ]
+}

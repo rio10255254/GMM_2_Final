@@ -1,0 +1,149 @@
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '262', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-004｜SEM資料與監督｜用途辨識】SEM配對堆疊經重取樣位置：4.2 座標系統與物體空間換算此處的SEM配對資料是輪廓驗證堆疊，.03718 µm/pixel是其有效尺度，不是原生光學解析度。這句本身沒有說該堆疊是訓練輸入；要與第4.5節分開核對。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '263', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:08:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+我其實連這邊論文在講啥都不知道，我覺得沒必要的就乾脆通通刪掉，不必特別講太多
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '265', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【CHECK-007｜前後一致性與待核對事項｜重要】PSF尺寸101與125需交代關係位置：4.2 座標系統與物體空間換算本段寫固定101×101；第4.4.2節卻寫125×125。可能是校正核與網路核不同，但目前沒有清楚交代轉換、補值或重取樣關係，不能直接假定哪個數字正確。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '266', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:08:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+應該是101x101
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '268', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-025｜方法與量測限制｜重要】實際有效倍率校正仍留待日後位置：4.2 座標系統與物體空間換算本段明確把實測有效倍率列為日後工作，表示現行原生20倍／50倍結果仍基於名義尺度。應保留此條件，不能改寫為已完成可追溯尺度校正。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '269', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:10:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+像這種就是講太多不必要講的，應該把這類的與相關的論述都移除以免橫生枝節
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '275', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-005｜SEM資料與監督｜一般】SEM參考是PSF擬合的幾何前提位置：4.3.1 參考區域、方向與逐顆幾何這是光學校正的SEM依賴；後半的配對錯誤風險是條件式提醒，不是已證實本次配對錯誤。若只標「SEM訓練影像」會誤導。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '277', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-006｜SEM資料與監督｜用途辨識】SEM影像的方向與身分配對位置：4.3.1 參考區域、方向與逐顆幾何此段是光學／SEM幾何對位流程，不能單憑出現「SEM影像」就認定其像素被送入神經網路。它是後續PSF校正與參考量測的資料前提。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '281', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-007｜SEM資料與監督｜用途辨識】SEM數值是逐顆半徑位置：4.3.2 SEM 半徑換算與逐顆參考幾何此處提供的是九顆pillar的數值半徑，轉換成CD參考；不是一組原始SEM像素輸入。其數值如何用來形成PSF理想幾何，見本節及4.3.3。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '283', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-008｜SEM資料與監督｜重要】同一SEM幾何兼作校正與尺寸參考位置：4.3.2 SEM 半徑換算與逐顆參考幾何原文明示兩種用途：PSF理想參考與後續CD比對。這屬校正及驗證參考重用的關鍵敘述；不應把中心九顆的CD結果稱為完全獨立的外部驗證。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '284', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:19:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+看不懂你的問題在哪，為何不算獨立?
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '288', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-009｜SEM資料與監督｜一般】由SEM幾何建立理想影像並對位位置：4.3.3 參數化 PSF 與 BADS 擬合這是SEM幾何衍生的理想影像，不等於SEM灰階外觀直接作為光學重建目標。用途在PSF擬合前的幾何對位。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '290', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-026｜方法與量測限制｜重要】PSF及Zernike只有等效意義位置：4.3.3 參數化 PSF 與 BADS 擬合本段承認白光以單一等效標量模型近似；擬合係數不是完整波前量測，也不是元件精確製造誤差。這是物理可解釋性的重要界線。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '292', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-010｜SEM資料與監督｜重要】SEM尺寸生成Iref位置：4.3.3 參數化 PSF 與 BADS 擬合本句直接交代SEM尺寸→理想幾何影像Iref→候選PSF卷積。可確認SEM資訊參與成像先驗建立，但不能據此說網路直接學習SEM灰階紋理。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '294', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【CHECK-008｜前後一致性與待核對事項｜一般】PSF梯度權重缺乏可重現數值位置：4.3.3 參數化 PSF 與 BADS 擬合本段說依數值尺度設定並重校，但沒有在此列出實際係數或完整決定式。這是需核對的實作資訊，不是已證實最佳化錯誤。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '296', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-011｜SEM資料與監督｜一般】PSF最佳化持續使用SEM參考幾何位置：4.3.3 參數化 PSF 與 BADS 擬合這裡的「損失」是BADS光學校正損失，不是神經網路反向傳播損失。兩種最佳化要分清楚；生成的PSF之後才作為模型先驗。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '300', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-027｜方法與量測限制｜一般】模組原理已有方法基礎位置：4.4 量測導向單張影像重建模型本段把本文定位為針對量測失效重新配置既有原理。可支持整合式方法創新，但不支持把抗混疊或殘差本身說成新發明。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '301', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:22:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+我希望可以強化本論文的地位，所以看你有什麼寫法
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '305', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-028｜方法與量測限制｜用途辨識】單張推論不代表單張訓練位置：4.4.1 同尺寸編碼器—解碼器與抗混疊上取樣明確使用連續影格及已知位移作訓練監督，並不與單張推論衝突。不過正式位移影格是否隔離，須依第5.4.3節判斷，不能由「每張獨立重建」推論資料獨立。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '307', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【WORD-008｜自我削弱與修訂措辭｜一般】單張訓練的反向澄清可以整併位置：4.4.1 同尺寸編碼器—解碼器與抗混疊上取樣此段與上一段的訓練／推論分工重複。可改為一次正面交代「單張推論、多影格訓練監督」，不需要反覆否定誤解；事實仍應保留。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '308', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:23:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+好的去仔細核對並改為正面論述
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '312', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-012｜SEM資料與監督｜一般】SEM衍生PSF進入網路內部位置：4.4.2 空間變異 PSF 融合模組本段把第4.3節的校正核接到網路先驗。結合SEM理想幾何的來源，可辨識間接SEM資訊路徑；這不是SEM影像直接輸入網路的證明。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '314', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【CHECK-009｜前後一致性與待核對事項｜重要】125×125與其他章101×101不一致位置：4.4.2 空間變異 PSF 融合模組第4.2節與6.1.2節寫101×101，本段則為125×125。請核對是否分別屬於校正核／網路核，以及是否有補值或重取樣；目前文字無法自行消除差異。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '315', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:26:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+我已在前面跟你確認
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '317', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-029｜方法與量測限制｜一般】平均PSF對個別影像不完全吻合位置：4.4.2 空間變異 PSF 融合模組作者承認固定融合是平均模糊近似，所以只用低權重。這是固定先驗的適用限制，不是每張影像均已被精確光學校正。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '318', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:27:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+不要刻意提到權重很小，不然人家會下意識覺得光學修正是個幌子
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '320', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-030｜方法與量測限制｜一般】四候選凸組合的表達範圍有限位置：4.4.2 空間變異 PSF 融合模組此約束提高可控性，也限定光學修正僅在四候選響應的凸組合內。它不保證能涵蓋所有未見模糊；這是由本段設計直接得到的範圍限制。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '322', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【CHECK-010｜前後一致性與待核對事項｜重要】全域權重與空間變異名稱需釐清位置：4.4.2 空間變異 PSF 融合模組本文說權重反映整張輸入的整體模糊，而不是逐像素空間權重。可能是以多位置先驗處理不同影像／裁切，但不能直接等同一張圖內逐位置PSF都自適應；建議將空間變異的實作層級說清楚。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '323', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:29:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+但我的模型就是能用幾個PSF去描述出所有局部位置的光學模糊特性啊不是嗎?這不就是我模型理那個PSF小模型在做的事嗎?我看不懂你的疑慮
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '327', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-031｜方法與量測限制｜一般】主幹仍可能存在邊界問題位置：4.4.3 方向感知且受限的邊界殘差本段描述加上邊界分支之前可能遇到的過度平滑、不連續與不對稱，是設計動機，不宜誤標成已證實完整MOSR輸出必定有這些缺陷。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '329', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-032｜方法與量測限制｜重要】殘差上限不保證幾何完全不變位置：4.4.3 方向感知且受限的邊界殘差作者明確承認局部幅度限制不能保證整個網路不改變幾何。這是必要限制；可精簡反覆出現的免責措辭，但不能改成已證明嚴格保形。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '330', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:29:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+可去做精簡不然看起來很心虛
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '334', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-033｜方法與量測限制｜一般】小幅灰階變化仍可能累積輪廓偏移位置：4.4.4 以輸入影像為基準的殘差輸出與受限高頻細節注入本段直接說明局部修正上限與全局幾何誤差不是同一件事，應與「輸入錨定」的效果範圍一起解讀。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '336', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-034｜方法與量測限制｜重要】模型高頻不必然是真實結構位置：4.4.4 以輸入影像為基準的殘差輸出與受限高頻細節注入此段承認高頻可能含雜訊、過衝或反射紋理，是反對「一定只重建真實細節」的直接文字。限制措施降低風險，但本文仍需依實際輪廓及位移結果判斷。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '340', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-035｜方法與量測限制｜一般】品質差影像仍有雜訊放大風險位置：4.4.5 輸入品質感知調節這是品質感知調節的動機，並非證明完整MOSR在所有低品質資料都失敗。應避免把品質分數當成已校準的成功機率或絕對可靠度。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '341', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:40:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+那你要去修飾這個地方
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '343', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【CHECK-011｜前後一致性與待核對事項｜一般】座標網格不變不代表輪廓座標不變位置：4.4.5 輸入品質感知調節本段說調整灰階不做幾何重取樣，這不等同後端最大梯度位置必然不移動；第4.4.3、4.4.4節亦說明灰階改動能影響圓心。需區分像素索引與估得的幾何位置。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '344', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:40:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+所以這邊該怎麼寫比較好?
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '346', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-036｜方法與量測限制｜重要】其餘模組未有獨立因果證據位置：4.4.5 輸入品質感知調節本段直接限制模組層級的創新證明：只支持完整模型整體結果，現行獨立消融僅涵蓋上取樣。此限制是真實研究範圍，不宜僅刪除措辭後改稱每個模組均已驗證。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '347', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:43:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+這段應該直接刪除或改成無害的正面論述，不要一直這樣作繭自縛
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '351', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【WORD-009｜自我削弱與修訂措辭｜一般】多來源需求的口語弱化位置：4.5 訓練資料與監督來源「偏偏」帶有口語與受限語氣。可中性說明不同來源提供不同監督資訊，不必把方法起點寫得像資料不足造成的不得已。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '352', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:43:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+好的這邊你去做修飾
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '354', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-013｜SEM資料與監督｜優先檢視】SEM明列為訓練監督來源位置：4.5 訓練資料與監督來源這是全文最直接的SEM參與訓練敘述之一：SEM與其他來源被不同訓練目標取用。可確認作者聲稱使用SEM相關監督，但尚不能分辨是原始影像、輪廓、半徑或衍生標籤逐樣本如何進入訓練。需對照來源清單、標籤生成及損失實作。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '355', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:44:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+所有關於真實SEM影像或是pillar實拍影像進入訓練資料的論述都是錯的，應該從全篇刪除!!!
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '357', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-014｜SEM資料與監督｜重要】前段SEM監督的延伸主張位置：4.5 訓練資料與監督來源承接上一段包含SEM的多來源監督，這裡以「唯有同時動用」宣稱必要性。它強化了SEM資訊被使用的印象；缺少移除SEM監督的消融時，不宜把各來源皆不可缺少當作已證明結論。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '358', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:45:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+同上，所有關於真實SEM影像或是pillar實拍影像進入訓練資料的論述都是錯誤的應該被完整移除
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '362', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-037｜方法與量測限制｜一般】合成監督不能單獨代表真實外觀位置：4.5.1 功能分離的多來源監督本段揭露合成幾何與實拍外觀的差距。這是多來源訓練的限制與動機，不等於整體資料集沒有處理雜訊或像差。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '364', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-038｜方法與量測限制｜一般】實拍光學邊界不能直接當絕對幾何標籤位置：4.5.1 功能分離的多來源監督本文承認光學邊界受到PSF及取樣影響，因此不能把原圖當成無誤差的幾何真值。此限制與輸入錨定保留原始偏差的可能性需一起理解。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '366', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-015｜SEM資料與監督｜優先檢視】SEM監督是幾何而非灰階外觀位置：4.5.1 功能分離的多來源監督原文明確說SEM用於物理尺度與邊界幾何，且不要求光學重建複製SEM灰階。這是關鍵區分：可標為SEM幾何監督，不宜改稱「SEM灰階影像直接作為網路輸入」；仍需交代實際標籤形式與資料身分。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '367', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '彥諠 江', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-09T14:46:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': '彥江'}
+如果不是真實SEM影像當訓練資料就OK，不然會看起來在用答案做訓練

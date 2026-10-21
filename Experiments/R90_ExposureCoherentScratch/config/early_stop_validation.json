@@ -1,0 +1,74 @@
+{
+  "protocol_id": "R90_EARLY_STOP_VALIDATION_20260811",
+  "locked_before_stage_outputs": true,
+  "purpose": "Choose a useful R90 stopping point without treating epoch 100 as a goal, then decide whether that frozen checkpoint is suitable for an emergency ONNX package.",
+  "formal_project_baseline_unchanged": "COMBO",
+  "candidate_role": "research and emergency-delivery candidate only",
+  "stage_candidates": [20, 25, 30, 35, 40, 45, 50, 55],
+  "excluded_stages": {
+    "epochs_5_to_15": "The stored validation and live previews show near-identity behavior; they are retained on disk but are not useful reconstruction candidates.",
+    "epochs_after_55": "No fully completed checkpoint exists because training was stopped after epoch 55."
+  },
+  "checkpoint_root": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/weights/formal/seed_900041/R90_scratch_seed900041_20260811_104322/weights",
+  "checkpoint_sha256": {
+    "20": "07e6559e4a225d0a530ef4eae3b053840e209b095bf0eaf300d51c5a58e4e1a1",
+    "25": "c722e62674c264bf54f978650c00a2c526bd52c447385ff3492dee027ce4f2f3",
+    "30": "19240c7edd61cef99c46803498a3b8e440f1ecce899b0dbd287b6660a35dee82",
+    "35": "c270f2542c0ea78794c22c4b7dd81bff231ac8319171789cf04dc3acc2d53e48",
+    "40": "d617604dad8b687f06c85290f1779cc700a172aba8fe4c154f359dbc1181e948",
+    "45": "8ca8e8968cbf9f9da36f8525820ff112df492775a05e74214972adeb86ea7861",
+    "50": "d456dd894061fc4982e4bbda2c8fe349fcc149c2f4664c11adb77b74e2454426",
+    "55": "133aa0cb18487ef7c24c2651926efc62565d962ddb321ace24320f9eab195c43"
+  },
+  "model_file": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/model/r90_model.py",
+  "model_file_sha256": "0999410eb7e11c3626a25f83dbdea7c633137dcd66f75d2a7536d519a7069a6d",
+  "development_arms": {
+    "real_appearance": {
+      "source_config": "D:/GMM_2_Final/Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/config/experiment.json",
+      "sequences": ["5x_0p5um", "5x_1um", "20x_0p5um", "20x_1um", "50x_0p5um", "50x_1um"],
+      "fixed_frame_indices": [0, 12, 24, 36, -1],
+      "expected_frames": 30,
+      "interpretation": "Raw-based appearance measurements detect strength and artifacts but are not shape truth."
+    },
+    "sem_contour": {
+      "optical_inputs": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/results/full_validation_epoch055/sem_acm/locked_optical_inputs",
+      "exposures": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+      "physical_pillars": 36,
+      "method": "The frozen Chan-Vese contour rule, fixed SEM pairing, and translation-only alignment used in the completed R90 epoch-55 validation.",
+      "primary_concern": "Exposure 18 and 19 optical-edge expansion, especially the worst exposure rather than only the overall median."
+    },
+    "stored_training_validation": {
+      "policy": "Read the metrics already embedded in each checkpoint; do not open the sealed holdout again for checkpoint selection."
+    }
+  },
+  "selection_policy": {
+    "method": "Pareto comparison with safety-first tie breaking; no single weighted average and no visually selected image decides the checkpoint.",
+    "objectives": [
+      "SEM contour agreement over all 36 physical pillars and all 12 exposures",
+      "SEM worst-exposure contour agreement and radial edge shift",
+      "real-image detail increase at 5x, 20x, and 50x",
+      "low dark-edge and off-source edge warnings",
+      "stored clean-input preservation and motion stability"
+    ],
+    "tie_breaking": [
+      "Remove checkpoints with a clear worst-exposure contour failure or low-magnification dark-outline regression.",
+      "Among the remaining non-dominated checkpoints, prefer the one with useful detail at all three magnifications.",
+      "If two checkpoints are practically indistinguishable, prefer the earlier epoch."
+    ],
+    "sealed_holdout_reuse_for_selection": false
+  },
+  "confirmation_policy": {
+    "after_one_checkpoint_is_frozen": [
+      "Reconstruct all 301 frames and recompute the six locked motion sequences.",
+      "Verify full-image versus canonical tiled reconstruction and multiple core sizes.",
+      "Export ONNX and verify PyTorch versus ONNX parity on synthetic, 5x, 20x, 50x, SEM, and JunHua inputs.",
+      "Run an extracted-archive smoke test and verify every manifest hash."
+    ],
+    "external_gmf": "Unavailable until a valid license key is supplied; do not claim external GMF validation.",
+    "delivery_decision": "Package only if the frozen checkpoint remains stable in confirmation. Otherwise keep R61 as the emergency delivery package."
+  },
+  "output_roots": {
+    "results": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/results/early_stop_validation",
+    "reports": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/reports/early_stop_validation"
+  }
+}

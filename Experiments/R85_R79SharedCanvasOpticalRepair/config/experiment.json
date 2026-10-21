@@ -1,0 +1,81 @@
+{
+  "experiment_id": "R85_R79SharedCanvasOpticalRepair",
+  "created_date": "2026-08-10",
+  "status": "protocol_locked_before_training",
+  "formal_baseline_unchanged": true,
+  "parent": {
+    "name": "R84C epoch 10",
+    "checkpoint": "weights/seed/r84_parent.pth.tar",
+    "checkpoint_sha256": "cc49f4d179f175edcb0aff39ee8f008af092acdde75e104f5f61d61c3cfffb4b"
+  },
+  "teacher": {
+    "name": "R79 epoch 23 EMA",
+    "checkpoint": "weights/teacher/r79e23_teacher.pth.tar",
+    "checkpoint_sha256": "8aaaa9a85a0a86e77eeb4368bdbc1dd706c8fd9f9654ddd9c6498bd8697f367a",
+    "role": "synthetic-input behavior preservation only; never replaces the analytic label"
+  },
+  "repair": {
+    "shared_canvas_optical_preconditioner": true,
+    "preconditioner_strength": 1.0,
+    "preconditioner_execution": "once on the reflect-padded canonical canvas before either full or tiled local inference",
+    "student_normalization": "R84 per-pixel grouped channel normalization",
+    "global_weak_psf_path": "bypassed",
+    "architecture_topology_changed": false
+  },
+  "data": {
+    "formal_package": "D:/GMM_2_Final/Experiments/R83_R79SevereMicroscopyStrengthening/data/r83_formal_severe_microscopy",
+    "formal_manifest_sha256": "ea0d61557661d64ec4db05d7358388d7cd58b6247340c052188eb574a37817f1",
+    "training_subset_pairs": 1024,
+    "training_subset_lock": "reports/R85_TRAINING_SUBSET_LOCK.json",
+    "training_subset_lock_sha256": "24e7acb299f425484f17d490bdd6706edc76389c9f547742bd0e5ddba3e547dd",
+    "validation_pairs": 512,
+    "training_source": "procedural geometry only",
+    "real_or_sem_training_pixels": false,
+    "analytic_label_remains_primary": true,
+    "new_locked_holdout": {
+      "profile": "locked_holdout",
+      "pairs": 384,
+      "selection_allowed": false,
+      "must_exist_before_training": true
+    }
+  },
+  "training": {
+    "seed": 850917,
+    "epochs": 10,
+    "eligible_epochs": [5, 10],
+    "batch_size": 4,
+    "learning_rate": 0.000001,
+    "trainable_scope": "all local student parameters except global physics and weak-PSF paths",
+    "analytic_loss": {"l1": 1.0, "edge": 0.9, "laplacian": 0.02},
+    "teacher_preservation_loss": {"l1": 1.0, "edge": 0.5},
+    "teacher_inputs": "the same procedural source canvas only",
+    "teacher_or_sem_pixels_saved_into_training_set": false
+  },
+  "selection": {
+    "uses": ["procedural validation", "three fixed structural tile fixtures"],
+    "forbids": ["new locked holdout", "R73", "R74", "SEM", "real motion"],
+    "eligibility": {
+      "median_mae_relative_to_R79_max": 1.05,
+      "median_edge_mae_relative_to_R79_max": 1.08,
+      "tile_mean_max": 0.1,
+      "tile_p99_max": 1.0,
+      "tile_max_max": 3.0
+    },
+    "ranking": ["lowest validation edge MAE", "lowest validation MAE", "earliest epoch"],
+    "fallback": "retain R79"
+  },
+  "final_confirmation": {
+    "new_locked_synthetic": {
+      "median_mae_relative_to_R79_max": 1.05,
+      "median_edge_mae_relative_to_R79_max": 1.08,
+      "acm_boundary_relative_to_R79_max": 1.08,
+      "acm_success_required": 1.0
+    },
+    "R73_boundary_px_max": 0.30,
+    "R74_boundary_relative_to_R79_max": 1.05,
+    "SEM_all36_boundary_relative_to_R79_max": 1.10,
+    "real_motion_required": "6/6",
+    "tile_all_samples_required": true,
+    "promotion_rule": "every gate must pass"
+  }
+}

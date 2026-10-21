@@ -1,0 +1,370 @@
+{
+  "summary": {
+    "input_source_commit": "f44bbfe566a8b754203bebb24f56ba86c0477fa1",
+    "original_project_reference_documents": 7,
+    "original_citation_occurrences": 23,
+    "distinct_original_citation_urls": 17,
+    "pinned_official_implementation_sources": 9,
+    "R153_completed_external_implementations": 7,
+    "R153_blocked_implementations_kept_separate": [
+      "UNet",
+      "MambaIRv2"
+    ],
+    "new_paper_PDFs_or_model_downloads": 0,
+    "new_external_literature_review_claimed": false,
+    "citation_reference_does_not_prove_local_experiment_success": true,
+    "whole_project_complete": false
+  },
+  "original_project_documents": [
+    {
+      "path": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "bytes": 4735,
+      "sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16"
+    },
+    {
+      "path": "Experiments/R119_SequenceGeometryValidation/reports/R119_CAUSAL_AUDIT.md",
+      "bytes": 15361,
+      "sha256": "ac16191221dc7dca23c1e650adcadb445729e7feb35ae318b5c1e2dbd285eb1d"
+    },
+    {
+      "path": "Experiments/R122_OperatorPrinciples/reports/R122_RESULTS.md",
+      "bytes": 11786,
+      "sha256": "a633b4b2415e060c6def6ccfff3cfeffaf460e6b8f6cfbac8c71e73f08d22b16"
+    },
+    {
+      "path": "Experiments/R122_OperatorPrinciples/reports/MODEL_DESIGN.md",
+      "bytes": 10445,
+      "sha256": "fb381789cb23785dac329dd7c7709bd2b68b2915670909259868a70b68efa2f4"
+    },
+    {
+      "path": "Experiments/R123_RealFirstModelDesign/reports/R123_DESIGN.md",
+      "bytes": 12028,
+      "sha256": "c314da81b0efc8c0b4c3a3ea54568a25b50fc9094b50173ad1318b6a64970fd3"
+    },
+    {
+      "path": "Experiments/R147_FullResPSFConsistency/reports/R147_INTERNAL_AUDIT.md",
+      "bytes": 14535,
+      "sha256": "5cae1d08da554372b01d94dedf57a3b789e43a57a3aa19c1a76b0f0ae6af2b6d"
+    },
+    {
+      "path": "Experiments/R117_CenterLockedSubpixelScratch/analysis/design_audit_20260905/FINDINGS.md",
+      "bytes": 11549,
+      "sha256": "fabfc3d2972a502b3454e5f4f8c16c417d9fc5eef9a9738c0b42e7c77f452683"
+    }
+  ],
+  "citations": [
+    {
+      "label_in_original": "CARE",
+      "url": "https://www.nature.com/articles/s41592-018-0216-7",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 7,
+      "original_section": "真實紋理不能靠平坦標準答案學出來",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Noise2Noise",
+      "url": "https://proceedings.mlr.press/v80/lehtinen18a",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 7,
+      "original_section": "真實紋理不能靠平坦標準答案學出來",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Boundary Loss",
+      "url": "https://proceedings.mlr.press/v102/kervadec19a.html",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 13,
+      "original_section": "邊界要直接量，不能只靠整張像素或梯度",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Hausdorff 距離損失",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31329113/",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 13,
+      "original_section": "邊界要直接量，不能只靠整張像素或梯度",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Boundary IoU",
+      "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Cheng_Boundary_IoU_Improving_Object-Centric_Image_Segmentation_Evaluation_CVPR_2021_paper.html",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 13,
+      "original_section": "邊界要直接量，不能只靠整張像素或梯度",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Topology-Preserving Deep Image Segmentation",
+      "url": "https://proceedings.neurips.cc/paper/2019/hash/2d95666e2649fcfc6e3af75e09f5adb9-Abstract.html",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 19,
+      "original_section": "孔洞與斷裂要當成拓撲錯誤",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Focal Frequency Loss",
+      "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Jiang_Focal_Frequency_Loss_for_Image_Reconstruction_and_Synthesis_ICCV_2021_paper.html",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 25,
+      "original_section": "頻率損失只能保護已知存在的細節",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Making Convolutional Networks Shift-Invariant Again",
+      "url": "https://proceedings.mlr.press/v97/zhang19a.html",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 31,
+      "original_section": "分塊一致性要從取樣與模型運算處理",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "EDSR",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017_workshops/w12/papers/Lim_Enhanced_Deep_Residual_CVPR_2017_paper.pdf",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 31,
+      "original_section": "分塊一致性要從取樣與模型運算處理",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Equivariant Imaging",
+      "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Chen_Equivariant_Imaging_Learning_Beyond_the_Range_Space_ICCV_2021_paper.html",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 37,
+      "original_section": "位移要以等變性與次像素量測直接約束",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Guizar-Sicairos 等人的次像素配準",
+      "url": "https://opg.optica.org/ol/abstract.cfm?URI=ol-33-2-156",
+      "source_document": "Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md",
+      "source_sha256": "594a702ce3e304601eed4de23a7b7b605bccba40ea74ce712776819dc8a84e16",
+      "source_line": 37,
+      "original_section": "位移要以等變性與次像素量測直接約束",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Making Convolutional Networks Shift-Invariant Again",
+      "url": "https://proceedings.mlr.press/v97/zhang19a.html",
+      "source_document": "Experiments/R119_SequenceGeometryValidation/reports/R119_CAUSAL_AUDIT.md",
+      "source_sha256": "ac16191221dc7dca23c1e650adcadb445729e7feb35ae318b5c1e2dbd285eb1d",
+      "source_line": 170,
+      "original_section": "6. Sequence and confirmation readout problems",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Antun et al., 2020",
+      "url": "https://arxiv.org/abs/1902.05300",
+      "source_document": "Experiments/R122_OperatorPrinciples/reports/R122_RESULTS.md",
+      "source_sha256": "a633b4b2415e060c6def6ccfff3cfeffaf460e6b8f6cfbac8c71e73f08d22b16",
+      "source_line": 109,
+      "original_section": "6. 驗證、保留與範圍",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Liu et al., 2025",
+      "url": "https://www.nature.com/articles/s41467-025-60093-w",
+      "source_document": "Experiments/R122_OperatorPrinciples/reports/R122_RESULTS.md",
+      "source_sha256": "a633b4b2415e060c6def6ccfff3cfeffaf460e6b8f6cfbac8c71e73f08d22b16",
+      "source_line": 109,
+      "original_section": "6. 驗證、保留與範圍",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "2020 paper",
+      "url": "https://arxiv.org/abs/1902.05300",
+      "source_document": "Experiments/R122_OperatorPrinciples/reports/MODEL_DESIGN.md",
+      "source_sha256": "fb381789cb23785dac329dd7c7709bd2b68b2915670909259868a70b68efa2f4",
+      "source_line": 54,
+      "original_section": "5. Immediate concrete next work",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "2025 paper",
+      "url": "https://www.nature.com/articles/s41467-025-60093-w",
+      "source_document": "Experiments/R122_OperatorPrinciples/reports/MODEL_DESIGN.md",
+      "source_sha256": "fb381789cb23785dac329dd7c7709bd2b68b2915670909259868a70b68efa2f4",
+      "source_line": 54,
+      "original_section": "5. Immediate concrete next work",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "MoDL",
+      "url": "https://arxiv.org/abs/1712.02862",
+      "source_document": "Experiments/R123_RealFirstModelDesign/reports/R123_DESIGN.md",
+      "source_sha256": "c314da81b0efc8c0b4c3a3ea54568a25b50fc9094b50173ad1318b6a64970fd3",
+      "source_line": 113,
+      "original_section": "7. 哪些部分還沒有完成",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Learned Primal-Dual",
+      "url": "https://arxiv.org/abs/1707.06474",
+      "source_document": "Experiments/R123_RealFirstModelDesign/reports/R123_DESIGN.md",
+      "source_sha256": "c314da81b0efc8c0b4c3a3ea54568a25b50fc9094b50173ad1318b6a64970fd3",
+      "source_line": 113,
+      "original_section": "7. 哪些部分還沒有完成",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Zhang, 2019",
+      "url": "https://proceedings.mlr.press/v97/zhang19a.html",
+      "source_document": "Experiments/R147_FullResPSFConsistency/reports/R147_INTERNAL_AUDIT.md",
+      "source_sha256": "5cae1d08da554372b01d94dedf57a3b789e43a57a3aa19c1a76b0f0ae6af2b6d",
+      "source_line": 74,
+      "original_section": "4. 固定取樣格子會引入額外反應",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "Chaman and Dokmanic, 2021",
+      "url": "https://arxiv.org/abs/2105.04040",
+      "source_document": "Experiments/R147_FullResPSFConsistency/reports/R147_INTERNAL_AUDIT.md",
+      "source_sha256": "5cae1d08da554372b01d94dedf57a3b789e43a57a3aa19c1a76b0f0ae6af2b6d",
+      "source_line": 74,
+      "original_section": "4. 固定取樣格子會引入額外反應",
+      "role": "citation_in_original_project_design_or_audit_not_newly_verified_paper_claim"
+    },
+    {
+      "label_in_original": "原文連結",
+      "url": "https://www.nature.com/articles/s41592-018-0216-7",
+      "source_document": "Experiments/R117_CenterLockedSubpixelScratch/analysis/design_audit_20260905/FINDINGS.md",
+      "source_sha256": "fabfc3d2972a502b3454e5f4f8c16c417d9fc5eef9a9738c0b42e7c77f452683",
+      "source_line": 181,
+      "original_section": "Limits",
+      "role": "bare_primary_source_link_preserved_from_original_project_text"
+    },
+    {
+      "label_in_original": "原文連結",
+      "url": "https://proceedings.mlr.press/v97/zhang19a.html",
+      "source_document": "Experiments/R117_CenterLockedSubpixelScratch/analysis/design_audit_20260905/FINDINGS.md",
+      "source_sha256": "fabfc3d2972a502b3454e5f4f8c16c417d9fc5eef9a9738c0b42e7c77f452683",
+      "source_line": 182,
+      "original_section": "Limits",
+      "role": "bare_primary_source_link_preserved_from_original_project_text"
+    },
+    {
+      "label_in_original": "原文連結",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Blau_The_Perception-Distortion_Tradeoff_CVPR_2018_paper.html",
+      "source_document": "Experiments/R117_CenterLockedSubpixelScratch/analysis/design_audit_20260905/FINDINGS.md",
+      "source_sha256": "fabfc3d2972a502b3454e5f4f8c16c417d9fc5eef9a9738c0b42e7c77f452683",
+      "source_line": 184,
+      "original_section": "Limits",
+      "role": "bare_primary_source_link_preserved_from_original_project_text"
+    }
+  ],
+  "official_implementation_versions": [
+    {
+      "name": "EDSR",
+      "repository": "sanghyun-son/EDSR-PyTorch",
+      "commit": "8dba5581a7502b92de9641eb431130d6c8ca5d7f",
+      "source_url": "https://github.com/sanghyun-son/EDSR-PyTorch",
+      "fixed_source_url": "https://github.com/sanghyun-son/EDSR-PyTorch/tree/8dba5581a7502b92de9641eb431130d6c8ca5d7f",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/config/official_sources.json",
+      "original_pretrained_weights_downloaded": false,
+      "R153_comparison_completed": true,
+      "meaning": "original_source_commit_not_project_training_recipe_or_automatic_performance_claim"
+    },
+    {
+      "name": "RDN",
+      "repository": "yulunzhang/RDN",
+      "commit": "83b0a4336d7394bce8b4a4201806a2dcbfe29ec6",
+      "source_url": "https://github.com/yulunzhang/RDN",
+      "fixed_source_url": "https://github.com/yulunzhang/RDN/tree/83b0a4336d7394bce8b4a4201806a2dcbfe29ec6",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/config/official_sources.json",
+      "original_pretrained_weights_downloaded": false,
+      "R153_comparison_completed": true,
+      "meaning": "original_source_commit_not_project_training_recipe_or_automatic_performance_claim"
+    },
+    {
+      "name": "RCAN",
+      "repository": "yulunzhang/RCAN",
+      "commit": "f722e5d0e1eff45148bfaefd9bc85c6f0f26ce02",
+      "source_url": "https://github.com/yulunzhang/RCAN",
+      "fixed_source_url": "https://github.com/yulunzhang/RCAN/tree/f722e5d0e1eff45148bfaefd9bc85c6f0f26ce02",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/config/official_sources.json",
+      "original_pretrained_weights_downloaded": false,
+      "R153_comparison_completed": true,
+      "meaning": "original_source_commit_not_project_training_recipe_or_automatic_performance_claim"
+    },
+    {
+      "name": "NAFNet",
+      "repository": "megvii-research/NAFNet",
+      "commit": "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+      "source_url": "https://github.com/megvii-research/NAFNet",
+      "fixed_source_url": "https://github.com/megvii-research/NAFNet/tree/2b4af71ebe098a92a75910c233a3965a3e93ede4",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/config/official_sources.json",
+      "original_pretrained_weights_downloaded": false,
+      "R153_comparison_completed": true,
+      "meaning": "original_source_commit_not_project_training_recipe_or_automatic_performance_claim"
+    },
+    {
+      "name": "SwinIR",
+      "repository": "JingyunLiang/SwinIR",
+      "commit": "6545850fbf8df298df73d81f3e8cba638787c8bd",
+      "source_url": "https://github.com/JingyunLiang/SwinIR",
+      "fixed_source_url": "https://github.com/JingyunLiang/SwinIR/tree/6545850fbf8df298df73d81f3e8cba638787c8bd",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/config/official_sources.json",
+      "original_pretrained_weights_downloaded": false,
+      "R153_comparison_completed": true,
+      "meaning": "original_source_commit_not_project_training_recipe_or_automatic_performance_claim"
+    },
+    {
+      "name": "Restormer",
+      "repository": "swz30/Restormer",
+      "commit": "68dc6ac472db26f16361150cb7a96a1bc87da93f",
+      "source_url": "https://github.com/swz30/Restormer",
+      "fixed_source_url": "https://github.com/swz30/Restormer/tree/68dc6ac472db26f16361150cb7a96a1bc87da93f",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/config/official_sources.json",
+      "original_pretrained_weights_downloaded": false,
+      "R153_comparison_completed": true,
+      "meaning": "original_source_commit_not_project_training_recipe_or_automatic_performance_claim"
+    },
+    {
+      "name": "MambaIRv2",
+      "repository": "csguoh/MambaIR",
+      "commit": "33d7b3460c4665229334cc8de38c7f4c766ed3be",
+      "source_url": "https://github.com/csguoh/MambaIR",
+      "fixed_source_url": "https://github.com/csguoh/MambaIR/tree/33d7b3460c4665229334cc8de38c7f4c766ed3be",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/config/official_sources.json",
+      "original_pretrained_weights_downloaded": false,
+      "R153_comparison_completed": false,
+      "meaning": "original_source_commit_not_project_training_recipe_or_automatic_performance_claim"
+    },
+    {
+      "name": "USRNet",
+      "repository": "cszn/USRNet",
+      "commit": "7e4338ff33d8e897c4229dcc224c1f3ecb12d8e6",
+      "source_url": "https://github.com/cszn/USRNet",
+      "fixed_source_url": "https://github.com/cszn/USRNet/tree/7e4338ff33d8e897c4229dcc224c1f3ecb12d8e6",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/config/official_sources.json",
+      "original_pretrained_weights_downloaded": false,
+      "R153_comparison_completed": true,
+      "meaning": "original_source_commit_not_project_training_recipe_or_automatic_performance_claim"
+    },
+    {
+      "name": "UNet",
+      "repository": "lmb-freiburg/Unet-Segmentation",
+      "commit": "870e50366fcdabd7401e7936d1f2a6294dba488d",
+      "source_url": "https://github.com/lmb-freiburg/Unet-Segmentation",
+      "fixed_source_url": "https://github.com/lmb-freiburg/Unet-Segmentation/tree/870e50366fcdabd7401e7936d1f2a6294dba488d",
+      "source_record": "Experiments/R153_MeanExternalBenchmark/config/official_sources.json",
+      "original_pretrained_weights_downloaded": false,
+      "R153_comparison_completed": false,
+      "meaning": "original_source_commit_not_project_training_recipe_or_automatic_performance_claim"
+    }
+  ],
+  "role_notes": [
+    "original paper or library source",
+    "project design interpretation",
+    "actual local experiment results and failure"
+  ]
+}

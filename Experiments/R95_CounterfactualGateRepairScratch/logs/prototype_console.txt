@@ -1,0 +1,112 @@
+{
+  "prototype_id": "R95_CAUSAL_ROUTING_PROTOTYPE_V2",
+  "passed": true,
+  "formal_training_started": false,
+  "checks": {
+    "model_is_exact_identity_at_initialization": true,
+    "need_and_recoverability_are_distinct_maps": true,
+    "boundary_and_texture_paths_are_separate": true,
+    "local_contrast_has_private_learned_tower": true,
+    "need_and_evidence_paths_are_separate": true,
+    "all_output_branches_are_controlled": true,
+    "no_independent_edge_painting_output_exists": true,
+    "counterfactual_clean_view_has_zero_branch_and_need_targets_and_unit_recoverability": true,
+    "counterfactual_branch_targets_sum_to_effective_target": true,
+    "control_tower_receives_no_reconstruction_shortcut_gradient": true,
+    "geometry_tower_receives_no_reconstruction_shortcut_gradient": true,
+    "control_tower_receives_direct_supervision_gradient": true,
+    "common_descent_direction_is_nonopposing_to_every_objective": true,
+    "full_and_tiled_float32_outputs_are_exact": true,
+    "translated_input_produces_translated_branch_outputs_on_valid_interior": true,
+    "real_inputs_are_exact_identity_at_initialization": true,
+    "private_learned_parameter_groups_do_not_overlap": true
+  },
+  "architecture_contract": {
+    "class_name": "EvidenceConditionalTileNet",
+    "parameter_count": 580493,
+    "normalization_layers": 0,
+    "global_pooling_layers": 0,
+    "alignment_multiple": 8,
+    "minimum_halo_px": 192,
+    "raw_identity_at_initialization": true,
+    "need_and_recoverability_are_distinct": true,
+    "need_and_evidence_learned_towers_are_distinct": true,
+    "boundary_and_texture_controls_are_distinct": true,
+    "boundary_and_texture_learned_towers_are_distinct": true,
+    "local_contrast_has_private_learned_tower": true,
+    "all_correction_paths_controlled": true,
+    "control_detached_from_reconstruction": true,
+    "geometry_detached_from_reconstruction": true,
+    "independent_edge_painting_branch": false,
+    "phase_safe_boundary_filter_bank": true,
+    "learned_parameter_group_overlap": false,
+    "parameter_group_counts": {
+      "need_control": 72493,
+      "evidence_control": 72475,
+      "geometry": 72466,
+      "radiometry": 72475,
+      "nuisance": 72484,
+      "local_contrast": 72628,
+      "boundary": 72853,
+      "texture": 72619
+    }
+  },
+  "metrics": {
+    "identity_max_abs_gray": 0.0,
+    "initial_branch_max_abs_gray": {
+      "radiometry_delta": 0.0,
+      "nuisance_delta": 0.0,
+      "local_contrast_delta": 0.0,
+      "restoration_delta": 0.0,
+      "correction": 0.0
+    },
+    "control_map_max_differences": {
+      "boundary_need_vs_evidence": 0.0,
+      "texture_need_vs_evidence": 0.0,
+      "local_contrast_need_vs_evidence": 0.0
+    },
+    "target_control_map_mean_differences": {
+      "boundary_need_vs_evidence": 0.8707890510559082,
+      "texture_need_vs_evidence": 0.7425519227981567,
+      "boundary_vs_texture_need": 0.06534290313720703,
+      "boundary_vs_texture_evidence": 0.11844831705093384,
+      "local_contrast_need_vs_evidence": 0.86628258228302
+    },
+    "clear_zero_target_max_abs": 0.0,
+    "clear_evidence_max_abs_error": 0.0,
+    "target_recomposition_max_abs_gray": {
+      "T_clear": 0.0,
+      "B_noise_free": 0.0,
+      "S_noisy": 0.0
+    },
+    "control_shortcut_gradient_norm": 0.0,
+    "geometry_shortcut_gradient_norm": 0.0,
+    "direct_control_gradient_norm": 0.597542405128479,
+    "common_descent_task_dots": [
+      0.12567901611328125,
+      3.725290298461914e-09,
+      0.46613168716430664
+    ],
+    "full_vs_tiled_max_abs_gray": 0.0,
+    "translation_equivariance_max_abs_gray": {
+      "output": 0.0,
+      "radiometry_delta": 0.0,
+      "nuisance_delta": 0.0,
+      "local_contrast_delta": 0.0,
+      "boundary_delta": 0.0,
+      "texture_delta": 2.319211489520967e-09,
+      "need_local_contrast": 0.0,
+      "local_contrast_evidence": 0.0,
+      "need_boundary": 0.0,
+      "boundary_evidence": 0.0,
+      "need_texture": 0.0,
+      "texture_recoverability": 0.0
+    },
+    "real_initial_identity_max_abs_gray": {
+      "20x_mixed_raw.bmp": 0.0,
+      "50x_array_raw.bmp": 0.0,
+      "5x_dense_raw.bmp": 0.0,
+      "pillar_center9_50x_raw.bmp": 0.0
+    }
+  }
+}

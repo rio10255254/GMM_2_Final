@@ -1,0 +1,149 @@
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '594', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-057｜方法與量測限制｜重要】PFT-SR採六層精簡改版位置：5.4.5 七種代表性外部架構的共同訓練配置結果只代表本文重新訓練的單通道等尺寸精簡配置，不是原論文完整版本上限。對近期模型優劣的文字應完整保留星號與此條件。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '596', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-003｜結果弱點與比較條件｜優先檢視】作者明認最佳化條件不相同位置：5.4.5 七種代表性外部架構的共同訓練配置本段已清楚說不同目標與訓練條件不是純架構試驗。內容是必須保留的比較界線；其中「未假裝」則是可中性化的防禦措辭，不必保留這種語氣。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '600', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-058｜方法與量測限制｜一般】參數量不能代替公平性與模型品質位置：5.4.5 七種代表性外部架構的共同訓練配置參數量只是規模資訊，不是量測勝負或訓練資源相同的證據。尤其精簡PFT-SR與MOSR規模差距大，需依實際配置解讀。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '603', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【DATA-010｜資料重疊與驗證身分｜重要】鎖定120組配對不等於未參與訓練位置：5.4.6 八模型的共同位移比較配置預先依Raw選配對控制的是後端選樣，不會消除第5.4.3節已揭露的正式影格訓練重疊。另中心九顆靜態資料屬校準區，不是八模型主排名。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '605', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-059｜方法與量測限制｜一般】八模型沒有完整CD與輪廓主比較位置：5.4.6 八模型的共同位移比較配置八模型主表只含三項位移；MZC、MIC、MCC及直徑均未納入。不能把MOSR相對Raw的SEM輪廓改善擴大為已在八模型中取得最佳輪廓或尺寸。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '607', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-060｜方法與量測限制｜一般】Raw／Wiener與八模型不是同一排名位置：5.4.6 八模型的共同位移比較配置本段區分傳統參考與學習式架構比較，且平台只提供名義步距。不能把兩組比較混成一個全面最佳結論。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '609', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【DATA-011｜資料重疊與驗證身分｜優先檢視】正式比較再次明示非盲測位置：5.4.6 八模型的共同位移比較配置再次直接揭露正式影格出現在訓練封裝；此處不是單純「樣品相同」，而是實體影格有對應裁切。via與線條也僅作補充，未證明其他形貌的正式量測表現。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '612', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-061｜方法與量測限制｜重要】消融是微調而非從頭重訓位置：5.4.7 抗混疊上取樣的配對消融配置共同起始權重的配對微調可檢查此訓練脈絡的邊際效果，不能推論所有初始化與完整訓練下皆有相同優勢；消融絕對數值也不取代正式MOSR。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '614', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【WORD-011｜自我削弱與修訂措辭｜一般】沒有沿用早期量測表是修稿語氣位置：5.4.7 抗混疊上取樣的配對消融配置可直接交代現行量測流程與資料鎖定；「沒有沿用早期量測表」會把讀者注意力帶向過去版本是否不一致。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '616', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-062｜方法與量測限制｜重要】兩次訓練不能由大量重抽樣補足位置：5.4.7 抗混疊上取樣的配對消融配置本段只有兩組訓練重複；4,000次重抽樣是統計程序，並不是新增4,000次獨立模型訓練。因果證據仍受小量訓練重複限制。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '618', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-063｜方法與量測限制｜重要】其他模組未完成等條件獨立證明位置：5.4.7 抗混疊上取樣的配對消融配置明確認定只有上取樣消融可單獨討論。「不恢復逐項有利結論」則帶有版本修訂語氣，可改中性陳述證據範圍，但不能把未完成的消融寫成已完成。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '626', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-026｜SEM資料與監督｜重要】PSF實驗用SEM尺寸建立理想幾何位置：6.1點擴散函數校正此段再次明示中心九顆SEM尺寸是PSF校正參考。它支持SEM衍生先驗路徑，並非原始SEM灰階影像直接作訓練輸入的證明。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '632', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-064｜方法與量測限制｜一般】100個視野位置仍是同一組實體結構位置：6.1點擴散函數校正作者以同一組pillar移動到100個位置以排除樣品尺寸差異。這是合理PSF取樣設計，但100個位置不是100組獨立樣品，也不等同跨形貌驗證。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '636', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-027｜SEM資料與監督｜重要】SEM參考幾何參與各視野PSF擬合位置：6.1.1點擴散函數擬合結果本段是SEM尺寸→模擬成像→BADS擬合的實驗實作描述。各位置有獨立最佳化結果，不代表SEM資料來源彼此獨立。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '638', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-028｜SEM資料與監督｜重要】SEM校正所得PSF明確用於模型訓練先驗位置：6.1.1點擴散函數擬合結果與上一段合看，這裡直接把SEM幾何建立的PSF接入訓練物理先驗，並選出四候選。這屬間接使用SEM資訊，應與第4.5節直接幾何監督分別標示。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '642', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-029｜SEM資料與監督｜一般】九顆SEM半徑是PSF幾何輸入位置：6.1.1點擴散函數擬合結果逐顆半徑與方向用於形成理想幾何，屬光學校正來源。小數位很多不自動代表同等測量準確度，SEM不確定度仍依第5.2.2節限制解讀。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '644', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-030｜SEM資料與監督｜一般】SEM幾何參與PSF亮度／梯度最佳化位置：6.1.1點擴散函數擬合結果此段的目標函數是PSF的BADS擬合。不要把它與第4.6節神經網路loss混在一起，也不要據此說SEM完全只在最終驗證才出現。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '646', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-004｜結果弱點與比較條件｜重要】兩倍率PSF實際擴散寬度非常接近位置：6.1.1點擴散函數擬合結果本文量得20倍與50倍FWHM約1.3 µm、差約0.012 µm，明確不支持這兩組擬合PSF有明顯解析能力差距。這是光學結果較弱的限定，不能僅憑倍率較高就宣稱本次擬合解析更佳。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '653', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【DATA-012｜資料重疊與驗證身分｜重要】Wiener反卷積不是外部盲測位置：6.1.2 Wiener反卷積基準的必要驗證與第4.7.1節重複揭露校準參數的來源。這是基準方法適用範圍，不能刪掉後將此結果稱為獨立泛化驗證。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '655', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【CHECK-018｜前後一致性與待核對事項｜重要】PSF核尺寸差異在結果章再出現位置：6.1.2 Wiener反卷積基準的必要驗證此處再次寫101×101，與第4.4.2節125×125不同。需要在方法章明確區分用途或統一正確數值，不能由本次標註直接代填。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '657', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-065｜方法與量測限制｜一般】PSF驗證不是每項量測較佳的證明位置：6.1.2 Wiener反卷積基準的必要驗證作者將此實驗限定為確認合理修正，尚非絕對光學核真值或所有尺寸／位移最佳的證明。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '660', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-005｜結果弱點與比較條件｜用途辨識】Wiener伴隨亮暗環與中心亮斑位置：6.1.2 Wiener反卷積基準的必要驗證這是傳統基準的不利影像現象，不是MOSR的同等缺點。保留它有助說明視覺銳化與量測效能不同；不能據此單獨判定PSF已完全正確。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '662', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-066｜方法與量測限制｜一般】代表影像只能作視覺特性說明位置：6.1.2 Wiener反卷積基準的必要驗證本段承認圖6-6不是正式輪廓／位移量化證據。可保留限定，不必把代表圖寫成獨立準確度或全資料可靠性證明。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '664', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【WORD-012｜自我削弱與修訂措辭｜重要】不恢復大量圖是內部修訂敘述位置：6.1.2 Wiener反卷積基準的必要驗證「不恢復大量逐倍率影像、頻譜與重複銳化圖」不屬研究方法或結果，容易讓讀者聯想到刪除過往結果。可直接說明本圖用途；既有必要數值及限制不應因此隱去。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '667', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-067｜方法與量測限制｜一般】結果章再次把CD限為單一輔助值位置：6.2 MOSR輪廓與位移量測結果本段明確說CD僅保留SEM配對的一項數值，故八模型位移優勢不能代替八模型尺寸比較。與題名／研究目的的對應需要一致。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '670', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【CHECK-019｜前後一致性與待核對事項｜重要】四組loss的穩定主張需與圖對照位置：6.2.1 MOSR模型與訓練狀態圖6-7可見三條曲線標為Reconstruction、Gradient magnitude及Edge orientation；沒有直接展示四大組的全部曲線。不能只靠此圖推論每組loss均已穩定，宜核對圖名與文字範圍。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '673', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-068｜方法與量測限制｜一般】訓練曲線不等同量測效能位置：6.2.1 MOSR模型與訓練狀態作者已明確限縮曲線能支持的結論。這是合理證據分工，不是證明結果無效；同類限制可避免在前後段反覆出現。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '675', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-031｜SEM資料與監督｜優先檢視】36顆SEM資料與驗證對象高度重疊位置：6.2.1 MOSR模型與訓練狀態本段直接承認樣本有限且高度重疊，但否定的只是「直接CD回歸loss」。它沒有排除同物件的輪廓、尺度或PSF資訊已以其他形式使用；要與第4.5.1、4.5.2節的SEM監督逐一對帳。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '677', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【WORD-013｜自我削弱與修訂措辭｜一般】收斂不等於量測的重複澄清位置：6.2.1 MOSR模型與訓練狀態與圖6-7圖說及第5.4.4節重複。可集中交代曲線的角色，不必在相鄰段落再一次否定其量測證據地位。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '682', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-069｜方法與量測限制｜重要】SEM配對尺度來自重取樣週期換算位置：6.2.2 評估資料、尺度與共同規則本段明確原生尺度取名義倍率，SEM配對堆疊採另一有效尺度。需保留三者區別；5 µm週期的換算不自動等於包含標準片、擬合與重取樣誤差的完整可追溯尺度校正。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '684', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-032｜SEM資料與監督｜用途辨識】432組配對屬36顆的多曝光驗證位置：6.2.2 評估資料、尺度與共同規則此數字是36顆×12曝光的比較資料，不能當成432個獨立樣品，也不能由「配對」二字推定全部用於訓練。驗證與訓練的物件身分應另列清單。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '686', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【DATA-013｜資料重疊與驗證身分｜重要】結果章重述Wiener非盲測限制位置：6.2.2 評估資料、尺度與共同規則這裡與第6.1.2節內容相近。事實應在適當位置保留，但反覆在結果前重申會打斷論證；精簡時不能改變校準區域內比較的身分。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '692', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-006｜結果弱點與比較條件｜一般】初始位置擾動仍有2.71 nm變化位置：6.2.3 參考圓與圓心定位稽核表6-2不是所有實際位移完全不受初始化影響：4組代表配對最大變化2.71 nm。這與固定資料下的模型差異是不同實驗，不能直接相減或宣稱已構成完整誤差上界。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '694', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-007｜結果弱點與比較條件｜重要】作者直接承認CD較弱位置：6.2.3 參考圓與圓心定位稽核這段同時承認CD結果較弱與稽核範圍有限。數值稽核只能排除已測案例的計算問題，不能排除未校準尺度、成像邊界或參考真值誤差；「不是由…造成」應限於該次檢查涵蓋的情況。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '697', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-033｜SEM資料與監督｜用途辨識】36顆SEM是輪廓比較基準位置：6.2.4 SEM 36顆pillar輪廓驗證此段屬最終評估設計，SEM配對本身不是訓練輸入的證據。需要另外查核與第4.5節監督資料及中心九顆PSF校正物件的交集；本文尚未列出完整對應清單。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '700', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【SEM-034｜SEM資料與監督｜用途辨識】SEM對照圖不是訓練影像展示位置：6.2.4 SEM 36顆pillar輪廓驗證圖6-9並排SEM、Raw與MOSR以展示輪廓比較，不能把它當成光學輸入→SEM灰階標籤訓練的直接證明。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '705', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-008｜結果弱點與比較條件｜一般】SEM表只有Raw與MOSR位置：6.2.4 SEM 36顆pillar輪廓驗證表6-3只列Raw、MOSR，沒有七個外部模型的輪廓／CD數值。因此可主張相對Raw改善，不能宣稱已在八模型中證明輪廓最佳。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '707', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-009｜結果弱點與比較條件｜重要】MOSR仍有84.5 nm輔助直徑誤差位置：6.2.4 SEM 36顆pillar輪廓驗證同表Raw為91.8 nm，改善7.3 nm（文中約8.0%），不是尺寸偏差被消除。這是本文保留的較弱CD證據，不能只報百分比而忽略殘留誤差。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '711', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-010｜結果弱點與比較條件｜重要】CD改善幅度較輪廓／圓度小位置：6.2.4 SEM 36顆pillar輪廓驗證本文自己指出LSC直徑誤差只下降8.0%，與MZC76.0%及輪廓改善相比，尺寸證據較弱。不同指標意義不同，不能以圓度改善替代CD準確度。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '713', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-011｜結果弱點與比較條件｜重要】高曝光使MOSR輪廓相關下降位置：6.2.4 SEM 36顆pillar輪廓驗證0.928降至0.771是作者明報的不利條件，雖仍優於Raw。結果支持部分曝光下改善，不能說完全不受曝光影響，也不能外推所有樣品CD皆改善。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '720', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-012｜結果弱點與比較條件｜重要】20倍0.5 µm的逐步標準差落後Wiener位置：6.2.5 LSC圓心位移結果本列MOSR為11.51 nm，同條件Wiener為10.94 nm。這是正式表中的反例，不應被四序列合併改善率掩蓋。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '722', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-013｜結果弱點與比較條件｜重要】20倍0.5 µm名義步距誤差落後Wiener位置：6.2.5 LSC圓心位移結果本列MOSR為8.60 nm，同條件Wiener為8.29 nm。只能說其他或合併指標改善，不能說每個序列每項指標都最佳。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '724', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-014｜結果弱點與比較條件｜重要】正文保留Wiener更好的子條件位置：6.2.5 LSC圓心位移結果作者直接說20倍0.5 µm時Wiener在標準差與名義誤差較佳；MOSR只在此組陣列內離散度較好。此為真實結果應保留，措辭可集中而非反覆弱化。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '726', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-070｜方法與量測限制｜重要】位移改善尚未建立絕對追溯位置：6.2.5 LSC圓心位移結果這裡限定為相同平台／配對下圓心波動改善，並非已完成獨立實際位移或長度追溯。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '729', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-071｜方法與量測限制｜一般】MZC不適用於本資料的位移中心位置：6.2.5.1 LSC與MZC位移圓心適用性比較這是MZC作中心較差的結果，而不是MZC圓度指標無效或MOSR整體失敗。結論限定本資料與比較流程，不宜外推所有形狀／量測條件。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '731', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【WORD-014｜自我削弱與修訂措辭｜一般】再次否認為提高排名而選擇位置：6.2.5.1 LSC與MZC位移圓心適用性比較本段已有成對數值與預先規則，句尾再次否認偏袒可精簡。真正要保留的是固定判定規則與完整不利／有利結果。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '734', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-072｜方法與量測限制｜重要】消融只有兩個訓練種子與60週期位置：6.2.6 抗混疊上取樣的配對消融這是固定起始權重的60週期配對微調，不是完整MOSR120週期結果的再訓練複驗。不能把其變化直接當作全部MOSR提升的來源。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '737', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【LIMIT-073｜方法與量測限制｜一般】誤差線只來自兩次訓練位置：6.2.6 抗混疊上取樣的配對消融圖6-13的標準差只有兩組固定訓練重複，不能視為廣泛初始化下的穩健效果，也不是量測系統完整不確定度。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '740', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-015｜結果弱點與比較條件｜重要】移除抗混疊後標準差反而小0.08 nm位置：6.2.6 抗混疊上取樣的配對消融差值定義為一般－抗混疊，負值代表一般上取樣在此指標較低。只能依本文指出方向，不能在沒有其信賴區間時宣稱差異顯著。
+
+{'{http://schemas.openxmlformats.org/wordprocessingml/2006/main}id': '742', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}author': '論文審閱', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}date': '2026-09-07T08:00:00Z', '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}initials': 'RV'}
+【RESULT-016｜結果弱點與比較條件｜重要】移除抗混疊後名義誤差反而小0.05 nm位置：6.2.6 抗混疊上取樣的配對消融一般－抗混疊為負，表示一般上取樣平均值略佳。本次消融不是三項全面支持抗混疊。

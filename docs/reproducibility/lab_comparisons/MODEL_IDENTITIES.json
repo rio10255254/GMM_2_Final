@@ -1,0 +1,71 @@
+{
+  "status": "ALL_FOUR_RECORDED_MODEL_IDENTITIES_FOUND_IN_FULL_FROZEN_INVENTORY",
+  "models": [
+    {
+      "method": "mosr",
+      "checkpoint_epoch": 120,
+      "recorded_checkpoint_sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
+      "recorded_original_path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\results\\training_results\\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\\epoch_120.pth.tar",
+      "input_count": 126,
+      "current_frozen_model_locations": [
+        {
+          "logical_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
+          "source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\results\\training_results\\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\\epoch_120.pth.tar",
+          "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
+          "bytes": 35591610,
+          "published_state": "SHA256_VERIFIED"
+        }
+      ]
+    },
+    {
+      "method": "base_unet",
+      "checkpoint_epoch": 12,
+      "recorded_checkpoint_sha256": "26c66852ef7030c6b0445e1892b1f6b304329dc759640fc5761b8c66e64e77d2",
+      "recorded_original_path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\best_base_unet.pth.tar",
+      "input_count": 126,
+      "current_frozen_model_locations": [
+        {
+          "logical_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/best_base_unet.pth.tar",
+          "source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\best_base_unet.pth.tar",
+          "sha256": "26c66852ef7030c6b0445e1892b1f6b304329dc759640fc5761b8c66e64e77d2",
+          "bytes": 17186053,
+          "published_state": "SHA256_VERIFIED"
+        }
+      ]
+    },
+    {
+      "method": "edsr",
+      "checkpoint_epoch": 15,
+      "recorded_checkpoint_sha256": "584e97bc0578dfaa16dab5f1ac4450f2cb23b09d87f6ab20912807050dd0eedb",
+      "recorded_original_path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\Modern_Restoration_Benchmarks_20260719\\results\\edsr\\best_edsr.pth.tar",
+      "input_count": 126,
+      "current_frozen_model_locations": [
+        {
+          "logical_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/best_edsr.pth.tar",
+          "source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\Modern_Restoration_Benchmarks_20260719\\results\\edsr\\best_edsr.pth.tar",
+          "sha256": "584e97bc0578dfaa16dab5f1ac4450f2cb23b09d87f6ab20912807050dd0eedb",
+          "bytes": 17424310,
+          "published_state": "SHA256_VERIFIED"
+        }
+      ]
+    },
+    {
+      "method": "nafnet",
+      "checkpoint_epoch": 15,
+      "recorded_checkpoint_sha256": "3c14534f761a7c027a6bda2db92a14ca87e6818e16356d968d8eea12667e3c9e",
+      "recorded_original_path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\Modern_Restoration_Benchmarks_20260719\\results\\nafnet\\best_nafnet.pth.tar",
+      "input_count": 126,
+      "current_frozen_model_locations": [
+        {
+          "logical_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/best_nafnet.pth.tar",
+          "source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\Modern_Restoration_Benchmarks_20260719\\results\\nafnet\\best_nafnet.pth.tar",
+          "sha256": "3c14534f761a7c027a6bda2db92a14ca87e6818e16356d968d8eea12667e3c9e",
+          "bytes": 17932408,
+          "published_state": "SHA256_VERIFIED"
+        }
+      ]
+    }
+  ],
+  "neural_inference_repeated": false,
+  "full_model_release_publication_not_inferred_from_local_presence": true
+}

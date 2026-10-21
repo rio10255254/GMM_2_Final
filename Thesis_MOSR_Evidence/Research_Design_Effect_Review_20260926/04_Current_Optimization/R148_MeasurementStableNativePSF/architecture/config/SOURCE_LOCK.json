@@ -1,0 +1,24 @@
+{
+  "purpose": "R148 formal scratch8192 native-grid measurement-stable training",
+  "created_utc": "2026-09-26T03:52:55.406246+00:00",
+  "files": {
+    "model.py": "d9155b4c2f008dac606d867672904d16c279e051a3e7747b263cabee01460968",
+    "dataset.py": "ee428f03bbac458e057f5deba3b7681dc73bc2f24648bebcab866c5d0846f10d",
+    "losses.py": "ba7a86b827e84e8abd55bf6326348085402e1f762c0fc12b82414610c961808e",
+    "train.py": "3e3476d4b2870579297c150f13d3ebfb3464f04c0dba3e4aff90426d6b7b5696",
+    "training_policy.py": "7f1065de2a992d927b63de631db3301959e22542eb802c7ccacb67519756a0ae",
+    "infer.py": "256fe47a75ab450a672e7fed00289a062bf4882deefd7e4f80146dbf50670bba",
+    "utils.py": "7e73c5e04ff33dd4d5d4f7a07a96f7c6af88a6949bfb005d052a9c4196cea915",
+    "optical/fullres_psf.py": "9683a48d62ba7ef3bfb0ed125a1364233f4f486f5a05e0a93e64d22041207028",
+    "config/model.json": "b7d06583262b99371007d280b3f4bd20ab0e72b737325071c5e4131e2c17e1eb",
+    "config/train.json": "87b603bf14d979a1457ac2c604cfa64e4f5039c4e1df2c7035a43826061a24d0",
+    "config/data.json": "097a5980203318b2f41735b8468170f0a40c475fb353e634509db4b0803d7c90",
+    "calibration/measured_psf_bank.npz": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+    "calibration/BANK_LOCK.json": "f85c320d3e56bf2a25f7c1af554ce4aec70518ad1f8d2cfedadcee0374bb770a",
+    "data/BASE_DATA_LOCK.json": "cee2beab75b502fb1e44b623a922e2f211e80e9980e0c5e30ba511fe5c8dfdc5",
+    "data/payload/manifest.json": "902299ce2d1a9355a8cf1b16db79b380ce7ec2fee299ebf88e16498887d964e3",
+    "scripts/prepare_data.py": "42b5410c607e4f7b9321c8f61226abe9d8b246d2ecefe763c26d4dc43a09684b",
+    "scripts/preflight.py": "8ad0901c21574777619d0fa69a1fa523aa127d48ecb9ea80024829e71ce3c81b",
+    "scripts/launch_r148.py": "38c1d98cb63e901a60858921e2abb4df73c0ff6b3c05a5debc1cbea54ec8b742"
+  }
+}

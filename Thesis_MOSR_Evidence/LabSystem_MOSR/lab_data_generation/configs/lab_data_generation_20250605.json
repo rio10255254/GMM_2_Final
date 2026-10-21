@@ -1,0 +1,19 @@
+{
+  "run_id": "lab_data_generation_20250605",
+  "status": "ready_for_planning",
+  "source_psf_run": "20250605_inner_circle_roi_fine_prealign_fit",
+  "psf_validation_verdict": "validated",
+  "psf_validation_summary": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_validation/validation_summary.json",
+  "psf_inputs": {
+    "formal_bads_psf": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+    "formal_bads_fit_summary": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/fit_summary.json",
+    "previous_bads_psf": "LabSystem_MOSR/psf_calibration/archive/20250608_psf_cleanup/results/20250605_inner_circle_roi_standard_fit_superseded_by_fine/PSF_fitted_2D_FOVstack.mat",
+    "gaussian_control_sigma_px": 3.5,
+    "gaussian_control_reason": "Fine pre-alignment made the BADS PSF slightly better and much more centroid-stable, but the global Gaussian control is still lower in median edge RMSE. Keep it as a control for the first lab data-generation round."
+  },
+  "next_required_decision": "Define lab training-data generation recipe and compare formal BADS PSF against the Gaussian control before selecting the training PSF.",
+  "blocking_items": [
+    "Need lab data-generation recipe adapted from the original project.",
+    "Need training and validation sample split definition for the lab system."
+  ]
+}

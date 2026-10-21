@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "command": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\cpu_env\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\github_procedural_v2_code\\Tools\\verify_four_round_procedural_sources.py",
+    "--root",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\github_workspace",
+    "--output",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\github_procedural_sources_v2",
+    "--reference",
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction\\original_procedural_sources_v2\\PROCEDURAL_SOURCE_VERIFIED.json"
+  ],
+  "blocked_original_roots": [
+    "D:\\GMM_2_Final",
+    "H:\\GMM_2_Final_Archive",
+    "C:\\曾泰明"
+  ],
+  "allowed_copied_roots": [
+    "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_four_round_github_reproduction"
+  ],
+  "python_workers_inherit_guard": true,
+  "seconds": 6.026130676269531
+}

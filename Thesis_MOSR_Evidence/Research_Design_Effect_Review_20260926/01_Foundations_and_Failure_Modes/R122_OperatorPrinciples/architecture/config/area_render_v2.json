@@ -1,0 +1,6 @@
+{
+  "reason": "The original 8x binary occupancy discretizes latent translation: noise-free line motion error reaches 0.10000003 px. The original results remain as a failed rasterization diagnostic, not physical motion evidence.",
+  "change": "Integrate latent occupancy within high-resolution cells before optical convolution. Line occupancy is exact; circle horizontal intersection is exact and vertical occupancy uses 4-point Gauss-Legendre quadrature. Preserve seed, matrix, readout, fit and thresholds.",
+  "convergence": "Repeat original 36 center checks at 8x and 32x with the repaired renderer, plus circle area and ideal-line checks. Store separately in results/area_render_v2.",
+  "training": false
+}

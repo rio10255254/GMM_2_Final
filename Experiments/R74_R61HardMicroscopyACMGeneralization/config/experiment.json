@@ -1,0 +1,87 @@
+{
+  "experiment_id": "R74_R61HardMicroscopyACMGeneralization",
+  "created_date": "2026-07-30",
+  "scientific_question": "Does frozen R61v16 improve exact ACM contours when Raw microscopy images are deliberately difficult enough to avoid the R73 ceiling effect?",
+  "upstream_experiment": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization",
+  "model": {
+    "name": "R61v16",
+    "checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020\\weights\\best_tradeoff.pth.tar",
+    "checkpoint_sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
+    "training_manifest": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_motion_texture_step_guard_v16\\manifest.json",
+    "training_profile_root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_motion_texture_step_guard_v16",
+    "inference_mode": "PSF off, weak PSF off, deconvolution regularization 30, physical alpha 0",
+    "psf_fitted_path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\psf_calibration\\results\\20250605_inner_circle_roi_fine_prealign_fit\\PSF_fitted_2D_FOVstack.mat"
+  },
+  "dataset": {
+    "root": "D:\\GMM_2_Final\\Experiments\\R74_R61HardMicroscopyACMGeneralization\\data\\r74_hard_acm_val",
+    "generator_version": "r74_hard_microscopy_v1",
+    "generator_seed": 2026073001,
+    "image_size": 512,
+    "images_per_family": 20,
+    "total_images": 100,
+    "families": [
+      {"name": "low_contrast", "label_tw": "極低對比", "stage": "stage_r74_low_contrast"},
+      {"name": "uneven_illumination", "label_tw": "照明不均", "stage": "stage_r74_uneven_illumination"},
+      {"name": "asymmetric_blur_halo", "label_tw": "非對稱模糊與光暈", "stage": "stage_r74_asymmetric_blur_halo"},
+      {"name": "boundary_fade", "label_tw": "局部邊界消失", "stage": "stage_r74_boundary_fade"},
+      {"name": "mixed_hard", "label_tw": "混合困難", "stage": "stage_r74_mixed_hard"}
+    ],
+    "shape_families": ["fourier_lobed", "deep_notches", "thin_necks", "crescent_bodies", "rough_boundaries"],
+    "mask_semantics": "one connected, simply connected closed object per image",
+    "created_after_checkpoint": true,
+    "difficulty_freeze_rule": "Raw-only ACM is calibrated before any R61 reconstruction; overall median IoU must be 0.70-0.95, each challenge median must be below 0.97, and at least four challenge medians must be 0.65-0.95"
+  },
+  "inference": {
+    "python": "C:\\Users\\Rio\\anaconda3\\python.exe",
+    "script": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\_r61_real_sample_runtime_20260702_210629\\runtime\\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+    "device": "cuda:0",
+    "extension": ".bmp"
+  },
+  "pipeline": {
+    "output_prefix": "r61v16_psfoff_r74",
+    "acm_script_dir": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\scripts",
+    "analysis_script": "analyze_r74.py"
+  },
+  "acm": {
+    "implementation": "MATLAB activecontour",
+    "method": "Chan-Vese",
+    "iterations": 100,
+    "smooth_factor": 1.0,
+    "contraction_bias": 0.0,
+    "intensity_preprocessing": "mat2gray then 1st-to-99th-percentile contrast normalization",
+    "initialization": "polarity-independent automatic inner seed after mild Gaussian denoising, with a fixed centered coarse-disk fallback only when thresholding has no valid component; no truth geometry is used",
+    "initialization_mode": "smoothed_otsu",
+    "seed_radius_fraction": 0.20,
+    "initialization_uses_truth_shape": false,
+    "primary_truth": "exact generator geometry mask",
+    "truth_image_acm_role": "independent extraction QA only",
+    "primary_alignment": "translation_only",
+    "secondary_alignment": "fixed_pixel_coordinates",
+    "scale_fitting": false,
+    "rotation_fitting": false,
+    "sensitivity_presets": [
+      {"name": "low_smooth", "iterations": 100, "smooth_factor": 0.75},
+      {"name": "primary", "iterations": 100, "smooth_factor": 1.0},
+      {"name": "high_smooth", "iterations": 100, "smooth_factor": 1.5}
+    ],
+    "sensitivity_filenames": ["0000.bmp", "0007.bmp", "0014.bmp"]
+  },
+  "statistics": {
+    "independent_unit": "newly generated image",
+    "independent_image_count": 100,
+    "bootstrap_repetitions": 20000,
+    "random_seed": 2026073001,
+    "paired_test": "two-sided Wilcoxon with Holm correction",
+    "overall_improvement_fraction": 0.60,
+    "family_improvement_fraction": 0.50,
+    "truth_acm_minimum_iou": 0.97,
+    "raw_difficulty_overall_iou_min": 0.70,
+    "raw_difficulty_overall_iou_max": 0.95,
+    "raw_difficulty_family_iou_max": 0.97,
+    "raw_difficulty_informative_family_min": 0.65,
+    "raw_difficulty_informative_family_max": 0.95,
+    "raw_difficulty_minimum_informative_families": 4,
+    "coarse_shape_gate": "overall IoU and mean symmetric boundary distance each require at least 60% of images to improve and a positive bootstrap 95% lower bound; every challenge group and every shape family must have positive median improvement for both",
+    "sensitivity_gate": "every preset requires positive overall median IoU and boundary-distance improvement; at least four of five challenge groups must remain positive for both under every preset"
+  }
+}

@@ -1,0 +1,1545 @@
+{
+  "status": "PASS",
+  "full_original_path_restoration": 182471,
+  "extension_counts": {
+    ".json": 178543,
+    ".ps1": 6,
+    ".log": 2789,
+    ".txt": 27,
+    ".md": 53,
+    ".py": 77,
+    ".cpp": 2,
+    ".h": 6,
+    ".cu": 18,
+    ".yaml": 2,
+    ".jsonl": 3,
+    ".csv": 15,
+    ".tsv": 1,
+    ".cmd": 6,
+    ".xml": 128,
+    ".m": 4,
+    ".docx": 76,
+    ".pdf": 414,
+    ".ini": 5,
+    ".svg": 221,
+    ".ipynb": 6,
+    ".jsx": 69
+  },
+  "original_office_documents_checked": [
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_before_base_unet_integration.docx",
+      "sha256": "935c7560de7a206a23800141a0828573ed2a8f799706a7091cec0f038bafc8f4",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_integration_dryrun_20260718.docx",
+      "sha256": "4980a8c70d889376c2f764c76bdd73d46777615edb1ef7f793f7d45ab15afca0",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_integration_dryrun_backup.docx",
+      "sha256": "935c7560de7a206a23800141a0828573ed2a8f799706a7091cec0f038bafc8f4",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_integration_dryrun_fixedpsf.docx",
+      "sha256": "0aaa36d6c8c8816bcf20446d263a751cb98cd37ff6f08c8eb860a2bc640533d8",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_integration_dryrun_fixedpsf_backup.docx",
+      "sha256": "935c7560de7a206a23800141a0828573ed2a8f799706a7091cec0f038bafc8f4",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v12_before_index_refresh.docx",
+      "sha256": "9bb4fd02447ceba90c0d66a26aefe8890b5a8e4829ab36c07509c328bee7af0d",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/_render_thesis_v5.docx",
+      "sha256": "01158f12cea7d82ba59fbb0c310b82c56a1a4b1be379b777152df2e19134621d",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/thesis_v3_final_input/thesis_v3_final.docx",
+      "sha256": "448c41d80e2b16015a6a3dfa7cadfa42e9d31b1258b9f7adc16e7fe452244b31",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/thesis_v3_20260716_input/thesis_v3.docx",
+      "sha256": "bfaa4272e6387324912f2e56974437cff033f0650a402517b14339245637233d",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/thesis_v2_20260716_input/thesis_v2.docx",
+      "sha256": "8606de2b11480abb435cb82d0626f1b38b7f84c52393d0ac911a660819e71ef6",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/lo_v12_probe/thesis_v12.docx",
+      "sha256": "52263125c52cc00d5744be960a2cb541eba6c5c4ad592aef50becbb9ac736d68",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_clarity_confusion_rewrite_20260620_144007.docx",
+      "sha256": "ceea98a4f716d251ebbcbb329a778961c9032dd53dc0451c7b5725038b39b624",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_clarity_confusion_rewrite_20260620_144215.docx",
+      "sha256": "ceea98a4f716d251ebbcbb329a778961c9032dd53dc0451c7b5725038b39b624",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_clarity_confusion_rewrite_word_20260620_144422.docx",
+      "sha256": "ceea98a4f716d251ebbcbb329a778961c9032dd53dc0451c7b5725038b39b624",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_conceptual_no_data_rewrite_20260620_142945.docx",
+      "sha256": "c6309a09b8ea8df3e60f9a47987c823accdef9474a96c66988ced14457f8ae2f",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_diffraction_aware_rewrite_20260620_142351.docx",
+      "sha256": "2cf115cd08b0816e48436cd2eaba89351f446e8b02f7a524ab4c7b86055ebb7d",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_lab_boundary_revision_20260621_203540.docx",
+      "sha256": "cece005cc895f4fcdb52e7163ddac36323c4544ab26e25dce0b19747fde0f15d",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_more_compelling_revision_20260621_204909.docx",
+      "sha256": "1406136445fd78f15d8429046cb4da0f2cb6ad2d315bfacf557cbe5b314244c4",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_more_compelling_revision_python_20260621_204954.docx",
+      "sha256": "1406136445fd78f15d8429046cb4da0f2cb6ad2d315bfacf557cbe5b314244c4",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_one_page_compelling_compress_20260621_205312.docx",
+      "sha256": "d659afb3db381fdc28363813a2ff377429954c41a30a214408f4924752f964a5",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_plain_language_revision_20260620_164342.docx",
+      "sha256": "ad0b86e7066b8c4c36f8dcfe318a742d17f68909a35b9d9b7c1111e9b9e06295",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_plain_language_revision_word_20260620_164436.docx",
+      "sha256": "ad0b86e7066b8c4c36f8dcfe318a742d17f68909a35b9d9b7c1111e9b9e06295",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/before_wordcount_adjust.docx",
+      "sha256": "148bf0687e6881f137d9534223496d2c5265147085709eb9e5a0f1b6d7ca082b",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/tmp_render_impact_abstract/clarity_confusion_final/Impact2026_abstract_YenHsuanChiang_MOSR_v1_checkcopy.docx",
+      "sha256": "ad0b86e7066b8c4c36f8dcfe318a742d17f68909a35b9d9b7c1111e9b9e06295",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Research_Round_Library_20260926_ABORTED_OVERSIZED/02_Core_Model_Line/R140v2_StableUNet/reports/R140v2_Full_Model_Training_Validation_Report_20260923.docx",
+      "sha256": "af9fb5b0363999645166ac9a0de4b68a7f34e92ba9181e56ea7a1c4cffd103e1",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Research_Design_Effect_Review_20260926/02_Core_Model_Line/R140v2_StableUNet/reports/R140v2_Full_Model_Training_Validation_Report_20260923.docx",
+      "sha256": "af9fb5b0363999645166ac9a0de4b68a7f34e92ba9181e56ea7a1c4cffd103e1",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Model_Comparison_Reports/R140v2_R148v2_R150_20260928/R140v2_R148v2_R150_Conference_Report_20260928.docx",
+      "sha256": "ced2c37f26865d859a2cc5b5d28f8a5cfebbf1b700590d79d10917d05d47f49c",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/qa/lo_cd_bounds_input/chapter6_bounds.docx",
+      "sha256": "510c546de4c41ce876b260ee3457b8a07ad2a099569a4914dead89e8ac837d2e",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/qa/lo_cd_bounds_final_v2_input/chapter6_bounds_final_v2.docx",
+      "sha256": "606ca97931af78513fb57de155f18bf3f8c5a1ca9125f77aacbc2de21920d04b",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/qa/lo_cd_bounds_final_input/chapter6_bounds_final.docx",
+      "sha256": "6e8db17b1a269af6ba7bc2b183f72e78174c5f1706ad5fc816615799f745dff8",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/qa/docx_render_libreoffice_final/chapter6_new_wiener.docx",
+      "sha256": "499d1747a45accc25f6927eb1f701dd7122a11ae76926a5b32110c4307929d02",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/qa/docx_render_libreoffice_complete/chapter6_complete.docx",
+      "sha256": "60e13df77ef0b1a982c3327011a20cd55fbd19c74d1c65e38b8bd7eb29aa185f",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/qa/docx_render_libreoffice_ascii/chapter6_new_wiener.docx",
+      "sha256": "edef46e6af419340d789b1e83ae12d80bf60f600c40f9d786aa8c57153c0da91",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "PSF_Fitting/v18_reference_copy.docx",
+      "sha256": "20119597d5ff58293803dcc994277d2b799136e8749909e1df1852ebedb467c0",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "PSF_Fitting/_render_thesis_v4.docx",
+      "sha256": "fe62f7f4f48b7b803fe79518c8239bb1bfbea006aa0c49c878d0b83d2c2573f0",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "PSF_Fitting/_tmp_v18_reference.docx",
+      "sha256": "20119597d5ff58293803dcc994277d2b799136e8749909e1df1852ebedb467c0",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R66_V20_TraceabilityFigures_20260725/qa/v20_final_render/v20.docx",
+      "sha256": "b793f8f5f70ca06b117b3a76001775577ba336bc19cfae2b529ce83f7b59431c",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R66_V20_TraceabilityFigures_20260725/qa/v20_centerfix_final/v20.docx",
+      "sha256": "fc6d2c7eefd5e6e93468b5f5d66c73e8545ee85669ec85be854ca2a77094f0de",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R66_V20_TraceabilityFigures_20260725/qa/format_only/v20_before_format.docx",
+      "sha256": "fc6d2c7eefd5e6e93468b5f5d66c73e8545ee85669ec85be854ca2a77094f0de",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R66_V20_TraceabilityFigures_20260725/qa/format_only/v20_format_only_candidate.docx",
+      "sha256": "2a44e043bf6acf8566cee0c90e82baf41b96e11d800060b97ea15a1af60614b7",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R65_V19_OldMethodFigurePackage_20260724/v18_source_copy.docx",
+      "sha256": "20119597d5ff58293803dcc994277d2b799136e8749909e1df1852ebedb467c0",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R65_V19_OldMethodFigurePackage_20260724/v19_before_format_alignment.docx",
+      "sha256": "c751e670df7f0b0d43b254f38f25199aaa3fd924b5e7e2de010a20e16f454d00",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R65_V19_OldMethodFigurePackage_20260724/論文完整版_20260716_v19_第六章更新版.docx",
+      "sha256": "650b5e13bc8e269119f072f3490e482fd69dab71629730937257af0c36a6ef50",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v9_citations/thesis_v9_before_citation_edit.docx",
+      "sha256": "cf3cc531299339ecf05a5d6f07e771766108f8f45ae8acaa5d7891ed07c2d194",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v9_citations/thesis_v9_citation_working.docx",
+      "sha256": "cc27513e4fbbf7bcdf899c916bd1593d2b4323394c10bf5c219678b82e197cbb",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v8_work/thesis_v7_baseline.docx",
+      "sha256": "38d85738064dfcd42e727600f431d2825137249fb6bfcf0d84a2f17acc8a353a",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v8_work/thesis_v8_working.docx",
+      "sha256": "e0d479930ded6b714f70612a8ff920416b90a809389e8f4d75bd63df3dda3e52",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v8_language_cleanup/thesis_v8_before_language_cleanup.docx",
+      "sha256": "e0d479930ded6b714f70612a8ff920416b90a809389e8f4d75bd63df3dda3e52",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v8_language_cleanup/thesis_v8_language_working.docx",
+      "sha256": "cf3cc531299339ecf05a5d6f07e771766108f8f45ae8acaa5d7891ed07c2d194",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v10_citation_logic/thesis_v10_citation_working.docx",
+      "sha256": "c728e6da57c970e6d1648d3b2aaad496dd1e1ff41e10e002916daf5580fc2e17",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/reports/R140v2_Full_Model_Training_Validation_Report_20260923.docx",
+      "sha256": "af9fb5b0363999645166ac9a0de4b68a7f34e92ba9181e56ea7a1c4cffd103e1",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/doc_render_input/01.docx",
+      "sha256": "5ccae453291d415c3590fbff90ea9adbe836e4a5602cd2f9ed9ba593249d75b3",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/doc_render_input/02.docx",
+      "sha256": "f40fbe1d5aae91050c4a8d021597f4a02c8984eb90675ff9bba5d46762bd0f49",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/doc_render_input/03.docx",
+      "sha256": "d4a8edf803df64ca9baec694cf0af7489bdcc2762b82dba9949531ffdcae9aa2",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/doc_render_input/04.docx",
+      "sha256": "adac35fb362fe1bdf2c12e51dc80aa822e99ddf0b0f7967a832654adf63ec778",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/web_docs_render_input/01.docx",
+      "sha256": "aad24dc537abb66580f79dc819eec514d514bc004c91cf603d718b090af488a9",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/web_docs_render_input/02.docx",
+      "sha256": "5793f55069a1a5b1a1452dea5b4b39a22418f250269a757cca86a745eea48028",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/web_docs_render_input/03.docx",
+      "sha256": "a8a66dfe19457e93bb42a4583d4b8c5a7f81413093fc681c46d5500d9f2cb1a9",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/web_docs_render_input/04.docx",
+      "sha256": "c296aaa5565e263b29ad51a9e293150ba0b7e39b4fac793d74f6b1eca10ce80f",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/web_docs_render_input/05.docx",
+      "sha256": "a1be37f28b582cb454cfebf98cef19a3967e326fa1b2944bdba5d1927784ed86",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Experiments/R128_SourceOnlyFullTraining/results/thesis_v34_review_20260912/source_annotated_v34.docx",
+      "sha256": "d85a7987bbea8f5f58585334104f9d0425f3a42a92e51bbbb187cca2c5a9fc12",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R137_WeakPSF_Web_Documents_20260922/01_R137 實驗條件與訓練紀錄.docx",
+      "sha256": "5ccae453291d415c3590fbff90ea9adbe836e4a5602cd2f9ed9ba593249d75b3",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R137_WeakPSF_Web_Documents_20260922/02_R137 真實影像比較結果.docx",
+      "sha256": "f40fbe1d5aae91050c4a8d021597f4a02c8984eb90675ff9bba5d46762bd0f49",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R137_WeakPSF_Web_Documents_20260922/03_R137 光學作用與執行時間紀錄.docx",
+      "sha256": "d4a8edf803df64ca9baec694cf0af7489bdcc2762b82dba9949531ffdcae9aa2",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R137_WeakPSF_Web_Documents_20260922/04_R137 結果解讀與論文引用建議.docx",
+      "sha256": "adac35fb362fe1bdf2c12e51dc80aa822e99ddf0b0f7967a832654adf63ec778",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R130_Clean_Web_Thesis_Documents_20260920/01_閱讀總覽與研究判斷.docx",
+      "sha256": "aad24dc537abb66580f79dc819eec514d514bc004c91cf603d718b090af488a9",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R130_Clean_Web_Thesis_Documents_20260920/02_模型結構與訓練資料完整規格.docx",
+      "sha256": "5793f55069a1a5b1a1452dea5b4b39a22418f250269a757cca86a745eea48028",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R130_Clean_Web_Thesis_Documents_20260920/03_真實影像驗證方法與指標定義.docx",
+      "sha256": "a8a66dfe19457e93bb42a4583d4b8c5a7f81413093fc681c46d5500d9f2cb1a9",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R130_Clean_Web_Thesis_Documents_20260920/04_完整實測數據與圖表.docx",
+      "sha256": "c296aaa5565e263b29ad51a9e293150ba0b7e39b4fac793d74f6b1eca10ce80f",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R130_Clean_Web_Thesis_Documents_20260920/05_論文改寫構思與章節對照.docx",
+      "sha256": "a1be37f28b582cb454cfebf98cef19a3967e326fa1b2944bdba5d1927784ed86",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R129_Web_Thesis_Documents_20260920/00_原論文_v34_未修改.docx",
+      "sha256": "d85a7987bbea8f5f58585334104f9d0425f3a42a92e51bbbb187cca2c5a9fc12",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R129_Web_Thesis_Documents_20260920/Editable_Word/01_完整改寫指南.docx",
+      "sha256": "e6be0cc264005e50d02aa6d5a55753d8688366dfd1cb201c615e443a9bb0e9fa",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R129_Web_Thesis_Documents_20260920/Editable_Word/02_模型與訓練完整說明.docx",
+      "sha256": "ad9128f7cb3885b64cbc6249ff88e9554d716ceb432773cb07a0fd587a98cc2b",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R129_Web_Thesis_Documents_20260920/Editable_Word/03_ACM與實驗方法.docx",
+      "sha256": "85df79c2c1303b379d6965e70e5990453c733561126bcb38298eee40aaa24f4e",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R129_Web_Thesis_Documents_20260920/Editable_Word/04_完整結果與圖表.docx",
+      "sha256": "46ddf69c060f66bbdf71d6b4fcff5b6e4a8d0f9d38ee768a940bde6e83b1e8ff",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    },
+    {
+      "path": "Deliverables/R129_Thesis_Rewrite_Ready_20260920/01_Original_Thesis/thesis_v34_original_unchanged.docx",
+      "sha256": "d85a7987bbea8f5f58585334104f9d0425f3a42a92e51bbbb187cca2c5a9fc12",
+      "status": "ORIGINAL_CONTAINER_AND_MAIN_XML_VALID"
+    }
+  ],
+  "stratified_original_json_checks": [
+    {
+      "path": "_portable_env_sim_20260318/install/install-state.json",
+      "scope": "project/_portable_env_sim_20260318",
+      "top_level": "dict"
+    },
+    {
+      "path": "_codex_store_backups/20260319_002714/migration_report.json",
+      "scope": "project/_codex_store_backups",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/delivery_check.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/full_rebuild_check.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/input_and_output_guards.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/portability_check.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/raw_original_generator_portability_check.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/portable_copy/R61_TrainingData_Regenerator_20261004/recipe.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/portable_copy/R61_TrainingData_Regenerator_20261004/reference/provenance.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/generated_v2/r61_universal_boundary_train_motion_texture_step_guard_v16/manifest.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/generated_v2/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100/split_meta.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/generated_v2/r61_universal_boundary_train_motion_texture_step_guard_v16/geom/meta/stage_40_r61_step_guard_motion_texture_synthetic/dark/thin_bar/seq01592/motion_seq01592_f0000.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/generated_v2/r61_universal_boundary_train_motion_texture_step_guard_v16/geom/meta/stage_40_r61_step_guard_motion_texture_synthetic/dark/thin_bar/seq01592/motion_seq01592_f0001.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Validations/R61_TrainingData_Regenerator_20261004/generated_v2/r61_universal_boundary_train_motion_texture_step_guard_v16/geom/meta/stage_40_r61_step_guard_motion_texture_synthetic/dark/thin_bar/seq01580/motion_seq01580_f0000.json",
+      "scope": "project/Validations",
+      "top_level": "dict"
+    },
+    {
+      "path": "Trash_Archive/Trash_20260311_project_cleanup/legacy/Trash_20260309_workflow_audit/reports/AUTO_TUNE_CHAIN_PLAN_20260309.json",
+      "scope": "project/Trash_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0000_seq0000_f00.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0000_seq0000_f01.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0000_seq0000_f02.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0000_seq0000_f03.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0000_seq0000_f04.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0000_seq0000_f05.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0000_seq0000_f06.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0001_seq0001_f00.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0001_seq0001_f01.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0001_seq0001_f02.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0001_seq0001_f03.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Training_Data/r44_universal_boundary_motion/r44_motion_research_train/geom/meta/stage_47_motion_mixed/0001_seq0001_f04.json",
+      "scope": "project/Training_Data",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_base_unet_integration_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_build_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_final_structural_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_integration_dryrun_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_integration_dryrun_fixedpsf_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v12_after_word_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v12_build_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v12_final_render_20260720_c/page_image_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v12_final_render_20260720_b/page_image_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v12_final_render_20260720/page_image_audit.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/_paper_editing/qa/v11_render_20260718/visual_qa_manifest.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Research_Round_Library_20260926_ABORTED_OVERSIZED/03_PSF_Experiment_Line/R138_V42PSF8/results/reconstruction/005111_XY_0/01.json",
+      "scope": "project/Thesis_MOSR_Evidence",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/sem_acm/R79/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/sem_acm/R61/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/sem_acm/R40/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/sem_acm/R39R40/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/sem_acm/R39/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/sem_acm/COMBO/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/real_fov/R79/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/real_fov/R61/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/real_fov/R40/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/real_fov/R39R40/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/real_fov/R39/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/reconstructions/real_fov/COMBO/run_identity.json",
+      "scope": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R26NewPSFCheck/package_final_cleanup_archive_20260327_170935/輸出結果/驗證分析/R26_validation_complete/.claude/settings.local.json",
+      "scope": "main/R26NewPSFCheck",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/inference_mode.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/01.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/02.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/03.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/04.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/05.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/06.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/07.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/08.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/09.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/10.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/results/reconstruction/Wiener/005143_XY_0/11.json",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R150_MatchedGeometryMeanPSF/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R150_MatchedGeometryMeanPSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R148v2_HybridContextNativePSF/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R148v2_HybridContextNativePSF",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R136_PIRepeatability/tmp/package_build/package_context.json",
+      "scope": "main/R136_PIRepeatability",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R136_PIRepeatability/tmp/package_build/pdf_created.json",
+      "scope": "main/R136_PIRepeatability",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R136_PIRepeatability/tmp/package_build/workbook_created.json",
+      "scope": "main/R136_PIRepeatability",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R136_PIRepeatability/tmp/package_build/workbook_data.json",
+      "scope": "main/R136_PIRepeatability",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/generation_started.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/resume_finished.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/resume_started.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/scenes/scene_000.metadata.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/scenes/scene_001.metadata.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/scenes/scene_002.metadata.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/scenes/scene_003.metadata.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/scenes/scene_004.metadata.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/scenes/scene_005.metadata.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/scenes/scene_006.metadata.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/scenes/scene_007.metadata.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R125_DataAlignedPilot/data/package_v2/scenes/scene_008.metadata.json",
+      "scope": "main/R125_DataAlignedPilot",
+      "top_level": "dict"
+    },
+    {
+      "path": ".vscode/extensions.json",
+      "scope": "project/.vscode",
+      "top_level": "dict"
+    },
+    {
+      "path": ".claude/settings.local.json",
+      "scope": "project/.claude",
+      "top_level": "dict"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/directories.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "list"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/in_progress.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/verification.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/post_compatibility_context/context_manifest.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "list"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/post_compatibility_context/PROJECT_STORAGE_REGISTRY.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/post_compatibility_context/reconstruction_compatibility_plan.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/post_compatibility_context/reconstruction_compatibility_view_verification.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/post_archive_context/context_manifest.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "list"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/post_archive_context/dedup_allocation_analysis.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/post_archive_context/external_reference_index.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/post_archive_context/other_candidate_reference_index.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Historical_Archive/analyses/20260704_20x_5x_analysis/20260926_full_history/post_archive_context/PROJECT_STORAGE_REGISTRY.json",
+      "scope": "project/Historical_Archive",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R145_Center9PSF25_CorrectedPairs/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R145_Center9PSF25_CorrectedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R143_PSF25_MatchedPairs/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R143_PSF25_MatchedPairs",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R140v2_StableUNet/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R140v2_StableUNet",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R139_UNetRecurrentPrototype/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R139_UNetRecurrentPrototype",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R138_V42PSF8/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R138_V42PSF8",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R137_WeakPSFFeature/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R137_WeakPSFFeature",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/01.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/02.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/03.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/04.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/05.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/06.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/07.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/08.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/09.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/10.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/11.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    },
+    {
+      "path": "Experiments/R130_Clean/results/reconstruction/005143_XY_0/12.json",
+      "scope": "main/R130_Clean",
+      "top_level": "dict"
+    }
+  ],
+  "original_failure_records": [],
+  "source_files_changed": false,
+  "not_historical_training_repeated": true
+}

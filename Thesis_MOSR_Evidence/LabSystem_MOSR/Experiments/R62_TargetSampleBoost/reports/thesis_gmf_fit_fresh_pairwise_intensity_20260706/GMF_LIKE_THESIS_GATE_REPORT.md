@@ -1,0 +1,44 @@
+# GMF-like thesis displacement gate
+
+This gate uses fixed ROIs and the open GMF-like local fitting tool.
+It is intended for model selection on thesis displacement behavior, not for training loss by itself.
+
+## Case Results
+
+| dataset | group | case | std um | step um | status |
+|---|---|---|---:|---:|---|
+| 20260702_100MG | x_1um | raw | 0.009536 | 1.005108 | ok |
+| 20260702_100MG | x_1um | r61 | 0.009402 | 1.005200 | ok |
+| 20260702_100MG | x_1um | v7 | 0.009362 | 1.005219 | ok |
+| 20260702_100MG | x_1um | v11latest | 0.009441 | 1.005125 | ok |
+| 20260702_100MG | x_0p5um | raw | 0.052563 | 0.511195 | ok |
+| 20260702_100MG | x_0p5um | r61 | 0.052388 | 0.511140 | ok |
+| 20260702_100MG | x_0p5um | v7 | 0.052373 | 0.511192 | ok |
+| 20260702_100MG | x_0p5um | v11latest | 0.052428 | 0.511090 | ok |
+| 20260704_20x_5x | 20x_1um | raw | 0.025065 | 1.001315 | ok |
+| 20260704_20x_5x | 20x_1um | r61 | 0.025353 | 0.996479 | ok |
+| 20260704_20x_5x | 20x_1um | v7 | 0.025344 | 0.996771 | ok |
+| 20260704_20x_5x | 20x_1um | v11latest | 0.025738 | 0.999371 | ok |
+| 20260704_20x_5x | 20x_0p5um | raw | 0.076356 | 0.492259 | ok |
+| 20260704_20x_5x | 20x_0p5um | r61 | 0.077545 | 0.495468 | ok |
+| 20260704_20x_5x | 20x_0p5um | v7 | 0.077201 | 0.495492 | ok |
+| 20260704_20x_5x | 20x_0p5um | v11latest | 0.077314 | 0.493711 | ok |
+| 20260704_20x_5x | 5x_1um | raw | 0.160710 | 0.891275 | ok |
+| 20260704_20x_5x | 5x_1um | r61 | 0.157254 | 0.912045 | ok |
+| 20260704_20x_5x | 5x_1um | v7 | 0.158132 | 0.907304 | ok |
+| 20260704_20x_5x | 5x_1um | v11latest | 0.160442 | 0.877708 | ok |
+| 20260704_20x_5x | 5x_0p5um | raw | 0.012163 | 0.502568 | ok |
+| 20260704_20x_5x | 5x_0p5um | r61 | 0.026884 | 0.520270 | ok |
+| 20260704_20x_5x | 5x_0p5um | v7 | 0.025546 | 0.519010 | ok |
+| 20260704_20x_5x | 5x_0p5um | v11latest | 0.021534 | 0.510712 | ok |
+
+## Raw vs Candidate
+
+| dataset | group | best | candidate improvement vs Raw |
+|---|---|---|---:|
+| 20260702_100MG | x_0p5um | v7 | 0.36% |
+| 20260702_100MG | x_1um | v7 | 1.83% |
+| 20260704_20x_5x | 20x_0p5um | raw | -1.11% |
+| 20260704_20x_5x | 20x_1um | raw | -1.11% |
+| 20260704_20x_5x | 5x_0p5um | raw | -110.03% |
+| 20260704_20x_5x | 5x_1um | r61 | 1.60% |

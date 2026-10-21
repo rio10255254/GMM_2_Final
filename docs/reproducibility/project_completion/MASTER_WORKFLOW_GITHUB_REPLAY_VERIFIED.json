@@ -1,0 +1,161 @@
+{
+  "status": "PASS_ACTUAL_GITHUB_FIXED_SOURCE_AND_ISOLATED_SMALL_FIXTURE_WORKFLOW",
+  "source_commit": "8bb55f3ce057581e46105f9391989b9cb5c33c39",
+  "source_files": [
+    {
+      "path": "Tools/bind_verified_collections_to_master.py",
+      "bytes": 7319,
+      "sha256": "c77af2d1330577cd62f46dcfc4731d7b0cb94cff4a77d37fe45ac3f3d6e721c7",
+      "git_blob": "d0394ed68f001f9ebb251e890881e4c93d4c017e"
+    },
+    {
+      "path": "Tools/build_project_restore_index.py",
+      "bytes": 20951,
+      "sha256": "034db66087b1ce6f452cc35b13e90bbce42f2a3c8d015dd07877c59e29c41adc",
+      "git_blob": "019377bc49568206407db9464ece1cd8ca10d471"
+    },
+    {
+      "path": "Tools/download_research_assets.py",
+      "bytes": 12273,
+      "sha256": "7c7a245f3ecd9d4474fbe75383c5e233743f28b07e89d81b1a3f8f594afa628f",
+      "git_blob": "da665774e2239adf99312c7a83695ff5073dce80"
+    },
+    {
+      "path": "Tools/project_reproducibility_audit.py",
+      "bytes": 24915,
+      "sha256": "1332cd9670f43c7d254c1dc17d7d1bb001600054dc34d60c7bf3cadace41c1c9",
+      "git_blob": "bd205ad082873c2af80c2078c386a5b9a8a88d51"
+    },
+    {
+      "path": "Tools/research_asset_bundle.py",
+      "bytes": 15140,
+      "sha256": "99dd5e3aea1c66b5aa05fc0fb4ce8e265f2ced0f95c46129b009a8844ecb40c7",
+      "git_blob": "a060d113e7c1dbb66d886033bd9a035f9364138d"
+    },
+    {
+      "path": "Tools/research_preservation_exclusions.py",
+      "bytes": 1050,
+      "sha256": "114a931ec88132e865fc408da8f3ecc019c11232fec0ba2e137b4a59b73a23e6",
+      "git_blob": "cf706ff13150ec777149cdea81c7ca45000acafc"
+    },
+    {
+      "path": "Tools/research_recovery.py",
+      "bytes": 12136,
+      "sha256": "e8240fa512313064d5559c2afc04ecffc60e0f74e00d18b410c767fcf59b1655",
+      "git_blob": "8be312db008073623d97dc9a8f44b958d26d6650"
+    },
+    {
+      "path": "Tools/restore_original_package_parts.py",
+      "bytes": 1921,
+      "sha256": "7b79671801ce7511b517ec430e825e51dd0105814ac83b8f02508f132029a537",
+      "git_blob": "697ea6b5a8e01dc27e932d24c69a9a23fbf72c4b"
+    },
+    {
+      "path": "Tools/restore_project_from_master.py",
+      "bytes": 7205,
+      "sha256": "6c0e37f46130b0b2e01ab314ef3fd5a2cffaf5bec33b2a0d58a0619976557453",
+      "git_blob": "577ba27c755523444bc5c6a63af3f3935f64b415"
+    },
+    {
+      "path": "Tools/restore_repository_content_aliases.py",
+      "bytes": 3506,
+      "sha256": "f605494423529ca339a63943c38156f99bd11004f4867b4414cd1c1b73d838d6",
+      "git_blob": "ba6cb63019f27f6e1f213f5d98af90b095a57f4f"
+    },
+    {
+      "path": "Tools/restore_research_aliases.py",
+      "bytes": 4525,
+      "sha256": "96db314ff036f1511d44c8b963324b2c5b6b1f2df9f95beff4542b648989780f",
+      "git_blob": "fa3399c767e975b0b5467d5100644723237f7838"
+    },
+    {
+      "path": "Tools/run_recovery_isolated.py",
+      "bytes": 3111,
+      "sha256": "6da9759f1abac3208b0bc36a467179ebcff4e276fe9b09674354e07392147f06",
+      "git_blob": "ecb30d478ba426e7fb23c52302c34f3a62b02000"
+    },
+    {
+      "path": "Tools/tests/test_master_restore_client.py",
+      "bytes": 11593,
+      "sha256": "ee1537faf0cd8a94607284a29e1082a52f0c8a038869d382f4c4e8b8b545d651",
+      "git_blob": "6b6faf91b75af176812765649179b9b5d0943ba2"
+    },
+    {
+      "path": "Tools/tests/test_research_asset_bundle.py",
+      "bytes": 4503,
+      "sha256": "9e8b53cc527135fba003e86c2586cc1a9d0cb7370daf77c3b337b0aea1d5b43e",
+      "git_blob": "a5a0497c90a353d3a6625ef29b006ecf69e58909"
+    },
+    {
+      "path": "Tools/tests/test_restore_research_aliases.py",
+      "bytes": 2828,
+      "sha256": "f3c57bc8fdf6c3b56d2220dbc8900ba37975818cdf81a377e28ffd5e31819fb8",
+      "git_blob": "eff8dd12b1cf26544a2aae4924bf12357496e04f"
+    },
+    {
+      "path": "Tools/tests/test_verified_collection_binding.py",
+      "bytes": 4703,
+      "sha256": "019446297bd4f7400c49480068c20ef2a8a0f6f86b4f12ba7e9abf8beb31b2f9",
+      "git_blob": "98708884f36e0497f3c56cac480dd682f874bf97"
+    },
+    {
+      "path": "Tools/verify_model_archive_batch.py",
+      "bytes": 7679,
+      "sha256": "75548e523a0e362faa76eec0dbcd4da24f4eb96012d06b85f24d9a8365363cd7",
+      "git_blob": "97151b2b5cc384d49d6249de18efa5adcbb98879"
+    },
+    {
+      "path": "Tools/verify_research_checkpoint_history.py",
+      "bytes": 5765,
+      "sha256": "2db569d39c89d932ce38cdb86ea7c5e74de75d2f807196a529e3434132e7ef39",
+      "git_blob": "28fcda8f14ed7633baa071e2de6a6dc303704b42"
+    },
+    {
+      "path": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+      "bytes": 1122464,
+      "sha256": "942b2ec4f0bb975e7a1791aec6c0ca3a02b7b2156a1eb69d977741b66816d75f",
+      "git_blob": "540e919286a658cda226b750303d2ef4d4acaa4f"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/BATCH_FORMAT_INSPECTION_SNAPSHOT_VERIFIED.json",
+      "bytes": 10131,
+      "sha256": "66fb85f7ab344bd63bcfd9b45871fdcd5fcc8c471645eb881eb672b786c04f91",
+      "git_blob": "f5b8a7b4c36e1ab252374ee2e37f8437476d854b"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/FINAL_PUBLICATION_PROTOCOL.md",
+      "bytes": 5215,
+      "sha256": "512a012614db5a2084e3941e3bb8a110f36026fbfa95f688fc14f83dd156c5bf",
+      "git_blob": "f6f3109484efcb2aadaf1d6b2abe2d86e7895399"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/MASTER_CLIENT_WORKFLOW_CHECKS_20261021.json",
+      "bytes": 1932,
+      "sha256": "4c6311b285cb485b992e150707c26ad1ab3b876e3c583a783fea516b0ddbe726",
+      "git_blob": "63cc9edaafe918cbb3e3a87368bc754d49e8967b"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/README.md",
+      "bytes": 16730,
+      "sha256": "4dfe8d7d3bc6a1494a1571bc816bcf1bf45fd6c9b205e59a6420b0e50c1e12ce",
+      "git_blob": "23d0598f6329a6d388e6f14ba8bb3372b3cae4a4"
+    },
+    {
+      "path": "docs/reproducibility/research_path_aliases.json",
+      "bytes": 4727,
+      "sha256": "6c2feac3bc7bbc94dbbf9e1843e8dde3408357981b5127e895503cfacba20b37",
+      "git_blob": "61ff7a72a24d8c2f653da15d734acfbe7093ccb8"
+    }
+  ],
+  "source_retrieval_proof_sha256": "d0d7afb6e99bf759c4882b00cbc24c21c398c9b3c3d4a7f572db4fad90500c74",
+  "isolated_guard_proof_sha256": "7106f593c15203f4262281aea55f6ca56da4cbdd19d8b74f57d58af4bd148eda",
+  "tests_passed": 16,
+  "old_D_H_research_sources_blocked": true,
+  "child_Python_processes_inherit_guard": true,
+  "CPU_only": true,
+  "eleven_real_shared_reference_shapes_used_small_test_observations": true,
+  "full_eleven_research_datasets_restored_in_this_check": false,
+  "final_master_recovery_still_required": true,
+  "whole_project_complete": false,
+  "test_runner_adjustment": "Initial run failed when pytest tried its parent operation cache; explicit owned test cwd/config and disabled pytest cache passed under the unchanged source-read guard. Initial diagnostic retained locally."
+}

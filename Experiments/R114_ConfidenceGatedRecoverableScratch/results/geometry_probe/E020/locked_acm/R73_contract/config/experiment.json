@@ -1,0 +1,80 @@
+{
+  "experiment_id": "R114_R73_GeometryProbe_E020",
+  "dataset": {
+    "root": "D:\\GMM_2_Final\\Experiments\\R73_R61ExpandedSyntheticACMGeneralization\\data\\r73_synthetic_acm_val",
+    "generator_version": "r73_closed_contour_v1",
+    "generator_seed": 20260730,
+    "image_size": 512,
+    "images_per_family": 20,
+    "total_images": 100,
+    "families": [
+      {
+        "name": "fourier_lobed",
+        "label_tw": "多瓣外形",
+        "stage": "stage_r73_fourier_lobed"
+      },
+      {
+        "name": "deep_notches",
+        "label_tw": "深凹口",
+        "stage": "stage_r73_deep_notches"
+      },
+      {
+        "name": "thin_necks",
+        "label_tw": "細頸連接",
+        "stage": "stage_r73_thin_necks"
+      },
+      {
+        "name": "crescent_bodies",
+        "label_tw": "月牙形",
+        "stage": "stage_r73_crescent_bodies"
+      },
+      {
+        "name": "rough_boundaries",
+        "label_tw": "粗糙邊界",
+        "stage": "stage_r73_rough_boundaries"
+      }
+    ],
+    "mask_semantics": "one connected, simply connected closed object per image",
+    "created_after_checkpoint": true
+  },
+  "acm": {
+    "implementation": "MATLAB activecontour",
+    "method": "Chan-Vese",
+    "iterations": 100,
+    "smooth_factor": 1.0,
+    "contraction_bias": 0.0,
+    "intensity_preprocessing": "mat2gray then 1st-to-99th-percentile contrast normalization",
+    "initialization": "polarity-independent automatic inner seed: Otsu bright/dark candidates, border-connected regions removed, largest valid closed component selected and eroded by 3 pixels",
+    "initialization_uses_truth_shape": false,
+    "primary_truth": "exact generator geometry mask",
+    "truth_image_acm_role": "independent extraction QA only",
+    "primary_alignment": "translation_only",
+    "secondary_alignment": "fixed_pixel_coordinates",
+    "scale_fitting": false,
+    "rotation_fitting": false,
+    "sensitivity_presets": [
+      {
+        "name": "low_smooth",
+        "iterations": 100,
+        "smooth_factor": 0.75
+      },
+      {
+        "name": "primary",
+        "iterations": 100,
+        "smooth_factor": 1.0
+      },
+      {
+        "name": "high_smooth",
+        "iterations": 100,
+        "smooth_factor": 1.5
+      }
+    ],
+    "sensitivity_filenames": [
+      "0000.bmp",
+      "0007.bmp",
+      "0014.bmp"
+    ],
+    "initialization_mode": "automatic_otsu",
+    "seed_radius_fraction": 0.2
+  }
+}

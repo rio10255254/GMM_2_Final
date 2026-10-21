@@ -1,0 +1,12 @@
+{
+  "user_authorized": true,
+  "decision": "約1天；尚未開始模型最多8輪；已完成結果保留；RDN使用目前保存的合成驗證最佳結果結束",
+  "training_scope": "short-duration comparison; equal data and measurement rules, unequal actual epoch counts explicitly reported",
+  "max_epochs": 8,
+  "affected_methods": ["RCAN-x1", "Restormer", "USRNet-x1", "SwinIR"],
+  "finalize_saved_method": "RDN-x1",
+  "preserve_completed_methods": ["EDSR-x1", "NAFNet"],
+  "selection": "same synthetic validation only; no real-data selection",
+  "estimated_remaining_training_hours": [27, 30],
+  "full_real_validation_included_in_estimate": false
+}

@@ -1,0 +1,71 @@
+# R61 完整訓練資料重建包
+
+這份包用來重做 R61 v16 原本使用的全部 20,296 組訓練資料。需要的生成程式、固定設定、早期來源資料，以及逐檔核對清單都放在包內；搬到別人的電腦後，可從本資料夾直接執行。
+
+## 從哪裡開始
+
+先準備 Windows 與 Python 3.12。以下命令在本資料夾執行，會建立一個獨立的執行環境：
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe install_dependencies.py
+.\.venv\Scripts\python.exe regenerate_r61.py
+```
+
+最後一個命令會重建全部資料，然後自動比對原本的影像、答案、輪廓標記、移動記錄與訓練／驗證分組。只有全部相同，檢查結果才會顯示 `pass`。
+
+結果放在 `generated_training_data/r61_universal_boundary_train_motion_texture_step_guard_v16/`；核對報告在它的上一層。請預留約 12 GB 的輸出空間。資料生成不需要顯示卡。
+
+若要指定儲存位置：
+
+```powershell
+.\.venv\Scripts\python.exe regenerate_r61.py --output-root D:\R61_Recreated
+```
+
+如果同名結果已經存在，程式會停止，請指定另一個新的位置。
+
+只核對包內必需的來源，不生成資料：
+
+```powershell
+.\.venv\Scripts\python.exe regenerate_r61.py --check-inputs
+```
+
+## 包內的東西
+
+- `regenerate_r61.py`：直接使用的入口；已固定當時設定，也會自動核對結果。
+- `original/prepare_r61_universal_dataset.py`：原始生成程式的完整副本，內容沒有修改。
+- `recipe.json`：本次 R61 v16 的生成設定及訓練分組設定。
+- `source_data/`：原本生成 R61 時必須讀取的三批來源影像與答案，共 3,400 組，順序也保留。
+- `reference/`：原始資料清單、當時訓練記錄的摘錄、來源記錄與逐檔比對依據。
+- `VERIFICATION.json`：本次交付前完整重建的實測結果。
+
+## 為什麼還附來源資料
+
+R61 的生成程式會先取用早期三批資料，再另外生成新的合成資料。單獨交付一個程式，會缺少早期資料而無法重做完整版本。這份包只帶原本 R61 用到的前 800／1,200／1,400 組，以及其原始順序；不需要另找早期整個專案。
+
+| 資料類別 | 組數 |
+|---|---:|
+| 早期形狀資料 | 800 |
+| 保守修正資料 | 1,200 |
+| SEM 與實拍裁切答案資料 | 1,400 |
+| 一般合成資料 | 4,096 |
+| 合成移動資料 | 4,800 |
+| 帶紋理的合成移動資料 | 4,800 |
+| 模擬步距的合成移動資料 | 3,200 |
+| 合計 | 20,296 |
+
+其中 18,266 組用於訓練、2,030 組用於驗證。這份包重做的是原本資料；原本的早期影像與 SEM 答案仍是必要來源，不會重新拍攝或憑空重建它們。
+
+## 固定設定
+
+生成時使用 `seed=6116`、影像尺寸 `256`、`synthetic_bias_profile=step_guard_v16`，一般合成數量 `4096`，三種移動序列數量分別為 `2400／2400／1600`。每段移動序列包含兩組影像，因此得到 `4800／4800／3200` 組。
+
+訓練分組使用 `seed=1337`、驗證比例 `0.1`。原始生成命令不會自動產生這份分組；入口程式已接上當時訓練啟動程式使用的同一個分組函式。
+
+生成日期和來源資料所在位置會隨執行而改變；這兩項記錄不要求相同。影像、答案、輪廓、移動記錄、分組清單與其他資料描述都必須一致。
+
+若要核對已生成的資料，可執行：
+
+```powershell
+.\.venv\Scripts\python.exe regenerate_r61.py --verify-only D:\R61_Recreated\r61_universal_boundary_train_motion_texture_step_guard_v16
+```

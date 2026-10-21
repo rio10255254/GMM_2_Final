@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "purpose": "Recheck current saved spectrum sources; preserve separate earlier image/array versions",
+  "files": [
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/generate_absolute_spectra.py",
+      "bytes": 7872,
+      "sha256": "8cc30bd6279459f516e85027d557c1aa9e12bc10dd47ff0d7110fe1f81c5ef45",
+      "role": "unchanged original FFT definitions; writing entry point not executed"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x/20x/05_original_pillar_3x3.bmp",
+      "bytes": 11894,
+      "sha256": "1e9d28a8fdc1d95828863e38da7d9425921c49214d6dab7f62fbac700f5afdb2",
+      "role": "original captured crop; not the full original camera frame"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x/20x/06_v42_e120_reconstruction_pillar_3x3.bmp",
+      "bytes": 11894,
+      "sha256": "31f4d08a3fcc752864c29c7e24d98800ef43bbd40a7d2b9fbf38868cf5f33281",
+      "role": "saved V42 output crop; not an original camera capture"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/psf_deconvolution_cd/20x_wiener_deconvolution.mat",
+      "bytes": 277011,
+      "sha256": "06788dd7bdb678540d8bfbe6c5f1e40b70f858e6eb90d53efc3e219ffe04b5d7",
+      "role": "saved unclipped floating Wiener result, current NSR 0.05"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/20x_absolute_spectra.npz",
+      "bytes": 437808,
+      "sha256": "9f0f787bad3966953bdb249202cd34e2eb9af39ba1225e6c3e49636ca02dd1bc",
+      "role": "existing full precision amplitude and dBFS spectrum reference"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x/50x/05_original_pillar_3x3.bmp",
+      "bytes": 66614,
+      "sha256": "9ccd2725084dc51d5d12141833d6e468f35bcf365d7ae88a951d6a10f96d9ced",
+      "role": "original captured crop; not the full original camera frame"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x/50x/06_v42_e120_reconstruction_pillar_3x3.bmp",
+      "bytes": 66614,
+      "sha256": "394818de7e78abad4ca8f230fa88696b08cfd278a992536d86362e125de69943",
+      "role": "saved V42 output crop; not an original camera capture"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/psf_deconvolution_cd/50x_wiener_deconvolution.mat",
+      "bytes": 1276532,
+      "sha256": "9dfd3e0eb89493d3fb017cf504b90aa5141c969ea7bc959ca406b2bb4d51ec33",
+      "role": "saved unclipped floating Wiener result, current NSR 0.05"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/50x_absolute_spectra.npz",
+      "bytes": 2902495,
+      "sha256": "159ada4c624812a57102ab2196fdc52a0b907254b54c450febe2b2dea53c898b",
+      "role": "existing full precision amplitude and dBFS spectrum reference"
+    }
+  ],
+  "inputs_or_accepted_thesis_figures_modified": false
+}

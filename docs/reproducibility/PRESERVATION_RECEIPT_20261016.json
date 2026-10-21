@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "status": "GITHUB_PRESERVATION_VERIFIED_D_CLEANUP_BLOCKED",
+  "reviewed_experiments_or_historical_scopes": 177,
+  "source_commit": "f07c57d544f3dfc167bd49a01ac7c44a18e796bb",
+  "source_files_verified_byte_for_byte_in_that_commit": 19284,
+  "unique_original_paths_in_combined_source_and_data_catalog": 225848,
+  "case_insensitive_conflicting_paths": [],
+  "original_acquisition_release": "https://github.com/rio10255254/GMM_2_Final/releases/tag/shared-pi-20260903-v1",
+  "releases": [
+    {
+      "tag": "research-shared-sources-20261016",
+      "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-shared-sources-20261016",
+      "original_paths": 92332,
+      "unique_objects": 86156,
+      "original_bytes": 93764386391,
+      "compressed_bytes": 43765059455,
+      "archive_parts": 55,
+      "every_original_object_read_and_verified": true,
+      "all_server_digests_match": true
+    },
+    {
+      "tag": "research-training-kits-20261016",
+      "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016",
+      "original_paths": 17022,
+      "unique_objects": 11579,
+      "original_bytes": 3123264089,
+      "compressed_bytes": 602622060,
+      "archive_parts": 3,
+      "every_original_object_read_and_verified": true,
+      "all_server_digests_match": true
+    },
+    {
+      "tag": "research-results-models-20261016",
+      "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016",
+      "original_paths": 61090,
+      "unique_objects": 45477,
+      "original_bytes": 58070850284,
+      "compressed_bytes": 41228800058,
+      "archive_parts": 28,
+      "every_original_object_read_and_verified": true,
+      "all_server_digests_match": true
+    },
+    {
+      "tag": "research-historical-evidence-20261016",
+      "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-historical-evidence-20261016",
+      "original_paths": 37679,
+      "unique_objects": 30751,
+      "original_bytes": 16515595249,
+      "compressed_bytes": 6710523979,
+      "archive_parts": 16,
+      "every_original_object_read_and_verified": true,
+      "all_server_digests_match": true
+    }
+  ],
+  "all_core_GitHub_roundtrips_passed": {
+    "original_camera_files": 960,
+    "R61_identical_training_data_files": 114283,
+    "R152_identical_TIFF_files": 9216,
+    "ten_method_metrics": 270,
+    "ten_method_displacements": 18000,
+    "ten_method_paired_intervals": 162
+  },
+  "active_training_data_moved": false,
+  "original_camera_data_cleaned": false,
+  "D_cleanup_files_removed": 0,
+  "D_cleanup_reclaimed_bytes": 0,
+  "D_cleanup_blocker": "automatic execution approval review rejected native recursive removal before process creation: blocked by policy",
+  "original_user_branch_and_index_preserved": true,
+  "no_full_historical_training_repeated": true,
+  "verified_utc": "2026-10-16T11:01:13.030238+00:00",
+  "published_data_releases": 5,
+  "published_assets": 120,
+  "published_asset_bytes": 94425002391,
+  "formal_standard_checks": "PASS docs,entrypoints,python; existing dirty worktree warning only",
+  "results_restore_index": "RESTORE_MANIFEST_20261016.json.gz",
+  "two_historical_governance_snapshots_relocated_without_changing_contents": true,
+  "final_selected_source_and_record_files_excluding_self_manifest": 19317,
+  "original_preservation_catalog_paths": 225848,
+  "final_restore_location_count_including_closeout": 225882
+}

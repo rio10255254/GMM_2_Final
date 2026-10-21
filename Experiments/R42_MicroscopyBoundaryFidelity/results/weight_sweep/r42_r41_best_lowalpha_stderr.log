@@ -1,0 +1,21 @@
+[31;1mException: [0mD:\GMM_2_Final\Tools\RunRepresentativeExternalRecon.ps1:58[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m  58 | [0m         [36;1mthrow ("Inference failed for dataset {0} with exit code {1}" [0m ¡K[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mInference failed for dataset Pitch0.01um_Y_40 with exit code -1073740791[0m
+Traceback (most recent call last):
+  File "D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\scripts\run_r42_weight_sweep.py", line 359, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\scripts\run_r42_weight_sweep.py", line 328, in main
+    row = evaluate_one_alpha(
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\scripts\run_r42_weight_sweep.py", line 163, in evaluate_one_alpha
+    run_ring_representative_recon(ckpt_path, candidate_recon_dir)
+  File "D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\scripts\run_r42_weight_sweep.py", line 105, in run_ring_representative_recon
+    _run(
+  File "D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\scripts\run_r42_weight_sweep.py", line 57, in _run
+    subprocess.check_call([str(c) for c in cmd], **kwargs)
+  File "C:\Users\Rio\anaconda3\Lib\subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['C:\\Program Files\\PowerShell\\7\\pwsh.EXE', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', 'D:\\GMM_2_Final\\Tools\\RunRepresentativeExternalRecon.ps1', '-WeightsPath', 'Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\checkpoints\\a001\\best_tradeoff.pth.tar', '-ReconRoot', 'Experiments\\R42_MicroscopyBoundaryFidelity\\results\\weight_sweep\\r42_r41_best_lowalpha\\ring_recon\\a001']' returned non-zero exit status 1.

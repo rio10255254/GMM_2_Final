@@ -1,0 +1,45 @@
+{
+  "purpose": "Five-method line-pattern sharpness and displacement comparison",
+  "methods": [
+    "Raw",
+    "COMBO",
+    "R33",
+    "R38v2",
+    "R39R40",
+    "R61v16",
+    "V42E120"
+  ],
+  "selection": "Same pre-locked best 30 Raw-motion steps per 50x sequence",
+  "step_count": 60,
+  "object_um_per_px": 0.069,
+  "rois": {
+    "vertical_lines": {
+      "label": "Vertical-line region",
+      "x": 100,
+      "y": 90,
+      "width": 700,
+      "height": 560,
+      "profile_axis": 0
+    },
+    "horizontal_lines": {
+      "label": "Horizontal-line region",
+      "x": 1050,
+      "y": 850,
+      "width": 700,
+      "height": 560,
+      "profile_axis": 1
+    }
+  },
+  "measurement": {
+    "sharpness": "Raw-defined shared edge candidates and native 10%-90% edge width",
+    "boundary_displacement": "Median shift of common individual 50% line-edge crossings",
+    "profile_displacement": "Independent subpixel correlation of the full median line profile"
+  },
+  "qa": {
+    "frame_metric_rows": 840,
+    "step_rows": 420,
+    "minimum_valid_edges_per_frame": 12,
+    "minimum_usable_edges_per_step": 11,
+    "all_steps_valid": true
+  }
+}

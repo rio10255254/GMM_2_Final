@@ -1,0 +1,38 @@
+{
+  "experiment_id": "R103_E48_SEM_AlphaProbe",
+  "models": {
+    "A025": {
+      "alpha": 0.25
+    },
+    "A050": {
+      "alpha": 0.5
+    },
+    "A075": {
+      "alpha": 0.75
+    },
+    "A100": {
+      "alpha": 1.0
+    },
+    "A125": {
+      "alpha": 1.25
+    }
+  },
+  "sem_acm": {
+    "raw_input_dir": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack",
+    "sem_dir": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data",
+    "optical_exposures": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "status": "PASS_predictive_research_PSF",
+  "frames": [
+    5,
+    9,
+    11,
+    16,
+    19,
+    21
+  ],
+  "heldout_sem_ids": [
+    34,
+    29,
+    24
+  ],
+  "summary": {
+    "selected_core_halo_BADs": {
+      "mean_heldout_mse": 0.0017911834120711012,
+      "mean_heldout_gradient_mae": 0.10585868465494074,
+      "mean_heldout_correlation": 0.9897113241346415,
+      "max_peak_offset_px": 0.0,
+      "max_centroid_offset_px": 2.0763342642855268e-16,
+      "max_outer_3px_energy_fraction": 6.999997651188479e-19
+    },
+    "original_disk_BADs": {
+      "mean_heldout_mse": 0.002996677174379679,
+      "mean_heldout_gradient_mae": 0.22592762130251987,
+      "mean_heldout_correlation": 0.9856175963210081,
+      "max_peak_offset_px": 0.0,
+      "max_centroid_offset_px": 0.20827459862739306,
+      "max_outer_3px_energy_fraction": 5.7076264861992805e-05
+    },
+    "profiled_disk_BADs": {
+      "mean_heldout_mse": 0.00284585840363886,
+      "mean_heldout_gradient_mae": 0.2256322621538045,
+      "mean_heldout_correlation": 0.9861085141803075,
+      "max_peak_offset_px": 0.0,
+      "max_centroid_offset_px": 0.2778078041086877,
+      "max_outer_3px_energy_fraction": 6.698691360642955e-05
+    },
+    "gaussian": {
+      "mean_heldout_mse": 0.0021053270592154612,
+      "mean_heldout_gradient_mae": 0.14057877038983055,
+      "mean_heldout_correlation": 0.9882622335237053,
+      "max_peak_offset_px": 0.0,
+      "max_centroid_offset_px": 1.1313399774575213e-16,
+      "max_outer_3px_energy_fraction": 1.9226046972455434e-81
+    }
+  },
+  "gates": {
+    "mean_10_percent_better_than_gaussian": true,
+    "mean_10_percent_better_than_original_BADs": true,
+    "better_than_gaussian_all_six_frames": true,
+    "gradient_error_lower_than_gaussian": true,
+    "zero_peak_offsets": true,
+    "centroid_below_point_one_px": true,
+    "outer_energy_below_point_zero_zero_one": true,
+    "all_BADS_exitflags_positive": true
+  },
+  "scope": "Six new camera views of the same nine physical pillars; no independent specimen PSF-trueness claim"
+}

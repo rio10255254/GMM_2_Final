@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R93_RecoverableDetailSeparatedScratch",
+  "status": "frozen_before_formal_data",
+  "frozen_at": "2026-08-12T11:25:41.959112",
+  "branch": "sandbox/r88-measurement-faithful-scratch",
+  "files": {
+    "model/r93_model.py": "b47f3a1ab3c9f1eddf7a81c97e6198202ee405915d8c09187a32e71b19835084",
+    "training/train_r93.py": "06407c6d3a6c636d6b47c63f71f3886c58a3fdb8ee09a69db84e690ddf33efce",
+    "inference/reconstruct.py": "1ff33f005c98e1ab49b7146756595f8d1a7031b466c086f4ca92b4bc12169f15",
+    "scripts/generate_dataset.py": "94911b3097bb137f83ed5dffb8d702312d3a4ea886fb61493486f5fb53090ec0",
+    "scripts/repair_formal_dataset.py": "8685eb047a31da8ec36bc5c34bd255b8b131ce261cefca62bdb3f30a938e062d",
+    "scripts/repair_holdout_dataset.py": "b6bb5ffede1c0fdfb11404db5d883798c9a993505b8b4dd371f7911b50a74905",
+    "scripts/launch_r93.py": "6e37358f46a361e13505d96bd44e45fc6f8b2537ee8a4ab9cabaa8a1b682ed23",
+    "scripts/benchmark_r93.py": "1a00c7c1617686f5c5ff4b9d294d9d93eaad5787419e0fdc29b57ea8b2de8221",
+    "scripts/validate_execution.py": "d97b0a7e3eb781c17a42a7eefb0e3f359c520bf92c36a9a7c49698d9db1278f7",
+    "config/experiment_design.json": "de72877bb48fadcdabceb782895975f0042915cb03896ffb4ae6eb58f03e626f",
+    "config/acceptance_gates.json": "89f466371a6b54a40dbe2b5af3eb7e6e665903164d0cea3707ffb8521fbc9d5f",
+    "config/execution_authorization.json": "52893c1cb6c507fb4fbcf4ef4560d79f31c7e6ea6b7e50d8cd6eda32ed90d87a",
+    "config/optical_statistics.json": "9c80346ac8723ca83bf29554199b48fdc8c2c00afcd6853559efde05c27e4940",
+    "config/gpu_safety_profile.json": "27a80693456c1e9b27e5337703238d0fd569a73958c841d0fdced2494dd9eda0"
+  },
+  "setup_benchmark_sha256": "c32dcce7cb734dfd041e895689ef533ed1c44bb075fd59216e6d394bafa69db4",
+  "smoke_dataset_content_sha256": "12eb11aa7250c786b9fc7dd2ff03585336a3af282f222b3d595ae439d77854d7",
+  "smoke_audit_sha256": "b80659b5e3c9db56b83ef5216a0029bd109197367fc43d9b1dcbeae4a2c1cf2a",
+  "formal_run_registry_empty": true
+}

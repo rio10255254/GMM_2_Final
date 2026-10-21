@@ -1,0 +1,43 @@
+{
+  "status": "PASS_SMALL_FIXTURE_MASTER_WORKFLOW_AND_BINDING_CHECKS",
+  "local_time": "2026-10-21T12:54:27.861996+08:00",
+  "tests_passed": 16,
+  "test_files": [
+    "Tools/tests/test_master_restore_client.py",
+    "Tools/tests/test_verified_collection_binding.py",
+    "Tools/tests/test_restore_research_aliases.py",
+    "Tools/tests/test_research_asset_bundle.py"
+  ],
+  "test_source_files": [
+    {
+      "path": "Tools/tests/test_master_restore_client.py",
+      "bytes": 11593,
+      "sha256": "ee1537faf0cd8a94607284a29e1082a52f0c8a038869d382f4c4e8b8b545d651"
+    },
+    {
+      "path": "Tools/tests/test_verified_collection_binding.py",
+      "bytes": 4703,
+      "sha256": "019446297bd4f7400c49480068c20ef2a8a0f6f86b4f12ba7e9abf8beb31b2f9"
+    },
+    {
+      "path": "Tools/bind_verified_collections_to_master.py",
+      "bytes": 7319,
+      "sha256": "c77af2d1330577cd62f46dcfc4731d7b0cb94cff4a77d37fe45ac3f3d6e721c7"
+    }
+  ],
+  "actual_zip_restore_and_original_part_join_executed": true,
+  "actual_repository_alias_child_tool_executed": true,
+  "eleven_real_project_shared_reference_shapes_exercised_with_small_fixture_payloads": true,
+  "eleven_full_real_research_datasets_restored_in_this_test": false,
+  "offline_transport_fixtures_not_actual_GitHub_master_download": true,
+  "earlier_scope_and_shared_reference_receipts_preserved_on_retry": true,
+  "modified_existing_user_result_and_original_package_unchanged_after_refusal": true,
+  "changed_component_map_refused_before_restored_outputs": true,
+  "changed_byte_restore_receipt_refused_before_final_binding": true,
+  "exact_byte_recovery_can_preserve_an_unreadable_historical_image": true,
+  "readable_numpy_header_not_reported_as_finite_or_recomputed_values": true,
+  "final_GitHub_master_recovery_still_required": true,
+  "whole_project_complete": false,
+  "training_repeated": false,
+  "D_cleanup_performed": false
+}

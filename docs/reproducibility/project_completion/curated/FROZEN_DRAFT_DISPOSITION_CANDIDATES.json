@@ -1,0 +1,54 @@
+{
+  "status": "proposal_only_no_remote_deletion",
+  "drafts": [
+    {
+      "tag": "research-model-history-additions-20261021",
+      "release_id": 418812435,
+      "assets": 120,
+      "actual_server_bytes": 142688604573,
+      "proposed_action": "candidate_to_withdraw_whole_excess_collection_after_selected_material_review",
+      "keep_rule": "只引用明確選用的關鍵模型；整批中途模型留封存",
+      "exact_local_asset_inventory": "FROZEN_EXCESS_BULK_DRAFT_ASSETS_20261021.json",
+      "remote_deletion_authorized": false,
+      "remote_deleted": false,
+      "reason_no_partial_object_deletion": "原附件是混合多份內容的完整ZIP，不能把包內少數必要內容等同整包必要。"
+    },
+    {
+      "tag": "research-numeric-data-additions-20261021",
+      "release_id": 418912187,
+      "assets": 128,
+      "actual_server_bytes": 165454759231,
+      "proposed_action": "candidate_to_withdraw_whole_excess_collection_after_selected_material_review",
+      "keep_rule": "完整量測表及必要固定常數保留，逐張影像陣列留封存",
+      "exact_local_asset_inventory": "FROZEN_EXCESS_BULK_DRAFT_ASSETS_20261021.json",
+      "remote_deletion_authorized": false,
+      "remote_deleted": false,
+      "reason_no_partial_object_deletion": "原附件是混合多份內容的完整ZIP，不能把包內少數必要內容等同整包必要。"
+    },
+    {
+      "tag": "research-image-data-additions-20261021",
+      "release_id": 419039390,
+      "assets": 82,
+      "actual_server_bytes": 72395813256,
+      "proposed_action": "candidate_to_withdraw_whole_excess_collection_after_selected_material_review",
+      "keep_rule": "少量原報告代表/失敗圖及共用原拍保留，完整重建圖庫留封存",
+      "exact_local_asset_inventory": "FROZEN_EXCESS_BULK_DRAFT_ASSETS_20261021.json",
+      "remote_deletion_authorized": false,
+      "remote_deleted": false,
+      "reason_no_partial_object_deletion": "原附件是混合多份內容的完整ZIP，不能把包內少數必要內容等同整包必要。"
+    },
+    {
+      "tag": "research-package-additions-20261021",
+      "release_id": 419017835,
+      "assets": 6,
+      "actual_server_bytes": 4085051980,
+      "proposed_action": "candidate_to_withdraw_whole_excess_collection_after_selected_material_review",
+      "keep_rule": "保留來源版本與必要小型交付，完整舊ZIP留封存",
+      "exact_local_asset_inventory": "FROZEN_EXCESS_BULK_DRAFT_ASSETS_20261021.json",
+      "remote_deletion_authorized": false,
+      "remote_deleted": false,
+      "reason_no_partial_object_deletion": "原附件是混合多份內容的完整ZIP，不能把包內少數必要內容等同整包必要。"
+    }
+  ],
+  "published_shared_originals_and_existing_approved_deliveries_not_targets": true
+}

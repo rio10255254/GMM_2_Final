@@ -1,0 +1,658 @@
+{
+  "status": "207_NUMBERS_RECOMPUTED_9_EARLIER_FORMULA_GAPS_PRESERVED",
+  "recomputed_numbers": 207,
+  "earlier_total_formula_gaps": [
+    {
+      "case": "R13_131800",
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p8",
+      "original_saved_total": 247.742744743824,
+      "later_source_formula_total": 287.8032101288438,
+      "original_total_formula_recovered": false
+    },
+    {
+      "case": "R13_131800",
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p08",
+      "original_saved_total": 247.1961254775524,
+      "later_source_formula_total": 287.18159451968967,
+      "original_total_formula_recovered": false
+    },
+    {
+      "case": "R13_131800",
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_8px",
+      "original_saved_total": -540.4219010770321,
+      "later_source_formula_total": -805.6920295912772,
+      "original_total_formula_recovered": false
+    },
+    {
+      "case": "R13_131800",
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p08",
+      "original_saved_total": -556.875625371933,
+      "later_source_formula_total": -829.4000794023275,
+      "original_total_formula_recovered": false
+    },
+    {
+      "case": "R13_131800",
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p8",
+      "original_saved_total": -557.1304162144661,
+      "later_source_formula_total": -829.6898195952177,
+      "original_total_formula_recovered": false
+    },
+    {
+      "case": "R13_131800",
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_8px",
+      "original_saved_total": -559.8448080718517,
+      "later_source_formula_total": -832.7741444159299,
+      "original_total_formula_recovered": false
+    },
+    {
+      "case": "R13_131800",
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p8",
+      "original_saved_total": -559.190353512764,
+      "later_source_formula_total": -827.8650207817554,
+      "original_total_formula_recovered": false
+    },
+    {
+      "case": "R13_131800",
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p08",
+      "original_saved_total": -898.4025514423847,
+      "later_source_formula_total": -1263.7634182773531,
+      "original_total_formula_recovered": false
+    },
+    {
+      "case": "R13_131800",
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_8px",
+      "original_saved_total": -899.4902728199959,
+      "later_source_formula_total": -1264.999864155799,
+      "original_total_formula_recovered": false
+    }
+  ],
+  "recorded_selection_rankings_reconstructed": 5,
+  "original_source_files_verified": [
+    {
+      "path": "Model/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py",
+      "bytes": 14444,
+      "sha256": "7974d965b8b8c10623adc12e942af548e937b49d8d7e16dc14b750da69006ad8"
+    },
+    {
+      "path": "Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_131800.json",
+      "bytes": 55248,
+      "sha256": "63d53ad4e3e5132d7bd696adf6630e5b93912f6cd5450be43259cfd1b0cd4763"
+    },
+    {
+      "path": "Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.json",
+      "bytes": 55255,
+      "sha256": "e343c930f27d5889f0b6c3b0f54cf4fbc992bb4c011a700c42ca33c3c8ab6c20"
+    },
+    {
+      "path": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_164239.json",
+      "bytes": 73517,
+      "sha256": "73fd731131860a81b92d4e25d78ff7d711bc336bcdcf9337f6650ed641c0ab41"
+    },
+    {
+      "path": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_174207.json",
+      "bytes": 73735,
+      "sha256": "8a699aa3dbed1133bd04054f95bff13e31b361d5346f0e05403d9fadfcd460d7"
+    },
+    {
+      "path": "Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.json",
+      "bytes": 73796,
+      "sha256": "63cc6ad2b613850420a928861c0aa6c6fb8d150ae9367bd02b9e68db92056e34"
+    }
+  ],
+  "cases": [
+    {
+      "case": "R13_131800",
+      "mode": "universal",
+      "source": "Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_131800.json",
+      "numbers_recomputed": 27,
+      "selected_candidate": "universal_sign_guard",
+      "selected_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_usg_20260311_130031\\weights\\best_tradeoff.pth.tar",
+      "highest_score": 247.742744743824,
+      "families_tied_at_highest_exact_score": [
+        "universal_sign_guard"
+      ],
+      "families": [
+        {
+          "candidate": "universal_sign_guard",
+          "family_pre_rank_score": 133.93300188282745,
+          "best": {
+            "checkpoint_label": "checkpoint_0p8",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_usg_20260311_130031\\weights\\best_tradeoff.pth.tar",
+            "score": 247.742744743824
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_usg_20260311_130031\\weights\\best_tradeoff.pth.tar",
+              "score": 247.742744743824
+            },
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_usg_20260311_124958\\weights\\best_tradeoff.pth.tar",
+              "score": 247.1961254775524
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_usg_20260311_131100\\weights\\best_tradeoff.pth.tar",
+              "score": -540.4219010770321
+            }
+          ]
+        },
+        {
+          "candidate": "universal_macro_lock",
+          "family_pre_rank_score": 69.64931017780731,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_uml_20260311_125329\\weights\\best_tradeoff.pth.tar",
+            "score": -556.875625371933
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_uml_20260311_125329\\weights\\best_tradeoff.pth.tar",
+              "score": -556.875625371933
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_uml_20260311_130358\\weights\\best_tradeoff.pth.tar",
+              "score": -557.1304162144661
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_uml_20260311_131430\\weights\\best_tradeoff.pth.tar",
+              "score": -559.8448080718517
+            }
+          ]
+        },
+        {
+          "candidate": "universal_balanced_bridge",
+          "family_pre_rank_score": 54.961235631993816,
+          "best": {
+            "checkpoint_label": "checkpoint_0p8",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_ubb_20260311_130213\\weights\\best_tradeoff.pth.tar",
+            "score": -559.190353512764
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_ubb_20260311_130213\\weights\\best_tradeoff.pth.tar",
+              "score": -559.190353512764
+            },
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_ubb_20260311_125140\\weights\\best_tradeoff.pth.tar",
+              "score": -898.4025514423847
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_ubb_20260311_131243\\weights\\best_tradeoff.pth.tar",
+              "score": -899.4902728199959
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R13_150225",
+      "mode": "universal",
+      "source": "Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.json",
+      "numbers_recomputed": 36,
+      "selected_candidate": "universal_sign_guard",
+      "selected_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_usg_20260311_143757\\weights\\best_tradeoff.pth.tar",
+      "highest_score": -87.21851635836065,
+      "families_tied_at_highest_exact_score": [
+        "universal_sign_guard"
+      ],
+      "families": [
+        {
+          "candidate": "universal_sign_guard",
+          "family_pre_rank_score": 173.93573691922361,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_usg_20260311_143757\\weights\\best_tradeoff.pth.tar",
+            "score": -87.21851635836065
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_usg_20260311_143757\\weights\\best_tradeoff.pth.tar",
+              "score": -87.21851635836065
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_usg_20260311_145637\\weights\\best_tradeoff.pth.tar",
+              "score": -124.13540480956435
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_usg_20260311_144750\\weights\\best_tradeoff.pth.tar",
+              "score": -167.16164337694647
+            }
+          ]
+        },
+        {
+          "candidate": "universal_defect_anchor",
+          "family_pre_rank_score": 167.56227886784302,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_uda_20260311_143421\\weights\\best_tradeoff.pth.tar",
+            "score": -115.77757539451123
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_uda_20260311_143421\\weights\\best_tradeoff.pth.tar",
+              "score": -115.77757539451123
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_uda_20260311_145342\\weights\\best_tradeoff.pth.tar",
+              "score": -151.0307987563312
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_uda_20260311_144453\\weights\\best_tradeoff.pth.tar",
+              "score": -167.16164337694647
+            }
+          ]
+        },
+        {
+          "candidate": "universal_clean_anchor",
+          "family_pre_rank_score": 155.09071605467142,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_uca_20260311_143613\\weights\\best_tradeoff.pth.tar",
+            "score": -121.52987013049423
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_uca_20260311_143613\\weights\\best_tradeoff.pth.tar",
+              "score": -121.52987013049423
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_uca_20260311_145511\\weights\\best_tradeoff.pth.tar",
+              "score": -150.8306543946266
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_uca_20260311_144623\\weights\\best_tradeoff.pth.tar",
+              "score": -167.16164337694647
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R14_164239",
+      "mode": "corridor0p8",
+      "source": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_164239.json",
+      "numbers_recomputed": 48,
+      "selected_candidate": "corridor_macrobridge",
+      "selected_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\\weights\\best_tradeoff.pth.tar",
+      "highest_score": -126.57561806496233,
+      "families_tied_at_highest_exact_score": [
+        "corridor_macrobridge"
+      ],
+      "families": [
+        {
+          "candidate": "corridor_macrobridge",
+          "family_pre_rank_score": 281.2739735937387,
+          "best": {
+            "checkpoint_label": "checkpoint_0p8",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\\weights\\best_tradeoff.pth.tar",
+            "score": -126.57561806496233
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\\weights\\best_tradeoff.pth.tar",
+              "score": -126.57561806496233
+            },
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_162144\\weights\\best_tradeoff.pth.tar",
+              "score": -218.238373972103
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_163814\\weights\\best_tradeoff.pth.tar",
+              "score": -231.9261764658615
+            }
+          ]
+        },
+        {
+          "candidate": "corridor_microbridge",
+          "family_pre_rank_score": 286.2403845582508,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312\\weights\\best_tradeoff.pth.tar",
+            "score": -159.19040660280734
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312\\weights\\best_tradeoff.pth.tar",
+              "score": -159.19040660280734
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_163137\\weights\\best_tradeoff.pth.tar",
+              "score": -173.0323613256216
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_163941\\weights\\best_tradeoff.pth.tar",
+              "score": -230.8965338556096
+            }
+          ]
+        },
+        {
+          "candidate": "corridor_balanced",
+          "family_pre_rank_score": 279.4062722832645,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439\\weights\\best_tradeoff.pth.tar",
+            "score": -184.0609465189278
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439\\weights\\best_tradeoff.pth.tar",
+              "score": -184.0609465189278
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_163327\\weights\\best_tradeoff.pth.tar",
+              "score": -184.0609465189278
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_164109\\weights\\best_tradeoff.pth.tar",
+              "score": -226.49592537954447
+            }
+          ]
+        },
+        {
+          "candidate": "corridor_defectguard",
+          "family_pre_rank_score": 273.21719918505227,
+          "best": {
+            "checkpoint_label": "checkpoint_0p8",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758\\weights\\best_tradeoff.pth.tar",
+            "score": -184.0609465189278
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758\\weights\\best_tradeoff.pth.tar",
+              "score": -184.0609465189278
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cdg_20260311_163647\\weights\\best_tradeoff.pth.tar",
+              "score": -189.2196085480973
+            },
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cdg_20260311_162017\\weights\\best_tradeoff.pth.tar",
+              "score": -248.85180685929956
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R14_174207",
+      "mode": "corridor0p8",
+      "source": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_174207.json",
+      "numbers_recomputed": 48,
+      "selected_candidate": "corridor_macrobridge",
+      "selected_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_173108\\weights\\best_tradeoff.pth.tar",
+      "highest_score": -125.30187479518355,
+      "families_tied_at_highest_exact_score": [
+        "corridor_macrobridge"
+      ],
+      "families": [
+        {
+          "candidate": "corridor_macrobridge",
+          "family_pre_rank_score": 287.27797297873747,
+          "best": {
+            "checkpoint_label": "checkpoint_0p8",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_173108\\weights\\best_tradeoff.pth.tar",
+            "score": -125.30187479518355
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_173108\\weights\\best_tradeoff.pth.tar",
+              "score": -125.30187479518355
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_173819\\weights\\best_tradeoff.pth.tar",
+              "score": -195.82619524486364
+            },
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_172417\\weights\\best_tradeoff.pth.tar",
+              "score": -207.07224382311105
+            }
+          ]
+        },
+        {
+          "candidate": "corridor_microbridge",
+          "family_pre_rank_score": 287.45715864496344,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_172532\\weights\\best_tradeoff.pth.tar",
+            "score": -126.9826174869202
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_172532\\weights\\best_tradeoff.pth.tar",
+              "score": -126.9826174869202
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_173241\\weights\\best_tradeoff.pth.tar",
+              "score": -207.9176577165723
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_173934\\weights\\best_tradeoff.pth.tar",
+              "score": -210.04338455293328
+            }
+          ]
+        },
+        {
+          "candidate": "corridor_balanced",
+          "family_pre_rank_score": 281.4293680743701,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_172647\\weights\\best_tradeoff.pth.tar",
+            "score": -130.1016195770353
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_172647\\weights\\best_tradeoff.pth.tar",
+              "score": -130.1016195770353
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_173414\\weights\\best_tradeoff.pth.tar",
+              "score": -185.20023943819106
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_174050\\weights\\best_tradeoff.pth.tar",
+              "score": -213.68658324014396
+            }
+          ]
+        },
+        {
+          "candidate": "corridor_centerlock",
+          "family_pre_rank_score": 277.4049575852267,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_ccl_20260311_172150\\weights\\best_tradeoff.pth.tar",
+            "score": -185.78837193669753
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_ccl_20260311_172150\\weights\\best_tradeoff.pth.tar",
+              "score": -185.78837193669753
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_ccl_20260311_172806\\weights\\best_tradeoff.pth.tar",
+              "score": -212.92521374421193
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_ccl_20260311_173550\\weights\\best_tradeoff.pth.tar",
+              "score": -213.41726970802995
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R15_022742",
+      "mode": "centerlock0p8",
+      "source": "Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.json",
+      "numbers_recomputed": 48,
+      "selected_candidate": "centerlock_pure",
+      "selected_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_clp_20260312_021219\\weights\\best_tradeoff.pth.tar",
+      "highest_score": -125.82125443819912,
+      "families_tied_at_highest_exact_score": [
+        "centerlock_pure",
+        "centerlock_defectguard",
+        "centerlock_balanced",
+        "centerlock_macroguard"
+      ],
+      "families": [
+        {
+          "candidate": "centerlock_pure",
+          "family_pre_rank_score": 366.56392251368834,
+          "best": {
+            "checkpoint_label": "checkpoint_0p8",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_clp_20260312_021219\\weights\\best_tradeoff.pth.tar",
+            "score": -125.82125443819912
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_clp_20260312_021219\\weights\\best_tradeoff.pth.tar",
+              "score": -125.82125443819912
+            },
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_clp_20260312_020529\\weights\\best_tradeoff.pth.tar",
+              "score": -134.17690506447107
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_clp_20260312_022054\\weights\\best_tradeoff.pth.tar",
+              "score": -136.83717516958714
+            }
+          ]
+        },
+        {
+          "candidate": "centerlock_defectguard",
+          "family_pre_rank_score": 365.0015663773819,
+          "best": {
+            "checkpoint_label": "checkpoint_0p8",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cld_20260312_021427\\weights\\best_tradeoff.pth.tar",
+            "score": -125.82125443819912
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cld_20260312_021427\\weights\\best_tradeoff.pth.tar",
+              "score": -125.82125443819912
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cld_20260312_022237\\weights\\best_tradeoff.pth.tar",
+              "score": -128.56385922692715
+            },
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cld_20260312_020709\\weights\\best_tradeoff.pth.tar",
+              "score": -135.64081300506368
+            }
+          ]
+        },
+        {
+          "candidate": "centerlock_balanced",
+          "family_pre_rank_score": 360.48121588690924,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_clb_20260312_021032\\weights\\best_tradeoff.pth.tar",
+            "score": -125.82125443819912
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_clb_20260312_021032\\weights\\best_tradeoff.pth.tar",
+              "score": -125.82125443819912
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_clb_20260312_021842\\weights\\best_tradeoff.pth.tar",
+              "score": -125.82125443819912
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_clb_20260312_022603\\weights\\best_tradeoff.pth.tar",
+              "score": -190.3291743995622
+            }
+          ]
+        },
+        {
+          "candidate": "centerlock_macroguard",
+          "family_pre_rank_score": 360.2825327059277,
+          "best": {
+            "checkpoint_label": "checkpoint_0p08",
+            "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_clm_20260312_020850\\weights\\best_tradeoff.pth.tar",
+            "score": -125.82125443819912
+          },
+          "all_model_results": [
+            {
+              "checkpoint_label": "checkpoint_0p08",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_clm_20260312_020850\\weights\\best_tradeoff.pth.tar",
+              "score": -125.82125443819912
+            },
+            {
+              "checkpoint_label": "checkpoint_0p8",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_clm_20260312_021635\\weights\\best_tradeoff.pth.tar",
+              "score": -125.82125443819912
+            },
+            {
+              "checkpoint_label": "checkpoint_8px",
+              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_clm_20260312_022420\\weights\\best_tradeoff.pth.tar",
+              "score": -136.0676336830482
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "training_executed": false,
+  "model_inference_executed": false,
+  "absolute_physical_accuracy_claimed": false,
+  "limits": "207 matching original scores recomputed; nine earlier R13 totals retained because their original formula version is not recovered. Five choices reconstructed from original score order. Does not regenerate model evaluations or prove tied weights equal."
+}

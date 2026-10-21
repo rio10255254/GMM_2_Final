@@ -1,0 +1,4 @@
+pid=11980
+out=Traing_Progress\organized_20260307\pending\logs\auto_tune_console_20260309_134614_round4_refine.out.log
+err=Traing_Progress\organized_20260307\pending\logs\auto_tune_console_20260309_134614_round4_refine.err.log
+cmd=python -u Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py --profile round4_refine_seed --sweep-epochs 6 --final-epochs 10 --deterministic

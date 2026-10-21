@@ -1,0 +1,76 @@
+{
+  "status": "ALL_REQUESTED_FAMILIES_CONTENT_CHECKED",
+  "families": [
+    {
+      "family": "context",
+      "files": 292510,
+      "bytes": 6521425429,
+      "new_checks": 12,
+      "states": {
+        "SHA256_VERIFIED": 78567,
+        "size_changed": 14,
+        "absent_path": 183779,
+        "SHA256_PRESENT_OTHER_PATH_alias_needed": 30150
+      },
+      "export": "HASHED_CONTEXT_FILES.jsonl.gz"
+    },
+    {
+      "family": "models",
+      "files": 8850,
+      "bytes": 287458883612,
+      "new_checks": 0,
+      "states": {
+        "absent_path": 6882,
+        "SHA256_VERIFIED": 1861,
+        "SHA256_PRESENT_OTHER_PATH_alias_needed": 107
+      },
+      "export": "HASHED_MODELS_FILES.jsonl.gz"
+    },
+    {
+      "family": "numeric",
+      "files": 869699,
+      "bytes": 776834916242,
+      "new_checks": 0,
+      "states": {
+        "SHA256_VERIFIED": 128980,
+        "SHA256_PRESENT_OTHER_PATH_alias_needed": 206290,
+        "absent_path": 534427,
+        "size_changed": 2
+      },
+      "export": "HASHED_NUMERIC_FILES.jsonl.gz"
+    },
+    {
+      "family": "images",
+      "files": 2646293,
+      "bytes": 1001609772333,
+      "new_checks": 0,
+      "states": {
+        "absent_path": 2157854,
+        "SHA256_PRESENT_OTHER_PATH_alias_needed": 466666,
+        "SHA256_VERIFIED": 21771,
+        "size_changed": 2
+      },
+      "export": "HASHED_IMAGES_FILES.jsonl.gz"
+    },
+    {
+      "family": "packages",
+      "files": 3030,
+      "bytes": 8928553419,
+      "new_checks": 1,
+      "states": {
+        "SHA256_VERIFIED": 107,
+        "absent_path": 2853,
+        "SHA256_PRESENT_OTHER_PATH_alias_needed": 69,
+        "size_changed": 1
+      },
+      "export": "HASHED_PACKAGES_FILES.jsonl.gz"
+    }
+  ],
+  "proof_counts": {
+    "read_and_hashed": 13
+  },
+  "seconds": 558.2271890640259,
+  "verified_inventory": "inventory_content_verified.sqlite",
+  "publication_complete": false,
+  "original_research_files_modified": false
+}

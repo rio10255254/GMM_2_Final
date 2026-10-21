@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "status": "ACTUAL_GITHUB_ORIGINAL_DELIVERY_OBJECTS_VERIFIED",
+  "revised_clean_package_batch": {
+    "status": "CLEAN_REVISED_ORIGINAL_PACKAGE_BATCH_ACTUALLY_RESTORED_VERIFIED",
+    "unique_original_objects": 396,
+    "distinct_source_bytes": 4843116784,
+    "forbidden_private_backup_objects_absent": true,
+    "full_receipt_sha256": "61850b1631e24b4f3f74971a8b458ab977e2cb598dd93c83ae07d1fd744eb47f",
+    "format_inspections": {
+      "MATLAB_VARIABLE_HEADERS_READABLE": 195,
+      "EXACT_BYTES_PRESERVED_FORMAT_NOT_APPLICABLE": 118,
+      "GZIP_STREAM_CRC_READABLE": 3,
+      "ORIGINAL_ZIP_ALL_MEMBERS_CRC_READABLE": 39,
+      "ORIGINAL_TORCH_PSF_CACHE_INSPECTED": 41
+    },
+    "historical_inspection_issues_retained": [],
+    "new_native_inspection_fields_not_claimed_for_older_batches": true,
+    "full_master_binding_and_release_publication_pending": true,
+    "research_originals_modified": false
+  },
+  "large_original_containers": {
+    "status": "PASS",
+    "packages": [
+      {
+        "tag": "research-original-packages-20261021",
+        "manifest_asset": "f24fe984cba69e22_ORIGINAL_PACKAGE_PARTS.json",
+        "manifest_path": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_project_completion\\large_original_packages\\f24fe984cba69e224461f65d2e4a67e21b06208d19452474df2cdbf86cd4c658\\f24fe984cba69e22_ORIGINAL_PACKAGE_PARTS.json",
+        "original_sha256": "f24fe984cba69e224461f65d2e4a67e21b06208d19452474df2cdbf86cd4c658",
+        "original_bytes": 3260895198,
+        "original_project_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R61_STEP_Generalization_Standalone_20260910.zip",
+        "downloaded_assets": [
+          {
+            "name": "f24fe984cba69e22_original.zip.part001",
+            "bytes": 1800000000,
+            "sha256": "814854c2ea44d3cf22561611c203cf0ea8fe58785b80bf15e9070df194552a2a",
+            "asset_id": 660904764,
+            "verified_from_github": true
+          },
+          {
+            "name": "f24fe984cba69e22_original.zip.part002",
+            "bytes": 1460895198,
+            "sha256": "c244a3a0a035c58e072d7a11eb33a26747f4634e965c895357540102aa801188",
+            "asset_id": 660908692,
+            "verified_from_github": true
+          },
+          {
+            "name": "f24fe984cba69e22_ORIGINAL_PACKAGE_PARTS.json",
+            "bytes": 667,
+            "sha256": "61a9da17b1c017f514451572420decd51f475f9e5239c9728cb147536cae59fc",
+            "asset_id": 660913283,
+            "verified_from_github": true
+          }
+        ],
+        "zip_members_CRC_verified": 153431
+      }
+    ],
+    "research_originals_changed": false,
+    "publication_pending": true
+  },
+  "master_path_binding_and_final_release_publication_pending": true,
+  "whole_project_complete": false
+}

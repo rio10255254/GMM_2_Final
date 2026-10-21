@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R101_HighFrequencyCausalAblation",
+  "purpose": "Short causal A/B/C falsification before any full R101 scratch training.",
+  "training_authorized": true,
+  "full_r101_training_authorized": false,
+  "reference_model_path": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/model/r100_model.py",
+  "source_isolation": {
+    "checkpoint_loading_allowed": false,
+    "resume_allowed": false,
+    "teacher_allowed": false,
+    "real_sem_training_pixels_allowed": false,
+    "real_hs100mg_structure_allowed": false,
+    "aggregate_psf_noise_statistics_only": true
+  },
+  "data": {
+    "seed": 101001,
+    "patch_size": 128,
+    "supersample_factor": 8,
+    "train_scenes": 64,
+    "validation_scenes": 24,
+    "observations_per_scene": 2,
+    "reference_psf_sigma_px": 0.25,
+    "source_psf_sigma_levels_px": [0.85, 1.20, 1.60],
+    "shape_families": [
+      "irregular_superellipse",
+      "polygon",
+      "rounded_rectangle",
+      "cross_and_branch",
+      "thin_lines",
+      "dense_periodic",
+      "multi_object"
+    ],
+    "texture_families": [
+      "oriented_ridges",
+      "multiscale_grain",
+      "cellular_band",
+      "mixed_microtexture"
+    ],
+    "split_unit": "scene_seed",
+    "stored_dtype": "float16"
+  },
+  "training": {
+    "seed": 101101,
+    "steps_per_arm": 400,
+    "batch_size": 8,
+    "model_width": 16,
+    "learning_rate": 0.0002,
+    "minimum_learning_rate": 0.00002,
+    "weight_decay": 0.0001,
+    "precision": "bfloat16",
+    "checkpoint_steps": [0, 100, 200, 300, 400],
+    "gradient_clip": 1.0,
+    "stream_cycle": ["boundary", "detail", "consistency"],
+    "desktop_free_memory_target_gib": 2.0
+  },
+  "arms": {
+    "A": {
+      "name": "corrected_data_only",
+      "multi_scale_edge_support": false,
+      "subpixel_boundary_renderer": false,
+      "forward_data_consistency": false
+    },
+    "B": {
+      "name": "corrected_data_plus_weak_edge_support",
+      "multi_scale_edge_support": true,
+      "subpixel_boundary_renderer": false,
+      "forward_data_consistency": false
+    },
+    "C": {
+      "name": "corrected_data_plus_renderer_and_consistency",
+      "multi_scale_edge_support": true,
+      "subpixel_boundary_renderer": true,
+      "forward_data_consistency": true
+    }
+  },
+  "evaluation": {
+    "synthetic_metrics": [
+      "mae_gray",
+      "boundary_center_bias_px",
+      "boundary_center_abs_px",
+      "transition_width_px",
+      "complex_high_frequency_error",
+      "fine_energy_ratio_to_target",
+      "halo_fraction",
+      "known_motion_step_mae_px"
+    ],
+    "real_live_validation_dir": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/data/live_validation",
+    "real_motion_sequence_dir": "D:/GMM_2_Final/20260702_100MG_位移_50x/x_1um",
+    "tile_core_size": 128,
+    "tile_halo": 192
+  }
+}
+

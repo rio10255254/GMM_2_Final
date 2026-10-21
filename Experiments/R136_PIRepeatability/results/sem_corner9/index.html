@@ -1,0 +1,146 @@
+<!doctype html><meta charset="utf-8"><title>Corner nine results</title><style>body{max-width:1250px;margin:30px auto;font:17px/1.7 sans-serif;padding:20px}img{width:100%}pre{white-space:pre-wrap;font:inherit}td,th{padding:8px;border:1px solid #bbb}</style><h1>十字交界九顆：四組完整重算</h1><p>30次重拍；九顆集合與SEM區域對應。逐顆影像方向仍列兩種候選。</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>kind</th>
+      <th>mae_nm</th>
+      <th>bias_nm</th>
+      <th>repeatability_nm</th>
+      <th>maximum_error_nm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Raw</td>
+      <td>adjacent</td>
+      <td>8.167</td>
+      <td>1.835</td>
+      <td>9.725</td>
+      <td>39.299</td>
+    </tr>
+    <tr>
+      <td>R61</td>
+      <td>adjacent</td>
+      <td>5.368</td>
+      <td>1.696</td>
+      <td>5.482</td>
+      <td>18.024</td>
+    </tr>
+    <tr>
+      <td>R129</td>
+      <td>adjacent</td>
+      <td>4.125</td>
+      <td>1.473</td>
+      <td>4.251</td>
+      <td>16.868</td>
+    </tr>
+    <tr>
+      <td>R128</td>
+      <td>adjacent</td>
+      <td>3.708</td>
+      <td>1.359</td>
+      <td>3.708</td>
+      <td>15.535</td>
+    </tr>
+    <tr>
+      <td>Raw</td>
+      <td>start</td>
+      <td>19.081</td>
+      <td>6.429</td>
+      <td>13.763</td>
+      <td>83.264</td>
+    </tr>
+    <tr>
+      <td>R61</td>
+      <td>start</td>
+      <td>17.210</td>
+      <td>4.388</td>
+      <td>12.067</td>
+      <td>78.717</td>
+    </tr>
+    <tr>
+      <td>R129</td>
+      <td>start</td>
+      <td>17.985</td>
+      <td>8.616</td>
+      <td>10.091</td>
+      <td>76.798</td>
+    </tr>
+    <tr>
+      <td>R128</td>
+      <td>start</td>
+      <td>17.864</td>
+      <td>8.347</td>
+      <td>10.095</td>
+      <td>74.373</td>
+    </tr>
+  </tbody>
+</table><img src="selected_nine.png"><img src="displacement_comparison.png"><img src="shape_size/figures/thirty_repeat_contours.png"><img src="shape_size/figures/repeatability.png"><img src="sem_contours_candidate1.png"><img src="sem_contours_candidate2.png"><p>這次新九顆：R128短步PI差3.708nm，優於R129的4.125nm，30次中23次較低，完整掃描配對差距範圍為−0.620至−0.221nm；起點相對位移R128與R129差距未明確。R128尺寸重拍波動9.527nm最小；但九顆平均直徑相對SEM偏大222.040nm，R61偏大115.803nm較小。不能把穩定性改善寫成尺寸準確度改善。R61曾使用相關SEM尺寸訓練，其優勢不是未知答案的獨立驗證。
+
+</p><pre># R136 十字中心附近、SEM涵蓋九顆：四組重算
+
+2026-09-19。原圖／R61／R129／R128，全部30次、930張、每張9顆已完成。使用既有浮點重建，不重新訓練、不重新推論，未干涉另一項訓練。新結果獨立保存，原結果不覆寫。
+
+## 回答先前的資料問題
+
+先前這批30次的位移、重拍穩定性與R129不確定度評估，均使用畫面內另一組九顆。它們有完整照片與同步PI回授，但沒有完成對應SEM的逐顆真值確認。因此其重拍波動及相對PI的位移比較有資料依據；不能當成同九顆的尺寸／形狀準確度證據。舊36顆SEM實驗本身有歷史配對，與此問題不同。
+
+若要把位移、尺寸、輪廓與SEM串在同九顆上，應先完成SEM位置核對；之前未先做好這一步。本次固定改選靠近十字交界的3×3九顆後，再計算結果，未按模型成績挑顆粒。
+
+## 新九顆位置與對應範圍
+
+原图第一張座標約x1592／1621／1650，y726／755／784；是柱陣列最接近右下十字交界的完整3×3。930張、8370個Raw種子追蹤完整，局部重定位相對原Raw全域位移預測最大偏差小於0.636像素；四方法共用同一追蹤，不以PI或重建結果選顆粒。
+
+舊SEM對應集合為22、23、24、28、29、30、34、35、36。兩個主要整圖方向候選皆得到同一集合，最近圓心最大位置差1.285像素；但鏡像／90度方向尚未完全定案。集合平均尺寸不受九顆排列影響；逐顆尺寸與方向輪廓另列兩種配對敏感度，不以較好分數決定配法。
+
+## 位移重算
+
+單位nm。adjacent為相鄰短步，start為相對起點。mae為相對PI平均絕對差，repeatability為固定步位置跨30次的平均樣本標準差，maximum_error為觀察到的最大絕對PI差。
+
+| model   | kind     |   mae_nm |   bias_nm |   repeatability_nm |   maximum_error_nm |
+|:--------|:---------|---------:|----------:|-------------------:|-------------------:|
+| Raw     | adjacent |    8.167 |     1.835 |              9.725 |             39.299 |
+| R61     | adjacent |    5.368 |     1.696 |              5.482 |             18.024 |
+| R129    | adjacent |    4.125 |     1.473 |              4.251 |             16.868 |
+| R128    | adjacent |    3.708 |     1.359 |              3.708 |             15.535 |
+| Raw     | start    |   19.081 |     6.429 |             13.763 |             83.264 |
+| R61     | start    |   17.21  |     4.388 |             12.067 |             78.717 |
+| R129    | start    |   17.985 |     8.616 |             10.091 |             76.798 |
+| R128    | start    |   17.864 |     8.347 |             10.095 |             74.373 |
+
+名義0.1725 μm/px，位移方向只由前六次Raw與PI決定；另保存後24次的名義尺度及PI校準尺度結果。PI回授是位移參考，不等同已認證無誤差真值。原／新九顆同算法對照表為old_vs_new_targets.csv。
+
+## 尺寸與形狀重拍
+
+直徑以LSC半徑兩倍計；固定位置固定顆粒的30次樣本變異數先平均再開根號。形狀先移除圓心與每條輪廓平均半徑，再固定720角度比較；來源64個邊界點，插值不增加物理解析度。重拍波動越小代表越一致，不能單獨代表越接近實物。
+
+| model   |   diameter_mean_nm |   diameter_repeat_sd_nm |   shape_repeat_sd_nm |   diameter_repeat_absmax_nm |
+|:--------|-------------------:|------------------------:|---------------------:|----------------------------:|
+| Raw     |            2799.62 |                  32.75  |               61.667 |                     183.318 |
+| R61     |            2730.24 |                  37.971 |               16.354 |                     124.468 |
+| R129    |            2838.91 |                  19.231 |               15.789 |                      77.987 |
+| R128    |            2836.48 |                   9.527 |               13.005 |                      50.11  |
+
+## 使用SEM九顆的尺寸比較
+
+以下為九顆集合平均直徑的有號差，正值代表光學量到的平均尺寸較SEM大；不是逐顆平均絕對誤差。SEM参考用既有P柱边界，沒有拿V孔代替。SEM ID28局部邊界有不規則，完整保留，尚未認證為實物缺陷。像素尺度與SEM判邊不確定度尚未合入，不能宣稱完整絕對準確度認證。
+
+| model   |   mean_diameter_nm |   SEM_group_mean_diameter_nm |   group_signed_diameter_difference_nm |   group_difference_between_scan_sd_nm |
+|:--------|-------------------:|-----------------------------:|--------------------------------------:|--------------------------------------:|
+| Raw     |            2799.62 |                      2614.44 |                               185.182 |                                22.279 |
+| R61     |            2730.24 |                      2614.44 |                               115.803 |                                33.076 |
+| R129    |            2838.91 |                      2614.44 |                               224.472 |                                17.075 |
+| R128    |            2836.48 |                      2614.44 |                               222.04  |                                 5.503 |
+
+sem_mapping_sensitivity_summary.csv保留兩個方向下的逐顆直徑差、含尺寸輪廓差、去平均尺寸的形狀差；两張SEM輪廓圖均清楚標示方向候選。它們不作已確定身份的主結論。
+
+## R129不確定度重新計算
+
+r129_uncertainty/r129_uncertainty_by_position.csv已重算60個固定步／位置的30次觀察波動、含時間變化的平均值分量與範圍。沿用原分析中考慮時間相關的方法；尺度、PI校正與跨日條件的未知分量保留未知，不把它們設為零。這些是本次拍攝的分量，並非完整總不確定度。
+
+## 核對與圖表
+
+四組各8370圓心，共33480獨立圓擬合、逐顆位移、PI算式和影像重播通過原有核對。追蹤930張全數成功、沒有剔除最差結果。輪廓圖沿用固定配色、同尺度、30次淡線；SEM參考黑線，方向未定明示。
+
+selected_nine.png位置圖；shape_size/figures/thirty_repeat_contours.png重拍輪廓；displacement_comparison.png位移比較；sem_contours_candidate1.png及candidate2.png為兩個候選SEM對照。詳細資料、來源與核對表均位於results/sem_corner9。
+</pre>

@@ -1,25 +1,28 @@
 # GMM_2_Final
 
-## 目前精選研究入口（持續整理）
+本專案研究顯微影像經過神經重建後，平移定位、位移穩定性與量測不確定性如何改變。原方法、完整結果及失敗脈絡一起保存。
 
-保存原程式、資料生產方法、必要來源、完整結果與失敗脈絡。可再生的大型訓練資料和逐張重建不必整套下載；重要原拍共用一次，模型與圖片依用途精選。
+目前論文採用R152／RAW，十方法比較見[原論文交接與完整結果](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。正式基準仍是COMBO；研究候選、較早論文及未採用方案保留原身分。
 
-- [精選研究總入口](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/README.md)
-- [訓練資料怎麼生產、真正用過哪些來源](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/GENERATION_GUIDE.md)
-- [文獻引用、設計推論與官方程式版本](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/LITERATURE_GUIDE.md)
-- [每輪研究問題、方法與結果](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/EXPERIMENTS.md)
-- [完整小型數據、曝光與SEM不利結果](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)
-- [目前整理範圍、已完成與尚待處理](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/docs/reproducibility/project_completion/README.md)
-- [目前論文十方法完整結果與限制](https://github.com/rio10255254/GMM_2_Final/blob/codex/research-completion-20261021/Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)
-- [9月3日30趟實拍：930張相機原圖與30份原始位置紀錄](https://github.com/rio10255254/GMM_2_Final/releases/tag/shared-pi-20260903-v1)
+## 從這裡開始
 
-目前論文採用R152／RAW，正式基準仍為COMBO。整理不改研究判決、不啟動訓練，也不刪D/H研究原件；已有超量草稿維持凍結，尚未刪除。
+| 想找什麼 | 入口 |
+|---|---|
+| 研究現況與正式身分 | [專案狀態](PROJECT_STATE.md)、[正式模型政策](ESTIMATOR_POLICY.json) |
+| 每輪想解決什麼、怎麼做、結果及失敗 | [177個研究／歷史範圍](docs/reproducibility/EXPERIMENTS.md) |
+| 不下載整套訓練資料，先找生產方法 | [原生成程式、設定與真正上游來源](docs/reproducibility/GENERATION_GUIDE.md) |
+| 文獻依據與官方程式版本 | [原文獻、設計推論及固定來源](docs/reproducibility/LITERATURE_GUIDE.md) |
+| 完整數表與不利結果 | [常用原結果與失敗脈絡](docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)、[全部研究保存入口](docs/reproducibility/README.md) |
+| 實際原拍與重要比較圖 | [共用原始來源](docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)、[原結果圖冊](RECON_GALLERY.md) |
+| 保存了什麼、哪些大檔只留方法 | [精選固定內容與已知缺件](docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md) |
 
-這些入口指向目前精選內容；[本次已確認的固定來源快照](https://github.com/rio10255254/GMM_2_Final/tree/4472e2e8bb9db7f8d06743b9b874838753e33d2f)另保留查閱。177個研究範圍已有方法與來源索引，其中18條資料生產路線已按實際程式／設定確認，其餘未編造生成命令。全專案仍在逐輪整理，不把此版本宣稱為所有歷史實驗已重跑完成。
+可再生的大型訓練資料、逐張重建及中間陣列留生產程式、設定和必要來源；原拍、原始量測、人工來源、完整結果及少數關鍵模型另行保存。9月3日930張實拍與30份原始位置紀錄共用一次，不拿模型重建冒充原拍。
+
+[本次精選研究保存版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)綁定固定程式、內容索引與最後實際交付收據。這是研究內容的精選保存，不是整個磁碟鏡像，也沒有重跑全部歷史GPU訓練。22份早期程式與9項早期R13公式缺件如實保留。較早超量草稿仍凍結，未自行刪除；D/H研究原件及原工作分支受保護。
 
 ---
 
-以下保留較早的通用專案說明。最新方法、原結果與取得方式請先用上方入口。
+以下保留通用專案介紹與原研究脈絡；目前狀態及保存界線以上方入口為準。
 
 這份文件是整個專案的**入口總覽**。如果你是第一次接觸這個專案，從這裡開始讀。
 This is the top-level overview for the project. If you are new, start here.
@@ -44,16 +47,16 @@ This is the top-level overview for the project. If you are new, start here.
 
 ### 白話版說明
 
-這個專案的目標是：讓顯微鏡拍攝的環形結構（annulus）影像，在做幾何定位時能更加精準。
+這個專案的長期目標是：讓顯微鏡影像中的各種結構，在重建後能保留正確的邊界位置與細節。環形結構（annulus）是目前最完整、最可比較的正式測試代理，但不是唯一關心的顯微結構。
 
 更具體地說——
-顯微鏡拍出來的影像因為光學模糊（PSF 效應），邊界形狀會失真。我們訓練一個 AI 超解析模型（`GeoEdgeAlignSR`），讓它把這層模糊還原，並讓還原後的影像「更有利於下游幾何匹配工具（GMF）定位環形邊界」。
+顯微鏡拍出來的影像因為光學模糊（PSF 效應），邊界形狀會失真。我們訓練一個 AI 超解析模型（`GeoEdgeAlignSR`），讓它把這層模糊還原，並讓還原後的影像「更有利於下游幾何匹配工具（GMF）做穩定的幾何定位」。
 
-**重要：這不是普通的影像銳化專案。** 視覺上「看起來更清晰」不等於「幾何定位更準」。我們最終衡量的是：在 GMF 外部評分工具打分時，annulus 邊界的定位標準差（step std）能否降低。
+**重要：這不是普通的影像銳化專案。** 視覺上「看起來更清晰」不等於「幾何定位更準」。正式 baseline 的最終驗收仍看外部 GMF 在三尺度環形資料上的 step std；R39-R43 另外開出顯微泛化研究線，用來探索格線、紋理、缺陷、曲線與混合場景的通用邊界忠實度。
 
 ### Technical Version
 
-The goal is to improve the geometric localization accuracy of annulus boundary images captured by a microscope, by training a physics-informed deep learning super-resolution model.
+The long-term goal is faithful geometric reconstruction of microscopy structures. Annulus data is the current formal external gate because it has stable historical GMF comparisons, but it is a proxy for the broader microscopy-boundary objective.
 
 The optimization target is not generic visual sharpness.
 It is: **whole-annulus GMF geometry** — how well the reconstructed image supports the downstream geometric matching function (GMF) in localizing the annulus boundary at multiple displacement scales.
@@ -146,6 +149,7 @@ D:\GMM_2_Final\
 │
 ├── docs/                              ← 研究文件、證據、政策、歷史
 │   ├── README.md                      ← docs 區入口
+│   ├── navigation/PROJECT_MAP.md      ← 跨工作區檔案與正式入口地圖
 │   ├── operations/                    ← 操作指引（新實驗 SOP、quirks、治理）
 │   ├── analysis/                      ← 研究路徑圖
 │   ├── evidence/                      ← 策展後的證據引用錨點
@@ -230,6 +234,7 @@ The system has three interlocking modules:
 | 升級 baseline 條件、新 round 立案規則 | `PROJECT_ARCHITECTURE.md` |
 | 分支策略、同步政策、追蹤範圍 | `REPO_GOVERNANCE.md` |
 | 文件責任邊界、docs 區導覽 | `docs/README.md` |
+| 不知道內容位於哪個工作區 | `docs/navigation/PROJECT_MAP.md` |
 | 開新實驗完整指南（命名 / 模板 / SOP） | `docs/operations/STARTING_NEW_EXPERIMENT.md` |
 | AI agent 行為契約 | `CLAUDE.md` / `AGENTS.md` |
 | 整體巡檢（控制中心）| `python Tools/project_control_center.py` |

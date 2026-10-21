@@ -1,0 +1,12 @@
+services:
+  geoedge:
+    build: .
+    runtime: nvidia
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+    volumes:
+      - ../輸出結果/訓練結果:/app/Traing_Progress
+      - ../輸出結果/推論結果:/app/Reconstruct_Progress
+    working_dir: /app/Model
+    stdin_open: true
+    tty: true

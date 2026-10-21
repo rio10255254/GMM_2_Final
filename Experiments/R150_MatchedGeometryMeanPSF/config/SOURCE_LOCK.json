@@ -1,0 +1,24 @@
+{
+  "purpose": "R150 matched-geometry mean-PSF formal scratch8192",
+  "files": {
+    "model.py": "e543e6bc03123db4abb16a242da31ab6f7cb2082f24f6692e06eba41c503997f",
+    "dataset.py": "7eec53fa6a875f6e3ad8eb172dcef17072780d5b1a7a90a021fde4f58945a7fc",
+    "losses.py": "426dbfe10ff66e3a1a020664335e35e20dbb4321eca98e4506a3528b8f0d8e33",
+    "train.py": "8c0a540e6377670e6bd00a8a068a72c97df2407c54de147accc1025bfc616a36",
+    "training_policy.py": "58172d4aaadca2288c415756ace32a7e7b53f20193136eb98d8b2221cdf06792",
+    "infer.py": "a8ee142c9d0668a5b2f8fe6e8e4f28e4ab73ec8fae6b76572db56b17472ad283",
+    "utils.py": "34935c52950a50177c932dae1a0b8665ad79b7afb92b10da2f81830da07936e8",
+    "verify_package.py": "6fdf24041e8509ebad856c6717c707959bc003bb0717a297da8596373070e4b1",
+    "optical/fullres_psf.py": "9683a48d62ba7ef3bfb0ed125a1364233f4f486f5a05e0a93e64d22041207028",
+    "config/model.json": "ebb25c5720268db8cb6776fe87838ff3514cd21c8e94b044d5dceb9ba366e6b9",
+    "config/train.json": "452d6a296dcf7551273d5fb397d42ccc4acac6263f3a955d6ede66d0aa4f2816",
+    "config/data.json": "d287f45e927b8b66c05cd19dbcd0345c62f6638bfd60b315d8885ab53dfc0ada",
+    "calibration/measured_psf_bank.npz": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+    "calibration/BANK_LOCK.json": "f85c320d3e56bf2a25f7c1af554ce4aec70518ad1f8d2cfedadcee0374bb770a",
+    "data/manifest.json": "e6c02182f74d0e6e9bcd39143dd57c0dc3419f9a54a340db1a7fdfc39ab32972",
+    "data/DATA_LOCK.json": "4d9f203288141eca1e768ab529cc7967fc3f5605f9896c1bdf1cb797ab507bb9",
+    "scripts/preflight.py": "41bd835ad88f1dba98a79b688d89f85e19e869a3ef0ac9d195783920b633d8f8",
+    "scripts/launch_r150.py": "3c3c3d4c017dcce330ba5ea23a8bac9d74fc931994630e84d601e4531aa036cf"
+  },
+  "created_utc": "2026-09-26T19:00:13.060328+00:00"
+}

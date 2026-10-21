@@ -1,0 +1,16 @@
+{
+  "run_id": "20250605_edge_psf",
+  "source_folder_label": "20250605_PSF_Calibration",
+  "source_image_date": "2026-06-05",
+  "input_dir": "LabSystem_MOSR/psf_calibration/raw/20250605_PSF_Calibration",
+  "output_dir": "LabSystem_MOSR/psf_calibration/results/20250605_edge_psf",
+  "grid_rows": 10,
+  "grid_cols": 10,
+  "kernel_size": 101,
+  "max_profiles_per_image": 700,
+  "radius": 12,
+  "edge_percentile": 98.5,
+  "random_seed": 42,
+  "method": "edge_derived_isotropic_gaussian",
+  "status": "exploratory_first_pass_only_not_formal"
+}

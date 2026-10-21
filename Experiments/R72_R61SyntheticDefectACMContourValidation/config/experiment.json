@@ -1,0 +1,48 @@
+{
+  "experiment_id": "R72_R61SyntheticDefectACMContourValidation",
+  "created_date": "2026-07-30",
+  "scientific_question": "Does frozen R61v16 make the complete closed contour of unseen synthetic microscopy edge defects closer to clean truth than the raw input?",
+  "upstream_experiment": "D:\\GMM_2_Final\\Experiments\\R71_R61SyntheticMicroscopyDefectGeneralization",
+  "model": {
+    "name": "R61v16",
+    "checkpoint_sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
+    "inference_mode": "PSF off, weak PSF off, deconvolution regularization 30, physical alpha 0"
+  },
+  "sources": {
+    "feature_family": "edge_defects",
+    "image_ids": [80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],
+    "truth_dir": "D:\\GMM_2_Final\\Training_Data\\r40_microscopy_feature_coverage\\micro_val_unseen\\lbl\\stage_32_micro_edge_defects",
+    "raw_dir": "D:\\GMM_2_Final\\Training_Data\\r40_microscopy_feature_coverage\\micro_val_unseen\\src\\stage_32_micro_edge_defects",
+    "combo_dir": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\micro_recon\\reconstruct_progress_best_tradeoff_in_stage_32_micro_edge_defects_20260408_003525\\micro_val_unseen_stage_32_micro_edge_defects_best_tradeoff.pth",
+    "r61_dir": "D:\\GMM_2_Final\\Experiments\\R71_R61SyntheticMicroscopyDefectGeneralization\\results\\inference_runs\\reconstruct_progress_best_tradeoff_in_stage_32_micro_edge_defects_20260623_200020\\r61v16_psfoff_micro_val_unseen_edge_defects"
+  },
+  "acm": {
+    "implementation": "MATLAB activecontour",
+    "method": "Chan-Vese",
+    "iterations": 200,
+    "smooth_factor": 1.0,
+    "contraction_bias": 0.0,
+    "intensity_preprocessing": "mat2gray then 1st-to-99th-percentile contrast normalization",
+    "initialization": "one fixed outer rectangle spanning 10.5%-89.5% of the image in both axes",
+    "initialization_uses_truth_shape": false,
+    "primary_alignment": "translation_only",
+    "secondary_alignment": "fixed_pixel_coordinates",
+    "scale_fitting": false,
+    "rotation_fitting": false,
+    "sensitivity_presets": [
+      {"name": "low_smooth", "iterations": 150, "smooth_factor": 0.75},
+      {"name": "primary", "iterations": 200, "smooth_factor": 1.0},
+      {"name": "high_smooth", "iterations": 250, "smooth_factor": 1.5}
+    ],
+    "sensitivity_image_ids": [80, 84, 88, 92, 96, 99]
+  },
+  "statistics": {
+    "independent_unit": "independently_generated_image",
+    "independent_image_count": 20,
+    "bootstrap_repetitions": 20000,
+    "random_seed": 20260730,
+    "paired_test": "two-sided Wilcoxon with Holm correction",
+    "coarse_shape_gate": "IoU and mean symmetric boundary distance each require at least 60% of images to improve and a positive bootstrap 95% lower bound",
+    "sensitivity_gate": "all three ACM presets require positive median IoU and boundary-distance improvement versus Raw"
+  }
+}

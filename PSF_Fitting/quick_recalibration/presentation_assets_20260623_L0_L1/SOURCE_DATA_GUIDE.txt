@@ -1,0 +1,41 @@
+PSF L0/L1 數據來源檔說明
+
+- L1_newdata_summary.json：新 L1 的完整機器可讀摘要，包含三輪拍攝比較、係數表、FOV 表與主要判讀數字。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\L1_newdata_summary.json
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json
+- L1_newdata_summary.txt：新 L1 的文字版摘要；已轉成 txt，方便上傳。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\L1_newdata_summary.txt
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.md
+- paired_frame_metrics.csv：363 組連拍影像的逐位置數據，包含邊界差異與中心位移。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\paired_frame_metrics.csv
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_metrics.csv
+- paired_frame_summary.json：連拍影像檢查的完整摘要。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\paired_frame_summary.json
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_summary.json
+- paired_frame_summary.txt：連拍影像檢查的文字摘要；已轉成 txt。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\paired_frame_summary.txt
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_summary.md
+- L0_round1_noise_floor.json：Round1 同一輪資料重複擬合 15 次的 L0 底噪完整資料。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\L0_round1_noise_floor.json
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\outputs\L0_newdata_noise_floor.json
+- L0_round1_noise_floor_report.txt：Round1 L0 底噪文字摘要；已轉成 txt。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\L0_round1_noise_floor_report.txt
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\outputs\L0_newdata_noise_floor_report.md
+- L0_round2_noise_floor.json：Round2 同一輪資料重複擬合 15 次的 L0 底噪完整資料。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\L0_round2_noise_floor.json
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\outputs\L0_newdata_noise_floor.json
+- L0_round2_noise_floor_report.txt：Round2 L0 底噪文字摘要；已轉成 txt。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\L0_round2_noise_floor_report.txt
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\outputs\L0_newdata_noise_floor_report.md
+- L0_round3_noise_floor.json：Round3 同一輪資料重複擬合 15 次的 L0 底噪完整資料。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\L0_round3_noise_floor.json
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\outputs\L0_newdata_noise_floor.json
+- L0_round3_noise_floor_report.txt：Round3 L0 底噪文字摘要；已轉成 txt。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\L0_round3_noise_floor_report.txt
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\outputs\L0_newdata_noise_floor_report.md
+- previous_upload_manifest_20260623.csv：之前整理過的上傳檔案清單，可作補充索引。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\previous_upload_manifest_20260623.csv
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\PSF_UPLOAD_FILE_MANIFEST_20260623.csv
+- previous_upload_handoff_20260623_TW.txt：之前寫給 GPT 分析/報告用的文字交接稿。
+  位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1\06_source_data_for_upload\previous_upload_handoff_20260623_TW.txt
+  原始來源：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\PSF_UPLOAD_HANDOFF_20260623_TW.txt

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R91_DetailDecoupledScratch",
+  "reference_device": "NVIDIA RTX A6000",
+  "reference_total_memory_gib": 47.99,
+  "user_minimum_free_memory_gib": 7.0,
+  "required_allocator_headroom_gib": 10.0,
+  "planned_profiles": [
+    {"epochs": "1-8", "patch_size": 512, "pair_scene_batch": 16, "four_view_bundle_batch": 8, "gradient_accumulation": 1},
+    {"epochs": "9-60", "patch_size": 768, "pair_scene_batch": 6, "four_view_bundle_batch": 3, "gradient_accumulation": 3}
+  ],
+  "launch_rule": "Run a measured forward-backward benchmark and refuse formal launch if reserved-memory headroom is below 10 GiB."
+}

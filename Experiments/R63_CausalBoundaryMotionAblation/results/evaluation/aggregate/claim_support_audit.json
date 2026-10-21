@@ -1,0 +1,471 @@
+{
+  "guardrail_limit_pct": -15.0,
+  "claims": [
+    {
+      "claim": "static_geometry_anchor",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": -1.19172633204,
+      "primary_effect_pct": -1.51735307102,
+      "primary_ci_low": -1.62339274154,
+      "primary_ci_high": -0.909531788,
+      "conditions": {
+        "50x_primary_pass": false,
+        "20x_direction_consistent": false,
+        "guardrails_pass": false,
+        "guardrails": [
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": -0.17810826577,
+            "passed": true
+          },
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -7.68394347311,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -17.77964,
+            "passed": false
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": 10.5794974294,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": -0.579684731711,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": -0.398736840255,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "claim": "relative_motion_consistency",
+      "status": "suggestive",
+      "supported": false,
+      "primary_effect": 0.0609832439157,
+      "primary_effect_pct": 0.718221508503,
+      "primary_ci_low": -0.196618769442,
+      "primary_ci_high": 0.365838682724,
+      "conditions": {
+        "combined_step_sd_pass": false,
+        "combined_grid_disagreement_pass": false,
+        "both_magnifications_direction_consistent": false,
+        "command_error_guardrail_pass": true,
+        "command_error_removal_penalty_pct": 0.566804657459
+      }
+    },
+    {
+      "claim": "shape_geometry",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": -0.00692773185001,
+      "primary_effect_pct": -0.00882066202214,
+      "primary_ci_low": -0.00692773185001,
+      "primary_ci_high": 0.0069783623,
+      "conditions": {
+        "50x_primary_pass": false,
+        "20x_direction_consistent": false,
+        "guardrails_pass": true,
+        "guardrails": [
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 0.0,
+            "passed": true
+          },
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": 0.016036957928,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -0.0167225174837,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -0.0150560402013,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 0.000240426735188,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 0.189624289369,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "claim": "global_boundary_position",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": -0.007726791225,
+      "primary_effect_pct": -0.00983805600261,
+      "primary_ci_low": -0.007726791225,
+      "primary_ci_high": 0.00416883642501,
+      "conditions": {
+        "50x_primary_pass": false,
+        "20x_direction_consistent": false,
+        "guardrails_pass": true,
+        "guardrails": [
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 0.0,
+            "passed": true
+          },
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": 0.00876172107318,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": 0.00350088924357,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -0.021186011638,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 0.000240426735188,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 0.216888952321,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "claim": "identity_boundary_guard",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": -0.377518320725,
+      "primary_effect_pct": -0.480671248019,
+      "primary_ci_low": -0.695047564225,
+      "primary_ci_high": -0.356503298025,
+      "conditions": {
+        "50x_primary_pass": false,
+        "20x_direction_consistent": false,
+        "guardrails_pass": true,
+        "guardrails": [
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": -0.152828035108,
+            "passed": true
+          },
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -2.46272235575,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -0.512204314005,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": 2.35395484253,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": -0.218373214278,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": -0.633146114306,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "claim": "region_boundary_teacher",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": -1.38800484967,
+      "primary_effect_pct": -1.76726263793,
+      "primary_ci_low": -1.45957251437,
+      "primary_ci_high": -1.00398373967,
+      "conditions": {
+        "50x_primary_pass": false,
+        "20x_direction_consistent": false,
+        "guardrails_pass": true,
+        "guardrails": [
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": -0.110554918416,
+            "passed": true
+          },
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -5.0580494635,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -1.05159143507,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": 3.79063662353,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": -0.441813472782,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 1.70636888486,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "claim": "boundary_residual_adapter",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": -0.346369028625,
+      "primary_effect_pct": -0.441010738087,
+      "primary_ci_low": -0.542901152325,
+      "primary_ci_high": -0.095525742425,
+      "conditions": {
+        "50x_primary_pass": false,
+        "20x_direction_consistent": false,
+        "guardrails_pass": true,
+        "guardrails": [
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": -0.00106580762741,
+            "passed": true
+          },
+          {
+            "metric": "cd_bound_width_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -1.09224042495,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -0.255895386079,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -0.150129459516,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 0.147636629353,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 2.39049314553,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "claim": "adjacent_frame_consistency",
+      "status": "suggestive",
+      "supported": false,
+      "primary_effect": 0.0252432464709,
+      "primary_effect_pct": 0.297298756112,
+      "primary_ci_low": -0.248813377188,
+      "primary_ci_high": 0.337708598014,
+      "conditions": {
+        "combined_step_sd_pass": false,
+        "combined_grid_disagreement_pass": false,
+        "both_magnifications_direction_consistent": false,
+        "command_error_guardrail_pass": true,
+        "command_error_removal_penalty_pct": -0.250653987529
+      }
+    },
+    {
+      "claim": "known_shift_motion",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": 0.0585569000885,
+      "primary_effect_pct": 0.689645588105,
+      "primary_ci_low": -0.0845418443865,
+      "primary_ci_high": 0.192194146769,
+      "conditions": {
+        "combined_step_sd_pass": false,
+        "combined_grid_disagreement_pass": false,
+        "both_magnifications_direction_consistent": false,
+        "command_error_guardrail_pass": true,
+        "command_error_removal_penalty_pct": -0.13221155984
+      }
+    },
+    {
+      "claim": "shift_equivariance",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": 0.0632633823679,
+      "primary_effect_pct": 0.745075515826,
+      "primary_ci_low": -0.0213475830159,
+      "primary_ci_high": 0.148359150889,
+      "conditions": {
+        "combined_step_sd_pass": false,
+        "combined_grid_disagreement_pass": false,
+        "both_magnifications_direction_consistent": false,
+        "command_error_guardrail_pass": true,
+        "command_error_removal_penalty_pct": 0.626730332849
+      }
+    },
+    {
+      "claim": "raw_position_anchor",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": -0.276980469339,
+      "primary_effect_pct": -3.26209820504,
+      "primary_ci_low": -0.864135367072,
+      "primary_ci_high": 0.320227178322,
+      "conditions": {
+        "combined_step_sd_pass": false,
+        "combined_grid_disagreement_pass": false,
+        "both_magnifications_direction_consistent": false,
+        "command_error_guardrail_pass": true,
+        "command_error_removal_penalty_pct": -1.39730491211
+      }
+    },
+    {
+      "claim": "quality_gate",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": -0.157844942908,
+      "primary_effect_pct": -2.26852293694,
+      "primary_ci_low": -0.418326405681,
+      "primary_ci_high": 0.103722046639,
+      "conditions": {
+        "combined_grid_disagreement_pass": false,
+        "combined_step_sd_pass": false,
+        "both_magnifications_motion_direction_consistent": false,
+        "both_magnifications_cd_bound_direction_consistent": false,
+        "command_error_guardrail_pass": true,
+        "edge_and_ringing_guardrails_pass": true,
+        "edge_and_ringing_guardrails": [
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": 0.110761032358,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": 0.731089815825,
+            "passed": true
+          },
+          {
+            "metric": "edge_width_10_90_nm",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 0.265296735554,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 2.94078822427,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "claim": "shift_safe_upsampling",
+      "status": "unsupported",
+      "supported": false,
+      "primary_effect": -0.000607422227575,
+      "primary_effect_pct": -4.59421953793,
+      "primary_ci_low": -0.00511366103978,
+      "primary_ci_high": 0.000667933913675,
+      "conditions": {
+        "primary_subpixel_vector_pass": false,
+        "edge_radius_guardrail_pass": true,
+        "direction_p95_guardrail_pass": true,
+        "direction_spread_guardrail_pass": true,
+        "shift_ringing_change_guardrail_pass": true,
+        "ringing_guardrails_pass": true,
+        "ringing_guardrails": [
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "50x",
+            "retained_vs_removed_guardrail_pct": -0.355444425726,
+            "passed": true
+          },
+          {
+            "metric": "outer_ringing_energy",
+            "stratum": "20x",
+            "retained_vs_removed_guardrail_pct": 3.79555026968,
+            "passed": true
+          }
+        ]
+      }
+    }
+  ]
+}

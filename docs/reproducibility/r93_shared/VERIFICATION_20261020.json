@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "date": "2026-10-20",
+  "purpose": "GitHub source/result recovery, not new training or model promotion",
+  "frozen_shared_release": "research-shared-sources-20261016",
+  "frozen_source_code_commit": "f07c57d544f3dfc167bd49a01ac7c44a18e796bb",
+  "source_files_downloaded_from_GitHub": 128,
+  "shared_data_files_downloaded_restored_and_verified": 15004,
+  "shared_data_bytes": 29704604438,
+  "downloaded_shared_asset_bytes": 12591736219,
+  "native_readers": [
+    "R93_RecoverableDetailSeparatedScratch",
+    "R94_EvidenceConditionalScratch",
+    "R95_CounterfactualGateRepairScratch",
+    "R97_DirectCausalPhaseScratch",
+    "R98_AggressiveTextureScratch"
+  ],
+  "native_prepared_samples": 45,
+  "roles_per_reader": 8,
+  "R94_failure_preserved_and_test_stage": "epoch8,512patch/256core; no completed48epoch model claim",
+  "full_file_set_check_and_observed_stage_reader_check_separately_passed": true,
+  "original_R93_record_paths_downloaded_restored_verified": 600,
+  "original_R93_record_bytes": 950469177,
+  "saved_model_files_including_aliases_and_smoke": 34,
+  "original_result_images": 245,
+  "original_comparison_and_test_images_total": 250,
+  "original_gallery_files_preserved_without_reencoding": 24,
+  "small_result_replay_zip_bytes": 36022,
+  "small_result_replay_GitHub_roundtrip": "PASS60originalrows,15observedcandidates,18values,epoch48andfiveaxischoices",
+  "fixed_model_CPU_inference_epochs": [
+    48,
+    60
+  ],
+  "fixed_real_preview_inputs": 4,
+  "bit_exact_CPU_reconstructed_images": 8,
+  "reference_for_inference": "Original unmodified program on CPU, not historical GPU monitoring panels",
+  "old_scientific_D_and_H_roots_denied_during_replay": true,
+  "fresh_CPU_environment": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "opencv": "4.12.0",
+    "torch": "2.3.0+cpu",
+    "torch_cuda_runtime": null
+  },
+  "full_historical_training_repeated": false,
+  "full_formal_data_generation_repeated": false,
+  "sealed_holdout_read": false,
+  "formal_baseline_changed": false,
+  "new_D_scientific_files_deleted_in_this_GitHub_update": 0
+}

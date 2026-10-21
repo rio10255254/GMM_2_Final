@@ -1,0 +1,47 @@
+{
+  "experiment_id": "R71_R61SyntheticMicroscopyDefectGeneralization",
+  "created_date": "2026-07-30",
+  "model": {
+    "name": "R61v16",
+    "checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020\\weights\\best_tradeoff.pth.tar",
+    "training_manifest": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_motion_texture_step_guard_v16\\manifest.json",
+    "training_profile_root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_motion_texture_step_guard_v16",
+    "psf_mode": "off",
+    "weak_psf": false,
+    "psf_deconv_reg": 30.0,
+    "psf_phys_alpha": 0.0,
+    "psf_fitted_path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\psf_calibration\\results\\20250605_inner_circle_roi_fine_prealign_fit\\PSF_fitted_2D_FOVstack.mat"
+  },
+  "data": {
+    "profile_root": "D:\\GMM_2_Final\\Training_Data\\r40_microscopy_feature_coverage\\micro_val_unseen",
+    "manifest": "D:\\GMM_2_Final\\Training_Data\\r40_microscopy_feature_coverage\\micro_val_unseen\\manifest.json",
+    "expected_total": 100,
+    "expected_per_family": 20,
+    "defect_focus_families": ["edge_defects", "mixed_fields"]
+  },
+  "secondary_reference": {
+    "name": "COMBO",
+    "summary": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\micro_recon\\combo_micro_summary.json"
+  },
+  "inference": {
+    "python": "C:\\Users\\Rio\\anaconda3\\python.exe",
+    "script": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\_r61_real_sample_runtime_20260702_210629\\runtime\\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+    "device": "cuda:0",
+    "extension": ".bmp"
+  },
+  "metrics": {
+    "edge_low_threshold": 20,
+    "edge_high_threshold": 50,
+    "edge_tolerance_px": 2,
+    "edge_band_radius_px": 3,
+    "highpass_sigma_px": 2.0,
+    "bootstrap_repetitions": 20000,
+    "random_seed": 20260730
+  },
+  "pilot_gate": {
+    "overall_improvement_fraction": 0.70,
+    "defect_improvement_fraction": 0.60,
+    "family_psnr_floor_db": 0.0,
+    "family_edge_f1_floor": 0.0
+  }
+}

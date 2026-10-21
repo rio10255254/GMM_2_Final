@@ -1,0 +1,6 @@
+{
+  "purpose": "Native-intensity single-image comparison crops",
+  "display_rule": "All methods retain their native 8-bit values; no per-image contrast stretching",
+  "crop_rule": "The same Raw-defined coordinates and dimensions are used for every method",
+  "scale_bar_rule": "Scale bars use the calibrated object-space sampling for each magnification"
+}
