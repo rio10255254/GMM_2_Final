@@ -27,7 +27,7 @@ python Tools/bind_verified_collections_to_master.py --operation OP --master-inde
 
 `--review-paths-only`只可提早找來源位置或缺件問題，永遠不產生可恢復的總索引。較早保存清單另放歷史位置，不覆蓋固定程式副本自己的清單；目前H引用優先，較舊不同結果另留歷史。
 
-新保存版本在仍為私人草稿時，先上傳已綁定的最終清單與驗證摘要，再用伺服器實際附件逐份核對。全部已取回的物件才能發布；舊已發布版本不覆寫。
+新保存版本在仍為私人草稿時，先上傳已綁定的最終清單與驗證摘要，再用伺服器實際附件逐份核對。 五份已發布的小型重做／原交付包使用[各自已驗證的來源版本](CONVENIENCE_DELIVERIES_VERIFIED.json)，必須另核對並保留原標籤，不可為了符合新的總版本而重指程式來源。全部已取回的物件才能發布；舊已發布版本不覆寫。
 
 附件核對使用[GitHub官方的完整逐頁附件介面](https://docs.github.com/en/rest/releases/assets#list-release-assets)，不只讀一頁或推測附件名稱。可先對一份完成的資料批次檢查：
 
