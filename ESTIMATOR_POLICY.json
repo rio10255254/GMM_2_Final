@@ -4670,14 +4670,18 @@
         "publication_complete": false
       },
       "current_optical_spectrum_replay": {
-        "status": "original_CPU_source_replay_passed_GitHub_retrieval_pending",
+        "status": "actual_GitHub_sources_and_isolated_original_CPU_replay_verified",
         "source_files": 9,
         "source_bytes": 5058734,
         "arrays": 16,
         "numeric_values": 458832,
-        "prior_and_current_image_versions_preserved": 2,
         "guide": "docs/reproducibility/optical_calibration/SPECTRA.md",
-        "PSF_fitting_or_neural_inference_repeated": false
+        "PSF_fitting_or_neural_inference_repeated": false,
+        "source_commit": "80a08860173123082a40672048dfa688192b03bb",
+        "old_research_roots_blocked": true,
+        "changed_input_rejected": true,
+        "image_version_pairs_preserved": 2,
+        "receipt": "docs/reproducibility/optical_calibration/SPECTRUM_GITHUB_REPLAY_VERIFIED.json"
       }
     }
   },

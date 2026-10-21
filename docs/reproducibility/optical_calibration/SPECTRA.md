@@ -25,3 +25,8 @@ python Tools/replay_psf_spectrum_sources.py --root . --report spectrum_replay.js
 ```
 
 程式先檢查九份原件，再只執行原來的兩個計算函式。它不執行原圖表寫入入口，不改論文影像；任何原件或參照數值不符都會停止。較早圖的讀取核對與目前數值重算，分別記錄於[圖版本對照](../project_completion/SPECTRA_IMAGE_VERSION_REVIEW.json)及[目前重算收據](SPECTRUM_REPLAY_VERIFIED.json)。GitHub實際下載後的核對另以取回收據記錄，沒有用本機通過代替遠端取回。
+
+
+## GitHub實際取回結果
+
+固定來源版本`80a08860173123082a40672048dfa688192b03bb`的35份本次來源／說明已逐份實際下載，其中九份必要原件在禁止讀取原D／H研究位置的條件下，再次重算16份陣列458832數值完全相同。另故意改動一張取回的相機裁切，程式在寫出結果前正確停止，測試後只還原這份本次下載副本。原論文、原資料及訓練未動。[取回與隔離重算收據](SPECTRUM_GITHUB_REPLAY_VERIFIED.json)。這35份是本次變動範圍，不冒稱本次又重查全部未改動的程式檔。

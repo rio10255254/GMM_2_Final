@@ -44,4 +44,4 @@ python Tools/replay_psf_saved_results.py --root EXTRACTED_KIT --output NEW_PSF_R
 
 全內容核對另找出兩張反捲積頻譜圖與GitHub舊版不同。舊圖說標0.08，現圖及原MAT標0.05；20倍原拍頻譜不變但V42／反捲積頻譜不同，50倍較早範圍256×257、目前256×256。兩版原圖／陣列分別保留，不能只當作換版面，也不只用單一參數解釋全部差異。
 
-九份小型必要原件共5058734 bytes，以原FFT函式重算目前16份陣列458832數值逐值相同，不執行原圖表寫入入口、不重做PSF擬合／V42推論。[完整版本判讀與執行方式](../../docs/reproducibility/optical_calibration/SPECTRA.md)。目前這項為本機來源核對，GitHub取回結果依後續獨立收據認定，不以本機通過冒充遠端取回。
+九份小型必要原件共5058734 bytes，以原FFT函式重算目前16份陣列458832數值逐值相同，不執行原圖表寫入入口、不重做PSF擬合／V42推論。[完整版本判讀與執行方式](../../docs/reproducibility/optical_calibration/SPECTRA.md)。後續已實際下載固定GitHub來源，在原D／H研究位置不可讀的條件下重算同樣16份陣列458832數值完全相同；故意修改取回輸入則在寫出結果前正確停止。[GitHub取回收據](../../docs/reproducibility/optical_calibration/SPECTRUM_GITHUB_REPLAY_VERIFIED.json)。
