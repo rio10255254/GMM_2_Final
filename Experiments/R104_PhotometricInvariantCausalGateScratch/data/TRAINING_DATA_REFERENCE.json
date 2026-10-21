@@ -1,0 +1,12 @@
+{
+  "role": "immutable procedural base truth used by R104",
+  "location": "D:/GMM_2_Final/Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
+  "content_sha256": "260ccc5b4e31727e7fc97082b831717aa4c06d9f429ef98a5ce1210cb49bf5d5",
+  "scene_count": 1250,
+  "stored_observation_count": 5000,
+  "r104_online_observations_per_epoch": 5000,
+  "reuse_mode": "read_only_by_verified_reference",
+  "reason_not_duplicated": "avoid another large byte-for-byte copy while disk space is constrained",
+  "contains_real_sem_or_optical_pixels": false,
+  "formal_run_requirement": "audit.json must pass and content_sha256 must match before training"
+}

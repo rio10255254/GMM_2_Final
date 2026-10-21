@@ -4877,6 +4877,24 @@
         "supersedes_old_full_snapshot_and_exact_rebuild_omission_gate": true,
         "existing_assets_deletion_authorized": false,
         "scientific_adoption_changed": false
+      },
+      "generation_source_routes_20261021": {
+        "guide": "docs/reproducibility/GENERATION_GUIDE.md",
+        "round_program_config_map": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+        "round_scopes": 177,
+        "explicit_actual_source_confirmed_routes": 18,
+        "source_programs": 1885,
+        "configs": 322,
+        "declared_config_cross_round_edges": 439,
+        "new_original_small_records": 11,
+        "new_original_record_bytes": 86251,
+        "R93_original_generator_and_repair_source_identities_confirmed": true,
+        "R92_R93_bases_kept_distinct": true,
+        "no_generated_payload_uploads": true,
+        "no_generators_trainers_or_inference_executed": true,
+        "all177routes_individually_confirmed": false,
+        "old_full_snapshot_delivery_protocol_superseded": true,
+        "scientific_adoption_changed": false
       }
     }
   },

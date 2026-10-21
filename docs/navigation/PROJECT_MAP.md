@@ -15,6 +15,7 @@ Last updated: 2026-10-21
 | 已生效的穩定規則 | `PROJECT_ARCHITECTURE.md` | `docs/operations/SOURCE_OF_TRUTH_POLICY.md` |
 | 某一輪實驗的結論 | `Experiments/INDEX.md` | 該輪 `reports` |
 | 不靠舊磁碟從GitHub理解及取回研究 | [研究保存入口](../reproducibility/README.md) | [全專案實際內容核對](../reproducibility/project_completion/README.md)、逐輪方法及各版本附件 |
+| 不下載完整訓練資料，先找生產方法 | [原生成程式與必要來源](../reproducibility/GENERATION_GUIDE.md) | R92／R93共用基礎、原修正及在線觀測分清；原資料產物不因可生成而重複上傳 |
 | 文獻依據與研究設計理由 | 所屬輪次的原文獻整理與設計報告，例如[R88文獻綜整](../../Experiments/R88_MeasurementFaithfulScratch/reports/R88_LITERATURE_SYNTHESIS.md) | 文獻原方法與本專案設計推論分開；原文連結保留，沒有本機全文的文獻不冒稱已收錄全文 |
 | 各輪程式、完整數據與失敗紀錄 | [逐輪問題、方法及來源](../reproducibility/EXPERIMENTS.md) | 先讀正式報告，再找該輪程式、完整數表與保存附件；不只留挑選過的好結果 |
 | 原始相機照片、SEM與必要共用輸入 | [來源與影像保存判斷](../reproducibility/SOURCE_AND_IMAGE_DECISIONS.md) | 原拍與模型重建分開；多輪共用的原件保留一次，所有需要的原位置仍可對應 |

@@ -1,0 +1,147 @@
+{
+  "status": "complete_pending_full_audit",
+  "completed_at": "2026-08-12T01:32:37.315794",
+  "rerendered_bundle_count": 4,
+  "rerendered_bundle_fraction": 0.022222222222222223,
+  "rerendered_observation_count": 16,
+  "additional_global_projection_count": 1,
+  "minimum_new_span": 0.31,
+  "original_content_sha256": "2f0053d506627dc5b42f838233effdfa8a1920930c9602983defa535f5f5efce",
+  "rerendered_content_sha256": "260ccc5b4e31727e7fc97082b831717aa4c06d9f429ef98a5ce1210cb49bf5d5",
+  "script_sha256": "cc84a8dffcd9e3ddf02be41e73b96ca216c13942f8a900f42d5b4e47d348c35c",
+  "implementation_lock_sha256": "3df5e4bf0a08682319648bf13a82b2db5dce06c843a19b3739468ca8d32ccdd7",
+  "backup": "data/r92_formal/exposure_span_repair_backup",
+  "backup_manifest_sha256": "5aef81978b521d1d09d4ea4abbc754d1b554018dcfe268d2803c3ae1ad2ce01d",
+  "source_target_pixel_blending": false,
+  "geometry_or_label_changed": false,
+  "profile": "formal",
+  "audit_required": true,
+  "affected_scenes": [
+    537,
+    544,
+    570,
+    594
+  ],
+  "observations": [
+    {
+      "scene_index": 537,
+      "observation_index": 0,
+      "old_span": 0.2879161775290934,
+      "new_exposure": 0.949159890641322,
+      "projection": null
+    },
+    {
+      "scene_index": 537,
+      "observation_index": 1,
+      "old_span": 0.2879161775290934,
+      "new_exposure": 1.0154717150397254,
+      "projection": null
+    },
+    {
+      "scene_index": 537,
+      "observation_index": 2,
+      "old_span": 0.2879161775290934,
+      "new_exposure": 1.1520888998018035,
+      "projection": null
+    },
+    {
+      "scene_index": 537,
+      "observation_index": 3,
+      "old_span": 0.2879161775290934,
+      "new_exposure": 0.8420888998018035,
+      "projection": null
+    },
+    {
+      "scene_index": 544,
+      "observation_index": 0,
+      "old_span": 0.25615844232670715,
+      "new_exposure": 1.0165177161019294,
+      "projection": null
+    },
+    {
+      "scene_index": 544,
+      "observation_index": 1,
+      "old_span": 0.25615844232670715,
+      "new_exposure": 1.1377014990328247,
+      "projection": null
+    },
+    {
+      "scene_index": 544,
+      "observation_index": 2,
+      "old_span": 0.25615844232670715,
+      "new_exposure": 0.8277014990328248,
+      "projection": {
+        "projection_fraction": 0.025,
+        "affine_scale": 1.125,
+        "affine_offset_normalized": -0.05,
+        "robust_gap_after": 0.34117648005485535,
+        "fraction_above_bound_after": 0.10035324096679688,
+        "mean_absolute_projection_gray": 0.3634779155254364,
+        "p95_p5_contrast_gray_after": 20.0
+      }
+    },
+    {
+      "scene_index": 544,
+      "observation_index": 3,
+      "old_span": 0.25615844232670715,
+      "new_exposure": 0.9382577737760529,
+      "projection": null
+    },
+    {
+      "scene_index": 570,
+      "observation_index": 0,
+      "old_span": 0.2528932754419738,
+      "new_exposure": 0.8263978105524317,
+      "projection": null
+    },
+    {
+      "scene_index": 570,
+      "observation_index": 1,
+      "old_span": 0.2528932754419738,
+      "new_exposure": 0.9206740520423661,
+      "projection": null
+    },
+    {
+      "scene_index": 570,
+      "observation_index": 2,
+      "old_span": 0.2528932754419738,
+      "new_exposure": 1.0507049058609028,
+      "projection": null
+    },
+    {
+      "scene_index": 570,
+      "observation_index": 3,
+      "old_span": 0.2528932754419738,
+      "new_exposure": 1.1363978105524317,
+      "projection": null
+    },
+    {
+      "scene_index": 594,
+      "observation_index": 0,
+      "old_span": 0.27726275932875666,
+      "new_exposure": 0.8315459475978719,
+      "projection": null
+    },
+    {
+      "scene_index": 594,
+      "observation_index": 1,
+      "old_span": 0.27726275932875666,
+      "new_exposure": 0.9119789835001947,
+      "projection": null
+    },
+    {
+      "scene_index": 594,
+      "observation_index": 2,
+      "old_span": 0.27726275932875666,
+      "new_exposure": 1.0168012282582177,
+      "projection": null
+    },
+    {
+      "scene_index": 594,
+      "observation_index": 3,
+      "old_span": 0.27726275932875666,
+      "new_exposure": 1.141545947597872,
+      "projection": null
+    }
+  ]
+}

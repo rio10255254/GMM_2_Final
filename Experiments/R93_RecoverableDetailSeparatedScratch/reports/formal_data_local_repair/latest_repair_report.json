@@ -1,0 +1,508 @@
+{
+  "passed": true,
+  "formal_full_audit_passed": true,
+  "affected_scene_count": 11,
+  "affected_observation_count": 44,
+  "untouched_scene_count": 1239,
+  "untouched_observation_count": 4956,
+  "unaffected_manifest_hashes_identical": true,
+  "clean_targets_changed": false,
+  "geometry_changed": false,
+  "degradation_family_changed": false,
+  "backup": "D:\\GMM_2_Final\\Experiments\\R93_RecoverableDetailSeparatedScratch\\reports\\formal_data_local_repair\\backup_20260812_110915",
+  "repair_tool_sha256": "8685eb047a31da8ec36bc5c34bd255b8b131ce261cefca62bdb3f30a938e062d",
+  "manifest_after_sha256": "bc0f8c9d4774ff5ca441c45414d131a62f2c2c893596d5599ba64678116d1a76",
+  "content_after_sha256": "6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5",
+  "scenes": [
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0008:s93012315747",
+      "scene_index": 821,
+      "attempt": 3,
+      "original_observation_hashes": [
+        [
+          "419a95b410f7896dd0fcd4757a120c9962ab6697cbafd2172ee78c81828e3952",
+          "2146e30845e9915822f6499262894529ed4183c3e408f93de5093cb28aef9f57"
+        ],
+        [
+          "0a7626a6a82d05e6776ed052a0dd654da88baac6885bfaee4845783e97372e83",
+          "d9a92683f3669610d99dfff885dfab5b02c8759d0ee88467779201430abbad09"
+        ],
+        [
+          "6181bdf38d64965bbffdf35882fb5fc48a6830fa6335914f7a6982b46e9f7090",
+          "566c4950d41cfc17302f204ca8a23798a01cffc2238e02a0ad82a0c3347291bf"
+        ],
+        [
+          "11bf92d1e27fb5c37fbb0c19d4d4dea2a522b5ff599034973abf1ddafcaea982",
+          "88771da37afe0a930bc341a1a6222c4d617646de3e2404f2379e92d8d212bfc2"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "94fd3738f863a18c7e83467111424a161a9ad9c4f7a9dfe7b35c747d33c388b4",
+          "353da88a92a09172ae37530fc670aebacbe667ea87bae2c1ab6addcb2def6e1d"
+        ],
+        [
+          "88bbd3e238a13deb544ab5d08aa3df2b3ce9319c8527cf2502724a3d8f6115e1",
+          "eedbd59d0e86979240aa88051ab1f65ed4942ffceda298207669267c42048536"
+        ],
+        [
+          "fdba313d840f2fe67762b2f0f7e35d799389583d722dd9450a056b6fe9ffdfb9",
+          "eab259cd121aad331147021f1c890e85e18c2bcac2728d8a8ae782dbf01c0175"
+        ],
+        [
+          "579f793894c0b38b96ade78b2db4e726d1027363d5e1212eb00b1b0d3bcad414",
+          "f9c131b27889612153da3a939f84a304f3f5b5d8a11fb8cead1d1b8058b28c5a"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0014:s93012375789",
+      "scene_index": 827,
+      "attempt": 1,
+      "original_observation_hashes": [
+        [
+          "b84c8eeca039dd6d610f7d7576c233dfeb54b8e7a79073c555a007b18af0ebe4",
+          "5067d70b1e274bc8356e1bc52c07405d39f4e2c7126700da25ebaf3135a2f842"
+        ],
+        [
+          "81ea1c2d136bca13daab66e646629aad92aedc852fa2e421416b605623ac75a7",
+          "0ecc97f2e1cb978b61555930f9be61e511cae546e8381748ece48794be46b979"
+        ],
+        [
+          "f059563ace36bc7b4691b61c64cf185c12d3185c69683fa9e37feba96e7750e9",
+          "6f73087119df2c5e9f8f9e9202516b063c759ea51587539e9b04a76a2aeff1ff"
+        ],
+        [
+          "18ebd60f5fb049605156d5093a3ddcae43e6f2570c5fb897de7c885df62a52e2",
+          "79f661dbbb7fa303a86423f5d9c7a30a5ce72c1bf0163620468993b61877a72a"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "5508ef4ed48fb3798636dea632f0d9fb118834e54bc90a76683b59035f467964",
+          "10f57b2f62a9d0c373754afb97d67526cdcfb4106c359eb5579c7814a039200e"
+        ],
+        [
+          "4d56b3d82003e167d5eaa24f0d8616518deca2b185fbd00eeb32bd10c9a34f41",
+          "c42dbdb1e6d07929ec6db6eabd290d4236fc230ed3284c0b6395f13e57955788"
+        ],
+        [
+          "00c6a7d6bd3181ab0d8cc63df400600d41053ccde0309af5b43483479531b825",
+          "b7e1017498e24606f7964dd669bd1f0070b802e04f6c71005e5bf6a9083024c1"
+        ],
+        [
+          "260e37030510918a9b1a00128b5b833252f46f70a49aa914b7d910a6b749b484",
+          "289e81fe4da24334108ba5654f990a3c67b4f79338a2b62680d4f7adaa0c1f16"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0023:s93012465852",
+      "scene_index": 836,
+      "attempt": 1,
+      "original_observation_hashes": [
+        [
+          "3c0392c13a7e54e1eec989b0e0b95ca6dc77a2e73255b7a662408c1e9c57b810",
+          "613efa8b148fa7d9f6f1d13a1f64e357832cae6e8a1b3a57e9fa7f7ff7aee7b0"
+        ],
+        [
+          "471224eba9d2e0be03fdc131038a8aa7714c2dfe19f1f407ccb965ea221146dd",
+          "892b54bb29897d4424591cb7cea202d66a683ef75e8d7e14ba06343fa195a828"
+        ],
+        [
+          "1c587ad9d195df5714823cae3b5804010c4effa4b456972b62904c233bf7659e",
+          "7d91de424b2ca7c6968dbf3d4b3fd412066d059b0e298dcf45935e399354e6f9"
+        ],
+        [
+          "a4351e38c32409598dfa52b2d5bdef32dd78af0860a34f0aa8d1888377a45319",
+          "86b92016dc5268a2bb6737faa8d1d1e544bbf26e87842602f7348a87863d5073"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "8adb3be89ca658ee44d7d494facaeae9221e23e708275a7143770ee09fa16005",
+          "56e25f031d5a99797899e32797d0c5d274839354d4619e890cf5970badf24193"
+        ],
+        [
+          "e989c0227d86356ae58e0eef67910f6c962a94849e7f25ad773d754c756576be",
+          "666e393872112394614cb465d92da3260fa694d930d77d89bcbdbdc932ee774c"
+        ],
+        [
+          "6792b0f480bb32f583decf0e0547b8af5817e0a48241be3f4168a9d3ff701ed0",
+          "3e212cce7a80acfc7deaf6ae783ab008fb058e1075ad8333dfe95c3eeb92b8d8"
+        ],
+        [
+          "ba6aa5768ee714fb3868718bd85927716e2d30be490c77f84658a4171301d7c6",
+          "8e6b2daf9417c4829332579c52a1025fcdf6ef79f414ca701d895e0ba62ef9b8"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0026:s93012495873",
+      "scene_index": 839,
+      "attempt": 1,
+      "original_observation_hashes": [
+        [
+          "e069cbe249ee6d4893a9db6229d8eddee84eb195b540f106a4568ad2717e9b07",
+          "b7c1a5c947733fd32ec7efc0a24eba8dbf0ffd15d26295a1d4b1a24d244fe70c"
+        ],
+        [
+          "e33163e5734645903956de3fa261de3ee4a6fd1a3131ebe3e4ca2277a0b296df",
+          "d9a3dcf1cbe924fd4d7bc125841beb613059fd055534d7c5eef0c4d5f4974206"
+        ],
+        [
+          "6efb511b5382250afd5eb6db90c0713135016e4490a1d1357b1167c475fc51ba",
+          "2bcf6704938a7ff574e92a14e02de88799e20281cf510463ecc272eaedc08e61"
+        ],
+        [
+          "d60c010a082c3872c43caefe51051d98036107ef254852d2e0f00262a1aac1e7",
+          "ed8b823f2589e7aabe9ff0b1c7e72b8193654f4f37823e4fc6cd1b3679bcf5f3"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "676a0f4b68de9a271dcfb9701c63a0591f767cb905ebfce88b26502f94c71e55",
+          "e6d1021a463857f527145e8f7eb1c61981f90b6844e3b268ebb7ae527cedc39e"
+        ],
+        [
+          "e855ba154ea72deb5a160c349c43dd627ea41b5372edb68c248feded1f329fb3",
+          "e39babeabed76c4204709f9a0a4abf81478c588a075330bce8810dc81f2a0cc1"
+        ],
+        [
+          "f5987363b94337e42928b824b3b9bd0eadbe4ebba17e35df973bdd3c2c062a63",
+          "f2bb1608320d1e7ed48403fc5af0ee3ba8fb7662f4f43cdbf805a6d1d1f361d8"
+        ],
+        [
+          "dc97216078cedf22901323fdda43a7daf9416bede4cf675233b143e0db07a536",
+          "5ace5fef777417004f93fd3bf7db08b8b346bab965b847686ebfd8ccbb27ede9"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0031:s93012545908",
+      "scene_index": 844,
+      "attempt": 1,
+      "original_observation_hashes": [
+        [
+          "c0f3d00eb5aa8bd035e1bd9093f0d2019ef962e6052d3e0cd2159281e187e012",
+          "4f1ce49e97b87ccbc21f890611d484cf9fa4e813532ccef8cf4ca2d887800abd"
+        ],
+        [
+          "7c65890f927e6022a486bcf0d7d436515a2366295f95dc12b93f32f6f9799a42",
+          "eb67f4458e6312b2452cf9a727ea4c30a6d8697d31d61ebfe01d719737c8c521"
+        ],
+        [
+          "cd6fd56264105a0b4d519ed03d746b7a93fe8080c5e3c1b77647fd73e0504d49",
+          "ed148fac49392b85dbe80d302e82be3f960a3cd69c9de7782c43e2659e34bdb8"
+        ],
+        [
+          "4c280184084dc73850c81aff65f550ff9a1a7bd5ccf2ae50e57ea7b6055992a6",
+          "cf1ff35e67c727c40c5d466ec8d0124b51c24291b8a8e104f85de90d4282a67b"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "9a7f54f40f8b7d41762659508377fd16950cf02199a768bd6e735e7062214f3f",
+          "1ef4259422c1105b74299b097c98bbfabe8f97444a2538b9c3d4ab9b5e634291"
+        ],
+        [
+          "1ef007f6377e945ca134b3ac92940f7f998d139c5c666cd877857e99060718fb",
+          "04469fe47404e9f7246597e08d0d4ae52da0bc15e5cbc92dacf2652ddcedea10"
+        ],
+        [
+          "14e1d3f7d45d90ae3c775dd6421b75b36addcc7f7abe5e2b8f28c91115f6f522",
+          "56df05f6d4735c0efe90ae4573cbd85839f40a2d8dd47cd86bf938cf6c4d1fdb"
+        ],
+        [
+          "107a6ab9e9911316ea390174e05b4ab2df39169d46ac69525eb9b42b76f6dad7",
+          "f39de50aed855bacc5419063d0e3277bb3953c33beb5d89d3a1e9de8b423fd47"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0064:s93012876139",
+      "scene_index": 877,
+      "attempt": 2,
+      "original_observation_hashes": [
+        [
+          "0dfb95b025f8f4edbfc716414f9ef079a78194ae916713aee2b869ee804a5a71",
+          "a518b2775409dda59400e0076020cf2525dbdeefed3e4c17935518260fb8b20b"
+        ],
+        [
+          "e9df9db5b6f10fc982f29e9f96bc5b8acb1035888b39bdf81922121268398292",
+          "49e6c9f500fa769084adb456a7f74ad58ea7cef9ab03c349f8959c8395966aaa"
+        ],
+        [
+          "066451dffccceedaf966f3a36c0300904cfc747ef5637f448cf5306192c5b763",
+          "b3d0c67cbeeb69d4ccb6fd3255c0d950b76d45e0970106c8377bd758557e9f72"
+        ],
+        [
+          "ca5a5aeaaa9a1e0c9f2f5e414e4369247f08990217403f5e5635245132796b96",
+          "fd8e157ca4605367d4a05c74671b696eb1e69a5fd52e527ce17c12eae1a9d293"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "1a4fcda6f0b3b2c62557657e7c066e959614e8032637f421c992374749070c00",
+          "c31ea45832425fd9389e55dc4369110cc41d51d5c586e16e499c24391e06acb4"
+        ],
+        [
+          "999ff369168c9385246ce366d26f1c97df86ff284ddf124428331de6201876c5",
+          "ead73215f3547f1b6c30b0b64d82b3a0d81bd1c80952a747d61cc598184ad3da"
+        ],
+        [
+          "ec08802a178cfcd4af49a8cc982d8e1be6fbc3d91ee121bd7fab99ee6760a8c6",
+          "0395c5ef5fb471b207660ae0a7d69a7821d96882f344f220e87fb33e633693fd"
+        ],
+        [
+          "bd2b8a50cccc64e1dc1b8da8deef7604ce4bed1a41eefe49697b9eeffdbe6484",
+          "d827aad4364e32ba623ec032e32e1d8441fc81dd6b0824b135d993ad751081bc"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0101:s93013246398",
+      "scene_index": 914,
+      "attempt": 1,
+      "original_observation_hashes": [
+        [
+          "49c776db48dcc0c0f0091b86649dcc8444598351e4faeee7d2847afe15187675",
+          "390e36b9849b1f4fe5f134b9a87a56e1d49aee7e8b1cfd7d49b95f59af0da1ee"
+        ],
+        [
+          "e8c43346bf1fbb0ce3d36288e255358929ca7aa158c8d93641afbe8eceadd15a",
+          "9fd4ed7781039710cd1ab839ceb5715008803aa773d7e0ea472730ef029d02d3"
+        ],
+        [
+          "31753669c078d596c3f228415f00e8707ef0eb05bf89b31cc20873d03f619dcd",
+          "fd668894dd4fea9ff765e6dfa62982bfb585c0066d885cdc0d94b384fb0de3d1"
+        ],
+        [
+          "ce1b0a1fa1544af51e84bc9116d3d2025b4da67e8b1fa32cae17f864b37335da",
+          "66722acce3ea4126f4e39c9dceb460deaf8b84d96e94a00f04156c9b72a464b9"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "ab6529bd35752e6c251090ab4f3ce78aa3e0567f313df465ab125540d292920b",
+          "64e039bb6dc0867f2700f7e8668ef3044ce57952503bc9f53060e29c9a5569f0"
+        ],
+        [
+          "f7c48efc3c2ffef19317fb35f7d61c1dc65a3f8479e7facc81c34b29e108cdd2",
+          "9c5049a14df0d44a090eda85177b5a98b218addbeed8571ad4972444a4713d06"
+        ],
+        [
+          "6e757b434a90a6be6a0cde689c2d41ead322850a06d019016a6863ffde99b8eb",
+          "22ea6393b4a974b3a8bb9b2cbb94eafd03c5df7af84b826acfb7512562f06c77"
+        ],
+        [
+          "d28932b1e0e8390e169b2559cefeb54bb679cecbc3f446046c6c6fc93af4016f",
+          "4fa19b4549e2074c4283d81c6058923e35ebb3be319771d14d7e5c13285ec290"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0115:s93013386496",
+      "scene_index": 928,
+      "attempt": 2,
+      "original_observation_hashes": [
+        [
+          "c9028e2c24916a14398bbfb1bf4a68eb6e1002842fd95dcfe74c69e34a313ef9",
+          "f417eb3ae80d5148bfe28823dd4e994601e2960a1d0d964e857d7180f4304db5"
+        ],
+        [
+          "cd01e250841aa6f906074bee075f1c9de0c09e2d4f2eaccd2f0d90e76d382463",
+          "cd78ed82070615f0afe3587071c64e73b740b5f027d58a700d9d5174e58dd980"
+        ],
+        [
+          "cb5f4da8e308094f225a4f2ad71a5c7d9503e8810f7f69d4227608ebc97a4042",
+          "68d3b0d60d63420162ae3b02868c23bc4aeb3a0aa86a2b3e258871c920835800"
+        ],
+        [
+          "ea71ea5a23765ee795a9183e02bd1847f3b47e9551aac24e22762505f8198c82",
+          "2724087b98c9d62bafb0d26a18b7a3ba372ec73e3b710fe1fb807cc5373a64f3"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "9f118ffc5e0e03b8fd8eb9ed14efef4c3fc9d29c1f89f18602a38e5cb6fe60e9",
+          "716cdcd54198f16f67e2d0d370293ad104471604cd08cea5ae0cada0cc01c15a"
+        ],
+        [
+          "1664088afd449cc75520556e172c0f7c31594914b9c874871635bbfc0c9ed3d0",
+          "d2ce84fb1ceea4ca17d908edb0097441afd9032c96da36f89b3237afd7397e8c"
+        ],
+        [
+          "a447e9452f1d16922a62444118f0fff84fba6e6f630e1b8042dc629eb011da10",
+          "e4a6afca3685d28f9541f214bdf185d5df8983ed03d204794be6b826078cc5a6"
+        ],
+        [
+          "baa83645e366fc0fdfc0a52e151d9364c71cfa8e3b293f4df8031e0026b1269a",
+          "e77eba0c74e4d407c9e7484d662baa5a848f2b47a163f31d2f29ee968f64490d"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0117:s93013406510",
+      "scene_index": 930,
+      "attempt": 1,
+      "original_observation_hashes": [
+        [
+          "93e04c7a95f4dd8d8e737c47328b7d51d8fcde663cf409898638ac2253fb5993",
+          "8a7f2e0220d4c8ee3d54aeb0b51e8dedefffe0e61beaf8602a4865697ea3d505"
+        ],
+        [
+          "48e61edd20aa49f04c7ae866e6a61ec68a243f89aa398173ff0add9a34431555",
+          "47a0d455e53c26eda2c712ea1db3b30785026f3a2ca058167e6d47fee6bfe5a3"
+        ],
+        [
+          "a09bf79de0991f2c66d7f2ed219c817d23cfe94027a8743c65d3618eede3ca54",
+          "44262541bdb2e14826812707195e655f531b1996b33cee585dd30ebf21818a92"
+        ],
+        [
+          "845e6a4edb32183a00a0872d65d06ae602d372d4744f9c649ef57a0f1d3547df",
+          "544650dc993fef574608a6fb4e6c1c857fd956b47d89bfdb2cc794ccba24fcdd"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "b99255ad2aa8eb6604005623297c3f610fbac5c1e0e0f170190acd1b01e37cdf",
+          "e384cc6f046ee249cf3f3bbe4beaccb11c274e361fcfa90248045b5cc63d115e"
+        ],
+        [
+          "a4e451f086c89019420ebe984932919c98b3927ce46bc4b0582841d95373cdbd",
+          "1f8352c329c46560f686106b41cf385b27505f5f20b2b8658b4f08be08ca40c8"
+        ],
+        [
+          "c006942d82d6e00b03acd18d692e2f0bdb8f62f2aecd71f36b84fdf4c7742dd5",
+          "ff506aca98c5d665d8b7161f0f220dd6cc8dd6ef7c780df01206ccfeca6a27c1"
+        ],
+        [
+          "65a1083b6b43e61b325809368d1742ff4db37e1642bd11c8629e90abb0278f4a",
+          "57734234e389184c92cd0d05fb879fdc6adc0c9c1d45afaae63b2ab3782c1a43"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0118:s93013416517",
+      "scene_index": 931,
+      "attempt": 2,
+      "original_observation_hashes": [
+        [
+          "ff1f19750b400e6e226a2794567b38177609714266766f5540d001fe08f4f196",
+          "274d3a14f4b4547fef81cf69e0c8a451967e8a79cc2340b08afcaacee9c0a08a"
+        ],
+        [
+          "f611d48712b689a8dddb5dbe936834c97dad1dd9a7bfccd3dc109eb1afcb999b",
+          "062c0709d0e4bcba93e6c6f74a28f476c5b557d1dd7398784d4ef18ceea54727"
+        ],
+        [
+          "fcee50e5a295bbc0149a866f972b2e0e7854ddb1d202f3fd0f5b726f18562155",
+          "06529677b902d5d7e60db1cf7deff2fa32d32701f7ce6008c17e54fd304202b8"
+        ],
+        [
+          "41a53f0ad1e102846bee36a08b04ab7a4ad7a245ed4ca910145bf92f71e1d457",
+          "b196224a0846602e53aabc8b67b2b54de4b208476ae7cb7160ef1ec859b24980"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "f4c1021a706cc7af89f77d40e9a3c559775dfaa9a4d673fc77a65945c875154e",
+          "e76de6c971787c7976aae0a9d94ee6c3cdfe54175b9b705bfca538ca842ef2c9"
+        ],
+        [
+          "6f79b3998ab0b1c9a1007c0f5bc0744f2044310f98a9e5cf4a7990f097ae3f0b",
+          "4cdeb742aff7e67e3460c3757ba6d1d93b3828670798592793dce29430fb8266"
+        ],
+        [
+          "02d6880ba12781e29bbbc4fc6a61fa854009d744c6175ff61bbccc080970053a",
+          "8c31fe9da8fd0a230c6be1bd4eaea43564d42b545e7fdd7bc0919727a101f705"
+        ],
+        [
+          "ae47bddb0aa00da71d2a09d7662989740addceba91f0a5744910b7dacaa4b60e",
+          "fe262dc8285ec9c1ebc9cd595d49cd2654d2ac660d658b01e8e30c5134439d8b"
+        ]
+      ]
+    },
+    {
+      "scene_id": "formal:exposure_coherent_bundle:g0121:s93013446538",
+      "scene_index": 934,
+      "attempt": 1,
+      "original_observation_hashes": [
+        [
+          "723316d6dd9eac90561ea2fc991b9d0159c55692c3d3006ead8152063280d2d5",
+          "b9ac2918c8daa3dda3a8c674938a87ca920511a2b87e8e14ba5efeff0583fb4d"
+        ],
+        [
+          "c3f24e4eebf26de3a2c9060bbe309b01ec1735896f3a83a0c0428e2418142d22",
+          "3eb21cfba1571c08823041dd416f3500cb1f574a1db02c5bba2e1885c56740bf"
+        ],
+        [
+          "773d31ac14712c3133a7181dab8f12fbafe4220a8e6c8dd9c00e2acccf31aabb",
+          "a5e1298cf7a6bf44cb95ddc9533efc809296ff6ccdbcd6fe9dac77f60e3b4429"
+        ],
+        [
+          "4dad460f0daa38c0507300cd6461bf3c6e45756ebcace013a2e9003404075a40",
+          "f1e821b3ee9264ca5f858af007129aeaae18dd2166172d787d0aa262e8e58ac8"
+        ]
+      ],
+      "replacement_observation_hashes": [
+        [
+          "6d04bb97da3b16dd8b7b0d2571b3e73cab7fc70c63e933d83c7e6c9a36a45da6",
+          "e25a25eb1d74e4a28501793e09060a16ac218f5128f3ec48830d673a9bc0b757"
+        ],
+        [
+          "7075e30725f824dad179a751a5b9d0fd4c4e97c8c529a954d8cb12b6925bf180",
+          "15bbbf3c6d7a9c0e614b08d3aeaf39cdf10dfa2a7fbf5b0a9aa99b741aad24b1"
+        ],
+        [
+          "ee4eae0c07fd323a097cf6a01c2543d4988b351a5020811c5a5e8f586d480a06",
+          "acd1fae5b8408f0dda8c89db9b470fd9e51bf0f0753f18dbe75e68f18c2e3e73"
+        ],
+        [
+          "bdb724f60885d938eb9c21d59a539418c585f4763683f97a9ab9af3bb40a340d",
+          "19e2e86fee1402b493c9a888f0dc2ed70238b5cbc7f427c534c0410225024e29"
+        ]
+      ]
+    }
+  ],
+  "audit": {
+    "passed": true,
+    "profile": "formal",
+    "scene_count": 1250,
+    "total_observations": 5000,
+    "missing_count": 0,
+    "shape_failure_count": 0,
+    "hash_failure_count": 0,
+    "scene_split_overlap_count": 0,
+    "motion_pair_failure_count": 0,
+    "exposure_bundle_failure_count": 0,
+    "three_level_failure_count": 0,
+    "persistent_bundle_failure_count": 0,
+    "generator_record_failure_count": 0,
+    "recoverability_failure_count": 0,
+    "recoverability_metadata_failure_count": 0,
+    "physical_transition_profile_failure_count": 0,
+    "exposure_contrast_failure_count": 0,
+    "recoverability_final_clip_fraction_max": 0.0,
+    "recoverability_final_clip_fraction_p99": 0.0,
+    "recoverability_global_scale_min": 1.0,
+    "recoverability_robust_gap_p99": 0.25882354378700256,
+    "recoverability_fraction_above_bound_max": 0.11000357733832465,
+    "detail_recoverability_score_min": 0.3200078474694637,
+    "detail_recoverability_score_median": 0.8068790014820887,
+    "detail_recoverability_score_max": 1.0,
+    "physical_transition_fraction_min": 0.46,
+    "physical_transition_fraction_median": 0.5813496848364776,
+    "physical_transition_fraction_max": 0.66,
+    "exposure_contrast_gray_min": 74.5585304684937,
+    "exposure_contrast_gray_median": 117.77495954185724,
+    "exposure_contrast_gray_max": 176.66121292859316,
+    "source_isolation_pass": true,
+    "generator_hash_pass": true,
+    "sampled_fractional_coverage_min": 5648,
+    "sampled_texture_std_median_gray": 8.50854696225458,
+    "full_array_hash_audit": true,
+    "content_sha256": "6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5"
+  }
+}

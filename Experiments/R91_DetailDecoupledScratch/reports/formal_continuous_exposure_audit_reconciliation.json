@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "profile": "formal",
+  "dataset_content_sha256": "bcce2a7b3e4b4c87db2ae396d8786dbd51607208d8ab2efa55accf37f3f2d988",
+  "full_array_hash_audit": true,
+  "bundle_count": 300,
+  "continuous_path_failure_count": 0,
+  "legacy_fixed_window_miss_count": 3,
+  "legacy_fixed_window_miss_scene_ids": [
+    "formal:exposure_coherent_bundle:g0050:s91010204270",
+    "formal:exposure_coherent_bundle:g0059:s91010294333",
+    "formal:exposure_coherent_bundle:g0130:s91011004830"
+  ],
+  "arrays_or_manifest_modified": false,
+  "legacy_audit": "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\data\\r91_formal\\audit_legacy_fixed_window.json",
+  "corrected_audit": "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\data\\r91_formal\\audit.json"
+}

@@ -1,6 +1,8 @@
 # 實驗索引 / Experiment Index
 
 Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重做；本輪不清D）
+2026-10-21生產方法：[原生成程式、設定與必要來源](../docs/reproducibility/GENERATION_GUIDE.md)確認18條資料路線，分清R92／R93共用基礎與原修正；177範圍的程式／設定索引可直接查，不上傳整套可再生產物。
+
 2026-10-21精選數表：[R88／R91／R92到R100／R103／R104的方法與失敗脈絡](../docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)，後三輪130份完整原後測表可直接讀取；曝光失敗、SEM較差結果與共享來源保留，不新增模型或整批影像。
 
 2026-10-21精選整理：[R33至COMBO早期重建](../docs/reproducibility/project_completion/curated/EARLY_RECON_SELECTION.md)依原方法、失敗及量化修復留下34張原圖，完整140份量測不篩掉；整套生成序列改由固定歷史取回，不清D、不改研究判決。

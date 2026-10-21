@@ -50,3 +50,7 @@ R93 固定來源已從 GitHub 完整取回，15,004 檔逐份相同。本輪原�
 ## 2026年10月21日：補回兩版早期訓練程式
 
 兩份原始程式已從本機舊保存物件找回，與當年登記內容完全相同，並實際從GitHub取回。較早版本沒有保存更新及隨機狀態，後一版本才加入，補強第一次第8輪回復時重建更新狀態的來源證據。此處沒有啟動訓練或更換最後版本；[原階段與差異](../../../Experiments/R95_CounterfactualGateRepairScratch/archive/recovered_training_sources_20261021/README.md)與[正式來源審查](../../../Experiments/R95_CounterfactualGateRepairScratch/reports/R95_AUDIT.md)保留其餘缺件界限。
+
+## 資料生產方法與共用來源
+
+[本輪原生產／讀取程式、設定與修正紀錄](../GENERATION_GUIDE.md)已按實際來源確認；基礎來源：r93。可再生的大檔不必上傳整套。原絕對位置與固定內容身分供歷史追查，日後在新的研究副本設定自己的來源位置；新生成內容與原件不同時須保留差異，不改寫舊結果。

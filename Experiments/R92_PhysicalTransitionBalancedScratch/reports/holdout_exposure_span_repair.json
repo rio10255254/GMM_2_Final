@@ -1,0 +1,81 @@
+{
+  "status": "complete_pending_full_audit",
+  "completed_at": "2026-08-12T01:49:49.111590",
+  "rerendered_bundle_count": 2,
+  "rerendered_bundle_fraction": 0.03125,
+  "rerendered_observation_count": 8,
+  "additional_global_projection_count": 0,
+  "minimum_new_span": 0.31,
+  "original_content_sha256": "7001cf191d4b96a6848d2605a21665c5b0b9900044b9edc59a48fb3e02e20c7d",
+  "rerendered_content_sha256": "18bc27b610b1529759a1014f6e563415458a3c1f4c8768dcad0cd4b0eb122283",
+  "script_sha256": "cc84a8dffcd9e3ddf02be41e73b96ca216c13942f8a900f42d5b4e47d348c35c",
+  "implementation_lock_sha256": "e42762ee3e3bd41cd4fc6995d519c32886bdda591f5950d2d24ad6fe17fda4e3",
+  "backup": "data/r92_locked_holdout/exposure_span_repair_backup",
+  "backup_manifest_sha256": "b553432703b5be398506e02beaff2b47785e426a2c50fa51ddcfc2f6b0608b9a",
+  "source_target_pixel_blending": false,
+  "geometry_or_label_changed": false,
+  "profile": "holdout",
+  "audit_required": true,
+  "affected_scenes": [
+    118,
+    152
+  ],
+  "observations": [
+    {
+      "scene_index": 118,
+      "observation_index": 0,
+      "old_span": 0.2885030155490712,
+      "new_exposure": 0.9174322978295273,
+      "projection": null
+    },
+    {
+      "scene_index": 118,
+      "observation_index": 1,
+      "old_span": 0.2885030155490712,
+      "new_exposure": 1.0201451673407407,
+      "projection": null
+    },
+    {
+      "scene_index": 118,
+      "observation_index": 2,
+      "old_span": 0.2885030155490712,
+      "new_exposure": 1.146809782907918,
+      "projection": null
+    },
+    {
+      "scene_index": 118,
+      "observation_index": 3,
+      "old_span": 0.2885030155490712,
+      "new_exposure": 0.836809782907918,
+      "projection": null
+    },
+    {
+      "scene_index": 152,
+      "observation_index": 0,
+      "old_span": 0.28125911535912673,
+      "new_exposure": 0.8398955260194687,
+      "projection": null
+    },
+    {
+      "scene_index": 152,
+      "observation_index": 1,
+      "old_span": 0.28125911535912673,
+      "new_exposure": 0.9192206563128783,
+      "projection": null
+    },
+    {
+      "scene_index": 152,
+      "observation_index": 2,
+      "old_span": 0.28125911535912673,
+      "new_exposure": 1.0630398131046828,
+      "projection": null
+    },
+    {
+      "scene_index": 152,
+      "observation_index": 3,
+      "old_span": 0.28125911535912673,
+      "new_exposure": 1.1498955260194688,
+      "projection": null
+    }
+  ]
+}
