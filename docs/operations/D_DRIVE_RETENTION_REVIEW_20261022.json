@@ -1,0 +1,265 @@
+{
+  "scope": "Current project physical D entries only, no traversal of H-backed aliases; before this continuation cleanup, not current removable bytes",
+  "inventory_time": "2026-10-21 23:00:15",
+  "inventory_sha256": "8f98b78e9c5c58318ffeab248ca0ff31658beae89bd71c4a4b5a6b1750c4ec3d",
+  "inventory_errors": [],
+  "original_top_level_scopes": 36,
+  "original_physical_files": 3484211,
+  "original_physical_bytes": 1571448009640,
+  "active_external_H_training_and_unrelated_D_projects_excluded": true,
+  "not_an_auto_deletion_allowlist": true,
+  "entries": [
+    {
+      "path": ".claude",
+      "inventory_files": 1,
+      "inventory_bytes": 308,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": ".codex",
+      "inventory_files": 0,
+      "inventory_bytes": 0,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": ".git",
+      "inventory_files": 217860,
+      "inventory_bytes": 240265191277,
+      "decision": "archive_verified_unreferenced_cache_only",
+      "reason": "Preserve original refs/reflog/index/config and old D packs; only verified H-packed duplicate cache OIDs are cleared."
+    },
+    {
+      "path": ".github",
+      "inventory_files": 9,
+      "inventory_bytes": 12267,
+      "decision": "protect_original_code_and_reading_context",
+      "reason": "Original code, governance, scientific reading context and recovery tools remain."
+    },
+    {
+      "path": ".history",
+      "inventory_files": 33,
+      "inventory_bytes": 1949252,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": ".pytest_cache",
+      "inventory_files": 6,
+      "inventory_bytes": 93508,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": ".vscode",
+      "inventory_files": 1,
+      "inventory_bytes": 63,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": "20260702_100MG_displacement_analysis",
+      "inventory_files": 17714,
+      "inventory_bytes": 54073271647,
+      "decision": "protect_original_analysis_and_distinct_acquisition_identity",
+      "reason": "Keep original displacement results and sources separate from September PI repeated acquisitions."
+    },
+    {
+      "path": "20260702_100MG_phase_dft_analysis_matlab",
+      "inventory_files": 33,
+      "inventory_bytes": 6238823,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": "20260702_100MG_位移_50x",
+      "inventory_files": 101,
+      "inventory_bytes": 317827406,
+      "decision": "protect_original_acquisition",
+      "reason": "Preserve exact original acquisition path and identity; no rename or substitution."
+    },
+    {
+      "path": "20260704_20x",
+      "inventory_files": 100,
+      "inventory_bytes": 314680600,
+      "decision": "protect_original_acquisition",
+      "reason": "Preserve exact original acquisition path and identity; no rename or substitution."
+    },
+    {
+      "path": "20260704_20x_5x_analysis",
+      "inventory_files": 21765,
+      "inventory_bytes": 65224489730,
+      "decision": "protect_retained_R61_thesis_and_raw_measurements",
+      "reason": "Earlier52 H-backed reconstruction directories already handled separately; preserve original captures, four R61 thesis groups and complete numerical evidence."
+    },
+    {
+      "path": "20260704_5x",
+      "inventory_files": 100,
+      "inventory_bytes": 314680600,
+      "decision": "protect_original_acquisition",
+      "reason": "Preserve exact original acquisition path and identity; no rename or substitution."
+    },
+    {
+      "path": "20260924",
+      "inventory_files": 26,
+      "inventory_bytes": 79704538,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": "AnalysisLab",
+      "inventory_files": 95,
+      "inventory_bytes": 22881899,
+      "decision": "protect_original_code_and_reading_context",
+      "reason": "Original code, governance, scientific reading context and recovery tools remain."
+    },
+    {
+      "path": "Deliverables",
+      "inventory_files": 29658,
+      "inventory_bytes": 6839117992,
+      "decision": "protect_current_research_deliveries_and_required_frozen_inputs",
+      "reason": "Keep formal portable deliveries and generator inputs; bulk reproducible payload is not newly uploaded."
+    },
+    {
+      "path": "Experiments",
+      "inventory_files": 605352,
+      "inventory_bytes": 455204647638,
+      "decision": "protected_scientific_content_with_exact_R93_array_exception",
+      "reason": "Preserve thesis/formal/current models and complete results/failures; exact R93 arrays archived to H with restore required before old full training."
+    },
+    {
+      "path": "Model",
+      "inventory_files": 112,
+      "inventory_bytes": 7033817,
+      "decision": "protect_original_code_and_reading_context",
+      "reason": "Original code, governance, scientific reading context and recovery tools remain."
+    },
+    {
+      "path": "PSF_Fitting",
+      "inventory_files": 4544,
+      "inventory_bytes": 20191671630,
+      "decision": "protect_physical_calibration_and_formal_sources",
+      "reason": "Actual calibration evidence and original optical values cannot be replaced by a later synthetic generator."
+    },
+    {
+      "path": "Project_Archive",
+      "inventory_files": 6,
+      "inventory_bytes": 652765,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": "Reconstruct_Progress",
+      "inventory_files": 745,
+      "inventory_bytes": 2001110027,
+      "decision": "retain_without_sufficient_exact_deletion_evidence",
+      "reason": "Do not infer safety solely from directory name, age or apparent regenerability."
+    },
+    {
+      "path": "Shared_Sources",
+      "inventory_files": 974,
+      "inventory_bytes": 2973551315,
+      "decision": "protect_original930_and30_instrument_records",
+      "reason": "Protect original camera acquisition, provenance and once-shared published source; do not duplicate each round."
+    },
+    {
+      "path": "Step",
+      "inventory_files": 788,
+      "inventory_bytes": 20657796664,
+      "decision": "protect_irreplaceable_camera_acquisitions",
+      "reason": "788 original camera images, not model reconstructions or generated training crops."
+    },
+    {
+      "path": "Step_analysis_20260623",
+      "inventory_files": 10058,
+      "inventory_bytes": 65521705321,
+      "decision": "protect_thesis_cited_analysis_and_optical_sources",
+      "reason": "Keep curated final package, calibration, raw source pointers and thesis cited reconstruction package."
+    },
+    {
+      "path": "Thesis_MOSR_Evidence",
+      "inventory_files": 2190506,
+      "inventory_bytes": 534116054199,
+      "decision": "protected_thesis_and_necessary_sources_with_exact_aborted_copy_exception",
+      "reason": "Preserve active thesis, actual R61 training, inherited source labels and model packages; three aborted reading-copy subdirectories only were cleared."
+    },
+    {
+      "path": "Tools",
+      "inventory_files": 433,
+      "inventory_bytes": 65873833,
+      "decision": "protect_original_code_and_reading_context",
+      "reason": "Original code, governance, scientific reading context and recovery tools remain."
+    },
+    {
+      "path": "Traing_Progress",
+      "inventory_files": 2446,
+      "inventory_bytes": 32541025714,
+      "decision": "protect_remaining_formal_core_history_and_legacy_dependencies",
+      "reason": "Prior historical thinning is not counted again; preserve baseline, representative models and intentional path spelling."
+    },
+    {
+      "path": "Training_Data",
+      "inventory_files": 98857,
+      "inventory_bytes": 34634519656,
+      "decision": "protect_shared_inputs_generators_and_historical_PSF_identity",
+      "reason": "No wholesale generated-data cleanup without exact frozen source/version/dependency mapping; old PSF is not current PSF."
+    },
+    {
+      "path": "Trash_Archive",
+      "inventory_files": 24,
+      "inventory_bytes": 51493,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": "Validations",
+      "inventory_files": 254866,
+      "inventory_bytes": 28878182959,
+      "decision": "exact_generated_test_outputs_removed_other_evidence_kept",
+      "reason": "Two R61 generated output copies cleared; original input packages, both portable test sources, runtime and original successful/failed receipts remain."
+    },
+    {
+      "path": "_MOSR_Project_Archive_20260624",
+      "inventory_files": 71,
+      "inventory_bytes": 12351332,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": "_build153",
+      "inventory_files": 102,
+      "inventory_bytes": 46185263,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": "_codex_store_backups",
+      "inventory_files": 3,
+      "inventory_bytes": 2367623,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": "_deployment_package",
+      "inventory_files": 26202,
+      "inventory_bytes": 7050845702,
+      "decision": "protect_usable_formal_deployment_and_dependencies",
+      "reason": "Canonical code mirrors and packaged model usage are not deleted as mere similar copies."
+    },
+    {
+      "path": "_portable_env_sim_20260318",
+      "inventory_files": 9,
+      "inventory_bytes": 28805,
+      "decision": "retain_small_or_unique_history_not_a_deletion_target",
+      "reason": "Name alone is not evidence for removal; preserve small unique or private operational content, do not upload private tool backups."
+    },
+    {
+      "path": "docs",
+      "inventory_files": 611,
+      "inventory_bytes": 82213974,
+      "decision": "protect_original_code_and_reading_context",
+      "reason": "Original code, governance, scientific reading context and recovery tools remain."
+    }
+  ]
+}

@@ -14,13 +14,15 @@ R94／R95／R96／R97／R98共用這份R93基礎。未來需要完整重訓或�
 
 ```powershell
 if (Test-Path -LiteralPath 'Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal/arrays') { throw '原位置已有資料，請先核對身分。' }
+if (-not (Test-Path -LiteralPath 'H:\GMM_2_Final_Archive\experiments\R93_RecoverableDetailSeparatedScratch\20260925_full_history\data\r93_formal\arrays' -PathType Container)) { throw 'H固定來源未連接，請先取得來源，或按下方GitHub入口取回。' }
 robocopy 'H:\GMM_2_Final_Archive\experiments\R93_RecoverableDetailSeparatedScratch\20260925_full_history\data\r93_formal\arrays' 'D:\GMM_2_Final\Experiments\R93_RecoverableDetailSeparatedScratch\data\r93_formal\arrays' /E /COPY:DAT /DCOPY:DAT /XJ /R:1 /W:1
+if ($LASTEXITCODE -ge 8) { throw '複製失敗，尚未完整恢復；請保留原報告並先處理錯誤。' }
 ```
 
 需要原封存組時，同樣從 H 的 data/r93_locked_holdout/arrays 複製回同名新目錄。恢復它不代表取得使用封存組調整模型或宣稱獨立驗證的資格；原封存規則與 SEALED.json 保持。
 
 ## 沒有H槽時
 
-正式共用資料可按 docs/reproducibility/r93_shared/README.md，從已發布的 research-shared-sources-20261016 只下載R93 prefix，使用 keep-identical-existing恢復缺少內容；不能覆寫不同的既有資料。當年生成程式、光學設定、11場景／44觀測的修復與原完整結果亦已保存；沒有把資料生成方法寫成已重跑所有歷史GPU訓練。
+正式共用資料可按[GitHub共用資料取回說明](../../../docs/reproducibility/r93_shared/README.md)，從已發布的[共用固定來源](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-shared-sources-20261016) 只下載R93 prefix，使用 keep-identical-existing恢復缺少內容；不能覆寫不同的既有資料。當年生成程式、光學設定、11場景／44觀測的修復與原完整結果亦已保存；沒有把資料生成方法寫成已重跑所有歷史GPU訓練。
 
 完整逐檔SHA清單與本次實測在 H:\GMM_2_Final_Archive\reproducibility\20261021_d_cleanup_continued；其中正式資料的三份原陣列已實際由H另取回並開啟。封存組僅做完整性核對，沒有模型評估。

@@ -3,9 +3,9 @@
   "updated_at": "2026-10-22",
   "snapshot": {
     "repository_size_gib": 1073.0,
-    "d_free_gib": 355.1372528076172,
-    "archive_free_gib": 1806.82271194458,
-    "note": "The 1073.0 GiB repository total is retained from the 2026-08-11 inventory and is not a current total. D/H free-space readings were refreshed after the R143 experiment on 2026-09-24 local time and may change with other work. The verified R1-R51 cleanup on 2026-08-24 added 116.3116 GiB of H-drive history and measured 80.8936 GiB reclaimed at deletion time; after restoring compatibility checkpoints and compact evidence, net D free-space gain at that time was 79.6502 GiB. Git pack files, R26/R33/R38v2/R39/R40 cores, Lab R39/R40/R51, newer rounds and unmapped legacy histories remain outside that deletion scope. D/H free space refreshed at R56 archive closeout 2026-09-26; repository total remains historical; R53/R56 D removal not executed. R53/R56 cleanup completed with explicit approvals on 2026-09-26; joint D free-space delta 25.6136 GiB, all full archives and kept originals reverified. Current live jobs may change free space."
+    "d_free_gib": 340.1005516052246,
+    "archive_free_gib": 1070.2212562561035,
+    "note": "The 1073.0 GiB repository total is retained from the 2026-08-11 inventory and is not a current total. D/H free-space readings were refreshed after the R143 experiment on 2026-09-24 local time and may change with other work. The verified R1-R51 cleanup on 2026-08-24 added 116.3116 GiB of H-drive history and measured 80.8936 GiB reclaimed at deletion time; after restoring compatibility checkpoints and compact evidence, net D free-space gain at that time was 79.6502 GiB. Git pack files, R26/R33/R38v2/R39/R40 cores, Lab R39/R40/R51, newer rounds and unmapped legacy histories remain outside that deletion scope. D/H free space refreshed at R56 archive closeout 2026-09-26; repository total remains historical; R53/R56 D removal not executed. R53/R56 cleanup completed with explicit approvals on 2026-09-26; joint D free-space delta 25.6136 GiB, all full archives and kept originals reverified. Current live jobs may change free space. D/H free space refreshed at verified2026-10-22 cleanup closeout. The repository total remains historical; the separate2026-10-21 23:00 physical inventory is3,484,211 files/1,571,448,009,640 bytes before this continuation, not current removable bytes."
   },
   "allowed_tiers": [
     "active",
@@ -438,15 +438,19 @@
       "id": "git_storage",
       "path": ".git",
       "tier": "archive",
-      "state": "verified_unreferenced_loose_duplicates_migrating_to_H_without_repacking_D_history",
-      "size_gib_snapshot": 80.45,
+      "state": "verified_unreferenced_loose_cache_archived_on_H_and_D_duplicates_removed",
+      "size_gib_snapshot": 63.13555515371263,
       "action": "git_maintenance",
       "priority": 1,
       "keep": "Keep original reachable history, old D pack files, working branch and original index. Only D loose duplicates already content-verified in independently recoverable H packs are cleared. Native alternate lookup supplies archived cached objects; H object pool must remain.",
-      "blocked_by": [
-        "git_process"
-      ],
-      "cleanup_progress": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued\\CURRENT_CONTINUATION_STATE.json"
+      "blocked_by": [],
+      "cleanup_progress": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued\\CURRENT_CONTINUATION_STATE.json",
+      "measured_local": "2026-10-22",
+      "measured_physical_D_files": 16427,
+      "archive": "H:/GMM_2_Final_Archive/git_history/20261021_before_cache_cleanup.git",
+      "cache_lookup": "H:/GMM_2_Final_Archive/git_history/20261021_verified_cache_pool.git",
+      "archived_cache_objects": 201434,
+      "original_history_index_refs_config_and_old_D_packs_preserved": true
     },
     {
       "id": "main_training_data",
@@ -997,6 +1001,29 @@
       "d_cleanup_reclaimed_bytes": 35844415488,
       "latest_closeout": "Experiments/R93_RecoverableDetailSeparatedScratch/data/ARCHIVE_POINTER_20261022.md",
       "cleanup_receipt": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued\\R93_DATA_ARRAY_POST_CLEANUP_VERIFIED.json"
+    },
+    {
+      "id": "r61_regenerator_failure_witness_archive_20261022",
+      "path": "H:/GMM_2_Final_Archive/validation_history/R61_Regenerator_20261004_cleanup_20261021",
+      "tier": "archive",
+      "state": "verified_original_failure_and_historical_counterpart_evidence_preserved",
+      "action": "protect",
+      "priority": 0,
+      "keep": "Keep30 original geometry witnesses, original successful/failed receipts and complete historical dataset descriptions. Not the removed full generated outputs and not a new model evaluation.",
+      "restore_guide": "Validations/R61_TrainingData_Regenerator_20261004/CLEANUP_AND_REBUILD_20261021.md",
+      "blocked_by": []
+    },
+    {
+      "id": "aborted_reading_copy_conservative_archive_20261022",
+      "path": "H:/GMM_2_Final_Archive/editorial_history/aborted_round_library_20260926_cleanup_20261021",
+      "tier": "archive",
+      "state": "conservative_byte_verified_preservation_before_D_copy_cleanup",
+      "action": "protect",
+      "priority": 0,
+      "keep": "Preserve copy contents not directly matched to the read-only current canonical-source review, with original path/hash mapping. This does not prove all copies are unique new scientific versions.",
+      "verified_payload_bytes": 9005717257,
+      "restore_guide": "Thesis_MOSR_Evidence/Research_Round_Library_20260926_ABORTED_OVERSIZED/ABORTED_README.md",
+      "blocked_by": []
     }
   ],
   "latest_preservation": {
@@ -1018,15 +1045,19 @@
   },
   "latest_cleanup_continuation": {
     "date": "2026-10-22",
-    "status": "in_progress",
-    "completed_native_free_increase_bytes": 125325656064,
+    "status": "complete_identified_safe_targets_after_full_inventory",
+    "completed_native_free_increase_bytes": 246402334720,
     "prior_round_free_increase_bytes": 35908878336,
     "records": "H:\\GMM_2_Final_Archive\\reproducibility\\20261021_d_cleanup_continued",
     "H_minimum_free_bytes": 1099511627776,
     "old_historical_model_training_not_repeated": true,
-    "current_D_free_bytes": 244087812096,
-    "current_H_free_bytes": 1265257099264,
-    "last_checked_local": "2026-10-22 01:20:14",
-    "restore_guide": "docs/operations/D_DRIVE_FULL_CLEANUP_20261022.md"
+    "current_D_free_bytes": 365180186624,
+    "current_H_free_bytes": 1149141323776,
+    "last_checked_local": "2026-10-22 01:56:00",
+    "restore_guide": "docs/operations/D_DRIVE_FULL_CLEANUP_20261022.md",
+    "native_cache_archive_batches_done": 27,
+    "completed_local": "2026-10-22 02:45:51",
+    "joint_free_increase_bytes": 282311213056,
+    "result": "docs/operations/D_DRIVE_CLEANUP_RESULT_20261022.json"
   }
 }
