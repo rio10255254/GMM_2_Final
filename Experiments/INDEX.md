@@ -13,6 +13,8 @@ Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重�
 
 另核對目前22個H資料入口、19個實體根位置共29609份檔案，未見新增／變動／缺件；[最後交付檢查](../docs/reproducibility/project_completion/FINAL_PUBLICATION_PROTOCOL.md)仍須全部資料取回與總恢復實測，不能把單批核對當成全案完成。
 
+Lab影像用途已按原紀錄釐清：126份數學平移輸入來自2張完整來源的6區，3份R56預覽不列為原拍；[原方法與原四表重做](../docs/reproducibility/lab_comparisons/README.md)保留不利排序、名義位移參照、分塊／整張速度及模型版本差異，不改目前研究採用。
+
 完整數字、模型身分和外部GMF結果以 `ESTIMATOR_POLICY.json` 與各輪正式報告為準。[逐輪保存判讀](../docs/reproducibility/EXPERIMENTS.md)說明方法、來源和影像選擇；[原代表圖冊](../RECON_GALLERY.md)保留歷史順序。
 
 保存續查另核對全新GitHub程式副本22218檔，補回兩份原文件暫存歷史及33個共用位置對照。[早期Round12–15](../docs/reproducibility/legacy_multiscale/README.md)的207分數與五次原選擇已取回重算，9個早期公式缺件明列；R88沿用未建資料／啟動中的舊文字已依原87輪停止紀錄修正並保存舊文。完整大型資料保存仍在進行，沒有重跑歷史訓練或升級模型。

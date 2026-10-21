@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "purpose": "Controlled subpixel translation test on real HS-100MG microscope crops",
+  "locked_before_inference": true,
+  "source_selection_rule": "Use frame_0000.bmp from the pre-existing 50x and 20x 0.5-um displacement sequences; do not select images from model performance.",
+  "methods": [
+    "Raw",
+    "Base U-Net",
+    "EDSR",
+    "NAFNet",
+    "MOSR"
+  ],
+  "imposed_shifts_px": [
+    -1.0,
+    -0.75,
+    -0.5,
+    -0.25,
+    -0.1,
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "shift_axes": [
+    "x",
+    "y"
+  ],
+  "shift_operator": "OpenCV Lanczos-4 translation on normalized float32 intensity with BORDER_REFLECT_101; shifted inputs are stored as 16-bit PNG so the imposed subpixel phase is not collapsed by a second 8-bit quantization",
+  "crop_size_px": 512,
+  "inference_rule": "Rerun every learned model on every shifted crop. Use full-crop inference with no tiling so tile-grid phase cannot confound the model comparison.",
+  "primary_endpoint": "Absolute error of boundary-derived translation at the case-axis-shift cluster grain, in pixels",
+  "secondary_endpoints": [
+    "P95 absolute translation error",
+    "signed translation bias",
+    "cross-axis error for circular features",
+    "translation-equivariance image residual",
+    "valid boundary-measurement rate"
+  ],
+  "sharpness_guardrail": "Report edge transition width and normalized edge slope so low translation error cannot be credited to feature erasure or excessive smoothing.",
+  "aggregation_rule": "Circular-feature coordinates are first summarized across the fixed center-nine features; inference comparisons use paired case-axis-shift clusters rather than treating every edge as an independent experiment.",
+  "validity_rule": "Require at least seven valid center-nine circular features or at least ten valid line edges for a cluster. Reject failed measurements without substitution.",
+  "uncertainty_rule": "Use paired cluster-level bootstrap intervals with a fixed random seed; report all signed shifts and both magnifications.",
+  "cases": [
+    {
+      "case_id": "50x_pillar",
+      "magnification": "50x",
+      "morphology": "pillar",
+      "object_um_per_px": 0.069,
+      "source_sequence": "50x_x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [917, 458, 512, 512]
+    },
+    {
+      "case_id": "50x_via",
+      "magnification": "50x",
+      "morphology": "via",
+      "object_um_per_px": 0.069,
+      "source_sequence": "50x_x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [615, 693, 512, 512]
+    },
+    {
+      "case_id": "50x_vertical_lines",
+      "magnification": "50x",
+      "morphology": "line",
+      "object_um_per_px": 0.069,
+      "source_sequence": "50x_x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [194, 114, 512, 512],
+      "measured_shift_axis": "x"
+    },
+    {
+      "case_id": "50x_horizontal_lines",
+      "magnification": "50x",
+      "morphology": "line",
+      "object_um_per_px": 0.069,
+      "source_sequence": "50x_x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [1144, 874, 512, 512],
+      "measured_shift_axis": "y"
+    },
+    {
+      "case_id": "20x_pillar",
+      "magnification": "20x",
+      "morphology": "pillar",
+      "object_um_per_px": 0.1725,
+      "source_sequence": "20x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [1536, 636, 512, 512]
+    },
+    {
+      "case_id": "20x_via",
+      "magnification": "20x",
+      "morphology": "via",
+      "object_um_per_px": 0.1725,
+      "source_sequence": "20x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [1438, 455, 512, 512]
+    }
+  ]
+}

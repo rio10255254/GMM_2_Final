@@ -4707,7 +4707,23 @@
         "original_full_hashes_reused_only_with_unchanged_metadata": true,
         "receipt": "docs/reproducibility/project_completion/REGISTERED_H_DELTA_VERIFIED.json"
       },
-      "final_delivery_protocol": "docs/reproducibility/project_completion/FINAL_PUBLICATION_PROTOCOL.md"
+      "final_delivery_protocol": "docs/reproducibility/project_completion/FINAL_PUBLICATION_PROTOCOL.md",
+      "lab_subpixel_provenance_and_replay": {
+        "status": "original_CPU_input_regeneration_and_saved_table_replay_passed_GitHub_replay_pending",
+        "original_full_frames": 2,
+        "regions": 6,
+        "reference_crops": 6,
+        "mathematical_shift_inputs": 120,
+        "exact_input_files_regenerated": 126,
+        "original_numeric_fields_recomputed": 346,
+        "original_model_identities_found": 4,
+        "first_image_batch_objects_downloaded_and_read": 12000,
+        "image_role_evidence_paths": 131,
+        "original_scientific_or_image_bytes_modified": false,
+        "neural_inference_or_training_repeated": false,
+        "guide": "docs/reproducibility/lab_comparisons/README.md",
+        "image_roles": "docs/reproducibility/project_completion/IMAGE_ROLE_EVIDENCE_20261021.json"
+      }
     }
   },
   "audit_trail": [

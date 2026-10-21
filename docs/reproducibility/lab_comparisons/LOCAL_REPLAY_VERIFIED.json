@@ -1,0 +1,38 @@
+{
+  "status": "PASS_EXACT_126_INPUT_FILES_AND_ORIGINAL_TABLES",
+  "regenerated_input_images": 126,
+  "source_cases": 6,
+  "historical_geometry_interface_rebuilt_from_frozen_case_records": true,
+  "original_generator_and_aggregation_source_modified": false,
+  "scientific_geometry_or_reference_values_modified": false,
+  "generated_metadata_physical_paths_relocated": true,
+  "original_input_and_figure_files_modified": false,
+  "original_126_input_manifest_rows_match_except_physical_path": true,
+  "neural_inference_or_training_repeated": false,
+  "primary_rows": 500,
+  "paired_primary_combinations_per_method": 100,
+  "numeric_fields_checked": 346,
+  "maximum_absolute_difference": 0.0,
+  "tables": [
+    {
+      "table": "primary_translation_summary_by_method.csv",
+      "rows": 5,
+      "all_original_fields_match": true
+    },
+    {
+      "table": "primary_translation_summary_by_group.csv",
+      "rows": 25,
+      "all_original_fields_match": true
+    },
+    {
+      "table": "primary_translation_summary_by_shift.csv",
+      "rows": 25,
+      "all_original_fields_match": true
+    },
+    {
+      "table": "paired_mosr_comparisons.csv",
+      "rows": 4,
+      "all_original_fields_match": true
+    }
+  ]
+}

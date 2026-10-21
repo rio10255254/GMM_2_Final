@@ -1,0 +1,384 @@
+{
+  "design": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\Subpixel_Translation_Equivariance_20260720\\predeclared_design.json",
+  "design_sha256": "a305fa5bd511ff31b03b5cb393df10d4df45427c7b0d957fb0983c8d849e7246",
+  "input_directory": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\Subpixel_Translation_Equivariance_20260720\\inputs\\shifted",
+  "input_count": 126,
+  "case_count": 6,
+  "cases": [
+    {
+      "case_id": "50x_pillar",
+      "magnification": "50x",
+      "morphology": "pillar",
+      "object_um_per_px": 0.069,
+      "source_sequence": "50x_x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [
+        917,
+        458,
+        512,
+        512
+      ],
+      "source_path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+      "source_sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
+      "source_shape": [
+        1536,
+        2048
+      ],
+      "crop_min_8bit": 5,
+      "crop_max_8bit": 223,
+      "crop_mean_8bit": 164.50178909301758,
+      "crop_std_8bit": 52.06969429347313,
+      "measurement": {
+        "polarity": "dark",
+        "radius_px": 19.5,
+        "pitch_px": 72.5,
+        "search_radius_px": 8.0,
+        "min_edge_strength": 2.0,
+        "centers": [
+          {
+            "feature_id": "24",
+            "x": 183.5,
+            "y": 184.5
+          },
+          {
+            "feature_id": "23",
+            "x": 256.5,
+            "y": 184.5
+          },
+          {
+            "feature_id": "22",
+            "x": 327.5,
+            "y": 184.5
+          },
+          {
+            "feature_id": "30",
+            "x": 183.5,
+            "y": 256.5
+          },
+          {
+            "feature_id": "29",
+            "x": 256.5,
+            "y": 256.5
+          },
+          {
+            "feature_id": "28",
+            "x": 327.5,
+            "y": 256.5
+          },
+          {
+            "feature_id": "36",
+            "x": 183.5,
+            "y": 328.5
+          },
+          {
+            "feature_id": "35",
+            "x": 256.5,
+            "y": 328.5
+          },
+          {
+            "feature_id": "34",
+            "x": 327.5,
+            "y": 328.5
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "50x_via",
+      "magnification": "50x",
+      "morphology": "via",
+      "object_um_per_px": 0.069,
+      "source_sequence": "50x_x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [
+        615,
+        693,
+        512,
+        512
+      ],
+      "source_path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+      "source_sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
+      "source_shape": [
+        1536,
+        2048
+      ],
+      "crop_min_8bit": 35,
+      "crop_max_8bit": 222,
+      "crop_mean_8bit": 132.66823196411133,
+      "crop_std_8bit": 49.380774777961705,
+      "measurement": {
+        "polarity": "bright",
+        "radius_px": 23.82140925414175,
+        "pitch_px": 72.5,
+        "search_radius_px": 8.0,
+        "min_edge_strength": 2.0,
+        "centers": [
+          {
+            "feature_id": "G11",
+            "x": 183.60683553577144,
+            "y": 184.66953101741933
+          },
+          {
+            "feature_id": "H11",
+            "x": 255.62232931318192,
+            "y": 183.65825195152718
+          },
+          {
+            "feature_id": "I11",
+            "x": 327.99396863144364,
+            "y": 183.3266242773699
+          },
+          {
+            "feature_id": "G12",
+            "x": 185.1645162358259,
+            "y": 256.10021441430683
+          },
+          {
+            "feature_id": "H12",
+            "x": 256.20664571988266,
+            "y": 256.9027492866594
+          },
+          {
+            "feature_id": "I12",
+            "x": 328.66179213387966,
+            "y": 256.10322437654474
+          },
+          {
+            "feature_id": "G13",
+            "x": 185.15862237871727,
+            "y": 330.07141060127447
+          },
+          {
+            "feature_id": "H13",
+            "x": 256.9894446956745,
+            "y": 328.99795591268685
+          },
+          {
+            "feature_id": "I13",
+            "x": 329.30324086329574,
+            "y": 328.2991614382224
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "50x_vertical_lines",
+      "magnification": "50x",
+      "morphology": "line",
+      "object_um_per_px": 0.069,
+      "source_sequence": "50x_x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [
+        194,
+        114,
+        512,
+        512
+      ],
+      "measured_shift_axis": "x",
+      "source_path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+      "source_sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
+      "source_shape": [
+        1536,
+        2048
+      ],
+      "crop_min_8bit": 60,
+      "crop_max_8bit": 203,
+      "crop_mean_8bit": 125.99491882324219,
+      "crop_std_8bit": 46.515224107059645,
+      "measurement": {
+        "measured_shift_axis": "x",
+        "minimum_valid_edges": 10
+      }
+    },
+    {
+      "case_id": "50x_horizontal_lines",
+      "magnification": "50x",
+      "morphology": "line",
+      "object_um_per_px": 0.069,
+      "source_sequence": "50x_x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [
+        1144,
+        874,
+        512,
+        512
+      ],
+      "measured_shift_axis": "y",
+      "source_path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+      "source_sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
+      "source_shape": [
+        1536,
+        2048
+      ],
+      "crop_min_8bit": 51,
+      "crop_max_8bit": 207,
+      "crop_mean_8bit": 126.84355545043945,
+      "crop_std_8bit": 47.21002536971686,
+      "measurement": {
+        "measured_shift_axis": "y",
+        "minimum_valid_edges": 10
+      }
+    },
+    {
+      "case_id": "20x_pillar",
+      "magnification": "20x",
+      "morphology": "pillar",
+      "object_um_per_px": 0.1725,
+      "source_sequence": "20x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [
+        1536,
+        636,
+        512,
+        512
+      ],
+      "source_path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0000.bmp",
+      "source_sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
+      "source_shape": [
+        1536,
+        2048
+      ],
+      "crop_min_8bit": 27,
+      "crop_max_8bit": 144,
+      "crop_mean_8bit": 85.1072883605957,
+      "crop_std_8bit": 29.050210139478615,
+      "measurement": {
+        "polarity": "dark",
+        "radius_px": 7.6,
+        "pitch_px": 29.0,
+        "search_radius_px": 4.0,
+        "min_edge_strength": 2.0,
+        "centers": [
+          {
+            "feature_id": "36",
+            "x": 426.79999999999995,
+            "y": 227.0
+          },
+          {
+            "feature_id": "35",
+            "x": 455.79999999999995,
+            "y": 227.0
+          },
+          {
+            "feature_id": "34",
+            "x": 484.79999999999995,
+            "y": 227.0
+          },
+          {
+            "feature_id": "30",
+            "x": 426.79999999999995,
+            "y": 256.0
+          },
+          {
+            "feature_id": "29",
+            "x": 455.79999999999995,
+            "y": 256.0
+          },
+          {
+            "feature_id": "28",
+            "x": 484.79999999999995,
+            "y": 256.0
+          },
+          {
+            "feature_id": "24",
+            "x": 426.79999999999995,
+            "y": 285.0
+          },
+          {
+            "feature_id": "23",
+            "x": 455.79999999999995,
+            "y": 285.0
+          },
+          {
+            "feature_id": "22",
+            "x": 484.79999999999995,
+            "y": 285.0
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "20x_via",
+      "magnification": "20x",
+      "morphology": "via",
+      "object_um_per_px": 0.1725,
+      "source_sequence": "20x_0p5um",
+      "source_frame": "frame_0000.bmp",
+      "crop_xywh": [
+        1438,
+        455,
+        512,
+        512
+      ],
+      "source_path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0000.bmp",
+      "source_sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
+      "source_shape": [
+        1536,
+        2048
+      ],
+      "crop_min_8bit": 43,
+      "crop_max_8bit": 144,
+      "crop_mean_8bit": 77.59866333007812,
+      "crop_std_8bit": 25.725097627269594,
+      "measurement": {
+        "polarity": "bright",
+        "radius_px": 9.5285637016567,
+        "pitch_px": 29.0,
+        "search_radius_px": 4.0,
+        "min_edge_strength": 2.0,
+        "centers": [
+          {
+            "feature_id": "G11",
+            "x": 227.18259905101854,
+            "y": 285.1389703942775
+          },
+          {
+            "feature_id": "H11",
+            "x": 256.21367332218733,
+            "y": 285.0100994242033
+          },
+          {
+            "feature_id": "I11",
+            "x": 285.3151228426882,
+            "y": 285.0453350586821
+          },
+          {
+            "feature_id": "G12",
+            "x": 227.15157641213045,
+            "y": 256.1191010015907
+          },
+          {
+            "feature_id": "H12",
+            "x": 256.204575936423,
+            "y": 256.08039762777196
+          },
+          {
+            "feature_id": "I12",
+            "x": 285.25341491462586,
+            "y": 255.97486591886263
+          },
+          {
+            "feature_id": "G13",
+            "x": 227.05613932937922,
+            "y": 227.03350832965032
+          },
+          {
+            "feature_id": "H13",
+            "x": 256.17360554271136,
+            "y": 226.89840257972912
+          },
+          {
+            "feature_id": "I13",
+            "x": 285.21612043544314,
+            "y": 227.05268415644775
+          }
+        ]
+      }
+    }
+  ],
+  "shift_operator_qa": {
+    "row_count": 20,
+    "max_commanded_axis_error_px": 0.014177676001651207,
+    "max_cross_axis_error_px": 2.1980580811487016e-05
+  }
+}

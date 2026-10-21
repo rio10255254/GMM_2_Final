@@ -44,6 +44,8 @@ def main():
     p.add_argument('--review-paths-only',action='store_true',help='Review exact source locations and planned providers while uploads continue; never produce a usable master index')
     a=p.parse_args();op=a.operation;root=a.root;archive=Path(r'H:\GMM_2_Final_Archive')
     private_policy=load_exclusions(root);private_exclusions=[]
+    roles_file=root/'docs/reproducibility/project_completion/IMAGE_ROLE_EVIDENCE_20261021.json'
+    reviewed_roles={row['path'].casefold():row for row in read(roles_file)['files']} if roles_file.exists() else {}
     if a.output.exists():raise FileExistsError('Keep the earlier reviewed restore index')
     if not (op/'ALL_RESEARCH_CONTENT_HASHED.json').exists():raise ValueError('Complete all content-family checks before the master index')
     full_check=read(op/'ALL_RESEARCH_CONTENT_HASHED.json')
@@ -129,6 +131,12 @@ def main():
             relative='Historical_Preservation_Metadata/'+row['sha256'][:16]+'/'+relative
         key=relative.casefold();value={'path':relative,'sha256':row['sha256'],'bytes':row['bytes'],'scope':row.get('scope','research'),'role':row.get('role',row.get('kind','research')),
           'source_origin':row.get('origin',row.get('source_origin','previous_GitHub_publication'))}
+        evidence=reviewed_roles.get(key)
+        if evidence and (row['sha256'],row['bytes'])==(evidence['sha256'],evidence['bytes']):
+            value.update({'role':evidence['role'],'role_evidence':evidence['evidence'],
+                          'recorded_file_kind':row.get('kind',row.get('role'))})
+        elif evidence and row.get('origin') in {'D_worktree','registered_H_reference'}:
+            raise ValueError('A current image differs from its reviewed role evidence: '+relative)
         old=canonical.get(key)
         if old and old['sha256']!=value['sha256'] and not replace:raise ValueError('Unresolved restore path versions: '+relative)
         canonical[key]=value

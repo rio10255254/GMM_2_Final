@@ -199,3 +199,26 @@ def test_final_index_still_rejects_a_pending_batch(tmp_path, monkeypatch):
         {'batch':'B001','folder':str(folder)}]})
     with pytest.raises(ValueError,match='not been actually retrieved'):
         builder.main()
+
+
+def test_image_role_uses_exact_evidence_without_relabeling_an_older_version(tmp_path, monkeypatch):
+    out, _, image, _, _=fixture(tmp_path,monkeypatch)
+    dump(tmp_path/'source/docs/reproducibility/project_completion/IMAGE_ROLE_EVIDENCE_20261021.json',
+         {'files':[{'path':'results/centers/image.bmp','sha256':image['sha256'],'bytes':image['bytes'],
+                    'role':'mathematical_translation_test_input','evidence':'original locked input manifest'}]})
+    builder.main()
+    rows=[]
+    for path in out.glob('RESTORE_*.json.gz'):rows.extend(builder.read(path)['files'])
+    current=next(row for row in rows if row['path']=='results/centers/image.bmp')
+    assert current['role']=='mathematical_translation_test_input'
+    historical=[row for row in rows if row['path'].startswith('Historical_Publications/') and row['path'].endswith('results/centers/image.bmp')]
+    assert historical and all(row['role']!='mathematical_translation_test_input' for row in historical)
+
+
+def test_current_image_cannot_inherit_a_stale_scientific_role(tmp_path, monkeypatch):
+    fixture(tmp_path,monkeypatch)
+    dump(tmp_path/'source/docs/reproducibility/project_completion/IMAGE_ROLE_EVIDENCE_20261021.json',
+         {'files':[{'path':'results/centers/image.bmp','sha256':'b'*64,'bytes':1,
+                    'role':'camera_original','evidence':'different file'}]})
+    with pytest.raises(ValueError,match='reviewed role evidence'):
+        builder.main()
