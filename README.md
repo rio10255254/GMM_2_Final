@@ -2,7 +2,7 @@
 
 2026-10-21研究保存入口：[各輪方法與GitHub取回](docs/reproducibility/README.md)／[逐輪問題、結果與來源](docs/reproducibility/EXPERIMENTS.md)／[本機全部值得保存內容的核對](docs/reproducibility/project_completion/README.md)。全專案補查仍在進行，已上傳、已核對與尚待完成的部分分別記錄。
 
-本輪以文件、程式、完整數據、必要模型及重要影像的**整理與上傳**為主。檢查只確認沒有漏件、上傳完整與必要檔案能取回；既有重做證據保留，不另開測試或重算工作。依內容查找請從[專案地圖](docs/navigation/PROJECT_MAP.md#我現在要找什麼)進入。
+本輪改為**精選、輕量的研究整理**：保存原程式、設定與重做方法、文獻／文件、完整量測與比較表、關鍵模型及少量有明確用途的影像。舊全量大檔上傳已停止；大量訓練影像、逐張重建陣列和所有中途模型留在本機／H封存，只記錄來源與重建方式。既有大檔草稿已凍結，尚未刪除。依內容查找請從[專案地圖](docs/navigation/PROJECT_MAP.md#我現在要找什麼)進入。
 
 目前論文使用R152／RAW，十方法完整比較及圖表見[最新論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。正式使用基準仍是COMBO；歷史模型、較早論文與正在訓練的版本各自保留身分。
 

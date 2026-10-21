@@ -1,0 +1,41 @@
+{
+  "status": "BULK_TRANSFERS_DISABLED_PENDING_SELECTIVE_CURATION",
+  "snapshot_time": "2026-10-21T13:29:11.104544+08:00",
+  "repository_reported_size_KiB": 1597507,
+  "bulk_draft_asset_bytes": 384624229040,
+  "drafts": [
+    {
+      "tag": "research-model-history-additions-20261021",
+      "draft": true,
+      "asset_count": 120,
+      "server_asset_bytes": 142688604573
+    },
+    {
+      "tag": "research-numeric-data-additions-20261021",
+      "draft": true,
+      "asset_count": 128,
+      "server_asset_bytes": 165454759231
+    },
+    {
+      "tag": "research-image-data-additions-20261021",
+      "draft": true,
+      "asset_count": 82,
+      "server_asset_bytes": 72395813256
+    },
+    {
+      "tag": "research-package-additions-20261021",
+      "draft": true,
+      "asset_count": 6,
+      "server_asset_bytes": 4085051980
+    }
+  ],
+  "old_schedulers_and_workers_stopped": 7,
+  "old_full_snapshot_plan_restart_guard_enabled": true,
+  "automatic_continuation_changed_to_lightweight_selection": true,
+  "local_research_originals_deleted": false,
+  "GitHub_assets_deleted": false,
+  "frozen_drafts_selected_for_publication": false,
+  "full_backup_upload_no_longer_authorized": true,
+  "curated_selection_pending": true,
+  "not_a_restore_manifest": true
+}
