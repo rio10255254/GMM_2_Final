@@ -4709,7 +4709,7 @@
       },
       "final_delivery_protocol": "docs/reproducibility/project_completion/FINAL_PUBLICATION_PROTOCOL.md",
       "lab_subpixel_provenance_and_replay": {
-        "status": "original_CPU_input_regeneration_and_saved_table_replay_passed_GitHub_replay_pending",
+        "status": "actual_GitHub_source_and_small_kit_download_isolated_replay_passed_published",
         "original_full_frames": 2,
         "regions": 6,
         "reference_crops": 6,
@@ -4722,7 +4722,12 @@
         "original_scientific_or_image_bytes_modified": false,
         "neural_inference_or_training_repeated": false,
         "guide": "docs/reproducibility/lab_comparisons/README.md",
-        "image_roles": "docs/reproducibility/project_completion/IMAGE_ROLE_EVIDENCE_20261021.json"
+        "image_roles": "docs/reproducibility/project_completion/IMAGE_ROLE_EVIDENCE_20261021.json",
+        "small_kit_release": "research-lab-subpixel-replay-20261021",
+        "small_kit_bytes": 4242188,
+        "source_commit": "415ce617db99cebc7e8b72e82ad0a7ad03491748",
+        "old_research_roots_blocked": true,
+        "receipt": "docs/reproducibility/lab_comparisons/GITHUB_REPLAY_PUBLISHED_VERIFIED.json"
       }
     }
   },

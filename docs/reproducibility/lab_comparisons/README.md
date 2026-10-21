@@ -51,3 +51,10 @@ python Tools/replay_lab_subpixel_history.py --root . --output NEW_OUTPUT_DIRECTO
 ```
 
 OpenCV採用本次已驗證的安裝組合。程式先逐份核對必要原件，再執行原生成流程、檢查全部126份檔案與原清單，最後用原統計段重算四張原表的346個數值；本機核對最大差為0。它沒有重新估計全部影像邊界、重做模型推論、訓練或平台實拍。[本機重做收據](LOCAL_REPLAY_VERIFIED.json)與後續GitHub實際取回驗證分開記錄，不以本機通過冒充遠端取回。
+
+
+## 已發布、已實際取回的小包
+
+[約4.2MB的完整小型重做包](https://github.com/rio10255254/GMM_2_Final/releases/download/research-lab-subpixel-replay-20261021/lab-subpixel-inputs-and-results-replay.zip)包含兩張完整來源、原生成與統計程式、原設計／幾何及原表。它已實際從GitHub下載並解開，21份包內檔案核對通過；在原D／H研究資料不可讀的條件下，再次完整生成126份輸入檔相同，四張原表346數值完全相同。故意改動取回的來源圖會在建立輸出前停止。[實際取回收據](GITHUB_REPLAY_PUBLISHED_VERIFIED.json)。
+
+固定小包來源為`415ce617db99cebc7e8b72e82ad0a7ad03491748`；它沒有附四份模型權重，也沒有重新執行模型或訓練。完整權重與完整結果仍依全專案保存索引取得。小包完成不代表大型資料與總恢復索引已完成。
