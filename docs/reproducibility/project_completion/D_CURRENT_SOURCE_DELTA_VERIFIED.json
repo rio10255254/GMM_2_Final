@@ -1,0 +1,72 @@
+{
+  "status": "NO_UNPRESERVED_D_RESEARCH_DELTA_AFTER_EXACT_OWN_SOURCE_RESOLUTION",
+  "source_delta": "RESEARCH_DELTA_WITH_MISSING_CHECK_20261021_1205.json",
+  "actual_GitHub_source_commit": "ccdc09baadeaaa41e7ffe811a663326ad1968aec",
+  "own_new_or_changed_files_resolved": 9,
+  "own_file_resolution": [
+    {
+      "path": "Tools/audit_research_preservation_delta.py",
+      "captured_sha256": "24c145545d5e0e79c7f3170ca537741b4f6617d6b40b1deb1fb44a43b59bc99e",
+      "actual_published_sha256": "24c145545d5e0e79c7f3170ca537741b4f6617d6b40b1deb1fb44a43b59bc99e",
+      "reason": "exact_own_file_published_and_actually_downloaded"
+    },
+    {
+      "path": "Tools/tests/test_preservation_missing_sources.py",
+      "captured_sha256": "957acf17e4ff11bd30463216b960e9f5c9372cdb48287c01d6a54b9987be0bc6",
+      "actual_published_sha256": "957acf17e4ff11bd30463216b960e9f5c9372cdb48287c01d6a54b9987be0bc6",
+      "reason": "exact_own_file_published_and_actually_downloaded"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/MODEL_BATCHES_SERVER_VERIFIED.json",
+      "captured_sha256": "9b313fce3d80f2a88ddb239532831d41fdb790d279208745fb78ccc254af853a",
+      "actual_published_sha256": "9b313fce3d80f2a88ddb239532831d41fdb790d279208745fb78ccc254af853a",
+      "reason": "exact_own_file_published_and_actually_downloaded"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/MODEL_HISTORY.md",
+      "captured_sha256": "f28dd5817b6ffb961d1f7384e39b5e76a114904a645bee8695f0b632ea6c2848",
+      "actual_published_sha256": "6c12eba1246fecff2c7dd3ce634103e22089f1b8cdd0730b5abc647b3be1b7ab",
+      "reason": "own_interim_guide_exactly_reconstructed_by_removing_its_later_added_paragraph_no_research_values_changed"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/MODEL_HISTORY_CONTENT_INDEX.json.gz",
+      "captured_sha256": "ad9abe4f31d783a713107e243df3e047b004bfc6d5b2809bf7417cccc2c8116a",
+      "actual_published_sha256": "ad9abe4f31d783a713107e243df3e047b004bfc6d5b2809bf7417cccc2c8116a",
+      "reason": "exact_own_file_published_and_actually_downloaded"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/MODEL_HISTORY_INDEX_SUMMARY.json",
+      "captured_sha256": "12f1423307230f80bdd19402dc579431623bac337c8a7f9168c92769d4666627",
+      "actual_published_sha256": "12f1423307230f80bdd19402dc579431623bac337c8a7f9168c92769d4666627",
+      "reason": "exact_own_file_published_and_actually_downloaded"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/ONNX_GRAPH_RECOVERY_VERIFIED.json",
+      "captured_sha256": "833044c5ffef339cec449d33091942bc9a9dbfb46f4055892467128c92478748",
+      "actual_published_sha256": "833044c5ffef339cec449d33091942bc9a9dbfb46f4055892467128c92478748",
+      "reason": "exact_own_file_published_and_actually_downloaded"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/R61_ONNX_SMALL_DELIVERY_VERIFIED.json",
+      "captured_sha256": "a4997a434c1b33d17bd2d0f131f4bf422a8cdb777801637c3a825375a769c14f",
+      "actual_published_sha256": "a4997a434c1b33d17bd2d0f131f4bf422a8cdb777801637c3a825375a769c14f",
+      "reason": "exact_own_file_published_and_actually_downloaded"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/README.md",
+      "captured_sha256": "dfbd0da272256018eb63a0a7044ee2fd2ff720b6efd23ad44ee9093b5ad22d35",
+      "actual_published_sha256": "dfbd0da272256018eb63a0a7044ee2fd2ff720b6efd23ad44ee9093b5ad22d35",
+      "reason": "exact_own_file_published_and_actually_downloaded"
+    }
+  ],
+  "genuine_new_or_changed_research_inputs_or_results_in_findings": 0,
+  "captured_sources_missing_from_current_D_tree": 0,
+  "read_errors": 0,
+  "reference_changes": 0,
+  "captured_sources_in_explicit_current_dependency_or_reference_exclusions": {
+    "captured_source_inside_currently_excluded_or_referenced_directory": 3246,
+    "private_nonresearch_source_excluded": 3
+  },
+  "original_sources_modified_by_check": false,
+  "not_a_permanent_future_delta_claim": true
+}
