@@ -1,0 +1,122 @@
+{
+  "dataset": "Pitch1um_Y_100",
+  "short_name": "pitch1um_y_100",
+  "n_frames": 101,
+  "expected_step_px": 8.0,
+  "step_stability": {
+    "input": {
+      "step_y_mean": -2.9404,
+      "step_y_std": 9.933,
+      "step_y_cv_pct": 337.81,
+      "step_x_mean": -0.6513,
+      "step_x_std": 10.2208,
+      "internal_step_std_y": 9.933
+    },
+    "output": {
+      "step_y_mean": -8.0347,
+      "step_y_std": 0.1518,
+      "step_y_cv_pct": 1.89,
+      "step_x_mean": -0.0701,
+      "step_x_std": 0.1409,
+      "internal_step_std_y": 0.1518
+    },
+    "improvement_pct": 98.47,
+    "gmf_step_std": 0.201031,
+    "gmf_baseline_step_std": 0.205193
+  },
+  "k2_stability": {
+    "input_outer": {
+      "k2_amp_mean": 1.2092,
+      "k2_amp_std": 0.7547,
+      "k2_amp_cv_pct": 62.41,
+      "k2_phase_circ_std_deg": 127.66
+    },
+    "input_inner": {
+      "k2_amp_mean": 1.7896,
+      "k2_amp_std": 0.8671,
+      "k2_amp_cv_pct": 48.45,
+      "k2_phase_circ_std_deg": 68.58
+    },
+    "output_outer": {
+      "k2_amp_mean": 1.1309,
+      "k2_amp_std": 0.195,
+      "k2_amp_cv_pct": 17.24,
+      "k2_phase_circ_std_deg": 8.57
+    },
+    "output_inner": {
+      "k2_amp_mean": 1.0339,
+      "k2_amp_std": 0.2174,
+      "k2_amp_cv_pct": 21.03,
+      "k2_phase_circ_std_deg": 8.11
+    },
+    "verdict": "moderate"
+  },
+  "center_offset_drift": {
+    "input": {
+      "mean": 2.6455,
+      "std": 1.2829,
+      "trend_px_per_frame": 0.00597
+    },
+    "output": {
+      "mean": 0.7451,
+      "std": 0.1881,
+      "trend_px_per_frame": 0.002218
+    },
+    "verdict": "fixed_bias"
+  },
+  "residual_consistency": {
+    "outer": {
+      "input_mean": 9.2258,
+      "output_mean": 2.1983,
+      "improvement_mean_pct": 76.08,
+      "improvement_std_pct": 1.66,
+      "improvement_min_pct": 67.75,
+      "improvement_max_pct": 79.26
+    },
+    "inner": {
+      "input_mean": 9.2297,
+      "output_mean": 1.9784,
+      "improvement_mean_pct": 78.44,
+      "improvement_std_pct": 2.35,
+      "improvement_min_pct": 65.09,
+      "improvement_max_pct": 81.06
+    }
+  },
+  "hotspot_persistence": {
+    "input_outer": {
+      "threshold_px": 14.5172,
+      "n_persistent_angles_gt50pct": 0,
+      "persistent_angle_fraction_gt50pct": 0.0,
+      "mean_persistence": 0.1003,
+      "max_persistence": 0.198
+    },
+    "input_inner": {
+      "threshold_px": 14.5257,
+      "n_persistent_angles_gt50pct": 0,
+      "persistent_angle_fraction_gt50pct": 0.0,
+      "mean_persistence": 0.1002,
+      "max_persistence": 0.2079
+    },
+    "output_outer": {
+      "threshold_px": 3.3923,
+      "n_persistent_angles_gt50pct": 37,
+      "persistent_angle_fraction_gt50pct": 0.1028,
+      "mean_persistence": 0.2812,
+      "max_persistence": 1.0
+    },
+    "output_inner": {
+      "threshold_px": 3.0235,
+      "n_persistent_angles_gt50pct": 39,
+      "persistent_angle_fraction_gt50pct": 0.1092,
+      "mean_persistence": 0.2525,
+      "max_persistence": 1.0
+    }
+  },
+  "environment": {
+    "python": "3.12.9",
+    "numpy": "2.2.3",
+    "scipy": "1.15.2",
+    "matplotlib": "3.10.1",
+    "opencv": "4.11.0"
+  }
+}
