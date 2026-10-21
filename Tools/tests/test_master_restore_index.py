@@ -164,3 +164,38 @@ def test_captured_old_task_catalog_cannot_replace_fixed_clone_catalog(tmp_path, 
     saved=next(row for row in rows if row['sha256']==frozen['sha256'])
     assert saved['path']=='Historical_Preservation_Metadata/'+frozen['sha256'][:16]+'/'+relative
     assert (root/relative).read_bytes()==original_catalog
+
+
+def test_pending_batch_path_review_never_creates_a_restorable_master(tmp_path, monkeypatch):
+    out, _, _, _, _ = fixture(tmp_path, monkeypatch)
+    op=tmp_path/'operation';folder=op/'numeric_batches/B001'
+    pending=item('__archive_objects__/only_planned.npy','not yet on GitHub')
+    dump(folder/'SELECTION.json',{'files':[pending]})
+    export=op/'HASHED_NUMERIC_FILES.jsonl.gz'
+    with gzip.open(export,'rt',encoding='utf-8') as stream:rows=[json.loads(line) for line in stream]
+    rows.append({**pending,'logical_path':'data/only_planned.npy','source':str(tmp_path/'source/data/only_planned.npy'),
+                 'origin':'D_worktree','scope':'test','kind':'result_numeric'})
+    with gzip.open(export,'wt',encoding='utf-8') as stream:
+        for row in rows:stream.write(json.dumps(row)+'\n')
+    check=builder.read(op/'ALL_RESEARCH_CONTENT_HASHED.json')
+    next(row for row in check['families'] if row['family']=='numeric')['files']=len(rows)
+    dump(op/'ALL_RESEARCH_CONTENT_HASHED.json',check)
+    dump(op/'numeric_batches/PLAN.json',{'tag':'pending-fixture','batches':[
+        {'batch':'B001','folder':str(folder)}]})
+    sys.argv.append('--review-paths-only')
+    builder.main()
+    review=builder.read(out/'PATH_PROVIDER_REVIEW.json')
+    assert review['state']=='review_only_not_restorable'
+    assert review['publication_complete'] is False
+    assert review['pending_actual_GitHub_verification']['B001']=={'locations':1,'unique_objects':1}
+    assert not (out/'MASTER_RESTORE_INDEX.json').exists()
+
+
+def test_final_index_still_rejects_a_pending_batch(tmp_path, monkeypatch):
+    _, array, _, _, _ = fixture(tmp_path, monkeypatch)
+    op=tmp_path/'operation';folder=op/'numeric_batches/B001'
+    dump(folder/'SELECTION.json',{'files':[array]})
+    dump(op/'numeric_batches/PLAN.json',{'tag':'pending-fixture','batches':[
+        {'batch':'B001','folder':str(folder)}]})
+    with pytest.raises(ValueError,match='not been actually retrieved'):
+        builder.main()

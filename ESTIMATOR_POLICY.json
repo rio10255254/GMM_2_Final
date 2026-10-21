@@ -4682,6 +4682,17 @@
         "changed_input_rejected": true,
         "image_version_pairs_preserved": 2,
         "receipt": "docs/reproducibility/optical_calibration/SPECTRUM_GITHUB_REPLAY_VERIFIED.json"
+      },
+      "private_nonresearch_backup_exclusion": {
+        "excluded_distinct_contents": 2,
+        "originals_retained_locally": true,
+        "affected_unpublished_private_draft_assets_removed_and_checked": true,
+        "revised_package_new_unique_objects": 396,
+        "revised_package_new_unique_bytes": 4843116784,
+        "revised_package_actual_recovery_pending": true,
+        "policy": "docs/reproducibility/project_completion/EXCLUDED_PRIVATE_TOOL_BACKUPS.json",
+        "remediation": "docs/reproducibility/project_completion/PRIVATE_BACKUP_DRAFT_WITHDRAWAL_VERIFIED.json",
+        "scientific_content_or_verdict_changed": false
       }
     }
   },

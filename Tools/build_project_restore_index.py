@@ -9,6 +9,7 @@ from pathlib import Path
 from collections import defaultdict
 from project_reproducibility_audit import known_manifests,owner
 from research_recovery import safe_relative,write_json
+from research_preservation_exclusions import load_exclusions,excluded as private_excluded
 
 def read(path):
     if path.suffix=='.gz':
@@ -40,7 +41,9 @@ def verify_exact_batch_receipt(manifest,verified):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--operation',type=Path,required=True)
     p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--review-paths-only',action='store_true',help='Review exact source locations and planned providers while uploads continue; never produce a usable master index')
     a=p.parse_args();op=a.operation;root=a.root;archive=Path(r'H:\GMM_2_Final_Archive')
+    private_policy=load_exclusions(root);private_exclusions=[]
     if a.output.exists():raise FileExistsError('Keep the earlier reviewed restore index')
     if not (op/'ALL_RESEARCH_CONTENT_HASHED.json').exists():raise ValueError('Complete all content-family checks before the master index')
     full_check=read(op/'ALL_RESEARCH_CONTENT_HASHED.json')
@@ -75,11 +78,18 @@ def main():
         folder=op/(family+'_batches')
         plan=read(folder/'PLAN.json')
         if plan.get('large_original_containers_require_separate_chunk_preservation'):
-            if not (op/'LARGE_ORIGINAL_PACKAGES_GITHUB_VERIFIED.json').exists():raise ValueError('Large original distribution containers remain unfinished')
+            if not (op/'LARGE_ORIGINAL_PACKAGES_GITHUB_VERIFIED.json').exists() and not a.review_paths_only:raise ValueError('Large original distribution containers remain unfinished')
+            if a.review_paths_only:
+                for row in plan['large_original_containers_require_separate_chunk_preservation']:
+                    providers.setdefault((row['sha256'],row['bytes']),{'kind':'pending_original_package','batch':'original_package_parts'})
         for batch in plan['batches']:
             batch_tag=batch.get('tag',plan['tag']);new_tags.add(batch_tag)
             work=Path(batch['folder']);receipt=work/'BATCH_GITHUB_RESTORE_VERIFIED.json'
-            if not receipt.exists():raise ValueError('A reviewed batch has not been actually retrieved: '+batch['batch'])
+            if not receipt.exists():
+                if not a.review_paths_only:raise ValueError('A reviewed batch has not been actually retrieved: '+batch['batch'])
+                for row in read(work/'SELECTION.json')['files']:
+                    providers.setdefault((row['sha256'],row['bytes']),{'kind':'pending_batch_object','tag':batch_tag,'batch':batch['batch']})
+                continue
             component=work/'bundle/RESEARCH_ASSETS.json.gz'
             verify_exact_batch_receipt(read(component),read(receipt))
             add_bundle(component,batch_tag,new=True)
@@ -96,6 +106,7 @@ def main():
     current_tree=git_tree(root,current_catalog['source_snapshot_commit']);repo_current={}
     source_scopes=sorted([(r['scope'].casefold(),r['id']) for r in read(root/'docs/reproducibility/experiment_index.json')],key=lambda r:-len(r[0]))
     for row in current_catalog['files']:
+        if private_excluded(row,private_policy):raise ValueError('The fixed source itself contains an excluded private backup')
         key=(row['sha256'],row['bytes']);value={'kind':'repository_blob','provider_path':row['path'],'git_blob':current_tree[row['path']]}
         providers.setdefault(key,value);repo_current[row['path'].casefold()]=row['sha256'];base_files.append({**row,'scope':owner(row['path'],source_scopes)})
     old_catalog_raw=subprocess.check_output(['git','show','6782071d67f5d8d71fa798f7a8926b16804c06b3:docs/reproducibility/REPOSITORY_FILES.json.gz'],cwd=root)
@@ -122,6 +133,7 @@ def main():
         if old and old['sha256']!=value['sha256'] and not replace:raise ValueError('Unresolved restore path versions: '+relative)
         canonical[key]=value
     for row in base_files:
+        if private_excluded(row,private_policy):continue
         key=row['path'].casefold()
         if key in repo_current and repo_current[key]!=row['sha256']:
             insert(row,'Historical_Publications/'+row['sha256'][:16]+'/'+row['path']);continue
@@ -146,6 +158,8 @@ def main():
         with gzip.open(export_path,'rt',encoding='utf-8') as stream:
           for line in stream:
             row=json.loads(line);captured+=1;observed_count+=1;relative=row['logical_path'];key=relative.casefold()
+            if private_excluded(row,private_policy):
+                private_exclusions.append({'path':relative,'reason':'private nonresearch tool backup; retained locally only'});continue
             if '/portable_runtime/' in '/'+key:
                 excluded.append({'path':relative,'reason':'generic reinstallable runtime'});continue
             if row['origin']=='D_worktree' and (key in own or key.startswith('docs/reproducibility/project_completion/')):
@@ -182,6 +196,26 @@ def main():
                         insert({**row,'path':alias,'scope':projection['scope'],
                           'origin':'registered_H_reference' if authoritative else row['origin']},replace=authoritative)
         if observed_count!=expected_count:raise ValueError('A frozen content-family export is incomplete: '+family)
+    if a.review_paths_only:
+        unresolved=[];pending=defaultdict(lambda:{'locations':0,'objects':set()});resolved=0
+        for row in canonical.values():
+            provider=providers.get((row['sha256'],row['bytes']))
+            if provider is None:unresolved.append(row)
+            elif provider['kind'].startswith('pending_'):
+                entry=pending[provider['batch']];entry['locations']+=1;entry['objects'].add((row['sha256'],row['bytes']))
+            else:resolved+=1
+        a.output.mkdir(parents=True)
+        write_json(a.output/'PATH_PROVIDER_REVIEW.json',{
+            'state':'review_only_not_restorable','status':'PATH_AND_PLANNED_PROVIDER_REVIEW_PASSED' if not unresolved else 'SOURCE_PROVIDER_REVIEW_REQUIRED',
+            'captured_physical_files':captured,'normalized_logical_locations':len(canonical),
+            'locations_with_existing_verified_providers':resolved,
+            'pending_actual_GitHub_verification':{key:{'locations':value['locations'],'unique_objects':len(value['objects'])} for key,value in pending.items()},
+            'missing_known_or_planned_providers':unresolved,'master_index_created':False,
+            'excluded_private_nonresearch_locations':len(private_exclusions),
+            'publication_complete':False,'D_cleanup_authorized':False})
+        if unresolved:raise ValueError('A source has neither an existing verified nor an exact planned provider')
+        print('PATH_REVIEW_ONLY_NOT_RESTORABLE',len(canonical),resolved,len(pending),flush=True)
+        return
     a.output.mkdir(parents=True);groups=defaultdict(list);repo_aliases=[];large_packages=[]
     for row in canonical.values():
         provider=providers.get((row['sha256'],row['bytes']))
@@ -213,6 +247,7 @@ def main():
       'original_large_packages':large_packages,
       'captured_physical_files':captured,'normalized_logical_locations':len(canonical),'repository_alias_locations':len(repo_aliases),
       'excluded_generic_dependency_files':len(excluded),'scientific_validation_scope':'File preservation verified; native/rebuild/numeric replays separately described',
+      'excluded_private_nonresearch_locations':len(private_exclusions),
       'batch_checks':batch_checks,'active_training_and_thesis_originals_protected':True,'D_cleanup_authorized':False})
     print('PROJECT_RESTORE_INDEX_BUILT',len(canonical),len(components),len(repo_aliases),flush=True)
 

@@ -4,9 +4,10 @@ Existing release objects and already planned model/data objects are reused by
 SHA-256. Original paths/roles remain in the frozen family exports and are mapped
 back by the collection restore manifests. No source is moved or deleted.
 """
-import argparse,gzip,json
+import argparse,gzip,json,zipfile
 from pathlib import Path
 from research_recovery import write_json
+from research_preservation_exclusions import load_exclusions,excluded as private_excluded
 
 def manifest(path):
     with gzip.open(path,'rt',encoding='utf-8-sig') as stream:return json.load(stream)
@@ -34,6 +35,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--operation',type=Path,required=True)
     p.add_argument('--family',choices=['numeric','images','packages'],required=True);p.add_argument('--batch-bytes',type=int,default=16_000_000_000)
     a=p.parse_args();op=a.operation
+    private_policy=load_exclusions(Path(__file__).resolve().parents[1])
     if not (op/('CONTENT_'+a.family.upper()+'_HASHED.json')).exists():raise ValueError('Finish this complete content family before planning')
     known=set();published_by_path={}
     with gzip.open(op/'PUBLISHED_CATALOG.jsonl.gz','rt',encoding='utf-8') as stream:
@@ -57,6 +59,13 @@ def main():
         for line in stream:
             row=json.loads(line)
             if row['sha256'] is None:raise ValueError('An audit source is not yet content-verified')
+            if private_excluded(row,private_policy):
+                excluded.append({'path':row['logical_path'],'reason':'private nonresearch tool backup; original retained locally, not sent to GitHub'});continue
+            if Path(row['source']).suffix.casefold()=='.zip':
+                with zipfile.ZipFile(row['source']) as archive:
+                    private_names={'auth.json','credentials.json','credentials','id_rsa','id_ed25519','.env','.env.local','tokens.json','token.json'}
+                    if any(Path(item.filename.replace('\\','/')).name.casefold() in private_names for item in archive.infolist()):
+                        raise ValueError('An original ZIP contains a private-named member requiring review before upload: '+row['logical_path'])
             low=row['logical_path'].casefold()
             if '/portable_runtime/' in '/'+low:
                 excluded.append({'path':row['logical_path'],'reason':'reinstallable generic runtime; original delivery containers separately preserved'});continue
@@ -81,8 +90,15 @@ def main():
     for i,group in enumerate(groups,1):
         label=prefix+'_B'+str(i).zfill(3);folder=out/label;folder.mkdir();selection=[]
         for row in group:
+            source=Path(row['source'])
+            if row['logical_path'].casefold()=='docs/reproducibility/repository_files.json.gz':
+                import hashlib
+                source=op/'captured_task_metadata'/row['sha256']/'REPOSITORY_FILES.json.gz'
+                if not source.is_file():raise ValueError('Freeze the checked task catalog before planning its changing live source')
+                with source.open('rb') as stream:identity=hashlib.file_digest(stream,'sha256').hexdigest()
+                if (source.stat().st_size,identity)!=(row['bytes'],row['sha256']):raise ValueError('The captured task catalog differs from its full-audit identity')
             selection.append({'path':'__archive_objects__/'+a.family+'/'+row['sha256']+'/'+Path(row['source']).name,
-              'source':row['source'],'sha256':row['sha256'],'bytes':row['bytes'],'role':'exact_historical_input_or_full_result',
+              'source':str(source),'sha256':row['sha256'],'bytes':row['bytes'],'role':'exact_historical_input_or_full_result',
               'source_kind':row['kind'],'scope':row['scope'],'original_project_path':row['logical_path'],
               'reason':'Preserve existing raw/frozen input or complete stored result bytes, including adverse and failed cases; source roles and original locations remain distinct.',
               'collection':'project-'+a.family+'-'+str(i).zfill(3)})

@@ -1,0 +1,43 @@
+{
+  "status": "PRIVATE_UNPUBLISHED_BACKUP_ASSET_REMOVED_FROM_GITHUB",
+  "release": "research-package-additions-20261021",
+  "release_id": 419017835,
+  "release_still_draft": true,
+  "removed_assets": [
+    {
+      "id": 660920141,
+      "name": "PACKAGES_B001_BUNDLE_SUMMARY.json",
+      "bytes": 1053
+    },
+    {
+      "id": 660919981,
+      "name": "PACKAGES_B001_RESEARCH_ASSETS.json.gz",
+      "bytes": 34643
+    },
+    {
+      "id": 660920351,
+      "name": "PACKAGES_B001_SHA256SUMS.txt",
+      "bytes": 521
+    },
+    {
+      "id": 660915618,
+      "name": "research-project-packages-001-003.zip",
+      "bytes": 1180660266
+    }
+  ],
+  "excluded_originals": [
+    {
+      "path": "_codex_store_backups/20260319_002714/codex_runtime_retired.zip",
+      "sha256": "fdef3484db5294aa9b416bfd8e3659c4c21b4079ae7491b8d470562e54b19724",
+      "bytes": 2361238
+    },
+    {
+      "path": "_codex_store_backups/20260319_002714/session_index.jsonl.bak",
+      "sha256": "ca0ef4fb34d47a8f847352ac19c4b28fad39a476e0dfafd6a28c56c5af5e0599",
+      "bytes": 5831
+    }
+  ],
+  "original_D_backups_retained_unchanged": true,
+  "credential_values_not_printed_or_copied_to_reports": true,
+  "revised_research_package_verification_required": true
+}

@@ -27,12 +27,31 @@ def inspect_data_format(path,relative):
                         version=np.lib.format.read_magic(stream);shape,fortran,dtype=np.lib.format._read_array_header(stream,version)
                     arrays.append({'name':info.filename,'shape':list(shape),'dtype':str(dtype)})
             return {'format_status':'NUMPY_ARCHIVE_HEADERS_READABLE','arrays':arrays}
+        if suffix=='.zip':
+            with zipfile.ZipFile(path) as archive:
+                members=archive.infolist();bad=archive.testzip()
+                if bad is not None:return {'format_status':'HISTORICAL_ZIP_CRC_FAILURE_PRESERVED','member':bad}
+            return {'format_status':'ORIGINAL_ZIP_ALL_MEMBERS_CRC_READABLE','members':len(members)}
+        if suffix=='.gz':
+            size=0
+            with gzip.open(path,'rb') as stream:
+                while block:=stream.read(4*1024**2):size+=len(block)
+            return {'format_status':'GZIP_STREAM_CRC_READABLE','uncompressed_bytes':size}
+        if suffix=='.tar' and '.pth_labpsf_' in relative.casefold():
+            import torch
+            try:
+                value=torch.load(path,map_location='cpu',weights_only=False)
+                summary=summarize(value,torch);del value;gc.collect()
+                return {'format_status':'ORIGINAL_TORCH_PSF_CACHE_INSPECTED','load_status':'LOADABLE',**summary}
+            except Exception as error:
+                return {'format_status':'HISTORICAL_TORCH_CACHE_LOAD_FAILURE_PRESERVED',
+                        'load_status':'LOAD_ERROR_PRESERVED','error_type':type(error).__name__}
         if suffix in {'.bmp','.png','.jpg','.jpeg','.tif','.tiff','.webp','.gif'}:
             import cv2
             image=cv2.imdecode(np.fromfile(path,dtype=np.uint8),cv2.IMREAD_UNCHANGED)
             if image is None:return {'format_status':'IMAGE_DECODE_FAILURE_PRESERVED'}
             return {'format_status':'IMAGE_DECODED','shape':list(image.shape),'dtype':str(image.dtype)}
-        if suffix=='.mat':
+        if suffix in {'.mat','.fig'}:
             import scipy.io
             return {'format_status':'MATLAB_VARIABLE_HEADERS_READABLE','variables':[{'name':name,'shape':list(shape),'type':kind} for name,shape,kind in scipy.io.whosmat(path)]}
         return {'format_status':'EXACT_BYTES_PRESERVED_FORMAT_NOT_APPLICABLE'}

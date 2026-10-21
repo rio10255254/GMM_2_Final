@@ -1,12 +1,14 @@
 {
   "status": "PASS_FOCUSED_RECOVERY_CHECKS",
-  "focused_tests": 13,
+  "focused_tests": 20,
   "test_files": [
     "Tools/tests/test_master_restore_index.py",
     "Tools/tests/test_master_restore_client.py",
     "Tools/tests/test_preservation_delta.py",
     "Tools/tests/test_inventory_catalog_refresh.py",
-    "Tools/tests/test_research_release_shards.py"
+    "Tools/tests/test_research_release_shards.py",
+    "Tools/tests/test_preservation_exclusions.py",
+    "Tools/tests/test_preservation_container_formats.py"
   ],
   "captured_task_catalog_does_not_overwrite_fixed_clone_identity": true,
   "unretrieved_or_modified_owned_catalog_rejected": true,
@@ -16,5 +18,8 @@
   "full_content_audit_files": 3820382,
   "full_content_audit_logical_bytes": 2081353551035,
   "publication_complete": false,
-  "archive_scientific_training_repeated": false
+  "archive_scientific_training_repeated": false,
+  "private_original_backups_excluded_by_path_and_identical_content": true,
+  "path_review_cannot_create_a_usable_master_index": true,
+  "original_zip_and_gzip_crc_checks_preserve_historical_failure": true
 }

@@ -15,6 +15,7 @@ import stat
 
 from project_reproducibility_audit import classify, dependency_directory
 from research_recovery import write_json
+from research_preservation_exclusions import load_exclusions,excluded as private_excluded
 
 
 def checksum(path):
@@ -53,6 +54,7 @@ def main():
     if not (args.operation / 'ALL_RESEARCH_CONTENT_HASHED.json').exists():
         raise ValueError('Finish the original full content audit before the final delta check')
     root = args.root.resolve()
+    private_policy=load_exclusions(root)
     baseline = {}
     for family in ['context', 'models', 'numeric', 'images', 'packages']:
         with gzip.open(args.operation / ('HASHED_' + family.upper() + '_FILES.jsonl.gz'), 'rt', encoding='utf-8') as stream:
@@ -78,10 +80,16 @@ def main():
         for entry in entries:
             path = Path(entry.path)
             relative = path.relative_to(root).as_posix()
+            if private_excluded({'path':relative},private_policy):
+                counts['private_nonresearch_backup_excluded']=counts.get('private_nonresearch_backup_excluded',0)+1
+                continue
             try:
                 info = entry.stat(follow_symlinks=False)
                 reparse = bool(getattr(info, 'st_file_attributes', 0) & stat.FILE_ATTRIBUTE_REPARSE_POINT)
                 if entry.is_dir(follow_symlinks=False) or (reparse and path.is_dir()):
+                    if 'portable_runtime' in {part.casefold() for part in Path(relative).parts}:
+                        counts['generic_portable_runtime_excluded']=counts.get('generic_portable_runtime_excluded',0)+1
+                        continue
                     if dependency_directory(path, entry.name):
                         continue
                     if reparse:
