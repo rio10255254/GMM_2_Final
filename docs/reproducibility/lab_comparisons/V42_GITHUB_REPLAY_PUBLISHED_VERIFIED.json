@@ -1,0 +1,25 @@
+{
+  "status": "PUBLISHED_AFTER_ACTUAL_GITHUB_DOWNLOAD_AND_ISOLATED_ORIGINAL_CPU_REPLAY",
+  "tag": "research-v42-history-replay-20261021",
+  "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-v42-history-replay-20261021",
+  "source_commit": "f1549a4f1f3a34ca5a54678884b1397a1405d789",
+  "asset": {
+    "name": "v42-original-log-and-fixed-models-replay.zip",
+    "bytes": 54049547,
+    "sha256": "b63f8703c905b0773b73efa3166451a1e63a9ea58be306c3aafe671c1e021dcf",
+    "github_digest": "sha256:b63f8703c905b0773b73efa3166451a1e63a9ea58be306c3aafe671c1e021dcf",
+    "github_asset_id": "RA_kwDORuL6dM4naLeA"
+  },
+  "packaged_files_checked": 27,
+  "original_numeric_rows_retained": 122,
+  "original_numeric_tokens_retained": 20618,
+  "stdout_numeric_fields_verified": 360,
+  "original_ANN_fields_not_written": 9,
+  "native_CPU_cases": 4,
+  "all_native_float32_and_BMP_match_fixed_CPU_reference": true,
+  "changed_downloaded_model_rejected_before_output": true,
+  "original_research_roots_blocked": true,
+  "training_repeated": false,
+  "historical_GPU_output_claimed_bit_exact": false,
+  "whole_project_complete": false
+}

@@ -26,7 +26,7 @@ Lab影像用途已按原紀錄釐清：126份數學平移輸入來自2張完整�
 **位移波動定義：**固定步數位置比較不同重拍趟次，與單趟走完30步的波動不同。[單趟完整重算與16方法比較](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md)保留原定義及逐趟結果。
 
 
-保存續查補清[V41到V42完整來源與原表讀法](../docs/reproducibility/lab_comparisons/V42_HISTORY.md)：V41最佳第16輪是V42起點，兩輪短測、完整120輪及第10輪EMA最佳分開。原表欄名錯置另存核實讀法，原數字及原模型不改寫；本機四次CPU核對與GitHub取回分別認定。
+保存續查補清[V41到V42完整來源與原表讀法](../docs/reproducibility/lab_comparisons/V42_HISTORY.md)：V41最佳第16輪是V42起點，兩輪短測、完整120輪及第10輪EMA最佳分開。原表欄名錯置另存核實讀法，原數字及原模型不改寫；約54MB固定模型小包已從GitHub實際取回，四次原生CPU完整小數及BMP相同，沒有重跑長訓練。
 
 ## Active（formal baseline + approved alternates）
 

@@ -49,3 +49,10 @@ python Tools/replay_lab_v42_history.py --root . --output NEW_OUTPUT_DIRECTORY
 附上兩份固定權重後，可加`--native`，用未改動的原推論入口處理20倍、50倍兩張完整來源各自中央512×512裁切，共四次CPU推論。比對包含完整小數輸出及BMP；這是本次固定CPU參照的可攜性驗證，不冒稱與當年GPU圖逐位元相同，也不重新評估整套位移或尺寸成績。[本機核對](V42_LOCAL_REPLAY_VERIFIED.json)。GitHub取回驗證另由後續收據認定。
 
 每份必要原件與權重都先核對內容，缺少或變動會停止；輸出位置必須是新資料夾。完整原資料、120輪全部模型與不利結果仍依總保存附件取得，小型重做不取代全專案完成驗證。
+
+
+## 已從GitHub取回執行並發布
+
+[約54MB的V42原表與固定模型重做包](https://github.com/rio10255254/GMM_2_Final/releases/download/research-v42-history-replay-20261021/v42-original-log-and-fixed-models-replay.zip)含原數字、原程式、兩張完整來源及兩份明確指定的模型。全包已重新從GitHub下載，原D／H研究來源不可讀時仍完成122列20,618個原值的正確欄名另存、360個stdout數字核對及四次原生CPU執行；完整小數輸出與BMP符合固定CPU參照。故意改動取回的模型，會在建立輸出前停止。[實際取回與發布收據](V42_GITHUB_REPLAY_PUBLISHED_VERIFIED.json)。
+
+固定來源是`f1549a4f1f3a34ca5a54678884b1397a1405d789`。這份小包未包含11,254組完整訓練資料或全部120輪權重；那些完整原件依原保存附件恢復。沒有把此局部完成當成全專案完成，也沒有宣稱重做全部歷史GPU訓練。
