@@ -56,3 +56,6 @@ python Tools/replay_lab_v42_history.py --root . --output NEW_OUTPUT_DIRECTORY
 [約54MB的V42原表與固定模型重做包](https://github.com/rio10255254/GMM_2_Final/releases/download/research-v42-history-replay-20261021/v42-original-log-and-fixed-models-replay.zip)含原數字、原程式、兩張完整來源及兩份明確指定的模型。全包已重新從GitHub下載，原D／H研究來源不可讀時仍完成122列20,618個原值的正確欄名另存、360個stdout數字核對及四次原生CPU執行；完整小數輸出與BMP符合固定CPU參照。故意改動取回的模型，會在建立輸出前停止。[實際取回與發布收據](V42_GITHUB_REPLAY_PUBLISHED_VERIFIED.json)。
 
 固定來源是`f1549a4f1f3a34ca5a54678884b1397a1405d789`。這份小包未包含11,254組完整訓練資料或全部120輪權重；那些完整原件依原保存附件恢復。沒有把此局部完成當成全專案完成，也沒有宣稱重做全部歷史GPU訓練。
+
+
+這個問題也見於其他較早訓練表，不能靠相同欄數推定用了同一版程式。[全域舊訓練表結構核對](../project_completion/TRAINING_LOG_LAYOUTS.md)另保留699份原表、十份實際取得的原寫入版本及未確認界線；原研究判決不因這次保存讀法續查而改動。

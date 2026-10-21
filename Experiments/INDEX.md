@@ -28,6 +28,9 @@ Lab影像用途已按原紀錄釐清：126份數學平移輸入來自2張完整�
 
 保存續查補清[V41到V42完整來源與原表讀法](../docs/reproducibility/lab_comparisons/V42_HISTORY.md)：V41最佳第16輪是V42起點，兩輪短測、完整120輪及第10輪EMA最佳分開。原表欄名錯置另存核實讀法，原數字及原模型不改寫；約54MB固定模型小包已從GitHub實際取回，四次原生CPU完整小數及BMP相同，沒有重跑長訓練。
 
+
+[舊訓練表版本核對](../docs/reproducibility/project_completion/TRAINING_LOG_LAYOUTS.md)另核對699份原表及十份GitHub原寫入程式；原表欄名錯置、只有表頭、空檔和未寫出的量均按原身分保留，V42另存讀法不能代表所有歷史版本。
+
 ## Active（formal baseline + approved alternates）
 
 | Round | 目錄 | Branch | 角色 | 關鍵報告 |

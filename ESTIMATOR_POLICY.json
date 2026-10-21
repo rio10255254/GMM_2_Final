@@ -4748,10 +4748,25 @@
         "small_kit_release": "research-v42-history-replay-20261021",
         "small_kit_bytes": 54049547,
         "native_CPU_cases_verified": 4,
-        "original_numeric_tokens_retained": 20618,
+        "original_numeric_tokens_retained": 20496,
         "stdout_numeric_fields_checked": 360,
         "old_research_roots_blocked": true,
-        "changed_model_rejected_before_output": true
+        "changed_model_rejected_before_output": true,
+        "original_value_cells_retained": 20618,
+        "original_text_cells_retained": 122
+      },
+      "historical_training_log_layout_audit": {
+        "status": "original_bytes_and_column_shapes_checked_no_blanket_scientific_reinterpretation",
+        "captured_positions": 1259,
+        "unique_original_logs": 699,
+        "actual_bytes_rechecked": 12998869,
+        "nonempty_width_mismatches": 572,
+        "header_only_logs": 4,
+        "empty_original_logs": 1,
+        "original_writer_versions_actually_retrieved_from_GitHub": 10,
+        "source_version_for_each_run_inferred_from_column_count": false,
+        "guide": "docs/reproducibility/project_completion/TRAINING_LOG_LAYOUTS.md",
+        "original_numeric_values_or_adoption_changed": false
       }
     }
   },
