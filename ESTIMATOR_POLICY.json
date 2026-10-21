@@ -4264,7 +4264,8 @@
     "2026-10-21 early training supplement:851 original locations,367 saved-state files,460 images and24 actual split-index files restored from GitHub. Twelve saved872/46 splits checked; six fixed R33p95/COMBO/R39strong E5/E100 native CPU outputs match original CPU references. A405MB self-contained replay kit was actually downloaded/executed. This verifies preservation/portability, not re-selection, retraining or full-project completion.",
     "2026-10-21 preservation context follow-up: full22218-file GitHub source clone checked; original saved-document state adds2 downloaded blobs;33 directory references mapped. Legacy207scores/5choices replayed with9earlier R13 formula gaps explicit. R88 stale start-only README/index reconciled to original87-epoch failure; old text preserved, no scientific verdict changed. Optical45-fit/100-position local saved-result replay passes; GitHub optical-kit replay stillpending. Whole-project large-content verification remainsinprogress; no D cleanup or GPU work.",
     "2026-10-21使用者確認GitHub整理與上傳為主；檢查限查漏、內容完整及必要取回，不額外擴充測試或實驗重算。原科學判決、論文、訓練資料與D槽保護不變。",
-    "2026-10-21使用者明確反對把所有大型影像與檔案塞上GitHub：舊全量傳輸已停止並阻止重啟，改作精選輕量研究倉庫。已上傳大檔草稿先凍結，未刪除；原件留本機/H，不清D。"
+    "2026-10-21使用者明確反對把所有大型影像與檔案塞上GitHub：舊全量傳輸已停止並阻止重啟，改作精選輕量研究倉庫。已上傳大檔草稿先凍結，未刪除；原件留本機/H，不清D。",
+    "2026-10-21精選首版覆蓋177個研究範圍，13個關鍵模型引用既有精確相同內容；只補原18,000筆位移CSV及25PSF常數共3,351,929 bytes。代表圖仍依用途收斂，沒有新推論、研究重算、整批影像或模型上傳。"
   ],
   "artifact_index": {
     "R152_RAW_complete_research_record_20261002": {
@@ -4813,6 +4814,25 @@
         "latest_scope_snapshot": "docs/reproducibility/project_completion/BULK_UPLOAD_SCOPE_CORRECTION_20261021.json",
         "existing_irreplaceable_shared_camera_dataset_kept_once": true,
         "automatic_continuation_scope": "curation_and_lightweight_delivery_only"
+      },
+      "curated_round_plan_20261021": {
+        "status": "first_size_aware_plan_published_representative_image_review_continues",
+        "round_scopes": 177,
+        "guide": "docs/reproducibility/project_completion/curated/ROUND_CURATED_PLAN.md",
+        "source_index": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+        "key_model_references": 13,
+        "key_models_already_published_exact": 13,
+        "new_model_bytes": 0,
+        "new_image_bytes": 0,
+        "new_small_original_scientific_bytes": 3351929,
+        "R153_original_displacement_rows": 18000,
+        "R153_displacement_definitions": [
+          "adjacent",
+          "start"
+        ],
+        "R152_fixed_PSF_count": 25,
+        "frozen_bulk_drafts_deleted": false,
+        "remaining_round_image_selection_complete": false
       }
     }
   },

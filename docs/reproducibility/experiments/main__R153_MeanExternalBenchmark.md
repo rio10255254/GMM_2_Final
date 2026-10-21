@@ -4,6 +4,12 @@
 
 十方法930張／30趟完成，兩官方後端受阻；各自訓練目標與不等輪數如實保留
 
+## 精選的小型閱讀內容（2026-10-21）
+
+[原18,000筆位移表](../../../Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/all_displacements.csv)為2,620,815 bytes，包含相鄰步與相對起點各9,000筆；兩種基準使用同批30趟掃描，不當作獨立重拍。[完整小型內容清單](../project_completion/curated/R153_LIGHTWEIGHT_CONTENT.json)列出15份原CSV、三張原報告圖及七個原選模記錄。數表合計2,810,403 bytes，三圖合計363,062 bytes；原程式、數值和圖像不改寫，不再上傳每張重建的完整像素陣列。
+
+七個外部模型依原訓練完成收據選定，實際訓練輪數與選用輪次分開；RAW、Wiener不額外製造神經模型。模型引用既有已發布的精確相同檔案，不重傳；U-Net與MambaIRv2的原阻礙、SEM尺寸差、長距離與速度代價仍隨完整表格保留。此整理沒有重新推論或重算研究指標。
+
 ## 必要來源
 
 共同R152生成資料、七個官方來源／實際改動／模型、完整圓心／邊界／PI／效率讀值

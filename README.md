@@ -4,6 +4,8 @@
 
 本輪改為**精選、輕量的研究整理**：保存原程式、設定與重做方法、文獻／文件、完整量測與比較表、關鍵模型及少量有明確用途的影像。舊全量大檔上傳已停止；大量訓練影像、逐張重建陣列和所有中途模型留在本機／H封存，只記錄來源與重建方式。既有大檔草稿已凍結，尚未刪除。依內容查找請從[專案地圖](docs/navigation/PROJECT_MAP.md#我現在要找什麼)進入。
 
+[逐輪精選清單](docs/reproducibility/project_completion/curated/ROUND_CURATED_PLAN.md)列出177個研究／歷史範圍的用途及大小；本次補上完整位移表與必要光學常數共約3.35MB研究資料，關鍵模型及原論文圖引用既有內容，不再整批重傳。
+
 目前論文使用R152／RAW，十方法完整比較及圖表見[最新論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。正式使用基準仍是COMBO；歷史模型、較早論文與正在訓練的版本各自保留身分。
 
 這份文件是整個專案的**入口總覽**。如果你是第一次接觸這個專案，從這裡開始讀。

@@ -1,0 +1,344 @@
+{
+  "selection_basis": "explicit_policy_or_original_selection_receipts",
+  "models": [
+    {
+      "case": "COMBO",
+      "scope": "main/R38v2SeqFixed",
+      "role": "most_balanced_production_baseline",
+      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+      "bytes": 52636306,
+      "sha256": "7a0e51769b0eac28bce81aab47e6495ef1a82b313b84edefc6a95bd838a51dca",
+      "selection_source": "ESTIMATOR_POLICY.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+          "asset": "research-fixed-models-012.zip",
+          "bytes": 52636306,
+          "sha256": "7a0e51769b0eac28bce81aab47e6495ef1a82b313b84edefc6a95bd838a51dca"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "R33",
+      "scope": "main/R33RobustLoss",
+      "role": "gmf_extreme_alternate",
+      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar",
+      "bytes": 52636370,
+      "sha256": "6a6f4cd71cd7d57210c4c6949c03404dc230c1c00949677033f046c4b349de78",
+      "selection_source": "ESTIMATOR_POLICY.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar",
+          "asset": "research-fixed-models-010.zip",
+          "bytes": 52636370,
+          "sha256": "6a6f4cd71cd7d57210c4c6949c03404dc230c1c00949677033f046c4b349de78"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "R38v2",
+      "scope": "main/R38v2SeqFixed",
+      "role": "visual_priority_alternate",
+      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar",
+      "bytes": 52636370,
+      "sha256": "65a867199c503ee9a16c7cb10b199a5662f0788dce1e119a828d10558acb846c",
+      "selection_source": "ESTIMATOR_POLICY.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar",
+          "asset": "research-fixed-models-010.zip",
+          "bytes": 52636370,
+          "sha256": "65a867199c503ee9a16c7cb10b199a5662f0788dce1e119a828d10558acb846c"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "R39R40_avg_a025",
+      "scope": "main/R39_ShapeGeneralization",
+      "role": "balanced_full_spectrum_alternate",
+      "path": "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar",
+      "bytes": 20420682,
+      "sha256": "80f14b9b30b758d59b2fe3fc2b8ac1f97acc41779437f93c99a45f492043f168",
+      "selection_source": "ESTIMATOR_POLICY.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar",
+          "asset": "research-fixed-models-012.zip",
+          "bytes": 20420682,
+          "sha256": "80f14b9b30b758d59b2fe3fc2b8ac1f97acc41779437f93c99a45f492043f168"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "EDSR-x1",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/selected.pth",
+      "bytes": 4904616,
+      "sha256": "478ae0817a35837fe0c2980725388fd6463f2e0cb24b1678c8f2f152cb693b27",
+      "selected_epoch": 30,
+      "epochs_trained": 32,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/best_validation.pth",
+          "asset": "research-fixed-models-007.zip",
+          "bytes": 4904616,
+          "sha256": "478ae0817a35837fe0c2980725388fd6463f2e0cb24b1678c8f2f152cb693b27"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/selected.pth",
+          "asset": "research-fixed-models-007.zip",
+          "bytes": 4904616,
+          "sha256": "478ae0817a35837fe0c2980725388fd6463f2e0cb24b1678c8f2f152cb693b27"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "NAFNet",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/selected.pth",
+      "bytes": 68655586,
+      "sha256": "fd4ecd94395ff4508af81a3ca7a84209ab4a11469c1b052fc923d8a4bf83d604",
+      "selected_epoch": 31,
+      "epochs_trained": 32,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/best_validation.pth",
+          "asset": "research-fixed-models-023.zip",
+          "bytes": 68655586,
+          "sha256": "fd4ecd94395ff4508af81a3ca7a84209ab4a11469c1b052fc923d8a4bf83d604"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/selected.pth",
+          "asset": "research-fixed-models-023.zip",
+          "bytes": 68655586,
+          "sha256": "fd4ecd94395ff4508af81a3ca7a84209ab4a11469c1b052fc923d8a4bf83d604"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "RDN-x1",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/selected.pth",
+      "bytes": 22033642,
+      "sha256": "9f080b316b4cfd2c2f81243c947eeaa773270676d13c63ff78073880aa635221",
+      "selected_epoch": 14,
+      "epochs_trained": 14,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/best_validation.pth",
+          "asset": "research-fixed-models-015.zip",
+          "bytes": 22033642,
+          "sha256": "9f080b316b4cfd2c2f81243c947eeaa773270676d13c63ff78073880aa635221"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/selected.pth",
+          "asset": "research-fixed-models-015.zip",
+          "bytes": 22033642,
+          "sha256": "9f080b316b4cfd2c2f81243c947eeaa773270676d13c63ff78073880aa635221"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/launcher_logs/time_budget_change/RDN_best_validation.pth",
+          "asset": "research-fixed-models-015.zip",
+          "bytes": 22033642,
+          "sha256": "9f080b316b4cfd2c2f81243c947eeaa773270676d13c63ff78073880aa635221"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "RCAN-x1",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/selected.pth",
+      "bytes": 61705340,
+      "sha256": "0fb6ce878e584ee13df394eaa055eb8ee9ca3541ef1d0465d86603e5596c3ca2",
+      "selected_epoch": 7,
+      "epochs_trained": 8,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/best_validation.pth",
+          "asset": "research-fixed-models-002.zip",
+          "bytes": 61705340,
+          "sha256": "0fb6ce878e584ee13df394eaa055eb8ee9ca3541ef1d0465d86603e5596c3ca2"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/selected.pth",
+          "asset": "research-fixed-models-002.zip",
+          "bytes": 61705340,
+          "sha256": "0fb6ce878e584ee13df394eaa055eb8ee9ca3541ef1d0465d86603e5596c3ca2"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "Restormer",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/selected.pth",
+      "bytes": 104571350,
+      "sha256": "247f403c5b7f9efed556429c90f323d14e73b2f969d83f7a051e87e34b974b19",
+      "selected_epoch": 8,
+      "epochs_trained": 8,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/best_validation.pth",
+          "asset": "research-fixed-models-004.zip",
+          "bytes": 104571350,
+          "sha256": "247f403c5b7f9efed556429c90f323d14e73b2f969d83f7a051e87e34b974b19"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/selected.pth",
+          "asset": "research-fixed-models-004.zip",
+          "bytes": 104571350,
+          "sha256": "247f403c5b7f9efed556429c90f323d14e73b2f969d83f7a051e87e34b974b19"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "USRNet-x1",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/selected.pth",
+      "bytes": 68070792,
+      "sha256": "9ac1cb36366bf8c654c72c2b309f01b438139fa47cb730d4cb257d8c4c67ea9f",
+      "selected_epoch": 8,
+      "epochs_trained": 8,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/best_validation.pth",
+          "asset": "research-fixed-models-014.zip",
+          "bytes": 68070792,
+          "sha256": "9ac1cb36366bf8c654c72c2b309f01b438139fa47cb730d4cb257d8c4c67ea9f"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/selected.pth",
+          "asset": "research-fixed-models-014.zip",
+          "bytes": 68070792,
+          "sha256": "9ac1cb36366bf8c654c72c2b309f01b438139fa47cb730d4cb257d8c4c67ea9f"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "SwinIR",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "original_synthetic_validation_selected_external_comparator",
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/selected.pth",
+      "bytes": 122844690,
+      "sha256": "331e1d9e5c2a25971d661a6adcbf70e7e792f6e2311b8b20ca760940c3d4b80b",
+      "selected_epoch": 8,
+      "epochs_trained": 8,
+      "selection_source": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/training_complete.json",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/best_validation.pth",
+          "asset": "research-fixed-models-005.zip",
+          "bytes": 122844690,
+          "sha256": "331e1d9e5c2a25971d661a6adcbf70e7e792f6e2311b8b20ca760940c3d4b80b"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/selected.pth",
+          "asset": "research-fixed-models-005.zip",
+          "bytes": 122844690,
+          "sha256": "331e1d9e5c2a25971d661a6adcbf70e7e792f6e2311b8b20ca760940c3d4b80b"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "R152_base_reference.pth",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "role": "frozen_initial_base_required_by_original_portable_entry",
+      "path": "Deliverables/R152_Standalone_20261004/weights/base_reference.pth",
+      "bytes": 5907918,
+      "sha256": "4661bdfccc9d55c3e3d946ccfbf549d9ae9d8f3b8463ef836e40b2ac7140f88f",
+      "selection_source": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-training-kits-20261016",
+          "path": "Deliverables/R152_Standalone_ImageFiles_20261004/weights/base_reference.pth",
+          "asset": "research-r152-frozen-inputs-001.zip",
+          "bytes": 5907918,
+          "sha256": "4661bdfccc9d55c3e3d946ccfbf549d9ae9d8f3b8463ef836e40b2ac7140f88f"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    },
+    {
+      "case": "R152_r152_deployed.pth",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "role": "actual_thesis_deployed_model_required_by_original_portable_entry",
+      "path": "Deliverables/R152_Standalone_20261004/weights/r152_deployed.pth",
+      "bytes": 7106622,
+      "sha256": "2932f79d29a51be2350addf189e9ef635f038a542df55957de1749c0c0dc950c",
+      "selection_source": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md",
+      "scientific_status_unchanged": true,
+      "existing_published_locations": [
+        {
+          "tag": "research-training-kits-20261016",
+          "path": "Deliverables/R152_Standalone_ImageFiles_20261004/weights/r152_deployed.pth",
+          "asset": "research-r152-frozen-inputs-001.zip",
+          "bytes": 7106622,
+          "sha256": "2932f79d29a51be2350addf189e9ef635f038a542df55957de1749c0c0dc950c"
+        },
+        {
+          "tag": "research-results-models-20261016",
+          "path": "Experiments/R152_R148v2_SafeAdaptivePSF/results/STANDALONE_PACKAGING_20261004/relocated_runtime/weights/r152_deployed.pth",
+          "asset": "research-fixed-models-004.zip",
+          "bytes": 7106622,
+          "sha256": "2932f79d29a51be2350addf189e9ef635f038a542df55957de1749c0c0dc950c"
+        }
+      ],
+      "action": "reference_existing_release_do_not_reupload"
+    }
+  ],
+  "no_new_model_upload": true,
+  "not_full_training_state_resume_claim": true
+}

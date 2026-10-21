@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "state": "selective_round_plan_not_a_transfer_or_deletion_job",
+  "created_local": "2026-10-21T14:03:47.107670+08:00",
+  "input_source_commit": "49ec1865b3a66c85a86629bb42d026278c11ca45",
+  "rounds": 177,
+  "existing_source_record_files": 18237,
+  "existing_source_record_logical_bytes": 339351040,
+  "nominated_key_model_references": 13,
+  "key_model_references_with_existing_exact_providers": 13,
+  "key_model_reference_serialized_bytes_already_published": 644130284,
+  "key_models_new_upload_bytes": 0,
+  "named_existing_thesis_figures": 8,
+  "named_existing_thesis_figure_bytes": 7888620,
+  "new_image_upload_bytes": 0,
+  "new_small_scientific_files": [
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/data/full_benchmark/all_displacements.csv",
+      "bytes": 2620815,
+      "sha256": "95c0a2db634bb4e6f3aa2a6df42d38bddf6c152ac8743f3c0dbb7c0450492d1f",
+      "scope": "main/R153_MeanExternalBenchmark",
+      "role": "complete_original_step_readings_both_readout_definitions",
+      "data_rows": 18000,
+      "columns": [
+        "method",
+        "run",
+        "scan",
+        "kind",
+        "step",
+        "displacement_nm",
+        "PI_displacement_nm",
+        "error_nm",
+        "dx_px",
+        "dy_px",
+        "transverse_nm"
+      ],
+      "method_rows": {
+        "RAW": 1800,
+        "Wiener": 1800,
+        "EDSR-x1": 1800,
+        "NAFNet": 1800,
+        "RDN-x1": 1800,
+        "RCAN-x1": 1800,
+        "Restormer": 1800,
+        "USRNet-x1": 1800,
+        "SwinIR": 1800,
+        "MOSR": 1800
+      },
+      "readout_rows": {
+        "adjacent": 9000,
+        "start": 9000
+      },
+      "selection_reason": "保留原18,000筆位移及PI對照，含相鄰步與相對起點各9,000筆；兩種基準共用同批掃描。",
+      "original_bytes_unmodified": true,
+      "already_in_ordinary_source": false
+    },
+    {
+      "path": "Experiments/R152_R148v2_SafeAdaptivePSF/calibration/measured_psf_bank.npz",
+      "bytes": 731114,
+      "sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+      "scope": "main/R152_R148v2_SafeAdaptivePSF",
+      "role": "required_fixed_optical_constants_not_reconstruction_pixels",
+      "selection_reason": "保留模型實際使用的25顆固定光學常數及原順序；這不是每張影像的完整重建。",
+      "original_bytes_unmodified": true,
+      "already_in_ordinary_source": false,
+      "original_lock": "Experiments/R152_R148v2_SafeAdaptivePSF/calibration/BANK_LOCK.json",
+      "original_SEM_geometry_dependency_retained": true
+    }
+  ],
+  "new_small_scientific_bytes": 3351929,
+  "R153_complete_original_tables": 15,
+  "R153_original_table_bytes": 2810403,
+  "frozen_drafts_actual_server_bytes": 384624229040,
+  "drafts_deleted": false,
+  "bulk_restart_allowed": false,
+  "D_cleanup_allowed": false,
+  "remaining_image_selection_not_claimed_final_for_all_rounds": true,
+  "all_model_and_image_choices_are_not_inferred_from_filename_or_inventory_size": true
+}
