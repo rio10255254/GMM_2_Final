@@ -2,6 +2,8 @@
 
 2026-10-21研究保存入口：[各輪方法與GitHub取回](docs/reproducibility/README.md)／[逐輪問題、結果與來源](docs/reproducibility/EXPERIMENTS.md)／[本機全部值得保存內容的核對](docs/reproducibility/project_completion/README.md)。全專案補查仍在進行，已上傳、已核對與尚待完成的部分分別記錄。
 
+最新保留原則是「保存生產方法，而非所有產物」：能重新生成的訓練資料等大檔，只留原程式、設定及必要來源，不要求先整套重建核對。不可再生的原拍、量測、人工標記與完整結果另外保存。[詳細取捨](docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)。
+
 本輪改為**精選、輕量的研究整理**：保存原程式、設定與重做方法、文獻／文件、完整量測與比較表、關鍵模型及少量有明確用途的影像。舊全量大檔上傳已停止；大量訓練影像、逐張重建陣列和所有中途模型留在本機／H封存，只記錄來源與重建方式。既有大檔草稿已凍結，尚未刪除。依內容查找請從[專案地圖](docs/navigation/PROJECT_MAP.md#我現在要找什麼)進入。
 
 [逐輪精選清單](docs/reproducibility/project_completion/curated/ROUND_CURATED_PLAN.md)列出177個研究／歷史範圍的用途及大小；本次補上完整位移表與必要光學常數共約3.35MB研究資料，關鍵模型及原論文圖引用既有內容，不再整批重傳。

@@ -4864,6 +4864,19 @@
         "scientific_adoption_changed": false,
         "retraining_or_new_model_inference": false,
         "full_project_complete": false
+      },
+      "generator_first_preservation_rule_20261021": {
+        "authority": "latest_direct_user_clarification_after_lightweight_repo_progress",
+        "guide": "docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md",
+        "retain_original_generator_settings_seed_environment_and_necessary_inputs": true,
+        "regenerable_training_dataset_full_upload_required": false,
+        "full_regeneration_or_byte_exact_check_prerequisite_for_omission": false,
+        "applies_also_to_generated_reconstructions_and_derived_arrays": true,
+        "retain_irreplaceable_camera_measurements_manual_labels_and_full_results": true,
+        "mark_actual_replay_limits_without_claiming_unperformed_rebuild": true,
+        "supersedes_old_full_snapshot_and_exact_rebuild_omission_gate": true,
+        "existing_assets_deletion_authorized": false,
+        "scientific_adoption_changed": false
       }
     }
   },
