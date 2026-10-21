@@ -1,0 +1,168 @@
+{
+  "status": "PASS_EXACT_ORIGINAL_SPECTRUM_ARRAYS",
+  "verified_source_files": 9,
+  "arrays": 16,
+  "numeric_values": 458832,
+  "checks": [
+    {
+      "magnification": "20x",
+      "field": "captured_amplitude",
+      "shape": [
+        104,
+        104
+      ],
+      "values": 10816,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "20x",
+      "field": "captured_dbfs",
+      "shape": [
+        104,
+        104
+      ],
+      "values": 10816,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "20x",
+      "field": "v42_amplitude",
+      "shape": [
+        104,
+        104
+      ],
+      "values": 10816,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "20x",
+      "field": "v42_dbfs",
+      "shape": [
+        104,
+        104
+      ],
+      "values": 10816,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "20x",
+      "field": "deconvolved_amplitude",
+      "shape": [
+        104,
+        104
+      ],
+      "values": 10816,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "20x",
+      "field": "deconvolved_dbfs",
+      "shape": [
+        104,
+        104
+      ],
+      "values": 10816,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "20x",
+      "field": "fx_cycles_per_pixel",
+      "shape": [
+        104
+      ],
+      "values": 104,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "20x",
+      "field": "fy_cycles_per_pixel",
+      "shape": [
+        104
+      ],
+      "values": 104,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "50x",
+      "field": "captured_amplitude",
+      "shape": [
+        256,
+        256
+      ],
+      "values": 65536,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "50x",
+      "field": "captured_dbfs",
+      "shape": [
+        256,
+        256
+      ],
+      "values": 65536,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "50x",
+      "field": "v42_amplitude",
+      "shape": [
+        256,
+        256
+      ],
+      "values": 65536,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "50x",
+      "field": "v42_dbfs",
+      "shape": [
+        256,
+        256
+      ],
+      "values": 65536,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "50x",
+      "field": "deconvolved_amplitude",
+      "shape": [
+        256,
+        256
+      ],
+      "values": 65536,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "50x",
+      "field": "deconvolved_dbfs",
+      "shape": [
+        256,
+        256
+      ],
+      "values": 65536,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "50x",
+      "field": "fx_cycles_per_pixel",
+      "shape": [
+        256
+      ],
+      "values": 256,
+      "exact_original_values": true
+    },
+    {
+      "magnification": "50x",
+      "field": "fy_cycles_per_pixel",
+      "shape": [
+        256
+      ],
+      "values": 256,
+      "exact_original_values": true
+    }
+  ],
+  "historical_figures_or_inputs_modified": false,
+  "PSF_fitting_repeated": false,
+  "neural_inference_or_training_repeated": false,
+  "old_0_08_figures_recomputed": false
+}

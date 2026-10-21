@@ -110,7 +110,13 @@ def main():
             large_package_sources[key]=package
     canonical={};captured=0;missing=[];excluded=[]
     def insert(row,path=None,replace=False):
-        relative=safe_relative(path or row['path']).as_posix();key=relative.casefold();value={'path':relative,'sha256':row['sha256'],'bytes':row['bytes'],'scope':row.get('scope','research'),'role':row.get('role',row.get('kind','research')),
+        relative=safe_relative(path or row['path']).as_posix()
+        if relative.casefold()=='docs/reproducibility/repository_files.json.gz':
+            # A fixed source clone already has its own self-excluding catalog.
+            # Captured earlier task catalogs must survive as history, without
+            # replacing that clone's required current recovery identity.
+            relative='Historical_Preservation_Metadata/'+row['sha256'][:16]+'/'+relative
+        key=relative.casefold();value={'path':relative,'sha256':row['sha256'],'bytes':row['bytes'],'scope':row.get('scope','research'),'role':row.get('role',row.get('kind','research')),
           'source_origin':row.get('origin',row.get('source_origin','previous_GitHub_publication'))}
         old=canonical.get(key)
         if old and old['sha256']!=value['sha256'] and not replace:raise ValueError('Unresolved restore path versions: '+relative)

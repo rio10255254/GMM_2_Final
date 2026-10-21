@@ -5,7 +5,7 @@ and the shared archive disk sequentially. A durable append journal preserves
 progress. An existing NTFS hardlink can reuse an already hashed file identity;
 equal names/sizes alone never establish identity.
 """
-import argparse,gzip,hashlib,json,os,sqlite3,sys,time
+import argparse,gzip,hashlib,json,os,sqlite3,subprocess,sys,time
 from collections import Counter,defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -17,9 +17,31 @@ FAMILIES=[('context',['source','report_or_document','numeric_or_execution_record
  ('models',['model','tensor_blob_review']),('numeric',['input_numeric','result_numeric']),
  ('images',['input_image','result_image']),('packages',['package','other_review'])]
 
+def checked_owned_catalog(root,op,commit):
+    """Refresh only this task's self-excluding catalog, after proven retrieval.
+
+    Research changes still stop the audit. This exception requires the exact
+    already retrieved GitHub source commit and byte-identical catalog contents.
+    """
+    proof=json.loads((op/'UPDATED_SOURCE_CONTEXT_DOWNLOAD_VERIFIED.json').read_text(encoding='utf-8'))
+    if (proof.get('status')!='PASS_ACTUAL_UPDATED_GITHUB_SOURCE_AND_CONTEXT_RETRIEVAL'
+        or proof.get('source_commit')!=commit or proof.get('guard')!='PASS'):
+        raise ValueError('The requested catalog source has not passed actual isolated GitHub retrieval')
+    relative='docs/reproducibility/REPOSITORY_FILES.json.gz';path=root/relative
+    published=subprocess.check_output(['git','show',commit+':'+relative],cwd=root)
+    before=path.stat();current=sha(path);after=path.stat()
+    if ((before.st_size,before.st_mtime_ns)!=(after.st_size,after.st_mtime_ns)
+        or (len(published),hashlib.sha256(published).hexdigest())!=(after.st_size,current)):
+        raise ValueError('The current catalog differs from the already retrieved immutable source')
+    return {'path':relative,'bytes':after.st_size,'mtime_ns':after.st_mtime_ns,
+            'sha256':current,'source_commit':commit,
+            'proof':'exact_catalog_bytes_from_previously_isolated_GitHub_source_retrieval'}
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True)
-    p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);a=p.parse_args()
+    p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1])
+    p.add_argument('--owned-catalog-source-commit',help='Already GitHub-retrieved source commit for a changed task-owned catalog')
+    a=p.parse_args()
     op=a.output;src=op/'verified_inventory/inventory.sqlite';started=time.time()
     if os.name=='nt':
         import ctypes
@@ -49,6 +71,14 @@ def main():
     # Refresh only source files created/edited by this preservation task.
     own=json.loads((op/'FIRST_SOURCE_COMMIT.json').read_text(encoding='utf-8'))['files']
     own += [{'path':v} for v in ['Tools/publish_research_batch.py','Tools/replay_shared_model_history.py','Tools/hash_research_inventory_in_memory.py']]
+    if a.owned_catalog_source_commit:
+        catalog=checked_owned_catalog(a.root,op,a.owned_catalog_source_commit)
+        prior=mem.execute('SELECT id,bytes,mtime_ns,sha256 FROM files WHERE source=?',(str(a.root/catalog['path']),)).fetchone()
+        write_json(op/'OWNED_SOURCE_CATALOG_REFRESH_VERIFIED.json',{
+            'status':'TASK_OWNED_CATALOG_REFRESH_VERIFIED','previous_inventory':dict(prior) if prior else None,
+            'current':catalog,'research_sources_changed_or_exempted':False,
+            'prior_completed_content_hashes_resumed_from_journal':True})
+        own.append({'path':catalog['path']})
     scopes=sorted([(r['scope'].casefold(),r['id']) for r in json.loads((a.root/'docs/reproducibility/experiment_index.json').read_text(encoding='utf-8-sig'))],key=lambda r:-len(r[0]))
     for row in own:
         path=a.root/row['path'];info=path.stat();prior=mem.execute('SELECT id,bytes,mtime_ns FROM files WHERE source=?',(str(path),)).fetchone()

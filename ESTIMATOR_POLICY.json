@@ -4634,6 +4634,50 @@
         "guide": "docs/reproducibility/scratch_lineage/README.md",
         "proof": "docs/reproducibility/scratch_lineage/COMPLETION_RECORDS_VERIFIED.json",
         "model_promotion": false
+      },
+      "full_content_audit": {
+        "status": "ALL_REQUESTED_FAMILIES_CONTENT_CHECKED",
+        "files": 3820382,
+        "logical_bytes": 2081353551035,
+        "families": [
+          {
+            "family": "context",
+            "files": 292510,
+            "bytes": 6521425429
+          },
+          {
+            "family": "models",
+            "files": 8850,
+            "bytes": 287458883612
+          },
+          {
+            "family": "numeric",
+            "files": 869699,
+            "bytes": 776834916242
+          },
+          {
+            "family": "images",
+            "files": 2646293,
+            "bytes": 1001609772333
+          },
+          {
+            "family": "packages",
+            "files": 3030,
+            "bytes": 8928553419
+          }
+        ],
+        "receipt": "docs/reproducibility/project_completion/CONTENT_HASH_VERIFIED.json",
+        "publication_complete": false
+      },
+      "current_optical_spectrum_replay": {
+        "status": "original_CPU_source_replay_passed_GitHub_retrieval_pending",
+        "source_files": 9,
+        "source_bytes": 5058734,
+        "arrays": 16,
+        "numeric_values": 458832,
+        "prior_and_current_image_versions_preserved": 2,
+        "guide": "docs/reproducibility/optical_calibration/SPECTRA.md",
+        "PSF_fitting_or_neural_inference_repeated": false
       }
     }
   },

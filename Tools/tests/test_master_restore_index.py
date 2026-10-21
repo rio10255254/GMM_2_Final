@@ -138,3 +138,29 @@ def test_batch_release_shards_keep_their_exact_object_providers(tmp_path, monkey
     assert next(row for row in components['fixture-images']['files'] if row['path'] == 'data/fixed.npy')['sha256'] == array['sha256']
     assert next(row for row in components['fixture-images-02']['files'] if row['path'] == 'results/centers/image.bmp')['sha256'] == image['sha256']
     assert components['fixture-images']['assets'][0]['sha256'] != components['fixture-images-02']['assets'][0]['sha256']
+
+
+def test_captured_old_task_catalog_cannot_replace_fixed_clone_catalog(tmp_path, monkeypatch):
+    out, _, _, _, _ = fixture(tmp_path, monkeypatch)
+    op=tmp_path/'operation';root=tmp_path/'source'
+    relative='docs/reproducibility/REPOSITORY_FILES.json.gz'
+    frozen=item(relative,'earlier self-excluding task catalog',asset='fixture.zip')
+    original_catalog=(root/relative).read_bytes()
+    manifest=builder.read(op/'training_history_bundle/RESEARCH_ASSETS.json.gz')
+    manifest['files'].append(frozen)
+    dump(op/'training_history_bundle/RESEARCH_ASSETS.json.gz',manifest)
+    captured={**frozen,'logical_path':relative,'source':str(root/relative),
+              'origin':'D_worktree','scope':'research','kind':'other_review'}
+    with gzip.open(op/'HASHED_PACKAGES_FILES.jsonl.gz','wt',encoding='utf-8') as stream:
+        stream.write(json.dumps(captured)+'\n')
+    check=builder.read(op/'ALL_RESEARCH_CONTENT_HASHED.json')
+    next(row for row in check['families'] if row['family']=='packages')['files']=1
+    dump(op/'ALL_RESEARCH_CONTENT_HASHED.json',check)
+    builder.main()
+    rows=[]
+    for component in out.glob('RESTORE_*.json.gz'):
+        rows.extend(builder.read(component)['files'])
+    assert all(row['path'].casefold()!=relative.casefold() for row in rows)
+    saved=next(row for row in rows if row['sha256']==frozen['sha256'])
+    assert saved['path']=='Historical_Preservation_Metadata/'+frozen['sha256'][:16]+'/'+relative
+    assert (root/relative).read_bytes()==original_catalog
