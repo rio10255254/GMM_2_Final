@@ -7,50 +7,34 @@ Last updated: 2026-10-21（GitHub優先：R94／R95／R97／R98完整紀錄與�
 
 <!-- QUICK_HANDOFF_START -->
 ## Quick Handoff
-### 正式身分
-- 正式基準仍為 **COMBO / r38v2_8px_gate_p95**；容量整理及可攜包不改變任何研究判決。
-- Approved Alternates：R33、R38v2、R39R40_avg_a025；正式基準分支`sandbox/r38v2`。
-- 論文目前研究採用R152／RAW，R153保存十方法完整比較。原論文、採用模型與量測資料保護。
-- 20261021早期重建精選：GitHub閱讀版改留34張原BMP與140份完整量測，10套原完整序列改由固定歷史取回；一般檔案內容少約5.55GB。只調整保存分支，D/H研究原件與原工作索引不動；不是歷史容量已釋放。[精選及失敗影格](docs/reproducibility/project_completion/curated/EARLY_RECON_SELECTION.md)。
-- 20261021精選結果續補：R100／R103／R104完整後測130份約15.7MB直接進一般版本，R88／R91／R92失敗與完成脈絡、曝光18、SEM不利結果及共用301張來源分清。三圖／三模型引用既有來源，無新推論。[完整表與限制](docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)。
-### 已完成研究
-- 十方法各930張、8370讀值、30有效趟及150次效率已核對；兩官方後端受阻如實保留。
-- [完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。
-- R152資料重建與模型獨立包已完成；尺寸偏差、速度代價與SEM參照限制保留。
-### 共用原始資料與GitHub整理 20261016
-- 20261021文獻與來源入口：整理7份原研究文件中的17個原引用連結及9個官方程式固定版本；R153七個已完成外部方法與兩個受阻後端分開，不把文獻成績當成本機驗證，沒有下載整批論文或模型。[原文獻與方法來源](docs/reproducibility/LITERATURE_GUIDE.md)。
-- 20261021生產方法入口：18條實際設定／程式路線確認，177範圍的1,885程式、322設定及439條明文跨輪引用另列索引；R92與R93來源、R93當年11場景44觀測修正分清，只補11份約86KB原小紀錄。[生產方法與必要來源](docs/reproducibility/GENERATION_GUIDE.md)。
-- 20261021使用者再明確：可再生大型資料留生成程式、設定及必要來源即可，不上傳整套，也不以完整重建／逐份相同驗證作省略前提；原拍、量測、人工標記與完整結果仍保存。[生產方法優先](docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)。
-- 20261021最新使用者糾正：GitHub改為精選、輕量研究整理，不作完整磁碟備份。舊全量模型／數值／影像／交付包排程已停止並防止重啟；已上傳大檔草稿先凍結、不自動發布或刪除，改按用途篩選。[最新範圍](docs/reproducibility/project_completion/README.md)。
-- 20261021全專案續查進行中：補回10條本機獨有版本歷史，18份原程式／設計從GitHub取回相同；其餘本機及H歷史逐項核對。[範圍與完成條件](docs/reproducibility/project_completion/README.md)。尚未宣稱全專案完成。
-- 全新GitHub程式副本當次22218檔逐份相同；另補兩份暫存文件歷史，33個共用位置已列對照。[早期多尺度判讀](docs/reproducibility/legacy_multiscale/README.md)重算207分數／五次選擇，9個早期公式缺件保留。
-- R95兩版早期原程式已按當年登記找回並從GitHub取回，補強第8輪回復狀態重建的來源證據；四輪其餘22個早期版本缺件保留。H槽舊論文編修6854位置另列歷史，本輪不覆寫現稿。
-- 20261021 R94／R95／R97／R98完整紀錄1,092位置、107模型檔、663影像從GitHub取回；32組原模型輸出相同，原數字與四輪共用輸入核對通過。[四輪方法與重做入口](docs/reproducibility/four_rounds/README.md)。本輪不清D、不使用訓練顯卡。
-- 20261020續整以GitHub為主：補R93全部既存模型／影像歷程及36KB原數字重算包，修正舊模板的輪次／種子；[五輪共用來源新入口](docs/reproducibility/r93_shared/README.md)。沒有重跑歷史訓練或改科學判決。
-- 30趟實拍原始ZIP已從Google Drive取回；930相機BMP與30原始位置CSV全部符合歷史原檔核對碼，PI／時間／影格／曝光逐筆相同。
-- D槽保護工作副本：[共用原始資料](Shared_Sources/PI_Repeatability_20260903/README.md)；H槽保留原始ZIP及核對紀錄。
-- 先前R139恢復副本與原始ZIP全部相同；正式來源使用直接從原始ZIP取出的檔案。
-- 177個實驗或歷史批次的保存判讀已建立；[逐輪入口](docs/reproducibility/EXPERIMENTS.md)。檔案整理與完整重跑訓練分別標示。
-- 本次R61在另一位置完整重建114283檔全部相同；R152完整重建9216 TIFF全部相同，均禁止讀取舊研究資料。
-- 五組來源／模型／結果版本已發布GitHub；原件960檔、R61完整114283資料檔、R152全部9216 TIFF及十方法完整數值取回重做均通過。
-- 20261020 R87 維持原模式、不改人工核准，三份5,152檔重核後單次原生刪除成功；D實測增加11.3398 GiB，舊位置讀取H工作副本通過。[最新R87封存入口](Experiments/R87_TileNativeScratchGeneralization/ARCHIVE_POINTER_R87_20260926.md)。20x/5x仍保留D原件。
-### 容量與保護
-- 20261016完整盤點3592327檔、零讀取錯誤；不追蹤31個外部資料入口，不把H資料重算成D負擔。
-- 20261020 H槽R152 v8獨立訓練持續保護；原C槽獨立包與論文來源保留，沒有啟動另一個GPU訓練。
-- 既有R53／R56清理與H完整備份已結案，不能重算本次回收量。
-- 20x／5x及其他舊資料仍須另行核對備份、相依與保留清單；R87本次完成範圍只有兩個舊合成陣列副本。
-### 閱讀順序
-- [機器真相](ESTIMATOR_POLICY.json)、[完整現況](#full-current-state--完整現況)、[實驗索引](Experiments/INDEX.md)。
-- [封存與恢復索引](docs/operations/PROJECT_ARCHIVE_INDEX.md)、[來源政策](docs/operations/SOURCE_OF_TRUTH_POLICY.md)。
-- [整理前的完整交接原文](docs/history/PROJECT_STATE_HANDOFF_BEFORE_RECOVERY_20261016.md)。
-- [早期執行狀態快照](docs/archive/legacy_runtime_status/)只供歷史查找，原實驗報告優先。
+### 正式身分與已完成研究
+- 正式基準仍為COMBO／r38v2_8px_gate_p95；Approved Alternates為R33、R38v2、R39R40_avg_a025，保存不改研究判決。
+- 論文目前採用R152／RAW，R153保存十方法各930張、8370讀值、30趟與150次效率的完整結果；兩官方後端受阻保留。
+- [原論文交接及全部限制](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。
+### GitHub精選研究固定來源
+- 177範圍、919份原正式文件有閱讀入口；1,885份主要程式及322份設定另有索引，18條共用生產路線額外按實際設定整理。
+- 原完整數表、來源與失敗紀錄由一般程式版本及既有已發布內容保留；373個主要圖位置與16個固定模型用途列明理由。
+- 可再生的大型訓練資料、逐張重建及中間陣列保留生產程式、設定及必要來源，不以上傳整套或先完整重建為完成門檻。
+- 共用930張相機原拍與30份原始位置紀錄保留一次；R92／R93兩套共用基礎、原修正及在線觀測不能混用。
+- [固定保存版本及最後交付收據](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)；[精選內容與界線](docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md)。完成事實以保存版本的最後實際收據為準。
+
+### 已知缺件與歷史範圍
+- 22份早期訓練程式版本、9項早期R13公式缺件保留；9個原先未寫出的ANN量不補造。沒有冒稱重跑全部歷史GPU訓練。
+- 原盤點中的程式／文件／數表已由已發布內容或原Git歷史對應；1,258份可再安裝的舊套件檔只留環境版本與用途。
+- 四份超量草稿約385GB仍凍結，未刪除；它們不是精選必傳內容。既有完整取回／執行證據保留原時間及範圍，舊全量排程禁止重啟。
+### 保護與閱讀順序
+- 原D工作分支與索引、正式模型、論文及訓練資料保護；本次不清D、不刪D/H研究原件、不啟動訓練或推論，H至少留1TiB。
+- 原R87／R53／R56較早清理保留原結案事實，不重算為本輪成果；20x／5x等研究原件不動。
+- [研究保存入口](docs/reproducibility/README.md)、[每輪方法與結果](docs/reproducibility/EXPERIMENTS.md)、[生產方法](docs/reproducibility/GENERATION_GUIDE.md)、[文獻及官方來源](docs/reproducibility/LITERATURE_GUIDE.md)。
 <!-- QUICK_HANDOFF_END -->
 
 ---
 
 ## Full Current State / 完整現況
 
-### 全專案GitHub保存續查（2026-10-21，進行中）
+### GitHub精選研究固定來源（2026-10-21）
+
+本次以方法、完整原結果、少數關鍵模型及有用途的影像為精選保存範圍；固定內容、取得位置與尚未尋回的歷史缺件見[交付範圍](docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md)，最後完成證據見固定GitHub版本。
 
 使用者最新確認：能由程式重新產生的大型資料，以保存生成程式、設定、種子、環境與必要來源為主，不必上傳整套產物，也不要求先完整重建並逐份核對才准省略。來源依賴或重現限制如實註明；原始拍攝、原始量測、人工標記與完整實驗結果不能用生成程式取代。 此次整理不需要為了省略訓練影像先重建整個資料集；保留過去完整重建的歷史事實，沒有重跑的不能寫成已精確重現。
 
@@ -63,6 +47,8 @@ R33至COMBO的10套早期重建已依原報告、量化修復及工具失敗脈�
 另將R100／R103／R104原後測130份CSV／JSON直接保留，126份原不在一般版本，共新增原數據15,686,868 bytes。保留全部逐步位移、每曝光／每物件、選模與敏感度，不靠大型影像附件讀結果；三張圖及三個原選用模型均引用既有精確來源。R103／R104的301張實拍來源逐份相同，不當作獨立重拍；R104首頁的未啟動文字為早期設計狀態，完成後測原件與SEM退步另明列。沒有重新訓練、推論或改判決。[失敗脈絡與原表](docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)。
 
 訓練資料生產方法已按原程式與實際設定建立18條確認路線，另外為177範圍建立原程式、設定、種子欄位與明文跨輪來源引用索引。R94／95／96／97／98共用R93基礎；R99／100／102／103／104共用R92基礎，不能互換。R93原生成器身分與正式manifest一致，當年局部修正11場景／44觀測的原工具與紀錄保留。此批補11份原修正、來源引用及頻譜說明，共86,251 bytes，沒有生成資料、啟動訓練／推論或新增大型圖庫。其他159條路線未編造新生成命令；原方法與來源報告仍是依據。[生產方法入口](docs/reproducibility/GENERATION_GUIDE.md)。
+
+#### 較早續查過程（保留當時狀態；舊全量流程不再續跑）
 
 本輪以實際本機內容核對，不以177個閱讀範圍或既有附件清單推定完整。範圍包括共用訓練、光學校正、論文草稿／交接、早期分析、獨立包及先前搬到H槽的歷史。本機79個有名稱分支的歷史已可從GitHub取得：其中10條原本獨有歷史補上保存入口，18份獨有程式／設計均實際從GitHub取回相同。
 

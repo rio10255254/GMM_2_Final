@@ -1,22 +1,28 @@
 # GMM_2_Final
 
-2026-10-21研究保存入口：[各輪方法與GitHub取回](docs/reproducibility/README.md)／[逐輪問題、結果與來源](docs/reproducibility/EXPERIMENTS.md)／[本機全部值得保存內容的核對](docs/reproducibility/project_completion/README.md)。全專案補查仍在進行，已上傳、已核對與尚待完成的部分分別記錄。
+本專案研究顯微影像經過神經重建後，平移定位、位移穩定性與量測不確定性如何改變。原方法、完整結果及失敗脈絡一起保存。
 
-最新保留原則是「保存生產方法，而非所有產物」：能重新生成的訓練資料等大檔，只留原程式、設定及必要來源，不要求先整套重建核對。不可再生的原拍、量測、人工標記與完整結果另外保存。[詳細取捨](docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)。
+目前論文採用R152／RAW，十方法比較見[原論文交接與完整結果](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。正式基準仍是COMBO；研究候選、較早論文及未採用方案保留原身分。
 
-[訓練資料生產方法與來源](docs/reproducibility/GENERATION_GUIDE.md)已列出18條確認路線，分清R92與R93兩套共用基礎、原修正程式與在線觀測；177個範圍的原程式和設定另有索引。這批只補11份原來源／修正小紀錄約86KB，不新增資料集、影像或模型。
+## 從這裡開始
 
-[文獻與原方法來源](docs/reproducibility/LITERATURE_GUIDE.md)集中原研究引用、設計推論及官方程式固定版本；原論文依據與本專案實際結果分清，UNet／MambaIRv2兩個受阻後端不列為已完成比較。
+| 想找什麼 | 入口 |
+|---|---|
+| 研究現況與正式身分 | [專案狀態](PROJECT_STATE.md)、[正式模型政策](ESTIMATOR_POLICY.json) |
+| 每輪想解決什麼、怎麼做、結果及失敗 | [177個研究／歷史範圍](docs/reproducibility/EXPERIMENTS.md) |
+| 不下載整套訓練資料，先找生產方法 | [原生成程式、設定與真正上游來源](docs/reproducibility/GENERATION_GUIDE.md) |
+| 文獻依據與官方程式版本 | [原文獻、設計推論及固定來源](docs/reproducibility/LITERATURE_GUIDE.md) |
+| 完整數表與不利結果 | [常用原結果與失敗脈絡](docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)、[全部研究保存入口](docs/reproducibility/README.md) |
+| 實際原拍與重要比較圖 | [共用原始來源](docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)、[原結果圖冊](RECON_GALLERY.md) |
+| 保存了什麼、哪些大檔只留方法 | [精選固定內容與已知缺件](docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md) |
 
-本輪改為**精選、輕量的研究整理**：保存原程式、設定與重做方法、文獻／文件、完整量測與比較表、關鍵模型及少量有明確用途的影像。舊全量大檔上傳已停止；大量訓練影像、逐張重建陣列和所有中途模型留在本機／H封存，只記錄來源與重建方式。既有大檔草稿已凍結，尚未刪除。依內容查找請從[專案地圖](docs/navigation/PROJECT_MAP.md#我現在要找什麼)進入。
+可再生的大型訓練資料、逐張重建及中間陣列留生產程式、設定和必要來源；原拍、原始量測、人工來源、完整結果及少數關鍵模型另行保存。9月3日930張實拍與30份原始位置紀錄共用一次，不拿模型重建冒充原拍。
 
-[逐輪精選清單](docs/reproducibility/project_completion/curated/ROUND_CURATED_PLAN.md)列出177個研究／歷史範圍的用途及大小；本次補上完整位移表與必要光學常數共約3.35MB研究資料，關鍵模型及原論文圖引用既有內容，不再整批重傳。
+[本次精選研究保存版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)綁定固定程式、內容索引與最後實際交付收據。這是研究內容的精選保存，不是整個磁碟鏡像，也沒有重跑全部歷史GPU訓練。22份早期程式與9項早期R13公式缺件如實保留。較早超量草稿仍凍結，未自行刪除；D/H研究原件及原工作分支受保護。
 
-[早期重建精選與完整數表](docs/reproducibility/project_completion/curated/EARLY_RECON_SELECTION.md)已將R33至COMBO的10套逐張輸出改為34張原圖及歷史入口，保留140份完整量測。一般閱讀內容少約5.55GB；既有歷史與本機原件保留，沒有刪版本附件。
+---
 
-[早期失敗到後續設計的閱讀入口](docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)另將R100／R103／R104的130份完整原結果直接保留於一般版本；三張原比較圖與三個原選用模型引用既有內容。曝光失敗、SEM較差結果及共用拍攝界線一併說明，不新增整批影像或模型。
-
-目前論文使用R152／RAW，十方法完整比較及圖表見[最新論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。正式使用基準仍是COMBO；歷史模型、較早論文與正在訓練的版本各自保留身分。
+以下保留通用專案介紹與原研究脈絡；目前狀態及保存界線以上方入口為準。
 
 這份文件是整個專案的**入口總覽**。如果你是第一次接觸這個專案，從這裡開始讀。
 This is the top-level overview for the project. If you are new, start here.

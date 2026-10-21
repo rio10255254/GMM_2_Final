@@ -1,5 +1,9 @@
 # 實驗索引 / Experiment Index
 
+目前精選研究的固定內容與交付界線見[保存範圍](../docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md)及[固定保存版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)；原方法、完整結果、來源、文獻及失敗各自可查，不把歷史GPU訓練重跑當成完成條件。
+
+下方同日各批次的文字保留當時進度；已取消的全量上傳與大檔取回不是目前待辦，科學結論仍以各輪原正式報告為準。
+
 Last updated: 2026-10-21（R94／R95／R97／R98 GitHub完整保存及取回重做；本輪不清D）
 2026-10-21生產方法：[原生成程式、設定與必要來源](../docs/reproducibility/GENERATION_GUIDE.md)確認18條資料路線，分清R92／R93共用基礎與原修正；177範圍的程式／設定索引可直接查，不上傳整套可再生產物。
 

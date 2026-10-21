@@ -1,22 +1,22 @@
-# 研究保存與重做入口
+# 研究方法、原結果與必要來源
 
-可再生大檔以原生成程式、設定及必要來源保存，不必附整套訓練影像或逐張重建，也不以先完整重建驗證為前提。相機原拍、原始量測、人工標記與完整結果另行保留。[最新保存判斷](SOURCE_AND_IMAGE_DECISIONS.md)。
+本次精選保存讓讀者能理解當時研究、查看完整原結果，並找回原生產方法與必要來源。大型訓練影像、逐張重建和其他可再生產物，不要求整套下載或上傳。
 
-[訓練資料的生產方法](GENERATION_GUIDE.md)列出18條已按原設定確認的路線，另提供177範圍的程式／設定索引與跨輪來源關係；先看這裡即可找生成器，不需先下載完整訓練資料。
+| 目的 | 先看 |
+|---|---|
+| 每一輪的研究問題、方法、失敗與限制 | [逐輪入口](EXPERIMENTS.md) |
+| 從程式重新生產資料 | [原生成器、設定與真正基礎來源](GENERATION_GUIDE.md) |
+| 文獻、設計推論及官方原碼 | [文獻與來源](LITERATURE_GUIDE.md) |
+| 直接讀完整小型結果 | [R153原論文交接](../../Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)、[R100／103／104原表與失敗](project_completion/curated/FAILURE_LINEAGE_READING.md) |
+| 看實際原拍及重要影像 | [來源與影像取捨](SOURCE_AND_IMAGE_DECISIONS.md)、[主要原圖冊](../../RECON_GALLERY.md) |
+| 本次固定保存的範圍、模型、原紀錄及缺件 | [精選交付內容](project_completion/SELECTIVE_DELIVERY.md) |
 
-[原文獻與官方方法來源](LITERATURE_GUIDE.md)集中原研究引用與本專案採用方式，並保留R153官方程式的固定版本及未完成後端；沒有把引用或設計推論當成實驗成功證據。
+[固定保存版本及最後交付收據](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)另記實際取得的程式／索引與檔案。177範圍的原問題、來源和結果一併保存；18條資料生產路線有額外的原設定整理，沒有編造其他生成命令或重跑全部GPU實驗。
 
-2026-10-21最新範圍是**精選、輕量的研究倉庫**：原程式、設定、文獻／文件、完整量測與比較表、關鍵模型和必要代表圖。全量大檔上傳已停止；大量訓練影像、逐張重建陣列和全部中途模型留在本機／H，GitHub留下來源與重做方法。既有草稿先凍結，沒有自動刪除；較早保存與取回證據按原時間保留。從[專案地圖](../navigation/PROJECT_MAP.md#我現在要找什麼)依內容查找，最新判斷以[精選整理範圍](project_completion/README.md)為準。
 
-早期R33至COMBO的10套重建現已[精選34張原圖並保留140份完整量測](project_completion/curated/EARLY_RECON_SELECTION.md)，完整生成序列改從固定歷史查找。新讀者請使用下方目前保存分支，不以舊版完整圖庫作為必下載內容。
+原相機／量測／人工來源與可生成產物分清。9月3日930張原拍及30份原始平台紀錄只保留一份共用來源；22份早期程式、9項早期R13公式及原未寫出欄位的缺件如實保留。既有超量草稿凍結未刪，本機論文和訓練資料不動。
 
-2026-10-21最新：[R94／R95／R97／R98完整保存與另址重做](four_rounds/README.md)。完整模型、663張原影像、失敗與恢復歷程已取回核對，32組原推論輸出相同；[本次GitHub總入口](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-preservation-20261021)。
-
-本次逐輪整理177個主專案、Lab系統實驗或早期歷史批次。目標是保留「當時想解決什麼、實際做了什麼、用過哪些來源、全部結果與限制」，並讓必要來源可以從GitHub取回。
-
-2026-10-20 續整重點是 GitHub 能否真正取回使用。已補足 R93 的第48輪綜合候選與完整既存模型／影像歷程，另提供約36KB的原結果重算包；並核對R93、R94、R95、R97、R98的共用資料鏈。[新的重做入口](r93_shared/README.md)／[R93原圖與副作用](r93_shared/GALLERY.md)。
-
-[逐輪研究入口](EXPERIMENTS.md)按實驗說明判讀、必要來源與選圖理由；各輪原始正式報告仍是科學結論的依據。整理不改變COMBO正式基準，也不把研究模型自動升級。
+下方保留已發布原來源及原實測的取得方式與歷史範圍。大附件按真正需要選取，沒有要求先取回全部資料才能看方法或原數表。
 
 ## 來源與附件
 
@@ -51,6 +51,11 @@
 ```powershell
 git clone -c core.longpaths=true --depth 1 --single-branch --branch codex/research-completion-20261021 https://github.com/rio10255254/GMM_2_Final.git
 cd GMM_2_Final
+```
+
+以下兩行只供需要取回既有固定訓練來源時選用；先看上方資料生產方法與各輪必要來源，不是一般閱讀的必做步驟。
+
+```powershell
 python Tools/download_research_assets.py --repo rio10255254/GMM_2_Final --tag research-training-kits-20261016 --output downloads/training-kits
 python Tools/research_asset_bundle.py restore --manifest downloads/training-kits/RESEARCH_ASSETS.json.gz --assets downloads/training-kits --destination . --keep-identical-existing
 ```
