@@ -18,6 +18,7 @@ Last updated: 2026-10-21（GitHub優先：R94／R95／R97／R98完整紀錄與�
 - [完整論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。
 - R152資料重建與模型獨立包已完成；尺寸偏差、速度代價與SEM參照限制保留。
 ### 共用原始資料與GitHub整理 20261016
+- 20261021文獻與來源入口：整理7份原研究文件中的17個原引用連結及9個官方程式固定版本；R153七個已完成外部方法與兩個受阻後端分開，不把文獻成績當成本機驗證，沒有下載整批論文或模型。[原文獻與方法來源](docs/reproducibility/LITERATURE_GUIDE.md)。
 - 20261021生產方法入口：18條實際設定／程式路線確認，177範圍的1,885程式、322設定及439條明文跨輪引用另列索引；R92與R93來源、R93當年11場景44觀測修正分清，只補11份約86KB原小紀錄。[生產方法與必要來源](docs/reproducibility/GENERATION_GUIDE.md)。
 - 20261021使用者再明確：可再生大型資料留生成程式、設定及必要來源即可，不上傳整套，也不以完整重建／逐份相同驗證作省略前提；原拍、量測、人工標記與完整結果仍保存。[生產方法優先](docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)。
 - 20261021最新使用者糾正：GitHub改為精選、輕量研究整理，不作完整磁碟備份。舊全量模型／數值／影像／交付包排程已停止並防止重啟；已上傳大檔草稿先凍結、不自動發布或刪除，改按用途篩選。[最新範圍](docs/reproducibility/project_completion/README.md)。
