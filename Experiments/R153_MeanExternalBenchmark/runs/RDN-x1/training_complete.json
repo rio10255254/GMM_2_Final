@@ -1,0 +1,96 @@
+{
+  "state": "complete",
+  "method": "RDN-x1",
+  "epochs_trained": 14,
+  "updates": 7296,
+  "partial_epoch_saved_updates": 128,
+  "selected_epoch": 14,
+  "selected_step": 7168,
+  "stopping_reason": "user_authorized_short_budget_stop_using_saved_best",
+  "validation_PSNR_dB": 42.848639407293625,
+  "checkpoint": "selected.pth",
+  "checkpoint_sha256": "9f080b316b4cfd2c2f81243c947eeaa773270676d13c63ff78073880aa635221",
+  "total_parameters": 5484673,
+  "training_recipe": {
+    "loss": "L1",
+    "optimizer": "Adam",
+    "lr": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "weight_decay": 0.0,
+    "clip_norm": null,
+    "ema": 0.0
+  },
+  "common_validation_protocol": {
+    "seed": 1482101,
+    "image_order_seed": 1482102,
+    "noise_seed": 1481003,
+    "training_scenes": 512,
+    "views_per_scene": 4,
+    "images_per_epoch": 2048,
+    "batch_size": 4,
+    "input_size": 384,
+    "supervised_core": [
+      144,
+      240
+    ],
+    "min_epochs": 8,
+    "max_epochs": 32,
+    "early_stop_patience_epochs": 5,
+    "meaningful_PSNR_improvement_dB": 0.02,
+    "lr_plateau_patience_epochs": 2,
+    "lr_reduction_factor": 0.5,
+    "minimum_lr": 1e-06,
+    "validation_scenes": 128,
+    "test_scenes": 128,
+    "validation_every_epochs": 1,
+    "selection": "highest synthetic validation mean per-image core PSNR; no real-data selection",
+    "stopping": "at least 8 epochs, then 5 epochs without a 0.02 dB validation improvement, or 32-epoch cap",
+    "precision": "FP32; TF32 disabled",
+    "pretrained_weights": false,
+    "training_unit": "one independent image/clear pair; all 2048 views shuffled each epoch",
+    "extra_training_geometry_pair_observation_losses": false,
+    "evaluation_losses": "original five MOSR task terms reported as common diagnostics only",
+    "scope": "ordinary author loss/optimizer adapted to fixed grayscale x1 data and common valid supervision region"
+  },
+  "synthetic_test": {
+    "task": 1.4254584028967656,
+    "image": 1.23203137825476,
+    "gradient": 0.7444014010761748,
+    "pair_output": 0.0684965808322886,
+    "boundary": 0.09804332977364538,
+    "observation": 1.1238747616298497,
+    "PSNR_core_dB": 42.78801531642297,
+    "SSIM_core": 0.984050940387667,
+    "PSNR_full_dB": 28.760804516802054
+  },
+  "real_data_used_in_training_or_selection": false,
+  "elapsed_this_process_seconds": 125.73520330013707,
+  "duration_revision": {
+    "user_authorized": true,
+    "decision": "約1天；尚未開始模型最多8輪；已完成結果保留；RDN使用目前保存的合成驗證最佳結果結束",
+    "training_scope": "short-duration comparison; equal data and measurement rules, unequal actual epoch counts explicitly reported",
+    "max_epochs": 8,
+    "affected_methods": [
+      "RCAN-x1",
+      "Restormer",
+      "USRNet-x1",
+      "SwinIR"
+    ],
+    "finalize_saved_method": "RDN-x1",
+    "preserve_completed_methods": [
+      "EDSR-x1",
+      "NAFNet"
+    ],
+    "selection": "same synthetic validation only; no real-data selection",
+    "estimated_remaining_training_hours": [
+      27,
+      30
+    ],
+    "full_real_validation_included_in_estimate": false
+  },
+  "interruption_record": "runs/launcher_logs/time_budget_change/change.json",
+  "notes": "Complete epochs and saved partial updates reported separately; incomplete epoch not validated or selected; later unsaved updates are not used. Original checkpoints/history archived."
+}

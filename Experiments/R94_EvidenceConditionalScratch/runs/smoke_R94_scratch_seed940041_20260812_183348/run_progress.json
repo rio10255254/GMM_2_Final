@@ -1,0 +1,97 @@
+{
+  "experiment_id": "R94_EvidenceConditionalScratch",
+  "run_id": "R94_scratch_seed940041_20260812_183348",
+  "run_kind": "smoke",
+  "seed": 940041,
+  "device": "cuda:0",
+  "parameter_count": 2303717,
+  "initial_parameter_sha256": "6de52721cbde880fcadc783528d894c4ff93f367c78c71742bcd570f77c6360b",
+  "model_sha256": "ddf73583052f049a4cc902eefe55a76b5929430d1f03eb0a61bd1035f5d574f9",
+  "trainer_sha256": "0f705254f67a8ece80543a9dbc0666521fc4cec3f7cbfa2da21d7026c78d6c36",
+  "design_sha256": "23ec1123a91e93c37d7a0dbf6e13e6ee77189b04389458c495b17c42e0213da0",
+  "dataset_content_sha256": "6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5",
+  "checkpoint_loaded": false,
+  "resume_source": null,
+  "teacher_used": false,
+  "real_training_pixels": false,
+  "optimizer_fresh": true,
+  "started_at": "2026-08-12T18:33:48.044761",
+  "weight_dir": "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\weights\\smoke\\seed_940041\\R94_scratch_seed940041_20260812_183348\\weights",
+  "status": "active",
+  "planned_epochs": 1,
+  "completed_epoch": 1,
+  "latest_metrics": {
+    "train": {
+      "total": 3.272787570953369,
+      "controls": 2.0579116344451904,
+      "branches": 0.039466869086027145,
+      "output": 0.12401910871267319,
+      "motion": 0.0014058757806196809,
+      "cross_noise": 0.031189683824777603
+    },
+    "validation": {
+      "pixel": 0.03806333988904953,
+      "multiscale": 0.034966468811035156,
+      "gradient": 0.030293621122837067,
+      "texture": 0.03501654788851738,
+      "contour": 0.0019729966297745705,
+      "cancellation": 0.0,
+      "identity": 0.0,
+      "branch_nuisance": 0.032877422869205475,
+      "branch_radiometry": 0.015491370111703873,
+      "branch_local_contrast": 0.0,
+      "branch_boundary": 0.0008195933769457042,
+      "branch_texture": 0.0004058005288243294,
+      "need": 0.4639333188533783,
+      "evidence": 0.19436073303222656,
+      "geometry": 0.6931470036506653,
+      "geometry_boundary": 0.6931473612785339,
+      "motion": 61.50311279296875,
+      "motion_p95_proxy": 61.50311279296875,
+      "detail_axis": 0.03501654788851738,
+      "contour_axis": 0.0019729966297745705,
+      "identity_axis": 0.0,
+      "motion_axis": 61.50311279296875,
+      "worst_axis": 61.50311279296875
+    },
+    "phase": {
+      "epoch_start": 1,
+      "epoch_end": 4,
+      "name": "controls_and_geometry",
+      "train": [
+        "need_control",
+        "evidence_control",
+        "geometry"
+      ],
+      "correction_heads_open": false,
+      "stage_truth_input_fraction": 1.0
+    },
+    "stage": {
+      "patch_size": 256,
+      "core_size": 128,
+      "scene_batch": 1,
+      "target_effective_scene_batch": 1
+    },
+    "stage_truth_fraction": 1.0,
+    "lr": 4e-05,
+    "seconds": 5.6855483000399545,
+    "gpu_peak_gib": 3.2285470962524414,
+    "gpu_reserved_gib": 3.369140625,
+    "gpu_estimated_free_gib": 43.0419921875
+  },
+  "synthetic_preview_paths": [
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\synthetic_live_validation\\epoch_001\\validation_00_recoverable_detail.png",
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\synthetic_live_validation\\epoch_001\\validation_01_persistent_detail_bundle.png",
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\synthetic_live_validation\\epoch_001\\validation_02_clear_detail_guard.png",
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\synthetic_live_validation\\epoch_001\\validation_03_difficult_boundary_anti_halo.png",
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\synthetic_live_validation\\epoch_001\\validation_04_exposure_coherent_bundle.png",
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\synthetic_live_validation\\epoch_001\\validation_05_signed_subpixel_motion.png",
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\synthetic_live_validation\\epoch_001\\validation_06_cross_tile_dense.png"
+  ],
+  "real_preview_paths": [
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\real_live_validation\\epoch_001\\20x_mixed_raw_raw_r94_diff.png",
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\real_live_validation\\epoch_001\\50x_array_raw_raw_r94_diff.png",
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\real_live_validation\\epoch_001\\5x_dense_raw_raw_r94_diff.png",
+    "D:\\GMM_2_Final\\Experiments\\R94_EvidenceConditionalScratch\\results\\real_live_validation\\epoch_001\\pillar_center9_50x_raw_raw_r94_diff.png"
+  ]
+}

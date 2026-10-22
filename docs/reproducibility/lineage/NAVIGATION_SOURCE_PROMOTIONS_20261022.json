@@ -1,0 +1,368 @@
+{
+  "time": "2026-10-22T10:09:13.585320+08:00",
+  "original_small_records": 24,
+  "bytes": 69737,
+  "records": [
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/training_complete.json",
+      "bytes": 2370,
+      "sha256": "f7df86a7b81a06fcd2e37a640e07a2b783301aa896432c80515ab4541ba28945",
+      "purpose": "Original R153 training completion and model selection record",
+      "previous_published_providers": [
+        {
+          "tag": "research-results-models-20261016",
+          "asset": "research-full-numeric-results-027.zip",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/EDSR-x1/training_complete.json",
+          "sha256": "f7df86a7b81a06fcd2e37a640e07a2b783301aa896432c80515ab4541ba28945"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/training_complete.json",
+      "bytes": 2381,
+      "sha256": "f5a6ef11f32e82b62b4056670461a3a606c0cc39222eec767d2e8ed7ebc5e2dd",
+      "purpose": "Original R153 training completion and model selection record",
+      "previous_published_providers": [
+        {
+          "tag": "research-results-models-20261016",
+          "asset": "research-full-numeric-results-027.zip",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/NAFNet/training_complete.json",
+          "sha256": "f5a6ef11f32e82b62b4056670461a3a606c0cc39222eec767d2e8ed7ebc5e2dd"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/training_complete.json",
+      "bytes": 3265,
+      "sha256": "a4b9c6282b50c61424d265559a4a13e55a27157baa0e245bd0c5b83cfe878841",
+      "purpose": "Original R153 training completion and model selection record",
+      "previous_published_providers": [
+        {
+          "tag": "research-results-models-20261016",
+          "asset": "research-full-numeric-results-026.zip",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RCAN-x1/training_complete.json",
+          "sha256": "a4b9c6282b50c61424d265559a4a13e55a27157baa0e245bd0c5b83cfe878841"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/training_complete.json",
+      "bytes": 3503,
+      "sha256": "bb529de70820dca3bc6fa675a2662f8b798da280aeb6e21a7d4efea1fbd00dfe",
+      "purpose": "Original R153 training completion and model selection record",
+      "previous_published_providers": [
+        {
+          "tag": "research-results-models-20261016",
+          "asset": "research-full-numeric-results-026.zip",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/RDN-x1/training_complete.json",
+          "sha256": "bb529de70820dca3bc6fa675a2662f8b798da280aeb6e21a7d4efea1fbd00dfe"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/training_complete.json",
+      "bytes": 3274,
+      "sha256": "329f8507f11b5cf9c50748225f4b27322377073be0c8a4459e5aedc1f493ec24",
+      "purpose": "Original R153 training completion and model selection record",
+      "previous_published_providers": [
+        {
+          "tag": "research-results-models-20261016",
+          "asset": "research-full-numeric-results-024.zip",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/Restormer/training_complete.json",
+          "sha256": "329f8507f11b5cf9c50748225f4b27322377073be0c8a4459e5aedc1f493ec24"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/training_complete.json",
+      "bytes": 3316,
+      "sha256": "e3d25f7e45eb4e5c54b71e885d8bcef7a12731b4f6b03d2cb9ecf3925408fcf6",
+      "purpose": "Original R153 training completion and model selection record",
+      "previous_published_providers": [
+        {
+          "tag": "research-results-models-20261016",
+          "asset": "research-full-numeric-results-027.zip",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/SwinIR/training_complete.json",
+          "sha256": "e3d25f7e45eb4e5c54b71e885d8bcef7a12731b4f6b03d2cb9ecf3925408fcf6"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/training_complete.json",
+      "bytes": 3323,
+      "sha256": "6d70752690473764bec1b0fcf4c5a2eb4113fe800fb96c6aeb4c78ed2cbb92e3",
+      "purpose": "Original R153 training completion and model selection record",
+      "previous_published_providers": [
+        {
+          "tag": "research-results-models-20261016",
+          "asset": "research-full-numeric-results-025.zip",
+          "path": "Experiments/R153_MeanExternalBenchmark/runs/USRNet-x1/training_complete.json",
+          "sha256": "6d70752690473764bec1b0fcf4c5a2eb4113fe800fb96c6aeb4c78ed2cbb92e3"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_181537/run_progress.json",
+      "bytes": 4683,
+      "sha256": "efe52bd6858447e147c0f9fe3e4851d7a428f93ff34df738c8854b3af24003ae",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_181537/run_progress.json",
+          "sha256": "efe52bd6858447e147c0f9fe3e4851d7a428f93ff34df738c8854b3af24003ae"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183038/run_progress.json",
+      "bytes": 4607,
+      "sha256": "eeb8012310820b6e711d0a9c7a8bf7d64a6e510072d57b113f4a0153a2b966a3",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183038/run_progress.json",
+          "sha256": "eeb8012310820b6e711d0a9c7a8bf7d64a6e510072d57b113f4a0153a2b966a3"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183244/failure.json",
+      "bytes": 1178,
+      "sha256": "fc4b35cc891a131fc618e38e6693cebe45c23d69f82f590f06261330d7214cdc",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183244/failure.json",
+          "sha256": "fc4b35cc891a131fc618e38e6693cebe45c23d69f82f590f06261330d7214cdc"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183304/failure.json",
+      "bytes": 1178,
+      "sha256": "11b168703e94b3cb03a4ab26d9fd8fc8e1e5a0934a6905cebea9d2d667840ec1",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183304/failure.json",
+          "sha256": "11b168703e94b3cb03a4ab26d9fd8fc8e1e5a0934a6905cebea9d2d667840ec1"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183328/failure.json",
+      "bytes": 1178,
+      "sha256": "5a9254665e5a4fe4319b253162991f98064b5481a48e2936825d65a2ef6fa5ce",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183328/failure.json",
+          "sha256": "5a9254665e5a4fe4319b253162991f98064b5481a48e2936825d65a2ef6fa5ce"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183348/run_progress.json",
+      "bytes": 4735,
+      "sha256": "318b8b4dce1002f3cc0d25e42dc011c11cacb5313bb7c7748718694716f80760",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183348/run_progress.json",
+          "sha256": "318b8b4dce1002f3cc0d25e42dc011c11cacb5313bb7c7748718694716f80760"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183529/run_progress.json",
+      "bytes": 4674,
+      "sha256": "33423136ae8f6199e929741e30d5e2bb1ad6f7c4e252f429c4e5a54b25dbdca3",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183529/run_progress.json",
+          "sha256": "33423136ae8f6199e929741e30d5e2bb1ad6f7c4e252f429c4e5a54b25dbdca3"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_184512/run_progress.json",
+      "bytes": 4675,
+      "sha256": "2376feb3aa2dca323059cceae5f675802e45cc4d23c7a7de6296d5c64a74db87",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_184512/run_progress.json",
+          "sha256": "2376feb3aa2dca323059cceae5f675802e45cc4d23c7a7de6296d5c64a74db87"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_185333/failure.json",
+      "bytes": 1215,
+      "sha256": "3c7da3c99a0fc9dee82fa1b83c2dab28a5e3c99363e3c743c6e0ae54c71a65ff",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_185333/failure.json",
+          "sha256": "3c7da3c99a0fc9dee82fa1b83c2dab28a5e3c99363e3c743c6e0ae54c71a65ff"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_185402/run_progress.json",
+      "bytes": 4675,
+      "sha256": "28a7a5baa39e5b4408118813362fb8cde8dd463acd258ea56434ccc536f16ded",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_185402/run_progress.json",
+          "sha256": "28a7a5baa39e5b4408118813362fb8cde8dd463acd258ea56434ccc536f16ded"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_190117/run_progress.json",
+      "bytes": 4624,
+      "sha256": "740a5696ffe5ce849d30765bbe88bd64be43116712a4f56a513425f2323041ae",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_190117/run_progress.json",
+          "sha256": "740a5696ffe5ce849d30765bbe88bd64be43116712a4f56a513425f2323041ae"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_184607/scratch_initialization_audit.json",
+      "bytes": 1022,
+      "sha256": "955ec7170e77b7204f2791a9396dbf649aba42c19a0645a15f8a785ab2d9d1c2",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_184607/scratch_initialization_audit.json",
+          "sha256": "955ec7170e77b7204f2791a9396dbf649aba42c19a0645a15f8a785ab2d9d1c2"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_185800/scratch_initialization_audit.json",
+      "bytes": 1022,
+      "sha256": "939f29fb4d1b7d5b59076a8fc07e5aa00a4217704feeb5815a805ac5277d52f0",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_185800/scratch_initialization_audit.json",
+          "sha256": "939f29fb4d1b7d5b59076a8fc07e5aa00a4217704feeb5815a805ac5277d52f0"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_191058/scratch_initialization_audit.json",
+      "bytes": 1022,
+      "sha256": "68cd19e6092ef999d92904c4f504f9084a9b0e1660b04476e84a231922e13f56",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_191058/scratch_initialization_audit.json",
+          "sha256": "68cd19e6092ef999d92904c4f504f9084a9b0e1660b04476e84a231922e13f56"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_191420/scratch_initialization_audit.json",
+      "bytes": 1022,
+      "sha256": "9d2f9d40bb96e89ceceae347f602e6dc90bd956ca2e93d4a68a1eac3946ae907",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r94-complete-record-20261021",
+          "asset": "research-r94-complete-record-001.zip",
+          "path": "Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_191420/scratch_initialization_audit.json",
+          "sha256": "9d2f9d40bb96e89ceceae347f602e6dc90bd956ca2e93d4a68a1eac3946ae907"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002234/run_progress.json",
+      "bytes": 5169,
+      "sha256": "d87c1f262ea24a03905ce7295574d292135758f44b0033f254077d8eae538dcb",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r95-complete-record-20261021",
+          "asset": "research-r95-complete-record-001.zip",
+          "path": "Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002234/run_progress.json",
+          "sha256": "d87c1f262ea24a03905ce7295574d292135758f44b0033f254077d8eae538dcb"
+        }
+      ],
+      "original_bytes_unchanged": true
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_02/continuation_audit.json",
+      "bytes": 1626,
+      "sha256": "314a20624548363bafceac2aaca7d8da72a7ca9cf176506726c7b15523b169ef",
+      "purpose": "Original early failure/source identity record",
+      "previous_published_providers": [
+        {
+          "tag": "r95-complete-record-20261021",
+          "asset": "research-r95-complete-record-001.zip",
+          "path": "Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_02/continuation_audit.json",
+          "sha256": "314a20624548363bafceac2aaca7d8da72a7ca9cf176506726c7b15523b169ef"
+        }
+      ],
+      "original_bytes_unchanged": true
+    }
+  ],
+  "purpose": "Make the original source-gap and model-selection evidence directly readable; no experiments rerun and no historical records rewritten"
+}

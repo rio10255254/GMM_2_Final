@@ -1,71 +1,38 @@
-# 文件導覽 / Docs Navigation
+# 文件入口
 
-這個資料夾收納 repository root 之外、仍值得追蹤進 Git 的文件。  
-This directory holds tracked documentation that lives outside the repository root.
+第一次閱讀請從[研究閱讀與取得指南](reproducibility/GETTING_STARTED.md)開始；不知道內容屬於哪個資料夾，查[專案地圖](navigation/PROJECT_MAP.md)。研究結論只回到[目前狀態](../PROJECT_STATE.md)及各輪正式報告。
 
-目標是讓 root 保持成「入口層」，而不是變成文件堆積區。  
-Its purpose is to keep the root as a clean entry surface instead of turning it into a document dump.
+## 文件樹
 
-## Layout / 目錄結構
+```text
+docs/
+├── navigation/          專案地圖：資料夾角色與正式位置
+├── reproducibility/     方法、文獻、來源、每輪閱讀與按需取得
+│   ├── lineage/         R1–R153、LabSystem與歷史分支沿革
+│   ├── experiments/     各現有研究範圍的閱讀卡
+│   ├── scratch_lineage/ R89–R93方法與資料修正
+│   ├── r93_shared/      R93停止結果與五輪共用來源
+│   ├── four_rounds/     R94／95／97／98原歷程與限制
+│   ├── lab_comparisons/ Lab數學平移、V42歷史與原數表
+│   ├── legacy_multiscale/ 早期R12–R15選模及公式缺件
+│   ├── optical_calibration/ 光學原結果與頻譜來源
+│   └── project_completion/ 精選範圍與歷次保存收據
+├── analysis/            跨研究路徑總覽
+├── evidence/            論文穩定引用副本；原實驗報告優先
+├── policy/              光學等專項政策
+├── operations/          開新實驗、位置相容、容量與恢復規則
+├── history/             按原日期閱讀的研究敘事及舊版入口
+└── archive/             小型歷史快照；其中進行中狀態不是今日待辦
+```
 
-- `navigation/`
-  跨區域專案地圖與查找入口；只負責指出正式位置，不複製實驗結論。
-  Cross-area project map and findability entry points; it points to canonical locations without duplicating experiment verdicts.
-- `analysis/`
-  研究路徑圖、視覺化總覽、決策路徑摘要。
-  Research-path diagrams, visual overviews, and decision-path summaries.
-- `evidence/`
-  小型、高價值、可核對的實驗證據副本（stable citation anchors；mirror 可能與 canonical drift，以 canonical 為準）。
-  Small, high-value, reviewable curated experiment evidence copies used as stable citation anchors (mirrors may drift from canonical; canonical is authoritative).
-  再細分為 `baseline/`、`historical_baselines/`、`falsified/`、`side_directions/`、`analysis/`、`runtime/`。
-  Further split into `baseline/`, `historical_baselines/`, `falsified/`, `side_directions/`, `analysis/`, and `runtime/`.
-  `EVIDENCE_MAP.md` 負責說明每份關鍵 evidence 支撐哪個 baseline、falsified line、或 analysis 結論。
-  `EVIDENCE_MAP.md` explains which baseline, falsified line, or analytical conclusion each key evidence file supports.
-- `history/`
-  完整歷史敘事與研究反省（`PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` 主體凍結於 2026-03-14，前言持續補指標）。
-  Long-form historical narrative and research reflection (main body frozen at 2026-03-14, preface accumulates milestone pointers).
-- `operations/`
-  操作指引層：新實驗 SOP（`STARTING_NEW_EXPERIMENT.md`）、quirks（`QUIRKS.md`）、source-of-truth 政策、legacy batch 操作、控制中心說明。
-  Operational guide layer: new-experiment SOP, quirks, source-of-truth policy, legacy batch operations, and the control-center guide.
-- `policy/`
-  正式政策文件，包含 PSF 政策切換說明與機器可讀 PSF policy。
-  Formal policy documents, including the PSF policy transition rationale and machine-readable PSF policy.
-- `archive/`
-  封存內容。`legacy_runtime_status/` 保存 R20-R32 的 30 份 `000_LONGRUN_*_STATUS.*` 歷史快照（2026-04-08 封存）；`legacy_visuals/` 保存舊視覺比較圖。
-  Archived content. `legacy_runtime_status/` holds the R20-R32 `000_LONGRUN_*_STATUS.*` history snapshots (archived 2026-04-08); `legacy_visuals/` holds retired visual comparison sheets.
-- `runtime/legacy/`
-  僅剩搬遷說明；實際封存已移至 `docs/archive/legacy_runtime_status/`。
-  Only a relocation note remains; the real archive is now at `docs/archive/legacy_runtime_status/`.
-- `superpowers/`
-  本地工作文件（specs / plans），受 `.gitignore` 排除，不進 Git。
-  Local working documents (specs / plans); gitignored and not committed.
+## 三種用途分清楚
 
-## Reading Guide / 建議閱讀順序
+| 用途 | 看哪裡 | 如何使用 |
+|---|---|---|
+| 理解研究 | [逐輪](reproducibility/EXPERIMENTS.md)、[沿革](reproducibility/lineage/README.md)、[文獻](reproducibility/LITERATURE_GUIDE.md) | 先讀問題、方法、完整結果和失敗，再找程式 |
+| 在新位置重做所需部分 | [生成方法](reproducibility/GENERATION_GUIDE.md)、[附件選擇](reproducibility/ASSET_GUIDE.md) | 先確認原拍／人工來源與可生成資料的差別，只取必要來源 |
+| 維護與查證歷史 | [操作說明](operations/README.md)、[歷史](history/README.md)、[保存紀錄](reproducibility/project_completion/README.md) | 固定舊收據按原日期及範圍閱讀，不當成現在的工作指示 |
 
-1. 先看 root 的 `README.md`
-   First read the root `README.md`.
-2. 再看 `PROJECT_STATE.md`（前 50 行 Quick Handoff 區 3 分鐘讀完）
-   Then read `PROJECT_STATE.md` (the first ~50 lines are the 3-minute Quick Handoff).
-3. 不知道檔案在哪個工作區時，看 `navigation/PROJECT_MAP.md`
-   Use `navigation/PROJECT_MAP.md` when you do not know which workspace owns something.
-4. 需要穩定規則時，看 `PROJECT_ARCHITECTURE.md`
-   For stable architecture rules and promotion conditions, read `PROJECT_ARCHITECTURE.md`.
-5. 需要完整歷史脈絡時，再進 `history/`
-   Only move into `history/` when you need the full narrative.
+`presentations_assets`保存簡報素材，`runtime`只留舊執行位置說明，`superpowers`內本次保存的少數設計／計畫按原身分閱讀，不能以資料夾原先被忽略推定它完全沒有Git內容。這些不是新的正式實驗區。
 
-## Sync Rule / 同步規則
-
-這裡只追蹤真正值得同步到 GitHub 的文件層輸出：  
-This directory only tracks documentation outputs that are worth syncing to GitHub:
-
-- 重大 branch 與策略脈絡  
-  Major branches and strategy narratives
-- 重要分析與決策 memo  
-  Important analyses and decision memos
-- 小型正式證據副本  
-  Small formal evidence copies
-- curated legacy runtime references  
-  Curated legacy runtime references
-
-不追蹤日常 runtime 噪音、即時 log spam、或 bulk outputs。  
-It does not track day-to-day runtime noise, log spam, or bulk outputs.
+來源相同而位置不同時，按[正式來源規則](operations/SOURCE_OF_TRUTH_POLICY.md)找原件；不要把引用副本當成第二份可各自改寫的結論。

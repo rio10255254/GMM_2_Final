@@ -1,0 +1,70 @@
+{
+  "state": "complete",
+  "method": "EDSR-x1",
+  "epochs_trained": 32,
+  "updates": 16384,
+  "selected_epoch": 30,
+  "selected_step": 15360,
+  "stopping_reason": "predeclared_epoch_cap",
+  "validation_PSNR_dB": 44.93874527966686,
+  "checkpoint": "selected.pth",
+  "checkpoint_sha256": "478ae0817a35837fe0c2980725388fd6463f2e0cb24b1678c8f2f152cb693b27",
+  "total_parameters": 1219845,
+  "training_recipe": {
+    "loss": "L1",
+    "optimizer": "Adam",
+    "lr": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "weight_decay": 0.0,
+    "clip_norm": null,
+    "ema": 0.0
+  },
+  "common_validation_protocol": {
+    "seed": 1482101,
+    "image_order_seed": 1482102,
+    "noise_seed": 1481003,
+    "training_scenes": 512,
+    "views_per_scene": 4,
+    "images_per_epoch": 2048,
+    "batch_size": 4,
+    "input_size": 384,
+    "supervised_core": [
+      144,
+      240
+    ],
+    "min_epochs": 8,
+    "max_epochs": 32,
+    "early_stop_patience_epochs": 5,
+    "meaningful_PSNR_improvement_dB": 0.02,
+    "lr_plateau_patience_epochs": 2,
+    "lr_reduction_factor": 0.5,
+    "minimum_lr": 1e-06,
+    "validation_scenes": 128,
+    "test_scenes": 128,
+    "validation_every_epochs": 1,
+    "selection": "highest synthetic validation mean per-image core PSNR; no real-data selection",
+    "stopping": "at least 8 epochs, then 5 epochs without a 0.02 dB validation improvement, or 32-epoch cap",
+    "precision": "FP32; TF32 disabled",
+    "pretrained_weights": false,
+    "training_unit": "one independent image/clear pair; all 2048 views shuffled each epoch",
+    "extra_training_geometry_pair_observation_losses": false,
+    "evaluation_losses": "original five MOSR task terms reported as common diagnostics only",
+    "scope": "ordinary author loss/optimizer adapted to fixed grayscale x1 data and common valid supervision region"
+  },
+  "synthetic_test": {
+    "task": 1.2078358114522416,
+    "image": 1.0312827561574522,
+    "gradient": 0.6712256006103416,
+    "pair_output": 0.06038527420605533,
+    "boundary": 0.09565216429473367,
+    "observation": 1.1100434586405754,
+    "PSNR_core_dB": 45.1766742277834,
+    "SSIM_core": 0.9845456264292785,
+    "PSNR_full_dB": 36.100349906252134
+  },
+  "real_data_used_in_training_or_selection": false,
+  "elapsed_this_process_seconds": 6493.739073200151
+}

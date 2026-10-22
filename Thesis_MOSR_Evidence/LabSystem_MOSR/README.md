@@ -1,5 +1,7 @@
 # LabSystem_MOSR
 
+研究閱讀先看[Lab全線與原資料](../../docs/reproducibility/lineage/LAB_SYSTEM.md)、[V42原歷程](../../docs/reproducibility/lab_comparisons/V42_HISTORY.md)；主R輪次及目前R152／RAW論文另看[全研究沿革](../../docs/reproducibility/lineage/README.md)。下方原啟動／bootstrap說明保留原日期，不作今日完整狀態。
+
 2026-10-22研究歷史補註：[Lab校正、資料基礎、R39／R40、R46至62、V41／V42及平行比較](../../docs/reproducibility/lineage/LAB_SYSTEM.md)已有串聯入口。下方Current Scope保留建立時的狀態，不表示後來Lab停在R48。資料stage01至33是生成類型，不是33次獨立訓練；現在論文採用仍以PROJECT_STATE.md及R153交接為準。
 
 This area is the isolated MOSR line for the laboratory imaging system.

@@ -1,6 +1,6 @@
 # PROJECT STATE / 專案狀態
 
-Last updated: 2026-10-22（全研究脈絡補查：現有內容保存與歷史未綁號分開）
+Last updated: 2026-10-22（GitHub閱讀架構與各區入口整理；歷史缺件明列）
 
 專案控制與整體巡檢請使用 `python Tools/project_control_center.py`。
 機器真相：`ESTIMATOR_POLICY.json`。
@@ -19,8 +19,12 @@ Last updated: 2026-10-22（全研究脈絡補查：現有內容保存與歷史�
 - 共用930張相機原拍與30份原始位置紀錄保留一次；R92／R93兩套共用基礎、原修正及在線觀測不能混用。
 - [固定保存版本及最後交付收據](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)；[精選內容與界線](docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md)。完成事實以保存版本的最後實際收據為準。
 
+### GitHub檔案與文件閱讀
+- 首頁、文件區、保存紀錄及論文證據入口重新整理；全部根層資料夾有說明。[專案地圖](docs/navigation/PROJECT_MAP.md)、[開始閱讀](docs/reproducibility/GETTING_STARTED.md)、[按用途取得附件](docs/reproducibility/ASSET_GUIDE.md)。
+- 模型自身大小與附件下載大小分清；舊版長篇說明仍在固定歷史，已撤草稿不再列當前待辦。[關鍵模型](docs/reproducibility/MODEL_GUIDE.md)、[缺件及限定查找](docs/reproducibility/KNOWN_GAPS.md)。
+
 ### 已知缺件與歷史範圍
-- 22份早期訓練程式版本、9項早期R13公式缺件保留；9個原先未寫出的ANN量不補造。沒有冒稱重跑全部歷史GPU訓練。
+- 22份R94／R95較早程式／設定版本、9項早期R13公式缺件保留；9個原先未寫出的ANN量不補造。沒有冒稱重跑全部歷史GPU訓練。
 - 原盤點中的程式／文件／數表已由已發布內容或原Git歷史對應；1,258份可再安裝的舊套件檔只留環境版本與用途。
 - 六份舊草稿約389GB已在精選原件實際取回後撤下；保留約237MB附件及171份小型來源，原21份正式發布不變。[取捨與實際紀錄](docs/reproducibility/project_completion/curated/draft_cleanup_20261022/README.md)。舊全量排程仍停用。
 ### 保護與閱讀順序
@@ -32,6 +36,13 @@ Last updated: 2026-10-22（全研究脈絡補查：現有內容保存與歷史�
 ---
 
 ## Full Current State / 完整現況
+
+### GitHub閱讀架構與文件整理（2026-10-22）
+
+依使用者要求補全並整理現有GitHub，將首頁改成目前研究與按用途閱讀入口，現有根層資料夾各有說明；原科學工作位置、模型、資料與正式報告保持。文件區分研究方法、來源與附件、原交付及歷史收據，舊全量流程與已撤草稿不作今日待辦。16個精選模型用途由既有索引產生，列模型與附件不同大小；舊版首頁、論文敘事和保存流水仍可從固定歷史讀取。
+
+22份原版本缺件精確分類為R94的19版及R95的3版，含模型定義、訓練程式與設定；四輪正式最後12項仍與原記錄相符。本次另讀VSCode／Cursor 226份檔案歷史目錄紀錄，沒有上述來源條目；不重複已完成的154176份版本內容搜尋，也不補造R13公式或R36。缺件表、已查範圍及重做界線另列。這是閱讀架構與必要來源整理，沒有重訓、推論或新增大型資料包。
+
 
 ### R1至R153、LabSystem與歷史分支的脈絡補查（2026-10-22）
 

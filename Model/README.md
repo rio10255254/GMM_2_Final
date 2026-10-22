@@ -1,5 +1,9 @@
 # Model — 說明文件 / Documentation
 
+## 先確認使用哪條研究線（2026-10-22）
+
+本頁下方介紹共享GeoEdgeAlignSR主線，不能當成R87之後所有獨立架構的通用訓練入口。[目前模型身分](../PROJECT_STATE.md)區分COMBO正式基準與R152／RAW論文；要找固定檔案用[模型指南](../docs/reproducibility/MODEL_GUIDE.md)，要生成資料用[各輪來源方法](../docs/reproducibility/GENERATION_GUIDE.md)。R94等自包含架構與R152依所屬實驗／交付包使用。
+
 ## 概覽
 
 本資料夾實現「以 PSF 物理先驗引導的邊界保真超解析（SR）/ 反捲積深度學習模型」。
