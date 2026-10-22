@@ -1,53 +1,29 @@
-# 現在保存到哪裡、容量還能放多少
+# 保存完整度與容量
 
-逐輪接續本批新增約161.37MB附件與15個小模型；目前26個正式版本、250附件共142,729,900,657 bytes（約142.73GB），草稿0。[本批交付與逐輪未完成範圍](round_source_followthrough_20261022/README.md)。後方快照保留各自時間和範圍。
+[目前完整度與缺件](STATUS.md) · [按用途取得資料](ASSET_GUIDE.md) · [歷次保存](project_completion/README.md)
 
-本次395份補件已完成全部下載及恢復；目前25個正式版本、240附件共142,568,530,982 bytes（約142.57GB），草稿0。原R63仍有1個版本未定位、其他來源尚未全部查完。[最新交付](priority_sources_20261022/DELIVERY_VERIFIED.json)。以下較早待補盤點和容量快照保留原階段。
+## 目前完整度
 
-2026-10-22後續：[395份必要原件補件](priority_sources_20261022/README.md)新增約5.18GB壓縮附件。下面「待補」段落是較早盤點；本批已處理這395份，但原R63仍有1個版本未定位、其他逐輪來源尚未全部查完，全專案仍不是完整保存。
+主要研究閱讀與結果已有入口，必要來源仍逐輪補查；不能說全專案已確認無遺漏。已完成的補件與仍未解的影響統一見[目前狀態](STATUS.md)，本頁不再重複疊放舊的待補清單。
 
-**2026-10-22重新核對：全專案保存尚未完成。** 已確認仍缺R63選用模型、Lab原校正照片、原量測點及固定驗證輸入；PSF100其餘295張也應補完整挑圖脈絡。[具體待補清單與影響](REMAINING_PRESERVATION_AUDIT_20261022.md)。以下舊交付紀錄只證明各自已選定的範圍，不能推論所有必要來源都已收錄。
+## 最近一次容量紀錄
 
-2026-10-22後續補入[PSF100及0615不可替代原拍](../../Shared_Sources/PSF_Camera_Acquisitions/README.md)：826張完整原拍、100份實際擬合輸入與上游脈絡。新增17附件約12.73GB已全部取回核對；目前24個正式版本、228附件合計137,387,906,901 bytes（約137.39GB），草稿0。下方124.66GB表保留為本日較早原表補強時的快照；[最新實際收據](../../Shared_Sources/PSF_Camera_Acquisitions/DELIVERY_VERIFIED.json)記錄更新後數字。
+核對範圍：2026-10-22逐輪來源補件完成後，文件整理前。
 
-核對日期：2026-10-22。本頁說明目前可確認的保存範圍與容量，科學結論仍以[專案狀態](../../PROJECT_STATE.md)、[正式實驗索引](../../Experiments/INDEX.md)和各輪原正式報告為準。
-
-## 「完整」要分清楚的範圍
-
-目前已盤點精選範圍的主要研究問題、原程式與設定、來源、完整原數表、重要圖與失敗已有保存位置和閱讀入口。R1至R153、LabSystem、早期分組及歷史分支沿[研究沿革](lineage/README.md)查找；177個閱讀分組不是177次獨立訓練。
-
-先前22份R94／R95原版全部找回；早期R13原公式補回後，9項總分相同，取回的程式完成216項分數及5次選擇重算。原完整結果可讀，不必為了看結論先下載整套訓練影像。
-
-**仍不能說所有歷史實驗都能僅靠GitHub逐步完全重訓相同。** 主專案獨立R36還未辨認；R95第一次接續時部分訓練狀態當年沒有保存；9個早期ANN量原本沒寫出。Lab R61內部r36已找到，身分不同，不能拿它補主R36。[找回結果與剩餘重做限制](KNOWN_GAPS.md)逐項列明。
-
-這次加強的是重要原件的直接取得及研究脈絡，並非重新掃描所有磁碟或重跑全部歷史GPU訓練。原固定交付與較早實測收據保持自己的日期、程式版本及範圍；未實測部分不改寫成通過。
-
-## 這次查到的實際用量
-
-| 位置 | 核對時用量 | 如何理解 |
+| 類型 | 當次用量 | 怎麼讀 |
 |---|---:|---|
-| 程式倉庫與版本歷史 | 約1.66GB | GitHub API回報約1,622,764KiB；是概略用量，不等於每次下載的大小 |
-| 23個正式發布版本的211個附件 | 約124.66GB | 逐附件大小加總124,655,463,930 bytes；未混算進上面的程式倉庫數字 |
-| 未發布草稿 | 0個 | 舊全量草稿已處理，本次不重啟 |
+| 正式版本附件 | 26個版本、250個附件，共142,729,900,657 bytes，約142.73GB | 不等於一般程式倉庫大小；只需按用途取回 |
+| 未發布草稿 | 0個 | 六份舊超量草稿已處理，舊收據中的draft不是現在待辦 |
+| 程式倉庫與歷史 | 較早API快照約1.66GB | 是較早概略值，不冒充本次重新測量，也不拿它推算剩餘配額 |
 
-[實際大小與規則核對快照](project_completion/curated/GITHUB_CAPACITY_SNAPSHOT_20261022.json)記錄本批整理前的固定版本與數字；服務端回報可能延後更新，因此不從它推算一個精確「剩餘GB」。
+附件數與容量依[最新來源交付收據](round_source_followthrough_20261022/DELIVERY_VERIFIED.json)；較早倉庫數字見[原容量快照](project_completion/curated/GITHUB_CAPACITY_SNAPSHOT_20261022.json)。本次只整理文件，沒有新增大資料附件。
 
-## 還可以放多少
+## 如何決定是否繼續放
 
-GitHub沒有在這些資料中提供一個統一的「個人還剩XGB」配額。程式倉庫的規模建議、單檔限制和版本附件規則分開計算。
+依來源是否不可替代、實驗是否需要及是否已有相同內容決定，不以把空間放滿為目標。原拍、人工與儀器紀錄、關鍵模型、完整量測值得保存；可生成的大訓練庫與整批模型輸出優先留生成方法、設定及必要來源。
 
-- 一般說明建議倉庫理想低於1GB，強烈建議低於5GB；超過建議不等於買到或用完某個固定容量。現在約1.66GB已超過理想值，仍低於5GB。[GitHub大型檔案說明](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
-- 另一份倉庫限制頁列出的建議磁碟大小是10GB，並建議單一物件1MB、在100MB強制限制。這些是健康／操作規則，不能拿10GB減目前大小當成保證可用額度。[GitHub倉庫限制](https://docs.github.com/en/repositories/creating-and-managing-repositories/repository-limits)
-- 版本附件沒有列出總大小或下載流量上限；每個附件須小於2GiB，每個版本最多1000個附件。目前最大的附件約2.027GB、最多58個附件／版，仍在這些限制內。[GitHub發布版本規則](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
+GitHub的程式倉庫限制與發布附件規則分開；沒有由以上用量得出一個保證的「還剩XGB」。需要新增大附件時，依當時[大型檔案說明](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)、[倉庫限制](https://docs.github.com/en/repositories/creating-and-managing-repositories/repository-limits)與[發布版本規則](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)核對。
 
-因此目前可以繼續補必要小型來源與完整原表，沒有容量不足造成的阻礙；仍依用途取捨，不以放滿空間為目標，也不把GitHub當整顆磁碟備份。
+## 舊紀錄如何保留
 
-## 本批具體補什麼
-
-[重要原表與讀法](project_completion/curated/IMPORTANT_TABLES_20261022.md)提出247份原件，邏輯大小共14,644,206 bytes：約14.50MB的R128／R129／R135完整原表與來源紀錄、約106KB的30份原平台CSV，以及40,628-byte原SEM工作表。相同內容沿Git的物件共用；來源身分與原位置保留。
-
-這些重要原件原本已在發布附件內，本次提升為可直接讀取的檔案，不宣稱先前完全沒保存。六個原比較模型與R128四組最後模型都已有精確相同的發布內容，新增模型0。兩張有用途的原結果圖沿用原位置，新增影像0。
-
-大型可生成訓練資料、逐張重建陣列、全部中途模型與快取仍排除；原生成程式、設定及必要固定來源保留。原相機、量測、人工參照與完整實驗結果有不可替代的用途，按來源共用一次，不為每輪複製一套。
-
-本批247份原件與配套文件共269份已實際從GitHub取回核對相同，原23版／211附件保持，未新增模型或影像；[實際交付範圍](project_completion/curated/IMPORTANT_EVIDENCE_DELIVERY_20261022.json)另列。
+[整理前本頁的固定版本](https://github.com/rio10255254/GMM_2_Final/blob/c1102e92c9eb48f322196f7aac34908de53ea0fe/docs/reproducibility/COMPLETENESS_AND_CAPACITY.md)保留各批當時數字、曾經缺件與補件時間；不能把較早「尚未上傳」當作現在狀態，也不能把後來成功回填成早先已完成。

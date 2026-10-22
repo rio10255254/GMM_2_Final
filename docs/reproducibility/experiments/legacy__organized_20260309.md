@@ -1,5 +1,9 @@
 # legacy/organized_20260309 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 精選seed的外部GMF與視覺比較
 
 step8_curve_stdguard_v2屬歷史驗證對象，原始回傳不可用新讀法覆蓋
@@ -45,3 +49,8 @@ D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理�
 ## 2026-10-22：這一輪在整條研究中的位置
 
 [按R1至R153查找](../lineage/ROUND_NUMBER_MAP.md)／[本研究線的來源、得失與後續](../lineage/EARLY_ROUNDS.md)。本輪上方已改為具體必要來源；原日期的保存、失敗與執行證據保留各自範圍，不以文件數或標號連續性冒稱全部歷史已重現。
+
+
+---
+
+[上一個閱讀入口：legacy/organized_20260307](legacy__organized_20260307.md) · [回本分區](../routes/early.md) · [下一個閱讀入口：legacy/organized_20260310](legacy__organized_20260310.md)

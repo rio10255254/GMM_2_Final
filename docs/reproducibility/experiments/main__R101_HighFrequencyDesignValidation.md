@@ -1,5 +1,9 @@
 # main/R101_HighFrequencyDesignValidation 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [主R88至104：資料形成與可學性](../routes/main88_104.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 檢查高頻答案、邊界輸出與多目標學習為何失效
 
 125場景500觀測的前測發現細頻答案多不相位一致，E8後實拍細節崩落且學習方向互相衝突；這是根因設計，沒有新R101模型
@@ -33,3 +37,8 @@ R93鎖定內測來源、E1到E40模型與四張實拍、各頻帶與更新方向
 本次完成保存與完整檔案內容核對，沒有重跑本輪全部歷史訓練；原成功、失敗、中止及限制照原報告保留。
 
 D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理。
+
+
+---
+
+[上一個閱讀入口：main/R101_HighFrequencyCausalAblation](main__R101_HighFrequencyCausalAblation.md) · [回本分區](../routes/main88_104.md) · [下一個閱讀入口：main/R102_UniversalDetailScratch](main__R102_UniversalDetailScratch.md)

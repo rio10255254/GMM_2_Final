@@ -1,5 +1,9 @@
 # main/R33RobustLoss 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [主線起點至R38：正式基準的形成](../routes/baseline.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 減少極端像素牽引是否改善位移穩定
 
 p95為已核准替代；保留穩定性收益及銳利度代價，連同R34／R35／R37失敗支線
@@ -40,3 +44,8 @@ D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理�
 ## 2026年10月21日精選閱讀
 
 [本輪代表影像、失敗影格與完整量測](../project_completion/curated/EARLY_RECON_SELECTION.md)分清模型輸出與相機原拍。一般版本不再附整套逐張重建；完整舊圖由固定歷史取回，原量測明細、方法圖與科學判決保留。重新分析整套前，需先取回完整序列，不能把少數代表圖當成全部資料。
+
+
+---
+
+[上一個閱讀入口：main/R33ContrastFix](main__R33ContrastFix.md) · [回本分區](../routes/baseline.md) · [下一個閱讀入口：main/R38SeqConsistency](main__R38SeqConsistency.md)

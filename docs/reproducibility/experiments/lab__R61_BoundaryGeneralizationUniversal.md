@@ -1,5 +1,9 @@
 # lab/R61_BoundaryGeneralizationUniversal 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 加入通用邊界、位移及Step保護形成v16
 
 2026-10-22另整理[內部r36的原訓練、必要起點及96案例失敗](../lineage/R36_IDENTITIES_20261022.md)：當時用7,496組v10，不能用後來20,296組v16代替；內部編號也不是主專案R36。
@@ -55,3 +59,8 @@ D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理�
 ## 2026-10-22：這一輪在整條研究中的位置
 
 [按R1至R153查找](../lineage/ROUND_NUMBER_MAP.md)／[本研究線的來源、得失與後續](../lineage/LAB_SYSTEM.md)。本輪上方已改為具體必要來源；原日期的保存、失敗與執行證據保留各自範圍，不以文件數或標號連續性冒稱全部歷史已重現。
+
+
+---
+
+[上一個閱讀入口：lab/R60_SEMTruthBoundaryTraining](lab__R60_SEMTruthBoundaryTraining.md) · [回本分區](../routes/lab.md) · [下一個閱讀入口：lab/R62_TargetSampleBoost](lab__R62_TargetSampleBoost.md)

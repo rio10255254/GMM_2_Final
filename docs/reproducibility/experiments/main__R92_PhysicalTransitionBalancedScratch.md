@@ -1,5 +1,9 @@
 # main/R92_PhysicalTransitionBalancedScratch 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [主R88至104：資料形成與可學性](../routes/main88_104.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 補足物理邊緣過渡與平衡曝光取樣
 
 生成修復、真實光學統計及精度差異需隨結果保留
@@ -44,3 +48,8 @@ D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理�
 ## 資料生產方法與共用來源
 
 [本輪原生產／讀取程式、設定與修正紀錄](../GENERATION_GUIDE.md)已按實際來源確認；基礎來源：本輪獨立生成／原獨立生產包。可再生的大檔不必上傳整套。原絕對位置與固定內容身分供歷史追查，日後在新的研究副本設定自己的來源位置；新生成內容與原件不同時須保留差異，不改寫舊結果。
+
+
+---
+
+[上一個閱讀入口：main/R91_DetailDecoupledScratch](main__R91_DetailDecoupledScratch.md) · [回本分區](../routes/main88_104.md) · [下一個閱讀入口：main/R93_RecoverableDetailSeparatedScratch](main__R93_RecoverableDetailSeparatedScratch.md)

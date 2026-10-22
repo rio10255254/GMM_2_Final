@@ -1,5 +1,9 @@
 # main/R33ContrastFix 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [主線起點至R38：正式基準的形成](../routes/baseline.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 提高統計項能否修復R33的灰階與銳利度
 
 目標本身變化小，增加權重未恢復細節；負結果需保留
@@ -37,3 +41,8 @@ D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理�
 ## 2026年10月21日精選閱讀
 
 [本輪代表影像、失敗影格與完整量測](../project_completion/curated/EARLY_RECON_SELECTION.md)分清模型輸出與相機原拍。一般版本不再附整套逐張重建；完整舊圖由固定歷史取回，原量測明細、方法圖與科學判決保留。重新分析整套前，需先取回完整序列，不能把少數代表圖當成全部資料。
+
+
+---
+
+[上一個閱讀入口：main/R32Sandbox](main__R32Sandbox.md) · [回本分區](../routes/baseline.md) · [下一個閱讀入口：main/R33RobustLoss](main__R33RobustLoss.md)

@@ -2,6 +2,8 @@
 
 更新：2026-10-22。這是唯一跨區域人工導航，只回答內容歸誰、先去哪裡讀；科學結論以[目前狀態](../../PROJECT_STATE.md)、[正式模型政策](../../ESTIMATOR_POLICY.json)、[實驗索引](../../Experiments/INDEX.md)及原正式報告為準。
 
+[專案首頁](../../README.md) · [研究分區](../reproducibility/EXPERIMENTS.md) · [現在保存狀態](../reproducibility/STATUS.md)
+
 ## 依工作找入口
 
 | 需要什麼 | 從這裡開始 |

@@ -1,5 +1,9 @@
 # main/R63_CausalBoundaryMotionAblation 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [主R63至87：因果拆解、泛化與切片](../routes/main63_87.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。 **R63原32個選中模型已有31個保存，第24輪的其中一個版本仍未找回。** [缺件與舊清理紀錄](../round_source_followthrough_20261022/README.md)。
+
 拆開幾何、位移與安全上採樣的貢獻
 
 共同預訓練起點的續訓對照不是全網路從零訓練的因果比較
@@ -31,3 +35,8 @@
 本次完成保存與完整檔案內容核對，沒有重跑本輪全部歷史訓練；原成功、失敗、中止及限制照原報告保留。
 
 D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理。
+
+
+---
+
+[回本分區](../routes/main63_87.md) · [下一個閱讀入口：main/R64_IsocontourDisplacementReanalysis_20260724](main__R64_IsocontourDisplacementReanalysis_20260724.md)

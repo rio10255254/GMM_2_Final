@@ -1,17 +1,30 @@
-# 共用研究來源
+# 共用原拍、量測與固定來源
 
-2026-10-22接續：[Lab25張原校正、30份原邊界量測、固定驗證圖與PSF完整395張來源](../docs/reproducibility/priority_sources_20261022/README.md)按用途取得，不重複上傳前100張PSF原拍。
+[專案首頁](../README.md) · [按用途取得檔案](../docs/reproducibility/ASSET_GUIDE.md) · [目前保存狀態](../docs/reproducibility/STATUS.md)
 
-2026-10-22新增：[PSF100與0615原拍歸檔](PSF_Camera_Acquisitions/README.md)，分清826張完整原拍、100張實際處理輸入與既有788張Step；按用途取得，不重傳生成圖。
+共用內容保存一次，各輪引用同一來源。這裡先按「資料是怎麼來的」區分，再連到原說明與取得方法。
 
-2026-10-22補入直接閱讀入口：[30份原平台CSV](PI_Repeatability_20260903/position_records/README.md)與[原SEM工作表](SEM_Originals/README.md)，內容不改；完整相機／SEM照片仍共用原附件。
+## 相機原拍與儀器紀錄
 
-共用原始資料集中保存一次，各輪實驗引用同一份來源。照片與儀器紀錄不能靠合成資料生成程式取代；必要來源隨 GitHub 版本附件保存，日常程式倉庫保留說明、逐檔核對依據與恢復工具。
-
-| 資料 | 內容與用途 | 入口 |
+| 來源 | 內容及用途 | 取得入口 |
 |---|---|---|
-| 2026年9月3日位移重拍 | 30趟，每趟起點加30步，共930張相機原始BMP與30份原始平台位置CSV。供多輪位移、尺寸與輪廓研究共用。 | [原始資料與恢復方法](PI_Repeatability_20260903/README.md) |
+| 2026-09-03位移重拍 | 30趟，每趟起點加30步，共930張相機照片及30份平台位置紀錄 | [原拍與順序](PI_Repeatability_20260903/README.md)、[位置原表](PI_Repeatability_20260903/position_records/README.md) |
+| PSF100原拍及完整挑圖來源 | 2025-09-03原395張，其中100視野用於原擬合；與2026年位移重拍不同 | [逐張來源與原擬合對照](PSF_Camera_Acquisitions/PSF100_20250903/README.md) |
+| 0615三輪PSF取像 | 三輪各242張，共726張原拍；同位置兩張及原擬合使用方式有記錄 | [三輪原拍、處理輸入與恢復方法](PSF_Camera_Acquisitions/README.md) |
+| Lab 25位置校正 | 原25張，實拍日2026-06-05；舊路徑名稱20250605保留為歷史身分 | [原校正補件及按用途取得](../docs/reproducibility/priority_sources_20261022/README.md) |
+| Step、多倍率及其他實拍 | 既有來源與保存理由各有身分，避免和模型輸出混用 | [原來源與影像用途](../docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md) |
 
-原始資料、生成資料、模型重建輸出與後來恢復的副本分別記錄取得方式；相同檔案內容不會抹去取得來源。各輪是否完成、如何選模型、是否曾使用相關答案，仍以該輪正式報告為準。
+## 量測、人工參照與固定比較輸入
 
-Step、多倍率連拍、六組外部照片、SEM及原始工作表、固定生成來源與完整量測的保存理由及取得位置，見[研究來源與選圖說明](../docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)與[全部保存入口](../docs/reproducibility/README.md)。歷史幾何模板與固定裁切輸入另見[已凍結的比對輸入](Legacy_Frozen_QA_Inputs/README.md)，它們與相機原始拍攝分別標示。
+| 來源 | 為什麼保存 | 入口 |
+|---|---|---|
+| SEM原工作表與參照 | 尺寸／輪廓的原參照；同樣本及答案依賴須隨結果閱讀 | [SEM原件](SEM_Originals/README.md) |
+| 30份Raw邊界點 | 原量測座標，供R129／R130等比較；不是整張重建影像 | [原邊界與固定小圖](../docs/reproducibility/priority_sources_20261022/README.md) |
+| 歷史幾何與固定裁切 | 不可用今天重新裁切的結果冒充當年輸入 | [歷史固定輸入](Legacy_Frozen_QA_Inputs/README.md) |
+| 跨輪固定參照與診斷 | R32、R113／R116、R131／R132及SEM方向候選；部分來自模型輸出而非相機 | [逐項用途與取得](../docs/reproducibility/round_source_followthrough_20261022/README.md) |
+
+## 可生成的大資料
+
+訓練影像與整批重建先找[原生成程式、設定與必要來源](../docs/reproducibility/GENERATION_GUIDE.md)。R108兩套資料已有從取回程式生成相同檔案的紀錄；R61的3,400組繼承來源與歷史幾何仍需原件，不能只留亂數種子。
+
+照片、處理輸入、合成資料、模型輸出與量測座標不能互稱。各輪是否用過相關答案、是否獨立驗證，仍以原正式報告為準。

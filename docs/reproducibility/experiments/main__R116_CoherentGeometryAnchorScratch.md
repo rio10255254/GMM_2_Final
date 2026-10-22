@@ -1,5 +1,9 @@
 # main/R116_CoherentGeometryAnchorScratch 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [主R105至121：局部機制與控制](../routes/main105_121.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 沿輪廓保持位移／寬度一致並限制細節
 
 修復BF16錯誤後重新從零；E42主要、E24備選、E48未採用，GMF仍缺回傳
@@ -31,3 +35,8 @@
 本次完成保存與完整檔案內容核對，沒有重跑本輪全部歷史訓練；原成功、失敗、中止及限制照原報告保留。
 
 D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理。
+
+
+---
+
+[上一個閱讀入口：main/R115_R109DecoupledNormalProfileScratch](main__R115_R109DecoupledNormalProfileScratch.md) · [回本分區](../routes/main105_121.md) · [下一個閱讀入口：main/R117_CenterLockedSubpixelScratch](main__R117_CenterLockedSubpixelScratch.md)

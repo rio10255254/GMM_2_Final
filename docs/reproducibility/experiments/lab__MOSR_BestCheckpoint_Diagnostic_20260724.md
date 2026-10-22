@@ -1,5 +1,9 @@
 # lab/MOSR_BestCheckpoint_Diagnostic_20260724 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 檢查最佳保存模型與最後模型對位移結果的影響
 
 保留共同有效母體及缺測，不以較好的一個模型覆蓋另一版
@@ -46,3 +50,8 @@ D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理�
 ## 原表的直接閱讀說明
 
 [第10輪替換、118／120步共同母體、缺測與五方法完整結果](../lineage/LAB_BEST_CHECKPOINT_READING.md)。原資料夾當年沒有文字報告；此處補導讀，不改原manifest或CSV，也不把本輪V42診斷當成R152。
+
+
+---
+
+[上一個閱讀入口：lab/Modern_Restoration_Benchmarks_20260719](lab__Modern_Restoration_Benchmarks_20260719.md) · [回本分區](../routes/lab.md) · [下一個閱讀入口：lab/MOSR_CheckpointConfig_Diagnostic_20260724](lab__MOSR_CheckpointConfig_Diagnostic_20260724.md)

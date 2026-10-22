@@ -1,5 +1,9 @@
 # lab/BaseUNet_Baseline_20260718 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 
 2026-10-21保存補充：原30輪時程實際採用最佳第12輪，完整訓練9857／驗證1397份，使用相同固定PSF與L1+0.20*(1-SSIM)。原15輪與30輪最佳、整張與切片輸出分開；舊表的V42欄名不代表此處實際是V42模型。 [完整來源與比較脈絡](../lab_comparisons/README.md)。
 
@@ -110,3 +114,8 @@ D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理�
 ## 2026-10-22：這一輪在整條研究中的位置
 
 [按R1至R153查找](../lineage/ROUND_NUMBER_MAP.md)／[本研究線的來源、得失與後續](../lineage/LAB_SYSTEM.md)。本輪上方已改為具體必要來源；原日期的保存、失敗與執行證據保留各自範圍，不以文件數或標號連續性冒稱全部歷史已重現。
+
+
+---
+
+[回本分區](../routes/lab.md) · [下一個閱讀入口：lab/Modern_Restoration_Benchmarks_20260719](lab__Modern_Restoration_Benchmarks_20260719.md)

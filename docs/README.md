@@ -1,38 +1,42 @@
-# 文件入口
+# 文件導航
 
-第一次閱讀請從[研究閱讀與取得指南](reproducibility/GETTING_STARTED.md)開始；不知道內容屬於哪個資料夾，查[專案地圖](navigation/PROJECT_MAP.md)。研究結論只回到[目前狀態](../PROJECT_STATE.md)及各輪正式報告。
+[專案首頁](../README.md) · [完整資料夾地圖](navigation/PROJECT_MAP.md)
 
-## 文件樹
+## 研究閱讀
+
+| 想看什麼 | 入口 |
+|---|---|
+| 第一次來 | [入門路線](reproducibility/GETTING_STARTED.md) |
+| 為什麼有這些實驗 | [研究沿革](reproducibility/lineage/README.md) |
+| 某一輪做了什麼 | [按階段與輪次找實驗](reproducibility/EXPERIMENTS.md) |
+| 文獻與原方法 | [文獻指南](reproducibility/LITERATURE_GUIDE.md) |
+| 目前論文 | [R153完整比較與交接](../Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md) |
+
+## 來源與重做
+
+[共用原拍與量測](../Shared_Sources/README.md) → [按用途取得](reproducibility/ASSET_GUIDE.md) → [生成方法](reproducibility/GENERATION_GUIDE.md)。先讀該輪原說明，依用途下載，不需要整套取回。
+
+## 保存與維護
+
+| 文件類型 | 入口與界線 |
+|---|---|
+| 現在保存程度 | [目前狀態](reproducibility/STATUS.md)、[缺件影響](reproducibility/KNOWN_GAPS.md) |
+| 過去保存過程 | [保存歷史](reproducibility/project_completion/README.md)，原收據只證明當時範圍 |
+| 研究原稿及舊敘事 | [歷史文件](history/README.md)，與保存工作紀錄不同 |
+| 操作與正式來源 | [操作指南](operations/README.md)、[原件／副本規則](operations/SOURCE_OF_TRUTH_POLICY.md) |
 
 ```text
 docs/
-├── navigation/          專案地圖：資料夾角色與正式位置
-├── reproducibility/     方法、文獻、來源、每輪閱讀與按需取得
-│   ├── lineage/         R1–R153、LabSystem與歷史分支沿革
-│   ├── experiments/     各現有研究範圍的閱讀卡
-│   ├── scratch_lineage/ R89–R93方法與資料修正
-│   ├── r93_shared/      R93停止結果與五輪共用來源
-│   ├── four_rounds/     R94／95／97／98原歷程與限制
-│   ├── lab_comparisons/ Lab數學平移、V42歷史與原數表
-│   ├── legacy_multiscale/ 早期R12–R15選模及公式缺件
-│   ├── optical_calibration/ 光學原結果與頻譜來源
-│   └── project_completion/ 精選範圍與歷次保存收據
-├── analysis/            跨研究路徑總覽
-├── evidence/            論文穩定引用副本；原實驗報告優先
-├── policy/              光學等專項政策
-├── operations/          開新實驗、位置相容、容量與恢復規則
-├── history/             按原日期閱讀的研究敘事及舊版入口
-└── archive/             小型歷史快照；其中進行中狀態不是今日待辦
+├── navigation/       跨資料夾地圖
+├── reproducibility/  閱讀、文獻、來源與重做
+│   ├── routes/       9個研究閱讀分區
+│   ├── experiments/  177個閱讀範圍，連回原報告
+│   ├── lineage/      編號、方法演變與Lab分支
+│   └── project_completion/  歷次保存及原收據
+├── operations/       專案維護與操作
+├── evidence/         穩定引用副本，原實驗報告優先
+├── analysis/、policy/ 跨輪分析與專項規則
+└── history/、archive/ 歷史敘事及固定快照
 ```
 
-## 三種用途分清楚
-
-| 用途 | 看哪裡 | 如何使用 |
-|---|---|---|
-| 理解研究 | [逐輪](reproducibility/EXPERIMENTS.md)、[沿革](reproducibility/lineage/README.md)、[文獻](reproducibility/LITERATURE_GUIDE.md) | 先讀問題、方法、完整結果和失敗，再找程式 |
-| 在新位置重做所需部分 | [生成方法](reproducibility/GENERATION_GUIDE.md)、[附件選擇](reproducibility/ASSET_GUIDE.md) | 先確認原拍／人工來源與可生成資料的差別，只取必要來源 |
-| 維護與查證歷史 | [操作說明](operations/README.md)、[歷史](history/README.md)、[保存紀錄](reproducibility/project_completion/README.md) | 固定舊收據按原日期及範圍閱讀，不當成現在的工作指示 |
-
-`presentations_assets`保存簡報素材，`runtime`只留舊執行位置說明，`superpowers`內本次保存的少數設計／計畫按原身分閱讀，不能以資料夾原先被忽略推定它完全沒有Git內容。這些不是新的正式實驗區。
-
-來源相同而位置不同時，按[正式來源規則](operations/SOURCE_OF_TRUTH_POLICY.md)找原件；不要把引用副本當成第二份可各自改寫的結論。
+其餘資料夾角色查[專案地圖](navigation/PROJECT_MAP.md)。研究結論以原正式報告與[研究現況](../PROJECT_STATE.md)為準，這些入口不另改採用判決。

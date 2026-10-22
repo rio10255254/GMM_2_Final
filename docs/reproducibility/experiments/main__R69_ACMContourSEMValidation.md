@@ -1,5 +1,9 @@
 # main/R69_ACMContourSEMValidation 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [主R63至87：因果拆解、泛化與切片](../routes/main63_87.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 R61完整外形是否更接近逐顆SEM
 
 正常曝光粗外框改善，最暗兩張及細形狀退步，保留條件性結論
@@ -31,3 +35,8 @@ R61完整外形是否更接近逐顆SEM
 本次完成保存與完整檔案內容核對，沒有重跑本輪全部歷史訓練；原成功、失敗、中止及限制照原報告保留。
 
 D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理。
+
+
+---
+
+[上一個閱讀入口：main/R68_R61_RealFOVFeatureGeneralization](main__R68_R61_RealFOVFeatureGeneralization.md) · [回本分區](../routes/main63_87.md) · [下一個閱讀入口：main/R70_V42ACMContourSEMValidation](main__R70_V42ACMContourSEMValidation.md)

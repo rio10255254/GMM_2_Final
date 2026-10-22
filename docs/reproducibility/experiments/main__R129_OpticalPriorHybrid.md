@@ -1,5 +1,9 @@
 # main/R129_OpticalPriorHybrid 研究與重做紀錄
 
+[全部實驗](../EXPERIMENTS.md) · [主R122至140：真實需求與量測比較](../routes/main122_140.md) · [現在保存到哪裡](../STATUS.md)
+
+本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。
+
 恢復光學融合、抗混疊與原圖參考
 
 短測、長訓練、80／16邊緣保留及完整LSC是不同版本；尺寸代價保留
@@ -41,3 +45,8 @@ D槽副本移除遭執行工具拒絕，本輪沒有因這次整理而被清理�
 
 
 2026-10-22：[重要原表、來源證據及失敗的直接閱讀入口](../project_completion/curated/IMPORTANT_TABLES_20261022.md)保留完整原列及原模型身分，無新增訓練或推論。
+
+
+---
+
+[上一個閱讀入口：main/R128_SourceOnlyFullTraining](main__R128_SourceOnlyFullTraining.md) · [回本分區](../routes/main122_140.md) · [下一個閱讀入口：main/R130_Clean](main__R130_Clean.md)
