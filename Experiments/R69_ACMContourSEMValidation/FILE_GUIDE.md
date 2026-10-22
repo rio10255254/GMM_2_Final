@@ -1,5 +1,7 @@
 # main/R69_ACMContourSEMValidation：檔案怎麼找
 
+[指定來源對照與完整原表直接閱讀](../../docs/reproducibility/round_source_reviews/R69_20261022.md)
+
 [本輪研究卡](<../../docs/reproducibility/experiments/main__R69_ACMContourSEMValidation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
 
 **研究問題：R61完整外形是否更接近逐顆SEM。**

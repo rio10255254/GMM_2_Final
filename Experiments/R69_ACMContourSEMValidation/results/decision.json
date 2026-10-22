@@ -1,0 +1,26 @@
+{
+  "status": "conditional_pass_not_universal",
+  "primary_coarse_contour_gate": true,
+  "all_exposure_universal_gate": false,
+  "fine_shape_fidelity_gate": false,
+  "normal_exposure_range_pass": true,
+  "darkest_exposures_pass": false,
+  "acm_sensitivity_direction_consistent": {
+    "13": true,
+    "18": true,
+    "24": false
+  },
+  "sem_truth_circularity": {
+    "median": 0.962265047342308,
+    "minimum": 0.922744203936451,
+    "maximum": 0.985015855109085
+  },
+  "representatives": {
+    "representative_pillar_id": 4,
+    "representative_exposure": 18,
+    "least_circular_pillar_id": 3,
+    "median_circularity_pillar_id": 14,
+    "most_circular_pillar_id": 25
+  },
+  "recommended_claim": "R61v16 improves coarse full-contour agreement for exposures 13–22, but is not universally accurate in the two darkest exposures and does not reliably preserve fine non-circular edge detail."
+}

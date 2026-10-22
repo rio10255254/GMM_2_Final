@@ -1,5 +1,7 @@
 # main/R69_ACMContourSEMValidation 研究與重做紀錄
 
+[指定來源對照與完整原表直接閱讀](../round_source_reviews/R69_20261022.md)
+
 [直接查看這一輪的檔案分工](<../../../Experiments/R69_ACMContourSEMValidation/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [主R63至87：因果拆解、泛化與切片](../routes/main63_87.md) · [現在保存到哪裡](../STATUS.md)

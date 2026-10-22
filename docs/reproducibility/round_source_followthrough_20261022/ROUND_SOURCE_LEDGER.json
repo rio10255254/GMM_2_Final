@@ -1,6 +1,6 @@
 {
   "basis_scopes": 177,
-  "scopes_with_current_targeted_checks": 31,
+  "scopes_with_current_targeted_checks": 32,
   "fully_closed_scopes_claimed": 0,
   "rounds": [
     {
@@ -1368,9 +1368,11 @@
       "authoritative_documents": [
         "Experiments/R69_ACMContourSEMValidation/reports/R69_RESULTS_TW.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve historical shared Model import revision if evidence exists; no new inference or MATLAB contour execution was performed.",
+      "checked": "25 specified input/model/PSF/runtime files identity-mapped to existing providers; 9 SEM originals and legacy pairing script actually retrieved; 9 original numeric/decision files exposed directly. Shared runtime Model imports remain historical-version limitation.",
+      "latest_review": "docs/reproducibility/round_source_reviews/R69_20261022.md"
     },
     {
       "id": "main/R70_V42ACMContourSEMValidation",
