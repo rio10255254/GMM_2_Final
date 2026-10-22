@@ -1,5 +1,7 @@
 # lab/R50_PSFControlDiagnosis 研究與重做紀錄
 
+[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/FILE_GUIDE.md>)
+
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
 本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。

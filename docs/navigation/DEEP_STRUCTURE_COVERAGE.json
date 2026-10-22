@@ -1,0 +1,1276 @@
+{
+  "base_commit": "d41ffb4da8ae5482e1019af9f67ce68a1fa79860",
+  "original_git_files": 21621,
+  "source_audit_complete": false,
+  "experiment_scopes": 177,
+  "inner_guides": 50,
+  "standalone_packages_indexed_outside_package": 14,
+  "original_research_files_changed": 0,
+  "original_research_files_moved": 0,
+  "rounds": [
+    {
+      "id": "main/R100_CausalOperatorScratch",
+      "scope": "Experiments/R100_CausalOperatorScratch",
+      "guide": "Experiments/R100_CausalOperatorScratch/FILE_GUIDE.md",
+      "existing_git_files": 61
+    },
+    {
+      "id": "main/R100_DesignValidation",
+      "scope": "Experiments/R100_DesignValidation",
+      "guide": "Experiments/R100_DesignValidation/FILE_GUIDE.md",
+      "existing_git_files": 9
+    },
+    {
+      "id": "main/R101_HighFrequencyCausalAblation",
+      "scope": "Experiments/R101_HighFrequencyCausalAblation",
+      "guide": "Experiments/R101_HighFrequencyCausalAblation/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "main/R101_HighFrequencyDesignValidation",
+      "scope": "Experiments/R101_HighFrequencyDesignValidation",
+      "guide": "Experiments/R101_HighFrequencyDesignValidation/FILE_GUIDE.md",
+      "existing_git_files": 7
+    },
+    {
+      "id": "main/R102_UniversalDetailScratch",
+      "scope": "Experiments/R102_UniversalDetailScratch",
+      "guide": "Experiments/R102_UniversalDetailScratch/FILE_GUIDE.md",
+      "existing_git_files": 24
+    },
+    {
+      "id": "main/R103_RecoverableDetailScratch",
+      "scope": "Experiments/R103_RecoverableDetailScratch",
+      "guide": "Experiments/R103_RecoverableDetailScratch/FILE_GUIDE.md",
+      "existing_git_files": 91
+    },
+    {
+      "id": "main/R104_PhotometricInvariantCausalGateScratch",
+      "scope": "Experiments/R104_PhotometricInvariantCausalGateScratch",
+      "guide": "Experiments/R104_PhotometricInvariantCausalGateScratch/FILE_GUIDE.md",
+      "existing_git_files": 79
+    },
+    {
+      "id": "main/R105A_GeometryRendererFalsification",
+      "scope": "Experiments/R105A_GeometryRendererFalsification",
+      "guide": "Experiments/R105A_GeometryRendererFalsification/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "main/R105B_EvidenceSetReconstructionFalsification",
+      "scope": "Experiments/R105B_EvidenceSetReconstructionFalsification",
+      "guide": "Experiments/R105B_EvidenceSetReconstructionFalsification/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "main/R105C_JunHuaMultiObservationFeasibility",
+      "scope": "Experiments/R105C_JunHuaMultiObservationFeasibility",
+      "guide": "Experiments/R105C_JunHuaMultiObservationFeasibility/FILE_GUIDE.md",
+      "existing_git_files": 9
+    },
+    {
+      "id": "main/R106A_MultiObservationShortValidation",
+      "scope": "Experiments/R106A_MultiObservationShortValidation",
+      "guide": "Experiments/R106A_MultiObservationShortValidation/FILE_GUIDE.md",
+      "existing_git_files": 11
+    },
+    {
+      "id": "main/R107A_SingleImageEdgeGeometryProbe",
+      "scope": "Experiments/R107A_SingleImageEdgeGeometryProbe",
+      "guide": "Experiments/R107A_SingleImageEdgeGeometryProbe/FILE_GUIDE.md",
+      "existing_git_files": 19
+    },
+    {
+      "id": "main/R108A_LocalActionFalsification",
+      "scope": "Experiments/R108A_LocalActionFalsification",
+      "guide": "Experiments/R108A_LocalActionFalsification/FILE_GUIDE.md",
+      "existing_git_files": 21
+    },
+    {
+      "id": "main/R108B_StagedParallelOpticalExpertsMicroprobe",
+      "scope": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe",
+      "guide": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/FILE_GUIDE.md",
+      "existing_git_files": 9
+    },
+    {
+      "id": "main/R108C_IndependentOpticalSpecialistsMicroprobe",
+      "scope": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe",
+      "guide": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/FILE_GUIDE.md",
+      "existing_git_files": 53
+    },
+    {
+      "id": "main/R108D_MultiscaleNormalGeometryMicroprobe",
+      "scope": "Experiments/R108D_MultiscaleNormalGeometryMicroprobe",
+      "guide": "Experiments/R108D_MultiscaleNormalGeometryMicroprobe/FILE_GUIDE.md",
+      "existing_git_files": 8
+    },
+    {
+      "id": "main/R108E_ContourConservingProfileRendererMicroprobe",
+      "scope": "Experiments/R108E_ContourConservingProfileRendererMicroprobe",
+      "guide": "Experiments/R108E_ContourConservingProfileRendererMicroprobe/FILE_GUIDE.md",
+      "existing_git_files": 4
+    },
+    {
+      "id": "main/R108F_MonotonicProfileRendererMicroprobe",
+      "scope": "Experiments/R108F_MonotonicProfileRendererMicroprobe",
+      "guide": "Experiments/R108F_MonotonicProfileRendererMicroprobe/FILE_GUIDE.md",
+      "existing_git_files": 10
+    },
+    {
+      "id": "main/R108G_MidpointWidthFactorizedProfileMicroprobe",
+      "scope": "Experiments/R108G_MidpointWidthFactorizedProfileMicroprobe",
+      "guide": "Experiments/R108G_MidpointWidthFactorizedProfileMicroprobe/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "main/R109_StagedMidpointWidthScratch",
+      "scope": "Experiments/R109_StagedMidpointWidthScratch",
+      "guide": "Experiments/R109_StagedMidpointWidthScratch/FILE_GUIDE.md",
+      "existing_git_files": 30
+    },
+    {
+      "id": "main/R110_TimeCapacityVisibilityProbes",
+      "scope": "Experiments/R110_TimeCapacityVisibilityProbes",
+      "guide": "Experiments/R110_TimeCapacityVisibilityProbes/FILE_GUIDE.md",
+      "existing_git_files": 7
+    },
+    {
+      "id": "main/R111_R109V42ThesisReplacementQualification",
+      "scope": "Experiments/R111_R109V42ThesisReplacementQualification",
+      "guide": "Experiments/R111_R109V42ThesisReplacementQualification/FILE_GUIDE.md",
+      "existing_git_files": 29
+    },
+    {
+      "id": "main/R112_V42R109GMFMechanismDecomposition",
+      "scope": "Experiments/R112_V42R109GMFMechanismDecomposition",
+      "guide": "Experiments/R112_V42R109GMFMechanismDecomposition/FILE_GUIDE.md",
+      "existing_git_files": 11
+    },
+    {
+      "id": "main/R113_CausalStructureDissection",
+      "scope": "Experiments/R113_CausalStructureDissection",
+      "guide": "Experiments/R113_CausalStructureDissection/FILE_GUIDE.md",
+      "existing_git_files": 77
+    },
+    {
+      "id": "main/R114_ConfidenceGatedRecoverableScratch",
+      "scope": "Experiments/R114_ConfidenceGatedRecoverableScratch",
+      "guide": "Experiments/R114_ConfidenceGatedRecoverableScratch/FILE_GUIDE.md",
+      "existing_git_files": 127
+    },
+    {
+      "id": "main/R115_R109DecoupledNormalProfileScratch",
+      "scope": "Experiments/R115_R109DecoupledNormalProfileScratch",
+      "guide": "Experiments/R115_R109DecoupledNormalProfileScratch/FILE_GUIDE.md",
+      "existing_git_files": 27
+    },
+    {
+      "id": "main/R116_CoherentGeometryAnchorScratch",
+      "scope": "Experiments/R116_CoherentGeometryAnchorScratch",
+      "guide": "Experiments/R116_CoherentGeometryAnchorScratch/FILE_GUIDE.md",
+      "existing_git_files": 71
+    },
+    {
+      "id": "main/R117_CenterLockedSubpixelScratch",
+      "scope": "Experiments/R117_CenterLockedSubpixelScratch",
+      "guide": "Experiments/R117_CenterLockedSubpixelScratch/FILE_GUIDE.md",
+      "existing_git_files": 23
+    },
+    {
+      "id": "main/R118_PhysicalCoordinateRepairScratch",
+      "scope": "Experiments/R118_PhysicalCoordinateRepairScratch",
+      "guide": "docs/navigation/rounds/R118_FILE_GUIDE.md",
+      "existing_git_files": 42
+    },
+    {
+      "id": "main/R119_SequenceGeometryValidation",
+      "scope": "Experiments/R119_SequenceGeometryValidation",
+      "guide": "Experiments/R119_SequenceGeometryValidation/FILE_GUIDE.md",
+      "existing_git_files": 118
+    },
+    {
+      "id": "main/R120_PhysicalSequenceRepair",
+      "scope": "Experiments/R120_PhysicalSequenceRepair",
+      "guide": "Experiments/R120_PhysicalSequenceRepair/FILE_GUIDE.md",
+      "existing_git_files": 28
+    },
+    {
+      "id": "main/R121_BoundaryAnchorFactorial",
+      "scope": "Experiments/R121_BoundaryAnchorFactorial",
+      "guide": "Experiments/R121_BoundaryAnchorFactorial/FILE_GUIDE.md",
+      "existing_git_files": 60
+    },
+    {
+      "id": "main/R122_OperatorPrinciples",
+      "scope": "Experiments/R122_OperatorPrinciples",
+      "guide": "Experiments/R122_OperatorPrinciples/FILE_GUIDE.md",
+      "existing_git_files": 17
+    },
+    {
+      "id": "main/R123_RealFirstModelDesign",
+      "scope": "Experiments/R123_RealFirstModelDesign",
+      "guide": "Experiments/R123_RealFirstModelDesign/FILE_GUIDE.md",
+      "existing_git_files": 17
+    },
+    {
+      "id": "main/R124_RealFirstPrototype",
+      "scope": "Experiments/R124_RealFirstPrototype",
+      "guide": "Experiments/R124_RealFirstPrototype/FILE_GUIDE.md",
+      "existing_git_files": 28
+    },
+    {
+      "id": "main/R125_DataAlignedPilot",
+      "scope": "Experiments/R125_DataAlignedPilot",
+      "guide": "Experiments/R125_DataAlignedPilot/FILE_GUIDE.md",
+      "existing_git_files": 50
+    },
+    {
+      "id": "main/R126_LearnabilityPhotometry",
+      "scope": "Experiments/R126_LearnabilityPhotometry",
+      "guide": "Experiments/R126_LearnabilityPhotometry/FILE_GUIDE.md",
+      "existing_git_files": 41
+    },
+    {
+      "id": "main/R127_MeasurementPreservationRepair",
+      "scope": "Experiments/R127_MeasurementPreservationRepair",
+      "guide": "Experiments/R127_MeasurementPreservationRepair/FILE_GUIDE.md",
+      "existing_git_files": 50
+    },
+    {
+      "id": "main/R128_SourceOnlyFullTraining",
+      "scope": "Experiments/R128_SourceOnlyFullTraining",
+      "guide": "Experiments/R128_SourceOnlyFullTraining/FILE_GUIDE.md",
+      "existing_git_files": 285
+    },
+    {
+      "id": "main/R129_OpticalPriorHybrid",
+      "scope": "Experiments/R129_OpticalPriorHybrid",
+      "guide": "Experiments/R129_OpticalPriorHybrid/FILE_GUIDE.md",
+      "existing_git_files": 193
+    },
+    {
+      "id": "main/R130_Clean",
+      "scope": "Experiments/R130_Clean",
+      "guide": "Experiments/R130_Clean/FILE_GUIDE.md",
+      "existing_git_files": 122
+    },
+    {
+      "id": "main/R130_CleanV42Comparison",
+      "scope": "Experiments/R130_CleanV42Comparison",
+      "guide": "Experiments/R130_CleanV42Comparison/FILE_GUIDE.md",
+      "existing_git_files": 53
+    },
+    {
+      "id": "main/R131_RecurrentStepValidation",
+      "scope": "Experiments/R131_RecurrentStepValidation",
+      "guide": "Experiments/R131_RecurrentStepValidation/FILE_GUIDE.md",
+      "existing_git_files": 28
+    },
+    {
+      "id": "main/R132_BoundaryPolicyStudy",
+      "scope": "Experiments/R132_BoundaryPolicyStudy",
+      "guide": "Experiments/R132_BoundaryPolicyStudy/FILE_GUIDE.md",
+      "existing_git_files": 22
+    },
+    {
+      "id": "main/R133_SizeMechanismDiagnosis",
+      "scope": "Experiments/R133_SizeMechanismDiagnosis",
+      "guide": "Experiments/R133_SizeMechanismDiagnosis/FILE_GUIDE.md",
+      "existing_git_files": 25
+    },
+    {
+      "id": "main/R134_DirectStateRepair",
+      "scope": "Experiments/R134_DirectStateRepair",
+      "guide": "Experiments/R134_DirectStateRepair/FILE_GUIDE.md",
+      "existing_git_files": 124
+    },
+    {
+      "id": "main/R135_UnifiedModelComparison",
+      "scope": "Experiments/R135_UnifiedModelComparison",
+      "guide": "Experiments/R135_UnifiedModelComparison/FILE_GUIDE.md",
+      "existing_git_files": 142
+    },
+    {
+      "id": "main/R136_PIRepeatability",
+      "scope": "Experiments/R136_PIRepeatability",
+      "guide": "Experiments/R136_PIRepeatability/FILE_GUIDE.md",
+      "existing_git_files": 1104
+    },
+    {
+      "id": "main/R137_WeakPSFFeature",
+      "scope": "Experiments/R137_WeakPSFFeature",
+      "guide": "Experiments/R137_WeakPSFFeature/FILE_GUIDE.md",
+      "existing_git_files": 177
+    },
+    {
+      "id": "main/R138_V42PSF8",
+      "scope": "Experiments/R138_V42PSF8",
+      "guide": "Experiments/R138_V42PSF8/FILE_GUIDE.md",
+      "existing_git_files": 232
+    },
+    {
+      "id": "main/R139_UNetRecurrentPrototype",
+      "scope": "Experiments/R139_UNetRecurrentPrototype",
+      "guide": "Experiments/R139_UNetRecurrentPrototype/FILE_GUIDE.md",
+      "existing_git_files": 298
+    },
+    {
+      "id": "main/R140_StableUNet",
+      "scope": "Experiments/R140_StableUNet",
+      "guide": "Experiments/R140_StableUNet/FILE_GUIDE.md",
+      "existing_git_files": 346
+    },
+    {
+      "id": "main/R140v2_StableUNet",
+      "scope": "Experiments/R140v2_StableUNet",
+      "guide": "Experiments/R140v2_StableUNet/FILE_GUIDE.md",
+      "existing_git_files": 359
+    },
+    {
+      "id": "main/R141_PSF25_AdaptiveTop4_Standalone",
+      "scope": "Experiments/R141_PSF25_AdaptiveTop4_Standalone",
+      "guide": "Experiments/R141_PSF25_AdaptiveTop4_Standalone/FILE_GUIDE.md",
+      "existing_git_files": 336
+    },
+    {
+      "id": "main/R142_PSF100_AdaptiveTop8_Standalone",
+      "scope": "Experiments/R142_PSF100_AdaptiveTop8_Standalone",
+      "guide": "Experiments/R142_PSF100_AdaptiveTop8_Standalone/FILE_GUIDE.md",
+      "existing_git_files": 336
+    },
+    {
+      "id": "main/R143_PSF25_MatchedPairs",
+      "scope": "Experiments/R143_PSF25_MatchedPairs",
+      "guide": "Experiments/R143_PSF25_MatchedPairs/FILE_GUIDE.md",
+      "existing_git_files": 425
+    },
+    {
+      "id": "main/R144_Center9PSF25_MatchedPairs",
+      "scope": "Experiments/R144_Center9PSF25_MatchedPairs",
+      "guide": "Experiments/R144_Center9PSF25_MatchedPairs/FILE_GUIDE.md",
+      "existing_git_files": 462
+    },
+    {
+      "id": "main/R145_Center9PSF25_CorrectedPairs",
+      "scope": "Experiments/R145_Center9PSF25_CorrectedPairs",
+      "guide": "Experiments/R145_Center9PSF25_CorrectedPairs/FILE_GUIDE.md",
+      "existing_git_files": 482
+    },
+    {
+      "id": "main/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "scope": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs",
+      "guide": "Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/FILE_GUIDE.md",
+      "existing_git_files": 545
+    },
+    {
+      "id": "main/R147_FullResPSFConsistency",
+      "scope": "Experiments/R147_FullResPSFConsistency",
+      "guide": "Experiments/R147_FullResPSFConsistency/FILE_GUIDE.md",
+      "existing_git_files": 626
+    },
+    {
+      "id": "main/R148_MeasurementStableNativePSF",
+      "scope": "Experiments/R148_MeasurementStableNativePSF",
+      "guide": "Experiments/R148_MeasurementStableNativePSF/FILE_GUIDE.md",
+      "existing_git_files": 579
+    },
+    {
+      "id": "main/R148v2_HybridContextNativePSF",
+      "scope": "Experiments/R148v2_HybridContextNativePSF",
+      "guide": "Experiments/R148v2_HybridContextNativePSF/FILE_GUIDE.md",
+      "existing_git_files": 1423
+    },
+    {
+      "id": "main/R149_MatchedGeometryLocalBoundary",
+      "scope": "Experiments/R149_MatchedGeometryLocalBoundary",
+      "guide": "Experiments/R149_MatchedGeometryLocalBoundary/FILE_GUIDE.md",
+      "existing_git_files": 25
+    },
+    {
+      "id": "main/R150_MatchedGeometryMeanPSF",
+      "scope": "Experiments/R150_MatchedGeometryMeanPSF",
+      "guide": "Experiments/R150_MatchedGeometryMeanPSF/FILE_GUIDE.md",
+      "existing_git_files": 706
+    },
+    {
+      "id": "main/R151_R148v2_AdaptivePSFFusion",
+      "scope": "Experiments/R151_R148v2_AdaptivePSFFusion",
+      "guide": "Experiments/R151_R148v2_AdaptivePSFFusion/FILE_GUIDE.md",
+      "existing_git_files": 24
+    },
+    {
+      "id": "main/R152_R148v2_SafeAdaptivePSF",
+      "scope": "Experiments/R152_R148v2_SafeAdaptivePSF",
+      "guide": "Experiments/R152_R148v2_SafeAdaptivePSF/FILE_GUIDE.md",
+      "existing_git_files": 149
+    },
+    {
+      "id": "main/R153_MeanExternalBenchmark",
+      "scope": "Experiments/R153_MeanExternalBenchmark",
+      "guide": "Experiments/R153_MeanExternalBenchmark/FILE_GUIDE.md",
+      "existing_git_files": 299
+    },
+    {
+      "id": "main/R26NewPSFCheck",
+      "scope": "Experiments/R26NewPSFCheck",
+      "guide": "Experiments/R26NewPSFCheck/FILE_GUIDE.md",
+      "existing_git_files": 170
+    },
+    {
+      "id": "main/R32Sandbox",
+      "scope": "Experiments/R32Sandbox",
+      "guide": "Experiments/R32Sandbox/FILE_GUIDE.md",
+      "existing_git_files": 31
+    },
+    {
+      "id": "main/R33ContrastFix",
+      "scope": "Experiments/R33ContrastFix",
+      "guide": "Experiments/R33ContrastFix/FILE_GUIDE.md",
+      "existing_git_files": 38
+    },
+    {
+      "id": "main/R33RobustLoss",
+      "scope": "Experiments/R33RobustLoss",
+      "guide": "Experiments/R33RobustLoss/FILE_GUIDE.md",
+      "existing_git_files": 162
+    },
+    {
+      "id": "main/R38SeqConsistency",
+      "scope": "Experiments/R38SeqConsistency",
+      "guide": "Experiments/R38SeqConsistency/FILE_GUIDE.md",
+      "existing_git_files": 40
+    },
+    {
+      "id": "main/R38v2SeqFixed",
+      "scope": "Experiments/R38v2SeqFixed",
+      "guide": "Experiments/R38v2SeqFixed/FILE_GUIDE.md",
+      "existing_git_files": 461
+    },
+    {
+      "id": "main/R39_ShapeGeneralization",
+      "scope": "Experiments/R39_ShapeGeneralization",
+      "guide": "Experiments/R39_ShapeGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 87
+    },
+    {
+      "id": "main/R40_MicroscopyFeatureCoverage",
+      "scope": "Experiments/R40_MicroscopyFeatureCoverage",
+      "guide": "Experiments/R40_MicroscopyFeatureCoverage/FILE_GUIDE.md",
+      "existing_git_files": 34
+    },
+    {
+      "id": "main/R41_RingDistillation",
+      "scope": "Experiments/R41_RingDistillation",
+      "guide": "Experiments/R41_RingDistillation/FILE_GUIDE.md",
+      "existing_git_files": 30
+    },
+    {
+      "id": "main/R42_MicroscopyBoundaryFidelity",
+      "scope": "Experiments/R42_MicroscopyBoundaryFidelity",
+      "guide": "Experiments/R42_MicroscopyBoundaryFidelity/FILE_GUIDE.md",
+      "existing_git_files": 72
+    },
+    {
+      "id": "main/R43_CandidateUsabilityAudit",
+      "scope": "Experiments/R43_CandidateUsabilityAudit",
+      "guide": "Experiments/R43_CandidateUsabilityAudit/FILE_GUIDE.md",
+      "existing_git_files": 8
+    },
+    {
+      "id": "main/R44_UniversalBoundaryMotionFidelity",
+      "scope": "Experiments/R44_UniversalBoundaryMotionFidelity",
+      "guide": "Experiments/R44_UniversalBoundaryMotionFidelity/FILE_GUIDE.md",
+      "existing_git_files": 49
+    },
+    {
+      "id": "main/R45_FamilyBoundaryAdapter",
+      "scope": "Experiments/R45_FamilyBoundaryAdapter",
+      "guide": "Experiments/R45_FamilyBoundaryAdapter/FILE_GUIDE.md",
+      "existing_git_files": 21
+    },
+    {
+      "id": "main/R46_CornerAwareFineTune",
+      "scope": "Experiments/R46_CornerAwareFineTune",
+      "guide": "Experiments/R46_CornerAwareFineTune/FILE_GUIDE.md",
+      "existing_git_files": 22
+    },
+    {
+      "id": "main/R61_STEP_Generalization_20260623",
+      "scope": "Experiments/R61_STEP_Generalization_20260623",
+      "guide": "Experiments/R61_STEP_Generalization_20260623/FILE_GUIDE.md",
+      "existing_git_files": 9
+    },
+    {
+      "id": "main/R63_CausalBoundaryMotionAblation",
+      "scope": "Experiments/R63_CausalBoundaryMotionAblation",
+      "guide": "Experiments/R63_CausalBoundaryMotionAblation/FILE_GUIDE.md",
+      "existing_git_files": 889
+    },
+    {
+      "id": "main/R64_IsocontourDisplacementReanalysis_20260724",
+      "scope": "Experiments/R64_IsocontourDisplacementReanalysis_20260724",
+      "guide": "Experiments/R64_IsocontourDisplacementReanalysis_20260724/FILE_GUIDE.md",
+      "existing_git_files": 4
+    },
+    {
+      "id": "main/R65_V19_OldMethodFigurePackage_20260724",
+      "scope": "Experiments/R65_V19_OldMethodFigurePackage_20260724",
+      "guide": "Experiments/R65_V19_OldMethodFigurePackage_20260724/FILE_GUIDE.md",
+      "existing_git_files": 28
+    },
+    {
+      "id": "main/R66_V20_TraceabilityFigures_20260725",
+      "scope": "Experiments/R66_V20_TraceabilityFigures_20260725",
+      "guide": "Experiments/R66_V20_TraceabilityFigures_20260725/FILE_GUIDE.md",
+      "existing_git_files": 21
+    },
+    {
+      "id": "main/R67_UniversalModelGeneralization",
+      "scope": "Experiments/R67_UniversalModelGeneralization",
+      "guide": "Experiments/R67_UniversalModelGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 25
+    },
+    {
+      "id": "main/R68_R61_RealFOVFeatureGeneralization",
+      "scope": "Experiments/R68_R61_RealFOVFeatureGeneralization",
+      "guide": "Experiments/R68_R61_RealFOVFeatureGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 6
+    },
+    {
+      "id": "main/R69_ACMContourSEMValidation",
+      "scope": "Experiments/R69_ACMContourSEMValidation",
+      "guide": "Experiments/R69_ACMContourSEMValidation/FILE_GUIDE.md",
+      "existing_git_files": 18
+    },
+    {
+      "id": "main/R70_V42ACMContourSEMValidation",
+      "scope": "Experiments/R70_V42ACMContourSEMValidation",
+      "guide": "Experiments/R70_V42ACMContourSEMValidation/FILE_GUIDE.md",
+      "existing_git_files": 13
+    },
+    {
+      "id": "main/R71_R61SyntheticMicroscopyDefectGeneralization",
+      "scope": "Experiments/R71_R61SyntheticMicroscopyDefectGeneralization",
+      "guide": "Experiments/R71_R61SyntheticMicroscopyDefectGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "main/R72_R61SyntheticDefectACMContourValidation",
+      "scope": "Experiments/R72_R61SyntheticDefectACMContourValidation",
+      "guide": "Experiments/R72_R61SyntheticDefectACMContourValidation/FILE_GUIDE.md",
+      "existing_git_files": 15
+    },
+    {
+      "id": "main/R73_R61ExpandedSyntheticACMGeneralization",
+      "scope": "Experiments/R73_R61ExpandedSyntheticACMGeneralization",
+      "guide": "Experiments/R73_R61ExpandedSyntheticACMGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 16
+    },
+    {
+      "id": "main/R74_R61HardMicroscopyACMGeneralization",
+      "scope": "Experiments/R74_R61HardMicroscopyACMGeneralization",
+      "guide": "Experiments/R74_R61HardMicroscopyACMGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 17
+    },
+    {
+      "id": "main/R75_R61ArchitectureScratchGeneralization",
+      "scope": "Experiments/R75_R61ArchitectureScratchGeneralization",
+      "guide": "Experiments/R75_R61ArchitectureScratchGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 47
+    },
+    {
+      "id": "main/R75v2_R61ArchitectureScratchGeneralization",
+      "scope": "Experiments/R75v2_R61ArchitectureScratchGeneralization",
+      "guide": "Experiments/R75v2_R61ArchitectureScratchGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 44
+    },
+    {
+      "id": "main/R76_R75ACMContourSEMValidation",
+      "scope": "Experiments/R76_R75ACMContourSEMValidation",
+      "guide": "Experiments/R76_R75ACMContourSEMValidation/FILE_GUIDE.md",
+      "existing_git_files": 19
+    },
+    {
+      "id": "main/R77_R75v2ACMContourSEMValidation",
+      "scope": "Experiments/R77_R75v2ACMContourSEMValidation",
+      "guide": "Experiments/R77_R75v2ACMContourSEMValidation/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "main/R78_R75v2_BroadRealMicroscopeGeneralization",
+      "scope": "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization",
+      "guide": "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 17
+    },
+    {
+      "id": "main/R79_R75v3_DenseMicroscopyScratchGeneralization",
+      "scope": "Experiments/R79_R75v3_DenseMicroscopyScratchGeneralization",
+      "guide": "Experiments/R79_R75v3_DenseMicroscopyScratchGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 37
+    },
+    {
+      "id": "main/R80_InflectionReferenceCircleSEMValidation",
+      "scope": "Experiments/R80_InflectionReferenceCircleSEMValidation",
+      "guide": "Experiments/R80_InflectionReferenceCircleSEMValidation/FILE_GUIDE.md",
+      "existing_git_files": 17
+    },
+    {
+      "id": "main/R80_R79E23vsE100GeneralizationValidation",
+      "scope": "Experiments/R80_R79E23vsE100GeneralizationValidation",
+      "guide": "Experiments/R80_R79E23vsE100GeneralizationValidation/FILE_GUIDE.md",
+      "existing_git_files": 21
+    },
+    {
+      "id": "main/R81_MultiArchitectureReferenceCircleBenchmark",
+      "scope": "Experiments/R81_MultiArchitectureReferenceCircleBenchmark",
+      "guide": "Experiments/R81_MultiArchitectureReferenceCircleBenchmark/FILE_GUIDE.md",
+      "existing_git_files": 138
+    },
+    {
+      "id": "main/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "scope": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark",
+      "guide": "Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/FILE_GUIDE.md",
+      "existing_git_files": 18
+    },
+    {
+      "id": "main/R83_R79SevereMicroscopyStrengthening",
+      "scope": "Experiments/R83_R79SevereMicroscopyStrengthening",
+      "guide": "Experiments/R83_R79SevereMicroscopyStrengthening/FILE_GUIDE.md",
+      "existing_git_files": 75
+    },
+    {
+      "id": "main/R84_R79TileStableRootRepair",
+      "scope": "Experiments/R84_R79TileStableRootRepair",
+      "guide": "Experiments/R84_R79TileStableRootRepair/FILE_GUIDE.md",
+      "existing_git_files": 32
+    },
+    {
+      "id": "main/R85_R79SharedCanvasOpticalRepair",
+      "scope": "Experiments/R85_R79SharedCanvasOpticalRepair",
+      "guide": "Experiments/R85_R79SharedCanvasOpticalRepair/FILE_GUIDE.md",
+      "existing_git_files": 10
+    },
+    {
+      "id": "main/R86_R79BlockGroupNormRepair",
+      "scope": "Experiments/R86_R79BlockGroupNormRepair",
+      "guide": "Experiments/R86_R79BlockGroupNormRepair/FILE_GUIDE.md",
+      "existing_git_files": 6
+    },
+    {
+      "id": "main/R87_TileNativeScratchGeneralization",
+      "scope": "Experiments/R87_TileNativeScratchGeneralization",
+      "guide": "Experiments/R87_TileNativeScratchGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 27
+    },
+    {
+      "id": "main/R88_MeasurementFaithfulScratch",
+      "scope": "Experiments/R88_MeasurementFaithfulScratch",
+      "guide": "Experiments/R88_MeasurementFaithfulScratch/FILE_GUIDE.md",
+      "existing_git_files": 39
+    },
+    {
+      "id": "main/R89_MeasurementNativeScratch",
+      "scope": "Experiments/R89_MeasurementNativeScratch",
+      "guide": "Experiments/R89_MeasurementNativeScratch/FILE_GUIDE.md",
+      "existing_git_files": 31
+    },
+    {
+      "id": "main/R90_ExposureCoherentScratch",
+      "scope": "Experiments/R90_ExposureCoherentScratch",
+      "guide": "Experiments/R90_ExposureCoherentScratch/FILE_GUIDE.md",
+      "existing_git_files": 47
+    },
+    {
+      "id": "main/R91_DetailDecoupledScratch",
+      "scope": "Experiments/R91_DetailDecoupledScratch",
+      "guide": "Experiments/R91_DetailDecoupledScratch/FILE_GUIDE.md",
+      "existing_git_files": 33
+    },
+    {
+      "id": "main/R92_PhysicalTransitionBalancedScratch",
+      "scope": "Experiments/R92_PhysicalTransitionBalancedScratch",
+      "guide": "Experiments/R92_PhysicalTransitionBalancedScratch/FILE_GUIDE.md",
+      "existing_git_files": 44
+    },
+    {
+      "id": "main/R93_RecoverableDetailSeparatedScratch",
+      "scope": "Experiments/R93_RecoverableDetailSeparatedScratch",
+      "guide": "Experiments/R93_RecoverableDetailSeparatedScratch/FILE_GUIDE.md",
+      "existing_git_files": 38
+    },
+    {
+      "id": "main/R94_EvidenceConditionalScratch",
+      "scope": "Experiments/R94_EvidenceConditionalScratch",
+      "guide": "Experiments/R94_EvidenceConditionalScratch/FILE_GUIDE.md",
+      "existing_git_files": 65
+    },
+    {
+      "id": "main/R95_CounterfactualGateRepairScratch",
+      "scope": "Experiments/R95_CounterfactualGateRepairScratch",
+      "guide": "Experiments/R95_CounterfactualGateRepairScratch/FILE_GUIDE.md",
+      "existing_git_files": 60
+    },
+    {
+      "id": "main/R96_Design_Archive",
+      "scope": "Experiments/R96_Design_Archive",
+      "guide": "Experiments/R96_Design_Archive/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "main/R96_LocalizedEvidenceProtectedScratch",
+      "scope": "Experiments/R96_LocalizedEvidenceProtectedScratch",
+      "guide": "Experiments/R96_LocalizedEvidenceProtectedScratch/FILE_GUIDE.md",
+      "existing_git_files": 61
+    },
+    {
+      "id": "main/R97_DirectCausalPhaseScratch",
+      "scope": "Experiments/R97_DirectCausalPhaseScratch",
+      "guide": "Experiments/R97_DirectCausalPhaseScratch/FILE_GUIDE.md",
+      "existing_git_files": 39
+    },
+    {
+      "id": "main/R98_AggressiveTextureScratch",
+      "scope": "Experiments/R98_AggressiveTextureScratch",
+      "guide": "Experiments/R98_AggressiveTextureScratch/FILE_GUIDE.md",
+      "existing_git_files": 27
+    },
+    {
+      "id": "main/R99_GeometryTextureCoherentScratch",
+      "scope": "Experiments/R99_GeometryTextureCoherentScratch",
+      "guide": "Experiments/R99_GeometryTextureCoherentScratch/FILE_GUIDE.md",
+      "existing_git_files": 19
+    },
+    {
+      "id": "lab/BaseUNet_Baseline_20260718",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/FILE_GUIDE.md",
+      "existing_git_files": 39
+    },
+    {
+      "id": "lab/Modern_Restoration_Benchmarks_20260719",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md",
+      "existing_git_files": 370
+    },
+    {
+      "id": "lab/MOSR_BestCheckpoint_Diagnostic_20260724",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/FILE_GUIDE.md",
+      "existing_git_files": 6
+    },
+    {
+      "id": "lab/MOSR_CheckpointConfig_Diagnostic_20260724",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_CheckpointConfig_Diagnostic_20260724",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_CheckpointConfig_Diagnostic_20260724/FILE_GUIDE.md",
+      "existing_git_files": 7
+    },
+    {
+      "id": "lab/R39_ShapeGeneralization",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R39_ShapeGeneralization",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R39_ShapeGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 4
+    },
+    {
+      "id": "lab/R40_MicroscopyFeatureCoverage",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R40_MicroscopyFeatureCoverage",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R40_MicroscopyFeatureCoverage/FILE_GUIDE.md",
+      "existing_git_files": 4
+    },
+    {
+      "id": "lab/R46_CornerAwareFineTune",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/FILE_GUIDE.md",
+      "existing_git_files": 13
+    },
+    {
+      "id": "lab/R47_RealisticBoundaryGeneralization",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/FILE_GUIDE.md",
+      "existing_git_files": 15
+    },
+    {
+      "id": "lab/R48_RealCornerTransfer",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer/FILE_GUIDE.md",
+      "existing_git_files": 11
+    },
+    {
+      "id": "lab/R49_CADAnchorRealGeometry",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "lab/R50_PSFControlDiagnosis",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/FILE_GUIDE.md",
+      "existing_git_files": 5
+    },
+    {
+      "id": "lab/R51_BlurSourceProbe",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/FILE_GUIDE.md",
+      "existing_git_files": 10
+    },
+    {
+      "id": "lab/R52_CornerStabilityGuard",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/FILE_GUIDE.md",
+      "existing_git_files": 18
+    },
+    {
+      "id": "lab/R53_RealisticDatasetCalibration",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/FILE_GUIDE.md",
+      "existing_git_files": 37
+    },
+    {
+      "id": "lab/R54_GeometryRootCauseProbe",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/FILE_GUIDE.md",
+      "existing_git_files": 16
+    },
+    {
+      "id": "lab/R55_SourceStyleRealisticTraining",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R55_SourceStyleRealisticTraining",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R55_SourceStyleRealisticTraining/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "lab/R56_LabelCoreRepairTraining",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "lab/R57_GeometryConstrainedMOSR",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/FILE_GUIDE.md",
+      "existing_git_files": 11
+    },
+    {
+      "id": "lab/R58_MeasurementClosedLoopMOSR",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/FILE_GUIDE.md",
+      "existing_git_files": 8
+    },
+    {
+      "id": "lab/R59_CDClosedLoopBoundaryLayer",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer/FILE_GUIDE.md",
+      "existing_git_files": 5
+    },
+    {
+      "id": "lab/R60_SEMTruthBoundaryTraining",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/FILE_GUIDE.md",
+      "existing_git_files": 25
+    },
+    {
+      "id": "lab/R61_BoundaryGeneralizationUniversal",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md",
+      "existing_git_files": 192
+    },
+    {
+      "id": "lab/R62_TargetSampleBoost",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/FILE_GUIDE.md",
+      "existing_git_files": 157
+    },
+    {
+      "id": "lab/Subpixel_Translation_Equivariance_20260720",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/FILE_GUIDE.md",
+      "existing_git_files": 25
+    },
+    {
+      "id": "lab/V41_Standalone",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone/FILE_GUIDE.md",
+      "existing_git_files": 8
+    },
+    {
+      "id": "lab/V42_SoftLabelSNR",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md",
+      "existing_git_files": 4
+    },
+    {
+      "id": "legacy/organized_20260306",
+      "scope": "Traing_Progress/organized_20260306",
+      "guide": "Traing_Progress/organized_20260306/FILE_GUIDE.md",
+      "existing_git_files": 11
+    },
+    {
+      "id": "legacy/organized_20260307",
+      "scope": "Traing_Progress/organized_20260307",
+      "guide": "Traing_Progress/organized_20260307/FILE_GUIDE.md",
+      "existing_git_files": 25
+    },
+    {
+      "id": "legacy/organized_20260309",
+      "scope": "Traing_Progress/organized_20260309",
+      "guide": "Traing_Progress/organized_20260309/FILE_GUIDE.md",
+      "existing_git_files": 25
+    },
+    {
+      "id": "legacy/organized_20260310",
+      "scope": "Traing_Progress/organized_20260310",
+      "guide": "Traing_Progress/organized_20260310/FILE_GUIDE.md",
+      "existing_git_files": 29
+    },
+    {
+      "id": "legacy/organized_20260311",
+      "scope": "Traing_Progress/organized_20260311",
+      "guide": "Traing_Progress/organized_20260311/FILE_GUIDE.md",
+      "existing_git_files": 34
+    },
+    {
+      "id": "legacy/organized_20260312",
+      "scope": "Traing_Progress/organized_20260312",
+      "guide": "Traing_Progress/organized_20260312/FILE_GUIDE.md",
+      "existing_git_files": 11
+    },
+    {
+      "id": "legacy/round16",
+      "scope": "Traing_Progress/organized_20260313/round16",
+      "guide": "Traing_Progress/organized_20260313/round16/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "legacy/round17",
+      "scope": "Traing_Progress/organized_20260313/round17",
+      "guide": "Traing_Progress/organized_20260313/round17/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "legacy/round18",
+      "scope": "Traing_Progress/organized_20260313/round18",
+      "guide": "Traing_Progress/organized_20260313/round18/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "legacy/round19",
+      "scope": "Traing_Progress/organized_20260313/round19",
+      "guide": "Traing_Progress/organized_20260313/round19/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "legacy/branch_e",
+      "scope": "Traing_Progress/organized_20260314/branch_e",
+      "guide": "Traing_Progress/organized_20260314/branch_e/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "legacy/diagnostics",
+      "scope": "Traing_Progress/organized_20260314/diagnostics",
+      "guide": "Traing_Progress/organized_20260314/diagnostics/FILE_GUIDE.md",
+      "existing_git_files": 7
+    },
+    {
+      "id": "legacy/round20",
+      "scope": "Traing_Progress/organized_20260314/round20",
+      "guide": "Traing_Progress/organized_20260314/round20/FILE_GUIDE.md",
+      "existing_git_files": 11
+    },
+    {
+      "id": "legacy/branch_e_followup",
+      "scope": "Traing_Progress/organized_20260315/branch_e_followup",
+      "guide": "Traing_Progress/organized_20260315/branch_e_followup/FILE_GUIDE.md",
+      "existing_git_files": 15
+    },
+    {
+      "id": "legacy/estimator_formula_probe",
+      "scope": "Traing_Progress/organized_20260315/estimator_formula_probe",
+      "guide": "Traing_Progress/organized_20260315/estimator_formula_probe/FILE_GUIDE.md",
+      "existing_git_files": 9
+    },
+    {
+      "id": "legacy/pairwise_delta_probe",
+      "scope": "Traing_Progress/organized_20260315/pairwise_delta_probe",
+      "guide": "Traing_Progress/organized_20260315/pairwise_delta_probe/FILE_GUIDE.md",
+      "existing_git_files": 9
+    },
+    {
+      "id": "legacy/round21",
+      "scope": "Traing_Progress/organized_20260315/round21",
+      "guide": "Traing_Progress/organized_20260315/round21/FILE_GUIDE.md",
+      "existing_git_files": 15
+    },
+    {
+      "id": "legacy/round22",
+      "scope": "Traing_Progress/organized_20260315/round22",
+      "guide": "Traing_Progress/organized_20260315/round22/FILE_GUIDE.md",
+      "existing_git_files": 15
+    },
+    {
+      "id": "legacy/round23",
+      "scope": "Traing_Progress/organized_20260316/round23",
+      "guide": "Traing_Progress/organized_20260316/round23/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "legacy/round24",
+      "scope": "Traing_Progress/organized_20260316/round24",
+      "guide": "Traing_Progress/organized_20260316/round24/FILE_GUIDE.md",
+      "existing_git_files": 13
+    },
+    {
+      "id": "legacy/round25",
+      "scope": "Traing_Progress/organized_20260316/round25",
+      "guide": "Traing_Progress/organized_20260316/round25/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "legacy/round26",
+      "scope": "Traing_Progress/organized_20260316/round26",
+      "guide": "Traing_Progress/organized_20260316/round26/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "legacy/round27",
+      "scope": "Traing_Progress/organized_20260316/round27",
+      "guide": "Traing_Progress/organized_20260316/round27/FILE_GUIDE.md",
+      "existing_git_files": 12
+    },
+    {
+      "id": "legacy/round28",
+      "scope": "Traing_Progress/organized_20260316/round28",
+      "guide": "Traing_Progress/organized_20260316/round28/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "legacy/round29",
+      "scope": "Traing_Progress/organized_20260316/round29",
+      "guide": "Traing_Progress/organized_20260316/round29/FILE_GUIDE.md",
+      "existing_git_files": 14
+    },
+    {
+      "id": "legacy/round30",
+      "scope": "Traing_Progress/organized_20260316/round30",
+      "guide": "Traing_Progress/organized_20260316/round30/FILE_GUIDE.md",
+      "existing_git_files": 22
+    },
+    {
+      "id": "legacy/round31",
+      "scope": "Traing_Progress/organized_20260316/round31",
+      "guide": "Traing_Progress/organized_20260316/round31/FILE_GUIDE.md",
+      "existing_git_files": 26
+    },
+    {
+      "id": "legacy/round32",
+      "scope": "Traing_Progress/organized_20260316/round32",
+      "guide": "Traing_Progress/organized_20260316/round32/FILE_GUIDE.md",
+      "existing_git_files": 5
+    },
+    {
+      "id": "legacy/tta_experiment",
+      "scope": "Traing_Progress/organized_20260316/tta_experiment",
+      "guide": "Traing_Progress/organized_20260316/tta_experiment/FILE_GUIDE.md",
+      "existing_git_files": 8
+    }
+  ],
+  "inner_directories": [
+    {
+      "directory": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/results",
+      "guide": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/results/README.md"
+    },
+    {
+      "directory": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/scripts",
+      "guide": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/scripts/README.md"
+    },
+    {
+      "directory": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights",
+      "guide": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/README.md"
+    },
+    {
+      "directory": "Experiments/R129_OpticalPriorHybrid/reports",
+      "guide": "Experiments/R129_OpticalPriorHybrid/reports/README.md"
+    },
+    {
+      "directory": "Experiments/R129_OpticalPriorHybrid/results",
+      "guide": "Experiments/R129_OpticalPriorHybrid/results/CONTENTS.md"
+    },
+    {
+      "directory": "Experiments/R129_OpticalPriorHybrid/config",
+      "guide": "Experiments/R129_OpticalPriorHybrid/config/README.md"
+    },
+    {
+      "directory": "Experiments/R129_OpticalPriorHybrid/scripts",
+      "guide": "Experiments/R129_OpticalPriorHybrid/scripts/README.md"
+    },
+    {
+      "directory": "Experiments/R136_PIRepeatability/reports",
+      "guide": "Experiments/R136_PIRepeatability/reports/README.md"
+    },
+    {
+      "directory": "Experiments/R136_PIRepeatability/results",
+      "guide": "Experiments/R136_PIRepeatability/results/CONTENTS.md"
+    },
+    {
+      "directory": "Experiments/R136_PIRepeatability/config",
+      "guide": "Experiments/R136_PIRepeatability/config/README.md"
+    },
+    {
+      "directory": "Experiments/R136_PIRepeatability/scripts",
+      "guide": "Experiments/R136_PIRepeatability/scripts/README.md"
+    },
+    {
+      "directory": "Experiments/R147_FullResPSFConsistency/reports",
+      "guide": "Experiments/R147_FullResPSFConsistency/reports/README.md"
+    },
+    {
+      "directory": "Experiments/R147_FullResPSFConsistency/evaluation",
+      "guide": "Experiments/R147_FullResPSFConsistency/evaluation/README.md"
+    },
+    {
+      "directory": "Experiments/R147_FullResPSFConsistency/config",
+      "guide": "Experiments/R147_FullResPSFConsistency/config/README.md"
+    },
+    {
+      "directory": "Experiments/R147_FullResPSFConsistency/runs",
+      "guide": "Experiments/R147_FullResPSFConsistency/runs/README.md"
+    },
+    {
+      "directory": "Experiments/R147_FullResPSFConsistency/scripts",
+      "guide": "Experiments/R147_FullResPSFConsistency/scripts/README.md"
+    },
+    {
+      "directory": "Experiments/R148v2_HybridContextNativePSF/reports",
+      "guide": "Experiments/R148v2_HybridContextNativePSF/reports/README.md"
+    },
+    {
+      "directory": "Experiments/R148v2_HybridContextNativePSF/results",
+      "guide": "Experiments/R148v2_HybridContextNativePSF/results/CONTENTS.md"
+    },
+    {
+      "directory": "Experiments/R148v2_HybridContextNativePSF/data",
+      "guide": "Experiments/R148v2_HybridContextNativePSF/data/README.md"
+    },
+    {
+      "directory": "Experiments/R148v2_HybridContextNativePSF/evaluation",
+      "guide": "Experiments/R148v2_HybridContextNativePSF/evaluation/README.md"
+    },
+    {
+      "directory": "Experiments/R148v2_HybridContextNativePSF/config",
+      "guide": "Experiments/R148v2_HybridContextNativePSF/config/README.md"
+    },
+    {
+      "directory": "Experiments/R148v2_HybridContextNativePSF/scripts",
+      "guide": "Experiments/R148v2_HybridContextNativePSF/scripts/README.md"
+    },
+    {
+      "directory": "Experiments/R152_R148v2_SafeAdaptivePSF/reports",
+      "guide": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/README.md"
+    },
+    {
+      "directory": "Experiments/R152_R148v2_SafeAdaptivePSF/results",
+      "guide": "Experiments/R152_R148v2_SafeAdaptivePSF/results/README.md"
+    },
+    {
+      "directory": "Experiments/R152_R148v2_SafeAdaptivePSF/config",
+      "guide": "Experiments/R152_R148v2_SafeAdaptivePSF/config/README.md"
+    },
+    {
+      "directory": "Experiments/R152_R148v2_SafeAdaptivePSF/scripts",
+      "guide": "Experiments/R152_R148v2_SafeAdaptivePSF/scripts/README.md"
+    },
+    {
+      "directory": "Experiments/R153_MeanExternalBenchmark/reports",
+      "guide": "Experiments/R153_MeanExternalBenchmark/reports/README.md"
+    },
+    {
+      "directory": "Experiments/R153_MeanExternalBenchmark/results",
+      "guide": "Experiments/R153_MeanExternalBenchmark/results/CONTENTS.md"
+    },
+    {
+      "directory": "Experiments/R153_MeanExternalBenchmark/evaluation",
+      "guide": "Experiments/R153_MeanExternalBenchmark/evaluation/README.md"
+    },
+    {
+      "directory": "Experiments/R153_MeanExternalBenchmark/config",
+      "guide": "Experiments/R153_MeanExternalBenchmark/config/README.md"
+    },
+    {
+      "directory": "Experiments/R153_MeanExternalBenchmark/runs",
+      "guide": "Experiments/R153_MeanExternalBenchmark/runs/README.md"
+    },
+    {
+      "directory": "Experiments/R153_MeanExternalBenchmark/scripts",
+      "guide": "Experiments/R153_MeanExternalBenchmark/scripts/README.md"
+    },
+    {
+      "directory": "Experiments/R26NewPSFCheck/reports",
+      "guide": "Experiments/R26NewPSFCheck/reports/README.md"
+    },
+    {
+      "directory": "Experiments/R63_CausalBoundaryMotionAblation/reports",
+      "guide": "Experiments/R63_CausalBoundaryMotionAblation/reports/README.md"
+    },
+    {
+      "directory": "Experiments/R63_CausalBoundaryMotionAblation/results",
+      "guide": "Experiments/R63_CausalBoundaryMotionAblation/results/README.md"
+    },
+    {
+      "directory": "Experiments/R63_CausalBoundaryMotionAblation/scripts",
+      "guide": "Experiments/R63_CausalBoundaryMotionAblation/scripts/README.md"
+    },
+    {
+      "directory": "Experiments/R93_RecoverableDetailSeparatedScratch/reports",
+      "guide": "Experiments/R93_RecoverableDetailSeparatedScratch/reports/README.md"
+    },
+    {
+      "directory": "Experiments/R93_RecoverableDetailSeparatedScratch/data",
+      "guide": "Experiments/R93_RecoverableDetailSeparatedScratch/data/README.md"
+    },
+    {
+      "directory": "Experiments/R93_RecoverableDetailSeparatedScratch/config",
+      "guide": "Experiments/R93_RecoverableDetailSeparatedScratch/config/README.md"
+    },
+    {
+      "directory": "Experiments/R93_RecoverableDetailSeparatedScratch/scripts",
+      "guide": "Experiments/R93_RecoverableDetailSeparatedScratch/scripts/README.md"
+    },
+    {
+      "directory": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/README.md"
+    },
+    {
+      "directory": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/README.md"
+    },
+    {
+      "directory": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/README.md"
+    },
+    {
+      "directory": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports/README.md"
+    },
+    {
+      "directory": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/scripts",
+      "guide": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/scripts/README.md"
+    },
+    {
+      "directory": "Experiments/R63_CausalBoundaryMotionAblation/results/evaluation",
+      "guide": "Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/README.md"
+    },
+    {
+      "directory": "Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/aggregate",
+      "guide": "Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/aggregate/README.md"
+    },
+    {
+      "directory": "Experiments/R136_PIRepeatability/results/sem_corner9",
+      "guide": "Experiments/R136_PIRepeatability/results/sem_corner9/README.md"
+    },
+    {
+      "directory": "Experiments/R148v2_HybridContextNativePSF/evaluation/baseline_centers",
+      "guide": "Experiments/R148v2_HybridContextNativePSF/evaluation/baseline_centers/README.md"
+    },
+    {
+      "directory": "Experiments/R148v2_HybridContextNativePSF/data/geometry",
+      "guide": "Experiments/R148v2_HybridContextNativePSF/data/geometry/README.md"
+    }
+  ]
+}

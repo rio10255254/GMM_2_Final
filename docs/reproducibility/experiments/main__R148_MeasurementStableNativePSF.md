@@ -1,5 +1,7 @@
 # main/R148_MeasurementStableNativePSF 研究與重做紀錄
 
+[直接查看這一輪的檔案分工](<../../../Experiments/R148_MeasurementStableNativePSF/FILE_GUIDE.md>)
+
 [全部實驗](../EXPERIMENTS.md) · [主R141起：光學配對與論文比較](../routes/main141_plus.md) · [現在保存到哪裡](../STATUS.md)
 
 本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。

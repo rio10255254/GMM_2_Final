@@ -23,6 +23,7 @@ Last updated: 2026-10-22（逐輪來源接續、R32/R147模型補件與R108資�
 - [固定保存版本及最後交付收據](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)；[精選內容與界線](docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md)。完成事實以保存版本的最後實際收據為準。
 
 ### GitHub檔案與文件閱讀
+- 深層目錄新增177份各輪檔案導讀、50個複雜子區說明及14個交付包的包外目錄；[深層檔案入口](docs/navigation/DEEP_STRUCTURE.md)連回原報告、設定與實際檔案。原研究檔案及固定交付內容未改，來源查漏仍繼續。
 - GitHub入口整併為首頁、9個研究分區、177張閱讀卡與共用來源目錄；[現在保存狀態](docs/reproducibility/STATUS.md)集中最新事實，歷史收據分開閱讀。原實驗與論文位置不搬動。
 - 首頁、文件區、保存紀錄及論文證據入口重新整理；全部根層資料夾有說明。[專案地圖](docs/navigation/PROJECT_MAP.md)、[開始閱讀](docs/reproducibility/GETTING_STARTED.md)、[按用途取得附件](docs/reproducibility/ASSET_GUIDE.md)。
 - 模型自身大小與附件下載大小分清；舊版長篇說明仍在固定歷史，已撤草稿不再列當前待辦。[關鍵模型](docs/reproducibility/MODEL_GUIDE.md)、[缺件及限定查找](docs/reproducibility/KNOWN_GAPS.md)。

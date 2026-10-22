@@ -1,5 +1,7 @@
 # main/R63_CausalBoundaryMotionAblation 研究與重做紀錄
 
+[直接查看這一輪的檔案分工](<../../../Experiments/R63_CausalBoundaryMotionAblation/FILE_GUIDE.md>)
+
 [全部實驗](../EXPERIMENTS.md) · [主R63至87：因果拆解、泛化與切片](../routes/main63_87.md) · [現在保存到哪裡](../STATUS.md)
 
 本卡保留原研究與當次保存紀錄；較晚的來源補件及缺件請以[目前狀態](../STATUS.md)為準。已建立閱讀卡不代表這一輪的全部來源已查完。 **R63原32個選中模型已有31個保存，第24輪的其中一個版本仍未找回。** [缺件與舊清理紀錄](../round_source_followthrough_20261022/README.md)。

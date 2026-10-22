@@ -1,5 +1,7 @@
 # MOSR：顯微影像重建與位移量測
 
+[深入實驗、Lab與交付包的內部資料夾](<docs/navigation/DEEP_STRUCTURE.md>)
+
 這項研究比較影像重建如何改變輪廓、尺寸、位移穩定性與運算時間。影像變清楚不一定代表量測更準；成功、代價與失敗都保留在各輪原報告。
 
 **目前論文採用 R152／RAW；原正式基準仍是 COMBO。** [目前論文交接與完整比較](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)說明採用理由與限制，[研究現況](PROJECT_STATE.md)保留正式判決。

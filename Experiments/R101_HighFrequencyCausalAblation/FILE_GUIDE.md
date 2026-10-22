@@ -1,0 +1,36 @@
+# main/R101_HighFrequencyCausalAblation：檔案怎麼找
+
+[本輪研究卡](<../../docs/reproducibility/experiments/main__R101_HighFrequencyCausalAblation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+
+**研究問題：相同起點逐步加入弱邊緣及連續邊界機制。**
+
+本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+
+## 先讀原文件
+
+- [R101 high-frequency causal experiment results](<EXPERIMENT_RESULTS.md>)
+- [R101_HighFrequencyCausalAblation 研究保存清單](<MANIFEST.md>)
+- [R101 High-Frequency Causal Ablation](<README.md>)
+
+## 進入實際檔案
+
+| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
+|---|---:|---|
+| [analysis/](<analysis>) | 1檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+| [config/](<config>) | 2檔 | 實驗設定、條件與來源鎖定 |
+| [data/](<data>) | 1檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
+| [evaluation/](<evaluation>) | 2檔 | 量測介面、固定參照、設定或比較內容 |
+| [EXPERIMENT_RESULTS.md](<EXPERIMENT_RESULTS.md>) | 1檔 | R101 high-frequency causal experiment results |
+| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R101_HighFrequencyCausalAblation 研究保存清單 |
+| [model/](<model>) | 2檔 | 本輪模型程式 |
+| [README.md](<README.md>) | 1檔 | R101 High-Frequency Causal Ablation |
+| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+| [training/](<training>) | 2檔 | 訓練程式與配套 |
+
+## 必要來源與取得界線
+
+共同生成場景、共同初值與各組完整數值。
+
+[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+
+原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
