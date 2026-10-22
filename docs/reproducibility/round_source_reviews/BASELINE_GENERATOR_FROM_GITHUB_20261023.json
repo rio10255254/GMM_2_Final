@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "samples": [
+    {
+      "stage": "stage_29_micro_lines_grid",
+      "index": 0,
+      "pixels_sha256": "0a18e9bab6941e0ee5968dc8d596cb823e3cc21c1ec7d290b2063e32c1de1eaf"
+    },
+    {
+      "stage": "stage_29_micro_lines_grid",
+      "index": 79,
+      "pixels_sha256": "6bebf758f552554467561c90c07b32d42c5c1c756be2b6415e9c5de513b75f2a"
+    },
+    {
+      "stage": "stage_29_micro_lines_grid",
+      "index": 80,
+      "pixels_sha256": "965119f3fa49d2ba78dadd2613ee360e1ead7dcefcc1196a702d69d5c243538e"
+    },
+    {
+      "stage": "stage_29_micro_lines_grid",
+      "index": 99,
+      "pixels_sha256": "b84b525d5bc220115d3dd5f4915829d61ef9037938fee260722441ec46d60847"
+    },
+    {
+      "stage": "stage_30_micro_large_regions",
+      "index": 0,
+      "pixels_sha256": "374bdcba403fd69a376c81105ab5876b1a5bad9182ad2e3af889b063da3b2cf5"
+    },
+    {
+      "stage": "stage_30_micro_large_regions",
+      "index": 79,
+      "pixels_sha256": "5ab1855180024665b01fd11b2499a2007e7a1dc36c5df7dc533c51257430a68c"
+    },
+    {
+      "stage": "stage_30_micro_large_regions",
+      "index": 80,
+      "pixels_sha256": "d245719c7a710fdc2d30630c7418ffc4f06e3f683d80465604a074d776be8b7f"
+    },
+    {
+      "stage": "stage_30_micro_large_regions",
+      "index": 99,
+      "pixels_sha256": "41dfd793d660ff7b17015cb7ad119515b28547c03b48783242d57a86f3c295fb"
+    },
+    {
+      "stage": "stage_31_micro_textures",
+      "index": 0,
+      "pixels_sha256": "d42275b7784239d81617e6bd0e0e850f0a8c36e539d1ea2253b5a791b1420b79"
+    },
+    {
+      "stage": "stage_31_micro_textures",
+      "index": 79,
+      "pixels_sha256": "6886d600678a18c4e8f5d0f527d332da8f70ef17f9f4a062e46fb9287f8c0386"
+    },
+    {
+      "stage": "stage_31_micro_textures",
+      "index": 80,
+      "pixels_sha256": "3bf7b1cc0cc1e2683603555377d47ba84853047c72854dcfd3d5fe6e0fb85905"
+    },
+    {
+      "stage": "stage_31_micro_textures",
+      "index": 99,
+      "pixels_sha256": "e8fa7ac168996aaa3e84b3813be9e2ade2bb35342d16f09083f875e2a1e0beee"
+    },
+    {
+      "stage": "stage_32_micro_edge_defects",
+      "index": 0,
+      "pixels_sha256": "404525369de8eb5927fa2013d9cab11d54e2e65b99e62c0d6ae67d8bef904e6e"
+    },
+    {
+      "stage": "stage_32_micro_edge_defects",
+      "index": 79,
+      "pixels_sha256": "a856fc109cd6583e9019fe6b76c8f5a0d12b4d2aa9c1940ce9de3235586c7ff0"
+    },
+    {
+      "stage": "stage_32_micro_edge_defects",
+      "index": 80,
+      "pixels_sha256": "88c53c34cf26963ac0ae7878765ded8a7d29330c958d1533ea1c253a8c52293b"
+    },
+    {
+      "stage": "stage_32_micro_edge_defects",
+      "index": 99,
+      "pixels_sha256": "53c0730a9df2101f13f2973515a4aecf4f8326acdf49ae10d1ee4e56a2cf9787"
+    },
+    {
+      "stage": "stage_33_micro_mixed_fields",
+      "index": 0,
+      "pixels_sha256": "d3a6e37d1f4464b2233372aa5f9fe40625913976a4ffc3429aa1cdf2af2a1b78"
+    },
+    {
+      "stage": "stage_33_micro_mixed_fields",
+      "index": 79,
+      "pixels_sha256": "0d798f66800a953830bef5828a68600cea19d346e404197f120e61b86898d637"
+    },
+    {
+      "stage": "stage_33_micro_mixed_fields",
+      "index": 80,
+      "pixels_sha256": "7272e80788c5d86dab15ff0d77d16b43daff09baa11b67102366eba82619f6e1"
+    },
+    {
+      "stage": "stage_33_micro_mixed_fields",
+      "index": 99,
+      "pixels_sha256": "b45b21817bf57c3ee529615d0690985515657755c033ad4a163ada49a98326ed"
+    }
+  ],
+  "scope": "20 selected R40 clean images generated in memory from fetched fixed source; no full PSF convolution, training, or inference"
+}

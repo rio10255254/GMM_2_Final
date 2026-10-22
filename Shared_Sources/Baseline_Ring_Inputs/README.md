@@ -17,7 +17,7 @@
 
 ## 在新位置取回完整1,100組
 
-先取得最新GitHub副本，以下在該副本內執行；所有輸出用新的空位置。本機正在使用的D專案不需要執行這些命令。
+需要Python3.11以上、requests及已登入的GitHub CLI。Windows取得副本時啟用Git長路徑支援（入門指南的clone命令已包含）。先取得最新GitHub副本，以下在該副本內執行；所有輸出用新的空位置。本機正在使用的D專案不需要執行這些命令。
 
 ```powershell
 python Tools/download_research_assets.py --repo rio10255254/GMM_2_Final --tag research-baseline-fixed-sources-20261023 --output ../baseline-download --prefix Training_Data
@@ -36,3 +36,7 @@ python Tools/restore_baseline_ring_aliases.py --source-root . --destination ../b
 ## 這包沒有包含的內容
 
 stage25／26的8px序列、R39後來的形狀集及R40顯微生成集，保留生成程式、實際配方、固定PSF及原資料清單，沒有整套重傳。這次R40生成器抽查20張影像內容相同，不冒稱所有生成資料、環境與歷史訓練都已完整重跑。
+
+## 實際取回結果
+
+新包的2,000個原檔與重用來源的200個位置已實際組回，兩個資料夾各1,100檔，全部內容相同。已有相同檔案保留，不同檔案會在開始複製前停止；原工作區沒有被覆寫。[完整交付核對](DELIVERY_VERIFIED.json)。暫存依使用者要求保留，沒有清理。

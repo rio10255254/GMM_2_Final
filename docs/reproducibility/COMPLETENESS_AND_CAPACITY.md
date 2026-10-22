@@ -8,15 +8,15 @@
 
 ## 最近一次容量紀錄
 
-核對範圍：2026-10-22逐輪來源補件完成後，文件整理前。
+核對範圍：早期共用環形來源補件完成後；實際取回範圍見[交付收據](../../Shared_Sources/Baseline_Ring_Inputs/DELIVERY_VERIFIED.json)。
 
 | 類型 | 當次用量 | 怎麼讀 |
 |---|---:|---|
-| 正式版本附件 | 26個版本、250個附件，共142,729,900,657 bytes，約142.73GB | 不等於一般程式倉庫大小；只需按用途取回 |
+| 正式版本附件 | 27個版本、253個附件，共142,964,380,401 bytes，約142.96GB | 不等於一般程式倉庫大小；只需按用途取回 |
 | 未發布草稿 | 0個 | 六份舊超量草稿已處理，舊收據中的draft不是現在待辦 |
 | 程式倉庫與歷史 | 較早API快照約1.66GB | 是較早概略值，不冒充本次重新測量，也不拿它推算剩餘配額 |
 
-附件數與容量依[最新來源交付收據](round_source_followthrough_20261022/DELIVERY_VERIFIED.json)；較早倉庫數字見[原容量快照](project_completion/curated/GITHUB_CAPACITY_SNAPSHOT_20261022.json)。本次只整理文件，沒有新增大資料附件。
+附件數與容量依[最新來源交付收據](../../Shared_Sources/Baseline_Ring_Inputs/DELIVERY_VERIFIED.json)；較早倉庫數字見[原容量快照](project_completion/curated/GITHUB_CAPACITY_SNAPSHOT_20261022.json)。使用者已明確同意這次約234MB早期固定配對補件；其餘可生成大資料仍不整套上傳。
 
 ## 如何決定是否繼續放
 

@@ -12,7 +12,7 @@ Last updated: 2026-10-22（逐輪來源接續、R32/R147模型補件與R108資�
 - 論文目前採用R152／RAW，R153保存十方法各930張、8370讀值、30趟與150次效率的完整結果；兩官方後端受阻保留。
 - [原論文交接及全部限制](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。
 ### GitHub精選研究固定來源
-- R33／COMBO／R39／R40指定來源續查：13模型與535份原結果有保存；經使用者同意補存前1,000組早期固定環形配對，後100組重用既有PSF輸入。41份原表直接閱讀，四種混合模型內容核對一致。[來源與限制](docs/reproducibility/round_source_reviews/BASELINE_20261023.md)。
+- R33／COMBO／R39／R40指定來源續查：13模型與535份原結果有保存；經使用者同意補存前1,000組早期固定環形配對，後100組重用既有PSF輸入；已從GitHub完整組回1,100組且內容相同。41份原表直接閱讀，四種混合模型內容核對一致。[來源與限制](docs/reproducibility/round_source_reviews/BASELINE_20261023.md)。
 - R69指定25個原件已有保存，9張SEM與舊配對程式已取回；9份原數表／判決另提出直接閱讀。修正配對光學圖與SEM不同附件的取得說明；[原來源與重做界線](docs/reproducibility/round_source_reviews/R69_20261022.md)保留共用模組版本限制。
 - 逐輪接續：補R32選用／R147最後模型、R108B/C15個小模型與130份固定來源；全部取回核對。13輪17筆完成模型紀錄已查；R108兩套資料由取回原碼精確重生。舊534候選已分類，36範圍已有指定面向核對，但全專案尚未閉合。[逐輪帳本與本批交付](docs/reproducibility/round_source_followthrough_20261022/README.md)。
 - 2026-10-22接續補件：已定位的395份必要原件全部發布、下載及恢復；包含31個R63選用模型、25張Lab原拍、30份原邊界點、14份固定輸入與其餘295張PSF原拍。另22個共用位置不重傳；R63仍缺1個原版本，全專案查核尚未全部結束。[交付與剩餘界線](docs/reproducibility/priority_sources_20261022/README.md)。

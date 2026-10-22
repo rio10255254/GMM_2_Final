@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "fixed_source_commit": "4e79f6f385ec51c89bb9a9e2e2f0d800cf1f111c",
+  "new_original_files_downloaded_and_restored": 2000,
+  "existing_shared_alias_paths_restored": 200,
+  "existing_PSF_payload_images_restored": 95,
+  "existing_ordinary_Git_shared_files_retrieved": 6,
+  "complete_pairs": 1100,
+  "complete_input_files_exact": 2200,
+  "input_original_bytes": 689560400,
+  "actual_source_sample_sizes": [
+    {
+      "id": 6001,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "L"
+    },
+    {
+      "id": 7000,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "L"
+    },
+    {
+      "id": 7001,
+      "size": [
+        901,
+        901
+      ],
+      "mode": "L"
+    },
+    {
+      "id": 7100,
+      "size": [
+        901,
+        901
+      ],
+      "mode": "L"
+    }
+  ],
+  "idempotent_shared_restore": {
+    "status": "PASS",
+    "paths": 200,
+    "copied": 0,
+    "identical_existing_kept": 200,
+    "unique_source_files": 101,
+    "overwritten": 0
+  },
+  "different_existing_file_protected_before_writes": true,
+  "model_training_or_inference": false,
+  "temporary_files_retained_per_user": true,
+  "full_historical_training_repeated": false,
+  "all_source_chains_complete": false,
+  "release_url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-baseline-fixed-sources-20261023",
+  "release_assets": [
+    {
+      "id": 666401254,
+      "name": "BUNDLE_SUMMARY.json",
+      "size": 558,
+      "digest": "sha256:1bf940e04c2ee2091f8d9188766e9a8ec7b587bce7a82311bc9d4ffb0a4f9ba1"
+    },
+    {
+      "id": 666401260,
+      "name": "research-legacy-ring-originals-001.zip",
+      "size": 234381397,
+      "digest": "sha256:0948f5f2e2023c1978f6a1e4509aa1e0e1de928b0b66ea52bd2888014d377f9b"
+    },
+    {
+      "id": 666401252,
+      "name": "RESEARCH_ASSETS.json.gz",
+      "size": 97789,
+      "digest": "sha256:8a99147834416d88b7ab771f81f9af10ed47fcf8193319dd0c2be6902cc03a65"
+    }
+  ],
+  "source_files_actually_retrieved": 88,
+  "data_manifest_files": 6,
+  "original_result_files_newly_directly_readable": 41,
+  "models_checked_on_CPU": 13,
+  "exact_model_blends": 4,
+  "R40_generator_pixel_samples_from_GitHub": 20,
+  "source_review_scopes_with_targeted_checks": 36,
+  "hourly_automation_deleted_by_user": true,
+  "no_temporary_cleanup_per_user": true,
+  "capacity_after": {
+    "published_releases": 27,
+    "drafts": 0,
+    "assets": 253,
+    "asset_bytes": 142964380401
+  }
+}
