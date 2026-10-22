@@ -1,0 +1,64 @@
+{
+  "utc": "2026-09-16T08:44:31.756098+00:00",
+  "pid": 7956,
+  "tag": "R61",
+  "sources": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\run_model_v3.py",
+      "sha256": "11a0410232f3b4ec67518e7305d133d7d674b43c4d555e01c8587e49285bf9b8"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\adapters_v2.py",
+      "sha256": "acde579a336c8fcb7fccd6a49135a2eac0ad1bec72282c7b1ce15b2396a8dd2b"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\readout.py",
+      "sha256": "aacd74eed708b087e6c22d6fafa5f08ce758826c0983fef9a5ca7ff4a8911f3a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\sem_metrics.py",
+      "sha256": "7c3d51055b0525332c75d1f944e0af44949ea3dab41222311de6d43891d9787a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\config\\plan.json",
+      "sha256": "f3d990119e8b0cb7b060ac0e4635ee08d73d5a81c7d742e2627d0a9888339dd6"
+    }
+  ],
+  "checkpoint": {
+    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020\\weights\\best_tradeoff.pth.tar",
+    "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b"
+  },
+  "loader": {
+    "native_loader": {
+      "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\_r61_real_sample_runtime_20260702_210629\\runtime\\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+      "sha256": "3ed59e8f26fe0a1aa8afcce7e5bf51335d8e93b0d042d2e775b3a599efbcb2e7"
+    },
+    "command": [
+      "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\_r61_real_sample_runtime_20260702_210629\\runtime\\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+      "--weights",
+      "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020\\weights\\best_tradeoff.pth.tar",
+      "--input-dir",
+      "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp",
+      "--recon-root",
+      "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\results\\R61\\native_loader",
+      "--output-name",
+      "loader",
+      "--select-mode",
+      "all",
+      "--device",
+      "cuda:0",
+      "--exts",
+      ".bmp",
+      "--psf-fitted-path",
+      "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\psf_calibration\\results\\20250605_inner_circle_roi_fine_prealign_fit\\PSF_fitted_2D_FOVstack.mat",
+      "--no-psf-from-ckpt",
+      "--weak-psf-disable",
+      "--psf-deconv-reg",
+      "30.0",
+      "--psf-phys-alpha",
+      "0.0"
+    ],
+    "neural_parameter_tensors_verified": 117,
+    "alignment": 64
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "verified_utc": "2026-09-10T10:06:34.329023+00:00",
+  "task_complete": true,
+  "scope": "same120pairLSCforR128andR61plusprior-modelandexistingpairedSEMcomparison",
+  "frozen_source_files_and_prior_evidence_unchanged": true,
+  "hash_bound_records_checked": 369,
+  "native_frame_count": 159,
+  "primary_new_R128_forwards": 150,
+  "R128_worst_case_replay_forwards": 2,
+  "R61_replay_forwards": 4,
+  "all5724circlefits_and_allpair_arithmetic_verified": true,
+  "figure_visual_QA_complete": true,
+  "report_links_valid": true,
+  "policy_only_adds_current_followup": true,
+  "formal_baseline_unchanged": true,
+  "original_confirmation_not_used": true,
+  "new_training_updates": 0,
+  "production_promoted": false,
+  "report": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\reports\\R128_LSC_R61_COMPARISON.md",
+    "sha256": "5a2969e49207ba46db3fac804cf23b285c51a70777277ce8df30134c5f837f2d"
+  },
+  "verification": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\verification.json",
+    "sha256": "4bbd4c5ee0859b092a2ef1648c2ffb1f30b35f3437fc2563e0b2f29c2bec5684"
+  },
+  "worst_replay": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\worst_replay_verification.json",
+    "sha256": "95e30eac0c8cd4e70dc96e99feaf87db3dfe642add574969c30646664f1f9265"
+  },
+  "registration": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\registration.json",
+    "sha256": "faee5590bf16a8dc926d281607f498c7b50c8d41d1bf89eca52eaa368bfb4653"
+  }
+}

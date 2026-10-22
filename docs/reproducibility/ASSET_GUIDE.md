@@ -4,6 +4,8 @@
 
 ## 常用小型包
 
+只看必要原始數字，可直接取得[30份原平台紀錄](../../Shared_Sources/PI_Repeatability_20260903/position_records/README.md)、[原SEM工作表](../../Shared_Sources/SEM_Originals/README.md)與[本批重要完整原表](project_completion/curated/IMPORTANT_TABLES_20261022.md)，不需先下載大附件。
+
 | 用途 | 到對應版本選這個檔案 | 下載大小 |
 |---|---|---|
 | R93原60輪表、停止及候選選擇；純數字 | [r93-result-replay.zip](https://github.com/rio10255254/GMM_2_Final/releases/tag/r93-complete-record-20261020) | 36,022 bytes |

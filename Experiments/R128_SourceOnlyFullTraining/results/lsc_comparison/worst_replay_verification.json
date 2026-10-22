@@ -1,0 +1,35 @@
+{
+  "completed_utc": "2026-09-10T10:02:19.515886+00:00",
+  "sequence": "20x_1um",
+  "checks": [
+    {
+      "frame_index": 34,
+      "float_and_neural_arrays_bitwise_equal": true,
+      "PNG_bitwise_equal": true,
+      "reader_center_max_difference_px": 2.2737367544323206e-13,
+      "trial_record": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\worst_end_to_end_replay\\frame_0034\\run_record.json",
+        "sha256": "ba0c83168c7ff8e57517be43b10111687c7d813361b8de30ab77f8cf17ac1978"
+      }
+    },
+    {
+      "frame_index": 35,
+      "float_and_neural_arrays_bitwise_equal": true,
+      "PNG_bitwise_equal": true,
+      "reader_center_max_difference_px": 2.2737367544323206e-13,
+      "trial_record": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\worst_end_to_end_replay\\frame_0035\\run_record.json",
+        "sha256": "46dee51f61bdfd4b5da77b5e245228d3264b7e341fcdd49c1593a99ae4f33af0"
+      }
+    }
+  ],
+  "public_trial_source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\trial\\restore.py",
+    "sha256": "792529799dec0ce07f1280a65b4100e488e23988051f62d2408d4f8b866e6b9e"
+  },
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\lsc_comparison\\replay_worst.py",
+    "sha256": "9b064a28dea0ae92096885606a313dd3afcb336d19f6d4494dcfbdd0aabc9f08"
+  },
+  "passed": true
+}

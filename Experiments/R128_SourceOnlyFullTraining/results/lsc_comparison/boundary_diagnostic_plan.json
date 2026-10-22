@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-09-10T09:39:16.034831+00:00",
+  "reason": "Source-defined20xLSC windows approach the FOV edge. Separate the operational result from contributions of the existing Raw-retention guard.",
+  "primary_unchanged": true,
+  "halo": 64,
+  "transition": 16,
+  "selection_uses_only_Raw_geometry": true,
+  "population": "Same159frames/120pairs/9pillars, no exclusions. Report fully-neural subset only as source-defined diagnostic with all methods matched.",
+  "diagnostic": "Measure saved unrestricted neural outputs from the identical frozen forward pass, uint8 same rounding, same LSC reader; do not adopt this output or claim missing physical context is validated.",
+  "paired_intervention": "Samecheckpoint/forwardoutputs/frames/reader; remove only finalFOVRawguard. This diagnoses that postprocessing contribution, not training causality.",
+  "source_context": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\source_boundary_context.csv",
+    "sha256": "fa7eead7d30fa3dc0238eb672ee70a62d45b9176543340af673cd7c9426a2966"
+  },
+  "pair_context": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\source_boundary_pair_context.csv",
+    "sha256": "29a9536b2ba8bf8386852bcc8f5916c7a144afb1495880948962e98e21729d10"
+  },
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\lsc_comparison\\boundary_context.py",
+    "sha256": "6d02b966dd534e606887c67ebfca6b352a952227ef55d7fd0cbe94eb1e5ca86c"
+  },
+  "primary_plan": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\plan.json",
+    "sha256": "fdeb720f8d91cd2dcd06688200e4eb9f5286c0cefa97a1df4883030bb581ceba"
+  },
+  "summary": [
+    {
+      "sequence": "20x_0p5um",
+      "pillar_frames": 306,
+      "fully_neural": 180,
+      "fully_Raw": 27
+    },
+    {
+      "sequence": "20x_1um",
+      "pillar_frames": 360,
+      "fully_neural": 333,
+      "fully_Raw": 3
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "pillar_frames": 387,
+      "fully_neural": 387,
+      "fully_Raw": 0
+    },
+    {
+      "sequence": "50x_x_1um",
+      "pillar_frames": 378,
+      "fully_neural": 378,
+      "fully_Raw": 0
+    }
+  ]
+}

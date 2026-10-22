@@ -1,0 +1,32 @@
+{
+  "utc": "2026-09-16T08:34:32.754469+00:00",
+  "pid": 21800,
+  "tag": "V42_clean",
+  "sources": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\run_model.py",
+      "sha256": "1aeac4d7c0ca2dc61d8cf9c9b0453cc014cb9459c9272563f87a00ef01a7d406"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\adapters.py",
+      "sha256": "4358d1f5b329843059b666d364c7a3ed81e6903be166aae094447aac2a52d5e1"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\readout.py",
+      "sha256": "aacd74eed708b087e6c22d6fafa5f08ce758826c0983fef9a5ca7ff4a8911f3a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\sem_metrics.py",
+      "sha256": "7c3d51055b0525332c75d1f944e0af44949ea3dab41222311de6d43891d9787a"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\config\\plan.json",
+      "sha256": "f3d990119e8b0cb7b060ac0e4635ee08d73d5a81c7d742e2627d0a9888339dd6"
+    }
+  ],
+  "checkpoint": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\runs\\v42_clean\\checkpoints\\step04096.pth",
+    "sha256": "ecb4c09ae47ff1f03449a6f2368cb396bb6f7dc0bc6dc4cc1acc3c3d55fbc42b"
+  },
+  "loader": {}
+}

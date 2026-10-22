@@ -1,0 +1,311 @@
+{
+  "passed": true,
+  "verified_utc": "2026-09-09T15:37:42.515547+00:00",
+  "checks": {
+    "SEM_all288_rows_recomputed": true,
+    "maximum_SEM_recompute_difference": 9.93129189996722e-17,
+    "source_SEM_population_identical_across_all_models": true,
+    "reference_band_error_extrema_independently_checked": true,
+    "full_dark_image_inference_max_difference": 0.0,
+    "unguarded_inference_max_difference": 0.0,
+    "worst_motion_pair_recomputed": "50x_0p5um",
+    "recomputed_worst_motion_change_px": 0.005860166654473166,
+    "checkpoint": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\checkpoints\\step8192.pth",
+      "sha256": "9fbdffa3bebe0a37e3f7c2b09239e2e00de6b0522feb101571fcfb7a42699abf"
+    }
+  },
+  "summary": [
+    {
+      "run": "I_s1285001",
+      "arm": "I",
+      "seed": 1285001,
+      "SEM_improved": 31,
+      "SEM_worsened": 41,
+      "SEM_unmeasurable": 0,
+      "normal_improved": 31,
+      "dark_improved": 0,
+      "dark_worsened": 36,
+      "dark_inner_worsened": 16,
+      "motion_pairs_consistent": 6,
+      "maximum_motion_change_vs_Raw_px": 0.004659742930904353,
+      "generated_test_MAE": 1.528832207841333,
+      "Raw_generated_test_MAE": 4.294058381114155,
+      "generated_test_worse_parents": 9,
+      "clean_test_MAE": 0.15562642365694046,
+      "clean_test_worst_pixel_error": 40.25886535644531,
+      "dev_worst_parent_MAE": 30.86338233947754,
+      "SEM_groups": {
+        "13_all_readout_pixels_fully_neural": {
+          "objects": 16,
+          "directions": {
+            "improves": 16
+          },
+          "median_half_level_radius_change_px": -0.100968115261093
+        },
+        "13_includes_boundary_retention": {
+          "objects": 20,
+          "directions": {
+            "improves": 15,
+            "worsens": 5
+          },
+          "median_half_level_radius_change_px": 0.0
+        },
+        "24_all_readout_pixels_fully_neural": {
+          "objects": 16,
+          "directions": {
+            "worsens": 16
+          },
+          "median_half_level_radius_change_px": 0.17000352859216145
+        },
+        "24_includes_boundary_retention": {
+          "objects": 20,
+          "directions": {
+            "worsens": 20
+          },
+          "median_half_level_radius_change_px": 0.0
+        }
+      }
+    },
+    {
+      "run": "P_s1285001",
+      "arm": "P",
+      "seed": 1285001,
+      "SEM_improved": 30,
+      "SEM_worsened": 37,
+      "SEM_unmeasurable": 5,
+      "normal_improved": 29,
+      "dark_improved": 1,
+      "dark_worsened": 35,
+      "dark_inner_worsened": 16,
+      "motion_pairs_consistent": 6,
+      "maximum_motion_change_vs_Raw_px": 0.0058564286283369375,
+      "generated_test_MAE": 1.5679206138302106,
+      "Raw_generated_test_MAE": 4.294058381114155,
+      "generated_test_worse_parents": 9,
+      "clean_test_MAE": 0.17802905042966208,
+      "clean_test_worst_pixel_error": 45.512874603271484,
+      "dev_worst_parent_MAE": 31.029315948486328,
+      "SEM_groups": {
+        "13_all_readout_pixels_fully_neural": {
+          "objects": 16,
+          "directions": {
+            "improves": 12,
+            "unmeasurable": 4
+          },
+          "median_half_level_radius_change_px": -0.08904151288461115
+        },
+        "13_includes_boundary_retention": {
+          "objects": 20,
+          "directions": {
+            "improves": 17,
+            "worsens": 2,
+            "unmeasurable": 1
+          },
+          "median_half_level_radius_change_px": 0.0
+        },
+        "24_all_readout_pixels_fully_neural": {
+          "objects": 16,
+          "directions": {
+            "worsens": 16
+          },
+          "median_half_level_radius_change_px": 0.1395974904196606
+        },
+        "24_includes_boundary_retention": {
+          "objects": 20,
+          "directions": {
+            "worsens": 19,
+            "improves": 1
+          },
+          "median_half_level_radius_change_px": 0.0
+        }
+      }
+    },
+    {
+      "run": "I_s1285002",
+      "arm": "I",
+      "seed": 1285002,
+      "SEM_improved": 40,
+      "SEM_worsened": 31,
+      "SEM_unmeasurable": 1,
+      "normal_improved": 34,
+      "dark_improved": 6,
+      "dark_worsened": 30,
+      "dark_inner_worsened": 16,
+      "motion_pairs_consistent": 6,
+      "maximum_motion_change_vs_Raw_px": 0.005946402717075336,
+      "generated_test_MAE": 1.6176384642894845,
+      "Raw_generated_test_MAE": 4.294058381114155,
+      "generated_test_worse_parents": 9,
+      "clean_test_MAE": 0.15858968098958334,
+      "clean_test_worst_pixel_error": 51.132728576660156,
+      "dev_worst_parent_MAE": 29.61904525756836,
+      "SEM_groups": {
+        "13_all_readout_pixels_fully_neural": {
+          "objects": 16,
+          "directions": {
+            "improves": 15,
+            "unmeasurable": 1
+          },
+          "median_half_level_radius_change_px": -0.0715915836133262
+        },
+        "13_includes_boundary_retention": {
+          "objects": 20,
+          "directions": {
+            "improves": 19,
+            "worsens": 1
+          },
+          "median_half_level_radius_change_px": 0.0
+        },
+        "24_all_readout_pixels_fully_neural": {
+          "objects": 16,
+          "directions": {
+            "worsens": 16
+          },
+          "median_half_level_radius_change_px": 0.06717899168890534
+        },
+        "24_includes_boundary_retention": {
+          "objects": 20,
+          "directions": {
+            "worsens": 14,
+            "improves": 6
+          },
+          "median_half_level_radius_change_px": 0.0
+        }
+      }
+    },
+    {
+      "run": "P_s1285002",
+      "arm": "P",
+      "seed": 1285002,
+      "SEM_improved": 43,
+      "SEM_worsened": 29,
+      "SEM_unmeasurable": 0,
+      "normal_improved": 36,
+      "dark_improved": 7,
+      "dark_worsened": 29,
+      "dark_inner_worsened": 16,
+      "motion_pairs_consistent": 6,
+      "maximum_motion_change_vs_Raw_px": 0.005860166654473166,
+      "generated_test_MAE": 1.5439704007585533,
+      "Raw_generated_test_MAE": 4.294058381114155,
+      "generated_test_worse_parents": 8,
+      "clean_test_MAE": 0.16779826333125433,
+      "clean_test_worst_pixel_error": 45.440216064453125,
+      "dev_worst_parent_MAE": 30.17214012145996,
+      "SEM_groups": {
+        "13_all_readout_pixels_fully_neural": {
+          "objects": 16,
+          "directions": {
+            "improves": 16
+          },
+          "median_half_level_radius_change_px": -0.13298109031884486
+        },
+        "13_includes_boundary_retention": {
+          "objects": 20,
+          "directions": {
+            "improves": 20
+          },
+          "median_half_level_radius_change_px": 0.0
+        },
+        "24_all_readout_pixels_fully_neural": {
+          "objects": 16,
+          "directions": {
+            "worsens": 16
+          },
+          "median_half_level_radius_change_px": 0.07457869175476435
+        },
+        "24_includes_boundary_retention": {
+          "objects": 20,
+          "directions": {
+            "worsens": 13,
+            "improves": 7
+          },
+          "median_half_level_radius_change_px": 0.0
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285001\\evaluations\\real_step8192\\full_images\\sem_optical_exposure13\\output_float.npz",
+      "sha256": "5b1f634142b518eaff2a01b0d23957f2bc66d1d1b6db2a2c1bee96658d5e14fc"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+      "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88",
+      "bytes": 677582
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285001\\evaluations\\real_step8192\\full_images\\sem_optical_exposure24\\output_float.npz",
+      "sha256": "88fd61d3e5a1d45bca40551ecaf226a8b9185ad00afba6987b005bddf0e42e70"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\24.bmp",
+      "sha256": "f511c567e57a519877b13d64f4ea22b4c0c55b0fd9554ca75389ccd14cfae6a6",
+      "bytes": 677582
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285001\\evaluations\\real_step8192\\full_images\\sem_optical_exposure13\\output_float.npz",
+      "sha256": "de66ae68d27094a6b282deaa4d7faba583d25d9bd4a236b3468c6bbe118d3eb0"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+      "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88",
+      "bytes": 677582
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285001\\evaluations\\real_step8192\\full_images\\sem_optical_exposure24\\output_float.npz",
+      "sha256": "15f84cd7e2112ed04fa37f3bade70022d332c84d883295af15df69bfd0cae48c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\24.bmp",
+      "sha256": "f511c567e57a519877b13d64f4ea22b4c0c55b0fd9554ca75389ccd14cfae6a6",
+      "bytes": 677582
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285002\\evaluations\\real_step8192\\full_images\\sem_optical_exposure13\\output_float.npz",
+      "sha256": "c1e4a071ebd66f17f2bbdc6a4a02c815b7d9bd1ef19dd841bee98ef4a80753e0"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+      "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88",
+      "bytes": 677582
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285002\\evaluations\\real_step8192\\full_images\\sem_optical_exposure24\\output_float.npz",
+      "sha256": "01813262dfb60be88af30b21d70efe85b6312aa56f545aa1b527f846027bb715"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\24.bmp",
+      "sha256": "f511c567e57a519877b13d64f4ea22b4c0c55b0fd9554ca75389ccd14cfae6a6",
+      "bytes": 677582
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\evaluations\\real_step8192\\full_images\\sem_optical_exposure13\\output_float.npz",
+      "sha256": "96c9f044526a2fe5857f2aa671a281931c473f74a01fa06e97597c7ecde0529c"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+      "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88",
+      "bytes": 677582
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\evaluations\\real_step8192\\full_images\\sem_optical_exposure24\\output_float.npz",
+      "sha256": "6a63b2c19cd9806a3aee3209af072c4cafb099100606366b4308025c38811e31"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\24.bmp",
+      "sha256": "f511c567e57a519877b13d64f4ea22b4c0c55b0fd9554ca75389ccd14cfae6a6",
+      "bytes": 677582
+    }
+  ],
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\final_review\\compare_results.py",
+    "sha256": "7098d0ef49ff5d0300b3f2df20fcb802673b50300c568c21ea5743187fcee969"
+  },
+  "selection": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\final_review\\selection.json",
+    "sha256": "9dde6b2c1b4ccce83a9a65f415b9465be3a40fddc1fbbf4dcf409d1849e3b067"
+  }
+}

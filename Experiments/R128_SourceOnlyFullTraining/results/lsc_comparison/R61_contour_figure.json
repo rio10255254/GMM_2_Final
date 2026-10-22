@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-09-10T09:47:18.193908+00:00",
+  "cases": [
+    {
+      "exposure": 13,
+      "pillar": 16,
+      "role": "先前展示的同一顆柱體",
+      "R61_boundary_px": 0.625198,
+      "R128_boundary_px": 0.5263406
+    },
+    {
+      "exposure": 13,
+      "pillar": 1,
+      "role": "本次 R128 相對 R61 最不利的案例",
+      "R61_boundary_px": 0.5648671,
+      "R128_boundary_px": 0.7478489
+    }
+  ],
+  "reference": "historical",
+  "scope": "same36pillars x3normalimages; select worst by candidate-minus-R61meanboundary, no exclusions",
+  "figure": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\reports\\figures\\R61_R128_SEM_comparison.png",
+    "sha256": "25c761df24b17da1294bd0f34ecf5a402f53e2a8e9498a9fe025c2eeaf0ed44d"
+  },
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\lsc_comparison\\plot_r61_contour.py",
+    "sha256": "8956904c31b2d3fdc0fa974ad89b7a15a4952837381470455731ebd644fa5565"
+  },
+  "measurements": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\competitive_review\\measurements.csv",
+    "sha256": "655820773a98dd15111b64a8719be134fb563d229567b26411211c285a6332d1"
+  }
+}

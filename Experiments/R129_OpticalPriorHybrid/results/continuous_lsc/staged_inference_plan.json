@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-09-13T12:49:19.056699+00:00",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\verify_sequence_inference.py",
+    "sha256": "4550e2370086db24e4916e5eb2a530bb060de0ae6105dda1eddd9100c36c28a8"
+  },
+  "implementation": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\sequence_inference.py",
+    "sha256": "d4024d3ae21cb64a093c7d8f752d04c98c196e2011b792228ef0aa8b5d9c061b"
+  },
+  "reason": "Direct full field failed in depthwise operator32bit index limit; original failure retained",
+  "native_core": 512,
+  "native_halo": 16,
+  "prior_support_upper_bound_feature_pixels": 22,
+  "halo_feature_pixels": 32,
+  "global_operations": [
+    "optics",
+    "native statistics/features",
+    "state updates",
+    "Raw output anchor",
+    "quality score",
+    "FOV guard"
+  ],
+  "tests": "Known full forward on three real SEM fields plus random odd-sized image; full-field split/core consistency",
+  "acceptance": {
+    "float_max_abs": 1e-06,
+    "real_saved_png_max_gray_difference": 1
+  },
+  "no_model_weight_change": true
+}

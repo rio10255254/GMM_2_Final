@@ -1,0 +1,66 @@
+{
+  "rows": [
+    {
+      "sequence": "50x_x_0p5um",
+      "cudnn_allow_tf32": false,
+      "historical_equal": false,
+      "different_pixels": 5248,
+      "max_gray": 1.0
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "cudnn_allow_tf32": true,
+      "historical_equal": false,
+      "different_pixels": 80,
+      "max_gray": 1.0
+    },
+    {
+      "sequence": "50x_x_1um",
+      "cudnn_allow_tf32": false,
+      "historical_equal": false,
+      "different_pixels": 5234,
+      "max_gray": 1.0
+    },
+    {
+      "sequence": "50x_x_1um",
+      "cudnn_allow_tf32": true,
+      "historical_equal": false,
+      "different_pixels": 79,
+      "max_gray": 1.0
+    },
+    {
+      "sequence": "20x_0p5um",
+      "cudnn_allow_tf32": false,
+      "historical_equal": false,
+      "different_pixels": 7323,
+      "max_gray": 1.0
+    },
+    {
+      "sequence": "20x_0p5um",
+      "cudnn_allow_tf32": true,
+      "historical_equal": false,
+      "different_pixels": 99,
+      "max_gray": 1.0
+    },
+    {
+      "sequence": "20x_1um",
+      "cudnn_allow_tf32": false,
+      "historical_equal": false,
+      "different_pixels": 7492,
+      "max_gray": 1.0
+    },
+    {
+      "sequence": "20x_1um",
+      "cudnn_allow_tf32": true,
+      "historical_equal": false,
+      "different_pixels": 97,
+      "max_gray": 1.0
+    }
+  ],
+  "comparison_remains_strict_FP32": true,
+  "no_existing_record_modified": true,
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\check_legacy_arithmetic.py",
+    "sha256": "49de96f7af6b2d2e0d989ed9eaae7732953b0f03015fc69e19b918edf19822a9"
+  }
+}

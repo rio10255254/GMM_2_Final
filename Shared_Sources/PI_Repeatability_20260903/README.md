@@ -21,6 +21,8 @@ python Tools/restore_pi_acquisition.py --archive downloads/20260902_100MF_uncert
 
 ## 保存與使用紀錄
 
+2026-10-22另提供[30份原始平台CSV的只讀閱讀位置](position_records/README.md)，共105,946 bytes；原件內容與拍攝清單相同，方便只查位置、時間與曝光而不用先下載照片。`raw/`的正式完整恢復及原始ZIP保持原用途。
+
 - [原件逐檔核對清單](ORIGINAL_ACQUISITION_MANIFEST.json)記錄930張照片與30份原始平台CSV。
 - [當時凍結的拍攝清單](original_frozen_capture_plan.json)保留舊路徑與原檔身分；原下載資料夾當時已不存在；本次核對後建立了指向保護工作來源的新入口，不能把新入口當成原來仍留在C槽的舊原件。
 - [可改位置使用的拍攝清單](portable_capture_plan.json)使用資料夾內的相對位置。

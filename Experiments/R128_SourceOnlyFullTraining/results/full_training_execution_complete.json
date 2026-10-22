@@ -1,0 +1,90 @@
+{
+  "round": "R128",
+  "status": "complete",
+  "active": false,
+  "pid": 10184,
+  "current_run": null,
+  "planned_runs": 4,
+  "planned_updates_per_run": 8192,
+  "planned_total_updates": 32768,
+  "completed_full_training_updates": 32768,
+  "completed_runs": 4,
+  "runs": [
+    {
+      "run": "I_s1285001",
+      "arm": "I",
+      "seed": 1285001,
+      "status": "complete",
+      "pid": 50080,
+      "completed_updates": 8192,
+      "planned_updates": 8192,
+      "unique_updates_definition": "Current exact checkpoint continuation; replayed calls are retained separately",
+      "latest_checkpoint": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285001\\checkpoints\\step8192.pth",
+        "sha256": "d1705e30017a9665f870090a7027f4328ad624807d222e516ef77adfe8e9febd"
+      },
+      "seconds_this_attempt": 10030.977398699615,
+      "updated_utc": "2026-09-09T00:45:57.560035+00:00",
+      "model_promoted": false
+    },
+    {
+      "run": "P_s1285001",
+      "arm": "P",
+      "seed": 1285001,
+      "status": "complete",
+      "pid": 30636,
+      "completed_updates": 8192,
+      "planned_updates": 8192,
+      "unique_updates_definition": "Current exact checkpoint continuation; replayed calls are retained separately",
+      "latest_checkpoint": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285001\\checkpoints\\step8192.pth",
+        "sha256": "3c671c63f6868f9bfb0ae506e15dc660dc8fd58feaf36596dbaa3422e48f8a49"
+      },
+      "seconds_this_attempt": 12184.036265600007,
+      "updated_utc": "2026-09-09T04:09:09.271218+00:00",
+      "model_promoted": false
+    },
+    {
+      "run": "I_s1285002",
+      "arm": "I",
+      "seed": 1285002,
+      "status": "complete",
+      "pid": 37312,
+      "completed_updates": 8192,
+      "planned_updates": 8192,
+      "unique_updates_definition": "Current exact checkpoint continuation; replayed calls are retained separately",
+      "latest_checkpoint": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285002\\checkpoints\\step8192.pth",
+        "sha256": "86ac7948a5e92e1ba81633abcdf0ec4d23b7e61457c8968b65433dd4302fad44"
+      },
+      "seconds_this_attempt": 4483.256713399664,
+      "updated_utc": "2026-09-09T10:27:17.349526+00:00",
+      "model_promoted": false
+    },
+    {
+      "run": "P_s1285002",
+      "arm": "P",
+      "seed": 1285002,
+      "status": "complete",
+      "pid": 31264,
+      "completed_updates": 8192,
+      "planned_updates": 8192,
+      "unique_updates_definition": "Current exact checkpoint continuation; replayed calls are retained separately",
+      "latest_checkpoint": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\checkpoints\\step8192.pth",
+        "sha256": "9fbdffa3bebe0a37e3f7c2b09239e2e00de6b0522feb101571fcfb7a42699abf"
+      },
+      "seconds_this_attempt": 12486.962242399808,
+      "updated_utc": "2026-09-09T13:55:32.813729+00:00",
+      "model_promoted": false
+    }
+  ],
+  "updated_utc": "2026-09-09T13:55:38.383074+00:00",
+  "recovery_manifest": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\recovery\\20260909_progress_io_v1\\recovery_manifest.json",
+    "sha256": "532f34a71f86f41104d17f1ff2c2ade31fab8a3e255075e8b0990b9977748c8d"
+  },
+  "model_promoted": false,
+  "real_calibration_qualified": false,
+  "scientific_effectiveness_requires_result_review": true
+}

@@ -1,0 +1,3226 @@
+{
+  "completed_utc": "2026-09-10T09:35:59.475864+00:00",
+  "method": "R61v16_PSFOFF",
+  "frames": 159,
+  "center_rows": 1431,
+  "pair_rows": 120,
+  "pillar_pair_rows": 1080,
+  "repeat_checks": [
+    {
+      "sequence": "50x_x_0p5um",
+      "max_repeat_difference_px": 0.0
+    },
+    {
+      "sequence": "50x_x_1um",
+      "max_repeat_difference_px": 0.0
+    },
+    {
+      "sequence": "20x_0p5um",
+      "max_repeat_difference_px": 0.0
+    },
+    {
+      "sequence": "20x_1um",
+      "max_repeat_difference_px": 0.0
+    }
+  ],
+  "Raw_historical_parity_max": {},
+  "records": [
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 0,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+        "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0000.bmp",
+        "sha256": "627a9e4610c36c5ad7af19e0e86a51c8df426a66d11e7718711c9ce0c6edb66d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0000\\centers.csv",
+        "sha256": "30fc610015211fa9bbca29f2103fabc8e2695488b6789707532cfa57c27c93cd"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0000\\boundaries.npz",
+        "sha256": "496f94a18a32dc7f320e18147e19da26ad55defe68b1644cc4d7f759ba9d2a5c"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 1,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0001.bmp",
+        "sha256": "50e80951df01f69f26c589556e4ae3a16dee058b0a8a6cb18e3a1883cbd9f5a2"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0001.bmp",
+        "sha256": "0ea92a922589662e7bdfb63d2c94ab7cac8bcaa184afb1d8d73be252a4ee947f"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0001\\centers.csv",
+        "sha256": "ca5a1980b88f08560c33b02577e431bec83980e7a3864a910b85468bf4e52320"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0001\\boundaries.npz",
+        "sha256": "831c93f2b745cf41ee469ab18389755ce043ebab961798c5b8912f4a30bd2731"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 2,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0002.bmp",
+        "sha256": "70cae2d8240199ca8434f020d200495ca66b0aa4880bf1e7e80d7c5ff0f89d6f"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0002.bmp",
+        "sha256": "67100e2d3af5d28e385c5762735679b947a3e2d9d16ceb1445484d12d949c378"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0002\\centers.csv",
+        "sha256": "6521710164bd0e700f1cfc717b1cf1448615353378bf65e1e2d847d27c61a3ee"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0002\\boundaries.npz",
+        "sha256": "cf8b976a52867ce95f372caef11cc94e771cb74d4cfbbd0dfcb790668b1fc2cf"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 3,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0003.bmp",
+        "sha256": "f694c18b825ba98974a2b09e437c25a47d5a26e2dac1bb253b9325f0655f5dc8"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0003.bmp",
+        "sha256": "18afd0164e6b6bd7793ad610aa66998a04e0ad886106e47c1b8f17ba312262e4"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0003\\centers.csv",
+        "sha256": "781dd9a1001a42298e46101cbff03e925c22778227158d04132552119f7e1c7f"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0003\\boundaries.npz",
+        "sha256": "815f50f0eff3bd5b5cbe6c830e94cccb06900f6d29a48ad3794b72b0e3749512"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0004.bmp",
+        "sha256": "d040f4f32c0c4a60b8e182384ad0d5e5663880754a59eca11b3c9d96995112a1"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0004.bmp",
+        "sha256": "2858cb38285cc87cf5e355a113ac758ae73c3f7e53cc3b08390b2fff6b057ac8"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0004\\centers.csv",
+        "sha256": "a4c3684cee25656ded4be7048bfa70b5f53382b040b71bb2144bffb02389da51"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0004\\boundaries.npz",
+        "sha256": "01c8dc573670ce4d50ed5821f5f3aa74105e256f6c1e7c5dba1b1d77962fdb69"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 5,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0005.bmp",
+        "sha256": "515f6d63df79c9c2b6d857662fbb65dc81d9e35754491abcc350a850d4bc9c2c"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0005.bmp",
+        "sha256": "69c0d49669902a93ee91accc45a41a15fbece1134002255649d793d70d30a6d5"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0005\\centers.csv",
+        "sha256": "14053d8bdff5cbe5e0a3fe2516aebbb97368a0662f1ac544fe7d441d0e255c71"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0005\\boundaries.npz",
+        "sha256": "1525e8d268c2b406f6f752514bc7f508b4700b92f124f0f853968a2373300129"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 6,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0006.bmp",
+        "sha256": "3892988cde2cf5d7cb78c90a948bb3dc350497a67b41434f1deb8b2d716a0391"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0006.bmp",
+        "sha256": "129b6318a1391f5a67cadfe5bbc42487a65ba7015c0fe94353316fc441d95d48"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0006\\centers.csv",
+        "sha256": "e9db8bce9b5fadba3fc772da386f98cce06bcb759e6435ae653863e11f35b06e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0006\\boundaries.npz",
+        "sha256": "e1ae641a5b1734c2f72243f3d8d2ef3b44dea20dc92a03f090063ca11fe9db8e"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 7,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0007.bmp",
+        "sha256": "16c56da4663aff7f2329f4a0db119acffabbf9d01e4b7bfe90e6ca251ccc4e08"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0007.bmp",
+        "sha256": "d08d86ce09a1fc3fc30bda81f082db2215b95a2eb01079c7f89104c415f3a2e9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0007\\centers.csv",
+        "sha256": "92a9b1e75c1f4894e102b0b645dda13475a1f05ea6955d9b9e651dcb4fd04652"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0007\\boundaries.npz",
+        "sha256": "4f223c591fb67757e115378bf25c82d224231380d60ab96494a54137ae48be6c"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 8,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0008.bmp",
+        "sha256": "2fbea7fa7f5b57b37ac0c82752d973d4e06e9e1f018e003378a59cd7a058cb1e"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0008.bmp",
+        "sha256": "5f63dda55d4b396f5fc411c9ccfbba98084a799e25c3660f2b19167aec971a47"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0008\\centers.csv",
+        "sha256": "41a52c59a362533d767b0f7a080f06927c2fcbbc42c035913ec2d687c0a422ff"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0008\\boundaries.npz",
+        "sha256": "ed62f478ee74902855b685c071df1edc81e1350340681ea5cb05240746232ec2"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 9,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0009.bmp",
+        "sha256": "98bd9e2af1dd923d25435f41672215ba81ff96e02b2dd60731f61658bf44c7d9"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0009.bmp",
+        "sha256": "843048c4481425afdf33532dca0ab4c8361fed10bd7e6472202ee80465d51071"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0009\\centers.csv",
+        "sha256": "0411fb77589482715ee48e704a3183162536182ffbf101344abee9e6c2c23ce7"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0009\\boundaries.npz",
+        "sha256": "e18deddc80c3a2f8cb501af57d7804a1472c8e7a9ecae9aa433a3c2486762ed9"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 10,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0010.bmp",
+        "sha256": "696c20220d5b7572f35e249efde6afcb3afb14419ea2ff5eb9e63a06b09a26ae"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0010.bmp",
+        "sha256": "3a9e34b9815277ffc38a785090799ddf248df5389eaf194dee5c5292f8486588"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0010\\centers.csv",
+        "sha256": "2ba1c75370b91822cac3f3fb0ba180148724648aed23d29bbccec7127b761118"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0010\\boundaries.npz",
+        "sha256": "417d561ffaab853cd6bb2578ac15066b29971b57072bf29afe814693f2a0698d"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0014.bmp",
+        "sha256": "03f4ab6bf763cc3f932647b12354b304122b16ebce958d91f90e8639545dc00f"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0014.bmp",
+        "sha256": "ba1b75bcf3400f46ebf73c373eb948ad2cef7853fa6a4a5ae764f094b38624bf"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0014\\centers.csv",
+        "sha256": "cc9397ad988f33290fc942b05dce612d8c668379b3f9f371fb46e837d2370d97"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0014\\boundaries.npz",
+        "sha256": "68bb9c236e205c45963d6ed9c73d2a1896e4b0964883ef2cd18d3f71a95fdb94"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 15,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0015.bmp",
+        "sha256": "b2ff2e8f416b8c7305f6e7795f2e175268ab3aa431059ad69684c915c88445e6"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0015.bmp",
+        "sha256": "265b162a807cf85c8f50b264c21409e0baeed7122826459e248cd02fd811bf4d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0015\\centers.csv",
+        "sha256": "46b8bfe729d5782ebd5f7806032d00f64f35afcebefde1a2c859b58687452303"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0015\\boundaries.npz",
+        "sha256": "40a0c8b54b42e0dbc12ecda9fe8c22bc3064c4bcbe8c52685be47e4022a3835a"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 16,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0016.bmp",
+        "sha256": "ff3a816e6523790af53cee982713e5f3a0d36a3c863d576f59b6ed67361ce468"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0016.bmp",
+        "sha256": "1b7df67f174b700684c1a2fd0136828bca8ad7c690fee830df7d3dc9731092d1"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0016\\centers.csv",
+        "sha256": "d8f810c90fdf80400b0c236045197df5c661ef0435a37f108372be3509b998b8"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0016\\boundaries.npz",
+        "sha256": "d8b3b80016ec67f96391b217621a58f4a807da5d3ddf54968a60940ad5181c3e"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 17,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0017.bmp",
+        "sha256": "2e65d6d112e3e884593b2f5f59d13c4f6b1ec0cdb3634c9220bf42f88a6f6708"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0017.bmp",
+        "sha256": "e098d5c7ed452b7ff9381597adf8658e952645cf082f8a987905548b54c10476"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0017\\centers.csv",
+        "sha256": "c845df0ae51f4e13e209fd596de29644857757943dd301ae9668ab355e29b01f"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0017\\boundaries.npz",
+        "sha256": "1fb08baec0d87924c612a38955f3c650d1cf4b3047acf525a455b273d2db7464"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 18,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0018.bmp",
+        "sha256": "90257dd7747acc115e0a7d4146e95c0260326670cf064f1ad690c83c8429c62e"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0018.bmp",
+        "sha256": "cb0919bbff50a8fdb7d171f5731a58a34d71a96fd02100af7812dbc2267bfc2d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0018\\centers.csv",
+        "sha256": "e60e9e94bb364929776a8c3b54336f99a73db0b2d4a301b25fc88edb8ae917b0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0018\\boundaries.npz",
+        "sha256": "6295130f183e6601716161aef36f523db0d8f10df3ab422bb4c4402f69d424ac"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 19,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0019.bmp",
+        "sha256": "ab4d6f9e2b8d7180f6633d39af5f40c81991751f54a2d3c22522f0a19ba3b1c4"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0019.bmp",
+        "sha256": "4847455ac9d2ad9776144d8dee9f76e95276ebf713fa5a626a518212f4f9726b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0019\\centers.csv",
+        "sha256": "e5b7aa40dc4aa6075980a5ffedb9019910d3b83dcfdf1dc2fc50fc0df2547879"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0019\\boundaries.npz",
+        "sha256": "a8db9e7056fda7928439a2e289ec2ba1303c25056861c8be14ffb5e9f110cce7"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 20,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0020.bmp",
+        "sha256": "9dd6f4d9e39345219ef178e4c1ddc00e1b65c933cb0b4eb93145ebd2197a0174"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0020.bmp",
+        "sha256": "9e5a463b4e0b40a444c99f160839ff009261c83c0914751cae339e54b9fd18fb"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0020\\centers.csv",
+        "sha256": "3d5f50f1ab1a68e4d5206ce9dd20a3a85f96f2a01e3b6550bf9410c8e1ababb2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0020\\boundaries.npz",
+        "sha256": "d9dc2cc9a3cef28c026b781a53f23278a4ff635617c7dc45830adc3a51858419"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 22,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0022.bmp",
+        "sha256": "0856aa8a0a46fd932a1b324efdc652f49155e802517ca72404a464fd700b49fd"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0022.bmp",
+        "sha256": "7bb7e4b654e71851a7952a356fb27d4f261b98cc1390d923365cdce3b5176b43"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0022\\centers.csv",
+        "sha256": "56bd4cb9a54f86aa8a3a61025aab3f299c39b945995386c67faf219dcc827dfc"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0022\\boundaries.npz",
+        "sha256": "f1c15f4bd5efa56bd2af920665df5b4065d82207b00c557802b10a3b1ea4bab4"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 23,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0023.bmp",
+        "sha256": "1d0701c5bb13654a1fe9f8d8ea5b904cfe59c1a3ebdad54b09495bd75235115b"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0023.bmp",
+        "sha256": "a1856ac02d858df1663384c3bc8bfc84a08c95d3fabc22144b6a26359a93622f"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0023\\centers.csv",
+        "sha256": "f0be75d3de8047dff78955a0365af2c2703c9e762d8ac8301cf0887ef239ba73"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0023\\boundaries.npz",
+        "sha256": "f22c6773bcb5e1cafd7cbe410c30715e81cdb4e7a492ec5a32bdf49df11598af"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 24,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0024.bmp",
+        "sha256": "1577a0b2780bfbdda082637dfacf7811745cf98767afa92b8a89921ec6d7fa2d"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0024.bmp",
+        "sha256": "7c40dd2cffe563b2ad961ed3f75dda16645c54a223979f3d8da3e4922de0d0ae"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0024\\centers.csv",
+        "sha256": "1dc0a42d93e07aa51f48616812da38ec56bf9b78a9141dc314f167a0ef281d21"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0024\\boundaries.npz",
+        "sha256": "bf50d25f4b76da7e90c776ebf26e9aa4efdecd4a305ae0e8f4b0ecc677651e4d"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 25,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0025.bmp",
+        "sha256": "f9963413aab01b2f8caa62d16b295737c713d8842b496e1362d56c6dfc7e669f"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0025.bmp",
+        "sha256": "53d52207275f56523b22c96448fd3ca4ca6b0af3d15f790c7221160ab78df9b9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0025\\centers.csv",
+        "sha256": "feb5e000ca528399d188c1a31e123f85587fc4e2b55538c685a78422b82f0c14"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0025\\boundaries.npz",
+        "sha256": "c7d67994bddc7a21a68434d4e8e16ce41b864475a029bcfc32da590799f2a150"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 26,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0026.bmp",
+        "sha256": "e5307745d58338d67616fdbb7ad38ae8ce0ee8424b089a96f9c11eabd7c4311b"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0026.bmp",
+        "sha256": "89382befba4afdd98430d4cd7fd44c0ad73453c6e5bd4c69a02e1d976cdc7c49"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0026\\centers.csv",
+        "sha256": "212e08598fa4bf2c9fed2298882b490c6cd380939d075afacfaec2c8584aa019"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0026\\boundaries.npz",
+        "sha256": "a9a6b77e54c1266f0ce8a4d510f8c1ad285809672cf86e6e2e540a48e0c791fd"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 27,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0027.bmp",
+        "sha256": "337cba7754e626c8a69fdad8a150c2969444681f7d6a47988f9a22c3de21ede5"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0027.bmp",
+        "sha256": "f6ecd5e2d94c2775b30c6ea44e8c39de80e8286e44e27d68ef9b7a674b669dab"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0027\\centers.csv",
+        "sha256": "457d5a99ded3c1c45daaac7f55c8982bd9136525fd42e9444fe34b04db321a4c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0027\\boundaries.npz",
+        "sha256": "9a29c298fff641944c132f7c940f9d1706bb591dc6a0e5c21282605ddb4175d0"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 28,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0028.bmp",
+        "sha256": "f75e407351b4ab94eacbc37d1b5b37b9e2f14a533e2624ee6082c67f7722ac36"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0028.bmp",
+        "sha256": "db0e42d75874bd38e388b495ec0229276bad598fc95d4ff76d983ab938eb82ee"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0028\\centers.csv",
+        "sha256": "0101d73c2723383e86c225f7e77cf6916260ee469bc7109331fb7fedcaa0d7e9"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0028\\boundaries.npz",
+        "sha256": "8328520a5d2d66c04347ace683ed56abf81ce94cc7317db4ba17490f51504617"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 32,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0032.bmp",
+        "sha256": "2abe47e545a598b584eba03d2fce2b02151f2a375b13d9555cdec2e22457bc64"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0032.bmp",
+        "sha256": "5a1c9b10b97f1318658617f771a906cdae05fbb6d2f5ba5891811755bb3294b2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0032\\centers.csv",
+        "sha256": "fc1d1611ab5e97bc7ec7ba1eda97daff6b0184ae98757a9e35553dad858d6db4"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0032\\boundaries.npz",
+        "sha256": "3cc50f8c433a91668d654461d10acfe30961bcf3a20434205c6fa7e76ed7226c"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 33,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0033.bmp",
+        "sha256": "beb8b8f1107fbfac90a1249a6614a310ed63684cfe3f68e618fe12034892deaa"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0033.bmp",
+        "sha256": "661ee0dbf71b82dab10bba0ef620e1a6e596796c0dfd71c04b2691903b03f14c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0033\\centers.csv",
+        "sha256": "551dae791644d555cadb9e39196b1a10bcc5627d2ab94118cccfa212ae4938c0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0033\\boundaries.npz",
+        "sha256": "40dbc123e0077ae71e59227dc9efe21780c05c543fed8235d247f771b4d1117b"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 34,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0034.bmp",
+        "sha256": "27b55e96bdca2b1e2ea3ca9dd3439e44edd011934838a636db060057ff8fd259"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0034.bmp",
+        "sha256": "bf2f4eeef4c4814dbbf17afea72799d31b850359dd4d319e1fbdc35da6ad749c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0034\\centers.csv",
+        "sha256": "529a990bc0a9c05b555e481b9006b2e08a090b851498581a65349468b477c2bd"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0034\\boundaries.npz",
+        "sha256": "f41d9abf54eeeea24c93099cf611df109903ea079c2906c33ceb3f8d021d9b1e"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 35,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0035.bmp",
+        "sha256": "7b91ddd74fcc2eb2fda2db9d08e11d1d1fe42a5dbb465f901ad091c5789d2f6b"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0035.bmp",
+        "sha256": "4cb785f864acaa8ed46b8c47e757fdd796f21c160da9db97ec542eb871b622c8"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0035\\centers.csv",
+        "sha256": "ae36fbad255773de3ecdba68384c628cdb6a09f7146f06d369501d64ad2fed1d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0035\\boundaries.npz",
+        "sha256": "fcd033dc22d6784921c5a4470728a1c3d8e3c00040eb0553548904df55e532ee"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 36,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0036.bmp",
+        "sha256": "ff27bfa2b42551864333cb82e06ead5d70a075af5a6fa0c6f93c560a06f295fb"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0036.bmp",
+        "sha256": "4d0d1e8bedefb3d7701f1e165a0b972a4286ef85449469500d2c4336a67c1056"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0036\\centers.csv",
+        "sha256": "2ef3e522a8b87d14698bec0827d75bc1cfcc9eeb47ae2d64efe7f10eacb5f6bf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0036\\boundaries.npz",
+        "sha256": "f240d37f9f4bd1029be539f86e41e3aa71471091b9a168692404d05304658b08"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 37,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0037.bmp",
+        "sha256": "a7970d562b23eff73a695d218cf433ad15c061f2dd985bdfce08c1baf7d143f7"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0037.bmp",
+        "sha256": "6cdc5da9234ad3fb1dc7a319726c86850aabcf148becd6595ddb52696c142b97"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0037\\centers.csv",
+        "sha256": "62de16dc027e976f7d4a90a044ee5bf3f34ff23ab2f2447f005c97a5c5aa85ca"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0037\\boundaries.npz",
+        "sha256": "a70f88c8209247a79027deabf1c1b393d825260fde3f5f6cc1a7dd17612f5888"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 38,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0038.bmp",
+        "sha256": "d55086f4db266126dd6a36952bd7b2ef6bc18a65ef7c484e4823753055b7cfa4"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0038.bmp",
+        "sha256": "9fe22b38ca7ba1e61b2652900ffc6d054c3c9d8782c4baf6583bc43105124959"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0038\\centers.csv",
+        "sha256": "1e325eb5c011ff421499c6dda7e1bfd4cd92962fea0af9b29b427916b907ab42"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0038\\boundaries.npz",
+        "sha256": "dc9aa3a1597dd954b6772a5b7aa8ec05a9410587d0543c07b28daf42a4c4d246"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 39,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0039.bmp",
+        "sha256": "a369a28c6d8da73676acd7333d5fad7f13c56a845aaf37cf0cebaf2e5c7b3265"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0039.bmp",
+        "sha256": "b1c404176d98af41ce5fdf839331e4cfcbba5712836e69e6c2dd8dd41b413386"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0039\\centers.csv",
+        "sha256": "c2beb5a04fc762c36a3077dd4eb9b3a8dc6791761388aad38a6de8b5535dc751"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0039\\boundaries.npz",
+        "sha256": "92bfa72b261ed8d4573fb26fa15435998c24a2fd766130dcf73e80ec9e11dd3c"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 40,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0040.bmp",
+        "sha256": "a220ede97515db623ec9feab6793b8378a2b438c6e09b4a7f7194789f145237e"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0040.bmp",
+        "sha256": "7b6690e8cc3b15ac7bad83f57989d95151a513f3ae9c380fc17611d74ca45c6d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0040\\centers.csv",
+        "sha256": "7fe9e1748e4806dd1cd85335e67fc8572f874c066219ce9fb4cf1bc11c57b3f2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0040\\boundaries.npz",
+        "sha256": "8df8fc4124f07a0d07b288beb2be9266d4657614780be2424b847f416df1438c"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 41,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0041.bmp",
+        "sha256": "192b39b04fa5741b47808e6f6f56a1933945d7f58f8ae69ac533acfd686203fd"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0041.bmp",
+        "sha256": "9d24c58362e65de3e7a70d82a55b31b93a0752c322439c5e77be704ef4089690"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0041\\centers.csv",
+        "sha256": "fd0ec1d30541e0d00e033afe8a4dce51f28d5841f68eea989d933b2b08edd5d6"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0041\\boundaries.npz",
+        "sha256": "417aeca1be6bc4f73538b656d188dbcac9ca2487721fd06940a15add5dec3f16"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 42,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0042.bmp",
+        "sha256": "8e860a4248e775ef25ab08f10933dd5db74e992ab5e3d6181d8258e1bebf5ad9"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0042.bmp",
+        "sha256": "24ec2c023feb886383c04b97f52fd725c8fd2bf1cefb5dae243764814a21e064"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0042\\centers.csv",
+        "sha256": "969a34a8fd7459bb5642111f8855ffd35982fed29eb25bd46aa5817b463e3e42"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0042\\boundaries.npz",
+        "sha256": "5f8c3cb3112f72686308865a109b3e103fb49d472290cec016ff0bc3683dccbb"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 43,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0043.bmp",
+        "sha256": "96841a7f8938a704f7171440b31c6d7765c7fb543259440e521d78010ca73758"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0043.bmp",
+        "sha256": "56925a99613c0e5842f928ee947de0ce67420e0e62d2750b2c0fc3ac32e6c15e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0043\\centers.csv",
+        "sha256": "ebba125be54c6a65d5db280e1c3b9b968006324f07291fe81855aba97091d47c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0043\\boundaries.npz",
+        "sha256": "2cf1b20c22f89be367b755d5f14877608a507719773d2433042015ec7bd543dd"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 44,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0044.bmp",
+        "sha256": "36db556e5672b8e1dc9d4d8013b75e6ef9a658fe95abb70fbc15a2c48a99df88"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0044.bmp",
+        "sha256": "7028364a9578ecdb196831e9b8a58cb83c04cb97038a7da11eb3d71689ea6751"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0044\\centers.csv",
+        "sha256": "5c7ee4590cbb898bb2887519a1a072728c8a8e552aeae54c42332a04e500b5cf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0044\\boundaries.npz",
+        "sha256": "94599c9c8ed1d5e8120b5d2f26634cea94c126c0d341dcfadd49db86d6479468"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 45,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0045.bmp",
+        "sha256": "7d270784985b16ebdbb40cad620bfb2587ea3370b279aa90309e1ef90d63de0a"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0045.bmp",
+        "sha256": "c76d37ec545f08c1c958d6efa45347eb3a1acc078defcabf3cdef7fff238dadb"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0045\\centers.csv",
+        "sha256": "b867a603e80cfac928aca476ed09656c065a680c0072d1aa3a20147c5794bd07"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0045\\boundaries.npz",
+        "sha256": "f6799986d0df6defebe845174dd7a8380a6ec17b7a61c9f24efd1d5fe9a672f3"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 46,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0046.bmp",
+        "sha256": "ac2425247e69ba701c26e929271243bb556ce969bd66f48d71050c34f3bf342b"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0046.bmp",
+        "sha256": "8f11e3be6180d3b98306cff01780a81110b8903bca51d529fbe810558894b8a3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0046\\centers.csv",
+        "sha256": "c92b27480bd043c9e0829196a142107ae717a471cef9b79866786ef01a42f4bf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0046\\boundaries.npz",
+        "sha256": "49fb1ee34b65ee34e7235c19704e8e0ce11839323da5a92e0f1d96d3d503c2bc"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 47,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0047.bmp",
+        "sha256": "24cf82576da35a24a03c646f14ccd6c4e1ffd0e56cef55c047f28087333b4271"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0047.bmp",
+        "sha256": "1e023b3fbb0b01ebca118ee5db0b4a8205be633b1edf1dca112e1a8865debdfc"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0047\\centers.csv",
+        "sha256": "931f403f8272264c5533e78795acc32aeeb1146628b1af304a010738b692081b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0047\\boundaries.npz",
+        "sha256": "89fe7b684d9f1a5409939ff4d7dc229001818d48580c2df6eb63f91dd10e0dd4"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 48,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0048.bmp",
+        "sha256": "ea7682723fcda36041fc561997eb4c65600fbcdef92770cb287740dfe6c4ab84"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0048.bmp",
+        "sha256": "539e6a9d53ada571d7483624d6e807398b65205fba42773798ba86362a263ce7"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0048\\centers.csv",
+        "sha256": "15248be2a96d3b4e885be7beb6329d1bebca37bb7932595e13d90b034adf6ad0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0048\\boundaries.npz",
+        "sha256": "77cc3157a5ee4f50f042ebef7c4e78960fdf97ec82897092636dd38e6e7465f8"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 49,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0049.bmp",
+        "sha256": "33f79e9748a252cf217dc3413c8912c867061088a8879a5dc3723f601afc6b68"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_0p5um\\bmp\\frame_0049.bmp",
+        "sha256": "c6515125414ece02fc5a84e537ed966b549fd517f6aa2091536e9a88fb31d69a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0049\\centers.csv",
+        "sha256": "609aae2ec5685000306ded7a4411166297ce4617367cba32f044398e83cf9e3c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_0p5um\\frame_0049\\boundaries.npz",
+        "sha256": "f2ae766cf475145911b6af8a1c9019c3776576c0f34cd4f0734d63361b55fbdc"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 3,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0003.bmp",
+        "sha256": "67251ba10f35ec907719be221b796654e5334690992d42e1d1e4a5a57f59ae85"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0003.bmp",
+        "sha256": "54a97248bb07418f2e2989319ab658a51d47912e3559be1f8bf3907871ddf2ea"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0003\\centers.csv",
+        "sha256": "08a6b7b5867b09f92adf4c80d5f33423d69592b873774735d389ab6d17268bbf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0003\\boundaries.npz",
+        "sha256": "4a97d4926c08fc7aa873c8102c7dcb78fe0f34527e5c568c796b480ce7f78caf"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0004.bmp",
+        "sha256": "ff66d2a5519128002a6fac9660a67f9fabc86286d35b55f5d8b6606c6270b5f3"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0004.bmp",
+        "sha256": "82c30c6ec20649e44d1b998bfef6aaa07bd551d32955ee06f05095fd3b650b34"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0004\\centers.csv",
+        "sha256": "fad9f75280e686dc83b4323074563c7b7e36610869a1413d6492bddecd46764a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0004\\boundaries.npz",
+        "sha256": "49bed9b39fb456c4181e45ba6c8cc4ad8d38b80f15fefcc3cde36a75a2e37987"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 6,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0006.bmp",
+        "sha256": "d4e58f632a0c983261d768bc6bea9e96256fd7d5c1a2f34147813e57d7a2352a"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0006.bmp",
+        "sha256": "4be7bcbb8ea803144d4bd83a4e2e3b911b85857021d6fa993afb2915995ae351"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0006\\centers.csv",
+        "sha256": "b32f1acc72d714272946155000470b39ea14ed1f6d583ac6ebbbff5aa1f80bcf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0006\\boundaries.npz",
+        "sha256": "343b09519eab4684544d2ebebe0ff7696651d032df84dc4389440609e5a27be7"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 7,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0007.bmp",
+        "sha256": "1919d860d4475e31c47a99b047d363823c8711fbfde5f6e5d0bf94768cfc0f8f"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0007.bmp",
+        "sha256": "f84e26c399dd9e122d33de8d9faf74f772e9879e154a2cb18a052be059c06b95"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0007\\centers.csv",
+        "sha256": "bd11208e2355442cb012f7af884ba27061938cfd3059f7a78230d288c32c58f8"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0007\\boundaries.npz",
+        "sha256": "685cf03deaab64958090396e7830a3420a546613437f165c31a860fde3428cc3"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 8,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0008.bmp",
+        "sha256": "a21e83b00ca402e4ef0f075019aaea6c4a6046273668f25c15a4dced8b65cc66"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0008.bmp",
+        "sha256": "6899b08bcb1611a6eefc6e836f931d8de1d017423ffac95ac625cd92b98946fc"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0008\\centers.csv",
+        "sha256": "15f69ae8a22f45474168a17bb421e2204d4ef783ee0d5be18bce180ba47a53e6"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0008\\boundaries.npz",
+        "sha256": "4f99b4b019938cefefa53132bff87365f90204cb82ba343ce1adf96b4feacb1a"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 9,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0009.bmp",
+        "sha256": "4245ce6d798939d9721159260b6c2554099f809d0d1a0953e097d50cecb5ee47"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0009.bmp",
+        "sha256": "d735910483ab02c1fcb0b966ac46df24050325acd39f2b7e19bc535f3205310c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0009\\centers.csv",
+        "sha256": "d3c80f60c736633c242d299ae9d3d3ebe10440b08f029f71559f1102f5052503"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0009\\boundaries.npz",
+        "sha256": "24df64537018d3d9d2c0a4d87ca829799a546684e403bb5ba6a901f21219996a"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 10,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0010.bmp",
+        "sha256": "65ce0344d88685f6a09b1eac17f68ddef72c8a567402ce0a50b52be82e14d953"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0010.bmp",
+        "sha256": "1f4c22d46c8c5607d52934da0a1afea7ac6b6c1be0f9f1dbe436827083e9d78c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0010\\centers.csv",
+        "sha256": "5fd204983f198f58eb7ff30af4fefd7f013a564d881409c678e79dc90e3401e9"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0010\\boundaries.npz",
+        "sha256": "a8bc7ee755c7f98541238218755320627af890a673bb9348aca88efddea018a8"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 11,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0011.bmp",
+        "sha256": "00785b34060a29a10b07d190756d712f1e79e3896732fe11379a8b8dce59ae50"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0011.bmp",
+        "sha256": "624abe162be5fd5827ab151c64fc9183d6f838e3f82291face9ffc7047a273b6"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0011\\centers.csv",
+        "sha256": "9e6ce68cb44302f8155416c8b7da53f5fbd95e811953a9f89848750c3ae12ea7"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0011\\boundaries.npz",
+        "sha256": "21b4983ab108bd362331a4f13404041d33dec1fdacb695fa2a828b7637ba406d"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 12,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0012.bmp",
+        "sha256": "9e27aaf421ea50207375acf27bcf4a21ec6259286ccf929ae54a33e60f719683"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0012.bmp",
+        "sha256": "321a0e216922e29b5a185ef5d3dd1a036e986a833a288d74b3a1b2f1e72880b0"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0012\\centers.csv",
+        "sha256": "068160f079aafb9bd0676e5a4754a33e68ca629c4b1b7d181ce9fc3eb9ea1e95"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0012\\boundaries.npz",
+        "sha256": "82faaf9abf26a7c15e3e98aacd9117df787849491d8836e2935d04459877a082"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 13,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0013.bmp",
+        "sha256": "a2f051403b5f1a928eefe20e011143aa627688e26818057dab482eb52685fa92"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0013.bmp",
+        "sha256": "0188e5059e2bfa7d8da7f180bc34062ae5a2db226a626d339de86afc74f3cff5"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0013\\centers.csv",
+        "sha256": "25eaf7ce956079f43d1b61bf9f7fe9f32cd16e5e43a1b4e93680568056090150"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0013\\boundaries.npz",
+        "sha256": "0d18ebccc5690eff076f188792e6fb7487959709da45c205b155e07654fbc29b"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0014.bmp",
+        "sha256": "006d18d2033bc844945d6af3f6ef788b679e6a7dcc80b44724d82809d445add6"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0014.bmp",
+        "sha256": "160831f0e4956ac56652e47183d21061d8ea36f9124ce498063928c5cb8cd82a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0014\\centers.csv",
+        "sha256": "7f102e80bbfe1ab8c668ab0bb8263b2dbaac0d500f12de30c945ca114f269c2d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0014\\boundaries.npz",
+        "sha256": "c8ec19ba50b3c263c0b170c7038ff0d1837a648fe99594b602586f11385581a3"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 16,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0016.bmp",
+        "sha256": "5835a1ab822294671e8689c873029bcc05478717bd73855b75e85ce830e10ee8"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0016.bmp",
+        "sha256": "93bffc421f042b9b581feb4408f1817dc2afb7ffc08fa25a98154592b7582697"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0016\\centers.csv",
+        "sha256": "823321ac0c31ed865fc2290037b8435cf4563084d5054c3922797d7eb9fc8c69"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0016\\boundaries.npz",
+        "sha256": "6667f0f8756cc4ca831fdeefda112b8df804803cdffcac457bcf46b000f96300"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 17,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0017.bmp",
+        "sha256": "0003cc4e3129134010b6a8593086ceb082eef4315d2362e5e1efad6bffb13812"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0017.bmp",
+        "sha256": "34209e641728542b522811d2eb7b29fd51a25f6cd493b919f0887c65eccd71f8"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0017\\centers.csv",
+        "sha256": "78982fc590e4c46a95340972a6772619d768291f8888c0828df115a282190bf0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0017\\boundaries.npz",
+        "sha256": "687a46ee626450fa32dd5a83ab53bd6c489a132e639e5167666508f635098d1e"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 20,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0020.bmp",
+        "sha256": "863d7ce92934b3c7e2ded5ab75754a565c970522b784c1b071ff860a7ba88c15"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0020.bmp",
+        "sha256": "ce2b3180ccfe5e8fd4050e8a43f22cb85b9b750de9e60acb69166695904981de"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0020\\centers.csv",
+        "sha256": "7543b9049c9bc3ac1d84209220ec3aec7f3b7c7093fd180cbedae441e53444e4"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0020\\boundaries.npz",
+        "sha256": "f0c8e20b6141de0dd9e678e4b90fce96fe54b80e9633edb8190730d3a53e9e7f"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 21,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0021.bmp",
+        "sha256": "09d820e1558c0fa8aa4623567eff97182881b2b5f192e104cd00eec6579c2151"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0021.bmp",
+        "sha256": "20550d1ce01ce9cfa6179c99651acf4808194d89d602bdcbfa2b75d4d0772b27"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0021\\centers.csv",
+        "sha256": "dc0b7611d40d6ac501083d7439b50187140851ad0a9f3ac8716f163c8c7f3aaa"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0021\\boundaries.npz",
+        "sha256": "4a0116d0cdc64e83dbc179ac1838b154c4e527cd19b6d1b0743cb78957fe3907"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 22,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0022.bmp",
+        "sha256": "edb0dbb67222f1709fe11b497da3ec819f9832d66d34158b4bdfa31398208ef7"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0022.bmp",
+        "sha256": "f4527963a0c879495d9fbdf6a360b759b0979c892c9052edf71c074104b0399d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0022\\centers.csv",
+        "sha256": "e28a194d8030d0ceabf340cd33db4d0cf59371c98bfbd82cb7e8d1be16071286"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0022\\boundaries.npz",
+        "sha256": "a58d56c3f92837a04570702499d61bde34004c158c9fc9503756262fedab2a75"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 23,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0023.bmp",
+        "sha256": "7215c6e08fa9e20497daff031a1a87229826404b106393786481d3ec051a60b5"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0023.bmp",
+        "sha256": "40628d6f2cb8fec35ed27f3b16c77196b118d9fa05998d941deba4d68841c1d7"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0023\\centers.csv",
+        "sha256": "9845eedb7a91af90d0d251283a08eafa12b71afb99c5ab84ef9b8fca9580c30b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0023\\boundaries.npz",
+        "sha256": "dbf967c16c7be7303d0ca5c0b581a206ba92568a213f4ae3f6f7e1777ad29ca9"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 24,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0024.bmp",
+        "sha256": "b62c82f265227ba1092aedf50b60fb3d3b25521ad9515262e9f859e87f3c76a3"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0024.bmp",
+        "sha256": "94f32f8a615a9a06ccbc0586213783e8d3093bf8c6180943ee94c38169f494e2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0024\\centers.csv",
+        "sha256": "036bd17e3d1fca9191fc89165e7320ead2621e21d54a64d72ac264aa38d516b5"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0024\\boundaries.npz",
+        "sha256": "bf1c4b681cd810a77d609f8769587c69a53063a2f948645dda4972c2f35cd6b0"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 25,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0025.bmp",
+        "sha256": "04e3c6929aa66fedd45142f938f56b3b6b96487225f5b9bcc2fd8d43bf055d57"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0025.bmp",
+        "sha256": "6c9bf84d23371cb7456cbebc29cf59b510d6cf14591ebd5b0ddc8874e3209d24"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0025\\centers.csv",
+        "sha256": "e2d1056a66e3f312452931c6eb55aa5b5537be44240a30f8364a7fa43dd2fc1e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0025\\boundaries.npz",
+        "sha256": "eb0b8a77dfdd3c8abf5f9e997e4bd567757b9db45ffa3e1f4040cb7a6092dacf"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 26,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0026.bmp",
+        "sha256": "02f311099e3f65e87f6d993855c1f09f2cd4927d63c9049df316322b9430f313"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0026.bmp",
+        "sha256": "7b61c8de3da1f703cfc3ad8748d1a15dabc021832a8faf64a8fa7d0ded8eb7a3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0026\\centers.csv",
+        "sha256": "e7ba29fc638f58cb9486111627e340ae0a9746d841ec57f4d484cd57dbfd4de8"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0026\\boundaries.npz",
+        "sha256": "7b24ad09ead52aa2c4fcdd09291c08111f46156f976bf53a890f925838c9db2c"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 27,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0027.bmp",
+        "sha256": "37f58192a4b41a59ff37765f617cf428f527e0ceb58a0c50a2b02fd7aa1b0d90"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0027.bmp",
+        "sha256": "492d3d40709cb5e52087ac3a8c4cd9e9c7e33e5065461083b34615ffe519eb76"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0027\\centers.csv",
+        "sha256": "da976e554905022a3fa4a9db930698a5d63a461ec06229d25cd46e7f4640b383"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0027\\boundaries.npz",
+        "sha256": "024807c6c3394ac0f96788c4767c201c11d55b2ecfb10620bb14e0a6a9d9fd27"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 28,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0028.bmp",
+        "sha256": "458b1774e2bfc2e13e48970efa787275bc1d9f6fadd2929aaee19b878970df4c"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0028.bmp",
+        "sha256": "1d5f2b2a1a7280fcb10272e4316be81fc166ceb9eb34830b911ddcc15e401f32"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0028\\centers.csv",
+        "sha256": "16b25ca7da3bbac0d8634bc1007ce850035232d8c315428028c021f099662de7"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0028\\boundaries.npz",
+        "sha256": "ce138e4b31d59c860f7153120cb16e8c83d80a4ea6c2afecac5919d003336593"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 29,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0029.bmp",
+        "sha256": "27011df5dabd7e63358c78c5bc9d143f0b35b544233c5fb56d7fde47311be350"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0029.bmp",
+        "sha256": "b7c63449232350c48496fe1c8c9ae1144af16a8341888034f8b4eebbc3df0f1c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0029\\centers.csv",
+        "sha256": "a9803f6f8a4127c2487aada6fde1901678c76f90d78de939177e342d70ddf686"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0029\\boundaries.npz",
+        "sha256": "9d0c395816721a1ba34bfdf50eb7a50cea3c6fbc71d8bed7f5ac020f020a450e"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 30,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0030.bmp",
+        "sha256": "ac60ee3a18b3fc16f19fa5b8dd976abd2a0a944f07150c98e10a824c250156aa"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0030.bmp",
+        "sha256": "7c0611616ad22602879662c56c69fe26154b9211a55e8eabe9e40f9637613636"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0030\\centers.csv",
+        "sha256": "795ea9fbb8b62eac032ff7ce1fc611285d3f429b3d4b0b3dda7992d1cd888e55"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0030\\boundaries.npz",
+        "sha256": "0d9c5fc0d486dae30cebbe71ecff2a3b644cdd642953f781b42119d5623f1202"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 32,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0032.bmp",
+        "sha256": "a1443b4c607e8d383a1eb4fc573e2b97f0c0338a9ab81fa67cb1454608932d69"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0032.bmp",
+        "sha256": "fa0daf68b887b28d7da08f91c1e861bdc5f62222812b437aee1586165e1bf2d9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0032\\centers.csv",
+        "sha256": "39f6a5e27d4e747732cae56ecc888a527e774738662996a65d64a9646bbed673"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0032\\boundaries.npz",
+        "sha256": "64737ac587d67b4dfeef8dd7f4a9ff1f3e0aab36a44c11ff105ccc8ed7b138db"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 33,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0033.bmp",
+        "sha256": "af34c412daf2d75ba16640814f753aefe24f9333adfb76b7c6fcd6ea1e4361d5"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0033.bmp",
+        "sha256": "19fe73f6d0dce789df1635d21797f8288ff2a09638b80d48743069c136469e4b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0033\\centers.csv",
+        "sha256": "b5192fc4409852ec590efab909ca42e8b79e0db327d6add7240c7bff802f63e1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0033\\boundaries.npz",
+        "sha256": "d252a128081b6c4127f1528a538569806f2bd9b0ae419ac61c75a6b2de1da2e9"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 34,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0034.bmp",
+        "sha256": "988002306f8956fb0d4826e783e06ec0c4b4325aa6002804375f720cd9daa9c0"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0034.bmp",
+        "sha256": "5b91ea4ed014d964e78f9f26e256411b97312d6c1b168da4ed08a87a0f0f0ac2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0034\\centers.csv",
+        "sha256": "2cee0cf509bb1249aebe407b3146cac48b98fe55205bcd23f219c4e8b3395ef2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0034\\boundaries.npz",
+        "sha256": "48296e4c68c16c17b84f7128e7a64c4052e0c013782dba7ab85d02139cc44db2"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 35,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0035.bmp",
+        "sha256": "ebffd774369d92e129389595fb230331ca951b9376d5c5c547d89d949b9473ad"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0035.bmp",
+        "sha256": "d18b8a9153a73c7d226fec32443cbf7d3f290c3d755d4583d1522bd256bd778b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0035\\centers.csv",
+        "sha256": "97db7694219f2ff97ddd8ad32f4b6b8fdcb0cafa834e71cb4cf033d8046fc339"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0035\\boundaries.npz",
+        "sha256": "add3ba3a3d6a5329ac0d7cb52aea59619d448e8982bc9c70a1b3b2b3f0e98b35"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 36,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0036.bmp",
+        "sha256": "7cf3f63c93795909dce2e4ee639da4c901308360e7adcc54a70f9077727c1abb"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0036.bmp",
+        "sha256": "72f7c8ab2e51f020144243ebf7f584c0f8125f9703b16812a5e767c085e52864"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0036\\centers.csv",
+        "sha256": "96848f2f02e3e6b647096b288f5dbc8d64b23c1c152984971b5619257cc998d1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0036\\boundaries.npz",
+        "sha256": "e70b187effb10d55a3c92461d4e2c0e6c0718e36dd79723e7db5e0487221e320"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 37,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0037.bmp",
+        "sha256": "bd51b88d62f10becad17a6374b0274ecee53d35e5efbdbb0e43a210181113339"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0037.bmp",
+        "sha256": "17d2a98461c4e11e8c12d57bd3cde9e1eab735f175b2f5c7fb5892079c15c0b4"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0037\\centers.csv",
+        "sha256": "c670bac47d580069f4f163d4e8fe6909703a358559ed07c03dd9074a37d682c4"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0037\\boundaries.npz",
+        "sha256": "b613c47ab71d444ce8e2d41120f2a895087940ff4d0f1e21ed5a45b520b5e5ec"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 38,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0038.bmp",
+        "sha256": "4664b7608a6e455c7ce9aa230ba07c638f2d1ed61db4ef9478ee519c2e9ad3be"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0038.bmp",
+        "sha256": "0ca4f0fdce976c0a367d68a95f8ea3da50a73c36627b448cc07729992384035a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0038\\centers.csv",
+        "sha256": "61fa0cb357e7d49d7419310a3265b6d32101999d01fb0402a42e392565e70862"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0038\\boundaries.npz",
+        "sha256": "a5a96961eb17ada1ebdd4cf596304662207c364fac974865d69eeb9a186982c5"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 39,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0039.bmp",
+        "sha256": "f40a09df301b6e40e404481492f5cd125bdd2f813fe951d13af78960b6a6117e"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0039.bmp",
+        "sha256": "3cdbcb4045859e87561df67da58b283b56a85ad446dfd38854e176f05a1bce2a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0039\\centers.csv",
+        "sha256": "ede894e5280257f7bbed11b3c2f6b3201a1a3528ac5944e72b2885323a198868"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0039\\boundaries.npz",
+        "sha256": "3fc9c035abcd24f9c70d59a49e836ef8a12adc12b5ec376c26157396465720ee"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 40,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0040.bmp",
+        "sha256": "bd64052b5f0d9a40175b72c35ff0250c4574242a855373a9762002777b23ae44"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0040.bmp",
+        "sha256": "ede7052b649c6d07f678028a3e6d8fddbf6b5c2cb03ce0fb311f2047bf95f90a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0040\\centers.csv",
+        "sha256": "afca9a55bcc9da827d687740737d44480eefc350d8c19d264250e3f85e3b5bd0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0040\\boundaries.npz",
+        "sha256": "428ef6b167f4312bfc197e632018344790ebe37ac589b96647d90648f2523068"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 41,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0041.bmp",
+        "sha256": "53566c1e8cff9cb84f48c4e5ff7aed10db989f2d0a2d974202ccf752894ad14c"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0041.bmp",
+        "sha256": "52b1467c59a0f4d81562cea86b89078a3e0870f61511407682c84a8eed9bbae0"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0041\\centers.csv",
+        "sha256": "3878e8eeb65bca754d9ff7c795a905d1478a7089f2d1a81e58e7f6ba09a97f2a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0041\\boundaries.npz",
+        "sha256": "e1b3dfdb79c1fb64f30b8fc2a788254254d2d59b096c6938839ed9c29a5916c5"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 42,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0042.bmp",
+        "sha256": "ef375bc57d1a3440d49484c0a71b3870672278d66cb03d28d85546d3a2d05abe"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0042.bmp",
+        "sha256": "ba780c89e080dd7787d4053ac6c5689cd6daa94258bd230373fed6216ca92295"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0042\\centers.csv",
+        "sha256": "fda01c6dd9a0470af2c66ac92200afcb8fa10d8751269aeffa9cbca510c3daf1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0042\\boundaries.npz",
+        "sha256": "cfb8531dc161c1e2a6ed896cb5e05f8a8f4b55bb9e6afb630f091d63ef43a5ef"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 43,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0043.bmp",
+        "sha256": "5ba4da670d35b3aa1b1e1fde6b594b7b9a18ce05231a72ea0fddc313337ceaa1"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0043.bmp",
+        "sha256": "df1f57375e5ae7364748d5029575d182b72ccabbc1e6709c037b76e4a4a11fef"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0043\\centers.csv",
+        "sha256": "803a76ea61020594f1361c77133ba76eac0d49d6e6d504f9026fab1364a87923"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0043\\boundaries.npz",
+        "sha256": "927a385821dec341b6eb14746606c9dd6dd9b1760840fa6bcbd62479819d126c"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 44,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0044.bmp",
+        "sha256": "a40ec3c70843871021fbddcd1c0b9fad779e1734c8c4d212c8bd0867274f5d08"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0044.bmp",
+        "sha256": "807205ba929fff9738399fe9db59c5cfdaa54b5f6de402fd8f678ef26ba734fd"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0044\\centers.csv",
+        "sha256": "f1eec055c34f8238d98d30b9febba9f58274479630240979074279fb56fc8911"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0044\\boundaries.npz",
+        "sha256": "313ed8559f5002ce360f7ff1e853642a86a7e882059c1caa7e942c94bc23da9f"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 45,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0045.bmp",
+        "sha256": "ee8a71aec0003b157a51c22a3a5c8fb6b6008a92810b8d048d2340b3edac1476"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0045.bmp",
+        "sha256": "ee946dc31b6f432f58335364a4717032015d55812a7cf960e64e8039755ab0e1"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0045\\centers.csv",
+        "sha256": "67c35213a9574e52c89a646fb2950c10e6f453841ffa139a8cd60ab4cccc5d0a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0045\\boundaries.npz",
+        "sha256": "95025a3dc8ec6e3b2206d5a6a77eaa2a1b802ce6dddf8fc579614357fde9fe93"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 46,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0046.bmp",
+        "sha256": "9755267fd7d7fb875e1bfd3f8fc4dc3b5807cd97e935d86bf8fcf4026dc33a6f"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0046.bmp",
+        "sha256": "74088a99eeb7d488e129da74a93799de649558f4277d4310331af54504f5e7fc"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0046\\centers.csv",
+        "sha256": "404ed66df885edc1260deef618f5e544cbc4134cba9781e37150127938c094a7"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0046\\boundaries.npz",
+        "sha256": "216578e1e284140420f7d965fd4326c0e8e4f6c70e147629201346e8097617e1"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 47,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0047.bmp",
+        "sha256": "a0b258a101dcbc223959bb673f909196ddfe72eb96b3b2cdf95fa19425dcb0c4"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0047.bmp",
+        "sha256": "18ac60ed0d54a8510f9c9eb4cb606c1feef04e4d7f2ac1e52cadfb80077f8cca"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0047\\centers.csv",
+        "sha256": "f274af773bfe1d844ebec9f1734dd5f534985899a78f57f9975eacaf10f58862"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0047\\boundaries.npz",
+        "sha256": "0af6e584a7aab181a60563bd7aec9af54f5b82004d1a909afc167cae7088c322"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 48,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0048.bmp",
+        "sha256": "d5229177769e923a33ca44247b2e586c8c80d94954c17f62edf6faa8b1479aff"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0048.bmp",
+        "sha256": "45c3556f95879d5def2ef54b0005c4f2b8f141d650648f47740eb146adb05466"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0048\\centers.csv",
+        "sha256": "47c3f56140e1889d39ef711612ed376d01728a7e777308482b886da373fe8486"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0048\\boundaries.npz",
+        "sha256": "17eb581da88ef2b28703877e6c267f727aac3b722fd383d56e16bfea6925b498"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 49,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0049.bmp",
+        "sha256": "ba01ab41bd57efe300067661a2d861c51ecf1eac4c5d1315421bbc8ca29e7fb3"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\r61_v16_psfoff_x_1um\\bmp\\frame_0049.bmp",
+        "sha256": "e2f955ea69767691b5d305ab5923261e143ef40b7dd21ddf6812d8412a2793f7"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0049\\centers.csv",
+        "sha256": "49e9b27a8adda6c7f694f03e5d0895816d7f57682b5cb808b9d3a8373e5a1b05"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\50x_x_1um\\frame_0049\\boundaries.npz",
+        "sha256": "087f665ae79d3a55f34d4f1434a78dcc98a953d9c82b723f2b9aac322dfd8943"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 0,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0000.bmp",
+        "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0000.bmp",
+        "sha256": "4ed6abda8688c917e389d0422dd43f8424d8fd90d5a1949f11e0500f3a901492"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0000\\centers.csv",
+        "sha256": "982455898df50ae0efba045695c7cf0a38aba91491541c7ecb60bf8051b95fab"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0000\\boundaries.npz",
+        "sha256": "c44840d436e8b97ef823b97f9a8e9facb95de2184348b6a254b3d855fbefbcd9"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 1,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0001.bmp",
+        "sha256": "d710c9eedb21819a3cad43f1a31c72b10b1665d9d0225c174bbf4c29308ee405"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0001.bmp",
+        "sha256": "917c2ecb8960205a383a060d3fee1d5435c2060d643d8d4727c1d77efb52ab3f"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0001\\centers.csv",
+        "sha256": "82dad30b685030ab7477847fb802c66bc74a654b440b6b7391bae25eb400fafb"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0001\\boundaries.npz",
+        "sha256": "3c78061ee953d73eecf98833da6a6fc5c188f0435fe7774b7b6f1b22d2b93dfa"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 2,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0002.bmp",
+        "sha256": "64cca58994757df1450d8ae52ec621c4e8b07efa15c30496406403a9ae0331c2"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0002.bmp",
+        "sha256": "93a8cb3cee85d9a9e75bfbe65f873053d48f8e256c4a89c5ee42c16f8711e44b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0002\\centers.csv",
+        "sha256": "b55e1daf76537b8a7df55cb990082780d7d75f123286cccbfe239ff215d4b0f7"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0002\\boundaries.npz",
+        "sha256": "8c6c3579325cfbf3ee654dacf3c904c69360f89ff9075f036c672b760aedac40"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 3,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0003.bmp",
+        "sha256": "25123001317844935d3c264f76fa37cd18e547e0ef1b51c283e8bee0a3b813c4"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0003.bmp",
+        "sha256": "6c6b8c94f0e394c6e7880234d6942e9719eb061703cd12f9610f591ef87b0511"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0003\\centers.csv",
+        "sha256": "4871ec41f661db613e57a9dc7a225a64d65c356076f7be8254cb6fa52edfe582"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0003\\boundaries.npz",
+        "sha256": "64ef7c6c0ed012bc806bf6e81d66715259a322bb11669ff28465bdb84dc8ffa6"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0004.bmp",
+        "sha256": "76c635f30bbd6fc66f14adcb95f2ae07ce50eb7d4b807a7586bf2da822b43db5"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0004.bmp",
+        "sha256": "3614cdb993e76cebda9101fa79f3fa7532785d72057022de6eed913387ea221c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0004\\centers.csv",
+        "sha256": "ef5c812d625977ad08337f2954d0df6dd8454ddee936dda8b62e69b0d45ec44b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0004\\boundaries.npz",
+        "sha256": "5d61597c87f92614fd3b02e4e1d29ea4ea06c702ad4ef975a4a835cc4574c203"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 5,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0005.bmp",
+        "sha256": "4c0eaaa723b4b7a74f67a57732fc24af9211b0c8af9fbfe842124d454be626ca"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0005.bmp",
+        "sha256": "82386a1d907a0fadd77e847838b9ecbacdd7c6840bf9db283477e2b972ac2016"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0005\\centers.csv",
+        "sha256": "594249f1310359226665891b7941eda62237d353ff2bd8af5684d1df35339625"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0005\\boundaries.npz",
+        "sha256": "71c31138e1d367000050e09d862796c25e398f516ea67da7d0f2669396b46a87"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 6,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0006.bmp",
+        "sha256": "9f9efaa536344189b0d905f4a9c0af48823a8051b739bdd509adebae0c2d1ad7"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0006.bmp",
+        "sha256": "971b848d493aba89ede528933bdbcb98281c5f608f4e7c87ddf1f91e0367594b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0006\\centers.csv",
+        "sha256": "ad8e1923c267f3a7b5d618d455e026fb79bba308acf8a4efc09dd0e08164544c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0006\\boundaries.npz",
+        "sha256": "373b70caa2d4657e1afb33f954ebca36b422110bf2e2a2c6a61d596589ec3453"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 7,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0007.bmp",
+        "sha256": "9f43728f1dcaca53af82eaafcb26a509d3f0c3966bb1fdb090c1cf47d6c878d6"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0007.bmp",
+        "sha256": "4ac9c633b89d220bcd2724794b388dcf81b30280ee56bd6a545085c369fc3984"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0007\\centers.csv",
+        "sha256": "c5f4ce94a122b1b7306bafa5411f8f6084733c7ddf43c3e30a3211a905d9c1fe"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0007\\boundaries.npz",
+        "sha256": "24a3014d26d3100a2b7f5171d89813a38d99d4ad7119424aac9463bc375a5d9f"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 8,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0008.bmp",
+        "sha256": "8f684b343bd2c08246b0949a33e1d8c6acc63846ca95bfaf6e7f6db3e0c5f3ac"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0008.bmp",
+        "sha256": "912cdc890b03f8aaba18e1e94d4e8522bedb5ed6a9f177ed57ad91ccb0013cee"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0008\\centers.csv",
+        "sha256": "ed53458b87aaeea164c91597dc507db7e25071452178282b20f3270d09700ad1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0008\\boundaries.npz",
+        "sha256": "895b89e073b1cfa35a5c197b03cf454964835ecfddf7525fa83b66dff49c6510"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 9,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0009.bmp",
+        "sha256": "65f9a7f3ecb39205dd5f41d0428bf653254ba53295cb9acdf886076146ff45cc"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0009.bmp",
+        "sha256": "124b36208babfcd6dcc0c9a24d9837bc1ff5b6bd693dd86c022de1e642b75f19"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0009\\centers.csv",
+        "sha256": "c6bc042030007e634b4e53d4738570940ae44c0e090632c660f9e7dd05466d70"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0009\\boundaries.npz",
+        "sha256": "66821de177943b87bbb6fe24ed168db720410ae9220cb775af4e4cd2534ba3db"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 10,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0010.bmp",
+        "sha256": "e6c04650420e6af0a6130ed640ab46a1b2686f6935046253591962e57bbdc403"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0010.bmp",
+        "sha256": "499006e879dc1608d6e2094f64bd3d43e794ec0d0cc7c804b675b2c21f83f4f9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0010\\centers.csv",
+        "sha256": "25a7267633ac1ace132bad71d4d40d20903305c8e4ed532e0f8da70e796741fa"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0010\\boundaries.npz",
+        "sha256": "55e066b96f8c49d61242592c1f19ec807ab25c2cba9c1958c7c6f340efa02635"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 11,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0011.bmp",
+        "sha256": "eb40edf46bed895eab0a79201f624269de327e9d86002c3e65bea5d5ee7a4372"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0011.bmp",
+        "sha256": "9a3fb48d64af3774b2b9f157a5abfece212fe30a4de49f78ff737fd07ecb5329"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0011\\centers.csv",
+        "sha256": "cacf9bb9272155338d1319eede56f19c9bda3211f32b75929823562c66710682"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0011\\boundaries.npz",
+        "sha256": "edf1ef0934da50daaec1f0509230eda7103ed9e48491d0ef257afaf10f8b98ac"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 12,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0012.bmp",
+        "sha256": "b16e9e37644587b9fd5314138c10d35d864eb538c77604e37a9bb26d1799b477"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0012.bmp",
+        "sha256": "02c3b38445ac8a7e6db89a79db543e8d625aaa054d4fc62bc8899c5a0525cde3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0012\\centers.csv",
+        "sha256": "406a27aae3ac0eb3a811d50c2fa3398badc8d85b17f074dcf6299648df440be8"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0012\\boundaries.npz",
+        "sha256": "be309a791f9d4580f9e921d2438741ccc5ca4c4cc5194c747cba73d0c0e6cfbc"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 13,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0013.bmp",
+        "sha256": "2c65492fba3d7548d30984360c361e4bd832d2e2e002968a371e4863537ee877"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0013.bmp",
+        "sha256": "b152e52a5748c7f6509e280aa649f4aeb28b5929bb48731a3ff8447cd9170687"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0013\\centers.csv",
+        "sha256": "47b412e94e73eaf8b0aa21e996146954e6cb0b961f338240ffb9c7119b70ce47"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0013\\boundaries.npz",
+        "sha256": "b2b490640090fd2c61280208b6f3d2c3bc27b17239625df6b51ee75d8e1eac72"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0014.bmp",
+        "sha256": "1ada32ff9e3d3830c241554981e64b3f5c2a1897aa838252ef75040bc8733493"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0014.bmp",
+        "sha256": "3b04d77317251509d985479b6d43e788f62a206d6b81a5a6c2c0f89114ca3ac7"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0014\\centers.csv",
+        "sha256": "2b57e3dde4f84f560664c8f09d3bab41a24c32c7aece58844b969937c5516ded"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0014\\boundaries.npz",
+        "sha256": "b38e10fc4a748c37e007fef60084ae6fa0a201593da4bec28430c6fe481cf5fa"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 15,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0015.bmp",
+        "sha256": "9e73cc4941ff1678a5ea32d75931261c417a26525a7dc657d5e098c5d4b82992"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0015.bmp",
+        "sha256": "4b134333fc25c1431ca46a0f2f9417a9a9f0de10a061a87ba12298768a35ab46"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0015\\centers.csv",
+        "sha256": "7220431f6b54fad69bcbe9923045db3dbae609bce3c0cacdbfa6ff186a801328"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0015\\boundaries.npz",
+        "sha256": "6f0f67d9e143723c7f6fa75390015224a95a4021b81fdbc860cdd511126a3825"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 16,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0016.bmp",
+        "sha256": "ec2c4444b4b2161d957507572b4268a6c8e8a6e296b9cc2bec00b98259f1dc25"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0016.bmp",
+        "sha256": "aae980288da049c3f53c8cb57c8602703360c2990a905dd00b488ad505f2c6c7"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0016\\centers.csv",
+        "sha256": "c2d687eeef91047f449be7ae71b1e6ce113a51f3d3920453a77af4ef0026a5a1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0016\\boundaries.npz",
+        "sha256": "53301c554b9a06a056e4ae3a4ca75994616831b0b0b818c8108407009b12f603"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 17,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0017.bmp",
+        "sha256": "79e851b276bae6eff6adf8ba398dcf82767aefbfc76742e485e4a5b8717c5982"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0017.bmp",
+        "sha256": "a5c44a0cb9a7d79c179ecab2128490d47e579e12179c17b0e61cfdf8239f1aa6"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0017\\centers.csv",
+        "sha256": "316f894480976e55c0bba607e46122f908960172c2ef0d36d9f2de46062c4532"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0017\\boundaries.npz",
+        "sha256": "65241618b2d08544df8472b35fe6ea3b54f3840f0a679e5c4914d2070e4c8f19"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 18,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0018.bmp",
+        "sha256": "f91ef88be008442820b61788bcebec39472f1b2b9d79073dec5593717ab60631"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0018.bmp",
+        "sha256": "3c669cb9c24b1b3423fa395b63375e260460dfe0692155514ed21408941ee91a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0018\\centers.csv",
+        "sha256": "9b4cddb7a8189164c7bfe1bff26f93ed11a99b3ebefd74a81e1d84bbaa5d5da4"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0018\\boundaries.npz",
+        "sha256": "e6bf3e2919c520267d657f7f1949e796d60ff12dd9309a738831b0a05f005120"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 19,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0019.bmp",
+        "sha256": "858db0f51870455369e32a7c51824de765222c168fcd0308f2cea56247ddeeab"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0019.bmp",
+        "sha256": "dbd60d140dd2f5a9d27597d5b1d0e3257b4f78f72ec9034d9003ee6371e4777b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0019\\centers.csv",
+        "sha256": "5855dcc4f72ced5db4e1dfdacd771fd371995a62a7e1e184b7dcb790b5badd7e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0019\\boundaries.npz",
+        "sha256": "c8e5d4da21d50a4955f12904d9a00b098795a5c52525a93521db257a161c0f4d"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 20,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0020.bmp",
+        "sha256": "42ff786090d4d2a31f2bdd59a3df7500adf361a0280b704c02f2eacad84ed0c7"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0020.bmp",
+        "sha256": "09013febd9d335d89e86675c2816df993284b1cd143792af3151a3df26f7e696"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0020\\centers.csv",
+        "sha256": "0fb099e36a55015216d0b2d9632ef7e97540914fd6c6792aa27b3bdb384b2976"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0020\\boundaries.npz",
+        "sha256": "96a57d0a5ff91a5d804503bbd4a9a61b69152d2d375da3e8fcb68e1e78388bc9"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 21,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0021.bmp",
+        "sha256": "f52c20cd12db9023eeb05bf402c5caabcb4d7d6af17c75d3171190a506e37e78"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0021.bmp",
+        "sha256": "87b14b696140c79e21045acb8cd534316d23c8338f4be85437b6e0c48b23bf51"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0021\\centers.csv",
+        "sha256": "6b80e70a44552350c578626fff0cfe088d3e06c20c62c17ee8f39e9ed9b5301d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0021\\boundaries.npz",
+        "sha256": "cd8830d1da2adc6dd970eac460b83bffa2e1bebadf48d602098c38e2642f1b5a"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 22,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0022.bmp",
+        "sha256": "4e6b85b4064a43ed9f75b81db049a3bab79a3439f5affdd4c8d7ad7ac92d8835"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0022.bmp",
+        "sha256": "506d2420a4dee96c1beac044f101182007bea8599a9a9fd224eae2a922313855"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0022\\centers.csv",
+        "sha256": "41eba09cff0042cb45ad7999672270867ed1ab2fc3d7b881611304b69036b315"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0022\\boundaries.npz",
+        "sha256": "3357617182198f8416f49fdad572d2ae37502e321670222cee6c1c4dbea4d49b"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 23,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0023.bmp",
+        "sha256": "dbb81293e7e8a88442d857411badb6f3b9b9903496b5ae38e1bfa08b2c04ccc9"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0023.bmp",
+        "sha256": "29f697f2549fef44230103f7ba53cca18611f66705a811da97b1a2da8a68d547"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0023\\centers.csv",
+        "sha256": "361c3bcf7fd44aa99daaa8ae106c98913e40d087cc2aafbde71ead2f9cb689c5"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0023\\boundaries.npz",
+        "sha256": "85df31a07880083f6e37e799f83add5526ec074c06d878ac65bcca199d6f2dc9"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 24,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0024.bmp",
+        "sha256": "281648405f6f8f6d4e6c27e28c4a46a918b36f1a2b00c46d77f51a959eb11e76"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0024.bmp",
+        "sha256": "a2d85ce028d24a935b583abc544f5a2c410d3a6c4a87e0ea56c07edf85016d41"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0024\\centers.csv",
+        "sha256": "8128f511335345459be7b1de872deb8af8a70786dbd2e0452cff2fae1549e519"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0024\\boundaries.npz",
+        "sha256": "88589d14923709e46c895df193ccd9bb9e84ad31b1c21e54b0e038f7d160dd0e"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 25,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0025.bmp",
+        "sha256": "a25e7dba2ebe50a81a67d232e66832ce07e43d32b03acecdf84fa46971b51511"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0025.bmp",
+        "sha256": "bc1e16f73a781045ad77c25a05a1ec18046df1d1bfb5f13323db83c1ad913b5d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0025\\centers.csv",
+        "sha256": "7320bb67e1abe514bf805f033de33d12035c74b18321a3803c3c8ed915a2576a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0025\\boundaries.npz",
+        "sha256": "391ae15fb12bc79a349575b7c4440f2caba7127bf7a745bd0ec0f62a47bcb5d9"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 26,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0026.bmp",
+        "sha256": "02c867a83d9b009b8062ac94e3ee6707607e5a6e4e5d845dca544e6a15f478d1"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0026.bmp",
+        "sha256": "b66347142297206613c5c6c0c61a14f9e09b82f967b83a91ed3041e98cd490a0"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0026\\centers.csv",
+        "sha256": "d28d35143345b73de56fb34a18eddf364704c63c9b90652527250b8dc48a5864"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0026\\boundaries.npz",
+        "sha256": "f696bbbc40499e632836b55b46957c0fa8303d2ee0f87b89dfc9a8b0e74565b2"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 27,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0027.bmp",
+        "sha256": "031faa66c4aaa188c5b9ce016347139f059d35be3c3b0108dcecbedf61a8b16b"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0027.bmp",
+        "sha256": "cdbbb00b0f7017df729c9ff4f55f949ee34047e05d103260253aad87b89935e3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0027\\centers.csv",
+        "sha256": "93c0a004e6317d1a65b8b65f02a03e56896af6b1ff0d0323e60bbde351b7f173"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0027\\boundaries.npz",
+        "sha256": "960bc6560172f7b92c5c6e406a3f8a065057d95460123958e3c6443f8ac55b42"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 28,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0028.bmp",
+        "sha256": "90480205b5c7becf002aac18485c3395784a198b976af80368d4c62d4638ce76"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0028.bmp",
+        "sha256": "b508963ce8557824f9a6fc9e9d3cffe8dbec173f13f016c378f7040eebec9f9c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0028\\centers.csv",
+        "sha256": "babe90baa08497d4903a91183f510389ba34e682e7e259ebb5a54f30350c5533"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0028\\boundaries.npz",
+        "sha256": "e1521e9ea4f07c5123c8896aab3fece63fdda7824dd4bbd1a2a75aa4d4e69086"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 29,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0029.bmp",
+        "sha256": "bbe2f53de7a319c259d8c0bbe5434164c2ab65c85542c5e26c68f467842515ce"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0029.bmp",
+        "sha256": "fcb76cfdcdb6c07cc3cd32af1d69c321d9c2fbb1bb5de13a569d4cb636dfcb3e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0029\\centers.csv",
+        "sha256": "5dff428829569e708f2c15c41c18e5788cc96adbb4a0ec28a8862884ac8a37e4"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0029\\boundaries.npz",
+        "sha256": "6fe67fea2163fcd3b9d604ab44ffed0a3e49e4c3a6bd8acdc8b9fa9d0840d465"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 30,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0030.bmp",
+        "sha256": "266f188e297b0f3d7793bdfa677d0aef71fb975492921b7795bb79637e0bcfa1"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0030.bmp",
+        "sha256": "ebd175ffc1a96529b4002c7648a38405fb47162c3cf075febe9c74fcccf38545"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0030\\centers.csv",
+        "sha256": "7f300134749944d20b2ecd2efcb392f654ec5c15204489e42339f5a7cee35d3d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0030\\boundaries.npz",
+        "sha256": "c9917cac1668ce50c7e0f81866c0ce3d9c72c18a2182d64499dc3d97b8df40f5"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 31,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0031.bmp",
+        "sha256": "9dc0d0a7ac3cc537f127eda7bca087ee5e5d00af7099f099b6f5bbac6b0be7fd"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0031.bmp",
+        "sha256": "ccd4058f27461916b3b6037d1ed51dcc217332e6ab5e74b498e89dc046165e31"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0031\\centers.csv",
+        "sha256": "334d23645d501be2af6e264cc35d1e211ad0e45dd939a85548ae2ba71bbb5dc2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0031\\boundaries.npz",
+        "sha256": "2e40a9e043809e8c134ca650cf64e333fbfaefbcab5269f702b26a8e3005a3d2"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 32,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0032.bmp",
+        "sha256": "8d42245541ecc27656f732ae599e1c693a89ef1750d232ad389d72723a65ddf8"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0032.bmp",
+        "sha256": "422c83d98b4ed5fb1a53debbdd10a1559868e28275ef7c9b0c01a67ee440bd95"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0032\\centers.csv",
+        "sha256": "796a92e0f757661423f6155566d156bb8e0df6f2b242a2801eceeb1e37fbf1e0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0032\\boundaries.npz",
+        "sha256": "e24ad3afc84e976a9f78b4e5242e73daeccd6523eacd32f2c062835088ab3dc8"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 33,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0033.bmp",
+        "sha256": "049405b962d7832e256c2202b05d0cdfb778672267e68ea6229f6e47d0ca682f"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_0p5um\\bmp\\frame_0033.bmp",
+        "sha256": "a0a17b5faa50085d34cf2c09083267240d404c700698fc724a10206a80433346"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0033\\centers.csv",
+        "sha256": "78990433e408c39b76dfa22f435c73485ba69fd37b395982b6b3b821049e0922"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_0p5um\\frame_0033\\boundaries.npz",
+        "sha256": "2975b986d51f39ebfa0119593d0363cb60a74cfbdcf2c81e8420cdd0b151f5b2"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0004.bmp",
+        "sha256": "3b2a4dde15175b15e0dbc2f946e3964fd6a6f76774c5f2822f3692874c25921c"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0004.bmp",
+        "sha256": "85110a4e78bbe2b78f56bebf7c6785bdffb84f01dab3e6d7a748b6ab2bd97098"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0004\\centers.csv",
+        "sha256": "9d5baa9718eec751fd67ebb3140253d3f537f4f4b87e357440953b7471fc7e15"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0004\\boundaries.npz",
+        "sha256": "39281a0337ac139270ed21e6dc46e4ebd59177e53517cf981ab581e3e03fe18b"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 5,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0005.bmp",
+        "sha256": "ebcca5fe5cb325ca3a2ded196784be4b6925b9a083bcf4d5962c30b350d69ce3"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0005.bmp",
+        "sha256": "a220bcae394a9c1974b9bbcb1bf48e9c2866236ea40f1a28d3dbbbff0de3d387"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0005\\centers.csv",
+        "sha256": "c9a19955be1d313beb81233201b709e3d7542779f4a4a0a8d43511b3c115654f"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0005\\boundaries.npz",
+        "sha256": "830ccd49f54dc280ddae67f87ca3b6282869aa1321c48784e367388672524eb2"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 6,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0006.bmp",
+        "sha256": "b6ef2d77d82e61b2e5c791d05d60bf5122ffa85b72f23cf3ef5e127c98b21a03"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0006.bmp",
+        "sha256": "f5870d18f00fe6d0b65fac63d647ff41eac1294a90e97461b10fd336c7b75fed"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0006\\centers.csv",
+        "sha256": "d48a36537242650e9a690ee32eccab69769b2b229369c4d76f6009073e035589"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0006\\boundaries.npz",
+        "sha256": "e64cfb425ab2ee02948063c236b367d4c4e3cbeb05c4f02fb2b7c88988471189"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 7,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0007.bmp",
+        "sha256": "321b297ba2bdc069df71d9868eb93677c5664aa024c68c54148164ee0cd71e43"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0007.bmp",
+        "sha256": "fd97570518185f9352bf20d8a813b838e4877c4b6b5653a2b166f6fcd4ef3ea7"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0007\\centers.csv",
+        "sha256": "2f335948e70c84a674d6fe8650be0eb4e0ab0fffbab10feb7d24026affd6fcbc"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0007\\boundaries.npz",
+        "sha256": "fe6068dc637967681dab570602e838266c41d86bb3be59d1af56e83e4aea0c06"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 10,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0010.bmp",
+        "sha256": "378af38cdc205116aefa2fd6678b6045c0dd3022342bffc7d19b35d8cc3808ab"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0010.bmp",
+        "sha256": "ec8be87ae4ca68611879e27f23e374c251272cc09afc8b21788ffafa15963905"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0010\\centers.csv",
+        "sha256": "f112d5bf2808a52934dddce933fea3383b076c994de899c233dfa4bebf313116"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0010\\boundaries.npz",
+        "sha256": "187ec84dcdb5c839c084539eec5620c15543069af09c2f2f72438baabb4c0222"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 11,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0011.bmp",
+        "sha256": "49ff9612739ae36e86e06dc52b679d26b4f2113bc638da0de5894de4f897b755"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0011.bmp",
+        "sha256": "2bc171f4d10cf975f0fec34ab33a6f7bef2d3a8d07a91407e6eaf3d0e771b8e7"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0011\\centers.csv",
+        "sha256": "8fa59cf2572d82b952d98badb4cf16b62b27f5a0ae871e5cd427f109501239cf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0011\\boundaries.npz",
+        "sha256": "f12028e37bc26bc0ab7d09e8760a25023ecc618fb4afc81bde35aed65c7a26d8"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 12,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0012.bmp",
+        "sha256": "0f6cbc9484bd4a7855618ddfef28b7f34bdd1a2cd90a1d8f04366757fb2a7f6d"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0012.bmp",
+        "sha256": "73f28c3e0333cc22ae82866c7478c44aca4582a012ae653dfa1397801fe362d2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0012\\centers.csv",
+        "sha256": "ec7479327e8420490f137eb1b6269de7cb610bfac8e54aff458e5306b91198df"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0012\\boundaries.npz",
+        "sha256": "926beeca179450398a2157974b31fc82564e4546b7257f05ba3a40bca5c917cb"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 13,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0013.bmp",
+        "sha256": "bf01b0613b3d00cad00b7fd188d125269db794b0d4470974e05c6ad69fd63663"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0013.bmp",
+        "sha256": "8bb82261171d624e2aa49a33726d2674be6303e47b7259c686ef2b633482192b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0013\\centers.csv",
+        "sha256": "b3621f4f7ccff64465049baf62036c6b787e03c75b492a816e6e27d9e11704fb"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0013\\boundaries.npz",
+        "sha256": "5b0e088e10302cf76a78092ad37d23119893682b6c656b00482269ac6255777e"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0014.bmp",
+        "sha256": "9b9a8cbac3cf693adb10e1d29f2df568995906a70edc8dddd35ef85eccfcfe0d"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0014.bmp",
+        "sha256": "7489dae0146ef84ca044c703c46bd7c2dedd1bf6a2b0c0a77e1c865202b8e5c3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0014\\centers.csv",
+        "sha256": "3cdd1190eb49a8589b6984e579a2b8a8787c9050aba9c01a746d963cba8d44e5"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0014\\boundaries.npz",
+        "sha256": "976881e8f58fe478a6ded5c78b318da09d0887be49fa57ae22bed6fde18d5054"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 15,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0015.bmp",
+        "sha256": "13854bfac74dd77afa0eaf0618cbe9bc071c96d1987a0ab120a5f2f7d421971c"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0015.bmp",
+        "sha256": "efe38e3ee46062523e52ba10b7886a548fb95a87f0a0f6daff5fe313121a5a9c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0015\\centers.csv",
+        "sha256": "9691dc8986336c5011e15a3e629c2751e9c8d072ca9eaa5fdf0c3eee4da54704"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0015\\boundaries.npz",
+        "sha256": "3ad5aaa4bfa2e2c0ffcc73eef871d1350dc7d81e44bd48b47fd5b97734215dae"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 16,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0016.bmp",
+        "sha256": "2ad0f19f0888a5d54cd862b06ec5a32e66230c9e1ddcb9f5fabc349955a48bd6"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0016.bmp",
+        "sha256": "1bc1d1b96797db4412b0e28befe9f75ecb3a65543125099ef220f3514b0ce688"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0016\\centers.csv",
+        "sha256": "d3f61933d0f23efdcb62a5b0388989b6ef12757484dbc0a3b6df7a131735b882"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0016\\boundaries.npz",
+        "sha256": "e640ce4d7e48c01a60ce5a6acb0c0d258af6fbcfea16f1a1aade05acdb46796b"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 17,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0017.bmp",
+        "sha256": "5729af4b5febd95bdb5a1f846814c434fe8bb6e823f845a84efab0f5e1424d06"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0017.bmp",
+        "sha256": "5cc26318297bb5916e260ece430cefb265b19ac2824a942ee3b771e443b6165d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0017\\centers.csv",
+        "sha256": "d50a45a2b866d6626516659c981a7aed3cfd92ad51052aa16e7e2179ef3d23d7"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0017\\boundaries.npz",
+        "sha256": "198e70787a060995073b9f71853b4467ea222c0c3605229b6692be41cb20f0f7"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 18,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0018.bmp",
+        "sha256": "f10b2945763060a15d6887f9c4170332848d40bceef5d9bc2665b8e0eab28fb3"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0018.bmp",
+        "sha256": "c723b349bb79b76a6644a72bae05d6c25003c6c45eb449f678eb3cfe75887e87"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0018\\centers.csv",
+        "sha256": "fb514f1924ec64ff5b86120c152e86c58b37a9f5a3a4c8c1b6af21ed8146d6c7"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0018\\boundaries.npz",
+        "sha256": "356ec466553373e03d7ec750b7e6563f476bfcf9fc8bdd602c0abfd9c830ca2d"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 19,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0019.bmp",
+        "sha256": "d961fc5d31fae8b55162d7afdc149f07c4c6a9e0f645cc8c8441d63ea43fe582"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0019.bmp",
+        "sha256": "c0b1f2cbd52be8c2cfa3b88131dff78aff76ae5a9c0a40c4f6db0b1216e02fe5"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0019\\centers.csv",
+        "sha256": "5373c50caab84943c21da4d4fafa112ac9829251f57e3f3c985ea7839130107c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0019\\boundaries.npz",
+        "sha256": "49854523bde867c776c048050faf77b0325435cb15b9dae2ebb759bba0fa980e"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 20,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0020.bmp",
+        "sha256": "13e59750c6d0c4661b22012174d6d10ecbe898c2752f7e362a6ef6fe758a6b6b"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0020.bmp",
+        "sha256": "50f17d200611d0c1c6a32f04f5290743cdab432422935cb0326c900ba45dc1fd"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0020\\centers.csv",
+        "sha256": "c69307fa365d2f7bbd2a460a1697f4a71b2005d779ad90c86d43beb6fe105151"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0020\\boundaries.npz",
+        "sha256": "75edb37ba98433c66d5750937b52d4a4ab9da70ee561fc36f2a785469a582af5"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 21,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0021.bmp",
+        "sha256": "2c1fc6a09ef7742623a9b4f16dee7c0d6442714d88ea5d55acf531735ac7fd0c"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0021.bmp",
+        "sha256": "c21f8ca1504018697bbbd5115fe3c0221a5f206af4c637210482ccbffaf90f5b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0021\\centers.csv",
+        "sha256": "a60f0b85f0dfb2926afec6fdda2283926260676d234d027413f1efb06c124ecb"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0021\\boundaries.npz",
+        "sha256": "ee727f396e2f7fe205780fdd1c7e42d22d8f03aca0f4b5a5bac3a4375e5801a6"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 22,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0022.bmp",
+        "sha256": "be0f9feb1cd881ab4227668d0555765406537b62f6993b46e8961f3328ce833d"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0022.bmp",
+        "sha256": "0a529bb99f46ea82062af5df681cf48de71c2d55aeaadc570ce551bc7add54e7"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0022\\centers.csv",
+        "sha256": "4dcc131f01586e3b36618029ef009bf34435a1f5b4645069c87621680df32d2c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0022\\boundaries.npz",
+        "sha256": "3c8729faec83f80842d13d914507c4c0a46845a0862d86bc33b3903751ab83e1"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 23,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0023.bmp",
+        "sha256": "99032d3bc51101ac5f487908dea723e64c639597340e1388e3565fb0d742f748"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0023.bmp",
+        "sha256": "4937a4139acaef6a619412c2fc467e1a946e52bbe5e77520e0e32a1a202e6c0d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0023\\centers.csv",
+        "sha256": "b70aa6bba83baf890e9fdc2814894d240f93a0bd5cd4b2e589ad545819c58d72"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0023\\boundaries.npz",
+        "sha256": "edabe4197cfbf694f485ca1f007bc681d81591806df60d60328cda7d6406fc40"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 24,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0024.bmp",
+        "sha256": "9b1009571435d43a2b2e132a1748da6c88bcefcf2528ece6d5ef72aec4632ff7"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0024.bmp",
+        "sha256": "65f3165abd0050a0918ab4f7c3748cc4767f588c5573d5085a14087dfab08acd"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0024\\centers.csv",
+        "sha256": "63b6e9cb65c7bde1dda522020cacd788daf1aa7030fe529480bd54d14d12c16d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0024\\boundaries.npz",
+        "sha256": "684a6ef6ffb3f96e1acc76676f810f2e502f94bba8e1d8f6072f8f1b4f5d8e2f"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 25,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0025.bmp",
+        "sha256": "6a937fab9183e953cdd9a5f4365b27c1d354c2d7eeef4f0983ba6279223385e0"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0025.bmp",
+        "sha256": "8d86fb483e603ade878a756e2a94c1d6c0889619dc4b6dc98e404764c7b783a1"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0025\\centers.csv",
+        "sha256": "4fd6daa64a1bb1bd0fdc4f03abf584c166ef823427b08eb6a3f04f7e64423227"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0025\\boundaries.npz",
+        "sha256": "95776fd1a7ea67247dbd4b602604c13f6c47e6dcc84e393d68744a60a632642d"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 26,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0026.bmp",
+        "sha256": "287433b02824fd67eedef2f6b1f2f8797bf9237511fc6cf46335d38c7c0da9a3"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0026.bmp",
+        "sha256": "f90b7450b8a4d363996a51917ace3fc111c89c0b368383007e9e125172be5518"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0026\\centers.csv",
+        "sha256": "d9f1f93de1b0ebca6c3a3255e492685a7464b0868f4ca2216bf0ad8772c6a0f8"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0026\\boundaries.npz",
+        "sha256": "9dfb02b45cb3d8ad15f4f0ebfcdaee303de60485bf1841a84022bfc3dcd92fa5"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 27,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0027.bmp",
+        "sha256": "06a1b391a6518bfc40e76807b01a9d5437c268a7e15cac3ad405e235d65281ba"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0027.bmp",
+        "sha256": "e5bacc1a0ce047607228ada8c18270d4ca009a1f2c526c3a3b3ab615ca1fc43e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0027\\centers.csv",
+        "sha256": "fb3bc6b8d01bae17e5249f3cc0d3756d584e9524e0777c0bcc627fbac5aca61c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0027\\boundaries.npz",
+        "sha256": "7f7f4a6fd8041b65a31a5773366437013b0c18b9dae425a75c524dfb7432fc27"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 28,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0028.bmp",
+        "sha256": "9e300e371f4ec6efe5f1cfa07e77bc94d5317c54d8a50d5fd1402ce07923c08f"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0028.bmp",
+        "sha256": "018ac22a24d25bdcacd8700046b67d425f265e5134a1f273eae6a8f16ace691e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0028\\centers.csv",
+        "sha256": "24b3863d69f5228b906cfd0d57424a69c292842f527a261d667699f95f9e69f2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0028\\boundaries.npz",
+        "sha256": "9bd52e73208a536b6c97157c7e6888282c066d5d2e8a3abf0abc880b085c265e"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 29,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0029.bmp",
+        "sha256": "16d1fd1f9e5f487525435eb0c64f28d95b5d0bac6d889beb8d554bafe76b513b"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0029.bmp",
+        "sha256": "5d75678bbcbda3c5170ddce012c5c9091c5659147d5d2356e7203f8dba7f7177"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0029\\centers.csv",
+        "sha256": "ad472dfc74804f71a01b58da10e6093a7c88598fd4750e864aa54cf8a69bb78e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0029\\boundaries.npz",
+        "sha256": "e8bb33155879b6aabe9427d1549f9877379cbff11ac9587d6104229b8d6043ef"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 30,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0030.bmp",
+        "sha256": "2d23d94bb44b01a2976395e46da4d0b6da69188bdfe374a63583c8953165b25d"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0030.bmp",
+        "sha256": "e9e690567fa109141a15388df258d6b3f6889517ce155d74b45d6a19ef3fc592"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0030\\centers.csv",
+        "sha256": "c8ca658b2df9a105931e73d225216141ede9498551a69a2170ba62be5aabd1be"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0030\\boundaries.npz",
+        "sha256": "d69dde254488145021114ed1f7182cae819bdb9fe239bea9dba5eb8a94dc0069"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 31,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0031.bmp",
+        "sha256": "4e3cd0eeada15ef41d2d79ea3b10191e0117218a0450ac72b7e54c2e852eef12"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0031.bmp",
+        "sha256": "6cbfc1dc898e56373e7134e2892831589f0d15ed119c61699749a30e16c1a8f3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0031\\centers.csv",
+        "sha256": "fbfd3d270c5378f0357ee10cef5fbe1d996dc41b0b793580474f03075d9a2107"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0031\\boundaries.npz",
+        "sha256": "ae893a85bf1794d6392dbb485147f81c79090265380c034fdb7e17043358b1f9"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 32,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0032.bmp",
+        "sha256": "5c661a2aa21cf8a1cfbf83f9f541796a18a9e4d6985639b098ad3159c0df5683"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0032.bmp",
+        "sha256": "9205484488ab9d945c1f5691417a69c51776c8f9a6c80cee33c93090ad66a406"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0032\\centers.csv",
+        "sha256": "9d4c616e36d4eda9588710d0920caf8dfbd70fe6bbf0037aaab7f2d3e45df016"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0032\\boundaries.npz",
+        "sha256": "0db7c9ee757863e5c50726088b9cdd19fabd911c73ed7770ba728b013b7110e9"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 34,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0034.bmp",
+        "sha256": "f75e558830a04bb9a34b15005cba7339a2abbe383fbfc5fd855fdfcb8b853635"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0034.bmp",
+        "sha256": "50ac3ed2956ab16eb580ee9cf49488a8751337379791e00d31720f2a93fc5bab"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0034\\centers.csv",
+        "sha256": "b5ad356c4bf61e3b46a0bb4857e30f543a6f6ac41d0c91b4a94b445f5d871673"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0034\\boundaries.npz",
+        "sha256": "ed300127e7721a50d56e47d0a30fe298c287f73d230aa33efed4c62cca3d4f8f"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 35,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0035.bmp",
+        "sha256": "39644ea9cbdfafbddbe08721ed61761213d018bdefb5d7eef7660f683db69ceb"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0035.bmp",
+        "sha256": "f60794aac3f129c72b2f655cddc84347e16b258b2d0e6ab5d1173f42b89188a6"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0035\\centers.csv",
+        "sha256": "0b6f3922ee2b02da6c8092b42b1d8c078d12f452b2542db44f63ffb3498876a1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0035\\boundaries.npz",
+        "sha256": "cc26463d93d0b72f10c328def1abab253e64778465dac41c1dbf55562ea6b035"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 36,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0036.bmp",
+        "sha256": "3d4b9c1bbe86563f213bda03bf20c559d8d2ae8a50eb0358003b4f89b94dfc44"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0036.bmp",
+        "sha256": "865dbfd029086cd0f997f8a3fe63cacf0713dbb9fa78e132010f9027ebe94a08"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0036\\centers.csv",
+        "sha256": "ceae783e0507c202b7406fb0c0eccf7d23d3de2b229844a0e7d6c37592167e45"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0036\\boundaries.npz",
+        "sha256": "e9337b333de5bd23ce7456e2c07875af56072e44602f238b71287963ebfe3362"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 37,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0037.bmp",
+        "sha256": "275800766e0a0a93e1ba8387990cdb171b4fc7a23f4e97d061d750b8dc003abc"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0037.bmp",
+        "sha256": "32494da9825bd71a985c2748b6cc199458d743e6ae90af374ec066811940405b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0037\\centers.csv",
+        "sha256": "3da354055795f2bdca2d0ceb41baa69ab2c8b364e7d84c5a1171ce811e85d90d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0037\\boundaries.npz",
+        "sha256": "30602839db6220e1f64026ddc7f33ef9679946cc2e9d00ace8e1c553490e9808"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 38,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0038.bmp",
+        "sha256": "2c3b2d37657cda800b32c1056f29abb650c28814fe12ecfb08cece06e8b63b03"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0038.bmp",
+        "sha256": "243ea6fe2746131b84cff516562988ea70c0878960f302af1031d86a2a2adcbd"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0038\\centers.csv",
+        "sha256": "cca498f3b9ccdea17bdd89457522d3b4a297f7a9683307cba74524ef7937d48e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0038\\boundaries.npz",
+        "sha256": "c59d26a1e17a62b0e1462721e666bc3138fa1613024eea89d39ce6922e2406ea"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 39,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0039.bmp",
+        "sha256": "5bc02ef1ebb538e8ab189e2bffbacc199bdb6c31674d03b9b80c324f803899d0"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0039.bmp",
+        "sha256": "f9d2cb0db9e3812ff5c27f147470469ae6c0ce6f1fb0a366fde857d66370fac8"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0039\\centers.csv",
+        "sha256": "ed5b3191414c7b33736e28179dddecc4e7be61f546e74d883b1bab25332c3384"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0039\\boundaries.npz",
+        "sha256": "35ac3cb64402f747d6f4d15e551bfe685e391fffa4ed28bd0c4d9fda2c4a7465"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 40,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0040.bmp",
+        "sha256": "a73c7899bf572eae0a147aa6db634b5a2443f57c38e175ca3d951708581941bb"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0040.bmp",
+        "sha256": "593d6d2ddec32496d39ff1f8d9323c32fa459f8b0faae41c9bcaaac2ce7d9b79"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0040\\centers.csv",
+        "sha256": "ae11e92235dfab62dee4208d15cd7475b2cfaa00bf5bf81f8c52617f2237ab30"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0040\\boundaries.npz",
+        "sha256": "2d52fe3e1b7701cb7cc435fb15148f4d2c92e52b6263fccd1801ad37d48a3e9f"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 43,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0043.bmp",
+        "sha256": "1ba48406d7261e0086861da15cc8b0d2a5a800f535a284e54415ed567fb1215f"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0043.bmp",
+        "sha256": "e3ad929fe8c79e928b82a0d73661b718bc484bfc3e1a5066324ee19c640b1416"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0043\\centers.csv",
+        "sha256": "ea8d1ab84e1b35a0da968ee1cc24ea6e8938996ae326034eec13670f0222e171"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0043\\boundaries.npz",
+        "sha256": "0333f90401bc45b67db407dd0d893619eb6e9222459a414e8c02d6e695fd84a9"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 44,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0044.bmp",
+        "sha256": "5ecefb9f37d5ddbee9a9b83891e7170968d664cf5d5a459e2a42a2488c69c3b8"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0044.bmp",
+        "sha256": "f696545fa34740e955ef611d8bbaafe8c033d55ca0b4a29238c6b2ab04e587c8"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0044\\centers.csv",
+        "sha256": "3243e29af09a9b41706e719686b316d78d865975edcd249b1bde660b69bd3ebe"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0044\\boundaries.npz",
+        "sha256": "3f27cb34975a67009732d3057c5f0250512503b0ccd295a5c2b46a7513b019ef"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 45,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0045.bmp",
+        "sha256": "4016700dfce88863720cd6007a4a2bc48f7812f9b0592b5af84a92c2f3c88099"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0045.bmp",
+        "sha256": "9c054c3e2accbeb8e6bb5b4abbdd7bef1d278bf51fad4eb815a665c943a93f30"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0045\\centers.csv",
+        "sha256": "ba60d8521f1999bdcb78011c7661bac79a146c1c822e6b4c8db17dcf432fa712"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0045\\boundaries.npz",
+        "sha256": "2657478b2f987e080b69acf14ec7b394905cb3a82270783dd49edf1c75f35bd4"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 46,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0046.bmp",
+        "sha256": "8798974d8daf99b3b14b927ec87e0386073b436b26c49cf53f6fdffc0d131319"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0046.bmp",
+        "sha256": "03e00e996a57a0e7635f919e1d57aa74aa75be8bdc3ee8fb476e8823644d6776"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0046\\centers.csv",
+        "sha256": "cb58a5f4e19137ba75eb465d0841dbd92e269a5877b009bc1557bd4db6925c42"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0046\\boundaries.npz",
+        "sha256": "452c57c5cdbb74bc7ea2ca4fb32e1cce30fb6e59bb16ada5e96779302f449aae"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 48,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0048.bmp",
+        "sha256": "099ad4ac1324ec4da145dc941b81bfdd5f784784b516ba61d0d86473549c84e7"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0048.bmp",
+        "sha256": "979814765da5665d732ee40179c8f7c0a5cdc22c16aa42da5139ae1eb9281c66"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0048\\centers.csv",
+        "sha256": "1b7979b4e1a9a24fda27a075b6bb72232c9dddef41798a351a8e9116d9f2ac7f"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0048\\boundaries.npz",
+        "sha256": "bd6aeb92c02d4110db24f525116c343cc89462857e1774b83e7fa891d1e82adb"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 49,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0049.bmp",
+        "sha256": "b0708c09ffece8207e112d683b775803b8be3f5a18427cd84c4e7bd06af55702"
+      },
+      "image": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\r61_v16_psfoff_20x_1um\\bmp\\frame_0049.bmp",
+        "sha256": "c2e58e25c1ddf512c31e8ad9f5c2a03042e940a9d885a0461df0df785db2107c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0049\\centers.csv",
+        "sha256": "f762e83540db63cbca4153203ae85833762595ffdb85b5e7a7bd51fba44cca5e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\20x_1um\\frame_0049\\boundaries.npz",
+        "sha256": "11404182f4298284c2dfa6eff5fc67d726ee482ae7312af1ae68c70dc886e9cf"
+      }
+    }
+  ],
+  "summary": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\summary.csv",
+    "sha256": "4fbe54cc4ca6b563c7343a6a2bc68ec23ab3606f8e7f746245920a0929377e23"
+  },
+  "centers": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\centers.csv",
+    "sha256": "a2d01e3756c360e6c3b1df3250036cfd23e7993b186c35b1f6aee8465cb3b6b2"
+  },
+  "pairs": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\measurements\\R61v16_PSFOFF\\per_pair.csv",
+    "sha256": "442ba08f2c3d74a8a529fcf6edcde648466c8538ab890a8e64a14f883b2b6a62"
+  },
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\lsc_comparison\\measure.py",
+    "sha256": "60b35b04e792cd2fe2dd3db71e80e013a0d9971a472a31afcc100bbc0e077344"
+  },
+  "seconds": 47.53557389974594
+}

@@ -1,0 +1,317 @@
+{
+  "completed_utc": "2026-09-13T01:33:02.783922+00:00",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\review_long_training_v2.py",
+    "sha256": "063485d04b43e24ae76478e14ef4098e3fa44a3a8f1e4e4d95f62d3f4000756c"
+  },
+  "package": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912",
+  "completion": {
+    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\completion.json",
+    "sha256": "ef252c5304d7656e422045d50f57d417d321185942f52601f391c92475afe1ff"
+  },
+  "completion_records_verified": 24,
+  "immutable_package_files_verified": 1603,
+  "unique_updates": 8192,
+  "actual_update_rows": 8192,
+  "each_epoch_all512_parents": true,
+  "independently_rebuilt_inputs": [
+    1,
+    128,
+    256,
+    512,
+    513,
+    640,
+    768,
+    1024,
+    1025,
+    1152,
+    1280,
+    1536,
+    1537,
+    1664,
+    1792,
+    2048,
+    2049,
+    2176,
+    2304,
+    2560,
+    2561,
+    2688,
+    2816,
+    3072,
+    3073,
+    3200,
+    3328,
+    3584,
+    3585,
+    3712,
+    3840,
+    4096,
+    4097,
+    4224,
+    4352,
+    4608,
+    4609,
+    4736,
+    4864,
+    5120,
+    5121,
+    5248,
+    5376,
+    5632,
+    5633,
+    5760,
+    5888,
+    6144,
+    6145,
+    6272,
+    6400,
+    6656,
+    6657,
+    6784,
+    6912,
+    7168,
+    7169,
+    7296,
+    7424,
+    7680,
+    7681,
+    7808,
+    7936,
+    8192
+  ],
+  "optimizer_step8192": true,
+  "scheduled_dev_evaluations": 17,
+  "scheduled_real_evaluations": 5,
+  "SEM_rows_independently_refitted": 540,
+  "SEM_refit_max_difference": 1.4241396073089163e-05,
+  "MZC_note": "Historical shared algorithm, not independently reimplemented",
+  "motion_pairs_recomputed": 20,
+  "final_public_inference_replay_exact": true,
+  "final_checkpoint": {
+    "path": "results/training/r129_long_01/checkpoints/step08192.pth",
+    "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
+  },
+  "trajectory": [
+    {
+      "step": 0,
+      "radial_nm": 41.579126059518615,
+      "correlation": 0.6689423095239432,
+      "diameter_error_nm": 80.67896709987959,
+      "MZC_error_nm": 86.60469506178842,
+      "centered_shape_nm": 21.35182950011044,
+      "nominal_error_nm": 6.745661313636228,
+      "within_grid_nm": 8.827678182003,
+      "cross_axis_nm": 6.932563200874383
+    },
+    {
+      "step": 512,
+      "radial_nm": 45.36419252132886,
+      "correlation": 0.6932190252350143,
+      "diameter_error_nm": 89.39631114260295,
+      "MZC_error_nm": 66.9491634332686,
+      "centered_shape_nm": 17.672339031240746,
+      "nominal_error_nm": 7.207624011234093,
+      "within_grid_nm": 7.239972508830044,
+      "cross_axis_nm": 7.588307163420737
+    },
+    {
+      "step": 2048,
+      "radial_nm": 47.388915835248504,
+      "correlation": 0.7239319160325156,
+      "diameter_error_nm": 92.85106816571943,
+      "MZC_error_nm": 63.55692487280223,
+      "centered_shape_nm": 16.770850734645954,
+      "nominal_error_nm": 7.433064824780594,
+      "within_grid_nm": 7.188254876817319,
+      "cross_axis_nm": 7.480353808255245
+    },
+    {
+      "step": 4096,
+      "radial_nm": 47.570678632742144,
+      "correlation": 0.7193873084419229,
+      "diameter_error_nm": 93.94376531146389,
+      "MZC_error_nm": 66.53260002456531,
+      "centered_shape_nm": 16.2854992497769,
+      "nominal_error_nm": 7.363917774370454,
+      "within_grid_nm": 7.35587558497391,
+      "cross_axis_nm": 7.374188202387515
+    },
+    {
+      "step": 8192,
+      "radial_nm": 49.52309411379984,
+      "correlation": 0.6918968199485345,
+      "diameter_error_nm": 96.38029372672358,
+      "MZC_error_nm": 62.650718635558064,
+      "centered_shape_nm": 16.397177134895387,
+      "nominal_error_nm": 6.969557372481782,
+      "within_grid_nm": 7.433656298783955,
+      "cross_axis_nm": 7.720780393185904
+    }
+  ],
+  "paired_changes": [
+    {
+      "step": 512,
+      "metric": "radial_nm",
+      "improved": 8,
+      "worsened": 28,
+      "tied": 0,
+      "median_paired_change": 3.437574062169009
+    },
+    {
+      "step": 512,
+      "metric": "correlation",
+      "improved": 29,
+      "worsened": 7,
+      "tied": 0,
+      "median_paired_change": 0.09466760207624175
+    },
+    {
+      "step": 512,
+      "metric": "diameter_error_nm",
+      "improved": 7,
+      "worsened": 29,
+      "tied": 0,
+      "median_paired_change": 8.925585784513004
+    },
+    {
+      "step": 512,
+      "metric": "MZC_error_nm",
+      "improved": 32,
+      "worsened": 4,
+      "tied": 0,
+      "median_paired_change": -18.569028813996212
+    },
+    {
+      "step": 512,
+      "metric": "centered_shape_nm",
+      "improved": 36,
+      "worsened": 0,
+      "tied": 0,
+      "median_paired_change": -5.136420684875752
+    },
+    {
+      "step": 2048,
+      "metric": "radial_nm",
+      "improved": 8,
+      "worsened": 28,
+      "tied": 0,
+      "median_paired_change": 3.688782743858745
+    },
+    {
+      "step": 2048,
+      "metric": "correlation",
+      "improved": 35,
+      "worsened": 1,
+      "tied": 0,
+      "median_paired_change": 0.09833062149831179
+    },
+    {
+      "step": 2048,
+      "metric": "diameter_error_nm",
+      "improved": 6,
+      "worsened": 30,
+      "tied": 0,
+      "median_paired_change": 12.088238204902034
+    },
+    {
+      "step": 2048,
+      "metric": "MZC_error_nm",
+      "improved": 31,
+      "worsened": 5,
+      "tied": 0,
+      "median_paired_change": -16.678536423407117
+    },
+    {
+      "step": 2048,
+      "metric": "centered_shape_nm",
+      "improved": 36,
+      "worsened": 0,
+      "tied": 0,
+      "median_paired_change": -5.463362746594417
+    },
+    {
+      "step": 4096,
+      "metric": "radial_nm",
+      "improved": 7,
+      "worsened": 29,
+      "tied": 0,
+      "median_paired_change": 5.302842027493053
+    },
+    {
+      "step": 4096,
+      "metric": "correlation",
+      "improved": 33,
+      "worsened": 3,
+      "tied": 0,
+      "median_paired_change": 0.10123866917571384
+    },
+    {
+      "step": 4096,
+      "metric": "diameter_error_nm",
+      "improved": 7,
+      "worsened": 29,
+      "tied": 0,
+      "median_paired_change": 14.70974690670451
+    },
+    {
+      "step": 4096,
+      "metric": "MZC_error_nm",
+      "improved": 32,
+      "worsened": 4,
+      "tied": 0,
+      "median_paired_change": -18.18123475813075
+    },
+    {
+      "step": 4096,
+      "metric": "centered_shape_nm",
+      "improved": 36,
+      "worsened": 0,
+      "tied": 0,
+      "median_paired_change": -6.06240113759673
+    },
+    {
+      "step": 8192,
+      "metric": "radial_nm",
+      "improved": 6,
+      "worsened": 30,
+      "tied": 0,
+      "median_paired_change": 6.25037222010414
+    },
+    {
+      "step": 8192,
+      "metric": "correlation",
+      "improved": 29,
+      "worsened": 7,
+      "tied": 0,
+      "median_paired_change": 0.08676631808420976
+    },
+    {
+      "step": 8192,
+      "metric": "diameter_error_nm",
+      "improved": 5,
+      "worsened": 31,
+      "tied": 0,
+      "median_paired_change": 18.591131109755366
+    },
+    {
+      "step": 8192,
+      "metric": "MZC_error_nm",
+      "improved": 31,
+      "worsened": 5,
+      "tied": 0,
+      "median_paired_change": -22.38009694797683
+    },
+    {
+      "step": 8192,
+      "metric": "centered_shape_nm",
+      "improved": 36,
+      "worsened": 0,
+      "tied": 0,
+      "median_paired_change": -5.757421161732081
+    }
+  ],
+  "training_finished_utc": "2026-09-12T14:20:12.463340+00:00",
+  "model_promoted": false,
+  "default_inference_unchanged": true
+}

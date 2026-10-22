@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "completed_utc": "2026-09-13T12:50:02.552865+00:00",
+  "plan": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\staged_inference_plan.json",
+    "sha256": "5c9130fae83d55a29e74bdc7f997d3f25a12c168f58308656d5faa1316536393"
+  },
+  "rows": [
+    {
+      "input": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem13.png",
+      "core": 256,
+      "output_float_difference": 5.960464477539063e-08,
+      "latent_float_difference": 4.172325134277344e-07,
+      "changed_uint8_pixels": 0,
+      "maximum_gray_difference": 0
+    },
+    {
+      "input": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem13.png",
+      "core": 512,
+      "output_float_difference": 0.0,
+      "latent_float_difference": 0.0,
+      "changed_uint8_pixels": 0,
+      "maximum_gray_difference": 0
+    },
+    {
+      "input": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem14.png",
+      "core": 256,
+      "output_float_difference": 1.1920928955078125e-07,
+      "latent_float_difference": 4.172325134277344e-07,
+      "changed_uint8_pixels": 0,
+      "maximum_gray_difference": 0
+    },
+    {
+      "input": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem14.png",
+      "core": 512,
+      "output_float_difference": 0.0,
+      "latent_float_difference": 0.0,
+      "changed_uint8_pixels": 0,
+      "maximum_gray_difference": 0
+    },
+    {
+      "input": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem15.png",
+      "core": 256,
+      "output_float_difference": 1.1920928955078125e-07,
+      "latent_float_difference": 5.364418029785156e-07,
+      "changed_uint8_pixels": 0,
+      "maximum_gray_difference": 0
+    },
+    {
+      "input": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem15.png",
+      "core": 512,
+      "output_float_difference": 0.0,
+      "latent_float_difference": 0.0,
+      "changed_uint8_pixels": 0,
+      "maximum_gray_difference": 0
+    },
+    {
+      "input": "random197x233",
+      "core": 64,
+      "output_float_difference": 5.960464477539063e-08,
+      "latent_float_difference": 7.152557373046875e-07,
+      "changed_uint8_pixels": 0,
+      "maximum_gray_difference": 0
+    },
+    {
+      "input": "random197x233",
+      "core": 128,
+      "output_float_difference": 5.960464477539063e-08,
+      "latent_float_difference": 7.152557373046875e-07,
+      "changed_uint8_pixels": 0,
+      "maximum_gray_difference": 0
+    }
+  ],
+  "full_field_source": {
+    "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+    "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b"
+  },
+  "full_core512_vs384_max_float": 1.1920928955078125e-07,
+  "full_changed_uint8_pixels": 0,
+  "full_core512_seconds": 9.974848500016378,
+  "peak_memory_bytes": 10359358464,
+  "probe": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\staged_full_probe.npz",
+    "sha256": "bb349160c9764afa35395b2c2c496eeb1552d50f0f34ed3677f651ba2cddad57"
+  },
+  "scope": "Mathematically same local operator with declared halo; finite-precision equivalence checked, not alternate model"
+}

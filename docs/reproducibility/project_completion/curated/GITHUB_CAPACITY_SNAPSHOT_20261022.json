@@ -1,0 +1,40 @@
+{
+  "verified_at": "2026-10-22T11:43:15.086394+08:00",
+  "repo": "rio10255254/GMM_2_Final",
+  "source_main_commit": "3b18ec06e889a4c9f65ead4ab874b0708be527de",
+  "repository_API_reported_size_KiB": 1622764,
+  "repository_API_reported_approximate_bytes": 1661710336,
+  "published_releases": 23,
+  "release_assets": 211,
+  "release_asset_bytes": 124655463930,
+  "draft_releases": 0,
+  "largest_release_asset_bytes": 2027201313,
+  "largest_release_asset_count": 58,
+  "remaining_unified_storage_quota_bytes": null,
+  "remaining_unified_quota_note": "No universal remaining-GB quota is exposed here. Usage, advisory repository health thresholds and per-asset limits are different measures.",
+  "official_rules_checked_on": "2026-10-22",
+  "official_sources": [
+    {
+      "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/repository-limits",
+      "facts": [
+        "Recommended on-disk repository maximum10GB; not a personal guaranteed remaining-storage allocation.",
+        "Recommended object1MB; enforced100MB; push enforced2GB."
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github",
+      "facts": [
+        "Ideally repository<1GB and strongly recommended<5GB.",
+        "Git is not designed as a disk backup tool."
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases",
+      "facts": [
+        "No total release size or delivery-bandwidth limit stated.",
+        "Each asset under2GiB, at most1000 assets perrelease."
+      ]
+    }
+  ],
+  "this_review_selection_policy": "Only required immutable inputs, original programs/configuration and complete meaningful scientific scalar tables. Generated image arrays, all intermediate checkpoints and old cache/full-backup batches remain excluded."
+}

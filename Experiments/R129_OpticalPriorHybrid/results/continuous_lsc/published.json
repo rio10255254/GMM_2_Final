@@ -1,0 +1,30 @@
+{
+  "completed_utc": "2026-09-13T13:36:37.608910+00:00",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\publish_continuous_lsc.py",
+    "sha256": "11869166fa931a032f2be7e98d4434def5ce59f32a4fa7a40386f0d6ad752962"
+  },
+  "report": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\reports\\R129_CONTINUOUS_LSC_RESULTS.md",
+    "sha256": "0c73d4ade3213d38199df72aef5209afa6d27f2504e08db044c39e76f586ed63"
+  },
+  "figures": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\reports\\figures\\R129_continuous_LSC_comparison.png",
+      "sha256": "516057412c10a1b8d2097838973894a16cb4485143ba6baf3ae8cc5427830dfc"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\reports\\figures\\R129_continuous_LSC_traces.png",
+      "sha256": "49fdd858e1afbad09e9a80bc95ddbdcaadbeec7b9d1bd3c85c07f4116e250c9a"
+    }
+  ],
+  "audit": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\analysis_verified.json",
+    "sha256": "e5745c18b62f0b3df714eb308e5809ef2335a7fd85744e2b50a29dda47a305ab"
+  },
+  "replay": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\worst_replay_verified.json",
+    "sha256": "a49bb410bdcdc57db7046ebf9f2df19b289bd11662759c6f209215c3929a4853"
+  },
+  "no_model_promotion": true
+}

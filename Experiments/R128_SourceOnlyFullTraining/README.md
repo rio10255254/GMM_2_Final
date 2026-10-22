@@ -1,5 +1,7 @@
 # R128 — Source-only full training
 
+2026-10-22保存閱讀補強：[本輪重要完整原表與來源證據](../../docs/reproducibility/project_completion/curated/IMPORTANT_TABLES_20261022.md)已提出到可直接閱讀的位置；原數字、原失敗和採用身分保持。
+
 Self-contained experiment on branch codex/r128-full-training. The user authorized completing preparation and then starting the full planned training. Physical instrument certification limits claims, and is not a prerequisite for this source-isolated research training.
 
 Final deployment requirement, reaffirmed2026-09-09: deliver one selected model with one usage entry point. The four training results are internal research comparisons; the assistant is responsible for evaluating and selecting, not handing four alternatives to the user. Selection must be supported by the complete fixed real microscopy/SEM evaluation and failure cases. The frozen training length and evaluation protocol remain in force; completion alone is not adoption.

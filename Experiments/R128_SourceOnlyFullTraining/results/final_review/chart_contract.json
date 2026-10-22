@@ -1,0 +1,9 @@
+{
+  "question": "Does final reconstruction improve current SEM-defined sizes at both real exposures?",
+  "takeaway": "Every candidate worsens all16dark interior objects; one promising follow-up candidate but no production-ready winner",
+  "surface": "standalone thesis-project PNG figures with Matplotlib",
+  "family": "comparison stacked bars plus same-source image panels",
+  "grain": "36objects perexposure percandidate,288measurements total",
+  "palette": "two roots blue and orange plus neutral, hatch distinguishes failures",
+  "caveat": "SEM definition sensitivity is not calibrated physical truth; outer20objects include Raw retention; all failures retained"
+}

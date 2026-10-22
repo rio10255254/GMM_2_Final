@@ -6,6 +6,8 @@
 
 ## 依你的目的開始
 
+[現在完整到哪裡、容量規則及本次補強](docs/reproducibility/COMPLETENESS_AND_CAPACITY.md)：重要原表、30份原平台紀錄與SEM工作表可直接取得，保留原限制。
+
 | 要做什麼 | 第一個入口 |
 |---|---|
 | 第一次來，先看研究內容與下載界線 | [閱讀與取得指南](docs/reproducibility/GETTING_STARTED.md) |

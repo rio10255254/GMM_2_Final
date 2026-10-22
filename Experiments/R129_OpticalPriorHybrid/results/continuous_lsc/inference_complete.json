@@ -1,0 +1,4438 @@
+{
+  "completed_utc": "2026-09-13T13:35:56.718810+00:00",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\infer_continuous.py",
+    "sha256": "a9fa98a3b8f63ee1002030415deabe711841221bd416aeaa3e42bbd4c74b56b6"
+  },
+  "plan": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\plan.json",
+    "sha256": "ada63da7a81fb1755349d9402601718777534ffe224c541cc7c07b4e5b3e42d3"
+  },
+  "frames": 201,
+  "records": [
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 0,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+        "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0000\\reconstruction.png",
+        "sha256": "923bd506cec2f6842461cd121252f37a11239ae9706239cb1f69fee78d61c904"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\staged_full_probe.npz",
+        "sha256": "bb349160c9764afa35395b2c2c496eeb1552d50f0f34ed3677f651ba2cddad57"
+      },
+      "reused_validated_probe": true,
+      "seconds": 0.1576301000022795
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 1,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0001.bmp",
+        "sha256": "50e80951df01f69f26c589556e4ae3a16dee058b0a8a6cb18e3a1883cbd9f5a2"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0001\\reconstruction.png",
+        "sha256": "d94c2955da2cdd798fc295bb6c865fc85191f73edb4e4408c3b71f2c58736570"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0001\\output_float.npz",
+        "sha256": "6ceb7a0df7dfd7bce567ba4f2bbbd0372911718514db0234f52c5095f23afdc7"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.26747809999506
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 2,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0002.bmp",
+        "sha256": "70cae2d8240199ca8434f020d200495ca66b0aa4880bf1e7e80d7c5ff0f89d6f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0002\\reconstruction.png",
+        "sha256": "c4145fe49f079a871c4bd542b2d8a154a9009dd1fd8094099e0d607e02f489ba"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0002\\output_float.npz",
+        "sha256": "ed1dd939ca12bf8a56d86fc75200b9a8a7e7cf1eb4260ca9e4f841a6d340682d"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.529848200007109
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 3,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0003.bmp",
+        "sha256": "f694c18b825ba98974a2b09e437c25a47d5a26e2dac1bb253b9325f0655f5dc8"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0003\\reconstruction.png",
+        "sha256": "cf9af6f9315fccbe4e1885ee8af6ec996ad90f0fa5e59ce22221614bf6179ad0"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0003\\output_float.npz",
+        "sha256": "17ba574a6500fa938b828c92c0dea1ce487ae84b1857016d1ecd218909b842f7"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.65939340001205
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0004.bmp",
+        "sha256": "d040f4f32c0c4a60b8e182384ad0d5e5663880754a59eca11b3c9d96995112a1"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0004\\reconstruction.png",
+        "sha256": "75c123dab9fb0316f4ed7effaee3816ab489531fb876dd72ea99c3a43e159a9a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0004\\output_float.npz",
+        "sha256": "0c259fafeeee09a5633a1e3156dd3e572493e30aa94f6217e7ab6b7bb6e18826"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.555028300004778
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 5,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0005.bmp",
+        "sha256": "515f6d63df79c9c2b6d857662fbb65dc81d9e35754491abcc350a850d4bc9c2c"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0005\\reconstruction.png",
+        "sha256": "fb3304264dec45e56e7fe3ed1adeded496c80cb0ccfd827caa3a0c4556609795"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0005\\output_float.npz",
+        "sha256": "ef7fa2730355fd6f36414e3968a7b5eb2bbba782d1e760e5bd35471228252cef"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.535779300000286
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 6,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0006.bmp",
+        "sha256": "3892988cde2cf5d7cb78c90a948bb3dc350497a67b41434f1deb8b2d716a0391"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0006\\reconstruction.png",
+        "sha256": "36fc40ad9d18321a5782f01cf62acc7529fb010a6e0d47a1ba79f4a13eace7d9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0006\\output_float.npz",
+        "sha256": "029c053d429664a545e44c6e6a30317857b1209c76d69874e4b06b291f8f13be"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.574154400004772
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 7,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0007.bmp",
+        "sha256": "16c56da4663aff7f2329f4a0db119acffabbf9d01e4b7bfe90e6ca251ccc4e08"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0007\\reconstruction.png",
+        "sha256": "c4647564a0d4932d73179caa5db4dec94ea8c2d3977f49b18974f5d6a7a99a15"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0007\\output_float.npz",
+        "sha256": "283962d00632600cc7c9d8747284303771d4b8a3f92b73a8e405dc63f8b59491"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.998102499986999
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 8,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0008.bmp",
+        "sha256": "2fbea7fa7f5b57b37ac0c82752d973d4e06e9e1f018e003378a59cd7a058cb1e"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0008\\reconstruction.png",
+        "sha256": "793f02ab74d4c2a924f411f8729fa00ac8d4a23c94440a8308d20fef7711d87a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0008\\output_float.npz",
+        "sha256": "89484b721bfc6ab20e7addb53b8812e120e44254be5689326c6a20831539e636"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.031537300004857
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 9,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0009.bmp",
+        "sha256": "98bd9e2af1dd923d25435f41672215ba81ff96e02b2dd60731f61658bf44c7d9"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0009\\reconstruction.png",
+        "sha256": "7a9e028ddeb06579e05caf9a229b68e3fa6068d10b8a3687fd60110a470661ac"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0009\\output_float.npz",
+        "sha256": "5fa953939839af4d38e00cc26dd5e25fe2ee2776ebf15f09d56cfda183e64cb6"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.940501099976245
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 10,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0010.bmp",
+        "sha256": "696c20220d5b7572f35e249efde6afcb3afb14419ea2ff5eb9e63a06b09a26ae"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0010\\reconstruction.png",
+        "sha256": "9d28ca009d83f5ec9b3b85f6a1ce3d0723210fad9cab655312ad0f41ed194c6d"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0010\\output_float.npz",
+        "sha256": "984be2fbaecc7b126237d89efdf24a3dd621007936f8f6e11a7d16d4c90bf543"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.021909200004302
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 11,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0011.bmp",
+        "sha256": "052fc107ecc116313660773ebf2c95e612a2499091a7e248ba2c311fe25c91ca"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0011\\reconstruction.png",
+        "sha256": "bb958cd3a817904ac3c59f8b75a8ab6908c1b8216e7c41a53f7cded6c51bb971"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0011\\output_float.npz",
+        "sha256": "475c98756f15ddbd8d99b73eefff6b71117f76be77ca46d21c00d264ff606161"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.059415399999125
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 12,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0012.bmp",
+        "sha256": "1f9b377241392cf3f1942107811ffc9aa1327c7136c01af8e1c3ac094f027659"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0012\\reconstruction.png",
+        "sha256": "10915698064c8605d361ff5da98cabc17fbc880908c48517150c8b139d71ec8e"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0012\\output_float.npz",
+        "sha256": "1fbe8069b68adb2784f943ad4def05cd6b8a419acec0fcaaf48b0a619e85ac19"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.035327199992025
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 13,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0013.bmp",
+        "sha256": "796de2697f734882b25d191e90dfe8910f8edae28b771e6c9c16d90ecc119421"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0013\\reconstruction.png",
+        "sha256": "6135fd6814767c47c79c6d73ee14851853afe8257409ddcff6d4ed4a4460130d"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0013\\output_float.npz",
+        "sha256": "fd185a0aef31a1bc2816df74a6a63e24f47a01fadb5560077dd4435254c846c2"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.916860599973006
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0014.bmp",
+        "sha256": "03f4ab6bf763cc3f932647b12354b304122b16ebce958d91f90e8639545dc00f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0014\\reconstruction.png",
+        "sha256": "de60fdc87f776c0cd173cd4e0abca41fe5f09c54b0886eb2ec15dce0cdb260c2"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0014\\output_float.npz",
+        "sha256": "ac7358b3978d297256740bc519fa870f22a68bc5e5e087c4d33090574911afc9"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.00442079998902
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 15,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0015.bmp",
+        "sha256": "b2ff2e8f416b8c7305f6e7795f2e175268ab3aa431059ad69684c915c88445e6"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0015\\reconstruction.png",
+        "sha256": "75f102ca5dba055b6efb6faef8c92260e625a5c1d497121b4bb909c95eb1fd44"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0015\\output_float.npz",
+        "sha256": "52b9dc013d625f63aca54c4d5c05059ccdb15faf76ee76c07115022087aad9f2"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.987052000011317
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 16,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0016.bmp",
+        "sha256": "ff3a816e6523790af53cee982713e5f3a0d36a3c863d576f59b6ed67361ce468"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0016\\reconstruction.png",
+        "sha256": "ba0488c67f4afaaac0bb1924ebdf2ffbbce4ffe64ff460132d597c5fe9e6f5dd"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0016\\output_float.npz",
+        "sha256": "c0b79b643957648532e434d67d862987cf88ea9b2d2d59915f9f98c2054ee54c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.974044599977788
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 17,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0017.bmp",
+        "sha256": "2e65d6d112e3e884593b2f5f59d13c4f6b1ec0cdb3634c9220bf42f88a6f6708"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0017\\reconstruction.png",
+        "sha256": "b0e8628458a1066dfb6c0c0142230e3debc4dd4325a38b7826914f6722f98206"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0017\\output_float.npz",
+        "sha256": "cefa244a7d06cd6b6fb97b6596bbf60b7c3e28c8674ff0f3f143828f943e74cd"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.563369799987413
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 18,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0018.bmp",
+        "sha256": "90257dd7747acc115e0a7d4146e95c0260326670cf064f1ad690c83c8429c62e"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0018\\reconstruction.png",
+        "sha256": "55460ce26fc9f1f68d677ef684fdfaa9e21023458f940e00d7362f649dda74a2"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0018\\output_float.npz",
+        "sha256": "149c848ac90f341f75896dfd289c2ff34d3f6cdf68f97956441b8d84cbf6d548"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.586142400017707
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 19,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0019.bmp",
+        "sha256": "ab4d6f9e2b8d7180f6633d39af5f40c81991751f54a2d3c22522f0a19ba3b1c4"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0019\\reconstruction.png",
+        "sha256": "db4545b3bee673bad2d40762f85239ec53dd8ab513aced27268bcddb6830322a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0019\\output_float.npz",
+        "sha256": "4fa2b211c461d8f4628dc0a59640bdfa835d1f53c9cfd7f9487b3ce599210705"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.64783199998783
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 20,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0020.bmp",
+        "sha256": "9dd6f4d9e39345219ef178e4c1ddc00e1b65c933cb0b4eb93145ebd2197a0174"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0020\\reconstruction.png",
+        "sha256": "536b45afb1dbb05f76cb5a63f093ab486c999ac1cb25da20c5c297c358ea52ec"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0020\\output_float.npz",
+        "sha256": "e0a1eeefb575c3efb41181563e699d2600414a69e6c99fdaeecc63a0bc84cd24"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.59815060000983
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 21,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0021.bmp",
+        "sha256": "452d34a813202df1a2e20178ab5d37e9fb4138fff39100934ccd50793de73b2e"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0021\\reconstruction.png",
+        "sha256": "aa10f4c7614c68bbedad21d51447c577451548cd4906e22109414261341a9f0d"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0021\\output_float.npz",
+        "sha256": "dcb6527714fb6aba4b0320ea66674a8fcfcf3380e9808418e56d1d72aa01f170"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.56836239999393
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 22,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0022.bmp",
+        "sha256": "0856aa8a0a46fd932a1b324efdc652f49155e802517ca72404a464fd700b49fd"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0022\\reconstruction.png",
+        "sha256": "5ff60fd36f3db119c2c2a2cbc8a9aed5fa3583728225fb0557261dc9cfb520ec"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0022\\output_float.npz",
+        "sha256": "c905c35621ac76ea7ae8d0992f2661f63df6223e4d29f265e0821ec8f1cdd2e0"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.706158399989363
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 23,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0023.bmp",
+        "sha256": "1d0701c5bb13654a1fe9f8d8ea5b904cfe59c1a3ebdad54b09495bd75235115b"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0023\\reconstruction.png",
+        "sha256": "1e00cc760910b5a7a19efd33c43a853eb049dae45956e0a926f545974aad7471"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0023\\output_float.npz",
+        "sha256": "c31b8a1a292ab90011f04820dbd5bd0154941e88cf47bac3d1941eb2dc0221d0"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.572288399998797
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 24,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0024.bmp",
+        "sha256": "1577a0b2780bfbdda082637dfacf7811745cf98767afa92b8a89921ec6d7fa2d"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0024\\reconstruction.png",
+        "sha256": "6710b9f779d44c34df58ccc63b27bb10876853721567254b41c6a660fa62b0ba"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0024\\output_float.npz",
+        "sha256": "fc410139acacb28159877597c423a742bf9972edcd37388c1401fa1a678cd1c8"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.401022200006992
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 25,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0025.bmp",
+        "sha256": "f9963413aab01b2f8caa62d16b295737c713d8842b496e1362d56c6dfc7e669f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0025\\reconstruction.png",
+        "sha256": "fd830941cf58d05b46c0e4f8c9b4686f9f96529a4654dca98507a828aa4e129d"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0025\\output_float.npz",
+        "sha256": "df880537735b71ce068b201721d453cb92eea71f37253496caf680a62e5d35e3"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.665850899997167
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 26,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0026.bmp",
+        "sha256": "e5307745d58338d67616fdbb7ad38ae8ce0ee8424b089a96f9c11eabd7c4311b"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0026\\reconstruction.png",
+        "sha256": "c82b64cb25035fd75df65fdf35de365b3f05f77369f932a67ecef6180790f9b8"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0026\\output_float.npz",
+        "sha256": "1c130f536b35de0673dfcd2d5b2edcb6f63d6ef24473b6c5cdea629617b09922"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.846496000012849
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 27,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0027.bmp",
+        "sha256": "337cba7754e626c8a69fdad8a150c2969444681f7d6a47988f9a22c3de21ede5"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0027\\reconstruction.png",
+        "sha256": "8786f4eb0aa04a50ae044d297edfac7b965b3ee6f3409a82d84af7490557c9e5"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0027\\output_float.npz",
+        "sha256": "8fd1fc5d15d75d3b2be20147966c742a94af6abc964256ab85e7ad1e79e2d386"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.027063199988334
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 28,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0028.bmp",
+        "sha256": "f75e407351b4ab94eacbc37d1b5b37b9e2f14a533e2624ee6082c67f7722ac36"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0028\\reconstruction.png",
+        "sha256": "89d2ba4e4c7510b2e4ae605a9638bff780a6986d04d0a64e1ba9002616923044"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0028\\output_float.npz",
+        "sha256": "42766aa0f9d33599549ca6813321918237c2c8998eddd06d39db49b6e764c867"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.024029499996686
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 29,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0029.bmp",
+        "sha256": "4d808bc5d00602e974368030f998b1e52f05ce99a49fb3fa958cded7a2ad4386"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0029\\reconstruction.png",
+        "sha256": "50a362f67b3531e7103b07566cb2b7fe7a773136baa1222e470506321d08a835"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0029\\output_float.npz",
+        "sha256": "d7e2ceb9068cc8097edb7ddf58b78b083428f9b11b59858aa3e196a3cff378af"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.016024500015192
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 30,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0030.bmp",
+        "sha256": "d35bda2f6249150ca82d6bbdbd7f0ea2e0fc88e07aa560d68e2f3a368151c377"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0030\\reconstruction.png",
+        "sha256": "67bcd535c621cd3b0855fa1dc7baf1537babe1167d9e490faaf1497a8e436d86"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0030\\output_float.npz",
+        "sha256": "9831dd414c0d38c4bc608151b59fbfa8b529d5f205139365465416480409f299"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.998230099998182
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 31,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0031.bmp",
+        "sha256": "b91c80490d6626850f25b5610346677f2726400f0a030cefd1483973f0b88f61"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0031\\reconstruction.png",
+        "sha256": "5a54e14f0ddca69d6b709e8818db829ebba342accad91ba1368de7da620a40d4"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0031\\output_float.npz",
+        "sha256": "2dbe650e0c0393346c39a35e701cb8ead1fbe049df7e8fd703686bd59a1214af"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.93569290000596
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 32,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0032.bmp",
+        "sha256": "2abe47e545a598b584eba03d2fce2b02151f2a375b13d9555cdec2e22457bc64"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0032\\reconstruction.png",
+        "sha256": "6fe17436d85798795b54bde5bb347d60416d8c98f3aefdde1a479873872454b9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0032\\output_float.npz",
+        "sha256": "dad6e28fd7495c5f69cefeafbab75d9e87d0f8896557ef2228dbf2c667c013e4"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.05269650000264
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 33,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0033.bmp",
+        "sha256": "beb8b8f1107fbfac90a1249a6614a310ed63684cfe3f68e618fe12034892deaa"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0033\\reconstruction.png",
+        "sha256": "6f0570beb03edd8b075ebc2eaa5fac8593185951dc6389664ef59df086b82022"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0033\\output_float.npz",
+        "sha256": "96321d17f22bfb55f2ddac451b4eb69776c63eb1bcaa4a22b850ff8182bca607"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.851941400003852
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 34,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0034.bmp",
+        "sha256": "27b55e96bdca2b1e2ea3ca9dd3439e44edd011934838a636db060057ff8fd259"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0034\\reconstruction.png",
+        "sha256": "90a9d48f46eceacac20084e21e6f503eb335838543b150277b26cf54aec11dd9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0034\\output_float.npz",
+        "sha256": "c928273687cd0ea76c02bc401e778149fdf283c3157751404502693ae4e4677c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.852344700018875
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 35,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0035.bmp",
+        "sha256": "7b91ddd74fcc2eb2fda2db9d08e11d1d1fe42a5dbb465f901ad091c5789d2f6b"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0035\\reconstruction.png",
+        "sha256": "fa25c4783c491887b0ab9ac38aa82b38ab830c09a243d23cd971d54e7b977f2c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0035\\output_float.npz",
+        "sha256": "7fa8d7f0be7c6ff5678d9d0aeeeabf8d54b143a68f8a1662b532aa131806cd1a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.851587400014978
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 36,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0036.bmp",
+        "sha256": "ff27bfa2b42551864333cb82e06ead5d70a075af5a6fa0c6f93c560a06f295fb"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0036\\reconstruction.png",
+        "sha256": "90b3398a6c64b77f65404cadfe1af2924416d551c1a5781e1f5d19551cf7a022"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0036\\output_float.npz",
+        "sha256": "25afcec6ec9d3e2b45a35b552a1795d4db261dbee3224f12d27aa27d26b03c18"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.856836899998598
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 37,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0037.bmp",
+        "sha256": "a7970d562b23eff73a695d218cf433ad15c061f2dd985bdfce08c1baf7d143f7"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0037\\reconstruction.png",
+        "sha256": "17524bb3ae6c0d6aa1e14fba52fb4b837430acd9fec3ae295e9300b2e7fe47de"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0037\\output_float.npz",
+        "sha256": "917eaaec9fb374edd06d6602332c5be4cc04222a710f313d32594ec57f419890"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.851872799976263
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 38,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0038.bmp",
+        "sha256": "d55086f4db266126dd6a36952bd7b2ef6bc18a65ef7c484e4823753055b7cfa4"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0038\\reconstruction.png",
+        "sha256": "44065a2c83bfacd19378215cd495350544ad24f89343836e7fc974f2983c510f"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0038\\output_float.npz",
+        "sha256": "54381b4bf9aec423bb77e30358f4c32a5092e10dead3f5fe631a196cb7d658b3"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.891095900005894
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 39,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0039.bmp",
+        "sha256": "a369a28c6d8da73676acd7333d5fad7f13c56a845aaf37cf0cebaf2e5c7b3265"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0039\\reconstruction.png",
+        "sha256": "f8ba3bf548b0982374d082d27bb0d70632e9ffa354ea71c2580bbf1b457e48c4"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0039\\output_float.npz",
+        "sha256": "005ee8d55c27e00175a1122737c7e80b097c8afd5b3aaccd0831fc6927d12cba"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.80963370000245
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 40,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0040.bmp",
+        "sha256": "a220ede97515db623ec9feab6793b8378a2b438c6e09b4a7f7194789f145237e"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0040\\reconstruction.png",
+        "sha256": "a40469ca92ef47b472e43ba725855b799d6349515f4332d36b6749ced63bf762"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0040\\output_float.npz",
+        "sha256": "c751da212d448a5959b5148c8b472be1334ae106d792eb67e19450b6f70bfb60"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.8792575999978
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 41,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0041.bmp",
+        "sha256": "192b39b04fa5741b47808e6f6f56a1933945d7f58f8ae69ac533acfd686203fd"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0041\\reconstruction.png",
+        "sha256": "c09000fe795f5352f1bc1f5177d9204c1c0295be12801785efbfc562142976f2"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0041\\output_float.npz",
+        "sha256": "5bd91084aad79dc7090300db9d0a0d68ed96706a757ddd86a3cea4a5f9e5ab6c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.931553400005214
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 42,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0042.bmp",
+        "sha256": "8e860a4248e775ef25ab08f10933dd5db74e992ab5e3d6181d8258e1bebf5ad9"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0042\\reconstruction.png",
+        "sha256": "8fdad9c3653c110bf8aa4ca73fa2a695002fe9cecff5d6277502bd65d0c3eb9e"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0042\\output_float.npz",
+        "sha256": "d1e54ffb9b9444dacb79f4875f49ba38f2b3c19b533ff7412c088f5a3fbe9c42"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.80578220001189
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 43,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0043.bmp",
+        "sha256": "96841a7f8938a704f7171440b31c6d7765c7fb543259440e521d78010ca73758"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0043\\reconstruction.png",
+        "sha256": "bb43e443d5bd074aae94b8ae0592edabb19a04ef2a9a7b6b1153a3a0b8f28d80"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0043\\output_float.npz",
+        "sha256": "3b383fe7114c67dffeee8da01f9bf0ce3116962d2ab0415f4dcfe1eafa282dc2"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.84226280002622
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 44,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0044.bmp",
+        "sha256": "36db556e5672b8e1dc9d4d8013b75e6ef9a658fe95abb70fbc15a2c48a99df88"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0044\\reconstruction.png",
+        "sha256": "7651070f6d65af7db05462c83d84f65078e990a268416e376d34e5672dd8a33d"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0044\\output_float.npz",
+        "sha256": "d14d177442b2e3385ac79d5b0b90391ffc01a1698c8699bedaa973084bf941f6"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.897983600007137
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 45,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0045.bmp",
+        "sha256": "7d270784985b16ebdbb40cad620bfb2587ea3370b279aa90309e1ef90d63de0a"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0045\\reconstruction.png",
+        "sha256": "5c70810393c2ade3c7e3b237587f5b29636975bb177dbbcfe029e830b01eb06b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0045\\output_float.npz",
+        "sha256": "12be6bf46dacc4e762c99bd5196eee2eb3bf4c7ea4457c2c1bbbbb38ec230af6"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.830637200007914
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 46,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0046.bmp",
+        "sha256": "ac2425247e69ba701c26e929271243bb556ce969bd66f48d71050c34f3bf342b"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0046\\reconstruction.png",
+        "sha256": "d6bd1c7708e0da954675544a1f423af6f4ed8844aaeae119e2ef04ac76785048"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0046\\output_float.npz",
+        "sha256": "6685d03e129ef6066b7a558bc8eb0b6dd9f41b683deaaf6eb73662f754e97a9f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.937376099987887
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 47,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0047.bmp",
+        "sha256": "24cf82576da35a24a03c646f14ccd6c4e1ffd0e56cef55c047f28087333b4271"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0047\\reconstruction.png",
+        "sha256": "1278867cde91310a2f1cde6371f491da191acf36d6fd253437bb87acff3fe42b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0047\\output_float.npz",
+        "sha256": "a2e50d1b03c92cf473af24184d63db14f4a88f9c1a10ee72f16a9aee8118b3da"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.92113950001658
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 48,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0048.bmp",
+        "sha256": "ea7682723fcda36041fc561997eb4c65600fbcdef92770cb287740dfe6c4ab84"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0048\\reconstruction.png",
+        "sha256": "1f486fd1228b9e55091e0b27f51e2eceebea3277d12c1b1e17a1469872fece9b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0048\\output_float.npz",
+        "sha256": "10dd4399b55979d575a60de487f2e3c2fa5a763bacfe1cee867c2bf8aee9a829"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.930281999986619
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 49,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0049.bmp",
+        "sha256": "33f79e9748a252cf217dc3413c8912c867061088a8879a5dc3723f601afc6b68"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0049\\reconstruction.png",
+        "sha256": "fe7235960621c142c8de8ee613260460d940e7b10aa1e65714dfad0fcbeac675"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0049\\output_float.npz",
+        "sha256": "340424990cf85d9a3e6eabb1a3c1a86c32001befeceaee67818afaf777df2df9"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.92577520001214
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 50,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0050.bmp",
+        "sha256": "b487e07802ce8ef26064bed162477d492df5270d5d04b79709f7c856a46576ff"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0050\\reconstruction.png",
+        "sha256": "4b3a4cb76e31524d96d4fea3687d07c17b4b17af04406fbc6593d042baec2bb3"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0050\\output_float.npz",
+        "sha256": "bfa5dbda689af9a09798ca1de7ad39f2cfb4de0045c0e4e40d952ca75c79a4bb"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.00607120001223
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 0,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0000.bmp",
+        "sha256": "41b30270dc4f371bcae2ab2f48dfb93f86acc3e0b7ed5abd73780e19ebccb990"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0000\\reconstruction.png",
+        "sha256": "c42ab8800578cf001506faf02146c647e47308d2c046dbcbbf797d377a5352e5"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0000\\output_float.npz",
+        "sha256": "845caec405d96474cb8d16480abc03870f1dc616369ed97bb581ec966243fac3"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.927673800004413
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 1,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0001.bmp",
+        "sha256": "0d0fbed38b490aa456bdf1a7ec6a0b2a23f560ee569b0ea4cb1c340b3503d069"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0001\\reconstruction.png",
+        "sha256": "b505544908f430e2bb844d152dd168c5dc2f91dcf7767386b738ddc9ebf0e188"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0001\\output_float.npz",
+        "sha256": "d772a9bd51126b53a2a931fe1603564c167e6a3c05a8d7345e51053d2dc57875"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.848491099983221
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 2,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0002.bmp",
+        "sha256": "606d3221e9cb3292342974e8070039c602fe52f2821a4af255d8d4963b06f196"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0002\\reconstruction.png",
+        "sha256": "fb9aa0e0980c4d2de44b18399c92521a1ead43049ebabb11a5ed5dd425c617d2"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0002\\output_float.npz",
+        "sha256": "a573bccb9f499a62c5143c7238a06507e46c51f151d40e66d834afcb956a3511"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.901787200011313
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 3,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0003.bmp",
+        "sha256": "67251ba10f35ec907719be221b796654e5334690992d42e1d1e4a5a57f59ae85"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0003\\reconstruction.png",
+        "sha256": "d668e2e757193464882614fce7c89f55f1e92bd3b6edd97fe9e747aaa00a37af"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0003\\output_float.npz",
+        "sha256": "cf33743b637ca6df082123c1aaa16f54f2c46f44414c321e1019c84be584746b"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.859567100007553
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0004.bmp",
+        "sha256": "ff66d2a5519128002a6fac9660a67f9fabc86286d35b55f5d8b6606c6270b5f3"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0004\\reconstruction.png",
+        "sha256": "b0e431a5804a756ac608d567faef8676387df9c970fee1281d37679160b207da"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0004\\output_float.npz",
+        "sha256": "d307d9ca10926529563e5ebeb9485f8807de59283b4b53c74a41f01cd48a97f9"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.903112200001488
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 5,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0005.bmp",
+        "sha256": "cb491a8dc00744d1e3b656b68559d0e7b445953c8c5546f2a7dcc83cb6c04a7c"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0005\\reconstruction.png",
+        "sha256": "d55f33836f21345dcc433a3e189f1f8db20b84b4aba5b6772785048c938d5662"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0005\\output_float.npz",
+        "sha256": "bce2d8db5035a159965ac89626cc55a45ae93b1519df75ea6ab197220db65cd1"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.991804899997078
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 6,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0006.bmp",
+        "sha256": "d4e58f632a0c983261d768bc6bea9e96256fd7d5c1a2f34147813e57d7a2352a"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0006\\reconstruction.png",
+        "sha256": "1e94ee298ed2186393c7c0981b88f96e0e7ae3dba832848fb342d3d5e0e0ea2c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0006\\output_float.npz",
+        "sha256": "99dafd7aee72a3d60ce4e6a0bddb5ff0bc5d43fb5026c809ad31afc9bebf84c1"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.862438600015594
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 7,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0007.bmp",
+        "sha256": "1919d860d4475e31c47a99b047d363823c8711fbfde5f6e5d0bf94768cfc0f8f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0007\\reconstruction.png",
+        "sha256": "b2549fb6c7a0bd9f78f0b85acd99a5418d1584e290205747c08043daf60d7e83"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0007\\output_float.npz",
+        "sha256": "ac35d08ca0e5429fee1c10253fcdd7310f5521d2980d15c50f14d92f4f914275"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.910977099993033
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 8,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0008.bmp",
+        "sha256": "a21e83b00ca402e4ef0f075019aaea6c4a6046273668f25c15a4dced8b65cc66"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0008\\reconstruction.png",
+        "sha256": "b97b6577b175373374239d09482135f611586f695d70ba96d6598ca4cfc62297"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0008\\output_float.npz",
+        "sha256": "d537d928565b5a8746e536535cbb53c64830f75717ae1d8d5a1de49f204f0925"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.960588899994036
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 9,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0009.bmp",
+        "sha256": "4245ce6d798939d9721159260b6c2554099f809d0d1a0953e097d50cecb5ee47"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0009\\reconstruction.png",
+        "sha256": "b256ca58e321cb31b4eed2d276c2fdea41e53ddd141226a98a7b659ec6e1a6db"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0009\\output_float.npz",
+        "sha256": "0166e7a8fb09a70f29754dec3e38aed0bf84b99b97300240d124a50e07e4a872"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.948585400008596
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 10,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0010.bmp",
+        "sha256": "65ce0344d88685f6a09b1eac17f68ddef72c8a567402ce0a50b52be82e14d953"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0010\\reconstruction.png",
+        "sha256": "968b22f5e530e0291dc3a348caf82a69c0dd955c1c813d5096f07f42ad6977ac"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0010\\output_float.npz",
+        "sha256": "33b1fa317a55398e7fed97a970320ae77c46bd3398e0b7b30e30ab0c62272225"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.893578999995952
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 11,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0011.bmp",
+        "sha256": "00785b34060a29a10b07d190756d712f1e79e3896732fe11379a8b8dce59ae50"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0011\\reconstruction.png",
+        "sha256": "ae4b792183563d6e0afcc0e12b1a401c95782a7e223cf794b59fcf6e6338d9a4"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0011\\output_float.npz",
+        "sha256": "5557660d05d0e9b57054a3a78349914f667891acca1d872f4d4865d160790708"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.918744900001911
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 12,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0012.bmp",
+        "sha256": "9e27aaf421ea50207375acf27bcf4a21ec6259286ccf929ae54a33e60f719683"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0012\\reconstruction.png",
+        "sha256": "b24d5c58ba80c09d80d56b9a68d3f389c282eab8da5c4ef815f0668325fb3175"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0012\\output_float.npz",
+        "sha256": "63aa8d459d097aca7dcf1bb90400e77cd161a8359b491deac289852d4ffaf376"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.859318500006339
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 13,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0013.bmp",
+        "sha256": "a2f051403b5f1a928eefe20e011143aa627688e26818057dab482eb52685fa92"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0013\\reconstruction.png",
+        "sha256": "3609c4433c4d6c09bf8eb61eaa00c5baabf503f4bf3f279d00f37830bb96cd4d"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0013\\output_float.npz",
+        "sha256": "135787f322f438765a57e709f486941a69ad7c9e9c418ed661ed375dc6d8135f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.879089499998372
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0014.bmp",
+        "sha256": "006d18d2033bc844945d6af3f6ef788b679e6a7dcc80b44724d82809d445add6"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0014\\reconstruction.png",
+        "sha256": "6232022475d87b6c05c77889858b38729e2a3a2aec2ba8d9147fc640d3bdae2d"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0014\\output_float.npz",
+        "sha256": "5f574dd9a0d011e2c8b4625c69ab47af1070cb756829796c887e4fdf54495893"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.881101400009356
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 15,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0015.bmp",
+        "sha256": "c76e006543d6d9bdf323a26db5b8f2b3a82dc64f0acb001f7069fb648ce460d9"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0015\\reconstruction.png",
+        "sha256": "7b5932d3a6b6e2fd70ddc0c77e155ce0fdad9904591823627d53fb355c1e2a46"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0015\\output_float.npz",
+        "sha256": "4aeb868c66104a64dbd01298be14e6f72d1c98cfe0a6a020655cdfcb8a40a3fc"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.908833399997093
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 16,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0016.bmp",
+        "sha256": "5835a1ab822294671e8689c873029bcc05478717bd73855b75e85ce830e10ee8"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0016\\reconstruction.png",
+        "sha256": "d8b07ee5f824f3f96d0384eecea16e662ecc68ac41e97c4aee0b00fb38de9ce9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0016\\output_float.npz",
+        "sha256": "381912c7a1093d4c36a62b434849f4f6ccfdfccd183363bf92116db0b357909e"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.886300100013614
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 17,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0017.bmp",
+        "sha256": "0003cc4e3129134010b6a8593086ceb082eef4315d2362e5e1efad6bffb13812"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0017\\reconstruction.png",
+        "sha256": "2d0c3ffc61063b05e0b8320266f1a5bbb5e1d168f8edaddc4f89dcbbbaa238c0"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0017\\output_float.npz",
+        "sha256": "7e3660c02fdb31039e24a33dd573c5f10acb9e0f8e226a5a020ba932bf9c5b43"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.917460399999982
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 18,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0018.bmp",
+        "sha256": "8d99d7eb556185cad87b428051fc3770200907b3e6843c51d718ffc110df7385"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0018\\reconstruction.png",
+        "sha256": "ce8c4b44ca41caf32cd60fbe634aff9bac6e9e0000f4d27e333d07d2c6dc1d56"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0018\\output_float.npz",
+        "sha256": "a43ea9b1419e25e7660d8e26768c6e365f0361f7860213505529096ec958c59a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.826868400006788
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 19,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0019.bmp",
+        "sha256": "9dab63bdf35f1b0892ab2ba5a89c45e6465fc455420ae345044ac742cbe3344e"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0019\\reconstruction.png",
+        "sha256": "00f2ab425388c2a02f35f5897788ace48257880f86567a431e8e1423a8e1e5ea"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0019\\output_float.npz",
+        "sha256": "e32679a24958359e48f5b55e7d688f242700adc5e443ed76aabc2724dc54c536"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.831768899981398
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 20,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0020.bmp",
+        "sha256": "863d7ce92934b3c7e2ded5ab75754a565c970522b784c1b071ff860a7ba88c15"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0020\\reconstruction.png",
+        "sha256": "b3d24f55335bb328e91d2daaedd7d30270651ca7440cfc3095fa2bedc2ec4db9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0020\\output_float.npz",
+        "sha256": "eeb3b3f37d73c08da5e91b5f173b0184678872d111f7af61003ccb8ef5b068f8"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.868937400024151
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 21,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0021.bmp",
+        "sha256": "09d820e1558c0fa8aa4623567eff97182881b2b5f192e104cd00eec6579c2151"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0021\\reconstruction.png",
+        "sha256": "350fc5f64678169f05ff687b62b398bd217bc52cca6b4c828ef4a02cce1058ce"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0021\\output_float.npz",
+        "sha256": "7adc910331eb490ef7a7130a5645c57b59c512c8f99bf8c56ed93ee9f4503e1e"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.807410300010815
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 22,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0022.bmp",
+        "sha256": "edb0dbb67222f1709fe11b497da3ec819f9832d66d34158b4bdfa31398208ef7"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0022\\reconstruction.png",
+        "sha256": "388662334448a559323fe3ad6d43f3ccacd86bfd2ccef111e52f2eb69799f06b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0022\\output_float.npz",
+        "sha256": "4f25955ef7a2de02ffaaf23d1a42316ab2fc01b9ffa7d1ccc6263f06a49bbfa4"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.841164399986155
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 23,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0023.bmp",
+        "sha256": "7215c6e08fa9e20497daff031a1a87229826404b106393786481d3ec051a60b5"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0023\\reconstruction.png",
+        "sha256": "36f9f2b1be4fe17b0e9e5037651c17b9896f38a2fe3837d7b7fa54adf1536ce6"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0023\\output_float.npz",
+        "sha256": "b0331822fe740de12f86a0bd664f1ad21e0f3afd5ccd798d138bb60e76ac7a71"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.934920700005023
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 24,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0024.bmp",
+        "sha256": "b62c82f265227ba1092aedf50b60fb3d3b25521ad9515262e9f859e87f3c76a3"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0024\\reconstruction.png",
+        "sha256": "3da026b6a19362f22579e34aa86f8fdb99a2e292b119d2a2ce3baeeeb0feb42d"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0024\\output_float.npz",
+        "sha256": "1cc49a6fe0da486247a178a2fc2343c556a82b2a8a744b381a47b6f2cbb623e0"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.75869600000442
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 25,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0025.bmp",
+        "sha256": "04e3c6929aa66fedd45142f938f56b3b6b96487225f5b9bcc2fd8d43bf055d57"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0025\\reconstruction.png",
+        "sha256": "957a1c92636a3665194c469803841d663680d3503bdcbe365b0030a4f9d75724"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0025\\output_float.npz",
+        "sha256": "39e34d064fe3a5bf40f9e07968d7db6f9247ee0840a20dc250a4122d333867a3"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.783411899989005
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 26,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0026.bmp",
+        "sha256": "02f311099e3f65e87f6d993855c1f09f2cd4927d63c9049df316322b9430f313"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0026\\reconstruction.png",
+        "sha256": "9590837cf5289998046f28053307d2fceb23684142a1e6b62bc066fd2241c55a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0026\\output_float.npz",
+        "sha256": "f651599cfb392b610371e02ef005e148fc765b9062875535fa1a0873b6658a68"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.859095699997852
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 27,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0027.bmp",
+        "sha256": "37f58192a4b41a59ff37765f617cf428f527e0ceb58a0c50a2b02fd7aa1b0d90"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0027\\reconstruction.png",
+        "sha256": "41b0a3693878e89d8339df2ba4d154cfed13e6ab20700b035a16bb2c77dda0ed"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0027\\output_float.npz",
+        "sha256": "518b4caee2873317558693a5a1db0567abc570159da09efefb4e79acbe1c7b96"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.868283999996493
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 28,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0028.bmp",
+        "sha256": "458b1774e2bfc2e13e48970efa787275bc1d9f6fadd2929aaee19b878970df4c"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0028\\reconstruction.png",
+        "sha256": "2eff12a44321d774e809cd7ebf6d966bd98ff437162cd745d11b92686d80a197"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0028\\output_float.npz",
+        "sha256": "751874f732dc33a40b538e097e7845d820ebe9bfce8a5405bc9e69747caf839f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.894415199989453
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 29,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0029.bmp",
+        "sha256": "27011df5dabd7e63358c78c5bc9d143f0b35b544233c5fb56d7fde47311be350"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0029\\reconstruction.png",
+        "sha256": "37dc503949ed4d379ce005955599e9f58ab0a61088c5ea203af099c1eebc3099"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0029\\output_float.npz",
+        "sha256": "d3aeb287119f04d85883acd3a32e37535911bdd885bf076ee572a42719b65a77"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.903985500015551
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 30,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0030.bmp",
+        "sha256": "ac60ee3a18b3fc16f19fa5b8dd976abd2a0a944f07150c98e10a824c250156aa"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0030\\reconstruction.png",
+        "sha256": "c01b2a2967bc83d5e851ae10165e1009c428f76260df50f6a92d7b48d1565c94"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0030\\output_float.npz",
+        "sha256": "beb8c8e60ec1239a4eef96d265cd8f1eb11d09f32913391bf9a2f3533ae4dcbe"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.008299499982968
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 31,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0031.bmp",
+        "sha256": "5973cb29b701138a982ad9b96d64c6c76dfe1a3f4d73db8bb391214693ae41e4"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0031\\reconstruction.png",
+        "sha256": "507b4d95ac4e150eb8c4290275f7153c478134dd9e1e5ec197a848006a6eae26"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0031\\output_float.npz",
+        "sha256": "3e639703c0e04d61863d0f72bf01f8109fc4b00ab6f5e92b8f8a3ff100cefee0"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.915891100012232
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 32,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0032.bmp",
+        "sha256": "a1443b4c607e8d383a1eb4fc573e2b97f0c0338a9ab81fa67cb1454608932d69"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0032\\reconstruction.png",
+        "sha256": "0a8849d462c26132b2d2e466bad243befe7ae5b387f733c34e8cb894a8b85f43"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0032\\output_float.npz",
+        "sha256": "44eb03ea606e6212a79275266996175ac2fe5c2ad083daa5ad1de7a6a2690a63"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.990950200008228
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 33,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0033.bmp",
+        "sha256": "af34c412daf2d75ba16640814f753aefe24f9333adfb76b7c6fcd6ea1e4361d5"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0033\\reconstruction.png",
+        "sha256": "c2e62d6fe3d532735887634a6e0a93a932795b7e08208f9a50ae88116bf7512b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0033\\output_float.npz",
+        "sha256": "ee2243fe881df8a758bd7b157d4760096be3c44ffffd2339ddeed6e11ca8b838"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.917289699980756
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 34,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0034.bmp",
+        "sha256": "988002306f8956fb0d4826e783e06ec0c4b4325aa6002804375f720cd9daa9c0"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0034\\reconstruction.png",
+        "sha256": "300350bee45d220321c48c220c6114e40a65e2ae2e1172dc7a2a59656df20488"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0034\\output_float.npz",
+        "sha256": "fbe6967b7304f2679f0344d33c725467d51ec9af8a3a4f7378210f1c52fd6be4"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.94219480000902
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 35,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0035.bmp",
+        "sha256": "ebffd774369d92e129389595fb230331ca951b9376d5c5c547d89d949b9473ad"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0035\\reconstruction.png",
+        "sha256": "32e10d3990421d19607519169e2f92c0341b47262e2c41b2818bf5d37cb1e0f3"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0035\\output_float.npz",
+        "sha256": "e288d33fc2cd10895c20725a2a74d0381a033e2b6961ee3960f17059d30a5574"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.021785699995235
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 36,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0036.bmp",
+        "sha256": "7cf3f63c93795909dce2e4ee639da4c901308360e7adcc54a70f9077727c1abb"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0036\\reconstruction.png",
+        "sha256": "d56bab772d1530d741e7617a77fccb4bb39bba57a0699a620abd85339b12649a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0036\\output_float.npz",
+        "sha256": "c9bbbab1b0e6c8a806b0097dceb5a984b26fb2e008815aec3a9006e80552c6af"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.83012550001149
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 37,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0037.bmp",
+        "sha256": "bd51b88d62f10becad17a6374b0274ecee53d35e5efbdbb0e43a210181113339"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0037\\reconstruction.png",
+        "sha256": "e2204a12368b60d1804870ff78f04cdbfbe395b613fa0b18c52178a6704e319a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0037\\output_float.npz",
+        "sha256": "2c15982e8fb263933ef034959b70a1339c3cac5dc049aa2a7b14c2b7f09f9cf1"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.84871170000406
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 38,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0038.bmp",
+        "sha256": "4664b7608a6e455c7ce9aa230ba07c638f2d1ed61db4ef9478ee519c2e9ad3be"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0038\\reconstruction.png",
+        "sha256": "3128fcaf316fa47ed44a971913d9d88c558f9ba08507b34413e3a88257e51b77"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0038\\output_float.npz",
+        "sha256": "3cb2966d0d1de9eb399bfcaef93a2bc192b220e73aaec0adc16d3fe50279cf5a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.890485199983232
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 39,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0039.bmp",
+        "sha256": "f40a09df301b6e40e404481492f5cd125bdd2f813fe951d13af78960b6a6117e"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0039\\reconstruction.png",
+        "sha256": "9ca1ca8f2a8cfbe308cb4d5322eaf0c1c25ed381c0b2a2da99453388540a720b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0039\\output_float.npz",
+        "sha256": "1454c56509760c833fd44bced3ea9f9767bca5175fa85568a3a3e26afa88803e"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.857789200003026
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 40,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0040.bmp",
+        "sha256": "bd64052b5f0d9a40175b72c35ff0250c4574242a855373a9762002777b23ae44"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0040\\reconstruction.png",
+        "sha256": "6847cf077b998a5ad0e9200adc40a6d8d463288e38f0a0a60ba2d37e91448b14"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0040\\output_float.npz",
+        "sha256": "baff7d4a8386276cc872b1335e79f0cdc0af6f2d7c95557b1b28d8090e027f60"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.671515199996065
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 41,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0041.bmp",
+        "sha256": "53566c1e8cff9cb84f48c4e5ff7aed10db989f2d0a2d974202ccf752894ad14c"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0041\\reconstruction.png",
+        "sha256": "c0db8e2934eec18465d13c22f5b1c939a038e56aab73fad7a5c1dce74c626513"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0041\\output_float.npz",
+        "sha256": "100a7304e95f2c46777394f1cda30f8d2fdfffe4d8078874848040d404793d86"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.764543899975251
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 42,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0042.bmp",
+        "sha256": "ef375bc57d1a3440d49484c0a71b3870672278d66cb03d28d85546d3a2d05abe"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0042\\reconstruction.png",
+        "sha256": "7490d7ef3c1b539abb8c63ae9253ab89ac4f04fa17e0ecc6c1b08cc1db203ff9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0042\\output_float.npz",
+        "sha256": "52ed1975aa5560fcf4092736bb1dd475ca8d83f89a5b5c83d9764cced2b5fd65"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.841075800010003
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 43,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0043.bmp",
+        "sha256": "5ba4da670d35b3aa1b1e1fde6b594b7b9a18ce05231a72ea0fddc313337ceaa1"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0043\\reconstruction.png",
+        "sha256": "d140daa774a45ca557073dd2b4571a10a428447899fcdd9d4f4b9ea0c7f44bda"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0043\\output_float.npz",
+        "sha256": "3856d3b75ed0839df4ca809247703c010d2ae4afba54c29a8fc952401d895e88"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.674296799988952
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 44,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0044.bmp",
+        "sha256": "a40ec3c70843871021fbddcd1c0b9fad779e1734c8c4d212c8bd0867274f5d08"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0044\\reconstruction.png",
+        "sha256": "6d9a13146e10f243369dc60d6e7804418c7b97fd60c7c710cc7a4779ae6cf15c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0044\\output_float.npz",
+        "sha256": "f99b1cfcfe8d9f8f7c2bd6c45a53442bcf0fcb9a9ce722b3a30f77a2ee0c72b9"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.682221499999287
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 45,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0045.bmp",
+        "sha256": "ee8a71aec0003b157a51c22a3a5c8fb6b6008a92810b8d048d2340b3edac1476"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0045\\reconstruction.png",
+        "sha256": "a992438f3b5de496e4f885563c65d9c01e9c4a0977ad7b52f77495808464ac47"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0045\\output_float.npz",
+        "sha256": "69e9622ae02d4f0bd3bf00088d6f5640466e86b6c09b42f20d478e043379986c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.697124499973143
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 46,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0046.bmp",
+        "sha256": "9755267fd7d7fb875e1bfd3f8fc4dc3b5807cd97e935d86bf8fcf4026dc33a6f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0046\\reconstruction.png",
+        "sha256": "478a9d4aa892506dcabee3d1091aee9a8975040b0a928ae71822df48b4c8c3c4"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0046\\output_float.npz",
+        "sha256": "4e3838c9872abd8222a73c71bf1bd09453869c2c9bd7bd813419df3759580545"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.784184700023616
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 47,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0047.bmp",
+        "sha256": "a0b258a101dcbc223959bb673f909196ddfe72eb96b3b2cdf95fa19425dcb0c4"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0047\\reconstruction.png",
+        "sha256": "a378d81e6b9142a0f65bcd4d21e1fe2fe03a246e0759303e8108a745c7301af3"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0047\\output_float.npz",
+        "sha256": "ac2128dcefb1a80e0df58bf24b3473a2b2af8b4bde7b853e2bb7d3ac0c04e4e4"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.714021199994022
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 48,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0048.bmp",
+        "sha256": "d5229177769e923a33ca44247b2e586c8c80d94954c17f62edf6faa8b1479aff"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0048\\reconstruction.png",
+        "sha256": "cef6f717fd9fce48d4faca7125928c454e7822b3e1c011997afb4c81fc88acce"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0048\\output_float.npz",
+        "sha256": "62cbacd288e44a6b7a5fa8815fba97b0c033e8149d17224ae951a2f24ce810fc"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.700711900019087
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 49,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0049.bmp",
+        "sha256": "ba01ab41bd57efe300067661a2d861c51ecf1eac4c5d1315421bbc8ca29e7fb3"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0049\\reconstruction.png",
+        "sha256": "8733ddfd1532162b3e5a021780eb2c52360331c812fe830b75c08f1e079ebfa9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0049\\output_float.npz",
+        "sha256": "634526d99916e6d2213297536456e14b8b57c6fc00f7ccaa3d09545f845a409f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.71723480001674
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 0,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0000.bmp",
+        "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0000\\reconstruction.png",
+        "sha256": "1b6b5f5bd9ee2d7a9d4ace214967210c4f8806f12a79cef5a37aee8da9e264fb"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0000\\output_float.npz",
+        "sha256": "c8926a877f5b35805c29c8f90510e8f4cbb4bf1b7f23d0ee4ee20d64b67d5966"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.844567499996629
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 1,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0001.bmp",
+        "sha256": "d710c9eedb21819a3cad43f1a31c72b10b1665d9d0225c174bbf4c29308ee405"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0001\\reconstruction.png",
+        "sha256": "05dc72fbb191481ea94eaf34a6d89ec0acb8e740ad7823d85f264d1bb16b92f9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0001\\output_float.npz",
+        "sha256": "205056c3016f3eea9af557bb0b334fceee5bac13d3caf1ae17f4787496fdde13"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.727451300015673
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 2,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0002.bmp",
+        "sha256": "64cca58994757df1450d8ae52ec621c4e8b07efa15c30496406403a9ae0331c2"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0002\\reconstruction.png",
+        "sha256": "f008a78d94d24cfc328235a90fe6b8cd42a52165bf611a13bc3964d9a924c89f"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0002\\output_float.npz",
+        "sha256": "3e2390b8761d48dc357fe7229fb5999072cea2d823cc10b969b5da73ffd2a5be"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.785582700016676
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 3,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0003.bmp",
+        "sha256": "25123001317844935d3c264f76fa37cd18e547e0ef1b51c283e8bee0a3b813c4"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0003\\reconstruction.png",
+        "sha256": "546c9e3b5cad6db1f8938f5f69696ebd24c3771e9d0c5eba920857aece0fa7c9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0003\\output_float.npz",
+        "sha256": "e9d2e7a3f2ff841d3ef4b1deebd897dedfbb18fa8d02fee081a15c21ba54879b"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.81072189999395
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0004.bmp",
+        "sha256": "76c635f30bbd6fc66f14adcb95f2ae07ce50eb7d4b807a7586bf2da822b43db5"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0004\\reconstruction.png",
+        "sha256": "0399e7f10657d3c1bc8def981c5ee90dc1e7e8e2c9fbd62527cf4e74617bcb2b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0004\\output_float.npz",
+        "sha256": "dff5e026fbbeca02d11d0830d7dcd3f6a1c743e8b2170273e72c4e867c462b87"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.734467299975222
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 5,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0005.bmp",
+        "sha256": "4c0eaaa723b4b7a74f67a57732fc24af9211b0c8af9fbfe842124d454be626ca"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0005\\reconstruction.png",
+        "sha256": "2c63d3fd360f86929b7f1bd454572aa7dcf7eaa720415bb2644204e1ebcf701f"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0005\\output_float.npz",
+        "sha256": "a66612f769c45b35b19d67ab8ffc436fc3ced4735135cf50400a4131c8c905cd"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.731260100001236
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 6,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0006.bmp",
+        "sha256": "9f9efaa536344189b0d905f4a9c0af48823a8051b739bdd509adebae0c2d1ad7"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0006\\reconstruction.png",
+        "sha256": "a567f62dc1f7edaa222a0e34b98ea3dc41d2dbb85d76ea79978aed48d3ba6b52"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0006\\output_float.npz",
+        "sha256": "5dafede84c10b54b333f76502e9efbd675daf57100cc8bbee692cb0fc1d95a1c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.711109900003066
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 7,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0007.bmp",
+        "sha256": "9f43728f1dcaca53af82eaafcb26a509d3f0c3966bb1fdb090c1cf47d6c878d6"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0007\\reconstruction.png",
+        "sha256": "c8c97e7d394307b214224f744dc422c2d395963ea3dd572f115899b0aeceb2f3"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0007\\output_float.npz",
+        "sha256": "68d930e6a86d0ba40fe1361137c2a704536eec5b178383b88bceb7d9740d148d"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.76720450000721
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 8,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0008.bmp",
+        "sha256": "8f684b343bd2c08246b0949a33e1d8c6acc63846ca95bfaf6e7f6db3e0c5f3ac"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0008\\reconstruction.png",
+        "sha256": "e24d78ea21dd32c6ae8539932574b6a5dc42389d0dd80577841c4fe8328600d2"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0008\\output_float.npz",
+        "sha256": "57af9896a2834c963678974f66d8bc8630fffe361aeba8736e9985a3cc609fbc"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.727576399978716
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 9,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0009.bmp",
+        "sha256": "65f9a7f3ecb39205dd5f41d0428bf653254ba53295cb9acdf886076146ff45cc"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0009\\reconstruction.png",
+        "sha256": "0a8690c0cf9e9fa3a6a09d12a898278149a8288c6aaea1c66777da36c1266d07"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0009\\output_float.npz",
+        "sha256": "d8c573043ee4c23c0456f0a9e3bd80cc51da219400f3b017e9dd44a467701811"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.67044519999763
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 10,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0010.bmp",
+        "sha256": "e6c04650420e6af0a6130ed640ab46a1b2686f6935046253591962e57bbdc403"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0010\\reconstruction.png",
+        "sha256": "6c665cec8ac8528f8f6cdd9d1ab4264a1c7ae349ea1bc4448ce691bbe202de0c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0010\\output_float.npz",
+        "sha256": "19babeea51335714c4d900be69104a1b7d00369c4c2151538c43b70d1abbd7a6"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.893958800006658
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 11,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0011.bmp",
+        "sha256": "eb40edf46bed895eab0a79201f624269de327e9d86002c3e65bea5d5ee7a4372"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0011\\reconstruction.png",
+        "sha256": "cc0f7953df77e1fcbca9ad89e4db854516e4a289d239d4f0b635c774affe4e2c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0011\\output_float.npz",
+        "sha256": "4573446923dfc5d20f5c94dd6d951ced1811faa92887d217ff29fa0f1271e429"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.77357600000687
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 12,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0012.bmp",
+        "sha256": "b16e9e37644587b9fd5314138c10d35d864eb538c77604e37a9bb26d1799b477"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0012\\reconstruction.png",
+        "sha256": "ae3031d069bec8d386e606319903f1a4a57a0f34f9fe97034a9a3badeab09fcf"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0012\\output_float.npz",
+        "sha256": "c5d42ebb5a2f131967586776c415b4609213c644b196caa506927bfdfd66a54b"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.827393599989591
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 13,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0013.bmp",
+        "sha256": "2c65492fba3d7548d30984360c361e4bd832d2e2e002968a371e4863537ee877"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0013\\reconstruction.png",
+        "sha256": "14970c6366db70a9780e9c18c7dbb19b3d39e8d356182ddf2e0714674fe8191c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0013\\output_float.npz",
+        "sha256": "4eb0e1d730aa0fd365888b69fe163805827b84e453f166a1bf1fbdb86d1b70c1"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.91512240000884
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0014.bmp",
+        "sha256": "1ada32ff9e3d3830c241554981e64b3f5c2a1897aa838252ef75040bc8733493"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0014\\reconstruction.png",
+        "sha256": "344385e30dc259f448969a540e0ed5043427922fc9a4ab9e3c3ade318a59e68b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0014\\output_float.npz",
+        "sha256": "60bca9391b3707c621c69143f3fb02a2ebdf7e4e2677d64d5d2b0cbee1673b8f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.860251699981745
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 15,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0015.bmp",
+        "sha256": "9e73cc4941ff1678a5ea32d75931261c417a26525a7dc657d5e098c5d4b82992"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0015\\reconstruction.png",
+        "sha256": "c5e4e01bc95f600a62f5b836e54dc22f2acacf755846e2d1846964279a115ce9"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0015\\output_float.npz",
+        "sha256": "0a0da9f069dc6708dcc40e812e9700558e1a5eea1d0708233493aad761fb6fbc"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.887582499999553
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 16,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0016.bmp",
+        "sha256": "ec2c4444b4b2161d957507572b4268a6c8e8a6e296b9cc2bec00b98259f1dc25"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0016\\reconstruction.png",
+        "sha256": "945c5de76be8a265e0964fa2fd64acb4c18ee973cc68a32bab440494c5f187be"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0016\\output_float.npz",
+        "sha256": "c9eaee10c160da8b4bc5da362f804bfe9af68c62d029c264feba1db96eea6d79"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.876826099993195
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 17,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0017.bmp",
+        "sha256": "79e851b276bae6eff6adf8ba398dcf82767aefbfc76742e485e4a5b8717c5982"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0017\\reconstruction.png",
+        "sha256": "cdb6e4520d71e38e4152886a630a55790ba07867ea9d0dd725585b75fa203010"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0017\\output_float.npz",
+        "sha256": "59179249a60e2daa8b5d42ec100c8ff03e31901bac41d3fbcc1229f2cbe9d99f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.996045800013235
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 18,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0018.bmp",
+        "sha256": "f91ef88be008442820b61788bcebec39472f1b2b9d79073dec5593717ab60631"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0018\\reconstruction.png",
+        "sha256": "832a89c660b944e30f3d596fa16a05195a7daf9a947a6573f8d3fcee59f8105c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0018\\output_float.npz",
+        "sha256": "24266a439d7b8f84976a4fa4b7d6622588e65087e740c397698fe5cfec3b193f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.003061799972784
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 19,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0019.bmp",
+        "sha256": "858db0f51870455369e32a7c51824de765222c168fcd0308f2cea56247ddeeab"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0019\\reconstruction.png",
+        "sha256": "82dddc7c737a7de5fde48063900e48d96b07f4ca727eb66e6164950eb809667b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0019\\output_float.npz",
+        "sha256": "ac5eef590016a7ce60c609488912c2424f969157ec3b797061be61ea06f3d043"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.984100100002252
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 20,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0020.bmp",
+        "sha256": "42ff786090d4d2a31f2bdd59a3df7500adf361a0280b704c02f2eacad84ed0c7"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0020\\reconstruction.png",
+        "sha256": "d781d8c9fbe443c3aff98aedf8d831d9c7893ff59c67f105d54844614a724bd4"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0020\\output_float.npz",
+        "sha256": "5f89c1980bf53b3c92c2a6c25223c03b044303ddb0a9c73b91ed0a0a6269c187"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.002935500000603
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 21,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0021.bmp",
+        "sha256": "f52c20cd12db9023eeb05bf402c5caabcb4d7d6af17c75d3171190a506e37e78"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0021\\reconstruction.png",
+        "sha256": "e1adc3f0367812442d85264bca5335d5aafb1c6f01059ce1a9339bb24aa6b304"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0021\\output_float.npz",
+        "sha256": "2cea2432ca08a13b6bb5eba55beb11da4768c384251e89babc6c364ccb74279a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.986696799984202
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 22,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0022.bmp",
+        "sha256": "4e6b85b4064a43ed9f75b81db049a3bab79a3439f5affdd4c8d7ad7ac92d8835"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0022\\reconstruction.png",
+        "sha256": "7818061d09044f09b1b148585230cd4c0844d731f09374a2977cd0e809214964"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0022\\output_float.npz",
+        "sha256": "053ec3c1cb244c2720a334ddd219c914c83c91e353f046c01c00cbb4cb4546f6"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.987289299984695
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 23,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0023.bmp",
+        "sha256": "dbb81293e7e8a88442d857411badb6f3b9b9903496b5ae38e1bfa08b2c04ccc9"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0023\\reconstruction.png",
+        "sha256": "c59b37c32bc71bc16e25ce34dd83b52d068d0b86ede8c9f547b5e2840dfd04ab"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0023\\output_float.npz",
+        "sha256": "01e9b68636c14fd3b851f0767d6b8f352219df0a361a8ab300ef625c89b0197e"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.983424500009278
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 24,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0024.bmp",
+        "sha256": "281648405f6f8f6d4e6c27e28c4a46a918b36f1a2b00c46d77f51a959eb11e76"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0024\\reconstruction.png",
+        "sha256": "f99e681d45109bd2e5ebaea5d0e34749c15d91064e7e813da4d817ce33fefe8b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0024\\output_float.npz",
+        "sha256": "392cc05f06db9af5dc17b481daa19f97b18fbc215f4fe26bc5cdfb8e1e7bad9f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.849078800005373
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 25,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0025.bmp",
+        "sha256": "a25e7dba2ebe50a81a67d232e66832ce07e43d32b03acecdf84fa46971b51511"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0025\\reconstruction.png",
+        "sha256": "c125d33626b8105f5f5af8ca74553a182e6312b34d834b2be6acb03c8ec0ab79"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0025\\output_float.npz",
+        "sha256": "1668fd76adc2a73d500efa8c8f5c662845cf16ff79608dffa49c2e96c2df75c8"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.908389799995348
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 26,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0026.bmp",
+        "sha256": "02c867a83d9b009b8062ac94e3ee6707607e5a6e4e5d845dca544e6a15f478d1"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0026\\reconstruction.png",
+        "sha256": "d3172b0a44a835d6aec0d1ad4a237788391fe24987fef2a43a6139a7f5a86c3e"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0026\\output_float.npz",
+        "sha256": "54aa18792f09c48aa1029a7b9fecd231473657ca35989318eaa204032344b8bc"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.960866299981717
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 27,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0027.bmp",
+        "sha256": "031faa66c4aaa188c5b9ce016347139f059d35be3c3b0108dcecbedf61a8b16b"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0027\\reconstruction.png",
+        "sha256": "03c8ba9996f3ad8e436270014820280dbb4be9fb23a216eceaede50109ea5c70"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0027\\output_float.npz",
+        "sha256": "93f659b96443703b2423f358364e52e9d1e6a1570399401a950b4641b748727a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.9686328000098
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 28,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0028.bmp",
+        "sha256": "90480205b5c7becf002aac18485c3395784a198b976af80368d4c62d4638ce76"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0028\\reconstruction.png",
+        "sha256": "17c614e661d014a9820d127b43a1b9913d883ab4bebfbbfa2b475c83af5a0619"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0028\\output_float.npz",
+        "sha256": "2c5f7dd265cf7336ee7adf0054969bb28b96b338a1e0435090f51a48ed016ee7"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.017834199999925
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 29,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0029.bmp",
+        "sha256": "bbe2f53de7a319c259d8c0bbe5434164c2ab65c85542c5e26c68f467842515ce"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0029\\reconstruction.png",
+        "sha256": "c2bbe7763d4435060cd640cf9a79a39f4ffa3510a40e2236313ef27283dc880f"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0029\\output_float.npz",
+        "sha256": "93bac55938a629cd45d688a3eaea0de2e2501ac83e6cd3be26157a42f28291d4"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.9925685999915
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 30,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0030.bmp",
+        "sha256": "266f188e297b0f3d7793bdfa677d0aef71fb975492921b7795bb79637e0bcfa1"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0030\\reconstruction.png",
+        "sha256": "e5cb9e135de17dc02f70f00ff6c9b0666489f4f1b7423fd9669cd4de9333d275"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0030\\output_float.npz",
+        "sha256": "112e1c4400fc3cb52149d61833f31d54a7ba0de99b1f88ad50ab5269d4c91484"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.04148929999792
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 31,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0031.bmp",
+        "sha256": "9dc0d0a7ac3cc537f127eda7bca087ee5e5d00af7099f099b6f5bbac6b0be7fd"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0031\\reconstruction.png",
+        "sha256": "2205c7f3d365e378ded57ddb833c3e86736c3e38d58f0348dddf5a0ce59090b6"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0031\\output_float.npz",
+        "sha256": "788f773fac1a7fbcd7b8d426ab466f05815717c7fcc215b28bd1a6456a17ac3c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.013015700009419
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 32,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0032.bmp",
+        "sha256": "8d42245541ecc27656f732ae599e1c693a89ef1750d232ad389d72723a65ddf8"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0032\\reconstruction.png",
+        "sha256": "8373f05b535e8e32aeb59efe91fa759678fbcd0f20e4be735881d148ffcf1700"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0032\\output_float.npz",
+        "sha256": "0ff005538f98cc486d565b3b44a4cd275cfc512c7af29afbbeb3a0e2d8ddd87a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.035492299997713
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 33,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0033.bmp",
+        "sha256": "049405b962d7832e256c2202b05d0cdfb778672267e68ea6229f6e47d0ca682f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0033\\reconstruction.png",
+        "sha256": "5991c24deb2d0e6d6be74177cd23df15c07041cb6ae802f39190d188d2d4c31c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0033\\output_float.npz",
+        "sha256": "6d62ad2fd76e543f77ed6c566ae1d05b046d0f5f553d7fd0e0944f6c79a0139b"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.046171399997547
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 34,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0034.bmp",
+        "sha256": "dfa0cd7bf2a2a247bd11471f7562cf9e240a295ce2b8d1546f1ebd6ce2515f84"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0034\\reconstruction.png",
+        "sha256": "ac4a4bb89eaea33e1b20dc8a0113f6b64d72a1ff111e16d5e40262fe9467fc07"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0034\\output_float.npz",
+        "sha256": "d2abbfce700717d19cf49973a30718832865136b11c4bd5e829e21509521c386"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.035894100001315
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 35,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0035.bmp",
+        "sha256": "c9356f9aec90dedebb2fa84a5cc3b39a2337b1c85c55fd234700ac2ca5a675fb"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0035\\reconstruction.png",
+        "sha256": "8320d77a27a3314ecdc9991b119898b5e4b63d8206cfef85f2a9d9a73d7f4ce5"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0035\\output_float.npz",
+        "sha256": "999d197719ba32afc7f24b24aca3dc048ee32fc868d5abf474fe5893a02f8f99"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.03981260000728
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 36,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0036.bmp",
+        "sha256": "661c4c48250f88305b23d1882a40df80422b2a218689d6b4ab3320cdc31e94a6"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0036\\reconstruction.png",
+        "sha256": "006c8d1681a19afd68760ca13c8f3c1cbc914657b90674047120142d2ce9dbf3"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0036\\output_float.npz",
+        "sha256": "6aa64ed13826f7f7586e8040e9164a0c5cb788502111e430e758b00f57233d5b"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.031207899999572
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 37,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0037.bmp",
+        "sha256": "d554ba47d3b0f69cc0b3cb1236d92912e8573b65a5a00381825035f51ad536d7"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0037\\reconstruction.png",
+        "sha256": "8784f04b2dc8f2b92bdbd22201d3c72a4dd9790101f865b46ebc769405c72215"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0037\\output_float.npz",
+        "sha256": "5dc540dfa8674ab71bb3ba90b764e7fdca188eb53c7a79b310b6b78a1e3ca4e5"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.093686700012768
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 38,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0038.bmp",
+        "sha256": "fd3afc21e46bb27721a3e23a0cd91589ae44c84250e068bcf4e95faca4bcd4be"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0038\\reconstruction.png",
+        "sha256": "08cb5860adf4f1ea653b76476ae00176865cb1b205a7d8593204107ba3e0476a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0038\\output_float.npz",
+        "sha256": "871aa9bf81bbe7cae5fa945a01aa4a1b704b1b6dd1585f488436f9aa13e49cde"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.914670800004387
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 39,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0039.bmp",
+        "sha256": "a247c7345dda59e7cc0467235fafb68b6090c437dd36de2ef69fff9eec17cb7f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0039\\reconstruction.png",
+        "sha256": "1bd3a95f64eec715e0abf0c753b7a62ee0e4de6169284ec11265bcc2d8e46481"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0039\\output_float.npz",
+        "sha256": "4cdf3ac65e45731ad5bc0cb0e56722cb4787d358d1cf18b9188b77cfff42004f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.880159199994523
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 40,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0040.bmp",
+        "sha256": "014fd1e83691cd3703d6455bcec2643747772031e8b2c694a4ffada1adff9db9"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0040\\reconstruction.png",
+        "sha256": "5ed1d1f93f4dec39e2842ca2b845daddce1555b160e6f0584aa2394b0dd4e462"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0040\\output_float.npz",
+        "sha256": "67725fd30306e0af17c29c6e7ddd74efa968b3a1dc98fa6632a3833e60c43272"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.892752699990524
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 41,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0041.bmp",
+        "sha256": "e8101373816af674c7d822861a8200e2d0f600d7d5e78b0a8b50fff50b73a5f4"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0041\\reconstruction.png",
+        "sha256": "a3bb61a63f9f8b9375f6f869b6a1b5af203ea496135e8e9da3d7731ebd2e883a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0041\\output_float.npz",
+        "sha256": "7dfe6ad72ecc43a3e4441dd540b45b2214af0be808175dc9f3b39da11772f1e9"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.84179450001102
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 42,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0042.bmp",
+        "sha256": "b7b6eabd15f3ff1c48172040322aebef957981366dc0fd9316784df938e4bf7a"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0042\\reconstruction.png",
+        "sha256": "886cac9050fea3806cd1a8ca22f49cb0938c1d7166e92f9b4f33bac1545490c2"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0042\\output_float.npz",
+        "sha256": "4db0184f6e210a604f9fc4577ef23a28ae2922a17f0bc0073108b04d020fe09d"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.964161900017643
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 43,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0043.bmp",
+        "sha256": "0cd5e40ae2e2f603c90a995881ce6ba7c0e17e027ce1d315d97770a586c8eb14"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0043\\reconstruction.png",
+        "sha256": "41f0a878c8ab6087aa88a30153df4930b3f0f4a5334db13777dfdba1d7a25d0b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0043\\output_float.npz",
+        "sha256": "e5e54e1f0aaf5c23e7bc82498ba48d838e575eabfbfdd612f62876848244b07c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.006325700000161
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 44,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0044.bmp",
+        "sha256": "cdff8b46d2c48ba3866481fb0c0b5ea43b9be70702d229704d5716e8a1587ffd"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0044\\reconstruction.png",
+        "sha256": "09ebaf7a8178f6916355bda22344078ec2874c78c85fa65c83aaf81981204a63"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0044\\output_float.npz",
+        "sha256": "db2626adeca55a335e755c627d0ac5b4bb58a8dddfe4a4bea5c220dd5c8b5795"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.85371959998156
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 45,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0045.bmp",
+        "sha256": "b26131c9daf4a43db475bc10d224ca1d629a01a0be6cbaf133f40d4a6881459d"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0045\\reconstruction.png",
+        "sha256": "17eafe0d81c1723ffef9fdd77c8db858a485a5c10c676e0ac7b0dc4cd87a07f6"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0045\\output_float.npz",
+        "sha256": "4d68436e2eb9d39a8b0717241acffca06eaeef8d8af12b052db5baeca186210f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.934926199988695
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 46,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0046.bmp",
+        "sha256": "79a0104b4c00ed70928a85bff389a8250d3c011a97c3fdd11ae1e2224871b08d"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0046\\reconstruction.png",
+        "sha256": "cb89543c700dcccc1570fdf479d3a6ef3605cb5b58053446f7487bec754c31af"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0046\\output_float.npz",
+        "sha256": "9cebf99e9ca37e0fdbbaa473d2b216848df97fa31bc8f7b17bb23e8f05f57a60"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.838228999986313
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 47,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0047.bmp",
+        "sha256": "c61a6fac7b184936a007dea0944d6820e1336eebabca42f15b5980f8e9a7b44f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0047\\reconstruction.png",
+        "sha256": "f9a60b245c45d098f27fe0a0786ceef87710662bcfd209e6c11393658d0cb3a5"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0047\\output_float.npz",
+        "sha256": "f5497d5cf93fd5542382512c59cb15bc12116f29849f5c760846443644c33238"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.867690700019011
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 48,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0048.bmp",
+        "sha256": "d6121e9e5847006dee4f4c1fa14f494430f9b20b9ea4157851d5b1780f6cff7d"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0048\\reconstruction.png",
+        "sha256": "a5242bb85f3a6b17cf6b012d16b9bdbc1d1aeb108713b2330c8fc691ddddad16"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0048\\output_float.npz",
+        "sha256": "50886f2313dfebff9f7fe642ca2a6cd866e38d54337fa8cb6fb992044bc53a4f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.923914400016656
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 49,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0049.bmp",
+        "sha256": "29bd8893f44d7b4c4a7b95872133d7814085b2f8bd333464a6fda23e2cbf268b"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0049\\reconstruction.png",
+        "sha256": "d0d2d86e9b5a1c75beea63f1036069605cbd6ee8bda035405773a1ba4e9ebc04"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0049\\output_float.npz",
+        "sha256": "88fe2de3b30e3395a6b209e076a9710d005bca98e472df0e01c52f2f4eea40b9"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.9071394999919
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 0,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0000.bmp",
+        "sha256": "7e7baaeccef055dbb88e7fec14576c87ae96e33db081bec58a123cf673fa5fab"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0000\\reconstruction.png",
+        "sha256": "8576392173e419bd27263c3764536e5c71841c3ca8b1df268983fbaf1ed5e415"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0000\\output_float.npz",
+        "sha256": "12c826282d47762912813757afa1a676abf42e7a072753003280ba83e23e5a8b"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.923835399997188
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 1,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0001.bmp",
+        "sha256": "278f57c02d284acaa336a1f35518f98e1557063b0c32fbac1a515811f6249fa0"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0001\\reconstruction.png",
+        "sha256": "4536f229dc3273565cc0dd960c64237242ab2c527d729b8a728a12d1bfd328f8"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0001\\output_float.npz",
+        "sha256": "3847377fe719f0f4cf9a5c911c4f72509fc96e758dc0d503223aa9a51a0bba07"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.869913999980781
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 2,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0002.bmp",
+        "sha256": "ec404ab0260fdd63d862e6912744ef5cf42fe0a175ad6f6ea7b5cce0aad0c4ff"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0002\\reconstruction.png",
+        "sha256": "51f4c576f96bbfcbc3b36216da8b503e74c05df3207234ca997e7498d89102e5"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0002\\output_float.npz",
+        "sha256": "a5fbe9f019ab3587b1f290c79de13fc6e44ffa817d40432fda1285ed2ec3f4fa"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.931456299993442
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 3,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0003.bmp",
+        "sha256": "0406a9c5887fcc3a0ef31d4f0e35decf622b279636ba677265b7a1c807a83090"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0003\\reconstruction.png",
+        "sha256": "e114fa39f1be7f3deb84352e3841526f474fad151b3352754fe129620e005f78"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0003\\output_float.npz",
+        "sha256": "9b7b8edbdc4b20ca0ee9d3948bba49d2e7b997e1b7a4c5fc54568b4253bb4319"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.856054000003496
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 4,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0004.bmp",
+        "sha256": "3b2a4dde15175b15e0dbc2f946e3964fd6a6f76774c5f2822f3692874c25921c"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0004\\reconstruction.png",
+        "sha256": "3eeefe58d9841e0ef757d172b5b1bf2ebba228e1eae107931f08fc9b0d6c6083"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0004\\output_float.npz",
+        "sha256": "061d1911e6b51dda18f35afebf90538394a98f45cf7b36dc20f34046c758abc6"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.879788400023244
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 5,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0005.bmp",
+        "sha256": "ebcca5fe5cb325ca3a2ded196784be4b6925b9a083bcf4d5962c30b350d69ce3"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0005\\reconstruction.png",
+        "sha256": "b7b711297343494725cbff55cb5fab676f51c0fdebccc02d7150c977d157c86e"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0005\\output_float.npz",
+        "sha256": "b3c6dd800e543dea4a083dea9c2bcc6e6c4fb45aab9e2f515711773daee51ea7"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.942017200024566
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 6,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0006.bmp",
+        "sha256": "b6ef2d77d82e61b2e5c791d05d60bf5122ffa85b72f23cf3ef5e127c98b21a03"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0006\\reconstruction.png",
+        "sha256": "11d140e2c73dbd33cc2ac435cb2d6617cda5dd3bf3793b7fbc1b105baf8b2789"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0006\\output_float.npz",
+        "sha256": "822d55a7799341ca863f988ff296d6721ca71546d7e856430287ca3cc779b0cf"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.963252600020496
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 7,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0007.bmp",
+        "sha256": "321b297ba2bdc069df71d9868eb93677c5664aa024c68c54148164ee0cd71e43"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0007\\reconstruction.png",
+        "sha256": "cf38e9e06662d16370d9c5304836415ea120993ae95d2617c3bccd37844c3f16"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0007\\output_float.npz",
+        "sha256": "911349b985439aef012c09308cdaed1cd6b057cc8a39c9fe72c8ab2fc0ef3ee9"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.93943150000996
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 8,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0008.bmp",
+        "sha256": "b43be72a04287d079c7b15c049d9663947e7962c141c3697f3f0f9e24c73155f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0008\\reconstruction.png",
+        "sha256": "773d8e5c59a5428332b0f219aa10125d5b8bf3a3c35d961d13ae70ffaeff2c49"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0008\\output_float.npz",
+        "sha256": "a4cf50274ac27aab9c618de16b8296b1db7327dcd3561b14ac5c8f99a49bd06c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.962752699997509
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 9,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0009.bmp",
+        "sha256": "11a54fe987bceac3a0a69286174c79c69862f286836b44c08d01ef5278f2a937"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0009\\reconstruction.png",
+        "sha256": "ab43351c706f2fcff0b1bed1f1c3c94c15cfe0ae29b0bfa88c25828cb418f868"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0009\\output_float.npz",
+        "sha256": "4c9603a805ee8aa7200f0dd15b8fc45d3a90aaf1be6181debaf6c8e0726ffa13"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.862040000007255
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 10,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0010.bmp",
+        "sha256": "378af38cdc205116aefa2fd6678b6045c0dd3022342bffc7d19b35d8cc3808ab"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0010\\reconstruction.png",
+        "sha256": "30cb1640d3c45272f0bb9592171b55a473870e6035d26fff83bf7f827c28e220"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0010\\output_float.npz",
+        "sha256": "f20864ef82be84a44412b7d60a6b55448ad9237ddb4897ef62e89dd40d84edcb"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.883688700007042
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 11,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0011.bmp",
+        "sha256": "49ff9612739ae36e86e06dc52b679d26b4f2113bc638da0de5894de4f897b755"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0011\\reconstruction.png",
+        "sha256": "eb53507febbeb67a00dd0ffe5a7bb60804308b5e5626d6f4eedb60a07fc97add"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0011\\output_float.npz",
+        "sha256": "58f88cb2f63a9a588734dbced3e64b299323c3482dba79f2ef3c6f7f7ed9697a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.894368200009922
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 12,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0012.bmp",
+        "sha256": "0f6cbc9484bd4a7855618ddfef28b7f34bdd1a2cd90a1d8f04366757fb2a7f6d"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0012\\reconstruction.png",
+        "sha256": "78da7ebd129b02ac7b29e6cbfeff5e118a62794cea51fcd95e11c08d59529971"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0012\\output_float.npz",
+        "sha256": "467c1fc1b9cbb7b27959d5514fe115a9ba3b279418b375d82bce911d63524f96"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.861254699993879
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 13,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0013.bmp",
+        "sha256": "bf01b0613b3d00cad00b7fd188d125269db794b0d4470974e05c6ad69fd63663"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0013\\reconstruction.png",
+        "sha256": "794080c959c2f902961cc646b389e618388db02d5500e1902e5893f2d5743d2c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0013\\output_float.npz",
+        "sha256": "d17bedb461c65f824130f1312a45c38af9b2a5f515da028236d2ff6f39f8e79a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.020500200014794
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0014.bmp",
+        "sha256": "9b9a8cbac3cf693adb10e1d29f2df568995906a70edc8dddd35ef85eccfcfe0d"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0014\\reconstruction.png",
+        "sha256": "04dc2f86e62a59a4aa46e1022571829ee816b9a1736183dd23bb3f6c2ca10f68"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0014\\output_float.npz",
+        "sha256": "93756aff63d41d48a61a7d9707557e8fcff68632fcf79057801601876dbf6078"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.917021300003398
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 15,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0015.bmp",
+        "sha256": "13854bfac74dd77afa0eaf0618cbe9bc071c96d1987a0ab120a5f2f7d421971c"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0015\\reconstruction.png",
+        "sha256": "bcee861f4e9814cca1bb45b02e63326204256945d2877e974d0cc0f22ae02c33"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0015\\output_float.npz",
+        "sha256": "bf26e9f26aca44a6c1a6b0006da84fa09adb7b30c39211ca48df3dd88b39d379"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.983499399997527
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 16,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0016.bmp",
+        "sha256": "2ad0f19f0888a5d54cd862b06ec5a32e66230c9e1ddcb9f5fabc349955a48bd6"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0016\\reconstruction.png",
+        "sha256": "c620332ce2421cdee883bb6b85c7233d3d0b506748ba7bdc582fed4581457299"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0016\\output_float.npz",
+        "sha256": "34970b524a744919575cd83f7198a2ddeb76d4500c33697337d872f8c0363d2b"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.874721400003182
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 17,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0017.bmp",
+        "sha256": "5729af4b5febd95bdb5a1f846814c434fe8bb6e823f845a84efab0f5e1424d06"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0017\\reconstruction.png",
+        "sha256": "62300446eae2e4328ecfa5de138abff0009e4da650466f000ada7a6d9d3f42d3"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0017\\output_float.npz",
+        "sha256": "e42ec3ca6de6eda1615735715571662ccdc499d176d51cd4e612d2189c4d932e"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.874371999991126
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 18,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0018.bmp",
+        "sha256": "f10b2945763060a15d6887f9c4170332848d40bceef5d9bc2665b8e0eab28fb3"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0018\\reconstruction.png",
+        "sha256": "a589a22b8552226808d5b16e5b632a6bdc1689f97d5a1b065629c02eef13bb7e"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0018\\output_float.npz",
+        "sha256": "720e9bf3840c9d6a2e89d9925fdf1833f3110a0e9303c9cc66c8d3991a8385cb"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.942010400001891
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 19,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0019.bmp",
+        "sha256": "d961fc5d31fae8b55162d7afdc149f07c4c6a9e0f645cc8c8441d63ea43fe582"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0019\\reconstruction.png",
+        "sha256": "0aa9033f369b784fdd0fd135824c525e32601bca3b0107f546c9e60f4099db77"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0019\\output_float.npz",
+        "sha256": "a3cb2a700bd12b196b80f570c914dcc4fc7573206e95fe8b81bbffe55a673e41"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.81991360001848
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 20,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0020.bmp",
+        "sha256": "13e59750c6d0c4661b22012174d6d10ecbe898c2752f7e362a6ef6fe758a6b6b"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0020\\reconstruction.png",
+        "sha256": "0b3a0f2f3e74bdef25ac39f8ff4c2fb1e78ee71946f0126296fbb91a38ae2f16"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0020\\output_float.npz",
+        "sha256": "35fd05a737c3f1e76059cf4f54834fe703adad0bb4a66ee8d53a99231d840333"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.806001399992965
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 21,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0021.bmp",
+        "sha256": "2c1fc6a09ef7742623a9b4f16dee7c0d6442714d88ea5d55acf531735ac7fd0c"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0021\\reconstruction.png",
+        "sha256": "df4d1b821994f17c1e3334db0b939496c38efb17798eb3015a727904b12907e3"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0021\\output_float.npz",
+        "sha256": "a216d6691e14e396e8b31b45f642c115a16fa659a2585b7ed041ecac848cb40c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.864957799989497
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 22,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0022.bmp",
+        "sha256": "be0f9feb1cd881ab4227668d0555765406537b62f6993b46e8961f3328ce833d"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0022\\reconstruction.png",
+        "sha256": "fad0d6f90e95cade6d745deca92050d04c68d4d9e1744503147d9603bd509d9b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0022\\output_float.npz",
+        "sha256": "c506e167947e77436611f0ed3248f2bb97a55d9da43616fa3f34c4307d505957"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.745588199992198
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 23,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0023.bmp",
+        "sha256": "99032d3bc51101ac5f487908dea723e64c639597340e1388e3565fb0d742f748"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0023\\reconstruction.png",
+        "sha256": "9e9d2c1ef19c4218318166e87aa95e5d7629024866e31966d1717c52caa35c57"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0023\\output_float.npz",
+        "sha256": "b752fe951073c6accf70e7eadf8d452d06b5fbc443ec868f4ec43fd58aded0c1"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.858073600014905
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 24,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0024.bmp",
+        "sha256": "9b1009571435d43a2b2e132a1748da6c88bcefcf2528ece6d5ef72aec4632ff7"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0024\\reconstruction.png",
+        "sha256": "83e95adf53169eebeefcab43d289b8218d862899d38fe4cf79be0ff58219ef9d"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0024\\output_float.npz",
+        "sha256": "9e28d8b1dd4c16bd330a0982e784dc59c6d9416f56700e5240dad789b8d526c6"
+      },
+      "reused_validated_probe": false,
+      "seconds": 13.006289899989497
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 25,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0025.bmp",
+        "sha256": "6a937fab9183e953cdd9a5f4365b27c1d354c2d7eeef4f0983ba6279223385e0"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0025\\reconstruction.png",
+        "sha256": "d6951320ddd1c2edc4c7792fb123a941493ff815080a480d10dbdc861e9cbf65"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0025\\output_float.npz",
+        "sha256": "c07223886172c5c8877039ec101b828d98f7380b1aa894044e2b820cb7b8c49c"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.837503400020069
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 26,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0026.bmp",
+        "sha256": "287433b02824fd67eedef2f6b1f2f8797bf9237511fc6cf46335d38c7c0da9a3"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0026\\reconstruction.png",
+        "sha256": "dde36f80f0df600909b2db6192d5e1e9847e8fb69c961c7ed6db033ea07aaad5"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0026\\output_float.npz",
+        "sha256": "712c42e063d80896c80d86d882d0c9f00faba7e5fb3b621cd8e702addae07bf9"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.814772900019307
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 27,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0027.bmp",
+        "sha256": "06a1b391a6518bfc40e76807b01a9d5437c268a7e15cac3ad405e235d65281ba"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0027\\reconstruction.png",
+        "sha256": "fc4d632228f44a52a038ac64b6e277af3c5da748953b654122f25340498b325a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0027\\output_float.npz",
+        "sha256": "42e0a7c07938a30343c19246332d36d81eab11e4c799cd46998b029beb4e6180"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.88601469999412
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 28,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0028.bmp",
+        "sha256": "9e300e371f4ec6efe5f1cfa07e77bc94d5317c54d8a50d5fd1402ce07923c08f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0028\\reconstruction.png",
+        "sha256": "eabda0362556f8726557ac1c3ea459fe9eb24331a98f0fd1c0a42995037925f0"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0028\\output_float.npz",
+        "sha256": "92f876911760cf4217a56f5e702b0ceb119a4e75c126511165af2e884672c598"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.917141099984292
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 29,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0029.bmp",
+        "sha256": "16d1fd1f9e5f487525435eb0c64f28d95b5d0bac6d889beb8d554bafe76b513b"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0029\\reconstruction.png",
+        "sha256": "200e5864d1d7d2c049a374f39219cb9da0adfd7ee23c44fb2dbc38632d346a2a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0029\\output_float.npz",
+        "sha256": "019c718195abc8f226642602bc65c52b95d1729f728742a56b9448f57a6aba27"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.876293600013014
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 30,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0030.bmp",
+        "sha256": "2d23d94bb44b01a2976395e46da4d0b6da69188bdfe374a63583c8953165b25d"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0030\\reconstruction.png",
+        "sha256": "3528ea77bbac560bbcefbc4ef489d5df902285d01ac94c191ace32c4da0bcd6b"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0030\\output_float.npz",
+        "sha256": "bbb22b61e9205f8ecaf99339ed4e59ba90cc22397323be393cd854708ca67a8a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.882433899998432
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 31,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0031.bmp",
+        "sha256": "4e3cd0eeada15ef41d2d79ea3b10191e0117218a0450ac72b7e54c2e852eef12"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0031\\reconstruction.png",
+        "sha256": "617eac3297d2224f4e1cee2e9167200519bea81382412a4d7e0699ef68451718"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0031\\output_float.npz",
+        "sha256": "28c757b1de18876ea5a1c47639ee7b0ae43387edd676feb1f849e902212d27c2"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.92877089997637
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 32,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0032.bmp",
+        "sha256": "5c661a2aa21cf8a1cfbf83f9f541796a18a9e4d6985639b098ad3159c0df5683"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0032\\reconstruction.png",
+        "sha256": "8c36387ef104e720ba42ad45b757a809c2554ad55eb8396b9710f7cb350f281c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0032\\output_float.npz",
+        "sha256": "8f2266f0e6bbe8e8c7799ddc173d26ad6709739019be3b1a165e22176374acd3"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.958874699979788
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 33,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0033.bmp",
+        "sha256": "75db77dc83f7b290159852ca218970c6c4942e7a106023de8cb3f22469260f08"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0033\\reconstruction.png",
+        "sha256": "bd9c1cb7cb07eb4b7246d47f371d4bb6711602f7ea0c76708a6c4cf43456ad51"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0033\\output_float.npz",
+        "sha256": "d170b20e38ae80412ba6b72017f1e6f85d0dbc6ca2eabfc94b6b70ef29847b1d"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.869753000006313
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 34,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0034.bmp",
+        "sha256": "f75e558830a04bb9a34b15005cba7339a2abbe383fbfc5fd855fdfcb8b853635"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0034\\reconstruction.png",
+        "sha256": "9ab80d8305e5c791206dc96a163b1a8c8a1648c8a2f8c48606b8a5db6deb2574"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0034\\output_float.npz",
+        "sha256": "a9847a6b8f40cea5eb8711fa5e2161c5212975bf71539f9c3c5db64452bffa65"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.90028020000318
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 35,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0035.bmp",
+        "sha256": "39644ea9cbdfafbddbe08721ed61761213d018bdefb5d7eef7660f683db69ceb"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0035\\reconstruction.png",
+        "sha256": "fe27b340ca80cc5c8b1ce99dc88cd8f628c1fd5abb75b8b867a31b2974789552"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0035\\output_float.npz",
+        "sha256": "adf99b14f81d5d5f9c4b3de1d97a20aa00b8501769a97a0a4342c05b01ae476f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.873472999985097
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 36,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0036.bmp",
+        "sha256": "3d4b9c1bbe86563f213bda03bf20c559d8d2ae8a50eb0358003b4f89b94dfc44"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0036\\reconstruction.png",
+        "sha256": "9a8e5471a2232544faa45bcb16fa8c37ce5ad4d58fa83aa73c1d0abcccba71cb"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0036\\output_float.npz",
+        "sha256": "948e16203d286cc9a56ff1fdf94b6627f623ccc200b570294ff61ba5be1fedf8"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.850341100012884
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 37,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0037.bmp",
+        "sha256": "275800766e0a0a93e1ba8387990cdb171b4fc7a23f4e97d061d750b8dc003abc"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0037\\reconstruction.png",
+        "sha256": "866d5f08a79e2e7162db5e2e8d7fe38e9784c1e865e8fba757b3d3a4fc7a7aeb"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0037\\output_float.npz",
+        "sha256": "8a83d973a263946ec8054365fe453aa4d448fb00735b6e85463bc8980ab7bf0a"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.851375400001416
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 38,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0038.bmp",
+        "sha256": "2c3b2d37657cda800b32c1056f29abb650c28814fe12ecfb08cece06e8b63b03"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0038\\reconstruction.png",
+        "sha256": "d5606bf5b40ac85a1b755b5e9b3f30b82e4980ae9970c38eec286de63c847e16"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0038\\output_float.npz",
+        "sha256": "5cafb4f4c5b70092fbf58e5ebddbb030fb6474df2d48a8d388512de35e1eea06"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.899311799992574
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 39,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0039.bmp",
+        "sha256": "5bc02ef1ebb538e8ab189e2bffbacc199bdb6c31674d03b9b80c324f803899d0"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0039\\reconstruction.png",
+        "sha256": "c455b679be0c09f1db47b56c6b9947801d800ec9a7167a7218e029da81ccbf98"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0039\\output_float.npz",
+        "sha256": "b3cfc7e63f9f66171a361b36e166ef6ecab0cd727c09bd7a13aba792ffe02a28"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.797753799997736
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 40,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0040.bmp",
+        "sha256": "a73c7899bf572eae0a147aa6db634b5a2443f57c38e175ca3d951708581941bb"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0040\\reconstruction.png",
+        "sha256": "7c61fc7cf0760c30008762e70670f74b8aa199682bec2c72945f9019cf30676e"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0040\\output_float.npz",
+        "sha256": "3c1f6aa98ad879b3a9fd2cfce86b5a64500ef617fb3ec5338c5d8494940a2c4d"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.947410799999489
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 41,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0041.bmp",
+        "sha256": "8a658ed8a88cf8f4240d5a63729f06b0471c049443281ae9379b3efaf8c607d3"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0041\\reconstruction.png",
+        "sha256": "ce74f29903e95a8433378c83e235813ae260e11f27567fda7b4502bfd292b2d1"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0041\\output_float.npz",
+        "sha256": "6ba7b154933eb74a64389737d1830389c0536b6c09665d69006ca59394470e14"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.89958279998973
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 42,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0042.bmp",
+        "sha256": "855d05a7bbd6290ec5f659b03d51b19cdf103cec1e713cef74087030a69fc615"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0042\\reconstruction.png",
+        "sha256": "cbb9e265f11c8b0bb84124ea757cbfbd5e3438680e6cd2b685eb1e27d02ffa3f"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0042\\output_float.npz",
+        "sha256": "951f82861d93f2d681e2846ce7dbbec61db4b7c88a5b7417a227463bb418896f"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.83150120000937
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 43,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0043.bmp",
+        "sha256": "1ba48406d7261e0086861da15cc8b0d2a5a800f535a284e54415ed567fb1215f"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0043\\reconstruction.png",
+        "sha256": "9d81c0ca14b3a859f4a5af8527f414e74bfd6c9d31d7644ce5609d9acf7903b0"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0043\\output_float.npz",
+        "sha256": "f0508735c937fe57ad1c153fd39b94da887f99be958692f2f627604c81a6c011"
+      },
+      "reused_validated_probe": false,
+      "seconds": 12.484415100014303
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 44,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0044.bmp",
+        "sha256": "5ecefb9f37d5ddbee9a9b83891e7170968d664cf5d5a459e2a42a2488c69c3b8"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0044\\reconstruction.png",
+        "sha256": "48bdbcdc9f3d1336e348513445f241f9b625c63fcf94f93cbbbc90c2bce71d51"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0044\\output_float.npz",
+        "sha256": "1372517c18b7975c4cb26793d3850e2a8274821967005b4aaa100f8d72c6d0ab"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.612267000018619
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 45,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0045.bmp",
+        "sha256": "4016700dfce88863720cd6007a4a2bc48f7812f9b0592b5af84a92c2f3c88099"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0045\\reconstruction.png",
+        "sha256": "83e8e55f9aeab10ce68d654d4dc87b85191dd5e5bb1ddc9cbcff7aa44fe7bc2a"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0045\\output_float.npz",
+        "sha256": "a8fb25512fe113fcf329089505c760fef18a082fb8e83b07d0119b1955a863b6"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.540060400002403
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 46,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0046.bmp",
+        "sha256": "8798974d8daf99b3b14b927ec87e0386073b436b26c49cf53f6fdffc0d131319"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0046\\reconstruction.png",
+        "sha256": "baed182cecb7f4a54e68b1ddb54146043de9f4c50831bf4d4842b8ccf2d6323e"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0046\\output_float.npz",
+        "sha256": "a522935a83fde45754134fbf349eaf3403afd10a5152ad5c4373c62cd97be821"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.533784800005378
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 47,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0047.bmp",
+        "sha256": "dea8785c821452c6048afbcbade224fbc09565f5027ed76e8a30ab8f5b1aefb0"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0047\\reconstruction.png",
+        "sha256": "a7be99d207d6a8410e758dfc43442946c1b01013601bc7209b58cfbd7b10763c"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0047\\output_float.npz",
+        "sha256": "b29b02e102cd57b021b999f579a6bd89360d94fc07c53b32962d03a3a002436d"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.54441180001595
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 48,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0048.bmp",
+        "sha256": "099ad4ac1324ec4da145dc941b81bfdd5f784784b516ba61d0d86473549c84e7"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0048\\reconstruction.png",
+        "sha256": "c3d1530306234ffe2c284d9e2525a42bf92813356d059514ca209aa143d8230f"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0048\\output_float.npz",
+        "sha256": "00a4ca0c9467f33fde471575613cc70f7d647da65592040155e548e0c38708de"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.650301200017566
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 49,
+      "source": {
+        "path": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0049.bmp",
+        "sha256": "b0708c09ffece8207e112d683b775803b8be3f5a18427cd84c4e7bd06af55702"
+      },
+      "shape": [
+        1536,
+        2048
+      ],
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0049\\reconstruction.png",
+        "sha256": "aa7b9be8e7780ef0561d856ee024886a324db112fda274b6fa34d9df3b4e05cc"
+      },
+      "output_float": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0049\\output_float.npz",
+        "sha256": "1a7599eb8611b841552f078bea2de11697360ca8ee08487c46cbbbb3c8176414"
+      },
+      "reused_validated_probe": false,
+      "seconds": 11.516578799986746
+    }
+  ],
+  "seconds": 2557.788738400006,
+  "no_training": true
+}

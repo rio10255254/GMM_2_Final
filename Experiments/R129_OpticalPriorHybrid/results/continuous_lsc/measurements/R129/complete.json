@@ -1,0 +1,3240 @@
+{
+  "completed_utc": "2026-09-13T13:35:57.914830+00:00",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\measure_continuous_lsc.py",
+    "sha256": "0643c1413cbed448cbaef0c41bc70e6abdf85f465eaf8380f1c24c05722d8682"
+  },
+  "method": "R129",
+  "frames": 201,
+  "center_rows": 1809,
+  "repeat_sequences": [
+    "50x_x_0p5um",
+    "50x_x_1um",
+    "20x_0p5um",
+    "20x_1um"
+  ],
+  "raw_old_parity": {},
+  "records": [
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 0,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0000\\reconstruction.png",
+        "sha256": "923bd506cec2f6842461cd121252f37a11239ae9706239cb1f69fee78d61c904"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0000\\centers.csv",
+        "sha256": "5d042dcb12a3609d6dfdaa51d3bab3c75ca8f3bbf226a0db805263117eadebce"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0000\\boundaries.npz",
+        "sha256": "859c820c0c298888a2300529b1cf84c04f42db87822e33ead7f39c700851370b"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 1,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0001\\reconstruction.png",
+        "sha256": "d94c2955da2cdd798fc295bb6c865fc85191f73edb4e4408c3b71f2c58736570"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0001\\centers.csv",
+        "sha256": "35ecc029699f39d700e114d922565ab6acfa944e889e8ad4c850194ee582d2ec"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0001\\boundaries.npz",
+        "sha256": "17b26236f9dc7352c4422a3ef19272bcf78c33c7f4d887dbf967c3b0f812b92a"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 2,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0002\\reconstruction.png",
+        "sha256": "c4145fe49f079a871c4bd542b2d8a154a9009dd1fd8094099e0d607e02f489ba"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0002\\centers.csv",
+        "sha256": "57420c2757ccd1a6476566f0c967a9cbbba710d94bfa5d649cf904bc050dbc16"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0002\\boundaries.npz",
+        "sha256": "ecb2a6c03b0390d8e29a9716e8424bdad31e3e120d1a22940e4043a1e77805ca"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 3,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0003\\reconstruction.png",
+        "sha256": "cf9af6f9315fccbe4e1885ee8af6ec996ad90f0fa5e59ce22221614bf6179ad0"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0003\\centers.csv",
+        "sha256": "20f8eb59881478978442469cbb5384f37af792916d9387896ac9699f7432f3e2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0003\\boundaries.npz",
+        "sha256": "f3c254ad516cc5b2f4db06a03038060ac16cb6d2910b76002c106e65dcdc0ee9"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 4,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0004\\reconstruction.png",
+        "sha256": "75c123dab9fb0316f4ed7effaee3816ab489531fb876dd72ea99c3a43e159a9a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0004\\centers.csv",
+        "sha256": "d06d0f50efcff0ecad97d1d1c29f94af57d7470c421fd3e805706d2754f152e8"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0004\\boundaries.npz",
+        "sha256": "ce23b504d82670c42b570ed19b4f9c2ea1d3fee8ccf48b31ead71b16fcb6e7ab"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 5,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0005\\reconstruction.png",
+        "sha256": "fb3304264dec45e56e7fe3ed1adeded496c80cb0ccfd827caa3a0c4556609795"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0005\\centers.csv",
+        "sha256": "5f532ca9aa309292d993437e10263f68bd34dffd34fa966090fb388a98091b1e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0005\\boundaries.npz",
+        "sha256": "cfdf5261684f2551c286f3403e28d264ede05de40c6f454055a952651b0e4e5c"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 6,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0006\\reconstruction.png",
+        "sha256": "36fc40ad9d18321a5782f01cf62acc7529fb010a6e0d47a1ba79f4a13eace7d9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0006\\centers.csv",
+        "sha256": "ffedff273f4a7d6f78498ca0ac24c041d34f3ad2c48aa0123c4c30d106ec91c1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0006\\boundaries.npz",
+        "sha256": "0111ab3b62ab7cfdb28f8ad7328ed14f069ef5a77c72e555608dedd81424ee48"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 7,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0007\\reconstruction.png",
+        "sha256": "c4647564a0d4932d73179caa5db4dec94ea8c2d3977f49b18974f5d6a7a99a15"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0007\\centers.csv",
+        "sha256": "cd0a0941121162f738183d7f3105b5425f035f2e0f2ff57f0e443da8ef629d2f"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0007\\boundaries.npz",
+        "sha256": "8b9675b846f4e0a59e3b98fbb00fbfed790e00937904047ed162251917795111"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 8,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0008\\reconstruction.png",
+        "sha256": "793f02ab74d4c2a924f411f8729fa00ac8d4a23c94440a8308d20fef7711d87a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0008\\centers.csv",
+        "sha256": "7058d34b798afc0f0907183f1f599268a3c19077b4a1231ac702aa479730db48"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0008\\boundaries.npz",
+        "sha256": "38e628ba21695760129739d978a657c0cc6632e318627a254798a8e6191a586d"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 9,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0009\\reconstruction.png",
+        "sha256": "7a9e028ddeb06579e05caf9a229b68e3fa6068d10b8a3687fd60110a470661ac"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0009\\centers.csv",
+        "sha256": "d9e177069755e7b4e196127196c601b6560a2e0de7f938503587c9ed6a93c57d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0009\\boundaries.npz",
+        "sha256": "c3454da95882f09f34e14cb30b06ac0eee8062c492a67cb4b34134c213101c93"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 10,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0010\\reconstruction.png",
+        "sha256": "9d28ca009d83f5ec9b3b85f6a1ce3d0723210fad9cab655312ad0f41ed194c6d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0010\\centers.csv",
+        "sha256": "1c4a6a3520fc1e4e792ed1374a76c6abe0bb524419f58d3e8e6c6e15a7018f89"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0010\\boundaries.npz",
+        "sha256": "377d6ce70a6282919720c691f8468398d85f0a3607dea8daf0fc1872cccff403"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 11,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0011\\reconstruction.png",
+        "sha256": "bb958cd3a817904ac3c59f8b75a8ab6908c1b8216e7c41a53f7cded6c51bb971"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0011\\centers.csv",
+        "sha256": "9edaad8163be695394231e704c3c5a6c8971671408fbadcd3970de045c3d981b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0011\\boundaries.npz",
+        "sha256": "64f8da2611647a3a9e8482b6b4dc3c672a3f373e2bf64bbb8e73f0a076f68093"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 12,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0012\\reconstruction.png",
+        "sha256": "10915698064c8605d361ff5da98cabc17fbc880908c48517150c8b139d71ec8e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0012\\centers.csv",
+        "sha256": "1d5cc08403d9ba5d3e29d79fca838214895e55f3e452f5e70026b41c69481251"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0012\\boundaries.npz",
+        "sha256": "bbdee3bba53df4c75aef17ea90490109462428a77d40a3d3178d3b3e4590d1eb"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 13,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0013\\reconstruction.png",
+        "sha256": "6135fd6814767c47c79c6d73ee14851853afe8257409ddcff6d4ed4a4460130d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0013\\centers.csv",
+        "sha256": "237a1e163cfcbe62d409ac584ba1949cb39c6646890e6a733e70225383df16d0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0013\\boundaries.npz",
+        "sha256": "412b245c3c67da1ccfea64cc3f5f6bef241b30be5751046b4f67d618222fd840"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 14,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0014\\reconstruction.png",
+        "sha256": "de60fdc87f776c0cd173cd4e0abca41fe5f09c54b0886eb2ec15dce0cdb260c2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0014\\centers.csv",
+        "sha256": "932e1c71e0504897cd5cef206b1a0842a4f6823f1bbde4451d3aa134ab7bc011"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0014\\boundaries.npz",
+        "sha256": "7a5a0ede152197952228d48d6fc3b1dda3cf801a4cc05fb46945e05ccb8a6167"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 15,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0015\\reconstruction.png",
+        "sha256": "75f102ca5dba055b6efb6faef8c92260e625a5c1d497121b4bb909c95eb1fd44"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0015\\centers.csv",
+        "sha256": "451fb1dc3c36b67c713b9afb92fc76299556c39b1b96a3c241a12447feeaf772"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0015\\boundaries.npz",
+        "sha256": "48f023b664cef631c8cbba260df2bdace364300628aa5a59dd8dcc5ddfac14c3"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 16,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0016\\reconstruction.png",
+        "sha256": "ba0488c67f4afaaac0bb1924ebdf2ffbbce4ffe64ff460132d597c5fe9e6f5dd"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0016\\centers.csv",
+        "sha256": "ae0b86423b2111c264bff5bcb41ca7eaa49a22c84983f02514de83ef84a0e356"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0016\\boundaries.npz",
+        "sha256": "5be54649166a02656c2584eea594ace80dbe495df22f4ccea919651f17e036d4"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 17,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0017\\reconstruction.png",
+        "sha256": "b0e8628458a1066dfb6c0c0142230e3debc4dd4325a38b7826914f6722f98206"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0017\\centers.csv",
+        "sha256": "b3e29522452986fa778e063f271ffbfd3cb85806799546256b06a8cf9a0941af"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0017\\boundaries.npz",
+        "sha256": "c0ac4bbdd28ae795ae88d8e353be3cc956810b0f80b4d3ffa00e43d394ab2451"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 18,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0018\\reconstruction.png",
+        "sha256": "55460ce26fc9f1f68d677ef684fdfaa9e21023458f940e00d7362f649dda74a2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0018\\centers.csv",
+        "sha256": "4eb7d3d547e51b21b8076eadc249413c89e16d6215dd5fbae128b2e22073bb53"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0018\\boundaries.npz",
+        "sha256": "3871919a4840aa0f42fe784094a3a73cc4908f94c52fba2680f453bdb0c8332b"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 19,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0019\\reconstruction.png",
+        "sha256": "db4545b3bee673bad2d40762f85239ec53dd8ab513aced27268bcddb6830322a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0019\\centers.csv",
+        "sha256": "b8da4be70127ba52e3cb5302a1dae447802763b9352e70046f3ba16284e35956"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0019\\boundaries.npz",
+        "sha256": "8000a1dbba72deb0444bf7a0e789e294a268feec9247c420348452349bfb4203"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 20,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0020\\reconstruction.png",
+        "sha256": "536b45afb1dbb05f76cb5a63f093ab486c999ac1cb25da20c5c297c358ea52ec"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0020\\centers.csv",
+        "sha256": "4151be2f9c864b463cb57ea5d3b5284cea459b2ec35be5833e2e0b1db3753e48"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0020\\boundaries.npz",
+        "sha256": "1ac52c82e9c04c83f4faf56c93a25ed303612f7d0017f14f0f7de28e2574b3e8"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 21,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0021\\reconstruction.png",
+        "sha256": "aa10f4c7614c68bbedad21d51447c577451548cd4906e22109414261341a9f0d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0021\\centers.csv",
+        "sha256": "9e3660fe794d3bfbb20a40a0ccef95b81f9c9e531ca7bf4d655a819dc123b3cc"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0021\\boundaries.npz",
+        "sha256": "8b1bf77486a6c54f86a6ed0164fe25282eea34103db826d213de33263738b9a1"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 22,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0022\\reconstruction.png",
+        "sha256": "5ff60fd36f3db119c2c2a2cbc8a9aed5fa3583728225fb0557261dc9cfb520ec"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0022\\centers.csv",
+        "sha256": "ecd4bd29ed1796768dc11399920befc35c92ff0a8782e3ec4b529e01c81f3d13"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0022\\boundaries.npz",
+        "sha256": "45e45543cb262dc6ebc1457cc180bfd2ddb0c5786a93efbcee4ac1f00a855f1d"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 23,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0023\\reconstruction.png",
+        "sha256": "1e00cc760910b5a7a19efd33c43a853eb049dae45956e0a926f545974aad7471"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0023\\centers.csv",
+        "sha256": "f1c3500c52bc231da7e7eee8188e102f8c48d6a21c3f30e179f1893844aeb686"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0023\\boundaries.npz",
+        "sha256": "9bd6c1e4766351c8c3ee6a17c7ea75f887b6e3ba735e1b15b61856b4133aff64"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 24,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0024\\reconstruction.png",
+        "sha256": "6710b9f779d44c34df58ccc63b27bb10876853721567254b41c6a660fa62b0ba"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0024\\centers.csv",
+        "sha256": "b932fc65bd16ade155e00136caf7a45b6e517817615492d7d1309614b1343f9a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0024\\boundaries.npz",
+        "sha256": "e0c205212461c0af612c31bb3508f04f0b25d47878f04ad146bf72b81613e4c8"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 25,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0025\\reconstruction.png",
+        "sha256": "fd830941cf58d05b46c0e4f8c9b4686f9f96529a4654dca98507a828aa4e129d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0025\\centers.csv",
+        "sha256": "04986fe9f173cb4584f7e30064dd98c2da2de8314d455e21c13bfa0364941ece"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0025\\boundaries.npz",
+        "sha256": "cfef69bbeb475d8ae2b55b83ada16b4b5dd045bbef877ee8791c6914c853f746"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 26,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0026\\reconstruction.png",
+        "sha256": "c82b64cb25035fd75df65fdf35de365b3f05f77369f932a67ecef6180790f9b8"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0026\\centers.csv",
+        "sha256": "7eea135c00cfed7ce83dd1d965429e8ef1bd430ffe2776d86a402b81c33b6d1c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0026\\boundaries.npz",
+        "sha256": "c47dae7c7d263cb485f60f3c85027fbdcfbbeba338eaa28c190318c78979b437"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 27,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0027\\reconstruction.png",
+        "sha256": "8786f4eb0aa04a50ae044d297edfac7b965b3ee6f3409a82d84af7490557c9e5"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0027\\centers.csv",
+        "sha256": "18c9d94cc3d2935fb7deb9d32166e7b1b675bfe8dd29d797bad4302829da5372"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0027\\boundaries.npz",
+        "sha256": "7dc3311874734c2d40939d5293dce6538f68eed3c87112eb60f0c4ec752e226d"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 28,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0028\\reconstruction.png",
+        "sha256": "89d2ba4e4c7510b2e4ae605a9638bff780a6986d04d0a64e1ba9002616923044"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0028\\centers.csv",
+        "sha256": "cb28bb9402d037a93bc846b4cee57e20c02e7abe013c6e3ae7baaa583589a49a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0028\\boundaries.npz",
+        "sha256": "13b3a63c667402834487c79bd9df198d46a1fb3c56303d7bc9c8d764eda903e7"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 29,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0029\\reconstruction.png",
+        "sha256": "50a362f67b3531e7103b07566cb2b7fe7a773136baa1222e470506321d08a835"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0029\\centers.csv",
+        "sha256": "4fe348dd855ae9b5d44a58eae0bb3f5f4526e47385c2bd72d4450cc14a358bd7"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0029\\boundaries.npz",
+        "sha256": "2472a90fca83d56be784f8fdfd71d780b20a91a2d67b77c8684d4f814a4d2e4b"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 30,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0030\\reconstruction.png",
+        "sha256": "67bcd535c621cd3b0855fa1dc7baf1537babe1167d9e490faaf1497a8e436d86"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0030\\centers.csv",
+        "sha256": "de88cd47e27e8efea9d8beda64e6d1b392a57f2e583e2d0ad3750125e080561f"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0030\\boundaries.npz",
+        "sha256": "2facaaa10aa4fadea49ba53ad37dca8a483d252e7b09b28ecc5043fd05ad6d92"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 31,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0031\\reconstruction.png",
+        "sha256": "5a54e14f0ddca69d6b709e8818db829ebba342accad91ba1368de7da620a40d4"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0031\\centers.csv",
+        "sha256": "44fb6d93788241fb70b74ac1497bdca13e29447896d772a7963c8cbcf06bf424"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0031\\boundaries.npz",
+        "sha256": "a0b392c6c5e0fa699536d2749d470388a800e1b89ccbe371248908ffdfe5711a"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 32,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0032\\reconstruction.png",
+        "sha256": "6fe17436d85798795b54bde5bb347d60416d8c98f3aefdde1a479873872454b9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0032\\centers.csv",
+        "sha256": "0fafc016312eb10700258f369aee6468ef14ee3b7517486c1a2e062359a72e80"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0032\\boundaries.npz",
+        "sha256": "687f818d2775c4daf628579cf226f6a83eb0d973468402534482cdd800dfed68"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 33,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0033\\reconstruction.png",
+        "sha256": "6f0570beb03edd8b075ebc2eaa5fac8593185951dc6389664ef59df086b82022"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0033\\centers.csv",
+        "sha256": "d114a74708e89686483921f4062a3649be898940ae1ac90ce3a020d8b448910d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0033\\boundaries.npz",
+        "sha256": "9ac0e8b0d9b9c9d02d790909fa1264d7e5af538489446657990be2960cba2a62"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 34,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0034\\reconstruction.png",
+        "sha256": "90a9d48f46eceacac20084e21e6f503eb335838543b150277b26cf54aec11dd9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0034\\centers.csv",
+        "sha256": "fed7ba1f01034070db3c1f069ebbf9fe175abe42c6bc8a789c478d38f48f6865"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0034\\boundaries.npz",
+        "sha256": "93744322806b7bf9530939d0bb744d433f232756fbe2d3feb8461431b4a3c558"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 35,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0035\\reconstruction.png",
+        "sha256": "fa25c4783c491887b0ab9ac38aa82b38ab830c09a243d23cd971d54e7b977f2c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0035\\centers.csv",
+        "sha256": "96f5090815287ceb26eb1b3952799866df5d7b2963b4841e5425262f63c35771"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0035\\boundaries.npz",
+        "sha256": "fd0bb4d3841b895ee14ce3f21f622762148615944816ee3f435e3e3c44f55fc6"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 36,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0036\\reconstruction.png",
+        "sha256": "90b3398a6c64b77f65404cadfe1af2924416d551c1a5781e1f5d19551cf7a022"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0036\\centers.csv",
+        "sha256": "59e8065fd7ac2e13c61e78de0321e0faf205c6edd04874142bad471684b9073a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0036\\boundaries.npz",
+        "sha256": "71a6871be96d5c34181e13923aabaad938984bd4a00c18a41d2ded9a92555fc7"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 37,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0037\\reconstruction.png",
+        "sha256": "17524bb3ae6c0d6aa1e14fba52fb4b837430acd9fec3ae295e9300b2e7fe47de"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0037\\centers.csv",
+        "sha256": "9a56ba6eff562cacd75c7e2a17f4238b3be7eb512ecbe7ee1dbb478b1af94518"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0037\\boundaries.npz",
+        "sha256": "8d65e805ddfe525440f911ea96566e1a78e4e049de81fd43536a15c008cae122"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 38,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0038\\reconstruction.png",
+        "sha256": "44065a2c83bfacd19378215cd495350544ad24f89343836e7fc974f2983c510f"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0038\\centers.csv",
+        "sha256": "0613ea60a07d01eb3c944e8f9da2a07b9ed090cf80bb4ebf739daffd5cfe861e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0038\\boundaries.npz",
+        "sha256": "b3e3a6e5714976f0b7c90768b0a51dce4b974d0393c7bd4934cedb598e8f7820"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 39,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0039\\reconstruction.png",
+        "sha256": "f8ba3bf548b0982374d082d27bb0d70632e9ffa354ea71c2580bbf1b457e48c4"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0039\\centers.csv",
+        "sha256": "b65fdd70ef4d71beea4a970ff074a3a64915cdf3ff92eda30fc37768bfc73486"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0039\\boundaries.npz",
+        "sha256": "f5b32f7381c57e0ea3b03d4477c2880dcf0b05f8d4d6a2fb987ad0204dade1c5"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 40,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0040\\reconstruction.png",
+        "sha256": "a40469ca92ef47b472e43ba725855b799d6349515f4332d36b6749ced63bf762"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0040\\centers.csv",
+        "sha256": "00f28c17facf77ed536148cf3dcc721cbc8754d4429eb795a77ae060218ff385"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0040\\boundaries.npz",
+        "sha256": "e26e6a7e9eb1b822c35e943776ccce023d94346c9805e1897b2d2f754ccc23db"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 41,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0041\\reconstruction.png",
+        "sha256": "c09000fe795f5352f1bc1f5177d9204c1c0295be12801785efbfc562142976f2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0041\\centers.csv",
+        "sha256": "11674d7cfbb38d17966f2659b8cdbb1f6eb046a1af60dbd560b926df64f47cba"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0041\\boundaries.npz",
+        "sha256": "79bc8cc18ee5e24ad18754bbde422eda47edcb562573eab9e23a4ab850861976"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 42,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0042\\reconstruction.png",
+        "sha256": "8fdad9c3653c110bf8aa4ca73fa2a695002fe9cecff5d6277502bd65d0c3eb9e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0042\\centers.csv",
+        "sha256": "3d831cde807a727556d990051435326f94ec413a241edead2fd0c3afe3213c9a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0042\\boundaries.npz",
+        "sha256": "2f63d74c58f1f93af7a48e8c906439105b193ec8e62ce8d2547e5ce55accde13"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 43,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0043\\reconstruction.png",
+        "sha256": "bb43e443d5bd074aae94b8ae0592edabb19a04ef2a9a7b6b1153a3a0b8f28d80"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0043\\centers.csv",
+        "sha256": "e80930cc87aead15400fb27daa77793c222859ec6faedf0c98c5c8d01f089603"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0043\\boundaries.npz",
+        "sha256": "83464a9bf63730b0b47588382b817154983d59fe1533d4062e66cbe5d9290f35"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 44,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0044\\reconstruction.png",
+        "sha256": "7651070f6d65af7db05462c83d84f65078e990a268416e376d34e5672dd8a33d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0044\\centers.csv",
+        "sha256": "6ced7243d98794bc41ede665c33443dc5b04cab720f684adb30e731ed7a2d30c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0044\\boundaries.npz",
+        "sha256": "b8de9d34a797924ebfdc7550a01da421553d6fab8a61be1f8d897049e55f5763"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 45,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0045\\reconstruction.png",
+        "sha256": "5c70810393c2ade3c7e3b237587f5b29636975bb177dbbcfe029e830b01eb06b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0045\\centers.csv",
+        "sha256": "59d1e194c607cff7a85ebd4d4a6668bf81fb300bd1d455bd065b3a0d56d2ea83"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0045\\boundaries.npz",
+        "sha256": "851e9aedfe724408e674870bfa7f6a70666e92b8fd21148c0c50d8d7fa25b023"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 46,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0046\\reconstruction.png",
+        "sha256": "d6bd1c7708e0da954675544a1f423af6f4ed8844aaeae119e2ef04ac76785048"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0046\\centers.csv",
+        "sha256": "a3990244527ae6766e94c193d5fc93d6f9806c3914fe07ed9fca0aad2712ff7b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0046\\boundaries.npz",
+        "sha256": "377d869c4db5b4b8253917171c3ae11f381ffcf891e85720cfb5c568e2f91dfb"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 47,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0047\\reconstruction.png",
+        "sha256": "1278867cde91310a2f1cde6371f491da191acf36d6fd253437bb87acff3fe42b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0047\\centers.csv",
+        "sha256": "faaab8b07ee0ae5781c6b1386dc41baf2dfca1303d8218feb01e5f75c30095db"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0047\\boundaries.npz",
+        "sha256": "7626332ea3fd1bb8736aed980261be72df6fc951a10ac6375d71dd3f6229787d"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 48,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0048\\reconstruction.png",
+        "sha256": "1f486fd1228b9e55091e0b27f51e2eceebea3277d12c1b1e17a1469872fece9b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0048\\centers.csv",
+        "sha256": "bc1af7b0ae7bedd4928e62a9cf53a4fde5d42f9550317f13519c21c17ffa72ca"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0048\\boundaries.npz",
+        "sha256": "983b201daef31b911437d47ef5c34e079625c25e04f386beccaafb83788ee55d"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 49,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0049\\reconstruction.png",
+        "sha256": "fe7235960621c142c8de8ee613260460d940e7b10aa1e65714dfad0fcbeac675"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0049\\centers.csv",
+        "sha256": "35a6141e00a9eedfa346c069c75e8fa25db7634514c01860fb5e05c9dbb7d9b2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0049\\boundaries.npz",
+        "sha256": "392ddc1cab98ccb8651df838807ddcea449dbc8511733769bf5bbc52dd5e0b98"
+      }
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "frame_index": 50,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_0p5um\\frame_0050\\reconstruction.png",
+        "sha256": "4b3a4cb76e31524d96d4fea3687d07c17b4b17af04406fbc6593d042baec2bb3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0050\\centers.csv",
+        "sha256": "a94901569714cd2a019e437cdb275cca34acd3cc2f2e87c35976367bee29454f"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_0p5um\\frame_0050\\boundaries.npz",
+        "sha256": "883196ce7297fd35e635bbd942295a96230d7cb62008f6ce1e5505a7780e41f3"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 0,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0000\\reconstruction.png",
+        "sha256": "c42ab8800578cf001506faf02146c647e47308d2c046dbcbbf797d377a5352e5"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0000\\centers.csv",
+        "sha256": "cab03ff5f33c83b91434ac4e7d80f638c2e7a2c95505eae0fc716e325b6af8c3"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0000\\boundaries.npz",
+        "sha256": "0da0beccdb5308d39de07cd7ca39846f83def59a04675a46c3905ef3a1d47c72"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 1,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0001\\reconstruction.png",
+        "sha256": "b505544908f430e2bb844d152dd168c5dc2f91dcf7767386b738ddc9ebf0e188"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0001\\centers.csv",
+        "sha256": "2e080d82218d484bb2b2689e6b985df5ada3e835ff34d89781154c47ddf2f67f"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0001\\boundaries.npz",
+        "sha256": "aed499bfe9aa348f5605f9896442c32defbca79040eb930e355d344a964b2902"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 2,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0002\\reconstruction.png",
+        "sha256": "fb9aa0e0980c4d2de44b18399c92521a1ead43049ebabb11a5ed5dd425c617d2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0002\\centers.csv",
+        "sha256": "dadc4625cfb0f8922edc906c6c94edc23c175c82aba86e7f2914130956b3102b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0002\\boundaries.npz",
+        "sha256": "76cbe062a2d1b0975a967f1890a27c972c28e0529da5c6738ed9bdf692841b18"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 3,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0003\\reconstruction.png",
+        "sha256": "d668e2e757193464882614fce7c89f55f1e92bd3b6edd97fe9e747aaa00a37af"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0003\\centers.csv",
+        "sha256": "2bcbcd84d180c16c2eb22d87bf418bba599a3cb4fc843a8cdf2dc6506b4b8f99"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0003\\boundaries.npz",
+        "sha256": "74d776919bd80099a5aea6224ed4cd2c508715134d5f76c16ad419b6f2959c72"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 4,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0004\\reconstruction.png",
+        "sha256": "b0e431a5804a756ac608d567faef8676387df9c970fee1281d37679160b207da"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0004\\centers.csv",
+        "sha256": "7ae9c7b3ec99f93d9b2bf04679b51ad1bf4180575b7f1aaa9449789af447d596"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0004\\boundaries.npz",
+        "sha256": "a80bb56535acbbfb1039d25dab89bd98e11bd065fb7f3209c70d8c31d1a5eaba"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 5,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0005\\reconstruction.png",
+        "sha256": "d55f33836f21345dcc433a3e189f1f8db20b84b4aba5b6772785048c938d5662"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0005\\centers.csv",
+        "sha256": "d1fd4ac5e6375bffb4307530c4e3196a0dabe6e3006c0f6024a4b5bb2604411c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0005\\boundaries.npz",
+        "sha256": "8dfb1157c253dd6daecf97453064fd0aa0b86003b35821e27b4a01173e4da34c"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 6,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0006\\reconstruction.png",
+        "sha256": "1e94ee298ed2186393c7c0981b88f96e0e7ae3dba832848fb342d3d5e0e0ea2c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0006\\centers.csv",
+        "sha256": "d54773dfc9234541739c267f23949e99ff991693e4f691bcafd54d97d953d666"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0006\\boundaries.npz",
+        "sha256": "36d47803001866a5d8713a7e4fc11af91aa0aeb55870fd7689b2d859f76f7a5d"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 7,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0007\\reconstruction.png",
+        "sha256": "b2549fb6c7a0bd9f78f0b85acd99a5418d1584e290205747c08043daf60d7e83"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0007\\centers.csv",
+        "sha256": "8d72c6f87c2fa817f1d171caec6840108dad6b15478a01b21c632fa7a4b2c744"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0007\\boundaries.npz",
+        "sha256": "a2197b5f7e9f111667edffcf777ca4b0983d6d0a4e8c82cdc17a000e61e54aa4"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 8,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0008\\reconstruction.png",
+        "sha256": "b97b6577b175373374239d09482135f611586f695d70ba96d6598ca4cfc62297"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0008\\centers.csv",
+        "sha256": "7a955276396bc2d23f31b340edc3f99f33f902a041c6995ad450014933e45a6d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0008\\boundaries.npz",
+        "sha256": "9b56eebf41679642480015444cb9b21771a5be5f94360d5a8f01953baaf2460d"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 9,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0009\\reconstruction.png",
+        "sha256": "b256ca58e321cb31b4eed2d276c2fdea41e53ddd141226a98a7b659ec6e1a6db"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0009\\centers.csv",
+        "sha256": "9f0b10515be0c03e8eeb17ef7b3755798cd7c5c8ed43f87e23d844ea7dd0ef77"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0009\\boundaries.npz",
+        "sha256": "eddcabcc1d75fb45603d578d1bceae2b28f73718398624df849077d80d080bdb"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 10,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0010\\reconstruction.png",
+        "sha256": "968b22f5e530e0291dc3a348caf82a69c0dd955c1c813d5096f07f42ad6977ac"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0010\\centers.csv",
+        "sha256": "8d919d6917c8de192543a56aa9c3462a40e7f443e1c08d919bd56badcebdc1c1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0010\\boundaries.npz",
+        "sha256": "e117dd5211be2311bd5e48f3654df17ea5b632426e2bde39c63ceadaa3812ab5"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 11,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0011\\reconstruction.png",
+        "sha256": "ae4b792183563d6e0afcc0e12b1a401c95782a7e223cf794b59fcf6e6338d9a4"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0011\\centers.csv",
+        "sha256": "20b407d694829d0f7be62dfe80714eb7d028b1d68a87911ea7a3f26a6b466d75"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0011\\boundaries.npz",
+        "sha256": "f1b09e43a1f389a0eed8e32eda76d7a35ecbe3a533d56a0eea68092f2f95b08c"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 12,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0012\\reconstruction.png",
+        "sha256": "b24d5c58ba80c09d80d56b9a68d3f389c282eab8da5c4ef815f0668325fb3175"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0012\\centers.csv",
+        "sha256": "84323e719ac0eb83a12ba7e4c9c751604027f8175abf39a37a109133a3fada1e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0012\\boundaries.npz",
+        "sha256": "0d83fd09d881797971bd030d177b5f7a155345f3b939e54257672f2434b589e8"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 13,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0013\\reconstruction.png",
+        "sha256": "3609c4433c4d6c09bf8eb61eaa00c5baabf503f4bf3f279d00f37830bb96cd4d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0013\\centers.csv",
+        "sha256": "a64048a936555595351ed382bd5ae53edcaf425ab49c643a824360f3771b8a2a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0013\\boundaries.npz",
+        "sha256": "5ad1b3cf030ff1923153c0c1040e177ea39b4f1d79a56f5379c1d2f72b59fb32"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 14,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0014\\reconstruction.png",
+        "sha256": "6232022475d87b6c05c77889858b38729e2a3a2aec2ba8d9147fc640d3bdae2d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0014\\centers.csv",
+        "sha256": "e2358dea54dd8c8392c584e4f887c1e6efa500340fdebc61ba3fefcc6dc57800"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0014\\boundaries.npz",
+        "sha256": "40f488b50a0902ae6c71dbac185f3270460d742fff84181aae7aa2509d843cbd"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 15,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0015\\reconstruction.png",
+        "sha256": "7b5932d3a6b6e2fd70ddc0c77e155ce0fdad9904591823627d53fb355c1e2a46"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0015\\centers.csv",
+        "sha256": "f3d6b4377ca45ea483628ae367bb9edcb1353e8b4010025f9b85b4fb4f0fcc5d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0015\\boundaries.npz",
+        "sha256": "745359df386de3663b7e63e29aa2e1f928199c25a103d208b5404951bfcd053e"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 16,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0016\\reconstruction.png",
+        "sha256": "d8b07ee5f824f3f96d0384eecea16e662ecc68ac41e97c4aee0b00fb38de9ce9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0016\\centers.csv",
+        "sha256": "570bd903fbc1ac00cfd62a6d8b93880cfa433ba44eda85d9c4075bf0fca9329e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0016\\boundaries.npz",
+        "sha256": "1993218fe4e7ebfe8d66810cb37f5a37df5a11a7e298b5ff88e19dd77e3a1891"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 17,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0017\\reconstruction.png",
+        "sha256": "2d0c3ffc61063b05e0b8320266f1a5bbb5e1d168f8edaddc4f89dcbbbaa238c0"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0017\\centers.csv",
+        "sha256": "d5c574b6c5cd0bc3ae7c832bb963dc0a2dddfd2b473d5e2ef39cf09d1c59412e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0017\\boundaries.npz",
+        "sha256": "50a77d13eaeadd52d5d7ef10b9635e52462c7887a4842dd624370283d0f658ed"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 18,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0018\\reconstruction.png",
+        "sha256": "ce8c4b44ca41caf32cd60fbe634aff9bac6e9e0000f4d27e333d07d2c6dc1d56"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0018\\centers.csv",
+        "sha256": "f16adead96269adb34a3322e054ec7f2cac78c0c9e7c374a933a6f0233ae7273"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0018\\boundaries.npz",
+        "sha256": "664671007c90dd1a7b438a09950c867c9df37dbc68b7e0bea9fd1de706104ba7"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 19,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0019\\reconstruction.png",
+        "sha256": "00f2ab425388c2a02f35f5897788ace48257880f86567a431e8e1423a8e1e5ea"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0019\\centers.csv",
+        "sha256": "a09e687787dc17ac37f238ddc75e599d70c56e2a312dd3a1a098d9e28f37df5b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0019\\boundaries.npz",
+        "sha256": "a372cb841bfe25545b916d707ef084e570c5ea865aff14121ee29482c6b23645"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 20,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0020\\reconstruction.png",
+        "sha256": "b3d24f55335bb328e91d2daaedd7d30270651ca7440cfc3095fa2bedc2ec4db9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0020\\centers.csv",
+        "sha256": "0206320919ff4c4b34d0fae5fe38f0b30efbc43f486ef4add7b006bb1656f763"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0020\\boundaries.npz",
+        "sha256": "8c3214eab015e74aa089c0e58c22610a5c9c95197399d17e9e93395d45f30751"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 21,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0021\\reconstruction.png",
+        "sha256": "350fc5f64678169f05ff687b62b398bd217bc52cca6b4c828ef4a02cce1058ce"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0021\\centers.csv",
+        "sha256": "32076ec505758ac37485f828dec3bbd7e52805e92332632b7a67443deeec8e9c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0021\\boundaries.npz",
+        "sha256": "de92e77bcd0b881551087fb65de0f18092bbee299bf37adc127ca20519a42c1c"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 22,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0022\\reconstruction.png",
+        "sha256": "388662334448a559323fe3ad6d43f3ccacd86bfd2ccef111e52f2eb69799f06b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0022\\centers.csv",
+        "sha256": "27e5097e388128a77cec5c39100ed18b2909db1fa694b300f30f3907e73c891d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0022\\boundaries.npz",
+        "sha256": "fbbbf29ea8e6e43729d0411765a3bc98d00be5981939fdaaf34990c2fd1b7aad"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 23,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0023\\reconstruction.png",
+        "sha256": "36f9f2b1be4fe17b0e9e5037651c17b9896f38a2fe3837d7b7fa54adf1536ce6"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0023\\centers.csv",
+        "sha256": "9027f887f4abe4cd418f0d3695f82cb7d84d4eca9310ea17b779ecb6e4d67ce3"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0023\\boundaries.npz",
+        "sha256": "13cfb5ac5b39d4e05b2d76f468785258533516f349f4743da360de5626f3d255"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 24,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0024\\reconstruction.png",
+        "sha256": "3da026b6a19362f22579e34aa86f8fdb99a2e292b119d2a2ce3baeeeb0feb42d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0024\\centers.csv",
+        "sha256": "36d6c2cf80dc367d7ddcbb4d9a27d8160208a61bdc90a81bb143d908b5792d0d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0024\\boundaries.npz",
+        "sha256": "e170b2ef1d2856bd928974aef03d80e956c6058f5c6421015e380de856c83e6b"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 25,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0025\\reconstruction.png",
+        "sha256": "957a1c92636a3665194c469803841d663680d3503bdcbe365b0030a4f9d75724"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0025\\centers.csv",
+        "sha256": "8960b4f747193f1827aea53035726c9eba004bb76b16a0d66fd8558a82602bb3"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0025\\boundaries.npz",
+        "sha256": "bfbcd7ef052b37bd6bba4aba86e7a4b787a6e33d862c92adb3b32912a8f10ed8"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 26,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0026\\reconstruction.png",
+        "sha256": "9590837cf5289998046f28053307d2fceb23684142a1e6b62bc066fd2241c55a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0026\\centers.csv",
+        "sha256": "cbaee443f26d54453380564d3058cf01e54bc399b881724a4396b90732a45daf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0026\\boundaries.npz",
+        "sha256": "fc372e73f33e097fee77e1b4a27bf22ca90b80a7061550500a5f3319827d5bfd"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 27,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0027\\reconstruction.png",
+        "sha256": "41b0a3693878e89d8339df2ba4d154cfed13e6ab20700b035a16bb2c77dda0ed"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0027\\centers.csv",
+        "sha256": "cdd63618a49774dc076cce3ea1746bcde6aeabad3fbb42871c779e6c4a154f5f"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0027\\boundaries.npz",
+        "sha256": "2c2d6c451ad4c5beb6c13ed056381c9ce9b0af97e5c22b16b957cd66d3eada20"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 28,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0028\\reconstruction.png",
+        "sha256": "2eff12a44321d774e809cd7ebf6d966bd98ff437162cd745d11b92686d80a197"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0028\\centers.csv",
+        "sha256": "5efb4285ed3b5ece59a518f6d0e9f3e40720819fd5e9304da774d686be23f136"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0028\\boundaries.npz",
+        "sha256": "71d467d9ae47a2a97cf4c68dec6a992532ede29cebdba902ebd80644be90bd9a"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 29,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0029\\reconstruction.png",
+        "sha256": "37dc503949ed4d379ce005955599e9f58ab0a61088c5ea203af099c1eebc3099"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0029\\centers.csv",
+        "sha256": "ec44bdb6aec4d21108698e019eff9348132ec5c9a07da2c65fcbb88642833a15"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0029\\boundaries.npz",
+        "sha256": "d83ee87d830303e0ad1ec8fe68c1f866bf231f90be0524445b998baa542b8efb"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 30,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0030\\reconstruction.png",
+        "sha256": "c01b2a2967bc83d5e851ae10165e1009c428f76260df50f6a92d7b48d1565c94"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0030\\centers.csv",
+        "sha256": "957dbaf56b8cae1995b850416038e18dba95fcbb993f6136df775e781375baed"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0030\\boundaries.npz",
+        "sha256": "d40aabb51db7c6569b13ae42e943ed67761499c55ce90cd2db423eac8000e069"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 31,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0031\\reconstruction.png",
+        "sha256": "507b4d95ac4e150eb8c4290275f7153c478134dd9e1e5ec197a848006a6eae26"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0031\\centers.csv",
+        "sha256": "6c0edc01bca0483a7e5c46eb20cc909284ac2f069cef133a31e0cf17d2326ace"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0031\\boundaries.npz",
+        "sha256": "f22b119d5c8297c6350d7a2945ca86222a8465b0cea497f43a92bd39a02e2466"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 32,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0032\\reconstruction.png",
+        "sha256": "0a8849d462c26132b2d2e466bad243befe7ae5b387f733c34e8cb894a8b85f43"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0032\\centers.csv",
+        "sha256": "f6c85eccc26241220dc34ad125f2d9f6bbe5083070d5c9e56232c40baf472f48"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0032\\boundaries.npz",
+        "sha256": "2cf2fadaba7bb15ff0c7ddb20dbef977b61d1ca3e433cd90f5270458f10b9035"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 33,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0033\\reconstruction.png",
+        "sha256": "c2e62d6fe3d532735887634a6e0a93a932795b7e08208f9a50ae88116bf7512b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0033\\centers.csv",
+        "sha256": "9766621b2f50f314b1cdfc6412c342148338049b17d50459c29e9c830c0bb3bf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0033\\boundaries.npz",
+        "sha256": "23ffdf78f4ad5348d606f17e5620e367ad7b2080cfc41f47658985f6c78d9ae4"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 34,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0034\\reconstruction.png",
+        "sha256": "300350bee45d220321c48c220c6114e40a65e2ae2e1172dc7a2a59656df20488"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0034\\centers.csv",
+        "sha256": "fb4eed113acb90244d7cec553050bc7f26b5a37aa3cfe7ea9adef09ce4601a78"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0034\\boundaries.npz",
+        "sha256": "d285885a887d1c58ba72151ec85c657fdf5f57e2b70a49384e85a2f749aad260"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 35,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0035\\reconstruction.png",
+        "sha256": "32e10d3990421d19607519169e2f92c0341b47262e2c41b2818bf5d37cb1e0f3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0035\\centers.csv",
+        "sha256": "6c5220e477a2acc943909affe0b29d637b18e8ef7476422ff8d6ebe989737408"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0035\\boundaries.npz",
+        "sha256": "f8a51f68b48f9e4386221fb64167ff3bdf159ad75d66b742951c3dc862ec7710"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 36,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0036\\reconstruction.png",
+        "sha256": "d56bab772d1530d741e7617a77fccb4bb39bba57a0699a620abd85339b12649a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0036\\centers.csv",
+        "sha256": "be261b76fc24d5c5070b395e5e618ba68cc53edd800cde77e6b25ef7132fcf9c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0036\\boundaries.npz",
+        "sha256": "11cbe24bfe47ae51f970fb74bf0c0fd645bffc6e88f734877826e459b849f301"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 37,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0037\\reconstruction.png",
+        "sha256": "e2204a12368b60d1804870ff78f04cdbfbe395b613fa0b18c52178a6704e319a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0037\\centers.csv",
+        "sha256": "20bd46a23a37dc1ec8207b01920c77ad8a80ce4ffd202f2eac5000a2892e129b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0037\\boundaries.npz",
+        "sha256": "ef69dfebcb061ff2a82248d6c9eb5ce38c6d709b2d0b26e8c3942125a9bd8e0c"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 38,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0038\\reconstruction.png",
+        "sha256": "3128fcaf316fa47ed44a971913d9d88c558f9ba08507b34413e3a88257e51b77"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0038\\centers.csv",
+        "sha256": "bd7c03aa3c9d3406ec32deee82178169b918f97b1d03ad80f4485b8b4b61fe7a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0038\\boundaries.npz",
+        "sha256": "19f9a216ff8ffe969e61bda71746761a64b9a909bbc084f6d210e85541e48909"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 39,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0039\\reconstruction.png",
+        "sha256": "9ca1ca8f2a8cfbe308cb4d5322eaf0c1c25ed381c0b2a2da99453388540a720b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0039\\centers.csv",
+        "sha256": "5c90d4e7c2e9c9dccd3364d210192e4662abb3675eb0a61bc1370566a2983193"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0039\\boundaries.npz",
+        "sha256": "edf98328370be5a7278ec4fedb452151191ccb42732df6ae3a7ff4fe80a60e70"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 40,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0040\\reconstruction.png",
+        "sha256": "6847cf077b998a5ad0e9200adc40a6d8d463288e38f0a0a60ba2d37e91448b14"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0040\\centers.csv",
+        "sha256": "bcfe7e0926e19a7e5d015a96df563c6aa6ab21e218b270978b69142bf6d2eb28"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0040\\boundaries.npz",
+        "sha256": "48e8cf964c269092d45d2b2110001e82cdd480f2f88abb95ebf0cc6584cfa502"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 41,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0041\\reconstruction.png",
+        "sha256": "c0db8e2934eec18465d13c22f5b1c939a038e56aab73fad7a5c1dce74c626513"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0041\\centers.csv",
+        "sha256": "b14b7a106dc9ae0e636348b48014b4981483ea78792121b720f85370bcb7b8c3"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0041\\boundaries.npz",
+        "sha256": "80f9a7e4cb7bad1e23ef58887a6c7844357669d949fb72b3bd51d1907a120215"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 42,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0042\\reconstruction.png",
+        "sha256": "7490d7ef3c1b539abb8c63ae9253ab89ac4f04fa17e0ecc6c1b08cc1db203ff9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0042\\centers.csv",
+        "sha256": "ae0ea1aa9a9c8225d531ccea14c88401392b621204615f7f6ef247508da367f1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0042\\boundaries.npz",
+        "sha256": "d295310d4f9ad502ec81f3f4f5a4ecd477c63019e91b649870c6325bbd0f995d"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 43,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0043\\reconstruction.png",
+        "sha256": "d140daa774a45ca557073dd2b4571a10a428447899fcdd9d4f4b9ea0c7f44bda"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0043\\centers.csv",
+        "sha256": "46722dcbb63ca9c912ff6b3576ad79989fde7bc1c028945f78b116f4cace7385"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0043\\boundaries.npz",
+        "sha256": "59ec7ddd2dadd7032de91c62230b9690b2ed2ac3b7c39e6cdb1333310c1a522f"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 44,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0044\\reconstruction.png",
+        "sha256": "6d9a13146e10f243369dc60d6e7804418c7b97fd60c7c710cc7a4779ae6cf15c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0044\\centers.csv",
+        "sha256": "6c613615fa436239b6bdd65b17d4e23510c43f54e3837a0f3f7f0defbedbd694"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0044\\boundaries.npz",
+        "sha256": "4d2f74ba0900af403eb7befd0d0c5ffae4f1462187832b4fce132f68eca6bebd"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 45,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0045\\reconstruction.png",
+        "sha256": "a992438f3b5de496e4f885563c65d9c01e9c4a0977ad7b52f77495808464ac47"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0045\\centers.csv",
+        "sha256": "56fb848f6d09461184cd892f73e5a6340dc4b96d0a307424d64c69159d0e85a0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0045\\boundaries.npz",
+        "sha256": "b560b98afdb08fcc15b92c4b83acdbf334740865f82575ae7e19c16c11943551"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 46,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0046\\reconstruction.png",
+        "sha256": "478a9d4aa892506dcabee3d1091aee9a8975040b0a928ae71822df48b4c8c3c4"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0046\\centers.csv",
+        "sha256": "ddf556e25d39e0ed67e0a897abd206e0ace9c5e98007d29dd3eda8e6922f9025"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0046\\boundaries.npz",
+        "sha256": "093b3fa9753d329ab3f8fe0cb530248865e1c957dfefb23b2218276393b646ac"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 47,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0047\\reconstruction.png",
+        "sha256": "a378d81e6b9142a0f65bcd4d21e1fe2fe03a246e0759303e8108a745c7301af3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0047\\centers.csv",
+        "sha256": "0a001bcf943ba116784df204b7c52f73b10e6ca7609dd7392d20abd0564af5ea"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0047\\boundaries.npz",
+        "sha256": "e2b3c3ff17756c8be6a26b2944aeb0c07d5ecb1192853998aabb92d4d2e02f5e"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 48,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0048\\reconstruction.png",
+        "sha256": "cef6f717fd9fce48d4faca7125928c454e7822b3e1c011997afb4c81fc88acce"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0048\\centers.csv",
+        "sha256": "42585bbed3a94cc49acce742ffa4d139f215c854dea80236aef8b97f8a3dd14b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0048\\boundaries.npz",
+        "sha256": "2c0b96b35b94571c83e9edec606119d2c6d9a16b41d5612da3e014c0bf14df20"
+      }
+    },
+    {
+      "sequence": "50x_x_1um",
+      "frame_index": 49,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\50x_x_1um\\frame_0049\\reconstruction.png",
+        "sha256": "8733ddfd1532162b3e5a021780eb2c52360331c812fe830b75c08f1e079ebfa9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0049\\centers.csv",
+        "sha256": "d85517176130c7641c8c6cda8a444ea3d62f5db65224122be27b27711cb58b98"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\50x_x_1um\\frame_0049\\boundaries.npz",
+        "sha256": "98560f01ff6734762d47e40069eb08acfca43703c94ca1d4b3adae06883c2886"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 0,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0000\\reconstruction.png",
+        "sha256": "1b6b5f5bd9ee2d7a9d4ace214967210c4f8806f12a79cef5a37aee8da9e264fb"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0000\\centers.csv",
+        "sha256": "399227f6cb06ef6d70d7991e8cbfb374ebe5eba950b8c35e5828ad263f9c1916"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0000\\boundaries.npz",
+        "sha256": "050181a310c0f5341fd9d2506ff2c1a61c0144d4ed131ecc5838540227dba194"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 1,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0001\\reconstruction.png",
+        "sha256": "05dc72fbb191481ea94eaf34a6d89ec0acb8e740ad7823d85f264d1bb16b92f9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0001\\centers.csv",
+        "sha256": "6b5aa6a5e6582dfe209c7a4b1e6121fff67a209e02fea7aa22b7e3f499658591"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0001\\boundaries.npz",
+        "sha256": "8a9225802d7471a38c815a215b216b75f5c91d1c2cc0829b546c92cf6158c64b"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 2,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0002\\reconstruction.png",
+        "sha256": "f008a78d94d24cfc328235a90fe6b8cd42a52165bf611a13bc3964d9a924c89f"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0002\\centers.csv",
+        "sha256": "7bf763f7f81f93830e195f1361c88ed84ebc1cc882254ba4b74e61026fb1424c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0002\\boundaries.npz",
+        "sha256": "2b0e1dcdcf38b32fa9c05c3e767f97c0dff642090f5ed903a39dc2bcb0c83e15"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 3,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0003\\reconstruction.png",
+        "sha256": "546c9e3b5cad6db1f8938f5f69696ebd24c3771e9d0c5eba920857aece0fa7c9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0003\\centers.csv",
+        "sha256": "c1644b9408eeae791a962eacf0a220feb6702b7df3e565a0977cee3a69af38e2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0003\\boundaries.npz",
+        "sha256": "543fa79a7adbf27ba3d53f07d72fd6413d0342a7c78482e438841559f19da25a"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 4,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0004\\reconstruction.png",
+        "sha256": "0399e7f10657d3c1bc8def981c5ee90dc1e7e8e2c9fbd62527cf4e74617bcb2b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0004\\centers.csv",
+        "sha256": "ef87b892a7d25a0ee2699ef34ed8ae0ea8fff3537bfd98c6ef11bf57e58ce91d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0004\\boundaries.npz",
+        "sha256": "80c8e653f4afd293d7c7b967b5f8b4fbc08b73beadf741b3fa6ec7186da81292"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 5,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0005\\reconstruction.png",
+        "sha256": "2c63d3fd360f86929b7f1bd454572aa7dcf7eaa720415bb2644204e1ebcf701f"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0005\\centers.csv",
+        "sha256": "e4be37132ddddbb0b204d7d1010dcd96f6b47a49ef4498d33727e34df808a090"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0005\\boundaries.npz",
+        "sha256": "e3a71e2833ed1dc1a203f1c2341f3247532c09bcb956fd4dfc92c89a0b1108f1"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 6,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0006\\reconstruction.png",
+        "sha256": "a567f62dc1f7edaa222a0e34b98ea3dc41d2dbb85d76ea79978aed48d3ba6b52"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0006\\centers.csv",
+        "sha256": "bdd65f816163d8314ac8990847108e717576786f3e57d25c69b12b2c8035d408"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0006\\boundaries.npz",
+        "sha256": "b2eb3940240fcfe96bed9a72e96c7eda1a746ad33d1e46b1215fcb18be7381b9"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 7,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0007\\reconstruction.png",
+        "sha256": "c8c97e7d394307b214224f744dc422c2d395963ea3dd572f115899b0aeceb2f3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0007\\centers.csv",
+        "sha256": "68697470fc386489292c342010fe8bacc32641993afebeb797cb020b869cceff"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0007\\boundaries.npz",
+        "sha256": "6b70ff97886386133f68883f9cc9e38f787a7184241883ec3a89ce9ee54ed0ba"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 8,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0008\\reconstruction.png",
+        "sha256": "e24d78ea21dd32c6ae8539932574b6a5dc42389d0dd80577841c4fe8328600d2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0008\\centers.csv",
+        "sha256": "54436296f39c6d09038cf8dbae478ad2f01734e67b158dd82b08ad6569a9ad30"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0008\\boundaries.npz",
+        "sha256": "6ca6e963aec8f8f6cfe7186ece47ba6dd863906d4a86d869cc3e5631e9353921"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 9,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0009\\reconstruction.png",
+        "sha256": "0a8690c0cf9e9fa3a6a09d12a898278149a8288c6aaea1c66777da36c1266d07"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0009\\centers.csv",
+        "sha256": "62ccd56b6c587826a03926d2a7c747a44285d77ab1e34cd3d6be53db2b32fef3"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0009\\boundaries.npz",
+        "sha256": "a67f8dcb49f290c7ccc1d4accdcfe6e57ad6f21614c6e3726ef38c0c4097fcc9"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 10,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0010\\reconstruction.png",
+        "sha256": "6c665cec8ac8528f8f6cdd9d1ab4264a1c7ae349ea1bc4448ce691bbe202de0c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0010\\centers.csv",
+        "sha256": "8cdac755795b84eefe44a0556b9026de36f34d065a90f69017e3a7e41dbeec88"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0010\\boundaries.npz",
+        "sha256": "4fa01b9e26109ff50d829aa8eb57389f1c7693f17e618b96ad77f8099cce3d6e"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 11,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0011\\reconstruction.png",
+        "sha256": "cc0f7953df77e1fcbca9ad89e4db854516e4a289d239d4f0b635c774affe4e2c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0011\\centers.csv",
+        "sha256": "4440433335a018d8fabe658264ff6b82050fe622eb5ff33b5345d684d63e9086"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0011\\boundaries.npz",
+        "sha256": "8e1dbcc0ccf1752a5dff2b799e5ad5a697d461be1ec5adcbe547efca5aad773d"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 12,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0012\\reconstruction.png",
+        "sha256": "ae3031d069bec8d386e606319903f1a4a57a0f34f9fe97034a9a3badeab09fcf"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0012\\centers.csv",
+        "sha256": "b9656650a3e2cf6bdada34c4fc2baed5f791330e9d3fc564c630a71253a20655"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0012\\boundaries.npz",
+        "sha256": "eb97100f814c457fdeec19314107049dcdecca030cb9980013e91a39cb41ace8"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 13,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0013\\reconstruction.png",
+        "sha256": "14970c6366db70a9780e9c18c7dbb19b3d39e8d356182ddf2e0714674fe8191c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0013\\centers.csv",
+        "sha256": "14818a7b7ad089e04ccc0689d2ec0b6dccf5e72708c291c4bfef41654ac944d2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0013\\boundaries.npz",
+        "sha256": "f1d1e62cd9fb305452cff9e32e94415cddaf0debe520688a57a7e06a322496ae"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 14,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0014\\reconstruction.png",
+        "sha256": "344385e30dc259f448969a540e0ed5043427922fc9a4ab9e3c3ade318a59e68b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0014\\centers.csv",
+        "sha256": "2814e6629db4784a6731f198bc58a3b6163f93fc2d8f9618b939a36ccd9d2c42"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0014\\boundaries.npz",
+        "sha256": "ffabb62480414eb2682cd06107edd9cdc2e9c92f8f3047ebab194669017f8d87"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 15,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0015\\reconstruction.png",
+        "sha256": "c5e4e01bc95f600a62f5b836e54dc22f2acacf755846e2d1846964279a115ce9"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0015\\centers.csv",
+        "sha256": "0aac6c68b53f363b422391f7536c70e052deecebb9167a3abe25056ec0b62599"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0015\\boundaries.npz",
+        "sha256": "cd1a200e636d595d34dd9394674dedaefb6daf41aa24f61c99c672c7b478d863"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 16,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0016\\reconstruction.png",
+        "sha256": "945c5de76be8a265e0964fa2fd64acb4c18ee973cc68a32bab440494c5f187be"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0016\\centers.csv",
+        "sha256": "e33ec07a7ab279adc420afc6fd8767b699346ad7785d866f1e4c45a90b0d1525"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0016\\boundaries.npz",
+        "sha256": "8db5081027eb5c7180a320a79dd5ba8953cbb4135edf4a383604b7d9ffd9b066"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 17,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0017\\reconstruction.png",
+        "sha256": "cdb6e4520d71e38e4152886a630a55790ba07867ea9d0dd725585b75fa203010"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0017\\centers.csv",
+        "sha256": "3359eadc11c23def34fbadb0bbc425bbf8a66be3acd7e4ce7c47342bf1372698"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0017\\boundaries.npz",
+        "sha256": "b0a29f4165e524fc2c80792115d40f914d6fc29cd4ff67ce80d0af8951893ebd"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 18,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0018\\reconstruction.png",
+        "sha256": "832a89c660b944e30f3d596fa16a05195a7daf9a947a6573f8d3fcee59f8105c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0018\\centers.csv",
+        "sha256": "23024a010a9b3a865a63c3cced1d2a1abfb24f85349475a70e96ae56df257569"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0018\\boundaries.npz",
+        "sha256": "a8a4f18ff4a5773430481e165e7489dc4016e36b5a5e5d3f9a83647d708b4432"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 19,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0019\\reconstruction.png",
+        "sha256": "82dddc7c737a7de5fde48063900e48d96b07f4ca727eb66e6164950eb809667b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0019\\centers.csv",
+        "sha256": "26e14fc1757ed926b7757a231942f338700d022c0e7f812229a9ee354dba4651"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0019\\boundaries.npz",
+        "sha256": "d3245e9954008c9fe176a4c802990cefd5bb9598627ee05aeb73e21f47b5461c"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 20,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0020\\reconstruction.png",
+        "sha256": "d781d8c9fbe443c3aff98aedf8d831d9c7893ff59c67f105d54844614a724bd4"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0020\\centers.csv",
+        "sha256": "056acf325590c2171daba0721254a0639ad1d48436546e7704a94e2c5adcc172"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0020\\boundaries.npz",
+        "sha256": "f7dffbb03d1caee5492c4532df85b4c38d85b8eb4c618e416a7283aa9e66adfd"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 21,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0021\\reconstruction.png",
+        "sha256": "e1adc3f0367812442d85264bca5335d5aafb1c6f01059ce1a9339bb24aa6b304"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0021\\centers.csv",
+        "sha256": "993d7cb64e5faf734bdccd20883a5f85e1a93494f5d851f41148d8e453cc22fb"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0021\\boundaries.npz",
+        "sha256": "63815a0138d492fa0eecea3804dd2af5ced1a2bfd0248e497e7612bfe717db97"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 22,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0022\\reconstruction.png",
+        "sha256": "7818061d09044f09b1b148585230cd4c0844d731f09374a2977cd0e809214964"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0022\\centers.csv",
+        "sha256": "eb388743cc6aa52ee3074016fd02ca2543ec3037fc5541875ccd2ad23cd5dbbf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0022\\boundaries.npz",
+        "sha256": "c0ef22d86c7bfbdb4c57219fa12f91c32fcb1472c7751fc7bd9118e5bd083967"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 23,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0023\\reconstruction.png",
+        "sha256": "c59b37c32bc71bc16e25ce34dd83b52d068d0b86ede8c9f547b5e2840dfd04ab"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0023\\centers.csv",
+        "sha256": "c8af2623cb4ca930acb7345265370d89cb0536b15675584f4158f63bb21106d5"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0023\\boundaries.npz",
+        "sha256": "b303b22dd4367e19e2e9da09f27a15bb05e79721c0e4fecca9e624d1d1c16de6"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 24,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0024\\reconstruction.png",
+        "sha256": "f99e681d45109bd2e5ebaea5d0e34749c15d91064e7e813da4d817ce33fefe8b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0024\\centers.csv",
+        "sha256": "474d73cc2390f174c3f782fb0c67653d5d9f09d105f4bf17ce6daacc243217ca"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0024\\boundaries.npz",
+        "sha256": "789de39d9a0b82652ec3ef2f3b88abdc49c9394d34e896b4153d8b64c0a4d13a"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 25,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0025\\reconstruction.png",
+        "sha256": "c125d33626b8105f5f5af8ca74553a182e6312b34d834b2be6acb03c8ec0ab79"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0025\\centers.csv",
+        "sha256": "e1bef8b80bde4aeff13a2c51435140a71570e1a9b1f7eb237be69c988eec90ad"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0025\\boundaries.npz",
+        "sha256": "e5e584711c52d990c8b86cf6ed409650096492a5eab146cae186580f7a45ba74"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 26,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0026\\reconstruction.png",
+        "sha256": "d3172b0a44a835d6aec0d1ad4a237788391fe24987fef2a43a6139a7f5a86c3e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0026\\centers.csv",
+        "sha256": "73e747bdc4173d08e90cf57ae1a49e96fa5d761cf1650015e9527a526225b1fa"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0026\\boundaries.npz",
+        "sha256": "680e4ae2c147a1b165c7f03611fa62a56b9273b5bd7f93b256e171221bb439f1"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 27,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0027\\reconstruction.png",
+        "sha256": "03c8ba9996f3ad8e436270014820280dbb4be9fb23a216eceaede50109ea5c70"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0027\\centers.csv",
+        "sha256": "74f6f3056b5a88c7aa8a4f1f11fa310d775dbf1ef94d79ac3bd985f6b3317709"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0027\\boundaries.npz",
+        "sha256": "32e8d3591f461d6ac3b57dd37f0d88f483fc3d1cc025228356b940d906a772e9"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 28,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0028\\reconstruction.png",
+        "sha256": "17c614e661d014a9820d127b43a1b9913d883ab4bebfbbfa2b475c83af5a0619"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0028\\centers.csv",
+        "sha256": "4015ef983640056d9c47f443b228c0f298c274f69c80035d3f4a8e2876119dae"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0028\\boundaries.npz",
+        "sha256": "2a26b98817f6ea4675d24e8aa0585d3058dec0e71fe288f37a690577dbcf8080"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 29,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0029\\reconstruction.png",
+        "sha256": "c2bbe7763d4435060cd640cf9a79a39f4ffa3510a40e2236313ef27283dc880f"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0029\\centers.csv",
+        "sha256": "420db02e95e93bada45b9b31484239800b3ee26e1fe056918387852b22dde78e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0029\\boundaries.npz",
+        "sha256": "d1ac7ee0a7b234f152e53df443024af76b0840ad3cfecd1b4fcab8f2b8f35626"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 30,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0030\\reconstruction.png",
+        "sha256": "e5cb9e135de17dc02f70f00ff6c9b0666489f4f1b7423fd9669cd4de9333d275"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0030\\centers.csv",
+        "sha256": "e5ae6f46d54bad1b5723485574e202e542bb5a8c7441a0695e8e290f5d2310df"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0030\\boundaries.npz",
+        "sha256": "cc529b9fe92347aea99b0d79df6953b547e3096bdfa9140998259cbbec213901"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 31,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0031\\reconstruction.png",
+        "sha256": "2205c7f3d365e378ded57ddb833c3e86736c3e38d58f0348dddf5a0ce59090b6"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0031\\centers.csv",
+        "sha256": "9ba63f91427830069aeac76d6b16e628667f43d8dd2d275fb2011a7f5a2a80aa"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0031\\boundaries.npz",
+        "sha256": "42ef1ccef07493e98408d7c081b9934a11b7de71043710603ae1915e3f18b849"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 32,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0032\\reconstruction.png",
+        "sha256": "8373f05b535e8e32aeb59efe91fa759678fbcd0f20e4be735881d148ffcf1700"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0032\\centers.csv",
+        "sha256": "5854351b7944b94d80d02043998fb6d47ddbf9a9116519bf1dca60fc4cccfbd1"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0032\\boundaries.npz",
+        "sha256": "16c1ba3c7f705e0273aa48c60984b78f1763e0f986645c8fbfcd785ff8eee5af"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 33,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0033\\reconstruction.png",
+        "sha256": "5991c24deb2d0e6d6be74177cd23df15c07041cb6ae802f39190d188d2d4c31c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0033\\centers.csv",
+        "sha256": "ad8e82e6e8b3985e984d8231081226a5ddced63bb26d7c55e357ba8295e15f00"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0033\\boundaries.npz",
+        "sha256": "f9a751a28250eca509f0add696836bd8b6154b04d89b6ebbc9b4b39a585701c9"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 34,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0034\\reconstruction.png",
+        "sha256": "ac4a4bb89eaea33e1b20dc8a0113f6b64d72a1ff111e16d5e40262fe9467fc07"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0034\\centers.csv",
+        "sha256": "f7d0452738be54898d5a226ff7e9f006ec306a9d48963732255f62d020f692ea"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0034\\boundaries.npz",
+        "sha256": "f4d0cbae6bbdbdb657347e328c8a8cd1775dbd5f4e3a0a55f34eee3173aa2f94"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 35,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0035\\reconstruction.png",
+        "sha256": "8320d77a27a3314ecdc9991b119898b5e4b63d8206cfef85f2a9d9a73d7f4ce5"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0035\\centers.csv",
+        "sha256": "7e6d217e2874a688ae7565294b8f9c14600855b57c03bd9aba34931c03cacd03"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0035\\boundaries.npz",
+        "sha256": "ca97c53271962e353ee8f2f64703addd1028bba5908b153ffce6b47d8053ba84"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 36,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0036\\reconstruction.png",
+        "sha256": "006c8d1681a19afd68760ca13c8f3c1cbc914657b90674047120142d2ce9dbf3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0036\\centers.csv",
+        "sha256": "02729fee066d89e0b8c80f3a57dc6899fab455d9678818948540fdc402675eb6"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0036\\boundaries.npz",
+        "sha256": "061b1dc6e91ab1b94d59649f84e485cda2a3458dff82a2f9ff8e73c1db2d87be"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 37,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0037\\reconstruction.png",
+        "sha256": "8784f04b2dc8f2b92bdbd22201d3c72a4dd9790101f865b46ebc769405c72215"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0037\\centers.csv",
+        "sha256": "1054a62526d9cd9d544e67a175ad542af4c48a418f6e8b7d03c9c8710c2beca2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0037\\boundaries.npz",
+        "sha256": "941ee65b95bd9d50de61f41e9fdc79a3d6b14d3f8c5316d890bb29b8f7bbe464"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 38,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0038\\reconstruction.png",
+        "sha256": "08cb5860adf4f1ea653b76476ae00176865cb1b205a7d8593204107ba3e0476a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0038\\centers.csv",
+        "sha256": "da937de1e37d0485f4216d56ee26926a4d274f8a73359eb1e45105a03e75a1e2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0038\\boundaries.npz",
+        "sha256": "72566006e2b887e951412da3816f19c2e5a9e619afa7443e2929cd0f1ba614b6"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 39,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0039\\reconstruction.png",
+        "sha256": "1bd3a95f64eec715e0abf0c753b7a62ee0e4de6169284ec11265bcc2d8e46481"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0039\\centers.csv",
+        "sha256": "ffd4d668d90436b48ec4da5f196b2008bd5599c4d25757da2dd742688ec824ac"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0039\\boundaries.npz",
+        "sha256": "4a73b62ecead1f029f782288b979ad64d028124ae11eb31ba042ce5b6d87f481"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 40,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0040\\reconstruction.png",
+        "sha256": "5ed1d1f93f4dec39e2842ca2b845daddce1555b160e6f0584aa2394b0dd4e462"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0040\\centers.csv",
+        "sha256": "3c3132235b0f62ef76eccfadfa2f07ba7c3e7ae5bbf1215fcc8b8c22bf85209c"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0040\\boundaries.npz",
+        "sha256": "725dc217e6961a7a759e6f1f6d066363cc61fae79451418b04a7d84d8dee729b"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 41,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0041\\reconstruction.png",
+        "sha256": "a3bb61a63f9f8b9375f6f869b6a1b5af203ea496135e8e9da3d7731ebd2e883a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0041\\centers.csv",
+        "sha256": "ae3bb8e7656b02e125937093d154c3c3726ebcfe3fc78e6381a162deda3174bf"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0041\\boundaries.npz",
+        "sha256": "98e4c1dcbffa571760a1e98c8141f89ab4d06a02f6131f0c9eda75b2fc21ddc1"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 42,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0042\\reconstruction.png",
+        "sha256": "886cac9050fea3806cd1a8ca22f49cb0938c1d7166e92f9b4f33bac1545490c2"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0042\\centers.csv",
+        "sha256": "a47542facbfce1fdecf872661fe44d18372d6b9f5389440ff8c38aa06d8e0294"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0042\\boundaries.npz",
+        "sha256": "b87a4d6a72865c8c0124d1b6a91a7abdd0f69ca60daa40af9ffb1876ad618acb"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 43,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0043\\reconstruction.png",
+        "sha256": "41f0a878c8ab6087aa88a30153df4930b3f0f4a5334db13777dfdba1d7a25d0b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0043\\centers.csv",
+        "sha256": "4b6404486efe954bc7dbbf86194ed8db772aa03a88f5443f89754c28b3368ca5"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0043\\boundaries.npz",
+        "sha256": "bf10b00609db450bcfd69856eb98debb121e8f8a7bf32f26c0fab33bb39583da"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 44,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0044\\reconstruction.png",
+        "sha256": "09ebaf7a8178f6916355bda22344078ec2874c78c85fa65c83aaf81981204a63"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0044\\centers.csv",
+        "sha256": "a753d642c9d5879a8f03b668adf2ee8a5af80057f878a37cdae248ae4c2e3465"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0044\\boundaries.npz",
+        "sha256": "062f73ec359938a643c080327e83dbc4e1e52be2a973f6b5f5fa8c0db1ad8bef"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 45,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0045\\reconstruction.png",
+        "sha256": "17eafe0d81c1723ffef9fdd77c8db858a485a5c10c676e0ac7b0dc4cd87a07f6"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0045\\centers.csv",
+        "sha256": "6f20f084142cc91e78005444cf32bba1b1b05b020fd0e0d2dd49152f42617f92"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0045\\boundaries.npz",
+        "sha256": "5d1bb82c9702d6d32fef2f5f9993ec596f8746ca5f24ae8bac365a0e3b82f58c"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 46,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0046\\reconstruction.png",
+        "sha256": "cb89543c700dcccc1570fdf479d3a6ef3605cb5b58053446f7487bec754c31af"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0046\\centers.csv",
+        "sha256": "3f3ad4b2f7635673928edcb55f652f8588433835f376576b3fd48a3765bb10b4"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0046\\boundaries.npz",
+        "sha256": "a408969f80e150634eec491340c0cd2e8de65daa575f499cd8cf28a465618c53"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 47,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0047\\reconstruction.png",
+        "sha256": "f9a60b245c45d098f27fe0a0786ceef87710662bcfd209e6c11393658d0cb3a5"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0047\\centers.csv",
+        "sha256": "947bd1551e811e4a0c8366f2f9e08cc8d608584e0d26228c9ca9407bf9261901"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0047\\boundaries.npz",
+        "sha256": "e73eebd65d78e6f6224acf78455137d9ae05495ae435fd87a052c27f07e4cbc2"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 48,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0048\\reconstruction.png",
+        "sha256": "a5242bb85f3a6b17cf6b012d16b9bdbc1d1aeb108713b2330c8fc691ddddad16"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0048\\centers.csv",
+        "sha256": "69811e3621aaa4674a8ea1c0e0e1eebbc83fef43b6fa013f5d6018a3bfff6141"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0048\\boundaries.npz",
+        "sha256": "03bf0496f6946f770dfb4c3ac8f91f1634aa5832c1788e0d380bf88d04090489"
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "frame_index": 49,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_0p5um\\frame_0049\\reconstruction.png",
+        "sha256": "d0d2d86e9b5a1c75beea63f1036069605cbd6ee8bda035405773a1ba4e9ebc04"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0049\\centers.csv",
+        "sha256": "1ebb60c110e43044b53ef8e54c3e4df7f6af8bd4a412724cf66693f15e4ba27a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_0p5um\\frame_0049\\boundaries.npz",
+        "sha256": "4f24d340142248b9d5ff60aa4b47f484cb7f2557413f91115428748607a6dc40"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 0,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0000\\reconstruction.png",
+        "sha256": "8576392173e419bd27263c3764536e5c71841c3ca8b1df268983fbaf1ed5e415"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0000\\centers.csv",
+        "sha256": "8a34a5655801a721beca3f2812b3d7a1e38fcb0bc94b9970e595fa4988a47c5b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0000\\boundaries.npz",
+        "sha256": "4415a88cfebf6c4d059cf6fe8f786f8403e86262c8ef23363a9de5446d0dbffe"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 1,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0001\\reconstruction.png",
+        "sha256": "4536f229dc3273565cc0dd960c64237242ab2c527d729b8a728a12d1bfd328f8"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0001\\centers.csv",
+        "sha256": "7821d0ba820ea96ebee4dee8ef5ed2fbb35878c6585d6dd034b500793b5c6307"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0001\\boundaries.npz",
+        "sha256": "292f5f7861b7b8f890325353fde3bc3bf0c13f0ca2e6c1f85a6621a137c982a7"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 2,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0002\\reconstruction.png",
+        "sha256": "51f4c576f96bbfcbc3b36216da8b503e74c05df3207234ca997e7498d89102e5"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0002\\centers.csv",
+        "sha256": "8db09cc085600232f83636e0ec6b7e75d779c0c0ae351e3837c475d26ebcfa30"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0002\\boundaries.npz",
+        "sha256": "e99fdd6b22a509486016ab9db897c6fbc81b54c0547ae6a4ec6291908a77208a"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 3,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0003\\reconstruction.png",
+        "sha256": "e114fa39f1be7f3deb84352e3841526f474fad151b3352754fe129620e005f78"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0003\\centers.csv",
+        "sha256": "cce0a8526ba839ca493151e4807dc0a44c83e0da72155ad944d7750ff17ac191"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0003\\boundaries.npz",
+        "sha256": "3ec6c9f45f8a2caf6563d92e72379da24e75a4fb2a5f2658c25a71e8e4dbcc94"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 4,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0004\\reconstruction.png",
+        "sha256": "3eeefe58d9841e0ef757d172b5b1bf2ebba228e1eae107931f08fc9b0d6c6083"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0004\\centers.csv",
+        "sha256": "1e8104c8c08e9ea8c2001d15245f81da3f30acb47e94cec557cf346d5b5c29a3"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0004\\boundaries.npz",
+        "sha256": "d29e75fb91f4427d0667ed7e16a63f20331f4c8831dc18624777c63a27df631f"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 5,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0005\\reconstruction.png",
+        "sha256": "b7b711297343494725cbff55cb5fab676f51c0fdebccc02d7150c977d157c86e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0005\\centers.csv",
+        "sha256": "657cda4a7881cd536704a1c2e8af6b318105c772291f0b802a5377fa621caac2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0005\\boundaries.npz",
+        "sha256": "695c622f0653688883a9c2c5afa9b1eb832f84520ba5a158df45280924bb0046"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 6,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0006\\reconstruction.png",
+        "sha256": "11d140e2c73dbd33cc2ac435cb2d6617cda5dd3bf3793b7fbc1b105baf8b2789"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0006\\centers.csv",
+        "sha256": "59ab32cc9f31d40144acce86b02b9c157c3e63007f8c189287b28e105fb9d52d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0006\\boundaries.npz",
+        "sha256": "391a57daabfa115c6de8d84d3bd2584ab97e51e208b66b65fd943cff9be8d85a"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 7,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0007\\reconstruction.png",
+        "sha256": "cf38e9e06662d16370d9c5304836415ea120993ae95d2617c3bccd37844c3f16"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0007\\centers.csv",
+        "sha256": "6f0d328a03008cc11f9ad8dff95cc60f52770ad5a5f6b97252ef3872aa0c61d2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0007\\boundaries.npz",
+        "sha256": "a047428c1b1e545b825ba5935cf1cd4341d69ed218042975eee206977f70f109"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 8,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0008\\reconstruction.png",
+        "sha256": "773d8e5c59a5428332b0f219aa10125d5b8bf3a3c35d961d13ae70ffaeff2c49"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0008\\centers.csv",
+        "sha256": "07b7457a4be9734dc68e7d2a493d4d99835314248dc41ce0567e47d2fd0a0552"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0008\\boundaries.npz",
+        "sha256": "1a60688edb2fb3b2cd42f0add71be0863be6ef593d2814319737ed7a27a9452e"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 9,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0009\\reconstruction.png",
+        "sha256": "ab43351c706f2fcff0b1bed1f1c3c94c15cfe0ae29b0bfa88c25828cb418f868"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0009\\centers.csv",
+        "sha256": "a64b98d39bfc64c95ea3a3d525c0814fe428f661c66559185eef512505e6aa9a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0009\\boundaries.npz",
+        "sha256": "97e0b55389d59512f802f86db8e2461958f76065c6b4d4f93b6ac3c0d9898ec5"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 10,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0010\\reconstruction.png",
+        "sha256": "30cb1640d3c45272f0bb9592171b55a473870e6035d26fff83bf7f827c28e220"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0010\\centers.csv",
+        "sha256": "549f0f47a18851c824b508ac8551959df9cd96e18c8c54e7c110e64a31cad9a9"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0010\\boundaries.npz",
+        "sha256": "c58cbbf3c9f55dc5a3df4d6a8347c6a7d284bedd22faf345edebe107ce35ad4d"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 11,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0011\\reconstruction.png",
+        "sha256": "eb53507febbeb67a00dd0ffe5a7bb60804308b5e5626d6f4eedb60a07fc97add"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0011\\centers.csv",
+        "sha256": "c3516cf666a0812a4e4259ecb2da4e2c23d9742a9dd6da4e490eab3ca7fb06dc"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0011\\boundaries.npz",
+        "sha256": "a3864c4a1eadba81de09122fc715e7675d53abf284b5ff4c61fc4da39b40372a"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 12,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0012\\reconstruction.png",
+        "sha256": "78da7ebd129b02ac7b29e6cbfeff5e118a62794cea51fcd95e11c08d59529971"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0012\\centers.csv",
+        "sha256": "23b12a73c7198e707afcb6f488e72b7fbb4a2daad84ffb18bf6fb7231cae6d0a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0012\\boundaries.npz",
+        "sha256": "f431635bc056eada23792e6a717e2e58bce256f372f0adfebaa077a9cf0588b2"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 13,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0013\\reconstruction.png",
+        "sha256": "794080c959c2f902961cc646b389e618388db02d5500e1902e5893f2d5743d2c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0013\\centers.csv",
+        "sha256": "3d1570ed97d24d81e5646fe5f2ca4c1ec5a785103cf81d64ddad264c0d677840"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0013\\boundaries.npz",
+        "sha256": "e6c5b918145101c34977294e227a6fd0a74e72c08bd5fa37b286aa8b4f583b9d"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 14,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0014\\reconstruction.png",
+        "sha256": "04dc2f86e62a59a4aa46e1022571829ee816b9a1736183dd23bb3f6c2ca10f68"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0014\\centers.csv",
+        "sha256": "e0166dc11d7732df2298fce5b70e38f780ae420f241d56c83b13f43421e29567"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0014\\boundaries.npz",
+        "sha256": "20dcd5383bc86434b224624ea0b9e45ad2466cf05348a511167671a0b27b3680"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 15,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0015\\reconstruction.png",
+        "sha256": "bcee861f4e9814cca1bb45b02e63326204256945d2877e974d0cc0f22ae02c33"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0015\\centers.csv",
+        "sha256": "bb109aa398e016fa6e0aa29096dcbbc7502a5df8266eaa73cd2b91a57577280d"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0015\\boundaries.npz",
+        "sha256": "33881ae6cff3672d0e3c3b597b5b98955240d090fc5898afbcea59a1868130a1"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 16,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0016\\reconstruction.png",
+        "sha256": "c620332ce2421cdee883bb6b85c7233d3d0b506748ba7bdc582fed4581457299"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0016\\centers.csv",
+        "sha256": "9e3d3870464806eb53b682fc8f6e95d1b9afb035ff82d2e16198b25fdca99ad0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0016\\boundaries.npz",
+        "sha256": "984149361d156b799891c1ac6ec2bfbf3036c14f1dddd8a5707fe1c0f9433286"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 17,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0017\\reconstruction.png",
+        "sha256": "62300446eae2e4328ecfa5de138abff0009e4da650466f000ada7a6d9d3f42d3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0017\\centers.csv",
+        "sha256": "03b4b278170be6d30441a2ca2ac6bcaefde1da4acc7725e0e180340137229667"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0017\\boundaries.npz",
+        "sha256": "c0477941c86576433b154f0b1c6432c8a4e4656adad4e88056568ff5fc15d87a"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 18,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0018\\reconstruction.png",
+        "sha256": "a589a22b8552226808d5b16e5b632a6bdc1689f97d5a1b065629c02eef13bb7e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0018\\centers.csv",
+        "sha256": "2066ec473dd0ebd5869fd1b9a1f6b52907a6e6818ff1524bf005a645d736c3e4"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0018\\boundaries.npz",
+        "sha256": "9099bb054f7da5d4b252faa633f773231aedc211dc5810d31d9e6b9993bb7a56"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 19,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0019\\reconstruction.png",
+        "sha256": "0aa9033f369b784fdd0fd135824c525e32601bca3b0107f546c9e60f4099db77"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0019\\centers.csv",
+        "sha256": "7a8c84a3a70a543ee58d0c7d58947c934125eb33f4bac88b9b098c23e9a6fb51"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0019\\boundaries.npz",
+        "sha256": "47ebfb10548947446fd444945ec778eebc45c0fba0584856151267ce80ef6493"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 20,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0020\\reconstruction.png",
+        "sha256": "0b3a0f2f3e74bdef25ac39f8ff4c2fb1e78ee71946f0126296fbb91a38ae2f16"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0020\\centers.csv",
+        "sha256": "a1e91f31fdf618def95b07337f3b14703b245c6a8e329b3db776647c7e370197"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0020\\boundaries.npz",
+        "sha256": "53c5940e4115c5bbbf697ede7fd64202a71bdbce7548e88c0e112a1d56053012"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 21,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0021\\reconstruction.png",
+        "sha256": "df4d1b821994f17c1e3334db0b939496c38efb17798eb3015a727904b12907e3"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0021\\centers.csv",
+        "sha256": "b3496f44a77b3f012c9fa32544ff23bc553960b1ffe9c4738b3ff0e4d2acc943"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0021\\boundaries.npz",
+        "sha256": "449f370f8d623cd7eae46ed668f737aeb270f8f875bb93713277359c2400354f"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 22,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0022\\reconstruction.png",
+        "sha256": "fad0d6f90e95cade6d745deca92050d04c68d4d9e1744503147d9603bd509d9b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0022\\centers.csv",
+        "sha256": "d0affd986bb24b2e031d522cc83077eeda47feb185631f1c5c2256bfef236148"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0022\\boundaries.npz",
+        "sha256": "ac764aba3b436d455ea7908a49dfb7f42df0c0ca710e2ddd46e480fc322cc4a3"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 23,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0023\\reconstruction.png",
+        "sha256": "9e9d2c1ef19c4218318166e87aa95e5d7629024866e31966d1717c52caa35c57"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0023\\centers.csv",
+        "sha256": "6e94b61863c1376482410898358fe2e0ab3af081d9437643bbb9606faf4f0c3e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0023\\boundaries.npz",
+        "sha256": "072bf2983a7479901ada977271d7d340e8625e75a7cf73dff3a6d8a3f07d190e"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 24,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0024\\reconstruction.png",
+        "sha256": "83e95adf53169eebeefcab43d289b8218d862899d38fe4cf79be0ff58219ef9d"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0024\\centers.csv",
+        "sha256": "40b08f75da8934b26eff358255f93c4456a0618a24fcb1569b674274531048d3"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0024\\boundaries.npz",
+        "sha256": "9eaeb3ff8fcaf0abde1b2e56a6690f43ef191a292476baf0999711af5f9c6a29"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 25,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0025\\reconstruction.png",
+        "sha256": "d6951320ddd1c2edc4c7792fb123a941493ff815080a480d10dbdc861e9cbf65"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0025\\centers.csv",
+        "sha256": "4830e7e78b31189e44917f56459b4045d0f854aa32e9b1901e494eacdac1f167"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0025\\boundaries.npz",
+        "sha256": "6c7af4398b29eb5904fa42698e5cba9bf8346fed175be1ac5a596200f064b8f1"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 26,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0026\\reconstruction.png",
+        "sha256": "dde36f80f0df600909b2db6192d5e1e9847e8fb69c961c7ed6db033ea07aaad5"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0026\\centers.csv",
+        "sha256": "264352e5d0e931170455daba9bddfe975aaf21e7e11fd2238cb1a84fe6b77d64"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0026\\boundaries.npz",
+        "sha256": "fad57ef8dbfbb9606ce71f299a6177b2c31fee394afa51b4d94866feb655571c"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 27,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0027\\reconstruction.png",
+        "sha256": "fc4d632228f44a52a038ac64b6e277af3c5da748953b654122f25340498b325a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0027\\centers.csv",
+        "sha256": "d4149ec52ffc222667dedad78c03881d7f36f4a94f8b47e08af8321f57a1ea70"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0027\\boundaries.npz",
+        "sha256": "13b5b2f926cfd09596ff84f88336d88e525412b11ed7e0400115111a6044b5f1"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 28,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0028\\reconstruction.png",
+        "sha256": "eabda0362556f8726557ac1c3ea459fe9eb24331a98f0fd1c0a42995037925f0"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0028\\centers.csv",
+        "sha256": "ac3e32f1ec81a4f4e4ee246cd95441ce4b65bcfb6f46898cc6120cab7a7962d3"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0028\\boundaries.npz",
+        "sha256": "845f9e443c9a50b4959a6ea68651b9785fedc7e816e991c92fcc693460295e53"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 29,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0029\\reconstruction.png",
+        "sha256": "200e5864d1d7d2c049a374f39219cb9da0adfd7ee23c44fb2dbc38632d346a2a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0029\\centers.csv",
+        "sha256": "2052fb9a305d151dbb983706eb333d30b84bb1626d659e6cd270d504fe139cf0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0029\\boundaries.npz",
+        "sha256": "f3235de9c657762bd2c88a1a3aae85fc2bd93de7836f74a6d8f79502b5431efd"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 30,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0030\\reconstruction.png",
+        "sha256": "3528ea77bbac560bbcefbc4ef489d5df902285d01ac94c191ace32c4da0bcd6b"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0030\\centers.csv",
+        "sha256": "6914266589bf199f40a331fe8cd87f288e6211d6582df539707fbf5aff8cf03b"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0030\\boundaries.npz",
+        "sha256": "d901826de62223b0ad30fbe5d70dbf9659111a78f6831814e58b346ad20a63be"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 31,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0031\\reconstruction.png",
+        "sha256": "617eac3297d2224f4e1cee2e9167200519bea81382412a4d7e0699ef68451718"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0031\\centers.csv",
+        "sha256": "d90af3f71bdbcb3189b62e0aed534478ae5e91c495294e2262963e348c6c3447"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0031\\boundaries.npz",
+        "sha256": "23d3a84a7ccce90f12b90c6d2e6770500e6181c2b03406eb69aef5ba0dd8d882"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 32,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0032\\reconstruction.png",
+        "sha256": "8c36387ef104e720ba42ad45b757a809c2554ad55eb8396b9710f7cb350f281c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0032\\centers.csv",
+        "sha256": "a5ae62249184f8a4f4ed924b11a0ab35cea146798b9b9425519bd7a78b5c6647"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0032\\boundaries.npz",
+        "sha256": "77d601675ad07c77cae4b978c2d8c63c3618e9920f3277efd6baeee4b0b20167"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 33,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0033\\reconstruction.png",
+        "sha256": "bd9c1cb7cb07eb4b7246d47f371d4bb6711602f7ea0c76708a6c4cf43456ad51"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0033\\centers.csv",
+        "sha256": "d7f9df940e116eacdb1e741ddbe99ee57457fa015953e87182c819f0aeca643a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0033\\boundaries.npz",
+        "sha256": "49ee1825b1f4c33db000dd8d46013642fc04a89564c168b75b42c82b9bc7372b"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 34,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0034\\reconstruction.png",
+        "sha256": "9ab80d8305e5c791206dc96a163b1a8c8a1648c8a2f8c48606b8a5db6deb2574"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0034\\centers.csv",
+        "sha256": "6248b81659663619a7b91496c602f318b6941b63e7654d74e81fa56d6e81e4ab"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0034\\boundaries.npz",
+        "sha256": "e3751b6fbd3afe71f2690f8331dc88b6b9ba0e7ae8fd79373a63889e99f69ca6"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 35,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0035\\reconstruction.png",
+        "sha256": "fe27b340ca80cc5c8b1ce99dc88cd8f628c1fd5abb75b8b867a31b2974789552"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0035\\centers.csv",
+        "sha256": "a5beb99ac550b67be39374b5ae40ceb72527fc0cfaccdb531db7170ec8ec446e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0035\\boundaries.npz",
+        "sha256": "c0fcb81fdbb97b72e8c01cfb7093b92c1077e2cff0004bf56e46bc589be8c2f4"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 36,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0036\\reconstruction.png",
+        "sha256": "9a8e5471a2232544faa45bcb16fa8c37ce5ad4d58fa83aa73c1d0abcccba71cb"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0036\\centers.csv",
+        "sha256": "b2523bbbabb45a6d5cf09841cc585a85beaa8911fcc5bbc6d3f05f60784b0768"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0036\\boundaries.npz",
+        "sha256": "629689747bdb607e92e5f8ea7dfcc96c717497454846fd01ad7ada5eb1829992"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 37,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0037\\reconstruction.png",
+        "sha256": "866d5f08a79e2e7162db5e2e8d7fe38e9784c1e865e8fba757b3d3a4fc7a7aeb"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0037\\centers.csv",
+        "sha256": "9afede5d32f08c46f6a2984c2bf2ba2da21de654020c147508413c6f3356d291"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0037\\boundaries.npz",
+        "sha256": "065509fd671d8abf3cda8ca3c057405814e8781272271fcff41c81c432ea6ae4"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 38,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0038\\reconstruction.png",
+        "sha256": "d5606bf5b40ac85a1b755b5e9b3f30b82e4980ae9970c38eec286de63c847e16"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0038\\centers.csv",
+        "sha256": "5922fa6aadf2b9152946ba9ce4d1123b41b677ed8b3059d640bb63f809470eb0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0038\\boundaries.npz",
+        "sha256": "a7cd2aff5d47f9678fc30cce5b7af0b4954cad59e71f43f1785eff5e9bfff9cf"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 39,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0039\\reconstruction.png",
+        "sha256": "c455b679be0c09f1db47b56c6b9947801d800ec9a7167a7218e029da81ccbf98"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0039\\centers.csv",
+        "sha256": "680a6494748afebfdadbe56db984e29ddd508537743b696d535e6d658cd7a8bc"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0039\\boundaries.npz",
+        "sha256": "a376a2b80e0c1cf1a9dda868a97c9c85dca4b610d777efed03d1734c77f93728"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 40,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0040\\reconstruction.png",
+        "sha256": "7c61fc7cf0760c30008762e70670f74b8aa199682bec2c72945f9019cf30676e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0040\\centers.csv",
+        "sha256": "742b039fae566ba9440cbccbb9ae8948c63cb11245a43c6d2be3f78b74fc18a2"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0040\\boundaries.npz",
+        "sha256": "07f3bcf7fc3f448b7031cbba48e009fd3445c243dcf808862f302a51df38e2e3"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 41,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0041\\reconstruction.png",
+        "sha256": "ce74f29903e95a8433378c83e235813ae260e11f27567fda7b4502bfd292b2d1"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0041\\centers.csv",
+        "sha256": "304f043326468079e6e1b126e5ec54047d56a8c5e2520deed4d200eaf8ed35c8"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0041\\boundaries.npz",
+        "sha256": "9903e2391ce64819ce075f22181921a94ec578d7610a9e49b9545f628bdabba8"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 42,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0042\\reconstruction.png",
+        "sha256": "cbb9e265f11c8b0bb84124ea757cbfbd5e3438680e6cd2b685eb1e27d02ffa3f"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0042\\centers.csv",
+        "sha256": "351cbe522762aefd0918e98621f204d441a5f3e0b27a5b6c0a5f6d03de5c4259"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0042\\boundaries.npz",
+        "sha256": "e7b9b7c91543153b81f4a57d9c876704c6d616bdbafb806186c3f76cf07133da"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 43,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0043\\reconstruction.png",
+        "sha256": "9d81c0ca14b3a859f4a5af8527f414e74bfd6c9d31d7644ce5609d9acf7903b0"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0043\\centers.csv",
+        "sha256": "1ff9e25faecd9520b30392792a457f61a3849c1321c4fae3c69493ca43f5b33a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0043\\boundaries.npz",
+        "sha256": "d511173eb133886f80573b07709a24d3bbb044383ab1c6b48ffe25a2e3bc8e3d"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 44,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0044\\reconstruction.png",
+        "sha256": "48bdbcdc9f3d1336e348513445f241f9b625c63fcf94f93cbbbc90c2bce71d51"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0044\\centers.csv",
+        "sha256": "312b8252f1f126655b34e0090967c2a891732725a89027d1dbb474c92e0f908a"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0044\\boundaries.npz",
+        "sha256": "885f1f7eb2cae9fe0c748488f6c2fe9e0744f2d37bbca1d56c3166ad37eeaf55"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 45,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0045\\reconstruction.png",
+        "sha256": "83e8e55f9aeab10ce68d654d4dc87b85191dd5e5bb1ddc9cbcff7aa44fe7bc2a"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0045\\centers.csv",
+        "sha256": "736888fbfac676afdc0b2434d14243c8c5266a292fa615a2b270344fc9a46cd5"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0045\\boundaries.npz",
+        "sha256": "6afa83baaa9de876c83102fdd7efc2ed270cab805c7d60aafa22efa8bca4af47"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 46,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0046\\reconstruction.png",
+        "sha256": "baed182cecb7f4a54e68b1ddb54146043de9f4c50831bf4d4842b8ccf2d6323e"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0046\\centers.csv",
+        "sha256": "246a24801921c27aba33b6f250f7fcc2535ddf7e714300792fc5015f121c13a0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0046\\boundaries.npz",
+        "sha256": "d1955af1355892659ae36e7f9d3402e002bf2677a3b4cfce000e608c19c1e89c"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 47,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0047\\reconstruction.png",
+        "sha256": "a7be99d207d6a8410e758dfc43442946c1b01013601bc7209b58cfbd7b10763c"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0047\\centers.csv",
+        "sha256": "37c6bba6ab93aa01220035579393c287a08c624a0de6260686bb2d8743408bc0"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0047\\boundaries.npz",
+        "sha256": "b798ceae131bc967c877d24038473fd1d495d8eea894c59a07cd80ecca9c2cbb"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 48,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0048\\reconstruction.png",
+        "sha256": "c3d1530306234ffe2c284d9e2525a42bf92813356d059514ca209aa143d8230f"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0048\\centers.csv",
+        "sha256": "fbd543150c99ca3635a352fbfed786f359b09a7bebf97f7d6eb99c99c2f249ff"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0048\\boundaries.npz",
+        "sha256": "6384522e562944869ba0dabce4e07890fa3f6e55ea29e28161d7d07a8583427f"
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "frame_index": 49,
+      "image": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\images\\20x_1um\\frame_0049\\reconstruction.png",
+        "sha256": "aa7b9be8e7780ef0561d856ee024886a324db112fda274b6fa34d9df3b4e05cc"
+      },
+      "centers": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0049\\centers.csv",
+        "sha256": "141a9ac8c1aa00e1a15dfd3bcd95d8f6bffd55baa90826a15e364928793f0b6e"
+      },
+      "boundaries": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\20x_1um\\frame_0049\\boundaries.npz",
+        "sha256": "61080655697f7ef52853046c002588f3abbf7c849d92d7cc119d647e79be92bb"
+      }
+    }
+  ],
+  "locked_summary": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\measurements\\R129\\locked120_summary.csv",
+    "sha256": "62139c13ab1d4f51800e17fd007541fc3d2a6d3c05a31c448381f2ec85a9dca6"
+  },
+  "seconds": 2561.1300920000067
+}

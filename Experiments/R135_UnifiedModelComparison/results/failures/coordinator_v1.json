@@ -1,0 +1,8 @@
+{
+  "phase": "failed",
+  "utc": "2026-09-16T08:38:48.101014+00:00",
+  "pid": 22336,
+  "training_updates": 0,
+  "model_promoted": false,
+  "error": "Traceback (most recent call last):\n  File \"D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\continue_comparison.py\", line 29, in <module>\n    try:main()\n        ^^^^^^\n  File \"D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\continue_comparison.py\", line 19, in main\n    if r.returncode:raise RuntimeError(load(ROOT/f'results/{tag}/failure.json')['error'])\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Traceback (most recent call last):\n  File \"D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\run_model.py\", line 55, in <module>\n    try:main(args.tag)\n        ^^^^^^^^^^^^^^\n  File \"D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\run_model.py\", line 22, in main\n    fresh=predict(raw8)\n          ^^^^^^^^^^^^^\n  File \"D:\\GMM_2_Final\\Experiments\\R135_UnifiedModelComparison\\scripts\\adapters.py\", line 27, in predict\n    kw=captured['options'];return mod.apply_anchor_output(x,v,mode=kw.get('anchor_output_mode','none'),alpha=kw.get('anchor_alpha',.1),sigma=kw.get('anchor_sigma',2.),detail_gain=kw.get('anchor_detail_gain',.35))\n                                  ^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'legacy_native_inference' has no attribute 'apply_anchor_output'\n\n"
+}

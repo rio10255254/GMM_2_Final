@@ -1,0 +1,125 @@
+{
+  "completed_utc": "2026-09-13T13:36:09.540208+00:00",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\audit_continuous_lsc.py",
+    "sha256": "95c6bbbee925526185ec3a50d8cfe45f974459c647494e81c1b92a58c918373f"
+  },
+  "plan": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\plan.json",
+    "sha256": "ada63da7a81fb1755349d9402601718777534ffe224c541cc7c07b4e5b3e42d3"
+  },
+  "inference": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\inference_complete.json",
+    "sha256": "0e3d84fb5b9c34c32a8c3cd6c624375f2969ebd4d49256d93246b0a62ccf746e"
+  },
+  "independent_circle_refits": 3618,
+  "max_refit_difference_px": 3.9508461213699775e-06,
+  "pair_arithmetic_recomputed": 634,
+  "unique_method_adjacent_pairs_recomputed": 394,
+  "frames_per_method": 201,
+  "primary_pairs_per_method": 120,
+  "within_session_pairs_per_method": 194,
+  "repositioning_pairs_per_method": 3,
+  "all_original_sources_unchanged": true,
+  "summary": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\comparison_summary.csv",
+    "sha256": "f8c29bf0d917466aed2cc630136503c37ec234822f8389d837edf82a85cbf066"
+  },
+  "pair_changes": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\paired_changes.csv",
+    "sha256": "b5926b4da87eb88a93e01ccb1de7b7375687ad21d43cafc3c13e5b26de992d7c"
+  },
+  "largest_regressions": [
+    {
+      "reference": "Raw",
+      "metric": "nominal_abs_error_nm",
+      "sequence": "20x_1um",
+      "start": 11,
+      "end": 12,
+      "candidate": 18.358225632354674,
+      "reference_value": 4.5646349856456325,
+      "difference": 13.793590646709042
+    },
+    {
+      "reference": "Raw",
+      "metric": "within_grid_sd_nm",
+      "sequence": "50x_x_0p5um",
+      "start": 25,
+      "end": 26,
+      "candidate": 3.660824885853796,
+      "reference_value": 4.4382147741272,
+      "difference": -0.777389888273404
+    },
+    {
+      "reference": "Raw",
+      "metric": "cross_axis_abs_nm",
+      "sequence": "20x_0p5um",
+      "start": 16,
+      "end": 17,
+      "candidate": 59.08826213834345,
+      "reference_value": 43.240394898355696,
+      "difference": 15.847867239987757
+    },
+    {
+      "reference": "R61v16_PSFOFF",
+      "metric": "nominal_abs_error_nm",
+      "sequence": "20x_0p5um",
+      "start": 1,
+      "end": 2,
+      "candidate": 19.000183745472462,
+      "reference_value": 1.7523628326154284,
+      "difference": 17.247820912857033
+    },
+    {
+      "reference": "R61v16_PSFOFF",
+      "metric": "within_grid_sd_nm",
+      "sequence": "20x_0p5um",
+      "start": 4,
+      "end": 5,
+      "candidate": 16.706401948821863,
+      "reference_value": 6.741070229585989,
+      "difference": 9.965331719235873
+    },
+    {
+      "reference": "R61v16_PSFOFF",
+      "metric": "cross_axis_abs_nm",
+      "sequence": "20x_0p5um",
+      "start": 0,
+      "end": 1,
+      "candidate": 16.888915394122535,
+      "reference_value": 7.312518137582913,
+      "difference": 9.576397256539622
+    },
+    {
+      "reference": "R128_P_s1285002",
+      "metric": "nominal_abs_error_nm",
+      "sequence": "20x_0p5um",
+      "start": 1,
+      "end": 2,
+      "candidate": 19.000183745472462,
+      "reference_value": 9.792419926799356,
+      "difference": 9.207763818673106
+    },
+    {
+      "reference": "R128_P_s1285002",
+      "metric": "within_grid_sd_nm",
+      "sequence": "20x_0p5um",
+      "start": 17,
+      "end": 18,
+      "candidate": 17.261393653332338,
+      "reference_value": 3.677162493952486,
+      "difference": 13.58423115937985
+    },
+    {
+      "reference": "R128_P_s1285002",
+      "metric": "cross_axis_abs_nm",
+      "sequence": "20x_1um",
+      "start": 4,
+      "end": 5,
+      "candidate": 8.27471081449687,
+      "reference_value": 0.3926606197907744,
+      "difference": 7.882050194706096
+    }
+  ],
+  "model_promoted": false
+}

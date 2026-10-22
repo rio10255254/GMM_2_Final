@@ -1,5 +1,7 @@
 # R129 Optical prior hybrid
 
+2026-10-22保存閱讀補強：[本輪重要完整原表與來源證據](../../docs/reproducibility/project_completion/curated/IMPORTANT_TABLES_20261022.md)已提出到可直接閱讀的位置；原數字、原失敗和採用身分保持。
+
 Self-contained research prototype restoring the thesis's measured-optics fusion, anti-aliased upsampling and input-referenced output design. Shared R128 source data are referenced in place. Original R128/V42 models and evidence remain immutable.
 
 The requested design requirements are retained independently of whether every metric improves. Actual module activity, matched controls and adverse measurements determine the claims; inclusion does not prove benefit or novelty.

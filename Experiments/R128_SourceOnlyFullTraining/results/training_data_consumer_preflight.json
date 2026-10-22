@@ -1,0 +1,287 @@
+{
+  "passed": true,
+  "manifest": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\data\\package\\manifest.json",
+    "sha256": "8cb7afc18a885f4dace5b5309e005c4b530c82d3f323e63441fea71174e1f889"
+  },
+  "parents": 768,
+  "unique_nonflat_geometries": 691,
+  "semantic_checks": [
+    {
+      "index": 0,
+      "category": "corners_lines_junctions",
+      "rms_noise_units": 0.0006511116993609689,
+      "p99_noise_units": 0.003102793052412255,
+      "noise_repeat_exact": true,
+      "noise_epoch_change": true
+    },
+    {
+      "index": 1,
+      "category": "dense_close_structures",
+      "rms_noise_units": 0.01327763026010457,
+      "p99_noise_units": 0.031871342359430406,
+      "noise_repeat_exact": true,
+      "noise_epoch_change": true
+    },
+    {
+      "index": 3,
+      "category": "flat_negative",
+      "rms_noise_units": 1.2147850618734728e-06,
+      "p99_noise_units": 2.521550456649889e-06,
+      "noise_repeat_exact": true,
+      "noise_epoch_change": true
+    },
+    {
+      "index": 4,
+      "category": "irregular_curved",
+      "rms_noise_units": 0.017418707762202078,
+      "p99_noise_units": 0.07119538438423068,
+      "noise_repeat_exact": true,
+      "noise_epoch_change": true
+    },
+    {
+      "index": 12,
+      "category": "textured_edges",
+      "rms_noise_units": 0.0036219724404323575,
+      "p99_noise_units": 0.018208869423620554,
+      "noise_repeat_exact": true,
+      "noise_epoch_change": true
+    },
+    {
+      "index": 19,
+      "category": "clean_identity",
+      "rms_noise_units": 1.944750938084067e-05,
+      "p99_noise_units": 5.265151929021641e-05,
+      "noise_repeat_exact": true,
+      "noise_epoch_change": false
+    },
+    {
+      "index": 81,
+      "category": "noisy_identity",
+      "rms_noise_units": 2.831832208039995e-06,
+      "p99_noise_units": 5.043100913299778e-06,
+      "noise_repeat_exact": true,
+      "noise_epoch_change": true
+    }
+  ],
+  "epoch_order_sha256": [
+    "203628e99a19d4ae386acbc669c133b9e068872996b395588a05edc066437a96",
+    "9d58c53d8ce646bff086a3a46b3b7a9c7168374265adf48a99dba005de29a160",
+    "643041f0a8cd834c54c3d3b868b2de96ed9882f3ba7e26dafd5fbc8fb3d8735a",
+    "79967bde6284cc4df080a1b66fb9025aa4e3575873aa74c5da267f15a78b597c",
+    "a60f8b83161b01d38e1867b5eac4b41412d41201a1cdda79e839045bf3c9e30a",
+    "459b4b65e55de4a51f07ba94d7bec2fa5b11d57631ad404a91b0c8bb84de3c2b",
+    "c025f6eb2a0e7ee7521d66b96fc083415292245156b5d45979fa6fa1536cc641",
+    "4b108edbbd1393e86c3087afdc7716a78464320558708edc07b5288eb6e6c399",
+    "80260dbbec29b7d7f7fc7b024782092631afe946ac55d31a73cc1fa03ab4f5fe",
+    "63bb28c8a7e9922d41edf157c0db35f81d6782803e5f5143d1d6c4873b082893",
+    "7cc9dbb881a5caf31516601b0c1e7cda25a5b88da560fd85622cdd0a5c80b4c3",
+    "ffed80cbc327083c71ae52d6d37b7f5daff868e4a969a8ed657d823c73724bf1",
+    "9700e9aaca6e94898e246e784cbafcdf7b815443b8315a852884f44a9870b93d",
+    "3b2e4997d1971ed0ad3f94211e22ff24358ea9c8eaa2d091c9513938c9df1744",
+    "0a6664a926682f2e26630b75a7bd4d2408de62ee0d3847716a74311456631b6b",
+    "6131ee8aba731bc575c488d6075a509439ca4c707c415624ed11cec3062b0a32"
+  ],
+  "diagnostic_optimizer_updates": 7,
+  "diagnostic_weights_not_used_for_full_training": true,
+  "updates": [
+    {
+      "update": 1,
+      "arm": "P",
+      "learning_rate": 7.8125e-06,
+      "loss": 5.094475746154785,
+      "terms": {
+        "image_gray": 2.983920097351074,
+        "latent_gray": 3.3973801136016846,
+        "gradient_gray": 3.692692756652832,
+        "pair_reference_residual_gray": 2.5475471019744873,
+        "observation_noise_units": 0.6581416726112366
+      },
+      "gradient_norm": 6.276921272277832,
+      "actual_input_sha256": "81394826c13c6cb4b39e36e5652d849b9012ce3779dc6a3a701b6dc0ceec070d",
+      "source_uint8_sha256": "f6c269b47c0f938ff18b0433c5f016c22baae2548351292b6387b48da702333c",
+      "parent_id": "r128_train_0000",
+      "parent_arrays_sha256": "831c6ab63299ec57935b573c8ab9b24388b2e9da3409fa8af905b6de0bb8a94e",
+      "noise_seed": [
+        128800000,
+        0,
+        0
+      ],
+      "noise_sigma_gray": 3.0,
+      "kernel_sha256": "c84ef9a8aa07129e0e25d0b1cee762ea447d919775eb27ba81eba923a3d29745"
+    },
+    {
+      "update": 2,
+      "arm": "P",
+      "learning_rate": 1.5625e-05,
+      "loss": 18.5950870513916,
+      "terms": {
+        "image_gray": 10.971755981445312,
+        "latent_gray": 15.684821128845215,
+        "gradient_gray": 12.455029487609863,
+        "pair_reference_residual_gray": 4.2335004806518555,
+        "observation_noise_units": 18.22089385986328
+      },
+      "gradient_norm": 25.552274703979492,
+      "actual_input_sha256": "583adeb0090ece6fece5aca11df1e75b8a0d75f173aca3df2fc16c93ce14f2d9",
+      "source_uint8_sha256": "0ce72897d5f0cb333a8890a0d05737dcc06ff19f9b928564db75797c07634818",
+      "parent_id": "r128_train_0001",
+      "parent_arrays_sha256": "350755fb0e42473d34519db039eeb19d7c5d223c3f7b8932a12f11f11acfdc61",
+      "noise_seed": [
+        128800000,
+        0,
+        1
+      ],
+      "noise_sigma_gray": 1.5,
+      "kernel_sha256": "34afd3a29f5d178212e8991bc0943703e7beac0a91662a1f37746e1cc25f4b0e"
+    },
+    {
+      "update": 3,
+      "arm": "P",
+      "learning_rate": 2.34375e-05,
+      "loss": 3.10298752784729,
+      "terms": {
+        "image_gray": 1.998636245727539,
+        "latent_gray": 1.9986364841461182,
+        "gradient_gray": 2.975590705871582,
+        "pair_reference_residual_gray": 0.0,
+        "observation_noise_units": 0.478712260723114
+      },
+      "gradient_norm": 3.3178439140319824,
+      "actual_input_sha256": "312c385c4c584f7a037f259b6f9978b2dc83804e741eabb3af71596d2b838b9a",
+      "source_uint8_sha256": "c389d948db79168beb24db617365400f54d858fdf2ff6979601050abec6c353c",
+      "parent_id": "r128_train_0003",
+      "parent_arrays_sha256": "567a6dc8d9043ed9aba77e7ee798cc7c74b034e59e83c86449cefdaaeef2b803",
+      "noise_seed": [
+        128800000,
+        0,
+        3
+      ],
+      "noise_sigma_gray": 3.0,
+      "kernel_sha256": "a3276665f964b28c01e72a02b1784d5eea33bb8dc73a2c913829e6e033b1a1e4"
+    },
+    {
+      "update": 4,
+      "arm": "P",
+      "learning_rate": 3.125e-05,
+      "loss": 1.2582452297210693,
+      "terms": {
+        "image_gray": 0.6290014982223511,
+        "latent_gray": 1.0681958198547363,
+        "gradient_gray": 0.9098811149597168,
+        "pair_reference_residual_gray": 0.5135000348091125,
+        "observation_noise_units": 3.8759288787841797
+      },
+      "gradient_norm": 18.421951293945312,
+      "actual_input_sha256": "25d30974a7b5c47e63520440b3270ca5838724f4b47eacfe0514e939e6956ef4",
+      "source_uint8_sha256": "03d1342d448ddb01f1b0dcdd0bc87f0368fb8234f7d013ce5b8df8942ea5fa27",
+      "parent_id": "r128_train_0004",
+      "parent_arrays_sha256": "4ad365fe46f71b55fa5ec90f99c28464506f6494f05107114baac81d25bb7679",
+      "noise_seed": [
+        128800000,
+        0,
+        4
+      ],
+      "noise_sigma_gray": 0.5,
+      "kernel_sha256": "f36a1f5f7ced66698358fbc1ee75d00c9b9fcdf9b0565539e23cd0bc8a6bccbe"
+    },
+    {
+      "update": 5,
+      "arm": "P",
+      "learning_rate": 3.90625e-05,
+      "loss": 3.0286924839019775,
+      "terms": {
+        "image_gray": 1.7875620126724243,
+        "latent_gray": 2.1799604892730713,
+        "gradient_gray": 2.043466091156006,
+        "pair_reference_residual_gray": 1.2546947002410889,
+        "observation_noise_units": 1.8254019021987915
+      },
+      "gradient_norm": 4.9168381690979,
+      "actual_input_sha256": "79ae8d2fd8bcd5d4bb0ed57c12b975c6c9f2cbc8784e793d1758eb30cac13115",
+      "source_uint8_sha256": "e57ca04fa8645692a9f4c32050dc03c6c216d3617a0dbb82ebbe9d0f043ef58f",
+      "parent_id": "r128_train_0012",
+      "parent_arrays_sha256": "d82c6e7191e69d450e7991eb1db3e51ff40345fd4a1ecd679bc73f42032dd84c",
+      "noise_seed": [
+        128800000,
+        0,
+        12
+      ],
+      "noise_sigma_gray": 1.5,
+      "kernel_sha256": "bcc52892065049141f6792ba0ef1cd900b658b9b84dd2115bea643a5f9fd7d4d"
+    },
+    {
+      "update": 6,
+      "arm": "P",
+      "learning_rate": 4.6875e-05,
+      "loss": 0.008384596556425095,
+      "terms": {
+        "image_gray": 0.00653268164023757,
+        "latent_gray": 0.006543122231960297,
+        "gradient_gray": 8.132799121085554e-05,
+        "pair_reference_residual_gray": 0.0,
+        "observation_noise_units": 0.009993437677621841
+      },
+      "gradient_norm": 20.222835540771484,
+      "actual_input_sha256": "c33a2e8592bd10bda14ea344a797bb8f2ea5338c40076e298d2310a68a3b49d6",
+      "source_uint8_sha256": "90d843cfaf3900346fe2c30d6cd545d213bb36f6e71a7273ecc084192290a657",
+      "parent_id": "r128_train_0019",
+      "parent_arrays_sha256": "4e9e573e02de17b560658c2b4df4660997564963eb11df019d4d31df6801bc40",
+      "noise_seed": [
+        128800000,
+        0,
+        19
+      ],
+      "noise_sigma_gray": 0.0,
+      "kernel_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    },
+    {
+      "update": 7,
+      "arm": "P",
+      "learning_rate": 5.46875e-05,
+      "loss": 3.716804027557373,
+      "terms": {
+        "image_gray": 2.00242280960083,
+        "latent_gray": 2.5950369834899902,
+        "gradient_gray": 2.9694299697875977,
+        "pair_reference_residual_gray": 2.3586435317993164,
+        "observation_noise_units": 0.0003618175396695733
+      },
+      "gradient_norm": 4.373499870300293,
+      "actual_input_sha256": "a77bae1ab843da400543bef1ced4a127308ba345bf95c9df4552bd7935a89fb8",
+      "source_uint8_sha256": "2156ebb953d713999948183cb1da4a3ceee0b8d0f8ff9c64af0f44a9402699e1",
+      "parent_id": "r128_train_0081",
+      "parent_arrays_sha256": "4a70abbb590e0c5c3f85bed791e9db199f538d58b132d6b70668af34496714b1",
+      "noise_seed": [
+        128800000,
+        0,
+        81
+      ],
+      "noise_sigma_gray": 3.0,
+      "kernel_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+    }
+  ],
+  "arm_loss_difference_error": 1.30385160446167e-08,
+  "arm_gradient_difference_error": 3.0044466257095337e-06,
+  "only_arm_difference": "0.02 times true-simulator observation supervision after forward",
+  "train_photometry": {
+    "low_gray_range": [
+      16.0,
+      210.84195381866073
+    ],
+    "contrast_range": [
+      12.421921289254243,
+      204.87374022068195
+    ]
+  },
+  "seconds": 15.526164999697357,
+  "source_sha256": {
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\training\\data.py": "dfbe0325fce0ec682b787d2a6c6afe6e30a85e86d0c4ecaec4bd215703f8e9ca",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\training\\engine.py": "ccf9a8851cc3b18c1e17691a97836586cc0d476878a23b786968ab22d4669e31",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\training\\objectives.py": "4571936080ecf5feb6094c4159033e64b364202abc8743cb48ae7d0fc5f6d59b",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\training\\__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\network.py": "ce90a7ae3eb2b0b7adaa5a33fa70551d152410320caefe23ed30ded706529880",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\observation.py": "6d521fa1f8ef2fac6af0f5af0b3ce0861d634c84c09730a4f936f9edb49e2801",
+    "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\model\\__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  }
+}

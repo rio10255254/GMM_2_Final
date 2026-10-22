@@ -20,6 +20,8 @@
 
 ## 各類來源的用途
 
+2026-10-22補強直接取得：[原30份平台CSV](../../Shared_Sources/PI_Repeatability_20260903/position_records/README.md)、[SEM原工作表](../../Shared_Sources/SEM_Originals/README.md)、[R128／R129／R135原表與來源證據](project_completion/curated/IMPORTANT_TABLES_20261022.md)。它們原本已在正式附件保存，這次只提出完整小原件，不新增整套影像。
+
 | 來源 | 保留內容與理由 | 解讀限制 |
 |---|---|---|
 | 2026-09-03位移重拍 | 全930張原始BMP與30份原始CSV；原始ZIP、凍結清單與取得脈絡一起保存 | 平台讀值是原實驗參考，不等於已完成獨立物理校正 |

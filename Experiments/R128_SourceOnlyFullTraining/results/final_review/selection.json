@@ -1,0 +1,19 @@
+{
+  "selected_for_further_repair": "P_s1285002",
+  "selected_for_production": null,
+  "reason": [
+    "Complete72-object measurement coverage unlike I_s1285002/P_s1285001",
+    "Only candidate improves all36normal-exposure objects across the SEM definition band",
+    "More dark-exposure improvements than other candidates, but29/36dark objects still worsen",
+    "All6motion pairs remain source-consistent; generated restoration useful but not selection authority"
+  ],
+  "unresolved": [
+    "All16fully-neural dark objects worsen in every candidate",
+    "Clean generated references are modified by all candidates",
+    "Real material-edge equivalence and independent physical displacement are unqualified"
+  ],
+  "original_final_step8192_retained": true,
+  "one_final_application_model_required": true,
+  "no_additional_training_launched": true,
+  "not_a_claim_that_P_objective_is_causally_superior": true
+}

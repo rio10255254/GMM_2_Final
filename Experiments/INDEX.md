@@ -1,5 +1,7 @@
 # 實驗索引 / Experiment Index
 
+2026-10-22閱讀補強：[R128／R129／R135完整重要原表、R61來源名單與失敗](../docs/reproducibility/project_completion/curated/IMPORTANT_TABLES_20261022.md)可直接閱讀；[完整度與容量](../docs/reproducibility/COMPLETENESS_AND_CAPACITY.md)分清已保存與歷史重做限制。原模型與判決保持。
+
 2026-10-22缺件續查：[22份原版與R13原公式已補齊](../docs/reproducibility/KNOWN_GAPS.md)，216項分數及5次原選擇重算相同；[Lab R61內部r36](../docs/reproducibility/lineage/R36_IDENTITIES_20261022.md)有原來源與完整失敗結果，不能當成主專案未知R36。原模型、資料和判決保持。
 
 2026-10-22：[全研究沿革及R1至R153逐號對照](../docs/reproducibility/lineage/README.md)補上Lab共用階段、只在歷史分支的R34／R35／R37，以及原始失敗與來源限制。原有122個主資料夾、26個Lab資料夾、29個早期分組不等於177次獨立訓練；早期R2至R10已由原JSON與日誌串回，R36仍未找到獨立證據，均不補造。

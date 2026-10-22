@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "reference": "historical",
+      "exposure": 13,
+      "pillar": 16,
+      "label": "既有固定比例"
+    },
+    {
+      "reference": "global_pitch_matched",
+      "exposure": 14,
+      "pillar": 12,
+      "label": "柱距修正比例"
+    }
+  ],
+  "reference_labels_explicit": true,
+  "figure": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\reports\\figures\\full_contour_SEM_overlay_labeled.png",
+    "sha256": "00928eb8cbc8f17672e1eeb154c331ce6b0b5f980a617713ac7624f1d4f89ccf"
+  },
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\full_contour\\render_labeled.py",
+    "sha256": "52c84d51cdaa25cc4f21a0a58a795814f8bb0af22ea0ffd9b978633f0010f1f4"
+  },
+  "prior_figure_retained": true
+}

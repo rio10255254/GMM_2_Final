@@ -1,0 +1,643 @@
+{
+  "passed": true,
+  "verified_utc": "2026-09-09T15:33:53.533016+00:00",
+  "unique_training_updates": 32768,
+  "replayed_calls_not_counted_twice": 224,
+  "total_full_training_optimizer_calls": 32992,
+  "all_four_runs_same_actual_inputs_and_order": true,
+  "independently_rebuilt_actual_inputs": [
+    {
+      "step": 1,
+      "parent": "r128_train_0061",
+      "exact": true
+    },
+    {
+      "step": 128,
+      "parent": "r128_train_0354",
+      "exact": true
+    },
+    {
+      "step": 256,
+      "parent": "r128_train_0301",
+      "exact": true
+    },
+    {
+      "step": 512,
+      "parent": "r128_train_0199",
+      "exact": true
+    },
+    {
+      "step": 513,
+      "parent": "r128_train_0285",
+      "exact": true
+    },
+    {
+      "step": 640,
+      "parent": "r128_train_0033",
+      "exact": true
+    },
+    {
+      "step": 768,
+      "parent": "r128_train_0110",
+      "exact": true
+    },
+    {
+      "step": 1024,
+      "parent": "r128_train_0304",
+      "exact": true
+    },
+    {
+      "step": 1025,
+      "parent": "r128_train_0160",
+      "exact": true
+    },
+    {
+      "step": 1152,
+      "parent": "r128_train_0316",
+      "exact": true
+    },
+    {
+      "step": 1280,
+      "parent": "r128_train_0330",
+      "exact": true
+    },
+    {
+      "step": 1536,
+      "parent": "r128_train_0306",
+      "exact": true
+    },
+    {
+      "step": 1537,
+      "parent": "r128_train_0449",
+      "exact": true
+    },
+    {
+      "step": 1664,
+      "parent": "r128_train_0204",
+      "exact": true
+    },
+    {
+      "step": 1792,
+      "parent": "r128_train_0089",
+      "exact": true
+    },
+    {
+      "step": 2048,
+      "parent": "r128_train_0022",
+      "exact": true
+    },
+    {
+      "step": 2049,
+      "parent": "r128_train_0208",
+      "exact": true
+    },
+    {
+      "step": 2176,
+      "parent": "r128_train_0450",
+      "exact": true
+    },
+    {
+      "step": 2304,
+      "parent": "r128_train_0080",
+      "exact": true
+    },
+    {
+      "step": 2560,
+      "parent": "r128_train_0136",
+      "exact": true
+    },
+    {
+      "step": 2561,
+      "parent": "r128_train_0360",
+      "exact": true
+    },
+    {
+      "step": 2688,
+      "parent": "r128_train_0431",
+      "exact": true
+    },
+    {
+      "step": 2816,
+      "parent": "r128_train_0241",
+      "exact": true
+    },
+    {
+      "step": 3072,
+      "parent": "r128_train_0263",
+      "exact": true
+    },
+    {
+      "step": 3073,
+      "parent": "r128_train_0462",
+      "exact": true
+    },
+    {
+      "step": 3200,
+      "parent": "r128_train_0132",
+      "exact": true
+    },
+    {
+      "step": 3328,
+      "parent": "r128_train_0096",
+      "exact": true
+    },
+    {
+      "step": 3584,
+      "parent": "r128_train_0021",
+      "exact": true
+    },
+    {
+      "step": 3585,
+      "parent": "r128_train_0333",
+      "exact": true
+    },
+    {
+      "step": 3712,
+      "parent": "r128_train_0371",
+      "exact": true
+    },
+    {
+      "step": 3840,
+      "parent": "r128_train_0450",
+      "exact": true
+    },
+    {
+      "step": 4096,
+      "parent": "r128_train_0277",
+      "exact": true
+    },
+    {
+      "step": 4097,
+      "parent": "r128_train_0472",
+      "exact": true
+    },
+    {
+      "step": 4224,
+      "parent": "r128_train_0396",
+      "exact": true
+    },
+    {
+      "step": 4352,
+      "parent": "r128_train_0250",
+      "exact": true
+    },
+    {
+      "step": 4608,
+      "parent": "r128_train_0433",
+      "exact": true
+    },
+    {
+      "step": 4609,
+      "parent": "r128_train_0181",
+      "exact": true
+    },
+    {
+      "step": 4736,
+      "parent": "r128_train_0111",
+      "exact": true
+    },
+    {
+      "step": 4864,
+      "parent": "r128_train_0328",
+      "exact": true
+    },
+    {
+      "step": 5120,
+      "parent": "r128_train_0030",
+      "exact": true
+    },
+    {
+      "step": 5121,
+      "parent": "r128_train_0042",
+      "exact": true
+    },
+    {
+      "step": 5248,
+      "parent": "r128_train_0276",
+      "exact": true
+    },
+    {
+      "step": 5376,
+      "parent": "r128_train_0345",
+      "exact": true
+    },
+    {
+      "step": 5632,
+      "parent": "r128_train_0470",
+      "exact": true
+    },
+    {
+      "step": 5633,
+      "parent": "r128_train_0317",
+      "exact": true
+    },
+    {
+      "step": 5760,
+      "parent": "r128_train_0077",
+      "exact": true
+    },
+    {
+      "step": 5888,
+      "parent": "r128_train_0130",
+      "exact": true
+    },
+    {
+      "step": 6144,
+      "parent": "r128_train_0194",
+      "exact": true
+    },
+    {
+      "step": 6145,
+      "parent": "r128_train_0386",
+      "exact": true
+    },
+    {
+      "step": 6272,
+      "parent": "r128_train_0140",
+      "exact": true
+    },
+    {
+      "step": 6400,
+      "parent": "r128_train_0293",
+      "exact": true
+    },
+    {
+      "step": 6656,
+      "parent": "r128_train_0300",
+      "exact": true
+    },
+    {
+      "step": 6657,
+      "parent": "r128_train_0116",
+      "exact": true
+    },
+    {
+      "step": 6784,
+      "parent": "r128_train_0022",
+      "exact": true
+    },
+    {
+      "step": 6912,
+      "parent": "r128_train_0365",
+      "exact": true
+    },
+    {
+      "step": 7168,
+      "parent": "r128_train_0347",
+      "exact": true
+    },
+    {
+      "step": 7169,
+      "parent": "r128_train_0409",
+      "exact": true
+    },
+    {
+      "step": 7296,
+      "parent": "r128_train_0007",
+      "exact": true
+    },
+    {
+      "step": 7424,
+      "parent": "r128_train_0111",
+      "exact": true
+    },
+    {
+      "step": 7680,
+      "parent": "r128_train_0028",
+      "exact": true
+    },
+    {
+      "step": 7681,
+      "parent": "r128_train_0245",
+      "exact": true
+    },
+    {
+      "step": 7808,
+      "parent": "r128_train_0418",
+      "exact": true
+    },
+    {
+      "step": 7936,
+      "parent": "r128_train_0141",
+      "exact": true
+    },
+    {
+      "step": 8192,
+      "parent": "r128_train_0433",
+      "exact": true
+    }
+  ],
+  "maximum_loss_formula_relative_error": 1.6766045947116666e-07,
+  "all768_data_files_and_metadata_unchanged": true,
+  "historical_protected_files_unchanged": 5403,
+  "real_output_files_verified": 480,
+  "runs": [
+    {
+      "run": "I_s1285001",
+      "unique_updates": 8192,
+      "replayed_calls": 113,
+      "checkpoint": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285001\\checkpoints\\step8192.pth",
+        "sha256": "d1705e30017a9665f870090a7027f4328ad624807d222e516ef77adfe8e9febd"
+      },
+      "generated_evaluations": [
+        {
+          "split": "dev",
+          "step": 0,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 512,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 1024,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 2048,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 4096,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 6144,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 8192,
+          "parents": 128
+        },
+        {
+          "split": "test",
+          "step": 8192,
+          "parents": 128
+        }
+      ],
+      "real_evaluations": [
+        {
+          "step": 1024,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        },
+        {
+          "step": 4096,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        },
+        {
+          "step": 8192,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        }
+      ],
+      "completion": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285001\\completion.json",
+        "sha256": "6252e7be4b0a0bda835f65db9730f63e46f1aa17a3a411bfae40a56abf54bc3d"
+      }
+    },
+    {
+      "run": "P_s1285001",
+      "unique_updates": 8192,
+      "replayed_calls": 0,
+      "checkpoint": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285001\\checkpoints\\step8192.pth",
+        "sha256": "3c671c63f6868f9bfb0ae506e15dc660dc8fd58feaf36596dbaa3422e48f8a49"
+      },
+      "generated_evaluations": [
+        {
+          "split": "dev",
+          "step": 0,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 512,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 1024,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 2048,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 4096,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 6144,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 8192,
+          "parents": 128
+        },
+        {
+          "split": "test",
+          "step": 8192,
+          "parents": 128
+        }
+      ],
+      "real_evaluations": [
+        {
+          "step": 1024,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        },
+        {
+          "step": 4096,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        },
+        {
+          "step": 8192,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        }
+      ],
+      "completion": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285001\\completion.json",
+        "sha256": "82dfcf211b72210b7da5d2faf12c94877c3fb6a8ac18d88dbf7f13d997c5522b"
+      }
+    },
+    {
+      "run": "I_s1285002",
+      "unique_updates": 8192,
+      "replayed_calls": 111,
+      "checkpoint": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285002\\checkpoints\\step8192.pth",
+        "sha256": "86ac7948a5e92e1ba81633abcdf0ec4d23b7e61457c8968b65433dd4302fad44"
+      },
+      "generated_evaluations": [
+        {
+          "split": "dev",
+          "step": 0,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 512,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 1024,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 2048,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 4096,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 6144,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 8192,
+          "parents": 128
+        },
+        {
+          "split": "test",
+          "step": 8192,
+          "parents": 128
+        }
+      ],
+      "real_evaluations": [
+        {
+          "step": 1024,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        },
+        {
+          "step": 4096,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        },
+        {
+          "step": 8192,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        }
+      ],
+      "completion": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285002\\completion.json",
+        "sha256": "2fa7337eb70c5760eaeb4eb47337eb99184d9b52cc8827a25a9a8d9e012029e8"
+      }
+    },
+    {
+      "run": "P_s1285002",
+      "unique_updates": 8192,
+      "replayed_calls": 0,
+      "checkpoint": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\checkpoints\\step8192.pth",
+        "sha256": "9fbdffa3bebe0a37e3f7c2b09239e2e00de6b0522feb101571fcfb7a42699abf"
+      },
+      "generated_evaluations": [
+        {
+          "split": "dev",
+          "step": 0,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 512,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 1024,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 2048,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 4096,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 6144,
+          "parents": 128
+        },
+        {
+          "split": "dev",
+          "step": 8192,
+          "parents": 128
+        },
+        {
+          "split": "test",
+          "step": 8192,
+          "parents": 128
+        }
+      ],
+      "real_evaluations": [
+        {
+          "step": 1024,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        },
+        {
+          "step": 4096,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        },
+        {
+          "step": 8192,
+          "images": 18,
+          "SEM_rows": 72,
+          "motion_pairs": 6
+        }
+      ],
+      "completion": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\completion.json",
+        "sha256": "93c294685e767b76638ec71ad0ab9fdf46036c9227aa733bb778a3aabc52efc4"
+      }
+    }
+  ],
+  "completed_UTC": "2026-09-09T13:55:38.383074+00:00",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\final_review\\audit_execution.py",
+    "sha256": "21ee7002c28052e97fd2264f1086e5d10354ba230dce34ce485826bdbe7ed7a9"
+  },
+  "seconds": 61.393432000186294,
+  "scientific_effectiveness_not_implied_by_execution": true
+}

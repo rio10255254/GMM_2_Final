@@ -1,0 +1,103 @@
+{
+  "verified_utc": "2026-09-10T10:01:40.844889+00:00",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\lsc_comparison\\analyze.py",
+    "sha256": "f4b1d149c9b251ac06f330f04e6cdb5f94381ca95d22b1c674f7ac0b08c43e66"
+  },
+  "checks": [
+    {
+      "method": "Raw",
+      "centers": 1431,
+      "pairs": 120,
+      "arithmetic_max_differences": {
+        "aggregate_dx_um": 7.860379014346108e-14,
+        "aggregate_dy_um": 3.929842562477859e-14,
+        "measured_step_um": 7.860379014346108e-14,
+        "nominal_abs_error_nm": 7.860379014346108e-11,
+        "within_grid_sd_nm": 2.822631017806998e-11,
+        "cross_axis_abs_nm": 3.9221986769533146e-11
+      },
+      "alternate_fit_max_difference_px": 1.8786563487083185e-06
+    },
+    {
+      "method": "R61v16_PSFOFF",
+      "centers": 1431,
+      "pairs": 120,
+      "arithmetic_max_differences": {
+        "aggregate_dx_um": 1.176836406102666e-13,
+        "aggregate_dy_um": 3.929148673087468e-14,
+        "measured_step_um": 1.176836406102666e-13,
+        "nominal_abs_error_nm": 1.176836406102666e-10,
+        "within_grid_sd_nm": 3.681499549657019e-11,
+        "cross_axis_abs_nm": 3.922373537079693e-11
+      },
+      "alternate_fit_max_difference_px": 5.932590738666477e-07
+    },
+    {
+      "method": "R128_P_s1285002",
+      "centers": 1431,
+      "pairs": 120,
+      "arithmetic_max_differences": {
+        "aggregate_dx_um": 1.176836406102666e-13,
+        "aggregate_dy_um": 3.930883396563445e-14,
+        "measured_step_um": 1.176836406102666e-13,
+        "nominal_abs_error_nm": 1.17685416967106e-10,
+        "within_grid_sd_nm": 4.087130633934066e-11,
+        "cross_axis_abs_nm": 3.922195901395753e-11
+      },
+      "alternate_fit_max_difference_px": 8.314648312079953e-07
+    },
+    {
+      "method": "R128_no_FOV_guard_diagnostic",
+      "centers": 1431,
+      "pairs": 120,
+      "arithmetic_max_differences": {
+        "aggregate_dx_um": 1.176836406102666e-13,
+        "aggregate_dy_um": 3.915444357627251e-14,
+        "measured_step_um": 1.176836406102666e-13,
+        "nominal_abs_error_nm": 1.17685416967106e-10,
+        "within_grid_sd_nm": 6.10356210017926e-11,
+        "cross_axis_abs_nm": 3.922195901395753e-11
+      },
+      "alternate_fit_max_difference_px": 5.378695959734614e-07
+    }
+  ],
+  "all159_native_outputs_verified": true,
+  "all7primary_methods_same120pairs": true,
+  "all5724_saved_boundary_circles_independently_refitted": true,
+  "guard_reconstruction_max": 0.0,
+  "fully_neural_reader_guard_parity": {
+    "lsc_center_x_px": 0.0,
+    "lsc_center_y_px": 0.0,
+    "lsc_radius_px": 0.0
+  },
+  "Raw_historical_parity": {
+    "lsc_center_x_px": 4.547473508864641e-13,
+    "lsc_center_y_px": 1.1368683772161603e-13,
+    "lsc_radius_px": 3.552713678800501e-15,
+    "measured_step_um": 2.220446049250313e-16,
+    "within_grid_sd_nm": 7.105427357601002e-15,
+    "nominal_abs_error_nm": 7.105427357601002e-15,
+    "cross_axis_abs_nm": 7.105427357601002e-15
+  },
+  "R61_reproduction": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\R61_reproduction.json",
+    "sha256": "fa0c507e23af92cec5b74ae634b1641624eeec984a9944a922be79e9cc93bd51"
+  },
+  "original_source_records_unchanged": true,
+  "frozen_checkpoints_unchanged": true,
+  "no_training": true,
+  "no_new_confirmation": true,
+  "primary_summary": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\combined_summary.csv",
+    "sha256": "1c1e06254092404cba6c231d3fc316eb9788c812ab52e0a305094ea9bef2aad4"
+  },
+  "primary_pairs": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\combined_pairs.csv",
+    "sha256": "918a7b6ad59bd6d88494c1e02f1557bddab9de5e42a248a1f6dd29d505c982b8"
+  },
+  "plan": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\plan.json",
+    "sha256": "fdeb720f8d91cd2dcd06688200e4eb9f5286c0cefa97a1df4883030bb581ceba"
+  }
+}

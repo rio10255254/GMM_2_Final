@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "verified_utc": "2026-09-10T08:32:00.593314+00:00",
+  "all1944_rows_valid": true,
+  "all108_primary_Raw_masks_bitwise_equal": true,
+  "SEM_masks_identical_to_fixed_sources": true,
+  "common_Raw_alignment_independently_verified": true,
+  "independent_numeric_max_differences": {
+    "mean_boundary_px": 2.9474179685795576e-07,
+    "hd95_px": 4.7198288233296637e-07,
+    "iou": 7.831094051002907e-08,
+    "area_error_pct": 7.224736053856873e-07
+  },
+  "support_contact_rows": 0,
+  "original_sources_unchanged": true,
+  "plan": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\plan.json",
+    "sha256": "5e7c05c51491c92c9274d13d5b552d0c0ec28a9ed427f6d9943e37fe35c9520e"
+  },
+  "masks": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\masks.mat",
+    "sha256": "b80e5eec52980c86c854fc9a6d194d680b446cce194a538b653f6e34a9f47196"
+  },
+  "measurements": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\measurements.csv",
+    "sha256": "082f1178e5f3b981ab47fdc9fe709c050cd03edccbeb503773711a395ff59b2f"
+  },
+  "independent_source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\full_contour\\analyze.py",
+    "sha256": "95a700551cc5d10fba8891a0d8f4a513894382e2a681a5b76ca98e76aaa3b6a4"
+  },
+  "fine_shape_properties_from_unchanged_MATLAB_regionprops": true
+}

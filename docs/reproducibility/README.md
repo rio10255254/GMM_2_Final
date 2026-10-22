@@ -6,6 +6,8 @@
 
 ## 從研究問題進入
 
+[完整度與容量現況](COMPLETENESS_AND_CAPACITY.md)／[R128、R129、R135的重要原表與失敗](project_completion/curated/IMPORTANT_TABLES_20261022.md)。
+
 | 目的 | 入口 |
 |---|---|
 | 第一次看，或換電腦後從哪裡開始 | [閱讀與取得指南](GETTING_STARTED.md) |

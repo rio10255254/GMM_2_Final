@@ -1,6 +1,6 @@
 # PROJECT STATE / 專案狀態
 
-Last updated: 2026-10-22（22份原版與R13公式已找回；Lab內部r36與未知主R36分清）
+Last updated: 2026-10-22（精選重要原表與共用原始來源補強；完整度與容量分清）
 
 專案控制與整體巡檢請使用 `python Tools/project_control_center.py`。
 機器真相：`ESTIMATOR_POLICY.json`。
@@ -23,6 +23,9 @@ Last updated: 2026-10-22（22份原版與R13公式已找回；Lab內部r36與未
 - 首頁、文件區、保存紀錄及論文證據入口重新整理；全部根層資料夾有說明。[專案地圖](docs/navigation/PROJECT_MAP.md)、[開始閱讀](docs/reproducibility/GETTING_STARTED.md)、[按用途取得附件](docs/reproducibility/ASSET_GUIDE.md)。
 - 模型自身大小與附件下載大小分清；舊版長篇說明仍在固定歷史，已撤草稿不再列當前待辦。[關鍵模型](docs/reproducibility/MODEL_GUIDE.md)、[缺件及限定查找](docs/reproducibility/KNOWN_GAPS.md)。
 
+### 原表與必要來源直接閱讀
+- [完整度與容量](docs/reproducibility/COMPLETENESS_AND_CAPACITY.md)：本批提出247份原件約14.64MB；216份重要原表／來源紀錄、30份原平台CSV及1份SEM工作表，沒有新增模型或整套影像。[用途與限制](docs/reproducibility/project_completion/curated/IMPORTANT_TABLES_20261022.md)。
+
 ### 已知缺件與歷史範圍
 - 22份R94／R95原版及R13較早原公式已找回：內容核對相同，216分數／5選擇重算通過。Lab R61內部r36有原紀錄，獨立主R36仍未辨認；9個原先未寫出的ANN量不補造。沒有冒稱重跑全部歷史GPU訓練。
 - 原盤點中的程式／文件／數表已由已發布內容或原Git歷史對應；1,258份可再安裝的舊套件檔只留環境版本與用途。
@@ -36,6 +39,18 @@ Last updated: 2026-10-22（22份原版與R13公式已找回；Lab內部r36與未
 ---
 
 ## Full Current State / 完整現況
+
+
+### 精選重要原表與不可替代來源的直接閱讀（2026-10-22）
+
+使用者詢問GitHub完整度、容量並要求在允許範圍補必要／重要資料。核對時一般程式／歷史API約1.66GB，23個發布版本211附件共124655463930 bytes，草稿0；官方大小建議不是剩餘配額。容量不是本批小型重要來源的阻礙，舊全量流程仍停用。
+
+按原報告用途選取R128四組最後288筆SEM、完整輪廓與LSC、R129短測864筆／長訓練540筆及完整位移、R135七方法全觀察與R61答案來源證據，共216原檔14497632 bytes。原失敗、不可讀物件、兩種精度與不同資料母體保留；R61完整20296列名單與來源解釋一起留。六個原比較模型和R128四組最後模型都已有既有精確來源，新增模型0。
+
+另將30份原平台CSV105946 bytes提出為共用只讀閱讀投影，原930張照片仍沿同一原ZIP；加入40628-byte SEM原工作表。合計247份原件14644206 bytes；不新增整套影像、陣列或模型。這些原件之前已在正式附件保存，本次改善直接查閱，不聲稱新發現此前完全未保存。原科學判決、D分支／索引、模型、論文與活動訓練保留。[本批用途](docs/reproducibility/project_completion/curated/IMPORTANT_TABLES_20261022.md)／[現況與容量](docs/reproducibility/COMPLETENESS_AND_CAPACITY.md)。
+
+本批沒有重新盤點全部磁碟或重跑歷史訓練。主專案獨立R36未辨認、R95早期未保存狀態及9個原未寫出ANN量仍是重做界線；不能以儲存空間多或本批列數當作全部歷史100%重現的證據。
+
 
 
 ### 原缺件續查與重做界線（2026-10-22）
