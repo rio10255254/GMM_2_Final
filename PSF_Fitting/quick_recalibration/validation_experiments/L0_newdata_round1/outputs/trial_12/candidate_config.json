@@ -1,0 +1,25 @@
+{
+  "entry_point": "HDR_fitting_2D_WholeFOV_candidate_prealign",
+  "subset_indices": [
+    1,
+    6,
+    11,
+    56,
+    61,
+    66,
+    111,
+    116,
+    121
+  ],
+  "warm_start": true,
+  "pre_alignment": false,
+  "lock_tilt": true,
+  "prealign_search_radius": 2,
+  "prealign_search_step": 0.25,
+  "project_root": "D:\\GMM_2_Final\\PSF_Fitting",
+  "input_folder": "quick_recalibration\\validation_experiments\\L0_newdata_round1\\inputs_primary",
+  "gt_path": "quick_recalibration\\validation_experiments\\L0_newdata_round1\\inputs_primary\\GT\\GT_901_with_Block_proc.bmp",
+  "loss_mask_path": "quick_recalibration\\validation_experiments\\L0_newdata_round1\\inputs_primary\\GT\\circle_edge_mask.bmp",
+  "output_dir": "quick_recalibration\\validation_experiments\\L0_newdata_round1\\outputs\\trial_12",
+  "generated_at": "2026-06-16 21:31:26"
+}

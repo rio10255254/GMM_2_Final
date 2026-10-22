@@ -1,5 +1,7 @@
 # 共用研究來源
 
+2026-10-22新增：[PSF100與0615原拍歸檔](PSF_Camera_Acquisitions/README.md)，分清826張完整原拍、100張實際處理輸入與既有788張Step；按用途取得，不重傳生成圖。
+
 2026-10-22補入直接閱讀入口：[30份原平台CSV](PI_Repeatability_20260903/position_records/README.md)與[原SEM工作表](SEM_Originals/README.md)，內容不改；完整相機／SEM照片仍共用原附件。
 
 共用原始資料集中保存一次，各輪實驗引用同一份來源。照片與儀器紀錄不能靠合成資料生成程式取代；必要來源隨 GitHub 版本附件保存，日常程式倉庫保留說明、逐檔核對依據與恢復工具。
