@@ -1,0 +1,58 @@
+{
+  "original_summary": "H:\\GMM_2_Final_Archive\\experiments\\R42_MicroscopyBoundaryFidelity\\20260824_full_history\\snapshot\\results\\weight_sweep\\r42_r41_best_lowalpha\\sweep_summary.json",
+  "parents": [
+    {
+      "role": "combo_checkpoint",
+      "original_path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+      "sha256": "7a0e51769b0eac28bce81aab47e6495ef1a82b313b84edefc6a95bd838a51dca",
+      "published_providers": [
+        {
+          "path_key": "traing_progress/training_progress_geoedgealignsr_v1_v5_nocoord_simpletest_20260408_003525/weights/best_tradeoff.pth.tar",
+          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+          "bytes": 52636306,
+          "sha256": "7a0e51769b0eac28bce81aab47e6495ef1a82b313b84edefc6a95bd838a51dca",
+          "release": "research-results-models-20261016",
+          "asset": "research-fixed-models-012.zip"
+        },
+        {
+          "asset": "research-fixed-models-012.zip",
+          "sha256": "7a0e51769b0eac28bce81aab47e6495ef1a82b313b84edefc6a95bd838a51dca",
+          "release": "research-history-curated-20261022"
+        }
+      ]
+    },
+    {
+      "role": "candidate_checkpoint",
+      "original_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar",
+      "sha256": "734c8cdda098efa480d0489067e648c995722472b8318184a6cf55bc53c6e2e6",
+      "published_providers": [
+        {
+          "path_key": "experiments/r42_microscopyboundaryfidelity/results/archive_retained_20260824/training_checkpoints/training_progress_gesr_v1_v5_st0p8_swp_r42_boundary_from_r41_20260505_145229/best_tradeoff.pth.tar",
+          "path": "Experiments/R42_MicroscopyBoundaryFidelity/results/archive_retained_20260824/training_checkpoints/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/best_tradeoff.pth.tar",
+          "bytes": 52636306,
+          "sha256": "734c8cdda098efa480d0489067e648c995722472b8318184a6cf55bc53c6e2e6",
+          "release": "research-results-models-20261016",
+          "asset": "research-fixed-models-011.zip"
+        },
+        {
+          "path_key": "traing_progress/training_progress_gesr_v1_v5_st0p8_swp_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar",
+          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar",
+          "bytes": 52636306,
+          "sha256": "734c8cdda098efa480d0489067e648c995722472b8318184a6cf55bc53c6e2e6",
+          "release": "research-results-models-20261016",
+          "asset": "research-fixed-models-011.zip"
+        }
+      ]
+    }
+  ],
+  "alphas": [
+    0.01,
+    0.02,
+    0.03,
+    0.05
+  ],
+  "source_program": "Experiments/R42_MicroscopyBoundaryFidelity/scripts/r42_weight_sweep.py",
+  "function": "interpolate_state_dicts",
+  "action": "Preserve original interpolation recipe, parent identities and results; do not re-upload four deterministic blended checkpoints",
+  "training_or_inference_rerun": false
+}

@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "guard": 0.25,
+  "disabled": [
+    "radiometry"
+  ],
+  "order": [
+    "denoise",
+    "edge",
+    "texture"
+  ],
+  "metrics": {
+    "train": {
+      "images": 384,
+      "raw_mae_gray": 3.99668681435287,
+      "model_mae_gray": 3.631945811212063,
+      "improved_fraction": 0.7213541666666666,
+      "raw_edge_mae_gray": 5.14985891059041,
+      "model_edge_mae_gray": 4.530088417232037,
+      "output_change_gray": 1.0963082662783563,
+      "identity_change_gray": 0.18905722245108336
+    },
+    "validation": {
+      "images": 96,
+      "raw_mae_gray": 4.199102902784944,
+      "model_mae_gray": 3.778583030216396,
+      "improved_fraction": 0.7604166666666666,
+      "raw_edge_mae_gray": 5.387620702385902,
+      "model_edge_mae_gray": 4.701226009055972,
+      "output_change_gray": 1.1251400504261255,
+      "identity_change_gray": 0.1869460943271406
+    },
+    "holdout": {
+      "images": 96,
+      "raw_mae_gray": 6.011383356526494,
+      "model_mae_gray": 5.685009844601154,
+      "improved_fraction": 0.625,
+      "raw_edge_mae_gray": 7.667693104594946,
+      "model_edge_mae_gray": 7.115251198410988,
+      "output_change_gray": 1.283209074754268,
+      "identity_change_gray": 0.1642464241012931
+    },
+    "real": {
+      "change_gray": 1.2867234705481678,
+      "edge_gain": 1.1311700940132141,
+      "fine_detail_ratio": 1.0446518659591675
+    }
+  }
+}

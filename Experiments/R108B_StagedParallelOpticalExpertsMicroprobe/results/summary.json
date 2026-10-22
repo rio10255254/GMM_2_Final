@@ -1,0 +1,233 @@
+{
+  "status": "complete",
+  "device": "cuda:0",
+  "data_manifest": {
+    "status": "complete",
+    "counts": {
+      "train": 384,
+      "validation": 96,
+      "holdout": 96
+    },
+    "train_families": [
+      "circle",
+      "ellipse",
+      "rectangle",
+      "polygon",
+      "lobed",
+      "ring"
+    ],
+    "holdout_families": [
+      "crescent",
+      "thin_neck",
+      "rough",
+      "mixed_array"
+    ],
+    "roles": [
+      "edge",
+      "texture",
+      "denoise",
+      "illumination",
+      "identity",
+      "mixed"
+    ],
+    "real_training_pixels": false,
+    "old_checkpoint_or_teacher": false,
+    "sha256": "e01a97bc2b361195d550a6f3c5262e354b2424f8676ae9045c6abed765d39185"
+  },
+  "proposal_checkpoints_reused_after_selector_tensor_fix": true,
+  "selector_checkpoint_reused_for_halo96_revalidation": true,
+  "arms": {
+    "direct_parallel": {
+      "validation": {
+        "name": "direct_parallel",
+        "images": 96,
+        "raw_mae_gray": 4.199102902784944,
+        "model_mae_gray": 3.381634005345404,
+        "mae_improved_fraction": 0.7916666666666666,
+        "raw_edge_mae_gray": 5.387620702385902,
+        "model_edge_mae_gray": 5.105555187910795,
+        "median_iou": 0.9908625799443784,
+        "median_centroid_error_px": 0.0655789101653314,
+        "added_topology_failures": 3,
+        "identity_change_gray": 0.7069432188291103,
+        "output_change_gray": 2.173070381395519,
+        "alpha_mean": 1.0,
+        "alpha_identity_mean": 1.0,
+        "branch_abs_gray": {
+          "denoise": 2.023950755596161,
+          "edge": 0.00920236250385642,
+          "texture": 0.41268713772296906,
+          "radiometry": 0.04466387629508972
+        }
+      },
+      "holdout": {
+        "name": "direct_parallel",
+        "images": 96,
+        "raw_mae_gray": 6.011383356526494,
+        "model_mae_gray": 4.960512695834041,
+        "mae_improved_fraction": 0.71875,
+        "raw_edge_mae_gray": 7.667693104594946,
+        "model_edge_mae_gray": 7.196437641978264,
+        "median_iou": 0.9752209284476898,
+        "median_centroid_error_px": 0.1779964150084098,
+        "added_topology_failures": 8,
+        "identity_change_gray": 0.5855258402880281,
+        "output_change_gray": 2.705949987284839,
+        "alpha_mean": 1.0,
+        "alpha_identity_mean": 1.0,
+        "branch_abs_gray": {
+          "denoise": 2.5700716972351074,
+          "edge": 0.010392717318609357,
+          "texture": 0.45744818449020386,
+          "radiometry": 0.04772218130528927
+        }
+      }
+    },
+    "joint_unsupervised_gate": {
+      "validation": {
+        "name": "joint_unsupervised_gate",
+        "images": 96,
+        "raw_mae_gray": 4.199102902784944,
+        "model_mae_gray": 3.3385666413232684,
+        "mae_improved_fraction": 0.8229166666666666,
+        "raw_edge_mae_gray": 5.387620702385902,
+        "model_edge_mae_gray": 4.9790538009256124,
+        "median_iou": 0.9915449034005543,
+        "median_centroid_error_px": 0.06438224455224636,
+        "added_topology_failures": 3,
+        "identity_change_gray": 0.688223879551515,
+        "output_change_gray": 2.203835193067789,
+        "alpha_mean": 0.980991780757904,
+        "alpha_identity_mean": 0.9695932269096375,
+        "branch_abs_gray": {
+          "denoise": 2.027694493532181,
+          "edge": 0.00413215858861804,
+          "texture": 0.5747783035039902,
+          "radiometry": 0.10258346050977707
+        }
+      },
+      "holdout": {
+        "name": "joint_unsupervised_gate",
+        "images": 96,
+        "raw_mae_gray": 6.011383356526494,
+        "model_mae_gray": 4.959419304504991,
+        "mae_improved_fraction": 0.71875,
+        "raw_edge_mae_gray": 7.667693104594946,
+        "model_edge_mae_gray": 7.103628572076559,
+        "median_iou": 0.9750195626752948,
+        "median_centroid_error_px": 0.18684667115810882,
+        "added_topology_failures": 9,
+        "identity_change_gray": 0.6181031547021121,
+        "output_change_gray": 2.7450019167736173,
+        "alpha_mean": 0.9831335544586182,
+        "alpha_identity_mean": 0.9696059226989746,
+        "branch_abs_gray": {
+          "denoise": 2.574556350708008,
+          "edge": 0.004095199168659747,
+          "texture": 0.623005136847496,
+          "radiometry": 0.13594472780823708
+        }
+      }
+    },
+    "staged_outcome_selector": {
+      "validation": {
+        "name": "staged_outcome_selector",
+        "images": 96,
+        "raw_mae_gray": 4.199102902784944,
+        "model_mae_gray": 3.3819802617654204,
+        "mae_improved_fraction": 0.7916666666666666,
+        "raw_edge_mae_gray": 5.387620702385902,
+        "model_edge_mae_gray": 5.105849672108889,
+        "median_iou": 0.9908625799443784,
+        "median_centroid_error_px": 0.0655789101653314,
+        "added_topology_failures": 3,
+        "identity_change_gray": 0.7066065806429833,
+        "output_change_gray": 2.170959832146764,
+        "alpha_mean": 0.9990520477294922,
+        "alpha_identity_mean": 0.9988880753517151,
+        "branch_abs_gray": {
+          "denoise": 2.023950755596161,
+          "edge": 0.00920236250385642,
+          "texture": 0.41268713772296906,
+          "radiometry": 0.04466387629508972
+        }
+      },
+      "holdout": {
+        "name": "staged_outcome_selector",
+        "images": 96,
+        "raw_mae_gray": 6.011383356526494,
+        "model_mae_gray": 4.960982920601964,
+        "mae_improved_fraction": 0.71875,
+        "raw_edge_mae_gray": 7.667693104594946,
+        "model_edge_mae_gray": 7.196821421384811,
+        "median_iou": 0.9752209284476898,
+        "median_centroid_error_px": 0.1779964150084098,
+        "added_topology_failures": 8,
+        "identity_change_gray": 0.5854782240930945,
+        "output_change_gray": 2.704057451337576,
+        "alpha_mean": 0.9991785883903503,
+        "alpha_identity_mean": 0.9992994070053101,
+        "branch_abs_gray": {
+          "denoise": 2.5700716972351074,
+          "edge": 0.010392717318609357,
+          "texture": 0.45744818449020386,
+          "radiometry": 0.04772218130528927
+        }
+      }
+    }
+  },
+  "tile": {
+    "direct_parallel": {
+      "global_mean_abs_gray": 0.23626172542572021,
+      "global_max_abs_gray": 111.0517349243164,
+      "interior_mean_abs_gray": 5.280630375636974e-06,
+      "interior_p99_abs_gray": 6.079673767089844e-05,
+      "interior_max_abs_gray": 0.0006383657455444336,
+      "seam_mean_abs_gray": 5.338092250894988e-06,
+      "seam_p99_abs_gray": 6.079673767089844e-05,
+      "seam_max_abs_gray": 0.0005775690078735352
+    },
+    "joint_unsupervised_gate": {
+      "global_mean_abs_gray": 0.17127831280231476,
+      "global_max_abs_gray": 78.9149169921875,
+      "interior_mean_abs_gray": 6.909699550305959e-06,
+      "interior_p99_abs_gray": 7.599592208862305e-05,
+      "interior_max_abs_gray": 0.0004863739013671875,
+      "seam_mean_abs_gray": 7.126737727958243e-06,
+      "seam_p99_abs_gray": 7.599592208862305e-05,
+      "seam_max_abs_gray": 0.0004388764500617981
+    },
+    "staged_outcome_selector": {
+      "global_mean_abs_gray": 0.236239492893219,
+      "global_max_abs_gray": 109.74063110351562,
+      "interior_mean_abs_gray": 5.280630375636974e-06,
+      "interior_p99_abs_gray": 6.079673767089844e-05,
+      "interior_max_abs_gray": 0.0006383657455444336,
+      "seam_mean_abs_gray": 5.338092250894988e-06,
+      "seam_p99_abs_gray": 6.079673767089844e-05,
+      "seam_max_abs_gray": 0.0005775690078735352
+    }
+  },
+  "real": {
+    "direct_parallel": {
+      "mean_abs_change_gray": 1.4891031640581787,
+      "edge_gain": 0.93770632147789,
+      "fine_detail_ratio": 0.37161000072956085
+    },
+    "joint_unsupervised_gate": {
+      "mean_abs_change_gray": 1.5409900329541415,
+      "edge_gain": 0.9755639433860779,
+      "fine_detail_ratio": 0.38586050271987915
+    },
+    "staged_outcome_selector": {
+      "mean_abs_change_gray": 1.4891029265709221,
+      "edge_gain": 0.93770632147789,
+      "fine_detail_ratio": 0.37160997092723846
+    }
+  },
+  "traces": {
+    "direct_parallel": [],
+    "joint_unsupervised_gate": [],
+    "staged_outcome_selector": []
+  }
+}

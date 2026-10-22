@@ -1,0 +1,329 @@
+[
+  {
+    "round": "R108B_StagedParallelOpticalExpertsMicroprobe",
+    "path": "Experiments\\R108B_StagedParallelOpticalExpertsMicroprobe\\weights\\direct_parallel.pth",
+    "bytes": 494698,
+    "sha256": "069b6e01c1b70aed68131fbda0cb436f2e1fe06be3ee72fc06f8483f88a54391",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/weights/direct_parallel.pth",
+      "original_sha256": "069b6e01c1b70aed68131fbda0cb436f2e1fe06be3ee72fc06f8483f88a54391"
+    }
+  },
+  {
+    "round": "R108B_StagedParallelOpticalExpertsMicroprobe",
+    "path": "Experiments\\R108B_StagedParallelOpticalExpertsMicroprobe\\weights\\joint_unsupervised_gate.pth",
+    "bytes": 495876,
+    "sha256": "2c80f7e8ac5ecf179638017c3f6f5cce0da10ee5a3b8debe292dcc22fa12f953",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/weights/joint_unsupervised_gate.pth",
+      "original_sha256": "2c80f7e8ac5ecf179638017c3f6f5cce0da10ee5a3b8debe292dcc22fa12f953"
+    }
+  },
+  {
+    "round": "R108B_StagedParallelOpticalExpertsMicroprobe",
+    "path": "Experiments\\R108B_StagedParallelOpticalExpertsMicroprobe\\weights\\staged_selector.pth",
+    "bytes": 316122,
+    "sha256": "d6ac00e435ce78d4f92e5ba34080b49813f0dcdc0ad9cd79a73eaab044476994",
+    "providers": [
+      {
+        "path_key": "experiments/r108b_stagedparallelopticalexpertsmicroprobe/weights/staged_selector.pth",
+        "path": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/weights/staged_selector.pth",
+        "bytes": 316122,
+        "sha256": "d6ac00e435ce78d4f92e5ba34080b49813f0dcdc0ad9cd79a73eaab044476994",
+        "release": "research-results-models-20261016",
+        "asset": "research-fixed-models-019.zip"
+      }
+    ],
+    "current_delivery": {
+      "kind": "existing_published_provider",
+      "original_path": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/weights/staged_selector.pth",
+      "original_sha256": "d6ac00e435ce78d4f92e5ba34080b49813f0dcdc0ad9cd79a73eaab044476994"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_denoise.pth",
+    "bytes": 341142,
+    "sha256": "db099dea6bee66d067f0cbbf3dea097bf76a88fba0663c60da6f34b49a7b248f",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise.pth",
+      "original_sha256": "db099dea6bee66d067f0cbbf3dea097bf76a88fba0663c60da6f34b49a7b248f"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_denoise_calibrated_0.01.pth",
+    "bytes": 341878,
+    "sha256": "afe545c02e3b25b6a7057e10417bc8ec201a9f813c43fff35df0384a385d9017",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.01.pth",
+      "original_sha256": "afe545c02e3b25b6a7057e10417bc8ec201a9f813c43fff35df0384a385d9017"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_denoise_calibrated_0.03.pth",
+    "bytes": 341878,
+    "sha256": "5686e9076776ef1460edbf6c97db6767cf9800b1b65192fa749fdcd798a99f4f",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.03.pth",
+      "original_sha256": "5686e9076776ef1460edbf6c97db6767cf9800b1b65192fa749fdcd798a99f4f"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_denoise_calibrated_0.08.pth",
+    "bytes": 341878,
+    "sha256": "0f57f701d6a25ae01c84808f140b7b97f2e32febb367202cb2714a8a0e9e88e1",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.08.pth",
+      "original_sha256": "0f57f701d6a25ae01c84808f140b7b97f2e32febb367202cb2714a8a0e9e88e1"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_denoise_calibrated_0.12.pth",
+    "bytes": 341878,
+    "sha256": "93f41d59f5e287f0434819b04beebbe05ddc4b92049f426b360161c989ebee0d",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.12.pth",
+      "original_sha256": "93f41d59f5e287f0434819b04beebbe05ddc4b92049f426b360161c989ebee0d"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_denoise_calibrated_0.18.pth",
+    "bytes": 341878,
+    "sha256": "06259a469eeb2ad892fe7ac50d541d4bc636e7b69c522cb2477f371e19588235",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.18.pth",
+      "original_sha256": "06259a469eeb2ad892fe7ac50d541d4bc636e7b69c522cb2477f371e19588235"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_denoise_calibrated_0.25.pth",
+    "bytes": 341878,
+    "sha256": "583f53d37521c29224158438701254989786530de25774a4745374b543a5ac38",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.25.pth",
+      "original_sha256": "583f53d37521c29224158438701254989786530de25774a4745374b543a5ac38"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_edge.pth",
+    "bytes": 340284,
+    "sha256": "5eeb6c4208c4779c9abfe3e5f42f4b6f9ab61f7e4743d30714dc3f344c2bcebb",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_edge.pth",
+      "original_sha256": "5eeb6c4208c4779c9abfe3e5f42f4b6f9ab61f7e4743d30714dc3f344c2bcebb"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_guarded_denoise.pth",
+    "bytes": 341446,
+    "sha256": "8187942321a83dff8a7d62de73c5c791f638be2c5747d3cfc740665c1202b7c7",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_guarded_denoise.pth",
+      "original_sha256": "8187942321a83dff8a7d62de73c5c791f638be2c5747d3cfc740665c1202b7c7"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_radiometry.pth",
+    "bytes": 341232,
+    "sha256": "82437b20ae03b5490d75d47355cff2494ccea3e838fe8787291c6c57c9df79f7",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_radiometry.pth",
+      "original_sha256": "82437b20ae03b5490d75d47355cff2494ccea3e838fe8787291c6c57c9df79f7"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\adoption_texture.pth",
+    "bytes": 341142,
+    "sha256": "5efbc3750b590fe956d609eaea0f70e87cb679aea2254d630455b2a5631e750f",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_texture.pth",
+      "original_sha256": "5efbc3750b590fe956d609eaea0f70e87cb679aea2254d630455b2a5631e750f"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\denoise.pth",
+    "bytes": 385346,
+    "sha256": "9e09a3ad9ffdc552caa1f48dcd0b65a3323f104217ee649623b5bad208c39771",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/denoise.pth",
+      "original_sha256": "9e09a3ad9ffdc552caa1f48dcd0b65a3323f104217ee649623b5bad208c39771"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\edge.pth",
+    "bytes": 387094,
+    "sha256": "0dd18a549850b75b9a685f90cd319428b4fb5ebf54256149d359301f09bb1e01",
+    "providers": [
+      {
+        "path_key": "experiments/r108c_independentopticalspecialistsmicroprobe/weights/edge.pth",
+        "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/edge.pth",
+        "bytes": 387094,
+        "sha256": "0dd18a549850b75b9a685f90cd319428b4fb5ebf54256149d359301f09bb1e01",
+        "release": "research-results-models-20261016",
+        "asset": "research-fixed-models-002.zip"
+      }
+    ],
+    "current_delivery": {
+      "kind": "existing_published_provider",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/edge.pth",
+      "original_sha256": "0dd18a549850b75b9a685f90cd319428b4fb5ebf54256149d359301f09bb1e01"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\radiometry.pth",
+    "bytes": 297314,
+    "sha256": "558aeda15e2fc71580178cd53ed12555b95965c4956a13c050f451f9bd98a372",
+    "providers": [],
+    "current_delivery": {
+      "kind": "ordinary_git_original_path",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/radiometry.pth",
+      "original_sha256": "558aeda15e2fc71580178cd53ed12555b95965c4956a13c050f451f9bd98a372"
+    }
+  },
+  {
+    "round": "R108C_IndependentOpticalSpecialistsMicroprobe",
+    "path": "Experiments\\R108C_IndependentOpticalSpecialistsMicroprobe\\weights\\texture.pth",
+    "bytes": 388412,
+    "sha256": "622b47c94ab473ff71263ae4b9359a41c48e733cb007d890d6d5ad8b0ec0eb30",
+    "providers": [
+      {
+        "path_key": "experiments/r108c_independentopticalspecialistsmicroprobe/weights/texture.pth",
+        "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/texture.pth",
+        "bytes": 388412,
+        "sha256": "622b47c94ab473ff71263ae4b9359a41c48e733cb007d890d6d5ad8b0ec0eb30",
+        "release": "research-results-models-20261016",
+        "asset": "research-fixed-models-010.zip"
+      }
+    ],
+    "current_delivery": {
+      "kind": "existing_published_provider",
+      "original_path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/texture.pth",
+      "original_sha256": "622b47c94ab473ff71263ae4b9359a41c48e733cb007d890d6d5ad8b0ec0eb30"
+    }
+  },
+  {
+    "round": "R108D_MultiscaleNormalGeometryMicroprobe",
+    "path": "Experiments\\R108D_MultiscaleNormalGeometryMicroprobe\\weights\\multiscale_normal_geometry.pth",
+    "bytes": 844034,
+    "sha256": "d39afdb42e2a9a1e6207243bc5494e71f950593aadcd04d4d7a4c52bcdf4a696",
+    "providers": [
+      {
+        "path_key": "experiments/r108d_multiscalenormalgeometrymicroprobe/weights/multiscale_normal_geometry.pth",
+        "path": "Experiments/R108D_MultiscaleNormalGeometryMicroprobe/weights/multiscale_normal_geometry.pth",
+        "bytes": 844034,
+        "sha256": "d39afdb42e2a9a1e6207243bc5494e71f950593aadcd04d4d7a4c52bcdf4a696",
+        "release": "research-results-models-20261016",
+        "asset": "research-fixed-models-019.zip"
+      }
+    ],
+    "current_delivery": {
+      "kind": "existing_published_provider",
+      "original_path": "Experiments/R108D_MultiscaleNormalGeometryMicroprobe/weights/multiscale_normal_geometry.pth",
+      "original_sha256": "d39afdb42e2a9a1e6207243bc5494e71f950593aadcd04d4d7a4c52bcdf4a696"
+    }
+  },
+  {
+    "round": "R108E_ContourConservingProfileRendererMicroprobe",
+    "path": "Experiments\\R108E_ContourConservingProfileRendererMicroprobe\\weights\\contour_profile_renderer.pth",
+    "bytes": 2745074,
+    "sha256": "a2baf384743eb88db44403aa0f2ff8927fecf2bfc63819e17ee84548f6e4085d",
+    "providers": [
+      {
+        "path_key": "experiments/r108e_contourconservingprofilerenderermicroprobe/weights/contour_profile_renderer.pth",
+        "path": "Experiments/R108E_ContourConservingProfileRendererMicroprobe/weights/contour_profile_renderer.pth",
+        "bytes": 2745074,
+        "sha256": "a2baf384743eb88db44403aa0f2ff8927fecf2bfc63819e17ee84548f6e4085d",
+        "release": "research-results-models-20261016",
+        "asset": "research-fixed-models-015.zip"
+      }
+    ],
+    "current_delivery": {
+      "kind": "existing_published_provider",
+      "original_path": "Experiments/R108E_ContourConservingProfileRendererMicroprobe/weights/contour_profile_renderer.pth",
+      "original_sha256": "a2baf384743eb88db44403aa0f2ff8927fecf2bfc63819e17ee84548f6e4085d"
+    }
+  },
+  {
+    "round": "R108F_MonotonicProfileRendererMicroprobe",
+    "path": "Experiments\\R108F_MonotonicProfileRendererMicroprobe\\weights\\monotonic_profile_renderer.pth",
+    "bytes": 2746882,
+    "sha256": "400d147fe095f4346b50e7f732566d34dd25f36ecd903a9b53db004139bf8e2a",
+    "providers": [
+      {
+        "path_key": "experiments/r108f_monotonicprofilerenderermicroprobe/weights/monotonic_profile_renderer.pth",
+        "path": "Experiments/R108F_MonotonicProfileRendererMicroprobe/weights/monotonic_profile_renderer.pth",
+        "bytes": 2746882,
+        "sha256": "400d147fe095f4346b50e7f732566d34dd25f36ecd903a9b53db004139bf8e2a",
+        "release": "research-results-models-20261016",
+        "asset": "research-fixed-models-007.zip"
+      }
+    ],
+    "current_delivery": {
+      "kind": "existing_published_provider",
+      "original_path": "Experiments/R108F_MonotonicProfileRendererMicroprobe/weights/monotonic_profile_renderer.pth",
+      "original_sha256": "400d147fe095f4346b50e7f732566d34dd25f36ecd903a9b53db004139bf8e2a"
+    }
+  },
+  {
+    "round": "R108G_MidpointWidthFactorizedProfileMicroprobe",
+    "path": "Experiments\\R108G_MidpointWidthFactorizedProfileMicroprobe\\weights\\midpoint_width_operator.pth",
+    "bytes": 2746114,
+    "sha256": "dee456de3572526cbbf71241c470f832bf243a70f26f08d2e5950c99883bb935",
+    "providers": [
+      {
+        "path_key": "experiments/r108g_midpointwidthfactorizedprofilemicroprobe/weights/midpoint_width_operator.pth",
+        "path": "Experiments/R108G_MidpointWidthFactorizedProfileMicroprobe/weights/midpoint_width_operator.pth",
+        "bytes": 2746114,
+        "sha256": "dee456de3572526cbbf71241c470f832bf243a70f26f08d2e5950c99883bb935",
+        "release": "research-results-models-20261016",
+        "asset": "research-fixed-models-020.zip"
+      }
+    ],
+    "current_delivery": {
+      "kind": "existing_published_provider",
+      "original_path": "Experiments/R108G_MidpointWidthFactorizedProfileMicroprobe/weights/midpoint_width_operator.pth",
+      "original_sha256": "dee456de3572526cbbf71241c470f832bf243a70f26f08d2e5950c99883bb935"
+    }
+  }
+]

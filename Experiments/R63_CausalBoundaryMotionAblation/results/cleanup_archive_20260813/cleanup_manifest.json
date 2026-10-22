@@ -1,0 +1,494 @@
+{
+  "cleanup_id": "R63_OBSOLETE_RETRY_RUNS_20260813",
+  "basis": "training_manifest.json complete=true; preserve all 32 completion_run_dir entries; remove only 56 non-selected retry directories",
+  "manifest_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_manifest.json",
+  "manifest_sha256": "DF70B8D60669C1EE86E0FF56F0B581C1F022D885B7ACCE9B0C55B27D50797E37",
+  "kept_completion_directories": [
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_full_control_s1261200_20260717_080919",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_anchor_s1261200_20260717_081707",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_motion_consistency_s1261200_20260717_082418",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_083400",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shape_geometry_s1261200_20260717_083850",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_global_boundary_position_s1261200_20260717_084640",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_identity_boundary_guard_s1261200_20260717_085429",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_region_boundary_teacher_s1261200_20260717_090212",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_sequence_consistency_s1261200_20260717_090936",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_known_shift_motion_s1261200_20260717_091620",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shift_equivariance_s1261200_20260717_092318",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_boundary_residual_adapter_s1261200_20260717_093052",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_raw_position_anchor_s1261200_20260717_093825",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_quality_gate_s1261200_20260717_094608",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_shift_safe_matched_s1261200_20260717_095340",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_standard_upsample_matched_s1261200_20260717_100133",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_full_control_s1261217_20260717_100917",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_anchor_s1261217_20260717_101704",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_motion_consistency_s1261217_20260717_102415",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_no_motion_s1261217_20260717_102941",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shape_geometry_s1261217_20260717_103433",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_global_boundary_position_s1261217_20260717_104219",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_identity_boundary_guard_s1261217_20260717_105006",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_region_boundary_teacher_s1261217_20260717_105747",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_sequence_consistency_s1261217_20260717_110504",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_known_shift_motion_s1261217_20260717_111043",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shift_equivariance_s1261217_20260717_111626",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_boundary_residual_adapter_s1261217_20260717_112259",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_raw_position_anchor_s1261217_20260717_113034",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_quality_gate_s1261217_20260717_113819",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_shift_safe_matched_s1261217_20260717_114451",
+    "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_standard_upsample_matched_s1261217_20260717_115132"
+  ],
+  "deleted_retry_directories": [
+    {
+      "directory": "training_progress_R63_MOSR_full_control_s1261200_20260717_000246",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_full_control_s1261200_20260717_000246",
+      "file_count": 20,
+      "bytes": 177553111.0,
+      "newest": "2026-07-17T00:04:56.3450538+08:00",
+      "run_meta_sha256": "1DB9BA9E074E44143317F66A60CFF18C65B218DF00FCEEBD132A602B7825E9E7"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_full_control_s1261200_20260717_000303",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_full_control_s1261200_20260717_000303",
+      "file_count": 20,
+      "bytes": 177553111.0,
+      "newest": "2026-07-17T00:04:56.3882332+08:00",
+      "run_meta_sha256": "A8411F4B38160F3F9F548DBCDFCE324CBBF969E09A5649BC252F14D84B8E2F80"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_full_control_s1261200_20260717_000735",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_full_control_s1261200_20260717_000735",
+      "file_count": 20,
+      "bytes": 177552012.0,
+      "newest": "2026-07-17T00:08:53.3745100+08:00",
+      "run_meta_sha256": "677C68BCE803E3866D5DCC36BE02A43C3BBAEC2E45082EE5C6215590A56896E4"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_full_control_s1261200_20260717_001004",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_full_control_s1261200_20260717_001004",
+      "file_count": 20,
+      "bytes": 177556878.0,
+      "newest": "2026-07-17T00:11:33.5457790+08:00",
+      "run_meta_sha256": "300652A280EA8541C5912669C92471CA383B7D2FE61DF47CBBEB703F53936AF3"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_full_control_s1261200_20260717_001947",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_full_control_s1261200_20260717_001947",
+      "file_count": 37,
+      "bytes": 501861901.0,
+      "newest": "2026-07-17T00:32:43.4986733+08:00",
+      "run_meta_sha256": "35FF2311ED3B9361730FDD96766B994653EB386496B80F12FE16E48922132455"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_full_control_s1261217_20260717_013128",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_full_control_s1261217_20260717_013128",
+      "file_count": 37,
+      "bytes": 501866439.0,
+      "newest": "2026-07-17T01:46:28.8364515+08:00",
+      "run_meta_sha256": "2C6A5B9C3BE3740D48F5206B7532F04DFE0DDDCF736074790A7AC3BC1E4BA6F2"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_boundary_residual_adapter_s1261200_20260717_064038",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_boundary_residual_adapter_s1261200_20260717_064038",
+      "file_count": 20,
+      "bytes": 176902236.0,
+      "newest": "2026-07-17T06:41:56.0513152+08:00",
+      "run_meta_sha256": "5E9D1A14456F08DDC63D5C2149DFFB3CD81383FDB645F058DE2005613A386697"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_boundary_residual_adapter_s1261200_20260717_064450",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_boundary_residual_adapter_s1261200_20260717_064450",
+      "file_count": 37,
+      "bytes": 499500686.0,
+      "newest": "2026-07-17T06:58:35.7944061+08:00",
+      "run_meta_sha256": "59A2296A036103D994FEB9E3715A8FB7A3ED66C7126299EA2C164954C083438D"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_boundary_residual_adapter_s1261217_20260717_072655",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_boundary_residual_adapter_s1261217_20260717_072655",
+      "file_count": 37,
+      "bytes": 499495461.0,
+      "newest": "2026-07-17T07:40:54.9270846+08:00",
+      "run_meta_sha256": "AFB74AD6FACC9023BF6C5530E193A3D4A0093F0E9C966D75C5E13142B58F7C32"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_geometry_anchor_s1261200_20260717_001158",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_anchor_s1261200_20260717_001158",
+      "file_count": 20,
+      "bytes": 177567095.0,
+      "newest": "2026-07-17T00:13:19.6638897+08:00",
+      "run_meta_sha256": "E6D0C4F8A7865A9921B71AFEA723E17CBB69C86BAF0F30D1980E13E4FA3EE82C"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_geometry_anchor_s1261200_20260717_003250",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_anchor_s1261200_20260717_003250",
+      "file_count": 37,
+      "bytes": 501835324.0,
+      "newest": "2026-07-17T00:44:10.0398943+08:00",
+      "run_meta_sha256": "D3A48B140128263A61F710F1FEC636E4ED7305D0CE100A7FE0062919379040AA"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_geometry_anchor_s1261217_20260717_014636",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_anchor_s1261217_20260717_014636",
+      "file_count": 37,
+      "bytes": 501830225.0,
+      "newest": "2026-07-17T02:00:19.0440799+08:00",
+      "run_meta_sha256": "B45D54DDEF7DC2C378BA930A7A37A6CEEF16FBEB57D4933BAECFA128F1A82BFD"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_001425",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_001425",
+      "file_count": 20,
+      "bytes": 177570476.0,
+      "newest": "2026-07-17T00:15:14.5311892+08:00",
+      "run_meta_sha256": "AA76426CC778CD065C2BDAD0B1E7227C3BF6F8B9185B44D96C5506B1FEA3CBB2"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_005340",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_005340",
+      "file_count": 37,
+      "bytes": 501797321.0,
+      "newest": "2026-07-17T01:01:58.5189907+08:00",
+      "run_meta_sha256": "33736678D442ABF750B9DB920ACF9288B1A1A23F8CC2939C79A98CBA6ACE6D28"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_025304",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_025304",
+      "file_count": 20,
+      "bytes": 177569184.0,
+      "newest": "2026-07-17T02:54:01.6111682+08:00",
+      "run_meta_sha256": "CC8B7616EC470641AEBE6EC28E3AD5C61EFAC6744AA0B236351C34F157880019"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_031600",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_031600",
+      "file_count": 37,
+      "bytes": 501794791.0,
+      "newest": "2026-07-17T03:25:34.3247430+08:00",
+      "run_meta_sha256": "CB953E003CA1D574A57B93AC376C39B067D104294E0B225F60B7C6815812E061"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_082944",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_no_motion_s1261200_20260717_082944",
+      "file_count": 7,
+      "bytes": 264914.0,
+      "newest": "2026-07-17T08:29:47.0215263+08:00",
+      "run_meta_sha256": "D232E7D7B16A3CFE42979A022D279227FEEA0406A156FD6F07B4F939DFB22E98"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_geometry_no_motion_s1261217_20260717_021127",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_geometry_no_motion_s1261217_20260717_021127",
+      "file_count": 37,
+      "bytes": 501791106.0,
+      "newest": "2026-07-17T02:20:59.5686457+08:00",
+      "run_meta_sha256": "CECF0B0EE20B5844C9CC54BA9B28B8B156B43E9E64B553EE5CB9FF90182F5B38"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_global_boundary_position_s1261200_20260717_025543",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_global_boundary_position_s1261200_20260717_025543",
+      "file_count": 20,
+      "bytes": 177595806.0,
+      "newest": "2026-07-17T02:57:06.4907321+08:00",
+      "run_meta_sha256": "0A59EE4A30E85A50F7D02420670E53B85E7C9A48D31A5EF348A44C6A36067977"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_global_boundary_position_s1261200_20260717_034042",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_global_boundary_position_s1261200_20260717_034042",
+      "file_count": 37,
+      "bytes": 501895465.0,
+      "newest": "2026-07-17T03:55:42.4947930+08:00",
+      "run_meta_sha256": "2BC52B528DB7E441D92D31E4462EE684F6AE3DFA72B159EB19AFF90860B1D0FF"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_global_boundary_position_s1261217_20260717_051851",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_global_boundary_position_s1261217_20260717_051851",
+      "file_count": 37,
+      "bytes": 501900137.0,
+      "newest": "2026-07-17T05:33:06.7951303+08:00",
+      "run_meta_sha256": "436DC98CDCFCAE082622B17878EA2BE245393BBC1DD62051A18A9BE70A2E6E56"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_identity_boundary_guard_s1261200_20260717_025714",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_identity_boundary_guard_s1261200_20260717_025714",
+      "file_count": 20,
+      "bytes": 177589295.0,
+      "newest": "2026-07-17T02:58:39.3058382+08:00",
+      "run_meta_sha256": "900FED96A694EBE0168C5D10A04A2DD0B7D4E595049CE9835B1AC28E6AB9E061"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_identity_boundary_guard_s1261200_20260717_035551",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_identity_boundary_guard_s1261200_20260717_035551",
+      "file_count": 37,
+      "bytes": 501904394.0,
+      "newest": "2026-07-17T04:10:41.5803902+08:00",
+      "run_meta_sha256": "7CF8038F2720DD61462ECBE2A4E7CA362CC50307B2192A7CA811B1BE90E782D4"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_identity_boundary_guard_s1261217_20260717_053314",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_identity_boundary_guard_s1261217_20260717_053314",
+      "file_count": 37,
+      "bytes": 501908800.0,
+      "newest": "2026-07-17T05:47:25.9099554+08:00",
+      "run_meta_sha256": "BE417CA63460E8B76B7930B13ACC690902AF3CC90551BFBADCA30C29AC8352AF"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_known_shift_motion_s1261200_20260717_030134",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_known_shift_motion_s1261200_20260717_030134",
+      "file_count": 20,
+      "bytes": 177568522.0,
+      "newest": "2026-07-17T03:02:43.4852618+08:00",
+      "run_meta_sha256": "4CFC4D5CD0EF19C64B14190BBDF0126FFEEA9AC46EE7D5E71D071F210D9EFA49"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_known_shift_motion_s1261200_20260717_043711",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_known_shift_motion_s1261200_20260717_043711",
+      "file_count": 37,
+      "bytes": 501867246.0,
+      "newest": "2026-07-17T04:50:18.9654169+08:00",
+      "run_meta_sha256": "2B4B4A4B8046F3FCE74F6AA27AFBA93F508A204559F958A2AB77B8F2EDABCBD5"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_known_shift_motion_s1261217_20260717_061335",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_known_shift_motion_s1261217_20260717_061335",
+      "file_count": 37,
+      "bytes": 501870540.0,
+      "newest": "2026-07-17T06:26:28.9849264+08:00",
+      "run_meta_sha256": "025867276CE501DDA1355CAE7E126F4361F446F736BA871AF24F0C5F610636BD"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_motion_consistency_s1261200_20260717_001327",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_motion_consistency_s1261200_20260717_001327",
+      "file_count": 20,
+      "bytes": 177568314.0,
+      "newest": "2026-07-17T00:14:19.5179272+08:00",
+      "run_meta_sha256": "3F36CCE36DF9435B1117C56BA24F0E7D2F3E8358F2CF1DE48B7D832FCDC1EDD4"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_motion_consistency_s1261200_20260717_004417",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_motion_consistency_s1261200_20260717_004417",
+      "file_count": 37,
+      "bytes": 501835619.0,
+      "newest": "2026-07-17T00:53:35.2347582+08:00",
+      "run_meta_sha256": "E4734B0A70C5A4CA9A6A4955BEA35FDB18ECB2A9A7F78ABC0B817F16B4EA526E"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_motion_consistency_s1261200_20260717_025200",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_motion_consistency_s1261200_20260717_025200",
+      "file_count": 20,
+      "bytes": 177568320.0,
+      "newest": "2026-07-17T02:52:58.1300446+08:00",
+      "run_meta_sha256": "58539735C28F4D16FCD25FEEA99A6D4C87737F134A91E35A7BA553653357F2DE"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_motion_consistency_s1261200_20260717_030459",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_motion_consistency_s1261200_20260717_030459",
+      "file_count": 37,
+      "bytes": 501827373.0,
+      "newest": "2026-07-17T03:15:54.3469242+08:00",
+      "run_meta_sha256": "C53EF9A7F57483690C147AD978C1414E3BFC0816EDBEE800D426F720A3E29D4A"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_motion_consistency_s1261217_20260717_020026",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_motion_consistency_s1261217_20260717_020026",
+      "file_count": 37,
+      "bytes": 501837443.0,
+      "newest": "2026-07-17T02:11:20.5251227+08:00",
+      "run_meta_sha256": "2859FFF0388E6A220BF8767D16419DA8130B5C8F04D093C1A0561DB0852AB865"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_quality_gate_s1261200_20260717_064327",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_quality_gate_s1261200_20260717_064327",
+      "file_count": 20,
+      "bytes": 177528815.0,
+      "newest": "2026-07-17T06:44:42.8643536+08:00",
+      "run_meta_sha256": "ED25B34CD0518BBBC8332A01F750D03AA663FCF36A434184347F77C98FEEBBD6"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_quality_gate_s1261200_20260717_071305",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_quality_gate_s1261200_20260717_071305",
+      "file_count": 37,
+      "bytes": 501769973.0,
+      "newest": "2026-07-17T07:26:48.5025979+08:00",
+      "run_meta_sha256": "E69AEFA0D9B262B65C6B75D66DAAAEF27D0B2A3A4E91F773455FFA4589604398"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_quality_gate_s1261217_20260717_075514",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_quality_gate_s1261217_20260717_075514",
+      "file_count": 37,
+      "bytes": 501771578.0,
+      "newest": "2026-07-17T08:09:06.6483485+08:00",
+      "run_meta_sha256": "722421781C8EFDC8DD8434D4C4D8C99C394A4BF6FAEEDA8E3CBE736CCFB56AF1"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_raw_position_anchor_s1261200_20260717_064203",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_raw_position_anchor_s1261200_20260717_064203",
+      "file_count": 20,
+      "bytes": 177566452.0,
+      "newest": "2026-07-17T06:43:20.2817513+08:00",
+      "run_meta_sha256": "6BC6D10740706A1F64653C8B7D475DECF7C2EC74F31C9C51231E9615581EEE91"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_raw_position_anchor_s1261200_20260717_065842",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_raw_position_anchor_s1261200_20260717_065842",
+      "file_count": 37,
+      "bytes": 501874505.0,
+      "newest": "2026-07-17T07:12:58.0916310+08:00",
+      "run_meta_sha256": "D514DB7EF24EAF5E837232AA5DFF722F53E9CD0CDC27B5D3C4CD2BE8C9853A65"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_raw_position_anchor_s1261217_20260717_074102",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_raw_position_anchor_s1261217_20260717_074102",
+      "file_count": 37,
+      "bytes": 501874007.0,
+      "newest": "2026-07-17T07:55:06.9741068+08:00",
+      "run_meta_sha256": "4F1B0CB4D712A193552C5E90409F7F5058B0F312EB390A442F26E52395F44D61"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_region_boundary_teacher_s1261200_20260717_025847",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_region_boundary_teacher_s1261200_20260717_025847",
+      "file_count": 20,
+      "bytes": 177590279.0,
+      "newest": "2026-07-17T03:00:10.1839679+08:00",
+      "run_meta_sha256": "542FF95E88A1A14542870FFDAF9CBBAB5837015278C1673A41ABC70E60F281B6"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_region_boundary_teacher_s1261200_20260717_041049",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_region_boundary_teacher_s1261200_20260717_041049",
+      "file_count": 37,
+      "bytes": 501899254.0,
+      "newest": "2026-07-17T04:24:35.6472550+08:00",
+      "run_meta_sha256": "12D8DCB7B9619DCAA74458BEF885E785CA969CFDE89C4EA559BED6930961EE79"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_region_boundary_teacher_s1261217_20260717_054733",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_region_boundary_teacher_s1261217_20260717_054733",
+      "file_count": 37,
+      "bytes": 501895558.0,
+      "newest": "2026-07-17T06:01:01.5009751+08:00",
+      "run_meta_sha256": "C61463B1D4A49A0B351EC14285E22FA8A55F9B0866CF92799CE11A11684C8BD2"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_sequence_consistency_s1261200_20260717_030017",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_sequence_consistency_s1261200_20260717_030017",
+      "file_count": 20,
+      "bytes": 177573000.0,
+      "newest": "2026-07-17T03:01:27.4548751+08:00",
+      "run_meta_sha256": "DBF3896D6F1C3D9CACDE99F7B57B4130F2B0C883AC178DB0DC7FF7FFEF9F1364"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_sequence_consistency_s1261200_20260717_042443",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_sequence_consistency_s1261200_20260717_042443",
+      "file_count": 37,
+      "bytes": 501861051.0,
+      "newest": "2026-07-17T04:37:04.8766620+08:00",
+      "run_meta_sha256": "0A536B2FB6A5D4F1A7869C38BBF69CE69523E07E3B92F5BC4CE635C8ED7BC7B3"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_sequence_consistency_s1261217_20260717_060109",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_sequence_consistency_s1261217_20260717_060109",
+      "file_count": 37,
+      "bytes": 501860913.0,
+      "newest": "2026-07-17T06:13:28.7518948+08:00",
+      "run_meta_sha256": "AE7FCA4CBB9E2C7DD521E1F6630A862EF1EEC29AF538BEACFB4CF9A6E5B53660"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_shape_geometry_s1261200_20260717_025407",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shape_geometry_s1261200_20260717_025407",
+      "file_count": 20,
+      "bytes": 177564142.0,
+      "newest": "2026-07-17T02:55:35.0716818+08:00",
+      "run_meta_sha256": "6074695144140BC81625644A14C310CCD4EA9E1D3564DB9B49E343275477BA3D"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_shape_geometry_s1261200_20260717_032540",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shape_geometry_s1261200_20260717_032540",
+      "file_count": 37,
+      "bytes": 501852539.0,
+      "newest": "2026-07-17T03:40:34.7386764+08:00",
+      "run_meta_sha256": "E7331F19951C7FB5EEE9D92412E7DDB41E6FFFD9490CB1F2B1F4ED3BB4EBA410"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_shape_geometry_s1261217_20260717_050430",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shape_geometry_s1261217_20260717_050430",
+      "file_count": 37,
+      "bytes": 501857395.0,
+      "newest": "2026-07-17T05:18:44.3009198+08:00",
+      "run_meta_sha256": "E5385F9700213B61E8ACDF3E4F72FA0EC40ABC373147B12487598127A0DF3F0B"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_shift_equivariance_s1261200_20260717_030250",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shift_equivariance_s1261200_20260717_030250",
+      "file_count": 20,
+      "bytes": 177569871.0,
+      "newest": "2026-07-17T03:04:13.2210089+08:00",
+      "run_meta_sha256": "3140E88ED78BA6430F2516ED5874E931C3D90F37DA8E555FC14E8E2D47A68D12"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_shift_equivariance_s1261200_20260717_045025",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shift_equivariance_s1261200_20260717_045025",
+      "file_count": 37,
+      "bytes": 501871412.0,
+      "newest": "2026-07-17T05:04:23.3326914+08:00",
+      "run_meta_sha256": "1986D90BCF1DF8AD7BE59A2F9EE57553C821B22EC568642B464B7D59A6FB49F9"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_no_shift_equivariance_s1261217_20260717_062635",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_no_shift_equivariance_s1261217_20260717_062635",
+      "file_count": 37,
+      "bytes": 501876193.0,
+      "newest": "2026-07-17T06:40:31.0735839+08:00",
+      "run_meta_sha256": "23AD3B8746BCBBFABE34E1FB1BBD62F4D2901D13A3B740D697BEBDBD1A02D0E7"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_shift_safe_matched_s1261200_20260717_001519",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_shift_safe_matched_s1261200_20260717_001519",
+      "file_count": 20,
+      "bytes": 183059468.0,
+      "newest": "2026-07-17T00:16:41.7047347+08:00",
+      "run_meta_sha256": "876A90357A3FC6711951AF3EB1B0105DCD4A612D5F7593F74E851B30C79434E3"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_shift_safe_matched_s1261200_20260717_010204",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_shift_safe_matched_s1261200_20260717_010204",
+      "file_count": 37,
+      "bytes": 527516802.0,
+      "newest": "2026-07-17T01:16:11.2969269+08:00",
+      "run_meta_sha256": "B645919DEB056FF4E807A937600FCED7FAF7561BFD32491D3066CF258F71855A"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_shift_safe_matched_s1261217_20260717_022105",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_shift_safe_matched_s1261217_20260717_022105",
+      "file_count": 37,
+      "bytes": 527521352.0,
+      "newest": "2026-07-17T02:36:23.1046318+08:00",
+      "run_meta_sha256": "A872D238F357EE659B6ECB711C50FC53323CDDB1DCF1A9C31C74C4EE605A6492"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_standard_upsample_matched_s1261200_20260717_001648",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_standard_upsample_matched_s1261200_20260717_001648",
+      "file_count": 20,
+      "bytes": 183084116.0,
+      "newest": "2026-07-17T00:18:10.2266782+08:00",
+      "run_meta_sha256": "88E77E71361940CA09027C1258D73FC8DAA2455B0E3D5DEBC4F97E17DEB52AE2"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_standard_upsample_matched_s1261200_20260717_011619",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_standard_upsample_matched_s1261200_20260717_011619",
+      "file_count": 37,
+      "bytes": 527544845.0,
+      "newest": "2026-07-17T01:31:19.4863191+08:00",
+      "run_meta_sha256": "8E56854052942236DF657BB9840138E7B64EC4E371CCEF1227C45026ABB78A10"
+    },
+    {
+      "directory": "training_progress_R63_MOSR_standard_upsample_matched_s1261217_20260717_023632",
+      "full_path": "D:\\GMM_2_Final\\Experiments\\R63_CausalBoundaryMotionAblation\\results\\training_runs\\training_progress_R63_MOSR_standard_upsample_matched_s1261217_20260717_023632",
+      "file_count": 37,
+      "bytes": 527549079.0,
+      "newest": "2026-07-17T02:51:39.2826659+08:00",
+      "run_meta_sha256": "2715743B74D8BA4823EEF9F27F09360331D74AE533A5E8667883E29C81FD10D8"
+    }
+  ],
+  "deleted_directory_count": 56,
+  "deleted_file_count": 1685.0,
+  "deleted_bytes": 20900532144.0,
+  "created_at": "2026-08-13T00:30:04.6293510+08:00"
+}

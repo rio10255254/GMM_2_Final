@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "original_sources": {
+    "B": {
+      "path": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/scripts/run_microprobe.py",
+      "sha256": "de5b79a2ac0f7d07fd93648b745629a71c60facfd98762f7268cc133d70b3fb2"
+    },
+    "E": {
+      "path": "Experiments/R108E_ContourConservingProfileRendererMicroprobe/scripts/run_probe.py",
+      "sha256": "abdf0c99aecc201589610bbd3fefb981d2e4999879706d50818447f8312647a6"
+    }
+  },
+  "generated_files": [
+    {
+      "path": "R108B\\microprobe_data.npz",
+      "sha256": "e01a97bc2b361195d550a6f3c5262e354b2424f8676ae9045c6abed765d39185",
+      "bytes": 12780277
+    },
+    {
+      "path": "R108E\\profile_renderer_data.npz",
+      "sha256": "3e3ed993a03a0b354888b3d28edc4d2edcc26ee624f317e4615bfcb5a41b7663",
+      "bytes": 14045368
+    }
+  ],
+  "historical_source_hashes_matched": true,
+  "numpy_version": "1.26.4",
+  "opencv_version": "4.12.0",
+  "torch_imported": false,
+  "model_training_or_inference_executed": false,
+  "existing_output_refusal_observed": true
+}
