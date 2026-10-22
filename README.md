@@ -9,6 +9,7 @@
 | 想找什麼 | 入口 |
 |---|---|
 | 研究現況與正式身分 | [專案狀態](PROJECT_STATE.md)、[正式模型政策](ESTIMATOR_POLICY.json) |
+| R1至R153、LabSystem及歷史分支的前後關係 | [全研究沿革](docs/reproducibility/lineage/README.md)、[逐號查找與未能確認的編號](docs/reproducibility/lineage/ROUND_NUMBER_MAP.md) |
 | 每輪想解決什麼、怎麼做、結果及失敗 | [177個研究／歷史範圍](docs/reproducibility/EXPERIMENTS.md) |
 | 不下載整套訓練資料，先找生產方法 | [原生成程式、設定與真正上游來源](docs/reproducibility/GENERATION_GUIDE.md) |
 | 文獻依據與官方程式版本 | [原文獻、設計推論及固定來源](docs/reproducibility/LITERATURE_GUIDE.md) |
@@ -18,6 +19,8 @@
 | 本機清理了什麼、資料如何取回 | [清理去向及保留範圍](docs/operations/D_DRIVE_FULL_CLEANUP_20261022.md)、[R93固定資料恢復](Experiments/R93_RecoverableDetailSeparatedScratch/data/ARCHIVE_POINTER_20261022.md) |
 
 可再生的大型訓練資料、逐張重建及中間陣列留生產程式、設定和必要來源；原拍、原始量測、人工來源、完整結果及少數關鍵模型另行保存。9月3日930張實拍與30份原始位置紀錄共用一次，不拿模型重建冒充原拍。
+
+2026-10-22沿革補查已將原177個分組、R34／35／37歷史分支及Lab共用階段串起，55份來源與選圖理由改為各輪具體條件。R2至R10已由原profile與舊日誌綁回，R36仍未找到獨立證據，22份早期程式與9項舊公式仍缺；不能以檔案已同步或入口數宣稱全部歷史已完整重現。
 
 [本次精選研究保存版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)綁定固定程式、內容索引與最後實際交付收據。這是研究內容的精選保存，不是整個磁碟鏡像，也沒有重跑全部歷史GPU訓練。22份早期程式與9項早期R13公式缺件如實保留。2026-10-22已從六份舊草稿保留約237MB精選原件及171份小型來源，實際取回後撤下約389GB過量附件；[具體取捨與結果](docs/reproducibility/project_completion/curated/draft_cleanup_20261022/README.md)。D/H研究原件及原工作分支受保護。
 

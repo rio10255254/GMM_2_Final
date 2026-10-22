@@ -1,0 +1,33 @@
+[MICROSTEP] rebuild start stage_ids=[19, 20]
+[MICROSTEP] generating clean stages
+Output root: D:\GMM_2_Final\Training_Data\generated
+
+[Stage 19] stage_19_annulus_microstep_sequence_clean (1701~1775)
+  [stage_19_annulus_microstep_sequence_clean] seq 5/15 -> 1725_seq004_f04.tif
+  [stage_19_annulus_microstep_sequence_clean] seq 10/15 -> 1750_seq009_f04.tif
+  [stage_19_annulus_microstep_sequence_clean] seq 15/15 -> 1775_seq014_f04.tif
+[Stage 20] stage_20_annulus_microstep_sequence_defect (1776~1850)
+  [stage_20_annulus_microstep_sequence_defect] seq 5/15 -> 1800_seq004_f04.tif
+  [stage_20_annulus_microstep_sequence_defect] seq 10/15 -> 1825_seq009_f04.tif
+  [stage_20_annulus_microstep_sequence_defect] seq 15/15 -> 1850_seq014_f04.tif
+
+Done.
+[MICROSTEP] loading psfs
+更 100  PSF–へ 101x101 px
+[MICROSTEP] generating convolved stages
+
+戈Ж计秖2
+PSF 计秖100
+– PSF 箇璸ㄏノΩ计2
+
+Poisson alpha 絛瞅(45.0, 180.0)
+Gaussian sigma 絛瞅(0.7, 2.2)
+
+[stage] stage_19_annulus_microstep_sequence_clean  (75 眎)
+   ЧΘPSF ま 0~74 ㄏノΩ
+[stage] stage_20_annulus_microstep_sequence_defect  (75 眎)
+   ЧΘPSF ま 0~74 ㄏノΩ
+
+场ЧΘ
+块ヘ魁D:\GMM_2_Final\Training_Data\generated_convolved
+[MICROSTEP] rebuild completed

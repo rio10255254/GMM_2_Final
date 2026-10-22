@@ -1,0 +1,25 @@
+# round11_annulus_lock_defect POSY Step Summary
+
+## pitch1um_y_100
+- mean: 8.022656565656566
+- std: 0.8297884431836471
+- mean_abs_err: 0.31704040404040235
+- rmse: 0.8258977790345099
+- negative_step_ratio: 0.0
+- span_p05_p95: 0.9799999999997908
+
+## pitch0p1um_y_60
+- mean: 0.8008474576271186
+- std: 0.23451290778086278
+- mean_abs_err: 0.19091525423728714
+- rmse: 0.23251856131485293
+- negative_step_ratio: 0.0
+- span_p05_p95: 0.8084000000000174
+
+## pitch0p01um_y_40
+- mean: 0.08430769230769258
+- std: 0.22446745794461337
+- mean_abs_err: 0.17558974358974808
+- rmse: 0.22161285253851984
+- negative_step_ratio: 0.358974358974359
+- span_p05_p95: 0.6786000000000969

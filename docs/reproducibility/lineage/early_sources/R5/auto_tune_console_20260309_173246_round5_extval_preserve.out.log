@@ -1,0 +1,603 @@
+[AUTO] sweep start | profile=round5_extval_preserve seed=1261200 sweep_epochs=6 final_epochs=10
+[AUTO] objective: known-step GMF first (expect_dx=0.000, expect_dy=8.000, source=monitor_shift), then boundary/texture realism.
+
+[AUTO][SWEEP] candidate=step8_ext_preserve_clean overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean'), 'LR': 5e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'EQ_PROB': 0.06, 'EQ_WARMUP_OFF_E': 20, 'EQ_RAMP_START_E': 21, 'EQ_RAMP_END_E': 38, 'W_GRADMAG': 1.02, 'W_EDGE_ORI_SIMPLE': 0.5, 'W_EQ_GEOM': 0.32, 'W_STAT': 0.008, 'W_BAND': 0.008, 'W_HF_LAP': 0.08, 'W_EDGELOCAL_LAP_END': 0.03, 'W_DETAIL_BASE': 0.008}
+[RUN] tag=GESR_v1_v5_ST8_SWP_epc_20260309_173251 model=GESR_v1_v5_ST8_SWP_epc
+[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epc_20260309_173251
+[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epc_20260309_173251\weights
+[REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
+[SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
+[FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=6 val_every=1 batch_log_every=5 csv_flush_n=50
+[GMF_KPI] expect_dx_px=0.0 expect_dy_px=8.0 expected_step_px=8.000000 outlier_t=0.800000 outlier_t_rel=0.100000
+[INFO] Pre-flight sanity check disabled.
+[DATA] include_subdirs=('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean') -> remaining=600
+[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epc_20260309_173251\_repro\GESR_v1_v5_ST8_SWP_epc
+[INFO] Train batches/epoch: 142
+[INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=15)
+[INFO] GMF_VALIDATE_SOURCE = monitor_shift
+[INFO] GMF_EXPECT_DX_PX/DY_PX (px/step) = (0.000000, 8.000000)
+[INFO] Loss = Rec(Huber+SSIM small) + GradMag + EdgeOri + EqGeom(grad-only)
+[INFO] [FIX] Strict Zeros Padding + Mask Erosion (r=4px) enabled
+[PATCH] 50-epoch rhythm; add edge-local Lap rescue; tighten thicken/self-band guards; PSF only guard-burst (no long-term smoothing).
+[SIMPLETEST_V2] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.320
+[SIMPLETEST_V2] w_stat=0.008 w_band=0.008 w_hf_lap=0.080 w_phys_max=0.050 w_edgeLocalLap_end=0.030 phys_warmup_end=24 phys_ramp_end=30 phys_runtime=1
+[SIMPLETEST_V2] eq_shift tiny=(0.01, 0.24) mid=(0.24, 1.25) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
+[SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
+[MONITOR_REF] edgeW_ref=10.0211 hf_ref=0.0225 cb_ref=0.010349
+[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resumed from epoch 3
+[SCHED_SUMMARY][SIMPLETEST] rec/grad/ori fixed; eq uses geometry-only ramp
+[SCHED_SUMMARY][SIMPLETEST] eq: E1-5 off, E6-20 ramp->1, E21-40=1, E41-100 fade->0.4
+[SCHED_SUMMARY][SIMPLETEST] intensity-eq off; thicken/self-band/lap/psf guards active
+[SELF_CHECK][E001] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E005] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E006] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E020] consistency_factor=0.5000 eq_factor=0.0000
+[SELF_CHECK][E021] consistency_factor=1.0000 eq_factor=0.0000
+[SELF_CHECK][E040] consistency_factor=1.0000 eq_factor=1.0000
+[SELF_CHECK][E041] consistency_factor=1.0000 eq_factor=0.9900
+[SELF_CHECK][E100] consistency_factor=1.0000 eq_factor=0.4000
+
+Starting Epoch 4/6
+[EPOCH_CTRL][START] epoch=4 eq_factor=0.000 eq_prob=0.06 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E004] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.320 w_stat=0.008 w_band=0.008 w_hf_lap=0.080 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E004] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=1.00 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E004] Rec=0.005972 (9.0%) GradMag=0.058873 (90.2%) EdgeOri=0.001112 (0.8%) EqGeom=0.000000 (0.0%) Total=0.070602 time=17.9s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E004] beta=0.00000 entropy=1.3838 top1=0.2642 gate_scale=1.00 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.499072 pred_std=0.161976 bandE_pred=1.904820e+01 bandE_gt=3.363222e+01 loss_stat=0.034052 loss_band=0.288771 loss_hf_lap=0.018014 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 4 Val Done. Total=0.080946 | Rec=0.008208 | Edge=0.070683 | EdgeProf=0.000000 | PSNR=22.78 | SSIM=0.8886 | FFTShape=0.000000 | CB=0.000000 | HF=0.004
+[PROXY][E004] mean=24.28 p10=24.22 lr_mean=99.96 pass=0.0% step_err=0.0000 scale_dev=disabled adj_std=(0.0000,0.0000) scale_std=disabled
+[GMF_OBJ][E004] gmf_obj=36.3257
+[GMF_FIT][E004] fitness=0.0000 z_std=0.000 z_out=0.000 z_err=0.000 z_gain=0.000 z_proxy=0.000
+[RANK][E004] tuple=(pass=0.0%, p10=24.22, pos_std_sum=0.0000, scale_std=disabled, scale_dev=disabled, step_err=0.0000, rec=0.008208, ssim=0.8886)
+[RANK_EXTRA][E004] edge_dens_sr/raw=0.070/0.070 match=0.326 ori=0.491 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E004] stage=window_off gmf_obj=36.3257 gmf=0.0000 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.7373 top1=0.264 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=1.00 freeze=False
+[MON_METRIC][E004] edgeW=nan hf_proxy=0.0038 cb=0.000000 pred_mean=0.499072 pred_std=0.161976
+[GUARD][LAP][E004] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=0 lap_guard_hold=4 lap_boost_hold=0 psf_guard_hold=0 edgeW=nan hf=0.0038 cb=0.000000
+[GUARD_FLAG][E004] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=4 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[BEST] Updated best: tradeoff=nan (edge_pen=nan hf_pen=nan) gmf_obj=36.3257 gmf_fitness=0.0000 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.7373 at epoch 4
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.3257, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.7373, best_val_rec = 0.008208, best_val_ssim = 0.8886
+
+Starting Epoch 5/6
+[EPOCH_CTRL][START] epoch=5 eq_factor=0.000 eq_prob=0.06 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E005] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.320 w_stat=0.008 w_band=0.008 w_hf_lap=0.080 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E005] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.97 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E005] Rec=0.004251 (7.6%) GradMag=0.050705 (92.1%) EdgeOri=0.000363 (0.3%) EqGeom=0.000000 (0.0%) Total=0.059327 time=15.8s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E005] beta=0.00000 entropy=1.3844 top1=0.2653 gate_scale=0.97 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.493218 pred_std=0.168071 bandE_pred=2.158415e+01 bandE_gt=3.326081e+01 loss_stat=0.021381 loss_band=0.209793 loss_hf_lap=0.016572 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 5 Val Done. Total=0.073647 | Rec=0.006784 | Edge=0.065181 | EdgeProf=0.000000 | PSNR=24.19 | SSIM=0.9025 | FFTShape=0.000000 | CB=0.000000 | HF=0.002
+[PROXY][E005] mean=24.05 p10=24.01 lr_mean=99.96 pass=0.0% step_err=0.0000 scale_dev=disabled adj_std=(0.0000,0.0000) scale_std=disabled
+[GMF_OBJ][E005] gmf_obj=36.0069
+[GMF_FIT][E005] fitness=-0.4500 z_std=0.000 z_out=0.000 z_err=0.000 z_gain=-1.000 z_proxy=-1.000
+[RANK][E005] tuple=(pass=0.0%, p10=24.01, pos_std_sum=0.0000, scale_std=disabled, scale_dev=disabled, step_err=0.0000, rec=0.006784, ssim=0.9025)
+[RANK_EXTRA][E005] edge_dens_sr/raw=0.070/0.070 match=0.322 ori=0.491 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E005] stage=window_off gmf_obj=36.0069 gmf=-0.4500 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.9677 top1=0.265 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=0.97 freeze=False
+[MON_METRIC][E005] edgeW=nan hf_proxy=0.0025 cb=0.000000 pred_mean=0.493218 pred_std=0.168071
+[GUARD][LAP][E005] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=0 lap_guard_hold=4 lap_boost_hold=0 psf_guard_hold=0 edgeW=nan hf=0.0025 cb=0.000000
+[GUARD_FLAG][E005] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=5 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E005] win=2 VAL +: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000 | -: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000
+[ATTRIB][E005] win=2 TRN->VAL +: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000 | -: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.3257, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.7373, best_val_rec = 0.008208, best_val_ssim = 0.8886
+
+Starting Epoch 6/6
+[EPOCH_CTRL][START] epoch=6 eq_factor=0.000 eq_prob=0.06 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E006] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.320 w_stat=0.008 w_band=0.008 w_hf_lap=0.080 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E006] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.94 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E006] Rec=0.003525 (7.0%) GradMag=0.045545 (92.1%) EdgeOri=0.000938 (0.9%) EqGeom=0.000000 (0.0%) Total=0.052993 time=16.1s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E006] beta=0.00000 entropy=1.3841 top1=0.2653 gate_scale=0.94 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.495169 pred_std=0.172096 bandE_pred=2.431269e+01 bandE_gt=3.230411e+01 loss_stat=0.017479 loss_band=0.145163 loss_hf_lap=0.015522 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 6 Val Done. Total=0.066261 | Rec=0.005635 | Edge=0.059437 | EdgeProf=0.000000 | PSNR=25.53 | SSIM=0.9153 | FFTShape=0.000000 | CB=0.000000 | HF=0.002
+[PROXY][E006] mean=21.62 p10=20.93 lr_mean=99.96 pass=0.0% step_err=1.2500 scale_dev=disabled adj_std=(6.6717,0.7413) scale_std=disabled
+[GMF_OBJ][E006] gmf_obj=2.4807
+[GMF_FIT][E006] fitness=-12.2315 z_std=1.414 z_out=1.414 z_err=1.414 z_gain=-1.411 z_proxy=-1.410
+[SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SIMPLETEST][CTRL_OFF] GMF_BAD triggered; LR/geom decay disabled.
+[RANK][E006] tuple=(pass=0.0%, p10=20.93, pos_std_sum=7.4130, scale_std=disabled, scale_dev=disabled, step_err=1.2500, rec=0.005635, ssim=0.9153)
+[RANK_EXTRA][E006] edge_dens_sr/raw=0.070/0.070 match=0.304 ori=0.420 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E006] stage=window_off gmf_obj=2.4807 gmf=-12.2315 step_std=1.2193 outlier=1.0000 step_err=3.0346 gain_p10=-79.0187 top1=0.265 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=0.94 freeze=False
+[MON_METRIC][E006] edgeW=nan hf_proxy=0.0017 cb=0.000000 pred_mean=0.495169 pred_std=0.172096
+[SELF_BAND] ready at E006 base_score=24.1622 base_edgeW=nan base_hf=0.0031
+[GUARD][BAND][E006] trigger hold=3 score=21.6193/24.1622 edgeW=nan/nan hf=0.0017/0.0031 lap_boost=on(3)
+[GUARD][LAP][E006] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=3 lap_guard_hold=4 lap_boost_hold=3 psf_guard_hold=0 edgeW=nan hf=0.0017 cb=0.000000
+[GUARD_FLAG][E006] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=6 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E006] win=3 VAL +: edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000, edge_profile->kpi_outlier_rate:+0.000, edge_chamfer_raw->kpi_step_mean_err:+0.000, edge_chamfer_raw->kpi_step_std:+0.000 | -: edge->kpi_step_mean_err:-0.866, edge->kpi_step_std:-0.866, edge->kpi_outlier_rate:-0.866, edge_ori->kpi_step_mean_err:-0.866, edge_ori->kpi_step_std:-0.866
+[ATTRIB][E006] win=3 TRN->VAL +: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000 | -: hf_ratio->kpi_step_mean_err:-0.866, hf_ratio->kpi_step_std:-0.866, hf_ratio->kpi_outlier_rate:-0.866, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.3257, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.7373, best_val_rec = 0.008208, best_val_ssim = 0.8886
+[AUTO][SWEEP][DONE] candidate=step8_ext_preserve_clean score=4.060579 step_err=0.000000 pos_std=0.000000 pass02=0.000000
+
+[AUTO][SWEEP] candidate=step8_ext_preserve_defect overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean'), 'LR': 5.5e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'EQ_PROB': 0.07, 'EQ_WARMUP_OFF_E': 20, 'EQ_RAMP_START_E': 21, 'EQ_RAMP_END_E': 38, 'W_GRADMAG': 1.04, 'W_EDGE_ORI_SIMPLE': 0.52, 'W_EQ_GEOM': 0.3, 'W_STAT': 0.009, 'W_BAND': 0.009, 'W_HF_LAP': 0.09, 'W_EDGELOCAL_LAP_END': 0.032, 'W_DETAIL_BASE': 0.008}
+[RUN] tag=GESR_v1_v5_ST8_SWP_epd_20260309_173821 model=GESR_v1_v5_ST8_SWP_epd
+[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epd_20260309_173821
+[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epd_20260309_173821\weights
+[REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
+[SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
+[FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=6 val_every=1 batch_log_every=5 csv_flush_n=50
+[GMF_KPI] expect_dx_px=0.0 expect_dy_px=8.0 expected_step_px=8.000000 outlier_t=0.800000 outlier_t_rel=0.100000
+[INFO] Pre-flight sanity check disabled.
+[DATA] include_subdirs=('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean') -> remaining=800
+[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epd_20260309_173821\_repro\GESR_v1_v5_ST8_SWP_epd
+[INFO] Train batches/epoch: 190
+[INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=20)
+[INFO] GMF_VALIDATE_SOURCE = monitor_shift
+[INFO] GMF_EXPECT_DX_PX/DY_PX (px/step) = (0.000000, 8.000000)
+[INFO] Loss = Rec(Huber+SSIM small) + GradMag + EdgeOri + EqGeom(grad-only)
+[INFO] [FIX] Strict Zeros Padding + Mask Erosion (r=4px) enabled
+[PATCH] 50-epoch rhythm; add edge-local Lap rescue; tighten thicken/self-band guards; PSF only guard-burst (no long-term smoothing).
+[SIMPLETEST_V2] w_rec=1.000 w_ssim=0.050 w_gradmag=1.040 w_edgeori=0.520 w_eqgeom=0.300
+[SIMPLETEST_V2] w_stat=0.009 w_band=0.009 w_hf_lap=0.090 w_phys_max=0.050 w_edgeLocalLap_end=0.032 phys_warmup_end=24 phys_ramp_end=30 phys_runtime=1
+[SIMPLETEST_V2] eq_shift tiny=(0.01, 0.24) mid=(0.24, 1.25) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
+[SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
+[MONITOR_REF] edgeW_ref=10.0211 hf_ref=0.0225 cb_ref=0.010349
+[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resumed from epoch 3
+[SCHED_SUMMARY][SIMPLETEST] rec/grad/ori fixed; eq uses geometry-only ramp
+[SCHED_SUMMARY][SIMPLETEST] eq: E1-5 off, E6-20 ramp->1, E21-40=1, E41-100 fade->0.4
+[SCHED_SUMMARY][SIMPLETEST] intensity-eq off; thicken/self-band/lap/psf guards active
+[SELF_CHECK][E001] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E005] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E006] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E020] consistency_factor=0.5000 eq_factor=0.0000
+[SELF_CHECK][E021] consistency_factor=1.0000 eq_factor=0.0000
+[SELF_CHECK][E040] consistency_factor=1.0000 eq_factor=1.0000
+[SELF_CHECK][E041] consistency_factor=1.0000 eq_factor=0.9900
+[SELF_CHECK][E100] consistency_factor=1.0000 eq_factor=0.4000
+
+Starting Epoch 4/6
+[EPOCH_CTRL][START] epoch=4 eq_factor=0.000 eq_prob=0.07 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E004] w_rec=1.000 w_ssim=0.050 w_gradmag=1.040 w_edgeori=0.520 w_eqgeom=0.300 w_stat=0.009 w_band=0.009 w_hf_lap=0.090 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E004] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=1.00 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E004] Rec=0.005240 (8.5%) GradMag=0.053542 (90.6%) EdgeOri=0.001030 (0.9%) EqGeom=0.000000 (0.0%) Total=0.065576 time=21.1s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E004] beta=0.00000 entropy=1.3845 top1=0.2672 gate_scale=1.00 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.504224 pred_std=0.150663 bandE_pred=1.904219e+01 bandE_gt=3.147461e+01 loss_stat=0.030328 loss_band=0.257534 loss_hf_lap=0.016952 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 4 Val Done. Total=0.071355 | Rec=0.005698 | Edge=0.061213 | EdgeProf=0.000000 | PSNR=24.76 | SSIM=0.9195 | FFTShape=0.000000 | CB=0.000000 | HF=0.001
+[PROXY][E004] mean=24.43 p10=24.38 lr_mean=99.96 pass=0.0% step_err=0.0000 scale_dev=disabled adj_std=(0.0000,0.0000) scale_std=disabled
+[GMF_OBJ][E004] gmf_obj=36.5788
+[GMF_FIT][E004] fitness=0.0000 z_std=0.000 z_out=0.000 z_err=0.000 z_gain=0.000 z_proxy=0.000
+[RANK][E004] tuple=(pass=0.0%, p10=24.38, pos_std_sum=0.0000, scale_std=disabled, scale_dev=disabled, step_err=0.0000, rec=0.005698, ssim=0.9195)
+[RANK_EXTRA][E004] edge_dens_sr/raw=0.070/0.070 match=0.328 ori=0.488 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E004] stage=window_off gmf_obj=36.5788 gmf=0.0000 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.5895 top1=0.267 entropy=1.385 beta_scale=0.000 beta_eff=0.0000 gate=1.00 freeze=False
+[MON_METRIC][E004] edgeW=nan hf_proxy=0.0013 cb=0.000000 pred_mean=0.504224 pred_std=0.150663
+[GUARD][LAP][E004] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=0 lap_guard_hold=4 lap_boost_hold=0 psf_guard_hold=0 edgeW=nan hf=0.0013 cb=0.000000
+[GUARD_FLAG][E004] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=4 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[BEST] Updated best: tradeoff=nan (edge_pen=nan hf_pen=nan) gmf_obj=36.5788 gmf_fitness=0.0000 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.5895 at epoch 4
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.5788, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.5895, best_val_rec = 0.005698, best_val_ssim = 0.9195
+
+Starting Epoch 5/6
+[EPOCH_CTRL][START] epoch=5 eq_factor=0.000 eq_prob=0.07 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E005] w_rec=1.000 w_ssim=0.050 w_gradmag=1.040 w_edgeori=0.520 w_eqgeom=0.300 w_stat=0.009 w_band=0.009 w_hf_lap=0.090 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E005] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.97 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E005] Rec=0.003786 (7.3%) GradMag=0.045704 (91.8%) EdgeOri=0.000922 (0.9%) EqGeom=0.000000 (0.0%) Total=0.054894 time=21.1s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E005] beta=0.00000 entropy=1.3839 top1=0.2651 gate_scale=0.97 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.502771 pred_std=0.158890 bandE_pred=2.252912e+01 bandE_gt=3.233063e+01 loss_stat=0.019438 loss_band=0.172598 loss_hf_lap=0.015201 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 5 Val Done. Total=0.063627 | Rec=0.004501 | Edge=0.055423 | EdgeProf=0.000000 | PSNR=26.41 | SSIM=0.9328 | FFTShape=0.000000 | CB=0.000000 | HF=0.001
+[PROXY][E005] mean=24.27 p10=24.23 lr_mean=99.96 pass=0.0% step_err=0.0000 scale_dev=disabled adj_std=(0.0000,0.0000) scale_std=disabled
+[GMF_OBJ][E005] gmf_obj=36.3534
+[GMF_FIT][E005] fitness=-0.4500 z_std=0.000 z_out=0.000 z_err=0.000 z_gain=-1.000 z_proxy=-1.000
+[RANK][E005] tuple=(pass=0.0%, p10=24.23, pos_std_sum=0.0000, scale_std=disabled, scale_dev=disabled, step_err=0.0000, rec=0.004501, ssim=0.9328)
+[RANK_EXTRA][E005] edge_dens_sr/raw=0.070/0.070 match=0.327 ori=0.486 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E005] stage=window_off gmf_obj=36.3534 gmf=-0.4500 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.7499 top1=0.265 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=0.97 freeze=False
+[MON_METRIC][E005] edgeW=nan hf_proxy=0.0011 cb=0.000000 pred_mean=0.502771 pred_std=0.158890
+[GUARD][LAP][E005] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=0 lap_guard_hold=4 lap_boost_hold=0 psf_guard_hold=0 edgeW=nan hf=0.0011 cb=0.000000
+[GUARD_FLAG][E005] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=5 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E005] win=2 VAL +: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000 | -: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000
+[ATTRIB][E005] win=2 TRN->VAL +: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000 | -: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.5788, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.5895, best_val_rec = 0.005698, best_val_ssim = 0.9195
+
+Starting Epoch 6/6
+[EPOCH_CTRL][START] epoch=6 eq_factor=0.000 eq_prob=0.07 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E006] w_rec=1.000 w_ssim=0.050 w_gradmag=1.040 w_edgeori=0.520 w_eqgeom=0.300 w_stat=0.009 w_band=0.009 w_hf_lap=0.090 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E006] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.94 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E006] Rec=0.003064 (6.5%) GradMag=0.041585 (92.2%) EdgeOri=0.001187 (1.3%) EqGeom=0.000000 (0.0%) Total=0.049514 time=21.3s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E006] beta=0.00000 entropy=1.3838 top1=0.2658 gate_scale=0.94 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.502877 pred_std=0.161709 bandE_pred=2.649350e+01 bandE_gt=3.408534e+01 loss_stat=0.013865 loss_band=0.129203 loss_hf_lap=0.014414 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 6 Val Done. Total=0.056812 | Rec=0.003608 | Edge=0.050146 | EdgeProf=0.000000 | PSNR=27.94 | SSIM=0.9439 | FFTShape=0.000000 | CB=0.000000 | HF=0.001
+[PROXY][E006] mean=19.80 p10=18.76 lr_mean=99.96 pass=0.0% step_err=0.7500 scale_dev=disabled adj_std=(17.7912,2.2239) scale_std=disabled
+[GMF_OBJ][E006] gmf_obj=-50.2857
+[GMF_FIT][E006] fitness=-12.2327 z_std=1.414 z_out=1.414 z_err=1.414 z_gain=-1.414 z_proxy=-1.414
+[SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SIMPLETEST][CTRL_OFF] GMF_BAD triggered; LR/geom decay disabled.
+[RANK][E006] tuple=(pass=0.0%, p10=18.76, pos_std_sum=20.0151, scale_std=disabled, scale_dev=disabled, step_err=0.7500, rec=0.003608, ssim=0.9439)
+[RANK_EXTRA][E006] edge_dens_sr/raw=0.070/0.070 match=0.284 ori=0.389 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E006] stage=window_off gmf_obj=-50.2857 gmf=-12.2327 step_std=8.9435 outlier=0.5000 step_err=8.8749 gain_p10=-81.1965 top1=0.266 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=0.94 freeze=False
+[MON_METRIC][E006] edgeW=nan hf_proxy=0.0010 cb=0.000000 pred_mean=0.502877 pred_std=0.161709
+[SELF_BAND] ready at E006 base_score=24.3501 base_edgeW=nan base_hf=0.0012
+[GUARD][BAND][E006] trigger hold=3 score=19.8041/24.3501 edgeW=nan/nan hf=0.0010/0.0012 lap_boost=on(3)
+[GUARD][LAP][E006] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=3 lap_guard_hold=4 lap_boost_hold=3 psf_guard_hold=0 edgeW=nan hf=0.0010 cb=0.000000
+[GUARD_FLAG][E006] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=6 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E006] win=3 VAL +: edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000, edge_profile->kpi_outlier_rate:+0.000, edge_chamfer_raw->kpi_step_mean_err:+0.000, edge_chamfer_raw->kpi_step_std:+0.000 | -: edge->kpi_step_mean_err:-0.866, edge->kpi_step_std:-0.866, edge->kpi_outlier_rate:-0.866, edge_ori->kpi_step_mean_err:-0.866, edge_ori->kpi_step_std:-0.866
+[ATTRIB][E006] win=3 TRN->VAL +: edge_ori->kpi_step_mean_err:+0.866, edge_ori->kpi_step_std:+0.866, edge_ori->kpi_outlier_rate:+0.866, hf_ratio->kpi_step_mean_err:+0.866, hf_ratio->kpi_step_std:+0.866 | -: weak_entropy->kpi_step_mean_err:-0.866, weak_entropy->kpi_step_std:-0.866, weak_entropy->kpi_outlier_rate:-0.866, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.5788, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.5895, best_val_rec = 0.005698, best_val_ssim = 0.9195
+[AUTO][SWEEP][DONE] candidate=step8_ext_preserve_defect score=4.263054 step_err=0.000000 pos_std=0.000000 pass02=0.000000
+
+[AUTO][SWEEP] candidate=step8_ext_preserve_general overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_02_circles', 'stage_04_ellipses', 'stage_06_mixed_simple', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean'), 'LR': 6e-06, 'FREEZE_PHYSICS_EPOCH': 22, 'PHYS_WARMUP_END': 22, 'WEAK_PSF_STAGE0_EPOCHS': 22, 'WEAK_PSF_STAGE1_EPOCHS': 32, 'WEAK_PSF_ACTIVE_START_E': 23, 'EQ_PROB': 0.08, 'EQ_WARMUP_OFF_E': 18, 'EQ_RAMP_START_E': 19, 'EQ_RAMP_END_E': 36, 'W_GRADMAG': 1.02, 'W_EDGE_ORI_SIMPLE': 0.5, 'W_EQ_GEOM': 0.3, 'W_STAT': 0.01, 'W_BAND': 0.01, 'W_HF_LAP': 0.09, 'W_EDGELOCAL_LAP_END': 0.032, 'W_DETAIL_BASE': 0.008}
+[RUN] tag=GESR_v1_v5_ST8_SWP_epg_20260309_174357 model=GESR_v1_v5_ST8_SWP_epg
+[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357
+[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357\weights
+[REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
+[SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
+[FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=6 val_every=1 batch_log_every=5 csv_flush_n=50
+[GMF_KPI] expect_dx_px=0.0 expect_dy_px=8.0 expected_step_px=8.000000 outlier_t=0.800000 outlier_t_rel=0.100000
+[INFO] Pre-flight sanity check disabled.
+[DATA] include_subdirs=('stage_02_circles', 'stage_04_ellipses', 'stage_06_mixed_simple', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean') -> remaining=1000
+[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357\_repro\GESR_v1_v5_ST8_SWP_epg
+[INFO] Train batches/epoch: 237
+[INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=25)
+[INFO] GMF_VALIDATE_SOURCE = monitor_shift
+[INFO] GMF_EXPECT_DX_PX/DY_PX (px/step) = (0.000000, 8.000000)
+[INFO] Loss = Rec(Huber+SSIM small) + GradMag + EdgeOri + EqGeom(grad-only)
+[INFO] [FIX] Strict Zeros Padding + Mask Erosion (r=4px) enabled
+[PATCH] 50-epoch rhythm; add edge-local Lap rescue; tighten thicken/self-band guards; PSF only guard-burst (no long-term smoothing).
+[SIMPLETEST_V2] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300
+[SIMPLETEST_V2] w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_phys_max=0.050 w_edgeLocalLap_end=0.032 phys_warmup_end=22 phys_ramp_end=30 phys_runtime=1
+[SIMPLETEST_V2] eq_shift tiny=(0.01, 0.24) mid=(0.24, 1.25) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
+[SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
+[MONITOR_REF] edgeW_ref=10.0211 hf_ref=0.0225 cb_ref=0.010349
+[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resumed from epoch 3
+[SCHED_SUMMARY][SIMPLETEST] rec/grad/ori fixed; eq uses geometry-only ramp
+[SCHED_SUMMARY][SIMPLETEST] eq: E1-5 off, E6-20 ramp->1, E21-40=1, E41-100 fade->0.4
+[SCHED_SUMMARY][SIMPLETEST] intensity-eq off; thicken/self-band/lap/psf guards active
+[SELF_CHECK][E001] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E005] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E006] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E020] consistency_factor=0.5000 eq_factor=0.0588
+[SELF_CHECK][E021] consistency_factor=1.0000 eq_factor=0.1176
+[SELF_CHECK][E040] consistency_factor=1.0000 eq_factor=1.0000
+[SELF_CHECK][E041] consistency_factor=1.0000 eq_factor=0.9900
+[SELF_CHECK][E100] consistency_factor=1.0000 eq_factor=0.4000
+
+Starting Epoch 4/6
+[EPOCH_CTRL][START] epoch=4 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E004] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E004] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=1.00 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E004] Rec=0.005622 (9.1%) GradMag=0.054672 (90.1%) EdgeOri=0.001078 (0.9%) EqGeom=0.000000 (0.0%) Total=0.066056 time=26.4s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E004] beta=0.00000 entropy=1.3843 top1=0.2652 gate_scale=1.00 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.505602 pred_std=0.174755 bandE_pred=2.128169e+01 bandE_gt=3.346877e+01 loss_stat=0.030896 loss_band=0.227106 loss_hf_lap=0.017223 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 4 Val Done. Total=0.070672 | Rec=0.006980 | Edge=0.060912 | EdgeProf=0.000000 | PSNR=23.72 | SSIM=0.9028 | FFTShape=0.000000 | CB=0.000000 | HF=0.002
+[PROXY][E004] mean=24.61 p10=24.56 lr_mean=99.96 pass=0.0% step_err=0.0000 scale_dev=disabled adj_std=(0.0000,0.0000) scale_std=disabled
+[GMF_OBJ][E004] gmf_obj=36.8433
+[GMF_FIT][E004] fitness=0.0000 z_std=0.000 z_out=0.000 z_err=0.000 z_gain=0.000 z_proxy=0.000
+[RANK][E004] tuple=(pass=0.0%, p10=24.56, pos_std_sum=0.0000, scale_std=disabled, scale_dev=disabled, step_err=0.0000, rec=0.006980, ssim=0.9028)
+[RANK_EXTRA][E004] edge_dens_sr/raw=0.070/0.070 match=0.331 ori=0.488 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E004] stage=window_off gmf_obj=36.8433 gmf=0.0000 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.4166 top1=0.265 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=1.00 freeze=False
+[MON_METRIC][E004] edgeW=nan hf_proxy=0.0018 cb=0.000000 pred_mean=0.505602 pred_std=0.174755
+[GUARD][LAP][E004] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=0 lap_guard_hold=4 lap_boost_hold=0 psf_guard_hold=0 edgeW=nan hf=0.0018 cb=0.000000
+[GUARD_FLAG][E004] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=4 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[BEST] Updated best: tradeoff=nan (edge_pen=nan hf_pen=nan) gmf_obj=36.8433 gmf_fitness=0.0000 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.4166 at epoch 4
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8433, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4166, best_val_rec = 0.006980, best_val_ssim = 0.9028
+
+Starting Epoch 5/6
+[EPOCH_CTRL][START] epoch=5 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E005] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E005] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.97 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E005] Rec=0.003863 (7.7%) GradMag=0.045160 (92.0%) EdgeOri=0.000262 (0.3%) EqGeom=0.000000 (0.0%) Total=0.052942 time=26.7s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E005] beta=0.00000 entropy=1.3841 top1=0.2646 gate_scale=0.97 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.500683 pred_std=0.182196 bandE_pred=2.566711e+01 bandE_gt=3.351986e+01 loss_stat=0.018140 loss_band=0.132809 loss_hf_lap=0.015275 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 5 Val Done. Total=0.060065 | Rec=0.005009 | Edge=0.052700 | EdgeProf=0.000000 | PSNR=26.22 | SSIM=0.9237 | FFTShape=0.000000 | CB=0.000000 | HF=0.002
+[PROXY][E005] mean=22.10 p10=21.49 lr_mean=99.96 pass=0.0% step_err=0.2500 scale_dev=disabled adj_std=(5.9304,1.4826) scale_std=disabled
+[GMF_OBJ][E005] gmf_obj=7.2254
+[GMF_FIT][E005] fitness=-8.6500 z_std=1.000 z_out=1.000 z_err=1.000 z_gain=-1.000 z_proxy=-1.000
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[RANK][E005] tuple=(pass=0.0%, p10=21.49, pos_std_sum=7.4130, scale_std=disabled, scale_dev=disabled, step_err=0.2500, rec=0.005009, ssim=0.9237)
+[RANK_EXTRA][E005] edge_dens_sr/raw=0.070/0.070 match=0.311 ori=0.419 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E005] stage=window_off gmf_obj=7.2254 gmf=-8.6500 step_std=2.0466 outlier=0.7500 step_err=2.1273 gain_p10=-78.4631 top1=0.265 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=0.97 freeze=False
+[MON_METRIC][E005] edgeW=nan hf_proxy=0.0016 cb=0.000000 pred_mean=0.500683 pred_std=0.182196
+[GUARD][LAP][E005] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=0 lap_guard_hold=4 lap_boost_hold=0 psf_guard_hold=0 edgeW=nan hf=0.0016 cb=0.000000
+[GUARD_FLAG][E005] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=5 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E005] win=2 VAL +: edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000, edge_profile->kpi_outlier_rate:+0.000, edge_chamfer_raw->kpi_step_mean_err:+0.000, edge_chamfer_raw->kpi_step_std:+0.000 | -: edge->kpi_step_mean_err:-1.000, edge->kpi_step_std:-1.000, edge->kpi_outlier_rate:-1.000, edge_ori->kpi_step_mean_err:-1.000, edge_ori->kpi_step_std:-1.000
+[ATTRIB][E005] win=2 TRN->VAL +: hf_ratio->kpi_step_mean_err:+1.000, hf_ratio->kpi_step_std:+1.000, hf_ratio->kpi_outlier_rate:+1.000, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000 | -: edge_ori->kpi_step_mean_err:-1.000, edge_ori->kpi_step_std:-1.000, edge_ori->kpi_outlier_rate:-1.000, weak_entropy->kpi_step_mean_err:-1.000, weak_entropy->kpi_step_std:-1.000
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8433, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4166, best_val_rec = 0.006980, best_val_ssim = 0.9028
+
+Starting Epoch 6/6
+[EPOCH_CTRL][START] epoch=6 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E006] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E006] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.94 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E006] Rec=0.003143 (7.2%) GradMag=0.039672 (92.7%) EdgeOri=0.000102 (0.1%) EqGeom=0.000000 (0.0%) Total=0.046259 time=26.8s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E006] beta=0.00000 entropy=1.3840 top1=0.2652 gate_scale=0.94 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.499399 pred_std=0.182794 bandE_pred=2.551269e+01 bandE_gt=3.246952e+01 loss_stat=0.014192 loss_band=0.120589 loss_hf_lap=0.013901 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 6 Val Done. Total=0.052174 | Rec=0.003869 | Edge=0.045949 | EdgeProf=0.000000 | PSNR=28.11 | SSIM=0.9381 | FFTShape=0.000000 | CB=0.000000 | HF=0.001
+[PROXY][E006] mean=19.85 p10=18.83 lr_mean=99.96 pass=0.0% step_err=0.0000 scale_dev=disabled adj_std=(17.0499,2.9652) scale_std=disabled
+[GMF_OBJ][E006] gmf_obj=-47.7111
+[GMF_FIT][E006] fitness=-9.3975 z_std=1.372 z_out=0.707 z_err=1.373 z_gain=-1.197 z_proxy=-1.203
+[SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SIMPLETEST][CTRL_OFF] GMF_BAD triggered; LR/geom decay disabled.
+[RANK][E006] tuple=(pass=0.0%, p10=18.83, pos_std_sum=20.0151, scale_std=disabled, scale_dev=disabled, step_err=0.0000, rec=0.003869, ssim=0.9381)
+[RANK_EXTRA][E006] edge_dens_sr/raw=0.070/0.070 match=0.283 ori=0.402 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E006] stage=window_off gmf_obj=-47.7111 gmf=-9.3975 step_std=8.1005 outlier=0.7500 step_err=8.5343 gain_p10=-81.1313 top1=0.265 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=0.94 freeze=False
+[MON_METRIC][E006] edgeW=nan hf_proxy=0.0014 cb=0.000000 pred_mean=0.499399 pred_std=0.182794
+[SELF_BAND] ready at E006 base_score=23.3550 base_edgeW=nan base_hf=0.0017
+[GUARD][BAND][E006] trigger hold=3 score=19.8477/23.3550 edgeW=nan/nan hf=0.0014/0.0017 lap_boost=on(3)
+[GUARD][LAP][E006] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=3 lap_guard_hold=4 lap_boost_hold=3 psf_guard_hold=0 edgeW=nan hf=0.0014 cb=0.000000
+[GUARD_FLAG][E006] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=6 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E006] win=3 VAL +: edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000, edge_profile->kpi_outlier_rate:+0.000, edge_chamfer_raw->kpi_step_mean_err:+0.000, edge_chamfer_raw->kpi_step_std:+0.000 | -: edge->kpi_step_mean_err:-1.000, edge->kpi_step_std:-1.000, hf_ratio->kpi_step_mean_err:-1.000, hf_ratio->kpi_step_std:-1.000, weak_entropy->kpi_step_mean_err:-1.000
+[ATTRIB][E006] win=3 TRN->VAL +: edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000 | -: edge_ori->kpi_step_mean_err:-1.000, edge_ori->kpi_step_std:-1.000, weak_entropy->kpi_step_mean_err:-1.000, weak_entropy->kpi_step_std:-1.000, edge_ori->kpi_outlier_rate:-0.866
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8433, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4166, best_val_rec = 0.006980, best_val_ssim = 0.9028
+[AUTO][SWEEP][DONE] candidate=step8_ext_preserve_general score=4.474646 step_err=0.000000 pos_std=0.000000 pass02=0.000000
+
+[AUTO] best candidate=step8_ext_preserve_general score=4.474646 progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357
+[AUTO][FINAL] start candidate=step8_ext_preserve_general
+[RUN] tag=GESR_v1_v5_ST8_FIN_epg_20260309_174950 model=GESR_v1_v5_ST8_FIN_epg
+[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950
+[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950\weights
+[REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
+[SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
+[FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=2 batch_log_every=5 csv_flush_n=50
+[GMF_KPI] expect_dx_px=0.0 expect_dy_px=8.0 expected_step_px=8.000000 outlier_t=0.800000 outlier_t_rel=0.100000
+[INFO] Pre-flight sanity check disabled.
+[DATA] include_subdirs=('stage_02_circles', 'stage_04_ellipses', 'stage_06_mixed_simple', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean') -> remaining=1000
+[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950\_repro\GESR_v1_v5_ST8_FIN_epg
+[INFO] Train batches/epoch: 237
+[INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=25)
+[INFO] GMF_VALIDATE_SOURCE = monitor_shift
+[INFO] GMF_EXPECT_DX_PX/DY_PX (px/step) = (0.000000, 8.000000)
+[INFO] Loss = Rec(Huber+SSIM small) + GradMag + EdgeOri + EqGeom(grad-only)
+[INFO] [FIX] Strict Zeros Padding + Mask Erosion (r=4px) enabled
+[PATCH] 50-epoch rhythm; add edge-local Lap rescue; tighten thicken/self-band guards; PSF only guard-burst (no long-term smoothing).
+[SIMPLETEST_V2] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300
+[SIMPLETEST_V2] w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_phys_max=0.050 w_edgeLocalLap_end=0.032 phys_warmup_end=22 phys_ramp_end=30 phys_runtime=1
+[SIMPLETEST_V2] eq_shift tiny=(0.01, 0.24) mid=(0.24, 1.25) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
+[SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
+[MONITOR_REF] edgeW_ref=10.0211 hf_ref=0.0225 cb_ref=0.010349
+[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resumed from epoch 3
+[SCHED_SUMMARY][SIMPLETEST] rec/grad/ori fixed; eq uses geometry-only ramp
+[SCHED_SUMMARY][SIMPLETEST] eq: E1-5 off, E6-20 ramp->1, E21-40=1, E41-100 fade->0.4
+[SCHED_SUMMARY][SIMPLETEST] intensity-eq off; thicken/self-band/lap/psf guards active
+[SELF_CHECK][E001] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E005] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E006] consistency_factor=0.4000 eq_factor=0.0000
+[SELF_CHECK][E020] consistency_factor=0.5000 eq_factor=0.0588
+[SELF_CHECK][E021] consistency_factor=1.0000 eq_factor=0.1176
+[SELF_CHECK][E040] consistency_factor=1.0000 eq_factor=1.0000
+[SELF_CHECK][E041] consistency_factor=1.0000 eq_factor=0.9900
+[SELF_CHECK][E100] consistency_factor=1.0000 eq_factor=0.4000
+
+Starting Epoch 4/10
+[EPOCH_CTRL][START] epoch=4 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E004] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E004] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=1.00 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E004] Rec=0.005615 (9.1%) GradMag=0.054649 (90.1%) EdgeOri=0.001078 (0.9%) EqGeom=0.000000 (0.0%) Total=0.066075 time=26.4s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E004] beta=0.00000 entropy=1.3842 top1=0.2647 gate_scale=1.00 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.505594 pred_std=0.174783 bandE_pred=2.109652e+01 bandE_gt=3.346877e+01 loss_stat=0.030701 loss_band=0.232148 loss_hf_lap=0.017224 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 4 Val Done. Total=0.070648 | Rec=0.006977 | Edge=0.060919 | EdgeProf=0.000000 | PSNR=23.73 | SSIM=0.9029 | FFTShape=0.000000 | CB=0.000000 | HF=0.002
+[PROXY][E004] mean=24.61 p10=24.55 lr_mean=99.96 pass=0.0% step_err=0.0000 scale_dev=disabled adj_std=(0.0000,0.0000) scale_std=disabled
+[GMF_OBJ][E004] gmf_obj=36.8365
+[GMF_FIT][E004] fitness=0.0000 z_std=0.000 z_out=0.000 z_err=0.000 z_gain=0.000 z_proxy=0.000
+[RANK][E004] tuple=(pass=0.0%, p10=24.55, pos_std_sum=0.0000, scale_std=disabled, scale_dev=disabled, step_err=0.0000, rec=0.006977, ssim=0.9029)
+[RANK_EXTRA][E004] edge_dens_sr/raw=0.070/0.070 match=0.331 ori=0.488 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E004] stage=window_off gmf_obj=36.8365 gmf=0.0000 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.4261 top1=0.265 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=1.00 freeze=False
+[MON_METRIC][E004] edgeW=10.9726 hf_proxy=0.0001 cb=0.004267 pred_mean=0.505594 pred_std=0.174783
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=0 lap_guard_hold=0 lap_boost_hold=0 psf_guard_hold=0 edgeW=10.9726 hf=0.0001 cb=0.004267
+[GUARD_FLAG][E004] THICKEN=0 OVERSMOOTH=0 LAP=0 PSF=0
+[EPOCH_CTRL][END] epoch=4 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[BEST] Updated best: tradeoff=nan (edge_pen=nan hf_pen=nan) gmf_obj=36.8365 gmf_fitness=0.0000 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-75.4261 at epoch 4
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8365, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4261, best_val_rec = 0.006977, best_val_ssim = 0.9029
+
+Starting Epoch 5/10
+[EPOCH_CTRL][START] epoch=5 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E005] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E005] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.97 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E005] Rec=0.003893 (7.7%) GradMag=0.045399 (92.0%) EdgeOri=0.000272 (0.3%) EqGeom=0.000000 (0.0%) Total=0.053273 time=26.6s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E005] beta=0.00000 entropy=1.3841 top1=0.2644 gate_scale=0.97 freeze=1 bypass=True
+[MONITOR][E005] range[0.2012,0.9435] mean=0.5587 std=0.1178 p95=0.8989 p99=0.9286 cb=0.00382 hf_ratio=0.000 edgeW=10.6362
+[SIMPLETEST_V2][MON] pred_mean=0.500841 pred_std=0.182155 bandE_pred=2.544795e+01 bandE_gt=3.351986e+01 loss_stat=0.018039 loss_band=0.137885 loss_hf_lap=0.015309 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+[VAL][E005] skipped by FAST_VAL_EVERY_EPOCH=2
+[PROXY][E005] mean=22.35 p10=21.43 lr_mean=99.96 pass=0.0% step_err=0.0000 scale_dev=disabled adj_std=(1.4826,0.7413) scale_std=disabled
+[GMF_OBJ][E005] gmf_obj=15.8438
+[GMF_FIT][E005] fitness=-8.6500 z_std=1.000 z_out=1.000 z_err=1.000 z_gain=-1.000 z_proxy=-1.000
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[RANK][E005] tuple=(pass=0.0%, p10=21.43, pos_std_sum=2.2239, scale_std=disabled, scale_dev=disabled, step_err=0.0000, rec=nan, ssim=nan)
+[RANK_EXTRA][E005] edge_dens_sr/raw=0.070/0.070 match=0.314 ori=0.424 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E005] stage=window_off gmf_obj=15.8438 gmf=-8.6500 step_std=2.1870 outlier=0.5000 step_err=1.2132 gain_p10=-78.5120 top1=0.264 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=0.97 freeze=False
+[MON_METRIC][E005] edgeW=10.6362 hf_proxy=0.0000 cb=0.003816 pred_mean=0.500841 pred_std=0.182155
+[GUARD][LAP][E005] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=0 lap_guard_hold=4 lap_boost_hold=0 psf_guard_hold=0 edgeW=10.6362 hf=0.0000 cb=0.003816
+[GUARD_FLAG][E005] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=5 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E005] win=2 VAL +: edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000, edge_profile->kpi_outlier_rate:+0.000, edge_chamfer_raw->kpi_step_mean_err:+0.000, edge_chamfer_raw->kpi_step_std:+0.000 | -: edge->kpi_step_mean_err:-1.000, edge->kpi_step_std:-1.000, edge->kpi_outlier_rate:-1.000, edge_ori->kpi_step_mean_err:-1.000, edge_ori->kpi_step_std:-1.000
+[ATTRIB][E005] win=2 TRN->VAL +: hf_ratio->kpi_step_mean_err:+1.000, hf_ratio->kpi_step_std:+1.000, hf_ratio->kpi_outlier_rate:+1.000, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000 | -: edge_ori->kpi_step_mean_err:-1.000, edge_ori->kpi_step_std:-1.000, edge_ori->kpi_outlier_rate:-1.000, weak_entropy->kpi_step_mean_err:-1.000, weak_entropy->kpi_step_std:-1.000
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8365, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4261, best_val_rec = 0.006977, best_val_ssim = 0.9029
+
+Starting Epoch 6/10
+[EPOCH_CTRL][START] epoch=6 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000 rescue_lr_mult=1.00 rescue_eq_mult=1.00
+[WEIGHT][E006] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.400 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E006] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.94 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E006] Rec=0.003114 (7.2%) GradMag=0.039389 (92.7%) EdgeOri=0.000078 (0.1%) EqGeom=0.000000 (0.0%) Total=0.045877 time=26.6s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E006] beta=0.00000 entropy=1.3834 top1=0.2648 gate_scale=0.94 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.497992 pred_std=0.183651 bandE_pred=2.673323e+01 bandE_gt=3.372775e+01 loss_stat=0.013604 loss_band=0.116410 loss_hf_lap=0.013850 loss_phys=0.000000 loss_edgeLocalLap=0.000000 loss_detail=0.000000 w_edgeLocalLap=0.000
+-> Epoch 6 Val Done. Total=0.051979 | Rec=0.003844 | Edge=0.045924 | EdgeProf=0.000000 | PSNR=28.17 | SSIM=0.9384 | FFTShape=0.000000 | CB=0.000000 | HF=0.001
+[PROXY][E006] mean=19.53 p10=18.64 lr_mean=99.96 pass=0.0% step_err=0.8333 scale_dev=disabled adj_std=(0.0000,1.4826) scale_std=disabled
+[GMF_OBJ][E006] gmf_obj=-23.1374
+[GMF_FIT][E006] fitness=-10.3811 z_std=1.367 z_out=0.981 z_err=1.376 z_gain=-1.205 z_proxy=-1.267
+[SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SIMPLETEST][CTRL_OFF] GMF_BAD triggered; LR/geom decay disabled.
+[RANK][E006] tuple=(pass=0.0%, p10=18.64, pos_std_sum=1.4826, scale_std=disabled, scale_dev=disabled, step_err=0.8333, rec=0.003844, ssim=0.9384)
+[RANK_EXTRA][E006] edge_dens_sr/raw=0.070/0.070 match=0.280 ori=0.394 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E006] stage=window_off gmf_obj=-23.1374 gmf=-10.3811 step_std=8.2082 outlier=0.6667 step_err=5.0048 gain_p10=-81.3248 top1=0.265 entropy=1.383 beta_scale=0.000 beta_eff=0.0000 gate=0.94 freeze=False
+[MON_METRIC][E006] edgeW=10.7479 hf_proxy=0.0000 cb=0.003388 pred_mean=0.497992 pred_std=0.183651
+[SELF_BAND] ready at E006 base_score=23.4821 base_edgeW=10.8044 base_hf=0.0000
+[GUARD][BAND][E006] trigger hold=3 score=19.5312/23.4821 edgeW=10.7479/10.8044 hf=0.0000/0.0000 lap_boost=on(3)
+[RESCUE][E006] bad_basin -> rollback + lr_mult=0.50 eq_mult=0.50 hold=4 edgeW=10.7479/10.0211 hf=0.0000/0.0225 gmf=-23.1374/36.8365
+[RESCUE_FLAG] fail_flag=1 (no abort)
+[GUARD][LAP][E006] hold=4 reason=band_guard
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.350 w_edgeLocalLap=0.000 consist_mult=1.000 smooth_mult=1.000 cap_mult=1.000 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=3 lap_guard_hold=4 lap_boost_hold=3 psf_guard_hold=0 edgeW=10.7479 hf=0.0000 cb=0.003388
+[GUARD_FLAG][E006] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=6 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.400 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E006] win=3 VAL +: weak_top1->kpi_step_mean_err:+0.500, weak_top1->kpi_step_std:+0.500, weak_top1->kpi_outlier_rate:+0.500, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000 | -: weak_entropy->kpi_step_mean_err:-1.000, weak_entropy->kpi_step_std:-1.000, weak_entropy->kpi_outlier_rate:-1.000, edge->kpi_step_mean_err:-0.500, edge->kpi_step_std:-0.500
+[ATTRIB][E006] win=3 TRN->VAL +: weak_top1->kpi_step_mean_err:+0.500, weak_top1->kpi_step_std:+0.500, weak_top1->kpi_outlier_rate:+0.500, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000 | -: edge_ori->kpi_step_mean_err:-1.000, edge_ori->kpi_step_std:-1.000, edge_ori->kpi_outlier_rate:-1.000, weak_entropy->kpi_step_mean_err:-1.000, weak_entropy->kpi_step_std:-1.000
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8365, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4261, best_val_rec = 0.006977, best_val_ssim = 0.9029
+
+Starting Epoch 7/10
+[EPOCH_CTRL][START] epoch=7 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.130 thicken_guard_hold=0 guard_mult=0.540 rescue_lr_mult=0.50 rescue_eq_mult=0.50
+[WEIGHT][E007] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.001 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.130 grad_only=1
+[RESCUE] active=1 remaining_epochs=3
+[WEAK_PSF][E007] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.88 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E007] Rec=0.002661 (6.9%) GradMag=0.035019 (92.6%) EdgeOri=0.000351 (0.5%) EqGeom=0.000000 (0.0%) Total=0.040806 time=26.8s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E007] beta=0.00000 entropy=1.3838 top1=0.2647 gate_scale=0.88 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.496750 pred_std=0.183652 bandE_pred=2.638793e+01 bandE_gt=3.183893e+01 loss_stat=0.011280 loss_band=0.092984 loss_hf_lap=0.012776 loss_phys=0.000000 loss_edgeLocalLap=0.040746 loss_detail=0.000000 w_edgeLocalLap=0.001
+[VAL][E007] skipped by FAST_VAL_EVERY_EPOCH=2
+[PROXY][E007] mean=19.24 p10=18.36 lr_mean=99.96 pass=0.0% step_err=0.6667 scale_dev=disabled adj_std=(0.0000,2.9652) scale_std=disabled
+[GMF_OBJ][E007] gmf_obj=-27.6340
+[GMF_FIT][E007] fitness=-9.5294 z_std=0.928 z_out=1.270 z_err=1.070 z_gain=-0.955 z_proxy=-0.996
+[SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[RANK][E007] tuple=(pass=0.0%, p10=18.36, pos_std_sum=2.9652, scale_std=disabled, scale_dev=disabled, step_err=0.6667, rec=nan, ssim=nan)
+[RANK_EXTRA][E007] edge_dens_sr/raw=0.070/0.070 match=0.274 ori=0.401 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E007] stage=window_off gmf_obj=-27.6340 gmf=-9.5294 step_std=7.8688 outlier=1.0000 step_err=5.4195 gain_p10=-81.6030 top1=0.265 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=0.88 freeze=False
+[MON_METRIC][E007] edgeW=10.3983 hf_proxy=0.0000 cb=0.003066 pred_mean=0.496750 pred_std=0.183652
+[GUARD][BAND][E007] trigger hold=3 score=19.2425/23.4821 edgeW=10.3983/10.8044 hf=0.0000/0.0000 lap_boost=on(3)
+[GUARD][LAP][E007] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.250 w_edgeLocalLap=0.001 consist_mult=0.540 smooth_mult=0.540 cap_mult=0.540 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=3 lap_guard_hold=4 lap_boost_hold=3 psf_guard_hold=0 edgeW=10.3983 hf=0.0000 cb=0.003066
+[GUARD_FLAG][E007] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=7 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.130 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E007] win=4 VAL +: weak_top1->kpi_step_std:+0.400, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000, edge_profile->kpi_outlier_rate:+0.000, edge_chamfer_raw->kpi_step_mean_err:+0.000 | -: weak_entropy->kpi_step_std:-1.000, weak_entropy->kpi_step_mean_err:-0.800, weak_entropy->kpi_outlier_rate:-0.800, edge->kpi_step_mean_err:-0.632, edge->kpi_outlier_rate:-0.632
+[ATTRIB][E007] win=4 TRN->VAL +: weak_top1->kpi_step_std:+0.400, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000 | -: weak_entropy->kpi_step_std:-1.000, edge_ori->kpi_step_std:-0.800, hf_ratio->kpi_step_std:-0.800, weak_entropy->kpi_step_mean_err:-0.800, weak_entropy->kpi_outlier_rate:-0.800
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8365, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4261, best_val_rec = 0.006977, best_val_ssim = 0.9029
+
+Starting Epoch 8/10
+[EPOCH_CTRL][START] epoch=8 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.130 thicken_guard_hold=0 guard_mult=0.540 rescue_lr_mult=0.50 rescue_eq_mult=0.50
+[WEIGHT][E008] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.003 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.130 grad_only=1
+[RESCUE] active=1 remaining_epochs=2
+[WEAK_PSF][E008] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.84 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E008] Rec=0.002489 (6.8%) GradMag=0.033301 (93.0%) EdgeOri=0.000157 (0.2%) EqGeom=0.000000 (0.0%) Total=0.038743 time=26.9s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E008] beta=0.00000 entropy=1.3847 top1=0.2640 gate_scale=0.84 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.498333 pred_std=0.186350 bandE_pred=2.672279e+01 bandE_gt=3.160607e+01 loss_stat=0.010238 loss_band=0.088273 loss_hf_lap=0.012338 loss_phys=0.000000 loss_edgeLocalLap=0.039558 loss_detail=0.000000 w_edgeLocalLap=0.003
+-> Epoch 8 Val Done. Total=0.043241 | Rec=0.002890 | Edge=0.038457 | EdgeProf=0.000000 | PSNR=30.15 | SSIM=0.9519 | FFTShape=0.000000 | CB=0.000000 | HF=0.001
+[PROXY][E008] mean=19.28 p10=18.32 lr_mean=99.96 pass=0.0% step_err=0.8333 scale_dev=disabled adj_std=(2.9652,2.9652) scale_std=disabled
+[GMF_OBJ][E008] gmf_obj=-25.8656
+[GMF_FIT][E008] fitness=-6.1026 z_std=0.657 z_out=0.680 z_err=0.809 z_gain=-0.796 z_proxy=-0.803
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[RANK][E008] tuple=(pass=0.0%, p10=18.32, pos_std_sum=5.9304, scale_std=disabled, scale_dev=disabled, step_err=0.8333, rec=0.002890, ssim=0.9519)
+[RANK_EXTRA][E008] edge_dens_sr/raw=0.070/0.070 match=0.274 ori=0.407 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E008] stage=window_off gmf_obj=-25.8656 gmf=-6.1026 step_std=7.3359 outlier=0.8333 step_err=5.2294 gain_p10=-81.6403 top1=0.264 entropy=1.385 beta_scale=0.000 beta_eff=0.0000 gate=0.84 freeze=False
+[MON_METRIC][E008] edgeW=9.5385 hf_proxy=0.0000 cb=0.002863 pred_mean=0.498333 pred_std=0.186350
+[GUARD][BAND][E008] trigger hold=3 score=19.2769/23.4821 edgeW=9.5385/10.8044 hf=0.0000/0.0000 lap_boost=on(3)
+[GUARD][LAP][E008] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.250 w_edgeLocalLap=0.003 consist_mult=0.540 smooth_mult=0.540 cap_mult=0.540 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=3 lap_guard_hold=4 lap_boost_hold=3 psf_guard_hold=0 edgeW=9.5385 hf=0.0000 cb=0.002863
+[GUARD_FLAG][E008] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=8 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.130 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E008] win=5 VAL +: weak_top1->kpi_step_std:+0.300, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000, edge_profile->kpi_outlier_rate:+0.000, edge_chamfer_raw->kpi_step_mean_err:+0.000 | -: weak_entropy->kpi_step_std:-0.700, edge->kpi_step_mean_err:-0.564, edge->kpi_outlier_rate:-0.564, edge_ori->kpi_step_mean_err:-0.564, edge_ori->kpi_outlier_rate:-0.564
+[ATTRIB][E008] win=5 TRN->VAL +: weak_top1->kpi_step_std:+0.300, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000, edge->kpi_outlier_rate:+0.000, edge_profile->kpi_step_mean_err:+0.000 | -: hf_ratio->kpi_step_std:-0.800, edge_ori->kpi_step_std:-0.700, weak_entropy->kpi_step_std:-0.700, hf_ratio->kpi_step_mean_err:-0.500, hf_ratio->kpi_outlier_rate:-0.500
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8365, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4261, best_val_rec = 0.006977, best_val_ssim = 0.9029
+
+Starting Epoch 9/10
+[EPOCH_CTRL][START] epoch=9 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.130 thicken_guard_hold=0 guard_mult=0.540 rescue_lr_mult=0.50 rescue_eq_mult=0.50
+[WEIGHT][E009] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.004 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.130 grad_only=1
+[RESCUE] active=1 remaining_epochs=1
+[WEAK_PSF][E009] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.81 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E009] Rec=0.002424 (6.7%) GradMag=0.032774 (92.8%) EdgeOri=0.000367 (0.5%) EqGeom=0.000000 (0.0%) Total=0.038161 time=26.6s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E009] beta=0.00000 entropy=1.3844 top1=0.2640 gate_scale=0.81 freeze=1 bypass=True
+[SIMPLETEST_V2][MON] pred_mean=0.496175 pred_std=0.184819 bandE_pred=2.685130e+01 bandE_gt=3.121690e+01 loss_stat=0.009869 loss_band=0.076718 loss_hf_lap=0.012110 loss_phys=0.000000 loss_edgeLocalLap=0.039191 loss_detail=0.000000 w_edgeLocalLap=0.004
+[VAL][E009] skipped by FAST_VAL_EVERY_EPOCH=2
+[PROXY][E009] mean=19.13 p10=18.27 lr_mean=99.96 pass=0.0% step_err=0.0000 scale_dev=disabled adj_std=(1.4826,2.2239) scale_std=disabled
+[GMF_OBJ][E009] gmf_obj=-26.4777
+[GMF_FIT][E009] fitness=-6.7858 z_std=0.530 z_out=0.961 z_err=0.844 z_gain=-0.706 z_proxy=-0.751
+[RANK][E009] tuple=(pass=0.0%, p10=18.27, pos_std_sum=3.7065, scale_std=disabled, scale_dev=disabled, step_err=0.0000, rec=nan, ssim=nan)
+[RANK_EXTRA][E009] edge_dens_sr/raw=0.070/0.070 match=0.271 ori=0.409 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E009] stage=window_off gmf_obj=-26.4777 gmf=-6.7858 step_std=7.1364 outlier=1.0000 step_err=5.6652 gain_p10=-81.6893 top1=0.264 entropy=1.384 beta_scale=0.000 beta_eff=0.0000 gate=0.81 freeze=False
+[MON_METRIC][E009] edgeW=8.6576 hf_proxy=0.0000 cb=0.002730 pred_mean=0.496175 pred_std=0.184819
+[GUARD][BAND][E009] trigger hold=3 score=19.1260/23.4821 edgeW=8.6576/10.8044 hf=0.0000/0.0000 lap_boost=on(3)
+[GUARD][LAP][E009] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.250 w_edgeLocalLap=0.004 consist_mult=0.540 smooth_mult=0.540 cap_mult=0.540 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=3 lap_guard_hold=4 lap_boost_hold=3 psf_guard_hold=0 edgeW=8.6576 hf=0.0000 cb=0.002730
+[GUARD_FLAG][E009] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=9 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.130 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E009] win=6 VAL +: weak_entropy->kpi_step_mean_err:+0.200, weak_top1->kpi_step_std:+0.200, weak_entropy->kpi_outlier_rate:+0.116, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000 | -: edge->kpi_outlier_rate:-0.647, edge_ori->kpi_outlier_rate:-0.647, hf_ratio->kpi_outlier_rate:-0.647, edge->kpi_step_mean_err:-0.638, edge_ori->kpi_step_mean_err:-0.638
+[ATTRIB][E009] win=6 TRN->VAL +: weak_entropy->kpi_step_mean_err:+0.200, weak_top1->kpi_step_std:+0.200, weak_entropy->kpi_outlier_rate:+0.116, edge->kpi_step_mean_err:+0.000, edge->kpi_step_std:+0.000 | -: hf_ratio->kpi_step_std:-0.886, edge_ori->kpi_step_std:-0.714, weak_entropy->kpi_step_std:-0.486, weak_top1->kpi_step_mean_err:-0.486, weak_top1->kpi_outlier_rate:-0.435
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8365, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4261, best_val_rec = 0.006977, best_val_ssim = 0.9029
+
+Starting Epoch 10/10
+[EPOCH_CTRL][START] epoch=10 eq_factor=0.000 eq_prob=0.08 eq_disable_intensity=1 consistency_factor=0.216 thicken_guard_hold=0 guard_mult=0.540 rescue_lr_mult=0.55 rescue_eq_mult=0.55
+[WEIGHT][E010] w_rec=1.000 w_ssim=0.050 w_gradmag=1.020 w_edgeori=0.500 w_eqgeom=0.300 w_stat=0.010 w_band=0.010 w_hf_lap=0.090 w_edgeLocalLap=0.006 w_phys=0.000 eq_factor=0.000
+[CONSIST] factor=0.216 grad_only=1
+[RESCUE] active=0 remaining_epochs=0
+[WEAK_PSF][E010] stage=window_off beta_scale=0.0000 entropy_mix=0.0000 physics_frozen=True weak_frozen=True gate_scale=0.77 gate_freeze=False psf_guard=0 lr_mult=0.00
+[SIMPLETEST][E010] Rec=0.002357 (6.6%) GradMag=0.032306 (92.0%) EdgeOri=0.001016 (1.4%) EqGeom=0.000000 (0.0%) Total=0.038056 time=27.0s
+[EQ][SIMPLETEST] factor=0.000 shift_range=skip intensity_eq_disabled=1
+[WEAK_PSF][E010] beta=0.00000 entropy=1.3846 top1=0.2651 gate_scale=0.77 freeze=1 bypass=True
+[MONITOR][E010] range[0.1671,0.8947] mean=0.5479 std=0.1057 p95=0.8473 p99=0.8792 cb=0.00264 hf_ratio=0.000 edgeW=7.7810
+[SIMPLETEST_V2][MON] pred_mean=0.498484 pred_std=0.186074 bandE_pred=2.808097e+01 bandE_gt=3.305911e+01 loss_stat=0.008763 loss_band=0.080928 loss_hf_lap=0.012014 loss_phys=0.000000 loss_edgeLocalLap=0.038157 loss_detail=0.005293 w_edgeLocalLap=0.006
+-> Epoch 10 Val Done. Total=0.039411 | Rec=0.002551 | Edge=0.035336 | EdgeProf=0.000000 | PSNR=30.93 | SSIM=0.9571 | FFTShape=0.000000 | CB=0.000000 | HF=0.001
+[PROXY][E010] mean=19.13 p10=18.19 lr_mean=99.96 pass=0.0% step_err=0.5000 scale_dev=disabled adj_std=(2.9652,2.2239) scale_std=disabled
+[GMF_OBJ][E010] gmf_obj=-27.9557
+[GMF_FIT][E010] fitness=-5.9353 z_std=0.411 z_out=0.836 z_err=0.821 z_gain=-0.660 z_proxy=-0.667
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SIMPLETEST][CTRL_OFF] GMF_BAD triggered; LR/geom decay disabled.
+[RANK][E010] tuple=(pass=0.0%, p10=18.19, pos_std_sum=5.1891, scale_std=disabled, scale_dev=disabled, step_err=0.5000, rec=0.002551, ssim=0.9571)
+[RANK_EXTRA][E010] edge_dens_sr/raw=0.070/0.070 match=0.271 ori=0.411 hist_sim=nan invalid=0 (0.00) dens_bad=0.0
+[GMF_SUMMARY][E010] stage=window_off gmf_obj=-27.9557 gmf=-5.9353 step_std=6.8808 outlier=1.0000 step_err=5.8860 gain_p10=-81.7675 top1=0.265 entropy=1.385 beta_scale=0.000 beta_eff=0.0000 gate=0.77 freeze=False
+[MON_METRIC][E010] edgeW=7.7810 hf_proxy=0.0000 cb=0.002637 pred_mean=0.498484 pred_std=0.186074
+[GUARD][BAND][E010] trigger hold=3 score=19.1314/23.4821 edgeW=7.7810/10.8044 hf=0.0000/0.0000 lap_boost=on(3)
+[GUARD][LAP][E010] hold=4 reason=oversmooth
+[SCHED] w_rec=1.000 w_consist=0.000 w_smooth=0.000 w_cap=0.250 w_edgeLocalLap=0.006 consist_mult=0.540 smooth_mult=0.540 cap_mult=0.540 eq_factor=0.000 thick_guard_mult=1.000 hold=0 band_hold=3 lap_guard_hold=4 lap_boost_hold=3 psf_guard_hold=0 edgeW=7.7810 hf=0.0000 cb=0.002637
+[GUARD_FLAG][E010] THICKEN=0 OVERSMOOTH=1 LAP=1 PSF=0
+[EPOCH_CTRL][END] epoch=10 eq_factor=0.000 eq_disable_intensity=1 consistency_factor=0.216 thicken_guard_hold=0 guard_mult=1.000
+[ATTRIB][E010] win=7 VAL +: weak_entropy->kpi_step_mean_err:+0.393, weak_entropy->kpi_outlier_rate:+0.259, weak_top1->kpi_step_mean_err:+0.071, edge_profile->kpi_step_mean_err:+0.000, edge_profile->kpi_step_std:+0.000 | -: edge->kpi_outlier_rate:-0.577, edge_ori->kpi_outlier_rate:-0.577, hf_ratio->kpi_outlier_rate:-0.500, edge->kpi_step_mean_err:-0.482, edge_ori->kpi_step_mean_err:-0.482
+[ATTRIB][E010] win=7 TRN->VAL +: weak_entropy->kpi_step_mean_err:+0.393, weak_entropy->kpi_outlier_rate:+0.259, edge_ori->kpi_step_mean_err:+0.143, hf_ratio->kpi_step_mean_err:+0.143, edge_ori->kpi_outlier_rate:+0.074 | -: hf_ratio->kpi_step_std:-0.821, edge_ori->kpi_step_std:-0.714, weak_entropy->kpi_step_std:-0.357, weak_top1->kpi_outlier_rate:-0.037, weak_top1->kpi_step_std:-0.036
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8365, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4261, best_val_rec = 0.006977, best_val_ssim = 0.9029
+[AUTO][FINAL][DONE] score=2.672533 step_err=0.000000 pos_std=0.000000 pass02=0.000000
+[AUTO][FINAL] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950
+[AUTO] report=D:\GMM_2_Final\Traing_Progress\auto_tune_reports\auto_tune_report_20260309_173251.json

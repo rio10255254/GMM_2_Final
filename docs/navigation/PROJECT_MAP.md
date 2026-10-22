@@ -18,6 +18,7 @@ Last updated: 2026-10-21
 | 不下載完整訓練資料，先找生產方法 | [原生成程式與必要來源](../reproducibility/GENERATION_GUIDE.md) | R92／R93共用基礎、原修正及在線觀測分清；原資料產物不因可生成而重複上傳 |
 | 文獻依據與研究設計理由 | [文獻與原方法來源](../reproducibility/LITERATURE_GUIDE.md)，再到所屬輪次原文獻整理與設計報告 | 文獻原方法與本專案設計推論分開；原文連結保留，沒有本機全文的文獻不冒稱已收錄全文 |
 | 各輪程式、完整數據與失敗紀錄 | [逐輪問題、方法及來源](../reproducibility/EXPERIMENTS.md) | 先讀正式報告，再找該輪程式、完整數表與保存附件；不只留挑選過的好結果 |
+| 從R1到R153、LabSystem及歷史分支找前後關係 | [研究沿革與逐號對照](../reproducibility/lineage/README.md) | 分清同號不同系統、資料stage、V版本及未能綁回的編號；不以分組或檔案數代替完整脈絡 |
 | 原始相機照片、SEM與必要共用輸入 | [來源與影像保存判斷](../reproducibility/SOURCE_AND_IMAGE_DECISIONS.md) | 原拍與模型重建分開；多輪共用的原件保留一次，所有需要的原位置仍可對應 |
 | 固定模型、初始化與中途歷程 | [模型身分及歷程](../reproducibility/project_completion/MODEL_HISTORY.md) | 原輪次、選模與未採用原因一起保存；名稱相似不代表相同模型 |
 | 重要比較圖、失敗影像與選圖理由 | [共用訓練圖冊](../reproducibility/project_completion/GALLERY.md)、[R93圖冊](../reproducibility/r93_shared/GALLERY.md)、[R94／95／97／98圖冊](../reproducibility/four_rounds/GALLERY.md) | 原圖與完整影像附件並存，代表圖只用來幫助閱讀，不取代完整數據 |

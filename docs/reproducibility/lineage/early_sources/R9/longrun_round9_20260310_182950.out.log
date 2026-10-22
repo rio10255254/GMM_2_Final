@@ -1,0 +1,319 @@
+[LONGRUN] step 1/4 start label=round9_seqval_0p08
+[LONGRUN] cmd=C:\Users\Rio\AppData\Local\Programs\Python\Python312\python.exe -u Model\GeoEdgeAlignSR_v1_AutoTuneTrain.py --profile round9_sequence_val_align --expect-dy 0.08 --proxy-source val_batch --sweep-epochs 4 --final-epochs 6 --skip-final --deterministic
+[AUTO] sweep start | profile=round9_sequence_val_align seed=1261200 sweep_epochs=4 final_epochs=6
+[AUTO] objective: known-step GMF first (expect_dx=0.000, expect_dy=0.080, source=val_batch), then boundary/texture realism.
+
+[AUTO][SWEEP] candidate=seqval_defect_anchor overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect'), 'LR': 3.2e-06, 'FREEZE_PHYSICS_EPOCH': 18, 'PHYS_WARMUP_END': 18, 'WEAK_PSF_STAGE0_EPOCHS': 18, 'WEAK_PSF_STAGE1_EPOCHS': 28, 'WEAK_PSF_ACTIVE_START_E': 19, 'W_GRADMAG': 0.94, 'W_EDGE_ORI_SIMPLE': 0.42, 'SEQ_LOSS_WEIGHT': 0.24, 'SEQ_GRAD_WEIGHT': 0.08}
+[RUN] tag=GESR_v1_v5_ST0p08_SWP_sva_20260310_182953 model=GESR_v1_v5_ST0p08_SWP_sva
+[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sva_20260310_182953
+[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sva_20260310_182953\weights
+[REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
+[SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
+[FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=1 batch_log_every=5 csv_flush_n=50
+[GMF_KPI] expect_dx_px=0.0 expect_dy_px=0.08 expected_step_px=0.080000 outlier_t=0.500000 outlier_t_rel=0.100000
+[INFO] Pre-flight sanity check disabled.
+D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py:6897: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=use_amp and torch.cuda.is_available())
+[DATA] include_subdirs=('stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect') -> remaining=650
+[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sva_20260310_182953\_repro\GESR_v1_v5_ST0p08_SWP_sva
+[INFO] Train batches/epoch: 154
+[INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=16)
+[INFO] GMF_VALIDATE_SOURCE = val_batch
+[INFO] GMF_EXPECT_DX_PX/DY_PX (px/step) = (0.000000, 0.080000)
+[INFO] Sequence validation: ENABLED (pairs=120, batches=60)
+[INFO] Sequence pairs: ENABLED (pairs=120, batches=60, batch_size=2)
+[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Optimizer state reset after checkpoint load.
+[INFO] Loaded weights from epoch 3, but epoch counter reset to 0.
+[INFO] Resumed from epoch 0
+D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:138: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):
+D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:370: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):
+[MONITOR_REF] edgeW_ref=13.2296 hf_ref=0.0001 cb_ref=0.004330
+D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py:5280: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=CFG.use_amp):
+-> Epoch 0 Val Done. Total=0.047518 | Rec=0.004064 | Edge=0.044448 | EdgeProf=0.000000 | PSNR=25.92 | SSIM=0.9443 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py:4194: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=CFG.use_amp):
+D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py:4306: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=CFG.use_amp):
+[SEQVAL][E000] score=-6.4620 sign=0.0275 d1=10.2382 grad=9.9989 ratio=9.0639 pairs=120
+
+Starting Epoch 1/4
+[WEIGHT][E001] w_rec=1.000 w_ssim=0.050 w_gradmag=0.940 w_edgeori=0.420 w_eqgeom=0.340 w_stat=0.006 w_band=0.004 w_hf_lap=0.040 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[MICRO_EPOCH][E001] train_batches=48/154 fast_val_every=1
+
+  0%|                                                                                  | 0/48 [00:00<?, ?it/s]D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py:4956: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):
+D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py:4961: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):
+D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py:5013: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):
+
+  0%|           | 0/48 [00:00<?, ?it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+  8%|¢k  | 4/48 [00:01<00:11,  3.78it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+ 19%|¢m  | 9/48 [00:02<00:09,  3.95it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+ 29%|¢m | 14/48 [00:03<00:08,  4.00it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+ 40%|¢o | 19/48 [00:04<00:07,  4.02it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+ 50%|¢i | 24/48 [00:05<00:05,  4.03it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+ 60%|¢i¢j| 29/48 [00:07<00:04,  4.04it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+ 71%|¢i¢l| 34/48 [00:08<00:03,  4.05it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+ 81%|¢i¢n| 39/48 [00:09<00:02,  4.04it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+ 92%|¢i¢o| 44/48 [00:10<00:00,  4.04it/s, L=0.0561, Rec=0.0031, Grad=0.0351, Ori=0.0410, Eq=0.0000, Stat=0.0146]
+                                                                                                              
+[SIMPLETEST][E001] Rec=0.003472 (7.0%) GradMag=0.037780 (72.0%) EdgeOri=0.024632 (21.0%) EqGeom=0.000000 (0.0%) Total=0.051604 time=11.9s
+-> Epoch 1 Val Done. Total=0.046504 | Rec=0.003969 | Edge=0.043977 | EdgeProf=0.000000 | PSNR=26.07 | SSIM=0.9454 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E001] score=-6.4691 sign=0.0276 d1=10.2673 grad=9.9653 ratio=9.1003 pairs=120
+[BEST] skip update at E001 (<E005 warmup)
+[SUMMARY] Best epoch = 0, tradeoff = -311.6899, gmf_obj = -311.6899, step_std = 19.6926, outlier = 1.0000, step_err = 30.3823, gain_p10 = -15.7519, best_val_rec = 0.004064, best_val_ssim = 0.9443
+
+Starting Epoch 2/4
+[WEIGHT][E002] w_rec=1.000 w_ssim=0.050 w_gradmag=0.940 w_edgeori=0.420 w_eqgeom=0.340 w_stat=0.006 w_band=0.004 w_hf_lap=0.040 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[MICRO_EPOCH][E002] train_batches=48/154 fast_val_every=1
+
+  0%|                                                                                  | 0/48 [00:00<?, ?it/s]
+  0%|           | 0/48 [00:00<?, ?it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 10%|¢k  | 5/48 [00:01<00:10,  4.04it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 21%|¢l | 10/48 [00:02<00:09,  4.03it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 31%|¢n | 15/48 [00:03<00:08,  4.03it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 42%|¢o | 20/48 [00:04<00:06,  4.00it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 52%|¢i | 25/48 [00:06<00:05,  3.99it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 60%|¢i¢j| 29/48 [00:07<00:04,  3.98it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 69%|¢i¢l| 33/48 [00:08<00:03,  3.98it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 77%|¢i¢m| 37/48 [00:09<00:02,  3.99it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 88%|¢i¢o| 42/48 [00:10<00:01,  3.99it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+ 98%|¢i¢p| 47/48 [00:11<00:00,  4.00it/s, L=0.0476, Rec=0.0041, Grad=0.0436, Ori=0.0000, Eq=0.0000, Stat=0.0248]
+                                                                                                              
+[SIMPLETEST][E002] Rec=0.002855 (6.9%) GradMag=0.033745 (76.8%) EdgeOri=0.016048 (16.3%) EqGeom=0.000000 (0.0%) Total=0.043329 time=12.0s
+-> Epoch 2 Val Done. Total=0.045424 | Rec=0.003844 | Edge=0.043325 | EdgeProf=0.000000 | PSNR=26.27 | SSIM=0.9467 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E002] score=-6.4774 sign=0.0276 d1=10.3016 grad=9.9252 ratio=9.1436 pairs=120
+[SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SUMMARY] Best epoch = 0, tradeoff = -311.6899, gmf_obj = -311.6899, step_std = 19.6926, outlier = 1.0000, step_err = 30.3823, gain_p10 = -15.7519, best_val_rec = 0.004064, best_val_ssim = 0.9443
+
+Starting Epoch 3/4
+[WEIGHT][E003] w_rec=1.000 w_ssim=0.050 w_gradmag=0.940 w_edgeori=0.420 w_eqgeom=0.340 w_stat=0.006 w_band=0.004 w_hf_lap=0.040 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[MICRO_EPOCH][E003] train_batches=48/154 fast_val_every=1
+
+  0%|                                                                                  | 0/48 [00:00<?, ?it/s]
+  0%|           | 0/48 [00:00<?, ?it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 10%|¢k  | 5/48 [00:01<00:10,  4.01it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 21%|¢l | 10/48 [00:02<00:09,  3.97it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 29%|¢m | 14/48 [00:03<00:08,  3.98it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 40%|¢o | 19/48 [00:04<00:07,  3.99it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 48%|¢p | 23/48 [00:05<00:06,  3.97it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 56%|¢i¢j| 27/48 [00:06<00:05,  3.96it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 67%|¢i¢k| 32/48 [00:08<00:04,  3.99it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 75%|¢i¢m| 36/48 [00:09<00:03,  3.97it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 83%|¢i¢n| 40/48 [00:10<00:02,  3.97it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+ 92%|¢i¢o| 44/48 [00:11<00:01,  3.97it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+100%|¢i¢i| 48/48 [00:12<00:00,  3.96it/s, L=0.0310, Rec=0.0025, Grad=0.0283, Ori=0.0000, Eq=0.0000, Stat=0.0240]
+                                                                                                              
+[SIMPLETEST][E003] Rec=0.002777 (7.0%) GradMag=0.033127 (78.5%) EdgeOri=0.013665 (14.5%) EqGeom=0.000000 (0.0%) Total=0.041675 time=12.1s
+-> Epoch 3 Val Done. Total=0.044513 | Rec=0.003720 | Edge=0.042690 | EdgeProf=0.000000 | PSNR=26.48 | SSIM=0.9481 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E003] score=-6.4827 sign=0.0275 d1=10.3361 grad=9.8700 ratio=9.1861 pairs=120
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SUMMARY] Best epoch = 0, tradeoff = -311.6899, gmf_obj = -311.6899, step_std = 19.6926, outlier = 1.0000, step_err = 30.3823, gain_p10 = -15.7519, best_val_rec = 0.004064, best_val_ssim = 0.9443
+
+Starting Epoch 4/4
+[WEIGHT][E004] w_rec=1.000 w_ssim=0.050 w_gradmag=0.940 w_edgeori=0.420 w_eqgeom=0.340 w_stat=0.006 w_band=0.004 w_hf_lap=0.040 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[MICRO_EPOCH][E004] train_batches=48/154 fast_val_every=1
+
+  0%|                                                                                  | 0/48 [00:00<?, ?it/s]
+  0%|           | 0/48 [00:00<?, ?it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 10%|¢k  | 5/48 [00:01<00:10,  3.99it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 21%|¢l | 10/48 [00:02<00:09,  4.00it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 31%|¢n | 15/48 [00:03<00:08,  3.98it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 40%|¢o | 19/48 [00:04<00:07,  3.97it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 48%|¢p | 23/48 [00:05<00:06,  3.96it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 56%|¢i¢j| 27/48 [00:06<00:05,  3.95it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 65%|¢i¢k| 31/48 [00:07<00:04,  3.95it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 73%|¢i¢l| 35/48 [00:08<00:03,  3.95it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 81%|¢i¢n| 39/48 [00:09<00:02,  3.95it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 90%|¢i¢o| 43/48 [00:10<00:01,  3.96it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+ 98%|¢i¢p| 47/48 [00:11<00:00,  3.96it/s, L=0.0496, Rec=0.0033, Grad=0.0447, Ori=0.0000, Eq=0.0000, Stat=0.0164]
+                                                                                                              
+[SIMPLETEST][E004] Rec=0.002750 (7.3%) GradMag=0.033779 (84.3%) EdgeOri=0.007545 (8.4%) EqGeom=0.000000 (0.0%) Total=0.039851 time=12.1s
+-> Epoch 4 Val Done. Total=0.043655 | Rec=0.003597 | Edge=0.042063 | EdgeProf=0.000000 | PSNR=26.72 | SSIM=0.9493 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E004] score=-6.4721 sign=0.0275 d1=10.3416 grad=9.8001 ratio=9.2000 pairs=120
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[SIMPLETEST][CTRL_OFF] GMF_BAD triggered; LR/geom decay disabled.
+[SUMMARY] Best epoch = 0, tradeoff = -311.6899, gmf_obj = -311.6899, step_std = 19.6926, outlier = 1.0000, step_err = 30.3823, gain_p10 = -15.7519, best_val_rec = 0.004064, best_val_ssim = 0.9443
+[AUTO][SWEEP][DONE] candidate=seqval_defect_anchor score=-1034.358862 step_err=12.830000 pos_std=38.547600 pass02=0.000000 seq_score=-6.461976 seq_sign=0.027544
+
+[AUTO][SWEEP] candidate=seqval_clean_anchor overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean', 'stage_17_annulus_microstep_clean', 'stage_19_annulus_microstep_sequence_clean'), 'LR': 3e-06, 'FREEZE_PHYSICS_EPOCH': 18, 'PHYS_WARMUP_END': 18, 'WEAK_PSF_STAGE0_EPOCHS': 18, 'WEAK_PSF_STAGE1_EPOCHS': 28, 'WEAK_PSF_ACTIVE_START_E': 19, 'W_GRADMAG': 0.9, 'W_EDGE_ORI_SIMPLE': 0.38, 'SEQ_LOSS_WEIGHT': 0.26, 'SEQ_GRAD_WEIGHT': 0.1}
+[RUN] tag=GESR_v1_v5_ST0p08_SWP_svc_20260310_183106 model=GESR_v1_v5_ST0p08_SWP_svc
+[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_svc_20260310_183106
+[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_svc_20260310_183106\weights
+[REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
+[SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
+[FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=1 batch_log_every=5 csv_flush_n=50
+[GMF_KPI] expect_dx_px=0.0 expect_dy_px=0.08 expected_step_px=0.080000 outlier_t=0.500000 outlier_t_rel=0.100000
+[INFO] Pre-flight sanity check disabled.
+[DATA] include_subdirs=('stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean', 'stage_17_annulus_microstep_clean', 'stage_19_annulus_microstep_sequence_clean') -> remaining=325
+[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_svc_20260310_183106\_repro\GESR_v1_v5_ST0p08_SWP_svc
+[INFO] Train batches/epoch: 77
+[INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=8)
+[INFO] GMF_VALIDATE_SOURCE = val_batch
+[INFO] GMF_EXPECT_DX_PX/DY_PX (px/step) = (0.000000, 0.080000)
+[INFO] Sequence validation: ENABLED (pairs=120, batches=60)
+[INFO] Sequence pairs: ENABLED (pairs=120, batches=60, batch_size=2)
+[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Optimizer state reset after checkpoint load.
+[INFO] Loaded weights from epoch 3, but epoch counter reset to 0.
+[INFO] Resumed from epoch 0
+[MONITOR_REF] edgeW_ref=13.2296 hf_ref=0.0001 cb_ref=0.004330
+-> Epoch 0 Val Done. Total=0.050062 | Rec=0.004990 | Edge=0.047193 | EdgeProf=0.000000 | PSNR=23.82 | SSIM=0.9416 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E000] score=-6.4620 sign=0.0275 d1=10.2382 grad=9.9989 ratio=9.0639 pairs=120
+
+Starting Epoch 1/4
+[WEIGHT][E001] w_rec=1.000 w_ssim=0.050 w_gradmag=0.900 w_edgeori=0.380 w_eqgeom=0.340 w_stat=0.006 w_band=0.004 w_hf_lap=0.040 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[MICRO_EPOCH][E001] train_batches=48/77 fast_val_every=1
+
+  0%|                                                                                  | 0/48 [00:00<?, ?it/s]
+  0%|           | 0/48 [00:00<?, ?it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+  8%|¢k  | 4/48 [00:01<00:11,  3.98it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 17%|¢m  | 8/48 [00:02<00:10,  3.96it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 25%|¢m | 12/48 [00:03<00:09,  3.97it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 33%|¢n | 16/48 [00:04<00:08,  3.96it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 42%|¢o | 20/48 [00:05<00:07,  3.96it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 50%|¢i | 24/48 [00:06<00:06,  3.95it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 58%|¢i¢j| 28/48 [00:07<00:05,  3.95it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 67%|¢i¢k| 32/48 [00:08<00:04,  3.95it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 75%|¢i¢m| 36/48 [00:09<00:03,  3.94it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 83%|¢i¢n| 40/48 [00:10<00:02,  3.93it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+ 92%|¢i¢o| 44/48 [00:11<00:01,  3.92it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+100%|¢i¢i| 48/48 [00:12<00:00,  3.92it/s, L=0.0429, Rec=0.0023, Grad=0.0230, Ori=0.0480, Eq=0.0000, Stat=0.0261]
+                                                                                                              
+[SIMPLETEST][E001] Rec=0.003089 (7.5%) GradMag=0.032545 (70.9%) EdgeOri=0.023516 (21.6%) EqGeom=0.000000 (0.0%) Total=0.043672 time=12.2s
+-> Epoch 1 Val Done. Total=0.049170 | Rec=0.004855 | Edge=0.046719 | EdgeProf=0.000000 | PSNR=23.97 | SSIM=0.9430 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E001] score=-6.4658 sign=0.0276 d1=10.2627 grad=9.9592 ratio=9.0957 pairs=120
+[BEST] skip update at E001 (<E005 warmup)
+[SUMMARY] Best epoch = 0, tradeoff = -338.7751, gmf_obj = -338.7751, step_std = 16.5418, outlier = 1.0000, step_err = 38.4345, gain_p10 = -11.4659, best_val_rec = 0.004990, best_val_ssim = 0.9416
+
+Starting Epoch 2/4
+[WEIGHT][E002] w_rec=1.000 w_ssim=0.050 w_gradmag=0.900 w_edgeori=0.380 w_eqgeom=0.340 w_stat=0.006 w_band=0.004 w_hf_lap=0.040 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[MICRO_EPOCH][E002] train_batches=48/77 fast_val_every=1
+
+  0%|                                                                                  | 0/48 [00:00<?, ?it/s]
+  0%|           | 0/48 [00:00<?, ?it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 10%|¢k  | 5/48 [00:01<00:10,  4.00it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 21%|¢l | 10/48 [00:02<00:09,  3.98it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 29%|¢m | 14/48 [00:03<00:08,  3.96it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 38%|¢o | 18/48 [00:04<00:07,  3.96it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 46%|¢p | 22/48 [00:05<00:06,  3.94it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 54%|¢i | 26/48 [00:06<00:05,  3.94it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 62%|¢i¢k| 30/48 [00:07<00:04,  3.93it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 71%|¢i¢l| 34/48 [00:08<00:03,  3.93it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 79%|¢i¢m| 38/48 [00:09<00:02,  3.93it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 88%|¢i¢o| 42/48 [00:10<00:01,  3.93it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+ 96%|¢i¢p| 46/48 [00:11<00:00,  3.94it/s, L=0.0503, Rec=0.0036, Grad=0.0480, Ori=0.0000, Eq=0.0000, Stat=0.0076]
+                                                                                                              
+[SIMPLETEST][E002] Rec=0.003147 (8.6%) GradMag=0.034496 (84.7%) EdgeOri=0.006438 (6.7%) EqGeom=0.000000 (0.0%) Total=0.038975 time=12.2s
+-> Epoch 2 Val Done. Total=0.048053 | Rec=0.004688 | Edge=0.046126 | EdgeProf=0.000000 | PSNR=24.16 | SSIM=0.9446 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E002] score=-6.4686 sign=0.0276 d1=10.2919 grad=9.9034 ratio=9.1333 pairs=120
+[SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[BEST] Updated best: tradeoff=nan (edge_pen=nan hf_pen=nan) gmf_obj=-336.4314 gmf_fitness=-2.3054 step_std=16.8091 outlier=1.0000 step_err=37.5525 gain_p10=-11.8665 at epoch 2
+[SUMMARY] Best epoch = 2, tradeoff = nan, gmf_obj = -336.4314, step_std = 16.8091, outlier = 1.0000, step_err = 37.5525, gain_p10 = -11.8665, best_val_rec = 0.004688, best_val_ssim = 0.9446
+
+Starting Epoch 3/4
+[WEIGHT][E003] w_rec=1.000 w_ssim=0.050 w_gradmag=0.900 w_edgeori=0.380 w_eqgeom=0.340 w_stat=0.006 w_band=0.004 w_hf_lap=0.040 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[MICRO_EPOCH][E003] train_batches=48/77 fast_val_every=1
+
+  0%|                                                                                  | 0/48 [00:00<?, ?it/s]
+  0%|           | 0/48 [00:00<?, ?it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+  8%|¢k  | 4/48 [00:01<00:11,  3.97it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 17%|¢m  | 8/48 [00:02<00:10,  3.94it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 25%|¢m | 12/48 [00:03<00:09,  3.92it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 33%|¢n | 16/48 [00:04<00:08,  3.94it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 42%|¢o | 20/48 [00:05<00:07,  3.93it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 50%|¢i | 24/48 [00:06<00:06,  3.93it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 58%|¢i¢j| 28/48 [00:07<00:05,  3.93it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 67%|¢i¢k| 32/48 [00:08<00:04,  3.92it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 75%|¢i¢m| 36/48 [00:09<00:03,  3.92it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 83%|¢i¢n| 40/48 [00:10<00:02,  3.92it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+ 92%|¢i¢o| 44/48 [00:11<00:01,  3.93it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+100%|¢i¢i| 48/48 [00:12<00:00,  3.92it/s, L=0.0354, Rec=0.0029, Grad=0.0341, Ori=0.0000, Eq=0.0000, Stat=0.0256]
+                                                                                                              
+[SIMPLETEST][E003] Rec=0.002884 (7.8%) GradMag=0.033319 (81.2%) EdgeOri=0.010725 (11.0%) EqGeom=0.000000 (0.0%) Total=0.039367 time=12.2s
+-> Epoch 3 Val Done. Total=0.046935 | Rec=0.004519 | Edge=0.045493 | EdgeProf=0.000000 | PSNR=24.36 | SSIM=0.9462 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E003] score=-6.4546 sign=0.0276 d1=10.2917 grad=9.8298 ratio=9.1406 pairs=120
+[BEST] Updated best: tradeoff=nan (edge_pen=nan hf_pen=nan) gmf_obj=-336.1973 gmf_fitness=-1.5582 step_std=16.8091 outlier=1.0000 step_err=37.5525 gain_p10=-11.8309 at epoch 3
+[SUMMARY] Best epoch = 3, tradeoff = nan, gmf_obj = -336.1973, step_std = 16.8091, outlier = 1.0000, step_err = 37.5525, gain_p10 = -11.8309, best_val_rec = 0.004519, best_val_ssim = 0.9462
+
+Starting Epoch 4/4
+[WEIGHT][E004] w_rec=1.000 w_ssim=0.050 w_gradmag=0.900 w_edgeori=0.380 w_eqgeom=0.340 w_stat=0.006 w_band=0.004 w_hf_lap=0.040 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[MICRO_EPOCH][E004] train_batches=48/77 fast_val_every=1
+
+  0%|                                                                                  | 0/48 [00:00<?, ?it/s]
+  0%|           | 0/48 [00:00<?, ?it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+  8%|¢k  | 4/48 [00:01<00:11,  3.97it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 17%|¢m  | 8/48 [00:02<00:10,  3.95it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 25%|¢m | 12/48 [00:03<00:09,  3.92it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 33%|¢n | 16/48 [00:04<00:08,  3.88it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 42%|¢o | 20/48 [00:05<00:07,  3.87it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 50%|¢i | 24/48 [00:06<00:06,  3.88it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 58%|¢i¢j| 28/48 [00:07<00:05,  3.87it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 67%|¢i¢k| 32/48 [00:08<00:04,  3.87it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 75%|¢i¢m| 36/48 [00:09<00:03,  3.88it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 83%|¢i¢n| 40/48 [00:10<00:02,  3.88it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+ 92%|¢i¢o| 44/48 [00:11<00:01,  3.89it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+100%|¢i¢i| 48/48 [00:12<00:00,  3.88it/s, L=0.0284, Rec=0.0015, Grad=0.0182, Ori=0.0189, Eq=0.0000, Stat=0.0214]
+                                                                                                              
+[SIMPLETEST][E004] Rec=0.002671 (7.8%) GradMag=0.031651 (83.3%) EdgeOri=0.007961 (8.9%) EqGeom=0.000000 (0.0%) Total=0.036414 time=12.4s
+-> Epoch 4 Val Done. Total=0.045896 | Rec=0.004357 | Edge=0.044888 | EdgeProf=0.000000 | PSNR=24.58 | SSIM=0.9477 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E004] score=-6.4360 sign=0.0276 d1=10.2872 grad=9.7434 ratio=9.1435 pairs=120
+[SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.
+[SIMPLETEST][CTRL_OFF] GMF KPI worsened; artifact multiplier control disabled.
+[BEST] Updated best: tradeoff=nan (edge_pen=nan hf_pen=nan) gmf_obj=-335.3103 gmf_fitness=-2.6072 step_std=16.9366 outlier=1.0000 step_err=37.2383 gain_p10=-12.4823 at epoch 4
+[SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = -335.3103, step_std = 16.9366, outlier = 1.0000, step_err = 37.2383, gain_p10 = -12.4823, best_val_rec = 0.004357, best_val_ssim = 0.9477
+[AUTO][SWEEP][DONE] candidate=seqval_clean_anchor score=-1157.414613 step_err=7.420000 pos_std=60.045300 pass02=0.200000 seq_score=-6.436023 seq_sign=0.027551
+
+[AUTO][SWEEP] candidate=seqval_general_bridge overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect'), 'LR': 3.4e-06, 'FREEZE_PHYSICS_EPOCH': 18, 'PHYS_WARMUP_END': 18, 'WEAK_PSF_STAGE0_EPOCHS': 18, 'WEAK_PSF_STAGE1_EPOCHS': 28, 'WEAK_PSF_ACTIVE_START_E': 19, 'W_GRADMAG': 0.98, 'W_EDGE_ORI_SIMPLE': 0.44, 'SEQ_LOSS_WEIGHT': 0.2, 'SEQ_GRAD_WEIGHT': 0.06}
+[RUN] tag=GESR_v1_v5_ST0p08_SWP_svg_20260310_183219 model=GESR_v1_v5_ST0p08_SWP_svg
+[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_svg_20260310_183219
+[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_svg_20260310_183219\weights
+[REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
+[SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
+[FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=1 batch_log_every=5 csv_flush_n=50
+[GMF_KPI] expect_dx_px=0.0 expect_dy_px=0.08 expected_step_px=0.080000 outlier_t=0.500000 outlier_t_rel=0.100000
+[INFO] Pre-flight sanity check disabled.
+[DATA] include_subdirs=('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect') -> remaining=1050
+[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_svg_20260310_183219\_repro\GESR_v1_v5_ST0p08_SWP_svg
+[INFO] Train batches/epoch: 249
+[INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=26)
+[INFO] GMF_VALIDATE_SOURCE = val_batch
+[INFO] GMF_EXPECT_DX_PX/DY_PX (px/step) = (0.000000, 0.080000)
+[INFO] Sequence validation: ENABLED (pairs=120, batches=60)
+[INFO] Sequence pairs: ENABLED (pairs=120, batches=60, batch_size=2)
+[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Optimizer state reset after checkpoint load.
+[INFO] Loaded weights from epoch 3, but epoch counter reset to 0.
+[INFO] Resumed from epoch 0
+[MONITOR_REF] edgeW_ref=13.2296 hf_ref=0.0001 cb_ref=0.004330
+-> Epoch 0 Val Done. Total=0.070234 | Rec=0.006376 | Edge=0.062391 | EdgeProf=0.000000 | PSNR=23.44 | SSIM=0.9177 | FFTShape=0.000000 | CB=0.000000 | HF=0.000
+[SEQVAL][E000] score=-6.4620 sign=0.0275 d1=10.2382 grad=9.9989 ratio=9.0639 pairs=120
+
+Starting Epoch 1/4
+[WEIGHT][E001] w_rec=1.000 w_ssim=0.050 w_gradmag=0.980 w_edgeori=0.440 w_eqgeom=0.340 w_stat=0.006 w_band=0.004 w_hf_lap=0.040 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[MICRO_EPOCH][E001] train_batches=48/249 fast_val_every=1
+
+  0%|                                                                                  | 0/48 [00:00<?, ?it/s]
+  0%|           | 0/48 [00:00<?, ?it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+  8%|¢k  | 4/48 [00:01<00:11,  3.92it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 17%|¢m  | 8/48 [00:02<00:10,  3.95it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 25%|¢m | 12/48 [00:03<00:09,  3.94it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 33%|¢n | 16/48 [00:04<00:08,  3.92it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 42%|¢o | 20/48 [00:05<00:07,  3.93it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 50%|¢i | 24/48 [00:06<00:06,  3.94it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 58%|¢i¢j| 28/48 [00:07<00:05,  3.93it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 67%|¢i¢k| 32/48 [00:08<00:04,  3.95it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 75%|¢i¢m| 36/48 [00:09<00:03,  3.94it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 83%|¢i¢n| 40/48 [00:10<00:02,  3.93it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+ 92%|¢i¢o| 44/48 [00:11<00:01,  3.94it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+100%|¢i¢i| 48/48 [00:12<00:00,  3.94it/s, L=0.0450, Rec=0.0026, Grad=0.0296, Ori=0.0198, Eq=0.0000, Stat=0.0226]
+                                                                                                              
+[SIMPLETEST][E001] Rec=0.005307 (9.6%) GradMag=0.047774 (84.7%) EdgeOri=0.007137 (5.7%) EqGeom=0.000000 (0.0%) Total=0.058103 time=12.2s
+-> Epoch 1 Val Done. Total=0.069367 | Rec=0.006237 | Edge=0.061828 | EdgeProf=0.000000 | PSNR=23.58 | SSIM=0.9191 | FFTShape=0.000000 | CB=0.000000 | HF=0.000

@@ -1,0 +1,42 @@
+{
+  "status": "SOURCE_CONFIG_AND_ALL_THREE_ORIGINAL_JSONS_MATCH_R26_GMF_REFERENCE",
+  "checks": [
+    {
+      "round": 34,
+      "fixed_source": "5ab5b175b6f2a18457875d1ea8f34c94f11412ba",
+      "dataset_config_sha256": "dae47a85b5580291743864b02d0722c7782c18adfb362b605bb14cc397775a67",
+      "gmf_root": "external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw",
+      "recorded_external_overlay": {
+        "pitch1um_y_100": 0.201031,
+        "pitch0p1um_y_60": 0.191336,
+        "pitch0p01um_y_40": 0.180313
+      },
+      "individual_round_external_measurements_claimed": false
+    },
+    {
+      "round": 35,
+      "fixed_source": "1005e7bdc51291ef783f55a6911d84c7e98b0383",
+      "dataset_config_sha256": "dae47a85b5580291743864b02d0722c7782c18adfb362b605bb14cc397775a67",
+      "gmf_root": "external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw",
+      "recorded_external_overlay": {
+        "pitch1um_y_100": 0.201031,
+        "pitch0p1um_y_60": 0.191336,
+        "pitch0p01um_y_40": 0.180313
+      },
+      "individual_round_external_measurements_claimed": false
+    },
+    {
+      "round": 37,
+      "fixed_source": "2773b1a0fdd98fcdcdbf26880f0480f88a5b2f69",
+      "dataset_config_sha256": "dae47a85b5580291743864b02d0722c7782c18adfb362b605bb14cc397775a67",
+      "gmf_root": "external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw",
+      "recorded_external_overlay": {
+        "pitch1um_y_100": 0.201031,
+        "pitch0p1um_y_60": 0.191336,
+        "pitch0p01um_y_40": 0.180313
+      },
+      "individual_round_external_measurements_claimed": false
+    }
+  ],
+  "original_plots_and_scientific_verdicts_changed": false
+}

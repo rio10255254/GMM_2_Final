@@ -1,0 +1,619 @@
+{
+  "main": "91232a47f3ea1f431d206b167b51dd1fbc990acb",
+  "local_branches": [
+    {
+      "name": "backup/local-main-pre-safe-cleanup-20260327",
+      "commit": "57cf70e94652b0b68a5a13b196399f3b6c2c6164",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/backup--local-main-pre-safe-cleanup-20260327"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/57cf70e94652b0b68a5a13b196399f3b6c2c6164"
+    },
+    {
+      "name": "baseline/r30-b1-dironly",
+      "commit": "1af4f58fa09d68c6c9895558ed4e26febf4666f1",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "baseline/r30-b1-dironly"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/1af4f58fa09d68c6c9895558ed4e26febf4666f1"
+    },
+    {
+      "name": "claude/adoring-yonath",
+      "commit": "b487cc5ea61fb41a8eab9c4a36634c79890e89c3",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/claude--adoring-yonath"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/b487cc5ea61fb41a8eab9c4a36634c79890e89c3"
+    },
+    {
+      "name": "claude/gifted-shaw-29b50a",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "claude/keen-blackwell",
+      "commit": "e6968018a7f0464a8ab543885a0962fc532045cd",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/e6968018a7f0464a8ab543885a0962fc532045cd"
+    },
+    {
+      "name": "claude/laughing-raman-440860",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "claude/sad-tereshkova-88dab2",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "claude/tender-hawking-40b4db",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "codex/analysis-lab-r26",
+      "commit": "cfae666b1d66eb2743c4648fb5806a4464ae8a59",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/codex--analysis-lab-r26"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/cfae666b1d66eb2743c4648fb5806a4464ae8a59"
+    },
+    {
+      "name": "codex/analysis-root-entry",
+      "commit": "2c944357e47a71931e7364fb0bc45b1cf7e08fa7",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/codex--analysis-root-entry"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/2c944357e47a71931e7364fb0bc45b1cf7e08fa7"
+    },
+    {
+      "name": "codex/claude-doc-sync",
+      "commit": "86eab6fa146ca875fffe80a5c099cbb23ab17d75",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/codex--claude-doc-sync"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/86eab6fa146ca875fffe80a5c099cbb23ab17d75"
+    },
+    {
+      "name": "codex/docs-nav-bilingual",
+      "commit": "a91697050f9f733010070f09fe41db56463f3426",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/codex--docs-nav-bilingual"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/a91697050f9f733010070f09fe41db56463f3426"
+    },
+    {
+      "name": "codex/main-structure-audit",
+      "commit": "fe520e0e9ec581680dbd93b30896eedfa7382e37",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/codex--main-structure-audit"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/fe520e0e9ec581680dbd93b30896eedfa7382e37"
+    },
+    {
+      "name": "codex/r121-boundary-anchor",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r122-operator-principles",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r123-real-first-design",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r124-real-first-prototype",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r125-data-aligned-pilot",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r126-learnability-photometry",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r127-measurement-preservation",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r128-full-training",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r129-optical-hybrid",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r130-clean",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r130-clean-v42",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r131-recurrent-steps",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r132-boundary-policy",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r133-size-mechanisms",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r134-direct-state",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r135-model-comparison",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r136-pi-repeatability",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r137-weak-psf",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r138-v42-psf8",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r139-unet-hybrid",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r140-stable-unet",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r140v2-stable-unet",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "codex/r26-curated-evidence",
+      "commit": "a9ad7014d1c34bedfa977a23d07584c493138185",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/codex--r26-curated-evidence"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/a9ad7014d1c34bedfa977a23d07584c493138185"
+    },
+    {
+      "name": "codex/r26-psf-policy-transition",
+      "commit": "8d4c4a4f26d72625ade58162f230fe5e2b0b508a",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/8d4c4a4f26d72625ade58162f230fe5e2b0b508a"
+    },
+    {
+      "name": "codex/r26-psf-representative-sync",
+      "commit": "cb0107dae5877235d93d59582770c55cea8cab72",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/codex--r26-psf-representative-sync"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/cb0107dae5877235d93d59582770c55cea8cab72"
+    },
+    {
+      "name": "codex/research-completion-20261021",
+      "commit": "4472e2e8bb9db7f8d06743b9b874838753e33d2f",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/4472e2e8bb9db7f8d06743b9b874838753e33d2f"
+    },
+    {
+      "name": "codex/research-preservation-20261020",
+      "commit": "2c6cdc6838a372224271cea8f8e9d1cf25db0086",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/research-preservation-20261020"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/2c6cdc6838a372224271cea8f8e9d1cf25db0086"
+    },
+    {
+      "name": "codex/research-preservation-20261021",
+      "commit": "6782071d67f5d8d71fa798f7a8926b16804c06b3",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/research-preservation-20261021"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/6782071d67f5d8d71fa798f7a8926b16804c06b3"
+    },
+    {
+      "name": "codex/research-recovery-20261016",
+      "commit": "dd364802fa6f18995d828ddff809c008a7df6b53",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/research-recovery-20261016"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/dd364802fa6f18995d828ddff809c008a7df6b53"
+    },
+    {
+      "name": "main",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "reconstructed/r26-sm035",
+      "commit": "4de6b651fdc915bf04bf80aa1232a1d41c1e8828",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "reconstructed/r26-sm035"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/4de6b651fdc915bf04bf80aa1232a1d41c1e8828"
+    },
+    {
+      "name": "reconstructed/round30-architecture-breakthrough",
+      "commit": "81a5a6266df41a0c5905981f27cfb9e4e04f0600",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "reconstructed/round30-architecture-breakthrough"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/81a5a6266df41a0c5905981f27cfb9e4e04f0600"
+    },
+    {
+      "name": "research/r32-post-falsification",
+      "commit": "e04f6039952046c59867f739fba0c7436680647a",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "research/r32-post-falsification"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/e04f6039952046c59867f739fba0c7436680647a"
+    },
+    {
+      "name": "research/round31-b1-hparam",
+      "commit": "1e7fd5a2f402ffecb1fd2ff4c72720fdc18e8dd9",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "research/round31-b1-hparam"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/1e7fd5a2f402ffecb1fd2ff4c72720fdc18e8dd9"
+    },
+    {
+      "name": "sandbox/r143-psf25-matched-pairs",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r144-center9-psf25",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r145-center9-psf25-corrected",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r146-sem-core-halo-psf25",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r147-fullres-psf-consistency",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r148-measurement-stable-native",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r148v2-hybrid-context",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r150-matched-geometry-mean-psf",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r152-impact2026",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r153-mean-external-benchmark",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r32",
+      "commit": "c73f8f7a60a793243e06eb23cfcf2b49cef9dfc6",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "sandbox/r32"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/c73f8f7a60a793243e06eb23cfcf2b49cef9dfc6"
+    },
+    {
+      "name": "sandbox/r33",
+      "commit": "04d2c99068903e8bbeb254c82de31b4d7fd05224",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "sandbox/r33"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/04d2c99068903e8bbeb254c82de31b4d7fd05224"
+    },
+    {
+      "name": "sandbox/r33-contrast",
+      "commit": "a530f876c2cb0c512e768ff4c389c01c7ab4b413",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "codex/history-20261021/sandbox--r33-contrast"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/a530f876c2cb0c512e768ff4c389c01c7ab4b413"
+    },
+    {
+      "name": "sandbox/r34",
+      "commit": "5ab5b175b6f2a18457875d1ea8f34c94f11412ba",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "sandbox/r34"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/5ab5b175b6f2a18457875d1ea8f34c94f11412ba"
+    },
+    {
+      "name": "sandbox/r35",
+      "commit": "1005e7bdc51291ef783f55a6911d84c7e98b0383",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "sandbox/r35"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/1005e7bdc51291ef783f55a6911d84c7e98b0383"
+    },
+    {
+      "name": "sandbox/r37",
+      "commit": "2773b1a0fdd98fcdcdbf26880f0480f88a5b2f69",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "sandbox/r37"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/2773b1a0fdd98fcdcdbf26880f0480f88a5b2f69"
+    },
+    {
+      "name": "sandbox/r38",
+      "commit": "303e82dbccf2b20490d1aa32b943e22495a851f6",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "sandbox/r38"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/303e82dbccf2b20490d1aa32b943e22495a851f6"
+    },
+    {
+      "name": "sandbox/r38v2",
+      "commit": "fdacf6de26d021da7c79d82b1087e06b04a765c5",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "sandbox/r38v2"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/fdacf6de26d021da7c79d82b1087e06b04a765c5"
+    },
+    {
+      "name": "sandbox/r39",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "sandbox/r40",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "sandbox/r41",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "sandbox/r42",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "sandbox/r44",
+      "commit": "0c613acb68175fc6a0c5bb4f763887845eb03079",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/0c613acb68175fc6a0c5bb4f763887845eb03079"
+    },
+    {
+      "name": "sandbox/r45",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r67-universal-model-generalization",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r68-r61-real-fov",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r75-scratch-generalization",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r83-r79-strengthening",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r84-r79-tile-stable-root-repair",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r87-tile-native-scratch",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r88-measurement-faithful-scratch",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "sandbox/r98-aggressive-texture-scratch",
+      "commit": "f0183af6e03954804d0ad82b2687149623e94700",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/f0183af6e03954804d0ad82b2687149623e94700"
+    },
+    {
+      "name": "snapshot/initial-import-2026-03-23",
+      "commit": "9474f11fa6a11c3821f2e08136b3f0857d0df8d2",
+      "published_exact_head_or_ancestor": true,
+      "remote_names_at_exact_commit": [
+        "snapshot/initial-import-2026-03-23"
+      ],
+      "url": "https://github.com/rio10255254/GMM_2_Final/tree/9474f11fa6a11c3821f2e08136b3f0857d0df8d2"
+    }
+  ],
+  "remote_branches": 32,
+  "unreachable_local_heads": []
+}
