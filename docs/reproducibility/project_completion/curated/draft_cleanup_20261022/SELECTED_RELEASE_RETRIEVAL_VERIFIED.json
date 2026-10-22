@@ -1,0 +1,37 @@
+{
+  "status": "PUBLISHED_SELECTED_RELEASE_AND_SOURCE_ACTUALLY_RETRIEVED_HASH_MATCH",
+  "time": "2026-10-22T08:59:49.418476+08:00",
+  "release_id": 420197439,
+  "tag": "research-history-curated-20261022",
+  "fixed_source": "79c1aea5b08647f38bb947096cd9a37d5e086355",
+  "release_published": true,
+  "bundle_bytes": 236572845,
+  "bundle_sha256": "e751d2b7ad165aadaa282005d210493191a7b0f55c4896af119ef5022818ab68",
+  "bundle_members_received": 320,
+  "ordinary_source_and_metadata_files_received": 175,
+  "ordinary_source_and_metadata_bytes_received": 9626544,
+  "assets": [
+    {
+      "id": 664256616,
+      "name": "selected-history-and-deployments.zip",
+      "bytes": 236572845,
+      "digest": "sha256:e751d2b7ad165aadaa282005d210493191a7b0f55c4896af119ef5022818ab68"
+    },
+    {
+      "id": 664257027,
+      "name": "SELECTED_HISTORY_CONTENTS.json",
+      "bytes": 388287,
+      "digest": "sha256:9bab4c7ee1170d7cfa5c16693dd0ba4209f079533aced9f333e9c47ed4a4d43d"
+    },
+    {
+      "id": 664257077,
+      "name": "SHA256SUMS.txt",
+      "bytes": 202,
+      "digest": "sha256:bdb77671e0c866042e9de24e2619c6f243918060ea9bd4bb1a89ba67d215e432"
+    }
+  ],
+  "all_local_originals_retained": true,
+  "old_drafts_not_deleted_by_this_program": true,
+  "old_bulk_jobs_not_restarted": true,
+  "training_and_inference_not_run": true
+}

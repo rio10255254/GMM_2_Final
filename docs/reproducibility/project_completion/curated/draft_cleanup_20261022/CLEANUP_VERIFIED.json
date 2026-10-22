@@ -1,0 +1,128 @@
+{
+  "status": "PASS_SIX_OBSOLETE_DRAFTS_REMOVED_SELECTED_HISTORY_RETAINED",
+  "time": "2026-10-22T09:01:00.242503+08:00",
+  "repository": "rio10255254/GMM_2_Final",
+  "removed": [
+    {
+      "release_id": 419017835,
+      "tag": "research-package-additions-20261021",
+      "draft": true,
+      "assets": 6,
+      "bytes": 4085051980,
+      "verified_absent_by_id_HTTP404": true,
+      "direct_asset_metadata_samples_also_HTTP404": [
+        660963344,
+        660960118
+      ]
+    },
+    {
+      "release_id": 419015057,
+      "tag": "research-original-packages-20261021",
+      "draft": true,
+      "assets": 3,
+      "bytes": 3260895865,
+      "verified_absent_by_id_HTTP404": true,
+      "direct_asset_metadata_samples_also_HTTP404": [
+        660904764,
+        660913283
+      ]
+    },
+    {
+      "release_id": 419039390,
+      "tag": "research-image-data-additions-20261021",
+      "draft": true,
+      "assets": 82,
+      "bytes": 72395813256,
+      "verified_absent_by_id_HTTP404": true,
+      "direct_asset_metadata_samples_also_HTTP404": [
+        660983460,
+        661439943
+      ]
+    },
+    {
+      "release_id": 418912187,
+      "tag": "research-numeric-data-additions-20261021",
+      "draft": true,
+      "assets": 128,
+      "bytes": 165454759231,
+      "verified_absent_by_id_HTTP404": true,
+      "direct_asset_metadata_samples_also_HTTP404": [
+        660585037,
+        661420979
+      ]
+    },
+    {
+      "release_id": 418812435,
+      "tag": "research-model-history-additions-20261021",
+      "draft": true,
+      "assets": 120,
+      "bytes": 142688604573,
+      "verified_absent_by_id_HTTP404": true,
+      "direct_asset_metadata_samples_also_HTTP404": [
+        660356267,
+        661222414
+      ]
+    },
+    {
+      "release_id": 418908948,
+      "tag": "research-editor-history-20261021",
+      "draft": true,
+      "assets": 4,
+      "bytes": 1184873602,
+      "verified_absent_by_id_HTTP404": true,
+      "direct_asset_metadata_samples_also_HTTP404": [
+        660566434,
+        660563470
+      ]
+    }
+  ],
+  "removed_asset_count": 343,
+  "removed_draft_asset_bytes": 389069998507,
+  "remaining_drafts": 0,
+  "original_published_releases_unchanged": 21,
+  "published_releases_after": 22,
+  "new_selected_history_release": {
+    "status": "PUBLISHED_SELECTED_RELEASE_AND_SOURCE_ACTUALLY_RETRIEVED_HASH_MATCH",
+    "time": "2026-10-22T08:59:49.418476+08:00",
+    "release_id": 420197439,
+    "tag": "research-history-curated-20261022",
+    "fixed_source": "79c1aea5b08647f38bb947096cd9a37d5e086355",
+    "release_published": true,
+    "bundle_bytes": 236572845,
+    "bundle_sha256": "e751d2b7ad165aadaa282005d210493191a7b0f55c4896af119ef5022818ab68",
+    "bundle_members_received": 320,
+    "ordinary_source_and_metadata_files_received": 175,
+    "ordinary_source_and_metadata_bytes_received": 9626544,
+    "assets": [
+      {
+        "id": 664256616,
+        "name": "selected-history-and-deployments.zip",
+        "bytes": 236572845,
+        "digest": "sha256:e751d2b7ad165aadaa282005d210493191a7b0f55c4896af119ef5022818ab68"
+      },
+      {
+        "id": 664257027,
+        "name": "SELECTED_HISTORY_CONTENTS.json",
+        "bytes": 388287,
+        "digest": "sha256:9bab4c7ee1170d7cfa5c16693dd0ba4209f079533aced9f333e9c47ed4a4d43d"
+      },
+      {
+        "id": 664257077,
+        "name": "SHA256SUMS.txt",
+        "bytes": 202,
+        "digest": "sha256:bdb77671e0c866042e9de24e2619c6f243918060ea9bd4bb1a89ba67d215e432"
+      }
+    ],
+    "all_local_originals_retained": true,
+    "old_drafts_not_deleted_by_this_program": true,
+    "old_bulk_jobs_not_restarted": true,
+    "training_and_inference_not_run": true
+  },
+  "ordinary_selected_source_programs_tables_and_notes": 171,
+  "all_local_D_H_research_originals_retained": true,
+  "original_D_work_branch_index_config_preserved": true,
+  "H_free_bytes": 1139087769600,
+  "bulk_upload_remains_disabled": true,
+  "training_or_inference_run": false,
+  "original_20261021_full_restore_receipts_keep_original_time_and_scope": true
+}

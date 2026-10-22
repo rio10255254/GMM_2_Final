@@ -3,7 +3,7 @@
   "original_wrapper": "Deliverables/MOSR_R61_ONNX/run.py",
   "original_wrapper_input": "Deliverables/MOSR_R61_ONNX/example/input.bmp",
   "original_wrapper_reference": "Deliverables/MOSR_R61_ONNX/example/output.bmp",
-  "schema": 1,
+  "schema": 2,
   "files": [
     {
       "path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
@@ -121,10 +121,17 @@
       "sha256": "ea9ca978bc02c53fe4266f50607a54379097d0dac2e50d6cddfcc25861adfad1",
       "bytes": 9530773,
       "repo": "rio10255254/GMM_2_Final",
-      "tag": "research-model-history-additions-20261021",
-      "metadata_asset": "MODELS_B006_RESEARCH_ASSETS.json.gz",
-      "immutable_data_asset": "research-project-models-006-009.zip",
-      "model_collection_publication_pending_global_master": true
+      "retired_bulk_provider_20261021": {
+        "tag": "research-model-history-additions-20261021",
+        "metadata_asset": "MODELS_B006_RESEARCH_ASSETS.json.gz",
+        "immutable_data_asset": "research-project-models-006-009.zip",
+        "model_collection_publication_pending_global_master": true
+      },
+      "tag": "research-history-curated-20261022",
+      "asset": "selected-history-and-deployments.zip",
+      "member": "deployment_graphs/R90_ONNX_feasibility/model.onnx",
+      "download_strategy": "download_named_published_release_zip_then_extract_only_named_member",
+      "selected_provider_actually_retrieved": true
     },
     {
       "id": "R99_preflight",
@@ -132,10 +139,17 @@
       "sha256": "6933127d7063e97d412812bb6073d5987c306f787384c0afbf79daf9135f2f5d",
       "bytes": 9807256,
       "repo": "rio10255254/GMM_2_Final",
-      "tag": "research-model-history-additions-20261021",
-      "metadata_asset": "MODELS_B006_RESEARCH_ASSETS.json.gz",
-      "immutable_data_asset": "research-project-models-006-004.zip",
-      "model_collection_publication_pending_global_master": true
+      "retired_bulk_provider_20261021": {
+        "tag": "research-model-history-additions-20261021",
+        "metadata_asset": "MODELS_B006_RESEARCH_ASSETS.json.gz",
+        "immutable_data_asset": "research-project-models-006-004.zip",
+        "model_collection_publication_pending_global_master": true
+      },
+      "tag": "research-history-curated-20261022",
+      "asset": "selected-history-and-deployments.zip",
+      "member": "deployment_graphs/R99_preflight/model.onnx",
+      "download_strategy": "download_named_published_release_zip_then_extract_only_named_member",
+      "selected_provider_actually_retrieved": true
     },
     {
       "id": "R61_deployment_body",
@@ -143,10 +157,17 @@
       "sha256": "7baf6fda38a843deff0fb840a3821d44f09a69b1485b2a263281c5096f3f31d8",
       "bytes": 16151146,
       "repo": "rio10255254/GMM_2_Final",
-      "tag": "research-model-history-additions-20261021",
-      "metadata_asset": "MODELS_B006_RESEARCH_ASSETS.json.gz",
-      "immutable_data_asset": "research-project-models-006-005.zip",
-      "model_collection_publication_pending_global_master": true
+      "retired_bulk_provider_20261021": {
+        "tag": "research-model-history-additions-20261021",
+        "metadata_asset": "MODELS_B006_RESEARCH_ASSETS.json.gz",
+        "immutable_data_asset": "research-project-models-006-005.zip",
+        "model_collection_publication_pending_global_master": true
+      },
+      "tag": "research-r61-onnx-delivery-20261021",
+      "asset": "R61-original-ONNX-delivery-verified.zip",
+      "member": "model.onnx",
+      "download_strategy": "download_named_published_release_zip_then_extract_only_named_member",
+      "selected_provider_actually_retrieved": true
     },
     {
       "id": "COMBO_company_body",
@@ -154,10 +175,17 @@
       "sha256": "9fe80f8ef1ef5a464f2bf9eec559337cd849fd0b792e97afb36eee83bd0e0d72",
       "bytes": 16105107,
       "repo": "rio10255254/GMM_2_Final",
-      "tag": "research-model-history-additions-20261021",
-      "metadata_asset": "MODELS_B010_RESEARCH_ASSETS.json.gz",
-      "immutable_data_asset": "research-project-models-010-005.zip",
-      "model_collection_publication_pending_global_master": true
+      "retired_bulk_provider_20261021": {
+        "tag": "research-model-history-additions-20261021",
+        "metadata_asset": "MODELS_B010_RESEARCH_ASSETS.json.gz",
+        "immutable_data_asset": "research-project-models-010-005.zip",
+        "model_collection_publication_pending_global_master": true
+      },
+      "tag": "research-history-curated-20261022",
+      "asset": "selected-history-and-deployments.zip",
+      "member": "deployment_graphs/COMBO_company_body/model.onnx",
+      "download_strategy": "download_named_published_release_zip_then_extract_only_named_member",
+      "selected_provider_actually_retrieved": true
     },
     {
       "id": "R39R40_a025_company_body",
@@ -165,13 +193,22 @@
       "sha256": "c3f17abc87a09c0628ddc1d46e3e2fa858af8a21b3c649c6f4329c9638175f70",
       "bytes": 16105107,
       "repo": "rio10255254/GMM_2_Final",
-      "tag": "research-model-history-additions-20261021",
-      "metadata_asset": "MODELS_B010_RESEARCH_ASSETS.json.gz",
-      "immutable_data_asset": "research-project-models-010-006.zip",
-      "model_collection_publication_pending_global_master": true
+      "retired_bulk_provider_20261021": {
+        "tag": "research-model-history-additions-20261021",
+        "metadata_asset": "MODELS_B010_RESEARCH_ASSETS.json.gz",
+        "immutable_data_asset": "research-project-models-010-006.zip",
+        "model_collection_publication_pending_global_master": true
+      },
+      "tag": "research-history-curated-20261022",
+      "asset": "selected-history-and-deployments.zip",
+      "member": "deployment_graphs/R39R40_a025_company_body/model.onnx",
+      "download_strategy": "download_named_published_release_zip_then_extract_only_named_member",
+      "selected_provider_actually_retrieved": true
     }
   ],
   "models_are_not_stored_in_ordinary_Git_source": true,
-  "final_master_and_collection_publication_pending": true,
-  "scientific_parity_or_training_repeated": false
+  "final_master_and_collection_publication_pending": false,
+  "scientific_parity_or_training_repeated": false,
+  "old_complete_mirror_plan_retired": true,
+  "selected_provider_resolution": "curated/draft_cleanup_20261022/README.md"
 }
