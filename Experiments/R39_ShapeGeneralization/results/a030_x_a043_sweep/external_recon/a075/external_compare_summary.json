@@ -1,0 +1,94 @@
+{
+  "candidate": "r39r40_avg_a075",
+  "external_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\a030_x_a043_sweep\\external_recon\\a075\\external_gmf",
+  "scales": {
+    "8px": {
+      "subdir": "pitch8px",
+      "expected_step_px": 8.0,
+      "n_frames": 100,
+      "first_filename": "VisionTop_20251029182704617.bmp",
+      "last_filename": "VisionTop_20251029184451292.bmp",
+      "stats": {
+        "n_pos_samples": 100,
+        "n_steps": 99,
+        "median_step": -8.029999999999973,
+        "raw_std": 0.14425409581277,
+        "filtered_std": 0.14425409581277,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    },
+    "0p8px": {
+      "subdir": "pitch0p8px",
+      "expected_step_px": 0.8,
+      "n_frames": 60,
+      "first_filename": "VisionTop_20251029185341723.bmp",
+      "last_filename": "VisionTop_20251029190416478.bmp",
+      "stats": {
+        "n_pos_samples": 60,
+        "n_steps": 59,
+        "median_step": -0.7919999999999163,
+        "raw_std": 0.15209465747339168,
+        "filtered_std": 0.15209465747339168,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    },
+    "0p08px": {
+      "subdir": "pitch0p08px",
+      "expected_step_px": 0.08,
+      "n_frames": 40,
+      "first_filename": "VisionTop_20251029193126446.bmp",
+      "last_filename": "VisionTop_20251029193825916.bmp",
+      "stats": {
+        "n_pos_samples": 40,
+        "n_steps": 39,
+        "median_step": -0.08199999999999363,
+        "raw_std": 0.11146791756798811,
+        "filtered_std": 0.11146791756798811,
+        "n_outliers": 0,
+        "outliers": [],
+        "z_threshold": 5.0
+      }
+    }
+  },
+  "headline_step_std": {
+    "8px": 0.14425409581277,
+    "0p8px": 0.15209465747339168,
+    "0p08px": 0.11146791756798811
+  },
+  "combo_step_std": {
+    "8px": 0.154515,
+    "0p8px": 0.13156,
+    "0p08px": 0.099891
+  },
+  "verdict": {
+    "overall": "RESEARCH_CAPACITY_ONLY",
+    "upgrade_cap_pct": 3.0,
+    "per_scale": {
+      "8px": {
+        "candidate": 0.14425409581277,
+        "combo": 0.154515,
+        "delta": -0.010260904187230024,
+        "delta_pct": -6.640717203656618,
+        "status": "IMPROVED"
+      },
+      "0p8px": {
+        "candidate": 0.15209465747339168,
+        "combo": 0.13156,
+        "delta": 0.02053465747339167,
+        "delta_pct": 15.608587316351224,
+        "status": "REGRESSED"
+      },
+      "0p08px": {
+        "candidate": 0.11146791756798811,
+        "combo": 0.099891,
+        "delta": 0.011576917567988121,
+        "delta_pct": 11.589550177681794,
+        "status": "REGRESSED"
+      }
+    }
+  }
+}

@@ -23,6 +23,10 @@
 | 歷史幾何與固定裁切 | 不可用今天重新裁切的結果冒充當年輸入 | [歷史固定輸入](Legacy_Frozen_QA_Inputs/README.md) |
 | 跨輪固定參照與診斷 | R32、R113／R116、R131／R132及SEM方向候選；部分來自模型輸出而非相機 | [逐項用途與取得](../docs/reproducibility/round_source_followthrough_20261022/README.md) |
 
+## 早期固定環形來源
+
+[R33／COMBO／R39／R40共用輸入](Baseline_Ring_Inputs/README.md)把1,000組生成來源未明的原件與100組既有PSF處理輸入分開保存及恢復；不把整套可生成訓練庫一起上傳。
+
 ## 可生成的大資料
 
 訓練影像與整批重建先找[原生成程式、設定與必要來源](../docs/reproducibility/GENERATION_GUIDE.md)。R108兩套資料已有從取回程式生成相同檔案的紀錄；R61的3,400組繼承來源與歷史幾何仍需原件，不能只留亂數種子。

@@ -1,5 +1,7 @@
 # main/R33RobustLoss：檔案怎麼找
 
+[共用固定來源與模型關係](../../docs/reproducibility/round_source_reviews/BASELINE_20261023.md) · [原結果直接閱讀](results/SOURCE_RESULTS_GUIDE.md)
+
 [本輪研究卡](<../../docs/reproducibility/experiments/main__R33RobustLoss.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
 
 **研究問題：減少極端像素牽引是否改善位移穩定。**

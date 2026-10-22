@@ -1,0 +1,3566 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "Training_Data/tra_src_ring/7001.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160550_1.bmp",
+      "sha256": "e67f5fe9bd07123517ceb9a52b9c36892f5bcdc8bc92efd76d1015d6ea15bf8f",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/raw/visiontop_20250903160550_1.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160550_1.bmp",
+        "bytes": 815582,
+        "sha256": "e67f5fe9bd07123517ceb9a52b9c36892f5bcdc8bc92efd76d1015d6ea15bf8f",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7002.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160556_2.bmp",
+      "sha256": "8c89a19acfd437879222c1aad002af9faacd286177bcccfb2ca9104311472b89",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/raw/visiontop_20250903160556_2.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160556_2.bmp",
+        "bytes": 815582,
+        "sha256": "8c89a19acfd437879222c1aad002af9faacd286177bcccfb2ca9104311472b89",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7003.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160614_3.bmp",
+      "sha256": "efd590557ec45abfe1626b39c4ef75d8ee18bc9c7045bb6a195fb800c6d40582",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/raw/visiontop_20250903160614_3.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160614_3.bmp",
+        "bytes": 815582,
+        "sha256": "efd590557ec45abfe1626b39c4ef75d8ee18bc9c7045bb6a195fb800c6d40582",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7004.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160620_4.bmp",
+      "sha256": "97ff39bc2819c23dc088edb860ad8aa244716a9fc9c18fc2d51bdcaba1d8a6c9",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/raw/visiontop_20250903160620_4.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160620_4.bmp",
+        "bytes": 815582,
+        "sha256": "97ff39bc2819c23dc088edb860ad8aa244716a9fc9c18fc2d51bdcaba1d8a6c9",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7005.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160631_5.bmp",
+      "sha256": "075d08cae5430bde0c2ff7e1591521b91eca2828d00f8632f001c28ff72b7e22",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/raw/visiontop_20250903160631_5.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/raw/VisionTop_20250903160631_5.bmp",
+        "bytes": 815582,
+        "sha256": "075d08cae5430bde0c2ff7e1591521b91eca2828d00f8632f001c28ff72b7e22",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7006.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160642_6.bmp",
+      "sha256": "207ceb6f837c476ad06c07e37240625f7974a49ee694885aac94e82f11600390",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160642_6.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 6,
+        "bytes": 815582,
+        "sha256": "207ceb6f837c476ad06c07e37240625f7974a49ee694885aac94e82f11600390",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160642_6.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7007.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160700_7.bmp",
+      "sha256": "4a10e487a897246374d47f9a5472a73a794f46da30f901391bad19fc970375d7",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160700_7.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 7,
+        "bytes": 815582,
+        "sha256": "4a10e487a897246374d47f9a5472a73a794f46da30f901391bad19fc970375d7",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160700_7.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7008.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160716_8.bmp",
+      "sha256": "0fdfd96e0add37e1fd25a4b8f343d220ca6756db60c6095a006026568f5a4619",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160716_8.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 8,
+        "bytes": 815582,
+        "sha256": "0fdfd96e0add37e1fd25a4b8f343d220ca6756db60c6095a006026568f5a4619",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160716_8.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7009.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160723_9.bmp",
+      "sha256": "4916d01b2ac70718d589a305b205d5b2d152cba6429ba8ecb461f9c57d11478b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160723_9.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 9,
+        "bytes": 815582,
+        "sha256": "4916d01b2ac70718d589a305b205d5b2d152cba6429ba8ecb461f9c57d11478b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160723_9.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7010.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160735_10.bmp",
+      "sha256": "17802f9734f0221f921b135be395d37c92389fd76ecf97085e233b79cfa2ac18",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160735_10.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 10,
+        "bytes": 815582,
+        "sha256": "17802f9734f0221f921b135be395d37c92389fd76ecf97085e233b79cfa2ac18",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160735_10.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7011.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160839_11.bmp",
+      "sha256": "fada2b4146c15463994924a1731c5030f011c48449494c94e3472f574585c355",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160839_11.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 11,
+        "bytes": 815582,
+        "sha256": "fada2b4146c15463994924a1731c5030f011c48449494c94e3472f574585c355",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160839_11.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7012.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160856_12.bmp",
+      "sha256": "a58f3267617f1e5caf977f66d70f9023179d99994b774ddb41722b098d67cc0b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160856_12.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 12,
+        "bytes": 815582,
+        "sha256": "a58f3267617f1e5caf977f66d70f9023179d99994b774ddb41722b098d67cc0b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160856_12.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7013.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160908_13.bmp",
+      "sha256": "4c5a4119093d9b87e87108eb2e776fd85e8a4b8ee4fea501af8995911dfe33c8",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160908_13.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 13,
+        "bytes": 815582,
+        "sha256": "4c5a4119093d9b87e87108eb2e776fd85e8a4b8ee4fea501af8995911dfe33c8",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160908_13.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7014.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160920_14.bmp",
+      "sha256": "6cdcb741fe74bd6cf850e996a456c274e6950729f3ae61116e50478969a3c4f5",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160920_14.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 14,
+        "bytes": 815582,
+        "sha256": "6cdcb741fe74bd6cf850e996a456c274e6950729f3ae61116e50478969a3c4f5",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160920_14.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7015.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160930_15.bmp",
+      "sha256": "5ba285172d91db6bc9645d2c81a8f0e53023e780a8f353d28c6c8f912114da1e",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160930_15.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 15,
+        "bytes": 815582,
+        "sha256": "5ba285172d91db6bc9645d2c81a8f0e53023e780a8f353d28c6c8f912114da1e",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160930_15.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7016.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160943_16.bmp",
+      "sha256": "bae74dcb4b7e4f906d9d60b9d7ea774d2a9d614e13b7f6e0e840631b793fea2f",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160943_16.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 16,
+        "bytes": 815582,
+        "sha256": "bae74dcb4b7e4f906d9d60b9d7ea774d2a9d614e13b7f6e0e840631b793fea2f",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160943_16.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7017.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160953_17.bmp",
+      "sha256": "13e22cb98743f5fa59a1fe12ca8f2912f8c4c7e41651f66399653a0818d33449",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903160953_17.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 17,
+        "bytes": 815582,
+        "sha256": "13e22cb98743f5fa59a1fe12ca8f2912f8c4c7e41651f66399653a0818d33449",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903160953_17.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7018.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161005_18.bmp",
+      "sha256": "07f948f45f765c3d9b28733fcfdbe9a54509366c333ea4a6c6eff0a6970926f4",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161005_18.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 18,
+        "bytes": 815582,
+        "sha256": "07f948f45f765c3d9b28733fcfdbe9a54509366c333ea4a6c6eff0a6970926f4",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161005_18.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7019.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161017_19.bmp",
+      "sha256": "caa35a12db6685f7bf8069bff4a17ef493eb5e66e4bfe315efbb6328c486603a",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161017_19.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 19,
+        "bytes": 815582,
+        "sha256": "caa35a12db6685f7bf8069bff4a17ef493eb5e66e4bfe315efbb6328c486603a",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161017_19.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7020.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161029_20.bmp",
+      "sha256": "742466b5704c3240ecaf73cacbb6e4d91c1370009e55b97e966119163540e3f7",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161029_20.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 20,
+        "bytes": 815582,
+        "sha256": "742466b5704c3240ecaf73cacbb6e4d91c1370009e55b97e966119163540e3f7",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161029_20.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7021.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161117_21.bmp",
+      "sha256": "ea06328f6d6f9acbd1e8e6cbd107031dcfe8b134967b96f902869ec1d10c1f33",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161117_21.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 21,
+        "bytes": 815582,
+        "sha256": "ea06328f6d6f9acbd1e8e6cbd107031dcfe8b134967b96f902869ec1d10c1f33",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161117_21.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7022.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161129_22.bmp",
+      "sha256": "2b693f578d6cc5572b1f24273e638c9b3a924a1563729eb2aa1e6a577581e06b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161129_22.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 22,
+        "bytes": 815582,
+        "sha256": "2b693f578d6cc5572b1f24273e638c9b3a924a1563729eb2aa1e6a577581e06b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161129_22.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7023.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161134_23.bmp",
+      "sha256": "7346150a322a0b89ec10cf91395c2a010eac89eb990d70958c65ac017c659cc0",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161134_23.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 23,
+        "bytes": 815582,
+        "sha256": "7346150a322a0b89ec10cf91395c2a010eac89eb990d70958c65ac017c659cc0",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161134_23.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7024.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161146_24.bmp",
+      "sha256": "1b28822cc5617cf635a20e7e6bb5b631f4aac5698c491668bb96c2cc590fe8d8",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161146_24.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 24,
+        "bytes": 815582,
+        "sha256": "1b28822cc5617cf635a20e7e6bb5b631f4aac5698c491668bb96c2cc590fe8d8",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161146_24.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7025.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161158_25.bmp",
+      "sha256": "847076e5dcb032029924074d33808dc24a7deb71dd8899fb7f5ea76f23797ffc",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161158_25.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 25,
+        "bytes": 815582,
+        "sha256": "847076e5dcb032029924074d33808dc24a7deb71dd8899fb7f5ea76f23797ffc",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161158_25.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7026.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161215_26.bmp",
+      "sha256": "e7f729d3f574c472e70006fb36f116c05fc373688721e8866bd41cba4f7eca3f",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161215_26.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 26,
+        "bytes": 815582,
+        "sha256": "e7f729d3f574c472e70006fb36f116c05fc373688721e8866bd41cba4f7eca3f",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161215_26.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7027.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161220_27.bmp",
+      "sha256": "39651098f8f436f4cc2d4780e943a33bc233b7b60096e334a4d4cd0d6e744dc7",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161220_27.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 27,
+        "bytes": 815582,
+        "sha256": "39651098f8f436f4cc2d4780e943a33bc233b7b60096e334a4d4cd0d6e744dc7",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161220_27.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7028.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161232_28.bmp",
+      "sha256": "d2d9d378bbb75ce97e894392d4b0ae376d320fa62346c97f222414efb10608fa",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161232_28.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 28,
+        "bytes": 815582,
+        "sha256": "d2d9d378bbb75ce97e894392d4b0ae376d320fa62346c97f222414efb10608fa",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161232_28.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7029.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161249_29.bmp",
+      "sha256": "a85e3f278421fd4fe9ab6b5835a9ae96a16dbfa4bc1f438647d6993914027346",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161249_29.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 29,
+        "bytes": 815582,
+        "sha256": "a85e3f278421fd4fe9ab6b5835a9ae96a16dbfa4bc1f438647d6993914027346",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161249_29.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7030.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161255_30.bmp",
+      "sha256": "4d2ba88f7d10512c2f5ee72d4853a30583acdcc4d659bb487732071f41052e1f",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161255_30.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 30,
+        "bytes": 815582,
+        "sha256": "4d2ba88f7d10512c2f5ee72d4853a30583acdcc4d659bb487732071f41052e1f",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161255_30.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7031.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161519_31.bmp",
+      "sha256": "afce2aebee98fedb24eebcf1827143c2fe1149837ab5c47ac2f6c250885d9066",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161519_31.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 31,
+        "bytes": 815582,
+        "sha256": "afce2aebee98fedb24eebcf1827143c2fe1149837ab5c47ac2f6c250885d9066",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161519_31.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7032.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161531_32.bmp",
+      "sha256": "408f44b76725b269bbaf0680ccc0d183ee0528a5b8b7251fd6edcb3b6a29e27e",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161531_32.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 32,
+        "bytes": 815582,
+        "sha256": "408f44b76725b269bbaf0680ccc0d183ee0528a5b8b7251fd6edcb3b6a29e27e",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161531_32.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7033.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161543_33.bmp",
+      "sha256": "3e4d17150bf13d9660a987f60059cc7006ff057db6cc384224b557c3c592f139",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161543_33.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 33,
+        "bytes": 815582,
+        "sha256": "3e4d17150bf13d9660a987f60059cc7006ff057db6cc384224b557c3c592f139",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161543_33.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7034.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161554_34.bmp",
+      "sha256": "058946c2bc85917503d2f8e280efeeb514efe9c230f9b79c67552ea1ecf80d6d",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161554_34.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 34,
+        "bytes": 815582,
+        "sha256": "058946c2bc85917503d2f8e280efeeb514efe9c230f9b79c67552ea1ecf80d6d",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161554_34.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7035.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161600_35.bmp",
+      "sha256": "bafb7aa737e8b9825c49c8371961c2b0ba2e7106b2e78fefde15ec29da9b6a47",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161600_35.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 35,
+        "bytes": 815582,
+        "sha256": "bafb7aa737e8b9825c49c8371961c2b0ba2e7106b2e78fefde15ec29da9b6a47",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161600_35.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7036.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161611_36.bmp",
+      "sha256": "25d9d21403ab9e383c73da5806f9b6962a540cf6608389a3d0bf945efa6771f9",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161611_36.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 36,
+        "bytes": 815582,
+        "sha256": "25d9d21403ab9e383c73da5806f9b6962a540cf6608389a3d0bf945efa6771f9",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161611_36.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7037.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161623_37.bmp",
+      "sha256": "ea0c19c4bbce7b4a6f8bd362c70dee2f10213f8ec2d3ea050e7fb6039a3ea54e",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161623_37.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 37,
+        "bytes": 815582,
+        "sha256": "ea0c19c4bbce7b4a6f8bd362c70dee2f10213f8ec2d3ea050e7fb6039a3ea54e",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161623_37.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7038.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161634_38.bmp",
+      "sha256": "4c637b72298b8d3c6bd9141c76d36717947301bc3090ec7e43190be50d5a1ce4",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161634_38.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 38,
+        "bytes": 815582,
+        "sha256": "4c637b72298b8d3c6bd9141c76d36717947301bc3090ec7e43190be50d5a1ce4",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161634_38.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7039.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161650_39.bmp",
+      "sha256": "36a2fbb8e9ff2d3a200dfc07059ea6520b7ffc97e6fc851b7fffbecf54e83c59",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161650_39.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 39,
+        "bytes": 815582,
+        "sha256": "36a2fbb8e9ff2d3a200dfc07059ea6520b7ffc97e6fc851b7fffbecf54e83c59",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161650_39.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7040.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161657_40.bmp",
+      "sha256": "700703c055225c09bbae5c8f323681e1cf3c1251c6994533107abf09311d5802",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161657_40.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 40,
+        "bytes": 815582,
+        "sha256": "700703c055225c09bbae5c8f323681e1cf3c1251c6994533107abf09311d5802",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161657_40.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7041.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161746_41.bmp",
+      "sha256": "f710a0c7c1b44d91dfd5dc7af1eff4de1b5c79118d4e436f7d1379d93a78e73e",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161746_41.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 41,
+        "bytes": 815582,
+        "sha256": "f710a0c7c1b44d91dfd5dc7af1eff4de1b5c79118d4e436f7d1379d93a78e73e",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161746_41.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7042.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161752_42.bmp",
+      "sha256": "f1cfa0d8922cbce2306651c81989974cee5dcd2d61fea86404b798105aadd97f",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161752_42.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 42,
+        "bytes": 815582,
+        "sha256": "f1cfa0d8922cbce2306651c81989974cee5dcd2d61fea86404b798105aadd97f",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161752_42.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7043.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161803_43.bmp",
+      "sha256": "8dbbc62557aa35f5effdd67f8b40ed5af6998af261f86b0e1c53ceaa8980b124",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161803_43.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 43,
+        "bytes": 815582,
+        "sha256": "8dbbc62557aa35f5effdd67f8b40ed5af6998af261f86b0e1c53ceaa8980b124",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161803_43.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7044.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161814_44.bmp",
+      "sha256": "7c624b2947b77f1aadba6534d0a3da796d06d30a4221410ec7e2d6d1951638c8",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161814_44.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 44,
+        "bytes": 815582,
+        "sha256": "7c624b2947b77f1aadba6534d0a3da796d06d30a4221410ec7e2d6d1951638c8",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161814_44.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7045.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161830_45.bmp",
+      "sha256": "f5a657fae23fb1a048989cc38a8332f81c070d8766a58a517b1c9d967fc478dd",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161830_45.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 45,
+        "bytes": 815582,
+        "sha256": "f5a657fae23fb1a048989cc38a8332f81c070d8766a58a517b1c9d967fc478dd",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161830_45.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7046.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161842_46.bmp",
+      "sha256": "8d38aa0b7374477c786c643e11ef65e75441ea5e28e63d8ce0b758c674572a64",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161842_46.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 46,
+        "bytes": 815582,
+        "sha256": "8d38aa0b7374477c786c643e11ef65e75441ea5e28e63d8ce0b758c674572a64",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161842_46.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7047.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161848_47.bmp",
+      "sha256": "6215415cb2e8c089f84804211f64222ec7e5b933f8a2288f9792505113a6e68b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161848_47.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 47,
+        "bytes": 815582,
+        "sha256": "6215415cb2e8c089f84804211f64222ec7e5b933f8a2288f9792505113a6e68b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161848_47.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7048.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161859_48.bmp",
+      "sha256": "d7ebcdd78790fe12790aaf22d27062e2e786bac8091852ece0eefb153b9769d5",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161859_48.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 48,
+        "bytes": 815582,
+        "sha256": "d7ebcdd78790fe12790aaf22d27062e2e786bac8091852ece0eefb153b9769d5",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161859_48.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7049.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161916_49.bmp",
+      "sha256": "b35829fe9287351c0d109bec5c942dc5b3f0a71fd8a6d9a6b0a14c2525ddc9fe",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161916_49.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 49,
+        "bytes": 815582,
+        "sha256": "b35829fe9287351c0d109bec5c942dc5b3f0a71fd8a6d9a6b0a14c2525ddc9fe",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161916_49.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7050.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161927_50.bmp",
+      "sha256": "230b9714baceb597d32cb500e615731d9459bcdbe552a56a69470f535930cb37",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903161927_50.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 50,
+        "bytes": 815582,
+        "sha256": "230b9714baceb597d32cb500e615731d9459bcdbe552a56a69470f535930cb37",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903161927_50.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7051.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162018_51.bmp",
+      "sha256": "9c73caa9b869c28f1ea4f3956d8c738be0f458f8ca31e0762bc3cc31d43b01d6",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162018_51.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 51,
+        "bytes": 815582,
+        "sha256": "9c73caa9b869c28f1ea4f3956d8c738be0f458f8ca31e0762bc3cc31d43b01d6",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162018_51.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7052.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162023_52.bmp",
+      "sha256": "2a694b719d8e73c058ff9a23ad5efd419ceda0dd825ed541b17345ba6f1707ab",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162023_52.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 52,
+        "bytes": 815582,
+        "sha256": "2a694b719d8e73c058ff9a23ad5efd419ceda0dd825ed541b17345ba6f1707ab",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162023_52.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7053.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162035_53.bmp",
+      "sha256": "61b71099c2443bde37a36be419dd4e78068cf336c334decd104ca0613b473d2b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162035_53.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 53,
+        "bytes": 815582,
+        "sha256": "61b71099c2443bde37a36be419dd4e78068cf336c334decd104ca0613b473d2b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162035_53.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7054.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162052_54.bmp",
+      "sha256": "8fc3092c4461727e11a4d0d7fc1a7b404d000c04dc0641517a9e60c78694034b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162052_54.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 54,
+        "bytes": 815582,
+        "sha256": "8fc3092c4461727e11a4d0d7fc1a7b404d000c04dc0641517a9e60c78694034b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162052_54.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7055.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162104_55.bmp",
+      "sha256": "d53dd6d45638d62c66cfc1fe437f89b76c428902b9de147eb304b910b0475a9a",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162104_55.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 55,
+        "bytes": 815582,
+        "sha256": "d53dd6d45638d62c66cfc1fe437f89b76c428902b9de147eb304b910b0475a9a",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162104_55.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7056.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162115_56.bmp",
+      "sha256": "13138f280135c41638ca21a7a45e65e00493172fec67c6d11040706192724197",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162115_56.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 56,
+        "bytes": 815582,
+        "sha256": "13138f280135c41638ca21a7a45e65e00493172fec67c6d11040706192724197",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162115_56.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7057.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162121_57.bmp",
+      "sha256": "7b080d7bd697dd328b27658c9a666b4ce7d8dd5ef53d29e790c540a5725cee7b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162121_57.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 57,
+        "bytes": 815582,
+        "sha256": "7b080d7bd697dd328b27658c9a666b4ce7d8dd5ef53d29e790c540a5725cee7b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162121_57.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7058.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162138_58.bmp",
+      "sha256": "b1a1110e38f8205e5ccb38d23820cb57f94db4024e27dbc42f8678525a6b44f7",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162138_58.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 58,
+        "bytes": 815582,
+        "sha256": "b1a1110e38f8205e5ccb38d23820cb57f94db4024e27dbc42f8678525a6b44f7",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162138_58.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7059.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162144_59.bmp",
+      "sha256": "9b168d28375e29067b32758ff563b4c0553be94b4ef17943a7c485e001ac27a6",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162144_59.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 59,
+        "bytes": 815582,
+        "sha256": "9b168d28375e29067b32758ff563b4c0553be94b4ef17943a7c485e001ac27a6",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162144_59.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7060.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162201_60.bmp",
+      "sha256": "d3ff2b38e771855eb052af4d70f9fe8482abb75ca4a9964a5e3180d3416a1b50",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162201_60.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 60,
+        "bytes": 815582,
+        "sha256": "d3ff2b38e771855eb052af4d70f9fe8482abb75ca4a9964a5e3180d3416a1b50",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162201_60.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7061.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162302_61.bmp",
+      "sha256": "7523b434c27858a4120b6e81608856aa5b20a6d9656ff504495bf07aa6d30e1c",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162302_61.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 61,
+        "bytes": 815582,
+        "sha256": "7523b434c27858a4120b6e81608856aa5b20a6d9656ff504495bf07aa6d30e1c",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162302_61.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7062.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162308_62.bmp",
+      "sha256": "8eaa98ff5ce9c65fcdcedf5cc19dc71d4008ecdeecf03ea8e23dcbc75a32ea2b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162308_62.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 62,
+        "bytes": 815582,
+        "sha256": "8eaa98ff5ce9c65fcdcedf5cc19dc71d4008ecdeecf03ea8e23dcbc75a32ea2b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162308_62.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7063.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162325_63.bmp",
+      "sha256": "b83c911d99eb2ad929dd3f3192f6a4ebb81ccfefcdac83146c875aebad3f8167",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162325_63.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 63,
+        "bytes": 815582,
+        "sha256": "b83c911d99eb2ad929dd3f3192f6a4ebb81ccfefcdac83146c875aebad3f8167",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162325_63.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7064.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162331_64.bmp",
+      "sha256": "ee3f99f3fc11f5a270486a93cf0bdbd2f2519bd8416b9b10610b2f27880ff487",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162331_64.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 64,
+        "bytes": 815582,
+        "sha256": "ee3f99f3fc11f5a270486a93cf0bdbd2f2519bd8416b9b10610b2f27880ff487",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162331_64.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7065.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162342_65.bmp",
+      "sha256": "de2ca0bb9ec943a98a3da7aea3061f98131bd9c63af4e962c2d9ec5a42a2bf4c",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162342_65.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 65,
+        "bytes": 815582,
+        "sha256": "de2ca0bb9ec943a98a3da7aea3061f98131bd9c63af4e962c2d9ec5a42a2bf4c",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162342_65.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7066.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162354_66.bmp",
+      "sha256": "8f75cf72020c440c9edc30e122c1c782d9e306f30b1030ca4766cf90991d1347",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162354_66.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 66,
+        "bytes": 815582,
+        "sha256": "8f75cf72020c440c9edc30e122c1c782d9e306f30b1030ca4766cf90991d1347",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162354_66.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7067.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162410_67.bmp",
+      "sha256": "2d715166f56e2559b5f11adbdf2919fe2adffc0a7ef4969e9e294876dbbc96d2",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162410_67.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 67,
+        "bytes": 815582,
+        "sha256": "2d715166f56e2559b5f11adbdf2919fe2adffc0a7ef4969e9e294876dbbc96d2",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162410_67.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7068.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162421_68.bmp",
+      "sha256": "4141483929f06cf313a4adbb755ba188188e784dadc9fe6bc148d1fbb140d965",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162421_68.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 68,
+        "bytes": 815582,
+        "sha256": "4141483929f06cf313a4adbb755ba188188e784dadc9fe6bc148d1fbb140d965",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162421_68.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7069.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162434_69.bmp",
+      "sha256": "6d0bb56e882741198ea7acdb93e4980511c641d071c4a23f955157939bd59fce",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162434_69.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 69,
+        "bytes": 815582,
+        "sha256": "6d0bb56e882741198ea7acdb93e4980511c641d071c4a23f955157939bd59fce",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162434_69.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7070.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162521_70.bmp",
+      "sha256": "c396c9fedff843f3849e52c93f95e426903b4908f45661b902a19fbcdcf3f162",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162521_70.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 70,
+        "bytes": 815582,
+        "sha256": "c396c9fedff843f3849e52c93f95e426903b4908f45661b902a19fbcdcf3f162",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162521_70.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7071.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162528_71.bmp",
+      "sha256": "1ca8c8973588b1b5149109bd6faa1e4933f89345993c3a521dab08c48e3e9534",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162528_71.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 71,
+        "bytes": 815582,
+        "sha256": "1ca8c8973588b1b5149109bd6faa1e4933f89345993c3a521dab08c48e3e9534",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162528_71.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7072.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162540_72.bmp",
+      "sha256": "6e3d62237005d2c4cb3e088ab48d41e37cc68b0e030c06c6726119715b04c60e",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162540_72.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 72,
+        "bytes": 815582,
+        "sha256": "6e3d62237005d2c4cb3e088ab48d41e37cc68b0e030c06c6726119715b04c60e",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162540_72.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7073.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162550_73.bmp",
+      "sha256": "8636686dd392ebcd769a58e92606ed7b2ac255854e5da5f1be37c6456823cd1e",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162550_73.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 73,
+        "bytes": 815582,
+        "sha256": "8636686dd392ebcd769a58e92606ed7b2ac255854e5da5f1be37c6456823cd1e",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162550_73.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7074.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162602_74.bmp",
+      "sha256": "3d2dffd22fb0b58405078502576506107a49b639415c45b2a21fc683f4c03d9b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162602_74.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 74,
+        "bytes": 815582,
+        "sha256": "3d2dffd22fb0b58405078502576506107a49b639415c45b2a21fc683f4c03d9b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162602_74.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7075.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162618_75.bmp",
+      "sha256": "80f1fa926afea44a939ec8e252fd58a601347444e4e4ae2551aa327661e171ce",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162618_75.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 75,
+        "bytes": 815582,
+        "sha256": "80f1fa926afea44a939ec8e252fd58a601347444e4e4ae2551aa327661e171ce",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162618_75.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7076.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162625_76.bmp",
+      "sha256": "f4159e7776c2a9b0350ba4f7643caac05c0c91af6e1245389a3b4fa1aca058d3",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162625_76.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 76,
+        "bytes": 815582,
+        "sha256": "f4159e7776c2a9b0350ba4f7643caac05c0c91af6e1245389a3b4fa1aca058d3",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162625_76.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7077.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162641_77.bmp",
+      "sha256": "386beff72cfa5e1453e19cc3367ddacd66a0cf73561aca4f29f1ad4846e5c416",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162641_77.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 77,
+        "bytes": 815582,
+        "sha256": "386beff72cfa5e1453e19cc3367ddacd66a0cf73561aca4f29f1ad4846e5c416",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162641_77.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7078.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162647_78.bmp",
+      "sha256": "649caaa48f05a0e39f8d030f50ce71624844f5849e96bfe03e91cbc71c3b0792",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162647_78.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 78,
+        "bytes": 815582,
+        "sha256": "649caaa48f05a0e39f8d030f50ce71624844f5849e96bfe03e91cbc71c3b0792",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162647_78.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7079.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162653_79.bmp",
+      "sha256": "fdac4cef835fe049498a142295809b9f2da409d5edaad340128a100071897ee9",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162653_79.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 79,
+        "bytes": 815582,
+        "sha256": "fdac4cef835fe049498a142295809b9f2da409d5edaad340128a100071897ee9",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162653_79.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7080.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162705_80.bmp",
+      "sha256": "bd9435d0134a8749ba3969b88a6cf789790abba3082d4dd96ac058a8d9d261e2",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162705_80.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 80,
+        "bytes": 815582,
+        "sha256": "bd9435d0134a8749ba3969b88a6cf789790abba3082d4dd96ac058a8d9d261e2",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162705_80.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7081.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162740_81.bmp",
+      "sha256": "f554aaf0e4b1927209e8bfb28742bd59596f1cc19fd5a216c41482ace58fc238",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162740_81.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 81,
+        "bytes": 815582,
+        "sha256": "f554aaf0e4b1927209e8bfb28742bd59596f1cc19fd5a216c41482ace58fc238",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162740_81.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7082.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162752_82.bmp",
+      "sha256": "859d1f88a88495b50c3c3745164b8cd1be645f7fb9042207122c013d8141df56",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162752_82.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 82,
+        "bytes": 815582,
+        "sha256": "859d1f88a88495b50c3c3745164b8cd1be645f7fb9042207122c013d8141df56",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162752_82.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7083.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162804_83.bmp",
+      "sha256": "9ea63c70280033c176d056e55f1cac5e3c4275c9852022cb9095989ce64a55a8",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162804_83.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 83,
+        "bytes": 815582,
+        "sha256": "9ea63c70280033c176d056e55f1cac5e3c4275c9852022cb9095989ce64a55a8",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162804_83.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7084.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162814_84.bmp",
+      "sha256": "70d81de0fa2139678cccfd4149ac96fc72b778e3dcc17246388243041e4fdf46",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162814_84.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 84,
+        "bytes": 815582,
+        "sha256": "70d81de0fa2139678cccfd4149ac96fc72b778e3dcc17246388243041e4fdf46",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162814_84.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7085.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162831_85.bmp",
+      "sha256": "c529eea7de44e226446c2e96e53b9509c588a2b1a34477e95690cebd51562912",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162831_85.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 85,
+        "bytes": 815582,
+        "sha256": "c529eea7de44e226446c2e96e53b9509c588a2b1a34477e95690cebd51562912",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162831_85.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7086.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162832_86.bmp",
+      "sha256": "6b8c3f35eace73c33999c03b81d5324a0c46f1f90e1da45577d75011a8f1ba1b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162832_86.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 86,
+        "bytes": 815582,
+        "sha256": "6b8c3f35eace73c33999c03b81d5324a0c46f1f90e1da45577d75011a8f1ba1b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162832_86.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7087.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162844_87.bmp",
+      "sha256": "86090f46a69e4fe98c9919d229c1c6758d8b216f48dae3c3214dee4f0b8ac514",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162844_87.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 87,
+        "bytes": 815582,
+        "sha256": "86090f46a69e4fe98c9919d229c1c6758d8b216f48dae3c3214dee4f0b8ac514",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162844_87.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7088.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162855_88.bmp",
+      "sha256": "c8f63d2155fac095b05fc9eac1b8bcd76063d57ec1e911296014bc8307c3cf0e",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162855_88.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 88,
+        "bytes": 815582,
+        "sha256": "c8f63d2155fac095b05fc9eac1b8bcd76063d57ec1e911296014bc8307c3cf0e",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162855_88.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7089.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162906_89.bmp",
+      "sha256": "0f977ff0726a6268390795db9b9855fc9899188b9815a0e356c5b5fe5fe037e2",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162906_89.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 89,
+        "bytes": 815582,
+        "sha256": "0f977ff0726a6268390795db9b9855fc9899188b9815a0e356c5b5fe5fe037e2",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162906_89.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7090.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162923_90.bmp",
+      "sha256": "ff08743132a49d00bb7cd71cd05caaecf9ebc2e05974864f3000d74e4ce47357",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162923_90.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 90,
+        "bytes": 815582,
+        "sha256": "ff08743132a49d00bb7cd71cd05caaecf9ebc2e05974864f3000d74e4ce47357",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162923_90.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7091.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162943_91.bmp",
+      "sha256": "e2b9e9ca383408781e32dc94419be3be0feb9bc0862cc17afa535667620805f5",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903162943_91.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 91,
+        "bytes": 815582,
+        "sha256": "e2b9e9ca383408781e32dc94419be3be0feb9bc0862cc17afa535667620805f5",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903162943_91.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7092.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163000_92.bmp",
+      "sha256": "f891363129f3c63b415ce4131b81e9a27191f9efcb6696917c73be1891d075d5",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163000_92.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 92,
+        "bytes": 815582,
+        "sha256": "f891363129f3c63b415ce4131b81e9a27191f9efcb6696917c73be1891d075d5",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903163000_92.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7093.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163006_93.bmp",
+      "sha256": "a0cd779d6f08815c80eabcf35fe57d3963038ed88b3a68951f4cb27f6a0c1abb",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163006_93.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 93,
+        "bytes": 815582,
+        "sha256": "a0cd779d6f08815c80eabcf35fe57d3963038ed88b3a68951f4cb27f6a0c1abb",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903163006_93.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7094.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163018_94.bmp",
+      "sha256": "6e93b503890c0ad8b7f1627f75beedac1d46ce58489c41dfac8644b4af1f38e1",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163018_94.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 94,
+        "bytes": 815582,
+        "sha256": "6e93b503890c0ad8b7f1627f75beedac1d46ce58489c41dfac8644b4af1f38e1",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903163018_94.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7095.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163034_95.bmp",
+      "sha256": "ac57bcb3d2676a967a6043952eac9ca727a5f958ba3fa5a95beb5fa5fe05669b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163034_95.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 95,
+        "bytes": 815582,
+        "sha256": "ac57bcb3d2676a967a6043952eac9ca727a5f958ba3fa5a95beb5fa5fe05669b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903163034_95.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7096.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163041_96.bmp",
+      "sha256": "3c0d6f7fd492cc6fc167de30b4ff1489adf26854161d19d0212726db47f1b8ba",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163041_96.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 96,
+        "bytes": 815582,
+        "sha256": "3c0d6f7fd492cc6fc167de30b4ff1489adf26854161d19d0212726db47f1b8ba",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903163041_96.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7097.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163052_97.bmp",
+      "sha256": "cd70dab05fdc7528a777fb3dc2638f493b87269383abc9ca10a5db72fab9b630",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163052_97.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 97,
+        "bytes": 815582,
+        "sha256": "cd70dab05fdc7528a777fb3dc2638f493b87269383abc9ca10a5db72fab9b630",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903163052_97.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7098.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163108_98.bmp",
+      "sha256": "12b44035910c8f141fdb6c0871874b53ff3c0338492957825a01330cbdcd930b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163108_98.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 98,
+        "bytes": 815582,
+        "sha256": "12b44035910c8f141fdb6c0871874b53ff3c0338492957825a01330cbdcd930b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903163108_98.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7099.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163125_99.bmp",
+      "sha256": "402b8396678d6998ea4919e648e0cb37067b1cffe988009d24f5d1593645ec7b",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163125_99.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 99,
+        "bytes": 815582,
+        "sha256": "402b8396678d6998ea4919e648e0cb37067b1cffe988009d24f5d1593645ec7b",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903163125_99.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_src_ring/7100.bmp",
+      "source": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163126_100.bmp",
+      "sha256": "ba0ca4e3a00fad2cc93124c0c04430ebbbb9e34fb38ddb3807e940cb38fff461",
+      "bytes": 815582,
+      "provider": {
+        "path": "PSF_Fitting/Crop_circle_FreqFiltered/VisionTop_20250903163126_100.bmp",
+        "role": "frozen_processed_fitting_input_NOT_camera_raw",
+        "collection": "psf100-frozen-inputs",
+        "reason": "Irreplaceable measured acquisition or frozen historical preprocessing/fit input needed to trace the original result",
+        "fit_order": 100,
+        "bytes": 815582,
+        "sha256": "ba0ca4e3a00fad2cc93124c0c04430ebbbb9e34fb38ddb3807e940cb38fff461",
+        "width": 901,
+        "height": 901,
+        "mode": "L",
+        "existing_published_providers": [],
+        "asset": "research-psf100-frozen-inputs-015.zip",
+        "historical_source": "D:\\GMM_2_Final\\PSF_Fitting\\Crop_circle_FreqFiltered\\VisionTop_20250903163126_100.bmp",
+        "release": "research-psf-camera-acquisitions-20261022"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7001.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7002.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7003.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7004.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7005.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7006.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7007.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7008.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7009.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7010.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7011.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7012.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7013.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7014.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7015.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7016.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7017.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7018.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7019.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7020.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7021.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7022.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7023.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7024.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7025.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7026.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7027.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7028.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7029.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7030.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7031.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7032.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7033.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7034.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7035.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7036.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7037.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7038.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7039.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7040.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7041.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7042.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7043.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7044.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7045.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7046.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7047.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7048.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7049.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7050.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7051.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7052.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7053.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7054.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7055.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7056.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7057.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7058.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7059.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7060.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7061.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7062.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7063.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7064.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7065.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7066.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7067.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7068.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7069.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7070.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7071.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7072.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7073.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7074.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7075.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7076.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7077.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7078.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7079.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7080.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7081.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7082.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7083.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7084.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7085.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7086.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7087.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7088.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7089.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7090.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7091.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7092.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7093.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7094.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7095.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7096.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7097.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7098.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7099.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    },
+    {
+      "path": "Training_Data/tra_lbl_ring/7100.bmp",
+      "source": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+      "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+      "bytes": 815582,
+      "provider": {
+        "path_key": "psf_fitting/psf_fitting_tutorial/data/gt/gt_901_with_block_proc.bmp",
+        "path": "PSF_Fitting/PSF_Fitting_Tutorial/data/gt/GT_901_with_Block_proc.bmp",
+        "bytes": 815582,
+        "sha256": "2c3ee6b7ba3467fb09a964424dd03ab6e07b02d7650e64500d1f5227111bdcea",
+        "release": "research-preservation-20261021",
+        "asset": "ordinary_repository"
+      }
+    }
+  ],
+  "purpose": "Restore last100 known PSF-input/GT pairs from already-published sources; do not upload these images again"
+}

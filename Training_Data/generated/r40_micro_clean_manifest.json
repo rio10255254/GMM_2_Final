@@ -1,0 +1,44 @@
+{
+  "generator": "r40_micro_v1",
+  "output_root": "D:\\GMM_2_Final\\Training_Data\\generated",
+  "image_size": 512,
+  "base_seed": 4040,
+  "stages": [
+    {
+      "stage": "stage_29_micro_lines_grid",
+      "stage_id": 29,
+      "feature_family": "lines_grid",
+      "count": 100,
+      "description": "Thin lines, grids, crossed lines, multiple pitch/orientation settings."
+    },
+    {
+      "stage": "stage_30_micro_large_regions",
+      "stage_id": 30,
+      "feature_family": "large_regions",
+      "count": 100,
+      "description": "Large bright/dark IC-like regions, plateaus, rectangular boundaries."
+    },
+    {
+      "stage": "stage_31_micro_textures",
+      "stage_id": 31,
+      "feature_family": "textures",
+      "count": 100,
+      "description": "Granular and low-contrast surface textures with mild periodic content."
+    },
+    {
+      "stage": "stage_32_micro_edge_defects",
+      "stage_id": 32,
+      "feature_family": "edge_defects",
+      "count": 100,
+      "description": "Jagged edges, chips, scratches, dark/bright defects."
+    },
+    {
+      "stage": "stage_33_micro_mixed_fields",
+      "stage_id": 33,
+      "feature_family": "mixed_fields",
+      "count": 100,
+      "description": "Combined grid, texture, region, marker, and defect scenes."
+    }
+  ],
+  "psf_next_step": "Run Training_Data/PSF_Convolution.py with RUN_STAGE_IDS=[29, 30, 31, 32, 33] before building train/validation packages."
+}

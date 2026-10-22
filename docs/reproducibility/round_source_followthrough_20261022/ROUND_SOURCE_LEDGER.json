@@ -1,6 +1,6 @@
 {
   "basis_scopes": 177,
-  "scopes_with_current_targeted_checks": 32,
+  "scopes_with_current_targeted_checks": 36,
   "fully_closed_scopes_claimed": 0,
   "rounds": [
     {
@@ -1112,9 +1112,11 @@
         "Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
         "Experiments/R33RobustLoss/reports/r33_robust_p90_results.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Historical shared trainer/config revisions and full sequence regeneration remain unclosed. Do not infer initializer checkpoint solely from run_meta pretrained_dir.",
+      "checked": "Baseline fixed inputs/model identities/result providers reviewed; 1000 unresolved-origin pairs supplemented once by explicit user approval; existing100PSF input/GT aliases reused; original recipes and mixture relations checked.",
+      "latest_review": "docs/reproducibility/round_source_reviews/BASELINE_20261023.md"
     },
     {
       "id": "main/R38SeqConsistency",
@@ -1138,9 +1140,11 @@
         "Experiments/R38v2SeqFixed/reports/DATA_FLOW_AUDIT.md",
         "Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Historical shared trainer/config revisions and full sequence regeneration remain unclosed. Do not infer initializer checkpoint solely from run_meta pretrained_dir.",
+      "checked": "Baseline fixed inputs/model identities/result providers reviewed; 1000 unresolved-origin pairs supplemented once by explicit user approval; existing100PSF input/GT aliases reused; original recipes and mixture relations checked.",
+      "latest_review": "docs/reproducibility/round_source_reviews/BASELINE_20261023.md"
     },
     {
       "id": "main/R39_ShapeGeneralization",
@@ -1161,9 +1165,11 @@
         "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a075_EXTERNAL_COMPARE.md",
         "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_COMPLEMENTARY_AVG_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Historical shared trainer/config revisions and full sequence regeneration remain unclosed. Do not infer initializer checkpoint solely from run_meta pretrained_dir.",
+      "checked": "Baseline fixed inputs/model identities/result providers reviewed; 1000 unresolved-origin pairs supplemented once by explicit user approval; existing100PSF input/GT aliases reused; original recipes and mixture relations checked.",
+      "latest_review": "docs/reproducibility/round_source_reviews/BASELINE_20261023.md"
     },
     {
       "id": "main/R40_MicroscopyFeatureCoverage",
@@ -1176,9 +1182,11 @@
         "Experiments/R40_MicroscopyFeatureCoverage/reports/R40_EXTERNAL_COMPARE_a043.md",
         "Experiments/R40_MicroscopyFeatureCoverage/reports/R40_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Historical shared trainer/config revisions and full sequence regeneration remain unclosed. Do not infer initializer checkpoint solely from run_meta pretrained_dir.",
+      "checked": "Baseline fixed inputs/model identities/result providers reviewed; 1000 unresolved-origin pairs supplemented once by explicit user approval; existing100PSF input/GT aliases reused; original recipes and mixture relations checked.",
+      "latest_review": "docs/reproducibility/round_source_reviews/BASELINE_20261023.md"
     },
     {
       "id": "main/R41_RingDistillation",

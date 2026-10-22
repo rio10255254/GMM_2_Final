@@ -1,0 +1,945 @@
+{
+  "profile": "micro_val_unseen",
+  "description": "Held-out unseen microscopy-feature validation set.",
+  "repo_root": "D:\\GMM_2_Final",
+  "output_dir": "D:\\GMM_2_Final\\Training_Data\\r40_microscopy_feature_coverage\\micro_val_unseen",
+  "total_pairs": 100,
+  "count_by_role": {
+    "micro": 100
+  },
+  "count_by_stage": {
+    "stage_29_micro_lines_grid": 20,
+    "stage_30_micro_large_regions": 20,
+    "stage_31_micro_textures": 20,
+    "stage_32_micro_edge_defects": 20,
+    "stage_33_micro_mixed_fields": 20
+  },
+  "link_counts": {
+    "hardlink": 200
+  },
+  "shape_stages": [
+    "stage_01_triangles",
+    "stage_02_circles",
+    "stage_03_rectangles",
+    "stage_04_ellipses",
+    "stage_05_polygons",
+    "stage_06_mixed_simple",
+    "stage_07_mixed_complex"
+  ],
+  "micro_stages": [
+    "stage_29_micro_lines_grid",
+    "stage_30_micro_large_regions",
+    "stage_31_micro_textures",
+    "stage_32_micro_edge_defects",
+    "stage_33_micro_mixed_fields"
+  ],
+  "micro_stage_families": {
+    "stage_29_micro_lines_grid": "lines_grid",
+    "stage_30_micro_large_regions": "large_regions",
+    "stage_31_micro_textures": "textures",
+    "stage_32_micro_edge_defects": "edge_defects",
+    "stage_33_micro_mixed_fields": "mixed_fields"
+  },
+  "pairs": [
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0080.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0080.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0080.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0080.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0081.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0081.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0081.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0081.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0082.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0082.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0082.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0082.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0083.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0083.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0083.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0083.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0084.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0084.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0084.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0084.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0085.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0085.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0085.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0085.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0086.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0086.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0086.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0086.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0087.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0087.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0087.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0087.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0088.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0088.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0088.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0088.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0089.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0089.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0089.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0089.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0090.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0090.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0090.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0090.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0091.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0091.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0091.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0091.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0092.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0092.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0092.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0092.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0093.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0093.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0093.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0093.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0094.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0094.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0094.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0094.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0095.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0095.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0095.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0095.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0096.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0096.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0096.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0096.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0097.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0097.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0097.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0097.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0098.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0098.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0098.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0098.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_29_micro_lines_grid",
+      "feature_family": "lines_grid",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_29_micro_lines_grid\\0099.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_29_micro_lines_grid\\0099.bmp",
+      "package_src": "src/stage_29_micro_lines_grid/0099.bmp",
+      "package_lbl": "lbl/stage_29_micro_lines_grid/0099.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0080.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0080.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0080.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0080.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0081.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0081.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0081.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0081.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0082.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0082.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0082.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0082.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0083.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0083.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0083.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0083.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0084.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0084.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0084.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0084.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0085.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0085.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0085.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0085.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0086.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0086.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0086.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0086.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0087.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0087.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0087.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0087.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0088.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0088.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0088.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0088.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0089.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0089.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0089.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0089.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0090.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0090.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0090.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0090.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0091.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0091.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0091.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0091.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0092.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0092.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0092.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0092.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0093.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0093.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0093.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0093.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0094.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0094.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0094.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0094.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0095.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0095.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0095.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0095.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0096.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0096.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0096.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0096.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0097.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0097.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0097.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0097.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0098.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0098.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0098.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0098.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_30_micro_large_regions",
+      "feature_family": "large_regions",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_30_micro_large_regions\\0099.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_30_micro_large_regions\\0099.bmp",
+      "package_src": "src/stage_30_micro_large_regions/0099.bmp",
+      "package_lbl": "lbl/stage_30_micro_large_regions/0099.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0080.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0080.bmp",
+      "package_src": "src/stage_31_micro_textures/0080.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0080.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0081.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0081.bmp",
+      "package_src": "src/stage_31_micro_textures/0081.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0081.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0082.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0082.bmp",
+      "package_src": "src/stage_31_micro_textures/0082.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0082.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0083.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0083.bmp",
+      "package_src": "src/stage_31_micro_textures/0083.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0083.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0084.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0084.bmp",
+      "package_src": "src/stage_31_micro_textures/0084.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0084.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0085.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0085.bmp",
+      "package_src": "src/stage_31_micro_textures/0085.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0085.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0086.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0086.bmp",
+      "package_src": "src/stage_31_micro_textures/0086.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0086.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0087.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0087.bmp",
+      "package_src": "src/stage_31_micro_textures/0087.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0087.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0088.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0088.bmp",
+      "package_src": "src/stage_31_micro_textures/0088.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0088.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0089.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0089.bmp",
+      "package_src": "src/stage_31_micro_textures/0089.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0089.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0090.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0090.bmp",
+      "package_src": "src/stage_31_micro_textures/0090.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0090.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0091.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0091.bmp",
+      "package_src": "src/stage_31_micro_textures/0091.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0091.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0092.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0092.bmp",
+      "package_src": "src/stage_31_micro_textures/0092.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0092.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0093.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0093.bmp",
+      "package_src": "src/stage_31_micro_textures/0093.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0093.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0094.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0094.bmp",
+      "package_src": "src/stage_31_micro_textures/0094.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0094.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0095.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0095.bmp",
+      "package_src": "src/stage_31_micro_textures/0095.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0095.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0096.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0096.bmp",
+      "package_src": "src/stage_31_micro_textures/0096.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0096.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0097.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0097.bmp",
+      "package_src": "src/stage_31_micro_textures/0097.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0097.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0098.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0098.bmp",
+      "package_src": "src/stage_31_micro_textures/0098.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0098.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_31_micro_textures",
+      "feature_family": "textures",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_31_micro_textures\\0099.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_31_micro_textures\\0099.bmp",
+      "package_src": "src/stage_31_micro_textures/0099.bmp",
+      "package_lbl": "lbl/stage_31_micro_textures/0099.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0080.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0080.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0080.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0080.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0081.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0081.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0081.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0081.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0082.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0082.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0082.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0082.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0083.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0083.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0083.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0083.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0084.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0084.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0084.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0084.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0085.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0085.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0085.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0085.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0086.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0086.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0086.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0086.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0087.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0087.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0087.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0087.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0088.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0088.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0088.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0088.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0089.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0089.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0089.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0089.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0090.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0090.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0090.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0090.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0091.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0091.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0091.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0091.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0092.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0092.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0092.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0092.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0093.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0093.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0093.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0093.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0094.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0094.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0094.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0094.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0095.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0095.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0095.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0095.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0096.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0096.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0096.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0096.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0097.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0097.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0097.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0097.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0098.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0098.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0098.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0098.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_32_micro_edge_defects",
+      "feature_family": "edge_defects",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_32_micro_edge_defects\\0099.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_32_micro_edge_defects\\0099.bmp",
+      "package_src": "src/stage_32_micro_edge_defects/0099.bmp",
+      "package_lbl": "lbl/stage_32_micro_edge_defects/0099.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0080.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0080.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0080.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0080.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0081.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0081.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0081.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0081.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0082.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0082.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0082.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0082.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0083.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0083.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0083.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0083.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0084.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0084.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0084.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0084.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0085.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0085.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0085.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0085.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0086.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0086.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0086.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0086.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0087.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0087.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0087.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0087.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0088.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0088.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0088.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0088.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0089.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0089.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0089.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0089.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0090.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0090.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0090.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0090.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0091.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0091.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0091.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0091.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0092.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0092.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0092.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0092.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0093.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0093.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0093.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0093.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0094.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0094.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0094.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0094.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0095.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0095.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0095.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0095.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0096.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0096.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0096.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0096.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0097.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0097.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0097.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0097.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0098.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0098.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0098.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0098.bmp"
+    },
+    {
+      "role": "micro",
+      "stage": "stage_33_micro_mixed_fields",
+      "feature_family": "mixed_fields",
+      "src": "D:\\GMM_2_Final\\Training_Data\\generated_convolved\\stage_33_micro_mixed_fields\\0099.bmp",
+      "lbl": "D:\\GMM_2_Final\\Training_Data\\generated\\stage_33_micro_mixed_fields\\0099.bmp",
+      "package_src": "src/stage_33_micro_mixed_fields/0099.bmp",
+      "package_lbl": "lbl/stage_33_micro_mixed_fields/0099.bmp"
+    }
+  ]
+}

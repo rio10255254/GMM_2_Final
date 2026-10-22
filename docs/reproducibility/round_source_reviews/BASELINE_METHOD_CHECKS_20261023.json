@@ -1,0 +1,606 @@
+{
+  "status": "PASS",
+  "data_plans": [
+    {
+      "profile": "r39_shape_mix_safe",
+      "pairs": 1240,
+      "roles": {
+        "ring": 1100,
+        "shape": 140
+      }
+    },
+    {
+      "profile": "r39_shape_mix_strong",
+      "pairs": 1590,
+      "roles": {
+        "ring": 1100,
+        "shape": 490
+      }
+    },
+    {
+      "profile": "shape_val_unseen",
+      "pairs": 210,
+      "roles": {
+        "shape": 210
+      }
+    },
+    {
+      "profile": "r40_micro_capacity_train",
+      "pairs": 1300,
+      "roles": {
+        "ring": 550,
+        "shape": 350,
+        "micro": 400
+      }
+    },
+    {
+      "profile": "micro_val_unseen",
+      "pairs": 100,
+      "roles": {
+        "micro": 100
+      }
+    }
+  ],
+  "train_validation_path_disjoint": true,
+  "independent_physical_validation_proven": false,
+  "R40_clean_generator_samples": [
+    {
+      "path": "Training_Data/generated/stage_29_micro_lines_grid/0000.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_29_micro_lines_grid/0079.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_29_micro_lines_grid/0080.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_29_micro_lines_grid/0099.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_30_micro_large_regions/0000.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_30_micro_large_regions/0079.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_30_micro_large_regions/0080.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_30_micro_large_regions/0099.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_31_micro_textures/0000.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_31_micro_textures/0079.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_31_micro_textures/0080.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_31_micro_textures/0099.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_32_micro_edge_defects/0000.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_32_micro_edge_defects/0079.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_32_micro_edge_defects/0080.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_32_micro_edge_defects/0099.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_33_micro_mixed_fields/0000.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_33_micro_mixed_fields/0079.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_33_micro_mixed_fields/0080.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "Training_Data/generated/stage_33_micro_mixed_fields/0099.bmp",
+      "pixel_equal": true,
+      "shape": [
+        512,
+        512
+      ]
+    }
+  ],
+  "models": [
+    {
+      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+      "roles": [
+        "COMBO"
+      ],
+      "sha256": "7a0e51769b0eac28bce81aab47e6495ef1a82b313b84edefc6a95bd838a51dca",
+      "top_keys": [
+        "state_dict",
+        "ema_state_dict",
+        "optimizer",
+        "epoch",
+        "best_proxy_score_mean",
+        "best_proxy_score_p10",
+        "best_proxy_score_pass_rate",
+        "best_proxy_score_lr_mean",
+        "best_proxy_score_lr_p10",
+        "best_proxy_posx_step_mean",
+        "best_proxy_posy_step_mean",
+        "best_proxy_step_err",
+        "best_proxy_scale_mean",
+        "best_proxy_scale_dev",
+        "best_proxy_posx_adj_std",
+        "best_proxy_posy_adj_std",
+        "best_proxy_scale_std",
+        "gmf_obj",
+        "gmf_fitness",
+        "gmf_z_step_std",
+        "gmf_z_outlier",
+        "gmf_z_step_mean_err",
+        "gmf_z_gain_p10",
+        "gmf_z_proxy_mean",
+        "best_score"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": 21,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar",
+      "roles": [
+        "R33"
+      ],
+      "sha256": "6a6f4cd71cd7d57210c4c6949c03404dc230c1c00949677033f046c4b349de78",
+      "top_keys": [
+        "state_dict",
+        "ema_state_dict",
+        "optimizer",
+        "epoch",
+        "best_proxy_score_mean",
+        "best_proxy_score_p10",
+        "best_proxy_score_pass_rate",
+        "best_proxy_score_lr_mean",
+        "best_proxy_score_lr_p10",
+        "best_proxy_posx_step_mean",
+        "best_proxy_posy_step_mean",
+        "best_proxy_step_err",
+        "best_proxy_scale_mean",
+        "best_proxy_scale_dev",
+        "best_proxy_posx_adj_std",
+        "best_proxy_posy_adj_std",
+        "best_proxy_scale_std",
+        "gmf_obj",
+        "gmf_fitness",
+        "gmf_z_step_std",
+        "gmf_z_outlier",
+        "gmf_z_step_mean_err",
+        "gmf_z_gain_p10",
+        "gmf_z_proxy_mean",
+        "best_score"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": 22,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar",
+      "roles": [
+        "R38v2"
+      ],
+      "sha256": "65a867199c503ee9a16c7cb10b199a5662f0788dce1e119a828d10558acb846c",
+      "top_keys": [
+        "state_dict",
+        "ema_state_dict",
+        "optimizer",
+        "epoch",
+        "best_proxy_score_mean",
+        "best_proxy_score_p10",
+        "best_proxy_score_pass_rate",
+        "best_proxy_score_lr_mean",
+        "best_proxy_score_lr_p10",
+        "best_proxy_posx_step_mean",
+        "best_proxy_posy_step_mean",
+        "best_proxy_step_err",
+        "best_proxy_scale_mean",
+        "best_proxy_scale_dev",
+        "best_proxy_posx_adj_std",
+        "best_proxy_posy_adj_std",
+        "best_proxy_scale_std",
+        "gmf_obj",
+        "gmf_fitness",
+        "gmf_z_step_std",
+        "gmf_z_outlier",
+        "gmf_z_step_mean_err",
+        "gmf_z_gain_p10",
+        "gmf_z_proxy_mean",
+        "best_score"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": 54,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar",
+      "roles": [
+        "R39R40_avg_a025"
+      ],
+      "sha256": "80f14b9b30b758d59b2fe3fc2b8ac1f97acc41779437f93c99a45f492043f168",
+      "top_keys": [
+        "state_dict"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": null,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a030/best_tradeoff.pth.tar",
+      "roles": [
+        "approved_average_parent_a030"
+      ],
+      "sha256": "9212922c5c18056ea0e24ed1a2118b939b42baac7af580a07d6d872ee5263858",
+      "top_keys": [
+        "state_dict"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": null,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Experiments/R40_MicroscopyFeatureCoverage/results/weight_sweep/combo_best_low_alpha/checkpoints/a043/best_tradeoff.pth.tar",
+      "roles": [
+        "approved_average_parent_a043"
+      ],
+      "sha256": "1e9091e05899f9783ed078810fba63461c457b5a8e6e5f7d9bfd9f1bae790cb6",
+      "top_keys": [
+        "state_dict"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": null,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/weights/best_tradeoff.pth.tar",
+      "roles": [
+        "r39_shape_mix_safe_20260428_165958_best_tradeoff.pth.tar"
+      ],
+      "sha256": "06f47237b0286bd1296e0bf8cb6fc94fd45c65e78feeb425b505786eff1db917",
+      "top_keys": [
+        "state_dict",
+        "ema_state_dict",
+        "optimizer",
+        "epoch",
+        "best_proxy_score_mean",
+        "best_proxy_score_p10",
+        "best_proxy_score_pass_rate",
+        "best_proxy_score_lr_mean",
+        "best_proxy_score_lr_p10",
+        "best_proxy_posx_step_mean",
+        "best_proxy_posy_step_mean",
+        "best_proxy_step_err",
+        "best_proxy_scale_mean",
+        "best_proxy_scale_dev",
+        "best_proxy_posx_adj_std",
+        "best_proxy_posy_adj_std",
+        "best_proxy_scale_std",
+        "gmf_obj",
+        "gmf_fitness",
+        "gmf_z_step_std",
+        "gmf_z_outlier",
+        "gmf_z_step_mean_err",
+        "gmf_z_gain_p10",
+        "gmf_z_proxy_mean",
+        "best_score"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": 21,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/weights/best_tradeoff.pth.tar",
+      "roles": [
+        "r39_shape_mix_strong_20260428_180728_best_tradeoff.pth.tar"
+      ],
+      "sha256": "146c46fe37f81842b32b6018c8ea4102f20f2c41517c37c300ebf463520f22e9",
+      "top_keys": [
+        "state_dict",
+        "ema_state_dict",
+        "optimizer",
+        "epoch",
+        "best_proxy_score_mean",
+        "best_proxy_score_p10",
+        "best_proxy_score_pass_rate",
+        "best_proxy_score_lr_mean",
+        "best_proxy_score_lr_p10",
+        "best_proxy_posx_step_mean",
+        "best_proxy_posy_step_mean",
+        "best_proxy_step_err",
+        "best_proxy_scale_mean",
+        "best_proxy_scale_dev",
+        "best_proxy_posx_adj_std",
+        "best_proxy_posy_adj_std",
+        "best_proxy_scale_std",
+        "gmf_obj",
+        "gmf_fitness",
+        "gmf_z_step_std",
+        "gmf_z_outlier",
+        "gmf_z_step_mean_err",
+        "gmf_z_gain_p10",
+        "gmf_z_proxy_mean",
+        "best_score"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": 23,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537/weights/best_tradeoff.pth.tar",
+      "roles": [
+        "r40_micro_capacity_a030_20260504_134537_best_tradeoff.pth.tar"
+      ],
+      "sha256": "6dd797a189de897bca17898cfe03c3f602a07e9996aa12ce5299a4dcfd07e212",
+      "top_keys": [
+        "state_dict",
+        "ema_state_dict",
+        "optimizer",
+        "epoch",
+        "best_proxy_score_mean",
+        "best_proxy_score_p10",
+        "best_proxy_score_pass_rate",
+        "best_proxy_score_lr_mean",
+        "best_proxy_score_lr_p10",
+        "best_proxy_posx_step_mean",
+        "best_proxy_posy_step_mean",
+        "best_proxy_step_err",
+        "best_proxy_scale_mean",
+        "best_proxy_scale_dev",
+        "best_proxy_posx_adj_std",
+        "best_proxy_posy_adj_std",
+        "best_proxy_scale_std",
+        "gmf_obj",
+        "gmf_fitness",
+        "gmf_z_step_std",
+        "gmf_z_outlier",
+        "gmf_z_step_mean_err",
+        "gmf_z_gain_p10",
+        "gmf_z_proxy_mean",
+        "best_score"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": 21,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537/weights/latest.pth.tar",
+      "roles": [
+        "r40_micro_capacity_a030_20260504_134537_latest.pth.tar"
+      ],
+      "sha256": "1a133d0549ce457abfb9947c4fd80da1412348d3a5c4811e0f1606d7acb3e2cf",
+      "top_keys": [
+        "state_dict",
+        "ema_state_dict",
+        "optimizer",
+        "epoch"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": 100,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/weights/best_tradeoff.pth.tar",
+      "roles": [
+        "r40_micro_capacity_combo_20260504_145920_best_tradeoff.pth.tar"
+      ],
+      "sha256": "afad77fc55b26f31274d2c7d54617e6564612bd4a4f81a1995f51021216b50a1",
+      "top_keys": [
+        "state_dict",
+        "ema_state_dict",
+        "optimizer",
+        "epoch",
+        "best_proxy_score_mean",
+        "best_proxy_score_p10",
+        "best_proxy_score_pass_rate",
+        "best_proxy_score_lr_mean",
+        "best_proxy_score_lr_p10",
+        "best_proxy_posx_step_mean",
+        "best_proxy_posy_step_mean",
+        "best_proxy_step_err",
+        "best_proxy_scale_mean",
+        "best_proxy_scale_dev",
+        "best_proxy_posx_adj_std",
+        "best_proxy_posy_adj_std",
+        "best_proxy_scale_std",
+        "gmf_obj",
+        "gmf_fitness",
+        "gmf_z_step_std",
+        "gmf_z_outlier",
+        "gmf_z_step_mean_err",
+        "gmf_z_gain_p10",
+        "gmf_z_proxy_mean",
+        "best_score"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": 21,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/weights/latest.pth.tar",
+      "roles": [
+        "r40_micro_capacity_combo_20260504_145920_latest.pth.tar"
+      ],
+      "sha256": "07d6fe28750f369d81b75d0e9086a726e5e53e5e3f59668be38d7c2d2abffdad",
+      "top_keys": [
+        "state_dict",
+        "ema_state_dict",
+        "optimizer",
+        "epoch"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": 100,
+      "metadata_config_keys": []
+    },
+    {
+      "path": "Experiments/R40_MicroscopyFeatureCoverage/results/weight_sweep/combo_best_low_alpha/checkpoints/a045/best_tradeoff.pth.tar",
+      "roles": [
+        "R40_a045_failed_external_guard"
+      ],
+      "sha256": "d2f3a04457c550a83dc0856f2f86d7858f71b34fedaa0a60a7a3778721a1e685",
+      "top_keys": [
+        "state_dict"
+      ],
+      "tensor_count": 126,
+      "all_floating_finite": true,
+      "epoch": null,
+      "metadata_config_keys": []
+    }
+  ],
+  "blend_reconstruction_checks": [
+    {
+      "name": "R39_a030",
+      "left_role": "COMBO",
+      "right_role": "r39_shape_mix_strong_20260428_180728_best_tradeoff.pth.tar",
+      "alpha": 0.3,
+      "tensor_count": 126,
+      "exact_matches": 126,
+      "different": []
+    },
+    {
+      "name": "R40_a043",
+      "left_role": "COMBO",
+      "right_role": "r40_micro_capacity_combo_20260504_145920_best_tradeoff.pth.tar",
+      "alpha": 0.43,
+      "tensor_count": 126,
+      "exact_matches": 126,
+      "different": []
+    },
+    {
+      "name": "approved_a025",
+      "left_role": "approved_average_parent_a030",
+      "right_role": "approved_average_parent_a043",
+      "alpha": 0.25,
+      "tensor_count": 126,
+      "exact_matches": 126,
+      "different": []
+    },
+    {
+      "name": "R40_a045",
+      "left_role": "COMBO",
+      "right_role": "r40_micro_capacity_combo_20260504_145920_best_tradeoff.pth.tar",
+      "alpha": 0.45,
+      "tensor_count": 126,
+      "exact_matches": 126,
+      "different": []
+    }
+  ],
+  "trained_or_ran_model_inference": false,
+  "new_model_files_written": 0
+}

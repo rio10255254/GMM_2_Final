@@ -1,5 +1,7 @@
 # main/R40_MicroscopyFeatureCoverage 研究與重做紀錄
 
+[本輪與共用主線的來源、原表及模型關係](../round_source_reviews/BASELINE_20261023.md)
+
 [直接查看這一輪的檔案分工](<../../../Experiments/R40_MicroscopyFeatureCoverage/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [主R39至62：形狀、顯微與量測](../routes/main39_62.md) · [現在保存到哪裡](../STATUS.md)

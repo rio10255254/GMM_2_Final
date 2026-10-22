@@ -1,0 +1,126 @@
+{
+  "candidate": "r40_combo_best",
+  "combo_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\\weights\\best_tradeoff.pth.tar",
+  "candidate_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920\\weights\\best_tradeoff.pth.tar",
+  "thresholds": {
+    "min_micro_psnr": 26.0,
+    "min_high_frequency_retention": 0.34,
+    "max_8px": 0.155,
+    "max_0p8px": 0.155,
+    "max_0p08px": 0.135
+  },
+  "rows": [
+    {
+      "alpha": 0.5,
+      "alpha_tag": "a050",
+      "micro_overall_psnr": 27.297171691965236,
+      "micro_overall_ssim": 0.9250106572183785,
+      "micro_high_frequency_retention": 0.385945431966103,
+      "micro_edge_retention": 0.7664356232813978,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 19.76994350566337,
+          "ssim": 0.7131929065951247,
+          "high_frequency_retention": 0.2738984614405679,
+          "edge_retention": 0.4604321902131635,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 29.049546245779077,
+          "ssim": 0.9854536651364387,
+          "high_frequency_retention": 0.5976727946383396,
+          "edge_retention": 1.2048617611517682,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 31.809360073651042,
+          "ssim": 0.9673228042161595,
+          "high_frequency_retention": 0.26370082134066736,
+          "edge_retention": 0.8299717833931826,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 29.93125194484147,
+          "ssim": 0.9870380341974263,
+          "high_frequency_retention": 0.4636522684160065,
+          "edge_retention": 1.07711992217037,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 25.925756689891227,
+          "ssim": 0.9720458759467434,
+          "high_frequency_retention": 0.3308028139949335,
+          "edge_retention": 0.25979245947850477,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1651,
+      "ring_0p8px_step_std": 0.1441,
+      "ring_0p08px_step_std": 0.1263
+    }
+  ],
+  "verdict": {
+    "found": false,
+    "best": null,
+    "capacity_only_best": {
+      "alpha": 0.5,
+      "alpha_tag": "a050",
+      "micro_overall_psnr": 27.297171691965236,
+      "micro_overall_ssim": 0.9250106572183785,
+      "micro_high_frequency_retention": 0.385945431966103,
+      "micro_edge_retention": 0.7664356232813978,
+      "micro_per_stage": {
+        "stage_29_micro_lines_grid": {
+          "feature_family": "lines_grid",
+          "psnr": 19.76994350566337,
+          "ssim": 0.7131929065951247,
+          "high_frequency_retention": 0.2738984614405679,
+          "edge_retention": 0.4604321902131635,
+          "count": 20
+        },
+        "stage_30_micro_large_regions": {
+          "feature_family": "large_regions",
+          "psnr": 29.049546245779077,
+          "ssim": 0.9854536651364387,
+          "high_frequency_retention": 0.5976727946383396,
+          "edge_retention": 1.2048617611517682,
+          "count": 20
+        },
+        "stage_31_micro_textures": {
+          "feature_family": "textures",
+          "psnr": 31.809360073651042,
+          "ssim": 0.9673228042161595,
+          "high_frequency_retention": 0.26370082134066736,
+          "edge_retention": 0.8299717833931826,
+          "count": 20
+        },
+        "stage_32_micro_edge_defects": {
+          "feature_family": "edge_defects",
+          "psnr": 29.93125194484147,
+          "ssim": 0.9870380341974263,
+          "high_frequency_retention": 0.4636522684160065,
+          "edge_retention": 1.07711992217037,
+          "count": 20
+        },
+        "stage_33_micro_mixed_fields": {
+          "feature_family": "mixed_fields",
+          "psnr": 25.925756689891227,
+          "ssim": 0.9720458759467434,
+          "high_frequency_retention": 0.3308028139949335,
+          "edge_retention": 0.25979245947850477,
+          "count": 20
+        }
+      },
+      "ring_8px_step_std": 0.1651,
+      "ring_0p8px_step_std": 0.1441,
+      "ring_0p08px_step_std": 0.1263
+    },
+    "reason": "no alpha satisfies both microscopy-capacity and ring-guard thresholds"
+  },
+  "generated_at": "2026-05-04 18:02:20"
+}
