@@ -1,0 +1,594 @@
+{
+  "status": "PASS",
+  "source_commit": "c533392b9aa8fc6b6cf131659126e8e3e42b77a5",
+  "all395_original_paths_restored": true,
+  "restore_result": {
+    "status": "PASS",
+    "files_restored_and_verified": 395,
+    "bytes_restored": 8396923284,
+    "selected_prefixes": [],
+    "identical_existing_files_reused": 0
+  },
+  "R63_original_selected_epochs_CPU_loaded": [
+    {
+      "variant": "full_control",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "906a6abc06312465d741eba3ffaf8d3e13235b500a93b8b08795ab541942535e"
+    },
+    {
+      "variant": "no_geometry_anchor",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "34c2c9e5f92ae9d2249c0bf28a6518b997752b47b183c99273aa55ac8b0a3693"
+    },
+    {
+      "variant": "no_motion_consistency",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "2a109b24275b019cbb4c9bf45d1e178aa2db991a231b89d4dd61b8322d310816"
+    },
+    {
+      "variant": "no_geometry_no_motion",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "40fb5dc94cdd719ef20eb196c9b402e17e84f68165ec56cfa4a14098689302b2"
+    },
+    {
+      "variant": "no_shape_geometry",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "f30428e86879a126651ccad3465c4dce4d1d7ff3931363ccc73c4601a6ac3435"
+    },
+    {
+      "variant": "no_global_boundary_position",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "f422b844bbcf179f563c0c61bb7aef8ddea0ce3d2f6e53263ff5da87e22cfff7"
+    },
+    {
+      "variant": "no_identity_boundary_guard",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "db0907d8b7cbc340dc5034f737f4d776d051a2693facf4bc91efc1142a93fa33"
+    },
+    {
+      "variant": "no_region_boundary_teacher",
+      "seed": 1261200,
+      "selected_epoch": 56,
+      "state_items": 139,
+      "original_sha256": "f48d5e7fd7340e8930c722c61cdb9910aa9427e52f08d07e653ceead5e600e51"
+    },
+    {
+      "variant": "no_sequence_consistency",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "4331adc3d355412766e1a6a028e326111fca84c0456113802321d396b96b177d"
+    },
+    {
+      "variant": "no_known_shift_motion",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "08815be665d372815d8113add843246a4a7898cd632c2744ed40221fb84cb35f"
+    },
+    {
+      "variant": "no_shift_equivariance",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "c3f296628e003d1d1868d3d0f8c0164c71a1880f72e93cfb1797ccc3dc5a115f"
+    },
+    {
+      "variant": "no_boundary_residual_adapter",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 130,
+      "original_sha256": "50a1b6e278afdd735fdf2816955234c0fd8c40135fdfc9795399fa3ae184f90e"
+    },
+    {
+      "variant": "no_raw_position_anchor",
+      "seed": 1261200,
+      "selected_epoch": 56,
+      "state_items": 139,
+      "original_sha256": "ad55ebc4cc785b9bb67facd163e36d7861b8b8c75b92d6b34fefd9cfe4185184"
+    },
+    {
+      "variant": "no_quality_gate",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 135,
+      "original_sha256": "1a1815461f563adc1c056609ce556714dad670dbcad64dc09a7fa1a2d9220313"
+    },
+    {
+      "variant": "shift_safe_matched",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "0f8fbc4c41aa2d17591dc025bb01f17431ff127ba6995018cc195e27bdd71ac7"
+    },
+    {
+      "variant": "standard_upsample_matched",
+      "seed": 1261200,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "e89a721ad785862679b8f7a471f2b674b2868e652bad8730139a503596866623"
+    },
+    {
+      "variant": "full_control",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "508ee30e46a6fb3aee37810541873f88eb96a359756a3bc724f2ace2df96ce83"
+    },
+    {
+      "variant": "no_geometry_anchor",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "f80a5df59d40eb394d5bdafcbf701b02de10eef3c7ff97f6e02e6998ebbca33a"
+    },
+    {
+      "variant": "no_motion_consistency",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "2da702aa6b47d2e65e9db7416ff2cd01f12163c7b6d6b0764b4b0f4f77cf3ea3"
+    },
+    {
+      "variant": "no_geometry_no_motion",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "3f3af1955665c67094610473aa8e1828d63992e77b014a30a34947a878682d23"
+    },
+    {
+      "variant": "no_shape_geometry",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "0472182a51501d149f8e65e839c441967d80e036e4f1c55eef57a3597d5d4ef1"
+    },
+    {
+      "variant": "no_global_boundary_position",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "de6f5a4553a08d536f889ba09303f075d8e49c2150fb7692f2889a9850dcb869"
+    },
+    {
+      "variant": "no_identity_boundary_guard",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "27ec28d811e7c02a789a357f233acaa547f21df4da272d8e94b4088431ce6ce5"
+    },
+    {
+      "variant": "no_region_boundary_teacher",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "b23a951a07aaac5dc67673f5714003e802925e36e614195423a74a1ca36edc83"
+    },
+    {
+      "variant": "no_sequence_consistency",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "86992fdc0d5b324207640a3e4534c9ad4e2b341626797edcdcf8f6616cd71c97"
+    },
+    {
+      "variant": "no_known_shift_motion",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "64e95f6574b15bfb0bcf31cb4cc1fd782c4448f71942c789cd8c8e87d9f80d94"
+    },
+    {
+      "variant": "no_shift_equivariance",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "3e69ed5ab4f93a670d029490fdc0d6f217a461419247f1a2aa8abb107ef8c75f"
+    },
+    {
+      "variant": "no_boundary_residual_adapter",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 130,
+      "original_sha256": "ccfb28be59525706fd21fa3102362444c3da21b8861c4fc0f1b1e3b9bb0b3675"
+    },
+    {
+      "variant": "no_quality_gate",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 135,
+      "original_sha256": "b6555cbe1e8e586282b00d5831e17354f6b01299580e1c621ea7c9edc4bfd482"
+    },
+    {
+      "variant": "shift_safe_matched",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "db4802b86c398afd85eeb33b690229a3ea5d3c60645d9e593728314a275de8ea"
+    },
+    {
+      "variant": "standard_upsample_matched",
+      "seed": 1261217,
+      "selected_epoch": 60,
+      "state_items": 139,
+      "original_sha256": "4bc4b96600f4f89ca2cfae4579424301fc579b7b7300436293b405a18fd3c129"
+    }
+  ],
+  "all31_model_tensor_values_finite": true,
+  "model_forward_or_training_executed": false,
+  "existing_identical_file_reused": true,
+  "existing_different_file_refused_and_untouched": true,
+  "download_prefix_selection_checked": true,
+  "unlocated_R63_model_not_substituted": true,
+  "original_sources_unchanged": true,
+  "published_release": {
+    "tag": "research-priority-sources-20261022",
+    "source_commit": "c533392b9aa8fc6b6cf131659126e8e3e42b77a5",
+    "release_id": 420691665,
+    "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-priority-sources-20261022",
+    "assets": [
+      {
+        "id": 665804448,
+        "name": "BUNDLE_SUMMARY.json",
+        "size": 2826,
+        "digest": "sha256:8ef88e86d5df627c16365a8548f55dc5bbcbb62ff6450034c745c354dae5cd78"
+      },
+      {
+        "id": 665804428,
+        "name": "research-fixed-validation-inputs-001.zip",
+        "size": 1783130,
+        "digest": "sha256:a3bef5730852e235f0be67c172427c8a00c16e74ef5d488974fdf22d6612b503"
+      },
+      {
+        "id": 665804460,
+        "name": "research-lab-june05-camera-002.zip",
+        "size": 34417686,
+        "digest": "sha256:cf49d71b0a4daedf8f85f0046efeae1b7f0136445d2c71860c940c5181e38779"
+      },
+      {
+        "id": 665804587,
+        "name": "research-psf-fixed-inputs-003.zip",
+        "size": 160083,
+        "digest": "sha256:4b8d147388781d626898781801c456400227e4a7cb693343f4dde5f07ca2ec1c"
+      },
+      {
+        "id": 665805003,
+        "name": "research-psf100-selection-context-004.zip",
+        "size": 1063210868,
+        "digest": "sha256:934b44dbc9d97eb3eedd682b9466e76fa7c8c728516263e91aa9741070f4be65"
+      },
+      {
+        "id": 665805075,
+        "name": "research-psf100-selection-context-005.zip",
+        "size": 1064837524,
+        "digest": "sha256:b81f75f7037ea3e75563629a4790842a57855b3a90131a4b723f9ab81393f465"
+      },
+      {
+        "id": 665805175,
+        "name": "research-psf100-selection-context-006.zip",
+        "size": 1063051125,
+        "digest": "sha256:55276508d81efd8c4ece720c532d62645c5aaf35de9aad5583493f0be0062b4e"
+      },
+      {
+        "id": 665816287,
+        "name": "research-psf100-selection-context-007.zip",
+        "size": 1060747232,
+        "digest": "sha256:d050b305b8feca38325d05ea96e58caa1f23a561bf547bf6280db4a76bb31310"
+      },
+      {
+        "id": 665816565,
+        "name": "research-psf100-selection-context-008.zip",
+        "size": 359679752,
+        "digest": "sha256:bb33e2efde43920006a1b37fd5d62e98dd82951a5a3ea9158cbb5af395bcaa61"
+      },
+      {
+        "id": 665817234,
+        "name": "research-r63-selected-models-009.zip",
+        "size": 522254438,
+        "digest": "sha256:41759fef5d2d86c072df338ffba9cb8965ba807d1da838daf1b1d5caba4f79f2"
+      },
+      {
+        "id": 665821023,
+        "name": "research-raw-boundary-observations-010.zip",
+        "size": 10456304,
+        "digest": "sha256:cce263960d18baffe951355d97c269c8458829073ac912d3f89f1ec6afe0bb99"
+      },
+      {
+        "id": 665821437,
+        "name": "RESEARCH_ASSETS.json.gz",
+        "size": 23113,
+        "digest": "sha256:5eee1b44c67ecb69c0e60729bbe0db2b6a9fefcdff5121a5adf2a3bc1098d2f2"
+      }
+    ]
+  },
+  "source_files_actually_downloaded": 17,
+  "fixed_tools_actually_downloaded": 3,
+  "new_asset_bytes": 5180624081,
+  "new_unique_original_files": 395,
+  "new_original_bytes": 8396923284,
+  "known_alias_restore": {
+    "status": "PASS",
+    "additional_alias_paths": 22,
+    "aliases": [
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/20x_0p5um_0000.png",
+        "bytes": 52119,
+        "sha256": "d8cb12c4dcd558032b8d04af91640b93d1ac49f9faab132d8a8d49a051e54dd1",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\20x_0p5um_0000.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/20x_0p5um_0000.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/20x_0p5um_0001.png",
+        "bytes": 52058,
+        "sha256": "0c7ab2f40c5772b5f417bf472a2be00e176d51ddf3b1744806c0fc2782f8abf2",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\20x_0p5um_0001.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/20x_0p5um_0001.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/20x_1um_0004.png",
+        "bytes": 57121,
+        "sha256": "1d8e69c18fc4e3fe9a4726a63d3b6cb784435d06624c0eb7fc46038f4c170264",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\20x_1um_0004.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/20x_1um_0004.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/20x_1um_0005.png",
+        "bytes": 57065,
+        "sha256": "66ea6d07b441dbe72d9a3801e147c9c2ff66530a63c79b5beb8a8648f604b2ed",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\20x_1um_0005.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/20x_1um_0005.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/50x_x_0p5um_0000.png",
+        "bytes": 118536,
+        "sha256": "89d64ca805c2cf46e431098dd2fb69b1b8d8aa00129e359b1f21775798bd09e7",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\50x_x_0p5um_0000.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/50x_x_0p5um_0000.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/50x_x_0p5um_0001.png",
+        "bytes": 119089,
+        "sha256": "5e23d087a76afbbc98d8e0118fa06c068819609edc7fdfbc7d8c0872b9459057",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\50x_x_0p5um_0001.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/50x_x_0p5um_0001.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/50x_x_1um_0003.png",
+        "bytes": 121107,
+        "sha256": "127ef0fd73db74a0f52cb40fdfdc08f5be9fd9cc85c163e02722a253751737ab",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\50x_x_1um_0003.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/50x_x_1um_0003.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/50x_x_1um_0004.png",
+        "bytes": 121357,
+        "sha256": "16e1d96a15fb72c96fea25ecd0fc6a598ff2f0f3472f01db38a4b8f4229f1de9",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\50x_x_1um_0004.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/50x_x_1um_0004.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/sem13.png",
+        "bytes": 367740,
+        "sha256": "cb2585999c38f06314c1e345dc3381f1efa4cdb2bc85f5e730166f39c9c30391",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem13.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/sem13.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/sem14.png",
+        "bytes": 361095,
+        "sha256": "c2a57df81569aacffda841d2a1f199766d2a8015aad540c175e9f917098591b1",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem14.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/sem14.png"
+      },
+      {
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs/sem15.png",
+        "bytes": 353687,
+        "sha256": "14e1bb6f4227bde5397337642acc9d0b97e68aaca7e96b460cc066aafdd8dbd6",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem15.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/sem15.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/20x_0p5um_0000.png",
+        "bytes": 52119,
+        "sha256": "d8cb12c4dcd558032b8d04af91640b93d1ac49f9faab132d8a8d49a051e54dd1",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\20x_0p5um_0000.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/20x_0p5um_0000.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/20x_0p5um_0001.png",
+        "bytes": 52058,
+        "sha256": "0c7ab2f40c5772b5f417bf472a2be00e176d51ddf3b1744806c0fc2782f8abf2",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\20x_0p5um_0001.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/20x_0p5um_0001.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/20x_1um_0004.png",
+        "bytes": 57121,
+        "sha256": "1d8e69c18fc4e3fe9a4726a63d3b6cb784435d06624c0eb7fc46038f4c170264",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\20x_1um_0004.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/20x_1um_0004.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/20x_1um_0005.png",
+        "bytes": 57065,
+        "sha256": "66ea6d07b441dbe72d9a3801e147c9c2ff66530a63c79b5beb8a8648f604b2ed",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\20x_1um_0005.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/20x_1um_0005.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/50x_x_0p5um_0000.png",
+        "bytes": 118536,
+        "sha256": "89d64ca805c2cf46e431098dd2fb69b1b8d8aa00129e359b1f21775798bd09e7",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\50x_x_0p5um_0000.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/50x_x_0p5um_0000.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/50x_x_0p5um_0001.png",
+        "bytes": 119089,
+        "sha256": "5e23d087a76afbbc98d8e0118fa06c068819609edc7fdfbc7d8c0872b9459057",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\50x_x_0p5um_0001.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/50x_x_0p5um_0001.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/50x_x_1um_0003.png",
+        "bytes": 121107,
+        "sha256": "127ef0fd73db74a0f52cb40fdfdc08f5be9fd9cc85c163e02722a253751737ab",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\50x_x_1um_0003.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/50x_x_1um_0003.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/50x_x_1um_0004.png",
+        "bytes": 121357,
+        "sha256": "16e1d96a15fb72c96fea25ecd0fc6a598ff2f0f3472f01db38a4b8f4229f1de9",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\50x_x_1um_0004.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/50x_x_1um_0004.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/sem13.png",
+        "bytes": 367740,
+        "sha256": "cb2585999c38f06314c1e345dc3381f1efa4cdb2bc85f5e730166f39c9c30391",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\sem13.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/sem13.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/sem14.png",
+        "bytes": 361095,
+        "sha256": "c2a57df81569aacffda841d2a1f199766d2a8015aad540c175e9f917098591b1",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\sem14.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/sem14.png"
+      },
+      {
+        "path": "Experiments/R134_DirectStateRepair/validation/inputs/sem15.png",
+        "bytes": 353687,
+        "sha256": "14e1bb6f4227bde5397337642acc9d0b97e68aaca7e96b460cc066aafdd8dbd6",
+        "collection": "fixed-validation-inputs",
+        "role": "byte_identical_shared_validation_input_alias",
+        "reason": "Existing downstream validation package reads this path; same original bytes, no duplicate uploaded object",
+        "asset": "research-fixed-validation-inputs-001.zip",
+        "historical_source": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\validation\\inputs\\sem15.png",
+        "same_payload_as": "Experiments/R130_CleanV42Comparison/validation/inputs/sem15.png"
+      }
+    ],
+    "new_uploaded_objects": 0,
+    "known_unmatched_reference_paths_now_have_sources": 47,
+    "other581_reference_candidates_not_automatically_missing_or_uploaded": 534,
+    "actual_alias_restore": {
+      "status": "PASS",
+      "files_restored_and_verified": 22,
+      "bytes_restored": 3561948,
+      "selected_prefixes": [
+        "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs",
+        "Experiments/R134_DirectStateRepair/validation/inputs"
+      ],
+      "identical_existing_files_reused": 0
+    }
+  },
+  "capacity_after": {
+    "published_releases": 25,
+    "assets": 240,
+    "asset_bytes": 142568530982,
+    "drafts": 0,
+    "repo_size_KiB": 1626873
+  },
+  "original_D_working_branch_and_index_protected": true,
+  "original_sources_deleted": false,
+  "whole_project_preservation_complete": false
+}

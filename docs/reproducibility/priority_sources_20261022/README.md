@@ -54,3 +54,19 @@ LabSystem原拍恢復到[原準備程式](../../../Thesis_MOSR_Evidence/LabSyste
 `no_raw_position_anchor`、種子1261217、原選中第24輪，內容身分`089192e195207a3a1631587496221746c794c03cf908f7bd8be5e9f4686c2f41`仍未找到。已查原工作區／封存、舊備份壓縮包、可讀回收筒紀錄、相關本機目錄與已連接Google Drive。可讀範圍與拒絕讀取的位置如實記錄於[查找紀錄](R63_SEARCH_AND_LIMITS.json)，不宣稱查遍所有磁碟或雲端壓縮包。後來完成60輪的版本不當作它的替代品。
 
 本批395份補件完成與全專案所有來源完成是不同範圍。未審完的動態路徑及其他實驗來源仍待逐輪核對；原研究結論、原始資料、工作分支和正在訓練資料保留。
+
+## 已完成的實際交付
+
+12個附件已全部從GitHub重新下載，395份原件已在新位置完整恢復，原內容逐份相同。31個R63模型另以CPU開啟，當年選中輪次與原名單相同，模型數值可讀且有限；沒有執行模型推論或訓練。原測量資料、原拍及固定小圖也已開啟核對。遇到不同內容的既有檔案會停止且保留原檔。[交付收據](DELIVERY_VERIFIED.json)。
+
+## 共用圖在其他套件的原位置
+
+另外核對R129獨立包和R134的22個既有輸入位置，與這批11張固定驗證圖內容完全相同。[已核對的共用位置](KNOWN_ALIASES_VERIFIED.json)只增加位置對照，沒有新增影像附件。這批來源也讓先前引用候選中的47個位置找到可取得內容，其餘534個候選仍包含大量可再生輸出，不能全部當成必須上傳。
+
+若要同時恢復這些共用位置，先用上述原方法下載所需附件，再改用本頁的`RESTORE_WITH_KNOWN_ALIASES.json.gz`作為恢復清單。它沿用相同的10個ZIP，不需重傳或重複下載。例如恢復R129套件的11張圖：
+
+```powershell
+python Tools/research_asset_bundle.py restore --manifest docs/reproducibility/priority_sources_20261022/RESTORE_WITH_KNOWN_ALIASES.json.gz --assets ../priority-download --destination . --prefix Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs --keep-identical-existing
+```
+
+若只下載了R63模型，需再取得本版`research-fixed-validation-inputs-001.zip`才能恢復上述共用圖；不用下載全部原拍。
