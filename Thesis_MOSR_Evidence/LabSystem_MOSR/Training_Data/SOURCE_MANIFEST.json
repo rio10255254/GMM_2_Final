@@ -1,0 +1,87 @@
+{
+  "created_at": "2026-06-08",
+  "purpose": "Lab-system training-data architecture copied from the main project with names and roles preserved.",
+  "policy": "Reuse main-project code and filenames unless a lab-system path or PSF input must differ.",
+  "copied_files": [
+    {
+      "lab_path": "Training_Data/Data_Simulaion.py",
+      "source_path": "D:/GMM_2_Final/Training_Data/Data_Simulaion.py",
+      "status": "copied_with_lab_stage_seed_env_controls"
+    },
+    {
+      "lab_path": "Training_Data/PSF_Convolution.py",
+      "source_path": "D:/GMM_2_Final/Training_Data/PSF_Convolution.py",
+      "status": "copied_with_lab_psf_default_path_and_gaussian_control"
+    },
+    {
+      "lab_path": "Experiments/R39_ShapeGeneralization/scripts/r39_shape_data.py",
+      "source_path": "D:/GMM_2_Final/Experiments/R39_ShapeGeneralization/scripts/r39_shape_data.py",
+      "status": "copied_without_functional_change"
+    },
+    {
+      "lab_path": "Experiments/R40_MicroscopyFeatureCoverage/scripts/r40_micro_data.py",
+      "source_path": "D:/GMM_2_Final/Experiments/R40_MicroscopyFeatureCoverage/scripts/r40_micro_data.py",
+      "status": "copied_without_functional_change"
+    }
+  ],
+  "lab_specific_helpers": [
+    {
+      "lab_path": "Training_Data/scripts/build_lab_ring_package.py",
+      "status": "created_lab_helper",
+      "purpose": "Build tra_src_ring and tra_lbl_ring from Lab-generated data only."
+    },
+    {
+      "lab_path": "Experiments/R46_CornerAwareFineTune/scripts/r46_corner_data.py",
+      "status": "created_lab_extension",
+      "purpose": "Build Lab checkboard/right-angle corner GT and R46 train/validation packages."
+    },
+    {
+      "lab_path": "Experiments/R46_CornerAwareFineTune/scripts/launch_r46.py",
+      "status": "created_lab_extension",
+      "purpose": "Launch conservative Lab R46 corner fine-tuning from Lab R39/R40 checkpoints."
+    }
+  ],
+  "formal_lab_psf": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+  "gaussian_control": {
+    "sigma_px": 3.5,
+    "status": "first_stage25_26_comparison_generated"
+  },
+  "first_generated_round": {
+    "completed_at": "2026-06-08",
+    "stage_ids": [
+      25,
+      26
+    ],
+    "clean_gt_count": 150,
+    "bads_psf_count": 150,
+    "gaussian_control_count": 150
+  },
+  "stage01_33_foundation": {
+    "completed_at": "2026-06-08",
+    "clean_gt_count": 2968,
+    "bads_psf_count": 2968,
+    "gaussian_control_count": 2968,
+    "ring_replay_pairs": 1100,
+    "r39_packages": {
+      "r39_shape_mix_safe": 1240,
+      "r39_shape_mix_strong": 1590,
+      "shape_val_unseen": 210
+    },
+    "r40_packages": {
+      "r40_micro_capacity_train": 1300,
+      "micro_val_unseen": 100
+    },
+    "excluded_first_foundation": "R41/R42/R44 research data"
+  },
+  "r46_checkboard_corner_extension": {
+    "completed_at": "2026-06-12",
+    "clean_gt_count": 500,
+    "bads_psf_count": 500,
+    "gaussian_control_count": 500,
+    "train_package_pairs": 1550,
+    "validation_package_pairs": 100,
+    "report": "LabSystem_MOSR/Training_Data/reports/LAB_R46_CHECKBOARD_CORNER_DATA_20260612.md",
+    "preview": "LabSystem_MOSR/Training_Data/reports/r46_checkboard_corner_preview.png",
+    "summary": "LabSystem_MOSR/Training_Data/reports/r46_checkboard_corner_data_summary.json"
+  }
+}

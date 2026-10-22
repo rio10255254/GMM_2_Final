@@ -1,0 +1,31 @@
+{
+  "purpose": "Parameter-matched base U-Net learning baseline",
+  "model_definition": "Same-width three-level U-like encoder-decoder with ordinary bilinear upsampling; the same frozen fixed PSF input prior; no anti-alias blur, position-anchor output, boundary adapter, quality gate, or metrology-specific losses.",
+  "loss_definition": "L1 + 0.20 * (1 - SSIM)",
+  "package": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709",
+  "source_root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\training_data\\src",
+  "label_root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\training_data\\lbl",
+  "train_count": 9857,
+  "validation_count": 1397,
+  "parameter_count": 4010690,
+  "device": "cuda",
+  "gpu": "NVIDIA RTX A6000",
+  "config": {
+    "seed": 1261200,
+    "epochs": 30,
+    "crop_size": 256,
+    "batch_size": 64,
+    "train_repeats": 1,
+    "learning_rate": 0.001,
+    "min_learning_rate": 2e-05,
+    "weight_decay": 1e-05,
+    "ssim_weight": 0.2,
+    "base_channels": 48,
+    "validate_every": 3,
+    "patience_validations": 10,
+    "fixed_psf": true,
+    "psf_path": "",
+    "psf_reg": 10.0,
+    "psf_alpha": 0.1
+  }
+}

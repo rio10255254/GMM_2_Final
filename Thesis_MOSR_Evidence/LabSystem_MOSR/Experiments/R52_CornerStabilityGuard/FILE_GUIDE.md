@@ -1,5 +1,7 @@
 # lab/R52_CornerStabilityGuard：檔案怎麼找
 
+[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+
 [本輪研究卡](<../../../../docs/reproducibility/experiments/lab__R52_CornerStabilityGuard.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
 
 **研究問題：續接混合光學並加入角點穩定限制。**

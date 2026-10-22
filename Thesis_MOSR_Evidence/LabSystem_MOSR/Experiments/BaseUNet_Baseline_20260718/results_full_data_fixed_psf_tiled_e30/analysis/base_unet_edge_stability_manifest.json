@@ -1,0 +1,107 @@
+{
+  "purpose": "Test whether Base U-Net displacement stability is explained by edge smoothing",
+  "locked_step_count": 120,
+  "pillar_observation_count": 3240,
+  "valid_edge_fraction": 1.0,
+  "raw_refinement_shift_px": {
+    "median": 2.7156834118089574,
+    "p95": 6.0826197244219555,
+    "maximum": 6.219574157053648
+  },
+  "shared_raw_refined_centers": true,
+  "identical_radial_rule_for_all_methods": true,
+  "summary": [
+    {
+      "magnification": "20x",
+      "method": "Base U-Net",
+      "observation_count": 540,
+      "median_transition_width_nm": 257.1568927075417,
+      "mean_transition_width_nm": 257.2995062051676,
+      "std_transition_width_nm": 7.527942936988324,
+      "median_normalized_slope_per_px": 0.5366373755673818,
+      "median_signed_contrast_8bit": -146.44307613372803
+    },
+    {
+      "magnification": "20x",
+      "method": "MOSR",
+      "observation_count": 540,
+      "median_transition_width_nm": 238.0037789641426,
+      "mean_transition_width_nm": 238.09205502339034,
+      "std_transition_width_nm": 6.865372702532587,
+      "median_normalized_slope_per_px": 0.5798227263477895,
+      "median_signed_contrast_8bit": -70.22551727294922
+    },
+    {
+      "magnification": "20x",
+      "method": "Raw",
+      "observation_count": 540,
+      "median_transition_width_nm": 774.4572986583582,
+      "mean_transition_width_nm": 776.7994980094934,
+      "std_transition_width_nm": 49.911078432738314,
+      "median_normalized_slope_per_px": 0.17818929645982354,
+      "median_signed_contrast_8bit": -54.96352958679199
+    },
+    {
+      "magnification": "50x",
+      "method": "Base U-Net",
+      "observation_count": 540,
+      "median_transition_width_nm": 108.91874914593095,
+      "mean_transition_width_nm": 108.65014372469624,
+      "std_transition_width_nm": 4.791960199561571,
+      "median_normalized_slope_per_px": 0.5067997973980847,
+      "median_signed_contrast_8bit": -139.72212982177734
+    },
+    {
+      "magnification": "50x",
+      "method": "MOSR",
+      "observation_count": 540,
+      "median_transition_width_nm": 512.6171926979275,
+      "mean_transition_width_nm": 513.8783924276665,
+      "std_transition_width_nm": 17.99360807560782,
+      "median_normalized_slope_per_px": 0.10768269341423756,
+      "median_signed_contrast_8bit": -106.63290405273438
+    },
+    {
+      "magnification": "50x",
+      "method": "Raw",
+      "observation_count": 540,
+      "median_transition_width_nm": 629.4913880580702,
+      "mean_transition_width_nm": 629.9582847040558,
+      "std_transition_width_nm": 19.057360841453875,
+      "median_normalized_slope_per_px": 0.08768984239377654,
+      "median_signed_contrast_8bit": -103.82246780395508
+    }
+  ],
+  "smoothing_hypothesis": [
+    {
+      "method": "Raw",
+      "step_count": 120,
+      "median_transition_width_nm": 696.0857611778257,
+      "mean_within_grid_nm": 17.625634300878165,
+      "pearson_width_vs_disagreement": 0.5347786424693864,
+      "spearman_width_vs_disagreement": 0.5170081255642752,
+      "within_sequence_pearson": 0.20702248279365285,
+      "within_sequence_spearman": 0.17419354838709683
+    },
+    {
+      "method": "Base U-Net",
+      "step_count": 120,
+      "median_transition_width_nm": 183.10613415769373,
+      "mean_within_grid_nm": 5.036637531078449,
+      "pearson_width_vs_disagreement": 0.6856518156942742,
+      "spearman_width_vs_disagreement": 0.653489825682339,
+      "within_sequence_pearson": 0.03938529702957555,
+      "within_sequence_spearman": 0.04872080088987765
+    },
+    {
+      "method": "MOSR",
+      "step_count": 120,
+      "median_transition_width_nm": 368.4038129662815,
+      "mean_within_grid_nm": 6.47016882783485,
+      "pearson_width_vs_disagreement": -0.6163188485693281,
+      "spearman_width_vs_disagreement": -0.5435933050906312,
+      "within_sequence_pearson": 0.03231954516941921,
+      "within_sequence_spearman": 0.05150166852057843
+    }
+  ]
+}

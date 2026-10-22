@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "v24",
+      "different_tensors": [],
+      "same_model_config": true,
+      "original_anchor": {
+        "mode": "blend",
+        "alpha": 0.1,
+        "sigma": 2.0,
+        "detail_gain": 0.35
+      },
+      "rebuilt_anchor": {
+        "mode": "blend",
+        "alpha": 0.1,
+        "sigma": 2.0,
+        "detail_gain": 0.35
+      }
+    },
+    {
+      "case": "v29",
+      "different_tensors": [],
+      "same_model_config": true,
+      "original_anchor": {
+        "mode": "detail",
+        "alpha": 0.1,
+        "sigma": 2.0,
+        "detail_gain": 0.35
+      },
+      "rebuilt_anchor": {
+        "mode": "detail",
+        "alpha": 0.1,
+        "sigma": 2.0,
+        "detail_gain": 0.35
+      }
+    }
+  ],
+  "file_bytes_expected_to_differ_because_metadata_paths_and_timestamp_change": true,
+  "training_or_inference": false
+}

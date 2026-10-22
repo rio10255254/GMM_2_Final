@@ -1,0 +1,787 @@
+{
+  "rounds": [
+    {
+      "id": "lab/BaseUNet_Baseline_20260718",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718",
+      "question": "以基礎U-Net作參數與訓練資料受控比較",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "不同資料量／固定光學／切片與輪次版本分開；輸出報告沿用V42欄名需核對實際方法身分",
+      "representative_models": [
+        {
+          "role": "BaseUNet_e30",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/best_base_unet.pth.tar",
+          "sha256": "26c66852ef7030c6b0445e1892b1f6b304329dc759640fc5761b8c66e64e77d2",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-004.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/Modern_Restoration_Benchmarks_20260719",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719",
+      "question": "比較柱、孔、線三形貌的EDSR／NAFNet等方法",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "30輪NAFNet與15輪EDSR各取最低驗證模型；同系統轉移且含固定光學轉換，不宣稱所有指標第一",
+      "representative_models": [
+        {
+          "role": "EDSR_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/best_edsr.pth.tar",
+          "sha256": "584e97bc0578dfaa16dab5f1ac4450f2cb23b09d87f6ab20912807050dd0eedb",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-009.zip"
+          }
+        },
+        {
+          "role": "NAFNet_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/best_nafnet.pth.tar",
+          "sha256": "3c14534f761a7c027a6bda2db92a14ca87e6818e16356d968d8eea12667e3c9e",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-006.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/MOSR_BestCheckpoint_Diagnostic_20260724",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724",
+      "question": "檢查最佳保存模型與最後模型對位移結果的影響",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "保留共同有效母體及缺測，不以較好的一個模型覆蓋另一版",
+      "representative_models": [
+        {
+          "role": "V42_best_E10_EMA",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/weights/best_tradeoff.pth.tar",
+          "sha256": "6d6eafba196340c7789f8762ab8ab6eaf40a337bee9e8b532771ab7dad91e70e",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-011.zip"
+          }
+        },
+        {
+          "role": "V42_final_E120",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/weights/latest.pth.tar",
+          "sha256": "77cd56d29ba835b2ac500ef14b2e366ed7bfcbcee49354daff1ce3ca0a6b4c4f",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-011.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/MOSR_CheckpointConfig_Diagnostic_20260724",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_CheckpointConfig_Diagnostic_20260724",
+      "question": "拆解EDSR與MOSR位移差異的來源",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "第10輪、120輪與定位保護各有取捨；取樣相位解釋限於已測條件",
+      "representative_models": [
+        {
+          "role": "V42_best_E10_EMA",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/weights/best_tradeoff.pth.tar",
+          "sha256": "6d6eafba196340c7789f8762ab8ab6eaf40a337bee9e8b532771ab7dad91e70e",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-011.zip"
+          }
+        },
+        {
+          "role": "V42_final_E120",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/weights/latest.pth.tar",
+          "sha256": "77cd56d29ba835b2ac500ef14b2e366ed7bfcbcee49354daff1ce3ca0a6b4c4f",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-011.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R39_ShapeGeneralization",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R39_ShapeGeneralization",
+      "question": "Lab環境中的多形狀轉移",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "與主專案R39分開，Lab起點及成像條件不能互換",
+      "representative_models": [
+        {
+          "role": "Lab_R39_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260609_173931/weights/best_tradeoff.pth.tar",
+          "sha256": "e8922e8002809df979bb528ddf9202a133f877bf83d724b77ecb13ed1f4bf8b2",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-021.zip"
+          }
+        },
+        {
+          "role": "Lab_R39_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260609_173931/weights/latest.pth.tar",
+          "sha256": "e65f8e9127cd354560592665a2b0d9e58e41ce092bdef4ab7942f03ad7caf980",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-020.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R40_MicroscopyFeatureCoverage",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R40_MicroscopyFeatureCoverage",
+      "question": "Lab環境中的顯微特徵對照",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "作後續角點實驗的固定Lab控制，不冒充主專案正式替代",
+      "representative_models": [
+        {
+          "role": "Lab_R40_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/best_tradeoff.pth.tar",
+          "sha256": "b536c2340f0e7e7f1732cae3f9d6bbaef25d365a111dd6ce0993aa79553f0388",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-017.zip"
+          }
+        },
+        {
+          "role": "Lab_R40_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/latest.pth.tar",
+          "sha256": "315a00096dcc0cd951ac0519f790418ab0477e1112f6c1f4b7a2f2c758ba81ea",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-005.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R46_CornerAwareFineTune",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune",
+      "question": "以角點資料保守修正Lab模型",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "25輪有效但未修好實體圓角，未採用",
+      "representative_models": [
+        {
+          "role": "R46_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/results/archive_retained_20260824/representative_checkpoints/best_tradeoff.pth.tar",
+          "sha256": "9f7b0bd21daf42362796514f6f282d5dc99ac73b3c7be44cc0dfff91f35cb3ef",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-015.zip"
+          }
+        },
+        {
+          "role": "R46_detail",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/results/archive_retained_20260824/representative_checkpoints/best_detail_guarded.pth.tar",
+          "sha256": "59e5c9344153d17783cc0b002d002e96696d6224fc151a5e16132fe17fc4fd62",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-009.zip"
+          }
+        },
+        {
+          "role": "R46_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/results/archive_retained_20260824/representative_checkpoints/latest.pth.tar",
+          "sha256": "a502c766fae990404ec60625c1d37aedc6cec72e75773e3d4fc91e61e357e8c1",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-015.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R47_RealisticBoundaryGeneralization",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization",
+      "question": "增加較真實的邊界與背景",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "200輪仍未修好實體角點，較多訓練不等於有效",
+      "representative_models": [
+        {
+          "role": "R47_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/results/archive_retained_20260824/representative_checkpoints/best_tradeoff.pth.tar",
+          "sha256": "5ff58f01b88eb232c7ebc5245aaba6de8156ea7d873c2fac9528d6c5c22bf24a",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-010.zip"
+          }
+        },
+        {
+          "role": "R47_detail",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/results/archive_retained_20260824/representative_checkpoints/best_detail_guarded.pth.tar",
+          "sha256": "1741feb077783a359019cf0a553837d0ff378e7c3810ddf31a1214464ddcd4ac",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-003.zip"
+          }
+        },
+        {
+          "role": "R47_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/results/archive_retained_20260824/representative_checkpoints/latest.pth.tar",
+          "sha256": "587667492b9b30a7508dd09217049adba1fa1876fd899adfd8b232583bbcc867",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-009.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R48_RealCornerTransfer",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer",
+      "question": "用實體失敗型態與幾何標記改善角點",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "內部改善但實體更差；200輪完整負結果保留",
+      "representative_models": [
+        {
+          "role": "R48_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_tradeoff.pth.tar",
+          "sha256": "28bdcc9ddbbed3fed23779651bfded438600a838e37d3cafc137093ba3a96829",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-004.zip"
+          }
+        },
+        {
+          "role": "R48_detail",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_detail_guarded.pth.tar",
+          "sha256": "48e0081b0d3097f3b3ebada485f12949a1f0efd844c65c4c808ef90c78729aef",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-008.zip"
+          }
+        },
+        {
+          "role": "R48_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_resume_e120_to200_20260613_235726/weights/latest.pth.tar",
+          "sha256": "bbaf91698c8099b339b423877168357989aae7b5eb19a92d833e28f32614cab5",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-017.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R49_CADAnchorRealGeometry",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry",
+      "question": "加入可靠區域內的實體CAD答案",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "100輪仍使角點退步；可靠遮罩很小，不能當全圖答案",
+      "representative_models": [
+        {
+          "role": "R49_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_tradeoff.pth.tar",
+          "sha256": "0206981c5488b7a8fe87bce476a8f7c1d5aac0d1ebf7839be46419bc44e3958d",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-001.zip"
+          }
+        },
+        {
+          "role": "R49_detail",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_detail_guarded.pth.tar",
+          "sha256": "847bf871b0de2d02cdea0df5b2dbc8c4fe7866acb0b88aaa8d846d1418655f3d",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-013.zip"
+          }
+        },
+        {
+          "role": "R49_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/latest.pth.tar",
+          "sha256": "a5793986722b9ac42079186b7f4a45396a3b8e103ad169192eaaaec519147f6f",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-016.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R50_PSFControlDiagnosis",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis",
+      "question": "診斷Lab光學模糊是否過強",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "只做診斷；完整BADS比實拍更軟，混合光學需另試",
+      "representative_models": [],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R51_BlurSourceProbe",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe",
+      "question": "短測高斯、弱BADS與混合光學",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "混合改善典型角點但大偏移比例上升，未採用",
+      "representative_models": [
+        {
+          "role": "R51_mixed_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602/weights/best_tradeoff.pth.tar",
+          "sha256": "d8764c7692acdd1d0514b3427d19b6a5e2f28fca4dd2a2d22cd47333197fa5c7",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-019.zip"
+          }
+        },
+        {
+          "role": "R51_mixed_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602/weights/latest.pth.tar",
+          "sha256": "0cb30ab22ee418d236ba2bf75fd1ef0c0e50729676fce8d1cecfe22c46f3854c",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-002.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R52_CornerStabilityGuard",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard",
+      "question": "續接混合光學並加入角點穩定限制",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "100輪後實體大偏移仍多，負結果與完整H歷史保留",
+      "representative_models": [
+        {
+          "role": "R52_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/formal_run_evidence/checkpoints/best_tradeoff.pth.tar",
+          "sha256": "b15cdba8c4148bb9a922cf5e3015a5393923b4cf2b09f18ca2d6a9f0f744f56c",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-016.zip"
+          }
+        },
+        {
+          "role": "R52_detail",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/formal_run_evidence/checkpoints/best_detail_guarded.pth.tar",
+          "sha256": "3876c178d91b9e5c73f1a469f1b690ca104adefb84abda0a1dc73effaec69ad4",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-006.zip"
+          }
+        },
+        {
+          "role": "R52_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/formal_run_evidence/checkpoints/latest.pth.tar",
+          "sha256": "96be7061037ad51e2661742becc0d6199d7ada605123844a43758060a3f5e733",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-014.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R53_RealisticDatasetCalibration",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration",
+      "question": "重新平衡環形、形狀、顯微、背景與CAD資料",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "6000組／100輪從零完成但實體角點失敗；已清理批次不重算回收",
+      "representative_models": [
+        {
+          "role": "R53_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/best_tradeoff.pth.tar",
+          "sha256": "789c45f3597635ab023ba3ab849571ef575b9c82cf67389d9b77d714b5370ced",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-012.zip"
+          }
+        },
+        {
+          "role": "R53_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/latest.pth.tar",
+          "sha256": "76af35cfb7834272cd531345172d2d6d732d1341ee96ad71e88b5578490ddb42",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-011.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R54_GeometryRootCauseProbe",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe",
+      "question": "拆解重建造成角點損害及局部CAD可學性",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "可靠區域內可學，但轉到實體全圖失敗；不沿此模型續訓",
+      "representative_models": [
+        {
+          "role": "R54_edgeband_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650/weights/best_tradeoff.pth.tar",
+          "sha256": "4ad10b6aa549681063f5dc8d9d84e8874509cf2319b35472796bd8e6d9559f66",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-008.zip"
+          }
+        },
+        {
+          "role": "R54_edgeband_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650/weights/latest.pth.tar",
+          "sha256": "911b90c955287385e24db2974d4cd73177ebc952edbf032af41547d70858e727",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-014.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R55_SourceStyleRealisticTraining",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R55_SourceStyleRealisticTraining",
+      "question": "保留來源亮暗風格修復假高對比答案",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "best通過Lab控制角點門檻，latest退步；外部回傳另記",
+      "representative_models": [
+        {
+          "role": "R55_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r55_source_style_r53_scratch_formal_source_style_e050_b016_w04_nophys_20260618_002532/weights/best_tradeoff.pth.tar",
+          "sha256": "4f4574f092df8b3e10bde08787acceda5b85cd6abb9ee40632ebaa8c864f3d41",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-008.zip"
+          }
+        },
+        {
+          "role": "R55_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r55_source_style_r53_scratch_formal_source_style_e050_b016_w04_nophys_20260618_002532/weights/latest.pth.tar",
+          "sha256": "3b32232d28eaabc98a3907f93a47fdc19d0f6da3a201e888ffb93b99cb66ae25",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-006.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R56_LabelCoreRepairTraining",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining",
+      "question": "只修復弱答案核心區域",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "50輪內部改善但實體尾端更差，未採用；H備份與既有清理紀錄保留",
+      "representative_models": [
+        {
+          "role": "R56_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r56_label_core_repair_r53_scratch_formal_label_core_repair_e050_b016_w04_nophys_20260618_122705/weights/best_tradeoff.pth.tar",
+          "sha256": "5bf14fbb671b09ddc8aef47c51f2f71d0354ac580dd5bab47d3712baa743a706",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-009.zip"
+          }
+        },
+        {
+          "role": "R56_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r56_label_core_repair_r53_scratch_formal_label_core_repair_e050_b016_w04_nophys_20260618_122705/weights/latest.pth.tar",
+          "sha256": "5f91f7df6661d6e4c14be1e06117d8ee2e7dfe61cdcf05c33cc8792afb9f9f77",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-010.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R57_GeometryConstrainedMOSR",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR",
+      "question": "加入實體SEM半徑約束尺寸",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "同樣本幾何答案是訓練來源，不能當獨立SEM證據",
+      "representative_models": [
+        {
+          "role": "R57_asym_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_1_asym_cd_anchor_finetune_asym_cd_aligned_e004_b004_mtb120_lr3e6_20260620_163628/weights/best_tradeoff.pth.tar",
+          "sha256": "5680c4a2c6a6cf44e60b9e570e7956e08746379ae75ef83bd5acde2aaac1918a",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-009.zip"
+          }
+        },
+        {
+          "role": "R57_asym_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_1_asym_cd_anchor_finetune_asym_cd_aligned_e004_b004_mtb120_lr3e6_20260620_163628/weights/latest.pth.tar",
+          "sha256": "8f2dba9727e6d238fddf2a84c5f95c635125182d8e6815e6e516a79d4409b2f4",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-013.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R58_MeasurementClosedLoopMOSR",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR",
+      "question": "使用部分SEM修正答案做閉環試驗",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "答案故意只修一部分且缺實拍裁切，不能期待完全到SEM外框",
+      "representative_models": [
+        {
+          "role": "R58_full_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r58_frac050_full_e030_mtb512_20260621_2300_20260621_231035/weights/best_tradeoff.pth.tar",
+          "sha256": "005770a68cda5d90fa6ed356d8e362f7082235d1a6870cfb622c117eda808202",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-001.zip"
+          }
+        },
+        {
+          "role": "R58_full_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r58_frac050_full_e030_mtb512_20260621_2300_20260621_231035/weights/latest.pth.tar",
+          "sha256": "a192a70ab79649a3115912c09414368d5748dab19ed21ee465a01ad3ec4d5d39",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-015.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R59_CDClosedLoopBoundaryLayer",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer",
+      "question": "在同一影像上估計尺寸再移動邊界",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "屬同樣本後修正，數字變好不代表網路學會或獨立準確",
+      "representative_models": [],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R60_SEMTruthBoundaryTraining",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining",
+      "question": "修復實拍裁切答案、亮暗方向與真值權重",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "方向與取樣修正後短測改善，完整歷史及SEM訓練依賴均保留",
+      "representative_models": [
+        {
+          "role": "R60_polarity_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r60_semtruth_realcrop_anchor_fullish_e012_mtb256_polarityfix_20260622_20260622_010758/weights/best_tradeoff.pth.tar",
+          "sha256": "ff841560b76b7cc2cc6c6a202f00eb44bbc4263036252414cd6aad47ca5bcf9a",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-023.zip"
+          }
+        },
+        {
+          "role": "R60_polarity_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r60_semtruth_realcrop_anchor_fullish_e012_mtb256_polarityfix_20260622_20260622_010758/weights/latest.pth.tar",
+          "sha256": "ed040bef754255223f1883d191c5f524f29ed926a933fc3c01d44bbafddaeb50",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-021.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R61_BoundaryGeneralizationUniversal",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal",
+      "question": "加入通用邊界、位移及Step保護形成v16",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "保留歷版；3400早期來源及舊輪廓不能單靠新推算取代",
+      "representative_models": [
+        {
+          "role": "R61_v16_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+          "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-014.zip"
+          }
+        },
+        {
+          "role": "R61_v16_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/latest.pth.tar",
+          "sha256": "fa8ed6114f4bfafcc0f2c42cb383bd154dcbcd5afa3695b110053cde273cfd42",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-022.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/R62_TargetSampleBoost",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost",
+      "question": "實體目標增補與保守原圖參考輸出",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "多版模型與固定後處理分開；相位位移恢復不等於所有局部圓心更準",
+      "representative_models": [
+        {
+          "role": "R62_v7_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_seqgeom_mobility_v7_v7_noamp_lr3e7_short_e2_b80_20260705_20260705_235849/weights/best_tradeoff.pth.tar",
+          "sha256": "9596d6d4dbcb6972f9c802d282728f3818c40423ee9852b362b331ade48a057a",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-014.zip"
+          }
+        },
+        {
+          "role": "R62_v28_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_v20_multimag_raw_guard_v28_v28_multimagraw_e1_mtb300_20260706_20260706_122650/weights/latest.pth.tar",
+          "sha256": "eb8b5c5d4703c6da3c157626d47cd288ec9139e62a83ddc848e07b47ff6cb9f5",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-021.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/Subpixel_Translation_Equivariance_20260720",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720",
+      "question": "對真實結構施加已知數學位移作壓力測試",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "插值位移不同於平台重新拍攝；MOSR未全面勝過EDSR，全部100配對與不利結果保留",
+      "representative_models": [
+        {
+          "role": "BaseUNet_e30",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/best_base_unet.pth.tar",
+          "sha256": "26c66852ef7030c6b0445e1892b1f6b304329dc759640fc5761b8c66e64e77d2",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-004.zip"
+          }
+        },
+        {
+          "role": "EDSR_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/best_edsr.pth.tar",
+          "sha256": "584e97bc0578dfaa16dab5f1ac4450f2cb23b09d87f6ab20912807050dd0eedb",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-009.zip"
+          }
+        },
+        {
+          "role": "NAFNet_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/best_nafnet.pth.tar",
+          "sha256": "3c14534f761a7c027a6bda2db92a14ca87e6818e16356d968d8eea12667e3c9e",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-006.zip"
+          }
+        },
+        {
+          "role": "V42_final_E120",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/weights/latest.pth.tar",
+          "sha256": "77cd56d29ba835b2ac500ef14b2e366ed7bfcbcee49354daff1ce3ca0a6b4c4f",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-011.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/V41_Standalone",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone",
+      "question": "把目標樣品探索鏈整理成兩階段訓練",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "起點R61v16及11254組目標樣品／老師資料都是必要來源，不可描述為完全獨立從零",
+      "representative_models": [
+        {
+          "role": "V41_best",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights/best_tradeoff.pth.tar",
+          "sha256": "dfb945653eee0f8b2480eed5bf22ddc40cde8710ecf29169f16a736faba16bd7",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-020.zip"
+          }
+        },
+        {
+          "role": "V41_final",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights/latest.pth.tar",
+          "sha256": "feac6477625c8e667d3dfa9db9c89b2afb523fabc4815942d688d120a5c592db",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-023.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    },
+    {
+      "id": "lab/V42_SoftLabelSNR",
+      "scope": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR",
+      "question": "柔化邊界答案並加入影像品質閘",
+      "necessary_sources": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
+      "interpretation": "兩輪180組煙霧結果與後來E120論文模型分開，實際E120來源須追查完整run與模型包",
+      "representative_models": [
+        {
+          "role": "V42_best_E10_EMA",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/weights/best_tradeoff.pth.tar",
+          "sha256": "6d6eafba196340c7789f8762ab8ab6eaf40a337bee9e8b532771ab7dad91e70e",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-011.zip"
+          }
+        },
+        {
+          "role": "V42_final_E120",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/weights/latest.pth.tar",
+          "sha256": "77cd56d29ba835b2ac500ef14b2e366ed7bfcbcee49354daff1ce3ca0a6b4c4f",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-011.zip"
+          }
+        },
+        {
+          "role": "V42_epoch120_wrapper",
+          "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
+          "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
+          "provider": {
+            "release": "research-results-models-20261016",
+            "asset": "research-fixed-models-013.zip"
+          }
+        }
+      ],
+      "source_review_status": "targeted_model_and_source_contract_review_complete_whole_round_not_closed",
+      "whole_round_source_chain_closed": false
+    }
+  ],
+  "rounds_reviewed": 26,
+  "whole_rounds_closed": 0,
+  "critical_originals_provider_covered": 71,
+  "original_manifest_paths_provider_covered": 508
+}

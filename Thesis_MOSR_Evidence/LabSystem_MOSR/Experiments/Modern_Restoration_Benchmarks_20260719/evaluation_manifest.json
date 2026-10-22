@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "purpose": "Common three-morphology benchmark for Raw, Base U-Net, NAFNet, EDSR, and MOSR",
+  "claim_scope": "Cross-morphology measurement transfer on the same HS-100MG sample and microscope; this does not by itself establish cross-sample or cross-system generalization",
+  "selection_rule": "Use the same 30 Raw-motion-ranked adjacent pairs per formal displacement sequence for every learned method",
+  "validity_rule": "Report availability for every method and use the intersection of valid steps as the primary head-to-head population",
+  "display_rule": "Use one fixed percentile mapping per morphology and magnification; never stretch each method independently",
+  "methods": {
+    "Raw": {
+      "kind": "measurement",
+      "sequence_root": ""
+    },
+    "Base U-Net": {
+      "kind": "learned",
+      "sequence_root": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/real_inference/sequences"
+    },
+    "NAFNet": {
+      "kind": "learned",
+      "sequence_root": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/real_inference/sequences"
+    },
+    "EDSR": {
+      "kind": "learned",
+      "sequence_root": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/real_inference/sequences"
+    },
+    "MOSR": {
+      "kind": "proposed",
+      "sequence_root": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions"
+    }
+  },
+  "sequence_name_map": {
+    "50x_x_0p5um": {
+      "Raw": "50x_x_0p5um",
+      "Base U-Net": "50x_x_0p5um",
+      "NAFNet": "50x_x_0p5um",
+      "EDSR": "50x_x_0p5um",
+      "MOSR": "50x_0p5um"
+    },
+    "50x_x_1um": {
+      "Raw": "50x_x_1um",
+      "Base U-Net": "50x_x_1um",
+      "NAFNet": "50x_x_1um",
+      "EDSR": "50x_x_1um",
+      "MOSR": "50x_1um"
+    },
+    "20x_0p5um": {
+      "Raw": "20x_0p5um",
+      "Base U-Net": "20x_0p5um",
+      "NAFNet": "20x_0p5um",
+      "EDSR": "20x_0p5um",
+      "MOSR": "20x_0p5um"
+    },
+    "20x_1um": {
+      "Raw": "20x_1um",
+      "Base U-Net": "20x_1um",
+      "NAFNet": "20x_1um",
+      "EDSR": "20x_1um",
+      "MOSR": "20x_1um"
+    }
+  },
+  "pillar_config": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",
+  "via_config": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/via_reference/via_center9_reference.json",
+  "sem_workbook": "D:/GMM_2_Final/Thesis_MOSR_Evidence/20260618_100MG/SEM_data/via_pilar.xlsx",
+  "top30_selection": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv",
+  "line_reference": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/source_validation/100mg_linewidth_generalization_20260719/manifest.json"
+}

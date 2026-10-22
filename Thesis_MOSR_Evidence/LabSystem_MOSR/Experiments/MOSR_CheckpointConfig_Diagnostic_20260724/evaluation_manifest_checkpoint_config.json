@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "purpose": "Diagnostic rerun of MOSR epoch 120 with the checkpoint-declared raw low-frequency anchor enabled",
+  "selection_rule": "Use the same locked Raw-motion-ranked 30 adjacent pairs as the formal benchmark",
+  "validity_rule": "Use the intersection of valid steps across methods",
+  "methods": {
+    "Raw": {
+      "kind": "measurement",
+      "sequence_root": ""
+    },
+    "Base U-Net": {
+      "kind": "learned",
+      "sequence_root": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/real_inference/sequences"
+    },
+    "NAFNet": {
+      "kind": "learned",
+      "sequence_root": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/real_inference/sequences"
+    },
+    "EDSR": {
+      "kind": "learned",
+      "sequence_root": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/real_inference/sequences"
+    },
+    "MOSR": {
+      "kind": "proposed",
+      "sequence_root": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_CheckpointConfig_Diagnostic_20260724/reconstructions/reconstruct_progress_epoch_120_in_bmp_20260709_202713"
+    }
+  },
+  "sequence_name_map": {
+    "50x_x_0p5um": {
+      "Raw": "50x_x_0p5um",
+      "Base U-Net": "50x_x_0p5um",
+      "NAFNet": "50x_x_0p5um",
+      "EDSR": "50x_x_0p5um",
+      "MOSR": "50x_0p5um"
+    },
+    "50x_x_1um": {
+      "Raw": "50x_x_1um",
+      "Base U-Net": "50x_x_1um",
+      "NAFNet": "50x_x_1um",
+      "EDSR": "50x_x_1um",
+      "MOSR": "50x_1um"
+    },
+    "20x_0p5um": {
+      "Raw": "20x_0p5um",
+      "Base U-Net": "20x_0p5um",
+      "NAFNet": "20x_0p5um",
+      "EDSR": "20x_0p5um",
+      "MOSR": "20x_0p5um"
+    },
+    "20x_1um": {
+      "Raw": "20x_1um",
+      "Base U-Net": "20x_1um",
+      "NAFNet": "20x_1um",
+      "EDSR": "20x_1um",
+      "MOSR": "20x_1um"
+    }
+  },
+  "pillar_config": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",
+  "via_config": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/via_reference/via_center9_reference.json",
+  "sem_workbook": "D:/GMM_2_Final/Thesis_MOSR_Evidence/20260618_100MG/SEM_data/via_pilar.xlsx",
+  "top30_selection": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv",
+  "line_reference": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/source_validation/100mg_linewidth_generalization_20260719/manifest.json"
+}

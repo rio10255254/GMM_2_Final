@@ -1,0 +1,60 @@
+{
+  "purpose": "Same-ruler learning baseline comparison for thesis Section 6.2.6",
+  "cd_50x": {
+    "observation_count": 126,
+    "pillar_count": 9,
+    "pooled_median_abs_error_nm": 90.04102559276572,
+    "pooled_mean_abs_error_nm": 89.2705686982121,
+    "median_pillar_range_nm": 137.54512200301815
+  },
+  "cd_20x": {
+    "observation_count": 126,
+    "pillar_count": 9,
+    "pooled_median_abs_error_nm": 124.82605126019374,
+    "pooled_mean_abs_error_nm": 162.78918495406978,
+    "median_pillar_range_nm": 789.7939180007816
+  },
+  "displacement": {
+    "paired_step_count": 120,
+    "reference_mae_nm": 6.174430594342355,
+    "nine_pillar_inconsistency_mean_nm": 5.0366375310784495,
+    "nine_pillar_inconsistency_median_nm": 3.6139232453933947
+  },
+  "method_summary": [
+    {
+      "method": "Raw",
+      "cd_50x_median_abs_error_nm": 95.3298482119,
+      "cd_20x_median_abs_error_nm": 192.122474212,
+      "displacement_reference_mae_nm": 9.5443440668,
+      "nine_pillar_inconsistency_mean_nm": 17.6256343009
+    },
+    {
+      "method": "Wiener",
+      "cd_50x_median_abs_error_nm": 123.711533416,
+      "cd_20x_median_abs_error_nm": 161.170678886,
+      "displacement_reference_mae_nm": 7.46487331456,
+      "nine_pillar_inconsistency_mean_nm": 7.91723572882
+    },
+    {
+      "method": "Base U-Net",
+      "cd_50x_median_abs_error_nm": 90.04102559276572,
+      "cd_20x_median_abs_error_nm": 124.82605126019374,
+      "displacement_reference_mae_nm": 6.174430594342355,
+      "nine_pillar_inconsistency_mean_nm": 5.0366375310784495
+    },
+    {
+      "method": "MOSR",
+      "cd_50x_median_abs_error_nm": 76.1128421343,
+      "cd_20x_median_abs_error_nm": 116.955143367,
+      "displacement_reference_mae_nm": 6.74248902496,
+      "nine_pillar_inconsistency_mean_nm": 6.47016882783
+    }
+  ],
+  "qa": {
+    "cd_50x_rows": 126,
+    "cd_20x_rows": 126,
+    "top30_displacement_rows": 120,
+    "all_cd_status_ok": true,
+    "all_displacement_evaluable": true
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "purpose": "Parameter-comparable modern learned restoration baseline",
+  "model_key": "nafnet",
+  "model_spec": {
+    "name": "Compact NAFNet",
+    "family": "NAFNet",
+    "kwargs": {
+      "image_channels": 1,
+      "width": 20,
+      "middle_blocks": 4,
+      "encoder_blocks": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "decoder_blocks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "common_training_rule": "Same paired dataset, grouped split, 256-pixel crops, fixed optical input adapter, L1+SSIM objective, optimizer family, effective batch, validation rule, and best-checkpoint rule; training stops after validation convergence.",
+  "loss_definition": "L1 + 0.20 * (1 - SSIM); output clipping is used for SSIM and reported validation metrics",
+  "package": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709",
+  "source_root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\training_data\\src",
+  "label_root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\training_data\\lbl",
+  "train_count": 9857,
+  "validation_count": 1397,
+  "parameter_count": 4182141,
+  "device": "cuda",
+  "gpu": "NVIDIA RTX A6000",
+  "torch_version": "2.3.0+cu121",
+  "config": {
+    "model_key": "nafnet",
+    "seed": 1261200,
+    "epochs": 30,
+    "crop_size": 256,
+    "micro_batch_size": 64,
+    "effective_batch_size": 64,
+    "train_repeats": 1,
+    "learning_rate": 0.0002,
+    "min_learning_rate": 2e-06,
+    "weight_decay": 0.0001,
+    "ssim_weight": 0.2,
+    "validate_every": 3,
+    "patience_validations": 10,
+    "fixed_psf": true,
+    "psf_path": "",
+    "psf_reg": 10.0,
+    "psf_alpha": 0.1,
+    "amp": true
+  },
+  "accumulation_steps": 1
+}

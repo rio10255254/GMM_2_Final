@@ -1,5 +1,7 @@
 # lab/R55_SourceStyleRealisticTraining：檔案怎麼找
 
+[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+
 [本輪研究卡](<../../../../docs/reproducibility/experiments/lab__R55_SourceStyleRealisticTraining.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
 
 **研究問題：保留來源亮暗風格修復假高對比答案。**

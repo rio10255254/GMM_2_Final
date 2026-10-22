@@ -1,5 +1,7 @@
 # lab/BaseUNet_Baseline_20260718：檔案怎麼找
 
+[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+
 [本輪研究卡](<../../../../docs/reproducibility/experiments/lab__BaseUNet_Baseline_20260718.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
 
 **研究問題：以基礎U-Net作參數與訓練資料受控比較。**

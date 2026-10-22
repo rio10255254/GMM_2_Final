@@ -1,0 +1,1849 @@
+{
+  "purpose": "Base U-Net inference for the same CD and displacement inputs used by MOSR",
+  "checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\best_base_unet.pth.tar",
+  "checkpoint_epoch": 12,
+  "checkpoint_validation": {
+    "loss": 0.073202323759426,
+    "l1": 0.05225771226353194,
+    "rmse": 0.0724576539859981,
+    "ssim": 0.8952769448096699
+  },
+  "model_parameter_count": 4010690,
+  "device": "cuda",
+  "limited_frames_per_sequence": 0,
+  "inference_mode": "overlap_tiled",
+  "tile_size": 256,
+  "tile_overlap": 128,
+  "tile_batch": 24,
+  "record_count": 203,
+  "elapsed_seconds": 155.17069172859192,
+  "records": [
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0000.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 1.028998851776123
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0001.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0001.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7690005302429199
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0002.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0002.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7609989643096924
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0003.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0003.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7610018253326416
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0004.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0004.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7430646419525146
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0005.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0005.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7670004367828369
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0006.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0006.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7559990882873535
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0007.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0007.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7660198211669922
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0008.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0008.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7440023422241211
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0009.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0009.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7609996795654297
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0010.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0010.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7549998760223389
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0011.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0011.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7649993896484375
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0012.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0012.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.741997241973877
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0013.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0013.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7610011100769043
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0014.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0014.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7584943771362305
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0015.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0015.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7629990577697754
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0016.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0016.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7499995231628418
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0017.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0017.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7600023746490479
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0018.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0018.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.761998176574707
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0019.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0019.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7600009441375732
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0020.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0020.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7480227947235107
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0021.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0021.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7619996070861816
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0022.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0022.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7780003547668457
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0023.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0023.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7599997520446777
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0024.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0024.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7580015659332275
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0025.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0025.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7610025405883789
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0026.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0026.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7659974098205566
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0027.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0027.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7590007781982422
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0028.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0028.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7579970359802246
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0029.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0029.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7630033493041992
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0030.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0030.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7689969539642334
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0031.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0031.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.755000114440918
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0032.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0032.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7560017108917236
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0033.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0033.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7590162754058838
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0034.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0034.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7730007171630859
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0035.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0035.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.758000373840332
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0036.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0036.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7620017528533936
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0037.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0037.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7599978446960449
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0038.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0038.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7620000839233398
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0039.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0039.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7569990158081055
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0040.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0040.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7550017833709717
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0041.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0041.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7669990062713623
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0042.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0042.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7610020637512207
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0043.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0043.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7639989852905273
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0044.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0044.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7609999179840088
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0045.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0045.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7699992656707764
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0046.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0046.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7629995346069336
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0047.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0047.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7630233764648438
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0048.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0048.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7579987049102783
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0049.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0049.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.765000581741333
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0050.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_0p5um\\frame_0050.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7599999904632568
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0000.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0000.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7649996280670166
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0001.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0001.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7620010375976562
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0002.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0002.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7699997425079346
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0003.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0003.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7639994621276855
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0004.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0004.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.762000560760498
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0005.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0005.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7590014934539795
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0006.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0006.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7739980220794678
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0007.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0007.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7650008201599121
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0008.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0008.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7549986839294434
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0009.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0009.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7690269947052002
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0010.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0010.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7629992961883545
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0011.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0011.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7760014533996582
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0012.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0012.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7520029544830322
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0013.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0013.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.769996166229248
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0014.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0014.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7629976272583008
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0015.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0015.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7710015773773193
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0016.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0016.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7520020008087158
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0017.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0017.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7729973793029785
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0018.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0018.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7620015144348145
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0019.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0019.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7730000019073486
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0020.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0020.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7569994926452637
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0021.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0021.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7659993171691895
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0022.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0022.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7640259265899658
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0023.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0023.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.770000696182251
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0024.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0024.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7590007781982422
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0025.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0025.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7659995555877686
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0026.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0026.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7749991416931152
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0027.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0027.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7609987258911133
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0028.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0028.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7530014514923096
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0029.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0029.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.764000654220581
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0030.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0030.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7719995975494385
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0031.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0031.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7630000114440918
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0032.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0032.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7539992332458496
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0033.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0033.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7670009136199951
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0034.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0034.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7749996185302734
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0035.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0035.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7620334625244141
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0036.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0036.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7529993057250977
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0037.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0037.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7609984874725342
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0038.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0038.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7710011005401611
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0039.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0039.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7669997215270996
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0040.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0040.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7590024471282959
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0041.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0041.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7619965076446533
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0042.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0042.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7721948623657227
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0043.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0043.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7714827060699463
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0044.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0044.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7530004978179932
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0045.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0045.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7780015468597412
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0046.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0046.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7829968929290771
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0047.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0047.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7730011940002441
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0048.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0048.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7547621726989746
+    },
+    {
+      "kind": "sequence",
+      "sequence": "50x_x_1um",
+      "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0049.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\50x_x_1um\\frame_0049.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7699990272521973
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0000.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0000.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7660012245178223
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0001.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0001.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.767998456954956
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0002.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0002.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7550010681152344
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0003.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0003.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7690017223358154
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0004.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0004.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7649984359741211
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0005.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0005.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7660002708435059
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0006.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0006.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7629985809326172
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0007.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0007.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7760007381439209
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0008.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0008.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7650022506713867
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0009.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0009.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7529997825622559
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0010.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0010.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7689995765686035
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0011.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0011.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.771583080291748
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0012.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0012.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7640008926391602
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0013.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0013.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7539989948272705
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0014.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0014.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7669997215270996
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0015.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0015.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7699992656707764
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0016.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0016.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7740025520324707
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0017.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0017.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.75099778175354
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0018.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0018.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.765000581741333
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0019.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0019.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7699995040893555
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0020.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0020.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7709994316101074
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0021.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0021.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7489995956420898
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0022.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0022.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.76900315284729
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0023.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0023.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7699985504150391
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0024.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0024.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7600276470184326
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0025.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0025.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7479984760284424
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0026.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0026.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7619998455047607
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0027.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0027.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7640020847320557
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0028.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0028.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7600009441375732
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0029.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0029.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.756995439529419
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0030.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0030.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7640023231506348
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0031.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0031.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7700018882751465
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0032.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0032.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7599973678588867
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0033.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0033.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7570021152496338
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0034.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0034.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7639970779418945
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0035.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0035.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7670016288757324
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0036.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0036.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7619996070861816
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0037.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0037.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7580244541168213
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0038.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0038.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.765998363494873
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0039.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0039.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7780008316040039
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0040.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0040.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7640001773834229
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0041.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0041.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7569999694824219
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0042.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0042.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7590005397796631
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0043.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0043.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.773998498916626
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0044.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0044.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.76300048828125
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0045.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0045.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7599973678588867
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0046.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0046.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.762000560760498
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0047.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0047.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7709989547729492
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0048.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0048.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7740030288696289
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_0p5um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_0p5um\\bmp\\frame_0049.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_0p5um\\frame_0049.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7469997406005859
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0000.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0000.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7740187644958496
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0001.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0001.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7680013179779053
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0002.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0002.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7669980525970459
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0003.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0003.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.75400710105896
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0004.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0004.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7709922790527344
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0005.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0005.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.76200270652771
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0006.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0006.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7679986953735352
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0007.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0007.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7499995231628418
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0008.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0008.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7700004577636719
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0009.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0009.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7599995136260986
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0010.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0010.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7699987888336182
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0011.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0011.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.747002363204956
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0012.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0012.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7720010280609131
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0013.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0013.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7630214691162109
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0014.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0014.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7559993267059326
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0015.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0015.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7560000419616699
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0016.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0016.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7710018157958984
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0017.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0017.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7739989757537842
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0018.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0018.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7559993267059326
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0019.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0019.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7670016288757324
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0020.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0020.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7619988918304443
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0021.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0021.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7659997940063477
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0022.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0022.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7519490718841553
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0023.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0023.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.759162187576294
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0024.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0024.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7610008716583252
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0025.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0025.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7650001049041748
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0026.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0026.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7640244960784912
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0027.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0027.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7620007991790771
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0028.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0028.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7619988918304443
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0029.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0029.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7650017738342285
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0030.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0030.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7559995651245117
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0031.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0031.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7740018367767334
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0032.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0032.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.765998363494873
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0033.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0033.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7679989337921143
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0034.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0034.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7520008087158203
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0035.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0035.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7650017738342285
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0036.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0036.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7699990272521973
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0037.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0037.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7609994411468506
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0038.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0038.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7569987773895264
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0039.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0039.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7590088844299316
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0040.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0040.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7726993560791016
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0041.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0041.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7650017738342285
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0042.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0042.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7609996795654297
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0043.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0043.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7590005397796631
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0044.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0044.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7709999084472656
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0045.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0045.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7589983940124512
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0046.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0046.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7540011405944824
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0047.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0047.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7600009441375732
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0048.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0048.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7739982604980469
+    },
+    {
+      "kind": "sequence",
+      "sequence": "20x_1um",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0049.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\sequences\\20x_1um\\frame_0049.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7640011310577393
+    },
+    {
+      "kind": "static",
+      "name": "static_50x_center9",
+      "source": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\20260618_100MG\\Image__2026-06-18__17-10-31.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\static\\static_50x_center9_base_unet.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7570004463195801
+    },
+    {
+      "kind": "static",
+      "name": "static_20x_frame49",
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0049.bmp",
+      "output": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\BaseUNet_Baseline_20260718\\results_full_data_fixed_psf_tiled_e30\\real_inference\\static\\static_20x_frame49_base_unet.bmp",
+      "height": 1536,
+      "width": 2048,
+      "seconds": 0.7590000629425049
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # lab/MOSR_BestCheckpoint_Diagnostic_20260724：檔案怎麼找
 
+[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+
 [本輪研究卡](<../../../../docs/reproducibility/experiments/lab__MOSR_BestCheckpoint_Diagnostic_20260724.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
 
 **研究問題：檢查最佳保存模型與最後模型對位移結果的影響。**

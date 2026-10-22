@@ -1,0 +1,239 @@
+{
+  "output_root": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild",
+  "unsafe_csv": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20260617_training_data_style_audit_full\\unsafe_pair_list.csv",
+  "package_count": 23,
+  "total_pairs": 51654,
+  "repaired_pairs": 2186,
+  "packages": [
+    {
+      "package": "foundation_bads_psf",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\foundation_bads_psf",
+      "total_pairs": 11168,
+      "repaired_pairs": 101,
+      "link_counts": {
+        "hardlink": 22235,
+        "repaired_label": 101
+      }
+    },
+    {
+      "package": "foundation_gaussian_control",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\foundation_gaussian_control",
+      "total_pairs": 3468,
+      "repaired_pairs": 29,
+      "link_counts": {
+        "hardlink": 6907,
+        "repaired_label": 29
+      }
+    },
+    {
+      "package": "r39_shape_generalization/shape_val_unseen",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r39_shape_generalization\\shape_val_unseen",
+      "total_pairs": 210,
+      "repaired_pairs": 2,
+      "link_counts": {
+        "hardlink": 418,
+        "repaired_label": 2
+      }
+    },
+    {
+      "package": "r40_microscopy_feature_coverage/micro_val_unseen",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r40_microscopy_feature_coverage\\micro_val_unseen",
+      "total_pairs": 100,
+      "repaired_pairs": 5,
+      "link_counts": {
+        "hardlink": 195,
+        "repaired_label": 5
+      }
+    },
+    {
+      "package": "r40_microscopy_feature_coverage/r40_micro_capacity_train",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r40_microscopy_feature_coverage\\r40_micro_capacity_train",
+      "total_pairs": 1300,
+      "repaired_pairs": 22,
+      "link_counts": {
+        "hardlink": 2578,
+        "repaired_label": 22
+      }
+    },
+    {
+      "package": "r46_corner_aware_finetune/r46_checkboard_corner_train",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r46_corner_aware_finetune\\r46_checkboard_corner_train",
+      "total_pairs": 1550,
+      "repaired_pairs": 16,
+      "link_counts": {
+        "hardlink": 3084,
+        "repaired_label": 16
+      }
+    },
+    {
+      "package": "r47_realistic_boundary_generalization/r47_realistic_boundary_train_4000",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r47_realistic_boundary_generalization\\r47_realistic_boundary_train_4000",
+      "total_pairs": 4000,
+      "repaired_pairs": 49,
+      "link_counts": {
+        "hardlink": 7951,
+        "repaired_label": 49
+      }
+    },
+    {
+      "package": "r47_realistic_boundary_generalization/realistic_boundary_val_unseen",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r47_realistic_boundary_generalization\\realistic_boundary_val_unseen",
+      "total_pairs": 800,
+      "repaired_pairs": 9,
+      "link_counts": {
+        "hardlink": 1591,
+        "repaired_label": 9
+      }
+    },
+    {
+      "package": "r48_real_corner_transfer/r48_real_corner_train_6000",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r48_real_corner_transfer\\r48_real_corner_train_6000",
+      "total_pairs": 6000,
+      "repaired_pairs": 58,
+      "link_counts": {
+        "hardlink": 11942,
+        "repaired_label": 58
+      }
+    },
+    {
+      "package": "r48_real_corner_transfer/real_corner_val_unseen",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r48_real_corner_transfer\\real_corner_val_unseen",
+      "total_pairs": 1200,
+      "repaired_pairs": 14,
+      "link_counts": {
+        "hardlink": 2386,
+        "repaired_label": 14
+      }
+    },
+    {
+      "package": "r49_cad_anchor_real_geometry/cad_anchor_val_real",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r49_cad_anchor_real_geometry\\cad_anchor_val_real",
+      "total_pairs": 120,
+      "repaired_pairs": 120,
+      "link_counts": {
+        "hardlink": 120,
+        "repaired_label": 120
+      }
+    },
+    {
+      "package": "r49_cad_anchor_real_geometry/r49_cad_anchor_train_4000",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r49_cad_anchor_real_geometry\\r49_cad_anchor_train_4000",
+      "total_pairs": 4000,
+      "repaired_pairs": 439,
+      "link_counts": {
+        "hardlink": 7561,
+        "repaired_label": 439
+      }
+    },
+    {
+      "package": "r49_cad_anchor_source/test",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r49_cad_anchor_source\\test",
+      "total_pairs": 48,
+      "repaired_pairs": 48,
+      "link_counts": {
+        "hardlink": 96,
+        "repaired_label": 48
+      }
+    },
+    {
+      "package": "r49_cad_anchor_source/train",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r49_cad_anchor_source\\train",
+      "total_pairs": 408,
+      "repaired_pairs": 408,
+      "link_counts": {
+        "hardlink": 816,
+        "repaired_label": 408
+      }
+    },
+    {
+      "package": "r49_cad_anchor_source/val",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r49_cad_anchor_source\\val",
+      "total_pairs": 120,
+      "repaired_pairs": 120,
+      "link_counts": {
+        "hardlink": 240,
+        "repaired_label": 120
+      }
+    },
+    {
+      "package": "r51_blur_source_probe/r51_gaussian_corner_probe",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r51_blur_source_probe\\r51_gaussian_corner_probe",
+      "total_pairs": 1550,
+      "repaired_pairs": 16,
+      "link_counts": {
+        "hardlink": 3084,
+        "repaired_label": 16
+      }
+    },
+    {
+      "package": "r51_blur_source_probe/r51_mixed_psf_corner_probe",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r51_blur_source_probe\\r51_mixed_psf_corner_probe",
+      "total_pairs": 1550,
+      "repaired_pairs": 16,
+      "link_counts": {
+        "hardlink": 3084,
+        "repaired_label": 16
+      }
+    },
+    {
+      "package": "r51_blur_source_probe/r51_weak_bads_corner_probe",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r51_blur_source_probe\\r51_weak_bads_corner_probe",
+      "total_pairs": 1550,
+      "repaired_pairs": 16,
+      "link_counts": {
+        "hardlink": 3084,
+        "repaired_label": 16
+      }
+    },
+    {
+      "package": "r52_corner_stability_guard/r52_corner_stability_train_4000",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r52_corner_stability_guard\\r52_corner_stability_train_4000",
+      "total_pairs": 4000,
+      "repaired_pairs": 32,
+      "link_counts": {
+        "hardlink": 7968,
+        "repaired_label": 32
+      }
+    },
+    {
+      "package": "r52_corner_stability_guard/r52_corner_stability_val",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r52_corner_stability_guard\\r52_corner_stability_val",
+      "total_pairs": 700,
+      "repaired_pairs": 5,
+      "link_counts": {
+        "hardlink": 1395,
+        "repaired_label": 5
+      }
+    },
+    {
+      "package": "r53_realistic_dataset_calibration/r53_realistic_calibrated_train_6000",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r53_realistic_dataset_calibration\\r53_realistic_calibrated_train_6000",
+      "total_pairs": 6000,
+      "repaired_pairs": 452,
+      "link_counts": {
+        "hardlink": 11948,
+        "repaired_label": 452
+      }
+    },
+    {
+      "package": "r53_realistic_dataset_calibration/r53_realistic_calibrated_val",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r53_realistic_dataset_calibration\\r53_realistic_calibrated_val",
+      "total_pairs": 1740,
+      "repaired_pairs": 137,
+      "link_counts": {
+        "hardlink": 3463,
+        "repaired_label": 137
+      }
+    },
+    {
+      "package": "r54_geometry_root_cause_probe/r54_masked_small_overfit_train",
+      "output_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r55_source_style_rebuild\\r54_geometry_root_cause_probe\\r54_masked_small_overfit_train",
+      "total_pairs": 72,
+      "repaired_pairs": 72,
+      "link_counts": {
+        "hardlink": 144,
+        "repaired_label": 72
+      }
+    }
+  ]
+}

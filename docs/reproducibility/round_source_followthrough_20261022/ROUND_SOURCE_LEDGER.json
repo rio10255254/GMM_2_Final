@@ -1,6 +1,6 @@
 {
   "basis_scopes": 177,
-  "scopes_with_current_targeted_checks": 36,
+  "scopes_with_current_targeted_checks": 62,
   "fully_closed_scopes_claimed": 0,
   "rounds": [
     {
@@ -1849,9 +1849,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_v2/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_v2/displacement_audit/candidate/CANDIDATE_READOUT_TW.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/Modern_Restoration_Benchmarks_20260719",
@@ -1890,9 +1892,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Motion_Deblurring/pretrained_models/README.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/README.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/MOSR_BestCheckpoint_Diagnostic_20260724",
@@ -1900,9 +1904,11 @@
       "question": "檢查最佳保存模型與最後模型對位移結果的影響",
       "required_sources_from_existing_guide": "保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。",
       "authoritative_documents": [],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/MOSR_CheckpointConfig_Diagnostic_20260724",
@@ -1912,9 +1918,11 @@
       "authoritative_documents": [
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_CheckpointConfig_Diagnostic_20260724/diagnosis/DIAGNOSTIC_REPORT_zh-TW.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R39_ShapeGeneralization",
@@ -1924,9 +1932,11 @@
       "authoritative_documents": [
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R39_ShapeGeneralization/README.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R40_MicroscopyFeatureCoverage",
@@ -1936,9 +1946,11 @@
       "authoritative_documents": [
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R40_MicroscopyFeatureCoverage/README.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R46_CornerAwareFineTune",
@@ -1948,9 +1960,11 @@
       "authoritative_documents": [
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/reports/R46_RESULTS_20260612.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R47_RealisticBoundaryGeneralization",
@@ -1961,9 +1975,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/reports/R47_CHECKBOARD_VALIDATION_20260613.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/reports/R47_RESULTS_20260613.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R48_RealCornerTransfer",
@@ -1974,9 +1990,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer/reports/R48_CHECKBOARD_VALIDATION_20260613.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer/reports/R48_RESULTS_20260614.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R49_CADAnchorRealGeometry",
@@ -1988,9 +2006,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/reports/R49_FAILURE_ANALYSIS_20260614.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/reports/R49_RESULTS_20260614.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R50_PSFControlDiagnosis",
@@ -2000,9 +2020,11 @@
       "authoritative_documents": [
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/reports/R50_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R51_BlurSourceProbe",
@@ -2013,9 +2035,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_CHECKBOARD_VALIDATION.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R52_CornerStabilityGuard",
@@ -2026,9 +2050,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_CHECKBOARD_VALIDATION.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R53_RealisticDatasetCalibration",
@@ -2039,9 +2065,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/reports/R53_CHECKBOARD_VALIDATION.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/reports/R53_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R54_GeometryRootCauseProbe",
@@ -2053,9 +2081,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_DIAGNOSTIC.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_MASKED_SMALL_PROBE.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R55_SourceStyleRealisticTraining",
@@ -2066,9 +2096,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R55_SourceStyleRealisticTraining/reports/R55_CHECKBOARD_VALIDATION.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R55_SourceStyleRealisticTraining/reports/R55_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R56_LabelCoreRepairTraining",
@@ -2079,9 +2111,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/reports/R56_CHECKBOARD_VALIDATION.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/reports/R56_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R57_GeometryConstrainedMOSR",
@@ -2091,9 +2125,11 @@
       "authoritative_documents": [
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/reports/R57_PILOT_TRAINING_STATUS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R58_MeasurementClosedLoopMOSR",
@@ -2104,9 +2140,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/reports/r58_automated_rounds/R58_AUTOMATED_ROUNDS_STATUS.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/reports/r58_boundary_root_cause/R58_BOUNDARY_ROOT_CAUSE_20260622.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R59_CDClosedLoopBoundaryLayer",
@@ -2118,9 +2156,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer/reports/r59_cd_closed_loop/r58_frac050_full_e030_mtb512_20260621_2300/R59_CD_CLOSED_LOOP_STATUS.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer/reports/r59_cd_closed_loop/r58_frac050_full_e030_mtb512_20260621_2300/R60_FULL_POWER_R58_R59_REPORT.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R60_SEMTruthBoundaryTraining",
@@ -2146,9 +2186,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/grouped_strat_e004_mtb064_20260622_epochs/R60_AUTOMATED_ROUNDS_STATUS.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/verify_existing_polarityfix_e004/R60_AUTOMATED_ROUNDS_STATUS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R61_BoundaryGeneralizationUniversal",
@@ -2172,9 +2214,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/V16_FULL_TRAINING_STATUS.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/V16_VALIDATION_RESULTS.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/R62_TargetSampleBoost",
@@ -2305,9 +2349,11 @@
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports/v26_primarysafe_shapeaware_gmf_gate_20260706/GMF_LIKE_THESIS_GATE_REPORT.md",
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports/v26_primarysafe_shapeaware_gmf_scoring_20260706/GMF_LIKE_CANDIDATE_SCORE_REPORT.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/Subpixel_Translation_Equivariance_20260720",
@@ -2317,9 +2363,11 @@
       "authoritative_documents": [
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/EXPERIMENT_REPORT_zh-TW.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/V41_Standalone",
@@ -2329,9 +2377,11 @@
       "authoritative_documents": [
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone/V41_STANDALONE_DESIGN.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "lab/V42_SoftLabelSNR",
@@ -2341,9 +2391,11 @@
       "authoritative_documents": [
         "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/V42_SOFTLABEL_SNR_SMOKE_RESULT.md"
       ],
-      "status": "pending_source_chain_review",
+      "status": "partial_review_specific_sources_and_disposition",
       "whole_round_source_chain_closed": false,
-      "next_check": "Resolve original/model/generation/measurement dependencies not covered by the recorded checks; do not infer completeness from this row count."
+      "next_check": "Resolve only newly evidenced historical runtime/config revisions or missing raw source identities; do not re-upload existing models or generated datasets.",
+      "checked": "Lab critical physical inputs, original manifests and representative model providers reviewed. Two missing R62 output-mode packages added; intermediate epochs deliberately excluded.",
+      "latest_review": "docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md"
     },
     {
       "id": "legacy/organized_20260306",
