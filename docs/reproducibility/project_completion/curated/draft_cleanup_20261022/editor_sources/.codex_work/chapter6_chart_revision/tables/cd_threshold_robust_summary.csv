@@ -1,0 +1,4 @@
+case,case_label,measurement_mode_count,threshold_count,pillar_count,sensitivity_observation_count,pooled_median_abs_error_nm,pooled_mean_abs_error_nm,mean_of_pillar_median_abs_error_nm,pooled_rmse_nm,pooled_mean_signed_bias_nm,median_abs_improvement_vs_raw_nm,median_abs_improvement_vs_raw_pct
+raw,Raw,2,7,9,126,95.3298482119,112.292785575,97.8575711339,136.396905154,76.6327303999,0,0
+wiener,Wiener deconvolution,2,7,9,126,150.990273409,154.918879259,148.529983214,180.447865045,36.7212703496,-55.6604251967,-58.3871958685
+v42_e120,V42 epoch 120,2,7,9,126,76.1128421343,79.3525040754,76.4466684814,92.4157654045,77.1577332537,19.2170060776,20.1584356192

@@ -1,0 +1,530 @@
+DOCX=C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v14.docx
+PARAGRAPHS=1329 TABLES=114 BLOCKS=1443
+
+=== BODY HITS WITH CONTEXT ===
+
+=== FIGURE/CAPTION REGION 5.4-7.3 ===
+B0996 P style='Heading 2' drawings=[] :: 5.4 神經網路架構與訓練集
+B0997 P style='Heading 3' drawings=[] :: 5.4.1 訓練環境與配置
+B0998 P style='Normal' drawings=[] :: 本研究之機器學習模型以PyTorch框架進行實作。模型訓練過程中，卷積運算、反卷積運算以及誤差反向傳播等主要計算流程皆由GPU執行，以提升訓練效率；訓練資料的讀取、批次整理與前處理則主要由中央處理器（Central Processing Unit, CPU）負責。本文所使用之運算主機搭載Intel® Core™ i7-13700K 3.4 GHz處理器與NVIDIA RTX A6000 48 GB顯示卡，可提供本研究深度學習模型訓練所需之運算資源。Python開發環境與主要函式庫版本資訊整理如表5-12所示。
+B0999 TABLE rows=14 cols=2
+B1000 P style='Table Caption' drawings=[] :: 表 5-12 Python與深度學習套件版本
+B1001 P style='Heading 3' drawings=[] :: 5.4.2 模型架構
+B1002 P style='Normal' drawings=[{'id': '1809867509', 'name': '圖片 2', 'descr': '', 'title': '', 'rid': 'rId53', 'target': 'media/image41.png'}] :: 
+B1003 P style='Normal' drawings=[{'id': '134644993', 'name': '圖片 1', 'descr': '', 'title': '', 'rid': 'rId54', 'target': 'media/image42.png'}] :: 
+B1004 P style='Figure Caption' drawings=[] :: 圖 5-19 所提MOSR模型整體架構
+B1005 P style='Normal' drawings=[] :: 重建網路以編碼器—解碼器與跳接結構為主體，包含抗混疊上採樣、輸入參考式殘差輸出、邊界殘差分支與空間變異PSF融合模組。圖5-19呈現各模組在特徵提取、解析度恢復、光學修正與最終輸出中的位置。
+B1006 P style='Normal' drawings=[] :: 編碼器以多層卷積、正規化、啟動函數與殘差卷積提取不同尺度的影像特徵。下採樣後，特徵圖尺寸縮小而感受野增加，可整合較大範圍的結構關係；跳接則保留淺層邊界資訊。編碼器各層參數列於表5-13。
+B1007 P style='Normal' drawings=[] :: 解碼器逐步將深層特徵恢復至原始解析度，並透過跳接融合淺層邊界資訊。抗混疊上採樣先進行雙線性插值，再以逐通道低通濾波抑制混疊，最後使用卷積整合特徵。解碼器與上採樣層的參數列於表5-15。
+B1008 P style='Normal' drawings=[] :: 空間變異PSF融合模組以殘差方式加入光學資訊。固定路徑提供多位置PSF的共同修正，自適應路徑則依輸入特徵調整候選PSF的權重，兩者最後與主幹特徵相加。
+B1009 P style='Normal' drawings=[] :: 圖5-20呈現空間變異PSF融合模組。輸入特徵分為主幹與PSF修正路徑；各候選PSF的頻域響應轉回空間域後，由權重估計區塊計算融合比例，再以加權方式形成單一修正特徵。
+B1010 P style='Table Caption' drawings=[] :: 表 5-13 編碼器層級參數
+B1011 TABLE rows=14 cols=6
+B1012 P style='Table Caption' drawings=[] :: 表 5-14 瓶頸層參數
+B1013 TABLE rows=6 cols=6
+B1014 P style='Table Caption' drawings=[] :: 表 5-15 解碼器、PSF修正與輸出層參數
+B1015 TABLE rows=23 cols=6
+B1017 P style='Normal' drawings=[] :: 權重估計區塊由全域池化、卷積、SiLU、溫度縮放與softmax組成，將輸入特徵轉換為各候選PSF的非負融合權重；加權融合再把多個修正響應整合為單一特徵。
+B1018 P style='Normal' drawings=[] :: 固定融合路徑以參數α控制共同光學修正強度；自適應融合路徑則以參數β控制其殘差比例。兩者皆採殘差形式，使光學資訊以受控方式加入主幹特徵。
+B1019 P style='Normal' drawings=[] :: 模型輸出前設有邊界殘差分支，預測幅度受限的局部修正；接著以輸入參考式殘差輸出維持低頻輪廓與主要亮暗，只加入受限的高頻成分。品質門控則依邊界訊號與平坦區噪聲調整整體修正幅度。
+B1020 P style='Normal' drawings=[] :: 整體網路以編碼器—解碼器與抗混疊上採樣完成同尺寸重建，以空間變異PSF融合導入光學先驗，再由邊界殘差、輸入參考式殘差輸出與品質門控限制最終輸出。各項設計的消融結果列於第6.2.6節。
+B1021 P style='Normal' drawings=[{'id': '594044074', 'name': '圖片 3', 'descr': '', 'title': '', 'rid': 'rId55', 'target': 'media/image43.png'}] :: 
+B1022 P style='Figure Caption' drawings=[] :: 圖 5-20 空間變異PSF融合之殘差式修正模組
+B1024 P style='Heading 3' drawings=[] :: 5.4.3 訓練資料組成與分組切分
+B1025 P style='Normal' drawings=[] :: 模型使用11,254組影像配對進行量測導向訓練，並依資料用途、樣品來源、倍率與結構類型固定分組為9,857組訓練資料及1,397組內部驗證資料，兩集合沒有群組交疊。資料涵蓋外觀重建、SEM幾何參考、連續位移、合成運動、真實多倍率影像與保守性樣本，分別提供外觀、邊界、運動與原始影像保持等監督。
+B1026 P style='Normal' drawings=[] :: 另選取180組訓練樣本進行邊界軟標籤處理，涵蓋15類資料、每類12組。軟化只作用於標註邊界，原始輸入影像不變；處理採2像素寬的邊界帶與0.75像素標準差的局部平滑，以減少硬邊界在較粗取樣影像中形成階梯狀標籤。
+B1027 P style='Heading 3' drawings=[] :: 5.4.4 微調設定與模型選擇
+B1028 P style='Normal' drawings=[] :: 模型採同一架構的連續分階段訓練：先由基礎階段建立顯微影像重建能力，再延續其參數進行量測導向加強訓練。第二階段保留大部分主幹參數，主要更新品質門控、邊界修正與輸出相關層。最佳化採 Adam，初始學習率為 2×10⁻⁷，影像批次為 8，驗證批次與序列配對批次皆為 2，共訓練 120 回合。訓練過程同步記錄重建、梯度幅值、邊緣方向與平移一致性相關項目，並以固定監測影像檢查灰階範圍、邊緣寬度及高頻比例。
+B1029 P style='Normal' drawings=[] :: 第六章的所有正式比較均固定使用第120回合權重，並在不同CD與位移指標間維持同一模型，不另外更換回合。訓練曲線僅用來確認最佳化過程是否收斂；模型是否具有量測效益，仍由第六章的邊緣、CD與位移結果判定。
+B1030 P style='Heading 3' drawings=[] :: 5.4.5 模組與損失函數消融配置
+B1031 P style='Normal' drawings=[] :: 為區分完整模型與單一設計的效果，消融實驗固定起始權重、資料切分、批次設定、更新次數、模型選擇規則與PSF光學先驗。所有條件使用相同PSF路徑，使成對差異可集中反映待比較模組。
+B1032 P style='Normal' drawings=[] :: 實驗包含16個條件與2組固定隨機初始化，共完成32次訓練。比較內容包括幾何與運動損失的2×2組合、七項單一損失移除、三項輸出模組移除，以及抗混疊上採樣與一般上採樣的參數量一致比較。所有條件均訓練60回合，並以相同規則選擇模型。
+B1033 P style='Normal' drawings=[] :: 每個條件與隨機初始化均完成相同的靜態CD、真實位移與合成位移評估，共產生18,272張候選重建影像。結果同時檢查兩組初始化的方向、相對差異是否達10%、95%配對區間是否高於零，以及主要限制指標是否惡化超過15%。配對區間以4,000次重抽樣估計[87]；靜態CD以pillar、真實位移以步驟、合成位移以案例為抽樣單位。
+B1034 P style='Normal' drawings=[] :: 第6.2.3至第6.2.5節使用固定的第120回合模型；消融實驗則以相同起點與60回合訓練預算估計各項設計的相對影響。兩者用途不同，因此消融模型的絕對數值不取代三方法的主要結果，只比較同一消融實驗中的成對差異。
+B1035 P style='Heading 3' drawings=[] :: 5.4.6 現代重建模型與跨形貌評估配置
+B1036 P style='Normal' drawings=[] :: 為建立學習式重建方法的受控比較，本研究加入EDSR-x1與NAFNet兩種代表性重建架構[44,94]。兩者均由頭訓練，不使用外部預訓練權重；訓練影像、分組切分、256×256裁切、有效批次、最佳權重選取方式與輸入前處理保持一致，並以L1與SSIM組成的一般重建目標訓練。MOSR則保留本研究提出的量測導向模型與目標，使比較能檢查一般重建架構是否足以得到相同的量測結果。
+B1037 P style='Normal' drawings=[] :: EDSR-x1採24個殘差模組與96個特徵通道，共4,070,785個參數；NAFNet採20個基礎通道與四層編碼器—解碼器，共4,182,141個參數。兩者與MOSR皆約四百萬個參數，避免由模型容量差異直接決定結果。EDSR-x1與NAFNet的最佳權重皆出現在第15回合。
+B1038 P style='Normal' drawings=[] :: 跨形貌驗證新增樣品中心附近的亮via九宮格，以及50倍影像中的水平與垂直線條。Via的SEM表格值為半徑，換算直徑後平均為3289.0 nm，範圍為3276.5至3303.7 nm；20倍影像依實際拍攝方向作上下反向配對。所有方法使用同一組中心、結構身分與35%至65%局部對比門檻。線條則以Raw固定邊界位置，量測10%至90%邊緣寬度、表觀線距與表觀週期。
+B1039 P style='Normal' drawings=[] :: 運算效能使用2048×1536灰階影像、NVIDIA RTX A6000與自動混合精度。各模型先完成兩次暖機，再以六次整張影像直接推論計算中位時間與第95百分位時間；所有模型均輸出與輸入相同尺寸。
+B1040 P style='Heading 2' drawings=[] :: 5.5 小結
+B1041 P style='Normal' drawings=[] :: 本章說明實驗所使用的顯微光學系統、標準樣品、SEM參考量測與軟硬體環境，並將相機取樣尺度、物鏡條件與白光照明對後續PSF及尺寸分析的影響加以區分。
+B1042 P style='Normal' drawings=[] :: 模型部分說明實際資料數量、分組切分、邊界軟標籤、訓練與消融設定，並加入參數量相近的EDSR-x1與NAFNet作為學習式重建對照。主要比較與擴充比較皆固定影像、結構身分與量測規則，使各方法可在相同尺度下對照。
+B1043 P style='Heading 1' drawings=[] :: 實驗結果與分析
+B1044 P style='Heading 2' drawings=[] :: 6.1點擴散函數校正
+B1045 P style='Normal' drawings=[] :: 本實驗使用 BudgetSensors HS-100MG 樣品進行點擴散函數（Point Spread Function, PSF）之擬合與校正。為建立具有明確尺寸基準的擬合目標，本研究選取樣品中已透過掃描式電子顯微鏡（Scanning Electron Microscope, SEM）量測關鍵尺寸（Critical Dimension, CD），且位於樣品中心附近的 pillar 九宮格結構作為校正對象。依據逐顆 SEM 尺寸建立對應的參考幾何影像，作為光學成像模型與 PSF 參數擬合的比較基準。
+B1046 P style='Normal' drawings=[] :: 為比較不同物鏡倍率下 pillar 結構的成像特性，本研究分別使用 50 倍與 20 倍物鏡進行影像拍攝，並計算各影像的二維頻譜。兩種倍率的頻譜均採用相同的絕對尺度呈現，未進行逐張峰值正規化或額外強化，因此圖中的強度差異可直接反映各影像實際的空間頻率分布。
+B1047 P style='Normal' drawings=[{'id': '2058652464', 'name': '圖片 6', 'descr': '', 'title': '', 'rid': 'rId56', 'target': 'media/image44.png'}, {'id': '2058652465', 'name': '圖片 7', 'descr': '', 'title': '', 'rid': 'rId57', 'target': 'media/image45.png'}] :: 
+B1048 P style='Figure Caption' drawings=[] :: 圖 6-1 50倍物鏡拍攝之影像與頻譜圖
+B1049 P style='Normal' drawings=[{'id': '2058652468', 'name': '圖片 3', 'descr': '', 'title': '', 'rid': 'rId58', 'target': 'media/image46.png'}, {'id': '2058652469', 'name': '圖片 4', 'descr': '', 'title': '', 'rid': 'rId59', 'target': 'media/image47.png'}] :: 
+B1050 P style='Figure Caption' drawings=[] :: 圖 6-2 20倍物鏡拍攝之影像與頻譜圖
+B1052 P style='Normal' drawings=[] :: 由於實際光學系統的成像特性可能隨視野位置而改變，單一且固定的點擴散函數無法完整描述整個相機視野範圍內的成像行為。因此，本實驗將相機的完整可視範圍劃分為10×10個區域，共計100個不同的視野位置，並針對各區域分別進行點擴散函數擬合。此劃分方式可使後續模型在使用PSF資料時，同時考量不同視野位置所產生的空間變異性，避免僅使用中心區域的擬合結果描述整個FOV，進而降低視野邊緣像差與成像模糊差異所造成的影響。相機視野之區域劃分方式如下圖所示。
+B1054 P style='Normal' drawings=[] :: 影像拍攝過程以樣品中心附近的同一組pillar結構作為固定量測目標，並透過精密位移平台移動樣品，使該pillar結構依序出現在預先劃分的100個視野區域中。當pillar結構移動至指定區域後，位移平台會停止移動，待系統穩定後再進行影像拍攝。透過此方式，各區域所取得的影像皆來自相同的實體pillar結構，因此可以排除不同pillar之間可能存在的製造尺寸差異，使各區域影像之差異主要反映光學系統在不同視野位置下的成像特性。完成所有區域的影像拍攝後，本研究分別使用各區域的實驗影像進行點擴散函數參數擬合，並建立對應於整個FOV的空間變異PSF資料。
+B1056 P style='Heading 3' drawings=[] :: 6.1.1點擴散函數擬合結果
+B1057 P style='Normal' drawings=[] :: 本研究首先依據 SEM 量測所得的 pillar 實際尺寸建立參考幾何影像，並將實驗拍攝影像與模擬成像結果進行比較。接著使用 BADS 演算法搜尋最佳化參數，透過調整 Zernike 多項式所描述的等效像差係數，使參考幾何經候選 PSF 成像後盡可能接近對應視野位置的實驗影像。每一個視野區域皆具有獨立的最佳化結果，因此可分別描述光學系統在不同視野位置下的等效模糊特性。
+B1058 P style='Normal' drawings=[] :: 完成100個視野區域的參數擬合後，本研究將各區域所得之最佳Zernike像差參數與對應的點擴散函數結果整合至完整FOV中。整個相機視野範圍之點擴散函數擬合結果如下圖所示。該結果呈現不同視野位置下PSF形狀與分布的變化，並可作為後續建立空間變異成像模型及模型訓練時的物理先驗資料。
+B1059 P style='Normal' drawings=[{'id': '2058652472', 'name': '圖片 9', 'descr': '', 'title': '', 'rid': 'rId60', 'target': 'media/image48.png'}] :: 
+B1060 P style='Figure Caption' drawings=[] :: 圖 6-3 全視野點擴散函數排列
+B1061 P style='Normal' drawings=[] :: 本研究分別使用 Olympus MPLN-50X 與 Olympus MPLN-20X 物鏡所拍攝的 pillar 九宮格影像進行點擴散函數擬合。兩組影像皆選取 pillar 與 via 交界附近的九顆 pillar 作為擬合目標。SEM 提供的九個數值為半徑，範圍為 1299.376-1338.398 nm；換算為 CD 直徑後，範圍為 2598.752-2676.797 nm，平均為 2629.737 nm。SEM 參考幾何依各 pillar 的實際半徑與物體空間取樣尺寸建立，並根據 50 倍與 20 倍影像的拍攝方向調整排列，使影像位置與同一顆實體 pillar 正確對應。
+B1062 P style='Normal' drawings=[] :: 本研究依 OSA/ANSI 標準順序，以有限階 Zernike 基底表示等效波前像差，並透過 BADS 演算法搜尋高階模態係數與振幅參數。最佳化過程先由候選 PSF 與 SEM 參考幾何完成成像運算，再比較模擬影像與實際拍攝影像的亮度及邊緣梯度差異。由於 pillar 邊界位置直接影響後續關鍵尺寸量測，目標函數除考量影像亮度差異外，也提高邊緣梯度誤差的權重，使擬合結果同時描述模糊程度與邊界變化。
+B1063 P style='Normal' drawings=[] :: 圖 6-4 與圖 6-5 呈現 Olympus MPLN-50X 與 Olympus MPLN-20X 物鏡的點擴散函數擬合結果。兩組 PSF 的能量皆主要集中於中心，且水平與垂直方向的分布十分接近；以二階矩估計的長短軸比，50 倍為 1.001，20 倍為 1.012，顯示本次選定區域的模糊近似圓形對稱。由於兩種倍率的物體空間取樣間距不同，圖中的像素寬度不能直接代表實際光學擴散範圍，仍須換算至物體空間比較。
+B1064 P style='Normal' drawings=[] :: Olympus MPLN-50X 物鏡的物體空間取樣間距為 0.069 µm/pixel，PSF 水平與垂直半高全寬分別為 1.298 µm 與 1.298 µm；Olympus MPLN-20X 物鏡的取樣間距為 0.1725 µm/pixel，水平與垂直半高全寬分別為 1.309 µm 與 1.311 µm。兩種倍率的物體空間半高全寬非常接近，50 倍結果僅略小約 0.012 µm，因此較適合解釋為兩組擬合 PSF 具有相近的中心擴散尺度，而非存在明顯的解析能力差距。
+B1065 P style='Normal' drawings=[{'id': '2058652474', 'name': '圖片 11', 'descr': '', 'title': '', 'rid': 'rId61', 'target': 'media/image49.png'}] :: 
+B1066 P style='Figure Caption' drawings=[] :: 圖 6-4 50倍下點擴散函數之擬合結果
+B1067 P style='Normal' drawings=[{'id': '2058652476', 'name': '圖片 12', 'descr': '', 'title': '', 'rid': 'rId62', 'target': 'media/image50.png'}] :: 
+B1068 P style='Figure Caption' drawings=[] :: 圖 6-5 20倍下點擴散函數之擬合結果
+B1070 P style='Heading 3' drawings=[] :: 6.1.2 點擴散函數驗證
+B1071 P style='Normal' drawings=[] :: 為確認擬合所得PSF與實際影像模糊方向相符，本節將20倍與50倍的局部擬合PSF分別套用至對應的中心九宮格pillar影像。所有報告結果統一使用NSR = 0.05，不進行逐影像或逐倍率調整。Wiener反卷積因此作為固定參數的傳統線性反卷積參考組；SEM直徑僅用於比較反卷積前後的尺寸一致性，不參與參數選擇。
+B1072 P style='Normal' drawings=[] :: 反卷積前先估計緩慢變化的亮背景，將暗色pillar轉為正向對比後，以對稱延伸與邊界緩和降低裁切邊緣的突變，再使用擬合PSF進行Wiener反卷積。反卷積後的對比限制於固定範圍並還原為原始明暗方向；Raw與Wiener影像均以相同8-bit灰階範圍輸出，不進行逐張自動拉伸。兩種倍率使用完全相同的處理流程，振鈴則作為反卷積輸出中實際觀察與量測的結果。
+B1073 P style='Heading 4' drawings=[] :: 6.1.2.1 CD、邊緣寬度與振鈴之定義
+B1074 P style='Normal' drawings=[] :: 每顆 pillar 的中心均由 Raw 影像固定定位，Wiener 影像不重新尋找較有利的中心。量測時自中心向外取 360 條徑向剖面；中心灰階取自半徑不超過相鄰 pillar 間距 0.07 倍的區域，背景灰階取自 0.30–0.36 倍間距的環帶。每條剖面依中心與背景灰階正規化後，找出 10%、50% 與 90% 的第一次向外交點。相反方向的兩個 50% 半徑相加形成一組直徑，180 組直徑的中位數定義為該顆 pillar 的 CD。
+B1075 P style='Normal' drawings=[] :: 邊緣寬度定義為同一剖面上 90% 與 10% 交點的距離，九顆 pillar 再取平均；數值越小，代表灰階由 pillar 內部轉為背景的距離越短。振鈴比例則以徑向剖面中反向灰階變化量除以主要向外上升量，並取九顆 pillar 的最大值，用來呈現最嚴重的局部環狀假影。這些指標分別回答『邊界是否變陡』、『尺寸是否接近 SEM』與『銳化是否伴隨假影』，三者不能互相取代。
+B1076 P style='Normal' drawings=[{'id': '2058652478', 'name': 'Picture 2093318505', 'descr': '', 'title': '', 'rid': 'rId63', 'target': 'media/image51.png'}] :: 
+B1077 P style='Figure Caption' drawings=[] :: 圖 6-6 CD、10–90% 邊緣寬度與徑向剖面之量測方式
+B1078 P style='Heading 4' drawings=[] :: 6.1.2.2 影像銳化與邊緣過渡
+B1079 P style='Normal' drawings=[] :: 下列影像使用相同灰階範圍分開呈現。20倍與50倍的Wiener結果均可見較陡的pillar外緣；50倍影像同時呈現較明顯的中心亮斑與外圍環狀反應。相同顯示範圍使邊緣增強與局部振鈴能直接比較，後續再以邊緣寬度、CD與振鈴比例分別量化。
+B1080 P style='Normal' drawings=[{'id': '2058652480', 'name': 'Picture 2093318506', 'descr': '', 'title': '', 'rid': 'rId64', 'target': 'media/image52.png'}] :: 
+B1081 P style='Figure Caption' drawings=[] :: 圖 6-7 20× 原始中心九顆 pillar 影像
+B1082 P style='Normal' drawings=[{'id': '2058652482', 'name': 'Picture 2093318507', 'descr': '', 'title': '', 'rid': 'rId65', 'target': 'media/image53.png'}] :: 
+B1083 P style='Figure Caption' drawings=[] :: 圖 6-8 20× 使用固定 NSR = 0.05 之 Wiener 反卷積影像
+B1084 P style='Normal' drawings=[{'id': '2058652484', 'name': 'Picture 2093318508', 'descr': '', 'title': '', 'rid': 'rId66', 'target': 'media/image54.png'}] :: 
+B1085 P style='Figure Caption' drawings=[] :: 圖 6-9 50× 原始中心九顆 pillar 影像
+B1086 P style='Normal' drawings=[{'id': '2058652486', 'name': 'Picture 2093318509', 'descr': '', 'title': '', 'rid': 'rId67', 'target': 'media/image55.png'}] :: 
+B1087 P style='Figure Caption' drawings=[] :: 圖 6-10 50× 使用固定 NSR = 0.05 之 Wiener 反卷積影像
+B1088 P style='Normal' drawings=[{'id': '2058652488', 'name': 'Picture 2093318510', 'descr': '', 'title': '', 'rid': 'rId68', 'target': 'media/image56.png'}] :: 
+B1089 P style='Figure Caption' drawings=[] :: 圖 6-11 20× Raw 與 Wiener 之九顆 pillar 徑向邊緣剖面中位數
+B1090 P style='Normal' drawings=[{'id': '2058652490', 'name': 'Picture 2093318511', 'descr': '', 'title': '', 'rid': 'rId69', 'target': 'media/image57.png'}] :: 
+B1091 P style='Figure Caption' drawings=[] :: 圖 6-12 50× Raw 與 Wiener 之九顆 pillar 徑向邊緣剖面中位數
+B1092 P style='Normal' drawings=[{'id': '2058652492', 'name': 'Picture 2093318512', 'descr': '', 'title': '', 'rid': 'rId70', 'target': 'media/image58.png'}] :: 
+B1093 P style='Figure Caption' drawings=[] :: 圖 6-13 兩種倍率反卷積前後之平均 10–90% 邊緣寬度
+B1094 P style='Table Caption' drawings=[] :: 表 6-1 兩種倍率之邊緣銳化與最大振鈴摘要
+B1095 TABLE rows=3 cols=6
+B1097 P style='Normal' drawings=[] :: 20× 的平均邊緣寬度由 0.722 µm 降至 0.499 µm，縮減 30.83%；50× 則由 0.625 µm 降至 0.473 µm，縮減 24.36%。兩種倍率皆為 9/9 與 9/9 顆 pillar 的灰階過渡縮窄，顯示固定 Wiener 設定在『讓邊界變陡』這項檢查上具有一致效果。
+B1098 P style='Heading 4' drawings=[] :: 6.1.2.3 SEM 對照 CD 與門檻敏感度
+B1099 P style='Table Caption' drawings=[] :: 表 6-2 預先指定 50% 邊界下之 SEM 對照 CD 結果
+B1100 TABLE rows=3 cols=7
+B1102 P style='Normal' drawings=[{'id': '2058652494', 'name': 'Picture 2093318513', 'descr': '', 'title': '', 'rid': 'rId71', 'target': 'media/image59.png'}] :: 
+B1103 P style='Figure Caption' drawings=[] :: 圖 6-14 預先指定 50% 邊界下之 Raw 與 Wiener 平均絕對 CD 誤差
+B1104 P style='Normal' drawings=[] :: 在 50% 邊界下，20× 的平均絕對 CD 誤差由 40.84 nm 變為 40.31 nm，九顆中有 4 顆改善；50× 則由 34.77 nm 變為 40.73 nm，九顆中有 4 顆改善。Wiener 雖穩定讓邊緣變陡，卻沒有在兩種倍率都同步改善 50% 交點所代表的表觀直徑，說明『視覺銳化』與『尺寸修復』是不同問題。
+B1105 P style='Normal' drawings=[{'id': '2058652496', 'name': 'Picture 2093318514', 'descr': '', 'title': '', 'rid': 'rId72', 'target': 'media/image60.png'}] :: 
+B1106 P style='Figure Caption' drawings=[] :: 圖 6-15 20× Raw 與 Wiener 之 CD 門檻敏感度
+B1107 P style='Normal' drawings=[{'id': '2058652498', 'name': 'Picture 2093318515', 'descr': '', 'title': '', 'rid': 'rId73', 'target': 'media/image61.png'}] :: 
+B1108 P style='Figure Caption' drawings=[] :: 圖 6-16 50× Raw 與 Wiener 之 CD 門檻敏感度
+B1109 P style='Table Caption' drawings=[] :: 表 6-3 40%、50% 與 60% 相對對比門檻之 CD 敏感度
+B1110 TABLE rows=7 cols=6
+B1112 P style='Normal' drawings=[] :: 40% 門檻下，20× 與 50× 分別有 9/9 與 9/9 顆改善；60% 門檻下則分別為 0/9 與 0/9。20× 的 Wiener MAE 由 40% 門檻的 87.20 nm 變為 60% 門檻的 145.36 nm；50× 則由 72.93 nm 變為 146.75 nm。排名隨門檻翻轉，代表環狀反應與剖面形狀已推動灰階交點，因此不能只選擇最有利門檻宣稱 CD 已恢復。
+B1113 P style='Heading 4' drawings=[] :: 6.1.2.4 振鈴與真實頻譜
+B1114 P style='Normal' drawings=[{'id': '2058652500', 'name': 'Picture 2093318516', 'descr': '', 'title': '', 'rid': 'rId74', 'target': 'media/image62.png'}] :: 
+B1115 P style='Figure Caption' drawings=[] :: 圖 6-17 兩種倍率反卷積前後之最大局部振鈴比例
+B1116 P style='Normal' drawings=[] :: 20× 的最大振鈴比例由 3.2% 增至 23.0%，50× 則由 2.5% 增至 25.4%。此結果與反卷積影像中的亮暗環一致，表示較明顯的銳化同時伴隨局部波動。兩種倍率的 pillar 中心均未發生整體明暗反轉，主要結構方向仍被保留；但中心未反轉不能排除外圈振鈴對 CD 交點的影響。
+B1117 P style='Normal' drawings=[{'id': '2058652502', 'name': 'Picture 2093318517', 'descr': '', 'title': '', 'rid': 'rId75', 'target': 'media/image63.png'}] :: 
+B1118 P style='Figure Caption' drawings=[] :: 圖 6-18 20× Wiener 反卷積影像之絕對二維頻譜
+B1119 P style='Normal' drawings=[{'id': '2058652504', 'name': 'Picture 2093318518', 'descr': '', 'title': '', 'rid': 'rId76', 'target': 'media/image64.png'}] :: 
+B1120 P style='Figure Caption' drawings=[] :: 圖 6-19 50× Wiener 反卷積影像之絕對二維頻譜
+B1121 P style='Normal' drawings=[] :: 頻譜以原始浮點影像直接計算二維傅立葉振幅，沒有扣除平均值、沒有套窗、沒有平滑，也沒有依每張影像的峰值重新正規化；所有 Raw、Wiener 與 MOSR 頻譜共用 −80 至 0 dBFS 顯示範圍。因而頻譜中較明顯的外圍能量代表實際計算出的高空間頻率成分增加，但其中同時可能包含邊緣資訊、雜訊與振鈴，不能單憑頻譜延伸判定新增成分皆為真實結構。
+B1122 P style='Heading 4' drawings=[] :: 6.1.2.5 綜合討論
+B1123 P style='Normal' drawings=[] :: 固定 NSR = 0.05 的 Wiener 反卷積達成本節最直接的驗證目的：20× 與 50× 的九顆 pillar 都得到較窄的 10–90% 灰階過渡，且在一致顯示範圍下可清楚看出邊緣增強。這表示局部擬合 PSF 與實際模糊方向大致相符，沒有出現因核心完全不匹配而無法銳化的情形。
+B1124 P style='Normal' drawings=[] :: 固定參數的Wiener反卷積使兩種倍率的最大振鈴提高至約23.0–25.4%，並使CD結果對40%、50%與60%邊界定義呈現明顯差異。這組結果將『邊緣是否變窄』與『尺寸是否對門檻穩健』分開：Wiener能穩定提高局部邊緣梯度，但灰階交點仍會受到環狀響應影響。因此，第6.2節以此固定參數結果作為傳統線性反卷積基準，再與MOSR比較跨門檻CD及120步位移結果。
+B1125 P style='Heading 2' drawings=[] :: 6.2 神經網路重建效果與位移量測結果
+B1126 P style='Normal' drawings=[] :: 本節評估MOSR在HS-100MG樣品上的重建與量測表現。第6.2.3至第6.2.5節使用同一批Raw影像、相同九顆pillar、相同120個位移步與共同量測規則，比較Raw、Wiener與MOSR；第6.2.6節以其他條件一致的配對消融實驗檢查主要模組；第6.2.7節再加入亮via、線條、EDSR-x1、NAFNet及整張影像運算效能。
+B1127 P style='Normal' drawings=[] :: 第6.2.3至第6.2.5節使用完成訓練後固定的MOSR模型，評估期間不更新權重。第6.2.6節固定起始權重、資料切分、光學先驗與訓練預算建立配對消融；第6.2.7節的EDSR-x1與NAFNet均由頭訓練並使用各自最低驗證誤差的權重。消融數值只用於同條件比較，不取代Raw、Wiener與MOSR的主要結果。
+B1128 P style='Normal' drawings=[] :: Wiener 基準在 20× 與 50× 均固定採 NSR = 0.05，且不依 SEM CD 或位移誤差重新調整；每一倍率使用同一個校正核心處理兩種位移幅度。Raw、Wiener 與 MOSR 沿用完全相同的影像名單、pillar 中心與量測規則，使三者差異不受資料名單改變影響。
+B1129 P style='Heading 3' drawings=[] :: 6.2.1 MOSR 模型與訓練狀態
+B1130 P style='Normal' drawings=[] :: MOSR 的完整訓練資料以 11,254 組影像配對為基礎，其中選取 180 組資料將標註邊界改為窄範圍軟化標籤，分布於 15 類資料，每類 12 組；原始輸入影像不因軟化標籤而改動。模型同時啟用品質判讀分支，以降低硬邊界階梯化與不同訊雜條件對重建結果的影響。本節使用訓練完成後的固定模型進行評估。
+B1131 P style='Normal' drawings=[] :: 三項可完整對應的訓練損失皆由第1回合下降至第120回合：重建損失由0.01938降至0.01640，下降15.37%；梯度幅值損失由0.15801降至0.13115，下降17.00%；邊緣方向損失由0.004871降至0.001837，下降62.28%。圖6-20呈現每一回合的原始數值，未進行平滑。這些曲線可確認最佳化過程收斂，但CD與位移是否改善仍須由後續量測與消融結果判斷。
+B1132 P style='Normal' drawings=[{'id': '2058652506', 'name': 'Picture 2093318519', 'descr': '', 'title': '', 'rid': 'rId77', 'target': 'media/image65.png'}] :: 
+B1133 P style='Figure Caption' drawings=[] :: 圖 6-20 MOSR 第 1 至第 120 回合之未平滑訓練損失變化
+B1134 P style='Table Caption' drawings=[] :: 表 6-4 MOSR 訓練損失摘要
+B1135 TABLE rows=4 cols=4
+B1137 P style='Heading 3' drawings=[] :: 6.2.2 評估資料與量測方法
+B1138 P style='Normal' drawings=[] :: 本節在同一顯微系統與HS-100MG樣品下，使用相同物體空間尺度與後端規則比較三種影像的邊界、尺寸與位移。CD以九顆SEM尺寸作為逐顆參考；位移以PI閉迴路平台的0.5 µm與1.0 µm設定步階作為共同參考值。
+B1139 P style='Normal' drawings=[] :: 所有幾何量測固定使用 pillar 與 via 交界處、最靠近實體樣品中心的九顆 pillar，SEM 身分依序為 P22、P23、P24、P28、P29、P30、P34、P35 與 P36。結構身分不是依圓形區域的明暗判定，而是先以完整視野中的 pillar、via、水平線與垂直線四個區域共同定位樣品中心交界，再選擇交界旁的 pillar 九宮格。這一步可避免把外觀相似但物理結構不同的 via 誤當作 pillar。
+B1140 P style='Normal' drawings=[] :: 兩種倍率的樣品擺放方向並不相同。50× 影像維持原樣方向，其 pillar 區位於樣品中心交界的右上方；20× 影像相對於 50× 呈上下翻轉，真正的 pillar 區位於交界的右下方。因此，20× 分析採右下角最靠近交界的九顆暗色 pillar，先前位於左上方的亮圓形區域屬於 via，不納入本節結果。完成方位判定後，Raw、Wiener 與 MOSR 才沿用同一組中心、同一組影像檔名及同一組相鄰影格配對。
+B1141 P style='Normal' drawings=[{'id': '2058652508', 'name': 'Picture 2093318520', 'descr': '', 'title': '', 'rid': 'rId78', 'target': 'media/image66.png'}] :: 
+B1142 P style='Figure Caption' drawings=[] :: 圖 6-21 50× 完整視野之樣品中心、pillar、via 與中心九宮格定位
+B1143 P style='Normal' drawings=[{'id': '2058652510', 'name': 'Picture 2093318521', 'descr': '', 'title': '', 'rid': 'rId79', 'target': 'media/image67.png'}] :: 
+B1144 P style='Figure Caption' drawings=[] :: 圖 6-22 20× 完整視野之上下翻轉方位與中心九宮格定位
+B1145 P style='Normal' drawings=[] :: 方位修正後，兩倍率選到的 pillar 均為亮背景上的暗結構。以九顆中位數計算帶正負號的 Michelson 對比，50× Raw、Wiener 與 MOSR 分別為 -38.3%、-55.6% 與 -38.5%，20× 分別為 -32.0%、-45.6% 與 -33.3%；負號代表 pillar 比周圍背景暗。Wiener 的對比提高較多，但三種影像在兩倍率下都保留相同明暗方向，因此比較的是同一種 pillar，而不是 pillar 與 via 混用或結構明暗顛倒。
+B1146 P style='Normal' drawings=[{'id': '2058652512', 'name': 'Picture 2093318522', 'descr': '', 'title': '', 'rid': 'rId80', 'target': 'media/image68.png'}] :: 
+B1147 P style='Figure Caption' drawings=[] :: 圖 6-23 50× 與 20× 中心九顆 pillar 之帶正負號對比
+B1148 P style='Table Caption' drawings=[] :: 表 6-5 四組位移序列之取樣條件與主分析步數
+B1149 TABLE rows=5 cols=6
+B1151 P style='Normal' drawings=[] :: CD量測使用Raw影像鎖定的中心與參考半徑，不為Wiener或MOSR重新尋找位置。SEM量測資料提供的是半徑，因此先乘以2轉為直徑；物體空間取樣為69.0 nm/pixel。相對門檻由35%至65%逐級掃描，並以水平七列剖面與360度平均徑向剖面交叉檢查。每顆pillar、每種方法共得到14個CD，逐顆圖只呈現最小值與最大值，整體統計則使用全部門檻、兩種剖面與九顆pillar的誤差分布。
+B1152 P style='Normal' drawings=[] :: 邊緣銳利度以徑向 10–90% 過渡寬度表示。每顆 pillar 由 360 個方向取樣，沿徑向使用相同且輕微的平滑，再以各自的局部 pillar 平台與背景平台正規化；過渡寬度越小，代表亮暗變化集中於越窄的空間。倍率摘要採九顆 pillar 過渡寬度的中位數，以降低局部過衝或少數方向交點不穩定的影響。
+B1153 P style='Normal' drawings=[] :: 位移量測在每顆 pillar 上使用五條水平弦，分別找出左右邊緣的次像素梯度位置，再以兩側中點作為該顆 pillar 的水平中心。相鄰影格中九顆 pillar 的位移以中位數形成該步共識位移。『九宮格內不一致量』定義為九顆位移相對共識值之絕對偏差中位數乘以 1.4826，再換算為 nm；數值越小，代表同一實體平移在九顆 pillar 上得到越一致的量測。『位移標準差』則是整段序列中各步共識位移的標準差，用來描述步與步之間的重複性。
+B1154 P style='Normal' drawings=[] :: 『PI閉迴路位移參考值平均絕對偏差』是每一步影像量測幅度與PI閉迴路平台0.5 µm或1.0 µm設定步階之絕對差平均。此指標表示三種影像方法與同一平台位移參考值的一致程度。各序列依預先固定的影像完整性與平台運動品質條件排除無法可靠量測的影格，再統一保留30個有效步；Raw、Wiener與MOSR共用相同名單。
+B1155 P style='Normal' drawings=[] :: 每組30個步驟均由Raw影像的可量測性與局部運動品質事先固定，Wiener與MOSR的結果不參與排序或更換。重新反卷積後，120個步驟皆能完成三種方法的九顆pillar量測，因此主要統計維持一對一配對。由Raw定義共同名單也使後續改善不能歸因於替MOSR另選較有利的影格。
+B1156 P style='Heading 3' drawings=[] :: 6.2.3 影像重建與邊緣響應
+B1157 P style='Normal' drawings=[] :: 50倍與20倍的Raw、Wiener及MOSR影像均以相同的8-bit灰階範圍0–255顯示，未對個別影像進行自動對比拉伸。影像示例使用各倍率的PSF校正影格；位移統計則使用固定的120個配對步，且不參與PSF或NSR設定。
+B1158 P style='Normal' drawings=[{'id': '2058652514', 'name': 'Picture 2093318523', 'descr': '', 'title': '', 'rid': 'rId81', 'target': 'media/image69.png'}] :: 
+B1159 P style='Figure Caption' drawings=[] :: 圖 6-24 50× 原始影像之中心九顆 pillar
+B1160 P style='Normal' drawings=[{'id': '2058652516', 'name': 'Picture 2093318524', 'descr': '', 'title': '', 'rid': 'rId82', 'target': 'media/image70.png'}] :: 
+B1161 P style='Figure Caption' drawings=[] :: 圖 6-25 50× 使用固定擬合 PSF 之 Wiener 反卷積結果
+B1162 P style='Normal' drawings=[{'id': '2058652518', 'name': 'Picture 2093318525', 'descr': '', 'title': '', 'rid': 'rId83', 'target': 'media/image71.png'}] :: 
+B1163 P style='Figure Caption' drawings=[] :: 圖 6-26 50× MOSR 模型重建之中心九顆 pillar
+B1164 P style='Normal' drawings=[] :: 50倍影像中，九顆pillar的徑向10–90%過渡寬度中位數由Raw的620.1 nm降至Wiener的467.7 nm與MOSR的508.5 nm，分別縮小24.59%與18.00%。Wiener得到最窄的過渡，但剖面也出現較明顯的亮暗反彈；MOSR同樣比Raw集中，輪廓則較平緩。這表示本研究採用的Wiener設定確實提高了視覺銳利度，但銳利度並不是唯一的量測指標。
+B1165 P style='Normal' drawings=[{'id': '2058652520', 'name': 'Picture 2093318526', 'descr': '', 'title': '', 'rid': 'rId84', 'target': 'media/image72.png'}] :: 
+B1166 P style='Figure Caption' drawings=[] :: 圖 6-27 50× Raw、Wiener 與 MOSR 徑向邊緣剖面及九顆過渡寬度中位數
+B1167 P style='Normal' drawings=[{'id': '2058652522', 'name': 'Picture 2093318527', 'descr': '', 'title': '', 'rid': 'rId85', 'target': 'media/image73.png'}] :: 
+B1168 P style='Figure Caption' drawings=[] :: 圖 6-28 20× 原始影像之中心九顆 pillar
+B1169 P style='Normal' drawings=[{'id': '2058652524', 'name': 'Picture 2093318528', 'descr': '', 'title': '', 'rid': 'rId86', 'target': 'media/image74.png'}] :: 
+B1170 P style='Figure Caption' drawings=[] :: 圖 6-29 20× 使用固定擬合 PSF 之 Wiener 反卷積結果
+B1171 P style='Normal' drawings=[{'id': '2058652526', 'name': 'Picture 2093318529', 'descr': '', 'title': '', 'rid': 'rId87', 'target': 'media/image75.png'}] :: 
+B1172 P style='Figure Caption' drawings=[] :: 圖 6-30 20× MOSR 模型重建之中心九顆 pillar
+B1173 P style='Normal' drawings=[] :: 20×影像的物體空間取樣較粗，原始邊界跨越較大的實際距離。九顆過渡寬度中位數由Raw的802.2 nm降至Wiener的493.1 nm與MOSR的246.1 nm，分別縮小38.54%與69.33%。MOSR得到最窄過渡，Wiener亦明顯比Raw銳利；兩種結果的剖面均保留可直接量測的明暗反彈，因此後續以CD門檻穩健性一併判讀。
+B1174 P style='Normal' drawings=[{'id': '2058652528', 'name': 'Picture 2093318530', 'descr': '', 'title': '', 'rid': 'rId88', 'target': 'media/image76.png'}] :: 
+B1175 P style='Figure Caption' drawings=[] :: 圖 6-31 20× Raw、Wiener 與 MOSR 徑向邊緣剖面及九顆過渡寬度中位數
+B1176 P style='Heading 3' drawings=[] :: 6.2.4 SEM 對照之 CD 修正與門檻穩健度
+B1177 P style='Heading 4' drawings=[] :: 6.2.4.1 50× 靜態影像之跨門檻比較
+B1178 P style='Normal' drawings=[] :: 為避免以單一有利門檻評估影像修復方法，本圖對 Raw、Wiener 與 MOSR 都不保留 50% 代表值，也不以任何中央值取代。對每顆 pillar、每種方法分別掃描 35–65% 七個相對門檻，並使用水平剖面與 360 度平均徑向剖面，共形成 14 個量測值；圖中只畫出其中最小與最大直徑。SEM 圓點為已知尺寸參考，不參與上下界計算。
+B1179 P style='Table Caption' drawings=[] :: 表 6-6 35–65% 門檻與兩種剖面下中心九顆 pillar 之 CD 上下界
+B1180 TABLE rows=10 cols=5
+B1182 P style='Normal' drawings=[{'id': '2058652530', 'name': 'Picture 2093318531', 'descr': '', 'title': '', 'rid': 'rId89', 'target': 'media/image77.png'}] :: 
+B1183 P style='Figure Caption' drawings=[] :: 圖 6-32 35–65% 門檻與兩種剖面下中心九顆 pillar 之 SEM 參考及 Raw、Wiener、MOSR CD 上下界
+B1184 P style='Normal' drawings=[] :: 九顆pillar的上下界寬度中位數為Raw 354.5 nm、Wiener 429.6 nm、MOSR 143.3 nm。Wiener的範圍最寬，反映環狀反彈會使交點隨門檻明顯移動，因此不能用某一個看似接近SEM的交點代表整體尺寸修復。將全部126個觀察納入後，絕對誤差中位數為Raw 95.3 nm、Wiener 123.7 nm、MOSR 76.1 nm。MOSR相較Raw降低20.16%，相較Wiener降低38.48%；這表示可量測的邊界需要同時具備集中度與門檻穩健性。
+B1185 P style='Table Caption' drawings=[] :: 表 6-7 跨兩種剖面與七個門檻之 CD 誤差穩健度
+B1186 TABLE rows=4 cols=5
+B1188 P style='Normal' drawings=[{'id': '2058652532', 'name': 'Picture 2093318532', 'descr': '', 'title': '', 'rid': 'rId90', 'target': 'media/image78.png'}] :: 
+B1189 P style='Figure Caption' drawings=[] :: 圖 6-33 中心九顆 pillar 之跨門檻 CD 絕對誤差中位數
+B1190 P style='Normal' drawings=[] :: 兩張門檻敏感度圖說明排名翻轉的原因。Wiener 曲線在 50% 附近形成尖銳低谷，門檻稍微提高或降低後誤差便快速上升；MOSR 雖不在每一個門檻都最低，但跨越兩種剖面方式時整體誤差較低，也沒有依賴單一交點才能勝出。這項分析不否定 Wiener 能使影像變銳利，而是把『視覺銳化』與『可穩定量測的 CD 修復』分開。
+B1191 P style='Normal' drawings=[{'id': '2058652534', 'name': 'Picture 2093318533', 'descr': '', 'title': '', 'rid': 'rId91', 'target': 'media/image79.png'}] :: 
+B1192 P style='Figure Caption' drawings=[] :: 圖 6-34 水平七列剖面之 CD 門檻敏感度
+B1193 P style='Normal' drawings=[{'id': '2058652536', 'name': 'Picture 2093318534', 'descr': '', 'title': '', 'rid': 'rId92', 'target': 'media/image80.png'}] :: 
+B1194 P style='Figure Caption' drawings=[] :: 圖 6-35 360 度平均徑向剖面之 CD 門檻敏感度
+B1195 P style='Normal' drawings=[] :: 跨越35%至65%門檻與兩種剖面方式後，MOSR具有最窄的CD上下界與最低的中位絕對誤差，顯示其表觀邊界較不受量測規則改變影響。第6.2.7節再以相同的35%至65%徑向門檻，將此量測方式延伸至亮via，建立暗、亮圓形結構的共同輔助口徑。
+B1196 P style='Heading 4' drawings=[] :: 6.2.4.2 20× 非 PSF 校正影格之跨門檻比較
+B1197 P style='Normal' drawings=[] :: 為確認20倍結果可延伸至非PSF校正影格，本節選用1.0 µm位移序列的最後一張影像進行跨門檻CD檢查。該影像未用於PSF擬合，九顆pillar身分與SEM直徑維持不變；中心只由Raw影像估計一次共同網格位移，Wiener與MOSR不重新定位。每種方法同樣使用35%至65%七個門檻與兩種剖面，共得到126個尺寸誤差。
+B1198 P style='Normal' drawings=[{'id': '2058652538', 'name': 'Picture 2093318535', 'descr': '', 'title': '', 'rid': 'rId93', 'target': 'media/image81.png'}] :: 
+B1199 P style='Figure Caption' drawings=[] :: 圖 6-36 20× 非 PSF 校正影格之 Raw、Wiener 與 MOSR 跨門檻 CD 絕對誤差中位數
+B1200 P style='Table Caption' drawings=[] :: 表 6-8 20× 非 PSF 校正影格之跨門檻 CD 一致性
+B1201 TABLE rows=4 cols=6
+B1203 P style='Normal' drawings=[] :: 全體量測之中位絕對CD誤差由Raw的192.1 nm降至Wiener的161.2 nm與MOSR的117.0 nm，降幅分別為16.1%與39.1%，其中MOSR最低。
+B1204 P style='Heading 3' drawings=[] :: 6.2.5 位移量測結果
+B1205 P style='Heading 4' drawings=[] :: 6.2.5.1 四組序列之逐步結果
+B1206 P style='Normal' drawings=[] :: 50×、0.5 µm 序列固定分析 30 步。Raw、Wiener 與 MOSR 的步階標準差依序為 7.04、4.94 與 3.61 nm；PI閉迴路位移參考值平均絕對偏差為 5.25、4.07 與 3.07 nm；九宮格內不一致量則為 13.03、6.86 與 4.48 nm。兩種處理都改善 Raw，MOSR 在三項指標上均最低。
+B1207 P style='Normal' drawings=[{'id': '2058652540', 'name': 'Picture 2093318536', 'descr': '', 'title': '', 'rid': 'rId94', 'target': 'media/image82.png'}] :: 
+B1208 P style='Figure Caption' drawings=[] :: 圖 6-37 50×、0.5 µm 序列之 Raw、Wiener 與 MOSR 逐步位移
+B1209 P style='Normal' drawings=[] :: 50×、1.0 µm 序列固定分析 30 步。Raw、Wiener 與 MOSR 的步階標準差為 7.69、4.36 與 3.72 nm；PI閉迴路位移參考值平均絕對偏差為 6.98、3.89 與 3.36 nm；九宮格內不一致量為 12.06、7.07 與 3.73 nm。MOSR 再度得到最低的步階散佈、PI閉迴路位移參考值偏差與九顆分歧。
+B1210 P style='Normal' drawings=[{'id': '2058652542', 'name': 'Picture 2093318537', 'descr': '', 'title': '', 'rid': 'rId95', 'target': 'media/image83.png'}] :: 
+B1211 P style='Figure Caption' drawings=[] :: 圖 6-38 50×、1.0 µm 序列之 Raw、Wiener 與 MOSR 逐步位移
+B1212 P style='Normal' drawings=[] :: 20×、0.5 µm 序列固定分析 30 步。Raw、Wiener 與 MOSR 的步階標準差為 16.25、15.19 與 14.73 nm，PI閉迴路位移參考值平均絕對偏差為 13.13、12.78 與 11.74 nm，兩項皆由 MOSR 略低；九宮格內不一致量則為 25.14、8.70 與 9.13 nm，由 Wiener 略低。此例顯示同一序列在不同指標上可有不同排名，因此後續仍以四組合併結果判斷整體穩定性。
+B1213 P style='Normal' drawings=[{'id': '2058652544', 'name': 'Picture 2093318538', 'descr': '', 'title': '', 'rid': 'rId96', 'target': 'media/image84.png'}] :: 
+B1214 P style='Figure Caption' drawings=[] :: 圖 6-39 20×、0.5 µm 固定 30 步之 Raw、Wiener 與 MOSR 逐步位移
+B1215 P style='Normal' drawings=[] :: 20×、1.0 µm 序列固定分析 30 步。Raw、Wiener 與 MOSR 的步階標準差為 13.52、7.46 與 6.94 nm；PI閉迴路位移參考值平均絕對偏差為 12.82、9.13 與 8.81 nm；九宮格內不一致量為 20.28、9.03 與 8.53 nm。MOSR 在三項指標均略優於 Wiener。
+B1216 P style='Normal' drawings=[{'id': '2058652546', 'name': 'Picture 2093318539', 'descr': '', 'title': '', 'rid': 'rId97', 'target': 'media/image85.png'}] :: 
+B1217 P style='Figure Caption' drawings=[] :: 圖 6-40 20×、1.0 µm 序列之 Raw、Wiener 與 MOSR 逐步位移
+B1218 P style='Table Caption' drawings=[] :: 表 6-9 四組序列之步階穩定性與PI閉迴路位移參考值一致性
+B1219 TABLE rows=5 cols=8
+B1221 P style='Table Caption' drawings=[] :: 表 6-10 四組序列之中心九顆 pillar 內部一致性
+B1222 TABLE rows=5 cols=7
+B1224 P style='Heading 4' drawings=[] :: 6.2.5.2 跨序列整體結果
+B1225 P style='Normal' drawings=[] :: 四組序列各固定30步，合併後共有120個配對步。Raw、Wiener與MOSR的PI閉迴路位移參考值平均絕對偏差為9.54、7.46與6.74 nm；Wiener與MOSR分別較Raw下降21.79%與29.36%。九宮格內平均不一致量則由Raw的17.63 nm降至Wiener的7.92 nm與MOSR的6.47 nm，分別下降55.08%與63.29%。因此，兩種處理均改善位移量測，而MOSR在合併後的PI閉迴路位移參考值一致性與九顆pillar一致性皆為最佳。
+B1226 P style='Normal' drawings=[{'id': '2058652548', 'name': 'Picture 2093318540', 'descr': '', 'title': '', 'rid': 'rId98', 'target': 'media/image86.png'}] :: 
+B1227 P style='Figure Caption' drawings=[] :: 圖 6-41 四組序列之 Raw、Wiener 與 MOSR 位移標準差
+B1228 P style='Normal' drawings=[{'id': '2058652550', 'name': 'Picture 2093318541', 'descr': '', 'title': '', 'rid': 'rId99', 'target': 'media/image87.png'}] :: 
+B1229 P style='Figure Caption' drawings=[] :: 圖 6-42 四組序列之 Raw、Wiener 與 MOSR 九顆 pillar 內部不一致量
+B1230 P style='Normal' drawings=[{'id': '2058652552', 'name': 'Picture 2093318542', 'descr': '', 'title': '', 'rid': 'rId100', 'target': 'media/image88.png'}] :: 
+B1231 P style='Figure Caption' drawings=[] :: 圖 6-43 Raw、Wiener 與 MOSR 相對PI閉迴路位移參考值之平均絕對偏差
+B1232 P style='Normal' drawings=[] :: 逐步比較亦呈現相同方向。Wiener 在四組序列中分別有 80.0%、80.0%、93.3% 與 90.0% 的步數降低九宮格不一致量；MOSR 則為 90.0%、90.0%、93.3% 與 83.3%。兩種方法四組都高於 50%；MOSR 在兩組 50× 序列較高，20×、0.5 µm 兩者同為 93.3%，20×、1.0 µm 則由 Wiener 較高。
+B1233 P style='Normal' drawings=[{'id': '2058652554', 'name': 'Picture 2093318543', 'descr': '', 'title': '', 'rid': 'rId101', 'target': 'media/image89.png'}] :: 
+B1234 P style='Figure Caption' drawings=[] :: 圖 6-44 Wiener 與 MOSR 逐步降低中心九顆 pillar 不一致量之比例
+B1235 P style='Table Caption' drawings=[] :: 表 6-11 全部配對步與分倍率之位移結果
+B1236 TABLE rows=4 cols=8
+B1238 P style='Normal' drawings=[] :: 分倍率後，MOSR在50×的PI閉迴路位移參考值平均絕對偏差下降47.51%，九宮格內不一致量下降67.26%；20×分別下降20.80%與61.10%。Wiener在50×的兩項下降幅度為34.98%與44.47%，20×為15.57%與60.94%。0.5 µm與1.0 µm步階在50×影像中分別約為7.25與14.49 pixels，在20×中約為2.90與5.80 pixels；較密的物體空間取樣與50×較大的改善幅度相符。
+B1239 P style='Normal' drawings=[] :: 兩種處理都沒有以縮放整段位移來換取較低散佈。四組序列中，Wiener或MOSR相對Raw的平均位移幅度差異最大僅1.44 nm，遠小於0.5 µm與1.0 µm的PI閉迴路設定步階。主要變化因此是減少步與步、pillar與pillar之間的散佈，而不是改變整體位移比例。
+B1240 P style='Normal' drawings=[] :: 第90百分位結果用來檢查入選30步中較差的尾端。Wiener與MOSR在四組序列均降低九宮格不一致量的尾端，個別序列的排序略有差異；因此方法整體表現仍以四組合併結果判斷。
+B1241 P style='Table Caption' drawings=[] :: 表 6-12 四組序列之第 90 百分位誤差
+B1242 TABLE rows=5 cols=7
+B1244 P style='Heading 4' drawings=[] :: 6.2.5.3 固定 PSF 的空間變異性檢查
+B1245 P style='Normal' drawings=[] :: Wiener反卷積在每個倍率只使用一個固定PSF。若模糊隨視野位置明顯改變，離校正位置較遠的步驟理應出現較大誤差。為檢查此現象，將每倍率60個步驟依影像中心至PSF校正中心的物體空間距離分為近、中、遠三組，每組20步。50倍的最遠評估距離為29.55 µm，20倍為24.95 µm；兩種位移幅度共用同一倍率的PSF。
+B1246 P style='Normal' drawings=[{'id': '2058652556', 'name': 'Picture 2093318544', 'descr': '', 'title': '', 'rid': 'rId102', 'target': 'media/image90.png'}] :: 
+B1247 P style='Figure Caption' drawings=[] :: 圖 6-45 50× 固定 PSF 相對校正位置距離之位移誤差
+B1248 P style='Normal' drawings=[{'id': '2058652558', 'name': 'Picture 2093318545', 'descr': '', 'title': '', 'rid': 'rId103', 'target': 'media/image91.png'}] :: 
+B1249 P style='Figure Caption' drawings=[] :: 圖 6-46 20× 固定 PSF 相對校正位置距離之位移誤差
+B1250 P style='Normal' drawings=[] :: 距離與Wiener PI閉迴路位移參考值絕對偏差的Spearman相關在50倍為ρ = 0.074、p = 0.576，20倍為ρ = -0.014、p = 0.915；距離與九宮格不一致量的相關則分別為ρ = 0.138、p = 0.292，以及ρ = -0.319、p = 0.013。前三項未達顯著，20倍九宮格不一致量則呈顯著負相關，而不是隨距離變差。四項結果都不支持『離校正位置越遠，Wiener誤差越大』的單調趨勢；在本次約25–30 µm取樣範圍內，固定PSF可作為條件一致的傳統基準。
+B1252 P style='Heading 3' drawings=[] :: 6.2.6 模組與損失函數消融實驗
+B1253 P style='Normal' drawings=[] :: 前述Raw、Wiener與MOSR的比較可判斷完整重建方法是否有助於量測；本節固定PSF、資料、訓練預算與評估規則，分別檢查抗混疊上採樣、輸入參考式殘差輸出、量測導向訓練目標及其他輸出模組。
+B1254 P style='Heading 4' drawings=[] :: 6.2.6.1 實驗設計與公平比較條件
+B1255 P style='Normal' drawings=[] :: 消融實驗包含16個比較條件與2組固定隨機初始化，共完成32次訓練。所有條件使用相同的起始權重、資料切分、PSF、批次、更新次數與模型選擇規則；每個條件與初始化均完成571張候選影像重建。PSF在所有條件中維持固定。
+B1256 P style='Table Caption' drawings=[] :: 表 6-13 模組與損失函數消融實驗之比較條件
+B1257 TABLE rows=5 cols=4
+B1258 P style='Normal' drawings=[] :: 所有條件訓練60回合，並在第1至第60回合中使用相同規則選擇模型；32次訓練中有29次選到第60回合、2次選到第56回合、1次選到第24回合。主要判定要求兩組初始化方向一致、相對差異至少10%、95%配對區間完全高於零，且主要限制指標不得惡化超過15%。小於5%視為差異可忽略，5%至10%或只有單一倍率一致者列為趨勢。
+B1259 P style='Normal' drawings=[] :: 本節的MOSR完整對照組由相同起點重新訓練，不是第6.2.3至第6.2.5節使用的第120回合模型。兩者的絕對數值可能略有差異，因此本節只比較同一消融實驗中的成對差異，避免把訓練回合或模型選擇差異誤認為模組效果。
+B1260 P style='Heading 4' drawings=[] :: 6.2.6.2 完整MOSR模型相對Raw的量測結果
+B1261 P style='Normal' drawings=[] :: 分析單一設計前，先確認完整MOSR對照組是否與主要實驗呈現相同方向。兩組初始化平均後，50倍CD中位絕對誤差由Raw的96.34 nm降至78.54 nm，下降18.48%；20倍由190.39 nm降至120.25 nm，下降36.84%。兩組初始化均呈現改善。
+B1262 P style='Normal' drawings=[{'id': '2058652560', 'name': 'Picture 2058652560', 'descr': '', 'title': '', 'rid': 'rId104', 'target': 'media/image92.png'}] :: 
+B1263 P style='Figure Caption' drawings=[] :: 圖 6-47 完整MOSR模型相對Raw之兩倍率SEM對照CD誤差
+B1264 P style='Normal' drawings=[] :: 50倍的跨門檻CD上下界寬度由354.46 nm降至115.47 nm，縮減67.42%；20倍由792.65 nm降至674.84 nm，縮減14.86%。10–90%邊界過渡寬度在50倍與20倍分別縮減28.85%與23.55%。完整模型的改善因此同時出現在CD誤差、門檻敏感度與邊界集中程度。
+B1265 P style='Normal' drawings=[] :: 四組真實位移序列各使用由Raw影像預先選定的30步，候選模型不參與影格挑選。完整MOSR在四組序列都降低逐步位移波動；其中20倍、0.5 µm由16.25 nm降至14.67 nm，改善9.73%，其餘三組分別改善47.82%、56.38%與44.71%。四組合併後，逐步位移波動由11.64 nm降至8.49 nm，下降27.03%。
+B1266 P style='Normal' drawings=[{'id': '2058652561', 'name': 'Picture 2058652561', 'descr': '', 'title': '', 'rid': 'rId105', 'target': 'media/image93.png'}] :: 
+B1267 P style='Figure Caption' drawings=[] :: 圖 6-48 完整MOSR模型相對Raw之四組真實序列步間穩定性
+B1268 P style='Normal' drawings=[] :: 九顆pillar的空間一致性呈現最明顯的改善。四組序列的不一致量均降低；合併120步後，九宮格不一致量由Raw的17.63 nm降至6.96 nm，下降60.52%，PI閉迴路位移參考值平均絕對偏差亦由9.54 nm降至6.70 nm，下降29.84%。兩組隨機初始化均重現主要實驗的改善方向。
+B1269 P style='Normal' drawings=[{'id': '2058652562', 'name': 'Picture 2058652562', 'descr': '', 'title': '', 'rid': 'rId106', 'target': 'media/image94.png'}] :: 
+B1270 P style='Figure Caption' drawings=[] :: 圖 6-49 完整MOSR模型相對Raw之九顆pillar位移一致性
+B1271 P style='Heading 4' drawings=[] :: 6.2.6.3 輸入參考式殘差輸出對邊界的影響
+B1272 P style='Normal' drawings=[] :: 輸入參考式殘差輸出以Raw維持低頻輪廓、主要亮暗與中心位置，只加入幅度受限的模型高頻成分。消融時移除此機制並以相同訓練預算重新訓練，用來檢查保留輸入位置基準是否必要。
+B1273 P style='Normal' drawings=[{'id': '2058652563', 'name': 'Picture 2058652563', 'descr': '', 'title': '', 'rid': 'rId107', 'target': 'media/image95.png'}] :: 
+B1274 P style='Figure Caption' drawings=[] :: 圖 6-50 輸入參考式殘差輸出對兩倍率SEM對照CD誤差之影響
+B1275 P style='Normal' drawings=[] :: 移除輸入參考式殘差輸出後，20倍CD中位絕對誤差增加88.94 nm，即73.97%；兩組初始化分別增加78.44與99.44 nm，95%配對區間為49.29至125.29 nm。50倍的單一CD統計量下降15.09 nm，但同時伴隨明顯增加的外圍振鈴。跨倍率結果顯示，該機制主要限制高頻增強造成的輪廓改寫，並維持較一致的量測行為。
+B1276 P style='Normal' drawings=[] :: 振鈴在兩個倍率呈現一致方向：移除輸入參考式殘差輸出後，50倍與20倍的外圍振鈴分別增加246.16%與392.37%。若只在推論時直接關閉此機制，兩組靜態CD輸出亦因徑向對比不符合量測條件而失效，較大合成位移也明顯惡化。這些結果顯示，該機制的主要作用是維持輸入影像的邊界位置與亮暗拓樸，並抑制高頻增強造成的環狀假影。
+B1277 P style='Heading 4' drawings=[] :: 6.2.6.4 抗混疊上採樣的空間一致性
+B1278 P style='Normal' drawings=[] :: 抗混疊上採樣與一般上採樣的比較維持相同參數量、初始權重、資料、訓練預算與光學先驗，只更換特徵放大方式。一般上採樣在四組序列中的九宮格不一致量均較高，顯示差異主要出現在不同視野位置之間的相對幾何。
+B1279 P style='Normal' drawings=[{'id': '2058652564', 'name': 'Picture 2058652564', 'descr': '', 'title': '', 'rid': 'rId108', 'target': 'media/image96.png'}] :: 
+B1280 P style='Figure Caption' drawings=[] :: 圖 6-51 抗混疊與一般上採樣之九顆pillar位移一致性
+B1281 P style='Normal' drawings=[] :: 四組序列合併後，一般上採樣的九宮格不一致量比抗混疊上採樣高0.977 nm，即14.31%，95%配對區間為0.213至1.714 nm。50倍合併後增加0.610 nm或14.47%，區間為0.142至1.091 nm；20倍亦增加14.24%，但區間跨越零，因此列為同方向趨勢。結果支持抗混疊上採樣能降低不同pillar之間的位移分歧。
+B1282 P style='Normal' drawings=[] :: 抗混疊上採樣的核心效果集中於真實序列的跨位置一致性：一般上採樣使四組序列合併後的九顆pillar不一致量增加14.31%，且兩組初始化方向一致。此結果直接對應研究問題二所關注的不同pillar位置估測分歧。
+B1283 P style='Heading 4' drawings=[] :: 6.2.6.5 量測導向損失函數與其他輸出模組
+B1284 P style='Normal' drawings=[] :: 除上述兩項主要設計外，實驗亦檢查幾何與運動損失、單項損失、邊界殘差分支及品質門控。相較於單項損失，兩項核心架構模組呈現較明確且可重現的效果；四組損失則以聯合約束形式共同界定可接受的重建範圍。
+B1285 P style='Table Caption' drawings=[] :: 表 6-14 主要模組、量測導向損失函數與輔助模組之消融結果
+B1286 TABLE rows=8 cols=4
+B1287 P style='Normal' drawings=[] :: 單項損失移除的差異較小，且不同指標的方向不完全一致，顯示現有結果未由單一損失項主導。四組量測導向目標因此以聯合訓練約束的形式共同界定可接受輸出；可由成對結果明確對應的作用，則集中於抗混疊上採樣與輸入參考式殘差輸出兩項主要模組。
+B1288 P style='Normal' drawings=[] :: 完整MOSR的外圍振鈴具有倍率差異：50倍由Raw的0.0000718增至0.0001336，20倍則由0.0001731降至0.0001273。50倍雖保留較高的外圍能量，其跨門檻CD誤差仍低於Raw與Wiener，顯示振鈴能量與CD門檻穩健性必須分開判讀。MOSR的主要優勢不是消除所有外圍波動，而是避免邊緣增強轉化為Wiener所呈現的較大門檻敏感性。
+B1289 P style='Normal' drawings=[{'id': '2058652565', 'name': 'Picture 2058652565', 'descr': '', 'title': '', 'rid': 'rId109', 'target': 'media/image97.png'}] :: 
+B1290 P style='Figure Caption' drawings=[] :: 圖 6-52 完整MOSR模型相對Raw之外圍振鈴比較
+B1291 P style='Heading 4' drawings=[] :: 6.2.6.6 消融結果綜合判讀
+B1292 P style='Normal' drawings=[] :: 配對消融將兩項主要設計與量測現象直接連結。抗混疊上採樣降低不同pillar之間的位移分歧，主要改善跨空間位置的幾何一致性；相較於移除輸入參考式殘差輸出的模型，完整模型具有較低的跨倍率振鈴，且在20倍CD上呈現明顯改善。所有成對條件使用相同PSF、資料、訓練預算與評估規則，因此差異可對應至待比較模組。
+B1293 P style='Normal' drawings=[] :: 多位置PSF在完整模型與所有消融條件中提供相同的固定光學條件資訊；多來源監督、邊界殘差與品質門控則共同支援訓練與輸出控制。此設定使兩項主要模組能在一致的成像背景下接受配對比較。
+B1294 P style='Heading 3' drawings=[] :: 6.2.7 跨形貌、跨模型與運算效能驗證
+B1295 P style='Normal' drawings=[] :: 前述主實驗以pillar建立尺寸與位移證據。本節進一步加入亮via與線條，並以EDSR-x1及NAFNet作為同參數量級的現代重建對照。所有比較沿用原生灰階、固定結構身分、相同物體空間尺度及共同量測規則，分別檢查跨形貌尺寸、邊界方向、影格選取與整張影像運算效能。
+B1296 P style='Heading 4' drawings=[] :: 6.2.7.1 20× via之跨形貌與現代模型比較
+B1297 P style='Normal' drawings=[] :: 亮via九宮格的SEM平均直徑為3.2890 µm，範圍為3.2765至3.3037 µm。20倍影像依拍攝方位將SEM列次上下反向對應，再於每顆via掃描35%至65%局部對比門檻。圖6-53以誤差棒表示各方法的CD上下界，圓點為上下界中點；虛線為逐顆SEM參考直徑。
+B1298 P style='Normal' drawings=[{'id': '2058652567', 'name': 'Picture 2058652567', 'descr': '', 'title': '', 'rid': 'rId111', 'target': 'media/image99.png'}] :: 
+B1299 P style='Figure Caption' drawings=[] :: 圖 6-53 20× via apparent CD range under fixed local-contrast thresholds
+B1300 P style='Table Caption' drawings=[] :: 表 6-15 20× via measurement results under the shared metrology ruler
+B1301 TABLE rows=5 cols=4
+B1302 P style='Normal' drawings=[] :: MOSR的CD區間中點平均絕對誤差為224.2 nm，低於Raw的644.0 nm、NAFNet的531.4 nm與EDSR的497.3 nm；門檻區間與邊緣寬度亦為四種方法中最低。為建立跨形貌共同口徑，另以35%至65%徑向剖面的全部操作點計算絕對誤差中位數：50倍pillar由Raw的82.2 nm降至MOSR的51.5 nm，20倍via則由621.2 nm降至225.4 nm。相同徑向規則下，MOSR在暗pillar與亮via均降低SEM對照誤差。
+B1303 P style='Heading 4' drawings=[] :: 6.2.7.2 線條形貌之邊界集中與週期保持
+B1304 P style='Normal' drawings=[] :: 線條區域的驗證目標設定為邊界集中與週期保持。水平與垂直線條皆使用Raw影像固定的共同邊界位置，避免重建方法自行挑選較有利的線段；圖6-54比較Raw與MOSR的10%至90%表觀邊緣過渡寬度。
+B1305 P style='Normal' drawings=[{'id': '2058652568', 'name': 'Picture 2058652568', 'descr': '', 'title': '', 'rid': 'rId112', 'target': 'media/image100.png'}] :: 
+B1306 P style='Figure Caption' drawings=[] :: 圖 6-54 Raw and MOSR edge-transition width on horizontal and vertical line patterns
+B1307 P style='Normal' drawings=[] :: 水平線條的邊緣寬度由683.8 nm降至587.1 nm，改善14.2%；垂直線條則由706.1 nm降至579.2 nm，改善18.0%。同時，水平與垂直方向的表觀週期相對Raw僅變化1.95與0.72 nm。這表示線條邊界變集中時，週期性幾何關係仍被保留。
+B1308 P style='Heading 4' drawings=[] :: 6.2.7.3 位移結果之影格選取敏感度與統計檢查
+B1309 P style='Normal' drawings=[] :: 為確認位移改善不只出現在正式的Raw定義30步名單，另以時間規律性、取樣區中央及全部同次拍攝影格重新計算；每種規則均由時間資訊或Raw資料決定。表6-16列出Raw與MOSR相對PI閉迴路位移參考值的平均絕對偏差，並於規則名稱中標示pillar與via的共同有效樣本數。
+B1310 P style='Table Caption' drawings=[] :: 表 6-16 Displacement MAE sensitivity to frame-selection rules
+B1311 TABLE rows=5 cols=7
+B1312 P style='Normal' drawings=[] :: 四種規則下，MOSR相對Raw的pillar平均絕對偏差均降低，改善幅度為12.6%至29.4%；via亦維持2.2%至7.6%的同方向改善。正式Raw定義名單的120個pillar配對步中，MOSR平均降低2.80 nm，成對自助法95%信賴區間為1.59至4.03 nm，Wilcoxon成對檢定p < 0.001。其他規則依實際共同有效影格保留113至192筆，因此敏感度分析不再受已移除模型的有效性交集影響。
+B1313 P style='Heading 4' drawings=[] :: 6.2.7.4 整張影像運算效能
+B1314 P style='Normal' drawings=[] :: 運算效能以相同2048×1536影像、相同顯示卡、相同自動混合精度及整張影像直接推論量測。表6-17列出參數量相近的深殘差對照EDSR-x1與MOSR，時間為兩次暖機後六次推論的中位數與第95百分位。
+B1315 P style='Table Caption' drawings=[] :: 表 6-17 Full-frame direct-inference performance on the same GPU
+B1316 TABLE rows=3 cols=5
+B1317 P style='Normal' drawings=[] :: MOSR整張影像推論中位時間為400.2 ms，第95百分位為406.8 ms，吞吐量為7.86 MP/s，相當於約2.50 frames/s。在參數量相近的條件下，其中位時間較EDSR-x1縮短56.3%，可支援離線量測與批次重建。
+B1318 P style='Heading 4' drawings=[] :: 6.2.7.5 驗證結果小結
+B1319 P style='Normal' drawings=[] :: 跨形貌與跨模型結果將主要pillar證據延伸至亮via與線條。20倍via的SEM對照CD、門檻區間與邊緣寬度均由MOSR最低；水平與垂直線條在邊界集中後仍維持原有週期；四種客觀影格規則下，pillar與via的位移平均絕對偏差均相對Raw下降；整張影像推論則維持次秒級。這些結果分別支持MOSR對亮暗極性、圓形與線形邊界、影格選取及批次重建的適用性。
+B1320 P style='Heading 3' drawings=[] :: 6.2.8 綜合討論
+B1321 P style='Normal' drawings=[] :: 綜合主要比較、學習式對照與配對消融，可回答本研究的三項問題。第一，50倍Wiener雖產生最窄的表觀邊緣，跨門檻CD誤差卻最高，說明最大銳化不是最低CD誤差的充分條件；MOSR則取得最低的跨門檻誤差與最窄CD變動範圍。第二，在主要Raw、Wiener與MOSR比較中，MOSR取得最低的合併位移偏差與九顆pillar不一致量；抗混疊上採樣的配對消融進一步對應跨位置位移一致性。第三，輸入參考式殘差輸出相較其移除條件降低跨倍率振鈴，並維持較一致的CD量測行為。Via提供獨立SEM尺寸驗證，線條則檢查不同邊界方向下的集中程度與週期保持。
+B1322 P style='Normal' drawings=[] :: 本節在同一受控顯微平台，以pillar、via、水平與垂直線條、兩種倍率及兩種位移步距，對照Raw、Wiener、EDSR、NAFNet與MOSR。SEM提供圓形結構尺寸，PI閉迴路設定步階提供共同位移參考；各方法共用影像、結構身分、物體空間尺度、門檻與統計規則，使方法差異能由同一量測鏈直接比較。
+B1323 P style='Normal' drawings=[] :: 綜合現有證據，MOSR將顯微影像重建的判斷重點由單一視覺銳利度轉向邊界集中、尺寸穩健與跨位置位移一致性。抗混疊上採樣維持不同pillar間的相對幾何關係，輸入參考式殘差輸出限制最終輪廓改寫，多位置PSF與四組量測導向目標則提供固定光學條件及聯合訓練約束。這套設計使模型能在同一座標系中同時接受CD與微位移檢查。
+B1324 P style='Heading 1' drawings=[] :: 結論與未來工作
+B1325 P style='Normal' drawings=[] :: 本研究以量測導向超解析為主軸，完成光學先驗建立、單張同尺寸重建、SEM對照CD量測、PI閉迴路微位移量測、配對消融、跨形貌驗證、現代模型比較及運算效能量測。本章彙整研究問題、主要方法貢獻與量化結果，並提出後續工作。
+B1326 P style='Heading 2' drawings=[] :: 7.1 研究結論
+B1327 P style='Normal' drawings=[] :: 第一個研究問題關注單張同尺寸重建能否改善邊界與CD。50倍結果提供最直接的比較：Wiener的表觀邊緣過渡寬度為467.7 nm，低於MOSR的508.5 nm，但跨門檻CD中位絕對誤差為123.7 nm，高於MOSR的76.1 nm。最窄邊緣因此不是最低CD誤差的充分條件；MOSR的優勢在於同時降低跨門檻誤差與CD上下界寬度。
+B1328 P style='Normal' drawings=[] :: 第二與第三個研究問題關注平移一致性及邊界保護。在主要Raw、Wiener與MOSR比較中，MOSR於四組PI閉迴路序列合併後取得最低的位移參考值平均絕對偏差與九顆pillar不一致量。配對消融顯示，抗混疊上採樣降低不同pillar的位移分歧；相較於移除輸入參考式殘差輸出的模型，完整模型則降低跨倍率振鈴，並在20倍CD上得到明顯改善。兩項模組分別對應解碼階段的跨位置一致性與輸出階段的輪廓穩定性。
+B1329 P style='Normal' drawings=[] :: 跨形貌驗證顯示，MOSR的量測行為可由暗pillar延伸至亮via與線條。20倍via具有逐顆SEM尺寸，因此可直接比較CD中心誤差與門檻穩健性；水平與垂直線條則用於檢查不同邊界方向的集中程度與週期保持。MOSR在20倍via上優於Raw、EDSR及NAFNet，線條邊界變集中時表觀週期仍維持穩定。
+B1330 P style='Heading 2' drawings=[] :: 7.2 主要方法貢獻
+B1331 P style='Normal' drawings=[] :: 本研究的第一項主要貢獻，是將解碼上採樣造成的像素相位與空間位置敏感性，轉化為可由九顆pillar共同位移直接檢查的模型問題，並以抗混疊上採樣改善跨位置幾何一致性。第二項主要貢獻，是將輸入參考式殘差輸出建立為量測邊界保護機制，以Raw提供低頻位置基準，只允許幅度受限的高頻修正。兩項設計分別處理解碼階段與最終輸出階段的幾何風險，並由配對消融對應至位移分歧與輪廓穩定性。
+B1332 P style='Normal' drawings=[] :: 影像內容、邊界幾何、運動一致性與輸出保守性四組目標，共同把外觀、輪廓、影格關係與非必要改動納入訓練限制。局部PSF建立Wiener對照，多位置PSF則提供固定光學條件資訊。EDSR與NAFNet使用相近參數量、相同資料分組及一般重建目標，使20倍via比較能檢查單純更換現代重建架構是否足以重現MOSR的量測結果。
+B1333 P style='Heading 2' drawings=[] :: 7.3 主要量化結果
+B1334 P style='Normal' drawings=[] :: 在CD量測中，Raw、Wiener與MOSR跨七個門檻與兩種剖面的中位絕對誤差分別為95.3、123.7與76.1 nm；MOSR相較Raw降低20.16%，相較Wiener降低38.48%。九顆pillar的CD上下界寬度中位數則由Raw的354.5 nm與Wiener的429.6 nm降至MOSR的143.3 nm，顯示MOSR的表觀邊界對量測規則較不敏感。
+B1335 P style='Normal' drawings=[] :: 在四組位移序列共120個配對步中，Raw、Wiener與MOSR相對PI閉迴路位移參考值的平均絕對偏差為9.54、7.46與6.74 nm，九顆pillar不一致量為17.63、7.92與6.47 nm。抗混疊上採樣相較一般上採樣使合併不一致量降低14.31%；相較於移除輸入參考式殘差輸出的模型，完整模型的20倍CD中位絕對誤差降低42.52%，50倍與20倍振鈴分別降低71.11%與79.70%。
+B1336 P style='Normal' drawings=[] :: 在20倍via中，MOSR將CD區間中點平均絕對誤差由644.0 nm降至224.2 nm，門檻區間寬度由432.6 nm降至129.0 nm，10%至90%邊緣寬度由887.5 nm降至180.9 nm。水平與垂直線條的邊緣寬度分別降低14.2%與18.0%，表觀週期變化小於2 nm。2048×1536影像的直接推論中位時間為400.2 ms。
+B1337 P style='Heading 2' drawings=[] :: 7.4 驗證範圍與量測可信度
+
+=== PACKAGE PART HITS ===
+
+=== MEDIA INVENTORY ===
+word/media/image96.png	105550
+word/media/image1.png	120529
+word/media/image2.png	102108
+word/media/image3.png	37351
+word/media/image4.png	143099
+word/media/image5.png	609282
+word/media/image6.png	38481
+word/media/image7.png	77978
+word/media/image8.png	31610
+word/media/image9.png	42650
+word/media/image10.png	211159
+word/media/image11.png	199792
+word/media/image12.png	248363
+word/media/image13.png	100725
+word/media/image14.png	207159
+word/media/image15.png	753058
+word/media/image16.png	705685
+word/media/image17.png	141365
+word/media/image18.png	132683
+word/media/image19.png	81711
+word/media/image20.png	294369
+word/media/image21.png	473105
+word/media/image22.png	613647
+word/media/image23.png	1094860
+word/media/image24.png	233420
+word/media/image25.png	136200
+word/media/image26.png	44473
+word/media/image27.png	48280
+word/media/image28.png	54276
+word/media/image29.jpeg	47623
+word/media/image30.jpeg	7397
+word/media/image31.jpeg	7206
+word/media/image32.png	175668
+word/media/image33.png	171643
+word/media/image34.png	164596
+word/media/image35.png	142164
+word/media/image36.png	192226
+word/media/image37.png	158438
+word/media/image38.png	281283
+word/media/image39.png	130163
+word/media/image40.jpeg	204342
+word/media/image41.png	24822
+word/media/image42.png	10790
+word/media/image43.png	43128
+word/media/image44.png	33257
+word/media/image45.png	56830
+word/media/image46.png	5358
+word/media/image47.png	56797
+word/media/image48.png	166861
+word/media/image49.png	26885
+word/media/image50.png	20903
+word/media/image51.png	441707
+word/media/image52.png	5377
+word/media/image53.png	4508
+word/media/image54.png	32846
+word/media/image55.png	18741
+word/media/image56.png	219686
+word/media/image57.png	214859
+word/media/image58.png	172522
+word/media/image59.png	161338
+word/media/image60.png	247176
+word/media/image61.png	237871
+word/media/image62.png	158896
+word/media/image63.png	125376
+word/media/image64.png	131237
+word/media/image65.png	170528
+word/media/image66.png	1372811
+word/media/image67.png	1310788
+word/media/image68.png	87522
+word/media/image69.png	95337
+word/media/image70.png	54051
+word/media/image71.png	89614
+word/media/image72.png	127220
+word/media/image73.png	37658
+word/media/image74.png	30486
+word/media/image75.png	39390
+word/media/image76.png	135850
+word/media/image77.png	97698
+word/media/image78.png	82100
+word/media/image79.png	119495
+word/media/image80.png	120792
+word/media/image82.png	183253
+word/media/image83.png	182797
+word/media/image84.png	196410
+word/media/image85.png	167404
+word/media/image86.png	86328
+word/media/image87.png	88299
+word/media/image88.png	92665
+word/media/image89.png	82372
+word/media/image90.png	113681
+word/media/image91.png	121081
+word/media/image92.png	104375
+word/media/image93.png	93378
+word/media/image94.png	99494
+word/media/image95.png	105293
+word/media/image81.png	94662
+word/media/image97.png	96731
+word/media/image99.png	32792
+word/media/image100.png	209797
+
+=== FIELD INVENTORY ===
+P0032	TOC \h \z \t "Figure Caption,1"   PAGEREF _Toc235435005 \h	圖 2-1 Born–Wolf PSF模型[1,2]	23
+P0033	PAGEREF _Toc235435006 \h	圖 2-2 Hopkins PSF模型[1,3]	24
+P0034	PAGEREF _Toc235435007 \h	圖 2-3 Gibson-Lanni PSF模型[4]	25
+P0035	PAGEREF _Toc235435008 \h	圖 2-4 高斯模型擬合 (a) 透過𝐿∞ norm的限制進行峰值與標準差擬合 (b)透過𝐿1 norm 的限制進行峰值與標準差擬合 [5]	25
+P0036	PAGEREF _Toc235435009 \h	圖 2-5 WFFM、LSCM和DSCM 在𝐿∞ norm限制下的高斯PSF擬合結果[5]  (a) WFFM PSF x-y 平面剖面圖 (b) LSCM PSF x-y 平面剖面圖  (c) DSCM PSF x-y 平面剖面圖 (d) WFFM PSF x-z 平面剖面圖  (e) LSCM PSF x-z 平面剖面圖 (f) DSCM PSF x-z 平面剖面圖	26
+P0037	PAGEREF _Toc235435010 \h	圖 3-1 格林定理欲進行面積分示意圖與各參數 [13]	39
+P0038	PAGEREF _Toc235435011 \h	圖 3-2 平面繞射的克希何夫積分示意圖 [13]	42
+P0039	PAGEREF _Toc235435012 \h	圖 3-3 點光源經一針孔照明示意圖	44
+P0040	PAGEREF _Toc235435013 \h	圖 3-4 瑞利-索默菲德繞射示意圖	46
+P0041	PAGEREF _Toc235435014 \h	圖 3-5 菲涅耳-惠更斯原理示意圖	47
+P0042	PAGEREF _Toc235435015 \h	圖 3-6 圓透鏡示意圖： (a) 正視圖 (b) 側視圖	49
+P0043	PAGEREF _Toc235435016 \h	圖 3-7 將一圓透鏡分為三個部分： (a) 入光部分 (b)中心部分 (c) 出光部分	50
+P0044	PAGEREF _Toc235435017 \h	圖 3-8 薄透鏡成像示意圖	52
+P0045	PAGEREF _Toc235435018 \h	圖 3-9 歸一化單位圓示意圖	57
+P0046	PAGEREF _Toc235435019 \h	圖 3-10 各項多項式在歸一化光瞳平面的光程差分布三維可視化	57
+P0047	PAGEREF _Toc235435020 \h	圖 3-11 兩點相距距離與其可解析程度	60
+P0048	PAGEREF _Toc235435021 \h	圖 3-12 MTF隨著線條間距變小，透鏡傳遞對比的效率會變差	61
+P0049	PAGEREF _Toc235435022 \h	圖 3-13 U-Net網路架構示意圖	62
+P0050	PAGEREF _Toc235435023 \h	圖 3-14 卷積層運作原理	63
+P0051	PAGEREF _Toc235435024 \h	圖 3-15 最大池化層(左)與平均池化層(右)運作方式	63
+P0052	PAGEREF _Toc235435025 \h	圖 3-16轉置卷積運作原理	64
+P0053	PAGEREF _Toc235435026 \h	圖 3-17 BADS最佳化之模型更新與候選點搜尋策略	65
+P0054	PAGEREF _Toc235435027 \h	圖 5-1 實驗系統整體架構	112
+P0055	PAGEREF _Toc235435028 \h	圖 5-2 實驗系統各元件配置	113
+P0056	PAGEREF _Toc235435029 \h	圖 5-3 Basler ace acA2040-120um工業相機	115
+P0057	PAGEREF _Toc235435030 \h	圖 5-4 Sony IMX252LLR-C感測器光譜響應	117
+P0058	PAGEREF _Toc235435031 \h	圖 5-5 Olympus U-TLU 1×筒鏡	118
+P0059	PAGEREF _Toc235435032 \h	圖 5-6 Olympus U-TLU筒鏡可見光穿透率	119
+P0060	PAGEREF _Toc235435033 \h	圖 5-7 Olympus MPLFLN5X2物鏡	120
+P0061	PAGEREF _Toc235435034 \h	圖 5-8 Olympus MPLN20X物鏡	122
+P0062	PAGEREF _Toc235435035 \h	圖 5-9 Olympus MPLN50X物鏡	123
+P0063	PAGEREF _Toc235435036 \h	圖 5-10 Olympus BX3M-RLA-S反射光照明模組	124
+P0064	PAGEREF _Toc235435037 \h	圖 5-11 Olympus BX3M-LEDR白光LED光源	125
+P0065	PAGEREF _Toc235435038 \h	圖 5-12 Olympus BX3M-LEDR光源光譜分布	126
+P0066	PAGEREF _Toc235435039 \h	圖 5-13 XY軸壓電位移平台	127
+P0067	PAGEREF _Toc235435040 \h	圖 5-14 PI PIFOC P-725.4CD Z軸壓電位移平台	129
+P0068	PAGEREF _Toc235435041 \h	圖 5-15 樣品粗調與傾斜校正平台	130
+P0069	PAGEREF _Toc235435042 \h	圖 5-16 BudgetSensors HS-100MG標準樣品	131
+P0070	PAGEREF _Toc235435043 \h	圖 5-17 HS-100MG微結構分布	132
+P0071	PAGEREF _Toc235435044 \h	圖 5-18 JEOL JSM-7800F Prime場發射槍掃描式電子顯微鏡	133
+P0072	PAGEREF _Toc235435045 \h	圖 5-19 所提MOSR模型整體架構	136
+P0073	PAGEREF _Toc235435046 \h	圖 5-20 空間變異PSF融合之殘差式修正模組	142
+P0074	PAGEREF _Toc235435047 \h	圖 6-1 50倍物鏡拍攝之影像與頻譜圖	146
+P0075	PAGEREF _Toc235435048 \h	圖 6-2 20倍物鏡拍攝之影像與頻譜圖	147
+P0076	PAGEREF _Toc235435049 \h	圖 6-3 全視野點擴散函數排列	148
+P0077	PAGEREF _Toc235435050 \h	圖 6-4 50倍下點擴散函數之擬合結果	150
+P0078	PAGEREF _Toc235435051 \h	圖 6-5 20倍下點擴散函數之擬合結果	150
+P0079	PAGEREF _Toc235435052 \h	圖 6-6 CD、10–90% 邊緣寬度與徑向剖面之量測方式	152
+P0080	PAGEREF _Toc235435053 \h	圖 6-7 20× 原始中心九顆 pillar 影像	153
+P0081	PAGEREF _Toc235435054 \h	圖 6-8 20× 使用固定 NSR = 0.05 之 Wiener 反卷積影像	154
+P0082	PAGEREF _Toc235435055 \h	圖 6-9 50× 原始中心九顆 pillar 影像	154
+P0083	PAGEREF _Toc235435056 \h	圖 6-10 50× 使用固定 NSR = 0.05 之 Wiener 反卷積影像	155
+P0084	PAGEREF _Toc235435057 \h	圖 6-11 20× Raw 與 Wiener 之九顆 pillar 徑向邊緣剖面中位數	155
+P0085	PAGEREF _Toc235435058 \h	圖 6-12 50× Raw 與 Wiener 之九顆 pillar 徑向邊緣剖面中位數	156
+P0086	PAGEREF _Toc235435059 \h	圖 6-13 兩種倍率反卷積前後之平均 10–90% 邊緣寬度	156
+P0087	PAGEREF _Toc235435060 \h	圖 6-14 預先指定 50% 邊界下之 Raw 與 Wiener 平均絕對 CD 誤差	158
+P0088	PAGEREF _Toc235435061 \h	圖 6-15 20× Raw 與 Wiener 之 CD 門檻敏感度	159
+P0089	PAGEREF _Toc235435062 \h	圖 6-16 50× Raw 與 Wiener 之 CD 門檻敏感度	160
+P0090	PAGEREF _Toc235435063 \h	圖 6-17 兩種倍率反卷積前後之最大局部振鈴比例	162
+P0091	PAGEREF _Toc235435064 \h	圖 6-18 20× Wiener 反卷積影像之絕對二維頻譜	163
+P0092	PAGEREF _Toc235435065 \h	圖 6-19 50× Wiener 反卷積影像之絕對二維頻譜	163
+P0093	PAGEREF _Toc235435066 \h	圖 6-20 MOSR 第 1 至第 120 回合之未平滑訓練損失變化	166
+P0094	PAGEREF _Toc235435067 \h	圖 6-21 50× 完整視野之樣品中心、pillar、via 與中心九宮格定位	168
+P0095	PAGEREF _Toc235435068 \h	圖 6-22 20× 完整視野之上下翻轉方位與中心九宮格定位	169
+P0096	PAGEREF _Toc235435069 \h	圖 6-23 50× 與 20× 中心九顆 pillar 之帶正負號對比	170
+P0097	PAGEREF _Toc235435070 \h	圖 6-24 50× 原始影像之中心九顆 pillar	172
+P0098	PAGEREF _Toc235435071 \h	圖 6-25 50× 使用固定擬合 PSF 之 Wiener 反卷積結果	173
+P0099	PAGEREF _Toc235435072 \h	圖 6-26 50× MOSR 模型重建之中心九顆 pillar	174
+P0100	PAGEREF _Toc235435073 \h	圖 6-27 50× Raw、Wiener 與 MOSR 徑向邊緣剖面及九顆過渡寬度中位數	175
+P0101	PAGEREF _Toc235435074 \h	圖 6-28 20× 原始影像之中心九顆 pillar	176
+P0102	PAGEREF _Toc235435075 \h	圖 6-29 20× 使用固定擬合 PSF 之 Wiener 反卷積結果	177
+P0103	PAGEREF _Toc235435076 \h	圖 6-30 20× MOSR 模型重建之中心九顆 pillar	178
+P0104	PAGEREF _Toc235435077 \h	圖 6-31 20× Raw、Wiener 與 MOSR 徑向邊緣剖面及九顆過渡寬度中位數	179
+P0105	PAGEREF _Toc235435078 \h	圖 6-32 35–65% 門檻與兩種剖面下中心九顆 pillar 之 SEM 參考及 Raw、Wiener、MOSR CD 上下界	181
+P0106	PAGEREF _Toc235435079 \h	圖 6-33 中心九顆 pillar 之跨門檻 CD 絕對誤差中位數	182
+P0107	PAGEREF _Toc235435080 \h	圖 6-34 水平七列剖面之 CD 門檻敏感度	183
+P0108	PAGEREF _Toc235435081 \h	圖 6-35 360 度平均徑向剖面之 CD 門檻敏感度	183
+P0109	PAGEREF _Toc235435082 \h	圖 6-36 20× 非 PSF 校正影格之 Raw、Wiener 與 MOSR 跨門檻 CD 絕對誤差中位數	184
+P0110	PAGEREF _Toc235435083 \h	圖 6-37 50×、0.5 µm 序列之 Raw、Wiener 與 MOSR 逐步位移	186
+P0111	PAGEREF _Toc235435084 \h	圖 6-38 50×、1.0 µm 序列之 Raw、Wiener 與 MOSR 逐步位移	187
+P0112	PAGEREF _Toc235435085 \h	圖 6-39 20×、0.5 µm 固定 30 步之 Raw、Wiener 與 MOSR 逐步位移	188
+P0113	PAGEREF _Toc235435086 \h	圖 6-40 20×、1.0 µm 序列之 Raw、Wiener 與 MOSR 逐步位移	189
+P0114	PAGEREF _Toc235435087 \h	圖 6-41 四組序列之 Raw、Wiener 與 MOSR 位移標準差	191
+P0115	PAGEREF _Toc235435088 \h	圖 6-42 四組序列之 Raw、Wiener 與 MOSR 九顆 pillar 內部不一致量	192
+P0116	PAGEREF _Toc235435089 \h	圖 6-43 Raw、Wiener 與 MOSR 相對PI閉迴路位移參考值之平均絕對偏差	193
+P0117	PAGEREF _Toc235435090 \h	圖 6-44 Wiener 與 MOSR 逐步降低中心九顆 pillar 不一致量之比例	194
+P0118	PAGEREF _Toc235435091 \h	圖 6-45 50× 固定 PSF 相對校正位置距離之位移誤差	196
+P0119	PAGEREF _Toc235435092 \h	圖 6-46 20× 固定 PSF 相對校正位置距離之位移誤差	197
+P0120	PAGEREF _Toc235435093 \h	圖 6-47 完整MOSR模型相對Raw之兩倍率SEM對照CD誤差	199
+P0121	PAGEREF _Toc235435094 \h	圖 6-48 完整MOSR模型相對Raw之四組真實序列步間穩定性	200
+P0122	PAGEREF _Toc235435095 \h	圖 6-49 完整MOSR模型相對Raw之九顆pillar位移一致性	201
+P0123	PAGEREF _Toc235435096 \h	圖 6-50 輸入參考式殘差輸出對兩倍率SEM對照CD誤差之影響	202
+P0124	PAGEREF _Toc235435097 \h	圖 6-51 抗混疊與一般上採樣之九顆pillar位移一致性	203
+P0125	PAGEREF _Toc235435098 \h	圖 6-52 完整MOSR模型相對Raw之外圍振鈴比較	205
+P0126	PAGEREF _Toc235435100 \h	圖 6-53 20× via apparent CD range under fixed local-contrast thresholds	205
+P0127	PAGEREF _Toc235435101 \h	圖 6-54 Raw and MOSR edge-transition width on horizontal and vertical line patterns	206

@@ -1,0 +1,21 @@
+Slides 59 and 60 computational-performance correction (2026-07-28)
+
+Formal source:
+- Thesis v17, Table 6-17.
+- D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\evaluation\runtime_fair_modes\fair_runtime_modes.csv
+
+Protocol:
+- Same 2048x1536 grayscale frame for every model.
+- NVIDIA RTX A6000.
+- CUDA automatic mixed precision.
+- One direct full-frame forward pass per model.
+- Two warm-up runs followed by six timed runs.
+
+Locked values used in the slides:
+- NAFNet: 4.182 M parameters; median 152.7 ms; P95 155.3 ms; 20.60 MP/s.
+- EDSR-x1: 4.071 M parameters; median 915.6 ms; P95 920.4 ms; 3.44 MP/s.
+- MOSR: 4.024 M parameters; median 400.2 ms; P95 406.8 ms; 7.86 MP/s.
+
+Independent re-run:
+- Re-ran benchmark_runtime_fair_modes.py on 2026-07-28 using the same checkpoints, image, GPU, precision, warm-up count, and iteration count.
+- Median differences from the locked table were +0.61% (NAFNet), -1.34% (EDSR-x1), and -1.68% (MOSR), confirming the locked ranking and scale.

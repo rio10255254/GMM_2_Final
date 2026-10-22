@@ -1,0 +1,666 @@
+[
+  {
+    "figure": "6-1",
+    "caption": "50倍物鏡拍攝之影像與頻譜圖",
+    "paragraph_index": 950,
+    "images": [
+      {
+        "file": "fig6-01_01.png",
+        "rid": "rId56",
+        "partname": "/word/media/image44.png"
+      },
+      {
+        "file": "fig6-01_02.png",
+        "rid": "rId57",
+        "partname": "/word/media/image45.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-2",
+    "caption": "20倍物鏡拍攝之影像與頻譜圖",
+    "paragraph_index": 952,
+    "images": [
+      {
+        "file": "fig6-02_01.png",
+        "rid": "rId58",
+        "partname": "/word/media/image46.png"
+      },
+      {
+        "file": "fig6-02_02.png",
+        "rid": "rId59",
+        "partname": "/word/media/image47.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-3",
+    "caption": "全視野點擴散函數排列",
+    "paragraph_index": 961,
+    "images": [
+      {
+        "file": "fig6-03_01.png",
+        "rid": "rId60",
+        "partname": "/word/media/image48.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-4",
+    "caption": "與圖 6-5 呈現 Olympus MPLN-50X 與 Olympus MPLN-20X 物鏡的點擴散函數擬合結果。兩組 PSF 的能量皆主要集中於中心，且水平與垂直方向的分布十分接近；以二階矩估計的長短軸比，50 倍為 1.001，20 倍為 1.012，顯示本次選定區域的模糊近似圓形對稱。由於兩種倍率的物體空間取樣間距不同，圖中的像素寬度不能直接代表實際光學擴散範圍，仍須換算至物體空間比較。",
+    "paragraph_index": 964,
+    "images": []
+  },
+  {
+    "figure": "6-4",
+    "caption": "50倍下點擴散函數之擬合結果",
+    "paragraph_index": 967,
+    "images": [
+      {
+        "file": "fig6-04_01.png",
+        "rid": "rId61",
+        "partname": "/word/media/image49.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-5",
+    "caption": "20倍下點擴散函數之擬合結果",
+    "paragraph_index": 969,
+    "images": [
+      {
+        "file": "fig6-05_01.png",
+        "rid": "rId62",
+        "partname": "/word/media/image50.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-6",
+    "caption": "CD、10–90% 邊緣寬度與徑向剖面之量測方式",
+    "paragraph_index": 978,
+    "images": [
+      {
+        "file": "fig6-06_01.png",
+        "rid": "rId63",
+        "partname": "/word/media/image51.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-7",
+    "caption": "20× 原始中心九顆 pillar 影像",
+    "paragraph_index": 982,
+    "images": [
+      {
+        "file": "fig6-07_01.png",
+        "rid": "rId64",
+        "partname": "/word/media/image52.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-8",
+    "caption": "20× 使用固定 NSR = 0.05 之 Wiener 反卷積影像",
+    "paragraph_index": 984,
+    "images": [
+      {
+        "file": "fig6-08_01.png",
+        "rid": "rId65",
+        "partname": "/word/media/image53.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-9",
+    "caption": "50× 原始中心九顆 pillar 影像",
+    "paragraph_index": 986,
+    "images": [
+      {
+        "file": "fig6-09_01.png",
+        "rid": "rId66",
+        "partname": "/word/media/image54.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-10",
+    "caption": "50× 使用固定 NSR = 0.05 之 Wiener 反卷積影像",
+    "paragraph_index": 988,
+    "images": [
+      {
+        "file": "fig6-10_01.png",
+        "rid": "rId67",
+        "partname": "/word/media/image55.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-11",
+    "caption": "20× Raw 與 Wiener 之九顆 pillar 徑向邊緣剖面中位數",
+    "paragraph_index": 990,
+    "images": [
+      {
+        "file": "fig6-11_01.png",
+        "rid": "rId68",
+        "partname": "/word/media/image56.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-12",
+    "caption": "50× Raw 與 Wiener 之九顆 pillar 徑向邊緣剖面中位數",
+    "paragraph_index": 992,
+    "images": [
+      {
+        "file": "fig6-12_01.png",
+        "rid": "rId69",
+        "partname": "/word/media/image57.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-13",
+    "caption": "兩種倍率反卷積前後之平均 10–90% 邊緣寬度",
+    "paragraph_index": 994,
+    "images": [
+      {
+        "file": "fig6-13_01.png",
+        "rid": "rId70",
+        "partname": "/word/media/image58.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-14",
+    "caption": "預先指定 50% 邊界下之 Raw 與 Wiener 平均絕對 CD 誤差",
+    "paragraph_index": 1002,
+    "images": [
+      {
+        "file": "fig6-14_01.png",
+        "rid": "rId71",
+        "partname": "/word/media/image59.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-15",
+    "caption": "20× Raw 與 Wiener 之 CD 閾值敏感度",
+    "paragraph_index": 1005,
+    "images": [
+      {
+        "file": "fig6-15_01.png",
+        "rid": "rId72",
+        "partname": "/word/media/image60.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-16",
+    "caption": "50× Raw 與 Wiener 之 CD 閾值敏感度",
+    "paragraph_index": 1007,
+    "images": [
+      {
+        "file": "fig6-16_01.png",
+        "rid": "rId73",
+        "partname": "/word/media/image61.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-17",
+    "caption": "兩種倍率反卷積前後之最大局部振鈴比例",
+    "paragraph_index": 1013,
+    "images": [
+      {
+        "file": "fig6-17_01.png",
+        "rid": "rId74",
+        "partname": "/word/media/image62.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-18",
+    "caption": "20× Wiener 反卷積影像之二維傅立葉幅值頻譜",
+    "paragraph_index": 1016,
+    "images": [
+      {
+        "file": "fig6-18_01.png",
+        "rid": "rId75",
+        "partname": "/word/media/image63.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-19",
+    "caption": "50× Wiener 反卷積影像之二維傅立葉幅值頻譜",
+    "paragraph_index": 1018,
+    "images": [
+      {
+        "file": "fig6-19_01.png",
+        "rid": "rId76",
+        "partname": "/word/media/image64.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-20",
+    "caption": "MOSR 第 1 至第 120 訓練週期之未平滑訓練損失變化",
+    "paragraph_index": 1031,
+    "images": [
+      {
+        "file": "fig6-20_01.png",
+        "rid": "rId77",
+        "partname": "/word/media/image65.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-21",
+    "caption": "50× 完整視野之樣品中心、pillar、via 與中心3×3 pillar陣列定位",
+    "paragraph_index": 1038,
+    "images": [
+      {
+        "file": "fig6-21_01.png",
+        "rid": "rId78",
+        "partname": "/word/media/image66.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-22",
+    "caption": "20× 完整視野之上下翻轉方位與中心3×3 pillar陣列定位",
+    "paragraph_index": 1040,
+    "images": [
+      {
+        "file": "fig6-22_01.png",
+        "rid": "rId79",
+        "partname": "/word/media/image67.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-23",
+    "caption": "50× 與 20× 中心九顆 pillar 之帶正負號對比",
+    "paragraph_index": 1043,
+    "images": [
+      {
+        "file": "fig6-23_01.png",
+        "rid": "rId80",
+        "partname": "/word/media/image68.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-24",
+    "caption": "50× 原始影像之中心九顆 pillar",
+    "paragraph_index": 1054,
+    "images": [
+      {
+        "file": "fig6-24_01.png",
+        "rid": "rId81",
+        "partname": "/word/media/image69.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-25",
+    "caption": "50× 使用固定擬合 PSF 之 Wiener 反卷積結果",
+    "paragraph_index": 1056,
+    "images": [
+      {
+        "file": "fig6-25_01.png",
+        "rid": "rId82",
+        "partname": "/word/media/image70.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-26",
+    "caption": "50× MOSR 模型重建之中心九顆 pillar",
+    "paragraph_index": 1058,
+    "images": [
+      {
+        "file": "fig6-26_01.png",
+        "rid": "rId83",
+        "partname": "/word/media/image71.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-27",
+    "caption": "50× Raw、Wiener 與 MOSR 徑向邊緣剖面及九顆過渡寬度中位數",
+    "paragraph_index": 1061,
+    "images": [
+      {
+        "file": "fig6-27_01.png",
+        "rid": "rId84",
+        "partname": "/word/media/image72.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-28",
+    "caption": "20× 原始影像之中心九顆 pillar",
+    "paragraph_index": 1064,
+    "images": [
+      {
+        "file": "fig6-28_01.png",
+        "rid": "rId85",
+        "partname": "/word/media/image73.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-29",
+    "caption": "20× 使用固定擬合 PSF 之 Wiener 反卷積結果",
+    "paragraph_index": 1066,
+    "images": [
+      {
+        "file": "fig6-29_01.png",
+        "rid": "rId86",
+        "partname": "/word/media/image74.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-30",
+    "caption": "20× MOSR 模型重建之中心九顆 pillar",
+    "paragraph_index": 1068,
+    "images": [
+      {
+        "file": "fig6-30_01.png",
+        "rid": "rId87",
+        "partname": "/word/media/image75.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-31",
+    "caption": "20× Raw、Wiener 與 MOSR 徑向邊緣剖面及九顆過渡寬度中位數",
+    "paragraph_index": 1071,
+    "images": [
+      {
+        "file": "fig6-31_01.png",
+        "rid": "rId88",
+        "partname": "/word/media/image76.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-32",
+    "caption": "35–65% 閾值與兩種剖面下中心九顆 pillar 之 SEM 參考及 Raw、Wiener、MOSR CD 上下界",
+    "paragraph_index": 1078,
+    "images": [
+      {
+        "file": "fig6-32_01.png",
+        "rid": "rId89",
+        "partname": "/word/media/image77.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-33",
+    "caption": "中心九顆 pillar 之跨閾值 CD 絕對誤差中位數",
+    "paragraph_index": 1084,
+    "images": [
+      {
+        "file": "fig6-33_01.png",
+        "rid": "rId90",
+        "partname": "/word/media/image78.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-34",
+    "caption": "水平七列剖面之 CD 閾值敏感度",
+    "paragraph_index": 1087,
+    "images": [
+      {
+        "file": "fig6-34_01.png",
+        "rid": "rId91",
+        "partname": "/word/media/image79.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-35",
+    "caption": "360 度平均徑向剖面之 CD 閾值敏感度",
+    "paragraph_index": 1089,
+    "images": [
+      {
+        "file": "fig6-35_01.png",
+        "rid": "rId92",
+        "partname": "/word/media/image80.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-36",
+    "caption": "20× 非 PSF 校正影格之 Raw、Wiener 與 MOSR 跨閾值 CD 絕對誤差中位數",
+    "paragraph_index": 1094,
+    "images": [
+      {
+        "file": "fig6-36_01.png",
+        "rid": "rId93",
+        "partname": "/word/media/image81.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-37",
+    "caption": "50×、0.5 µm 序列之 Raw、Wiener 與 MOSR 逐次位移量",
+    "paragraph_index": 1101,
+    "images": [
+      {
+        "file": "fig6-37_01.png",
+        "rid": "rId94",
+        "partname": "/word/media/image82.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-38",
+    "caption": "50×、1.0 µm 序列之 Raw、Wiener 與 MOSR 逐次位移量",
+    "paragraph_index": 1104,
+    "images": [
+      {
+        "file": "fig6-38_01.png",
+        "rid": "rId95",
+        "partname": "/word/media/image83.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-39",
+    "caption": "20×、0.5 µm 固定 30 步之 Raw、Wiener 與 MOSR 逐次位移量",
+    "paragraph_index": 1107,
+    "images": [
+      {
+        "file": "fig6-39_01.png",
+        "rid": "rId96",
+        "partname": "/word/media/image84.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-40",
+    "caption": "20×、1.0 µm 序列之 Raw、Wiener 與 MOSR 逐次位移量",
+    "paragraph_index": 1110,
+    "images": [
+      {
+        "file": "fig6-40_01.png",
+        "rid": "rId97",
+        "partname": "/word/media/image85.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-41",
+    "caption": "四組序列之 Raw、Wiener 與 MOSR 逐次位移量標準差",
+    "paragraph_index": 1118,
+    "images": [
+      {
+        "file": "fig6-41_01.png",
+        "rid": "rId98",
+        "partname": "/word/media/image86.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-42",
+    "caption": "四組序列之 Raw、Wiener 與 MOSR 九顆 pillar 內部位移離散度",
+    "paragraph_index": 1120,
+    "images": [
+      {
+        "file": "fig6-42_01.png",
+        "rid": "rId99",
+        "partname": "/word/media/image87.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-43",
+    "caption": "Raw、Wiener 與 MOSR 相對PI閉迴路位移參考值之平均絕對偏差",
+    "paragraph_index": 1122,
+    "images": [
+      {
+        "file": "fig6-43_01.png",
+        "rid": "rId100",
+        "partname": "/word/media/image88.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-44",
+    "caption": "Wiener 與 MOSR 逐步降低中心九顆 pillar 位移離散度之比例",
+    "paragraph_index": 1125,
+    "images": [
+      {
+        "file": "fig6-44_01.png",
+        "rid": "rId101",
+        "partname": "/word/media/image89.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-45",
+    "caption": "50× 固定 PSF 相對校正位置距離之位移誤差",
+    "paragraph_index": 1135,
+    "images": [
+      {
+        "file": "fig6-45_01.png",
+        "rid": "rId102",
+        "partname": "/word/media/image90.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-46",
+    "caption": "20× 固定 PSF 相對校正位置距離之位移誤差",
+    "paragraph_index": 1137,
+    "images": [
+      {
+        "file": "fig6-46_01.png",
+        "rid": "rId103",
+        "partname": "/word/media/image91.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-47",
+    "caption": "完整MOSR模型相對Raw之兩倍率SEM對照CD誤差",
+    "paragraph_index": 1150,
+    "images": [
+      {
+        "file": "fig6-47_01.png",
+        "rid": "rId104",
+        "partname": "/word/media/image92.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-48",
+    "caption": "完整MOSR模型相對Raw之四組實拍位移序列步間穩定性",
+    "paragraph_index": 1154,
+    "images": [
+      {
+        "file": "fig6-48_01.png",
+        "rid": "rId105",
+        "partname": "/word/media/image93.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-49",
+    "caption": "完整MOSR模型相對Raw之九顆pillar位移一致性",
+    "paragraph_index": 1157,
+    "images": [
+      {
+        "file": "fig6-49_01.png",
+        "rid": "rId106",
+        "partname": "/word/media/image94.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-50",
+    "caption": "以輸入影像為基準的殘差輸出對兩倍率SEM對照CD誤差之影響",
+    "paragraph_index": 1161,
+    "images": [
+      {
+        "file": "fig6-50_01.png",
+        "rid": "rId107",
+        "partname": "/word/media/image95.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-51",
+    "caption": "抗混疊與一般上取樣之九顆pillar位移一致性",
+    "paragraph_index": 1167,
+    "images": [
+      {
+        "file": "fig6-51_01.png",
+        "rid": "rId108",
+        "partname": "/word/media/image96.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-52",
+    "caption": "完整MOSR模型相對Raw之外圍振鈴比較",
+    "paragraph_index": 1176,
+    "images": [
+      {
+        "file": "fig6-52_01.png",
+        "rid": "rId109",
+        "partname": "/word/media/image97.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-53",
+    "caption": "20倍via於固定局部對比閾值下的表觀CD範圍",
+    "paragraph_index": 1185,
+    "images": [
+      {
+        "file": "fig6-53_01.png",
+        "rid": "rId110",
+        "partname": "/word/media/image98.png"
+      }
+    ]
+  },
+  {
+    "figure": "6-54",
+    "caption": "Raw與MOSR於水平及垂直線條上的邊緣過渡寬度",
+    "paragraph_index": 1191,
+    "images": [
+      {
+        "file": "fig6-54_01.png",
+        "rid": "rId111",
+        "partname": "/word/media/image99.png"
+      }
+    ]
+  }
+]

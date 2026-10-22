@@ -1,0 +1,45 @@
+{
+  "source_document": "C:\\Users\\Rio\\OneDrive\\學業\\碩班\\論文\\可用\\論文完整版_20260716_v17_修訂版.docx",
+  "output_document": "C:\\Users\\Rio\\OneDrive\\學業\\碩班\\論文\\可用\\論文完整版_20260716_v18_圖表整理版.docx",
+  "figure_count": 54,
+  "table_count": 17,
+  "replacement_media_count": 49,
+  "lineage": {
+    "6-1, 6-2, 6-18, 6-19": {
+      "data": "中心3×3 pillar原始BMP與Wiener反卷積MAT檔；以FFT計算二維幅值頻譜。",
+      "source": "Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\figures\\center9_pillar_fit_20x_50x，source_data\\center9_pillar_fit_20x_50x\\psf_deconvolution_cd",
+      "script": "generate_v18_ch6_early_figures_clean.m"
+    },
+    "6-3, 6-4, 6-5": {
+      "data": "全視野與局部PSF擬合結果；局部PSF由PSF_fitted_2D_FOVstack.mat讀取。",
+      "source": "PSF_Fitting\\output\\deconvolution_baseline_psf_20260715",
+      "script": "generate_v18_ch6_early_figures_clean.m（圖6-3保留原始無文字排列圖）"
+    },
+    "6-6, 6-11至6-17": {
+      "data": "九顆pillar的徑向量測資料、SEM對照CD表與閾值敏感度表。",
+      "source": "Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\source_data\\center9_pillar_fit_20x_50x\\sharpness_validation 及 tables\\center9_pillar_fit_20x_50x",
+      "script": "generate_v18_ch6_early_figures_clean.m"
+    },
+    "6-7至6-10": {
+      "data": "20倍及50倍中心3×3 pillar的原始與固定PSF Wiener反卷積影像。",
+      "source": "Final_Data_Figures\\03_PSF_EXPERIMENT_RESULTS\\01_global_bads_fit\\figures\\center9_pillar_fit_20x_50x",
+      "script": "原始無文字影像，保留不重繪。"
+    },
+    "6-20至6-46": {
+      "data": "MOSR訓練記錄、共同影格選取、Raw/Wiener/MOSR逐顆CD與120個配對位移步次資料。",
+      "source": "Final_Data_Figures\\04_V42_NEURAL_NETWORK_RESULTS\\source_validation\\wiener_baseline_20260715\\tables，以及V42訓練記錄與共同輸入影像",
+      "script": "generate_v18_ch6_early_figures_clean.m、build_wiener_three_way_chapter62_figures_clean.m、generate_v18_fig36_clean.m"
+    },
+    "6-47至6-52": {
+      "data": "兩次配對訓練的模組與損失函數消融彙整結果。",
+      "source": "Experiments\\R63_CausalBoundaryMotionAblation\\results\\evaluation\\aggregate",
+      "script": "build_r63_figures_clean.m"
+    },
+    "6-53, 6-54": {
+      "data": "20倍via的SEM對照CD區間與水平、垂直線條的邊緣過渡寬度。",
+      "source": "LabSystem_MOSR\\Experiments\\Modern_Restoration_Benchmarks_20260719\\evaluation\\circular_cd_sharpness 及 line\\tables",
+      "script": "generate_v18_via_line_clean.m"
+    }
+  },
+  "caption_policy": "圖內只保留圖例、座標軸、刻度與必要視覺符號；量測規則、資料範圍與判讀方式置於圖說。"
+}
