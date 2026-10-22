@@ -1,0 +1,271 @@
+{
+  "status": "PASS",
+  "source_commit": "087f0b001310c0e6ea7654bc8c50dce1dfe21535",
+  "all130_original_paths_restored": true,
+  "restore": {
+    "status": "PASS",
+    "files_restored_and_verified": 130,
+    "bytes_restored": 242959491,
+    "selected_prefixes": [],
+    "identical_existing_files_reused": 0
+  },
+  "downloaded_models_CPU_loaded": [
+    {
+      "path": "Experiments/R32Sandbox/artifacts/training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431/weights/best_tradeoff.pth.tar",
+      "tensor_count": 126,
+      "epoch": 39,
+      "step": null,
+      "steps": null,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R147_FullResPSFConsistency/runs/formal_8192/checkpoints/step08192.pth",
+      "tensor_count": 108,
+      "epoch": null,
+      "step": 8192,
+      "steps": null,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/weights/direct_parallel.pth",
+      "tensor_count": 36,
+      "epoch": null,
+      "step": null,
+      "steps": 900,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/weights/joint_unsupervised_gate.pth",
+      "tensor_count": 38,
+      "epoch": null,
+      "step": null,
+      "steps": 900,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 600,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.01.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 300,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.03.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 300,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.08.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 300,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.12.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 300,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.18.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 300,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_denoise_calibrated_0.25.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 300,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_edge.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 600,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_guarded_denoise.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 600,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_radiometry.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 600,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/adoption_texture.pth",
+      "tensor_count": 26,
+      "epoch": null,
+      "step": null,
+      "steps": 600,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/denoise.pth",
+      "tensor_count": 28,
+      "epoch": null,
+      "step": null,
+      "steps": 700,
+      "all_floating_tensors_finite": true
+    },
+    {
+      "path": "Experiments/R108C_IndependentOpticalSpecialistsMicroprobe/weights/radiometry.pth",
+      "tensor_count": 28,
+      "epoch": null,
+      "step": null,
+      "steps": 700,
+      "all_floating_tensors_finite": true
+    }
+  ],
+  "generation_from_actual_GitHub_source": {
+    "status": "PASS",
+    "original_sources": {
+      "B": {
+        "path": "Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/scripts/run_microprobe.py",
+        "sha256": "de5b79a2ac0f7d07fd93648b745629a71c60facfd98762f7268cc133d70b3fb2"
+      },
+      "E": {
+        "path": "Experiments/R108E_ContourConservingProfileRendererMicroprobe/scripts/run_probe.py",
+        "sha256": "abdf0c99aecc201589610bbd3fefb981d2e4999879706d50818447f8312647a6"
+      }
+    },
+    "generated_files": [
+      {
+        "path": "R108B/microprobe_data.npz",
+        "sha256": "e01a97bc2b361195d550a6f3c5262e354b2424f8676ae9045c6abed765d39185",
+        "bytes": 12780277
+      },
+      {
+        "path": "R108E/profile_renderer_data.npz",
+        "sha256": "3e3ed993a03a0b354888b3d28edc4d2edcc26ee624f317e4615bfcb5a41b7663",
+        "bytes": 14045368
+      }
+    ],
+    "historical_source_hashes_matched": true,
+    "numpy_version": "1.26.4",
+    "opencv_version": "4.12.0",
+    "torch_imported": false,
+    "model_training_or_inference_executed": false
+  },
+  "generator_refuses_existing_output": true,
+  "different_existing_restore_file_refused": true,
+  "model_training_or_inference_executed": false,
+  "original_science_and_inputs_unchanged": true,
+  "published_release": {
+    "tag": "research-round-source-followthrough-20261022",
+    "source_commit": "087f0b001310c0e6ea7654bc8c50dce1dfe21535",
+    "release_id": 420778955,
+    "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-round-source-followthrough-20261022",
+    "assets": [
+      {
+        "id": 666006221,
+        "name": "BUNDLE_SUMMARY.json",
+        "size": 2410,
+        "digest": "sha256:326d91e11670c633035a12bf63c9a158ef59bef90a332daea5e90daa6e6f4279"
+      },
+      {
+        "id": 666006220,
+        "name": "research-historical-model-selection-figure-001.zip",
+        "size": 270242,
+        "digest": "sha256:ae1cfc110c5bc82e1fe532a7a7d311c68fa4314491e902240dcb3fb0923ffa91"
+      },
+      {
+        "id": 666006232,
+        "name": "research-original-selected-models-002.zip",
+        "size": 64547912,
+        "digest": "sha256:55794a9653302093182e1a53cd5374d4685042110c52c78dfb3b05b637fa00a6"
+      },
+      {
+        "id": 666006346,
+        "name": "research-r113-fixed-probe-sources-003.zip",
+        "size": 28213276,
+        "digest": "sha256:4f8296ee9d80ec4e6f77629c7b052b9fdcbf07743140c5dab5e155d02e04de03"
+      },
+      {
+        "id": 666006347,
+        "name": "research-r116-historical-preview-inputs-004.zip",
+        "size": 556411,
+        "digest": "sha256:efdc402192392a4f9f7b6bda182332651d6f355fa8e31b104f3b38e73eb52d6a"
+      },
+      {
+        "id": 666006458,
+        "name": "research-r132-fixed-guard-diagnostics-005.zip",
+        "size": 12939572,
+        "digest": "sha256:3ab0d57ccf7070351629032d120511924b3b54a942e0b47a7d57cf520719b85a"
+      },
+      {
+        "id": 666006848,
+        "name": "research-r32-frozen-eq-inputs-006.zip",
+        "size": 45602430,
+        "digest": "sha256:787261fa8ac8ea328d2797eb0708552ed655819fe11b83e01772f044c603a8e4"
+      },
+      {
+        "id": 666006955,
+        "name": "research-sem-orientation-and-review-evidence-007.zip",
+        "size": 4098269,
+        "digest": "sha256:5c2189aee3ebc4875f94a7394bec919bec6c2e805816288c610c1867cc58c172"
+      },
+      {
+        "id": 666006998,
+        "name": "research-thesis-traceability-reference-frames-008.zip",
+        "size": 5129430,
+        "digest": "sha256:824949f1bdd14e6f986e0f7049df27c000ebd05fa79ad72221de00b93798f038"
+      },
+      {
+        "id": 666007251,
+        "name": "RESEARCH_ASSETS.json.gz",
+        "size": 9723,
+        "digest": "sha256:48dfadc1f2817cfb2f62aa30d0658717bdddd3c0c786d020689d9b0d76dca590"
+      }
+    ]
+  },
+  "ordinary_files_actually_downloaded": 50,
+  "fixed_restore_tools_actually_downloaded": 3,
+  "new_asset_bytes": 161369675,
+  "new_release_original_files": 130,
+  "small_original_models_in_Git": 15,
+  "R32_original_split_checked": {
+    "train": 570,
+    "validation": 30,
+    "recorded_index_coverage": 600,
+    "not_a_claim_of_independent_physical_validation": true
+  },
+  "capacity_after": {
+    "published_releases": 26,
+    "assets": 250,
+    "asset_bytes": 142729900657,
+    "drafts": 0
+  },
+  "whole_project_complete": false,
+  "original_D_branch_index_refs_and_science_protected": true
+}
