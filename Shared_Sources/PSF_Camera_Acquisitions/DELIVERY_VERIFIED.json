@@ -1,0 +1,194 @@
+{
+  "status": "PASS",
+  "source_commit": "d161501b4758c3396314e26f9e62a3af2e7a5e2b",
+  "actual_download_assets": 17,
+  "new_original_files": 929,
+  "new_unique_objects": 929,
+  "all_downloaded_objects_verified": true,
+  "downloaded_images_decoded": 921,
+  "PSF100_all212_sources_restored_and_checked": true,
+  "PSF100_restore": {
+    "status": "PASS",
+    "files_restored_and_verified": 203,
+    "bytes_restored": 2699080250,
+    "selected_prefixes": [
+      "Shared_Sources/PSF_Camera_Acquisitions/PSF100_20250903",
+      "PSF_Fitting/Crop_circle_FreqFiltered"
+    ],
+    "identical_existing_files_reused": 8
+  },
+  "three_round_second_frame_representatives_restored": [
+    {
+      "path": "PSF_Fitting/quick_recalibration/validation_experiments/Circle_Round1/VisionTop_20260615163220351.bmp",
+      "restore": {
+        "status": "PASS",
+        "files_restored_and_verified": 1,
+        "bytes_restored": 26215478,
+        "selected_prefixes": [
+          "PSF_Fitting/quick_recalibration/validation_experiments/Circle_Round1/VisionTop_20260615163220351.bmp"
+        ],
+        "identical_existing_files_reused": 0
+      }
+    },
+    {
+      "path": "PSF_Fitting/quick_recalibration/validation_experiments/Circle_Round2/VisionTop_20260615165238907.bmp",
+      "restore": {
+        "status": "PASS",
+        "files_restored_and_verified": 1,
+        "bytes_restored": 26215478,
+        "selected_prefixes": [
+          "PSF_Fitting/quick_recalibration/validation_experiments/Circle_Round2/VisionTop_20260615165238907.bmp"
+        ],
+        "identical_existing_files_reused": 0
+      }
+    },
+    {
+      "path": "PSF_Fitting/quick_recalibration/validation_experiments/Circle_Round3/VisionTop_20260615170858483.bmp",
+      "restore": {
+        "status": "PASS",
+        "files_restored_and_verified": 1,
+        "bytes_restored": 26215478,
+        "selected_prefixes": [
+          "PSF_Fitting/quick_recalibration/validation_experiments/Circle_Round3/VisionTop_20260615170858483.bmp"
+        ],
+        "identical_existing_files_reused": 0
+      }
+    }
+  ],
+  "different_existing_file_refused_and_untouched": true,
+  "prefix_download_selection_checked": true,
+  "Step788_existing_providers_live_not_reuploaded": true,
+  "Step_full_dataset_not_redownloaded_this_turn": true,
+  "old_release_assets_unchanged": true,
+  "original_D_branch_index_config_science_protected": true,
+  "training_fitting_inference_started": false,
+  "H_free_bytes": 1121078018048,
+  "published_release": {
+    "status": "PUBLISHED",
+    "tag": "research-psf-camera-acquisitions-20261022",
+    "source_commit": "d161501b4758c3396314e26f9e62a3af2e7a5e2b",
+    "release_id": 420471970,
+    "url": "https://github.com/rio10255254/GMM_2_Final/releases/tag/research-psf-camera-acquisitions-20261022",
+    "assets": [
+      {
+        "id": 665183893,
+        "name": "BUNDLE_SUMMARY.json",
+        "size": 3852,
+        "digest": "sha256:c794ffb4405db763a5e5dddf2f4ac22a1d5db10840890bdfc85d1547b8af09df"
+      },
+      {
+        "id": 665184166,
+        "name": "research-june15-round1-001.zip",
+        "size": 1042366822,
+        "digest": "sha256:526e21a2a461aa940fa3beae93b64fbc1f83e34b9d9396776b2cbcb44fa87bb4"
+      },
+      {
+        "id": 665184422,
+        "name": "research-june15-round1-002.zip",
+        "size": 1044877799,
+        "digest": "sha256:35d4af515e79768d11566564c8aa97ca7135188af587d836d6d135b197758d52"
+      },
+      {
+        "id": 665203871,
+        "name": "research-june15-round1-003.zip",
+        "size": 1044980648,
+        "digest": "sha256:c669a6dac057b4c8692070a11c20dd04700ec9dc0c24a8888e7efc6e4adbbbc7"
+      },
+      {
+        "id": 665204384,
+        "name": "research-june15-round1-004.zip",
+        "size": 585194676,
+        "digest": "sha256:d0f76d92cf6dd50098df17a4d17075f54c9292f77ae2c0f65df414ac6f1f5a42"
+      },
+      {
+        "id": 665217135,
+        "name": "research-june15-round2-005.zip",
+        "size": 1044957649,
+        "digest": "sha256:94f1fdf6035d9d409e04578c9b57aa20e0278d283fd8cbcebb2f63511eb33847"
+      },
+      {
+        "id": 665223150,
+        "name": "research-june15-round2-006.zip",
+        "size": 1044080036,
+        "digest": "sha256:d4c7c945352db1994e9e837312066997813e08cbdb03932cb2b0bf0a5a2c0fb4"
+      },
+      {
+        "id": 665236746,
+        "name": "research-june15-round2-007.zip",
+        "size": 1045619564,
+        "digest": "sha256:6a49a1e4475fd8d97fc1446c1c0a22e84062288ba96abc16ec7f695ac2dfce96"
+      },
+      {
+        "id": 665242234,
+        "name": "research-june15-round2-008.zip",
+        "size": 583827699,
+        "digest": "sha256:bd159b58a0b2bdbb1ee093091d93d9d95c71d1d362cbd1cc76b582b37692f75d"
+      },
+      {
+        "id": 665250417,
+        "name": "research-june15-round3-009.zip",
+        "size": 1044997186,
+        "digest": "sha256:f4580f40fac8ff3cedc101a18b9570dd8f2069612423cc879b6fc4b0c2b1712e"
+      },
+      {
+        "id": 665252278,
+        "name": "research-june15-round3-010.zip",
+        "size": 1042753861,
+        "digest": "sha256:4042ba528fe4463564371de4246b94f25a97110bfaff4e99c434364dc822f2b6"
+      },
+      {
+        "id": 665263922,
+        "name": "research-june15-round3-011.zip",
+        "size": 1047052282,
+        "digest": "sha256:6b7e3970c94a49136002018c30ac476482bacf0981e25a1d9f7913f0c0b10d36"
+      },
+      {
+        "id": 665264663,
+        "name": "research-june15-round3-012.zip",
+        "size": 584578702,
+        "digest": "sha256:2c2409579a18e9eed4def94e7811abc390238ad05820bf1bf1c5049f78955d07"
+      },
+      {
+        "id": 665271782,
+        "name": "research-psf100-camera-013.zip",
+        "size": 1064312614,
+        "digest": "sha256:4ba774d0b36bc3733401d858f8230d953e368891193af115a8257a60486fa8a0"
+      },
+      {
+        "id": 665275082,
+        "name": "research-psf100-camera-014.zip",
+        "size": 499285448,
+        "digest": "sha256:c50c9b884462eadfe25ae34e99fcd1eb6dccff3dd138a92731a17f4b7015f637"
+      },
+      {
+        "id": 665280761,
+        "name": "research-psf100-frozen-inputs-015.zip",
+        "size": 13500418,
+        "digest": "sha256:9c9f209f2a693058ac1029f08feac9ca1be9b537c8c67273d64ada99ec8ba7cf"
+      },
+      {
+        "id": 665281371,
+        "name": "RESEARCH_ASSETS.json.gz",
+        "size": 53715,
+        "digest": "sha256:6cff9aa4780791dd8b1af8b15376aa998c483da6997698476e14077428b8a069"
+      }
+    ]
+  },
+  "small_source_files_downloaded": 143,
+  "fixed_restore_tools_downloaded": 3,
+  "capacity_after": {
+    "time": "2026-10-22T17:11:38.325509+08:00",
+    "repo_size_KiB": 1626346,
+    "published_releases": 24,
+    "published_assets": 228,
+    "published_asset_bytes": 137387906901,
+    "drafts": 0
+  },
+  "scope": "826 camera originals,100 frozen processed inputs,12 upstream/reference inputs; existing788 Step sources linked without duplication",
+  "all_938_selected_source_paths_accounted_for": true,
+  "PSF100_unselected295_not_uploaded": "Remain local; re-running complete395-image representative selection still requires these extra originals",
+  "all_historical_preprocessing_or_GPU_training_replayed": false,
+  "original_sources_deleted": false,
+  "original_data_bytes": 21736469231,
+  "new_asset_bytes": 12732442971
+}

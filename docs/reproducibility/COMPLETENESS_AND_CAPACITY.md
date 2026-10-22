@@ -1,5 +1,7 @@
 # 現在保存到哪裡、容量還能放多少
 
+2026-10-22後續補入[PSF100及0615不可替代原拍](../../Shared_Sources/PSF_Camera_Acquisitions/README.md)：826張完整原拍、100份實際擬合輸入與上游脈絡。新增17附件約12.73GB已全部取回核對；目前24個正式版本、228附件合計137,387,906,901 bytes（約137.39GB），草稿0。下方124.66GB表保留為本日較早原表補強時的快照；[最新實際收據](../../Shared_Sources/PSF_Camera_Acquisitions/DELIVERY_VERIFIED.json)記錄更新後數字。
+
 核對日期：2026-10-22。本頁說明目前可確認的保存範圍與容量，科學結論仍以[專案狀態](../../PROJECT_STATE.md)、[正式實驗索引](../../Experiments/INDEX.md)和各輪原正式報告為準。
 
 ## 「完整」要分清楚的範圍
