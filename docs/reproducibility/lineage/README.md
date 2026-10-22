@@ -15,6 +15,7 @@
 | 原設定中寫明用了哪一輪的資料或模型 | [439條原引用](DECLARED_UPSTREAM_REFERENCES.csv)，保留來源欄位與設定位置；宣告引用不自動等於實際繼承或獨立驗證 |
 | 80個本機分支的內容是否仍能從GitHub找到 | [逐分支對應](BRANCH_REACHABILITY.csv)／[完整核對資料](BRANCH_REACHABILITY.json) |
 | 目前哪些原程式、設定與正式文件已在主版本 | [3,126份來源逐檔核對](SOURCE_AVAILABILITY.json.gz) |
+| 本次補充是否真的已從GitHub取回 | [186份小型來源與導讀的實際取回紀錄](VERIFIED_CONTEXT_DELIVERY.json)，保留固定來源、數量、內容核對及未解限制 |
 
 ## 不帶輪次的內容也有主人
 
