@@ -1,0 +1,446 @@
+{
+  "status": "SCOPED_HISTORICAL_GAP_RECOVERY_PUBLISHED_AND_ACTUALLY_VERIFIED",
+  "time": "2026-10-22T11:26:39.090164+08:00",
+  "base": "0935dc643360e6f3ea0562417b82a012cc44c857",
+  "source_commit": "cd6a5f8ef6db6364475cbaf838af91143d8f460f",
+  "tree": "897020c210d0e22fec790b82e451534a582015d5",
+  "branch": "codex/historical-gap-recovery-20261022",
+  "changed_source_files": 76,
+  "changed_source_bytes": 2624804,
+  "actual_changed_files_retrieved": 76,
+  "additional_existing_source_input_files_retrieved": 22,
+  "all38_recorded_source_versions_actually_retrieved_match": true,
+  "all22_formerly_missing_versions_recovered_exact": true,
+  "GitHub_only_source_copy_recomputed_scores": 216,
+  "original_model_selections_reconstructed": 5,
+  "remaining_early_R13_formula_gaps": 0,
+  "modified_early_formula_source_stops_before_output": true,
+  "new_single_input_release": {
+    "id": 420269272,
+    "tag": "research-lab-r61-r36-source-20261022",
+    "draft": false,
+    "target_commit": "cd6a5f8ef6db6364475cbaf838af91143d8f460f",
+    "assets": [
+      {
+        "id": 664522535,
+        "name": "BUNDLE_SUMMARY.json",
+        "size": 543,
+        "digest": "sha256:5d5d7bb00b1560d40d1c7dd75c24d7b5ba35e75f4ae7580087a252b257866877"
+      },
+      {
+        "id": 664522537,
+        "name": "research-lab-r61-r36-initializer-001.zip",
+        "size": 15923528,
+        "digest": "sha256:7b9e372fb6225c4b86d2d696510cdd594ee9248c9d2e7f2e2efd682a85e82ae6"
+      },
+      {
+        "id": 664522538,
+        "name": "RESEARCH_ASSETS.json.gz",
+        "size": 616,
+        "digest": "sha256:3250fb9784ea815dca8b02a23b299218f62ad72115bec19278a176b9c33fc1d9"
+      }
+    ],
+    "original_bytes": 17402302,
+    "original_sha256": "d113d1ee7af8679ff6e5bb06bcd6004802a00e8e025f27de8037ee728e8a74a7",
+    "actual_download_and_restore_match": true,
+    "made_latest": false
+  },
+  "old22_releases_and208_assets_unchanged": true,
+  "published_releases_now": 23,
+  "assets_now": 211,
+  "drafts_now": 0,
+  "main_independent_R36_still_unresolved": true,
+  "Lab_R61_internal_R36_identified_separately": true,
+  "original_D_checkout_index_refs_models_data_policy_and_gallery_protected": true,
+  "training_and_model_inference_not_started": true,
+  "H_free_bytes": 1132687249408,
+  "meaning": "All22 originally missing recorded source versions recovered exact; one original early formula resolves9 totals; LabR61 internal r36 identified separately. Standalone mainR36 remains unresolved; missing historical runtime states are not fabricated.",
+  "source_files_actually_retrieved_manifest": [
+    {
+      "path": "Experiments/INDEX.md",
+      "bytes": 67550,
+      "sha256": "af51566c89a7b682f3fc0a39ad924609527cc60527839ae2c3d0ce5a79587d99"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/0509aaa2f6610f8177735cdcc0aa6d513e3582c6c45f67289404f06e5e8fedcc/train_r94.py",
+      "bytes": 41891,
+      "sha256": "0509aaa2f6610f8177735cdcc0aa6d513e3582c6c45f67289404f06e5e8fedcc"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/0f705254f67a8ece80543a9dbc0666521fc4cec3f7cbfa2da21d7026c78d6c36/train_r94.py",
+      "bytes": 38725,
+      "sha256": "0f705254f67a8ece80543a9dbc0666521fc4cec3f7cbfa2da21d7026c78d6c36"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/23ec1123a91e93c37d7a0dbf6e13e6ee77189b04389458c495b17c42e0213da0/experiment_design.json",
+      "bytes": 11349,
+      "sha256": "23ec1123a91e93c37d7a0dbf6e13e6ee77189b04389458c495b17c42e0213da0"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/2a25d203d0597911c7bdf6bb70516e02a8ddf7d0a62fb72c1684700490a0bdff/train_r94.py",
+      "bytes": 48273,
+      "sha256": "2a25d203d0597911c7bdf6bb70516e02a8ddf7d0a62fb72c1684700490a0bdff"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/56ef073108e48467326cff132406f4ecf4cb7ebe5232cc2b410ac77ed0c36938/train_r94.py",
+      "bytes": 40791,
+      "sha256": "56ef073108e48467326cff132406f4ecf4cb7ebe5232cc2b410ac77ed0c36938"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/5ff4993737b2ee6fcb7a45e6b58746b0dbd6a109017644898c42ec688e26cd89/train_r94.py",
+      "bytes": 39333,
+      "sha256": "5ff4993737b2ee6fcb7a45e6b58746b0dbd6a109017644898c42ec688e26cd89"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/88c5e52416a011c746c855b2cbd754bd1e89a20ddb92fc2f10553c5280365f0b/train_r94.py",
+      "bytes": 46598,
+      "sha256": "88c5e52416a011c746c855b2cbd754bd1e89a20ddb92fc2f10553c5280365f0b"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/8f03e949f4390088f3bcd97f57b2479945a89ebc962485706311b0cf15c3779f/r94_model.py",
+      "bytes": 32481,
+      "sha256": "8f03e949f4390088f3bcd97f57b2479945a89ebc962485706311b0cf15c3779f"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/9b3cb78a7f0dcd51709b4c52d6404fe99998317c163a290a8104277d1ce110a6/train_r94.py",
+      "bytes": 47630,
+      "sha256": "9b3cb78a7f0dcd51709b4c52d6404fe99998317c163a290a8104277d1ce110a6"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/README.md",
+      "bytes": 6118,
+      "sha256": "3531aa4f2914a7f861acd50fc3880886937cf72cd150402d3efe592c6d3da123"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/a8a2866fee7de81e08e0a8373b5a9155b5f4b581219bd1c1e16d106e2e87b08e/experiment_design.json",
+      "bytes": 11253,
+      "sha256": "a8a2866fee7de81e08e0a8373b5a9155b5f4b581219bd1c1e16d106e2e87b08e"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/b19127c9571f92f6c6e1d72ded4993936be83bdb608eb1194d9d40f16ac96315/train_r94.py",
+      "bytes": 40088,
+      "sha256": "b19127c9571f92f6c6e1d72ded4993936be83bdb608eb1194d9d40f16ac96315"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/b47870e2ffc8ca74208095ea04e1658db0b89c7fcb89041bcec81b1bdc7f7135/train_r94.py",
+      "bytes": 34510,
+      "sha256": "b47870e2ffc8ca74208095ea04e1658db0b89c7fcb89041bcec81b1bdc7f7135"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/bb222630e533631e4d26b4e3f12e074e0012bad6d04c7d4099305058c1b285d5/train_r94.py",
+      "bytes": 38790,
+      "sha256": "bb222630e533631e4d26b4e3f12e074e0012bad6d04c7d4099305058c1b285d5"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/db8580239818a93ab79e90c7d8f8b9816b0bac2e201b3ff240cea02f3627b4a3/train_r94.py",
+      "bytes": 38383,
+      "sha256": "db8580239818a93ab79e90c7d8f8b9816b0bac2e201b3ff240cea02f3627b4a3"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/ddf73583052f049a4cc902eefe55a76b5929430d1f03eb0a61bd1035f5d574f9/r94_model.py",
+      "bytes": 31619,
+      "sha256": "ddf73583052f049a4cc902eefe55a76b5929430d1f03eb0a61bd1035f5d574f9"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/e739b9185c9dbfff3a8b3caa6f6e07963fccb60be0d9a87e3163e05200eced4f/train_r94.py",
+      "bytes": 38783,
+      "sha256": "e739b9185c9dbfff3a8b3caa6f6e07963fccb60be0d9a87e3163e05200eced4f"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/f13e4846a107456e3455231e72917b78ac482761b45d5c84fa6cd5013b183db2/train_r94.py",
+      "bytes": 38855,
+      "sha256": "f13e4846a107456e3455231e72917b78ac482761b45d5c84fa6cd5013b183db2"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/f437b2ebcbf41d05ec183213d3dc5cbcbed91a47adf96b64738ecc0b9171fdbb/train_r94.py",
+      "bytes": 40855,
+      "sha256": "f437b2ebcbf41d05ec183213d3dc5cbcbed91a47adf96b64738ecc0b9171fdbb"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/archive/recovered_sources_20261022/fe450221906d9d41cb0c2b995115343b5593209343930e2f8438de3b780ffc05/train_r94.py",
+      "bytes": 39513,
+      "sha256": "fe450221906d9d41cb0c2b995115343b5593209343930e2f8438de3b780ffc05"
+    },
+    {
+      "path": "Experiments/R94_EvidenceConditionalScratch/reports/R94_AUDIT.md",
+      "bytes": 4697,
+      "sha256": "cbd73575226d8e56a4d9ab2d3d79ead76e24a29cea41fb960520f1de75c0adbf"
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/archive/recovered_sources_20261022/7431df7b46699089806f6a31e1d38e7f610bc433d5bf0dc4edff38abdaffa90d/experiment_design.json",
+      "bytes": 11464,
+      "sha256": "7431df7b46699089806f6a31e1d38e7f610bc433d5bf0dc4edff38abdaffa90d"
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/archive/recovered_sources_20261022/810f04e36a0ecc4e6148609871f089cc4008a69ebc3e940cd6cb8672bb2f4f8a/train_r95.py",
+      "bytes": 52510,
+      "sha256": "810f04e36a0ecc4e6148609871f089cc4008a69ebc3e940cd6cb8672bb2f4f8a"
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/archive/recovered_sources_20261022/README.md",
+      "bytes": 2008,
+      "sha256": "5d833504d4f1b7687c66e6f2e2dd80c300bc8d75db2acec26334f1849da9cc4a"
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/archive/recovered_sources_20261022/d0cb1a2759e5b9e26d21af29f6d0aec7d6b4daaff5a8e1c555db682d039e7c96/train_r95.py",
+      "bytes": 76461,
+      "sha256": "d0cb1a2759e5b9e26d21af29f6d0aec7d6b4daaff5a8e1c555db682d039e7c96"
+    },
+    {
+      "path": "Experiments/R95_CounterfactualGateRepairScratch/reports/R95_AUDIT.md",
+      "bytes": 6488,
+      "sha256": "c3318d74ea00fc4d58129193a5bc549c16a451ffd0d30c8b555df0e1c880d7c6"
+    },
+    {
+      "path": "PROJECT_STATE.md",
+      "bytes": 148120,
+      "sha256": "f8196099dba8909bb2d4c583616c48c9bfcd0fa929bddd12dcc59cbbab971eb2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5101,
+      "sha256": "017e4f117c093e6ec2c13f7c5d36fa49672cc033e098ba495da9466c48f2c8cd"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/R61_PROGRESS_20260623.md",
+      "bytes": 54505,
+      "sha256": "1a1bfeef4176fd3f5beb7f5fd59c2491382f70d348fab442f48456360c5507b9"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/boundary_metrics.csv",
+      "bytes": 305634,
+      "sha256": "bd6d8c2c3b2696d8041acdf2f7ebea267ac6325124076fdea68b5a3bf06ad1de"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/case_manifest.json",
+      "bytes": 14595,
+      "sha256": "b908a14ba8e91720188f38e0db75f6bbbf3c15d00549d595bdd474685501631f"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/summary.json",
+      "bytes": 2556,
+      "sha256": "7f1edaf22dc1826331a1221711119c07fca78dda234a6ff0bf1f713769fd57bd"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/r36_best_vs_r8_gate.json",
+      "bytes": 11699,
+      "sha256": "5a79ab88b41072a2ce072f3c5164d9562228901949bf63014cdebab9ebeebc32"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/boundary_metrics.csv",
+      "bytes": 305623,
+      "sha256": "2387cd3bdad9f2b479ae4796d96ff12e3eefc9c2b58d5a2e2416214fe960d923"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/case_manifest.json",
+      "bytes": 14595,
+      "sha256": "b908a14ba8e91720188f38e0db75f6bbbf3c15d00549d595bdd474685501631f"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/summary.json",
+      "bytes": 2556,
+      "sha256": "87020f84f3cbde06e6d878c10891b3f6b2facacec43967cc0286bc9450e0c1ea"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/r36_latest_vs_r8_gate.json",
+      "bytes": 11949,
+      "sha256": "b3b78c9b68dab93b3122b2cddefdd0cbcf540ab8f3b683ea5c54e8cedd602e64"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/wide_96case_r60_vs_r8best_20260623/R8_best_tradeoff/diverse_phantom_validation_20260623_040536/boundary_metrics.csv",
+      "bytes": 305619,
+      "sha256": "d909b963393f8c281562b194832c10d752578692a82992e39d7dc1ec6f0dd1a4"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus_r36_from_a948_orientation_rotrect_v10_80b_20260623_075823/LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus_r36_from_a948_orientation_rotrect_v10_80b_batch_log_v5.csv",
+      "bytes": 52010,
+      "sha256": "57f595bd0f3732cb5bd692c664c5edfc2a359afdcc72e526c59d40df03954cfa"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus_r36_from_a948_orientation_rotrect_v10_80b_20260623_075823/LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus_r36_from_a948_orientation_rotrect_v10_80b_val_log_v5.csv",
+      "bytes": 11869,
+      "sha256": "08aaad1b1ef5d2136ec01191c59f6eb4fa2768ab5598d260683892344232952a"
+    },
+    {
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus_r36_from_a948_orientation_rotrect_v10_80b_20260623_075823/run_meta.json",
+      "bytes": 1311,
+      "sha256": "5df4cb3b614375688302fdf1b94397169beea63b656a1265b7971e665ca0a31d"
+    },
+    {
+      "path": "Tools/replay_legacy_multiscale_selection.py",
+      "bytes": 7886,
+      "sha256": "53c0ded835a43ca0d50e7a1bb496c11737854c1442e8ce1b7e7f14f4661fc0ec"
+    },
+    {
+      "path": "docs/reproducibility/ASSET_GUIDE.md",
+      "bytes": 5509,
+      "sha256": "ddf42f01fa98b5e1c791861e03e05902a5b68aac2886c75e51757e0837788950"
+    },
+    {
+      "path": "docs/reproducibility/EXPERIMENTS.md",
+      "bytes": 39143,
+      "sha256": "cbdeaf831b9da79f477e81d0ffcddff7efb5da033691985004530e0587c18b99"
+    },
+    {
+      "path": "docs/reproducibility/GENERATION_GUIDE.md",
+      "bytes": 13752,
+      "sha256": "80b9349c93b75927d2f8cb7d52d9eccfa3e419cbe20c4965c3750f5fa20054e6"
+    },
+    {
+      "path": "docs/reproducibility/KNOWN_GAPS.md",
+      "bytes": 3520,
+      "sha256": "ecdb9d9b480c27026cf8f485c3ada3dd7b4234e6e1ad9748fcd05c993b93593a"
+    },
+    {
+      "path": "docs/reproducibility/README.md",
+      "bytes": 3647,
+      "sha256": "bc2968db590448345ae7d977fb07be3721078db617589c2e96a8511feade568b"
+    },
+    {
+      "path": "docs/reproducibility/experiments/lab__R61_BoundaryGeneralizationUniversal.md",
+      "bytes": 6110,
+      "sha256": "a20f1d2af7d85d74d6d13b696bcb007fabfed242bafd57b5d32ebc09ab719e96"
+    },
+    {
+      "path": "docs/reproducibility/experiments/legacy__organized_20260311.md",
+      "bytes": 6727,
+      "sha256": "b3466556d0b004c4dc2d8338ca1508e0fd4993427d498f9fca7029bf813f2b3a"
+    },
+    {
+      "path": "docs/reproducibility/experiments/legacy__organized_20260312.md",
+      "bytes": 3539,
+      "sha256": "78ec726fee3a41ad40281edd32bcdea91a7367fa2e3ff97f66b5a74a76154a00"
+    },
+    {
+      "path": "docs/reproducibility/four_rounds/HISTORICAL_SOURCE_AVAILABILITY.json",
+      "bytes": 51665,
+      "sha256": "29b2a344d627129a98202c0787c32eeedc2498a78415c80b250234db6636032e"
+    },
+    {
+      "path": "docs/reproducibility/four_rounds/ORIGINAL_SOURCE_PATCHES_20261022.json.gz",
+      "bytes": 60354,
+      "sha256": "b9b476383189a628468cd76de1809cfd65b3d6a72f03db9f0201efc74f69700b"
+    },
+    {
+      "path": "docs/reproducibility/four_rounds/README.md",
+      "bytes": 13222,
+      "sha256": "3da7a11b876353b76060d2a42866865ff4fabd4d04f371620a8aa4c6062a53fb"
+    },
+    {
+      "path": "docs/reproducibility/four_rounds/RECOVERY_IMPACT_20261022.md",
+      "bytes": 3694,
+      "sha256": "edba015b2d6fe47ec4338894964aba78ee312e718cff85ead9bb9ba4c811b555"
+    },
+    {
+      "path": "docs/reproducibility/four_rounds/SOURCE_RECOVERY_20261022.json",
+      "bytes": 31592,
+      "sha256": "43bcddbb879f81598bc7da6129b51996776665f03e16717e9053bde314536895"
+    },
+    {
+      "path": "docs/reproducibility/legacy_multiscale/FORMULA_RECOVERY_20261022.json",
+      "bytes": 8661,
+      "sha256": "1d02aa1f5b6da7cbe04cb93e14e7b039ebc186f7407e78c274b85c1f7fbe3c7c"
+    },
+    {
+      "path": "docs/reproducibility/legacy_multiscale/FORMULA_RECOVERY_20261022.md",
+      "bytes": 2405,
+      "sha256": "8a12a34f6f9f9393e0fb01d7ed6785369c5ce72436728599aa9d0602a177f021"
+    },
+    {
+      "path": "docs/reproducibility/legacy_multiscale/INPUT_IDENTITIES.json",
+      "bytes": 2172,
+      "sha256": "61368e3d44f94b9990d960efdcf04550d90cc824d0c2bef93adb044b0687fa5c"
+    },
+    {
+      "path": "docs/reproducibility/legacy_multiscale/NUMERIC_REPLAY_RECOVERED_FORMULA_20261022.json",
+      "bytes": 29444,
+      "sha256": "b39edb3f75c6023b9221fc60de76a3944cfa9fe406e0a2d387e220b78b28aa53"
+    },
+    {
+      "path": "docs/reproducibility/legacy_multiscale/ORIGINAL_FORMULA_EVENTS_20260311.json",
+      "bytes": 14049,
+      "sha256": "6f120913791333d91e5146f103c5887b966e589230ffbceafee6a9f70e1fd1c4"
+    },
+    {
+      "path": "docs/reproducibility/legacy_multiscale/README.md",
+      "bytes": 6101,
+      "sha256": "3c5cbbdcb112740321fbaed22436fe0bd9ce563b1ab5f6b8f9f8214a08e65f89"
+    },
+    {
+      "path": "docs/reproducibility/legacy_multiscale/recovered_sources/20260311_121009/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py",
+      "bytes": 9460,
+      "sha256": "c10520397d400b8cba19098542727390f6df35ef5f81264cb310478472ae4586"
+    },
+    {
+      "path": "docs/reproducibility/lineage/CURRENT_LINEAGE_REGISTRY.json.gz",
+      "bytes": 20165,
+      "sha256": "bdbb661a507fe37a6af9b143bd07c3d48146e8b1f32acca1c8eb17b38fe283d4"
+    },
+    {
+      "path": "docs/reproducibility/lineage/EARLY_ROUNDS.md",
+      "bytes": 8334,
+      "sha256": "eaf9d03e0a0245de495ce129529f4989cf7f789ee61c97b2d5e96729629e07ed"
+    },
+    {
+      "path": "docs/reproducibility/lineage/LAB_R61_R36_FIXED_INITIALIZER.json",
+      "bytes": 1592,
+      "sha256": "9d60dda0403e5ccd8f522b8860e22730de59c7b179780f636eb5e8dd26d7bb9f"
+    },
+    {
+      "path": "docs/reproducibility/lineage/LAB_R61_R36_ORIGINAL_COMMANDS.json",
+      "bytes": 6009,
+      "sha256": "04fd3615d68e324ad677df0523f19797cc7faa10a9126c2b0e83607562017b83"
+    },
+    {
+      "path": "docs/reproducibility/lineage/LAB_R61_R36_ORIGINAL_LAUNCH_CONFIGURATION.json",
+      "bytes": 1973,
+      "sha256": "79c7600a5350776045dbe5dcb631494289039d9f36d3b0c5dd26e2833b474954"
+    },
+    {
+      "path": "docs/reproducibility/lineage/LAB_R61_R36_PROVIDERS.json",
+      "bytes": 10375,
+      "sha256": "1de2a0298910180f7ed632f3f252f97cef0182d02bd9498bb9990900ed6d00e1"
+    },
+    {
+      "path": "docs/reproducibility/lineage/LAB_R61_R36_TABLE_REPLAY_20261022.json",
+      "bytes": 1666,
+      "sha256": "979e094f3cc03e20f88c123fab85357296eef3cfc67167db812321aa147964a6"
+    },
+    {
+      "path": "docs/reproducibility/lineage/LAB_SYSTEM.md",
+      "bytes": 15897,
+      "sha256": "675ae13fccc555fb15f5bc0ff548ba7a54aaa6f6d2d6922b50f2cb25a2552968"
+    },
+    {
+      "path": "docs/reproducibility/lineage/R36_EXTRA_HISTORY_SEARCH_20261022.json",
+      "bytes": 378,
+      "sha256": "d3c2d9380a2a058241c739de088e5f234b414ad96e8a6e4e6817b41643d459f7"
+    },
+    {
+      "path": "docs/reproducibility/lineage/R36_IDENTITIES_20261022.md",
+      "bytes": 5789,
+      "sha256": "e9feab65610360e3688e236b15f2786c50134d267b1e4635c57b1edba23012ea"
+    },
+    {
+      "path": "docs/reproducibility/lineage/README.md",
+      "bytes": 11549,
+      "sha256": "3de7a990b6241ce6b5025f22315597da1fcdda5ced0407bfd675481aad614860"
+    },
+    {
+      "path": "docs/reproducibility/lineage/ROUND_NUMBER_MAP.md",
+      "bytes": 39363,
+      "sha256": "f70fcc89b97f4dd545538aab6362a3abd73111b3d3f7841035a0e587afde8084"
+    },
+    {
+      "path": "docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md",
+      "bytes": 4304,
+      "sha256": "eeef85b2cc74730375b32d153f9c73953abd8e78b065d47d3d394324c3611959"
+    }
+  ],
+  "not_claimed": [
+    "all historical GPU training repeated",
+    "all old runtime states reconstructed",
+    "main experiment R36 identified from unrelated Lab internal attempt"
+  ],
+  "supplemental_full_inventory_location_query": "Optional additional metadata scan was interrupted while IO-bound; not counted as an absence finding. Completed source/history scope is documented separately."
+}

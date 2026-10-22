@@ -1,5 +1,5 @@
 {
-  "status": "SINGLE_FIXED_ORIGINAL_INPUT_ACTUALLY_DOWNLOADED_AND_RESTORED_MATCHED",
+  "status": "ONE_REQUIRED_FIXED_INPUT_PUBLISHED_ACTUALLY_DOWNLOADED_AND_RESTORED_MATCHED",
   "time": "2026-10-22T11:15:34.473924+08:00",
   "repo": "rio10255254/GMM_2_Final",
   "tag": "research-lab-r61-r36-source-20261022",
@@ -34,6 +34,9 @@
   ],
   "actual_GitHub_download_and_restore_match": true,
   "make_latest": false,
-  "source_commit_to_bind_after_small_code_publication": true,
-  "publication_state": "bound to this small-source publication; final server state checked in closing receipt"
+  "source_commit_to_bind_after_small_code_publication": false,
+  "publication_state": "published_fixed_release",
+  "published": true,
+  "draft": false,
+  "source_commit": "cd6a5f8ef6db6364475cbaf838af91143d8f460f"
 }
