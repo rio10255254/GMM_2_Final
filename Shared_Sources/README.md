@@ -1,5 +1,7 @@
 # 共用研究來源
 
+2026-10-22接續：[Lab25張原校正、30份原邊界量測、固定驗證圖與PSF完整395張來源](../docs/reproducibility/priority_sources_20261022/README.md)按用途取得，不重複上傳前100張PSF原拍。
+
 2026-10-22新增：[PSF100與0615原拍歸檔](PSF_Camera_Acquisitions/README.md)，分清826張完整原拍、100張實際處理輸入與既有788張Step；按用途取得，不重傳生成圖。
 
 2026-10-22補入直接閱讀入口：[30份原平台CSV](PI_Repeatability_20260903/position_records/README.md)與[原SEM工作表](SEM_Originals/README.md)，內容不改；完整相機／SEM照片仍共用原附件。
