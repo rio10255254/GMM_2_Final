@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "objects": [
+    {
+      "asset_id": 646865055,
+      "asset_name": "research-fixed-models-014.zip",
+      "sha256": "9596d6d4dbcb6972f9c802d282728f3818c40423ee9852b362b331ade48a057a",
+      "bytes": 19040326,
+      "output_name": "v7_best_tradeoff.pth.tar"
+    },
+    {
+      "asset_id": 646884320,
+      "asset_name": "research-fixed-models-021.zip",
+      "sha256": "eb8b5c5d4703c6da3c157626d47cd288ec9139e62a83ddc848e07b47ff6cb9f5",
+      "bytes": 36427090,
+      "output_name": "v28_latest.pth.tar"
+    }
+  ],
+  "rebuild_from_GitHub_models_and_GitHub_tool": "PASS",
+  "functional_checks": [
+    {
+      "case": "v24",
+      "different_tensors": [],
+      "same_model_config": true
+    },
+    {
+      "case": "v29",
+      "different_tensors": [],
+      "same_model_config": true
+    }
+  ],
+  "training_or_inference": false
+}

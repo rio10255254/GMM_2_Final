@@ -12,7 +12,7 @@ Last updated: 2026-10-22（逐輪來源接續、R32/R147模型補件與R108資�
 - 論文目前採用R152／RAW，R153保存十方法各930張、8370讀值、30趟與150次效率的完整結果；兩官方後端受阻保留。
 - [原論文交接及全部限制](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。
 ### GitHub精選研究固定來源
-- LabSystem 26範圍續查：71份關鍵原件及47個代表模型已有來源；補上R62兩個固定輸出模型與45份核心資料／診斷清單。其餘epoch與生成影像不整批上傳。[逐輪來源與模型](docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md)。
+- LabSystem 26範圍續查：71份關鍵原件及47個代表模型已有來源；補上R62兩個固定輸出模型與45份核心資料／診斷清單；GitHub取回及由既有基礎模型重建核對通過。其餘epoch與生成影像不整批上傳。[逐輪來源與模型](docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md)。
 - R33／COMBO／R39／R40指定來源續查：13模型與535份原結果有保存；經使用者同意補存前1,000組早期固定環形配對，後100組重用既有PSF輸入；已從GitHub完整組回1,100組且內容相同。41份原表直接閱讀，四種混合模型內容核對一致。[來源與限制](docs/reproducibility/round_source_reviews/BASELINE_20261023.md)。
 - R69指定25個原件已有保存，9張SEM與舊配對程式已取回；9份原數表／判決另提出直接閱讀。修正配對光學圖與SEM不同附件的取得說明；[原來源與重做界線](docs/reproducibility/round_source_reviews/R69_20261022.md)保留共用模組版本限制。
 - 逐輪接續：補R32選用／R147最後模型、R108B/C15個小模型與130份固定來源；全部取回核對。13輪17筆完成模型紀錄已查；R108兩套資料由取回原碼精確重生。舊534候選已分類，62範圍已有指定面向核對，但全專案尚未閉合。[逐輪帳本與本批交付](docs/reproducibility/round_source_followthrough_20261022/README.md)。

@@ -33,7 +33,7 @@ R69另完成[指定來源對照與原表直接閱讀](round_source_reviews/R69_2
 
 早期主線四輪另完成[固定來源、原表與模型關係核對](round_source_reviews/BASELINE_20261023.md)。使用者同意將1,000組生成來源未明的共用配對保存一次；其餘已保存來源重用，沒有重訓。
 
-LabSystem另完成[26個研究範圍的必要來源與代表模型核對](round_source_reviews/LAB_SYSTEM_20261023.md)：既有47個代表模型不重傳；補上兩個R62固定輸出模型與45份核心清單，關鍵原拍／SEM／PSF均已有來源。
+LabSystem另完成[26個研究範圍的必要來源與代表模型核對](round_source_reviews/LAB_SYSTEM_20261023.md)：既有47個代表模型不重傳；補上兩個R62固定輸出模型與45份核心清單；兩個模型及其基礎模型已從GitHub取回重建核對，關鍵原拍／SEM／PSF均已有來源。
 
 ## 還有什麼缺口
 

@@ -16,3 +16,6 @@
 [47個既有代表模型的提供者](../../docs/reproducibility/round_source_reviews/LAB_REPRESENTATIVE_MODELS_20261023.json.gz)及[71份關鍵原件](../../docs/reproducibility/round_source_reviews/LAB_CRITICAL_SOURCES_20261023.json)可供機器核對。R62新補的兩份固定輸出模型位於原`Traing_Progress/packaged_checkpoints`。
 
 本頁只整理深層關係，不改原模型採用判決。目前論文仍以R152／RAW及R153交接為準。
+
+
+本批兩個R62固定輸出模型及全部說明已實際從GitHub取回；V7／V28基礎模型也由既有大型附件定點取回後完成重建核對。
