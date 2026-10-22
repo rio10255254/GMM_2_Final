@@ -4,7 +4,7 @@
 
 本次核對現有122個主專案實驗資料夾、26個Lab實驗資料夾、29個早期閱讀分組，另找出三個只在歷史分支的實驗。80個本機有名分支的版本都已能從GitHub到達；分支數不是獨立實驗數。
 
-**R36仍未找到獨立研究證據。** 早期R2至R10已再按原JSON內的profile及原日誌串回；R3有兩種profile各兩次，R10包含在R9排程的第二、三步。不能只看資料夾或檔名判斷，也不能把PSF校正自己的Round3當神經訓練R3。
+**主專案獨立R36仍未辨認；Lab R61內部r36已有原紀錄，兩者不同。** 早期R2至R10已再按原JSON內的profile及原日誌串回；R3有兩種profile各兩次，R10包含在R9排程的第二、三步。不能只看資料夾或檔名判斷，也不能把PSF校正自己的Round3當神經訓練R3。
 
 [完整研究沿革](README.md)／[早期原件與限制](EARLY_ROUNDS.md)／[LabSystem全線](LAB_SYSTEM.md)／[歷史分支](HISTORICAL_BRANCHES.md)
 
@@ -22,7 +22,7 @@
 | R10 | [early/R10 crossscale_seqval](EARLY_ROUNDS.md#r10) | crossscale_seqval：在R9排程第二／三步，分別測0.8與8px，不能因共用log名稱而漏記 |
 | R11 | [early/Round11整環缺陷](EARLY_ROUNDS.md#r11) | Round11整環缺陷：保留三尺度原外部回傳，主尺度改善未帶來其他尺度成功 |
 | R12 | [early/Round12方法組初排](../legacy_multiscale/README.md) | Round12方法組初排：三尺度方法組由三份模型構成，不等於單模型三尺度通過 |
-| R13 | [early/Round13固定模型再審](../legacy_multiscale/README.md) | Round13固定模型再審：早晚試跑、方法組和單模型分開；九項早期總分公式缺件 |
+| R13 | [early/Round13固定模型再審](../legacy_multiscale/README.md) | Round13固定模型再審：早晚試跑、方法組和單模型分開；早期原公式已找回，九項總分重算相同 |
 | R14 | [early/Round14 corridor](../legacy_multiscale/README.md) | Round14 corridor：初排第一與最後固定模型不同，保留完整選擇理由 |
 | R15 | [early/Round15中心鎖定](../legacy_multiscale/README.md) | Round15中心鎖定：初跑失敗修復與固定模型同分處理均保留 |
 | R16 | [legacy/round16](../experiments/legacy__round16.md) | 更換邊界估計讀法：曾為內部較好版本，後被取代 |
@@ -45,7 +45,7 @@
 | R33 | [main/R33ContrastFix](../experiments/main__R33ContrastFix.md)；[main/R33RobustLoss](../experiments/main__R33RobustLoss.md) | 提高統計項能否修復R33的灰階與銳利度：目標本身變化小，增加權重未恢復細節；負結果需保留；減少極端像素牽引是否改善位移穩定：p95為已核准替代；保留穩定性收益及銳利度代價，連同R34／R35／R37失敗支線 |
 | R34 | [historical_branch/R34](HISTORICAL_BRANCHES.md#r34) | 空間分頻：原報告、設定、完整小型結果及模型已有GitHub來源；本次補直接閱讀與圖中R26共用參照的讀法 |
 | R35 | [historical_branch/R35](HISTORICAL_BRANCHES.md#r35) | 提高光學反卷積強度：原報告、設定、完整小型結果及模型已有GitHub來源；本次補直接閱讀與圖中R26共用參照的讀法 |
-| R36 | [未獨立辨認](EARLY_ROUNDS.md#尚未能綁回的編號) | 不以日期批次、資料stage或其他專案的同名編號補造；現有原資料仍沿原分組保存。 |
+| R36 | [Lab R61內部r36已確認；主編號仍未獨立辨認](R36_IDENTITIES_20261022.md) | 2026-06-23方向輸入／旋轉矩形v10短訓練有原模型與96案例完整結果；不是2026年4月主R35／37間的獨立R36。 |
 | R37 | [historical_branch/R37](HISTORICAL_BRANCHES.md#r37) | 光學層頻率正則：原報告、設定、完整小型結果及模型已有GitHub來源；本次補直接閱讀與圖中R26共用參照的讀法 |
 | R38 | [main/R38SeqConsistency](../experiments/main__R38SeqConsistency.md)；[main/R38v2SeqFixed](../experiments/main__R38v2SeqFixed.md) | 直接學習連續影像的一致性：全尺度序列受到弱訊號干擾；這是R38v2修復的前因；只保留有足夠訊號的序列訓練並結合R33：R38v2是視覺替代；COMBO是正式基準，兩個身分不能混用 |
 | R39 | [main/R39_ShapeGeneralization](../experiments/main__R39_ShapeGeneralization.md)；[lab/R39_ShapeGeneralization](../experiments/lab__R39_ShapeGeneralization.md) | 保留環形能力並擴大非環形重建：端點與權重平均版需分開；跨R39／R40的a025是核准平衡替代；Lab環境中的多形狀轉移：與主專案R39分開，Lab起點及成像條件不能互換 |

@@ -1,0 +1,38 @@
+{
+  "candidate": "r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus",
+  "profile": "r61_universal_boundary_train_polarity_rotated_rect_guard_v10",
+  "data_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_polarity_rotated_rect_guard_v10",
+  "total_pairs": 7496,
+  "role_counts": {
+    "legacy_shape": 800,
+    "sem_truth_anchor": 1400,
+    "sequence_guard": 1200,
+    "universal_synthetic": 4096
+  },
+  "polarity_counts": {
+    "bright": 2048,
+    "dark": 2048,
+    "unknown": 3400
+  },
+  "base_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\r31_r28pos75_soup_20260623\\r31_r28pos75_a948.pth.tar",
+  "scratch_training": false,
+  "lab_compatible_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\_checkpoint_cache\\r31_r28pos75_a948.pth_labpsf_7993317d6135.tar",
+  "model_name": "LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus_r36_from_a948_orientation_rotrect_v10_80b",
+  "num_epoch": 6,
+  "device": "cuda:0",
+  "lr": 2e-06,
+  "train_include_subdirs": [
+    "stage_34_r61_legacy_shape",
+    "stage_35_r61_sequence_guard",
+    "stage_36_r61_sem_truth_anchor",
+    "stage_37_r61_universal_synthetic"
+  ],
+  "fixed_split_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_polarity_rotated_rect_guard_v10\\splits\\grouped_seed1337_val100",
+  "fixed_split_group_overlap_count": 0,
+  "fixed_split_train_count": 6745,
+  "fixed_split_val_count": 751,
+  "boundary_geom_enable": true,
+  "r61_universal_boundary_training": true,
+  "anti_answer_leakage_required": true,
+  "selection_gate": "synthetic_generalization_plus_cd_plus_sequence_guard"
+}

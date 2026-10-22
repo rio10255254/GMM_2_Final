@@ -1,0 +1,61 @@
+{
+  "identity": "Lab R61 internal attempt r36, not a standalone main experiment R36",
+  "commands": [
+    {
+      "source_thread": "019ee2ed-ffc9-7fb3-88e5-8fcd1e1aa8c2",
+      "original_event_line": 10482,
+      "original_utc": "2026-06-22T23:58:18.685Z",
+      "original_arguments": {
+        "command": "python -u .\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\launch_r61.py --candidate r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus --base-checkpoint \"D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\r31_r28pos75_soup_20260623\\r31_r28pos75_a948.pth.tar\" --run-suffix r36_from_a948_orientation_rotrect_v10_80b --num-epoch 6 --max-train-batches 80 --batch-size 4 --val-batch-size 2 --num-workers 2 --crop-size 256 --seq-batch-size 2 --device cuda:0",
+        "workdir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence",
+        "timeout_ms": 900000
+      },
+      "original_exit_code": 0
+    },
+    {
+      "source_thread": "019ee2ed-ffc9-7fb3-88e5-8fcd1e1aa8c2",
+      "original_event_line": 10488,
+      "original_utc": "2026-06-23T00:02:29.703Z",
+      "original_arguments": {
+        "command": "python -u .\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\run_diverse_phantom_validation.py --weights \"D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus_r36_from_a948_orientation_rotrect_v10_80b_20260623_075823\\weights\\best_tradeoff.pth.tar\" --output-root \".\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\diverse_phantom_validation\\r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623\" --size 512 --seeds \"7001,7002,7003,7004\" --biases \"0.0,0.5,1.0,1.5,2.0,2.5\" --blur-sigmas \"1.0,1.5\" --noise-sigmas \"1.0,3.0\" --device cuda:0",
+        "workdir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence",
+        "timeout_ms": 900000
+      },
+      "original_exit_code": 0
+    },
+    {
+      "source_thread": "019ee2ed-ffc9-7fb3-88e5-8fcd1e1aa8c2",
+      "original_event_line": 10489,
+      "original_utc": "2026-06-23T00:02:29.734Z",
+      "original_arguments": {
+        "command": "python -u .\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\run_diverse_phantom_validation.py --weights \"D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus_r36_from_a948_orientation_rotrect_v10_80b_20260623_075823\\weights\\latest.pth.tar\" --output-root \".\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\diverse_phantom_validation\\r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623\" --size 512 --seeds \"7001,7002,7003,7004\" --biases \"0.0,0.5,1.0,1.5,2.0,2.5\" --blur-sigmas \"1.0,1.5\" --noise-sigmas \"1.0,3.0\" --device cuda:0",
+        "workdir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence",
+        "timeout_ms": 900000
+      },
+      "original_exit_code": 0
+    },
+    {
+      "source_thread": "019ee2ed-ffc9-7fb3-88e5-8fcd1e1aa8c2",
+      "original_event_line": 10496,
+      "original_utc": "2026-06-23T00:03:07.220Z",
+      "original_arguments": {
+        "command": "python .\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\score_generalization_gate.py --baseline-csv \"D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\diverse_phantom_validation\\wide_96case_r60_vs_r8best_20260623\\R8_best_tradeoff\\diverse_phantom_validation_20260623_040536\\boundary_metrics.csv\" --candidate-csv \"D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\diverse_phantom_validation\\r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623\\diverse_phantom_validation_20260623_080230\\boundary_metrics.csv\" --baseline-name R8_best --candidate-name R36_best_orientation_rotrect_v10 --output-json \".\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\diverse_phantom_validation\\r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623\\r36_best_vs_r8_gate.json\" --no-fail-exit",
+        "workdir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence",
+        "timeout_ms": 120000
+      },
+      "original_exit_code": 0
+    },
+    {
+      "source_thread": "019ee2ed-ffc9-7fb3-88e5-8fcd1e1aa8c2",
+      "original_event_line": 10497,
+      "original_utc": "2026-06-23T00:03:10.533Z",
+      "original_arguments": {
+        "command": "python .\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\score_generalization_gate.py --baseline-csv \"D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\diverse_phantom_validation\\wide_96case_r60_vs_r8best_20260623\\R8_best_tradeoff\\diverse_phantom_validation_20260623_040536\\boundary_metrics.csv\" --candidate-csv \"D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\diverse_phantom_validation\\r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623\\diverse_phantom_validation_20260623_080230\\boundary_metrics.csv\" --baseline-name R8_best --candidate-name R36_latest_orientation_rotrect_v10 --output-json \".\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\diverse_phantom_validation\\r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623\\r36_latest_vs_r8_gate.json\" --no-fail-exit",
+        "workdir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence",
+        "timeout_ms": 120000
+      },
+      "original_exit_code": 0
+    }
+  ],
+  "original_commands_not_executed_during_recovery": true
+}

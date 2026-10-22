@@ -49,8 +49,8 @@ GMM_2_Final/
 
 [2026-10-21精選固定版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)保留當次實際交付範圍；目前`main`另含後續沿革與文件整理。六份超量舊草稿已先保留有價值內容再撤下，[處理紀錄](docs/reproducibility/project_completion/curated/draft_cleanup_20261022/README.md)另存，不是目前待上傳清單。
 
-## 尚未找回的歷史
+## 已找回與仍未辨認的歷史
 
-R94／R95尚有22份較早程式或設定版本未尋回；早期R13有9項總分缺少當時公式；R36編號尚未找到足以指定的獨立證據。[缺件明細與已查範圍](docs/reproducibility/KNOWN_GAPS.md)區分哪些原件仍在、哪些不能精確重做。沒有把未寫出的量補造，也沒有重跑全部歷史訓練。
+R94／R95先前缺少的22份原版已全部找回；早期R13原公式也已補回，9項總分全部重算相同。Lab R61內部r36已找到完整紀錄，主專案獨立R36仍未辨認。[缺件明細與已查範圍](docs/reproducibility/KNOWN_GAPS.md)區分哪些原件仍在、哪些不能精確重做。沒有把未寫出的量補造，也沒有重跑全部歷史訓練。
 
 維護研究時，先讀[目前狀態](PROJECT_STATE.md)及[正式來源規則](docs/operations/SOURCE_OF_TRUTH_POLICY.md)。2026-10-22這次整理只補閱讀入口、來源界線和文件，不改科學結論、原模型、論文、訓練資料或D槽工作版本。[文件調整與舊版位置](docs/history/README.md)可查原說明。

@@ -25,6 +25,19 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def arithmetic_from_source(code):
+    """Load only the fixed arithmetic functions, never the training entry point."""
+    parsed = ast.parse(code.read_text(encoding="utf-8-sig"))
+    wanted = {"_safe_float", "_per_scale_deploy_score", "_deployment_score"}
+    functions = [node for node in parsed.body if isinstance(node, ast.FunctionDef) and node.name in wanted]
+    if {node.name for node in functions} != wanted:
+        raise ValueError("The preserved original arithmetic functions are incomplete")
+    module = ast.Module(body=functions, type_ignores=[])
+    scope = {}
+    exec(compile(ast.fix_missing_locations(module), str(code), "exec"), scope)
+    return scope
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, required=True)
@@ -42,19 +55,19 @@ def main():
         if actual != row["sha256"] or path.stat().st_size != row["bytes"]:
             raise ValueError("The preserved original input changed: " + row["path"])
         checked_sources.append(row)
-    code = root / "Model/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py"
-    parsed = ast.parse(code.read_text(encoding="utf-8-sig"))
-    wanted = {"_safe_float", "_per_scale_deploy_score", "_deployment_score"}
-    functions = [node for node in parsed.body if isinstance(node, ast.FunctionDef) and node.name in wanted]
-    if {node.name for node in functions} != wanted:
-        raise ValueError("The preserved original arithmetic functions are incomplete")
-    module = ast.Module(body=functions, type_ignores=[])
-    scope = {}
-    exec(compile(ast.fix_missing_locations(module), str(code), "exec"), scope)
+    late_source = "Model/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py"
+    early_source = "docs/reproducibility/legacy_multiscale/recovered_sources/20260311_121009/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py"
+    for source in (late_source, early_source):
+        if not any(row["path"] == source for row in checked_sources):
+            raise ValueError("Arithmetic source is not bound to a verified original: " + source)
+    late_scope = arithmetic_from_source(root / late_source)
+    early_scope = arithmetic_from_source(root / early_source)
     results = []
     total_numbers = 0
     formula_gaps = []
     for case, mode, folder, prefix, stamp in CASES:
+        scope = early_scope if case == "R13_131800" else late_scope
+        arithmetic_source = early_source if case == "R13_131800" else late_source
         relative = f"Traing_Progress/{folder}/selected/reports/{prefix}_CHECKPOINT_AUDIT_SUMMARY_{stamp}.json"
         data = json.loads((root / relative).read_text(encoding="utf-8-sig"))
         families = []
@@ -69,22 +82,12 @@ def main():
                         raise ValueError(f"Original per-scale arithmetic differs: {case}, {family['candidate']}, {scale}")
                     row["deploy_scale_score"] = computed
                     numbers += 1
-                computed = scope["_deployment_score"](scales, mode)
+                computed = (scope["_deployment_score"](scales) if case == "R13_131800"
+                            else scope["_deployment_score"](scales, mode))
                 if not math.isclose(computed, candidate["deployment_score"], rel_tol=1e-12, abs_tol=1e-10):
-                    # The earlier 13:18 summary predates the preserved total
-                    # formula. Its nine original totals remain evidence, not
-                    # numbers silently replaced with a later scoring rule.
-                    if case != "R13_131800":
-                        raise ValueError("An unrecorded arithmetic difference appeared: " + case)
-                    formula_gaps.append({"case": case, "candidate": family["candidate"],
-                                         "checkpoint_label": candidate["checkpoint_label"],
-                                         "original_saved_total": candidate["deployment_score"],
-                                         "later_source_formula_total": computed,
-                                         "original_total_formula_recovered": False})
-                    score_for_selection = candidate["deployment_score"]
-                else:
-                    numbers += 1
-                    score_for_selection = computed
+                    raise ValueError("Original version-specific total differs: " + case)
+                numbers += 1
+                score_for_selection = computed
                 ranked.append({"checkpoint_label": candidate["checkpoint_label"],
                                "checkpoint_path": candidate["checkpoint_path"], "score": score_for_selection})
             ranked.sort(key=lambda row: row["score"], reverse=True)
@@ -102,24 +105,26 @@ def main():
         if chosen["candidate"] != data["best_candidate"] or chosen["best"]["checkpoint_path"] != data["selected_checkpoint"]:
             raise ValueError("The recorded final historical choice differs: " + case)
         best_score = chosen["best"]["score"]
-        results.append({"case": case, "mode": mode, "source": relative, "numbers_recomputed": numbers,
+        results.append({"case": case, "mode": mode, "source": relative, "arithmetic_source": arithmetic_source,
+                        "numbers_recomputed": numbers,
                         "selected_candidate": chosen["candidate"], "selected_checkpoint": chosen["best"]["checkpoint_path"],
                         "highest_score": best_score,
                         "families_tied_at_highest_exact_score": [row["candidate"] for row in families if row["best"]["score"] == best_score],
                         "families": families})
         total_numbers += numbers
-    if len(formula_gaps) != 9:
-        raise ValueError("The fixed earlier formula-gap evidence changed; review the original source version")
-    report = {"status": "207_NUMBERS_RECOMPUTED_9_EARLIER_FORMULA_GAPS_PRESERVED", "recomputed_numbers": total_numbers,
+    if total_numbers != 216:
+        raise ValueError("The original five-case score population changed")
+    report = {"status": "216_NUMBERS_RECOMPUTED_WITH_RECOVERED_EARLY_R13_FORMULA", "recomputed_numbers": total_numbers,
               "earlier_total_formula_gaps": formula_gaps,
+              "previous_early_R13_formula_gaps_resolved": 9,
               "recorded_selection_rankings_reconstructed": len(results),
               "original_source_files_verified": checked_sources, "cases": results,
               "training_executed": False, "model_inference_executed": False,
               "absolute_physical_accuracy_claimed": False,
-              "limits": "207 matching original scores recomputed; nine earlier R13 totals retained because their original formula version is not recovered. Five choices reconstructed from original score order. Does not regenerate model evaluations or prove tied weights equal."}
+              "limits": "216 original scores recomputed using their original versions, including nine early R13 totals recovered from the successful 2026-03-11 source creation event. Five choices reconstructed from original score order. Does not regenerate model evaluations or prove tied weights equal."}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("LEGACY_SELECTION_NUMBERS_AND_CHOICES_REPLAYED_WITH_EXPLICIT_FORMULA_GAP", total_numbers, len(results), len(formula_gaps), flush=True)
+    print("LEGACY_SELECTION_NUMBERS_AND_CHOICES_REPLAYED_WITH_RECOVERED_EARLY_FORMULA", total_numbers, len(results), len(formula_gaps), flush=True)
 
 
 if __name__ == "__main__":

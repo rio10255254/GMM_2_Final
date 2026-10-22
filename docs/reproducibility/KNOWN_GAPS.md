@@ -1,62 +1,31 @@
-# 已知缺件、已保存內容與可重做的界線
+# 已找回的缺件與仍有界線的重做
 
-2026-10-22。本頁只整理目前有明確證據的限制；找不到原件不等於整輪結果遺失，已有後來版本也不能冒充較早原版。
+更新：2026-10-22。先前22份原版本和R13的9項總分公式缺口已補齊；主專案獨立R36的身分仍未確定。找回程式不等於重新訓練已全部驗收，也不補造當時沒有寫出的量。
 
-## 22份較早程式／設定版本
+| 原缺口 | 現在結果 | 對重做的影響 |
+|---|---|---|
+| R94 19版：2模型、15訓練程式、2設定 | 全部原內容符合當年核對碼 | 早期預檢、失敗與空啟動可配回正確版本；原第9輪沒有提交的模型仍不會因此出現 |
+| R95 3版：2訓練程式、1設定 | 全部原內容符合當年核對碼；含正式第11輪後的接續版本 | 補回早期預檢與提速階段；第一次回到第8輪時未保存的更新／亂數狀態仍不能事後補造 |
+| R13較早13:18的9項總分 | 找到當時原公式，9項全部相同 | 現在五次審查合計216項分數及5次選擇能按原版重算；未重新執行模型評估 |
+| 名為R36的紀錄 | 找到Lab R61內部r36的完整原訓練、模型與96案例結果 | 可以查這次失敗與配套來源；不能拿它代替主專案R35／37間未知的獨立R36 |
+| 主專案獨立R36 | 仍未找到足以指定的方法／結果 | 無法聲稱重現一份尚未辨認的主R36；也不斷言它從未做過 |
 
-依[原內容身分清單](four_rounds/HISTORICAL_SOURCE_AVAILABILITY.json)，22份缺件是 **R94的19版、R95的3版**：合計2版模型定義、17版訓練程式、3版設定。不是22個實驗，也不是R97／R98正式模型遺失。四輪最後模型定義、訓練程式及設計12項都符合當時記錄；完整模型與結果按[四輪入口](four_rounds/README.md)保存。
+## 原件、受影響階段與證據
 
-R95另有兩版早期訓練程式已由原版本內容找回，並已實際從GitHub取回相同，見[已找回原件](four_rounds/R95_EARLY_SOURCES_RECOVERED_VERIFIED.json)。剩下版本影響的是精確回看那些較早預檢、失敗或接續時的程式，不能用正式最後版補造。
+- [22版來源及逐次影響](four_rounds/RECOVERY_IMPACT_20261022.md)、[全部38項已登記來源](four_rounds/HISTORICAL_SOURCE_AVAILABILITY.json)、[完整內容核對與原修改鏈](four_rounds/SOURCE_RECOVERY_20261022.json)。38項全部有相符原件；沒有擴成每份未記錄動態改版都已找回。
+- [R13原公式與9項逐值結果](legacy_multiscale/FORMULA_RECOVERY_20261022.md)。由原成功新增程式取得，沒有反推係數；較早0.8與較晚0.08尺度模型分開，原表不改。
+- [兩種R36與各自重做界線](lineage/R36_IDENTITIES_20261022.md)。Lab R61的7,496組v10與後來20,296組v16分開；原96案例是開發用合成比較，兩個端點都沒有通過分組條件。
 
-| 輪次 | 缺少哪種原件 | 當時內容身分開頭 | 保留它身分的原紀錄範例 |
-|---|---|---|---|
-| R94 | 模型定義 | `ddf73583052f…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_181537/run_progress.json>) |
-| R94 | 訓練程式 | `b47870e2ffc8…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_181537/run_progress.json>) |
-| R94 | 設定 | `23ec1123a91e…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_181537/run_progress.json>) |
-| R94 | 訓練程式 | `db8580239818…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183038/run_progress.json>) |
-| R94 | 訓練程式 | `e739b9185c9d…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183244/failure.json>) |
-| R94 | 訓練程式 | `f13e4846a107…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183304/failure.json>) |
-| R94 | 訓練程式 | `bb222630e533…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183328/failure.json>) |
-| R94 | 訓練程式 | `0f705254f67a…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183348/run_progress.json>) |
-| R94 | 訓練程式 | `5ff4993737b2…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_183529/run_progress.json>) |
-| R94 | 訓練程式 | `fe450221906d…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_184512/run_progress.json>) |
-| R94 | 設定 | `a8a2866fee7d…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_184512/run_progress.json>) |
-| R94 | 訓練程式 | `56ef073108e4…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_185333/failure.json>) |
-| R94 | 訓練程式 | `f437b2ebcbf4…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_185402/run_progress.json>) |
-| R94 | 模型定義 | `8f03e949f439…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_190117/run_progress.json>) |
-| R94 | 訓練程式 | `88c5e52416a0…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/smoke_R94_scratch_seed940041_20260812_190117/run_progress.json>) |
-| R94 | 訓練程式 | `b19127c9571f…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_184607/scratch_initialization_audit.json>) |
-| R94 | 訓練程式 | `0509aaa2f661…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_185800/scratch_initialization_audit.json>) |
-| R94 | 訓練程式 | `9b3cb78a7f0d…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_191058/scratch_initialization_audit.json>) |
-| R94 | 訓練程式 | `2a25d203d059…` | [原紀錄](<../../Experiments/R94_EvidenceConditionalScratch/runs/training_R94_scratch_seed940041_20260812_191420/scratch_initialization_audit.json>) |
-| R95 | 訓練程式 | `810f04e36a0e…` | [原紀錄](<../../Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002234/run_progress.json>) |
-| R95 | 設定 | `7431df7b4669…` | [原紀錄](<../../Experiments/R95_CounterfactualGateRepairScratch/runs/smoke_R95_scratch_seed950041_20260813_002234/run_progress.json>) |
-| R95 | 訓練程式 | `d0cb1a2759e5…` | [原紀錄](<../../Experiments/R95_CounterfactualGateRepairScratch/runs/training_R95_scratch_seed950041_20260813_003125/interruptions/continuation_02/continuation_audit.json>) |
+## 仍不能從程式補造的內容
 
-完整64字內容身分與全部原紀錄在上方清單。日後若找到候選檔，必須與當時記錄的完整內容相符，再標為找回；只有相似檔名或功能接近不算。
+R95第一次接續未保存完整更新／亂數狀態，原記錄已明列重建更新狀態。可取回當時模型、完整表和程式，依流程重新研究；不能保證每一步與最後權重完全相同。Lab內部r36另有明記的非固定GPU設定，同樣沒有逐步完全重訓的驗收。
 
-## 早期R13的9項總分公式
+9個早期ANN量原表沒有寫出，仍不補造；它們不同於本次已找回的9項R13總分。原表欄名與值數量不一致時，依[原寫入程式讀法](project_completion/TRAINING_LOG_LAYOUTS.md)解讀。
 
-2026-03-11 13:18那次原表仍在；它的27個分尺度分數符合後來保存的程式，但9個合成總分不符合後來公式。15:02那次是不同試跑和選中模型，不能替代13:18。原9個總分照存，不改用擬合出的係數宣稱找回原公式。
+外部GMF、MATLAB、舊位置調整、SEM答案／來源依賴及官方後端受阻按原報告保留。保存完整原表、取回模型或重算某段數字，不會自動證明獨立準確度或全部歷史GPU訓練已重跑。
 
-[原方法與固定模型讀法](legacy_multiscale/README.md)及[原重算程式](../../Tools/replay_legacy_multiscale_selection.py)保留實際通過的207個分數與5次原選擇，也明列9項未恢復公式。這個證據不是全部訓練重新執行。
+## 查找範圍及舊收據
 
-## R36及原先未寫出的量
+先前版本內容搜尋找回兩版R95，編輯器226份目錄紀錄未有新原件。這次改查原研究程式修改和壓縮保存的原工具紀錄，才補回全部22版和早期R13程式；主R36的額外提交／版本樹查找仍未辨認其獨立身分。
 
-[歷史查找紀錄](lineage/R36_HISTORY_CHECK.json)檢查了當時可到達的243個提交敘述及R36路徑，未找到足以獨立指定的一輪。可能是未使用編號或未留在那些歷史，現階段只列未辨認，不宣稱一定做過或從沒做過。
-
-另有9個早期ANN量原表沒有寫出，不能拿其他欄位補成當時原觀察。部分舊訓練表欄名數量與數值數量不同，依[原寫入程式讀法](project_completion/TRAINING_LOG_LAYOUTS.md)判讀，不能一律套後來V42的欄位。
-
-## 已查到哪裡
-
-- 原盤點與目前程式、設定、正式文件的保存對照，以及80個本機有名分支的遠端歷史，見[沿革入口](lineage/README.md)。分支都在不等於每份未提交的舊程式都在。
-- [既有版本內容搜尋](project_completion/BOUNDED_GIT_SOURCE_SEARCH.json)已讀154,176份不大於512,000 bytes的版本內容，找回上述兩版R95原件，只找到較晚R13公式；本次沒有再重複讀完整大庫。
-- 本次另讀VS Code／Cursor共226份檔案歷史目錄紀錄，沒有符合上述缺件來源的條目，沒有找到新原件。[本次限定查找紀錄](lineage/GAP_SEARCH_20261022.json)保留範圍及結果。
-
-這些是限定範圍的搜尋結果，不是所有電腦和所有備份都不存在的證明。新的原件若出現，可依原內容身分補回；目前不據此捏造一個已完成的歷史版本。
-
-## 不屬於漏傳的內容
-
-可再生的整套訓練影像、逐張重建、全部中途模型及暫存不再整批補傳。保留生成程式、設定與必要來源；不可替代的相機／量測／人工來源另存。[生成方法](GENERATION_GUIDE.md)及[附件界線](ASSET_GUIDE.md)列明何時仍需固定來源。
-
-外部GMF、MATLAB、舊位置調整、來源答案依賴及官方後端失敗照原報告保留。現在能讀到完整原表、取回固定模型或重算某些結果，不代表全部歷史GPU訓練都重新跑過，也不代表重拍穩定即絕對準確。
+舊[限定內容搜尋](project_completion/BOUNDED_GIT_SOURCE_SEARCH.json)、[編輯器查找](lineage/GAP_SEARCH_20261022.json)及2026-10-21收據保持原時間與範圍，不回填成當時已成功。可生成的大型資料仍按[生成方法](GENERATION_GUIDE.md)保留原程式、設定與必要來源，[附件指南](ASSET_GUIDE.md)按用途選取，不重啟全量保存。

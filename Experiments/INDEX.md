@@ -1,5 +1,7 @@
 # 實驗索引 / Experiment Index
 
+2026-10-22缺件續查：[22份原版與R13原公式已補齊](../docs/reproducibility/KNOWN_GAPS.md)，216項分數及5次原選擇重算相同；[Lab R61內部r36](../docs/reproducibility/lineage/R36_IDENTITIES_20261022.md)有原來源與完整失敗結果，不能當成主專案未知R36。原模型、資料和判決保持。
+
 2026-10-22：[全研究沿革及R1至R153逐號對照](../docs/reproducibility/lineage/README.md)補上Lab共用階段、只在歷史分支的R34／R35／R37，以及原始失敗與來源限制。原有122個主資料夾、26個Lab資料夾、29個早期分組不等於177次獨立訓練；早期R2至R10已由原JSON與日誌串回，R36仍未找到獨立證據，均不補造。
 
 目前精選研究的固定內容與交付界線見[保存範圍](../docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md)及[固定保存版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)；原方法、完整結果、來源、文獻及失敗各自可查，不把歷史GPU訓練重跑當成完成條件。

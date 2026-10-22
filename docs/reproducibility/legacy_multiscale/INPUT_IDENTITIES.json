@@ -29,7 +29,16 @@
       "path": "Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.json",
       "bytes": 73796,
       "sha256": "63cc6ad2b613850420a928861c0aa6c6fb8d150ae9367bd02b9e68db92056e34"
+    },
+    {
+      "path": "docs/reproducibility/legacy_multiscale/recovered_sources/20260311_121009/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py",
+      "bytes": 9460,
+      "sha256": "c10520397d400b8cba19098542727390f6df35ef5f81264cb310478472ae4586"
     }
   ],
-  "reason": "Fixed original arithmetic and complete saved per-model evaluation records; no training main is imported"
+  "reason": "Fixed original version-specific arithmetic and complete saved per-model records. Earlier R13 source recovered from its original successful Add File; only arithmetic functions are executed.",
+  "arithmetic_versions": {
+    "R13_131800": "docs/reproducibility/legacy_multiscale/recovered_sources/20260311_121009/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py",
+    "other_original_cases": "Model/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py"
+  }
 }

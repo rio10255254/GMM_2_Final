@@ -1,0 +1,39 @@
+{
+  "status": "SINGLE_FIXED_ORIGINAL_INPUT_ACTUALLY_DOWNLOADED_AND_RESTORED_MATCHED",
+  "time": "2026-10-22T11:15:34.473924+08:00",
+  "repo": "rio10255254/GMM_2_Final",
+  "tag": "research-lab-r61-r36-source-20261022",
+  "release_id": 420269272,
+  "original_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/r31_r28pos75_soup_20260623/r31_r28pos75_a948.pth.tar",
+  "original_bytes": 17402302,
+  "original_sha256": "d113d1ee7af8679ff6e5bb06bcd6004802a00e8e025f27de8037ee728e8a74a7",
+  "finite_CPU_loaded_tensor_count": 135,
+  "original_source_unchanged": true,
+  "old_model_endpoints_not_reuploaded": true,
+  "whole_training_or_images_not_uploaded": true,
+  "training_or_inference_executed": false,
+  "assets": [
+    {
+      "id": 664522535,
+      "name": "BUNDLE_SUMMARY.json",
+      "size": 543,
+      "digest": "sha256:5d5d7bb00b1560d40d1c7dd75c24d7b5ba35e75f4ae7580087a252b257866877"
+    },
+    {
+      "id": 664522537,
+      "name": "research-lab-r61-r36-initializer-001.zip",
+      "size": 15923528,
+      "digest": "sha256:7b9e372fb6225c4b86d2d696510cdd594ee9248c9d2e7f2e2efd682a85e82ae6"
+    },
+    {
+      "id": 664522538,
+      "name": "RESEARCH_ASSETS.json.gz",
+      "size": 616,
+      "digest": "sha256:3250fb9784ea815dca8b02a23b299218f62ad72115bec19278a176b9c33fc1d9"
+    }
+  ],
+  "actual_GitHub_download_and_restore_match": true,
+  "make_latest": false,
+  "source_commit_to_bind_after_small_code_publication": true,
+  "publication_state": "bound to this small-source publication; final server state checked in closing receipt"
+}

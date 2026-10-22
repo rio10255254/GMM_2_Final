@@ -25,6 +25,12 @@ gh release download RELEASE_TAG --repo rio10255254/GMM_2_Final --pattern ASSET_N
 
 版本頁內還有其他大檔時，只選列出的檔名；不要把整個版本全部下載當成必要步驟。一般結果包解壓後讀包內說明；研究來源分包則需對應的原恢復清單，不能把ZIP中的儲存物件隨意改名當原路徑。
 
+## Lab R61內部r36的單一必要起點
+
+本次只新增一份[固定a948起點](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-lab-r61-r36-source-20261022)，原17,402,302 bytes，附件`research-lab-r61-r36-initializer-001.zip`為15,923,528 bytes。搭配同版`RESEARCH_ASSETS.json.gz`恢復一個原位置即可；已實際從GitHub取回、還原及核對相同。原best／latest模型已有既有附件，不重傳；整套v10影像和其他中途模型不在新包。
+
+[原訓練、96案例結果及兩種R36身分](lineage/R36_IDENTITIES_20261022.md)另列；這是Lab R61內部來源，不是把主專案未知R36補成已完成。
+
 ## 原始來源與較大交付
 
 | 需要什麼 | 取得位置與界線 |

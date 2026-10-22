@@ -1,0 +1,282 @@
+{
+  "experiment_id": "R94_EvidenceConditionalScratch",
+  "status": "formal_training_authorized_after_smoke_and_gpu_calibration",
+  "formal_training_authorized": true,
+  "formal_training_blocker": null,
+  "scientific_question": "Can cause-separated local correction paths restore detail, contour and stable displacement together while remaining identity-safe and exactly tile-consistent?",
+  "independence": {
+    "random_initialization_required": true,
+    "checkpoint_resume_forbidden": true,
+    "teacher_or_pseudo_label_forbidden": true,
+    "real_training_pixels_forbidden": true,
+    "sem_or_hs100mg_geometry_forbidden": true,
+    "optimizer_reuse_forbidden": true,
+    "formal_run_count": 1,
+    "seed": 940041
+  },
+  "architecture": {
+    "model_width": 16,
+    "parameter_count": 2303717,
+    "parameter_budget_max": 2500000,
+    "preserve_from_r93": [
+      "local_fully_convolutional_processing",
+      "normalization_free_residual_blocks",
+      "anti_aliased_encoder_decoder",
+      "direct_bounded_residual_output",
+      "canonical_halo_tiling"
+    ],
+    "inference_order": [
+      "sensor_nuisance_S_to_B",
+      "radiometry_B_to_O",
+      "local_contrast_fade_O_to_P",
+      "phase_safe_boundary_P_to_shape_clean",
+      "material_texture_P_to_texture_clean"
+    ],
+    "private_learned_towers": [
+      "need_control",
+      "evidence_control",
+      "geometry",
+      "sensor_nuisance",
+      "radiometry",
+      "local_contrast",
+      "boundary",
+      "texture"
+    ],
+    "learned_parameter_sharing_between_towers": false,
+    "fixed_local_optical_measurements_shared": true,
+    "normalization_layers": 0,
+    "global_pooling_layers": 0,
+    "raw_identity_at_initialization": true,
+    "all_correction_paths_need_times_evidence_controlled": true,
+    "control_maps_detached_from_reconstruction_loss": true,
+    "geometry_map_detached_from_reconstruction_loss": true,
+    "independent_edge_painting_branch": false,
+    "boundary_filter_bank": {
+      "filter_count": 29,
+      "symmetric_zero_phase": true,
+      "maximum_effective_size_px": 33,
+      "directions_degrees": [0.0, 22.5, 45.0, 67.5, 90.0, 112.5, 135.0, 157.5],
+      "large_direction_filters_use_sparse_symmetric_sampling": true,
+      "slow_coefficient_field": true,
+      "local_envelope_px": 49,
+      "cannot_create_new_local_extrema": true
+    },
+    "local_contrast_path": {
+      "local_scales_sigma_px": [3.0, 6.0, 10.0, 15.0],
+      "private_tower": true,
+      "separate_from_boundary_sharpening": true,
+      "expanded_observed_range_limit": 2.0,
+      "free_residual_forbidden": true
+    },
+    "texture_path": {
+      "bands": ["fine", "medium", "broad"],
+      "maximum_abs_correction": 0.18,
+      "not_hard_masked_away_at_boundaries": true
+    },
+    "minimum_halo_px": 192,
+    "alignment_multiple": 8,
+    "combined_correction_bound": 0.34
+  },
+  "data": {
+    "scene_count": 1250,
+    "stored_observation_count": 5000,
+    "train_scenes": 1000,
+    "validation_scenes": 125,
+    "sealed_internal_test_scenes": 125,
+    "source_package": "D:/GMM_2_Final/Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal",
+    "source_content_sha256": "6494719ad21665723ba32cdcb3871a40691753ca03791f181416349f02fd31a5",
+    "source_audit_passed": true,
+    "reuse_policy": "read_existing_hash_verified_arrays_and_add_compact_replay_metadata_only",
+    "regenerate_unaffected_arrays": false,
+    "duplicate_array_payload": false,
+    "label_supersample_factor": 8,
+    "on_demand_same_scene_views": [
+      "T_exact_clear",
+      "B_noise_free_radiometric",
+      "S_noisy_radiometric"
+    ],
+    "same_scene_counterfactual_required_in_every_update": true,
+    "exact_clear_target_is_source_itself": true,
+    "paired_motion_views": [
+      "exact_signed_subpixel_pair",
+      "independent_acquisition_noise_pair"
+    ],
+    "split_unit": "procedural_scene",
+    "group_overlap_forbidden": true,
+    "role_balanced_sampling": true,
+    "post_hoc_case_sampling_forbidden": true
+  },
+  "causal_supervision": {
+    "symbols": {
+      "T": "procedural_clean_target",
+      "P": "phase_safe_blur_motion_halo_stage_before_local_fade",
+      "O": "optical_stage_after_local_fade_before_radiometry",
+      "B": "noise_free_radiometric_observation",
+      "S": "stored_noisy_observation"
+    },
+    "exact_branch_targets": {
+      "sensor_nuisance": "B_minus_S",
+      "radiometry": "O_minus_B",
+      "local_contrast": "P_minus_O",
+      "boundary": "shape_clean_minus_shape_P",
+      "texture": "texture_clean_minus_texture_P"
+    },
+    "exact_additive_recomposition_required": true,
+    "need_targets": "local_energy_of_each_exact_branch_target_with_exact_zero_for_clear",
+    "evidence_targets": {
+      "local_contrast": "local_visible_correlation_and_energy_between_P_and_O",
+      "boundary": "local_gradient_direction_and_energy_preserved_from_shape_clean_to_shape_P",
+      "texture": "local_spectral_correlation_and_visible_energy_from_texture_clean_to_texture_P"
+    },
+    "need_and_evidence_are_separate_towers": true,
+    "unrecoverable_content_is_tapered_by_evidence_not_forced": true,
+    "geometry_truth": "procedural_mask_and_signed_distance_only",
+    "real_or_model_generated_truth_forbidden": true
+  },
+  "training": {
+    "planned_epochs": 48,
+    "model_width": 16,
+    "optimizer": "AdamW",
+    "peak_learning_rate": 0.00015,
+    "minimum_learning_rate": 0.000012,
+    "weight_decay": 0.0001,
+    "precision": "bfloat16",
+    "validation_precision": "float32",
+    "ema_decay": 0.995,
+    "checkpoint_every_epochs": 2,
+    "validation_every_epochs": 2,
+    "live_real_preview_every_epochs": 4,
+    "formal_real_metrics_before_checkpoint_freeze": false,
+    "learning_rate_anchors": [
+      {"epoch": 1, "learning_rate": 0.00004},
+      {"epoch": 4, "learning_rate": 0.00015},
+      {"epoch": 16, "learning_rate": 0.00010},
+      {"epoch": 32, "learning_rate": 0.000045},
+      {"epoch": 40, "learning_rate": 0.000025},
+      {"epoch": 48, "learning_rate": 0.000012}
+    ],
+    "phases": [
+      {
+        "epoch_start": 1,
+        "epoch_end": 4,
+        "name": "controls_and_geometry",
+        "train": ["need_control", "evidence_control", "geometry"],
+        "correction_heads_open": false,
+        "stage_truth_input_fraction": 1.0
+      },
+      {
+        "epoch_start": 5,
+        "epoch_end": 12,
+        "name": "private_causal_branch_targets",
+        "train": ["sensor_nuisance", "radiometry", "local_contrast", "boundary", "texture", "direct_controls"],
+        "full_output_objectives": false,
+        "stage_truth_input_fraction": 1.0
+      },
+      {
+        "epoch_start": 13,
+        "epoch_end": 24,
+        "name": "teacher_to_predicted_causal_cascade",
+        "train": ["all_private_branch_targets", "same_scene_clear", "causal_stage_outputs"],
+        "stage_truth_input_fraction_linear": [0.85, 0.0]
+      },
+      {
+        "epoch_start": 25,
+        "epoch_end": 38,
+        "name": "fully_predicted_measurement_training",
+        "train": ["full_causal_output", "signed_motion", "cross_noise_consistency", "translation", "tile_overlap"],
+        "stage_truth_input_fraction": 0.0
+      },
+      {
+        "epoch_start": 39,
+        "epoch_end": 48,
+        "name": "large_context_low_rate_consolidation",
+        "train": ["all_declared_objectives_without_detail_weight_increase"],
+        "stage_truth_input_fraction": 0.0
+      }
+    ],
+    "patch_schedule": [
+      {"epoch_start": 1, "epoch_end": 8, "patch_size": 512, "core_size": 256, "candidate_scene_batch": 8, "target_effective_scene_batch": 16},
+      {"epoch_start": 9, "epoch_end": 32, "patch_size": 768, "core_size": 384, "candidate_scene_batch": 3, "target_effective_scene_batch": 16},
+      {"epoch_start": 33, "epoch_end": 48, "patch_size": 896, "core_size": 512, "candidate_scene_batch": 2, "target_effective_scene_batch": 16}
+    ],
+    "gpu_batch_calibration": {
+      "required_before_formal_run": true,
+      "choose_largest_candidate_that_satisfies_headroom": true,
+      "decrement_scene_batch_until_safe": true,
+      "gradient_accumulation_restores_target_effective_batch": true,
+      "minimum_memory_left_for_desktop_gib": 9.0,
+      "stop_before_shared_gpu_memory": true,
+      "do_not_run_calibration_while_R93_is_active": true
+    },
+    "objective_update": {
+      "private_branch_primary_target_is_never_overridden_by_cross_objectives": true,
+      "cross_objective_update_rule": "common_descent_projection",
+      "zero_cross_update_when_no_common_first_order_descent_exists": true,
+      "single_weighted_sum_for_all_objectives": false,
+      "hard_metric_threshold_curriculum": false,
+      "motion_error_computed_per_scene_before_aggregation": true,
+      "signed_x_y_and_tail_reported_separately": true
+    }
+  },
+  "validation": {
+    "internal_locked_axes": [
+      "pixel_and_multiscale_detail",
+      "boundary_position_and_transition_profile",
+      "exact_clear_change",
+      "near_clear_change",
+      "local_contrast_branch_error",
+      "motion_mean_p95_signed_xy",
+      "exposure_worst_path",
+      "full_vs_tiled_exact_parity",
+      "branch_target_error",
+      "need_evidence_calibration",
+      "branch_cancellation"
+    ],
+    "checkpoint_candidate_epochs": [32, 34, 36, 38, 40, 42, 44, 46, 48],
+    "selection": {
+      "validation_split_only": true,
+      "single_weighted_average_forbidden": true,
+      "remove_statistically_dominated_candidates": true,
+      "bootstrap_uncertainty_reported": true,
+      "final_rule": "minimize_worst_normalized_regret_across_locked_axes",
+      "tie_break": ["earlier_epoch", "smaller_exact_clear_change"],
+      "external_results_can_reject_but_not_reselect_checkpoint": true,
+      "last_epoch_is_not_automatically_selected": true
+    },
+    "external_after_checkpoint_freeze": [
+      "locked_R73_ACM_shapes",
+      "fixed_5x_20x_50x_appearance",
+      "sem_36_pillar_ACM_contour",
+      "locked_50x_x_1um_motion_sequence",
+      "hard_microscopy_families",
+      "multiple_tile_core_sizes"
+    ]
+  },
+  "verified_design_evidence": {
+    "prototype_checks_passed": 17,
+    "prototype_checks_total": 17,
+    "full_vs_tiled_max_abs_gray": 0.0,
+    "translation_equivariance_max_abs_gray": 0.0000038,
+    "causal_replay_exact_views": 64,
+    "causal_replay_max_abs_u8": 0,
+    "layer_decomposition_views": 64,
+    "layer_target_recomposition_max_abs_float": 0.000000059604645,
+    "patch_core_label_parity_max_abs_float": 0.0,
+    "branch_capacity_views": 838,
+    "boundary_capacity_mean_fraction": 0.9663387953,
+    "boundary_optimistic_unreachable_error_ratio_mean": 0.0090626988,
+    "local_contrast_capacity_mean_fraction": 1.0,
+    "texture_capacity_mean_fraction": 1.0,
+    "nuisance_capacity_mean_fraction": 0.9999747053,
+    "radiometry_capacity_mean_fraction": 0.9994519883,
+    "oracle_views": 838,
+    "oracle_pixel_total_error_ratio": 0.0423135324,
+    "oracle_texture_total_error_ratio": 0.0682968792,
+    "oracle_boundary_total_error_ratio": 0.2289666240,
+    "oracle_motion_mae_raw_to_target_px": [0.1965422052, 0.0302843181],
+    "oracle_motion_p95_raw_to_target_px": [0.8204138279, 0.1339979172],
+    "locked_acm_images": 100,
+    "locked_acm_iou_improved_fraction_clean_ceiling": 0.96,
+    "locked_acm_all_families_positive_median": true
+  }
+}

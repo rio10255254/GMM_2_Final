@@ -85,4 +85,4 @@ python Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py --worke
 
 這次另補10份原始修正與共用來源說明，以及一份原光學頻譜來源紀錄，共11份、合計不到100KB，沒有新增訓練影像、模型或整批重建。光學頻譜的原函式、原小型輸入、顯示尺度及版本限制見[原頻譜來源與版本](<optical_calibration/SPECTRA.md>)，不把可再計算的頻譜陣列當成又一套必要大型資料。
 
-完整原結果與失敗脈絡從[逐輪入口](<EXPERIMENTS.md>)及[完整小型結果](<project_completion/curated/FAILURE_LINEAGE_READING.md>)閱讀。22份未尋回早期程式與9項早期R13公式缺件仍如實保留。
+完整原結果與失敗脈絡從[逐輪入口](<EXPERIMENTS.md>)及[完整小型結果](<project_completion/curated/FAILURE_LINEAGE_READING.md>)閱讀。2026-10-22已補回22份早期原版及R13原公式，見[找回與剩餘重做界線](KNOWN_GAPS.md)；主專案獨立R36仍未辨認。

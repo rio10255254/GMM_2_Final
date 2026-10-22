@@ -1,0 +1,276 @@
+{
+  "status": "RECOVERED_ORIGINAL_FORMULA_RECOMPUTES_ALL_9_EARLY_TOTALS_AND_27_SCALE_SCORES",
+  "time": "2026-10-22T11:00:48.101568+08:00",
+  "original_source_event": {
+    "thread_id": "019cc0f0-00e4-7483-be5d-8c85fbab5cf6",
+    "timestamp": "2026-03-11T04:10:09.640Z",
+    "line": 10725,
+    "call_id": "call_YnhQuXRlG641L2uFECKGI26Y",
+    "successful_file_add": true
+  },
+  "recovered_source_path": "docs/reproducibility/legacy_multiscale/recovered_sources/20260311_121009/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py",
+  "recovered_source_sha256": "c10520397d400b8cba19098542727390f6df35ef5f81264cb310478472ae4586",
+  "recovered_source_bytes": 9460,
+  "source_recovery": "Original successful Add File text; UTF-8 with LF. No originally recorded file hash for this source version is claimed.",
+  "original_summary_path": "Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_131800.json",
+  "original_summary_sha256": "63d53ad4e3e5132d7bd696adf6630e5b93912f6cd5450be43259cfd1b0cd4763",
+  "totals": [
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p8",
+      "recorded": 247.742744743824,
+      "computed": 247.742744743824,
+      "difference": 0.0
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p08",
+      "recorded": 247.1961254775524,
+      "computed": 247.1961254775524,
+      "difference": 0.0
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_8px",
+      "recorded": -540.4219010770321,
+      "computed": -540.4219010770321,
+      "difference": 0.0
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p08",
+      "recorded": -556.875625371933,
+      "computed": -556.875625371933,
+      "difference": 0.0
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p8",
+      "recorded": -557.1304162144661,
+      "computed": -557.1304162144661,
+      "difference": 0.0
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_8px",
+      "recorded": -559.8448080718517,
+      "computed": -559.8448080718517,
+      "difference": 0.0
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p8",
+      "recorded": -559.190353512764,
+      "computed": -559.190353512764,
+      "difference": 0.0
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p08",
+      "recorded": -898.4025514423847,
+      "computed": -898.4025514423847,
+      "difference": 0.0
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_8px",
+      "recorded": -899.4902728199959,
+      "computed": -899.4902728199959,
+      "difference": 0.0
+    }
+  ],
+  "per_scale": [
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p8",
+      "evaluation_scale": 0.08,
+      "recorded": 36.41860489547253,
+      "computed": 36.41860489547253
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p8",
+      "evaluation_scale": 0.8,
+      "recorded": 36.41860489547253,
+      "computed": 36.41860489547253
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p8",
+      "evaluation_scale": 8.0,
+      "recorded": 36.41860489547253,
+      "computed": 36.41860489547253
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p08",
+      "evaluation_scale": 0.08,
+      "recorded": 36.35042640194297,
+      "computed": 36.35042640194297
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p08",
+      "evaluation_scale": 0.8,
+      "recorded": 36.35042640194297,
+      "computed": 36.35042640194297
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_0p08",
+      "evaluation_scale": 8.0,
+      "recorded": 36.35042640194297,
+      "computed": 36.35042640194297
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_8px",
+      "evaluation_scale": 0.08,
+      "recorded": 31.572610441595316,
+      "computed": 31.572610441595316
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_8px",
+      "evaluation_scale": 0.8,
+      "recorded": -53.427389558404684,
+      "computed": -53.427389558404684
+    },
+    {
+      "candidate": "universal_sign_guard",
+      "checkpoint_label": "checkpoint_8px",
+      "evaluation_scale": 8.0,
+      "recorded": -43.427389558404684,
+      "computed": -43.427389558404684
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p08",
+      "evaluation_scale": 0.08,
+      "recorded": 29.523223608732224,
+      "computed": 29.523223608732224
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p08",
+      "evaluation_scale": 0.8,
+      "recorded": -55.47677639126778,
+      "computed": -55.47677639126778
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p08",
+      "evaluation_scale": 8.0,
+      "recorded": -45.47677639126778,
+      "computed": -45.47677639126778
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p8",
+      "evaluation_scale": 0.08,
+      "recorded": 29.49145147204399,
+      "computed": 29.49145147204399
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p8",
+      "evaluation_scale": 0.8,
+      "recorded": -55.50854852795601,
+      "computed": -55.50854852795601
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_0p8",
+      "evaluation_scale": 8.0,
+      "recorded": -45.50854852795601,
+      "computed": -45.50854852795601
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_8px",
+      "evaluation_scale": 0.08,
+      "recorded": 29.155148778110743,
+      "computed": 29.155148778110743
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_8px",
+      "evaluation_scale": 0.8,
+      "recorded": -55.84485122188926,
+      "computed": -55.84485122188926
+    },
+    {
+      "candidate": "universal_macro_lock",
+      "checkpoint_label": "checkpoint_8px",
+      "evaluation_scale": 8.0,
+      "recorded": -45.84485122188926,
+      "computed": -45.84485122188926
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p8",
+      "evaluation_scale": 0.08,
+      "recorded": 9.386666119098663,
+      "computed": 9.386666119098663
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p8",
+      "evaluation_scale": 0.8,
+      "recorded": -60.61333388090134,
+      "computed": -60.61333388090134
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p8",
+      "evaluation_scale": 8.0,
+      "recorded": -50.61333388090134,
+      "computed": -50.61333388090134
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p08",
+      "evaluation_scale": 0.08,
+      "recorded": 11.490121059119701,
+      "computed": 11.490121059119701
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p08",
+      "evaluation_scale": 0.8,
+      "recorded": -98.5098789408803,
+      "computed": -98.5098789408803
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_0p08",
+      "evaluation_scale": 8.0,
+      "recorded": -83.5098789408803,
+      "computed": -83.5098789408803
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_8px",
+      "evaluation_scale": 0.08,
+      "recorded": 11.354916967451572,
+      "computed": 11.354916967451572
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_8px",
+      "evaluation_scale": 0.8,
+      "recorded": -98.64508303254843,
+      "computed": -98.64508303254843
+    },
+    {
+      "candidate": "universal_balanced_bridge",
+      "checkpoint_label": "checkpoint_8px",
+      "evaluation_scale": 8.0,
+      "recorded": -83.64508303254843,
+      "computed": -83.64508303254843
+    }
+  ],
+  "coefficient_fitting_or_inference_used": false,
+  "full_training_or_model_evaluation_repeated": false,
+  "current_or_historical_original_files_modified": false
+}
