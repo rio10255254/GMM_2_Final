@@ -1,56 +1,18 @@
 # 實驗索引 / Experiment Index
 
-2026-10-22閱讀補強：[R128／R129／R135完整重要原表、R61來源名單與失敗](../docs/reproducibility/project_completion/curated/IMPORTANT_TABLES_20261022.md)可直接閱讀；[完整度與容量](../docs/reproducibility/COMPLETENESS_AND_CAPACITY.md)分清已保存與歷史重做限制。原模型與判決保持。
+Last updated: 2026-10-24
 
-2026-10-22缺件續查：[22份原版與R13原公式已補齊](../docs/reproducibility/KNOWN_GAPS.md)，216項分數及5次原選擇重算相同；[Lab R61內部r36](../docs/reproducibility/lineage/R36_IDENTITIES_20261022.md)有原來源與完整失敗結果，不能當成主專案未知R36。原模型、資料和判決保持。
+每個主專案實驗的狀態一覽。**各輪的正式結論以該輪 `reports/` 的報告為準**；正式身分以 [ESTIMATOR_POLICY.json](../ESTIMATOR_POLICY.json) 為準。
 
-2026-10-22：[全研究沿革及R1至R153逐號對照](../docs/reproducibility/lineage/README.md)補上Lab共用階段、只在歷史分支的R34／R35／R37，以及原始失敗與來源限制。原有122個主資料夾、26個Lab資料夾、29個早期分組不等於177次獨立訓練；早期R2至R10已由原JSON與日誌串回，R36仍未找到獨立證據，均不補造。
+| 想知道 | 讀 |
+|---|---|
+| 現在用哪個模型、論文結果 | [PROJECT_STATE.md](../PROJECT_STATE.md) |
+| 論文比較（十方法）與修改指南 | [R153 交接](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)、[修改指南](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/PAPER_UPDATE_GUIDE.md) |
+| 研究怎麼一路走來、分階段 | [EXPERIMENTS.md](../docs/reproducibility/EXPERIMENTS.md)、[逐號對照](../docs/reproducibility/lineage/ROUND_NUMBER_MAP.md) |
+| 位移波動的定義 | 論文主要指標是「單趟走 30 步的步距標準差」，不是固定某一步跨 30 趟的標準差。見 [16 方法單趟重算](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md) |
+| 保存與缺件 | [STATUS.md](../docs/reproducibility/STATUS.md)、[KNOWN_GAPS.md](../docs/reproducibility/KNOWN_GAPS.md) |
 
-目前精選研究的固定內容與交付界線見[保存範圍](../docs/reproducibility/project_completion/SELECTIVE_DELIVERY.md)及[固定保存版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)；原方法、完整結果、來源、文獻及失敗各自可查，不把歷史GPU訓練重跑當成完成條件。
-
-下方同日各批次的文字保留當時進度；已取消的全量上傳與大檔取回不是目前待辦，科學結論仍以各輪原正式報告為準。
-
-Last updated: 2026-10-22（精選研究已發布；本輪已確認安全的副本清理完成）
-
-2026-10-22儲存去向：[完整盤點與清理紀錄](../docs/operations/D_DRIVE_FULL_CLEANUP_20261022.md)。R93固定共用陣列留H，舊完整訓練前先取回；原模型、完整結果及論文來源保留。下方2026-10-21等較早批次的「不清D」是當時保存範圍，不取代後來直接授權。
-2026-10-21生產方法：[原生成程式、設定與必要來源](../docs/reproducibility/GENERATION_GUIDE.md)確認18條資料路線，分清R92／R93共用基礎與原修正；177範圍的程式／設定索引可直接查，不上傳整套可再生產物。
-
-2026-10-21精選數表：[R88／R91／R92到R100／R103／R104的方法與失敗脈絡](../docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md)，後三輪130份完整原後測表可直接讀取；曝光失敗、SEM較差結果與共享來源保留，不新增模型或整批影像。
-
-2026-10-21精選整理：[R33至COMBO早期重建](../docs/reproducibility/project_completion/curated/EARLY_RECON_SELECTION.md)依原方法、失敗及量化修復留下34張原圖，完整140份量測不篩掉；整套生成序列改由固定歷史取回，不清D、不改研究判決。
-
-2026-10-21：[R94／R95／R97／R98完整方法、原模型、數據與失敗歷程](../docs/reproducibility/four_rounds/README.md)已補齊，GitHub取回1,092個原位置、32組原模型輸出相同；保留不利結果及缺件界限，沒有重新訓練或清理D。
-
-最新論文比較已於2026-10-07完成：十方法各930張、8370讀值、30有效趟及零量測失敗，150次效率與162組完整趟次配對區間已核對。[完整交接與全部結果](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)／[修改指南](R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/PAPER_UPDATE_GUIDE.md)。另兩官方後端受阻如實保留；監看已結束。原先七／九方法、暫停、恢復與追加SwinIR的順序見[整理前原索引](../docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md)，不再以舊「進行中」文字當目前狀態。
-
-全專案GitHub保存續查進行中：[實際內容與完成條件](../docs/reproducibility/project_completion/README.md)。除實驗目錄外亦查共用訓練、光學校正、論文草稿／交接、原始資料和已搬到H槽的歷史；已補10條本機獨有版本歷史，18份原程式／設計取回相同。第一批851個補件位置已取回相同，含367份模型狀態、460張影像及24份分組資料；六份模型原生CPU執行及約405MB小包重做通過。第二批182471個原始紀錄、標記及論文版本位置已取回相同。全專案其他內容仍在核對，不宣稱全部完成。
-
-來源全內容核對完成3820382個原位置；大型附件仍持續實際取回，不宣稱全專案完成。另保存光學頻譜新舊圖，並以原小型來源重算16份陣列458832數值相同；[版本與重算說明](../docs/reproducibility/optical_calibration/SPECTRA.md)。
-
-原工具登入／工作清單備份原件留本機，已從私人草稿撤下並排除；研究原件、模型與論文不變，396份交付原件已重新從GitHub取回核對，39份原ZIP檢查與大型R61原ZIP合併檢查通過；總恢復入口仍未完成。[保留界線](../docs/reproducibility/project_completion/README.md#私人工具備份不屬於實驗保存)。
-
-另核對目前22個H資料入口、19個實體根位置共29609份檔案，未見新增／變動／缺件；[最後交付檢查](../docs/reproducibility/project_completion/FINAL_PUBLICATION_PROTOCOL.md)仍須全部資料取回與總恢復實測，不能把單批核對當成全案完成。
-
-Lab影像用途已按原紀錄釐清：126份數學平移輸入來自2張完整來源的6區，3份R56預覽不列為原拍；[原方法與原四表重做](../docs/reproducibility/lab_comparisons/README.md)保留不利排序、名義位移參照、分塊／整張速度及模型版本差異，不改目前研究採用。
-
-完整數字、模型身分和外部GMF結果以 `ESTIMATOR_POLICY.json` 與各輪正式報告為準。[逐輪保存判讀](../docs/reproducibility/EXPERIMENTS.md)說明方法、來源和影像選擇；[原代表圖冊](../RECON_GALLERY.md)保留歷史順序。
-
-保存續查另核對全新GitHub程式副本22218檔，補回兩份原文件暫存歷史及33個共用位置對照。[早期Round12–15](../docs/reproducibility/legacy_multiscale/README.md)的207分數與五次原選擇已取回重算，9個早期公式缺件明列；R88沿用未建資料／啟動中的舊文字已依原87輪停止紀錄修正並保存舊文。完整大型資料保存仍在進行，沒有重跑歷史訓練或升級模型。
-
-續查已[補回R95兩版早期訓練程式](R95_CounterfactualGateRepairScratch/archive/recovered_training_sources_20261021/README.md)，均符合原登記並實際從GitHub取回；原更新狀態保存方式與第一次接續差異可直接追查。其他早期缺件保留，完整數值與影像仍逐批核對，不把找到兩份原程式當成全部舊訓練已重現。
-
-[R89到R93的方法脈絡](../docs/reproducibility/scratch_lineage/README.md)已補完成狀態與來源判讀：R91／R92原結束摘要及逐輪表確認完整60／80輪，原進度active不改寫；R91只是檢查讀法對照，R92有光度／曝光修復與原件備份。原不利讀值、資料差異和未完成外部範圍保留。
-
-**位移波動定義：**固定步數位置比較不同重拍趟次，與單趟走完30步的波動不同。[單趟完整重算與16方法比較](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md)保留原定義及逐趟結果。
-
-
-保存續查補清[V41到V42完整來源與原表讀法](../docs/reproducibility/lab_comparisons/V42_HISTORY.md)：V41最佳第16輪是V42起點，兩輪短測、完整120輪及第10輪EMA最佳分開。原表欄名錯置另存核實讀法，原數字及原模型不改寫；約54MB固定模型小包已從GitHub實際取回，四次原生CPU完整小數及BMP相同，沒有重跑長訓練。
-
-
-[舊訓練表版本核對](../docs/reproducibility/project_completion/TRAINING_LOG_LAYOUTS.md)另核對699份原表及十份GitHub原寫入程式；原表欄名錯置、只有表頭、空檔和未寫出的量均按原身分保留，V42另存讀法不能代表所有歷史版本。
-
-
-保存續查的[完整模型補件與交付身分](../docs/reproducibility/project_completion/MODEL_HISTORY.md)已實際取回十批5,394份新增內容，五份部署圖CPU可執行；原15MB R61交付包也已從GitHub取回，以原光學／網路入口產生相同示例。全域位置及正式模型版本仍待全部資料，沒有重選模型或重跑訓練。
+2026-10 的逐批保存收據（取回核對、補件、清理）原本堆在本頁開頭，已移到固定歷史：[整理前的 INDEX.md](https://github.com/rio10255254/GMM_2_Final/blob/d12dd7e0/Experiments/INDEX.md)，另見 [docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md](../docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md)。以下表格未更動。
 
 ## Active（formal baseline + approved alternates）
 
