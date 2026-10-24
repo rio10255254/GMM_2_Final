@@ -8,8 +8,8 @@ Last updated: 2026-10-24（文件整併改寫；內容事實截至 2026-10-23）
 ## Quick Handoff
 
 ### 模型身分
-- **正式基準：COMBO**（`r38v2_8px_gate_p95`，2026-04-08 生效），用於環形影像 + 外部 GMF 的正式量測。
-- **核准替代：** R33（定位極致）、R38v2（視覺優先）、R39R40_avg_a025（平衡）。身分不因後續研究改變。
+- **正式基準：COMBO**（`r38v2_8px_gate_p95`，2026-04-08 生效，分支 `sandbox/r38v2`），用於公司端環形影像 + 外部 GMF 的正式量測。
+- **核准替代（Approved Alternates）：** R33（定位極致）、R38v2（視覺優先）、R39R40_avg_a025（平衡）。身分不因後續研究改變。
 - **論文採用：R152（論文稱 MOSR）對 RAW**，來自 2026-09 的 930 張實拍比較。R152 沒有取代 COMBO 的正式身分。
 
 ### 論文結果（nm，越小越穩）
@@ -43,7 +43,7 @@ Last updated: 2026-10-24（文件整併改寫；內容事實截至 2026-10-23）
 
 | 項目 | 現況 |
 |---|---|
-| 正式基準 | COMBO，外部 GMF（越低越好）0.8 px 0.131560／0.08 px 0.099891／8 px 0.154515；比前任 R30 分別好 21.6%／36.7%／24.7% |
+| 正式基準（formal production baseline） | COMBO，外部 GMF（越低越好）0.8 px 0.131560／0.08 px 0.099891／8 px 0.154515；比前任 R30 分別好 21.6%／36.7%／24.7% |
 | 核准替代 | R33、R38v2、R39R40_avg_a025（2026-05-11 升級） |
 | 開放支線 | R26NewPSFCheck（新 PSF 重訓，等外部 GMF，非主線） |
 | 已結案 | R31、R32（external FAIL，0.8 px +97.7%）、R33c、R34／35／37、R38 等；失敗保留在各輪報告 |
@@ -135,4 +135,4 @@ R153 十方法（算術平均口徑，nm）：
 
 ### 6. 本頁的歷史版本
 
-本頁在 2026-10-24 前是一份約 16 萬字、逐日累積的保存流水帳。完整原文保留在固定 Git 歷史：[PROJECT_STATE.md @ d12dd7e0](https://github.com/rio10255254/GMM_2_Final/blob/d12dd7e0/PROJECT_STATE.md)；更早的交接見 [docs/history/](docs/history/README.md)。本次改寫只整理敘述，沒有改變任何研究結論、採用判決或保存事實。
+本頁在 2026-10-24 前是一份約 16 萬字、逐日累積的保存流水帳。完整原文逐位元組保留在 [docs/history/BEFORE_PLAIN_REWRITE_20261024/PROJECT_STATE.md](docs/history/BEFORE_PLAIN_REWRITE_20261024/PROJECT_STATE.md)（也可看 [GitHub 上的 d12dd7e0 版本](https://github.com/rio10255254/GMM_2_Final/blob/d12dd7e0/PROJECT_STATE.md)）；更早的交接見 [docs/history/](docs/history/README.md)。本次改寫只整理敘述，沒有改變任何研究結論、採用判決或保存事實。

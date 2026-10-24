@@ -94,3 +94,5 @@ Experiments/R##_Description/
 ## 保存與位置恢復
 
 [封存索引](../operations/PROJECT_ARCHIVE_INDEX.md)、[已清副本的去向](../operations/D_DRIVE_FULL_CLEANUP_20261022.md)與各輪恢復入口列出原 D 位置與 H 來源。H 是本機封存，不能宣稱沒有 H 仍可只靠 GitHub 精確取回所有歷史大資料。多輪共用的 930 張原拍與 30 份平台紀錄只保存一次；R92／R93 基礎、R61 歷史幾何、R152 的 25 PSF 各有必要性，按 [取得指南](../reproducibility/ASSET_GUIDE.md) 選取。
+
+> 本頁 2026-10-24 改寫前的原文逐位元組保留在 [docs__navigation__PROJECT_MAP.md](../history/BEFORE_PLAIN_REWRITE_20261024/docs__navigation__PROJECT_MAP.md)。

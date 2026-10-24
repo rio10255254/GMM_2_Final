@@ -16,12 +16,14 @@
 三個要記住的限制：**更穩不等於更準**（對 SEM 的尺寸差反而變大）；論文裡的多 PSF 融合模組實際作用極小，效果主要來自底座 R148v2；SEM 與樣品曾用於光學校準，不是完全獨立的驗證。
 另有十種方法的完整比較（EDSR、NAFNet、SwinIR…）。數字與限制見 [PROJECT_STATE.md](PROJECT_STATE.md)。
 
-## 兩個「目前模型」，不要搞混
+## 兩條線、兩個「目前模型」，不要搞混
 
-| 身分 | 是誰 | 範圍 |
+這個專案同時服務兩個用途，所以有兩個「目前」的答案：
+
+| 用途 | 目前模型 | 怎麼評分 |
 |---|---|---|
-| 正式基準 | **COMBO**（2026-04-08 起） | 早期環形影像 + 外部 GMF 定位的正式量測流程 |
-| 論文採用 | **R152 / MOSR**，對照 RAW | 2026-09 後的實拍位移、尺寸、輪廓比較 |
+| **公司端量測部署** | **COMBO**（正式基準，2026-04-08 起；歷史前任 baseline 是 R30） | 環形影像交給固定的外部定位工具（GmmVisionTool 的 GMF），看 1／0.1／0.01 µm 三個位移尺度的穩定度。COMBO 交付為 ONNX 包（`_deployment_package/`）；之後的 ONNX 交付（`Deliverables/MOSR_ONNX/`、`MOSR_R61_ONNX/`）以均華 202 張等實拍驗證（`Validations/MOSR_ONNX_JunHua/`） |
+| **論文** | **R152 / MOSR**，對照 RAW | 2026-09-03 拍攝的 930 張 PI 位移重拍，看位移、尺寸、輪廓 |
 
 兩者考的是不同的試，並不衝突。R152 沒有取代 COMBO 的正式身分。機器可讀的版本在 [ESTIMATOR_POLICY.json](ESTIMATOR_POLICY.json)。
 
@@ -63,4 +65,4 @@
 
 大型原拍、模型與資料以 GitHub 發布附件保存，按需下載，不必整套取回。**逐輪必要來源的查核仍在進行**；已知缺一個 R63 原模型、主專案 R36 無法辨認。詳見 [PROJECT_STATE.md](PROJECT_STATE.md) 與 [docs/reproducibility/README.md](docs/reproducibility/README.md)。
 
-> 2026-10-24 前的舊首頁保存在[固定歷史版本](https://github.com/rio10255254/GMM_2_Final/blob/d12dd7e0/README.md)。 較早的程序狀態在 `docs/archive/legacy_runtime_status/`。
+> 2026-10-24 改寫前的舊首頁原文在 [docs/history/BEFORE_PLAIN_REWRITE_20261024/](docs/history/BEFORE_PLAIN_REWRITE_20261024/README.md)。 較早的程序狀態在 `docs/archive/legacy_runtime_status/`。

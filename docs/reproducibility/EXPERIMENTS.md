@@ -18,6 +18,17 @@ flowchart TD
     G --> H["8 光學配對與論文 R141–R153<br/>2026-09-28 ~ 10-07"]
 ```
 
+## 先看：四種實驗系統（考試換了，數字就不能互比）
+
+研究過程中，資料來源、評分工具和目標換過幾次。下面的八個階段都屬於其中一種系統；時間上有重疊。
+
+| 系統 | 大約期間 | 資料與評分 | 代表成果 |
+|---|---|---|---|
+| A 公司端環形 + 外部 GMF | 2026-03～05 | 環形影像；固定的外部 GmmVisionTool GMF，看 1／0.1／0.01 µm（8／0.8／0.08 px）三尺度 step_std | COMBO（正式基準）、R33、R38v2、R39R40；ONNX 公司端交付 |
+| B 實拍樣品擴充與交付 | 約 2026-06～08 | Step、100MG、20×／5×、均華 202 張等實拍；相位配準與外部 GMF 回傳 | 主 R61 STEP 線、ONNX 交付與均華驗證（`Validations/`） |
+| C 實驗室顯微系統（LabSystem） | 2026-06～07（V42 沿用到 9 月） | 實驗室自量 25 位置 PSF、自生資料、棋盤與 SEM | Lab R39–R62、V41／V42（R152 之前的論文模型） |
+| D 9 月 3 日 PI 930 張重拍 | 2026-09～10 | 30 趟 × 31 位置實拍，PI 回授與 SEM | R122 之後的真實優先路線、R152（論文採用）、R153 十方法比較 |
+
 ## 八個階段
 
 ### 1　早期調參（R1–R31，2026-03）
@@ -98,3 +109,5 @@ flowchart TD
 | [主 R141 起](routes/main141_plus.md) | 14 | 部署設計、短測與正式完成分開；論文交接在 R153 |
 
 卡片只是閱讀順序，不表示相鄰兩輪繼承同一模型或資料；**原正式報告優先於卡片摘要**。生成程式查 [GENERATION_GUIDE](GENERATION_GUIDE.md)，文獻查 [LITERATURE_GUIDE](LITERATURE_GUIDE.md)，下載查 [ASSET_GUIDE](ASSET_GUIDE.md)，每輪內部檔案分工查 [DEEP_STRUCTURE](../navigation/DEEP_STRUCTURE.md)。
+
+> 本頁 2026-10-24 改寫前的原文逐位元組保留在 [docs__reproducibility__EXPERIMENTS.md](../history/BEFORE_PLAIN_REWRITE_20261024/docs__reproducibility__EXPERIMENTS.md)。

@@ -9,6 +9,7 @@
 | 被目前簡明首頁取代的原介紹 | [2026-10-22整理前首頁](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/README.md) |
 | 原論文證據區的章節設想 | [整理前論文證據首頁](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/Thesis_MOSR_Evidence/README.md)；不是目前R153交接 |
 | 保存過程的完整舊流水紀錄 | [整理前保存首頁](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/docs/reproducibility/project_completion/README.md)；目前看[分日期收據入口](../reproducibility/project_completion/README.md) |
+| 2026-10-24 白話改寫前的首頁、狀態、架構、導航與實驗索引原文 | [逐位元組原文](BEFORE_PLAIN_REWRITE_20261024/README.md) |
 | 舊根層狀態、決策與圖 | [小型歷史封存](../archive/README.md)、原輪次與Traing_Progress |
 
 本次只重寫會被當成目前入口的說明，原內容仍留在上表的固定GitHub歷史。原報告、程式、數字、圖、原稿和固定收據不因閱讀整理而改成新版本結論。

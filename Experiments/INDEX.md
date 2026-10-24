@@ -12,7 +12,7 @@ Last updated: 2026-10-24
 | 位移波動的定義 | 論文主要指標是「單趟走 30 步的步距標準差」，不是固定某一步跨 30 趟的標準差。見 [16 方法單趟重算](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md) |
 | 保存與缺件 | [STATUS.md](../docs/reproducibility/STATUS.md)、[KNOWN_GAPS.md](../docs/reproducibility/KNOWN_GAPS.md) |
 
-2026-10 的逐批保存收據（取回核對、補件、清理）原本堆在本頁開頭，已移到固定歷史：[整理前的 INDEX.md](https://github.com/rio10255254/GMM_2_Final/blob/d12dd7e0/Experiments/INDEX.md)，另見 [docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md](../docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md)。以下表格未更動。
+2026-10 的逐批保存收據（取回核對、補件、清理）原本堆在本頁開頭，原文逐位元組保留在 [docs/history/BEFORE_PLAIN_REWRITE_20261024/Experiments__INDEX.md](../docs/history/BEFORE_PLAIN_REWRITE_20261024/Experiments__INDEX.md)，另見 [docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md](../docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md)。以下表格未更動。
 
 ## Active（formal baseline + approved alternates）
 

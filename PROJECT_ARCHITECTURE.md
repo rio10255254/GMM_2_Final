@@ -170,3 +170,5 @@ y_R152 = clip( y_base + d·s·(x_PSF − x), 0, 1 )      d=1，s≈0.0138，模�
 - 研究保存檔保留原始位元組，Git 不自動轉換換行。
 
 規則全文與取回方式：[PROJECT_STORAGE_AND_ARCHIVE_POLICY.md](docs/operations/PROJECT_STORAGE_AND_ARCHIVE_POLICY.md)、[docs/reproducibility/README.md](docs/reproducibility/README.md)。
+
+> 本頁 2026-10-24 改寫前的原文逐位元組保留在 [PROJECT_ARCHITECTURE.md](docs/history/BEFORE_PLAIN_REWRITE_20261024/PROJECT_ARCHITECTURE.md)。
