@@ -1,34 +1,34 @@
-# legacy/round26：檔案怎麼找
+# Round 26：調步長權重，升為基線 r26_sm035
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round26.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 25](<../round25/FILE_GUIDE.md>) · [外部比較 R18～R26](<../external_compare_r18_r22_r25_r26/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_SUMMARY.md>) · [下一輪 Round 27](<../round27/FILE_GUIDE.md>) · [之後的新 PSF 重訓 R26NewPSFCheck](<../../../Experiments/R26NewPSFCheck/FILE_GUIDE.md>)
 
-**研究問題：平滑強度與正式交付版本。**
+**一句話：** 2026-03-16 晚間，在 R25 的路線上恢復步長：步長權重試 0.25、0.30、0.35，選中 `r26_sm035`（內部中心 0.0691、步長 0.0857）。外部 GMF 的 0.8 px 步長標準差從 R25 的 0.212 再降到 0.191，錨點自相關 0.226 也過了 0.10 的門檻，報告建議升級。`r26_sm035` 成為新的基線，也是 R26 正式交付包的模型，直到 R30 取代。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **採用**（基線 `r26_sm035`；之後由 R30 取代） |
+| 時間 | 2026-03-16 晚間 |
+| 實驗條件 | A：環形影像，內部 0.8 px 稽核；外部 GMF 三尺度 |
+| 起點 | R25 的從零訓練路線 |
 
-## 先讀原文件
+## 外部 GMF 步長標準差
 
-- [ROUND26_STEP_RECOVERY AUDIT_0P8 Summary](<selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_SUMMARY_20260316_191318.md>)
-- [Process Probe Audit](<selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_r26_sm025_20260316_191318.md>)
-- [Process Probe Audit](<selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_r26_sm030_20260316_191318.md>)
-- [Process Probe Audit](<selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_r26_sm035_20260316_191318.md>)
-- [ROUND26_STEP_RECOVERY AUDIT_8P0 Summary](<selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_SUMMARY_20260316_191410.md>)
-- [Process Probe Audit](<selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_r26_sm025_20260316_191410.md>)
+| 尺度 | R18 | R25 sw010 | **R26 sm035** |
+|---|---:|---:|---:|
+| 8 px | 0.2507 | 0.2115 | **0.2010** |
+| 0.8 px | 0.2855 | 0.2120 | **0.1913** |
+| 0.08 px | 0.2094 | **0.1648** | 0.1803 |
 
-其餘原報告見[本輪完整研究卡](<../../../docs/reproducibility/experiments/legacy__round26.md>)。
+## 讀這些數字要知道的事
 
-## 進入實際檔案
+1. **0.08 px 是 R25 較好**，但決策主軸是 0.8 px。
+2. **3/26 曾用新 PSF 重訓這個交付包的模型**，那次退步的原因與新 PSF 升為標準的過程記在 [R26NewPSFCheck](<../../../Experiments/R26NewPSFCheck/FILE_GUIDE.md>)。
+3. 同一個基線之後也被拿來做 [TTA 測試](<../tta_experiment/FILE_GUIDE.md>)，結果 0.8 px 反而變差。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | Round 26 — Step Recovery |
-| [README.md](<README.md>) | 1檔 | round26 — Step Recovery and Baseline Promotion |
-| [selected/](<selected>) | 10檔 | 歷史選定內容；不代表今日正式採用 |
+## 拿資料與重做
 
-## 必要來源與取得界線
+可重做程度：**partial**。選定種子 `selected/current_round26_step_recovery_seed.json` 不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡。R26 正式交付包在 `_deployment_package/GeoEdge_R26_正式交付版/`；2026-10-26 的全專案掃描顯示其中約 5.6 GB 在雲端找不到同內容。
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+## 原始報告
 
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[步長恢復決策](<selected/reports/ROUND26_STEP_RECOVERY_DECISION_20260316_191450.md>)、[步長恢復摘要](<selected/reports/ROUND26_STEP_RECOVERY_SUMMARY_20260316_191318.md>)、[外部比較](<../external_compare_r18_r22_r25_r26/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_SUMMARY.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round26.md>)。

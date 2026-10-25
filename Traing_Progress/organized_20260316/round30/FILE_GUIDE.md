@@ -1,35 +1,36 @@
-# legacy/round30：檔案怎麼找
+# Round 30：架構突破，r30_b1_dironly 成為正式基準
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round30.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 29](<../round29/FILE_GUIDE.md>) · [下一輪 Round 31](<../round31/FILE_GUIDE.md>) · [之後的 R32](<../../../Experiments/R32Sandbox/FILE_GUIDE.md>)
 
-**研究問題：方向約束的歷史前任正式模型。**
+**一句話：** R27～R29 證明只調步長權重已經到頂，2026-03-17～03-18 改架構，試三個 B1 系列候選。內部第一名是功能最完整的 `r30_b1a1a5_full`，但外部 GMF 的 0.8 px 贏家是只加方向約束的 `r30_b1_dironly`：步長標準差 0.1679，比 R26 的 0.1913 改善 0.023。依外部結果，`r30_b1_dironly` 正式升級為正式基準，一直用到 COMBO（4/8）。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **採用**（正式基準 `r30_b1_dironly`，直到 COMBO） |
+| 時間 | 2026-03-17 訓練；03-18 決策與外部比較 |
+| 實驗條件 | A：環形影像，內部 0.8 px 稽核；外部 GMF 三尺度 |
+| 起點 | R26 時代的路線 |
 
-## 先讀原文件
+## 外部 GMF 步長標準差
 
-- [ROUND30_ARCH_BREAKTHROUGH AUDIT_0P8 Summary](<selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_SUMMARY_20260318_003534.md>)
-- [Process Probe Audit](<selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_r30_b1_dironly_20260318_003534.md>)
-- [Process Probe Audit](<selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_r30_b1a1_dir_lblur_20260318_003534.md>)
-- [Process Probe Audit](<selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_r30_b1a1a5_full_20260318_003534.md>)
-- [ROUND30_ARCH_BREAKTHROUGH AUDIT_8P0 Summary](<selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_SUMMARY_20260318_003647.md>)
-- [Process Probe Audit](<selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_r30_b1_dironly_20260318_003647.md>)
+| 尺度 | R26 sm035 | **r30_b1_dironly** | r30_b1a1_dir_lblur | r30_b1a1a5_full |
+|---|---:|---:|---:|---:|
+| 8 px | 0.2010 | 0.2052 | 0.2042 | **0.1993** |
+| 0.8 px | 0.1913 | **0.1679** | 0.1855 | 0.1843 |
+| 0.08 px | 0.1803 | 0.1577 | **0.1414** | 0.1574 |
 
-其餘原報告見[本輪完整研究卡](<../../../docs/reproducibility/experiments/legacy__round30.md>)。
+內部稽核：`r30_b1a1a5_full` 中心 0.3020、步長 0.0445（內部第一）；`r30_b1_dironly` 中心 0.0804、步長 0.0693。
 
-## 進入實際檔案
+## 讀這些數字要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [gmf_results/](<gmf_results>) | 9檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | Round 30 — Architecture Breakthrough |
-| [README.md](<README.md>) | 1檔 | round30 — Architecture Breakthrough |
-| [selected/](<selected>) | 11檔 | 歷史選定內容；不代表今日正式採用 |
+1. **內部第一名不是外部贏家**，最後依外部 0.8 px 決定，這是 R22 教訓之後的標準做法。
+2. 三個候選在 0.8 px 都比 R26 好；`b1a1a5_full` 在 8 px 最好，但正式決策以 0.8 px 主戰場優先。
+3. 外部比較的 GMF 分數與重建影像保存在本資料夾的 `gmf_results/` 與 `reconstruct_progress_*`。
 
-## 必要來源與取得界線
+## 拿資料與重做
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+可重做程度：**partial**。選定種子 `selected/current_round30_arch_breakthrough_seed.json` 不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡。
 
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
+## 原始報告
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[外部比較](<selected/reports/ROUND30_EXTERNAL_COMPARE.md>)、[架構突破決策](<selected/reports/ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round30.md>)。

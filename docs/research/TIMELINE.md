@@ -78,7 +78,7 @@ B 的均華 202 張和 D 的 930 張都是借用合作廠商均華的光學系�
 | R19–R20 | 絕對位置錨定、固定基準流程前測 → **未採用**：假說沒有被支持 | [R19](../reproducibility/experiments/legacy__round19.md)、[R20](../reproducibility/experiments/legacy__round20.md) |
 | R21–R22 | 混合估計器、成對混合估計器 → R21 **未採用**；R22 通過內部關卡，但外部 GMF 在 0.8 px 沒贏 R18，**未升級**（內部指標進步 4.6 倍、外部反而退步，是「內部與外部脫節」這個教訓的源頭） | [R21](../reproducibility/experiments/legacy__round21.md)、[R22](../reproducibility/experiments/legacy__round22.md) |
 | R23–R24 | R22 之後的歷史候選 → **未採用**：診斷性負結果 | [R23](../reproducibility/experiments/legacy__round23.md)、[R24](../reproducibility/experiments/legacy__round24.md) |
-| R25–R29 | 從零訓練與步長權重的外部多尺度比較鏈；R26 另有新 PSF 重訓與交付版本 → **研究候選**：建立後續共用的比較方式 | [R25](../reproducibility/experiments/legacy__round25.md)、[R26](../../Experiments/R26NewPSFCheck/FILE_GUIDE.md)、[R27](../reproducibility/experiments/legacy__round27.md)–[R29](../reproducibility/experiments/legacy__round29.md) |
+| R25–R29 | 從零訓練加絕對中心（R25），再調步長權重（R26～R29）的外部多尺度比較鏈 → R25 第一次外部突破；R26 `r26_sm035` **採用**為基線（外部 0.8px 步長標準差 0.191）；R27～R29 外部都沒贏 R26。R26 另有新 PSF 重訓與交付版本 | [R25](../reproducibility/experiments/legacy__round25.md)、[R26](../../Experiments/R26NewPSFCheck/FILE_GUIDE.md)、[R27](../reproducibility/experiments/legacy__round27.md)–[R29](../reproducibility/experiments/legacy__round29.md) |
 | **R30** | 方向約束（`r30_b1_dironly`） → **採用**：成為前任正式基準，直到 COMBO | [R30](../reproducibility/experiments/legacy__round30.md) |
 | R31 | 再調訓練權重與等化訊號 → **未採用**：外部退步 | [R31](../reproducibility/experiments/legacy__round31.md) |
 

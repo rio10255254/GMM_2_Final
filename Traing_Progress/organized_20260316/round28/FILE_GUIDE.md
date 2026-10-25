@@ -1,34 +1,28 @@
-# legacy/round28：檔案怎麼找
+# Round 28：步長權重往下掃（低於 0.35）
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round28.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 27](<../round27/FILE_GUIDE.md>) · [外部比較 R18～R28](<../external_compare_r18_r22_r25_r26_r27_r28/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_SUMMARY.md>) · [下一輪 Round 29](<../round29/FILE_GUIDE.md>)
 
-**研究問題：延續多尺度守門的歷史候選。**
+**一句話：** 2026-03-16 深夜，測試 R26 的步長權重 0.35 是否偏高：往下試 0.30、0.32、0.33，選中 `r28_sm030`（內部中心 0.0825、步長 0.0684）。外部 GMF 的 0.8 px 步長標準差 0.2282，明顯比 R26 的 0.1913 差，三個尺度都退步。往下掃這個方向被否定，R26 維持基線。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（否定性驗證：步長權重低於 0.35 外部退步） |
+| 時間 | 2026-03-16 深夜 |
+| 實驗條件 | A：環形影像，內部 0.8 px 稽核；外部 GMF 三尺度 |
+| 起點 | R26 的路線 |
 
-## 先讀原文件
+## 外部 GMF 步長標準差
 
-- [ROUND28_STEP_MAG_BALANCE AUDIT_0P8 Summary](<selected/reports/ROUND28_STEP_MAG_BALANCE_AUDIT_0P8_SUMMARY_20260316_225344.md>)
-- [Process Probe Audit](<selected/reports/ROUND28_STEP_MAG_BALANCE_AUDIT_0P8_r28_sm030_20260316_225344.md>)
-- [Process Probe Audit](<selected/reports/ROUND28_STEP_MAG_BALANCE_AUDIT_0P8_r28_sm032_20260316_225344.md>)
-- [Process Probe Audit](<selected/reports/ROUND28_STEP_MAG_BALANCE_AUDIT_0P8_r28_sm033_20260316_225344.md>)
-- [ROUND28_STEP_MAG_BALANCE AUDIT_8P0 Summary](<selected/reports/ROUND28_STEP_MAG_BALANCE_AUDIT_8P0_SUMMARY_20260316_225440.md>)
-- [Process Probe Audit](<selected/reports/ROUND28_STEP_MAG_BALANCE_AUDIT_8P0_r28_sm030_20260316_225440.md>)
+| 尺度 | R26 sm035 | R28 sm030 |
+|---|---:|---:|
+| 8 px | **0.2010** | 0.2206 |
+| 0.8 px | **0.1913** | 0.2282 |
+| 0.08 px | **0.1803** | 0.1922 |
 
-其餘原報告見[本輪完整研究卡](<../../../docs/reproducibility/experiments/legacy__round28.md>)。
+## 拿資料與重做
 
-## 進入實際檔案
+可重做程度：**partial**。選定種子 `selected/current_round28_step_mag_balance_seed.json` 不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | Round 28 — Step-Mag Balance / Downsweep |
-| [README.md](<README.md>) | 1檔 | round28 — Step-Mag Downsweep Falsification |
-| [selected/](<selected>) | 12檔 | 歷史選定內容；不代表今日正式採用 |
+## 原始報告
 
-## 必要來源與取得界線
-
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
-
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[步長平衡決策](<selected/reports/ROUND28_STEP_MAG_BALANCE_DECISION_20260316_225523.md>)、[步長平衡摘要](<selected/reports/ROUND28_STEP_MAG_BALANCE_SUMMARY_20260316_225344.md>)、[外部比較](<../external_compare_r18_r22_r25_r26_r27_r28/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_SUMMARY.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round28.md>)。

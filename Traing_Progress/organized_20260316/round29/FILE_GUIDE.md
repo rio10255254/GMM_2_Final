@@ -1,34 +1,33 @@
-# legacy/round29：檔案怎麼找
+# Round 29：步長權重往上掃（高於 0.35）
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round29.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 28](<../round28/FILE_GUIDE.md>) · [外部比較 R18～R29](<../external_compare_r18_r22_r25_r26_r27_r28_r29/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_R29_SUMMARY.md>) · [下一輪 Round 30](<../round30/FILE_GUIDE.md>)
 
-**研究問題：R30之前的歷史候選。**
+**一句話：** 2026-03-17 補做另一側：步長權重往上試 0.38、0.40、0.42，選中 `r29_sm042`（內部中心 0.0682、步長 0.0789），內部通過。外部 GMF 的 0.8 px 步長標準差 0.2173，仍差於 R26 的 0.1913；只有 0.08 px 明顯較好。結論是 R26 的 0.35 就是這個權重的最佳點，單純調步長權重已經沒有空間，下一步要改架構。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（否定性驗證：步長權重高於 0.35 外部也沒贏） |
+| 時間 | 2026-03-17 |
+| 實驗條件 | A：環形影像，內部 0.8 px 稽核；外部 GMF 三尺度 |
+| 起點 | R26 的路線 |
 
-## 先讀原文件
+## 外部 GMF 步長標準差
 
-- [ROUND29_STEP_MAG_UPPER AUDIT_0P8 Summary](<selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_SUMMARY_20260317_124532.md>)
-- [Process Probe Audit](<selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_r29_sm038_20260317_124532.md>)
-- [Process Probe Audit](<selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_r29_sm040_20260317_124532.md>)
-- [Process Probe Audit](<selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_r29_sm042_20260317_124532.md>)
-- [ROUND29_STEP_MAG_UPPER AUDIT_8P0 Summary](<selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_SUMMARY_20260317_124630.md>)
-- [Process Probe Audit](<selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_r29_sm038_20260317_124630.md>)
+| 尺度 | R26 sm035 | R29 sm042 |
+|---|---:|---:|
+| 8 px | **0.2010** | 0.2054 |
+| 0.8 px | **0.1913** | 0.2173 |
+| 0.08 px | 0.1803 | **0.1375** |
 
-其餘原報告見[本輪完整研究卡](<../../../docs/reproducibility/experiments/legacy__round29.md>)。
+## 讀這些數字要知道的事
 
-## 進入實際檔案
+1. **R29 的 0.8 px 數字剔除過一個離群步長。** 這份比較用的是 3σ 規則（|步長 − 平均| > 3 倍標準差），剔除前是 0.2348、剔除後 0.2173；其他模型在這裡都沒有被剔除。專案後來改成外部 GMF 一律用原始步長標準差、只剔除 z > 5 的 GMF 失敗點，所以這個數字不能直接跟後期的報告比。不論剔不剔除，結論都一樣是沒贏 R26。
+2. 比較報告註記 `r29_winner` 目錄名稱要在訓練後手動改成實際 winner 名稱。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | Round 29 — Step-Mag Upper Sweep |
-| [README.md](<README.md>) | 1檔 | round29 — Step-Mag Upper Sweep Falsification |
-| [selected/](<selected>) | 12檔 | 歷史選定內容；不代表今日正式採用 |
+## 拿資料與重做
 
-## 必要來源與取得界線
+可重做程度：**partial**。選定種子 `selected/current_round29_step_mag_upper_seed.json` 不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡。
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+## 原始報告
 
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[上掃決策](<selected/reports/ROUND29_STEP_MAG_UPPER_DECISION_20260317_124715.md>)、[上掃摘要](<selected/reports/ROUND29_STEP_MAG_UPPER_SUMMARY_20260317_115029.md>)、[外部比較](<../external_compare_r18_r22_r25_r26_r27_r28_r29/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_R29_SUMMARY.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round29.md>)。

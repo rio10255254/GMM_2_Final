@@ -1,34 +1,32 @@
-# legacy/round27：檔案怎麼找
+# Round 27：內部最好，外部沒贏 R26
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round27.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 26](<../round26/FILE_GUIDE.md>) · [外部比較 R18～R27](<../external_compare_r18_r22_r25_r26_r27/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_SUMMARY.md>) · [下一輪 Round 28](<../round28/FILE_GUIDE.md>)
 
-**研究問題：在R26基礎上的外部比較。**
+**一句話：** 2026-03-16 晚間，在 R26 之後繼續調步長權重（0.25、0.28、0.30），選中 `r27_sm028`：內部中心 0.0603、步長 0.0737，都比 R26 好，是 R26 時代的內部最前緣。但外部 GMF 的 0.8 px 步長標準差 0.1963，略差於 R26 的 0.1913，所以維持 R26。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（內部最前緣，外部主戰場沒超越 R26） |
+| 時間 | 2026-03-16 晚間 |
+| 實驗條件 | A：環形影像，內部 0.8 px 稽核；外部 GMF 三尺度 |
+| 起點 | R26 的路線 |
 
-## 先讀原文件
+## 外部 GMF 步長標準差
 
-- [ROUND27_STEP_MAG_RECOVERY AUDIT_0P8 Summary](<selected/reports/ROUND27_STEP_MAG_RECOVERY_AUDIT_0P8_SUMMARY_20260316_204323.md>)
-- [Process Probe Audit](<selected/reports/ROUND27_STEP_MAG_RECOVERY_AUDIT_0P8_r27_sm025_20260316_204323.md>)
-- [Process Probe Audit](<selected/reports/ROUND27_STEP_MAG_RECOVERY_AUDIT_0P8_r27_sm028_20260316_204323.md>)
-- [Process Probe Audit](<selected/reports/ROUND27_STEP_MAG_RECOVERY_AUDIT_0P8_r27_sm030_20260316_204323.md>)
-- [ROUND27_STEP_MAG_RECOVERY AUDIT_8P0 Summary](<selected/reports/ROUND27_STEP_MAG_RECOVERY_AUDIT_8P0_SUMMARY_20260316_204414.md>)
-- [Process Probe Audit](<selected/reports/ROUND27_STEP_MAG_RECOVERY_AUDIT_8P0_r27_sm025_20260316_204414.md>)
+| 尺度 | R26 sm035 | R27 sm028 |
+|---|---:|---:|
+| 8 px | 0.2010 | **0.1980** |
+| 0.8 px | **0.1913** | 0.1963 |
+| 0.08 px | 0.1803 | **0.1724** |
 
-其餘原報告見[本輪完整研究卡](<../../../docs/reproducibility/experiments/legacy__round27.md>)。
+## 讀這些數字要知道的事
 
-## 進入實際檔案
+內部數字更好、外部 0.8 px 卻略差，是 R22 那個「內部與外部脫節」的又一個例子。R27 的錨點自相關 0.353 反而是當時最高。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | Round 27 — Step-Mag Recovery |
-| [README.md](<README.md>) | 1檔 | round27 — Step-Mag Recovery Frontier |
-| [selected/](<selected>) | 10檔 | 歷史選定內容；不代表今日正式採用 |
+## 拿資料與重做
 
-## 必要來源與取得界線
+可重做程度：**partial**。選定種子 `selected/current_round27_step_mag_recovery_seed.json` 不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡。
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+## 原始報告
 
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[步長恢復決策](<selected/reports/ROUND27_STEP_MAG_RECOVERY_DECISION_20260316_204452.md>)、[步長恢復摘要](<selected/reports/ROUND27_STEP_MAG_RECOVERY_SUMMARY_20260316_204323.md>)、[外部比較](<../external_compare_r18_r22_r25_r26_r27/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_SUMMARY.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round27.md>)。
