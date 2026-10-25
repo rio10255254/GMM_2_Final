@@ -205,9 +205,9 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | R92 | 補足物理邊緣過渡與平衡曝光取樣 → **研究候選**：成為 R99、R100、R102～R104 的共用資料基礎 | [R92](../../Experiments/R92_PhysicalTransitionBalancedScratch/FILE_GUIDE.md) |
 | R93 | 拆開可恢復細節與清楚輸入的保護 → **研究候選**：停在第 60 輪，資料被 R94～R98 共用 | [R93](../../Experiments/R93_RecoverableDetailSeparatedScratch/FILE_GUIDE.md) |
 | R94 | 按成像順序分工，直接教何時需要修正 → **中止**：計畫 48 輪，第 9 輪存檔前被記憶體保護停下；R95 的前置診斷由此找出控制與訓練動力的問題 | [R94](../../Experiments/R94_EvidenceConditionalScratch/FILE_GUIDE.md) |
-| R95 | 修 R94 的修正閘與訓練動力 → **未採用**：48 輪完成，首次恢復重建更新 | [R95](../../Experiments/R95_CounterfactualGateRepairScratch/FILE_GUIDE.md) |
+| R95 | 修 R94 的修正閘與訓練動力 → **未採用**：48 輪完成（中途兩次接續），但清楚案例仍被誤改、邊界控制被壓低、紋理分支極弱 | [R95](../../Experiments/R95_CounterfactualGateRepairScratch/FILE_GUIDE.md) |
 | R96 | 防止聯合訓練抵消各局部分支的目標 → **未採用**：44 輪；另有 R96 正式設計前的舊方案 | [R96](../../Experiments/R96_LocalizedEvidenceProtectedScratch/FILE_GUIDE.md)、[R96 舊設計](../../Experiments/R96_Design_Archive/FILE_GUIDE.md) |
-| R97 | 直接預測每個分支實際施加的修正 → **未採用**：48 輪完成 | [R97](../../Experiments/R97_DirectCausalPhaseScratch/FILE_GUIDE.md) |
+| R97 | 拿掉幅度閘，直接預測每個分支實際施加的修正，加入週期錯配訓練 → **未採用**：48 輪完成；實拍細節增加，但紋理分支在實拍幾乎不動、分支修正互相抵銷 | [R97](../../Experiments/R97_DirectCausalPhaseScratch/FILE_GUIDE.md) |
 | R98 | 加強可見多尺度紋理的恢復 → **未採用**：48 輪完成，SEM 結果不利 | [R98](../../Experiments/R98_AggressiveTextureScratch/FILE_GUIDE.md) |
 | R99 | 依序分開亮暗、幾何、邊緣與紋理 → **中止**：停在第 41 輪 | [R99](../../Experiments/R99_GeometryTextureCoherentScratch/FILE_GUIDE.md) |
 | R100 | 在原有形狀上加輪廓外程序紋理 → **未採用**：40 輪；另有訓練前的設計檢查 | [R100](../../Experiments/R100_CausalOperatorScratch/FILE_GUIDE.md)、[R100 設計檢查](../../Experiments/R100_DesignValidation/FILE_GUIDE.md) |

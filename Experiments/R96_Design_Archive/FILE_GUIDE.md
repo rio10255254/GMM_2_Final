@@ -1,29 +1,34 @@
-# main/R96_Design_Archive：檔案怎麼找
+# R96 舊設計：正式 R96 之前的診斷與方案
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R96_Design_Archive.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [正式的 R96](<../R96_LocalizedEvidenceProtectedScratch/FILE_GUIDE.md>) · [前一輪 R95](<../R95_CounterfactualGateRepairScratch/FILE_GUIDE.md>)
 
-**研究問題：保存R96正式設計前的舊方案。**
+**一句話：** 這個資料夾保存正式 R96 之前的設計工作，主要是一組診斷程式：R93 資料能不能重用、各分支實際介入了多少、模型內部狀態、輔助目標與完整分支之間的梯度衝突、稀疏分支的監督量，以及一份第 32 輪記憶體中斷的恢復準備。它是設計歷史，不是正式訓練結果。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（設計歷史，不等於正式訓練結果） |
+| 時間 | 2026-08-13 前後（R95 完成到 R96 正式啟動之間） |
+| 內容 | 9 支診斷程式、GPU 批量校正與中斷恢復設定 |
 
-## 先讀原文件
+## 裡面有什麼
 
-- [R96_Design_Archive 研究保存清單](<MANIFEST.md>)
-- [R96_Design_Archive 研究入口](<README.md>)
+| 檔案 | 用途 |
+|---|---|
+| `scripts/analyze_r93_reuse.py` | 檢查 R93 固定資料能否被下一輪重用 |
+| `scripts/analyze_branch_interventions.py`、`analyze_model_internals.py` | 各分支實際施加的修正、模型內部狀態 |
+| `scripts/audit_*_gradient_conflicts.py`（三支） | 輔助目標、完整分支、各目標之間的梯度衝突 |
+| `scripts/audit_sparse_branch_supervision.py` | 稀疏分支拿到多少監督 |
+| `scripts/formal_internal_audit.py`、`summarize_internal_analysis.py` | 正式內部稽核與彙整 |
+| `scripts/prepare_epoch32_memory_recovery.py`、`config/interruption_recovery.json` | 第 32 輪記憶體中斷的恢復準備 |
+| `config/gpu_batch_calibration.json` | GPU 批量校正 |
 
-## 進入實際檔案
+## 讀這些內容要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 2檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R96_Design_Archive 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R96_Design_Archive 研究入口 |
-| [scripts/](<scripts>) | 10檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+1. **沒有結果報告**；這些診斷的發現反映在正式 R96 的設計（逐通道控制、分支私有目標保護、清楚的反事實樣本）裡。
+2. 程式的輸出不在 GitHub 上。
 
-## 必要來源與取得界線
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-原R95標示設定、量測與後續R96正式設計分別保留。
+## 原始報告
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[README](<README.md>)、[MANIFEST](<MANIFEST.md>) 是 2026-10-16 補建的入口。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R96_Design_Archive.md>)。
