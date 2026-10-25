@@ -1,6 +1,6 @@
 # Lab R61：通用邊界與位移保護，以及後來被廣泛沿用的 v16
 
-[研究時間線](<../../../../docs/research/TIMELINE.md>) · [LabSystem 全線](<../../../../docs/reproducibility/lineage/LAB_SYSTEM.md>) · [前一輪 Lab R60](<../R60_SEMTruthBoundaryTraining/FILE_GUIDE.md>) · [下一輪 Lab R62](<../R62_TargetSampleBoost/FILE_GUIDE.md>) · [由此起步的 V41](<../V41_Standalone/FILE_GUIDE.md>)、[V42](<../V42_SoftLabelSNR/FILE_GUIDE.md>) · [主專案的 R61 STEP 驗證](<../../../../Experiments/R61_STEP_Generalization_20260623/README.md>)
+[研究時間線](<../../../../docs/research/TIMELINE.md>) · [LabSystem 全線](<../../../../docs/reproducibility/lineage/LAB_SYSTEM.md>) · [前一輪 Lab R60](<../R60_SEMTruthBoundaryTraining/FILE_GUIDE.md>) · [下一輪 Lab R62](<../R62_TargetSampleBoost/FILE_GUIDE.md>) · [由此起步的 V41](<../V41_Standalone/FILE_GUIDE.md>)、[V42](<../V42_SoftLabelSNR/FILE_GUIDE.md>) · [主專案的 R61 STEP 驗證](<../../../../Experiments/R61_STEP_Generalization_20260623/FILE_GUIDE.md>)
 
 **一句話：** Lab R60 確認邊界問題主要出在訓練資料，R61 就從資料著手：保留舊資料當錨點，修正合成答案的亮暗方向，再一版一版加入位移、相機紋理和類似 Step 的合成資料，在 2026-06-23 一天內跑到 v16。v16 在自己的三道門檻（模擬邊界、真實位移、Step 樣品）都沒有過，但它保住了 Step 的尺度、改善了部分邊界，後來成為 R62、V41、V42 和 R61 ONNX 應急交付的共同起點。
 
@@ -11,7 +11,7 @@
 | 實驗條件 | C：實驗室顯微系統的資料與 PSF；另用 6/3 的真實位移序列與 Step 樣品驗證 |
 | v16 最佳權重 | `training_progress_..._r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_200020` |
 
-主專案另有一個 [R61 STEP 驗證資料夾](<../../../../Experiments/R61_STEP_Generalization_20260623/README.md>)，那是用這個模型家族做 Step 樣品驗證的入口，不是另一份從零訓練的模型。報告裡提到的「R36」是 R61 內部的一次試跑，跟主專案找不到的 R36 不是同一個（見[兩種 R36](<../../../../docs/reproducibility/lineage/R36_IDENTITIES_20261022.md>)）。
+主專案另有一個 [R61 STEP 驗證資料夾](<../../../../Experiments/R61_STEP_Generalization_20260623/FILE_GUIDE.md>)，那是用這個模型家族做 Step 樣品驗證的入口，不是另一份從零訓練的模型。報告裡的 R8、R20、R25、R36、R39 等編號都是 R61 內部一次次試跑的序號，跟主專案和 Lab 的同號輪次無關；例如「R39 a970」是內部第 39 次的 best 與 latest 以 0.97 比例平均的權重，「R36」也跟主專案找不到的 R36 不是同一個（見[兩種 R36](<../../../../docs/reproducibility/lineage/R36_IDENTITIES_20261022.md>)）。
 
 ## 在研究裡的位置
 
@@ -39,7 +39,7 @@ LabSystem 從 6 月初開始修實拍棋盤的角點，Lab R46～R56 一直修�
 | 相機紋理位移合成 | 4,800 |
 | 類似 Step 的相機紋理守門合成 | 3,200 |
 
-新加的 3,200 列「類似 Step」的資料完全是合成的，逐列確認沒有用到真實 Step 的像素或答案。v16 從 v14 的最佳權重起步，用 R39 a970 當區域老師，訓練 8 輪。
+新加的 3,200 列「類似 Step」的資料完全是合成的，逐列確認沒有用到真實 Step 的像素或答案。v16 從 v14 的最佳權重起步，用內部 R39 a970 當區域老師，訓練 8 輪。
 
 ## 結果
 
@@ -68,7 +68,7 @@ LabSystem 從 6 月初開始修實拍棋盤的角點，Lab R46～R56 一直修�
 
 1. **v16 在不同文件裡的定位不一樣，三份都是原始紀錄：**
    - [v16 驗證報告](<reports/next_round_20260623_v17_post_v16_training_handoff/V16_VALIDATION_RESULTS.md>)（6/23）：三道門檻全部未過，不能升為論文結果。
-   - [主專案 R61 STEP 資料夾](<../../../../Experiments/R61_STEP_Generalization_20260623/README.md>)（6/23～24）：把 v16 的驗證稱為「目前的論文／主模型候選」，Step 樣品上的證據支持 CD 保留與位移穩定，但不能證明跨樣品通用。
+   - [主專案 R61 STEP 資料夾](<../../../../Experiments/R61_STEP_Generalization_20260623/FILE_GUIDE.md>)（6/23～24）：把 v16 的驗證稱為「目前的論文／主模型候選」，Step 樣品上的證據支持 CD 保留與位移穩定，但不能證明跨樣品通用。
    - [R61 ONNX 交付包](<../../../../Deliverables/MOSR_R61_ONNX/README.md>)：「為已驗證量測影像準備的應急交付版」，適用均華、HS100MG 這類亮環或位移影像；遇到不同材料、極低對比或完全不同形狀時，應同時保留原圖確認。
 2. **一個量測方法的修正。** Step 序列原圖一開始量到約 0.74 px，後來發現那是亮度相位相關的響應太弱造成的；改用邊緣為基礎的量法，原圖也量到約 8 px，跟 1 µm 的預期尺度一致。
 3. **不能說成完全獨立。** v16 的 3,400 組繼承來源（舊形狀、SEM 錨點、序列守門）與歷史幾何必須凍結匯入，不能只靠新的生成程式取代；SEM 錨點也來自同一批樣品。
