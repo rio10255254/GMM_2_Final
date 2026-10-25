@@ -252,8 +252,8 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | R132 | 原圖保留帶是不是太寬 → **分析** | [R132](../../Experiments/R132_BoundaryPolicyStudy/FILE_GUIDE.md) |
 | R133 | 尺寸偏大來自光學、學習還是最後輸出 → **分析**：找不到可直接套用的統一修正 | [R133](../../Experiments/R133_SizeMechanismDiagnosis/FILE_GUIDE.md) |
 | R134 | 直接修正影像狀態，避免 8bit 存檔誤導 → **研究候選**：精度修正版完成，尚未正式採用 | [R134](../../Experiments/R134_DirectStateRepair/FILE_GUIDE.md) |
-| R135 | 統一模型、存檔精度與 SEM／位移量法，固定比較六個模型 → **分析** | [R135](../../Experiments/R135_UnifiedModelComparison/FILE_GUIDE.md) |
-| **R136** | 用 930 張 30 趟重拍檢查固定模型的位移與不確定度 → **分析**：建立後續論文比較的基本做法 | [R136](../../Experiments/R136_PIRepeatability/FILE_GUIDE.md) |
+| R135 | 統一模型、存檔精度與 SEM／位移量法，固定比較六個模型 → **分析**；同日審查確認 R61 v16 末階段訓練用過這批評估 SEM 中 35 顆的尺寸答案 | [R135](../../Experiments/R135_UnifiedModelComparison/FILE_GUIDE.md) |
+| **R136** | 用 930 張 30 趟重拍檢查固定模型的位移與不確定度 → **分析**：建立後續論文比較的基本做法；9/19 發現最初的九顆沒有 SEM 對應，改用十字中心九顆（SEM 22～24、28～30、34～36）重算 | [R136](../../Experiments/R136_PIRepeatability/FILE_GUIDE.md) |
 | R137 | 用低強度光學線索輔助原尺寸模型 → **未採用**：短步與輪廓小改善，尺寸偏大 | [R137](../../Experiments/R137_WeakPSFFeature/FILE_GUIDE.md) |
 | R138 | 讓八個候選光學機制反覆作用 → **未採用**：光學強度後期歸零 | [R138](../../Experiments/R138_V42PSF8/FILE_GUIDE.md) |
 | R139 | 恢復 U-Net，把光學放回解碼位置 → **未採用**：訓練早期飽和，退化成原圖 | [R139](../../Experiments/R139_UNetRecurrentPrototype/FILE_GUIDE.md) |
