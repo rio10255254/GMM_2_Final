@@ -230,7 +230,7 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | R117 | 保留必要的法線位移，避免寬度造成額外中心移動，從零訓練 → **未採用**：9/5 設計稽核發現預覽圖其實是 R109 再接 R117，而且暗物體邊界的法線方向有 97.76% 是反的；結論是實作問題，不是模型能力上限 | [R117](../../Experiments/R117_CenterLockedSubpixelScratch/FILE_GUIDE.md)、[設計稽核](../../Experiments/R117_CenterLockedSubpixelScratch/analysis/design_audit_20260905/FINDINGS.md) |
 | R118 | 修正 R117 的符號方向、連續寬度與真實二維定位 → **研究候選**：不升級 | [R118](../reproducibility/experiments/main__R118_PhysicalCoordinateRepairScratch.md) |
 | R119 | 檢查同物體序列訓練與邊界位置 → **撤回**：原先「P00 到 P12 完整因果完成」的宣稱被撤回，固定序列其實沒有接上 | [R119](../../Experiments/R119_SequenceGeometryValidation/FILE_GUIDE.md) |
-| R120 | 修正 R119 的序列形成與公平對照 → **分析** | [R120](../../Experiments/R120_PhysicalSequenceRepair/FILE_GUIDE.md) |
+| R120 | 修正 R119 的序列形成與公平對照 → **分析**：A／B 各兩種子的 12 輪短測差異很小，序列安排沒有明顯好處；修正後的 A 成為 R121 的對照（沒有正式結果報告） | [R120](../../Experiments/R120_PhysicalSequenceRepair/FILE_GUIDE.md) |
 | R121 | 亮暗擴充與局部位置要求的四組對照 → **未採用**：八個有效短測都沒過 | [R121](../../Experiments/R121_BoundaryAnchorFactorial/FILE_GUIDE.md) |
 
 ## 階段 7　真實優先重新設計（R122–R140，約 9 月）

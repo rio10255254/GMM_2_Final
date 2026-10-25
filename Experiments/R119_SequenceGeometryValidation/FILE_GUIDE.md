@@ -1,46 +1,65 @@
-# main/R119_SequenceGeometryValidation：檔案怎麼找
+# R119：同物體序列訓練的驗證，以及後來撤回的因果宣稱
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R119_SequenceGeometryValidation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [依據的 R118 計畫（只有保存紀錄）](<../../docs/reproducibility/experiments/main__R118_PhysicalCoordinateRepairScratch.md>) · [前一輪 R117](<../R117_CenterLockedSubpixelScratch/FILE_GUIDE.md>) · [修正它的 R120](<../R120_PhysicalSequenceRepair/FILE_GUIDE.md>)
 
-**研究問題：檢查同物體序列訓練與邊界位置。**
+**一句話：** 照 R118 的交接計畫，比較四組：A 不變、B 加同物體的序列觀測安排、C 再加一個幾何機制、D 加不對稱光學。短測中只有 B 同時改善 R74、SEM 與 LSC，於是 2026-09-05 從零正式訓練 B 42 輪，並消耗了一次 144 場景的封存確認集。收尾報告當時寫「P00～P12 全部完成」「有效的介入是序列安排」；但 9/6 的因果稽核發現 B 其實沒有讀新的序列資料、幾個對照也互相混淆，這些宣稱被撤回。模型本身的能力數字仍然有效。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **撤回**（「P00 到 P12 完整完成」與「序列安排造成改善」的宣稱被撤回；E42 的量測數字仍有效） |
+| 時間 | 2026-09-05 正式訓練與確認；09-06～09-07 因果稽核與後續診斷 |
+| 實驗條件 | 程式資料：5,000 個合成幾何（沿用 R118 共用包）；真實影像與 SEM 只用於評估 |
+| 起點 | 隨機初始化（種子 1195001） |
 
-## 先讀原文件
+## 當時的正式結果（B 第 42 輪）
 
-- [R119 closeout](<reports/CLOSEOUT.md>)
-- [R119 causal audit and corrections](<reports/R119_CAUSAL_AUDIT.md>)
-- [R119：固定形狀的模糊、亮度與位移控制檢查](<reports/R119_CONTROLLED_BOUNDARY_FACTORS.md>)
-- [R119：位置修正是否造成跨曝光的輪廓膨脹](<reports/R119_CROSS_EXPOSURE_POSITION_AUDIT.md>)
-- [R109 與 R119：同一影像、三種邊界讀法與處理路徑](<reports/R119_R109_READOUT_COMPARISON.md>)
-- [R119 formal result](<reports/R119_RESULTS.md>)
+| 項目 | Raw | R109 E48 | R119 B E42 |
+|---|---:|---:|---:|
+| 合成影像誤差（灰階） | 2.036 | 1.534 | **0.714** |
+| 合成梯度誤差 | 0.00902 | 0.00685 | **0.00227** |
+| 實拍 LSC 步距標準差（nm） | 9.745 | **7.003** | 7.261 |
+| 實拍 LSC 九顆柱內標準差（nm） | 13.966 | **4.398** | 5.013 |
+| 實拍 LSC 跨軸中位（nm） | 6.009 | 5.313 | **4.227** |
 
-其餘原報告見[本輪完整研究卡](<../../docs/reproducibility/experiments/main__R119_SequenceGeometryValidation.md>)。
+R73 邊界距離 −26.91%、R74 −4.25%，R74 五類都改善。**但 SEM 36 顆柱 0/36 改善**（中位 −0.0846% 柱距，是退步）。144 場景確認集上，影像誤差中位從 1.572 降到 0.415 灰階，十二類都改善。
 
-## 進入實際檔案
+## 因果稽核撤回了什麼（9/6）
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 48檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [config/](<config>) | 4檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 3檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [Infer.py](<Infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R119 Sequence Geometry Validation |
-| [model/](<model>) | 2檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R119 Sequence Geometry Validation |
-| [reports/](<reports>) | 7檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 12檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 3檔 | 原檢查程式；不是研究結果本身 |
-| [Train.py](<Train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training/](<training>) | 5檔 | 訓練程式與配套 |
-| [validation/](<validation>) | 24檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+1. **B 沒有做計畫中的物理序列訓練。** 它讀的還是原本兩張儲存視圖，新產生的序列清單訓練程式從沒讀過；5,000 個場景裡 4,534 個兩視圖的光學參數不同。
+2. **A 不是忠實的對照。** 暗樣本的距離標籤正負號被反轉，但設定沒宣告。
+3. **D 混進了別的改變。** 不對稱濾波核的重心偏了約 1 px（OpenCV `filter2D` 是相關運算，不翻轉核），D 的負結果不能否定原計畫。
+4. **各組驗證資料不同。** 96 個驗證場景全部不同，訓練紀錄上的分數不能直接比。
+5. **舊的「拿掉細節」對照其實同時拿掉了寬度與細節。**
+6. **確認集的位置讀法算錯了。** 舊的 0.9 px 中位誤差與 18.1 px 離群值是重複扣除位移造成的；重算後 Raw 與模型的殘差都約 0.05 px。
 
-## 必要來源與取得界線
+稽核同時重新確認：SEM 退步是一致的面積向外擴張（E42 面積中位 +6.18%，432/432 次大於 Raw），而且從 E24、細節學習開始之前就出現。
 
-真正被讀取的訓練觀測、E42、逐筆抽樣與後續因果審查。
+## 後續診斷（9/6～9/7，都是凍結權重）
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 報告 | 主要發現 |
+|---|---|
+| [跨曝光位置稽核](<reports/R119_CROSS_EXPOSURE_POSITION_AUDIT.md>) | 12 種曝光、36 顆柱：只關掉位置修正，431/432 次輪廓變好，但仍有 282/432 次不如 Raw |
+| [訓練中的位置診斷](<reports/R119_TRAINING_POSITION_DIAGNOSIS.md>) | 中心位置損失看不到對稱膨脹（0.4 px 外擴時損失增量小於 1.2×10⁻¹⁵），但影像與局部邊界項看得到；問題是損失無法唯一決定位置、清晰化、細節的分工 |
+| [固定形狀控制檢查](<reports/R119_CONTROLLED_BOUNDARY_FACTORS.md>) | 合成模糊讓已知圓形的可見中點內縮，E42 往外修正通常有用；真實 Raw 對 SEM 已經外偏，E42 又加大外偏。先要釐清成像與 SEM 參考的對應 |
+| [R109 與 R119 的讀法比較](<reports/R119_R109_READOUT_COMPARISON.md>) | R109 的 ACM 優勢可重現，但不等於光學邊界中點更接近 SEM；R119 的位置路徑也會改變邊界寬度，不是純平移 |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 讀這些內容要知道的事
+
+1. **確認集已經用掉了。** 封存的 144 場景確認集只開過一次，不能再拿來調參或做新的升格宣稱。
+2. **LSC 的信賴區間不能沿用。** 它在同一序列內獨立重抽相鄰步，違反原定的區塊不確定度分析；點估計仍可用。
+3. **不能取代 COMBO、V42、R61 或 R109。** 原收尾報告也這樣寫；稽核後更不能把改善歸因到序列安排。
+
+## 拿資料與重做
+
+本資料夾的資料、模型、訓練、推論、驗證與分析程式都在 GitHub；`python scripts/status.py` 會列出階段狀態、`python scripts/setup.py --check` 是唯讀的環境檢查（不會啟動訓練）。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [因果稽核](<reports/R119_CAUSAL_AUDIT.md>) | 先讀這份：計畫與實際執行的差異、被撤回的宣稱、仍然成立的證據 |
+| [正式結果](<reports/R119_RESULTS.md>) | 9/5 寫的正式訓練結果（部分詮釋已被稽核取代） |
+| [收尾報告](<reports/CLOSEOUT.md>) | 9/5 寫的確認集結果（位置讀法已被稽核更正） |
+| [README](<README.md>) | 四組設計與當時狀態 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R119_SequenceGeometryValidation.md>)。

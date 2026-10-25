@@ -70,7 +70,7 @@
 
 這只是「原始報告有連結到」與寫閱讀卡時查到的部分。整個原電腦約 1 TB 的完整盤點，用 `Tools/cloud_locator.py scan` 另外做。
 
-**寫閱讀卡時發現的另一類缺口：** 有些輪次的結果檔在 Release 裡，但不在 GitHub 程式樹（有些是 2026-10 從主版本移出、只留在 git 歷史），所以報告與閱讀卡提到的數字在 GitHub 上點不到出處。目前查到的有：R148v2 的 12 模型比較表與最終稽核（R148v2 也沒有寫最終結果報告）、R43 的分數表、R44 的總表與分族診斷、R45 的縮放掃描與 R45B／R45C 逐塊表。這些多半是小型 CSV／JSON，適合直接補回 git（見下方 E2）。寫第六階段閱讀卡時又找到幾批：R102 的停止與塌縮診斷（`reports/*.json`，五個共約 31 KB）、R108D～R108G 的 `results/summary.json`（各 13～17 KB，加 R108G 的 `results/real_motion/summary.json`）。這幾輪的閱讀卡目前只能寫「數字取自原電腦上的檔案」。
+**寫閱讀卡時發現的另一類缺口：** 有些輪次的結果檔在 Release 裡，但不在 GitHub 程式樹（有些是 2026-10 從主版本移出、只留在 git 歷史），所以報告與閱讀卡提到的數字在 GitHub 上點不到出處。目前查到的有：R148v2 的 12 模型比較表與最終稽核（R148v2 也沒有寫最終結果報告）、R43 的分數表、R44 的總表與分族診斷、R45 的縮放掃描與 R45B／R45C 逐塊表。這些多半是小型 CSV／JSON，適合直接補回 git（見下方 E2）。寫第六階段閱讀卡時又找到幾批：R102 的停止與塌縮診斷（`reports/*.json`，五個共約 31 KB）、R108D～R108G 的 `results/summary.json`（各 13～17 KB，加 R108G 的 `results/real_motion/summary.json`）；R117 的訓練完成稽核與訓練前因果決策（兩份 JSON，各約 2 KB）；R120 的 `results/`（短測稽核、序列稽核、位移診斷等，約 0.5 MB，而且 MANIFEST 指向的 `reports/R120_RESULTS.md` 從沒寫出來）；R121 的 `results/` 決策與量測表（`assessment/`、`sem/measurements.csv`、`development/per_view.csv` 與八組執行紀錄，合計約 2 MB；`sem/recon/` 與 `controlled/` 的大型輸出不在此列）。這幾輪的閱讀卡目前只能寫「數字取自原電腦上的檔案」。
 
 **還有一類是「在雲端，但不在讀者會找的位置」。** 例如 R79 的交付模型 `Deliverables/MOSR_ONNX/model.onnx`（15.4 MB）在交付包的路徑上沒有上傳，同內容的檔案卻在 `research-fixed-models-006.zip` 裡、掛在 R84 結案時解壓驗證的副本路徑下。檔案沒丟，但只看交付包的人會以為缺件。`cloud_locator.py scan` 的 `release-other-path` 狀態就是在找這一類；E3 補件時，這種小而重要的交付檔適合直接放回原位置。
 
