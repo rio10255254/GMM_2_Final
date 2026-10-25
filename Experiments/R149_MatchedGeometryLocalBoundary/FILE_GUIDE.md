@@ -1,41 +1,30 @@
-# main/R149_MatchedGeometryLocalBoundary：檔案怎麼找
+# R149：加入實拍尺度的圓陣列與局部邊界要求（短測沒過門檻）
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R149_MatchedGeometryLocalBoundary.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [基礎 R148v2](<../R148v2_HybridContextNativePSF/FILE_GUIDE.md>) · [接手的 R150](<../R150_MatchedGeometryMeanPSF/FILE_GUIDE.md>)
 
-**研究問題：補接近實拍尺度的程序排列與局部邊界要求。**
+**一句話：** R148v2 的直徑重拍是最好的，但尺寸仍系統性偏大。R149 的診斷有兩個：合成的密集場景沒涵蓋實拍九顆圓的間距；全圖平均的邊界統計會讓兩側相反的尺寸誤差互相抵消。所以架構完全不動，只做兩件事：把一部分密集場景換成半徑 6～12 px、間距 24～36 px 的圓陣列，並把邊界要求改成 8×8 的局部格子計算。事先規定局部要求必須讓圓陣列的局部邊界分數至少改善 3% 才進正式訓練；兩版短測只改善 0.75% 與 0.81%，2026-09-27 停止。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（局部邊界的兩版短測都沒達 3% 門檻，沒有正式訓練） |
+| 時間 | 2026-09-26～09-27 |
+| 實驗條件 | 程式資料：R148v2 的母場景，其中 64／16／16 個密集場景換成圓陣列；模糊用 25 顆實測 PSF 形成，模型在訓練與推論都只拿固定平均 PSF |
+| 起點 | 兩個新起點，各 512 次短測（全域與局部邊界各一組） |
 
-## 先讀原文件
+## 短測結果
 
-- [R149 Audit](<reports/R149_AUDIT.md>)
-- [R149 Methodology](<reports/R149_METHODOLOGY.md>)
-- [R149 Validation Plan](<reports/R149_VALIDATION_PLAN.md>)
+| 版本 | 邊界權重 | 局部比例 | 圓陣列局部邊界分數改善 | 影像誤差改善 |
+|---|---:|---:|---:|---:|
+| 第一版 | 0.20 | 75% | 0.75% | 0.70% |
+| 第二版 | 0.35 | 100% | 0.81% | 0.87% |
 
-## 進入實際檔案
+兩版都很穩定，平移一致性低於 0.00002 px。加大邊界強度並沒有實質提高局部效益，所以門檻維持、這個方向停下來。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [config/](<config>) | 5檔 | 實驗設定、條件與來源鎖定 |
-| [dataset.py](<dataset.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [infer.py](<infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses.py](<losses.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R149 Manifest |
-| [model.py](<model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 1檔 | 光學計算與配套 |
-| [README.md](<README.md>) | 1檔 | R149 — Matched Geometry + Local Boundary |
-| [reports/](<reports>) | 3檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [train.py](<train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training_policy.py](<training_policy.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [verify_package.py](<verify_package.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
+## 讀這些內容要知道的事
 
-## 必要來源與取得界線
+1. **圓陣列資料與平均 PSF 的做法本身沒有被否定。** 用全域邊界要求的兩個對照組在這份資料上學得很穩，所以這兩項改動轉到 R150 去正式訓練。
+2. 訓練答案只用程式生成的幾何，沒有用實拍、SEM 尺寸或 PI 位置。
 
-96新排列場景、兩版／兩起點短測及原先門檻。
+## 原始報告
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[稽核](<reports/R149_AUDIT.md>)、[方法](<reports/R149_METHODOLOGY.md>)、[固定驗證計畫](<reports/R149_VALIDATION_PLAN.md>)、[README](<README.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R149_MatchedGeometryLocalBoundary.md>)。
