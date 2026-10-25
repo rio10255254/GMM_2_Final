@@ -53,7 +53,7 @@
 |---|---|
 | 資料生成、篩選、最終確認、交付一致性程式與測試 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)、[config/](<config>)，已在 GitHub |
 | 最終判決、交付修正、共用前處理探測的結果 | [results/](<results>) |
-| R79 ONNX 交付包 | [Deliverables/MOSR_ONNX/](<../../Deliverables/MOSR_ONNX/README.md>) 的說明與程式在 GitHub；模型檔見 [交付清單](<../../Deliverables/README.md>) |
+| R79 ONNX 交付包 | [Deliverables/MOSR_ONNX/](<../../Deliverables/MOSR_ONNX/README.md>) 的說明與程式在 GitHub；`model.onnx`（15.4 MB）在那個路徑上沒有上傳，但**同內容**的檔案在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的 `research-fixed-models-006.zip` 裡，路徑是本資料夾 `results/delivery_root_fix/extracted_package_1_1/MOSR_ONNX/model.onnx`（結案時解壓驗證的那份） |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
