@@ -1,29 +1,39 @@
-# main/R108E_ContourConservingProfileRendererMicroprobe：檔案怎麼找
+# R108E：直接監督輪廓，只在邊界帶附近重建
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R108E_ContourConservingProfileRendererMicroprobe.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一個探針 R108D](<../R108D_MultiscaleNormalGeometryMicroprobe/FILE_GUIDE.md>) · [下一個探針 R108F](<../R108F_MonotonicProfileRendererMicroprobe/FILE_GUIDE.md>)
 
-**研究問題：先定位邊界及必要性，再於局部重建。**
+**一句話：** R108D 證明靠銳化損失間接發現輪廓幾何行不通。R108E 改成先預測邊界帶、只在邊界帶附近重建，並直接監督柔性輪廓重疊、面積、質心、邊緣剖面與「不修改」。2026-08-26 從零訓練，資料是新產生的低對比、照明不均、非對稱模糊與光暈、局部邊界淡化、混合退化的通用形狀。驗證集的輪廓重疊從 0.841 升到 0.906、新增結構錯誤從 113 降到 68；但像素層級沒有限制的渲染器會產生暗環，R108F 就是為了修這個。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（輪廓明顯改善，但自由的像素渲染器產生暗環） |
+| 時間 | 2026-08-26 |
+| 實驗條件 | 新產生的困難條件通用形狀；實拍、SEM、R73、R74 只用於評估 |
+| 起點 | 隨機初始化 |
 
-## 先讀原文件
+## 結果
 
-- [R108E_ContourConservingProfileRendererMicroprobe 研究保存清單](<MANIFEST.md>)
-- [R108E Contour-Conserving Profile Renderer Microprobe](<README.md>)
+| 資料 | 方法 | 平均誤差 | IoU 中位數 | 質心誤差 | 新增結構錯誤 |
+|---|---|---:|---:|---:|---:|
+| 驗證 | 原圖 | 9.035 | 0.8410 | 0.330 px | 113 |
+| 驗證 | R108C 固定尺度 | 10.259 | 0.7999 | 0.653 px | 135 |
+| 驗證 | R108D 多尺度 | 13.334 | 0.7103 | 2.810 px | 151 |
+| 驗證 | **R108E** | **8.218** | **0.9060** | **0.322 px** | **68** |
+| 封存 | 原圖 | 12.870 | 0.2658 | 3.727 px | 145 |
+| 封存 | **R108E** | 12.777 | **0.5231** | 3.586 px | 148 |
 
-## 進入實際檔案
+在這組更困難的資料上，R108C、R108D 都比原圖差。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R108E_ContourConservingProfileRendererMicroprobe 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R108E Contour-Conserving Profile Renderer Microprobe |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **這組困難資料上原圖本身就有很多結構錯誤**（驗證 113 個），所以「新增結構錯誤」的基準不是零。
+2. **暗環**是 R108F 的說明裡寫的失敗原因；這一輪的資料被 R108F、R108G 逐位元組重用。
+3. **結果摘要只在原電腦上**（`results/summary.json`，約 17 KB）。
 
-新生成資料、分階段偵測與渲染記錄。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+本資料夾的程式已在 GitHub。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 原始報告
+
+本輪沒有文字結果報告；[README](<README.md>) 說明設計。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R108E_ContourConservingProfileRendererMicroprobe.md>)。

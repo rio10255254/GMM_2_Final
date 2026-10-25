@@ -1,30 +1,37 @@
-# main/R108D_MultiscaleNormalGeometryMicroprobe：檔案怎麼找
+# R108D：邊緣專家改成多尺度加法線位移
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R108D_MultiscaleNormalGeometryMicroprobe.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一個探針 R108C](<../R108C_IndependentOpticalSpecialistsMicroprobe/FILE_GUIDE.md>) · [下一個探針 R108E](<../R108E_ContourConservingProfileRendererMicroprobe/FILE_GUIDE.md>)
 
-**研究問題：增加邊緣專家的尺度與法線位移能力。**
+**一句話：** 測 R108C 的邊緣專家失敗，是不是因為它只能縮放一個固定的銳化基底。2026-08-26 從零訓練一個新的邊緣專家（1,600 步），在每個位置預測四個去模糊尺度的混合加兩個法線位移項，只用超取樣的程式形狀訓練。像素誤差比 R108C 的固定尺度版好，但輪廓重疊與中心沒有跟著變好；下一個探針 R108E 的說明把這一輪記為「鎖定的失敗」。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（像素誤差改善，但幾何沒有改善；不授權正式訓練） |
+| 時間 | 2026-08-26 |
+| 實驗條件 | 程式生成的超取樣形狀；實拍與 SEM 只在封存後評估 |
+| 起點 | 隨機初始化，種子 108910；R108C 的邊緣專家只在訓練後當凍結對照 |
 
-## 先讀原文件
+## 結果
 
-- [R108D_MultiscaleNormalGeometryMicroprobe 研究保存清單](<MANIFEST.md>)
-- [R108D Multiscale Normal Geometry Microprobe](<README.md>)
+| 資料 | 方法 | 平均誤差 | 邊緣誤差 | IoU 中位數 | 質心誤差 |
+|---|---|---:|---:|---:|---:|
+| 驗證 | 原圖 | 1.823 | 6.119 | 0.9351 | 1.179 px |
+| 驗證 | R108C 固定尺度 | 1.745 | 5.917 | 0.9357 | 1.149 px |
+| 驗證 | R108D 多尺度＋法線 | **1.509** | **5.414** | 0.9329 | 1.150 px |
+| 封存 | 原圖 | 3.521 | 9.636 | 0.8167 | 1.736 px |
+| 封存 | R108D | **3.206** | **9.134** | 0.8301 | 1.731 px |
 
-## 進入實際檔案
+封存的實拍：平均改動 2.09 灰階、邊緣增益 1.41、細節倍率 1.59；SEM：改動 0.84、邊緣增益 1.30。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R108D_MultiscaleNormalGeometryMicroprobe 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R108D Multiscale Normal Geometry Microprobe |
-| [results/](<results>) | 2檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 3檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **銳化變好不等於輪廓變準。** IoU 在驗證集甚至比原圖略低，質心幾乎沒變；R108E 因此改成直接監督輪廓。
+2. **結果摘要只在原電腦上**（`results/summary.json`，約 13 KB），還沒放回 GitHub；上面的數字是從那份讀的。
 
-程序資料、四尺度／兩位移機制及固定對照。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+本資料夾的程式已在 GitHub。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 原始報告
+
+本輪沒有文字結果報告；[README](<README.md>) 說明設計。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R108D_MultiscaleNormalGeometryMicroprobe.md>)。
