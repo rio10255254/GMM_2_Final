@@ -1,33 +1,62 @@
-# lab/R48_RealCornerTransfer：檔案怎麼找
+# Lab R48：模仿實拍角點的失敗型態，加上幾何監督
 
-[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+[研究時間線](<../../../../docs/research/TIMELINE.md>) · [LabSystem 全線](<../../../../docs/reproducibility/lineage/LAB_SYSTEM.md>) · [前一輪 Lab R47](<../R47_RealisticBoundaryGeneralization/FILE_GUIDE.md>) · [下一輪 Lab R49](<../R49_CADAnchorRealGeometry/FILE_GUIDE.md>)
 
-[本輪研究卡](<../../../../docs/reproducibility/experiments/lab__R48_RealCornerTransfer.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
+**一句話：** R47 加了更多真實風格的邊界還是修不好角點，R48 改成依照實拍棋盤角點的失敗型態去產生資料（5,000 張新答案），並且第一次給每一組資料附上邊界、中心線、距離圖做幾何監督，訓練 200 輪。內部驗證一直進步，實拍角點卻全面變差：最好的保存點中位偏移 6.7 px，超過 5 px 的比例 61%，影像出現更強的黑白角點假影。
 
-**研究問題：用實體失敗型態與幾何標記改善角點。**
+| | |
+|---|---|
+| 結果 | **未採用**（內部改善，實體反而更差） |
+| 時間 | 2026-06-13～06-14 |
+| 實驗條件 | C：實驗室顯微系統、Lab 25 位置 BADS PSF；驗證用 2025-06-05 的實拍棋盤序列（20×，51 張、358 個角點） |
+| 起點 | Lab R39 的 latest；先跑到第 120 輪，再接著跑到第 200 輪 |
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+## 這輪在問什麼
 
-## 先讀原文件
+如果訓練資料直接模仿實拍棋盤角點的樣子，再加上明確的幾何監督，模型能不能學會保住真實角點？
 
-- [Lab R48 Checkboard Validation - 2026-06-13](<reports/R48_CHECKBOARD_VALIDATION_20260613.md>)
-- [R48 Results - 2026-06-14](<reports/R48_RESULTS_20260614.md>)
+## 怎麼做
 
-## 進入實際檔案
+訓練 6,000 組：圓環 800、形狀 700、顯微 700、邊界 3,000（其中實拍角點 1,600、格線交點 900、角點 PSF 壓力 500）、實拍紋理 800；另有 1,200 組驗證。每一組都有邊界、中心線、距離三種幾何圖，幾何損失在第 4 輪後啟動。這套幾何監督後來一路沿用到 R52、R57。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER_R48_20260801.md](<ARCHIVE_POINTER_R48_20260801.md>) | 1檔 | R48 完整歷史封存入口 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R48_RealCornerTransfer Manifest |
-| [README.md](<README.md>) | 1檔 | R48_RealCornerTransfer |
-| [reports/](<reports>) | 2檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 3檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 3檔 | 原檢查程式；不是研究結果本身 |
+## 結果
 
-## 必要來源與取得界線
+| 模型 | 中位數 | 第 75 百分位 | 超過 5 px 的比例 | 邊緣強度 |
+|---|---:|---:|---:|---:|
+| 原圖 | 1.414 | 2.236 | 1.7% | 1.05 |
+| Lab R40（對照） | 4.243 | 5.000 | 24.6% | 1.36 |
+| Lab R46 | 4.243 | 8.485 | 48.6% | 1.25 |
+| Lab R47 latest | 5.000 | 9.220 | 49.4% | 1.08 |
+| R48 best（第 32 輪） | 7.211 | 9.220 | 58.7% | 2.30 |
+| R48 detail-guarded（第 86 輪） | 6.708 | 9.220 | 61.5% | 2.91 |
+| R48 latest（第 200 輪） | 7.211 | 9.220 | 61.2% | 3.48 |
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+驗證集 PSNR 從第 120 輪的 27.94 進步到第 200 輪的 28.30。
 
-[按用途取得原件](<../../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **邊緣強度暴增是警訊。** 三個保存點的邊緣強度是原圖的 2～3 倍，對照圖上可以看到角點周圍的黑白光暈；這是「看起來更銳利」但位置更錯。
+2. **內部驗證集是 R48 自己產生的分布**，進步只代表學會了這批合成資料，不代表實拍改善。
+3. R48 的實拍角點資料之後在 R49 重播 500 組、在 R52 當成角點穩定資料使用。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 資料建置、CAD 參考、啟動程式與測試 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)，已在 GitHub |
+| 資料報告 | [R48 實拍角點資料報告](<../../Training_Data/reports/LAB_R48_REAL_CORNER_DATA_20260613.md>) |
+| 代表模型 | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，見 [Lab 代表模型清單](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 完整的資料、訓練與重建歷史 2026-08-01 已移到外接硬碟封存，見 [封存入口](<ARCHIVE_POINTER_R48_20260801.md>)。
+
+## 原始報告
+
+| 報告 | 內容 |
+|---|---|
+| [R48 結果](<reports/R48_RESULTS_20260614.md>) | 200 輪訓練、驗證集與實拍角點 |
+| [實拍棋盤驗證](<reports/R48_CHECKBOARD_VALIDATION_20260613.md>) | 包含 R40～R47 的完整角點表與資料組成 |
+| [README](<README.md>)、[MANIFEST](<MANIFEST.md>) | 資料、封存與驗證項目 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../../../docs/reproducibility/experiments/lab__R48_RealCornerTransfer.md>)與 [Lab 逐輪必要來源核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)。

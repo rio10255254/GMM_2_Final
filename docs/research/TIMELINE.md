@@ -132,7 +132,7 @@ R33 發現「限制極端像素的拉扯」能大幅改善定位，但邊緣變�
 | Lab R46 | 用角點資料保守修正 → **未採用**：25 輪有效但沒修好實體圓角 | [Lab R46](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/FILE_GUIDE.md) |
 | Lab R47 | 加入更真實的邊界與背景 → **未採用**：200 輪仍沒修好，訓練更久不等於有效 | [Lab R47](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/FILE_GUIDE.md) |
 | Lab R48 | 用實體失敗型態與幾何標記 → **未採用**：內部改善，實體反而更差 | [Lab R48](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer/FILE_GUIDE.md) |
-| Lab R49 | 加入可信區域內的實體 CAD 答案 → **未採用**：角點退步，可信區域太小 | [Lab R49](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/FILE_GUIDE.md) |
+| Lab R49 | 加入可信區域內的實體 CAD 答案 → **未採用**：角點退步；CAD 答案修正量太大，又只佔一成資料 | [Lab R49](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/FILE_GUIDE.md) |
 | Lab R50 | 診斷 Lab 光學模糊是否過強 → **分析**：完整 BADS 比實拍更軟 | [Lab R50](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/FILE_GUIDE.md) |
 | Lab R51 | 短測高斯、弱 BADS、混合光學 → **未採用**：典型角點改善，但大偏移比例上升 | [Lab R51](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/FILE_GUIDE.md) |
 | Lab R52 | 混合光學加角點穩定限制 → **未採用**：100 輪後大偏移仍多 | [Lab R52](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/FILE_GUIDE.md) |
