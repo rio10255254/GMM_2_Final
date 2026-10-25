@@ -1,32 +1,49 @@
-# main/R80_R79E23vsE100GeneralizationValidation：檔案怎麼找
+# R80（早晚權重）：R79 該用第 23 輪還是第 100 輪
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R80_R79E23vsE100GeneralizationValidation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [被驗證的 R79](<../R79_R75v3_DenseMicroscopyScratchGeneralization/FILE_GUIDE.md>) · [同號的另一個 R80（取邊量法）](<../R80_InflectionReferenceCircleSEMValidation/FILE_GUIDE.md>) · [下一輪 R81](<../R81_MultiArchitectureReferenceCircleBenchmark/FILE_GUIDE.md>)
 
-**研究問題：比較R79訓練早期與最後模型的泛化。**
+**一句話：** R80 有兩個資料夾，這個只做驗證：2026-08-06 把 R79 的第 23 輪與第 100 輪，放在 512 張內部保留形狀、301 張實拍位移、200 張外部合成形狀、36 顆柱 SEM 上用完全相同的設定比較。依事先鎖定的規則選第 23 輪：SEM 與高難度顯微都指向它，兩個權重的實拍位移也都通過。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（選定 R79 第 23 輪；不改寫專案正式基準） |
+| 時間 | 2026-08-06 |
+| 實驗條件 | R79 內部保留 512 張；R78 封存的 301 張 5×／20×／50× 實拍；R73 與 R74 各 100 張；36 顆柱 × 12 張曝光 SEM |
+| 被比較的權重 | R79 第 23 輪、第 100 輪（沒有修改 R79 的資料、程式或權重） |
 
-## 先讀原文件
+## 結果
 
-- [R80：R79 第 23 輪與第 100 輪擴大驗證](<reports/R80_RESULTS_TW.md>)
+| 測試 | 原圖 | 第 23 輪 | 第 100 輪 | 判定 |
+|---|---:|---:|---:|---|
+| SEM 平均邊界距離（% 柱距） | 0.5697 | **0.2405** | 0.3705 | 第 23 輪 |
+| SEM 周長誤差 | 2.865% | **1.333%** | 2.745% | — |
+| R74 高難度顯微邊界距離 | **7.24 px** | 11.22 px | 21.31 px | 第 23 輪（兩者都比原圖差） |
+| R73 新形狀邊界距離 | 0.2847 px | 0.2733 px | **0.1831 px** | — |
+| 內部保留形狀 MAE | — | 0.01236 | **0.01063** | 第 100 輪 |
+| 實拍位移 | — | 6/6 通過 | 6/6 通過 | 兩者都通過 |
 
-## 進入實際檔案
+5× 另外用 512 與 1024 兩種區塊各重跑 100 張，確認細節保留或假邊緣不是單一區塊設定造成。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R80 檔案角色 |
-| [README.md](<README.md>) | 1檔 | R80：R79 第 23 輪與第 100 輪擴大驗證 |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 11檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [run_validation.ps1](<run_validation.ps1>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [scripts/](<scripts>) | 4檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **第 23 輪的 SEM 周長誤差比原圖還小**（1.333% 對 2.865%），這是從 R69 以來第一個在細形狀上也比原圖好的模型。
+2. **擴大開發驗證，不是全新盲測。** R73、R74、R78 的失敗型態曾影響 R79 的資料設計。
+3. **兩個權重在 R74 上都比原圖差**，所以不能宣稱任何顯微場景都適用。
 
-兩個模型、內部512張、301原圖及SEM固定參照。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 主要入口 `run_r80.py` 與其他程式、設定、測試 | 本資料夾 [scripts/](<scripts>)、[config/](<config>)、[tests/](<tests>)，已在 GitHub |
+| 圖 | [results/figures/](<results/figures>) |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R80 結果](<reports/R80_RESULTS_TW.md>) | 結論、301 張實拍、外部合成 ACM、SEM、判定界線 |
+| [README](<README.md>) | 固定比較範圍與執行方式 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R80_R79E23vsE100GeneralizationValidation.md>)。

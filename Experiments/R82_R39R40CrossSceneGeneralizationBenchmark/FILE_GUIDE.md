@@ -1,30 +1,57 @@
-# main/R82_R39R40CrossSceneGeneralizationBenchmark：檔案怎麼找
+# R82：正式基準、替代選項與研究候選，放在同一組場景比
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R82_R39R40CrossSceneGeneralizationBenchmark.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R81](<../R81_MultiArchitectureReferenceCircleBenchmark/FILE_GUIDE.md>) · [下一輪 R83](<../R83_R79SevereMicroscopyStrengthening/FILE_GUIDE.md>) · [正式基準 COMBO](<../R38v2SeqFixed/FILE_GUIDE.md>) · [核准替代 R39R40](<../R39_ShapeGeneralization/FILE_GUIDE.md>)
 
-**研究問題：把核准替代與研究模型放到共同場景。**
+**一句話：** 2026-08-09 把正式基準 COMBO、主專案 R39、R40、它們的平衡版 R39R40、Lab R61 v16、R79 第 23 輪放在同一組場景：301 張實拍位移、均華三種位移尺度、R73／R74 合成形狀、36 顆柱 SEM。六個模型的實拍位移全部通過；但四個場景的第一名分屬 R79 和 R61，沒有任何模型同時通過三組形狀真值的嚴格門檻。R39 系列在形狀上都輸給原圖。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（只保留有外部回傳的 GMF 數字，不補值；不修改正式基準） |
+| 時間 | 2026-08-09 |
+| 實驗條件 | A：均華三種位移尺度的固定序列（100／60／40 張，就是正式的三尺度圓環基準；外部 GMF 用舊數字）；C：301 張實拍位移、36 顆柱 SEM；合成 R73、R74 |
+| 比較對象 | COMBO、R39、R40、R39R40、Lab R61 v16、R79 第 23 輪；原圖當共同參考 |
 
-## 先讀原文件
+## 結果
 
-- [R82 R39 / R40 跨場景泛化與位移驗證](<reports/R82_RESULTS_TW.md>)
+| 模型 | 實拍位移 | SEM 邊界距離（% 柱距） | R73 邊界距離 | R74 邊界距離 | SEM 嚴格門檻 |
+|---|---:|---:|---:|---:|---|
+| 原圖 | — | 0.5697 | 0.2847 px | 7.2418 px | — |
+| COMBO | 6/6 | 2.1304 | 0.7693 px | 9.5625 px | 未過 |
+| R39 | 6/6 | 2.3509 | 0.7541 px | 8.8608 px | 未過 |
+| R40 | 6/6 | 1.9117 | 0.5797 px | 7.7173 px | 未過 |
+| R39R40 | 6/6 | 2.1711 | 0.6829 px | 8.3730 px | 未過 |
+| Lab R61 v16 | 6/6 | 0.4413 | 0.3629 px | **7.2234 px** | 通過 |
+| R79 第 23 輪 | 6/6 | **0.2405** | **0.2733 px** | 11.2185 px | 通過 |
 
-## 進入實際檔案
+**均華三尺度的外部 GMF（只有四個模型有實測，步距標準差）：**
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R82 檔案說明 |
-| [README.md](<README.md>) | 1檔 | R82 R39 / R40 跨場景泛化與位移驗證 |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 8檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 6檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+| 尺度 | COMBO | R39 | R40 | R39R40 |
+|---|---:|---:|---:|---:|
+| 8 px | 0.1545 | **0.1438** | 0.1454 | 0.1465 |
+| 0.8 px | 0.1316 | 0.1400 | **0.1274** | 0.1335 |
+| 0.08 px | 0.0999 | **0.0839** | 0.1214 | 0.1004 |
 
-## 必要來源與取得界線
+## 讀這些數字要知道的事
 
-固定模型、301原圖、均華序列及SEM／合成參照。
+1. **報告的選擇：** 跨場景主力仍以 R61 最均衡（位移六組全過、SEM 通過、R74 第一）；R79 在 SEM、新形狀、位移最好，但 R74 最差、均華本地診斷有警訊、沒有外部 GMF，只列為強力候選。
+2. **R39 系列：** 最均衡的是 R39R40；R40 形狀最好但 0.08 px 外部定位退步 21.5%，不能單獨升級。三者都只適合當保守備用。
+3. **外部 GMF 不補值。** R61、R79 沒有外部 GMF 實測，均華的本地定位只當趨勢參考。
+4. **R79 對 R73、R74 屬開發測試**，它的乾淨確認看實拍位移與 SEM。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 拿資料與重做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 一鍵執行程式與設定 | 本資料夾 [scripts/](<scripts>)、[config/](<config>)，已在 GitHub |
+| 圖 | [results/figures/](<results/figures>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R82 結果](<reports/R82_RESULTS_TW.md>) | 結論、總表、實拍位移、均華三尺度、輪廓與 SEM、證據限制 |
+| [README](<README.md>) | 驗證範圍與執行方式 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R82_R39R40CrossSceneGeneralizationBenchmark.md>)。

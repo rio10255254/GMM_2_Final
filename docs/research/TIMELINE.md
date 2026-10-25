@@ -183,8 +183,8 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | R75v2 | 模型不動、只改資料分布（非圓、多物件、五段曝光、不需修改的案例）再從零訓練 → **研究候選**：SEM 外框接近 R61、全曝光都成立，最暗曝光比 R61 穩；周長與非圓細節未過，5× 丟細節 | [R75v2](../../Experiments/R75v2_R61ArchitectureScratchGeneralization/FILE_GUIDE.md) |
 | R76–R78 | 用 SEM 完整輪廓和多倍率位移檢查 R75／R75v2 → **分析**：R75 自動挑權重規則選錯；R75v2 位移六組都通過，但 5× 小區塊丟細節 | [R76](../../Experiments/R76_R75ACMContourSEMValidation/FILE_GUIDE.md)、[R77](../../Experiments/R77_R75v2ACMContourSEMValidation/FILE_GUIDE.md)、[R78](../../Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/FILE_GUIDE.md) |
 | **R79** | 加強密集排列與多尺度，防止過度重建 → **研究候選**：第 23 輪是強顯微候選，但需要固定整張推論 | [R79](../../Experiments/R79_R75v3_DenseMicroscopyScratchGeneralization/FILE_GUIDE.md) |
-| R80 | 另一種取邊定義核對 SEM；比較 R79 早期與最後模型 → **分析** | [R80 取邊](../../Experiments/R80_InflectionReferenceCircleSEMValidation/FILE_GUIDE.md)、[R80 早晚](../../Experiments/R80_R79E23vsE100GeneralizationValidation/FILE_GUIDE.md) |
-| R81 | 擴大外部架構的受控比較 → **分析** | [R81](../../Experiments/R81_MultiArchitectureReferenceCircleBenchmark/FILE_GUIDE.md) |
+| R80 | 兩件事：建立不用灰階門檻的轉折點＋參考圓量法；比較 R79 第 23 輪與第 100 輪 → **分析**：新量法下 V42 的 50× CD 比原圖差、Wiener 最好；R79 選定第 23 輪 | [R80 取邊](../../Experiments/R80_InflectionReferenceCircleSEMValidation/FILE_GUIDE.md)、[R80 早晚](../../Experiments/R80_R79E23vsE100GeneralizationValidation/FILE_GUIDE.md) |
+| R81 | 13 個模型（12 個外部架構加 V42）用轉折點量法比 → **分析**：沒有模型包辦第一，V42 沒拿到任何一項；50× CD 原圖比所有模型都好 | [R81](../../Experiments/R81_MultiArchitectureReferenceCircleBenchmark/FILE_GUIDE.md) |
 | R82 | 把核准替代與研究模型放到共同場景 → **分析**：只保留有外部回傳的模型，不補值 | [R82](../../Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/FILE_GUIDE.md) |
 | R83 | 修 R79 的困難成像並測保守輸出 → **未採用**：新權重沒有超越 R79 | [R83](../../Experiments/R83_R79SevereMicroscopyStrengthening/FILE_GUIDE.md) |
 | R84–R86 | 三種方法消除 R79 的切塊差異 → **未採用**：各有代價，最後保留原 R79 並固定整張推論 | [R84](../../Experiments/R84_R79TileStableRootRepair/FILE_GUIDE.md)、[R85](../../Experiments/R85_R79SharedCanvasOpticalRepair/FILE_GUIDE.md)、[R86](../../Experiments/R86_R79BlockGroupNormRepair/FILE_GUIDE.md) |

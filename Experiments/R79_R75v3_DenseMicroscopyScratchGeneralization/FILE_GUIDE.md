@@ -1,39 +1,67 @@
-# main/R79_R75v3_DenseMicroscopyScratchGeneralization：檔案怎麼找
+# R79（R75v3）：補上密集排列與多尺度，再從零訓練
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R79_R75v3_DenseMicroscopyScratchGeneralization.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一版 R75v2](<../R75v2_R61ArchitectureScratchGeneralization/FILE_GUIDE.md>) · [第 23 輪與第 100 輪的驗證 R80](<../R80_R79E23vsE100GeneralizationValidation/FILE_GUIDE.md>) · [跨模型比較 R82](<../R82_R39R40CrossSceneGeneralizationBenchmark/FILE_GUIDE.md>) · [切塊問題 R84](<../R84_R79TileStableRootRepair/FILE_GUIDE.md>)
 
-**研究問題：加強密集排列與多尺度並防止過度重建。**
+**一句話：** 資料夾名叫 R79，內部名稱是 R75-v3。R75v2 在 5× 影像會把密集的小格、細線當雜訊抹掉，R79 模型不動、**仍然只改資料**：5,120 張裡將近一半是 5～24 px 間距的密集排列與多尺度混合，另有 960 張「本來就不該改」的細結構，所有權重從隨機開始。完成後 R80 選定第 23 輪：在 36 顆柱 SEM 上邊界距離只有 0.2405% 柱距，是當時所有模型中最好的；但在高難度合成影像上比原圖差，切塊推論也會改變結果。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**（第 23 輪是強顯微候選，但需要固定整張推論，困難成像比原圖差） |
+| 時間 | 2026-08-01 前後訓練；08-06 由 R80 選定第 23 輪 |
+| 實驗條件 | 純合成資料；5×、20×、50× 實拍只在每 5 輪輸出觀察圖，不參與訓練或挑選 |
+| 起點 | 隨機初始化，模型結構與 R75v2 相同 |
 
-## 先讀原文件
+## 這輪在問什麼
 
-- [R75-v3 訓練資料設計](<reports/R75V3_DESIGN.md>)
+R75v2 在低倍率的失敗，真的是訓練場景不足造成的嗎？
 
-## 進入實際檔案
+## 怎麼做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
+| 資料類別 | 張數 | 用途 |
 |---|---:|---|
-| [.gitignore](<.gitignore>) | 1檔 | 原配套檔案 |
-| [config/](<config>) | 2檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 1檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [inference/](<inference>) | 2檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | 資料夾導覽 |
-| [model/](<model>) | 2檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R75-v3：密集與多尺度顯微形狀的全新訓練 |
-| [reports/](<reports>) | 6檔 | 原報告、計畫、審查與各階段結論 |
-| [requirements.txt](<requirements.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [runs/](<runs>) | 4檔 | 各次執行的紀錄或完成證據；不憑資料夾名認定已完成 |
-| [scripts/](<scripts>) | 6檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
-| [tools/](<tools>) | 5檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [training/](<training>) | 3檔 | 訓練程式與配套 |
-| [weights/](<weights>) | 1檔 | 模型檔或取得說明；最佳、最後及短測版本需分清 |
+| 基礎幾何 | 640 | 保留一般形狀能力 |
+| 非圓與細節形狀 | 640 | 凹口、窄頸、孔洞、不對稱 |
+| 密集週期排列 | 1,600 | 小間距圓點、方格、線條、缺件、間距漸變 |
+| 多尺度混合場 | 800 | 多種大小、方向、明暗與局部缺陷同時出現 |
+| 局部邊界淡化 | 480 | 局部消失、光暈、陰影、模糊、雜訊 |
+| 不修改或幾乎不修改 | 960 | 清楚的週期結構應該保留 |
 
-## 必要來源與取得界線
+真結構的間距取 5～24 px，模擬的感光或照明條紋只出現在 48～128 px，兩者不重疊，避免同一種頻率有時是答案、有時是雜訊。
 
-5120組新配方、第23／100輪及固定全圖程式。
+## 結果
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+詳見 [R80](<../R80_R79E23vsE100GeneralizationValidation/FILE_GUIDE.md>)。摘要：
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 測試 | 原圖 | R79 第 23 輪 | R79 第 100 輪 |
+|---|---:|---:|---:|
+| 36 顆柱 SEM 平均邊界距離（% 柱距） | 0.5697 | **0.2405** | 0.3705 |
+| R73 新形狀邊界距離 | 0.2847 px | 0.2733 px | **0.1831 px** |
+| R74 高難度顯微邊界距離 | **7.24 px** | 11.22 px | 21.31 px |
+| 實拍位移六組 | — | 6/6 通過 | 6/6 通過 |
+
+## 讀這些數字要知道的事
+
+1. **R73、R74 不是盲測。** 它們的失敗型態影響了 R79 的資料設計，所以對 R79 屬於開發測試；乾淨的確認主要看實拍位移與 SEM。
+2. **困難成像比原圖差。** 在 R74 的低對比、照明不均、光暈與邊界消失影像上，兩個權重都輸給原圖，第 23 輪只是受損較少。
+3. **切塊會改變輸出。** R84～R86 試了三種方法消除切塊差異，最後保留原 R79、固定整張推論。
+4. **R79 第 23 輪後來成為 R83～R86 的起點。**
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 訓練、推論、資料準備入口與監看腳本 | 本資料夾 [training/](<training/README.md>)、[inference/](<inference/README.md>)、[scripts/](<scripts>)、[tools/](<tools>)，已在 GitHub |
+| 資料設計與預覽圖 | [reports/R75V3_DESIGN.md](<reports/R75V3_DESIGN.md>)、[reports/figures/](<reports/figures>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 5,120 張資料、權重與訓練紀錄只在原電腦上；資料可用 `tools/prepare_dataset.py` 重新產生。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [README](<README.md>) | 補強什麼、入口、資料分配與界線 |
+| [資料設計](<reports/R75V3_DESIGN.md>) | 問題來源、只改資料、間距與干擾分開、完成後判定 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R79_R75v3_DenseMicroscopyScratchGeneralization.md>)。
