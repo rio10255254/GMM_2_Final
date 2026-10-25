@@ -14,6 +14,7 @@
 | 取得R32／R147模型及跨輪固定輸入 | [逐輪補件恢復方法](round_source_followthrough_20261022/README.md)，附件整批約161.37MB；15個R108小模型另在原程式位置 |
 | 生成R108訓練資料 | [僅生成資料的入口](round_source_followthrough_20261022/README.md)，不需要為此啟動原訓練程式 |
 | 其他模型、生成包與固定來源 | [模型指南](MODEL_GUIDE.md)、[生成方法](GENERATION_GUIDE.md)；確認模型身分和相配設定 |
+| 報告裡提到的某個檔案在 GitHub 上點不開，想知道它在哪 | 先執行 `python Tools/cloud_locator.py build`（下載各版本的內容清單，約 19 MB），再用 `python Tools/cloud_locator.py where <專案內路徑>` 查它在 git、在哪個版本附件，以及要下載多大；`scan <資料夾>` 可逐檔比對本機與雲端內容是否相同 |
 
 先選研究目的，再下載具體附件。**不需要下載全部版本，也不要執行舊全量保存排程。** 本頁大小取自2026-10-22 GitHub實際附件清單，是壓縮下載大小；解開後另需空間。
 
