@@ -71,7 +71,7 @@ R45 是主專案這一段的最後一輪。之後主專案的資料夾跳到 6 �
 
 > **目前的缺口：**
 >
-> - **四個校正模組的權重檔只在原電腦上**（`results/checkpoints/r45_oracle_adapter_large_mixed*.pth`，每個不到 0.1 MB），GitHub 和 Release 都沒有。
+> - **四個校正模組的權重檔只在原電腦上**：`results/checkpoints/` 下的 `r45_oracle_adapter_large_mixed.pth` 與縮放版 `_s04`、`_s08`、`_s12`（每個不到 0.1 MB），GitHub 和 Release 都沒有（2026-10-26 展開全部附件後逐檔查過）。同一資料夾的 `_latest` 與兩個短測權重在 Release `research-results-models-20261016` 裡。
 > - **大部分結果檔不在 GitHub 程式樹裡**：`results/` 目前只有代表圖；縮放掃描總表、R45B／R45C 的逐塊表與摘要，在 2026-10 從主版本移出，保存在 git 歷史與 Release 裡。整理計畫會把這些小檔補回。
 
 ## 原始報告
