@@ -37,7 +37,7 @@ DEFAULT_CACHE = REPO / '.cache' / 'cloud_locator'
 PI_TAG = 'shared-pi-20260903-v1'
 PI_ROOT = 'Shared_Sources/PI_Repeatability_20260903/'
 SKIP_DIRS = {'.git', '__pycache__', '.pytest_cache', '.cache'}
-STATUSES = ['git', 'git-other-path', 'release', 'release-other-path', 'changed', 'local-only']
+STATUSES = ['git', 'git-other-path', 'release', 'release-other-path', 'git-history', 'changed', 'local-only']
 
 
 def gh(*args):
@@ -56,15 +56,35 @@ def long_path(path):
 
 
 def open_index(cache, create=False):
+    """Release index: written only by `build`, read by everything else."""
     cache.mkdir(parents=True, exist_ok=True)
-    db = sqlite3.connect(cache / 'index.sqlite')
+    db = sqlite3.connect(cache / 'index.sqlite', timeout=120)
     if create:
         db.executescript('''
             DROP TABLE IF EXISTS objects; DROP TABLE IF EXISTS assets; DROP TABLE IF EXISTS meta;
             CREATE TABLE objects(path TEXT, sha256 TEXT, bytes INTEGER, tag TEXT, asset TEXT, collection TEXT);
             CREATE TABLE assets(tag TEXT, name TEXT, bytes INTEGER, sha256 TEXT, indexed_by TEXT);
             CREATE TABLE meta(key TEXT PRIMARY KEY, value TEXT);''')
-    db.execute('CREATE TABLE IF NOT EXISTS hashes(path TEXT PRIMARY KEY, bytes INTEGER, mtime_ns INTEGER, sha256 TEXT, git_blob TEXT)')
+    return db
+
+
+def open_side(cache, name, schema):
+    """Hash and history caches live in their own files so a long scan never blocks lookups."""
+    cache.mkdir(parents=True, exist_ok=True)
+    db = sqlite3.connect(cache / name, timeout=120)
+    db.execute(f'CREATE TABLE IF NOT EXISTS {schema}')
+    return db
+
+
+def open_hashes(cache):
+    db = open_side(cache, 'hashes.sqlite', 'hashes(path TEXT PRIMARY KEY, bytes INTEGER, mtime_ns INTEGER, sha256 TEXT, git_blob TEXT)')
+    if not db.execute('SELECT 1 FROM hashes LIMIT 1').fetchone() and (cache / 'index.sqlite').exists():
+        # Earlier versions kept hashes inside index.sqlite; carry them over once.
+        db.execute('ATTACH DATABASE ? AS old', (str(cache / 'index.sqlite'),))
+        if db.execute("SELECT 1 FROM old.sqlite_master WHERE name='hashes'").fetchone():
+            db.execute('INSERT OR IGNORE INTO hashes SELECT * FROM old.hashes')
+            db.commit()
+        db.execute('DETACH DATABASE old')
     return db
 
 
@@ -119,8 +139,9 @@ def fetch(repo, tag, name, target):
 class Cloud:
     """Lookups against the release index and one Git tree."""
 
-    def __init__(self, cache, git_ref):
-        self.db = open_index(Path(cache))
+    def __init__(self, cache, git_ref, with_history=True):
+        self.cache = Path(cache)
+        self.db = open_index(self.cache)
         if not self.db.execute("SELECT 1 FROM sqlite_master WHERE name='objects'").fetchone():
             raise SystemExit('No index yet. Run: python Tools/cloud_locator.py build')
         self.git_ref = git_ref
@@ -135,9 +156,38 @@ class Cloud:
                 self.git_sizes.add(int(size))
                 self.blobs.add(blob)
         self.release_sizes = {row[0] for row in self.db.execute('SELECT DISTINCT bytes FROM objects')}
+        # Files later removed from the tree are still recoverable from the ref's history on GitHub.
+        self.history_blobs, self.history_sizes, self.history_paths = {}, set(), set()
+        if with_history:
+            for blob, size, path in self.history_listing():
+                if blob not in self.blobs:
+                    self.history_blobs[blob] = path
+                    self.history_sizes.add(size)
+                    if path and path not in self.tree:
+                        self.history_paths.add(path)
+
+    def history_listing(self):
+        """Every blob reachable from the ref, cached per commit because walking this history is slow."""
+        commit = git('rev-parse', self.git_ref + '^{commit}').strip()
+        db = open_side(self.cache, 'history.sqlite', 'history(commit_id TEXT, blob TEXT, bytes INTEGER, path TEXT)')
+        rows = db.execute('SELECT blob, bytes, path FROM history WHERE commit_id=?', (commit,)).fetchall()
+        if rows:
+            return rows
+        listing = subprocess.run(['git', '-C', str(REPO), '-c', 'core.quotepath=off', 'rev-list', '--objects', commit],
+                                 check=True, capture_output=True).stdout
+        sizes = subprocess.run(['git', '-C', str(REPO), 'cat-file', '--batch-check=%(objectname) %(objecttype) %(objectsize) %(rest)'],
+                               input=listing, check=True, capture_output=True).stdout.decode('utf-8', 'replace')
+        rows = []
+        for line in sizes.splitlines():
+            parts = line.split(' ', 3)
+            if len(parts) >= 3 and parts[1] == 'blob':
+                rows.append((parts[0], int(parts[2]), parts[3] if len(parts) == 4 else ''))
+        db.executemany('INSERT INTO history VALUES (?,?,?,?)', ((commit, *row) for row in rows))
+        db.commit()
+        return rows
 
     def could_match(self, size):
-        return size in self.git_sizes or size in self.release_sizes
+        return size in self.git_sizes or size in self.release_sizes or size in self.history_sizes
 
     def releases_for_path(self, path):
         return self.db.execute('SELECT sha256, tag, asset FROM objects WHERE path=?', (path,)).fetchall()
@@ -159,6 +209,8 @@ class Cloud:
             other = self.releases_for_sha(sha)
             if other:
                 return 'release-other-path', f'{other[0][1]} / {other[0][2]} as {other[0][0]}'
+        if blob and blob in self.history_blobs:
+            return 'git-history', f'history of {self.git_ref}: {self.history_blobs[blob]}'
         if rel in self.tree or same_path:
             return 'changed', 'cloud has this path with different bytes'
         return 'local-only', ''
@@ -192,14 +244,17 @@ def relative(full, project_root):
 
 
 def where(args):
-    cloud = Cloud(args.cache, args.git_ref)
+    cloud = Cloud(args.cache, args.git_ref, not args.no_history)
     for query in args.paths:
         rel = PurePosixPath(Path(query).as_posix()).as_posix().strip('/')
         in_git = [p for p in cloud.tree if p == rel or p.startswith(rel + '/')]
+        in_history = [p for p in cloud.history_paths if p == rel or p.startswith(rel + '/')]
         rows = cloud.db.execute('SELECT path, tag, asset, bytes FROM objects WHERE path=? OR path LIKE ?',
                                 (rel, rel + '/%')).fetchall()
         print(f'== {rel}')
         print(f'   git {args.git_ref}: {len(in_git)} files')
+        if in_history:
+            print(f'   git history of {args.git_ref} only (removed from the tree, still recoverable): {len(in_history)} files')
         groups = collections.defaultdict(lambda: [0, 0, set()])
         for _path, tag, asset, size in rows:
             groups[tag][0] += 1
@@ -214,7 +269,7 @@ def where(args):
         if not in_git and not rows:
             print('   not in the cloud index' + (' (exists locally)' if os.path.exists(long_path(local)) else ''))
         # Name lookup only; `scan` compares contents before anything counts as preserved.
-        known = set(in_git) | {r[0] for r in rows}
+        known = set(in_git) | set(in_history) | {r[0] for r in rows}
         missing = []
         candidates = [long_path(local)] if os.path.isfile(long_path(local)) else walk(local)
         for full in candidates:
@@ -229,7 +284,7 @@ def where(args):
 
 
 def scan(args):
-    cloud = Cloud(args.cache, args.git_ref)
+    cloud = Cloud(args.cache, args.git_ref, not args.no_history)
     project_root = os.path.abspath(args.project_root)
     totals = collections.defaultdict(lambda: collections.Counter())
     by_dir = collections.defaultdict(lambda: collections.Counter())
@@ -237,7 +292,8 @@ def scan(args):
     writer = csv.writer(report, delimiter='\t') if report else None
     if writer:
         writer.writerow(['status', 'bytes', 'path', 'where'])
-    started, count = time.time(), 0
+    hashes = open_hashes(cloud.cache)
+    started, count, last_commit = time.time(), 0, time.time()
     for root in args.roots:
         for full in walk(root):
             try:
@@ -246,7 +302,7 @@ def scan(args):
                 continue
             rel = relative(full, project_root)
             if cloud.could_match(stat.st_size) or rel in cloud.tree:
-                sha, blob = hash_file(cloud.db, full, rel, stat)
+                sha, blob = hash_file(hashes, full, rel, stat)
                 status, location = cloud.classify(rel, stat.st_size, sha, blob)
             else:
                 # No cloud object has this size, so the bytes cannot be there; hashing is unnecessary.
@@ -259,10 +315,12 @@ def scan(args):
             if writer:
                 writer.writerow([status, stat.st_size, rel, location])
             count += 1
+            if time.time() - last_commit > 30:
+                hashes.commit()
+                last_commit = time.time()
             if count % 20000 == 0:
-                cloud.db.commit()
                 print(f'... {count} files, {time.time() - started:.0f}s', flush=True)
-    cloud.db.commit()
+    hashes.commit()
     if report:
         report.close()
     print(f'\nscanned {count} files against {args.git_ref} and the release index')
@@ -289,6 +347,7 @@ def main():
         p = sub.add_parser(name, help=help_text)
         p.add_argument('--git-ref', default='HEAD', help='Git tree treated as the cloud (e.g. origin/main)')
         p.add_argument('--project-root', default=str(REPO), help='root that project-relative paths start from')
+        p.add_argument('--no-history', action='store_true', help='ignore files kept only in the ref history')
         p.set_defaults(func=func)
     sub.choices['where'].add_argument('paths', nargs='+', help='project-relative paths')
     sub.choices['where'].add_argument('--list', type=int, default=10, help='how many uncovered local files to show')

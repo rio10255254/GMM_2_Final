@@ -14,11 +14,12 @@ def make_cloud(tmp_path, tree, releases):
     cloud.git_ref='main'
     cloud.tree=tree
     cloud.blobs=set(tree.values())
+    cloud.history_blobs={}
     return cloud
 
 
 def test_hash_matches_git_blob_id_and_is_cached(tmp_path):
-    db=cloud_locator.open_index(tmp_path/'cache')
+    db=cloud_locator.open_hashes(tmp_path/'cache')
     path=tmp_path/'result.csv'
     path.write_bytes(b'step,nm\r\n1,4.865\r\n')
     sha,blob=cloud_locator.hash_file(db,str(path),'result.csv',os.stat(path))
@@ -40,3 +41,10 @@ def test_moved_copies_are_found_by_content_and_unknown_files_stay_local(tmp_path
     assert cloud.classify('new/copy.py',1,'x','blob1')[0]=='git-other-path'
     assert cloud.classify('new/place.npz',5,'sha-n','none')[0]=='release-other-path'
     assert cloud.classify('only/here.bmp',5,'sha-z','none')==('local-only','')
+
+
+def test_files_removed_from_the_tree_count_as_recoverable_history(tmp_path):
+    cloud=make_cloud(tmp_path,{},[])
+    cloud.history_blobs={'blob-old':'Experiments/R33/results/recon/frame.bmp'}
+    status,where=cloud.classify('Experiments/R33/results/recon/frame.bmp',3,'sha-b','blob-old')
+    assert status=='git-history' and 'frame.bmp' in where
