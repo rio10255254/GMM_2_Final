@@ -2,11 +2,11 @@
 
 [研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 17](<../round17/FILE_GUIDE.md>) · [下一輪 Round 19](<../round19/FILE_GUIDE.md>) · [跟 R22 的外部比較](<../../organized_20260316/external_compare_round18_round22/reports/EXTERNAL_COMPARE_R18_R22_SUMMARY.md>)
 
-**一句話：** 2026-03-13 下午，延續 Round 17，進一步提高中心相關的權重。部署選中 `r18_ec_highcenter`：0.8 px 的中心誤差仍停在約 0.85 的平台沒突破，但整體部署分數最穩，所以成為外部比較時代之前正式採用的內部基線。之後在 `external_compare_round18_round22` 跟 Round 22 做外部比較。
+**一句話：** 2026-03-13 下午，延續 Round 17，進一步提高中心相關的權重。部署選中 `r18_ec_highcenter`：0.8 px 的中心誤差仍停在約 0.85 的平台沒突破，但整體部署分數最穩，所以成為外部比較時代之前正式採用的內部基線。3/16 在 `external_compare_round18_round22` 跟 Round 22 做外部 GMF 比較：Round 22 在 0.8 px 主戰場沒有贏，所以 Round 18 **維持採用**；之後才由 Round 25 那條從零訓練的路線取代。
 
 | | |
 |---|---|
-| 結果 | **採用**（當時的內部基線；之後由 R22 的外部比較取代） |
+| 結果 | **採用**（當時的內部基線；R18 對 R22 的外部比較後仍維持，之後由 R25 路線取代） |
 | 時間 | 2026-03-13 下午 |
 | 實驗條件 | A：環形影像三個尺度（0.08、0.8、8 px）的內部序列評分；這一輪另外保存了外部重建與 GMF 驗證資料 |
 | 起點 | Round 17 的路線 |

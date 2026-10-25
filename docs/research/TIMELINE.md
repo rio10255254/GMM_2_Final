@@ -74,9 +74,9 @@ B 的均華 202 張和 D 的 930 張都是借用合作廠商均華的光學系�
 | R7–R10 | 改用 uint16 微步與序列資料，針對 0.08、0.8、8px 分別調 → **未採用**：內部零波動不代表實際零誤差，兩種驗證來源不能混排 | [R7](../reproducibility/lineage/EARLY_ROUNDS.md#r7)～[R10](../reproducibility/lineage/EARLY_ROUNDS.md#r10) |
 | R11 | 整環定位加缺陷保護 → **未採用**：主尺度改善，其他尺度沒有跟著成功 | [R11](../reproducibility/lineage/EARLY_ROUNDS.md#r11) |
 | R12–R15 | 把「方法組初排」和「固定一份模型重新審查」分開 → **分析**：發現初排第一名和最後該採用的模型可能不同 | [R12–R15](../reproducibility/legacy_multiscale/README.md) |
-| R16–R18 | 逐步針對邊界估計、步距、中心位置約束 → R18 **當時採用**，之後被 R22 的外部比較取代 | [R16](../reproducibility/experiments/legacy__round16.md)、[R17](../reproducibility/experiments/legacy__round17.md)、[R18](../reproducibility/experiments/legacy__round18.md) |
+| R16–R18 | 逐步針對邊界估計、步距、中心位置約束 → R18 **當時採用**；3/16 跟 R22 的外部比較後仍維持，之後由 R25 路線取代 | [R16](../reproducibility/experiments/legacy__round16.md)、[R17](../reproducibility/experiments/legacy__round17.md)、[R18](../reproducibility/experiments/legacy__round18.md) |
 | R19–R20 | 絕對位置錨定、固定基準流程前測 → **未採用**：假說沒有被支持 | [R19](../reproducibility/experiments/legacy__round19.md)、[R20](../reproducibility/experiments/legacy__round20.md) |
-| R21–R22 | 混合估計器、成對混合估計器 → R22 **當時採用**，後續外部系列再比較 | [R21](../reproducibility/experiments/legacy__round21.md)、[R22](../reproducibility/experiments/legacy__round22.md) |
+| R21–R22 | 混合估計器、成對混合估計器 → R21 **未採用**；R22 通過內部關卡，但外部 GMF 在 0.8 px 沒贏 R18，**未升級**（內部指標進步 4.6 倍、外部反而退步，是「內部與外部脫節」這個教訓的源頭） | [R21](../reproducibility/experiments/legacy__round21.md)、[R22](../reproducibility/experiments/legacy__round22.md) |
 | R23–R24 | R22 之後的歷史候選 → **未採用**：診斷性負結果 | [R23](../reproducibility/experiments/legacy__round23.md)、[R24](../reproducibility/experiments/legacy__round24.md) |
 | R25–R29 | 從零訓練與步長權重的外部多尺度比較鏈；R26 另有新 PSF 重訓與交付版本 → **研究候選**：建立後續共用的比較方式 | [R25](../reproducibility/experiments/legacy__round25.md)、[R26](../../Experiments/R26NewPSFCheck/FILE_GUIDE.md)、[R27](../reproducibility/experiments/legacy__round27.md)–[R29](../reproducibility/experiments/legacy__round29.md) |
 | **R30** | 方向約束（`r30_b1_dironly`） → **採用**：成為前任正式基準，直到 COMBO | [R30](../reproducibility/experiments/legacy__round30.md) |
