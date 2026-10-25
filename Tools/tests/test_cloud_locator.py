@@ -28,6 +28,17 @@ def test_hash_matches_git_blob_id_and_is_cached(tmp_path):
     assert db.execute('SELECT sha256 FROM hashes WHERE path=?',('result.csv',)).fetchone()[0]==sha
 
 
+def test_seeded_hash_is_reused_only_while_no_git_blob_is_needed(tmp_path):
+    db=cloud_locator.open_hashes(tmp_path/'cache')
+    path=tmp_path/'frame.bmp'
+    path.write_bytes(b'pixels')
+    stat=os.stat(path)
+    db.execute('INSERT INTO hashes VALUES (?,?,?,?,NULL)',('frame.bmp',stat.st_size,stat.st_mtime_ns,'seeded-sha'))
+    assert cloud_locator.hash_file(db,str(path),'frame.bmp',stat,need_blob=False)==('seeded-sha',None)
+    sha,blob=cloud_locator.hash_file(db,str(path),'frame.bmp',stat,need_blob=True)
+    assert sha!='seeded-sha' and blob
+
+
 def test_same_path_needs_same_bytes(tmp_path):
     cloud=make_cloud(tmp_path,{'a/model.onnx':'blob1'},[('r/table.csv','sha-r','10','tag','part-01.zip','results')])
     assert cloud.classify('a/model.onnx',1,'x','blob1')[0]=='git'

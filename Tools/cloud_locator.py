@@ -189,6 +189,9 @@ class Cloud:
     def could_match(self, size):
         return size in self.git_sizes or size in self.release_sizes or size in self.history_sizes
 
+    def needs_blob(self, rel, size):
+        return rel in self.tree or size in self.git_sizes or size in self.history_sizes
+
     def releases_for_path(self, path):
         return self.db.execute('SELECT sha256, tag, asset FROM objects WHERE path=?', (path,)).fetchall()
 
@@ -216,10 +219,14 @@ class Cloud:
         return 'local-only', ''
 
 
-def hash_file(db, full, rel, stat):
-    """SHA-256 and Git blob id in one read; cached by size and last-write time."""
+def hash_file(db, full, rel, stat, need_blob=True):
+    """SHA-256 and Git blob id in one read; cached by size and last-write time.
+
+    Seeded rows carry only SHA-256. They are reused as-is unless a Git blob id is
+    needed, i.e. unless some Git object has this file's size.
+    """
     row = db.execute('SELECT bytes, mtime_ns, sha256, git_blob FROM hashes WHERE path=?', (rel,)).fetchone()
-    if row and row[0] == stat.st_size and row[1] == stat.st_mtime_ns:
+    if row and row[0] == stat.st_size and row[1] == stat.st_mtime_ns and (row[3] or not need_blob):
         return row[2], row[3]
     sha, blob = hashlib.sha256(), hashlib.sha1(b'blob %d\0' % stat.st_size)
     with open(long_path(full), 'rb') as stream:
@@ -229,6 +236,32 @@ def hash_file(db, full, rel, stat):
     result = sha.hexdigest(), blob.hexdigest()
     db.execute('INSERT OR REPLACE INTO hashes VALUES (?,?,?,?,?)', (rel, stat.st_size, stat.st_mtime_ns, *result))
     return result
+
+
+def seed(args):
+    """Reuse SHA-256 values from an earlier full content inventory (a SQLite file with a
+    `files(source, bytes, mtime_ns, sha256)` table, as written by the 2026-10 preservation
+    tools). A seeded hash is used only while the file keeps the same size and last-write time."""
+    project_root = os.path.abspath(args.project_root).rstrip('\\/') + os.sep
+    source = sqlite3.connect(f'file:{Path(args.inventory).as_posix()}?mode=ro', uri=True)
+    hashes = open_hashes(Path(args.cache))
+    added = skipped = 0
+    batch = []
+    for src, size, mtime, sha in source.execute(
+            'SELECT source, bytes, mtime_ns, sha256 FROM files WHERE sha256 IS NOT NULL AND mtime_ns IS NOT NULL'):
+        if not src or not os.path.abspath(src).lower().startswith(project_root.lower()):
+            skipped += 1
+            continue
+        batch.append((relative(src, project_root), size, mtime, sha))
+        if len(batch) >= 50000:
+            added += len(batch)
+            hashes.executemany('INSERT OR IGNORE INTO hashes VALUES (?,?,?,?,NULL)', batch)
+            hashes.commit()
+            batch.clear()
+            print(f'... {added} rows', flush=True)
+    hashes.executemany('INSERT OR IGNORE INTO hashes VALUES (?,?,?,?,NULL)', batch)
+    hashes.commit()
+    print(f'seeded {added + len(batch)} hashes under {project_root}; skipped {skipped} rows outside it')
 
 
 def walk(root):
@@ -302,7 +335,7 @@ def scan(args):
                 continue
             rel = relative(full, project_root)
             if cloud.could_match(stat.st_size) or rel in cloud.tree:
-                sha, blob = hash_file(hashes, full, rel, stat)
+                sha, blob = hash_file(hashes, full, rel, stat, cloud.needs_blob(rel, stat.st_size))
                 status, location = cloud.classify(rel, stat.st_size, sha, blob)
             else:
                 # No cloud object has this size, so the bytes cannot be there; hashing is unnecessary.
@@ -342,6 +375,10 @@ def main():
     p = sub.add_parser('build', help='download release manifests and build the index')
     p.add_argument('--repo', default=DEFAULT_REPO)
     p.set_defaults(func=build)
+    p = sub.add_parser('seed', help='reuse hashes from an earlier full content inventory')
+    p.add_argument('inventory', help='SQLite inventory with a files(source, bytes, mtime_ns, sha256) table')
+    p.add_argument('--project-root', default=str(REPO), help='root the inventory source paths start from')
+    p.set_defaults(func=seed)
     for name, func, help_text in [('where', where, 'show where project paths are kept'),
                                   ('scan', scan, 'classify every file under local folders')]:
         p = sub.add_parser(name, help=help_text)
