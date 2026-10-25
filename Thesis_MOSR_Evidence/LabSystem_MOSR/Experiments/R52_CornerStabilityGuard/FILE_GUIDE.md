@@ -1,34 +1,65 @@
-# lab/R52_CornerStabilityGuard：檔案怎麼找
+# Lab R52：混合模糊加上實拍角點穩定資料，訓練 100 輪
 
-[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+[研究時間線](<../../../../docs/research/TIMELINE.md>) · [LabSystem 全線](<../../../../docs/reproducibility/lineage/LAB_SYSTEM.md>) · [前一輪 Lab R51](<../R51_BlurSourceProbe/FILE_GUIDE.md>) · [下一輪 Lab R53](<../R53_RealisticDatasetCalibration/FILE_GUIDE.md>)
 
-[本輪研究卡](<../../../../docs/reproducibility/experiments/lab__R52_CornerStabilityGuard.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
+**一句話：** 延續 R51 的混合模糊方向，再加入 R48 的實拍角點、格線與 PSF 壓力邊界資料（共 4,000 組，每組附幾何圖），從 R51 混合 best 起步正式訓練 100 輪。latest 的大偏移角點降到 30.4%，比 R51 好，但仍比 R40 的 24.6% 差；逐角點看，它修好了一些 R51 的大錯，同時又弄壞了很多 R51 原本正確的角點。
 
-**研究問題：續接混合光學並加入角點穩定限制。**
+| | |
+|---|---|
+| 結果 | **未採用**（100 輪後大偏移仍多） |
+| 時間 | 2026-06-14 開始，06-15 完成 |
+| 實驗條件 | C：實驗室顯微系統；驗證用 2025-06-05 的實拍棋盤序列（20×，51 張、358 個角點） |
+| 起點 | Lab R51 混合模糊的 `best_tradeoff` |
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+## 這輪在問什麼
 
-## 先讀原文件
+R51 的混合模糊讓典型角點變好、大偏移變多。如果把實拍角點的穩定資料加進來、訓練得更完整，能不能把大偏移壓下來？
 
-- [Lab R52 Corner-Stability Guard Checkboard Validation - 2026-06-15](<reports/R52_CHECKBOARD_VALIDATION.md>)
-- [R52 Corner-Stability Guard Results](<reports/R52_RESULTS.md>)
+## 怎麼做
 
-## 進入實際檔案
+訓練 4,000 組：圓環 550、形狀 350、顯微 250、混合模糊角點 400、實拍角點／格線／PSF 壓力邊界 1,800、實拍紋理角點 650；另有 700 組驗證。所有資料都附邊界幾何圖。100 輪正式訓練，內部 `best_tradeoff` 停在第 23 輪，最後一輪 PSNR 27.12、SSIM 0.9495。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER_R52_20260813.md](<ARCHIVE_POINTER_R52_20260813.md>) | 1檔 | R52 歷史封存與恢復入口 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R52_CornerStabilityGuard Manifest |
-| [README.md](<README.md>) | 1檔 | R52_CornerStabilityGuard |
-| [reports/](<reports>) | 2檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 4檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 4檔 | 原檢查程式；不是研究結果本身 |
+## 結果
 
-## 必要來源與取得界線
+**實拍棋盤角點**：
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+| 模型 | 中位數 | 第 75 百分位 | 超過 5 px 的比例 |
+|---|---:|---:|---:|
+| 原圖 | 1.414 | 2.236 | 1.7% |
+| Lab R40（對照） | 4.243 | 5.000 | 24.6% |
+| Lab R51 混合 best | 2.828 | 9.220 | 36.9% |
+| R52 best（第 23 輪） | 3.924 | 9.220 | 49.2% |
+| **R52 latest（第 100 輪）** | 3.606 | 8.485 | 30.4% |
 
-[按用途取得原件](<../../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../../docs/reproducibility/KNOWN_GAPS.md>)
+**跟 R51 混合 best 逐角點比：** 100 個原本超過 5 px 的角點被修好，77 個原本正常的角點被推到 5 px 以外。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+**外部 GMF**（6/18 同一序列，Y 方向步距標準差）：R52 latest 0.2683 px，比原圖 0.2639 px 略差，在 11 個候選中排第 9。
+
+## 讀這些數字要知道的事
+
+1. **這次 latest 比 best 好。** 跟 R53 之後的輪次相反；內部挑選在第 23 輪就停了，跟實拍角點的結果不一致。
+2. **不是加更多角點資料就好。** 報告的結論是需要一個更強的機制，阻止模型把角點的峰值移到旁邊另一條邊上。之後 R53 改走資料多樣化，R54 再回頭診斷。
+3. **原報告寫「沒有外部 GMF 分數」**，那是 6/15 的狀態；6/18 的外部 GMF 包裡有 R52 latest 的分數（上面那一行）。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 資料建置、啟動、角點門檻、重建程式與測試 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)，已在 GitHub |
+| 精簡保留包：資料清單、訓練紀錄與曲線、三個代表模型、完整角點驗證 | 說明與資料清單在 GitHub 的 [results/archive_retained_20260813/](<results/archive_retained_20260813/README.md>)；另有 21 個檔案（173 MB）在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，分散在 7 個附件裡，目前要下載約 8.6 GB；監看圖與角點對照圖等 15 個檔案只在原電腦上 |
+| 外部 GMF 分數 | [R51～R56 外部 GMF 摘要](<../../Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/external_gmf_packages/20260618_recent_lab_models_r51_r56/analysis_y_displacement/Y_DISPLACEMENT_SUMMARY.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 完整的資料、訓練與重建歷史（23,858 檔、11.9 GiB）2026-08 已移到外接硬碟封存，見 [封存入口](<ARCHIVE_POINTER_R52_20260813.md>)。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R52 結果](<reports/R52_RESULTS.md>) | 訓練、門檻判讀、逐角點比較、當時的外部 GMF 狀態 |
+| [實拍棋盤驗證](<reports/R52_CHECKBOARD_VALIDATION.md>) | 包含 R40～R51 的完整角點表 |
+| [README](<README.md>)、[MANIFEST](<MANIFEST.md>) | 資料組成、封存經過、所有輸出位置 |
+| [封存入口](<ARCHIVE_POINTER_R52_20260813.md>) | 怎麼從封存恢復完整歷史 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../../../docs/reproducibility/experiments/lab__R52_CornerStabilityGuard.md>)與 [Lab 逐輪必要來源核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)。
