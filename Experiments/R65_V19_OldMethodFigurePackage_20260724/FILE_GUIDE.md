@@ -1,52 +1,56 @@
-# main/R65_V19_OldMethodFigurePackage_20260724：檔案怎麼找
+# R65：論文第 19 版的圖表包（舊的位移量法）
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R65_V19_OldMethodFigurePackage_20260724.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [同一天用新量法重算的 R64](<../R64_IsocontourDisplacementReanalysis_20260724/FILE_GUIDE.md>) · [下一版論文的 R66](<../R66_V20_TraceabilityFigures_20260725/FILE_GUIDE.md>)
 
-**研究問題：保存V19舊量法的論文圖表。**
+**一句話：** 名稱裡的「V19」是**論文稿的第 19 版**（「論文完整版_20260716_v19_第六章更新版」），不是模型。2026-07-24 為這一版的第六章整理了 35 張新圖（位移改善、消融、多模型比較），位移一律沿用原本的**最大梯度邊界**量法，並寫了從第 18 版自動產生第 19 版 Word 檔的程式。這是當時論文的圖表版本，不是現在論文的主結果。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（歷史圖表版本，不冒充目前論文主結果） |
+| 時間 | 2026-07-24 |
+| 實驗條件 | C：實驗室顯微系統；同 V42 論文結果與 R63、EDSR／NAFNet 對照的資料 |
+| 產出 | 35 張新圖（各有 PNG、PDF、MATLAB FIG）、20 張保留素材、第 19 版論文 Word 檔 |
 
-## 先讀原文件
+## 這輪在做什麼
 
-- [R65_V19_OldMethodFigurePackage_20260724 研究保存清單](<MANIFEST.md>)
-- [R65_V19_OldMethodFigurePackage_20260724 研究入口](<README.md>)
+把第六章可能新增或取代的圖表集中整理：位移改善、消融、多模型比較三組分開呈現，只畫實際選取的 30 步，固定顏色、字型、圖例位置，圖內不放標題與說明文字（說明全部放圖說）。
 
-## 進入實際檔案
+## 結果
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [align_v19_format_and_restore_scaled_images.py](<align_v19_format_and_restore_scaled_images.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [build_thesis_v19.py](<build_thesis_v19.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [export_v19_with_word.ps1](<export_v19_with_word.ps1>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [extract_figure_6_24_versions.py](<extract_figure_6_24_versions.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [extract_old_figure_set.py](<extract_old_figure_set.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [inspect_v18_ch6_ch7.py](<inspect_v18_ch6_ch7.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [inspect_v19_formatting.py](<inspect_v19_formatting.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [lo_profile_v19/](<lo_profile_v19>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [make_v19_contact_sheets.py](<make_v19_contact_sheets.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [make_v19_format_contact_sheets.py](<make_v19_format_contact_sheets.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R65_V19_OldMethodFigurePackage_20260724 研究保存清單 |
-| [plot_v19_old_method_figures.m](<plot_v19_old_method_figures.m>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [qa_v19_format_alignment.py](<qa_v19_format_alignment.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [qa_v19_structure.py](<qa_v19_structure.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [README.md](<README.md>) | 1檔 | R65_V19_OldMethodFigurePackage_20260724 研究入口 |
-| [reanalyze_multimodel_cd_unified.py](<reanalyze_multimodel_cd_unified.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [v18_structure_dump.txt](<v18_structure_dump.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [v18_structure_dump_utf8.txt](<v18_structure_dump_utf8.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [v19_ch6_2_5_to_ch7_text.txt](<v19_ch6_2_5_to_ch7_text.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [v19_images_audit.txt](<v19_images_audit.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [v19_images_audit_final.txt](<v19_images_audit_final.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [v19_structure_qa_after_word.txt](<v19_structure_qa_after_word.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [v19_structure_qa_console.txt](<v19_structure_qa_console.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [v19_structure_qa_final.txt](<v19_structure_qa_final.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [v19_structure_qa_pre_final.txt](<v19_structure_qa_pre_final.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [word_export_pid2.txt](<word_export_pid2.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [word_export_pid3.txt](<word_export_pid3.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
+**位移改善（最大梯度量法，柱的平均絕對誤差，nm）：**
 
-## 必要來源與取得界線
+| 序列 | 原圖 | Wiener | V42 |
+|---|---:|---:|---:|
+| 50×、0.5 µm | 5.252 | 4.067 | 3.065 |
+| 50×、1.0 µm | 6.981 | 3.887 | 3.355 |
+| 20×、0.5 µm | 13.126 | 12.781 | 11.735 |
+| 20×、1.0 µm | 12.819 | 9.125 | 8.814 |
 
-產圖程式、完整表格、當時圖說及被引用影像。
+用舊量法，V42 在四組都最低；同樣的資料用 R64 的新量法，V42 只在兩組最低（見 [R64](<../R64_IsocontourDisplacementReanalysis_20260724/FILE_GUIDE.md>)）。多模型比較裡，EDSR-x1 在 50×、20× 柱的平均誤差都比 V42 低。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **同一天有兩套圖。** R65 是舊量法、R64 是新量法；兩套都保留，因為量法的選擇本身就影響結論。
+2. **EDSR-x1 的 20×、0.5 µm 柱有 2 步沒通過九顆柱有效性檢查**，逐步圖用斷線表示，摘要值用其餘 28 步。
+3. **論文 Word 檔不在 GitHub 上**，依論文與專案的分工放在個人雲端；這裡保留的是產生它的程式。現在的論文以 R152／R153 為主結果。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 產圖、統一 CD 重算、論文組版與檢查程式 | 本資料夾根目錄（`plot_v19_old_method_figures.m`、`reanalyze_multimodel_cd_unified.py`、`build_thesis_v19.py`、`qa_*.py` 等），已在 GitHub |
+| 圖、圖說索引、資料核對 | [論文證據區 07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724/](<../../Thesis_MOSR_Evidence/Final_Data_Figures/07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724/README.md>)、[圖說索引](<../../Thesis_MOSR_Evidence/Final_Data_Figures/07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724/V19_FIGURE_INDEX_zh-TW.md>)、[資料核對](<../../Thesis_MOSR_Evidence/Final_Data_Figures/07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724/99_qa/DATA_VALIDATION_SUMMARY.md>) |
+
+`lo_profile_v19/` 是轉檔時 LibreOffice 留下的設定資料夾，不是研究內容。
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [圖表包 README](<../../Thesis_MOSR_Evidence/Final_Data_Figures/07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724/README.md>) | 使用原則、資料夾內容、輸出格式、範圍 |
+| [資料核對](<../../Thesis_MOSR_Evidence/Final_Data_Figures/07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724/99_qa/DATA_VALIDATION_SUMMARY.md>) | 完整性與三組實驗的數字 |
+| [README](<README.md>)、[MANIFEST](<MANIFEST.md>) | 2026-10-16 補建的入口 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R65_V19_OldMethodFigurePackage_20260724.md>)。

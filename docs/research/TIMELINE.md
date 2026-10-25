@@ -4,10 +4,11 @@
 
 這份是整個研究的總目錄：2026 年 3 月到 10 月，從 R1 一路到 R153，再加上 LabSystem 那條平行支線。每一列只講兩件事：**這輪做了什麼、結果如何**。想看細節就點進去讀那一輪自己的報告。
 
-讀之前先知道三件事：
+讀之前先知道四件事：
 
 - **編號不等於訓練次數。** 同一個 R 號可能有好幾個子研究，也可能根本不是新訓練（只是重算舊資料、做圖、做診斷）。
 - **同號不同系統。** 主專案 R39 和 Lab R39 是兩件事；Lab 的 V41／V42 也不是主專案的 R41／R42。
+- **報告欄位名稱不一定是內容。** 7 月寫的位移稽核工具（`audit_all_displacement_sequences.py`）把候選欄、圖例固定寫成「V42」或「V42 epoch 120」；之後 Base U-Net、R63 等輪次重用它時，那一欄其實是該輪自己的候選。看到 `UNIFIED_AUDIT_REPORT_TW.md` 先確認它放在哪個候選的資料夾裡。
 - **失敗也是結果。** 大部分輪次最後沒有採用，但它們排除了一個又一個方向，後面的設計都是從這些失敗長出來的。
 
 結果前面的標記：
@@ -35,7 +36,7 @@ flowchart TD
     P1["1 早期調參 R1–R31<br/>約 3 月"] --> P2["2 正式基準 R32→COMBO<br/>約 3 月底～4/8"]
     P2 --> P3["3 推廣到更多形狀 主 R39–R46<br/>約 4 月底～5 月"]
     P2 --> P4["4 LabSystem 與實拍樣品<br/>約 6 月～7 月"]
-    P3 --> P5["5 因果拆解與泛化 R63–R87<br/>約 7 月底～8 月"]
+    P3 --> P5["5 因果拆解與泛化 R63–R87<br/>約 7 月中～8 月"]
     P4 --> P5
     P5 --> P6["6 資料與可學性 R88–R121<br/>約 8 月～9 月初"]
     P6 --> P7["7 真實優先重新設計 R122–R140<br/>約 9 月"]
@@ -161,7 +162,7 @@ R33 發現「限制極端像素的拉扯」能大幅改善定位，但邊緣變�
 | [20260704_20x_5x_analysis](../../20260704_20x_5x_analysis/) | 20× 與 5× 實拍 |
 | [Validations/MOSR_ONNX_JunHua](../../Validations/MOSR_ONNX_JunHua/) | 均華 202 張實拍的 ONNX 交付驗證 |
 
-## 階段 5　因果拆解與泛化（R63–R87，約 7 月底～8 月）
+## 階段 5　因果拆解與泛化（R63–R87，約 7 月中～8 月）
 
 **這階段在問：** 效果到底是哪個部件造成的？換樣品、換切塊方式還能用嗎？
 
@@ -170,9 +171,9 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | 輪次 | 做了什麼 → 結果 | 去哪看 |
 |---|---|---|
 | R63 | 拆開幾何、位移、安全上採樣的貢獻 → **分析**：共同起點續訓，不是從零的因果比較 | [R63](../../Experiments/R63_CausalBoundaryMotionAblation/FILE_GUIDE.md) |
-| R64 | 重新解讀等灰階輪廓位移 → **分析**：舊資料重算 | [R64](../../Experiments/R64_IsocontourDisplacementReanalysis_20260724/FILE_GUIDE.md) |
-| R65 | 保存 V19 舊量法的論文圖表 → **分析**：歷史圖表版本 | [R65](../../Experiments/R65_V19_OldMethodFigurePackage_20260724/FILE_GUIDE.md) |
-| R66 | 補齊論文圖與來源的對應 → **分析** | [R66](../../Experiments/R66_V20_TraceabilityFigures_20260725/FILE_GUIDE.md) |
+| R64 | 用新的等灰階輪廓量法重算三組實驗 → **分析**：舊資料重算；R63 的消融結論隨量法改變 | [R64](../../Experiments/R64_IsocontourDisplacementReanalysis_20260724/FILE_GUIDE.md) |
+| R65 | 論文第 19 版的圖表包，沿用舊的最大梯度量法 → **分析**：歷史圖表版本（V19 是論文稿版本，不是模型） | [R65](../../Experiments/R65_V19_OldMethodFigurePackage_20260724/FILE_GUIDE.md) |
+| R66 | 論文第 20 版，補上量測位置的可追查圖 → **分析** | [R66](../../Experiments/R66_V20_TraceabilityFigures_20260725/FILE_GUIDE.md) |
 | R67 | 在既有倍率、形狀、位移下選較穩的模型 → **分析**：只能選出當下領先者，不能宣稱普遍有效 | [R67](../../Experiments/R67_UniversalModelGeneralization/FILE_GUIDE.md) |
 | R68 | R61 在多倍率完整視野下的位移保持 → **分析** | [R68](../../Experiments/R68_R61_RealFOVFeatureGeneralization/FILE_GUIDE.md) |
 | R69 | R61 完整外形是否更接近逐顆 SEM → **分析**：正常曝光粗外框改善，最暗兩張和細形狀退步 | [R69](../../Experiments/R69_ACMContourSEMValidation/FILE_GUIDE.md) |

@@ -1,31 +1,46 @@
-# main/R66_V20_TraceabilityFigures_20260725：檔案怎麼找
+# R66：論文第 20 版，補上「在哪裡量」的圖
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R66_V20_TraceabilityFigures_20260725.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一版論文的 R65](<../R65_V19_OldMethodFigurePackage_20260724/FILE_GUIDE.md>) · [下一輪 R67](<../R67_UniversalModelGeneralization/FILE_GUIDE.md>)
 
-**研究問題：補齊論文圖與來源之間的可追查關係。**
+**一句話：** 名稱裡的「V20」是**論文稿的第 20 版**（「論文完整版_20260716_v20_量測位置補圖版」）。2026-07-25 為第六章補了 8 張可追查的圖：中心九顆柱的編號、P29 的徑向剖面與 CD 取樣位置（50×、20×）、位移量測的五條弦與搜尋範圍、消融與多模型比較的同位置對照，並寫了從第 19 版自動插圖、產生第 20 版的程式。沒有新的實驗數字。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（補齊論文圖與來源的對應） |
+| 時間 | 2026-07-25 |
+| 實驗條件 | C：實驗室顯微系統；6/18 的 50×、20× CD 影像與 7 月的位移序列 |
+| 產出 | 8 張圖（已在 GitHub）、圖說、第 20 版論文 Word 檔 |
 
-## 先讀原文件
+## 這輪在做什麼
 
-- [R66_V20_TraceabilityFigures_20260725 研究保存清單](<MANIFEST.md>)
-- [R66_V20_TraceabilityFigures_20260725 研究入口](<README.md>)
+讓讀者能從論文的每張數據圖，追到它是在影像的哪個位置、用什麼方式量出來的：
 
-## 進入實際檔案
+- **N01：** 50× 靜態 CD 影像的中心九顆柱編號，依拍攝方向與 SEM 資料逐顆對應。
+- **N02、N03：** P29 的徑向剖面怎麼取（原點由原圖估一次後固定，360 個等角方向彙整）。
+- **N04、N05：** P29 的水平 CD 取樣帶（中心列上下各三列平均成一條剖面）。
+- **N06：** 位移量測的五條水平弦（−0.55R 到 0.55R）與相鄰影格的搜尋範圍；平台回授只當量測後的參考，不參與邊界搜尋。
+- 另外三張是消融（P29）與多模型比較（50× 柱、孔）的同位置對照。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [build_v20_docx.py](<build_v20_docx.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [build_v20_traceability_figures.m](<build_v20_traceability_figures.m>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [figures/](<figures>) | 8檔 | 原圖與製圖成果，配原數表閱讀 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R66_V20_TraceabilityFigures_20260725 研究保存清單 |
-| [qa/](<qa>) | 9檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [README.md](<README.md>) | 1檔 | R66_V20_TraceabilityFigures_20260725 研究入口 |
+圖說全文寫在 `build_v20_docx.py` 裡，可以直接讀。
 
-## 必要來源與取得界線
+## 讀這些圖要知道的事
 
-圖表索引、原始來源與產圖程式。
+1. **所有方法共用同一個由原圖決定的原點與取樣範圍**，Raw、Wiener、MOSR 用的是同一組位置。
+2. **20× 的 CD 取樣帶會涵蓋相鄰結構**，量測只取離原點最近的一對左右交點。
+3. **論文 Word 檔不在 GitHub 上**；這裡保留的是圖、產圖程式與組版程式。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 拿資料與重做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 8 張圖 | 本資料夾 [figures/](<figures>)，已在 GitHub |
+| 產圖（MATLAB）與組版程式 | [build_v20_traceability_figures.m](<build_v20_traceability_figures.m>)、[build_v20_docx.py](<build_v20_docx.py>) |
+| 影像完整性、結構與方法文字的檢查 | [qa/](<qa>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+這一輪沒有獨立的報告；[README](<README.md>)、[MANIFEST](<MANIFEST.md>) 是 2026-10-16 補建的入口，[qa/final_structural_qa.txt](<qa/final_structural_qa.txt>) 是當時的最後檢查。
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R66_V20_TraceabilityFigures_20260725.md>)。
