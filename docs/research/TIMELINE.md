@@ -244,7 +244,7 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | R124 | 實作四步二維重建原型 → **分析**：未訓練，只確認能跑 | [R124](../../Experiments/R124_RealFirstPrototype/FILE_GUIDE.md) |
 | R125 | 先對齊資料形成與模型，再小規模訓練 → **未採用**：第一版資料失敗，第二版完成但不採用 | [R125](../../Experiments/R125_DataAlignedPilot/FILE_GUIDE.md) |
 | R126 | 確認簡單例子學得會，再匹配測試亮暗 → **未採用**：實體參照分歧、位移跳動仍在 | [R126](../../Experiments/R126_LearnabilityPhotometry/FILE_GUIDE.md) |
-| R127 | 修正 SEM 比例與取邊、位移有效性判斷 → **分析**：量測軟體修正，沒有新訓練 | [R127](../../Experiments/R127_MeasurementPreservationRepair/FILE_GUIDE.md) |
+| R127 | 修正 SEM 比例與取邊、位移有效性判斷 → **分析**：量測軟體修正，沒有新訓練；完整視野重算後，R126 約 37 px 的位移跳值確認是舊讀法在小區塊上的問題 | [R127](../../Experiments/R127_MeasurementPreservationRepair/FILE_GUIDE.md) |
 | R128 | 用獨立生成來源做四個完整訓練 → **研究候選**：跨柱一致性改善，但速度慢約 12 倍，暫不替換 V42 | [R128](../../Experiments/R128_SourceOnlyFullTraining/FILE_GUIDE.md) |
 | R129 | 恢復光學融合、抗混疊與原圖參考 → **研究候選**：尺寸代價仍在 | [R129](../../Experiments/R129_OpticalPriorHybrid/FILE_GUIDE.md) |
 | R130 | 拿掉光學與放大，改成原尺寸純神經模型；另從頭訓練 V42 做比較 → **研究候選**：較快、尺寸重拍較好，尺寸偏差仍在 | [R130 Clean](../../Experiments/R130_Clean/FILE_GUIDE.md)、[R130 對 V42](../../Experiments/R130_CleanV42Comparison/FILE_GUIDE.md) |
