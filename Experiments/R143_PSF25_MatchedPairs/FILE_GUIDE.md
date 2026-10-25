@@ -1,45 +1,52 @@
-# main/R143_PSF25_MatchedPairs：檔案怎麼找
+# R143：用模型持有的同一組 25 顆 PSF 形成訓練配對
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R143_PSF25_MatchedPairs.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [架構來源 R141](<../R141_PSF25_AdaptiveTop4_Standalone/FILE_GUIDE.md>) · [比較基準 R140v2](<../R140v2_StableUNet/FILE_GUIDE.md>) · [下一輪 R144](<../R144_Center9PSF25_MatchedPairs/FILE_GUIDE.md>)
 
-**研究問題：以模型同一25PSF形成訓練配對。**
+**一句話：** R141 架構不變，把訓練配對的模糊來源從合成高斯換成那 25 顆實測 PSF，並帶上已知的配對標記，2026-09-23 從零訓練 8,192 次、跑完 930 張。結果模型沒有學會辨認 PSF（生成測試首選 6/206，930 張實拍全部把同一顆排第一）；平均直徑與 SEM 的差距從 R140v2 的 +228 nm 降到 +111 nm，但短步位移與直徑重拍都退步。9/24 的深層診斷找到一條很具體的線索：這批 PSF 自帶約半像素的中心偏移，模型學會了幾乎等量反向的圓心修正。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（尺寸差較小，位移與重拍退步） |
+| 時間 | 2026-09-23 訓練與驗證；09-24 穩定性診斷 |
+| 實驗條件 | 訓練用程式資料：R128 的 512／128／128 母場景，非 identity 場景均衡分配 25 顆 PSF（同一對共用一顆）；評估用 D：930 張與十字中心九顆 |
+| 起點 | 隨機初始化（`weights/` 下的 R140v2 衍生權重是複製來的歷史起點，本輪沒有載入） |
 
-## 先讀原文件
+## 結果（930 張，十字中心九顆）
 
-- [R143 實測 PSF 配對資料完整訓練結果](<reports/R143_RESULTS.md>)
-- [R143 位移與尺寸穩定性深層診斷](<reports/R143_STABILITY_DIAGNOSIS.md>)
-- [R143 固定驗證計畫](<reports/R143_VALIDATION_PLAN.md>)
+| 方法 | 短步平均差（nm） | 短步重拍（nm） | 直徑重拍（nm） | 平均直徑比 SEM 偏大（nm） |
+|---|---:|---:|---:|---:|
+| 原圖 | 8.167 | 9.725 | 32.75 | 185.2 |
+| R140v2 | **3.640** | **3.530** | **18.58** | 228.4 |
+| R143 | 4.425 | 4.290 | 24.16 | **110.5** |
 
-## 進入實際檔案
+短步平均差 30 趟中 29 趟比 R140v2 差。尺寸變接近主要是一致的直徑收縮：R143 量到的直徑每一趟都比 R140v2 小，平均少約 118 nm。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 13檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [config/](<config>) | 5檔 | 實驗設定、條件與來源鎖定 |
-| [dataset.py](<dataset.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation>) | 370檔 | 量測介面、固定參照、設定或比較內容 |
-| [infer.py](<infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses.py](<losses.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R143 實驗來源與保存 |
-| [model.py](<model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 2檔 | 光學計算與配套 |
-| [README.md](<README.md>) | 1檔 | R143 — 25 顆實測 PSF 配對資料完整訓練 |
-| [reports/](<reports>) | 7檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 1檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 15檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [train.py](<train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training_policy.py](<training_policy.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [verify_package.py](<verify_package.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [weights/](<weights>) | 1檔 | 模型檔或取得說明；最佳、最後及短測版本需分清 |
+## 9/24 的穩定性診斷
 
-## 必要來源與取得界線
+1. **半像素的中心偏移。** 25 顆 PSF 的強度中心平均在核中心的 x −0.550、y +0.547 px；R143 的圓心相對原圖平均移了 x +0.551、y −0.557 px，幾乎正好反向。固定的整體平移在相鄰兩張相減時會抵消，所以這不能直接解釋短步退步，但說明模型學到了「把模糊核帶來的偏移拉回來」。
+2. **對像素內位置更敏感。** 把同一張原圖在記憶體裡平移 0.25～0.75 px，R143 的位移 RMS 偏差 2.73 nm，R140v2 只有 0.87 nm，12/12 張都較差（但換成三次插值時排名反轉，所以只能說模型反應依賴輸入的形成方式）。
+3. **邊界過渡更寬也更不穩。** 20%～80% 過渡寬度 R140v2 0.91 px、R143 1.34 px；50% 過渡位置的重拍波動 271/279 組較差，而它跟直徑起伏的相關達 0.97。原圖本身在後段趟次邊緣變寬、對比下降時，R143 的直徑反應比前代大。
 
-768原場景、舊25PSF、配對標記與8192模型。
+## 讀這些數字要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **兩個因素同時改了**（光學挑選架構與訓練模糊來源），R143 與 R140v2 的差不能只歸給換 PSF。
+2. **PSF 尺度沒有對齊。** 資料製作把 101×101 核當成原尺寸像素核，模型光學分支卻在半解析度特徵上用同一大小的核；兩處的物理尺度都沒有另外轉換。
+3. **PSF 的 SEM 來源與這份 SEM 比較沒有證明獨立**，所以 110.5 nm 不能寫成絕對尺寸準確度提升。
+4. 報告建議的下一步控制：先把 25 顆 PSF 的強度中心對齊，並統一兩處的物理尺度，其餘條件不變再比較。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+資料製作 `scripts/make_data.py`、訓練前檢查 `scripts/preflight.py`、完整訓練 `scripts/launch_r143.py`、驗證 `scripts/run_evaluation.py`、單張推論 `infer.py`。最終權重在 `runs/formal_8192/checkpoints/step08192.pth`；930 張重建在原電腦上連到 H 槽。
+
+> 權重、配對資料與量測表的位置：查 `python Tools/cloud_locator.py where Experiments/R143_PSF25_MatchedPairs/<路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [結果](<reports/R143_RESULTS.md>) | 先讀這份 |
+| [位移與尺寸穩定性診斷](<reports/R143_STABILITY_DIAGNOSIS.md>) | 9/24 的三條線索與已排除的解釋 |
+| [固定驗證計畫](<reports/R143_VALIDATION_PLAN.md>) | 訓練結束前寫定的驗證項目 |
+| [README](<README.md>) | 假說與設計 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R143_PSF25_MatchedPairs.md>)。

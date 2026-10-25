@@ -270,7 +270,7 @@ R141～R147 試了各種 PSF 數量、選法和配對，多數讓短步或輪廓
 | R141 | 每張從 25 顆 PSF 候選選 4 顆 → **分析**：從 R140v2 衍生的推論包，不是新的完整訓練 | [R141](../../Experiments/R141_PSF25_AdaptiveTop4_Standalone/FILE_GUIDE.md) |
 | R142 | 擴為 100 顆，每張選 8 顆 → **中止**：指定的實測 100 顆尚未安裝，推論拒絕執行是正確行為 | [R142](../../Experiments/R142_PSF100_AdaptiveTop8_Standalone/FILE_GUIDE.md) |
 | R143 | 用模型同一組 25 PSF 形成訓練配對 → **未採用**：尺寸差較小，位移／重拍退步 | [R143](../../Experiments/R143_PSF25_MatchedPairs/FILE_GUIDE.md) |
-| R144 | 改用中心九顆擬合的 25 PSF → **中止**：方向對應錯誤，160 次就停 | [R144](../../Experiments/R144_Center9PSF25_MatchedPairs/FILE_GUIDE.md) |
+| R144 | 改用中心九顆擬合的 25 PSF → **中止**：訓練開始後，所用 PSF 檔被原校準流程依修正過的 SEM 方向重新擬合，舊檔成為過時來源，160 次就停 | [R144](../../Experiments/R144_Center9PSF25_MatchedPairs/FILE_GUIDE.md) |
 | R145 | 修正方向後完整測試 → **未採用**：位移／輪廓較 R143 改善，尺寸仍偏 | [R145](../../Experiments/R145_Center9PSF25_CorrectedPairs/FILE_GUIDE.md) |
 | R146 | 用真實 SEM 外框擬合的「中心加淡尾」PSF → **未採用**：更能預測照片，不等於量測更好 | [R146](../../Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/FILE_GUIDE.md) |
 | R147 | 修正資料與模型內 PSF 的尺度用法 → **未採用**：尺寸重拍改善，短步退步 | [R147](../../Experiments/R147_FullResPSFConsistency/FILE_GUIDE.md) |

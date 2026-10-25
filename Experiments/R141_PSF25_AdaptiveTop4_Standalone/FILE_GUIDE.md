@@ -1,49 +1,32 @@
-# main/R141_PSF25_AdaptiveTop4_Standalone：檔案怎麼找
+# R141：每張影像從 25 顆 PSF 自動挑 4 顆（獨立推論包）
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R141_PSF25_AdaptiveTop4_Standalone.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [主網路來源 R140v2](<../R140v2_StableUNet/FILE_GUIDE.md>) · [同時做的 100 顆版本 R142](<../R142_PSF100_AdaptiveTop8_Standalone/FILE_GUIDE.md>) · [下一輪 R143](<../R143_PSF25_MatchedPairs/FILE_GUIDE.md>)
 
-**研究問題：逐張從25顆光學候選選四顆。**
+**一句話：** R140v2 的候選權重始終平均，所以 R141 重寫光學分支：選擇網路先抓局部邊緣與模糊線索、再做全圖彙整，對 25 顆打分，只保留最高的 4 顆、把它們混成一顆有效 PSF 再處理特徵；訓練時用直通式近似梯度，讓沒入選的候選也收得到更新，最後一層也不再全零初始化。2026-09-23 做成獨立推論包，主網路沿用 R140v2 已訓練的權重、選擇器是新初始化。受控測試證明機制學得會，但這不是新的完整訓練，也沒有證明在現有 25 顆幾乎相同的 PSF 之間能做有意義的選擇。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（從 R140v2 衍生的推論包，不是新的完整訓練） |
+| 時間 | 2026-09-23 |
+| 實驗條件 | 包內帶 R130／R140v2 的 512／128／128 合成母場景副本與 25 顆實測 PSF；受控測試用人造、彼此可分的 PSF |
+| 起點 | 主網路沿用 R140v2 的非光學權重；光學選擇器新初始化 |
 
-## 先讀原文件
+## 驗證了什麼
 
-- [R141_PSF25_AdaptiveTop4_Standalone 研究保存清單](<MANIFEST.md>)
-- [自適應 PSF 四次修正 U-Net 技術卡](<MODEL_CARD.md>)
-- [包裝修訂記錄](<PACKAGING_CHANGELOG.md>)
-- [25 顆 PSF 自適應選四顆獨立包](<README.md>)
-- [R141 封裝驗證](<results/PACKAGE_VALIDATION.md>)
-- [自適應選擇機制的受控測試](<tests/VALIDATION.md>)
+1. **受控選擇測試：** 用四種可分辨的高斯模糊產生影像，16 個沒參與訓練的場景共 64 張，25 選 4 的首選與前四覆蓋都是 64/64。
+2. **完整 U-Net 能前向與反向**，恰好選出 4 顆，沒入選的分數仍有非零梯度，但梯度很小。
+3. **實拍相容測試：** 一張 1544×2064 實拍，入選索引 16、8、0、24，跟原 R140v2 的輸出 RMS 差只有 1.4×10⁻⁶ 灰階。
 
-## 進入實際檔案
+## 讀這些內容要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [config/](<config>) | 3檔 | 實驗設定、條件與來源鎖定 |
-| [dataset.py](<dataset.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [derive_weights.py](<derive_weights.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation>) | 310檔 | 量測介面、固定參照、設定或比較內容 |
-| [infer.py](<infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [install_bank.py](<install_bank.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses.py](<losses.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R141_PSF25_AdaptiveTop4_Standalone 研究保存清單 |
-| [model.py](<model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MODEL_CARD.md](<MODEL_CARD.md>) | 1檔 | 自適應 PSF 四次修正 U-Net 技術卡 |
-| [optical/](<optical>) | 2檔 | 光學計算與配套 |
-| [PACKAGING_CHANGELOG.md](<PACKAGING_CHANGELOG.md>) | 1檔 | 包裝修訂記錄 |
-| [README.md](<README.md>) | 1檔 | 25 顆 PSF 自適應選四顆獨立包 |
-| [results/](<results>) | 1檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [tests/](<tests>) | 5檔 | 原檢查程式；不是研究結果本身 |
-| [train.py](<train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training_policy.py](<training_policy.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [verify_package.py](<verify_package.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
+1. **光學運算其實改了。** R140v2 是「每顆候選各自處理特徵再混合」，R141 是「先混合入選的核再處理特徵」，所以即使主網路權重相同，也是衍生模型，不繼承 R140v2 的 930 張結論。
+2. **選擇是整張影像一組**，不是同一張影像不同位置各選各的；如果 PSF 代表視野中不同位置，還需要位置感知的設計。
+3. **現有資料沒有逐張的 PSF 真值**（`psf_index`），所以正式的自適應訓練預設會拒絕執行；可以用 `--data-root` 指向包外的新標記資料。
 
-## 必要來源與取得界線
+## 拿資料與重做
 
-精確衍生模型、25PSF及逐影像標記需求。
+先 `verify_package.py --mode infer-ready` 核對，再 `infer.py --input <影像> --output <結果.npz>`；輸出的 `.json` 會記錄入選索引與權重。訓練入口與機制測試見 [README](<README.md>)、[技術卡](<MODEL_CARD.md>)、[受控測試](<tests/VALIDATION.md>)。包內程式、資料與權重的位置：查 `python Tools/cloud_locator.py where Experiments/R141_PSF25_AdaptiveTop4_Standalone/<路徑>`。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 原始報告
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[封裝驗證](<results/PACKAGE_VALIDATION.md>)、[技術卡](<MODEL_CARD.md>)、[包裝修訂紀錄](<PACKAGING_CHANGELOG.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R141_PSF25_AdaptiveTop4_Standalone.md>)。
