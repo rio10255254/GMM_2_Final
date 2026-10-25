@@ -143,7 +143,7 @@ R33 發現「限制極端像素的拉扯」能大幅改善定位，但邊緣變�
 | Lab R57 | 加入同樣本 SEM 半徑約束尺寸 → **未採用**：100MG 尺寸門檻沒過；SEM 同時當答案和比較，也不能算獨立驗證 | [Lab R57](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/FILE_GUIDE.md) |
 | Lab R58 | 用只修一半的 SEM 答案做閉環 → **分析**：刻意的部分修正，不期待完全到 SEM 外框 | [Lab R58](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/FILE_GUIDE.md) |
 | Lab R59 | 在同一張影像上估尺寸再移動邊界 → **分析**：同樣本後修正，數字變好不代表網路學會 | [Lab R59](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer/FILE_GUIDE.md) |
-| Lab R60 | 修正實拍裁切答案、亮暗方向與真值權重 → **未採用**：方向與取樣修正後短測改善，但各版都沒過門檻；稽核指出主因是訓練資料沒有正確表示真實邊界，不是模型本身沒用 | [Lab R60](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/FILE_GUIDE.md) |
+| Lab R60 | 改用 SEM 答案與實拍裁切，修正亮暗方向與驗證集洩漏 → **研究候選**：邊界聚焦版在同一張 100MG 上通過 CD 門檻，但合成幻影上亮物體變差，不是通用邊界；稽核指出主因是訓練資料沒有正確表示真實邊界。成為 R61 的對照基準 | [Lab R60](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/FILE_GUIDE.md) |
 | **Lab R61** | 擴大通用邊界、位移與 Step 保護，經 v1～v16 → **研究候選**：v16 成為後續交付與論文線的起點（ONNX 交付用的「R61」就是它） | [Lab R61](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md)、[主 R61 STEP 驗證](../../Experiments/R61_STEP_Generalization_20260623/FILE_GUIDE.md) |
 | Lab R62 | 針對目標樣品增補，加保守的原圖參考輸出 → **研究候選**：相位位移恢復不等於每個局部圓心都更準 | [Lab R62](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/FILE_GUIDE.md) |
 | V41 | 從 R61v16 起步，用 11,254 組目標樣品與老師配對訓練 → **研究候選** | [V41](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone/FILE_GUIDE.md) |
