@@ -1,32 +1,52 @@
-# main/R106A_MultiObservationShortValidation：檔案怎麼找
+# R106A：多觀測能不能轉到均華實拍
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R106A_MultiObservationShortValidation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [機制來源 R105B](<../R105B_EvidenceSetReconstructionFalsification/FILE_GUIDE.md>) · [資料可行性 R105C](<../R105C_JunHuaMultiObservationFeasibility/FILE_GUIDE.md>) · [回到單張的 R107A](<../R107A_SingleImageEdgeGeometryProbe/FILE_GUIDE.md>)
 
-**研究問題：從程序資料驗證多觀測機制能否轉到均華。**
+**一句話：** 在開完整 R106 之前的短驗證：從零訓練一組權重，接受一、二或四張，輸出固定以第一張為座標，額外影像先經局部相容權重再融合，形狀距離只當輔助監督。2026-08-24 訓練 1,500 步。兩張確實改善輪廓與影像誤差，但四張的幾何沒有再進步，模型把多張資訊主要拿去去雜訊與平均亮度；軟權重也沒辦法真正把壞幀排除。程式資料與均華實拍兩道閘門都沒過，主線回到單張重建。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（生成與真實短測都沒過，主線回到單張） |
+| 時間 | 2026-08-24 |
+| 實驗條件 | 程式：640 訓練、96 驗證、144 完全未見形狀，含均華式的同位置雙張與跨位置雙張、曝光模糊變化、錯配遮擋雜訊幀；B：均華 100 組跨位置影像，權重鎖定後才驗證 |
+| 起點 | 隨機初始化，1,500 步 |
 
-## 先讀原文件
+## 結果
 
-- [R106A 多觀測完整短驗證結論](<reports/R106A_FINAL_FINDINGS_ZH.md>)
-- [R106A Locked JunHua Short Gate](<reports/R106A_JUNHUA_RESULTS.md>)
-- [R106A Synthetic Short Gate](<reports/R106A_SYNTHETIC_RESULTS.md>)
+**程式封存（144 張未見形狀）：**
 
-## 進入實際檔案
+| 模式 | 輪廓距離 | 質心誤差 | 邊界中心偏移 | 平均影像誤差 |
+|---|---:|---:|---:|---:|
+| 1 張 | 0.3205 px | 0.1662 px | 0.3806 px | 6.889 灰階 |
+| 2 張 | **0.2946 px** | **0.1295 px** | 0.3875 px | 5.803 灰階 |
+| 4 張 | 0.3053 px | 0.1452 px | 0.4002 px | **5.107 灰階** |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 3檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R106A_MultiObservationShortValidation 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R106A Multi-Observation Short Validation |
-| [reports/](<reports>) | 3檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 2檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+排除壞幀後的 117 個乾淨樣本也一樣，四張的幾何停滯。
 
-## 必要來源與取得界線
+**壞幀拒絕：** 正常額外影像權重中位數 0.957，已知壞幀 0.826，全錯配 0.543；方向對，但 sigmoid 軟權重永遠讓錯誤影像參與，全錯配時輪廓距離從 0.321 惡化到 0.553 px。
 
-共同短訓練、鎖定均華配對及所有不通過項目。
+**均華實拍（權重鎖定後）：** 一、二、四張的環中心變化分別 0.0859、0.0853、0.0856 px，幾何安全；但故意放入錯誤位置時，額外影像權重從 0.999 降到 0.469，輸出仍改變 0.743 灰階，沒有完全退回單張。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+**其他：** 位移最差 5% 隨張數改善（0.383 → 0.273 → 0.160 px）；曝光中心波動反而隨張數變差（0.023 → 0.037 → 0.046 px）；切塊完全一致。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 讀這些數字要知道的事
+
+1. **報告的根本修正方向：** 跨位置影像要依次像素相位投影到至少兩倍解析度的共同格點再重建，否則額外的取樣資訊在融合前就消失了；接納觀測必須能真正等於零（先用結構相容檢查排除，再分配權重）；曝光要先估計每張的局部增益與偏移。
+2. **方向重估**（`analysis/direction_reassessment/`）的結論是：現有證據足以決定不開完整 R106、多觀測不再當作通用主線；但不足以宣稱均華四張比兩張更準或更差，因為沒有獨立的真實邊界真值或外部 GMF。同位置兩張對雜訊與穩定度仍可能有用。
+3. **專案層級的決定**寫在 `Thesis_MOSR_Evidence/GPT_Context/SINGLE_IMAGE_MAINLINE_RETURN_20260824.md`：多觀測改為「受控拍攝」時才用的分支，研究主線經由 R107A 回到單張重建。
+4. 現有權重只保留作失敗證據，不續訓、不做 ONNX、不做外部 GMF 包。
+
+## 拿資料與重做
+
+本資料夾的 `scripts/run_short.py`、`scripts/validate_junhua.py` 與其他程式已在 GitHub。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [最終結論](<reports/R106A_FINAL_FINDINGS_ZH.md>) | 程式封存、乾淨樣本、壞幀拒絕、位移曝光切塊、均華實拍、根本修正方向 |
+| [程式資料結果](<reports/R106A_SYNTHETIC_RESULTS.md>)、[均華結果](<reports/R106A_JUNHUA_RESULTS.md>) | 兩道閘門的細節 |
+| [方向重估](<analysis/direction_reassessment/VALIDATION_ASSESSMENT.md>) | 能決定什麼、不能宣稱什麼 |
+| [回到單張主線的決定](<../../Thesis_MOSR_Evidence/GPT_Context/SINGLE_IMAGE_MAINLINE_RETURN_20260824.md>) | 專案層級的後續決定 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R106A_MultiObservationShortValidation.md>)。

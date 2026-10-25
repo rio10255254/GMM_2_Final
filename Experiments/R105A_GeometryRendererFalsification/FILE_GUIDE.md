@@ -1,34 +1,52 @@
-# main/R105A_GeometryRendererFalsification：檔案怎麼找
+# R105A：直接用預測的輪廓畫出最終邊界，行不行
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R105A_GeometryRendererFalsification.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R104](<../R104_PhotometricInvariantCausalGateScratch/FILE_GUIDE.md>) · [多觀測的 R105B](<../R105B_EvidenceSetReconstructionFalsification/FILE_GUIDE.md>) · [均華多觀測可行性 R105C](<../R105C_JunHuaMultiObservationFeasibility/FILE_GUIDE.md>)
 
-**研究問題：以學到的幾何直接畫出最終邊界。**
+**一句話：** R104 已經會預測有號距離場，但最後的影像仍是「原圖加四個修正量」。R105A 只測一件事：讓預測輪廓的零值線**直接**畫出最終的單調次像素邊界。兩組用完全相同的資料、模型、初始化、步數，只差最後怎麼形成影像，2026-08-24 各從零訓練 1,800 步。直接畫的那組邊界寬度更準、光暈更少，但把邊界中心推錯了，在沒見過的形狀上輪廓距離、中心、清楚輸入改動、曝光一致性、切塊一致性都比較差，任何混合比例也救不回來，所以沒有開正式的 R105。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（寬度改善但中心、形狀變差；沒有開正式 R105） |
+| 時間 | 2026-08-24 |
+| 實驗條件 | 合成：訓練 512、驗證 128、完全未見形狀測試 192（月牙、多瓣、細頸各 64）；訓練只用圓、橢圓、矩形、多邊形、環形 |
+| 起點 | 兩組相同的隨機初始化，各 1,800 步 |
 
-## 先讀原文件
+## 結果
 
-- [R105A Geometry Renderer Falsification Results](<archive/pilot_lowres_sdf_20260824/reports/R105A_RESULTS.md>)
-- [R105A Geometry Renderer Falsification Results](<archive/supersampled_0600step_20260824/reports/R105A_RESULTS.md>)
-- [R105A Fixed Renderer Blend Sweep](<reports/R105A_BLEND_SWEEP.md>)
-- [R105A 最終實驗結論](<reports/R105A_FINAL_FINDINGS_ZH.md>)
-- [R105A Geometry Renderer Falsification Results](<reports/R105A_RESULTS.md>)
+| 項目 | 修正原圖 | 直接畫輪廓 | 較好的 |
+|---|---:|---:|---|
+| 輪廓重疊 | **0.9767** | 0.9704 | 修正原圖 |
+| 平均輪廓距離 | **0.2657 px** | 0.3307 px | 修正原圖 |
+| 邊界中心偏移 | **0.0868 px** | 0.3204 px | 修正原圖 |
+| 邊界寬度誤差 | 0.3830 px | **0.3117 px** | 直接畫 |
+| 清楚影像不必要改動 | **0.257 灰階** | 0.553 灰階 | 修正原圖 |
+| 平均影像誤差 | 2.260 灰階 | **2.091 灰階** | 直接畫 |
 
-## 進入實際檔案
+**失敗發生在哪裡：** 把正確輪廓直接交給畫邊界的部分，輪廓重疊可達 0.9970、距離只有 0.035 px，證明畫法本身沒問題；問題是模型從模糊影像猜輪廓時，已見形狀的重疊中位數 0.967，到未見形狀降到 0.900，月牙只有 0.830。直接畫會把猜錯的位置硬寫進結果。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [archive/](<archive>) | 2檔 | 舊內容及當次封存紀錄 |
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R105A_GeometryRendererFalsification 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R105A Geometry Renderer Falsification |
-| [reports/](<reports>) | 3檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 4檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+**混合救不回來：** 原圖與直接畫的結果混合、修正結果與直接畫的結果混合，每 2.5% 一級試過，在未見形狀上都沒有合格的比例。
 
-## 必要來源與取得界線
+## 讀這些數字要知道的事
 
-共同初值、4倍幾何、600／1800次及原低解析失敗。
+1. **平均影像誤差反而是直接畫的比較好**，這正是只看影像誤差或肉眼會被誤導的例子。
+2. **報告保留的發現：** 形狀資訊適合當監督、檢查與不確定性判斷，目前不適合直接掌控最終影像。這個結論影響了後來的 R107A（固定局部中心、只改寬度）。
+3. 600 步的版本還在下降，所以重跑到 1,800 步；較長訓練沒有改變結論。低解析度距離場的第一次試跑另外隔離保存。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 拿資料與重做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 執行全部探針的 `scripts/run_all.py` 與其他程式 | 本資料夾，已在 GitHub |
+| 試跑與 600 步版本 | [archive/](<archive>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [最終結論](<reports/R105A_FINAL_FINDINGS_ZH.md>) | 資料與收斂、1,800 步結果、真正的失敗位置、位移曝光與切塊、混合補救、決定 |
+| [混合掃描](<reports/R105A_BLEND_SWEEP.md>) | 兩種混合方式每一級的結果 |
+| [README](<README.md>) | 問題、配對比較、分解方式 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R105A_GeometryRendererFalsification.md>)。
