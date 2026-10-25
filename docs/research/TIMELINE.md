@@ -138,8 +138,8 @@ R33 發現「限制極端像素的拉扯」能大幅改善定位，但邊緣變�
 | Lab R52 | 混合光學加角點穩定限制 → **未採用**：100 輪後大偏移仍多 | [Lab R52](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/FILE_GUIDE.md) |
 | Lab R53 | 重新平衡六類資料，從零 100 輪 → **未採用**：實體角點仍失敗；記憶體不足等過程問題也是脈絡 | [Lab R53](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/FILE_GUIDE.md) |
 | Lab R54 | 拆解角點損害來源 → **分析**：可信區域內學得會，轉到實體全圖就失敗 | [Lab R54](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/FILE_GUIDE.md) |
-| Lab R55 | 修正答案的亮暗風格 → **研究候選**：best 通過 Lab 角點門檻，latest 退步 | [Lab R55](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R55_SourceStyleRealisticTraining/FILE_GUIDE.md) |
-| Lab R56 | 只修弱答案的核心區域 → **未採用**：尾端更差 | [Lab R56](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/FILE_GUIDE.md) |
+| Lab R55 | 把答案改回原圖的灰階風格 → **研究候選**：best 通過 Lab 角點門檻，latest 退步；外部 GMF 沒有贏原圖。R57 從它起步 | [Lab R55](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R55_SourceStyleRealisticTraining/FILE_GUIDE.md) |
+| Lab R56 | 只修弱答案的核心區域 → **未採用**：角點大偏移變多；外部 GMF 反而排第一，但只比原圖好 2.2% | [Lab R56](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/FILE_GUIDE.md) |
 | Lab R57 | 加入同樣本 SEM 半徑約束尺寸 → **未採用**：100MG 尺寸門檻沒過；SEM 同時當答案和比較，也不能算獨立驗證 | [Lab R57](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/FILE_GUIDE.md) |
 | Lab R58 | 用只修一半的 SEM 答案做閉環 → **分析**：刻意的部分修正，不期待完全到 SEM 外框 | [Lab R58](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/FILE_GUIDE.md) |
 | Lab R59 | 在同一張影像上估尺寸再移動邊界 → **分析**：同樣本後修正，數字變好不代表網路學會 | [Lab R59](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer/FILE_GUIDE.md) |
