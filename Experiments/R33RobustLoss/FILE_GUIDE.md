@@ -1,36 +1,123 @@
-# main/R33RobustLoss：檔案怎麼找
+# R33：限制極端像素的拉扯，定位大幅變準
 
-[共用固定來源與模型關係](../../docs/reproducibility/round_source_reviews/BASELINE_20261023.md) · [原結果直接閱讀](results/SOURCE_RESULTS_GUIDE.md)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [R33～R38v2 完整系列](<reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md>) · [前一輪 R32](<../R32Sandbox/README.md>) · [同號支線 R33c](<../R33ContrastFix/README.md>) · [接續 R38v2 與 COMBO](<../R38v2SeqFixed/FILE_GUIDE.md>) · [正式身分登記](<../../ESTIMATOR_POLICY.json>)
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R33RobustLoss.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+**一句話：** 在 R30 的配方上只加一個機制：訓練時把梯度損失裡最極端的 5% 像素截掉（Winsorize p95）。外部 GMF 三個尺度全面改善 25～45%，是 R30 之後第一次在外部量測上取得突破；代價是影像明顯變軟。它後來成為「定位極致」的核准替代，也是 COMBO 的兩個組成機制之一。
 
-**研究問題：減少極端像素牽引是否改善位移穩定。**
+| | |
+|---|---|
+| 結果 | **核准替代**（`gmf_extreme_alternate`，定位精度優先、視覺可以犧牲的場合） |
+| 候選名稱 | `r33_robust_p95`（另測 p90、只截 Laplacian、軟截斷三種） |
+| 時間 | 2026-04-05；量化修正與量測方法分析在 04-08 |
+| 實驗條件 | A：公司端環形影像 + 外部 GMF |
+| 起點 | R30（`r30_b1_dironly`）的完整配方，權重、排程、架構全部不改 |
+| 選中的輪次 | 第 22 輪 |
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+## 在研究裡的位置
 
-## 先讀原文件
+R30 之後的兩次嘗試都失敗了：R31 調損失權重，外部退步 6～10%；R32 加入真實影像改變資料分布，外部 0.8px 暴增 97.7%。R33 換一個方向，不動訓練訊號的強弱，也不動資料，而是處理損失內部的統計行為。
 
-- [GMF step_std 計算方法論](<reports/GMF_STEP_STD_METHODOLOGY.md>)
-- [Internal vs External Step_std 偏差分析](<reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md>)
-- [推理量化修復分析](<reports/QUANTIZATION_FIX_ANALYSIS.md>)
-- [R33 Robust Loss — Experiment Summary](<reports/R33_EXPERIMENT_SUMMARY.md>)
-- [R33-R38v2 完整實驗系列報告](<reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md>)
-- [R33 robust_p90 Results (2026-04-05)](<reports/r33_robust_p90_results.md>)
+當時的分析發現，約 8% 的環形角度有修不好的實體缺陷。這些像素在梯度損失裡產生離群的大梯度，把模型從乾淨區域拉走。假說是：只要截掉這些離群值，模型就會把學習能力集中在能改善的地方。
 
-## 進入實際檔案
+## 這輪在問什麼
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
+只對梯度強度與 Laplacian 高頻損失做逐像素截尾、其他一切不變，能不能讓乾淨角度的擬合殘差下降，進而讓位移量測更穩？
+
+## 怎麼做
+
+- **只加一個機制：** 對梯度強度損失（`W_GRADMAG`）和 Laplacian 高頻損失做逐像素 Winsorize；`ROBUST_LOSS_PERCENTILE=1.0` 就等於原本的行為。
+- **暖身：** 前 10 輪不啟用，讓模型先學好基本特徵。
+- **三種截尾強度：** p90（截掉前 10%）、p95（前 5%）。原計畫的 p85 沒有出現在結果報告裡。
+- **兩個消融：** 只截 Laplacian、不截梯度強度（`lap_only_p95`）；把硬截斷換成 Charbonnier 軟壓縮（`soft_p95`）。
+
+## 結果
+
+**外部 GMF**（步距標準差，px，越小越好；這是正式登記的數字）：
+
+| 尺度 | R30（前任基準） | **R33 p95** | 改善 |
+|---|---:|---:|---:|
+| 0.8px（主尺度） | 0.167862 | **0.119049** | −29.1% |
+| 0.08px | 0.157720 | **0.086274** | −45.3% |
+| 8px | 0.205193 | **0.153343** | −25.3% |
+
+8px 有 2 幀是 GMF 工具本身定位失敗（z 值 6.98、6.90，前後兩步剛好互相抵消），依照量測規則排除；未排除前的原始值是 0.932763。這是 R30～COMBO 系列裡唯一一個排除離群值的例外。
+
+**候選與消融：**
+
+| 候選 | 0.8px 內部步距標準差 | 結論 |
 |---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R33 — Robust Loss (Winsorize Spatial Loss) |
-| [README.md](<README.md>) | 1檔 | Round 33 — Residual-Guided Robust Loss |
-| [reports/](<reports>) | 8檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 150檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 2檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+| R30 | 0.205 | 基準 |
+| p90 | 0.146 | 內邊界殘差改善最多，但 8px 退步 4% |
+| **p95** | **0.129** | 三個尺度全面改善，選用 |
+| 只截 Laplacian | 0.350 | 完全失敗：幾乎沒學到反卷積，證明截梯度強度才是關鍵 |
+| 軟截斷 | 0.144 | 比硬截斷全面更差：「少管一點」不如「明確不管」 |
 
-## 必要來源與取得界線
+**視覺代價**（GMF 只量幾何精度，所以一併報告）：
 
-R30模型、當時PSF及環形／序列來源，固定GMF讀法。
+| 指標 | R30 | R33 p95 | 差 |
+|---|---:|---:|---:|
+| 梯度強度均值 | 3.46 | 2.36 | −32% |
+| Laplacian 標準差（細節量） | 1.86 | 0.98 | −47% |
+| 對比標準差 | 34.66 | 26.50 | −24% |
+| 邊緣陡度 | 4.05 | 3.16 | −22% |
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 為什麼更軟反而更準
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+原報告的解釋是：R30 每一幀都畫出一條很銳利、但位置微幅不同的邊；R33 畫的邊比較柔，但每一幀都落在同一個位置。GMF 在乎的是位置，不是銳度，所以 R33 的步距波動大幅下降。
+
+這也是 R33 最大的限制：**人眼判讀和以邊緣偵測為基礎的量測，R30 比較好**。後來 R38v2 就是為了把銳利度找回來而做的，COMBO 再把兩者結合在同一次訓練裡。
+
+## 讀這些數字要知道的事
+
+1. **正式數字是量化修正之前的。** 2026-04-08 發現推論輸出轉成 uint8 時是截斷、不是四捨五入，修正後 R33 的 0.8px 變成 0.117072、0.08px 變成 0.085633，8px 變成 0.171765。8px 看起來退步，其實是那 2 個失敗幀消失了，不再需要排除離群值。正式登記仍用修正前的數字；修正後的結果在 `results/external_gmf_quantfix/`，分析見[量化修正分析](<reports/QUANTIZATION_FIX_ANALYSIS.md>)。
+2. **步距會「過度修正」。** 相鄰步距的自相關從 R30 的 +0.27 變成 −0.55：上一步偏大、下一步就偏小。步距標準差雖然達標，但如果下游需要平滑的軌跡，要另外注意。
+3. **外邊界殘差其實退步了**（10～30%），只是沒有影響外部 GMF。原報告推測 GMF 比較依賴內邊界，這點沒有另外驗證。
+4. **內部分數會高估外部波動。** R33 是少數內外很接近的模型（比值 1.08），但 R38v2、COMBO 的內部分數高估了 27～35%。這引出了下面兩份方法文件。
+
+## 這個資料夾裡的全專案共用方法
+
+R33 的資料夾還放著兩份後來所有輪次都適用的規則，讀其他輪的外部 GMF 數字前應該先看：
+
+- **[外部 GMF 步距標準差的算法](<reports/GMF_STEP_STD_METHODOLOGY.md>)**：`np.std(np.diff(PosY))`，原則上計入所有步；只有 z > 5 的 GMF 工具失敗可以排除。R26～R32 的舊比較腳本用 3σ 排除，那些歷史結果已定案、不改，但 R33 之後不再用那種算法。
+- **[內部與外部步距標準差的偏差](<reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md>)**：內部量測用圓擬合，360 個角度的雜訊下限偏高，而且模型越好，高估得越多。改用 720 個角度後，R30 的內外比值從 1.22 降到 1.035，COMBO 從 1.35 降到 1.15。這就是本專案序列分析一律用 720 個角度的由來。加權擬合（IRLS、soft_l1）只對部分模型有效，所以沒有設為預設。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 外部 GMF 原始分數（修正前、修正後）、720 角度序列分析 | 本資料夾 [results/](<results>)，已在 GitHub |
+| 各候選送 GMF 的重建影像（約 1,000 張 BMP） | 2026-10-21 從 GitHub 主版本的程式樹移出，仍保存在 git 歷史裡；精選的代表圖見 [早期重建精選](<../../docs/reproducibility/project_completion/curated/EARLY_RECON_SELECTION.md>) |
+| p95 權重（約 50 MB）與訓練紀錄 | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)；見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
+| 訓練資料（早期共用環形 1,100 組） | [早期主線共用環形來源](<../../Shared_Sources/Baseline_Ring_Inputs/README.md>)，有已驗證的還原指令 |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where Experiments/R33RobustLoss/results`。
+
+> **目前的限制：**
+>
+> - **權重很難單獨拿。** p95 的訓練資料夾只有約 172 MB，但目前的打包按檔案大小切分卷，用 `--prefix` 取回會下載約 6.9 GB。整理計畫會處理。
+> - **不保證逐步重訓相同。** 舊的啟動程式依賴當時共用的 `Model/` 程式，部分執行沒有完整的設定快照；`lap_only_p95` 當時是臨時改訓練迴圈做的，04-08 才補上 `ROBUST_LOSS_GRADMAG` 參數讓它能從 repo 重跑。
+
+## 原始報告
+
+| 報告 | 什麼時候讀 |
+|---|---|
+| [實驗總結](<reports/R33_EXPERIMENT_SUMMARY.md>) | 候選、三尺度、外部 GMF、視覺代價、兩個消融 |
+| [p90 結果](<reports/r33_robust_p90_results.md>) | p90 的細節 |
+| [量化修正分析](<reports/QUANTIZATION_FIX_ANALYSIS.md>) | 修正前後的數字為什麼不同 |
+| [GMF 步距標準差的算法](<reports/GMF_STEP_STD_METHODOLOGY.md>) | 讀任何外部 GMF 數字之前 |
+| [內部與外部的偏差分析](<reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md>) | 想知道為什麼內部分數不能取代外部驗收 |
+| [R33～R38v2 完整系列](<reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md>) | 想一次看完 R33 到 COMBO |
+| [原始說明](<README.md>) | 當時的假說、候選與失敗條件，原文保留 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R33RobustLoss.md>)、[原結果對照](<results/SOURCE_RESULTS_GUIDE.md>)與[歷史保存稽核](<reports/R33_HISTORY_PRESERVATION_AUDIT_20261021.md>)。
+
+## 資料夾裡有什麼
+
+| 位置 | 內容 |
+|---|---|
+| [reports/](<reports>) | 原始報告與兩份共用方法文件 |
+| [results/](<results>) | 外部 GMF 分數（`external_gmf/`、`external_gmf_quantfix/`）、720 角度序列分析 |
+| [scripts/](<scripts>) | 序列分析等程式 |
+| [MANIFEST.md](<MANIFEST.md>) | 研究保存清單 |
+
+訓練程式在共用的 [Model/](<../../Model/README.md>)；當時的分支是 `sandbox/r33`。

@@ -1,35 +1,117 @@
-# main/R40_MicroscopyFeatureCoverage：檔案怎麼找
+# R40：補上顯微特徵，證明問題出在資料而不是模型
 
-[共用固定來源與模型關係](../../docs/reproducibility/round_source_reviews/BASELINE_20261023.md) · [原結果直接閱讀](results/SOURCE_RESULTS_GUIDE.md)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R39 與 a025](<../R39_ShapeGeneralization/FILE_GUIDE.md>) · [下一輪 R41](<../R41_RingDistillation/README.md>) · [Lab 同名 R40（不同實驗）](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R40_MicroscopyFeatureCoverage/>) · [正式身分登記](<../../ESTIMATOR_POLICY.json>)
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R40_MicroscopyFeatureCoverage.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+**一句話：** R39 發現模型會把格線抹平、把紋理當雜訊，原因是訓練資料裡根本沒有這些內容。R40 加入五類合成顯微特徵重新微調，顯微重建 PSNR 從 COMBO 的 22.7 拉到 29～31，證明問題出在資料覆蓋，不是模型能力上限。但每個訓練端點都破壞了環形定位，權重平均找到的最佳守門點 a045，外部 8px 還是退步 22.8%，所以 R40 本身不升級。它的 a043 後來成了核准替代 R39R40_a025 的另一端原料。
 
-**研究問題：加入格線、紋理、區域與缺陷以補顯微能力。**
+| | |
+|---|---|
+| 結果 | **研究候選**（`RESEARCH_CAPACITY_ONLY`）：證明了顯微能力可以學得到，但沒有一個點同時保住環形 |
+| 時間 | 2026-05-03 建資料包；05-04 訓練；05-10 跨資料集補測；05-11 補密 α 與外部 GMF |
+| 實驗條件 | A：公司端環形影像 + 外部 GMF；顯微與形狀用合成驗證集 |
+| 起點 | COMBO 與 R39 a030 兩個 |
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+主專案這個 R40 跟 LabSystem 的 R40 是兩個不同的實驗，只是同號。
 
-## 先讀原文件
+## 在研究裡的位置
 
-- [R40 外部 GMF 比較 — `r40_combo_best_avg_a045`](<reports/R40_EXTERNAL_COMPARE.md>)
-- [R40 External GMF Compare - `r40_combo_best_avg_a042`](<reports/R40_EXTERNAL_COMPARE_a042.md>)
-- [R40 External GMF Compare - `r40_combo_best_avg_a043`](<reports/R40_EXTERNAL_COMPARE_a043.md>)
-- [R40 結果 — 顯微特徵覆蓋](<reports/R40_RESULTS.md>)
+R39 的 a030 通過外部驗收後，用一張合成 IC 顯微影像測試，發現格線被抹平、紋理消失、邊緣有振鈴，而且換成雜訊較輕的輸入也幾乎沒差。結論是：限制不在雜訊或 PSF，而在訓練分布。R40 就是直接驗證這個判斷：把那些內容放進訓練資料，模型學不學得會？
 
-## 進入實際檔案
+R40 從一開始就定位成**容量試探，不是預設的升級嘗試**。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R40 Manifest |
-| [README.md](<README.md>) | 1檔 | R40 — 顯微特徵覆蓋 |
-| [reports/](<reports>) | 5檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 14檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 8檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 5檔 | 原檢查程式；不是研究結果本身 |
+## 這輪在問什麼
 
-## 必要來源與取得界線
+只用受控的合成顯微特徵擴大訓練分布，不加真實影像、不動模型本體，能不能把格線、紋理、大塊區域、缺陷的重建能力拉起來？
 
-顯微場景生成、正向PSF程序、兩個起點與固定答案。
+## 怎麼做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+**五類新的顯微特徵**（stage 29～33）：
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| Stage | 內容 |
+|---|---|
+| 29 | 細線、格線、交叉的週期結構 |
+| 30 | 明亮或暗的 IC 風格大區塊與邊界 |
+| 31 | 顆粒狀與低對比紋理 |
+| 32 | 鋸齒邊、缺角、刮痕、斑點 |
+| 33 | 以上全部混合的場景 |
+
+**訓練包**：1,300 對 = 550 環形 + 350 R39 形狀 + 400 新顯微特徵；另外 100 對顯微驗證集完全不進訓練，並驗證兩者不重疊。
+
+**兩個端點**（各 100 輪）：從 COMBO 起步（`r40_micro_capacity_combo`），以及從 R39 a030 起步（`r40_micro_capacity_a030`），看形狀能力能不能幫上顯微。
+
+**守門與救援**：端點若顯微進步但環形退步，就跟 COMBO 做權重平均，過了內部三尺度守門的點才送外部 GMF。
+
+## 結果
+
+**顯微能力**（100 對未見過的顯微特徵，平均）：
+
+| 模型 | PSNR | 高頻保留 | 邊緣保留 |
+|---|---:|---:|---:|
+| COMBO | 22.73 | 0.22 | 0.66 |
+| R39 a030 | 25.03 | 0.22 | 0.62 |
+| 從 COMBO 起步，best | 28.95 | **0.85** | **1.03** |
+| 從 a030 起步，best | 29.63 | 0.79 | 0.99 |
+| 從 a030 起步，latest | **31.26** | 0.68 | 0.93 |
+
+**環形守門**：四個端點（兩個起點 × best／latest）全部比 COMBO 差。最誇張的是從 a030 起步的 latest，內部 8px 步距標準差 6.06（COMBO 是 0.139）。
+
+**權重平均與外部 GMF**（COMBO 和「從 COMBO 起步的 best」之間）：
+
+| α | 顯微 PSNR | 外部 8px | 外部 0.8px | 外部 0.08px | 判定 |
+|---:|---:|---:|---:|---:|---|
+| 0.42 | 26.62 | −17.4% | +7.8% | +11.3% | 未過 |
+| **0.43（a043）** | 26.72 | −5.9% | **−3.2%** | +21.5% | 未過，後來成為 a025 的原料 |
+| 0.45（a045） | 26.89 | **+22.8%** | +1.3% | −2.9% | 未過 |
+
+（外部數字是相對 COMBO 的變化，越負越好。）
+
+a045 雖然外部沒過，靜態指標卻是全面勝出：拿去 R39 的形狀驗證集跑，PSNR 26.91，比 a030 的 25.03 還高。它的代價只在環形的連續位移穩定度。
+
+## 讀這些數字要知道的事
+
+1. **最大的收穫是確認了因果。** 之前在格線、紋理、缺陷上的失敗，主要是訓練分布覆蓋不足，不是模型本體的能力上限。這個結論後來被 R39R40_a025 實際用上。
+2. **內部守門過了，不代表外部會過。** a045 的內部三尺度都過，外部 8px 卻退步 22.8%。
+3. **權重平均的效果不單調。** α 只差 0.01，外部 8px 可以從 −17% 跳到 +23%；α = 0.44 的內部 8px 甚至比 0.45 還差。用內外比例線性外推的預測（0.43 會退步約 21.6%），跟實測的 −5.9% 差很遠。
+4. **混合場景的背景格線仍然偏弱**，這是 R40 沒解決的地方。
+5. **a043 本身也是平均出來的**（COMBO 與 R40 端點在 0.43 的混合），所以核准替代 a025 實際上是 COMBO、R39 strong、R40 端點三者按比例混合的結果。a043 單獨使用時，0.08px 退步 21.5%，判定仍是研究用。
+
+原報告的下一步建議是：保住 R40 的顯微覆蓋，但用更低的學習率、更短的微調、更強的環形重播，或明確的細節保留目標，壓低端點對 COMBO 的漂移。這就是 R41 的出發點。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 外部 GMF 分數與逐步稽核、各 α 比較 | 本資料夾 [results/](<results>)，已在 GitHub |
+| 權重平均後的權重（a042～a045 等，合計約 234 MB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)；見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
+| 兩個訓練端點的權重與紀錄 | 同一個 Release；較完整的訓練歷史在 [`research-training-history-supplement-20261021`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-history-supplement-20261021) |
+| 訓練資料（約 700 MB） | 用 `scripts/r40_micro_data.py generate-clean`、`Training_Data/PSF_Convolution.py`（stage 29～33）、`r40_micro_data.py build` 重新產生，步驟見[原始說明](<README.md>)；五類特徵各抽 4 張、共 20 張乾淨答案圖，用原種子 4040 與從 GitHub 取回的生成器重做後逐像素相同（卷積後的輸入沒有重做核對）（見[四輪方法與來源](<../../docs/reproducibility/round_source_reviews/BASELINE_20261023.md>)） |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：**
+>
+> - **權重很難單獨拿。** 目前的打包按檔案大小切分卷：只要 R40 權重平均的權重，就得下載 9 個分卷、約 13.8 GB；一個訓練端點約 7 GB。整理計畫會處理。
+> - **訓練資料只抽查過 20 張。** 完整卷積與全部資料沒有逐檔重做核對。
+
+## 原始報告
+
+| 報告 | 什麼時候讀 |
+|---|---|
+| [R40 結果](<reports/R40_RESULTS.md>) | 全部過程：基準、訓練、守門、權重平均、外部 GMF、跨資料集補測、補密 α、跨輪平均 |
+| [a045 外部比較](<reports/R40_EXTERNAL_COMPARE.md>)、[a042](<reports/R40_EXTERNAL_COMPARE_a042.md>)、[a043](<reports/R40_EXTERNAL_COMPARE_a043.md>) | 各點的原始外部比較 |
+| [來源路徑修正](<reports/R40_REPRODUCTION_PATH_REPAIR_20261016.md>) | 10/16 只修正了五個來源路徑，數字與判定不變 |
+| [原始說明](<README.md>) | 當時的假說、設計與完整產生流程，原文保留 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R40_MicroscopyFeatureCoverage.md>)與[原結果對照](<results/SOURCE_RESULTS_GUIDE.md>)。
+
+## 資料夾裡有什麼
+
+| 位置 | 內容 |
+|---|---|
+| [reports/](<reports>) | 原始報告 |
+| [results/](<results>) | 外部 GMF（`external_gmf/` 是 a045，`external_gmf_a042/`、`external_gmf_a043/`）、權重平均摘要 |
+| [scripts/](<scripts>) | 資料產生、訓練、重建、指標、守門、權重平均、外部比較 |
+| [tests/](<tests>) | 資料產生、切分、指標、權重平均與外部解析的單元測試 |
+| [MANIFEST.md](<MANIFEST.md>) | 研究保存清單 |
+
+當時的分支是 `sandbox/r40`。
