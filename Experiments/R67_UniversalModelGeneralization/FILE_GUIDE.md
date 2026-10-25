@@ -1,31 +1,59 @@
-# main/R67_UniversalModelGeneralization：檔案怎麼找
+# R67：手上所有模型，哪個在最差情況下最穩
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R67_UniversalModelGeneralization.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R66](<../R66_V20_TraceabilityFigures_20260725/FILE_GUIDE.md>) · [下一輪 R68](<../R68_R61_RealFOVFeatureGeneralization/FILE_GUIDE.md>)
 
-**研究問題：在既有倍率、形狀與位移下選較穩妥模型。**
+**一句話：** 2026-07-29 把當時所有凍結的模型（COMBO、R33、R38v2、R39R40、Lab R61 v16、V42 第 120 輪）放在四組 20×／50× 位移序列上，用柱、孔、線條三種量測一起比，排名規則是**先看最差的那一格**。R61 v16 最差情況最好，成為當時資料上的領先者；但這四組序列都參與過模型開發，所以只能說「目前資料上領先」，不能宣稱普遍有效。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（只能選出當下領先者，不能宣稱普遍有效） |
+| 時間 | 2026-07-29 |
+| 實驗條件 | C：實驗室顯微系統；7 月的四組 20×、50× 位移序列（24 個模型序列組合、1,206 張重建） |
+| 比較對象 | COMBO、R33、R38v2、R39R40、Lab R61 v16、V42 第 120 輪 |
 
-## 先讀原文件
+## 這輪在問什麼
 
-- [R67 Results](<reports/R67_RESULTS.md>)
+跨倍率、跨位移大小、跨形貌，哪個凍結模型是最安全的單一選擇？
 
-## 進入實際檔案
+## 怎麼做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 4檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R67 Manifest |
-| [README.md](<README.md>) | 1檔 | R67 Universal Model Generalization |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 16檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+- **排名：** 每個量測格的誤差除以該格所有候選的典型結果，得到「遺憾值」（1.0 是該格最好）；主要分數是**最差的一格**，中位數只當平手時的參考。模型必須完整輸出、沒有量測失敗才能排名。
+- **兩個階段：** A 階段用現有四組序列；B 階段要用封存、沒見過的新樣品和獨立的位置與尺寸參考，`config/phase_b_holdout.template.json` 是預留的範本，**至今沒有填**。
 
-## 必要來源與取得界線
+## 結果
 
-各固定模型、四組序列、最差情況排序及缺測記錄。
+| 名次 | 模型 | 圓形量測失敗 | 缺少的步數 | 最差遺憾值 | 第 90 百分位 | 中位數 |
+|---:|---|---:|---:|---:|---:|---:|
+| 1 | Lab R61 v16 | 0 | 0 | 8.21 | 2.39 | 1.28 |
+| 2 | R38v2 | 0 | 0 | 10.48 | 1.97 | 1.28 |
+| 3 | V42 第 120 輪 | 0 | 0 | 32.75 | 1.96 | 1.21 |
+| 4 | R39R40 | 4 | 5 | 9.40 | 1.89 | 1.07 |
+| 5 | R33 | 8 | 10 | 28.39 | 2.10 | 1.16 |
+| 6 | COMBO | 7 | 32 | 4.06 | 2.08 | 1.09 |
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **COMBO 的最差遺憾值其實最小（4.06）**，但它有 7 次圓形量測失敗、32 步缺值，所以依規則排最後。
+2. **V42 的中位數很好，但有一格特別差**（32.75），所以排第三。
+3. **普遍有效的標籤要等 B 階段。** 報告的設計是任何模型都不能在 B 階段之前拿到「通用通過」。
+4. 這一輪之後，R68～R74 都以 R61 v16 為主角做各種泛化檢查。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 一鍵執行程式（可續跑）、測試、模型名單、場景設定 | 本資料夾 [scripts/run_r67.py](<scripts/run_r67.py>)、[tests/](<tests>)、[config/](<config>)，已在 GitHub |
+| 排名與量測結果 | 本資料夾 [results/evaluation/](<results/evaluation>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 1,206 張重建影像只在原電腦上。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R67 結果](<reports/R67_RESULTS.md>) | 排名表、規則與最後一道門檻 |
+| [README](<README.md>) | 問題、規則、兩個階段 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R67_UniversalModelGeneralization.md>)。

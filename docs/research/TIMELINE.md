@@ -175,9 +175,9 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | R65 | 論文第 19 版的圖表包，沿用舊的最大梯度量法 → **分析**：歷史圖表版本（V19 是論文稿版本，不是模型） | [R65](../../Experiments/R65_V19_OldMethodFigurePackage_20260724/FILE_GUIDE.md) |
 | R66 | 論文第 20 版，補上量測位置的可追查圖 → **分析** | [R66](../../Experiments/R66_V20_TraceabilityFigures_20260725/FILE_GUIDE.md) |
 | R67 | 在既有倍率、形狀、位移下選較穩的模型 → **分析**：只能選出當下領先者，不能宣稱普遍有效 | [R67](../../Experiments/R67_UniversalModelGeneralization/FILE_GUIDE.md) |
-| R68 | R61 在多倍率完整視野下的位移保持 → **分析** | [R68](../../Experiments/R68_R61_RealFOVFeatureGeneralization/FILE_GUIDE.md) |
+| R68 | R61 在 5×／20×／50× 完整視野下會不會改壞位移 → **分析**：六組都通過試行門檻（跟原圖一致，不是比原圖準） | [R68](../../Experiments/R68_R61_RealFOVFeatureGeneralization/FILE_GUIDE.md) |
 | R69 | R61 完整外形是否更接近逐顆 SEM → **分析**：正常曝光粗外框改善，最暗兩張和細形狀退步 | [R69](../../Experiments/R69_ACMContourSEMValidation/FILE_GUIDE.md) |
-| R70 | 用同樣的 SEM 與量法檢查 V42 → **分析**：V42 與 SEM 有訓練來源關係 | [R70](../../Experiments/R70_V42ACMContourSEMValidation/FILE_GUIDE.md) |
+| R70 | 用同樣的 SEM 與量法檢查 V42 → **分析**：外框也改善，但幅度比 R61 小、曝光 20 起就失去改善；最暗兩張比 R61 穩。V42 與這批 SEM 的訓練來源關係要另外確認 | [R70](../../Experiments/R70_V42ACMContourSEMValidation/FILE_GUIDE.md) |
 | R71–R74 | 用有乾淨答案的合成缺陷、非圓形、困難成像檢查 R61 → **分析**：困難度先鎖定再揭露模型，避免事後挑容易的資料 | [R71](../../Experiments/R71_R61SyntheticMicroscopyDefectGeneralization/FILE_GUIDE.md)、[R72](../../Experiments/R72_R61SyntheticDefectACMContourValidation/FILE_GUIDE.md)、[R73](../../Experiments/R73_R61ExpandedSyntheticACMGeneralization/FILE_GUIDE.md)、[R74](../../Experiments/R74_R61HardMicroscopyACMGeneralization/FILE_GUIDE.md) |
 | R75／R75v2 | R61 架構只用純合成資料從頭訓練 → **未採用**：首輪半精度沒有有效更新，修正版完成 100 輪，外框改善但細形狀沒解決 | [R75](../../Experiments/R75_R61ArchitectureScratchGeneralization/FILE_GUIDE.md)、[R75v2](../../Experiments/R75v2_R61ArchitectureScratchGeneralization/FILE_GUIDE.md) |
 | R76–R78 | 用 SEM 完整輪廓和多倍率位移檢查 R75／R75v2 → **分析**：5× 小區塊丟細節 | [R76](../../Experiments/R76_R75ACMContourSEMValidation/FILE_GUIDE.md)、[R77](../../Experiments/R77_R75v2ACMContourSEMValidation/FILE_GUIDE.md)、[R78](../../Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/FILE_GUIDE.md) |
