@@ -257,7 +257,7 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | R137 | 用低強度光學線索輔助原尺寸模型 → **未採用**：短步與輪廓小改善，尺寸偏大 | [R137](../../Experiments/R137_WeakPSFFeature/FILE_GUIDE.md) |
 | R138 | 讓八個候選光學機制反覆作用 → **未採用**：光學強度後期歸零 | [R138](../../Experiments/R138_V42PSF8/FILE_GUIDE.md) |
 | R139 | 恢復 U-Net，把光學放回解碼位置 → **未採用**：訓練早期飽和，退化成原圖 | [R139](../../Experiments/R139_UNetRecurrentPrototype/FILE_GUIDE.md) |
-| R140／R140v2 | 修 R139 的不穩定；重新封裝穩定 U-Net → **研究候選**：R140v2 完成 8192 次更新與 930 張驗證 | [R140](../../Experiments/R140_StableUNet/FILE_GUIDE.md)、[R140v2](../../Experiments/R140v2_StableUNet/FILE_GUIDE.md) |
+| R140／R140v2 | 修 R139 的不穩定；重新封裝穩定 U-Net → **研究候選**：R140 在正式訓練前被來源檢查擋下（**中止**，沒有訓練更新），同一方案改在 R140v2 完成 8192 次更新與 930 張驗證；短步位移最好，但尺寸偏大最多，光學候選權重始終平均 | [R140](../../Experiments/R140_StableUNet/FILE_GUIDE.md)、[R140v2](../../Experiments/R140v2_StableUNet/FILE_GUIDE.md) |
 
 ## 階段 8　光學配對與論文（R141–R153，約 9 月底～10 月初）
 
