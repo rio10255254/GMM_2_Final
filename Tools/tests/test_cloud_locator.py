@@ -54,6 +54,18 @@ def test_moved_copies_are_found_by_content_and_unknown_files_stay_local(tmp_path
     assert cloud.classify('only/here.bmp',5,'sha-z','none')==('local-only','')
 
 
+def test_zip_without_manifest_is_listed_by_member_hash_and_then_removed(tmp_path):
+    import hashlib,zipfile
+    archive=tmp_path/'delivery.zip'
+    with zipfile.ZipFile(archive,'w') as z:
+        z.writestr('model.onnx',b'weights')
+        z.writestr('example/input.bmp',b'pixels')
+    members=cloud_locator.zip_members('owner/repo','tag','delivery.zip',tmp_path)
+    assert {m['path']:m['sha256'] for m in members}['model.onnx']==hashlib.sha256(b'weights').hexdigest()
+    assert not archive.exists() and (tmp_path/'delivery.zip.members.json').exists()
+    assert cloud_locator.zip_members('owner/repo','tag','delivery.zip',tmp_path)==members
+
+
 def test_files_removed_from_the_tree_count_as_recoverable_history(tmp_path):
     cloud=make_cloud(tmp_path,{},[])
     cloud.history_blobs={'blob-old':'Experiments/R33/results/recon/frame.bmp'}

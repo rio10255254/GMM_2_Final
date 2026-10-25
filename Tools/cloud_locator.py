@@ -13,6 +13,8 @@ content, and it does not decide what may be deleted.
 
 Examples:
     python Tools/cloud_locator.py build
+    python Tools/cloud_locator.py build --with-zips   # also list attachment ZIPs that have no manifest
+    python Tools/cloud_locator.py seed H:/.../inventory_content_verified.sqlite --project-root D:/GMM_2_Final
     python Tools/cloud_locator.py where Experiments/R152_R148v2_SafeAdaptivePSF/results/comparison
     python Tools/cloud_locator.py scan D:/GMM_2_Final/Experiments/R152_R148v2_SafeAdaptivePSF --git-ref d12dd7e0
 """
@@ -30,6 +32,7 @@ import sqlite3
 import subprocess
 import sys
 import time
+import zipfile
 
 REPO = Path(__file__).resolve().parents[1]
 DEFAULT_REPO = 'rio10255254/GMM_2_Final'
@@ -117,8 +120,14 @@ def build(args):
             indexed.add(data['archive_name'])
         for asset in release['assets']:
             digest = (asset.get('digest') or '').removeprefix('sha256:') or None
-            db.execute('INSERT INTO assets VALUES (?,?,?,?,?)',
-                       (tag, asset['name'], asset['size'], digest, 'manifest' if asset['name'] in indexed else 'asset-only'))
+            kind = 'manifest' if asset['name'] in indexed else 'asset-only'
+            if kind == 'asset-only' and args.with_zips and asset['name'].lower().endswith('.zip'):
+                members = zip_members(args.repo, tag, asset['name'], target)
+                db.executemany('INSERT INTO objects VALUES (?,?,?,?,?,?)',
+                               ((f'zip:{asset["name"]}/{m["path"]}', m['sha256'], m['bytes'], tag, asset['name'], 'zip-member')
+                                for m in members))
+                kind = 'zip-listed'
+            db.execute('INSERT INTO assets VALUES (?,?,?,?,?)', (tag, asset['name'], asset['size'], digest, kind))
         print(f'{tag}: {len(release["assets"])} assets', flush=True)
     db.execute('CREATE INDEX IF NOT EXISTS objects_path ON objects(path)')
     db.execute('CREATE INDEX IF NOT EXISTS objects_sha ON objects(sha256)')
@@ -127,6 +136,30 @@ def build(args):
     db.commit()
     total = db.execute('SELECT COUNT(*), COUNT(DISTINCT path), COUNT(DISTINCT sha256) FROM objects').fetchone()
     print(f'indexed {total[0]} release entries, {total[1]} paths, {total[2]} distinct contents from {len(releases)} releases')
+
+
+def zip_members(repo, tag, name, target):
+    """List an attachment ZIP that has no manifest: download, hash each member, keep only the listing.
+
+    Members keep their in-archive paths, so they can match local files by content only."""
+    listing = target / (name + '.members.json')
+    if listing.exists():
+        return json.loads(listing.read_text(encoding='utf-8'))
+    fetch(repo, tag, name, target)
+    members = []
+    with zipfile.ZipFile(target / name) as archive:
+        for info in archive.infolist():
+            if info.is_dir():
+                continue
+            digest = hashlib.sha256()
+            with archive.open(info) as stream:
+                for chunk in iter(lambda: stream.read(1 << 20), b''):
+                    digest.update(chunk)
+            members.append({'path': info.filename, 'bytes': info.file_size, 'sha256': digest.hexdigest()})
+    listing.write_text(json.dumps(members), encoding='utf-8')
+    (target / name).unlink()
+    print(f'  listed {len(members)} members of {name}', flush=True)
+    return members
 
 
 def fetch(repo, tag, name, target):
@@ -374,6 +407,8 @@ def main():
     sub = parser.add_subparsers(dest='command', required=True)
     p = sub.add_parser('build', help='download release manifests and build the index')
     p.add_argument('--repo', default=DEFAULT_REPO)
+    p.add_argument('--with-zips', action='store_true',
+                   help='also download attachment ZIPs that have no manifest (about 0.9 GB) and index their members')
     p.set_defaults(func=build)
     p = sub.add_parser('seed', help='reuse hashes from an earlier full content inventory')
     p.add_argument('inventory', help='SQLite inventory with a files(source, bytes, mtime_ns, sha256) table')
