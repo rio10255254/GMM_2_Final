@@ -1,31 +1,34 @@
-# main/R86_R79BlockGroupNormRepair：檔案怎麼找
+# R86：不訓練，只把全圖的正規化換成固定區塊
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R86_R79BlockGroupNormRepair.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一種修法 R85](<../R85_R79SharedCanvasOpticalRepair/FILE_GUIDE.md>) · [三輪總結案在 R84](<../R84_R79TileStableRootRepair/FILE_GUIDE.md>) · [下一輪 R87](<../R87_TileNativeScratchGeneralization/FILE_GUIDE.md>)
 
-**研究問題：固定小區塊統計以消除切片差異。**
+**一句話：** 既然 R79 的切塊差異來自它會依整張影像調整特徵分布，R86 直接保留 R79 的權重與光學輸入，只把全圖範圍的 GroupNorm 換成固定、相位對齊的 8×8 特徵區塊，先做不訓練的零樣本檢查。2026-08-10 的結果是切塊一致性通過，但重建誤差變成 R79 的 1.41 倍、邊界誤差 1.96 倍，所以依規則不啟動訓練。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（零樣本檢查就不合格，沒有訓練） |
+| 時間 | 2026-08-10 |
+| 實驗條件 | 程式生成的檢查資料與切塊一致性檢查 |
+| 起點 | R79 的精確權重 |
 
-## 先讀原文件
+## 讀這些內容要知道的事
 
-- [R86_R79BlockGroupNormRepair 研究保存清單](<MANIFEST.md>)
-- [R86 Block Group Normalization Probe](<README.md>)
+1. **規則是先過零樣本門檻才准訓練**，所以這一輪只有探測，沒有新權重。
+2. 三輪的總結與後來的決定寫在 [R84 的結案報告](<../R84_R79TileStableRootRepair/reports/R79_ROOT_REPAIR_CLOSEOUT.md>)。
 
-## 進入實際檔案
+## 拿資料與重做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R86_R79BlockGroupNormRepair 研究保存清單 |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R86 Block Group Normalization Probe |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 零樣本探測、推論程式、改過的模型、設定 | 本資料夾 [scripts/probe_zero_shot.py](<scripts/probe_zero_shot.py>)、[inference/](<inference>)、[model/](<model>)、[config/](<config>)，已在 GitHub |
 
-## 必要來源與取得界線
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-精確R79及區塊修正程式、原參照讀值。
+## 原始報告
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 文件 | 內容 |
+|---|---|
+| [README](<README.md>) | 設計與最終狀態 |
+| [三輪總結案](<../R84_R79TileStableRootRepair/reports/R79_ROOT_REPAIR_CLOSEOUT.md>) | R84、R85、R86 的比較與最後的修改 |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R86_R79BlockGroupNormRepair.md>)。

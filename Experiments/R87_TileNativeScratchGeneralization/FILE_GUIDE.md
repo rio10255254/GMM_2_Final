@@ -1,39 +1,59 @@
-# main/R87_TileNativeScratchGeneralization：檔案怎麼找
+# R87：從一開始就只用局部運算，同時學重建與切塊一致
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R87_TileNativeScratchGeneralization.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [切塊問題的來源 R84](<../R84_R79TileStableRootRepair/FILE_GUIDE.md>) · [下一輪 R88](<../R88_MeasurementFaithfulScratch/FILE_GUIDE.md>)
 
-**研究問題：純局部模型從零學習重建及切片一致性。**
+**一句話：** R84～R86 證明 R79 的切塊依賴改不掉，R87 改成從零設計：模型從一開始就只用局部運算，同一個大型合成場景用兩種切法一起訓練，在重疊區直接要求兩種切法結果相同。2026-08-10 完成 100 輪，切塊一致性 16/16 全部通過；但在沒參與訓練的新形狀上嚴重退步（嚴格輪廓通過從原圖的 97 張掉到 52 張），還會把實心物體變成環、憑空產生孔洞。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（切塊穩定、對自身合成分布有效，但新形狀退步，還出現假孔洞） |
+| 時間 | 2026-08-10 完成（100 輪） |
+| 實驗條件 | 純合成：1,280 個 1536×1536 程式生成場景，每場景兩種成像、每種兩個重疊視角，共 5,120 個訓練視角 |
+| 起點 | 隨機初始化，不載入任何保存點、老師或偽答案 |
 
-## 先讀原文件
+## 怎麼做
 
-- [R87 Results](<reports/R87_RESULTS.md>)
-- [下一輪真實紋理保留方案](<reports/R88_TEXTURE_PRESERVING_PLAN.md>)
+- 幾何先以 8 倍解析度繪製再面積平均縮小。
+- 輸入 896 px 的視角只把中央 512 px 當正式輸出，四周 192 px 只提供上下文；同一場景、同一成像的兩個視角在重疊區直接比較。
+- 分三段放大輸入：第 1～20 輪 384 px、第 21～50 輪 640 px、第 51～100 輪 896 px。
+- 三張實拍影像只每 5 輪輸出觀察圖，不進入資料、損失、停止或挑選。
 
-## 進入實際檔案
+## 結果
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [.gitignore](<.gitignore>) | 1檔 | 原配套檔案 |
-| [ARCHIVE_POINTER_R87_20260926.md](<ARCHIVE_POINTER_R87_20260926.md>) | 1檔 | R87 完整歷史封存入口 |
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 5檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [inference/](<inference>) | 2檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R87 Manifest |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | Round 87 — Tile-Native Scratch Generalization |
-| [reports/](<reports>) | 3檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 1檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 6檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 2檔 | 訓練程式與配套 |
-| [weights/](<weights>) | 1檔 | 模型檔或取得說明；最佳、最後及短測版本需分清 |
+| 測試 | 原圖 | R87 | 判讀 |
+|---|---:|---:|---|
+| 內部保留，嚴格 ACM 通過 | 41/50 | 43/50 | 修好 2 個、沒弄壞原本通過的 |
+| 內部保留，輪廓距離中位數 | 0.227 px | 0.129 px | 改善 |
+| 切塊一致性 | — | 16/16 通過 | 最大單一像素差 1.17（門檻 3） |
+| R73 新形狀，嚴格 ACM 通過 | 97/100 | 52/100 | **明顯退化** |
+| R73 新形狀，災難性錯輪廓 | 0 | 26 | 不可接受 |
+| R74 困難顯微，中位 IoU | 0.860 | 0.511 | **明顯退化** |
 
-## 必要來源與取得界線
+## 讀這些數字要知道的事
 
-1280場景原生成器、實際配方、固定模型、R73／R74及H完整封存。
+1. **原因是答案太乾淨。** R87 的答案大多是區域內灰階近乎固定的乾淨形狀，模型把內部和背景都拉平最容易降低訓練誤差，所以學到的是「把顯微影像理想化成乾淨輪廓」。報告的結論是：答案本身沒有真實細節，加大模型或訓練更久只會讓錯誤更徹底。
+2. **R88 的方案**寫在 [R88_TEXTURE_PRESERVING_PLAN.md](<reports/R88_TEXTURE_PRESERVING_PLAN.md>)：答案要帶可恢復的紋理、不確定時偏向保留原圖、任何憑空新增孔洞都列為硬失敗。
+3. **R73、R74 是開發壓力測試**，不是全新外部盲測。
+4. **資料的存放方式改過。** 2026-10-20 把 D 槽的合成陣列刪掉、原位置改指向外接硬碟上的工作副本；讀取程式從新位置讀到的輸入與答案和原本完全相同。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 拿資料與重做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 資料生成、啟動、訓練、評估、推論程式、模型、測試 | 本資料夾 [scripts/](<scripts>)、[training/](<training/README.md>)、[inference/](<inference/README.md>)、[model/](<model>)、[tests/](<tests>)，已在 GitHub |
+| 結果與訓練中的實拍觀察 | [results/](<results/README.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 完整歷史（5,588 檔、11.8 GiB）在外接硬碟封存，見 [封存入口](<ARCHIVE_POINTER_R87_20260926.md>)；合成資料可用 `scripts/generate_dataset.py` 依固定設定重新產生。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R87 結果](<reports/R87_RESULTS.md>) | 預先鎖定規則、內部保留、切塊一致性、壓力資料、最終判定 |
+| [R88 紋理保留方案](<reports/R88_TEXTURE_PRESERVING_PLAN.md>) | 為什麼要改訓練答案、資料組成、紋理怎麼加、固定門檻 |
+| [README](<README.md>) | 假說、設計、正式訓練的三段放大 |
+| [封存與清理紀錄](<reports/R87_ARCHIVE_READINESS_AND_BLOCK_20261016.md>) | 2026-10-16 的保存核對 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R87_TileNativeScratchGeneralization.md>)。
