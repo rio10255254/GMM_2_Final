@@ -1,30 +1,54 @@
-# main/R33ContrastFix：檔案怎麼找
+# R33c：想把 R33 的對比調回來，結果確認問題不在對比
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R33ContrastFix.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [R33 主線](<../R33RobustLoss/FILE_GUIDE.md>) · [之後的 R38](<../R38SeqConsistency/FILE_GUIDE.md>) · [R33～R38v2 完整系列](<../R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md>)
 
-**研究問題：提高統計項能否修復R33的灰階與銳利度。**
+**一句話：** R33 的定位很準，但影像看起來偏糊。R33c 假設「糊」來自對比被壓縮，於是把統計匹配損失的權重 `W_STAT` 從 0.05 提高到 0.30，想讓模型更貼近答案的亮度平均與標準差。結果對比反而更差。結論是 R33 的「糊」九成是真正的邊緣變平滑，不是對比的問題，調這個旋鈕沒有用。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（已否定；它不是 R33 那個核准替代模型） |
+| 候選名稱 | `stat03`（`W_STAT` = 0.30） |
+| 時間 | 2026-04-06 |
+| 實驗條件 | A：公司端環形影像 |
+| 起點 | R33 p95 |
 
-## 先讀原文件
+## 在研究裡的位置
 
-- [R33ContrastFix 歷史封存與恢復入口](<ARCHIVE_POINTER_20260824.md>)
-- [R33c — Contrast Fix (W_STAT Increase)](<MANIFEST.md>)
-- [R33 Contrast Fix — W_STAT 提高（已否定）](<README.md>)
+R33 用截尾換到了定位精度，代價是邊緣變軟。在 R34、R35、R37 從頻率與光學下手之前，R33c 先試了最直接的一招：如果只是對比被壓低，拉高統計損失應該就能把對比找回來。這一輪的否定，讓後面的嘗試把重點放在邊緣本身的銳利度，最後由 R38v2 解決。
 
-## 進入實際檔案
+## 這輪在問什麼
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER_20260824.md](<ARCHIVE_POINTER_20260824.md>) | 1檔 | R33ContrastFix 歷史封存與恢復入口 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R33c — Contrast Fix (W_STAT Increase) |
-| [README.md](<README.md>) | 1檔 | R33 Contrast Fix — W_STAT 提高（已否定） |
-| [results/](<results>) | 35檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
+提高統計匹配損失的權重，能不能恢復 R33 被壓縮的對比，讓影像不再偏糊？
 
-## 必要來源與取得界線
+## 結果
 
-R33起始模型、實際訓練設定及對應來源。
+根據[原始說明](<README.md>)：
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+- 原本的假說是 R33 的對比被壓縮了約 44%。
+- 提高 `W_STAT` 之後，對比反而更差：該報告量到的對比變化是 −14%，R33 原本是 −5%。原因是訓練答案本身的局部標準差就很低（9.19），越用力匹配，就越把模型往低標準差推。
+- 用後處理拉伸對比，也只恢復了約 2 個百分點。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+> 這些對比數字是 R33c 原始說明裡的量法，跟 [R33 報告](<../R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md>)裡的「對比標準差 −24%」、「邊緣對比 −43%」不是同一個指標，不能直接互比。
+
+**結論：** R33 的「糊」約九成是真正的邊緣平滑（邊緣陡度 −22%），不是對比問題，`W_STAT` 不是正確的旋鈕。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 序列分析結果 | 本資料夾 [results/sequence_analysis/](<results/sequence_analysis>)，已在 GitHub |
+| 送 GMF 的逐張重建影像（約 200 張） | 2026-08-24 移到原電腦 H 槽封存並逐檔核對，見[封存紀錄](<ARCHIVE_POINTER_20260824.md>)；也保存在 GitHub 主版本的 git 歷史裡 |
+| 訓練紀錄 | `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404/` |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **限制：** 這一輪只留下簡短的原始說明，沒有獨立的結果報告；上面的數字以原始說明為準。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [原始說明](<README.md>) | 假說、結果與結論，原文保留 |
+| [研究保存清單](<MANIFEST.md>) | 本輪的檔案清單 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R33ContrastFix.md>)。當時的分支是 `sandbox/r33-contrast`。

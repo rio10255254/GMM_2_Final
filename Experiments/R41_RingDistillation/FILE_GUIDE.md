@@ -1,33 +1,96 @@
-# main/R41_RingDistillation：檔案怎麼找
+# R41：請兩個老師同時看著，還是保不住環形
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R41_RingDistillation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R40](<../R40_MicroscopyFeatureCoverage/FILE_GUIDE.md>) · [下一輪 R42](<../R42_MicroscopyBoundaryFidelity/README.md>) · [原始說明](<README.md>)
 
-**研究問題：用兩個固定老師同時保存環形與顯微能力。**
+**一句話：** R40 證明顯微能力學得到，但每個端點都破壞了環形。R41 從 R40 的 a045 出發，讓兩個凍結的老師模型在訓練時同時牽引：COMBO 負責守住環形，R40 的端點負責守住顯微能力。結果顯微能力不但保住還更強（PSNR 29.5），但環形三個尺度都退步；再跟 COMBO 做權重平均，找不到任何一個點能同時通過兩邊的門檻，所以沒有送外部 GMF。結論是這條「老師牽引 + 事後平均」的路線到此為止。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（研究用；沒有任何候選通過本地守門，未送外部 GMF） |
+| 候選名稱 | `r41_kd_from_a045` |
+| 時間 | 2026-05-05（同一天完成資料、測試、30 輪訓練、驗證與權重平均） |
+| 實驗條件 | A：公司端環形影像；顯微用合成驗證集 |
+| 起點 | R40 的 a045（COMBO 與 R40 端點在 0.45 的平均） |
 
-## 先讀原文件
+## 在研究裡的位置
 
-- [R41 外部 GMF 紀錄](<reports/R41_EXTERNAL_COMPARE.md>)
-- [R41 結果 — 環形知識蒸餾](<reports/R41_RESULTS.md>)
+到 R40 為止的模式是：只要把顯微或形狀能力推上去，環形定位就會退步；權重平均能把環形救回來，但也會把能力一起稀釋掉。R40 的結論建議下一輪改用較溫和的保留策略。R41 的做法是不再只靠事後平均，而是在訓練時就明確「錨定」兩個老師。
 
-## 進入實際檔案
+## 這輪在問什麼
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER.md](<ARCHIVE_POINTER.md>) | 1檔 | R41 完整歷史位置與恢復方式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R41 Manifest |
-| [README.md](<README.md>) | 1檔 | R41 — 環形知識蒸餾 |
-| [reports/](<reports>) | 2檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 11檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 9檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [selected_checkpoint/](<selected_checkpoint>) | 1檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [tests/](<tests>) | 4檔 | 原檢查程式；不是研究結果本身 |
+用兩個凍結的老師模型在訓練時分別牽引環形與顯微樣本，能不能讓環形行為回到 COMBO 附近，同時保住 R40 的顯微清晰度？
 
-## 必要來源與取得界線
+## 怎麼做
 
-COMBO與R40老師、R40平均起點、1200組重播來源。
+- **起點：** R40 的 a045。
+- **環形老師：** 凍結的 COMBO，對環形樣本做輸出牽引（知識蒸餾）。
+- **顯微老師：** 凍結的 R40 端點，對顯微樣本做輸出牽引。
+- **形狀：** 用乾淨答案訓練，不做蒸餾。
+- **訓練包：** 1,200 對 = 700 環形 + 250 形狀 + 250 顯微；另有 100 對顯微驗證集。
+- **訓練：** 30 輪，學習率 8×10⁻⁶。
+- **事先寫定的門檻：** 外部 8px ≤ 0.159、0.8px ≤ 0.141、0.08px ≤ 0.107；顯微 PSNR ≥ 26.0、高頻保留 ≥ 0.30。本地環形守門沒過，就不送外部。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 結果
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+**顯微能力**（直接訓練的 best）：PSNR 29.46、高頻保留 0.72，大幅超過門檻，也比 R40 的 a045 強。
+
+**本地環形守門**（內部步距標準差，越小越好）：
+
+| 尺度 | COMBO | R41 best | 差 |
+|---|---:|---:|---:|
+| 8px | 0.1389 | 0.1628 | +0.024 |
+| 0.8px | 0.1509 | 0.1652 | +0.014 |
+| 0.08px | 0.1185 | 0.1543 | +0.036 |
+
+**跟 COMBO 做權重平均**：
+
+| α | 顯微 PSNR | 高頻保留 | 環形 | 結果 |
+|---:|---:|---:|---|---|
+| 0.10～0.40 | 23.2～25.7 | 0.23～0.27 | 部分尺度過 | 顯微不夠 |
+| 0.45 | 26.18 | 0.30 | 0.8px、0.08px 不過 | 顯微剛好過，環形不過 |
+| 0.50 | 26.67 | 0.34 | 0.8px、0.08px 不過 | 顯微過，環形不過 |
+
+α 低的時候守得住環形，但能力被稀釋；α 高的時候能力回來了，環形又守不住。**兩條曲線之間沒有交集。**
+
+## 讀這些數字要知道的事
+
+1. **蒸餾本身是有效的。** 它確實保住、甚至加強了 R40 的顯微能力，失敗的是「保能力」和「守環形」沒有共同的通過點。
+2. **沒有外部 GMF 數字。** 因為本地守門沒過，依規則沒有送外部，所以這一輪只有內部的環形數字。
+3. **原報告的下一步建議**是換機制，例如在訓練時就把環形步距當成硬性約束（步距回歸或序列損失），而不是只靠老師牽引或事後平均。之後的 R42 先改成直接提升顯微邊界，R44 才直接約束結構隨已知位移正確移動。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 訓練紀錄、權重平均摘要 | 本資料夾 [results/](<results>)，已在 GitHub |
+| 代表模型（`best_tradeoff`，約 50 MB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，取回要下載約 1.5 GB；說明見 [selected_checkpoint/](<selected_checkpoint/README.md>) |
+| 訓練與評估程式 | 本資料夾 [scripts/](<scripts>)：`launch_r41.py`、`run_r41_micro_recon.py`、`run_r41_ring_guard.py`、`run_r41_weight_sweep.py` |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：**
+>
+> - **完整歷程在原電腦的 H 槽。** 2026-08-01 把整個實驗資料夾、30 輪訓練與權重、R41 專用訓練資料封存到 H 槽，見[封存紀錄](<ARCHIVE_POINTER.md>)。
+> - **R41 專用的訓練資料不在雲端**（GitHub 和 Release 都沒有），要用 `launch_r41.py --build-data` 從 R40 與早期環形資料重新組出來。
+
+## 原始報告
+
+| 報告 | 什麼時候讀 |
+|---|---|
+| [R41 結果](<reports/R41_RESULTS.md>) | 完整執行紀錄、逐類顯微指標、守門與權重平均 |
+| [外部 GMF 紀錄](<reports/R41_EXTERNAL_COMPARE.md>) | 為什麼沒有送外部 |
+| [原始說明](<README.md>) | 假說、設計、門檻與升級規則，原文保留 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R41_RingDistillation.md>)。
+
+## 資料夾裡有什麼
+
+| 位置 | 內容 |
+|---|---|
+| [reports/](<reports>) | 結果與外部紀錄 |
+| [results/](<results>) | 訓練紀錄、短測、權重平均（含高 α 診斷） |
+| [scripts/](<scripts>) | 資料、訓練、重建、守門、權重平均與外部解析 |
+| [selected_checkpoint/](<selected_checkpoint/README.md>) | 代表模型的說明 |
+| [tests/](<tests>) | 單元測試 |
+| [ARCHIVE_POINTER.md](<ARCHIVE_POINTER.md>) | H 槽完整封存的位置 |
+| [MANIFEST.md](<MANIFEST.md>) | 研究保存清單 |
