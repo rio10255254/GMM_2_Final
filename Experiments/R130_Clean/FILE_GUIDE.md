@@ -1,50 +1,60 @@
-# main/R130_Clean：檔案怎麼找
+# R130 Clean：拿掉光學與放大，改成原尺寸的純神經模型
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R130_Clean.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [對照的 R129](<../R129_OpticalPriorHybrid/FILE_GUIDE.md>) · [同編號的另一件事：乾淨重訓 V42](<../R130_CleanV42Comparison/FILE_GUIDE.md>) · [930 張重拍的量測做法 R136](<../R136_PIRepeatability/FILE_GUIDE.md>)
 
-**研究問題：移除光學與放大，採原尺寸純神經模型。**
+**一句話：** 2026-09-20 依使用者規格做的對照：完全關掉 PSF（沒有光學核、沒有 FFT、沒有候選選擇），64 通道、四次共享更新，全程維持原尺寸，最後只在原圖上加受限的累積殘差。從零訓練 8,192 次，然後用 930 張 30 次重拍的原尺寸影像，跟 R129 走完全相同的 ACM、最大梯度、LSC、PI 與 SEM 讀法。結果是：位移穩定度跟 R129 幾乎一樣，速度快很多，但尺寸偏大的問題還在。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**（快速、來源乾淨的純神經版本；位移與 R129 相近，尺寸偏大仍在） |
+| 時間 | 2026-09-20 |
+| 實驗條件 | 訓練用程式資料：R128 的 512／128／128 母場景（只取 source、noiseless、target 陣列）；評估用 D：均華 20× 物鏡加 PI 位移台的 930 張（30 次掃描 ×31 張），以及九顆柱的 SEM 對照 |
+| 起點 | 隨機初始化 |
 
-## 先讀原文件
+這跟 9/13 的 [R130（乾淨重訓 V42）](<../R130_CleanV42Comparison/FILE_GUIDE.md>) 是兩件不同的事，只是共用編號。
 
-- [R130-Clean 完整結果](<reports/R130_CLEAN_RESULTS.md>)
-- [R130-Clean 訓練來源](<reports/TRAINING_PROVENANCE.md>)
+## 結果
 
-## 進入實際檔案
+**位移（930 張，對 PI 讀值的差，nm）：**
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [compare_measurements.py](<compare_measurements.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [config/](<config>) | 6檔 | 實驗設定、條件與來源鎖定 |
-| [config_r130_clean.yaml](<config_r130_clean.yaml>) | 1檔 | 設定／清單／數值紀錄；依欄位判讀 |
-| [dataset_r130_clean.py](<dataset_r130_clean.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [DELIVERY.md](<DELIVERY.md>) | 1檔 | R130-Clean 完整交付入口 |
-| [evaluate_generated.py](<evaluate_generated.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluate_real_measurement.py](<evaluate_real_measurement.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation>) | 70檔 | 量測介面、固定參照、設定或比較內容 |
-| [infer_r130_clean.py](<infer_r130_clean.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses_r130_clean.py](<losses_r130_clean.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R130-Clean 執行入口 |
-| [model_r130_clean.py](<model_r130_clean.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 3檔 | 光學計算與配套 |
-| [preflight_check.py](<preflight_check.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [profile_r130_clean.py](<profile_r130_clean.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [README.md](<README.md>) | 1檔 | R130-Clean 原尺寸從零訓練 |
-| [reports/](<reports>) | 8檔 | 原報告、計畫、審查與各階段結論 |
-| [requirements.txt](<requirements.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [results/](<results>) | 13檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [runs/](<runs>) | 1檔 | 各次執行的紀錄或完成證據；不憑資料夾名認定已完成 |
-| [scripts/](<scripts>) | 3檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [START_R130.cmd](<START_R130.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [train_r130_clean.py](<train_r130_clean.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [write_report.py](<write_report.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
+| 方法 | 短步平均差 | 短步重拍 | 短步最大差 | 距起點平均差 |
+|---|---:|---:|---:|---:|
+| Raw | 8.167 | 9.725 | 39.30 | 19.08 |
+| R129 | 4.125 | 4.251 | **16.87** | 17.99 |
+| R130 Clean | **4.121** | **4.184** | 20.41 | **17.95** |
 
-## 必要來源與取得界線
+短步平均跟 R129 只差 0.004 nm，區塊分組的範圍都包含零，應解讀為相近。
 
-768來源的精確白名單、固定最後模型與量測設定。
+**尺寸與輪廓：**
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 方法 | 尺寸重拍波動 | 輪廓重拍波動 | SEM 平均直徑偏大 |
+|---|---:|---:|---:|
+| Raw | 32.75 nm | 63.76 nm | 185.2 nm |
+| R129 | 19.23 nm | 18.44 nm | 224.5 nm |
+| R130 Clean | **16.42 nm** | 18.58 nm | 219.4 nm |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+**速度：** 完整 1544×2064 影像，純神經推論約 1.38 秒（含讀寫約 1.87 秒）；R129 歷史紀錄含讀寫約 11.2 秒。切塊模式（512 核心、96 周邊）約 2.6 秒，與整張輸出最大差 1.5×10⁻⁷。
+
+## 讀這些數字要知道的事
+
+1. **拿掉光學路徑並沒有讓尺寸偏大自然消失**（只少約 5 nm），但這次同時改了很多東西，不能當成 PSF 單項的因果實驗。
+2. **SEM 的柱子方向對應還沒唯一確認**，所以兩種方向候選都列出；去尺寸形狀差在方向 1 改善、方向 2 退步，不能挑有利方向說全面改善。
+3. **930 張是已用過的資料**，不是新的未知樣本；PI 位移台讀值是外部參照，R136 定義了這套量法。
+4. `results/reconstruction` 在原電腦上是連到 H 槽的連結，930 張重建放在 H 槽。
+
+## 拿資料與重做
+
+`START_R130.cmd` 或 `scripts/launch_r130.py` 會先檢查資料與前置再訓練，最後跑 930 張驗證；單圖推論是 `infer_r130_clean.py --checkpoint runs/formal_8192/checkpoints/step08192.pth --input <影像> --output <輸出.npz> --mode full`。
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 模型、訓練、推論、評估程式與設定 | 本資料夾，已在 GitHub |
+| 原圖九顆柱的基準圓心、比較結果摘要 | `evaluation/`、`results/`，已在 GitHub |
+| 9/20 的論文交接資料 | [`Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920/`](<../../Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920>) |
+| 權重、930 張重建 | 見下方說明 |
+
+> 權重與大型輸出的位置：查 `python Tools/cloud_locator.py where Experiments/R130_Clean/<路徑>`。
+
+## 原始報告
+
+[完整結果](<reports/R130_CLEAN_RESULTS.md>)（含獨立複核後的決斷）、[訓練來源](<reports/TRAINING_PROVENANCE.md>)、[README](<README.md>)、[交付說明](<DELIVERY.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R130_Clean.md>)。
