@@ -26,7 +26,7 @@
 ## 讀這些數字要知道的事
 
 1. **銳化變好不等於輪廓變準。** IoU 在驗證集甚至比原圖略低，質心幾乎沒變；R108E 因此改成直接監督輪廓。
-2. **結果摘要只在原電腦上**（`results/summary.json`，約 13 KB），還沒放回 GitHub；上面的數字是從那份讀的。
+2. **結果摘要不在 GitHub 程式樹上**（`results/summary.json`，約 13 KB），在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡（所在附件約 1.1 GB）；上面的數字是從那份讀的。
 
 ## 拿資料與重做
 

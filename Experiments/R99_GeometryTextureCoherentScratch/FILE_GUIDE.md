@@ -26,7 +26,7 @@
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-> **目前的限制：** 權重、訓練紀錄與加速測試只在原電腦上。
+> **目前的限制：** 正式與短測的權重、訓練紀錄和一份 ONNX 預檢模型不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；即時驗證輸出（`results/real_live_validation/`、`synthetic_live_validation/`）只在原電腦上。
 
 ## 原始報告
 

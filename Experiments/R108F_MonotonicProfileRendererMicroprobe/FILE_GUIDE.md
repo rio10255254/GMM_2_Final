@@ -23,7 +23,7 @@
 ## 讀這些數字要知道的事
 
 1. **質心誤差變小了**，但輪廓重疊和改善比例都退步；R108G 接著把「位置」和「寬度」拆成兩個動作。
-2. **結果摘要只在原電腦上**（`results/summary.json`，約 15 KB）。
+2. **結果摘要不在 GitHub 程式樹上**（`results/summary.json`，約 15 KB），在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡。
 
 ## 拿資料與重做
 

@@ -31,7 +31,7 @@
 
 ## 拿資料與重做
 
-本資料夾的程式已在 GitHub。各報告的原始表格與對照影像約 215 MB，只在原電腦上。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+本資料夾的程式已在 GitHub。各報告的原始表格（CSV、JSON，約 12 MB）不在程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；對照影像（約 250 MB）只在原電腦上。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
 ## 原始報告
 

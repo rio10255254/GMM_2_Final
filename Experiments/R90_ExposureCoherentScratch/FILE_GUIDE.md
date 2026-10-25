@@ -37,7 +37,7 @@
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-> **目前的限制：** 合成資料、封存集、權重與 ONNX 只在原電腦上；早停比較與確認的文字結論只寫在 README 與 MANIFEST，沒有獨立報告。
+> **目前的限制：** 合成資料、封存集影像與 ONNX 只在原電腦上；正式與短測的權重和封存集評估結果不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；早停比較與確認的文字結論只寫在 README 與 MANIFEST，沒有獨立報告。
 
 ## 原始報告
 

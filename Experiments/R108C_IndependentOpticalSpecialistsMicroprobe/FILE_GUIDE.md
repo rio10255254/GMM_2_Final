@@ -34,7 +34,7 @@
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-> **目前的限制：** 部分子實驗的摘要（直接邊緣紋理探針、R79 SEM 動作分解、實拍位移）與約 1.5 GB 的影像輸出只在原電腦上。
+> **目前的限制：** 子實驗的摘要與表格（直接邊緣紋理探針、R79 SEM 動作分解、實拍位移等，約 50 MB）不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；約 1.5 GB 的影像輸出與 `data/specialist_data.npz` 只在原電腦上。
 
 ## 原始報告
 

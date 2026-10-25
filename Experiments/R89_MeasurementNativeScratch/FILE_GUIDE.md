@@ -45,7 +45,7 @@
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-> **目前的限制：** 合成資料、封存集與權重只在原電腦上。
+> **目前的限制：** 合成資料與封存集影像只在原電腦上。正式與短測的權重、封存集評估結果（`reports/final_validation/`）不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡。
 
 ## 原始報告
 

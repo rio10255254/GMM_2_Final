@@ -58,7 +58,7 @@ V42 在 50× 柱上 CD 跟原圖幾乎一樣，但門檻敏感區間窄了 71%�
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-> **目前的限制：** 兩個對照模型的權重與重建影像只在原電腦上。
+> **目前的限制：** 兩個對照模型（EDSR、NAFNet）的權重不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；重建影像只在原電腦上。
 
 ## 原始報告
 

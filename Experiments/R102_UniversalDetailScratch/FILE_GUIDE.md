@@ -19,7 +19,7 @@
 
 ## 讀這些數字要知道的事
 
-1. **停止紀錄與塌縮診斷只在原電腦上**（`reports/USER_STOP_AND_IDENTITY_COLLAPSE_20260815.json`、`deep_identity_collapse.json` 等五個小 JSON，共約 31 KB），還沒放回 GitHub；上面的數字是從那兩份讀的。
+1. **停止紀錄與塌縮診斷不在 GitHub 程式樹上**（`reports/USER_STOP_AND_IDENTITY_COLLAPSE_20260815.json`、`deep_identity_collapse.json` 等五個小 JSON，共約 31 KB），在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡（要下載的附件約 2 GB）；上面的數字是從那兩份讀的。
 2. **不續訓、另開新實驗。** 停止紀錄寫明替代方式是新的隔離實驗與隨機初始化，也就是 R103。
 3. 診斷程式 [analysis/deep_identity_collapse.py](<analysis/deep_identity_collapse.py>) 在 GitHub 上。
 

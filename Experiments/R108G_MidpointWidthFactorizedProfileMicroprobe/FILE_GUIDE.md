@@ -28,7 +28,7 @@
 
 1. **偵測器分辨「需不需要修」的能力仍弱**：「不修改」影像的需求值 0.116、退化影像 0.207，差距只有 0.092。
 2. **封存資料上的 IoU 仍比 R108E 低**，所以不是全面勝出；它勝在中心、清楚影像與改善比例的平衡。
-3. **結果摘要與實拍位移摘要只在原電腦上**（`results/summary.json`、`results/real_motion/summary.json`），GitHub 上只有 ACM 參數設定；本機的結果資料夾約 1.1 GB。
+3. **結果摘要與實拍位移摘要不在 GitHub 程式樹上**（`results/summary.json`、`results/real_motion/summary.json`），在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；程式樹上只有 ACM 參數設定。本機的結果資料夾約 1.1 GB，其中影像輸出只在原電腦上。
 
 ## 拿資料與重做
 

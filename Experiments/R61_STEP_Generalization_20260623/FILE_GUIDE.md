@@ -62,7 +62,7 @@ Lab R61 的 v16 在模擬幻影上沒過自己的三道門檻，但在 Step 這�
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-> **目前的限制：** README 提到的 `R61_RUN_INDEX.csv`、`R61_MOVE_MANIFEST.csv`、`R61_FILE_INVENTORY.csv` 不在 GitHub 上；Step 原始影像、重建影像與 GMF 打包資料只在原電腦或外接硬碟上。
+> **目前的限制：** README 提到的 `R61_RUN_INDEX.csv`、`R61_MOVE_MANIFEST.csv`、`R61_FILE_INVENTORY.csv` 不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；Step 原始影像、重建影像與 GMF 打包資料只在原電腦或外接硬碟上。
 
 ## 原始報告
 

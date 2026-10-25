@@ -61,7 +61,7 @@ R75 的泛化問題，主要是資料分布造成的嗎？
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-> **目前的限制：** 5,120 張資料、權重與訓練紀錄只在原電腦上；資料可用 `tools/prepare_dataset.py` 重新產生。
+> **目前的限制：** 5,120 張資料與每 5 輪的中間保存點只在原電腦上；資料可用 `tools/prepare_dataset.py` 重新產生。正式與短測的最終權重、資料清單與訓練紀錄不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡。
 
 ## 原始報告
 

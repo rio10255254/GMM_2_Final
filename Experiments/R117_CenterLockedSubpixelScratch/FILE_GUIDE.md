@@ -47,7 +47,7 @@
 
 本資料夾的資料準備、模型、訓練、切塊推論、訓練前驗證與稽核程式都在 GitHub；執行順序見 [README](<README.md>)。
 
-> **目前只在本機：** 訓練完成稽核 `results/TRAINING_COMPLETION_AUDIT.json`、訓練前因果決策 `reports/CAUSAL_DECISION.json`、正式訓練的權重（第 42 輪約 2.5 MB）與日誌。本卡引用的訓練與因果數字來自這兩份 JSON。
+> **不在 GitHub 程式樹上：** 訓練完成稽核 `results/TRAINING_COMPLETION_AUDIT.json`、訓練前因果決策 `reports/CAUSAL_DECISION.json` 與 `runs/` 下的權重、日誌，放在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡（兩份 JSON 各約 2 KB，但所在壓縮包約 1.15 GB）。幾個短測的中間權重只在原電腦上。本卡引用的訓練與因果數字來自這兩份 JSON。
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 

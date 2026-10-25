@@ -37,7 +37,7 @@ A 本身相對 Raw 仍有輪廓改善（歷史參考 −0.134／−0.127）；D 
 
 本資料夾的模型、訓練、推論、驗證程式，以及結果報告用的三張圖（[results/gallery_v2/](<results/gallery_v2>)）在 GitHub；入口見 [README](<README.md>)。
 
-> **目前只在本機：** `results/` 其餘內容約 64 MB，包括逐筆 SEM 量測 `sem/measurements.csv`（約 0.7 MB）、逐項決策 `assessment/decision.json`、獨立重算核對、有答案影像的逐張結果、控制條件與八組執行紀錄。結果報告裡指向這些檔案的連結寫的是 D 槽絕對路徑，在 GitHub 上點不開。
+> **不在 GitHub 程式樹上：** `results/` 其餘內容（本機約 64 MB），包括逐筆 SEM 量測 `sem/measurements.csv`（約 0.7 MB）、逐項決策 `assessment/decision.json`、獨立重算核對、有答案影像的逐張結果、控制條件與八組執行紀錄，放在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡（單一小檔所在的壓縮包就約 0.7 GB）。另外，結果報告裡指向這些檔案的連結寫的是 D 槽絕對路徑，在 GitHub 上點不開。
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 

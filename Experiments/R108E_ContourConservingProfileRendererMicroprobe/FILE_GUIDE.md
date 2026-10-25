@@ -28,7 +28,7 @@
 
 1. **這組困難資料上原圖本身就有很多結構錯誤**（驗證 113 個），所以「新增結構錯誤」的基準不是零。
 2. **暗環**是 R108F 的說明裡寫的失敗原因；這一輪的資料被 R108F、R108G 逐位元組重用。
-3. **結果摘要只在原電腦上**（`results/summary.json`，約 17 KB）。
+3. **結果摘要不在 GitHub 程式樹上**（`results/summary.json`，約 17 KB），在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡。
 
 ## 拿資料與重做
 
