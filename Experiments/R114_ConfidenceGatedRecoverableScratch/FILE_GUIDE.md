@@ -1,36 +1,48 @@
-# main/R114_ConfidenceGatedRecoverableScratch：檔案怎麼找
+# R114：照 R113 的診斷修控制器與可恢復細節
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R114_ConfidenceGatedRecoverableScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [依據 R113](<../R113_CausalStructureDissection/FILE_GUIDE.md>) · [下一輪 R115](<../R115_R109DecoupledNormalProfileScratch/FILE_GUIDE.md>) · [後來的 R116](<../R116_CoherentGeometryAnchorScratch/FILE_GUIDE.md>)
 
-**研究問題：依R113修復控制塌縮與可恢復細節。**
+**一句話：** R113 列出 R109 的幾個問題：控制器死掉、訓練母體失衡、清楚與退化樣本的梯度衝突、寬度只用純量監督、會補出不可恢復的細節。R114 是一整串從零的探針，2026-08-31 一路做到 R114E：控制器修好了（邊界判斷 AUC 0.998），第 20 輪的幾何保存點在 R73 上全部改善；但後面加上的「邊界剖面動作」怎麼訓練都會把結果弄壞，最後證明分支隔離是必要且有效的，可是局部選擇器分辨不出修正是好是壞。沒有產生新的正式模型。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（證明分支隔離必要且有效，但局部選擇器分辨不出修正好壞，沒有產生新的正式模型） |
+| 時間 | 2026-08-31 |
+| 實驗條件 | 程式資料：R109 的 5,000＋512 張唯讀重用，替換 240 張過多的密集或簡單樣本（新增相鄰對、窄間隙、微缺口、粗糙、極薄環） |
+| 起點 | 每個探針都隨機初始化 |
 
-## 先讀原文件
+## 一步一步發生了什麼
 
-- [R114 執行紀錄與目前決策](<reports/R114_EXECUTION_LEDGER_ZH.md>)
+| 階段 | 結果 |
+|---|---|
+| 控制器探針 1 | 邊界 AUC 0.998，控制器不再死；但密集陣列的 AUC 只有 0.523，「不修改」影像的需求值過高 |
+| 控制器修復 | 修正密集與可見度的答案、需求角色平衡；六項可行性證據都通過，才准進幾何 |
+| 幾何探針 E20 | R73 邊界距離 −27.5%、五類全部改善；R74 IoU +0.0026 但邊界距離 +0.87%（混合結果） |
+| 固定解析剖面動作的上限 | 不更新權重的解析剖面動作，邊界淡化 −88.6%、混合困難 −91.8%；只授權去學這個動作 |
+| R114B（28 輪） | 開啟剖面動作後驗證誤差退步 2.8%，動作方向正確率只有 34.8% |
+| R114C（修四個錯，再從零 24 輪） | E20 保住；E24 剖面節點讓 R73 邊界距離 +83.7%，明確淘汰 |
+| R114D（凍結提案，只訓練選擇器） | 選擇器幾乎全關（啟用 0.25%），能避錯但釋放不了容量；還發現共享主幹被剖面訓練污染 |
+| R114E（兩個來源完全凍結再組合） | 選擇器為 0 時輸出與 E20 逐位元相同；學到的選擇器 AUC 0.520，沒有一致超越 E20 |
 
-## 進入實際檔案
+## 讀這些內容要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 5檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 1檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R114_ConfidenceGatedRecoverableScratch 研究保存清單 |
-| [model/](<model>) | 9檔 | 本輪模型程式 |
-| [probes/](<probes>) | 43檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [README.md](<README.md>) | 1檔 | R114 Confidence-Gated Recoverable MOSR |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 25檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 9檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [training/](<training>) | 13檔 | 訓練程式與配套 |
-| [validation/](<validation>) | 18檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+1. **R114B 的失敗有四個工程原因**：剖面主幹沒被優化器更新、訓練用真值距離座標而推論用預測座標、可見度過度開啟、損失沒有直接評估最終輸出。R114C 修好後，剖面參數的預測明顯進步（對比 Spearman 0.70），方向正確率仍只有 44%。
+2. **主要瓶頸是「何時、何處、做多少」，不是動作空間本身。** 用針對當下提案的正確選擇，E24 的剖面可以把誤差從 0.02652 降到 0.02525。
+3. **共享主幹污染：** R114C 的剖面訓練也改動了寬度與位移頭用的特徵，所以 E24 的幾何基底已不是 E20 那個安全版本。下一個架構必須讓幾何在 E20 後可以完全凍結。
+4. **大圖切塊的根因：** 整張與切塊的大差異只在影像外框，原因是分層反射填充與一次外框填充的語意不同，不是接縫；正式規定切塊輸出是唯一標準輸出。
+5. **唯一可保留的權重是 R114C 的 E20 幾何保存點**，其他保存點都不能升為正式或交付版本。
 
-## 必要來源與取得界線
+## 拿資料與重做
 
-組成感知資料清單、控制／幾何／細節各探針及正式紀錄。
+本資料夾的資料準備、模型、訓練、驗證、探針程式與 PowerShell 入口都在 GitHub。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 原始報告
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 文件 | 內容 |
+|---|---|
+| [執行紀錄](<reports/R114_EXECUTION_LEDGER_ZH.md>) | 先讀這份：從資料修正到 R114E 的每一步與最後保留的結果 |
+| [閘門設計診斷](<results/geometry_probe/E020/gate_design_diagnosis/DIAGNOSIS_AND_EXECUTABLE_DESIGN_ZH.md>) | E20 幾何的因果拆解 |
+| [E24 失敗診斷](<results/split_profile_probe/E024_failure_diagnosis/DIAGNOSIS_ZH.md>)、[E24 深層失敗診斷](<results/split_profile_repair/E024_deep_failure_diagnosis/DIAGNOSIS_ZH.md>) | R114B、R114C 為什麼失敗 |
+| [R114D 合約](<probes/r114d_action_selector/CONTRACT.md>)、[R114E 合約](<probes/r114e_decoupled_hybrid/CONTRACT.md>) | 兩個短探針的設計 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R114_ConfidenceGatedRecoverableScratch.md>)。
