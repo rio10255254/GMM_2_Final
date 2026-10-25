@@ -80,7 +80,7 @@ COMBO 的擬合殘差在三個尺度、內外邊界上都是當時的歷史最�
 
 > **目前的缺口與限制：**
 >
-> - **ONNX 模型檔還沒上雲端。** 公司包裡的 `model/geoedge_combo_body.onnx`（約 16 MB）不在 GitHub，也不在任何 Release，目前只存在原電腦上。GitHub 上這個包只有程式與說明。
+> - **ONNX 模型檔不在公司包的位置上。** 公司包裡的 `model/geoedge_combo_body.onnx`（約 16 MB）不在 GitHub 程式樹，GitHub 上這個包只有程式與說明。同內容的檔案在 Release [`research-history-curated-20261022`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-history-curated-20261022) 的 `selected-history-and-deployments.zip` 裡，路徑是 `deployment_graphs/COMBO_company_body/model.onnx`（2026-10-26 展開這個沒有清單的壓縮包後才查到，先前這裡誤寫為「不在任何 Release」）。
 > - **權重很難單獨拿。** COMBO 的訓練資料夾（權重加紀錄）只有約 172 MB，但目前的打包是按檔案大小切分卷，用 `--prefix` 取回會下載 6 個分卷、約 7.6 GB。整理計畫會處理。
 > - **不能保證逐步重訓相同。** 舊的啟動程式依賴共用的 `Model/` 程式，部分歷史執行沒有完整的設定快照，GPU 設定也不固定，所以不能用今天的預設值去重現當年的訓練。見[重做限制](<../../docs/reproducibility/round_source_reviews/BASELINE_20261023.md>)。
 

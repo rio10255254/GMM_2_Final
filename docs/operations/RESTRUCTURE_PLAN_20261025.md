@@ -60,19 +60,17 @@
 | 檔案 | 大小 | 為什麼重要 |
 |---|---:|---|
 | `Experiments/R152_R148v2_SafeAdaptivePSF/runs/formal_8192/checkpoints/deployed_step08192.pth` | 7.1 MB | 論文模型 R152 實拍驗證用的原始保存點（SHA-256 開頭 `17bf7c63`）。雲端有張量完全相同的重新封裝版，但原檔本身不在任何 Release |
-| `_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx` | 16 MB | 實際交給公司的正式基準模型；重新匯出不保證逐位元組相同 |
-| `_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx` | 15 MB | 核准替代 a025 交給公司的 ONNX；同上 |
-| `Experiments/R45_FamilyBoundaryAdapter/results/checkpoints/*.pth` | 各不到 0.1 MB | R45 的四個校正模組權重 |
+| `Experiments/R45_FamilyBoundaryAdapter/results/checkpoints/r45_oracle_adapter_large_mixed{,_s04,_s08,_s12}.pth` | 共約 0.2 MB | R45 的四個校正模組權重（同資料夾的 `_latest` 與兩個短測權重已在 Release） |
 | `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/{external,shape,micro}_recon/a025/` | 約 700 MB | 核准替代 a025 送外部 GMF 的重建影像與形狀／顯微重建 |
-| `Experiments/R136_PIRepeatability/output/*.zip`（3 個閱讀包） | 約 89 MB | R136 原報告引用的結果包 |
-| `Experiments/R153_MeanExternalBenchmark/reports/*.zip`（2 個交接包） | 約 4.5 MB | 論文交接包 |
+| `Experiments/R136_PIRepeatability/output/*.zip`（10 個閱讀包與圖表包） | 約 489 MB | R136 原報告引用的結果包；git 上已有展開後的內容，ZIP 本身是否另存需先比對內容 |
+| `Experiments/R153_MeanExternalBenchmark/reports/*.zip`（5 個交接包） | 約 8 MB | 論文交接包 |
 | `Deliverables/R152_Standalone_20261004.zip`、`R152_Standalone_ImageFiles_20261004.zip` | 約 760 MB | 打包好的 R152 獨立包；程式已在 git、模型已在 Release，zip 本身可能不必另存，需先確認內容都有著落 |
 
-這只是「原始報告有連結到」與寫閱讀卡時查到的部分。整個原電腦約 1 TB 的完整盤點，用 `Tools/cloud_locator.py scan` 另外做。
+這只是「原始報告有連結到」與寫閱讀卡時查到的部分。2026-10-26 已用 `Tools/cloud_locator.py` 掃完整個專案（約 315 萬個檔）並展開所有沒有清單的 Release 附件後重驗：上表各列仍成立；原本列在表內的 COMBO 與 a025 兩個 ONNX 其實在雲端（見下一段），已移出本表。全專案只在本機的檔約 208 萬個、1,019 GB，絕大多數是 BMP 原拍與重建、NPZ／NPY 陣列與中間保存點；2 MB 以下的文字結果表只有約 3,400 個、共 26 MB，集中在 `PSF_Fitting`、R129、R136、`Thesis_MOSR_Evidence/Data_Reports`。
 
 **寫閱讀卡時發現的另一類缺口：** 有些輪次的結果檔在 Release 裡，但不在 GitHub 程式樹（有些是 2026-10 從主版本移出、只留在 git 歷史），所以報告與閱讀卡提到的數字在 GitHub 上點不到出處。目前查到的有：R148v2 的 12 模型比較表與最終稽核（R148v2 也沒有寫最終結果報告）、R43 的分數表、R44 的總表與分族診斷、R45 的縮放掃描與 R45B／R45C 逐塊表。這些多半是小型 CSV／JSON，適合直接補回 git（見下方 E2）。寫第六、七階段閱讀卡時又找到幾批，**原本以為只在原電腦上，2026-10-25 用 cloud_locator 逐檔查過，其實都在 Release `research-results-models-20261016` 的壓縮包裡**，只是不在程式樹上，讀者要下載 1～4 GB 的附件才拿得到一個幾 KB 的檔：R102 的停止與塌縮診斷（`reports/*.json`，五個共約 31 KB）、R108A／R108C～R108G 的結果摘要與表格、R117 的訓練完成稽核與因果決策、R120 的 `results/`（約 0.5 MB；MANIFEST 指向的 `reports/R120_RESULTS.md` 從沒寫出來）、R121 的決策與 SEM 量測表、R122 的 V42 來源追查逐筆表（約 3.6 MB，論文相關）、R123 的真實來源清單與重算表；另外 R61_STEP 的三份清單、R75v2／R79／R81／R88～R91／R99 的正式權重、LabSystem Modern_Restoration 的兩個對照模型權重也是同一類。這些閱讀卡已在 2026-10-25 改正說法（先前十七處寫成「只在原電腦上」）。小型表格適合直接補回 git（E2）；權重留在 Release，但 E1 重新打包時應讓單一輪次能單獨下載。
 
-**還有一類是「在雲端，但不在讀者會找的位置」。** 例如 R79 的交付模型 `Deliverables/MOSR_ONNX/model.onnx`（15.4 MB）在交付包的路徑上沒有上傳，同內容的檔案卻在 `research-fixed-models-006.zip` 裡、掛在 R84 結案時解壓驗證的副本路徑下。檔案沒丟，但只看交付包的人會以為缺件。`cloud_locator.py scan` 的 `release-other-path` 狀態就是在找這一類；E3 補件時，這種小而重要的交付檔適合直接放回原位置。
+**還有一類是「在雲端，但不在讀者會找的位置」。** 例如 R79 的交付模型 `Deliverables/MOSR_ONNX/model.onnx`（15.4 MB）在交付包的路徑上沒有上傳，同內容的檔案卻在 `research-fixed-models-006.zip` 裡、掛在 R84 結案時解壓驗證的副本路徑下。檔案沒丟，但只看交付包的人會以為缺件。**COMBO 與 a025 交給公司的兩個 ONNX**（`_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx`、`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx`，各約 16 MB）也是同一類：內容在 Release `research-history-curated-20261022` 的 `selected-history-and-deployments.zip` 裡（`deployment_graphs/COMBO_company_body/model.onnx`、`deployment_graphs/R39R40_a025_company_body/model.onnx`）。那個壓縮包沒有清單，2026-10-26 用 `cloud_locator.py build --with-zips` 展開後才查到。`cloud_locator.py scan` 的 `release-other-path` 狀態就是在找這一類；E3 補件時，這種小而重要的交付檔適合直接放回原位置。
 
 **寫閱讀卡時發現的跨輪閱讀陷阱：** 7 月的位移稽核工具把候選欄固定命名為「V42」，後來 Base U-Net、R63 等重用它時，報告寫的「V42」其實是各自的候選（已在時間線開頭加註）；R64 換量法重算後 R63 的消融結論改變；R80、R81 的轉折點量法下 50× CD 原圖比所有模型都好。這些都寫進了對應的閱讀卡，引用數字時要連量法一起說。
 
