@@ -1,32 +1,36 @@
-# legacy/round19：檔案怎麼找
+# Round 19 ABSANCHOR：直接錨定絕對中心（否定性驗證）
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round19.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 18](<../round18/FILE_GUIDE.md>) · [下一輪 Round 20](<../../organized_20260314/round20/FILE_GUIDE.md>)
 
-**研究問題：絕對位置錨定假說。**
+**一句話：** 2026-03-13 晚間，想用新增的 `SEQ_ABS_CENTER_WEIGHT`（`abs_center`）直接對準絕對中心誤差，突破 Round 18 留下的 0.8 px 中心平台。四個候選選了 `r19_abs_anchor`：步長誤差依舊安全，但 0.8 px 中心誤差沒有突破（約 0.8560）。結論是這種注入方式沒有形成足夠有效的新梯度方向。沒通過內部關卡，也沒進外部 GMF。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（否定性驗證：直接加這版絕對中心錨定解決不了主瓶頸） |
+| 時間 | 2026-03-13 晚間 |
+| 實驗條件 | A：環形影像三個尺度（0.08、0.8、8 px）的內部序列評分；沒有外部 GMF |
+| 起點 | Round 18 的路線 |
 
-## 先讀原文件
+## 結果
 
-- [ROUND19_ABSANCHOR Checkpoint Audit Summary](<selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_SUMMARY_20260313_190541.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_abs_anchor_20260313_190541.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_abs_only_20260313_190541.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_abs_strong_20260313_190541.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_af_abs_20260313_190541.md>)
-- [ROUND19_ABSANCHOR Multiscale Summary](<selected/reports/ROUND19_ABSANCHOR_MULTISCALE_SUMMARY_20260313_190541.md>)
+依批次 README，選中的 `r19_abs_anchor`：0.8 px 中心誤差約 0.8560、0.8 px 步長誤差約 0.2789、8 px 步長誤差約 0.0289。
 
-## 進入實際檔案
+| 候選 | 綜合分數 | 部署分數 |
+|---|---:|---:|
+| **r19_abs_anchor** | 348.672 | −110.006 |
+| r19_abs_strong | 348.638 | −110.006 |
+| r19_af_abs | 348.403 | −110.006 |
+| r19_abs_only | 348.403 | −110.006 |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | round19 — Mainline Round Manifest |
-| [README.md](<README.md>) | 1檔 | round19 — ABSANCHOR Falsification Round |
-| [selected/](<selected>) | 12檔 | 歷史選定內容；不代表今日正式採用 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **四個候選的部署分數完全相同**（−110.006，都選 0.08 px 保存點），表示這次改動在部署層面幾乎沒有分出差別。
+2. 部署分數 −110 比 Round 18 的 −112 略好，但關鍵的 0.8 px 中心誤差沒有突破，所以不升級。
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+## 拿資料與重做
 
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
+可重做程度：**partial**，應當成歷史否定性輪次讀，不是可直接重跑的包。選定種子 `selected/current_absanchor_seed.json`（不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡）。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 原始報告
+
+[多尺度摘要](<selected/reports/ROUND19_ABSANCHOR_MULTISCALE_SUMMARY_20260313_190541.md>)、[檢查點稽核摘要](<selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_SUMMARY_20260313_190541.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round19.md>)。
