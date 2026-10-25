@@ -200,7 +200,7 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 |---|---|---|
 | R88 | 修 R87 的紋理與邊界，加入實際量測約束 → **中止**：停在第 87 輪 | [R88](../../Experiments/R88_MeasurementFaithfulScratch/FILE_GUIDE.md) |
 | R89 | 拿掉輸出信心閘，直接學有界重建，從零 100 輪 → **未採用**：合成資料上位移誤差減半，但處理過度激進，清楚影像出現假邊界，真實 SEM 輪廓退步 | [R89](../../Experiments/R89_MeasurementNativeScratch/FILE_GUIDE.md)、[最終驗證](../../Experiments/R89_MeasurementNativeScratch/reports/final_validation/R89_FINAL_VALIDATION_TW.md) |
-| R90 | 讓同一物體在四種曝光下保持相同輪廓 → **中止**：停在第 55 輪 | [R90](../../Experiments/R90_ExposureCoherentScratch/FILE_GUIDE.md) |
+| R90 | 讓同一物體在四種曝光下保持相同輪廓 → **中止**：停在第 55 輪；事後比較留第 45 輪作研究與 ONNX 可行性候選，第 50 輪起 5× 出現黑邊 | [R90](../../Experiments/R90_ExposureCoherentScratch/FILE_GUIDE.md) |
 | R91 | 分開紋理恢復與輪廓／曝光約束 → **研究候選**：訓練完成，但清楚的輸入也會被改動，結構錯誤仍多 | [R91](../../Experiments/R91_DetailDecoupledScratch/FILE_GUIDE.md) |
 | R92 | 補足物理邊緣過渡與平衡曝光取樣 → **研究候選**：成為 R99、R100、R102～R104 的共用資料基礎 | [R92](../../Experiments/R92_PhysicalTransitionBalancedScratch/FILE_GUIDE.md) |
 | R93 | 拆開可恢復細節與清楚輸入的保護 → **研究候選**：停在第 60 輪，資料被 R94～R98 共用 | [R93](../../Experiments/R93_RecoverableDetailSeparatedScratch/FILE_GUIDE.md) |

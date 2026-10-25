@@ -1,42 +1,58 @@
-# main/R88_MeasurementFaithfulScratch：檔案怎麼找
+# R88：把歷代失敗全部列成清單，再從零訓練一次
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R88_MeasurementFaithfulScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R87](<../R87_TileNativeScratchGeneralization/FILE_GUIDE.md>) · [下一輪 R89](<../R89_MeasurementNativeScratch/FILE_GUIDE.md>)
 
-**研究問題：修復R87紋理與邊界並加入實際量測約束。**
+**一句話：** R88 先把 R39 到 R87 每一輪暴露的問題整理成一份「歷代問題清單」，每個設計都對應一條失敗證據，再完全從隨機權重訓練：答案 8 倍繪製、正負與零位移用相同成像、近原圖資料約束不亂改、修正量受限而且信心不足就保留原圖、大圖推論固定每邊 192 px 上下文。結果模型太保守，對真實 50× 影像幾乎原圖照抄，沒有任何驗證輪次過關，2026-08-11 在第 87 輪停下。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **中止**（停在第 87 輪；保留為失敗案例，不續跑、不當起點） |
+| 時間 | 2026-08-10 啟動，08-11 00:08 停止（最後保存第 85 輪） |
+| 實驗條件 | 純合成：1,280 個正式場景、5,120 個觀察，另有 384 個封存盲測場景 |
+| 起點 | 隨機初始化 |
 
-## 先讀原文件
+## 這輪在問什麼
 
-- [R88 訓練停止紀錄](<reports/R88_ABORTED_AT_E87.md>)
-- [R88 驗收門檻](<reports/R88_ACCEPTANCE_GATES.md>)
-- [R88 完整實驗設計](<reports/R88_EXPERIMENT_DESIGN.md>)
-- [R88 原始研究與設計對照](<reports/R88_LITERATURE_SYNTHESIS.md>)
-- [R88 歷代問題清單](<reports/R88_PROBLEM_LEDGER.md>)
+如果一次就把輪廓、ACM、位移、真實紋理、大圖切塊一致性全部當成要過的門檻，從零訓練能不能同時達到？
 
-## 進入實際檔案
+## 結果：近原圖輸出的根因
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [.gitignore](<.gitignore>) | 1檔 | 原配套檔案 |
-| [archive/](<archive>) | 2檔 | 舊內容及當次封存紀錄 |
-| [config/](<config>) | 4檔 | 實驗設定、條件與來源鎖定 |
-| [inference/](<inference>) | 2檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R88 Manifest |
-| [model/](<model>) | 2檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R88：量測忠實的獨立從零訓練 |
-| [reports/](<reports>) | 5檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 3檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [runs/](<runs>) | 1檔 | 各次執行的紀錄或完成證據；不憑資料夾名認定已完成 |
-| [scripts/](<scripts>) | 12檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 2檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 2檔 | 訓練程式與配套 |
-| [weights/](<weights>) | 1檔 | 模型檔或取得說明；最佳、最後及短測版本需分清 |
+| 訊號 | 數字 |
+|---|---|
+| 第 50 輪對真實 50× 的平均改動 | 0.81 灰階（九顆柱區域最多只改 1 階） |
+| 第 70 輪未經信心限制的候選修正 | 5.76 灰階，最後只保留 42.6% |
+| 第 70 輪合成輪廓 | 比原圖改善 13.5%，但紋理退化 3.2% |
+| 第 70 輪位移誤差 | 預定上限的 4.73 倍 |
+| 位移驗證視圖裡完全沒有前景的 | 8/40 個 |
 
-## 必要來源與取得界線
+診斷列出的原因：模型一開始就被設計成原圖直通、只在有把握時加小修正，不熟悉的影像最安全的答案就是不動；資料完全是程式合成、連允許的匿名光學統計都沒實際導入；部分答案與輸入的差距超過模型允許的最大修正；位移裁切常常沒有前景；同一個模型同時承受太多互相拉扯的目標。
 
-獨立生成配方、實際87輪歷程、被保留模型與封存確認狀態。
+## 讀這些內容要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **歷代問題清單本身很有價值。** 它用已完成的報告數字，整理了 R39～R87 每一類失敗，是讀第五、六階段的好入口。
+2. **驗收門檻是事先鎖定的**（`config/acceptance_gates.json`，人讀版在 [R88_ACCEPTANCE_GATES.md](<reports/R88_ACCEPTANCE_GATES.md>)），包括參考圓量法下要達到 R81 的最佳值。
+3. **真實 50× 位移的中途診斷**只是探索，不參與選模；外部 GMF 當時沒有授權，用類似原理的區域圖樣對齊代替，不能稱為外部 GMF 分數。
+4. 原首頁停留在啟動時的狀態，2026-10-21 才改成正確的停止狀態；修正前的原文另有保存。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 鎖定的設計、門檻、授權與實作雜湊；模型、訓練、推論、資料生成程式 | 本資料夾 [config/](<config>)、[model/](<model/README.md>)、[training/](<training/README.md>)、[inference/](<inference/README.md>)、[scripts/](<scripts/README.md>)，已在 GitHub |
+| 診斷與中途位移報告 | [results/](<results/README.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 合成資料與權重只在原電腦上。
+
+## 原始報告
+
+| 文件 | 什麼時候讀 |
+|---|---|
+| [歷代問題清單](<reports/R88_PROBLEM_LEDGER.md>) | 想快速知道 R39～R87 各自錯在哪 |
+| [實驗設計](<reports/R88_EXPERIMENT_DESIGN.md>)、[文獻整理](<reports/R88_LITERATURE_SYNTHESIS.md>)、[驗收門檻](<reports/R88_ACCEPTANCE_GATES.md>) | 設計與事先鎖定的門檻 |
+| [近原圖輸出的根因診斷](<results/diagnosis_near_identity_behavior/DIAGNOSIS_zh-TW.md>) | 為什麼模型幾乎不改原圖 |
+| [真實 50× 1 µm 位移中途診斷](<results/exploratory_real_motion_x1um/REPORT_zh-TW.md>) | 第 50、70 輪對原圖的位移比較 |
+| [停止紀錄](<reports/R88_ABORTED_AT_E87.md>) | 停止時間與理由 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R88_MeasurementFaithfulScratch.md>)。
