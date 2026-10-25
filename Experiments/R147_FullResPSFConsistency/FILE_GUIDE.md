@@ -40,7 +40,7 @@
 
 ## 拿資料與重做
 
-原尺寸 PSF 運算先通過了[物理檢查](<results/native_psf_operator_validation.json>)（跟獨立卷積的最大差低於 10⁻⁶、平坦亮度不變、中央點留在中央）。訓練與結果透過 `runs/formal_8192/`、`results/` 連到 H 槽。
+原尺寸 PSF 運算先通過了物理檢查（`results/native_psf_operator_validation.json`，不在 git 樹上）：跟獨立卷積的最大差低於 10⁻⁶、平坦亮度不變、中央點留在中央。訓練與結果透過 `runs/formal_8192/`、`results/` 連到 H 槽。
 
 > 權重、930 張重建與內部診斷數值表：查 `python Tools/cloud_locator.py where Experiments/R147_FullResPSFConsistency/<路徑>`。
 
