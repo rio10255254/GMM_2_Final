@@ -1,38 +1,32 @@
-# legacy/organized_20260309：檔案怎麼找
+# 2026-03-09 批次：第一次外部 GMF 驗證，以及 R5～R6
 
-[本輪研究卡](<../../docs/reproducibility/experiments/legacy__organized_20260309.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [早期輪次對照](<../../docs/reproducibility/lineage/EARLY_ROUNDS.md>) · [前一個批次 3/07](<../organized_20260307/FILE_GUIDE.md>) · [下一個批次 3/10](<../organized_20260310/FILE_GUIDE.md>)
 
-**研究問題：精選seed的外部GMF與視覺比較。**
+**一句話：** 從 3/09 起，外部驗證有了自己的入口。第一份結果是 3/07 種子 `step8_curve_stdguard_v2` 在 NTU Pitch 1 µm（8 px）資料上的外部 GMF：99 個步長的平均 8.021 px、標準差 0.219 px、P05～P95 跨度 0.675 px。之後的 R5（保留外部行為）與 R6（多尺度長跑）也收在這裡；R6 的重要教訓是最後階段的長訓練一再破壞前面的好結果，「訓練更久」不可靠。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（建立外部 GMF 驗證流程與第一份基準；R5、R6 未採用） |
+| 時間 | 2026-03-09～03-10 |
+| 實驗條件 | A：NTU Pitch 1 µm 資料集的外部 GMF（8 px 步長）；R6 另有多尺度內部長跑 |
+| 起點 | 3/07 的 `step8_curve_stdguard_v2` 種子 |
 
-## 先讀原文件
+## 第一份外部 GMF（stdguard_v2，8 px）
 
-- [GMF POSY 步長統計 2026-03-09](<external_validation/current_seed/reports/GMF_POSY_step_stats_current_seed_20260309.md>)
-- [AUTO_TUNE_CHAIN_20260309_EXTVAL](<pending/reports/AUTO_TUNE_CHAIN_PLAN_20260309_EXTVAL.md>)
-- [AutoTune 完成摘要 20260309_173251](<pending/reports/AUTO_TUNE_RESULT_20260309_173251.md>)
-- [AutoTune 完成摘要 20260309_180937](<pending/reports/AUTO_TUNE_RESULT_20260309_180937.md>)
-- [LongRun 結果 auto_tune_report_20260310_002048](<pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_002048.md>)
-- [LongRun 結果 auto_tune_report_20260310_033006](<pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_033006.md>)
+| 項目 | 數值 |
+|---|---:|
+| 步長數 | 99 |
+| 平均步長 | 8.021 px |
+| 標準差 | 0.219 px |
+| P05～P95 跨度 | 0.675 px |
+| 最小／最大 | 7.450／8.623 px |
 
-其餘原報告見[本輪完整研究卡](<../../docs/reproducibility/experiments/legacy__organized_20260309.md>)。
+## 讀這些內容要知道的事
 
-## 進入實際檔案
+1. **步長的正負號**：報告定義 `step_i = POSY(i) − POSY(i+1)`，帶正負號的平均是 −8.021 px。
+2. **R5、R6 的編號是事後從原日誌串回的**，原 profile 名稱含 `extval` 不代表當次取得了新的外部驗收；詳見[早期輪次對照](<../../docs/reproducibility/lineage/EARLY_ROUNDS.md>)。
+3. **大型內容已移到 H 槽**（2026-08-01）：完整 295 個檔、1.72 GiB 在 H 槽快照；D 槽保留外部 GMF 原始與分析結果、視覺比較與精選摘要。恢復方式見 [ARCHIVE_POINTER](<ARCHIVE_POINTER.md>)。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER.md](<ARCHIVE_POINTER.md>) | 1檔 | organized_20260309 完整歷史與恢復方式 |
-| [external_validation/](<external_validation>) | 5檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | organized_20260309 歷史批次清單 |
-| [pending/](<pending>) | 10檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [README.md](<README.md>) | 1檔 | 20260309 測試與外部驗證入口 |
-| [selected/](<selected>) | 5檔 | 歷史選定內容；不代表今日正式採用 |
-| [visual_compare/](<visual_compare>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+## 原始報告
 
-## 必要來源與取得界線
-
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
-
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[外部 GMF 步長統計](<external_validation/current_seed/reports/GMF_POSY_step_stats_current_seed_20260309.md>)、[外部驗證說明](<external_validation/current_seed/README.md>)、`pending/reports/` 下的自動調參與長跑結果、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本批次保存紀錄](<../../docs/reproducibility/experiments/legacy__organized_20260309.md>)。

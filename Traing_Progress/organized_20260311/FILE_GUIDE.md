@@ -1,36 +1,32 @@
-# legacy/organized_20260311：檔案怎麼找
+# 2026-03-11 批次：Round 12～14 的通用多尺度長跑與保存點稽核
 
-[本輪研究卡](<../../docs/reproducibility/experiments/legacy__organized_20260311.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [早期輪次對照](<../../docs/reproducibility/lineage/EARLY_ROUNDS.md>) · [R12～R15 的選擇讀法](<../../docs/reproducibility/legacy_multiscale/README.md>) · [前一個批次 3/10](<../organized_20260310/FILE_GUIDE.md>) · [下一個批次 3/12（R15）](<../organized_20260312/FILE_GUIDE.md>)
 
-**研究問題：Round12長跑、Round13模型審查與Round14走廊檢查。**
+**一句話：** 2026-03-11 的通用（universal）多尺度路線。Round 12 長跑五個候選，選中 `universal_sign_guard`（優先用它的 0.8 px 保存點）；Round 13 改成「家族初排之後，再對固定的單份模型在 0.08／0.8／8 px 三個保存點逐一稽核」，同樣是 `universal_sign_guard` 勝出（部署分數 −87.2，其他候選 −115.8、−121.5）。這一段最重要的發現是：家族初排第一名，不一定是最後該採用的那份模型。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（建立「先初排、再固定模型稽核」的選法；R14 初排第一與最後採用不同） |
+| 時間 | 2026-03-11 |
+| 實驗條件 | A：環形影像三尺度的內部評分；外部重建保存在 H 槽 |
+| 起點 | 當時的訓練線 |
 
-## 先讀原文件
+## Round 12 家族排名
 
-- [Round12 Universal Multiscale Summary](<selected/reports/ROUND12_UNIVERSAL_MULTISCALE_SUMMARY_20260311_023449.md>)
-- [ROUND13_UNIVERSAL Checkpoint Audit Summary](<selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_131800.md>)
-- [ROUND13_UNIVERSAL Checkpoint Audit Summary](<selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_balanced_bridge_20260311_131800.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_clean_anchor_20260311_150225.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_defect_anchor_20260311_150225.md>)
+| 候選 | 0.08 px | 0.8 px | 8 px | 通用分數 |
+|---|---:|---:|---:|---:|
+| **universal_sign_guard** | 16.690 | 21.728 | 22.527 | **38.449** |
+| universal_clean_anchor | 11.358 | 11.358 | 11.358 | 32.477 |
+| universal_defect_anchor | 11.285 | 11.285 | 11.285 | 32.259 |
+| universal_balanced_bridge | 11.285 | 11.285 | 11.285 | 32.259 |
+| universal_macro_lock | 11.327 | 13.408 | 12.950 | 27.762 |
 
-其餘原報告見[本輪完整研究卡](<../../docs/reproducibility/experiments/legacy__organized_20260311.md>)。
+## 讀這些內容要知道的事
 
-## 進入實際檔案
+1. **好幾個候選三個尺度的分數完全一樣**（例如 11.358），表示它們在各尺度選到的是同一份保存點。
+2. **R14 的報告**：README 說保留了 Round 12～14 的報告，但 git 上看得到的是 R12 與 R13；R14 的選擇讀法整理在 [R12～R15 選擇讀法](<../../docs/reproducibility/legacy_multiscale/README.md>)。
+3. **大型內容已移到 H 槽**（2026-08-01）：完整 6,912 個檔、31.6 GiB 在 H 槽快照，D 槽保留 `selected/` 的 60 個精選檔、2 份代表模型與少量紀錄。恢復方式見 [ARCHIVE_POINTER](<ARCHIVE_POINTER.md>)。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER.md](<ARCHIVE_POINTER.md>) | 1檔 | organized_20260311 完整歷史位置與恢復方式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | organized_20260311 歷史批次清單 |
-| [pending/](<pending>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [README.md](<README.md>) | 1檔 | organized_20260311 |
-| [selected/](<selected>) | 29檔 | 歷史選定內容；不代表今日正式採用 |
+## 原始報告
 
-## 必要來源與取得界線
-
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
-
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[Round 12 多尺度摘要](<selected/reports/ROUND12_UNIVERSAL_MULTISCALE_SUMMARY_20260311_023449.md>)、[Round 13 保存點稽核摘要](<selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本批次保存紀錄](<../../docs/reproducibility/experiments/legacy__organized_20260311.md>)。
