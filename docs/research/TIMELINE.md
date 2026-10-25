@@ -213,7 +213,7 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | R100 | 在原有形狀上加輪廓外程序紋理 → **未採用**：40 輪；另有訓練前的設計檢查 | [R100](../../Experiments/R100_CausalOperatorScratch/FILE_GUIDE.md)、[R100 設計檢查](../../Experiments/R100_DesignValidation/FILE_GUIDE.md) |
 | R101 | 檢查高頻答案、邊界輸出與多目標學習為何失效 → **分析**：細頻答案多半相位不一致，學習方向互相衝突 | [R101 機制](../../Experiments/R101_HighFrequencyCausalAblation/FILE_GUIDE.md)、[R101 設計](../../Experiments/R101_HighFrequencyDesignValidation/FILE_GUIDE.md) |
 | R102 | 用局部主幹同時恢復細節與位置 → **中止**：輸出塌縮成原樣 | [R102](../../Experiments/R102_UniversalDetailScratch/FILE_GUIDE.md) |
-| R103 | 修亮暗答案與正規化造成的細節流失 → **未採用**：曝光轉折處失敗 | [R103](../../Experiments/R103_RecoverableDetailScratch/FILE_GUIDE.md) |
+| R103 | 修亮暗答案與正規化造成的細節流失 → **未採用**：實拍位移六組的逐步波動都比 R61 低，但 SEM 跟原圖差不多，第 18 號曝光輪廓失敗 | [R103](../../Experiments/R103_RecoverableDetailScratch/FILE_GUIDE.md) |
 | R104 | 把形狀判斷與絕對亮度分開 → **未採用**：幾何頭沒有直接形成最終邊界，交給 R105 驗證 | [R104](../../Experiments/R104_PhotometricInvariantCausalGateScratch/FILE_GUIDE.md) |
 | R105 | 用學到的幾何直接畫邊界；多張觀測重建；均華 202 張是否適合多觀測 → **未採用**：寬度改善但中心、形狀變差，沒有開正式 R105 | [R105A](../../Experiments/R105A_GeometryRendererFalsification/FILE_GUIDE.md)、[R105B](../../Experiments/R105B_EvidenceSetReconstructionFalsification/FILE_GUIDE.md)、[R105C](../../Experiments/R105C_JunHuaMultiObservationFeasibility/FILE_GUIDE.md) |
 | R106 | 驗證多觀測機制能否轉到均華實拍 → **未採用**：生成與真實短測都沒過，主線回到單張 | [R106A](../../Experiments/R106A_MultiObservationShortValidation/FILE_GUIDE.md) |

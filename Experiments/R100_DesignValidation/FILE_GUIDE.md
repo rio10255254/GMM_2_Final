@@ -1,31 +1,24 @@
-# main/R100_DesignValidation：檔案怎麼找
+# R100 設計檢查：訓練前先回答四個問題
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R100_DesignValidation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [正式的 R100](<../R100_CausalOperatorScratch/FILE_GUIDE.md>) · [前一輪 R99](<../R99_GeometryTextureCoherentScratch/FILE_GUIDE.md>)
 
-**研究問題：訓練前檢查幾何零點、細節及量測讀法。**
+**一句話：** 定 R100 架構之前，2026-08-14 先做一個只分析、不能啟動訓練的前置檢查：來源與答案幾何已經對齊時，幾何監督會不會剛好變成零？對稱、有原圖支撐的細節運算能不能改善細結構又不移動輪廓、不破壞位移？這些結論在合成真值、5×／20×／50× 實拍、精確切塊、實拍 1 µm 序列上都成立嗎？Chan–Vese ACM 在保幾何的光度變化下夠不夠穩，能不能當唯一的挑選訊號？
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（訓練前檢查；沒有定義 R100 模型） |
+| 時間 | 2026-08-14 |
+| 實驗條件 | 合成真值、5×／20×／50× 實拍、實拍 1 µm 序列（大型資料唯讀引用） |
 
-## 先讀原文件
+## 讀這些內容要知道的事
 
-- [R100_DesignValidation 研究保存清單](<MANIFEST.md>)
-- [R100 Design Validation](<README.md>)
+1. **這一輪沒有文字結論報告**；執行入口是 `scripts\Run_Validation.ps1`，產出寫在 `results` 與 `reports`。
+2. R101 的設計檢查引用了一份「R100 前置稽核」：336 個觀測中只有 2.08% 要求原圖支撐的增強，71.13% 反而要求去噪，答案／來源的最適細節倍率中位數只有 0.484。
 
-## 進入實際檔案
+## 拿資料與重做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 4檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R100_DesignValidation 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R100 Design Validation |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+本資料夾的程式與設定已在 GitHub，執行方式見 [README](<README.md>)。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-## 必要來源與取得界線
+## 原始報告
 
-固定程序控制、既有真實來源及原始讀值。
-
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R100_DesignValidation.md>)。

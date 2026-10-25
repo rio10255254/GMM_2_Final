@@ -1,39 +1,37 @@
-# main/R102_UniversalDetailScratch：檔案怎麼找
+# R102：局部主幹同時恢復細節與位置，結果輸出跟原圖一樣
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R102_UniversalDetailScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [根因設計 R101](<../R101_HighFrequencyDesignValidation/FILE_GUIDE.md>) · [前一輪 R101 短測](<../R101_HighFrequencyCausalAblation/FILE_GUIDE.md>) · [下一輪 R103](<../R103_RecoverableDetailScratch/FILE_GUIDE.md>)
 
-**研究問題：以局部主幹同時恢復細節與位置。**
+**一句話：** R102 依 R101 的方向做一次正式從零訓練，用 R92 的 5,000 個觀察加上確定性的擴增。2026-08-15 啟動，計畫 48 輪；但到第 40 輪模型在數值上、視覺上都還是原圖：對四張實拍的平均改動只有約 0.0001 灰階，輪廓與紋理驗證都沒有改善，使用者在第 41 輪中途停下。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **中止**（輸出塌縮成原樣；第 41 輪中途停止，最後保存第 40 輪） |
+| 時間 | 2026-08-15（12:55 啟動，14:21 停止） |
+| 實驗條件 | R92 固定合成資料（16.9 GiB 不複製，只存參照）加確定性擴增 |
+| 起點 | 隨機初始化，種子 1020053；初始等同原圖 |
 
-## 先讀原文件
+## 結果：塌縮診斷
 
-- [R102_UniversalDetailScratch 研究保存清單](<MANIFEST.md>)
-- [R102 Universal Detail Scratch](<README.md>)
+**第 40 輪對四張實拍的平均改動（灰階）：** 5× 密集 0.000086、20× 混合 0.000086、50× 陣列 0.000086、中心九顆柱 0.00015。
 
-## 進入實際檔案
+**資料本身就在要求平滑：** 基礎資料的來源與答案高頻相關係數只有 0.039，答案的高頻幅度（1.16 灰階）遠小於來源（5.49 灰階）；連「創新」資料的相關係數也只有 0.059。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 4檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 2檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [evaluation/](<evaluation>) | 1檔 | 量測介面、固定參照、設定或比較內容 |
-| [inference/](<inference>) | 2檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R102_UniversalDetailScratch 研究保存清單 |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [Open_Training_Monitor.cmd](<Open_Training_Monitor.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [README.md](<README.md>) | 1檔 | R102 Universal Detail Scratch |
-| [runs/](<runs>) | 2檔 | 各次執行的紀錄或完成證據；不憑資料夾名認定已完成 |
-| [scripts/](<scripts>) | 2檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [Start_R102_Training.cmd](<Start_R102_Training.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 4檔 | 訓練程式與配套 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **停止紀錄與塌縮診斷只在原電腦上**（`reports/USER_STOP_AND_IDENTITY_COLLAPSE_20260815.json`、`deep_identity_collapse.json` 等五個小 JSON，共約 31 KB），還沒放回 GitHub；上面的數字是從那兩份讀的。
+2. **不續訓、另開新實驗。** 停止紀錄寫明替代方式是新的隔離實驗與隨機初始化，也就是 R103。
+3. 診斷程式 [analysis/deep_identity_collapse.py](<analysis/deep_identity_collapse.py>) 在 GitHub 上。
 
-固定5000觀測、實際歷程與塌縮診斷。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 設定、資料參照、模型、訓練、推論、評估、測試、診斷程式 | 本資料夾 [config/](<config>)、[data/](<data>)、[model/](<model>)、[training/](<training>)、[inference/](<inference>)、[evaluation/](<evaluation>)、[tests/](<tests>)、[analysis/](<analysis>)，已在 GitHub |
+| 訓練從零開始的證明 | [runs/](<runs>) 的 `scratch_proof.txt` |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R102_UniversalDetailScratch.md>)。

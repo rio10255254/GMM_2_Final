@@ -1,36 +1,51 @@
-# main/R101_HighFrequencyCausalAblation：檔案怎麼找
+# R101 機制短測：為什麼高頻細節學不起來
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R101_HighFrequencyCausalAblation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [根因設計 R101](<../R101_HighFrequencyDesignValidation/FILE_GUIDE.md>) · [前一輪 R100](<../R100_CausalOperatorScratch/FILE_GUIDE.md>) · [下一輪 R102](<../R102_UniversalDetailScratch/FILE_GUIDE.md>)
 
-**研究問題：相同起點逐步加入弱邊緣及連續邊界機制。**
+**一句話：** 正式訓練 R101 之前，2026-08-15 用同一份連續合成資料、同一個批次順序，從零各訓練七組（A～G）400 步，逐步加入弱邊緣支撐、次像素邊界渲染、平行頻帶合成、零均值高頻創新路徑。結論是失敗不是因為訓練不夠久：這一族模型會先學會「全域去雜訊」這個容易的策略，把真實的細頻內容一起刪掉；最好的 G 組合成輪廓最好，但真實影像非邊緣的高頻少了 23.5%。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（短期機制驗證；不是正式長訓練模型） |
+| 時間 | 2026-08-15 |
+| 實驗條件 | 連續合成資料（同批次順序）；實拍只用於評估 |
+| 起點 | 七組共用同一個初始化，各 400 步 |
 
-## 先讀原文件
+## 結果
 
-- [R101 high-frequency causal experiment results](<EXPERIMENT_RESULTS.md>)
-- [R101_HighFrequencyCausalAblation 研究保存清單](<MANIFEST.md>)
-- [R101 High-Frequency Causal Ablation](<README.md>)
+| 組 | 合成輪廓距離 | 合成中心誤差 | 已知位移誤差 | 真實非邊緣高頻／原圖 | 真實強邊緣高頻／原圖 |
+|---|---:|---:|---:|---:|---:|
+| A | 0.1475 px | 0.8185 px | 0.2107 px | 1.027 | 1.042 |
+| D | 0.1238 | 0.7271 | 0.1811 | 0.978 | 1.321 |
+| E | 0.1164 | 0.7054 | 0.1943 | 0.936 | 1.219 |
+| F | 0.1153 | 0.6788 | 0.1991 | 0.781 | 1.142 |
+| G | **0.1089** | 0.6997 | **0.1784** | 0.765 | 1.130 |
 
-## 進入實際檔案
+A 幾乎是原圖，只去掉 0.35% 的保留殘差；它的邊緣路徑拿到的梯度比亮暗路徑小 70～160 倍。F 在所有 PSF 強度下都把最細頻帶壓到約 0.14～0.16 倍，幾乎不看退化程度。G 在第 100 步時真實非邊緣高頻就已經降到 0.84，之後停在 0.76～0.77，代表這是早期就學會的策略。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 1檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [config/](<config>) | 2檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 1檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [evaluation/](<evaluation>) | 2檔 | 量測介面、固定參照、設定或比較內容 |
-| [EXPERIMENT_RESULTS.md](<EXPERIMENT_RESULTS.md>) | 1檔 | R101 high-frequency causal experiment results |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R101_HighFrequencyCausalAblation 研究保存清單 |
-| [model/](<model>) | 2檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R101 High-Frequency Causal Ablation |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [training/](<training>) | 2檔 | 訓練程式與配套 |
+## 報告列出的根因
 
-## 必要來源與取得界線
+1. 乾淨答案讓「刪掉隨機感測雜訊」馬上有回報，正確重建細紋理則難得多。
+2. 損失獎勵較低的整體頻譜誤差，即使有意義的真實紋理被壓掉。
+3. 原本的運算族大多只能重新加權原圖已有的頻率，無法可靠合成被 PSF 去掉的內容。
+4. 清楚與「不修改」案例太弱，擋不住全域最細頻帶壓制。
+5. 模型沒有學會依退化程度做決定。
 
-共同生成場景、共同初值與各組完整數值。
+## 讀這些內容要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **A～C 原本是三組，之後加了 D～G。** README 只寫了 A／B／C，結果報告涵蓋全部七組。
+2. **G 只是機制探針。** 位移序列的分散穩定，但配對位移向量離原圖比 A 遠，不適合升級。
+3. 報告的方向是：改用學習式殘差主幹，加上明確的低頻修正與零均值高頻創新輸出，並用次像素位移與重疊切塊一致性檢查；資料要動態取樣四種角色（清楚細紋理不變、同一潛在紋理的成對獨立觀測、多樣模糊邊界、只有雜訊的平坦負例）。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+本資料夾的程式與 `scripts/run_all.ps1` 已在 GitHub，用法見 [README](<README.md>)。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [實驗結果](<EXPERIMENT_RESULTS.md>) | 七組結果、根因、選定的方向 |
+| [README](<README.md>) | A／B／C 的設計 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R101_HighFrequencyCausalAblation.md>)。
