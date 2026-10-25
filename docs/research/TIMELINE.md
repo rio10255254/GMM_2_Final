@@ -277,7 +277,7 @@ R141～R147 試了各種 PSF 數量、選法和配對，多數讓短步或輪廓
 | R149 | 加入接近實拍尺度的排列與局部邊界要求 → **未採用**：兩版短測都沒達門檻 | [R149](../../Experiments/R149_MatchedGeometryLocalBoundary/FILE_GUIDE.md) |
 | R150 | 新排列加訓練與推論共用平均 PSF → **未採用**：短步小改善，直徑重拍、輪廓與 SEM 退步 | [R150](../../Experiments/R150_MatchedGeometryMeanPSF/FILE_GUIDE.md) |
 | R151 | 恢復可學習的光學加權融合 → **未採用**：機制能跑，但現有 25 顆分辨不出來，沒有正式訓練 | [R151](../../Experiments/R151_R148v2_AdaptivePSFFusion/FILE_GUIDE.md) |
-| **R152** | 凍結 R148v2，加受限的 25 PSF 融合支路，再 8192 次更新 → **採用**（論文，稱 MOSR）：單趟 30 步波動 RAW 10.200 → 4.865 nm，30 趟全部改善；但與 SEM 的尺寸差變大，速度略慢 | [R152 閱讀卡](../../Experiments/R152_R148v2_SafeAdaptivePSF/FILE_GUIDE.md) |
+| **R152** | 凍結 R148v2，加受限的 25 PSF 融合支路，再 8192 次更新 → **採用**（論文，稱 MOSR）：單趟 30 步波動 RAW 8.781 → 4.273 nm（−51.3%，九顆平均的論文口徑；R152 原紀錄的中位數口徑是 10.200 → 4.865），30 趟全部改善；但與 SEM 的尺寸差變大，速度略慢 | [R152 閱讀卡](../../Experiments/R152_R148v2_SafeAdaptivePSF/FILE_GUIDE.md) |
 | **R153** | 十種方法在同一批 930 張上完整比較並測效率 → **分析**：U-Net、MambaIRv2 因官方後端受阻未完成 | [R153](../../Experiments/R153_MeanExternalBenchmark/FILE_GUIDE.md)、[論文交接](../../Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md) |
 
 ---
