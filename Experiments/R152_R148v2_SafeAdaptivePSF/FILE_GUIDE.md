@@ -78,7 +78,7 @@ R152 的做法因此很保守：**R148v2 一個權重都不動**，只在它的�
 
 | 需要什麼 | 在哪裡 |
 |---|---|
-| R152 部署模型、凍結的 R148v2、25 顆 PSF 與設定 | Release [`research-training-kits-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016) 的 `research-r152-frozen-inputs-001.zip`（約 28.8 MB）；內容與用途見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
+| R152 部署模型、凍結的 R148v2、25 顆 PSF 與設定 | Release [`research-training-kits-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016) 的 `research-r152-frozen-inputs-001.zip`（約 28.8 MB），解開後放在 [R152 生成包](<../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md>) 的 `weights/` 與 `calibration/`；內容與用途見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
 | 930 張原始照片與 30 份平台紀錄 | Release [`shared-pi-20260903-v1`](https://github.com/rio10255254/GMM_2_Final/releases/tag/shared-pi-20260903-v1)，還原方法見 [PI 原始拍攝資料](<../../Shared_Sources/PI_Repeatability_20260903/README.md>) |
 | 全部 9,216 張訓練 TIFF | 不上傳，用固定種子重新生成，逐張核對原版像素：[生成包](<../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md>) |
 | 訓練與推論程式 | [獨立包](<../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md>)（`train.py`、`infer.py`、`settings.py`），或本資料夾的原始程式 |
@@ -99,6 +99,8 @@ python generate_data.py --output-dir outputs/generated_data --workers 2
 在本資料夾執行 `python scripts/verify_complete_record.py`，可以唯讀核對完整紀錄裡的關鍵數字與 26 個資料連結。
 
 **重做的範圍：** 訓練資料已從固定種子完整重新生成並與原版逐像素相同；正式的 8,192 次訓練**沒有**重跑。
+
+**關於模型檔的身分：** 上面那包裡的部署模型（`r152_deployed.pth`，SHA-256 開頭 `2932f79d`）是把原權重容器裡的舊電腦路徑移除後重新存檔的，所以跟完整紀錄裡實拍驗證用的保存點（開頭 `17bf7c63`）雜湊不同；但 209 個權重張量逐一相同，真實示例影像的推論輸出也逐像素相同，見[獨立包報告](<reports/R152_STANDALONE_PACKAGE_20261004.md>)。`17bf7c63` 這個原檔本身不在任何 Release 裡，目前只在原電腦的 `runs/formal_8192/checkpoints/deployed_step08192.pth`（約 7.1 MB），整理計畫會優先補上；第 8,192 次訓練完成時的保存點（開頭 `dc9e0b1d`）則在 [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的 `research-fixed-models-020.zip`。
 
 ## 原始報告
 

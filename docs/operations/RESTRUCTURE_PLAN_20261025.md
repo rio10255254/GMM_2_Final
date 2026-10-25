@@ -59,13 +59,18 @@
 
 | 檔案 | 大小 | 為什麼重要 |
 |---|---:|---|
+| `Experiments/R152_R148v2_SafeAdaptivePSF/runs/formal_8192/checkpoints/deployed_step08192.pth` | 7.1 MB | 論文模型 R152 實拍驗證用的原始保存點（SHA-256 開頭 `17bf7c63`）。雲端有張量完全相同的重新封裝版，但原檔本身不在任何 Release |
 | `_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx` | 16 MB | 實際交給公司的正式基準模型；重新匯出不保證逐位元組相同 |
+| `_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx` | 15 MB | 核准替代 a025 交給公司的 ONNX；同上 |
+| `Experiments/R45_FamilyBoundaryAdapter/results/checkpoints/*.pth` | 各不到 0.1 MB | R45 的四個校正模組權重 |
 | `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/{external,shape,micro}_recon/a025/` | 約 700 MB | 核准替代 a025 送外部 GMF 的重建影像與形狀／顯微重建 |
 | `Experiments/R136_PIRepeatability/output/*.zip`（3 個閱讀包） | 約 89 MB | R136 原報告引用的結果包 |
 | `Experiments/R153_MeanExternalBenchmark/reports/*.zip`（2 個交接包） | 約 4.5 MB | 論文交接包 |
 | `Deliverables/R152_Standalone_20261004.zip`、`R152_Standalone_ImageFiles_20261004.zip` | 約 760 MB | 打包好的 R152 獨立包；程式已在 git、模型已在 Release，zip 本身可能不必另存，需先確認內容都有著落 |
 
-這只是「原始報告有連結到」的部分。整個原電腦約 1 TB 的完整盤點，要在後面的步驟另外做。
+這只是「原始報告有連結到」與寫閱讀卡時查到的部分。整個原電腦約 1 TB 的完整盤點，用 `Tools/cloud_locator.py scan` 另外做。
+
+**寫閱讀卡時發現的另一類缺口：** 有些輪次的結果檔在 Release 裡，但不在 GitHub 程式樹（有些是 2026-10 從主版本移出、只留在 git 歷史），所以報告與閱讀卡提到的數字在 GitHub 上點不到出處。目前查到的有：R148v2 的 12 模型比較表與最終稽核（R148v2 也沒有寫最終結果報告）、R43 的分數表、R44 的總表與分族診斷、R45 的縮放掃描與 R45B／R45C 逐塊表。這些多半是小型 CSV／JSON，適合直接補回 git（見下方 E2）。
 
 ## 二、建議的整理內容
 
