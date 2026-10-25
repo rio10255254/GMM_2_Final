@@ -1,0 +1,37 @@
+{
+  "entry_point": "AnalysisLab/README.md",
+  "layout_policy": "version_first",
+  "versions": {
+    "r26": {
+      "readme": "AnalysisLab/r26/README.md",
+      "analyses": {
+        "single_image": {
+          "readme": "AnalysisLab/r26/single_image/README.md",
+          "script": "AnalysisLab/r26/single_image/scripts/run_single_image_analysis.py",
+          "test": "AnalysisLab/r26/single_image/tests/test_single_image_analysis.py",
+          "report": "AnalysisLab/r26/single_image/reports/R26_SingleImage_Analysis_Report.md",
+          "results_dir": "AnalysisLab/r26/single_image/results",
+          "notes": "Self-contained demo input and tracked reconstruction fixture."
+        },
+        "sequence": {
+          "readme": "AnalysisLab/r26/sequence/README.md",
+          "script": "AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py",
+          "test": "AnalysisLab/r26/sequence/tests/test_sequence_analysis.py",
+          "report": "AnalysisLab/r26/sequence/reports/R26_Sequence_Analysis_Report.md",
+          "results_dir": "AnalysisLab/r26/sequence/results",
+          "notes": "Tracked results and reports; raw sequence inputs remain external and are declared in configs/dataset_config.py."
+        },
+        "performance": {
+          "readme": "AnalysisLab/r26/performance/README.md",
+          "script_inference": "AnalysisLab/r26/performance/scripts/run_inference_benchmark.py",
+          "script_training": "AnalysisLab/r26/performance/scripts/run_training_benchmark.py",
+          "script_compare": "AnalysisLab/r26/performance/scripts/run_cross_device_compare.py",
+          "script_setup": "AnalysisLab/r26/performance/scripts/setup_device.py",
+          "test": "AnalysisLab/r26/performance/tests/test_performance_benchmark.py",
+          "results_dir": "AnalysisLab/r26/performance/results",
+          "notes": "Cross-device training/inference benchmark. Edit configs/device_config.py per machine."
+        }
+      }
+    }
+  }
+}
