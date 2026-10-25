@@ -1,33 +1,51 @@
-# main/R76_R75ACMContourSEMValidation：檔案怎麼找
+# R76：R75 的 SEM 完整輪廓驗證，以及選錯權重的發現
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R76_R75ACMContourSEMValidation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [被驗證的 R75](<../R75_R61ArchitectureScratchGeneralization/FILE_GUIDE.md>) · [同方法的 R69](<../R69_ACMContourSEMValidation/FILE_GUIDE.md>)、[R70](<../R70_V42ACMContourSEMValidation/FILE_GUIDE.md>) · [下一輪 R77](<../R77_R75v2ACMContourSEMValidation/FILE_GUIDE.md>)
 
-**研究問題：R75對36顆SEM完整輪廓的實體驗證。**
+**一句話：** 2026-07-31 用 R69 那套 36 顆柱、12 張曝光的 SEM 完整輪廓比較檢查 R75。訓練程式選出的第 21 輪 36 顆全部比原圖差，平均邊界距離幾乎加倍；另外核對的第 100 輪則 36 顆全部小幅改善。這輪也把九張 P 系列 SEM 的空間順序與 36 顆柱的身分，用舊研究程式、整理表與實際檔案三方交叉確認了一次。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（R75 不能取代 R61 或 V42；自動挑權重規則不適合真實輪廓目標） |
+| 時間 | 2026-07-31 |
+| 實驗條件 | 與 R69 相同：12 張曝光光學影像、中心 36 顆柱與對應 SEM |
+| 被驗證的模型 | R75 第 21 輪（訓練程式選出）、R75 第 100 輪；對照原圖、R61 v16、V42 第 120 輪 |
 
-## 先讀原文件
+## 結果
 
-- [R75 第 100 輪的獨立 SEM 輪廓核對](<reports/R76_EPOCH100_AUDIT_TW.md>)
-- [R76 最終結論：R75 對真實 SEM 的完整輪廓驗證](<reports/R76_FINAL_SYNTHESIS_TW.md>)
-- [R76：R75 對 SEM 的 ACM 完整輪廓驗證](<reports/R76_RESULTS_TW.md>)
+| 方法 | 輪廓重疊 | 平均邊界距離（% 柱距） | 面積誤差 | 周長誤差 | 非圓細節誤差 |
+|---|---:|---:|---:|---:|---:|
+| 原圖 | 0.949 | 0.570 | 5.34% | **2.87%** | **0.016** |
+| R61 v16 | **0.958** | **0.441** | **4.13%** | 3.71% | 0.025 |
+| V42 第 120 輪 | 0.953 | 0.523 | 4.85% | 3.03% | 0.019 |
+| R75 第 21 輪 | 0.914 | 1.041 | 9.45% | 5.23% | 0.029 |
+| R75 第 100 輪 | 0.951 | 0.530 | 5.04% | 3.49% | 0.029 |
 
-## 進入實際檔案
+第 21 輪在曝光 13～17 還有改善，從曝光 18 起全面失效；第 100 輪除了曝光 21、22 以外都改善，但曝光 21、22 變差、到更暗的 23、24 又恢復，對亮度的反應不連續。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R76 frozen manifest |
-| [README.md](<README.md>) | 1檔 | R76：R75 對 SEM 的完整輪廓驗證 |
-| [reports/](<reports>) | 3檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 8檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 4檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **不能改用 SEM 挑第 100 輪。** 報告明確寫：直接因為 SEM 結果較好就把第 100 輪改稱正式最佳，等於拿測試資料挑模型；正確做法是先改只看合成驗證的挑選規則，再用另一批 SEM 確認。
+2. **SEM 身分已確認：** P 系列九張 SEM 的空間順序是上排 P-07、P-08、P-09，中排 P-06、P-05、P-04，下排 P-01、P-02、P-03；每張內四顆依左上、右上、左下、右下。外接硬碟上的 18 張 P／V SEM 與 12 張光學影像都跟當年的配對資料逐張相同。
+3. **第 100 輪有可見的亮邊光暈與背景紋理。**
 
-12原光學圖、18 SEM來源、36顆映射與兩個模型。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 執行與分析程式（含第 100 輪核對）、測試、設定 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)、[config/experiment.json](<config/experiment.json>)，已在 GitHub |
+| 8 張圖（含 SEM 身分對照圖） | [results/figures/](<results/figures>)，已在 GitHub |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 逐顆、逐曝光的量測表不在 git 裡。
+
+## 原始報告
+
+| 文件 | 什麼時候讀 |
+|---|---|
+| [最終結論](<reports/R76_FINAL_SYNTHESIS_TW.md>) | 先讀這份：SEM 身分、五種狀態的比較、兩個權重的判定、建議 |
+| [第 21 輪的驗證結果](<reports/R76_RESULTS_TW.md>) | 不同亮度下的結果、公平性檢查 |
+| [第 100 輪的獨立核對](<reports/R76_EPOCH100_AUDIT_TW.md>) | 為什麼第 100 輪較好但仍不能採用 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R76_R75ACMContourSEMValidation.md>)。

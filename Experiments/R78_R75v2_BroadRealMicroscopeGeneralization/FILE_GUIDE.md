@@ -1,32 +1,60 @@
-# main/R78_R75v2_BroadRealMicroscopeGeneralization：檔案怎麼找
+# R78：R75v2 在三種倍率的實拍上，以及 5× 細節被抹掉
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R78_R75v2_BroadRealMicroscopeGeneralization.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [被驗證的 R75v2](<../R75v2_R61ArchitectureScratchGeneralization/FILE_GUIDE.md>) · [同方法的 R68](<../R68_R61_RealFOVFeatureGeneralization/FILE_GUIDE.md>) · [下一輪 R79](<../R79_R75v3_DenseMicroscopyScratchGeneralization/FILE_GUIDE.md>)
 
-**研究問題：同時檢查SEM外形與多倍率位移。**
+**一句話：** 2026-08-01 用 R68 的方法，把 R75v2 第 100 輪放到 5×、20×、50× 共 301 張實拍位移序列上跟 R61 v16 比，兩個模型六組都通過位移門檻；但另外加的假邊緣檢查發現，R75v2 在兩組 5× 影像有約 11.7% 偏離原圖的強邊緣（R61 只有 0.03%），細密網格被抹成帶狀結構。追查後發現切塊大小會加重問題，但不是唯一原因。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（位移六組都通過；5× 小區塊丟細節，R75v2 只當 20×／50× 候選） |
+| 時間 | 2026-08-01 |
+| 實驗條件 | C：實驗室顯微系統；HS100MG 5×、20×、50× 各兩組位移序列，共 301 張；外加 R77 的 SEM 輪廓 |
+| 被驗證的模型 | R75v2 第 100 輪；對照 R61 v16 |
 
-## 先讀原文件
+## 結果
 
-- [R78：R75-v2 廣泛真實顯微影像泛化驗證](<reports/R78_RESULTS_TW.md>)
+**位移保持（R68 的七道門檻）：** R61 v16 與 R75v2 都是 6/6 組通過。差異集中在 5×：R75v2 的差異中位數 37.8 nm、52.1 nm，R61 是 30.9 nm、34.0 nm。以最差場景優先排名，R61 較穩。
 
-## 進入實際檔案
+**假邊緣檢查（固定抽每組第 1、13、25、37 與最後一張，共 30 張）：**
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 2檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R78 交付清單 |
-| [README.md](<README.md>) | 1檔 | R78 真實顯微影像廣泛泛化驗證 |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 5檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [run_validation.ps1](<run_validation.ps1>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+| | R61 v16 | R75v2 第 100 輪 |
+|---|---:|---:|
+| 整體中位數 | 0.37% | 0.29% |
+| 5×、0.5 µm | 0.03% | 11.83% |
+| 5×、1 µm | 0.03% | 11.62% |
 
-## 必要來源與取得界線
+**5× 追加確認（全部 100 張）：**
 
-301原圖、固定配對與選區、SEM來源及模型。
+| 重建區塊大小 | 偏離原圖的強邊緣 | 細節能量（相對原圖） |
+|---|---:|---:|
+| 512 px | 約 11.6% | 約 34.1% |
+| 1024 px | 約 0.9% | 約 65.9% |
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+改成 1024 px 區塊後，5× 的位移檢查仍然通過。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 讀這些數字要知道的事
+
+1. **「位置跟得上」和「細節留得住」要分開判斷。** 5× 的位移門檻通過，但細節被抹掉了；只看位移會漏掉這個問題。
+2. **5× 追加確認不是事先設定的門檻**，是發現問題後補做的。
+3. **切塊會改變結果**，這個發現接到 R84～R86 的切塊問題研究。
+4. **還缺不同樣品。** 301 張只來自兩個拍攝日期，樣品身分也沒有完整編號。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 主要驗證、5× 追加、區塊敏感度、結果稽核程式與測試、設定 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)、[config/](<config>)、[run_validation.ps1](<run_validation.ps1>)，已在 GitHub |
+| 5 張圖 | [results/figures/](<results/figures>)，已在 GitHub |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 301 張原圖與重建影像、逐區域量測表都不在 GitHub 上。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R78 結果](<reports/R78_RESULTS_TW.md>) | 六組位移、SEM 對照、假邊緣風險、5× 追加確認、可以與不能下的結論、下一輪該補的資料 |
+| [README](<README.md>) | 設計與執行方式 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R78_R75v2_BroadRealMicroscopeGeneralization.md>)。
