@@ -223,7 +223,7 @@ R63 拆開幾何、位移、安全上採樣各自的貢獻；R64～R66 是論文
 | R110 | 拆開訓練時間、容量與可見性的限制 → **分析** | [R110](../../Experiments/R110_TimeCapacityVisibilityProbes/FILE_GUIDE.md) |
 | R111 | R109 能不能替換論文的 V42 → **未採用**：內部量法相近，外部 GMF 較弱 | [R111](../../Experiments/R111_R109V42ThesisReplacementQualification/FILE_GUIDE.md) |
 | R112 | 拆解 V42 與 R109 的外部 GMF 差異 → **分析**：內部模板沒有重現外部排序 | [R112](../../Experiments/R112_V42R109GMFMechanismDecomposition/FILE_GUIDE.md) |
-| R113 | 拆開渲染能力、學到的控制、訓練軌跡與量法 → **分析** | [R113](../../Experiments/R113_CausalStructureDissection/FILE_GUIDE.md) |
+| R113 | 拆開渲染能力、學到的控制、訓練軌跡與量法 → **分析**：R109 的需求與支撐判斷沒學起來；V42 與 R61 同一份程式、主要差在原圖錨定，V42 的弱 PSF 分支係數為 0；修正了 R112 的環形量測 | [R113](../../Experiments/R113_CausalStructureDissection/FILE_GUIDE.md) |
 | R114 | 依 R113 修控制塌縮與可恢復細節 → **分析**：證明分支隔離必要且有效，但局部選擇器分辨不出修正是好是壞，沒有產生新的正式模型 | [R114](../../Experiments/R114_ConfidenceGatedRecoverableScratch/FILE_GUIDE.md) |
 | R115 | 用獨立的法線證據決定 R109 的動作量 → **中止**：兩版都因採用率不穩而停下，正式 48 輪沒有啟動 | [R115](../../Experiments/R115_R109DecoupledNormalProfileScratch/FILE_GUIDE.md) |
 | R116 | 沿輪廓保持位移與寬度一致 → **研究候選**：修正 BF16 錯誤後重新從零，第 42 輪為主要版本 | [R116](../../Experiments/R116_CoherentGeometryAnchorScratch/FILE_GUIDE.md) |

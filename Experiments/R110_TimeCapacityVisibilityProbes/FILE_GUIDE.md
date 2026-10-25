@@ -1,30 +1,32 @@
-# main/R110_TimeCapacityVisibilityProbes：檔案怎麼找
+# R110：R109 剩下的誤差是時間、容量，還是可見度不夠
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R110_TimeCapacityVisibilityProbes.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [被檢查的 R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>) · [下一輪 R111](<../R111_R109V42ThesisReplacementQualification/FILE_GUIDE.md>)
 
-**研究問題：拆開訓練時間、容量與可見性限制。**
+**一句話：** 2026-08-26 用三條互不相同的解釋檢查 R109 第 48 輪剩下的誤差：多訓練幾輪、把局部塔從 48 通道加到 64、多加一個有界單調的局部可見度增益。三條都不升級，R109 第 48 輪維持正式選定。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（三條都不升級） |
+| 時間 | 2026-08-26 |
+| 實驗條件 | R109 的程式資料與固定驗證；實拍只在權重凍結後評估 |
 
-## 先讀原文件
+## 三條的結果
 
-- [R110 三條後續實驗結論](<reports/R110_RESULTS_ZH.md>)
+| 解釋 | 做法 | 結果 |
+|---|---|---|
+| 訓練不夠久 | 載入第 48 輪、只重設優化器，用 1e-5 再訓練渲染器 8 輪 | 第 56 輪內部輪廓只好約 0.10%；R73 邊界改善但周長變差，R74 三類退步，SEM 邊界、IoU、面積小幅退步。是平台震盪，不是全面增強 |
+| 容量不夠 | 64 通道，1 輪偵測加 4 輪渲染、1,000 個場景的匹配短測 | 輪廓好約 0.47%、重建誤差好約 3.1%，但參數多約 77%、清楚影像改動較大、顯存峰值 36.4 GiB；有小容量訊號，不足以開完整長訓練 |
+| 可見度不夠 | 48 通道加局部可見度增益 | 輪廓比原本更差，可見度倍率只有 1.013，模型幾乎不用 |
 
-## 進入實際檔案
+## 讀這些內容要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R110_TimeCapacityVisibilityProbes 研究保存清單 |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R110 Time, Capacity, and Visibility Probes |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 2檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+1. **延長訓練那條載入了 R109 的權重**，只是診斷，不能變成正式的獨立模型。
+2. **報告唯一保留的方向：** 若還要加容量，只加大重建端，不加大已經足夠的邊界定位端，先比較 56／64 通道的重建端。
 
-## 必要來源與取得界線
+## 拿資料與重做
 
-R109 E48、各探針來源、獨立／繼承身分及實際步數。
+本資料夾的程式已在 GitHub。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 原始報告
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[三條實驗結論](<reports/R110_RESULTS_ZH.md>)、[README](<README.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R110_TimeCapacityVisibilityProbes.md>)。

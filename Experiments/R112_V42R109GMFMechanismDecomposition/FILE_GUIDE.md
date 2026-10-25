@@ -1,31 +1,47 @@
-# main/R112_V42R109GMFMechanismDecomposition：檔案怎麼找
+# R112：為什麼外部 GMF 上 V42 比 R109 穩
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R112_V42R109GMFMechanismDecomposition.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R111](<../R111_R109V42ThesisReplacementQualification/FILE_GUIDE.md>) · [修正量測的 R113](<../R113_CausalStructureDissection/FILE_GUIDE.md>)
 
-**研究問題：拆解V42與R109外部GMF差異。**
+**一句話：** 2026-08-27 凍結原圖、V42 第 120 輪、R109 第 48 輪，用同樣 100 個回報座標、99 個均華連續步，拆開對齊模板一致性、徑向邊緣剖面、高低頻行為、外部分數與尺度穩定、V42 模組狀態、R109 的中點與寬度行為。內部的固定模板定位器重現不了外部 GMF 的排序，所以沒拿它來做反事實選模；但證據顯示 V42 的最終輸出主要被「原圖低頻錨定」約束，而 R109 放出了大量低頻與空間變化的寬度、位移修正。報告提出的方向是保留 R109 的幾何，把輸出改成可切塊的幾何錨點加上局部零均值的細節殘差。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（內部模板沒有重現外部排序） |
+| 時間 | 2026-08-27 |
+| 實驗條件 | B：均華 100 個座標、99 個連續步的外部 GMF |
+| 比較對象 | 原圖、V42 第 120 輪、R109 第 48 輪（都凍結） |
 
-## 先讀原文件
+## 主要證據
 
-- [R112_V42R109GMFMechanismDecomposition 研究保存清單](<MANIFEST.md>)
-- [R112 model-side GMF mechanism conclusion](<MODEL_IMPROVEMENT_DESIGN.md>)
-- [R112 V42/R109 external-GMF mechanism decomposition](<README.md>)
+| 項目 | V42 | R109 |
+|---|---:|---:|
+| 確定性 LSC | 相當 | 相當 |
+| 外部 GMF 的 Y 步距標準差 | **1.660 px** | 4.538 px |
+| 低頻殘差占比中位數 | **3.9%** | 60.6% |
 
-## 進入實際檔案
+V42 拿掉原圖錨定後，裁切的改動從 1.3 灰階變成 24.1 灰階，錨定是它最主要的輸出約束。R109 法線位移的上尾變化跟外部步距誤差相關（Spearman 0.287，p = 0.004）。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R112_V42R109GMFMechanismDecomposition 研究保存清單 |
-| [MODEL_IMPROVEMENT_DESIGN.md](<MODEL_IMPROVEMENT_DESIGN.md>) | 1檔 | R112 model-side GMF mechanism conclusion |
-| [README.md](<README.md>) | 1檔 | R112 V42/R109 external-GMF mechanism decomposition |
-| [scripts/](<scripts>) | 7檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+## 讀這些內容要知道的事
 
-## 必要來源與取得界線
+1. **這裡有幾個相關性後來被推翻。** R113 改用原生解析度、連續半高交點重量後，寬度波動跟外部分數的相關從 −0.228／−0.357 變成 −0.08、−0.06（不顯著）；R112 報告的「峰值半徑變異為 0」「V42 寬度變異為 0」是量化假象。
+2. **報告明確說不要做的事：** 直接把 V42 的錨定公式套到 R109 的輸出上；先放大整個主幹；相信內部固定模板的替代量法。
+3. **訓練前只建議兩個便宜的反事實**：R109 不加法線位移、原圖加 0.5 倍的 R109 高頻殘差。
 
-同100座標／99步、原外部分數與固定模型。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 程式 | 本資料夾，已在 GitHub |
+| 機制發現與最終驗證的 JSON（23 個檔案、0.3 MB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，但分散在 4 個附件裡，目前要下載約 4 GB |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [模型改進設計](<MODEL_IMPROVEMENT_DESIGN.md>) | 最強的證據、建議的修改、不要做的事、訓練前要測的兩個反事實 |
+| [README](<README.md>) | 完成的發現 |
+| [R113 的量測修正](<../R113_CausalStructureDissection/MEASUREMENT_QA_FINDINGS.md>) | 哪些 R112 的發現經不起修正 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R112_V42R109GMFMechanismDecomposition.md>)。

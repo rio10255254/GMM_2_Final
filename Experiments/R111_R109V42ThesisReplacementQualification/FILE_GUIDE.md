@@ -1,33 +1,34 @@
-# main/R111_R109V42ThesisReplacementQualification：檔案怎麼找
+# R111：R109 能不能取代論文用的 V42
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R111_R109V42ThesisReplacementQualification.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [候選 R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>) · [現任 V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>) · [GMF 差異拆解 R112](<../R112_V42R109GMFMechanismDecomposition/FILE_GUIDE.md>)
 
-**研究問題：判斷R109能否替換論文V42。**
+**一句話：** 2026-08-27 凍結 V42 第 120 輪與 R109 第 48 輪，保留論文的原圖選定母體與所有量測規則，把替換前需要的證據一格一格填滿：120 步位移、靜態中心九顆 CD、門檻穩健的 CD、20×／50× 邊緣、線條、共用 SEM 輪廓、切塊一致性、同一批影像的外部 GMF。用確定性 LSC 量的位移，兩者統計上相當；但外部 GMF 上 V42 穩定得多，所以 V42 維持論文模型，R109 留作泛化、暗曝光、線條與工程上更強的研究延伸。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（內部量法相近，外部 GMF 較弱） |
+| 時間 | 2026-08-27 |
+| 實驗條件 | C：7 月的位移序列與 6/18 的靜態影像（論文第六章用的資料）；B：均華的外部 GMF |
+| 比較對象 | V42 第 120 輪、R109 第 48 輪（都沒有重新訓練） |
 
-## 先讀原文件
+## 讀這些內容要知道的事
 
-- [R111_R109V42ThesisReplacementQualification 研究保存清單](<MANIFEST.md>)
-- [R111 R109 versus V42 thesis-replacement qualification](<README.md>)
-- [四組位移實驗 Raw 鎖定、V42 盲化稽核](<results/thesis_displacement_r109/UNIFIED_AUDIT_REPORT_TW.md>)
-- [四組位移實驗 Raw 鎖定、V42 盲化稽核](<results/thesis_displacement_r109/candidate/CANDIDATE_READOUT_TW.md>)
+1. **判定的優先順序**：SEM 完整輪廓、LSC 中心位移、外部 GMF 穩定度是主要結果；CD 只當尺寸相容性的次要證據，不主導決定。
+2. **找到並修正一個量測問題。** Chan–Vese 交替曲率運算子是有狀態的，同一個裁切重複呼叫會在兩個答案之間交替，方法量測的先後順序會影響比較；修正後每顆柱、每個方法量測前都重設，抽查重複差異為 0。
+3. **`results/thesis_displacement_r109/` 的稽核報告表頭寫「V42」，但內容是 R109**（7 月的稽核工具把候選欄固定命名為 V42）。
+4. 外部 GMF 上的具體差距（均華 Y 步距標準差 V42 1.660 px、R109 4.538 px）寫在 [R112](<../R112_V42R109GMFMechanismDecomposition/FILE_GUIDE.md>)。
 
-## 進入實際檔案
+## 拿資料與重做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 5檔 | 實驗設定、條件與來源鎖定 |
-| [external_gmf_v42/](<external_gmf_v42>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R111_R109V42ThesisReplacementQualification 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R111 R109 versus V42 thesis-replacement qualification |
-| [results/](<results>) | 10檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 10檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+| 需要什麼 | 在哪裡 |
+|---|---|
+| R109 的論文位移稽核與圖 | 本資料夾 [results/thesis_displacement_r109/](<results/thesis_displacement_r109>)，已在 GitHub |
+| 其他比較的程式 | 本資料夾 |
 
-## 必要來源與取得界線
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-V42 E120、R109 E48、Raw固定名單、重設後的量測程式。
+> **目前的限制：** SEM、CD、線條、切塊與外部 GMF 的比較結果表不在 GitHub 程式樹上。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 原始報告
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[README](<README.md>) 是這輪的結論入口。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R111_R109V42ThesisReplacementQualification.md>)。
