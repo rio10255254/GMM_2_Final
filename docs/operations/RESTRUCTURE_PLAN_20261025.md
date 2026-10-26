@@ -134,7 +134,7 @@
 5. 按輪次重新打包常用資料（E1）。（2026-10-26 先做模型：[模型指南](../reproducibility/MODEL_GUIDE.md)表內 16 個精選固定模型，各成一個小包放在 Release [`research-models-by-round-20261026`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-models-by-round-20261026)，取回核對通過；結果表多半已在 git 上，暫不另做結果包）
 6. 文件層拆分（B）。
 7. 封存區（C）、程式快照合併（D），視需要再做。
-8. 本機整台盤點與清理。
+8. 本機整台盤點與清理。（2026-10-26：可重算中間產物的清單與刪除腳本已備妥並演練，約 664 GB，規則與範圍見[本機清理紀錄](LOCAL_CLEANUP_20261026.md)；實際刪除由專案擁有者執行）
 
 ## 搬動帳本
 
