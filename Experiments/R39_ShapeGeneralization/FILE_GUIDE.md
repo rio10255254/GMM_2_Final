@@ -83,7 +83,7 @@ a030 的 0.08px 是當時全專案最低的外部數字。a025 是第一個三�
 > **目前的缺口與限制：**
 >
 > - **a025 的 ONNX 模型檔不在公司包的位置上。** 公司包裡的 `model/geoedge_r39r40_a025_body.onnx`（約 16 MB）不在 GitHub 程式樹。同內容的檔案在 Release [`research-history-curated-20261022`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-history-curated-20261022) 的 `selected-history-and-deployments.zip` 裡，路徑是 `deployment_graphs/R39R40_a025_company_body/model.onnx`（2026-10-26 展開這個沒有清單的壓縮包後才查到，先前這裡誤寫為「不在任何 Release」）。
-> - **a025 送外部 GMF 的重建影像**（約 200 張、540 MB）也只在原電腦上。
+> - **a025 送外部 GMF 的重建影像**（約 200 張、540 MB）也只在原電腦上，依保存原則屬可重算的整批輸出，不上傳。要重算，需要的是 a025 權重（Release `research-results-models-20261016`）和公司圓環的 `Cropped_Output` 裁切版；裁切版本身不在雲端，但可以從雲端原拍按固定區塊切出來，參數見[外部位移照片的裁切版](<../../docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md>)。
 > - **權重很難單獨拿。** 每個權重只有約 19.5 MB，但目前的打包按檔案大小切分卷，取回其中一個就要下載約 1.4～1.5 GB。整理計畫會處理。
 > - **訓練資料**（約 1.7 GB）沒有上傳；可用 builder 重新產生，但沒有逐檔核對過重新產生的資料與原檔相同。
 
