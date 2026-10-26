@@ -1,0 +1,56 @@
+{
+  "status": "availability_checked_not_repeatability_results",
+  "source_table": "D:\\GMM_2_Final\\Experiments\\R136_PIRepeatability\\results\\lsc\\analysis\\tables\\all_circle_centers.csv",
+  "source_sha256": "2e81d4aa5e815ddbdf1f6544003ebed2960128b0e4e3fcd874bbe74ca33daa5a",
+  "rows": [
+    {
+      "model": "Raw",
+      "circle_rows": 8370,
+      "runs": 30,
+      "positions": 31,
+      "pillars": 9,
+      "groups": 279,
+      "min_repeats": 30,
+      "max_repeats": 30,
+      "point_files": 30,
+      "shapes": [
+        "[31, 9, 64, 2]"
+      ],
+      "all_points_finite": true
+    },
+    {
+      "model": "R61",
+      "circle_rows": 8370,
+      "runs": 30,
+      "positions": 31,
+      "pillars": 9,
+      "groups": 279,
+      "min_repeats": 30,
+      "max_repeats": 30,
+      "point_files": 30,
+      "shapes": [
+        "[31, 9, 64, 2]"
+      ],
+      "all_points_finite": true
+    },
+    {
+      "model": "R129",
+      "circle_rows": 8370,
+      "runs": 30,
+      "positions": 31,
+      "pillars": 9,
+      "groups": 279,
+      "min_repeats": 30,
+      "max_repeats": 30,
+      "point_files": 30,
+      "shapes": [
+        "[31, 9, 64, 2]"
+      ],
+      "all_points_finite": true
+    }
+  ],
+  "notes": [
+    "Saved 64-point extracted boundaries, not complete SEM ground truth.",
+    "No new reconstruction, training, or shape statistics performed."
+  ]
+}

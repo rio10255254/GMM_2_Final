@@ -1,0 +1,75 @@
+{
+  "checkpoint_sha256": "c112d59e1d3efbb281059ca443bebf26c1ce7202e9b586740bca7b86d001ab41",
+  "bank_sha256": "4435f52a5d0f3ee31b5fbcbfbf13817d4ce2cabeeb2279b64b9492f9f3e4af7b",
+  "effective_beta": 0.01592994890438637,
+  "raw_beta": 0.056892674416303635,
+  "beta_scale": 0.2800000011920929,
+  "regularization": 30.0,
+  "low_frequency_ratio": 0.25,
+  "selected_indices": [
+    24,
+    0,
+    16,
+    8
+  ],
+  "details": {
+    "training_half_resolution": {
+      "shape": [
+        160,
+        160
+      ],
+      "kernel_center_in_fft_array": [
+        79,
+        79
+      ],
+      "low_frequency_bin_fraction": 0.05007716049382716,
+      "inverse_DC_magnitude": 0.03225806257620469,
+      "inverse_mask_median_magnitude": 0.0076922488950206345,
+      "inverse_mask_max_magnitude": 0.03225806257620469,
+      "combined_DC_magnitude": 0.9845839203842071,
+      "PSF_phase_first_x_frequency_rad": -3.109167796082067,
+      "PSF_phase_first_y_frequency_rad": -3.1002172788399442,
+      "smooth_spot_input_peak": [
+        80,
+        80
+      ],
+      "current_optical_restored_peak": [
+        1,
+        1
+      ],
+      "origin_aligned_restored_peak": [
+        80,
+        80
+      ],
+      "direct_torch_peaks": {
+        "current": [
+          1,
+          1
+        ],
+        "origin_aligned": [
+          80,
+          80
+        ]
+      }
+    },
+    "real_half_resolution": {
+      "shape": [
+        772,
+        1032
+      ],
+      "kernel_center_in_fft_array": [
+        385,
+        515
+      ],
+      "low_frequency_bin_fraction": 0.04922279792746114,
+      "inverse_DC_magnitude": 0.032258062576204685,
+      "inverse_mask_median_magnitude": 0.007625383935860068,
+      "inverse_mask_max_magnitude": 0.032258062576204685,
+      "combined_DC_magnitude": 0.9845839203842071,
+      "PSF_phase_first_x_frequency_rad": -3.136574252120243,
+      "PSF_phase_first_y_frequency_rad": -3.1330280063610347
+    }
+  },
+  "script_sha256": "074724be18adeec00929fb9e4158c71a708a87fa2d70a715cdda62ff2790270c",
+  "completed_utc": "2026-09-24T12:06:49.200451+00:00"
+}

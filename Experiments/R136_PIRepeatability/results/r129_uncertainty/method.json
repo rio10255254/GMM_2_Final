@@ -1,0 +1,33 @@
+{
+  "measurand": "PI-referenced indication error of the9-circle median LSC displacement at a fixed position/step",
+  "reference_unit": "nm",
+  "input": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R136_PIRepeatability\\results\\lsc\\analysis\\tables\\all_measurements.csv",
+    "sha256": "982cc4b5eafa320e938e7a1e3d5cbe44f5187036775e7c565a7a7f6a601d7fc0"
+  },
+  "n_per_position": 30,
+  "positions": 60,
+  "single_component": "sample SD of unmodified errors across the complete observed capture session;not a future prediction guarantee",
+  "mean_model": "error = intercept + centered elapsed minutes + centered early6/late24 indicator;intercept is expected average error for the observed time design",
+  "mean_covariance": "Newey-West Bartlett HAC,lag3 in acquisition order,finite correction30/27;no lag products across11minute acquisition break",
+  "lags_sensitivity": [
+    2,
+    3,
+    5
+  ],
+  "coverage": "k=2 component display only;no guaranteed95%total coverage asserted",
+  "assumptions": [
+    "Mean model linear in elapsed time plus protocol-block offset",
+    "Within-block residual dependence adequately approximated by3lag HAC;small-sample model uncertainty is not fully identified",
+    "11minute gap separates stochastic residual blocks;shared calibration uncertainty remains unquantified",
+    "Scale0.1725um/px and existing direction transform conditioned on;their calibration uncertainty not zero and not included"
+  ],
+  "system_total_u": null,
+  "system_total_U": null,
+  "unknown_components": [
+    "PI displacement calibration and its cross-position covariance",
+    "effective optical scale/direction calibration and dependence on PI",
+    "uncharacterized timing and between-session conditions"
+  ],
+  "bias_correction_applied": false
+}

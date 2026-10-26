@@ -1,0 +1,133 @@
+{
+  "scene_id": "scene_007",
+  "v1_failure_preserved": [
+    "independent_float64_physical_patch_view1_differs_materially"
+  ],
+  "same_physical_conditions": {
+    "all_physical_conditions_preserved": true,
+    "fields": {
+      "scene_id": true,
+      "index": true,
+      "category": true,
+      "seed": true,
+      "effective_seed": true,
+      "attempt": true,
+      "shape_params": true,
+      "photometry": true,
+      "polarity": true,
+      "shift_xy": true,
+      "view_shift_xy": true,
+      "exact_delta_xy": true,
+      "identity": true,
+      "flat": true,
+      "noise_sigma_gray": true,
+      "noise_variance_floor_gray": true,
+      "quantization_step": true,
+      "source_ancestors": true,
+      "optics_sigma_native_xy": true,
+      "optics_rotation_rad": true,
+      "optics_radius_native": true,
+      "declared_noise_variance": true
+    }
+  },
+  "v2_independent8x_replay": {
+    "kernel_covariance_max_abs": 0.0,
+    "views": [
+      {
+        "view": 0,
+        "patch_native": [
+          308,
+          324,
+          307,
+          323
+        ],
+        "noiseless_error": {
+          "count": 256,
+          "mean_signed": 2.8480006428275445e-10,
+          "rms": 1.2993408847266581e-08,
+          "max_abs": 2.8874618918095507e-08,
+          "p50_abs": 9.600173545010193e-09,
+          "p90_abs": 2.3685533034889517e-08,
+          "p95_abs": 2.61040076499075e-08,
+          "p99_abs": 2.8450226791099096e-08,
+          "p99.9_abs": 2.8833574989839412e-08,
+          "mean_signed_gray": 7.262401639210238e-08,
+          "rms_gray": 3.313319256052978e-06,
+          "max_abs_gray": 7.363027824114354e-06,
+          "p50_abs_gray": 2.4480442539775993e-06,
+          "p90_abs_gray": 6.039810923896827e-06,
+          "p95_abs_gray": 6.656521950726413e-06,
+          "p99_abs_gray": 7.254807831730269e-06,
+          "p99.9_abs_gray": 7.35256162240905e-06
+        },
+        "target_error": {
+          "count": 256,
+          "mean_signed": 6.791965231336614e-10,
+          "rms": 1.1961253705325065e-08,
+          "max_abs": 2.9794222200507647e-08,
+          "p50_abs": 7.361228515634366e-09,
+          "p90_abs": 2.0256606614310613e-08,
+          "p95_abs": 2.5895699196087918e-08,
+          "p99_abs": 2.9180474792056538e-08,
+          "p99.9_abs": 2.9698984482795524e-08,
+          "mean_signed_gray": 1.7319511339908365e-07,
+          "rms_gray": 3.0501196948578914e-06,
+          "max_abs_gray": 7.59752666112945e-06,
+          "p50_abs_gray": 1.8771132714867633e-06,
+          "p90_abs_gray": 5.165434686649206e-06,
+          "p95_abs_gray": 6.603403295002419e-06,
+          "p99_abs_gray": 7.441021071974417e-06,
+          "p99.9_abs_gray": 7.573241043112858e-06
+        }
+      },
+      {
+        "view": 1,
+        "patch_native": [
+          317,
+          333,
+          316,
+          332
+        ],
+        "noiseless_error": {
+          "count": 256,
+          "mean_signed": 9.35529758045242e-10,
+          "rms": 1.689516736595196e-08,
+          "max_abs": 2.9790409139529572e-08,
+          "p50_abs": 1.4327029118632595e-08,
+          "p90_abs": 2.6238887673724065e-08,
+          "p95_abs": 2.7246369160849326e-08,
+          "p99_abs": 2.882543951310267e-08,
+          "p99.9_abs": 2.9668832942086904e-08,
+          "mean_signed_gray": 2.3856008830153673e-07,
+          "rms_gray": 4.30826767831775e-06,
+          "max_abs_gray": 7.596554330580041e-06,
+          "p50_abs_gray": 3.6533924252513117e-06,
+          "p90_abs_gray": 6.690916356799637e-06,
+          "p95_abs_gray": 6.947824136016578e-06,
+          "p99_abs_gray": 7.350487075841181e-06,
+          "p99.9_abs_gray": 7.565552400232161e-06
+        },
+        "target_error": {
+          "count": 256,
+          "mean_signed": 1.1150842334998329e-09,
+          "rms": 1.624354865495692e-08,
+          "max_abs": 2.9747236451882486e-08,
+          "p50_abs": 1.3097456397215268e-08,
+          "p90_abs": 2.6562452570821904e-08,
+          "p95_abs": 2.794662912197765e-08,
+          "p99_abs": 2.9504461918072878e-08,
+          "p99.9_abs": 2.9714309933703836e-08,
+          "mean_signed_gray": 2.843464795424574e-07,
+          "rms_gray": 4.142104907014014e-06,
+          "max_abs_gray": 7.585545295230034e-06,
+          "p50_abs_gray": 3.3398513812898933e-06,
+          "p90_abs_gray": 6.7734254055595855e-06,
+          "p95_abs_gray": 7.126390426104301e-06,
+          "p99_abs_gray": 7.523637789108584e-06,
+          "p99.9_abs_gray": 7.577149033094478e-06
+        }
+      }
+    ]
+  },
+  "note": "Coordinates of both16px replay patches fixed to v1 audit; no patch selection after seeing corrected results."
+}

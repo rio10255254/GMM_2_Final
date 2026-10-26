@@ -1,0 +1,117 @@
+{
+  "status": "pass",
+  "all_48_validation_input_and_target_pairs_identical": true,
+  "matched_initializations_within_seed": true,
+  "independent_initializations_between_seeds": true,
+  "all_12_checkpoints_reloaded_and_finite": true,
+  "runs": [
+    {
+      "run_id": "probe_A_s1185001",
+      "e12_mae_gray": 1.7990892556651186,
+      "Raw_mae_gray": 1.9502406919685502,
+      "seconds": 276.4220000000205,
+      "checkpoint_checks": [
+        {
+          "epoch": 4,
+          "sha256": "4342824ee38a5dfff23c7b91225a1ca5927e70007539d41892a967de60654372"
+        },
+        {
+          "epoch": 8,
+          "sha256": "9e0b5d1ce293ff9537693f06a7af5395a3756ae3c97dbf5e7a0c5bf1a20e5fbd"
+        },
+        {
+          "epoch": 12,
+          "sha256": "2130f6d45477e63fed52ab7d7a6fafe242fb4cb8eaa7f1c6398737c251c8c449"
+        }
+      ],
+      "training_source_sha256": {
+        "training\\train.py": "b30d39d419b4f36c141814d539effa621d6173019af06855a3d277020e166db7",
+        "training\\dataset.py": "d7f5721355ebfb8601657c6e0ffabb81c6f95ae931dc8c26299c08d2e4c28f0b",
+        "training\\base.py": "1dcdd2871ed7049aeebecf0c75b22d03e0fe8a38fa33659f66576dea4a899da8",
+        "model\\network.py": "64a31b9631e42ba0379c1f81e3f89524b14bdaac73f1ed31a68c0ef8cc8a2c75",
+        "training\\objectives.py": "ac21a94b3e218d1471ee949b26529b3f595a7bb3bdfcf328149ac1b3eb726bd5"
+      }
+    },
+    {
+      "run_id": "probe_B_s1185001",
+      "e12_mae_gray": 1.795286194770597,
+      "Raw_mae_gray": 1.9502406919685502,
+      "seconds": 276.625,
+      "checkpoint_checks": [
+        {
+          "epoch": 4,
+          "sha256": "e46f7cd92e9448b482d4bddc84ca31cd6872d441006bc5bb7753b4b5b605e0a3"
+        },
+        {
+          "epoch": 8,
+          "sha256": "ff192439367fd359c4031177fa0601e8a77b5085b556566f2171b9cc0900c652"
+        },
+        {
+          "epoch": 12,
+          "sha256": "37d80d1e29d77f6e8b9915aad4b8fad11efc7996a8cf8ac621fbbb777bbff98f"
+        }
+      ],
+      "training_source_sha256": {
+        "training\\train.py": "b30d39d419b4f36c141814d539effa621d6173019af06855a3d277020e166db7",
+        "training\\dataset.py": "d7f5721355ebfb8601657c6e0ffabb81c6f95ae931dc8c26299c08d2e4c28f0b",
+        "training\\base.py": "1dcdd2871ed7049aeebecf0c75b22d03e0fe8a38fa33659f66576dea4a899da8",
+        "model\\network.py": "64a31b9631e42ba0379c1f81e3f89524b14bdaac73f1ed31a68c0ef8cc8a2c75",
+        "training\\objectives.py": "ac21a94b3e218d1471ee949b26529b3f595a7bb3bdfcf328149ac1b3eb726bd5"
+      }
+    },
+    {
+      "run_id": "probe_A_s1185002",
+      "e12_mae_gray": 1.8464321720724304,
+      "Raw_mae_gray": 1.9502406919685502,
+      "seconds": 277.405999999959,
+      "checkpoint_checks": [
+        {
+          "epoch": 4,
+          "sha256": "195b17940908804319eb269b8b4d4bcb2f6c70dc10d15715cae78d3d780ca8f1"
+        },
+        {
+          "epoch": 8,
+          "sha256": "005b42b700f75a5c2553b77fcab7691f3b043ef0967218f9038143a931c8baeb"
+        },
+        {
+          "epoch": 12,
+          "sha256": "d4cfb2c7867ef1e8e46c3db6ba218ac77d06248305eec1a6b87a1bb560457999"
+        }
+      ],
+      "training_source_sha256": {
+        "training\\train.py": "b30d39d419b4f36c141814d539effa621d6173019af06855a3d277020e166db7",
+        "training\\dataset.py": "d7f5721355ebfb8601657c6e0ffabb81c6f95ae931dc8c26299c08d2e4c28f0b",
+        "training\\base.py": "1dcdd2871ed7049aeebecf0c75b22d03e0fe8a38fa33659f66576dea4a899da8",
+        "model\\network.py": "64a31b9631e42ba0379c1f81e3f89524b14bdaac73f1ed31a68c0ef8cc8a2c75",
+        "training\\objectives.py": "ac21a94b3e218d1471ee949b26529b3f595a7bb3bdfcf328149ac1b3eb726bd5"
+      }
+    },
+    {
+      "run_id": "probe_B_s1185002",
+      "e12_mae_gray": 1.8412688504516457,
+      "Raw_mae_gray": 1.9502406919685502,
+      "seconds": 276.0470000000205,
+      "checkpoint_checks": [
+        {
+          "epoch": 4,
+          "sha256": "72cd9dcde17b8432573da767856289c431e36edb59ca5e6d62c731867efa6e0a"
+        },
+        {
+          "epoch": 8,
+          "sha256": "90ee7756189d7e13755624f8b5424a37221fb5855dea93ca80c4f31d59d48aec"
+        },
+        {
+          "epoch": 12,
+          "sha256": "8f1f30474cb0fcb876632fddd991e76a78655172650cd03748dd6ff613654982"
+        }
+      ],
+      "training_source_sha256": {
+        "training\\train.py": "b30d39d419b4f36c141814d539effa621d6173019af06855a3d277020e166db7",
+        "training\\dataset.py": "d7f5721355ebfb8601657c6e0ffabb81c6f95ae931dc8c26299c08d2e4c28f0b",
+        "training\\base.py": "1dcdd2871ed7049aeebecf0c75b22d03e0fe8a38fa33659f66576dea4a899da8",
+        "model\\network.py": "64a31b9631e42ba0379c1f81e3f89524b14bdaac73f1ed31a68c0ef8cc8a2c75",
+        "training\\objectives.py": "ac21a94b3e218d1471ee949b26529b3f595a7bb3bdfcf328149ac1b3eb726bd5"
+      }
+    }
+  ]
+}

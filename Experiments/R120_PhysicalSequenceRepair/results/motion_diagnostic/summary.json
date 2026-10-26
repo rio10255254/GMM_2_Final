@@ -1,0 +1,113 @@
+{
+  "status": "complete",
+  "profile": "diagnostic",
+  "models": [
+    {
+      "method": "Raw",
+      "views": 528,
+      "invalid_views": 13,
+      "median_mae_gray": 1.2766959273722023,
+      "median_residual_position_px": 0.5591906478105999,
+      "median_scene_phase_sensitivity_xy_px": [
+        0.34781571219219,
+        0.35088799703639606
+      ]
+    },
+    {
+      "method": "A_s1185001",
+      "views": 528,
+      "invalid_views": 36,
+      "median_mae_gray": 1.1533054453320801,
+      "median_residual_position_px": 0.4940355305708554,
+      "median_scene_phase_sensitivity_xy_px": [
+        0.28942836471409306,
+        0.2674625956637898
+      ]
+    },
+    {
+      "method": "B_s1185001",
+      "views": 528,
+      "invalid_views": 44,
+      "median_mae_gray": 1.1588334362022579,
+      "median_residual_position_px": 0.49708346924817504,
+      "median_scene_phase_sensitivity_xy_px": [
+        0.29250202373965517,
+        0.25059139778238715
+      ]
+    },
+    {
+      "method": "A_s1185002",
+      "views": 528,
+      "invalid_views": 27,
+      "median_mae_gray": 1.201639089267701,
+      "median_residual_position_px": 0.5175014021076049,
+      "median_scene_phase_sensitivity_xy_px": [
+        0.3045217063710106,
+        0.28778179139715454
+      ]
+    },
+    {
+      "method": "B_s1185002",
+      "views": 528,
+      "invalid_views": 20,
+      "median_mae_gray": 1.2015420163515955,
+      "median_residual_position_px": 0.5116250309338006,
+      "median_scene_phase_sensitivity_xy_px": [
+        0.28164094776518367,
+        0.29747076068760653
+      ]
+    }
+  ],
+  "input_hashes": {
+    "5000": "c58c209573845ca6bca05ae29f5b492bb464b3d9a58a6503629cf83b22b70c42",
+    "5002": "6f62892910aa79f3f9b59469132d4f2da1dda64d34142997fa3ce74e7cfc29aa",
+    "5003": "8ae3a96bb09786bbb017c75923cd34a70a2e88999c98b24a3c89e727e90df66c",
+    "5004": "75dd10ead676b5d39f78645e752cde35ab82664677f269dd73a60440993927ce",
+    "5005": "943733293659dea014a3855fb19f312b86697430684a8c1c92cb821b3cdaec1a",
+    "5006": "f1d822e59095681037462c8280b43534eea3d07f186d5d4bb317e7f53d60e2fa",
+    "5007": "ef92233616b8597f3d4a5e4450258bbdffc272bb1d9d73e27c6db62d019216ec",
+    "5008": "277e2baf4ebb6f244be976c10dc7551f5966ec74272c6db95877dd33afa1a2df",
+    "5009": "94dd82e8920b3cb27660c3565fdbbe1d78dd7d79ed7206b2c0fbb63a3525b6c1",
+    "5010": "a7b09b1adc83704fce2f765de07696c11a93c5d1256ddae9dd2ac4fc7421154f",
+    "5011": "ef18a1fca8ed19e37c8a78bef175b937e3857d7a9f607a376a36362fdb2a22fd",
+    "5013": "e85c59d84b86136e8688f4979e847c9dfc2b4ed2ddac25815dbe4bbf9b3f1715",
+    "5014": "975b945ad4153c2b5cd9302af68fa071b5456574cd119fa025e2082d7bf2b066",
+    "5015": "7e1e01eb6f605cde0f0c6a106af3a569ff9e675626db7216c7b6ded8b4ac3b10",
+    "5016": "da2109a4086e94129123f4d8a7511625af7258b023630763a68eeb21c1f924fc",
+    "5018": "5117fd206e711d3f6e590986b15421f66129ece7eba206b0ce965a0d32ecc2f6",
+    "5019": "b7d07e03c5a59f4aea0e307844d210dc1a7b909da94e353775b40448a067d373",
+    "5020": "27e204d1c9d888e303b715c74e82de98a7447ee87fc7787ad8f889a6c0631f1a",
+    "5021": "eedc84190e09e4e4c72cedbccbea200210b1c9fa17712509cc9ccb02d1567a4b",
+    "5022": "6b7b0bff8fcd0af55f03c04b41b4c8f085df90cea994f3a93796ccf61df647be",
+    "5023": "9c454aba60d80fd285b4ef5eb288eb47b242529bfebad3de8316a4b51bc29d58",
+    "5024": "b568db1ff88db796614ad371f999760c2187bf09fd74230bb809590fcf6e9e69",
+    "5025": "cca406607903b9c275b54d052fbb317f4a7b9df4c4eb3641c4df21a93e878421",
+    "5026": "95edcee056774b5f0736025ab79fbe45083ecd2d9a85d0b46c49013b52929fc5",
+    "5027": "816e9fe0efdce617f268cbb8c9ed0c2ea53e57014bb5e860b5245b9fbe05781c",
+    "5028": "3167153e98a3e832f52f2264f3ec4f7a986bdd2c8916b57cd16343d02630634d",
+    "5029": "57db1ee305df37f987451883f4f980c2ae715b7f8e96e8c5686bec1638555a46",
+    "5031": "34d6df5fe2fe89d926848f48c1047a93c3cf31e1e61367cd17edaa91af7d1178",
+    "5032": "164cb15e4edfba69296e96812289d9aa8a64619341da014b4ad9c3ad4ed22073",
+    "5033": "498020d1152901df5ecf66a20a0f1e7a60b9d843e1cee7c55e6dd89aaddb2c3e",
+    "5034": "b9227647b09bb75b5198ea0834ced58aba8f0e8b0164da56e1ea798fa31af9b8",
+    "5038": "c194cfe3d52c504bc765dfeab2ca5a71fead4999acce34a828be5190e3da07bf",
+    "5043": "ec7072bee8ec839e037ae6ad4fbefecc57364594378931605328459fada08cbd",
+    "5044": "b8508b38c0368b23c6f0d6802fe6fadba1060f7b5a998bf0e52493835c8a2f3b",
+    "5045": "d610c2308af7cb20a92ab11dab6344ccd5f651742d04aa121c78a7e8a84f9f83",
+    "5046": "cafb550cf3fc062a382bdea7647c36ea06b91260351ba518b51bf20ece86e282",
+    "5049": "01a17790c23413a0739a7081035505b2b812d440e89dd6a2f5b3765e2e95f9bc",
+    "5050": "b1bbaaa9232e9cec902f209def1b74c657fcc6c843bc8af9766e29344ecf4328",
+    "5051": "5061d7d7c5c7b94909b2be66f949bc88a210669e9819c7ba0257fe442fde1dd3",
+    "5053": "f3c3843ca6b1a1150a157dcea827ec01b5b4df061025736dc39882847b77acca",
+    "5054": "352a1bba6d80dca6c8b92ef6f9d2914f34c8f46d915da977a9c5945f248f0db3",
+    "5057": "ed97b7a1602285919b9aecdc3fcd3bd42fd9d16653f5f4702017266fb5b51070",
+    "5063": "915121c35e0256a2d19b6f36b5ded2a508331cc20e18dad81d8181664e38e7c8",
+    "5064": "7ecbba88b1df581b13962b7dff766c1b52b75c53467b01cb367f99aef55a5195",
+    "5072": "0ba3509ea00001d7f20986dc4ccf88a74b3d88a3185c0f6636c494dda8a8fdf5",
+    "5076": "585d1e9e460700f830a925864cd9188d60d40cae8b2b4d56843b04126e150963",
+    "5082": "3d830651a206715dbb25a549677573409e343ceff589096d147aef7d3af98ea7",
+    "5093": "c9ea5eec88d69049ec49e6e82a45ef5ad379fe245258dd948828031ebb72f8df"
+  },
+  "interpretation": "registration against each correctly shifted target; ideal residual is zero, not dx/dy. Phase sensitivity is NOT static repeat SD or real LSC step SD.",
+  "scope": "development diagnostic only; no ACM/model promotion claim"
+}

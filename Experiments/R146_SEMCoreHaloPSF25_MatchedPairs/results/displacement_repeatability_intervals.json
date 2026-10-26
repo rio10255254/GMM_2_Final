@@ -1,0 +1,49 @@
+{
+  "scans": 30,
+  "positions": 30,
+  "resamples": 5000,
+  "comparisons": {
+    "adjacent": {
+      "R145-Center9PSF25-CorrectedPairs": {
+        "R146_repeatability_nm": 4.459005591026812,
+        "reference_repeatability_nm": 4.016280805045357,
+        "difference_nm": 0.44272478598145515,
+        "whole_scan_bootstrap_ci95_nm": [
+          0.10431902202530864,
+          0.7275186187184005
+        ]
+      },
+      "R140v2-StableUNet": {
+        "R146_repeatability_nm": 4.459005591026812,
+        "reference_repeatability_nm": 3.5304623475280303,
+        "difference_nm": 0.9285432434987815,
+        "whole_scan_bootstrap_ci95_nm": [
+          0.6436827396911139,
+          1.1612486216805373
+        ]
+      }
+    },
+    "start": {
+      "R145-Center9PSF25-CorrectedPairs": {
+        "R146_repeatability_nm": 10.369266909496979,
+        "reference_repeatability_nm": 11.215878574855429,
+        "difference_nm": -0.8466116653584503,
+        "whole_scan_bootstrap_ci95_nm": [
+          -1.3112017379702368,
+          -0.333944750283336
+        ]
+      },
+      "R140v2-StableUNet": {
+        "R146_repeatability_nm": 10.369266909496979,
+        "reference_repeatability_nm": 10.433301485915756,
+        "difference_nm": -0.06403457641877708,
+        "whole_scan_bootstrap_ci95_nm": [
+          -0.3743795316766589,
+          0.2476575739905834
+        ]
+      }
+    }
+  },
+  "script_sha256": "130278fa6643dcf01aa0a486ff714b1689c2af25eaaa5a7a032d6a778dcf4da3",
+  "completed_utc": "2026-09-24T18:04:36.775317+00:00"
+}

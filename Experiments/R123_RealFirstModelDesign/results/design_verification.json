@@ -1,0 +1,45 @@
+{
+  "status": "design_consistent_and_inputs_verified_not_model_success",
+  "conservative_native_dependency_bound": 248,
+  "allocated_design_halo": 256,
+  "full_model_runtime_bound_verified": false,
+  "updates_per_candidate_seed": 1024,
+  "proposed_candidate_runs": 6,
+  "real_files_read": 438,
+  "primary_real_development_files": 364,
+  "fixed_legacy_Raw_ROIs": 144,
+  "paired_pillar_rows_recomputed": 144,
+  "current_input_files_unchanged": 443,
+  "old_R119_protected_files_unchanged": 132,
+  "R122_source_report_files_unchanged": 12,
+  "figures_visually_inspected": [
+    "real_input_panel.png",
+    "real_baseline_replay.png"
+  ],
+  "model_implemented": false,
+  "training_executed": false,
+  "real_new_model_performance_verified": false,
+  "application_calibration_complete": false,
+  "new_confirmation_access": false,
+  "remaining_before_decision_bearing_training": [
+    "qualified forward calibration and readout correspondence",
+    "frozen application benefit and guards",
+    "actual model backward/memory/tiling checks",
+    "specialized Raw-only corner/gap/defect eligibility annotations"
+  ],
+  "local_report_links_verified": 16,
+  "design_source_sha256": {
+    "config\\architecture.json": "e2abd2fbb81155389554b9f2aeb6b503e684c8b8527ea23aa3db31f386ed3f3a",
+    "config\\frozen_real_rois.json": "127889180c52fbcfe4b0f68f9cd19b36770f610791195c7a08c9d9f743376741",
+    "config\\real_sources.json": "77c16aeb44a6cfbc8cae3a5792e38b82d5f499dc9de0860d7a466ff27649060c",
+    "config\\training_design.json": "8b90345f37d5688071beee5e7a433ce5b786a99ae84a9e4ddd324c8111163d57",
+    "config\\validation_contract.json": "d95f4db813cd64ecff2a150e035cf6d1516f7c6fbd0cf2afbf9a5d69f69cd1ab",
+    "scripts\\audit_real_panel.py": "662c73c3452683922de5010d81588aa174f0b8af8da7627672414cb0b3ec199c",
+    "scripts\\check_design.py": "0ddb8042d9bc86de4e5313c71ef51d43f485eb722f5695161cddf9efd74c689f",
+    "scripts\\check_operator_math.py": "68189594dc5fda9c14607b1a42a4a0ebaf9a1c140d4494defd5554908988e70e",
+    "scripts\\freeze_raw_rois.py": "f5299ebe8d228b117e7076b17678f06c7c256df69ec267d6a8eb53cd62e1562f",
+    "reports\\R123_DATA_AND_VALIDATION.md": "63913687aecf110b53100aef0c6572ee77ee899ce97bcc192b6c4aeef0e855e0",
+    "reports\\R123_DESIGN.md": "c314da81b0efc8c0b4c3a3ea54568a25b50fc9094b50173ad1318b6a64970fd3",
+    "reports\\R123_RESULTS.md": "81734c21c80dd381f5983ba041cc40e5c2769dc02b0fc49dc3160b4fced5d4d9"
+  }
+}

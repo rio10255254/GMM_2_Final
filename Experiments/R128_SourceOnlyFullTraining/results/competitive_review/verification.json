@@ -1,0 +1,50 @@
+{
+  "verified_utc": "2026-09-10T09:04:42.779835+00:00",
+  "all_1080_contour_rows_recomputed": true,
+  "independent_numeric_max_differences": {
+    "mean_boundary_px": 6.811556463315327e-07,
+    "hd95_px": 4.936611384120937e-07,
+    "iou": 5.551115123125783e-16,
+    "area_error_pct": 5.329070518200751e-15
+  },
+  "circularity_difference_formula_verified": true,
+  "perimeter_and_digital_circularity_from_unchanged_MATLAB_regionprops": true,
+  "previous_Raw_and_R128_rows_max_differences": {
+    "mean_boundary_px": 0.0,
+    "hd95_px": 0.0,
+    "iou": 7.775628596551343e-08,
+    "area_error_pct": 7.09013310284945e-07,
+    "perimeter_error_pct": 5.926993198457353e-07,
+    "circularity_error": 6.63771970027538e-09
+  },
+  "all_Raw_derived_shifts_independently_verified": true,
+  "no_shift_clipping": true,
+  "same_120_LSC_pairs_for_all_five_historical_methods": true,
+  "historical_LSC_summary_max_differences": {
+    "n_pairs": 0.0,
+    "step_sd_nm": 1.9539925233402755e-14,
+    "mean_nominal_abs_error_nm": 1.7763568394002505e-15,
+    "median_within_grid_sd_nm": 1.7763568394002505e-15,
+    "median_cross_axis_abs_nm": 3.552713678800501e-15
+  },
+  "R128_formal_LSC_measured": false,
+  "no_new_inference_or_training": true,
+  "no_new_confirmation": true,
+  "sources_unchanged": true,
+  "plan": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\competitive_review\\plan.json",
+    "sha256": "1bfcd1a2b16ba9ff0471caf4bd8514ded4efb2561cd37cfb121ea11465361fa0"
+  },
+  "inputs": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\competitive_review\\inputs.mat",
+    "sha256": "adb8b21128e514ef8b7f390071a3f79d445c5495ac0926d089e99710baee7e06"
+  },
+  "measurements": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\competitive_review\\measurements.csv",
+    "sha256": "655820773a98dd15111b64a8719be134fb563d229567b26411211c285a6332d1"
+  },
+  "analysis": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\competitive_review\\analyze.py",
+    "sha256": "cb157043d7ee36f3e30e0ae6936f05e4b86c4a7b776de6b2dcb531a16e3352cc"
+  }
+}

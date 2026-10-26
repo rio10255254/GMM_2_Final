@@ -53,7 +53,7 @@
 |---|---|
 | 重建、LSC 量測、統計與獨立核對程式、固定計畫 | 本資料夾 `scripts/`、`config/`，已在 GitHub |
 | 報告圖 | `reports/lsc_figures/`、`lsc_four_model_figures/`、`lsc_r61_figures/`、`r61_figures/`，已在 GitHub |
-| 給使用者的閱讀包與圖表包（PDF、Excel、PNG／SVG） | `output/` 下對應的資料夾，已在 GitHub（原本是 ZIP，git 上是展開後的內容） |
+| 給使用者的閱讀包與圖表包（PDF、Excel、PNG／SVG） | `output/` 下對應的資料夾，已在 GitHub（原本是 ZIP，git 上是展開後的內容；2026-10-26 逐檔比對過，只存在包裡的說明與打包清單也已補進對應資料夾） |
 | 930 張原圖、各模型的浮點重建、逐筆圓心與邊界點 | 查 `python Tools/cloud_locator.py where Experiments/R136_PIRepeatability/<路徑>` |
 
 ## 原始報告

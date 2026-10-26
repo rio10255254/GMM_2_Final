@@ -1,0 +1,16 @@
+{
+  "train": {
+    "scenes": 96,
+    "physical_positions": 4704,
+    "manifest_sha256": "f8ef9dbcfae6dbd47c42c30c1efa46ccd6e570723d3afea5ca5b917bbce8de5b"
+  },
+  "validation": {
+    "scenes": 48,
+    "physical_positions": 2352,
+    "manifest_sha256": "2cef86ab9ed53aa2eec852dac3c246c68c47edbd338f066359d8aa24d24994bb"
+  },
+  "status": "pass",
+  "payload_gib": 0.7206823201850057,
+  "partitions_disjoint": true,
+  "source_and_target_anchors_byte_equal": true
+}

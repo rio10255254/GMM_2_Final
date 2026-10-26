@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R102_UniversalDetailScratch",
+  "run_id": "training_R102_scratch_seed1020053_20260815_125510",
+  "status": "stopped_by_user_after_identity_collapse",
+  "stopped_at": "2026-08-15T14:21:52.6251632+08:00",
+  "trainer_pid": 3164,
+  "stopped_at_epoch": 41,
+  "stopped_at_step": 70,
+  "epoch_steps": 100,
+  "last_committed_epoch": 40,
+  "last_checkpoint": "D:/GMM_2_Final/Experiments/R102_UniversalDetailScratch/weights/formal/seed_1020053/training_R102_scratch_seed1020053_20260815_125510/epoch_040.pth.tar",
+  "evidence_preserved": true,
+  "resume_planned": false,
+  "replacement_policy": "new isolated experiment and random initialization",
+  "measured_real_mean_absolute_change_gray": {
+    "5x_dense_raw.bmp": 0.0000863805,
+    "20x_mixed_raw.bmp": 0.0000863595,
+    "50x_array_raw.bmp": 0.0000863395,
+    "pillar_center9_50x_raw.bmp": 0.0001536668
+  },
+  "reason": "The formal model remained numerically and visually near identity through epoch 40. Contour and texture validation did not improve, so the remaining epochs were not expected to reverse the learned strategy."
+}

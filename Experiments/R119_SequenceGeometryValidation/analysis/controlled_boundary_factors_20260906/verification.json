@@ -1,0 +1,91 @@
+{
+  "protected_inputs_unchanged": 93,
+  "image_arrays_finite_and_bounded": 2720,
+  "exact_repeated_control_pairs": 24,
+  "profile_summary_max_numeric_difference": 9.974659986866641e-17,
+  "independent_interpolation_spots": [
+    {
+      "directory": "cases",
+      "case_id": 0,
+      "max_independent_interpolator_error_px": 1.639779136095379e-07
+    },
+    {
+      "directory": "cases",
+      "case_id": 5,
+      "max_independent_interpolator_error_px": 7.11238575562478e-07
+    },
+    {
+      "directory": "cases",
+      "case_id": 14,
+      "max_independent_interpolator_error_px": 2.8964334609828807e-07
+    },
+    {
+      "directory": "cases",
+      "case_id": 26,
+      "max_independent_interpolator_error_px": 1.274868666356621e-06
+    },
+    {
+      "directory": "cases",
+      "case_id": 80,
+      "max_independent_interpolator_error_px": 3.412666608193504e-07
+    },
+    {
+      "directory": "cases",
+      "case_id": 85,
+      "max_independent_interpolator_error_px": 1.0041725699294624e-06
+    },
+    {
+      "directory": "cases",
+      "case_id": 94,
+      "max_independent_interpolator_error_px": 4.5742995570530187e-07
+    },
+    {
+      "directory": "cases",
+      "case_id": 166,
+      "max_independent_interpolator_error_px": 4.402593562352619e-07
+    },
+    {
+      "directory": "cases",
+      "case_id": 225,
+      "max_independent_interpolator_error_px": 1.93317622526612e-06
+    },
+    {
+      "directory": "radiometry_cases",
+      "case_id": 24,
+      "max_independent_interpolator_error_px": 1.3203923528194716e-06
+    },
+    {
+      "directory": "radiometry_cases",
+      "case_id": 61,
+      "max_independent_interpolator_error_px": 1.650447407880451e-06
+    },
+    {
+      "directory": "radiometry_cases",
+      "case_id": 74,
+      "max_independent_interpolator_error_px": 1.4558951157289668e-06
+    }
+  ],
+  "real_invalid_profiles_by_method": {
+    "Raw": 179,
+    "Raw_own_levels": 179,
+    "attenuation": 1,
+    "attenuation_own_levels": 1,
+    "full": 0,
+    "full_own_levels": 0,
+    "no_shift": 23,
+    "no_shift_own_levels": 65
+  },
+  "retained_failures": [
+    "Initial real-profile calibration stopped before optical comparison; v2 refines geometry-only reference coordinates and satisfies a stricter threshold.",
+    "Initial generic finite-number summary check incorrectly included declared null 2D centers of straight edges; corrected check requires those nulls and finite circle centers. No measurement values changed."
+  ],
+  "source_code_sha256": "6988ac1e62397d3cd439c717a81010a6b378b6c4049b8dba6c92ffb4fce1afda",
+  "code_sha256": {
+    "radiometry.py": "6ce3d7c5ddab5347fc1084a96c7663060b0a9086b1cb00ac905ca220c51a7305",
+    "real_profiles.py": "d0e399ebe4b8a281c9f9c992b45c8ea7ed15f01f7fbbd93f674ab7ab2de7d633",
+    "real_profiles_v2.py": "cfda6cb427ee18ba59de58ada82b978a32866b38a3aa665a6a9533741cb0ad52",
+    "run.py": "daadc513d0a7090424ce62ba032ead95e8f2727433f1ecd9a1176eb09818ed2c",
+    "summarize.py": "0ecc1379db11cd3bf054ded588c707ed8270051340347001172b4c14d0d42cad",
+    "verify.py": "6988ac1e62397d3cd439c717a81010a6b378b6c4049b8dba6c92ffb4fce1afda"
+  }
+}

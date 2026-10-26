@@ -1,0 +1,150 @@
+{
+  "created_utc": "2026-09-14T06:48:21.922189+00:00",
+  "images": [
+    {
+      "exposure": 13,
+      "source": {
+        "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem13.png",
+        "sha256": "cb2585999c38f06314c1e345dc3381f1efa4cdb2bc85f5e730166f39c9c30391"
+      },
+      "existing_float_exact": true,
+      "existing_PNG_exact": true,
+      "independent_guard_exact": true
+    },
+    {
+      "exposure": 14,
+      "source": {
+        "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem14.png",
+        "sha256": "c2a57df81569aacffda841d2a1f199766d2a8015aad540c175e9f917098591b1"
+      },
+      "existing_float_exact": true,
+      "existing_PNG_exact": true,
+      "independent_guard_exact": true
+    },
+    {
+      "exposure": 15,
+      "source": {
+        "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\validation\\inputs\\sem15.png",
+        "sha256": "14e1bb6f4227bde5397337642acc9d0b97e68aaca7e96b460cc066aafdd8dbd6"
+      },
+      "existing_float_exact": true,
+      "existing_PNG_exact": true,
+      "independent_guard_exact": true
+    }
+  ],
+  "pillar18": [
+    {
+      "exposure": 13,
+      "pillar": 18,
+      "cx": 72,
+      "cy": 347,
+      "crop_x0": 20,
+      "crop_x1_exclusive": 124,
+      "raw_retained_fraction": 0.5865384615384616,
+      "transition_fraction": 0.14423076923076922,
+      "full_model_fraction": 0.2692307692307692,
+      "retained_pixel_difference_max_gray": 0.0,
+      "discarded_model_change_mean_gray": 3.2809534203261137,
+      "crop_actual_change_mean_gray": 1.2407272355630994,
+      "crop_pre_guard_change_mean_gray": 3.405071385204792
+    },
+    {
+      "exposure": 14,
+      "pillar": 18,
+      "cx": 72,
+      "cy": 347,
+      "crop_x0": 20,
+      "crop_x1_exclusive": 124,
+      "raw_retained_fraction": 0.5865384615384616,
+      "transition_fraction": 0.14423076923076922,
+      "full_model_fraction": 0.2692307692307692,
+      "retained_pixel_difference_max_gray": 0.0,
+      "discarded_model_change_mean_gray": 3.3699401328340173,
+      "crop_actual_change_mean_gray": 1.2493005255237222,
+      "crop_pre_guard_change_mean_gray": 3.467508447356522
+    },
+    {
+      "exposure": 15,
+      "pillar": 18,
+      "cx": 72,
+      "cy": 347,
+      "crop_x0": 20,
+      "crop_x1_exclusive": 124,
+      "raw_retained_fraction": 0.5865384615384616,
+      "transition_fraction": 0.14423076923076922,
+      "full_model_fraction": 0.2692307692307692,
+      "retained_pixel_difference_max_gray": 0.0,
+      "discarded_model_change_mean_gray": 3.3259275695309043,
+      "crop_actual_change_mean_gray": 1.2532685813494027,
+      "crop_pre_guard_change_mean_gray": 3.4491680189967155
+    }
+  ],
+  "pillar16": [
+    {
+      "exposure": 13,
+      "pillar": 16,
+      "cx": 342,
+      "cy": 348,
+      "crop_x0": 290,
+      "crop_x1_exclusive": 394,
+      "raw_retained_fraction": 0.0,
+      "transition_fraction": 0.0,
+      "full_model_fraction": 1.0,
+      "retained_pixel_difference_max_gray": 0.0,
+      "discarded_model_change_mean_gray": 0.0,
+      "crop_actual_change_mean_gray": 3.3749793749302626,
+      "crop_pre_guard_change_mean_gray": 3.3749793749302626
+    },
+    {
+      "exposure": 14,
+      "pillar": 16,
+      "cx": 342,
+      "cy": 348,
+      "crop_x0": 290,
+      "crop_x1_exclusive": 394,
+      "raw_retained_fraction": 0.0,
+      "transition_fraction": 0.0,
+      "full_model_fraction": 1.0,
+      "retained_pixel_difference_max_gray": 0.0,
+      "discarded_model_change_mean_gray": 0.0,
+      "crop_actual_change_mean_gray": 3.4628921700641513,
+      "crop_pre_guard_change_mean_gray": 3.4628921700641513
+    },
+    {
+      "exposure": 15,
+      "pillar": 16,
+      "cx": 342,
+      "cy": 348,
+      "crop_x0": 290,
+      "crop_x1_exclusive": 394,
+      "raw_retained_fraction": 0.0,
+      "transition_fraction": 0.0,
+      "full_model_fraction": 1.0,
+      "retained_pixel_difference_max_gray": 0.0,
+      "discarded_model_change_mean_gray": 0.0,
+      "crop_actual_change_mean_gray": 3.448291691020131,
+      "crop_pre_guard_change_mean_gray": 3.448291691020131
+    }
+  ],
+  "all36_counts": {
+    "13": {
+      "fully_model_crops": 16,
+      "partly_retained_crops": 20
+    },
+    "14": {
+      "fully_model_crops": 16,
+      "partly_retained_crops": 20
+    },
+    "15": {
+      "fully_model_crops": 16,
+      "partly_retained_crops": 20
+    }
+  },
+  "explanation": "The gallery pillar18 lies across the left FOV guard: much of its crop is replaced exactly by Raw. The network made nonzero corrections there before the guard. This is not a missing left-half neural forward.",
+  "scope": "Direct explanation of the shown pillar18; not a guarantee every directional blur has this cause. Pre-guard outputs are diagnostic only, not qualified deployment replacements.",
+  "original_figures_metrics_weights_unchanged": true,
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R131_RecurrentStepValidation\\scripts\\diagnose_half_image.py",
+    "sha256": "972b60e643ed9318af13b74dbbcb374d428df313fed41a669045e58be293785c"
+  }
+}

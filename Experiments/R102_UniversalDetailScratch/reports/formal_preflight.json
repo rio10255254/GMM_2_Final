@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R102_UniversalDetailScratch",
+  "passed": true,
+  "created_at": "2026-08-15T12:53:30.675730",
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX A6000",
+  "parameter_count": 2194021,
+  "source_isolation_pass": true,
+  "fresh_model_identity_max_abs": 0.0,
+  "short_overfit_initial": 0.11755937337875366,
+  "short_overfit_final": 0.10490358620882034,
+  "short_overfit_improvement_fraction": 0.10765442861930552,
+  "branch_gradient_norms": {
+    "low_head": 0.41737017035484314,
+    "contour_head": 0.0062238131649792194,
+    "texture_head": 0.007105144206434488,
+    "e1": 0.1295858919620514
+  },
+  "tile_mean_abs": 6.196414688020013e-07,
+  "tile_max_abs": 4.124641418457031e-05,
+  "subpixel_translation_mean_abs": 9.174206752504688e-06,
+  "stage_memory_benchmark": [
+    {
+      "patch_size": 256,
+      "scene_batch": 20,
+      "flattened_views": 40,
+      "seconds": 1.75286400000914,
+      "peak_allocated_gib": 31.288745403289795,
+      "free_after_gib": 14.7392578125
+    },
+    {
+      "patch_size": 320,
+      "scene_batch": 14,
+      "flattened_views": 28,
+      "seconds": 1.9084752000053413,
+      "peak_allocated_gib": 34.29574537277222,
+      "free_after_gib": 11.7099609375
+    },
+    {
+      "patch_size": 384,
+      "scene_batch": 10,
+      "flattened_views": 20,
+      "seconds": 1.9315131999901496,
+      "peak_allocated_gib": 35.20353317260742,
+      "free_after_gib": 10.558944702148438
+    }
+  ],
+  "data_preview": "D:\\GMM_2_Final\\Experiments\\R102_UniversalDetailScratch\\reports\\data_preview.png"
+}

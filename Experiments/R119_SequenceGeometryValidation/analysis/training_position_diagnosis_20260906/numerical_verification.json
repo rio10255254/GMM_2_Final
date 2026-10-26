@@ -1,0 +1,27 @@
+{
+  "paired_records": 384,
+  "unique_common_input_hash_groups": 192,
+  "weighted_sum_max_difference": 3.399909474892382e-07,
+  "weighted_sum_max_fraction_of_derived_roundoff_bound": 0.0699504805173747,
+  "known_positive_input_flow_output_shift_px": -0.24625012220806042,
+  "fresh_forward_spots": [
+    {
+      "split": "train",
+      "scene_id": 1,
+      "absolute_loss_change_replay_difference": 5.9604644751104496e-08
+    },
+    {
+      "split": "validation",
+      "scene_id": 5001,
+      "absolute_loss_change_replay_difference": 1.1641532182693481e-08
+    },
+    {
+      "split": "validation",
+      "scene_id": 5013,
+      "absolute_loss_change_replay_difference": 5.960464474763505e-08
+    }
+  ],
+  "protected_files_unchanged": 92,
+  "source_code_sha256": "06f80b195851d06525a88b6c5967c7be9df0d078472df3811a4722a43ea38293",
+  "prior_check_failure": "An initial ad hoc absolute 2e-7 term-sum threshold failed at 3.3999e-7. No result was changed. This check instead uses the float32 forward-error bound from operation count and nonnegative total magnitudes, with all residuals within the bound."
+}

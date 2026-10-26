@@ -1,0 +1,52 @@
+{
+  "methods": [
+    "RAW",
+    "R152"
+  ],
+  "paired_scans": 30,
+  "steps_per_scan": 30,
+  "adjacent_observations": 1800,
+  "main_figure": "At each step, mean measured displacement across 30 scans ± sample SD (ddof=1)",
+  "secondary_figure": "One within-scan sample SD per 30-step scan; band is their mean ± sample SD",
+  "source": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\results\\comparison\\all_displacements.csv",
+  "source_sha256": "32cdcd4cb3f4816dcf2b677ba8ce550a3c2d440fde7fb165ecf37ce34cca2eb0",
+  "source_audit_passed": true,
+  "independent_statistics_checks": "All 60 means, 60 SDs and 60 within-scan SDs checked with statistics",
+  "within_scan_summary_matches_prior_recalculation": true,
+  "results": {
+    "RAW": {
+      "pooled_within_scan_sd_nm": 10.199758113309851,
+      "mean_of_scan_sds_nm": 10.061694616408966,
+      "sd_of_scan_sds_nm": 1.701125494414975,
+      "minimum_scan_sd_nm": 6.952348117301435,
+      "maximum_scan_sd_nm": 13.782461167961287
+    },
+    "R152": {
+      "pooled_within_scan_sd_nm": 4.864821280613461,
+      "mean_of_scan_sds_nm": 4.753797037819438,
+      "sd_of_scan_sds_nm": 1.051058488904731,
+      "minimum_scan_sd_nm": 3.3772025847386007,
+      "maximum_scan_sd_nm": 6.989032059072821
+    }
+  },
+  "improved_scans": 30,
+  "per_scan_reduction_min_percent": 36.875754750755554,
+  "per_scan_reduction_max_percent": 64.56207070953792,
+  "pooled_reduction_percent": 52.30454265120987,
+  "figures": [
+    "RAW_R152_step_mean_sd.png",
+    "RAW_R152_step_mean_sd.pdf",
+    "RAW_R152_step_mean_sd.svg",
+    "RAW_R152_within_scan_sd.png",
+    "RAW_R152_within_scan_sd.pdf",
+    "RAW_R152_within_scan_sd.svg"
+  ],
+  "export_checks": {
+    "all_main_band_bounds_visible": true,
+    "sixty_exported_point_records_and_sample_counts_checked": true,
+    "both_pngs_grayscale_3150_by_1890": true,
+    "both_pdfs_single_page_vector_7_by_4point2_inches": true,
+    "svg_labels_present": true,
+    "both_pngs_visually_reviewed": true
+  }
+}

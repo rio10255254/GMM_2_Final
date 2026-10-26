@@ -1,0 +1,146 @@
+{
+  "run_id": "V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713",
+  "checkpoint_sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
+  "image_split_counts": {
+    "train": 9857,
+    "val": 1397
+  },
+  "role_counts": [
+    {
+      "role": "legacy_shape",
+      "train": 229,
+      "val": 11
+    },
+    {
+      "role": "motion_synthetic",
+      "train": 730,
+      "val": 30
+    },
+    {
+      "role": "motion_texture_synthetic",
+      "train": 748,
+      "val": 12
+    },
+    {
+      "role": "sem_truth_anchor",
+      "train": 623,
+      "val": 17
+    },
+    {
+      "role": "sequence_guard",
+      "train": 404,
+      "val": 16
+    },
+    {
+      "role": "step_guard_motion_texture_synthetic",
+      "train": 736,
+      "val": 24
+    },
+    {
+      "role": "target_real_gmf_roi_selfshift_motion_pair",
+      "train": 300,
+      "val": 60
+    },
+    {
+      "role": "target_real_lowmag_gmf_dot_r61_motion_pair",
+      "train": 300,
+      "val": 300
+    },
+    {
+      "role": "target_real_lowmag_square_raw_shape_pair",
+      "train": 100,
+      "val": 100
+    },
+    {
+      "role": "target_real_motion_pair",
+      "train": 938,
+      "val": 238
+    },
+    {
+      "role": "target_real_multimag_raw_motion_guard_pair",
+      "train": 1400,
+      "val": 200
+    },
+    {
+      "role": "target_real_pseudo_boundary",
+      "train": 1310,
+      "val": 160
+    },
+    {
+      "role": "target_real_selfshift_motion_pair",
+      "train": 600,
+      "val": 108
+    },
+    {
+      "role": "target_real_stability_shape_teacher_pair",
+      "train": 700,
+      "val": 100
+    },
+    {
+      "role": "universal_synthetic",
+      "train": 739,
+      "val": 21
+    }
+  ],
+  "train_val_common_source_frames": 301,
+  "train_val_unique_frame_counts": {
+    "train": 301,
+    "val": 301
+  },
+  "evaluation_overlap": [
+    {
+      "sequence": "50x_x_0p5um",
+      "evaluation_frames": 51,
+      "train_eligible_rows": 433,
+      "evaluation_frames_with_train_ancestry": 51,
+      "selected_pairs": 30,
+      "selected_pairs_both_frames_have_train_ancestry": 30
+    },
+    {
+      "sequence": "50x_x_1um",
+      "evaluation_frames": 50,
+      "train_eligible_rows": 670,
+      "evaluation_frames_with_train_ancestry": 50,
+      "selected_pairs": 30,
+      "selected_pairs_both_frames_have_train_ancestry": 30
+    },
+    {
+      "sequence": "20x_0p5um",
+      "evaluation_frames": 50,
+      "train_eligible_rows": 1005,
+      "evaluation_frames_with_train_ancestry": 50,
+      "selected_pairs": 30,
+      "selected_pairs_both_frames_have_train_ancestry": 30
+    },
+    {
+      "sequence": "20x_1um",
+      "evaluation_frames": 50,
+      "train_eligible_rows": 955,
+      "evaluation_frames_with_train_ancestry": 50,
+      "selected_pairs": 30,
+      "selected_pairs_both_frames_have_train_ancestry": 30
+    }
+  ],
+  "pixel_checks": {
+    "count": 835,
+    "exact": 835,
+    "maximum_abs_gray": 0
+  },
+  "sem_anchor": {
+    "train_rows": 623,
+    "real_crop_rows": 378,
+    "sem_answer_rows": 623,
+    "payload_checks": 1246,
+    "matching_source_hashes": 1234,
+    "original_microscope_image": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\20260618_100MG\\Image__2026-06-18__17-10-31.bmp",
+    "same_static_evaluation_image": true,
+    "sem_reference_csv": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20260618_100MG_user_recon\\cd_measurement_20260620_basler_ace\\sem_reference_36_radius.csv"
+  },
+  "limitations": [
+    "Membership records establish eligibility, not per-example weighted-sampler consumption.",
+    "Auxiliary sequence and motion samplers access the same package separately; image split is a conservative lower bound on training access.",
+    "V42 starts from V41 and uses teacher outputs. Full ancestor pretraining contamination was not reconstructed.",
+    "No conclusion about intent or whether historical same-sample adaptation was disclosed in every thesis passage.",
+    "Supervised truth is legitimate in training; these reused samples cannot establish unseen evaluation."
+  ]
+}

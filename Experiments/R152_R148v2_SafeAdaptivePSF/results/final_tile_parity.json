@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "checkpoint_sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61",
+  "core": 512,
+  "halo": 24,
+  "frames": [
+    {
+      "frame": "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty\\20260902_100MF_uncertainty\\20260903\\001804_XY_0\\1.bmp",
+      "mean_abs_gray": 1.610218709612366e-06,
+      "rms_gray": 4.6446151749328515e-06,
+      "p99_gray": 1.519918441772461e-05,
+      "max_gray": 7.599592208862305e-05,
+      "seam_mean_gray": 1.9605935446395376e-06,
+      "interior_mean_gray": 1.5976522669367532e-06,
+      "seam_to_interior_ratio": 1.2271716350383723
+    },
+    {
+      "frame": "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty\\20260902_100MF_uncertainty\\20260903\\004246_XY_0\\1.bmp",
+      "mean_abs_gray": 1.5838171272046065e-06,
+      "rms_gray": 4.579278957523053e-06,
+      "p99_gray": 1.519918441772461e-05,
+      "max_gray": 6.079673767089844e-05,
+      "seam_mean_gray": 1.939518003440409e-06,
+      "interior_mean_gray": 1.571059662272698e-06,
+      "seam_to_interior_ratio": 1.2345285478431154
+    },
+    {
+      "frame": "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty\\20260902_100MF_uncertainty\\20260903\\005143_XY_0\\31.bmp",
+      "mean_abs_gray": 1.5796096265194362e-06,
+      "rms_gray": 4.530149898265008e-06,
+      "p99_gray": 1.519918441772461e-05,
+      "max_gray": 6.079673767089844e-05,
+      "seam_mean_gray": 2.076741472056795e-06,
+      "interior_mean_gray": 1.5617796392753973e-06,
+      "seam_to_interior_ratio": 1.3297275875745949
+    }
+  ],
+  "completed_utc": "2026-09-29T06:38:54.108848+00:00"
+}

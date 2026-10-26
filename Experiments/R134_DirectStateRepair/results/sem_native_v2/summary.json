@@ -1,0 +1,65 @@
+{
+  "status": "native_scale_and_edge_definition_audit_complete",
+  "sources": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\results\\formal_sem\\results\\masks\\acm_primary_masks.mat",
+      "sha256": "68e45e7e68d60404fb0c30203a0775e4ba644d937578e21bd2d74fc988071bdc"
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+      "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88"
+    },
+    {
+      "path": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data\\P-01.tiff",
+      "sha256": "6ba0f1866e396a724477769e112714aa4e963d3d7e8aa4e7d202b14691d8213a"
+    },
+    {
+      "path": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data\\P-02.tiff",
+      "sha256": "7ca9391f4dd802e0a2e5647dfa501920c9226715b48d8e2733d8aa0fe535aaa7"
+    },
+    {
+      "path": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data\\P-03.tiff",
+      "sha256": "f4f413f3add558e037abb5c5625187b7c4bddf8152710f8ea1c5054dc05bcce2"
+    },
+    {
+      "path": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data\\P-04.tiff",
+      "sha256": "65f90c43328983c4aee3699d0be25942fcfbc7827019313a4e86439d03631034"
+    },
+    {
+      "path": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data\\P-05.tiff",
+      "sha256": "52a82506570c617b17a78d4661562cc3c33a7048b245ae9cfb0b1934ac33cf3f"
+    },
+    {
+      "path": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data\\P-06.tiff",
+      "sha256": "bcb40c21ffa03a24f316e7000116527c7f93e24745e63c99468942cbfe5021b3"
+    },
+    {
+      "path": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data\\P-07.tiff",
+      "sha256": "dfe1e98b9f4713fe51025d8459d1783082b2be5e0f14a702bcc5e53f91bf1d67"
+    },
+    {
+      "path": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data\\P-08.tiff",
+      "sha256": "8a21adf4711a4e36bd43911d356942fd2f24a9c0817ddaa5d4d42ec83ba74e7f"
+    },
+    {
+      "path": "H:\\From_2TB_D_disk\\13_thesis\\SEM_data\\P-09.tiff",
+      "sha256": "6eaa2b11773d3ae6b6dc6edfbf9689f9c66444fd58c956d673f9cace4efc9575"
+    }
+  ],
+  "old_reference_files_modified": false,
+  "optical_pitch": 134.4284063172783,
+  "native_SEM_pitch_median": 431.0545317419005,
+  "native_SEM_to_optical_scale": 0.31185939693998865,
+  "historical_scale": 0.30959752321981426,
+  "relative_factor_to_historical": 1.0073058521161633,
+  "leave_one_SEM_image_out_factor_range": [
+    1.0072782604148793,
+    1.0075163963340414
+  ],
+  "minimum_valid_rays": 716,
+  "median_SEM_edge_definition_width_optical_px": 2.516494465194011,
+  "neural_outputs_used_for_scale": false,
+  "absolute_instrument_calibration_qualified": false,
+  "physical_edge_equivalence_qualified": false,
+  "profile_role": "native SEM rim and sensitivity band; relative center-pitch transfer only"
+}

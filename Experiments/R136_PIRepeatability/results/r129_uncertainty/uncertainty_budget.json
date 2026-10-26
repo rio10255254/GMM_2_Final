@@ -1,0 +1,42 @@
+{
+  "components": [
+    {
+      "component": "Observed repeated indication-error spread",
+      "available": true,
+      "source": "r129_uncertainty_by_position.csv",
+      "handling": "Reported as session-specific s;includes reference random fluctuations and observedtimevariation"
+    },
+    {
+      "component": "Uncertainty of average indication error",
+      "available": true,
+      "source": "time/protocol mean model with HACcovariance",
+      "handling": "Model conditional TypeA;not sqrt30blindly;lag sensitivity retained"
+    },
+    {
+      "component": "PI displacement calibration",
+      "available": false,
+      "source": "Not supplied",
+      "handling": "Unknown,not zero;do not re-add PI random noise already represented"
+    },
+    {
+      "component": "Scale/direction calibration",
+      "available": false,
+      "source": "nominal pitch and priorPI-basedfit are not calibration uncertainty",
+      "handling": "Unknown,not zero;sharedPI dependence must be propagated jointly"
+    },
+    {
+      "component": "Timing/environment outside observed session",
+      "available": false,
+      "source": "Not independently characterized",
+      "handling": "No universal or between-day scope"
+    },
+    {
+      "component": "Bias correction",
+      "available": false,
+      "source": "Currentmeanbias known;no independently validated correction applied",
+      "handling": "Keep bias separate;do not add its square and label RMSEasuncertainty"
+    }
+  ],
+  "full_combined_u": null,
+  "full_expanded_U": null
+}

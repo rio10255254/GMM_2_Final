@@ -1,0 +1,58 @@
+{
+  "physical_fit": {
+    "line": {
+      "count": 90,
+      "fit_failure": 0,
+      "bound_hits": 0,
+      "position_failure": 6,
+      "motion_failure": 8,
+      "median_signed_position_px": 3.647924270308578e-06,
+      "worst_abs_position_px": 0.3791166173051259,
+      "worst_abs_motion_px": 0.40952113022993697
+    },
+    "circle8": {
+      "count": 90,
+      "fit_failure": 0,
+      "bound_hits": 0,
+      "position_failure": 57,
+      "motion_failure": 15,
+      "median_signed_position_px": -0.14702346745222558,
+      "worst_abs_position_px": 0.47661973814513586,
+      "worst_abs_motion_px": 0.4700636631705092
+    },
+    "circle16": {
+      "count": 90,
+      "fit_failure": 0,
+      "bound_hits": 0,
+      "position_failure": 32,
+      "motion_failure": 12,
+      "median_signed_position_px": -0.07327700430649975,
+      "worst_abs_position_px": 0.7590713672879318,
+      "worst_abs_motion_px": 0.8328345792467423
+    },
+    "circle32": {
+      "count": 90,
+      "fit_failure": 0,
+      "bound_hits": 0,
+      "position_failure": 24,
+      "motion_failure": 12,
+      "median_signed_position_px": -0.03649489855120666,
+      "worst_abs_position_px": 0.4907057389858091,
+      "worst_abs_motion_px": 0.351405677297571
+    }
+  },
+  "render_convergence": {
+    "count": 36,
+    "max_abs_center_difference_px": 2.4478161636865003e-05
+  },
+  "area_checks": {
+    "count": 6,
+    "max_abs_error_px2": 0.0011610929836933792
+  },
+  "line_checks": {
+    "count": 9,
+    "max_abs_position_error_px": 3.806485883162125e-07,
+    "max_intensity_error_gray": 0.00319011832294791
+  },
+  "supersedes": "original physical_fit.csv for physical position/motion conclusions only; original retained as rasterization-confounded diagnostic"
+}

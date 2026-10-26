@@ -1,0 +1,44 @@
+{
+  "completed_utc": "2026-09-12T07:26:35.199946+00:00",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\thesis_v34_review\\verify_bridge_and_shape.py",
+    "sha256": "1bc543322c587c7b5f152dc0d81e483e43cd9b973ff1680a7c9d7a34e0ccde94"
+  },
+  "v34_Raw_and_V42_reader_reproduced": true,
+  "all_nine_methods_same_v34_120pairs": true,
+  "pair_arithmetic_checks": [
+    {
+      "method": "Raw",
+      "max_pair_arithmetic_difference": 7.849232375178872e-11
+    },
+    {
+      "method": "MOSR",
+      "max_pair_arithmetic_difference": 1.176836406102666e-10
+    },
+    {
+      "method": "R128_P_s1285002",
+      "max_pair_arithmetic_difference": 7.860379014346108e-11
+    }
+  ],
+  "R128new_full_images": 22,
+  "R128reused_images": 144,
+  "fine_SEM_Raw_V42_parity": {
+    "radial_shape_mae_nm": 7.105427357601002e-15,
+    "contour_correlation": 1.1102230246251565e-16,
+    "lsc_abs_error_nm": 4.405364961712621e-13,
+    "mzc_roundness_abs_error_nm": 2.842170943040401e-14
+  },
+  "fine_324rows_independent_radial_metric_max_difference_nm": 6.491276508313604e-06,
+  "radius_shape_decomposition_is_exploratory": true,
+  "original_sources_unchanged": true,
+  "new_training_updates": 0,
+  "no_confirmation_access": true,
+  "learned_comparison": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\thesis_v34_review_20260912\\v34_bridge\\nine_learned_model_comparison.csv",
+    "sha256": "b9c3aa29f3be78990cf986bf62d2370eb33312472828ff0cdd1b789785e7a611"
+  },
+  "normal_SEM_summary": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\thesis_v34_review_20260912\\normal_sem_fine_v2\\summary.csv",
+    "sha256": "08b475ae2b1000db08bbb979c9c053faaa3f92d76470c749b432824fdc5eb492"
+  }
+}

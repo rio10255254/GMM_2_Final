@@ -1,0 +1,792 @@
+{
+  "schema_version": 1,
+  "status": "generated_not_model_or_real_world_validation",
+  "scene_count": 64,
+  "views_per_scene": 2,
+  "native_size": 640,
+  "supervised_size": 128,
+  "context_native_px": 256,
+  "category_counts": {
+    "irregular_curved": 13,
+    "corners_lines_junctions": 13,
+    "dense_close_structures": 13,
+    "textured_edges": 13,
+    "clean_identity": 6,
+    "flat_negative": 6
+  },
+  "scene_order": "deterministically_interleaved_categories",
+  "source_kind": "new_procedural_only",
+  "external_training_inputs": [],
+  "generator_path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\data\\generator.py",
+  "generator_sha256": "1cbbba12ac4f3b7402d50eb034db369e6ef48ae57398699082dc33710674477c",
+  "scenes": [
+    {
+      "scene_id": "scene_000",
+      "index": 0,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_000_seed1251000",
+      "arrays_path": "scenes/scene_000.npz",
+      "metadata_path": "scenes/scene_000.metadata.json",
+      "sha256": {
+        "arrays": "a7a5be11e6898b695a5aa914bfc9c964222a60dfd68dcefda179ad79277acbdc",
+        "metadata": "9bae124176ff63ddcb2faf894e2558ca918653ae784fefe1b53e15f333878688"
+      }
+    },
+    {
+      "scene_id": "scene_001",
+      "index": 1,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_001_seed1251001",
+      "arrays_path": "scenes/scene_001.npz",
+      "metadata_path": "scenes/scene_001.metadata.json",
+      "sha256": {
+        "arrays": "5d965bf7845ce5c75b0dbfeef2fd6537c863b589d763db1915db1df882589134",
+        "metadata": "8a7a5b1a2b2f83126c7654bdf6c0528ca6f14a47cfe1407e00363d232aab217f"
+      }
+    },
+    {
+      "scene_id": "scene_002",
+      "index": 2,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_002_seed1251002",
+      "arrays_path": "scenes/scene_002.npz",
+      "metadata_path": "scenes/scene_002.metadata.json",
+      "sha256": {
+        "arrays": "2d64f793554380f9ae21ec56b62af5ebb5c79786c7d8d7e6003a6de703952896",
+        "metadata": "ea655f076c48b941ea509956f2c588aadd8b85c1c81353e177ce2f3eccfea580"
+      }
+    },
+    {
+      "scene_id": "scene_003",
+      "index": 3,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_003_seed1251003",
+      "arrays_path": "scenes/scene_003.npz",
+      "metadata_path": "scenes/scene_003.metadata.json",
+      "sha256": {
+        "arrays": "4e1c71b1fa90b0c5e3f1fe585ec5bdab4bfb344094d4fe00668a7c91c4eaab0e",
+        "metadata": "933ebc2af8ed3b1dca6bdeb0efc8dccc36c701373d8d19591a4e8a60a69199e6"
+      }
+    },
+    {
+      "scene_id": "scene_004",
+      "index": 4,
+      "category": "clean_identity",
+      "parent_latent_id": "r125_procedural_004_seed1251004",
+      "arrays_path": "scenes/scene_004.npz",
+      "metadata_path": "scenes/scene_004.metadata.json",
+      "sha256": {
+        "arrays": "63346320bce803e593b828c1895207c7ab93f726358f2b227a4bc2496cf69f17",
+        "metadata": "7275c436f37b32eb2ba6967ad3c0cea6017909c1558671a78662a3852cd50c93"
+      }
+    },
+    {
+      "scene_id": "scene_005",
+      "index": 5,
+      "category": "flat_negative",
+      "parent_latent_id": "r125_procedural_005_seed1251005",
+      "arrays_path": "scenes/scene_005.npz",
+      "metadata_path": "scenes/scene_005.metadata.json",
+      "sha256": {
+        "arrays": "afaeec775c65e68100457a4147edf56f5f288663388cfbbe4a62ecb7fc2dc93a",
+        "metadata": "14461052e23904965ebb35d9fca8ea35f32b4f7b745a5782bb9674f94697908b"
+      }
+    },
+    {
+      "scene_id": "scene_006",
+      "index": 6,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_006_seed1251006",
+      "arrays_path": "scenes/scene_006.npz",
+      "metadata_path": "scenes/scene_006.metadata.json",
+      "sha256": {
+        "arrays": "ecc2ff48330fc30704c43dd95311bb559ba6ce281e3af23c86d900a02c2dce6a",
+        "metadata": "8de2d83252ae70174a1446ca315583d7b163f503f55f814b55952562bee10722"
+      }
+    },
+    {
+      "scene_id": "scene_007",
+      "index": 7,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_007_seed1251007",
+      "arrays_path": "scenes/scene_007.npz",
+      "metadata_path": "scenes/scene_007.metadata.json",
+      "sha256": {
+        "arrays": "1b443d6f71395d552de4b99132529ba937711d13b90fdb7eb56850b9faf54d0e",
+        "metadata": "e87d106d33296d59f97c33eeda0dab25a48fa26fd51daa3290c670627c4fa118"
+      }
+    },
+    {
+      "scene_id": "scene_008",
+      "index": 8,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_008_seed1251008",
+      "arrays_path": "scenes/scene_008.npz",
+      "metadata_path": "scenes/scene_008.metadata.json",
+      "sha256": {
+        "arrays": "12dc947e90dd7e8932e131d0c53a8b5abaaf1ce7f4dca98b1c494180a55fa59b",
+        "metadata": "0f6eb999146aaac9eddc1ae8ab4bf696b572ba4f15b18ec14dcdcca2efbf795a"
+      }
+    },
+    {
+      "scene_id": "scene_009",
+      "index": 9,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_009_seed1251009",
+      "arrays_path": "scenes/scene_009.npz",
+      "metadata_path": "scenes/scene_009.metadata.json",
+      "sha256": {
+        "arrays": "9f559b6331953a2118ed02082203637a3117e9ce86e71051ae676eebb17b9564",
+        "metadata": "6be51c0b3c1950fbd9b832ad07aafa462020fc5a6b773765e88e11890c6701c3"
+      }
+    },
+    {
+      "scene_id": "scene_010",
+      "index": 10,
+      "category": "clean_identity",
+      "parent_latent_id": "r125_procedural_010_seed1251010",
+      "arrays_path": "scenes/scene_010.npz",
+      "metadata_path": "scenes/scene_010.metadata.json",
+      "sha256": {
+        "arrays": "2ac6b5966e8c564122ce5418e13e6b23d9ba79fc467212d2c21332c712ab8c7b",
+        "metadata": "d5c3cc1394c8b6f5fb54a02d448ff4f4600eeb5ac9f45bd0d2f2377d5c38ce7a"
+      }
+    },
+    {
+      "scene_id": "scene_011",
+      "index": 11,
+      "category": "flat_negative",
+      "parent_latent_id": "r125_procedural_011_seed1251011",
+      "arrays_path": "scenes/scene_011.npz",
+      "metadata_path": "scenes/scene_011.metadata.json",
+      "sha256": {
+        "arrays": "52bcebfa88993703ee352a469c1adc172cc3c2041e325b617840a44c7f3bea6c",
+        "metadata": "c50444cceb2c0ecb039c2cbef9bd24ad9df3ac41b5de4944a5ae4168d09d425e"
+      }
+    },
+    {
+      "scene_id": "scene_012",
+      "index": 12,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_012_seed1251012",
+      "arrays_path": "scenes/scene_012.npz",
+      "metadata_path": "scenes/scene_012.metadata.json",
+      "sha256": {
+        "arrays": "ded7038335839c13aa727962649a3f1314bf76ee90bd3c0cc9ac1a237ddb7727",
+        "metadata": "0079e1888328fbd786dc9117f7f7d527ceef3dbce7ebc09d17fa4b37122a6041"
+      }
+    },
+    {
+      "scene_id": "scene_013",
+      "index": 13,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_013_seed1251013",
+      "arrays_path": "scenes/scene_013.npz",
+      "metadata_path": "scenes/scene_013.metadata.json",
+      "sha256": {
+        "arrays": "881da195d4f16aaf6f8e94735854de0f9b586b9cc2fcdf06fec8be0e95edcc4e",
+        "metadata": "f5e773a9128763ad1f37266cdddb81dfec8df0fbc607eff987ef5c3e4765a136"
+      }
+    },
+    {
+      "scene_id": "scene_014",
+      "index": 14,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_014_seed1251014",
+      "arrays_path": "scenes/scene_014.npz",
+      "metadata_path": "scenes/scene_014.metadata.json",
+      "sha256": {
+        "arrays": "b856b1ccccd6aa6622c2f359314208f99ea4425d55a9f3d7311c8f93b0d8dd13",
+        "metadata": "8111b93a1637e305e9bd2fa467273c8aa33063dcc730f3e46cd82e9b4183ea58"
+      }
+    },
+    {
+      "scene_id": "scene_015",
+      "index": 15,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_015_seed1251015",
+      "arrays_path": "scenes/scene_015.npz",
+      "metadata_path": "scenes/scene_015.metadata.json",
+      "sha256": {
+        "arrays": "c11853ac37931e513ed8e2b7506dc74f26dadd14f88e4db0eb24415dd955b473",
+        "metadata": "03dc23076d93c9e3c34c38d3d57b8f2395ccdc39821e5bc0cfbb2aeb7d6f264e"
+      }
+    },
+    {
+      "scene_id": "scene_016",
+      "index": 16,
+      "category": "clean_identity",
+      "parent_latent_id": "r125_procedural_016_seed1251016",
+      "arrays_path": "scenes/scene_016.npz",
+      "metadata_path": "scenes/scene_016.metadata.json",
+      "sha256": {
+        "arrays": "7ee54c1ddac480f3f1a635688b620c17674d827384b133f18ea8b7f0fc4afa72",
+        "metadata": "2978555730e709f3a90299ceecad87a4156b4c1a8ae7c348996706ba0f5cc22b"
+      }
+    },
+    {
+      "scene_id": "scene_017",
+      "index": 17,
+      "category": "flat_negative",
+      "parent_latent_id": "r125_procedural_017_seed1251017",
+      "arrays_path": "scenes/scene_017.npz",
+      "metadata_path": "scenes/scene_017.metadata.json",
+      "sha256": {
+        "arrays": "f32db1c5b1e78306de08be46cebfbafaa2cce681f085c0c9306213122c0e692e",
+        "metadata": "622bdf20473f1d2b49a10ee77c7d9bdfdd4128b8a67219eb473b03b03546e76a"
+      }
+    },
+    {
+      "scene_id": "scene_018",
+      "index": 18,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_018_seed1251018",
+      "arrays_path": "scenes/scene_018.npz",
+      "metadata_path": "scenes/scene_018.metadata.json",
+      "sha256": {
+        "arrays": "fa7b214675fbbdfdcfdff05a786275434c3c26177bccf9354e1e303fa9bcc32d",
+        "metadata": "d0365681222e6d04fb84426f60d85f5cb39e98eb202f2598276fb4b0ff377f72"
+      }
+    },
+    {
+      "scene_id": "scene_019",
+      "index": 19,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_019_seed1251019",
+      "arrays_path": "scenes/scene_019.npz",
+      "metadata_path": "scenes/scene_019.metadata.json",
+      "sha256": {
+        "arrays": "5fe6d53fd7538d25a19bb474cf7461130f829f14b522107fd52d5aaef6898bf9",
+        "metadata": "c79797f3f779845e4e21b2155e4258e96d8a7ae9f8eab6a630b915bc677c027e"
+      }
+    },
+    {
+      "scene_id": "scene_020",
+      "index": 20,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_020_seed1251020",
+      "arrays_path": "scenes/scene_020.npz",
+      "metadata_path": "scenes/scene_020.metadata.json",
+      "sha256": {
+        "arrays": "262c677e9ece7cde11cf458137c00f9a11bf4ec7ed623b44cb8d2c3017ab1d4f",
+        "metadata": "5ef1bfcf98f5aa14aa0cf65c7c496cef21ef97e81952870e29a983197f829e5a"
+      }
+    },
+    {
+      "scene_id": "scene_021",
+      "index": 21,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_021_seed1251021",
+      "arrays_path": "scenes/scene_021.npz",
+      "metadata_path": "scenes/scene_021.metadata.json",
+      "sha256": {
+        "arrays": "7f3d2e5d64c97a69fbc42b0ab465c5f905f67825fe28cfaaa3cee45bb045c8f2",
+        "metadata": "eda410f497eb14b74e5c3271303503df01ff5132b48b7babbba1c9b708ec61c9"
+      }
+    },
+    {
+      "scene_id": "scene_022",
+      "index": 22,
+      "category": "clean_identity",
+      "parent_latent_id": "r125_procedural_022_seed1251022",
+      "arrays_path": "scenes/scene_022.npz",
+      "metadata_path": "scenes/scene_022.metadata.json",
+      "sha256": {
+        "arrays": "def87121f82e79e0793b73a128d099e16844967c4d00bf669632c071c5594e17",
+        "metadata": "b2821f1903f4896ca371b2ac45edfa0328d3a198ffd5aaea4f9f00df5b1c53c9"
+      }
+    },
+    {
+      "scene_id": "scene_023",
+      "index": 23,
+      "category": "flat_negative",
+      "parent_latent_id": "r125_procedural_023_seed1251023",
+      "arrays_path": "scenes/scene_023.npz",
+      "metadata_path": "scenes/scene_023.metadata.json",
+      "sha256": {
+        "arrays": "b51b2c8bfd555850ce4dce42756a000f0b38700b91846561bd583c31782bf9e6",
+        "metadata": "54c54641cbc343ccb984134408340f3c900b0489d516fb0b78a91eee48c3f48d"
+      }
+    },
+    {
+      "scene_id": "scene_024",
+      "index": 24,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_024_seed1251024",
+      "arrays_path": "scenes/scene_024.npz",
+      "metadata_path": "scenes/scene_024.metadata.json",
+      "sha256": {
+        "arrays": "df088b2d9e8693373d083ce0f00652fc480f35b7284b830d3c72eaa24d7285f1",
+        "metadata": "77e9704e1068d4f902bcd122713286e780972ead2f9629d9f115b3df5c97ec16"
+      }
+    },
+    {
+      "scene_id": "scene_025",
+      "index": 25,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_025_seed1251025",
+      "arrays_path": "scenes/scene_025.npz",
+      "metadata_path": "scenes/scene_025.metadata.json",
+      "sha256": {
+        "arrays": "99534cb6dfb759625af12dccbb197aff9cfb5373fc03c9c1a3b308dfe8e7c5d5",
+        "metadata": "a9f89067186f405097a5f243e4320b594d6f64cdcdc7820b72e5e460ecbfd1c4"
+      }
+    },
+    {
+      "scene_id": "scene_026",
+      "index": 26,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_026_seed1251026",
+      "arrays_path": "scenes/scene_026.npz",
+      "metadata_path": "scenes/scene_026.metadata.json",
+      "sha256": {
+        "arrays": "644681dedd25a93d02a6352d5272c127a93a8bbabfba0db4ae44c3bf9d292f68",
+        "metadata": "71720e608d6f9497ee31ef0c3eec1998a6280cc39535d4e2c1975f81bb88ac99"
+      }
+    },
+    {
+      "scene_id": "scene_027",
+      "index": 27,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_027_seed1251027",
+      "arrays_path": "scenes/scene_027.npz",
+      "metadata_path": "scenes/scene_027.metadata.json",
+      "sha256": {
+        "arrays": "45f689028ab2a68b8d4c727b5ba92258a5748e2ad1b018ee5ea1d9216334d97f",
+        "metadata": "938e55018eeafe27e53dcdf30c453d638298658f37978f72c18cd35355cb9289"
+      }
+    },
+    {
+      "scene_id": "scene_028",
+      "index": 28,
+      "category": "clean_identity",
+      "parent_latent_id": "r125_procedural_028_seed1251028",
+      "arrays_path": "scenes/scene_028.npz",
+      "metadata_path": "scenes/scene_028.metadata.json",
+      "sha256": {
+        "arrays": "aff3966ae6091fcc7d7d545b066d22dff26abd9c1eca5ea7703bfe277bfbb0f3",
+        "metadata": "8334872b58d649ea7e4f20eb3ea66ec8a584fda74a6f1b8437aa999f8497c854"
+      }
+    },
+    {
+      "scene_id": "scene_029",
+      "index": 29,
+      "category": "flat_negative",
+      "parent_latent_id": "r125_procedural_029_seed1251029",
+      "arrays_path": "scenes/scene_029.npz",
+      "metadata_path": "scenes/scene_029.metadata.json",
+      "sha256": {
+        "arrays": "8bb7b2e035ba101b9231dad47f9214ab367f3733b532edfddf311df67bf4d922",
+        "metadata": "8a7b93616c5a2577a0ce93bc2829f82732115ddbe32981487845c6a75add4ee2"
+      }
+    },
+    {
+      "scene_id": "scene_030",
+      "index": 30,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_030_seed1251030",
+      "arrays_path": "scenes/scene_030.npz",
+      "metadata_path": "scenes/scene_030.metadata.json",
+      "sha256": {
+        "arrays": "0ff21665bfb59097a98adfb5d173e8adab94d3ef569c3024ac23ed0af8ba75e8",
+        "metadata": "d246e3e38bbc23d0f19f56e787deee1a6890d677cb16c1f89b05441cd4840cd7"
+      }
+    },
+    {
+      "scene_id": "scene_031",
+      "index": 31,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_031_seed1251031",
+      "arrays_path": "scenes/scene_031.npz",
+      "metadata_path": "scenes/scene_031.metadata.json",
+      "sha256": {
+        "arrays": "32ea84de9c92cf27ddc42cf0d07d50272a302339867a7c630f30e619487b6964",
+        "metadata": "1d409c059ab7a4d6d6fba018ef2897ad69293e436e2ed8f759d20dc736d9f8a5"
+      }
+    },
+    {
+      "scene_id": "scene_032",
+      "index": 32,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_032_seed1251032",
+      "arrays_path": "scenes/scene_032.npz",
+      "metadata_path": "scenes/scene_032.metadata.json",
+      "sha256": {
+        "arrays": "b9fa3cb9d1c97c0ca09dcdb7d73a20814d39fd9e2164a540c9fe81a54253c0e2",
+        "metadata": "58f9b3ea76588a3130ebf583b3b1f458f550d01a50223d810d8377dac90cc2f7"
+      }
+    },
+    {
+      "scene_id": "scene_033",
+      "index": 33,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_033_seed1251033",
+      "arrays_path": "scenes/scene_033.npz",
+      "metadata_path": "scenes/scene_033.metadata.json",
+      "sha256": {
+        "arrays": "48810ceef45cb8d3dd55f9fc562e1e0a119df56bb53337e08c5762c91a4031dd",
+        "metadata": "e828530fe19c8bd211d3998a6c0bf3ca6952919524c76dac3ed5db26ba844e70"
+      }
+    },
+    {
+      "scene_id": "scene_034",
+      "index": 34,
+      "category": "clean_identity",
+      "parent_latent_id": "r125_procedural_034_seed1251034",
+      "arrays_path": "scenes/scene_034.npz",
+      "metadata_path": "scenes/scene_034.metadata.json",
+      "sha256": {
+        "arrays": "dd564f4c40b993ff5504e5b2b706259de144cb3741698dcae2079b81f0b6d346",
+        "metadata": "cdf3088ac7f4770369b1685a70adfc5f95419379086ef95be454da7d393bb1a9"
+      }
+    },
+    {
+      "scene_id": "scene_035",
+      "index": 35,
+      "category": "flat_negative",
+      "parent_latent_id": "r125_procedural_035_seed1251035",
+      "arrays_path": "scenes/scene_035.npz",
+      "metadata_path": "scenes/scene_035.metadata.json",
+      "sha256": {
+        "arrays": "8e81c667237bde70441ca7e71c3b0c330a71adba955fe756d8f5fc14d3dbad04",
+        "metadata": "00ce18a79e14256b78bf3f5ab002f380f809c959ac53ddf73fa86132714e7466"
+      }
+    },
+    {
+      "scene_id": "scene_036",
+      "index": 36,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_036_seed1251036",
+      "arrays_path": "scenes/scene_036.npz",
+      "metadata_path": "scenes/scene_036.metadata.json",
+      "sha256": {
+        "arrays": "5dc43252bdae2be08e9d19b0b316513142796a6de49039fe20c93380631da136",
+        "metadata": "94805414a1d94f025b7e35966357a87e1b0e4f29c5fa62de3b615cce889d7484"
+      }
+    },
+    {
+      "scene_id": "scene_037",
+      "index": 37,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_037_seed1251037",
+      "arrays_path": "scenes/scene_037.npz",
+      "metadata_path": "scenes/scene_037.metadata.json",
+      "sha256": {
+        "arrays": "4901689c3d3ef9d15b7caf6cd54b233a01601641cf91dc517e689c842cf04f5e",
+        "metadata": "1bbfef6b72ca714a9ff77bfa4227c9b5c3738f80433558fd727173f1cf86a895"
+      }
+    },
+    {
+      "scene_id": "scene_038",
+      "index": 38,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_038_seed1251038",
+      "arrays_path": "scenes/scene_038.npz",
+      "metadata_path": "scenes/scene_038.metadata.json",
+      "sha256": {
+        "arrays": "a07682d6f1b13042fcd5e43dc32414a833df5e7ddb6d4e50cdc9b00e79c04434",
+        "metadata": "105c19f94aa762c9acd060afa511753061a2dae45879315609b5d427ea6024cc"
+      }
+    },
+    {
+      "scene_id": "scene_039",
+      "index": 39,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_039_seed1251039",
+      "arrays_path": "scenes/scene_039.npz",
+      "metadata_path": "scenes/scene_039.metadata.json",
+      "sha256": {
+        "arrays": "5383df7bfdd6593bafca3c1e71bc7136afc6d6950ff20f355106623440f722df",
+        "metadata": "615a329a064bda35b75d5410583feac052179d8cba11faa01b6714a0b8fcefa1"
+      }
+    },
+    {
+      "scene_id": "scene_040",
+      "index": 40,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_040_seed1251040",
+      "arrays_path": "scenes/scene_040.npz",
+      "metadata_path": "scenes/scene_040.metadata.json",
+      "sha256": {
+        "arrays": "255ce2b2b82ca4b32f6940c83e10055ae2612ee6c7578d4e9cc13b847c9b0c73",
+        "metadata": "0e33bdc75678ead6b6f776417324813c9507bc2796fe8b40fc34e6570163b845"
+      }
+    },
+    {
+      "scene_id": "scene_041",
+      "index": 41,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_041_seed1251041",
+      "arrays_path": "scenes/scene_041.npz",
+      "metadata_path": "scenes/scene_041.metadata.json",
+      "sha256": {
+        "arrays": "57146b149db223279221f06ea14849ce2c19b6a2c111f1732f2cf120f43e478b",
+        "metadata": "09d895cf97a896ed245972d0f174f0dd29646881609431f4c554a88e58199f1d"
+      }
+    },
+    {
+      "scene_id": "scene_042",
+      "index": 42,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_042_seed1251042",
+      "arrays_path": "scenes/scene_042.npz",
+      "metadata_path": "scenes/scene_042.metadata.json",
+      "sha256": {
+        "arrays": "e54bbd93c69b929f012e2f93bfc71813a985ba297cce8ed0324751d50f181ea1",
+        "metadata": "9cede0fa2862846f56a7a78e72d6c76e9db182bcaa4b8b8ee16dcf6afe7d9e44"
+      }
+    },
+    {
+      "scene_id": "scene_043",
+      "index": 43,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_043_seed1251043",
+      "arrays_path": "scenes/scene_043.npz",
+      "metadata_path": "scenes/scene_043.metadata.json",
+      "sha256": {
+        "arrays": "887c007f45e843b8ba3e6884ca584ffbc4d2a10e19fd5652e62e94e633a85af1",
+        "metadata": "18cba8c6a3f592ab4e3df9dddd59cbb217e6d381aafe61f2d1c6da1e65e0d04f"
+      }
+    },
+    {
+      "scene_id": "scene_044",
+      "index": 44,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_044_seed1251044",
+      "arrays_path": "scenes/scene_044.npz",
+      "metadata_path": "scenes/scene_044.metadata.json",
+      "sha256": {
+        "arrays": "d2d8d93e9785b5f6296558d780695b812f4106ad493b6872e7b269d9d2cf6ab6",
+        "metadata": "404d22eb78f89c0a6f327978d9286496cbd7b2629e064fa8b2f9d23abfc4a59a"
+      }
+    },
+    {
+      "scene_id": "scene_045",
+      "index": 45,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_045_seed1251045",
+      "arrays_path": "scenes/scene_045.npz",
+      "metadata_path": "scenes/scene_045.metadata.json",
+      "sha256": {
+        "arrays": "53db49e4e8580ccd3f4243ee48df6728bba428682e7b825e17738a3727671434",
+        "metadata": "f26970a44c3a93d38f3fcfd788637d1c87bbce42542b060b4110a289171ad209"
+      }
+    },
+    {
+      "scene_id": "scene_046",
+      "index": 46,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_046_seed1251046",
+      "arrays_path": "scenes/scene_046.npz",
+      "metadata_path": "scenes/scene_046.metadata.json",
+      "sha256": {
+        "arrays": "7592102cf7e3f0516eb8d31b687702c61a16289f744fe662b7c27a5dab3d61f1",
+        "metadata": "57d3910b6923597b5bc70908a8a7aa03ed8e0a646f7cfa603d76a39543a2dcda"
+      }
+    },
+    {
+      "scene_id": "scene_047",
+      "index": 47,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_047_seed1251047",
+      "arrays_path": "scenes/scene_047.npz",
+      "metadata_path": "scenes/scene_047.metadata.json",
+      "sha256": {
+        "arrays": "497b855b45f397588431d8449dc886d4b15057fac69c9d7402154e04624f9471",
+        "metadata": "dae0b4370fff7e4448d53cfb5f0725d8b8be51cdf24c976dea71495ec4465d56"
+      }
+    },
+    {
+      "scene_id": "scene_048",
+      "index": 48,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_048_seed1251048",
+      "arrays_path": "scenes/scene_048.npz",
+      "metadata_path": "scenes/scene_048.metadata.json",
+      "sha256": {
+        "arrays": "b9c168d7eb973550ba15cb8104e0119f7c0832f2d2bd5ef0189f67ab0c3d450e",
+        "metadata": "725fc4a37f50f1e30e1fb714c80fa166e5d45c043e0579339567e787ae20dd1a"
+      }
+    },
+    {
+      "scene_id": "scene_049",
+      "index": 49,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_049_seed1251049",
+      "arrays_path": "scenes/scene_049.npz",
+      "metadata_path": "scenes/scene_049.metadata.json",
+      "sha256": {
+        "arrays": "7db0886445f122f2e8e89b3c6ccda83e43eefe3bc937396b018c185bdedb4f4b",
+        "metadata": "8ab5a4d2b6e24c5816ca41c3ffaa2844ce68b84216358da00e8c2e77c06e47e9"
+      }
+    },
+    {
+      "scene_id": "scene_050",
+      "index": 50,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_050_seed1251050",
+      "arrays_path": "scenes/scene_050.npz",
+      "metadata_path": "scenes/scene_050.metadata.json",
+      "sha256": {
+        "arrays": "3c529934c8ed3e8a09ad8296ec1e5ac6ffa53c13fe7184e4e7fbb5b0c2055979",
+        "metadata": "091e71a764cbb17dd0005e2747732b5589226da0566450cc57b06456303b1cd3"
+      }
+    },
+    {
+      "scene_id": "scene_051",
+      "index": 51,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_051_seed1251051",
+      "arrays_path": "scenes/scene_051.npz",
+      "metadata_path": "scenes/scene_051.metadata.json",
+      "sha256": {
+        "arrays": "9299f85f6c1617a21143ab1812e1a412388ecce06fad8e26b471202046e6b18f",
+        "metadata": "2b04a8ea2daa00e999d7f398f6231b6a3333280bf6083d53d63f92b837ae0c63"
+      }
+    },
+    {
+      "scene_id": "scene_052",
+      "index": 52,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_052_seed1251052",
+      "arrays_path": "scenes/scene_052.npz",
+      "metadata_path": "scenes/scene_052.metadata.json",
+      "sha256": {
+        "arrays": "57b5f1bd83e35118fdc30de931962832e462cb4c7d575cd7961a2c84af4b9876",
+        "metadata": "e2838b450809aa2499e2bc00efb723856b74ffeb988ceec54c24cca533cc6d8d"
+      }
+    },
+    {
+      "scene_id": "scene_053",
+      "index": 53,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_053_seed1251053",
+      "arrays_path": "scenes/scene_053.npz",
+      "metadata_path": "scenes/scene_053.metadata.json",
+      "sha256": {
+        "arrays": "78c551e930c52862a26093ef6e600cc5bb35634c04981e0683d5ddcafe5a6eaa",
+        "metadata": "0f065af18a863da5052762b2804427cd61b692819cceb8bac75a6101a06cd286"
+      }
+    },
+    {
+      "scene_id": "scene_054",
+      "index": 54,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_054_seed1251054",
+      "arrays_path": "scenes/scene_054.npz",
+      "metadata_path": "scenes/scene_054.metadata.json",
+      "sha256": {
+        "arrays": "7d0ca8e6f131220752f604c25aa2f1d7d1a4cddac74e630a3f0c722c567f3704",
+        "metadata": "b3fe5f739a8e30610f99a40db9a3dff124fdfd79d77139481bc14c9c4baa282a"
+      }
+    },
+    {
+      "scene_id": "scene_055",
+      "index": 55,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_055_seed1251055",
+      "arrays_path": "scenes/scene_055.npz",
+      "metadata_path": "scenes/scene_055.metadata.json",
+      "sha256": {
+        "arrays": "49a6fcffa4b79d407b47a626a682ec69f119f4f4e933c0484925c29ea665d3a2",
+        "metadata": "0d857f109c7c9526bf001279c8175f6b0e166f2c699d9cced926411a38b665e4"
+      }
+    },
+    {
+      "scene_id": "scene_056",
+      "index": 56,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_056_seed1251056",
+      "arrays_path": "scenes/scene_056.npz",
+      "metadata_path": "scenes/scene_056.metadata.json",
+      "sha256": {
+        "arrays": "0134fc635fea1a61701e3c916cb07293580023166a16738ad8e75a03b91abd29",
+        "metadata": "87d042ce0c131809d4d7106a4a17700d747916055a6b7516f610984789a8ca6b"
+      }
+    },
+    {
+      "scene_id": "scene_057",
+      "index": 57,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_057_seed1251057",
+      "arrays_path": "scenes/scene_057.npz",
+      "metadata_path": "scenes/scene_057.metadata.json",
+      "sha256": {
+        "arrays": "4925098305875fb705ced65bc8f0b00f68075901fdba2e717a5d6ee687ff3ccf",
+        "metadata": "de60cca6021151dbdfa82c6f6c210e9411d54f8db09499e87942cc9477e9177d"
+      }
+    },
+    {
+      "scene_id": "scene_058",
+      "index": 58,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_058_seed1251058",
+      "arrays_path": "scenes/scene_058.npz",
+      "metadata_path": "scenes/scene_058.metadata.json",
+      "sha256": {
+        "arrays": "f5a7d8d585c94651d871cf44a7693fc97008598bfb52d6a823aaf299bd32a374",
+        "metadata": "ddd6d86c7a7b422d57dac8d07f0e9d4e240f6356a1f745868574c218ae13f92c"
+      }
+    },
+    {
+      "scene_id": "scene_059",
+      "index": 59,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_059_seed1251059",
+      "arrays_path": "scenes/scene_059.npz",
+      "metadata_path": "scenes/scene_059.metadata.json",
+      "sha256": {
+        "arrays": "412a2db21e19bf411c7aab5d798fb5e3bdf4fe0341bc6d7b750a8534aefa7033",
+        "metadata": "2a9bb4559d70015efaceb725de6603d3fb90845dfe1438c740b146b95fc71f10"
+      }
+    },
+    {
+      "scene_id": "scene_060",
+      "index": 60,
+      "category": "irregular_curved",
+      "parent_latent_id": "r125_procedural_060_seed1251060",
+      "arrays_path": "scenes/scene_060.npz",
+      "metadata_path": "scenes/scene_060.metadata.json",
+      "sha256": {
+        "arrays": "fa2f3092db8a9ec8ba3b4df1746b2c874fb8766320827393159d438b300da236",
+        "metadata": "99d8232f26cd5b49b9f18b7f5f39943cfaf07b263c1162185de3a868d69b2132"
+      }
+    },
+    {
+      "scene_id": "scene_061",
+      "index": 61,
+      "category": "corners_lines_junctions",
+      "parent_latent_id": "r125_procedural_061_seed1251061",
+      "arrays_path": "scenes/scene_061.npz",
+      "metadata_path": "scenes/scene_061.metadata.json",
+      "sha256": {
+        "arrays": "5a369f6441d580500cfd50ec78a672b49a76f031989abe4af24fb922d9208a18",
+        "metadata": "8f60db4605c55f67b14392b1e57e796d89c0677a3d507879389c1a349e4d618d"
+      }
+    },
+    {
+      "scene_id": "scene_062",
+      "index": 62,
+      "category": "dense_close_structures",
+      "parent_latent_id": "r125_procedural_062_seed1251062",
+      "arrays_path": "scenes/scene_062.npz",
+      "metadata_path": "scenes/scene_062.metadata.json",
+      "sha256": {
+        "arrays": "5840faf0ad35299febc72ab5db352ecd1bdda7c2351fefeda4bb58c0d9869753",
+        "metadata": "dde874a70477733098a29777875d5d9a16d89accb33caf7989698e0811c719e1"
+      }
+    },
+    {
+      "scene_id": "scene_063",
+      "index": 63,
+      "category": "textured_edges",
+      "parent_latent_id": "r125_procedural_063_seed1251063",
+      "arrays_path": "scenes/scene_063.npz",
+      "metadata_path": "scenes/scene_063.metadata.json",
+      "sha256": {
+        "arrays": "279209322934aad0e78aa696a2b6893d85ccac0979c8afd70d162b1c10cbcbe5",
+        "metadata": "57ed31bfcda1022daced733b3776650f19d9d5efc97e9c049270e920b7428fa9"
+      }
+    }
+  ]
+}

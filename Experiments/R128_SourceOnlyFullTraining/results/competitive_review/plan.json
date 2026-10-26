@@ -1,0 +1,96 @@
+{
+  "created_utc": "2026-09-10T09:01:47.458085+00:00",
+  "retrospective": true,
+  "question": "Do recent models improve matched real-pillar outer contour and circularity; what LSC evidence exists?",
+  "population": "One existing paired SEM/optical specimen, same 36 pillars, repeated images 13/14/15. Not 108 independent specimens.",
+  "methods": [
+    "Raw",
+    "R61v16",
+    "R109_E48",
+    "R119_E42",
+    "R128_P_s1285002"
+  ],
+  "references": [
+    "historical",
+    "global_pitch_matched"
+  ],
+  "alignment": "Same existing Raw-derived integer shift for every model in each pillar/exposure/reference; no independent model fitting.",
+  "segmentation": "Reuse original primary masks (Chan-Vese 200 iterations, smoothness 1). Raw masks and SEM references must match exactly across source records.",
+  "summary": "Median over the three exposures for each physical pillar, then median over 36 pillars; retain all exposure-specific and individual paired results. No significance or independent-specimen generalization claim.",
+  "metrics": [
+    "mean_boundary_px",
+    "hd95_px",
+    "iou",
+    "area_error_pct",
+    "perimeter_error_pct",
+    "circularity_error",
+    "maximum_boundary_px"
+  ],
+  "circularity": "Absolute difference from actual fixed SEM circularity, not distance from a perfect circle.",
+  "LSC": "Recompute historical summaries from same 120 Raw-locked pair records. R128 has no same-protocol LSC entry; do not substitute its Raw-relative registration result.",
+  "limits": [
+    "Existing development specimen and prior-selected models, no fresh confirmation.",
+    "R128 application includes its existing Raw-retention guard; also report the 16 fully neural interior pillars.",
+    "Fixed SEM references are not physical edge certification.",
+    "LSC step scatter is repeatability; nominal step deviation is not independent physical accuracy.",
+    "R119 causal-audit correction remains authoritative; V42 specific same-source training overlap limits inference."
+  ],
+  "sources": {
+    "R128_masks": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\masks.mat",
+      "sha256": "b80e5eec52980c86c854fc9a6d194d680b446cce194a538b653f6e34a9f47196"
+    },
+    "R128_measurements": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\measurements.csv",
+      "sha256": "082f1178e5f3b981ab47fdc9fe709c050cd03edccbeb503773711a395ff59b2f"
+    },
+    "R128_verification": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\verification.json",
+      "sha256": "3d72e775bea795e250e46f369cd402cce22e56c7b3bedd86921ced2cac3a4d28"
+    },
+    "historical_masks": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\analysis\\R109_comparison_20260907\\acm_arrays.mat",
+      "sha256": "e74ebf85d34b9ea09f489ed1ab9fe8a1d28b25e1b9db9e7b0cb12318440e2122"
+    },
+    "historical_protocol": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\analysis\\R109_comparison_20260907\\protocol_v2.json",
+      "sha256": "6138dcb15fcbfa35f27497729c865335bbf24bba8a4d41e02f05f34d561dc220"
+    },
+    "R61_masks": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\results\\masks\\acm_primary_masks.mat",
+      "sha256": "2ac2e8e3d7eb45c09f1bac56c6db372c230639b0186ab5301e13cacdeb127fc3"
+    },
+    "R61_manifest": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\MANIFEST.md",
+      "sha256": "596e7f74d8eed4dd3175ab3c8e8f48f113d66e7c509bc070da381270b468843d"
+    },
+    "LSC_pairs": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\results\\formal_lsc\\analysis\\tables\\combined_lsc_per_pair.csv",
+      "sha256": "61fd151c14b4b80feea288dc00642c0e0b949988f6bc2cf95dfa22ca312e79d7"
+    },
+    "LSC_summary": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\results\\formal_lsc\\analysis\\tables\\combined_lsc_summary.csv",
+      "sha256": "856be74d8cd970f59991222a659a0b634f42239ee631743737d93a2f14b48dce"
+    },
+    "LSC_metric_source": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R80_InflectionReferenceCircleSEMValidation\\scripts\\run_displacement_lsc.py",
+      "sha256": "b9489e34e352743c82a05a38356997ea224e7bfc78053e15b610d22d96c8b0bd"
+    },
+    "metric_helper_source": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\full_contour\\run_contour_check.m",
+      "sha256": "3b66d649b7dc320cdd19a42418d0f966d9d6eb640d4df3c99581aa331c2921fe"
+    },
+    "prepare_source": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\competitive_review\\prepare.py",
+      "sha256": "a43df5d6ce9e2a3488fa7322bde5b7cfa6134fccb0e0f4c7d5be1d5ad2d741f5"
+    },
+    "worker_head": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\competitive_review\\worker_head.txt",
+      "sha256": "95766edc835e854433abb6659d7be18a5e54c03af792a6246309a053f082b076"
+    },
+    "matlab_worker": {
+      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\competitive_review\\run_competitive_review.m",
+      "sha256": "3bed2a4c2964b4aaa80a50a907b7700d8c681749e3c32f883429da32586fef44"
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "operator": {
+    "dense_continuous": {
+      "count": 3888,
+      "invalid": 0,
+      "position_fail": 0,
+      "width_fail": 0,
+      "max_position_error_px": 1.8321691356099068e-05,
+      "max_width_error_px": 0.0002639726481521443,
+      "identity_max_error": 3.3306690738754696e-16
+    },
+    "pixel_linear": {
+      "count": 3888,
+      "invalid": 0,
+      "position_fail": 1028,
+      "width_fail": 3120,
+      "max_position_error_px": 0.12928384388281788,
+      "max_width_error_px": 0.7240431029920634,
+      "identity_max_error": 1.1102230246251565e-16
+    }
+  },
+  "detail_and_anchor": {
+    "miscentered_width_only": {
+      "anchor_error_px": 0.3,
+      "gain": 1.5,
+      "predicted_drift_px": 0.1,
+      "measured_drift_px": 0.1000000686633689
+    },
+    "unrestricted_detail_compensation": {
+      "position_shift_px": 0.4,
+      "max_detail_gray": 27.047851127400413,
+      "identical_final_output_max_error": 1.734723475976807e-18
+    },
+    "zero_integral_detail": {
+      "integral": 1.4341189773250398e-18,
+      "half_level_shift_px": -0.07485975730755165,
+      "meaning": "Zero total intensity does not protect an individual edge location."
+    }
+  },
+  "identifiability": {
+    "object_vs_psf_shift": {
+      "true_object_positions_px": [
+        0,
+        0.4
+      ],
+      "identical_observation_max_error": 0.0
+    },
+    "object_vs_optical_width": {
+      "intrinsic_width_parameters": [
+        1,
+        2
+      ],
+      "psf_width_parameters": [
+        2,
+        1
+      ],
+      "identical_observation_max_error": 0.0
+    },
+    "unobserved_detail_alias": {
+      "frequencies_cycles_per_pixel": [
+        0.2,
+        1.2
+      ],
+      "pixel_integrated_observation_max_error": 7.771561172376096e-16,
+      "different_latent_max_error": 0.3500000000000001,
+      "latent_intensity_ranges": [
+        [
+          0.45,
+          0.55
+        ],
+        [
+          0.19999999999999996,
+          0.8
+        ]
+      ]
+    }
+  },
+  "physical_fit": {
+    "line": {
+      "count": 90,
+      "fit_failure": 0,
+      "bound_hits": 0,
+      "position_failure": 8,
+      "motion_failure": 17,
+      "median_signed_position_px": 0.0008598062573765953,
+      "worst_abs_position_px": 0.3538008033694682,
+      "worst_abs_motion_px": 0.43019062375453565
+    },
+    "circle8": {
+      "count": 90,
+      "fit_failure": 0,
+      "bound_hits": 0,
+      "position_failure": 56,
+      "motion_failure": 15,
+      "median_signed_position_px": -0.14051347209932052,
+      "worst_abs_position_px": 0.4700370613722506,
+      "worst_abs_motion_px": 0.4718310045507479
+    },
+    "circle16": {
+      "count": 90,
+      "fit_failure": 0,
+      "bound_hits": 0,
+      "position_failure": 33,
+      "motion_failure": 12,
+      "median_signed_position_px": -0.07334284718771514,
+      "worst_abs_position_px": 0.7514688921595903,
+      "worst_abs_motion_px": 0.8193305504070096
+    },
+    "circle32": {
+      "count": 90,
+      "fit_failure": 0,
+      "bound_hits": 0,
+      "position_failure": 23,
+      "motion_failure": 15,
+      "median_signed_position_px": -0.0317016549765758,
+      "worst_abs_position_px": 0.5044771428693373,
+      "worst_abs_motion_px": 0.3399200157822867
+    }
+  },
+  "render_convergence": {
+    "count": 36,
+    "max_abs_center_difference_px": 0.03125000655509336
+  },
+  "scope": "Diagnostic observations, including failures. No trained model or universal 2D renderer is certified."
+}

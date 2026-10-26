@@ -1,0 +1,24 @@
+{
+  "psf_fit_capture": {
+    "frames": 25,
+    "pillars": 225,
+    "median_background_gray": 238.0,
+    "median_contrast_gray": 111.0,
+    "median_edge_width_px": 3.0213250554826976
+  },
+  "fixed_real_evaluation": {
+    "frames": 930,
+    "pillars": 8370,
+    "median_background_gray": 166.0,
+    "median_contrast_gray": 75.0,
+    "median_edge_width_px": 3.1467997441376996,
+    "early_five_scan_edge_width_px": 3.006986600067309,
+    "late_five_scan_edge_width_px": 3.335493966065953
+  },
+  "readout": "identical local core, background annulus, and radial 20-80% edge width",
+  "limitation": "Different acquisition sessions; appearance difference does not uniquely identify optical cause",
+  "source_locations_sha256": "0c310404f12aa4ed6bb2accbe2dfce5641ca5fd556e36f5750958605e8964ad6",
+  "real_photometry_sha256": "9e2d577af62dcb129f751e2f9ec2b19579c66c40ee99a1fcda03057584c18b1f",
+  "script_sha256": "a4975a1cd19968235e6d08f0fb68df291da15ad25aadf55a5cb1808b6185e190",
+  "completed_utc": "2026-09-24T11:57:52.081472+00:00"
+}

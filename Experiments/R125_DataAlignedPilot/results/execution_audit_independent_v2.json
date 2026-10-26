@@ -1,0 +1,2103 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-09-08T08:03:07.342699+00:00",
+  "scope": "execution integrity only; no efficacy promotion",
+  "audit_implementation_sha256": "137d183976d6fa03d74681472379a8d2e5c659f91ddbd3ec9c6285f4c61c4857",
+  "manifest_sha256": "ab1c3d61c542b207a206f05bb3b141070d770a88bab61c3d6ca3d80b242223f7",
+  "protocol_sha256": "ca834ceaa6ce42c0ecf51ec6b5d272a8517e5fd5996012824867eb7588fef8d5",
+  "frozen_real_panel_sha256": "f16cda0509e9861df3b8b61ef4e1cfc1c4ccdaecd393dba7ef0b0f3fe7843e49",
+  "implementation_source_sha256": {
+    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\prototype\\__init__.py": "679a265fe75eab9638f02a838b6d05523aca3e085d7dea6c7a77f3c6694c7804",
+    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\prototype\\factorized_observation.py": "3b407ac5876575cf79ecdf4c3b5749c1d489cc2035c659f40f353c4c010eee15",
+    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\prototype\\network.py": "1adf056c49f79ad02b7783b7b718e4e71f0831bca8240fc4f0657b1b7ad4e2a8",
+    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\training\\objectives.py": "357d3f07096d8e51534ebb280e3d1f4133608877e42a66d4837b18bcc666edf3",
+    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\training\\context.py": "47e5efc1754ee6c434ed16ae8708029c2d9e23bfe7a82237d90591e2429d5e9c",
+    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\training\\train_pilot.py": "1e4c9eea1d260ce49c2b3e1bca050adce6ceffe285c48e7e269a7e4902264975",
+    "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\model\\observation.py": "6525c10f4a61b3d9f886e54c4cd53fba1f12cd0faa30da3154f8c85d51deff21",
+    "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\model\\calibration.py": "1e28ebc60284bf5a016ed4d8b003cdc2ec622ee398d47e0fb0ba15fa16b04c1b",
+    "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\model\\network.py": "cd28871f053d5a6303b7ede76b84316df749ec40623f230e88f6559ecd22bc11"
+  },
+  "source_interface_review": {
+    "trainer_sha256": "1e4c9eea1d260ce49c2b3e1bca050adce6ceffe285c48e7e269a7e4902264975",
+    "forward_calls": [
+      {
+        "line": 95,
+        "call": "model.forward_details(source, trace=False)"
+      }
+    ],
+    "objective_lines": [
+      96
+    ],
+    "source_only_forward_then_targets_in_objective": true,
+    "independent_data_flow_evidence": "Every actual forward input hash is independently reconstructed from uint8 source pixels and the logged physical crop, without target arrays."
+  },
+  "unique_actual_source_pairs_reconstructed": 64,
+  "expected_common_scene_order": [
+    "scene_042",
+    "scene_021",
+    "scene_053",
+    "scene_023",
+    "scene_004",
+    "scene_025",
+    "scene_014",
+    "scene_057",
+    "scene_051",
+    "scene_017",
+    "scene_015",
+    "scene_036",
+    "scene_056",
+    "scene_052",
+    "scene_002",
+    "scene_012",
+    "scene_063",
+    "scene_024",
+    "scene_038",
+    "scene_009",
+    "scene_041",
+    "scene_011",
+    "scene_033",
+    "scene_000",
+    "scene_046",
+    "scene_061",
+    "scene_034",
+    "scene_001",
+    "scene_058",
+    "scene_005",
+    "scene_044",
+    "scene_035",
+    "scene_013",
+    "scene_008",
+    "scene_043",
+    "scene_045",
+    "scene_022",
+    "scene_060",
+    "scene_019",
+    "scene_039",
+    "scene_047",
+    "scene_048",
+    "scene_032",
+    "scene_030",
+    "scene_040",
+    "scene_016",
+    "scene_037",
+    "scene_028",
+    "scene_007",
+    "scene_049",
+    "scene_027",
+    "scene_055",
+    "scene_054",
+    "scene_026",
+    "scene_010",
+    "scene_006",
+    "scene_059",
+    "scene_020",
+    "scene_031",
+    "scene_062",
+    "scene_003",
+    "scene_018",
+    "scene_050",
+    "scene_029"
+  ],
+  "independently_recomputed_forward_inputs": [
+    {
+      "actual_forward_input_sha256": "20e18993cc845d5a254624f0f7cc7fddc3a5086f0623400d9a37d0d8c02b9cc8",
+      "actual_input_shape": [
+        2,
+        1,
+        608,
+        608
+      ],
+      "physical_window": [
+        16,
+        624,
+        16,
+        624
+      ],
+      "local_core": [
+        240,
+        368,
+        240,
+        368
+      ],
+      "actual_kernel_sha256": "bc96495a1288f55cfba2ddfc9028cedd901faa4a2f289da8f83a0bdf480c2b8f",
+      "scene_id": "scene_000"
+    },
+    {
+      "actual_forward_input_sha256": "d66c1472f5e66334f3cf132638003e34bf6f1a5aa67da5034c0f519d4be90c22",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "40a9939249edd306f24cca6bcbdeeccd4df5e9029bc256c7f06a91c6e610a1b4",
+      "scene_id": "scene_001"
+    },
+    {
+      "actual_forward_input_sha256": "213325f1a1e38606744d0eee1075867b5ab53b2a86d672dc581478e232374296",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "40a9939249edd306f24cca6bcbdeeccd4df5e9029bc256c7f06a91c6e610a1b4",
+      "scene_id": "scene_002"
+    },
+    {
+      "actual_forward_input_sha256": "bc119dabf3ba1c8ae35b09ea7fe3c390ab1e4dad72a226d05a04721f8d728e81",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "4fd757f074b6e7473e2f99bfd3369fcf608406046c4efc423c57f5b6194c05a0",
+      "scene_id": "scene_003"
+    },
+    {
+      "actual_forward_input_sha256": "5bf5054499124482fb5b7546cb05a1416306f5cb5576f2589c229f355bc72135",
+      "actual_input_shape": [
+        2,
+        1,
+        288,
+        288
+      ],
+      "physical_window": [
+        176,
+        464,
+        176,
+        464
+      ],
+      "local_core": [
+        80,
+        208,
+        80,
+        208
+      ],
+      "actual_kernel_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c",
+      "scene_id": "scene_004"
+    },
+    {
+      "actual_forward_input_sha256": "e378c820fa1da794d13d400781df1d325af04a3d0824bab40737bb9e64081ba4",
+      "actual_input_shape": [
+        2,
+        1,
+        352,
+        352
+      ],
+      "physical_window": [
+        144,
+        496,
+        144,
+        496
+      ],
+      "local_core": [
+        112,
+        240,
+        112,
+        240
+      ],
+      "actual_kernel_sha256": "9c71223a0aa71ec181c5ce2956e884258951cfe636118422043edfa21fa29dde",
+      "scene_id": "scene_005"
+    },
+    {
+      "actual_forward_input_sha256": "dfc6ca1aa1035bfc8057a31f6ee0e26edf75114a0642f12d440d86ff4b736ccd",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "8cebd444f9697a1aea20f8cba9189654e0e4ca58d0e55ef9e1901d7bdc4749c9",
+      "scene_id": "scene_006"
+    },
+    {
+      "actual_forward_input_sha256": "81373d74c385005f33ec9893c1e577d142d754117c3622c139d8b084d617b38b",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "e9bba7812d6e7e3d6933e642a5107c1ac009a700035e1e596738b3b731b7cc4f",
+      "scene_id": "scene_007"
+    },
+    {
+      "actual_forward_input_sha256": "bbbd77f886afbc390fcaaf20107f337c0a924271b110314fdaa97bfe33f98122",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "8cebd444f9697a1aea20f8cba9189654e0e4ca58d0e55ef9e1901d7bdc4749c9",
+      "scene_id": "scene_008"
+    },
+    {
+      "actual_forward_input_sha256": "43d1530b8fb46e5408f7fe94af9f0ecd40e87970efd8fcd483354e2af1fddb28",
+      "actual_input_shape": [
+        2,
+        1,
+        608,
+        608
+      ],
+      "physical_window": [
+        16,
+        624,
+        16,
+        624
+      ],
+      "local_core": [
+        240,
+        368,
+        240,
+        368
+      ],
+      "actual_kernel_sha256": "7347a812358dc61f91b6ebdd6057e24ad59ee6a38936242070e8997192c460e3",
+      "scene_id": "scene_009"
+    },
+    {
+      "actual_forward_input_sha256": "ce88453f0edc66b37e7be78ed83b8c9dee2bbfb39e3ef8b9c211ffa536e5233c",
+      "actual_input_shape": [
+        2,
+        1,
+        288,
+        288
+      ],
+      "physical_window": [
+        176,
+        464,
+        176,
+        464
+      ],
+      "local_core": [
+        80,
+        208,
+        80,
+        208
+      ],
+      "actual_kernel_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c",
+      "scene_id": "scene_010"
+    },
+    {
+      "actual_forward_input_sha256": "f912e0f8c27793c1605ad641829815724e7db55680fd60a75c2d6c734d75f20e",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "6528232fcc9cad0b8c466e94ed8e5a28fbed2cbb608ecfd6641dce198c729fc4",
+      "scene_id": "scene_011"
+    },
+    {
+      "actual_forward_input_sha256": "9f95ab4d1d1aa553b375644c2fdf74ce001ba979e92dd64b733d0378243095af",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "eeb878464c4c72f8115b59c080376e58d9995a28aabbe7b8f20cfbf4ef01bf31",
+      "scene_id": "scene_012"
+    },
+    {
+      "actual_forward_input_sha256": "3d110dca6b9e18125329b52ae8853f91e7df8f5bb1211c0a93eb89a2b66bb25e",
+      "actual_input_shape": [
+        2,
+        1,
+        352,
+        352
+      ],
+      "physical_window": [
+        144,
+        496,
+        144,
+        496
+      ],
+      "local_core": [
+        112,
+        240,
+        112,
+        240
+      ],
+      "actual_kernel_sha256": "972b914387c28aeecbebf34b23a998d8518888ca021b47382f7e09ff25a090a1",
+      "scene_id": "scene_013"
+    },
+    {
+      "actual_forward_input_sha256": "b3480b28f03f43b53245acbd87ec3cfc2cff8d733237bccc1c30b56baa44778f",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "40a9939249edd306f24cca6bcbdeeccd4df5e9029bc256c7f06a91c6e610a1b4",
+      "scene_id": "scene_014"
+    },
+    {
+      "actual_forward_input_sha256": "8d54f4433c9be078b15e42b57f7ec44ed4746b11c99f4b45641fca48db7075d9",
+      "actual_input_shape": [
+        2,
+        1,
+        352,
+        352
+      ],
+      "physical_window": [
+        144,
+        496,
+        144,
+        496
+      ],
+      "local_core": [
+        112,
+        240,
+        112,
+        240
+      ],
+      "actual_kernel_sha256": "111e65d35f24427239a918a37bcad8e79a64781a5b0d407b71a65f0e0c443c6e",
+      "scene_id": "scene_015"
+    },
+    {
+      "actual_forward_input_sha256": "5118fcf866222a29933c7e136dc951e0b190f4fac3bc456fbba178302cb312ed",
+      "actual_input_shape": [
+        2,
+        1,
+        288,
+        288
+      ],
+      "physical_window": [
+        176,
+        464,
+        176,
+        464
+      ],
+      "local_core": [
+        80,
+        208,
+        80,
+        208
+      ],
+      "actual_kernel_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c",
+      "scene_id": "scene_016"
+    },
+    {
+      "actual_forward_input_sha256": "1364951466a7d1917c7f464ed31cdae40ba399817fe57a0fc0845caa091edea0",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "81aa1aa00642547434259290acf3517be7be835f8dca4f8580055826245b3280",
+      "scene_id": "scene_017"
+    },
+    {
+      "actual_forward_input_sha256": "9e1e85ff837a38e9be2d49df1df20d39d2d29f928d239277343abbc779909d23",
+      "actual_input_shape": [
+        2,
+        1,
+        608,
+        608
+      ],
+      "physical_window": [
+        16,
+        624,
+        16,
+        624
+      ],
+      "local_core": [
+        240,
+        368,
+        240,
+        368
+      ],
+      "actual_kernel_sha256": "c7bbcd27bbd36ab17c0580b82b6a82e3ce35960faf46910b52ea1da18ed4b1bc",
+      "scene_id": "scene_018"
+    },
+    {
+      "actual_forward_input_sha256": "48a1108e7d0a07bbcee6e461f6c736a42f8c49e23cb090d267f4cdc2db938497",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "6528232fcc9cad0b8c466e94ed8e5a28fbed2cbb608ecfd6641dce198c729fc4",
+      "scene_id": "scene_019"
+    },
+    {
+      "actual_forward_input_sha256": "293d9291c1638d3a1653a63ceec47baaf86a35be784131deccd2cfdea992e5e6",
+      "actual_input_shape": [
+        2,
+        1,
+        384,
+        384
+      ],
+      "physical_window": [
+        128,
+        512,
+        128,
+        512
+      ],
+      "local_core": [
+        128,
+        256,
+        128,
+        256
+      ],
+      "actual_kernel_sha256": "3b47a9e60abb8d8398b3e1211646957d608e29ebf28cd34818e5ba91528a1744",
+      "scene_id": "scene_020"
+    },
+    {
+      "actual_forward_input_sha256": "b88e23e626f4bb61eeaf7eb1e426240269086aa5f4ae7f487c7b863641a841fe",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "bcf8bcccb7a960b4bc310fc733a4c27d6283cfd9dcedabc224de085f9eab8520",
+      "scene_id": "scene_021"
+    },
+    {
+      "actual_forward_input_sha256": "784f88f78d8f085d20056fc1b438c186a6b3bff8a8a00c8a55fc895c98a1e457",
+      "actual_input_shape": [
+        2,
+        1,
+        288,
+        288
+      ],
+      "physical_window": [
+        176,
+        464,
+        176,
+        464
+      ],
+      "local_core": [
+        80,
+        208,
+        80,
+        208
+      ],
+      "actual_kernel_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c",
+      "scene_id": "scene_022"
+    },
+    {
+      "actual_forward_input_sha256": "ce8f459bbd72b45334d245ac2e573cfdf7041554f5e62b55888d54a4eb103bd3",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "eeb878464c4c72f8115b59c080376e58d9995a28aabbe7b8f20cfbf4ef01bf31",
+      "scene_id": "scene_023"
+    },
+    {
+      "actual_forward_input_sha256": "bbef52bdfceaa2f49f8fd7df408acce5a3498762cf142389f83ae59755213bda",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "81aa1aa00642547434259290acf3517be7be835f8dca4f8580055826245b3280",
+      "scene_id": "scene_024"
+    },
+    {
+      "actual_forward_input_sha256": "1f16d7eee55ec546c510a129e4e9396addc335f2a479c21b3c37a299f5c06fca",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "247c35d7078bc5950f891e711d949b2d832191130547fa96c0cf2d5a824cb0c4",
+      "scene_id": "scene_025"
+    },
+    {
+      "actual_forward_input_sha256": "b5a9db3aaaf719c59d0601db2edc669880e651acf120d8a12e44195208152d48",
+      "actual_input_shape": [
+        2,
+        1,
+        352,
+        352
+      ],
+      "physical_window": [
+        144,
+        496,
+        144,
+        496
+      ],
+      "local_core": [
+        112,
+        240,
+        112,
+        240
+      ],
+      "actual_kernel_sha256": "972b914387c28aeecbebf34b23a998d8518888ca021b47382f7e09ff25a090a1",
+      "scene_id": "scene_026"
+    },
+    {
+      "actual_forward_input_sha256": "3b8e1f7f1108e6d9ff7ee13cffce4108b5e1b063312f4ef6f075cac28a31c9ac",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "eeb878464c4c72f8115b59c080376e58d9995a28aabbe7b8f20cfbf4ef01bf31",
+      "scene_id": "scene_027"
+    },
+    {
+      "actual_forward_input_sha256": "fd4b67431a1dfddc52059af8ad52feb9d04b076fa3025e78911e2bccbc3cc365",
+      "actual_input_shape": [
+        2,
+        1,
+        288,
+        288
+      ],
+      "physical_window": [
+        176,
+        464,
+        176,
+        464
+      ],
+      "local_core": [
+        80,
+        208,
+        80,
+        208
+      ],
+      "actual_kernel_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c",
+      "scene_id": "scene_028"
+    },
+    {
+      "actual_forward_input_sha256": "d06a3cb0dbf96d97d5168b525536b1afde09d558f98dbbd446d20a5a061bb1d0",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "40a9939249edd306f24cca6bcbdeeccd4df5e9029bc256c7f06a91c6e610a1b4",
+      "scene_id": "scene_029"
+    },
+    {
+      "actual_forward_input_sha256": "036ed0ac067bd9a758b799648271a97073f60237b844b16d3086e61b9a616c42",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "6d9f1a549619e38a353046c8a2f5444e9963641fb036bc01b2d0467962ba9ff4",
+      "scene_id": "scene_030"
+    },
+    {
+      "actual_forward_input_sha256": "58d8fd9aec154686b4a94bfaaed562c84023e59e6703b908c687ac3f0e398770",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "8241212d6869a0c0fc0cdea16b62fef4270a34e10da4c5e3f6eeecd8dbf2b873",
+      "scene_id": "scene_031"
+    },
+    {
+      "actual_forward_input_sha256": "1a47234b34af1b9556191024400bc73b551b9592fb4823537310b54a04898ed4",
+      "actual_input_shape": [
+        2,
+        1,
+        384,
+        384
+      ],
+      "physical_window": [
+        128,
+        512,
+        128,
+        512
+      ],
+      "local_core": [
+        128,
+        256,
+        128,
+        256
+      ],
+      "actual_kernel_sha256": "65205250a8f00be7bdb33c9c29e56e307245910ec641cb30242cf1b21086deb6",
+      "scene_id": "scene_032"
+    },
+    {
+      "actual_forward_input_sha256": "7723b8e1d8df7b3f9a99a66804c9c4bc456a1a57569a931cb31985b18edafd45",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "40a9939249edd306f24cca6bcbdeeccd4df5e9029bc256c7f06a91c6e610a1b4",
+      "scene_id": "scene_033"
+    },
+    {
+      "actual_forward_input_sha256": "8e75135c260326e40cd8c779087acca002541d917769e460131b0c79ed1ddf4d",
+      "actual_input_shape": [
+        2,
+        1,
+        288,
+        288
+      ],
+      "physical_window": [
+        176,
+        464,
+        176,
+        464
+      ],
+      "local_core": [
+        80,
+        208,
+        80,
+        208
+      ],
+      "actual_kernel_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c",
+      "scene_id": "scene_034"
+    },
+    {
+      "actual_forward_input_sha256": "1d9349929fe5a43fc7fe4fe41caf2d168fab1582a0703446df53b385496acbf7",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "4fd757f074b6e7473e2f99bfd3369fcf608406046c4efc423c57f5b6194c05a0",
+      "scene_id": "scene_035"
+    },
+    {
+      "actual_forward_input_sha256": "67168a99d1afd4e98d76ff7697858ca98ab9d4ec85d7342d286d6832f8728296",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "3e343bb3d9de1f42bc92b1d1731a509603887c6e0957d4a529afef4129be9c8e",
+      "scene_id": "scene_036"
+    },
+    {
+      "actual_forward_input_sha256": "196596dc749627bb7f59d4283bf817daaab8e4c516ec9ad488cef97ff69b8ae2",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "db3ab4683dfd243d6ec20dfcf6b0f242b04469d18985235edaf96fd3581d48ee",
+      "scene_id": "scene_037"
+    },
+    {
+      "actual_forward_input_sha256": "a1cde1b2a3c4a673f8b7aa21f9c9dac07f868d7cc283c023377997308b9c2e54",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "40a9939249edd306f24cca6bcbdeeccd4df5e9029bc256c7f06a91c6e610a1b4",
+      "scene_id": "scene_038"
+    },
+    {
+      "actual_forward_input_sha256": "9fb01e1710bcd52b600799cfb3eec7fc7347fc4caa400b0cc812993552bf2937",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "6528232fcc9cad0b8c466e94ed8e5a28fbed2cbb608ecfd6641dce198c729fc4",
+      "scene_id": "scene_039"
+    },
+    {
+      "actual_forward_input_sha256": "07620daa5d53e59c9eb700b7b9ad7556a864de482df75adbb11db85b6b1bc211",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "8241212d6869a0c0fc0cdea16b62fef4270a34e10da4c5e3f6eeecd8dbf2b873",
+      "scene_id": "scene_040"
+    },
+    {
+      "actual_forward_input_sha256": "dc7d0805a06da63ac9fad0fe6cd77e3a1c9b76862f83f73c2fc04f7f132ef155",
+      "actual_input_shape": [
+        2,
+        1,
+        352,
+        352
+      ],
+      "physical_window": [
+        144,
+        496,
+        144,
+        496
+      ],
+      "local_core": [
+        112,
+        240,
+        112,
+        240
+      ],
+      "actual_kernel_sha256": "972b914387c28aeecbebf34b23a998d8518888ca021b47382f7e09ff25a090a1",
+      "scene_id": "scene_041"
+    },
+    {
+      "actual_forward_input_sha256": "874e0cd1ed73aa03012bab023e11858cab7c5a83a5698be70f33533c94ffaa30",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "d6783b53de1d8aa7ee9ac49750a09be0784e40c15daf291b3e736d487ec07050",
+      "scene_id": "scene_042"
+    },
+    {
+      "actual_forward_input_sha256": "49317949d4b265ab992b291198f3c4093435b43bf3eb64b4e355ae53359ac4d0",
+      "actual_input_shape": [
+        2,
+        1,
+        352,
+        352
+      ],
+      "physical_window": [
+        144,
+        496,
+        144,
+        496
+      ],
+      "local_core": [
+        112,
+        240,
+        112,
+        240
+      ],
+      "actual_kernel_sha256": "972b914387c28aeecbebf34b23a998d8518888ca021b47382f7e09ff25a090a1",
+      "scene_id": "scene_043"
+    },
+    {
+      "actual_forward_input_sha256": "d7704bd431639038aa944da8d6702a73eba2d1ef2e512aae19d6cafbc0e1ad81",
+      "actual_input_shape": [
+        2,
+        1,
+        352,
+        352
+      ],
+      "physical_window": [
+        144,
+        496,
+        144,
+        496
+      ],
+      "local_core": [
+        112,
+        240,
+        112,
+        240
+      ],
+      "actual_kernel_sha256": "972b914387c28aeecbebf34b23a998d8518888ca021b47382f7e09ff25a090a1",
+      "scene_id": "scene_044"
+    },
+    {
+      "actual_forward_input_sha256": "26623b03b1e48e589e7a09e7ea24e9d61164dd84e4ed726b248ad7c291b6affd",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "df2e160007047711625747d9c5d092be151f4523ac01bebdb7036081fe3acf13",
+      "scene_id": "scene_045"
+    },
+    {
+      "actual_forward_input_sha256": "d7b23197ebbb6a0eadec8bd4d52139c1526ddbfadd2b91b8e516c7a62723fc28",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "40a9939249edd306f24cca6bcbdeeccd4df5e9029bc256c7f06a91c6e610a1b4",
+      "scene_id": "scene_046"
+    },
+    {
+      "actual_forward_input_sha256": "8219edeffc08f46f100891f9105117aa5917ae8ca42630c438dd77e0b7f3d385",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "e9bba7812d6e7e3d6933e642a5107c1ac009a700035e1e596738b3b731b7cc4f",
+      "scene_id": "scene_047"
+    },
+    {
+      "actual_forward_input_sha256": "1ba084f15edd4762938b677aca1dde25efb23e55fcf6f4bcf08819bc831e5cdf",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "6528232fcc9cad0b8c466e94ed8e5a28fbed2cbb608ecfd6641dce198c729fc4",
+      "scene_id": "scene_048"
+    },
+    {
+      "actual_forward_input_sha256": "0639974a5f8a39a36b3f2bbdf4584625326528c1345fddf0c3a57009631a0dc2",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "e9bba7812d6e7e3d6933e642a5107c1ac009a700035e1e596738b3b731b7cc4f",
+      "scene_id": "scene_049"
+    },
+    {
+      "actual_forward_input_sha256": "58f46020cc2905fea5a99ecc366b0150d68031fad99596828f1d8d9b3be08f12",
+      "actual_input_shape": [
+        2,
+        1,
+        384,
+        384
+      ],
+      "physical_window": [
+        128,
+        512,
+        128,
+        512
+      ],
+      "local_core": [
+        128,
+        256,
+        128,
+        256
+      ],
+      "actual_kernel_sha256": "65205250a8f00be7bdb33c9c29e56e307245910ec641cb30242cf1b21086deb6",
+      "scene_id": "scene_050"
+    },
+    {
+      "actual_forward_input_sha256": "5c0b9aee389da29b9c7d67dda11d773796d4d3cee445033f78b2ae2f2fffa2bb",
+      "actual_input_shape": [
+        2,
+        1,
+        352,
+        352
+      ],
+      "physical_window": [
+        144,
+        496,
+        144,
+        496
+      ],
+      "local_core": [
+        112,
+        240,
+        112,
+        240
+      ],
+      "actual_kernel_sha256": "111e65d35f24427239a918a37bcad8e79a64781a5b0d407b71a65f0e0c443c6e",
+      "scene_id": "scene_051"
+    },
+    {
+      "actual_forward_input_sha256": "c8ac27363cab29b6eaa132c494b1b1b4538ab022df069974ed1f00dd24769a06",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "6528232fcc9cad0b8c466e94ed8e5a28fbed2cbb608ecfd6641dce198c729fc4",
+      "scene_id": "scene_052"
+    },
+    {
+      "actual_forward_input_sha256": "6ee37378f206ed68e90be891ac953a92f45b2832cc194df9ceee2577b4874128",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "40a9939249edd306f24cca6bcbdeeccd4df5e9029bc256c7f06a91c6e610a1b4",
+      "scene_id": "scene_053"
+    },
+    {
+      "actual_forward_input_sha256": "93784ef52bba5750d568eba355ba4f566fc24cfcbfa0d6976214445710abf78b",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "40a9939249edd306f24cca6bcbdeeccd4df5e9029bc256c7f06a91c6e610a1b4",
+      "scene_id": "scene_054"
+    },
+    {
+      "actual_forward_input_sha256": "d51d89923c843d56c30b8840150387639dccdb5ac1c0377eaa7c6e284e44597f",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "2cd02f43e18aa457a4ac392ec1e4b10c355f79a3af3f8e3483664772b42c21f8",
+      "scene_id": "scene_055"
+    },
+    {
+      "actual_forward_input_sha256": "6c10db85e4b22902947c0723153e6ab58a1e61af853efd068cc1338947de46c4",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "3e343bb3d9de1f42bc92b1d1731a509603887c6e0957d4a529afef4129be9c8e",
+      "scene_id": "scene_056"
+    },
+    {
+      "actual_forward_input_sha256": "18473c880642d8019f01f3cd1d5cdb6c597507f9aa51b248e358a48520ae0018",
+      "actual_input_shape": [
+        2,
+        1,
+        608,
+        608
+      ],
+      "physical_window": [
+        16,
+        624,
+        16,
+        624
+      ],
+      "local_core": [
+        240,
+        368,
+        240,
+        368
+      ],
+      "actual_kernel_sha256": "7347a812358dc61f91b6ebdd6057e24ad59ee6a38936242070e8997192c460e3",
+      "scene_id": "scene_057"
+    },
+    {
+      "actual_forward_input_sha256": "1fe4c573450e34a6006a0f01bb03a8bc9783aa4e8cd8a2ea50e7abe54de17153",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "6528232fcc9cad0b8c466e94ed8e5a28fbed2cbb608ecfd6641dce198c729fc4",
+      "scene_id": "scene_058"
+    },
+    {
+      "actual_forward_input_sha256": "4f8487e8db2d2dac267efcb9550dadb589347cd628fdcf06c106862873e94e20",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "6528232fcc9cad0b8c466e94ed8e5a28fbed2cbb608ecfd6641dce198c729fc4",
+      "scene_id": "scene_059"
+    },
+    {
+      "actual_forward_input_sha256": "c7f95ab3cac18e4a0116fbf7fbb1a2416f2d57c28f6397f1d76729837a6c0900",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "4fd757f074b6e7473e2f99bfd3369fcf608406046c4efc423c57f5b6194c05a0",
+      "scene_id": "scene_060"
+    },
+    {
+      "actual_forward_input_sha256": "196195cf23e37d5ec86fb70e1c0933a57f41747bc91039c6386de77ef1d0adc1",
+      "actual_input_shape": [
+        2,
+        1,
+        512,
+        512
+      ],
+      "physical_window": [
+        64,
+        576,
+        64,
+        576
+      ],
+      "local_core": [
+        192,
+        320,
+        192,
+        320
+      ],
+      "actual_kernel_sha256": "4fd757f074b6e7473e2f99bfd3369fcf608406046c4efc423c57f5b6194c05a0",
+      "scene_id": "scene_061"
+    },
+    {
+      "actual_forward_input_sha256": "d1535ad367e8513a77df8d140cd983a847e59e958c851300f7eccc50286974ac",
+      "actual_input_shape": [
+        2,
+        1,
+        416,
+        416
+      ],
+      "physical_window": [
+        112,
+        528,
+        112,
+        528
+      ],
+      "local_core": [
+        144,
+        272,
+        144,
+        272
+      ],
+      "actual_kernel_sha256": "2cd02f43e18aa457a4ac392ec1e4b10c355f79a3af3f8e3483664772b42c21f8",
+      "scene_id": "scene_062"
+    },
+    {
+      "actual_forward_input_sha256": "7eaa502ab3d64374263c67a4999e9df4b745da6b001fd13c2e5c49e1e54b5289",
+      "actual_input_shape": [
+        2,
+        1,
+        480,
+        480
+      ],
+      "physical_window": [
+        80,
+        560,
+        80,
+        560
+      ],
+      "local_core": [
+        176,
+        304,
+        176,
+        304
+      ],
+      "actual_kernel_sha256": "6528232fcc9cad0b8c466e94ed8e5a28fbed2cbb608ecfd6641dce198c729fc4",
+      "scene_id": "scene_063"
+    }
+  ],
+  "initial_shared_tensor_equality_by_seed_checked": true,
+  "initial_evaluations": [
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_A_s1235001_step0000\\summary.json",
+      "sha256": "432e448b31034d12db449c799aa2c221f433ea66cafa4a18d610a62112f97711",
+      "completed_utc": "2026-09-08T07:39:18.079933+00:00",
+      "checkpoint_sha256": "99123964cdbc9ca5a2ee56fe394494bebc97a376fbec27e1d35c4c5507917e07",
+      "actual_output_files_checked": 18,
+      "actual_SEM_rows": 288,
+      "motion_pairs": 6,
+      "learned_tensor_sha256": "afb91d7749f180fe1f0f20ebb2f81e1359646ebdb0ba037d3ae251f0bcdd79c3",
+      "calibration_qualified": false,
+      "scientific_promotion": false
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_B_s1235001_step0000\\summary.json",
+      "sha256": "5e4455d29d8408cbfd5c621edcaf9f2736a8f3ce1621b2663d561cb5d4a5540d",
+      "completed_utc": "2026-09-08T07:39:53.272527+00:00",
+      "checkpoint_sha256": "997a5bf440dadddd9c7b462c1d6bcab7bded93954843ba5f0a7fd65c53f4bd60",
+      "actual_output_files_checked": 18,
+      "actual_SEM_rows": 288,
+      "motion_pairs": 6,
+      "learned_tensor_sha256": "afb91d7749f180fe1f0f20ebb2f81e1359646ebdb0ba037d3ae251f0bcdd79c3",
+      "calibration_qualified": false,
+      "scientific_promotion": false
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_C_s1235001_step0000\\summary.json",
+      "sha256": "603f05ad8ca945a4134a084e3bc5f8fdf92c032adc23ee0420c77f0b251a2b49",
+      "completed_utc": "2026-09-08T07:40:27.924403+00:00",
+      "checkpoint_sha256": "7f00b5b5770f4fee6f25886f2a2cb5281d4dadd0bff7c3705785e1a1db48b89a",
+      "actual_output_files_checked": 18,
+      "actual_SEM_rows": 288,
+      "motion_pairs": 6,
+      "learned_tensor_sha256": "afb91d7749f180fe1f0f20ebb2f81e1359646ebdb0ba037d3ae251f0bcdd79c3",
+      "calibration_qualified": false,
+      "scientific_promotion": false
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_A_s1235002_step0000\\summary.json",
+      "sha256": "859363d8d73f75ce039e3e32837ab74eeb9bac976ba52b84e632667286f13cfa",
+      "completed_utc": "2026-09-08T07:41:03.144398+00:00",
+      "checkpoint_sha256": "5005244418d19ecc58798b9d3ad53c64f778888ffced37bfb838e291e436270d",
+      "actual_output_files_checked": 18,
+      "actual_SEM_rows": 288,
+      "motion_pairs": 6,
+      "learned_tensor_sha256": "43a0c4d231db12da6eeb5a590c395afe91190185571566d6eae4d3d54411cc2a",
+      "calibration_qualified": false,
+      "scientific_promotion": false
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_B_s1235002_step0000\\summary.json",
+      "sha256": "73f85b4c4d528f3f51366d11d431708fb75b53957ccee336d02b2b6798ca5c58",
+      "completed_utc": "2026-09-08T07:41:38.337672+00:00",
+      "checkpoint_sha256": "e8c7100ee83b9c0fa6ebae4f71577846a0686d61c8da2ed53290e72359bf30e5",
+      "actual_output_files_checked": 18,
+      "actual_SEM_rows": 288,
+      "motion_pairs": 6,
+      "learned_tensor_sha256": "43a0c4d231db12da6eeb5a590c395afe91190185571566d6eae4d3d54411cc2a",
+      "calibration_qualified": false,
+      "scientific_promotion": false
+    },
+    {
+      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_C_s1235002_step0000\\summary.json",
+      "sha256": "befdccad1389bfefc0bf9bd4a21726b6b15371f0bfc074dd962947e4125b7633",
+      "completed_utc": "2026-09-08T07:42:12.564537+00:00",
+      "checkpoint_sha256": "235ef9133f3c3144d953f1405564863d25b9c25c4e248c99feccf0cc8be27c70",
+      "actual_output_files_checked": 18,
+      "actual_SEM_rows": 288,
+      "motion_pairs": 6,
+      "learned_tensor_sha256": "43a0c4d231db12da6eeb5a590c395afe91190185571566d6eae4d3d54411cc2a",
+      "calibration_qualified": false,
+      "scientific_promotion": false
+    }
+  ],
+  "runs": [
+    {
+      "label": "A_s1235001",
+      "ledger_rows": 64,
+      "unique_scenes": 64,
+      "views": 128,
+      "input_hashes_reconstructed_and_matched": true,
+      "same_scene_order": true,
+      "checkpoint_sha256": "08d7787a476bd43afa87603bee2970ec041263b50dcfb265d5b080e215b46b6d",
+      "ledger_sha256": "4a62c5525fb92dcc645d94a012663576aa707d768432feaa4a58aacab632b08a",
+      "actual_changed_parameter_names": [
+        "prior_logits",
+        "prior.stem.weight",
+        "prior.stem.bias",
+        "prior.blocks.0.a.weight",
+        "prior.blocks.0.a.bias",
+        "prior.blocks.0.b.weight",
+        "prior.blocks.0.b.bias",
+        "prior.blocks.1.a.weight",
+        "prior.blocks.1.a.bias",
+        "prior.blocks.1.b.weight",
+        "prior.blocks.1.b.bias",
+        "prior.blocks.2.a.weight",
+        "prior.blocks.2.a.bias",
+        "prior.blocks.2.b.weight",
+        "prior.blocks.2.b.bias",
+        "prior.blocks.3.a.weight",
+        "prior.blocks.3.a.bias",
+        "prior.blocks.3.b.weight",
+        "prior.blocks.3.b.bias",
+        "prior.head.weight",
+        "prior.head.bias"
+      ],
+      "optimizer_parameter_count": 21,
+      "optimizer_steps": [
+        64.0
+      ],
+      "real_evaluation": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_A_s1235001_step0064\\summary.json",
+        "sha256": "a72f141fa117b778617cbbcbd376f344697de0358eecd890c0d34bcac929e58b",
+        "completed_utc": "2026-09-08T07:45:01.859676+00:00",
+        "checkpoint_sha256": "08d7787a476bd43afa87603bee2970ec041263b50dcfb265d5b080e215b46b6d",
+        "actual_output_files_checked": 18,
+        "actual_SEM_rows": 288,
+        "motion_pairs": 6,
+        "learned_tensor_sha256": "13ada0d7b8641d2c5a5970a890c4fe54a1410041bf50a5f0d3817723206923aa",
+        "calibration_qualified": false,
+        "scientific_promotion": false
+      },
+      "failure_count": 0
+    },
+    {
+      "label": "B_s1235001",
+      "ledger_rows": 64,
+      "unique_scenes": 64,
+      "views": 128,
+      "input_hashes_reconstructed_and_matched": true,
+      "same_scene_order": true,
+      "checkpoint_sha256": "b11856517db8c6a34dccce612ce1baf914c3ea5c9e04066c77c7b8a444a1fa5b",
+      "ledger_sha256": "3972be073c1e5dda0dc6847b4e794d4d7083872613ebb3d28868d28390162324",
+      "actual_changed_parameter_names": [
+        "prior_logits",
+        "observation_logits",
+        "prior.stem.weight",
+        "prior.stem.bias",
+        "prior.blocks.0.a.weight",
+        "prior.blocks.0.a.bias",
+        "prior.blocks.0.b.weight",
+        "prior.blocks.0.b.bias",
+        "prior.blocks.1.a.weight",
+        "prior.blocks.1.a.bias",
+        "prior.blocks.1.b.weight",
+        "prior.blocks.1.b.bias",
+        "prior.blocks.2.a.weight",
+        "prior.blocks.2.a.bias",
+        "prior.blocks.2.b.weight",
+        "prior.blocks.2.b.bias",
+        "prior.blocks.3.a.weight",
+        "prior.blocks.3.a.bias",
+        "prior.blocks.3.b.weight",
+        "prior.blocks.3.b.bias",
+        "prior.head.weight",
+        "prior.head.bias"
+      ],
+      "optimizer_parameter_count": 22,
+      "optimizer_steps": [
+        64.0
+      ],
+      "real_evaluation": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_B_s1235001_step0064\\summary.json",
+        "sha256": "3cffd05d390e1996329c7cae32e76777247e5524b641dbd79421ec17dac5d1cb",
+        "completed_utc": "2026-09-08T07:47:56.170918+00:00",
+        "checkpoint_sha256": "b11856517db8c6a34dccce612ce1baf914c3ea5c9e04066c77c7b8a444a1fa5b",
+        "actual_output_files_checked": 18,
+        "actual_SEM_rows": 288,
+        "motion_pairs": 6,
+        "learned_tensor_sha256": "fa5a5addbd59ef518ac3df7d98d4975b314ffc0db4faea3e0d33fa5c0a69641e",
+        "calibration_qualified": false,
+        "scientific_promotion": false
+      },
+      "failure_count": 0
+    },
+    {
+      "label": "C_s1235001",
+      "ledger_rows": 64,
+      "unique_scenes": 64,
+      "views": 128,
+      "input_hashes_reconstructed_and_matched": true,
+      "same_scene_order": true,
+      "checkpoint_sha256": "cda3a2f64dd6013fb968d463e100cc813ba423be17df73a75f320046c7085a9b",
+      "ledger_sha256": "549162929413cdaed1a5b7fe3e7eb6a9e21e808db20262545c9bb1c59ed84558",
+      "actual_changed_parameter_names": [
+        "prior_logits",
+        "observation_logits",
+        "prior.stem.weight",
+        "prior.stem.bias",
+        "prior.blocks.0.a.weight",
+        "prior.blocks.0.a.bias",
+        "prior.blocks.0.b.weight",
+        "prior.blocks.0.b.bias",
+        "prior.blocks.1.a.weight",
+        "prior.blocks.1.a.bias",
+        "prior.blocks.1.b.weight",
+        "prior.blocks.1.b.bias",
+        "prior.blocks.2.a.weight",
+        "prior.blocks.2.a.bias",
+        "prior.blocks.2.b.weight",
+        "prior.blocks.2.b.bias",
+        "prior.blocks.3.a.weight",
+        "prior.blocks.3.a.bias",
+        "prior.blocks.3.b.weight",
+        "prior.blocks.3.b.bias",
+        "prior.head.weight",
+        "prior.head.bias",
+        "geometry_head.0.weight",
+        "geometry_head.0.bias",
+        "geometry_head.2.weight",
+        "geometry_head.2.bias"
+      ],
+      "optimizer_parameter_count": 26,
+      "optimizer_steps": [
+        64.0
+      ],
+      "real_evaluation": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_C_s1235001_step0064\\summary.json",
+        "sha256": "2fdb72793a41126a7dfb376942f2ae8e368f473f1d41b5dc97da1427c612b8c0",
+        "completed_utc": "2026-09-08T07:50:52.629609+00:00",
+        "checkpoint_sha256": "cda3a2f64dd6013fb968d463e100cc813ba423be17df73a75f320046c7085a9b",
+        "actual_output_files_checked": 18,
+        "actual_SEM_rows": 288,
+        "motion_pairs": 6,
+        "learned_tensor_sha256": "3c97495b8a10eb342a53f3acf0611088ed9cdb69ef20098242b9acd33b61981c",
+        "calibration_qualified": false,
+        "scientific_promotion": false
+      },
+      "failure_count": 0
+    },
+    {
+      "label": "A_s1235002",
+      "ledger_rows": 64,
+      "unique_scenes": 64,
+      "views": 128,
+      "input_hashes_reconstructed_and_matched": true,
+      "same_scene_order": true,
+      "checkpoint_sha256": "1424a628894e571442c414d458354e46fcf3bb47b6d621b4da9489e61b519fc4",
+      "ledger_sha256": "102ed937f64b94c911bf118dbe40dc816c71ff40e54bfadc2b84c034ebb6cda5",
+      "actual_changed_parameter_names": [
+        "prior_logits",
+        "prior.stem.weight",
+        "prior.stem.bias",
+        "prior.blocks.0.a.weight",
+        "prior.blocks.0.a.bias",
+        "prior.blocks.0.b.weight",
+        "prior.blocks.0.b.bias",
+        "prior.blocks.1.a.weight",
+        "prior.blocks.1.a.bias",
+        "prior.blocks.1.b.weight",
+        "prior.blocks.1.b.bias",
+        "prior.blocks.2.a.weight",
+        "prior.blocks.2.a.bias",
+        "prior.blocks.2.b.weight",
+        "prior.blocks.2.b.bias",
+        "prior.blocks.3.a.weight",
+        "prior.blocks.3.a.bias",
+        "prior.blocks.3.b.weight",
+        "prior.blocks.3.b.bias",
+        "prior.head.weight",
+        "prior.head.bias"
+      ],
+      "optimizer_parameter_count": 21,
+      "optimizer_steps": [
+        64.0
+      ],
+      "real_evaluation": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_A_s1235002_step0064\\summary.json",
+        "sha256": "e47c633306b91803634c8e19e61b40f3b334e830b59ddd5dcbd206810a1f51e9",
+        "completed_utc": "2026-09-08T07:53:36.820088+00:00",
+        "checkpoint_sha256": "1424a628894e571442c414d458354e46fcf3bb47b6d621b4da9489e61b519fc4",
+        "actual_output_files_checked": 18,
+        "actual_SEM_rows": 288,
+        "motion_pairs": 6,
+        "learned_tensor_sha256": "3a279b38a3e8f13ef336e64198b37da3a968a585f31b729d749f34c812ed6bec",
+        "calibration_qualified": false,
+        "scientific_promotion": false
+      },
+      "failure_count": 0
+    },
+    {
+      "label": "B_s1235002",
+      "ledger_rows": 64,
+      "unique_scenes": 64,
+      "views": 128,
+      "input_hashes_reconstructed_and_matched": true,
+      "same_scene_order": true,
+      "checkpoint_sha256": "f8606f4e7a68da494913aa7d6f1f9416d5e461d74fd9db3fd167d50305548b86",
+      "ledger_sha256": "dcd16ea85055278e2be5059bd701859bffc62134b5b8c82b4c4c33a746e1158f",
+      "actual_changed_parameter_names": [
+        "prior_logits",
+        "observation_logits",
+        "prior.stem.weight",
+        "prior.stem.bias",
+        "prior.blocks.0.a.weight",
+        "prior.blocks.0.a.bias",
+        "prior.blocks.0.b.weight",
+        "prior.blocks.0.b.bias",
+        "prior.blocks.1.a.weight",
+        "prior.blocks.1.a.bias",
+        "prior.blocks.1.b.weight",
+        "prior.blocks.1.b.bias",
+        "prior.blocks.2.a.weight",
+        "prior.blocks.2.a.bias",
+        "prior.blocks.2.b.weight",
+        "prior.blocks.2.b.bias",
+        "prior.blocks.3.a.weight",
+        "prior.blocks.3.a.bias",
+        "prior.blocks.3.b.weight",
+        "prior.blocks.3.b.bias",
+        "prior.head.weight",
+        "prior.head.bias"
+      ],
+      "optimizer_parameter_count": 22,
+      "optimizer_steps": [
+        64.0
+      ],
+      "real_evaluation": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_B_s1235002_step0064\\summary.json",
+        "sha256": "5c7688f98989e8cb50d9f1b314737060112f87a999ed55380458c257e509d443",
+        "completed_utc": "2026-09-08T07:56:30.657771+00:00",
+        "checkpoint_sha256": "f8606f4e7a68da494913aa7d6f1f9416d5e461d74fd9db3fd167d50305548b86",
+        "actual_output_files_checked": 18,
+        "actual_SEM_rows": 288,
+        "motion_pairs": 6,
+        "learned_tensor_sha256": "4568e22c08e57b736142636e1834ba36540caefd6253b70ceccd5b5ed4983c11",
+        "calibration_qualified": false,
+        "scientific_promotion": false
+      },
+      "failure_count": 0
+    },
+    {
+      "label": "C_s1235002",
+      "ledger_rows": 64,
+      "unique_scenes": 64,
+      "views": 128,
+      "input_hashes_reconstructed_and_matched": true,
+      "same_scene_order": true,
+      "checkpoint_sha256": "047cd17eb663d910459034484ebf9d8d2cb8ac16714a428e4800df4ce56ed9d3",
+      "ledger_sha256": "318528b0fbe3905524b1c2c6722e964960029fbf56c105ab312db08d60bf644d",
+      "actual_changed_parameter_names": [
+        "prior_logits",
+        "observation_logits",
+        "prior.stem.weight",
+        "prior.stem.bias",
+        "prior.blocks.0.a.weight",
+        "prior.blocks.0.a.bias",
+        "prior.blocks.0.b.weight",
+        "prior.blocks.0.b.bias",
+        "prior.blocks.1.a.weight",
+        "prior.blocks.1.a.bias",
+        "prior.blocks.1.b.weight",
+        "prior.blocks.1.b.bias",
+        "prior.blocks.2.a.weight",
+        "prior.blocks.2.a.bias",
+        "prior.blocks.2.b.weight",
+        "prior.blocks.2.b.bias",
+        "prior.blocks.3.a.weight",
+        "prior.blocks.3.a.bias",
+        "prior.blocks.3.b.weight",
+        "prior.blocks.3.b.bias",
+        "prior.head.weight",
+        "prior.head.bias",
+        "geometry_head.0.weight",
+        "geometry_head.0.bias",
+        "geometry_head.2.weight",
+        "geometry_head.2.bias"
+      ],
+      "optimizer_parameter_count": 26,
+      "optimizer_steps": [
+        64.0
+      ],
+      "real_evaluation": {
+        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_C_s1235002_step0064\\summary.json",
+        "sha256": "9605b2d255e2bb8c2f2d033ecdf928c49b22cf9920c123bbb28c2f33f4081b66",
+        "completed_utc": "2026-09-08T07:59:25.925509+00:00",
+        "checkpoint_sha256": "047cd17eb663d910459034484ebf9d8d2cb8ac16714a428e4800df4ce56ed9d3",
+        "actual_output_files_checked": 18,
+        "actual_SEM_rows": 288,
+        "motion_pairs": 6,
+        "learned_tensor_sha256": "2cf5db327ab63997301a46463e47ef5a369d5ce01478e4a830131167478e6108",
+        "calibration_qualified": false,
+        "scientific_promotion": false
+      },
+      "failure_count": 0
+    }
+  ],
+  "matrix_events_verified": [
+    {
+      "stage": "matrix_initializations",
+      "returncode": 0,
+      "elapsed_seconds": 1.952664699871093,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\matrix_initializations.log"
+    },
+    {
+      "stage": "eval_A_s1235001_step0000",
+      "returncode": 0,
+      "elapsed_seconds": 35.166985400021076,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_A_s1235001_step0000.log"
+    },
+    {
+      "stage": "eval_B_s1235001_step0000",
+      "returncode": 0,
+      "elapsed_seconds": 35.2623848002404,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_B_s1235001_step0000.log"
+    },
+    {
+      "stage": "eval_C_s1235001_step0000",
+      "returncode": 0,
+      "elapsed_seconds": 34.58086630003527,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_C_s1235001_step0000.log"
+    },
+    {
+      "stage": "eval_A_s1235002_step0000",
+      "returncode": 0,
+      "elapsed_seconds": 35.200089199934155,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_A_s1235002_step0000.log"
+    },
+    {
+      "stage": "eval_B_s1235002_step0000",
+      "returncode": 0,
+      "elapsed_seconds": 35.20842849975452,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_B_s1235002_step0000.log"
+    },
+    {
+      "stage": "eval_C_s1235002_step0000",
+      "returncode": 0,
+      "elapsed_seconds": 34.20080550014973,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_C_s1235002_step0000.log"
+    },
+    {
+      "stage": "train_A_s1235001",
+      "returncode": 0,
+      "elapsed_seconds": 134.9813966997899,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_A_s1235001.log"
+    },
+    {
+      "stage": "eval_A_s1235001_step0064",
+      "returncode": 0,
+      "elapsed_seconds": 34.307008100207895,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_A_s1235001_step0064.log"
+    },
+    {
+      "stage": "train_B_s1235001",
+      "returncode": 0,
+      "elapsed_seconds": 140.1752929999493,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_B_s1235001.log"
+    },
+    {
+      "stage": "eval_B_s1235001_step0064",
+      "returncode": 0,
+      "elapsed_seconds": 34.21839420031756,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_B_s1235001_step0064.log"
+    },
+    {
+      "stage": "train_C_s1235001",
+      "returncode": 0,
+      "elapsed_seconds": 141.6750114997849,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_C_s1235001.log"
+    },
+    {
+      "stage": "eval_C_s1235001_step0064",
+      "returncode": 0,
+      "elapsed_seconds": 34.7005544998683,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_C_s1235001_step0064.log"
+    },
+    {
+      "stage": "train_A_s1235002",
+      "returncode": 0,
+      "elapsed_seconds": 129.99247470032424,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_A_s1235002.log"
+    },
+    {
+      "stage": "eval_A_s1235002_step0064",
+      "returncode": 0,
+      "elapsed_seconds": 34.22125310031697,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_A_s1235002_step0064.log"
+    },
+    {
+      "stage": "train_B_s1235002",
+      "returncode": 0,
+      "elapsed_seconds": 139.70199779979885,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_B_s1235002.log"
+    },
+    {
+      "stage": "eval_B_s1235002_step0064",
+      "returncode": 0,
+      "elapsed_seconds": 34.119407599791884,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_B_s1235002_step0064.log"
+    },
+    {
+      "stage": "train_C_s1235002",
+      "returncode": 0,
+      "elapsed_seconds": 141.18574129976332,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_C_s1235002.log"
+    },
+    {
+      "stage": "eval_C_s1235002_step0064",
+      "returncode": 0,
+      "elapsed_seconds": 34.079382199794054,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_C_s1235002_step0064.log"
+    },
+    {
+      "stage": "aggregate_real",
+      "returncode": 0,
+      "elapsed_seconds": 4.446835699956864,
+      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\aggregate_real.log"
+    }
+  ],
+  "initial_evaluations_before_any_training": true,
+  "latest_initial_completed_epoch": 1788853332.564537,
+  "first_training_log_created_epoch": 1788853333.1292546,
+  "completed_optimizer_updates_verified": 384,
+  "all_runs_complete": true,
+  "pending": [],
+  "failures": [],
+  "execution_integrity_passed": true,
+  "calibration_qualified": false,
+  "scientific_promotion": false,
+  "unseen_holdout_claimed": false,
+  "limitations": [
+    "Current and captured checkpoint source identities are compared; this is not continuous filesystem surveillance.",
+    "Real output files, bindings, populations and protected inputs are checked; efficacy conclusions require the separate scientific readout.",
+    "Scene input pixels are recomputed once for all64 shared scenes, then matched against all384 ledger entries."
+  ],
+  "elapsed_seconds": 5.219000000040978
+}

@@ -1,0 +1,21 @@
+{
+  "verification": "observations, historical parity, source preservation and paired counts checked",
+  "protected_files_checked": 88,
+  "changed_protected_files": [],
+  "historical_raw_base_masks_exact": 864,
+  "image_outputs_checked": 48,
+  "measurement_rows": 1728,
+  "initial_export_check_failure": "Preserved; explained by known historical mat2gray display export. Separate replay checks historical display exports and original intensity crops on all 864 cases.",
+  "scientific_scope": "One frozen model, one sample, all 12 existing exposures. No training, promotion or unseen-confirmation claim.",
+  "verification_code_sha256": "eeb79e1dcc8c1b0367e078c759a1c8ad7646684891252fb2a4f0807ffe154991",
+  "code_and_protocol_sha256": {
+    "analyze.py": "5faccdfc4d74611fe4717bc65f23d58bcfac53dbd4d39797d8474033d1fdd807",
+    "audit_cells.m": "61cd3ea0fd0a274897e831ec20163c3965dc23c4a673f0d6cd56328738c3dbce",
+    "input_snapshot.json": "83d23e6e08958cdf4e7d52c4514c446d74e38d6d489f4fd32032e9d13894d9b5",
+    "measure_sem.m": "442bf3f5715d1c966813f2589ec0dcc8682ee9b50e8ca52f009093680a1ca725",
+    "protocol.json": "627cc4a1732ce1f5545826dab68d974b7298af6628371d58634bad34ae6a2dbb",
+    "render.py": "c480b4d55085f805db5f284afbb5e8567ae629fef76971e17e2b18726714fd72",
+    "review_examples.py": "389217f6d60cccb22f6a779719485e55a75a91f0803e4e1ac1a30e5220701f04",
+    "verify_final.py": "eeb79e1dcc8c1b0367e078c759a1c8ad7646684891252fb2a4f0807ffe154991"
+  }
+}

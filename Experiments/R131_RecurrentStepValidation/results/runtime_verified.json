@@ -1,0 +1,61 @@
+{
+  "utc": "2026-09-14T03:03:21.167087+00:00",
+  "warmup_per_step_per_case": 1,
+  "timed_repeats": 3,
+  "randomized_order": true,
+  "precision": "FP32 TF32off",
+  "intermediate_exports_timed": false,
+  "parity": [
+    {
+      "case": "SEM14",
+      "step": 0,
+      "PNG_exact": true
+    },
+    {
+      "case": "SEM14",
+      "step": 1,
+      "PNG_exact": true
+    },
+    {
+      "case": "SEM14",
+      "step": 2,
+      "PNG_exact": true
+    },
+    {
+      "case": "SEM14",
+      "step": 3,
+      "PNG_exact": true
+    },
+    {
+      "case": "SEM14",
+      "step": 4,
+      "PNG_exact": true
+    },
+    {
+      "case": "full_field",
+      "step": 0,
+      "PNG_exact": true
+    },
+    {
+      "case": "full_field",
+      "step": 1,
+      "PNG_exact": true
+    },
+    {
+      "case": "full_field",
+      "step": 2,
+      "PNG_exact": true
+    },
+    {
+      "case": "full_field",
+      "step": 3,
+      "PNG_exact": true
+    },
+    {
+      "case": "full_field",
+      "step": 4,
+      "PNG_exact": true
+    }
+  ],
+  "weights_unchanged": true
+}

@@ -1,0 +1,12 @@
+{
+  "native_repeat_integrate_identity_error": 0.0,
+  "identity_optics_zero_update_error": 0.0,
+  "blurred_operator_zero_prior_still_changes_raw_max": 0.03496772548814542,
+  "adjoint_inner_product_error": 3.552713678800501e-15,
+  "manual_vs_autograd_gradient_error": 0.0,
+  "finite_difference_gradient_error": 1.4839518502895999e-13,
+  "one_step_observation_loss_before": 0.060224284071048434,
+  "one_step_observation_loss_after": 0.04507035959819656,
+  "ineffective_proximity_term_removed": true,
+  "scope": "2x linear zero-boundary arithmetic only; not production forward-model qualification, tile certification, or evidence of real image improvement"
+}

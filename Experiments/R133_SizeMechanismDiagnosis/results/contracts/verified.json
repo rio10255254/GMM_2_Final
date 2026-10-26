@@ -1,0 +1,42 @@
+{
+  "output_contracts": [
+    {
+      "highpass": true,
+      "neutral_exact": true,
+      "gradient_norm": 6.858180563528276,
+      "directional_derivative_error": 6.52888187957501e-10
+    },
+    {
+      "highpass": false,
+      "neutral_exact": true,
+      "gradient_norm": 7.288669718332061,
+      "directional_derivative_error": 5.067422037541292e-10
+    }
+  ],
+  "radius_gradient_examples": [
+    {
+      "polarity": "dark",
+      "diameter_bias_px": 2.0,
+      "actual_image_objective": 4.507625164764692,
+      "pair_penalty": 0.0,
+      "existing_loss_radius_gradient": 4.746388273705692,
+      "qualified_coverage_loss": 0.025225461939050873,
+      "coverage_radius_gradient": 0.025907206188036422
+    },
+    {
+      "polarity": "bright",
+      "diameter_bias_px": 2.0,
+      "actual_image_objective": 4.507625164764692,
+      "pair_penalty": 0.0,
+      "existing_loss_radius_gradient": 4.746388273705692,
+      "qualified_coverage_loss": 0.025225461939050876,
+      "coverage_radius_gradient": 0.02590720618803643
+    }
+  ],
+  "scope": "Prototype contracts on known mathematical inputs; no neural training or SEM efficacy claim",
+  "geometry_term_qualification": "Only valid with known output intensity-to-material coverage relationship; this relationship has NOT been qualified on current realSEM",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R133_SizeMechanismDiagnosis\\scripts\\prototype_contracts.py",
+    "sha256": "5d376d88efa912f96ec6e2eab4fd62c20da5b109af6a011f41760f7f1d22943f"
+  }
+}

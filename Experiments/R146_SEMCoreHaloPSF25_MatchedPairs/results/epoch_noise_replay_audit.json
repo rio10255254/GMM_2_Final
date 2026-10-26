@@ -1,0 +1,206 @@
+{
+  "passed": true,
+  "representative_training_batches": 21,
+  "categories": 7,
+  "epochs": [
+    0,
+    2,
+    15
+  ],
+  "source_pixels_exact": true,
+  "clear_target_pixels_exact": true,
+  "labels_exact": true,
+  "checks": [
+    {
+      "category": "clean_identity",
+      "epoch": 0,
+      "parent_id": "r128_train_0019",
+      "psf_label": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "category": "clean_identity",
+      "epoch": 2,
+      "parent_id": "r128_train_0019",
+      "psf_label": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "category": "clean_identity",
+      "epoch": 15,
+      "parent_id": "r128_train_0019",
+      "psf_label": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "category": "corners_lines_junctions",
+      "epoch": 0,
+      "parent_id": "r128_train_0000",
+      "psf_label": [
+        21,
+        21
+      ]
+    },
+    {
+      "category": "corners_lines_junctions",
+      "epoch": 2,
+      "parent_id": "r128_train_0000",
+      "psf_label": [
+        21,
+        21
+      ]
+    },
+    {
+      "category": "corners_lines_junctions",
+      "epoch": 15,
+      "parent_id": "r128_train_0000",
+      "psf_label": [
+        21,
+        21
+      ]
+    },
+    {
+      "category": "dense_close_structures",
+      "epoch": 0,
+      "parent_id": "r128_train_0001",
+      "psf_label": [
+        2,
+        2
+      ]
+    },
+    {
+      "category": "dense_close_structures",
+      "epoch": 2,
+      "parent_id": "r128_train_0001",
+      "psf_label": [
+        2,
+        2
+      ]
+    },
+    {
+      "category": "dense_close_structures",
+      "epoch": 15,
+      "parent_id": "r128_train_0001",
+      "psf_label": [
+        2,
+        2
+      ]
+    },
+    {
+      "category": "flat_negative",
+      "epoch": 0,
+      "parent_id": "r128_train_0003",
+      "psf_label": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "category": "flat_negative",
+      "epoch": 2,
+      "parent_id": "r128_train_0003",
+      "psf_label": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "category": "flat_negative",
+      "epoch": 15,
+      "parent_id": "r128_train_0003",
+      "psf_label": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "category": "irregular_curved",
+      "epoch": 0,
+      "parent_id": "r128_train_0004",
+      "psf_label": [
+        8,
+        8
+      ]
+    },
+    {
+      "category": "irregular_curved",
+      "epoch": 2,
+      "parent_id": "r128_train_0004",
+      "psf_label": [
+        8,
+        8
+      ]
+    },
+    {
+      "category": "irregular_curved",
+      "epoch": 15,
+      "parent_id": "r128_train_0004",
+      "psf_label": [
+        8,
+        8
+      ]
+    },
+    {
+      "category": "noisy_identity",
+      "epoch": 0,
+      "parent_id": "r128_train_0081",
+      "psf_label": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "category": "noisy_identity",
+      "epoch": 2,
+      "parent_id": "r128_train_0081",
+      "psf_label": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "category": "noisy_identity",
+      "epoch": 15,
+      "parent_id": "r128_train_0081",
+      "psf_label": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "category": "textured_edges",
+      "epoch": 0,
+      "parent_id": "r128_train_0012",
+      "psf_label": [
+        1,
+        1
+      ]
+    },
+    {
+      "category": "textured_edges",
+      "epoch": 2,
+      "parent_id": "r128_train_0012",
+      "psf_label": [
+        1,
+        1
+      ]
+    },
+    {
+      "category": "textured_edges",
+      "epoch": 15,
+      "parent_id": "r128_train_0012",
+      "psf_label": [
+        1,
+        1
+      ]
+    }
+  ],
+  "script_sha256": "c9f68369bf6cae92dd5959ba3602e86a9bdd9d31769e5518b035845a5ea16747",
+  "completed_utc": "2026-09-25T00:23:05.873365+00:00"
+}

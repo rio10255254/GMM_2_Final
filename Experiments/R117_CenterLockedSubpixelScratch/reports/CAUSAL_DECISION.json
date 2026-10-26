@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "source_checkpoint": "R116 E42 frozen scratch checkpoint",
+  "purpose": "Choose the R117 mechanism before any R117 training",
+  "findings": {
+    "remove_normal_shift": {
+      "R74_boundary_change_pct": 3.2255218121399754,
+      "SEM_independent_pillars_improved": 0,
+      "SEM_independent_pillars_total": 36,
+      "decision": "reject removal; normal shift is necessary for physical SEM geometry"
+    },
+    "center_lock_detail": {
+      "R74_boundary_change_pct": 0.9172772055295875,
+      "SEM_independent_pillars_improved": 36,
+      "SEM_independent_pillars_total": 36,
+      "SEM_median_boundary_improvement_pitch_pct": 0.02510035037994407,
+      "LSC_step_sd_nm": 8.47118082223499,
+      "LSC_within_grid_median_nm": 8.31358332931267,
+      "decision": "adopt inside training, not as an after-training filter"
+    },
+    "guard_contour_from_texture": {
+      "R74_boundary_change_pct": 6.087064350461291,
+      "decision": "reject broad texture suppression"
+    }
+  },
+  "final_R117_choice": "Keep an independent bounded normal-shift path, train it with exact supersampled translation pairs, and center-lock only width/detail corrections while retaining off-contour texture.",
+  "external_GMF_used_for_choice": false
+}

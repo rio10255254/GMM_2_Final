@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "synthetic_dev_parents": 40,
+  "source": "bundled R146-matched dev parents",
+  "operator_source_sha256": "3a37e50b49031366bcc34bb997d92623d095de523ce2ddbfd0442b19b086f278",
+  "candidates": {
+    "0.0": {
+      "mean_gray_MAE": 7.9955826000950765,
+      "improved_parents": 0
+    },
+    "0.1": {
+      "mean_gray_MAE": 7.454424486786593,
+      "improved_parents": 40
+    },
+    "0.2": {
+      "mean_gray_MAE": 7.008036185667152,
+      "improved_parents": 40
+    },
+    "0.3": {
+      "mean_gray_MAE": 6.649148769909516,
+      "improved_parents": 40
+    },
+    "0.4": {
+      "mean_gray_MAE": 6.372700689942576,
+      "improved_parents": 40
+    },
+    "0.5": {
+      "mean_gray_MAE": 6.165933495067293,
+      "improved_parents": 40
+    },
+    "0.8": {
+      "mean_gray_MAE": 5.799415085348301,
+      "improved_parents": 40
+    },
+    "1.0": {
+      "mean_gray_MAE": 5.64967833852279,
+      "improved_parents": 39
+    }
+  },
+  "selected_initial_step": 0.3,
+  "maximum_trainable_step": 0.8,
+  "rationale": "Conservative positive improvement on all sampled dev parents; larger values not selected from real PI/SEM scores",
+  "script_sha256": "97998278e6ccbbac2cd86d52dae72ec1265adae222d8852efdcaaf212913010f",
+  "completed_utc": "2026-09-25T00:57:11.682602+00:00"
+}

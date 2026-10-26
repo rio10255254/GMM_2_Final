@@ -1,0 +1,136 @@
+{
+  "base": {
+    "split": "dev",
+    "parents": 128,
+    "mean": {
+      "total": 1.8035006478894502,
+      "task": 1.79347641923232,
+      "image": 1.541430244440562,
+      "gradient": 1.016760590549893,
+      "pair_output": 0.08727473583712708,
+      "boundary": 0.09588648781937081,
+      "observation": 1.2061827722936869,
+      "teacher": 0.0,
+      "selector_descriptor": 1.0024231699062511,
+      "selector_entropy": 3.2173986192792654,
+      "psf_beta": 0.01196994073688984,
+      "safe_scale": 0.0
+    }
+  },
+  "candidates": [
+    {
+      "scale": 0.0,
+      "accepted": true,
+      "result": {
+        "split": "dev",
+        "parents": 128,
+        "mean": {
+          "total": 1.8035006478894502,
+          "task": 1.79347641923232,
+          "image": 1.541430244440562,
+          "gradient": 1.016760590549893,
+          "pair_output": 0.08727473583712708,
+          "boundary": 0.09588648781937081,
+          "observation": 1.2061827722936869,
+          "teacher": 0.0,
+          "selector_descriptor": 1.0024231699062511,
+          "selector_entropy": 3.2173986192792654,
+          "psf_beta": 0.01196994073688984,
+          "safe_scale": 0.0
+        }
+      }
+    },
+    {
+      "scale": 0.25,
+      "accepted": true,
+      "result": {
+        "split": "dev",
+        "parents": 128,
+        "mean": {
+          "total": 1.8034888780093752,
+          "task": 1.7934646400390193,
+          "image": 1.5414189025614178,
+          "gradient": 1.0167588412277837,
+          "pair_output": 0.08727527135488344,
+          "boundary": 0.09588653496757615,
+          "observation": 1.2061637481674552,
+          "teacher": 1.4167520798365196e-07,
+          "selector_descriptor": 1.0024231699062511,
+          "selector_entropy": 3.2173986192792654,
+          "psf_beta": 0.01196994073688984,
+          "safe_scale": 0.003450200194492936
+        }
+      }
+    },
+    {
+      "scale": 0.5,
+      "accepted": true,
+      "result": {
+        "split": "dev",
+        "parents": 128,
+        "mean": {
+          "total": 1.803477315872442,
+          "task": 1.7934529894846492,
+          "image": 1.541407638171222,
+          "gradient": 1.0167571006495564,
+          "pair_output": 0.08727580611594021,
+          "boundary": 0.09588658351276536,
+          "observation": 1.2061448688618839,
+          "teacher": 5.666585967539772e-07,
+          "selector_descriptor": 1.0024231699062511,
+          "selector_entropy": 3.2173986192792654,
+          "psf_beta": 0.01196994073688984,
+          "safe_scale": 0.006900400388985872
+        }
+      }
+    },
+    {
+      "scale": 0.75,
+      "accepted": true,
+      "result": {
+        "split": "dev",
+        "parents": 128,
+        "mean": {
+          "total": 1.803465839708224,
+          "task": 1.7934413498151116,
+          "image": 1.5413964269100688,
+          "gradient": 1.0167553811352263,
+          "pair_output": 0.0872763752231549,
+          "boundary": 0.09588663093745708,
+          "observation": 1.2061259024776518,
+          "teacher": 1.2749608204049023e-06,
+          "selector_descriptor": 1.0024231699062511,
+          "selector_entropy": 3.2173986192792654,
+          "psf_beta": 0.01196994073688984,
+          "safe_scale": 0.010350600816309452
+        }
+      }
+    },
+    {
+      "scale": 1.0,
+      "accepted": true,
+      "result": {
+        "split": "dev",
+        "parents": 128,
+        "mean": {
+          "total": 1.8034545138361864,
+          "task": 1.7934298319742084,
+          "image": 1.5413853152567754,
+          "gradient": 1.016753631649408,
+          "pair_output": 0.08727693383480073,
+          "boundary": 0.09588667996285949,
+          "observation": 1.2061070865020156,
+          "teacher": 2.2665731511106735e-06,
+          "selector_descriptor": 1.0024231699062511,
+          "selector_entropy": 3.2173986192792654,
+          "psf_beta": 0.01196994073688984,
+          "safe_scale": 0.013800800777971745
+        }
+      }
+    }
+  ],
+  "chosen_scale": 1.0,
+  "guard_relative": 0.005,
+  "selected_before_real_validation": true,
+  "completed_utc": "2026-09-28T04:27:57.322244+00:00"
+}

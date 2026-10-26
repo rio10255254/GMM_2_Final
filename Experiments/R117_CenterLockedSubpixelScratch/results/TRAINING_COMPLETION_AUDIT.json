@@ -1,0 +1,43 @@
+{
+  "status": "complete_verified",
+  "scientific_status": "trained_not_promoted_pending_locked_posttraining_validation",
+  "run_id": "r117_formal_scratch_20260905_004452",
+  "finished_at": "2026-09-05T02:58:19.8996974+08:00",
+  "elapsed_seconds": 8004.798135399818,
+  "checks": {
+    "single_formal_trainer_finished": true,
+    "trainer_process_count_after_completion": 0,
+    "active_lock_removed": true,
+    "summary_complete": true,
+    "training_log_rows": 42,
+    "epochs_exact_1_through_42": true,
+    "global_steps": 6552,
+    "scratch": true,
+    "checkpoint_loaded": false,
+    "failure_file_absent": true,
+    "stderr_empty": true,
+    "final_checkpoint_exists": true,
+    "final_checkpoint_strict_load": true,
+    "final_checkpoint_forward_finite": true,
+    "final_validation_classes": 8,
+    "final_validation_all_finite": true,
+    "final_real_preview_exists": true,
+    "final_synthetic_preview_exists": true
+  },
+  "final_checkpoint": {
+    "path": "D:/GMM_2_Final/Experiments/R117_CenterLockedSubpixelScratch/runs/r117_formal_scratch_20260905_004452/weights/epoch_042.pth",
+    "sha256": "0131904977ba853b120dd196dc7b12d781a65ba29cab46dc3fae045496cb4972",
+    "bytes": 2461498,
+    "epoch": 42
+  },
+  "final_internal_validation": {
+    "worst_contour_gain": -0.0060069262981414795,
+    "mean_contour_gain": -0.0019732208715544652,
+    "mean_mae_gain": 0.0013459050613972869,
+    "mean_gradient_gain": -0.003802068492708107,
+    "identity_change": 0.0003822012901461373,
+    "flat_change": 0.0038617991376668215
+  },
+  "visual_observation": "The dark double-contour artifact remains visible on the 50x pillar preview at epoch 42.",
+  "claim_boundary": "Training completion is verified. R117 is not promoted as the thesis model until locked ACM, LSC, real-motion, clarity, and tile validation are completed; the persistent double contour is already a material negative finding."
+}
