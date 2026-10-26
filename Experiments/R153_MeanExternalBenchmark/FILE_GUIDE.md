@@ -89,7 +89,7 @@ MOSR 沒有比 EDSR、NAFNet 快；它的配置峰值最低，但保留峰值比
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-> **補充：** 原始說明提到的兩個 zip（`FINAL_BENCHMARK_THESIS_HANDOFF.zip`、`MOSR_MEAN_THESIS_HANDOFF_20261005.zip`）只在原電腦上，但它們的內容已經以資料夾形式在 GitHub 上，所以不影響閱讀與取用。外部模型的 930 張重建輸出依保存原則留在原電腦，沒有上傳。
+> **補充：** 原始說明提到的兩個 zip（`FINAL_BENCHMARK_THESIS_HANDOFF.zip`、`MOSR_MEAN_THESIS_HANDOFF_20261005.zip`）只在原電腦上，但它們的內容已經以資料夾形式在 GitHub 上，所以不影響閱讀與取用（2026-10-26 把 5 個交接包逐檔比對過，包內每個檔都以相同內容在 git 或 Release）。外部模型的 930 張重建輸出依保存原則留在原電腦，沒有上傳。
 
 ## 原始報告
 

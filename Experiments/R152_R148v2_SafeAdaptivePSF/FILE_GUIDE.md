@@ -102,7 +102,7 @@ python generate_data.py --output-dir outputs/generated_data --workers 2
 
 **重做的範圍：** 訓練資料已從固定種子完整重新生成並與原版逐像素相同；正式的 8,192 次訓練**沒有**重跑。
 
-**關於模型檔的身分：** 上面那包裡的部署模型（`r152_deployed.pth`，SHA-256 開頭 `2932f79d`）是把原權重容器裡的舊電腦路徑移除後重新存檔的，所以跟完整紀錄裡實拍驗證用的保存點（開頭 `17bf7c63`）雜湊不同；但 209 個權重張量逐一相同，真實示例影像的推論輸出也逐像素相同，見[獨立包報告](<reports/R152_STANDALONE_PACKAGE_20261004.md>)。`17bf7c63` 這個原檔本身不在任何 Release 裡，目前只在原電腦的 `runs/formal_8192/checkpoints/deployed_step08192.pth`（約 7.1 MB），整理計畫會優先補上；第 8,192 次訓練完成時的保存點（開頭 `dc9e0b1d`）則在 [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的 `research-fixed-models-020.zip`。
+**關於模型檔的身分：** 上面那包裡的部署模型（`r152_deployed.pth`，SHA-256 開頭 `2932f79d`）是把原權重容器裡的舊電腦路徑移除後重新存檔的，所以跟完整紀錄裡實拍驗證用的保存點（開頭 `17bf7c63`）雜湊不同；但 209 個權重張量逐一相同，真實示例影像的推論輸出也逐像素相同，見[獨立包報告](<reports/R152_STANDALONE_PACKAGE_20261004.md>)。`17bf7c63` 這個原檔（`runs/formal_8192/checkpoints/deployed_step08192.pth`，約 7.1 MB）原本只在原電腦上，2026-10-26 已補進 Release [`research-localonly-models-20261026`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-localonly-models-20261026)（取回核對通過）；第 8,192 次訓練完成時的保存點（開頭 `dc9e0b1d`）則在 [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的 `research-fixed-models-020.zip`。
 
 ## 原始報告
 

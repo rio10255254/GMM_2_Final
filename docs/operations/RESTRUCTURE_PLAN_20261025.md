@@ -59,11 +59,11 @@
 
 | 檔案 | 大小 | 為什麼重要 |
 |---|---:|---|
-| `Experiments/R152_R148v2_SafeAdaptivePSF/runs/formal_8192/checkpoints/deployed_step08192.pth` | 7.1 MB | 論文模型 R152 實拍驗證用的原始保存點（SHA-256 開頭 `17bf7c63`）。雲端有張量完全相同的重新封裝版，但原檔本身不在任何 Release |
-| `Experiments/R45_FamilyBoundaryAdapter/results/checkpoints/r45_oracle_adapter_large_mixed{,_s04,_s08,_s12}.pth` | 共約 0.2 MB | R45 的四個校正模組權重（同資料夾的 `_latest` 與兩個短測權重已在 Release） |
+| `Experiments/R152_R148v2_SafeAdaptivePSF/runs/formal_8192/checkpoints/deployed_step08192.pth` | 7.1 MB | 論文模型 R152 實拍驗證用的原始保存點（SHA-256 開頭 `17bf7c63`）。雲端有張量完全相同的重新封裝版，但原檔本身不在任何 Release。**2026-10-26 已補上：** Release [`research-localonly-models-20261026`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-localonly-models-20261026)，取回核對通過 |
+| `Experiments/R45_FamilyBoundaryAdapter/results/checkpoints/r45_oracle_adapter_large_mixed{,_s04,_s08,_s12}.pth` | 共約 0.2 MB | R45 的四個校正模組權重（同資料夾的 `_latest` 與兩個短測權重已在 Release）。**2026-10-26 已補上：** 同上一列的 Release |
 | `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/{external,shape,micro}_recon/a025/` | 約 700 MB | 核准替代 a025 送外部 GMF 的重建影像與形狀／顯微重建 |
-| `Experiments/R136_PIRepeatability/output/*.zip`（10 個閱讀包與圖表包） | 約 489 MB | R136 原報告引用的結果包；git 上已有展開後的內容，ZIP 本身是否另存需先比對內容 |
-| `Experiments/R153_MeanExternalBenchmark/reports/*.zip`（5 個交接包） | 約 8 MB | 論文交接包 |
+| `Experiments/R136_PIRepeatability/output/*.zip`（10 個閱讀包與圖表包） | 約 489 MB | R136 原報告引用的結果包。**2026-10-26 逐檔比對：** 包內 1,307 個檔有 1,300 個以相同內容在 git 或 Release；只存在包裡的 7 個說明與核對檔（兩包的「00_先讀我」與打包清單、Raw／R128 完整比較包的 README、打包清單與核對紀錄，共約 65 KB）已放進 git 的 `output/<包名>/`。ZIP 本身不另存 |
+| `Experiments/R153_MeanExternalBenchmark/reports/*.zip`（5 個交接包） | 約 8 MB | 論文交接包。**2026-10-26 逐檔比對：** 包內 153 個檔全部以相同內容在 git 或 Release，ZIP 本身不另存 |
 | `Deliverables/R152_Standalone_20261004.zip`、`R152_Standalone_ImageFiles_20261004.zip` | 約 760 MB | 打包好的 R152 獨立包；程式已在 git、模型已在 Release，zip 本身可能不必另存，需先確認內容都有著落 |
 
 這只是「原始報告有連結到」與寫閱讀卡時查到的部分。2026-10-26 已用 `Tools/cloud_locator.py` 掃完整個專案（約 315 萬個檔）並展開所有沒有清單的 Release 附件後重驗：上表各列仍成立；原本列在表內的 COMBO 與 a025 兩個 ONNX 其實在雲端（見下一段），已移出本表。全專案只在本機的檔約 208 萬個、1,019 GB，絕大多數是 BMP 原拍與重建、NPZ／NPY 陣列與中間保存點；2 MB 以下的文字結果表只有約 3,400 個、共 26 MB，集中在 `PSF_Fitting`、R129、R136、`Thesis_MOSR_Evidence/Data_Reports`。
