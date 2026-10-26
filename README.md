@@ -1,45 +1,68 @@
-# MOSR：顯微影像重建與位移量測
+# MOSR：用 AI 還原顯微影像，讓位移與尺寸量得更穩
 
-[深入實驗、Lab與交付包的內部資料夾](<docs/navigation/DEEP_STRUCTURE.md>)
+**一句話：** 顯微鏡拍出來的邊緣會糊，糊會讓「圓在哪裡」的量測抖動。本研究訓練神經網路把影像還原，目的不是讓圖好看，而是讓**奈米等級的位移、尺寸、輪廓量測更穩定**。
 
-這項研究比較影像重建如何改變輪廓、尺寸、位移穩定性與運算時間。影像變清楚不一定代表量測更準；成功、代價與失敗都保留在各輪原報告。
+## 結論（論文採用版）
 
-**目前論文採用 R152／RAW；原正式基準仍是 COMBO。** [目前論文交接與完整比較](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)說明採用理由與限制，[研究現況](PROJECT_STATE.md)保留正式判決。
+論文用的模型叫 **MOSR**（就是 R152），拿 930 張實拍（30 趟 × 31 位置，每步約 1 µm）和不處理的原圖 **RAW** 比：
 
-## 從這六個入口開始
+| 指標（nm，越小越穩） | RAW | MOSR（R152） |
+|---|---:|---:|
+| 單趟 30 步合併波動（主要指標） | 10.200 | 4.865（−52%，30 趟全部變好） |
+| 直徑重拍波動 | 32.750 | 13.252 |
+| 輪廓重拍波動 | 63.758 | 18.600 |
+| 與 SEM 直徑的平均差 | 169.883 | **204.281（變差）** |
 
-| 想了解什麼 | 從這裡讀 |
+三個要記住的限制：**更穩不等於更準**（對 SEM 的尺寸差反而變大）；論文裡的多 PSF 融合模組實際作用極小，效果主要來自底座 R148v2；SEM 與樣品曾用於光學校準，不是完全獨立的驗證。
+另有十種方法的完整比較（EDSR、NAFNet、SwinIR…）。數字與限制見 [PROJECT_STATE.md](PROJECT_STATE.md)。
+
+## 兩條線、兩個「目前模型」，不要搞混
+
+這個專案同時服務兩個用途，所以有兩個「目前」的答案：
+
+| 用途 | 目前模型 | 怎麼評分 |
+|---|---|---|
+| **公司端量測部署** | **COMBO**（正式基準，2026-04-08 起；歷史前任 baseline 是 R30） | 環形影像交給固定的外部定位工具（GmmVisionTool 的 GMF），看 1／0.1／0.01 µm 三個位移尺度的穩定度。COMBO 交付為 ONNX 包（`_deployment_package/`）；之後的 ONNX 交付（`Deliverables/MOSR_ONNX/`、`MOSR_R61_ONNX/`）以均華 202 張等實拍驗證（`Validations/MOSR_ONNX_JunHua/`） |
+| **論文** | **R152 / MOSR**，對照 RAW | 2026-09-03 拍攝的 930 張 PI 位移重拍，看位移、尺寸、輪廓 |
+
+兩者考的是不同的試，並不衝突。R152 沒有取代 COMBO 的正式身分。機器可讀的版本在 [ESTIMATOR_POLICY.json](ESTIMATOR_POLICY.json)。
+
+## 你想做什麼，就讀哪裡
+
+| 想… | 讀 |
 |---|---|
-| 研究為什麼走到現在這個方法 | [研究沿革：早期、主線與 LabSystem](docs/reproducibility/lineage/README.md) |
-| 某一輪做了什麼、結果如何 | [按階段與輪次閱讀](docs/reproducibility/EXPERIMENTS.md) |
-| 原拍、量測、模型在哪裡 | [共用來源](Shared_Sources/README.md) → [按用途取得檔案](docs/reproducibility/ASSET_GUIDE.md) |
-| 沒有大型訓練資料，如何重做 | [生成方法與必要來源](docs/reproducibility/GENERATION_GUIDE.md) |
-| 文獻、原方法與官方程式 | [文獻及方法依據](docs/reproducibility/LITERATURE_GUIDE.md) |
-| 已保存哪些、還缺什麼 | [目前保存狀態](docs/reproducibility/STATUS.md) |
+| 理解整個系統怎麼設計、怎麼判斷好壞 | [PROJECT_ARCHITECTURE.md](PROJECT_ARCHITECTURE.md) |
+| 知道**現在**的結果、限制、缺件 | [PROJECT_STATE.md](PROJECT_STATE.md) |
+| 看研究怎麼一路走到這裡、某一輪做了什麼 | [docs/reproducibility/EXPERIMENTS.md](docs/reproducibility/EXPERIMENTS.md) |
+| 看不懂縮寫（PSF、GMF、PI、RAW…） | [docs/README.md](docs/README.md) 的名詞表 |
+| 找資料夾、原始照片、模型在哪 | [docs/navigation/PROJECT_MAP.md](docs/navigation/PROJECT_MAP.md) |
+| 改論文 | [R153 論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md) |
+| 開新實驗或維護 repo | [docs/operations/README.md](docs/operations/README.md) |
 
-第一次閱讀可跟著[入門路線](docs/reproducibility/GETTING_STARTED.md)，不用先下載模型或整套影像。
-
-## 資料夾的角色
+## 研究怎麼進行（概念圖）
 
 ```text
-GMM_2_Final/
-├── Experiments/             主專案各輪：原報告、程式、設定與結果
-├── Thesis_MOSR_Evidence/     論文證據、LabSystem研究及原稿歷史
-├── Shared_Sources/          共用原拍、平台紀錄、SEM與固定來源入口
-├── PSF_Fitting/             光學校正、原擬合與分析
-├── Model/、Training_Data/   共用模型與資料生成程式
-├── AnalysisLab/             跨版本量測與分析
-├── Deliverables/            獨立使用包與原交付
-├── Traing_Progress/         早期選模、訓練及失敗歷史
-└── docs/                    閱讀路線、文獻、來源、保存與維護說明
+光學校正 → PSF ─┬─► 把乾淨合成場景弄糊 → 訓練配對 → 訓練模型
+                └─► 放進模型的物理模組
+真實照片 → 模型重建 → 獨立量測程式找圓心／輪廓 → 對照平台回授（PI）與電子顯微鏡（SEM）
 ```
 
-這是閱讀用的主要分區；其餘日期資料夾與歷史區可在[完整專案地圖](docs/navigation/PROJECT_MAP.md)找到。原實驗檔案維持既有位置，讓原程式、原報告與論文引用仍能對得上。
+## 資料夾角色（常用的）
 
-## 保存到哪裡
+| 資料夾 | 內容 |
+|---|---|
+| `Experiments/` | 主專案各輪（R26–R153）：程式、設定、報告、結果 |
+| `Model/` | 第一代共用模型與訓練、推論、自動調參 |
+| `PSF_Fitting/` | 光學校正（MATLAB） |
+| `Shared_Sources/` | 不可替代的原始照片與量測入口 |
+| `Thesis_MOSR_Evidence/` | 論文證據與 LabSystem（實驗室顯微鏡）整條研究線 |
+| `Deliverables/` | 可獨立使用的交付包（R152 獨立版等） |
+| `Tools/`、`docs/` | 工具與文件 |
 
-主要脈絡、程式、設定、原結果與重要來源已整理；**逐輪必要來源仍在補查，尚未確認全專案沒有遺漏。** 已知 R63 缺一個原選中模型，主專案 R36 尚未辨認。最新補件與影響集中在[目前狀態](docs/reproducibility/STATUS.md)，歷次收據另見[保存歷史](docs/reproducibility/project_completion/README.md)。
+其餘日期型分析與封存區見 [專案地圖](docs/navigation/PROJECT_MAP.md)。
 
-不可替代的原拍與量測按來源保存一次；可再生成的大型訓練資料和整批重建，保存生成方法、設定及必要輸入。GitHub附件按需下載，沒有要求先取回全部資料。
+## 保存狀態
 
-要維護研究，請讀[操作入口](docs/operations/README.md)及[正式來源規則](docs/operations/SOURCE_OF_TRUTH_POLICY.md)。
+大型原拍、模型與資料以 GitHub 發布附件保存，按需下載，不必整套取回。**逐輪必要來源的查核仍在進行**；已知缺一個 R63 原模型、主專案 R36 無法辨認。詳見 [PROJECT_STATE.md](PROJECT_STATE.md) 與 [docs/reproducibility/README.md](docs/reproducibility/README.md)。
+
+> 2026-10-24 改寫前的舊首頁原文在 [docs/history/BEFORE_PLAIN_REWRITE_20261024/](docs/history/BEFORE_PLAIN_REWRITE_20261024/README.md)。 較早的程序狀態在 `docs/archive/legacy_runtime_status/`。
