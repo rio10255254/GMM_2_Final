@@ -1,35 +1,46 @@
-# main/R108A_LocalActionFalsification：檔案怎麼找
+# R108A：現有模型能不能互補，局部光學動作能不能挑
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R108A_LocalActionFalsification.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R107A](<../R107A_SingleImageEdgeGeometryProbe/FILE_GUIDE.md>) · [下一個探針 R108B](<../R108B_StagedParallelOpticalExpertsMicroprobe/FILE_GUIDE.md>) · [R108 系列最後的 R108G](<../R108G_MidpointWidthFactorizedProfileMicroprobe/FILE_GUIDE.md>)
 
-**研究問題：既有模型是否互補、局部動作可否安全選擇。**
+**一句話：** R108 的七個小探針裡的第一個，2026-08-25 只蒐集證據、不訓練正式模型。它問三件事：現有的 R61、R79、R103、R104 在同一批有真值的影像上能不能互補，而且只看原圖能不能預測該用哪一個？一組局部、相位安全的光學動作庫能不能改善邊界？如果可以，短訓練的選擇器學不學得會？結果：逐張挑最好的模型確實比全域最好的 R61 好，但只看原圖選對的比例只有 47%；共同信心開關會學到「關掉輸出」這條捷徑；改成先固定候選、再用實際改善比例訓練採用程度，才得到正向的機制證據。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（否決全圖模型選擇器與共同信心開關；分階段採用有正向證據） |
+| 時間 | 2026-08-25 |
+| 實驗條件 | R73、R74 共 200 張有真值的合成影像（10 個未見類別）；36 顆柱 × 12 張曝光 SEM；現有模型只當診斷探針 |
 
-## 先讀原文件
+## 結果
 
-- [R108A Existing-Model Oracle and Predictability](<reports/01_EXISTING_MODEL_ORACLE.md>)
-- [R108A Constrained Optical Action Oracle](<reports/02B_OPERATOR_ORACLE_RADIOMETRY.md>)
-- [R108A Constrained Optical Action Oracle](<reports/02_OPERATOR_ORACLE.md>)
-- [R107 Data-Contract Audit](<reports/03_R107_DATA_CONTRACT_AUDIT.md>)
-- [R108A Short Action-Selector Probe](<reports/04_ACTION_SELECTOR_PROBE.md>)
-- [Frozen R61/R79 System Identification](<reports/06_FROZEN_MODEL_SYSTEM_IDENTIFICATION.md>)
+| 問題 | 發現 |
+|---|---|
+| 現有模型互補嗎 | 全域最好是 R61（中位邊界距離 0.591 px）；逐張理想選擇 0.432 px，64.5% 影像勝過 R61 |
+| 只看原圖能選對嗎 | 跨類別精確選對 47.0%；SEM 432 次觀察中 423 次是 R79 第 23 輪最好 |
+| 局部動作庫有空間嗎 | 用真值挑動作，R73 有 74～75%、R74 有 76～80% 影像同時改善邊緣、中心與寬度 |
+| 短選擇器學得會嗎 | 精確選對 37%，比固定動作好的 21.5%、差的 20.0%，沒有淨效益 |
+| 資料問題 | R107 的資料 87.5% 在整體高頻上獎勵去雜訊，只有 7.8% 要求增強且有相位支撐；修正正樣本只占 0.53% 像素 |
+| 共同開關 | 即使改成平衡的局部剖面資料，未監督的共同開關仍降到 0.0000139，關掉輸出是結構性捷徑 |
+| 分階段採用 | 嚴重未見退化：原圖 4.672 灰階、候選單獨用 5.110、學到採用比例後 3.923、真值上限 3.111；64% 剖面變好，沒有關死 |
 
-其餘原報告見[本輪完整研究卡](<../../docs/reproducibility/experiments/main__R108A_LocalActionFalsification.md>)。
+**凍結模型的作用：** R61 把邊界寬度壓到原本的 0.33 倍、外圍假變化 0.09 灰階；R79 第 23 輪寬度 0.56 倍、外圍 1.05 灰階；R79 第 100 輪寬度 0.26 倍、外圍升到 2.39 灰階。R61 主要銳化局部單調邊界、壓低 4～8 px 週期；R79 保留或增強 6～16 px 紋理，但帶入影像範圍依賴。
 
-## 進入實際檔案
+## 讀這些內容要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R108A Evidence Manifest |
-| [README.md](<README.md>) | 1檔 | R108A Local-Action Falsification |
-| [reports/](<reports>) | 9檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 10檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+1. **現有權重只當診斷探針**，從沒載入任何 R108 模型或當老師。
+2. 下一步是 R108B：邊界、紋理、去雜訊、亮度分成平行專家，先學好候選再訓練採用比例。
 
-## 必要來源與取得界線
+## 拿資料與重做
 
-固定舊模型、共同答案、局部動作與選擇器結果。
+本資料夾的程式已在 GitHub。各報告的原始表格（CSV、JSON，約 12 MB）不在程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；對照影像（約 250 MB）只在原電腦上。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 原始報告
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 報告 | 內容 |
+|---|---|
+| [完整短實驗結果](<reports/R108A_RESULTS_ZH.md>) | 先讀這份：最終判定與各項發現 |
+| [現有模型理想選擇與可預測性](<reports/01_EXISTING_MODEL_ORACLE.md>) | 互補性與只看原圖的選擇 |
+| [光學動作理想選擇](<reports/02_OPERATOR_ORACLE.md>)、[加亮度校正版](<reports/02B_OPERATOR_ORACLE_RADIOMETRY.md>) | 33 與 56 個動作的結果 |
+| [R107 資料稽核](<reports/03_R107_DATA_CONTRACT_AUDIT.md>) | 去雜訊主導的比例 |
+| [短選擇器](<reports/04_ACTION_SELECTOR_PROBE.md>)、[凍結模型的系統辨識](<reports/06_FROZEN_MODEL_SYSTEM_IDENTIFICATION.md>)、[局部剖面可觀察性](<reports/07_LOCAL_PROFILE_OBSERVABILITY.md>)、[分階段剖面選擇器](<reports/07B_STAGED_PROFILE_SELECTOR.md>) | 各子實驗 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R108A_LocalActionFalsification.md>)。

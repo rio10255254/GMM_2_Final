@@ -1,35 +1,57 @@
-# main/R130_CleanV42Comparison：檔案怎麼找
+# R130（V42 對照）：用乾淨資料重訓一次 V42，跟 R129 比
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R130_CleanV42Comparison.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [被比較的 R129](<../R129_OpticalPriorHybrid/FILE_GUIDE.md>) · [原本的 V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>) · [同編號的另一件事：R130 Clean](<../R130_Clean/FILE_GUIDE.md>)
 
-**研究問題：以乾淨來源從頭訓練V42作實用比較。**
+**一句話：** 舊 V42 的漂亮分數受資料重用影響（[R122](<../R122_OperatorPrinciples/FILE_GUIDE.md>)），那它的架構本身到底如何？2026-09-13 依使用者要求，R129 完全不動，只把 V42 架構從零重訓一次：用跟 R129 同一批 512 個乾淨合成母場景，不用舊權重、舊老師或任何實拍與 SEM 答案，32 輪、4,096 次更新。結果是乾淨 V42 跟 R129 互有勝負；舊 V42 那個很大的細節優勢沒有重現。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**（兩者能力相近、互有取捨，不自動替換任何模型） |
+| 時間 | 2026-09-13 設計與訓練；09-14 R61～R130 設計回顧 |
+| 實驗條件 | 程式資料：與 R129 相同的 512／128／128 母場景；評估用 B：36 柱 SEM（正常曝光 13～15）、四組位移序列的 201 張完整影像 |
+| 起點 | 隨機初始化（只讀取 V42 的架構設定與固定光學資料） |
 
-## 先讀原文件
+這跟同一天編號的 [R130 Clean](<../R130_Clean/FILE_GUIDE.md>) 是兩件不同的事：這裡是重訓 V42 架構，R130 Clean 是 9/20 另做的原尺寸純神經模型。
 
-- [R130 快速、乾淨的 V42 比較設計](<reports/R130_DESIGN.md>)
-- [R130：乾淨重訓 V42 與固定 R129 的真實影像比較](<reports/R130_RESULTS.md>)
-- [R61 到 R130：目前模型為何形成這個設計](<reports/R61_R130_DESIGN_REVIEW.md>)
+## 結果（固定第 32 輪）
 
-## 進入實際檔案
+| 指標 | R129（第 8,192 次） | 乾淨重訓 V42 |
+|---|---:|---:|
+| 輪廓半徑誤差（nm） | 49.52 | **46.39** |
+| 細形狀相關（越高越好） | 0.692 | **0.747** |
+| 尺寸誤差（nm） | 96.38 | **91.95** |
+| 去尺寸形狀誤差（nm） | 16.40 | 16.43 |
+| 非圓程度與 SEM 差距（nm） | **62.65** | 66.35 |
+| 120 對步距波動（nm） | 6.991 | **6.919** |
+| 柱間位移不一致（nm） | **4.204** | 4.682 |
+| 橫向偏移（nm） | **4.798** | 5.237 |
+| 完整影像重建（秒） | 9.98 | **0.43** |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 7檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R130 manifest |
-| [model/](<model>) | 5檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R130 Clean V42 comparison |
-| [reports/](<reports>) | 5檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 7檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 20檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [training/](<training>) | 3檔 | 訓練程式與配套 |
-| [validation/](<validation>) | 4檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+舊 V42 在同讀法下的去尺寸形狀誤差是 6.81 nm，乾淨重訓後變成 16.43 nm，跟 R129 差不多。
 
-## 必要來源與取得界線
+## 讀這些數字要知道的事
 
-512生成來源、官方／專案程式身分、固定模型與201原圖。
+1. **不能把差距全部歸因於拿掉資料重用。** 這次同時改了起始方式、訓練資料組成、訓練要求與推論方式，是實用比較，不是只改一個因素的因果實驗。
+2. **但能說的是：** 不能再拿舊 V42 受資料重疊影響的成績，直接判定 R129 架構明顯較差。
+3. **兩者尺寸誤差都比原圖（88.2 nm）大**，都沒有取得絕對量測資格。
+4. 第 24 輪有些 SEM 摘要較好，但事先指定第 32 輪為終點，沒有事後改挑。單一種子、既有場景，不能下普遍結論。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 9/14 的設計回顧
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[R61 到 R130 設計回顧](<reports/R61_R130_DESIGN_REVIEW.md>) 把 R61 之後 82 個實驗目錄串起來：哪些設計已實作、已作用、已證明改善，以及三次方向轉換（擴展場景 → 拆成位置／寬度／細節動作 → 完整二維重建再有選擇地接回光學與原圖參照）。想快速理解 R61～R130 的人可以從這份開始讀。
+
+## 拿資料與重做
+
+單圖入口：`scripts/infer_image.py --input <影像> --output <新PNG>`；模型在 `runs/v42_clean/checkpoints/step04096.pth`。訓練、驗證程式與設定在 GitHub。
+
+> 權重、201 張重建影像與比較表的位置：查 `python Tools/cloud_locator.py where Experiments/R130_CleanV42Comparison/<路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [結果](<reports/R130_RESULTS.md>) | 先讀這份 |
+| [設計](<reports/R130_DESIGN.md>) | 固定設計、能回答與不能回答的問題 |
+| [R61～R130 設計回顧](<reports/R61_R130_DESIGN_REVIEW.md>) | 9/14 的歷史交叉閱讀 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R130_CleanV42Comparison.md>)。

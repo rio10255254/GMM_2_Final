@@ -1,31 +1,61 @@
-# main/R70_V42ACMContourSEMValidation：檔案怎麼找
+# R70：用同一套 SEM 完整輪廓檢查 V42
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R70_V42ACMContourSEMValidation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R69](<../R69_ACMContourSEMValidation/FILE_GUIDE.md>) · [下一輪 R71](<../R71_R61SyntheticMicroscopyDefectGeneralization/FILE_GUIDE.md>) · [V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
 
-**研究問題：以相同SEM與量法檢查V42。**
+**一句話：** 2026-07-30 把當時論文採用的 V42 第 120 輪，套到跟 R69 完全相同的 12 張曝光、36 顆 SEM 柱、相同輪廓參數與只平移的對齊。V42 也讓 36 顆全部比原圖更接近 SEM，但改善幅度不到 R61 v16 的一半（0.523% 對 0.441% 柱距），而且從曝光 20 起就失去改善；不過在最暗的兩張，V42 沒有像 R61 那樣把輪廓急遽擴大。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（外框改善比 R61 小、較早失效，但最暗曝光較穩） |
+| 時間 | 2026-07-30 |
+| 實驗條件 | 與 R69 相同：12 張曝光光學影像、中心 36 顆柱與對應 SEM |
+| 模型 | V42 第 120 輪 |
 
-## 先讀原文件
+## 結果
 
-- [R70：論文 V42E120 的 SEM 完整輪廓驗證](<reports/R70_RESULTS_TW.md>)
+| 指標 | 原圖 | R61 v16 | V42 第 120 輪 |
+|---|---:|---:|---:|
+| 平均邊界距離（% 柱距） | 0.570 | **0.441** | 0.523 |
+| 輪廓重疊率 | 0.949 | **0.958** | 0.953 |
+| 面積誤差 | 5.34% | **4.13%** | 4.85% |
+| 周長誤差 | **2.86%** | 3.71% | 3.03% |
+| 圓整度誤差 | **0.016** | 0.025 | 0.019 |
 
-## 進入實際檔案
+V42 對原圖 36/36 顆改善，對 R61 v16 是 0/36 顆較好。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R70 manifest |
-| [README.md](<README.md>) | 1檔 | R70：V42E120 的 SEM 完整輪廓驗證 |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 6檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 2檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+**亮度穩定性：**
 
-## 必要來源與取得界線
+| 曝光 | 原圖平均亮度 | 原圖 | R61 v16 | V42 | V42 優於原圖的柱數 |
+|---:|---:|---:|---:|---:|---:|
+| 22 | 46.2 | 0.573 | 0.419 | 0.592 | 8/36 |
+| 23 | 39.2 | 0.565 | 0.712 | 0.660 | 0/36 |
+| 24 | 32.6 | 0.555 | 1.061 | 0.665 | 0/36 |
 
-V42 E120、R69相同原圖／SEM／參數。
+V42 在曝光 13～19 全部優於原圖，從曝光 20 開始多數較差。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **公平性：** 重新抽出的 864 筆原圖輪廓跟 R69 逐值一致；三個方法對照同一組 SEM、只平移。
+2. **細形狀兩個模型都沒有通過**，但 V42 的周長、圓整度誤差增加得比 R61 少。
+3. **V42 與這批 SEM 的訓練來源關係要另外確認。** V42 的訓練資料含 SEM 錨點與目標樣品，這批曝光影像與 SEM 是否在它的來源內，報告沒有逐項證明，所以不能把分數高解讀成未知樣品的驗證。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 執行與分析程式、測試、設定 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)、[config/experiment.json](<config/experiment.json>)，已在 GitHub |
+| 6 張圖 | [results/figures/](<results/figures>)，已在 GitHub |
+| 共用的原圖、SEM 與輪廓參數 | 見 [R69](<../R69_ACMContourSEMValidation/FILE_GUIDE.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** README 提到的 `results/tables/`（逐顆、逐曝光、配對統計）不在 git 裡。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R70 結果](<reports/R70_RESULTS_TW.md>) | 結論、亮度穩定性、公平性檢查、圖表 |
+| [README](<README.md>) | 目的與執行方式 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R70_V42ACMContourSEMValidation.md>)。

@@ -1,33 +1,64 @@
-# main/R69_ACMContourSEMValidation：檔案怎麼找
+# R69：不只量圓半徑，直接比完整外形跟 SEM
 
-[指定來源對照與完整原表直接閱讀](../../docs/reproducibility/round_source_reviews/R69_20261022.md)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R68](<../R68_R61_RealFOVFeatureGeneralization/FILE_GUIDE.md>) · [同方法檢查 V42 的 R70](<../R70_V42ACMContourSEMValidation/FILE_GUIDE.md>) · [來源核對](<../../docs/reproducibility/round_source_reviews/R69_20261022.md>)
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R69_ACMContourSEMValidation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+**一句話：** 回應教授「樣品不是完美圓」的質疑，2026-07-29 改用主動輪廓（MATLAB `activecontour`，Chan–Vese）抽出每顆柱的完整外框，只平移、不縮放不旋轉地疊到逐顆對應的 SEM 外形上比較。R61 v16 讓 36 顆柱全部更接近 SEM（平均邊界距離從 0.570% 降到 0.441% 柱距），但只在一般曝光成立：最暗的兩張曝光 36 顆全部變差，周長和圓整度的誤差也變大。
 
-**研究問題：R61完整外形是否更接近逐顆SEM。**
+| | |
+|---|---|
+| 結果 | **分析**（正常曝光粗外框改善；最暗兩張和細形狀退步，有條件通過） |
+| 時間 | 2026-07-29 |
+| 實驗條件 | 舊有 12 張不同曝光的光學影像（`image_cropped/13.bmp`～`24.bmp`），對應 P-01～P-09 SEM 影像裡的中心 36 顆柱 |
+| 模型 | Lab R61 v16，PSF 關閉 |
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+## 這輪在問什麼
 
-## 先讀原文件
+R61 v16 重建後，非圓形的完整柱外框是否比原圖更接近對應的 SEM 外框？
 
-- [R69：R61v16 的 SEM–ACM 完整輪廓驗證](<reports/R69_RESULTS_TW.md>)
+## 怎麼做
 
-## 進入實際檔案
+- 用舊的對位紀錄確認這 12 張光學影像能逐顆對上 SEM 的 36 顆柱；2026 年的 50× 位移影像因為無法證明是同一片樣品、同一顆柱，只另外稽核，不當逐顆真值。
+- 每顆柱抽完整外框，只做平移對齊，比較輪廓重疊、平均邊界距離、最差 5% 邊界距離、面積、周長、圓整度，**不套圓、不擬合半徑**。
+- 用三種輪廓平滑程度重做最亮、中間、最暗三張，檢查結論是不是參數造成的。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R69 frozen manifest |
-| [README.md](<README.md>) | 1檔 | R69 ACM Contour SEM Validation |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 8檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+## 結果
 
-## 必要來源與取得界線
+| 指標（36 顆跨 12 張曝光的中位數） | 原圖 | R61 v16 | 改善的柱數 |
+|---|---:|---:|---:|
+| 平均邊界距離（% 柱距） | 0.570 | **0.441** | 36/36 |
+| 輪廓重疊率 | 0.949 | **0.958** | — |
+| 面積誤差 | 5.34% | **4.13%** | — |
+| 周長誤差 | **2.86%** | 3.71% | 2/36 |
+| 圓整度誤差 | **0.016** | 0.025 | — |
 
-12曝光、36顆SEM對應、固定模型及輪廓設定。
+曝光 13～22 的 36 顆全部改善；曝光 23 從 0.565 變成 0.712% 柱距、曝光 24 從 0.555 變成 1.061%，36 顆全部惡化。三種輪廓參數都得到同樣的方向。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+**SEM 本身有多圓：** 圓整度中位數 0.962（範圍 0.923～0.985，1 是完美圓）。教授說「不是完美圓」是對的，但這批柱仍然很接近圓，所以過去的 CD 不需要推翻。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 讀這些數字要知道的事
+
+1. **獨立樣本是 36 顆柱，不是 432 次觀察。** 12 張曝光是同一顆柱的重複觀察。
+2. **粗外框更準，不代表細形變被還原。** 周長和圓整度誤差都變大，表示重建後的邊緣比較粗糙。
+3. **這 12 張影像沒有可查證的倍率標籤**，報告沒有替它補寫成 50 倍。
+4. 報告建議論文把 CD 當尺寸主指標、輪廓距離與重疊率當形狀驗證，並把最暗的兩張曝光列為不可信區或加低亮度拒收條件。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 執行、分析、輪廓抽取（MATLAB）、品質檢查程式與測試 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)、[config/experiment.json](<config/experiment.json>)，已在 GitHub |
+| 全部結果表（864 筆主要觀察、648 筆敏感度觀察、逐曝光、逐顆、柱與 SEM 映射）與判決 | [results/](<results/README.md>)，已在 GitHub |
+| 7 張圖 | [results/figures/](<results/figures>) |
+| 12 張原圖、SEM 與重建影像的來源 | 見 [R69 來源核對](<../../docs/reproducibility/round_source_reviews/R69_20261022.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R69 結果](<reports/R69_RESULTS_TW.md>) | 結論、對教授質疑的回應、比較方式、穩定性、論文可用的判斷 |
+| [結果表說明](<results/README.md>) | 每張表的用途與記錄數 |
+| [README](<README.md>) | 方法與執行方式 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R69_ACMContourSEMValidation.md>)。

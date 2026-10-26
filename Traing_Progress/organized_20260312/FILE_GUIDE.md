@@ -1,34 +1,31 @@
-# legacy/organized_20260312：檔案怎麼找
+# 2026-03-12 批次：Round 15 中心鎖定長跑
 
-[本輪研究卡](<../../docs/reproducibility/experiments/legacy__organized_20260312.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [早期輪次對照](<../../docs/reproducibility/lineage/EARLY_ROUNDS.md>) · [R12～R15 的選擇讀法](<../../docs/reproducibility/legacy_multiscale/README.md>) · [前一個批次 3/11](<../organized_20260311/FILE_GUIDE.md>) · [下一輪 Round 16](<../organized_20260313/round16/FILE_GUIDE.md>)
 
-**研究問題：Round15中心鎖定長訓練與外部驗證。**
+**一句話：** 2026-03-12 凌晨的中心鎖定（center-lock）長跑：以 0.8 px 的中心穩定度當主要關卡、8 px 不退步當守門、0.08 px 當次要依據，四個候選。家族排名與保存點稽核都選 `centerlock_pure`；四個候選的稽核部署分數都是 −125.821，同分時沿用原排序。這條「先看 0.8 px 中心穩定度」的選法，延續到後面的 Round 16～19。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**（`centerlock_pure` 是當時精選，不是正式模型） |
+| 時間 | 2026-03-12 |
+| 實驗條件 | A：環形影像三尺度的內部評分；外部重建保存在 H 槽 |
+| 起點 | 當時的訓練線 |
 
-## 先讀原文件
+## 結果
 
-- [ROUND15_CENTERLOCK Checkpoint Audit Summary](<selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_balanced_20260312_022742.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_defectguard_20260312_022742.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_macroguard_20260312_022742.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_pure_20260312_022742.md>)
-- [ROUND15_CENTERLOCK Multiscale Summary](<selected/reports/ROUND15_CENTERLOCK_MULTISCALE_SUMMARY_20260312_022742.md>)
+| 候選 | 家族分數 | 部署分數 | 選中的保存點 |
+|---|---:|---:|---|
+| **centerlock_pure** | 366.564 | −125.821 | 0.8 px 那個 |
+| centerlock_defectguard | 365.002 | −125.821 | 0.8 px 那個 |
+| centerlock_balanced | 360.481 | −125.821 | 0.08 px 那個 |
+| centerlock_macroguard | 360.283 | −125.821 | 0.08 px 那個 |
 
-## 進入實際檔案
+## 讀這些內容要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER.md](<ARCHIVE_POINTER.md>) | 1檔 | organized_20260312 完整歷史與恢復方式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | organized_20260312 歷史批次清單 |
-| [README.md](<README.md>) | 1檔 | organized_20260312 |
-| [selected/](<selected>) | 7檔 | 歷史選定內容；不代表今日正式採用 |
-| [selected_checkpoint/](<selected_checkpoint>) | 1檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+1. **四個候選的部署分數同分**，最後依原排序選 `centerlock_pure`（[R12～R15 選擇讀法](<../../docs/reproducibility/legacy_multiscale/README.md>)有說明）。
+2. **代表模型**：`selected_checkpoint/centerlock_pure_best_tradeoff.pth.tar`（約 20.4 MB，SHA-256 開頭 `2ad1a1bc`）。
+3. **大型內容已移到 H 槽**（2026-08-01）：完整 1,152 個檔、3.83 GiB 在 H 槽快照，D 槽保留 13 份報告與種子、1 份代表模型。恢復方式見 [ARCHIVE_POINTER](<ARCHIVE_POINTER.md>)。
 
-## 必要來源與取得界線
+## 原始報告
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
-
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[Round 15 多尺度摘要](<selected/reports/ROUND15_CENTERLOCK_MULTISCALE_SUMMARY_20260312_022742.md>)、[Round 15 保存點稽核摘要](<selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.md>)、[代表模型說明](<selected_checkpoint/README.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本批次保存紀錄](<../../docs/reproducibility/experiments/legacy__organized_20260312.md>)。

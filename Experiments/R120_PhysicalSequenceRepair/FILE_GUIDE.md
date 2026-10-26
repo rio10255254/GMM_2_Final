@@ -1,38 +1,50 @@
-# main/R120_PhysicalSequenceRepair：檔案怎麼找
+# R120：照 R119 的稽核修好序列實驗，再做一次公平的短測
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R120_PhysicalSequenceRepair.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [要修正的 R119](<../R119_SequenceGeometryValidation/FILE_GUIDE.md>) · [下一輪 R121](<../R121_BoundaryAnchorFactorial/FILE_GUIDE.md>)
 
-**研究問題：修正R119序列形成與公平對照。**
+**一句話：** R119 稽核指出序列實驗根本沒照計畫執行，R120 把這些問題一一修掉：真的在 8 倍解析度先生成、再積分成像素；統一「物體內為正」的幾何約定；A 組必須跟 R118 的資料行為逐位元相同；B 組只改觀測安排；所有組共用同一份評估輸入與答案。2026-09-06 做了 A、B 各兩個種子的 12 輪短測。從留下的結果看，B 跟 A 幾乎沒有差別。修正後的 A 隨即成為 R121 的對照組。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（修正與短測都完成；沒有選出或升格模型） |
+| 時間 | 2026-09-06 |
+| 實驗條件 | 程式資料：唯讀引用 R118 的 5,000／512 共用包，新觀測只存在本資料夾；真實 SEM 與 Raw 只用於評估 |
+| 起點 | 隨機初始化；模型、運算與目標函式複製自 R118，不繼承權重 |
 
-## 先讀原文件
+## 結果
 
-- [R120 Physical Sequence Repair](<MANIFEST.md>)
-- [R120 Physical Sequence Repair](<README.md>)
+**12 輪短測，共用 96 個場景的驗證影像誤差（灰階，越小越好）：**
 
-## 進入實際檔案
+| 種子 | Raw | A：修正後對照 | B：加物理序列安排 |
+|---|---:|---:|---:|
+| 1185001 | 1.950 | 1.799 | 1.795 |
+| 1185002 | 1.950 | 1.846 | 1.841 |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 5檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [Infer.py](<Infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R120 Physical Sequence Repair |
-| [model/](<model>) | 2檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R120 Physical Sequence Repair |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 4檔 | 原檢查程式；不是研究結果本身 |
-| [Train.py](<Train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training/](<training>) | 4檔 | 訓練程式與配套 |
-| [validation/](<validation>) | 5檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+**位移診斷（528 張視圖的中位數）：**
 
-## 必要來源與取得界線
+| 輸出 | 殘差位置（px） | 無效視圖 |
+|---|---:|---:|
+| Raw | 0.559 | 13 |
+| A（兩種子） | 0.494／0.518 | 36／27 |
+| B（兩種子） | 0.497／0.512 | 44／20 |
 
-R118精確來源、8倍生成物理序列、實際探針與共同測試。
+兩種子的 B 比 A 只好 0.004～0.005 灰階，位置殘差各有勝負。就這些數字看，修正後的物理序列安排沒有帶來明顯好處；R119 那次的改善原本就不能歸因到序列安排。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些內容要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **沒有寫成正式結果報告。** MANIFEST 說「實際驗證狀態請讀 `reports/R120_RESULTS.md`」，但這份報告在本機和 GitHub 上都不存在。上面的數字是本卡從 `results/` 下的 JSON（短測稽核、位移診斷，不在程式樹上，見下方）整理的，「B 跟 A 幾乎沒差」是整理時的讀法，不是當時報告的結論。
+2. **短測的公平性有核對過。** 48 組驗證輸入與答案全部相同、同種子起點一致、兩種子起點不同、12 個保存點都能重新載入。
+3. **固定物理序列只作用在 96 個指定場景上**，其餘場景保留原本的兩視圖配置（R121 方法紀錄也這樣說明）。
+4. 修正內容的完整清單見 [MANIFEST](<MANIFEST.md>) 後半的「R119 causal audit and corrections」。
+
+## 拿資料與重做
+
+本資料夾的資料生成、模型、訓練、推論、驗證（序列稽核、位移評估、定位校正）與 4 份測試都在 GitHub。
+
+> **不在 GitHub 程式樹上：** `results/` 下的短測稽核、序列資料稽核、定位校正、位移診斷與測試結果（合計約 0.5 MB），以及 `runs/` 下四個短測的第 12 輪權重與訓練紀錄，放在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡（分散在幾個合計約 3 GB 的附件中）。第 4、8 輪的中間權重只在原電腦上。
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+[MANIFEST](<MANIFEST.md>)（本輪範圍，後半保留 R119 因果稽核全文）、[README](<README.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R120_PhysicalSequenceRepair.md>)。

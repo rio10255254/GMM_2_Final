@@ -1,34 +1,33 @@
-# legacy/estimator_formula_probe：檔案怎麼找
+# Estimator Formula Probe：soft_band 公式變體都沒過中尺度關卡
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__estimator_formula_probe.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一步 Branch E Follow-up](<../branch_e_followup/FILE_GUIDE.md>) · [接手的成對位移探針](<../pairwise_delta_probe/FILE_GUIDE.md>)
 
-**研究問題：早期估計公式探索。**
+**一句話：** 2026-03-15 晚間，照 Branch E Follow-up 的建議，嘗試幾種 `soft_band_refine` 的公式變體（更銳利、混入步長、較輕），想在保住中心改善的同時把 0.8 px 步長壓到 0.45 以下。五個變體的中心誤差都大幅改善（約 0.17～0.38，控制組 6.97），但步長誤差全部在 0.58～0.84，沒有一個通過中尺度關卡。這條路之後由成對位移探針取代。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（沒有變體通過校準後的中心加步長關卡；保留作沿革） |
+| 時間 | 2026-03-15 晚間 |
+| 實驗條件 | A：環形影像 0.8 px 的估計器稽核，使用 Round 18 的選定保存點；沒有外部 GMF |
+| 起點 | 不訓練 |
 
-## 先讀原文件
+## 結果
 
-- [Process Probe Audit](<selected/reports/ESTIMATOR_FORMULA_AUDIT_edge_ctrl.md>)
-- [Process Probe Audit](<selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band.md>)
-- [Process Probe Audit](<selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_light.md>)
-- [Process Probe Audit](<selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_sharp.md>)
-- [Process Probe Audit](<selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_stepmix.md>)
-- [Process Probe Audit](<selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_stepmix_sharp.md>)
+| 候選 | 中心誤差 | 步長誤差 | 通過中尺度關卡 |
+|---|---:|---:|---|
+| soft_band | 0.1862 | 0.5804 | 否 |
+| soft_band_sharp | 0.1689 | 0.6700 | 否 |
+| soft_band_stepmix | 0.3253 | 0.7121 | 否 |
+| soft_band_light | 0.3845 | 0.7841 | 否 |
+| soft_band_stepmix_sharp | 0.3091 | 0.8417 | 否 |
+| edge_ctrl（控制組） | 6.9723 | 1.3555 | 否 |
 
-其餘原報告見[本輪完整研究卡](<../../../docs/reproducibility/experiments/legacy__estimator_formula_probe.md>)。
+8 px 的總體關卡（用 `edge_band_refine`）是通過的。
 
-## 進入實際檔案
+## 拿資料與重做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | estimator_formula_probe — Legacy Side Surface Manifest |
-| [README.md](<README.md>) | 1檔 | estimator_formula_probe — Side Probe Surface |
-| [selected/](<selected>) | 7檔 | 歷史選定內容；不代表今日正式採用 |
+可重做程度：**historical-only**，只供稽核與沿革追查。
 
-## 必要來源與取得界線
+## 原始報告
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
-
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[公式探針摘要](<selected/reports/ESTIMATOR_FORMULA_PROBE_SUMMARY_20260315_214018.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本面保存紀錄](<../../../docs/reproducibility/experiments/legacy__estimator_formula_probe.md>)。

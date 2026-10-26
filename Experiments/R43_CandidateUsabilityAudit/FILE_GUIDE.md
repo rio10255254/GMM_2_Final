@@ -1,30 +1,64 @@
-# main/R43_CandidateUsabilityAudit：檔案怎麼找
+# R43：把近期所有候選放到同一張表上
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R43_CandidateUsabilityAudit.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R42](<../R42_MicroscopyBoundaryFidelity/FILE_GUIDE.md>) · [下一輪 R44](<../R44_UniversalBoundaryMotionFidelity/README.md>) · [原始說明](<README.md>)
 
-**研究問題：把既有候選放在同一決策表。**
+**一句話：** 這不是訓練輪次。R39 到 R42 累積了一堆候選，各有各的強項和失敗，R43 用同一套分類規則把它們排在一起，回答一個實務問題：「近期的模型到底有沒有哪個已經堪用？」答案是沒有任何新候選能全面取代 COMBO；R39 a030 最接近正式替代，R40～R42 則是顯微與邊界重建的研究材料。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（沒有新資料、沒有改模型、沒有重新訓練） |
+| 時間 | 2026-05-06（R42 外部 GMF 補測之後） |
+| 範圍 | COMBO、R33、R38v2、R39 a030、R40 a045、R41 的直接端點與平均版、R42 的各個權重 |
 
-## 先讀原文件
+> **時間上要注意：** 這份盤點比 R39R40_a025 升為核准替代（2026-05-11）早了五天，所以表裡沒有 a025。盤點說「a030 最接近正式替代討論」，五天後由 a025 接手這個位置。a030 本身一直停在研究候選。
 
-- [R43A Usability Audit — 近期候選堪用性分析](<reports/R43A_USABILITY_AUDIT.md>)
+## 在研究裡的位置
 
-## 進入實際檔案
+R39 到 R42 每一輪都證明了某種能力學得起來，也都在環形守門上失敗。到 R42 為止，候選已經多到需要一次總盤點：哪些能正式討論、哪些只能做顯微研究或人工檢查、哪些暫時沒有用處。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R43 近期候選堪用性盤點 — Manifest |
-| [README.md](<README.md>) | 1檔 | R43 近期候選堪用性盤點 |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 3檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+## 怎麼做
 
-## 必要來源與取得界線
+- 讀取各輪已完成的正式結果檔，加上 R42 補送的外部 GMF。
+- 用同一套分類規則輸出分數表與中文報告，另外整理肉眼比較圖。
+- **分類規則：**
+  - **正式替代**：外部三尺度不能明顯輸 COMBO
+  - **顯微堪用**：格線、缺陷、邊界或高頻細節要明顯比 COMBO 好
+  - **實驗起點**：就算不能部署，也要提供清楚的能力來源
+  - **不堪用**：守住舊能力但沒有新能力，或新能力變好卻失去太多守門、又沒有明確用途
 
-各輪正式數值、候選身分與被引用代表圖。
+## 結果
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 分類 | 候選 |
+|---|---|
+| 正式基準 | COMBO |
+| 可以拿來正式討論 | R39 a030（外部在替代容忍帶內，形狀泛化確實比 COMBO 好；但 0.8px 退步約 6.4%，0.8px 為主的場合仍應用 COMBO 或 R33） |
+| 顯微研究或人工檢查用 | R42 的各個權重、R41 直接端點與 α 0.45／0.50 平均版、R40 a045 |
+| 暫時不值得用 | R42 的低比例混合版（1%～5%）：守住環形，但新能力幾乎沒有 |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+報告也算了一個排序分數，但明寫「分數只是排序輔助，不是升級標準」，升級仍以正式外部守門為準。
+
+## 讀這些數字要知道的事
+
+1. **R40～R42 不是不能用，而是不能拿來取代正式量測。** 它們適合顯微結構重建、人工檢查，以及作為下一輪訓練的起點。
+2. **低比例混合是個陷阱。** 它們看起來最安全（環形守門通過），其實是因為幾乎沒有改變 COMBO。
+3. **這張表沒有新數字。** 所有指標都來自各輪原本的報告。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 盤點報告 | [R43A 堪用性分析](<reports/R43A_USABILITY_AUDIT.md>) |
+| 肉眼比較圖（顯微特徵、邊界、局部放大） | [results/visual_review/](<results/visual_review>)，已在 GitHub |
+| 分數表（JSON、CSV） | 已從 GitHub 主版本的程式樹移出，保存在 git 歷史與 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) |
+| 重跑 | `python Experiments/R43_CandidateUsabilityAudit/scripts/candidate_usability_audit.py`；測試在 [tests/](<tests>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 報告 | 內容 |
+|---|---|
+| [R43A 堪用性分析](<reports/R43A_USABILITY_AUDIT.md>) | 完成標準、排名、正式替代視角、顯微與邊界能力、堪用性判斷 |
+| [原始說明](<README.md>) | 目的、設計、主要結論，原文保留 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R43_CandidateUsabilityAudit.md>)。

@@ -1,30 +1,36 @@
-# main/R101_HighFrequencyDesignValidation：檔案怎麼找
+# R101 根因設計：資料、輸出方式、多目標分工要一起改
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R101_HighFrequencyDesignValidation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [機制短測 R101](<../R101_HighFrequencyCausalAblation/FILE_GUIDE.md>) · [被檢查的 R100](<../R100_CausalOperatorScratch/FILE_GUIDE.md>) · [下一輪 R102](<../R102_UniversalDetailScratch/FILE_GUIDE.md>)
 
-**研究問題：檢查高頻答案、邊界輸出與多目標學習為何失效。**
+**一句話：** 這份設計文件的結論是：R101 不能做成「R100 加大細節權重」。高頻重建失敗同時有三個原因——訓練答案的最細頻帶多半跟輸入不同相位、而且答案通常比輸入更平滑；模型沒有能在次像素位置重新畫出抗鋸齒邊界的輸出方式；細節目標的梯度比位移、幾何、像素、不修改目標小數十到上千倍，方向還常常相反。只改其中一項，很容易回到保守平滑。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（根因設計；沒有新的 R101 模型） |
+| 時間 | 2026-08-15 前後（文件 2026-10-16 補建入口） |
+| 檢查對象 | R92／R93 系列鎖定資料的 125 個內部測試場景、500 個觀測；R100 各保存點；四張 5×／20×／50× 實拍 |
 
-## 先讀原文件
+## 已驗證的根因
 
-- [R101_HighFrequencyDesignValidation 研究保存清單](<MANIFEST.md>)
-- [R101：高頻邊界重建根治設計](<R101_DESIGN.md>)
-- [R101_HighFrequencyDesignValidation 研究入口](<README.md>)
+**訓練資料其實在教模型平滑：**
 
-## 進入實際檔案
+| 頻帶 | 相位一致且要求增強 | 無法從輸入可靠推回 |
+|---|---:|---:|
+| 最細邊界頻帶 | 2.2% | 72.8% |
+| 次細邊界頻帶 | 18.4% | 41.8% |
+| 材質最細／次細頻帶 | 0% | 88.8%／86.2% |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R101_HighFrequencyDesignValidation 研究保存清單 |
-| [R101_DESIGN.md](<R101_DESIGN.md>) | 1檔 | R101：高頻邊界重建根治設計 |
-| [README.md](<README.md>) | 1檔 | R101_HighFrequencyDesignValidation 研究入口 |
-| [scripts/](<scripts>) | 4檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+**保守化在 E8 突然發生：** R100 第 1～4 輪真實細節倍率約 1.02；第 8 輪去雜訊輸出從約 0.005 跳到 0.288，細節倍率降到 0.840，之後到第 40 輪都沒恢復。第 32 到 40 輪，內部合成細節分數看起來改善，真實細節卻從 0.896 降到 0.836。
 
-## 必要來源與取得界線
+**現有邊緣保護只保住最強的邊：** 非邊緣高頻保留倍率中位數 0.842，柱影像只有 0.714。
 
-R93鎖定內測來源、E1到E40模型與四張實拍、各頻帶與更新方向完整讀值。
+**各目標互相拉扯，細節的聲音最小：** 第 40 輪固定混合批次中，細節目標的共享梯度 0.0000082；一般高頻、幾何、不修改、位移目標分別是它的 17、121、129、1,061 倍；細節與像素目標的方向相似度 −0.858。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些內容要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **梯度方向是單一固定批次的證據**，不是整體估計；但它和資料稽核、實拍逐輪崩落的方向一致。
+2. 文件後半是 R101 的資料設計（連續場景同時成像來源與答案、四種高頻分開標示、每場景多個獨立觀測）；實際走向見 R102～R104。
+
+## 原始報告
+
+[R101 設計](<R101_DESIGN.md>)、[README](<README.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R101_HighFrequencyDesignValidation.md>)。

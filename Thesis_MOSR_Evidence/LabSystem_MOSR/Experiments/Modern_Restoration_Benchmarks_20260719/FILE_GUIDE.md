@@ -1,63 +1,73 @@
-# lab/Modern_Restoration_Benchmarks_20260719：檔案怎麼找
+# EDSR、NAFNet 對照：跟現代復原網路比
 
-[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+[研究時間線](<../../../../docs/research/TIMELINE.md>) · [LabSystem 全線](<../../../../docs/reproducibility/lineage/LAB_SYSTEM.md>) · [被比較的 V42](<../V42_SoftLabelSNR/FILE_GUIDE.md>) · [Base U-Net 對照](<../BaseUNet_Baseline_20260718/FILE_GUIDE.md>) · [次像素平移測試](<../Subpixel_Translation_Equivariance_20260720/FILE_GUIDE.md>) · [後來的十方法比較 R153](<../../../../Experiments/R153_MeanExternalBenchmark/FILE_GUIDE.md>)
 
-[本輪研究卡](<../../../../docs/reproducibility/experiments/lab__Modern_Restoration_Benchmarks_20260719.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
+**一句話：** 回應教授「缺少現代深度學習比較」「形貌太專一」「缺少計算效能」的意見，2026-07-19 在同一份 Lab 資料上從頭訓練參數量相近（約 400 萬）的 EDSR-x1 和精簡 NAFNet，跟原圖、Base U-Net、V42 比三種形貌（暗柱、亮孔、線條）。V42 最明確的優勢在 20× 亮孔：CD 誤差比原圖降 65%；但位移上 Base U-Net 和 EDSR 在部分指標更好。7/24 又改用實際平台回授與等灰階輪廓量法重算，V42 與 EDSR 在小位移上打平。
 
-**研究問題：比較柱、孔、線三形貌的EDSR／NAFNet等方法。**
+| | |
+|---|---|
+| 結果 | **分析**（論文對照方法；與後來 R153 的十方法比較是不同的比較） |
+| 時間 | 2026-07-19 正式比較；07-24 位移重算與量法比較 |
+| 實驗條件 | C：實驗室顯微系統；7 月的 50×、20× 位移序列，6/18 的 CD 影像，SEM 九顆柱與九顆孔 |
+| 比較對象 | 原圖、Base U-Net、NAFNet、EDSR-x1、V42 第 120 輪（文件裡稱 MOSR） |
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+## 這輪在問什麼
 
-## 先讀原文件
+跟參數量相近的現代網路比，MOSR（當時的 V42）在尺寸、位移、速度上站在哪裡？
 
-- [三形貌現代模型比較：正式結果報告](<evaluation/RESULTS_REPORT_ZH_TW.md>)
-- [MOSR Result Audit and Defensible Positioning](<evaluation/calculation_audit/MOSR_RESULT_AUDIT_20260719.md>)
-- [50×與20×下 EDSR-x1、NAFNet 與 MOSR 的位移比較](<evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report/RESULTS_zh-TW.md>)
-- [現代模型逐步位移比較：建議圖說](<evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report/trajectory_figures/CAPTIONS_zh-TW.md>)
-- [等灰階輪廓邊界位移驗證](<evaluation/isocontour_boundary_validation_20260724/VALIDATION_REPORT_zh-TW.md>)
-- [新位移量測法候選圖索引](<evaluation/measurement_method_comparison_20260724/FIGURE_INDEX_zh-TW.md>)
+## 怎麼做
 
-其餘原報告見[本輪完整研究卡](<../../../../docs/reproducibility/experiments/lab__Modern_Restoration_Benchmarks_20260719.md>)。
+- **公平訓練：** EDSR 和 NAFNet 都從頭訓練，不用外部預訓練權重；灰階輸入、輸出尺寸、資料切分、損失、批次、挑選規則都一致。NAFNet 跑滿 30 輪，EDSR 第 15 輪停。
+- **CD：** 不只用 50% 門檻，掃描 35%～65% 的局部對比，用上下界表示門檻敏感度；孔的 SEM 半徑乘二當直徑。
+- **位移：** 每個倍率與步距用 Raw 運動品質排序後固定選出的 30 步，取所有方法共同有效的步次。
 
-## 進入實際檔案
+## 結果
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analyze_circular_cd_sharpness.py](<analyze_circular_cd_sharpness.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [analyze_isocontour_boundary_displacement.py](<analyze_isocontour_boundary_displacement.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [analyze_line_multimethod.py](<analyze_line_multimethod.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [analyze_multimethod_displacement.py](<analyze_multimethod_displacement.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [audit_calculation_integrity.py](<audit_calculation_integrity.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [audit_line_selection_sensitivity.py](<audit_line_selection_sensitivity.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [audit_mosr_step_selection.py](<audit_mosr_step_selection.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [audit_selection_sensitivity.py](<audit_selection_sensitivity.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [benchmark_models.py](<benchmark_models.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [benchmark_runtime_fair_modes.py](<benchmark_runtime_fair_modes.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [build_50x20x_modern_displacement_report.py](<build_50x20x_modern_displacement_report.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [build_modern_model_trajectory_data.py](<build_modern_model_trajectory_data.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [build_result_report.py](<build_result_report.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [compare_displacement_measurement_methods.py](<compare_displacement_measurement_methods.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation/README.md>) | 82檔 | 量測介面、固定參照、設定或比較內容 |
-| [export_isocontour_qa_overlays.py](<export_isocontour_qa_overlays.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [export_method_crops.py](<export_method_crops.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [infer_modern_baseline.py](<infer_modern_baseline.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [models_modern.py](<models_modern.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [package_final_results.py](<package_final_results.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [plot_50x20x_modern_displacement.m](<plot_50x20x_modern_displacement.m>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [plot_benchmark_results.m](<plot_benchmark_results.m>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [plot_measurement_method_comparison.m](<plot_measurement_method_comparison.m>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [plot_modern_model_trajectories.m](<plot_modern_model_trajectories.m>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [prepare_via_reference.py](<prepare_via_reference.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [run_edsr_after_naf.ps1](<run_edsr_after_naf.ps1>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [run_final_pipeline_after_training.ps1](<run_final_pipeline_after_training.ps1>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [third_party/](<third_party>) | 260檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [train_modern_baseline.py](<train_modern_baseline.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [validate_final_benchmark.py](<validate_final_benchmark.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
+**CD（中點誤差，nm）與邊界：**
 
-## 必要來源與取得界線
+| 倍率／形貌 | 原圖 | Base U-Net | NAFNet | EDSR | V42 |
+|---|---:|---:|---:|---:|---:|
+| 50× 柱 | **46.3** | 79.6 | 63.3 | 79.6 | 48.6 |
+| 50× 孔 | 448.6 | **156.3** | 173.3 | 157.8 | 181.4 |
+| 20× 柱 | **52.6** | 195.3 | 60.3 | 340.7 | 162.2 |
+| 20× 孔 | 644.0 | 546.8 | 531.4 | 497.3 | **224.2** |
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+V42 在 50× 柱上 CD 跟原圖幾乎一樣，但門檻敏感區間窄了 71%；20× 孔的 CD 最好，但有明顯的環狀振鈴（0.581）。
 
-[按用途取得原件](<../../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../../docs/reproducibility/KNOWN_GAPS.md>)
+**位移（7/19 原始量法，對平台指令的平均誤差，nm）：** 柱：Base U-Net 5.92、EDSR 6.14、V42 6.40、原圖 9.30、NAFNet 10.59；孔：EDSR 5.99、Base U-Net 6.15、V42 6.76、NAFNet 6.90、原圖 7.31。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+**7/24 重算（扣除平台實際回授、等灰階輪廓量法）：** 0.5 µm 小位移時 V42 7.159 nm、EDSR 7.189 nm，120 步中 V42 有 61 步較低，差距的 95% 信賴區間跨零；50× 柱 V42 最低，20× 孔 EDSR 顯著較低。
+
+**速度（整張 2048×1536，同一張 RTX A6000）：** 正式部署路徑下 V42 408 ms 最快；但同樣輸入方式比，V42 比 Base U-Net 慢 17～24%。
+
+## 讀這些數字要知道的事
+
+1. **自己的稽核列出三個限制：** 30 步是用 Raw 的運動偏差挑的，對 Raw 有利；7/19 的位移參考是名義指令，不是逐張平台回授（7/24 才改用回授）；速度原本混用了整張推論（V42）和分塊推論（其他三個）。
+2. **不能寫成「MOSR 每項都最好」。** 稽核建議的論文寫法是：V42 保住量測幾何、降低邊界模糊程度，而不是視覺銳利度全面領先。
+3. **EDSR 也用了同樣的固定 PSF 輸入轉換**，所以比較的主要是後端網路結構。
+4. **換量法會改變排名。** 7/24 的量法比較保留新舊兩種結果，並強調選量法要靠邊界定義和合成驗證，不能靠哪個方法排名較好。
+5. **跟論文現在的比較不同。** 現在採用的是 R153 在 9/3 的 930 張上的十方法比較，模型也從 V42 換成 R152。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 分析、稽核、速度、報告產生程式 | 本資料夾根目錄的 `.py`，已在 GitHub |
+| 全部結果表、圖與雜湊清單 | 本資料夾 [evaluation/](<evaluation/README.md>)，已在 GitHub |
+| EDSR、NAFNet、Restormer 原始碼 | 本資料夾 `third_party/`，各自的授權與說明原樣保留 |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 兩個對照模型（EDSR、NAFNet）的權重不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；重建影像只在原電腦上。
+
+## 原始報告
+
+| 報告 | 內容 |
+|---|---|
+| [正式結果](<evaluation/RESULTS_REPORT_ZH_TW.md>) | 三形貌 CD、位移、線條、灰階、速度，以及對口試意見的補強程度 |
+| [計算稽核](<evaluation/calculation_audit/MOSR_RESULT_AUDIT_20260719.md>) | 數字逐列重算、三個限制、公平速度比較、建議的論文寫法 |
+| [50×／20× 位移重算（7/24）](<evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report/RESULTS_zh-TW.md>) | 扣除平台回授後的四方法位移與逐步配對 |
+| [等灰階輪廓驗證（7/24）](<evaluation/isocontour_boundary_validation_20260724/VALIDATION_REPORT_zh-TW.md>) | 30%～70% 門檻定位的位移結果 |
+| [量法比較（7/24）](<evaluation/measurement_method_comparison_20260724/METHOD_COMPARISON_REPORT_zh-TW.md>) | 新舊邊界量法的實拍與合成對照 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../../../docs/reproducibility/experiments/lab__Modern_Restoration_Benchmarks_20260719.md>)。

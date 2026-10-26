@@ -1,37 +1,65 @@
-# main/R127_MeasurementPreservationRepair：檔案怎麼找
+# R127：修量測工具，不修模型
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R127_MeasurementPreservationRepair.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R126](<../R126_LearnabilityPhotometry/FILE_GUIDE.md>) · [下一輪 R128](<../R128_SourceOnlyFullTraining/FILE_GUIDE.md>)
 
-**研究問題：修正SEM比例／取邊、位移有效性與條件原樣保留。**
+**一句話：** R126 的問題有一半出在量測本身，所以 2026-09-08 這輪不訓練，只修三樣東西：SEM 對照的尺度與取邊方式、位移讀法、原樣保留規則。最重要的結論是：R126 那個約 37 px 的位移跳值，不能再當成模型破壞位移的證據；在完整視野下重算，四個模型處理前後的主要位移最多只差 0.0005 px。模型真正的問題是它會改變亮暗過渡的形狀，這跟材料尺寸是否更準是另一回事。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（量測軟體修正；沒有新訓練，也沒有採用模型） |
+| 時間 | 2026-09-08 |
+| 實驗條件 | B：九張原始 SEM 與 36 柱光學影像、六組位移序列的前兩幀；模型用凍結的 R126 四個權重 |
+| 起點 | 不訓練 |
 
-## 先讀原文件
+## 三項修正
 
-- [要把影像一致性進一步驗成實際準確，需要補什麼](<reports/R127_ACQUISITION_PLAN.md>)
-- [R127 execution and retained failures](<reports/R127_EXECUTION_NOTES.md>)
-- [R127 methodology and completion criteria](<reports/R127_METHODOLOGY.md>)
-- [R127 — 三項修正已實跑；量測跳值已釐清，物理尺寸仍需獨立對照](<reports/R127_RESULTS.md>)
-- [R127 reusable image-pair measurement](<reports/R127_USAGE.md>)
-- [實驗索引 / Experiment Index](<reports/project_context_before/INDEX.md>)
+**1. SEM 尺度。** 舊程式宣告了 `mag=3.2507`，實際卻固定用 `1/3.230`，那個變數根本沒用到。直接在原始 SEM 與光學照片上量柱距：
 
-其餘原報告見[本輪完整研究卡](<../../docs/reproducibility/experiments/main__R127_MeasurementPreservationRepair.md>)。
+| 項目 | 重算結果 |
+|---|---:|
+| 光學柱距中位數 | 134.43 px |
+| SEM 柱距中位數 | 431.05 px |
+| SEM 換到光學的比例 | 0.31186（比舊比例大約 0.73%） |
 
-## 進入實際檔案
+R121 從縮圖估的是 +0.92%，兩者都說舊比例偏小，但數值不同。另外，舊的兩套 SEM 參考不只改了比例，還重新縮圖、重新取輪廓，扣掉尺度後面積仍差 −0.6%～+0.5%。新比較保留 SEM 原始像素，同時列出亮帶內側、中心、外側三種取邊定義。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 10檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R127 identity |
-| [README.md](<README.md>) | 1檔 | R127 — Measurement and preservation repair |
-| [reports/](<reports>) | 11檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 1檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 26檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+**2. 位移讀法。** 舊方法在小區塊找峰，遇到條紋與重複圖案會跳到別的位置。新讀法檢查亮度與有方向的邊緣是否同意、有沒有近似的第二答案、前後反向是否一致，線索不足就不給數字。前三版都沒過（保留失敗紀錄），第四版加入周邊資訊後，另外鎖定一組新參數驗證：72/72 通過，最大誤差約 0.016 px，平坦、週期、無關影像的反例全部拒絕。
 
-## 必要來源與取得界線
+| 可用範圍 | 能判定的配對 |
+|---|---:|
+| 原本 128 px 小區塊 | 10/30 |
+| 保存的較大區塊 | 20/30 |
+| 完整視野 | 30/30 |
 
-來源SEM、72讀法測試、48完整輸出與24模型位移。
+**3. 原樣保留。** 加一條依成像條件決定的規則：已知沒有模糊、增益偏移不變、感測雜訊為零時，直接回傳輸入。六組控制與 100 個新任意輸入全部逐像素保留；有雜訊或有模糊的影像仍照常修復（例如 2.396→1.992 灰階）。實拍影像的拍攝條件無法確認，規則不會把它們自動當成已經正確。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **完整視野的一致不等於位移誤差只有 0.0005 px。** 它只說明全圖主要平移在處理前後一致；平台沒有獨立的實際位置紀錄，只跑了前兩幀，沒跑完整 301 幀。
+2. **模型改變了過渡形狀。** 同一個 Q 模型在暗影像上，取 30% 位置量到向外 +0.064 px、50% 是 +0.018 px、70% 變成向內 −0.030 px。用新的原生尺寸比較，暗曝光下兩個 Q 模型讓 36/36 柱的尺寸指標往變大的方向走，仍不支持採用 Q。
+3. **報告也列了下一批實測需要什麼**（[取得計畫](<reports/R127_ACQUISITION_PLAN.md>)）：有唯一位置的標記、位移台編碼器的實際位置、兩種儀器對同一條物理邊界的明確定義，以及另一組沒參與開發的物件。
+
+## 拿資料與重做
+
+位移讀法可以直接拿來用：`scripts/measure_pair.py --first <影像1> --second <影像2> --output <結果.json>`，支援 8／16 bit，線索不足時回傳 `not_uniquely_measurable`；細節見[操作說明](<reports/R127_USAGE.md>)。
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 量測、保留規則與核對程式 | 本資料夾 `scripts/`，已在 GitHub |
+| 報告裡的圖 | [reports/figures/](<reports/figures>)，已在 GitHub |
+| 原生 SEM 重算、尺寸比較表、完整視野位移表、修正核對 | 不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡 |
+| 48 份完整視野重建陣列（約 500 MB） | 只在原電腦上 |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [結果](<reports/R127_RESULTS.md>) | 先讀這份 |
+| [方法](<reports/R127_METHODOLOGY.md>) | 三項修正的完成條件與最後實作範圍 |
+| [執行紀錄](<reports/R127_EXECUTION_NOTES.md>) | 每一版失敗與修正 |
+| [取得計畫](<reports/R127_ACQUISITION_PLAN.md>) | 要驗證實際準確度需要的新拍攝資料 |
+| [操作說明](<reports/R127_USAGE.md>) | 影像配對工具與保留介面 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R127_MeasurementPreservationRepair.md>)。

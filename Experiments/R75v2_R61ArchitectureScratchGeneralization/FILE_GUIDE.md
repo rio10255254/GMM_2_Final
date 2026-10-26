@@ -1,41 +1,74 @@
-# main/R75v2_R61ArchitectureScratchGeneralization：檔案怎麼找
+# R75v2：同樣從零訓練，只改資料分布
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R75v2_R61ArchitectureScratchGeneralization.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [R75](<../R75_R61ArchitectureScratchGeneralization/FILE_GUIDE.md>) · [SEM 驗證 R77](<../R77_R75v2ACMContourSEMValidation/FILE_GUIDE.md>) · [多倍率驗證 R78](<../R78_R75v2_BroadRealMicroscopeGeneralization/FILE_GUIDE.md>) · [接著做的 R79（R75v3）](<../R79_R75v3_DenseMicroscopyScratchGeneralization/FILE_GUIDE.md>)
 
-**研究問題：增加密集、多物件、亮暗及不修改案例。**
+**一句話：** R75 的資料把亮物體和暗背景綁在一起，也強迫每張都要被改，R75v2 模型完全不動、**只改資料**：加入非圓細節、多物件、五段曝光、局部邊界淡化，以及 512 張「不需要改」的保守案例，從零訓練 100 輪。在真實 SEM 上它的外框跟 R61 幾乎一樣準，而且 12 張曝光全部優於原圖，最暗兩張沒有像 R61 那樣崩掉；周長與非圓細節仍沒過。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**（20×／50× 候選，最暗曝光比 R61 穩；周長與非圓細節未過，不取代 R61） |
+| 時間 | 2026-07-31～08-01 |
+| 實驗條件 | 純合成資料；驗證在 R77（SEM）與 R78（多倍率實拍位移） |
+| 起點 | 隨機初始化，種子 752031 |
 
-## 先讀原文件
+## 這輪在問什麼
 
-- [R75-v2 完成 100 輪後的完整分析](<reports/COMPLETED_TRAINING_ANALYSIS_TW.md>)
-- [R75-v2 訓練資料設計](<reports/R75V2_DESIGN.md>)
+R75 的泛化問題，主要是資料分布造成的嗎？
 
-## 進入實際檔案
+## 怎麼做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
+| 資料類別 | 張數 | 要解決的問題 |
 |---|---:|---|
-| [.gitignore](<.gitignore>) | 1檔 | 原配套檔案 |
-| [config/](<config>) | 2檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 1檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [inference/](<inference>) | 2檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | 資料夾導覽 |
-| [model/](<model>) | 3檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R75-v2：多場景純合成重新訓練 |
-| [reports/](<reports>) | 10檔 | 原報告、計畫、審查與各階段結論 |
-| [requirements.txt](<requirements.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [results/](<results>) | 1檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [runs/](<runs>) | 4檔 | 各次執行的紀錄或完成證據；不憑資料夾名認定已完成 |
-| [scripts/](<scripts>) | 7檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
-| [tools/](<tools>) | 5檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [training/](<training>) | 3檔 | 訓練程式與配套 |
-| [weights/](<weights>) | 1檔 | 模型檔或取得說明；最佳、最後及短測版本需分清 |
+| 基礎幾何 | 896 | 維持基本形狀與一般退化 |
+| 非圓與細節形狀 | 1,152 | 凹口、窄頸、新月、星形、齒形、孔洞、斷環、曲線 |
+| 多物件與多尺度 | 768 | 陣列、密集場景、大小物件、切到邊界 |
+| 五段曝光序列 | 1,280 | 亮暗範圍不再跟物體黑白綁定 |
+| 局部邊界淡化與混合困難 | 512 | 局部消失、單側光暈、陰影、多種退化 |
+| 不修改或幾乎不修改 | 512 | 防止對本來就好的影像加光暈或假細節 |
 
-## 必要來源與取得界線
+答案先在 2048×2048 繪製再縮小；另存精確輪廓，讓輪廓訓練不依賴模糊的亮度邊界。
 
-5120組新配方、固定分組及兩個預定比較模型。
+## 結果
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+**512 張沒見過的合成形狀：** 影像誤差中位數從 0.01409 降到 0.00702（第 84 輪），輪廓重疊 0.964 → 0.989，邊界距離 0.732 → 0.131 px。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+**36 顆柱 SEM（12 張曝光，見 R77）：**
+
+| 方法 | 輪廓重疊 | 平均邊界距離（% 柱距） | 周長誤差 | 最差曝光的邊界距離 |
+|---|---:|---:|---:|---:|
+| 原圖 | 0.9490 | 0.5697 | 2.86% | — |
+| R61 v16 | 0.9584 | **0.4413** | 3.71% | 1.061 |
+| V42 | 0.9531 | 0.5228 | 3.03% | — |
+| R75v2 第 84 輪 | 0.9570 | 0.4561 | 4.25% | — |
+| R75v2 第 100 輪 | 0.9582 | 0.4469 | 4.37% | **0.485** |
+
+第 100 輪跟 R61 的差距分不出高下（22/36 顆較好、14/36 顆較差）。
+
+## 讀這些數字要知道的事
+
+1. **兩個權重各有用途。** 第 84 輪是合成驗證在看 SEM 之前選出的，影像保真較好；第 100 輪是事先固定的完成點，SEM 外框較準、曝光間較穩。報告建議兩個都保留。
+2. **挑權重的形狀分數其實沒作用。** 原本用來輔助挑選的形狀代理分數沒有產生有效變化，所以第 84 輪主要是由影像誤差與邊緣品質決定的。
+3. **「不修改」學得還不完全。** 56 張本來就接近正確的保守測試，第 84 輪仍有 0.00516 的中位改動。
+4. **5× 會抹掉細密圖案**（見 R78），所以只當 20×、50× 的候選。
+5. 只跑了一個種子；報告列的升級條件包括再跑兩個種子。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 訓練、推論、資料準備入口與設定 | 本資料夾 [training/](<training/README.md>)、[inference/](<inference/README.md>)、[scripts/](<scripts/README.md>)、[config/](<config>)，已在 GitHub |
+| 設計與完成後分析 | [reports/](<reports>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 5,120 張資料與每 5 輪的中間保存點只在原電腦上；資料可用 `tools/prepare_dataset.py` 重新產生。正式與短測的最終權重、資料清單與訓練紀錄不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [完成 100 輪後的完整分析](<reports/COMPLETED_TRAINING_ANALYSIS_TW.md>) | 判定、訓練是否正常、合成測試、SEM 比較、為什麼不能宣布勝出、升級條件 |
+| [資料設計](<reports/R75V2_DESIGN.md>) | 六類資料、標準答案、防止偷看答案、驗證重點 |
+| [README](<README.md>) | 入口與 100 輪後的狀態 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R75v2_R61ArchitectureScratchGeneralization.md>)。

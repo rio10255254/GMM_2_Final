@@ -1,30 +1,39 @@
-# main/R108G_MidpointWidthFactorizedProfileMicroprobe：檔案怎麼找
+# R108G：把邊界修復拆成「沿法線移動」與「收窄寬度」兩個動作
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R108G_MidpointWidthFactorizedProfileMicroprobe.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一個探針 R108F](<../R108F_MonotonicProfileRendererMicroprobe/FILE_GUIDE.md>) · [以此為依據的 R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>) · [最早的想法 R107A](<../R107A_SingleImageEdgeGeometryProbe/FILE_GUIDE.md>)
 
-**研究問題：將法線位移與保中點寬度修正分開。**
+**一句話：** 從 SEM 有號剖面的診斷出發，R108G 把邊界修復拆成兩個操作：只沿觀察到的邊界法線做一個純量位移，再用一條單調的局部對比曲線在**保持中點**的前提下收窄寬度，而且不超出附近原圖的亮度範圍。偵測器先訓練再凍結，渲染器另外訓練，2026-08-26 從零完成，資料逐位元組重用 R108E。它是 R108 系列裡最平衡的一個：驗證集輪廓重疊 0.928、質心誤差 0.219 px、清楚影像改動只有 0.012，封存資料 63% 影像改善。這個「位移與寬度分開」的設計成為 R109 的依據。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（R108 系列最平衡；成為 R109 的依據；本身不授權正式訓練） |
+| 時間 | 2026-08-26 |
+| 實驗條件 | R108E 的程式資料（依雜湊重用）；不使用任何舊權重、實拍像素、SEM 像素、老師或偽答案 |
+| 起點 | 偵測器（900 步）與渲染器（1,200 步）依序隨機初始化，種子 109210 |
 
-## 先讀原文件
+## 結果
 
-- [R108G_MidpointWidthFactorizedProfileMicroprobe 研究保存清單](<MANIFEST.md>)
-- [R108G Midpoint-Width Factorized Profile Microprobe](<README.md>)
+| 資料 | 方法 | 改善比例 | IoU 中位數 | 質心誤差 | 新增結構錯誤 | 清楚影像改動 |
+|---|---|---:|---:|---:|---:|---:|
+| 驗證 | 原圖 | — | 0.8410 | 0.330 px | 113 | 0 |
+| 驗證 | R108E 自由 | 69.3% | 0.9060 | 0.322 px | **68** | 0.031 |
+| 驗證 | R108F 單調 | 67.7% | 0.8923 | 0.270 px | 105 | 0.122 |
+| 驗證 | **R108G 中點＋寬度** | **73.4%** | **0.9283** | **0.219 px** | 78 | **0.012** |
+| 封存 | R108E 自由 | 48.4% | **0.5231** | 3.586 px | 148 | 0.138 |
+| 封存 | **R108G** | **63.0%** | 0.4247 | **3.321 px** | **141** | 0.106 |
 
-## 進入實際檔案
+封存的實拍：平均改動 4.20 灰階、邊緣增益 1.48、細節倍率 1.31；SEM：改動 1.14、邊緣增益 1.27。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R108G_MidpointWidthFactorizedProfileMicroprobe 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R108G Midpoint-Width Factorized Profile Microprobe |
-| [results/](<results>) | 4檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 7檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **偵測器分辨「需不需要修」的能力仍弱**：「不修改」影像的需求值 0.116、退化影像 0.207，差距只有 0.092。
+2. **封存資料上的 IoU 仍比 R108E 低**，所以不是全面勝出；它勝在中心、清楚影像與改善比例的平衡。
+3. **結果摘要與實拍位移摘要不在 GitHub 程式樹上**（`results/summary.json`、`results/real_motion/summary.json`），在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；程式樹上只有 ACM 參數設定。本機的結果資料夾約 1.1 GB，其中影像輸出只在原電腦上。
 
-精確R108E資料、先偵測後渲染設定。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+本資料夾的程式與 [results/](<results>) 裡的 ACM 設定已在 GitHub。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 原始報告
+
+本輪沒有文字結果報告；[README](<README.md>) 說明設計。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R108G_MidpointWidthFactorizedProfileMicroprobe.md>)。

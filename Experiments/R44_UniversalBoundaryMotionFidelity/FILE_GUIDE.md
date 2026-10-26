@@ -1,38 +1,109 @@
-# main/R44_UniversalBoundaryMotionFidelity：檔案怎麼找
+# R44：教模型讓每種結構都跟著位移正確移動
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R44_UniversalBoundaryMotionFidelity.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R42](<../R42_MicroscopyBoundaryFidelity/FILE_GUIDE.md>) · [盤點 R43](<../R43_CandidateUsabilityAudit/FILE_GUIDE.md>) · [下一輪 R45](<../R45_FamilyBoundaryAdapter/README.md>) · [原始說明](<README.md>)
 
-**研究問題：直接約束顯微結構隨已知位移正確移動。**
+**一句話：** R42 發現邊界在連續位移下會漂。R44 直接建立七類「已知位移」的顯微結構序列，從 R42 出發再訓練，把整體位移誤差從 0.46 px 壓到 0.38 px、格線位移誤差從 2.79 px 壓到 2.25 px，是當時最好的通用位移模型。但大區塊和混合場景的邊界形狀沒有一起變好。之後 A 到 H 一連串的探針、診斷、平均、蒸餾，最後確認：最好的位移能力和最好的形狀能力分散在不同模型裡，沒有任何單一模型能同時兼顧。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（研究成功、不可升級，也沒有單一堪用候選） |
+| 主候選 | `r44_motion_from_r42_best`（另有從 R40 a045、從 COMBO 起步的兩個） |
+| 時間 | 2026-05-06 訓練；之後到 05-09 陸續完成 C～H 各支線與歷程稽核 |
+| 實驗條件 | A：公司端環形影像；位移與邊界用合成序列 |
+| 判斷標準 | **這一輪由專案負責人決定不設環形淘汰線**：本地環形與外部 GMF 只作舊能力紀錄，不否定研究價值 |
 
-## 先讀原文件
+## 在研究裡的位置
 
-- [R44C 探針計畫 — 分族平衡邊界位移](<reports/R44C_PROBE_PLAN.md>)
-- [R44D 診斷 — 分族與位移尺度盤點](<reports/R44D_FAMILY_DIAGNOSTIC.md>)
-- [R44E 大區塊與混合場景專項探針](<reports/R44E_TARGETED_PROBE.md>)
-- [R44F 診斷 — 大區塊與混合場景錯誤解剖](<reports/R44F_ERROR_DIAGNOSTIC.md>)
-- [R44G 邊界形狀體檢](<reports/R44G_BOUNDARY_SHAPE_METRICS.md>)
-- [R44H Step 0 / Step A — R44B 家族權重平均探測](<reports/R44H_STEPA_FAMILY_AVERAGE.md>)
+R39 到 R42 每一輪都在「推一種能力 → 環形守不住 → 用平均或蒸餾救」的循環裡。R42 最後指出，缺的不是單張影像的清晰度，而是所有結構在已知位移下保持位置一致。R41 的結論也建議在訓練時就直接約束位移。R44 是第一次把這個要求直接放進資料和損失裡。
 
-其餘原報告見[本輪完整研究卡](<../../docs/reproducibility/experiments/main__R44_UniversalBoundaryMotionFidelity.md>)。
+## 這輪在問什麼
 
-## 進入實際檔案
+如果建立通用顯微結構的已知位移序列，用邊界、中心線、格線相位、小缺陷位置來量測和訓練，模型能不能從「單張邊界清晰」進一步做到「位移忠實」？
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER_20260824.md](<ARCHIVE_POINTER_20260824.md>) | 1檔 | R44 歷史封存與恢復入口 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R44 Manifest |
-| [README.md](<README.md>) | 1檔 | R44 — 通用顯微邊界位移忠實度 |
-| [reports/](<reports>) | 11檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 9檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 14檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 12檔 | 原檢查程式；不是研究結果本身 |
+## 怎麼做
 
-## 必要來源與取得界線
+**七類位移序列**（stage 41～47）：細線、格線、交叉線、曲線、大區塊、缺陷、混合場景。每組序列包含 0、0.08、0.16、0.4、0.8、2、8 px 的已知位移，每一幀都有來源、答案、邊界遮罩、中心線遮罩、距離圖。
 
-七類連續場景、R42及各老師／起點、每個支線實際設定。
+主訓練器新增了可以關閉的位移資料與位移損失接口，不改模型本體，也不加入真實影像。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+**各支線**：
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 支線 | 做了什麼 | 結果 |
+|---|---|---|
+| A | 不訓練，先測 COMBO、R39～R42 在已知位移下誰最穩 | R42 best 最好（整體位移誤差 0.46 px），COMBO 是 0.83 px |
+| B | 從 R42、R40 a045、COMBO 三個起點訓練 24 輪 | 從 R42 起步的最好；大區塊與混合場景沒改善 |
+| C | 三個短探針：降低位移權重、排除部分結構、加強靜態邊界 | 只取得小幅平衡 |
+| D | 不訓練，按結構類型、位移段、模型拆解瓶頸 | 每類都挑最佳模型的話，邊界還有約 12.8% 的空間；格線相位欄位無法分辨模型 |
+| E | 只針對大區塊與混合場景做短訓練修補 | 不夠，有的還把格線與整體位移拉壞 |
+| F | 不訓練，檢查大區塊與混合場景是模型問題還是指標問題 | 不是指標誤判；位移準確時邊界仍會變厚、碎裂、直邊和角點不穩 |
+| G | 不訓練，量化邊界厚度、碎裂、直邊、角點 | 最佳位移、最佳大區塊、最佳混合場景分散在不同模型 |
+| H 步驟 A | 不訓練，把 B 的模型家族做權重平均 | 形狀可以改善，但整體位移退到 0.53 px 以上 |
+| H 步驟 B | 以從 COMBO 起步的 B 模型當老師，只在大區塊邊界帶做局部蒸餾，12 輪 | 位移守住，但目標形狀反而變差；不建議再做多老師蒸餾。（之後 [R45C](<../R45_FamilyBoundaryAdapter/FILE_GUIDE.md>) 從像素層級重看，發現它在七成以上的小塊上其實比基準更接近答案，跟它「穩住邊界帶位置」的設計目標一致） |
+
+## 結果
+
+**位移與邊界**（合成位移序列，px，越小越好）：
+
+| 模型 | 整體位移誤差 | 格線位移誤差 | 整體邊界距離 | 大區塊邊界距離 | 混合場景邊界距離 |
+|---|---:|---:|---:|---:|---:|
+| COMBO | 0.8253 | 5.3567 | 9.8284 | 11.3297 | 13.7947 |
+| R42 best（起點） | 0.4609 | 2.7911 | **3.6726** | 7.3401 | 6.6915 |
+| **從 R42 起步** | **0.3813** | **2.2457** | 3.7276 | 7.5878 | 6.9202 |
+| 從 COMBO 起步 | 0.5313 | 3.2741 | 3.9081 | **5.9436** | 6.9901 |
+| 從 R40 起步 | 0.9087 | 5.9051 | 3.7808 | 6.9774 | **5.9151** |
+
+每一欄的最佳值落在不同的模型上，這就是 R44 的核心發現。
+
+**本地環形紀錄**（主候選，相對 COMBO）：8px +45.1%、0.8px +46.7%、0.08px +32.3%。依這一輪的判斷標準，這只是紀錄。外部 GMF 沒有送測。
+
+## 讀這些數字要知道的事
+
+1. **位移損失有效，但會讓不同結構互相拉扯。** 單一的位移目標讓格線和整體位移變好，卻沒有保住大區塊和混合場景的邊界。
+2. **能力是分散的，硬湊不起來。** 權重平均、局部蒸餾都試過了，都沒能把分散在各模型的能力整合起來。
+3. **格線相位指標要換。** 現有的 `grid_phase_motion_error_px` 無法分辨模型，之後應改用從輸出影像算出的格線位移與邊界距離。
+4. **環形退步是真的，只是這一輪不拿它當淘汰條件。** 所以主候選不能當量測替代。
+
+原報告的下一步建議是：大區塊、混合場景、格線分開處理，優先考慮「轉接層、分族小頭、或推論時依結構類型選擇」，以較低干擾的方式整合分散的能力。這就是 R45 的設計。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 主報告與各支線報告 | 本資料夾 [reports/](<reports>)，已在 GitHub |
+| 三個 B 候選的代表模型與大部分結果（約 725 MB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，目前要下載約 18 GB |
+| 位移序列資料（約 7.4 GB） | 不上傳，用 `scripts/r44_motion_data.py` 重新產生；指標在 `scripts/r44_motion_metrics.py` |
+| 訓練與各支線程式 | `scripts/launch_r44.py`、`launch_r44c_probe.py`、`launch_r44e_probe.py`、`launch_r44h_stepb.py`，以及 D、F、G、H 的診斷工具 |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的缺口與限制：**
+>
+> - **原始說明列出的總表、分族診斷與代表圖，大多在 GitHub 上點不開。** 本資料夾的 `results/` 目前在 GitHub 程式樹裡只有 9 個檔；另外 39 個在 2026-10 從主版本移出、只在 git 歷史裡，還有約 170 個（約 45 MB）只在原電腦上。這些多半是小型的 CSV 與圖，整理計畫會把它們補回。
+> - **完整歷程在原電腦的 H 槽**，2026-08-24 封存，見[封存紀錄](<ARCHIVE_POINTER_20260824.md>)。
+> - **權重很難單獨拿**，原因同其他輪：目前的打包按檔案大小切分卷。
+
+## 原始報告
+
+| 報告 | 什麼時候讀 |
+|---|---|
+| [R44 結果](<reports/R44_RESULTS.md>) | 全部支線的數字、代表圖與結論 |
+| [C 探針計畫](<reports/R44C_PROBE_PLAN.md>)、[D 分族診斷](<reports/R44D_FAMILY_DIAGNOSTIC.md>)、[E 專項探針](<reports/R44E_TARGETED_PROBE.md>)、[F 錯誤解剖](<reports/R44F_ERROR_DIAGNOSTIC.md>)、[G 邊界形狀](<reports/R44G_BOUNDARY_SHAPE_METRICS.md>) | 各支線細節 |
+| [H 步驟 A](<reports/R44H_STEPA_FAMILY_AVERAGE.md>)、[H 步驟 B 計畫](<reports/R44H_STEPB_REGION_KD_PLAN.md>)、[H 步驟 B 結果](<reports/R44H_STEPB_REGION_KD.md>) | 家族平均與局部蒸餾 |
+| [外部 GMF 紀錄](<reports/R44_EXTERNAL_COMPARE.md>) | 為什麼沒有送外部 |
+| [R39～R44H 歷程追溯稽核](<reports/R44_HISTORY_TRACEABILITY_AUDIT.md>) | 2026-05-09 對 R39～R44 文件骨架的檢查 |
+| [原始說明](<README.md>) | 假說、設計、資料、候選與完整產物清單，原文保留 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R44_UniversalBoundaryMotionFidelity.md>)。
+
+## 資料夾裡有什麼
+
+| 位置 | 內容 |
+|---|---|
+| [reports/](<reports>) | 主報告與各支線報告 |
+| [results/](<results>) | 結果的一部分（見上方缺口說明） |
+| [scripts/](<scripts>) | 資料產生、指標、訓練、各支線探針與診斷 |
+| [tests/](<tests>) | 位移資料、指標與訓練器接線的測試 |
+| [ARCHIVE_POINTER_20260824.md](<ARCHIVE_POINTER_20260824.md>) | H 槽完整封存的位置 |
+| [MANIFEST.md](<MANIFEST.md>) | 研究保存清單 |
+
+當時的分支是 `sandbox/r44`。

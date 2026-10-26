@@ -1,30 +1,60 @@
-# main/R68_R61_RealFOVFeatureGeneralization：檔案怎麼找
+# R68：R61 v16 在整個視野、三種倍率下會不會改壞位移
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R68_R61_RealFOVFeatureGeneralization.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R67](<../R67_UniversalModelGeneralization/FILE_GUIDE.md>) · [下一輪 R69](<../R69_ACMContourSEMValidation/FILE_GUIDE.md>) · [模型本體 Lab R61](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>)
 
-**研究問題：檢查R61在多倍率完整視野的位移保持。**
+**一句話：** 中心裁切可能藏住問題，所以 2026-07-29 在 5×、20×、50× 各兩組位移序列（共 301 張，都是 R61 v16 訓練之後才拍的）裡，每組從原圖第一張自動挑 24 個內容豐富的區域，比較重建後的位移跟原圖量到的位移是否一致。六組全部通過七道預設門檻：方向一致率 100%，位移比例在 0.99～1.02 之間。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（六組全部通過試行門檻；只代表這批拍攝，不是跨樣品證明） |
+| 時間 | 2026-07-29 |
+| 實驗條件 | C：實驗室顯微系統；HS100MG 樣品 5×、20×、50× 各 0.5 µm 與 1 µm 位移序列，共 301 張 |
+| 模型 | Lab R61 v16，PSF 關閉 |
 
-## 先讀原文件
+## 這輪在問什麼
 
-- [R68 Results](<reports/R68_RESULTS.md>)
+R61 v16 在不同倍率、整個視野的許多區域，能不能保住真實量到的位移？
 
-## 進入實際檔案
+## 怎麼做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R68 Manifest |
-| [README.md](<README.md>) | 1檔 | R68 R61v16 Real-FOV Feature Generalization |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+- 每組序列從原圖第一張挑 24 個 256×256、內容豐富的區域，固定不動；每對相鄰影格都比較原圖與 R61 的位移。
+- 序列（不是每個區域）是獨立的報告單位；較長的拍攝停頓排除。
+- 原圖位移本身不明確的區域配對（多出現在週期性的 50× 視野），先從分母排除，避免把不明確的參考誤判成模型成功或失敗。
+- **七道門檻：** 有效量測至少 90%、方向一致至少 95%、位移比例中位數在 10% 以內、差異中位數在指令步距的 10% 以內、第 95 百分位在 25% 以內、相關強度比至少 0.65、對齊一致度至少 0.90。
 
-## 必要來源與取得界線
+## 結果
 
-301原圖、固定模型及24區選擇與配對。
+| 序列 | 原圖可用 | R61 有效 | 方向一致 | 位移比例 | 差異中位數 | 差異第 95 百分位 | 結果 |
+|---|---:|---:|---:|---:|---:|---:|---|
+| 5×、0.5 µm | 100% | 100% | 100% | 0.986 | 30.9 nm | 70.2 nm | 通過 |
+| 5×、1 µm | 100% | 99.6% | 100% | 1.006 | 34.0 nm | 113.2 nm | 通過 |
+| 20×、0.5 µm | 94.4% | 100% | 100% | 1.003 | 17.9 nm | 105.7 nm | 通過 |
+| 20×、1 µm | 95.6% | 100% | 100% | 0.995 | 18.8 nm | 161.8 nm | 通過 |
+| 50×、0.5 µm | 66.6% | 100% | 100% | 1.016 | 13.7 nm | 89.1 nm | 通過 |
+| 50×、1 µm | 72.2% | 99.9% | 100% | 0.994 | 18.0 nm | 165.2 nm | 通過 |
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **比的是「跟原圖一致」，不是「比原圖準」。** 參考是原圖在同一區域量到的位移，所以這輪檢查的是 R61 有沒有把位移改壞。
+2. **門檻是 R68 自己訂的試行門檻。** 通過代表這批拍攝的跨倍率、跨區域證據，報告明說還要確認實體樣品身分、再測更多樣品。
+3. 50× 的原圖可用率只有 67～72%，因為週期性結構讓很多區域的原圖位移本身就不明確。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 執行程式、測試、序列設定 | 本資料夾 [scripts/run_r68.py](<scripts/run_r68.py>)、[tests/](<tests>)、[config/sequences.json](<config/sequences.json>)，已在 GitHub |
+| R61 v16 模型 | 見 [Lab R61](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 301 張原圖與重建影像、逐區域量測表都不在 GitHub 上。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R68 結果](<reports/R68_RESULTS.md>) | 六組序列結果與解讀 |
+| [README](<README.md>) | 問題、範圍、七道門檻 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R68_R61_RealFOVFeatureGeneralization.md>)。

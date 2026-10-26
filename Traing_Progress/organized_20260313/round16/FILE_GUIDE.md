@@ -1,32 +1,36 @@
-# legacy/round16：檔案怎麼找
+# Round 16 EDGEFIT：換成邊緣重心的幾何估計
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round16.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [下一輪 Round 17](<../round17/FILE_GUIDE.md>)
 
-**研究問題：更換邊界估計讀法。**
+**一句話：** 2026-03-12 的早期調參輪。核心改動是把幾何估計從之前的代數擬合（`algebraic_fit`）換成邊緣重心（`edge_centroid`），四個候選裡選了 `r16_edge_highcenter` 部署。結果是中心誤差明顯下降，但步長誤差退步到超過硬閾值；這一輪的意義是證明邊緣重心比舊路線更適合當後續主線。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**（當輪內部勝出，之後被 Round 17、18 取代） |
+| 時間 | 2026-03-12 |
+| 實驗條件 | A：環形影像三個尺度（0.08、0.8、8 px）的內部序列評分；這一輪沒有外部 GMF |
+| 起點 | 沿用當時的 GeoEdgeAlignSR 訓練線 |
 
-## 先讀原文件
+## 候選與選法
 
-- [ROUND16_EDGEFIT Checkpoint Audit Summary](<selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_SUMMARY_20260312_090623.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_algfit_driftfocus_20260312_090623.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_algfit_lightmono_20260312_090623.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_algfit_pure_20260312_090623.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_edge_highcenter_20260312_090623.md>)
-- [ROUND16_EDGEFIT Multiscale Summary](<selected/reports/ROUND16_EDGEFIT_MULTISCALE_SUMMARY_20260312_090623.md>)
+先用 0.8 px 的中心穩定性排序，再用 8 px 不退步當關卡、0.08 px 當次要依據；部署用的保存點再由「中心鎖定稽核」在三個尺度的保存點裡挑。
 
-## 進入實際檔案
+| 候選 | 綜合分數 | 部署分數 | 選中的保存點 |
+|---|---:|---:|---|
+| **r16_edge_highcenter** | 219.783 | −219.339 | 8 px 那個 |
+| r16_algfit_pure | 228.202 | −228.268 | 0.08 px 那個 |
+| r16_algfit_driftfocus | 228.383 | −229.616 | 0.08 px 那個 |
+| r16_algfit_lightmono | 222.699 | −229.754 | 0.08 px 那個 |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | round16 — Mainline Round Manifest |
-| [README.md](<README.md>) | 1檔 | round16 — EDGEFIT Mainline Shift |
-| [selected/](<selected>) | 12檔 | 歷史選定內容；不代表今日正式採用 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **綜合分數第一名（`algfit_driftfocus`）不是部署選中的那個**；部署看的是稽核後的部署分數。這正是時間線上 R12～R15 那個「初排第一名和最後該採用的可能不同」的教訓。
+2. 這些分數是當時內部評分的組合值，不是外部 GMF 的結果，不能跟後面輪次的外部數字直接比。
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+## 拿資料與重做
 
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
+可重做程度：**partial**。選定的訓練紀錄（各尺度的 monitor 與 attribution 日誌）、稽核報告都在，但重跑仍要依賴這個資料夾以外的舊訓練工具。選定種子是 `selected/current_edgefit_seed.json`（不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡）。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 原始報告
+
+[多尺度摘要](<selected/reports/ROUND16_EDGEFIT_MULTISCALE_SUMMARY_20260312_090623.md>)、[檢查點稽核摘要](<selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_SUMMARY_20260312_090623.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round16.md>)。

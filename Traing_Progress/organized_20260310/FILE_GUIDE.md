@@ -1,32 +1,30 @@
-# legacy/organized_20260310：檔案怎麼找
+# 2026-03-10 批次：三尺度外部驗證與 uint16 微步修正（R7～R10）
 
-[本輪研究卡](<../../docs/reproducibility/experiments/legacy__organized_20260310.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [早期輪次對照](<../../docs/reproducibility/lineage/EARLY_ROUNDS.md>) · [前一個批次 3/09](<../organized_20260309/FILE_GUIDE.md>) · [下一個批次 3/11](<../organized_20260311/FILE_GUIDE.md>)
 
-**研究問題：多尺度、SeqVal、crossscale及uint16微步測試。**
+**一句話：** 第一次用三個尺度做外部 GMF：代表模型在 8 px 可用（標準差 0.245 px），0.8 px 平均很準但標準差太大（0.260 px，變異係數 32%），0.08 px 不穩定、甚至有負步長。資料面最可能的原因是微步影像在訓練前就失去訊號：stage 17、18 的清晰影像存成 8 bit BMP，卷積加雜訊後又量化回 8 bit。這一批把它們改成 uint16 TIFF，再做序列與微步的 R7～R10 探測。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（找出 8 bit 量化吃掉微步訊號，改成 uint16；R7～R10 都未採用） |
+| 時間 | 2026-03-10 |
+| 實驗條件 | A：NTU 三尺度外部 GMF（Pitch 1、0.1、0.01 µm）；程式資料：重建後的 uint16 微步與序列資料 |
+| 起點 | 當時的代表模型 |
 
-## 先讀原文件
+## 代表模型的三尺度外部 GMF
 
-- [Microstep Data Precision Fix 2026-03-10](<reports/MICROSTEP_DATA_PRECISION_FIX_20260310.md>)
-- [pitch0p01um_y_40 POSY Step Stats](<selected_evidence/microstep_uint16_probe/reports/pitch0p01um_y_40_posy_step_stats.md>)
-- [Representative Multiscale GMF POSY Step Comparison](<selected_evidence/representative_multiscale/reports/representative_multiscale_posy_step_summary.md>)
-- [SeqVal vs Crossscale GMF POSY Step Comparison](<selected_evidence/seqval_crossscale_compare/reports/seqval_crossscale_posy_step_summary.md>)
+| 尺度 | 平均步長 | 標準差 | 變異係數 |
+|---|---:|---:|---:|
+| 8 px（1 µm） | 8.017 px | 0.245 px | 3.1% |
+| 0.8 px（0.1 µm） | 0.800 px | 0.260 px | 32.5% |
+| 0.08 px（0.01 µm） | 0.067 px | 0.149 px | 223% |
 
-## 進入實際檔案
+## 讀這些內容要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER.md](<ARCHIVE_POINTER.md>) | 1檔 | organized_20260310 完整歷史與恢復方式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | organized_20260310 歷史批次清單 |
-| [README.md](<README.md>) | 1檔 | organized_20260310 歷史外部驗證批次 |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [selected_evidence/](<selected_evidence>) | 25檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+1. **uint16 修正的證據**：同一個種子重新生成 stage 17 的影像，8 bit 版只有 142 個灰階值、uint16 版有 2,404 個；把新版降回 8 bit，跟舊檔逐像素完全相同。
+2. **R7～R10 的教訓**（見[早期輪次對照](<../../docs/reproducibility/lineage/EARLY_ROUNDS.md>)）：內部步長零波動同時伴隨步長誤差，不能解讀成實際量測零誤差；R9 有兩種驗證來源（val_batch 與 seq_val），分數不能混排；R10 其實是 R9 長跑的第二、三步。
+3. **大型內容已移到 H 槽**（2026-08-01）：完整 928 個檔、2.19 GiB 在 H 槽快照；D 槽保留精度修正報告與 38 份核心證據。恢復方式見 [ARCHIVE_POINTER](<ARCHIVE_POINTER.md>)。
 
-## 必要來源與取得界線
+## 原始報告
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
-
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[微步資料精度修正](<reports/MICROSTEP_DATA_PRECISION_FIX_20260310.md>)、[代表模型三尺度摘要](<selected_evidence/representative_multiscale/reports/representative_multiscale_posy_step_summary.md>)、[uint16 微步探測](<selected_evidence/microstep_uint16_probe/reports/pitch0p01um_y_40_posy_step_stats.md>)、[精選證據說明](<selected_evidence/README.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本批次保存紀錄](<../../docs/reproducibility/experiments/legacy__organized_20260310.md>)。

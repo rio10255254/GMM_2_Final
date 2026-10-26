@@ -1,37 +1,37 @@
-# main/R151_R148v2_AdaptivePSFFusion：檔案怎麼找
+# R151：在 R148v2 上補回可學習的 FFT PSF 加權融合
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R151_R148v2_AdaptivePSFFusion.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [基礎 R148v2](<../R148v2_HybridContextNativePSF/FILE_GUIDE.md>) · [前一輪 R150](<../R150_MatchedGeometryMeanPSF/FILE_GUIDE.md>) · [之後的 R152](<../R152_R148v2_SafeAdaptivePSF/FILE_GUIDE.md>)
 
-**研究問題：恢復可參與學習的光學加權融合。**
+**一句話：** 2026-09-28 把架構圖上的整條自適應 PSF 路徑補回 R148v2：觀測影像做 FFT、25 顆 PSF 各建受限反濾波器、由特徵決定 softmax 權重、在頻域加權後做一次 iFFT，再以有界的殘差比例接回原圖。之前幾輪的已知問題都修了（頻域原點先校正、末層不再全零初始化、殘差比例不會悄悄歸零）。程式與實拍前向都通過，但事先設的可辨識性門檻沒過：用各種方法教模型認 25 顆 PSF，驗證準度都只有 3.6%～5.2%，跟亂猜的 4% 差不多。所以刻意不啟動 8,192 次正式訓練。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（機制能跑，但現有 25 顆 PSF 分辨不出來，沒有正式訓練） |
+| 時間 | 2026-09-28 |
+| 實驗條件 | 程式資料：R148v2 的合成資料，另用同一清晰場景配已知 PSF 做受控配對；一張 1544×2064 實拍只做執行檢查 |
+| 起點 | 只有短測與煙霧測試權重，全部標記為非正式 |
 
-## 先讀原文件
+## 可辨識性測試（全部沒過）
 
-- [R151：在 R148v2 補回自適應 FFT PSF 融合](<reports/R151_DESIGN_AND_PREFLIGHT.md>)
+| 做法 | 結果 |
+|---|---|
+| 原始影像，25 選 1，512 次 | top-1 4.0%、top-5 20.4%（亂猜水準） |
+| 分成四個差異較大的群組，平衡損失 1,024 次 | 平衡準度 25%，只會選同一群 |
+| 改成預測 PSF 的寬度、四階矩、尾部比例 | 相關只有 0.01～0.02 |
+| R148v2 脈絡特徵加頻譜特徵，同一清晰場景配已知 PSF、完全不加雜訊 | top-1 4.5%、top-5 20.25% |
 
-## 進入實際檔案
+報告的判讀：問題不只是權重網路太弱，而是這 25 顆 PSF 造成的可觀察差異，被物體本身的頻率內容蓋過了；硬讓權重變尖，只會做出沒有物理證據的選擇。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [config/](<config>) | 4檔 | 實驗設定、條件與來源鎖定 |
-| [dataset.py](<dataset.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses.py](<losses.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R151_R148v2_AdaptivePSFFusion 研究保存清單 |
-| [model.py](<model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 2檔 | 光學計算與配套 |
-| [README.md](<README.md>) | 1檔 | R151 — R148v2 Adaptive Fourier PSF Fusion |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 8檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [train.py](<train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training_policy.py](<training_policy.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
+## 讀這些內容要知道的事
 
-## 必要來源與取得界線
+1. **補回的路徑真的有接上。** 強制第 1 與第 25 顆 PSF，未縮放的修正差 0.106 灰階；權重估計器梯度 0.517；頻域先融合與逐顆反轉換後融合的最大差 3.6×10⁻⁷；分塊與整張輸出差為 0。
+2. **報告列出的正式訓練前提**（至少一項）：取得差異大於實際雜訊的多狀態 PSF；推論時提供可驗證的拍攝狀態或視野編號當先驗；或先在未見場景達到 top-1 至少 12%、top-5 至少 40%。
+3. **這輪也整理了 R148v2 當初為什麼拿掉多 PSF 選擇**（R140v2 的權重全部 0.125 的五個原因），可以當作光學分支這條線的總結來讀。之後的 R152 改走「凍結 R148v2、加受限的 25 PSF 融合支路」。
 
-精確25PSF、選擇可辨識前測、受限殘差與短測模型。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+`scripts/preflight.py` 檢查接線、梯度、候選敏感度、融合等價與分塊；`scripts/smoke_real_frame.py` 跑一張原尺寸實拍；`train.py --short-updates <n>` 只做可續跑的短訓練。報告明寫：在可辨識性門檻滿足前不要啟動正式訓練。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 原始報告
+
+[設計與前置檢查](<reports/R151_DESIGN_AND_PREFLIGHT.md>)、[README](<README.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R151_R148v2_AdaptivePSFFusion.md>)。

@@ -1,31 +1,60 @@
-# lab/R50_PSFControlDiagnosis：檔案怎麼找
+# Lab R50：Lab 的光學模糊是不是太強了
 
-[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+[研究時間線](<../../../../docs/research/TIMELINE.md>) · [LabSystem 全線](<../../../../docs/reproducibility/lineage/LAB_SYSTEM.md>) · [前一輪 Lab R49](<../R49_CADAnchorRealGeometry/FILE_GUIDE.md>) · [下一輪 Lab R51](<../R51_BlurSourceProbe/FILE_GUIDE.md>)
 
-[本輪研究卡](<../../../../docs/reproducibility/experiments/lab__R50_PSFControlDiagnosis.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
+**一句話：** R48、R49 的實拍角點都失敗了，再訓練之前先檢查訓練資料用的模糊對不對。R50 量了實拍棋盤的邊緣寬度（中位數 7 px），再跟四種合成模糊比：正式 BADS PSF 是 11 px，明顯比實拍更軟；BADS 減半強度剛好 7 px；高斯 9 px，寬度和邊緣強度綜合起來最接近。結論是 BADS PSF 沒有壞，但不適合當唯一的模糊來源。
 
-**研究問題：診斷Lab光學模糊是否過強。**
+| | |
+|---|---|
+| 結果 | **分析**（完整 BADS 比實拍更軟；這輪沒有訓練模型） |
+| 時間 | 2026-06-14 |
+| 實驗條件 | C：實驗室顯微系統、Lab 25 位置 BADS PSF；實拍為 2025-06-05 的棋盤序列（51 張） |
+| 比較對象 | 第 48 類合成棋盤角點資料各 500 張：無模糊、高斯、BADS 強度 0.50 與 0.75、正式 BADS |
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+## 這輪在問什麼
 
-## 先讀原文件
+Lab 模型在實拍棋盤上一直修不好角點，會不會是因為訓練時用的模糊跟真實影像差太多？
 
-- [R50 PSF Control Diagnosis](<reports/R50_RESULTS.md>)
+## 怎麼做
 
-## 進入實際檔案
+- 用同一個邊緣寬度指標量實拍棋盤與五組合成資料，另外記錄邊緣梯度強度。
+- 另外產生兩組減弱的 BADS（強度 0.50 與 0.75）直接比較。
+- 也回頭看 PSF 校正時的驗證：高斯與 BADS 各自重現實拍邊緣的誤差。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R50_PSFControlDiagnosis Manifest |
-| [README.md](<README.md>) | 1檔 | R50 PSF Control Diagnosis |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+## 結果
 
-## 必要來源與取得界線
+| 資料 | 張數 | 邊緣寬度中位數（px） | 跟實拍差 | 綜合排名分數（越小越接近） |
+|---|---:|---:|---:|---:|
+| 實拍棋盤 | 51 | 7.0 | 0 | — |
+| 無模糊合成 | 500 | 0.5 | 6.5 | 18.0 |
+| 高斯 | 500 | 9.0 | 2.0 | **4.1** |
+| BADS 強度 0.50 | 500 | **7.0** | **0** | 6.6 |
+| BADS 強度 0.75 | 500 | 9.0 | 2.0 | 6.1 |
+| 正式 BADS | 500 | 11.0 | 4.0 | 5.6 |
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+PSF 校正驗證的邊緣誤差中位數：高斯 0.0932、BADS 0.1018。
 
-[按用途取得原件](<../../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **BADS 不是錯的。** 它有 25 個位置各自的 PSF，比單一高斯完整，只是當成唯一的模糊來源時太軟。
+2. **只看寬度和綜合來看，答案不同。** 寬度最像的是 BADS 減半；把邊緣強度也算進去，高斯最好。所以下一輪 R51 三種都試，外加混合版。
+3. **報告當時的判斷是：問題比較像答案與退化方式不符，而不是模型能力不夠。** 後來 R51～R53 換了模糊與資料，大偏移角點仍然存在，R54 才確認主要是重建本身會改動角點。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 診斷程式與測試 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)，已在 GitHub |
+| 摘要 JSON、各組統計表、逐張量測表 | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)；3 個檔案共 0.3 MB，但分散在 3 個附件裡，目前要下載約 3.4 GB |
+| 邊緣寬度圖、對照圖、1,000 張減弱 BADS 對照影像 | 只在原電腦上；減弱 BADS 影像可用診斷程式重新產生 |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R50 結果](<reports/R50_RESULTS.md>) | 寬度比較、PSF 校正驗證、判讀 |
+| [README](<README.md>)、[MANIFEST](<MANIFEST.md>) | 完成條件、結論、所有輸出檔的位置 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../../../docs/reproducibility/experiments/lab__R50_PSFControlDiagnosis.md>)與 [Lab 逐輪必要來源核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)。

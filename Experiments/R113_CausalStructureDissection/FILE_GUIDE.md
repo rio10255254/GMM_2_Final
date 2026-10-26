@@ -1,42 +1,59 @@
-# main/R113_CausalStructureDissection：檔案怎麼找
+# R113：拆開 V42、R61、R109 為什麼表現不同
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R113_CausalStructureDissection.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R112](<../R112_V42R109GMFMechanismDecomposition/FILE_GUIDE.md>) · [下一輪 R114](<../R114_ConfidenceGatedRecoverableScratch/FILE_GUIDE.md>) · [R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>) · [V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
 
-**研究問題：拆開渲染能力、學到控制、訓練軌跡與量法。**
+**一句話：** 2026-08-30 回答 R109 到底卡在哪：渲染器的表達能力、學到的控制、訓練軌跡，還是量測本身。結論有三個：R109 的「修正需求」與「邊界支撐」判斷沒有學起來，幾乎是固定值；寬度與法線位移都需要，但同一條邊界上的控制要有沿輪廓方向的連續性，固定平滑不可用；現有渲染器在薄環、月牙、窄間隙有容量上限，需要受限、零局部均值的細節支路。這一輪也修正了 R112 的環形量測，並找出幾個關於 V42 的結構事實。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（沒有產生新模型；找出下一輪要改的三個核心） |
+| 時間 | 2026-08-30 |
+| 實驗條件 | 24 個有真值的合成場景（8 類形狀、亮暗兩種極性）、36 顆柱 SEM、均華 100 張、5×／20×／50× 實拍 |
+| 被拆解的模型 | V42 第 120 輪、Lab R61 v16、R109 第 48 輪（都唯讀） |
 
-## 先讀原文件
+## 主要發現
 
-- [R113_CausalStructureDissection 研究保存清單](<MANIFEST.md>)
-- [R113 corrected ring-measurement findings](<MEASUREMENT_QA_FINDINGS.md>)
-- [R113 最終發現](<R113_FINDINGS_ZH.md>)
-- [R113 Causal Structure Dissection](<README.md>)
-- [R113 模型與訓練影像超深度剖析](<deep_audit/DEEP_AUDIT_FINDINGS_ZH.md>)
-- [R114 Confidence-Gated Recoverable MOSR：完整總計畫](<deep_audit/R114_MASTER_PLAN_ZH.md>)
+**模型結構：**
 
-其餘原報告見[本輪完整研究卡](<../../docs/reproducibility/experiments/main__R113_CausalStructureDissection.md>)。
+| 發現 | 數字 |
+|---|---|
+| V42 與 R61 是同一份模型程式 | 135 個共有權重張量中 112 個逐位元相同；到 `u1` 為止的學習層都沒變 |
+| V42 的主要新行為來自最後的原圖錨定 | 拿掉後最終影像的中位改動 38.98 灰階 |
+| **V42 的弱 PSF 分支等於沒有作用** | 拿掉後改動剛好 0 灰階，因為學到的強度係數是 0 |
+| R61 檢查點內的 PSF 行為與 PSF 關閉的部署方式不同 | 兩者中位差 5.19 灰階 |
+| R109 的邊界支撐幾乎是常數 | 平均 0.432045～0.432056，空間標準差最大 0.00027 |
 
-## 進入實際檔案
+**R109 的表達上限（用真值直接最佳化控制）：** 學到的控制中位輪廓誤差 0.0930 px；用真值最佳化的密集控制可以降到 0.0058 px，但最難的薄環仍有 3.240 px。一般案例是控制問題，極端案例是渲染器問題。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 2檔 | 實驗設定、條件與來源鎖定 |
-| [deep_audit/](<deep_audit>) | 17檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R113_CausalStructureDissection 研究保存清單 |
-| [MEASUREMENT_QA_FINDINGS.md](<MEASUREMENT_QA_FINDINGS.md>) | 1檔 | R113 corrected ring-measurement findings |
-| [next_probe/](<next_probe>) | 18檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [R113_CAUSAL_DISSECTION.ipynb](<R113_CAUSAL_DISSECTION.ipynb>) | 1檔 | 原配套檔案 |
-| [R113_FINDINGS_ZH.md](<R113_FINDINGS_ZH.md>) | 1檔 | R113 最終發現 |
-| [README.md](<README.md>) | 1檔 | R113 Causal Structure Dissection |
-| [results/](<results>) | 5檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 29檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+**深度稽核：** 正式的邊界判斷 AUC 只有 0.496（輸出固定在 0.508），一個簡單的固定特徵分類器卻能到 0.870，所以是訓練失敗、不是輸入沒資訊；密集陣列只占 7.6% 的資料卻占 67.7% 的邊界權重；展開後清楚／不修改樣本實際占 54.7%，而且在位移頭上的總梯度是退化樣本的 5.92 倍、方向相反；寬度與輪廓兩個目標在寬度頭上的方向餘弦 −0.982。
 
-## 必要來源與取得界線
+**量測修正（R112 的環形量測）：** 改用原生解析度、浮點座標對齊、雙線性極座標取樣、連續的半高交點；原圖、V42、R109 的主要半徑標準差分別是 0.398、0.078、0.233 px。R112 報告的寬度與外部分數相關不再成立，「變異為 0」是量化假象。
 
-V42／R61／R109固定模型、匹配來源及每個干預設定。
+## 讀這些內容要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **固定平滑的兩面：** 讓 SEM 36/36 顆、12/12 張曝光都改善，卻讓 R73 五類未見形狀全部退步；所以不能用。
+2. **細節支路的微實驗**（`next_probe/`）最後只用了 0.057 灰階、目標利用率 0.051，判定為「直接監督仍不足以啟動足夠的有界細節」；它只是機制測試。
+3. **R114 的完整計畫**寫在 [deep_audit/R114_MASTER_PLAN_ZH.md](<deep_audit/R114_MASTER_PLAN_ZH.md>)；下一輪仍必須全新從零，不接續 R109、V42 或 R61 的權重。
+4. 沒有候選先通過全部物理條件，所以這輪沒有再跑外部 GMF，也沒有用 GMF 反向選模型。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 程式（29 支）、設定、測試、Notebook | 本資料夾 [scripts/](<scripts>)、[config/](<config>)、[tests/](<tests>)、[R113_CAUSAL_DISSECTION.ipynb](<R113_CAUSAL_DISSECTION.ipynb>)，已在 GitHub |
+| 結構、表達上限的發現 | [results/](<results>) |
+| 深度稽核、細節支路微實驗 | [deep_audit/](<deep_audit/README.md>)、[next_probe/](<next_probe/README.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [最終發現](<R113_FINDINGS_ZH.md>) | 先讀這份：三個核心、重要證據、下一輪架構 |
+| [環形量測修正](<MEASUREMENT_QA_FINDINGS.md>) | 修了什麼、修正後的 100 張結果、哪些發現經不起修正 |
+| [深度稽核](<deep_audit/DEEP_AUDIT_FINDINGS_ZH.md>) | R109 的控制器為什麼死掉 |
+| [結構發現](<results/structure/STRUCTURE_FINDINGS.md>)、[渲染器表達上限](<results/r109_expressivity/FINDINGS.md>) | V42／R61／R109 的結構關係與因果介入 |
+| [細節支路設計決定](<next_probe/DESIGN_DECISION.md>) | 微實驗的設計與結果 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R113_CausalStructureDissection.md>)。

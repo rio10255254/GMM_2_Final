@@ -1,34 +1,25 @@
-# legacy/round23：檔案怎麼找
+# Round 23：pairmix 線上的絕對中心微調（診斷）
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round23.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 22](<../../organized_20260315/round22/FILE_GUIDE.md>) · [同日的 Round 24](<../round24/FILE_GUIDE.md>)
 
-**研究問題：R22之後的歷史候選。**
+**一句話：** 2026-03-16 下午，R22 在外部沒贏 R18 之後的第一個嘗試：在 pairmix 估計器上加一個錨點一致性要求，用三種權重（0.03、0.05、0.10）微調。三個候選的內部數字完全相同，也跟 R22 的 `stepguard` 幾乎一樣（中心 0.1845、步長 0.0658），表示微調沒有把最佳保存點往前推。只是診斷，沒有升級，也沒有做外部比較。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（診斷性負結果：微調沒有移動模型） |
+| 時間 | 2026-03-16 下午 |
+| 實驗條件 | A：環形影像 0.8 px 的內部稽核（8 px 為總體關卡） |
+| 起點 | R22 的 pairmix 線 |
 
-## 先讀原文件
+## 讀這些數字要知道的事
 
-- [ROUND23_ANCHOR_CONSISTENCY AUDIT_0P8 Summary](<selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_SUMMARY_20260316_155229.md>)
-- [Process Probe Audit](<selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_r23_pac_w003_20260316_155229.md>)
-- [Process Probe Audit](<selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_r23_pac_w005_20260316_155229.md>)
-- [Process Probe Audit](<selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_r23_pac_w010_20260316_155229.md>)
-- [ROUND23_ANCHOR_CONSISTENCY AUDIT_8P0 Summary](<selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_SUMMARY_20260316_155320.md>)
-- [Process Probe Audit](<selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_r23_pac_w003_20260316_155320.md>)
+1. **三個權重得到逐位相同的結果**，加上數字等於 R22 起點，這通常代表最佳保存點仍是起始狀態，新要求沒有實際改變模型。
+2. 跟 [Round 24](<../round24/FILE_GUIDE.md>) 一起看：一個從 pairmix 線、一個從單幀線做同樣的絕對中心微調，兩者都沒動，所以下一步改成[從零訓練](<../round25/FILE_GUIDE.md>)。
 
-其餘原報告見[本輪完整研究卡](<../../../docs/reproducibility/experiments/legacy__round23.md>)。
+## 拿資料與重做
 
-## 進入實際檔案
+可重做程度：**historical-only**。選定種子 `selected/current_round23_anchor_seed.json` 不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | Round 23 — Anchor Consistency Diagnostic |
-| [README.md](<README.md>) | 1檔 | round23 — Pairmix Abs-Center Fine-Tune Diagnostic |
-| [selected/](<selected>) | 10檔 | 歷史選定內容；不代表今日正式採用 |
+## 原始報告
 
-## 必要來源與取得界線
-
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
-
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[錨點一致性決策](<selected/reports/ROUND23_ANCHOR_CONSISTENCY_DECISION_20260316_155400.md>)、[錨點一致性摘要](<selected/reports/ROUND23_ANCHOR_CONSISTENCY_SUMMARY_20260316_155229.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round23.md>)。

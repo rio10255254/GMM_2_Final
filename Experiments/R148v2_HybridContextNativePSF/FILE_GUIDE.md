@@ -1,44 +1,100 @@
-# main/R148v2_HybridContextNativePSF：檔案怎麼找
+# R148v2：論文模型 R152 的底座
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R148v2_HybridContextNativePSF.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一版 R148（中止）](<../R148_MeasurementStableNativePSF/README.md>) · [之前的 R147](<../R147_FullResPSFConsistency/README.md>) · [建在它上面的 R152](<../R152_R148v2_SafeAdaptivePSF/FILE_GUIDE.md>) · [原始說明](<README.md>)
 
-**研究問題：一次多尺度脈絡加三段受控原尺寸邊界。**
+**一句話：** 讓網路只做一次多尺度的「脈絡分析」，不直接畫出邊界；邊界的位置交給三個參數各自獨立、作用範圍受控的原尺寸階段來決定。8,192 次訓練後在 930 張實拍上，直徑重拍波動 13.25 nm，是當時 12 個模型裡最好的，短步位移也接近最好。它沒有論文架構需要的多 PSF 融合模組，所以之後的 R152 把它整個凍結、再接上那個模組；**R152 對 RAW 的改善，幾乎全部來自 R148v2。**
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**；作為 R152 的固定底座 |
+| 時間 | 2026-09 下旬：短測與預檢、8,192 次正式訓練；09-26 完成 930 張驗證與最終稽核 |
+| 實驗條件 | D：均華 20× 物鏡 + PI 平台，2026-09-03 拍攝的 30 趟 × 31 位置 |
+| 參數 | 1,194,406 個（數字取自 R152 的完整紀錄） |
 
-## 先讀原文件
+> **閱讀提醒：** 本資料夾的 [原始說明](<README.md>) 停在「正式 8,192 次訓練正在背景執行」的狀態，之後沒有再更新；R148v2 也**沒有寫最終結果報告**。本頁的最終數字取自原電腦上的 `results/real_validation_ranking.csv` 與 `results/final_audit.json`（這些檔案已保存在 Release 裡，但不在 GitHub 程式樹），以及 [R152 的完整紀錄](<../R152_R148v2_SafeAdaptivePSF/reports/R152_COMPLETE_MODEL_AND_EXPERIMENT_RECORD_20260929.md>)。
 
-- [R148v2 修正版實作與短測結果](<reports/R148v2_IMPLEMENTATION.md>)
-- [R148v2 固定門檻](<reports/R148v2_VALIDATION_PLAN.md>)
+## 在研究裡的位置
 
-## 進入實際檔案
+9 月下旬的 R141～R147 試了各種把實測 PSF 放進資料與模型的方法，大多讓短步或輪廓退步。R147 修正了 PSF 的尺度用法，但留下縮圖造成的相位問題。R148 改成讓決定邊界的主幹全部留在原尺寸，結果同一個大範圍殘差網路要跑好幾遍，依賴範圍超出訓練資料的邊界，正式訓練只跑了 62 次、沒有留下保存點就停掉。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [config/](<config/README.md>) | 5檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data/README.md>) | 769檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [dataset.py](<dataset.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation/README.md>) | 611檔 | 量測介面、固定參照、設定或比較內容 |
-| [infer.py](<infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses.py](<losses.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R148v2 身分 |
-| [model.py](<model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 1檔 | 光學計算與配套 |
-| [README.md](<README.md>) | 1檔 | R148v2 — 多尺度脈絡與原尺寸邊界分工 |
-| [reports/](<reports/README.md>) | 2檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results/CONTENTS.md>) | 2檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts/README.md>) | 21檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [train.py](<train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training_policy.py](<training_policy.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [verify_package.py](<verify_package.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [weights/](<weights>) | 1檔 | 模型檔或取得說明；最佳、最後及短測版本需分清 |
+R148v2 是 R148 的修正版：保留多尺度的優點，但不讓它直接決定邊界，也不再重複同一個大網路。
 
-## 必要來源與取得界線
+## 這輪在問什麼
 
-精確8192基底、共用3072視圖生成鏈與研究PSF。
+保留一次多尺度脈絡分析、但不讓它直接輸出銳利邊界，再由三個職責獨立、範圍受控的原尺寸階段完成位置與邊界，能不能同時避開 R148 的大範圍依賴問題和 R147 的縮圖相位問題？
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 怎麼做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+- **一次多尺度脈絡：** 編碼／解碼只跑一次，輸出低強度的脈絡特徵，不直接加到影像上。
+- **三個原尺寸階段：** 各自有參數，不共用同一個完整網路；每階段半徑 20 像素。整個模型的依賴半徑 110 像素，小於訓練資料 384 像素對中央 96 像素答案所留的 144 像素邊界。
+- **PSF 提示只算一次：** 從輸入照片計算，不在三個階段反覆擴大依賴範圍。
+- **邊界答案：** 來自獨立生成幾何的有號距離，模型仍要透過輸出影像的亮暗梯度接受量測，不另設幾何輸出頭。
+- **資料：** 共用 R148 已核對的 3,072 個視圖（768 個母場景），不複製、不修改；SEM、PI 與實拍都不當訓練答案。
+- **事先寫定的門檻**（[固定門檻](<reports/R148v2_VALIDATION_PLAN.md>)）：資料逐檔未變、幾何可用兩種精細度重算一致、理論依賴範圍小於資料邊界、整數一像素與不同裁切相位不產生超過 0.001 像素的額外圓心差、各種操作的梯度方向正確、兩個初始化各 512 次短測都要降低固定開發誤差。930 張實拍不參與任何選擇。
+
+**短測結果**（[實作與短測](<reports/R148v2_IMPLEMENTATION.md>)）：相同 512 次、相同資料、兩個起點，混合脈絡版的開發誤差平均比純原尺寸低 1.05%，兩個起點方向一致；學習後的一像素圓心額外差在 0 到 1.08×10⁻⁵ 像素。原報告明說這個收益很小，只支持「保留低強度脈絡分支進入正式訓練」，不足以宣稱優於歷史模型。
+
+## 結果
+
+930 張、8,370 顆圓，12 個模型用同一套量測程式（單位 nm，越小越好；括號內是 12 個模型中的排名）：
+
+| 模型 | 短步位移平均絕對差 | 直徑重拍波動 | 輪廓重拍波動 | 與 SEM 的平均直徑差 |
+|---|---:|---:|---:|---:|
+| RAW | 8.167（12） | 32.750（12） | 63.758（11） | 169.883（3） |
+| R140v2 | **3.640（1）** | 18.581（6） | 18.430（3） | 213.141（12） |
+| R137 | 3.917（2） | 14.262（2） | 17.710（2） | 207.084（10） |
+| R145 | 3.990（3） | 21.013（8） | **16.001（1）** | 191.887（5） |
+| **R148v2** | 4.003（4） | **13.252（1）** | 18.600（6） | 204.281（8） |
+| R143 | 4.425（9） | 24.161（10） | 19.807（9） | **95.230（1）** |
+| R139 | 8.167（11） | 32.747（11） | 63.758（12） | 169.882（2） |
+
+完整 12 個模型（另含 R129、R130 Clean、R138、R146、R147）與所有欄位，見原電腦上的 `results/real_validation_ranking.csv`。最終稽核 `passed = true`，8,370 顆圓全部獨立重新擬合，跟原讀值的最大差 7.5×10⁻⁷ 像素。
+
+## 讀這些數字要知道的事
+
+1. **沒有一個模型每一欄都最好。** R148v2 的強項是直徑重拍穩定度；短步位移的冠軍是 R140v2，輪廓重拍是 R145，跟 SEM 的直徑差是 R143。R148v2 的特點是各項都在前段、沒有明顯短板（最差直徑偏移排第 8）。
+2. **更穩不等於更準。** 跟 SEM 的直徑差，R148v2 比 RAW 大約 34 nm。
+3. **SEM 是同樣本的參考。** 原摘要明寫，它不是獨立的絕對準確度。
+4. **速度數字不能拿來排名。** 量測時有另一個 GPU 訓練程序在跑，所以前向中位數 3.07 秒只是當時的實際運算時間，不是受控的速度比較。R152 的報告另有同條件的速度比較。
+5. **兩個順帶的佐證。** R139 每一欄都幾乎等於 RAW，印證它「訓練退化成近乎原圖」的結論；R143 的 SEM 直徑差最小，但最差直徑偏移是 12 個模型裡最大的，印證「尺寸對照變小主要是一致的直徑收縮」。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 程式、設定、資料清單、量測介面 | 本資料夾（`model.py`、`train.py`、`infer.py`、[config/](<config/README.md>)、[data/](<data/README.md>)、[evaluation/](<evaluation/README.md>)），已在 GitHub |
+| 第 8,192 次的正式權重（`runs/formal_8192/checkpoints/step08192.pth`，約 15.6 MB，SHA-256 開頭 `8daddf82`） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的 `research-fixed-models-013.zip`。另外，R152 用的「原起始參照」（約 5.9 MB）在 [`research-training-kits-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016) 的 `research-r152-frozen-inputs-001.zip`；兩者檔案大小不同，不是同一個檔，要逐位元組對應原紀錄時以前者為準 |
+| 12 模型比較表、930 張圓心、最終稽核、訓練深度分析（約 254 MB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，目前要下載約 4.1 GB |
+| 訓練資料 | 與 R152 相同的 768 個母場景，可用固定種子重新產生，見 [R152 生成包](<../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的缺口與限制：**
+>
+> - **沒有最終結果報告。** 結果只以 CSV／JSON 形式存在，而且不在 GitHub 程式樹裡。整理計畫會把這些小檔補回，讓本頁的數字在 GitHub 上點得到出處。
+> - **930 張的逐張重建陣列（約 9.5 GB）與訓練途中的保存點（約 1.1 GB）只在原電腦上**，依保存原則不上傳；需要時用正式權重與 930 張原圖重新推論。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [實作與短測](<reports/R148v2_IMPLEMENTATION.md>) | 為什麼這樣設計、資料與幾何核對、兩個起點的 512 次短測 |
+| [固定門檻](<reports/R148v2_VALIDATION_PLAN.md>) | 正式訓練前必須通過的條件 |
+| [預檢第一次停止](<results/PREFLIGHT_FINAL_FAILURE_V1.md>) | 位置門檻第一次停下的紀錄 |
+| [原始說明](<README.md>) | 假說、設計與當時的狀態，原文保留 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R148v2_HybridContextNativePSF.md>)。當時的分支是 `sandbox/r148v2-hybrid-context`。
+
+## 資料夾裡有什麼
+
+| 位置 | 內容 |
+|---|---|
+| `model.py`、`train.py`、`infer.py`、`dataset.py`、`losses.py`、`utils.py`、`training_policy.py` | 模型與訓練程式 |
+| [config/](<config/README.md>) | 設定與來源鎖 |
+| [data/](<data/README.md>) | 共用資料清單 |
+| [evaluation/](<evaluation/README.md>) | 量測介面與固定參照 |
+| [calibration/](<calibration>)、[optical/](<optical>) | PSF 與光學計算 |
+| [scripts/](<scripts/README.md>) | 預檢、驗證、量測與稽核 |
+| [weights/](<weights>) | 權重的取得說明 |
+| [reports/](<reports/README.md>)、[results/](<results/CONTENTS.md>) | 原始報告與結果（大部分結果見上方說明） |
+| [MANIFEST.md](<MANIFEST.md>) | 研究保存清單 |

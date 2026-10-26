@@ -1,36 +1,78 @@
-# main/R63_CausalBoundaryMotionAblation：檔案怎麼找
+# R63：MOSR 的哪個設計真的有用
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R63_CausalBoundaryMotionAblation.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [被拆解的 V42 流程](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>) · [下一輪 R64](<../R64_IsocontourDisplacementReanalysis_20260724/FILE_GUIDE.md>)
 
-**研究問題：拆開幾何、位移與安全上採樣的貢獻。**
+**一句話：** 為了在論文裡說清楚 MOSR 的每個設計各負責什麼，2026-07-16 起做了一輪大型消融：16 個條件、各 2 個種子，共 32 次訓練、18,272 張重建，量測規則在看結果前就凍結。完整 MOSR 相對原圖的改善很穩（四組位移序列合併，九顆柱不一致量降 60.5%）；但拆到單一機制時，只有兩個站得住：**原圖位置錨定**是邊界安全裝置，**位移安全上採樣**讓不同柱子之間的位移更一致（約 14%）。其他幾何、位移損失大多不到預先設定的門檻。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（共同起點續訓，不是從零的因果比較） |
+| 時間 | 2026-07-16 開始，07-17 修訂協定並完成量測 |
+| 實驗條件 | C：實驗室顯微系統；6/18 的 50×、20× CD 影像與九顆柱 SEM，7 月的四組位移序列，以及 360 個合成位移案例 |
+| 起點 | V42 完整包裡的 V41 最佳保存點，每個條件用 V42 的訓練方式續訓 40～60 輪 |
 
-## 先讀原文件
+## 這輪在問什麼
 
-- [R63 MOSR 因果消融實驗報告](<reports/R63_RESULTS.md>)
+在光學先驗固定不動的前提下，靜態幾何錨定、相對位移一致性、位移安全上採樣、原圖位置錨定、邊界修正頭、品質閘，各自對 CD 和位移有多少貢獻？
 
-## 進入實際檔案
+## 怎麼做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [CHART_MAP.md](<CHART_MAP.md>) | 1檔 | R63 Chart Map |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R63 Manifest |
-| [PROTOCOL.md](<PROTOCOL.md>) | 1檔 | R63 Pre-registered Protocol |
-| [PROTOCOL_REVISION_LOG.md](<PROTOCOL_REVISION_LOG.md>) | 1檔 | R63 Protocol Revision Log |
-| [README.md](<README.md>) | 1檔 | Round 63 — Causal Boundary and Motion Ablation |
-| [REPORT_PLAN.md](<REPORT_PLAN.md>) | 1檔 | R63 Technical Report Plan |
-| [reports/](<reports/README.md>) | 2檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results/README.md>) | 838檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts/README.md>) | 38檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 5檔 | 原檢查程式；不是研究結果本身 |
+- **16 個條件：** 幾何錨定與位移一致性的 2×2 設計；七個細分損失逐一移除；邊界修正頭、原圖位置錨定、品質閘三個輸出模組移除後重訓；位移安全上採樣對一般上採樣的匹配比較。另外對同一個訓練好的模型，在推論時逐一關掉三個輸出模組。
+- **公平性：** 同一起點、固定資料切分、兩個固定種子、同樣的訓練預算與挑選規則；PSF 檔案與光學設定在所有條件都一樣，從沒拿掉 PSF。
+- **判定門檻（事先寫在 `PROTOCOL.md`）：** 兩個種子同方向、效果至少 10%、95% 配對區間高於零、主要防護指標惡化不超過 15%。
 
-## 必要來源與取得界線
+## 結果
 
-共同起點、兩個種子、固定分組、各消融設定與光學來源。
+**完整 MOSR 對原圖：**
 
-原訓練名單的complete=true表示當時完成訓練；不代表今天32個選中模型都還在。現在已保存31個，原第24輪的其中一個模型仍缺。[缺件與原清理證據](<../../docs/reproducibility/round_source_followthrough_20261022/README.md>)。
+| 指標 | 原圖 | 完整 MOSR | 改善 |
+|---|---:|---:|---:|
+| 50× CD 中位誤差 | 96.34 nm | 78.54 nm | 18.5% |
+| 20× CD 中位誤差 | 190.39 nm | 120.25 nm | 36.8% |
+| 四組合併：逐步位移波動 | 11.64 nm | 8.49 nm | 27.0% |
+| 四組合併：九顆柱不一致量 | 17.63 nm | 6.96 nm | 60.5% |
+| 四組合併：對指令的絕對誤差 | 9.54 nm | 6.70 nm | 29.8% |
+| 50× 外圍振鈴 | — | — | **惡化 86%** |
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+**兩個站得住的機制：**
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 機制 | 移除或換掉的代價 | 判讀 |
+|---|---|---|
+| 原圖位置錨定 | 20× CD 誤差 +88.9 nm（+74%），兩倍率振鈴 +246%／+392%；推論時直接關掉，CD 影像連量測條件都過不了 | 防止邊界和亮暗結構脫離原圖；50× 的 CD 數字反而變好，所以不是「所有 CD 都更準」 |
+| 位移安全上採樣 | 換成一般上採樣，九顆柱不一致量 +0.98 nm（+14.3%，95% CI 0.21～1.71） | 改善不同位置之間的相對位移一致；逐步波動和合成位移誤差沒有一致改善 |
+
+**沒有站得住的：** 廣義幾何錨定、廣義位移一致性、相鄰影格一致性、形狀幾何、全域邊界位置、邊界保護帶、區域邊界老師、已知位移監督、平移等變性、邊界修正頭、品質閘。
+
+## 讀這些數字要知道的事
+
+1. **不是從零的消融。** 所有條件從同一個已訓練好的權重續訓，所以量的是「保留某機制的邊際價值」，其他機制可能在重訓中補償。
+2. **只有兩個種子。** 信賴區間主要描述柱、步驟、案例的變異，不等於很多次獨立訓練的分布；細分比較也沒有做多重比較校正。
+3. **報告的「完整 MOSR」是 R63 自己的 `full_control`**，用 V42 的方式從 V41 續訓 60 輪，數字跟 V42 第 120 輪接近但不相同。
+4. **`results/` 下每個條件都有一份 `UNIFIED_AUDIT_REPORT_TW.md`，表頭寫「V42」，但內容是該條件自己的模型**（工具的標籤是寫死的）。
+5. **換量法結論會變。** 7/24 的 [R64](<../R64_IsocontourDisplacementReanalysis_20260724/FILE_GUIDE.md>) 用等灰階輪廓量法與平台實際回授重算這 16 個版本：原圖位置錨定對九顆柱一致性的作用變得最明顯（+35%），位移安全上採樣降為趨勢。兩套結果都保留。
+6. **外部 GMF 沒有做**，因為當時找不到原始影像；報告明寫沒有拿舊重建圖冒充原圖。
+7. 執行中顯示卡驅動中斷過三次，都用相同設定續跑，最後完整性檢查通過。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 協定、修訂紀錄、圖表對照、程式 | 本資料夾 [PROTOCOL.md](<PROTOCOL.md>)、[PROTOCOL_REVISION_LOG.md](<PROTOCOL_REVISION_LOG.md>)、[CHART_MAP.md](<CHART_MAP.md>)、[scripts/](<scripts/README.md>)，已在 GitHub |
+| 彙總結果、主張稽核、各條件量測 | [results/evaluation/aggregate/](<results/evaluation/aggregate/README.md>)，已在 GitHub |
+| 24 張圖 | PDF 版在 Release [`research-project-context-20261021`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-project-context-20261021)（要下載約 0.9 GB 的附件）；PNG 版只在原電腦上 |
+| 32 次訓練的選中保存點 | Release [`research-priority-sources-20261022`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-priority-sources-20261022) 的一個附件（31 個檔案、約 545 MB） |
+| 起點模型與資料切分 | [V42 完整包](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 18,272 張重建影像只在原電腦上。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R63 結果](<reports/R63_RESULTS.md>)（另有 [HTML 版](<reports/R63_RESULTS.html>)） | 結論、完整 MOSR 對原圖、各機制消融、可以寫與不建議寫的論文句子、24 張圖的用途 |
+| [README](<README.md>) | 假設、16 個條件、主要證據 |
+| [MANIFEST](<MANIFEST.md>) | 起點模型、固定資料、身分 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R63_CausalBoundaryMotionAblation.md>)。

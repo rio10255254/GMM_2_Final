@@ -1,32 +1,36 @@
-# legacy/round18：檔案怎麼找
+# Round 18 CENTERPUSH：再加重中心權重，成為當時採用的基線
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round18.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 17](<../round17/FILE_GUIDE.md>) · [下一輪 Round 19](<../round19/FILE_GUIDE.md>) · [跟 R22 的外部比較](<../../organized_20260316/external_compare_round18_round22/reports/EXTERNAL_COMPARE_R18_R22_SUMMARY.md>)
 
-**研究問題：中心位置約束的歷史基準。**
+**一句話：** 2026-03-13 下午，延續 Round 17，進一步提高中心相關的權重。部署選中 `r18_ec_highcenter`：0.8 px 的中心誤差仍停在約 0.85 的平台沒突破，但整體部署分數最穩，所以成為外部比較時代之前正式採用的內部基線。3/16 在 `external_compare_round18_round22` 跟 Round 22 做外部 GMF 比較：Round 22 在 0.8 px 主戰場沒有贏，所以 Round 18 **維持採用**；之後才由 Round 25 那條從零訓練的路線取代。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **採用**（當時的內部基線；R18 對 R22 的外部比較後仍維持，之後由 R25 路線取代） |
+| 時間 | 2026-03-13 下午 |
+| 實驗條件 | A：環形影像三個尺度（0.08、0.8、8 px）的內部序列評分；這一輪另外保存了外部重建與 GMF 驗證資料 |
+| 起點 | Round 17 的路線 |
 
-## 先讀原文件
+## 候選與選法
 
-- [ROUND18_CENTERPUSH Checkpoint Audit Summary](<selected/reports/ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_SUMMARY_20260313_142259.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_r18_af_highcenter_20260313_142259.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_r18_ec_balanced_20260313_142259.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_r18_ec_highcenter_20260313_142259.md>)
-- [Universal Checkpoint Audit](<selected/reports/ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_r18_ec_stepmag_up_20260313_142259.md>)
-- [ROUND18_CENTERPUSH Multiscale Summary](<selected/reports/ROUND18_CENTERPUSH_MULTISCALE_SUMMARY_20260313_142259.md>)
+| 候選 | 綜合分數 | 部署分數 | 選中的保存點 |
+|---|---:|---:|---|
+| **r18_ec_highcenter** | 350.209 | −112.256 | 8 px 那個 |
+| r18_ec_stepmag_up | 350.254 | −112.580 | 8 px 那個 |
+| r18_ec_balanced | 350.213 | −117.199 | 8 px 那個 |
+| r18_af_highcenter | 358.186 | −123.994 | 0.8 px 那個 |
 
-## 進入實際檔案
+選中候選在三個保存點上的稽核分數（0.08／0.8／8 px）：8 px 那個是 17.949／8.762／22.527，另兩個都是 13.734／8.000／21.898。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | round18 — Mainline Round Manifest |
-| [README.md](<README.md>) | 1檔 | round18 — CENTERPUSH Adopted Legacy Baseline |
-| [selected/](<selected>) | 12檔 | 歷史選定內容；不代表今日正式採用 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **「0.8 px 中心誤差約 0.85 的平台」出自本批次 README 的總結**，這份資料夾的稽核表只有綜合分數。
+2. 批次 README 的判讀：到這裡，8 px 與步長誤差大致已控制住，真正沒解掉的是 0.8 px（0.1 µm）環形的絕對中心穩定性。
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+## 拿資料與重做
 
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
+可重做程度：**partial**。選定訓練紀錄、報告與外部驗證資料都保存了，但重跑仍要依賴主專案工具與歷史權重。選定種子 `selected/current_centerpush_seed.json`（不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡）。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 原始報告
+
+[多尺度摘要](<selected/reports/ROUND18_CENTERPUSH_MULTISCALE_SUMMARY_20260313_142259.md>)、[檢查點稽核摘要](<selected/reports/ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_SUMMARY_20260313_142259.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round18.md>)。

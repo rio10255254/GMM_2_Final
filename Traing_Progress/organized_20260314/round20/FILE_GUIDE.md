@@ -1,33 +1,39 @@
-# legacy/round20：檔案怎麼找
+# Round 20：0.8 px 平台是不是選模規則造成的（流程驗證）
 
-[本輪研究卡](<../../../docs/reproducibility/experiments/legacy__round20.md>) · [全部研究分區](<../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../../docs/research/TIMELINE.md>) · [本批次說明](<../README.md>) · [早期輪次操作指南](<../../../docs/operations/LEGACY_ROUNDS_OPERATIONS.md>) · [前一輪 Round 19](<../../organized_20260313/round19/FILE_GUIDE.md>) · [接著的診斷矩陣](<../diagnostics/FILE_GUIDE.md>)
 
-**研究問題：固定基準的流程前測。**
+**一句話：** 2026-03-14 不是新模型競賽，而是驗證一個懷疑：Round 19 沒突破，是不是因為第 0 輪的基準保存點直接佔住了「最佳」位置，讓新的損失沒機會成熟？四個候選（含一個控制組）只跑 0.8 px 單尺度。結果是否定的：解除限制的候選在家族排名上看起來較好，但重新稽核後控制組仍是最好，而且四個候選最後都回到第 0 輪基準，中心誤差相對控制組的改善是 0。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（基準期霸占選模的假說沒有被支持） |
+| 時間 | 2026-03-14 |
+| 實驗條件 | A：環形影像 0.8 px 單尺度的內部流程探針；沒有外部 GMF |
+| 起點 | Round 19 的 `r19_abs_anchor`（或 `r19_abs_strong`） |
 
-## 先讀原文件
+## 結果
 
-- [ROUND20_PROCESS_PROBE Audit Summary](<selected/reports/ROUND20_PROCESS_PROBE_AUDIT_SUMMARY_20260314_205446.md>)
-- [Process Probe Audit](<selected/reports/ROUND20_PROCESS_PROBE_AUDIT_r20_ctrl_r19aa_20260314_205446.md>)
-- [Process Probe Audit](<selected/reports/ROUND20_PROCESS_PROBE_AUDIT_r20_unlock_r19aa_20260314_205446.md>)
-- [Process Probe Audit](<selected/reports/ROUND20_PROCESS_PROBE_AUDIT_r20_unlock_r19as_20260314_205446.md>)
-- [Process Probe Audit](<selected/reports/ROUND20_PROCESS_PROBE_AUDIT_r20_unlocklong_r19aa_20260314_205446.md>)
-- [ROUND20_PROCESS_PROBE Summary](<selected/reports/ROUND20_PROCESS_PROBE_SUMMARY_20260314_205446.md>)
+| 候選 | 設定 | 稽核後最佳中心誤差 | 最佳步長誤差 |
+|---|---|---:|---:|
+| **r20_ctrl_r19aa**（控制組） | 基準可以當最佳、4 輪 | **0.6487** | 0.2482 |
+| r20_unlock_r19as | 基準不能當最佳、8 輪 | 0.6593 | 0.2391 |
+| r20_unlock_r19aa | 基準不能當最佳、4 輪 | 0.6598 | 0.2398 |
+| r20_unlocklong_r19aa | 基準不能當最佳、8 輪 | 0.6598 | 0.2398 |
 
-## 進入實際檔案
+## 讀這些數字要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | round20 — Legacy Round Manifest |
-| [README.md](<README.md>) | 1檔 | round20 — Process Probe Round |
-| [ROUND20_POSTMORTEM.md](<ROUND20_POSTMORTEM.md>) | 1檔 | ROUND20 POSTMORTEM |
-| [selected/](<selected>) | 8檔 | 歷史選定內容；不代表今日正式採用 |
+1. **問題不是規則偏愛基準，而是之後訓練出的保存點本身沒有超越基準**：稽核時四個候選的最佳都是第 0 輪，跟第 0 輪的中心誤差差值都是 0。
+2. **這裡的中心誤差是這套流程探針的讀法**，跟 Round 19 README 的 0.8560 不是同一套稽核程序，不能直接比。
+3. 第一次啟動因程序生命週期問題中途停止，重新以分離的背景程序跑完；失敗日誌保留在 `archive/logs/`。
 
-## 必要來源與取得界線
+## 之後怎麼走
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+這一輪排除了「再調基準是否可當最佳、最早可選輪次、4 輪對 8 輪」這類方向，剩下兩條：估計器這邊（邊緣重心是否有絕對中心偏差的下限）與標籤這邊（各階段的中心監督是否不一致）。下一步改做[診斷矩陣](<../diagnostics/FILE_GUIDE.md>)，先分清是哪一邊。
 
-[按用途取得原件](<../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../docs/reproducibility/KNOWN_GAPS.md>)
+## 拿資料與重做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+可重做程度：**partial**，依賴更大的舊訓練框架。選定種子 `selected/current_process_probe_seed.json` 不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡。
+
+## 原始報告
+
+[事後檢討](<ROUND20_POSTMORTEM.md>)、[流程探針稽核摘要](<selected/reports/ROUND20_PROCESS_PROBE_AUDIT_SUMMARY_20260314_205446.md>)、[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。保存紀錄見[本輪保存紀錄](<../../../docs/reproducibility/experiments/legacy__round20.md>)。

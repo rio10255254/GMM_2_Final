@@ -1,45 +1,62 @@
-# main/R134_DirectStateRepair：檔案怎麼找
+# R134：直接學習輸出影像，並發現 8 bit 存檔會誤導量測
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R134_DirectStateRepair.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [設計來源 R133](<../R133_SizeMechanismDiagnosis/FILE_GUIDE.md>) · [統一比較 R135](<../R135_UnifiedModelComparison/FILE_GUIDE.md>)
 
-**研究問題：直接修正影像狀態並避免8bit存檔誤導。**
+**一句話：** 照 R133 的方案，比較 A（原 R129 的輸出方式）與 C（原圖當影像狀態起點、直接輸出被訓練的影像），兩個新起點各 512 次短測；需要新成像規則的 B、D 因為缺少獨立的材料與光學校準，沒有執行。C 在兩個起點都通過事先設定的 SEM 與位移篩選，但 201 張完整檢查的 20 項條件中有 1 項沒過。追查後發現，那個失敗例的新增側向偏移約 86% 來自把模型輸出存成 256 階灰階圖。改成保留精度（P1）重做整套驗證後全部通過，並另做獨立套件、延續訓練 8,192 次。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**（保留精度的 P1 版本完成驗證與延續訓練，未正式採用） |
+| 時間 | 2026-09-14～09-15 |
+| 實驗條件 | 程式資料：R129 獨立套件內的 512／128／128 母場景；評估用 B：36 柱 SEM（正常曝光 13～15）、四組位移序列的 201 張完整影像 |
+| 起點 | 兩個新起點，隨機初始化，兩種設計的最後輸出層都設為零 |
 
-## 先讀原文件
+## 短測結果（各 512 次）
 
-- [R134 校準與資料准入現況](<reports/R134_CALIBRATION_STATUS.md>)
-- [R134：第16至17張側向偏移的原因](<reports/R134_CROSS_AXIS_DIAGNOSIS.md>)
-- [每代長訓練模型的獨立套件要求](<reports/R134_LONG_PACKAGE_SPEC.md>)
-- [R134 固定短測方法](<reports/R134_METHODOLOGY.md>)
-- [R134 P1：保留量測精度的完整驗證與訓練](<reports/R134_PRECISION_REVALIDATION.md>)
-- [R134 執行結果與目前狀態](<reports/R134_RESULTS.md>)
+| 設計／起點 | 生成開發影像誤差 | 清楚影像平均改動 |
+|---|---:|---:|
+| A／1342001 | 4.248 | 0.633 |
+| C／1342001 | 4.405 | 0.949 |
+| A／1342002 | 4.289 | 0.675 |
+| C／1342002 | 4.408 | 0.979 |
 
-## 進入實際檔案
+原始輸入的生成開發誤差是 4.980。C 的影像誤差較高、清楚影像改動也較大，並非全面勝出；但在實拍 SEM 上，C 相對同起點的 A，尺寸誤差改善 1.7～2.3%、輪廓形狀改善 8.1～8.8%。12 對位移裡，C 的垂直方向偏移從 A 的 5.0～5.8 nm 降到 2.2～2.3 nm。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 6檔 | 實驗設定、條件與來源鎖定 |
-| [dataset134.py](<dataset134.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R134 Manifest |
-| [net/](<net>) | 8檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [objectives.py](<objectives.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [package_templates/](<package_templates>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [precision_revision/](<precision_revision>) | 45檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [README.md](<README.md>) | 1檔 | R134 直接影像狀態修正 |
-| [reports/](<reports>) | 6檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 18檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [rt.py](<rt.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [scripts/](<scripts>) | 27檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [STATUS_R134.cmd](<STATUS_R134.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [tiled.py](<tiled.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [train_core.py](<train_core.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [validation/](<validation>) | 4檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+## 那一項失敗與存檔精度
 
-## 必要來源與取得界線
+唯一沒過的是 20×、0.5 µm 序列第 16→17 張的側向偏移：原圖 43.240 nm，C 變成 48.666 nm，超過事先設定的 10% 上限。同一對影像只改輸出精度：
 
-P1精確模型、保存精度、兩起點短測及長訓練資料。
+| 量測來源 | 側向偏移（nm） |
+|---|---:|
+| 原始相機影像 | 43.240 |
+| 模型的浮點結果 | 44.019 |
+| 轉成 256 階灰階圖 | **48.666** |
+| 保留 65536 階、實際存檔再讀回 | 44.039 |
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+這個解析度下每個像素約 172.5 nm，不到半個灰階的捨入就能移動數奈米。報告保留原本的「未通過」判定，也指出相鄰幾對在保留精度後仍有差異，所以「改存檔就全部解決」不成立。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 讀這些數字要知道的事
+
+1. **P1 只改輸出與量測精度**：模型的浮點結果以無損檔保存、讀回後才量；模型與訓練條件不變，起點仍是原本用開發誤差選的 1342001。
+2. **P1 延續訓練後的結果在 R135 裡並不好**：細形狀差距 18.97 nm、120 對步距波動 7.83 nm，都比 R128、R129 差。
+3. **使用者的指示：** 每一代確實值得長訓練的模型，各自整合成一包獨立套件（含資料、權重、手動開始／暫停／續訓入口），不混放不同世代。
+4. **SEM 尺度重算**跟 R127 逐項一致（比例 0.31186）；那 25 張光學校準照片無法單獨建立材料邊界對應。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 模型、訓練、篩選與診斷程式 | 本資料夾，已在 GitHub；`STATUS_R134.cmd` 可看當時進度 |
+| 獨立訓練包（P1） | `Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915/` |
+| 側向偏移診斷、精度重驗、權重與重建 | 查 `python Tools/cloud_locator.py where Experiments/R134_DirectStateRepair/<路徑>` |
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [結果](<reports/R134_RESULTS.md>) | 先讀這份：A／C 短測、201 張檢查、那一項失敗 |
+| [側向偏移診斷](<reports/R134_CROSS_AXIS_DIAGNOSIS.md>) | 存檔精度的拆解與排查過的因素 |
+| [保留精度 P1](<reports/R134_PRECISION_REVALIDATION.md>) | 重驗與延續訓練 |
+| [方法](<reports/R134_METHODOLOGY.md>)、[校準現況](<reports/R134_CALIBRATION_STATUS.md>)、[獨立套件規格](<reports/R134_LONG_PACKAGE_SPEC.md>) | 固定條件與套件要求 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R134_DirectStateRepair.md>)。

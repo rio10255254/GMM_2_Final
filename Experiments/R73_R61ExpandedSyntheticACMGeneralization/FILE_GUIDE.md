@@ -1,31 +1,49 @@
-# main/R73_R61ExpandedSyntheticACMGeneralization：檔案怎麼找
+# R73：五類新形狀，原圖已經很準的情況
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R73_R61ExpandedSyntheticACMGeneralization.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R72](<../R72_R61SyntheticDefectACMContourValidation/FILE_GUIDE.md>) · [下一輪 R74](<../R74_R61HardMicroscopyACMGeneralization/FILE_GUIDE.md>)
 
-**研究問題：以新生成非圓形檢查完整輪廓。**
+**一句話：** 把 R72 從一類缺陷擴充到五類新生成的單一物體形狀（多瓣、深凹口、細頸、月牙、粗糙邊界，各 20 張），每張都有生成時的精確形狀當答案。結果原圖的輪廓重疊率中位數已經 0.994，幾乎沒有改善空間，R61 反而造成小幅但一致的偏移，五項門檻都沒過。這輪的價值是發現「天花板效應」，下一輪 R74 才專門做困難影像。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（未通過；原圖已接近天花板，這輪測的是 R61 能不能保住本來就準的形狀） |
+| 時間 | 2026-07-30 |
+| 實驗條件 | 合成資料：R61 訓練完成後才生成的 100 張，五類形狀各 20 張 |
+| 模型 | Lab R61 v16 |
 
-## 先讀原文件
+## 結果
 
-- [R73：R61 五類新顯微形狀 ACM 泛化測試](<reports/R73_RESULTS_TW.md>)
+| 指標 | 原圖中位數 | R61 中位數 | R61 較好的張數 |
+|---|---:|---:|---:|
+| 輪廓重疊率 | 0.9943 | 0.9924 | 32/100 |
+| 平均邊界距離 | 0.28 px | 0.36 px | 37/100 |
+| 面積誤差 | 0.05% | 0.55% | 3/100 |
+| 周長誤差 | 1.45% | 3.07% | 44/100 |
 
-## 進入實際檔案
+五類形狀沒有一類的兩項主要指標同時改善。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R73 Manifest |
-| [README.md](<README.md>) | 1檔 | R73 Expanded Synthetic ACM Generalization |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 6檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **ACM 起點改過一次。** 原本固定的外圍起點在 5 張深月牙乾淨影像上跑了 1,400 次還不收斂，所以改成只在乾淨影像上校正的自動內部起點（從亮、暗兩種 Otsu 候選中找最大的有效物體，再內縮 3 px），**從不讀取精確答案**；15 張試行後凍結這個規則與 100 次迭代。
+2. **ACM 工具本身先過關：** 乾淨影像對精確形狀的最低重疊率 0.9945。
+3. **主要答案是精確形狀，不是另一張分割結果。**
 
-精確幾何生成、固定內圈起始規則、R61及全部遮罩。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 資料生成、ACM 試行與抽取、分析、執行程式與測試 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)、[config/experiment.json](<config/experiment.json>)，已在 GitHub；資料可用 `generate_dataset.py` 依凍結設定重新產生 |
+| 6 張圖 | [results/figures/](<results/figures>)，已在 GitHub |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 逐張量測表與 `results/decision.json` 不在 git 裡。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R73 結果](<reports/R73_RESULTS_TW.md>) | 整體與各形狀結果、門檻、解讀 |
+| [README](<README.md>) | 資料與 ACM 起點的設計 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R73_R61ExpandedSyntheticACMGeneralization.md>)。

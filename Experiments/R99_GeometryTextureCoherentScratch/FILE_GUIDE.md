@@ -1,35 +1,33 @@
-# main/R99_GeometryTextureCoherentScratch：檔案怎麼找
+# R99：從原圖直通開始，依序學亮暗、輪廓、邊緣、紋理
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R99_GeometryTextureCoherentScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [資料來源 R92](<../R92_PhysicalTransitionBalancedScratch/FILE_GUIDE.md>) · [前一輪 R98](<../R98_AggressiveTextureScratch/FILE_GUIDE.md>) · [下一輪 R100](<../R100_CausalOperatorScratch/FILE_GUIDE.md>)
 
-**研究問題：把亮暗、幾何、邊緣與紋理動作依序分開。**
+**一句話：** R99 的模型一開始就是原圖的精確直通，再學四個有順序的動作：亮暗校正、有號的輪廓搬移、邊緣剖面修復、有原圖支撐的紋理恢復。資料改回唯讀使用 R92 的 5,000 個觀察（避免再複製約 17 GiB）。2026-08-14 從零訓練，計畫 48 輪，實際在第 41 輪停下。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **中止**（停在第 41 輪，計畫 48 輪） |
+| 時間 | 2026-08-14（10:58 正式啟動） |
+| 實驗條件 | R92 固定合成資料（依鎖定雜湊唯讀）；不使用 SEM、HS100MG、舊權重或老師 |
+| 起點 | 隨機初始化，種子 990053；初始等同原圖 |
 
-## 先讀原文件
+## 讀這些內容要知道的事
 
-- [R99_GeometryTextureCoherentScratch 研究保存清單](<MANIFEST.md>)
-- [R99 Geometry-Texture Coherent Scratch](<README.md>)
+1. **這一輪沒有留下結果報告或停止紀錄**；「停在第 41 輪」來自 2026-10-16 的保存核對。原 README 是啟動前的說明。
+2. **R99 用的是 R92 的資料，不是 R93 的。** 之後的 R100、R102～R104 也用 R92。
+3. **訓練加速的做法**記在 README：先裁切再變形、可分離的固定濾波、BF16、channels-last、fused AdamW、實測批量，以及把昂貴的 896 px 切塊只穿插在最後階段。
 
-## 進入實際檔案
+## 拿資料與重做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 5檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [config/](<config>) | 3檔 | 實驗設定、條件與來源鎖定 |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R99_GeometryTextureCoherentScratch 研究保存清單 |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R99 Geometry-Texture Coherent Scratch |
-| [scripts/](<scripts>) | 3檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [Start_R99_Training.cmd](<Start_R99_Training.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 2檔 | 訓練程式與配套 |
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 設計、門檻、執行策略；模型、訓練、推論、測試 | 本資料夾 [config/](<config>)、[model/](<model>)、[training/](<training>)、[inference/](<inference>)、[tests/](<tests>)，已在 GitHub |
+| 共用資料 | 見 [R92](<../R92_PhysicalTransitionBalancedScratch/FILE_GUIDE.md>) |
 
-## 必要來源與取得界線
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-R92固定來源、線上增補、41輪實際記錄。
+> **目前的限制：** 正式與短測的權重、訓練紀錄和一份 ONNX 預檢模型不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；即時驗證輸出（`results/real_live_validation/`、`synthetic_live_validation/`）只在原電腦上。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 原始報告
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[README](<README.md>)、[MANIFEST](<MANIFEST.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R99_GeometryTextureCoherentScratch.md>)。

@@ -1,37 +1,40 @@
-# main/R115_R109DecoupledNormalProfileScratch：檔案怎麼找
+# R115：用獨立的法線剖面證據，決定 R109 動作做多少
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R115_R109DecoupledNormalProfileScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [基礎 R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>) · [前一輪 R114](<../R114_ConfidenceGatedRecoverableScratch/FILE_GUIDE.md>) · [下一輪 R116](<../R116_CoherentGeometryAnchorScratch/FILE_GUIDE.md>)
 
-**研究問題：以獨立法線證據決定R109動作採用量。**
+**一句話：** 影像動作完全沿用 R109（法線中點位移與單調寬度），另加一條完全獨立的法線剖面證據線，沿法線取 −12 到 +12 px 的九點剖面，只能決定 R109 兩個動作採用多少，不能重畫影像，梯度也進不了幾何主體。2026-08-31 的短探針中，前兩版讓新分支決定 0～100% 採用率，結果全部關掉或不穩定；第三版改成以 R109 為中心、最多 ±15% 的調整才穩定。但在 R74 上仍略差於 R109，正式 48 輪沒有啟動。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **中止**（兩版因採用率不穩停下，正式 48 輪沒有啟動） |
+| 時間 | 2026-08-31 |
+| 實驗條件 | 程式資料：A＝R109 原始 5,000／512；B＝R114 的 240 張替換版；另有 C、D 兩種混合 |
+| 起點 | 正式模型一律隨機初始化；R109 第 48 輪只用於訓練前的短探針 |
 
-## 先讀原文件
+## 結果
 
-- [R115 完整設計與執行結論](<reports/R115_DESIGN_AND_PROBE_ZH.md>)
+**四組資料的同種子短測（固定驗證的改善，灰階，越大越好）：**
 
-## 進入實際檔案
+| 組 | 最佳輪 | 一般改善 | 補充資料改善 | 清楚影像改動 |
+|---|---:|---:|---:|---:|
+| A：R109 原始 | 5 | **0.0323** | **0.0557** | 0.00054 |
+| B：R114 替換版 | 6 | 0.0313 | 0.0534 | 0.00071 |
+| C：A＋全部 200 張新資料 | 5 | 0.0291 | 0.0483 | 0.00036 |
+| D：A＋100 張新資料 | 3 | 0.0273 | 0.0450 | 0.00048 |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 1檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R115_R109DecoupledNormalProfileScratch 研究保存清單 |
-| [model/](<model>) | 2檔 | 本輪模型程式 |
-| [probes/](<probes>) | 1檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [README.md](<README.md>) | 1檔 | R115 — R109 Decoupled Normal-Profile Scratch |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 4檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 6檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 3檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 3檔 | 訓練程式與配套 |
-| [validation/](<validation>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+新資料讓早期學得較快，但沒有提高六輪內的最佳上限；報告建議日後重開時用 R109 原始資料，40 張新驗證資料保留為封閉的困難測試。
 
-## 必要來源與取得界線
+**鎖定 ACM（第三版，A 組）：** 第 2 輪 R73 邊界距離 0.165（略優於 R109 的 0.166），R74 2.514（略差於 R109 的 2.499），R74 五類中四類略差；內部最好的第 5 輪也不是外部最好的。
 
-A／B兩版精確資料、短探針和正式身分記錄。
+## 讀這些內容要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **全關閉的捷徑又出現了一次。** 第一版負例代價讓模型全部關閉退回原圖；第二版降低負例權重仍不穩。
+2. **報告建議的下一步：** 先找出低對比類別的作用方向錯誤，或把法線剖面只當訓練時的密集中點與寬度監督，而不是推論時的動作調整。這接到了 R116。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+本資料夾的資料準備（硬連結）、模型、四階段訓練、切塊推論、11 項測試都在 GitHub；執行順序見 [README](<README.md>)。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+[完整設計與執行結論](<reports/R115_DESIGN_AND_PROBE_ZH.md>)、[README](<README.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R115_R109DecoupledNormalProfileScratch.md>)。

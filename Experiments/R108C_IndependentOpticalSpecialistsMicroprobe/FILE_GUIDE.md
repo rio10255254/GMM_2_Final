@@ -1,30 +1,41 @@
-# main/R108C_IndependentOpticalSpecialistsMicroprobe：檔案怎麼找
+# R108C：四個光學專家各自獨立訓練、獨立過關
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R108C_IndependentOpticalSpecialistsMicroprobe.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一個探針 R108B](<../R108B_StagedParallelOpticalExpertsMicroprobe/FILE_GUIDE.md>) · [下一個探針 R108D](<../R108D_MultiscaleNormalGeometryMicroprobe/FILE_GUIDE.md>)
 
-**研究問題：分開檢查邊緣、紋理、去噪與照明專家。**
+**一句話：** 2026-08-26 把邊緣剖面、原圖相位紋理、成對雜訊去除、零均值照明四個專家各自從零訓練，每個都有直接的動作答案；只有全部通過自己的未見任務才允許組合。四個專家都過關，組合也被授權；但組合後在「不修改」影像上平均改動 2.2～2.4 灰階，真實影像的細節只剩原圖的 52%。單獨的邊緣專家在實拍上細節變成 1.76 倍，問題出在組合與亮度專家。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（四個專家各自過關，但組合後清楚影像被改動、真實細節流失） |
+| 時間 | 2026-08-26 |
+| 實驗條件 | R108B 的程式答案（唯讀引用）；不使用 R108B 權重、實拍、老師或偽答案 |
+| 起點 | 每個專家隨機初始化 |
 
-## 先讀原文件
+## 結果
 
-- [R108C_IndependentOpticalSpecialistsMicroprobe 研究保存清單](<MANIFEST.md>)
-- [R108C Independent Optical Specialists Microprobe](<README.md>)
+**各專家（未見資料）：** 邊緣 100% 影像改善、紋理 32%、去雜訊 100%、照明 91%，四個都判為合格。
 
-## 進入實際檔案
+**單獨用在實拍上（細節倍率／邊緣增益）：** 邊緣 1.76／1.17、紋理 1.03／1.03、去雜訊 0.37／0.94、照明 1.00／0.96（照明的平均改動 5.7 灰階最大）。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R108C_IndependentOpticalSpecialistsMicroprobe 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R108C Independent Optical Specialists Microprobe |
-| [results/](<results/README.md>) | 21檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts/README.md>) | 17檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [weights/](<weights/README.md>) | 13檔 | 模型檔或取得說明；最佳、最後及短測版本需分清 |
+**組合：** 未見資料的誤差 6.011 → 5.290 灰階（61% 影像改善），但「不修改」影像平均改動 2.21 灰階；實拍的細節倍率 0.52、平均改動 6.1 灰階。
 
-## 必要來源與取得界線
+## 讀這些內容要知道的事
 
-R108B資料的精確引用及四個獨立初值。
+1. **後續做了好幾個補充實驗**：去雜訊採用比例的多組校準、拿掉照明專家（`no_radiometry`）、5× 邊緣對齊、R79 在 SEM 上的動作分解、實拍位移；摘要都在 `results/` 裡。
+2. **R108D** 接著問：邊緣專家失敗是不是因為它只能縮放一個固定的銳化基底。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 拿資料與重做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 各專家與組合的摘要、校準、拿掉照明的結果、ACM 設定 | 本資料夾 [results/](<results/README.md>)，已在 GitHub |
+| 13 個專家與採用模型 | [weights/](<weights/README.md>)，已在 GitHub |
+| 訓練、校準、推論、分析程式 | [scripts/](<scripts/README.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 子實驗的摘要與表格（直接邊緣紋理探針、R79 SEM 動作分解、實拍位移等，約 50 MB）不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；約 1.5 GB 的影像輸出與 `data/specialist_data.npz` 只在原電腦上。
+
+## 原始報告
+
+本輪沒有文字結果報告；[README](<README.md>) 說明設計，數字以 [results/summary.json](<results/summary.json>) 為準。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R108C_IndependentOpticalSpecialistsMicroprobe.md>)。

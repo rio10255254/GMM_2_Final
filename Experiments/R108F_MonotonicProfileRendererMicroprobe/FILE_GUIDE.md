@@ -1,30 +1,34 @@
-# main/R108F_MonotonicProfileRendererMicroprobe：檔案怎麼找
+# R108F：限制渲染器，不准畫出比附近更暗或更亮的環
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R108F_MonotonicProfileRendererMicroprobe.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一個探針 R108E](<../R108E_ContourConservingProfileRendererMicroprobe/FILE_GUIDE.md>) · [下一個探針 R108G](<../R108G_MidpointWidthFactorizedProfileMicroprobe/FILE_GUIDE.md>)
 
-**研究問題：限制渲染範圍以避免暗圈與亮度超出。**
+**一句話：** 保留 R108E 有效的「先偵測邊界與需求、再渲染」概念，但把會產生暗環的自由像素渲染器換掉：渲染器只能把原圖局部平滑地移動，再套四個局部光學尺度的正值混合，而且輸出被夾在附近原圖的亮度範圍內，不可能畫出越界的暗環或亮環。偵測器和渲染器依序從零訓練，2026-08-26 完成，資料逐位元組重用 R108E。限制住之後安全了，但改善也變少：封存資料上只有 23% 影像改善（R108E 是 48%），「不修改」影像的改動反而變大。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（不會越界，但改善比 R108E 少、清楚影像改動變大） |
+| 時間 | 2026-08-26 |
+| 實驗條件 | R108E 的程式資料（逐位元組重用）；不使用任何舊權重或實拍像素 |
+| 起點 | 偵測器與渲染器依序隨機初始化 |
 
-## 先讀原文件
+## 結果
 
-- [R108F_MonotonicProfileRendererMicroprobe 研究保存清單](<MANIFEST.md>)
-- [R108F Monotonic Profile Renderer Microprobe](<README.md>)
+| 資料 | 方法 | 改善比例 | IoU 中位數 | 質心誤差 | 清楚影像改動 |
+|---|---|---:|---:|---:|---:|
+| 驗證 | R108E 自由渲染 | 69.3% | **0.9060** | 0.322 px | **0.031** |
+| 驗證 | R108F 單調渲染 | 67.7% | 0.8923 | **0.270 px** | 0.122 |
+| 封存 | R108E 自由渲染 | **48.4%** | **0.5231** | 3.586 px | **0.138** |
+| 封存 | R108F 單調渲染 | 23.4% | 0.3912 | 3.566 px | 0.214 |
 
-## 進入實際檔案
+## 讀這些數字要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R108F_MonotonicProfileRendererMicroprobe 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R108F Monotonic Profile Renderer Microprobe |
-| [results/](<results>) | 2檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+1. **質心誤差變小了**，但輪廓重疊和改善比例都退步；R108G 接著把「位置」和「寬度」拆成兩個動作。
+2. **結果摘要不在 GitHub 程式樹上**（`results/summary.json`，約 15 KB），在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡。
 
-## 必要來源與取得界線
+## 拿資料與重做
 
-R108E精確資料、兩階段全新模型及光學尺度設定。
+本資料夾的程式已在 GitHub。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 原始報告
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+本輪沒有文字結果報告；[README](<README.md>) 說明設計。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R108F_MonotonicProfileRendererMicroprobe.md>)。

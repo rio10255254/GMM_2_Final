@@ -1,53 +1,42 @@
-# main/R138_V42PSF8：檔案怎麼找
+# R138：把 V42 的八候選 PSF 模組接進來反覆作用
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R138_V42PSF8.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R137](<../R137_WeakPSFFeature/FILE_GUIDE.md>) · [下一輪 R139](<../R139_UNetRecurrentPrototype/FILE_GUIDE.md>)
 
-**研究問題：讓八候選光學機制反覆作用於特徵。**
+**一句話：** 把 R137 的平均 PSF 線索換成原 V42 的 WeakPSFDeconvBlock：從 25 顆裡固定取 8 顆候選，由網路依特徵分配混合權重，強度 beta 從 0.02 開始可學，在四次修正中每次都作用一次。依使用者要求全程用 CPU，從零訓練 8,192 次，2026-09-23 完成。結果是光學強度在訓練後期被壓到 0（最終有效 beta 正好是 0），開關 PSF 對輸出完全沒有差別。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（光學強度在訓練後期歸零，模型不再依賴這條分支） |
+| 時間 | 2026-09-23（CPU 訓練約 8.8 小時） |
+| 實驗條件 | 訓練用程式資料：與 R137 相同的母場景、順序與雜訊；評估用 D：930 張與十字中心九顆 |
+| 起點 | 隨機初始化（沒有匯入 V42 或 R137 的神經權重） |
 
-## 先讀原文件
+## 結果（930 張，十字中心九顆）
 
-- [R138 裝置與執行緒續訓補充](<reports/R138_DEVICE_CONTINUATION.md>)
-- [R138 預定訓練與驗證](<reports/R138_METHODOLOGY.md>)
-- [R138 V42八候選PSF完整結果](<reports/R138_RESULTS.md>)
+| 方法 | 短步平均差（nm） | 直徑重拍（nm） | 輪廓重拍（nm） | 平均直徑比 SEM 偏大（nm） |
+|---|---:|---:|---:|---:|
+| 原圖 | 8.167 | 32.75 | 63.76 | 185.2 |
+| R137 | **3.917** | **14.26** | **17.71** | 222.4 |
+| R138 | 4.094 | 16.52 | 19.10 | 219.6 |
 
-## 進入實際檔案
+R138 相對 R137 在短步平均差上 30 趟只有 8 趟較好，尺寸與輪廓重拍也都較差。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [batch_prediction.py](<batch_prediction.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [closeout.py](<closeout.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [compare_measurements.py](<compare_measurements.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [config/](<config>) | 6檔 | 實驗設定、條件與來源鎖定 |
-| [config_r138_psf.yaml](<config_r138_psf.yaml>) | 1檔 | 設定／清單／數值紀錄；依欄位判讀 |
-| [dataset_r138_psf.py](<dataset_r138_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluate_generated.py](<evaluate_generated.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluate_real_measurement.py](<evaluate_real_measurement.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation>) | 190檔 | 量測介面、固定參照、設定或比較內容 |
-| [final_audit.py](<final_audit.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [infer_r138_psf.py](<infer_r138_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses_r138_psf.py](<losses_r138_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [model_r138_psf.py](<model_r138_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 2檔 | 光學計算與配套 |
-| [preflight_check.py](<preflight_check.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [README.md](<README.md>) | 1檔 | R138 V42八候選PSF重訓 |
-| [reports/](<reports>) | 5檔 | 原報告、計畫、審查與各階段結論 |
-| [requirements.txt](<requirements.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [results/](<results>) | 7檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [START_R138_CPU.cmd](<START_R138_CPU.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [SWITCH_TO_GPU.cmd](<SWITCH_TO_GPU.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [train_r138_psf.py](<train_r138_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [write_report.py](<write_report.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **beta 變成 −0.0029，有效值被限幅成 0。** R139 的說明提到 beta 約在第 2,304 次就被壓到零。四張實拍與 32 組生成資料的開關檢查，輸出差都是 0。報告的寫法是：模型沒有依賴這條分支，不改門檻硬說有效。
+2. **只有 PSF 模組跟 V42 相同**，它接在 R137 主幹的前段，不是整個網路變成 V42。
+3. **中途調整過執行緒數**（CPU 8／16／24 實測後選 24），原設定鎖保留，實際裝置紀錄在 `runs/formal_8192/device_history.jsonl`；沒有實際切到 GPU。
+4. 930 張重建中位 2.39 秒，裝置條件沒有控制，不作速度排名。
 
-精確模型、25PSF、裝置歷程及R130資料。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+`START_R138_CPU.cmd` 跑可續訓的完整流程。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 模型、訓練、評估程式與裝置續訓層 | 本資料夾，已在 GitHub |
+| 權重、930 張重建、全部 930 張的四回合 PSF 權重表 | 查 `python Tools/cloud_locator.py where Experiments/R138_V42PSF8/<路徑>` |
+
+## 原始報告
+
+[結果](<reports/R138_RESULTS.md>)、[方法](<reports/R138_METHODOLOGY.md>)、[裝置與執行緒續訓](<reports/R138_DEVICE_CONTINUATION.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R138_V42PSF8.md>)。

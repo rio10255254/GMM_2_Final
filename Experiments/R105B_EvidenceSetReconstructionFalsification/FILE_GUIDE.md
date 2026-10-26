@@ -1,33 +1,48 @@
-# main/R105B_EvidenceSetReconstructionFalsification：檔案怎麼找
+# R105B：同一區域拍多張，一起重建
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R105B_EvidenceSetReconstructionFalsification.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [同期的 R105A](<../R105A_GeometryRendererFalsification/FILE_GUIDE.md>) · [均華實拍可行性 R105C](<../R105C_JunHuaMultiObservationFeasibility/FILE_GUIDE.md>) · [短驗證 R106A](<../R106A_MultiObservationShortValidation/FILE_GUIDE.md>)
 
-**研究問題：多觀測是否持續改善輪廓並拒絕錯配。**
+**一句話：** 2026-08-24 測一個能接受一、二或四張同區域影像的重建核心：四張影像有不同的次像素取樣、模糊、曝光、照明與雜訊，先對齊到同一座標，模型保留四個局部候選，再用各觀測經光學回推後的局部一致性決定輸出。在沒見過的月牙、多瓣、細頸形狀上，觀測越多輪廓越準（輪廓距離 0.234 → 0.198 → 0.169 px），而且這不是單純平均去雜訊。這是 R79 以來第一個在機制層面顯示「增加真正觀測數」能同時改善輪廓、邊界中心與位移的結果。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（機制方向值得往下做，但這個小探針不是正式模型） |
+| 時間 | 2026-08-24 |
+| 實驗條件 | 程式生成形狀；SEM、HS100MG、外部 GMF 只用於驗證，不是訓練輸入 |
+| 對照 | 同架構、同參數量的「單答案」組 |
 
-## 先讀原文件
+## 結果
 
-- [R105B Admission and Observation-Jackknife Results](<reports/R105B_ADMISSION_UNCERTAINTY.md>)
-- [R105B Observation Count and Alignment Tolerance](<reports/R105B_COUNT_ALIGNMENT.md>)
-- [R105B Evidence Controls](<reports/R105B_EVIDENCE_CONTROLS.md>)
-- [R105B 證據集合重建最終結論](<reports/R105B_FINAL_FINDINGS_ZH.md>)
-- [R105B Evidence-Set Reconstruction Results](<reports/R105B_RESULTS.md>)
+**同一個模型，輸入張數不同：**
 
-## 進入實際檔案
+| 觀測數 | 輪廓重疊 | 輪廓距離 | 邊界中心偏移 | 平均影像誤差 |
+|---:|---:|---:|---:|---:|
+| 1 | 0.9695 | 0.2341 px | 0.1357 px | 3.014 灰階 |
+| 2 | 0.9735 | 0.1983 px | 0.1076 px | 2.283 灰階 |
+| 4 | 0.9773 | **0.1687 px** | **0.0783 px** | **1.794 灰階** |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R105B_EvidenceSetReconstructionFalsification 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R105B Evidence-Set Reconstruction Falsification |
-| [reports/](<reports>) | 5檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 4檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+**不是平均造成的：** 四張直接平均 0.235 px；把第一張複製四次送進模型 0.250 px；四張真正不同的觀測 0.169 px。
 
-## 必要來源與取得界線
+**錯配保護：** 不檢查就把四個不同位置當同一區域，輪廓距離爆到 11.06 px。用驗證集建立的結構相容性判斷後，封存測試接受 99.3% 正確組合、拒絕 100% 故意錯配，錯配時退回單張。
 
-獨立場景、1／2／4觀測與重複／平均控制。
+**對齊精度：** 殘留對齊誤差約 1 px 以內仍比單張好，1.5 px 就失去優勢。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **最初的不確定性方法失敗了。** 候選分支之間的差異跟實際錯誤的相關是 −0.212，錯配時也沒升高；改用「逐張分別重建、看彼此差多少」才有用（錯配時升高約十倍）。
+2. **探針知道程式設定的位移、模糊、曝光**；真實系統必須自己估計。
+3. **曝光一致性還沒解決**：四張模式的曝光中心波動中位數 0.0715 px，比單答案單張的 0.0414 px 差。
+4. 外部 GMF 需要逐幀輸出，這個探針一次只輸出一張共同座標的影像。
+
+## 拿資料與重做
+
+本資料夾的 `scripts/run_probe.py` 與其他程式已在 GitHub。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [最終結論](<reports/R105B_FINAL_FINDINGS_ZH.md>) | 張數、與舊方法差在哪、控制組、不確定性、錯配保護、對齊需求、不能宣稱的事 |
+| [結果](<reports/R105B_RESULTS.md>)、[錯配與不確定性](<reports/R105B_ADMISSION_UNCERTAINTY.md>)、[張數對齊](<reports/R105B_COUNT_ALIGNMENT.md>)、[證據控制組](<reports/R105B_EVIDENCE_CONTROLS.md>) | 各項細節 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R105B_EvidenceSetReconstructionFalsification.md>)。

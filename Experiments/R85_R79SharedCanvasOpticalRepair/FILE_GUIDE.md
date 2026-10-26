@@ -1,32 +1,36 @@
-# main/R85_R79SharedCanvasOpticalRepair：檔案怎麼找
+# R85：光學前處理在整張畫布只算一次
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R85_R79SharedCanvasOpticalRepair.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一種修法 R84（含三輪總結案）](<../R84_R79TileStableRootRepair/FILE_GUIDE.md>) · [下一種修法 R86](<../R86_R79BlockGroupNormRepair/FILE_GUIDE.md>)
 
-**研究問題：以共同光學畫布保留R79能力。**
+**一句話：** R84 的局部網路修好了切塊一致性，但 SEM 變差很多。R85 保留 R84 的局部網路，把 R79 原本的光學前處理改成在整張畫布只算一次、讓整張與切塊共用，並只用 R79 當程式生成輸入上的行為保持約束。2026-08-10 篩選的兩個保存點都通過切塊一致性，但邊界誤差是 R79 的 1.18 與 1.16 倍，超過鎖定的上限，所以新的外部保留資料一直沒有打開，R79 仍是預設。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（切塊一致通過，邊界誤差超過 R79 的鎖定上限） |
+| 時間 | 2026-08-10 |
+| 實驗條件 | 純合成資料，答案是解析式超取樣繪製；不使用 SEM 或任何實拍像素 |
+| 起點 | R84 的局部網路 |
 
-## 先讀原文件
+## 讀這些內容要知道的事
 
-- [R85_R79SharedCanvasOpticalRepair 研究保存清單](<MANIFEST.md>)
-- [R85 Shared-Canvas Optical Repair](<README.md>)
+1. **沒有保存點通過篩選**，所以依規則不做最終確認，外部保留資料保持封存。
+2. **三輪的總結與後來的決定**（保留 R79、只允許整張推論）寫在 [R84 的結案報告](<../R84_R79TileStableRootRepair/reports/R79_ROOT_REPAIR_CLOSEOUT.md>)。
 
-## 進入實際檔案
+## 拿資料與重做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 2檔 | 實驗設定、條件與來源鎖定 |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R85_R79SharedCanvasOpticalRepair 研究保存清單 |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R85 Shared-Canvas Optical Repair |
-| [scripts/](<scripts>) | 3檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [training/](<training>) | 1檔 | 訓練程式與配套 |
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 資料生成、鎖定訓練子集、訓練、篩選、推論程式與設定 | 本資料夾 [scripts/](<scripts>)、[training/](<training>)、[inference/](<inference>)、[config/](<config>)，已在 GitHub；執行順序見 [README](<README.md>) |
 
-## 必要來源與取得界線
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-原R79、生成配方、兩個篩選模型及未開封狀態。
+> **目前的限制：** 兩個保存點與篩選結果表不在 GitHub 上。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 原始報告
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 文件 | 內容 |
+|---|---|
+| [README](<README.md>) | 設計、執行順序與最終狀態 |
+| [三輪總結案](<../R84_R79TileStableRootRepair/reports/R79_ROOT_REPAIR_CLOSEOUT.md>) | R84、R85、R86 的比較與最後的修改 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R85_R79SharedCanvasOpticalRepair.md>)。

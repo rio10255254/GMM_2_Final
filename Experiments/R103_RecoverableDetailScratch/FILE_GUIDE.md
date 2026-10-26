@@ -1,42 +1,48 @@
-# main/R103_RecoverableDetailScratch：檔案怎麼找
+# R103：讓答案跟輸入共享曝光，拿掉會抹掉細節的正規化
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R103_RecoverableDetailScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R102](<../R102_UniversalDetailScratch/FILE_GUIDE.md>) · [下一輪 R104](<../R104_PhotometricInvariantCausalGateScratch/FILE_GUIDE.md>) · [R100～R104 完整結果的閱讀入口](<../../docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md>)
 
-**研究問題：修復不可知亮暗答案與正規化造成的細節流失。**
+**一句話：** R102 的稽核發現特徵正規化會抹掉細微的局部幅度與細節線索，而且有些資料要求模型猜一個只看輸入無法得知的曝光修正。R103 讓訓練觀測由程式真值經過可還原的局部光學前向模型產生，曝光、對比、gamma、照明同時套在輸入與答案上；每個退化裁切都配一個完全相同的清楚裁切；拿掉特徵正規化；低頻、輪廓、紋理三個目標不重疊；損失權重固定。2026-08-15 從零完成 48 輪。實拍六組位移都通過，而且逐步標準差六組都比 R61 低；但 SEM 跟原圖幾乎一樣，第 18 號曝光有明確的輪廓失敗。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（曝光轉折處失敗） |
+| 時間 | 2026-08-15（15:14 啟動，48 輪） |
+| 實驗條件 | R92 固定合成資料經可還原前向模型產生；實拍 301 張、36 顆柱 SEM、200 張外部精確真值只用於後測 |
+| 起點 | 隨機初始化，種子 1030053；2,189,605 個參數 |
 
-## 先讀原文件
+## 結果
 
-- [R103_RecoverableDetailScratch 研究保存清單](<MANIFEST.md>)
-- [R103 Recoverable Detail Scratch](<README.md>)
+| 測試 | 結果 |
+|---|---|
+| 內部測試（第 48 輪） | PSNR 36.2 dB、輪廓 IoU 0.922、紋理恢復 0.281 |
+| 實拍位移 | 六組全部通過，**逐步標準差六組都比 R61 低** |
+| 36 顆柱 SEM：IoU 中位數 | 原圖 0.9490、R61 0.9584、R103 0.9492 |
+| 36 顆柱 SEM：平均邊界距離 | 原圖 0.5697、R61 0.4413、R103 0.5716（% 柱距；18/36 顆改善） |
 
-## 進入實際檔案
+## 讀這些數字要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 9檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [config/](<config>) | 2檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 2檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [evaluation/](<evaluation>) | 1檔 | 量測介面、固定參照、設定或比較內容 |
-| [inference/](<inference>) | 2檔 | 模型重建程式 |
-| [logs/](<logs>) | 1檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R103_RecoverableDetailScratch 研究保存清單 |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [Open_Training_Monitor.cmd](<Open_Training_Monitor.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [README.md](<README.md>) | 1檔 | R103 Recoverable Detail Scratch |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 59檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [runs/](<runs>) | 2檔 | 各次執行的紀錄或完成證據；不憑資料夾名認定已完成 |
-| [scripts/](<scripts>) | 2檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [Start_R103_Training.cmd](<Start_R103_Training.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 4檔 | 訓練程式與配套 |
+1. **第 48 輪是內部測試選出的**（PSNR、MAE、輪廓重疊、紋理恢復、成對觀測都最好）。
+2. **第 18 號曝光的輪廓失敗**以原始的 `final_summary.json` 與逐曝光摘要為準；共用閱讀入口特別寫明沒有借用 R104 的圖冒充 R103 的失敗圖。
+3. **照明問題和清楚輸入的不必要改動仍在**，不能把一般紋理改善當成 SEM 輪廓全面勝出。
+4. 6,672 筆實拍位移讀值來自同一批 301 張，不是重新拍攝。
 
-## 必要來源與取得界線
+## 拿資料與重做
 
-程序配方、清楚反例與固定損失設定。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 完整後測表（52 檔，含最終總結、實拍序列、SEM 輪廓） | 本資料夾 [results/posttraining_validation/](<results/posttraining_validation>)，已在 GitHub |
+| 模型、訓練、推論程式與設定 | 本資料夾 [model/](<model>)、[training/](<training>)、[inference/](<inference>)、[config/](<config>) |
+| 第 48 輪模型的身分與位置 | 見 [R100～R104 閱讀入口](<../../docs/reproducibility/project_completion/curated/FAILURE_LINEAGE_READING.md>) |
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [最終總結](<results/posttraining_validation/final_summary.json>) | 選模理由、內部測試、實拍位移、SEM、曝光 18 的限制 |
+| [精選結果閱讀紀錄](<reports/R103_SELECTED_RESULT_RECORDS_20261021.md>) | 2026-10-21 補的閱讀脈絡 |
+| [README](<README.md>) | 改了什麼與使用方式 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R103_RecoverableDetailScratch.md>)。

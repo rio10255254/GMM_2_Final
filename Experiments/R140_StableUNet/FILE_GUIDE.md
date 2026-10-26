@@ -1,47 +1,21 @@
-# main/R140_StableUNet：檔案怎麼找
+# R140：修正 R139 的不穩定（在正式訓練前被來源檢查擋下）
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R140_StableUNet.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [要修正的 R139](<../R139_UNetRecurrentPrototype/FILE_GUIDE.md>) · [實際完成的版本 R140v2](<../R140v2_StableUNet/FILE_GUIDE.md>)
 
-**研究問題：修復R139失穩並加短測限制。**
+**一句話：** 2026-09-23 針對 R139 的早期飽和，加入每個像素跨通道的正規化、輸出頭增益 0.1、學習率降到 0.0003、梯度限制收緊到 1。256 次拋棄權重的短測通過了預先設定的門檻。但正式啟動前，來源檢查發現複製過來的資料讀取與損失程式只有文字相同、位元組跟 R130 原件不同（換行字元不一樣），所以被拒絕，**R140 沒有任何正式訓練更新**。修正方案原封不動移到 R140v2 重新執行。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **中止**（來源鎖定拒絕，正式訓練沒有開始；同一方案改在 R140v2 執行） |
+| 時間 | 2026-09-23 |
+| 實驗條件 | 程式資料：與 R130／R139 相同的合成母場景（只跑了 256 次短測） |
+| 起點 | 隨機初始化（短測權重不移入正式訓練） |
 
-## 先讀原文件
+## 讀這些內容要知道的事
 
-- [R140 訓練失穩修正方法](<reports/R140_METHODOLOGY.md>)
+1. **短測門檻是事先固定的：** 第 32／128／256 次時，固定開發影像的修正輸出 99 百分位小於 4、飽和比例小於 0.1%、輸出頭梯度非零，而且第 256 次的開發誤差不高於初始的 105%。
+2. **沒有為了通過而改舊鎖定檔。** 失敗痕跡保留在本資料夾，R140v2 另立資料夾、逐位元複製兩份程式後重新短測。
 
-## 進入實際檔案
+## 拿資料與重做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [compare_measurements.py](<compare_measurements.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [config/](<config>) | 9檔 | 實驗設定、條件與來源鎖定 |
-| [dataset.py](<dataset.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluate_real_measurement.py](<evaluate_real_measurement.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation>) | 310檔 | 量測介面、固定參照、設定或比較內容 |
-| [final_audit.py](<final_audit.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [formal/](<formal>) | 5檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [FORMAL_RUN.md](<FORMAL_RUN.md>) | 1檔 | R140 正式訓練與驗證入口 |
-| [infer_model.py](<infer_model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses.py](<losses.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [model.py](<model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MONITOR_R140.cmd](<MONITOR_R140.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 2檔 | 光學計算與配套 |
-| [README.md](<README.md>) | 1檔 | R140 穩定 U-Net 修正實驗 |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 2檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [START_HERE.md](<START_HERE.md>) | 1檔 | R140 執行入口 |
-| [START_R140_GPU.cmd](<START_R140_GPU.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training_policy.py](<training_policy.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [write_report.py](<write_report.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-
-## 必要來源與取得界線
-
-來源鎖、256次短測及正式拒絕紀錄。
-
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[執行入口](<START_HERE.md>)、[修正原因與固定條件](<FORMAL_RUN.md>)、[方法紀錄](<reports/R140_METHODOLOGY.md>)、[README](<README.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R140_StableUNet.md>)。

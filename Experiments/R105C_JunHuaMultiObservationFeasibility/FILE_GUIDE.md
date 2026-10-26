@@ -1,31 +1,42 @@
-# main/R105C_JunHuaMultiObservationFeasibility：檔案怎麼找
+# R105C：均華的 202 張適不適合做多觀測
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R105C_JunHuaMultiObservationFeasibility.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [多觀測機制 R105B](<../R105B_EvidenceSetReconstructionFalsification/FILE_GUIDE.md>) · [短驗證 R106A](<../R106A_MultiObservationShortValidation/FILE_GUIDE.md>)
 
-**研究問題：均華202原圖是否適合多觀測。**
+**一句話：** 2026-08-24 唯讀稽核合作廠商均華的 202 張原始 BMP（5120×5120），不訓練、不改來源。依檔名排序的偶數／奇數兩張是同一個名義位置的兩次拍攝，101 組全部通過：同位置兩張的位移中位數 0.091 px，主要提供獨立的雜訊證據，而不是明顯的次像素取樣。相鄰位置合成四張也能對齊，但相鄰輸出會共用來源影像，所以只核准做模型研究，不核准做正式 GMF。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（可行性稽核：同位置兩張核准為 N=2 來源；跨位置四張只核准做研究，不核准正式 GMF） |
+| 時間 | 2026-08-24 |
+| 實驗條件 | B：均華 202 張原始影像，101 個名義位置；實驗室的 PI 序列刻意排除 |
 
-## 先讀原文件
+## 結果
 
-- [R105C 均華跨位置 N=4 可行性](<reports/R105C_CROSS_POSITION_ZH.md>)
-- [R105C 均華雙張序列稽核](<reports/R105C_PAIR_AUDIT_ZH.md>)
-- [R105C 使用 R105B 探針的真實跨位置探索](<reports/R105C_R105B_REAL_EXPLORATORY_ZH.md>)
+**同位置兩張（101 組）：** 位移中位數 0.091 px、第 95 百分位 0.187、最大 0.276 px；推估單張雜訊標準差 0.631 灰階，兩張平均後 0.446 灰階，但去雜訊後的結構邊緣能量也降了約 3.1%，所以兩張要分開當模型輸入，不能先平均。
 
-## 進入實際檔案
+**跨位置四張（100 組相鄰位置）：** 相鄰位置位移中位數約 X −0.083、Y −7.886 px，對齊後結構相關最低 0.99895；融合改變擬合環中心中位數 0.102 px（第 95 百分位 0.215），半徑幾乎不變（0.009 px）。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R105C_JunHuaMultiObservationFeasibility 研究保存清單 |
-| [README.md](<README.md>) | 1檔 | R105C JunHua Multi-Observation Feasibility |
-| [reports/](<reports>) | 3檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 3檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+**位移波動代理（Y 步距標準差）：** 每位置獨立的兩張 0.112 px；滑動四張、相鄰共用一半來源 0.113 px；不共用來源換算每位置 0.054 px。
 
-## 必要來源與取得界線
+**用 R105B 探針試讀真實四張：** 中心與邊緣都沒有變差，但四張相對兩張只改變 0.098 灰階；R105B 只在 96×96 的程式資料上訓練過，也沒有估計真實的模糊與曝光，所以這只是確認能讀、不是驗證。
 
-202原始BMP、順序與配對、對齊及環中心讀值。
+## 讀這些數字要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **共用來源會人為降低位移波動。** 滑動視窗的相鄰輸出共用影像，所以它的低波動不能直接引用；能不能用於正式 GMF，要看不共用來源的外部結果。
+2. **週期樣品會讓純影像相關出現多個等價峰**，跨位置配對要用環形資訊初始化再做結構 ECC 精修。
+3. 原始資料夾全程唯讀，沒有寫入或改名。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+本資料夾的稽核程式已在 GitHub；均華 202 張原始影像的取得方式見 [資料取得指南](<../../docs/reproducibility/ASSET_GUIDE.md>)。查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [雙張序列稽核](<reports/R105C_PAIR_AUDIT_ZH.md>) | 同位置兩張的位移、增益、雜訊、邊緣 |
+| [跨位置四張可行性](<reports/R105C_CROSS_POSITION_ZH.md>) | 對齊、幾何代價、位移波動代理 |
+| [用 R105B 探針的真實探索](<reports/R105C_R105B_REAL_EXPLORATORY_ZH.md>) | 能讀但不是驗證 |
+| [README](<README.md>) | 目的與最終狀態 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R105C_JunHuaMultiObservationFeasibility.md>)。

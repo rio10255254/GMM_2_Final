@@ -1,37 +1,61 @@
-# main/R117_CenterLockedSubpixelScratch：檔案怎麼找
+# R117：保留法線位移，但不讓寬度與細節再移動中心
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R117_CenterLockedSubpixelScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R116](<../R116_CoherentGeometryAnchorScratch/FILE_GUIDE.md>) · [下一輪 R118（只有保存紀錄）](<../../docs/reproducibility/experiments/main__R118_PhysicalCoordinateRepairScratch.md>) · [之後的 R119](<../R119_SequenceGeometryValidation/FILE_GUIDE.md>)
 
-**研究問題：保留必要法線位移並避免寬度造成額外中心移動。**
+**一句話：** 先在凍結的 R116 E42 上做因果測試：拿掉法線位移會讓 36 顆 SEM 柱全部變差，所以保留一條獨立、有上限的位移路徑；寬度與細節則以預測輪廓為中心投影，讓它們只能銳化邊緣、不能再偷偷移動中心。2026-09-05 凌晨從零訓練 42 輪順利完成，但 50× 柱子預覽上的暗色雙輪廓仍在。同一天的設計稽核找出一串實作問題，結論是問題出在實作，不是模型能力已到上限。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（訓練完成但沒有升格；設計稽核發現多處實作錯誤） |
+| 時間 | 2026-09-05（正式訓練 00:44～02:58；設計稽核同日） |
+| 實驗條件 | 程式資料：純合成幾何，配對視圖由 8 倍潛在幾何先平移再面積降採樣；不使用 SEM、真實影像或舊模型的像素與權重；部署仍是一次一張 |
+| 起點 | 隨機初始化 |
 
-## 先讀原文件
+## 訓練前的因果測試（凍結 R116 E42）
 
-- [R117_CenterLockedSubpixelScratch 研究保存清單](<MANIFEST.md>)
-- [R117 Center-Locked Subpixel Scratch](<README.md>)
-- [Design-direction audit, 2026-09-05](<analysis/design_audit_20260905/FINDINGS.md>)
+| 介入 | R74 邊界變化 | SEM 36 顆 | 決定 |
+|---|---:|---|---|
+| 拿掉法線位移 | +3.23%（變差） | 0/36 改善 | 不拿掉，位移對實體幾何必要 |
+| 寬度與細節以中心鎖定 | +0.92% | 36/36 改善（中位 0.025% 柱距） | 放進訓練內，不做成事後濾波 |
+| 用紋理壓制輪廓 | +6.09% | — | 不採用 |
 
-## 進入實際檔案
+## 訓練結果
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 6檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 2檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R117_CenterLockedSubpixelScratch 研究保存清單 |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R117 Center-Locked Subpixel Scratch |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 3檔 | 訓練程式與配套 |
-| [validation/](<validation>) | 1檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+完整 42 輪、6,552 次更新，從零開始，最後保存點可嚴格載入、前向有限。內部驗證：輪廓平均變化 −0.0020（最差 −0.0060，是退步），梯度 −0.0038，影像誤差 +0.0013。完成稽核原文寫明：雙輪廓已經是實質負面結果，在 ACM、LSC、實拍位移、清晰度與切塊驗證完成前不升格。
 
-## 必要來源與取得界線
+## 9/5 設計稽核找到什麼
 
-本輪生成、被固定的成像形成順序及正式模型。
+1. **預覽圖身分錯了。** 四張「R117 實拍預覽」的輸入其實是 R109 E48 的輸出（檔名仍叫 raw.bmp），所以大家看到的是 R109 再接 R117。直接用 R117 單次處理，內圈仍在但較弱。
+2. **暗物體的法線方向是反的。** 生成器的距離是物體內為正，模型卻用亮度上升方向求法線；暗物體上兩者相反。72 個測試場景裡，暗邊界錯誤法線比例平均 97.76%。
+3. **位置一致性損失根本沒有訓練到定位器。** 該項梯度為零，第 6 輪到第 42 輪 42 個偵測器張量逐位元相同。
+4. **「中心損失」不是 x/y 位移損失。** 平移時兩側相抵，1 px 位移只讓它變 0.0014；真正的 x/y 重心項有計算但沒加進損失。
+5. **答案超出允許的動作範圍。** 平均 66.52% 的邊界像素要求的寬度增益，大於模型理論上可給的上限。
+6. **中性寬度有不連續點。** 增益從 1 變成 1.000001，輸出可跳 15 灰階。
+7. **中心投影本身會造成圓環。** 只繞過中心投影，向內反轉量從 0.394 降到 0.0038 灰階。
+8. **資料比例失衡沒有控制。** 7.58% 的密集陣列場景提供 74.06% 的邊界像素。
+9. **指標名稱容易誤讀。** 每輪的「輪廓分數」是軟門檻 Dice，不是鎖定的 ACM。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+稽核也記下有進步的地方：R117 的邊界判斷是活的（AUC 中位 0.988），不像 R109 的邊界分支整個死掉。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 讀這些內容要知道的事
+
+1. **稽核同時更正了歷史比較。** R109 的 R73／R74 表格標籤還寫著舊的 `R61v16`，但設定與推論紀錄都指向 R109 E48，不能只看表格標籤判斷模型身分。
+2. **R116 E42 不是全面更好的後繼。** LSC 步距標準差 8.067 nm，R109 是 7.003 nm、Raw 9.745 nm。
+3. 稽核建議下一步：修正座標與動作介面的正負號、單位與中性行為；讓位置損失真的量 x/y 移動並傳到可訓練參數；一致性要比較「修復後的量」，而不是要求不同模糊下的修正量相同。這接到了 R118 與 R119。
+
+## 拿資料與重做
+
+本資料夾的資料準備、模型、訓練、切塊推論、訓練前驗證與稽核程式都在 GitHub；執行順序見 [README](<README.md>)。
+
+> **不在 GitHub 程式樹上：** 訓練完成稽核 `results/TRAINING_COMPLETION_AUDIT.json`、訓練前因果決策 `reports/CAUSAL_DECISION.json` 與 `runs/` 下的權重、日誌，放在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡（兩份 JSON 各約 2 KB，但所在壓縮包約 1.15 GB）。幾個短測的中間權重只在原電腦上。本卡引用的訓練與因果數字來自這兩份 JSON。
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [設計稽核](<analysis/design_audit_20260905/FINDINGS.md>) | 先讀這份：九項實作問題、歷史比較的更正、下一步設計原則 |
+| [README](<README.md>) | 本輪設計與執行順序 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R117_CenterLockedSubpixelScratch.md>)。

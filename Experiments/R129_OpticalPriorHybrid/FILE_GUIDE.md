@@ -1,40 +1,68 @@
-# main/R129_OpticalPriorHybrid：檔案怎麼找
+# R129：把 V42 的光學融合、改善放大與原圖參照接回來
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R129_OpticalPriorHybrid.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R128](<../R128_SourceOnlyFullTraining/FILE_GUIDE.md>) · [乾淨重訓 V42 對照 R130](<../R130_CleanV42Comparison/FILE_GUIDE.md>) · [原尺寸純神經版 R130 Clean](<../R130_Clean/FILE_GUIDE.md>) · [後續 R131](<../R131_RecurrentStepValidation/FILE_GUIDE.md>)
 
-**研究問題：恢復光學融合、抗混疊與原圖參考。**
+**一句話：** R128 拿掉了論文 V42 的幾個設計，R129 把它們接回 R128 的四步重建主幹：輸入端的實測光學融合、V42 式的改善放大、只把受限細節加回原圖的輸出。2026-09-12 的 24 次短測確認兩個模組真的有作用；同一天另做獨立套件，從 D 組延續訓練 8,192 次，9/13 完成：細部形狀 36/36 顆改善，但尺寸誤差 31/36 顆變大。9/18～9/20 曾規劃以 R129 當新版論文的唯一模型，並準備了論文改寫資料；後來論文改以 R152 為準。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**（細部形狀與位移有改善，尺寸偏大的代價仍在） |
+| 時間 | 2026-09-12 短測與架構整理；09-12～09-13 延續訓練；09-13 連續影像 LSC；09-18～09-20 論文改寫規劃 |
+| 實驗條件 | 程式資料：沿用 R128 的 512／128／128 母場景；光學融合用 V42 保存的 25 個 101×101 PSF 平均與 4 個候選；評估用 B：36 柱 SEM（正常曝光 13～15）、四組位移序列的 201 張完整影像 |
+| 起點 | 短測四組共用一個從 R128 權重平均轉換來的輸出頭；延續訓練從 D 組第 24 次開始 |
 
-## 先讀原文件
+## 四組短測（各 24 次更新）
 
-- [R129 完整架構、設計來源與保留檢查](<reports/R129_ARCHITECTURE.md>)
-- [R129 連續影像重建與 LSC 位移結果](<reports/R129_CONTINUOUS_LSC_RESULTS.md>)
-- [R129 長訓練結果與完成核對](<reports/R129_LONG_TRAINING_RESULTS.md>)
-- [R129：保留 V42 主要設計的接入測試](<reports/R129_RESULTS.md>)
-- [R129 獨立操作套件與長訓練](<reports/R129_STANDALONE_TRAINING.md>)
-- [MOSR論文改寫定稿計畫與備稿資料](<reports/R129_THESIS_FINAL_REWRITE_PLAN_20260920.md>)
+| 組別 | 光學融合 | 改善放大 | 去尺寸形狀誤差（nm） | 尺寸誤差（nm） |
+|---|---|---|---:|---:|
+| A | 關 | 關 | 22.30 | 80.61 |
+| B | 開 | 關 | 21.68 | 81.78 |
+| C | 關 | 開 | 21.98 | 81.23 |
+| **D** | 開 | 開 | 21.35 | 80.68 |
+| 參考：R128 | — | — | 16.12 | 76.65 |
+| 參考：V42 | — | — | 6.81 | 86.30 |
 
-其餘原報告見[本輪完整研究卡](<../../docs/reproducibility/experiments/main__R129_OpticalPriorHybrid.md>)。
+D 相對 A 有 27/36 顆形狀改善，但尺寸 21/36 顆變差。**A 組就不是原本的 R128**：換輸出頭本身就讓細節退步，所以 D 跟 R128 的差距不能全部歸給兩個新模組。
 
-## 進入實際檔案
+## 延續訓練 8,192 次（9/13 完成）
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 6檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [config/](<config/README.md>) | 12檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R129 manifest |
-| [model/](<model>) | 9檔 | 本輪模型程式 |
-| [package_source/](<package_source>) | 9檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [README.md](<README.md>) | 1檔 | R129 Optical prior hybrid |
-| [reports/](<reports/README.md>) | 13檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results/CONTENTS.md>) | 103檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts/README.md>) | 39檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+| 指標 | 訓練前 | 第 8,192 次 |
+|---|---:|---:|
+| 去尺寸後的細部形狀誤差 | 21.35 nm | 16.40 nm（36/36 改善） |
+| 非圓程度與 SEM 差距 | 86.6 nm | 62.7 nm |
+| 尺寸誤差 | 80.7 nm | **96.4 nm**（31/36 變差） |
 
-## 必要來源與取得界線
+尺寸誤差在第 512 次就開始變大，挑較早的保存點也解決不了。
 
-R128來源、25PSF、初始及長訓練模型、固定輸出規則。
+**連續影像 LSC（第 8,192 次，同 120 對）：** 步距波動 6.991 nm（R128 6.873、R61 7.220、Raw 9.745），柱間不一致 4.204 nm。另外把四組序列的 201 張全部重建，194 對同段落相鄰影格中，步距波動從 Raw 的 29.78 降到 29.10 nm，柱間不一致從 13.23 降到 3.97 nm。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **光學候選的「自適應選擇」沒有額外價值。** 四個候選核太相近，把學到的混合權重換成平均，輸出最大只差 1.2×10⁻⁷；能說的只有「光學資料有接入」。原 V42 第 120 輪的弱 PSF 分支強度本來就是 0。
+2. **很慢。** 完整影像約 10～11 秒（R130 的乾淨 V42 約 0.43 秒）。
+3. **論文改寫規劃。** 9/20 的定稿計畫是：一個 R129 模型、保留 ACM 與 Contour 重點、刪除消融、聚焦正常拍攝下的量測，並用 930 張 30 次重拍當主要結果。這些都只是計畫與備稿資料，原 Word 當時沒有修改。
+4. 所有真實影像都是已用過的開發資料；光學先驗有歷史 SEM 校準背景，不能說整個系統與 SEM 完全無關。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 模型（原版與整理版）、推論入口、分析程式 | 本資料夾 `model/`、`scripts/`，已在 GitHub；單圖入口 `scripts/infer_organized.py --input <影像> --output <新PNG>` |
+| 連續 LSC、長訓練核對、SEM 結果表 | `results/` 下對應資料夾，已在 GitHub |
+| 獨立操作套件（含 START_R129.cmd 與說明） | [R129 獨立套件](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/README_TW.md>) 的說明與程式在 GitHub |
+| 9/20 的論文改寫備稿 | [`Deliverables/R129_Thesis_Rewrite_Ready_20260920/`](<../../Deliverables/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md>)、[`R129_Corrected_Corner9_Thesis_Handoff_20260920/`](<../../Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920>) |
+| 權重、201 張重建影像 | 見下方說明 |
+
+> 權重與大型輸出的位置：查 `python Tools/cloud_locator.py where Experiments/R129_OpticalPriorHybrid/<路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [短測結果](<reports/R129_RESULTS.md>) | 先讀這份：接入了什麼、四組對照、機制檢查 |
+| [架構](<reports/R129_ARCHITECTURE.md>) | 各設計的實際去向與整理後的程式分工 |
+| [延續訓練結果](<reports/R129_LONG_TRAINING_RESULTS.md>)、[獨立套件](<reports/R129_STANDALONE_TRAINING.md>) | 8,192 次延續訓練 |
+| [連續 LSC](<reports/R129_CONTINUOUS_LSC_RESULTS.md>) | 201 張完整影像的位移 |
+| [論文定稿計畫（9/20）](<reports/R129_THESIS_FINAL_REWRITE_PLAN_20260920.md>)、[單一模型精簡方案](<reports/R129_THESIS_R128_EVIDENCE_INTEGRATION_20260920.md>)、[改寫計畫（9/18）](<reports/R129_THESIS_REVISION_PLAN.md>) | 論文改寫規劃，以 9/20 定稿計畫為準 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R129_OpticalPriorHybrid.md>)。

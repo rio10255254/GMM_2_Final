@@ -1,38 +1,60 @@
-# main/R98_AggressiveTextureScratch：檔案怎麼找
+# R98：加強原圖可見的紋理
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R98_AggressiveTextureScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R97](<../R97_DirectCausalPhaseScratch/FILE_GUIDE.md>) · [下一輪 R99](<../R99_GeometryTextureCoherentScratch/FILE_GUIDE.md>) · [R94～R98 四輪的取回入口](<../../docs/reproducibility/four_rounds/README.md>)
 
-**研究問題：增加可見多尺度紋理的恢復強度。**
+**一句話：** R97 的紋理分支在實拍上幾乎不動，各分支修正大約互相抵銷一半，而且一輪 96 批可能完全漏掉某幾種場景角色。R98 擴大原圖對稱頻帶的組合、加局部紋理能量調節、每輪固定補抽四種含紋理的角色、加重紋理與梯度、加強抑制分支互相抵銷、末期改成保留細節。2026-08-14 從零完成 48 輪。內部紋理與位移量比 R97 小，但輪廓與清楚輸入改動變大；SEM 上幾乎沒有差別，周長和圓度還退步。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（48 輪完成，SEM 結果不利） |
+| 時間 | 2026-08-14（00:56 啟動） |
+| 實驗條件 | R93 固定合成資料；實拍與 SEM 只用於驗證 |
+| 起點 | 隨機初始化，種子 980047；2,435,373 個參數 |
 
-## 先讀原文件
+## 結果
 
-- [R98 方法、實際完成與 GitHub 保存審查](<reports/R98_AUDIT.md>)
-- [R98 METHODOLOGY](<reports/R98_METHODOLOGY.md>)
-- [R98 RESULTS](<reports/R98_RESULTS.md>)
+**兩輪各自的內部數字（第 48 輪）：**
 
-## 進入實際檔案
+| 驗證量 | R97 | R98 |
+|---|---:|---:|
+| 紋理（越小越好） | 0.0227 | **0.0187** |
+| 輪廓（越小越好） | **0.0434** | 0.0484 |
+| 清楚輸入改動（越小越好） | **1.617** | 1.682 |
+| 位移（越小越好） | 0.0731 | **0.0241** |
+| 週期辨識餘裕（越大越好） | **0.532** | 0.431 |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 3檔 | 實驗設定、條件與來源鎖定 |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [logs_preflight_console.txt](<logs_preflight_console.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R98 保存與來源清單 |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [Open_Training_Monitor.cmd](<Open_Training_Monitor.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [README.md](<README.md>) | 1檔 | R98：加強原圖可見紋理 |
-| [reports/](<reports>) | 3檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 1檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 7檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 6檔 | 訓練程式與配套 |
+**36 顆柱 SEM（12 張曝光，逐柱中位數再取中位數）：**
 
-## 必要來源與取得界線
+| 指標 | 原圖 | R98 第 48 輪 |
+|---|---:|---:|
+| 輪廓 IoU | 0.9490 | 0.9493 |
+| 平均邊界距離（% 柱距） | 0.5697 | 0.5552 |
+| 周長誤差 | **2.86%** | 3.28% |
+| 圓度誤差 | **0.0158** | 0.0181 |
 
-共享R93／R97來源、六頻帶及固定48輪設定。
+## 讀這些數字要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **兩輪的驗證影像不同。** 都是 768／384 視野、每角色 2 個場景，但裁切種子不同，所以上面那張表只是各自的歷史，不是相同輸入下的優劣；也不是單一條件消融，因為架構、取樣、權重、排程同時改了。
+2. **舊結果報告寫「預檢中」**，但完整 48 輪原表、最終模型與 SEM 表都存在；2026-10-21 補正，原文保留。
+3. **沒有 R97 那樣的 301 張實拍整套、完整位移與分支摘要**，所以不能套用 R97 的完成判決。
+4. **重做取樣要用實際批量。** 原表第 1、17、48 輪的場景批量分別是 6、2、1，不是設計檔裡的候選 4、2、1。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 全部模型、影像、數字 | Release [`r98-complete-record-20261021`](https://github.com/rio10255254/GMM_2_Final/releases/tag/r98-complete-record-20261021)（121 個原位置、28 個模型檔、68 張影像） |
+| 四輪共用的取回與驗證方式 | [R94～R98 取回入口](<../../docs/reproducibility/four_rounds/README.md>)、[重要原圖與不利案例](<../../docs/reproducibility/four_rounds/GALLERY.md#r98>) |
+| 訓練中的實拍對照 | [results/](<results/README.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R98 結果](<reports/R98_RESULTS.md>) | 第 48 輪內部結果、SEM 完整表、缺少的證據 |
+| [R98 方法](<reports/R98_METHODOLOGY.md>) | 改動的證據與介入、主張界線 |
+| [R98 審查](<reports/R98_AUDIT.md>) | 實際完成範圍、固定來源、完整保存、以實際批量重做取樣 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R98_AggressiveTextureScratch.md>)。

@@ -1,44 +1,32 @@
-# main/R148_MeasurementStableNativePSF：檔案怎麼找
+# R148：決定邊界的主幹全部留在原尺寸（只跑了 62 次）
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R148_MeasurementStableNativePSF.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [依據 R147](<../R147_FullResPSFConsistency/FILE_GUIDE.md>) · [重新設計的 R148v2](<../R148v2_HybridContextNativePSF/FILE_GUIDE.md>)
 
-**研究問題：把決定邊界的主幹全部留在原尺寸。**
+**一句話：** 照 R147 的改良計畫，把整個主幹改成原尺寸（用不同擴張率的卷積看大範圍，沒有縮圖），並把 768 個母場景各重製成 4 個視圖，讓同一物體跨 PSF、對比、亮度、雜訊與 0～8 px 位移。2026-09-26 前置檢查與 64 次短測都通過，正式訓練卻在 62 次更新後停止、沒有任何保存點。之後的架構審查發現：四次網路加上每次兩回 PSF 運算，累積依賴範圍超過訓練時中央答案到邊界的距離，所以這個鎖定版本不續跑。審查同時提出了混合架構的方向，成為 R148v2。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **中止**（只跑了 62 次而且沒有保存點；架構審查判定不續跑） |
+| 時間 | 2026-09-26 |
+| 實驗條件 | 程式資料：R147 的 768 個母場景，從 4 倍清晰潛圖重製成 3,072 個視圖（約 295 MB） |
+| 起點 | 隨機初始化 |
 
-## 先讀原文件
+## 前置檢查（都通過）
 
-- [R148 架構重新判斷：是否只是原尺寸 ResNet 跑四遍](<reports/R148_ARCHITECTURE_REVIEW.md>)
-- [R148 完整實作與正式訓練啟動](<reports/R148_IMPLEMENTATION.md>)
-- [R148 固定驗證計畫](<reports/R148_VALIDATION_PLAN.md>)
+- 平坦亮度最大差 6×10⁻⁸，中央測試點留在中央。
+- 64 次短測後，原尺寸主幹的 1 px 整數平移最大差只有 2.4×10⁻⁸，接近浮點誤差，表示不縮圖確實避開了 R147 診斷出的取樣格子問題。
+- 尺寸過大與圓心偏右兩個反例的學習方向都正確。
+- 最初的高對比資料有最大 36.2% 的截斷，失敗資料保留，修正版截斷比例為 0。
 
-## 進入實際檔案
+## 架構審查（9/26）：為什麼不續跑
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [config/](<config>) | 4檔 | 實驗設定、條件與來源鎖定 |
-| [dataset.py](<dataset.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation>) | 551檔 | 量測介面、固定參照、設定或比較內容 |
-| [infer.py](<infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses.py](<losses.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R148 來源與身分 |
-| [model.py](<model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 1檔 | 光學計算與配套 |
-| [README.md](<README.md>) | 1檔 | R148 — 量測穩定的原尺寸 PSF 重建 |
-| [reports/](<reports>) | 3檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 3檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [train.py](<train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training_policy.py](<training_policy.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [verify_package.py](<verify_package.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [weights/](<weights>) | 1檔 | 模型檔或取得說明；最佳、最後及短測版本需分清 |
+1. **依賴範圍超出訓練邊界。** 單次網路半徑 62 px，每次 PSF 成像差加回投再各擴約 50 px，保守估計四次累積到 648 px；訓練輸入只有 320 px、中央答案離邊界 96 px，後段可能學到小圖的鏡射邊界。R137 的總半徑約 82 px，剛好在 96 px 內。
+2. **沒有真正保留 U-Net 的整體形狀能力**，全程同一解析度、沒有低解析度的匯整。
+3. **四次共享權重可能重演「後段修尺寸、前段修位置」的衝突。**
+4. **新的量測要求仍是替代指標**，前 62 次紀錄中影像項約占加權總值 85%，跨外觀位置項只有 0.6%。
 
-## 必要來源與取得界線
+審查建議的下一版：U-Net 或低解析度分支只跑一次、只給平滑的低頻修正；圓心與邊界交給原尺寸局部分支（每階段半徑縮回約 20 px）；改成一次全圖脈絡加二到三個職責不同的原尺寸階段；PSF 提示從原圖固定算一次。
 
-3072視圖生成配方、64次前測與62次失敗、架構審查。
+## 原始報告
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[架構審查](<reports/R148_ARCHITECTURE_REVIEW.md>)、[實作與啟動](<reports/R148_IMPLEMENTATION.md>)、[固定驗證計畫](<reports/R148_VALIDATION_PLAN.md>)、[README](<README.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R148_MeasurementStableNativePSF.md>)。

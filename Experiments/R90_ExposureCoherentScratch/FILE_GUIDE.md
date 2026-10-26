@@ -1,34 +1,50 @@
-# main/R90_ExposureCoherentScratch：檔案怎麼找
+# R90：同一個物體在四種曝光下，輪廓要回到同一個位置
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R90_ExposureCoherentScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R89](<../R89_MeasurementNativeScratch/FILE_GUIDE.md>) · [下一輪 R91](<../R91_DetailDecoupledScratch/FILE_GUIDE.md>) · [R89～R93 的設計演進](<../../docs/reproducibility/scratch_lineage/README.md>)
 
-**研究問題：讓同一物體在四種曝光保持相同輪廓。**
+**一句話：** R89 的輪廓會隨曝光漂移，5× 還出現黑色描邊。R90 保留 R89 的切塊安全架構，讓低頻修正分支真正只能做低頻（畫不出窄黑邊），並讓同一個程式生成的結構在四種曝光下回到同一個輪廓位置，2026-08-11 從零訓練。第 50 輪起 5× 清楚出現黑邊退步，訓練停在第 55 輪；事後比較第 20～55 輪，第 45 輪是退步前最後一個可用的版本，但真實 SEM 的某個曝光下輪廓仍往外偏。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **中止**（停在第 55 輪；第 45 輪留作研究與 ONNX 可行性候選，不升級） |
+| 時間 | 2026-08-11（10:43 啟動） |
+| 實驗條件 | 純合成：1,280 個場景、5,120 個觀察；真實 5×、20×、50× 只提供匿名光學統計；384 個場景封存 |
+| 起點 | 隨機初始化 |
 
-## 先讀原文件
+## 改了什麼
 
-- [R90 File Manifest](<MANIFEST.md>)
-- [R90 Exposure-Coherent Scratch](<README.md>)
+- 低頻修正分支真正低通，不能畫窄的暗輪廓。
+- 同一結構在四種相干曝光下觀察，訓練它回到同一個輪廓位置。
+- 訓練輪流使用重疊切塊配對、跨觀察配對、有號位移配對；損失強度平滑上升，不突然切換。
+- 保存點用連續的平衡分數排序，診斷參考只報告、不當二元門檻。
 
-## 進入實際檔案
+## 結果
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 9檔 | 實驗設定、條件與來源鎖定 |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R90 File Manifest |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R90 Exposure-Coherent Scratch |
-| [reports/](<reports>) | 8檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 23檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 2檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 1檔 | 訓練程式與配套 |
+第 45 輪：位移穩定、切塊重建逐像素一致，技術上可以匯出 ONNX；但真實 SEM 第 18 號曝光的輪廓往外擴，所以不能當通用的交付模型。第 50 輪開始，清楚的 5× 影像出現黑色描邊退步。
 
-## 必要來源與取得界線
+## 讀這些內容要知道的事
 
-四曝光生成與獨立雜訊設定、55輪歷程與模型。
+1. **專案正式基準仍是 COMBO**，應急交付仍是已驗證的 R61 ONNX；第 45 輪只是確認候選。
+2. **事後的早停研究**（比較第 20～55 輪、確認第 45 輪、分支取捨診斷、ONNX 匯出與一致性）的程式與設定都在本資料夾，清單見 [MANIFEST](<MANIFEST.md>)。
+3. 沒有任何 R89 的保存點或結果被複製進 R90。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 拿資料與重做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 設計、光學統計、實作鎖定；模型、訓練、推論、資料生成、驗證與早停研究程式 | 本資料夾 [config/](<config>)、[model/](<model>)、[training/](<training>)、[inference/](<inference>)、[scripts/](<scripts>)，已在 GitHub；對照表見 [MANIFEST](<MANIFEST.md>) |
+| 早停比較的圖 | [reports/early_stop_validation/](<reports/early_stop_validation>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 合成資料、封存集影像與 ONNX 只在原電腦上；正式與短測的權重和封存集評估結果不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡；早停比較與確認的文字結論只寫在 README 與 MANIFEST，沒有獨立報告。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [README](<README.md>) | 改了什麼、資料隔離、停止後的結果 |
+| [MANIFEST](<MANIFEST.md>) | 所有檔案的用途，包括事後早停研究 |
+| [R89～R93 的設計演進](<../../docs/reproducibility/scratch_lineage/README.md>) | 這一輪在整條從零訓練線上的位置 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R90_ExposureCoherentScratch.md>)。

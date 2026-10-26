@@ -1,42 +1,52 @@
-# main/R121_BoundaryAnchorFactorial：檔案怎麼找
+# R121：亮度對比擴充與局部位置要求的四組對照
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R121_BoundaryAnchorFactorial.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [對照組來源 R120](<../R120_PhysicalSequenceRepair/FILE_GUIDE.md>) · [問題來源 R119](<../R119_SequenceGeometryValidation/FILE_GUIDE.md>)
 
-**研究問題：將亮暗擴充與局部位置要求做四組對照。**
+**一句話：** 針對 R119 留下的兩個懷疑（資料的亮度與對比太單一；位置要求看不到邊界膨脹），做 2×2 的四組：A 是 R120 修正後的對照，B 加獨立的亮度中點與對比，C 加細節前後的局部位置要求，D 兩者都加。每組兩個種子、各 12 輪，共八次有效短測。2026-09-06 的結果：B、C、D 在兩個種子、兩套 SEM 參考下，36/36 顆柱都比 A 差，細節誤差也超出允許範圍，全部不採用，沒有進入長訓練。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（八個有效短測都沒過；A 只保留作研究對照，不是新基準） |
+| 時間 | 2026-09-06 |
+| 實驗條件 | 程式資料：唯讀引用 R118 陣列與 R120 物理序列，每組 512 個場景、768 次更新；真實 SEM 只用於評估 |
+| 起點 | 隨機初始化；同一種子內四組起點相同 |
 
-## 先讀原文件
+## 結果
 
-- [R121 四組短測的方法與修訂紀錄](<reports/R121_METHODOLOGY.md>)
-- [R121：SEM 與光學邊界參考核對](<reports/R121_REFERENCE_AUDIT.md>)
-- [R121 四組修正短測：未找到可採用的新模型](<reports/R121_RESULTS.md>)
-- [實驗索引 / Experiment Index](<reports/project_context_before/Experiments__INDEX.md>)
-- [PROJECT STATE / 專案狀態](<reports/project_context_before/PROJECT_STATE.md>)
-- [實驗重建影像 Gallery / Experiment Recon Gallery](<reports/project_context_before/RECON_GALLERY.md>)
+**真實輪廓：相對 A 的變化（柱距百分點，正值是變差；36 顆柱的中位數）：**
 
-## 進入實際檔案
+| 組別 | 歷史參考：種子 1／2 | 柱距匹配參考：種子 1／2 |
+|---|---:|---:|
+| B：亮度對比 | +0.054／+0.058 | +0.043／+0.044 |
+| C：位置要求 | +0.105／+0.101 | +0.079／+0.076 |
+| D：兩者都加 | +0.139／+0.133 | +0.110／+0.100 |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 10檔 | 實驗設定、條件與來源鎖定 |
-| [Infer.py](<Infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R121 evidence and execution scope |
-| [model/](<model>) | 2檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R121 Boundary Anchor Factorial |
-| [reports/](<reports>) | 11檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 4檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 14檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 2檔 | 原檢查程式；不是研究結果本身 |
-| [Train.py](<Train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training/](<training>) | 8檔 | 訓練程式與配套 |
-| [validation/](<validation>) | 4檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+**細節誤差相對 A 的增加**（允許上限 2%）：B +8.8%／+11.5%，C +16.8%／+18.0%，D +15.1%／+17.1%。
 
-## 必要來源與取得界線
+A 本身相對 Raw 仍有輪廓改善（歷史參考 −0.134／−0.127）；D 已接近而且略差於 Raw。
 
-R118／R120精確來源、兩套SEM參照及八組設定。
+## 讀這些數字要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **合成控制形狀變準，真實樣品卻變差。** 240 個已知幾何條件下，C、D 的邊界誤差（約 0.035～0.039 px）比 A（約 0.07 px）好很多，只看這張表會以為成功。這正是本輪最重要的反例。
+2. **SEM 參考的尺度問題。** 重跑原 R69 流程，36 個 SEM 輪廓逐像素一致；但固定縮放後 SEM 柱距比光學柱距小 0.623%～1.099%，用九張 SEM 的中位柱距得到全局係數 1.009233335。換成柱距匹配參考後，Raw 的面積偏大從 +5.34% 降到 +3.45%，可以解釋一部分共同偏大，但新改動仍輸給 A。新參考另存，舊結果沒有覆寫。
+3. **位置要求第一版有誤報。** v1 會把純粹的寬度變化誤判成 0.08～0.17 px 位移，正在跑的 C v1 被中止並保留，有效的 C、D 都用 v2。
+4. **真實 LSC 沒有跑。** 事先規定兩個種子都通過輪廓、位移與細節才跑 LSC；B、C、D 都沒過，所以沒有觸發，也沒有填入通過。
+5. **SEM 量測一開始遇到 MATLAB 的 `cell` 名稱遮蔽**，前兩版在量測前就失敗；第三版只改區域變數名稱，失敗日誌都保留。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+本資料夾的模型、訓練、推論、驗證程式，以及結果報告用的三張圖（[results/gallery_v2/](<results/gallery_v2>)）在 GitHub；入口見 [README](<README.md>)。
+
+> **不在 GitHub 程式樹上：** `results/` 其餘內容（本機約 64 MB），包括逐筆 SEM 量測 `sem/measurements.csv`（約 0.7 MB）、逐項決策 `assessment/decision.json`、獨立重算核對、有答案影像的逐張結果、控制條件與八組執行紀錄，放在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡（單一小檔所在的壓縮包就約 0.7 GB）。另外，結果報告裡指向這些檔案的連結寫的是 D 槽絕對路徑，在 GitHub 上點不開。
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [結果](<reports/R121_RESULTS.md>) | 先讀這份：八次短測的完整比較與最終決策 |
+| [方法與修訂紀錄](<reports/R121_METHODOLOGY.md>) | 四組設計、位置要求 v1 的問題與 v2 修正、評估順序 |
+| [SEM 參考核對](<reports/R121_REFERENCE_AUDIT.md>) | 柱距尺度係數怎麼來、兩套參考 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R121_BoundaryAnchorFactorial.md>)。

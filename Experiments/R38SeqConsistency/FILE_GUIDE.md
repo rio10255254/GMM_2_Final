@@ -1,30 +1,88 @@
-# main/R38SeqConsistency：檔案怎麼找
+# R38：直接教模型「連續影格要一致」
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R38SeqConsistency.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R33](<../R33RobustLoss/FILE_GUIDE.md>) · [修正版 R38v2 與 COMBO](<../R38v2SeqFixed/FILE_GUIDE.md>) · [R33～R38v2 完整系列](<../R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md>)
 
-**研究問題：直接學習連續影像的一致性。**
+**一句話：** R33 是靠壓制所有角度的梯度換來穩定，代價是邊緣變軟。R38 改成直接用連續影格的配對損失教模型「前後幀要一致」，希望不必犧牲銳利度。結果 8px 的步距穩定度是當時最好的，但 0.8px 不如 R33，邊緣甚至比 R33 還軟。這一輪的問題由 R38v2 修正，再和 R33 結合成 COMBO。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**；它是 R38v2 的直接前因 |
+| 候選名稱 | `r38_seq_only`（不加 Winsorize）；README 另列 `r38_seq_p95`，結果報告裡沒有它的數字 |
+| 時間 | 2026-04-06 |
+| 實驗條件 | A：公司端環形影像 |
+| 選中的輪次 | 第 22 輪 |
 
-## 先讀原文件
+## 在研究裡的位置
 
-- [R38 Sequence Consistency Results (2026-04-06)](<reports/R38_RESULTS.md>)
+R33 讓定位大幅變準，但邊緣明顯變軟；R34、R35、R37 想從頻率和光學下手補回銳利度，都沒成功。R38 的出發點是一個觀察：銳利度跟步距穩定度的相關係數只有 −0.107，接近零。也就是說，不穩定其實不是因為太銳利，沒有必要為了穩定去壓低銳利度。
 
-## 進入實際檔案
+## 這輪在問什麼
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [ARCHIVE_POINTER_20260824.md](<ARCHIVE_POINTER_20260824.md>) | 1檔 | R38SeqConsistency 歷史封存與恢復入口 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R38 — Sequence Consistency Training (Original) |
-| [README.md](<README.md>) | 1檔 | Round 38 — Sequence Consistency Training |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 35檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+如果用連續影格的配對損失直接教模型幀間一致，能不能讓模型在穩定的角度維持銳利，只在不穩定的角度被推去修正？
 
-## 必要來源與取得界線
+## 怎麼做
 
-624組舊序列、當時PSF、起始模型及各候選設定。
+- **兩條資料流並行：** 單張隨機裁切（跟 R30 一樣，負責銳利度）＋連續影格配對（新增，負責一致性：比較前後幀的差異和梯度）。
+- **不用 Winsorize。**
+- **序列資料：** stage 19～28 的合成序列，2026-04-06 用新的整場 PSF 重新卷積，共 624 對，涵蓋 0.08、0.8、8px 三個尺度。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 結果
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+**步距穩定度**（內部量測，越小越好）：
+
+| 尺度 | R30 | R33 | R38 |
+|---|---:|---:|---:|
+| 8px | 0.199 | 0.174 | **0.136** |
+| 0.8px | 0.205 | **0.129** | 0.159 |
+| 0.08px | 0.162 | **0.115** | 0.130 |
+
+**銳利度**（0.8px，20 幀）：
+
+| 指標 | R30 | R33 | R38 |
+|---|---:|---:|---:|
+| 梯度強度 | 3.46 | 2.36（−32%） | 2.26（−35%） |
+| Laplacian | 1.86 | 0.98（−47%） | 0.95（−49%） |
+
+8px 的擬合殘差接近 R30、內邊界甚至是三者最好，但銳利度沒有找回來，反而比 R33 更軟。
+
+## 為什麼失敗：兩份報告的兩種解釋
+
+這一輪留下了兩種並存的解釋，兩份都是原始紀錄：
+
+1. **[R38 自己的報告](<reports/R38_RESULTS.md>)：** 根因是合成答案的邊緣比 R30 在真實影像上的輸出還要柔。序列損失把模型推向答案的幀間行為，結果學到了更柔的邊。8px 的進步是真的，因為 8px 的位移夠大（約 9% 的像素有變化），訊號夠強；0.8px 只有約 0.8%，太弱。
+2. **[R38v2 的報告](<../R38v2SeqFixed/reports/R38v2_RESULTS.md>)：** 0.8px 和 0.08px 的影格差異太小，序列損失等於在灌雜訊梯度。R38v2 只留下 8px 的序列、加上訊號門檻與前 15 輪暖身後，邊緣陡度比 R30 高 89%，也就是說合成答案本身並沒有限制住銳利度。
+
+兩種解釋都同意「0.8px 以下的序列訊號太弱」，差別在於邊緣變軟的主因。R38v2 的結果比較支持第二種，但這裡沒有另外做實驗把兩者分開。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 序列分析結果（35 個檔案） | 本資料夾 [results/](<results>)，已在 GitHub |
+| 送 GMF 的逐張重建影像（約 200 張） | 2026-08-24 已移到原電腦的 H 槽封存並逐檔核對，見[封存紀錄](<ARCHIVE_POINTER_20260824.md>)；也保存在 GitHub 主版本的 git 歷史裡 |
+| 模型權重與訓練紀錄 | `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842/`，見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
+| 序列資料 | 用 `Training_Data/` 的原生成程式與當時的 PSF 重新產生，見[生成方法](<../../docs/reproducibility/GENERATION_GUIDE.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 報告 | 什麼時候讀 |
+|---|---|
+| [R38 結果](<reports/R38_RESULTS.md>) | 步距、銳利度、8px 品質與根因 |
+| [R33～R38v2 完整系列](<../R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md>) | 把 R38 放回 R33～COMBO 的脈絡裡 |
+| [原始說明](<README.md>) | 當時的假說、設計與候選，原文保留 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R38SeqConsistency.md>)。
+
+## 資料夾裡有什麼
+
+| 位置 | 內容 |
+|---|---|
+| [reports/](<reports>) | 結果報告 |
+| [results/](<results>) | 序列分析 |
+| [scripts/](<scripts>) | 分析程式 |
+| [ARCHIVE_POINTER_20260824.md](<ARCHIVE_POINTER_20260824.md>) | H 槽完整封存的位置 |
+| [MANIFEST.md](<MANIFEST.md>) | 研究保存清單 |
+
+訓練程式在共用的 [Model/](<../../Model/README.md>)；當時的分支是 `sandbox/r38`。

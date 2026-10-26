@@ -1,27 +1,33 @@
-# lab/MOSR_BestCheckpoint_Diagnostic_20260724：檔案怎麼找
+# 保存點診斷之一：換成第 10 輪會不會比較好
 
-[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+[研究時間線](<../../../../docs/research/TIMELINE.md>) · [V42](<../V42_SoftLabelSNR/FILE_GUIDE.md>) · [EDSR／NAFNet 對照](<../Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>) · [另一個診斷：推論設定與根因](<../MOSR_CheckpointConfig_Diagnostic_20260724/FILE_GUIDE.md>)
 
-[本輪研究卡](<../../../../docs/reproducibility/experiments/lab__MOSR_BestCheckpoint_Diagnostic_20260724.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
+**一句話：** EDSR 在位移上小贏 V42，懷疑之一是用錯了保存點：正式比較用的是 V42 第 120 輪，但訓練程式選的 `best_tradeoff` 是第 10 輪。2026-07-24 只把 V42 換成第 10 輪、其他完全不動重跑一次位移比較，結果正式平均誤差沒有改善，所以第 120 輪不是 EDSR 領先的原因。
 
-**研究問題：檢查最佳保存模型與最後模型對位移結果的影響。**
+| | |
+|---|---|
+| 結果 | **分析** |
+| 時間 | 2026-07-24 |
+| 實驗條件 | C：實驗室顯微系統；與 EDSR／NAFNet 正式比較相同的 7 月位移序列、相同的 Raw 鎖定 30 步 |
+| 換掉的部分 | 只有 MOSR：V42 第 120 輪 → V42 訓練程式選出的第 10 輪平滑保存點 |
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+## 結果
 
-## 先讀原文件
+結論寫在[另一份診斷報告](<../MOSR_CheckpointConfig_Diagnostic_20260724/diagnosis/DIAGNOSTIC_REPORT_zh-TW.md>)的「已排除的解釋」：最佳第 10 輪重新推論沒有改善正式平均誤差。本資料夾保留的是這次重跑的原始量測表：
 
+| 檔案 | 內容 |
+|---|---|
+| [evaluation/displacement_summary.csv](<evaluation/displacement_summary.csv>) | 各方法、各序列的位移摘要 |
+| [evaluation/displacement_pooled_common_valid.csv](<evaluation/displacement_pooled_common_valid.csv>) | 共同有效步次的合併結果 |
+| [evaluation/displacement_step_measurements.csv](<evaluation/displacement_step_measurements.csv>) | 逐步量測 |
+| [evaluation/displacement_availability.csv](<evaluation/displacement_availability.csv>) | 每個方法的有效步數 |
+| [evaluation_manifest_best_checkpoint.json](<evaluation_manifest_best_checkpoint.json>) | 重跑的設定：各方法的影像來源、挑步與有效規則 |
 
-## 進入實際檔案
+## 讀這些數字要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [evaluation/](<evaluation>) | 5檔 | 量測介面、固定參照、設定或比較內容 |
-| [evaluation_manifest_best_checkpoint.json](<evaluation_manifest_best_checkpoint.json>) | 1檔 | 設定／清單／數值紀錄；依欄位判讀 |
+1. **第 10 輪的身分。** 它是 V42 完整訓練資料夾裡的 `best_tradeoff`，是平滑（EMA）狀態，不是第 10 輪當下的網路，見 [V42 卡片](<../V42_SoftLabelSNR/FILE_GUIDE.md>)的「V42 不是單一個檔案」。
+2. **V42 訓練 120 輪裡有 105 次過度平滑警示**，最佳權重在第 10 輪後就沒再更新；這也是為什麼要回頭檢查第 10 輪。
 
-## 必要來源與取得界線
+> **目前的限制：** 第 10 輪的重建影像只在原電腦上。
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
-
-[按用途取得原件](<../../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../../../docs/reproducibility/experiments/lab__MOSR_BestCheckpoint_Diagnostic_20260724.md>)。

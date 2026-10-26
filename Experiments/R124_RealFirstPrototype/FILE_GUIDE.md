@@ -1,34 +1,51 @@
-# main/R124_RealFirstPrototype：檔案怎麼找
+# R124：把 R123 的設計做成能跑的原型
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R124_RealFirstPrototype.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [設計來源 R123](<../R123_RealFirstModelDesign/FILE_GUIDE.md>) · [下一輪 R125](<../R125_DataAlignedPilot/FILE_GUIDE.md>)
 
-**研究問題：實作四步二維重建及可保存重載的原型。**
+**一句話：** 2026-09-08 實作了完整二維、四步共享重建的原型：30 萬個可學習參數、每一步的修正與觀測核對都能匯出、分塊推論、初始化檔案能保存與重新載入。它是**未訓練**的原型，兩個成像設定（不模糊、假設 Gaussian 模糊）都只是工程測試，沒有拿真實影像或 SEM 擬合。這輪確認它跑得動、梯度算得出來、分塊一致，並且接上了實拍與 SEM 的讀值流程。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（原型可執行；沒有訓練、沒有參數更新） |
+| 時間 | 2026-09-08 |
+| 實驗條件 | 六張固定實拍（含兩個 SEM 對應曝光與 5×／20×／50× 複雜內容）只用來跑通流程 |
+| 起點 | 不訓練；學習部分的最後一層初始為零 |
 
-## 先讀原文件
+## 運算與行為驗證
 
-- [R124 implementation contract](<reports/R124_IMPLEMENTATION.md>)
-- [R124 — 模型原型已實作並實際跑通](<reports/R124_RESULTS.md>)
+| 檢查 | 結果 |
+|---|---|
+| 成像、梯度、模型行為與重新載入 | 26 項測試全部通過 |
+| 完整大小的反向運算 | 兩張 640×640 實拍，最高配置 22.57 GiB；單次前向加反向約 4.4 秒 |
+| 非零修正下的分塊一致性 | 最大差 1.19×10⁻⁷（約 0.00003 灰階） |
+| 故意拿掉分塊周邊 | 最大差約 39 灰階，證明周邊處理真的必要 |
+| 實拍輸出 | 6 張 ×2 設定＝12 份輸出，含四步完整紀錄 |
 
-## 進入實際檔案
+## 讀這些數字要知道的事
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 3檔 | 實驗設定、條件與來源鎖定 |
-| [inference/](<inference>) | 3檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R124 identity and scope |
-| [model/](<model>) | 5檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R124 — 可執行的下一代模型原型 |
-| [reports/](<reports>) | 2檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 5檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 5檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 3檔 | 原檢查程式；不是研究結果本身 |
+1. **輸出的變化不是模型學到的。** 學習部分初始為零，假設 Gaussian 模式的改變全部來自成像校正；SEM 半對比讀值上，未訓練的 Gaussian 輸出比 Raw 略差（例如曝光 13 從 0.456 變 0.465 px），這只是診斷值，不能拿來判優劣或調參。
+2. **只接了半對比讀法**，沒跑完整 ACM，也沒跑 301 張位移序列。
+3. **過程中發現的三個問題都保留了失敗紀錄：** 純黑白邊緣在亮度投影下本來就可能不動，測試改用 0.2／0.8 亮度；較細網格的誤差不一定單調下降（忽略了光學核截斷）；舊邊界讀法在接近水平的平台上很敏感，除數下限會讓位置差 0.125 px。
+4. **PyTorch 的卷積是相關運算**，物理 PSF 在讀取時翻轉一次；這是 R119 那次 OpenCV 濾波核偏移的教訓。
 
-## 必要來源與取得界線
+## 拿資料與重做
 
-原型程式、兩個診斷成像設定、原始初始化與測試輸入。
+本資料夾的模型、推論、測試與檢查程式都在 GitHub；單張或資料夾推論、重新載入與驗證指令見 [README](<README.md>)。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 報告裡的兩張圖 | [results/](<results>)，已在 GitHub |
+| 12 份實拍輸出、四步紀錄、命令列重載測試、最終核對 | 不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡 |
+| SEM 讀值的逐柱剖面陣列（約 480 MB） | 只在原電腦上；可以用 `scripts/measure_sem_smoke.py` 重新產生 |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [結果](<reports/R124_RESULTS.md>) | 先讀這份：完成了什麼、驗證數字、過程發現的問題 |
+| [實作契約](<reports/R124_IMPLEMENTATION.md>) | 實際運算、觀測算子、幾何輸出、分塊與記憶體 |
+| [README](<README.md>) | 使用方式與驗證指令 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R124_RealFirstPrototype.md>)。

@@ -1,43 +1,50 @@
-# main/R150_MatchedGeometryMeanPSF：檔案怎麼找
+# R150：實拍尺度的圓陣列，加上訓練與推論共用平均 PSF
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R150_MatchedGeometryMeanPSF.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [基礎 R148v2](<../R148v2_HybridContextNativePSF/FILE_GUIDE.md>) · [前一輪 R149](<../R149_MatchedGeometryLocalBoundary/FILE_GUIDE.md>) · [下一輪 R151](<../R151_R148v2_AdaptivePSFFusion/FILE_GUIDE.md>)
 
-**研究問題：保持架構，測新排列與訓練推論共用平均PSF。**
+**一句話：** R149 的局部邊界沒過門檻，R150 只保留有證據支持的兩項改動：R149 那份換入圓陣列的資料，以及訓練與推論都只給模型固定平均 PSF（R148v2 有 25% 的訓練視圖給了推論時拿不到的個別 PSF）。架構與全域邊界要求跟 R148v2 完全相同，從零 8,192 次並跑完 930 張，2026-09-27 完成。生成測試比 R148v2 好 6.45%，實拍的短步與去尺寸形狀也略好；但直徑重拍明顯退步，SEM 尺寸差也更大。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（短步小幅改善，直徑重拍、輪廓與 SEM 尺寸退步） |
+| 時間 | 2026-09-26 鎖定來源；09-27 訓練與實拍驗證完成 |
+| 實驗條件 | 訓練用程式資料：R149 的合併資料（64／16／16 個圓陣列場景）；評估用 D：930 張與十字中心九顆 |
+| 起點 | 隨機初始化 |
 
-## 先讀原文件
+## 結果（930 張，十字中心九顆）
 
-- [R150 Methodology](<reports/R150_METHODOLOGY.md>)
-- [R150 完整實拍驗證結果](<reports/R150_REAL_VALIDATION_RESULTS.md>)
-- [R150 Training Results](<reports/R150_RESULTS.md>)
-- [R150 Validation Plan](<reports/R150_VALIDATION_PLAN.md>)
+| 項目（越低越好） | 原圖 | R148v2 | R150 |
+|---|---:|---:|---:|
+| 短步平均差 | 8.167 | 4.003 | **3.876** |
+| 短步重拍 | 9.725 | 4.135 | **3.949** |
+| 長距離平均差 | 19.081 | **18.002** | 18.134 |
+| 直徑重拍 | 32.750 | **13.252** | 22.389 |
+| 輪廓重拍 | 63.758 | **18.600** | 19.897 |
+| 去尺寸形狀重拍 | 61.667 | 17.401 | **16.483** |
+| 平均直徑比 SEM 偏大（Excel 參照） | **169.9** | 204.3 | 220.3 |
 
-## 進入實際檔案
+單位 nm。相對 R148v2：短步平均差少 0.127 nm 但範圍跨零（−0.276～+0.017），不能說穩定勝出；直徑重拍多 9.14 nm（+6.63～+10.70），確定退步。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [config/](<config>) | 5檔 | 實驗設定、條件與來源鎖定 |
-| [dataset.py](<dataset.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation>) | 671檔 | 量測介面、固定參照、設定或比較內容 |
-| [infer.py](<infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses.py](<losses.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R150 Manifest |
-| [model.py](<model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 1檔 | 光學計算與配套 |
-| [README.md](<README.md>) | 1檔 | R150 — Matched Geometry + Mean PSF |
-| [reports/](<reports>) | 5檔 | 原報告、計畫、審查與各階段結論 |
-| [scripts/](<scripts>) | 13檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [train.py](<train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training_policy.py](<training_policy.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [verify_package.py](<verify_package.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
+## 為什麼生成資料變好，實拍尺寸卻退步
 
-## 必要來源與取得界線
+R150 的直徑比 R148v2 平均大 16 nm，但不是一個固定常數：30 趟各自的增加量從 2.0 到 34.1 nm。把每個位置自己的平均拿掉之後，R148v2 的直徑跟著原圖波動的斜率是 0.255，R150 升到 0.471。也就是說，R150 更容易隨原圖當趟的表觀寬窄一起變。報告的推測是：圓陣列讓模型更會維持圓心與形狀，但程序化的清晰邊界沒有重現實拍的材料邊界、照明與模糊變化；改成全程平均 PSF 之後，修正強度又更依賴輸入的表觀模糊。兩項改動是一起改的，不能只歸因其中一項。
 
-R149鎖定資料、原全局要求、8192模型及固定930驗收。
+## 讀這些數字要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **報告建議的兩個單因素對照**：新圓陣列資料加 R148v2 原本的混合 PSF 提示；舊資料加全程平均 PSF。在原因分開前，不該再加深模型或盲目提高邊界權重。
+2. **SEM 只是同樣本對照**，這組 SEM 也用在 PSF 擬合上；但即使如此，R150 相對原圖與 R148v2 的尺寸方向確定是退步。
+3. 生成測試的開發誤差最後三段仍在緩慢下降，沒有過擬合跡象。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+> 權重、930 張重建與比較表的位置：查 `python Tools/cloud_locator.py where Experiments/R150_MatchedGeometryMeanPSF/<路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [完整實拍驗證](<reports/R150_REAL_VALIDATION_RESULTS.md>) | 先讀這份：分項結果、統計判讀、尺寸退步的機制 |
+| [訓練結果](<reports/R150_RESULTS.md>) | 生成資料上跟凍結 R148v2 的公平比較 |
+| [方法](<reports/R150_METHODOLOGY.md>)、[固定驗證計畫](<reports/R150_VALIDATION_PLAN.md>) | 固定條件 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R150_MatchedGeometryMeanPSF.md>)。

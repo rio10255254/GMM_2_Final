@@ -12,6 +12,8 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+# Local caches written by Tools/ (e.g. cloud_locator release index)
+/.cache/
 .venv/
 venv/
 

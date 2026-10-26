@@ -1,31 +1,60 @@
-# main/R71_R61SyntheticMicroscopyDefectGeneralization：檔案怎麼找
+# R71：R61 在沒見過的合成顯微缺陷上
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R71_R61SyntheticMicroscopyDefectGeneralization.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R70](<../R70_V42ACMContourSEMValidation/FILE_GUIDE.md>) · [後續 ACM 檢查 R72](<../R72_R61SyntheticDefectACMContourValidation/FILE_GUIDE.md>)
 
-**研究問題：以有乾淨答案的顯微缺陷檢查R61。**
+**一句話：** 2026-07-30 拿主專案 R40 保留、沒參與 R61 訓練的 100 張合成顯微影像（細線格網、大區域邊界、低對比紋理、邊緣缺損、混合缺陷各 20 張，都有像素對齊的乾淨答案），比較 R61 重建前後誰更接近答案。SSIM 幾乎全面改善，但缺陷組的輪廓分數退步：R61 很少亂生假邊，問題是**淡邊被抹掉了**。這輪沒過預先固定的門檻。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（未通過這輪合成顯微泛化門檻） |
+| 時間 | 2026-07-30 |
+| 實驗條件 | 合成資料：主專案 R40 的 unseen 顯微驗證組，100 張 512×512 |
+| 模型 | Lab R61 v16（PSF 關閉）；同一測試集上的 COMBO 舊結果只當參考 |
 
-## 先讀原文件
+## 結果
 
-- [R71：R61 合成顯微缺陷泛化測試](<reports/R71_RESULTS_TW.md>)
+| 指標 | 原圖 | R61 | 判讀 |
+|---|---:|---:|---|
+| PSNR 中位數（全部） | 26.88 dB | 27.13 dB | 54% 影像改善 |
+| SSIM 中位數（全部） | 0.868 | 0.935 | 99% 影像改善 |
+| 缺陷組輪廓 F1 中位改善 | — | −0.057 | 只有 18% 影像改善 |
+| 缺陷組輪廓精確度 | 0.826 | 0.984 | 假邊變少 |
+| 缺陷組輪廓找回率 | 0.484 | 0.339 | 淡邊漏掉 |
 
-## 進入實際檔案
+**五類中位數：**
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R71 frozen manifest |
-| [README.md](<README.md>) | 1檔 | R71 — R61 合成顯微缺陷泛化測試 |
-| [reports/](<reports>) | 1檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 6檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 1檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 1檔 | 原檢查程式；不是研究結果本身 |
+| 類別 | 原圖 PSNR | R61 PSNR | 原圖輪廓 F1 | R61 輪廓 F1 |
+|---|---:|---:|---:|---:|
+| 細線格網 | 17.83 | 19.99 | 0.458 | **0.962** |
+| 大區域邊界 | 27.65 | 29.25 | 0.794 | 0.732 |
+| 低對比紋理 | 32.29 | 28.82 | 0.506 | 0.521 |
+| 邊緣缺損 | 26.89 | 27.98 | 0.774 | 0.734 |
+| 混合缺陷 | 24.98 | 25.94 | 0.158 | 0.072 |
 
-## 必要來源與取得界線
+## 讀這些數字要知道的事
 
-R40保留答案、退化輸入、R61與COMBO固定模型。
+1. **門檻在重建前就固定了：** 整體 PSNR 與 SSIM 至少 70% 影像改善、缺陷組輪廓 F1 與細節相關性至少 60% 改善、五類中位數都不能退步。
+2. **輪廓結論受設定影響。** 換 16 種強弱門檻與容許距離，R61 在 9/16 種設定下缺陷組 F1 較高：重視強邊時多半較好，連淡邊都要找回時多半較差。
+3. **資料隔離有查過。** R61 的 20,296 組訓練清單沒有引用這批路徑；200 個測試檔與訓練集中同尺寸的 1,400 個檔案逐一比對內容，沒有完全相同的影像。
+4. 下一輪 R72 改用 ACM 比完整外框，結論是「主要外框更準、細小鋸齒被平滑掉」。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 拿資料與重做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 執行程式、測試、設定 | 本資料夾 [scripts/run_r71.py](<scripts/run_r71.py>)、[tests/](<tests>)、[config/experiment.json](<config/experiment.json>)，已在 GitHub |
+| 6 張圖（代表案例、各類分數、缺陷案例、最差案例、門檻敏感度） | [results/figures/](<results/figures>)，已在 GitHub |
+| 100 張測試資料 | 主專案 [R40](<../R40_MicroscopyFeatureCoverage/FILE_GUIDE.md>) 的 unseen 顯微驗證組 |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 逐張量測表不在 git 裡。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [R71 結果](<reports/R71_RESULTS_TW.md>) | 摘要、五類結果、代表影像、缺陷與失敗案例、ACM 補充、資料隔離 |
+| [README](<README.md>) | 目的與執行方式 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R71_R61SyntheticMicroscopyDefectGeneralization.md>)。

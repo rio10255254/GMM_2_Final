@@ -1,33 +1,61 @@
-# main/R126_LearnabilityPhotometry：檔案怎麼找
+# R126：先確認學得會，再補亮暗範圍
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R126_LearnabilityPhotometry.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R125](<../R125_DataAlignedPilot/FILE_GUIDE.md>) · [下一輪 R127](<../R127_MeasurementPreservationRepair/FILE_GUIDE.md>)
 
-**研究問題：先確認簡單例子能學，再匹配測試亮暗擴充。**
+**一句話：** 回應 R125 的兩個問題。2026-09-08 先在一個固定的簡單例子上確認：原本的學習率太小，調大十倍後誤差下降 38%～61%，模型是學得會的。接著用同一份 64 個場景，比較原本亮暗範圍（P）與擴充後的範圍（Q）：Q 在暗、低對比的模擬例子上誤差少約 18%～19%；但實拍 SEM 用兩套參考會得到相反的結論，位移讀值也出現 37 px 的跳動，已經正確的乾淨影像還會被改動。不採用任何模型。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（學習與亮暗都有改善訊號，但兩套 SEM 參考結論分歧，位移讀值跳動仍在） |
+| 時間 | 2026-09-08 |
+| 實驗條件 | 程式資料：新生成的固定簡單例子，與 R125 的 64 個場景（唯讀引用）；評估沿用 R125 的實拍面板（B：36 柱、兩個曝光、六組位移影像對） |
+| 起點 | 隨機初始化；架構沿用 R125 的 B 組 |
 
-## 先讀原文件
+## 結果
 
-- [Execution notes](<reports/R126_EXECUTION_NOTES.md>)
-- [R126 learning and readout diagnosis](<reports/R126_LEARNING_AND_READOUT.md>)
-- [R126 methodology](<reports/R126_METHODOLOGY.md>)
-- [R126 — 學習已改善，亮暗補足有幫助；實拍量測仍未可靠](<reports/R126_RESULTS.md>)
+**固定例子上的學習（128 次更新的誤差下降）：**
 
-## 進入實際檔案
+| 模型 | 原學習率 1e-4 | 調大十倍 1e-3 |
+|---|---:|---:|
+| A：只有學到的修正 | 9.84% | **38.13%** |
+| B：另加成像一致性修正 | 7.21% | **61.17%** |
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 5檔 | 實驗設定、條件與來源鎖定 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R126 identity |
-| [README.md](<README.md>) | 1檔 | R126 — Learnability and photometry |
-| [reports/](<reports>) | 8檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 2檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 24檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+這是同一個固定例子上的因果對照，不是實拍改善率。
 
-## 必要來源與取得界線
+**擴充亮暗 Q 相對 Raw 的 SEM 讀值（36 柱配對中位數，px，負值較好；兩個數字是兩個起點）：**
 
-768固定更新與512匹配更新、共同實拍／SEM面板。
+| SEM 參考 | 正常曝光 | 暗曝光 |
+|---|---:|---:|
+| 全局柱距參考 | −0.003／−0.002 | −0.016／−0.024 |
+| 歷史參考 | +0.002／+0.003 | +0.008／−0.001 |
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+直接比 Q 與 P：柱距參考下 Q 兩種曝光都較好；歷史參考的暗曝光下 Q 兩次都較差（36 柱中 35 柱、21 柱退步）。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 讀這些數字要知道的事
+
+1. **位移讀值的 37 px 跳動。** Q 在 50× 那組與 Raw 差約 36.9 px；拆開重算後，差異在選擇匹配峰值時就出現了（Raw 選在約 (−8, 2)，Q 選在約 (29, 2)），未訓練的模型也已有其他跳值。不能說模型把物體移動了 37 px。R127 用完整視野重算後確認，這是舊讀法在小區塊上的問題。
+2. **放了「保持原樣」的訓練例子，模型仍不會保持原樣。** 對已經正確的乾淨例子，P 平均引入 0.129 灰階誤差，Q 是 0.391。
+3. **實拍評估與訓練檢查的運算精度設定不同**（實拍評估允許 TF32），一次重放核對差了 5×10⁻⁶ 而超過門檻；原失敗保留，用相同設定重算後完全一致。
+4. 共 1,280 次實際更新（固定例子 768 次、亮暗對照 512 次），不是一次 1,280 步的正式訓練。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 固定例子與亮暗資料的生成、訓練、評估程式與設定 | 本資料夾，已在 GitHub |
+| 報告裡的圖 | [reports/figures/](<reports/figures>) 與 `results/real_comparison/` 的比較圖，已在 GitHub |
+| 逐柱配對表、執行審查、最終核對、訓練紀錄與最終權重 | 不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡 |
+| 實拍浮點輸出（144 份）、起始權重 | 只在原電腦上 |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [結果](<reports/R126_RESULTS.md>) | 先讀這份 |
+| [學習與讀值分析](<reports/R126_LEARNING_AND_READOUT.md>) | 學習率對照、梯度核對、位移跳值的拆解 |
+| [方法](<reports/R126_METHODOLOGY.md>) | 事先固定的完成條件與兩個追加對照 |
+| [執行紀錄](<reports/R126_EXECUTION_NOTES.md>) | 啟動失敗與精度設定差異的追查 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R126_LearnabilityPhotometry.md>)。

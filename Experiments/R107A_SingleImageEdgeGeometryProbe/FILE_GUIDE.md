@@ -1,37 +1,45 @@
-# main/R107A_SingleImageEdgeGeometryProbe：檔案怎麼找
+# R107A：固定局部邊界中心，只把過渡寬度收窄
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R107A_SingleImageEdgeGeometryProbe.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R106A](<../R106A_MultiObservationShortValidation/FILE_GUIDE.md>) · [七個機制探針 R108A](<../R108A_LocalActionFalsification/FILE_GUIDE.md>) · [後來的 R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>)
 
-**研究問題：固定局部中心只收窄邊緣是否可行。**
+**一句話：** 研究主線回到單張重建後的第一個探針。假說是：過去「變清楚」和「位置漂移」互相牴觸，不是物理上必然，而是模型在同一個影像殘差裡同時改了邊界中心、過渡寬度、對比與光暈。R107A 在每個邊界點建立法線與切線座標，沿法線擬合單調的邊界剖面，**中心固定**、只允許收窄寬度，內外亮度只做局部校正，可靠度可以精確為零（角點、交叉、低對比時拒絕修正）。2026-08-25 準備好 5,000 個訓練場景與 512 個驗證場景；第一次正式從零訓練在第 1 輪就出現非有限值、沒有寫出保存點，修好混合精度問題後的 700 步穩定性試跑通過檢查。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（探針；資料與程式已準備好，正式訓練尚未完成） |
+| 時間 | 2026-08-25 |
+| 實驗條件 | 程式生成：5,000 個訓練場景、512 個固定驗證場景，答案 8 倍繪製、退化每輪確定性地重新產生；不含 SEM、均華、HS100MG 像素 |
+| 起點 | 隨機初始化（禁止續訓或繼承權重） |
 
-## 先讀原文件
+## 這輪跟之前差在哪
 
-- [R107A_SingleImageEdgeGeometryProbe 研究保存清單](<MANIFEST.md>)
-- [R107A Single-Image Edge Geometry Probe](<README.md>)
-- [R107A 單張局部邊界幾何設計](<design/R107A_DESIGN_ZH.md>)
+- **R92／R100：** 雖然表示了物理邊緣，但學的仍是影像空間輸出，中心、寬度、亮度可以互相補償。
+- **R105A：** 預測整個有號距離場並直接畫出來，零值線一錯整條輪廓就跟著移。
+- **R107A：** 中心錨在局部觀察到的證據上，只允許有解析式約束的單調寬度修正，不需要知道整個物體是圓、月牙、環還是角。
 
-## 進入實際檔案
+## 第一道門檻（在建任何學習模型之前）
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 1檔 | 實驗設定、條件與來源鎖定 |
-| [data/](<data>) | 1檔 | 資料相關原件、清單或固定來源；內容身分由設定與原說明確認 |
-| [design/](<design>) | 1檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [inference/](<inference>) | 2檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R107A_SingleImageEdgeGeometryProbe 研究保存清單 |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R107A Single-Image Edge Geometry Probe |
-| [requirements.txt](<requirements.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [scripts/](<scripts>) | 6檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [training/](<training>) | 3檔 | 訓練程式與配套 |
-| [validation/](<validation>) | 1檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
+在未見形狀上邊界更窄更準；中心與擬合質心沒有系統偏移；沒有黑輪廓、光暈或亮度越界；清楚輸入不被改；已知位移與整張／切塊行為不變；均華環形與 SEM 裁切安全。如果用真值法線可行、用影像估計法線不行，下一個問題就是方向與中心估計；兩者都不行，就否決「固定中心、只改寬度」的假說。
 
-## 必要來源與取得界線
+## 讀這些內容要知道的事
 
-5000／512場景生成、解析控制及後續學習設定。
+1. **第一次正式訓練作廢。** `r107_formal_scratch_20260825` 在第 1 輪指標變成非有限值後停止，沒有寫出保存點；修好後的 700 步試跑 `r107_bounded_heads_probe_700` 越過原本第 625 步的失敗點，保存點通過有限輸出、固定中心、清楚輸入不變、整張／切塊一致的檢查。這些診斷試跑都不是正式候選。
+2. **下一次正式訓練必須用新的編號、從隨機初始化開始。** 準備狀態與檔案雜湊記在 `PREPARED_STATE.json` 與 `FILE_MANIFEST_SHA256.csv`。
+3. **R108G 的「位置與寬度分開」接續了這個想法**，成為 R109 的依據。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 拿資料與重做
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 設定、資料準備、模型、訓練、推論、驗證程式與 PowerShell 入口 | 本資料夾 [config/](<config>)、[data/](<data>)、[model/](<model>)、[training/](<training>)、[inference/](<inference>)、[validation/](<validation>)、[scripts/](<scripts>)，已在 GitHub；用法見 [README](<README.md>) |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [設計](<design/R107A_DESIGN_ZH.md>) | 核心假說、局部座標、第一階段分解、不先做的事、反證順序、進入完整模型的條件 |
+| [README](<README.md>) | 跟之前差在哪、第一道門檻、資料、訓練、目前狀態 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R107A_SingleImageEdgeGeometryProbe.md>)。

@@ -1,37 +1,26 @@
-# legacy/organized_20260306：檔案怎麼找
+# 2026-03-06 批次：R1 之前的基準版 step8_curve_sharp
 
-[本輪研究卡](<../../docs/reproducibility/experiments/legacy__organized_20260306.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [早期輪次對照](<../../docs/reproducibility/lineage/EARLY_ROUNDS.md>) · [下一個批次 3/07（R1）](<../organized_20260307/FILE_GUIDE.md>)
 
-**研究問題：最早整理的訓練候選、採用與拒絕歷史。**
+**一句話：** 專案最早期的自動調參批次。目標是讓模型對真實的 1 µm＝8 px 位移更敏感，供下游 GMF 使用；這一批加入了「已知步長的 GMF 代理驗證」（用一張固定監控影像合成已知 8 px 步長的序列）、新增曲邊與環形邊緣缺陷的資料階段，並跑了四個候選家族。最後採用 `step8_curve_sharp`，取代更早的 `annulus_focus_boundary`，成為之後 3/07 起所有測試的比較基準。這批之後就凍結。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **採用**（當時的基準版；3/07 起的新測試都拿它當比較基準，之後被後續輪次取代） |
+| 時間 | 2026-03-06 |
+| 實驗條件 | 程式資料：合成曲邊與環形資料（新增 stage 13、14）；內部用已知 8 px 步長的代理驗證 |
+| 起點 | 當時的 GeoEdgeAlignSR 訓練程式 |
 
-## 先讀原文件
+## 讀這些內容要知道的事
 
-- [Auto Tune 8px Report](<AUTO_TUNE_8PX_REPORT_20260306.md>)
-- [自動調優持續報告 (2026-03-06)](<AUTO_TUNE_CONTINUE_REPORT_20260306.md>)
-- [清理報告 (2026-03-06)](<CLEANUP_REPORT_20260306.md>)
-- [Cleanup Report v2 (2026-03-06)](<CLEANUP_REPORT_20260306_v2.md>)
-- [Cleanup Report (2026-03-07)](<CLEANUP_REPORT_20260307.md>)
-- [訓練產物總索引（中文）](<README.md>)
+1. **四個候選家族**：`step8_curve_general`、`step8_curve_sharp`、`step8_general_balanced`、`step8_annulus_priority`。
+2. **這一批做過大清理**：大量中間保存點、監控影像與未採用的 sweep 都刪了，只保留採用版的 `best_tradeoff.pth.tar`、歷史版的必要權重與必要紀錄；清理經過見三份清理報告。
+3. 當時推論程式 `Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py` 的預設權重就指向這個採用版。
 
-## 進入實際檔案
+## 拿資料與重做
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [archive/](<archive>) | 2檔 | 舊內容及當次封存紀錄 |
-| [AUTO_TUNE_8PX_REPORT_20260306.md](<AUTO_TUNE_8PX_REPORT_20260306.md>) | 1檔 | Auto Tune 8px Report |
-| [AUTO_TUNE_CONTINUE_REPORT_20260306.md](<AUTO_TUNE_CONTINUE_REPORT_20260306.md>) | 1檔 | 自動調優持續報告 (2026-03-06) |
-| [CLEANUP_REPORT_20260306.md](<CLEANUP_REPORT_20260306.md>) | 1檔 | 清理報告 (2026-03-06) |
-| [CLEANUP_REPORT_20260306_v2.md](<CLEANUP_REPORT_20260306_v2.md>) | 1檔 | Cleanup Report v2 (2026-03-06) |
-| [CLEANUP_REPORT_20260307.md](<CLEANUP_REPORT_20260307.md>) | 1檔 | Cleanup Report (2026-03-07) |
-| [README.md](<README.md>) | 1檔 | 訓練產物總索引（中文） |
-| [selected/](<selected>) | 3檔 | 歷史選定內容；不代表今日正式採用 |
+採用 run 與權重在 `selected/runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332/`；位置查 `python Tools/cloud_locator.py where Traing_Progress/organized_20260306/selected`。
 
-## 必要來源與取得界線
+## 原始報告
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
-
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
-
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+[8 px 自動調參報告](<AUTO_TUNE_8PX_REPORT_20260306.md>)（採用依據）、[續跑報告](<AUTO_TUNE_CONTINUE_REPORT_20260306.md>)（舊採用版 `annulus_focus_boundary`）、清理報告（[3/06](<CLEANUP_REPORT_20260306.md>)、[3/06 v2](<CLEANUP_REPORT_20260306_v2.md>)、[3/07](<CLEANUP_REPORT_20260307.md>)）、[README](<README.md>)。保存紀錄見[本批次保存紀錄](<../../docs/reproducibility/experiments/legacy__organized_20260306.md>)。

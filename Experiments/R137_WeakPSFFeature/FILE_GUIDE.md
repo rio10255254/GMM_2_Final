@@ -1,51 +1,44 @@
-# main/R137_WeakPSFFeature：檔案怎麼找
+# R137：讓低強度的光學線索輔助原尺寸模型
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R137_WeakPSFFeature.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [基礎 R130 Clean](<../R130_Clean/FILE_GUIDE.md>) · [下一輪 R138](<../R138_V42PSF8/FILE_GUIDE.md>) · [量測做法 R136](<../R136_PIRepeatability/FILE_GUIDE.md>)
 
-**研究問題：以低強度光學線索輔助原尺寸模型。**
+**一句話：** 在 R130 Clean 的原尺寸純神經主幹上，加一條很弱的光學線索：25 顆舊 PSF 正規化後取平均，經 Wiener 反卷積得到線索，再以固定 0.02 的強度融進局部特徵，原圖本身不改寫。2026-09-21 從零訓練 8,192 次，用 930 張與十字中心九顆量測。短步位移與尺寸重拍都比 R130 Clean 好，PSF 也確實有作用；但平均直徑比 SEM 偏大的問題沒改善。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（短步與輪廓重拍有小幅改善，尺寸偏大仍在） |
+| 時間 | 2026-09-21；09-22 補充文件與速度解讀 |
+| 實驗條件 | 訓練用程式資料：與 R130 Clean 相同的 512／128／128 母場景、順序與雜訊種子；評估用 D：930 張（30 次 ×31 張）與 SEM 對應的十字中心九顆 |
+| 起點 | 隨機初始化（主幹初始參數與 R130 Clean 逐位元相同，另加 640 個光學轉換參數） |
 
-## 先讀原文件
+## 結果（930 張，十字中心九顆）
 
-- [R137 弱 PSF 特徵測試結果](<reports/R137_RESULTS.md>)
-- [R137 執行時間解讀補充](<reports/R137_RUNTIME_SCOPE_ADDENDUM.md>)
+| 方法 | 短步平均差（nm） | 短步重拍（nm） | 直徑重拍（nm） | 輪廓重拍（nm） | 平均直徑比 SEM 偏大（nm） |
+|---|---:|---:|---:|---:|---:|
+| 原圖 | 8.167 | 9.725 | 32.75 | 63.76 | 185.2 |
+| R129 | 4.125 | 4.251 | 19.23 | 18.44 | 224.5 |
+| R130 Clean | 4.121 | 4.184 | 16.42 | 18.58 | 219.4 |
+| **R137** | **3.917** | **3.906** | **14.26** | **17.71** | 222.4 |
 
-## 進入實際檔案
+相對 R130 Clean，短步平均差在 30 趟中 21 趟較好，配對差距範圍在零以下；相對起點的長距離誤差則沒有明確改善。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [batch_prediction.py](<batch_prediction.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [CHECK_STATUS.cmd](<CHECK_STATUS.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [compare_measurements.py](<compare_measurements.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [config/](<config>) | 6檔 | 實驗設定、條件與來源鎖定 |
-| [config_r137_psf.yaml](<config_r137_psf.yaml>) | 1檔 | 設定／清單／數值紀錄；依欄位判讀 |
-| [dataset_r137_psf.py](<dataset_r137_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluate_generated.py](<evaluate_generated.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluate_real_measurement.py](<evaluate_real_measurement.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation>) | 130檔 | 量測介面、固定參照、設定或比較內容 |
-| [final_audit.py](<final_audit.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [infer_r137_psf.py](<infer_r137_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses_r137_psf.py](<losses_r137_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [model_r137_psf.py](<model_r137_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 2檔 | 光學計算與配套 |
-| [preflight_check.py](<preflight_check.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [README.md](<README.md>) | 1檔 | R137 弱 PSF 特徵測試 |
-| [reports/](<reports>) | 4檔 | 原報告、計畫、審查與各階段結論 |
-| [requirements.txt](<requirements.txt>) | 1檔 | 原說明／報告／歷史紀錄 |
-| [results/](<results>) | 13檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 2檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [START_R137.cmd](<START_R137.cmd>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [train_r137_psf.py](<train_r137_psf.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [write_report.py](<write_report.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **PSF 確實有作用。** 用同一份權重開關光學線索，四張實拍輸出平均差約 0.045 灰階、最大約 1.2 灰階。但這是同權重的機制檢查，不是重新訓練的消融。
+2. **光學線索是整張影像的 FFT 運算**，所以不能宣稱整條路徑像 R130 Clean 一樣只有有限的局部範圍。
+3. **25 顆 PSF 只取平均**，因為這次視野和那 25 個位置的對應沒有確認；這批 PSF 可能來自 SEM 校準，不能說完全獨立於 SEM。
+4. **速度不能拿來排名。** 這次 930 張中位 6.99 秒，使用者指出當時 GPU 同時被另一個訓練程序佔用，這個數字只是當次紀錄。
 
-R130資料、精確25PSF、8192模型及共同930原圖。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+`START_R137.cmd` 跑完整流程、`CHECK_STATUS.cmd` 只讀狀態；訓練資料以唯讀方式連到 R130 Clean 的資料，大型重建放在 H 槽。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 模型、訓練、評估程式 | 本資料夾，已在 GitHub |
+| 9/22 整理的四份閱讀文件 | [`Deliverables/R137_WeakPSF_Web_Documents_20260922/`](<../../Deliverables/R137_WeakPSF_Web_Documents_20260922/00_閱讀與上傳說明.md>) |
+| 權重、930 張重建、量測表 | 查 `python Tools/cloud_locator.py where Experiments/R137_WeakPSFFeature/<路徑>` |
+
+## 原始報告
+
+[結果](<reports/R137_RESULTS.md>)、[速度解讀補充](<reports/R137_RUNTIME_SCOPE_ADDENDUM.md>)、[README](<README.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R137_WeakPSFFeature.md>)。

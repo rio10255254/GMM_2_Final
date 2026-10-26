@@ -1,39 +1,70 @@
-# main/R136_PIRepeatability：檔案怎麼找
+# R136：930 張 30 趟重拍，建立之後論文比較的量測做法
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R136_PIRepeatability.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R135](<../R135_UnifiedModelComparison/FILE_GUIDE.md>) · [下一輪 R137](<../R137_WeakPSFFeature/FILE_GUIDE.md>) · [之後用同一批資料的 R152](<../R152_R148v2_SafeAdaptivePSF/FILE_GUIDE.md>)、[R153](<../R153_MeanExternalBenchmark/FILE_GUIDE.md>)
 
-**研究問題：用30趟重拍檢查固定模型的位移與不確定度。**
+**一句話：** 2026-09-03 在均華的光學系統上，用 20× 物鏡加 PI 位移台拍了同一片樣品：30 次重複掃描，每次 31 張、30 段約 1 µm 的移動，同步記錄 PI 的實際回授位置，共 930 張。R136 用論文的 LSC 取邊與最小平方圓心，對原圖、R61、R129、R128 各量完全部 930 張、8,370 個圓心，跟 PI 讀值比。這是第一份有獨立位置參照的位移證據，後面論文的比較都照這套做法。過程中發現最初用的九顆柱沒有 SEM 對應，9/19 改選十字中心附近的九顆重算。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **分析**（建立 930 張、30 趟的比較做法；不更換模型） |
+| 時間 | 2026-09-16～09-20（拍攝在 09-03） |
+| 實驗條件 | D：均華 20× 物鏡加 PI 位移台的 930 張（30 次 ×31 張），名義 172.5 nm／px；SEM 用舊 36 柱資料的對應九顆 |
+| 起點 | 不訓練；R61 v16、R129 延續訓練第 8,192 次、R128 P_s1285002 都用固定權重 |
 
-## 先讀原文件
+## 主要結果（最初的九顆，9 顆合併）
 
-- [R136：原圖、R61、R129、R128的完整LSC位移比較](<reports/R136_LSC_FOUR_MODEL_RESULTS.md>)
-- [R136：LSC圓心定位的30次位移比較](<reports/R136_LSC_R61_RESULTS.md>)
-- [R136：LSC圓心定位的30次位移比較](<reports/R136_LSC_RESULTS.md>)
-- [R136第二次核對：這份新實拍對模型能力判斷的影響](<reports/R136_MODEL_ASSESSMENT.md>)
-- [R128：十字中心附近九顆 pillar 的重複度詳表](<reports/R136_R128_CORNER9_DETAIL.md>)
-- [R129不確定度評估：現有資料可量化的部分](<reports/R136_R129_UNCERTAINTY_RESULTS.md>)
+| 位移 | 方法 | 平均絕對誤差（nm） | 重拍波動（nm） | 最大誤差（nm） |
+|---|---|---:|---:|---:|
+| 每一步 | 原圖 | 8.667 | 10.452 | 36.676 |
+| 每一步 | R61 | 5.160 | 5.195 | 19.990 |
+| 每一步 | R129 | 4.092 | 4.379 | 16.104 |
+| 每一步 | R128 | 4.025 | 4.182 | 17.305 |
+| 相對起點 | 原圖 | 17.738 | 14.796 | 62.553 |
+| 相對起點 | R61 | 15.267 | 11.870 | 47.432 |
+| 相對起點 | R129 | 15.712 | 11.078 | 48.773 |
+| 相對起點 | R128 | 15.496 | 10.570 | 47.751 |
 
-其餘原報告見[本輪完整研究卡](<../../docs/reproducibility/experiments/main__R136_PIRepeatability.md>)。
+三個模型的每一步誤差都是 30/30 次比原圖好。R128 與 R129 很接近（短步只差 0.067 nm，逐次 15 比 15，差距範圍包含零）；長距離（相對起點）則沒有一個模型明確勝出。
 
-## 進入實際檔案
+## 改用十字中心九顆之後（9/19～9/20）
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config/README.md>) | 2檔 | 實驗設定、條件與來源鎖定 |
-| [HANDOFF.md](<HANDOFF.md>) | 1檔 | R136 continuation |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R136 manifest |
-| [output/](<output>) | 35檔 | 輸出內容，依原報告確認用途 |
-| [README.md](<README.md>) | 1檔 | R136 PI referenced repeated displacement |
-| [reports/](<reports/README.md>) | 35檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results/CONTENTS.md>) | 969檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts/README.md>) | 60檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
+最初那九顆有完整照片與同步 PI 回授，但沒有完成對應 SEM 的逐顆確認，所以只能談位移與重拍穩定，不能談尺寸或形狀準確度。9/19 改選最接近右下十字交界的完整 3×3 九顆，對到舊 SEM 編號 22、23、24、28、29、30、34、35、36，再全部重算：
 
-## 必要來源與取得界線
+| 方法 | 短步平均差（nm） | 短步重拍（nm） | 相對起點平均差（nm） | 直徑重拍波動（nm） | 九顆平均直徑比 SEM 偏大（nm） |
+|---|---:|---:|---:|---:|---:|
+| 原圖 | 8.167 | 9.725 | 19.081 | 32.75 | 185.2 |
+| R61 | 5.368 | 5.482 | 17.210 | 37.97 | **115.8** |
+| R129 | 4.125 | 4.251 | 17.985 | 19.23 | 224.5 |
+| R128 | **3.708** | **3.708** | 17.864 | **9.53** | 222.0 |
 
-930原圖及PI讀值、各固定模型、原始圓心／邊界點與比例。
+模型讓位移與尺寸量得更穩，但九顆平均直徑相對 SEM 的偏大反而增加（R129、R128 都比原圖大約 37～39 nm），約 30 µm 終點的偏差也沒有改善（原圖 +40.9、R129 +42.9 nm）。不能把「更穩定」寫成「尺寸更準」。
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+## 讀這些數字要知道的事
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+1. **9 顆合併不等於單顆精度。** 合併沿用論文的做法（取 9 顆 X、Y 位移的中位數）；R129 每一顆各自的短步誤差約 7.5～10.1 nm。
+2. **尺度只用前 6 次原圖估。** 估出 0.172521 µm／px，固定給所有方法，後 24 次分開檢驗；任何模型的結果都不參與校正。
+3. **SEM 方向在這裡只是工作推定，後來改了。** 明暗核對確認柱與孔分類正確，整視野相關較支持左右鏡像（0.963 對 0.936），所以 R136 用的排列是 22 23 24／28 29 30／34 35 36。9/24 校準 PSF 時重新核對方向，從 [R145](<../R145_Center9PSF25_CorrectedPairs/FILE_GUIDE.md>) 起改用 36 35 34／30 29 28／24 23 22。九顆集合相同，平均尺寸與位移統計不受影響，但逐顆的尺寸與輪廓比較要以修正後的對應為準。
+4. **R61 有曾用過相關 SEM 尺寸訓練的限制**（[R135](<../R135_UnifiedModelComparison/FILE_GUIDE.md>)），所以它的尺寸優勢不是獨立驗證；但它在這批新拍攝上的位移改善是真實的。
+5. **這是同一片樣品、同一時段的 30 次重複**，不是 30 個不同樣品；PI 校正證書與有效倍率的不確定度都還沒齊備，可呈現的是重拍散布與相對 PI 的差距。
+
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 重建、LSC 量測、統計與獨立核對程式、固定計畫 | 本資料夾 `scripts/`、`config/`，已在 GitHub |
+| 報告圖 | `reports/lsc_figures/`、`lsc_four_model_figures/`、`lsc_r61_figures/`、`r61_figures/`，已在 GitHub |
+| 給使用者的閱讀包與圖表包（PDF、Excel、PNG／SVG） | `output/` 下對應的資料夾，已在 GitHub（原本是 ZIP，git 上是展開後的內容） |
+| 930 張原圖、各模型的浮點重建、逐筆圓心與邊界點 | 查 `python Tools/cloud_locator.py where Experiments/R136_PIRepeatability/<路徑>` |
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [四模型 LSC](<reports/R136_LSC_FOUR_MODEL_RESULTS.md>) | 先讀這份：原圖、R61、R129、R128 的完整位移比較 |
+| [SEM 涵蓋的十字中心九顆](<reports/R136_SEM_CORNER9_RESULTS.md>) | 改選九顆的原因與四組重算 |
+| [Raw 與 R129 九顆](<reports/R136_RAW_R129_CORNER9_RESULTS.md>)、[Raw 與 R128 九顆](<reports/R136_RAW_R128_CORNER9_RESULTS.md>)、[R128 九顆詳表](<reports/R136_R128_CORNER9_DETAIL.md>) | 兩兩完整比較 |
+| [SEM 資料找回](<reports/R136_SEM_REFERENCE_RESULTS.md>)、[SEM 方向](<reports/R136_SEM_DIRECTION_RESULTS.md>)、[輪廓形狀與尺寸](<reports/R136_SHAPE_SIZE_RESULTS.md>) | SEM 對應與尺寸 |
+| [模型評估（9/17 第二次核對）](<reports/R136_MODEL_ASSESSMENT.md>)、[R129 不確定度](<reports/R136_R129_UNCERTAINTY_RESULTS.md>) | 對模型選擇的影響、可量化的不確定度 |
+| [三組 LSC](<reports/R136_LSC_RESULTS.md>)、[原圖與 R61 LSC](<reports/R136_LSC_R61_RESULTS.md>)、[原圖與 R61 先行結果](<reports/R136_R61_RESULTS.md>) | 較早的版本，保留作歷史 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R136_PIRepeatability.md>)。

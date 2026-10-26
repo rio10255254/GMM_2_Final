@@ -1,49 +1,61 @@
-# lab/BaseUNet_Baseline_20260718：檔案怎麼找
+# 基礎 U-Net 對照：拿掉光學設計的一般網路會怎樣
 
-[Lab逐輪必要來源與代表模型核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)
+[研究時間線](<../../../../docs/research/TIMELINE.md>) · [LabSystem 全線](<../../../../docs/reproducibility/lineage/LAB_SYSTEM.md>) · [被比較的 V42](<../V42_SoftLabelSNR/FILE_GUIDE.md>) · [同期的 EDSR／NAFNet 比較](<../Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>)
 
-[本輪研究卡](<../../../../docs/reproducibility/experiments/lab__BaseUNet_Baseline_20260718.md>) · [全部研究分區](<../../../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../../../docs/reproducibility/STATUS.md>)
+**一句話：** 為了回答「MOSR 的光學與架構設計真的有必要嗎」，2026-07-18 在同一份 Lab 資料上從頭訓練一個約 400 萬參數的一般 U-Net。第一版重建出來接近黑畫面，原因是訓練用 256×256 局部影像、推論卻整張送；改成重疊分塊後正常。結果 Base U-Net 的位移誤差和九顆柱的分散都比 V42 小，但兩個倍率的 CD 都不如 V42；它的穩定不是靠把邊界磨平，而是把柱子變成對比很強、形狀很規則的樣子。
 
-**研究問題：以基礎U-Net作參數與訓練資料受控比較。**
+| | |
+|---|---|
+| 結果 | **分析**（論文對照方法之一；與後來 R153 的十方法比較是不同的比較） |
+| 時間 | 2026-07-18 |
+| 實驗條件 | C：實驗室顯微系統；7 月的 50×、20× 各兩組位移序列（共 201 張）與 6/18 的 50×、20× CD 影像 |
+| 比較對象 | 原圖、Wiener 反卷積、V42 第 120 輪（文件裡稱 MOSR） |
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+## 這輪在問什麼
 
-## 先讀原文件
+同樣的資料、同樣的量測規則，換成沒有光學先驗的一般 U-Net，結果會差多少？
 
-- [四組位移實驗 Raw 鎖定、V42 盲化稽核](<results/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
-- [四組位移實驗 Raw 鎖定、V42 盲化稽核](<results/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
-- [四組位移實驗 Raw 鎖定、V42 盲化稽核](<results_fixed_psf/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
-- [四組位移實驗 Raw 鎖定、V42 盲化稽核](<results_fixed_psf/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
-- [四組位移實驗 Raw 鎖定、V42 盲化稽核](<results_full_data/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
-- [四組位移實驗 Raw 鎖定、V42 盲化稽核](<results_full_data/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+## 怎麼做
 
-其餘原報告見[本輪完整研究卡](<../../../../docs/reproducibility/experiments/lab__BaseUNet_Baseline_20260718.md>)。
+- 從頭訓練，256×256 局部影像；先跑 15 輪，再延長到 30 輪，取驗證最佳的第 12 輪。
+- 正式推論改成重疊分塊再拼接，跟訓練一致。
+- 重建 203 張：四組位移序列 201 張，加上 20×、50× 各一張 CD 影像；九顆柱、30 步挑選、量測規則都跟 V42 的論文結果相同。
+- 另外把原圖套 0.5～2.0 px 的高斯平滑，重跑 120 步，檢查「位移穩定只是因為平滑」這個解釋。
 
-## 進入實際檔案
+## 結果
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analyze_base_unet_baseline.py](<analyze_base_unet_baseline.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [analyze_base_unet_edge_stability.py](<analyze_base_unet_edge_stability.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [analyze_gaussian_smoothing_control.py](<analyze_gaussian_smoothing_control.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [compare_base_unet_retests.py](<compare_base_unet_retests.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [infer_base_unet.py](<infer_base_unet.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [make_base_unet_qualitative_figure.m](<make_base_unet_qualitative_figure.m>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [make_base_unet_retest_figures.m](<make_base_unet_retest_figures.m>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [results/](<results>) | 2檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [results_fixed_psf/](<results_fixed_psf>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [results_full_data/](<results_full_data>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [results_full_data_fixed_psf_e15_tiled/](<results_full_data_fixed_psf_e15_tiled>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [results_full_data_fixed_psf_tiled_e30/](<results_full_data_fixed_psf_tiled_e30>) | 19檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [results_full_data_fixed_psf_v2/](<results_full_data_fixed_psf_v2>) | 2檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [run_base_unet_displacement_audit.py](<run_base_unet_displacement_audit.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [run_gaussian_smoothing_control.py](<run_gaussian_smoothing_control.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [train_base_unet.py](<train_base_unet.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
+| 方法 | 50× CD 中位誤差 | 20× CD 中位誤差 | 位移平均誤差 | 九顆柱位移分散 |
+|---|---:|---:|---:|---:|
+| 原圖 | 95.33 nm | 192.12 nm | 9.54 nm | 17.63 nm |
+| Wiener | 123.71 nm | 161.17 nm | 7.46 nm | 7.92 nm |
+| **Base U-Net** | 90.04 nm | 124.83 nm | **6.17 nm** | **5.04 nm** |
+| V42（MOSR） | **76.11 nm** | **116.96 nm** | 6.74 nm | 6.47 nm |
 
-## 必要來源與取得界線
+**平滑對照：** 原圖最好的平滑（1.5 px）九顆柱分散 7.56 nm，仍比 Base U-Net 差，而且邊界寬度變成 650～850 nm；Base U-Net 的邊界寬度只有 109 nm（50×）與 257 nm（20×）。
 
-保留本輪原資料生成、來源清單、實際起始模型、實體參照與完整結果；不以主專案同名輪次代替。。
+## 讀這些數字要知道的事
 
-[按用途取得原件](<../../../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **穩定的邊界不一定是正確的邊界。** Base U-Net 的位移指標最好，CD 卻離 SEM 較遠；它的影像比較接近理想化的模板。
+2. **延長訓練是取捨，不是全面進步。** 30 輪版本改善了 20× CD 與位移，但 50× CD 和九顆柱一致性略退。
+3. **資料夾裡的 `UNIFIED_AUDIT_REPORT_TW.md` 寫著「V42」，但內容是 Base U-Net。** 這些是沿用 V42 論文結果的位移稽核工具產生的，工具把候選欄固定命名為「V42」；每個資料夾的數字都不同，是該資料夾那一版 Base U-Net（或平滑對照）自己的結果。
+4. **跟論文現在的比較不同。** 這裡用的是 6～7 月的資料與 V42；論文現在採用的是 R153 在 9/3 的 930 張上的十方法比較。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 訓練、推論、分析、平滑對照程式與 MATLAB 畫圖 | 本資料夾根目錄的 `.py`、`.m`，已在 GitHub |
+| 30 輪版本的摘要、清單、對照圖 | [results_full_data_fixed_psf_tiled_e30/](<results_full_data_fixed_psf_tiled_e30/BASE_UNET_RETEST_SUMMARY_TW.md>) |
+| 早期各版（15 輪、固定 PSF、v2 等）的稽核 | 本資料夾的 `results*/` 各子資料夾 |
+
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 模型權重與 203 張重建影像只在原電腦上。
+
+## 原始報告
+
+| 報告 | 內容 |
+|---|---|
+| [重新訓練與位移穩定性檢查](<results_full_data_fixed_psf_tiled_e30/BASE_UNET_RETEST_SUMMARY_TW.md>) | 黑畫面原因、15／30 輪比較、四方法同尺比較、平滑對照 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../../../docs/reproducibility/experiments/lab__BaseUNet_Baseline_20260718.md>)。

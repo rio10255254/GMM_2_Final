@@ -1,36 +1,52 @@
-# main/R91_DetailDecoupledScratch：檔案怎麼找
+# R91：把亮度、細節、邊界分開學
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R91_DetailDecoupledScratch.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R90](<../R90_ExposureCoherentScratch/FILE_GUIDE.md>) · [下一輪 R92](<../R92_PhysicalTransitionBalancedScratch/FILE_GUIDE.md>) · [R89～R93 的設計演進](<../../docs/reproducibility/scratch_lineage/README.md>)
 
-**研究問題：分開紋理恢復與輪廓／曝光約束。**
+**一句話：** R91 想在保住自然輪廓、位移穩定與切塊一致的同時，恢復更清楚的顯微紋理，又不靠黑色描邊作弊。做法是把低頻亮度、局部細節與邊界分工，四種相干曝光一起學、但各自保留獨立雜訊。2026-08-11 從零完成 60 輪；但最後的驗證量顯示清楚的輸入仍會被明顯改動，新增的結構錯誤也還多。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **研究候選**（訓練完成，但清楚的輸入也會被改動，結構錯誤仍多） |
+| 時間 | 2026-08-11（18:02 啟動，23:28 完成 60 輪） |
+| 實驗條件 | 純合成：1,250 個場景、5,000 個觀察；真實影像只提供匿名光學統計，另有封存集 |
+| 起點 | 隨機初始化，種子 910041 |
 
-## 先讀原文件
+## 結果（第 60 輪的原始驗證量）
 
-- [R91 完成狀態、來源與GitHub保存審查](<reports/R91_PRESERVATION_AUDIT_20261021.md>)
-- [R91 Manifest](<MANIFEST.md>)
-- [R91 Detail-Decoupled Scratch](<README.md>)
+| 驗證量 | 數值 |
+|---|---:|
+| 清楚輸入的平均改動 | 4.73 灰階 |
+| 新增的結構錯誤 | 33 |
+| 位移平均誤差 | 0.157 px |
+| 位移第 95 百分位 | 0.466 px |
+| 位移系統偏差 x／y | −0.046／−0.022 px |
+| 切塊差異 | 0 |
 
-## 進入實際檔案
+「不修改與細節保護」這一組，像素誤差是原圖的 4.48 倍、紋理誤差是 7.54 倍。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [config/](<config>) | 7檔 | 實驗設定、條件與來源鎖定 |
-| [inference/](<inference>) | 1檔 | 模型重建程式 |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R91 Manifest |
-| [model/](<model>) | 1檔 | 本輪模型程式 |
-| [README.md](<README.md>) | 1檔 | R91 Detail-Decoupled Scratch |
-| [reports/](<reports>) | 2檔 | 原報告、計畫、審查與各階段結論 |
-| [runs/](<runs>) | 3檔 | 各次執行的紀錄或完成證據；不憑資料夾名認定已完成 |
-| [scripts/](<scripts>) | 14檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [tests/](<tests>) | 2檔 | 原檢查程式；不是研究結果本身 |
-| [training/](<training>) | 1檔 | 訓練程式與配套 |
+## 讀這些數字要知道的事
 
-## 必要來源與取得界線
+1. **舊的進度檔還寫著「active」**，但結束摘要寫 complete，完整逐輪表剛好 60 列、從 1 到 60 連續，最後 14 個驗證量與摘要逐值相符。進度檔是最後一次快照，原件沒有改。
+2. **第 60 輪不是重新選出的冠軍**，只是最後一輪。
+3. **曝光檢查換過讀法：** 原紀錄把四曝光的檢查從固定窗口改為連續路徑，300 組中有 3 組不在舊窗口裡；資料本身沒有重新產生。
+4. 匿名成像統計仍帶有來源關係，所以不能據此宣稱後續 SEM 評估獨立。
 
-1250場景／5000觀測的本輪配方與四曝光驗證。
+## 拿資料與重做
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+| 需要什麼 | 在哪裡 |
+|---|---|
+| 鎖定設計、來源隔離、GPU 安全設定；模型、訓練、推論、資料生成、監看程式 | 本資料夾 [config/](<config>)、[model/](<model>)、[training/](<training>)、[inference/](<inference>)、[scripts/](<scripts>)，已在 GitHub |
+| 結束摘要、完整逐輪表、舊進度快照 | [runs/training_R91_scratch_seed910041_20260811_180203/](<runs/training_R91_scratch_seed910041_20260811_180203>) |
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
+
+> **目前的限制：** 5,000 個觀察只在原電腦上。正式與短測的權重不在 GitHub 程式樹上，在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的壓縮包裡。
+
+## 原始報告
+
+| 文件 | 內容 |
+|---|---|
+| [完成狀態與來源審查](<reports/R91_PRESERVATION_AUDIT_20261021.md>) | 2026-10-21 確認的完成狀態、必要來源、不利讀值 |
+| [README](<README.md>) | 目的、資料夾、訓練規則 |
+
+2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R91_DetailDecoupledScratch.md>)。

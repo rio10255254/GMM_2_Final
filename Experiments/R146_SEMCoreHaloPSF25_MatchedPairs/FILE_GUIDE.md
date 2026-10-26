@@ -1,45 +1,46 @@
-# main/R146_SEMCoreHaloPSF25_MatchedPairs：檔案怎麼找
+# R146：用真實 SEM 外框擬合的「尖中心加淡尾」PSF
 
-[本輪研究卡](<../../docs/reproducibility/experiments/main__R146_SEMCoreHaloPSF25_MatchedPairs.md>) · [全部研究分區](<../../docs/reproducibility/EXPERIMENTS.md>) · [目前保存狀態](<../../docs/reproducibility/STATUS.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [主要對照 R145](<../R145_Center9PSF25_CorrectedPairs/FILE_GUIDE.md>) · [下一輪 R147](<../R147_FullResPSFConsistency/FILE_GUIDE.md>)
 
-**研究問題：把真實SEM外框形成的中心淡尾PSF用於模型。**
+**一句話：** 使用者指定的研究版 PSF（`PSF_20260924_SEM_core_halo_25_RESEARCH.mat`）用真實 SEM 外框估計成像模糊，在留出的照片上比 R145 的 PSF 和單一高斯都更能預測影像（平均差 0.00179，對照 0.00300、0.00211）。R146 只換這組 PSF，其餘跟 R145 一樣，2026-09-24 從零 8,192 次並跑完 930 張。結果：更能預測照片，不等於量測更好；短步、直徑與輪廓重拍都比 R145 退步。為了單純比較 PSF，本輪刻意保留 R145 已發現的光學分支缺陷不修。
 
-本頁按GitHub當前主版本的實際目錄編排，不改原報告、模型、數值或檔案位置。目錄數量不包含版本附件及僅在本機的資料，也不能代表這一輪來源已全部查完。
+| | |
+|---|---|
+| 結果 | **未採用**（PSF 更能預測照片，量測卻比 R145 差） |
+| 時間 | 2026-09-24 訓練與驗證；09-25 原因核對 |
+| 實驗條件 | 訓練用程式資料：與 R145 相同的 768 母場景與 PSF 指派，只換 25 顆研究版 PSF；評估用 D：930 張與十字中心九顆 |
+| 起點 | 隨機初始化 |
 
-## 先讀原文件
+## 結果（930 張，十字中心九顆）
 
-- [R146：來源 PSF 預測改善，量測卻退步的原因核對](<reports/R146_CAUSAL_AUDIT.md>)
-- [R146 真實 SEM 外框尖中心加淡尾 PSF 配對完整結果](<reports/R146_RESULTS.md>)
-- [R146 固定驗證計畫](<reports/R146_VALIDATION_PLAN.md>)
+| 方法 | 短步平均差（nm） | 短步重拍（nm） | 直徑重拍（nm） | 輪廓重拍（nm） | 相對起點重拍（nm） |
+|---|---:|---:|---:|---:|---:|
+| 原圖 | 8.167 | 9.725 | 32.75 | 63.76 | 13.763 |
+| R140v2 | **3.640** | **3.530** | **18.58** | 18.43 | 10.433 |
+| R145 | 3.990 | 4.016 | 21.01 | **16.00** | 11.216 |
+| R146 | 4.313 | 4.459 | 23.08 | 20.37 | **10.369** |
 
-## 進入實際檔案
+相對 R145，短步平均差多 0.323 nm（30 趟中只有 10 趟較好），直徑重拍多 2.07 nm，輪廓重拍多 4.37 nm。只有長距離的重拍波動略好。平均直徑比 R145 再大 11.6 nm。
 
-| 區域／原檔 | GitHub主版本所見 | 怎麼讀 |
-|---|---:|---|
-| [analysis/](<analysis>) | 11檔 | 保留原名稱的研究子區；用途回到原報告及區內說明 |
-| [calibration/](<calibration>) | 1檔 | 校正及固定光學來源紀錄 |
-| [config/](<config>) | 4檔 | 實驗設定、條件與來源鎖定 |
-| [dataset.py](<dataset.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [evaluation/](<evaluation>) | 491檔 | 量測介面、固定參照、設定或比較內容 |
-| [infer.py](<infer.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [losses.py](<losses.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [MANIFEST.md](<MANIFEST.md>) | 1檔 | R146 來源與執行身分 |
-| [model.py](<model.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [optical/](<optical>) | 2檔 | 光學計算與配套 |
-| [README.md](<README.md>) | 1檔 | R146 — 真實 SEM 外框擬合的中心加淡尾 PSF 對照 |
-| [reports/](<reports>) | 9檔 | 原報告、計畫、審查與各階段結論 |
-| [results/](<results>) | 2檔 | 原結果、量測、檢查紀錄與歷史輸出；依原報告判讀 |
-| [scripts/](<scripts>) | 14檔 | 執行、整理或檢查程式；需讀原用途，不能全部直接執行 |
-| [train.py](<train.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [training_policy.py](<training_policy.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [utils.py](<utils.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [verify_package.py](<verify_package.py>) | 1檔 | 程式／操作入口（不代表可直接執行） |
-| [weights/](<weights>) | 1檔 | 模型檔或取得說明；最佳、最後及短測版本需分清 |
+## 原因核對（9/25）
 
-## 必要來源與取得界線
+1. **新 PSF 確實用進去了。** 768 組清楚答案與 R145 逐值相同；1536 張卷積前與加雜訊後的影像都逐值重現；21 個實際訓練批次逐值吻合。
+2. **訓練模糊大幅變窄。** 50%／90% 能量半徑從 R145 的 4.00／12.17 px 變成 2.83／7.62 px，主網路學到另一種圓邊處理。
+3. **PSF 分支幾乎沒有直接作用**：混入比例只有 0.93%，12 張實拍開關分支直徑最大只差 0.36 nm。
+4. **邊更利落，重拍時卻更不穩。** 輸出邊寬中位 0.955 px（R145 1.205 px），但固定位置與圓在 30 趟間的邊寬起伏 0.090 px（R145 0.025 px），279/279 組都較不穩；R146 的輸出邊寬跟原圖逐趟邊寬的相關 0.968，R145 只有 0.476，代表新模型更容易跟著實拍的模糊狀態變動。
 
-研究PSF、六張凍結來源、18留出圓、768配對及模型。
+## 讀這些數字要知道的事
 
-[按用途取得原件](<../../docs/reproducibility/ASSET_GUIDE.md>) · [生成方法與固定來源](<../../docs/reproducibility/GENERATION_GUIDE.md>) · [缺件及重做限制](<../../docs/reproducibility/KNOWN_GAPS.md>)
+1. **來源層級的成功與量測退步可以同時成立。** 訓練目標仍是合成影像的像素、梯度與配對位移，沒有直接要求真實短步或逐圓直徑最好。
+2. **兩套 SEM 參照都列**（SEM 外框點位 2614.4 nm、Excel 表 2629.7 nm），R146 比 R145 更偏大的結論在兩套下都一樣；都只是同九顆的校準條件對照。
+3. 研究版 PSF 標記為 `research_only=1`，不升級正式用途。
 
-原README或當年MANIFEST列出的完整本機內容，可能有部分放在GitHub版本附件。GitHub這一層沒有大模型或影像，不代表可以用後來版本代替，也不代表原包已失去該檔；先查對應取得說明。
+## 拿資料與重做
+
+安裝研究銀行 `scripts/install_center9_bank.py`、製作配對 `scripts/make_data.py`、核對 `scripts/preflight.py`、訓練 `scripts/launch_r146.py`、驗證 `scripts/run_evaluation.py`。930 張重建在原電腦上連到 H 槽。
+
+> 權重、配對資料、資料與訓練鏈稽核表：查 `python Tools/cloud_locator.py where Experiments/R146_SEMCoreHaloPSF25_MatchedPairs/<路徑>`。
+
+## 原始報告
+
+[結果](<reports/R146_RESULTS.md>)、[原因核對](<reports/R146_CAUSAL_AUDIT.md>)、[固定驗證計畫](<reports/R146_VALIDATION_PLAN.md>)。2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../docs/reproducibility/experiments/main__R146_SEMCoreHaloPSF25_MatchedPairs.md>)。
