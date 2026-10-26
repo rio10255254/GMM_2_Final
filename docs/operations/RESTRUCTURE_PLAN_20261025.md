@@ -61,12 +61,14 @@
 |---|---:|---|
 | `Experiments/R152_R148v2_SafeAdaptivePSF/runs/formal_8192/checkpoints/deployed_step08192.pth` | 7.1 MB | 論文模型 R152 實拍驗證用的原始保存點（SHA-256 開頭 `17bf7c63`）。雲端有張量完全相同的重新封裝版，但原檔本身不在任何 Release。**2026-10-26 已補上：** Release [`research-localonly-models-20261026`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-localonly-models-20261026)，取回核對通過 |
 | `Experiments/R45_FamilyBoundaryAdapter/results/checkpoints/r45_oracle_adapter_large_mixed{,_s04,_s08,_s12}.pth` | 共約 0.2 MB | R45 的四個校正模組權重（同資料夾的 `_latest` 與兩個短測權重已在 Release）。**2026-10-26 已補上：** 同上一列的 Release |
-| `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/{external,shape,micro}_recon/a025/` | 約 700 MB | 核准替代 a025 送外部 GMF 的重建影像與形狀／顯微重建 |
+| `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/{external,shape,micro}_recon/a025/` | 約 700 MB | 核准替代 a025 送外部 GMF 的重建影像與形狀／顯微重建。**2026-10-26 查核：** 依[保存原則](../reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)屬整批模型輸出，不上傳；重算所需的 a025 權重與 ONNX、外部 GMF 分數都在雲端。輸入的 `Cropped_Output` 裁切版也不在雲端，但已逐張證實是雲端原拍的固定區塊，裁切參數補記在[同一份文件](../reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)，所有用公司圓環序列的輪次都適用 |
 | `Experiments/R136_PIRepeatability/output/*.zip`（10 個閱讀包與圖表包） | 約 489 MB | R136 原報告引用的結果包。**2026-10-26 逐檔比對：** 包內 1,307 個檔有 1,300 個以相同內容在 git 或 Release；只存在包裡的 7 個說明與核對檔（兩包的「00_先讀我」與打包清單、Raw／R128 完整比較包的 README、打包清單與核對紀錄，共約 65 KB）已放進 git 的 `output/<包名>/`。ZIP 本身不另存 |
 | `Experiments/R153_MeanExternalBenchmark/reports/*.zip`（5 個交接包） | 約 8 MB | 論文交接包。**2026-10-26 逐檔比對：** 包內 153 個檔全部以相同內容在 git 或 Release，ZIP 本身不另存 |
-| `Deliverables/R152_Standalone_20261004.zip`、`R152_Standalone_ImageFiles_20261004.zip` | 約 760 MB | 打包好的 R152 獨立包；程式已在 git、模型已在 Release，zip 本身可能不必另存，需先確認內容都有著落 |
+| `Deliverables/R152_Standalone_20261004.zip`、`R152_Standalone_ImageFiles_20261004.zip` | 約 760 MB | 打包好的 R152 獨立包；程式已在 git、模型已在 Release。**2026-10-26 逐檔比對：** 兩包共 10,051 個檔全部以相同內容在 git 或 Release，ZIP 本身不另存 |
 
 這只是「原始報告有連結到」與寫閱讀卡時查到的部分。2026-10-26 已用 `Tools/cloud_locator.py` 掃完整個專案（約 315 萬個檔）並展開所有沒有清單的 Release 附件後重驗：上表各列仍成立；原本列在表內的 COMBO 與 a025 兩個 ONNX 其實在雲端（見下一段），已移出本表。全專案只在本機的檔約 208 萬個、1,019 GB，絕大多數是 BMP 原拍與重建、NPZ／NPY 陣列與中間保存點；2 MB 以下的文字結果表只有約 3,400 個、共 26 MB，集中在 `PSF_Fitting`、R129、R136、`Thesis_MOSR_Evidence/Data_Reports`。
+
+這次掃描只涵蓋 `D:\GMM_2_Final`。專案外還有被實驗直接讀取的資料夾，例如 `D:\NTU_ImageDataset\`（公司圓環原拍、`Cropped_Output` 裁切版與 1 月的早期重建，舊紀錄裡也寫成 `C:\Users\Rio\Downloads\NTU_ImageDataset\`）。它的原拍已在雲端、裁切版可由原拍重做（見[裁切參數](../reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)），但日後清理本機時要另外逐項看，不能套用專案內的掃描結果。
 
 **寫閱讀卡時發現的另一類缺口：** 有些輪次的結果檔在 Release 裡，但不在 GitHub 程式樹（有些是 2026-10 從主版本移出、只留在 git 歷史），所以報告與閱讀卡提到的數字在 GitHub 上點不到出處。目前查到的有：R148v2 的 12 模型比較表與最終稽核（R148v2 也沒有寫最終結果報告）、R43 的分數表、R44 的總表與分族診斷、R45 的縮放掃描與 R45B／R45C 逐塊表。這些多半是小型 CSV／JSON，適合直接補回 git（見下方 E2）。寫第六、七階段閱讀卡時又找到幾批，**原本以為只在原電腦上，2026-10-25 用 cloud_locator 逐檔查過，其實都在 Release `research-results-models-20261016` 的壓縮包裡**，只是不在程式樹上，讀者要下載 1～4 GB 的附件才拿得到一個幾 KB 的檔：R102 的停止與塌縮診斷（`reports/*.json`，五個共約 31 KB）、R108A／R108C～R108G 的結果摘要與表格、R117 的訓練完成稽核與因果決策、R120 的 `results/`（約 0.5 MB；MANIFEST 指向的 `reports/R120_RESULTS.md` 從沒寫出來）、R121 的決策與 SEM 量測表、R122 的 V42 來源追查逐筆表（約 3.6 MB，論文相關）、R123 的真實來源清單與重算表；另外 R61_STEP 的三份清單、R75v2／R79／R81／R88～R91／R99 的正式權重、LabSystem Modern_Restoration 的兩個對照模型權重也是同一類。這些閱讀卡已在 2026-10-25 改正說法（先前十七處寫成「只在原電腦上」）。小型表格適合直接補回 git（E2）；權重留在 Release，但 E1 重新打包時應讓單一輪次能單獨下載。
 
