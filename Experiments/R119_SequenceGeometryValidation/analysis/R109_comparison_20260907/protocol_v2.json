@@ -1,0 +1,36 @@
+{
+  "created_at_utc": "2026-09-07T01:43:53.636587+00:00",
+  "question": "Does the R109/R119 difference persist across three matched boundary readouts, and which frozen path contributes?",
+  "population": "All 36 matched pillars, all existing exposures 13-24; one sample. No training or confirmation evaluation.",
+  "methods": [
+    "Raw",
+    "R109_full",
+    "R109_no_position",
+    "R109_position_only",
+    "R119_full",
+    "R119_no_position",
+    "R119_position_only",
+    "R119_no_detail",
+    "R119_width_only"
+  ],
+  "references": [
+    "historical",
+    "global_pitch_matched"
+  ],
+  "models": {
+    "R109": "selected E48, archived-suite reflect-halo core512/halo192, from validation/reconstruct_locked_suites.py",
+    "R119": "B E42, canonical core512/minimum halo224"
+  },
+  "interventions": "Recompute with the exact same predicted fields, change only the indicated factor. R109 has no additive-detail branch; its support/blending remains in every R109 intervention. R119 no-detail retains position and width.",
+  "readouts": {
+    "ACM": "Unchanged extraction and symmetric contour distance. Report legacy per-method translation for historical parity AND common Raw-derived integer translation for the three-readout comparison.",
+    "half_contrast": "Unique half-contrast crossing along 720 SEM-normal profiles, +/-12px at 1/8px; fixed Raw plateau levels primary, own-method levels as sensitivity.",
+    "steepest_edge": "Maximum positive derivative of Gaussian-smoothed normal profile; sigma 0.75px primary, 1.25px sensitivity; parabolic refinement. Reject boundary maxima, weak slopes <0.01 normalized intensity/px, and competing peaks >=80% of largest separated by >=1px."
+  },
+  "alignment": "Within every pillar/exposure/reference, all three primary readouts use the SAME integer translation determined from Raw-mask versus reference centroids. No per-model rescaling or optical-result fitting.",
+  "reference_profile_calibration": "Refine sampling coordinates using only the mask-derived smooth SEM reference, then subtract readout-specific digital-reference offsets. Calibration validates numerics, not physical equivalence of SEM and optical edges.",
+  "validity": "Report per-method failures. Main Raw/R109-full/R119-full comparison uses common valid profiles within each readout. Each path comparison separately intersects its full/path/reference validity; no hidden zero filling.",
+  "interpretation": "Agreement across readouts supports an output-boundary difference. Rank reversals or insufficient peak validity limit interpretation. Within-model interventions are fixed-weight diagnostics, not matched retraining or proof of unique training cause.",
+  "next_step_rule": "Only select a path-specific follow-up if harmful contribution is consistent across readouts and exposures. If ranking is readout dependent, prioritize reference/readout definition; no new training in this task.",
+  "budget_gib": 2
+}

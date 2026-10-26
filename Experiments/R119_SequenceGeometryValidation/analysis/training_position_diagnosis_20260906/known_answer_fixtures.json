@@ -1,0 +1,102 @@
+[
+  {
+    "polarity": -1,
+    "contrast": 0.08,
+    "known_outward_expansion_px": 0.4,
+    "expansion_loss_increases": {
+      "geometry_sdf": 0.0,
+      "geometry_boundary": 0.0,
+      "geometry_normal": 0.0,
+      "image_reference": 0.0006639051134698093,
+      "gradient_reference": 0.0003233595343772322,
+      "location_xy": 5.061734426311322e-16,
+      "local_edge_error": 0.06385428458452225,
+      "identity": 0.0,
+      "observable_reference_error": 0.00034606564440764487,
+      "pair_reference_error": 3.286671212965331e-10,
+      "pair_geometry": 0.0,
+      "pair_location_xy": 0.0
+    },
+    "compensated_displacement_px": 0.25,
+    "compensating_detail_max_gray": 0.851108729839325,
+    "compensated_output_max_difference": 0.0,
+    "compensated_objective_max_term_difference": 0.0,
+    "joint_sign_change_render_max_difference": 0.0,
+    "unpaired_sign_change_render_max_gray_difference": 0.1450154185295105
+  },
+  {
+    "polarity": -1,
+    "contrast": 0.4,
+    "known_outward_expansion_px": 0.4,
+    "expansion_loss_increases": {
+      "geometry_sdf": 0.0,
+      "geometry_boundary": 0.0,
+      "geometry_normal": 0.0,
+      "image_reference": 0.004278442822396755,
+      "gradient_reference": 0.001616793219000101,
+      "location_xy": 8.376077998919649e-16,
+      "local_edge_error": 0.20750223100185394,
+      "identity": 0.0,
+      "observable_reference_error": 0.0017303284257650375,
+      "pair_reference_error": 1.6421846105174609e-09,
+      "pair_geometry": 0.0,
+      "pair_location_xy": 0.0
+    },
+    "compensated_displacement_px": 0.25,
+    "compensating_detail_max_gray": 4.2555437088012695,
+    "compensated_output_max_difference": 0.0,
+    "compensated_objective_max_term_difference": 0.0,
+    "joint_sign_change_render_max_difference": 0.0,
+    "unpaired_sign_change_render_max_gray_difference": 0.26204153895378113
+  },
+  {
+    "polarity": 1,
+    "contrast": 0.08,
+    "known_outward_expansion_px": 0.4,
+    "expansion_loss_increases": {
+      "geometry_sdf": 0.0,
+      "geometry_boundary": 0.0,
+      "geometry_normal": 0.0,
+      "image_reference": 0.0006639051134698093,
+      "gradient_reference": 0.0003233591269236058,
+      "location_xy": 1.1363594967621089e-15,
+      "local_edge_error": 0.06385428458452225,
+      "identity": 0.0,
+      "observable_reference_error": 0.00034606532426550984,
+      "pair_reference_error": 3.2866545596199614e-10,
+      "pair_geometry": 0.0,
+      "pair_location_xy": 0.0
+    },
+    "compensated_displacement_px": 0.25,
+    "compensating_detail_max_gray": 0.8419512510299683,
+    "compensated_output_max_difference": 0.0,
+    "compensated_objective_max_term_difference": 0.0,
+    "joint_sign_change_render_max_difference": 0.0,
+    "unpaired_sign_change_render_max_gray_difference": 0.14454424381256104
+  },
+  {
+    "polarity": 1,
+    "contrast": 0.4,
+    "known_outward_expansion_px": 0.4,
+    "expansion_loss_increases": {
+      "geometry_sdf": 0.0,
+      "geometry_boundary": 0.0,
+      "geometry_normal": 0.0,
+      "image_reference": 0.004278442822396755,
+      "gradient_reference": 0.0016167943831533194,
+      "location_xy": 5.390545734292745e-16,
+      "local_edge_error": 0.20750223100185394,
+      "identity": 0.0,
+      "observable_reference_error": 0.0017303281929343939,
+      "pair_reference_error": 1.6421852766512757e-09,
+      "pair_geometry": 0.0,
+      "pair_location_xy": 0.0
+    },
+    "compensated_displacement_px": 0.25,
+    "compensating_detail_max_gray": 4.209771156311035,
+    "compensated_output_max_difference": 0.0,
+    "compensated_objective_max_term_difference": 0.0,
+    "joint_sign_change_render_max_difference": 0.0,
+    "unpaired_sign_change_render_max_gray_difference": 0.2635006606578827
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "created_at_utc": "2026-09-06T04:37:47.291567+00:00",
+  "question": "Does the frozen R119 E42 normal-position path cause contour expansion across all twelve existing SEM-linked exposures?",
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\runs\\formal_B_s1195001\\weights\\epoch_042.pth",
+  "exposures": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "pillars": 36,
+  "experimental_unit": "36 existing pillars, repeated across 12 exposures; one sample and one model, not 432 independent samples",
+  "methods": [
+    "Raw",
+    "base",
+    "no_shift",
+    "attenuation"
+  ],
+  "interventions": {
+    "no_shift": "Reuse the identical geometry, normals, width-gain and additive detail tensors; replace only the input warp by identity, then recompute width rendering on that input.",
+    "attenuation": "One scalar per exposure, chosen from [0,1] to match whole-image mean absolute uint8 correction of no_shift. Uses no SEM truth or contour result. Report per-pillar amplitude mismatch."
+  },
+  "measurement": "Exact existing ACM helper functions, saved SEM truth masks, mapping, centers, 104px cells, 200 iterations, smoothing 1, seed radius 40, support 45; translation-only contour comparison.",
+  "primary": "Paired boundary-distance change no_shift minus base, within each pillar/exposure; report every exposure and within-pillar median across exposures.",
+  "secondary": [
+    "signed mask area vs SEM",
+    "signed area vs Raw",
+    "boundary HD95",
+    "per-pillar wins/ties/losses",
+    "comparison to equal-total-amplitude attenuation"
+  ],
+  "detail_scope": "Additive detail tensor kept exactly; fixed SEM-interior image-band differences are observational diagnostics, not proof of recovery of real texture without a corresponding sharp intensity reference.",
+  "decision": "Cross-exposure support requires a negative median paired boundary effect in every exposure, a negative median within-pillar effect, and majority pillar improvement. Exceptions and control mismatches remain explicit; no automatic training or promotion.",
+  "forbidden": [
+    "training",
+    "confirmation predictions or image access",
+    "changing historical evidence, receipts or protection hashes",
+    "selecting a new checkpoint"
+  ],
+  "outputs": [
+    "48 full images",
+    "1728 pillar/method/exposure rows including any failures",
+    "864 exact Raw/base mask parity checks",
+    "paired exposure and pillar summaries",
+    "all-exposure visual overview",
+    "new report"
+  ]
+}

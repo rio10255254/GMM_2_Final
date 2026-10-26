@@ -1,0 +1,34 @@
+{
+  "scans": 30,
+  "pillars": 9,
+  "comparisons": {
+    "R145-Center9PSF25-CorrectedPairs": {
+      "mean_diameter_change_nm": 11.55857413293176,
+      "positive_scans": 30,
+      "positive_pillars": 9,
+      "pillar_change_range_nm": [
+        8.252935307237294,
+        14.748370831099692
+      ],
+      "whole_scan_bootstrap_ci95_nm": [
+        10.263574763021207,
+        12.829068811292842
+      ]
+    },
+    "Raw": {
+      "mean_diameter_change_nm": 33.56205818529705,
+      "positive_scans": 30,
+      "positive_pillars": 9,
+      "pillar_change_range_nm": [
+        29.31342633732811,
+        38.69849525039308
+      ],
+      "whole_scan_bootstrap_ci95_nm": [
+        32.23741113842834,
+        34.894490920385365
+      ]
+    }
+  },
+  "script_sha256": "a68d9554e5bcccc97cd480dba25ec4316a463601fc29d0770b0c2163b242b8b8",
+  "completed_utc": "2026-09-24T18:05:02.485203+00:00"
+}

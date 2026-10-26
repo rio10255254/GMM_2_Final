@@ -1,0 +1,941 @@
+{
+  "status": "post_pilot_source_coverage_diagnostic",
+  "training_scenes": 64,
+  "training_level_envelope": {
+    "low_gray": {
+      "minimum": 43.84767981770761,
+      "maximum": 85.0
+    },
+    "high_gray": {
+      "minimum": 168.23243584789728,
+      "maximum": 211.2478824925917
+    },
+    "contrast_gray": {
+      "minimum": 93.7545742038351,
+      "maximum": 163.22257366942813
+    }
+  },
+  "real_summary": [
+    {
+      "exposure": 13,
+      "pillars": 36,
+      "median_low_gray": 104.0,
+      "median_high_gray": 231.0,
+      "median_contrast_gray": 126.0,
+      "outside_training_level_envelope": 36
+    },
+    {
+      "exposure": 24,
+      "pillars": 36,
+      "median_low_gray": 16.0,
+      "median_high_gray": 36.0,
+      "median_contrast_gray": 20.0,
+      "outside_training_level_envelope": 36
+    }
+  ],
+  "training": [
+    {
+      "scene_id": "scene_000",
+      "low_gray": 77.09576126125909,
+      "high_gray": 206.10338015940613,
+      "contrast_gray": 129.00761889814703
+    },
+    {
+      "scene_id": "scene_001",
+      "low_gray": 54.13583785750354,
+      "high_gray": 201.56480763949216,
+      "contrast_gray": 147.42896978198863
+    },
+    {
+      "scene_id": "scene_002",
+      "low_gray": 78.94052229447871,
+      "high_gray": 178.10040233241122,
+      "contrast_gray": 99.15988003793252
+    },
+    {
+      "scene_id": "scene_003",
+      "low_gray": 72.49265719216521,
+      "high_gray": 174.52901905569556,
+      "contrast_gray": 102.03636186353033
+    },
+    {
+      "scene_id": "scene_004",
+      "low_gray": 53.0,
+      "high_gray": 207.0,
+      "contrast_gray": 154.0
+    },
+    {
+      "scene_id": "scene_005",
+      "low_gray": 46.185880484142864,
+      "high_gray": 209.40845415357097,
+      "contrast_gray": 163.22257366942813
+    },
+    {
+      "scene_id": "scene_006",
+      "low_gray": 72.88180025198746,
+      "high_gray": 209.89557682818037,
+      "contrast_gray": 137.01377657619295
+    },
+    {
+      "scene_id": "scene_007",
+      "low_gray": 63.94754294588543,
+      "high_gray": 195.357869642437,
+      "contrast_gray": 131.41032669655158
+    },
+    {
+      "scene_id": "scene_008",
+      "low_gray": 44.5683846411719,
+      "high_gray": 170.08976136505868,
+      "contrast_gray": 125.5213767238868
+    },
+    {
+      "scene_id": "scene_009",
+      "low_gray": 74.69051682327634,
+      "high_gray": 188.47500116180453,
+      "contrast_gray": 113.78448433852819
+    },
+    {
+      "scene_id": "scene_010",
+      "low_gray": 75.0,
+      "high_gray": 191.0,
+      "contrast_gray": 116.0
+    },
+    {
+      "scene_id": "scene_011",
+      "low_gray": 68.82476305808103,
+      "high_gray": 172.20856840600152,
+      "contrast_gray": 103.38380534792049
+    },
+    {
+      "scene_id": "scene_012",
+      "low_gray": 64.09556316038098,
+      "high_gray": 199.63675572068726,
+      "contrast_gray": 135.54119256030629
+    },
+    {
+      "scene_id": "scene_013",
+      "low_gray": 73.45832297001938,
+      "high_gray": 180.7586561624304,
+      "contrast_gray": 107.30033319241102
+    },
+    {
+      "scene_id": "scene_014",
+      "low_gray": 51.07189784427331,
+      "high_gray": 192.00771900318102,
+      "contrast_gray": 140.93582115890771
+    },
+    {
+      "scene_id": "scene_015",
+      "low_gray": 82.41352389917445,
+      "high_gray": 198.5517367996914,
+      "contrast_gray": 116.13821290051698
+    },
+    {
+      "scene_id": "scene_016",
+      "low_gray": 55.0,
+      "high_gray": 196.0,
+      "contrast_gray": 141.0
+    },
+    {
+      "scene_id": "scene_017",
+      "low_gray": 77.52581756282774,
+      "high_gray": 192.04384925113848,
+      "contrast_gray": 114.51803168831076
+    },
+    {
+      "scene_id": "scene_018",
+      "low_gray": 54.49662589238329,
+      "high_gray": 191.28218375819358,
+      "contrast_gray": 136.7855578658103
+    },
+    {
+      "scene_id": "scene_019",
+      "low_gray": 79.07404089540441,
+      "high_gray": 199.12748046516055,
+      "contrast_gray": 120.05343956975614
+    },
+    {
+      "scene_id": "scene_020",
+      "low_gray": 66.03299922287349,
+      "high_gray": 198.75866798824924,
+      "contrast_gray": 132.72566876537576
+    },
+    {
+      "scene_id": "scene_021",
+      "low_gray": 80.27241355875607,
+      "high_gray": 208.83345060069215,
+      "contrast_gray": 128.5610370419361
+    },
+    {
+      "scene_id": "scene_022",
+      "low_gray": 85.0,
+      "high_gray": 198.0,
+      "contrast_gray": 113.00000000000001
+    },
+    {
+      "scene_id": "scene_023",
+      "low_gray": 77.31955469937647,
+      "high_gray": 209.03447671189943,
+      "contrast_gray": 131.71492201252298
+    },
+    {
+      "scene_id": "scene_024",
+      "low_gray": 50.283714436988255,
+      "high_gray": 169.6602086107729,
+      "contrast_gray": 119.37649417378465
+    },
+    {
+      "scene_id": "scene_025",
+      "low_gray": 68.6618074153878,
+      "high_gray": 197.2763255634281,
+      "contrast_gray": 128.61451814804028
+    },
+    {
+      "scene_id": "scene_026",
+      "low_gray": 82.75321964827297,
+      "high_gray": 209.14077535115095,
+      "contrast_gray": 126.38755570287798
+    },
+    {
+      "scene_id": "scene_027",
+      "low_gray": 47.5528399596482,
+      "high_gray": 175.84927603451086,
+      "contrast_gray": 128.29643607486267
+    },
+    {
+      "scene_id": "scene_028",
+      "low_gray": 77.0,
+      "high_gray": 193.0,
+      "contrast_gray": 116.0
+    },
+    {
+      "scene_id": "scene_029",
+      "low_gray": 79.00015575920654,
+      "high_gray": 210.39840589841944,
+      "contrast_gray": 131.39825013921288
+    },
+    {
+      "scene_id": "scene_030",
+      "low_gray": 64.41975226032767,
+      "high_gray": 201.5858023819589,
+      "contrast_gray": 137.16605012163123
+    },
+    {
+      "scene_id": "scene_031",
+      "low_gray": 71.54832257433802,
+      "high_gray": 210.69845102395166,
+      "contrast_gray": 139.15012844961365
+    },
+    {
+      "scene_id": "scene_032",
+      "low_gray": 54.370674777098436,
+      "high_gray": 206.01943709698008,
+      "contrast_gray": 151.64876231988166
+    },
+    {
+      "scene_id": "scene_033",
+      "low_gray": 43.84767981770761,
+      "high_gray": 183.04059178027575,
+      "contrast_gray": 139.19291196256813
+    },
+    {
+      "scene_id": "scene_034",
+      "low_gray": 47.0,
+      "high_gray": 177.0,
+      "contrast_gray": 130.0
+    },
+    {
+      "scene_id": "scene_035",
+      "low_gray": 58.49624257551164,
+      "high_gray": 211.2478824925917,
+      "contrast_gray": 152.75163991708007
+    },
+    {
+      "scene_id": "scene_036",
+      "low_gray": 49.048488650348396,
+      "high_gray": 204.41759988505981,
+      "contrast_gray": 155.36911123471143
+    },
+    {
+      "scene_id": "scene_037",
+      "low_gray": 81.03513713327838,
+      "high_gray": 197.17632737272538,
+      "contrast_gray": 116.14119023944698
+    },
+    {
+      "scene_id": "scene_038",
+      "low_gray": 74.30870239901894,
+      "high_gray": 206.77153051371147,
+      "contrast_gray": 132.46282811469254
+    },
+    {
+      "scene_id": "scene_039",
+      "low_gray": 61.61139572869151,
+      "high_gray": 193.03618799327958,
+      "contrast_gray": 131.42479226458806
+    },
+    {
+      "scene_id": "scene_040",
+      "low_gray": 84.2349999937941,
+      "high_gray": 195.05141160822083,
+      "contrast_gray": 110.81641161442671
+    },
+    {
+      "scene_id": "scene_041",
+      "low_gray": 63.70898774859247,
+      "high_gray": 177.5474979768521,
+      "contrast_gray": 113.83851022825962
+    },
+    {
+      "scene_id": "scene_042",
+      "low_gray": 65.53192525693333,
+      "high_gray": 176.6436927461921,
+      "contrast_gray": 111.11176748925875
+    },
+    {
+      "scene_id": "scene_043",
+      "low_gray": 53.15593274359571,
+      "high_gray": 169.7740024239801,
+      "contrast_gray": 116.61806968038438
+    },
+    {
+      "scene_id": "scene_044",
+      "low_gray": 51.02356788236023,
+      "high_gray": 195.43139861633455,
+      "contrast_gray": 144.40783073397432
+    },
+    {
+      "scene_id": "scene_045",
+      "low_gray": 49.426766664611314,
+      "high_gray": 176.05273541609628,
+      "contrast_gray": 126.62596875148498
+    },
+    {
+      "scene_id": "scene_046",
+      "low_gray": 81.63950920309057,
+      "high_gray": 210.42637808384924,
+      "contrast_gray": 128.78686888075868
+    },
+    {
+      "scene_id": "scene_047",
+      "low_gray": 67.91346705169441,
+      "high_gray": 208.099015346579,
+      "contrast_gray": 140.1855482948846
+    },
+    {
+      "scene_id": "scene_048",
+      "low_gray": 48.66989261322663,
+      "high_gray": 168.23243584789728,
+      "contrast_gray": 119.56254323467064
+    },
+    {
+      "scene_id": "scene_049",
+      "low_gray": 66.34936651998808,
+      "high_gray": 209.0755038672756,
+      "contrast_gray": 142.72613734728753
+    },
+    {
+      "scene_id": "scene_050",
+      "low_gray": 69.96191867831625,
+      "high_gray": 190.07368884893648,
+      "contrast_gray": 120.11177017062025
+    },
+    {
+      "scene_id": "scene_051",
+      "low_gray": 55.71152815184966,
+      "high_gray": 209.29299635828457,
+      "contrast_gray": 153.58146820643492
+    },
+    {
+      "scene_id": "scene_052",
+      "low_gray": 77.97906632694544,
+      "high_gray": 173.9316129112786,
+      "contrast_gray": 95.95254658433315
+    },
+    {
+      "scene_id": "scene_053",
+      "low_gray": 51.61108849390418,
+      "high_gray": 177.5350600393797,
+      "contrast_gray": 125.92397154547551
+    },
+    {
+      "scene_id": "scene_054",
+      "low_gray": 68.98073996754063,
+      "high_gray": 176.39510580031143,
+      "contrast_gray": 107.41436583277078
+    },
+    {
+      "scene_id": "scene_055",
+      "low_gray": 64.37776834781384,
+      "high_gray": 209.13765495247307,
+      "contrast_gray": 144.75988660465924
+    },
+    {
+      "scene_id": "scene_056",
+      "low_gray": 48.04100583932598,
+      "high_gray": 197.63358294147451,
+      "contrast_gray": 149.59257710214854
+    },
+    {
+      "scene_id": "scene_057",
+      "low_gray": 60.56868952910255,
+      "high_gray": 179.63242445541556,
+      "contrast_gray": 119.063734926313
+    },
+    {
+      "scene_id": "scene_058",
+      "low_gray": 69.2489305639161,
+      "high_gray": 192.1068743581727,
+      "contrast_gray": 122.85794379425657
+    },
+    {
+      "scene_id": "scene_059",
+      "low_gray": 66.00309293666008,
+      "high_gray": 202.20003587043166,
+      "contrast_gray": 136.19694293377157
+    },
+    {
+      "scene_id": "scene_060",
+      "low_gray": 59.10412333644548,
+      "high_gray": 173.07538586516964,
+      "contrast_gray": 113.97126252872417
+    },
+    {
+      "scene_id": "scene_061",
+      "low_gray": 46.2582462353435,
+      "high_gray": 168.72071139192457,
+      "contrast_gray": 122.46246515658106
+    },
+    {
+      "scene_id": "scene_062",
+      "low_gray": 76.57876383534412,
+      "high_gray": 170.3333380391792,
+      "contrast_gray": 93.7545742038351
+    },
+    {
+      "scene_id": "scene_063",
+      "low_gray": 68.21104124289417,
+      "high_gray": 209.45324943820506,
+      "contrast_gray": 141.2422081953109
+    }
+  ],
+  "real_rows": [
+    {
+      "exposure": 13,
+      "pillar": 1,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 2,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 3,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 4,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 5,
+      "low_gray": 104.0,
+      "high_gray": 231.0,
+      "contrast_gray": 127.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 6,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 7,
+      "low_gray": 106.0,
+      "high_gray": 231.0,
+      "contrast_gray": 125.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 8,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 9,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 10,
+      "low_gray": 104.0,
+      "high_gray": 231.0,
+      "contrast_gray": 127.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 11,
+      "low_gray": 104.0,
+      "high_gray": 231.0,
+      "contrast_gray": 127.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 12,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 13,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 14,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 15,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 16,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 17,
+      "low_gray": 104.0,
+      "high_gray": 231.0,
+      "contrast_gray": 127.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 18,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 19,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 20,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 21,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 22,
+      "low_gray": 104.0,
+      "high_gray": 231.0,
+      "contrast_gray": 127.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 23,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 24,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 25,
+      "low_gray": 104.0,
+      "high_gray": 231.0,
+      "contrast_gray": 127.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 26,
+      "low_gray": 105.0,
+      "high_gray": 231.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 27,
+      "low_gray": 104.0,
+      "high_gray": 231.0,
+      "contrast_gray": 127.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 28,
+      "low_gray": 105.0,
+      "high_gray": 230.0,
+      "contrast_gray": 125.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 29,
+      "low_gray": 105.0,
+      "high_gray": 230.0,
+      "contrast_gray": 125.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 30,
+      "low_gray": 104.0,
+      "high_gray": 229.0,
+      "contrast_gray": 125.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 31,
+      "low_gray": 104.0,
+      "high_gray": 231.0,
+      "contrast_gray": 127.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 32,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 33,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 34,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 35,
+      "low_gray": 105.0,
+      "high_gray": 230.0,
+      "contrast_gray": 125.0
+    },
+    {
+      "exposure": 13,
+      "pillar": 36,
+      "low_gray": 104.0,
+      "high_gray": 230.0,
+      "contrast_gray": 126.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 1,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 2,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 3,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 4,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 5,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 6,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 7,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 8,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 9,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 10,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 11,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 12,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 13,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 14,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 15,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 16,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 17,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 18,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 19,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 20,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 21,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 22,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 23,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 24,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 25,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 26,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 27,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 28,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 29,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 30,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 31,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 32,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 33,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 34,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 35,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    },
+    {
+      "exposure": 24,
+      "pillar": 36,
+      "low_gray": 16.0,
+      "high_gray": 36.0,
+      "contrast_gray": 20.0
+    }
+  ],
+  "source_sha256": {
+    "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\results\\formal_sem\\results\\masks\\acm_primary_masks.mat": "68e45e7e68d60404fb0c30203a0775e4ba644d937578e21bd2d74fc988071bdc",
+    "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\analysis\\R109_comparison_20260907\\acm_arrays.mat": "e74ebf85d34b9ea09f489ed1ab9fe8a1d28b25e1b9db9e7b0cb12318440e2122",
+    "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88",
+    "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\24.bmp": "f511c567e57a519877b13d64f4ea22b4c0c55b0fd9554ca75389ccd14cfae6a6"
+  },
+  "method": "Known synthetic plateau levels vs the unchanged historical Raw SEM-profile plateau estimator; optical readout and material semantics are not requalified",
+  "limitations": [
+    "Post-pilot diagnostic; did not select or modify training examples, weights, metrics or hyperparameters.",
+    "Different populations and target-vs-observed intensities; this is a coverage warning, not a distributional or causal proof.",
+    "No claim that brightness alone caused model regression; real optical-model mismatch remains unqualified."
+  ],
+  "training_or_model_changed": false
+}

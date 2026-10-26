@@ -1,0 +1,5279 @@
+{
+  "definition": "Within each complete scan, sample SD of 30 observed adjacent steps",
+  "models": 16,
+  "scans": 30,
+  "steps_per_scan": 30,
+  "adjacent_rows": 14400,
+  "bootstrap": {
+    "resampling_unit": "whole scan",
+    "draws": 20000,
+    "seed": 20260930
+  },
+  "source_checks": {
+    "R150_same_930_capture_sha256": true,
+    "R150_exact_common_method_count": 12,
+    "R128_RAW_max_export_difference_um": 4.987857238347715e-09,
+    "R61_RAW_max_replay_difference_um": 7.882583474838611e-14,
+    "R61_PI_max_difference_um": 0.0,
+    "R61_readout_run_count": 30,
+    "calibration_raw_scans": 6,
+    "later_evaluation_scans": 24,
+    "source_sha256": {
+      "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\results\\comparison\\all_displacements.csv": "32cdcd4cb3f4816dcf2b677ba8ce550a3c2d440fde7fb165ecf37ce34cca2eb0",
+      "D:\\GMM_2_Final\\Experiments\\R150_MatchedGeometryMeanPSF\\results\\comparison\\all_displacements.csv": "048bdf85bf03dd7e0ed83f09eb89c3e79e9747a97ffd7bc01cff82ca75545399",
+      "D:\\GMM_2_Final\\Experiments\\R136_PIRepeatability\\results\\sem_corner9\\Raw_R128_comparison\\all_displacements_3600.csv": "a8ef1f847b10e362552265f9ce8ad00f4af5c509ac73af3523fdddd5c308e817"
+    },
+    "pooled_formula_independently_reproduced": true
+  },
+  "ranked_summary": [
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "mean_scan_sd_nm": 4.241814313946341,
+      "median_scan_sd_nm": 4.110048751625075,
+      "pooled_within_scan_sd_nm": 4.321284825441437,
+      "per_scan_sd_min_nm": 2.9430516705560446,
+      "per_scan_sd_max_nm": 6.662051546317016,
+      "between_scan_sd_of_scan_sds_nm": 0.8390350791587956,
+      "pooled_PI_corrected_sd_nm": 4.349620661463716,
+      "raw_reduction_pooled_percent": 57.63345779933239,
+      "raw_reduction_CI95_percent": [
+        55.01640884713576,
+        60.444407673415256
+      ],
+      "raw_reduction_per_scan_min_percent": 44.99220068862739,
+      "raw_reduction_per_scan_max_percent": 73.75476523492898,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 3.574723677616274,
+      "later24_pooled_sd_nm": 4.488565008486614,
+      "old_across_scan_same_step_mean_sd_nm": 3.5304623475280303,
+      "point_rank": 1
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "mean_scan_sd_nm": 4.425996688273934,
+      "median_scan_sd_nm": 4.150496198599061,
+      "pooled_within_scan_sd_nm": 4.53700018413008,
+      "per_scan_sd_min_nm": 3.100049729319513,
+      "per_scan_sd_max_nm": 6.830044785896066,
+      "between_scan_sd_of_scan_sds_nm": 1.0145105765077531,
+      "pooled_PI_corrected_sd_nm": 4.537310586563366,
+      "raw_reduction_pooled_percent": 55.51855118789861,
+      "raw_reduction_CI95_percent": [
+        52.73767343498483,
+        58.40414611165003
+      ],
+      "raw_reduction_per_scan_min_percent": 41.46114050315,
+      "raw_reduction_per_scan_max_percent": 69.11223312855155,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 3.6890707102933473,
+      "later24_pooled_sd_nm": 4.725267469901509,
+      "old_across_scan_same_step_mean_sd_nm": null,
+      "point_rank": 2
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "mean_scan_sd_nm": 4.627809300727502,
+      "median_scan_sd_nm": 4.594119473935926,
+      "pooled_within_scan_sd_nm": 4.725733404893708,
+      "per_scan_sd_min_nm": 3.061708076117443,
+      "per_scan_sd_max_nm": 7.672938781163992,
+      "between_scan_sd_of_scan_sds_nm": 0.973407075543906,
+      "pooled_PI_corrected_sd_nm": 4.753360766001358,
+      "raw_reduction_pooled_percent": 53.66818161376777,
+      "raw_reduction_CI95_percent": [
+        50.8258546788141,
+        56.67196226198983
+      ],
+      "raw_reduction_per_scan_min_percent": 41.126339229896466,
+      "raw_reduction_per_scan_max_percent": 69.27991799229983,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 3.8296199795791965,
+      "later24_pooled_sd_nm": 4.924347466483483,
+      "old_across_scan_same_step_mean_sd_nm": 3.948886769446706,
+      "point_rank": 3
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "mean_scan_sd_nm": 4.675217509193264,
+      "median_scan_sd_nm": 4.392012663704115,
+      "pooled_within_scan_sd_nm": 4.734101807232608,
+      "per_scan_sd_min_nm": 3.4992664134075797,
+      "per_scan_sd_max_nm": 6.169040373189575,
+      "between_scan_sd_of_scan_sds_nm": 0.757077750511637,
+      "pooled_PI_corrected_sd_nm": 4.760213771549664,
+      "raw_reduction_pooled_percent": 53.58613650793356,
+      "raw_reduction_CI95_percent": [
+        50.67227979073785,
+        56.38667097903608
+      ],
+      "raw_reduction_per_scan_min_percent": 40.18838357139659,
+      "raw_reduction_per_scan_max_percent": 67.60773419393588,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 4.076974322181605,
+      "later24_pooled_sd_nm": 4.884590053998571,
+      "old_across_scan_same_step_mean_sd_nm": 4.016280805045357,
+      "point_rank": 4
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "mean_scan_sd_nm": 4.635030739892036,
+      "median_scan_sd_nm": 4.429660382042357,
+      "pooled_within_scan_sd_nm": 4.740555721044961,
+      "per_scan_sd_min_nm": 3.0111435152818316,
+      "per_scan_sd_max_nm": 7.124544463432243,
+      "between_scan_sd_of_scan_sds_nm": 1.0116691148046613,
+      "pooled_PI_corrected_sd_nm": 4.746012892361968,
+      "raw_reduction_pooled_percent": 53.522861342575155,
+      "raw_reduction_CI95_percent": [
+        50.907984954823505,
+        56.24328691948826
+      ],
+      "raw_reduction_per_scan_min_percent": 39.90837852204807,
+      "raw_reduction_per_scan_max_percent": 66.54380336012157,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 3.5351829528038494,
+      "later24_pooled_sd_nm": 4.996669496070998,
+      "old_across_scan_same_step_mean_sd_nm": 3.905598537550388,
+      "point_rank": 5
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "mean_scan_sd_nm": 4.753797037819442,
+      "median_scan_sd_nm": 4.457133222190443,
+      "pooled_within_scan_sd_nm": 4.864821280613467,
+      "per_scan_sd_min_nm": 3.377202584738588,
+      "per_scan_sd_max_nm": 6.98903205907284,
+      "between_scan_sd_of_scan_sds_nm": 1.0510584889047334,
+      "pooled_PI_corrected_sd_nm": 4.878588209021603,
+      "raw_reduction_pooled_percent": 52.30454265120983,
+      "raw_reduction_CI95_percent": [
+        49.579267689856806,
+        55.07663307132306
+      ],
+      "raw_reduction_per_scan_min_percent": 36.87575475075578,
+      "raw_reduction_per_scan_max_percent": 64.56207070953795,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 3.7505667561674962,
+      "later24_pooled_sd_nm": 5.10552836318337,
+      "old_across_scan_same_step_mean_sd_nm": 4.135216328550943,
+      "point_rank": 6
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "mean_scan_sd_nm": 4.753798824765847,
+      "median_scan_sd_nm": 4.45713733614846,
+      "pooled_within_scan_sd_nm": 4.8648228721599285,
+      "per_scan_sd_min_nm": 3.3772019132448876,
+      "per_scan_sd_max_nm": 6.989026315133238,
+      "between_scan_sd_of_scan_sds_nm": 1.051057748575164,
+      "pooled_PI_corrected_sd_nm": 4.878589778449888,
+      "raw_reduction_pooled_percent": 52.3045270474431,
+      "raw_reduction_CI95_percent": [
+        49.57923808503092,
+        55.07661936092108
+      ],
+      "raw_reduction_per_scan_min_percent": 36.87568199177529,
+      "raw_reduction_per_scan_max_percent": 64.56200623751283,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 3.7505670899653496,
+      "later24_pooled_sd_nm": 5.105530197519175,
+      "old_across_scan_same_step_mean_sd_nm": 4.1352193093335865,
+      "point_rank": 7
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "mean_scan_sd_nm": 4.851277822387484,
+      "median_scan_sd_nm": 4.781149172862763,
+      "pooled_within_scan_sd_nm": 4.987654563058194,
+      "per_scan_sd_min_nm": 3.0028917874353676,
+      "per_scan_sd_max_nm": 7.406364440301063,
+      "between_scan_sd_of_scan_sds_nm": 1.1781640584810151,
+      "pooled_PI_corrected_sd_nm": 4.994664335393694,
+      "raw_reduction_pooled_percent": 51.1002662254342,
+      "raw_reduction_CI95_percent": [
+        48.05128906830205,
+        54.26531243092638
+      ],
+      "raw_reduction_per_scan_min_percent": 34.24026388512578,
+      "raw_reduction_per_scan_max_percent": 65.83570783443899,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 3.7588403120131035,
+      "later24_pooled_sd_nm": 5.250109753870897,
+      "old_across_scan_same_step_mean_sd_nm": 4.251368244732184,
+      "point_rank": 8
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "mean_scan_sd_nm": 4.8816534542995145,
+      "median_scan_sd_nm": 4.551565297819996,
+      "pooled_within_scan_sd_nm": 4.987760696164909,
+      "per_scan_sd_min_nm": 3.382120625879339,
+      "per_scan_sd_max_nm": 7.153889063258015,
+      "between_scan_sd_of_scan_sds_nm": 1.0408300638067065,
+      "pooled_PI_corrected_sd_nm": 4.9925082865688175,
+      "raw_reduction_pooled_percent": 51.09922568010424,
+      "raw_reduction_CI95_percent": [
+        48.310000358970505,
+        53.99299844963228
+      ],
+      "raw_reduction_per_scan_min_percent": 35.442424655473204,
+      "raw_reduction_per_scan_max_percent": 62.99870208568019,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 3.869711704670218,
+      "later24_pooled_sd_nm": 5.2300601127944875,
+      "old_across_scan_same_step_mean_sd_nm": 4.184162219914608,
+      "point_rank": 9
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "mean_scan_sd_nm": 4.886472871953155,
+      "median_scan_sd_nm": 4.672308404970273,
+      "pooled_within_scan_sd_nm": 4.991695514792077,
+      "per_scan_sd_min_nm": 3.451832283785638,
+      "per_scan_sd_max_nm": 7.389338007329176,
+      "between_scan_sd_of_scan_sds_nm": 1.036941948327517,
+      "pooled_PI_corrected_sd_nm": 4.99436662063543,
+      "raw_reduction_pooled_percent": 51.060648112053556,
+      "raw_reduction_CI95_percent": [
+        48.478909631792064,
+        53.8052180970222
+      ],
+      "raw_reduction_per_scan_min_percent": 40.23666377057257,
+      "raw_reduction_per_scan_max_percent": 63.40956060874533,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 3.7719550269373605,
+      "later24_pooled_sd_nm": 5.252558325157814,
+      "old_across_scan_same_step_mean_sd_nm": 4.218772410889787,
+      "point_rank": 10
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "mean_scan_sd_nm": 5.108102015684087,
+      "median_scan_sd_nm": 5.101948225461797,
+      "pooled_within_scan_sd_nm": 5.15684201090165,
+      "per_scan_sd_min_nm": 3.646195849390523,
+      "per_scan_sd_max_nm": 6.538381763624401,
+      "between_scan_sd_of_scan_sds_nm": 0.7194202570875735,
+      "pooled_PI_corrected_sd_nm": 5.203992444595367,
+      "raw_reduction_pooled_percent": 49.44152642039234,
+      "raw_reduction_CI95_percent": [
+        46.26770694793024,
+        52.41913159058489
+      ],
+      "raw_reduction_per_scan_min_percent": 24.526036173981936,
+      "raw_reduction_per_scan_max_percent": 64.02649644771724,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 4.780760514220224,
+      "later24_pooled_sd_nm": 5.246651945113991,
+      "old_across_scan_same_step_mean_sd_nm": 4.289956950276407,
+      "point_rank": 11
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "mean_scan_sd_nm": 5.180774529260261,
+      "median_scan_sd_nm": 4.776240910863288,
+      "pooled_within_scan_sd_nm": 5.30777773355222,
+      "per_scan_sd_min_nm": 3.6391663113980077,
+      "per_scan_sd_max_nm": 7.549514917311645,
+      "between_scan_sd_of_scan_sds_nm": 1.1738882102216661,
+      "pooled_PI_corrected_sd_nm": 5.323897147696158,
+      "raw_reduction_pooled_percent": 47.96172934114975,
+      "raw_reduction_CI95_percent": [
+        43.95553020182175,
+        51.91923228178776
+      ],
+      "raw_reduction_per_scan_min_percent": 23.71152315666244,
+      "raw_reduction_per_scan_max_percent": 65.34463902497116,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 4.711548651284868,
+      "later24_pooled_sd_nm": 5.4466464831706185,
+      "old_across_scan_same_step_mean_sd_nm": 4.459005591026812,
+      "point_rank": 12
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "mean_scan_sd_nm": 5.511265125866781,
+      "median_scan_sd_nm": 5.085059371564654,
+      "pooled_within_scan_sd_nm": 5.671256168658596,
+      "per_scan_sd_min_nm": 3.555838072670227,
+      "per_scan_sd_max_nm": 9.328788442315554,
+      "between_scan_sd_of_scan_sds_nm": 1.3604398032353535,
+      "pooled_PI_corrected_sd_nm": 5.677723509651856,
+      "raw_reduction_pooled_percent": 44.3981307629436,
+      "raw_reduction_CI95_percent": [
+        40.49957129829337,
+        48.53462959395746
+      ],
+      "raw_reduction_per_scan_min_percent": 30.625039938702415,
+      "raw_reduction_per_scan_max_percent": 61.927706686916764,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 4.66782756800285,
+      "later24_pooled_sd_nm": 5.895488072418889,
+      "old_across_scan_same_step_mean_sd_nm": 4.719569667077269,
+      "point_rank": 13
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "mean_scan_sd_nm": 6.36588210992605,
+      "median_scan_sd_nm": 6.326999059062864,
+      "pooled_within_scan_sd_nm": 6.411664980603239,
+      "per_scan_sd_min_nm": 4.655794620514944,
+      "per_scan_sd_max_nm": 7.971876202920782,
+      "between_scan_sd_of_scan_sds_nm": 0.7779234866312181,
+      "pooled_PI_corrected_sd_nm": 6.41441998317206,
+      "raw_reduction_pooled_percent": 37.13904869727707,
+      "raw_reduction_CI95_percent": [
+        32.01392777035625,
+        41.99009982374186
+      ],
+      "raw_reduction_per_scan_min_percent": 3.2371753874142595,
+      "raw_reduction_per_scan_max_percent": 62.9341821656817,
+      "improved_scans_vs_raw": 30,
+      "first6_pooled_sd_nm": 5.986167227588261,
+      "later24_pooled_sd_nm": 6.513697894453233,
+      "old_across_scan_same_step_mean_sd_nm": null,
+      "point_rank": 14
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "mean_scan_sd_nm": 10.061683649658,
+      "median_scan_sd_nm": 9.912510877978992,
+      "pooled_within_scan_sd_nm": 10.19974762789043,
+      "per_scan_sd_min_nm": 6.952323191921528,
+      "per_scan_sd_max_nm": 13.782466017650002,
+      "between_scan_sd_of_scan_sds_nm": 1.7011275591839499,
+      "pooled_PI_corrected_sd_nm": 10.194221310917092,
+      "raw_reduction_pooled_percent": 0.00010280066750079087,
+      "raw_reduction_CI95_percent": [
+        5.8594026881853e-05,
+        0.00014879743279849753
+      ],
+      "raw_reduction_per_scan_min_percent": -0.00013710694197754947,
+      "raw_reduction_per_scan_max_percent": 0.00035851743144243997,
+      "improved_scans_vs_raw": 23,
+      "first6_pooled_sd_nm": 8.565535615791536,
+      "later24_pooled_sd_nm": 10.56889135597827,
+      "old_across_scan_same_step_mean_sd_nm": 9.725337754450033,
+      "point_rank": 15
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "mean_scan_sd_nm": 10.061694616408966,
+      "median_scan_sd_nm": 9.912519572669126,
+      "pooled_within_scan_sd_nm": 10.199758113309853,
+      "per_scan_sd_min_nm": 6.952348117301423,
+      "per_scan_sd_max_nm": 13.782461167961298,
+      "between_scan_sd_of_scan_sds_nm": 1.701125494414977,
+      "pooled_PI_corrected_sd_nm": 10.194231834017216,
+      "raw_reduction_pooled_percent": 0.0,
+      "raw_reduction_CI95_percent": [
+        0.0,
+        0.0
+      ],
+      "raw_reduction_per_scan_min_percent": 0.0,
+      "raw_reduction_per_scan_max_percent": 0.0,
+      "improved_scans_vs_raw": 0,
+      "first6_pooled_sd_nm": 8.565550862714124,
+      "later24_pooled_sd_nm": 10.56890091575761,
+      "old_across_scan_same_step_mean_sd_nm": 9.725348295303752,
+      "point_rank": 16
+    }
+  ],
+  "paired_model_comparisons": [
+    {
+      "first": "R140v2-StableUNet",
+      "second": "R128",
+      "second_minus_first_pooled_nm": 0.21571535868864267,
+      "CI95_nm": [
+        0.017251472798876975,
+        0.42682550602077013
+      ],
+      "first_lower_scans": 16,
+      "second_lower_scans": 14
+    },
+    {
+      "first": "R140v2-StableUNet",
+      "second": "R150-MatchedGeometryMeanPSF",
+      "second_minus_first_pooled_nm": 0.40444857945227053,
+      "CI95_nm": [
+        0.22931701942250066,
+        0.5779833914828901
+      ],
+      "first_lower_scans": 23,
+      "second_lower_scans": 7
+    },
+    {
+      "first": "R128",
+      "second": "R150-MatchedGeometryMeanPSF",
+      "second_minus_first_pooled_nm": 0.18873322076362786,
+      "CI95_nm": [
+        -0.0190139669185529,
+        0.3801682351959657
+      ],
+      "first_lower_scans": 22,
+      "second_lower_scans": 8
+    },
+    {
+      "first": "R128",
+      "second": "R148v2-HybridContextNativePSF",
+      "second_minus_first_pooled_nm": 0.3278226880298485,
+      "CI95_nm": [
+        0.18537762805307942,
+        0.4689792946791962
+      ],
+      "first_lower_scans": 24,
+      "second_lower_scans": 6
+    },
+    {
+      "first": "R150-MatchedGeometryMeanPSF",
+      "second": "R148v2-HybridContextNativePSF",
+      "second_minus_first_pooled_nm": 0.13908946726622062,
+      "CI95_nm": [
+        -0.07542234391374922,
+        0.36593863715910296
+      ],
+      "first_lower_scans": 13,
+      "second_lower_scans": 17
+    },
+    {
+      "first": "R145-Center9PSF25-CorrectedPairs",
+      "second": "R150-MatchedGeometryMeanPSF",
+      "second_minus_first_pooled_nm": -0.008368402338899905,
+      "CI95_nm": [
+        -0.25569922204522744,
+        0.2838261621905907
+      ],
+      "first_lower_scans": 13,
+      "second_lower_scans": 17
+    },
+    {
+      "first": "R148v2-HybridContextNativePSF",
+      "second": "R152-R148v2-SafeAdaptivePSF",
+      "second_minus_first_pooled_nm": -1.5915464617322073e-06,
+      "CI95_nm": [
+        -3.2607915100513197e-06,
+        7.290627961342499e-08
+      ],
+      "first_lower_scans": 11,
+      "second_lower_scans": 19
+    }
+  ],
+  "per_scan": [
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3168808966665,
+      "observed_step_sd_nm": 3.100049729319513,
+      "PI_corrected_step_sd_nm": 3.0927131478933525
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8670066476282,
+      "observed_step_sd_nm": 3.6398156471708116,
+      "PI_corrected_step_sd_nm": 3.5883947711005786
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9680064096436,
+      "observed_step_sd_nm": 3.382120625879339,
+      "PI_corrected_step_sd_nm": 3.4821613069102155
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2772281945007,
+      "observed_step_sd_nm": 3.231448043753938,
+      "PI_corrected_step_sd_nm": 3.2877045579477686
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0133182416441,
+      "observed_step_sd_nm": 3.7988078078945544,
+      "PI_corrected_step_sd_nm": 3.786995324051875
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1000.1142921297273,
+      "observed_step_sd_nm": 7.673758780517241,
+      "PI_corrected_step_sd_nm": 7.819770165739575
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.024245794172,
+      "observed_step_sd_nm": 2.9430516705560446,
+      "PI_corrected_step_sd_nm": 3.120162925042035
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1000.84524534941,
+      "observed_step_sd_nm": 3.929535268424202,
+      "PI_corrected_step_sd_nm": 4.0091462022019515
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3340350864461,
+      "observed_step_sd_nm": 3.7783458680016007,
+      "PI_corrected_step_sd_nm": 3.89947780079359
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0511406995951,
+      "observed_step_sd_nm": 3.6881073888561544,
+      "PI_corrected_step_sd_nm": 3.8590188904245144
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0559308386142,
+      "observed_step_sd_nm": 3.555838072670227,
+      "PI_corrected_step_sd_nm": 3.6956771183102086
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2833218864896,
+      "observed_step_sd_nm": 3.848344102012979,
+      "PI_corrected_step_sd_nm": 3.7968280802189676
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9241584142457,
+      "observed_step_sd_nm": 3.372515330765701,
+      "PI_corrected_step_sd_nm": 3.419487312817236
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2833271982124,
+      "observed_step_sd_nm": 3.8483461214289365,
+      "PI_corrected_step_sd_nm": 3.7968307306485154
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8249543079987,
+      "observed_step_sd_nm": 5.831143311784544,
+      "PI_corrected_step_sd_nm": 5.860966004345089
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "001804_XY_0",
+      "run_index": 1,
+      "n_steps": 30,
+      "mean_step_nm": 1000.1142940888063,
+      "observed_step_sd_nm": 7.673785597724043,
+      "PI_corrected_step_sd_nm": 7.819795358645988
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8026790966668,
+      "observed_step_sd_nm": 3.622294809390267,
+      "PI_corrected_step_sd_nm": 3.672138939942426
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1151359593854,
+      "observed_step_sd_nm": 3.754455120094369,
+      "PI_corrected_step_sd_nm": 3.8686425599286407
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8067215706104,
+      "observed_step_sd_nm": 3.80347719468293,
+      "PI_corrected_step_sd_nm": 3.8970276494046265
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1000.950956873619,
+      "observed_step_sd_nm": 3.647582311686191,
+      "PI_corrected_step_sd_nm": 3.717713835385737
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9653758728061,
+      "observed_step_sd_nm": 3.563060200170909,
+      "PI_corrected_step_sd_nm": 3.7074113644113087
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1002.4433919646449,
+      "observed_step_sd_nm": 7.4193851936318795,
+      "PI_corrected_step_sd_nm": 7.467460025220739
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1000.6103934275314,
+      "observed_step_sd_nm": 3.4090355428845527,
+      "PI_corrected_step_sd_nm": 3.440507798062691
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1000.6546239014449,
+      "observed_step_sd_nm": 3.646195849390523,
+      "PI_corrected_step_sd_nm": 3.5849111602542787
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0491426903571,
+      "observed_step_sd_nm": 3.9148888888240663,
+      "PI_corrected_step_sd_nm": 3.867357521330909
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1546406628942,
+      "observed_step_sd_nm": 4.6040574214120245,
+      "PI_corrected_step_sd_nm": 4.659764836548572
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3937443643339,
+      "observed_step_sd_nm": 4.5783197459483995,
+      "PI_corrected_step_sd_nm": 4.5992285345808765
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4852059844808,
+      "observed_step_sd_nm": 3.665054278755009,
+      "PI_corrected_step_sd_nm": 3.7446079812054376
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8485843838678,
+      "observed_step_sd_nm": 3.6800893323137918,
+      "PI_corrected_step_sd_nm": 3.7474550110886264
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4852023510464,
+      "observed_step_sd_nm": 3.6650536010423163,
+      "PI_corrected_step_sd_nm": 3.7446073591347275
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1002.516590014179,
+      "observed_step_sd_nm": 6.303357369431282,
+      "PI_corrected_step_sd_nm": 6.411785790697154
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "001929_XY_0",
+      "run_index": 2,
+      "n_steps": 30,
+      "mean_step_nm": 1002.4434043166049,
+      "observed_step_sd_nm": 7.419404752353957,
+      "PI_corrected_step_sd_nm": 7.4674791649990695
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1472493533333,
+      "observed_step_sd_nm": 4.39419092442307,
+      "PI_corrected_step_sd_nm": 4.287763444215185
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1397060441541,
+      "observed_step_sd_nm": 3.840266147009449,
+      "PI_corrected_step_sd_nm": 3.749211285264471
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1753793889626,
+      "observed_step_sd_nm": 3.8718841349488162,
+      "PI_corrected_step_sd_nm": 3.9046459541692666
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4481760734787,
+      "observed_step_sd_nm": 3.5919894711699345,
+      "PI_corrected_step_sd_nm": 3.518552411250401
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9316805192066,
+      "observed_step_sd_nm": 3.7913624192218593,
+      "PI_corrected_step_sd_nm": 3.748799867802429
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1629503337641,
+      "observed_step_sd_nm": 9.653300489961712,
+      "PI_corrected_step_sd_nm": 9.75823744731084
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.421568448321,
+      "observed_step_sd_nm": 3.9953053710483513,
+      "PI_corrected_step_sd_nm": 3.9402611508233667
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3833436459919,
+      "observed_step_sd_nm": 6.538381763624401,
+      "PI_corrected_step_sd_nm": 6.628592915630575
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3854065267905,
+      "observed_step_sd_nm": 4.862083923441437,
+      "PI_corrected_step_sd_nm": 4.889386933036565
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0539017316903,
+      "observed_step_sd_nm": 4.958942027697033,
+      "PI_corrected_step_sd_nm": 4.875662462393957
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.293349124485,
+      "observed_step_sd_nm": 4.819545644593768,
+      "PI_corrected_step_sd_nm": 4.69629784563405
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2631395379062,
+      "observed_step_sd_nm": 3.616311920654199,
+      "PI_corrected_step_sd_nm": 3.5698301894519364
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1844279925607,
+      "observed_step_sd_nm": 3.733175547854084,
+      "PI_corrected_step_sd_nm": 3.649576483378369
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2631384776669,
+      "observed_step_sd_nm": 3.616307433259274,
+      "PI_corrected_step_sd_nm": 3.569825265568105
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5788768935257,
+      "observed_step_sd_nm": 5.857150391990659,
+      "PI_corrected_step_sd_nm": 5.7045808375151745
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "001956_XY_0",
+      "run_index": 3,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1629498878578,
+      "observed_step_sd_nm": 9.653318292637671,
+      "PI_corrected_step_sd_nm": 9.758254953676103
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1387955433333,
+      "observed_step_sd_nm": 3.169577088860175,
+      "PI_corrected_step_sd_nm": 3.228411621948738
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0967446677722,
+      "observed_step_sd_nm": 3.5552782770107645,
+      "PI_corrected_step_sd_nm": 3.613302929969064
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2895473591342,
+      "observed_step_sd_nm": 3.7453201422549687,
+      "PI_corrected_step_sd_nm": 3.7769330258604263
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.718954812354,
+      "observed_step_sd_nm": 3.0111435152818316,
+      "PI_corrected_step_sd_nm": 3.0827767046703505
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2277091573679,
+      "observed_step_sd_nm": 3.451832283785638,
+      "PI_corrected_step_sd_nm": 3.481228329918156
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1000.2180487234853,
+      "observed_step_sd_nm": 9.0002497495429,
+      "PI_corrected_step_sd_nm": 9.108790578263324
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0112987492322,
+      "observed_step_sd_nm": 3.3712413518878606,
+      "PI_corrected_step_sd_nm": 3.4750566562246252
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.558938048384,
+      "observed_step_sd_nm": 5.001083588344418,
+      "PI_corrected_step_sd_nm": 5.12016879902334
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1433371309574,
+      "observed_step_sd_nm": 3.8003405591021533,
+      "PI_corrected_step_sd_nm": 3.8704772264624085
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8761499522869,
+      "observed_step_sd_nm": 4.108967488899424,
+      "PI_corrected_step_sd_nm": 4.111056971797549
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.097360363703,
+      "observed_step_sd_nm": 4.40711042714452,
+      "PI_corrected_step_sd_nm": 4.421206906940452
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4770106296286,
+      "observed_step_sd_nm": 3.3772019132448876,
+      "PI_corrected_step_sd_nm": 3.296751074505772
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5257522201663,
+      "observed_step_sd_nm": 3.4441939699994037,
+      "PI_corrected_step_sd_nm": 3.4018532278851836
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4770086524527,
+      "observed_step_sd_nm": 3.377202584738588,
+      "PI_corrected_step_sd_nm": 3.296752604537824
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3675728036758,
+      "observed_step_sd_nm": 5.492640591193447,
+      "PI_corrected_step_sd_nm": 5.594813206836167
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "002030_XY_0",
+      "run_index": 4,
+      "n_steps": 30,
+      "mean_step_nm": 1000.2180433247042,
+      "observed_step_sd_nm": 9.000256507617102,
+      "PI_corrected_step_sd_nm": 9.10879714623364
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1855184066666,
+      "observed_step_sd_nm": 3.8023696032273,
+      "PI_corrected_step_sd_nm": 4.133424620606801
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2968378353501,
+      "observed_step_sd_nm": 3.5096037113769754,
+      "PI_corrected_step_sd_nm": 3.7870419055993207
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1128706707802,
+      "observed_step_sd_nm": 4.154139368513822,
+      "PI_corrected_step_sd_nm": 4.463771351265181
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4977345344707,
+      "observed_step_sd_nm": 3.9266206430575683,
+      "PI_corrected_step_sd_nm": 4.223365569475443
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1963045326168,
+      "observed_step_sd_nm": 4.310025828760709,
+      "PI_corrected_step_sd_nm": 4.599761671771535
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7981750638222,
+      "observed_step_sd_nm": 9.665405465988824,
+      "PI_corrected_step_sd_nm": 9.618524221828817
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5387935590534,
+      "observed_step_sd_nm": 3.6202470564450393,
+      "PI_corrected_step_sd_nm": 3.97662141734021
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2323588357176,
+      "observed_step_sd_nm": 4.446929274297975,
+      "PI_corrected_step_sd_nm": 4.662313369664662
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4725082662301,
+      "observed_step_sd_nm": 3.660220827964788,
+      "PI_corrected_step_sd_nm": 4.000452822337115
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5073528114125,
+      "observed_step_sd_nm": 5.11465125902004,
+      "PI_corrected_step_sd_nm": 5.43752969513204
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7377037955051,
+      "observed_step_sd_nm": 5.243481264618617,
+      "PI_corrected_step_sd_nm": 5.591173254734248
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.175870869594,
+      "observed_step_sd_nm": 3.9214996418974573,
+      "PI_corrected_step_sd_nm": 4.226283811587334
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.243620831199,
+      "observed_step_sd_nm": 4.321733411091935,
+      "PI_corrected_step_sd_nm": 4.628972768027758
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1758712778375,
+      "observed_step_sd_nm": 3.9214995870602354,
+      "PI_corrected_step_sd_nm": 4.226283424108073
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9918787646925,
+      "observed_step_sd_nm": 6.202155139910809,
+      "PI_corrected_step_sd_nm": 6.266629887812912
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "002118_XY_0",
+      "run_index": 5,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7981778930672,
+      "observed_step_sd_nm": 9.665427672565478,
+      "PI_corrected_step_sd_nm": 9.618546294466636
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9309933533333,
+      "observed_step_sd_nm": 3.8872845047435804,
+      "PI_corrected_step_sd_nm": 4.11509508949513
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1771190967771,
+      "observed_step_sd_nm": 4.210003068328317,
+      "PI_corrected_step_sd_nm": 4.494551312162025
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9315826761656,
+      "observed_step_sd_nm": 4.203218974739833,
+      "PI_corrected_step_sd_nm": 4.406808441345922
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6460369533481,
+      "observed_step_sd_nm": 3.7215957026062383,
+      "PI_corrected_step_sd_nm": 3.8978432414012025
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1192476178284,
+      "observed_step_sd_nm": 3.6569976546627037,
+      "PI_corrected_step_sd_nm": 3.8704390274173317
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1826664860687,
+      "observed_step_sd_nm": 7.659359184272632,
+      "PI_corrected_step_sd_nm": 7.717025355986459
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1001.611608668634,
+      "observed_step_sd_nm": 3.99435823998601,
+      "PI_corrected_step_sd_nm": 4.225210965145395
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1002.2727201060267,
+      "observed_step_sd_nm": 4.56744806789838,
+      "PI_corrected_step_sd_nm": 4.745767469207584
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1001.639736777238,
+      "observed_step_sd_nm": 4.318379357939068,
+      "PI_corrected_step_sd_nm": 4.471944995038769
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1001.115437148064,
+      "observed_step_sd_nm": 5.546015321729953,
+      "PI_corrected_step_sd_nm": 5.746965175616252
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9942481844596,
+      "observed_step_sd_nm": 5.19441534945725,
+      "PI_corrected_step_sd_nm": 5.43585007637102
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1002.0706221862689,
+      "observed_step_sd_nm": 4.0369272562898555,
+      "PI_corrected_step_sd_nm": 4.268990063469546
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6380254982331,
+      "observed_step_sd_nm": 4.313069269936354,
+      "PI_corrected_step_sd_nm": 4.552444552377726
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1002.0706188103101,
+      "observed_step_sd_nm": 4.036927597128464,
+      "PI_corrected_step_sd_nm": 4.2689904019981375
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1002.3215904986653,
+      "observed_step_sd_nm": 6.1910097926455245,
+      "PI_corrected_step_sd_nm": 6.318266527670971
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "002240_XY_0",
+      "run_index": 6,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1826669839971,
+      "observed_step_sd_nm": 7.659357274334121,
+      "PI_corrected_step_sd_nm": 7.717023886262895
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.32815925,
+      "observed_step_sd_nm": 3.548507759008471,
+      "PI_corrected_step_sd_nm": 3.6685028475790404
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6064526417333,
+      "observed_step_sd_nm": 4.137139993059445,
+      "PI_corrected_step_sd_nm": 4.212844558079634
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5880106019456,
+      "observed_step_sd_nm": 4.086026300129213,
+      "PI_corrected_step_sd_nm": 4.145471716527696
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2468507118293,
+      "observed_step_sd_nm": 3.9870316665748557,
+      "PI_corrected_step_sd_nm": 4.084564798816717
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4991328622366,
+      "observed_step_sd_nm": 4.322527852950762,
+      "PI_corrected_step_sd_nm": 4.381629161090432
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5541432677495,
+      "observed_step_sd_nm": 9.506084803682745,
+      "PI_corrected_step_sd_nm": 9.25441972890003
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4655724527122,
+      "observed_step_sd_nm": 3.368240818739545,
+      "PI_corrected_step_sd_nm": 3.5897966306244258
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.702643024923,
+      "observed_step_sd_nm": 5.049560575527166,
+      "PI_corrected_step_sd_nm": 5.255201456482175
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5600329585675,
+      "observed_step_sd_nm": 4.078147760529951,
+      "PI_corrected_step_sd_nm": 4.31431148693417
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6857184677174,
+      "observed_step_sd_nm": 4.0097336978488345,
+      "PI_corrected_step_sd_nm": 4.221622559923922
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6804815324381,
+      "observed_step_sd_nm": 4.354726590374404,
+      "PI_corrected_step_sd_nm": 4.512729617287829
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.454153790444,
+      "observed_step_sd_nm": 4.067944263105426,
+      "PI_corrected_step_sd_nm": 4.150825566838261
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2616114440409,
+      "observed_step_sd_nm": 3.7210801267589524,
+      "PI_corrected_step_sd_nm": 3.898641595665445
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4541518574295,
+      "observed_step_sd_nm": 4.06793996627214,
+      "PI_corrected_step_sd_nm": 4.150821713052481
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8643125562936,
+      "observed_step_sd_nm": 6.531896936279167,
+      "PI_corrected_step_sd_nm": 6.56003755717534
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "003412_XY_0",
+      "run_index": 7,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5541486335406,
+      "observed_step_sd_nm": 9.506103178611161,
+      "PI_corrected_step_sd_nm": 9.254438063159308
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5785445700001,
+      "observed_step_sd_nm": 3.363404741833888,
+      "PI_corrected_step_sd_nm": 3.510487142379532
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5617927339081,
+      "observed_step_sd_nm": 4.820721518427113,
+      "PI_corrected_step_sd_nm": 4.964721686522996
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6562175345817,
+      "observed_step_sd_nm": 4.862318876729914,
+      "PI_corrected_step_sd_nm": 4.971229478106378
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1913386247029,
+      "observed_step_sd_nm": 4.4835965159705085,
+      "PI_corrected_step_sd_nm": 4.601661535411501
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5095760725799,
+      "observed_step_sd_nm": 5.001646689070371,
+      "PI_corrected_step_sd_nm": 5.112701441759806
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1002.5992573998836,
+      "observed_step_sd_nm": 9.832453353751688,
+      "PI_corrected_step_sd_nm": 9.864743918488877
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2549917890192,
+      "observed_step_sd_nm": 3.6383589660059177,
+      "PI_corrected_step_sd_nm": 3.851997170982097
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4775377137504,
+      "observed_step_sd_nm": 5.276637056252448,
+      "PI_corrected_step_sd_nm": 5.517628871202459
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0711659110349,
+      "observed_step_sd_nm": 4.2187280085765115,
+      "PI_corrected_step_sd_nm": 4.447054834882131
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3780249657066,
+      "observed_step_sd_nm": 4.1725668599125525,
+      "PI_corrected_step_sd_nm": 4.381748412157015
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7603650155435,
+      "observed_step_sd_nm": 4.302361536558195,
+      "PI_corrected_step_sd_nm": 4.4460151022999845
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7399916031205,
+      "observed_step_sd_nm": 4.422827071853306,
+      "PI_corrected_step_sd_nm": 4.5225090635619445
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3993022070248,
+      "observed_step_sd_nm": 4.738107106133067,
+      "PI_corrected_step_sd_nm": 4.858395365640286
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7399906875138,
+      "observed_step_sd_nm": 4.422820821001738,
+      "PI_corrected_step_sd_nm": 4.522502908681568
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2082661342145,
+      "observed_step_sd_nm": 7.372571645254984,
+      "PI_corrected_step_sd_nm": 7.400108006253509
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "003541_XY_0",
+      "run_index": 8,
+      "n_steps": 30,
+      "mean_step_nm": 1002.5992472440242,
+      "observed_step_sd_nm": 9.832486633666761,
+      "PI_corrected_step_sd_nm": 9.864776956203318
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9004339533333,
+      "observed_step_sd_nm": 3.9097562006514797,
+      "PI_corrected_step_sd_nm": 3.922074085158092
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1001.075476427261,
+      "observed_step_sd_nm": 4.9069306830508,
+      "PI_corrected_step_sd_nm": 4.952839987737625
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9993859840447,
+      "observed_step_sd_nm": 4.253280121193325,
+      "PI_corrected_step_sd_nm": 4.285014503194776
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9136311133536,
+      "observed_step_sd_nm": 4.375724248114205,
+      "PI_corrected_step_sd_nm": 4.422279937361285
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9680692232835,
+      "observed_step_sd_nm": 4.368675388504623,
+      "PI_corrected_step_sd_nm": 4.4050138448552785
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1001.007580093548,
+      "observed_step_sd_nm": 9.318398849157894,
+      "PI_corrected_step_sd_nm": 9.433447346565684
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7037956132591,
+      "observed_step_sd_nm": 4.149221587193218,
+      "PI_corrected_step_sd_nm": 4.148488820352647
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2907871259154,
+      "observed_step_sd_nm": 5.7232762052527315,
+      "PI_corrected_step_sd_nm": 5.885260674410119
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2777455843631,
+      "observed_step_sd_nm": 5.507131903122422,
+      "PI_corrected_step_sd_nm": 5.528661609346835
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1400387888826,
+      "observed_step_sd_nm": 4.624686313484184,
+      "PI_corrected_step_sd_nm": 4.635094477248978
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1000.6432702459948,
+      "observed_step_sd_nm": 4.960637519701296,
+      "PI_corrected_step_sd_nm": 4.964296142771637
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8624261584555,
+      "observed_step_sd_nm": 4.491447600443614,
+      "PI_corrected_step_sd_nm": 4.5106540253388685
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7058116784506,
+      "observed_step_sd_nm": 4.955425764960993,
+      "PI_corrected_step_sd_nm": 4.979645369253363
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8624327398877,
+      "observed_step_sd_nm": 4.491445623379146,
+      "PI_corrected_step_sd_nm": 4.510651455442415
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2035218682756,
+      "observed_step_sd_nm": 7.213446150693226,
+      "PI_corrected_step_sd_nm": 7.293566912060118
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "003614_XY_0",
+      "run_index": 9,
+      "n_steps": 30,
+      "mean_step_nm": 1001.00758173001,
+      "observed_step_sd_nm": 9.318422657282973,
+      "PI_corrected_step_sd_nm": 9.43347128396707
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4149321999998,
+      "observed_step_sd_nm": 3.782274849125748,
+      "PI_corrected_step_sd_nm": 3.897558255672396
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.564780458272,
+      "observed_step_sd_nm": 4.020897476506368,
+      "PI_corrected_step_sd_nm": 4.183665818955844
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9149473702158,
+      "observed_step_sd_nm": 4.11084884261653,
+      "PI_corrected_step_sd_nm": 4.282516454975617
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2548349270696,
+      "observed_step_sd_nm": 4.324642002894191,
+      "PI_corrected_step_sd_nm": 4.533206390754352
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4447934184686,
+      "observed_step_sd_nm": 4.490183760911223,
+      "PI_corrected_step_sd_nm": 4.722965266483222
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1002.0607820872808,
+      "observed_step_sd_nm": 9.929017504812458,
+      "PI_corrected_step_sd_nm": 9.942316962218165
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.451362943318,
+      "observed_step_sd_nm": 4.300424899129382,
+      "PI_corrected_step_sd_nm": 4.432661330696722
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1002.3299428415261,
+      "observed_step_sd_nm": 4.269822248631122,
+      "PI_corrected_step_sd_nm": 4.113324397615911
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5302750539826,
+      "observed_step_sd_nm": 4.0876474323354355,
+      "PI_corrected_step_sd_nm": 4.021480766500548
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7669918208558,
+      "observed_step_sd_nm": 4.422963011586169,
+      "PI_corrected_step_sd_nm": 4.554155243745854
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.988044656206,
+      "observed_step_sd_nm": 4.116257895572994,
+      "PI_corrected_step_sd_nm": 4.188334824010352
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8040129905862,
+      "observed_step_sd_nm": 3.8821736902920767,
+      "PI_corrected_step_sd_nm": 4.0379570724917375
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1002.043160210828,
+      "observed_step_sd_nm": 4.282641960511598,
+      "PI_corrected_step_sd_nm": 4.463867501481823
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8040106083009,
+      "observed_step_sd_nm": 3.882162330251279,
+      "PI_corrected_step_sd_nm": 4.037945049659461
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1000.6710986474502,
+      "observed_step_sd_nm": 7.971876202920782,
+      "PI_corrected_step_sd_nm": 7.904051906056039
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "003651_XY_0",
+      "run_index": 10,
+      "n_steps": 30,
+      "mean_step_nm": 1002.060785339589,
+      "observed_step_sd_nm": 9.929029643385586,
+      "PI_corrected_step_sd_nm": 9.942328942900177
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.34058516,
+      "observed_step_sd_nm": 3.102488934318798,
+      "PI_corrected_step_sd_nm": 3.1551624219674097
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4610564865727,
+      "observed_step_sd_nm": 3.0028917874353676,
+      "PI_corrected_step_sd_nm": 3.0978504885498985
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.421452170171,
+      "observed_step_sd_nm": 3.662742023025709,
+      "PI_corrected_step_sd_nm": 3.7309031554791274
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5170024771263,
+      "observed_step_sd_nm": 3.5918065515712327,
+      "PI_corrected_step_sd_nm": 3.6749951916715875
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3865805309798,
+      "observed_step_sd_nm": 3.8683265520159607,
+      "PI_corrected_step_sd_nm": 3.953646999988429
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 999.1868571351235,
+      "observed_step_sd_nm": 7.353786723434577,
+      "PI_corrected_step_sd_nm": 7.342524621604394
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9917242134028,
+      "observed_step_sd_nm": 3.7580895753065597,
+      "PI_corrected_step_sd_nm": 3.8467512357432696
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5614907001523,
+      "observed_step_sd_nm": 5.202951014978325,
+      "PI_corrected_step_sd_nm": 5.337181794137963
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.735181660508,
+      "observed_step_sd_nm": 4.305307983368558,
+      "PI_corrected_step_sd_nm": 4.392340777436532
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5745972370822,
+      "observed_step_sd_nm": 4.1679903789311314,
+      "PI_corrected_step_sd_nm": 4.2638309817607425
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4294353238514,
+      "observed_step_sd_nm": 4.608012245149092,
+      "PI_corrected_step_sd_nm": 4.677134714676182
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2579788446584,
+      "observed_step_sd_nm": 3.5159791589965126,
+      "PI_corrected_step_sd_nm": 3.5578520198956496
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1769813753419,
+      "observed_step_sd_nm": 3.9762652763724993,
+      "PI_corrected_step_sd_nm": 4.016516588221848
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2579863763975,
+      "observed_step_sd_nm": 3.5159733558619934,
+      "PI_corrected_step_sd_nm": 3.557846275736369
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6565928262557,
+      "observed_step_sd_nm": 7.115733249885762,
+      "PI_corrected_step_sd_nm": 7.167529702765378
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "003728_XY_0",
+      "run_index": 11,
+      "n_steps": 30,
+      "mean_step_nm": 999.1868513043371,
+      "observed_step_sd_nm": 7.353788273932047,
+      "PI_corrected_step_sd_nm": 7.342526518663514
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7077557533333,
+      "observed_step_sd_nm": 4.054690942871984,
+      "PI_corrected_step_sd_nm": 3.946662580779615
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9698536411375,
+      "observed_step_sd_nm": 4.851727847320352,
+      "PI_corrected_step_sd_nm": 4.759501183595206
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0134417757831,
+      "observed_step_sd_nm": 4.95929588381723,
+      "PI_corrected_step_sd_nm": 4.8645903356567395
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3497428945949,
+      "observed_step_sd_nm": 4.799486078273226,
+      "PI_corrected_step_sd_nm": 4.699678098316626
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1001.017218544699,
+      "observed_step_sd_nm": 5.222887251583041,
+      "PI_corrected_step_sd_nm": 5.105200634849388
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7124198798076,
+      "observed_step_sd_nm": 9.246488923085757,
+      "PI_corrected_step_sd_nm": 9.125046667587535
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1625578354316,
+      "observed_step_sd_nm": 4.362276104297161,
+      "PI_corrected_step_sd_nm": 4.327575770626968
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2161663711505,
+      "observed_step_sd_nm": 4.599432833994205,
+      "PI_corrected_step_sd_nm": 4.818586886085351
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9806569560967,
+      "observed_step_sd_nm": 4.45217037489361,
+      "PI_corrected_step_sd_nm": 4.632086575147087
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8541787169409,
+      "observed_step_sd_nm": 4.902496833490437,
+      "PI_corrected_step_sd_nm": 4.928586876829113
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7162713097955,
+      "observed_step_sd_nm": 4.867757764854739,
+      "PI_corrected_step_sd_nm": 4.9083562519949515
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0722337701993,
+      "observed_step_sd_nm": 4.807693036151669,
+      "PI_corrected_step_sd_nm": 4.649973054119119
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0528305788961,
+      "observed_step_sd_nm": 4.910898561988073,
+      "PI_corrected_step_sd_nm": 4.886707387968
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0722337282539,
+      "observed_step_sd_nm": 4.807691554302888,
+      "PI_corrected_step_sd_nm": 4.6499711582183165
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2198057266286,
+      "observed_step_sd_nm": 7.0744438407509564,
+      "PI_corrected_step_sd_nm": 7.2058073466719295
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "003904_XY_0",
+      "run_index": 12,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7124215066865,
+      "observed_step_sd_nm": 9.246503498961214,
+      "PI_corrected_step_sd_nm": 9.12506172212818
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.38189943,
+      "observed_step_sd_nm": 3.506258510449507,
+      "PI_corrected_step_sd_nm": 3.520872302264705
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.2910326345203,
+      "observed_step_sd_nm": 3.690694588286891,
+      "PI_corrected_step_sd_nm": 3.6932117973781415
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7656425619681,
+      "observed_step_sd_nm": 4.002423365687989,
+      "PI_corrected_step_sd_nm": 4.012151552796452
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.05810711562,
+      "observed_step_sd_nm": 3.8876754138874112,
+      "PI_corrected_step_sd_nm": 3.937041879843136
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9282691698256,
+      "observed_step_sd_nm": 3.9527860255355463,
+      "PI_corrected_step_sd_nm": 3.9478477604738504
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1000.0607883581645,
+      "observed_step_sd_nm": 10.802765456022215,
+      "PI_corrected_step_sd_nm": 10.871475254667125
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.3068576470589,
+      "observed_step_sd_nm": 3.568294998651614,
+      "PI_corrected_step_sd_nm": 3.613933057395854
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.2972374391145,
+      "observed_step_sd_nm": 4.517971766262306,
+      "PI_corrected_step_sd_nm": 4.550173825586588
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.5928993065041,
+      "observed_step_sd_nm": 3.4992664134075797,
+      "PI_corrected_step_sd_nm": 3.584460318265092
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7281237495766,
+      "observed_step_sd_nm": 4.857288443451588,
+      "PI_corrected_step_sd_nm": 4.889552560075628
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.6538186057879,
+      "observed_step_sd_nm": 4.112867499591006,
+      "PI_corrected_step_sd_nm": 4.1644100339639705
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9435618184515,
+      "observed_step_sd_nm": 3.9060089260194992,
+      "PI_corrected_step_sd_nm": 3.9414235014731442
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.3481548217417,
+      "observed_step_sd_nm": 3.755821753328034,
+      "PI_corrected_step_sd_nm": 3.822882560095242
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9435604077763,
+      "observed_step_sd_nm": 3.9060092862160456,
+      "PI_corrected_step_sd_nm": 3.9414246153856562
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1002.542467483868,
+      "observed_step_sd_nm": 6.371164514337497,
+      "PI_corrected_step_sd_nm": 6.358614412835176
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004043_XY_0",
+      "run_index": 13,
+      "n_steps": 30,
+      "mean_step_nm": 1000.0607907903917,
+      "observed_step_sd_nm": 10.80278370879658,
+      "PI_corrected_step_sd_nm": 10.871493612058911
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8717468733333,
+      "observed_step_sd_nm": 3.928330231847628,
+      "PI_corrected_step_sd_nm": 3.899824175942898
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.3316800352346,
+      "observed_step_sd_nm": 3.6476113687712495,
+      "PI_corrected_step_sd_nm": 3.5644727811764563
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.0847503314696,
+      "observed_step_sd_nm": 4.488267374040657,
+      "PI_corrected_step_sd_nm": 4.467966599707925
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8614849929107,
+      "observed_step_sd_nm": 3.9143878206433955,
+      "PI_corrected_step_sd_nm": 3.866772254455207
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1783880150017,
+      "observed_step_sd_nm": 3.996034727588041,
+      "PI_corrected_step_sd_nm": 3.905710064893195
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.4275735724534,
+      "observed_step_sd_nm": 6.952323191921528,
+      "PI_corrected_step_sd_nm": 6.808019018799343
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1510874170103,
+      "observed_step_sd_nm": 3.2291695242528906,
+      "PI_corrected_step_sd_nm": 3.248323661582496
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.5773063965502,
+      "observed_step_sd_nm": 5.247212703110924,
+      "PI_corrected_step_sd_nm": 5.2707294378190195
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.2213649330838,
+      "observed_step_sd_nm": 4.047911920568553,
+      "PI_corrected_step_sd_nm": 4.055262520188542
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1001.964905888963,
+      "observed_step_sd_nm": 4.318640835493633,
+      "PI_corrected_step_sd_nm": 4.373748700678728
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7800343158385,
+      "observed_step_sd_nm": 4.494591268814137,
+      "PI_corrected_step_sd_nm": 4.474977344160339
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.2006098277113,
+      "observed_step_sd_nm": 3.643570816341618,
+      "PI_corrected_step_sd_nm": 3.5414380869189532
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7669449893531,
+      "observed_step_sd_nm": 3.061708076117443,
+      "PI_corrected_step_sd_nm": 3.049260166841936
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.2006044910698,
+      "observed_step_sd_nm": 3.643569646029453,
+      "PI_corrected_step_sd_nm": 3.5414368682631383
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1704166912917,
+      "observed_step_sd_nm": 5.948679670318355,
+      "PI_corrected_step_sd_nm": 5.903399367958844
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004118_XY_0",
+      "run_index": 14,
+      "n_steps": 30,
+      "mean_step_nm": 1002.4275765963318,
+      "observed_step_sd_nm": 6.952348117301423,
+      "PI_corrected_step_sd_nm": 6.808042847782372
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7597168666667,
+      "observed_step_sd_nm": 4.1042769850963765,
+      "PI_corrected_step_sd_nm": 4.093754195256288
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1318765035987,
+      "observed_step_sd_nm": 3.7708977097478953,
+      "PI_corrected_step_sd_nm": 3.8415511306307977
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1831564749251,
+      "observed_step_sd_nm": 4.276154035200394,
+      "PI_corrected_step_sd_nm": 4.3796798646361195
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.2032205128016,
+      "observed_step_sd_nm": 3.785105368318006,
+      "PI_corrected_step_sd_nm": 3.7852917301507762
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.0306181175389,
+      "observed_step_sd_nm": 4.303542828821265,
+      "PI_corrected_step_sd_nm": 4.455415675296411
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1001.691867442742,
+      "observed_step_sd_nm": 8.90555854320387,
+      "PI_corrected_step_sd_nm": 9.089337650937562
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.3797292674506,
+      "observed_step_sd_nm": 3.549557718764877,
+      "PI_corrected_step_sd_nm": 3.532329676971344
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.8380530431148,
+      "observed_step_sd_nm": 4.5203603964512515,
+      "PI_corrected_step_sd_nm": 4.476539568858629
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.0639188802244,
+      "observed_step_sd_nm": 3.868602946331351,
+      "PI_corrected_step_sd_nm": 3.8603556292524104
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.3025537588599,
+      "observed_step_sd_nm": 3.6391663113980077,
+      "PI_corrected_step_sd_nm": 3.6334838429674674
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4158465829986,
+      "observed_step_sd_nm": 4.4034632023836275,
+      "PI_corrected_step_sd_nm": 4.3769338726064575
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7449158149687,
+      "observed_step_sd_nm": 4.23013417792334,
+      "PI_corrected_step_sd_nm": 4.33908968203717
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.0032045074121,
+      "observed_step_sd_nm": 4.308307113951708,
+      "PI_corrected_step_sd_nm": 4.3181063554999515
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7449147897295,
+      "observed_step_sd_nm": 4.23013800173171,
+      "PI_corrected_step_sd_nm": 4.339092541923218
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1002.8983112365074,
+      "observed_step_sd_nm": 6.9605985138096855,
+      "PI_corrected_step_sd_nm": 6.908296375213014
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004154_XY_0",
+      "run_index": 15,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6918601643054,
+      "observed_step_sd_nm": 8.905560129101762,
+      "PI_corrected_step_sd_nm": 9.089339218307895
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7536990333333,
+      "observed_step_sd_nm": 4.196715412101746,
+      "PI_corrected_step_sd_nm": 4.146668487994156
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7552059736972,
+      "observed_step_sd_nm": 4.741576827298414,
+      "PI_corrected_step_sd_nm": 4.622638254022039
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8849759259707,
+      "observed_step_sd_nm": 4.534734396934735,
+      "PI_corrected_step_sd_nm": 4.459388454741617
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6570920953026,
+      "observed_step_sd_nm": 4.504922208679497,
+      "PI_corrected_step_sd_nm": 4.399164477429193
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5974825870683,
+      "observed_step_sd_nm": 4.301415049425732,
+      "PI_corrected_step_sd_nm": 4.249491613515638
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1004.2865871788799,
+      "observed_step_sd_nm": 11.457142235505636,
+      "PI_corrected_step_sd_nm": 11.462043893580736
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8898594332054,
+      "observed_step_sd_nm": 4.371939445742948,
+      "PI_corrected_step_sd_nm": 4.23097006142504
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9174054539887,
+      "observed_step_sd_nm": 5.149821010317687,
+      "PI_corrected_step_sd_nm": 5.084193496639727
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1002.0721813955698,
+      "observed_step_sd_nm": 4.316122868897286,
+      "PI_corrected_step_sd_nm": 4.245266995322246
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.712328709479,
+      "observed_step_sd_nm": 4.130414998505429,
+      "PI_corrected_step_sd_nm": 4.004059271441694
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9338519203196,
+      "observed_step_sd_nm": 4.549198540362747,
+      "PI_corrected_step_sd_nm": 4.367820384898983
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9342143004488,
+      "observed_step_sd_nm": 4.060185779523123,
+      "PI_corrected_step_sd_nm": 4.015065172617666
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.728475638997,
+      "observed_step_sd_nm": 4.33901584974246,
+      "PI_corrected_step_sd_nm": 4.268505631390244
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9342066030409,
+      "observed_step_sd_nm": 4.060178392863446,
+      "PI_corrected_step_sd_nm": 4.01505879393209
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1864619512338,
+      "observed_step_sd_nm": 6.801459856994039,
+      "PI_corrected_step_sd_nm": 6.8095797006933925
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004246_XY_0",
+      "run_index": 16,
+      "n_steps": 30,
+      "mean_step_nm": 1004.2865711724595,
+      "observed_step_sd_nm": 11.45715473267289,
+      "PI_corrected_step_sd_nm": 11.462056943911698
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0147483233334,
+      "observed_step_sd_nm": 4.4924237102847995,
+      "PI_corrected_step_sd_nm": 4.238171124140829
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5739580394231,
+      "observed_step_sd_nm": 5.5033252198058245,
+      "PI_corrected_step_sd_nm": 5.344917481569249
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4541069488621,
+      "observed_step_sd_nm": 4.568396198705257,
+      "PI_corrected_step_sd_nm": 4.351647197341448
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4791153645547,
+      "observed_step_sd_nm": 4.364697552051645,
+      "PI_corrected_step_sd_nm": 4.1732388242035725
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2138039530932,
+      "observed_step_sd_nm": 5.0075134096175775,
+      "PI_corrected_step_sd_nm": 4.851355021071092
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 999.8488340743629,
+      "observed_step_sd_nm": 10.900356535596979,
+      "PI_corrected_step_sd_nm": 10.83017276468347
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1948215607292,
+      "observed_step_sd_nm": 4.070875916056932,
+      "PI_corrected_step_sd_nm": 3.8333943840163447
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3155354367087,
+      "observed_step_sd_nm": 4.964630411549437,
+      "PI_corrected_step_sd_nm": 4.799206440773692
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7264159330916,
+      "observed_step_sd_nm": 4.331854952514619,
+      "PI_corrected_step_sd_nm": 3.979857539551426
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8317871577026,
+      "observed_step_sd_nm": 4.576373766637234,
+      "PI_corrected_step_sd_nm": 4.34881732497249
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4849338783902,
+      "observed_step_sd_nm": 5.705928238709236,
+      "PI_corrected_step_sd_nm": 5.449451630318384
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2441686282524,
+      "observed_step_sd_nm": 5.498880355263619,
+      "PI_corrected_step_sd_nm": 5.3481286700697614
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6247098066841,
+      "observed_step_sd_nm": 4.945699865385671,
+      "PI_corrected_step_sd_nm": 4.711132503374499
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2441684357569,
+      "observed_step_sd_nm": 5.498877769230715,
+      "PI_corrected_step_sd_nm": 5.348125663502452
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1538262330979,
+      "observed_step_sd_nm": 7.163021443562211,
+      "PI_corrected_step_sd_nm": 7.015967545085666
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004318_XY_0",
+      "run_index": 17,
+      "n_steps": 30,
+      "mean_step_nm": 999.8488368264685,
+      "observed_step_sd_nm": 10.900366754684509,
+      "PI_corrected_step_sd_nm": 10.830182895656293
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.3254720833335,
+      "observed_step_sd_nm": 3.5114676657251103,
+      "PI_corrected_step_sd_nm": 3.496390922409687
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.8784140681793,
+      "observed_step_sd_nm": 4.259557372228166,
+      "PI_corrected_step_sd_nm": 4.280464495490364
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.6715800978333,
+      "observed_step_sd_nm": 4.2064828369349545,
+      "PI_corrected_step_sd_nm": 4.224659083919153
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.6390469781292,
+      "observed_step_sd_nm": 3.8320836488874037,
+      "PI_corrected_step_sd_nm": 3.8045080536401574
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7568231148733,
+      "observed_step_sd_nm": 4.575075811512348,
+      "PI_corrected_step_sd_nm": 4.526843484502604
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.9277343961838,
+      "observed_step_sd_nm": 11.368461335740676,
+      "PI_corrected_step_sd_nm": 11.474966413046356
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.6772473736156,
+      "observed_step_sd_nm": 3.9770104639194703,
+      "PI_corrected_step_sd_nm": 4.002629833828547
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1003.2580889619177,
+      "observed_step_sd_nm": 4.1457537908802236,
+      "PI_corrected_step_sd_nm": 4.058729298910046
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1003.2113391991289,
+      "observed_step_sd_nm": 4.712804715417112,
+      "PI_corrected_step_sd_nm": 4.680326968757827
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.9648059709551,
+      "observed_step_sd_nm": 4.065700133823965,
+      "PI_corrected_step_sd_nm": 4.0513572608959105
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7036483508057,
+      "observed_step_sd_nm": 5.004170511029344,
+      "PI_corrected_step_sd_nm": 4.965072901163325
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7938780896787,
+      "observed_step_sd_nm": 4.409014874486123,
+      "PI_corrected_step_sd_nm": 4.381460018910287
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7402508354448,
+      "observed_step_sd_nm": 3.492404456023543,
+      "PI_corrected_step_sd_nm": 3.4873792300013315
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.793873343478,
+      "observed_step_sd_nm": 4.40900882501281,
+      "PI_corrected_step_sd_nm": 4.3814534602786335
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1003.5605471543978,
+      "observed_step_sd_nm": 7.308754849803165,
+      "PI_corrected_step_sd_nm": 7.283707748181833
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004357_XY_0",
+      "run_index": 18,
+      "n_steps": 30,
+      "mean_step_nm": 1002.9277188522519,
+      "observed_step_sd_nm": 11.368473740233341,
+      "PI_corrected_step_sd_nm": 11.474978226214402
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9206247033331,
+      "observed_step_sd_nm": 4.738966849883136,
+      "PI_corrected_step_sd_nm": 4.800334156352205
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1002.5920377893718,
+      "observed_step_sd_nm": 5.359600347589831,
+      "PI_corrected_step_sd_nm": 5.3192099383326665
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7825079741077,
+      "observed_step_sd_nm": 4.707483047536177,
+      "PI_corrected_step_sd_nm": 4.634576411480478
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8575812283631,
+      "observed_step_sd_nm": 5.010198034046259,
+      "PI_corrected_step_sd_nm": 5.005674043900832
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1935266285545,
+      "observed_step_sd_nm": 5.019334991175647,
+      "PI_corrected_step_sd_nm": 4.966893595614431
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1003.072879848635,
+      "observed_step_sd_nm": 10.27668871923768,
+      "PI_corrected_step_sd_nm": 10.085958190760707
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9873679751216,
+      "observed_step_sd_nm": 4.976869627596851,
+      "PI_corrected_step_sd_nm": 5.018304083101314
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1002.3571736598459,
+      "observed_step_sd_nm": 5.099289828917156,
+      "PI_corrected_step_sd_nm": 5.225975659310663
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7866428816859,
+      "observed_step_sd_nm": 5.767661464201323,
+      "PI_corrected_step_sd_nm": 5.850657829170962
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7268042492591,
+      "observed_step_sd_nm": 6.546165174559263,
+      "PI_corrected_step_sd_nm": 6.6666868965596375
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7257159947494,
+      "observed_step_sd_nm": 7.129448980076517,
+      "PI_corrected_step_sd_nm": 7.1447487392345685
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9969541642446,
+      "observed_step_sd_nm": 4.599310344017177,
+      "PI_corrected_step_sd_nm": 4.535513845112602
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8271472073682,
+      "observed_step_sd_nm": 5.056335469464933,
+      "PI_corrected_step_sd_nm": 5.038134571536315
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1001.996953714374,
+      "observed_step_sd_nm": 4.599306585918339,
+      "PI_corrected_step_sd_nm": 4.5355111299418285
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1759038406115,
+      "observed_step_sd_nm": 7.219830318200188,
+      "PI_corrected_step_sd_nm": 7.444675681626158
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004504_XY_0",
+      "run_index": 19,
+      "n_steps": 30,
+      "mean_step_nm": 1003.072886027114,
+      "observed_step_sd_nm": 10.276689130742785,
+      "PI_corrected_step_sd_nm": 10.085959678473648
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7684992066668,
+      "observed_step_sd_nm": 5.137544825159974,
+      "PI_corrected_step_sd_nm": 5.11781316174847
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3636634079392,
+      "observed_step_sd_nm": 5.89988631642419,
+      "PI_corrected_step_sd_nm": 5.917021445533661
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8837630421217,
+      "observed_step_sd_nm": 5.893083389332304,
+      "PI_corrected_step_sd_nm": 5.844013881879912
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3605434753633,
+      "observed_step_sd_nm": 5.842720476398426,
+      "PI_corrected_step_sd_nm": 5.772915095017391
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1812904572541,
+      "observed_step_sd_nm": 5.657441855883112,
+      "PI_corrected_step_sd_nm": 5.59639882595055
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1002.8169127547657,
+      "observed_step_sd_nm": 9.896004251145524,
+      "PI_corrected_step_sd_nm": 9.916405634562372
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8156371134497,
+      "observed_step_sd_nm": 5.443577046668487,
+      "PI_corrected_step_sd_nm": 5.442310065401414
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7810921946724,
+      "observed_step_sd_nm": 5.5833024976269305,
+      "PI_corrected_step_sd_nm": 5.7716422165681776
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1199444199535,
+      "observed_step_sd_nm": 5.639842611423702,
+      "PI_corrected_step_sd_nm": 5.719199334479033
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.595690121732,
+      "observed_step_sd_nm": 7.549514917311645,
+      "PI_corrected_step_sd_nm": 7.519244961080819
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9300795428413,
+      "observed_step_sd_nm": 6.660295271619572,
+      "PI_corrected_step_sd_nm": 6.634882519266178
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3299706695749,
+      "observed_step_sd_nm": 5.417405970046418,
+      "PI_corrected_step_sd_nm": 5.36886000870545
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0842475410351,
+      "observed_step_sd_nm": 5.570681209180449,
+      "PI_corrected_step_sd_nm": 5.543159038887362
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1001.329966029214,
+      "observed_step_sd_nm": 5.41741090078649,
+      "PI_corrected_step_sd_nm": 5.368864594852162
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1002.4473738452244,
+      "observed_step_sd_nm": 6.552584983397109,
+      "PI_corrected_step_sd_nm": 6.575654800661012
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004541_XY_0",
+      "run_index": 20,
+      "n_steps": 30,
+      "mean_step_nm": 1002.8169113639262,
+      "observed_step_sd_nm": 9.896009501952667,
+      "PI_corrected_step_sd_nm": 9.916411295969146
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0309630433333,
+      "observed_step_sd_nm": 4.634254144959562,
+      "PI_corrected_step_sd_nm": 4.642528386498751
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2147274665072,
+      "observed_step_sd_nm": 6.761028937104931,
+      "PI_corrected_step_sd_nm": 6.685516177949891
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9694778416793,
+      "observed_step_sd_nm": 5.839996632988454,
+      "PI_corrected_step_sd_nm": 5.792362176540553
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5243754683546,
+      "observed_step_sd_nm": 5.297384941172847,
+      "PI_corrected_step_sd_nm": 5.2718011430849305
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2503663217516,
+      "observed_step_sd_nm": 6.51512457358467,
+      "PI_corrected_step_sd_nm": 6.4583686595774275
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1003.0799547755915,
+      "observed_step_sd_nm": 10.901515921619932,
+      "PI_corrected_step_sd_nm": 10.796029070349629
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3273118009905,
+      "observed_step_sd_nm": 4.983528346498109,
+      "PI_corrected_step_sd_nm": 4.991876100173536
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.607770236888,
+      "observed_step_sd_nm": 5.788647577713267,
+      "PI_corrected_step_sd_nm": 5.659152146402055
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1002.2295058078894,
+      "observed_step_sd_nm": 5.201071222441405,
+      "PI_corrected_step_sd_nm": 5.112143281264132
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1140652349511,
+      "observed_step_sd_nm": 5.979108099834181,
+      "PI_corrected_step_sd_nm": 5.959718721618919
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5834288828377,
+      "observed_step_sd_nm": 6.0592259731834,
+      "PI_corrected_step_sd_nm": 6.080592293546878
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5246384132626,
+      "observed_step_sd_nm": 5.100716141829401,
+      "PI_corrected_step_sd_nm": 5.116578984380899
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.256202597899,
+      "observed_step_sd_nm": 4.6886857474755,
+      "PI_corrected_step_sd_nm": 4.736216332422782
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5246352033688,
+      "observed_step_sd_nm": 5.100712333464192,
+      "PI_corrected_step_sd_nm": 5.11657571620592
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1002.0161766389675,
+      "observed_step_sd_nm": 5.202301826028906,
+      "PI_corrected_step_sd_nm": 5.00191716418046
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004613_XY_0",
+      "run_index": 21,
+      "n_steps": 30,
+      "mean_step_nm": 1003.0799630690508,
+      "observed_step_sd_nm": 10.901540952421973,
+      "PI_corrected_step_sd_nm": 10.796054769581572
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.08926775,
+      "observed_step_sd_nm": 4.69875120229966,
+      "PI_corrected_step_sd_nm": 4.648061506641496
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.5919036308413,
+      "observed_step_sd_nm": 5.47632503868733,
+      "PI_corrected_step_sd_nm": 5.357466057053739
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7991481033263,
+      "observed_step_sd_nm": 6.031037814727774,
+      "PI_corrected_step_sd_nm": 5.890900495699521
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1111136111405,
+      "observed_step_sd_nm": 5.935196378543228,
+      "PI_corrected_step_sd_nm": 5.853807529324361
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.6277770413438,
+      "observed_step_sd_nm": 6.042990308245947,
+      "PI_corrected_step_sd_nm": 5.904058794637049
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.6149200963231,
+      "observed_step_sd_nm": 11.10188728225201,
+      "PI_corrected_step_sd_nm": 11.206004182883309
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.4057094513245,
+      "observed_step_sd_nm": 4.78898913408709,
+      "PI_corrected_step_sd_nm": 4.897674636173353
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.7538524574575,
+      "observed_step_sd_nm": 5.788347817578889,
+      "PI_corrected_step_sd_nm": 5.7965504153414615
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8227145893258,
+      "observed_step_sd_nm": 4.233644695211104,
+      "PI_corrected_step_sd_nm": 4.430323687628026
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1001.9954458553786,
+      "observed_step_sd_nm": 5.614191831836829,
+      "PI_corrected_step_sd_nm": 5.559996008734581
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7426678276094,
+      "observed_step_sd_nm": 6.71527441686252,
+      "PI_corrected_step_sd_nm": 6.763913006207972
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1508344747116,
+      "observed_step_sd_nm": 5.3830277500477255,
+      "PI_corrected_step_sd_nm": 5.334072776801404
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.007314906215,
+      "observed_step_sd_nm": 4.4995532003963525,
+      "PI_corrected_step_sd_nm": 4.5241789952278
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1508351109444,
+      "observed_step_sd_nm": 5.3830236000759975,
+      "PI_corrected_step_sd_nm": 5.334069954744482
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.5955115577638,
+      "observed_step_sd_nm": 4.655794620514944,
+      "PI_corrected_step_sd_nm": 4.688985670205646
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004644_XY_0",
+      "run_index": 22,
+      "n_steps": 30,
+      "mean_step_nm": 1002.614917209059,
+      "observed_step_sd_nm": 11.101912640380199,
+      "PI_corrected_step_sd_nm": 11.206027658499712
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2154929733333,
+      "observed_step_sd_nm": 6.830044785896066,
+      "PI_corrected_step_sd_nm": 6.592945440169493
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0746543718418,
+      "observed_step_sd_nm": 7.406364440301063,
+      "PI_corrected_step_sd_nm": 7.291408747833325
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3316074844178,
+      "observed_step_sd_nm": 7.153889063258015,
+      "PI_corrected_step_sd_nm": 7.053063738296582
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6953891217306,
+      "observed_step_sd_nm": 7.124544463432243,
+      "PI_corrected_step_sd_nm": 6.964495609249345
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1459747169972,
+      "observed_step_sd_nm": 7.389338007329176,
+      "PI_corrected_step_sd_nm": 7.280472074007872
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1000.3210852190496,
+      "observed_step_sd_nm": 13.782466017650002,
+      "PI_corrected_step_sd_nm": 13.685961449637048
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6310229021346,
+      "observed_step_sd_nm": 6.662051546317016,
+      "PI_corrected_step_sd_nm": 6.5189270019653
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9544620609964,
+      "observed_step_sd_nm": 4.95803415784855,
+      "PI_corrected_step_sd_nm": 4.934255634858775
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3143036957683,
+      "observed_step_sd_nm": 5.381207636583282,
+      "PI_corrected_step_sd_nm": 5.3186703701110005
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4924076129239,
+      "observed_step_sd_nm": 7.529099368333767,
+      "PI_corrected_step_sd_nm": 7.37528742150199
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4882877533641,
+      "observed_step_sd_nm": 9.328788442315554,
+      "PI_corrected_step_sd_nm": 9.049942501958892
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0875702029049,
+      "observed_step_sd_nm": 6.989026315133238,
+      "PI_corrected_step_sd_nm": 6.902941556618968
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1000.6817738472768,
+      "observed_step_sd_nm": 7.672938781163992,
+      "PI_corrected_step_sd_nm": 7.613256142895958
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0875629727977,
+      "observed_step_sd_nm": 6.98903205907284,
+      "PI_corrected_step_sd_nm": 6.902946463412399
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7395224253376,
+      "observed_step_sd_nm": 5.108581949602193,
+      "PI_corrected_step_sd_nm": 4.891834088597569
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004715_XY_0",
+      "run_index": 23,
+      "n_steps": 30,
+      "mean_step_nm": 1000.3210801196597,
+      "observed_step_sd_nm": 13.782461167961298,
+      "PI_corrected_step_sd_nm": 13.685956679622345
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 999.9334337333332,
+      "observed_step_sd_nm": 6.420459226574522,
+      "PI_corrected_step_sd_nm": 6.429196407936622
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1000.6726035418086,
+      "observed_step_sd_nm": 7.053045748854955,
+      "PI_corrected_step_sd_nm": 7.108147279658089
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1000.5675481231185,
+      "observed_step_sd_nm": 6.882707041328984,
+      "PI_corrected_step_sd_nm": 6.990566831759173
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1000.6296075244678,
+      "observed_step_sd_nm": 6.267618434005796,
+      "PI_corrected_step_sd_nm": 6.310973331298664
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7614843055255,
+      "observed_step_sd_nm": 6.555463027280835,
+      "PI_corrected_step_sd_nm": 6.628802184704162
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8110973701935,
+      "observed_step_sd_nm": 12.26639501489756,
+      "PI_corrected_step_sd_nm": 12.300993669047749
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1000.2212365054777,
+      "observed_step_sd_nm": 5.6772808081418065,
+      "PI_corrected_step_sd_nm": 5.593725032311586
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4262787226213,
+      "observed_step_sd_nm": 6.325213199957777,
+      "PI_corrected_step_sd_nm": 6.330187637730083
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5137476098292,
+      "observed_step_sd_nm": 5.846237664776147,
+      "PI_corrected_step_sd_nm": 5.774873249853102
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1000.0914068645671,
+      "observed_step_sd_nm": 6.156888911241039,
+      "PI_corrected_step_sd_nm": 6.111481178672447
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0657454313368,
+      "observed_step_sd_nm": 8.410820565223354,
+      "PI_corrected_step_sd_nm": 8.49150637359926
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1000.4941876339086,
+      "observed_step_sd_nm": 6.901156963633022,
+      "PI_corrected_step_sd_nm": 7.0625319401191815
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 999.8955585211282,
+      "observed_step_sd_nm": 6.122465554060029,
+      "PI_corrected_step_sd_nm": 6.107353462198287
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1000.4941892530885,
+      "observed_step_sd_nm": 6.901148677626402,
+      "PI_corrected_step_sd_nm": 7.062524065894832
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0371714360913,
+      "observed_step_sd_nm": 5.565517088887302,
+      "PI_corrected_step_sd_nm": 5.553399999408853
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004747_XY_0",
+      "run_index": 24,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8111149285434,
+      "observed_step_sd_nm": 12.26639481729744,
+      "PI_corrected_step_sd_nm": 12.300994319339306
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6938483299999,
+      "observed_step_sd_nm": 6.081114678853548,
+      "PI_corrected_step_sd_nm": 5.797642163919544
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8172636450212,
+      "observed_step_sd_nm": 5.848772842259946,
+      "PI_corrected_step_sd_nm": 5.7614216012654795
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6520617261147,
+      "observed_step_sd_nm": 6.596748830233801,
+      "PI_corrected_step_sd_nm": 6.29046502610088
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7799312894252,
+      "observed_step_sd_nm": 5.905997948327679,
+      "PI_corrected_step_sd_nm": 5.6339944395875685
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9875020554308,
+      "observed_step_sd_nm": 6.261006947553343,
+      "PI_corrected_step_sd_nm": 5.944004836244665
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1004.0115291158471,
+      "observed_step_sd_nm": 12.391845772940552,
+      "PI_corrected_step_sd_nm": 12.234773266739628
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5521045080903,
+      "observed_step_sd_nm": 4.275275378382676,
+      "PI_corrected_step_sd_nm": 4.132071714760256
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2810518173065,
+      "observed_step_sd_nm": 5.104606622006437,
+      "PI_corrected_step_sd_nm": 4.918602940729222
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9974489945921,
+      "observed_step_sd_nm": 4.986784480773276,
+      "PI_corrected_step_sd_nm": 4.908208356057573
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8248171625248,
+      "observed_step_sd_nm": 7.51983770901294,
+      "PI_corrected_step_sd_nm": 7.265498007420635
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1002.194992292452,
+      "observed_step_sd_nm": 6.997692458752174,
+      "PI_corrected_step_sd_nm": 6.888452260095666
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7408286638225,
+      "observed_step_sd_nm": 6.345362918094645,
+      "PI_corrected_step_sd_nm": 6.113443596654685
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1001.064693084496,
+      "observed_step_sd_nm": 4.764584499332637,
+      "PI_corrected_step_sd_nm": 4.642339722780385
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1000.740837313335,
+      "observed_step_sd_nm": 6.34536991868928,
+      "PI_corrected_step_sd_nm": 6.113450724648614
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2547961317883,
+      "observed_step_sd_nm": 6.220483523439043,
+      "PI_corrected_step_sd_nm": 5.940813478344784
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004822_XY_0",
+      "run_index": 25,
+      "n_steps": 30,
+      "mean_step_nm": 1004.0115326666102,
+      "observed_step_sd_nm": 12.39183994583352,
+      "PI_corrected_step_sd_nm": 12.234767985874344
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3496674233335,
+      "observed_step_sd_nm": 5.816387426614622,
+      "PI_corrected_step_sd_nm": 5.83193219109339
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1968282529448,
+      "observed_step_sd_nm": 5.28009268814117,
+      "PI_corrected_step_sd_nm": 5.25457301162394
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8739053752597,
+      "observed_step_sd_nm": 6.22522318615699,
+      "PI_corrected_step_sd_nm": 6.25581681326834
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1196461253891,
+      "observed_step_sd_nm": 5.159131633488938,
+      "PI_corrected_step_sd_nm": 5.191549727762767
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7199510611432,
+      "observed_step_sd_nm": 5.890433567901647,
+      "PI_corrected_step_sd_nm": 5.941207319659322
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1002.6639094674832,
+      "observed_step_sd_nm": 10.314121300643475,
+      "PI_corrected_step_sd_nm": 10.26707350086139
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1000.4264278496092,
+      "observed_step_sd_nm": 5.452338577163915,
+      "PI_corrected_step_sd_nm": 5.396695982622929
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 999.9165579440446,
+      "observed_step_sd_nm": 6.207982355764032,
+      "PI_corrected_step_sd_nm": 6.052891415255964
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9252652525029,
+      "observed_step_sd_nm": 6.169040373189575,
+      "PI_corrected_step_sd_nm": 6.001614995433218
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1000.5054971293747,
+      "observed_step_sd_nm": 6.266153769912484,
+      "PI_corrected_step_sd_nm": 6.265564345330873
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1000.6264485443758,
+      "observed_step_sd_nm": 6.918789566633931,
+      "PI_corrected_step_sd_nm": 6.905717261745703
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1736692470037,
+      "observed_step_sd_nm": 6.510716305212031,
+      "PI_corrected_step_sd_nm": 6.496519481213378
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3560243072062,
+      "observed_step_sd_nm": 5.52326664553322,
+      "PI_corrected_step_sd_nm": 5.4757906607179345
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1736681596817,
+      "observed_step_sd_nm": 6.510708800765319,
+      "PI_corrected_step_sd_nm": 6.496512067538576
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2709412931787,
+      "observed_step_sd_nm": 6.325478810142272,
+      "PI_corrected_step_sd_nm": 6.258672017084665
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "004900_XY_0",
+      "run_index": 26,
+      "n_steps": 30,
+      "mean_step_nm": 1002.6639111128178,
+      "observed_step_sd_nm": 10.314117460031369,
+      "PI_corrected_step_sd_nm": 10.267070311320726
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2583903100001,
+      "observed_step_sd_nm": 5.736860722497901,
+      "PI_corrected_step_sd_nm": 5.860147567845803
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4227366278081,
+      "observed_step_sd_nm": 6.999551841647807,
+      "PI_corrected_step_sd_nm": 7.086842699089096
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.121775212234,
+      "observed_step_sd_nm": 6.171829965536994,
+      "PI_corrected_step_sd_nm": 6.164534288007067
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2230711088602,
+      "observed_step_sd_nm": 5.868634141033374,
+      "PI_corrected_step_sd_nm": 5.964678400535854
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3263008622365,
+      "observed_step_sd_nm": 6.349900881724429,
+      "PI_corrected_step_sd_nm": 6.339481157178493
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3459416149494,
+      "observed_step_sd_nm": 10.644119836124654,
+      "PI_corrected_step_sd_nm": 10.686038283881054
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9008471439581,
+      "observed_step_sd_nm": 4.671402512003936,
+      "PI_corrected_step_sd_nm": 4.739646469008521
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0425657255794,
+      "observed_step_sd_nm": 5.419443317830808,
+      "PI_corrected_step_sd_nm": 5.582457357389072
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1000.6828657566368,
+      "observed_step_sd_nm": 5.658890817377065,
+      "PI_corrected_step_sd_nm": 5.688161709515011
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6463799269333,
+      "observed_step_sd_nm": 6.07278278348938,
+      "PI_corrected_step_sd_nm": 6.035254223550484
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1000.83076165755,
+      "observed_step_sd_nm": 6.715458086932521,
+      "PI_corrected_step_sd_nm": 6.7173383638711135
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1180231786306,
+      "observed_step_sd_nm": 6.290474752256898,
+      "PI_corrected_step_sd_nm": 6.342756590027806
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8279879402751,
+      "observed_step_sd_nm": 5.570578479144883,
+      "PI_corrected_step_sd_nm": 5.667354408317718
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1180183705048,
+      "observed_step_sd_nm": 6.290473502700064,
+      "PI_corrected_step_sd_nm": 6.3427556594635055
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9815353461667,
+      "observed_step_sd_nm": 6.174257247981545,
+      "PI_corrected_step_sd_nm": 6.269541581375991
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "005007_XY_0",
+      "run_index": 27,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3459369176719,
+      "observed_step_sd_nm": 10.644130063752758,
+      "PI_corrected_step_sd_nm": 10.686049032146954
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7843910633333,
+      "observed_step_sd_nm": 5.113087303825843,
+      "PI_corrected_step_sd_nm": 5.091658246148972
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2086416296625,
+      "observed_step_sd_nm": 4.706174121425618,
+      "PI_corrected_step_sd_nm": 4.7504718668145625
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1194678542374,
+      "observed_step_sd_nm": 4.930371738247677,
+      "PI_corrected_step_sd_nm": 4.933029672998378
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.4068503942146,
+      "observed_step_sd_nm": 5.1279123548801255,
+      "PI_corrected_step_sd_nm": 5.155088006508271
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3100904294042,
+      "observed_step_sd_nm": 4.769540998428199,
+      "PI_corrected_step_sd_nm": 4.8068628718651984
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1003.2667988454657,
+      "observed_step_sd_nm": 10.59800718497102,
+      "PI_corrected_step_sd_nm": 10.545253796352785
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3383477739109,
+      "observed_step_sd_nm": 4.192920812358764,
+      "PI_corrected_step_sd_nm": 4.248555752016946
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1000.8696657189374,
+      "observed_step_sd_nm": 4.648436968719281,
+      "PI_corrected_step_sd_nm": 4.692160175717862
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9238496593789,
+      "observed_step_sd_nm": 5.578975543038954,
+      "PI_corrected_step_sd_nm": 5.544391603440252
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7790222788684,
+      "observed_step_sd_nm": 4.661969274720268,
+      "PI_corrected_step_sd_nm": 4.6936277689382155
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1253698950229,
+      "observed_step_sd_nm": 5.465223433084925,
+      "PI_corrected_step_sd_nm": 5.4403138782587135
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5158460076351,
+      "observed_step_sd_nm": 5.010361629549325,
+      "PI_corrected_step_sd_nm": 5.119274153994664
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1087649598915,
+      "observed_step_sd_nm": 5.629269236531521,
+      "PI_corrected_step_sd_nm": 5.612129541482051
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1001.515853922599,
+      "observed_step_sd_nm": 5.010362823604229,
+      "PI_corrected_step_sd_nm": 5.119275389524086
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9137905346503,
+      "observed_step_sd_nm": 5.294318096188994,
+      "PI_corrected_step_sd_nm": 5.278510090252491
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "005038_XY_0",
+      "run_index": 28,
+      "n_steps": 30,
+      "mean_step_nm": 1003.2668098091274,
+      "observed_step_sd_nm": 10.5979977290145,
+      "PI_corrected_step_sd_nm": 10.54524485344591
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.71428307,
+      "observed_step_sd_nm": 5.552368928761273,
+      "PI_corrected_step_sd_nm": 5.649416004746369
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.285846077494,
+      "observed_step_sd_nm": 5.528087882647653,
+      "PI_corrected_step_sd_nm": 5.61936945448252
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.5772775673158,
+      "observed_step_sd_nm": 5.70772193465557,
+      "PI_corrected_step_sd_nm": 5.803159529459643
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.8445783850252,
+      "observed_step_sd_nm": 5.699647291403374,
+      "PI_corrected_step_sd_nm": 5.802023678469063
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.0143912614438,
+      "observed_step_sd_nm": 5.0487767160534585,
+      "PI_corrected_step_sd_nm": 5.153471112898946
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1297728286404,
+      "observed_step_sd_nm": 9.484941437479309,
+      "PI_corrected_step_sd_nm": 9.533644292310694
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2701285005597,
+      "observed_step_sd_nm": 4.897727544470358,
+      "PI_corrected_step_sd_nm": 5.013015898749521
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1005139745446,
+      "observed_step_sd_nm": 5.2013607417051455,
+      "PI_corrected_step_sd_nm": 5.311642378803134
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.3963063027508,
+      "observed_step_sd_nm": 4.9608436202516515,
+      "PI_corrected_step_sd_nm": 5.079954702923818
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.6688351739033,
+      "observed_step_sd_nm": 6.923568167103308,
+      "PI_corrected_step_sd_nm": 7.0502612258005195
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1309618979571,
+      "observed_step_sd_nm": 6.492305031685366,
+      "PI_corrected_step_sd_nm": 6.597424427794085
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2039231324438,
+      "observed_step_sd_nm": 5.273689455103239,
+      "PI_corrected_step_sd_nm": 5.439819802760617
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1034628471331,
+      "observed_step_sd_nm": 5.584124589922089,
+      "PI_corrected_step_sd_nm": 5.74828064798639
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2039258541239,
+      "observed_step_sd_nm": 5.2736906025877905,
+      "PI_corrected_step_sd_nm": 5.4398205318060056
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9101036980936,
+      "observed_step_sd_nm": 6.328519307983456,
+      "PI_corrected_step_sd_nm": 6.354448904031139
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "005111_XY_0",
+      "run_index": 29,
+      "n_steps": 30,
+      "mean_step_nm": 1002.1297729960423,
+      "observed_step_sd_nm": 9.484928432983986,
+      "PI_corrected_step_sd_nm": 9.533630325437201
+    },
+    {
+      "model": "R128",
+      "display": "R128",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1001.2323955933333,
+      "observed_step_sd_nm": 4.543697949612463,
+      "PI_corrected_step_sd_nm": 4.594220656737393
+    },
+    {
+      "model": "R129",
+      "display": "R129",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.9822047947454,
+      "observed_step_sd_nm": 5.356010103611447,
+      "PI_corrected_step_sd_nm": 5.224353739549162
+    },
+    {
+      "model": "R130-Clean",
+      "display": "R130",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.5207160065809,
+      "observed_step_sd_nm": 5.138380288947045,
+      "PI_corrected_step_sd_nm": 5.125597090739884
+    },
+    {
+      "model": "R137-WeakPSF",
+      "display": "R137",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1001.1031989941238,
+      "observed_step_sd_nm": 4.830397336607527,
+      "PI_corrected_step_sd_nm": 4.829983590752613
+    },
+    {
+      "model": "R138-V42PSF8",
+      "display": "R138",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.4870773078617,
+      "observed_step_sd_nm": 5.112132741401321,
+      "PI_corrected_step_sd_nm": 5.138781962313801
+    },
+    {
+      "model": "R139-UNetRecurrent",
+      "display": "R139",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1001.7461584397129,
+      "observed_step_sd_nm": 13.548220430947055,
+      "PI_corrected_step_sd_nm": 13.521004919695871
+    },
+    {
+      "model": "R140v2-StableUNet",
+      "display": "R140v2",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.980249896029,
+      "observed_step_sd_nm": 3.555768833832828,
+      "PI_corrected_step_sd_nm": 3.5473224711063915
+    },
+    {
+      "model": "R143-PSF25-MatchedPairs",
+      "display": "R143",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.0523202048822,
+      "observed_step_sd_nm": 6.321391559666584,
+      "PI_corrected_step_sd_nm": 6.4044167693884795
+    },
+    {
+      "model": "R145-Center9PSF25-CorrectedPairs",
+      "display": "R145",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.600426630701,
+      "observed_step_sd_nm": 5.072368441294347,
+      "PI_corrected_step_sd_nm": 5.054541654086873
+    },
+    {
+      "model": "R146-SEMCoreHaloPSF25-MatchedPairs",
+      "display": "R146",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.2210795427676,
+      "observed_step_sd_nm": 4.69519337827499,
+      "PI_corrected_step_sd_nm": 4.665029247103288
+    },
+    {
+      "model": "R147-FullResPSFConsistency",
+      "display": "R147",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.3571651595121,
+      "observed_step_sd_nm": 5.165948232099963,
+      "PI_corrected_step_sd_nm": 5.14299291467932
+    },
+    {
+      "model": "R148v2-HybridContextNativePSF",
+      "display": "R148v2",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.3024647342748,
+      "observed_step_sd_nm": 5.391517334797971,
+      "PI_corrected_step_sd_nm": 5.411005848948997
+    },
+    {
+      "model": "R150-MatchedGeometryMeanPSF",
+      "display": "R150",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.7863362433484,
+      "observed_step_sd_nm": 4.79964283638412,
+      "PI_corrected_step_sd_nm": 4.8902734117562865
+    },
+    {
+      "model": "R152-R148v2-SafeAdaptivePSF",
+      "display": "R152",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.3024740234698,
+      "observed_step_sd_nm": 5.391518832481142,
+      "PI_corrected_step_sd_nm": 5.411007302770704
+    },
+    {
+      "model": "R61",
+      "display": "R61",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1000.727233217162,
+      "observed_step_sd_nm": 6.6176920538494555,
+      "PI_corrected_step_sd_nm": 6.706599900273987
+    },
+    {
+      "model": "Raw",
+      "display": "RAW",
+      "run": "005143_XY_0",
+      "run_index": 30,
+      "n_steps": 30,
+      "mean_step_nm": 1001.746150502345,
+      "observed_step_sd_nm": 13.548245484033899,
+      "PI_corrected_step_sd_nm": 13.52103003286204
+    }
+  ]
+}

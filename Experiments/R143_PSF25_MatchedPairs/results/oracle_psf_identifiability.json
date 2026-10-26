@@ -1,0 +1,795 @@
+{
+  "bank_sha256": "25cc6c95a224caae0e4a0380a88980551586a35cdb34eebde2635639e2c29553",
+  "data_manifest_sha256": "b8019ca037a707d286da68a587fc61101501e5af96b75452b9ab77ff294e8667",
+  "splits": {
+    "dev": {
+      "parents": 32,
+      "oracle_top1_correct": 4,
+      "oracle_top4_contains_correct": 10,
+      "median_across_psf_rms_gray": 0.02044927503371437,
+      "median_sensor_noise_sigma_gray": 1.5,
+      "note": "oracle sees the clear target and tests two related images together",
+      "rows": [
+        {
+          "parent_id": "r128_dev_0000",
+          "truth": 6,
+          "oracle_top1": 16,
+          "oracle_top4": [
+            16,
+            18,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0001",
+          "truth": 5,
+          "oracle_top1": 0,
+          "oracle_top4": [
+            0,
+            20,
+            5,
+            9
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0003",
+          "truth": 9,
+          "oracle_top1": 18,
+          "oracle_top4": [
+            18,
+            16,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_dev_0004",
+          "truth": 8,
+          "oracle_top1": 3,
+          "oracle_top4": [
+            3,
+            23,
+            21,
+            22
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0005",
+          "truth": 21,
+          "oracle_top1": 23,
+          "oracle_top4": [
+            23,
+            22,
+            21,
+            24
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0006",
+          "truth": 8,
+          "oracle_top1": 0,
+          "oracle_top4": [
+            0,
+            20,
+            5,
+            9
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0007",
+          "truth": 0,
+          "oracle_top1": 1,
+          "oracle_top4": [
+            1,
+            4,
+            2,
+            3
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0008",
+          "truth": 11,
+          "oracle_top1": 14,
+          "oracle_top4": [
+            14,
+            9,
+            19,
+            5
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0009",
+          "truth": 19,
+          "oracle_top1": 16,
+          "oracle_top4": [
+            16,
+            18,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0010",
+          "truth": 18,
+          "oracle_top1": 6,
+          "oracle_top4": [
+            6,
+            7,
+            19,
+            15
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0011",
+          "truth": 3,
+          "oracle_top1": 3,
+          "oracle_top4": [
+            3,
+            2,
+            23,
+            21
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0012",
+          "truth": 3,
+          "oracle_top1": 17,
+          "oracle_top4": [
+            17,
+            16,
+            18,
+            13
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0013",
+          "truth": 17,
+          "oracle_top1": 17,
+          "oracle_top4": [
+            17,
+            21,
+            23,
+            22
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_dev_0014",
+          "truth": 13,
+          "oracle_top1": 24,
+          "oracle_top4": [
+            24,
+            23,
+            22,
+            0
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_dev_0015",
+          "truth": 20,
+          "oracle_top1": 1,
+          "oracle_top4": [
+            1,
+            4,
+            2,
+            3
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0016",
+          "truth": 1,
+          "oracle_top1": 4,
+          "oracle_top4": [
+            4,
+            2,
+            1,
+            3
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0017",
+          "truth": 15,
+          "oracle_top1": 8,
+          "oracle_top4": [
+            8,
+            11,
+            12,
+            7
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0018",
+          "truth": 10,
+          "oracle_top1": 1,
+          "oracle_top4": [
+            1,
+            4,
+            2,
+            3
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0019",
+          "truth": 23,
+          "oracle_top1": 24,
+          "oracle_top4": [
+            24,
+            22,
+            23,
+            21
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_dev_0020",
+          "truth": 9,
+          "oracle_top1": 18,
+          "oracle_top4": [
+            18,
+            16,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0021",
+          "truth": 18,
+          "oracle_top1": 18,
+          "oracle_top4": [
+            18,
+            16,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0022",
+          "truth": 22,
+          "oracle_top1": 21,
+          "oracle_top4": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0024",
+          "truth": 17,
+          "oracle_top1": 17,
+          "oracle_top4": [
+            17,
+            21,
+            22,
+            24
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0025",
+          "truth": 19,
+          "oracle_top1": 5,
+          "oracle_top4": [
+            5,
+            10,
+            9,
+            14
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0027",
+          "truth": 13,
+          "oracle_top1": 23,
+          "oracle_top4": [
+            23,
+            21,
+            22,
+            24
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0029",
+          "truth": 12,
+          "oracle_top1": 4,
+          "oracle_top4": [
+            4,
+            1,
+            2,
+            3
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0030",
+          "truth": 14,
+          "oracle_top1": 18,
+          "oracle_top4": [
+            18,
+            16,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_dev_0031",
+          "truth": 10,
+          "oracle_top1": 21,
+          "oracle_top4": [
+            21,
+            22,
+            24,
+            23
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_dev_0032",
+          "truth": 13,
+          "oracle_top1": 20,
+          "oracle_top4": [
+            20,
+            0,
+            5,
+            9
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0033",
+          "truth": 6,
+          "oracle_top1": 5,
+          "oracle_top4": [
+            5,
+            9,
+            14,
+            10
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_dev_0034",
+          "truth": 15,
+          "oracle_top1": 0,
+          "oracle_top4": [
+            0,
+            20,
+            24,
+            5
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_dev_0035",
+          "truth": 11,
+          "oracle_top1": 7,
+          "oracle_top4": [
+            7,
+            12,
+            11,
+            8
+          ],
+          "noise_sigma_gray": 3.0
+        }
+      ]
+    },
+    "test": {
+      "parents": 32,
+      "oracle_top1_correct": 8,
+      "oracle_top4_contains_correct": 14,
+      "median_across_psf_rms_gray": 0.017027423338892955,
+      "median_sensor_noise_sigma_gray": 1.5,
+      "note": "oracle sees the clear target and tests two related images together",
+      "rows": [
+        {
+          "parent_id": "r128_test_0001",
+          "truth": 1,
+          "oracle_top1": 1,
+          "oracle_top4": [
+            1,
+            4,
+            2,
+            3
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0002",
+          "truth": 7,
+          "oracle_top1": 18,
+          "oracle_top4": [
+            18,
+            16,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0003",
+          "truth": 4,
+          "oracle_top1": 4,
+          "oracle_top4": [
+            4,
+            2,
+            1,
+            3
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0004",
+          "truth": 4,
+          "oracle_top1": 4,
+          "oracle_top4": [
+            4,
+            2,
+            1,
+            3
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_test_0005",
+          "truth": 18,
+          "oracle_top1": 23,
+          "oracle_top4": [
+            23,
+            21,
+            22,
+            3
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0006",
+          "truth": 0,
+          "oracle_top1": 21,
+          "oracle_top4": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_test_0007",
+          "truth": 23,
+          "oracle_top1": 21,
+          "oracle_top4": [
+            21,
+            23,
+            22,
+            24
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0009",
+          "truth": 15,
+          "oracle_top1": 20,
+          "oracle_top4": [
+            20,
+            0,
+            5,
+            9
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0012",
+          "truth": 16,
+          "oracle_top1": 0,
+          "oracle_top4": [
+            0,
+            20,
+            23,
+            14
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0013",
+          "truth": 22,
+          "oracle_top1": 21,
+          "oracle_top4": [
+            21,
+            22,
+            24,
+            23
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0014",
+          "truth": 15,
+          "oracle_top1": 24,
+          "oracle_top4": [
+            24,
+            0,
+            20,
+            22
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0015",
+          "truth": 10,
+          "oracle_top1": 0,
+          "oracle_top4": [
+            0,
+            20,
+            5,
+            10
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0017",
+          "truth": 14,
+          "oracle_top1": 17,
+          "oracle_top4": [
+            17,
+            21,
+            22,
+            24
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0019",
+          "truth": 15,
+          "oracle_top1": 19,
+          "oracle_top4": [
+            19,
+            6,
+            7,
+            12
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0020",
+          "truth": 13,
+          "oracle_top1": 0,
+          "oracle_top4": [
+            0,
+            14,
+            5,
+            9
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0022",
+          "truth": 21,
+          "oracle_top1": 17,
+          "oracle_top4": [
+            17,
+            18,
+            16,
+            13
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_test_0024",
+          "truth": 5,
+          "oracle_top1": 23,
+          "oracle_top4": [
+            23,
+            24,
+            22,
+            21
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0025",
+          "truth": 0,
+          "oracle_top1": 24,
+          "oracle_top4": [
+            24,
+            22,
+            21,
+            0
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_test_0026",
+          "truth": 2,
+          "oracle_top1": 2,
+          "oracle_top4": [
+            2,
+            3,
+            4,
+            1
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0027",
+          "truth": 20,
+          "oracle_top1": 18,
+          "oracle_top4": [
+            18,
+            16,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_test_0029",
+          "truth": 4,
+          "oracle_top1": 4,
+          "oracle_top4": [
+            4,
+            1,
+            2,
+            3
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0030",
+          "truth": 4,
+          "oracle_top1": 4,
+          "oracle_top4": [
+            4,
+            1,
+            2,
+            3
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0031",
+          "truth": 22,
+          "oracle_top1": 22,
+          "oracle_top4": [
+            22,
+            21,
+            23,
+            24
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0032",
+          "truth": 18,
+          "oracle_top1": 16,
+          "oracle_top4": [
+            16,
+            18,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0033",
+          "truth": 14,
+          "oracle_top1": 1,
+          "oracle_top4": [
+            1,
+            4,
+            2,
+            3
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0034",
+          "truth": 23,
+          "oracle_top1": 22,
+          "oracle_top4": [
+            22,
+            23,
+            24,
+            21
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0035",
+          "truth": 18,
+          "oracle_top1": 0,
+          "oracle_top4": [
+            0,
+            20,
+            24,
+            5
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_test_0036",
+          "truth": 7,
+          "oracle_top1": 16,
+          "oracle_top4": [
+            16,
+            18,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 1.5
+        },
+        {
+          "parent_id": "r128_test_0037",
+          "truth": 12,
+          "oracle_top1": 18,
+          "oracle_top4": [
+            18,
+            16,
+            13,
+            8
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_test_0039",
+          "truth": 0,
+          "oracle_top1": 17,
+          "oracle_top4": [
+            17,
+            24,
+            22,
+            21
+          ],
+          "noise_sigma_gray": 3.0
+        },
+        {
+          "parent_id": "r128_test_0040",
+          "truth": 8,
+          "oracle_top1": 22,
+          "oracle_top4": [
+            22,
+            21,
+            24,
+            20
+          ],
+          "noise_sigma_gray": 0.5
+        },
+        {
+          "parent_id": "r128_test_0041",
+          "truth": 2,
+          "oracle_top1": 2,
+          "oracle_top4": [
+            2,
+            3,
+            4,
+            23
+          ],
+          "noise_sigma_gray": 0.5
+        }
+      ]
+    }
+  },
+  "completed_utc": "2026-09-23T17:14:03.203796+00:00"
+}

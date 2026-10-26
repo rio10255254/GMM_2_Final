@@ -1,0 +1,170 @@
+{
+  "protected_inputs_unchanged": 132,
+  "rendered_images": 108,
+  "historical_full_output_pixel_parity": "R109 and R119: all 12 exposures exact",
+  "ACM_rows_recomputed": 7776,
+  "maximum_common_ACM_difference_pp": 3.1511687614838024e-07,
+  "maximum_area_difference_pct": 5.329070518200751e-15,
+  "historical_metric_checks": [
+    {
+      "method": "R109_full",
+      "rows": 432,
+      "maximum_historical_metric_difference": 0.0
+    },
+    {
+      "method": "R119_full",
+      "rows": 432,
+      "maximum_historical_metric_difference": 0.0
+    }
+  ],
+  "independent_profile_spots": [
+    {
+      "reference": "historical",
+      "pillar": 21,
+      "exposure": 13,
+      "method": "Raw",
+      "profiles": 720,
+      "max_half_position_difference": 7.549516567451064e-15
+    },
+    {
+      "reference": "historical",
+      "pillar": 21,
+      "exposure": 13,
+      "method": "R109_full",
+      "profiles": 720,
+      "max_half_position_difference": 4.884981308350689e-15
+    },
+    {
+      "reference": "historical",
+      "pillar": 21,
+      "exposure": 13,
+      "method": "R119_full",
+      "profiles": 720,
+      "max_half_position_difference": 6.217248937900877e-15
+    },
+    {
+      "reference": "historical",
+      "pillar": 21,
+      "exposure": 24,
+      "method": "Raw",
+      "profiles": 719,
+      "max_half_position_difference": 9.880984919163893e-15
+    },
+    {
+      "reference": "historical",
+      "pillar": 21,
+      "exposure": 24,
+      "method": "R109_full",
+      "profiles": 720,
+      "max_half_position_difference": 6.661338147750939e-15
+    },
+    {
+      "reference": "historical",
+      "pillar": 21,
+      "exposure": 24,
+      "method": "R119_full",
+      "profiles": 720,
+      "max_half_position_difference": 6.38378239159465e-15
+    },
+    {
+      "reference": "historical",
+      "pillar": 6,
+      "exposure": 22,
+      "method": "Raw",
+      "profiles": 720,
+      "max_half_position_difference": 2.2315482794965646e-14
+    },
+    {
+      "reference": "historical",
+      "pillar": 6,
+      "exposure": 22,
+      "method": "R109_full",
+      "profiles": 720,
+      "max_half_position_difference": 8.43769498715119e-15
+    },
+    {
+      "reference": "historical",
+      "pillar": 6,
+      "exposure": 22,
+      "method": "R119_full",
+      "profiles": 720,
+      "max_half_position_difference": 5.773159728050814e-15
+    },
+    {
+      "reference": "global_pitch_matched",
+      "pillar": 21,
+      "exposure": 13,
+      "method": "Raw",
+      "profiles": 720,
+      "max_half_position_difference": 6.5503158452884236e-15
+    },
+    {
+      "reference": "global_pitch_matched",
+      "pillar": 21,
+      "exposure": 13,
+      "method": "R109_full",
+      "profiles": 720,
+      "max_half_position_difference": 4.773959005888173e-15
+    },
+    {
+      "reference": "global_pitch_matched",
+      "pillar": 21,
+      "exposure": 13,
+      "method": "R119_full",
+      "profiles": 720,
+      "max_half_position_difference": 4.773959005888173e-15
+    },
+    {
+      "reference": "global_pitch_matched",
+      "pillar": 21,
+      "exposure": 24,
+      "method": "Raw",
+      "profiles": 720,
+      "max_half_position_difference": 3.530509218307998e-14
+    },
+    {
+      "reference": "global_pitch_matched",
+      "pillar": 21,
+      "exposure": 24,
+      "method": "R109_full",
+      "profiles": 720,
+      "max_half_position_difference": 8.077306185017008e-15
+    },
+    {
+      "reference": "global_pitch_matched",
+      "pillar": 21,
+      "exposure": 24,
+      "method": "R119_full",
+      "profiles": 720,
+      "max_half_position_difference": 5.440092820663267e-15
+    },
+    {
+      "reference": "global_pitch_matched",
+      "pillar": 6,
+      "exposure": 22,
+      "method": "Raw",
+      "profiles": 720,
+      "max_half_position_difference": 1.734723475976807e-14
+    },
+    {
+      "reference": "global_pitch_matched",
+      "pillar": 6,
+      "exposure": 22,
+      "method": "R109_full",
+      "profiles": 720,
+      "max_half_position_difference": 6.716849298982197e-15
+    },
+    {
+      "reference": "global_pitch_matched",
+      "pillar": 6,
+      "exposure": 22,
+      "method": "R119_full",
+      "profiles": 720,
+      "max_half_position_difference": 6.8833827526759706e-15
+    }
+  ],
+  "explicit_derivative_kernel_max_difference": 1.8041124150158794e-16,
+  "no_training": true,
+  "no_confirmation_evaluation": true,
+  "source_sha256": "5462faf6946121e674053f4efee85aebee7182afa08c13705e85c57744038ba6"
+}

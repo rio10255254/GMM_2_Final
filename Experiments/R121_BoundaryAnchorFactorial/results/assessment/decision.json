@@ -1,0 +1,372 @@
+{
+  "scope": "eight paired 12-epoch probes; preliminary paired screening, not promotion",
+  "supported_arms_for_real_LSC": [],
+  "gates": [
+    {
+      "seed": 1215001,
+      "arm": "A",
+      "method": "probe_A_s1215001",
+      "shape_pass": true,
+      "controlled_motion_pass": true,
+      "texture_pass": true,
+      "maximum_motion_error_px": 0.014801479227171096,
+      "control_motion_error_px": 0.014801479227171096,
+      "invalid_profiles": 0,
+      "control_invalid_profiles": 0,
+      "textured_highpass_error_ratio_vs_A": 1.0,
+      "paired_screen_pass": true,
+      "real_LSC": "not yet run; required for supported intervention before further-training readiness"
+    },
+    {
+      "seed": 1215001,
+      "arm": "B",
+      "method": "probe_B_s1215001",
+      "shape_pass": false,
+      "controlled_motion_pass": true,
+      "texture_pass": false,
+      "maximum_motion_error_px": 0.015412010046775117,
+      "control_motion_error_px": 0.014801479227171096,
+      "invalid_profiles": 0,
+      "control_invalid_profiles": 0,
+      "textured_highpass_error_ratio_vs_A": 1.0879630648138947,
+      "paired_screen_pass": false,
+      "real_LSC": "not yet run; required for supported intervention before further-training readiness"
+    },
+    {
+      "seed": 1215001,
+      "arm": "C",
+      "method": "probe_C_s1215001_v2",
+      "shape_pass": false,
+      "controlled_motion_pass": true,
+      "texture_pass": false,
+      "maximum_motion_error_px": 0.014915875068583571,
+      "control_motion_error_px": 0.014801479227171096,
+      "invalid_profiles": 0,
+      "control_invalid_profiles": 0,
+      "textured_highpass_error_ratio_vs_A": 1.1676474219509057,
+      "paired_screen_pass": false,
+      "real_LSC": "not yet run; required for supported intervention before further-training readiness"
+    },
+    {
+      "seed": 1215001,
+      "arm": "D",
+      "method": "probe_D_s1215001_v2",
+      "shape_pass": false,
+      "controlled_motion_pass": true,
+      "texture_pass": false,
+      "maximum_motion_error_px": 0.01585251193942215,
+      "control_motion_error_px": 0.014801479227171096,
+      "invalid_profiles": 0,
+      "control_invalid_profiles": 0,
+      "textured_highpass_error_ratio_vs_A": 1.1504664655944765,
+      "paired_screen_pass": false,
+      "real_LSC": "not yet run; required for supported intervention before further-training readiness"
+    },
+    {
+      "seed": 1215002,
+      "arm": "A",
+      "method": "probe_A_s1215002_v2",
+      "shape_pass": true,
+      "controlled_motion_pass": true,
+      "texture_pass": true,
+      "maximum_motion_error_px": 0.013696782626681439,
+      "control_motion_error_px": 0.013696782626681439,
+      "invalid_profiles": 0,
+      "control_invalid_profiles": 0,
+      "textured_highpass_error_ratio_vs_A": 1.0,
+      "paired_screen_pass": true,
+      "real_LSC": "not yet run; required for supported intervention before further-training readiness"
+    },
+    {
+      "seed": 1215002,
+      "arm": "B",
+      "method": "probe_B_s1215002_v2",
+      "shape_pass": false,
+      "controlled_motion_pass": true,
+      "texture_pass": false,
+      "maximum_motion_error_px": 0.015544946362541213,
+      "control_motion_error_px": 0.013696782626681439,
+      "invalid_profiles": 0,
+      "control_invalid_profiles": 0,
+      "textured_highpass_error_ratio_vs_A": 1.1148235776994175,
+      "paired_screen_pass": false,
+      "real_LSC": "not yet run; required for supported intervention before further-training readiness"
+    },
+    {
+      "seed": 1215002,
+      "arm": "C",
+      "method": "probe_C_s1215002_v2",
+      "shape_pass": false,
+      "controlled_motion_pass": true,
+      "texture_pass": false,
+      "maximum_motion_error_px": 0.01594129905358985,
+      "control_motion_error_px": 0.013696782626681439,
+      "invalid_profiles": 0,
+      "control_invalid_profiles": 0,
+      "textured_highpass_error_ratio_vs_A": 1.1794526149236215,
+      "paired_screen_pass": false,
+      "real_LSC": "not yet run; required for supported intervention before further-training readiness"
+    },
+    {
+      "seed": 1215002,
+      "arm": "D",
+      "method": "probe_D_s1215002_v2",
+      "shape_pass": false,
+      "controlled_motion_pass": true,
+      "texture_pass": false,
+      "maximum_motion_error_px": 0.016689695952763667,
+      "control_motion_error_px": 0.013696782626681439,
+      "invalid_profiles": 0,
+      "control_invalid_profiles": 0,
+      "textured_highpass_error_ratio_vs_A": 1.171330334491232,
+      "paired_screen_pass": false,
+      "real_LSC": "not yet run; required for supported intervention before further-training readiness"
+    }
+  ],
+  "shape_effects": [
+    {
+      "reference": "historical",
+      "seed": 1215001,
+      "arm": "A",
+      "method": "probe_A_s1215001",
+      "median_pillar_paired_effect_vs_A": 0.0,
+      "bootstrap95_vs_A": [
+        0.0,
+        0.0
+      ],
+      "worst_exposure_median_effect_vs_A": 0.0,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.13441329449415224,
+      "improved_observations_vs_Raw": 421
+    },
+    {
+      "reference": "pitch_matched",
+      "seed": 1215001,
+      "arm": "A",
+      "method": "probe_A_s1215001",
+      "median_pillar_paired_effect_vs_A": 0.0,
+      "bootstrap95_vs_A": [
+        0.0,
+        0.0
+      ],
+      "worst_exposure_median_effect_vs_A": 0.0,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.10693875700235375,
+      "improved_observations_vs_Raw": 419
+    },
+    {
+      "reference": "historical",
+      "seed": 1215001,
+      "arm": "B",
+      "method": "probe_B_s1215001",
+      "median_pillar_paired_effect_vs_A": 0.05432329326868053,
+      "bootstrap95_vs_A": [
+        0.050356194376944996,
+        0.05844985693693153
+      ],
+      "worst_exposure_median_effect_vs_A": 0.1268809139728545,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.07043541222810726,
+      "improved_observations_vs_Raw": 414
+    },
+    {
+      "reference": "pitch_matched",
+      "seed": 1215001,
+      "arm": "B",
+      "method": "probe_B_s1215001",
+      "median_pillar_paired_effect_vs_A": 0.04254882782697674,
+      "bootstrap95_vs_A": [
+        0.036450177431106484,
+        0.04745434224605549
+      ],
+      "worst_exposure_median_effect_vs_A": 0.10040423274040251,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.05879741162061701,
+      "improved_observations_vs_Raw": 412
+    },
+    {
+      "reference": "historical",
+      "seed": 1215001,
+      "arm": "C",
+      "method": "probe_C_s1215001_v2",
+      "median_pillar_paired_effect_vs_A": 0.10520480573177327,
+      "bootstrap95_vs_A": [
+        0.097741574048996,
+        0.10793830454349551
+      ],
+      "worst_exposure_median_effect_vs_A": 0.1492765396833415,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.0321738943457605,
+      "improved_observations_vs_Raw": 381
+    },
+    {
+      "reference": "pitch_matched",
+      "seed": 1215001,
+      "arm": "C",
+      "method": "probe_C_s1215001_v2",
+      "median_pillar_paired_effect_vs_A": 0.07898031175136574,
+      "bootstrap95_vs_A": [
+        0.07459805905818875,
+        0.083544872701168
+      ],
+      "worst_exposure_median_effect_vs_A": 0.12065044045448348,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.026625715196132757,
+      "improved_observations_vs_Raw": 375
+    },
+    {
+      "reference": "historical",
+      "seed": 1215001,
+      "arm": "D",
+      "method": "probe_D_s1215001_v2",
+      "median_pillar_paired_effect_vs_A": 0.13861296325922,
+      "bootstrap95_vs_A": [
+        0.13059966266155248,
+        0.1442079842090605
+      ],
+      "worst_exposure_median_effect_vs_A": 0.20233748853206604,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": 0.0015511214733125167,
+      "improved_observations_vs_Raw": 206
+    },
+    {
+      "reference": "pitch_matched",
+      "seed": 1215001,
+      "arm": "D",
+      "method": "probe_D_s1215001_v2",
+      "median_pillar_paired_effect_vs_A": 0.1100160740315915,
+      "bootstrap95_vs_A": [
+        0.10127641260623949,
+        0.11499422043561949
+      ],
+      "worst_exposure_median_effect_vs_A": 0.16877669841051102,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": 0.0005908384919167398,
+      "improved_observations_vs_Raw": 203
+    },
+    {
+      "reference": "historical",
+      "seed": 1215002,
+      "arm": "A",
+      "method": "probe_A_s1215002_v2",
+      "median_pillar_paired_effect_vs_A": 0.0,
+      "bootstrap95_vs_A": [
+        0.0,
+        0.0
+      ],
+      "worst_exposure_median_effect_vs_A": 0.0,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.12661717087030402,
+      "improved_observations_vs_Raw": 406
+    },
+    {
+      "reference": "pitch_matched",
+      "seed": 1215002,
+      "arm": "A",
+      "method": "probe_A_s1215002_v2",
+      "median_pillar_paired_effect_vs_A": 0.0,
+      "bootstrap95_vs_A": [
+        0.0,
+        0.0
+      ],
+      "worst_exposure_median_effect_vs_A": 0.0,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.10037136077880876,
+      "improved_observations_vs_Raw": 405
+    },
+    {
+      "reference": "historical",
+      "seed": 1215002,
+      "arm": "B",
+      "method": "probe_B_s1215002_v2",
+      "median_pillar_paired_effect_vs_A": 0.05768691003322578,
+      "bootstrap95_vs_A": [
+        0.05395756661891951,
+        0.05987006425857529
+      ],
+      "worst_exposure_median_effect_vs_A": 0.14014157652854897,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.06326171755790698,
+      "improved_observations_vs_Raw": 416
+    },
+    {
+      "reference": "pitch_matched",
+      "seed": 1215002,
+      "arm": "B",
+      "method": "probe_B_s1215002_v2",
+      "median_pillar_paired_effect_vs_A": 0.04378905519843124,
+      "bootstrap95_vs_A": [
+        0.03930945694446576,
+        0.048539381474256516
+      ],
+      "worst_exposure_median_effect_vs_A": 0.102644011378288,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.05134973675012626,
+      "improved_observations_vs_Raw": 409
+    },
+    {
+      "reference": "historical",
+      "seed": 1215002,
+      "arm": "C",
+      "method": "probe_C_s1215002_v2",
+      "median_pillar_paired_effect_vs_A": 0.10110333561897303,
+      "bootstrap95_vs_A": [
+        0.09360191971063578,
+        0.10582402348518447
+      ],
+      "worst_exposure_median_effect_vs_A": 0.16099911928176897,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.02763174474239352,
+      "improved_observations_vs_Raw": 376
+    },
+    {
+      "reference": "pitch_matched",
+      "seed": 1215002,
+      "arm": "C",
+      "method": "probe_C_s1215002_v2",
+      "median_pillar_paired_effect_vs_A": 0.07555039227008825,
+      "bootstrap95_vs_A": [
+        0.07240482419729198,
+        0.0810705050826075
+      ],
+      "worst_exposure_median_effect_vs_A": 0.134375348687172,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": -0.022552728652954268,
+      "improved_observations_vs_Raw": 366
+    },
+    {
+      "reference": "historical",
+      "seed": 1215002,
+      "arm": "D",
+      "method": "probe_D_s1215002_v2",
+      "median_pillar_paired_effect_vs_A": 0.13332416862249402,
+      "bootstrap95_vs_A": [
+        0.126671850681305,
+        0.13631787151098224
+      ],
+      "worst_exposure_median_effect_vs_A": 0.19726003706455247,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": 0.0022539347410200083,
+      "improved_observations_vs_Raw": 186
+    },
+    {
+      "reference": "pitch_matched",
+      "seed": 1215002,
+      "arm": "D",
+      "method": "probe_D_s1215002_v2",
+      "median_pillar_paired_effect_vs_A": 0.09958453103899975,
+      "bootstrap95_vs_A": [
+        0.09494777023792275,
+        0.10629422217607498
+      ],
+      "worst_exposure_median_effect_vs_A": 0.14211775362491552,
+      "improved_pillars_vs_A": 0,
+      "median_pillar_effect_vs_Raw": 0.001535475254058491,
+      "improved_observations_vs_Raw": 180
+    }
+  ],
+  "sem_failures": [],
+  "decision": "No intervention passes both seeds and all predeclared guards; retain results, no epoch extension or long training",
+  "interrupted_v1_excluded": "probe_C_s1215001",
+  "historical_and_pitch_matched_references_both_used": true
+}

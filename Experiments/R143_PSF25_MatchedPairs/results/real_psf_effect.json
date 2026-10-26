@@ -1,0 +1,73 @@
+{
+  "model": "R143-PSF25-MatchedPairs",
+  "checkpoint_sha256": "4d52db1d0b125bcf3bf7085a68719471184617751a98d8380f05f1138c11b67e",
+  "script_sha256": "42110a47bde5ed49f1627fb3d1c14a11c2aa14e6f119a0719e7b37f7b4368168",
+  "note": "Frozen trained model, in-memory switch only; not retrained ablation",
+  "frames": [
+    {
+      "selected_indices": [
+        24,
+        8,
+        16,
+        0
+      ],
+      "frame_no": 0,
+      "run": "001804_XY_0",
+      "index": 0,
+      "on_off_rms_gray": 0.05993504822254181,
+      "forced_0_vs_24_rms_gray": 2.5520891995256534e-06,
+      "selected_vs_forced_0_rms_gray": 2.020193051066599e-06,
+      "on_off_center_rms_nm": 0.03517068599485663,
+      "psf0_psf24_center_rms_nm": 2.9521720638515903e-06
+    },
+    {
+      "selected_indices": [
+        24,
+        8,
+        16,
+        0
+      ],
+      "frame_no": 30,
+      "run": "001804_XY_0",
+      "index": 30,
+      "on_off_rms_gray": 0.0634576827287674,
+      "forced_0_vs_24_rms_gray": 2.5468239073234145e-06,
+      "selected_vs_forced_0_rms_gray": 2.0313889308454236e-06,
+      "on_off_center_rms_nm": 0.043258947296439296,
+      "psf0_psf24_center_rms_nm": 2.68450857392992e-06
+    },
+    {
+      "selected_indices": [
+        24,
+        8,
+        16,
+        0
+      ],
+      "frame_no": 899,
+      "run": "005143_XY_0",
+      "index": 0,
+      "on_off_rms_gray": 0.057790160179138184,
+      "forced_0_vs_24_rms_gray": 2.4598607524239924e-06,
+      "selected_vs_forced_0_rms_gray": 1.9662970771605615e-06,
+      "on_off_center_rms_nm": 0.035736041516440796,
+      "psf0_psf24_center_rms_nm": 1.7553427973184178e-06
+    },
+    {
+      "selected_indices": [
+        24,
+        8,
+        16,
+        0
+      ],
+      "frame_no": 929,
+      "run": "005143_XY_0",
+      "index": 30,
+      "on_off_rms_gray": 0.06338205933570862,
+      "forced_0_vs_24_rms_gray": 2.4890546228562016e-06,
+      "selected_vs_forced_0_rms_gray": 1.993217438212014e-06,
+      "on_off_center_rms_nm": 0.04017717780754754,
+      "psf0_psf24_center_rms_nm": 3.0656907767049518e-06
+    }
+  ],
+  "completed_utc": "2026-09-23T19:05:33.594291+00:00"
+}

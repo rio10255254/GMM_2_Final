@@ -1,0 +1,3179 @@
+{
+  "status": "complete",
+  "split": "train",
+  "scene_count": 96,
+  "poses_per_scene": 49,
+  "ids_source_sha256": "01b6cfe1a9d12d2b6f463253f1e8170a1ed87494528c22a993b2d32075a95e0d",
+  "base_manifest_sha256": "1017259a600caa7bf7ba0f9927784526d92882d1b39799d8252fa0d13489c428",
+  "new_payload_bytes": 518163176,
+  "records": [
+    {
+      "scene_index": 0,
+      "split": "train",
+      "family": "polygon",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000000.npz",
+      "sha256": "09d89018267f31558a37c851290728dab7fe314cc4c1535dfc85657bd3c8fecc",
+      "bytes": 7300128,
+      "optics": {
+        "sigma_x": 1.4471126670801449,
+        "sigma_y": 1.446470333717707,
+        "ghost_x": -0.02031819029781956,
+        "ghost_y": 0.7251516603433095,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 1070001,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 1,
+      "split": "train",
+      "family": "thin_neck",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000001.npz",
+      "sha256": "4dd2a528b9459ff80ad43b1bd1e8e194f0c54edeb3b9e06fbf63d6b715358123",
+      "bytes": 7925011,
+      "optics": {
+        "sigma_x": 1.5684952564736387,
+        "sigma_y": 1.9234437478556405,
+        "ghost_x": -0.7327073618579812,
+        "ghost_y": -0.34541176819546615,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 1174730,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 2,
+      "split": "train",
+      "family": "thin_neck",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000002.npz",
+      "sha256": "76f6c801afa4e9d269a1c2f8a110b7fdca50caa1caf9bf0fdbcfb36c14131d7c",
+      "bytes": 4076446,
+      "optics": {
+        "sigma_x": 1.2667713472869127,
+        "sigma_y": 1.1981112768908933,
+        "ghost_x": 0.6021114230663445,
+        "ghost_y": -0.9674336366983182,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.03481804848896293
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 1279459,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 3,
+      "split": "train",
+      "family": "crescent",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000003.npz",
+      "sha256": "14f1a567c6a8b6880128616cb59a7d16b634caa0c42bca4273c29bf96880d938",
+      "bytes": 4923420,
+      "optics": {
+        "sigma_x": 2.0571238249445085,
+        "sigma_y": 1.8763941670321134,
+        "ghost_x": -0.5269089937649967,
+        "ghost_y": -0.7032676496214849,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 1384188,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 4,
+      "split": "train",
+      "family": "thin_neck",
+      "role": "identity",
+      "polarity": 1.0,
+      "file": "000004.npz",
+      "sha256": "18c6a4a12be13bc87ac19ac0267be441fc9b350b60eb50bbf81f6e038c513b95",
+      "bytes": 4202929,
+      "optics": {
+        "sigma_x": 0.0,
+        "sigma_y": 0.0,
+        "ghost_x": 0.0,
+        "ghost_y": 0.0,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 1488917,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 5,
+      "split": "train",
+      "family": "rectangle",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000005.npz",
+      "sha256": "3464cedb94e01e4ff932964b10be6470010cbf233cee8533a0e0f3befe8e5ad2",
+      "bytes": 4262883,
+      "optics": {
+        "sigma_x": 0.929399779396296,
+        "sigma_y": 0.9261742663824301,
+        "ghost_x": 0.7576807529764347,
+        "ghost_y": 1.1457843394237692,
+        "ghost_mix": 0.09088600743532804,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 1593646,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0688625785486212,
+        0.10413576399215112
+      ]
+    },
+    {
+      "scene_index": 6,
+      "split": "train",
+      "family": "circle",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000006.npz",
+      "sha256": "d54000d08dfcd8750236e1e898cdc9cbf47a1d972bf06a3c6625b79d316bc578",
+      "bytes": 4987368,
+      "optics": {
+        "sigma_x": 1.3067717501655103,
+        "sigma_y": 1.8134028250888568,
+        "ghost_x": -0.32817760080371006,
+        "ghost_y": -0.3651427814709065,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 1698375,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 7,
+      "split": "train",
+      "family": "rectangle",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000007.npz",
+      "sha256": "4abc0e1e37adb361c15bf0996eb017ed7994fea9db18407872415ad7f4b59f52",
+      "bytes": 3940108,
+      "optics": {
+        "sigma_x": 0.5081349682381228,
+        "sigma_y": 0.6556938731538627,
+        "ghost_x": -0.36133314059456967,
+        "ghost_y": 0.6400964572347994,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 1803104,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 8,
+      "split": "train",
+      "family": "mixed_field",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000008.npz",
+      "sha256": "91375bd9ac07b0c1efc07c3bf74aa3552e659802e5f47b7a77edcd2a567de6bf",
+      "bytes": 5789461,
+      "optics": {
+        "sigma_x": 0.9982470687483707,
+        "sigma_y": 1.3721783554076687,
+        "ghost_x": 0.2416647180264766,
+        "ghost_y": -0.5903549157089102,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 1907833,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 9,
+      "split": "train",
+      "family": "irregular_blob",
+      "role": "identity",
+      "polarity": 1.0,
+      "file": "000009.npz",
+      "sha256": "3d481ed6636f3032dc60be41dce85e2b1783cad197b25cb01b58b893a0ed96c9",
+      "bytes": 4440174,
+      "optics": {
+        "sigma_x": 0.0,
+        "sigma_y": 0.0,
+        "ghost_x": 0.0,
+        "ghost_y": 0.0,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2012562,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 10,
+      "split": "train",
+      "family": "polygon",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000010.npz",
+      "sha256": "7fd6ba700d8dc6832b1477ba68597cab1bb4af964e548d576e273a5891da0959",
+      "bytes": 7053535,
+      "optics": {
+        "sigma_x": 0.9699135659150891,
+        "sigma_y": 1.2485947503057317,
+        "ghost_x": 0.25623582483848084,
+        "ghost_y": 0.3436220410997799,
+        "ghost_mix": 0.07460510482591448,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2117291,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.019116500572229526,
+        0.025635958396743774
+      ]
+    },
+    {
+      "scene_index": 11,
+      "split": "train",
+      "family": "rectangle",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000011.npz",
+      "sha256": "2583a02ecf35377fba0de24fc265a7942277802d64c75e01da2c9c9b39ff0439",
+      "bytes": 4582772,
+      "optics": {
+        "sigma_x": 1.3874733444115277,
+        "sigma_y": 1.890473315353784,
+        "ghost_x": 1.0770202384427703,
+        "ghost_y": -0.15311624408352054,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2222020,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 12,
+      "split": "train",
+      "family": "thin_neck",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000012.npz",
+      "sha256": "570df11e126c57d3fc4b92d72fdd3e675409e68fd6e71c993f4ec956e6d94219",
+      "bytes": 5481806,
+      "optics": {
+        "sigma_x": 2.09689253394189,
+        "sigma_y": 1.9469778349457412,
+        "ghost_x": -0.21166469022146028,
+        "ghost_y": 0.7535044592767604,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.11709051180610659
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2326749,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 13,
+      "split": "train",
+      "family": "dense_array",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000013.npz",
+      "sha256": "c5d8049cb032798c4bf2ad40553da2d58d26c8031e67af97ad402ad8fc27da58",
+      "bytes": 5637230,
+      "optics": {
+        "sigma_x": 0.9883500653191493,
+        "sigma_y": 1.0557699203975617,
+        "ghost_x": -0.9184909356864495,
+        "ghost_y": -0.7540303215787079,
+        "ghost_mix": 0.07496527474116098,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2431478,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0688549253410007,
+        -0.056526090220313796
+      ]
+    },
+    {
+      "scene_index": 14,
+      "split": "train",
+      "family": "circle",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000014.npz",
+      "sha256": "9f3efdc69631614e1370f620c257d6754c4a45b092e225e4b8f6a3c38809d445",
+      "bytes": 4289584,
+      "optics": {
+        "sigma_x": 0.8284159850998527,
+        "sigma_y": 0.9046197650284038,
+        "ghost_x": -0.2095397964527601,
+        "ghost_y": 0.017436120590523574,
+        "ghost_mix": 0.07772640912475426,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2536207,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.016286775947004964,
+        0.0013552470425675872
+      ]
+    },
+    {
+      "scene_index": 15,
+      "split": "train",
+      "family": "crescent",
+      "role": "identity",
+      "polarity": 1.0,
+      "file": "000015.npz",
+      "sha256": "a4fa47aad0a7abc6142921eaf013ea3466cc67b85430393d435c147763f3cd98",
+      "bytes": 4222158,
+      "optics": {
+        "sigma_x": 0.0,
+        "sigma_y": 0.0,
+        "ghost_x": 0.0,
+        "ghost_y": 0.0,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2640936,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 16,
+      "split": "train",
+      "family": "rectangle",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000016.npz",
+      "sha256": "8e5df93e0d2175e029b9f860b3259b034c4edc959db5d4dbd3250bedc06c1a4e",
+      "bytes": 2842536,
+      "optics": {
+        "sigma_x": 1.3140123998255255,
+        "sigma_y": 1.2417473598986177,
+        "ghost_x": 0.6560119212640847,
+        "ghost_y": 0.12370313555937429,
+        "ghost_mix": 0.05044242568551813,
+        "broad_mix": 0.11314763610571664
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2745665,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.033090832587177564,
+        0.006239886222519312
+      ]
+    },
+    {
+      "scene_index": 17,
+      "split": "train",
+      "family": "lobed",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000017.npz",
+      "sha256": "dfcb5debf9c69c455aee9c68c6ef20cc5c7a3242b45045f24fd8663023dab281",
+      "bytes": 4685249,
+      "optics": {
+        "sigma_x": 0.7115709444972921,
+        "sigma_y": 0.5663178451945944,
+        "ghost_x": -1.1798293971834242,
+        "ghost_y": -0.8075680311850213,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.19700625547963885
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2850394,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 18,
+      "split": "train",
+      "family": "ellipse",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000018.npz",
+      "sha256": "9789590f732cf465fd0ba49bc0a985ac13239e1f2e0b1fa45e82807b9c77f193",
+      "bytes": 4585830,
+      "optics": {
+        "sigma_x": 0.6262415188545263,
+        "sigma_y": 0.6513657626768655,
+        "ghost_x": 0.6024026522676744,
+        "ghost_y": 0.9160521360820868,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.00864923912681923
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 2955123,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 19,
+      "split": "train",
+      "family": "ellipse",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000019.npz",
+      "sha256": "6b7faa37984bd802cea4142ceb5a130c3af2930a7382187b3a6e4b9ddcbf7fc2",
+      "bytes": 4246719,
+      "optics": {
+        "sigma_x": 2.6868730760175117,
+        "sigma_y": 1.932764072146923,
+        "ghost_x": -0.908399839153278,
+        "ghost_y": 1.1258835210951472,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 3059852,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 20,
+      "split": "train",
+      "family": "ring",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000020.npz",
+      "sha256": "38b64ad105eaba6ea65f459e8b05ef23181960fc5c71f171c8c93a0e33a35ce7",
+      "bytes": 4880070,
+      "optics": {
+        "sigma_x": 1.5369827109325656,
+        "sigma_y": 1.3837593442471305,
+        "ghost_x": 1.1910900569440648,
+        "ghost_y": -0.873827167587587,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 3164581,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 21,
+      "split": "train",
+      "family": "thin_bar",
+      "role": "identity",
+      "polarity": -1.0,
+      "file": "000021.npz",
+      "sha256": "6e1186801a65d66a15ba2eb41f9f2e035170d9c34fe71fb673e7e1bca811e4ac",
+      "bytes": 3175084,
+      "optics": {
+        "sigma_x": 0.0,
+        "sigma_y": 0.0,
+        "ghost_x": 0.0,
+        "ghost_y": 0.0,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 3269310,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 22,
+      "split": "train",
+      "family": "lobed",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000022.npz",
+      "sha256": "4cd732fe38487b6519bd0b34c96cfc093fbf23672f3027643dcc3422290d2a81",
+      "bytes": 7673938,
+      "optics": {
+        "sigma_x": 3.154047971836041,
+        "sigma_y": 3.373987786678007,
+        "ghost_x": -0.8974034098170742,
+        "ghost_y": 0.4701085224580319,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 3374039,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 23,
+      "split": "train",
+      "family": "rectangle",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000023.npz",
+      "sha256": "1f25f070bcc9b234977d66387b6d3ae37daaead1c2f28e6524f776fb75081775",
+      "bytes": 3778556,
+      "optics": {
+        "sigma_x": 3.141946430028479,
+        "sigma_y": 3.789183395364918,
+        "ghost_x": 0.3508491937519005,
+        "ghost_y": -0.8674474009871262,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 3478768,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 24,
+      "split": "train",
+      "family": "lobed",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000024.npz",
+      "sha256": "4d7a6ef7e22bf68836e3ac51f5916dbfeebbb52428f2faf514dd87c416ec75f0",
+      "bytes": 4728163,
+      "optics": {
+        "sigma_x": 3.1604887671015995,
+        "sigma_y": 3.004287945059049,
+        "ghost_x": -0.5790736953869152,
+        "ghost_y": -1.0647107872313861,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 3583497,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 26,
+      "split": "train",
+      "family": "crescent",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000026.npz",
+      "sha256": "f6082ecc13d129e4a326afad7ae326a05dce29d82c9e5ff748b8ae72ae0c8c4d",
+      "bytes": 9279001,
+      "optics": {
+        "sigma_x": 1.0947666736042354,
+        "sigma_y": 1.2239424341851837,
+        "ghost_x": -0.5740753612079987,
+        "ghost_y": -0.4492269508609995,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 3792955,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 27,
+      "split": "train",
+      "family": "lobed",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000027.npz",
+      "sha256": "95c5c671bac275091d81dcfffd60aa87c4353eebb50200c93dea3e0d8c9fd4c2",
+      "bytes": 4005859,
+      "optics": {
+        "sigma_x": 0.47642502838647605,
+        "sigma_y": 0.5513285362339139,
+        "ghost_x": -1.0849000276057594,
+        "ghost_y": 0.9966433785990241,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 3897684,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 29,
+      "split": "train",
+      "family": "thin_neck",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000029.npz",
+      "sha256": "65f1369ba3b59174344b4df8613339ae1b796905fe7e050e560e9860e7caf0ba",
+      "bytes": 4543762,
+      "optics": {
+        "sigma_x": 0.7057861310497613,
+        "sigma_y": 0.6888330852220593,
+        "ghost_x": -0.5335649384777597,
+        "ghost_y": -0.33608482787960947,
+        "ghost_mix": 0.006767283586500606,
+        "broad_mix": 0.17568796556869895
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 4107142,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0036107852504927485,
+        -0.002274381339381562
+      ]
+    },
+    {
+      "scene_index": 30,
+      "split": "train",
+      "family": "dense_array",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000030.npz",
+      "sha256": "6a753028ead9f3950ccf76ec7f51a32da7b98df640f4183bace2f8ce55a4c0f2",
+      "bytes": 7393469,
+      "optics": {
+        "sigma_x": 2.8880405762454866,
+        "sigma_y": 2.177897752542186,
+        "ghost_x": -0.7183629295853708,
+        "ghost_y": -0.023717259131232016,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.18118580465701328
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 4211871,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 32,
+      "split": "train",
+      "family": "circle",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000032.npz",
+      "sha256": "edc7c3f55dd3f4c1824758d84ca84ced5f5da1b87eff3c7c6ad39be0f6e1df28",
+      "bytes": 6362155,
+      "optics": {
+        "sigma_x": 0.427677800891642,
+        "sigma_y": 0.32486880893218656,
+        "ghost_x": 0.5237392317334737,
+        "ghost_y": -0.4587604840389058,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.026232793410046053
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 4421329,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 33,
+      "split": "train",
+      "family": "rectangle",
+      "role": "identity",
+      "polarity": -1.0,
+      "file": "000033.npz",
+      "sha256": "c92c3c29988fa3d68d1313a60e6c50b4812a693eb575ed556c9d235847d1a8dc",
+      "bytes": 4243248,
+      "optics": {
+        "sigma_x": 0.0,
+        "sigma_y": 0.0,
+        "ghost_x": 0.0,
+        "ghost_y": 0.0,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 4526058,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 34,
+      "split": "train",
+      "family": "mixed_field",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000034.npz",
+      "sha256": "27b22c98c2a420b524fef8ec7a9b365376b06d9633414efd1aa128a2b2346066",
+      "bytes": 7463943,
+      "optics": {
+        "sigma_x": 2.374254064630482,
+        "sigma_y": 2.3121366003503177,
+        "ghost_x": 0.31824655870677243,
+        "ghost_y": 0.7205773288778781,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 4630787,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 35,
+      "split": "train",
+      "family": "circle",
+      "role": "identity",
+      "polarity": 1.0,
+      "file": "000035.npz",
+      "sha256": "e7a188f8485e58a84a4a95232e6b3d0ab03b8255d258e05c59b4f2e27d578a28",
+      "bytes": 5214015,
+      "optics": {
+        "sigma_x": 0.0,
+        "sigma_y": 0.0,
+        "ghost_x": 0.0,
+        "ghost_y": 0.0,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 4735516,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 38,
+      "split": "train",
+      "family": "polygon",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000038.npz",
+      "sha256": "ee140e6ccf955a7664a596fac5b38f1217cc696266a6f759da2cc35bf0f7775c",
+      "bytes": 4315531,
+      "optics": {
+        "sigma_x": 0.9014843837741188,
+        "sigma_y": 1.0093177387961887,
+        "ghost_x": -0.4942716518974418,
+        "ghost_y": 0.9771072216707648,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 5049703,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 39,
+      "split": "train",
+      "family": "ellipse",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000039.npz",
+      "sha256": "e5980089a79be8035dd5ed00d4a7f1aed49245f77a13a0d801d15883bf247166",
+      "bytes": 3898144,
+      "optics": {
+        "sigma_x": 1.5868909045971902,
+        "sigma_y": 1.971321420957358,
+        "ghost_x": 1.148945262143558,
+        "ghost_y": -1.1592048909237784,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.02915648860506306
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 5154432,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 41,
+      "split": "train",
+      "family": "ring",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000041.npz",
+      "sha256": "c6405ffb08d46f47442e25e20a3d92dec8f6e5d6c8b0dc7e7255d0b9be811d81",
+      "bytes": 9028929,
+      "optics": {
+        "sigma_x": 2.7553788371613215,
+        "sigma_y": 2.82579583478567,
+        "ghost_x": -1.0146050340141608,
+        "ghost_y": -0.8031527263141067,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 5363890,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 42,
+      "split": "train",
+      "family": "irregular_blob",
+      "role": "identity",
+      "polarity": -1.0,
+      "file": "000042.npz",
+      "sha256": "e01fa80150908c2f4d2d69a6baf3bbfec36d5cd3043b5b9bd95cab3771bf5826",
+      "bytes": 4580313,
+      "optics": {
+        "sigma_x": 0.0,
+        "sigma_y": 0.0,
+        "ghost_x": 0.0,
+        "ghost_y": 0.0,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 5468619,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 44,
+      "split": "train",
+      "family": "circle",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000044.npz",
+      "sha256": "e38c362152993785654b159f6216c174d038c1d637197a66d4096adbc8527237",
+      "bytes": 8032717,
+      "optics": {
+        "sigma_x": 2.9987642574030953,
+        "sigma_y": 3.3359849992566906,
+        "ghost_x": -1.1861159633511191,
+        "ghost_y": 0.4585289461832829,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.08396283209993138
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 5678077,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 46,
+      "split": "train",
+      "family": "ellipse",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000046.npz",
+      "sha256": "4dbc37d1bbbe82ddbcafa23da20f3b7ab8d5ead06eff2f1b9e1976783283d7d2",
+      "bytes": 4799052,
+      "optics": {
+        "sigma_x": 1.9129340217658133,
+        "sigma_y": 2.272105590605492,
+        "ghost_x": -1.1232971984689815,
+        "ghost_y": 0.4995981847612947,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 5887535,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 47,
+      "split": "train",
+      "family": "lobed",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000047.npz",
+      "sha256": "dea85bf551403468aeadd9fe6bcb9ffb2d29021c0fd23aeb71e95112e8e38763",
+      "bytes": 5732561,
+      "optics": {
+        "sigma_x": 2.328351335803295,
+        "sigma_y": 2.3273910977043135,
+        "ghost_x": 0.422891875686503,
+        "ghost_y": 0.3263763746133155,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 5992264,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 48,
+      "split": "train",
+      "family": "circle",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000048.npz",
+      "sha256": "46f7b7a4f1114c2144f2187e481ca95f31c4acd858091852fbfaadea55384f9e",
+      "bytes": 7201856,
+      "optics": {
+        "sigma_x": 0.7614665170244993,
+        "sigma_y": 0.9005274360452445,
+        "ghost_x": -0.04800767916593407,
+        "ghost_y": -0.5248909555237389,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.10946295445184365
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 6096993,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 49,
+      "split": "train",
+      "family": "mixed_field",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000049.npz",
+      "sha256": "b8044e7689bff2e71e4a9d4f5c0a78eaef020c82f1413147942f7e331b0a84fd",
+      "bytes": 9784366,
+      "optics": {
+        "sigma_x": 0.7512541375946,
+        "sigma_y": 0.8971873942206262,
+        "ghost_x": 0.6081675536772171,
+        "ghost_y": 0.974544325557172,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 6201722,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 50,
+      "split": "train",
+      "family": "ellipse",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000050.npz",
+      "sha256": "1e6b1b3f83c83dec230bfaab24a91aedfa06d8d7bb49ec83be3a6d5369a2fd92",
+      "bytes": 5148784,
+      "optics": {
+        "sigma_x": 1.8774462893093373,
+        "sigma_y": 2.482045562027438,
+        "ghost_x": 0.580511184367245,
+        "ghost_y": -0.8302187858098956,
+        "ghost_mix": 0.002260239356592941,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 6306451,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0013120942258492282,
+        -0.0018764931742703314
+      ]
+    },
+    {
+      "scene_index": 51,
+      "split": "train",
+      "family": "dense_array",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000051.npz",
+      "sha256": "56179e07f568ec4802dff3855e595679e3657c9121e010be9a0b5b8a1f82858d",
+      "bytes": 6881842,
+      "optics": {
+        "sigma_x": 0.7158505725909563,
+        "sigma_y": 0.9575971070642603,
+        "ghost_x": -0.6151429443671345,
+        "ghost_y": 0.7510451480447371,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.1672575910628323
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 6411180,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 52,
+      "split": "train",
+      "family": "mixed_field",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000052.npz",
+      "sha256": "3b572ac1faec2567d4053a20c92c84a155383aa024f2fc085d43486db3a589ce",
+      "bytes": 4922727,
+      "optics": {
+        "sigma_x": 1.0668998487543941,
+        "sigma_y": 1.4582020187514155,
+        "ghost_x": -0.18137890169223647,
+        "ghost_y": 1.1561147355023127,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 6515909,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 53,
+      "split": "train",
+      "family": "rectangle",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000053.npz",
+      "sha256": "2e71830f51b38580477ff8a9830eedfa98780ba8bd45e0e92e3650e41e39597d",
+      "bytes": 9220075,
+      "optics": {
+        "sigma_x": 1.5304128860701682,
+        "sigma_y": 1.707868254641382,
+        "ghost_x": -0.39515160226870416,
+        "ghost_y": 0.4108087508953955,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 6620638,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 54,
+      "split": "train",
+      "family": "ellipse",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000054.npz",
+      "sha256": "9b4de40bc764f2f7e234262ed185fbe0e7326ea173e1d39e02f78da715088f0d",
+      "bytes": 4345255,
+      "optics": {
+        "sigma_x": 1.2317025186705957,
+        "sigma_y": 1.4252325417559282,
+        "ghost_x": -0.5568552337581402,
+        "ghost_y": 0.6540170827504173,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 6725367,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 55,
+      "split": "train",
+      "family": "ring",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000055.npz",
+      "sha256": "e8104a17b8045e322fee9f94fd11232955a8fea212d85276ecd8a9bd084c95f2",
+      "bytes": 5607724,
+      "optics": {
+        "sigma_x": 0.5761409090343558,
+        "sigma_y": 0.5504231327362196,
+        "ghost_x": -1.0366564791183865,
+        "ghost_y": -1.1420947818039053,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.13489477277938863
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 6830096,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 56,
+      "split": "train",
+      "family": "circle",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000056.npz",
+      "sha256": "aba6af18f31e1c4837190e15c340df4ccff2e6a2be4d0971e4dd40d470fcaf37",
+      "bytes": 5223711,
+      "optics": {
+        "sigma_x": 1.7198958530567334,
+        "sigma_y": 1.3935457076430857,
+        "ghost_x": -0.3917485942669151,
+        "ghost_y": 0.43029072772920185,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 6934825,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 58,
+      "split": "train",
+      "family": "irregular_blob",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000058.npz",
+      "sha256": "289744c2bae65869ea0c7584818e4e487309321467fbcf3be1e0f94500fa9e40",
+      "bytes": 3772140,
+      "optics": {
+        "sigma_x": 1.4773690588284858,
+        "sigma_y": 1.9259885238266572,
+        "ghost_x": 0.2596090314768842,
+        "ghost_y": -0.06787846203200232,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.16017020665234674
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 7144283,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 59,
+      "split": "train",
+      "family": "ellipse",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000059.npz",
+      "sha256": "c4601999ab705aebb35aebde201eede72c2a1191e25a4e3db2e30d5b9595e2cf",
+      "bytes": 4962521,
+      "optics": {
+        "sigma_x": 0.6208113533658138,
+        "sigma_y": 0.7219279832985392,
+        "ghost_x": -0.29112965485433673,
+        "ghost_y": 0.8462426495088764,
+        "ghost_mix": 0.028886082836973873,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 7249012,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.008409595326421984,
+        0.02444463527389365
+      ]
+    },
+    {
+      "scene_index": 61,
+      "split": "train",
+      "family": "circle",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000061.npz",
+      "sha256": "6dad3e0e9a3fd326c9afac1459165aa0d8a29cd414995847fc09836de7e94046",
+      "bytes": 5187944,
+      "optics": {
+        "sigma_x": 1.7393160999044845,
+        "sigma_y": 2.0797441332376745,
+        "ghost_x": 0.3749261520483851,
+        "ghost_y": -1.0247771681131097,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 7458470,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 63,
+      "split": "train",
+      "family": "irregular_blob",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000063.npz",
+      "sha256": "2a637fc3b2a185c5b0ad52e05387012f33b1140b2688d3d3dcce9c4d6906a239",
+      "bytes": 4465265,
+      "optics": {
+        "sigma_x": 2.0925423995813195,
+        "sigma_y": 1.6320662426068262,
+        "ghost_x": -0.07549851629571558,
+        "ghost_y": -0.7546401658311981,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 7667928,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 64,
+      "split": "train",
+      "family": "thin_neck",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000064.npz",
+      "sha256": "7babbc20b43e8b00f9d8348a6ce384dae0497bccf1b0b296dbdddcc0086054b3",
+      "bytes": 5945838,
+      "optics": {
+        "sigma_x": 0.7286630206746825,
+        "sigma_y": 0.5719165220934292,
+        "ghost_x": 0.0014426986776425732,
+        "ghost_y": 0.41547125450120426,
+        "ghost_mix": 0.035020587328369844,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 7772657,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        5.052415502890543e-05,
+        0.014550047350686796
+      ]
+    },
+    {
+      "scene_index": 65,
+      "split": "train",
+      "family": "crescent",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000065.npz",
+      "sha256": "d5fc0f6011b32809fc8284e3fe08a0b645be396629e761961f2af303e66d279b",
+      "bytes": 4062215,
+      "optics": {
+        "sigma_x": 1.2267860691075236,
+        "sigma_y": 1.2779246100669885,
+        "ghost_x": 0.40980718233004687,
+        "ghost_y": -0.9834825212199574,
+        "ghost_mix": 0.07868577207875432,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 7877386,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.03224599454505858,
+        -0.07738608150815222
+      ]
+    },
+    {
+      "scene_index": 66,
+      "split": "train",
+      "family": "dense_array",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000066.npz",
+      "sha256": "9ac31bb6f8dd1c6c178846146130c20cef1cfd8b84bcb541cd24981177b7e946",
+      "bytes": 7759661,
+      "optics": {
+        "sigma_x": 0.6681851867300405,
+        "sigma_y": 0.6204185809675837,
+        "ghost_x": 0.5469007562729831,
+        "ghost_y": 0.27058782037046436,
+        "ghost_mix": 0.0303681094891355,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 7982115,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.016608342046188957,
+        0.008217240555436791
+      ]
+    },
+    {
+      "scene_index": 68,
+      "split": "train",
+      "family": "irregular_blob",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000068.npz",
+      "sha256": "4ed4e48bd434be39aab14d3e41119801e633615346998261fb1c7dcd59844526",
+      "bytes": 9190178,
+      "optics": {
+        "sigma_x": 1.181991071637251,
+        "sigma_y": 0.9931238588631852,
+        "ghost_x": 0.4816644745168066,
+        "ghost_y": 1.1693042691614386,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.12663424152109456
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 8191573,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 69,
+      "split": "train",
+      "family": "thin_neck",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000069.npz",
+      "sha256": "f6e4557599ff9a3afcfb70df7e61bafd83f34a613684a8eb0c277779091a610f",
+      "bytes": 5960153,
+      "optics": {
+        "sigma_x": 0.8737974061751688,
+        "sigma_y": 1.006616882656383,
+        "ghost_x": -0.15061673508673268,
+        "ghost_y": -1.1849985703596304,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.09919859551324856
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 8296302,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 70,
+      "split": "train",
+      "family": "crescent",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000070.npz",
+      "sha256": "0d01f5653b3a40fc646bac8e5a037dc6a9bfc4918f924ff9798f6137e1d50cd6",
+      "bytes": 4011451,
+      "optics": {
+        "sigma_x": 0.6539212287272771,
+        "sigma_y": 0.7047522677219628,
+        "ghost_x": -0.017596066162147928,
+        "ghost_y": -0.46587017000869546,
+        "ghost_mix": 0.0451747818901461,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 8401031,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0007948984509996128,
+        -0.0210455833192681
+      ]
+    },
+    {
+      "scene_index": 71,
+      "split": "train",
+      "family": "ring",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000071.npz",
+      "sha256": "797618d35b283d35a7f94d5a2fa9c9472b5d9622a6115929fd7eb42b4187ce9d",
+      "bytes": 5887744,
+      "optics": {
+        "sigma_x": 0.48166764459393174,
+        "sigma_y": 0.4146466791768566,
+        "ghost_x": -0.43091029761627153,
+        "ghost_y": 0.9063898446887568,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 8505760,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 72,
+      "split": "train",
+      "family": "irregular_blob",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000072.npz",
+      "sha256": "ec5c6e1d2ae31a6e443b381bf64d828b00d0e52881e23b64b205bc48cb840f1f",
+      "bytes": 5270785,
+      "optics": {
+        "sigma_x": 2.523960760425945,
+        "sigma_y": 2.5896990550519123,
+        "ghost_x": -0.27328799679596893,
+        "ghost_y": -0.15128344040325925,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.06573762887178762
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 8610489,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 73,
+      "split": "train",
+      "family": "thin_bar",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000073.npz",
+      "sha256": "702d7e2c3fb28f7517135426c2fc8e307864ef3e8ace81e4a8b7613a7df778f3",
+      "bytes": 3544426,
+      "optics": {
+        "sigma_x": 0.7912958411809886,
+        "sigma_y": 0.5649394836218272,
+        "ghost_x": 0.8163355786716602,
+        "ghost_y": -1.1938552949846268,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 8715218,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 76,
+      "split": "train",
+      "family": "ring",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000076.npz",
+      "sha256": "0b6cecba32eb7341fea6d17a6b6a455a011ed6a68ea41e03b834987cef5df12d",
+      "bytes": 4778716,
+      "optics": {
+        "sigma_x": 1.0371936285328156,
+        "sigma_y": 0.8798817014337704,
+        "ghost_x": 0.24599347174981134,
+        "ghost_y": -0.2812341558418444,
+        "ghost_mix": 0.07998714118455047,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 9029405,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.019676314555329887,
+        -0.02249511612923948
+      ]
+    },
+    {
+      "scene_index": 79,
+      "split": "train",
+      "family": "ring",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000079.npz",
+      "sha256": "b610363c03f89222804640f68c05b08d6ee364e76f09b8c019ec518c28abd193",
+      "bytes": 5668785,
+      "optics": {
+        "sigma_x": 1.293819992350165,
+        "sigma_y": 1.4689720230391965,
+        "ghost_x": -0.8518816936907236,
+        "ghost_y": 0.5366966524917616,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 9343592,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 81,
+      "split": "train",
+      "family": "polygon",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000081.npz",
+      "sha256": "dc6731efc79f0cf54011fab9d1514f99de43517057c55cb91462b61bdb0bb46a",
+      "bytes": 3828793,
+      "optics": {
+        "sigma_x": 1.9481261031965924,
+        "sigma_y": 1.4313656212815613,
+        "ghost_x": 0.9268639537749295,
+        "ghost_y": 0.2484690778964178,
+        "ghost_mix": 0.05779542276220643,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 9553050,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.05356849405147221,
+        0.014360375400359069
+      ]
+    },
+    {
+      "scene_index": 82,
+      "split": "train",
+      "family": "thin_bar",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000082.npz",
+      "sha256": "b9294f9d68d4397b56244a0ab3709a138698cd82c0bee133811b012909856b55",
+      "bytes": 7870186,
+      "optics": {
+        "sigma_x": 0.8980332587352399,
+        "sigma_y": 1.032410336137104,
+        "ghost_x": 0.8122804999038313,
+        "ghost_y": -1.1843446212240465,
+        "ghost_mix": 0.06251504323790186,
+        "broad_mix": 0.13318707835352794
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 9657779,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.05077975057279255,
+        -0.07403935520439776
+      ]
+    },
+    {
+      "scene_index": 84,
+      "split": "train",
+      "family": "mixed_field",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000084.npz",
+      "sha256": "c0262be54b08412ee1b51708a9d263bab21981937e7658638b0df9b3b318f098",
+      "bytes": 5864660,
+      "optics": {
+        "sigma_x": 0.5699412531740142,
+        "sigma_y": 0.5194283677057286,
+        "ghost_x": 0.5950173407411739,
+        "ghost_y": 0.43647809514272806,
+        "ghost_mix": 0.06547023483798049,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 9867237,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.03895592503099531,
+        0.028576323390628797
+      ]
+    },
+    {
+      "scene_index": 86,
+      "split": "train",
+      "family": "polygon",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000086.npz",
+      "sha256": "22eac985f11f13bce36f111beaaaf4e7fa90f6d9e43710ae55ea3e1ea0d61861",
+      "bytes": 8470529,
+      "optics": {
+        "sigma_x": 0.4650640715412485,
+        "sigma_y": 0.5126838025249041,
+        "ghost_x": -1.0656411803114347,
+        "ghost_y": 0.27691560426077055,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 10076695,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 87,
+      "split": "train",
+      "family": "crescent",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000087.npz",
+      "sha256": "f93babd77ed869a093212454b79245c7af8ddab50945bcf0a187f6f88af01040",
+      "bytes": 6581609,
+      "optics": {
+        "sigma_x": 2.4589558590601857,
+        "sigma_y": 2.493415809736935,
+        "ghost_x": 1.0521790386557182,
+        "ghost_y": -0.2478003503236047,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 10181424,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 88,
+      "split": "train",
+      "family": "irregular_blob",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000088.npz",
+      "sha256": "fa6187c3c737b880e65e2db37d6269f95f37d4860f89a4c1cb5562bb30e3e403",
+      "bytes": 4871919,
+      "optics": {
+        "sigma_x": 1.3288381655982662,
+        "sigma_y": 1.6125735886954995,
+        "ghost_x": 0.7847266532298371,
+        "ghost_y": -0.4135039761155289,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 10286153,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 89,
+      "split": "train",
+      "family": "rectangle",
+      "role": "identity",
+      "polarity": -1.0,
+      "file": "000089.npz",
+      "sha256": "b144b19fd812bcd321102c6bca41677c9097a6dc7b4947520bce9d0ee0bc46ef",
+      "bytes": 3060948,
+      "optics": {
+        "sigma_x": 0.0,
+        "sigma_y": 0.0,
+        "ghost_x": 0.0,
+        "ghost_y": 0.0,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 10390882,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 90,
+      "split": "train",
+      "family": "mixed_field",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000090.npz",
+      "sha256": "c9a0b703a524e7badd29486e9e1e56ca07f03c254170c206ccdc8f253e222890",
+      "bytes": 6475835,
+      "optics": {
+        "sigma_x": 0.40777570578422423,
+        "sigma_y": 0.4351166226969884,
+        "ghost_x": -0.9732575052415029,
+        "ghost_y": 0.6410231762964516,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 10495611,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 91,
+      "split": "train",
+      "family": "dense_array",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000091.npz",
+      "sha256": "3d9b4d3061810abd1183e6fb42d436bd86c6cdae3e5f46eb879c48ebf985bb46",
+      "bytes": 7359843,
+      "optics": {
+        "sigma_x": 1.4039885248630095,
+        "sigma_y": 0.9914717529826345,
+        "ghost_x": -0.47399694534586534,
+        "ghost_y": 0.21082542828837147,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 10600340,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 92,
+      "split": "train",
+      "family": "thin_bar",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000092.npz",
+      "sha256": "120498a013f1604f93df9f5b9ee4f2e9aca30d87aaec59d33fa15ba9e43ccc64",
+      "bytes": 2967866,
+      "optics": {
+        "sigma_x": 0.8980888830098811,
+        "sigma_y": 0.8377528415121844,
+        "ghost_x": 0.07712657854819982,
+        "ghost_y": -0.8897834477257418,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 10705069,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 98,
+      "split": "train",
+      "family": "irregular_blob",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000098.npz",
+      "sha256": "342189e16c20ad78b906341d8470763d7fd3d3b61fe7d00aa30e0c2850f2671f",
+      "bytes": 4681751,
+      "optics": {
+        "sigma_x": 0.9546041373311774,
+        "sigma_y": 0.8395734424747003,
+        "ghost_x": 0.8248082944786137,
+        "ghost_y": 1.1560693791433214,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 11333443,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 100,
+      "split": "train",
+      "family": "thin_bar",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000100.npz",
+      "sha256": "2377929e2f71639c557a20d253b40ff72e4f67da786fbded3d85aac4fda3a244",
+      "bytes": 3315044,
+      "optics": {
+        "sigma_x": 1.7397990050427292,
+        "sigma_y": 2.091133501338501,
+        "ghost_x": 0.6368044454576882,
+        "ghost_y": 0.6332752383653113,
+        "ghost_mix": 0.016205567051096048,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 11542901,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.010319777139300603,
+        0.010262584337127885
+      ]
+    },
+    {
+      "scene_index": 101,
+      "split": "train",
+      "family": "polygon",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000101.npz",
+      "sha256": "fb50f9e32985fe6404fc88260fbe51ce360870425fe0551646d607a0a6ebd3c3",
+      "bytes": 3993535,
+      "optics": {
+        "sigma_x": 2.0500827716749725,
+        "sigma_y": 2.80359628787817,
+        "ghost_x": -0.5028532348148497,
+        "ghost_y": 0.8413571438627307,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 11647630,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 104,
+      "split": "train",
+      "family": "dense_array",
+      "role": "textured_edge",
+      "polarity": 1.0,
+      "file": "000104.npz",
+      "sha256": "98c2125534c0d64043ec47d56a1563dd466712f8dcc92cf7b7aacf72ab8bff7e",
+      "bytes": 7123610,
+      "optics": {
+        "sigma_x": 2.1630963435661243,
+        "sigma_y": 3.0106049192155657,
+        "ghost_x": -0.711375425791442,
+        "ghost_y": -0.8043707969420999,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.12597153754217555
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 11961817,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 105,
+      "split": "train",
+      "family": "polygon",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000105.npz",
+      "sha256": "5297256fcce81d99621f52b994b1e180b642eddfad34ae2a771a6b34de1d637b",
+      "bytes": 3477200,
+      "optics": {
+        "sigma_x": 0.7999130108255372,
+        "sigma_y": 0.9532134119570917,
+        "ghost_x": -0.523254379234131,
+        "ghost_y": 0.6080996302279906,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 12066546,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 107,
+      "split": "train",
+      "family": "dense_array",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000107.npz",
+      "sha256": "71a32f50a5dcfc7861f44a90ca650341a991fafaf1b92b540c8b48aefb7924a8",
+      "bytes": 5682937,
+      "optics": {
+        "sigma_x": 3.1753070312208522,
+        "sigma_y": 4.033480664646507,
+        "ghost_x": -0.6830410168632045,
+        "ghost_y": 0.4838163193727014,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.18250682062012508
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 12276004,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 109,
+      "split": "train",
+      "family": "ring",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000109.npz",
+      "sha256": "a07961e71d3acc851afa2cf2990e59bf0deb7d545117786d6aa4454e0379f8d5",
+      "bytes": 5988557,
+      "optics": {
+        "sigma_x": 2.656469142124575,
+        "sigma_y": 1.9120841085932594,
+        "ghost_x": -0.19866705462230239,
+        "ghost_y": -0.24628381066106675,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0057008986569609295
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 12485462,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 110,
+      "split": "train",
+      "family": "ring",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000110.npz",
+      "sha256": "e177854a883cc0c34d23580e25b1a12666ad29477824e82957c9e1fa62b83018",
+      "bytes": 4852074,
+      "optics": {
+        "sigma_x": 0.5836061598150738,
+        "sigma_y": 0.5412242738166372,
+        "ghost_x": -0.32805105715457705,
+        "ghost_y": -0.44394118842325525,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 12590191,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 119,
+      "split": "train",
+      "family": "crescent",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000119.npz",
+      "sha256": "9d77d6cede033b7112130805def9ba7878a07cd9df473e545dcb77e41783509b",
+      "bytes": 4696709,
+      "optics": {
+        "sigma_x": 0.44558439443636044,
+        "sigma_y": 0.5814222178226213,
+        "ghost_x": -0.825913574194728,
+        "ghost_y": 0.3884984014524804,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 13532752,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 120,
+      "split": "train",
+      "family": "thin_bar",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000120.npz",
+      "sha256": "3eeafdc5d2353860c7d6e48e2260490a2f19455d595994273160ff4d35a40e21",
+      "bytes": 3623431,
+      "optics": {
+        "sigma_x": 1.6183587165985047,
+        "sigma_y": 1.802986488381131,
+        "ghost_x": 1.0983471809860832,
+        "ghost_y": 0.6148146944598667,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 13637481,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 126,
+      "split": "train",
+      "family": "lobed",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000126.npz",
+      "sha256": "eb550538b17fcc1a82291d295b00a6247a3e4e15f99069723bd7adf56fb35f5f",
+      "bytes": 4773834,
+      "optics": {
+        "sigma_x": 0.5553970869270025,
+        "sigma_y": 0.48373486491692147,
+        "ghost_x": 0.3227628651807324,
+        "ghost_y": 0.7214531928542474,
+        "ghost_mix": 0.012469604338809205,
+        "broad_mix": 0.1430544707346467
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 14265855,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.004024725224064151,
+        0.008996235863863077
+      ]
+    },
+    {
+      "scene_index": 130,
+      "split": "train",
+      "family": "crescent",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000130.npz",
+      "sha256": "fe98aa075db7c89e6f342625857819b9ee508323c595538d146a0848a9b7aae1",
+      "bytes": 5306931,
+      "optics": {
+        "sigma_x": 0.45612264104909506,
+        "sigma_y": 0.5809162028452636,
+        "ghost_x": 1.1809391930999877,
+        "ghost_y": -0.5100090092465132,
+        "ghost_mix": 0.06971468935742436,
+        "broad_mix": 0.13100336831279755
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 14684771,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.08232880899697304,
+        -0.03555511964910844
+      ]
+    },
+    {
+      "scene_index": 136,
+      "split": "train",
+      "family": "polygon",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000136.npz",
+      "sha256": "dd698fe7483574d004e3790d7d6da1d54c9de6e89c7264f30abf30e11e0c2fe5",
+      "bytes": 4177202,
+      "optics": {
+        "sigma_x": 1.5114965059982606,
+        "sigma_y": 2.093896076931553,
+        "ghost_x": 0.02904564368914131,
+        "ghost_y": -0.05656543993999419,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 15313145,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 139,
+      "split": "train",
+      "family": "lobed",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000139.npz",
+      "sha256": "66b5e02241fbb82e176955688b015fc5ea7affa7efd11aa58bad347bb29dee32",
+      "bytes": 10510075,
+      "optics": {
+        "sigma_x": 0.5306438822580437,
+        "sigma_y": 0.6061725279581994,
+        "ghost_x": 0.9089020976399607,
+        "ghost_y": -0.8044562099806568,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 15627332,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 148,
+      "split": "train",
+      "family": "ellipse",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000148.npz",
+      "sha256": "bc8e267c2637b14feab2550f73667a8a9df78c937b891425737d7469a3330524",
+      "bytes": 4373217,
+      "optics": {
+        "sigma_x": 2.3997799291213004,
+        "sigma_y": 2.9001389614876207,
+        "ghost_x": -0.8263327186965057,
+        "ghost_y": -0.4746318026290123,
+        "ghost_mix": 0.04305892552390447,
+        "broad_mix": 0.16979358662885405
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 16569893,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.03558099899231835,
+        -0.020437135440679165
+      ]
+    },
+    {
+      "scene_index": 151,
+      "split": "train",
+      "family": "lobed",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000151.npz",
+      "sha256": "4c39b02f06307a6f570e616a698afe7a78a65a0a6352ede9b049e491c5b2b2fa",
+      "bytes": 5594605,
+      "optics": {
+        "sigma_x": 0.8253178707863738,
+        "sigma_y": 0.835517946208598,
+        "ghost_x": 0.9360295101962162,
+        "ghost_y": -1.1569318418315213,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 16884080,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 152,
+      "split": "train",
+      "family": "dense_array",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000152.npz",
+      "sha256": "6a84c838a7a0b699a496ab2a50a8e224b21ec7495ae726dff744eafb916cd0c2",
+      "bytes": 2286076,
+      "optics": {
+        "sigma_x": 0.7293035794932261,
+        "sigma_y": 0.7439095647210564,
+        "ghost_x": 0.029585621334425216,
+        "ghost_y": 0.23797412485258418,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.05975748005542854
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 16988809,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 155,
+      "split": "train",
+      "family": "thin_bar",
+      "role": "textured_edge",
+      "polarity": -1.0,
+      "file": "000155.npz",
+      "sha256": "8e3d96a279eec375798b8866cc07c4cfe19f91eccf1660e4638bd25811f6f057",
+      "bytes": 5856285,
+      "optics": {
+        "sigma_x": 1.7704365234286252,
+        "sigma_y": 1.5807204883513908,
+        "ghost_x": -0.8362732836960748,
+        "ghost_y": -0.3440109752402011,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 17302996,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "scene_index": 159,
+      "split": "train",
+      "family": "thin_neck",
+      "role": "edge",
+      "polarity": 1.0,
+      "file": "000159.npz",
+      "sha256": "87ec33a34a71e15b4d60489d3098a3965dd9dad9e61ab94960fa104e52453e7e",
+      "bytes": 4290013,
+      "optics": {
+        "sigma_x": 0.698455962529467,
+        "sigma_y": 0.8040110168544722,
+        "ghost_x": 0.8063119135711403,
+        "ghost_y": -0.012538587654154165,
+        "ghost_mix": 0.04434336662523402,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 17721912,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.03575458479777908,
+        -0.0005560031893107911
+      ]
+    },
+    {
+      "scene_index": 166,
+      "split": "train",
+      "family": "mixed_field",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000166.npz",
+      "sha256": "197931850ab77b03b8327cf1216243b727846a8543fd04b28135294f01049311",
+      "bytes": 5703605,
+      "optics": {
+        "sigma_x": 0.7982960078857886,
+        "sigma_y": 1.0485847903114032,
+        "ghost_x": -1.0377196781044316,
+        "ghost_y": 0.021407965450825905,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 18455015,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 180,
+      "split": "train",
+      "family": "mixed_field",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000180.npz",
+      "sha256": "1235f4543f144360b98095bd792acdecb908671109fdbd2c55556fbdc48f3e24",
+      "bytes": 5959865,
+      "optics": {
+        "sigma_x": 2.2856689257777907,
+        "sigma_y": 2.435624075626057,
+        "ghost_x": 0.3396111640428514,
+        "ghost_y": 1.094211492320755,
+        "ghost_mix": 0.0,
+        "broad_mix": 0.04018686588456173
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 19921221,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scene_index": 352,
+      "split": "train",
+      "family": "thin_bar",
+      "role": "edge",
+      "polarity": -1.0,
+      "file": "000352.npz",
+      "sha256": "faf7a8b8cacc7e842a9fe57789711a88f625c5aadad7bd3d277321af5ae9f81a",
+      "bytes": 3136413,
+      "optics": {
+        "sigma_x": 0.7346066063313456,
+        "sigma_y": 0.7284119121070532,
+        "ghost_x": -0.7340289300599669,
+        "ghost_y": -1.1410710380971807,
+        "ghost_mix": 0.09134979225997898,
+        "broad_mix": 0.0
+      },
+      "poses": 49,
+      "target_anchor_byte_equal": true,
+      "render_order": [
+        "8x_latent",
+        "8x_translation",
+        "8x_optical_blur",
+        "sensor_area_integration"
+      ],
+      "sdf_convention": "foreground_positive",
+      "base_record_seed": 37934609,
+      "source_anchor_byte_equal": true,
+      "fixed_kernel_centroid_px": [
+        -0.06705339027379262,
+        -0.10423660228405601
+      ]
+    }
+  ]
+}

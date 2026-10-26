@@ -1,0 +1,252 @@
+{
+  "cases": [
+    {
+      "shape": "ellipse",
+      "polarity": "dark",
+      "case": "translation",
+      "loss": 0.009112563972635768,
+      "after_gradient_step": 0.009112552986233825,
+      "gradient_norm": 0.00331457467143261
+    },
+    {
+      "shape": "ellipse",
+      "polarity": "dark",
+      "case": "width_only_blur",
+      "loss": 0.0009409463415214313,
+      "after_gradient_step": 0.0009409452070860797,
+      "gradient_norm": 0.0010650989124889817
+    },
+    {
+      "shape": "ellipse",
+      "polarity": "dark",
+      "case": "expansion",
+      "loss": 0.012654803262864972,
+      "after_gradient_step": 0.012654786938490046,
+      "gradient_norm": 0.004040344105873878
+    },
+    {
+      "shape": "ellipse",
+      "polarity": "bright",
+      "case": "translation",
+      "loss": 0.009112563972635768,
+      "after_gradient_step": 0.009112552986233825,
+      "gradient_norm": 0.0033145746714326103
+    },
+    {
+      "shape": "ellipse",
+      "polarity": "bright",
+      "case": "width_only_blur",
+      "loss": 0.0009409463415214312,
+      "after_gradient_step": 0.0009409452070860799,
+      "gradient_norm": 0.0010650989124889815
+    },
+    {
+      "shape": "ellipse",
+      "polarity": "bright",
+      "case": "expansion",
+      "loss": 0.012654803262864977,
+      "after_gradient_step": 0.012654786938490044,
+      "gradient_norm": 0.004040344105873879
+    },
+    {
+      "shape": "corner",
+      "polarity": "dark",
+      "case": "translation",
+      "loss": 0.0052541680977157236,
+      "after_gradient_step": 0.005254161763120677,
+      "gradient_norm": 0.0025168625219167263
+    },
+    {
+      "shape": "corner",
+      "polarity": "dark",
+      "case": "width_only_blur",
+      "loss": 4.1609280049702355e-05,
+      "after_gradient_step": 4.160922988420812e-05,
+      "gradient_norm": 0.00022397658207764024
+    },
+    {
+      "shape": "corner",
+      "polarity": "dark",
+      "case": "expansion",
+      "loss": 0.003433056087074445,
+      "after_gradient_step": 0.0034330508795989466,
+      "gradient_norm": 0.0022819898581836807
+    },
+    {
+      "shape": "corner",
+      "polarity": "bright",
+      "case": "translation",
+      "loss": 0.0052541680977157236,
+      "after_gradient_step": 0.005254161763120677,
+      "gradient_norm": 0.0025168625219167263
+    },
+    {
+      "shape": "corner",
+      "polarity": "bright",
+      "case": "width_only_blur",
+      "loss": 4.160928004970223e-05,
+      "after_gradient_step": 4.160922988420816e-05,
+      "gradient_norm": 0.0002239765820776399
+    },
+    {
+      "shape": "corner",
+      "polarity": "bright",
+      "case": "expansion",
+      "loss": 0.003433056087074447,
+      "after_gradient_step": 0.0034330508795989458,
+      "gradient_norm": 0.0022819898581836816
+    },
+    {
+      "shape": "thin_ring",
+      "polarity": "dark",
+      "case": "translation",
+      "loss": 0.0075624650034278,
+      "after_gradient_step": 0.007562455885875324,
+      "gradient_norm": 0.003019528973550519
+    },
+    {
+      "shape": "thin_ring",
+      "polarity": "dark",
+      "case": "width_only_blur",
+      "loss": 8.164161226852342e-05,
+      "after_gradient_step": 8.164151383875434e-05,
+      "gradient_norm": 0.00031373523669162565
+    },
+    {
+      "shape": "thin_ring",
+      "polarity": "dark",
+      "case": "expansion",
+      "loss": 0.00752045553590354,
+      "after_gradient_step": 0.0075204435843467515,
+      "gradient_norm": 0.003457103141348763
+    },
+    {
+      "shape": "thin_ring",
+      "polarity": "bright",
+      "case": "translation",
+      "loss": 0.0075624650034278,
+      "after_gradient_step": 0.007562455885875324,
+      "gradient_norm": 0.0030195289735505185
+    },
+    {
+      "shape": "thin_ring",
+      "polarity": "bright",
+      "case": "width_only_blur",
+      "loss": 8.16416122685234e-05,
+      "after_gradient_step": 8.164151383875433e-05,
+      "gradient_norm": 0.0003137352366916255
+    },
+    {
+      "shape": "thin_ring",
+      "polarity": "bright",
+      "case": "expansion",
+      "loss": 0.00752045553590354,
+      "after_gradient_step": 0.0075204435843467515,
+      "gradient_norm": 0.0034571031413487634
+    },
+    {
+      "shape": "narrow_gap",
+      "polarity": "dark",
+      "case": "translation",
+      "loss": 0.0055127670280579475,
+      "after_gradient_step": 0.005512760381687666,
+      "gradient_norm": 0.0025780559119198674
+    },
+    {
+      "shape": "narrow_gap",
+      "polarity": "dark",
+      "case": "width_only_blur",
+      "loss": 6.294154946102597e-05,
+      "after_gradient_step": 6.29414735766576e-05,
+      "gradient_norm": 0.0002754712166979578
+    },
+    {
+      "shape": "narrow_gap",
+      "polarity": "dark",
+      "case": "expansion",
+      "loss": 0.003986236823021715,
+      "after_gradient_step": 0.003986230726755612,
+      "gradient_norm": 0.0024690623153604827
+    },
+    {
+      "shape": "narrow_gap",
+      "polarity": "bright",
+      "case": "translation",
+      "loss": 0.005512767028057948,
+      "after_gradient_step": 0.005512760381687666,
+      "gradient_norm": 0.0025780559119198674
+    },
+    {
+      "shape": "narrow_gap",
+      "polarity": "bright",
+      "case": "width_only_blur",
+      "loss": 6.294154946102587e-05,
+      "after_gradient_step": 6.29414735766576e-05,
+      "gradient_norm": 0.0002754712166979576
+    },
+    {
+      "shape": "narrow_gap",
+      "polarity": "bright",
+      "case": "expansion",
+      "loss": 0.003986236823021716,
+      "after_gradient_step": 0.003986230726755613,
+      "gradient_norm": 0.0024690623153604836
+    },
+    {
+      "shape": "crescent",
+      "polarity": "dark",
+      "case": "translation",
+      "loss": 0.00500927413720512,
+      "after_gradient_step": 0.005009268097862157,
+      "gradient_norm": 0.0024575078399619674
+    },
+    {
+      "shape": "crescent",
+      "polarity": "dark",
+      "case": "width_only_blur",
+      "loss": 5.182457952137609e-05,
+      "after_gradient_step": 5.1824517039986384e-05,
+      "gradient_norm": 0.00024996281436740506
+    },
+    {
+      "shape": "crescent",
+      "polarity": "dark",
+      "case": "expansion",
+      "loss": 0.00526368628209844,
+      "after_gradient_step": 0.00526367815116239,
+      "gradient_norm": 0.0028514802431863634
+    },
+    {
+      "shape": "crescent",
+      "polarity": "bright",
+      "case": "translation",
+      "loss": 0.00500927413720512,
+      "after_gradient_step": 0.005009268097862157,
+      "gradient_norm": 0.002457507839961967
+    },
+    {
+      "shape": "crescent",
+      "polarity": "bright",
+      "case": "width_only_blur",
+      "loss": 5.182457952137598e-05,
+      "after_gradient_step": 5.182451703998637e-05,
+      "gradient_norm": 0.00024996281436740484
+    },
+    {
+      "shape": "crescent",
+      "polarity": "bright",
+      "case": "expansion",
+      "loss": 0.005263686282098441,
+      "after_gradient_step": 0.00526367815116239,
+      "gradient_norm": 0.002851480243186363
+    }
+  ],
+  "identity_cases": 10,
+  "unqualified_mapping_rejected": true,
+  "geometry_enabled_in_A_C": false,
+  "meaning": "Tests an output-image coverage objective on known soft shapes. Responds to blur AND position, not a pure-position estimator. No realSEM mapping qualification inferred.",
+  "source": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R134_DirectStateRepair\\scripts\\geometry_checks134.py",
+    "sha256": "f57590de1e45342c2f108968e6028c4a887d457f719926b9bdd4cd606cd7cf5a"
+  }
+}

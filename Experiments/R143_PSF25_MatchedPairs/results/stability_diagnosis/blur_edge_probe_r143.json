@@ -1,0 +1,108 @@
+{
+  "model": "r143",
+  "checkpoint_sha256": "4d52db1d0b125bcf3bf7085a68719471184617751a98d8380f05f1138c11b67e",
+  "script_sha256": "711d80042fa222ae5146758c89116a2009cbd79c1fc5611a9c17c86f24ce0ccd",
+  "note": "fixed frames with artificial sigma5 broad-halo mixture; diagnostic only",
+  "pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      12,
+      13
+    ]
+  ],
+  "levels": [
+    0.0,
+    0.25,
+    0.5
+  ],
+  "rows": [
+    {
+      "frame_pair": [
+        0,
+        1
+      ],
+      "run": "001804_XY_0",
+      "level": 0.0,
+      "contrast_gray": 79.0,
+      "diameter_mean_nm": 2706.4592928130705,
+      "output_edge_width_px": 1.3832763204124983,
+      "raw_edge_width_px": 3.016141273886631,
+      "model_minus_raw_center_shift_nm": -110.70670258447976,
+      "adjacent_PI_error_nm": -2.253626596151914
+    },
+    {
+      "frame_pair": [
+        0,
+        1
+      ],
+      "run": "001804_XY_0",
+      "level": 0.25,
+      "contrast_gray": 68.0,
+      "diameter_mean_nm": 2723.396833537661,
+      "output_edge_width_px": 1.319299066679735,
+      "raw_edge_width_px": 3.171846813846492,
+      "model_minus_raw_center_shift_nm": -117.5021002175502,
+      "adjacent_PI_error_nm": -0.0480047153039731
+    },
+    {
+      "frame_pair": [
+        0,
+        1
+      ],
+      "run": "001804_XY_0",
+      "level": 0.5,
+      "contrast_gray": 58.0,
+      "diameter_mean_nm": 2765.4861027700426,
+      "output_edge_width_px": 1.2726187953188348,
+      "raw_edge_width_px": 3.385453768400537,
+      "model_minus_raw_center_shift_nm": -124.0724221173756,
+      "adjacent_PI_error_nm": 0.5073391338923372
+    },
+    {
+      "frame_pair": [
+        12,
+        13
+      ],
+      "run": "001804_XY_0",
+      "level": 0.0,
+      "contrast_gray": 78.75,
+      "diameter_mean_nm": 2709.5296727804744,
+      "output_edge_width_px": 1.3747551703059173,
+      "raw_edge_width_px": 3.0122181197391615,
+      "model_minus_raw_center_shift_nm": -114.34793963077257,
+      "adjacent_PI_error_nm": -0.08787337317084365
+    },
+    {
+      "frame_pair": [
+        12,
+        13
+      ],
+      "run": "001804_XY_0",
+      "level": 0.25,
+      "contrast_gray": 68.0,
+      "diameter_mean_nm": 2726.108894884568,
+      "output_edge_width_px": 1.3184093544639595,
+      "raw_edge_width_px": 3.163698723578224,
+      "model_minus_raw_center_shift_nm": -123.19868269647058,
+      "adjacent_PI_error_nm": -0.24961636386167108
+    },
+    {
+      "frame_pair": [
+        12,
+        13
+      ],
+      "run": "001804_XY_0",
+      "level": 0.5,
+      "contrast_gray": 58.0,
+      "diameter_mean_nm": 2765.825808980616,
+      "output_edge_width_px": 1.2715651493675542,
+      "raw_edge_width_px": 3.383797173190703,
+      "model_minus_raw_center_shift_nm": -134.10847115366516,
+      "adjacent_PI_error_nm": 3.375485487618235
+    }
+  ],
+  "completed_utc": "2026-09-24T03:20:37.179811+00:00"
+}

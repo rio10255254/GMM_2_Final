@@ -1,0 +1,73 @@
+{
+  "sem_payload_differences": {
+    "all_inputs_match_original": true,
+    "label_hash_differences": 12,
+    "all_differences_are_declared_softlabel_overlay": true,
+    "unchanged_labels": 611,
+    "overlay_recipe_reexecuted": false
+  },
+  "current_sem_answer_matches": [
+    {
+      "sem_index": "22",
+      "current_radius_nm": 1321.157790071,
+      "training_rows_with_same_radius": 10,
+      "source_ids": "22"
+    },
+    {
+      "sem_index": "23",
+      "current_radius_nm": 1310.008185857,
+      "training_rows_with_same_radius": 9,
+      "source_ids": "23"
+    },
+    {
+      "sem_index": "24",
+      "current_radius_nm": 1310.107187203,
+      "training_rows_with_same_radius": 9,
+      "source_ids": "24"
+    },
+    {
+      "sem_index": "28",
+      "current_radius_nm": 1329.306896599,
+      "training_rows_with_same_radius": 9,
+      "source_ids": "28"
+    },
+    {
+      "sem_index": "29",
+      "current_radius_nm": 1304.359768915,
+      "training_rows_with_same_radius": 7,
+      "source_ids": "29"
+    },
+    {
+      "sem_index": "30",
+      "current_radius_nm": 1310.214278589,
+      "training_rows_with_same_radius": 7,
+      "source_ids": "30"
+    },
+    {
+      "sem_index": "34",
+      "current_radius_nm": 1338.398284825,
+      "training_rows_with_same_radius": 9,
+      "source_ids": "34"
+    },
+    {
+      "sem_index": "35",
+      "current_radius_nm": 1299.375826951,
+      "training_rows_with_same_radius": 9,
+      "source_ids": "35"
+    },
+    {
+      "sem_index": "36",
+      "current_radius_nm": 1310.889999347,
+      "training_rows_with_same_radius": 9,
+      "source_ids": "36"
+    }
+  ],
+  "auxiliary_loaders": {
+    "sequence_training_pairs": 2400,
+    "motion_training_pairs": 3600,
+    "sequence_validation_pairs": 1000,
+    "validation_pairs_also_sequence_training": 1000,
+    "validation_pairs_also_motion_training": 1000,
+    "scope": "Exact pair identity from current original constructor and final launcher constants; random vs center crop differs. Counts alone are not per-batch access logs."
+  }
+}

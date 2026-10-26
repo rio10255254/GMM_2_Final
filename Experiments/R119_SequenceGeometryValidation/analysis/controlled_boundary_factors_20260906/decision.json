@@ -1,0 +1,129 @@
+{
+  "decision": "Prioritize validating and repairing the synthetic-to-real optical boundary/reference relationship before architecture or loss-weight changes. Keep position correction; do not train a hardcoded inward offset or launch long training.",
+  "scope": "240 primary cases plus 100 declared radiometric follow-up cases; three simple geometries; one frozen model. 432 existing real observations with a separately calibrated readout.",
+  "primary_clean_cases": 120,
+  "primary_clean_unnecessary_position_triggers": 0,
+  "primary_clean_oracle_width_triggers": 0,
+  "radiometry_unnecessary_position_triggers": [
+    {
+      "case_id": 24,
+      "shape": "line",
+      "polarity": 1,
+      "group": "independent_levels",
+      "common_valid": 720,
+      "raw_near_correct": true,
+      "unnecessary_position_trigger": true,
+      "oracle_width_trigger": false,
+      "full_minus_raw_median_absolute_error": 0.06952497516135736,
+      "position_minus_raw_median_absolute_error": 0.06279313717345758,
+      "oracle_width_minus_raw_median_absolute_error": 0.015689590613646942
+    }
+  ],
+  "radiometry_oracle_width_triggers": 0,
+  "primary_common_valid_min": 720,
+  "radiometry_common_valid_min": 720,
+  "real_common_valid_min": 711,
+  "real_offsets": {
+    "Raw": {
+      "median_offset_px": 0.6609970396384597,
+      "outward_observations": 432
+    },
+    "attenuation": {
+      "median_offset_px": 0.907346780059866,
+      "outward_observations": 432
+    },
+    "full": {
+      "median_offset_px": 0.93355627451092,
+      "outward_observations": 432
+    },
+    "no_shift": {
+      "median_offset_px": 0.7921807197853923,
+      "outward_observations": 432
+    }
+  },
+  "real_own_level_sensitivity_median": {
+    "Raw_own_levels": 0.6609970396384597,
+    "attenuation_own_levels": 0.9285255521535873,
+    "full_own_levels": 0.9608900658786297,
+    "no_shift_own_levels": 0.8236955907195807
+  },
+  "motion_max_error_by_sensor_method": [
+    {
+      "sensor": "clean_float",
+      "method": "Raw",
+      "max_motion_error_px": 0.0004920793409649446
+    },
+    {
+      "sensor": "clean_float",
+      "method": "full",
+      "max_motion_error_px": 0.0011517820027937985
+    },
+    {
+      "sensor": "clean_float",
+      "method": "geometry",
+      "max_motion_error_px": 0.001140514407557334
+    },
+    {
+      "sensor": "clean_float",
+      "method": "no_shift",
+      "max_motion_error_px": 0.001752747277129706
+    },
+    {
+      "sensor": "clean_float",
+      "method": "oracle_geometry_width",
+      "max_motion_error_px": 0.0016423823484084188
+    },
+    {
+      "sensor": "clean_float",
+      "method": "position_only",
+      "max_motion_error_px": 0.0008355079086874523
+    },
+    {
+      "sensor": "clean_float",
+      "method": "width_only",
+      "max_motion_error_px": 0.0016423754918554268
+    },
+    {
+      "sensor": "noisy_uint8",
+      "method": "Raw",
+      "max_motion_error_px": 0.017153869228314706
+    },
+    {
+      "sensor": "noisy_uint8",
+      "method": "full",
+      "max_motion_error_px": 0.010323069014346166
+    },
+    {
+      "sensor": "noisy_uint8",
+      "method": "geometry",
+      "max_motion_error_px": 0.012997173592765922
+    },
+    {
+      "sensor": "noisy_uint8",
+      "method": "no_shift",
+      "max_motion_error_px": 0.013041249468974067
+    },
+    {
+      "sensor": "noisy_uint8",
+      "method": "oracle_geometry_width",
+      "max_motion_error_px": 0.01600330315414312
+    },
+    {
+      "sensor": "noisy_uint8",
+      "method": "position_only",
+      "max_motion_error_px": 0.013896714393143002
+    },
+    {
+      "sensor": "noisy_uint8",
+      "method": "width_only",
+      "max_motion_error_px": 0.016089276747607406
+    }
+  ],
+  "real_reference_calibration_max_px": 2.8991692602176045e-07,
+  "limits": [
+    "The physical cause of optical/SEM boundary mismatch is not yet identified; possible calibration, boundary definition and imaging effects must be separated.",
+    "Synthetic profile errors are relative to sampled synthetic truth; real offsets are relative to the SEM-mask-derived digital reference. Do not infer a universal physical correction coefficient.",
+    "Repeated baseline cases across parameter groups are explicitly duplicated controls, not independent samples.",
+    "No texture fidelity or full model qualification is established."
+  ]
+}

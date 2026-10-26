@@ -1,0 +1,268 @@
+{
+  "status": "checked_for_thesis_planning",
+  "manifest_files_verified": 279,
+  "scalar_checks": 40,
+  "max_absolute_scalar_difference": 2.609680826992644e-08,
+  "compared_displacements": 3600,
+  "compared_contours": 16740,
+  "improved_scans": {
+    "adjacent": 30,
+    "start": 21
+  },
+  "source_files_unchanged": true,
+  "no_training_or_inference": true,
+  "limits": [
+    "Recomputed aggregates from saved displacements, circles and radial profiles, not a new independent extraction or circle refit.",
+    "SEM reference value and inferred orientation not independently certified.",
+    "No resampling-interval rerun in this planning review.",
+    "No new causal conclusion about architecture or training objective."
+  ],
+  "inputs": {
+    "01_Raw_R128_Comparison\\all_displacements_3600.csv": "a8ef1f847b10e362552265f9ce8ad00f4af5c509ac73af3523fdddd5c308e817",
+    "01_Raw_R128_Comparison\\all_contours_16740.csv": "d3a4fc27feb266021053b18888239a93b99fe5e1bd59ca4dc692b83bc9715377",
+    "01_Raw_R128_Comparison\\main_comparison.csv": "0990d240ee9eec71169a5cc7d1c01dd02d328e0bdab062a3965d01988b517549",
+    "01_Raw_R128_Comparison\\SEM_group_mean_size.csv": "de40ce633bfb5c36df601feecdba0249a3c4ebb0725991c79591c860143ea162"
+  },
+  "checks": [
+    {
+      "name": "Raw/adjacent/mae",
+      "recomputed": 8.166620230507212,
+      "reported": 8.166620231,
+      "difference": 4.927880326022205e-10
+    },
+    {
+      "name": "Raw/adjacent/repeat",
+      "recomputed": 9.725348295276335,
+      "reported": 9.725348295,
+      "difference": 2.7633539900762116e-10
+    },
+    {
+      "name": "Raw/adjacent/max",
+      "recomputed": 39.29920007,
+      "reported": 39.29920007,
+      "difference": 0.0
+    },
+    {
+      "name": "Raw/start/mae",
+      "recomputed": 19.08097292226541,
+      "reported": 19.08097292,
+      "difference": 2.2654091935692122e-09
+    },
+    {
+      "name": "Raw/start/repeat",
+      "recomputed": 13.762740743328754,
+      "reported": 13.76274074,
+      "difference": 3.328754161202596e-09
+    },
+    {
+      "name": "Raw/start/max",
+      "recomputed": 83.26393968,
+      "reported": 83.26393968,
+      "difference": 0.0
+    },
+    {
+      "name": "Raw/endpoint/bias",
+      "recomputed": 40.892287801666676,
+      "reported": 40.8922878,
+      "difference": 1.6666774627083214e-09
+    },
+    {
+      "name": "Raw/endpoint/repeat",
+      "recomputed": 16.124313873958847,
+      "reported": 16.12431387,
+      "difference": 3.958845695706259e-09
+    },
+    {
+      "name": "Raw/diameter_from_radius_max_delta",
+      "recomputed": 9.094947017729282e-13,
+      "reported": 0.0,
+      "difference": 9.094947017729282e-13
+    },
+    {
+      "name": "Raw/diameter_repeat",
+      "recomputed": 32.75025082027589,
+      "reported": 32.75025082027588,
+      "difference": 7.105427357601002e-15
+    },
+    {
+      "name": "Raw/diameter_absmax",
+      "recomputed": 183.31750243366378,
+      "reported": 183.31750243366372,
+      "difference": 5.684341886080802e-14
+    },
+    {
+      "name": "Raw/diameter_mean",
+      "recomputed": 2799.620660179329,
+      "reported": 2799.620660179329,
+      "difference": 0.0
+    },
+    {
+      "name": "Raw/SEM_group_difference",
+      "recomputed": 185.18211692230443,
+      "reported": 185.1821169223041,
+      "difference": 3.410605131648481e-13
+    },
+    {
+      "name": "Raw/contour_repeat",
+      "recomputed": 63.758024105418784,
+      "reported": 63.75802409213334,
+      "difference": 1.328544385614805e-08
+    },
+    {
+      "name": "Raw/shape_repeat",
+      "recomputed": 61.66673767285074,
+      "reported": 61.66673765362415,
+      "difference": 1.9226590097787266e-08
+    },
+    {
+      "name": "R128/adjacent/mae",
+      "recomputed": 3.70813133689217,
+      "reported": 3.708131337,
+      "difference": 1.078301892221134e-10
+    },
+    {
+      "name": "R128/adjacent/repeat",
+      "recomputed": 3.7079681869354535,
+      "reported": 3.707968187,
+      "difference": 6.45465902948672e-11
+    },
+    {
+      "name": "R128/adjacent/max",
+      "recomputed": 15.53525753,
+      "reported": 15.53525753,
+      "difference": 0.0
+    },
+    {
+      "name": "R128/start/mae",
+      "recomputed": 17.863827179616425,
+      "reported": 17.86382718,
+      "difference": 3.835758377590537e-10
+    },
+    {
+      "name": "R128/start/repeat",
+      "recomputed": 10.09511395488523,
+      "reported": 10.09511395,
+      "difference": 4.885229998308205e-09
+    },
+    {
+      "name": "R128/start/max",
+      "recomputed": 74.37300509,
+      "reported": 74.37300509,
+      "difference": 0.0
+    },
+    {
+      "name": "R128/endpoint/bias",
+      "recomputed": 41.966055231333335,
+      "reported": 41.96605523,
+      "difference": 1.333333443653828e-09
+    },
+    {
+      "name": "R128/endpoint/repeat",
+      "recomputed": 14.1929703575067,
+      "reported": 14.19297036,
+      "difference": 2.4932997888527098e-09
+    },
+    {
+      "name": "R128/diameter_from_radius_max_delta",
+      "recomputed": 9.094947017729282e-13,
+      "reported": 0.0,
+      "difference": 9.094947017729282e-13
+    },
+    {
+      "name": "R128/diameter_repeat",
+      "recomputed": 9.526661880742715,
+      "reported": 9.526661880742711,
+      "difference": 3.552713678800501e-15
+    },
+    {
+      "name": "R128/diameter_absmax",
+      "recomputed": 50.11039442555875,
+      "reported": 50.11039442555875,
+      "difference": 0.0
+    },
+    {
+      "name": "R128/diameter_mean",
+      "recomputed": 2836.478251866762,
+      "reported": 2836.478251866762,
+      "difference": 0.0
+    },
+    {
+      "name": "R128/SEM_group_difference",
+      "recomputed": 222.03970860973732,
+      "reported": 222.0397086097372,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "name": "R128/contour_repeat",
+      "recomputed": 13.834662120429133,
+      "reported": 13.834662094332325,
+      "difference": 2.609680826992644e-08
+    },
+    {
+      "name": "R128/shape_repeat",
+      "recomputed": 13.005319395820162,
+      "reported": 13.00531937147742,
+      "difference": 2.4342742932503825e-08
+    },
+    {
+      "name": "adjacent/mae_nm/reduction_percent",
+      "recomputed": 54.59405198096323,
+      "reported": 54.59405198096323,
+      "difference": 0.0
+    },
+    {
+      "name": "adjacent/repeatability_nm/reduction_percent",
+      "recomputed": 61.8731579114103,
+      "reported": 61.8731579114103,
+      "difference": 0.0
+    },
+    {
+      "name": "adjacent/maximum_error_nm/reduction_percent",
+      "recomputed": 60.46927799464494,
+      "reported": 60.46927799464494,
+      "difference": 0.0
+    },
+    {
+      "name": "start/mae_nm/reduction_percent",
+      "recomputed": 6.378845277455591,
+      "reported": 6.378845277455591,
+      "difference": 0.0
+    },
+    {
+      "name": "start/repeatability_nm/reduction_percent",
+      "recomputed": 26.648956478126607,
+      "reported": 26.648956478126607,
+      "difference": 0.0
+    },
+    {
+      "name": "start/maximum_error_nm/reduction_percent",
+      "recomputed": 10.678013344275605,
+      "reported": 10.678013344275604,
+      "difference": 1.7763568394002505e-15
+    },
+    {
+      "name": "contour/diameter_repeat_sd_nm/reduction_percent",
+      "recomputed": 70.91117886998074,
+      "reported": 70.91117886998074,
+      "difference": 0.0
+    },
+    {
+      "name": "contour/contour_repeat_sd_nm/reduction_percent",
+      "recomputed": 78.30130043813688,
+      "reported": 78.30130043813688,
+      "difference": 0.0
+    },
+    {
+      "name": "contour/shape_repeat_sd_nm/reduction_percent",
+      "recomputed": 78.91031718829204,
+      "reported": 78.91031718829204,
+      "difference": 0.0
+    },
+    {
+      "name": "contour/diameter_repeat_absmax_nm/reduction_percent",
+      "recomputed": 72.66469717276888,
+      "reported": 72.66469717276888,
+      "difference": 0.0
+    }
+  ]
+}

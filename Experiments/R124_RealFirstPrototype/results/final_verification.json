@@ -1,0 +1,70 @@
+{
+  "status": "prototype_implemented_mechanically_verified_untrained",
+  "unit_tests_passed": 26,
+  "paired_native_backward_shape": [
+    2,
+    1,
+    640,
+    640
+  ],
+  "peak_allocated_gib": 22.567601203918457,
+  "optimizer_updates": 0,
+  "default_parameter_count": 301212,
+  "maximum_default_tile_error": 1.1920928955078125e-07,
+  "max_kernel_test_channels": 8,
+  "identity_real_outputs_exact_in_model_FP32_units": 6,
+  "real_outputs": 12,
+  "trace_stages_recomputed": 8,
+  "maximum_trace_closure_error": 0.0,
+  "CLI_float_reload_exact": true,
+  "SEM_readout_rows": 432,
+  "SEM_Raw_parity_cases": 144,
+  "SEM_floor_sensitive_crossings_retained": 4,
+  "protected_sources_by_scope": {
+    "real_smoke": 17,
+    "SEM_adapter": 163
+  },
+  "historical_R119_inputs_unchanged": 132,
+  "R123_design_sources_unchanged": 12,
+  "new_model_efficacy_established": false,
+  "instrument_qualified": false,
+  "uncertainty_calibrated": false,
+  "full_ACM_and_full_real_motion_evaluated": false,
+  "confirmation_image_access": false,
+  "preserved_failures": [
+    "runs\\launcher_logs\\network_initial_failure.log",
+    "runs\\launcher_logs\\sampling_v1.log",
+    "results\\sampling_initial_source.py",
+    "results\\sem_smoke_v1\\failure.json",
+    "results\\sem_smoke_v1\\adapter_source_failed_v1.py"
+  ],
+  "size_gib": 1.1555187655612826,
+  "figures_visually_inspected": [
+    "results/real_smoke_v1/untrained_real_previews.png",
+    "results/sem_smoke_v1/followup_v2/untrained_sem_half_readout.png"
+  ],
+  "local_report_links_checked": 5,
+  "implementation_sha256": {
+    "model\\calibration.py": "1e28ebc60284bf5a016ed4d8b003cdc2ec622ee398d47e0fb0ba15fa16b04c1b",
+    "model\\checkpoint.py": "13aeaded3b640e3e7357cbfd6f77bd1dc45fd63898662b46c69a7aa29e2f4eda",
+    "model\\network.py": "cd28871f053d5a6303b7ede76b84316df749ec40623f230e88f6559ecd22bc11",
+    "model\\observation.py": "6525c10f4a61b3d9f886e54c4cd53fba1f12cd0faa30da3154f8c85d51deff21",
+    "model\\__init__.py": "7c95182d9252fbcf729e602801486544751cd575cf54b53c46f475c911a8a726",
+    "inference\\run.py": "76facb3ec95b2147f3805583d48e8cd7306178a590fc0e91191517ca05d13e29",
+    "inference\\tiling.py": "a03643583a6b365e083d5abec3fc67d8af4e2d376fee3b86d035687b8d8047b1",
+    "inference\\__init__.py": "d6db7e94b62f7948e81a48d58e3c201c146a0f28076a0cc264128c347ca541c2",
+    "scripts\\check_sampling.py": "3e72c6fb2623835e6c93dad96679d95ce2ee40711d964db52d7ced41bdbf193b",
+    "scripts\\final_verify.py": "532fdb020c0963e8f2f97e7fe45f241e33a0fbc151518978d31c16e9cecbd221",
+    "scripts\\measure_sem_smoke.py": "60edfc03955283bd8e0c6022665fd8f735258da14682a783c4197db2150c8c7a",
+    "scripts\\run_real_smoke.py": "531064a8fd164ef7a7551444c0ec1de66ad4687b363fb1120ac900c5b52f99c7",
+    "scripts\\run_runtime_checks.py": "8149e249d1c865fccf18e73f8f0f48c15627b4a67830aa3919e98306a07c92c3",
+    "tests\\test_calibration_checkpoint.py": "dd8a98e975fdfb5ab87d64158aa0de286c9230871a8d68c6253ec5044e468060",
+    "tests\\test_network.py": "b0ccf39065113194472122b9e3288cac4dfe5a555a429caa6ff2ec6bb4219715",
+    "tests\\test_observation.py": "bb554f6e66e2debb3d46e5cf156f35d55241531b155c12019bd163936406e7bc",
+    "config\\gaussian_diagnostic.json": "ab2a87a0a5a41707b6e1c1af1c066cfab493a7b133ef2d9cc041a0f52385e719",
+    "config\\identity_diagnostic.json": "ebe604a20e49ea16f56669ef5bdf1758c1b501fe08854fd74763080604fff2fd",
+    "config\\verification_protocol.json": "b4d5ff39e3ba4f0096150be0c5249a5c83a8898849d7a541871f49f9a3d11dc4",
+    "reports\\R124_IMPLEMENTATION.md": "3bb6a7243722709ad76a13cbfa3f5bbf04420e932153d9ea0cded9fedd4a1a2b",
+    "reports\\R124_RESULTS.md": "f74c98eb82075ed0496064ea6cba6ac55bb360691ec7cf73238d76b16ca941b5"
+  }
+}

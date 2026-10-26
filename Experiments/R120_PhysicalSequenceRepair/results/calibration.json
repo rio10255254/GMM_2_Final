@@ -1,0 +1,225 @@
+{
+  "status": "pass",
+  "fixtures": [
+    {
+      "case": "shift_0_0",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          0.0,
+          0.0
+        ],
+        "rms": 1.1478451868418532e-16,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 0.0,
+      "pass": true
+    },
+    {
+      "case": "shift_1_0",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          0.9999999999778799,
+          -1.1428716998040702e-14
+        ],
+        "rms": 1.564751192726223e-13,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 2.212008354263162e-11,
+      "pass": true
+    },
+    {
+      "case": "shift_-1_0",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          -0.999999999977948,
+          -4.4361235610879356e-15
+        ],
+        "rms": 1.559968489375679e-13,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 2.2052026871222097e-11,
+      "pass": true
+    },
+    {
+      "case": "shift_0_1",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          -5.365178602991194e-16,
+          1.0000000000001552
+        ],
+        "rms": 1.4575380926886734e-15,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 1.5520917884259688e-13,
+      "pass": true
+    },
+    {
+      "case": "shift_0_-1",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          -1.2474296334250872e-15,
+          -1.0000000000001728
+        ],
+        "rms": 1.5884413612263986e-15,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 1.7275070263167436e-13,
+      "pass": true
+    },
+    {
+      "case": "shift_0.5_0.5",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          0.5000000000014276,
+          0.499999999999986
+        ],
+        "rms": 2.1127391219085763e-07,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 1.4276357873654888e-12,
+      "pass": true
+    },
+    {
+      "case": "shift_-0.5_-0.5",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          -0.49999999999907696,
+          -0.5000000000002875
+        ],
+        "rms": 2.1127391217764437e-07,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 9.230394226733551e-13,
+      "pass": true
+    },
+    {
+      "case": "shift_0.125_0",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          0.1250002386574912,
+          -6.401398365121986e-11
+        ],
+        "rms": 1.501648267643511e-08,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 2.386574911861228e-07,
+      "pass": true
+    },
+    {
+      "case": "gain_offset",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          0.0,
+          0.0
+        ],
+        "rms": 1.0485234317249933e-16,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 0.0,
+      "pass": true
+    },
+    {
+      "case": "saturated_gain",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          0.0,
+          0.0
+        ],
+        "rms": 4.949668367701337e-17,
+        "min_information_eigenvalue": 0.5764974053120318,
+        "observations_used": 3108
+      },
+      "error": 0.0,
+      "pass": true
+    },
+    {
+      "case": "symmetric_blur",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          3.942283224080934e-07,
+          -3.451239015671343e-07
+        ],
+        "rms": 0.0009480788721211724,
+        "min_information_eigenvalue": 0.6244511910740688,
+        "observations_used": 3136
+      },
+      "error": 5.239527436912805e-07,
+      "pass": true
+    },
+    {
+      "case": "dark",
+      "result": {
+        "valid": true,
+        "reason": "ok",
+        "xy": [
+          0.0,
+          0.0
+        ],
+        "rms": 1.3139163172987077e-15,
+        "min_information_eigenvalue": 0.6244511910740687,
+        "observations_used": 3136
+      },
+      "error": 0.0,
+      "pass": true
+    },
+    {
+      "case": "flat",
+      "result": {
+        "valid": false,
+        "reason": "flat",
+        "xy": null
+      },
+      "pass": true
+    },
+    {
+      "case": "axis",
+      "result": {
+        "valid": false,
+        "reason": "unobservable_axis",
+        "xy": null
+      },
+      "pass": true
+    },
+    {
+      "case": "crop",
+      "result": {
+        "valid": false,
+        "reason": "shape_mismatch",
+        "xy": null
+      },
+      "pass": true
+    }
+  ],
+  "scope": "all validity and photometry cases contribute to status; no relaxed tolerance"
+}

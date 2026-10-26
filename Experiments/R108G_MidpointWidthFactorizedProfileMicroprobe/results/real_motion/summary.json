@@ -1,0 +1,89 @@
+{
+  "status": "complete",
+  "frames": 301,
+  "measurements": 6672,
+  "all_sequences_pass": true,
+  "decisions": [
+    {
+      "sequence": "5x_0p5um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "5x_1um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "20x_0p5um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "20x_1um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "50x_0p5um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    },
+    {
+      "sequence": "50x_1um",
+      "pass": true,
+      "checks": {
+        "valid_fraction": true,
+        "direction": true,
+        "scale": true,
+        "median_difference": true,
+        "p95_difference": true,
+        "response": true,
+        "ecc": true
+      }
+    }
+  ],
+  "elapsed_seconds": 554.4181794999167,
+  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R108G_MidpointWidthFactorizedProfileMicroprobe\\weights\\midpoint_width_operator.pth",
+  "checkpoint_sha256": "dee456de3572526cbbf71241c470f832bf243a70f26f08d2e5950c99883bb935"
+}

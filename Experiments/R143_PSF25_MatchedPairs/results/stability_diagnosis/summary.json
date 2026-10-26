@@ -1,0 +1,134 @@
+{
+  "created_utc": "2026-09-24T03:23:54.611920+00:00",
+  "sources": {
+    "bank_sha256": "25cc6c95a224caae0e4a0380a88980551586a35cdb34eebde2635639e2c29553",
+    "checkpoint_sha256": "4d52db1d0b125bcf3bf7085a68719471184617751a98d8380f05f1138c11b67e"
+  },
+  "displacement": {
+    "old_adjacent_mae_nm": 3.6400117033424655,
+    "new_adjacent_mae_nm": 4.425408590377795,
+    "old_repeatability_nm": 3.5304623475280303,
+    "new_repeatability_nm": 4.289956950276407,
+    "positions_worse_sd": 25,
+    "scans_worse_mae": 29,
+    "extra_error_mean_nm": 0.13896071665836396,
+    "extra_error_sd_nm": 4.262697739498659
+  },
+  "psf_center": {
+    "mean_xy_px": [
+      -0.5497137312684618,
+      0.5473008128126344
+    ],
+    "expected_inverse_xy_px": [
+      0.5497137312684618,
+      -0.5473008128126344
+    ],
+    "r143_minus_raw_mean_xy_px": [
+      0.5510097278631851,
+      -0.5566162370583888
+    ],
+    "r143_minus_raw_ci95_xy_px": [
+      [
+        0.51042144980068,
+        0.5877066850560372
+      ],
+      [
+        -0.5738724060461684,
+        -0.5374138744390631
+      ]
+    ],
+    "r140_minus_raw_mean_xy_px": [
+      -0.12641570633348653,
+      0.08141613562556668
+    ],
+    "inference": "alignment supports learning the inverse offset but constant offset cancels in adjacent displacement"
+  },
+  "edge": {
+    "raw_mean_width_px": 3.177581610641736,
+    "old_mean_width_px": 0.9128393027267707,
+    "new_mean_width_px": 1.3359570528454547,
+    "old_width_repeat_sd_px": 0.027711827428520783,
+    "new_width_repeat_sd_px": 0.04510967093765995,
+    "width_groups_worse": 266,
+    "old_r50_repeat_sd_px": 0.04792006199494838,
+    "new_r50_repeat_sd_px": 0.07117447622347935,
+    "r50_groups_worse": 271,
+    "run_raw_width_center_shift_corr": 0.8377774957381084,
+    "run_raw_width_diameter_shift_corr": 0.9787256447178332,
+    "run_contrast_diameter_shift_corr": -0.9854853397802947,
+    "controlled_broad_blur": [
+      {
+        "frame_pair_start": 0,
+        "raw_width_change_px": 0.36931249451390613,
+        "old_output_width_change_px": 0.02789619156009815,
+        "new_output_width_change_px": -0.11065752509366344,
+        "old_diameter_change_nm": 28.71136066386498,
+        "new_diameter_change_nm": 59.0268099569721
+      },
+      {
+        "frame_pair_start": 12,
+        "raw_width_change_px": 0.3715790534515415,
+        "old_output_width_change_px": 0.025995118191400213,
+        "new_output_width_change_px": -0.10319002093836316,
+        "old_diameter_change_nm": 26.625089264568032,
+        "new_diameter_change_nm": 56.29613620014152
+      }
+    ]
+  },
+  "sensor_noise": {
+    "pairs": 12,
+    "old_mean_nm": 2.274119538875186,
+    "new_mean_nm": 2.3250380168632176,
+    "worse_pairs": 7,
+    "run_cluster_mean_difference_nm": 0.05091847798803131,
+    "run_cluster_ci95_nm": [
+      -0.590723491641296,
+      0.6925604476173586
+    ]
+  },
+  "subpixel": {
+    "frames": 12,
+    "fractional_shifts": 36,
+    "fourier_rms_old_nm": 0.8666038059717119,
+    "fourier_rms_new_nm": 2.7333438647187207,
+    "fourier_worse_frames": 12,
+    "fourier_run_cluster_mean_rms_penalty_nm": 1.8271193992538493,
+    "fourier_run_cluster_ci95_nm": [
+      1.4872761979445581,
+      2.1286021402002655
+    ],
+    "cubic_three_frame_rms_old_nm": 5.286790208356537,
+    "cubic_three_frame_rms_new_nm": 4.118830227181947,
+    "warning": "subpixel diagnostic ranking changes under cubic interpolation"
+  },
+  "optical_branch": {
+    "real_frames": 4,
+    "max_on_off_center_rms_nm": 0.043258947296439296,
+    "max_candidate_0_vs_24_center_rms_nm": 3.0656907767049518e-06
+  },
+  "sem_comparison": {
+    "raw_gap_nm": 185.18211692230443,
+    "r143_gap_nm": 110.52853800386627,
+    "reduction_nm": 74.65357891843816,
+    "reduction_percent": 40.31360055666717,
+    "r143_minus_raw_diameter_mean_nm": -74.65357891843793,
+    "r143_minus_raw_scan_ci95_nm": [
+      -75.7521904340928,
+      -73.56838897624539
+    ],
+    "r143_smaller_scans": 30,
+    "per_pillar_closer_counts": {
+      "1": {
+        "vs_raw": 9,
+        "vs_r140": 9,
+        "all_r143_still_oversize": true
+      },
+      "2": {
+        "vs_raw": 9,
+        "vs_r140": 9,
+        "all_r143_still_oversize": true
+      }
+    },
+    "independence_unproven": true
+  }
+}

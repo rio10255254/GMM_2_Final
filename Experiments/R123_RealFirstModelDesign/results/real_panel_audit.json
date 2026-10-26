@@ -1,0 +1,114 @@
+{
+  "source_groups": [
+    {
+      "source_id": "sem_paired_exposures",
+      "images": 12,
+      "role": "primary_real_geometry_development",
+      "independence": "reused or unqualified; folder count is not sample count"
+    },
+    {
+      "source_id": "original_sem_images",
+      "images": 9,
+      "role": "paired_geometry_reference",
+      "independence": "reused or unqualified; folder count is not sample count"
+    },
+    {
+      "source_id": "real_six_motion_suites",
+      "images": 301,
+      "role": "primary_real_motion_and_structure_development",
+      "independence": "reused or unqualified; folder count is not sample count"
+    },
+    {
+      "source_id": "real_checkerboard",
+      "images": 51,
+      "role": "primary_real_corner_safety_development",
+      "independence": "reused or unqualified; folder count is not sample count"
+    },
+    {
+      "source_id": "thesis_static_SEM_sample",
+      "images": 1,
+      "role": "supplementary_reused_size_development",
+      "independence": "reused or unqualified; folder count is not sample count"
+    },
+    {
+      "source_id": "same_frame_CAD_source",
+      "images": 39,
+      "role": "diagnostic_only_source_requires_lineage_before_training",
+      "independence": "reused or unqualified; folder count is not sample count"
+    },
+    {
+      "source_id": "candidate_optics_calibration",
+      "images": 25,
+      "role": "candidate_calibration_not_yet_qualified_for_next_operator",
+      "independence": "reused or unqualified; folder count is not sample count"
+    }
+  ],
+  "physical_image_files_read": 438,
+  "aliases_not_double_counted": [
+    "real_nonpillar_full_fields"
+  ],
+  "primary_reused_development_unique_files": 364,
+  "historical_real_results": [
+    {
+      "reference": "historical",
+      "method": "R109_full",
+      "observations": 432,
+      "pillars": 36,
+      "exposures": 12,
+      "independent_sample_count": 1,
+      "median_pillar_acm_change_pp": -0.03955638408660872,
+      "median_pillar_half_change_px": 0.11446305727335385,
+      "acm_improved_pillars": 36,
+      "half_improved_pillars": 0,
+      "decision": "readout_correspondence_unresolved_no_physical_success_claim"
+    },
+    {
+      "reference": "historical",
+      "method": "R119_full",
+      "observations": 432,
+      "pillars": 36,
+      "exposures": 12,
+      "independent_sample_count": 1,
+      "median_pillar_acm_change_pp": 0.08370685577392581,
+      "median_pillar_half_change_px": 0.2418500262723358,
+      "acm_improved_pillars": 0,
+      "half_improved_pillars": 0,
+      "decision": "observed_real_geometry_regression"
+    },
+    {
+      "reference": "global_pitch_matched",
+      "method": "R109_full",
+      "observations": 432,
+      "pillars": 36,
+      "exposures": 12,
+      "independent_sample_count": 1,
+      "median_pillar_acm_change_pp": -0.03277632594108601,
+      "median_pillar_half_change_px": 0.0696056317839085,
+      "acm_improved_pillars": 36,
+      "half_improved_pillars": 0,
+      "decision": "readout_correspondence_unresolved_no_physical_success_claim"
+    },
+    {
+      "reference": "global_pitch_matched",
+      "method": "R119_full",
+      "observations": 432,
+      "pillars": 36,
+      "exposures": 12,
+      "independent_sample_count": 1,
+      "median_pillar_acm_change_pp": 0.07432765513658501,
+      "median_pillar_half_change_px": 0.1739889399367749,
+      "acm_improved_pillars": 0,
+      "half_improved_pillars": 0,
+      "decision": "observed_real_geometry_regression"
+    }
+  ],
+  "no_new_model_inference": true,
+  "no_training": true,
+  "no_confirmation_payload_access": true,
+  "limitations": [
+    "Sample independence is not established by folder names.",
+    "SEM optical-to-material readout correspondence is not fully calibrated.",
+    "Real nonpillar detail and actual stage motion lack independent truth in this inventory.",
+    "Pixel-level source statistics do not establish camera saturation; rail fractions are only raw diagnostics."
+  ]
+}

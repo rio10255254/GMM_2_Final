@@ -1,0 +1,59 @@
+{
+  "seed": 10321,
+  "steps": 600,
+  "before": {
+    "raw_mae_gray": 6.589415394597584,
+    "prediction_mae_gray": 6.598082264264424,
+    "raw_hf_gray": 2.7566377876533403,
+    "prediction_hf_gray": 2.7568221100502543,
+    "change_gray": 0.39882053931554157,
+    "identity_change_gray": 0.40728002538283664,
+    "contour_gray": 0.0006536131841130555,
+    "texture_gray": 0.00032051524613052607,
+    "low_gray": 0.40107113619645435,
+    "mae_improvement_fraction": -0.0013152714084387895,
+    "hf_improvement_fraction": -6.686493152630035e-05,
+    "source_target_hf_correlation": 0.6844889281524552
+  },
+  "after": {
+    "raw_mae_gray": 6.589415394597584,
+    "prediction_mae_gray": 6.701390203502443,
+    "raw_hf_gray": 2.7566377876533403,
+    "prediction_hf_gray": 2.7568047833111553,
+    "change_gray": 1.0761407994561725,
+    "identity_change_gray": 1.0762567669153214,
+    "contour_gray": 0.0012731413589790463,
+    "texture_gray": 0.0013995012268424034,
+    "low_gray": 1.0753633975982666,
+    "mae_improvement_fraction": -0.016993132501050612,
+    "hf_improvement_fraction": -6.057947060100766e-05,
+    "source_target_hf_correlation": 0.6844889281524552
+  },
+  "trace": [
+    {
+      "step": 1,
+      "loss": 0.07296288758516312,
+      "gradient_norm": 201.4636993408203
+    },
+    {
+      "step": 25,
+      "loss": 0.06988870352506638,
+      "gradient_norm": 132.2444610595703
+    },
+    {
+      "step": 100,
+      "loss": 0.07753543555736542,
+      "gradient_norm": 0.26175656914711
+    },
+    {
+      "step": 300,
+      "loss": 0.08038332313299179,
+      "gradient_norm": 0.6444101929664612
+    },
+    {
+      "step": 600,
+      "loss": 0.09299997985363007,
+      "gradient_norm": 0.37461960315704346
+    }
+  ]
+}

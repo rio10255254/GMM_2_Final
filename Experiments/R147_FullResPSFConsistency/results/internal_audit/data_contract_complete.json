@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "metadata_verified": 768,
+  "train_category_counts": {
+    "irregular_curved": 103,
+    "corners_lines_junctions": 102,
+    "dense_close_structures": 102,
+    "textured_edges": 102,
+    "flat_negative": 51,
+    "clean_identity": 26,
+    "noisy_identity": 26
+  },
+  "train_dense_disk_parents": 45,
+  "train_dense_disk_radius_range": [
+    2.245840723121807,
+    9.748613364366868
+  ],
+  "train_dense_disk_pitch_range": [
+    10.133466168734204,
+    22.806196224917315
+  ],
+  "train_dense_disk_gap_range": [
+    1.9526734089199138,
+    5.924360336148997
+  ],
+  "train_irregular_radius_range": [
+    18.359086679693917,
+    51.194207320436725
+  ],
+  "train_motion_pairs": 461,
+  "train_identity_parents": 52,
+  "test_mean_psf_RMS_gray_median": 0.10703753738526683,
+  "test_mean_psf_RMS_gray_max": 1.189744237242985,
+  "test_mean_psf_error_below_noise_views": 224,
+  "test_nonidentity_views": 232,
+  "real_reader_reference_radius": 8.33015937350939,
+  "real_reader_reference_pitch": 28.933063776210922,
+  "note": "Geometry mismatch is observed coverage, not a demonstrated sole cause; mean bank error compared to simulated individual PSF only.",
+  "source_script_sha256": "8b39636bdcb731ba645c988714d9c5a9fe6de9c427350a8f23606c33f905705f"
+}

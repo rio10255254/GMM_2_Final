@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "device": "NVIDIA RTX A6000",
+  "precision": "FP32",
+  "warmup": 1,
+  "repeats_per_frame": 5,
+  "frames": [
+    {
+      "frame": "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty\\20260902_100MF_uncertainty\\20260903\\001804_XY_0\\1.bmp",
+      "model": "R148v2",
+      "median_seconds": 1.5255725999595597,
+      "times": [
+        1.5255725999595597,
+        1.5341027999529615,
+        1.518959500011988,
+        1.546886199968867,
+        1.5158527999883518
+      ],
+      "peak_allocated_bytes": 2631514624,
+      "peak_incremental_bytes": 2591217152
+    },
+    {
+      "frame": "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty\\20260902_100MF_uncertainty\\20260903\\001804_XY_0\\1.bmp",
+      "model": "R152",
+      "median_seconds": 1.5424391999840736,
+      "times": [
+        1.56303239997942,
+        1.5387942000525072,
+        1.574356900062412,
+        1.5424391999840736,
+        1.540810800041072
+      ],
+      "peak_allocated_bytes": 3010807296,
+      "peak_incremental_bytes": 2591217152
+    },
+    {
+      "frame": "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty\\20260902_100MF_uncertainty\\20260903\\004246_XY_0\\1.bmp",
+      "model": "R148v2",
+      "median_seconds": 1.5283979000523686,
+      "times": [
+        1.5229910999769345,
+        1.5478159999474883,
+        1.5283979000523686,
+        1.5250157000264153,
+        1.5551677999319509
+      ],
+      "peak_allocated_bytes": 3010807296,
+      "peak_incremental_bytes": 2591217152
+    },
+    {
+      "frame": "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty\\20260902_100MF_uncertainty\\20260903\\004246_XY_0\\1.bmp",
+      "model": "R152",
+      "median_seconds": 1.5618713999865577,
+      "times": [
+        1.5618713999865577,
+        1.569630500045605,
+        1.5445852999109775,
+        1.584155899938196,
+        1.5486334000015631
+      ],
+      "peak_allocated_bytes": 3010807296,
+      "peak_incremental_bytes": 2591217152
+    },
+    {
+      "frame": "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty\\20260902_100MF_uncertainty\\20260903\\005143_XY_0\\31.bmp",
+      "model": "R148v2",
+      "median_seconds": 1.5402935000602156,
+      "times": [
+        1.562573799979873,
+        1.5359152000164613,
+        1.5639219000004232,
+        1.5402935000602156,
+        1.5373952999943867
+      ],
+      "peak_allocated_bytes": 3010807296,
+      "peak_incremental_bytes": 2591217152
+    },
+    {
+      "frame": "C:\\Users\\Rio\\Downloads\\20260902_100MF_uncertainty\\20260902_100MF_uncertainty\\20260903\\005143_XY_0\\31.bmp",
+      "model": "R152",
+      "median_seconds": 1.5713496999815106,
+      "times": [
+        1.555890899966471,
+        1.588615500018932,
+        1.5713496999815106,
+        1.5641946999821812,
+        1.6038657000754029
+      ],
+      "peak_allocated_bytes": 3010807296,
+      "peak_incremental_bytes": 2591217152
+    }
+  ],
+  "median_of_frame_medians": {
+    "R148v2": 1.5283979000523686,
+    "R152": 1.5618713999865577
+  },
+  "peak_incremental_bytes": {
+    "R148v2": 2591217152,
+    "R152": 2591217152
+  },
+  "memory_note": "Both models are resident in one process; compare incremental temporary memory, not peak allocated across the entire process.",
+  "completed_utc": "2026-09-29T05:10:39.157473+00:00"
+}
