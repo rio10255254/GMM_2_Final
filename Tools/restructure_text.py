@@ -85,6 +85,37 @@ def rewrite_bytes(data, file_old, file_new, ctx):
     return _rewrite_decoded(data, file_old, file_new, ctx, cls)
 
 
+def token_starts(tok):
+    """Where a path may start inside a token: 0, then after any non-path character (CJK text, '=', ':')."""
+    yield 0
+    if ABS_START.match(tok) or tok.startswith(('/', '\\')):
+        return               # never look inside an absolute path
+    for i in range(1, len(tok)):
+        if tok[i - 1] not in WORD and tok[i - 1] not in '/\\' and tok[i] not in '/\\':
+            yield i
+
+
+def resolve_token(tok, file_rel, uni, external_map):
+    """(offset, Resolved) for the first place in a path-shaped token that resolves, or None."""
+    for i in token_starts(tok):
+        res = resolve(tok[i:], file_rel, uni, external_map)
+        if res is not None:
+            return i, res
+    return None
+
+
+def token_targets(text, file_rel, uni, external_map):
+    """Targets of every path-shaped token in `text`, in order."""
+    out = []
+    for m in TOKEN.finditer(text):
+        tok = m.group(0)
+        if '/' in tok or '\\' in tok:
+            found = resolve_token(tok, file_rel, uni, external_map)
+            if found:
+                out.append(found[1].target_rel)
+    return out
+
+
 def rewrite_fragment(text, file_old, file_new, ctx, cls='record'):
     """Rewrite a piece of already-decoded text (a comment, a string literal's source) as `cls` would be."""
     job = _Job(text, file_old, file_new, ctx, cls)
@@ -208,20 +239,7 @@ class _Job:
                 self.add(m.start() + offset, m.end(), new[0], 'path', res.target_rel, new[1], hold=False)
 
     def resolve_token(self, tok):
-        uni, ext = self.ctx.uni, self.ctx.external_map
-        res = resolve(tok, self.file_old, uni, ext)
-        if res is not None:
-            return 0, res
-        if ABS_START.match(tok) or tok.startswith(('/', '\\')):
-            return None          # never look inside an absolute path we do not map
-        for i in range(1, len(tok)):
-            prev = tok[i - 1]
-            if prev in WORD or prev in '/\\' or tok[i] in '/\\':
-                continue
-            res = resolve(tok[i:], self.file_old, uni, ext)
-            if res is not None:
-                return i, res
-        return None
+        return resolve_token(tok, self.file_old, self.ctx.uni, self.ctx.external_map)
 
     def new_text(self, res, link=False):
         """(replacement, new_target) for a resolved reference, or None to leave it."""

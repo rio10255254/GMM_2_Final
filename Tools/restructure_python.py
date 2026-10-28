@@ -79,6 +79,34 @@ def rewrite_python(src, file_old, file_new, ctx):
     return job.result()
 
 
+def evaluated_targets(src, file_rel, ctx):
+    """Every path expression's target in `src` as the evaluator sees it ('<prefix>/<dyn>' for a
+    dynamic tail), or None when the source does not parse. Constants inside f-strings and
+    docstrings are left out: they are text, not expressions."""
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter('ignore', SyntaxWarning)
+            tree = ast.parse(src)
+    except (SyntaxError, ValueError):
+        return None
+    job = _PyJob(src, tree, file_rel, file_rel, ctx)
+    job.bind_pass(tree, record=False)
+    skip = job.docstrings()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.JoinedStr):
+            skip.update(n for n in ast.walk(node))
+    out = []
+    for node in ast.walk(tree):
+        if node in skip:
+            continue
+        if job.is_top_chain(node) or job.join_parts(node) is not None or \
+                (_is_str(node) and ABS_START.match(node.value)):
+            v = job.ev(node)
+            if v is not None and not v.is_file:
+                out.append(v.rel + ('/<dyn>' if v.dyn else ''))
+    return out
+
+
 class _PyJob:
     def __init__(self, src, tree, file_old, file_new, ctx):
         self.src, self.tree, self.file_old, self.file_new, self.ctx = src, tree, file_old, file_new, ctx
