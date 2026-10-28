@@ -1,0 +1,30 @@
+{
+  "state": "complete",
+  "passed": true,
+  "frames": 166,
+  "methods": [
+    "Raw",
+    "Wiener",
+    "V42",
+    "R152"
+  ],
+  "phases": [
+    0,
+    1
+  ],
+  "circle_fits": 11952,
+  "pairs": 960,
+  "original_phase_pattern_reproduces_all_four_methods": true,
+  "original_center_max_difference_px": {
+    "lsc_center_x_px": 6.821210263296962e-13,
+    "lsc_center_y_px": 1.1368683772161603e-13,
+    "lsc_radius_px": 7.105427357601002e-15
+  },
+  "state_center_effect_max_nm": 30.195238445343108,
+  "state_center_effect_mean_nm": 2.3953754925488435,
+  "phase0": "SI(IS(.)) first, reset per pillar; matches R152 native evaluation reset convention",
+  "phase1": "IS(SI(.)) first, reset per pillar; sensitivity only",
+  "outcome": "Order-sensitive coarse contour state confirmed; final LSC circle optimization itself is stateless.",
+  "original_results_preserved": true,
+  "elapsed_seconds": 170.7524358999217
+}

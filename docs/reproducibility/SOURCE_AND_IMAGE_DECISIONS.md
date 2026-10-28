@@ -37,7 +37,7 @@
 
 ## 外部位移照片的裁切版：怎麼從原拍切出來
 
-送外部 GMF 的公司圓環序列，模型讀的不是原拍，而是 `Cropped_Output` 裁切版（重建資料夾名稱裡的 `..._in_Cropped_Output_...` 就是它）。裁切版沒有上傳；Release `research-shared-sources-20261016` 的 `Shared_Sources/NTU_Originals/` 存的是完整原拍（5120×5120、8 位元灰階）。2026-10-26 整理時才發現這道裁切的參數以前沒有寫下來，於是拿本機 `D:\NTU_ImageDataset\` 的裁切版逐張對回原拍，結果每一張都是原拍裡固定位置的一塊，像素完全相同，沒有縮放或其他處理：
+送外部 GMF 的公司圓環序列，模型讀的不是原拍，而是 `Cropped_Output` 裁切版（重建資料夾名稱裡的 `..._in_Cropped_Output_...` 就是它）。裁切版原本沒有上傳（2026-10-28 已補進 [research-ntu-gmf-and-crops-20261028](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-ntu-gmf-and-crops-20261028)，見 [NTU原拍與裁切](../../Shared_Sources/NTU_Originals/README.md)）；Release `research-shared-sources-20261016` 的 `Shared_Sources/NTU_Originals/` 存的是完整原拍（5120×5120、8 位元灰階）。2026-10-26 整理時才發現這道裁切的參數以前沒有寫下來，於是拿本機 `D:\NTU_ImageDataset\` 的裁切版逐張對回原拍，結果每一張都是原拍裡固定位置的一塊，像素完全相同，沒有縮放或其他處理：
 
 | 序列 | 裁切版 | 左上角（列 y, 行 x） | 高×寬 | 逐張核對 |
 |---|---|---|---|---|

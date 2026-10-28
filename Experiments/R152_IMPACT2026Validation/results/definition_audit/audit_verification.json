@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "corrected_pairs_checked": 480,
+  "corrected_centers": 5976,
+  "center_to_pair_max_difference_nm": 1.5700152289355174e-10,
+  "order_invariance_checks": [
+    {
+      "sequence": "20x_0p5um",
+      "method": "Raw",
+      "center_radius_max_difference_px": 0.0
+    },
+    {
+      "sequence": "20x_0p5um",
+      "method": "R152",
+      "center_radius_max_difference_px": 0.0
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "method": "Raw",
+      "center_radius_max_difference_px": 0.0
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "method": "R152",
+      "center_radius_max_difference_px": 0.0
+    }
+  ],
+  "known_circle_lsc_verified": true,
+  "full_order_cause_verified": true,
+  "no_new_inference_or_training": true,
+  "original_results_preserved": true
+}

@@ -1,0 +1,22 @@
+{
+  "sequence": "20x_1um",
+  "frame_index": 3,
+  "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0003.bmp",
+  "source_sha256": "0406a9c5887fcc3a0ef31d4f0e35decf622b279636ba677265b7a1c807a83090",
+  "output": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\results\\20x\\reconstruction\\20x_1um\\frame_0003.npz",
+  "output_sha256": "fa420670f76c5d3b90c6e0b151e6dd2bf6182961c72bd85793b3e8f3b2fc41a3",
+  "checkpoint_sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61",
+  "bank_sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+  "object_um_per_px": 0.1725,
+  "deployment_scale": 1,
+  "precision": "FP32",
+  "tf32": false,
+  "core": 512,
+  "halo": 24,
+  "forward_seconds": 2.12710609997157,
+  "device": "cuda",
+  "shape": [
+    1536,
+    2048
+  ]
+}

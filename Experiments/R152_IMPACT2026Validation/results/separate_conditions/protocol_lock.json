@@ -1,0 +1,16 @@
+{
+  "user_scope": "20x thesis data, display each condition separately; recheck 50x reconstruction",
+  "created_utc": "2026-09-29T17:20:00Z",
+  "checkpoint_sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61",
+  "twenty_x": "20260903, 30 full scans x 31 frames, nominal 1um, all 900 steps",
+  "fifty_x": "original 20260702 0.5um and 1um, original 30 locked pairs each",
+  "reader": "thesis normal-gradient geometric LSC with curvature reset per pillar; native objective settings 64 points at 20x and 96 points at 50x",
+  "wiener_nsr": 0.0565,
+  "twenty_x_scale_um_per_px": 0.1725,
+  "fifty_x_scale_um_per_px": 0.069,
+  "primary": "one sample SD of 30 image-measured steps in each scan/condition; never combine objectives or nominal step conditions",
+  "twenty_x_summary": "display all 30 per-scan SDs; pooled within-condition SD matches thesis report; each scan retains its identity",
+  "no_retraining": true,
+  "no_formal_baseline_changes": true,
+  "previous_radial720_results_retained": true
+}

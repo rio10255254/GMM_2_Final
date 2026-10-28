@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "source_files_rechecked": 364,
+  "source_files_unchanged": true,
+  "output_images_verified": 80,
+  "partial_pairs_per_method": 60,
+  "center_rows": 2160,
+  "pair_rows": 180,
+  "center_to_pair_max_numeric_difference": 1.176836406102666e-10,
+  "historical_replay_passed": true,
+  "full_four_condition_result": false,
+  "blocked": "R152 compatible 50x optical bank and verified installation",
+  "artifacts": [
+    {
+      "path": "reports/R152_AUDIT.md",
+      "sha256": "a1dfc6fd7669f47838c55087ceebc26f27379baa36c06b619be61870e20bdb5a"
+    },
+    {
+      "path": "reports/R152_RESULTS.md",
+      "sha256": "0f4e430292391bd290de942df9aeff66e430e8505baa86eac0a1cdbd5d6af8b9"
+    },
+    {
+      "path": "poster_assets/POSTER_TEXT.md",
+      "sha256": "13f4dd8d3405d6da6a31a974e5105a34bc3649455b0a6f6364a056efe3aaf1f5"
+    },
+    {
+      "path": "poster_assets/RESULTS_20X_TEXT.md",
+      "sha256": "a13a15e31c5c9ad90d2ea2ae17ffcb299a1e9df5dcb8433a9050dcf949a7ddcd"
+    },
+    {
+      "path": "poster_assets/results_20x_only.png",
+      "sha256": "bd18b27e8b1e8b74d70729401678bb33f3a8cd827337790166a1a032a6abe682"
+    },
+    {
+      "path": "poster_assets/results_20x_only.svg",
+      "sha256": "721eb47a714fd5f04dc5e1783e5e3108df7e6406e71544675070b15449ed3e3b"
+    },
+    {
+      "path": "poster_assets/representative_20x_only.png",
+      "sha256": "508a1306cd48afa2fab078479d1c5593e1f6aba75bd99f3de52e4e0551911838"
+    },
+    {
+      "path": "poster_assets/representative_20x_only.svg",
+      "sha256": "cec0a3ce990a6b9eef0104f4a93939555cd32da39bc63beac9882d30622f788c"
+    },
+    {
+      "path": "poster_assets/method_protocol_pending.png",
+      "sha256": "5a63466806933b60b6301136ca2d90aa735df6baf97d1ad7cd1b82f8114e74eb"
+    },
+    {
+      "path": "poster_assets/method_protocol_pending.svg",
+      "sha256": "55a056e7382850b1f984ba3d714c0f44fcfe69efac9b9b5a2ee951dec05f4ade"
+    }
+  ]
+}

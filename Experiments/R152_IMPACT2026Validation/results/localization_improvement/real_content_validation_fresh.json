@@ -1,0 +1,99 @@
+{
+  "selected_reader": "radial_720_lsc",
+  "known_shift_cases": 384,
+  "overall_mean_vector_error_px": {
+    "fixed_state_lsc": 0.027992670375065403,
+    "paired_translation_background_plane": 0.018032868463854834,
+    "radial_720_lsc": 0.012751579300033462,
+    "radial_intensity_fit": 0.009104649113907147
+  },
+  "overall_passed": true,
+  "per_method": [
+    {
+      "reader": "fixed_state_lsc",
+      "method": "R152",
+      "mean": 0.007182927476022352,
+      "median": 0.0073485733099285366,
+      "max": 0.02700218336193652
+    },
+    {
+      "reader": "fixed_state_lsc",
+      "method": "Raw",
+      "mean": 0.05933901525469393,
+      "median": 0.03644825853449857,
+      "max": 0.2534561087425922
+    },
+    {
+      "reader": "fixed_state_lsc",
+      "method": "Wiener",
+      "mean": 0.017456068394479923,
+      "median": 0.01116282521758813,
+      "max": 0.07987069555025375
+    },
+    {
+      "reader": "paired_translation_background_plane",
+      "method": "R152",
+      "mean": 0.017725700170304833,
+      "median": 0.013639050451219648,
+      "max": 0.06316842906348377
+    },
+    {
+      "reader": "paired_translation_background_plane",
+      "method": "Raw",
+      "mean": 0.028079491936273127,
+      "median": 0.022790378057760817,
+      "max": 0.1017562058368683
+    },
+    {
+      "reader": "paired_translation_background_plane",
+      "method": "Wiener",
+      "mean": 0.008293413284986536,
+      "median": 0.0003136895155790433,
+      "max": 0.10608990336008876
+    },
+    {
+      "reader": "radial_720_lsc",
+      "method": "R152",
+      "mean": 0.0064553537752466,
+      "median": 0.005331255090958324,
+      "max": 0.028680511013401824
+    },
+    {
+      "reader": "radial_720_lsc",
+      "method": "Raw",
+      "mean": 0.01778874120404456,
+      "median": 0.010266130305211344,
+      "max": 0.07781659089510994
+    },
+    {
+      "reader": "radial_720_lsc",
+      "method": "Wiener",
+      "mean": 0.014010642920809231,
+      "median": 0.008279142118847286,
+      "max": 0.08643889227587288
+    },
+    {
+      "reader": "radial_intensity_fit",
+      "method": "R152",
+      "mean": 0.01316186090728669,
+      "median": 0.004174113238031109,
+      "max": 0.05965258198911477
+    },
+    {
+      "reader": "radial_intensity_fit",
+      "method": "Raw",
+      "mean": 0.008357724394570915,
+      "median": 0.006353556032906089,
+      "max": 0.04786708397669346
+    },
+    {
+      "reader": "radial_intensity_fit",
+      "method": "Wiener",
+      "mean": 0.00579436203986384,
+      "median": 0.003799896111085304,
+      "max": 0.02524487247283195
+    }
+  ],
+  "real120_scores_used": false,
+  "limitation": "Digital Fourier shifts test estimator sensitivity on actual content, not an independent physical displacement calibration."
+}

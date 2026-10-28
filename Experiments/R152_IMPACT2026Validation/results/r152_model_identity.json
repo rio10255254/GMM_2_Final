@@ -1,0 +1,37 @@
+{
+  "checkpoint": {
+    "path": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\runs\\formal_8192\\checkpoints\\deployed_step08192.pth",
+    "step": 8192,
+    "sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61"
+  },
+  "base_checkpoint_sha256": "8daddf823166b373d3c3b437ebb9869e3d2260ed83d72613140669d92ee0db22",
+  "deployment_scale": 1,
+  "base_state_items": 192,
+  "frozen_base_identical": true,
+  "optical_state": {
+    "base.optics.bank": [
+      25,
+      1,
+      101,
+      101
+    ],
+    "base.optics.mean_kernel": [
+      1,
+      1,
+      101,
+      101
+    ],
+    "psf_fusion.bank": [
+      25,
+      1,
+      101,
+      101
+    ],
+    "psf_fusion.psf_descriptors": [
+      25,
+      3
+    ]
+  },
+  "delivered_optical_scale_um_per_px": 0.1725,
+  "compatible_50x_bank_found": false
+}

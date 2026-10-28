@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "source_files_rechecked": 364,
+  "source_files_unchanged": true,
+  "images_verified": 166,
+  "pairs_per_method": 120,
+  "center_rows": 4482,
+  "pair_rows": 360,
+  "center_to_pair_max_numeric_difference": 1.5687362520111492e-10,
+  "raw_wiener_original_max_difference": {
+    "measured_step_um": 0.0,
+    "nominal_abs_error_nm": 0.0,
+    "within_grid_sd_nm": 3.552713678800501e-15
+  },
+  "same_learned_checkpoint_across_magnifications": true,
+  "objective_specific_optics": true,
+  "single_psf_adapter_verified": true,
+  "full_four_condition_result": true,
+  "measurement_protocol_matches_paper": true,
+  "exact_submitted_model_implementation": false,
+  "user_authorized_optical_input_adapter": true,
+  "formal_baseline_unchanged": true,
+  "blocked": null,
+  "artifacts": [
+    {
+      "path": "reports\\R152_RESULTS.md",
+      "sha256": "0de6859885f6667eb10d291fa898a6a1587aa5c368b974c3c35fc25c38ff8c7f"
+    },
+    {
+      "path": "reports\\R152_AUDIT.md",
+      "sha256": "75ae900c7b2ddbeba3241933f7d3327d48b915b43e5db05dc8857bf9630eead3"
+    },
+    {
+      "path": "poster_assets\\full120\\START_HERE.md",
+      "sha256": "73b5e2ed3f3eb6cca3529de9130aac3c913ab735145ac104dc97070c673b660d"
+    },
+    {
+      "path": "poster_assets\\full120\\POSTER_TEXT.md",
+      "sha256": "d002f6510a6b05bdc2dc5ac87f21e11b30e5b973801684185e6d49eb1b56e3b2"
+    },
+    {
+      "path": "poster_assets\\full120\\01_aggregate_results.png",
+      "sha256": "67e8313cdc44e233db0bc0824a6f8c3e09bf1aeaa3890bc1c66e2a713c6d75ed"
+    },
+    {
+      "path": "poster_assets\\full120\\01_aggregate_results.svg",
+      "sha256": "b39b8803ba159b5547de7a05bb75bd8926ef720f092aa7388ef2e4148fa4594b"
+    },
+    {
+      "path": "poster_assets\\full120\\02_condition_results.png",
+      "sha256": "374006990c1963e42768d1eae2121f2cf7e3baa6783a974fc383c901f210c0c9"
+    },
+    {
+      "path": "poster_assets\\full120\\02_condition_results.svg",
+      "sha256": "5a0183b0997374f2af15ddb9e025048e9e42db6881a9bcb9867021c79a5928fb"
+    },
+    {
+      "path": "poster_assets\\full120\\03_representative_outputs.png",
+      "sha256": "fe101468806dc5e67ceef2450648944c621bc0c7ef8484f3eaae423a863ee2ea"
+    },
+    {
+      "path": "poster_assets\\full120\\03_representative_outputs.svg",
+      "sha256": "4131bce95a3d6695c36ca4813160b45729b8bce569f15fc6c8686d39be1165ff"
+    },
+    {
+      "path": "poster_assets\\full120\\04_measurement_protocol.png",
+      "sha256": "ed17f48e9405a508b74ac3509b75a6a2660a27ce470ea5bc625b465b12de206d"
+    },
+    {
+      "path": "poster_assets\\full120\\04_measurement_protocol.svg",
+      "sha256": "6c5f862624261ec0063e3d43b4c7be5367d84800c7608a9f33f8331814d2a8b4"
+    }
+  ]
+}

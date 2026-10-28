@@ -1,0 +1,25 @@
+{
+  "scope": "Historical submission replay only. Historical MOSR is V42, not R152.",
+  "checks": {
+    "centers": {
+      "rows": 4482,
+      "max_abs_difference": {
+        "lsc_center_x_px": 4.547473508864641e-13,
+        "lsc_center_y_px": 1.1368683772161603e-13,
+        "lsc_radius_px": 3.552713678800501e-15
+      },
+      "passed": true
+    },
+    "pairs": {
+      "rows": 360,
+      "max_abs_difference": {
+        "measured_step_um": 2.220446049250313e-16,
+        "nominal_abs_error_nm": 3.552713678800501e-15,
+        "within_grid_sd_nm": 3.552713678800501e-15
+      },
+      "passed": true
+    }
+  },
+  "passed": true,
+  "seconds": 81.70492090005428
+}

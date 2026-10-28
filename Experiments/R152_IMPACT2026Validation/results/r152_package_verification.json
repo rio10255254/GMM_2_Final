@@ -1,0 +1,19 @@
+[
+  {
+    "script": "verify_package.py",
+    "result": {
+      "status": "passed",
+      "checked": 32,
+      "failures": []
+    }
+  },
+  {
+    "script": "verify_complete_record.py",
+    "result": {
+      "status": "passed",
+      "checked_links": 29,
+      "errors": [],
+      "report": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_COMPLETE_MODEL_AND_EXPERIMENT_RECORD_20260929.md"
+    }
+  }
+]

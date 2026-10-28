@@ -1,0 +1,5166 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/y90nupkv",
+    "id": "y90nupkv",
+    "slide": 1,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "標題投影片",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 3401.57,
+      "height": 4535.43
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Default Design 1",
+    "colors": {
+      "accent1": "#BBE0E3",
+      "accent2": "#333399",
+      "accent3": "#FFFFFF",
+      "accent4": "#000000",
+      "accent5": "#DAEDEF",
+      "accent6": "#2D2D8A",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#000000",
+      "lt2": "#808080",
+      "hlink": "#009999",
+      "folHlink": "#99CC00"
+    },
+    "fontScheme": {
+      "name": "Default Design",
+      "majorFont": {
+        "latinTypeface": "Arial"
+      },
+      "minorFont": {
+        "latinTypeface": "Arial"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Times New Roman"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "標題投影片",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/2",
+          "id": "2",
+          "name": "標題 1",
+          "bbox": [
+            259.17,
+            1431.5,
+            2937.67,
+            987.67
+          ],
+          "geometry": "rect",
+          "text": "按一下以編輯母片標題樣式",
+          "textPreview": "按一下以編輯母片標題樣式",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "按一下以編輯母片標題樣式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "按一下以編輯母片標題樣式"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout1.xml/3",
+          "id": "3",
+          "name": "副標題 2",
+          "bbox": [
+            518.33,
+            2611.17,
+            2419.33,
+            1177.67
+          ],
+          "geometry": "rect",
+          "text": "按一下以編輯母片副標題樣式",
+          "textPreview": "按一下以編輯母片副標題樣式",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "按一下以編輯母片副標題樣式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "按一下以編輯母片副標題樣式"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "bg1",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vql4fu9c",
+      "id": "3074",
+      "name": "AutoShape 50",
+      "bbox": [
+        1734.25,
+        843.83,
+        1600.39,
+        3580.05
+      ],
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 1
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/upcnmps7",
+      "id": "3075",
+      "name": "AutoShape 4",
+      "bbox": [
+        59.06,
+        839.9,
+        1600.39,
+        3580.05
+      ],
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 1
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wre5ozax",
+      "id": "3077",
+      "name": "Text Box 10",
+      "bbox": [
+        118.11,
+        3111.22,
+        1476.38,
+        142.72
+      ],
+      "geometry": "rect",
+      "text": "Methods",
+      "textPreview": "Methods",
+      "resolvedFontSize": 106.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 106.67,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Methods"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Methods",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 106.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Methods",
+              "fontSize": 106.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bu143a98",
+      "id": "3078",
+      "name": "Text Box 11",
+      "bbox": [
+        1781.5,
+        3420.28,
+        1486.22,
+        142.72
+      ],
+      "geometry": "rect",
+      "text": "Conclusions",
+      "textPreview": "Conclusions",
+      "resolvedFontSize": 101.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 101.33,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Conclusions"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Conclusions",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 101.33,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Conclusions",
+              "fontSize": 101.33,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 1
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qts3a5sn",
+      "id": "3079",
+      "name": "AutoShape 13",
+      "bbox": [
+        53.15,
+        52.49,
+        3295.28,
+        724.41
+      ],
+      "geometry": "roundRect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": "tx1",
+      "lineWidth": 1
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/elove9wn",
+      "id": "3080",
+      "name": "Text Box 14",
+      "bbox": [
+        118.11,
+        275.59,
+        3169.29,
+        438.4
+      ],
+      "geometry": "rect",
+      "text": "Measurement-Oriented Microscopy Reconstruction\nfor Cross-Magnification Micro-Displacement Inspection",
+      "textPreview": "Measurement-Oriented Microscopy Reconstruction | for Cross-Magnification Micro-Displacement Inspection",
+      "resolvedFontSize": 106.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 106.67,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Measurement-Oriented Microscopy Reconstruction"
+          },
+          {
+            "index": 2,
+            "text": "for Cross-Magnification Micro-Displacement Inspection"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Measurement-Oriented Microscopy Reconstruction",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 106.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Measurement-Oriented Microscopy Reconstruction",
+              "fontSize": 106.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "for Cross-Magnification Micro-Displacement Inspection",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 106.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "for Cross-Magnification Micro-Displacement Inspection",
+              "fontSize": 106.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/298vitwz",
+      "id": "3084",
+      "name": "Text Box 27",
+      "bbox": [
+        1801.18,
+        3976.38,
+        1437.01,
+        142.72
+      ],
+      "geometry": "rect",
+      "text": "Bibliography",
+      "textPreview": "Bibliography",
+      "resolvedFontSize": 74.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 74.67,
+        "typeface": "Arial",
+        "color": "#111111",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Bibliography"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Bibliography",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 74.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Bibliography",
+              "fontSize": 74.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l83ylszi",
+      "id": "3090",
+      "name": "Text Box 42",
+      "bbox": [
+        118.11,
+        902.56,
+        1476.38,
+        142.72
+      ],
+      "geometry": "rect",
+      "text": "Introduction",
+      "textPreview": "Introduction",
+      "resolvedFontSize": 106.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 106.67,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Introduction"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Introduction",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 106.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Introduction",
+              "fontSize": 106.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k7uxc7yx",
+      "id": "3091",
+      "name": "Text Box 43",
+      "bbox": [
+        1781.5,
+        904.53,
+        1486.22,
+        142.72
+      ],
+      "geometry": "rect",
+      "text": "Results",
+      "textPreview": "Results",
+      "resolvedFontSize": 106.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 106.67,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Results"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Results",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 106.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Results",
+              "fontSize": 106.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j61gj2hc",
+      "id": "3092",
+      "name": "Text Box 49",
+      "bbox": [
+        2960.63,
+        193.9,
+        344.49,
+        175.47
+      ],
+      "geometry": "rect",
+      "text": "Paper Code:",
+      "textPreview": "Paper Code:",
+      "resolvedFontSize": 37.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 37.33,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Paper Code:"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Paper Code:",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 37.33,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Paper Code:",
+              "fontSize": 37.33,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/3210zylc",
+      "id": "3095",
+      "name": "圖片 22",
+      "bbox": [
+        3038.39,
+        90.06,
+        263.78,
+        88.58
+      ],
+      "contentType": "image/jpeg",
+      "imageCrop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 8248
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image2.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 8248
+      }
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7algn2ho",
+      "id": "3096",
+      "name": "authors",
+      "bbox": [
+        157.48,
+        570.87,
+        3080.71,
+        70.87
+      ],
+      "geometry": "rect",
+      "text": "Yen Hsuan Chiang, Liang-Chia Chen*",
+      "textPreview": "Yen Hsuan Chiang, Liang-Chia Chen*",
+      "resolvedFontSize": 61.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 61.33,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Yen Hsuan Chiang, Liang-Chia Chen*"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Yen Hsuan Chiang, Liang-Chia Chen*",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 61.33,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Yen Hsuan Chiang, Liang-Chia Chen*",
+              "fontSize": 61.33,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/69cfexg3",
+      "id": "3097",
+      "name": "affiliation",
+      "bbox": [
+        157.48,
+        644.69,
+        3080.71,
+        54.13
+      ],
+      "geometry": "rect",
+      "text": "Department of Mechanical Engineering, National Taiwan University",
+      "textPreview": "Department of Mechanical Engineering, National Taiwan University",
+      "resolvedFontSize": 45.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 45.33,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Department of Mechanical Engineering, National Taiwan University"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Department of Mechanical Engineering, National Taiwan University",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 45.33,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Department of Mechanical Engineering, National Taiwan University",
+              "fontSize": 45.33,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gjed8za",
+      "id": "3098",
+      "name": "contact",
+      "bbox": [
+        167.32,
+        709.65,
+        3061.02,
+        45.28
+      ],
+      "geometry": "rect",
+      "text": "No. 1, Sec. 4, Roosevelt Rd., Taipei 10617, Taiwan.  *Correspondence: lchen@ntu.edu.tw",
+      "textPreview": "No. 1, Sec. 4, Roosevelt Rd., Taipei 10617, Taiwan.  *Correspondence: lchen@ntu.edu.tw",
+      "resolvedFontSize": 33.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 33.33,
+        "typeface": "Arial",
+        "color": "#111111",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "No. 1, Sec. 4, Roosevelt Rd., Taipei 10617, Taiwan.  *Correspondence: lchen@ntu.edu.tw"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "No. 1, Sec. 4, Roosevelt Rd., Taipei 10617, Taiwan.  *Correspondence: lchen@ntu.edu.tw",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 33.33,
+            "typeface": "Arial",
+            "color": "#111111",
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "No. 1, Sec. 4, Roosevelt Rd., Taipei 10617, Taiwan.  *Correspondence: lchen@ntu.edu.tw",
+              "fontSize": 33.33,
+              "typeface": "Arial",
+              "color": "#111111",
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofqx4nyp",
+      "id": "3099",
+      "name": "intro_body",
+      "bbox": [
+        123.03,
+        1072.83,
+        1456.69,
+        423.23
+      ],
+      "geometry": "rect",
+      "text": "Optical inspection benefits from reconstruction when clearer boundaries produce more stable position measurements. Changing magnification changes object-space sampling and the pixel phase of the same motion. Single-step displacement dispersion therefore provides a direct test of measurement utility.\n\nMOSR reconstructs each monochrome image on its original pixel grid. One fixed set of learned weights serves 20× and 50× objectives. Raw, fixed Wiener and MOSR use the same image pairs and pillar identities.\n\nThe primary outcome is one standard deviation from 30 locked single-step displacements in each condition.",
+      "textPreview": "Optical inspection benefits from reconstruction when clearer boundaries produce more stable position measurements. Changing magnification...",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 40,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 11,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Optical inspection benefits from reconstruction when clearer boundaries produce more"
+          },
+          {
+            "index": 2,
+            "text": "stable position measurements. Changing magnification changes object-space sampling and"
+          },
+          {
+            "index": 3,
+            "text": "the pixel phase of the same motion. Single-step displacement dispersion therefore"
+          },
+          {
+            "index": 4,
+            "text": "provides a direct test of measurement utility."
+          },
+          {
+            "index": 5,
+            "text": ""
+          },
+          {
+            "index": 6,
+            "text": "MOSR reconstructs each monochrome image on its original pixel grid. One fixed set of"
+          },
+          {
+            "index": 7,
+            "text": "learned weights serves 20× and 50× objectives. Raw, fixed Wiener and MOSR use the"
+          },
+          {
+            "index": 8,
+            "text": "same image pairs and pillar identities."
+          },
+          {
+            "index": 9,
+            "text": ""
+          },
+          {
+            "index": 10,
+            "text": "The primary outcome is one standard deviation from 30 locked single-step displacements"
+          },
+          {
+            "index": 11,
+            "text": "in each condition."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Optical inspection benefits from reconstruction when clearer boundaries produce more stable position measurements. Changing magnification changes object-space sampling and the pixel phase of the same motion. Single-step displacement dispersion therefore provides a direct test of measurement utility.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Optical inspection benefits from reconstruction when clearer boundaries produce more stable position measurements. Changing magnification changes object-space sampling and the pixel phase of the same motion. Single-step displacement dispersion therefore provides a direct test of measurement utility.",
+              "fontSize": 40,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "MOSR reconstructs each monochrome image on its original pixel grid. One fixed set of learned weights serves 20× and 50× objectives. Raw, fixed Wiener and MOSR use the same image pairs and pillar identities.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "MOSR reconstructs each monochrome image on its original pixel grid. One fixed set of learned weights serves 20× and 50× objectives. Raw, fixed Wiener and MOSR use the same image pairs and pillar identities.",
+              "fontSize": 40,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "The primary outcome is one standard deviation from 30 locked single-step displacements in each condition.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The primary outcome is one standard deviation from 30 locked single-step displacements in each condition.",
+              "fontSize": 40,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/36tsvihs",
+      "id": "3100",
+      "name": "raw_label",
+      "bbox": [
+        162.4,
+        1533.46,
+        639.76,
+        63.98
+      ],
+      "geometry": "rect",
+      "text": "Raw",
+      "textPreview": "Raw",
+      "resolvedFontSize": 50.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 50.67,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Raw"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Raw",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 50.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Raw",
+              "fontSize": 50.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/25kb2dgn",
+      "id": "3101",
+      "name": "mosr_label",
+      "bbox": [
+        925.2,
+        1533.46,
+        639.76,
+        63.98
+      ],
+      "geometry": "rect",
+      "text": "MOSR",
+      "textPreview": "MOSR",
+      "resolvedFontSize": 50.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 50.67,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "MOSR"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "MOSR",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 50.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "MOSR",
+              "fontSize": 50.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/psbaxszy",
+      "id": "3102",
+      "name": "mag-20×",
+      "bbox": [
+        123.03,
+        1574.8,
+        162.4,
+        59.06
+      ],
+      "geometry": "rect",
+      "text": "20×",
+      "textPreview": "20×",
+      "resolvedFontSize": 38.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 38.67,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "20×"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "20×",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 38.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "20×",
+              "fontSize": 38.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/3ud03itk",
+      "id": "3103",
+      "bbox": [
+        162.4,
+        1633.86,
+        639.76,
+        639.76
+      ],
+      "alt": "20× Raw actual field",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "bdbadc29-19ad-49d1-81cb-ee7b88b72fc9",
+        "contentType": "image/png",
+        "byteLength": 4233
+      }
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/budszih4",
+      "id": "3104",
+      "name": "scale-20×-Raw",
+      "bbox": [
+        677.25,
+        2228.35,
+        80.63,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 5.91
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qtkb6xgj",
+      "id": "3105",
+      "name": "scale-label-20×-Raw",
+      "bbox": [
+        657.56,
+        2170.28,
+        120,
+        44.29
+      ],
+      "geometry": "rect",
+      "text": "2 µm",
+      "textPreview": "2 µm",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 32,
+        "typeface": "Arial",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2 µm"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2 µm",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Arial",
+            "color": "#FFFFFF",
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2 µm",
+              "fontSize": 32,
+              "typeface": "Arial",
+              "color": "#FFFFFF",
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/qxojexsb",
+      "id": "3106",
+      "bbox": [
+        925.2,
+        1633.86,
+        639.76,
+        639.76
+      ],
+      "alt": "20× MOSR actual field",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "95f735c9-590f-4013-8ab8-011db7c5a221",
+        "contentType": "image/png",
+        "byteLength": 3159
+      }
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cvmt8nyp",
+      "id": "3107",
+      "name": "scale-20×-R152",
+      "bbox": [
+        1440.04,
+        2228.35,
+        80.63,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 5.91
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ry9snyh0",
+      "id": "3108",
+      "name": "scale-label-20×-R152",
+      "bbox": [
+        1420.36,
+        2170.28,
+        120,
+        44.29
+      ],
+      "geometry": "rect",
+      "text": "2 µm",
+      "textPreview": "2 µm",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 32,
+        "typeface": "Arial",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2 µm"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2 µm",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Arial",
+            "color": "#FFFFFF",
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2 µm",
+              "fontSize": 32,
+              "typeface": "Arial",
+              "color": "#FFFFFF",
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6x0rut0f",
+      "id": "3109",
+      "name": "mag-50×",
+      "bbox": [
+        123.03,
+        2293.31,
+        162.4,
+        59.06
+      ],
+      "geometry": "rect",
+      "text": "50×",
+      "textPreview": "50×",
+      "resolvedFontSize": 38.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 38.67,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "50×"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "50×",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 38.67,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "50×",
+              "fontSize": 38.67,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/vulczahc",
+      "id": "3110",
+      "bbox": [
+        162.4,
+        2352.36,
+        639.76,
+        639.76
+      ],
+      "alt": "50× Raw actual field",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "92f3cb19-1919-4dba-b670-5682f4c2e4b1",
+        "contentType": "image/png",
+        "byteLength": 25999
+      }
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x47qx4fi",
+      "id": "3111",
+      "name": "scale-50×-Raw",
+      "bbox": [
+        675.82,
+        2946.85,
+        82.05,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 5.91
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ahw72pg7",
+      "id": "3112",
+      "name": "scale-label-50×-Raw",
+      "bbox": [
+        656.14,
+        2888.78,
+        121.42,
+        44.29
+      ],
+      "geometry": "rect",
+      "text": "2 µm",
+      "textPreview": "2 µm",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 32,
+        "typeface": "Arial",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2 µm"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2 µm",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Arial",
+            "color": "#FFFFFF",
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2 µm",
+              "fontSize": 32,
+              "typeface": "Arial",
+              "color": "#FFFFFF",
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/wvudsfyx",
+      "id": "3113",
+      "bbox": [
+        925.2,
+        2352.36,
+        639.76,
+        639.76
+      ],
+      "alt": "50× MOSR actual field",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "a0767969-4ea5-411b-bf5a-97f86846beb9",
+        "contentType": "image/png",
+        "byteLength": 14003
+      }
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8fep0fy1",
+      "id": "3114",
+      "name": "scale-50×-R152",
+      "bbox": [
+        1438.62,
+        2946.85,
+        82.05,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 5.91
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gnqtkfm",
+      "id": "3115",
+      "name": "scale-label-50×-R152",
+      "bbox": [
+        1418.93,
+        2888.78,
+        121.42,
+        44.29
+      ],
+      "geometry": "rect",
+      "text": "2 µm",
+      "textPreview": "2 µm",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 32,
+        "typeface": "Arial",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2 µm"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2 µm",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Arial",
+            "color": "#FFFFFF",
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2 µm",
+              "fontSize": 32,
+              "typeface": "Arial",
+              "color": "#FFFFFF",
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mdw7ypgv",
+      "id": "3116",
+      "name": "fig1_caption",
+      "bbox": [
+        123.03,
+        3011.81,
+        1456.69,
+        88.58
+      ],
+      "geometry": "rect",
+      "text": "Fig. 1. Native-grid Raw and MOSR pillar fields at 20× and 50×. The common display range preserves direct visual comparison. Scale bars: 2 µm.",
+      "textPreview": "Fig. 1. Native-grid Raw and MOSR pillar fields at 20× and 50×. The common display range preserves direct visual comparison. Scale bars: 2...",
+      "resolvedFontSize": 33.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 33.33,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Fig. 1. Native-grid Raw and MOSR pillar fields at 20× and 50×. The common display range preserves direct"
+          },
+          {
+            "index": 2,
+            "text": "visual comparison. Scale bars: 2 µm."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Fig. 1. Native-grid Raw and MOSR pillar fields at 20× and 50×. The common display range preserves direct visual comparison. Scale bars: 2 µm.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 33.33,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Fig. 1. Native-grid Raw and MOSR pillar fields at 20× and 50×. The common display range preserves direct visual comparison. Scale bars: 2 µm.",
+              "fontSize": 33.33,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ne58raxg",
+      "id": "3117",
+      "name": "methods_body",
+      "bbox": [
+        123.03,
+        3297.24,
+        1456.69,
+        496.06
+      ],
+      "geometry": "rect",
+      "text": "Reconstruction. MOSR combines U-Net context [1], anti-aliasing [2] and bounded PSF-guided correction. The learned weights remain fixed across objectives. Optical inputs comprise 25 measured kernels at 20× and one calibrated kernel at 50×.\n\nLocalization. Coarse contours [3] initialize geometric least-squares circle (LSC) centers [4]. The common reader refines each pillar with 720 uniform radial directions, 0.05-pixel profile sampling and three center updates.\n\nDisplacement. Each image pair yields nine independent horizontal center shifts. After conversion to object space, their absolute median defines one single-step displacement. The same procedure applies to all three image methods.",
+      "textPreview": "Reconstruction. MOSR combines U-Net context [1], anti-aliasing [2] and bounded PSF-guided correction. The learned weights remain fixed ac...",
+      "resolvedFontSize": 38.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 38.67,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 11,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Reconstruction. MOSR combines U-Net context [1], anti-aliasing [2] and bounded"
+          },
+          {
+            "index": 2,
+            "text": "PSF-guided correction. The learned weights remain fixed across objectives. Optical inputs"
+          },
+          {
+            "index": 3,
+            "text": "comprise 25 measured kernels at 20× and one calibrated kernel at 50×."
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "Localization. Coarse contours [3] initialize geometric least-squares circle (LSC) centers [4]."
+          },
+          {
+            "index": 6,
+            "text": "The common reader refines each pillar with 720 uniform radial directions, 0.05-pixel profile"
+          },
+          {
+            "index": 7,
+            "text": "sampling and three center updates."
+          },
+          {
+            "index": 8,
+            "text": ""
+          },
+          {
+            "index": 9,
+            "text": "Displacement. Each image pair yields nine independent horizontal center shifts. After"
+          },
+          {
+            "index": 10,
+            "text": "conversion to object space, their absolute median defines one single-step displacement. The"
+          },
+          {
+            "index": 11,
+            "text": "same procedure applies to all three image methods."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Reconstruction. MOSR combines U-Net context [1], anti-aliasing [2] and bounded PSF-guided correction. The learned weights remain fixed across objectives. Optical inputs comprise 25 measured kernels at 20× and one calibrated kernel at 50×.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 38.67,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Reconstruction. MOSR combines U-Net context [1], anti-aliasing [2] and bounded PSF-guided correction. The learned weights remain fixed across objectives. Optical inputs comprise 25 measured kernels at 20× and one calibrated kernel at 50×.",
+              "fontSize": 38.67,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "Localization. Coarse contours [3] initialize geometric least-squares circle (LSC) centers [4]. The common reader refines each pillar with 720 uniform radial directions, 0.05-pixel profile sampling and three center updates.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 38.67,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Localization. Coarse contours [3] initialize geometric least-squares circle (LSC) centers [4]. The common reader refines each pillar with 720 uniform radial directions, 0.05-pixel profile sampling and three center updates.",
+              "fontSize": 38.67,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "Displacement. Each image pair yields nine independent horizontal center shifts. After conversion to object space, their absolute median defines one single-step displacement. The same procedure applies to all three image methods.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 38.67,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Displacement. Each image pair yields nine independent horizontal center shifts. After conversion to object space, their absolute median defines one single-step displacement. The same procedure applies to all three image methods.",
+              "fontSize": 38.67,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sbi9cje5",
+      "id": "3118",
+      "name": "table1_caption",
+      "bbox": [
+        127.95,
+        3813.98,
+        1446.85,
+        62.99
+      ],
+      "geometry": "rect",
+      "text": "TABLE I. FIXED ACQUISITION CONDITIONS",
+      "textPreview": "TABLE I. FIXED ACQUISITION CONDITIONS",
+      "resolvedFontSize": 37.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 37.33,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TABLE I. FIXED ACQUISITION CONDITIONS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TABLE I. FIXED ACQUISITION CONDITIONS",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 37.33,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TABLE I. FIXED ACQUISITION CONDITIONS",
+              "fontSize": 37.33,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/6pc3it4j",
+      "id": "3119",
+      "bbox": [
+        127.95,
+        3897.64,
+        1446.85,
+        363.19
+      ],
+      "text": "Objective | Step (µm) | Pairs | µm/pixel\n50× | 0.5 | 30 | 0.0690\n50× | 1.0 | 30 | 0.0690\n20× | 0.5 | 30 | 0.1725\n20× | 1.0 | 30 | 0.1725",
+      "textPreview": "Objective | Step (µm) | Pairs | µm/pixel | 50× | 0.5 | 30 | 0.0690 | 50× | 1.0 | 30 | 0.0690 | 20× | 0.5 | 30 | 0.1725 | 20× | 1.0 | 30 |...",
+      "rows": 5,
+      "cols": 4,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            127.95,
+            3897.64,
+            383.86,
+            72.64
+          ],
+          "text": "Objective",
+          "textPreview": "Objective",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Objective",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Objective",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            511.81,
+            3897.64,
+            364.17,
+            72.64
+          ],
+          "text": "Step (µm)",
+          "textPreview": "Step (µm)",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Step (µm)",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Step (µm)",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            875.98,
+            3897.64,
+            295.28,
+            72.64
+          ],
+          "text": "Pairs",
+          "textPreview": "Pairs",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Pairs",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Pairs",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            1171.26,
+            3897.64,
+            403.54,
+            72.64
+          ],
+          "text": "µm/pixel",
+          "textPreview": "µm/pixel",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "µm/pixel",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "µm/pixel",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            127.95,
+            3970.28,
+            383.86,
+            72.64
+          ],
+          "text": "50×",
+          "textPreview": "50×",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "50×",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "50×",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            511.81,
+            3970.28,
+            364.17,
+            72.64
+          ],
+          "text": "0.5",
+          "textPreview": "0.5",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.5",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.5",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            875.98,
+            3970.28,
+            295.28,
+            72.64
+          ],
+          "text": "30",
+          "textPreview": "30",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "30",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "30",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            1171.26,
+            3970.28,
+            403.54,
+            72.64
+          ],
+          "text": "0.0690",
+          "textPreview": "0.0690",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.0690",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.0690",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            127.95,
+            4042.91,
+            383.86,
+            72.64
+          ],
+          "text": "50×",
+          "textPreview": "50×",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "50×",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "50×",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            511.81,
+            4042.91,
+            364.17,
+            72.64
+          ],
+          "text": "1.0",
+          "textPreview": "1.0",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1.0",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1.0",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            875.98,
+            4042.91,
+            295.28,
+            72.64
+          ],
+          "text": "30",
+          "textPreview": "30",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "30",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "30",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            1171.26,
+            4042.91,
+            403.54,
+            72.64
+          ],
+          "text": "0.0690",
+          "textPreview": "0.0690",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.0690",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.0690",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            127.95,
+            4115.55,
+            383.86,
+            72.64
+          ],
+          "text": "20×",
+          "textPreview": "20×",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "20×",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "20×",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            511.81,
+            4115.55,
+            364.17,
+            72.64
+          ],
+          "text": "0.5",
+          "textPreview": "0.5",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.5",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.5",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            875.98,
+            4115.55,
+            295.28,
+            72.64
+          ],
+          "text": "30",
+          "textPreview": "30",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "30",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "30",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            1171.26,
+            4115.55,
+            403.54,
+            72.64
+          ],
+          "text": "0.1725",
+          "textPreview": "0.1725",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.1725",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.1725",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            127.95,
+            4188.19,
+            383.86,
+            72.64
+          ],
+          "text": "20×",
+          "textPreview": "20×",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "20×",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "20×",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            511.81,
+            4188.19,
+            364.17,
+            72.64
+          ],
+          "text": "1.0",
+          "textPreview": "1.0",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1.0",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1.0",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            875.98,
+            4188.19,
+            295.28,
+            72.64
+          ],
+          "text": "30",
+          "textPreview": "30",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "30",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "30",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 5,
+          "column": 4,
+          "bbox": [
+            1171.26,
+            4188.19,
+            403.54,
+            72.64
+          ],
+          "text": "0.1725",
+          "textPreview": "0.1725",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.1725",
+              "resolvedTextStyle": {
+                "fontSize": 36,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.1725",
+                  "fontSize": 36,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1snqpo7u",
+      "id": "3120",
+      "name": "statistics_definition",
+      "bbox": [
+        127.95,
+        4291.34,
+        1446.85,
+        102.36
+      ],
+      "geometry": "rect",
+      "text": "Within each condition, Step SD is the sample standard deviation of its 30 single-step displacements (denominator 29). The reported mean is the arithmetic mean of the four condition-level SDs.",
+      "textPreview": "Within each condition, Step SD is the sample standard deviation of its 30 single-step displacements (denominator 29). The reported mean i...",
+      "resolvedFontSize": 33.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 33.33,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Within each condition, Step SD is the sample standard deviation of its 30 single-step displacements"
+          },
+          {
+            "index": 2,
+            "text": "(denominator 29). The reported mean is the arithmetic mean of the four condition-level SDs."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Within each condition, Step SD is the sample standard deviation of its 30 single-step displacements (denominator 29). The reported mean is the arithmetic mean of the four condition-level SDs.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 33.33,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Within each condition, Step SD is the sample standard deviation of its 30 single-step displacements (denominator 29). The reported mean is the arithmetic mean of the four condition-level SDs.",
+              "fontSize": 33.33,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0repwj69",
+      "id": "3121",
+      "name": "results_intro",
+      "bbox": [
+        1801.18,
+        1072.83,
+        1446.85,
+        178.15
+      ],
+      "geometry": "rect",
+      "text": "Each condition contributes one Step SD from 30 measured single steps. MOSR yields the lowest Step SD in all four conditions, directly linking reconstruction to reduced step-to-step dispersion.",
+      "textPreview": "Each condition contributes one Step SD from 30 measured single steps. MOSR yields the lowest Step SD in all four conditions, directly lin...",
+      "resolvedFontSize": 42.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 42.67,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Each condition contributes one Step SD from 30 measured single steps. MOSR"
+          },
+          {
+            "index": 2,
+            "text": "yields the lowest Step SD in all four conditions, directly linking reconstruction to"
+          },
+          {
+            "index": 3,
+            "text": "reduced step-to-step dispersion."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Each condition contributes one Step SD from 30 measured single steps. MOSR yields the lowest Step SD in all four conditions, directly linking reconstruction to reduced step-to-step dispersion.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 42.67,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Each condition contributes one Step SD from 30 measured single steps. MOSR yields the lowest Step SD in all four conditions, directly linking reconstruction to reduced step-to-step dispersion.",
+              "fontSize": 42.67,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fq58nep4",
+      "id": "3122",
+      "name": "primary_gain",
+      "bbox": [
+        1815.94,
+        1299.21,
+        762.8,
+        206.69
+      ],
+      "geometry": "rect",
+      "text": "19.5%",
+      "textPreview": "19.5%",
+      "resolvedFontSize": 157.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 157.33,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "19.5%"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "19.5%",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 157.33,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "19.5%",
+              "fontSize": 157.33,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/epc7u9oj",
+      "id": "3123",
+      "name": "primary_values",
+      "bbox": [
+        2647.64,
+        1333.66,
+        585.63,
+        144.69
+      ],
+      "geometry": "rect",
+      "text": "8.84 nm  Raw\n7.11 nm  MOSR",
+      "textPreview": "8.84 nm  Raw | 7.11 nm  MOSR",
+      "resolvedFontSize": 50.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 50.67,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "8.84 nm  Raw"
+          },
+          {
+            "index": 2,
+            "text": "7.11 nm  MOSR"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "8.84 nm  Raw",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 50.67,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "8.84 nm  Raw",
+              "fontSize": 50.67,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "7.11 nm  MOSR",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 50.67,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "7.11 nm  MOSR",
+              "fontSize": 50.67,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/do3ql47y",
+      "id": "3124",
+      "name": "primary_gain_label",
+      "bbox": [
+        1815.94,
+        1510.83,
+        1427.17,
+        84.65
+      ],
+      "geometry": "rect",
+      "text": "Reduction in the mean Step SD",
+      "textPreview": "Reduction in the mean Step SD",
+      "resolvedFontSize": 48,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 48,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Reduction in the mean Step SD"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Reduction in the mean Step SD",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 48,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Reduction in the mean Step SD",
+              "fontSize": 48,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 41,
+      "kind": "chart",
+      "scope": "slide",
+      "aid": "ch/gnm1wbel",
+      "id": "3125",
+      "bbox": [
+        1791.34,
+        1653.54,
+        1486.22,
+        725.39
+      ],
+      "chartType": "bar"
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r2lojups",
+      "id": "3126",
+      "name": "fig2_caption",
+      "bbox": [
+        1801.18,
+        2411.42,
+        1446.85,
+        97.44
+      ],
+      "geometry": "rect",
+      "text": "Fig. 2. Condition-level standard deviation of 30 single-step displacements. All methods use the same locked pairs and circle-center reader.",
+      "textPreview": "Fig. 2. Condition-level standard deviation of 30 single-step displacements. All methods use the same locked pairs and circle-center reader.",
+      "resolvedFontSize": 34.67,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 34.67,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Fig. 2. Condition-level standard deviation of 30 single-step displacements. All methods use the same"
+          },
+          {
+            "index": 2,
+            "text": "locked pairs and circle-center reader."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Fig. 2. Condition-level standard deviation of 30 single-step displacements. All methods use the same locked pairs and circle-center reader.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 34.67,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Fig. 2. Condition-level standard deviation of 30 single-step displacements. All methods use the same locked pairs and circle-center reader.",
+              "fontSize": 34.67,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 43,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q1c7qpo7",
+      "id": "3127",
+      "name": "result_interpretation",
+      "bbox": [
+        1801.18,
+        2549.21,
+        1446.85,
+        187.99
+      ],
+      "geometry": "rect",
+      "text": "The reduction relative to Raw spans 9.8–24.1% across the four conditions. The largest reduction occurs at 20× with 0.5 µm steps, where Step SD decreases from 14.16 to 10.75 nm. MOSR also improves both 50× conditions.",
+      "textPreview": "The reduction relative to Raw spans 9.8–24.1% across the four conditions. The largest reduction occurs at 20× with 0.5 µm steps, where St...",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 40,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The reduction relative to Raw spans 9.8–24.1% across the four conditions. The largest"
+          },
+          {
+            "index": 2,
+            "text": "reduction occurs at 20× with 0.5 µm steps, where Step SD decreases from 14.16 to 10.75"
+          },
+          {
+            "index": 3,
+            "text": "nm. MOSR also improves both 50× conditions."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The reduction relative to Raw spans 9.8–24.1% across the four conditions. The largest reduction occurs at 20× with 0.5 µm steps, where Step SD decreases from 14.16 to 10.75 nm. MOSR also improves both 50× conditions.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The reduction relative to Raw spans 9.8–24.1% across the four conditions. The largest reduction occurs at 20× with 0.5 µm steps, where Step SD decreases from 14.16 to 10.75 nm. MOSR also improves both 50× conditions.",
+              "fontSize": 40,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 44,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5036h47m",
+      "id": "3128",
+      "name": "table2_caption",
+      "bbox": [
+        1801.18,
+        2765.75,
+        1446.85,
+        63.98
+      ],
+      "geometry": "rect",
+      "text": "TABLE II. STEP SD AND RELATIVE REDUCTION",
+      "textPreview": "TABLE II. STEP SD AND RELATIVE REDUCTION",
+      "resolvedFontSize": 37.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 37.33,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TABLE II. STEP SD AND RELATIVE REDUCTION"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TABLE II. STEP SD AND RELATIVE REDUCTION",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 37.33,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "center",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TABLE II. STEP SD AND RELATIVE REDUCTION",
+              "fontSize": 37.33,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "center",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 45,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/7e5obip4",
+      "id": "3129",
+      "bbox": [
+        1801.18,
+        2854.33,
+        1446.86,
+        480.31
+      ],
+      "text": "Condition | Raw\n(nm) | Wiener\n(nm) | MOSR\n(nm) | Reduction\nvs Raw (%)\n50× / 0.5 | 5.24 | 4.91 | 4.72 | 9.8\n50× / 1.0 | 5.43 | 4.59 | 4.55 | 16.3\n20× / 0.5 | 14.16 | 11.08 | 10.75 | 24.1\n20× / 1.0 | 10.53 | 11.01 | 8.43 | 19.9\nMean | 8.84 | 7.90 | 7.11 | 19.5",
+      "textPreview": "Condition | Raw | (nm) | Wiener | (nm) | MOSR | (nm) | Reduction | vs Raw (%) | 50× / 0.5 | 5.24 | 4.91 | 4.72 | 9.8 | 50× / 1.0 | 5.43 |...",
+      "rows": 6,
+      "cols": 5,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            1801.18,
+            2854.33,
+            423.23,
+            80.05
+          ],
+          "text": "Condition",
+          "textPreview": "Condition",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Condition",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Condition",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            2224.41,
+            2854.33,
+            221.46,
+            80.05
+          ],
+          "text": "Raw\n(nm)",
+          "textPreview": "Raw | (nm)",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Raw",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Raw",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "(nm)",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "(nm)",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            2445.87,
+            2854.33,
+            246.06,
+            80.05
+          ],
+          "text": "Wiener\n(nm)",
+          "textPreview": "Wiener | (nm)",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Wiener",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Wiener",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "(nm)",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "(nm)",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            2691.93,
+            2854.33,
+            221.46,
+            80.05
+          ],
+          "text": "MOSR\n(nm)",
+          "textPreview": "MOSR | (nm)",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "MOSR",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "MOSR",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "(nm)",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "(nm)",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 5,
+          "bbox": [
+            2913.39,
+            2854.33,
+            334.65,
+            80.05
+          ],
+          "text": "Reduction\nvs Raw (%)",
+          "textPreview": "Reduction | vs Raw (%)",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Reduction",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Reduction",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "vs Raw (%)",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "vs Raw (%)",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            1801.18,
+            2934.38,
+            423.23,
+            80.05
+          ],
+          "text": "50× / 0.5",
+          "textPreview": "50× / 0.5",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "50× / 0.5",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "50× / 0.5",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            2224.41,
+            2934.38,
+            221.46,
+            80.05
+          ],
+          "text": "5.24",
+          "textPreview": "5.24",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "5.24",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "5.24",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            2445.87,
+            2934.38,
+            246.06,
+            80.05
+          ],
+          "text": "4.91",
+          "textPreview": "4.91",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "4.91",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "4.91",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            2691.93,
+            2934.38,
+            221.46,
+            80.05
+          ],
+          "text": "4.72",
+          "textPreview": "4.72",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "4.72",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "4.72",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 2,
+          "column": 5,
+          "bbox": [
+            2913.39,
+            2934.38,
+            334.65,
+            80.05
+          ],
+          "text": "9.8",
+          "textPreview": "9.8",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "9.8",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "9.8",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            1801.18,
+            3014.44,
+            423.23,
+            80.05
+          ],
+          "text": "50× / 1.0",
+          "textPreview": "50× / 1.0",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "50× / 1.0",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "50× / 1.0",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            2224.41,
+            3014.44,
+            221.46,
+            80.05
+          ],
+          "text": "5.43",
+          "textPreview": "5.43",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "5.43",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "5.43",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            2445.87,
+            3014.44,
+            246.06,
+            80.05
+          ],
+          "text": "4.59",
+          "textPreview": "4.59",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "4.59",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "4.59",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            2691.93,
+            3014.44,
+            221.46,
+            80.05
+          ],
+          "text": "4.55",
+          "textPreview": "4.55",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "4.55",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "4.55",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 3,
+          "column": 5,
+          "bbox": [
+            2913.39,
+            3014.44,
+            334.65,
+            80.05
+          ],
+          "text": "16.3",
+          "textPreview": "16.3",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "16.3",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "16.3",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            1801.18,
+            3094.49,
+            423.23,
+            80.05
+          ],
+          "text": "20× / 0.5",
+          "textPreview": "20× / 0.5",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "20× / 0.5",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "20× / 0.5",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            2224.41,
+            3094.49,
+            221.46,
+            80.05
+          ],
+          "text": "14.16",
+          "textPreview": "14.16",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "14.16",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "14.16",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            2445.87,
+            3094.49,
+            246.06,
+            80.05
+          ],
+          "text": "11.08",
+          "textPreview": "11.08",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "11.08",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "11.08",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            2691.93,
+            3094.49,
+            221.46,
+            80.05
+          ],
+          "text": "10.75",
+          "textPreview": "10.75",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "10.75",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "10.75",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 4,
+          "column": 5,
+          "bbox": [
+            2913.39,
+            3094.49,
+            334.65,
+            80.05
+          ],
+          "text": "24.1",
+          "textPreview": "24.1",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "24.1",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "24.1",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            1801.18,
+            3174.54,
+            423.23,
+            80.05
+          ],
+          "text": "20× / 1.0",
+          "textPreview": "20× / 1.0",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "20× / 1.0",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "20× / 1.0",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            2224.41,
+            3174.54,
+            221.46,
+            80.05
+          ],
+          "text": "10.53",
+          "textPreview": "10.53",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "10.53",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "10.53",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            2445.87,
+            3174.54,
+            246.06,
+            80.05
+          ],
+          "text": "11.01",
+          "textPreview": "11.01",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "11.01",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "11.01",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "row": 5,
+          "column": 4,
+          "bbox": [
+            2691.93,
+            3174.54,
+            221.46,
+            80.05
+          ],
+          "text": "8.43",
+          "textPreview": "8.43",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "8.43",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "8.43",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "row": 5,
+          "column": 5,
+          "bbox": [
+            2913.39,
+            3174.54,
+            334.65,
+            80.05
+          ],
+          "text": "19.9",
+          "textPreview": "19.9",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "19.9",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "19.9",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            1801.18,
+            3254.59,
+            423.23,
+            80.05
+          ],
+          "text": "Mean",
+          "textPreview": "Mean",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Mean",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Mean",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            2224.41,
+            3254.59,
+            221.46,
+            80.05
+          ],
+          "text": "8.84",
+          "textPreview": "8.84",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "8.84",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "8.84",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "row": 6,
+          "column": 3,
+          "bbox": [
+            2445.87,
+            3254.59,
+            246.06,
+            80.05
+          ],
+          "text": "7.90",
+          "textPreview": "7.90",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "7.90",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "7.90",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "row": 6,
+          "column": 4,
+          "bbox": [
+            2691.93,
+            3254.59,
+            221.46,
+            80.05
+          ],
+          "text": "7.11",
+          "textPreview": "7.11",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "7.11",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "7.11",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "row": 6,
+          "column": 5,
+          "bbox": [
+            2913.39,
+            3254.59,
+            334.65,
+            80.05
+          ],
+          "text": "19.5",
+          "textPreview": "19.5",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "19.5",
+              "resolvedTextStyle": {
+                "fontSize": 34.67,
+                "typeface": "Times New Roman",
+                "color": "#111111",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "19.5",
+                  "fontSize": 34.67,
+                  "typeface": "Times New Roman",
+                  "color": "#111111",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 46,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/at8v210n",
+      "id": "3130",
+      "name": "table2_note",
+      "bbox": [
+        1801.18,
+        3346.46,
+        1446.85,
+        60.04
+      ],
+      "geometry": "rect",
+      "text": "Mean row: arithmetic mean of the four SDs. Reduction = (Raw − MOSR) / Raw.",
+      "textPreview": "Mean row: arithmetic mean of the four SDs. Reduction = (Raw − MOSR) / Raw.",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 32,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Mean row: arithmetic mean of the four SDs. Reduction = (Raw − MOSR) / Raw."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Mean row: arithmetic mean of the four SDs. Reduction = (Raw − MOSR) / Raw.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Mean row: arithmetic mean of the four SDs. Reduction = (Raw − MOSR) / Raw.",
+              "fontSize": 32,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 47,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vuhwb618",
+      "id": "3131",
+      "name": "conclusions_body",
+      "bbox": [
+        1801.18,
+        3582.68,
+        1446.85,
+        311.02
+      ],
+      "geometry": "rect",
+      "text": "MOSR lowers single-step dispersion in every tested condition, with reductions of 9.8–24.1% relative to Raw. The mean condition-level Step SD decreases by 19.5%.\n\nOne set of reconstruction weights supports both objectives. Clearer pillar boundaries and lower displacement dispersion establish MOSR as a measurement-oriented reconstruction approach for cross-magnification optical inspection.",
+      "textPreview": "MOSR lowers single-step dispersion in every tested condition, with reductions of 9.8–24.1% relative to Raw. The mean condition-level Step...",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 40,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 6,
+        "lines": [
+          {
+            "index": 1,
+            "text": "MOSR lowers single-step dispersion in every tested condition, with reductions of"
+          },
+          {
+            "index": 2,
+            "text": "9.8–24.1% relative to Raw. The mean condition-level Step SD decreases by 19.5%."
+          },
+          {
+            "index": 3,
+            "text": ""
+          },
+          {
+            "index": 4,
+            "text": "One set of reconstruction weights supports both objectives. Clearer pillar boundaries and"
+          },
+          {
+            "index": 5,
+            "text": "lower displacement dispersion establish MOSR as a measurement-oriented reconstruction"
+          },
+          {
+            "index": 6,
+            "text": "approach for cross-magnification optical inspection."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "MOSR lowers single-step dispersion in every tested condition, with reductions of 9.8–24.1% relative to Raw. The mean condition-level Step SD decreases by 19.5%.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "MOSR lowers single-step dispersion in every tested condition, with reductions of 9.8–24.1% relative to Raw. The mean condition-level Step SD decreases by 19.5%.",
+              "fontSize": 40,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "One set of reconstruction weights supports both objectives. Clearer pillar boundaries and lower displacement dispersion establish MOSR as a measurement-oriented reconstruction approach for cross-magnification optical inspection.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "One set of reconstruction weights supports both objectives. Clearer pillar boundaries and lower displacement dispersion establish MOSR as a measurement-oriented reconstruction approach for cross-magnification optical inspection.",
+              "fontSize": 40,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 48,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wvqd4bit",
+      "id": "3132",
+      "name": "bibliography_body",
+      "bbox": [
+        1801.18,
+        4094.49,
+        1437.01,
+        277.56
+      ],
+      "geometry": "rect",
+      "text": "[1] O. Ronneberger et al., U-Net, MICCAI, 2015, pp. 234–241.\n[2] R. Zhang, Making convolutional networks shift-invariant again, ICML, 2019, pp. 7324–7334.\n[3] T. F. Chan and L. A. Vese, Active contours without edges, IEEE Trans. Image Process., 10(2), 266–277, 2001.\n[4] N. Chernov and C. Lesort, Least squares fitting of circles, J. Math. Imaging Vis., 23, 239–252, 2005.",
+      "textPreview": "[1] O. Ronneberger et al., U-Net, MICCAI, 2015, pp. 234–241. | [2] R. Zhang, Making convolutional networks shift-invariant again, ICML, 2...",
+      "resolvedFontSize": 33.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 33.33,
+        "typeface": "Times New Roman",
+        "color": "#111111",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "[1] O. Ronneberger et al., U-Net, MICCAI, 2015, pp. 234–241."
+          },
+          {
+            "index": 2,
+            "text": "[2] R. Zhang, Making convolutional networks shift-invariant again, ICML, 2019, pp. 7324–7334."
+          },
+          {
+            "index": 3,
+            "text": "[3] T. F. Chan and L. A. Vese, Active contours without edges, IEEE Trans. Image Process., 10(2), 266–277,"
+          },
+          {
+            "index": 4,
+            "text": "2001."
+          },
+          {
+            "index": 5,
+            "text": "[4] N. Chernov and C. Lesort, Least squares fitting of circles, J. Math. Imaging Vis., 23, 239–252, 2005."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "[1] O. Ronneberger et al., U-Net, MICCAI, 2015, pp. 234–241.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 33.33,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "[1] O. Ronneberger et al., U-Net, MICCAI, 2015, pp. 234–241.",
+              "fontSize": 33.33,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "[2] R. Zhang, Making convolutional networks shift-invariant again, ICML, 2019, pp. 7324–7334.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 33.33,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "[2] R. Zhang, Making convolutional networks shift-invariant again, ICML, 2019, pp. 7324–7334.",
+              "fontSize": 33.33,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "[3] T. F. Chan and L. A. Vese, Active contours without edges, IEEE Trans. Image Process., 10(2), 266–277, 2001.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 33.33,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "[3] T. F. Chan and L. A. Vese, Active contours without edges, IEEE Trans. Image Process., 10(2), 266–277, 2001.",
+              "fontSize": 33.33,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "[4] N. Chernov and C. Lesort, Least squares fitting of circles, J. Math. Imaging Vis., 23, 239–252, 2005.",
+          "lineSpacingPercent": 102000,
+          "resolvedTextStyle": {
+            "fontSize": 33.33,
+            "typeface": "Times New Roman",
+            "color": "#111111",
+            "alignment": "left",
+            "lineSpacing": 1.02
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "[4] N. Chernov and C. Lesort, Least squares fitting of circles, J. Math. Imaging Vis., 23, 239–252, 2005.",
+              "fontSize": 33.33,
+              "typeface": "Times New Roman",
+              "color": "#111111",
+              "alignment": "left",
+              "lineSpacing": 1.02
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

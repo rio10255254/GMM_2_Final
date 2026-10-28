@@ -1,0 +1,222 @@
+PAGE 1
+ 
+ 
+Measurement-Oriented Microscopy Reconstruction for 
+Cross-Magnification Micro-Displacement Inspection 
+Yen Hsuan Chianga , Liang-Chia Chena* 
+a Department of Mechanical Engineering, National Taiwan University, No.1, Section 4, Roosevelt Rd., Taipei City, 10617, Taiwan 
+*Corresponding author/Email: lchen@ntu.edu.tw 
+ABSTRACT 
+Image reconstruction for automated optical inspection must improve 
+visibility without converting optical variation, sampling phase, or 
+learned sharpening into false motion. This paper presents MOSR, a 
+measurement-oriented same-size microscopy reconstruction method 
+designed around three metrology failure modes: field- and 
+magnification-dependent 
+optical 
+variation, 
+sampling-phase 
+sensitivity, and reconstruction-induced geometry drift. MOSR 
+addresses them through spatial-variation-aware point-spread function 
+(PSF) guidance, anti-aliased shift-stable reconstruction, and an input-
+anchored geometry-preserving output. A single set of MOSR weights 
+processes 20x and 50x images with magnification-specific calibrated 
+optical information. Raw, fixed Wiener, and MOSR share one 
+threshold-free maximum-gradient and least-squares circle (LSC) 
+measurement backend. Across four sequences and 120 predefined 
+adjacent-frame pairs, MOSR reduced step standard deviation, 
+nominal-step mean absolute error, and median within-grid SD by 
+17.9%, 18.0%, and 61.0% relative to Raw, and by 7.8%, 10.6%, and 
+18.2% relative to fixed Wiener. These results demonstrate improved 
+native-grid positional stability across objective changes without 
+redefining the downstream measurement. 
+Keywords-Automated optical inspection; measurement-oriented 
+reconstruction; cross-magnification; micro-displacement; positional 
+stability. 
+I. INTRODUCTION 
+Image-based optical metrology derives dimensional information 
+from optical image responses and edge-related signals [1]. Periodic 
+circular features such as via- and bump-like arrays are commonly 
+localized during automated optical inspection. When displacement is 
+measured from reconstructed micrographs, reconstruction becomes 
+part of the measurement chain: a visually sharper edge can still move 
+by a fraction of a pixel and change the reported center. Positional 
+stability is therefore required in addition to apparent resolution. 
+Learning-based microscopy restoration can recover structures that 
+are difficult to inspect in raw data [2]. U-Net-type encoder-decoders 
+combine contextual feature extraction with precise localization [3], 
+but commonly used downsampling operations can introduce shift 
+sensitivity [4]. The problem intensifies when one inspection 
+workflow spans 20x overview images and 50x verification images, 
+because object-space sampling, optical response, and pixel phase 
+change with the objective. 
+Rather than maximizing visual sharpness, MOSR is organized 
+around three metrology failure modes. Spatial-variation-aware PSF 
+guidance addresses optical variation across field positions and 
+magnifications. Anti-aliased, shift-stable reconstruction is designed 
+to reduce sampling-phase sensitivity. An input-anchored geometry-
+preserving output limits reconstruction-induced boundary and center 
+drift. A single set of model weights processes both magnifications 
+with their corresponding calibrated optical information. 
+The contribution is therefore not a new visual-quality objective 
+alone. It is a coordinated reconstruction strategy in which optical 
+guidance constrains correction direction, shift-stable processing 
+limits pixel-phase effects, and the input anchor retains the original 
+geometric reference. The method is evaluated only after these 
+controls are connected to one fixed subpixel measurement backend. 
+II. METHOD 
+A. Metrology-driven MOSR design 
+MOSR receives one monochrome frame and returns a same-size 
+frame on the native coordinate grid. First, calibrated optical 
+information from multiple field locations forms spatial-variation-
+aware guidance, supplying a bounded optical direction rather than 
+replacing the input by strong inverse filtering. Second, anti-aliased 
+feature expansion and translation-consistency learning are used to 
+reduce position changes caused by decoder sampling. Third, polarity-
+aware bounded boundary correction is combined with an input 
+anchor so that large-scale intensity, low-frequency geometry, and the 
+original center reference remain tied to the measured frame. Figure 1 
+summarizes the three design groups and the common measurement 
+backend. 
+One shared set of MOSR weights processes both 20x and 50x 
+inputs; the optical information changes with the calibrated objective, 
+but the learned reconstruction weights and native-grid output 
+convention remain fixed. A fixed Wiener baseline, based on Wiener 
+filtering [5], uses magnification-specific calibrated PSFs with one 
+regularization setting fixed for all frames. 
+These components are designed to reduce sampling-phase 
+sensitivity and geometry drift, and their effects are assessed through 
+the common boundary-and-center backend. 
+ 
+FIGURE 1. REPRESENTATIVE 50X OUTPUTS (TOP; SCALE BAR, 5 
+MICROMETERS), COMPACT MOSR DESIGN SUMMARY, AND THE 
+COMMON MEASUREMENT BACKEND. 
+B. Common boundary, center, and metrics 
+All methods use the same threshold-free measurement backend. A 
+Chan-Vese active contour provides only a closed coarse curve [6]. 
+
+
+PAGE 2
+ 
+Profiles are sampled along its outward normals, and the correct-
+polarity gradient maximum is refined to a subpixel position by local 
+quadratic interpolation [7]. These points, rather than the regularized 
+active-contour pixels, define the measured boundary. 
+Let (xi, yi) denote the accepted points. A geometric least-squares 
+circle (LSC) [8] supplies the center and radius by minimizing the 
+sum of squared radial residuals; stage commands and crop 
+initialization do not enter the fit. The common estimator was verified 
+with synthetic circles, known translations, and perturbed crop 
+initializations before comparison. 
+For each frame pair, the median of nine pillar shifts represents the 
+array step, while their standard deviation defines the within-grid SD. 
+Aggregate Step SD and nominal MAE are the means of the four 
+condition-level values; Median within-grid SD is the median of the 
+120 pair-level nine-pillar standard deviations. The three criteria 
+remain separate rather than being combined into an adjustable score. 
+III. EXPERIMENT AND RESULTS 
+A. Locked cross-magnification experiment 
+Four displacement sequences were recorded from a periodic 3x3 
+pillar array using 20x and 50x objectives at nominal 0.5 and 1.0 
+micrometer steps. Their object-space sampling intervals were 0.1725 
+and 0.0690 micrometers/pixel. The 120 adjacent-frame pairs were 
+predefined using the raw acquisition sequences before any 
+reconstruction results were inspected and were then held fixed for all 
+methods. Raw, Wiener, and MOSR used the same images, nine 
+features, scale, boundary, and circle center. 
+All images retained the same contrast polarity, and no method-
+specific edge cleanup was introduced. Pixel coordinates were 
+converted to object space only after the circle centers had been 
+estimated. Reconstruction comparisons are therefore not affected by 
+different interpolation, threshold, or scale-conversion procedures. 
+B. Measurement performance 
+MOSR achieved the lowest aggregate value for every reported 
+criterion (Table I and Fig. 2). Relative to Raw, Step SD, nominal 
+MAE, and Median within-grid SD decreased by 17.9%, 18.0%, and 
+61.0%. Relative to fixed Wiener, the reductions were 7.8%, 10.6%, 
+and 18.2%. MOSR returned the lowest within-grid SD in all four 
+imaging conditions and the lowest Step SD and nominal MAE in 
+three of four conditions. At both magnifications, its Step SD 
+remained near 0.06 native pixel. 
+At 50x, MOSR reduced the Wiener magnification-level Step SD, 
+nominal MAE, and Median within-grid SD from 4.83, 4.37, and 3.41 
+nm to 4.51, 4.02, and 2.56 nm. At 20x, the corresponding values 
+decreased from 10.98, 8.47, and 13.11 nm to 10.07, 7.46, and 7.55 
+nm. The larger 20x nanometer values are consistent with its coarser 
+sampling, while the fractional-pixel Step SD remains comparable 
+across objectives. 
+In a matched upsampling comparison, replacing anti-aliased 
+upsampling increased Median within-grid SD by 0.27 nm, with a 
+95% paired resampling interval of 0.05-0.74 nm, while changes in 
+Step SD and nominal MAE remained below 0.1 nm. This localizes 
+the supported role of anti-aliasing to cross-position consistency 
+rather than attributing every MOSR improvement to one component. 
+Across the full method, all six 95% paired baseline-minus-MOSR 
+intervals remained above zero. MOSR produced lower within-grid 
+SD than Raw in 119 of 120 comparisons and lower within-grid SD 
+than Wiener in 92 of 120 comparisons. The conclusions concern 
+comparative in-system stability rather than external length 
+traceability or cross-device generalization. 
+ 
+TABLE I. AGGREGATE DISPLACEMENT RESULTS ACROSS 
+120 PAIRS (NM). 
+Method 
+Step SD 
+Nom. MAE 
+Median within-
+grid SD 
+Raw 
+8.88 
+7.00 
+12.55 
+Wiener 
+7.91 
+6.42 
+5.98 
+MOSR 
+7.29 
+5.74 
+4.89 
+ 
+ 
+FIGURE 2. AGGREGATE DISPLACEMENT METRICS ACROSS 120 PAIRS; 
+LOWER VALUES INDICATE BETTER PERFORMANCE. 
+IV. CONCLUSION 
+MOSR combines spatial-variation-aware PSF guidance, anti-
+aliased shift-stable reconstruction, and an input-anchored geometry-
+preserving output. With one set of weights and one common 
+measurement backend, the method achieved the best aggregate 
+repeatability, nominal agreement, and within-grid consistency across 
+four 20x/50x sequences and 120 predefined pairs. MOSR therefore 
+improves reconstruction for cross-magnification subpixel position 
+measurement rather than pursuing visual sharpness alone. 
+The shared native-grid convention also preserves a common 
+position definition when the inspection objective changes, supporting 
+repeatable alignment and registration of periodic circular features in 
+the tested system. 
+REFERENCES 
+[1] R. M. Silver, B. M. Barnes, R. Attota, J. Jun, M. Stocker, E. 
+Marx, and H. J. Patrick, "Scatterfield microscopy for extending 
+the limits of image-based optical metrology," Applied Optics, 
+vol. 46, no. 20, pp. 4248-4257, 2007. 
+[2] M. Weigert et al., "Content-aware image restoration: pushing the 
+limits of fluorescence microscopy," Nature Methods, vol. 15, no. 
+12, pp. 1090-1097, 2018. 
+[3] O. Ronneberger, P. Fischer, and T. Brox, "U-Net: Convolutional 
+networks for biomedical image segmentation," in Medical Image 
+Computing and Computer-Assisted Intervention, 2015, pp. 234-
+241. 
+[4] R. Zhang, "Making convolutional networks shift-invariant 
+again," in Proc. 36th Int. Conf. Machine Learning, 2019, pp. 
+7324-7334. 
+[5] N. Wiener, Extrapolation, Interpolation, and Smoothing of 
+Stationary Time Series: With Engineering Applications. 
+Cambridge, MA, USA: MIT Press, 1949. 
+[6] T. F. Chan and L. A. Vese, "Active contours without edges," 
+IEEE Trans. Image Process., vol. 10, no. 2, pp. 266-277, 2001. 
+[7] F. Devernay, "A non-maxima suppression method for edge 
+detection with sub-pixel accuracy," INRIA Research Report RR-
+2724, 1995. 
+[8] N. Chernov and C. Lesort, "Least squares fitting of circles," 
+Journal of Mathematical Imaging and Vision, vol. 23, pp. 239-
+252, 2005. 

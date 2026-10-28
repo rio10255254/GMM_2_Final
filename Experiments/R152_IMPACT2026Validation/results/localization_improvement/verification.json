@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "all_120_pairs_retained": true,
+  "methods": [
+    "Raw",
+    "Wiener",
+    "R152"
+  ],
+  "center_rows": 4482,
+  "pair_rows": 360,
+  "independent_recomputation_max_difference_nm": 1.5688783605583012e-10,
+  "same_reader_for_all_methods": true,
+  "nominal_step_not_used_in_fitting": true,
+  "source_results_preserved": true,
+  "raw_not_degraded": true,
+  "reader_selection_before_real_metrics": true,
+  "not_a_claim_of_uniform_metric_improvement": true,
+  "not_formally_promoted": true
+}

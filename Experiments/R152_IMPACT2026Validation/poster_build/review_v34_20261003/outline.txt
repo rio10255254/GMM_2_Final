@@ -1,0 +1,128 @@
+B0019 [heading 1] 摘要
+B0025 [heading 1] Abstract
+B0032 [] 摘要2
+B0033 [] Abstract3
+B0241 [heading 1] 緒論
+B0242 [heading 2] 1.1　研究背景
+B0249 [heading 2] 1.2　研究動機與目的
+B0258 [heading 2] 1.3　研究貢獻
+B0263 [heading 2] 1.4　論文架構
+B0265 [] 第四章說明MOSR架構、多張合成影像訓練、物體空間換算，以及ACM、最大灰階梯度與LSC所形成的共同量測方法。第五章介紹顯微系統、樣品、SEM與位移平台，並集中列示模型與訓練配置。
+B0266 [] 第六章依序呈現PSF校正、模型訓練狀態、輪廓與尺寸重複量測、LSC圓心位移、SEM對照及運算時間。第七章彙整主要量化成果、研究範圍與未來工作。
+B0267 [heading 1] 文獻回顧
+B0270 [heading 2] 2.1　點擴散函數（Point Spread Function, PSF）模型
+B0273 [heading 3] 2.1.1　基於光學理論的PSF模型
+B0285 [heading 3] 2.1.2　高斯近似PSF模型
+B0294 [heading 2] 2.2　點擴散函數之校正（PSF Calibration）
+B0302 [heading 2] 2.3　反卷積演算法
+B0306 [heading 3] 2.3.1　非盲反卷積：維納反卷積（Wiener Deconvolution）
+B0313 [heading 3] 2.3.2　迭代式反卷積：理查德森–露西演算法（Richardson–Lucy, RL）
+B0318 [heading 3] 2.3.3　反卷積方法比較
+B0320 [heading 2] 2.4　卷積神經網路應用於影像超解析與重建
+B0322 [heading 3] 2.4.1　SRCNN與FSRCNN
+B0325 [heading 3] 2.4.2　ResNet與VDSR：殘差學習作為深網路訓練的關鍵
+B0328 [heading 3] 2.4.3　U-Net：編碼器–解碼器與多尺度特徵融合
+B0330 [heading 3] 2.4.4　EDSR與MDSR：針對SR任務改良的深度殘差網路
+B0333 [heading 3] 2.4.5　Transformer架構：從局部卷積到全域注意力
+B0335 [heading 3] 2.4.6　小結
+B0337 [heading 2] 2.5　量測導向影像重建 (Measurement-Oriented Image Restoration)
+B0342 [heading 2] 2.6　物理約束神經網路與平移等變性 (Physics-Constrained Neural Networks and Translation Equivariance)
+B0347 [heading 2] 2.7　小結
+B0349 [heading 1] 理論背景
+B0351 [heading 2] 3.1　向量光學與純量光學 [6]
+B0353 [heading 3] 3.1.1　格林定理與克希何夫積分定理
+B0383 [heading 3] 3.1.2　經平面繞射的克希何夫積分與索默菲德輻射條件
+B0398 [heading 3] 3.1.3　菲涅耳–克希何夫繞射（Fresnel–Kirchhoff diffraction）
+B0410 [heading 3] 3.1.4　惠更斯–菲涅耳原理
+B0444 [heading 3] 3.1.5　菲涅耳繞射與夫朗何斐繞射
+B0464 [heading 2] 3.2　光學成像 [6]
+B0465 [heading 3] 3.2.1　薄透鏡理論
+B0513 [heading 3] 3.2.2　漢克爾轉換
+B0527 [heading 2] 3.3　像差與澤尼克像差模型（Zernike aberration model）
+B0539 [heading 2] 3.4　非同調系統的點擴散函數 [6]
+B0550 [heading 2] 3.5　系統解析能力
+B0552 [heading 3] 3.5.1　阿貝準則
+B0556 [heading 3] 3.5.2　瑞利準則
+B0566 [heading 3] 3.5.3　調變轉移函數
+B0574 [heading 2] 3.6　U-Net卷積神經網路
+B0587 [heading 2] 3.7　BADS最佳化演算法
+B0592 [heading 2] 3.8　平移等變性與成像量測的一致性
+B0597 [heading 3] 3.8.1　平移等變性的定義
+B0614 [heading 3] 3.8.2　卷積運算與平移關係
+B0628 [heading 3] 3.8.3　下取樣、上取樣與邊界處理造成的誤差
+B0642 [heading 3] 3.8.4　平移等變性的量化評估
+B0683 [heading 2] 3.9　小結
+B0686 [heading 1] 研究方法
+B0691 [heading 2] 4.1　研究問題與評估原則
+B0692 [heading 3] 4.1.1　顯微成像模糊與量測誤差
+B0704 [heading 3] 4.1.2　量測導向的問題定義與評估原則
+B0721 [] 第六章先呈現光學校正及共同量測配置，再以輪廓重複拍攝、LSC位移與SEM對照檢查整體方法，最後報告處理時間。
+B0722 [heading 2] 4.2　座標系統與物體空間換算
+B0745 [heading 2] 4.3　局部PSF校正
+B0747 [heading 3] 4.3.1　參考區域、方向與逐顆幾何
+B0753 [heading 3] 4.3.2　SEM參考幾何與尺寸換算
+B0760 [heading 3] 4.3.3　參數化PSF與BADS擬合
+B0784 [heading 2] 4.4　量測導向單張影像重建模型
+B0787 [heading 3] 4.4.1　U-Net多尺度特徵擷取與抗混疊取樣
+B0792 [heading 3] 4.4.2　多PSF頻域加權融合
+B0801 [heading 3] 4.4.3　局部影像特徵與多階段修正
+B0806 [heading 3] 4.4.4　以輸入影像為基準的受限殘差輸出
+B0814 [heading 2] 4.5　訓練資料與監督來源
+B0816 [heading 3] 4.5.1　合成場景與監督來源
+B0820 [heading 3] 4.5.2　資料組成與配對原則
+B0823 [heading 3] 4.5.3　訓練影像與監督區域
+B0826 [heading 3] 4.5.4　分組切分與適用範圍
+B0829 [heading 2] 4.6　量測導向損失函數與訓練策略
+B0831 [heading 3] 4.6.1　量測導向訓練目標
+B0839 [heading 3] 4.6.2　多張影像的平移一致性
+B0844 [heading 3] 4.6.3　訓練策略與模型選擇
+B0847 [heading 2] 4.7　量測流程與比較方法
+B0850 [heading 3] 4.7.1　量測資料、尺度與固定設定
+B0854 [heading 3] 4.7.2　ACM粗輪廓與最大灰階梯度位置
+B0858 [heading 3] 4.7.3　LSC、MZC、MIC與MCC參考圓
+B0863 [heading 3] 4.7.4　LSC圓心位移計算
+B0869 [heading 3] 4.7.5　單次掃描的步距變異、重複量測統計與配對比較
+B0884 [heading 3] 4.7.6　量測品質控制與不確定度評估範圍
+B0887 [heading 2] 4.8　本章小結
+B0889 [heading 1] 實驗系統與模型實作
+B0890 [heading 2] 5.1　光學系統
+B0901 [heading 3] 5.1.1　相機
+B0911 [heading 3] 5.1.2　筒鏡
+B0920 [heading 3] 5.1.3　物鏡
+B0936 [heading 3] 5.1.4　照明模組與光源
+B0946 [heading 3] 5.1.5　XY軸壓電位移平台
+B0952 [heading 3] 5.1.6　Z軸壓電位移平台
+B0959 [heading 3] 5.1.7　五軸手動平台
+B0963 [heading 2] 5.2　量測樣品與驗證儀器
+B0965 [heading 3] 5.2.1　BudgetSensors HS-100MG
+B0972 [heading 3] 5.2.2　場發射槍掃描式電子顯微鏡
+B0979 [heading 2] 5.3　MATLAB環境
+B0983 [heading 2] 5.4　神經網路架構與訓練集
+B0984 [heading 3] 5.4.1　訓練環境與配置
+B0988 [heading 3] 5.4.2　模型架構
+B1003 [heading 3] 5.4.3　訓練資料組成與分組切分
+B1009 [heading 3] 5.4.4　訓練設定與模型選擇
+B1014 [heading 3] 5.4.5　實拍資料與共同推論配置
+B1019 [heading 2] 5.5　小結
+B1021 [heading 1] 實驗結果與分析
+B1022 [heading 2] 6.1　點擴散函數校正
+B1032 [heading 3] 6.1.1　點擴散函數擬合結果
+B1045 [heading 3] 6.1.2　Wiener反卷積比較
+B1053 [heading 2] 6.2　MOSR輪廓與位移量測結果
+B1055 [heading 3] 6.2.1　MOSR模型與合成資料評估
+B1058 [heading 3] 6.2.2　評估資料、尺度與共同規則
+B1063 [heading 3] 6.2.3　共同輪廓擷取與量測檢查
+B1070 [heading 3] 6.2.4　輪廓與尺寸量測的重複性
+B1081 [heading 3] 6.2.5　LSC圓心位移結果
+B1101 [heading 3] 6.2.6　SEM輪廓形狀與尺寸對照
+B1109 [heading 3] 6.2.7　處理時間與運算配置
+B1114 [heading 3] 6.2.8　綜合討論
+B1118 [heading 1] 結論與未來工作
+B1120 [heading 2] 7.1　研究問題與主要結論
+B1124 [heading 2] 7.2　方法與實驗貢獻
+B1127 [heading 2] 7.3　主要量化結果
+B1131 [heading 2] 7.4　量測流程與結果檢核
+B1134 [heading 2] 7.5　研究限制
+B1136 [heading 2] 7.6　未來工作
+B1139 [heading 2] 7.7　小結
+B1141 [heading 1] 參考文獻

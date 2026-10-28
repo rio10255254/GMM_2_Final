@@ -1,0 +1,20 @@
+{
+  "state": "complete_20x_only",
+  "images": 80,
+  "pairs_per_method": 60,
+  "center_rows": 2160,
+  "pair_rows": 180,
+  "source_scope": "Original 20x conditions only; not four-condition IMPACT total",
+  "checkpoint_sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61",
+  "bank_sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+  "weights_and_buffers_unchanged": true,
+  "raw_wiener_original_pair_max_difference": {
+    "measured_step_um": 2.220446049250313e-16,
+    "nominal_abs_error_nm": 3.552713678800501e-15,
+    "within_grid_sd_nm": 3.552713678800501e-15
+  },
+  "native_fp32_output": true,
+  "postprocessing": false,
+  "full_50x_pending": true,
+  "elapsed_seconds": 221.21858190000057
+}
