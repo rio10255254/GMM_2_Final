@@ -68,7 +68,7 @@ class Phase:
         ext = self.rec / 'external_map.json'
         if ext.exists():
             data = json.loads(ext.read_text(encoding='utf-8'))
-            self.external = {**data.get('files', {}), **data.get('dirs', {})}
+            self.external = {**data.get('files', {}), **data.get('dirs', {}), **data.get('junctions', {})}
         self.decisions = {}
         dec = self.rec / f'decisions_phase{self.n}.json'
         if dec.exists():

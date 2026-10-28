@@ -1,0 +1,246 @@
+{
+ "Tools/tests": [],
+ "Model/tests": [],
+ "PSF_Fitting/tests": [],
+ "AnalysisLab/tests": [],
+ "Thesis_MOSR_Evidence/tests": [
+  "Thesis_MOSR_Evidence/tests/test_organize_final_data_figures_for_thesis.py"
+ ],
+ "Experiments/R100_CausalOperatorScratch/tests": [
+  "Experiments/R100_CausalOperatorScratch/tests/test_r100_contract.py::test_dataset_is_locked_isolated_and_unchanged"
+ ],
+ "Experiments/R100_DesignValidation/tests": [
+  "Experiments/R100_DesignValidation/tests/test_validation_artifacts.py::test_acm_audit_is_complete",
+  "Experiments/R100_DesignValidation/tests/test_validation_artifacts.py::test_core_results_are_complete_and_finite",
+  "Experiments/R100_DesignValidation/tests/test_validation_artifacts.py::test_geometry_difference_target_has_identity_invariant",
+  "Experiments/R100_DesignValidation/tests/test_validation_artifacts.py::test_integrated_decision_has_evidence_not_a_training_launch",
+  "Experiments/R100_DesignValidation/tests/test_validation_artifacts.py::test_local_operator_has_exact_tiling_contract"
+ ],
+ "Experiments/R102_UniversalDetailScratch/tests": [],
+ "Experiments/R103_RecoverableDetailScratch/tests": [],
+ "Experiments/R104_PhotometricInvariantCausalGateScratch/tests": [],
+ "Experiments/R113_CausalStructureDissection/tests": [],
+ "Experiments/R115_R109DecoupledNormalProfileScratch/tests": [
+  "Experiments/R115_R109DecoupledNormalProfileScratch/tests/test_data.py::test_arm_sizes_and_supplemental_coverage",
+  "Experiments/R115_R109DecoupledNormalProfileScratch/tests/test_data.py::test_prepared_counts_and_ablation_populations",
+  "Experiments/R115_R109DecoupledNormalProfileScratch/tests/test_data.py::test_representative_samples_are_finite_and_antialiased",
+  "Experiments/R115_R109DecoupledNormalProfileScratch/tests/test_losses.py::test_profile_objective_updates_only_profile_branch"
+ ],
+ "Experiments/R116_CoherentGeometryAnchorScratch/tests": [
+  "Experiments/R116_CoherentGeometryAnchorScratch/tests/test_dataset.py::test_dataset_epoch_changes_degradation_but_not_scene_identity",
+  "Experiments/R116_CoherentGeometryAnchorScratch/tests/test_dataset.py::test_dataset_is_deterministic_and_has_three_views",
+  "Experiments/R116_CoherentGeometryAnchorScratch/tests/test_dataset.py::test_known_pair_shift_moves_the_target",
+  "Experiments/R116_CoherentGeometryAnchorScratch/tests/test_dataset.py::test_validation_can_be_locked_to_one_challenge_and_role"
+ ],
+ "Experiments/R117_CenterLockedSubpixelScratch/tests": [],
+ "Experiments/R118_PhysicalCoordinateRepairScratch/tests": [
+  "Experiments/R118_PhysicalCoordinateRepairScratch/tests/test_next_design_handoff.py"
+ ],
+ "Experiments/R119_SequenceGeometryValidation/tests": [
+  "Experiments/R119_SequenceGeometryValidation/tests/test_r119_dataset.py"
+ ],
+ "Experiments/R120_PhysicalSequenceRepair/tests": [
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_contracts.py::test_original_R118_data_parity",
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_coverage_independence.py::test_unused_coverage_cannot_change_current_objective_or_gradients",
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_sequences.py::test_B_static_pair_and_physical_motion_label",
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_sequences.py::test_all_zero_phase_geometry_matches_original_labels",
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_sequences.py::test_foreground_direction_independent_of_brightness",
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_sequences.py::test_loader_consumes_corrected_coverage",
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_sequences.py::test_manifest_arrays_are_really_consumed",
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_sequences.py::test_nonzero_phase_replays_before_sensor_sampling",
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_training.py::test_all_active_groups_receive_gradients",
+  "Experiments/R120_PhysicalSequenceRepair/tests/test_training.py::test_perfect_physical_targets_have_zero_pair_error"
+ ],
+ "Experiments/R121_BoundaryAnchorFactorial/tests": [
+  "Experiments/R121_BoundaryAnchorFactorial/tests/test_factorial.py::test_control_replays_corrected_R120",
+  "Experiments/R121_BoundaryAnchorFactorial/tests/test_factorial.py::test_factor_pairs_receive_identical_training_data"
+ ],
+ "Experiments/R124_RealFirstPrototype/tests": [],
+ "Experiments/R125_DataAlignedPilot/tests": [],
+ "Experiments/R141_PSF25_AdaptiveTop4_Standalone/tests": [],
+ "Experiments/R142_PSF100_AdaptiveTop8_Standalone/tests": [],
+ "Experiments/R39_ShapeGeneralization/tests": [],
+ "Experiments/R40_MicroscopyFeatureCoverage/tests": [],
+ "Experiments/R41_RingDistillation/tests": [
+  "Experiments/R41_RingDistillation/tests/test_r41_data.py::test_r41_train_and_micro_val_are_disjoint",
+  "Experiments/R41_RingDistillation/tests/test_r41_data.py::test_r41_train_profile_has_exact_role_mix"
+ ],
+ "Experiments/R42_MicroscopyBoundaryFidelity/tests": [
+  "Experiments/R42_MicroscopyBoundaryFidelity/tests/test_r42_boundary_data.py::test_guarded_kd_probe_profile_is_legacy_weighted",
+  "Experiments/R42_MicroscopyBoundaryFidelity/tests/test_r42_launch.py::test_r42_launch_candidate_matrix_points_to_existing_starting_checkpoints"
+ ],
+ "Experiments/R43_CandidateUsabilityAudit/tests": [],
+ "Experiments/R44_UniversalBoundaryMotionFidelity/tests": [
+  "Experiments/R44_UniversalBoundaryMotionFidelity/tests/test_r44_launch.py::test_r44_launch_candidate_matrix_is_research_first_and_motion_enabled",
+  "Experiments/R44_UniversalBoundaryMotionFidelity/tests/test_r44c_probe.py::test_r44c_probe_matrix_uses_r42_start_and_three_distinct_hypotheses",
+  "Experiments/R44_UniversalBoundaryMotionFidelity/tests/test_r44e_probe.py::test_r44e_probe_base_checkpoints_exist_and_cover_three_hypotheses",
+  "Experiments/R44_UniversalBoundaryMotionFidelity/tests/test_r44h_stepb_launcher.py::test_stepb_configure_enables_region_kd_without_global_kd",
+  "Experiments/R44_UniversalBoundaryMotionFidelity/tests/test_r44h_stepb_launcher.py::test_stepb_launcher_is_single_teacher_large_region_probe"
+ ],
+ "Experiments/R45_FamilyBoundaryAdapter/tests": [
+  "Experiments/R45_FamilyBoundaryAdapter/tests/test_r45_adapter_data.py::test_iter_target_motion_frames_reads_expected_manifest"
+ ],
+ "Experiments/R63_CausalBoundaryMotionAblation/tests": [
+  "Experiments/R63_CausalBoundaryMotionAblation/tests/test_protocol_data.py::test_raw_ranked_lock_has_exactly_30_steps_per_sequence",
+  "Experiments/R63_CausalBoundaryMotionAblation/tests/test_protocol_data.py::test_sem_radius_is_converted_to_diameter_once",
+  "Experiments/R63_CausalBoundaryMotionAblation/tests/test_protocol_data.py::test_synthetic_shift_population_is_complete"
+ ],
+ "Experiments/R67_UniversalModelGeneralization/tests": [],
+ "Experiments/R68_R61_RealFOVFeatureGeneralization/tests": [
+  "Experiments/R68_R61_RealFOVFeatureGeneralization/tests/test_r68.py::test_all_external_r61_inputs_are_complete"
+ ],
+ "Experiments/R69_ACMContourSEMValidation/tests": [
+  "Experiments/R69_ACMContourSEMValidation/tests/test_r69.py::R69ValidationTests::test_input_and_reconstruction_counts",
+  "Experiments/R69_ACMContourSEMValidation/tests/test_r69.py::R69ValidationTests::test_qa_masks_do_not_touch_outer_guard"
+ ],
+ "Experiments/R70_V42ACMContourSEMValidation/tests": [
+  "Experiments/R70_V42ACMContourSEMValidation/tests/test_r70.py::R70ValidationTests::test_all_reconstructions_exist_with_original_size",
+  "Experiments/R70_V42ACMContourSEMValidation/tests/test_r70.py::R70ValidationTests::test_decision_and_visuals_exist",
+  "Experiments/R70_V42ACMContourSEMValidation/tests/test_r70.py::R70ValidationTests::test_rerun_raw_metrics_match_r69_exactly",
+  "Experiments/R70_V42ACMContourSEMValidation/tests/test_r70.py::R70ValidationTests::test_three_method_outputs_have_locked_grain",
+  "Experiments/R70_V42ACMContourSEMValidation/tests/test_r70.py::R70ValidationTests::test_v42_primary_and_sensitivity_tables_are_complete"
+ ],
+ "Experiments/R71_R61SyntheticMicroscopyDefectGeneralization/tests": [
+  "Experiments/R71_R61SyntheticMicroscopyDefectGeneralization/tests/test_r71_outputs.py::R71OutputTests::test_all_reconstructions_exist",
+  "Experiments/R71_R61SyntheticMicroscopyDefectGeneralization/tests/test_r71_outputs.py::R71OutputTests::test_decision_and_report_are_complete",
+  "Experiments/R71_R61SyntheticMicroscopyDefectGeneralization/tests/test_r71_outputs.py::R71OutputTests::test_input_audit_is_independent_and_complete",
+  "Experiments/R71_R61SyntheticMicroscopyDefectGeneralization/tests/test_r71_outputs.py::R71OutputTests::test_metric_tables_have_locked_grain"
+ ],
+ "Experiments/R72_R61SyntheticDefectACMContourValidation/tests": [
+  "Experiments/R72_R61SyntheticDefectACMContourValidation/tests/test_r72.py::R72ValidationTests::test_decision_matches_measured_result",
+  "Experiments/R72_R61SyntheticDefectACMContourValidation/tests/test_r72.py::R72ValidationTests::test_input_audit",
+  "Experiments/R72_R61SyntheticDefectACMContourValidation/tests/test_r72.py::R72ValidationTests::test_masks_are_binary_and_complete",
+  "Experiments/R72_R61SyntheticDefectACMContourValidation/tests/test_r72.py::R72ValidationTests::test_primary_table_is_complete",
+  "Experiments/R72_R61SyntheticDefectACMContourValidation/tests/test_r72.py::R72ValidationTests::test_sensitivity_table_is_complete"
+ ],
+ "Experiments/R73_R61ExpandedSyntheticACMGeneralization/tests": [
+  "Experiments/R73_R61ExpandedSyntheticACMGeneralization/tests/test_r73.py::R73ValidationTests::test_all_reconstructions_and_measurements_exist",
+  "Experiments/R73_R61ExpandedSyntheticACMGeneralization/tests/test_r73.py::R73ValidationTests::test_clean_image_acm_is_valid_against_exact_geometry",
+  "Experiments/R73_R61ExpandedSyntheticACMGeneralization/tests/test_r73.py::R73ValidationTests::test_decision_family_values_match_summary",
+  "Experiments/R73_R61ExpandedSyntheticACMGeneralization/tests/test_r73.py::R73ValidationTests::test_figures_and_plain_language_report_are_complete",
+  "Experiments/R73_R61ExpandedSyntheticACMGeneralization/tests/test_r73.py::R73ValidationTests::test_frozen_population_and_training_independence",
+  "Experiments/R73_R61ExpandedSyntheticACMGeneralization/tests/test_r73.py::R73ValidationTests::test_primary_summary_recomputes_from_image_rows"
+ ],
+ "Experiments/R74_R61HardMicroscopyACMGeneralization/tests": [
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_01_raw_only_set_was_frozen_before_r61",
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_02_frozen_hash_and_balance",
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_03_training_independence_and_checkpoint",
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_04_raw_difficulty_gate_is_non_ceiling",
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_05_acm_extraction_quality_and_counts",
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_06_primary_summary_recomputes",
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_07_challenge_and_shape_summaries_are_complete",
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_08_decision_matches_gates",
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_09_visual_and_written_outputs_exist",
+  "Experiments/R74_R61HardMicroscopyACMGeneralization/tests/test_r74.py::R74ValidationTests::test_10_locked_inference_mode"
+ ],
+ "Experiments/R75_R61ArchitectureScratchGeneralization/tests": [
+  "Experiments/R75_R61ArchitectureScratchGeneralization/tests/test_r75.py::R75PreparationTests::test_09_architecture_audit_proves_scratch_initialization",
+  "Experiments/R75_R61ArchitectureScratchGeneralization/tests/test_r75.py::R75PreparationTests::test_12_model_training_and_inference_are_self_contained",
+  "Experiments/R75_R61ArchitectureScratchGeneralization/tests/test_r75.py::R75PreparationTests::test_13_real_smoke_training_completed_and_exported_weights",
+  "Experiments/R75_R61ArchitectureScratchGeneralization/tests/test_r75.py::R75PreparationTests::test_14_center_nine_live_validation_is_observation_only"
+ ],
+ "Experiments/R75v2_R61ArchitectureScratchGeneralization/tests": [
+  "Experiments/R75v2_R61ArchitectureScratchGeneralization/tests/test_r75v2.py::R75v2PreparationTests::test_11_model_runtime_is_self_contained_and_unchanged",
+  "Experiments/R75v2_R61ArchitectureScratchGeneralization/tests/test_r75v2.py::R75v2PreparationTests::test_13_live_validation_is_observation_only"
+ ],
+ "Experiments/R76_R75ACMContourSEMValidation/tests": [
+  "Experiments/R76_R75ACMContourSEMValidation/tests/test_r76.py::R76ValidationTests::test_acm_tables_are_complete_and_raw_is_reproducible",
+  "Experiments/R76_R75ACMContourSEMValidation/tests/test_r76.py::R76ValidationTests::test_all_reconstructions_use_the_locked_checkpoint",
+  "Experiments/R76_R75ACMContourSEMValidation/tests/test_r76.py::R76ValidationTests::test_decision_matches_saved_statistics",
+  "Experiments/R76_R75ACMContourSEMValidation/tests/test_r76.py::R76ValidationTests::test_epoch100_audit_is_complete_and_independent",
+  "Experiments/R76_R75ACMContourSEMValidation/tests/test_r76.py::R76ValidationTests::test_final_synthesis_numbers_match_saved_tables",
+  "Experiments/R76_R75ACMContourSEMValidation/tests/test_r76.py::R76ValidationTests::test_four_method_outputs_have_the_locked_statistical_grain",
+  "Experiments/R76_R75ACMContourSEMValidation/tests/test_r76.py::R76ValidationTests::test_source_and_checkpoint_audit_passed",
+  "Experiments/R76_R75ACMContourSEMValidation/tests/test_r76.py::R76ValidationTests::test_verified_mapping_has_the_expected_36_physical_pillars"
+ ],
+ "Experiments/R77_R75v2ACMContourSEMValidation/tests": [
+  "Experiments/R77_R75v2ACMContourSEMValidation/tests/test_r77.py::R77ValidationTests::test_acm_outputs_complete",
+  "Experiments/R77_R75v2ACMContourSEMValidation/tests/test_r77.py::R77ValidationTests::test_final_analysis_complete",
+  "Experiments/R77_R75v2ACMContourSEMValidation/tests/test_r77.py::R77ValidationTests::test_input_audit_passed",
+  "Experiments/R77_R75v2ACMContourSEMValidation/tests/test_r77.py::R77ValidationTests::test_raw_reproducible"
+ ],
+ "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/tests": [
+  "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/tests/test_r78.py::R78ValidationTests::test_acm_sem_arm_and_claim_boundary",
+  "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/tests/test_r78.py::R78ValidationTests::test_locked_input_and_output_coverage",
+  "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/tests/test_r78.py::R78ValidationTests::test_locked_r61_result_reproduced",
+  "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/tests/test_r78.py::R78ValidationTests::test_post_hoc_5x_confirmation_is_disclosed",
+  "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/tests/test_r78.py::R78ValidationTests::test_primary_comparison_is_paired_and_complete"
+ ],
+ "Experiments/R79_R75v3_DenseMicroscopyScratchGeneralization/tests": [
+  "Experiments/R79_R75v3_DenseMicroscopyScratchGeneralization/tests/test_r75v3.py::R75v3PreparationTests::test_12_model_runtime_is_self_contained_and_unchanged",
+  "Experiments/R79_R75v3_DenseMicroscopyScratchGeneralization/tests/test_r75v3.py::R75v3PreparationTests::test_14_live_validation_is_observation_only"
+ ],
+ "Experiments/R80_R79E23vsE100GeneralizationValidation/tests": [
+  "Experiments/R80_R79E23vsE100GeneralizationValidation/tests/test_r80.py::R80ValidationTests::test_decision_and_handoff_are_consistent",
+  "Experiments/R80_R79E23vsE100GeneralizationValidation/tests/test_r80.py::R80ValidationTests::test_external_acm_is_fully_paired",
+  "Experiments/R80_R79E23vsE100GeneralizationValidation/tests/test_r80.py::R80ValidationTests::test_input_audit_is_complete",
+  "Experiments/R80_R79E23vsE100GeneralizationValidation/tests/test_r80.py::R80ValidationTests::test_internal_test_is_paired_and_complete",
+  "Experiments/R80_R79E23vsE100GeneralizationValidation/tests/test_r80.py::R80ValidationTests::test_real_fov_uses_all_locked_sequences",
+  "Experiments/R80_R79E23vsE100GeneralizationValidation/tests/test_r80.py::R80ValidationTests::test_sem_acm_has_36_independent_pillars"
+ ],
+ "Experiments/R81_MultiArchitectureReferenceCircleBenchmark/tests": [],
+ "Experiments/R83_R79SevereMicroscopyStrengthening/tests": [
+  "Experiments/R83_R79SevereMicroscopyStrengthening/tests/test_r83.py::R83PreparationTests::test_11_runtime_is_self_contained_and_unchanged",
+  "Experiments/R83_R79SevereMicroscopyStrengthening/tests/test_r83.py::R83PreparationTests::test_12_operator_files_and_observation_images_exist",
+  "Experiments/R83_R79SevereMicroscopyStrengthening/tests/test_r83.py::R83PreparationTests::test_13_checkpoint_and_confirmation_scopes_are_locked",
+  "Experiments/R83_R79SevereMicroscopyStrengthening/tests/test_r83.py::R83PreparationTests::test_15_locked_holdout_acm_cohort_is_predeclared",
+  "Experiments/R83_R79SevereMicroscopyStrengthening/tests/test_r83.py::R83PreparationTests::test_16_final_decision_preserves_r79",
+  "Experiments/R83_R79SevereMicroscopyStrengthening/tests/test_r83.py::R83PreparationTests::test_17_inference_defaults_to_selected_direct_full_frame",
+  "Experiments/R83_R79SevereMicroscopyStrengthening/tests/test_r83.py::R83PreparationTests::test_18_closeout_manifest_counts"
+ ],
+ "Experiments/R84_R79TileStableRootRepair/tests": [
+  "Experiments/R84_R79TileStableRootRepair/tests/test_r79_fullframe_delivery.py::R79FullFrameDeliveryTests::test_exact_r79_checkpoint_and_onnx_are_preserved",
+  "Experiments/R84_R79TileStableRootRepair/tests/test_r79_fullframe_delivery.py::R79FullFrameDeliveryTests::test_example_is_unchanged_and_repeatable",
+  "Experiments/R84_R79TileStableRootRepair/tests/test_r79_fullframe_delivery.py::R79FullFrameDeliveryTests::test_onnx_keeps_dynamic_full_frame_dimensions"
+ ],
+ "Experiments/R87_TileNativeScratchGeneralization/tests": [
+  "Experiments/R87_TileNativeScratchGeneralization/tests/test_r87.py::test_06_smoke_dataset_audit_and_scene_isolation",
+  "Experiments/R87_TileNativeScratchGeneralization/tests/test_r87.py::test_07_pair_origins_are_aligned_and_overlapping"
+ ],
+ "Experiments/R88_MeasurementFaithfulScratch/tests": [
+  "Experiments/R88_MeasurementFaithfulScratch/tests/test_design_contract.py::test_locked_design_contract_passes",
+  "Experiments/R88_MeasurementFaithfulScratch/tests/test_implementation.py::test_one_real_smoke_batch_has_finite_backward",
+  "Experiments/R88_MeasurementFaithfulScratch/tests/test_implementation.py::test_smoke_dataset_shapes_motion_and_role_balancing"
+ ],
+ "Experiments/R89_MeasurementNativeScratch/tests": [
+  "Experiments/R89_MeasurementNativeScratch/tests/test_design_contract.py::test_locked_design_contract_passes",
+  "Experiments/R89_MeasurementNativeScratch/tests/test_implementation.py::test_one_real_smoke_batch_has_finite_backward",
+  "Experiments/R89_MeasurementNativeScratch/tests/test_implementation.py::test_smoke_dataset_structure_motion_and_goal_balancing",
+  "Experiments/R89_MeasurementNativeScratch/tests/test_implementation.py::test_smoke_recoverability_has_no_target_shaped_clipping_leakage"
+ ],
+ "Experiments/R90_ExposureCoherentScratch/tests": [
+  "Experiments/R90_ExposureCoherentScratch/tests/test_design_contract.py::test_locked_design_contract_passes",
+  "Experiments/R90_ExposureCoherentScratch/tests/test_implementation.py::test_one_real_smoke_batch_has_finite_backward",
+  "Experiments/R90_ExposureCoherentScratch/tests/test_implementation.py::test_smoke_dataset_structure_motion_and_goal_balancing",
+  "Experiments/R90_ExposureCoherentScratch/tests/test_implementation.py::test_smoke_recoverability_has_no_target_shaped_clipping_leakage"
+ ],
+ "Experiments/R91_DetailDecoupledScratch/tests": [
+  "Experiments/R91_DetailDecoupledScratch/tests/test_design_contract.py::test_locked_design_contract_passes",
+  "Experiments/R91_DetailDecoupledScratch/tests/test_implementation.py::test_one_real_smoke_batch_has_finite_backward",
+  "Experiments/R91_DetailDecoupledScratch/tests/test_implementation.py::test_smoke_dataset_structure_motion_and_goal_balancing",
+  "Experiments/R91_DetailDecoupledScratch/tests/test_implementation.py::test_smoke_recoverability_has_no_target_shaped_clipping_leakage"
+ ],
+ "Experiments/R92_PhysicalTransitionBalancedScratch/tests": [
+  "Experiments/R92_PhysicalTransitionBalancedScratch/tests/test_design_contract.py::test_locked_design_contract_passes",
+  "Experiments/R92_PhysicalTransitionBalancedScratch/tests/test_implementation.py::test_one_real_smoke_batch_has_finite_backward",
+  "Experiments/R92_PhysicalTransitionBalancedScratch/tests/test_implementation.py::test_physical_transition_and_exposure_contrast_are_traceable",
+  "Experiments/R92_PhysicalTransitionBalancedScratch/tests/test_implementation.py::test_smoke_dataset_structure_motion_and_goal_balancing",
+  "Experiments/R92_PhysicalTransitionBalancedScratch/tests/test_implementation.py::test_smoke_recoverability_has_no_target_shaped_clipping_leakage"
+ ],
+ "Experiments/R93_RecoverableDetailSeparatedScratch/tests": [
+  "Experiments/R93_RecoverableDetailSeparatedScratch/tests/test_design_contract.py::test_locked_design_contract_passes",
+  "Experiments/R93_RecoverableDetailSeparatedScratch/tests/test_implementation.py::test_one_real_smoke_batch_has_finite_backward",
+  "Experiments/R93_RecoverableDetailSeparatedScratch/tests/test_implementation.py::test_physical_transition_and_exposure_contrast_are_traceable",
+  "Experiments/R93_RecoverableDetailSeparatedScratch/tests/test_implementation.py::test_smoke_dataset_structure_motion_and_goal_balancing",
+  "Experiments/R93_RecoverableDetailSeparatedScratch/tests/test_implementation.py::test_smoke_recoverability_has_no_target_shaped_clipping_leakage"
+ ],
+ "Experiments/R94_EvidenceConditionalScratch/tests": [],
+ "Experiments/R95_CounterfactualGateRepairScratch/tests": [],
+ "Experiments/R96_LocalizedEvidenceProtectedScratch/tests": [],
+ "Experiments/R97_DirectCausalPhaseScratch/tests": [],
+ "Experiments/R98_AggressiveTextureScratch/tests": [],
+ "Experiments/R99_GeometryTextureCoherentScratch/tests": [
+  "Experiments/R99_GeometryTextureCoherentScratch/tests/test_r99_contract.py::test_crop_before_warp_matches_old_full_canvas_core",
+  "Experiments/R99_GeometryTextureCoherentScratch/tests/test_r99_contract.py::test_dataset_is_the_locked_procedural_package"
+ ]
+}
