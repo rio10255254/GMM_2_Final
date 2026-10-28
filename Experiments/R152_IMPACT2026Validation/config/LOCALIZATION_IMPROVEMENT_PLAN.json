@@ -1,0 +1,15 @@
+{
+  "purpose": "Improve localization and displacement readout, not compare model generations.",
+  "models": ["Raw", "Wiener", "R152"],
+  "locked_real_pairs": "sources/original_locked_pairs.csv",
+  "preserve": ["all 120 pairs", "nine original pillar identities", "native pixel scales", "trained weights", "original outputs and previous reports"],
+  "candidate_readers": ["fixed_state_lsc", "radial_720_lsc", "radial_intensity_fit", "paired_photometric_translation"],
+  "reader_selection": "Known-translation development tests only; lock candidate before measuring the real 120-pair outcome.",
+  "independent_check": "Held-out synthetic phases/noise plus known translations of real-image crops; report limitations of simulated translations.",
+  "primary_selection_metric": "Balanced known-translation vector error in native pixels across both radii; reject failures, biased responses and unsupported convergence.",
+  "real_report": "Original horizontal-step definition and three separate statistics, all pairs retained. Independent nine-pillar displacements retained before aggregation.",
+  "aggregation": "Preserve median as primary; arithmetic mean may be reported as a predeclared sensitivity, never force nine displacements to the same value.",
+  "not_allowed": ["pulling estimates toward nominal step", "post-hoc pair removal", "selecting methods or tuning parameters to minimize nominal-step errors on the 120 pairs", "claiming a new reader follows the unchanged submitted backend", "claiming lower nominal error proves absolute accuracy"],
+  "new_training": false,
+  "formal_baseline_change": false
+}

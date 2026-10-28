@@ -1,0 +1,27 @@
+{
+  "state": "complete_shared_bank_full120",
+  "images": 166,
+  "locked_pairs": 120,
+  "methods": [
+    "Raw",
+    "Wiener",
+    "R152"
+  ],
+  "center_rows": 4482,
+  "pair_rows": 360,
+  "checkpoint_sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61",
+  "bank_sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+  "r152_optics": "same unmodified native 20x bank for 20x and 50x",
+  "wiener_optics": "original magnification-specific calibration",
+  "measurement_protocol_unchanged": true,
+  "optical_protocol_matches_paper": false,
+  "optical_protocol_change_user_authorized": true,
+  "original_baseline_max_difference": {
+    "measured_step_um": 0.0,
+    "nominal_abs_error_nm": 0.0,
+    "within_grid_sd_nm": 0.0
+  },
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260824,
+  "bootstrap_limit": "Some adjacent pairs share frames; intervals are conditional on the original selected pairs and not independent repeated-scan or universal-generalization evidence."
+}

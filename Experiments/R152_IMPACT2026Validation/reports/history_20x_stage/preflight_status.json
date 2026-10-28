@@ -1,0 +1,22 @@
+{
+  "status": "PARTIAL_20X_COMPLETE_50X_BLOCKED",
+  "instruction": "User clarified that the chat request itself is the execution instruction; no separate instruction file is missing.",
+  "locked_pairs": 120,
+  "raw_unique_frames": 166,
+  "missing_files": [],
+  "historical_statistics_match_paper": true,
+  "full_r152_inference_started": false,
+  "retraining": false,
+  "formal_baseline_changed": false,
+  "blocking_items": [
+    {
+      "id": "R152_50X_OPTICS",
+      "detail": "Original 50x Wiener PSF exists (one 101x101 kernel at 0.069 um/px). Delivered R152 requires 25 indexed kernels and contains fixed 20x optics at 0.1725 um/px in both the base and added branch. No source-locked 50x 25-kernel bank and verified same-weight installation path found. Do not tile, resize, duplicate, or borrow the 20x bank."
+    }
+  ],
+  "partial_20x_complete": true,
+  "partial_20x_images": 80,
+  "partial_20x_pairs_per_method": 60,
+  "native_20x_bank_confirmed_by_user": true,
+  "full_four_condition_result_available": false
+}

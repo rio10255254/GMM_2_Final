@@ -1,0 +1,83 @@
+{
+  "unit": "nm",
+  "definition": "sample SD of 30 image-measured adjacent displacements within each scan; then describe 30 independent scan results",
+  "n_scans": 30,
+  "frames_per_scan": 31,
+  "steps_per_scan": 30,
+  "total_frames": 930,
+  "steps_per_method": 900,
+  "magnification": "20x",
+  "nominal_step_um": 1.0,
+  "exposure_us": [
+    3000.0
+  ],
+  "acquisition_date": "2026-09-03",
+  "scale_um_per_px": 0.1725,
+  "axis_unit_vector": [
+    -0.9998766245119538,
+    0.015707824629190823
+  ],
+  "circle_reader": {
+    "core": "geometric LSC after normal-gradient boundary refinement",
+    "sample_count": 64,
+    "state_reset_per_pillar": true
+  },
+  "models": {
+    "Raw": {
+      "mean_scan_sd_nm": 10.061694616408966,
+      "between_scan_sd_nm": 1.701125494414975,
+      "median_scan_sd_nm": 9.91251957266913,
+      "minimum_scan_sd_nm": 6.952348117301435,
+      "maximum_scan_sd_nm": 13.782461167961287,
+      "q1_nm": 9.264483288541637,
+      "q3_nm": 10.901247402987606
+    },
+    "MOSR": {
+      "mean_scan_sd_nm": 4.753797037819438,
+      "between_scan_sd_nm": 1.051058488904731,
+      "median_scan_sd_nm": 4.457133222190438,
+      "minimum_scan_sd_nm": 3.3772025847386007,
+      "maximum_scan_sd_nm": 6.989032059072821,
+      "q1_nm": 3.909881861427081,
+      "q3_nm": 5.389395024379855
+    }
+  },
+  "improvement": {
+    "improved_scans": 30,
+    "mean_paired_reduction_pct": 52.62438358317976,
+    "median_paired_reduction_pct": 51.994318218473396,
+    "min_paired_reduction_pct": 36.875754750755554,
+    "max_paired_reduction_pct": 64.56207070953792,
+    "p05_p95_pct": [
+      42.17879651845018,
+      63.255598838122694
+    ],
+    "mean_absolute_reduction_nm": 5.307897578589528,
+    "absolute_gain_range_nm": [
+      3.308778471271991,
+      8.156726651552756
+    ],
+    "mean_paired_reduction_ci95_pct": [
+      50.10535014697364,
+      55.12896090634194
+    ],
+    "mean_absolute_reduction_ci95_nm": [
+      4.8922937657070635,
+      5.743830945463639
+    ],
+    "ratio_of_mean_sds_reduction_pct": 52.753514998688416
+  },
+  "bootstrap": {
+    "unit": "complete paired scan",
+    "draws": 20000,
+    "seed": 20260930
+  },
+  "primary_uses_pi_residual": false,
+  "calibration_scope": "Fixed direction estimated from first six Raw scans; shared nominal scale and direction applied to both methods.",
+  "verification": {
+    "center_replay_max_difference_um": 2.220446049250313e-16,
+    "all_30_steps_present_in_every_scan": true,
+    "all_models_have_same_scan_ids": true,
+    "alternate_sd_formula_agrees": true
+  }
+}

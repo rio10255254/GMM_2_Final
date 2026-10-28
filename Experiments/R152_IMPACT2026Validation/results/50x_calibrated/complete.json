@@ -1,0 +1,47 @@
+{
+  "state": "complete_50x_only",
+  "images": 86,
+  "pairs_per_method": 60,
+  "center_rows": 2322,
+  "pair_rows": 180,
+  "source_scope": "Original 50x conditions; objective optics",
+  "checkpoint_sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61",
+  "bank_sha256": "f9dfcb17145f9388ddc161ce8f0ec43e8adc15322bd3822b194b0f09bb0d7bb0",
+  "learned_weights_unchanged": true,
+  "weights_and_buffers_unchanged": true,
+  "optical_installation": {
+    "mode": "50x original single calibrated kernel",
+    "source_path": "D:\\GMM_2_Final\\PSF_Fitting\\tests\\artifacts\\cd_verification_20260714\\50x_deconvolution_sweep.mat",
+    "source_sha256": "a5d82edc4bc290e5e1d5657841e317dd891dbd1dde8883cfaaa7c2e903851feb",
+    "source_key": "psf",
+    "fit_path": "D:\\GMM_2_Final\\PSF_Fitting\\output\\pillar_via_junction_psf_20260713\\50x\\fit_result\\PSF_fitted_2D_FOVstack.mat",
+    "fit_sha256": "b4b41567093d81849ff996961c174a3f4e134d732255c9e8460b9a71619b7e72",
+    "effective_bank_path": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\config\\50x_calibrated_psf.npz",
+    "effective_bank_sha256": "f9dfcb17145f9388ddc161ce8f0ec43e8adc15322bd3822b194b0f09bb0d7bb0",
+    "effective_kernel_count": 1,
+    "object_um_per_px": 0.069,
+    "kernel_centroid_xy_px": [
+      -0.027513961635230715,
+      0.15853764586198915
+    ],
+    "kernel_origin": "original central sample index 50; not recentered",
+    "max_centrosymmetry_difference": 6.456081311185234e-05,
+    "learned_parameters_unchanged": true,
+    "changed_buffers": [
+      "base.optics.bank",
+      "base.optics.mean_kernel",
+      "psf_fusion.bank"
+    ],
+    "selector_mode": "single calibrated kernel, weight exactly 1; original selector parameters retained but unused",
+    "adapter_sha256": "0246e38e9aad2898f000a138f6646e4f59e1f8d6d70de16a71140d605f9e5916"
+  },
+  "raw_wiener_original_pair_max_difference": {
+    "measured_step_um": 2.220446049250313e-16,
+    "nominal_abs_error_nm": 1.7763568394002505e-15,
+    "within_grid_sd_nm": 1.7763568394002505e-15
+  },
+  "native_fp32_output": true,
+  "postprocessing": false,
+  "full_50x_pending": false,
+  "elapsed_seconds": 278.1597735999385
+}

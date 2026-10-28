@@ -1,6 +1,6 @@
 # PROJECT STATE / 專案狀態
 
-Last updated: 2026-10-24（文件整併改寫；內容事實截至 2026-10-23）
+Last updated: 2026-10-28（收進 R152 IMPACT 2026 獨立工作區紀錄）；2026-10-24 文件整併改寫，內容事實截至 2026-10-23
 
 這份只寫**現在的狀態**。系統怎麼設計、怎麼判斷好壞看 [PROJECT_ARCHITECTURE.md](PROJECT_ARCHITECTURE.md)；機器可讀的正式身分是 [ESTIMATOR_POLICY.json](ESTIMATOR_POLICY.json)；整體巡檢用 `python Tools/project_control_center.py`；縮寫看 [docs/README.md](docs/README.md)。
 
@@ -16,6 +16,7 @@ Last updated: 2026-10-24（文件整併改寫；內容事實截至 2026-10-23）
 - 單趟 30 步合併波動（九顆平均，論文口徑）：RAW 8.781 → MOSR 4.273（−51.3%，30 趟全部改善）；相鄰步 PI 誤差 6.969 → 3.598（−48.4%）。直徑重拍 32.750 → 13.252；輪廓重拍 63.758 → 18.600。
 - **與 SEM 平均直徑差反而變大**（169.883 → 204.281）：更穩不等於更準。
 - R153 十種方法（RAW、Wiener、EDSR、NAFNet、RDN、RCAN、Restormer、USRNet、SwinIR、MOSR）各 930 張完成；MOSR 在三個主要欄位為最低點估計，但訓練輪數不等；U-Net、MambaIRv2 因官方後端受阻未完成。
+- IMPACT 2026 海報（TW0243）用同一份 R152 權重、不重訓：20×／50× 各 30 個 1 µm 單步，RAW 9.506 → MOSR 4.068 nm（−57.2%）、5.938 → 4.542 nm（−23.5%）。這是影像量測的位移，不是外部 GMF；正式基準不變。紀錄見下方 §2 的 IMPACT 小節。
 - 完整交接：[R153 論文交接](Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。
 
 ### 讀數字前
@@ -88,6 +89,42 @@ R153 十方法（算術平均口徑，nm）：
 效率（RTX A6000、FP32、單張 1544×2064，15 次前向）：MOSR 1.461 s、GPU 配置峰值 2.785 GiB（保留峰值 5.555 GiB）；EDSR-x1 0.526 s；NAFNet 0.513 s；RCAN 6.731 s；Restormer 5.007 s；USRNet 2.967 s；RDN 9.873 s／32.7 GiB；SwinIR 27.171 s。MOSR 沒有比 EDSR、NAFNet 快。速度不能推論量測效果。
 
 **限制（請在任何引用時保留）：** 更穩不等於更準；長距離位移沒有明顯改善；外部模型訓練輪數不一、不代表收斂；所有外部模型與 Wiener 只用合成資料訓練／挑選；單一樣品單一時段；U-Net 與 MambaIRv2 未完成；RAW 與 MOSR 使用既有保存的圓心與輪廓，未重擬合。
+
+#### R152 IMPACT 2026 海報驗證（2026-10-28 從獨立工作區收進 main）
+
+這批驗證在 C 槽獨立工作區（分支 `sandbox/r152-impact2026`）完成，當時刻意沒有同步回主專案。以下各段是那個工作區紀錄的原文，「本獨立工作區」「本工作區」都指它。資料夾：[Experiments/R152_IMPACT2026Validation](Experiments/R152_IMPACT2026Validation/README.md)；逐張重建陣列在發布附件 [r152-impact2026-reconstructions-20261028](https://github.com/rio10255254/GMM_2_Final/releases/tag/r152-impact2026-reconstructions-20261028)。
+
+##### R152 IMPACT2026 獨立工作區補充
+
+<!-- R152_IMPACT2026_WORKTREE_ONLY -->
+2026-09-29 本獨立工作區R152四條件120配對完成：20×原生25顆光學資料、50×原校正單核及推論輸入轉接；相同學得權重、未重訓。原配對及量測協議不變，共用光學版本保留為附加比較。正式基準不變。[完整結果](Experiments/R152_IMPACT2026Validation/reports/R152_RESULTS.md)
+
+本工作區根層其餘內容源自較早的Git提交；當次D槽現況快照保存在本驗證資料夾sources中。未向D槽同步這些治理註記。
+
+##### R152位移讀法追加核對
+
+<!-- R152_LSC_ORDER_AUDIT -->
+2026-09-29 R152位移稽核：確認原稿粗外框有處理順序依賴；相同LSC逐顆固定狀態後重算四方法120配對。R152為7.123347／5.489350／4.356654 nm，V42為7.367438／5.784830／4.908968 nm；三項新舊配對區間均包含零，50×兩項仍落後V42。原表保留，正式基準不變。[稽核](Experiments/R152_IMPACT2026Validation/reports/R152_DISPLACEMENT_AUDIT.md)
+
+##### R152定位讀法研究
+
+<!-- R152_LOCALIZATION_IMPROVEMENT -->
+2026-09-29 定位讀法改良：以已知平移選定720方向重擬合LSC，同一讀法完成Raw/Wiener/R152全部120配對；R152三項7.113328／5.558788／4.258168 nm，原圖8.839481／7.233079／10.862548 nm。原圖也受益；R152名義平均差較前一固定狀態讀法略增，未全面改善、不升級正式基準。[結果](Experiments/R152_IMPACT2026Validation/reports/R152_LOCALIZATION_IMPROVEMENT.md)
+
+
+##### MOSR海報統計呈現
+
+2026-09-30 MOSR海報改版：保留原四条件各30單步位移，樣本標準差四組平均Raw 8.84→MOSR 7.11 nm，降低19.5%；各條件降低9.8–24.1%。未納入另批30趟重拍，未重訓或變更正式基準。[海報與核對](Experiments/R152_IMPACT2026Validation/reports/R152_POSTER_STEP_SD_SUMMARY.md)
+
+
+##### MOSR兩倍率各30步海報
+
+2026-09-30 MOSR海報改為20×／50×各30個1 µm單步位移分開展示。20×取論文首個驗證掃描，Raw 9.506→MOSR 4.068 nm（57.2%）；50×原鎖定30配對5.938→4.542 nm（23.5%）。完整930張三方法重測、50×86張重新推論核對通過。30趟及0.5 µm保留補充，不重訓或變更正式基準。[結果與海報](Experiments/R152_IMPACT2026Validation/reports/R152_30STEP_POSTER_RESULTS.md)
+
+
+##### IMPACT2026海報設計更新
+
+2026-10-03 TW0243海報設計完成：新增模型功能圖、實際64點邊界／LSC圓心示例、三方法數值表與改善解釋；保留兩倍率各30步及原57.2%／23.5%。PPTX、90×120cm PDF及公開內容核對通過。未重訓或改變正式基準。[最新版](Experiments/R152_IMPACT2026Validation/reports/R152_POSTER_DESIGN_SUMMARY.md)
 
 ### 3. 保存與重現狀態（截至 2026-10-23）
 

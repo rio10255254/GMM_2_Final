@@ -1,0 +1,7 @@
+baseline,metric,baseline_minus_r152_nm,ci95_low_nm,ci95_high_nm,resampling
+Raw,step_sd_nm,1.7513082056987725,0.9052058942275591,2.4509597044452676,within-condition matched pair bootstrap; conditional on locked pairs
+Raw,nominal_mae_nm,1.4452029766342678,0.6994302460628579,2.1903550789356943,within-condition matched pair bootstrap; conditional on locked pairs
+Raw,median_within_grid_sd_nm,8.216650136874357,6.835015844551769,10.325882579520165,within-condition matched pair bootstrap; conditional on locked pairs
+Wiener,step_sd_nm,0.7727251561465911,0.14285135974260008,1.3887234347910025,within-condition matched pair bootstrap; conditional on locked pairs
+Wiener,nominal_mae_nm,0.8615984354443507,0.28502183558050687,1.463465913154477,within-condition matched pair bootstrap; conditional on locked pairs
+Wiener,median_within_grid_sd_nm,1.6529143109923234,0.6017996541097892,3.2283690251661845,within-condition matched pair bootstrap; conditional on locked pairs

@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "scope": "four original conditions, 30 locked single steps each",
+  "repeat_scan_dataset_used": false,
+  "statistic": "sample SD (denominator 29) per condition, arithmetic mean of four SDs",
+  "max_center_to_step_replay_error_nm": 2.2737367544323206e-13,
+  "sd_nm": {
+    "Raw": [
+      5.237895584541705,
+      5.430076277546738,
+      14.1621820852714,
+      10.52776822325472
+    ],
+    "Wiener": [
+      4.907045004521247,
+      4.58967053721096,
+      11.076842594313515,
+      11.006543619290786
+    ],
+    "MOSR": [
+      4.7226515370935696,
+      4.547154956635045,
+      10.754313223993485,
+      8.429191745858951
+    ]
+  },
+  "means_nm": {
+    "Raw": 8.839480542653641,
+    "Wiener": 7.895025438834127,
+    "MOSR": 7.113327865895263
+  },
+  "reductions_pct": [
+    9.836852207759637,
+    16.25983274972685,
+    24.06316230619632,
+    19.933726055634818
+  ],
+  "mean_sd_reduction_pct": 19.527761483597104,
+  "size_cm": [
+    89.99643608940973,
+    120.00229621039496
+  ],
+  "native_chart_count": 1,
+  "editable_table_count": 2,
+  "embedded_workbook_count": 1,
+  "template_logo_unchanged": true,
+  "native_powerpoint_opened": true,
+  "native_text_overflow_count": 0,
+  "paper_code": null,
+  "pptx_sha256": "404d0e23dcc89e9bf5641fc0d080b9788fa8f6d10bd9a890552c77691a940259",
+  "pdf_sha256": "54fbbeefe8dca6edc857bd6ea09ec28c26da121367d94916881a6c3159d9e117",
+  "source_hashes": {
+    "improved_pairs.csv": "f9d42a3dac90feaee10c0bac0460a392c9578301eeab1263e66b8b4639cd4a7d",
+    "improved_centers.csv": "56dff5c425da40a7d11b05f49143ecedab4542e812525c7b2defe11390a766bd",
+    "improved_summary.csv": "fae4cb75bdb26a689bfac26206a10762f4622a4dd67d05e565df265a7ec1b4ba",
+    "original_locked_pairs.csv": "6bcb763b828342ec9f7810f31762b26af38404128197a0e0a7d1c3592c9b7179"
+  }
+}

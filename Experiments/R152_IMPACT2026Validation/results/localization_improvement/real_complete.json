@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "reader": "radial_720_lsc",
+  "frames": 166,
+  "centers": 4482,
+  "pairs": 360,
+  "pairs_per_method": 120,
+  "models": [
+    "Raw",
+    "Wiener",
+    "R152"
+  ],
+  "selection_before_real_scores": true,
+  "known_shift_validation_passed": true,
+  "trained_weights_changed": false,
+  "excluded_pairs": 0,
+  "nominal_step_not_used_in_new_fitting": true,
+  "original_nominal_definition_preserved": true,
+  "source_script_sha256": "75eecab256dd61c47e0bcf75543dbee9f7bea03bf99fdff14e6b6c9e3a966ab4",
+  "reader_sha256": "6c7849980066521bd2ccb821a23b84ecabb4f82904ffe97c7081a35b0f30b28a",
+  "elapsed_seconds": 132.73784389998764
+}

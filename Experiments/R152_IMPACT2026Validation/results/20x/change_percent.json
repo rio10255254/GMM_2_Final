@@ -1,0 +1,17 @@
+{
+  "sign": "R152 minus baseline / baseline; positive is worse",
+  "values": [
+    {
+      "baseline": "Raw",
+      "step_sd_nm": -18.95406867476059,
+      "nominal_mae_nm": -21.04319520410686,
+      "median_within_grid_sd_nm": -62.831030508265584
+    },
+    {
+      "baseline": "Wiener",
+      "step_sd_nm": -12.237363486201003,
+      "nominal_mae_nm": -16.897566438740952,
+      "median_within_grid_sd_nm": -45.465761058534625
+    }
+  ]
+}

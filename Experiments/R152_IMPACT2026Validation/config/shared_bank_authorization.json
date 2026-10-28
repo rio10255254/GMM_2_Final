@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-29",
+  "user_instruction": "50倍沒有光學資料嗎?沒有的話就用同一組，因為此模型有點像萬用模型",
+  "use_unchanged_r152_bank_for_50x": true,
+  "r152_weights": "same delivered checkpoint for 20x and 50x",
+  "r152_optics": "same unmodified native 20x bank for both magnifications; no resizing, replacement or retraining",
+  "wiener_optics": "original magnification-specific calibrated PSF and fixed NSR 0.0565",
+  "measurement_scales_um_per_px": {"20x": 0.1725, "50x": 0.069},
+  "protocol_deviation": "R152 optical information is shared, unlike the submitted paper's magnification-specific optical information statement.",
+  "claim_boundary": "Test the shared-bank cross-magnification setting; do not assume universal applicability."
+}

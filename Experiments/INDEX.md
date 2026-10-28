@@ -181,6 +181,33 @@ R147診斷後的獨立版本：取消縮圖／放大主幹，以全原尺寸多�
 
 依使用者指定的 `research_only` 真實P類SEM外框擬合25顆尖中心加淡尾PSF；預先封存的六張來源照片、18個留出圓外觀的預測優於原BADS與單一高斯。以R145同768組清晰母場景、分組、雜訊和PSF索引重新製作模糊配對，從零完成8192次訓練、930張實拍及8370顆圓量測，最終稽核通過。相對R145，短步PI平均差3.990→4.313nm、直徑重拍21.013→23.082nm、輪廓重拍16.001→20.371nm，均退步；起點相對位移重拍11.216→10.369nm改善，但其平均絕對差18.070→18.220nm未改善。與同九顆SEM外框點位參照的平均直徑差R146+218.744nm、R145+207.186nm、RAW+185.182nm。生成測試首選10/206、實拍930張全選同一顆；光學分支實際作用仍接近零，不能宣稱自適應PSF成功。SEM外框只用於PSF光學校準，未作神經清晰標籤；來源及模型保留研究身分，不升級正式基準。[完整結果](R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_RESULTS.md) · [退步原因核對](R146_SEMCoreHaloPSF25_MatchedPairs/reports/R146_CAUSAL_AUDIT.md)
 
+## R152 IMPACT 2026 海報驗證
+
+這批驗證原本在 C 槽一個獨立工作區（分支 `sandbox/r152-impact2026`）完成，2026-10-28 收進 main。下面是當時寫在那個工作區索引裡的原文，文中的「本獨立工作區」指的就是它。逐張重建陣列不在 git 內，放在發布附件 [r152-impact2026-reconstructions-20261028](https://github.com/rio10255254/GMM_2_Final/releases/tag/r152-impact2026-reconstructions-20261028)。
+
+<!-- R152_IMPACT2026_WORKTREE_ONLY -->
+## 本獨立工作區的R152投稿跟進
+
+[R152 IMPACT2026完整結果](R152_IMPACT2026Validation/reports/R152_RESULTS.md)：四條件120配對完成，20×原生光學及50×原校正單核轉接；未重訓、未更換正式基準。
+
+<!-- R152_LSC_ORDER_AUDIT -->
+[R152位移定義與LSC追加稽核](R152_IMPACT2026Validation/reports/R152_DISPLACEMENT_AUDIT.md)：原外框存在順序依賴，已逐顆固定狀態重算；R152未證實穩定勝過V42。原稿重播表保留。
+
+<!-- R152_LOCALIZATION_IMPROVEMENT -->
+[R152定位讀法改良](R152_IMPACT2026Validation/reports/R152_LOCALIZATION_IMPROVEMENT.md)：720方向LSC完整三方法120配對；有進退取捨，保留研究候選。
+
+
+<!-- R152_MOSR_POSTER_STEP_SD -->
+2026-09-30 MOSR海報改版：保留原四条件各30單步位移，樣本標準差四組平均Raw 8.84→MOSR 7.11 nm，降低19.5%；各條件降低9.8–24.1%。未納入另批30趟重拍，未重訓或變更正式基準。[海報與核對](R152_IMPACT2026Validation/reports/R152_POSTER_STEP_SD_SUMMARY.md)
+
+
+<!-- R152_MOSR_30STEP_POSTER -->
+2026-09-30 MOSR海報改為20×／50×各30個1 µm單步位移分開展示。20×取論文首個驗證掃描，Raw 9.506→MOSR 4.068 nm（57.2%）；50×原鎖定30配對5.938→4.542 nm（23.5%）。完整930張三方法重測、50×86張重新推論核對通過。30趟及0.5 µm保留補充，不重訓或變更正式基準。[結果與海報](R152_IMPACT2026Validation/reports/R152_30STEP_POSTER_RESULTS.md)
+
+
+<!-- R152_POSTER_DESIGN_20261003 -->
+2026-10-03 TW0243海報設計完成：新增模型功能圖、實際64點邊界／LSC圓心示例、三方法數值表與改善解釋；保留兩倍率各30步及原57.2%／23.5%。PPTX、90×120cm PDF及公開內容核對通過。未重訓或改變正式基準。[最新版](R152_IMPACT2026Validation/reports/R152_POSTER_DESIGN_SUMMARY.md)
+
 ## 2026-10-16 逐輪保存入口
 
 這是後來補建的完整目錄導引，不改變當年設計、成功、失敗、中止或採用身分。最新十方法比較已於10月7日完成；前方較早的進度文字按原日期解讀。

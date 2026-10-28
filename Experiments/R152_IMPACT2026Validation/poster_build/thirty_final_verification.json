@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "main_conditions": 2,
+  "steps_per_condition_per_method": 30,
+  "methods": [
+    "Raw",
+    "Wiener",
+    "MOSR"
+  ],
+  "twenty_x_run": "003412_XY_0",
+  "twenty_x_run_index": 7,
+  "selection_rule": "Earliest complete evaluation scan after the existing first-six-RAW-scan direction calibration split",
+  "no_cross_scan_or_condition_pooling": true,
+  "curves_are_observed_step_minus_1000_nm": true,
+  "identical_curve_limits_nm": [
+    -30,
+    30
+  ],
+  "twenty_x_center_to_step_max_error_nm": 1.1368683772161603e-13,
+  "native_charts": 2,
+  "native_points": 180,
+  "embedded_workbooks": 2,
+  "source_images_preserved": true,
+  "template_logo_unchanged": true,
+  "text_overflow": 0,
+  "print_size_cm": [
+    89.99643608940973,
+    120.00229621039496
+  ],
+  "pptx_sha256": "c723dc6897c614be423562a3b7a2dcf682a7b8da66be9c72d7ced0531ac88d1d",
+  "pdf_sha256": "a9186c76e3d4e2f65fa9c45a9c9fdc77bc6cd3228691b584258988525ec347c7",
+  "paper_code": null
+}

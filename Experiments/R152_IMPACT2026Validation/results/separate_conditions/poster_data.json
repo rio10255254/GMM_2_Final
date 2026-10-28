@@ -1,0 +1,185 @@
+{
+  "public_model_name": "MOSR",
+  "main_step_um": 1.0,
+  "no_cross_condition_average": true,
+  "twenty": {
+    "condition": "20x, 1 um",
+    "scans": 30,
+    "steps_per_scan": 30,
+    "scan_sd_nm": {
+      "Raw": [
+        7.673785597724096,
+        7.4194047523539375,
+        9.65331829263765,
+        9.000256507617108,
+        9.66542767256547,
+        7.659357274334121,
+        9.506103178611118,
+        9.832486633666743,
+        9.318422657282944,
+        9.929029643385576,
+        7.353788273932029,
+        9.2465034989612,
+        10.80278370879659,
+        6.952348117301414,
+        8.905560129101756,
+        11.45715473267287,
+        10.90036675468449,
+        11.36847374023331,
+        10.27668913074283,
+        9.896009501952664,
+        10.901540952421929,
+        11.101912640380146,
+        13.782461167961316,
+        12.266394817297405,
+        12.3918399458335,
+        10.314117460031376,
+        10.644130063752756,
+        10.597997729014512,
+        9.484928432984,
+        13.548245484033917
+      ],
+      "Wiener": [
+        7.114886565763332,
+        5.739582660370455,
+        7.034442604707412,
+        6.035852119758535,
+        5.611279895524486,
+        6.150351965179874,
+        5.794359850745233,
+        5.662249128850925,
+        8.138544510251965,
+        5.973368049951944,
+        4.903213123805057,
+        6.976591904126987,
+        8.144439598793527,
+        7.2755136510378335,
+        5.382559262498428,
+        7.324778104102988,
+        5.859561080315842,
+        6.671377794449883,
+        5.3043654118380426,
+        10.282642206390252,
+        8.262622252563427,
+        10.136549549058472,
+        12.66405225599094,
+        14.872753108126162,
+        11.815431164851129,
+        15.093453707310998,
+        9.374170557893526,
+        8.808932027203337,
+        9.21930452435896,
+        8.264448976279393
+      ],
+      "MOSR": [
+        3.8483461214289374,
+        3.6650536010423487,
+        3.616307433259265,
+        3.377202584738591,
+        3.921499587060158,
+        4.036927597128427,
+        4.067939966272099,
+        4.422820821001696,
+        4.491445623379096,
+        3.882162330251284,
+        3.515973355861981,
+        4.807691554302836,
+        3.906009286216047,
+        3.64356964602943,
+        4.23013800173174,
+        4.060178392863443,
+        5.498877769230724,
+        4.409008825012839,
+        4.599306585918317,
+        5.417410900786528,
+        5.100712333464178,
+        5.383023600075957,
+        6.989032059072796,
+        6.901148677626362,
+        6.345369918689272,
+        6.510708800765316,
+        6.290473502700111,
+        5.010362823604198,
+        5.273690602587857,
+        5.39151883248115
+      ]
+    },
+    "pooled_within_scan_sd_nm": {
+      "Raw": 10.199758113309844,
+      "Wiener": 8.430980751755335,
+      "MOSR": 4.864821280613458
+    },
+    "relative_reduction_pct": 52.30454265120987,
+    "per_scan_reduction_min_pct": 36.87575475075586,
+    "per_scan_reduction_max_pct": 64.5620707095379,
+    "improved_scans": 30
+  },
+  "fifty": {
+    "condition": "50x, 1 um",
+    "locked_pairs": 30,
+    "step_sd_nm": {
+      "Raw": 5.938041608257491,
+      "Wiener": 4.721662807383142,
+      "MOSR": 4.541740283078291
+    },
+    "relative_reduction_pct": 23.514508945802792
+  },
+  "supplementary_half_step": [
+    {
+      "sequence": "50x_x_0p5um",
+      "method": "MOSR",
+      "n": 30,
+      "mean_nm": 500.03337842896366,
+      "step_sd_nm": 4.69911945097874
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "method": "Raw",
+      "n": 30,
+      "mean_nm": 499.9967542719991,
+      "step_sd_nm": 5.477814432803989
+    },
+    {
+      "sequence": "50x_x_0p5um",
+      "method": "Wiener",
+      "n": 30,
+      "mean_nm": 500.0352229509607,
+      "step_sd_nm": 4.939501311463111
+    }
+  ],
+  "images": {
+    "20x_Raw": {
+      "path": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\poster_build\\scan_assets\\repeat20x_Raw.png",
+      "width_px": 96,
+      "scale_um_per_px": 0.1725,
+      "sha256": "5801f2a6875cbaefb8208f8c14c90b9722f88807a7f46c0ebfb8bae86a0714ec"
+    },
+    "50x_Raw": {
+      "path": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\inspection\\images\\1_0003_Raw.png",
+      "width_px": 227,
+      "scale_um_per_px": 0.069,
+      "sha256": "5e9095dc31bf36a1ea9908a2b2668d173b19270a5061d63b929b9b0e93825ca5"
+    },
+    "20x_MOSR": {
+      "path": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\poster_build\\scan_assets\\repeat20x_MOSR.png",
+      "width_px": 96,
+      "scale_um_per_px": 0.1725,
+      "sha256": "1652cf6431e11724dcd3748b780fb9c24396fbb35e57bc09cc4e561e9ea075d5"
+    },
+    "50x_MOSR": {
+      "path": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\inspection\\images\\1_0003_R152.png",
+      "width_px": 227,
+      "scale_um_per_px": 0.069,
+      "sha256": "dae6bac42ec3f6c0232bf812583e07b79fea0cb24a6d0a3c9ba414635914ed5f"
+    }
+  },
+  "scientific_scope": "Two acquisition cohorts at a common nominal 1 um step, displayed separately; no direct controlled comparison of magnification alone.",
+  "reader": "Thesis normal-gradient geometric LSC, 64 boundary points at 20x and 96 at 50x; fixed initialization state per pillar.",
+  "source_hashes": {
+    "results\\separate_conditions\\20x_scan_sd.csv": "805ade949d5a45df15b81df6afbe49997e12ae9dc84d2464df4ac6798f1a96c7",
+    "results\\separate_conditions\\20x_steps.csv": "ae850dcfb1eeac38ddd4f594f7d15e49cbc0b84288b63ee73b2d10270591f593",
+    "results\\separate_conditions\\50x_steps.csv": "c99e7d597a62fd670fe9e6697c67b7a3f9a0b4818200744696663507375535dd",
+    "results\\separate_conditions\\50x_condition_sd.csv": "3ee307759c533bd851bbb5365ed7945c41a51ec3df273417889a5f1529f43c7d",
+    "results\\separate_conditions\\protocol_lock.json": "cf4df4cd4c30ebd7f22092f0167312d3808568b305c9a7684ffdab4c10b955a4"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sequence": "50x_x_1um",
+  "frame_index": 4,
+  "source": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_1um\\bmp\\frame_0004.bmp",
+  "source_sha256": "ff66d2a5519128002a6fac9660a67f9fabc86286d35b55f5d8b6606c6270b5f3",
+  "output": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\results\\50x_shared_bank\\reconstruction\\50x_x_1um\\frame_0004.npz",
+  "output_sha256": "a8efc1da5dec491663f89a69d30300e9438d88e682c9edb0f0b497f412a2745f",
+  "checkpoint_sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61",
+  "bank_sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+  "object_um_per_px": 0.069,
+  "bank_calibration_um_per_px": 0.1725,
+  "optical_mode": "unchanged native 20x bank shared across objectives",
+  "deployment_scale": 1,
+  "precision": "FP32",
+  "tf32": false,
+  "core": 512,
+  "halo": 24,
+  "forward_seconds": 2.131203999975696,
+  "device": "cuda",
+  "shape": [
+    1536,
+    2048
+  ]
+}

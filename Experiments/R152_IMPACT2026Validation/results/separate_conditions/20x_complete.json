@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "frames": 930,
+  "scans": 30,
+  "steps_per_scan": 30,
+  "methods": {
+    "Raw": {
+      "mean_scan_sd_nm": 10.06169461640896,
+      "pooled_within_scan_sd_nm": 10.199758113309844,
+      "min_scan_sd_nm": 6.952348117301414,
+      "max_scan_sd_nm": 13.782461167961317,
+      "improved_scans_vs_raw": 0,
+      "per_scan_gain_min_pct": 0.0,
+      "per_scan_gain_max_pct": 0.0
+    },
+    "Wiener": {
+      "mean_scan_sd_nm": 7.996389253736646,
+      "pooled_within_scan_sd_nm": 8.430980751755335,
+      "min_scan_sd_nm": 4.903213123805057,
+      "max_scan_sd_nm": 15.093453707310998,
+      "improved_scans_vs_raw": 26,
+      "per_scan_gain_min_pct": -46.33781092565803,
+      "per_scan_gain_max_pct": 48.38449091575637
+    },
+    "MOSR": {
+      "mean_scan_sd_nm": 4.753797037819433,
+      "pooled_within_scan_sd_nm": 4.864821280613458,
+      "min_scan_sd_nm": 3.377202584738591,
+      "max_scan_sd_nm": 6.989032059072796,
+      "improved_scans_vs_raw": 30,
+      "per_scan_gain_min_pct": 36.87575475075586,
+      "per_scan_gain_max_pct": 64.5620707095379
+    }
+  },
+  "max_source_center_difference_px": 2.2737367544323206e-13,
+  "excluded_frames": 0,
+  "excluded_steps": 0,
+  "reader": "thesis normal-gradient geometric LSC with per-pillar state reset"
+}

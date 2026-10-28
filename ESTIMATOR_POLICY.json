@@ -4948,5 +4948,86 @@
   ],
   "decision_notes": [
     "R44 Universal Boundary Motion Fidelity (2026-05-09): R44A-R44H Step B complete; Step B preserves motion but worsens target shape, so do not proceed to multi-teacher full-model KD."
-  ]
+  ],
+  "r152_impact2026_worktree_note": {
+    "status": "full120_objective_calibrated_complete",
+    "formal_baseline_unchanged": true,
+    "external_compare": "Original IMPACT nominal-step maximum-gradient/LSC protocol; not external GMF.",
+    "notes": "Same delivered learned weights; native 20x 25PSF and original 50x single calibrated PSF with authorized input adapter. Shared-bank run retained as supplement. No promotion.",
+    "report": "Experiments/R152_IMPACT2026Validation/reports/R152_RESULTS.md",
+    "measurement_audit": {
+      "status": "order_dependence_confirmed_and_fixed_state_remeasured",
+      "original_numbers_preserved": true,
+      "current_report": "Experiments/R152_IMPACT2026Validation/reports/R152_DISPLACEMENT_AUDIT.md",
+      "reader": "same geometric LSC with curvature state reset per pillar",
+      "r152_vs_v42": "small point-estimate improvements; all three conditional paired intervals include zero",
+      "no_formal_promotion": true
+    },
+    "localization_improvement": {
+      "reader": "radial_720_lsc",
+      "selected_by": "known digital shifts, before real 120-pair scores",
+      "real120_complete": true,
+      "raw_wiener_r152_same_reader": true,
+      "R152_metrics_nm": [
+        7.113328,
+        5.558788,
+        4.258168
+      ],
+      "not_uniformly_better_than_fixed_state_lsc": true,
+      "not_formally_promoted": true,
+      "report": "Experiments/R152_IMPACT2026Validation/reports/R152_LOCALIZATION_IMPROVEMENT.md"
+    },
+    "poster_presentation": {
+      "public_name": "MOSR",
+      "scope": "20x thesis first evaluation scan (run 7), original 50x 1um locked 30 pairs",
+      "sample_size_per_condition": 30,
+      "statistic": "sample SD of observed single steps, ddof=1; conditions kept separate",
+      "SD_nm": {
+        "20x": {
+          "Raw": 9.506103178611133,
+          "Wiener": 5.794359850745207,
+          "MOSR": 4.067939966272114
+        },
+        "50x": {
+          "Raw": 5.938041608257486,
+          "Wiener": 4.7216628073831775,
+          "MOSR": 4.541740283078332
+        }
+      },
+      "raw_reduction_pct": {
+        "20x": 57.207071185330314,
+        "50x": 23.51450894580204
+      },
+      "full30_scans_supplement_only": true,
+      "0p5um_supplement_only": true,
+      "external_compare": "Image-measured displacement, same normal-gradient geometric LSC family within each condition; not external GMF",
+      "formal_baseline_unchanged": true,
+      "report": "Experiments/R152_IMPACT2026Validation/reports/R152_30STEP_POSTER_RESULTS.md",
+      "design_update": {
+        "date": "2026-10-03",
+        "paper_code": "TW0243",
+        "artifact": "Experiments/R152_IMPACT2026Validation/poster_final/IMPACT2026_MOSR_Design_TW0243_v3.pptx",
+        "report": "Experiments/R152_IMPACT2026Validation/reports/R152_POSTER_DESIGN_SUMMARY.md",
+        "unchanged_data_and_measurement": true,
+        "functional_model_and_readout_diagrams": true,
+        "full_training_recipe_not_in_public_poster": true
+      }
+    },
+    "poster_history": [
+      {
+        "public_name": "MOSR",
+        "scope": "four original conditions, 30 locked single steps each",
+        "statistic": "sample SD within condition (ddof=1), arithmetic mean across four conditions",
+        "mean_step_sd_nm": {
+          "Raw": 8.839480542653641,
+          "Wiener": 7.895025438834127,
+          "MOSR": 7.113327865895263
+        },
+        "mean_sd_reduction_pct": 19.527761483597104,
+        "repeat30_scan_dataset_included": false,
+        "formal_baseline_unchanged": true,
+        "report": "Experiments/R152_IMPACT2026Validation/reports/R152_POSTER_STEP_SD_SUMMARY.md"
+      }
+    ]
+  }
 }

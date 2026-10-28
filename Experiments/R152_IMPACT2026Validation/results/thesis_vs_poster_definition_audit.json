@@ -1,0 +1,135 @@
+{
+  "thesis": {
+    "R152-R148v2-SafeAdaptivePSF": {
+      "projected_nm": {
+        "mean": 4.75379703781944,
+        "rms": 4.864821280613465,
+        "min": 3.37720258473861,
+        "max": 6.9890320590728106
+      },
+      "horizontal_nm": {
+        "mean": 4.763242273940407,
+        "rms": 4.874811421145276,
+        "min": 3.3726131577358145,
+        "max": 7.011219699358395
+      }
+    },
+    "Raw": {
+      "projected_nm": {
+        "mean": 10.061694616408962,
+        "rms": 10.199758113309848,
+        "min": 6.952348117301415,
+        "max": 13.78246116796131
+      },
+      "horizontal_nm": {
+        "mean": 10.06128014335339,
+        "rms": 10.199313897751697,
+        "min": 6.949827101202608,
+        "max": 13.795784511035375
+      }
+    },
+    "projected_nm_mean_gain_pct": 52.75351499868837,
+    "projected_nm_rms_gain_pct": 52.30454265120981,
+    "horizontal_nm_mean_gain_pct": 52.65769160510787,
+    "horizontal_nm_rms_gain_pct": 52.20451620554728
+  },
+  "poster": {
+    "all120": {
+      "old": {
+        "Raw": 9.013334686960471,
+        "MOSR": 7.123346971403274,
+        "gain_pct": 20.968795470242874
+      },
+      "new": {
+        "Raw": 8.839480542653641,
+        "MOSR": 7.113327865895262,
+        "gain_pct": 19.527761483597118
+      }
+    },
+    "20x": {
+      "old": {
+        "Raw": 12.31874135339018,
+        "MOSR": 9.626264075778009,
+        "gain_pct": 21.85675630628602
+      },
+      "new": {
+        "Raw": 12.34497515426306,
+        "MOSR": 9.591752484926218,
+        "gain_pct": 22.302375135895502
+      }
+    },
+    "50x": {
+      "old": {
+        "Raw": 5.707928020530765,
+        "MOSR": 4.620429867028541,
+        "gain_pct": 19.052415335137685
+      },
+      "new": {
+        "Raw": 5.3339859310442215,
+        "MOSR": 4.634903246864307,
+        "gain_pct": 13.106196627013912
+      }
+    },
+    "20x_1um": {
+      "old": {
+        "Raw": 9.874679776222472,
+        "MOSR": 8.473800245616825,
+        "gain_pct": 14.186581867483595
+      },
+      "new": {
+        "Raw": 10.527768223254723,
+        "MOSR": 8.429191745858953,
+        "gain_pct": 19.933726055634825
+      }
+    },
+    "four_condition_mean": {
+      "Raw": 8.839480542653636,
+      "R152": 7.113327865895268,
+      "gain_pct": 19.527761483596993
+    },
+    "four_condition_rms": {
+      "Raw": 9.595866085370966,
+      "R152": 7.577707142478539,
+      "gain_pct": 21.031545510718818
+    }
+  },
+  "sources": {
+    "shared_raw_sha256_count": 0,
+    "poster_receipt_path": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\results\\20x\\reconstruction\\20x_1um\\frame_0001.json",
+    "poster_receipt": {
+      "sequence": "20x_1um",
+      "frame_index": 1,
+      "source": "D:\\GMM_2_Final\\20260704_20x_5x_analysis\\raw_inputs\\20x_1um\\bmp\\frame_0001.bmp",
+      "source_sha256": "278f57c02d284acaa336a1f35518f98e1557063b0c32fbac1a515811f6249fa0",
+      "output": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\results\\20x\\reconstruction\\20x_1um\\frame_0001.npz",
+      "output_sha256": "f834dc487366e5a7d6b017ad19800e1ee612ea5c217ddca57a9fb3d8b42da81e",
+      "checkpoint_sha256": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61",
+      "bank_sha256": "efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843",
+      "object_um_per_px": 0.1725,
+      "deployment_scale": 1,
+      "precision": "FP32",
+      "tf32": false,
+      "core": 512,
+      "halo": 24,
+      "forward_seconds": 2.0924087999155745,
+      "device": "cuda",
+      "shape": [
+        1536,
+        2048
+      ]
+    },
+    "thesis_checkpoint": "17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61"
+  },
+  "identity_verified": {
+    "poster_20x_receipts_checked": 80,
+    "same_current_model_file": true,
+    "same_native_20x_psf_bank": true,
+    "same_original_circle_core_source": true
+  },
+  "interpretation": {
+    "aggregation_difference_thesis_percentage_points": 0.4489723474785592,
+    "horizontal_vs_projected_thesis_percentage_points": -0.09582339358049552,
+    "poster_reader_update_percentage_points": -1.4410339866457562,
+    "conclusion": "Averaging convention and direction projection do not explain the improvement gap. Same-objective/step Raw is similar, but the July poster cohort has larger reconstructed-image displacement SD than the September complete-scan cohort. Cohort, pair selection, initialization/tracking and remaining reader differences are not causally separated."
+  }
+}

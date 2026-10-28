@@ -1,0 +1,31 @@
+{
+  "selected_reader": "radial_720_lsc",
+  "selection": "Known-shift development only: lower mean vector error than fixed-state LSC for Raw, Wiener and R152; minimize balanced mean among eligible readers",
+  "real120_scores_used": false,
+  "eligible": [
+    "radial_720_lsc"
+  ],
+  "mean_known_shift_errors_px": {
+    "R152": {
+      "fixed_state_lsc": 0.0068182467560049574,
+      "paired_translation_background_plane": 0.015967389138202625,
+      "radial_720_lsc": 0.006149627598429228,
+      "radial_intensity_fit": 0.010138895573583492
+    },
+    "Raw": {
+      "fixed_state_lsc": 0.05072830338663478,
+      "paired_translation_background_plane": 0.024358088852846044,
+      "radial_720_lsc": 0.016141458344601838,
+      "radial_intensity_fit": 0.004887708101428401
+    },
+    "Wiener": {
+      "fixed_state_lsc": 0.02475591572102892,
+      "paired_translation_background_plane": 0.0016971288464224337,
+      "radial_720_lsc": 0.010784588085177868,
+      "radial_intensity_fit": 0.007680299979707241
+    }
+  },
+  "initial_candidate_rejected": "radial_intensity_fit increased known-shift error on R152",
+  "background_plane_reason": "Original pair fit did not absorb illumination-plane change; adding photometric nuisance terms is justified by known-shift errors, without real nominal-step scores",
+  "requires_fresh_validation": true
+}

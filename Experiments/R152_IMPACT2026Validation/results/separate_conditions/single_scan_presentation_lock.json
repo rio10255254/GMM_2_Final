@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-09-29T17:29:58.611831+00:00",
+  "user_request": "No thirty-scan presentation; show a comparable 30-step result for each objective",
+  "20x_run": "003412_XY_0",
+  "20x_run_index": 7,
+  "selection_rule": "Earliest complete evaluation scan after the existing first-six-RAW-scan direction calibration split",
+  "selection_timing": "Presentation scope changed after the full thirty-scan validation; deterministic acquisition-role rule, not a prespecified original-study selection",
+  "50x_sequence": "50x_x_1um",
+  "50x_pairs": "original locked 30 pairs",
+  "nominal_step_um": 1.0,
+  "summary": "one sample SD of 30 observed steps per condition, no cross-scan or cross-objective combination",
+  "full_thirty_scan_evidence": "retained as supplementary results"
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-29",
+  "user_instruction": "那為何你不直接使用50倍原有的資料?無法接入就小小改到能接入為止",
+  "use_original_50x_calibration": true,
+  "allow_inference_optical_input_adapter": true,
+  "no_retraining": true,
+  "20x_mode": "unchanged native 25-kernel bank",
+  "50x_mode": "original calibrated single kernel; deterministic weight one, no fabricated multi-kernel bank",
+  "preserve_original_50x_kernel_origin": true,
+  "main_result_choice": "objective-specific optics per latest instruction, independent of measured comparison outcomes",
+  "shared_bank_run": "retain as supplementary comparison"
+}

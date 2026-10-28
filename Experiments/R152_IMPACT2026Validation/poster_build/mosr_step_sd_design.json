@@ -1,0 +1,51 @@
+{
+  "publicName": "MOSR",
+  "poster_scope": "original four acquisition conditions",
+  "repeated30ScansIncluded": false,
+  "primaryStatistic": "sample SD of 30 single-step displacements per condition",
+  "models": [
+    "Raw",
+    "Wiener",
+    "MOSR"
+  ],
+  "conditionLabels": [
+    "50× / 0.5",
+    "50× / 1.0",
+    "20× / 0.5",
+    "20× / 1.0"
+  ],
+  "sdValues": {
+    "Raw": [
+      5.237895584541706,
+      5.430076277546738,
+      14.162182085271398,
+      10.527768223254723
+    ],
+    "Wiener": [
+      4.907045004521247,
+      4.58967053721096,
+      11.076842594313515,
+      11.006543619290788
+    ],
+    "R152": [
+      4.7226515370935696,
+      4.547154956635045,
+      10.754313223993485,
+      8.429191745858953
+    ]
+  },
+  "means": {
+    "Raw": 8.839480542653641,
+    "Wiener": 7.895025438834128,
+    "R152": 7.113327865895263
+  },
+  "reductionsPct": [
+    9.836852207759652,
+    16.25983274972685,
+    24.06316230619631,
+    19.933726055634825
+  ],
+  "meanSDReductionPct": 19.527761483597104,
+  "source": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\results\\localization_improvement\\improved_summary.csv",
+  "paperCode": null
+}

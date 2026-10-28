@@ -1,0 +1,32 @@
+{
+  "selected_reader": "radial_intensity_fit",
+  "selection": "lowest known-translation mean vector error on synthetic development only",
+  "real120_scores_used": false,
+  "candidate_scores": [
+    {
+      "reader": "radial_intensity_fit",
+      "mean": 0.0058565431546467595,
+      "median": 0.00032971365518789713,
+      "max": 0.04898659722961904
+    },
+    {
+      "reader": "radial_720_lsc",
+      "mean": 0.03609475751549714,
+      "median": 0.00623778172405896,
+      "max": 0.41139312791794785
+    },
+    {
+      "reader": "fixed_state_lsc",
+      "mean": 0.036249244477118386,
+      "median": 0.011534616122134012,
+      "max": 0.2562028386760518
+    },
+    {
+      "reader": "paired_photometric_translation",
+      "mean": 0.09812260399610123,
+      "median": 0.0752607044301583,
+      "max": 0.19360624932049902
+    }
+  ],
+  "plan": "config/LOCALIZATION_IMPROVEMENT_PLAN.json"
+}
