@@ -105,6 +105,14 @@ def test_location_mode_powershell(ctx_location):
     assert "param([string]$x)\r\n$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path\r\n" in text
 
 
+def test_bare_project_root_becomes_dot_in_records_but_stays_in_prose(ctx_location):
+    out, _, _ = rewrite_bytes(b'{"project_root": "D:\\\\GMM_2_Final"}', 'r.json', 'r.json', ctx_location)
+    assert json.loads(out) == {'project_root': '.'}
+    prose = 'The repository lived at D:/GMM_2_Final; see D:/GMM_2_Final/Model/a.pth.\n'.encode()
+    out, _, _ = rewrite_bytes(prose, 'docs/x.md', 'docs/x.md', ctx_location)
+    assert out.decode() == 'The repository lived at D:/GMM_2_Final; see Model/a.pth.\n'
+
+
 def test_location_mode_record_and_interpreter(ctx_location):
     out, _, _ = rewrite_bytes(b'{"model": "D:\\\\GMM_2_Final\\\\Model\\\\a.pth"}', 'r.json', 'r.json', ctx_location)
     assert json.loads(out) == {'model': 'Model/a.pth'}

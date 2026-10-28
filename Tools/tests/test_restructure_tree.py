@@ -100,6 +100,20 @@ def test_apply_refuses_while_ambiguous_references_remain(tmp_path):
     assert 'Model/train.py\t3\t' in (rec / 'unresolved_phase4.tsv').read_text(encoding='utf-8')
 
 
+def test_rehash_after_a_manual_fix(tmp_path):
+    repo, rec = make_repo(tmp_path)
+    assert restructure_tree.main(args(repo, 'apply', '--phase', '2')) == 0
+    (repo / 'docs/a.md').write_text('Run [it](../Analyses/AnalysisLab/run.py), by hand.\n', encoding='utf-8')
+    assert restructure_tree.main(args(repo, 'verify', '--phase', '2')) == 1
+    assert restructure_tree.main(args(repo, 'rehash', '--phase', '2')) == 0
+    idx = json.loads((repo / 'docs/idx.json').read_text(encoding='utf-8'))['files'][0]
+    assert idx['sha256'] == hashlib.sha256((repo / 'docs/a.md').read_bytes()).hexdigest()
+    changes = json.loads((rec / 'hash_changes_phase2.json').read_text(encoding='utf-8'))['changes']
+    head_sha = hashlib.sha256(git(repo, 'show', 'HEAD:docs/a.md').encode()).hexdigest()
+    assert changes[head_sha] == idx['sha256']
+    assert restructure_tree.main(args(repo, 'verify', '--phase', '2')) == 0
+
+
 def test_verify_catches_a_bad_rewrite(tmp_path):
     repo, rec = make_repo(tmp_path)
     assert restructure_tree.main(args(repo, 'apply', '--phase', '2')) == 0

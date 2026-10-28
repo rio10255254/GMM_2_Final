@@ -129,6 +129,8 @@ def plan(ph, write_reports=True):
         if verify.is_record(name) or not rewritable(name):
             continue
         data = (ph.repo / name).read_bytes()
+        if verify.content_addressed(name, data):
+            continue                 # stored under its own sha256: rewriting would break its identity
         new_name = moves.get(name, name)
         out, e, u, p = rewrite_one(name, new_name, data, ctx)
         edits += e; unresolved += u; problems += p
@@ -384,6 +386,63 @@ def do_verify(ph):
     return 1 if problems else 0
 
 
+def do_rehash(ph):
+    """After hand fixes on top of `apply`: carry every changed file's current sha into the records
+    that hold its sha, and fold the result into hash_changes_phaseN.json."""
+    path = ph.rec / f'hash_changes_phase{ph.n}.json'
+    saved = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'changes': {}, 'bytes': {}, 'rounds': 0}
+    changes = saved['changes']
+    out = git(ph.repo, 'diff', 'HEAD', '--name-status', '-M', '-z').stdout.decode('utf-8').split('\0')
+    pairs, i = [], 0
+    while i < len(out) and out[i]:
+        status = out[i]
+        if status.startswith(('R', 'C')):
+            pairs.append((out[i + 1], out[i + 2])); i += 3
+        else:
+            if status != 'D':
+                pairs.append((out[i + 1], out[i + 1]))
+            i += 2
+    seeds, sizes = {}, {}
+    for old, new in pairs:
+        if verify.is_record(new) or not (ph.repo / new).is_file():
+            continue
+        head = hashlib.sha256(git(ph.repo, 'show', f'HEAD:{old}').stdout).hexdigest()
+        data = (ph.repo / new).read_bytes()
+        cur = hashlib.sha256(data).hexdigest()
+        expected = changes.get(head, head)
+        if cur != expected:
+            seeds[expected] = cur
+            sizes[cur] = len(data)
+    names = [n for n in tracked(ph.repo) if rewritable(n) and not verify.is_record(n) and (ph.repo / n).exists()]
+    rep = propagate(seeds, sizes, names, lambda n: (ph.repo / n).read_bytes(), lambda n, d: (ph.repo / n).write_bytes(d))
+    for n in rep.touched_files:
+        data = (ph.repo / n).read_bytes()
+        sizes[hashlib.sha256(data).hexdigest()] = len(data)
+    final = {}
+    for k, v in changes.items():
+        while v in rep.changes:
+            v = rep.changes[v]
+        final[k] = v
+    for k, v in rep.changes.items():
+        if k not in changes.values() and k not in final:
+            while v in rep.changes:
+                v = rep.changes[v]
+            final[k] = v
+    sizes_all = {**saved.get('bytes', {})}
+    for k, v in final.items():
+        if v in sizes:
+            sizes_all[k] = sizes[v]
+    path.write_text(json.dumps({'changes': final, 'bytes': sizes_all, 'rounds': saved.get('rounds', 0) + rep.rounds}, indent=1) + '\n',
+                    encoding='utf-8', newline='\n')
+    specs = sorted({new for _, new in pairs} | set(rep.touched_files) |
+                   {p.relative_to(ph.repo).as_posix() for p in ph.rec.rglob('*') if p.is_file()})
+    specs = [s for s in specs if (ph.repo / s).exists()]
+    git(ph.repo, '--literal-pathspecs', 'add', '-A', '-f', '--pathspec-from-file=-', '--pathspec-file-nul',
+        data='\0'.join(specs).encode('utf-8'))
+    print(f'rehash: {len(seeds)} hand-changed files, {len(rep.touched_files)} records updated')
+    return 0
+
+
 def do_baseline(args):
     repo = Path(args.repo)
     base = repo / RECORDS / 'baseline'
@@ -404,7 +463,7 @@ def do_baseline(args):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument('command', choices=['baseline', 'plan', 'apply', 'verify'])
+    ap.add_argument('command', choices=['baseline', 'plan', 'apply', 'rehash', 'verify'])
     ap.add_argument('--phase', type=int, default=0)
     ap.add_argument('--repo', default=str(Path(__file__).resolve().parents[1]))
     ap.add_argument('--cloud-index', default=None)
@@ -424,6 +483,8 @@ def main(argv=None):
         return 0
     if args.command == 'apply':
         return apply(ph)
+    if args.command == 'rehash':
+        return do_rehash(ph)
     return do_verify(ph)
 
 

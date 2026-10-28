@@ -38,6 +38,13 @@ def test_only_exact_64hex_tokens(store):
     assert files['notes.txt'] == ('x' + H_A + 'y\n' + H_A[:63] + '\n').encode()
 
 
+def test_hashes_that_are_path_segments_are_identities_not_records(store):
+    files, read, write = store
+    files['README.md'] = ('[design](<' + H_A + '/experiment_design.json>) id `' + H_A + '` objects/' + H_A + '\n').encode()
+    propagate({H_A: H_A2}, {}, ['README.md'], read, write)
+    assert files['README.md'] == ('[design](<' + H_A + '/experiment_design.json>) id `' + H_A2 + '` objects/' + H_A + '\n').encode()
+
+
 def test_size_updated_only_in_the_same_object(store):
     files, read, write = store
     files['m.json'] = b'{"bytes": 1, "rows": [{"sha256": "' + H_A.encode() + b'", "size": 3}, {"sha256": "' + H_B.encode() + b'", "size": 9}]}'

@@ -223,6 +223,29 @@ def test_multiline_template_paths_become_relative_text(ctx_location):
     assert out == "DOC = '''# Report\nSource: Model/w.pth\n'''\n" and unresolved == []
 
 
+def test_generated_launcher_template_drops_the_interpreter_path(ctx_location):
+    src = "CMD = '@echo off\\r\\n\"C:\\\\Users\\\\Rio\\\\anaconda3\\\\python.exe\" -B run.py\\r\\n'\nDOC = '''Ran with C:/Users/Rio/anaconda3/python.exe\nfrom D:/GMM_2_Final\n'''\n"
+    out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert "CMD = '@echo off\\r\\npython -B run.py\\r\\n'\n" in out
+    assert "DOC = '''Ran with python\nfrom .\n'''\n" in out and unresolved == []
+
+
+def test_root_inserted_after_imports_that_follow_a_future_import(ctx_location):
+    src = ('from __future__ import annotations\n"""Doc."""\nimport sys\nfrom pathlib import Path\n'
+           "W = r'D:\\GMM_2_Final\\Model\\w.pth'\n")
+    out, _, _ = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == ('from __future__ import annotations\n"""Doc."""\nimport sys\nfrom pathlib import Path\n'
+                   'PROJECT_ROOT = Path(__file__).resolve().parents[1]\n'
+                   "W = str(PROJECT_ROOT / 'Model/w.pth')\n")
+    exec(compile(out, 'Tools/x.py', 'exec'), {'__file__': 'D:/x/Tools/x.py', '__name__': 'm'})
+
+
+def test_path_imported_only_after_the_first_use_is_imported_again(ctx_location):
+    src = "W = r'D:\\GMM_2_Final\\Model\\w.pth'\nfrom pathlib import Path\n"
+    out, _, _ = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    exec(compile(out, 'Tools/x.py', 'exec'), {'__file__': 'D:/x/Tools/x.py', '__name__': 'm'})
+
+
 def test_multiline_fstring_template_paths_become_relative_text(ctx_location):
     src = "DOC = f'''# {name}\nSource: D:/GMM_2_Final/Model/w.pth\n'''\n"
     out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)

@@ -255,7 +255,9 @@ class _Job:
         if link or self.cls == 'notebook':
             rel = posixpath.relpath(res.target_rel or '.', posixpath.dirname(self.file_new) or '.')
             return rel, res.target_rel
-        return res.target_rel, res.target_rel
+        if not res.target_rel and self.cls == 'doc':
+            return None        # prose naming the project folder itself tells where it was; keep it
+        return res.target_rel or '.', res.target_rel
 
     # -- location mode, scripts --
     def interpreter(self):

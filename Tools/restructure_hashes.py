@@ -6,7 +6,8 @@ recorded beside it: the `bytes`/`size` key of the same JSON object, or the `byte
 column of the same CSV/TSV row. A record that changed this way has a new sha itself, so
 the pass repeats with those changes until a round changes nothing. Formatting outside
 the replaced values is kept; `.json.gz` is decompressed and recompressed (mtime 0).
-git commit and blob ids are never touched: they are sha1 (40 hex), not 64.
+git commit and blob ids are never touched: they are sha1 (40 hex), not 64. Neither is a hash
+written as a path segment.
 """
 from bisect import bisect_right
 from dataclasses import dataclass, field
@@ -16,7 +17,9 @@ import hashlib
 import io
 import re
 
-HEX64 = re.compile(r'(?<![0-9A-Za-z_])[0-9a-fA-F]{64}(?![0-9A-Za-z_])')
+# a hash written as a path segment (objects/<sha>, <sha>/file) names content that exists under that
+# name; it is an identity, not a record of a file's current sha, so it is never replaced
+HEX64 = re.compile(r'(?<![0-9A-Za-z_/\\])[0-9a-fA-F]{64}(?![0-9A-Za-z_/\\])')
 SIZE_KEY = re.compile(r'"(bytes|size)"\s*:\s*(\d+)')
 SIZE_COLUMNS = ('bytes', 'size')
 

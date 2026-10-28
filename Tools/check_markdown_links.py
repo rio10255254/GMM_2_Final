@@ -34,8 +34,9 @@ class Broken:
     resolved: str
 
 
-def tracked(repo):
-    out = subprocess.run(['git', '-c', 'core.quotepath=false', '-C', str(repo), 'ls-files', '-z'],
+def tracked(repo, ref=None):
+    listing = ['ls-tree', '-r', '--name-only', '-z', ref] if ref else ['ls-files', '-z']
+    out = subprocess.run(['git', '-c', 'core.quotepath=false', '-C', str(repo), *listing],
                          capture_output=True, check=True, env=git_env()).stdout.decode('utf-8')
     files = {p for p in out.split('\0') if p}
     dirs = {posixpath.dirname(p) for p in files}
@@ -46,23 +47,37 @@ def tracked(repo):
     return files, dirs
 
 
-def scan(repo):
+def _read(repo, name, ref):
+    if ref is None:
+        return (repo / name).read_text(encoding='utf-8')
+    return subprocess.run(['git', '-C', str(repo), 'show', f'{ref}:{name}'], capture_output=True, check=True,
+                          env=git_env()).stdout.decode('utf-8')
+
+
+def scan(repo, ref=None):
+    """Broken links in the work tree, or in commit `ref` when given (read from git, not disk)."""
     repo = Path(repo)
-    files, dirs = tracked(repo)
+    files, dirs = tracked(repo, ref)
     out = []
     for name in sorted(f for f in files if f.lower().endswith(('.md', '.markdown'))):
         try:
-            text = (repo / name).read_text(encoding='utf-8')
-        except (OSError, UnicodeDecodeError):
+            text = _read(repo, name, ref)
+        except (OSError, UnicodeDecodeError, subprocess.CalledProcessError):
             continue
         for m in LINK.finditer(text):
             target = m.group(1)
-            if target.startswith('#') or re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:', target):
+            # a scheme has two letters or more; one letter and a colon is a drive (D:/GMM_2_Final/...)
+            if target.startswith('#') or re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]+:', target):
                 continue
             path = urllib.parse.unquote(re.split(r'[#?]', target, 1)[0])
             if not path:
                 continue
-            resolved = norm(posixpath.join(posixpath.dirname(name), path)) if not path.startswith('/') else norm(path)
+            drive = re.match(r'^[A-Za-z]:[\\/]+([^\\/]+)[\\/]*(.*)$', path)
+            if drive:
+                inside = drive.group(1).lower() in ('gmm_2_final', 'gmm_2_final_restructure')
+                resolved = norm(drive.group(2)) if inside else path.replace('\\', '/')
+            else:
+                resolved = norm(posixpath.join(posixpath.dirname(name), path)) if not path.startswith('/') else norm(path)
             if resolved is None or (resolved not in files and resolved not in dirs):
                 out.append(Broken(name, text.count('\n', 0, m.start()) + 1, target, resolved or ''))
     return out
@@ -83,8 +98,9 @@ def main(argv=None):
     ap.add_argument('--write-baseline')
     ap.add_argument('--compare')
     ap.add_argument('--rules', nargs='*', default=[])
+    ap.add_argument('--ref', help='scan this commit instead of the work tree')
     args = ap.parse_args(argv)
-    current = scan(args.repo)
+    current = scan(args.repo, args.ref)
     if args.write_baseline:
         Path(args.write_baseline).write_text(json.dumps([asdict(b) for b in current], ensure_ascii=False, indent=1) + '\n',
                                              encoding='utf-8', newline='\n')

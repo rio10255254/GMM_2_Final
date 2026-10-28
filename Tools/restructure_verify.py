@@ -41,6 +41,13 @@ def is_record(name):
         bool(TRANSFORM_CODE.match(name))
 
 
+def content_addressed(name, data):
+    """A file stored under its own sha256 (a folder or file named by it): its identity is its
+    content, so the transform never rewrites it."""
+    h = hashlib.sha256(data).hexdigest()
+    return any(seg.lower() == h for seg in re.split(r'[/.]', name))
+
+
 def _text(name, data):
     if isinstance(data, str):
         return data
@@ -117,12 +124,15 @@ def python_equivalence(old_src, new_src, file_old, file_new, ctx_old, ctx_new, r
     fixed_old = Counter(_expect(t, rules, decisions) for t in old if not t.endswith('/<dyn>') and not (location and t == ''))
     fixed_new = Counter(t for t in new if not t.endswith('/<dyn>') and not (location and t == ''))
     problems = []
-    if fixed_old != fixed_new:
-        lost, extra = fixed_old - fixed_new, fixed_new - fixed_old
+    lost, extra = fixed_old - fixed_new, fixed_new - fixed_old
+    # location mode may gain targets: an external path that maps into the project becomes evaluable;
+    # a wrong rewrite still shows as a target that went missing
+    if lost or (extra and not location):
         problems.append(f'{file_new}: path targets differ; expected but missing {dict(lost)}, unexpected {dict(extra)}')
     dyn_old = [t[:-6] for t in old if t.endswith('/<dyn>')]
     dyn_new = Counter(t[:-6] for t in new if t.endswith('/<dyn>'))
-    if len(dyn_old) != sum(dyn_new.values()):
+    # location mode may gain some: an external path that maps into the project becomes evaluable
+    if (sum(dyn_new.values()) < len(dyn_old)) if location else (len(dyn_old) != sum(dyn_new.values())):
         problems.append(f'{file_new}: number of dynamic path expressions changed')
     ok = Counter(_expect(t, rules, decisions) for t in dyn_old
                  if not (rules and rules.splits_under(t)) and (decisions or {}).get(t) is None)
@@ -146,6 +156,17 @@ def _interpretations(tok, name):
         yield [p for p in (norm(posixpath.join(posixpath.dirname(name), t)), norm(t)) if p]
 
 
+def _notebook_code(text):
+    """Only a notebook's code cells run; markdown cells are prose about how it was run."""
+    try:
+        import json
+        cells = json.loads(text).get('cells', [])
+    except ValueError:
+        return text
+    return ''.join(''.join(c.get('source', [])) if isinstance(c.get('source'), list) else c.get('source', '')
+                   for c in cells if c.get('cell_type') == 'code')
+
+
 def residual(files, uni, rules, absolute_check=False):
     out = []
     for name in sorted(files):
@@ -155,7 +176,8 @@ def residual(files, uni, rules, absolute_check=False):
         if text is None:
             continue
         if absolute_check and name.lower().endswith(EXECUTABLE):
-            m = PROJECT_ABS.search(text) or INTERPRETER.search(text)
+            code = _notebook_code(text) if name.lower().endswith('.ipynb') else text
+            m = PROJECT_ABS.search(code) or INTERPRETER.search(code)
             if m:
                 out.append(f'{name}:{text.count(chr(10), 0, m.start()) + 1}: names this machine ({m.group(0)})')
         if rules is None:

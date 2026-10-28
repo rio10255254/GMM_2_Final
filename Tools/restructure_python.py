@@ -265,8 +265,11 @@ class _PyJob:
     def is_top_chain(self, node):
         if self.inner(node) is None:
             return False
+        # the operation applied to `node` may sit one level up: X.parents[k] and X.resolve() put an
+        # Attribute between X and the Subscript or Call that uses it
         p = self.parent.get(node)
-        return not (p is not None and self.inner(p) is node)
+        ups = [p, self.parent.get(p)] if isinstance(p, ast.Attribute) else [p]
+        return not any(u is not None and self.inner(u) is node for u in ups)
 
     def do_chain(self, top):
         members, node = [], top
@@ -497,9 +500,9 @@ class _PyJob:
             else:
                 self.location_literal(node)
 
-    def fragment(self, node, ambiguous=None):
+    def fragment(self, node, ambiguous=None, cls='record'):
         s, e = self.span(node)
-        new, edits, problems = rewrite_fragment(self.src[s:e], self.file_old, self.file_new, self.ctx, 'record')
+        new, edits, problems = rewrite_fragment(self.src[s:e], self.file_old, self.file_new, self.ctx, cls)
         ambiguous = ambiguous or self.diverges
         split = [ed for ed in edits if ed.old_target and ambiguous(ed.old_target)]
         if split:
@@ -519,7 +522,7 @@ class _PyJob:
         s, e = self.span(node)
         raw = self.src[s:e]
         if '\n' in raw:
-            self.fragment(node)        # a multi-line template is text, as for plain strings
+            self.fragment(node, cls='script')    # a multi-line template is text, as for plain strings
             return
         m = re.match(r'^([fFrR]{1,2})(\'\'\'|"""|\'|")', raw)
         if not m:
@@ -534,7 +537,9 @@ class _PyJob:
     def location_literal(self, node):
         value = node.value
         if '\n' in value:
-            self.fragment(node)        # a multi-line template is text: paths in it become project-relative
+            # a multi-line template (a generated script or report) is text: paths become project-relative,
+            # an interpreter path becomes `python`
+            self.fragment(node, cls='script')
             return
         if INTERPRETER.fullmatch(value):
             s, e = self.span(node)
@@ -585,7 +590,7 @@ class _PyJob:
             bound = {t.id for n in ast.walk(self.tree) if isinstance(n, (ast.Assign, ast.AnnAssign))
                      for t in (n.targets if isinstance(n, ast.Assign) else [n.target]) if isinstance(t, ast.Name)}
             name, is_path = ('_PROJECT_ROOT' if 'PROJECT_ROOT' in bound else 'PROJECT_ROOT'), True
-            self.insert_definition(name)
+            self.insert_definition(name, first)
         for s, e, kind, rel in self.root_uses:
             if kind == 'fstring':
                 new = '{' + name + '}'
@@ -599,22 +604,23 @@ class _PyJob:
                 new += " + '/'"
             self.replace(s, e, new, 'root', '', rel)
 
-    def insert_definition(self, name):
-        body = self.tree.body
-        i = 0
-        if body and isinstance(body[0], ast.Expr) and _is_str(body[0].value):
-            i = 1
+    def insert_definition(self, name, before):
+        """Define the root after the last top-level import that precedes its first use."""
         last = None
-        for stmt in body[i:]:
-            if isinstance(stmt, (ast.Import, ast.ImportFrom)):
-                last = stmt
-            else:
+        for stmt in self.tree.body:
+            if self.span(stmt)[1] > before:
                 break
-        anchor = last or (body[0] if i == 1 else None)
-        pos = self.starts[anchor.end_lineno] if anchor is not None else 0
-        imported_path = any(isinstance(n, ast.ImportFrom) and n.module == 'pathlib' and any(a.name == 'Path' and a.asname is None for a in n.names)
-                            for n in ast.walk(self.tree))
-        path_bound = imported_path or any(isinstance(n, ast.Name) and n.id == 'Path' and isinstance(n.ctx, ast.Store) for n in ast.walk(self.tree))
+            if isinstance(stmt, (ast.Import, ast.ImportFrom)) or \
+                    (stmt is self.tree.body[0] and isinstance(stmt, ast.Expr) and _is_str(stmt.value)):
+                last = stmt
+        pos = self.starts[last.end_lineno] if last is not None else 0
+        if pos == 0:
+            while pos < len(self.src) and self.src.startswith('#', pos):     # shebang / coding lines stay first
+                nxt = self.src.find('\n', pos)
+                pos = len(self.src) if nxt < 0 else nxt + 1
+        imported_path = any(isinstance(n, ast.ImportFrom) and n.module == 'pathlib' and self.span(n)[1] <= pos and
+                            any(a.name == 'Path' and a.asname is None for a in n.names) for n in self.tree.body)
+        path_bound = any(isinstance(n, ast.Name) and n.id == 'Path' and isinstance(n.ctx, ast.Store) for n in ast.walk(self.tree))
         nl = '\r\n' if '\r\n' in self.src else '\n'
         d = posixpath.dirname(self.file_new)
         depth = len(d.split('/')) if d else 0
