@@ -77,3 +77,15 @@ def test_hash_consistency_with_duplicate_contents():
     before = {'a/x.txt': same, 'b/y.txt': same, 'r.json': ('{"sha256": "%s"}' % h).encode()}
     after = {'a/x.txt': same, 'b/y.txt': b'rewritten\n', 'r.json': before['r.json']}
     assert v.hash_consistency(v.hash_pairs(before), after, RULES) == []
+
+
+def test_transform_tools_and_their_tests_are_records():
+    for name in ['Tools/restructure_python.py', 'Tools/tests/test_restructure_text.py', 'Tools/check_markdown_links.py',
+                 'Tools/tests/test_check_markdown_links.py', 'docs/operations/TREE_RESTRUCTURE_20261028/moves_phase2.json']:
+        assert v.is_record(name), name
+    assert not v.is_record('Tools/cloud_locator.py') and not v.is_record('Tools/tests/test_cloud_locator.py')
+
+
+def test_residual_ignores_folders_that_only_start_with_the_project_name():
+    files = {'Tools/a.py': "A = r'H:\\GMM_2_Final_Archive\\x'\n"}
+    assert v.residual(files, NEW, None, absolute_check=True) == []

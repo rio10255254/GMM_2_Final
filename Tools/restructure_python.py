@@ -30,13 +30,12 @@ import re
 import tokenize
 import warnings
 
-from restructure_resolve import norm, resolve
+from restructure_resolve import PROJECT_ABS, norm, resolve
 from restructure_text import ABS_START, INTERPRETER, Edit, rewrite_fragment
 
 PATH_CALLS = ('Path', 'PurePath', 'PureWindowsPath', 'WindowsPath', 'PosixPath')
 PASS_ATTRS = ('resolve', 'absolute', 'expanduser')
 PASS_FUNCS = ('abspath', 'realpath', 'normpath')
-PROJECT_ABS = re.compile(r'[A-Za-z]:(?:\\\\|\\|/)+GMM_2_Final', re.I)
 
 
 @dataclass(frozen=True)
@@ -519,6 +518,9 @@ class _PyJob:
             return
         s, e = self.span(node)
         raw = self.src[s:e]
+        if '\n' in raw:
+            self.fragment(node)        # a multi-line template is text, as for plain strings
+            return
         m = re.match(r'^([fFrR]{1,2})(\'\'\'|"""|\'|")', raw)
         if not m:
             return
@@ -531,6 +533,9 @@ class _PyJob:
 
     def location_literal(self, node):
         value = node.value
+        if '\n' in value:
+            self.fragment(node)        # a multi-line template is text: paths in it become project-relative
+            return
         if INTERPRETER.fullmatch(value):
             s, e = self.span(node)
             q = re.match(r'^[rRuUbB]*(\'\'\'|"""|\'|")', self.src[s:e])

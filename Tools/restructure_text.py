@@ -19,7 +19,7 @@ import posixpath
 import re
 import urllib.parse
 
-from restructure_resolve import norm, render, resolve
+from restructure_resolve import PROJECT_ABS, norm, render, resolve
 
 BOM = b'\xef\xbb\xbf'
 DOC_EXT = ('.md', '.markdown', '.html', '.htm', '.txt', '.tex')
@@ -285,7 +285,7 @@ class _Job:
             content = m.group(1)
             res = self.literal_target(content)
             if res is None:
-                if re.search(r'[A-Za-z]:[\\/]+GMM_2_Final', content, re.I):
+                if PROJECT_ABS.search(content):
                     self.problems.append(f'{self.file_old}:{self.line(m.start())}: project path inside a MATLAB literal, fix by hand')
                     self.hold(m.span())
                 continue
@@ -316,7 +316,7 @@ class _Job:
             content = m.group(1) if double else m.group(2)
             res = self.literal_target(content)
             if res is None:
-                if re.search(r'[A-Za-z]:[\\/]+GMM_2_Final', content, re.I):
+                if PROJECT_ABS.search(content):
                     self.problems.append(f'{self.file_old}:{self.line(m.start())}: project path inside a PowerShell string, fix by hand')
                     self.hold(m.span())
                 continue

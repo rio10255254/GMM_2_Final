@@ -209,3 +209,21 @@ def test_decisions_keep_or_retarget_ambiguous_expressions():
     ctx.decisions = {}
     _, _, unresolved = rewrite_python(src, 'Model/train.py', 'Model/train.py', ctx)
     assert unresolved[0].target == 'Traing_Progress' and unresolved[0].segment == seg
+
+
+def test_archive_folder_with_project_prefix_is_not_the_project(ctx_location):
+    src = "A = r'H:\\GMM_2_Final_Archive\\active_runs'\n"
+    out, edits, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == src and edits == [] and unresolved == []
+
+
+def test_multiline_template_paths_become_relative_text(ctx_location):
+    src = "DOC = '''# Report\nSource: D:/GMM_2_Final/Model/w.pth\n'''\n"
+    out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == "DOC = '''# Report\nSource: Model/w.pth\n'''\n" and unresolved == []
+
+
+def test_multiline_fstring_template_paths_become_relative_text(ctx_location):
+    src = "DOC = f'''# {name}\nSource: D:/GMM_2_Final/Model/w.pth\n'''\n"
+    out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == "DOC = f'''# {name}\nSource: Model/w.pth\n'''\n" and unresolved == []

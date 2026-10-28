@@ -25,18 +25,20 @@ from pathlib import Path
 
 from restructure_hashes import HEX64
 from restructure_python import evaluated_targets
-from restructure_resolve import Universe, git_env, norm, resolve
+from restructure_resolve import PROJECT_ABS, Universe, git_env, norm, resolve
 from restructure_text import ABS_START, INTERPRETER, TOKEN, token_starts, token_targets
 
 TRANSFORM_RECORDS = ('docs/operations/TREE_RESTRUCTURE_20261028.md', 'docs/operations/TREE_RESTRUCTURE_20261028/',
                      'docs/superpowers/specs/2026-10-28-tree-restructure-design.md',
                      'docs/superpowers/plans/2026-10-28-tree-restructure.md')
+# the transform's own code and tests: their old paths are test inputs and rule text, not references
+TRANSFORM_CODE = re.compile(r'^Tools/(?:tests/test_)?(?:restructure_[a-z_]+|check_markdown_links)\.py$')
 EXECUTABLE = ('.py', '.m', '.ps1', '.psm1', '.bat', '.cmd', '.sh', '.ipynb')
-PROJECT_ABS = re.compile(r'[A-Za-z]:(?:\\\\|\\|/)+GMM_2_Final', re.I)
 
 
 def is_record(name):
-    return any(name == r or (r.endswith('/') and name.startswith(r)) for r in TRANSFORM_RECORDS)
+    return any(name == r or (r.endswith('/') and name.startswith(r)) for r in TRANSFORM_RECORDS) or \
+        bool(TRANSFORM_CODE.match(name))
 
 
 def _text(name, data):
