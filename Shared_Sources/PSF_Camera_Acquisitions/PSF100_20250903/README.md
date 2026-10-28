@@ -27,3 +27,14 @@
 這100個視野連到[2026-03-27的正式PSF政策](../../../docs/policy/PSF_STANDARD_POLICY.json)：其中修正版PSF與早期經驗版保留不同身分。保存原拍讓人可以回查這個共同光學來源，並不改變各輪當年採用的模型或PSF。
 
 [R142的100顆自適應選八顆包](../../../Experiments/R142_PSF100_AdaptiveTop8_Standalone/README.md)仍明確要求先完成尺度、樣本及SEM來源核對；它沒有因本次找到舊原拍就自動變成已安裝、已訓練的100顆版本。[R137原主實驗](../../../Experiments/R137_WeakPSFFeature/README.md)則使用原25顆平均，不能把名稱相近的後續100顆包倒套成它的原始訓練來源。
+
+## 同日棋盤原拍（2026-10-28 補）
+
+同一天（2025-09-03）、同一台相機另外拍了 393 張棋盤影像，原本只放在本機 `D:/NonSystemFiles/GMM2/MitsutoyoSample_GMMSys_20x/TestImage/Chess`，專案裡沒有程式或報告引用。電腦要交出去之前補進發布附件 [research-psf100-chessboard-20261028](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-psf100-chessboard-20261028)，恢復後在 `chessboard_same_session/`，檔名不變（`VisionTop_20250903171148.bmp` 這類）。
+
+這批照片當時拿來做什麼沒有留下紀錄；推測和那次拍攝的尺度或畸變校正有關，但沒有證據，這裡不替它補用途。
+
+```powershell
+python Tools/download_research_assets.py --repo rio10255254/GMM_2_Final --tag research-psf100-chessboard-20261028 --output ../chess-download
+python Tools/research_asset_bundle.py restore --manifest ../chess-download/RESEARCH_ASSETS.json.gz --assets ../chess-download --destination . --keep-identical-existing
+```
