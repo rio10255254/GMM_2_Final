@@ -143,13 +143,14 @@ total_seconds = toc(t_overall);
 %% ===== 寫 manifest.json =====
 % 這份檔記錄這次跑的所有選擇,讓 analyze_L0_noise_floor.py 知道要讀哪些 trial,
 % 也讓未來重看 outputs/ 時知道當時的 git 狀態與 MATLAB 版本。
-[git_status, git_commit] = system('git -C "d:/GMM_2_Final" rev-parse HEAD');
+project_root = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
+[git_status, git_commit] = system(sprintf('git -C "%s" rev-parse HEAD', project_root));
 if git_status ~= 0
     git_commit = 'unknown';
 else
     git_commit = strtrim(git_commit);
 end
-[git_status, git_branch] = system('git -C "d:/GMM_2_Final" rev-parse --abbrev-ref HEAD');
+[git_status, git_branch] = system(sprintf('git -C "%s" rev-parse --abbrev-ref HEAD', project_root));
 if git_status ~= 0
     git_branch = 'unknown';
 else

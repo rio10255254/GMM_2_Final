@@ -23,7 +23,7 @@ $relatedProcesses = @(
     Get-CimInstance Win32_Process | Where-Object {
         $_.ProcessId -ne $PID -and
         $_.CommandLine -and
-        $_.CommandLine -match 'D:\\GMM_2_Final|GMM_2_Final' -and
+        $_.CommandLine -match 'GMM_2_Final' -and
         $_.CommandLine -match '(?i)train|reconstruct|evaluate|inference|pytest|matlab|git.*(gc|repack|fetch|pack)'
     }
 )

@@ -30,7 +30,7 @@ $projectCompute = @(
     Get-CimInstance Win32_Process | Where-Object {
         $_.Name -match '^(python|pythonw|matlab|MATLAB|pytest)\.exe$' -and
         $_.CommandLine -and
-        ($_.CommandLine -match 'D:\\GMM_2_Final|D:/GMM_2_Final|train_r84\.py|infer_r84\.py|run_acm_multimethod|run_sem_acm_selected_pillars|reconstruct')
+        ($_.CommandLine -match ([regex]::Escape($RepoRoot) + '|' + [regex]::Escape($RepoRoot.Replace('\', '/')) + '|train_r84\.py|infer_r84\.py|run_acm_multimethod|run_sem_acm_selected_pillars|reconstruct'))
     }
 )
 if ($projectCompute.Count -ne 0) {

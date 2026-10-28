@@ -140,7 +140,7 @@ ENTRYPOINT_SPECS = [
     },
 ]
 MATLAB_SMOKE_TEST_BATCH = (
-    "cd('D:/GMM_2_Final/PSF_Fitting'); run('tests/run_matlab_smoke_tests.m')"
+    f"cd('{(REPO / 'PSF_Fitting').as_posix()}'); run('tests/run_matlab_smoke_tests.m')"
 )
 
 
