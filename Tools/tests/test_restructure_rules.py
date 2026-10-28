@@ -62,3 +62,24 @@ def test_phase_rule_files_cover_design_table():
     assert phase3.map('_build153/a.py') == 'Experiments/R153_MeanExternalBenchmark/_build153/a.py'
     assert phase3.map('20260924/134822.bmp') == 'Shared_Sources/PSF_Camera_Acquisitions/20260924/134822.bmp'
     assert phase3.map('20260704_20x_5x_analysis/r.md') == 'Analyses/20260704_20x_5x_analysis/r.md'
+
+
+def test_splits_under_detects_folders_with_several_destinations():
+    rs = load_rules(RULES_DIR / 'moves_phase4.json')
+    assert rs.splits_under('Traing_Progress')
+    assert not rs.splits_under('Traing_Progress/organized_20260313')
+    assert not rs.splits_under('Model')
+    rs2 = load_rules(RULES_DIR / 'moves_phase2.json')
+    assert rs2.splits_under('Deliverables') and not rs2.splits_under('Validations')
+    c = compose([rs2, rs])
+    assert c.splits_under('Traing_Progress') and c.splits_under('Thesis_MOSR_Evidence/LabSystem_MOSR')
+
+
+def test_diverges_only_when_contents_leave_the_folders_new_place():
+    p2, p3, p4 = (load_rules(RULES_DIR / f'moves_phase{n}.json') for n in (2, 3, 4))
+    assert p3.splits_under('20260702_100MG_displacement_analysis')
+    assert not p3.diverges_under('20260702_100MG_displacement_analysis')
+    assert p4.diverges_under('Traing_Progress')
+    assert p2.splits_under('Deliverables') and not p2.diverges_under('Deliverables')
+    assert compose([p2, p3, p4]).diverges_under('Thesis_MOSR_Evidence/LabSystem_MOSR')
+    assert not compose([p2, p3, p4]).diverges_under('Model')

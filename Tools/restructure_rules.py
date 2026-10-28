@@ -58,6 +58,21 @@ class RuleSet:
                 best, best_len = g.into + '/' + rest, length
         return best
 
+    def splits_under(self, rel):
+        """True when things under `rel` do not all follow `rel` itself (a rule or glob starts deeper)."""
+        rel = _clean(rel)
+        inside = (lambda p: p.startswith(rel + '/')) if rel else (lambda p: p != '')
+        return any(inside(r.old) for r in self.rules) or any(g.parent == rel or inside(g.parent) for g in self.globs)
+
+    def diverges_under(self, rel):
+        """True when something under `rel` ends up outside the place `rel` itself moves to."""
+        rel = _clean(rel)
+        dest = self.map(rel) or rel
+        inside = (lambda p: p.startswith(rel + '/')) if rel else (lambda p: p != '')
+        within = (lambda p: p.startswith(dest + '/')) if dest else (lambda p: True)
+        return any(inside(r.old) and not within(r.new) for r in self.rules) or \
+            any((g.parent == rel or inside(g.parent)) and not within(g.into) for g in self.globs)
+
     def moved_roots(self):
         """The old locations named by the rules (glob rules give their pattern)."""
         return [r.old for r in self.rules] + [f'{g.parent}/{g.pattern}' for g in self.globs]
@@ -94,6 +109,22 @@ class Composed:
             if new is not None:
                 current, moved = new, True
         return current if moved else None
+
+    def splits_under(self, rel):
+        current = _clean(rel)
+        for rs in self.rulesets:
+            if rs.splits_under(current):
+                return True
+            current = rs.map(current) or current
+        return False
+
+    def diverges_under(self, rel):
+        current = _clean(rel)
+        for rs in self.rulesets:
+            if rs.diverges_under(current):
+                return True
+            current = rs.map(current) or current
+        return False
 
 
 def compose(rulesets):

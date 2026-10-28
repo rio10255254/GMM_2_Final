@@ -85,6 +85,13 @@ def rewrite_bytes(data, file_old, file_new, ctx):
     return _rewrite_decoded(data, file_old, file_new, ctx, cls)
 
 
+def rewrite_fragment(text, file_old, file_new, ctx, cls='record'):
+    """Rewrite a piece of already-decoded text (a comment, a string literal's source) as `cls` would be."""
+    job = _Job(text, file_old, file_new, ctx, cls)
+    job.run()
+    return (job.apply() if job.repl else text), job.edits, job.problems
+
+
 def _rewrite_decoded(data, file_old, file_new, ctx, cls):
     bom = data.startswith(BOM)
     try:
