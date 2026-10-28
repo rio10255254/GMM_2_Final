@@ -24,6 +24,7 @@ null keeps the expression as written. The records folder itself is never rewritt
 """
 import argparse
 import csv
+import fnmatch
 import hashlib
 import io
 import json
@@ -156,18 +157,47 @@ def plan(ph, write_reports=True):
 
 
 # ---------- apply ----------
+def local_moves(ph, tracked_moves):
+    """Untracked files on disk under a moved place: they move along, but are never staged.
+
+    In this checkout they are copies of local data that tests read; moving them keeps the
+    test environment equal to the original project through every phase."""
+    out = {}
+    if not ph.rules:
+        return out
+    roots = [ph.repo / r.old for r in ph.rules.rules] + \
+        [ph.repo / g.parent / c for g in ph.rules.globs if (ph.repo / g.parent).is_dir()
+         for c in os.listdir(ph.repo / g.parent) if fnmatch.fnmatchcase(c, g.pattern)]
+    for root in roots:
+        if root.is_file():
+            files = [root]
+        elif root.is_dir():
+            files = [Path(d) / f for d, _, fs in os.walk(root) for f in fs]
+        else:
+            continue
+        for p in files:
+            rel = p.relative_to(ph.repo).as_posix()
+            if rel in tracked_moves or verify.is_record(rel) or os.path.islink(p):
+                continue
+            new = ph.rules.map(rel)
+            if new and new != rel:
+                out[rel] = new
+    return out
+
+
 def apply(ph):
     moves, changed, edits, block = plan(ph)
     if block:
         print(f'refusing: {len(block)} blocking unresolved references; see {RECORDS}/unresolved_phase{ph.n}.tsv')
         return 2
     old_sha = {name: hashlib.sha256((ph.repo / name).read_bytes()).hexdigest() for name in changed}
-    for old, new in moves.items():
+    local = local_moves(ph, moves)
+    for old, new in {**moves, **local}.items():
         (ph.repo / new).parent.mkdir(parents=True, exist_ok=True)
         os.replace(ph.repo / old, ph.repo / new)
     for name, data in changed.items():
         (ph.repo / moves.get(name, name)).write_bytes(data)
-    for old in moves:
+    for old in {**moves, **local}:
         d = (ph.repo / old).parent
         while d != ph.repo and d.exists() and not any(d.iterdir()):
             d.rmdir()
@@ -185,9 +215,12 @@ def apply(ph):
     (ph.rec / f'hash_changes_phase{ph.n}.json').write_text(
         json.dumps({'changes': rep.changes, 'bytes': {k: all_sizes[v] for k, v in rep.changes.items() if v in all_sizes},
                     'rounds': rep.rounds}, indent=1) + '\n', encoding='utf-8', newline='\n')
-    specs = sorted(set(moves) | set(moves.values()) | {moves.get(n, n) for n in changed} | set(rep.touched_files)
-                   | {f'{RECORDS}/{x}' for x in os.listdir(ph.rec)})
-    git(ph.repo, 'add', '-A', '--pathspec-from-file=-', '--pathspec-file-nul', data='\0'.join(specs).encode('utf-8'))
+    # explicit file paths only, forced: many tracked files live under ignored folders, and a moved
+    # file must stay tracked at its new place even when that place is ignored
+    records = {p.relative_to(ph.repo).as_posix() for p in ph.rec.rglob('*') if p.is_file()}
+    specs = sorted(set(moves) | set(moves.values()) | {moves.get(n, n) for n in changed} | set(rep.touched_files) | records)
+    git(ph.repo, '--literal-pathspecs', 'add', '-A', '-f', '--pathspec-from-file=-', '--pathspec-file-nul',
+        data='\0'.join(specs).encode('utf-8'))
     print(f'applied: {len(moves)} moved, {len(changed)} rewritten, hash chain {len(rep.changes)} changes in {rep.rounds} rounds')
     return 0
 
@@ -240,13 +273,18 @@ class OnDisk:
         return ((n, self[n]) for n in self.names)
 
 
+def utf8_env():
+    """Child Pythons write UTF-8, whatever the console code page is."""
+    return {**git_env(), 'PYTHONIOENCODING': 'utf-8', 'PYTHONUTF8': '1'}
+
+
 def run_pytest(repo, groups):
     failed = {}
     for g in groups:
         if not (Path(repo) / g).is_dir():
             continue
         res = subprocess.run([sys.executable, '-m', 'pytest', g, '-q', '-rfE', '-p', 'no:cacheprovider'],
-                             cwd=repo, capture_output=True, text=True, env=git_env())
+                             cwd=repo, capture_output=True, encoding='utf-8', errors='replace', env=utf8_env())
         failed[g] = sorted(set(re.findall(r'^(?:FAILED|ERROR) (\S+)', res.stdout, re.M)))
         if res.returncode not in (0, 1, 5) and not failed[g]:
             failed[g] = [f'<pytest exit {res.returncode}>']
@@ -262,7 +300,8 @@ def run_validator(repo):
     v = Path(repo) / 'Tools' / 'validate_project_structure.py'
     if not v.exists():
         return None
-    res = subprocess.run([sys.executable, str(v)], cwd=repo, capture_output=True, text=True, env=git_env())
+    res = subprocess.run([sys.executable, str(v)], cwd=repo, capture_output=True, encoding='utf-8', errors='replace',
+                         env=utf8_env())
     return res.returncode, sorted({l for l in (res.stdout + res.stderr).splitlines() if l.strip()})
 
 

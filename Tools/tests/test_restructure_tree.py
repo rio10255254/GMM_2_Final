@@ -58,6 +58,34 @@ def test_plan_apply_verify(tmp_path):
     assert restructure_tree.main(args(repo, 'verify', '--phase', '2')) == 0
 
 
+def test_moved_files_stay_tracked_under_ignored_folders(tmp_path):
+    repo, rec = make_repo(tmp_path)
+    write(repo, '.gitignore', 'AnalysisLab/\nAnalyses/\n')
+    git(repo, 'add', '.gitignore'); git(repo, 'commit', '-qm', 'ignore')
+    assert restructure_tree.main(args(repo, 'apply', '--phase', '2')) == 0
+    files = git(repo, 'ls-files').split()
+    assert 'Analyses/AnalysisLab/run.py' in files and 'AnalysisLab/run.py' not in files
+
+
+def test_untracked_local_files_move_with_their_folder(tmp_path):
+    repo, rec = make_repo(tmp_path)
+    write(repo, '.gitignore', 'data/\n')
+    git(repo, 'add', '.gitignore'); git(repo, 'commit', '-qm', 'ignore')
+    write(repo, 'AnalysisLab/data/big.npz', 'local only\n')
+    assert restructure_tree.main(args(repo, 'apply', '--phase', '2')) == 0
+    assert (repo / 'Analyses/AnalysisLab/data/big.npz').read_text() == 'local only\n'
+    assert not (repo / 'AnalysisLab').exists()
+    assert 'Analyses/AnalysisLab/data/big.npz' not in git(repo, 'ls-files').split()
+
+
+def test_pytest_output_with_chinese_is_read(tmp_path, monkeypatch):
+    monkeypatch.setenv('PYTHONIOENCODING', 'utf-8')     # how the phase runs are launched
+    (tmp_path / 'tests').mkdir()
+    (tmp_path / 'tests' / 'test_x.py').write_text(
+        "def test_a():\n    print('位移序列：所有原始影像與裁切輸入都已核對' * 50)\n    assert False\n", encoding='utf-8')
+    assert restructure_tree.run_pytest(tmp_path, ['tests']) == {'tests': ['tests/test_x.py::test_a']}
+
+
 def test_apply_refuses_while_ambiguous_references_remain(tmp_path):
     repo, rec = make_repo(tmp_path)
     write(repo, 'Traing_Progress/README.md', 'x\n')
