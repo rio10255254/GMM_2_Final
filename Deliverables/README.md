@@ -4,6 +4,7 @@
 
 | 需要什麼 | 入口 |
 |---|---|
+| 100視野及2026年6月15日三輪全視野PSF完整資料包 | [PSF歸檔入口](PSF_Fitting_Archives/README.md)：兩份本機ZIP、閱讀清單及內容核對紀錄 |
 | R61 v16完整訓練資料重新生成 | [原包說明](R61_TrainingData_Regenerator_20261004/README_TW.md)；先取回3,400組歷史來源／幾何，其餘16,896組生成 |
 | R152論文版獨立使用、TIFF資料生成 | [影像檔包](R152_Standalone_ImageFiles_20261004/README.md)、[原獨立包](R152_Standalone_20261004/README.md) |
 | R61及其他ONNX部署 | [部署模型取得指南](../docs/reproducibility/ASSET_GUIDE.md)；R61原15MB包沿原介面，不必下載3GB舊便攜ZIP |
