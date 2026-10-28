@@ -95,8 +95,13 @@ class Universe:
         return cls(paths, junctions)
 
     @classmethod
-    def build(cls, repo, cloud_index=None, local_inventory=None, applied=None, reparse_tsvs=()):
-        out = subprocess.run(['git', '-c', 'core.quotepath=false', '-C', str(repo), 'ls-files', '-z'],
+    def build(cls, repo, cloud_index=None, local_inventory=None, applied=None, reparse_tsvs=(), ref=None):
+        """Tracked files (the index, or `ref`'s tree), Release paths and local inventory paths.
+
+        Release and local paths are recorded in pre-restructure coordinates, so they are seen
+        through `applied` (the phases already done)."""
+        listing = ['ls-tree', '-r', '--name-only', '-z', ref] if ref else ['ls-files', '-z']
+        out = subprocess.run(['git', '-c', 'core.quotepath=false', '-C', str(repo), *listing],
                              capture_output=True, check=True, env=git_env()).stdout.decode('utf-8')
         files = {p for p in out.split('\0') if p}
         if cloud_index and Path(cloud_index).exists():
@@ -110,7 +115,7 @@ class Universe:
             with open(local_inventory, encoding='utf-8', newline='') as f:
                 for row in csv.DictReader(f, delimiter='\t'):
                     if not row['path'].startswith('@'):
-                        files.add(row['path'])
+                        files.add((applied.map(row['path']) if applied else None) or row['path'])
         junctions = {}
         for tsv in reparse_tsvs:
             for line in Path(tsv).read_text(encoding='utf-8').splitlines():

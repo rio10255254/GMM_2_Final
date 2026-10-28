@@ -124,3 +124,17 @@ def test_build_ignores_git_variables_from_a_hook(tmp_path, monkeypatch):
     monkeypatch.setenv('GIT_INDEX_FILE', str(other / '.git' / 'index'))
     u = Universe.build(repo)
     assert u.exists('Model/a.py') and not u.exists('Model/wrong.py')
+
+
+def test_build_from_a_ref_and_maps_local_paths_through_applied_phases(tmp_path):
+    repo = tmp_path / 'repo'
+    make_repo(repo, 'a.py')
+    clean_git('-C', str(repo), '-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-qm', 'x')
+    (repo / 'Model' / 'b.py').write_text('y\n')
+    clean_git('-C', str(repo), 'add', '.')
+    inv = tmp_path / 'inv.tsv'
+    inv.write_text('status\tbytes\tpath\twhere\nlocal-only\t5\tAnalysisLab/big.npz\t\n', encoding='utf-8')
+    applied = compose([RuleSet([Rule('AnalysisLab', 'Analyses/AnalysisLab')])])
+    u = Universe.build(repo, None, inv, applied, ref='HEAD')
+    assert u.exists('Model/a.py') and not u.exists('Model/b.py')
+    assert u.exists('Analyses/AnalysisLab/big.npz') and not u.exists('AnalysisLab/big.npz')

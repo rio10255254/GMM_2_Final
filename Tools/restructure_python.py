@@ -45,6 +45,7 @@ class Unresolved:
     line: int
     segment: str
     reason: str
+    target: str = ''
 
 
 @dataclass(frozen=True)
@@ -136,9 +137,15 @@ class _PyJob:
         s, e = self.span(node)
         return self.src[s:e]
 
-    def report(self, node, reason):
+    def report(self, node, reason, target=''):
         line = getattr(node, 'lineno', 0)
-        self.unresolved.append(Unresolved(self.file_old, line, self.text(node)[:200] if line else '', reason))
+        self.unresolved.append(Unresolved(self.file_old, line, self.text(node) if line else '', reason, target))
+
+    def decision(self, node, target):
+        """(True, new target or None) when a recorded decision covers this expression."""
+        key = (self.text(node), target)
+        decisions = self.ctx.decisions or {}
+        return (True, decisions[key]) if key in decisions else (False, None)
 
     def replace(self, start, end, new, kind, old_target='', new_target=''):
         old = self.src[start:end]
@@ -379,11 +386,16 @@ class _PyJob:
         tval = self.join(bval, consts, True)
         if tval is None or any(ABS_START.match(c.value) for c in consts) or self.ctx.mode != 'moves':
             return
-        if (self.splits if dyn else self.diverges)(tval.rel):
-            self.report(node, f'{tval.rel} holds things that move to different places; decide by hand'
-                        + (' (dynamic tail)' if dyn else ''))
-            return
         new_b, new_t = self.M(bval), self.M(tval)
+        if (self.splits if dyn else self.diverges)(tval.rel):
+            decided, target = self.decision(node, tval.rel)
+            if not decided:
+                self.report(node, f'{tval.rel} holds things that move to different places; decide by hand'
+                            + (' (dynamic tail)' if dyn else ''), tval.rel)
+                return
+            if target is None:
+                return
+            new_t = target
         old_rel = posixpath.relpath(tval.rel or '.', bval.rel or '.')
         new_rel = posixpath.relpath(new_t or '.', new_b or '.')
         if old_rel == new_rel:
@@ -414,8 +426,9 @@ class _PyJob:
         tops = {r.split('/')[0] for r in self._rule_olds()}
         for c in consts:
             if c.value.strip('/\\') in tops:
-                self.report(c, 'moved folder name joined to a base the tool cannot evaluate')
                 self.consumed.add(c)
+                if not self.decision(c, c.value)[0]:
+                    self.report(c, 'moved folder name joined to a base the tool cannot evaluate', c.value)
 
     def _rule_olds(self):
         sets = getattr(self.ctx.rules, 'rulesets', [self.ctx.rules])
@@ -491,7 +504,9 @@ class _PyJob:
         ambiguous = ambiguous or self.diverges
         split = [ed for ed in edits if ed.old_target and ambiguous(ed.old_target)]
         if split:
-            self.report(node, f'{split[0].old_target} holds things that move to different places; decide by hand')
+            if not self.decision(node, split[0].old_target)[0]:
+                self.report(node, f'{split[0].old_target} holds things that move to different places; decide by hand',
+                            split[0].old_target)
             return
         for p in problems:
             self.report(node, p)

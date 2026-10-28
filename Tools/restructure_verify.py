@@ -173,22 +173,29 @@ def residual(files, uni, rules, absolute_check=False):
 
 
 # ---------- 6. hashes ----------
-def hash_pairs(files):
-    """{(record, old_sha): files that had that content} for every sha256 a record holds."""
+def hex_tokens(name, data):
+    """The 64-hex tokens a file holds (empty for binaries)."""
+    text = _text(name, data)
+    return {m.group(0).lower() for m in HEX64.finditer(text)} if text else set()
+
+
+def hash_pairs_from(shas, tokens):
+    """{(record, old_sha): files that had that content}, from {name: sha} and {name: tokens}."""
     by_sha = {}
-    for name, data in files.items():
-        by_sha.setdefault(hashlib.sha256(data).hexdigest(), set()).add(name)
+    for name, h in shas.items():
+        by_sha.setdefault(h, set()).add(name)
     pairs = {}
-    for name, data in files.items():
-        text = _text(name, data)
-        if text is None:
-            continue
-        for m in HEX64.finditer(text):
-            h = m.group(0).lower()
+    for name, toks in tokens.items():
+        for h in toks:
             owners = by_sha.get(h, set()) - {name}
             if owners:
                 pairs[(name, h)] = frozenset(owners)
     return pairs
+
+
+def hash_pairs(files):
+    return hash_pairs_from({n: hashlib.sha256(d).hexdigest() for n, d in files.items()},
+                           {n: hex_tokens(n, d) for n, d in files.items()})
 
 
 def hash_consistency(pairs, files_after, rules):

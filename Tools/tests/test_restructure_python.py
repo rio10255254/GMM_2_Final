@@ -194,3 +194,18 @@ def test_climb_to_former_ancestor_goes_via_common_ancestor(before, after):
     out, _, unresolved = rewrite_python(head + before, 'Thesis_MOSR_Evidence/LabSystem_MOSR/scripts/run.py',
                                         'LabSystem_MOSR/scripts/run.py', ctx)
     assert out == head + after and unresolved == []
+
+
+def test_decisions_keep_or_retarget_ambiguous_expressions():
+    ctx = Context(Universe.from_paths(PATHS), RULES, {}, 'moves')
+    seg = "os.path.join(PROJECT_ROOT, 'Traing_Progress')"
+    src = f"import os\nPROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\nT = {seg}\n"
+    ctx.decisions = {(seg, 'Traing_Progress'): 'Experiments/Training_Runs'}
+    out, _, unresolved = rewrite_python(src, 'Model/train.py', 'Model/train.py', ctx)
+    assert "T = os.path.join(PROJECT_ROOT, 'Experiments', 'Training_Runs')\n" in out and unresolved == []
+    ctx.decisions = {(seg, 'Traing_Progress'): None}
+    out, _, unresolved = rewrite_python(src, 'Model/train.py', 'Model/train.py', ctx)
+    assert out == src and unresolved == []
+    ctx.decisions = {}
+    _, _, unresolved = rewrite_python(src, 'Model/train.py', 'Model/train.py', ctx)
+    assert unresolved[0].target == 'Traing_Progress' and unresolved[0].segment == seg

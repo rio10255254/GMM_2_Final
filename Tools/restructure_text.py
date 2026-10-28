@@ -57,6 +57,7 @@ class Context:
     rules: object          # RuleSet / Composed with .map(rel), or None in location mode
     external_map: dict
     mode: str              # 'moves' | 'location'
+    decisions: dict = None  # {(exact source segment, old target): new target, or None to keep as written}
 
 
 def file_class(name):
