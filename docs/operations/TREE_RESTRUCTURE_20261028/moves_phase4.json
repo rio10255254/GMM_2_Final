@@ -1,0 +1,17 @@
+{
+ "phase": 4,
+ "moves": [
+  {
+   "old": "Traing_Progress/training_progress_*",
+   "into": "Experiments/Training_Runs"
+  },
+  {
+   "old": "Traing_Progress",
+   "new": "Experiments/Legacy"
+  },
+  {
+   "old": "Thesis_MOSR_Evidence/LabSystem_MOSR",
+   "new": "LabSystem_MOSR"
+  }
+ ]
+}
