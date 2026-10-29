@@ -452,16 +452,18 @@ def do_rehash(ph):
     path = ph.rec / f'hash_changes_phase{ph.n}.json'
     saved = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'changes': {}, 'bytes': {}, 'rounds': 0}
     changes = saved['changes']
-    out = git(ph.repo, 'diff', 'HEAD', '--name-status', '-M', '-z').stdout.decode('utf-8').split('\0')
+    # pair each file with its HEAD self by the move rules, not by git's rename guess: a moved file
+    # that was also changed a lot shows as deleted + added, and a new file has no HEAD self at all
+    came_from = {(ph.rules.map(f) or f): f for f in tracked(ph.repo, 'HEAD')} if ph.rules else {}
+    out = git(ph.repo, 'diff', 'HEAD', '--name-status', '--no-renames', '-z').stdout.decode('utf-8').split('\0')
     pairs, i = [], 0
-    while i < len(out) and out[i]:
-        status = out[i]
-        if status.startswith(('R', 'C')):
-            pairs.append((out[i + 1], out[i + 2])); i += 3
-        else:
-            if status != 'D':
-                pairs.append((out[i + 1], out[i + 1]))
-            i += 2
+    while i + 1 < len(out) and out[i]:
+        status, name = out[i], out[i + 1]
+        i += 2
+        if status == 'M':
+            pairs.append((name, name))
+        elif status == 'A' and came_from.get(name, name) != name:
+            pairs.append((came_from[name], name))
     seeds, sizes = {}, {}
     for old, new in pairs:
         if verify.is_record(new) or not (ph.repo / new).is_file():

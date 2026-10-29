@@ -163,3 +163,18 @@ def test_phase1_follows_values_into_another_module(tmp_path):
     p = repo / 'Experiments/R1/scripts/common.py'
     p.write_text(git(repo, 'show', 'HEAD:Experiments/R1/scripts/common.py'), encoding='utf-8', newline='\n')
     assert restructure_tree.main(args(repo, 'verify', '--phase', '1')) == 1
+
+
+def test_rehash_after_new_files_and_a_moved_file_changed_by_hand(tmp_path):
+    repo, rec = make_repo(tmp_path)
+    write(repo, 'AnalysisLab/notes.md', 'notes\n')
+    sha = hashlib.sha256((repo / 'AnalysisLab/notes.md').read_bytes()).hexdigest()
+    write(repo, 'docs/notes_idx.json', json.dumps({'files': [{'path': 'AnalysisLab/notes.md', 'sha256': sha}]}) + '\n')
+    git(repo, 'add', '-A'); git(repo, 'commit', '-qm', 'notes')
+    assert restructure_tree.main(args(repo, 'apply', '--phase', '2')) == 0
+    write(repo, 'Analyses/README.md', 'A new guide.\n')
+    git(repo, 'add', 'Analyses/README.md')
+    (repo / 'Analyses/AnalysisLab/notes.md').write_text('notes, rewritten by hand entirely\n', encoding='utf-8')
+    assert restructure_tree.main(args(repo, 'rehash', '--phase', '2')) == 0
+    idx = json.loads((repo / 'docs/notes_idx.json').read_text(encoding='utf-8'))['files'][0]
+    assert idx['sha256'] == hashlib.sha256((repo / 'Analyses/AnalysisLab/notes.md').read_bytes()).hexdigest()
