@@ -61,6 +61,7 @@ class Context:
     data: object = None     # restructure_readers.DataView: old and new content of the data files this phase rewrites
     data_side: str = 'old'  # which content a read sees: the old tree's ('old') or the rewritten one ('new')
     seeds: dict = None      # {python file: data values arriving from other modules}, from restructure_readers.link
+    modules: dict = None    # {python file: source text} of the side being read, for star imports
 
 
 def file_class(name):

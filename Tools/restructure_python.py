@@ -612,12 +612,16 @@ class _PyJob:
             names = {k: v or (inserted, True) for k, v in names.items()}
         for s, e, kind, rel in self.root_uses:
             name, is_path = names[kind.startswith('reader')]
+            # a read is wrapped by text inserted before and after it, so rewrites inside it still apply
+            if kind == 'reader_join':
+                self.replace(s, s, f'{name} / ', 'root')
+                continue
+            if kind == 'reader_str':
+                self.replace(s, s, f'str({name} / ', 'root')
+                self.replace(e, e, ')', 'root')
+                continue
             if kind == 'reader_base':
                 new = name
-            elif kind == 'reader_join':
-                new = f'{name} / {self.src[s:e]}'
-            elif kind == 'reader_str':
-                new = f'str({name} / {self.src[s:e]})'
             elif kind == 'fstring':
                 new = '{' + name + '}'
             elif not rel:

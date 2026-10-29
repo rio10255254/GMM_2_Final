@@ -127,11 +127,17 @@ def test_mixed_list_is_reported_not_rewritten(ctx):
     assert any(u.reason.startswith('data value') for u in unresolved)
 
 
-def test_dynamic_key_is_reported(ctx):
+def test_dynamic_key_over_mixed_values_is_reported(ctx):
     src = HEAD + LOAD + "for k in ('out', 'model'):\n    open(CONFIG[k])\n"
     out, unresolved = rewrite(src, ctx)
     assert "open(CONFIG[k])" in out
-    assert any(u.reason.startswith('data value') and 'dynamic key' in u.reason for u in unresolved)
+    assert any(u.reason.startswith('data value') for u in unresolved)
+
+
+def test_dynamic_key_into_entries_of_one_shape(ctx):
+    src = HEAD + LOAD + "for i in range(2):\n    open(CONFIG['items'][i]['path'])\n"
+    out, _ = rewrite(src, ctx)
+    assert "    open(str(PROJECT_ROOT / CONFIG['items'][i]['path']))\n" in out
 
 
 def test_command_line_value_is_reported(ctx):
@@ -248,3 +254,53 @@ def test_loader_function_imported_from_another_module(ctx):
     ctx = linked(ctx, {MAIN: main, COMMON: common.replace('parents[1]', 'parents[1]')})
     out, _ = rewrite(main, ctx, MAIN)
     assert "M = Path(PROJECT_ROOT / cfg['model'])\n" in out
+
+
+def test_value_used_as_an_index_is_harmless(ctx):
+    src = HEAD + LOAD + "table = {}\nfor r in CONFIG['items']:\n    table[r, 'n'] = 1\n"
+    out, unresolved = rewrite(src, ctx)
+    assert out == src and not unresolved
+
+
+def test_next_picks_one_entry(ctx):
+    src = HEAD + LOAD + "r = next(x for x in CONFIG['items'] if x)\nP = Path(r['path'])\n"
+    out, _ = rewrite(src, ctx)
+    assert "P = Path(PROJECT_ROOT / r['path'])\n" in out
+
+
+def test_list_concatenation_keeps_the_entries(ctx):
+    src = HEAD + LOAD + "rows = [CONFIG['data']] + []\nP = Path(rows[0]['package_root'])\n"
+    out, _ = rewrite(src, ctx)
+    assert "P = Path(PROJECT_ROOT / rows[0]['package_root'])\n" in out
+
+
+def test_double_star_into_a_function(ctx):
+    src = HEAD + LOAD + "def run(package_root, seed_name):\n    return Path(package_root)\nrun(**CONFIG['data'])\n"
+    out, _ = rewrite(src, ctx)
+    assert "    return Path(PROJECT_ROOT / package_root)\n" in out
+
+
+def test_star_import_of_a_helper(ctx):
+    common = "from pathlib import Path\nimport json\ndef save(p, v):\n    Path(p).write_text(json.dumps(v))\n" \
+             "def check(cfg):\n    return Path(cfg['model'])\n"
+    main = "from pathlib import Path\nimport json\nfrom common import *\nROOT = Path(__file__).resolve().parents[1]\n" + LOAD + \
+           "save('x.json', dict(c=CONFIG))\ncheck(CONFIG)\n"
+    ctx = linked(ctx, {MAIN: main, COMMON: common})
+    _, unresolved = rewrite(main, ctx, MAIN)
+    assert not unresolved
+    out, _ = rewrite(common, ctx, COMMON)
+    assert "    return Path(PROJECT_ROOT / cfg['model'])\n" in out
+
+
+def test_a_read_inside_another_read_is_joined_once(ctx):
+    src = HEAD + LOAD + "M = Path(CONFIG['data'].get('package_root', CONFIG['model']))\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "M = Path(PROJECT_ROOT / CONFIG['data'].get('package_root', CONFIG['model']))\n" in out
+    assert not unresolved
+
+
+def test_a_literal_inside_a_read_is_still_rewritten(ctx):
+    src = HEAD + LOAD + "M = open(CONFIG.get('model', r'D:\\GMM_2_Final\\Model\\w.pth'))\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "M = open(str(PROJECT_ROOT / CONFIG.get('model', str(PROJECT_ROOT / 'Model/w.pth'))))\n" in out
+    assert not unresolved

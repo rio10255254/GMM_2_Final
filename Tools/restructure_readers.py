@@ -329,6 +329,11 @@ class Readers:
                 if isinstance(node, ast.ImportFrom):
                     f = self.module_file(node.module, node.level)
                     for a in node.names:
+                        if a.name == '*':
+                            for n in module_names(self.ctx, f) if f else ():
+                                if not n.startswith('_'):
+                                    out.setdefault(n, (f, n))
+                            continue
                         local = a.asname or a.name
                         sub = self.module_file(((node.module + '.') if node.module else '') + a.name, node.level)
                         if sub:
@@ -452,6 +457,11 @@ class Readers:
             else:
                 self.push(to, name, pattern + (k,), (), via, certain)
 
+        if isinstance(p, ast.Subscript) and p.slice is node:
+            return                                             # used as a key, not as a path
+        if isinstance(p, ast.BinOp) and isinstance(p.op, ast.Add):
+            self.push(p, *args)                                # [a] + rows: the same entries
+            return
         if isinstance(p, ast.Subscript) and p.value is node:
             if not isinstance(p.ctx, ast.Load):
                 return
@@ -464,20 +474,15 @@ class Readers:
                 if any(any(matches(pattern + (_const_key(e)[1],), c) or below(pattern + (_const_key(e)[1],), c)
                            for c in changed) for e in p.slice.elts) and not prefix:
                     escape('a selection of several keys')
-            elif (prefix and prefix[0] == STAR) or (not prefix and self.view.kind_at(name, pattern) == 'list'):
-                key(STAR, p)                                   # an index into a list
             else:
-                escape('a dynamic key')
+                key(STAR, p)                                   # one of the entries, whichever the key picks
             return
         if isinstance(p, ast.Attribute) and p.value is node:
             call = self.parent.get(p)
             is_call = isinstance(call, ast.Call) and call.func is p
             if p.attr == 'get' and is_call:
                 ok, k = _const_key(call.args[0]) if call.args else (False, None)
-                if ok:
-                    key(k, call)
-                else:
-                    escape('a dynamic key')
+                key(k if ok else STAR, call)
             elif p.attr in ('values', 'items') and is_call:
                 self.iterate(call, args, pair=p.attr == 'items', escape=escape)
             elif p.attr == 'copy' and is_call:
@@ -533,7 +538,7 @@ class Readers:
             self.call(call, node, kw, args, escape)
             return
         if isinstance(p, ast.keyword):
-            escape('**')
+            self.double_star(call, args, escape)
             return
         if isinstance(p, (ast.Compare, ast.Expr, ast.Assert, ast.If, ast.While, ast.UnaryOp, ast.FormattedValue,
                           ast.JoinedStr, ast.Delete)) or p is None:
@@ -580,6 +585,11 @@ class Readers:
         first = kw is None and call.args and call.args[0] is node
         if callee == 'enumerate' and first:
             self.iterate(call, args, pair=True, escape=escape)
+        elif callee == 'next' and first:
+            if prefix:
+                self.push(call, name, pattern, prefix[1:], via, certain)
+            else:
+                self.push(call, name, pattern + (STAR,), (), via, certain)
         elif callee in SAME_SHAPE and first:
             self.push(call, *args)
         elif callee == 'dict' and kw is not None:
@@ -608,6 +618,24 @@ class Readers:
                 self.outgoing.add((target[0], target[1], slot, name, pattern, prefix, certain))
         else:
             escape(f'{callee or "a call"}()')
+
+    def double_star(self, call, args, escape):
+        name, pattern, prefix, via, certain = args
+        callee, fn = _fname(call), call.func
+        if callee == 'dict':
+            self.push(call, *args)
+            return
+        if callee in self.defs and isinstance(fn, ast.Name):
+            for d in self.defs[callee]:
+                a = d.args
+                for param in a.posonlyargs + a.args + a.kwonlyargs:
+                    if prefix:
+                        if prefix[0] in (STAR, param.arg):
+                            self.bind_param(d, param.arg, False, call, name, pattern, prefix[1:], via, certain)
+                    else:
+                        self.bind_param(d, param.arg, False, call, name, pattern + (param.arg,), (), via, certain)
+            return
+        escape('**')
 
     def iterate(self, producer, args, pair, escape):
         loop = self.parent.get(producer)
@@ -854,6 +882,9 @@ class Readers:
             job.root_uses.append((s, e, 'reader_base', ''))
             return
         s, e = job.span(node)
+        if any(u[2].startswith('reader') and u[0] <= s and e <= u[1] for u in job.root_uses):
+            return              # inside a read already joined to the root: item.get('k', roster['default'])
+        job.root_uses = [u for u in job.root_uses if not (u[2].startswith('reader') and s <= u[0] and u[1] <= e)]
         if isinstance(p, ast.Call) and node in p.args and (_fname(p) in PATH_CALLS or _fname(p) == 'joinpath'):
             job.root_uses.append((s, e, 'reader_join', ''))
         else:
@@ -861,6 +892,34 @@ class Readers:
 
 
 # ---------- across modules ----------
+_NAMES = {}
+
+
+def module_names(ctx, f):
+    """Top-level names a module defines, read from ctx.modules."""
+    src = (ctx.modules or {}).get(f)
+    if src is None:
+        return set()
+    key = (f, hash(src))
+    if key not in _NAMES:
+        try:
+            with warnings.catch_warnings():
+                warnings.simplefilter('ignore', SyntaxWarning)
+                tree = ast.parse(src)
+        except (SyntaxError, ValueError):
+            tree = ast.Module(body=[], type_ignores=[])
+        out = set()
+        for st in tree.body:
+            if isinstance(st, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+                out.add(st.name)
+            elif isinstance(st, (ast.Assign, ast.AnnAssign)):
+                for t in (st.targets if isinstance(st, ast.Assign) else [st.target]):
+                    out.update(n.id for n in ast.walk(t) if isinstance(n, ast.Name))
+            elif isinstance(st, (ast.Import, ast.ImportFrom)):
+                out.update((a.asname or a.name).split('.')[0] for a in st.names if a.name != '*')
+        _NAMES[key] = out
+    return _NAMES[key]
+
 def _job(src, rel, ctx):
     from restructure_python import _PyJob
     try:
@@ -878,6 +937,7 @@ def link(sources, ctx, rounds=12):
     """{file: seeds} for values crossing module boundaries. `sources` holds every Python file of
     the side ctx.data_side describes ({name: text}); a round analyses the files with something new."""
     seeds = defaultdict(set)
+    ctx.modules = sources              # a star import is resolved against the module's own text
     if ctx.data is None:
         return {}
     results = {}
