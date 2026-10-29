@@ -250,6 +250,12 @@ class Readers:
         self._imports = None
         self.hints = (job.ctx.hints or {}).get(job.file_old, {})
         self._index()
+        # a path constant imported from another project module (from common import ROOT) evaluates as it does there
+        for local, (f, attr) in self.imports().items():
+            if attr and local not in job.env:
+                v = module_value(self.ctx, f, attr)
+                if v is not None:
+                    job.env[local] = v
 
     def ev(self, node):
         """The job's evaluation, plus names a hint gives a path to (reader_hints_phaseN.json)."""
@@ -1137,6 +1143,22 @@ class Readers:
 
 # ---------- across modules ----------
 _NAMES = {}
+
+
+_VALUES = {}
+
+
+def module_value(ctx, f, name):
+    """The path a module-level name of project module `f` evaluates to there, or None."""
+    src = (ctx.modules or {}).get(f)
+    if src is None:
+        return None
+    key = (f, hash(src), ctx.data_side)
+    if key not in _VALUES:
+        job = _job(src, f, ctx)
+        _VALUES[key] = dict(job.env) if job is not None else {}
+    v = _VALUES[key].get(name)
+    return v if v is not None and not v.is_file and not v.dyn else None
 
 
 def module_names(ctx, f):

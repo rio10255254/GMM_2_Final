@@ -434,3 +434,13 @@ def test_a_hint_names_the_file_a_name_holds(ctx):
     ctx = replace(ctx, hints={FILE: {'MANIFEST_PATH': CFG}})
     out, _ = rewrite(src, ctx)
     assert "    return Path(PROJECT_ROOT / m['out'])\n" in out
+
+
+def test_path_constant_imported_from_another_module(ctx):
+    common = "from pathlib import Path\nimport json\nROOT = Path(__file__).resolve().parents[1]\n" \
+             "def load(p):\n    return json.loads(Path(p).read_text())\n"
+    main = "from pathlib import Path\nfrom common import *\nclass Bank:\n    def __init__(self):\n" \
+           "        self.cfg = load(ROOT / 'config/experiment.json')\n        self.root = Path(self.cfg['out'])\n"
+    ctx = linked(ctx, {MAIN: main, COMMON: common})
+    out, _ = rewrite(main, ctx, MAIN)
+    assert "        self.root = Path(PROJECT_ROOT / self.cfg['out'])\n" in out
