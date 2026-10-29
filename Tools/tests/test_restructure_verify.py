@@ -143,3 +143,10 @@ def test_location_equivalence_accepts_the_bare_root_as_dot():
     q = chr(39) * 3
     e = Edit('Tools/a.py', 'Tools/a.py', 3, q + "refs to D:/GMM_2_Final; done" + q, q + "refs to .; done" + q, 'py:string', '', '')
     assert v.equivalence([e], NEW, NEW, None, {}) == []
+
+
+def test_location_equivalence_accepts_the_bare_root_kept_in_prose():
+    from restructure_text import Edit
+    e = Edit('Tools/a.py', 'Tools/a.py', 1, '"""--root D:/GMM_2_Final scan D:/GMM_2_Final/Model/a.py"""',
+             '"""--root D:/GMM_2_Final scan Model/a.py"""', 'py:string', '', '')
+    assert v.equivalence([e], NEW, NEW, None, {}) == []

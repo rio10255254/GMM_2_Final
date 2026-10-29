@@ -100,9 +100,10 @@ def equivalence(edits, old_uni, new_uni, rules, external_map, decisions=None):
         if cls == 'py':
             if kind in ('string', 'comment'):
                 old = [_expect(t, rules, decisions) for t in token_targets(e.old, e.file_old, old_uni, external_map)]
-                if rules is None:
-                    old = [t for t in old if t]      # location mode: the project folder itself is written '.'
                 new = token_targets(e.new, e.file_new, new_uni, external_map)
+                if rules is None:
+                    # location mode: the project folder itself is written '.', or kept as written in prose
+                    old, new = [t for t in old if t], [t for t in new if t]
                 if Counter(old) != Counter(new):
                     problems.append(f'{where}: targets {old} became {new}')
             continue
