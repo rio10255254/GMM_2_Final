@@ -339,3 +339,9 @@ def test_loop_unpacking_constant_pairs_gives_the_keys(ctx):
     src = HEAD + LOAD + "for name, key in (('a', 'raw_dir'), ('b', 'model_dir')):\n    open(CONFIG['sources'][key])\n"
     out, unresolved = rewrite(src, ctx)
     assert "    open(str(PROJECT_ROOT / CONFIG['sources'][key]))\n" in out and not unresolved
+
+
+def test_library_writers_read_no_path(ctx):
+    src = HEAD + LOAD + "import torch\ntorch.save({'config': CONFIG, 'n': 1}, 'w.pth')\n"
+    out, unresolved = rewrite(src, ctx)
+    assert out == src and not unresolved

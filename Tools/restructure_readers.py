@@ -45,6 +45,9 @@ LOADER_NAME = re.compile(r'load|read', re.I)
 # uses of a loaded value that read no path out of it
 HARMLESS = ('len', 'isinstance', 'bool', 'print', 'repr', 'type', 'id', 'dump', 'dumps', 'pprint', 'pformat',
             'keys', 'hash', 'set', 'any', 'all', 'format')
+# library calls that write a value out or test membership: they read no path out of it
+WRITERS = ('save', 'savez', 'savez_compressed', 'savemat', 'dump', 'writerow', 'writerows', 'to_csv', 'to_json',
+           'isin', 'issubset', 'issuperset', 'intersection', 'union', 'difference')
 TYPE_CHECKS = ('isinstance', 'type', 'bool', 'len', 'id', 'hash', 'int', 'float', 'round')
 SAME_SHAPE = ('deepcopy', 'copy', 'dict', 'list', 'tuple', 'sorted', 'reversed', 'OrderedDict')
 NEUTRAL = (None, '', 0, False)
@@ -743,7 +746,8 @@ class Readers:
             self.container(fn.value, (STAR,), args, escape)
         elif callee == 'extend' and isinstance(fn, ast.Attribute) and first:
             self.container(fn.value, (), args, escape)
-        elif callee in HARMLESS:
+        elif callee in HARMLESS or (callee in WRITERS and isinstance(fn, ast.Attribute) and
+                                   not (isinstance(fn.value, ast.Name) and fn.value.id == 'self')):
             pass
         elif callee in self.defs and (isinstance(fn, ast.Name) or
                                       (isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name) and fn.value.id == 'self')):
