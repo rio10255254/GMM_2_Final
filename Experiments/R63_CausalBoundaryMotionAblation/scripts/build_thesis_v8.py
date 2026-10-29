@@ -10,11 +10,12 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Inches, Pt
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 SOURCE = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v7.docx")
 DESTINATION = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v8.docx")
-FIGURE_DIR = Path(r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\figures")
+FIGURE_DIR = Path(str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/figures'))
 
 
 def replace_paragraph_text(paragraph, text: str) -> None:

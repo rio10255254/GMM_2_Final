@@ -1,5 +1,5 @@
 % Copied for LabSystem_MOSR from
-% D:/GMM_2_Final/PSF_Fitting/PSF_Fitting_ValidationLab/scripts/vlab_translate_image.m.
+% PSF_Fitting/PSF_Fitting_ValidationLab/scripts/vlab_translate_image.m.
 function shifted = vlab_translate_image(img, dy, dx)
 [h, w] = size(img);
 [x_grid, y_grid] = meshgrid(1:w, 1:h);

@@ -1,7 +1,7 @@
 # Process Probe Audit
 
 - candidate: r31_edge_ratio_low
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r31edgerlow_20260318_112412\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r31edgerlow_20260318_112412/weights/best_tradeoff.pth.tar
 - geom_method: edge_band_refine
 - expect_dy: 8.00
 - process_score: -65.858240

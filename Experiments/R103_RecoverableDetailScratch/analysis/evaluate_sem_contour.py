@@ -22,6 +22,7 @@ for folder in (ROOT / "model", ROOT / "inference"):
 
 from r103_model import build_model  # noqa: E402
 from reconstruct import reconstruct_tensor  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
@@ -29,10 +30,10 @@ RUN = json.loads((ROOT / "runs" / "active_run.json").read_text(encoding="utf-8")
 OUTPUT = ROOT / "results" / "posttraining_validation" / "sem_contour"
 RECON = OUTPUT / "reconstructions"
 TABLES = OUTPUT / "results" / "tables"
-RAW_DIR = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack")
-R61_TABLES = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\tables")
+RAW_DIR = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
+R61_TABLES = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/tables'))
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
-SHARED_ACM = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\scripts\run_acm_extraction.m")
+SHARED_ACM = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/scripts/run_acm_extraction.m'))
 EXPOSURES = tuple(range(13, 25))
 METRICS = {
     "iou": "higher",

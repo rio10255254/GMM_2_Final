@@ -13,8 +13,8 @@
 ### Task 1: Add a failing acceptance test
 
 **Files:**
-- Create: `D:\GMM_2_Final\PSF_Fitting\tests\python\test_center9_wiener_evidence.py`
-- Read: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\tables\center9_pillar_fit_20x_50x\cd_before_after_summary.csv`
+- Create: `PSF_Fitting/tests/python/test_center9_wiener_evidence.py`
+- Read: `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/tables/center9_pillar_fit_20x_50x/cd_before_after_summary.csv`
 
 - [ ] Write a test requiring exactly two finite summary rows (`20x`, `50x`), selected NSR exactly `0.08`, `edge_width_change_percent < 0`, `mae_change_percent < 0`, zero inverted centers, and all expected output figures readable.
 - [ ] Run `python -m pytest tests/python/test_center9_wiener_evidence.py -q` and confirm it fails because the current summary lacks the sharpening fields and the 50x result is over-smoothed.
@@ -22,7 +22,7 @@
 ### Task 2: Replace the conservative Wiener selection
 
 **Files:**
-- Modify: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data\center9_pillar_fit_20x_50x\psf_deconvolution_cd\run_wiener_deconvolution.m`
+- Modify: `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/psf_deconvolution_cd/run_wiener_deconvolution.m`
 
 - [ ] Replace the no-ringing selector with fixed NSR `0.08` for both 20x and 50x.
 - [ ] Keep fitted PSF normalization, symmetric padding, unclipped numeric output, and 8-bit standalone PNG/BMP output unchanged.
@@ -32,7 +32,7 @@
 ### Task 3: Measure real sharpening and CD movement
 
 **Files:**
-- Modify: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data\center9_pillar_fit_20x_50x\psf_deconvolution_cd\analyze_cd.py`
+- Modify: `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/psf_deconvolution_cd/analyze_cd.py`
 
 - [ ] Add per-pillar edge-transition width: sample 360 radial traces at 0.05-pixel spacing; smooth each trace by 0.30 px; use the same robust core/background levels as CD; linearly interpolate the 10% and 90% dark-to-background crossings; require at least 90% valid traces; use the median angular width in pixels.
 - [ ] Add radial ringing ratio as inward-dip magnitude divided by outward-rise magnitude on the median normalized profile, and define no inversion as `core_level < background_level` for every dark pillar.

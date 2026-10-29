@@ -39,7 +39,7 @@
 
 **能說的是「R109 改善了這套 ACM 所抽取的輪廓」，不能直接延伸成「R109 已把所有物理邊界位置修回真值」。** 半對比中點同樣不是自動取得物理真值資格；它和 SEM 材料邊緣是否應該重合，仍需獨立依據。
 
-![三種讀法與有效資料覆蓋](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/readout_comparison.png)
+![三種讀法與有效資料覆蓋](../analysis/R109_comparison_20260907/readout_comparison.png)
 
 ## 3. 最陡位置讀法不能被硬當成第三張贊成票
 
@@ -67,7 +67,7 @@ R119 關閉位置在 12/12 種曝光的 ACM 與中點配對中位數都改善；
 
 這支持 R119 的位置路徑是較大的問題來源。但以下一節的結果，不能把這個差值全稱為「純位置偏差被消除」。
 
-![跨曝光的中點與位置路徑影響](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/position_path_effects.png)
+![跨曝光的中點與位置路徑影響](../analysis/R109_comparison_20260907/position_path_effects.png)
 
 ## 5. 名稱叫位置，實際也在做清晰化
 
@@ -92,7 +92,7 @@ R119 關閉位置在 12/12 種曝光的 ACM 與中點配對中位數都改善；
 
 這說明先前用「位置、寬度、細節」三個名稱直接解釋功能分工並不充分。它能說明為何僅憑位置路徑開關，就決定加位置監督的依據不足；尚不能把這點當成 R121 訓練失敗的唯一原因。
 
-![無雜訊直線邊界的位置與寬度耦合](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/position_width_coupling.png)
+![無雜訊直線邊界的位置與寬度耦合](../analysis/R109_comparison_20260907/position_width_coupling.png)
 
 ## 6. 已決定的下一步
 
@@ -114,12 +114,12 @@ R119 關閉位置在 12/12 種曝光的 ACM 與中點配對中位數都改善；
 
 首次嘗試沿用了 R109 一般推論設定的 1024 核心大小，曝光 13 有 50 個像素與歷史圖相差 1 灰階，因此停止。回查實際歷史重建程式與狀態，確認那批圖使用 512 核心、192 邊界。第二版按該歷史路徑重現後，所有曝光逐像素一致。初版程式、範圍與失敗原因保留，沒有放寬匹配門檻。
 
-主要資料與程式位於 [本次比較資料夾](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907)：
+主要資料與程式位於 [本次比較資料夾](../analysis/R109_comparison_20260907)：
 
-- [有效執行範圍](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/protocol_v2.json)
-- [全部 ACM 結果](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/acm_measurements.csv)
-- [中點、最陡點與有效數](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/profile_measurements.csv)
-- [讀法配對比較](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/readout_comparisons.csv)
-- [各路徑影響](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/path_comparisons.csv)
-- [已知答案的操作檢查](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/operator_sanity.csv)
-- [獨立覆核](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/verification.json)
+- [有效執行範圍](../analysis/R109_comparison_20260907/protocol_v2.json)
+- [全部 ACM 結果](../analysis/R109_comparison_20260907/acm_measurements.csv)
+- [中點、最陡點與有效數](../analysis/R109_comparison_20260907/profile_measurements.csv)
+- [讀法配對比較](../analysis/R109_comparison_20260907/readout_comparisons.csv)
+- [各路徑影響](../analysis/R109_comparison_20260907/path_comparisons.csv)
+- [已知答案的操作檢查](../analysis/R109_comparison_20260907/operator_sanity.csv)
+- [獨立覆核](../analysis/R109_comparison_20260907/verification.json)

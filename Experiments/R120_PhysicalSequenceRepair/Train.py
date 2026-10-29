@@ -3,7 +3,7 @@ from pathlib import Path
 import subprocess
 import datetime
 ROOT=Path(__file__).resolve().parent
-PYTHON='C:/Users/Rio/anaconda3/python.exe'
+PYTHON='python'
 ARM='B'
 MODEL_SEED=1205001
 EPOCHS=12

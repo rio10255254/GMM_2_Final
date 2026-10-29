@@ -9,13 +9,13 @@ from typing import Any
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
 MANIFEST_PATH = EXPERIMENT / "evaluation_manifest.json"
 AUDIT_SCRIPTS = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\scripts"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/scripts')
 )
 if str(AUDIT_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(AUDIT_SCRIPTS))
@@ -62,7 +62,7 @@ def method_sequence_dir(
 ) -> Path:
     if method == "Raw":
         return raw_dir
-    root = Path(manifest["methods"][method]["sequence_root"])
+    root = Path(PROJECT_ROOT / manifest["methods"][method]["sequence_root"])
     mapped_name = manifest["sequence_name_map"][sequence_name][method]
     return root / mapped_name
 

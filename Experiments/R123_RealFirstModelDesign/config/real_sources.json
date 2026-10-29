@@ -4,7 +4,7 @@
   "sources": [
     {
       "id": "sem_paired_exposures",
-      "path": "D:/GMM_2_Final/Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack",
+      "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack",
       "expected_images": 12,
       "scope": "13.bmp through 24.bmp; 36 SEM-linked pillars, 432 repeated observations",
       "physical_sample_count": 1,
@@ -24,7 +24,7 @@
     },
     {
       "id": "real_six_motion_suites",
-      "path": "D:/GMM_2_Final/Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/inputs/locked_raw",
+      "path": "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/inputs/locked_raw",
       "subdirectories": {"5x_0p5um": 50, "5x_1um": 50, "20x_0p5um": 50, "20x_1um": 50, "50x_0p5um": 51, "50x_1um": 50},
       "expected_images": 301,
       "role": "primary_real_motion_and_structure_development",
@@ -33,7 +33,7 @@
     },
     {
       "id": "real_nonpillar_full_fields",
-      "path": "D:/GMM_2_Final/Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/inputs/locked_raw",
+      "path": "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/inputs/locked_raw",
       "alias_of": "real_six_motion_suites",
       "role": "primary_real_texture_corners_lines_gaps_development",
       "training_allowed": false,
@@ -42,7 +42,7 @@
     },
     {
       "id": "real_checkerboard",
-      "path": "D:/GMM_2_Final/Thesis_MOSR_Evidence/20250605_checkboard",
+      "path": "Thesis_MOSR_Evidence/20250605_checkboard",
       "expected_images": 51,
       "role": "primary_real_corner_safety_development",
       "training_allowed": false,
@@ -50,7 +50,7 @@
     },
     {
       "id": "thesis_static_SEM_sample",
-      "path": "D:/GMM_2_Final/Thesis_MOSR_Evidence/20260618_100MG",
+      "path": "Thesis_MOSR_Evidence/20260618_100MG",
       "expected_images": 1,
       "role": "supplementary_reused_size_development",
       "training_allowed": false,
@@ -58,7 +58,7 @@
     },
     {
       "id": "same_frame_CAD_source",
-      "path": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/20260613_Checkboard_data",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/20260613_Checkboard_data",
       "expected_images": 39,
       "role": "diagnostic_only_source_requires_lineage_before_training",
       "training_allowed": false,
@@ -66,7 +66,7 @@
     },
     {
       "id": "candidate_optics_calibration",
-      "path": "D:/GMM_2_Final/Thesis_MOSR_Evidence/20250605_PSF_Calibration",
+      "path": "Thesis_MOSR_Evidence/20250605_PSF_Calibration",
       "expected_images": 25,
       "role": "candidate_calibration_not_yet_qualified_for_next_operator",
       "training_allowed": false,

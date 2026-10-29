@@ -1,6 +1,6 @@
 # v16 Step-Guard Diverse Phantom Boundary Gate Summary
 
-Candidate metrics: `D:\GMM_2_Final\Experiments\R61_STEP_Generalization_20260623\runs\R61_stepguard_v16_dpv96_matched_20260623\diverse_phantom_validation_20260623_220416\boundary_metrics.csv`
+Candidate metrics: `Experiments/R61_STEP_Generalization_20260623/runs/R61_stepguard_v16_dpv96_matched_20260623/diverse_phantom_validation_20260623_220416/boundary_metrics.csv`
 
 ## vs R39
 

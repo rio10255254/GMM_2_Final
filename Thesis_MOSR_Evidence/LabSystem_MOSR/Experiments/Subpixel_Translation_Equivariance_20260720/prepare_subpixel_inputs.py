@@ -8,18 +8,16 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parent
 DESIGN_PATH = ROOT / "predeclared_design.json"
 PILLAR_CONFIG = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\config\sequence_center9_50x20x.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json')
 )
 VIA_CONFIG = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments"
-    r"\Modern_Restoration_Benchmarks_20260719\evaluation\via_reference"
-    r"\via_center9_reference.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/via_reference/via_center9_reference.json')
 )
 
 
@@ -71,7 +69,7 @@ def translate_lanczos(image_u16: np.ndarray, dx: float, dy: float) -> np.ndarray
 
 def resolve_source(case: dict, pillar_sequences: dict) -> Path:
     sequence = pillar_sequences[case["source_sequence"]]
-    return Path(sequence["raw_dir"]) / case["source_frame"]
+    return Path(PROJECT_ROOT / sequence["raw_dir"]) / case["source_frame"]
 
 
 def feature_metadata(case: dict, pillar_sequences: dict, via_sequences: dict) -> dict:

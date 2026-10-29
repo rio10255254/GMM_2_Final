@@ -20,6 +20,7 @@ from scipy.ndimage import center_of_mass
 from scipy.stats import wilcoxon
 from skimage.measure import find_contours
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,12 +33,12 @@ RECON = OUTPUT / "reconstructions"
 TABLES = OUTPUT / "results" / "tables"
 FIGURES = OUTPUT / "figures"
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
-SHARED_ACM = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\scripts\run_acm_extraction.m")
+SHARED_ACM = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/scripts/run_acm_extraction.m'))
 PRIOR_TABLES = {
-    "R61v16": Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\tables"),
-    "V42E120": Path(r"D:\GMM_2_Final\Experiments\R70_V42ACMContourSEMValidation\results\tables"),
-    "R75v2E100": Path(r"D:\GMM_2_Final\Experiments\R77_R75v2ACMContourSEMValidation\results\epoch100_audit\results\tables"),
-    "R96E44": Path(r"D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\results\final_validation\sem_contour\results\tables"),
+    "R61v16": Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/tables')),
+    "V42E120": Path(str(PROJECT_ROOT / 'Experiments/R70_V42ACMContourSEMValidation/results/tables')),
+    "R75v2E100": Path(str(PROJECT_ROOT / 'Experiments/R77_R75v2ACMContourSEMValidation/results/epoch100_audit/results/tables')),
+    "R96E44": Path(str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/results/final_validation/sem_contour/results/tables')),
 }
 METHODS = ["Raw", "R61v16", "V42E120", "R75v2E100", "R96E44", "R97E48"]
 METRICS = {
@@ -143,7 +144,7 @@ def reconstruct(protocol: dict) -> dict:
         raise RuntimeError(f"Refusing to overwrite SEM validation: {OUTPUT}")
     OUTPUT.mkdir(parents=True, exist_ok=True)
     sem = protocol["sem_contour_arm"]
-    checkpoint_path = Path(protocol["checkpoint"])
+    checkpoint_path = Path(PROJECT_ROOT / protocol["checkpoint"])
     checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
     if int(checkpoint["epoch"]) != int(protocol["primary_checkpoint_epoch"]):
         raise RuntimeError("SEM checkpoint epoch mismatch")
@@ -152,7 +153,7 @@ def reconstruct(protocol: dict) -> dict:
     model.load_state_dict(checkpoint[protocol["checkpoint_state"]], strict=True)
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.eval().to(device)
-    raw_dir = Path(sem["raw_input_dir"])
+    raw_dir = Path(PROJECT_ROOT / sem["raw_input_dir"])
     records: list[dict[str, object]] = []
     for exposure in sem["exposures"]:
         source = raw_dir / f"{exposure}.bmp"
@@ -184,7 +185,7 @@ def reconstruct(protocol: dict) -> dict:
 
 
 def run_acm(protocol: dict) -> None:
-    raw_dir = Path(protocol["sem_contour_arm"]["raw_input_dir"])
+    raw_dir = Path(PROJECT_ROOT / protocol["sem_contour_arm"]["raw_input_dir"])
     expression = (
         f"addpath('{SHARED_ACM.parent.as_posix()}'); "
         f"run_acm_extraction('{OUTPUT.as_posix()}','{raw_dir.as_posix()}',"

@@ -35,19 +35,19 @@ Round22 通過了 calibrated internal pairmix gate，但 internal 通過 ≠ ext
 
 ```powershell
 # Round18 baseline
-powershell.exe -File "D:\GMM_2_Final\Tools\RunRepresentativeExternalRecon.ps1" `
-    -WeightsPath "D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756\weights\best_tradeoff.pth.tar" `
-    -ReconRoot "D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_round18_round22\round18_baseline\reconstructions"
+powershell.exe -File "Tools/RunRepresentativeExternalRecon.ps1" `
+    -WeightsPath "Traing_Progress/organized_20260313/round18/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756/weights/best_tradeoff.pth.tar" `
+    -ReconRoot "Traing_Progress/organized_20260316/external_compare_round18_round22/round18_baseline/reconstructions"
 
 # Round22 stepguard
-powershell.exe -File "D:\GMM_2_Final\Tools\RunRepresentativeExternalRecon.ps1" `
-    -WeightsPath "D:\GMM_2_Final\Traing_Progress\organized_20260315\round22\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625\weights\best_tradeoff.pth.tar" `
-    -ReconRoot "D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_round18_round22\round22_stepguard\reconstructions"
+powershell.exe -File "Tools/RunRepresentativeExternalRecon.ps1" `
+    -WeightsPath "Traing_Progress/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/weights/best_tradeoff.pth.tar" `
+    -ReconRoot "Traing_Progress/organized_20260316/external_compare_round18_round22/round22_stepguard/reconstructions"
 
 # Round22 hold
-powershell.exe -File "D:\GMM_2_Final\Tools\RunRepresentativeExternalRecon.ps1" `
-    -WeightsPath "D:\GMM_2_Final\Traing_Progress\organized_20260315\round22\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r22ph_20260315_225256\weights\best_tradeoff.pth.tar" `
-    -ReconRoot "D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_round18_round22\round22_hold\reconstructions"
+powershell.exe -File "Tools/RunRepresentativeExternalRecon.ps1" `
+    -WeightsPath "Traing_Progress/organized_20260315/round22/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ph_20260315_225256/weights/best_tradeoff.pth.tar" `
+    -ReconRoot "Traing_Progress/organized_20260316/external_compare_round18_round22/round22_hold/reconstructions"
 ```
 
 ### Step 2：GMF（由使用者執行）

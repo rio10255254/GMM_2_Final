@@ -57,7 +57,7 @@
 
 ## 代表圖
 
-![R45B 老師比較](D:/GMM_2_Final/Experiments/R45_FamilyBoundaryAdapter/results/visual_samples/r45b_teacher_diagnostics_sheet.png)
+![R45B 老師比較](../results/visual_samples/r45b_teacher_diagnostics_sheet.png)
 
 ## 下一步
 

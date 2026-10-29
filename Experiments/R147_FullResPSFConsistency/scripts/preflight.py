@@ -15,6 +15,7 @@ from losses import objective
 from model import Model
 from training_policy import optimizer
 from utils import load, model_config, now, save, setup, sha, train_config, verify_bank_lock
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 def main() -> None:
@@ -26,7 +27,7 @@ def main() -> None:
     assert len(manifest["entries"]) == len(reference["entries"]) == 768
     assert sha(ROOT / "data/manifest.json") == sha(R146 / "data/manifest.json")
     assert bank_lock["bank_sha256"] == sha(R146 / "calibration/measured_psf_bank.npz")
-    assert bank_lock["source_mat_sha256"] == sha(bank_lock["source_mat_path"])
+    assert bank_lock["source_mat_sha256"] == sha(str(PROJECT_ROOT / bank_lock["source_mat_path"]))
     assert bank_lock["research_only"] is True
     assert manifest["measured_psf_bank_sha256"] == bank_lock["bank_sha256"]
     for entry in manifest["entries"]:

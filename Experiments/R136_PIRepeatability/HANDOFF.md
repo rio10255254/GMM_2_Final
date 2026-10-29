@@ -5,9 +5,9 @@ User authorized full execution of Raw, R61 and R129 on all30 repeated31-frame sc
 ## Current execution
 
 - Python: `C:\Users\Rio\anaconda3\python.exe`.
-- Root: `D:\GMM_2_Final\Experiments\R136_PIRepeatability`.
+- Root: `Experiments/R136_PIRepeatability`.
 - Branch: `codex/r136-pi-repeatability`. The repo already had extensive unrelated changes; leave them alone.
-- Source: `C:\Users\Rio\Downloads\20260902_100MF_uncertainty\20260902_100MF_uncertainty\20260903`.
+- Source: `Shared_Sources/PI_Repeatability_20260903/raw`.
 - R61 all930 reconstructions COMPLETE at2026-09-16T15:11:57UTC. R129 continues, roughly12seconds/frame after R61 finished, so remaining work takes hours. Read fresh counters, not these notes.
 - `scripts/reconstruct.py R129` is running (initial PID19332); rerunning resumes from saved per-image metadata if necessary. R61 entry is same script with R61 argument. Do not restart a healthy process.
 - `scripts/measure_all.py --workers 4` is running (initial PID19452), consumes each complete reconstruction scan as soon as available. Current primary output is `results/readouts/`; all30 Raw scans have completed with zero failed rows.
@@ -33,7 +33,7 @@ User authorized full execution of Raw, R61 and R129 on all30 repeated31-frame sc
 1. Read fresh status files and inspect process/log only if needed. Normal healthy progress gets no notification. If failed, fix the concrete error and resume only the affected stage. Original images/weights stay unchanged.
 2. Once status_delivery is ready, read results/tables summary.csv,repeatability.csv,paired_comparisons.csv,repeatability_comparisons.csv,sensitivity.csv,time_blocks.csv,time_drift.csv,path_closure.csv,independent_reader_checks.csv,coverage.csv and verification.json. Check n30/n24 and no pseudoreplication. All25200 planned reader rows should be covered (Raw7200,R619000,R1299000), including alternative readers/regions/precision. Formal primary full-precision rows=5400.
 3. View the7 PNGs in reports/figures with view_image. They also have PDF exports. Fix layout/content if needed and rerun figures.py. Read reports/R136_RESULTS.md and add an accessible lead conclusion derived from results: accuracy,repeatability,worst cases,paired confidence and sensitivity,not just ranking a mean. Record visual review.
-4. Update project registration locally: append R136 entry to D:\GMM_2_Final\Experiments\INDEX.md; add a concise R136 result/handoff note to PROJECT_STATE.md and a research-only open_side_tracks entry in ESTIMATOR_POLICY.json, preserving formal baseline/all other work. Architecture rules unchanged, so no architecture edit necessary. Update r136 storage registry actual size/state and this experiment MANIFEST. No GitHub issue/PR/comment or push requested.
+4. Update project registration locally: append R136 entry to Experiments/INDEX.md; add a concise R136 result/handoff note to PROJECT_STATE.md and a research-only open_side_tracks entry in ESTIMATOR_POLICY.json, preserving formal baseline/all other work. Architecture rules unchanged, so no architecture edit necessary. Update r136 storage registry actual size/state and this experiment MANIFEST. No GitHub issue/PR/comment or push requested.
 5. Mark runs/launcher_logs/active_formal_run.json complete ONLY after arrays/readouts/report/figures/review are all complete. Save results/delivery_complete.json with report and figure links and counts. Open the report or most useful figure in Codex when helpful.
 6. Notify user in simple Traditional Chinese with a compact comparison and links to report/data, explicitly saying any limitation that affects the conclusion. Do not dump paths or code details. Pause automation r136 afterward (view/update tool preserving its fields). If current turn uses memory, comply with memory citation rules; avoid unnecessary memory lookup because this handoff is current evidence.
 
@@ -108,4 +108,4 @@ R136新十字九顆Raw/R128完整對照交付：9張圖、3600合併位移／324
 R128修正取樣位置論文交接包（2026-09-20）：Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。 Original source results remain intact. No thesis Word edit yet.
 
 ## R129 current-standard revalidation 2026-09-20
-R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 Folder: D:\GMM_2_Final\Deliverables\R129_Corrected_Corner9_Thesis_Handoff_20260920. Start START_HERE.md and HANDOFF_FOR_THESIS.md. Fixed8192 original80/16, not W16. R128 deliverable unchanged.
+R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 Folder: Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920. Start START_HERE.md and HANDOFF_FOR_THESIS.md. Fixed8192 original80/16, not W16. R128 deliverable unchanged.

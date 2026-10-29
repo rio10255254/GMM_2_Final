@@ -3,9 +3,10 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-R103 = Path(r"D:\GMM_2_Final\Experiments\R103_RecoverableDetailScratch\analysis")
+R103 = Path(str(PROJECT_ROOT / 'Experiments/R103_RecoverableDetailScratch/analysis'))
 R104 = Path(__file__).resolve().parents[1]
 ALLOWED = {
     "external_acm": "evaluate_external_acm.py",

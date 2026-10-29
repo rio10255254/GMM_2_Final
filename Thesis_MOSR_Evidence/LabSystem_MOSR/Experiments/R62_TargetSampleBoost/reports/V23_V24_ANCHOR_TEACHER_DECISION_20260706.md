@@ -50,7 +50,7 @@ V24 packages the validated blend10 behavior into the checkpoint.
 
 Checkpoint:
 
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\packaged_checkpoints\r62_v24_v7_anchor_blend10_builtin\r62_v24_v7_anchor_blend10_builtin.pth.tar`
+`Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/packaged_checkpoints/r62_v24_v7_anchor_blend10_builtin/r62_v24_v7_anchor_blend10_builtin.pth.tar`
 
 Pixel equivalence versus the prior external blend10 folders:
 
@@ -77,9 +77,9 @@ Shape-aware GMF:
 ## Evidence Files
 
 - V23 training package:
-  `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r62_target_sample_boost\hs100mg_basler\r62_target_sample_boost_v7_anchor_blend10_teacher`
+  `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r62_target_sample_boost/hs100mg_basler/r62_target_sample_boost_v7_anchor_blend10_teacher`
 - V23 short training:
-  `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_anchor_blend_teacher_v23_v23_anchor_teacher_e1_mtb200_20260706_20260706_101149`
+  `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_anchor_blend_teacher_v23_v23_anchor_teacher_e1_mtb200_20260706_20260706_101149`
 - V23 fixed ROI scoring:
   `v23_anchor_teacher_fixedroi_gmf_scoring_20260706`
 - V23 shape-aware scoring:
@@ -87,7 +87,7 @@ Shape-aware GMF:
 - V23 square fidelity:
   `v23_anchor_teacher_square_shape_fidelity_20260706`
 - V24 packaged checkpoint:
-  `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\packaged_checkpoints\r62_v24_v7_anchor_blend10_builtin\r62_v24_v7_anchor_blend10_builtin.pth.tar`
+  `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/packaged_checkpoints/r62_v24_v7_anchor_blend10_builtin/r62_v24_v7_anchor_blend10_builtin.pth.tar`
 - V24 pixel equivalence check:
   `v24_builtin_vs_external_blend10_pixel_check_20260706.json`
 - V24 fixed ROI scoring:

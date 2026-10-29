@@ -10,12 +10,13 @@ import cv2
 import numpy as np
 
 from displacement_common import IMAGE_EXTENSIONS, natural_key, read_gray_u8, write_json
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 DEFAULT_ROOTS = [
-    Path(r"D:\GMM_2_Final\20260702_100MG_位移"),
+    Path(str(PROJECT_ROOT / '20260702_100MG_位移')),
 ]
-DEFAULT_OUTPUT_ROOT = Path(r"D:\GMM_2_Final\20260702_100MG_phase_dft_analysis")
+DEFAULT_OUTPUT_ROOT = Path(str(PROJECT_ROOT / '20260702_100MG_phase_dft_analysis'))
 
 
 def parse_roi(value: str | None) -> tuple[int, int, int, int] | None:

@@ -10,6 +10,7 @@ import cv2
 import numpy as np
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 PACKAGE = Path(__file__).resolve().parents[1]
@@ -17,7 +18,7 @@ RAW = PACKAGE / "pitch1um_y100_raw" / "bmp"
 R109 = PACKAGE / "pitch1um_y100_r109_e48" / "bmp"
 RECORDS = PACKAGE / "_records"
 PRIOR_MAPPING = PACKAGE.parent / "Pitch1um_Y_100_Raw_Even_R103E48_R104E48" / "source_mapping.csv"
-MODEL_ROOT = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+MODEL_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 CHECKPOINT = MODEL_ROOT / "weights" / "selected" / "R109.pth"
 sys.path.insert(0, str(MODEL_ROOT / "model"))
 from r109_model import build_model  # noqa: E402

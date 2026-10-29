@@ -15,19 +15,19 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt
 
 from build_thesis_v11 import clear_and_set, document_math_fingerprint, enable_field_updates
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 DOCUMENT = Path(
     r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v11.docx"
 )
 RESULTS = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments"
-    r"\BaseUNet_Baseline_20260718\results_full_data_fixed_psf_v2"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_v2')
 )
 SUMMARY = RESULTS / "analysis" / "learning_baseline_method_summary.csv"
 TRAINING = RESULTS / "training_summary.json"
 FIGURE = RESULTS / "figures" / "base_unet_50x_fixed_scale_comparison.png"
-QA = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\qa")
+QA = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/_paper_editing/qa'))
 BACKUP = QA / "v11_before_base_unet_integration.docx"
 AUDIT = QA / "v11_base_unet_integration_audit.json"
 

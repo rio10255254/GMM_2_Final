@@ -4,8 +4,8 @@
 >
 > 註：本文件主要記錄 2026-03-26 這輪 sandbox 的歷史執行狀態。
 > 2026-03-27 之後的 `current standard` / `legacy baseline` 政策，
-> 請以 `D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md`
-> 與 `D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json` 為準。
+> 請以 `docs/policy/PSF_POLICY_TRANSITION_R26.md`
+> 與 `docs/policy/PSF_STANDARD_POLICY.json` 為準。
 >
 > 本文件描述的是 sandbox 的**完整本地執行面**，不是 Git-tracked surface 的一比一清單。
 > checkpoint snapshots、GMF drop-ins、package clone、cleanup archives 等 bulk 內容在本地可能存在，
@@ -57,7 +57,7 @@
 本專案有一份正式交付封包，位於：
 
 ```
-D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\
+_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包
 ```
 
 這份封包記錄了 R26 正式交付的完整狀態，包含訓練輸出、推論輸出、分析報告等，具有**「交付版本語意」**——也就是說，它的內容代表了「我們正式提交給對方的成果」。
@@ -72,7 +72,7 @@ D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使�
 ### 本 Sandbox 的做法
 
 - 把新訓練的 checkpoint **複製快照**到本 sandbox 的 `artifacts/` 資料夾，作為本次實驗的輸入。
-- 所有外部重建的輸出、比較報告、PSF 審核記錄，**全部只落在本 sandbox**（`D:\GMM_2_Final\Experiments\R26NewPSFCheck\`），不再寫回封包。
+- 所有外部重建的輸出、比較報告、PSF 審核記錄，**全部只落在本 sandbox**（`Experiments/R26NewPSFCheck`），不再寫回封包。
 - 封包本身只被當成**來源**，不被當成輸出目的地。
 
 這樣一來，封包維持乾淨的交付語意，本 sandbox 則承載所有後續的研究與比較工作。
@@ -198,7 +198,7 @@ PSF 正式擬合流程的審核記錄。記錄了對 `PSF_Fitting/` 根目錄程
 ### 腳本位置
 
 ```
-D:\GMM_2_Final\Experiments\R26NewPSFCheck\Tools\run_external_recon_newpsf.ps1
+Experiments/R26NewPSFCheck/Tools/run_external_recon_newpsf.ps1
 ```
 
 ### 基本用法（使用預設 checkpoint）
@@ -206,14 +206,14 @@ D:\GMM_2_Final\Experiments\R26NewPSFCheck\Tools\run_external_recon_newpsf.ps1
 在 PowerShell 中執行：
 
 ```powershell
-Set-Location D:\GMM_2_Final\Experiments\R26NewPSFCheck\Tools
+Set-Location Experiments/R26NewPSFCheck/Tools
 .\run_external_recon_newpsf.ps1
 ```
 
 預設會使用：
 
 ```
-D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\newpsf_r26_retrain\weights\best_tradeoff.pth.tar
+Experiments/R26NewPSFCheck/artifacts/newpsf_r26_retrain/weights/best_tradeoff.pth.tar
 ```
 
 ### 指定自訂 checkpoint
@@ -250,7 +250,7 @@ D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\newpsf_r26_retrain\weights\b
 本次已完成重建的時間戳記為 `20260326_115148`，輸出位於：
 
 ```
-D:\GMM_2_Final\Experiments\R26NewPSFCheck\external_compare\newpsf_r26_retrain\
+Experiments/R26NewPSFCheck/external_compare/newpsf_r26_retrain
 reconstruct_progress_best_tradeoff_in_Cropped_Output_20260326_115148\
 ```
 
@@ -331,7 +331,7 @@ reconstruct_progress_best_tradeoff_in_Cropped_Output_20260326_115148\
 
 執行命令：
 ```powershell
-pytest D:\GMM_2_Final\PSF_Fitting\tests\python\test_report_analysis.py -q
+pytest PSF_Fitting/tests/python/test_report_analysis.py -q
 ```
 結果：**6 passed in 1.80s**。
 
@@ -339,7 +339,7 @@ pytest D:\GMM_2_Final\PSF_Fitting\tests\python\test_report_analysis.py -q
 
 執行命令：
 ```powershell
-Set-Location D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab
+Set-Location PSF_Fitting/PSF_Fitting_ValidationLab
 .\run_validation_lab.ps1 -AggregateOnly
 ```
 結果：aggregate 成功重建比較圖、figures 與 reports，`best_overall_experiment = alignment_quarter_rep16`。
@@ -350,7 +350,7 @@ Set-Location D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab
 
 執行命令：
 ```powershell
-matlab -batch "cd('D:/GMM_2_Final/PSF_Fitting'); run('tests/run_matlab_smoke_tests.m')"
+matlab -batch "cd('PSF_Fitting'); run('tests/run_matlab_smoke_tests.m')"
 ```
 結果：**All MATLAB smoke tests completed. 共 11/11 通過。**
 
@@ -386,7 +386,7 @@ GMF（幾何匹配函數）是一個外部評分工具，專門量化重建影�
 本次重建已完成，三個尺度的 odd-frame 重建影像都已輸出到：
 
 ```
-D:\GMM_2_Final\Experiments\R26NewPSFCheck\external_compare\newpsf_r26_retrain\
+Experiments/R26NewPSFCheck/external_compare/newpsf_r26_retrain
 reconstruct_progress_best_tradeoff_in_Cropped_Output_20260326_115148\
 ```
 
@@ -394,9 +394,9 @@ reconstruct_progress_best_tradeoff_in_Cropped_Output_20260326_115148\
 
 | GMF Pitch 對應 | 回填路徑 |
 |--------------|---------|
-| `pitch8px`（Pitch1um_Y_100） | `D:\GMM_2_Final\Experiments\R26NewPSFCheck\external_compare\newpsf_r26_retrain\gmf_results\raw\pitch8px\GMF_score.txt` |
-| `pitch0p8px`（Pitch0.1um_Y_60） | `D:\GMM_2_Final\Experiments\R26NewPSFCheck\external_compare\newpsf_r26_retrain\gmf_results\raw\pitch0p8px\GMF_score.txt` |
-| `pitch0p08px`（Pitch0.01um_Y_40） | `D:\GMM_2_Final\Experiments\R26NewPSFCheck\external_compare\newpsf_r26_retrain\gmf_results\raw\pitch0p08px\GMF_score.txt` |
+| `pitch8px`（Pitch1um_Y_100） | `Experiments/R26NewPSFCheck/external_compare/newpsf_r26_retrain/gmf_results/raw/pitch8px/GMF_score.txt` |
+| `pitch0p8px`（Pitch0.1um_Y_60） | `Experiments/R26NewPSFCheck/external_compare/newpsf_r26_retrain/gmf_results/raw/pitch0p8px/GMF_score.txt` |
+| `pitch0p08px`（Pitch0.01um_Y_40） | `Experiments/R26NewPSFCheck/external_compare/newpsf_r26_retrain/gmf_results/raw/pitch0p08px/GMF_score.txt` |
 
 GMF_score.txt 回填完成後，即可使用根專案的 GMF 比較腳本，對 `newpsf_r26_retrain` 與既有 `r26_sm035` 做正式的三尺度 external compare。
 

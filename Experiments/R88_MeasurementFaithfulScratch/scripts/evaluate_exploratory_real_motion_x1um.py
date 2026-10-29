@@ -22,14 +22,15 @@ from typing import Any
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-THESIS_ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
+THESIS_ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 SEQUENCE_NAME = "50x_x_1um"
-RAW_DIR = Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_1um\bmp")
-REQUESTED_SOURCE = Path(r"D:\GMM_2_Final\20260702_100MG_位移_50x\x_1um")
-SOURCE_MAPPING = Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\input_mapping.csv")
+RAW_DIR = Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp'))
+REQUESTED_SOURCE = Path(str(PROJECT_ROOT / '20260702_100MG_位移_50x/x_1um'))
+SOURCE_MAPPING = Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/input_mapping.csv'))
 CONFIG_PATH = THESIS_ROOT / "Final_Data_Figures" / "01_CURRENT_THESIS_RESULTS_V42_CENTER9" / "config" / "sequence_center9_50x20x.json"
 SELECTION_PATH = THESIS_ROOT / "Final_Data_Figures" / "04_V42_NEURAL_NETWORK_RESULTS" / "tables" / "top30_raw_motion_selection.csv"
 ISO_SCRIPT = THESIS_ROOT / "LabSystem_MOSR" / "Experiments" / "Modern_Restoration_Benchmarks_20260719" / "analyze_isocontour_boundary_displacement.py"

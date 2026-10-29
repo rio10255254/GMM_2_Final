@@ -8,6 +8,7 @@ import time
 
 import torch
 from torch.utils.data import DataLoader
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +27,7 @@ def main() -> int:
     train = load("r96_large_patch_benchmark", ROOT / "training" / "train_r96.py")
     design = json.loads((ROOT / "config" / "experiment_design.json").read_text(encoding="utf-8"))
     execution = json.loads((ROOT / "config" / "execution_policy.json").read_text(encoding="utf-8"))
-    package = Path(design["data"]["source_package"])
+    package = Path(PROJECT_ROOT / design["data"]["source_package"])
     manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
     device = torch.device("cuda:0")
     epoch = 31

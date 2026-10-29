@@ -12,16 +12,14 @@ import numpy as np
 
 from displacement_common import list_images, read_gray_u8, write_csv, write_json
 from measure_shape_edge_anchor import measure_sequence
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 DEFAULT_SOURCE_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages"
-    r"\best_displacement_models_20260706\trusted_full_sequences"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/best_displacement_models_20260706/trusted_full_sequences')
 )
 DEFAULT_OUTPUT_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments"
-    r"\R62_TargetSampleBoost\reports\measurement_method_research_20260706"
-    r"\control_suite_20260707"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports/measurement_method_research_20260706/control_suite_20260707')
 )
 
 CROP = (1010, 35, 900, 650)

@@ -16,7 +16,7 @@
 
 這是有範圍限制的介面及来源判斷，沒有逐筆重審所有舊資料，也不由教師或 SEM 答案的存在推斷作弊。R61 的歷史角色和 V42 的已查證評估重用問題必須分開。可重用過去實驗帶來的知識，資料本身仍需重新取得符合契約的來源與產物。
 
-來源：[R61 啟動設定](D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/launch_r61.py)、[R118 資料清單](D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/data/package/manifest.json)、[R120 物理序列清單](D:/GMM_2_Final/Experiments/R120_PhysicalSequenceRepair/data/sequences/train/manifest.json)。核對範圍與當時指紋保存在 [第一版審查](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/results/data_audit_v1.json>) 的 `legacy` 欄位。
+來源：[R61 啟動設定](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/launch_r61.py)、[R118 資料清單](../../R118_PhysicalCoordinateRepairScratch/data/package/manifest.json)、[R120 物理序列清單](../../R120_PhysicalSequenceRepair/data/sequences/train/manifest.json)。核對範圍與當時指紋保存在 [第一版審查](<../results/data_audit_v1.json>) 的 `legacy` 欄位。
 
 ## 2. 實際使用的新資料與母數
 
@@ -38,7 +38,7 @@
 - 六個平坦背景：沒有材料邊界。即使指定非零位移也不可從影像觀察，不能算作位移估計成功。
 - 材料內部為正的距離標記與光學亮暗極性分開；幾何不能因為物體變暗就翻轉。中央區域的邊界、角落反應、近距離背景間隙及實際紋理變化均被點算，沒有只按類別名称宣稱內容存在。
 
-資料：[第一版清單](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/data/package/manifest.json>)、[第二版清單](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/data/package_v2/manifest.json>)。第二版儲存來源 uint8，以及理想原生強度、4×細格強度、距離、邊界帶和無雜訊觀測等 float32 陣列。
+資料：[第一版清單](<../data/package/manifest.json>)、[第二版清單](<../data/package_v2/manifest.json>)。第二版儲存來源 uint8，以及理想原生強度、4×細格強度、距離、邊界帶和無雜訊觀測等 float32 陣列。
 
 ## 3. 第一版失敗不是單靠換模糊核就能解決
 
@@ -50,9 +50,9 @@
 | scene_020 | 0.471959 | 0.687639 | 0.522495 |
 | scene_050 | 0.181664 | 0.479795 | 0.448236 |
 
-例如 020 的原本總誤差約 0.472 灰階，格內資訊損失項反而約 0.688 灰階。兩種誤差部分抵消，所以 RMS 不能直接相加，也不能從較小的總殘差推定表示正確。這個分解是讀取既有資料後的診斷，沒有改動光學核或資料，见 [表示能力分解](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/results/data_audit_representation_decomposition.json>)。
+例如 020 的原本總誤差約 0.472 灰階，格內資訊損失項反而約 0.688 灰階。兩種誤差部分抵消，所以 RMS 不能直接相加，也不能從較小的總殘差推定表示正確。這個分解是讀取既有資料後的診斷，沒有改動光學核或資料，见 [表示能力分解](<../results/data_audit_representation_decomposition.json>)。
 
-此外，007 在物理座標 `(315.625,316.125)` 的形狀判定，Float32 得到 `+1.430511e-6`，獨立 Float64 得到 `-2.507356e-6`。一個細格的內外分類翻轉，使局部模糊觀測最大差達 **0.354192 灰階**。其一般成像誤差門檻原本通過，但獨立物理重算抓到了問題，說明不能只靠單一殘差或指紋作科學正確性的證明。见 [精度問題定位](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/results/data_audit_scene007_precision_diagnosis.json>)。
+此外，007 在物理座標 `(315.625,316.125)` 的形狀判定，Float32 得到 `+1.430511e-6`，獨立 Float64 得到 `-2.507356e-6`。一個細格的內外分類翻轉，使局部模糊觀測最大差達 **0.354192 灰階**。其一般成像誤差門檻原本通過，但獨立物理重算抓到了問題，說明不能只靠單一殘差或指紋作科學正確性的證明。见 [精度問題定位](<../results/data_audit_scene007_precision_diagnosis.json>)。
 
 ## 4. 第二版的具體修正
 
@@ -60,7 +60,7 @@
 
 物理順序保持：**連續物體與紋理先位移 → 同一對固定光學 → 相機像素面積積分 → 各自感測雜訊 → uint8 量化**。第二版 4×模型光學核獨立取樣自相同物理協方差，沒有針對已生成答案擬合或强行令來源等於模型輸出。
 
-[第二版生成器](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/data/generator_v2.py>)與[表示修正原型](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/prototype/network.py>)分開保存；原來生成器及資料沒有覆寫。產生前 10 組完成資料後，為節省時間將單一工作程序改成兩個；已完成檔案先驗證再原樣重用，沒有殘缺檔案被當作完成資料。這是有紀錄的執行效率調整，見 [續行紀錄](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/data/package_v2/resume_started.json>)。
+[第二版生成器](<../data/generator_v2.py>)與[表示修正原型](<../prototype/network.py>)分開保存；原來生成器及資料沒有覆寫。產生前 10 組完成資料後，為節省時間將單一工作程序改成兩個；已完成檔案先驗證再原樣重用，沒有殘缺檔案被當作完成資料。這是有紀錄的執行效率調整，見 [續行紀錄](<../data/package_v2/resume_started.json>)。
 
 ## 5. 固定判準與實際結果
 
@@ -88,9 +88,9 @@
 | scene_020 | 模型成像與獨立生成誤差超標 | 0.817690 | 0.166013 | 2.047052 | 0.457476 |
 | scene_050 | 模型成像與獨立生成誤差超標 | 0.314676 | 0.053131 | 1.231158 | 0.223554 |
 
-另外，第二版 16 個獨立 8×局部重算區域（每個 16×16，合計 4,096 原生像素）的無雜訊觀測與目標最大差均不超過 **0.00000760 灰階**。007 的追蹤使用原先兩個局部位置，沒有看完新版結果再換位置。見 [007 追蹤](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/results/data_audit_v2_scene007_precision_followup.json>)。
+另外，第二版 16 個獨立 8×局部重算區域（每個 16×16，合計 4,096 原生像素）的無雜訊觀測與目標最大差均不超過 **0.00000760 灰階**。007 的追蹤使用原先兩個局部位置，沒有看完新版結果再換位置。見 [007 追蹤](<../results/data_audit_v2_scene007_precision_followup.json>)。
 
-原門檻：[v1 判準](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/config/data_admission.json>)、[v2 對應判準](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/config/data_admission_v2.json>)；結果：[v1 拒絕](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/results/data_audit_v1.json>)、[v2 有限准入](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/results/data_audit_v2.json>)。兩份判準只按新表示更新尺寸與取樣說明，數值容許上限相同。
+原門檻：[v1 判準](<../config/data_admission.json>)、[v2 對應判準](<../config/data_admission_v2.json>)；結果：[v1 拒絕](<../results/data_audit_v1.json>)、[v2 有限准入](<../results/data_audit_v2.json>)。兩份判準只按新表示更新尺寸與取樣說明，數值容許上限相同。
 
 ## 6. 現在能使用與仍不能推論的範圍
 
@@ -102,12 +102,12 @@
 
 ## 7. 可重跑的核對與來源身分
 
-[已執行的伴隨筆記本](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/reports/R125_DATA_FIT.ipynb>)使用 pandas 從實際 JSON 重新點算、分層、比較與驗證指紋，共 10 個程式區塊由 nbclient 依序執行完成；不重新生成影像或使用 GPU。原始資料保留狀態另由 [完整性複查](<D:/GMM_2_Final/Experiments/R125_DataAlignedPilot/results/data_audit_v2_integrity_review.json>)確認，64 組第一版影像與說明均未改變。
+[已執行的伴隨筆記本](<R125_DATA_FIT.ipynb>)使用 pandas 從實際 JSON 重新點算、分層、比較與驗證指紋，共 10 個程式區塊由 nbclient 依序執行完成；不重新生成影像或使用 GPU。原始資料保留狀態另由 [完整性複查](<../results/data_audit_v2_integrity_review.json>)確認，64 組第一版影像與說明均未改變。
 
 | 身分 | SHA-256 |
 |---|---|
-| 第一版資料清單 | `1144bba58176e1168e8f4ee599ca6a32a79d227c9a9b8031e239ba6370014302` |
-| 第二版資料清單 | `ab1c3d61c542b207a206f05bb3b141070d770a88bab61c3d6ca3d80b242223f7` |
+| 第一版資料清單 | `d01b35b1c564ce1fe9e84883f54db80a99b43f544ad593f6dfc81d7ff79fd6a1` |
+| 第二版資料清單 | `f371ed372f7ed73e015e10dae5295bb25cbd86573a581b6a283ce66277ed35f4` |
 | 第二版生成器 | `89a98fe8e5f595691a973b7e699e47fca84eacc822f065155b4880039471bcb5` |
 
 本篇信賴評估為 **可分享，但必須附上已知模擬條件與真實適用性尚未證明的限制**。資料准入紀錄與真實模型效益是分開的結論。

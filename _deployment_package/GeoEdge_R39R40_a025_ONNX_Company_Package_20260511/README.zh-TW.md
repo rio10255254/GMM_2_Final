@@ -51,7 +51,7 @@ python run_a025_onnx.py --input path/to/images --output outputs
 - 候選：`R39R40_avg_a025 / r39r40_complementary_avg_a025`
 - 角色：balanced full-spectrum approved alternate
 - 來源：R39 a030 與 R40 a043 跨輪權重平均，a025 表示 75% a030 + 25% a043
-- 原始 checkpoint：`D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a025\best_tradeoff.pth.tar`
+- 原始 checkpoint：`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar`
 
 ## 驗證結果
 

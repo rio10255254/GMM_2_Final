@@ -5,11 +5,12 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'results/thesis_v34_review_20260912/v34_bridge';sys.path.insert(0,str(ROOT/'scripts'));sys.path.insert(0,str(ROOT))
 from common import load,save,record,sha,now
 import numpy as np,pandas as pd,cv2
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 THESIS=Path('C:/Users/Rio/OneDrive/學業/碩班/論文');ASSETS=THESIS/'可用/_thesis_assets_v34/lsc_mzc_comparison'
 MODEL='R128_P_s1285002'
 
 def prepare():
-    OUT.mkdir(parents=True,exist_ok=False);old=load(ROOT/'results/lsc_comparison/plan.json');cfg=load(old['configuration']['path'])
+    OUT.mkdir(parents=True,exist_ok=False);old=load(ROOT/'results/lsc_comparison/plan.json');cfg=load(str(PROJECT_ROOT / old['configuration']['path']))
     pairs=pd.read_csv(ASSETS/'per_pair_lsc_mzc.csv');pairs=pairs[(pairs.method=='Raw')&(pairs.center=='LSC')];assert len(pairs)==120
     cache={x['source']['sha256']:dict(image=x['image'],output_float=x['output_float']) for x in load(ROOT/'results/lsc_comparison/inference_complete.json')['outputs']}
     sp=load(ROOT/'results/structure_check/plan.json');sr={x['key']:x for x in sp['sources']}
@@ -22,7 +23,7 @@ def prepare():
             reused=cache.get(source['sha256'])
             if reused:
                 for r in reused.values():
-                    if r:assert sha(r['path'])==r['sha256']
+                    if r:assert sha(str(PROJECT_ROOT / r['path']))==r['sha256']
             frames.append(dict(sequence=seq,frame_index=int(i),source=source,V42=v42,reuse=reused))
     assert len(frames)==166
     sources=[record(ASSETS/name) for name in ['analysis_manifest.json','centers_lsc_mzc.csv','per_pair_lsc_mzc.csv','combined_summary_lsc_mzc.csv']]

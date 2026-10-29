@@ -15,9 +15,10 @@ import onnx
 import onnxruntime as ort
 import torch
 from scipy import fft
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-PROJECT = Path(r"D:\GMM_2_Final")
+PROJECT = Path(str(PROJECT_ROOT))
 PACKAGE = PROJECT / "Deliverables" / "MOSR_R61_ONNX"
 CHECKPOINT = (
     PROJECT
@@ -30,13 +31,13 @@ CHECKPOINT = (
 )
 MODEL_SOURCE = PROJECT / "Model" / "GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py"
 REFERENCE_INPUT = (
-    Path(r"D:\NTU_ImageDataset\Pitch1um_Y_100\external_gmf_r61_v16_psfoff_20260627")
+    Path(str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/external_gmf_r61_v16_psfoff_20260627'))
     / "00_raw_input"
     / "bmp"
     / "VisionTop_20251029182653732.bmp"
 )
 REFERENCE_OUTPUT = (
-    Path(r"D:\NTU_ImageDataset\Pitch1um_Y_100\external_gmf_r61_v16_psfoff_20260627")
+    Path(str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/external_gmf_r61_v16_psfoff_20260627'))
     / "01_r61_v16_best_tradeoff_psfoff"
     / "bmp"
     / REFERENCE_INPUT.name

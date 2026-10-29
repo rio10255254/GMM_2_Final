@@ -13,10 +13,11 @@ import sys
 
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path(r"D:\GMM_2_Final\Experiments\R93_RecoverableDetailSeparatedScratch\data\r93_formal")
+SOURCE = Path(str(PROJECT_ROOT / 'Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal'))
 WEIGHT = ROOT / "weights" / "formal" / "seed_950041" / "R95_scratch_seed950041_20260813_003125" / "weights" / "epoch_026.pth.tar"
 OUTPUT = ROOT / "reports" / "objective_gradient_conflicts" / "epoch026_sparse_branch_supervision_audit.json"
 BRANCHES = ("local_contrast", "boundary", "texture")

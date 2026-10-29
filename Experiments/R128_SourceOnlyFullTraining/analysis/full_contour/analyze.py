@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager,patheffects
 from matplotlib.lines import Line2D
 from skimage.measure import find_contours
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 def shift_mask(mask,dx,dy):
     out=np.zeros_like(mask);h,w=mask.shape;x0=max(0,-dx);x1=min(w,w-dx);y0=max(0,-dy);y1=min(h,h-dy)
@@ -24,14 +25,14 @@ def metrics(a,b):
 
 def main():
     out=ROOT/'results/full_contour';plan=load(out/'plan.json');extraction=load(out/'extraction_summary.json');assert extraction['Raw_primary_exact']
-    for ref in plan['references']:assert sha(ref['record']['path'])==ref['record']['sha256']
-    assert sha(plan['new_matlab_source']['path'])==plan['new_matlab_source']['sha256']
+    for ref in plan['references']:assert sha(str(PROJECT_ROOT / ref['record']['path']))==ref['record']['sha256']
+    assert sha(str(PROJECT_ROOT / plan['new_matlab_source']['path']))==plan['new_matlab_source']['sha256']
     d=loadmat(out/'masks.mat',variable_names=['masks','cells','truth_masks','sem_cells','shifts','raw_parity','opt_pitch','global_index','opt_centers'])
     table=pd.read_csv(out/'measurements.csv');table['valid']=table.valid.astype(str).str.lower().isin(['1','true'])
     assert len(table)==1944 and table.valid.all()
     masks=d['masks'].astype(bool);truth=d['truth_masks'].astype(bool)
-    original=loadmat(plan['references'][0]['record']['path'],variable_names=['raw_masks','truth_masks'])
-    alternate=loadmat(plan['references'][1]['record']['path'],variable_names=['truth_masks'])
+    original=loadmat(str(PROJECT_ROOT / plan['references'][0]['record']['path']),variable_names=['raw_masks','truth_masks'])
+    alternate=loadmat(str(PROJECT_ROOT / plan['references'][1]['record']['path']),variable_names=['truth_masks'])
     assert np.array_equal(truth[:,:,:,0],original['truth_masks'].astype(bool)) and np.array_equal(truth[:,:,:,1],alternate['truth_masks'].astype(bool))
     assert np.array_equal(masks[:,:,:,:,0,0],original['raw_masks'][:,:,:,:3].astype(bool))
     refs=['historical','global_pitch_matched'];presets=['primary','less_smooth','more_smooth'];methods=['Raw','R128_PNG','R128_float']

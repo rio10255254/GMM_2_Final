@@ -7,37 +7,38 @@ from datetime import datetime
 from pathlib import Path
 
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
-ANALYSIS_ROOT = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis")
+ANALYSIS_ROOT = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis'))
 SOURCES = [
     {
         "group": "20x_0p5um",
         "magnification": "20x",
         "step_label": "0.5um",
         "nominal_step_um": 0.5,
-        "source_dir": Path(r"D:\GMM_2_Final\20260704_20x\0.5um"),
+        "source_dir": Path(str(PROJECT_ROOT / '20260704_20x/0.5um')),
     },
     {
         "group": "20x_1um",
         "magnification": "20x",
         "step_label": "1um",
         "nominal_step_um": 1.0,
-        "source_dir": Path(r"D:\GMM_2_Final\20260704_20x\1um"),
+        "source_dir": Path(str(PROJECT_ROOT / '20260704_20x/1um')),
     },
     {
         "group": "5x_0p5um",
         "magnification": "5x",
         "step_label": "0.5um",
         "nominal_step_um": 0.5,
-        "source_dir": Path(r"D:\GMM_2_Final\20260704_5x\0.5um"),
+        "source_dir": Path(str(PROJECT_ROOT / '20260704_5x/0.5um')),
     },
     {
         "group": "5x_1um",
         "magnification": "5x",
         "step_label": "1um",
         "nominal_step_um": 1.0,
-        "source_dir": Path(r"D:\GMM_2_Final\20260704_5x\1um"),
+        "source_dir": Path(str(PROJECT_ROOT / '20260704_5x/1um')),
     },
 ]
 

@@ -7,9 +7,10 @@ import json
 from pathlib import Path
 
 import cv2
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Experiments\R114_ConfidenceGatedRecoverableScratch")
+ROOT = Path(str(PROJECT_ROOT / 'Experiments/R114_ConfidenceGatedRecoverableScratch'))
 HERE = ROOT / "results" / "geometry_probe" / "E020" / "gate_design_diagnosis"
 
 

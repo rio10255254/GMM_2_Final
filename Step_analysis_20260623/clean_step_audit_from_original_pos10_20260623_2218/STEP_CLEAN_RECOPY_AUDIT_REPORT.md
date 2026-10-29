@@ -10,11 +10,11 @@ This audit re-copied the actual images from the original Step folder and reran t
 
 Source folder:
 
-`D:\GMM_2_Final\Step`
+`Step`
 
 Clean audit folder:
 
-`D:\GMM_2_Final\Step_analysis_20260623\clean_step_audit_from_original_pos10_20260623_2218`
+`Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218`
 
 Images copied:
 
@@ -122,7 +122,7 @@ Edge-based probe result:
 
 Edge-based summary:
 
-`D:\GMM_2_Final\Step_analysis_20260623\clean_step_audit_from_original_pos10_20260623_2218\CLEAN_STEP_MOTION_EDGE_RAW_R39_V14_V16_SUMMARY.md`
+`Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218/CLEAN_STEP_MOTION_EDGE_RAW_R39_V14_V16_SUMMARY.md`
 
 ## Audit Conclusion
 

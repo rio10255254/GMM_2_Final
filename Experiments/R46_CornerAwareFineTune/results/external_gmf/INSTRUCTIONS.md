@@ -12,7 +12,7 @@ R46 對三個 pitch 的環形重建 BMP 已經產生好,各 frame 命名跟 NTU_
 
 | 尺度 | 重建 BMP 來源資料夾 | frame 數(odd) |
 |---|---|---:|
-| **8 px**(1 μm pitch) | `D:\GMM_2_Final\Experiments\R46_CornerAwareFineTune\results\ring_recon\r46\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260514_230359\pitch1um_y_100_odd\` | 101 |
+| **8 px**(1 μm pitch) | `Experiments/R46_CornerAwareFineTune/results/ring_recon/r46/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260514_230359/pitch1um_y_100_odd` | 101 |
 | **0.8 px**(0.1 μm pitch) | `...\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260514_230359\pitch0p1um_y_60_odd\` | 61 |
 | **0.08 px**(0.01 μm pitch) | `...\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260514_230359\pitch0p01um_y_40_odd\` | 41 |
 
@@ -31,9 +31,9 @@ FileName, VisionTop_xxxxxxx.bmp, Time(ms), 20, PosX, ..., PosY, ..., Angle, 0, S
 
 | 尺度 | 放到這裡 |
 |---|---|
-| 8 px | `D:\GMM_2_Final\Experiments\R46_CornerAwareFineTune\results\external_gmf\pitch8px\GMF_score.txt` |
-| 0.8 px | `D:\GMM_2_Final\Experiments\R46_CornerAwareFineTune\results\external_gmf\pitch0p8px\GMF_score.txt` |
-| 0.08 px | `D:\GMM_2_Final\Experiments\R46_CornerAwareFineTune\results\external_gmf\pitch0p08px\GMF_score.txt` |
+| 8 px | `Experiments/R46_CornerAwareFineTune/results/external_gmf/pitch8px/GMF_score.txt` |
+| 0.8 px | `Experiments/R46_CornerAwareFineTune/results/external_gmf/pitch0p8px/GMF_score.txt` |
+| 0.08 px | `Experiments/R46_CornerAwareFineTune/results/external_gmf/pitch0p08px/GMF_score.txt` |
 
 (三個資料夾已經建好。)
 

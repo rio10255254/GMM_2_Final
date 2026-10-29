@@ -39,7 +39,7 @@ Last updated: 2026-03-16
 - selected candidate: `r22_pairmix_stepguard`
 - confirmed: `true`
 - selected checkpoint:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260315\round22\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625\weights\best_tradeoff.pth.tar`
+  `Traing_Progress/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/weights/best_tradeoff.pth.tar`
 
 ### Calibrated gate result
 

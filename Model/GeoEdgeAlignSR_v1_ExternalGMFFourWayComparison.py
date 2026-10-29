@@ -1,13 +1,15 @@
 import json
 import math
 import os
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 # Per-model pitch directory name mapping
 # Each model maps logical pitch key -> actual subdirectory name under gmf_results/raw/
 MODEL_SPECS = {
     "round18_baseline": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_round18_round22\round18_baseline\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_round18_round22/round18_baseline/gmf_results/raw'),
         "pitch_dirs": {
             "8px": "pitch1um_y_100",
             "0p8px": "pitch0p1um_y_60",
@@ -15,7 +17,7 @@ MODEL_SPECS = {
         },
     },
     "round22_hold": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_round18_round22\round22_hold\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_round18_round22/round22_hold/gmf_results/raw'),
         "pitch_dirs": {
             "8px": "pitch1um_y_100",
             "0p8px": "pitch0p1um_y_60",
@@ -23,7 +25,7 @@ MODEL_SPECS = {
         },
     },
     "r25_sw010": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25\r25_sw010\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25/r25_sw010/gmf_results/raw'),
         "pitch_dirs": {
             "8px": "pitch1um_y_100",
             "0p8px": "pitch0p1um_y_60",
@@ -31,7 +33,7 @@ MODEL_SPECS = {
         },
     },
     "r26_sm035": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25_r26\r26_sm035\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw'),
         "pitch_dirs": {
             "8px": "pitch8px",
             "0p8px": "pitch0p8px",
@@ -55,7 +57,7 @@ PITCH_SPECS = {
     },
 }
 
-BASE_DIR = r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25_r26"
+BASE_DIR = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26')
 REPORT_DIR = os.path.join(BASE_DIR, "reports")
 SUMMARY_MD_PATH = os.path.join(REPORT_DIR, "EXTERNAL_COMPARE_R18_R22_R25_R26_SUMMARY.md")
 SUMMARY_JSON_PATH = os.path.join(REPORT_DIR, "EXTERNAL_COMPARE_R18_R22_R25_R26_SUMMARY.json")

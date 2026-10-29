@@ -7,6 +7,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,7 +42,7 @@ def main() -> int:
     for col, title in enumerate(columns):
         cv2.putText(canvas, title, (col * cell + 18, 36), cv2.FONT_HERSHEY_SIMPLEX, 0.82, (20, 20, 20), 2, cv2.LINE_AA)
 
-    dataset_root = Path(config["dataset"]["root"])
+    dataset_root = Path(PROJECT_ROOT / config["dataset"]["root"])
     for row_index, row in enumerate(chosen.itertuples(index=False)):
         family = str(row.family)
         filename = str(row.filename)

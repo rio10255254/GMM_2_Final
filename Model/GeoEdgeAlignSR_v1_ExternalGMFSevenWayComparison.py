@@ -1,11 +1,13 @@
 import json
 import math
 import os
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 # R18 / R22h / R25 use old pitch dir naming; R26 / R27 / R28 / R29 use new naming
 MODEL_SPECS = {
     "round18_baseline": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_round18_round22\round18_baseline\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_round18_round22/round18_baseline/gmf_results/raw'),
         "pitch_map": {
             "8px":    "pitch1um_y_100",
             "0p8px":  "pitch0p1um_y_60",
@@ -13,7 +15,7 @@ MODEL_SPECS = {
         },
     },
     "round22_hold": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_round18_round22\round22_hold\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_round18_round22/round22_hold/gmf_results/raw'),
         "pitch_map": {
             "8px":    "pitch1um_y_100",
             "0p8px":  "pitch0p1um_y_60",
@@ -21,7 +23,7 @@ MODEL_SPECS = {
         },
     },
     "r25_sw010": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25\r25_sw010\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25/r25_sw010/gmf_results/raw'),
         "pitch_map": {
             "8px":    "pitch1um_y_100",
             "0p8px":  "pitch0p1um_y_60",
@@ -29,7 +31,7 @@ MODEL_SPECS = {
         },
     },
     "r26_sm035": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25_r26\r26_sm035\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw'),
         "pitch_map": {
             "8px":    "pitch8px",
             "0p8px":  "pitch0p8px",
@@ -37,7 +39,7 @@ MODEL_SPECS = {
         },
     },
     "r27_sm028": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25_r26_r27\r27_sm028\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26_r27/r27_sm028/gmf_results/raw'),
         "pitch_map": {
             "8px":    "pitch8px",
             "0p8px":  "pitch0p8px",
@@ -45,7 +47,7 @@ MODEL_SPECS = {
         },
     },
     "r28_sm030": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25_r26_r27_r28\r28_sm030\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28/r28_sm030/gmf_results/raw'),
         "pitch_map": {
             "8px":    "pitch8px",
             "0p8px":  "pitch0p8px",
@@ -53,7 +55,7 @@ MODEL_SPECS = {
         },
     },
     "r29_winner": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25_r26_r27_r28_r29\r29_winner\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28_r29/r29_winner/gmf_results/raw'),
         "pitch_map": {
             "8px":    "pitch8px",
             "0p8px":  "pitch0p8px",
@@ -71,7 +73,7 @@ PITCH_LABELS = {
 OUTLIER_FILTER_PITCH = "0p8px"
 MAIN_PITCH = "0p8px"
 
-REPORT_DIR = r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25_r26_r27_r28_r29\reports"
+REPORT_DIR = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28_r29/reports')
 SUMMARY_MD_PATH = os.path.join(REPORT_DIR, "EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_R29_SUMMARY.md")
 SUMMARY_JSON_PATH = os.path.join(REPORT_DIR, "EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_R29_SUMMARY.json")
 

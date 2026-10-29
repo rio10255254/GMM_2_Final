@@ -4,7 +4,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $experiment = Split-Path -Parent $MyInvocation.MyCommand.Path
-$python = 'C:\Users\Rio\anaconda3\python.exe'
+$python = python
 $nafCheckpoint = Join-Path $experiment 'results\nafnet\best_nafnet.pth.tar'
 $edsrCheckpoint = Join-Path $experiment 'results\edsr\best_edsr.pth.tar'
 $pipelineLogs = Join-Path $experiment 'pipeline_logs'

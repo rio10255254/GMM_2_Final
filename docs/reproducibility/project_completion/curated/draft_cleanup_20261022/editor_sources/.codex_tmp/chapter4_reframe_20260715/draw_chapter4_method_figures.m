@@ -1,7 +1,8 @@
 function draw_chapter4_method_figures
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))))))));
 % Chapter 4 method figures for the measurement-oriented workflow.
 
-outDir = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\05_CHAPTER4_METHOD_REFRAME';
+outDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/05_CHAPTER4_METHOD_REFRAME');
 if ~exist(outDir, 'dir'); mkdir(outDir); end
 
 set(groot, 'defaultFigureColor', 'w');

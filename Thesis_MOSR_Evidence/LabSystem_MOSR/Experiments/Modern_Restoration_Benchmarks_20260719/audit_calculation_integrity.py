@@ -11,6 +11,7 @@ from scipy.stats import wilcoxon
 import analyze_circular_cd_sharpness as circular
 import analyze_line_multimethod as line
 import analyze_multimethod_displacement as displacement
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parent
@@ -96,7 +97,7 @@ def audit_displacement() -> dict[str, object]:
     )
 
     manifest = json.loads((ROOT / "evaluation_manifest.json").read_text(encoding="utf-8"))
-    selection = pd.read_csv(manifest["top30_selection"])
+    selection = pd.read_csv(str(PROJECT_ROOT / manifest["top30_selection"]))
     score_calc = (
         np.hypot(
             selection["raw_local_dx_um"].to_numpy(dtype=float)
@@ -172,7 +173,7 @@ def audit_line() -> dict[str, object]:
 
 def audit_sem_and_scale() -> dict[str, object]:
     manifest = json.loads((ROOT / "evaluation_manifest.json").read_text(encoding="utf-8"))
-    via = json.loads(Path(manifest["via_config"]).read_text(encoding="utf-8"))
+    via = json.loads(Path(PROJECT_ROOT / manifest["via_config"]).read_text(encoding="utf-8"))
     via_radius = np.asarray(
         [[cell["radius_nm"] for cell in row] for row in via["sem_reference"]],
         dtype=float,

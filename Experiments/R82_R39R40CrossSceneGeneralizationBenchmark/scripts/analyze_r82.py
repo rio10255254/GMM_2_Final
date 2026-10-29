@@ -13,6 +13,7 @@ from matplotlib import font_manager
 import numpy as np
 import pandas as pd
 from scipy import stats
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -88,7 +89,7 @@ def external_summary() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, dict]:
         primary["suite"] = suite
         sensitivity["suite"] = suite
         if suite == "R74_hard_microscopy":
-            manifest = json.loads(Path(item["manifest"]).read_text(encoding="utf-8"))
+            manifest = json.loads(Path(PROJECT_ROOT / item["manifest"]).read_text(encoding="utf-8"))
             shape_map = {row["image_id"]: row["shape_family"] for row in manifest["records"]}
             primary["shape_family"] = primary["image_id"].map(shape_map)
             sensitivity["shape_family"] = sensitivity["image_id"].map(shape_map)
@@ -445,8 +446,8 @@ def make_figures(external: pd.DataFrame, sem: pd.DataFrame, motion: pd.DataFrame
     axes[1].set_xticks(x, junhua_order); axes[1].set_title("均華序列：既有外部 GMF（正式工具）"); axes[1].legend()
     fig.tight_layout(); fig.savefig(FIGURES / "03_junhua_stability.png", bbox_inches="tight"); plt.close(fig)
 
-    r74_config = json.loads(Path(CONFIG["external_acm_suites"]["R74_hard_microscopy"]["source_config"]).read_text(encoding="utf-8"))
-    data_root = Path(CONFIG["external_acm_suites"]["R74_hard_microscopy"]["dataset_root"])
+    r74_config = json.loads(Path(PROJECT_ROOT / CONFIG["external_acm_suites"]["R74_hard_microscopy"]["source_config"]).read_text(encoding="utf-8"))
+    data_root = Path(PROJECT_ROOT / CONFIG["external_acm_suites"]["R74_hard_microscopy"]["dataset_root"])
     fig, axes = plt.subplots(5, len(METHODS), figsize=(21, 14))
     for row, family in enumerate(r74_config["dataset"]["families"]):
         stage = family["stage"]
@@ -457,14 +458,14 @@ def make_figures(external: pd.DataFrame, sem: pd.DataFrame, motion: pd.DataFrame
     fig.tight_layout(); fig.savefig(FIGURES / "04_R74_fixed_contact_sheet.png", bbox_inches="tight"); plt.close(fig)
 
     fig, axes = plt.subplots(1, len(METHODS), figsize=(21, 4))
-    sem_raw = Path(CONFIG["sem_acm"]["raw_input_dir"]) / "18.bmp"
+    sem_raw = Path(PROJECT_ROOT / CONFIG["sem_acm"]["raw_input_dir"]) / "18.bmp"
     for column, method in enumerate(METHODS):
         path = sem_raw if method == "Raw" else RECON / "sem_acm" / method / "18.bmp"
         display(axes[column], read_gray(path), f"曝光 18 | {method}")
     fig.tight_layout(); fig.savefig(FIGURES / "05_SEM_paired_exposure18.png", bbox_inches="tight"); plt.close(fig)
 
     selected = ["5x_0p5um", "20x_0p5um", "50x_0p5um"]
-    raw_root = Path(CONFIG["real_fov"]["locked_raw_root"])
+    raw_root = Path(PROJECT_ROOT / CONFIG["real_fov"]["locked_raw_root"])
     fig, axes = plt.subplots(len(selected), len(METHODS), figsize=(21, 10))
     for row, sequence in enumerate(selected):
         for column, method in enumerate(METHODS):

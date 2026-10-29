@@ -1,7 +1,7 @@
 # Process Probe Audit
 
 - candidate: r21_midsoft_ctrlguard
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\organized_20260315\round21\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238/weights/best_tradeoff.pth.tar
 - geom_method: soft_band_refine
 - expect_dy: 0.80
 - process_score: -64.872300

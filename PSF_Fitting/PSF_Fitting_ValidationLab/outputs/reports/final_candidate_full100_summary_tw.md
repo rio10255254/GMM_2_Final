@@ -1,9 +1,9 @@
 # Full 100 正式候選結果摘要
 
 - 候選流程：`warm_start + refined pre_alignment (prealign_step = 0.25) + tilt locked`
-- 候選輸出：`D:/GMM_2_Final/PSF_Fitting/PSF_Fitting_ValidationLab/outputs/final_candidate_full100`
-- 對照表：`D:/GMM_2_Final/PSF_Fitting/PSF_Fitting_ValidationLab/outputs/tables/final_candidate_full100_vs_original.csv`
-- 偏移比較圖：`D:/GMM_2_Final/PSF_Fitting/PSF_Fitting_ValidationLab/outputs/figures/final_candidate_full100_peak_offset_comparison.png`
+- 候選輸出：`PSF_Fitting/PSF_Fitting_ValidationLab/outputs/final_candidate_full100`
+- 對照表：`PSF_Fitting/PSF_Fitting_ValidationLab/outputs/tables/final_candidate_full100_vs_original.csv`
+- 偏移比較圖：`PSF_Fitting/PSF_Fitting_ValidationLab/outputs/figures/final_candidate_full100_peak_offset_comparison.png`
 
 ## 核心結果
 

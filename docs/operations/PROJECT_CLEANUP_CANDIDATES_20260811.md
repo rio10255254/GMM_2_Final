@@ -11,7 +11,7 @@ The only removals already completed were reproducible R92 setup intermediates in
 - `Experiments/R91_DetailDecoupledScratch`: training complete, all data and outputs remain protected until full analysis and checkpoint selection closeout.
 - `Experiments/R92_PhysicalTransitionBalancedScratch`: frozen setup and smoke evidence protected; formal data does not exist yet.
 - Raw acquisitions, SEM sources, thesis evidence, formal datasets, adopted checkpoints and current model packages are not cleanup candidates.
-- `D:\GMM_2_Final\.git`: Git fetch and repack processes were active at the snapshot, so no Git object or temporary pack may be touched.
+- `.git`: Git fetch and repack processes were active at the snapshot, so no Git object or temporary pack may be touched.
 
 ## First reclaim candidates
 

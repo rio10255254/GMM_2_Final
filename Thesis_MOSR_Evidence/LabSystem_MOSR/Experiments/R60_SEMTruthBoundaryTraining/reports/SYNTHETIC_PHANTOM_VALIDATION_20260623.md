@@ -73,7 +73,7 @@ This means the model is not yet proven to be a general boundary reconstruction m
 Unit tests:
 
 ```powershell
-python -m pytest -q "D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R60_SEMTruthBoundaryTraining\tests"
+python -m pytest -q "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/tests"
 ```
 
 Result: `19 passed in 0.64s`
@@ -81,7 +81,7 @@ Result: `19 passed in 0.64s`
 Syntax check:
 
 ```powershell
-python -m py_compile "D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R60_SEMTruthBoundaryTraining\scripts\run_synthetic_phantom_validation.py"
+python -m py_compile "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/scripts/run_synthetic_phantom_validation.py"
 ```
 
 Result: passed.
@@ -89,7 +89,7 @@ Result: passed.
 Representative validation:
 
 ```powershell
-python "D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R60_SEMTruthBoundaryTraining\scripts\run_synthetic_phantom_validation.py" --device cuda:0 --size 512 --bias-px 2.0 --blur-sigma 1.35 --noise-sigma 2.0
+python "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/scripts/run_synthetic_phantom_validation.py" --device cuda:0 --size 512 --bias-px 2.0 --blur-sigma 1.35 --noise-sigma 2.0
 ```
 
 Result: completed and produced the run folder listed above.

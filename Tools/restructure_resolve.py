@@ -27,6 +27,8 @@ from pathlib import Path
 
 PROJECT_NAMES = ('gmm_2_final', 'gmm_2_final_restructure')
 _ABS = re.compile(r'^(?:\\\\\?\\|//\?/)?([A-Za-z]):[\\/]+')
+# the project folder written anywhere in a text; a folder that only starts with the name (GMM_2_Final_Archive) is not it
+PROJECT_ABS = re.compile(r'[A-Za-z]:(?:\\\\|\\|/)+GMM_2_Final(?:_restructure)?(?![A-Za-z0-9_])', re.I)
 
 
 @dataclass(frozen=True)

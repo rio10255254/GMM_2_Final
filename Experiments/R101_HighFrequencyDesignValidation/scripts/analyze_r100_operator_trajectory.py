@@ -14,10 +14,11 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R100 = Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch")
+R100 = Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch'))
 MODEL_PATH = R100 / "model" / "r100_model.py"
 DESIGN = json.loads((R100 / "config" / "experiment_design.json").read_text(encoding="utf-8"))
 WEIGHTS = R100 / "weights" / "formal" / "seed_1000053" / "R100_scratch_seed1000053_20260814_180143" / "weights"

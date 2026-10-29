@@ -11,9 +11,10 @@ import cv2
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
 # Add Model dir for CenterEstDiag
-sys.path.insert(0, str(Path(r"D:\GMM_2_Final\Model")))
+sys.path.insert(0, str(Path(str(PROJECT_ROOT / 'Model'))))
 try:
     from GeoEdgeAlignSR_v1_CenterEstDiag import (
         load_image as diag_load_image,
@@ -48,7 +49,7 @@ def imread_gray(path) -> np.ndarray:
         raise FileNotFoundError(f"Cannot decode image: {path}")
     return img
 
-BASE        = Path(r"D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\輸出結果\驗證分析\R26_validation_complete")
+BASE        = Path(str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/驗證分析/R26_validation_complete'))
 INPUT_PATH  = BASE / "data/case01/input_image.bmp"
 OUTPUT_PATH = BASE / "data/case01/model_output.bmp"
 BASIC_JSON  = BASE / "data/basic_metrics.json"

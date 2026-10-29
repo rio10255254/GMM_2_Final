@@ -2,7 +2,7 @@ param([switch]$NoMonitor)
 
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$Python = python
 $Entry = Join-Path $Root "training\run_full_training.py"
 $Registry = Join-Path $Root "runs\formal_run_registry.json"
 $Stdout = Join-Path $Root "logs\formal_stdout.log"

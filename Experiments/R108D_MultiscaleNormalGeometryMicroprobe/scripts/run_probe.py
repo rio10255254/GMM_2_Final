@@ -15,6 +15,7 @@ import pandas as pd
 import torch
 import torch.nn.functional as F
 from torch import nn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,20 +26,20 @@ REPORTS = ROOT / "reports"
 for folder in (DATA, WEIGHTS, RESULTS, REPORTS):
     folder.mkdir(parents=True, exist_ok=True)
 
-BASE = Path(r"D:\GMM_2_Final\Experiments\R108B_StagedParallelOpticalExpertsMicroprobe\data\microprobe_data.npz")
+BASE = Path(str(PROJECT_ROOT / 'Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/data/microprobe_data.npz'))
 BASE_SHA = "e01a97bc2b361195d550a6f3c5262e354b2424f8676ae9045c6abed765d39185"
-R108C_ROOT = Path(r"D:\GMM_2_Final\Experiments\R108C_IndependentOpticalSpecialistsMicroprobe")
+R108C_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R108C_IndependentOpticalSpecialistsMicroprobe'))
 R108C_SCRIPT = R108C_ROOT / "scripts" / "run_specialists.py"
 R108C_WEIGHT = R108C_ROOT / "weights" / "edge.pth"
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 SCALES = (0.6, 1.2, 2.4, 4.8)
 REAL_IMAGES = (
-    Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\5x_dense_raw.bmp"),
-    Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\20x_mixed_raw.bmp"),
-    Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\50x_array_raw.bmp"),
-    Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\pillar_center9_50x_raw.bmp"),
+    Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/5x_dense_raw.bmp')),
+    Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/20x_mixed_raw.bmp')),
+    Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/50x_array_raw.bmp')),
+    Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/pillar_center9_50x_raw.bmp')),
 )
-SEM_ROOT = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack")
+SEM_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
 
 
 def seed_all(seed: int) -> None:

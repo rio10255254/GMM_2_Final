@@ -5,9 +5,9 @@ Windows PowerShell 轉譯開始
 RunAs 使用者: DESKTOP-5J1NJ2L\Rio
 設定名稱:
 電腦: DESKTOP-5J1NJ2L (Microsoft Windows NT 10.0.26200.0)
-主應用程式: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoExit -ExecutionPolicy Bypass -Command Set-Location 'D:\GMM_2_Final'
+主應用程式: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoExit -ExecutionPolicy Bypass -Command Set-Location '.'
 $ErrorActionPreference = 'Stop'
-Start-Transcript -Path 'D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_training_foreground_20260505_142255.log'
+Start-Transcript -Path 'Experiments/R42_MicroscopyBoundaryFidelity/results/r42_training_foreground_20260505_142255.log'
 Write-Host '[R42] Formal training started at:' (Get-Date)
 Write-Host '[R42] Candidate 1/2: r42_boundary_from_combo'
 python Experiments\R42_MicroscopyBoundaryFidelity\scripts\launch_r42.py --candidate r42_boundary_from_combo --num-epoch 50 --device cuda:0
@@ -27,7 +27,7 @@ WSManStackVersion: 3.0
 PSRemotingProtocolVersion: 2.3
 SerializationVersion: 1.1.0.1
 **********************
-已啟動轉譯，輸出檔為 D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_training_foreground_20260505_142255.log
+已啟動轉譯，輸出檔為 Experiments/R42_MicroscopyBoundaryFidelity/results/r42_training_foreground_20260505_142255.log
 [R42] Formal training started at: 2026/5/5 下午 02:22:57
 [R42] Candidate 1/2: r42_boundary_from_combo
 [SIMPLETEST][CTRL_OFF] Proxy quality low/invalid detected; geom/LR controls disabled.

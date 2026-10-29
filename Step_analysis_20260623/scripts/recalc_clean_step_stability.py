@@ -18,12 +18,13 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import chi2
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 DEFAULT_AUDIT_ROOT = Path(
-    r"D:\GMM_2_Final\Step_analysis_20260623\clean_step_audit_from_original_pos10_20260623_2218"
+    str(PROJECT_ROOT / 'Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218')
 )
-DEFAULT_SELECTED_MANIFEST = Path(r"D:\GMM_2_Final\Step_analysis_20260623\selected_1um_positions.csv")
+DEFAULT_SELECTED_MANIFEST = Path(str(PROJECT_ROOT / 'Step_analysis_20260623/selected_1um_positions.csv'))
 OBJECT_PIXEL_UM = 2.5 / 20.0
 EXPECTED_STEP_UM = 1.0
 EXPECTED_STEP_PX = EXPECTED_STEP_UM / OBJECT_PIXEL_UM

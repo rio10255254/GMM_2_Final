@@ -12,11 +12,12 @@ if str(SCRIPT_DIR) not in sys.path:
 
 from build_thesis_v11 import document_math_fingerprint
 from build_thesis_v12 import formula_table_audit, sha256
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 DOCX = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v12.docx")
-BASE_AUDIT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\qa\v12_build_audit.json")
-OUT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\qa\v12_after_word_audit.json")
+BASE_AUDIT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/_paper_editing/qa/v12_build_audit.json'))
+OUT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/_paper_editing/qa/v12_after_word_audit.json'))
 
 
 def main() -> None:

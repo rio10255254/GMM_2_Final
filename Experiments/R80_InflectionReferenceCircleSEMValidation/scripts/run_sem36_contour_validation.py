@@ -29,11 +29,11 @@ from reference_circle_core import (  # noqa: E402
     measure_boundary_and_circles,
     summarize_reference_circles,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 SOURCE_MAT = Path(
-    r"D:\GMM_2_Final\Experiments\R70_V42ACMContourSEMValidation"
-    r"\results\masks\acm_primary_masks.mat"
+    str(PROJECT_ROOT / 'Experiments/R70_V42ACMContourSEMValidation/results/masks/acm_primary_masks.mat')
 )
 
 

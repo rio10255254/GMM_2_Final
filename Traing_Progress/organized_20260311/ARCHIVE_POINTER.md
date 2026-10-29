@@ -28,7 +28,7 @@ H 槽快照包含封存前的整個 `organized_20260311`，包括 D 槽仍保留
 ## 完整恢復
 
 ```powershell
-robocopy H:\GMM_2_Final_Archive\legacy\organized_20260311\20260801_full_history\snapshot D:\GMM_2_Final\Traing_Progress\organized_20260311 /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\legacy\organized_20260311\20260801_full_history\snapshot Traing_Progress/organized_20260311 /E /COPY:DAT /DCOPY:DAT
 ```
 
 恢復後核對：
@@ -36,7 +36,7 @@ robocopy H:\GMM_2_Final_Archive\legacy\organized_20260311\20260801_full_history\
 ```powershell
 C:\Users\Rio\anaconda3\python.exe Tools\project_storage_guard.py verify-manifest `
   --manifest H:\GMM_2_Final_Archive\manifests\organized_20260311_20260801_full.csv `
-  --root D:\GMM_2_Final\Traing_Progress\organized_20260311
+  --root Traing_Progress/organized_20260311
 ```
 
 核對回報 PASS 後，才算完整恢復。

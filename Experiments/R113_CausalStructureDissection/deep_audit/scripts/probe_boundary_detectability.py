@@ -13,11 +13,12 @@ import torch
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.preprocessing import StandardScaler
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-R109 = Path(CONFIG["sources"]["r109_root"])
+R109 = Path(PROJECT_ROOT / CONFIG["sources"]["r109_root"])
 OUTPUT = ROOT / "results" / "boundary_detectability"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(R109 / "model"))

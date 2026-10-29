@@ -13,10 +13,11 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-R140 = Path(r"D:\GMM_2_Final\Experiments\R140v2_StableUNet")
-R148 = Path(r"D:\GMM_2_Final\Experiments\R148v2_HybridContextNativePSF")
+R140 = Path(str(PROJECT_ROOT / 'Experiments/R140v2_StableUNet'))
+R148 = Path(str(PROJECT_ROOT / 'Experiments/R148v2_HybridContextNativePSF'))
 CHECKPOINTS = {
     "r140": R140 / "runs/formal_8192/checkpoints/step08192.pth",
     "r148": R148 / "runs/formal_8192/checkpoints/step08192.pth",

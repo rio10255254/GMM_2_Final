@@ -116,9 +116,10 @@ fprintf('Open phase_dft_summary_table.csv for the compact result table.\n\n');
 end
 
 function cfg = parseInputs(varargin)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(mfilename('fullpath'))));
 p = inputParser;
-p.addParameter('dataRoot', 'D:\GMM_2_Final\20260702_100MG_位移');
-p.addParameter('outputRoot', 'D:\GMM_2_Final\20260702_100MG_phase_dft_analysis_matlab');
+p.addParameter('dataRoot', fullfile(PROJECT_ROOT, '20260702_100MG_位移'));
+p.addParameter('outputRoot', fullfile(PROJECT_ROOT, '20260702_100MG_phase_dft_analysis_matlab'));
 p.addParameter('pixelSizeUm', 3.45 / 50);
 p.addParameter('upsampleFactor', 100);
 p.addParameter('useHann', true);

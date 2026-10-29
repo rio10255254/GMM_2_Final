@@ -6,10 +6,11 @@ import importlib.util
 import os
 from pathlib import Path
 import sys
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R114 = Path(r"D:\GMM_2_Final\Experiments\R114_ConfidenceGatedRecoverableScratch")
+R114 = Path(str(PROJECT_ROOT / 'Experiments/R114_ConfidenceGatedRecoverableScratch'))
 for path in (R114, ROOT):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))

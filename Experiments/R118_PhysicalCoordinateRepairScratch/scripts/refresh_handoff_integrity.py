@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse, hashlib, json
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT=Path(__file__).resolve().parents[1]
 def sha(p):
@@ -20,6 +21,6 @@ def main():
    if old!=entry['sha256']:changed.append(entry['path'])
  if set(wanted)-{e['path'] for e in data.get('handoff_integrity',[])}:raise RuntimeError('plan lacks one or more handoff paths')
  if not changed:raise RuntimeError('no intentional handoff path changed; refusing no-op')
- data['status']='executed_verified';data['scope']='r119_p00_p12_complete';data['completed_experiment_root']='D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation';data['completion_note']='R119 P00-P12 executed; final confirmation consumed once; no automatic promotion.'
+ data['status']='executed_verified';data['scope']='r119_p00_p12_complete';data['completed_experiment_root']=str(PROJECT_ROOT / 'Experiments/R119_SequenceGeometryValidation');data['completion_note']='R119 P00-P12 executed; final confirmation consumed once; no automatic promotion.'
  tmp=args.output.with_suffix('.json.tmp');tmp.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n',encoding='utf-8');tmp.replace(args.output);print(json.dumps({'status':'refreshed','changed_paths':changed,'plan_sha256':sha(args.output)},indent=2));return 0
 if __name__=='__main__':raise SystemExit(main())

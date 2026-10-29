@@ -15,9 +15,10 @@ import numpy as np
 from scipy.io import loadmat
 from scipy.ndimage import center_of_mass, gaussian_filter
 from scipy.signal import fftconvolve
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-PROJECT = Path(r"D:\GMM_2_Final")
+PROJECT = Path(str(PROJECT_ROOT))
 RUN = PROJECT / "PSF_Fitting" / "output" / "20260924_center9_psf"
 OUT = Path(__file__).resolve().parent
 SEM_MAT = PROJECT / "Experiments" / "R69_ACMContourSEMValidation" / "results" / "masks" / "acm_primary_masks.mat"

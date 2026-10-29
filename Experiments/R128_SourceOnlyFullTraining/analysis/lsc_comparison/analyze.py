@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
 import numpy as np,pandas as pd,cv2
 from scipy.optimize import least_squares
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 def alternate_fit(points):
@@ -47,9 +48,9 @@ def summarize(t):
 
 
 def main():
-    out=ROOT/'results/lsc_comparison';p=load(out/'plan.json');config=load(p['configuration']['path']);locked=pd.read_csv(out/'locked_pairs.csv')
+    out=ROOT/'results/lsc_comparison';p=load(out/'plan.json');config=load(str(PROJECT_ROOT / p['configuration']['path']));locked=pd.read_csv(out/'locked_pairs.csv')
     assert load(out/'R61_reproduction.json')['all_exact'];inf=load(out/'inference_complete.json');assert len(inf['outputs'])==159
-    assert all(sha(s['path'])==s['sha256'] for s in p['sources'])
+    assert all(sha(str(PROJECT_ROOT / s['path']))==s['sha256'] for s in p['sources'])
     methods=['Raw','R61v16_PSFOFF','R128_P_s1285002','R128_no_FOV_guard_diagnostic'];all_pairs=[];checkrows=[];fitrows=[]
     numeric=['aggregate_dx_um','aggregate_dy_um','measured_step_um','nominal_abs_error_nm','within_grid_sd_nm','cross_axis_abs_nm'];keys=['sequence','start_frame_index','end_frame_index','method']
     full_context=pd.read_csv(out/'source_boundary_context.csv')
@@ -76,15 +77,15 @@ def main():
     output_checks=[]
     for frame in p['frames']:
         rec=load(out/'R128_images'/frame['sequence']/f"frame_{frame['frame_index']:04d}"/'record.json')
-        for item in [rec['source'],rec['image'],rec['output_float'],frame['R61']]:assert sha(item['path'])==item['sha256']
-        raw=cv2.imread(frame['source']['path'],cv2.IMREAD_UNCHANGED).astype(np.float32)/np.float32(255)
+        for item in [rec['source'],rec['image'],rec['output_float'],frame['R61']]:assert sha(str(PROJECT_ROOT / item['path']))==item['sha256']
+        raw=cv2.imread(str(PROJECT_ROOT / frame['source']['path']),cv2.IMREAD_UNCHANGED).astype(np.float32)/np.float32(255)
         with np.load(rec['output_float']['path']) as f:applied=f['output'];neural=f['neural_output']
         assert applied.shape==neural.shape==raw.shape and np.isfinite(neural).all() and np.isfinite(applied).all()
         h,w=raw.shape;yy,xx=np.ogrid[:h,:w];distance=np.minimum(np.minimum(yy,h-1-yy),np.minimum(xx,w-1-xx)).astype(np.float32);weight=np.clip((distance-halo)/16,0,1)
         expected=raw+(neural-raw)*weight;err=float(np.max(np.abs(expected-applied)));assert err<1e-7
         png=cv2.imread(rec['image']['path'],cv2.IMREAD_UNCHANGED);assert np.array_equal(png,np.rint(applied*255).clip(0,255).astype(np.uint8))
         output_checks.append(dict(sequence=frame['sequence'],frame_index=frame['frame_index'],guard_max_difference=err,PNG_exact=True))
-    old=pd.read_csv(p['historical_pairs']['path']);primary=pd.concat([old,all_pairs[1],all_pairs[2]],ignore_index=True)
+    old=pd.read_csv(str(PROJECT_ROOT / p['historical_pairs']['path']));primary=pd.concat([old,all_pairs[1],all_pairs[2]],ignore_index=True)
     assert len(primary)==840 and primary.method.nunique()==7 and not primary.duplicated(keys).any()
     assert all(len(x)==120 for _,x in primary.groupby('method'))
     expected_pairs=set(map(tuple,locked[keys[:-1]].to_numpy()))
@@ -111,7 +112,7 @@ def main():
     for name,data in outputs.items():
         with (out/(name+'.csv')).open('x',encoding='utf-8',newline='') as f:data.to_csv(f,index=False)
     # Reader identities remain unchanged; execution checkpoints are not retrained.
-    for key in ['checkpoint_R128','checkpoint_R61']:assert sha(p[key]['path'])==p[key]['sha256']
+    for key in ['checkpoint_R128','checkpoint_R61']:assert sha(str(PROJECT_ROOT / p[key]['path']))==p[key]['sha256']
     save(out/'verification.json',dict(verified_utc=now(),source=record(__file__),checks=checkrows,all159_native_outputs_verified=True,all7primary_methods_same120pairs=True,
         all5724_saved_boundary_circles_independently_refitted=True,guard_reconstruction_max=float(max(x['guard_max_difference'] for x in output_checks)),fully_neural_reader_guard_parity=guard_parity,
         Raw_historical_parity=load(out/'measurements/Raw/complete.json')['Raw_historical_parity_max'],R61_reproduction=record(out/'R61_reproduction.json'),original_source_records_unchanged=True,

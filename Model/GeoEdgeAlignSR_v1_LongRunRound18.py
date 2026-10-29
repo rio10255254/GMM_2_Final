@@ -38,7 +38,7 @@ PROFILE_NAME = "round18_centerpush"
 SUMMARY_PREFIX = "ROUND18_CENTERPUSH"
 AUDIT_TOP_K = 4
 RUN_SEED = 1261201
-RESUME_FROM_CHECKPOINT: "str | None" = r"D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_r17es_20260313_130154\weights\best_tradeoff.pth.tar"
+RESUME_FROM_CHECKPOINT: "str | None" = str(PROJECT_ROOT / 'Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_r17es_20260313_130154/weights/best_tradeoff.pth.tar')
 
 
 PLAN = [

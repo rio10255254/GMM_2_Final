@@ -1,8 +1,8 @@
 # Source-Style Training Data Rebuild
 
 - generated_at: `2026-06-17T23:56:34`
-- source_training_root: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data`
-- unsafe_csv: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20260617_training_data_style_audit_full\unsafe_pair_list.csv`
+- source_training_root: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data`
+- unsafe_csv: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260617_training_data_style_audit_full/unsafe_pair_list.csv`
 - rebuilt_packages: `23`
 - total_pairs: `51654`
 - repaired_pairs: `2186`

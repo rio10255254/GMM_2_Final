@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 $Experiment = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$Python = python
 $LogDir = Join-Path $Experiment "results\logs"
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 $OutLog = Join-Path $LogDir "formal_training.log"

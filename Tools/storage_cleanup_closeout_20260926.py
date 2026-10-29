@@ -1,6 +1,8 @@
 
 import json,pathlib,datetime,shutil,hashlib,re,psutil
-ROOT=pathlib.Path(r"D:\GMM_2_Final")
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+ROOT=pathlib.Path(str(PROJECT_ROOT))
 LAB=ROOT/"Thesis_MOSR_Evidence/LabSystem_MOSR"
 OLD=pathlib.Path(r"H:\GMM_2_Final_Archive\operation_logs\Storage_Migration_20260926")
 OUT=ROOT/"docs/operations/storage_execution_20260926"
@@ -30,7 +32,7 @@ D 槽保留內容 {v['retained_files']} 檔及 {v['preserved_original_files_reha
 恢復時由 H 的 payload 按 LabSystem 相對路徑複製回原位置，再按 source_manifest.csv 核對。
 要重做歷史訓練，需先恢復資料，或在啟動程式明確指定封存資料位置。
 完整副本：{v['archive']}
-本次實際移除與核對：D:/GMM_2_Final/docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。
+本次實際移除與核對：docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。
 """
  for name in [short+"_STORAGE_CLOSEOUT_20260926.md"]:
   p=DOCS/name;s=p.read_text(encoding="utf-8")

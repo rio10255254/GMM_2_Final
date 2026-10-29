@@ -1,5 +1,6 @@
 from pathlib import Path
-P=Path(r'D:\GMM_2_Final\Experiments\R137_WeakPSFFeature')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+P=Path(str(PROJECT_ROOT / 'Experiments/R137_WeakPSFFeature'))
 def edit(name,old,new):
  p=P/name;s=p.read_text(encoding='utf-8');assert old in s,(name,old);p.write_text(s.replace(old,new),encoding='utf-8')
 (P/'optical/__init__.py').write_text('')
@@ -61,5 +62,5 @@ edit('compare_measurements.py','assert len(d)==5400','assert len(d)==7200')
 edit('compare_measurements.py',"for base in ['Raw','R129']:","for base in ['Raw','R129','R130-Clean']:")
 # Explicitly label timer as including the optical cue, do not call it neural-only.
 edit('evaluate_real_measurement.py','total_neural_inference_seconds=inference','total_reconstruction_seconds=inference')
-(P/'START_R137.cmd').write_text('@echo off\r\ncd /d "%~dp0"\r\n"C:\\Users\\Rio\\anaconda3\\python.exe" -B scripts\\launch_r137.py\r\npause\r\n',encoding='ascii')
+(P/'START_R137.cmd').write_text('@echo off\r\ncd /d "%~dp0"\r\npython -B scripts\\launch_r137.py\r\npause\r\n',encoding='ascii')
 print('R137 feature-level implementation prepared')

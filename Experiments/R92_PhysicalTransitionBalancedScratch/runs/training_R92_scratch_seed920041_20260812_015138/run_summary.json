@@ -8,7 +8,7 @@
   "initial_parameter_sha256": "fa9172cef5366de544b6f3de03ee4e5631c28ec41b9f2865bceef594739efbed",
   "architecture_sha256": "897130691e85c497c973fc072fab33c6cdff248c4abd33773d0f9829df77aa50",
   "trainer_sha256": "b1268f0c2c9c559c703009a4983f66a4208dd1d843c4b1bf0e8dca78e5f82bae",
-  "locked_design_sha256": "50772fd1243c314a52ffef6206f9808fc8965ef27aabdf2dff7577756b7b301e",
+  "locked_design_sha256": "ab1b1e3f97b3d9447db76b13c5e5d2d337712cc72284365b87cd773fb98508c7",
   "acceptance_gates_sha256": "071675b07d9e139a28d588fefda487b236161d8779c61a568cb8f60b159948ee",
   "authorization_sha256": "7a24b8cf8d15fe556694103e2eda174d56f62bd5b31c7f98e4413662d371a29e",
   "dataset_content_sha256": "260ccc5b4e31727e7fc97082b831717aa4c06d9f429ef98a5ce1210cb49bf5d5",
@@ -48,7 +48,7 @@
   },
   "optical_statistics_sha256": "cbea0bc6071d609da9787ad56c73b9b6d4c996d487663873acf8099ae53ce032",
   "real_optical_aggregate_statistics_only": true,
-  "implementation_lock_sha256": "e42762ee3e3bd41cd4fc6995d519c32886bdda591f5950d2d24ad6fe17fda4e3",
+  "implementation_lock_sha256": "b2ec27f73a55d930b649fc33c1a111a9b3e55ab423c250bbe1b0e04414a706ef",
   "checkpoint_loaded": false,
   "resume_source": null,
   "teacher_used": false,
@@ -56,7 +56,7 @@
   "optimizer_fresh": true,
   "ema_initialized_from_random_model": true,
   "started_at": "2026-08-12T01:51:38.109936",
-  "run_dir": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138",
+  "run_dir": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138",
   "baseline_gpu_used_gib": 1.55908203125,
   "gpu_total_gib": 47.98779296875,
   "detail_head_learning_rate_multiplier": 1.25,
@@ -78,7 +78,7 @@
         "exposure": 1.0000244691866427,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_002.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_002.pth.tar"
     },
     {
       "epoch": 4,
@@ -92,7 +92,7 @@
         "exposure": 1.0000643970674692,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_004.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_004.pth.tar"
     },
     {
       "epoch": 6,
@@ -106,7 +106,7 @@
         "exposure": 1.000043958928654,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_006.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_006.pth.tar"
     },
     {
       "epoch": 8,
@@ -120,7 +120,7 @@
         "exposure": 0.9994160949701177,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_008.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_008.pth.tar"
     },
     {
       "epoch": 10,
@@ -134,7 +134,7 @@
         "exposure": 0.997671723524517,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_010.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_010.pth.tar"
     },
     {
       "epoch": 12,
@@ -148,7 +148,7 @@
         "exposure": 0.9961463259460346,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_012.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_012.pth.tar"
     },
     {
       "epoch": 14,
@@ -162,7 +162,7 @@
         "exposure": 0.9952482911921349,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_014.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_014.pth.tar"
     },
     {
       "epoch": 16,
@@ -176,7 +176,7 @@
         "exposure": 0.9948436485495791,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_016.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_016.pth.tar"
     },
     {
       "epoch": 18,
@@ -190,7 +190,7 @@
         "exposure": 0.9945555263233435,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_018.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_018.pth.tar"
     },
     {
       "epoch": 20,
@@ -204,7 +204,7 @@
         "exposure": 0.9944377571353871,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_020.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_020.pth.tar"
     },
     {
       "epoch": 22,
@@ -218,7 +218,7 @@
         "exposure": 0.9942761617515534,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_022.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_022.pth.tar"
     },
     {
       "epoch": 24,
@@ -232,7 +232,7 @@
         "exposure": 0.9941369331950489,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_024.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_024.pth.tar"
     },
     {
       "epoch": 26,
@@ -246,7 +246,7 @@
         "exposure": 0.9941423644035744,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_026.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_026.pth.tar"
     },
     {
       "epoch": 28,
@@ -260,7 +260,7 @@
         "exposure": 0.994003241491525,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_028.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_028.pth.tar"
     },
     {
       "epoch": 32,
@@ -274,7 +274,7 @@
         "exposure": 0.9938980521202229,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_032.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_032.pth.tar"
     },
     {
       "epoch": 34,
@@ -288,7 +288,7 @@
         "exposure": 0.9936188934196786,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_034.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_034.pth.tar"
     },
     {
       "epoch": 36,
@@ -302,7 +302,7 @@
         "exposure": 0.9935144029270796,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_036.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_036.pth.tar"
     },
     {
       "epoch": 38,
@@ -316,7 +316,7 @@
         "exposure": 0.9936884155976367,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_038.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_038.pth.tar"
     },
     {
       "epoch": 40,
@@ -330,7 +330,7 @@
         "exposure": 0.9937000744113492,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_040.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_040.pth.tar"
     },
     {
       "epoch": 42,
@@ -344,7 +344,7 @@
         "exposure": 0.993639274673018,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_042.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_042.pth.tar"
     },
     {
       "epoch": 54,
@@ -358,7 +358,7 @@
         "exposure": 0.9936049700222617,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_054.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_054.pth.tar"
     },
     {
       "epoch": 56,
@@ -372,7 +372,7 @@
         "exposure": 0.9934151323540958,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_056.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_056.pth.tar"
     },
     {
       "epoch": 58,
@@ -386,7 +386,7 @@
         "exposure": 0.9934534433676496,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_058.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_058.pth.tar"
     },
     {
       "epoch": 60,
@@ -400,7 +400,7 @@
         "exposure": 0.9935728216019225,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_060.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_060.pth.tar"
     },
     {
       "epoch": 64,
@@ -414,7 +414,7 @@
         "exposure": 0.9934756097413971,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_064.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_064.pth.tar"
     },
     {
       "epoch": 68,
@@ -428,7 +428,7 @@
         "exposure": 0.9934192308171876,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_068.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_068.pth.tar"
     },
     {
       "epoch": 70,
@@ -442,7 +442,7 @@
         "exposure": 0.9934507020294813,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_070.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_070.pth.tar"
     },
     {
       "epoch": 72,
@@ -456,7 +456,7 @@
         "exposure": 0.993550969452708,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_072.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_072.pth.tar"
     },
     {
       "epoch": 74,
@@ -470,7 +470,7 @@
         "exposure": 0.9936361703513371,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_074.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_074.pth.tar"
     },
     {
       "epoch": 76,
@@ -484,7 +484,7 @@
         "exposure": 0.9935053445922619,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_076.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_076.pth.tar"
     },
     {
       "epoch": 78,
@@ -498,7 +498,7 @@
         "exposure": 0.9936128391797512,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_078.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_078.pth.tar"
     },
     {
       "epoch": 80,
@@ -512,7 +512,7 @@
         "exposure": 0.9935073193309228,
         "tile": 0.0
       },
-      "checkpoint": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights\\epoch_080.pth.tar"
+      "checkpoint": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights/epoch_080.pth.tar"
     }
   ],
   "adaptive_detail_multiplier": 1.0,
@@ -745,6 +745,6 @@
     "evaluated_scenes": 125
   },
   "finished_at": "2026-08-12T05:53:24.736385",
-  "weights_dir": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\weights\\formal\\seed_920041\\R92_scratch_seed920041_20260812_015138\\weights",
-  "training_log": "D:\\GMM_2_Final\\Experiments\\R92_PhysicalTransitionBalancedScratch\\runs\\training_R92_scratch_seed920041_20260812_015138\\training_log.csv"
+  "weights_dir": "Experiments/R92_PhysicalTransitionBalancedScratch/weights/formal/seed_920041/R92_scratch_seed920041_20260812_015138/weights",
+  "training_log": "Experiments/R92_PhysicalTransitionBalancedScratch/runs/training_R92_scratch_seed920041_20260812_015138/training_log.csv"
 }

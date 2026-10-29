@@ -10,6 +10,7 @@ import cv2
 import numpy as np
 import torch
 from torch.utils.data import Dataset
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -88,7 +89,7 @@ class R102Dataset(Dataset):
         *,
         validation_limit: int = 0,
     ):
-        self.package = Path(CONFIG["data"]["base_package"])
+        self.package = Path(PROJECT_ROOT / CONFIG["data"]["base_package"])
         self.manifest = json.loads((self.package / "manifest.json").read_text(encoding="utf-8"))
         self.records = sorted(
             (record for record in self.manifest["records"] if record["split"] == split),

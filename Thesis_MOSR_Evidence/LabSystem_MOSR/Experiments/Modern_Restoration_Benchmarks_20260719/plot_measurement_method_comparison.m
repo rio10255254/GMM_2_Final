@@ -1,10 +1,11 @@
+PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
 % Candidate figures for comparing the original gradient-peak displacement
 % estimator with the multi-threshold isocontour estimator.
 % The thesis document is not edited by this script.
 
 clear; clc; close all;
 
-rootDir = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\evaluation\measurement_method_comparison_20260724';
+rootDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/measurement_method_comparison_20260724');
 outDir = fullfile(rootDir, 'figures_matlab');
 if ~isfolder(outDir); mkdir(outDir); end
 

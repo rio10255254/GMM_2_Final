@@ -1,6 +1,7 @@
 function audit_reference()
-root='D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial';
-old=load('D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat');
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
+root=fullfile(PROJECT_ROOT, 'Experiments/R121_BoundaryAnchorFactorial');
+old=load(fullfile(PROJECT_ROOT, 'Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat'));
 file=zeros(9,1);pitch_x=zeros(9,1);pitch_y=zeros(9,1);median_pitch=zeros(9,1);parity=zeros(36,1);
 blocks=[3 1;3 2;3 3;2 3;2 2;2 1;1 1;1 2;1 3];k=0;
 for p=1:9

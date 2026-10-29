@@ -60,9 +60,9 @@ be continued as a formal training candidate.
 ## Verification
 
 ```powershell
-C:\Users\Rio\anaconda3\python.exe -m pytest D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\tests -q
-C:\Users\Rio\anaconda3\python.exe -u D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\scripts\r54_geometry_root_cause_probe.py
-C:\Users\Rio\anaconda3\python.exe -u D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\scripts\r54_masked_overfit_probe.py validate --strict
-C:\Users\Rio\anaconda3\python.exe -u D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\scripts\run_r54_checkboard_reconstruction.py --dry-run
-C:\Users\Rio\anaconda3\python.exe -u D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\validate_checkboard_corner_geometry_r54.py
+C:\Users\Rio\anaconda3\python.exe -m pytest Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/tests -q
+C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/scripts/r54_geometry_root_cause_probe.py
+C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/scripts/r54_masked_overfit_probe.py validate --strict
+C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/scripts/run_r54_checkboard_reconstruction.py --dry-run
+C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/validate_checkboard_corner_geometry_r54.py
 ```

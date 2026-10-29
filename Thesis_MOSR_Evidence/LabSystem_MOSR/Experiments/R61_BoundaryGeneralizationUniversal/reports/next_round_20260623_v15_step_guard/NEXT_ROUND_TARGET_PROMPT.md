@@ -19,8 +19,8 @@ Train and validate the next MOSR reconstruction candidate without discarding old
 - Full-size 5120 x 5120 R39 Step inference was attempted and failed on every frame with CUDA out-of-memory. Do not rerun full-size Step inference unless tiled inference or a smaller crop is implemented.
 - Center-crop R39 a970 Step inference completed for 80/80 selected frames with PSF-off settings. Its Step probe measured repeat median motion about 0.134 px and selected +10 median motion about 8.026 px.
 - Center-crop v14 Step inference completed for 80/80 selected frames with PSF-off settings after switching to direct unbuffered inference. Its Step probe measured repeat median motion about 0.134 px and selected +10 median motion about 8.027 px.
-- The current raw/R39/v14 center-crop Step comparison table is saved at `D:\GMM_2_Final\Step_analysis_20260623\STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_SUMMARY.md`.
-- v14 triple gate is now recorded at `D:\GMM_2_Final\Step_analysis_20260623\triple_gate_v14_boundary_real_step_vs_raw_r39.json`: it fails boundary, 20260603 real motion, and Step stability versus R39 by a very small Step margin.
+- The current raw/R39/v14 center-crop Step comparison table is saved at `Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_SUMMARY.md`.
+- v14 triple gate is now recorded at `Step_analysis_20260623/triple_gate_v14_boundary_real_step_vs_raw_r39.json`: it fails boundary, 20260603 real motion, and Step stability versus R39 by a very small Step margin.
 
 ## Mandatory Datasets
 
@@ -35,10 +35,10 @@ Train and validate the next MOSR reconstruction candidate without discarding old
    - Tail statistic must still remove the first warm-up interval.
 
 3. Step small-displacement sequence
-   - Source: `D:\GMM_2_Final\Step`
-   - Use the selected 1 um manifest from `D:\GMM_2_Final\Step_analysis_20260623\selected_1um_positions.csv`.
+   - Source: `Step`
+   - Use the selected 1 um manifest from `Step_analysis_20260623/selected_1um_positions.csv`.
    - For current non-tiled GPU inference, use the staged center-crop input folder:
-     `D:\GMM_2_Final\Step_analysis_20260623\selected_1um_input_center2048\bmp`
+     `Step_analysis_20260623/selected_1um_input_center2048/bmp`
    - Use positions `0, 10, 20, ..., 390`.
    - Use both replicate streams:
      - replicate 0: image indices `0, 20, 40, ..., 780`

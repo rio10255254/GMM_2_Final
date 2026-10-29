@@ -15,6 +15,7 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -92,7 +93,7 @@ def load_module(path: Path, name: str):
 def audit_models(config: dict) -> dict:
     records = {}
     for label, item in config["models"].items():
-        checkpoint = Path(item["checkpoint"])
+        checkpoint = Path(PROJECT_ROOT / item["checkpoint"])
         checkpoint_hash = require_hash(checkpoint, item["checkpoint_sha256"])
         payload = torch.load(checkpoint, map_location="cpu")
         state = payload.get(item["state_key"]) if isinstance(payload, dict) else None
@@ -117,8 +118,8 @@ def audit_models(config: dict) -> dict:
 
 def audit_real(config: dict) -> dict:
     item = config["real_fov"]
-    require_hash(Path(item["locked_measurements"]), item["locked_measurements_sha256"])
-    root = Path(item["locked_raw_root"])
+    require_hash(Path(PROJECT_ROOT / item["locked_measurements"]), item["locked_measurements_sha256"])
+    root = Path(PROJECT_ROOT / item["locked_raw_root"])
     total = 0
     sequences = {}
     hashes: dict[str, list[str]] = defaultdict(list)
@@ -144,9 +145,9 @@ def audit_external(config: dict) -> dict:
     result = {}
     global_hashes: dict[str, list[str]] = defaultdict(list)
     for suite, item in config["external_acm_suites"].items():
-        require_hash(Path(item["manifest"]), item["manifest_sha256"])
-        source_config = read_json(Path(item["source_config"]))
-        root = Path(item["dataset_root"])
+        require_hash(Path(PROJECT_ROOT / item["manifest"]), item["manifest_sha256"])
+        source_config = read_json(Path(PROJECT_ROOT / item["source_config"]))
+        root = Path(PROJECT_ROOT / item["dataset_root"])
         count = 0
         for family in source_config["dataset"]["families"]:
             stage = family["stage"]
@@ -184,14 +185,14 @@ def audit_external(config: dict) -> dict:
 
 def audit_sem(config: dict) -> dict:
     item = config["sem_acm"]
-    require_hash(Path(item["ordering_manifest"]), item["ordering_manifest_sha256"])
-    ordering = read_json(Path(item["ordering_manifest"]))
+    require_hash(Path(PROJECT_ROOT / item["ordering_manifest"]), item["ordering_manifest_sha256"])
+    ordering = read_json(Path(PROJECT_ROOT / item["ordering_manifest"]))
     if ordering.get("status") != "verified" or int(ordering.get("exact_copy_count", -1)) != 18:
         raise RuntimeError("SEM ordering is not verified")
-    mapping = pd.read_csv(item["ordering_mapping"])
+    mapping = pd.read_csv(str(PROJECT_ROOT / item["ordering_mapping"]))
     if len(mapping) != 36 or mapping["global_pillar_id"].nunique() != 36:
         raise RuntimeError("SEM mapping is incomplete")
-    raw = Path(item["raw_input_dir"])
+    raw = Path(PROJECT_ROOT / item["raw_input_dir"])
     source = Path(item["raw_source_dir"])
     checks = []
     for exposure in item["optical_exposures"]:
@@ -212,7 +213,7 @@ def audit_junhua(config: dict) -> dict:
     sequences = {}
     global_hashes: dict[str, list[str]] = defaultdict(list)
     for name, item in config["junhua"]["sequences"].items():
-        root = Path(item["input_dir"])
+        root = Path(PROJECT_ROOT / item["input_dir"])
         paths = sorted(path for path in root.iterdir() if path.suffix.lower() == ".bmp")
         if len(paths) != int(item["source_frames"]):
             raise RuntimeError(f"{name}: source frame count changed")
@@ -278,7 +279,7 @@ def as_bool(series: pd.Series) -> pd.Series:
 
 
 def r80_helpers():
-    path = Path(r"D:\GMM_2_Final\Experiments\R80_R79E23vsE100GeneralizationValidation\scripts\run_r80.py")
+    path = Path(str(PROJECT_ROOT / 'Experiments/R80_R79E23vsE100GeneralizationValidation/scripts/run_r80.py'))
     return load_module(path, "r82_r80_helpers")
 
 
@@ -350,7 +351,7 @@ def evaluate_real(config: dict) -> None:
     update_status("real_motion", "running")
     helpers = r80_helpers()
     item = config["real_fov"]
-    locked = pd.read_csv(item["locked_measurements"])
+    locked = pd.read_csv(str(PROJECT_ROOT / item["locked_measurements"]))
     locked["raw_reference_valid"] = as_bool(locked["raw_reference_valid"])
     motion = pd.concat([compute_real_motion_rows(config, locked, label, helpers) for label in config["models"]], ignore_index=True)
     TABLES.mkdir(parents=True, exist_ok=True)
@@ -359,7 +360,7 @@ def evaluate_real(config: dict) -> None:
     summary = add_step_stability(summary, motion, locked)
     summary.to_csv(TABLES / "real_motion_summary.csv", index=False)
 
-    raw_root = Path(item["locked_raw_root"])
+    raw_root = Path(PROJECT_ROOT / item["locked_raw_root"])
     fidelity_rows = []
     artifact_rows = []
     for sequence in item["sequences"]:
@@ -380,7 +381,7 @@ def evaluate_real(config: dict) -> None:
 
 
 def selected_junhua_paths(item: dict) -> list[Path]:
-    paths = sorted(path for path in Path(item["input_dir"]).iterdir() if path.suffix.lower() == ".bmp")
+    paths = sorted(path for path in Path(PROJECT_ROOT / item["input_dir"]).iterdir() if path.suffix.lower() == ".bmp")
     start, step, count = int(item["select_start"]), int(item["select_step"]), int(item["selected_frames"])
     return paths[start:start + step * count:step]
 
@@ -447,7 +448,7 @@ def evaluate_junhua(config: dict) -> None:
         if "step_std_px" in source:
             values = source["step_std_px"]
         else:
-            payload = read_json(Path(source["source_json"]))
+            payload = read_json(Path(PROJECT_ROOT / source["source_json"]))
             headline = payload["headline_step_std"]
             values = {"pitch8px": headline["8px"], "pitch0p8px": headline["0p8px"], "pitch0p08px": headline["0p08px"]}
         for sequence, value in values.items():
@@ -471,12 +472,12 @@ def external_arm_ready(arm: Path, expected_images: int, method_count: int) -> bo
 
 
 def prepare_external_arm(config: dict, suite: str, item: dict) -> Path:
-    source = read_json(Path(item["source_config"]))
+    source = read_json(Path(PROJECT_ROOT / item["source_config"]))
     arm = RESULTS / "acm_external" / suite
     acm = dict(source["acm"])
     acm["initialization_mode"] = item["initialization_mode"]
     acm.setdefault("seed_radius_fraction", 0.2)
-    arm_config = {"experiment_id": f"R82_{suite}", "dataset": {**source["dataset"], "root": item["dataset_root"]}, "acm": acm}
+    arm_config = {"experiment_id": f"R82_{suite}", "dataset": {**source["dataset"], "root": str(PROJECT_ROOT / item["dataset_root"])}, "acm": acm}
     write_json(arm / "config" / "experiment.json", arm_config)
     methods = ["Raw", *config["models"].keys()]
     output_dirs = {}
@@ -484,7 +485,7 @@ def prepare_external_arm(config: dict, suite: str, item: dict) -> Path:
         output_dirs[method] = {}
         for family in source["dataset"]["families"]:
             stage, name = family["stage"], family["name"]
-            directory = Path(item["dataset_root"]) / "src" / stage if method == "Raw" else RECON / suite / method / stage
+            directory = Path(PROJECT_ROOT / item["dataset_root"]) / "src" / stage if method == "Raw" else RECON / suite / method / stage
             output_dirs[method][name] = str(directory.resolve())
     write_json(arm / "results" / "inference_manifest.json", {"suite": suite, "methods": methods, "output_dirs": output_dirs})
     return arm

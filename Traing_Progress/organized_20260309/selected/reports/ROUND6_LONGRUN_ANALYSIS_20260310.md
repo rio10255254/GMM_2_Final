@@ -18,51 +18,51 @@
 
 ## 目前主基準
 - 全域 current seed 仍維持不變：
-  `D:\GMM_2_Final\Traing_Progress\organized_20260309\selected\current_seed.json`
+  `Traing_Progress/organized_20260309/selected/current_seed.json`
 - 仍指向：
-  `D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar`
+  `Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar`
 - 原因：後續 long-run 沒有出現一個足以取代它的全域贏家。
 
 ## 各尺度目前最值得保留的 sweep 候選
 ### 0.08 px
 - manifest:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260309\selected\multiscale\best_step_0p08.json`
+  `Traing_Progress/organized_20260309/selected/multiscale/best_step_0p08.json`
 - best candidate:
   `micro_general_curve`
 - sweep score:
   `3.1387377283436457`
 - sweep run:
-  `D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_mgc_20260310_035426`
+  `Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_mgc_20260310_035426`
 - final run:
-  `D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_FIN_mgc_20260310_040642`
+  `Traing_Progress/training_progress_GESR_v1_v5_ST0p08_FIN_mgc_20260310_040642`
 - 判讀：
   sweep 可保留；final 不建議當部署版本。
 
 ### 0.8 px
 - manifest:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260309\selected\multiscale\best_step_0p8.json`
+  `Traing_Progress/organized_20260309/selected/multiscale/best_step_0p8.json`
 - best candidate:
   `micro_general_curve`
 - sweep score:
   `1.253649689100726`
 - sweep run:
-  `D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_mgc_20260310_073521`
+  `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_mgc_20260310_073521`
 - final run:
-  `D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_FIN_mgc_20260310_074408`
+  `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_mgc_20260310_074408`
 - 判讀：
   有候選，但整體仍偏弱；final 仍退化。
 
 ### 8 px
 - manifest:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260309\selected\multiscale\best_step_8.json`
+  `Traing_Progress/organized_20260309/selected/multiscale/best_step_8.json`
 - best candidate:
   `subpix_general_curve`
 - sweep score:
   `4.377482514122981`
 - sweep run:
-  `D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_spg_20260310_053804`
+  `Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_spg_20260310_053804`
 - final run:
-  `D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_spg_20260310_055939`
+  `Traing_Progress/training_progress_GESR_v1_v5_ST8_FIN_spg_20260310_055939`
 - 判讀：
   final 明顯崩壞，且 sweep 也沒有打贏既有全域基準 `4.732227216384246`。
 

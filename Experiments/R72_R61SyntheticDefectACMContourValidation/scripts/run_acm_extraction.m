@@ -1,4 +1,5 @@
 function run_acm_extraction(experiment_root)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
 % Extract full closed contours with the same Chan-Vese ACM family used by
 % R69/R70. All methods share one fixed, truth-independent outer seed.
 
@@ -17,11 +18,11 @@ if ~exist(mask_dir, 'dir'), mkdir(mask_dir); end
 image_ids = double(cfg.sources.image_ids(:)');
 method_names = {'Raw', 'COMBO', 'R61v16'};
 method_dirs = {
-    char(cfg.sources.raw_dir), ...
-    char(cfg.sources.combo_dir), ...
-    char(cfg.sources.r61_dir) ...
+    fullfile(PROJECT_ROOT, char(cfg.sources.raw_dir)), ...
+    fullfile(PROJECT_ROOT, char(cfg.sources.combo_dir)), ...
+    fullfile(PROJECT_ROOT, char(cfg.sources.r61_dir)) ...
 };
-truth_dir = char(cfg.sources.truth_dir);
+truth_dir = fullfile(PROJECT_ROOT, char(cfg.sources.truth_dir));
 
 primary_iterations = double(cfg.acm.iterations);
 primary_smooth = double(cfg.acm.smooth_factor);

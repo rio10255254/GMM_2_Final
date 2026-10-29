@@ -28,6 +28,16 @@ def test_scan_finds_broken_relative_links(tmp_path):
     assert [(b.file, b.line, b.target) for b in scan(tmp_path)] == [('docs/a.md', 1, '../Model/missing.py')]
 
 
+def test_drive_letter_links_are_paths_and_a_commit_can_be_scanned(tmp_path):
+    git('init', '-q', str(tmp_path))
+    make(tmp_path, {'docs/a.md': '[local](D:/GMM_2_Final/Model/x.py) [gone](D:/GMM_2_Final/runs/w.pth) [ext](E:/tool.exe)\n',
+                    'Model/x.py': 'x\n'})
+    git('-C', str(tmp_path), '-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-qm', 'x')
+    (tmp_path / 'docs/a.md').write_text('changed\n', encoding='utf-8')
+    found = [(b.target, b.resolved) for b in scan(tmp_path, ref='HEAD')]
+    assert found == [('D:/GMM_2_Final/runs/w.pth', 'runs/w.pth'), ('E:/tool.exe', 'E:/tool.exe')]
+
+
 def test_compare_flags_only_new_breaks(tmp_path):
     git('init', '-q', str(tmp_path))
     make(tmp_path, {'docs/a.md': '[run](../AnalysisLab/run.py) [old](../AnalysisLab/gone.py)\n', 'AnalysisLab/run.py': 'x\n'})

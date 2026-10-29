@@ -5,6 +5,7 @@ from statistics import median,stdev,mean
 import json,csv,hashlib,io,zipfile,math
 from lxml import etree
 import openpyxl,pymupdf
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT=Path(__file__).resolve().parents[1];DATA=ROOT/'results/separate_conditions';OUT=ROOT/'poster_final'
 PPTX=OUT/'IMPACT2026_MOSR_1um_Separate_v2.pptx';PDF=PPTX.with_suffix('.pdf')
 NS={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main','c':'http://schemas.openxmlformats.org/drawingml/2006/chart'}
@@ -17,7 +18,7 @@ assert a['passed'] and b['passed'] and a['frames']==930 and b['images']==86
 assert a['excluded_steps']==b['excluded_pairs']==0
 assert b['max_fresh_reconstruction_difference']<1e-7 and b['learned_parameters_unchanged']
 assert b['full_vs_tiled_max_difference']<1e-6 and b['single_psf_reinstallation_exact']
-axis=load(Path('D:/GMM_2_Final/Experiments/R152_R148v2_SafeAdaptivePSF/evaluation/calibration.json'))['axis_unit_vector']
+axis=load(Path(str(PROJECT_ROOT / 'Experiments/R152_R148v2_SafeAdaptivePSF/evaluation/calibration.json')))['axis_unit_vector']
 ci=defaultdict(dict)
 for r in rows(DATA/'20x_all_centers.csv'):
     ci[(r['run'],r['method'],int(r['index']))][int(r['pillar_id'])]=(float(r['center_x_px']),float(r['center_y_px']))

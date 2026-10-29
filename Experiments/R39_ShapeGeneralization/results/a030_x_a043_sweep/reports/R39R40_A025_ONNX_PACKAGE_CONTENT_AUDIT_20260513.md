@@ -12,11 +12,11 @@
 
 移出來源：
 
-`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs`
+`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs`
 
 保存位置：
 
-`D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\delivery_audit\a025_onnx_internal_eval_20260513\moved_from_delivery_package_outputs`
+`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/delivery_audit/a025_onnx_internal_eval_20260513/moved_from_delivery_package_outputs`
 
 內容：
 
@@ -55,7 +55,7 @@
 
 重新壓縮後的 zip：
 
-- 路徑：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511.zip`
+- 路徑：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511.zip`
 - 大小：約 14.27 MB
 - zip 內檔案數：13
 - zip 內 `outputs/`：0

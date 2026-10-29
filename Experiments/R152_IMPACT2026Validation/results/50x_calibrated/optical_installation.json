@@ -1,9 +1,9 @@
 {
   "mode": "50x original single calibrated kernel",
-  "source_path": "D:\\GMM_2_Final\\PSF_Fitting\\tests\\artifacts\\cd_verification_20260714\\50x_deconvolution_sweep.mat",
+  "source_path": "PSF_Fitting/tests/artifacts/cd_verification_20260714/50x_deconvolution_sweep.mat",
   "source_sha256": "a5d82edc4bc290e5e1d5657841e317dd891dbd1dde8883cfaaa7c2e903851feb",
   "source_key": "psf",
-  "fit_path": "D:\\GMM_2_Final\\PSF_Fitting\\output\\pillar_via_junction_psf_20260713\\50x\\fit_result\\PSF_fitted_2D_FOVstack.mat",
+  "fit_path": "PSF_Fitting/output/pillar_via_junction_psf_20260713/50x/fit_result/PSF_fitted_2D_FOVstack.mat",
   "fit_sha256": "b4b41567093d81849ff996961c174a3f4e134d732255c9e8460b9a71619b7e72",
   "effective_bank_path": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\config\\50x_calibrated_psf.npz",
   "effective_bank_sha256": "f9dfcb17145f9388ddc161ce8f0ec43e8adc15322bd3822b194b0f09bb0d7bb0",
@@ -22,5 +22,5 @@
     "psf_fusion.bank"
   ],
   "selector_mode": "single calibrated kernel, weight exactly 1; original selector parameters retained but unused",
-  "adapter_sha256": "0246e38e9aad2898f000a138f6646e4f59e1f8d6d70de16a71140d605f9e5916"
+  "adapter_sha256": "f0bfd1c4a8e3b0d7a70312c13b4192927fac5ec967ddcbfd1568821c222e635e"
 }

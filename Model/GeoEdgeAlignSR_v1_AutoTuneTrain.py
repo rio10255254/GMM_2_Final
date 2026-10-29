@@ -31,12 +31,12 @@ import GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest as train_mod
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-r26_r25_seed_ckpt = r"D:\GMM_2_Final\Traing_Progress\organized_20260316\round25\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r25sw010_20260316_173027\weights\best_tradeoff.pth.tar"
-r27_r26_seed_ckpt = r"D:\GMM_2_Final\Traing_Progress\organized_20260316\round26\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408\weights\best_tradeoff.pth.tar"
-r28_r27_seed_ckpt = r"D:\GMM_2_Final\Traing_Progress\organized_20260316\round27\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r27sm028_20260316_202936\weights\best_tradeoff.pth.tar"
+r26_r25_seed_ckpt = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round25/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r25sw010_20260316_173027/weights/best_tradeoff.pth.tar')
+r27_r26_seed_ckpt = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar')
+r28_r27_seed_ckpt = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round27/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r27sm028_20260316_202936/weights/best_tradeoff.pth.tar')
 # Round28 seeds from R26 (not R27): searching 0.8px/0.08px balance sweet spot
-r28_r26_seed_ckpt = r"D:\GMM_2_Final\Traing_Progress\organized_20260316\round26\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408\weights\best_tradeoff.pth.tar"
-r31_r30_b1_seed_ckpt = r"D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913\weights\best_tradeoff.pth.tar"
+r28_r26_seed_ckpt = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar')
+r31_r30_b1_seed_ckpt = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round30/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913/weights/best_tradeoff.pth.tar')
 
 
 def _jsonable(v: Any):

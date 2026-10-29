@@ -13,12 +13,13 @@ import numpy as np
 import torch
 
 from r109_interventions import render_variants
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "results" / "structure_probe" / "sem_interventions"
-INPUT = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack")
-MODEL_ROOT = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+INPUT = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
+MODEL_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 CHECKPOINT = MODEL_ROOT / "weights" / "selected" / "R109.pth"
 EXPECTED_SHA = "77ff8611e764e1350d60592f5d8a25d6786db17897eadce189185cdc4dbc87fc"
 VARIANTS = ("full", "no_shift", "no_width", "learned_support_only", "smoothed_controls")

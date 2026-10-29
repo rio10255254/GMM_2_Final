@@ -5,9 +5,10 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
 import numpy as np,pandas as pd
 from measure import reader,measure_frame,pair_table
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 def main():
-    out=ROOT/'results/lsc_comparison';p=load(out/'plan.json');diag=load(out/'boundary_diagnostic_plan.json');cfg=load(p['configuration']['path'])
+    out=ROOT/'results/lsc_comparison';p=load(out/'plan.json');diag=load(out/'boundary_diagnostic_plan.json');cfg=load(str(PROJECT_ROOT / p['configuration']['path']))
     core,scope=reader(p);method='R128_no_FOV_guard_diagnostic';folder=out/'measurements'/method;folder.mkdir(parents=True,exist_ok=False)
     save(folder/'started.json',dict(started_utc=now(),diagnostic_plan=record(out/'boundary_diagnostic_plan.json'),source=record(__file__)))
     tables=[];records=[];start=time.perf_counter()
@@ -17,7 +18,7 @@ def main():
         data=load(rec);src=data['output_float'];assert sha(src['path'])==src['sha256']
         with np.load(src['path']) as payload:neural=payload['neural_output']
         image=np.rint(neural*255).clip(0,255).astype(np.uint8).astype(float)/255
-        raw=scope['load_grayscale'](Path(f['source']['path']))
+        raw=scope['load_grayscale'](Path(PROJECT_ROOT / f['source']['path']))
         measured,points=measure_frame(core,scope,f['sequence'],f['frame_index'],cfg['sequences'][f['sequence']],raw,image,method)
         dest=folder/f['sequence']/f"frame_{f['frame_index']:04d}";dest.mkdir(parents=True,exist_ok=False)
         measured.to_csv(dest/'centers.csv',index=False);np.savez_compressed(dest/'boundaries.npz',**points)

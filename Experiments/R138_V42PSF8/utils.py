@@ -1,6 +1,7 @@
 from pathlib import Path
 from datetime import datetime,timezone
 import hashlib,json,os,random,subprocess
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ROOT=Path(__file__).resolve().parent
 MODEL_NAME_BASE='R138-V42PSF8'
 def now():return datetime.now(timezone.utc).isoformat()
@@ -37,7 +38,7 @@ def verify_frozen(binding):
   if sha(ROOT/rel)!=h:raise RuntimeError('Frozen source changed: '+rel)
 def verify_protected():
  for item in load(ROOT/'config/protected_sources.json'):
-  if sha(item['path'])!=item['sha256']:raise RuntimeError('Protected source changed: '+item['path'])
+  if sha(str(PROJECT_ROOT / item['path']))!=item['sha256']:raise RuntimeError('Protected source changed: '+str(PROJECT_ROOT / item['path']))
 def verify_evaluation_sources():
  for rel,h in load(ROOT/'config/evaluation_manifest.json')['local_files'].items():
   if sha(ROOT/rel)!=h:raise RuntimeError('Frozen evaluation input changed: '+rel)

@@ -16,13 +16,14 @@ from typing import Any
 import cv2
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 WEIGHT_ROOT = ROOT / "weights" / "formal" / "seed_950041" / "R95_scratch_seed950041_20260813_003125" / "weights"
 REPORT_ROOT = ROOT / "reports" / "model_internal_analysis"
 REAL_ROOT = ROOT / "data" / "live_validation"
-SOURCE_ROOT = Path(r"D:\GMM_2_Final\Experiments\R93_RecoverableDetailSeparatedScratch\data\r93_formal")
+SOURCE_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal'))
 BRANCHES = ("radiometry", "nuisance", "local_contrast", "boundary", "texture")
 CONTROL_KEYS = (
     "need_radiometry", "need_noise", "need_local_contrast", "need_boundary", "need_texture",

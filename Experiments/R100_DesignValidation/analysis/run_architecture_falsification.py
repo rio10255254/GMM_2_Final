@@ -20,10 +20,11 @@ from typing import Any
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE = Path(r"D:\GMM_2_Final\Experiments\R92_PhysicalTransitionBalancedScratch\data\r92_formal")
+PACKAGE = Path(str(PROJECT_ROOT / 'Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal'))
 OUTPUT = ROOT / "results" / "architecture_falsification.json"
 CONTACT = ROOT / "results" / "target_adapter_contact.png"
 SEED = 100041

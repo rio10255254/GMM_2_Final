@@ -4,14 +4,14 @@
 Static helper tools are grouped under:
 
 ```text
-D:\GMM_2_Final\Tools\AutoTuneTerminal\
+Tools/AutoTuneTerminal
 ```
 
 根目錄只保留一個最常用入口：  
 The repo root keeps one common entry point:
 
 ```powershell
-D:\GMM_2_Final\OPEN_AUTOTUNE_MONITORS.cmd
+OPEN_AUTOTUNE_MONITORS.cmd
 ```
 
 它會同時打開：  
@@ -27,14 +27,14 @@ It opens the following together:
 If a background autotune / supervisor process is already running, you can run:
 
 ```powershell
-D:\GMM_2_Final\Tools\AutoTuneTerminal\WATCH_AUTOTUNE_STATUS.cmd
+Tools/AutoTuneTerminal/WATCH_AUTOTUNE_STATUS.cmd
 ```
 
 如果你想直接跳出一個獨立終端機視窗顯示前景狀態，可以執行：  
 If you want a separate foreground terminal window for status, run:
 
 ```powershell
-D:\GMM_2_Final\Tools\AutoTuneTerminal\OPEN_AUTOTUNE_STATUS_WINDOW.cmd
+Tools/AutoTuneTerminal/OPEN_AUTOTUNE_STATUS_WINDOW.cmd
 ```
 
 它會每 5 秒刷新一次，顯示：  
@@ -53,14 +53,14 @@ It refreshes every 5 seconds and shows:
 To watch the raw output of the currently running autotune / training process, run:
 
 ```powershell
-D:\GMM_2_Final\Tools\AutoTuneTerminal\WATCH_AUTOTUNE_OUTPUT.cmd
+Tools/AutoTuneTerminal/WATCH_AUTOTUNE_OUTPUT.cmd
 ```
 
 如果你想直接跳出一個獨立終端機視窗顯示原始輸出，可以執行：  
 If you want a separate foreground terminal window for raw output, run:
 
 ```powershell
-D:\GMM_2_Final\Tools\AutoTuneTerminal\OPEN_AUTOTUNE_OUTPUT_WINDOW.cmd
+Tools/AutoTuneTerminal/OPEN_AUTOTUNE_OUTPUT_WINDOW.cmd
 ```
 
 這個輸出視窗會根據 `000_AUTOTUNE_STATUS.json` 裡的 `active_out_log` 自動切到目前正在跑的 log，  
@@ -71,7 +71,7 @@ This output window follows the `active_out_log` field in `000_AUTOTUNE_STATUS.js
 If you do not want the screen to clear between refreshes, use:
 
 ```powershell
-python D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_AutoTuneStatusWatch.py --no-clear --interval-sec 5
+python Model/GeoEdgeAlignSR_v1_AutoTuneStatusWatch.py --no-clear --interval-sec 5
 ```
 
 ## 重要限制 / Important Limits

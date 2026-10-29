@@ -4,9 +4,10 @@ import numpy as np,pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-R=Path(r'D:\GMM_2_Final\Experiments\R130_Clean')
-OLD=Path(r'D:\GMM_2_Final\Deliverables\R129_Corrected_Corner9_Thesis_Handoff_20260920')
-P=Path(r'D:\GMM_2_Final\Deliverables\R130_Clean_Corrected_Corner9_Validation_Handoff_20260920')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+R=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean'))
+OLD=Path(str(PROJECT_ROOT / 'Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920'))
+P=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
 assert not P.exists(), 'Never overwrite a previous handoff'
 def sha(p):
  h=hashlib.sha256()
@@ -16,7 +17,7 @@ def sha(p):
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 locked=read(R/'config/source_lock.json');protected=read(R/'config/protected_sources.json')
 for rel,h in locked.items():assert sha(R/rel)==h,rel
-for x in protected:assert sha(Path(x['path']))==x['sha256'],x['path']
+for x in protected:assert sha(Path(PROJECT_ROOT / x['path']))==x['sha256'],str(PROJECT_ROOT / x['path'])
 P.mkdir(parents=True)
 sources=[]
 def write(rel,s):
@@ -279,6 +280,6 @@ for p in P.rglob('*.md'):
   assert (p.parent/target.split('#')[0]).exists(),(p,target)
 items=[dict(path=p.relative_to(P).as_posix(),bytes=p.stat().st_size,sha256=sha(p)) for p in sorted(P.rglob('*')) if p.is_file()]
 js('MANIFEST.json',items)
-for x in protected:assert sha(Path(x['path']))==x['sha256']
+for x in protected:assert sha(Path(PROJECT_ROOT / x['path']))==x['sha256']
 for rel,h in locked.items():assert sha(R/rel)==h
 print(json.dumps(dict(folder=str(P),files=len(items),size_MB=sum(x['bytes'] for x in items)/1024**2,source_copies=len(sources),geometry_max_error_nm=max(check)),ensure_ascii=False))

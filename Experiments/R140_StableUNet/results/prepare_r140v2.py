@@ -1,6 +1,7 @@
 from pathlib import Path
 import shutil,subprocess,json,hashlib
-R=Path(r'D:\GMM_2_Final\Experiments\R140_StableUNet');P=R.parent/'R140v2_StableUNet';repo=R.parents[1];assert not P.exists();P.mkdir()
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+R=Path(str(PROJECT_ROOT / 'Experiments/R140_StableUNet'));P=R.parent/'R140v2_StableUNet';repo=R.parents[1];assert not P.exists();P.mkdir()
 for d in ['config','optical','formal','scripts','reports','results','runs/launcher_logs','evaluation']:(P/d).mkdir(parents=True,exist_ok=True)
 files=['model.py','training_policy.py','utils.py','infer_model.py','evaluate_real_measurement.py','compare_measurements.py','final_audit.py','write_report.py','formal/train.py','formal/launch.py','formal/preflight.py','formal/closeout.py','formal/monitor.py','scripts/pilot.py','optical/feature.py','optical/__init__.py','config/measured_psf_bank.npz','config/INHERITED_PSF_PROVENANCE.json','config/TRAIN.json','config/model.json']
 for name in files:

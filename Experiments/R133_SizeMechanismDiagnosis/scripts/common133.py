@@ -42,7 +42,7 @@ def outputs(model,raw):
 
 def verify():
     previous.verify()
-    for r in load(ROOT/'config/protocol.json')['sources']:assert sha(r['path'])==r['sha256'],r['path']
+    for r in load(ROOT/'config/protocol.json')['sources']:assert sha(str(REPO / r['path']))==r['sha256'],str(REPO / r['path'])
 
 def disk_coverage(radius,phase,ss=8,n=256):
     # Same area-overlap quadrature as repaired R122, translated to a centered disk.

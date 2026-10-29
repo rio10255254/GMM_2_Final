@@ -9,6 +9,7 @@ from pathlib import Path
 
 from PIL import Image
 from docx import Document
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 PACKAGE = Path(__file__).resolve().parents[1]
@@ -24,8 +25,7 @@ SUPP_20X_TABLES = (
     / "tables"
 )
 PSF_PACKAGE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit')
 )
 PSF_TABLES = PSF_PACKAGE / "tables" / "center9_pillar_fit_20x_50x"
 PSF_FIGURES = PSF_PACKAGE / "figures" / "center9_pillar_fit_20x_50x"

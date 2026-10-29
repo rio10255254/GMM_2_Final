@@ -1,7 +1,7 @@
 # ROUND18_CENTERPUSH Checkpoint Audit Summary
 
 - best_candidate: r18_ec_highcenter
-- selected_checkpoint: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756/weights/best_tradeoff.pth.tar
 - selection_policy: center-lock checkpoint audit across 0.08/0.8/8.0 after 0.8px center-stability pre-rank
 
 | candidate | family | deploy | checkpoint |

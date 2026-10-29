@@ -4,6 +4,7 @@ from statistics import mean,stdev
 import json,hashlib,zipfile,io,re
 from lxml import etree
 import openpyxl,pymupdf
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'poster_final'
 PPTX=OUT/'IMPACT2026_MOSR_Design_TW0243_v3.pptx';PDF=PPTX.with_suffix('.pdf')
 NS={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main','c':'http://schemas.openxmlformats.org/drawingml/2006/chart'}
@@ -12,7 +13,7 @@ sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 d=load(ROOT/'results/separate_conditions/poster_data_30steps.json');b=load(ROOT/'poster_build/design_assets/measured_boundary.json')
 rec=load(ROOT/'poster_build/mosr_design_receipt_v3.json')
 assert rec['paperCode']=='TW0243' and not rec['fullArchitectureOrTrainingRecipeDisclosed'] and not rec['extraThirtyScanResultsDisclosed']
-assert sha(Path(b['source_npz']))==b['source_sha256'] and sha(Path(b['source_image']))==b['source_image_sha256']
+assert sha(Path(PROJECT_ROOT / b['source_npz']))==b['source_sha256'] and sha(Path(PROJECT_ROOT / b['source_image']))==b['source_image_sha256']
 assert sha(Path(b['image_path']))==b['image_sha256']
 for rel,h in d['source_hashes'].items():assert sha(ROOT/rel)==h
 for cohort in ['twenty','fifty']:

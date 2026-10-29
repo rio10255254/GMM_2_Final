@@ -2,8 +2,9 @@ from pathlib import Path
 import re
 import numpy as np
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
-root = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_table_only_20260728")
+root = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_tmp/oral_defense_table_only_20260728'))
 def ordered(folder):
     return sorted(folder.glob("*.PNG"), key=lambda p: int(re.search(r"\d+", p.stem).group()))
 

@@ -3,7 +3,7 @@
 - winner_candidate: r32_real_eq_finetune
 - selected_candidate: r32_real_eq_finetune
 - confirmed: True
-- selected_checkpoint: D:\GMM_2_Final\Experiments\R32Sandbox\artifacts\training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Experiments/R32Sandbox/artifacts/training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431/weights/best_tradeoff.pth.tar
 - macro_estimator: edge_band_refine
 - mid_center_ratio_min: 0.2500
 - mid_step_max: 0.4500

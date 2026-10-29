@@ -7,15 +7,16 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 THESIS_RESULTS = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS')
 )
-R109_ROOT = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
-R70_ROOT = Path(r"D:\GMM_2_Final\Experiments\R70_V42ACMContourSEMValidation")
+R109_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
+R70_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R70_V42ACMContourSEMValidation'))
 V42_GMF = ROOT / "external_gmf_v42"
 
 

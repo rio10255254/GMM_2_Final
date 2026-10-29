@@ -9,6 +9,7 @@ import subprocess
 import sys
 
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -65,9 +66,9 @@ def reconstruct() -> None:
     inference = CONFIG["inference"]
     command = [
         str(PYTHON),
-        inference["script"],
+        str(PROJECT_ROOT / inference["script"]),
         "--weights",
-        model["checkpoint"],
+        str(PROJECT_ROOT / model["checkpoint"]),
         "--input-dir",
         str(INPUT_DIR),
         "--recon-root",
@@ -81,7 +82,7 @@ def reconstruct() -> None:
         "--exts",
         ".bmp",
         "--psf-fitted-path",
-        model["psf_fitted_path"],
+        str(PROJECT_ROOT / model["psf_fitted_path"]),
         "--no-psf-from-ckpt",
         "--weak-psf-disable",
         "--psf-deconv-reg",

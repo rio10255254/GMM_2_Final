@@ -7,12 +7,13 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 EXPERIMENT_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = EXPERIMENT_DIR / "data" / "live_validation"
 R78_LOCKED_RAW = Path(
-    r"D:\GMM_2_Final\Experiments\R78_R75v2_BroadRealMicroscopeGeneralization"
+    str(PROJECT_ROOT / 'Experiments/R78_R75v2_BroadRealMicroscopeGeneralization')
 ) / "inputs" / "locked_raw"
 
 # The crops are fixed before training. They are never copied into src/lbl/geom,

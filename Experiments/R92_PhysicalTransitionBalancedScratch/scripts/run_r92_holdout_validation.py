@@ -14,6 +14,7 @@ from typing import Any
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,14 +51,14 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 
 def main() -> int:
     protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
-    results = Path(protocol["output_root"])
+    results = Path(PROJECT_ROOT / protocol["output_root"])
     output = results / "sealed_holdout_e80"
-    checkpoint = Path(protocol["checkpoint_root"]) / f"epoch_{EPOCH:03d}.pth.tar"
+    checkpoint = Path(PROJECT_ROOT / protocol["checkpoint_root"]) / f"epoch_{EPOCH:03d}.pth.tar"
     if sha256_file(checkpoint) != str(protocol["checkpoint_sha256"]).lower():
         raise RuntimeError("Checkpoint hash mismatch before holdout access")
-    if sha256_file(Path(protocol["model_file"])) != str(protocol["model_file_sha256"]).lower():
+    if sha256_file(Path(PROJECT_ROOT / protocol["model_file"])) != str(protocol["model_file_sha256"]).lower():
         raise RuntimeError("Model hash mismatch before holdout access")
-    if sha256_file(Path(protocol["training_summary"])) != str(protocol["training_summary_sha256"]).lower():
+    if sha256_file(Path(PROJECT_ROOT / protocol["training_summary"])) != str(protocol["training_summary_sha256"]).lower():
         raise RuntimeError("Training summary hash mismatch before holdout access")
 
     access_time = datetime.now().astimezone().isoformat()
@@ -81,7 +82,7 @@ def main() -> int:
         write_json(output / "holdout_access_record.json", access_record)
 
     arm = protocol["arms"]["sealed_holdout"]
-    package = Path(arm["package"])
+    package = Path(PROJECT_ROOT / arm["package"])
     seal_path = package / "SEALED.json"
     manifest_path = package / "manifest.json"
     audit_path = package / "audit.json"

@@ -23,12 +23,13 @@ import numpy as np
 import scipy.io
 import torch
 import torch.nn.functional as F
+_PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 # -----------------------------------------------------------------------------
 # Ensure local imports work
 # -----------------------------------------------------------------------------
-SCRIPT_DIR = Path(r"D:\GMM_2_Final\Model")
+SCRIPT_DIR = Path(str(_PROJECT_ROOT / 'Model'))
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.append(str(SCRIPT_DIR))
 
@@ -70,7 +71,7 @@ DEFAULT_ALIGN_FACTOR = 64
 MANUAL_SELECT_MODE = None
 # Set to a path string or Path(...) for hard override; set None to use CLI/auto search.
 # Example:
-# MANUAL_WEIGHTS_PATH = Path(r"D:\GMM_2_Final\Traing_Progress\training_progress_xxx\weights\latest.pth.tar")
+# MANUAL_WEIGHTS_PATH = Path(r"Traing_Progress/training_progress_xxx/weights/latest.pth.tar")
 MANUAL_WEIGHTS_PATH = None
 
 VALID_EXTS = {".bmp", ".png", ".tif", ".tiff", ".jpg", ".jpeg"}

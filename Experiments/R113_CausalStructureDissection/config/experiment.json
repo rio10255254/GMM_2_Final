@@ -4,28 +4,28 @@
   "scratch_only_if_authorized_by_probes": true,
   "models": {
     "V42_E120": {
-      "checkpoint": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
+      "checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
       "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
-      "loader": "D:/GMM_2_Final/Experiments/R111_R109V42ThesisReplacementQualification/scripts/build_v42_external_gmf.py"
+      "loader": "Experiments/R111_R109V42ThesisReplacementQualification/scripts/build_v42_external_gmf.py"
     },
     "R61_v16": {
-      "checkpoint": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+      "checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
       "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
-      "inference_script": "D:/GMM_2_Final/Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py"
+      "inference_script": "Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py"
     },
     "R109_E48": {
-      "checkpoint": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
+      "checkpoint": "Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
       "sha256": "77ff8611e764e1350d60592f5d8a25d6786db17897eadce189185cdc4dbc87fc",
-      "model_root": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch"
+      "model_root": "Experiments/R109_StagedMidpointWidthScratch"
     }
   },
   "reference_experiments": {
-    "r112": "D:/GMM_2_Final/Experiments/R112_V42R109GMFMechanismDecomposition",
-    "r111": "D:/GMM_2_Final/Experiments/R111_R109V42ThesisReplacementQualification",
-    "r109": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch",
-    "r67": "D:/GMM_2_Final/Experiments/R67_UniversalModelGeneralization",
-    "r69": "D:/GMM_2_Final/Experiments/R69_ACMContourSEMValidation",
-    "r70": "D:/GMM_2_Final/Experiments/R70_V42ACMContourSEMValidation"
+    "r112": "Experiments/R112_V42R109GMFMechanismDecomposition",
+    "r111": "Experiments/R111_R109V42ThesisReplacementQualification",
+    "r109": "Experiments/R109_StagedMidpointWidthScratch",
+    "r67": "Experiments/R67_UniversalModelGeneralization",
+    "r69": "Experiments/R69_ACMContourSEMValidation",
+    "r70": "Experiments/R70_V42ACMContourSEMValidation"
   },
   "metric_priority": [
     "synthetic_known_contour",

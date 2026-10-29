@@ -13,6 +13,6 @@
 
 ## 原件
 
-`D:\GMM_2_Final\Experiments\R127_MeasurementPreservationRepair`
+`Experiments/R127_MeasurementPreservationRepair`
 
 大型重建影像、訓練payload或重複權重若未複製，請讀全包根目錄的 `SOURCE_POINTERS.csv`。本包的評論集中於 `05_Cross_Round_Analysis/`，此處保留原證據。

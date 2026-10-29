@@ -30,9 +30,10 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from skimage.morphology import skeletonize
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-REPO_ROOT = Path("D:/GMM_2_Final")
+REPO_ROOT = Path(str(PROJECT_ROOT))
 RAYLEIGH_PX = 11.7
 GT_THRESH = 50
 

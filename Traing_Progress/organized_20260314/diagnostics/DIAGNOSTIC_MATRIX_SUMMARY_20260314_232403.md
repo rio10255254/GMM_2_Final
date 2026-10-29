@@ -1,6 +1,6 @@
 # Diagnostic Matrix Summary
 - generated_at: 2026-03-14 23:24:03
-- weights_path: `D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756\weights\best_tradeoff.pth.tar`
+- weights_path: `Traing_Progress/organized_20260313/round18/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756/weights/best_tradeoff.pth.tar`
 - truth_source: generator_replay
 - recommended_branch: **Branch E**
 - rationale: Current estimators already fail on clean/convolved against generator truth, so estimator alignment must be fixed first.

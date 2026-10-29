@@ -33,6 +33,6 @@ def module(name,path):
     spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);sys.modules[name]=m;spec.loader.exec_module(m);return m
 def verify():
     for r in load(ROOT/'config/plan.json')['protected']:
-        if sha(r['path'])!=r['sha256']:raise RuntimeError('Protected source changed: '+r['path'])
+        if sha(str(REPO / r['path']))!=r['sha256']:raise RuntimeError('Protected source changed: '+str(REPO / r['path']))
 def guard(x,v,width):
     h,w=x.shape[-2:];yy=torch.arange(h,device=x.device)[:,None];xx=torch.arange(w,device=x.device)[None,:];d=torch.minimum(torch.minimum(yy,h-1-yy),torch.minimum(xx,w-1-xx)).float();return x+(v-x)*((d-width)/16).clamp(0,1)

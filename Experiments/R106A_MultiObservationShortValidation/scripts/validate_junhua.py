@@ -9,12 +9,13 @@ import cv2
 import numpy as np
 import torch
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RUN_SHORT = ROOT / "scripts" / "run_short.py"
 R105C = ROOT.parent / "R105C_JunHuaMultiObservationFeasibility"
-SOURCE = Path(r"D:\NTU_ImageDataset\Pitch1um_Y_100\Raw")
+SOURCE = Path(str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/Raw'))
 RESULTS = ROOT / "results"
 REPORTS = ROOT / "reports"
 SCALE = 5

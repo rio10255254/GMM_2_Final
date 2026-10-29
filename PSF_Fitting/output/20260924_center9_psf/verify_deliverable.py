@@ -10,10 +10,11 @@ from pathlib import Path
 import cv2
 import numpy as np
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parent
-PROJECT = Path(r"D:\GMM_2_Final")
+PROJECT = Path(str(PROJECT_ROOT))
 
 
 def read_csv(path):

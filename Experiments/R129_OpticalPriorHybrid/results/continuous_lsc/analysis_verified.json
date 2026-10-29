@@ -1,16 +1,16 @@
 {
   "completed_utc": "2026-09-13T13:36:09.540208+00:00",
   "source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\audit_continuous_lsc.py",
+    "path": "Experiments/R129_OpticalPriorHybrid/scripts/audit_continuous_lsc.py",
     "sha256": "95c6bbbee925526185ec3a50d8cfe45f974459c647494e81c1b92a58c918373f"
   },
   "plan": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\plan.json",
-    "sha256": "ada63da7a81fb1755349d9402601718777534ffe224c541cc7c07b4e5b3e42d3"
+    "path": "Experiments/R129_OpticalPriorHybrid/results/continuous_lsc/plan.json",
+    "sha256": "dbad889d6e0805783fedd6efd1d871ebed91a7abb1f893aea11cdf5f11922793"
   },
   "inference": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\inference_complete.json",
-    "sha256": "0e3d84fb5b9c34c32a8c3cd6c624375f2969ebd4d49256d93246b0a62ccf746e"
+    "path": "Experiments/R129_OpticalPriorHybrid/results/continuous_lsc/inference_complete.json",
+    "sha256": "40ad9f791314f949d177f6d936d1b65ba993e251866beabe9ff4e6df6c1dc06f"
   },
   "independent_circle_refits": 3618,
   "max_refit_difference_px": 3.9508461213699775e-06,
@@ -22,11 +22,11 @@
   "repositioning_pairs_per_method": 3,
   "all_original_sources_unchanged": true,
   "summary": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\comparison_summary.csv",
+    "path": "Experiments/R129_OpticalPriorHybrid/results/continuous_lsc/comparison_summary.csv",
     "sha256": "f8c29bf0d917466aed2cc630136503c37ec234822f8389d837edf82a85cbf066"
   },
   "pair_changes": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\paired_changes.csv",
+    "path": "Experiments/R129_OpticalPriorHybrid/results/continuous_lsc/paired_changes.csv",
     "sha256": "b5926b4da87eb88a93e01ccb1de7b7375687ad21d43cafc3c13e5b26de992d7c"
   },
   "largest_regressions": [

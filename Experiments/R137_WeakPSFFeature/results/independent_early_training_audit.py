@@ -1,6 +1,7 @@
 from pathlib import Path
 import json,hashlib,torch
-P=Path(r'D:\GMM_2_Final\Experiments\R137_WeakPSFFeature');R=P.parent/'R130_Clean';torch.set_num_threads(2)
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+P=Path(str(PROJECT_ROOT / 'Experiments/R137_WeakPSFFeature'));R=P.parent/'R130_Clean';torch.set_num_threads(2)
 cpinfo=json.loads((P/'runs/formal_8192/latest_checkpoint.json').read_text());cp=torch.load(cpinfo['path'],map_location='cpu',weights_only=False)
 assert hashlib.sha256(Path(cpinfo['path']).read_bytes()).hexdigest()==cpinfo['sha256']
 assert cp['model_name']=='R137-WeakPSF' and cp['optical_mode']=='feature_single' and cp['config']['model']['optical_gain']==.02

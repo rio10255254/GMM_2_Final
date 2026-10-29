@@ -15,13 +15,14 @@ from audit_loss_gradients import (
     CONFIG, DEVICE, WEIGHTS, build_model, choose_records, flatten_items,
     gradient_vectors, loss_components, parameter_groups, cosine,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 def main() -> int:
     selected = choose_records()
     records = [selected[name][0] for name in ("standard", "boundary_fade", "mixed_hard")]
     model = build_model().to(DEVICE)
-    model.load_state_dict(torch.load(Path(CONFIG["sources"]["r109_checkpoint"]), map_location=DEVICE, weights_only=False)["model"])
+    model.load_state_dict(torch.load(Path(PROJECT_ROOT / CONFIG["sources"]["r109_checkpoint"]), map_location=DEVICE, weights_only=False)["model"])
     model.eval()
     for parameter in model.parameters():
         parameter.requires_grad_(True)

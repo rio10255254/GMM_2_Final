@@ -6,9 +6,10 @@ function Invoke-CodexPinnedHome {
         [Parameter(ValueFromRemainingArguments = $true)]
         [string[]]$Args
     )
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 
     $codexCmd = 'C:\Users\Rio\AppData\Roaming\npm\codex.cmd'
-    $invokeScript = 'D:\GMM_2_Final\Tools\Invoke-CodexWithHome.ps1'
+    $invokeScript = (Join-Path $ProjectRoot 'Tools\Invoke-CodexWithHome.ps1')
 
     if (-not (Test-Path -LiteralPath $invokeScript)) {
         throw "Codex home wrapper not found: $invokeScript"
@@ -48,7 +49,7 @@ function codex-openai {
 }
 
 function codex-status {
-    $statusScript = 'D:\GMM_2_Final\Tools\Get-CodexHomeStatus.ps1'
+    $statusScript = (Join-Path $ProjectRoot 'Tools\Get-CodexHomeStatus.ps1')
     if (-not (Test-Path -LiteralPath $statusScript)) {
         throw "Codex status helper not found: $statusScript"
     }

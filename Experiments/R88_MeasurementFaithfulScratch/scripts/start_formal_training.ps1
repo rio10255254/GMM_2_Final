@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $PSScriptRoot
-$Python = 'C:\Users\Rio\anaconda3\python.exe'
+$Python = python
 $LogDir = Join-Path $Root 'runs\launcher_logs'
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 $Stamp = Get-Date -Format 'yyyyMMdd_HHmmss'

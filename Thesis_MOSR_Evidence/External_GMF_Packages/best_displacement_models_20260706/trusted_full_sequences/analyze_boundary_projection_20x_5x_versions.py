@@ -12,12 +12,13 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "boundary_projection_analysis_20x_5x_raw_v28_v31_v35_v41_20260706"
 MANUAL_ROI_ROOT = (
-    Path("D:/GMM_2_Final/Thesis_MOSR_Evidence")
+    Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
     / "Displacement_3Mag_ManualRun_20260705"
     / "manual_roi_runs"
 )

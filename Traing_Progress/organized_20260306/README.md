@@ -33,7 +33,7 @@
 目前預設路徑是：
 
 ```text
-D:\GMM_2_Final\Traing_Progress\organized_20260306\selected\runs\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332\weights\best_tradeoff.pth.tar
+Traing_Progress/organized_20260306/selected/runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332/weights/best_tradeoff.pth.tar
 ```
 
 如果你未來要改成其他權重，直接修改 `MANUAL_WEIGHTS_PATH` 即可。

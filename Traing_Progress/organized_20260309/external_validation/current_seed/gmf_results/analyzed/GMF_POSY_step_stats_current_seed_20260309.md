@@ -1,7 +1,7 @@
 # GMF POSY 步長統計 2026-03-09
 
-- source file: `D:\GMM_2_Final\Traing_Progress\organized_20260307\external_validation\current_seed\gmf_results\GMF_score.txt`
-- raw copy: `D:\GMM_2_Final\Traing_Progress\organized_20260307\external_validation\current_seed\gmf_results\raw\GMF_score.txt`
+- source file: `Traing_Progress/organized_20260307/external_validation/current_seed/gmf_results/GMF_score.txt`
+- raw copy: `Traing_Progress/organized_20260307/external_validation/current_seed/gmf_results/raw/GMF_score.txt`
 - 位置點數: `100`
 - 步長數: `99`
 - 步長定義: `step_i = POSY(i) - POSY(i+1)`

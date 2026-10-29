@@ -14,13 +14,14 @@ import re
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "results" / "counterfactual_full_101"
 OUTPUT = ROOT / "results" / "counterfactual_analysis"
 RAW_SCORE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\Pitch1um_Y_100_Raw_Even_R109E48\_gmf_scores\pitch1um_y100_raw\GMF_score.txt"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/_gmf_scores/pitch1um_y100_raw/GMF_score.txt')
 )
 VARIANTS = (
     "r109_current",

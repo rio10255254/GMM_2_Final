@@ -5,10 +5,10 @@
   "camera": "Basler ace acA2040-120um",
   "nm_per_px": 69.0,
   "pitch_nm": 5000.0,
-  "microscope_image": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\20260618_100MG\\Image__2026-06-18__17-10-31.bmp",
-  "template_csv": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20260618_100MG_user_recon\\cd_measurement_20260620_basler_ace\\cd_measurement_per_feature_basler_50x.csv",
+  "microscope_image": "Thesis_MOSR_Evidence/20260618_100MG/Image__2026-06-18__17-10-31.bmp",
+  "template_csv": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260618_100MG_user_recon/cd_measurement_20260620_basler_ace/cd_measurement_per_feature_basler_50x.csv",
   "template_image_label": "原圖",
-  "sem_reference_csv": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Reconstruct_Progress\\20260618_100MG_user_recon\\cd_measurement_20260620_basler_ace\\sem_reference_36_radius.csv",
+  "sem_reference_csv": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260618_100MG_user_recon/cd_measurement_20260620_basler_ace/sem_reference_36_radius.csv",
   "sem_radius_mean_nm": {
     "pillar": 1321.8820022050588,
     "via": 1641.9986465187549
@@ -41804,7 +41804,7 @@
   ],
   "geometry_sidecars": true,
   "geometry_count": 1876,
-  "geom_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r60_sem_truth_boundary\\hs100mg_basler\\r60_sem_truth_realcrop_anchor_train\\geom",
+  "geom_dir": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r60_sem_truth_boundary/hs100mg_basler/r60_sem_truth_realcrop_anchor_train/geom",
   "forbidden_same_sample_posthoc_calibration": true,
   "generator": "prepare_r60_sem_truth_dataset_v1",
   "generated_at": "2026-06-22T00:50:15"

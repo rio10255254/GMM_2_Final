@@ -4,8 +4,9 @@ import argparse, hashlib, json
 from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-ROOT=Path(__file__).resolve().parents[1];SOURCE=Path(r'D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/data/confirmation/manifest.json')
+ROOT=Path(__file__).resolve().parents[1];SOURCE=Path(str(PROJECT_ROOT / 'Experiments/R118_PhysicalCoordinateRepairScratch/data/confirmation/manifest.json'))
 def sha(p):
  h=hashlib.sha256();
  with Path(p).open('rb') as f:

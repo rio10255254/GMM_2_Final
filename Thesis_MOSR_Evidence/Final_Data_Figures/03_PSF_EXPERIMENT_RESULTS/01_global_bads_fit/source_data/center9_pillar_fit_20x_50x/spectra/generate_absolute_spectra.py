@@ -7,11 +7,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
 
 PACKAGE_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit')
 )
 FIGURE_ROOT = PACKAGE_ROOT / "figures" / "center9_pillar_fit_20x_50x"
 SOURCE_ROOT = Path(__file__).resolve().parent
@@ -170,7 +170,7 @@ def main() -> None:
             "captured_dbfs_max": float(np.max(captured_dbfs)),
             "v42_dbfs_min": float(np.min(v42_dbfs)),
             "v42_dbfs_max": float(np.max(v42_dbfs)),
-            "wiener_source": str(wiener_path),
+            "wiener_source": wiener_path.relative_to(PROJECT_ROOT).as_posix(),
             "wiener_array": "restored",
             "wiener_nsr": wiener_nsr,
             "wiener_full_scale_reference": 1.0,

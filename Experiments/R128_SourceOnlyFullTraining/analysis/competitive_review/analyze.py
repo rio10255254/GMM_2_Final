@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 from scipy import ndimage
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 def shift_mask(mask, dx, dy):
@@ -38,7 +39,7 @@ def main():
     plan = load(out/'plan.json')
     prepared = load(out/'preparation.json')
     assert sha(prepared['inputs']['path']) == prepared['inputs']['sha256']
-    assert all(sha(x['path']) == x['sha256'] for x in plan['sources'].values())
+    assert all(sha(str(PROJECT_ROOT / x['path'])) == x['sha256'] for x in plan['sources'].values())
     d = loadmat(out/'inputs.mat')
     t = pd.read_csv(out/'measurements.csv')
     methods, refs = plan['methods'], plan['references']
@@ -70,7 +71,7 @@ def main():
         additional.append(dict(zip(keys, [row.reference, row.exposure, row.pillar, row.method]), **values))
     independent = pd.DataFrame(additional)
     t = t.merge(independent[keys+['maximum_boundary_px']], on=keys, validate='one_to_one')
-    old_r128 = pd.read_csv(plan['sources']['R128_measurements']['path'])
+    old_r128 = pd.read_csv(str(PROJECT_ROOT / plan['sources']['R128_measurements']['path']))
     old_r128 = old_r128[(old_r128.preset == 'primary') & old_r128.method.isin(['Raw', 'R128_PNG'])].copy()
     old_r128['method'] = old_r128.method.replace({'R128_PNG': 'R128_P_s1285002'})
     old_compare = t.merge(old_r128, on=keys, suffixes=('', '_previous'), validate='one_to_one')
@@ -102,8 +103,8 @@ def main():
     by_exposure = t.groupby(['reference', 'exposure', 'method'], as_index=False)[metrics].median()
     worst_local = t.groupby(['reference', 'method'], as_index=False)['maximum_boundary_px'].max()
 
-    lsc = pd.read_csv(plan['sources']['LSC_pairs']['path'])
-    reported = pd.read_csv(plan['sources']['LSC_summary']['path'])
+    lsc = pd.read_csv(str(PROJECT_ROOT / plan['sources']['LSC_pairs']['path']))
+    reported = pd.read_csv(str(PROJECT_ROOT / plan['sources']['LSC_summary']['path']))
     pair_keys = ['sequence', 'pair_rank_raw_locked', 'start_frame_index', 'end_frame_index']
     assert not lsc.duplicated(pair_keys+['method']).any()
     locked = set(map(tuple, lsc[lsc.method == 'Raw'][pair_keys].to_numpy()))
@@ -140,7 +141,7 @@ def main():
         all_Raw_derived_shifts_independently_verified=True, no_shift_clipping=True,
         same_120_LSC_pairs_for_all_five_historical_methods=True, historical_LSC_summary_max_differences=lsc_diffs,
         R128_formal_LSC_measured=False, no_new_inference_or_training=True, no_new_confirmation=True,
-        sources_unchanged=all(sha(x['path']) == x['sha256'] for x in plan['sources'].values()),
+        sources_unchanged=all(sha(str(PROJECT_ROOT / x['path'])) == x['sha256'] for x in plan['sources'].values()),
         plan=record(out/'plan.json'), inputs=record(out/'inputs.mat'), measurements=record(out/'measurements.csv'), analysis=record(__file__)))
     print(summary[summary.scope == 'all_36'].to_string(index=False))
     print('\nLSC summaries independently reproduced:')

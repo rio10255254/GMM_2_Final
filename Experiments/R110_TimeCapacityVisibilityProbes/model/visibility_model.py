@@ -6,7 +6,8 @@ from pathlib import Path
 import torch
 import torch.nn.functional as F
 from torch import nn
-R109=Path(r'D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch');sys.path.insert(0,str(R109/'model'));import r109_model as base
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+R109=Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'));sys.path.insert(0,str(R109/'model'));import r109_model as base
 @dataclass
 class VisibilityDetails:
  output:torch.Tensor;delta:torch.Tensor;boundary_logits:torch.Tensor;boundary:torch.Tensor;necessity:torch.Tensor;support:torch.Tensor;width_gain:torch.Tensor;normal_shift:torch.Tensor;flow:torch.Tensor;visibility_gain:torch.Tensor

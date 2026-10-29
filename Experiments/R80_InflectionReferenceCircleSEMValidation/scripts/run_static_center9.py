@@ -31,15 +31,15 @@ from reference_circle_core import (  # noqa: E402
     measure_boundary_and_circles,
     summarize_reference_circles,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 PSF_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit')
 )
 FIGURE_ROOT = PSF_ROOT / "figures" / "center9_pillar_fit_20x_50x"
 SOURCE_ROOT = PSF_ROOT / "source_data" / "center9_pillar_fit_20x_50x" / "psf_deconvolution_cd"
-SWEEP_ROOT = Path(r"D:\GMM_2_Final\PSF_Fitting\tests\artifacts\cd_verification_20260714")
+SWEEP_ROOT = Path(str(PROJECT_ROOT / 'PSF_Fitting/tests/artifacts/cd_verification_20260714'))
 SEM_TABLE = PSF_ROOT / "tables" / "center9_pillar_fit_20x_50x" / "cd_before_after_per_pillar.csv"
 
 NSR = 0.0565

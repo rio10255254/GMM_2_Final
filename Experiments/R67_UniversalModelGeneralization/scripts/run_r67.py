@@ -13,6 +13,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,12 +21,10 @@ CONFIG = ROOT / "config"
 RESULTS = ROOT / "results"
 REPORT = ROOT / "reports" / "R67_RESULTS.md"
 SOURCE_SCRIPTS = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\modern_baseline_three_morphology_20260719\source_scripts"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/modern_baseline_three_morphology_20260719/source_scripts')
 )
 SOURCE_MANIFEST = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\modern_baseline_three_morphology_20260719\source_manifest.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/modern_baseline_three_morphology_20260719/source_manifest.json')
 )
 
 
@@ -42,14 +41,14 @@ def validate_inputs() -> tuple[dict, dict]:
     scenes = read_json(CONFIG / "phase_a_scenes.json")
     missing: list[str] = []
     for name, item in roster["models"].items():
-        checkpoint = Path(item["checkpoint"])
-        script = Path(item.get("inference_script", roster["default_inference_script"]))
+        checkpoint = Path(PROJECT_ROOT / item["checkpoint"])
+        script = Path(PROJECT_ROOT / item.get("inference_script", roster["default_inference_script"]))
         if not checkpoint.is_file():
             missing.append(f"{name} checkpoint: {checkpoint}")
         if not script.is_file():
             missing.append(f"{name} inference: {script}")
     for name, item in scenes["sequences"].items():
-        directory = Path(item["raw_dir"])
+        directory = Path(PROJECT_ROOT / item["raw_dir"])
         count = len(image_files(directory))
         if count != int(item["frame_count"]):
             missing.append(f"{name}: expected {item['frame_count']} frames, found {count}")
@@ -92,11 +91,11 @@ def run_reconstruction(model: str, model_info: dict, roster: dict, sequence: str
         return {"model": model, "sequence": sequence, "status": "reused", "frames": expected, "output": str(canonical)}
     run_root = RESULTS / "inference_runs" / model / sequence
     run_root.mkdir(parents=True, exist_ok=True)
-    script = Path(model_info.get("inference_script", roster["default_inference_script"]))
+    script = Path(PROJECT_ROOT / model_info.get("inference_script", roster["default_inference_script"]))
     command = [
         roster["python"], str(script),
-        "--weights", model_info["checkpoint"],
-        "--input-dir", scene["raw_dir"],
+        "--weights", str(PROJECT_ROOT / model_info["checkpoint"]),
+        "--input-dir", str(PROJECT_ROOT / scene["raw_dir"]),
         "--recon-root", str(run_root),
         "--output-name", sequence,
         "--device", "cuda:0",
@@ -146,11 +145,11 @@ def build_evaluation_manifest(roster: dict, scenes: dict) -> Path:
         "claim_scope": "Phase A only; development-domain evidence, not independent universal validation",
         "methods": methods,
         "sequence_name_map": mapping,
-        "pillar_config": source["pillar_config"],
-        "via_config": source["via_config"],
-        "sem_workbook": source["sem_workbook"],
-        "top30_selection": source["top30_selection"],
-        "line_reference": source["line_reference"],
+        "pillar_config": str(PROJECT_ROOT / source["pillar_config"]),
+        "via_config": str(PROJECT_ROOT / source["via_config"]),
+        "sem_workbook": str(PROJECT_ROOT / source["sem_workbook"]),
+        "top30_selection": str(PROJECT_ROOT / source["top30_selection"]),
+        "line_reference": str(PROJECT_ROOT / source["line_reference"]),
     }
     path = CONFIG / "evaluation_manifest.generated.json"
     path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")

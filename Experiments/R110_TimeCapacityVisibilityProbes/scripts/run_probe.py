@@ -4,8 +4,9 @@ import argparse,hashlib,importlib.util,json,math,random,sys,time
 from pathlib import Path
 import cv2,numpy as np,pandas as pd,torch
 import torch.nn.functional as F
-ROOT=Path(__file__).resolve().parents[1];R109=Path(r'D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch');sys.path.insert(0,str(R109/'model'));sys.path.insert(0,str(R109/'training'));sys.path.insert(0,str(ROOT/'model'));import r109_model as base;import r109_dataset as data_module;import losses;import train as rtrain;from visibility_model import build_model as build_visibility
-CONFIG=json.loads((ROOT/'config/experiment.json').read_text(encoding='utf-8'));HELPER=Path(r'D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\scripts\evaluate_real_holdout.py');REAL=[Path(r'D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\5x_dense_raw.bmp'),Path(r'D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\20x_mixed_raw.bmp'),Path(r'D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\50x_array_raw.bmp'),Path(r'D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\pillar_center9_50x_raw.bmp')]
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];R109=Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'));sys.path.insert(0,str(R109/'model'));sys.path.insert(0,str(R109/'training'));sys.path.insert(0,str(ROOT/'model'));import r109_model as base;import r109_dataset as data_module;import losses;import train as rtrain;from visibility_model import build_model as build_visibility
+CONFIG=json.loads((ROOT/'config/experiment.json').read_text(encoding='utf-8'));HELPER=Path(str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/scripts/evaluate_real_holdout.py'));REAL=[Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/5x_dense_raw.bmp')),Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/20x_mixed_raw.bmp')),Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/50x_array_raw.bmp')),Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/pillar_center9_50x_raw.bmp'))]
 def load(name,path):spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module);return module
 helper=load('r110_appearance_helper',HELPER)
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -59,7 +60,7 @@ def run(variant):
  output.mkdir(parents=True);device=torch.device('cuda:0');visibility=variant=='visibility';continuation=variant=='continuation';seed_all(1101001 if continuation else 1102001 if variant=='capacity64' else 1103001)
  if variant=='capacity64':base.MCFG['base_channels']=64;model=base.build_model().to(device)
  elif visibility:model=build_visibility().to(device)
- else:model=base.build_model().to(device);checkpoint=Path(CONFIG['r109_selected_checkpoint']);
+ else:model=base.build_model().to(device);checkpoint=Path(PROJECT_ROOT / CONFIG['r109_selected_checkpoint']);
  if continuation:
   if sha(checkpoint)!=CONFIG['r109_selected_sha256']:raise RuntimeError('R109 selected hash mismatch')
   model.load_state_dict(torch.load(checkpoint,map_location=device,weights_only=False)['model'])
@@ -98,7 +99,7 @@ def run(variant):
    row['validation_visibility_gain_mean']=float(torch.stack(visibility_values).mean())
   history.append(row);(output/'training_history.json').write_text(json.dumps(history,indent=2),encoding='utf-8');rtrain.save_preview(output/'previews'/f'probe_{position:02d}.png',previews);print(json.dumps(row),flush=True)
   if continuation and position in (4,8) or not continuation and position==len(schedule):
-   path=output/'weights'/('E052.pth' if continuation and position==4 else 'E056.pth' if continuation else f'{variant}_final.pth');path.parent.mkdir(parents=True,exist_ok=True);torch.save({'model':model.state_dict(),'variant':variant,'probe_epoch':position,'source_checkpoint':str(CONFIG['r109_selected_checkpoint']) if continuation else None},path)
+   path=output/'weights'/('E052.pth' if continuation and position==4 else 'E056.pth' if continuation else f'{variant}_final.pth');path.parent.mkdir(parents=True,exist_ok=True);torch.save({'model':model.state_dict(),'variant':variant,'probe_epoch':position,'source_checkpoint':str(str(PROJECT_ROOT / CONFIG['r109_selected_checkpoint'])) if continuation else None},path)
  final_checkpoint=output/'weights'/('E056.pth' if continuation else f'{variant}_final.pth');audit=evaluate_real_and_tile(model,device,output);challenge=per_challenge(model,device,visibility);summary={'status':'complete','variant':variant,'checkpoint':str(final_checkpoint),'checkpoint_sha256':sha(final_checkpoint),'elapsed_seconds':time.perf_counter()-started,'history':history,'audit':audit,'per_challenge':challenge,'training_pixels':'procedural only','inherited_weight':continuation,'formal_candidate':False};(output/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8');print(json.dumps({'status':'complete','variant':variant,'checkpoint':str(final_checkpoint)}),flush=True);return 0
 def main():parser=argparse.ArgumentParser();parser.add_argument('--variant',choices=['continuation','capacity64','visibility'],required=True);return run(parser.parse_args().variant)
 if __name__=='__main__':raise SystemExit(main())

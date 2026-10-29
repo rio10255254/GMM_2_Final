@@ -7,6 +7,7 @@ from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.shared import Emu
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 SOURCE = Path(
@@ -18,8 +19,7 @@ OUTPUT = Path(
     r"\論文完整版_20260716_v23_消融位移完整英文圖版.docx"
 )
 FIGURE_DIR = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\09_V23_ABLATION_COMPLETE_ENGLISH_20260727\figures"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/09_V23_ABLATION_COMPLETE_ENGLISH_20260727/figures')
 )
 FIGURE_WIDTH_EMU = 5_256_000
 

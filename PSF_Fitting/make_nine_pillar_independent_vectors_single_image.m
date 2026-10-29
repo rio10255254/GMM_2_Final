@@ -1,9 +1,10 @@
+PROJECT_ROOT = fileparts(fileparts(mfilename('fullpath')));
 %% Single-image schematic: nine independently estimated displacement vectors.
 
 clear; close all; clc;
 
-sourcePath = 'D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp\frame_0000.bmp';
-outputDir = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Slide_Assets\Nine_Pillar_Displacement_Dispersion';
+sourcePath = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
+outputDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Slide_Assets/Nine_Pillar_Displacement_Dispersion');
 if ~exist(outputDir, 'dir')
     mkdir(outputDir);
 end

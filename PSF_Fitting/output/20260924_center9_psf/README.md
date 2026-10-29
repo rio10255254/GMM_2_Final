@@ -2,19 +2,19 @@
 
 ## Programs actually used
 
-- Organizer for these 25 captures: `D:\GMM_2_Final\PSF_Fitting\output\20260924_center9_psf\run_20260924_center9.m`.
-- Existing nine-pillar crop and SEM target builder: `D:\GMM_2_Final\PSF_Fitting\build_center_9pillar_fit_pair.m`.
-- Existing fit entry: `D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\scripts\HDR_fitting_2D_WholeFOV_reasonable_v1.m`.
-- Its optimizer implementation: `D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\scripts\HDR_fitting_2D_WholeFOV_candidate_prealign.m`.
-- BADS function called by that implementation: `D:\GMM_2_Final\PSF_Fitting\bads-1.1.3\bads.m`.
+- Organizer for these 25 captures: `PSF_Fitting/output/20260924_center9_psf/run_20260924_center9.m`.
+- Existing nine-pillar crop and SEM target builder: `PSF_Fitting/build_center_9pillar_fit_pair.m`.
+- Existing fit entry: `PSF_Fitting/PSF_Fitting_ValidationLab/scripts/HDR_fitting_2D_WholeFOV_reasonable_v1.m`.
+- Its optimizer implementation: `PSF_Fitting/PSF_Fitting_ValidationLab/scripts/HDR_fitting_2D_WholeFOV_candidate_prealign.m`.
+- BADS function called by that implementation: `PSF_Fitting/bads-1.1.3/bads.m`.
 
 The actual fit uses 301×301 images assembled from nine local pillar patches, not the whole 2064×1544 camera frame. The named `aberration_bound_scale` option was added to the existing fit scripts while preserving their default at 1.
 
 ## Confirming these are P pillars and the correct nine identities
 
-The P-pillar values come from `D:\GMM_2_Final\Thesis_MOSR_Evidence\SEM_data\via_pilar.xlsx`, worksheet `SEM data`, cells `J8:L10`. The 36-pillar numbering and source TIFFs are in `D:\GMM_2_Final\Thesis_MOSR_Evidence\SEM_data\ordering_result_20260729\SEM_center36_file_mapping.csv`. The original `H:\From_2TB_D_disk\13_thesis\matlab\ch4\SEMdataset\SEM2img_v2.m` pairs P SEM files with dark optical circles and V SEM files with bright optical circles. Thus the dark circles on a bright field in these photos are the P pillars used here; the bright circles on a dark field are vias and were excluded.
+The P-pillar values come from `Thesis_MOSR_Evidence/SEM_data/via_pilar.xlsx`, worksheet `SEM data`, cells `J8:L10`. The 36-pillar numbering and source TIFFs are in `Thesis_MOSR_Evidence/SEM_data/ordering_result_20260729/SEM_center36_file_mapping.csv`. The original `Shared_Sources/SEM_Originals/legacy_pairing/SEM2img_v2.m` pairs P SEM files with dark optical circles and V SEM files with bright optical circles. Thus the dark circles on a bright field in these photos are the P pillars used here; the bright circles on a dark field are vias and were excluded.
 
-The current locked 20× source `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\01_CURRENT_THESIS_RESULTS_V42_CENTER9\config\sequence_center9_50x20x.json` lists these pillars in image row order:
+The current locked 20× source `Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json` lists these pillars in image row order:
 
 | Image row | Left | Middle | Right |
 |---|---:|---:|---:|

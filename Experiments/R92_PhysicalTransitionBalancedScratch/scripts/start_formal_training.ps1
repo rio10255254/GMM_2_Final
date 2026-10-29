@@ -1,5 +1,5 @@
 param(
-    [string]$Python = "C:\Users\Rio\anaconda3\python.exe",
+    [string]$Python = python,
     [int]$Workers = 4
 )
 

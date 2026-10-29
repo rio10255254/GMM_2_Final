@@ -11,11 +11,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-R109 = Path(CONFIG["sources"]["r109_root"])
+R109 = Path(PROJECT_ROOT / CONFIG["sources"]["r109_root"])
 OUTPUT = ROOT / "results" / "loss_gradients"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(R109 / "model"))
@@ -233,7 +234,7 @@ def main() -> int:
     torch.manual_seed(113900)
     selected = choose_records()
     model = build_model().to(DEVICE)
-    payload = torch.load(Path(CONFIG["sources"]["r109_checkpoint"]), map_location=DEVICE, weights_only=False)
+    payload = torch.load(Path(PROJECT_ROOT / CONFIG["sources"]["r109_checkpoint"]), map_location=DEVICE, weights_only=False)
     model.load_state_dict(payload["model"])
     model.eval()
     for parameter in model.parameters():

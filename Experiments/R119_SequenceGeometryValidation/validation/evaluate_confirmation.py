@@ -8,8 +8,9 @@ import sys
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'validation'))
 from inference.run import load
 from sequence_metrics import estimate_position
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-SOURCE_ROOT=Path(r'D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/data/confirmation')
+SOURCE_ROOT=Path(str(PROJECT_ROOT / 'Experiments/R118_PhysicalCoordinateRepairScratch/data/confirmation'))
 SOURCE_MANIFEST=SOURCE_ROOT/'manifest.json'
 
 def sha(p):

@@ -41,4 +41,4 @@ Next technical move: integrate `anchor_blend10` as a standard post-inference rec
 - Open phase sweep: `anchor_blend_alpha_sweep_phase_20260706/alpha_sweep_phase_summary.csv`
 - Fast phase comparison with saved images: `anchor_fusion_fast_phase_eval_20260706/fast_phase_summary.csv`
 - GMF cross-check: `anchor_blend40_gmf_eval_20260706/blend40_gmf_summary.csv`
-- Fusion tool: `D:/GMM_2_Final/Tools/Displacement_Algorithms/scripts/motion_preserving_fusion.py`
+- Fusion tool: `Tools/Displacement_Algorithms/scripts/motion_preserving_fusion.py`

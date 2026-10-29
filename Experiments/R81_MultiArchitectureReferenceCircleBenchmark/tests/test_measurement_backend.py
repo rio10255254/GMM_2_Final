@@ -5,10 +5,11 @@ from pathlib import Path
 
 import numpy as np
 from scipy import ndimage
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 R80_SCRIPTS = Path(
-    r"D:\GMM_2_Final\Experiments\R80_InflectionReferenceCircleSEMValidation\scripts"
+    str(PROJECT_ROOT / 'Experiments/R80_InflectionReferenceCircleSEMValidation/scripts')
 )
 if str(R80_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(R80_SCRIPTS))

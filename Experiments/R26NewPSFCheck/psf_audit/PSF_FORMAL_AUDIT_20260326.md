@@ -4,22 +4,22 @@
 
 ## 審核目的
 
-在不覆寫目前 `D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits` 正式輸出的前提下，確認 root `PSF_Fitting/` 的正式流程是否存在明顯原理或執行層面的問題。
+在不覆寫目前 `PSF_Fitting/Crop_circle_FreqFiltered/Fits` 正式輸出的前提下，確認 root `PSF_Fitting/` 的正式流程是否存在明顯原理或執行層面的問題。
 
 ## 本次檢查範圍
 
 ### 1. 正式入口與 promoted config 是否一致
 
-- `D:\GMM_2_Final\PSF_Fitting\HDR_fitting_2D_WholeFOV.m`
+- `PSF_Fitting/HDR_fitting_2D_WholeFOV.m`
   - 目前只是 thin wrapper，直接呼叫 `HDR_fitting_2D_WholeFOV_impl()`
-- `D:\GMM_2_Final\PSF_Fitting\HDR_fitting_2D_WholeFOV_impl.m`
+- `PSF_Fitting/HDR_fitting_2D_WholeFOV_impl.m`
   - 預設參數為：
     - `warm_start = true`
     - `pre_alignment = true`
     - `lock_tilt = true`
     - `prealign_search_step = 0.25`
     - `output_root = Crop_circle_FreqFiltered/Fits`
-- `D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\formal_config.json`
+- `PSF_Fitting/Crop_circle_FreqFiltered/Fits/formal_config.json`
   - 與上面正式入口邏輯一致
   - 目前 formal candidate 來源仍指向 ValidationLab reasonable candidate
 
@@ -30,7 +30,7 @@
 執行：
 
 ```powershell
-pytest D:\GMM_2_Final\PSF_Fitting\tests\python\test_report_analysis.py -q
+pytest PSF_Fitting/tests/python/test_report_analysis.py -q
 ```
 
 結果：
@@ -42,7 +42,7 @@ pytest D:\GMM_2_Final\PSF_Fitting\tests\python\test_report_analysis.py -q
 執行：
 
 ```powershell
-Set-Location D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab
+Set-Location PSF_Fitting/PSF_Fitting_ValidationLab
 .\run_validation_lab.ps1 -AggregateOnly
 ```
 
@@ -59,7 +59,7 @@ Set-Location D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab
 執行：
 
 ```powershell
-matlab -batch "cd('D:/GMM_2_Final/PSF_Fitting'); run('tests/run_matlab_smoke_tests.m')"
+matlab -batch "cd('PSF_Fitting'); run('tests/run_matlab_smoke_tests.m')"
 ```
 
 結果：
@@ -93,9 +93,9 @@ matlab -batch "cd('D:/GMM_2_Final/PSF_Fitting'); run('tests/run_matlab_smoke_tes
 - 暫時不要因為 execution panic 去覆寫 formal PSF。
 - 先等待這次 external GMF 結果，確認下游退步是否也會出現在三尺度外部資料集。
 - 如果之後要再往前追 PSF 原理問題，應優先檢查：
-  - `D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\outputs\reports\candidate_flow_tw.md`
-  - `D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\outputs\reports\validation_summary_tw.md`
-  - `D:\GMM_2_Final\PSF_Fitting\HDR_fitting_2D_WholeFOV_impl.m`
-  - `D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\scripts\HDR_fitting_2D_WholeFOV_reasonable_v1.m`
+  - `PSF_Fitting/PSF_Fitting_ValidationLab/outputs/reports/candidate_flow_tw.md`
+  - `PSF_Fitting/PSF_Fitting_ValidationLab/outputs/reports/validation_summary_tw.md`
+  - `PSF_Fitting/HDR_fitting_2D_WholeFOV_impl.m`
+  - `PSF_Fitting/PSF_Fitting_ValidationLab/scripts/HDR_fitting_2D_WholeFOV_reasonable_v1.m`
 
 - 若未來真的要重來一次，建議先在 ValidationLab 或獨立 recheck output root 內重跑，不要直接覆寫 `Crop_circle_FreqFiltered/Fits`。

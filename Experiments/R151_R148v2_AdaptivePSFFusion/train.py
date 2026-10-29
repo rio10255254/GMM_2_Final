@@ -15,6 +15,7 @@ from losses import objective
 from model import Model
 from training_policy import optimizer
 from utils import ROOT, data_config, load, model_config, now, save, setup, sha, train_config, verify_bank_lock
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 def learning_rate(step, total, cfg):
@@ -81,7 +82,7 @@ def main():
         if len(log.read_text(encoding="utf-8").splitlines())!=start:raise RuntimeError("Training log length mismatch")
     save(run/"run_config.json",{
         "model":mc,"train":cfg,"seed":seed,"total":total,"formal":formal,
-        "source_experiment":reference["source_experiment"],
+        "source_experiment":str(PROJECT_ROOT / reference["source_experiment"]),
         "payload_manifest_sha256":reference["payload_manifest_sha256"],
         "geometry_manifest_sha256":reference["geometry_manifest_sha256"],
         "psf_bank_sha256":sha(ROOT/mc["psf_bank"]),"started_utc":now(),

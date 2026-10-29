@@ -1,6 +1,6 @@
 PSF L0/L1 簡報素材包
 
-位置：D:\GMM_2_Final\PSF_Fitting\quick_recalibration\presentation_assets_20260623_L0_L1
+位置：PSF_Fitting/quick_recalibration/presentation_assets_20260623_L0_L1
 
 資料夾用途：
 01_existing_result_figures：已存在的擬合結果圖與舊 L0 分群圖。

@@ -30,13 +30,13 @@ Current 20260702 100MG displacement data with interactive ROI selection:
 
 MATLAB Run button workflow:
 
-1. Open `D:\GMM_2_Final\Tools\Displacement_Algorithms\Run_20260702_100MG_PhaseDft_SelectROI.m` in MATLAB.
+1. Open `Tools/Displacement_Algorithms/Run_20260702_100MG_PhaseDft_SelectROI.m` in MATLAB.
 2. Press Run.
 3. Draw the ROI on each sequence's first image and confirm it.
 
 The MATLAB workflow writes outputs to:
 
-- `D:\GMM_2_Final\20260702_100MG_phase_dft_analysis_matlab`
+- `20260702_100MG_phase_dft_analysis_matlab`
 
 For this 20260702 100MG dataset, the MATLAB workflow uses 0.069 um/pixel
 for physical-unit conversion, matching Basler 3.45 um camera pixels at 50x.
@@ -44,16 +44,16 @@ for physical-unit conversion, matching Basler 3.45 um camera pixels at 50x.
 PowerShell/Python workflow:
 
 ```powershell
-PowerShell -ExecutionPolicy Bypass -File D:\GMM_2_Final\Tools\Displacement_Algorithms\Run_20260702_100MG_PhaseDft_SelectROI.ps1
+PowerShell -ExecutionPolicy Bypass -File Tools/Displacement_Algorithms/Run_20260702_100MG_PhaseDft_SelectROI.ps1
 ```
 
 The interactive launcher uses the DFT phase-correlation route, scans:
 
-- `D:\GMM_2_Final\20260702_100MG_位移`
+- `20260702_100MG_位移`
 
 and writes outputs to:
 
-- `D:\GMM_2_Final\20260702_100MG_phase_dft_analysis`
+- `20260702_100MG_phase_dft_analysis`
 
 It will process sequence folders such as `x_0.5um` and `x_1um`. ROI selections
 are saved in `selected_rois.json`, so the same ROI can be reused.
@@ -61,10 +61,10 @@ are saved in `selected_rois.json`, so the same ROI can be reused.
 DFT phase correlation:
 
 ```powershell
-python D:\GMM_2_Final\Tools\Displacement_Algorithms\scripts\measure_phase_dft.py `
-  --input D:\GMM_2_Final\Step `
-  --output-csv D:\GMM_2_Final\Tools\Displacement_Algorithms\tests\phase_steps.csv `
-  --output-json D:\GMM_2_Final\Tools\Displacement_Algorithms\tests\phase_summary.json `
+python Tools/Displacement_Algorithms/scripts/measure_phase_dft.py `
+  --input Step `
+  --output-csv Tools/Displacement_Algorithms/tests/phase_steps.csv `
+  --output-json Tools/Displacement_Algorithms/tests/phase_summary.json `
   --reference both `
   --upsample-factor 100
 ```
@@ -72,20 +72,20 @@ python D:\GMM_2_Final\Tools\Displacement_Algorithms\scripts\measure_phase_dft.py
 Feature/corner tracking:
 
 ```powershell
-python D:\GMM_2_Final\Tools\Displacement_Algorithms\scripts\measure_feature_anchor.py `
-  --input D:\GMM_2_Final\Step `
-  --output-csv D:\GMM_2_Final\Tools\Displacement_Algorithms\tests\corner_steps.csv `
-  --output-json D:\GMM_2_Final\Tools\Displacement_Algorithms\tests\corner_summary.json `
+python Tools/Displacement_Algorithms/scripts/measure_feature_anchor.py `
+  --input Step `
+  --output-csv Tools/Displacement_Algorithms/tests/corner_steps.csv `
+  --output-json Tools/Displacement_Algorithms/tests/corner_summary.json `
   --method corners
 ```
 
 Shape-aware edge anchor tracking:
 
 ```powershell
-python D:\GMM_2_Final\Tools\Displacement_Algorithms\scripts\measure_shape_edge_anchor.py `
-  --input D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\best_displacement_models_20260706\trusted_full_sequences\100MG_x_1um_full_raw `
-  --output-csv D:\GMM_2_Final\Tools\Displacement_Algorithms\tests\shape_edge_steps.csv `
-  --output-json D:\GMM_2_Final\Tools\Displacement_Algorithms\tests\shape_edge_summary.json `
+python Tools/Displacement_Algorithms/scripts/measure_shape_edge_anchor.py `
+  --input Thesis_MOSR_Evidence/External_GMF_Packages/best_displacement_models_20260706/trusted_full_sequences/100MG_x_1um_full_raw `
+  --output-csv Tools/Displacement_Algorithms/tests/shape_edge_steps.csv `
+  --output-json Tools/Displacement_Algorithms/tests/shape_edge_summary.json `
   --expected-dx-px -14.492754 `
   --expected-dy-px 0 `
   --search-radius-px 3 `

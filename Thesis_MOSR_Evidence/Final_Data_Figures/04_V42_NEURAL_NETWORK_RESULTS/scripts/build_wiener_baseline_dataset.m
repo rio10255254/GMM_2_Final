@@ -1,10 +1,11 @@
 function build_wiener_baseline_dataset()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
 %BUILD_WIENER_BASELINE_DATASET Create a fixed-PSF Wiener baseline.
 
 packageRoot = fileparts(fileparts(mfilename('fullpath')));
-projectRoot = 'D:\GMM_2_Final\PSF_Fitting';
+projectRoot = fullfile(PROJECT_ROOT, 'PSF_Fitting');
 fitRoot = fullfile(projectRoot, 'output', 'deconvolution_baseline_psf_20260715');
-sourcePackage = fullfile('D:\GMM_2_Final\Thesis_MOSR_Evidence', ...
+sourcePackage = fullfile(fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence'), ...
     'Final_Data_Figures', '01_CURRENT_THESIS_RESULTS_V42_CENTER9');
 configPath = fullfile(sourcePackage, 'config', 'sequence_center9_50x20x.json');
 outputRoot = fullfile(packageRoot, 'source_validation', 'wiener_baseline_20260715');
@@ -103,7 +104,7 @@ for sequenceIndex = 1:numel(sequenceNames)
     roiRect = sequence_sweep_rect(centers0, expectedShift, frameCount, ...
         data.pitchPx, [1536 2048]);
     for frameIndex = 0:(frameCount - 1)
-        imagePath = fullfile(sequence.raw_dir, sprintf('frame_%04d.bmp', frameIndex));
+        imagePath = fullfile(PROJECT_ROOT, sequence.raw_dir, sprintf('frame_%04d.bmp', frameIndex));
         imageData = read_gray_double(imagePath);
         restored = restore_fixed_roi(imageData, roiRect, data.psf, data.nsr, data.pitchPx);
         imwrite(im2uint8(min(max(restored, 0), 1)), ...
@@ -111,7 +112,7 @@ for sequenceIndex = 1:numel(sequenceNames)
     end
 end
 
-staticRawPath = fullfile('D:\GMM_2_Final\Thesis_MOSR_Evidence', ...
+staticRawPath = fullfile(fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence'), ...
     '20260618_100MG', 'Image__2026-06-18__17-10-31.bmp');
 staticTablePath = fullfile(sourcePackage, 'cd', 'tables', 'center9_cd_per_pillar.csv');
 staticTable = readtable(staticTablePath, 'Delimiter', ',', 'TextType', 'string', ...

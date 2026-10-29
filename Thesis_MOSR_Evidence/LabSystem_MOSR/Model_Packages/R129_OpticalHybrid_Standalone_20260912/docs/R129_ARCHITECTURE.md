@@ -60,7 +60,7 @@
 單圖入口仍使用原來 D 的同一份權重、同一套灰階與邊界規則；輸入至少 193×193，8-bit 灰階，输出指定新的 PNG 路徑。大型完整影像仍需要足夠記憶體，未新增分塊近似。
 
 ```powershell
-& 'C:\Users\Rio\anaconda3\python.exe' -B 'D:\GMM_2_Final\Experiments\R129_OpticalPriorHybrid\scripts\infer_organized.py' --input 'C:\path\image.bmp' --output 'C:\path\new_r129.png'
+& 'C:\Users\Rio\anaconda3\python.exe' -B 'Experiments/R129_OpticalPriorHybrid/scripts/infer_organized.py' --input 'C:\path\image.bmp' --output 'C:\path\new_r129.png'
 ```
 
 ## 接下來的能力工作

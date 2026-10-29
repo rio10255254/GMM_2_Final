@@ -15,7 +15,7 @@ D 槽留下 `selected/` 的 11 個精選檔案與 1 份代表模型；移出的 
 完整恢復：
 
 ```powershell
-robocopy H:\GMM_2_Final_Archive\legacy\organized_20260307\20260801_full_history\snapshot D:\GMM_2_Final\Traing_Progress\organized_20260307 /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\legacy\organized_20260307\20260801_full_history\snapshot Traing_Progress/organized_20260307 /E /COPY:DAT /DCOPY:DAT
 ```
 
 恢復後使用中央清單逐檔核對，回報 PASS 才算完整恢復。

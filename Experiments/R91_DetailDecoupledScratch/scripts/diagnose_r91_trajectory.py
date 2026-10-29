@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -259,7 +260,7 @@ def main() -> int:
         raise RuntimeError("R91 formal training is not complete")
     if initialization.get("checkpoint_loaded") or initialization.get("teacher_used") or initialization.get("real_training_pixels"):
         raise RuntimeError("R91 scratch/source-isolation audit failed")
-    checkpoint_root = Path(protocol["checkpoint_root"])
+    checkpoint_root = Path(PROJECT_ROOT / protocol["checkpoint_root"])
     table, checkpoint_audit = checkpoint_rows(checkpoint_root)
     table = pareto_flags(table)
     TABLES.mkdir(parents=True, exist_ok=True)

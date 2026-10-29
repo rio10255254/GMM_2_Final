@@ -1,4 +1,5 @@
 function run_sem_acm_multimethod(experiment_root)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
 % Compare Raw and all R82 reconstructions against the verified 36 SEM pillars.
 
 if nargin < 1 || strlength(string(experiment_root)) == 0
@@ -6,7 +7,7 @@ if nargin < 1 || strlength(string(experiment_root)) == 0
 end
 experiment_root = char(experiment_root);
 cfg = jsondecode(fileread(fullfile(experiment_root, 'config', 'experiment.json')));
-raw_dir = char(cfg.sem_acm.raw_input_dir);
+raw_dir = fullfile(PROJECT_ROOT, char(cfg.sem_acm.raw_input_dir));
 sem_dir = char(cfg.sem_acm.sem_dir);
 table_dir = fullfile(experiment_root, 'results', 'acm_sem', 'tables');
 mask_dir = fullfile(experiment_root, 'results', 'acm_sem', 'masks');

@@ -32,6 +32,7 @@ from prepare_r62_selfshift_motion_dataset import (  # noqa: E402
 from prepare_r62_target_motion_dataset import MOTION_SPECS, safe_name  # noqa: E402
 from prepare_r62_target_sample_dataset import _read_gray, _write_image  # noqa: E402
 from prepare_r61_universal_dataset import prepare_grouped_fixed_split  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 OUTPUT_ROOT = LAB_ROOT / "Training_Data" / "r62_target_sample_boost" / "hs100mg_basler"
@@ -59,19 +60,19 @@ DEFAULT_STABILITY_TEACHER_SOURCES: dict[tuple[str, str], str] = {
 
 DEFAULT_STABILITY_TEACHER_DIRS: dict[tuple[str, str], Path] = {
     ("20260702_100MG", "x_1um"): Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\r62_v20_gmfroi_e1_mtb200_psfoff_x_1um\bmp"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r62_v20_gmfroi_e1_mtb200_psfoff_x_1um/bmp')
     ),
     ("20260702_100MG", "x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\fuse_v20_detail50_x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/fuse_v20_detail50_x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "20x_1um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\fuse_v28_detail20_20x_1um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/fuse_v28_detail20_20x_1um/bmp')
     ),
     ("20260704_20x_5x", "20x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\r62_v28_multimagraw_latest_psfoff_20x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v28_multimagraw_latest_psfoff_20x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "5x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\fuse_v28_detail35_5x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/fuse_v28_detail35_5x_0p5um/bmp')
     ),
 }
 
@@ -85,19 +86,19 @@ V20_SHAPE_STABILITY_TEACHER_SOURCES: dict[tuple[str, str], str] = {
 
 V20_SHAPE_STABILITY_TEACHER_DIRS: dict[tuple[str, str], Path] = {
     ("20260702_100MG", "x_1um"): Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\r62_v20_gmfroi_e1_mtb200_psfoff_x_1um\bmp"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r62_v20_gmfroi_e1_mtb200_psfoff_x_1um/bmp')
     ),
     ("20260702_100MG", "x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\r62_v20_gmfroi_e1_mtb200_psfoff_x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r62_v20_gmfroi_e1_mtb200_psfoff_x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "20x_1um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\r62_v20_gmfroi_e1_mtb200_psfoff_20x_1um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v20_gmfroi_e1_mtb200_psfoff_20x_1um/bmp')
     ),
     ("20260704_20x_5x", "20x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\r62_v20_gmfroi_e1_mtb200_psfoff_20x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v20_gmfroi_e1_mtb200_psfoff_20x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "5x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\r62_v20_gmfroi_e1_mtb200_psfoff_5x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v20_gmfroi_e1_mtb200_psfoff_5x_0p5um/bmp')
     ),
 }
 
@@ -111,19 +112,19 @@ MEASUREMENT_VIEW_STABILITY_TEACHER_SOURCES: dict[tuple[str, str], str] = {
 
 MEASUREMENT_VIEW_STABILITY_TEACHER_DIRS: dict[tuple[str, str], Path] = {
     ("20260702_100MG", "x_1um"): Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\proc_unsharp35_v35_x_1um\bmp"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/proc_unsharp35_v35_x_1um/bmp')
     ),
     ("20260702_100MG", "x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\proc_dog_raw_x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/proc_dog_raw_x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "20x_1um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\proc_morph_raw_20x_1um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/proc_morph_raw_20x_1um/bmp')
     ),
     ("20260704_20x_5x", "20x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\proc_unsharp35_v35_20x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/proc_unsharp35_v35_20x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "5x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\r62_v31_v28_externaldetail35_psfoff_5x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_5x_0p5um/bmp')
     ),
 }
 
@@ -137,19 +138,19 @@ SAFE_MEASUREMENT_VIEW_STABILITY_TEACHER_SOURCES: dict[tuple[str, str], str] = {
 
 SAFE_MEASUREMENT_VIEW_STABILITY_TEACHER_DIRS: dict[tuple[str, str], Path] = {
     ("20260702_100MG", "x_1um"): Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\r62_v35_aggressive_mtb500_psfoff_x_1um\bmp"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r62_v35_aggressive_mtb500_psfoff_x_1um/bmp')
     ),
     ("20260702_100MG", "x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\proc_dog_raw_x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/proc_dog_raw_x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "20x_1um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\proc_morph_raw_20x_1um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/proc_morph_raw_20x_1um/bmp')
     ),
     ("20260704_20x_5x", "20x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\proc_unsharp35_v35_20x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/proc_unsharp35_v35_20x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "5x_0p5um"): Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\r62_v31_v28_externaldetail35_psfoff_5x_0p5um\bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_5x_0p5um/bmp')
     ),
 }
 

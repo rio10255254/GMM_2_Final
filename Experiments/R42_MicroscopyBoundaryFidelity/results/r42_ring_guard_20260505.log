@@ -16,12 +16,12 @@ WSManStackVersion: 3.0
 PSRemotingProtocolVersion: 2.3
 SerializationVersion: 1.1.0.1
 **********************
-已啟動轉譯，輸出檔為 D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_ring_guard_20260505.log
+已啟動轉譯，輸出檔為 Experiments/R42_MicroscopyBoundaryFidelity/results/r42_ring_guard_20260505.log
 [R42-RING] START r42_combo_best 2026/5/5 下午 03:45:57
 [R42-RING] infer r42_combo_best pitch1um_y_100_odd 2026/5/5 下午 03:45:57
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_32h685qt\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -30,9 +30,9 @@ SerializationVersion: 1.1.0.1
 -> Mode 'odd': selected 101/202
 -> Output tag timestamp from weight source: 20260505_142301
 -> Found 101 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_best\reconstruct_p
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_best/reconstruct_p
 rogress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch1um_y_100_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_best
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_best
 -> Align factor: 64
 [1/101] Processing VisionTop_20251029182653732.bmp... Done.
 [2/101] Processing VisionTop_20251029182704617.bmp... Done.
@@ -135,12 +135,12 @@ rogress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch1um_y_100_odd
 [99/101] Processing VisionTop_20251029184429722.bmp... Done.
 [100/101] Processing VisionTop_20251029184440519.bmp... Done.
 [101/101] Processing VisionTop_20251029184451292.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_be
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_be
 st\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch1um_y_100_odd
 [R42-RING] infer r42_combo_best pitch0p1um_y_60_odd 2026/5/5 下午 03:46:41
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_wunty5c4\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -149,9 +149,9 @@ st\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch1um
 -> Mode 'odd': selected 61/122
 -> Output tag timestamp from weight source: 20260505_142301
 -> Found 61 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_best\reconstruct_p
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_best/reconstruct_p
 rogress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch0p1um_y_60_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_best
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_best
 -> Align factor: 64
 [1/61] Processing VisionTop_20251029185330879.bmp... Done.
 [2/61] Processing VisionTop_20251029185341723.bmp... Done.
@@ -214,12 +214,12 @@ rogress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch0p1um_y_60_odd
 [59/61] Processing VisionTop_20251029190354974.bmp... Done.
 [60/61] Processing VisionTop_20251029190405691.bmp... Done.
 [61/61] Processing VisionTop_20251029190416478.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_be
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_be
 st\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch0p1um_y_60_odd
 [R42-RING] infer r42_combo_best pitch0p01um_y_40_odd 2026/5/5 下午 03:47:01
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_c1z2cdcd\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -228,9 +228,9 @@ st\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch0p1
 -> Mode 'odd': selected 41/82
 -> Output tag timestamp from weight source: 20260505_142301
 -> Found 41 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_best\reconstruct_p
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_best/reconstruct_p
 rogress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch0p01um_y_40_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_best
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_best
 -> Align factor: 64
 [1/41] Processing VisionTop_20251029193115711.bmp... Done.
 [2/41] Processing VisionTop_20251029193126446.bmp... Done.
@@ -273,10 +273,10 @@ rogress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch0p01um_y_40_odd
 [39/41] Processing VisionTop_20251029193804320.bmp... Done.
 [40/41] Processing VisionTop_20251029193815174.bmp... Done.
 [41/41] Processing VisionTop_20251029193825916.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_be
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_be
 st\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch0p01um_y_40_odd
 {
-  "summary_json": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\ring_guard\\r42_combo_best_rin
+  "summary_json": "Experiments/R42_MicroscopyBoundaryFidelity/results/ring_guard/r42_combo_best_rin
 g_guard_summary.json"
 }
 [R42-RING] DONE r42_combo_best 2026/5/5 下午 03:54:34
@@ -284,7 +284,7 @@ g_guard_summary.json"
 [R42-RING] infer r42_combo_latest pitch1um_y_100_odd 2026/5/5 下午 03:54:34
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_9blxl6n2\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -293,9 +293,9 @@ g_guard_summary.json"
 -> Mode 'odd': selected 101/202
 -> Output tag timestamp from weight source: 20260505_142301
 -> Found 101 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_latest\reconstruct
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_latest/reconstruct
 _progress_latest_in_Cropped_Output_20260505_142301\pitch1um_y_100_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_latest
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_latest
 -> Align factor: 64
 [1/101] Processing VisionTop_20251029182653732.bmp... Done.
 [2/101] Processing VisionTop_20251029182704617.bmp... Done.
@@ -398,12 +398,12 @@ _progress_latest_in_Cropped_Output_20260505_142301\pitch1um_y_100_odd
 [99/101] Processing VisionTop_20251029184429722.bmp... Done.
 [100/101] Processing VisionTop_20251029184440519.bmp... Done.
 [101/101] Processing VisionTop_20251029184451292.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_la
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_la
 test\reconstruct_progress_latest_in_Cropped_Output_20260505_142301\pitch1um_y_100_odd
 [R42-RING] infer r42_combo_latest pitch0p1um_y_60_odd 2026/5/5 下午 03:55:18
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_2wcu0k8b\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -412,9 +412,9 @@ test\reconstruct_progress_latest_in_Cropped_Output_20260505_142301\pitch1um_y_10
 -> Mode 'odd': selected 61/122
 -> Output tag timestamp from weight source: 20260505_142301
 -> Found 61 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_latest\reconstruct
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_latest/reconstruct
 _progress_latest_in_Cropped_Output_20260505_142301\pitch0p1um_y_60_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_latest
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_latest
 -> Align factor: 64
 [1/61] Processing VisionTop_20251029185330879.bmp... Done.
 [2/61] Processing VisionTop_20251029185341723.bmp... Done.
@@ -477,12 +477,12 @@ _progress_latest_in_Cropped_Output_20260505_142301\pitch0p1um_y_60_odd
 [59/61] Processing VisionTop_20251029190354974.bmp... Done.
 [60/61] Processing VisionTop_20251029190405691.bmp... Done.
 [61/61] Processing VisionTop_20251029190416478.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_la
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_la
 test\reconstruct_progress_latest_in_Cropped_Output_20260505_142301\pitch0p1um_y_60_odd
 [R42-RING] infer r42_combo_latest pitch0p01um_y_40_odd 2026/5/5 下午 03:55:38
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_1rr7kgj4\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -491,9 +491,9 @@ test\reconstruct_progress_latest_in_Cropped_Output_20260505_142301\pitch0p1um_y_
 -> Mode 'odd': selected 41/82
 -> Output tag timestamp from weight source: 20260505_142301
 -> Found 41 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_latest\reconstruct
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_latest/reconstruct
 _progress_latest_in_Cropped_Output_20260505_142301\pitch0p01um_y_40_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_latest
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_latest
 -> Align factor: 64
 [1/41] Processing VisionTop_20251029193115711.bmp... Done.
 [2/41] Processing VisionTop_20251029193126446.bmp... Done.
@@ -536,10 +536,10 @@ _progress_latest_in_Cropped_Output_20260505_142301\pitch0p01um_y_40_odd
 [39/41] Processing VisionTop_20251029193804320.bmp... Done.
 [40/41] Processing VisionTop_20251029193815174.bmp... Done.
 [41/41] Processing VisionTop_20251029193825916.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_combo_la
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_combo_la
 test\reconstruct_progress_latest_in_Cropped_Output_20260505_142301\pitch0p01um_y_40_odd
 {
-  "summary_json": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\ring_guard\\r42_combo_latest_r
+  "summary_json": "Experiments/R42_MicroscopyBoundaryFidelity/results/ring_guard/r42_combo_latest_r
 ing_guard_summary.json"
 }
 [R42-RING] DONE r42_combo_latest 2026/5/5 下午 04:03:11
@@ -547,7 +547,7 @@ ing_guard_summary.json"
 [R42-RING] infer r42_r41_best pitch1um_y_100_odd 2026/5/5 下午 04:03:11
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_7_gypcxc\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -556,9 +556,9 @@ weights\best_tradeoff.pth.tar
 -> Mode 'odd': selected 101/202
 -> Output tag timestamp from weight source: 20260505_145229
 -> Found 101 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_best\reconstruct_pro
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_best/reconstruct_pro
 gress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch1um_y_100_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_best
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_best
 -> Align factor: 64
 [1/101] Processing VisionTop_20251029182653732.bmp... Done.
 [2/101] Processing VisionTop_20251029182704617.bmp... Done.
@@ -661,12 +661,12 @@ gress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch1um_y_100_odd
 [99/101] Processing VisionTop_20251029184429722.bmp... Done.
 [100/101] Processing VisionTop_20251029184440519.bmp... Done.
 [101/101] Processing VisionTop_20251029184451292.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_best
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_best
 \reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch1um_y_100_odd
 [R42-RING] infer r42_r41_best pitch0p1um_y_60_odd 2026/5/5 下午 04:03:55
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_3303qg77\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -675,9 +675,9 @@ weights\best_tradeoff.pth.tar
 -> Mode 'odd': selected 61/122
 -> Output tag timestamp from weight source: 20260505_145229
 -> Found 61 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_best\reconstruct_pro
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_best/reconstruct_pro
 gress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch0p1um_y_60_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_best
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_best
 -> Align factor: 64
 [1/61] Processing VisionTop_20251029185330879.bmp... Done.
 [2/61] Processing VisionTop_20251029185341723.bmp... Done.
@@ -740,12 +740,12 @@ gress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch0p1um_y_60_odd
 [59/61] Processing VisionTop_20251029190354974.bmp... Done.
 [60/61] Processing VisionTop_20251029190405691.bmp... Done.
 [61/61] Processing VisionTop_20251029190416478.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_best
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_best
 \reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch0p1um_y_60_odd
 [R42-RING] infer r42_r41_best pitch0p01um_y_40_odd 2026/5/5 下午 04:04:15
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_plw7pvnn\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -754,9 +754,9 @@ weights\best_tradeoff.pth.tar
 -> Mode 'odd': selected 41/82
 -> Output tag timestamp from weight source: 20260505_145229
 -> Found 41 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_best\reconstruct_pro
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_best/reconstruct_pro
 gress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch0p01um_y_40_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_best
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_best
 -> Align factor: 64
 [1/41] Processing VisionTop_20251029193115711.bmp... Done.
 [2/41] Processing VisionTop_20251029193126446.bmp... Done.
@@ -799,10 +799,10 @@ gress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch0p01um_y_40_odd
 [39/41] Processing VisionTop_20251029193804320.bmp... Done.
 [40/41] Processing VisionTop_20251029193815174.bmp... Done.
 [41/41] Processing VisionTop_20251029193825916.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_best
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_best
 \reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch0p01um_y_40_odd
 {
-  "summary_json": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\ring_guard\\r42_r41_best_ring_
+  "summary_json": "Experiments/R42_MicroscopyBoundaryFidelity/results/ring_guard/r42_r41_best_ring_
 guard_summary.json"
 }
 [R42-RING] DONE r42_r41_best 2026/5/5 下午 04:11:49
@@ -810,7 +810,7 @@ guard_summary.json"
 [R42-RING] infer r42_r41_latest pitch1um_y_100_odd 2026/5/5 下午 04:11:49
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_6o5pu6__\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -819,9 +819,9 @@ weights\latest.pth.tar
 -> Mode 'odd': selected 101/202
 -> Output tag timestamp from weight source: 20260505_145229
 -> Found 101 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_latest\reconstruct_p
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_latest/reconstruct_p
 rogress_latest_in_Cropped_Output_20260505_145229\pitch1um_y_100_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_latest
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_latest
 -> Align factor: 64
 [1/101] Processing VisionTop_20251029182653732.bmp... Done.
 [2/101] Processing VisionTop_20251029182704617.bmp... Done.
@@ -924,12 +924,12 @@ rogress_latest_in_Cropped_Output_20260505_145229\pitch1um_y_100_odd
 [99/101] Processing VisionTop_20251029184429722.bmp... Done.
 [100/101] Processing VisionTop_20251029184440519.bmp... Done.
 [101/101] Processing VisionTop_20251029184451292.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_late
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_late
 st\reconstruct_progress_latest_in_Cropped_Output_20260505_145229\pitch1um_y_100_odd
 [R42-RING] infer r42_r41_latest pitch0p1um_y_60_odd 2026/5/5 下午 04:12:33
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_yx9dyy00\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -938,9 +938,9 @@ weights\latest.pth.tar
 -> Mode 'odd': selected 61/122
 -> Output tag timestamp from weight source: 20260505_145229
 -> Found 61 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_latest\reconstruct_p
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_latest/reconstruct_p
 rogress_latest_in_Cropped_Output_20260505_145229\pitch0p1um_y_60_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_latest
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_latest
 -> Align factor: 64
 [1/61] Processing VisionTop_20251029185330879.bmp... Done.
 [2/61] Processing VisionTop_20251029185341723.bmp... Done.
@@ -1003,12 +1003,12 @@ rogress_latest_in_Cropped_Output_20260505_145229\pitch0p1um_y_60_odd
 [59/61] Processing VisionTop_20251029190354974.bmp... Done.
 [60/61] Processing VisionTop_20251029190405691.bmp... Done.
 [61/61] Processing VisionTop_20251029190416478.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_late
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_late
 st\reconstruct_progress_latest_in_Cropped_Output_20260505_145229\pitch0p1um_y_60_odd
 [R42-RING] infer r42_r41_latest pitch0p01um_y_40_odd 2026/5/5 下午 04:12:53
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\
+-> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_gprsfdly\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1017,9 +1017,9 @@ weights\latest.pth.tar
 -> Mode 'odd': selected 41/82
 -> Output tag timestamp from weight source: 20260505_145229
 -> Found 41 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_latest\reconstruct_p
+-> Output dir: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_latest/reconstruct_p
 rogress_latest_in_Cropped_Output_20260505_145229\pitch0p01um_y_40_odd
--> Recon root: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_latest
+-> Recon root: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_latest
 -> Align factor: 64
 [1/41] Processing VisionTop_20251029193115711.bmp... Done.
 [2/41] Processing VisionTop_20251029193126446.bmp... Done.
@@ -1062,10 +1062,10 @@ rogress_latest_in_Cropped_Output_20260505_145229\pitch0p01um_y_40_odd
 [39/41] Processing VisionTop_20251029193804320.bmp... Done.
 [40/41] Processing VisionTop_20251029193815174.bmp... Done.
 [41/41] Processing VisionTop_20251029193825916.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\ring_recon\r42_r41_late
+-> All done. Results saved to: Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon/r42_r41_late
 st\reconstruct_progress_latest_in_Cropped_Output_20260505_145229\pitch0p01um_y_40_odd
 {
-  "summary_json": "D:\\GMM_2_Final\\Experiments\\R42_MicroscopyBoundaryFidelity\\results\\ring_guard\\r42_r41_latest_rin
+  "summary_json": "Experiments/R42_MicroscopyBoundaryFidelity/results/ring_guard/r42_r41_latest_rin
 g_guard_summary.json"
 }
 [R42-RING] DONE r42_r41_latest 2026/5/5 下午 04:20:28

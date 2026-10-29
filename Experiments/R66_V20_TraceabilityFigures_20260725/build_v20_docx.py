@@ -5,10 +5,11 @@ import re
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Cm
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 SOURCE = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v19_第六章更新版.docx")
 TARGET = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v20_量測位置補圖版.docx")
-FIGDIR = Path(r"D:\GMM_2_Final\Experiments\R66_V20_TraceabilityFigures_20260725\figures")
+FIGDIR = Path(str(PROJECT_ROOT / 'Experiments/R66_V20_TraceabilityFigures_20260725/figures'))
 
 FIGURES = {
     "N01": ("01_static_50x_pillar_identity.png",

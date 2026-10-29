@@ -12,11 +12,12 @@ from PIL import Image, ImageChops
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
 
 SOURCE = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v17_修訂版.docx")
 OUTPUT = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v18_圖表整理版.docx")
-WORK = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v18")
+WORK = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v18'))
 FIG = WORK / "figures"
 EARLY = FIG / "early"
 WIENER = FIG / "wiener" / "figures"

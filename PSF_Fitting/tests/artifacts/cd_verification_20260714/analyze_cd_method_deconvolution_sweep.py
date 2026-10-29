@@ -12,14 +12,13 @@ from scipy.io import loadmat
 from scipy.ndimage import map_coordinates
 from scipy.optimize import least_squares
 from scipy.special import expit
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-ROOT = Path(r"D:\GMM_2_Final\PSF_Fitting\tests\artifacts\cd_verification_20260714")
-FIT_ROOT = Path(r"D:\GMM_2_Final\PSF_Fitting\output\pillar_via_junction_psf_20260713")
+ROOT = Path(str(PROJECT_ROOT / 'PSF_Fitting/tests/artifacts/cd_verification_20260714'))
+FIT_ROOT = Path(str(PROJECT_ROOT / 'PSF_Fitting/output/pillar_via_junction_psf_20260713'))
 ANALYZE_PATH = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data"
-    r"\center9_pillar_fit_20x_50x\psf_deconvolution_cd\analyze_cd.py"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/psf_deconvolution_cd/analyze_cd.py')
 )
 CROP_ORIGINS = {"20x": (1794, 838), "50x": (874, 586)}
 

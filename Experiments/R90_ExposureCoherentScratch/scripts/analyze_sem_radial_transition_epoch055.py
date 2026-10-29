@@ -8,15 +8,16 @@ import cv2
 import numpy as np
 import pandas as pd
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "reports" / "full_validation_epoch055" / "sem_acm"
-BASE_MASK = Path(r"D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch\results\final_validation\sem_acm_epoch100\acm_validation\results\masks\acm_primary_masks.mat")
+BASE_MASK = Path(str(PROJECT_ROOT / 'Experiments/R89_MeasurementNativeScratch/results/final_validation/sem_acm_epoch100/acm_validation/results/masks/acm_primary_masks.mat'))
 ROOTS = {
     "Raw": ROOT / "results" / "full_validation_epoch055" / "sem_acm" / "locked_optical_inputs",
-    "R61v16": Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\inference_runs\reconstruct_progress_best_tradeoff_in_sem_paired_50x_exposure_stack_20260623_200020\r61v16_psfoff_sem_paired_50x"),
-    "R89E100": Path(r"D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch\results\final_validation\sem_acm_epoch100\reconstruction"),
+    "R61v16": Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/inference_runs/reconstruct_progress_best_tradeoff_in_sem_paired_50x_exposure_stack_20260623_200020/r61v16_psfoff_sem_paired_50x')),
+    "R89E100": Path(str(PROJECT_ROOT / 'Experiments/R89_MeasurementNativeScratch/results/final_validation/sem_acm_epoch100/reconstruction')),
     "R90E55": ROOT / "results" / "full_validation_epoch055" / "sem_acm" / "stage_root" / "R90E55" / "reconstruction",
 }
 

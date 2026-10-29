@@ -7,15 +7,16 @@ import torch
 import sys
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from inference.run import load,tiled,read,write
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-CONFIG=Path(r"D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json")
+CONFIG=Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json'))
 SEQUENCE_MAP={"50x_x_0p5um":"50x_0p5um","50x_x_1um":"50x_1um","20x_0p5um":"20x_0p5um","20x_1um":"20x_1um"}
 
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--checkpoint',required=True);parser.add_argument('--output',required=True);parser.add_argument('--method',required=True);parser.add_argument('--device',default='cuda');args=parser.parse_args(); config=json.loads(CONFIG.read_text(encoding='utf-8-sig')); model=load(args.checkpoint,args.device if args.device!='auto' else ('cuda' if torch.cuda.is_available() else 'cpu')); root=Path(args.output).resolve(); root.mkdir(parents=True,exist_ok=True); records=[]
     for sequence,subfolder in SEQUENCE_MAP.items():
-        raw_dir=Path(config['sequences'][sequence]['raw_dir']); dest=root/subfolder;dest.mkdir(parents=True,exist_ok=True); files=sorted(raw_dir.glob('frame_*.bmp'))
+        raw_dir=Path(PROJECT_ROOT / config['sequences'][sequence]['raw_dir']); dest=root/subfolder;dest.mkdir(parents=True,exist_ok=True); files=sorted(raw_dir.glob('frame_*.bmp'))
         for index,source in enumerate(files,1):
             raw=read(source); tensor=torch.from_numpy(raw.astype(np.float32)/255)[None,None].to(next(model.parameters()).device)
             with torch.inference_mode(): output=tiled(model,tensor)[0,0].cpu().numpy()

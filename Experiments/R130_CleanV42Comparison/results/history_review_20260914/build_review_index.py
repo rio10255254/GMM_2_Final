@@ -5,8 +5,9 @@ import hashlib
 import json
 import re
 import subprocess
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
-ROOT = Path(r'D:\GMM_2_Final\Experiments')
+ROOT = Path(str(PROJECT_ROOT / 'Experiments'))
 OUT = Path(__file__).resolve().parent
 REPORT = ROOT / 'R130_CleanV42Comparison/reports/R61_R130_DESIGN_REVIEW.md'
 

@@ -8,7 +8,7 @@ tests pass. This document does NOT certify the next scientific design.
 Run from a PowerShell terminal. These commands do not start training:
 
 ```powershell
-Set-Location -LiteralPath 'D:\GMM_2_Final\Experiments\R118_PhysicalCoordinateRepairScratch'
+Set-Location -LiteralPath 'Experiments/R118_PhysicalCoordinateRepairScratch'
 & 'C:\Users\Rio\anaconda3\python.exe' scripts\next_design.py audit
 & 'C:\Users\Rio\anaconda3\python.exe' scripts\next_design.py next
 & 'C:\Users\Rio\anaconda3\python.exe' scripts\next_design.py show P02

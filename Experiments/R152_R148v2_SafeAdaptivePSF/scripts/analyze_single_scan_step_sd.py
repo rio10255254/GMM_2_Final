@@ -7,10 +7,11 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path(r"D:\GMM_2_Final\Experiments\R148v2_HybridContextNativePSF")
+BASE = Path(str(PROJECT_ROOT / 'Experiments/R148v2_HybridContextNativePSF'))
 SOURCE = ROOT / "results/comparison/all_displacements.csv"
 OUTPUT_JSON = ROOT / "results/comparison/single_scan_step_sd_20260930.json"
 OUTPUT_MD = ROOT / "reports/R152_SINGLE_SCAN_STEP_SD_20260930.md"

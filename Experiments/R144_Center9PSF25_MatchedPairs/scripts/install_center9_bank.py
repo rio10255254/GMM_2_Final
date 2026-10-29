@@ -8,9 +8,10 @@ from pathlib import Path
 
 import numpy as np
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT = Path(__file__).resolve().parents[1]
-PROJECT = Path(r"D:\GMM_2_Final")
+PROJECT = Path(str(PROJECT_ROOT))
 SOURCE = PROJECT / "PSF_Fitting/output/20260924_center9_psf"
 MAT = SOURCE / "PSF_20260924_center9_25_normalized.mat"
 EXPECTED_MAT_SHA = "3e6889b5c36488e426415c01e99df12c5a12fd9a908d52cb20f4fd1434c201c5"

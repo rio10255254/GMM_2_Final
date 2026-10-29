@@ -1,6 +1,6 @@
 # 20250605 Lab Checkboard External GMF Y-Displacement Summary
 
-- Package: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\external_gmf_packages\20260618_recent_lab_models_r51_r56`
+- Package: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/external_gmf_packages/20260618_recent_lab_models_r51_r56`
 - Parsed cases: 11
 - Calibration used: 0.172500 um/px; 1 um = 5.797101 px
 - Primary ranking below uses Y-step standard deviation after dropping the first scored interval, because first-step warm-up has appeared in prior same-sample GMF readouts.
@@ -34,10 +34,10 @@
 
 ## Output Files
 
-- Summary CSV: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\external_gmf_packages\20260618_recent_lab_models_r51_r56\analysis_y_displacement\y_displacement_summary.csv`
-- Per-step CSV: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\external_gmf_packages\20260618_recent_lab_models_r51_r56\analysis_y_displacement\y_displacement_steps.csv`
-- Per-frame positions CSV: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\external_gmf_packages\20260618_recent_lab_models_r51_r56\analysis_y_displacement\gmf_frame_positions.csv`
-- JSON: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\external_gmf_packages\20260618_recent_lab_models_r51_r56\analysis_y_displacement\y_displacement_summary.json`
+- Summary CSV: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/external_gmf_packages/20260618_recent_lab_models_r51_r56/analysis_y_displacement/y_displacement_summary.csv`
+- Per-step CSV: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/external_gmf_packages/20260618_recent_lab_models_r51_r56/analysis_y_displacement/y_displacement_steps.csv`
+- Per-frame positions CSV: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/external_gmf_packages/20260618_recent_lab_models_r51_r56/analysis_y_displacement/gmf_frame_positions.csv`
+- JSON: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/external_gmf_packages/20260618_recent_lab_models_r51_r56/analysis_y_displacement/y_displacement_summary.json`
 
 ## Common-Frame Fairness Check
 

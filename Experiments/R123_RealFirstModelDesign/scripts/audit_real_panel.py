@@ -7,6 +7,8 @@ import cv2,numpy as np,pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 E=pathlib.Path(__file__).resolve().parents[1]
 OLD=E.parent/'R119_SequenceGeometryValidation/analysis/R109_comparison_20260907'
 fingerprints={}
@@ -26,7 +28,7 @@ def main():
     records=[];groups=[]
     for source in catalog['sources']:
         if source.get('alias_of'):continue
-        root=pathlib.Path(source['path'])
+        root=pathlib.Path(PROJECT_ROOT / source['path'])
         if source.get('subdirectories'):
             files=[]
             for sub,n in source['subdirectories'].items():
@@ -74,8 +76,8 @@ def main():
     fig.suptitle('Existing real results expose a readout conflict; no new model results',fontsize=12)
     fig.savefig(E/'results/real_baseline_replay.png',dpi=160);plt.close(fig)
     # View representative real challenges without synthesizing a proposed output.
-    sem=pathlib.Path(catalog['sources'][0]['path'])/'13.bmp'
-    full=pathlib.Path(next(s['path'] for s in catalog['sources'] if s['id']=='real_six_motion_suites'))/'5x_0p5um/frame_0000.bmp'
+    sem=pathlib.Path(PROJECT_ROOT / catalog['sources'][0]['path'])/'13.bmp'
+    full=pathlib.Path(next(str(PROJECT_ROOT / s['path']) for s in catalog['sources'] if s['id']=='real_six_motion_suites'))/'5x_0p5um/frame_0000.bmp'
     check=pathlib.Path(next(r['file'] for r in records if r['source_id']=='real_checkerboard'))
     fig,ax=plt.subplots(1,3,figsize=(12,4.2),layout='constrained')
     for a,p,title in zip(ax,[sem,full,check],['SEM-linked optical sample','Real lines, dots, gaps and defects','Real checkerboard corners']):a.imshow(image_read(p),cmap='gray',vmin=0,vmax=255);a.set_title(title,fontsize=11);a.axis('off')

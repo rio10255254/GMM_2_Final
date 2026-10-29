@@ -45,7 +45,7 @@ SUMMARY_PREFIX = "ROUND32_DOMAIN_CAPACITY"
 MERGED_PROFILE_JSON = REPORT_DIR / f"{SUMMARY_PREFIX}_MERGED_PROFILE_REPORT.json"
 RUN_SEED = 1261830
 CONTROL_CANDIDATE = "r30_b1_dironly"
-CONTROL_CHECKPOINT = Path(r"D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913\weights\best_tradeoff.pth.tar")
+CONTROL_CHECKPOINT = Path(str(SHARED_ROOT / 'Traing_Progress/organized_20260316/round30/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913/weights/best_tradeoff.pth.tar'))
 POLICY_PATH = SHARED_ROOT / "ESTIMATOR_POLICY.json"
 ROUND32_REAL_EQ_DIR = SHARED_ROOT / "Training_Data" / "generated_convolved" / "Real_Image"
 
@@ -608,14 +608,14 @@ def main() -> None:
             active_command=str(status_payload.get("active_command", "") or ""),
             plan_done=int(status_payload.get("plan_done", 0) or 0),
             plan_total=int(status_payload.get("plan_total", total) or total),
-            last_report=str(status_payload.get("last_report", "") or ""),
+            last_report=str(str(SHARED_ROOT / status_payload.get("last_report", "")) or ""),
             last_exit="1",
             note="recorded active_pid is not alive; marking stale running state as error",
             selected_candidate=str(status_payload.get("selected_candidate", "") or ""),
-            selected_checkpoint=str(status_payload.get("selected_checkpoint", "") or ""),
+            selected_checkpoint=str(str(SHARED_ROOT / status_payload.get("selected_checkpoint", "")) or ""),
         )
         status_payload = _load_status()
-    latest_report = str(status_payload.get("last_report", "") or "")
+    latest_report = str(str(SHARED_ROOT / status_payload.get("last_report", "")) or "")
     latest_merged_report = _merged_profile_report(PROFILE_NAME)
     if latest_merged_report and Path(latest_merged_report).exists():
         latest_report = latest_merged_report

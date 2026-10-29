@@ -3,7 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 from datetime import datetime,timezone
 import csv,hashlib,json,shutil
-REPO=Path(r"D:\GMM_2_Final")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+REPO=Path(str(PROJECT_ROOT))
 TARGET=REPO/"Thesis_MOSR_Evidence"/"Research_Round_Library_20260926"
 EXPERIMENTS={
 "01_Foundations_and_Failure_Modes":[

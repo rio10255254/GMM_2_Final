@@ -5,6 +5,7 @@ from statistics import median,stdev
 import json,csv,hashlib,io,zipfile
 from lxml import etree
 import openpyxl,pymupdf
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT=Path(__file__).resolve().parents[1];DATA=ROOT/'results/separate_conditions'
 PPTX=ROOT/'poster_final/IMPACT2026_MOSR_1um_30Steps_v2.pptx';PDF=PPTX.with_suffix('.pdf')
 NS={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main','c':'http://schemas.openxmlformats.org/drawingml/2006/chart'}
@@ -13,7 +14,7 @@ def rows(p):
     with p.open(encoding='utf-8-sig',newline='') as f:return list(csv.DictReader(f))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 d=load(DATA/'poster_data_30steps.json');lock=load(DATA/'single_scan_presentation_lock.json')
-src=Path('D:/GMM_2_Final/Experiments/R152_R148v2_SafeAdaptivePSF')
+src=Path(str(PROJECT_ROOT / 'Experiments/R152_R148v2_SafeAdaptivePSF'))
 plan=load(src/'evaluation/capture_plan.json');cal=load(src/'evaluation/calibration.json')
 first=next(r for r in plan['runs'] if r['run_index']>cal['raw_calibration_runs'])
 assert first['run']==d['twenty']['run']==lock['20x_run'] and first['run_index']==7

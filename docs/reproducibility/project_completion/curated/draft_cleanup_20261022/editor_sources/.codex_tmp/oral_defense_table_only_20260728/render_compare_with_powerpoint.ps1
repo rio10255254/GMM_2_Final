@@ -1,7 +1,8 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..\..\..\..')).Path
 $ErrorActionPreference = 'Stop'
 $pairs = @(
-    @{ Deck = 'C:\Users\Rio\OneDrive\學業\碩班\論文\可用\江彥諠_口試簡報_附講稿.pptx'; Out = 'D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_table_only_20260728\render-source' },
-    @{ Deck = 'C:\Users\Rio\OneDrive\學業\碩班\論文\可用\江彥諠_口試簡報_附講稿_v17效能表格修正.pptx'; Out = 'D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_table_only_20260728\render-final' }
+    @{ Deck = 'C:\Users\Rio\OneDrive\學業\碩班\論文\可用\江彥諠_口試簡報_附講稿.pptx'; Out = (Join-Path $ProjectRoot 'PSF_Fitting\.codex_tmp\oral_defense_table_only_20260728\render-source') },
+    @{ Deck = 'C:\Users\Rio\OneDrive\學業\碩班\論文\可用\江彥諠_口試簡報_附講稿_v17效能表格修正.pptx'; Out = (Join-Path $ProjectRoot 'PSF_Fitting\.codex_tmp\oral_defense_table_only_20260728\render-final') }
 )
 
 $powerPoint = $null

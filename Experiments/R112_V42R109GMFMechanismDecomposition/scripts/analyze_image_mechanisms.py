@@ -11,6 +11,7 @@ import cv2
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -111,8 +112,8 @@ def radial_features(profile: np.ndarray) -> dict[str, float]:
 
 
 def load_arm(arm: str, entry: dict[str, str]) -> tuple[pd.DataFrame, list[np.ndarray], list[np.ndarray]]:
-    coordinates = parse_score(Path(entry["score"]), arm)
-    image_dir = Path(entry["image_dir"])
+    coordinates = parse_score(Path(PROJECT_ROOT / entry["score"]), arm)
+    image_dir = Path(PROJECT_ROOT / entry["image_dir"])
     aligned: list[np.ndarray] = []
     small_frames: list[np.ndarray] = []
     feature_rows: list[dict[str, object]] = []
@@ -247,7 +248,7 @@ def main() -> int:
         all_tables.append(table)
         aligned_by_arm[arm] = aligned
         frames_by_arm[arm] = frames
-        external_coordinates[arm] = parse_score(Path(CONFIG["models"][arm]["score"]), arm)
+        external_coordinates[arm] = parse_score(Path(PROJECT_ROOT / CONFIG["models"][arm]["score"]), arm)
         surrogate_table, surrogate_summary = locate_with_fixed_template(frames, external_coordinates[arm].iloc[0])
         surrogate_table.insert(0, "arm", arm)
         surrogate_table.to_csv(OUTPUT / f"surrogate_coordinates_{arm.replace(' ', '_')}.csv", index=False, encoding="utf-8-sig")

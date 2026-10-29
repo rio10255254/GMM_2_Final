@@ -13,7 +13,8 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from data.replay import latent_reference, image_formation, CONFIG
 from data.geometry import draw_mask, translate_high
-BASE=Path(CONFIG['data']['package_root'])
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+BASE=Path(PROJECT_ROOT / CONFIG['data']['package_root'])
 IDS=ROOT.parent/'R118_PhysicalCoordinateRepairScratch/reports/next_design_selected_ids.json'
 
 

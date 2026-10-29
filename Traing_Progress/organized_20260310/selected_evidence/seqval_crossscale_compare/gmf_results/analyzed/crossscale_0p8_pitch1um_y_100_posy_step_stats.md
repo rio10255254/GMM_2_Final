@@ -1,6 +1,6 @@
 # crossscale_0p8 pitch1um_y_100 POSY Step Stats
 
-- gmf_score_path: D:\GMM_2_Final\Traing_Progress\organized_20260310\external_validation\seqval_crossscale_compare\gmf_results\raw\crossscale_0p8\pitch1um_y_100\GMF_score.txt
+- gmf_score_path: Traing_Progress/organized_20260310/external_validation/seqval_crossscale_compare/gmf_results/raw/crossscale_0p8/pitch1um_y_100/GMF_score.txt
 - expected_step_px: 8.000000
 - num_points: 100
 - num_steps: 99

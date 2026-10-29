@@ -1,7 +1,8 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
 $ErrorActionPreference = "Stop"
 
-$RepoRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence"
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$RepoRoot = "$ProjectRoot\Thesis_MOSR_Evidence"
+$Python = python
 $Launcher = Join-Path $RepoRoot "LabSystem_MOSR\Experiments\R55_SourceStyleRealisticTraining\scripts\launch_r55.py"
 
 & $Python -u $Launcher `

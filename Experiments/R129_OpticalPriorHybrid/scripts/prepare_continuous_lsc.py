@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from continuous_common import *
 import cv2
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
     oldpath=REPO/'Experiments/R128_SourceOnlyFullTraining/results/lsc_comparison/plan.json';old=load(oldpath);cfg=load(old['configuration']['path']);sessions=pd.read_csv(old['sessions']['path']);frames=[];adjacent=[]
     for sequence,s in cfg['sequences'].items():
@@ -21,7 +22,7 @@ def main():
     keys={(x['sequence'],x['start_frame_index'],x['end_frame_index']) for x in adjacent if not x['is_repositioning']}
     assert len(fixed)==120 and all((r.sequence,r.start_frame_index,r.end_frame_index) in keys for r in fixed.itertuples())
     pd.DataFrame(adjacent).to_csv(OUT/'all_adjacent_pairs.csv',index=False)
-    pkg=Path(load(ROOT/'config/standalone_build.json')['path']);cp=pkg/'results/training/r129_long_01/checkpoints/step08192.pth'
+    pkg=Path(PROJECT_ROOT / load(ROOT/'config/standalone_build.json')['path']);cp=pkg/'results/training/r129_long_01/checkpoints/step08192.pth'
     sources=[record(oldpath),old['configuration'],old['sessions'],record(pairs),record(ROOT/'scripts/sequence_inference.py'),record(ROOT/'scripts/continuous_common.py'),record(REPO/'Experiments/R128_SourceOnlyFullTraining/analysis/lsc_comparison/measure.py')]
     sources += [x for x in old['sources'] if any(n in x['path'] for n in ['reference_circle_core.py','run_displacement_lsc.py','run_lsc_e42.py'])]
     for method in ['Raw','R128_P_s1285002','R61v16_PSFOFF']:

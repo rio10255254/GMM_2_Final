@@ -12,7 +12,7 @@
   "sanity_updates": 32,
   "inference": {"mode": "full", "tile_core": 512, "halo": 96, "feather_blending": false, "global_raw_retention": false},
   "preflight_tolerances": {"full_tile_abs": 0.000002, "context_output_abs": 0.000002, "context_gradient_relative": 0.00005},
-  "dataset_source": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/training_data",
+  "dataset_source": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/training_data",
   "dataset_copy_policy": "Extract unchanged source/noiseless/target only; omit stored synthetic kernel4 and latent/geometry arrays; no regeneration.",
   "real_evaluation_after_final_checkpoint_only": true,
   "comparisons": ["Raw","R129","R130-Clean"],

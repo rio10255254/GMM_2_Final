@@ -1,7 +1,7 @@
 # R145 來源與執行身分
 
 - 類型：自包含研究實驗。狀態：修正九顆圓方向後的正式 25-PSF MAT、768 組配對、從零 8192 次訓練、930 張實拍與 8370 顆圓量測皆已完成；`results/final_audit.json` 通過。
-- 指定來源位置：`D:\GMM_2_Final\PSF_Fitting\output\20260924_center9_psf\PSF_20260924_center9_25_normalized.mat`，**正式修正後 SHA-256** `a41413274d4134588070216f9699fd985b986c2419ae895ef6eabce0d0937231`。先前同名檔的 SHA-256 `3e6889b5c36488e426415c01e99df12c5a12fd9a908d52cb20f4fd1434c201c5` 已移入 `diagnostics_prior_orientation/`，不得用作本輪正式銀行。
+- 指定來源位置：`PSF_Fitting/output/20260924_center9_psf/PSF_20260924_center9_25_normalized.mat`，**正式修正後 SHA-256** `a41413274d4134588070216f9699fd985b986c2419ae895ef6eabce0d0937231`。先前同名檔的 SHA-256 `3e6889b5c36488e426415c01e99df12c5a12fd9a908d52cb20f4fd1434c201c5` 已移入 `diagnostics_prior_orientation/`，不得用作本輪正式銀行。
 - 本包新銀行 SHA-256：`4435f52a5d0f3ee31b5fbcbfbf13817d4ce2cabeeb2279b64b9492f9f3e4af7b`。核數值與來源 MAT 逐項相同，明暗亮度係數留在來源記錄中，不混入單顆正規化 PSF。
 - 正式檔案出現後核對 25 顆 101×101、單顆和為 1、物面像素 0.1725 µm、來源照片與九顆 SEM 對應、擬合保留柱檢查及來源雜湊。列優先 5×5：索引＝列×5＋欄；亮度係數不混入正規化 PSF。
 - 資料和模型規格：與 R143 同 768 個清楚母場景及分組、雜訊、逐場景 PSF 索引、架構、訓練種子和 8192 次更新。配對資料由新銀行重新製作，已通過逐場景對照；來源鎖建立後，完整訓練從零啟動。

@@ -8,6 +8,7 @@ import cv2,numpy as np,torch
 from model.organized import Hybrid
 from model.organized.inference_policy import guard
 from run_pilot import setup
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -23,8 +24,8 @@ def main():
     assert load(ROOT/'results/organization/verification.json')['passed']
     cp=load(ROOT/'runs/D/summary.json')['checkpoint']
     for item in [cp,pilot['calibration'],*organization['organized_files']]:
-        if sha(item['path'])!=item['sha256']:raise RuntimeError('Recorded source changed: '+item['path'])
-    setup(pilot['common_seed']);bank=np.load(pilot['calibration']['path'])
+        if sha(str(PROJECT_ROOT / item['path']))!=item['sha256']:raise RuntimeError('Recorded source changed: '+str(PROJECT_ROOT / item['path']))
+    setup(pilot['common_seed']);bank=np.load(str(PROJECT_ROOT / pilot['calibration']['path']))
     model=Hybrid(torch.from_numpy(bank['mean']),torch.from_numpy(bank['candidates'])).to(args.device)
     model.load_state_dict(torch.load(cp['path'],map_location=args.device)['model'],strict=True);model.eval()
     x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].to(args.device)

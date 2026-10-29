@@ -9,14 +9,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.io import loadmat
 from scipy.ndimage import gaussian_filter1d, map_coordinates
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
 
 FIGURE_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\figures"
-    r"\center9_pillar_fit_20x_50x"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x')
 )
-FIT_ROOT = Path(r"D:\GMM_2_Final\PSF_Fitting\output\deconvolution_baseline_psf_20260715")
+FIT_ROOT = Path(str(PROJECT_ROOT / 'PSF_Fitting/output/deconvolution_baseline_psf_20260715'))
 SOURCE_ROOT = Path(__file__).resolve().parent
 TABLE_ROOT = (
     FIGURE_ROOT.parent.parent / "tables" / "center9_pillar_fit_20x_50x"
@@ -472,13 +471,13 @@ def main() -> None:
         json.dump(
             {
                 "method": "background-normalized Wiener deconvolution with fitted PSF and one fixed scalar NSR",
-                "sem_source": r"D:\GMM_2_Final\Thesis_MOSR_Evidence\20260618_100MG\SEM_data\via_pilar.xlsx, SEM data!J8:L10",
+                "sem_source": str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/20260618_100MG/SEM_data/via_pilar.xlsx, SEM data!J8:L10'),
                 "sem_conversion": "SEM CD = 2 x fitted SEM radius",
                 "cd_rule": "median opposite-angle half-contrast diameter, identical before and after",
                 "edge_rule": "median angular 10-90% transition width; lower is sharper",
                 "ringing_rule": "inward-dip magnitude divided by outward-rise magnitude on median radial profile",
                 "nsr_rule": "fixed NSR 0.05 for both magnifications; selected on held-out calibration imagery without using CD results",
-                "nsr_validation": r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS\tables\wiener_nsr_calibration_sweep.csv",
+                "nsr_validation": str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/wiener_nsr_calibration_sweep.csv'),
                 "overlay_boundary_rule": "orange contour is the actual 360-angle half-contrast crossing used for CD measurement",
                 "overlay_display_rule": "captured and deconvolved overlays share the combined 0.5-99.5 percentile grayscale range within each magnification; display only",
                 "sem_usage": "The known SEM diameter is reused as a consistency reference after deconvolution; it does not select the fixed NSR",

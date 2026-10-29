@@ -1,7 +1,7 @@
 # Process Probe Audit
 
 - candidate: soft_band_light
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/organized_20260313/round18/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756/weights/best_tradeoff.pth.tar
 - geom_method: soft_band_light
 - expect_dy: 0.80
 - process_score: -99.575127

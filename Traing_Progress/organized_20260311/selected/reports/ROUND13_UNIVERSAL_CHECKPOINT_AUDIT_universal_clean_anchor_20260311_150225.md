@@ -2,7 +2,7 @@
 
 - candidate: universal_clean_anchor
 - best_checkpoint_label: checkpoint_0p08
-- best_checkpoint_path: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_uca_20260311_143613\weights\best_tradeoff.pth.tar
+- best_checkpoint_path: Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_uca_20260311_143613/weights/best_tradeoff.pth.tar
 - best_deployment_score: -121.529870
 
 | checkpoint | s0.08 | s0.8 | s8 | deploy |

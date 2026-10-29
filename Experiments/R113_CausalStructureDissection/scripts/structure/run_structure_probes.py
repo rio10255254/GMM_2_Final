@@ -26,6 +26,7 @@ from torch import nn
 import torch.nn.functional as F
 
 from r109_interventions import render_variant_aligned
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -38,15 +39,13 @@ MONTAGE_OUT.mkdir(parents=True, exist_ok=True)
 
 EXPERIMENT_CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
 V42_LOADER = Path(
-    r"D:\GMM_2_Final\Experiments\R111_R109V42ThesisReplacementQualification"
-    r"\scripts\build_v42_external_gmf.py"
+    str(PROJECT_ROOT / 'Experiments/R111_R109V42ThesisReplacementQualification/scripts/build_v42_external_gmf.py')
 )
 V42_MODEL_FILE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages"
-    r"\V42_SoftLabelSNR_FullStandalone_20260709\model_v42.py"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py')
 )
-R61_MODEL_FILE = Path(r"D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py")
-R109_ROOT = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+R61_MODEL_FILE = Path(str(PROJECT_ROOT / 'Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py'))
+R109_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 
 EXPECTED_HASHES = {
     name: entry["sha256"] for name, entry in EXPERIMENT_CONFIG["models"].items()
@@ -133,57 +132,57 @@ def build_samples() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         {
             "case": "junhua_pitch100",
             "family": "JunHua real 100x",
-            "source": Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\Pitch1um_Y_100_Raw_Even_R109E48\pitch1um_y100_raw\bmp\frame_0050.bmp"),
-            "coordinate_score": Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\Pitch1um_Y_100_Raw_Even_R109E48\_gmf_scores\pitch1um_y100_raw\GMF_score.txt"),
+            "source": Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/pitch1um_y100_raw/bmp/frame_0050.bmp')),
+            "coordinate_score": Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/_gmf_scores/pitch1um_y100_raw/GMF_score.txt')),
             "frame": 50,
             "size": 1536,
         },
         {
             "case": "real_5x",
             "family": "real microscope 5x",
-            "source": Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\5x_1um\bmp\frame_0025.bmp"),
+            "source": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp/frame_0025.bmp')),
             "size": 512,
             "fixed_center": True,
         },
         {
             "case": "real_20x",
             "family": "real microscope 20x",
-            "source": Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\20x_1um\bmp\frame_0025.bmp"),
+            "source": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp/frame_0025.bmp')),
             "size": 512,
             "fixed_center": True,
         },
         {
             "case": "real_50x",
             "family": "real microscope 50x",
-            "source": Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_1um\bmp\frame_0025.bmp"),
+            "source": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp/frame_0025.bmp')),
             "size": 512,
             "fixed_center": True,
         },
         {
             "case": "sem_paired_optical",
             "family": "SEM-paired optical exposure",
-            "source": Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack\20.bmp"),
+            "source": Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/20.bmp')),
             "size": 512,
         },
         {
             "case": "synthetic_lines",
             "family": "synthetic known truth lines",
-            "source": Path(r"D:\GMM_2_Final\Training_Data\r40_microscopy_feature_coverage\micro_val_unseen\src\stage_29_micro_lines_grid\0087.bmp"),
-            "label": Path(r"D:\GMM_2_Final\Training_Data\r40_microscopy_feature_coverage\micro_val_unseen\lbl\stage_29_micro_lines_grid\0087.bmp"),
+            "source": Path(str(PROJECT_ROOT / 'Training_Data/r40_microscopy_feature_coverage/micro_val_unseen/src/stage_29_micro_lines_grid/0087.bmp')),
+            "label": Path(str(PROJECT_ROOT / 'Training_Data/r40_microscopy_feature_coverage/micro_val_unseen/lbl/stage_29_micro_lines_grid/0087.bmp')),
             "size": 512,
         },
         {
             "case": "synthetic_texture",
             "family": "synthetic known truth texture",
-            "source": Path(r"D:\GMM_2_Final\Training_Data\r40_microscopy_feature_coverage\micro_val_unseen\src\stage_31_micro_textures\0087.bmp"),
-            "label": Path(r"D:\GMM_2_Final\Training_Data\r40_microscopy_feature_coverage\micro_val_unseen\lbl\stage_31_micro_textures\0087.bmp"),
+            "source": Path(str(PROJECT_ROOT / 'Training_Data/r40_microscopy_feature_coverage/micro_val_unseen/src/stage_31_micro_textures/0087.bmp')),
+            "label": Path(str(PROJECT_ROOT / 'Training_Data/r40_microscopy_feature_coverage/micro_val_unseen/lbl/stage_31_micro_textures/0087.bmp')),
             "size": 512,
         },
         {
             "case": "synthetic_edge_defect",
             "family": "synthetic known truth edge defect",
-            "source": Path(r"D:\GMM_2_Final\Training_Data\r40_microscopy_feature_coverage\micro_val_unseen\src\stage_32_micro_edge_defects\0087.bmp"),
-            "label": Path(r"D:\GMM_2_Final\Training_Data\r40_microscopy_feature_coverage\micro_val_unseen\lbl\stage_32_micro_edge_defects\0087.bmp"),
+            "source": Path(str(PROJECT_ROOT / 'Training_Data/r40_microscopy_feature_coverage/micro_val_unseen/src/stage_32_micro_edge_defects/0087.bmp')),
+            "label": Path(str(PROJECT_ROOT / 'Training_Data/r40_microscopy_feature_coverage/micro_val_unseen/lbl/stage_32_micro_edge_defects/0087.bmp')),
             "size": 512,
         },
     ]
@@ -590,11 +589,11 @@ def compare_geo_states(r61: dict[str, torch.Tensor], v42: dict[str, torch.Tensor
 
 def canonical_reference(case: str, model: str) -> Path | None:
     mapping = {
-        ("junhua_pitch100", "V42_E120"): Path(r"D:\GMM_2_Final\Experiments\R111_R109V42ThesisReplacementQualification\external_gmf_v42\pitch1um_y100_v42_e120_tiled\bmp\frame_0050.bmp"),
-        ("junhua_pitch100", "R109_E48"): Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\Pitch1um_Y_100_Raw_Even_R109E48\pitch1um_y100_r109_e48\bmp\frame_0050.bmp"),
-        ("real_5x", "R61_v16"): Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\r61_v16_psfoff_5x_1um\bmp\frame_0025.bmp"),
-        ("real_20x", "R61_v16"): Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\r61_v16_psfoff_20x_1um\bmp\frame_0025.bmp"),
-        ("real_50x", "R61_v16"): Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\r61_v16_psfoff_x_1um\bmp\frame_0025.bmp"),
+        ("junhua_pitch100", "V42_E120"): Path(str(PROJECT_ROOT / 'Experiments/R111_R109V42ThesisReplacementQualification/external_gmf_v42/pitch1um_y100_v42_e120_tiled/bmp/frame_0050.bmp')),
+        ("junhua_pitch100", "R109_E48"): Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/pitch1um_y100_r109_e48/bmp/frame_0050.bmp')),
+        ("real_5x", "R61_v16"): Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp/frame_0025.bmp')),
+        ("real_20x", "R61_v16"): Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp/frame_0025.bmp')),
+        ("real_50x", "R61_v16"): Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp/frame_0025.bmp')),
     }
     return mapping.get((case, model))
 
@@ -611,7 +610,7 @@ def main() -> int:
     torch.manual_seed(113)
     np.random.seed(113)
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    checkpoint_paths = {name: Path(entry["checkpoint"]) for name, entry in EXPERIMENT_CONFIG["models"].items()}
+    checkpoint_paths = {name: Path(PROJECT_ROOT / entry["checkpoint"]) for name, entry in EXPERIMENT_CONFIG["models"].items()}
     hash_records = {}
     for name, path in checkpoint_paths.items():
         actual = sha256_file(path)
@@ -845,8 +844,8 @@ def main() -> int:
 
         # One exact-size R61 replay separates loader correctness from its known
         # spatial-context sensitivity (GroupNorm uses the whole inference area).
-        r61_full_source = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\5x_1um\bmp\frame_0025.bmp")
-        r61_full_reference = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\r61_v16_psfoff_5x_1um\bmp\frame_0025.bmp")
+        r61_full_source = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp/frame_0025.bmp'))
+        r61_full_reference = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp/frame_0025.bmp'))
         r61_full_raw = read_gray(r61_full_source)
         r61_full_tensor = to_tensor(r61_full_raw, device)
         with temporary_scalar(r61.physics_layer.alpha, 0.0):

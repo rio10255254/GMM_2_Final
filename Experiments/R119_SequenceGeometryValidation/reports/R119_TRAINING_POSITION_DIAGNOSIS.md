@@ -4,7 +4,7 @@
 
 **目前能確認：位置修正並非在所有資料上都無用；現有學習要求能罰最終影像膨脹，卻無法唯一決定位置、清晰化與細節應如何分工。這是需要追查的缺口，但尚未證明它就是實際訓練中造成膨脹的唯一原因。**
 
-本報告延續[跨曝光診斷](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/reports/R119_CROSS_EXPOSURE_POSITION_AUDIT.md)：同一樣品的 12 種曝光、36 顆柱子中，移除 E42 位置修正改善了 431/432 次輪廓量測，但 282/432 次仍不如 Raw。這個已成立的事實沒有被下列測試撤回。
+本報告延續[跨曝光診斷](R119_CROSS_EXPOSURE_POSITION_AUDIT.md)：同一樣品的 12 種曝光、36 顆柱子中，移除 E42 位置修正改善了 431/432 次輪廓量測，但 282/432 次仍不如 Raw。這個已成立的事實沒有被下列測試撤回。
 
 ## 1. 不是所有要求都看不見膨脹
 
@@ -88,12 +88,12 @@ R119 把暗物體的距離標記反號，確實破壞了原定 R118 對照的一
 - 92 個受保護輸入檔案在前後均未變，包含先前跨曝光報告、E24/E42 及原 R119 證據。沒有更新舊核對值。
 - 合成抽樣不是全面驗證；操作反例不是已訓練權重的歷史因果證明；真實 SEM 仍限於同一樣品。
 
-資料與重現程式位於[本次診斷資料夾](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/training_position_diagnosis_20260906)：
+資料與重現程式位於[本次診斷資料夾](../analysis/training_position_diagnosis_20260906)：
 
-- [事先記錄的測試範圍](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/training_position_diagnosis_20260906/protocol.json)
-- [已知答案小測試](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/training_position_diagnosis_20260906/known_answer_fixtures.json)
-- [全部合成場景逐筆結果](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/training_position_diagnosis_20260906/synthetic_path_effects.csv)
-- [真實輪廓附近的操作量](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/training_position_diagnosis_20260906/real_position_fields.csv)
-- [獨立數值覆核](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/training_position_diagnosis_20260906/numerical_verification.json)
+- [事先記錄的測試範圍](../analysis/training_position_diagnosis_20260906/protocol.json)
+- [已知答案小測試](../analysis/training_position_diagnosis_20260906/known_answer_fixtures.json)
+- [全部合成場景逐筆結果](../analysis/training_position_diagnosis_20260906/synthetic_path_effects.csv)
+- [真實輪廓附近的操作量](../analysis/training_position_diagnosis_20260906/real_position_fields.csv)
+- [獨立數值覆核](../analysis/training_position_diagnosis_20260906/numerical_verification.json)
 
 Python 入口為 `diagnose.py` 與 `verify.py`，使用 `C:/Users/Rio/anaconda3/python.exe`。輸出採新增寫入，不覆寫既有證據。

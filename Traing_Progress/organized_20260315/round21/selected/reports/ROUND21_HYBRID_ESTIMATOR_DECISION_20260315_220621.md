@@ -3,7 +3,7 @@
 - winner_candidate: r21_midsoft_ctrlguard
 - selected_candidate: r21_midsoft_ctrlguard
 - confirmed: False
-- selected_checkpoint: D:\GMM_2_Final\Traing_Progress\organized_20260315\round21\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Traing_Progress/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238/weights/best_tradeoff.pth.tar
 - macro_estimator: edge_band_refine
 - mid_center_ratio_min: 0.2500
 - mid_step_max: 0.4500

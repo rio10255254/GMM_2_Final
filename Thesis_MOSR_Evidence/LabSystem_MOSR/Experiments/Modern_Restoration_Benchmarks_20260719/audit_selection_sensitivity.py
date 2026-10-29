@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 
 import analyze_multimethod_displacement as displacement
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
@@ -79,14 +80,14 @@ def metric_rows(
 def main(output_root: Path) -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     method_order = list(manifest["methods"])
-    formal = pd.read_csv(manifest["top30_selection"])
+    formal = pd.read_csv(str(PROJECT_ROOT / manifest["top30_selection"]))
     formal = formal.loc[formal["top30_raw_motion_selected"].astype(bool)].copy()
     long_outputs: list[pd.DataFrame] = []
     selection_records: list[dict[str, object]] = []
     summary_records: list[dict[str, object]] = []
 
     for morphology, config_key in (("pillar", "pillar_config"), ("via", "via_config")):
-        configs = displacement.load_config(Path(manifest[config_key]), morphology)
+        configs = displacement.load_config(Path(PROJECT_ROOT / manifest[config_key]), morphology)
         morphology_tables: list[pd.DataFrame] = []
         for sequence_name in displacement.APPROVED_SEQUENCES:
             sequence = configs[sequence_name]

@@ -2,7 +2,7 @@
 
 ## What was fitted
 
-The 25 BMP files in `D:\GMM_2_Final\20260924` are a 5×5 set of views of the same physical nine pillars near the sample-center junction. All source files remain in place. The camera exposure in `snapshots.csv` is 3000 µs for every frame. The median observed pillar pitch is about 29.0 pixels, consistent with the existing 20×, 3.45 µm camera-pixel, 5 µm pillar-pitch calibration.
+The 25 BMP files in `20260924` are a 5×5 set of views of the same physical nine pillars near the sample-center junction. All source files remain in place. The camera exposure in `snapshots.csv` is 3000 µs for every frame. The median observed pillar pitch is about 29.0 pixels, consistent with the existing 20×, 3.45 µm camera-pixel, 5 µm pillar-pitch calibration.
 
 The SEM reference is the **pillar** radius table in `Thesis_MOSR_Evidence/SEM_data/via_pilar.xlsx`, sheet `SEM data`, cells `J8:L10`. The optical pillar block is dark circles on a bright background in these images; the nearby bright circles on a dark background are vias and were not used. The existing July 20× center-nine calibration supplies the working orientation. In image row order, the nine corresponding SEM pillar IDs are:
 

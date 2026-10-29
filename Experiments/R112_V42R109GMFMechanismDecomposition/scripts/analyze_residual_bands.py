@@ -9,6 +9,7 @@ import cv2
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,11 +49,11 @@ def correlation(left: pd.Series, right: pd.Series) -> dict[str, float]:
 
 
 def main() -> int:
-    raw_coords = scores(Path(CONFIG["models"]["Raw"]["score"]), "raw")
-    v42_coords = scores(Path(CONFIG["models"]["V42 E120"]["score"]), "v42")
-    r109_coords = scores(Path(CONFIG["models"]["R109 E48"]["score"]), "r109")
+    raw_coords = scores(Path(PROJECT_ROOT / CONFIG["models"]["Raw"]["score"]), "raw")
+    v42_coords = scores(Path(PROJECT_ROOT / CONFIG["models"]["V42 E120"]["score"]), "v42")
+    r109_coords = scores(Path(PROJECT_ROOT / CONFIG["models"]["R109 E48"]["score"]), "r109")
     coordinates = raw_coords.join(v42_coords).join(r109_coords)
-    directories = {arm: Path(CONFIG["models"][arm]["image_dir"]) for arm in ("Raw", "V42 E120", "R109 E48")}
+    directories = {arm: Path(PROJECT_ROOT / CONFIG["models"][arm]["image_dir"]) for arm in ("Raw", "V42 E120", "R109 E48")}
     rows: list[dict[str, object]] = []
     yy, xx = np.indices((CROP_SIZE // DOWNSAMPLE, CROP_SIZE // DOWNSAMPLE), dtype=np.float32)
     radius = np.sqrt((xx - (CROP_SIZE / DOWNSAMPLE - 1) / 2.0) ** 2 + (yy - (CROP_SIZE / DOWNSAMPLE - 1) / 2.0) ** 2)

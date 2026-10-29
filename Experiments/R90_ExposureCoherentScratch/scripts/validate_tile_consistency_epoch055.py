@@ -11,11 +11,12 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL_PATH = ROOT / "reports" / "full_validation_epoch055" / "validation_protocol.json"
-R78_CONFIG = Path(r"D:\GMM_2_Final\Experiments\R78_R75v2_BroadRealMicroscopeGeneralization\config\experiment.json")
+R78_CONFIG = Path(str(PROJECT_ROOT / 'Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/config/experiment.json'))
 OUTPUT = ROOT / "results" / "full_validation_epoch055" / "tile_consistency.json"
 INFERENCE_PATH = ROOT / "inference" / "reconstruct.py"
 
@@ -67,8 +68,8 @@ def main() -> int:
     if int(payload.get("epoch", -1)) != 55:
         raise RuntimeError("Expected epoch 55")
     source_paths = {
-        "5x_0p5um": sorted(Path(config["sequences"]["5x_0p5um"]["raw_dir"]).glob("frame_*.bmp"))[24],
-        "50x_1um": sorted(Path(config["sequences"]["50x_1um"]["raw_dir"]).glob("frame_*.bmp"))[24],
+        "5x_0p5um": sorted(Path(PROJECT_ROOT / config["sequences"]["5x_0p5um"]["raw_dir"]).glob("frame_*.bmp"))[24],
+        "50x_1um": sorted(Path(PROJECT_ROOT / config["sequences"]["50x_1um"]["raw_dir"]).glob("frame_*.bmp"))[24],
     }
     report = {
         "status": "complete", "checkpoint_sha256": record["checkpoint_sha256"],

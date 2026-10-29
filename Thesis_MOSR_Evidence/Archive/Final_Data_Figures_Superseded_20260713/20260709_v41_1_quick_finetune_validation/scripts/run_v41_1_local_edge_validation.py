@@ -11,9 +11,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path("D:/GMM_2_Final/Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 PREV_VALIDATION_ROOT = ROOT / "Final_Data_Figures" / "20260708_v41_standalone_full_validation"
 OUT_ROOT = ROOT / "Final_Data_Figures" / "20260709_v41_1_quick_finetune_validation"
 TABLE_DIR = OUT_ROOT / "tables"

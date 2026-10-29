@@ -8,6 +8,7 @@ from localization_readers import radial_lsc
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/localization_improvement';OUT.mkdir(exist_ok=True)
 sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as backend
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def save(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -20,7 +21,7 @@ def main():
     for seq,s in cfg['sequences'].items():
         selected=locked[locked.sequence==seq];ids=sorted(set(selected.start_frame_index)|set(selected.end_frame_index));mag=s['magnification'];pitch=s['pitch_px'];margin=int(np.ceil(.55*pitch));half=int(np.ceil(.46*pitch));folder='20x' if mag=='20x' else '50x_calibrated';psf=backend.loadmat(backend.SWEEP_ROOT/f'{mag}_deconvolution_sweep.mat')['psf']
         for fi in ids:
-            source=Path(s['raw_dir'])/f'frame_{fi:04d}.bmp';assert sha(source)==manifest.loc[(seq,fi),'sha256'];raw=backend.load_grayscale(source);pred=backend.session_prediction(seq,int(fi),np.array(s['centers'],float),s['expected_signed_dx_px'])
+            source=Path(PROJECT_ROOT / s['raw_dir'])/f'frame_{fi:04d}.bmp';assert sha(source)==manifest.loc[(seq,fi),'sha256'];raw=backend.load_grayscale(source);pred=backend.session_prediction(seq,int(fi),np.array(s['centers'],float),s['expected_signed_dx_px'])
             x0=max(0,int(np.floor(pred[:,1].min()))-margin);x1=min(raw.shape[1],int(np.ceil(pred[:,1].max()))+margin+1);y0=max(0,int(np.floor(pred[:,2].min()))-margin);y1=min(raw.shape[0],int(np.ceil(pred[:,2].max()))+margin+1)
             rawroi=raw[y0:y1,x0:x1];path=ROOT/f'results/{folder}/reconstruction/{seq}/frame_{fi:04d}.npz';receipt=load(path.with_suffix('.json'));assert sha(path)==receipt['output_sha256']
             methods={'Raw':rawroi,'Wiener':backend.wiener_contrast_restore(rawroi,psf,backend.NSR,pitch_px=pitch),'R152':np.load(path)['output'][y0:y1,x0:x1].astype(float)}

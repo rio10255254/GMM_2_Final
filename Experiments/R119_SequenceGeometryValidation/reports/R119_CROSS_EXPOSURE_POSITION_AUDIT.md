@@ -4,7 +4,7 @@
 
 **結論：在這一組真實樣品的 12 種既有曝光中，位置修正是輪廓膨脹與誤差增加的重要來源。關掉它能穩定減輕問題，但仍不足以得到優於原圖的完整解法。**
 
-這次完成的是固定模型的原因診斷，不是新模型訓練、模型升級或新的獨立確認。原有 [R119 因果稽核更正](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/reports/R119_CAUSAL_AUDIT.md)繼續有效；本報告只把先前單一曝光的線索擴展到同一樣品的全部 12 種曝光。舊 P00–P12 完成宣告沒有因此恢復有效。
+這次完成的是固定模型的原因診斷，不是新模型訓練、模型升級或新的獨立確認。原有 [R119 因果稽核更正](R119_CAUSAL_AUDIT.md)繼續有效；本報告只把先前單一曝光的線索擴展到同一樣品的全部 12 種曝光。舊 P00–P12 完成宣告沒有因此恢復有效。
 
 ## 1. 做了什麼
 
@@ -38,7 +38,7 @@
 
 每顆柱子跨曝光的配對改善中位數，再對 36 顆取中位數，是 **−0.07691 個柱距百分點**。按柱子整組重抽 5,000 次得到區間 **[−0.07976, −0.07112]**。這個區間只描述此樣品內的柱子差異，不包含跨樣品、SEM 參考本身或其他儀器條件的不確定度。
 
-![跨曝光結果與全部逐顆差異](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/cross_exposure_results.png)
+![跨曝光結果與全部逐顆差異](../analysis/sem_position_audit_20260906/cross_exposure_results.png)
 
 ## 3. 每種曝光都保留
 
@@ -88,9 +88,9 @@
 
 視覺檢查涵蓋全部曝光的固定柱子 21、曝光 13 及配對改善中位數最小的曝光 21 的全部柱子，以及唯一退步案例。未按最好看的结果挑例子。較暗影像仍可見中心與外圈的亮度分層；本次不把它宣稱為真實細節或已消除的假影。
 
-![固定例子與保留的退步案例](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/review_examples.png)
+![固定例子與保留的退步案例](../analysis/sem_position_audit_20260906/review_examples.png)
 
-[全部 12 種曝光的四組影像](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/all_exposure_images.png)
+[全部 12 種曝光的四組影像](../analysis/sem_position_audit_20260906/all_exposure_images.png)
 
 ## 6. 驗證、失敗紀錄與完整性
 
@@ -125,16 +125,16 @@
 
 ## 8. 可追溯檔案與重現
 
-全部新程式與逐筆結果位於 [本次診斷資料夾](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906)。主要入口：
+全部新程式與逐筆結果位於 [本次診斷資料夾](../analysis/sem_position_audit_20260906)。主要入口：
 
-- [分析前範圍與判準](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/protocol.json)
-- [全部四組量測](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/measurements.csv)
-- [逐顆逐曝光的配對比較](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/paired_observations.csv)
-- [按曝光整理的完整結果](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/by_exposure.csv)
-- [按柱子整理的完整結果](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/by_pillar.csv)
-- [細節變化與局部幅度差異](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/detail_and_amplitude.csv)
-- [獨立重算](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/independent_recalculation.csv)
-- [保存格式差異的完整核對](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/cell_export_diagnosis.csv)
-- [完整性與數值覆核](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/sem_position_audit_20260906/verification.json)
+- [分析前範圍與判準](../analysis/sem_position_audit_20260906/protocol.json)
+- [全部四組量測](../analysis/sem_position_audit_20260906/measurements.csv)
+- [逐顆逐曝光的配對比較](../analysis/sem_position_audit_20260906/paired_observations.csv)
+- [按曝光整理的完整結果](../analysis/sem_position_audit_20260906/by_exposure.csv)
+- [按柱子整理的完整結果](../analysis/sem_position_audit_20260906/by_pillar.csv)
+- [細節變化與局部幅度差異](../analysis/sem_position_audit_20260906/detail_and_amplitude.csv)
+- [獨立重算](../analysis/sem_position_audit_20260906/independent_recalculation.csv)
+- [保存格式差異的完整核對](../analysis/sem_position_audit_20260906/cell_export_diagnosis.csv)
+- [完整性與數值覆核](../analysis/sem_position_audit_20260906/verification.json)
 
 使用 `C:/Users/Rio/anaconda3/python.exe`，MATLAB R2025b。`render.py` 依序提供 prepare 與 render；`measure_sem_replay.m` 是修正小圖核對方式後的量測版本；`analyze.py` 重算與彙總；`review_examples.py` 建立固定例子；`verify_final.py` 核對保護清單與結果。所有正式輸出都拒絕覆寫既有同名檔案。再次重現應另設新輸出位置，保留這一批紀錄。

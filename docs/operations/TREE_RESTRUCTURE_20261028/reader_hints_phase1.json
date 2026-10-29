@@ -1,0 +1,18 @@
+[
+ {"file": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/modern_baseline_three_morphology_20260719/source_scripts/analyze_multimethod_displacement.py",
+  "name": "MANIFEST_PATH",
+  "path": "Experiments/R67_UniversalModelGeneralization/config/evaluation_manifest.generated.json",
+  "why": "This copy's own evaluation_manifest.json was not copied with it; R67 (scripts/run_r67.py) loads the copy and sets module.MANIFEST_PATH to the manifest it generates."},
+ {"file": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/modern_baseline_three_morphology_20260719/source_scripts/analyze_circular_cd_sharpness.py",
+  "name": "MANIFEST_PATH",
+  "path": "Experiments/R67_UniversalModelGeneralization/config/evaluation_manifest.generated.json",
+  "why": "As above; R67 also calls circular_references(manifest, ...) and method_sequence_dir(manifest, ...) of this copy."},
+ {"file": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/modern_baseline_three_morphology_20260719/source_scripts/analyze_line_multimethod.py",
+  "name": "MANIFEST_PATH",
+  "path": "Experiments/R67_UniversalModelGeneralization/config/evaluation_manifest.generated.json",
+  "why": "As above."},
+ {"file": "Experiments/R77_R75v2ACMContourSEMValidation/scripts/run_r77.py",
+  "name": "R76_RUNNER",
+  "path": "Experiments/R76_R75ACMContourSEMValidation/scripts/run_r76.py",
+  "why": "Built from the config value paired_evidence/r76_root; R77 loads that runner and sets its CONFIG, MODEL, EVIDENCE and INFERENCE to R77's own."}
+]

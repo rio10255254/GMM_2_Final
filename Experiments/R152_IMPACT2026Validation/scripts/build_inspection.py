@@ -13,6 +13,7 @@ ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'inspection';ASSETS=OUT/'image
 ASSETS.mkdir(parents=True,exist_ok=True)
 sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as backend
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 backend.SESSION_TABLE=ROOT/'sources/session_anchors.csv'
 SEQS=['50x_x_0p5um','50x_x_1um','20x_0p5um','20x_1um']
 LABELS=['50×／0.5 μm','50×／1.0 μm','20×／0.5 μm','20×／1.0 μm']
@@ -31,7 +32,7 @@ def main():
         frameids=sorted(set(chosen.start_frame_index)|set(chosen.end_frame_index));pitch=s['pitch_px'];margin=int(np.ceil(.55*pitch))
         psf=backend.loadmat(backend.SWEEP_ROOT/f'{mag}_deconvolution_sweep.mat')['psf'];frames={};sample_raw={};sample_roi={}
         for fi in frameids:
-            source=Path(s['raw_dir'])/f'frame_{fi:04d}.bmp';assert sha(source)==manifest.loc[(seq,fi),'sha256']
+            source=Path(PROJECT_ROOT / s['raw_dir'])/f'frame_{fi:04d}.bmp';assert sha(source)==manifest.loc[(seq,fi),'sha256']
             raw=backend.load_grayscale(source);assert raw.shape==(1536,2048)
             pred=backend.session_prediction(seq,int(fi),np.array(s['centers'],float),s['expected_signed_dx_px'])
             x0=max(0,int(np.floor(pred[:,1].min()))-margin);x1=min(raw.shape[1],int(np.ceil(pred[:,1].max()))+margin+1)

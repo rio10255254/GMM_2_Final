@@ -8,11 +8,12 @@ from pathlib import Path
 import sys
 
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DESIGN = json.loads((ROOT / "config" / "experiment_design.json").read_text(encoding="utf-8"))
-PACKAGE = Path(DESIGN["data"]["source_package"])
+PACKAGE = Path(PROJECT_ROOT / DESIGN["data"]["source_package"])
 MANIFEST = json.loads((PACKAGE / "manifest.json").read_text(encoding="utf-8"))
 WEIGHTS = ROOT / "weights" / "formal" / "seed_960041" / "R96_scratch_seed960041_20260813_131438" / "weights"
 OUTPUT = ROOT / "results" / "deep_diagnosis" / "internal_causes.json"

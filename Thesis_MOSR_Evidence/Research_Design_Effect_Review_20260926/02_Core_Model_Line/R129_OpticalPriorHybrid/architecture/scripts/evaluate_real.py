@@ -8,6 +8,7 @@ import cv2,numpy as np,pandas as pd,torch
 from torch.nn import functional as F
 from model.hybrid_v2 import Hybrid
 from run_pilot import setup
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 def guard(raw,pred):
     h,w=raw.shape[-2:];y=torch.arange(h,device=raw.device)[:,None];x=torch.arange(w,device=raw.device)[None,:];d=torch.minimum(torch.minimum(y,h-1-y),torch.minimum(x,w-1-x)).float();weight=((d-80)/16).clamp(0,1)
@@ -29,19 +30,19 @@ def prepare_panel():
 def main():
     assert load(ROOT/'results/pilot_training.json')['total_updates']==96
     if not (ROOT/'config/real_panel.json').exists():prepare_panel()
-    panel=load(ROOT/'config/real_panel.json');p=load(ROOT/'config/plan.json');cfg=load(panel['sequence_config']['path']);bank=np.load(ROOT/'data/measured_psf_bank.npz');setup(p['common_seed'])
+    panel=load(ROOT/'config/real_panel.json');p=load(ROOT/'config/plan.json');cfg=load(str(PROJECT_ROOT / panel['sequence_config']['path']));bank=np.load(ROOT/'data/measured_psf_bank.npz');setup(p['common_seed'])
     sys.path.insert(0,str(R128/'analysis/lsc_comparison'));from measure import reader
     core,scope=reader(load(R128/'results/lsc_comparison/plan.json'))
     methods=[(arm,step) for arm in p['arms'] for step in [0,24]];results=[];motionrows=[]
     for arm,step in methods:
         m=Hybrid(torch.from_numpy(bank['mean']),torch.from_numpy(bank['candidates']),**p['arms'][arm]).to('cuda');ck=ROOT/'runs'/arm/('initial.pth' if step==0 else 'step24.pth');m.load_state_dict(torch.load(ck,map_location='cuda')['model']);m.eval();tag=f'{arm}_{step}';folder=ROOT/'results/real'/tag;folder.mkdir(parents=True,exist_ok=False);t0=time.perf_counter()
         for item in panel['sem']:
-            src=item['source'];assert sha(src['path'])==src['sha256'];raw=cv2.imread(src['path'],0);x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].to('cuda')
+            src=item['source'];assert sha(str(PROJECT_ROOT / src['path']))==src['sha256'];raw=cv2.imread(str(PROJECT_ROOT / src['path']),0);x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].to('cuda')
             with torch.no_grad():d=m.forward_details(x,trace=True);out=guard(x,d.output)[0,0].cpu().numpy()
             path=folder/f"sem{item['exposure']}.png";assert cv2.imwrite(str(path),np.rint(out*255).clip(0,255).astype(np.uint8));np.savez_compressed(folder/f"sem{item['exposure']}.npz",output=out)
             results.append(dict(tag=tag,arm=arm,step=step,exposure=item['exposure'],image=record(path),source=src,checkpoint=record(ck),optical_weights=d.optical['weights'].detach().cpu().tolist() if p['arms'][arm]['optical'] else None))
         for item in panel['motion']:
-            s=cfg['sequences'][item['sequence']];src=item['source'];assert sha(src['path'])==src['sha256'];rawfull=cv2.imread(src['path'],0);x0,y0,x1,y1=item['box'];raw=rawfull[y0:y1,x0:x1];x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].to('cuda')
+            s=cfg['sequences'][item['sequence']];src=item['source'];assert sha(str(PROJECT_ROOT / src['path']))==src['sha256'];rawfull=cv2.imread(str(PROJECT_ROOT / src['path']),0);x0,y0,x1,y1=item['box'];raw=rawfull[y0:y1,x0:x1];x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].to('cuda')
             with torch.no_grad():output=guard(x,m(x))[0,0].cpu().numpy()
             image=np.rint(output*255).clip(0,255).astype(np.uint8);path=folder/f"{item['sequence']}_{item['frame_index']:04d}.png";assert cv2.imwrite(str(path),image)
             predicted=scope['session_prediction'](item['sequence'],item['frame_index'],np.asarray(s['centers'],float),s['expected_signed_dx_px'])

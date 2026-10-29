@@ -8,9 +8,10 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 import cv2
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 sys.stdout.reconfigure(encoding='utf-8')
-REPO=Path(r'D:\GMM_2_Final')
+REPO=Path(str(PROJECT_ROOT))
 EXP=REPO/'Experiments/R129_OpticalPriorHybrid'
 PKG=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912'
 HANDOFF=REPO/'Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920'

@@ -18,10 +18,11 @@ from local_edge_band_core import (  # noqa: E402
     measure_pair_local_edge_displacement,
     normalize_image,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 
 VALIDATION_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260708_v41_standalone_full_validation"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/20260708_v41_standalone_full_validation')
 )
 SOURCE_ALL_STEPS = (
     VALIDATION_ROOT

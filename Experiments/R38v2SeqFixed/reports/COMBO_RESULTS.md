@@ -70,4 +70,4 @@ Internal step_std 用 circle-fit（對 residual 敏感），GMF 用 template mat
 
 ## Checkpoint
 
-`D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\weights\best_tradeoff.pth.tar`
+`Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`

@@ -1,3 +1,4 @@
+PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))))));
 % Preflight checks for the LabSystem_MOSR copied project-standard PSF fitter.
 
 clear; clc;
@@ -7,7 +8,7 @@ psf_root = fileparts(script_dir);
 standard_dir = fullfile(script_dir, 'standard_wholefov');
 input_folder = fullfile(psf_root, 'inputs', '20250605_standard_wholefov', 'measured');
 gt_path = fullfile(psf_root, 'inputs', '20250605_standard_wholefov', 'GT', 'LAB_GT_REQUIRED.bmp');
-dependency_root = 'D:/GMM_2_Final/PSF_Fitting';
+dependency_root = fullfile(PROJECT_ROOT, 'PSF_Fitting');
 psf_basis_path = fullfile(dependency_root, 'SimulatePSF', 'psf_multi.mat');
 
 required_files = {

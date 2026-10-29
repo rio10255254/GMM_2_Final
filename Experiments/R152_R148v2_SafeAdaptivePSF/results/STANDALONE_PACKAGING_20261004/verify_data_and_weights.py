@@ -19,6 +19,7 @@ sys.path.insert(0,str(PACK))
 from core.dataset import Bank
 from settings import TRAIN_CONFIG,model_config
 from models import Model
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 target=Bank(TRAIN_CONFIG)
 
 def main():
@@ -36,7 +37,7 @@ def main():
         assert a['input_sha256']==b['input_sha256']
         assert torch.equal(a['operator_psf_indices'],b['operator_psf_indices'])
     published=json.loads((ROOT/'runs/formal_8192/training_complete.json').read_text(encoding='utf-8'))
-    original=torch.load(published['deployed_checkpoint']['path'],map_location='cpu',weights_only=False)
+    original=torch.load(str(PROJECT_ROOT / published['deployed_checkpoint']['path']),map_location='cpu',weights_only=False)
     packaged=torch.load(PACK/'weights/r152_deployed.pth',map_location='cpu',weights_only=False)
     assert set(original['model'])==set(packaged['model'])
     for name in original['model']:assert torch.equal(original['model'][name],packaged['model'][name]),name

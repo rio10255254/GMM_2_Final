@@ -10,6 +10,7 @@ import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 DEST = ROOT / 'reports/MOSR_MEAN_THESIS_HANDOFF_20261005'
 
@@ -281,7 +282,7 @@ MAE = (1/900) Σ_r Σ_j |e_(r,j;a)|；RMSE = sqrt{(1/900) Σ_r Σ_j e_(r,j;a)²}
         assert np.max(abs(pixels[..., 1] - pixels[..., 2])) == 0
     locked = read(ROOT / 'config/source_lock.json')['files']
     for row in locked:
-        assert sha(row['path']) == row['sha256'], row['path']
+        assert sha(str(PROJECT_ROOT / row['path'])) == row['sha256'], str(PROJECT_ROOT / row['path'])
     provenance = {'source_files': locked, 'original_optical_measurement_files': 'verified_fixed_measurement_sources.csv',
         'builder_sha256': sha(__file__), 'main_MD_sha256': sha(DEST / 'MOSR_MEAN_THESIS_HANDOFF.md'),
         'original_sources_modified': False, 'new_model_training_results_included': False,

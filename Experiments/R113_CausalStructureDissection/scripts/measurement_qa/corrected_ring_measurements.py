@@ -26,11 +26,12 @@ import cv2
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 SCRIPT = Path(__file__).resolve()
 ROOT = SCRIPT.parents[2]
-R112 = Path(r"D:\GMM_2_Final\Experiments\R112_V42R109GMFMechanismDecomposition")
+R112 = Path(str(PROJECT_ROOT / 'Experiments/R112_V42R109GMFMechanismDecomposition'))
 R112_CONFIG = R112 / "config" / "experiment.json"
 OUTPUT = ROOT / "results" / "measurement_qa"
 
@@ -367,8 +368,8 @@ def validate_source_population(config: dict[str, object]) -> dict[str, object]:
     }
     for arm in ARM_ORDER:
         entry = config["models"][arm]
-        image_dir = Path(entry["image_dir"])
-        score_path = Path(entry["score"])
+        image_dir = Path(PROJECT_ROOT / entry["image_dir"])
+        score_path = Path(PROJECT_ROOT / entry["score"])
         coordinates = parse_score(score_path, arm)
         image_paths = [image_dir / name for name in coordinates["frame_name"]]
         missing = [str(path) for path in image_paths if not path.is_file()]
@@ -405,8 +406,8 @@ def run(selected_arms: Iterable[str] = ARM_ORDER, limit: int | None = None) -> d
 
     for arm in selected_arms:
         entry = config["models"][arm]
-        coordinates = parse_score(Path(entry["score"]), arm).iloc[:total_per_arm]
-        image_dir = Path(entry["image_dir"])
+        coordinates = parse_score(Path(PROJECT_ROOT / entry["score"]), arm).iloc[:total_per_arm]
+        image_dir = Path(PROJECT_ROOT / entry["image_dir"])
         for sequence_number, row in enumerate(coordinates.itertuples(index=False), 1):
             image_path = image_dir / row.frame_name
             image = read_gray(image_path)

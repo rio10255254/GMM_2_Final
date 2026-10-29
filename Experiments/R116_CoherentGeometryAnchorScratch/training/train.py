@@ -47,6 +47,7 @@ from training.losses import (
     width_action_components,
 )
 from training.profile_targets import build_profile_targets
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 @dataclass(frozen=True)
@@ -444,7 +445,7 @@ def read_gray(path: Path) -> np.ndarray:
 
 @torch.inference_mode()
 def save_real_preview(model, device: torch.device, path: Path) -> None:
-    inputs = [Path(value) for value in CONFIG["validation_plan"]["real_preview_inputs"]]
+    inputs = [Path(PROJECT_ROOT / value) for value in CONFIG["validation_plan"]["real_preview_inputs"]]
     existing = [value for value in inputs if value.exists()]
     if not existing:
         return

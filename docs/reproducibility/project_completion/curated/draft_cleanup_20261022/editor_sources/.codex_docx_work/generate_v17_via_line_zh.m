@@ -1,7 +1,8 @@
 function generate_v17_via_line_zh()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))));
 %GENERATE_V17_VIA_LINE_ZH Rebuild the via and line figures in Chinese.
 
-outDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v17_chinese_figures\cross_morphology';
+outDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_docx_work/v17_chinese_figures/cross_morphology');
 if ~isfolder(outDir); mkdir(outDir); end
 
 set(groot, 'defaultFigureColor', 'w');
@@ -15,7 +16,8 @@ draw_lines(outDir);
 end
 
 function draw_via(outDir)
-csvPath = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\evaluation\circular_cd_sharpness\circular_feature_cd_intervals.csv';
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))));
+csvPath = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/circular_cd_sharpness/circular_feature_cd_intervals.csv');
 T = readtable(csvPath, 'TextType', 'string', 'VariableNamingRule', 'preserve');
 S = T(T.magnification == "20x" & T.morphology == "via", :);
 methods = ["Raw", "NAFNet", "EDSR", "MOSR"];
@@ -74,7 +76,8 @@ close(fig);
 end
 
 function draw_lines(outDir)
-inputCsv = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\evaluation\line\tables\line_sharpness_summary.csv';
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))));
+inputCsv = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/line/tables/line_sharpness_summary.csv');
 T = readtable(inputCsv, 'TextType', 'string');
 orientations = ["horizontal_lines", "vertical_lines"];
 methods = ["Raw", "MOSR"];

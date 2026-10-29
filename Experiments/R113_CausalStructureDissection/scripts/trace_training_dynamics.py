@@ -15,16 +15,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
 OUTPUT = ROOT / "results" / "training_dynamics"
 OUTPUT.mkdir(parents=True, exist_ok=True)
-R109_ROOT = Path(CONFIG["models"]["R109_E48"]["model_root"])
-V42_CHECKPOINT = Path(CONFIG["models"]["V42_E120"]["checkpoint"])
+R109_ROOT = Path(PROJECT_ROOT / CONFIG["models"]["R109_E48"]["model_root"])
+V42_CHECKPOINT = Path(PROJECT_ROOT / CONFIG["models"]["V42_E120"]["checkpoint"])
 V42_RUN = V42_CHECKPOINT.parent
-V42_LOADER = Path(CONFIG["models"]["V42_E120"]["loader"])
+V42_LOADER = Path(PROJECT_ROOT / CONFIG["models"]["V42_E120"]["loader"])
 R109_RUN = R109_ROOT / "runs" / "r109_formal_scratch_continuous_b8_20260826" / "weights"
 V42_EPOCHS = (1, 5, 10, 20, 40, 60, 80, 100, 120)
 R109_EPOCHS = tuple(range(4, 49, 4))

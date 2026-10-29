@@ -20,23 +20,57 @@ import posixpath
 import re
 import subprocess
 import tempfile
+import io
+import tokenize
 import urllib.parse
 from pathlib import Path
 
 from restructure_hashes import HEX64
 from restructure_python import evaluated_targets
-from restructure_resolve import Universe, git_env, norm, resolve
+from restructure_resolve import PROJECT_ABS, Universe, git_env, norm, resolve
 from restructure_text import ABS_START, INTERPRETER, TOKEN, token_starts, token_targets
 
 TRANSFORM_RECORDS = ('docs/operations/TREE_RESTRUCTURE_20261028.md', 'docs/operations/TREE_RESTRUCTURE_20261028/',
                      'docs/superpowers/specs/2026-10-28-tree-restructure-design.md',
                      'docs/superpowers/plans/2026-10-28-tree-restructure.md')
+# the transform's own code and tests: their old paths are test inputs and rule text, not references
+TRANSFORM_CODE = re.compile(r'^Tools/(?:tests/test_)?(?:restructure_[a-z_]+|check_markdown_links)\.py$')
 EXECUTABLE = ('.py', '.m', '.ps1', '.psm1', '.bat', '.cmd', '.sh', '.ipynb')
-PROJECT_ABS = re.compile(r'[A-Za-z]:(?:\\\\|\\|/)+GMM_2_Final', re.I)
 
 
 def is_record(name):
-    return any(name == r or (r.endswith('/') and name.startswith(r)) for r in TRANSFORM_RECORDS)
+    return any(name == r or (r.endswith('/') and name.startswith(r)) for r in TRANSFORM_RECORDS) or \
+        bool(TRANSFORM_CODE.match(name))
+
+
+def parses(name, data):
+    """Whether a JSON-family file (.json, .ipynb, .json.gz) parses; None for other files."""
+    low = name.lower()
+    if not low.endswith(('.json', '.ipynb', '.json.gz')):
+        return None
+    import json
+    try:
+        json.loads(_text(name, data) or '')
+        return True
+    except ValueError:
+        return False
+
+
+def structure(before, after, rules):
+    """JSON-family files that parsed before the transform must still parse after it."""
+    out = []
+    for name, data in sorted(before.items()):
+        new = (rules.map(name) if rules else None) or name
+        if parses(name, data) and new in after and parses(new, after[new]) is False:
+            out.append(f'{new}: no longer parses as JSON')
+    return out
+
+
+def content_addressed(name, data):
+    """A file stored under its own sha256 (a folder or file named by it): its identity is its
+    content, so the transform never rewrites it."""
+    h = hashlib.sha256(data).hexdigest()
+    return any(seg.lower() == h for seg in re.split(r'[/.]', name))
 
 
 def _text(name, data):
@@ -67,6 +101,9 @@ def equivalence(edits, old_uni, new_uni, rules, external_map, decisions=None):
             if kind in ('string', 'comment'):
                 old = [_expect(t, rules, decisions) for t in token_targets(e.old, e.file_old, old_uni, external_map)]
                 new = token_targets(e.new, e.file_new, new_uni, external_map)
+                if rules is None:
+                    # location mode: the project folder itself is written '.', or kept as written in prose
+                    old, new = [t for t in old if t], [t for t in new if t]
                 if Counter(old) != Counter(new):
                     problems.append(f'{where}: targets {old} became {new}')
             continue
@@ -115,12 +152,15 @@ def python_equivalence(old_src, new_src, file_old, file_new, ctx_old, ctx_new, r
     fixed_old = Counter(_expect(t, rules, decisions) for t in old if not t.endswith('/<dyn>') and not (location and t == ''))
     fixed_new = Counter(t for t in new if not t.endswith('/<dyn>') and not (location and t == ''))
     problems = []
-    if fixed_old != fixed_new:
-        lost, extra = fixed_old - fixed_new, fixed_new - fixed_old
+    lost, extra = fixed_old - fixed_new, fixed_new - fixed_old
+    # location mode may gain targets: an external path that maps into the project becomes evaluable;
+    # a wrong rewrite still shows as a target that went missing
+    if lost or (extra and not location):
         problems.append(f'{file_new}: path targets differ; expected but missing {dict(lost)}, unexpected {dict(extra)}')
     dyn_old = [t[:-6] for t in old if t.endswith('/<dyn>')]
     dyn_new = Counter(t[:-6] for t in new if t.endswith('/<dyn>'))
-    if len(dyn_old) != sum(dyn_new.values()):
+    # location mode may gain some: an external path that maps into the project becomes evaluable
+    if (sum(dyn_new.values()) < len(dyn_old)) if location else (len(dyn_old) != sum(dyn_new.values())):
         problems.append(f'{file_new}: number of dynamic path expressions changed')
     ok = Counter(_expect(t, rules, decisions) for t in dyn_old
                  if not (rules and rules.splits_under(t)) and (decisions or {}).get(t) is None)
@@ -144,6 +184,38 @@ def _interpretations(tok, name):
         yield [p for p in (norm(posixpath.join(posixpath.dirname(name), t)), norm(t)) if p]
 
 
+def _notebook_code(text):
+    """Only a notebook's code cells run; markdown cells are prose about how it was run."""
+    try:
+        import json
+        cells = json.loads(text).get('cells', [])
+    except ValueError:
+        return text
+    return ''.join(''.join(c.get('source', [])) if isinstance(c.get('source'), list) else c.get('source', '')
+                   for c in cells if c.get('cell_type') == 'code')
+
+
+def _prose_spans(src):
+    """Comments, docstrings and multi-line strings of Python source: text where naming the project
+    folder itself (no path below it) records where the work was done, and is kept."""
+    try:
+        toks = list(tokenize.generate_tokens(io.StringIO(src).readline))
+    except (tokenize.TokenError, IndentationError, SyntaxError):
+        return []
+    starts = [0]
+    for line in src.splitlines(keepends=True):
+        starts.append(starts[-1] + len(line))
+    off = lambda pos: starts[pos[0] - 1] + pos[1]
+    out, prev = [], None
+    for t in toks:
+        if t.type == tokenize.COMMENT or (t.type == tokenize.STRING and (
+                t.start[0] != t.end[0] or prev in (None, tokenize.NEWLINE, tokenize.NL, tokenize.INDENT, tokenize.DEDENT))):
+            out.append((off(t.start), off(t.end)))
+        if t.type not in (tokenize.COMMENT, tokenize.NL):
+            prev = t.type
+    return out
+
+
 def residual(files, uni, rules, absolute_check=False):
     out = []
     for name in sorted(files):
@@ -153,9 +225,14 @@ def residual(files, uni, rules, absolute_check=False):
         if text is None:
             continue
         if absolute_check and name.lower().endswith(EXECUTABLE):
-            m = PROJECT_ABS.search(text) or INTERPRETER.search(text)
+            code = _notebook_code(text) if name.lower().endswith('.ipynb') else text
+            prose = _prose_spans(code) if name.lower().endswith('.py') else []
+            # naming the project folder itself in prose is kept; a path below it, or any name in code, is not
+            hits = [m for m in PROJECT_ABS.finditer(code)
+                    if re.match(r'[\\/]+[A-Za-z0-9_.\-]', code[m.end():]) or not any(a <= m.start() < b for a, b in prose)]
+            m = (hits[0] if hits else None) or INTERPRETER.search(code)
             if m:
-                out.append(f'{name}:{text.count(chr(10), 0, m.start()) + 1}: names this machine ({m.group(0)})')
+                out.append(f'{name}:{code.count(chr(10), 0, m.start()) + 1}: names this machine ({m.group(0)})')
         if rules is None:
             continue
         for m in TOKEN.finditer(text):

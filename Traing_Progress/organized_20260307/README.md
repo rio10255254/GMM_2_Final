@@ -28,8 +28,8 @@
 
 目前外部驗證說明：
 
-- [external_validation/current_seed/README.md](D:/GMM_2_Final/Traing_Progress/organized_20260309/external_validation/current_seed/README.md)
-- [external_validation/current_seed/CURRENT_TARGET.json](D:/GMM_2_Final/Traing_Progress/organized_20260309/external_validation/current_seed/CURRENT_TARGET.json)
+- [external_validation/current_seed/README.md](../organized_20260309/external_validation/current_seed/README.md)
+- [external_validation/current_seed/CURRENT_TARGET.json](../organized_20260309/external_validation/current_seed/CURRENT_TARGET.json)
 
 ## 目前的基準版是什麼
 

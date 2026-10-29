@@ -34,8 +34,8 @@ The formal BADS PSF is usable, but it should not be treated as the only blur tru
 
 ## Generated Weak-BADS Sets
 
-- `weak_bads_alpha050`: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R50_PSFControlDiagnosis\results\psf_control_diagnosis\generated_controls\weak_bads_alpha050\stage_48_checkboard_corners`
-- `weak_bads_alpha075`: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R50_PSFControlDiagnosis\results\psf_control_diagnosis\generated_controls\weak_bads_alpha075\stage_48_checkboard_corners`
+- `weak_bads_alpha050`: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/results/psf_control_diagnosis/generated_controls/weak_bads_alpha050/stage_48_checkboard_corners`
+- `weak_bads_alpha075`: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/results/psf_control_diagnosis/generated_controls/weak_bads_alpha075/stage_48_checkboard_corners`
 
 ## Artifacts
 

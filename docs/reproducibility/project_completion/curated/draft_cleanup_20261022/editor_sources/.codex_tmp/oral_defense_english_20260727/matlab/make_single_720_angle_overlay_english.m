@@ -1,9 +1,10 @@
 function make_single_720_angle_overlay_english()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))))));
 %MAKE_SINGLE_720_ANGLE_OVERLAY_ENGLISH
 % One clean P29 sampling schematic based directly on the supplied image.
 
 inputPath = 'C:\Users\Rio\AppData\Local\Temp\codex-clipboard-ebcfb69b-f3cf-4756-b66f-7d1e574941fb.png';
-outputDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_english_20260727\assets_english\custom';
+outputDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_tmp/oral_defense_english_20260727/assets_english/custom');
 outputPath = fullfile(outputDir, '720_equal_angle_sampling_P29_english.png');
 if ~isfolder(outputDir), mkdir(outputDir); end
 

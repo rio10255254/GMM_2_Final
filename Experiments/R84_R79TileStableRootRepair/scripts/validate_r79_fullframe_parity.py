@@ -9,9 +9,10 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-GMM_ROOT = Path(r"D:\GMM_2_Final")
+GMM_ROOT = Path(str(PROJECT_ROOT))
 PACKAGE = GMM_ROOT / "Deliverables" / "MOSR_ONNX"
 R79 = GMM_ROOT / "Experiments" / "R79_R75v3_DenseMicroscopyScratchGeneralization"
 CHECKPOINT = (
@@ -71,7 +72,7 @@ def build_cases() -> list[tuple[str, Path]]:
     add_spread(
         cases,
         "customer_pitch",
-        Path(r"D:\NTU_ImageDataset\Pitch1um_Y_100\Cropped_Output"),
+        Path(str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/Cropped_Output')),
         (0, 101, -1),
     )
     add_spread(cases, "real_5x", GMM_ROOT / "20260704_5x", (0, -1))
@@ -79,8 +80,8 @@ def build_cases() -> list[tuple[str, Path]]:
     add_spread(cases, "real_50x", GMM_ROOT / "20260702_100MG_位移_50x", (0, -1))
     cases.extend(
         [
-            ("sem_P01", Path(r"H:\From_2TB_D_disk\13_thesis\SEM_data\P-01.tiff")),
-            ("sem_V09", Path(r"H:\From_2TB_D_disk\13_thesis\SEM_data\V-09.tiff")),
+            ("sem_P01", Path(str(PROJECT_ROOT / 'Shared_Sources/SEM_Originals/P-01.tiff'))),
+            ("sem_V09", Path(str(PROJECT_ROOT / 'Shared_Sources/SEM_Originals/V-09.tiff'))),
         ]
     )
     return cases

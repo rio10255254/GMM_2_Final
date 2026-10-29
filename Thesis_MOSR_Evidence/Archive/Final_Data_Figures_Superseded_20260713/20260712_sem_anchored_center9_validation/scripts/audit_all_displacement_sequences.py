@@ -27,15 +27,15 @@ from displacement_audit_core import (
     track_local_2d,
 )
 from pillar_motion_core import TrackerConfig, TrackingResult, track_pillar_grid
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 PACKAGE = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = PACKAGE / "config" / "sequence_center9.json"
-MAPPING_50X = Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\input_mapping.csv")
-MAPPING_20X = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\input_mapping.csv")
+MAPPING_50X = Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/input_mapping.csv'))
+MAPPING_20X = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/input_mapping.csv'))
 EDGE_PHASE_REFERENCE = Path(
-    r"D:\GMM_2_Final\20260704_20x_5x_analysis\phase_algorithm_final_summary"
-    r"\edge_phase_primary_gap30_summary_um.csv"
+    str(PROJECT_ROOT / '20260704_20x_5x_analysis/phase_algorithm_final_summary/edge_phase_primary_gap30_summary_um.csv')
 )
 APPROVED_SEQUENCES = (
     "50x_x_0p5um",

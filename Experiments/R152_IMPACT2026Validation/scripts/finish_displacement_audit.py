@@ -13,6 +13,7 @@ sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as backend
 from lsc_fixed_state import measure_inflection_lsc_fixed
 from probe_lsc_order import reset
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 FIELDS=['step_sd_nm','nominal_mae_nm','median_within_grid_sd_nm'];METHODS=['Raw','Wiener','V42','R152']
 def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def save(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -63,7 +64,7 @@ def main():
     # Show the actual boundary points, fitted circle, and center; test call-order invariance.
     backend.SESSION_TABLE=ROOT/'sources/session_anchors.csv';fig,axes=plt.subplots(2,2,figsize=(10,9));invariance=[]
     for ri,seq in enumerate(['20x_0p5um','50x_x_0p5um']):
-        spec=cfg['sequences'][seq];mag=spec['magnification'];raw=backend.load_grayscale(Path(spec['raw_dir'])/'frame_0000.bmp');folder='20x' if mag=='20x' else '50x_calibrated';recon=np.load(ROOT/f'results/{folder}/reconstruction/{seq}/frame_0000.npz')['output'].astype(float);pred=backend.session_prediction(seq,0,np.array(spec['centers'],float),spec['expected_signed_dx_px']);pid,x,y=pred[pred[:,0]==29][0];half=int(np.ceil(.46*spec['pitch_px']))
+        spec=cfg['sequences'][seq];mag=spec['magnification'];raw=backend.load_grayscale(Path(PROJECT_ROOT / spec['raw_dir'])/'frame_0000.bmp');folder='20x' if mag=='20x' else '50x_calibrated';recon=np.load(ROOT/f'results/{folder}/reconstruction/{seq}/frame_0000.npz')['output'].astype(float);pred=backend.session_prediction(seq,0,np.array(spec['centers'],float),spec['expected_signed_dx_px']);pid,x,y=pred[pred[:,0]==29][0];half=int(np.ceil(.46*spec['pitch_px']))
         for ci,(method,image) in enumerate([('Raw',raw),('R152',recon)]):
             patch,pc,origin=backend.crop_around(image,(x,y),half);kw=dict(sample_count=64 if mag=='20x' else 96,acm_iterations=13 if mag=='20x' else 15,normal_half_width_px=2.4 if mag=='20x' else 4.,polarity='dark')
             reset(0);a=measure_inflection_lsc_fixed(patch,pc,spec['radius_px'],**kw);reset(1);b=measure_inflection_lsc_fixed(patch,pc,spec['radius_px'],**kw)

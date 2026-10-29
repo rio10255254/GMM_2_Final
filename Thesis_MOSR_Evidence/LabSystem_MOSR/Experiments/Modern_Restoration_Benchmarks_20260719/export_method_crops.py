@@ -8,6 +8,7 @@ from typing import Any
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
@@ -42,7 +43,7 @@ def method_directory(
 ) -> Path:
     if method == "Raw":
         return raw_dir
-    root = Path(manifest["methods"][method]["sequence_root"])
+    root = Path(PROJECT_ROOT / manifest["methods"][method]["sequence_root"])
     mapped = manifest["sequence_name_map"][sequence_name][method]
     return root / mapped
 
@@ -106,8 +107,8 @@ def add_scale_bar(
 
 def main(output_root: Path, allow_missing: bool) -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    pillar_config = json.loads(Path(manifest["pillar_config"]).read_text(encoding="utf-8"))
-    via_config = json.loads(Path(manifest["via_config"]).read_text(encoding="utf-8"))
+    pillar_config = json.loads(Path(PROJECT_ROOT / manifest["pillar_config"]).read_text(encoding="utf-8"))
+    via_config = json.loads(Path(PROJECT_ROOT / manifest["via_config"]).read_text(encoding="utf-8"))
     rows: list[dict[str, object]] = []
     for magnification, sequence_name in STATIC_SEQUENCES.items():
         pillar_sequence = pillar_config["sequences"][sequence_name]

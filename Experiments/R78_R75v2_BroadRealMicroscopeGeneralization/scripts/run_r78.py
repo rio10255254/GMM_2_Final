@@ -17,6 +17,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -82,19 +83,19 @@ def hardlink_or_copy(source: Path, target: Path) -> str:
 
 def prepare_locked_inputs(config: dict) -> dict:
     locked = config["locked_r68_evidence"]
-    require_hash(Path(locked["config"]), locked["config_sha256"])
-    require_hash(Path(locked["measurements"]), locked["measurements_sha256"])
-    require_hash(Path(locked["summary"]), locked["summary_sha256"])
-    require_hash(Path(config["r75v2"]["checkpoint"]), config["r75v2"]["checkpoint_sha256"])
+    require_hash(Path(PROJECT_ROOT / locked["config"]), locked["config_sha256"])
+    require_hash(Path(PROJECT_ROOT / locked["measurements"]), locked["measurements_sha256"])
+    require_hash(Path(PROJECT_ROOT / locked["summary"]), locked["summary_sha256"])
+    require_hash(Path(PROJECT_ROOT / config["r75v2"]["checkpoint"]), config["r75v2"]["checkpoint_sha256"])
     require_hash(
-        Path(config["acm_sem_evidence"]["per_pillar_summary"]),
+        Path(PROJECT_ROOT / config["acm_sem_evidence"]["per_pillar_summary"]),
         config["acm_sem_evidence"]["per_pillar_summary_sha256"],
     )
 
-    r77_decision = read_json(Path(config["acm_sem_evidence"]["decision"]))
+    r77_decision = read_json(Path(PROJECT_ROOT / config["acm_sem_evidence"]["decision"]))
     if r77_decision.get("status") != "complete":
         raise RuntimeError("R77 ACM/SEM evidence is not complete")
-    acm_table = pd.read_csv(config["acm_sem_evidence"]["per_pillar_summary"])
+    acm_table = pd.read_csv(str(PROJECT_ROOT / config["acm_sem_evidence"]["per_pillar_summary"]))
     if len(acm_table) != 36 or acm_table["pillar_id"].nunique() != 36:
         raise RuntimeError("R77 ACM/SEM evidence does not contain 36 independent pillars")
 
@@ -102,26 +103,26 @@ def prepare_locked_inputs(config: dict) -> dict:
         "experiment_id": config["experiment_id"],
         "eligibility_lock": config["eligibility_lock"],
         "source_hashes_verified": True,
-        "r75v2_checkpoint": str(Path(config["r75v2"]["checkpoint"]).resolve()),
+        "r75v2_checkpoint": str(Path(PROJECT_ROOT / config["r75v2"]["checkpoint"]).resolve()),
         "r75v2_checkpoint_sha256": config["r75v2"]["checkpoint_sha256"],
-        "r61_checkpoint": str(Path(config["r61"]["checkpoint"]).resolve()),
+        "r61_checkpoint": str(Path(PROJECT_ROOT / config["r61"]["checkpoint"]).resolve()),
         "total_frames": 0,
         "sequences": {},
         "locked_input_materialization": {"hardlink": 0, "copy": 0, "existing": 0},
         "acm_sem_arm": {"pillars": 36, "exposures": 12, "status": "complete"},
     }
 
-    r61_checkpoint = Path(config["r61"]["checkpoint"]).resolve()
+    r61_checkpoint = Path(PROJECT_ROOT / config["r61"]["checkpoint"]).resolve()
     for name, item in config["sequences"].items():
-        raw = image_paths(Path(item["raw_dir"]))
-        r61 = image_paths(Path(item["r61_dir"]))
+        raw = image_paths(Path(PROJECT_ROOT / item["raw_dir"]))
+        r61 = image_paths(Path(PROJECT_ROOT / item["r61_dir"]))
         expected = int(item["frame_count"])
         if len(raw) != expected or len(r61) != expected:
             raise RuntimeError(f"{name}: expected {expected}; Raw={len(raw)}, R61={len(r61)}")
         if [p.name for p in raw] != [p.name for p in r61]:
             raise RuntimeError(f"{name}: Raw and R61 filenames do not match")
 
-        manifest = read_json(Path(item["r61_manifest"]))
+        manifest = read_json(Path(PROJECT_ROOT / item["r61_manifest"]))
         if Path(manifest["weights"]).resolve() != r61_checkpoint:
             raise RuntimeError(f"{name}: R61 reconstruction used another checkpoint")
         command = [str(value).lower() for value in manifest.get("command", [])]
@@ -138,8 +139,8 @@ def prepare_locked_inputs(config: dict) -> dict:
             raise RuntimeError(f"{name}: unexpected image shapes {raw_shape} / {r61_shape}")
         audit["sequences"][name] = {
             "frames": expected,
-            "raw_dir": str(Path(item["raw_dir"]).resolve()),
-            "r61_dir": str(Path(item["r61_dir"]).resolve()),
+            "raw_dir": str(Path(PROJECT_ROOT / item["raw_dir"]).resolve()),
+            "r61_dir": str(Path(PROJECT_ROOT / item["r61_dir"]).resolve()),
             "locked_raw_dir": str((LOCKED_RAW / name).resolve()),
             "filenames_match": True,
             "shape": raw_shape,
@@ -177,9 +178,9 @@ def run_inference(config: dict) -> None:
     settings = config["r75v2"]
     command = [
         sys.executable,
-        str(Path(settings["inference_script"])),
+        str(Path(PROJECT_ROOT / settings["inference_script"])),
         "--checkpoint",
-        str(Path(settings["checkpoint"])),
+        str(Path(PROJECT_ROOT / settings["checkpoint"])),
         "--input",
         str(LOCKED_RAW),
         "--output",
@@ -202,7 +203,7 @@ def validate_outputs(config: dict) -> dict:
     audit = read_json(RESULTS / "input_audit.json")
     checked = 0
     for name, item in config["sequences"].items():
-        raw = image_paths(Path(item["raw_dir"]))
+        raw = image_paths(Path(PROJECT_ROOT / item["raw_dir"]))
         r75 = image_paths(R75_RECON / name)
         expected = int(item["frame_count"])
         if len(r75) != expected or [p.name for p in raw] != [p.name for p in r75]:
@@ -424,7 +425,7 @@ def summarize_motion(table: pd.DataFrame, gates: dict) -> pd.DataFrame:
 
 
 def verify_r61_reproduction(config: dict, summary: pd.DataFrame) -> dict:
-    original = pd.read_csv(config["locked_r68_evidence"]["summary"])
+    original = pd.read_csv(str(PROJECT_ROOT / config["locked_r68_evidence"]["summary"]))
     current = summary.loc[summary["method"] == "R61v16"].set_index("sequence")
     original = original.set_index("sequence")
     mappings = {
@@ -457,9 +458,9 @@ def artifact_diagnostics(config: dict) -> tuple[pd.DataFrame, pd.DataFrame, dict
     sensitivity = []
     primary = []
     for sequence, item in config["sequences"].items():
-        raw_paths = image_paths(Path(item["raw_dir"]))
+        raw_paths = image_paths(Path(PROJECT_ROOT / item["raw_dir"]))
         method_paths = {
-            "R61v16": image_paths(Path(item["r61_dir"])),
+            "R61v16": image_paths(Path(PROJECT_ROOT / item["r61_dir"])),
             "R75v2E100": image_paths(R75_RECON / sequence),
         }
         indices = [len(raw_paths) - 1 if value == -1 else int(value) for value in settings["frame_indices"]]
@@ -525,7 +526,7 @@ def artifact_diagnostics(config: dict) -> tuple[pd.DataFrame, pd.DataFrame, dict
 
 
 def acm_truth_summary(config: dict) -> pd.DataFrame:
-    source = pd.read_csv(config["acm_sem_evidence"]["per_pillar_summary"])
+    source = pd.read_csv(str(PROJECT_ROOT / config["acm_sem_evidence"]["per_pillar_summary"]))
     methods = {
         "Raw": "raw",
         "R61v16": "r61v16",
@@ -572,7 +573,7 @@ def model_decision(summary: pd.DataFrame, artifact_direction: dict, config: dict
             )
         )
     ranking.sort()
-    r77 = read_json(Path(config["acm_sem_evidence"]["decision"]))
+    r77 = read_json(Path(PROJECT_ROOT / config["acm_sem_evidence"]["decision"]))
     decision = {
         "status": "complete",
         "coverage": {
@@ -682,8 +683,8 @@ def make_figures(summary: pd.DataFrame, artifact: pd.DataFrame, acm: pd.DataFram
     for row_index, sequence in enumerate(selected):
         item = config["sequences"][sequence]
         images = [
-            read_gray(image_paths(Path(item["raw_dir"]))[0]),
-            read_gray(image_paths(Path(item["r61_dir"]))[0]),
+            read_gray(image_paths(Path(PROJECT_ROOT / item["raw_dir"]))[0]),
+            read_gray(image_paths(Path(PROJECT_ROOT / item["r61_dir"]))[0]),
             read_gray(image_paths(R75_RECON / sequence)[0]),
         ]
         for column_index, (image, label) in enumerate(zip(images, ["Raw", "R61v16", "R75v2E100"])):
@@ -814,7 +815,7 @@ def write_report(
 
 
 def analyze(config: dict) -> None:
-    locked = pd.read_csv(config["locked_r68_evidence"]["measurements"])
+    locked = pd.read_csv(str(PROJECT_ROOT / config["locked_r68_evidence"]["measurements"]))
     locked["raw_reference_valid"] = as_bool(locked["raw_reference_valid"])
     r61 = standardized_r61_rows(locked)
     r75 = compute_r75_rows(config, locked)

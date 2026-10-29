@@ -1,9 +1,10 @@
 from pathlib import Path
 import os,sys,json,hashlib,datetime,importlib.util
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG',':4096:8')
 ROOT=Path(__file__).resolve().parents[1]
 REPO=ROOT.parent.parent
-SOURCE=Path(r'C:\Users\Rio\Downloads\20260902_100MF_uncertainty\20260902_100MF_uncertainty\20260903')
+SOURCE=Path(str(PROJECT_ROOT / 'Shared_Sources/PI_Repeatability_20260903/raw'))
 def now(): return datetime.datetime.now(datetime.timezone.utc).isoformat()
 def load(p): return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def save(p,v):

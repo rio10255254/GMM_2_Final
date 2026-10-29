@@ -1,6 +1,8 @@
 """A separate manually operable package for the qualified precision revision only."""
 from common import *
 import shutil,ast
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
     admission=load(P/'results/admission.json');assert admission['eligible'];protected()
     for k in ['motion','sem','protocol']:assert sha(admission[k]['path'])==admission[k]['sha256']
@@ -32,18 +34,18 @@ class Hybrid(Network):
     shutil.copy2(E/'package_templates/verify_package.py',pkg/'verify_package.py')
     for p in (P/'validation').iterdir():
         if p.is_file():shutil.copy2(p,pkg/'validation'/p.name)
-    cp=Path(admission['checkpoint']['path']);assert sha(cp)==admission['checkpoint']['sha256'];shutil.copy2(cp,pkg/'weights/initial_r134p.pth');shutil.copy2(E/'calibration/measured_psf_bank.npz',pkg/'calibration/measured_psf_bank.npz');shutil.copytree(Path(load(E/'config/study.json')['data_root']),pkg/'training_data')
+    cp=Path(admission['checkpoint']['path']);assert sha(cp)==admission['checkpoint']['sha256'];shutil.copy2(cp,pkg/'weights/initial_r134p.pth');shutil.copy2(E/'calibration/measured_psf_bank.npz',pkg/'calibration/measured_psf_bank.npz');shutil.copytree(Path(PROJECT_ROOT / load(E/'config/study.json')['data_root']),pkg/'training_data')
     cfg=load(source/'config/training.json');cfg.update(model_name='R134_Precision_LongTraining',seed=1342001,order_seed=1349002,noise_seed=1349003,initial_weights='weights/initial_r134p.pth',continuation='Same R134 C after512updates;8192additionalupdates, optimizerreset; no inherited legacy neural weights',training_target_note='Unchanged native image+0.2gradient+0.2paired residual; no new geometric objective',readout='Exact float32npy reloaded for motion; normalized optical SEM cells retained asdouble;8bitpreviews never measurement inputs',architecture_changes=False);save(pkg/'config/training.json',cfg)
-    panel=load(E/'config/motion_panel.json');configuration=load(panel['configuration']['path']);items=[]
+    panel=load(E/'config/motion_panel.json');configuration=load(str(PROJECT_ROOT / panel['configuration']['path']));items=[]
     for e in [13,14,15]:
         src=E/f'validation/inputs/sem{e}.png';dest=pkg/f'validation/inputs/sem{e}.png';dest.parent.mkdir(exist_ok=True);shutil.copy2(src,dest);items.append(dict(name=f'sem{e}',kind='sem',path=dest.relative_to(pkg).as_posix(),sha256=sha(dest),original_source=record(src)))
     for f in panel['frames']:
-        name=f"{f['sequence']}_{f['frame_index']:04d}";dest=pkg/f'validation/inputs/{name}.bmp';shutil.copy2(f['source']['path'],dest);items.append(dict(name=name,kind='motion',sequence=f['sequence'],frame_index=f['frame_index'],path=dest.relative_to(pkg).as_posix(),sha256=sha(dest),original_source=f['source']))
+        name=f"{f['sequence']}_{f['frame_index']:04d}";dest=pkg/f'validation/inputs/{name}.bmp';shutil.copy2(str(PROJECT_ROOT / f['source']['path']),dest);items.append(dict(name=name,kind='motion',sequence=f['sequence'],frame_index=f['frame_index'],path=dest.relative_to(pkg).as_posix(),sha256=sha(dest),original_source=f['source']))
     sequences={k:{a:b for a,b in v.items() if a!='raw_dir'} for k,v in configuration['sequences'].items()};save(pkg/'validation/panel.json',dict(images=items,sequences=sequences,motion_pairs=panel['pairs'],scope='Reused24fullframes/12pairs and3SEMfields'))
-    plan=load(panel['source_plan']['path']);first=plan['frames'][0];gold=[]
+    plan=load(str(PROJECT_ROOT / panel['source_plan']['path']));first=plan['frames'][0];gold=[]
     for name,source_image,expected in [('SEM14',E/'validation/inputs/sem14.png',P/'results/sem/C_s1342001/sem14.npy'),('full_field',Path(first['source']['path']),P/f"results/motion/C_s1342001/{first['sequence']}/frame_{first['frame_index']:04d}/reconstruction.npy")]:
         a=pkg/'sample_inputs'/(name+source_image.suffix);b=pkg/'verification'/(name+'.npy');shutil.copy2(source_image,a);shutil.copy2(expected,b);gold.append(dict(name=name,input=a.relative_to(pkg).as_posix(),expected=b.relative_to(pkg).as_posix()))
-    save(pkg/'verification/golden.json',dict(cases=gold));save(pkg/'PROVENANCE.json',dict(generation='R134_C_P1',admission=admission,original8bitnegative_admission=record(E/'results/long_admission.json'),source_checkpoint=record(cp),source_data_manifest=record(Path(load(E/'config/study.json')['data_root'])/'manifest.json'),B_D_not_implemented=True,physical_material_edge_calibration_qualified=False,initial_prior_updates=512,planned_additional_updates=8192,no_automatic_promotion=True))
+    save(pkg/'verification/golden.json',dict(cases=gold));save(pkg/'PROVENANCE.json',dict(generation='R134_C_P1',admission=admission,original8bitnegative_admission=record(E/'results/long_admission.json'),source_checkpoint=record(cp),source_data_manifest=record(Path(PROJECT_ROOT / load(E/'config/study.json')['data_root'])/'manifest.json'),B_D_not_implemented=True,physical_material_edge_calibration_qualified=False,initial_prior_updates=512,planned_additional_updates=8192,no_automatic_promotion=True))
     (pkg/'README_TW.md').write_text('''# R134 保留量測精度的獨立長訓練包
 
 雙擊START_R134P.cmd，可開始、查看、安全暫停、續訓或重建範例。關閉選單不會停止背景訓練。這包只有R134 C這一代；原始模型與資料保留。

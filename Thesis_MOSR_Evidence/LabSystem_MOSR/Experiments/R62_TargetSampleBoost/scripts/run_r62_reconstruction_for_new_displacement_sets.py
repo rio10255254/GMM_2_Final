@@ -5,30 +5,31 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 PREPARE_SCRIPT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R61_BoundaryGeneralizationUniversal\scripts\prepare_real_sample_gmf_package.py"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/prepare_real_sample_gmf_package.py')
 )
 FUSION_SCRIPT = Path(
-    r"D:\GMM_2_Final\Tools\Displacement_Algorithms\scripts\motion_preserving_fusion.py"
+    str(PROJECT_ROOT / 'Tools/Displacement_Algorithms/scripts/motion_preserving_fusion.py')
 )
 DEFAULT_WEIGHTS = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_real_pseudo_stepguard_v2_stronger_stronger_full5_20260705_20260705_205634\weights\best_tradeoff.pth.tar"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_real_pseudo_stepguard_v2_stronger_stronger_full5_20260705_20260705_205634/weights/best_tradeoff.pth.tar')
 )
 REPORT_DIR = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R62_TargetSampleBoost\reports"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports')
 )
 
 DATASETS = [
     {
         "name": "20260702_100MG",
-        "analysis_root": Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis"),
+        "analysis_root": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis')),
         "groups": ["x_1um", "x_0p5um"],
     },
     {
         "name": "20260704_20x_5x",
-        "analysis_root": Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis"),
+        "analysis_root": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis')),
         "groups": ["20x_1um", "20x_0p5um", "5x_1um", "5x_0p5um"],
     },
 ]

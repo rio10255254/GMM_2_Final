@@ -1,9 +1,10 @@
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
-SOURCE = Path(r"D:\GMM_2_Final\PSF_Fitting\qa_v22_ablation\pages")
-OUTPUT = Path(r"D:\GMM_2_Final\PSF_Fitting\qa_v22_ablation\contact_sheets")
+SOURCE = Path(str(PROJECT_ROOT / 'PSF_Fitting/qa_v22_ablation/pages'))
+OUTPUT = Path(str(PROJECT_ROOT / 'PSF_Fitting/qa_v22_ablation/contact_sheets'))
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
 pages = sorted(SOURCE.glob("page-*.png"), key=lambda p: int(p.stem.split("-")[-1]))

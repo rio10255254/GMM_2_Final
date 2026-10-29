@@ -2,10 +2,10 @@
 
 - 日期: `2026-03-09`
 - seed label: `step8_curve_stdguard_v2`
-- seed manifest: `D:\GMM_2_Final\Traing_Progress\organized_20260309\selected\current_seed.json`
-- 權重: `D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar`
-- 重建輸出: `D:\GMM_2_Final\Traing_Progress\organized_20260309\external_validation\current_seed\reconstructions\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260307_135625`
-- 原始 GMF: `D:\GMM_2_Final\Traing_Progress\organized_20260309\external_validation\current_seed\gmf_results\raw\GMF_score.txt`
+- seed manifest: `Traing_Progress/organized_20260309/selected/current_seed.json`
+- 權重: `Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar`
+- 重建輸出: `Traing_Progress/organized_20260309/external_validation/current_seed/reconstructions/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260307_135625`
+- 原始 GMF: `Traing_Progress/organized_20260309/external_validation/current_seed/gmf_results/raw/GMF_score.txt`
 
 ## POSY 步長統計
 

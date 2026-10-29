@@ -2,7 +2,7 @@
 
 Generated: 2026-06-23T17:35:21
 
-Source: `D:\GMM_2_Final\Step`
+Source: `Step`
 
 Image count: 788 BMP, interpreted as 394 positions with 2 captures per position.
 
@@ -29,8 +29,8 @@ Use positions `0, 10, 20, ..., 390`. This gives 40 selected positions, or 39 one
 
 The remaining final positions after 390 are intentionally not used, because they do not complete another 1um interval.
 
-Selection manifest: `D:\GMM_2_Final\Step_analysis_20260623\selected_1um_positions.csv`
-Pair manifest: `D:\GMM_2_Final\Step_analysis_20260623\selected_1um_pairs.csv`
+Selection manifest: `Step_analysis_20260623/selected_1um_positions.csv`
+Pair manifest: `Step_analysis_20260623/selected_1um_pairs.csv`
 
 ## Important caveat
 

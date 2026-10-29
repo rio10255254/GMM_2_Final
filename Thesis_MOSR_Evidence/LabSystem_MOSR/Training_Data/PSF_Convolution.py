@@ -13,7 +13,7 @@ PSF_Convolution.py
 
 輸入：
   Training_Data/generated/<stage_XX>/  (*.bmp/*.tif, 512×512 灰階)
-  D:/GMM_2_Final/PSF_Fitting/.../PSF_fitted_2D_FOVstack.mat
+  PSF_Fitting/.../PSF_fitted_2D_FOVstack.mat
     └─ psf_grid: (101, 101, rows, cols)  float64
 
 輸出：

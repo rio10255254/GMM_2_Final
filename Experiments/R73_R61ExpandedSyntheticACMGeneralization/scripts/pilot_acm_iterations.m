@@ -1,9 +1,10 @@
 function pilot_acm_iterations(experiment_root)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
 if nargin < 1
     experiment_root = fileparts(fileparts(mfilename('fullpath')));
 end
 cfg = jsondecode(fileread(fullfile(experiment_root, 'config', 'experiment.json')));
-data_root = char(cfg.dataset.root);
+data_root = fullfile(PROJECT_ROOT, char(cfg.dataset.root));
 iterations_list = [50 100 200 300];
 selected_files = {'0000.bmp', '0007.bmp', '0014.bmp'};
 rows = struct([]);

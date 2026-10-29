@@ -1,9 +1,10 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
 $ErrorActionPreference = "Stop"
 
-$ThesisRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence"
+$ThesisRoot = "$ProjectRoot\Thesis_MOSR_Evidence"
 $ExperimentRoot = Join-Path $ThesisRoot "LabSystem_MOSR\Experiments\R53_RealisticDatasetCalibration"
 $Launcher = Join-Path $ExperimentRoot "scripts\launch_r53.py"
-$PythonExe = "C:\Users\Rio\anaconda3\python.exe"
+$PythonExe = python
 $LogDir = Join-Path $ExperimentRoot "results\formal_training_logs"
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 

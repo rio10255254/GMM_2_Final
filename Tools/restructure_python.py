@@ -30,13 +30,13 @@ import re
 import tokenize
 import warnings
 
-from restructure_resolve import norm, resolve
+from restructure_readers import Readers, read_parents
+from restructure_resolve import PROJECT_ABS, norm, resolve
 from restructure_text import ABS_START, INTERPRETER, Edit, rewrite_fragment
 
 PATH_CALLS = ('Path', 'PurePath', 'PureWindowsPath', 'WindowsPath', 'PosixPath')
 PASS_ATTRS = ('resolve', 'absolute', 'expanduser')
 PASS_FUNCS = ('abspath', 'realpath', 'normpath')
-PROJECT_ABS = re.compile(r'[A-Za-z]:(?:\\\\|\\|/)+GMM_2_Final', re.I)
 
 
 @dataclass(frozen=True)
@@ -92,7 +92,7 @@ def evaluated_targets(src, file_rel, ctx):
         return None
     job = _PyJob(src, tree, file_rel, file_rel, ctx)
     job.bind_pass(tree, record=False)
-    skip = job.docstrings()
+    skip = job.docstrings() | read_parents(job)      # a joined data value is checked by read_targets
     for node in ast.walk(tree):
         if isinstance(node, ast.JoinedStr):
             skip.update(n for n in ast.walk(node))
@@ -266,8 +266,11 @@ class _PyJob:
     def is_top_chain(self, node):
         if self.inner(node) is None:
             return False
+        # the operation applied to `node` may sit one level up: X.parents[k] and X.resolve() put an
+        # Attribute between X and the Subscript or Call that uses it
         p = self.parent.get(node)
-        return not (p is not None and self.inner(p) is node)
+        ups = [p, self.parent.get(p)] if isinstance(p, ast.Attribute) else [p]
+        return not any(u is not None and self.inner(u) is node for u in ups)
 
     def do_chain(self, top):
         members, node = [], top
@@ -443,8 +446,17 @@ class _PyJob:
         self.walk(self.tree)
         self.strings()
         self.comments()
+        if self.ctx.data is not None:
+            Readers(self, (self.ctx.seeds or {}).get(self.file_old, ())).run().rewrite()
         if self.ctx.mode == 'location':
             self.insert_root()
+
+    def drop_inside(self, start, end):
+        """Forget rewrites inside [start, end): that source is being replaced as a whole."""
+        keep = [i for i, (s, e, _) in enumerate(self.repl) if not (start <= s and e <= end)]
+        self.repl = [self.repl[i] for i in keep]
+        self.edits = [self.edits[i] for i in keep]
+        self.root_uses = [u for u in self.root_uses if not (start <= u[0] and u[1] <= end)]
 
     def bind_pass(self, tree, record):
         for node in ast.walk(tree):
@@ -493,14 +505,16 @@ class _PyJob:
                 continue
             if not _is_str(node) or node in in_fstring or node in self.consumed:
                 continue
-            if node in docs or self.ctx.mode == 'moves':
+            if node in docs:
+                self.fragment(node, cls='doc')      # a docstring is prose, read like a document
+            elif self.ctx.mode == 'moves':
                 self.fragment(node)
             else:
                 self.location_literal(node)
 
-    def fragment(self, node, ambiguous=None):
+    def fragment(self, node, ambiguous=None, cls='record'):
         s, e = self.span(node)
-        new, edits, problems = rewrite_fragment(self.src[s:e], self.file_old, self.file_new, self.ctx, 'record')
+        new, edits, problems = rewrite_fragment(self.src[s:e], self.file_old, self.file_new, self.ctx, cls)
         ambiguous = ambiguous or self.diverges
         split = [ed for ed in edits if ed.old_target and ambiguous(ed.old_target)]
         if split:
@@ -519,6 +533,9 @@ class _PyJob:
             return
         s, e = self.span(node)
         raw = self.src[s:e]
+        if '\n' in raw:
+            self.fragment(node, cls='script')    # a multi-line template is text, as for plain strings
+            return
         m = re.match(r'^([fFrR]{1,2})(\'\'\'|"""|\'|")', raw)
         if not m:
             return
@@ -531,6 +548,11 @@ class _PyJob:
 
     def location_literal(self, node):
         value = node.value
+        if '\n' in value:
+            # a multi-line template (a generated script or report) is text: paths become project-relative,
+            # an interpreter path becomes `python`
+            self.fragment(node, cls='script')
+            return
         if INTERPRETER.fullmatch(value):
             s, e = self.span(node)
             q = re.match(r'^[rRuUbB]*(\'\'\'|"""|\'|")', self.src[s:e])
@@ -556,33 +578,51 @@ class _PyJob:
                 continue
             s = self.starts[tok.start[0] - 1] + tok.start[1]
             e = self.starts[tok.end[0] - 1] + tok.end[1]
-            new, edits, _ = rewrite_fragment(self.src[s:e], self.file_old, self.file_new, self.ctx, 'record')
+            new, edits, _ = rewrite_fragment(self.src[s:e], self.file_old, self.file_new, self.ctx, 'doc')
             if new != self.src[s:e]:
                 self.replace(s, e, new, 'comment', edits[0].old_target if edits else '', edits[0].new_target if edits else '')
 
     # ---------- location mode: project root ----------
-    def module_root_name(self, before):
+    def module_root_name(self, before, path_only=False):
         for stmt in self.tree.body:
             if isinstance(stmt, ast.Assign) and len(stmt.targets) == 1 and isinstance(stmt.targets[0], ast.Name):
                 v = self.ev(stmt.value)
-                if v is not None and v.rel == '' and not v.dyn and self.span(stmt)[1] <= before:
+                if v is not None and v.rel == '' and not v.dyn and self.span(stmt)[1] <= before and (v.is_path or not path_only):
                     return stmt.targets[0].id, v.is_path
         return None
 
     def insert_root(self):
         if not self.root_uses:
             return
-        first = min(s for s, _, _, _ in self.root_uses)
-        found = self.module_root_name(first)
-        if found:
-            name, is_path = found
-        else:
+        # a path read out of a data file is joined with '/', so it needs a Path-valued root
+        groups = {}
+        for use in self.root_uses:
+            groups.setdefault(use[2].startswith('reader'), []).append(use)
+        names, missing = {}, []
+        for reader, uses in groups.items():
+            first = min(u[0] for u in uses)
+            names[reader] = self.module_root_name(first, path_only=reader)
+            if names[reader] is None:
+                missing.append(first)
+        if missing:
             bound = {t.id for n in ast.walk(self.tree) if isinstance(n, (ast.Assign, ast.AnnAssign))
                      for t in (n.targets if isinstance(n, ast.Assign) else [n.target]) if isinstance(t, ast.Name)}
-            name, is_path = ('_PROJECT_ROOT' if 'PROJECT_ROOT' in bound else 'PROJECT_ROOT'), True
-            self.insert_definition(name)
+            inserted = '_PROJECT_ROOT' if 'PROJECT_ROOT' in bound else 'PROJECT_ROOT'
+            self.insert_definition(inserted, min(missing))
+            names = {k: v or (inserted, True) for k, v in names.items()}
         for s, e, kind, rel in self.root_uses:
-            if kind == 'fstring':
+            name, is_path = names[kind.startswith('reader')]
+            # a read is wrapped by text inserted before and after it, so rewrites inside it still apply
+            if kind == 'reader_join':
+                self.replace(s, s, f'{name} / ', 'root')
+                continue
+            if kind == 'reader_str':
+                self.replace(s, s, f'str({name} / ', 'root')
+                self.replace(e, e, ')', 'root')
+                continue
+            if kind == 'reader_base':
+                new = name
+            elif kind == 'fstring':
                 new = '{' + name + '}'
             elif not rel:
                 new = f'str({name})' if is_path else name
@@ -594,22 +634,23 @@ class _PyJob:
                 new += " + '/'"
             self.replace(s, e, new, 'root', '', rel)
 
-    def insert_definition(self, name):
-        body = self.tree.body
-        i = 0
-        if body and isinstance(body[0], ast.Expr) and _is_str(body[0].value):
-            i = 1
+    def insert_definition(self, name, before):
+        """Define the root after the last top-level import that precedes its first use."""
         last = None
-        for stmt in body[i:]:
-            if isinstance(stmt, (ast.Import, ast.ImportFrom)):
-                last = stmt
-            else:
+        for stmt in self.tree.body:
+            if self.span(stmt)[1] > before:
                 break
-        anchor = last or (body[0] if i == 1 else None)
-        pos = self.starts[anchor.end_lineno] if anchor is not None else 0
-        imported_path = any(isinstance(n, ast.ImportFrom) and n.module == 'pathlib' and any(a.name == 'Path' and a.asname is None for a in n.names)
-                            for n in ast.walk(self.tree))
-        path_bound = imported_path or any(isinstance(n, ast.Name) and n.id == 'Path' and isinstance(n.ctx, ast.Store) for n in ast.walk(self.tree))
+            if isinstance(stmt, (ast.Import, ast.ImportFrom)) or \
+                    (stmt is self.tree.body[0] and isinstance(stmt, ast.Expr) and _is_str(stmt.value)):
+                last = stmt
+        pos = self.starts[last.end_lineno] if last is not None else 0
+        if pos == 0:
+            while pos < len(self.src) and self.src.startswith('#', pos):     # shebang / coding lines stay first
+                nxt = self.src.find('\n', pos)
+                pos = len(self.src) if nxt < 0 else nxt + 1
+        imported_path = any(isinstance(n, ast.ImportFrom) and n.module == 'pathlib' and self.span(n)[1] <= pos and
+                            any(a.name == 'Path' and a.asname is None for a in n.names) for n in self.tree.body)
+        path_bound = any(isinstance(n, ast.Name) and n.id == 'Path' and isinstance(n.ctx, ast.Store) for n in ast.walk(self.tree))
         nl = '\r\n' if '\r\n' in self.src else '\n'
         d = posixpath.dirname(self.file_new)
         depth = len(d.split('/')) if d else 0

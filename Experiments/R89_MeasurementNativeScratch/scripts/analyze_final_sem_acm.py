@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,10 +21,10 @@ R89_TABLE_ROOT = ROOT / "results" / "final_validation" / "sem_acm_epoch100" / "a
 SOURCES = {
     "Raw": (R89_TABLE_ROOT / "primary_contour_metrics.csv", "Raw"),
     "R89E100": (R89_TABLE_ROOT / "primary_contour_metrics.csv", "R89E100"),
-    "R61v16": (Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\tables\primary_contour_metrics.csv"), "R61v16"),
-    "V42E120": (Path(r"D:\GMM_2_Final\Experiments\R70_V42ACMContourSEMValidation\results\tables\primary_contour_metrics.csv"), "V42E120"),
-    "R75v2Best": (Path(r"D:\GMM_2_Final\Experiments\R77_R75v2ACMContourSEMValidation\results\tables\primary_contour_metrics.csv"), "R75v2Best"),
-    "R75v2E100": (Path(r"D:\GMM_2_Final\Experiments\R77_R75v2ACMContourSEMValidation\results\epoch100_audit\results\tables\primary_contour_metrics.csv"), "R75v2E100"),
+    "R61v16": (Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/tables/primary_contour_metrics.csv')), "R61v16"),
+    "V42E120": (Path(str(PROJECT_ROOT / 'Experiments/R70_V42ACMContourSEMValidation/results/tables/primary_contour_metrics.csv')), "V42E120"),
+    "R75v2Best": (Path(str(PROJECT_ROOT / 'Experiments/R77_R75v2ACMContourSEMValidation/results/tables/primary_contour_metrics.csv')), "R75v2Best"),
+    "R75v2E100": (Path(str(PROJECT_ROOT / 'Experiments/R77_R75v2ACMContourSEMValidation/results/epoch100_audit/results/tables/primary_contour_metrics.csv')), "R75v2E100"),
 }
 METRICS = {
     "iou": "higher",

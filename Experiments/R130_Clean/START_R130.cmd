@@ -12,5 +12,5 @@ if exist "runs\formal_8192" (
   pause
   exit /b 0
 )
-"C:\Users\Rio\anaconda3\python.exe" -B scripts\launch_r130.py
+python -B scripts\launch_r130.py
 pause

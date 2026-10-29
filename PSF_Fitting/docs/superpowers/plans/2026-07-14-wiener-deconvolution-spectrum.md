@@ -13,7 +13,7 @@
 ### Task 1: Add the failing deconvolution-spectrum acceptance check
 
 **Files:**
-- Modify: `D:\GMM_2_Final\PSF_Fitting\tests\python\test_center9_wiener_evidence.py`
+- Modify: `PSF_Fitting/tests/python/test_center9_wiener_evidence.py`
 
 - [ ] **Step 1: Extend the existing spectrum test**
 
@@ -74,7 +74,7 @@ Expected: the spectrum test fails because the manifest, archive keys, and new PN
 ### Task 2: Extend the calibrated-spectrum generator
 
 **Files:**
-- Modify: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data\center9_pillar_fit_20x_50x\spectra\generate_absolute_spectra.py`
+- Modify: `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/generate_absolute_spectra.py`
 
 - [ ] **Step 1: Add one array-based calculation path**
 
@@ -94,8 +94,8 @@ def absolute_fft_amplitude_array(image: np.ndarray) -> tuple[np.ndarray, np.ndar
 
 For each magnification, load exactly these current MAT files:
 
-- `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data\center9_pillar_fit_20x_50x\psf_deconvolution_cd\20x_wiener_deconvolution.mat`
-- `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data\center9_pillar_fit_20x_50x\psf_deconvolution_cd\50x_wiener_deconvolution.mat`
+- `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/psf_deconvolution_cd/20x_wiener_deconvolution.mat`
+- `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/psf_deconvolution_cd/50x_wiener_deconvolution.mat`
 
 Require exact equality `nsr == 0.08`, read `restored`, require a finite two-dimensional array, and require its shape to match captured and V42.
 
@@ -118,18 +118,18 @@ Replace the global 8-bit-only quantity description with a source-neutral descrip
 ### Task 3: Regenerate and verify the evidence
 
 **Files:**
-- Regenerate: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\figures\center9_pillar_fit_20x_50x\20x\09_fitted_psf_wiener_deconvolution_pillar_3x3_spectrum.png`
-- Regenerate: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\figures\center9_pillar_fit_20x_50x\50x\09_fitted_psf_wiener_deconvolution_pillar_3x3_spectrum.png`
-- Regenerate: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data\center9_pillar_fit_20x_50x\spectra\20x_absolute_spectra.npz`
-- Regenerate: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data\center9_pillar_fit_20x_50x\spectra\50x_absolute_spectra.npz`
-- Regenerate: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data\center9_pillar_fit_20x_50x\spectra\spectrum_manifest.json`
+- Regenerate: `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x/20x/09_fitted_psf_wiener_deconvolution_pillar_3x3_spectrum.png`
+- Regenerate: `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x/50x/09_fitted_psf_wiener_deconvolution_pillar_3x3_spectrum.png`
+- Regenerate: `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/20x_absolute_spectra.npz`
+- Regenerate: `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/50x_absolute_spectra.npz`
+- Regenerate: `Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/spectrum_manifest.json`
 
 - [ ] **Step 1: Run the spectrum generator**
 
 Run:
 
 ```powershell
-python "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\source_data\center9_pillar_fit_20x_50x\spectra\generate_absolute_spectra.py"
+python "Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/source_data/center9_pillar_fit_20x_50x/spectra/generate_absolute_spectra.py"
 ```
 
 Expected: exit 0, both Wiener records report NSR 0.08, and the manifest says all six spectra share one scale.

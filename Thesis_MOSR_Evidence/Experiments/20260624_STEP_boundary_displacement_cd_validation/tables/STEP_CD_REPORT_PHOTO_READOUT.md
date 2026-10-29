@@ -17,9 +17,9 @@ Report photo values readable for the relevant rows: phi 0.3 mm roundness is abou
 - center2048_v16_1um_rep0 target 200 um: measured 199.691 um, error -0.309 um, threshold sensitivity +/-0.027 um.
 
 Files:
-- CSV: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo_check_20260624\step_cd_measurement_summary.csv
-- Full raw overlay: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo_check_20260624\full_original_raw_cd_overlay.png
-- Center v16 overlay: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo_check_20260624\center2048_v16_1um_rep0_cd_overlay.png
+- CSV: Step_analysis_20260623/step_cd_report_photo_check_20260624/step_cd_measurement_summary.csv
+- Full raw overlay: Step_analysis_20260623/step_cd_report_photo_check_20260624/full_original_raw_cd_overlay.png
+- Center v16 overlay: Step_analysis_20260623/step_cd_report_photo_check_20260624/center2048_v16_1um_rep0_cd_overlay.png
 ## Center2048 all 1um rep0 frames
 
 - center2048_r39_1um_rep0 target 100 um: mean 99.463 um, std 0.0031 um, mean error -0.537 um, n=40.
@@ -31,8 +31,8 @@ Files:
 - center2048_v16_1um_rep0 target 100 um: mean 99.462 um, std 0.0032 um, mean error -0.538 um, n=40.
 - center2048_v16_1um_rep0 target 200 um: mean 199.692 um, std 0.0028 um, mean error -0.308 um, n=40.
 
-Center all-frame CSV: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo_check_20260624\step_cd_center2048_all_1um_rep0_frames.csv
-Center all-frame summary CSV: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo_check_20260624\step_cd_center2048_all_1um_rep0_summary.csv
+Center all-frame CSV: Step_analysis_20260623/step_cd_report_photo_check_20260624/step_cd_center2048_all_1um_rep0_frames.csv
+Center all-frame summary CSV: Step_analysis_20260623/step_cd_report_photo_check_20260624/step_cd_center2048_all_1um_rep0_summary.csv
 
 ## Full raw matching 1um package names
 
@@ -41,8 +41,8 @@ Center all-frame summary CSV: D:\GMM_2_Final\Step_analysis_20260623\step_cd_repo
 - full raw target 300 um: mean 299.736 um, std 0.0037 um, mean error -0.264 um, n=40.
 - full raw target 500 um: mean 499.905 um, std 0.0041 um, mean error -0.095 um, n=40.
 
-Full raw CSV: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo_check_20260624\step_cd_full_raw_matching_1um_names.csv
-Full raw summary CSV: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo_check_20260624\step_cd_full_raw_matching_1um_names_summary.csv
+Full raw CSV: Step_analysis_20260623/step_cd_report_photo_check_20260624/step_cd_full_raw_matching_1um_names.csv
+Full raw summary CSV: Step_analysis_20260623/step_cd_report_photo_check_20260624/step_cd_full_raw_matching_1um_names_summary.csv
 
 ## All 1um rep0 frames summary
 
@@ -59,5 +59,5 @@ Full raw summary CSV: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo
 - full_original_raw_matching_1um_names target 300 um: mean 299.736 um, frame-to-frame std 0.004 um, mean error -0.264 um, n=40.
 - full_original_raw_matching_1um_names target 500 um: mean 499.905 um, frame-to-frame std 0.004 um, mean error -0.095 um, n=40.
 
-All-frame CSV: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo_check_20260624\step_cd_measurement_all_1um_rep0_frames.csv
-All-frame summary CSV: D:\GMM_2_Final\Step_analysis_20260623\step_cd_report_photo_check_20260624\step_cd_measurement_all_1um_rep0_summary.csv
+All-frame CSV: Step_analysis_20260623/step_cd_report_photo_check_20260624/step_cd_measurement_all_1um_rep0_frames.csv
+All-frame summary CSV: Step_analysis_20260623/step_cd_report_photo_check_20260624/step_cd_measurement_all_1um_rep0_summary.csv

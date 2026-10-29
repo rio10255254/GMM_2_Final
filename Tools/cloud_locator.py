@@ -16,7 +16,7 @@ Examples:
     python Tools/cloud_locator.py build --with-zips   # also list attachment ZIPs that have no manifest
     python Tools/cloud_locator.py seed H:/.../inventory_content_verified.sqlite --project-root D:/GMM_2_Final
     python Tools/cloud_locator.py where Experiments/R152_R148v2_SafeAdaptivePSF/results/comparison
-    python Tools/cloud_locator.py scan D:/GMM_2_Final/Experiments/R152_R148v2_SafeAdaptivePSF --git-ref d12dd7e0
+    python Tools/cloud_locator.py scan Experiments/R152_R148v2_SafeAdaptivePSF --git-ref d12dd7e0
 """
 from __future__ import annotations
 

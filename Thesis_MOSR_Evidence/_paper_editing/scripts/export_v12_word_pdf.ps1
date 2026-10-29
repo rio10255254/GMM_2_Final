@@ -1,7 +1,8 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
 $ErrorActionPreference = 'Stop'
 
 $documentPath = 'C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v12.docx'
-$outputDirectory = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\qa\v12_final_render_20260720_c'
+$outputDirectory = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\_paper_editing\qa\v12_final_render_20260720_c')
 $pdfPath = Join-Path $outputDirectory '論文完整版_20260716_v12.pdf'
 
 New-Item -ItemType Directory -Path $outputDirectory -Force | Out-Null

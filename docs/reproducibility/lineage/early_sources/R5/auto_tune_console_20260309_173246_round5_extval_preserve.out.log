@@ -1,17 +1,17 @@
 [AUTO] sweep start | profile=round5_extval_preserve seed=1261200 sweep_epochs=6 final_epochs=10
 [AUTO] objective: known-step GMF first (expect_dx=0.000, expect_dy=8.000, source=monitor_shift), then boundary/texture realism.
 
-[AUTO][SWEEP] candidate=step8_ext_preserve_clean overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean'), 'LR': 5e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'EQ_PROB': 0.06, 'EQ_WARMUP_OFF_E': 20, 'EQ_RAMP_START_E': 21, 'EQ_RAMP_END_E': 38, 'W_GRADMAG': 1.02, 'W_EDGE_ORI_SIMPLE': 0.5, 'W_EQ_GEOM': 0.32, 'W_STAT': 0.008, 'W_BAND': 0.008, 'W_HF_LAP': 0.08, 'W_EDGELOCAL_LAP_END': 0.03, 'W_DETAIL_BASE': 0.008}
+[AUTO][SWEEP] candidate=step8_ext_preserve_clean overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean'), 'LR': 5e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'EQ_PROB': 0.06, 'EQ_WARMUP_OFF_E': 20, 'EQ_RAMP_START_E': 21, 'EQ_RAMP_END_E': 38, 'W_GRADMAG': 1.02, 'W_EDGE_ORI_SIMPLE': 0.5, 'W_EQ_GEOM': 0.32, 'W_STAT': 0.008, 'W_BAND': 0.008, 'W_HF_LAP': 0.08, 'W_EDGELOCAL_LAP_END': 0.03, 'W_DETAIL_BASE': 0.008}
 [RUN] tag=GESR_v1_v5_ST8_SWP_epc_20260309_173251 model=GESR_v1_v5_ST8_SWP_epc
-[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epc_20260309_173251
-[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epc_20260309_173251\weights
+[RUN] progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epc_20260309_173251
+[RUN] weights_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epc_20260309_173251/weights
 [REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
 [SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
 [FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=6 val_every=1 batch_log_every=5 csv_flush_n=50
 [GMF_KPI] expect_dx_px=0.0 expect_dy_px=8.0 expected_step_px=8.000000 outlier_t=0.800000 outlier_t_rel=0.100000
 [INFO] Pre-flight sanity check disabled.
 [DATA] include_subdirs=('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean') -> remaining=600
-[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epc_20260309_173251\_repro\GESR_v1_v5_ST8_SWP_epc
+[REPRO][SPLIT] save fixed split: Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epc_20260309_173251/_repro/GESR_v1_v5_ST8_SWP_epc
 [INFO] Train batches/epoch: 142
 [INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=15)
 [INFO] GMF_VALIDATE_SOURCE = monitor_shift
@@ -24,7 +24,7 @@
 [SIMPLETEST_V2] eq_shift tiny=(0.01, 0.24) mid=(0.24, 1.25) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
 [SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
 [MONITOR_REF] edgeW_ref=10.0211 hf_ref=0.0225 cb_ref=0.010349
-[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resuming v5 training from: Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar
 [INFO] Resumed from epoch 3
 [SCHED_SUMMARY][SIMPLETEST] rec/grad/ori fixed; eq uses geometry-only ramp
 [SCHED_SUMMARY][SIMPLETEST] eq: E1-5 off, E6-20 ramp->1, E21-40=1, E41-100 fade->0.4
@@ -121,17 +121,17 @@ Starting Epoch 6/6
 [SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.3257, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.7373, best_val_rec = 0.008208, best_val_ssim = 0.8886
 [AUTO][SWEEP][DONE] candidate=step8_ext_preserve_clean score=4.060579 step_err=0.000000 pos_std=0.000000 pass02=0.000000
 
-[AUTO][SWEEP] candidate=step8_ext_preserve_defect overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean'), 'LR': 5.5e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'EQ_PROB': 0.07, 'EQ_WARMUP_OFF_E': 20, 'EQ_RAMP_START_E': 21, 'EQ_RAMP_END_E': 38, 'W_GRADMAG': 1.04, 'W_EDGE_ORI_SIMPLE': 0.52, 'W_EQ_GEOM': 0.3, 'W_STAT': 0.009, 'W_BAND': 0.009, 'W_HF_LAP': 0.09, 'W_EDGELOCAL_LAP_END': 0.032, 'W_DETAIL_BASE': 0.008}
+[AUTO][SWEEP] candidate=step8_ext_preserve_defect overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean'), 'LR': 5.5e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'EQ_PROB': 0.07, 'EQ_WARMUP_OFF_E': 20, 'EQ_RAMP_START_E': 21, 'EQ_RAMP_END_E': 38, 'W_GRADMAG': 1.04, 'W_EDGE_ORI_SIMPLE': 0.52, 'W_EQ_GEOM': 0.3, 'W_STAT': 0.009, 'W_BAND': 0.009, 'W_HF_LAP': 0.09, 'W_EDGELOCAL_LAP_END': 0.032, 'W_DETAIL_BASE': 0.008}
 [RUN] tag=GESR_v1_v5_ST8_SWP_epd_20260309_173821 model=GESR_v1_v5_ST8_SWP_epd
-[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epd_20260309_173821
-[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epd_20260309_173821\weights
+[RUN] progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epd_20260309_173821
+[RUN] weights_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epd_20260309_173821/weights
 [REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
 [SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
 [FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=6 val_every=1 batch_log_every=5 csv_flush_n=50
 [GMF_KPI] expect_dx_px=0.0 expect_dy_px=8.0 expected_step_px=8.000000 outlier_t=0.800000 outlier_t_rel=0.100000
 [INFO] Pre-flight sanity check disabled.
 [DATA] include_subdirs=('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean') -> remaining=800
-[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epd_20260309_173821\_repro\GESR_v1_v5_ST8_SWP_epd
+[REPRO][SPLIT] save fixed split: Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epd_20260309_173821/_repro/GESR_v1_v5_ST8_SWP_epd
 [INFO] Train batches/epoch: 190
 [INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=20)
 [INFO] GMF_VALIDATE_SOURCE = monitor_shift
@@ -144,7 +144,7 @@ Starting Epoch 6/6
 [SIMPLETEST_V2] eq_shift tiny=(0.01, 0.24) mid=(0.24, 1.25) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
 [SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
 [MONITOR_REF] edgeW_ref=10.0211 hf_ref=0.0225 cb_ref=0.010349
-[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resuming v5 training from: Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar
 [INFO] Resumed from epoch 3
 [SCHED_SUMMARY][SIMPLETEST] rec/grad/ori fixed; eq uses geometry-only ramp
 [SCHED_SUMMARY][SIMPLETEST] eq: E1-5 off, E6-20 ramp->1, E21-40=1, E41-100 fade->0.4
@@ -241,17 +241,17 @@ Starting Epoch 6/6
 [SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.5788, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.5895, best_val_rec = 0.005698, best_val_ssim = 0.9195
 [AUTO][SWEEP][DONE] candidate=step8_ext_preserve_defect score=4.263054 step_err=0.000000 pos_std=0.000000 pass02=0.000000
 
-[AUTO][SWEEP] candidate=step8_ext_preserve_general overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_02_circles', 'stage_04_ellipses', 'stage_06_mixed_simple', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean'), 'LR': 6e-06, 'FREEZE_PHYSICS_EPOCH': 22, 'PHYS_WARMUP_END': 22, 'WEAK_PSF_STAGE0_EPOCHS': 22, 'WEAK_PSF_STAGE1_EPOCHS': 32, 'WEAK_PSF_ACTIVE_START_E': 23, 'EQ_PROB': 0.08, 'EQ_WARMUP_OFF_E': 18, 'EQ_RAMP_START_E': 19, 'EQ_RAMP_END_E': 36, 'W_GRADMAG': 1.02, 'W_EDGE_ORI_SIMPLE': 0.5, 'W_EQ_GEOM': 0.3, 'W_STAT': 0.01, 'W_BAND': 0.01, 'W_HF_LAP': 0.09, 'W_EDGELOCAL_LAP_END': 0.032, 'W_DETAIL_BASE': 0.008}
+[AUTO][SWEEP] candidate=step8_ext_preserve_general overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_02_circles', 'stage_04_ellipses', 'stage_06_mixed_simple', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean'), 'LR': 6e-06, 'FREEZE_PHYSICS_EPOCH': 22, 'PHYS_WARMUP_END': 22, 'WEAK_PSF_STAGE0_EPOCHS': 22, 'WEAK_PSF_STAGE1_EPOCHS': 32, 'WEAK_PSF_ACTIVE_START_E': 23, 'EQ_PROB': 0.08, 'EQ_WARMUP_OFF_E': 18, 'EQ_RAMP_START_E': 19, 'EQ_RAMP_END_E': 36, 'W_GRADMAG': 1.02, 'W_EDGE_ORI_SIMPLE': 0.5, 'W_EQ_GEOM': 0.3, 'W_STAT': 0.01, 'W_BAND': 0.01, 'W_HF_LAP': 0.09, 'W_EDGELOCAL_LAP_END': 0.032, 'W_DETAIL_BASE': 0.008}
 [RUN] tag=GESR_v1_v5_ST8_SWP_epg_20260309_174357 model=GESR_v1_v5_ST8_SWP_epg
-[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357
-[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357\weights
+[RUN] progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357
+[RUN] weights_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357/weights
 [REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
 [SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
 [FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=6 val_every=1 batch_log_every=5 csv_flush_n=50
 [GMF_KPI] expect_dx_px=0.0 expect_dy_px=8.0 expected_step_px=8.000000 outlier_t=0.800000 outlier_t_rel=0.100000
 [INFO] Pre-flight sanity check disabled.
 [DATA] include_subdirs=('stage_02_circles', 'stage_04_ellipses', 'stage_06_mixed_simple', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean') -> remaining=1000
-[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357\_repro\GESR_v1_v5_ST8_SWP_epg
+[REPRO][SPLIT] save fixed split: Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357/_repro/GESR_v1_v5_ST8_SWP_epg
 [INFO] Train batches/epoch: 237
 [INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=25)
 [INFO] GMF_VALIDATE_SOURCE = monitor_shift
@@ -264,7 +264,7 @@ Starting Epoch 6/6
 [SIMPLETEST_V2] eq_shift tiny=(0.01, 0.24) mid=(0.24, 1.25) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
 [SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
 [MONITOR_REF] edgeW_ref=10.0211 hf_ref=0.0225 cb_ref=0.010349
-[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resuming v5 training from: Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar
 [INFO] Resumed from epoch 3
 [SCHED_SUMMARY][SIMPLETEST] rec/grad/ori fixed; eq uses geometry-only ramp
 [SCHED_SUMMARY][SIMPLETEST] eq: E1-5 off, E6-20 ramp->1, E21-40=1, E41-100 fade->0.4
@@ -362,18 +362,18 @@ Starting Epoch 6/6
 [SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8433, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4166, best_val_rec = 0.006980, best_val_ssim = 0.9028
 [AUTO][SWEEP][DONE] candidate=step8_ext_preserve_general score=4.474646 step_err=0.000000 pos_std=0.000000 pass02=0.000000
 
-[AUTO] best candidate=step8_ext_preserve_general score=4.474646 progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357
+[AUTO] best candidate=step8_ext_preserve_general score=4.474646 progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_epg_20260309_174357
 [AUTO][FINAL] start candidate=step8_ext_preserve_general
 [RUN] tag=GESR_v1_v5_ST8_FIN_epg_20260309_174950 model=GESR_v1_v5_ST8_FIN_epg
-[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950
-[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950\weights
+[RUN] progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950
+[RUN] weights_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950/weights
 [REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
 [SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
 [FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=2 batch_log_every=5 csv_flush_n=50
 [GMF_KPI] expect_dx_px=0.0 expect_dy_px=8.0 expected_step_px=8.000000 outlier_t=0.800000 outlier_t_rel=0.100000
 [INFO] Pre-flight sanity check disabled.
 [DATA] include_subdirs=('stage_02_circles', 'stage_04_ellipses', 'stage_06_mixed_simple', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean') -> remaining=1000
-[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950\_repro\GESR_v1_v5_ST8_FIN_epg
+[REPRO][SPLIT] save fixed split: Traing_Progress/training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950/_repro/GESR_v1_v5_ST8_FIN_epg
 [INFO] Train batches/epoch: 237
 [INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=25)
 [INFO] GMF_VALIDATE_SOURCE = monitor_shift
@@ -386,7 +386,7 @@ Starting Epoch 6/6
 [SIMPLETEST_V2] eq_shift tiny=(0.01, 0.24) mid=(0.24, 1.25) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
 [SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
 [MONITOR_REF] edgeW_ref=10.0211 hf_ref=0.0225 cb_ref=0.010349
-[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resuming v5 training from: Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar
 [INFO] Resumed from epoch 3
 [SCHED_SUMMARY][SIMPLETEST] rec/grad/ori fixed; eq uses geometry-only ramp
 [SCHED_SUMMARY][SIMPLETEST] eq: E1-5 off, E6-20 ramp->1, E21-40=1, E41-100 fade->0.4
@@ -599,5 +599,5 @@ Starting Epoch 10/10
 [ATTRIB][E010] win=7 TRN->VAL +: weak_entropy->kpi_step_mean_err:+0.393, weak_entropy->kpi_outlier_rate:+0.259, edge_ori->kpi_step_mean_err:+0.143, hf_ratio->kpi_step_mean_err:+0.143, edge_ori->kpi_outlier_rate:+0.074 | -: hf_ratio->kpi_step_std:-0.821, edge_ori->kpi_step_std:-0.714, weak_entropy->kpi_step_std:-0.357, weak_top1->kpi_outlier_rate:-0.037, weak_top1->kpi_step_std:-0.036
 [SUMMARY] Best epoch = 4, tradeoff = nan, gmf_obj = 36.8365, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -75.4261, best_val_rec = 0.006977, best_val_ssim = 0.9029
 [AUTO][FINAL][DONE] score=2.672533 step_err=0.000000 pos_std=0.000000 pass02=0.000000
-[AUTO][FINAL] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950
-[AUTO] report=D:\GMM_2_Final\Traing_Progress\auto_tune_reports\auto_tune_report_20260309_173251.json
+[AUTO][FINAL] progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST8_FIN_epg_20260309_174950
+[AUTO] report=Traing_Progress/auto_tune_reports/auto_tune_report_20260309_173251.json

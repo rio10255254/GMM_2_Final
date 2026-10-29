@@ -27,7 +27,7 @@
 原50×核略不對稱，中心相對第50個樣點約(-0.027514, +0.158538)像素；保留原核的排列、中心和形狀，未平移、縮放或強制對稱。光學變動接入原主體的模糊提示及新增頻域支路兩處，不只換表面上的檔名。
 
 
-原50×來源為 `D:/GMM_2_Final/PSF_Fitting/tests/artifacts/cd_verification_20260714/50x_deconvolution_sweep.mat` 的 `psf`，並逐元素對照原 `PSF_Fitting/output/pillar_via_junction_psf_20260713/50x/fit_result/PSF_fitted_2D_FOVstack.mat`。物方比例0.069 μm/px由該目錄的 `selected_frame.json` 證實。20×R152保留原銀行0.1725 μm/px；Wiener仍各用原倍率校正及固定正規量0.0565。
+原50×來源為 `PSF_Fitting/tests/artifacts/cd_verification_20260714/50x_deconvolution_sweep.mat` 的 `psf`，並逐元素對照原 `PSF_Fitting/output/pillar_via_junction_psf_20260713/50x/fit_result/PSF_fitted_2D_FOVstack.mat`。物方比例0.069 μm/px由該目錄的 `selected_frame.json` 證實。20×R152保留原銀行0.1725 μm/px；Wiener仍各用原倍率校正及固定正規量0.0565。
 
 本工作區的 `scripts/objective_optics.py` 提供可選且可還原的推論專用光學入口，不更改D槽來源。核心 `configure_optical_input(..., kernel=None)` 還原原生25顆；傳入已核對的單顆校正則暫時使用單核。倍率與檔案來源只在本實驗的 `install_50x` 外層處理。單核擷取檔 `config/50x_calibrated_psf.npz` 有完整來源鎖；只做總能量正規化，未改實測輪廓。新增入口禁用訓練、拒絕不存在的光學編號，切換時清除舊的頻域快取。
 

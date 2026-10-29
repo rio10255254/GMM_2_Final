@@ -10,11 +10,12 @@ from model.organized import Hybrid as Organized
 from model.organized.inference_policy import guard
 from evaluate_real import guard as original_guard
 from run_pilot import setup
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     out=ROOT/'results/organization';out.mkdir(exist_ok=False)
     plan=load(ROOT/'config/organization_plan.json');pilot=load(ROOT/'config/plan.json')
-    for item in plan['original_files']+plan['organized_files']:assert sha(item['path'])==item['sha256'],item['path']
+    for item in plan['original_files']+plan['organized_files']:assert sha(str(PROJECT_ROOT / item['path']))==item['sha256'],str(PROJECT_ROOT / item['path'])
     save(out/'started.json',dict(created_utc=now(),plan=record(ROOT/'config/organization_plan.json'),script=record(__file__)))
     kernels=np.load(ROOT/'data/measured_psf_bank.npz');setup(pilot['common_seed'])
     def model(cls,arm,step,device='cuda'):
@@ -50,8 +51,8 @@ def main():
     cases=[dict(kind='sem',name=f"sem{x['exposure']}",source=x['source'],box=None) for x in panel['sem']]
     cases +=[dict(kind='motion',name=f"{x['sequence']}_{x['frame_index']:04d}",source=x['source'],box=x['box']) for x in panel['motion']]
     for case in cases:
-        assert sha(case['source']['path'])==case['source']['sha256']
-        raw=cv2.imread(case['source']['path'],0)
+        assert sha(str(PROJECT_ROOT / case['source']['path']))==case['source']['sha256']
+        raw=cv2.imread(str(PROJECT_ROOT / case['source']['path']),0)
         if case['box']:
             x0,y0,x1,y1=case['box'];raw=raw[y0:y1,x0:x1]
         x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda()
@@ -68,7 +69,7 @@ def main():
     observed=[];corrections=[];conditioned=[]
     h1=a.prior.register_forward_hook(lambda module,args,result:corrections.append(result.detach().clone()))
     h2=a.optics.register_forward_hook(lambda module,args,result:conditioned.append(result[0].detach().clone()))
-    raw=cv2.imread(panel['sem'][1]['source']['path'],0)[300:497,300:493]
+    raw=cv2.imread(str(PROJECT_ROOT / panel['sem'][1]['source']['path']),0)[300:497,300:493]
     x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda()
     with torch.no_grad():
         old=a(x)
@@ -86,7 +87,7 @@ def main():
         mutated=b.forward_details(x,step_observer=mutate_copy).output
         assert torch.equal(mutated,old)
     np.savez_compressed(out/'example_step_trace.npz',**arrays)
-    for item in plan['original_files']+plan['organized_files']:assert sha(item['path'])==item['sha256']
+    for item in plan['original_files']+plan['organized_files']:assert sha(str(PROJECT_ROOT / item['path']))==item['sha256']
     result=dict(completed_utc=now(),passed=True,source=record(__file__),plan=record(ROOT/'config/organization_plan.json'),new_training_updates=0,checkpoints=rows,constant_inputs=boundary,real_images=real,real_count=len(real),trace=trace,observer_mutation_does_not_change_output=True,original_files_unchanged=True,organized_module_hashes_unchanged=True,performance_improvement_not_claimed=True,scope='Exact equality on tested inputs and gradients; structural reorganization only, not new scientific qualification')
     save(out/'verification.json',result)
     print('All organization checks passed',flush=True)

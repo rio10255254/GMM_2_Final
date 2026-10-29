@@ -4,10 +4,11 @@ import re
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
 
-SOURCE = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v18\word_pages")
-OUTPUT = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v18\word_contacts")
+SOURCE = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v18/word_pages'))
+OUTPUT = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v18/word_contacts'))
 
 
 def page_number(path: Path) -> int:

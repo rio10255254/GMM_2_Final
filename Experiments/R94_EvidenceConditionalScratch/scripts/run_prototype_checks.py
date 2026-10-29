@@ -13,10 +13,11 @@ import cv2
 import numpy as np
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_R93 = Path(r"D:\GMM_2_Final\Experiments\R93_RecoverableDetailSeparatedScratch")
+SOURCE_R93 = Path(str(PROJECT_ROOT / 'Experiments/R93_RecoverableDetailSeparatedScratch'))
 
 
 def load(name: str, path: Path):

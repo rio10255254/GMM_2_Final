@@ -1,8 +1,9 @@
 function make_raw_anchor_panel_english()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))))));
 %MAKE_RAW_ANCHOR_PANEL_ENGLISH Preserve the three image panels and redraw labels.
 
-inputPath = 'D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_english_20260727\template-inspect\assets\ppt\media\image89.png';
-outputDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_english_20260727\assets_english\custom';
+inputPath = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_tmp/oral_defense_english_20260727/template-inspect/assets/ppt/media/image89.png');
+outputDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_tmp/oral_defense_english_20260727/assets_english/custom');
 outputPath = fullfile(outputDir, 'raw_anchor_visual_comparison_english.png');
 if ~isfolder(outputDir), mkdir(outputDir); end
 

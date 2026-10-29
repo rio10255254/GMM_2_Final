@@ -7,9 +7,10 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260710_v42_full_validation\synthetic_holdout")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/20260710_v42_full_validation/synthetic_holdout'))
 RAW = ROOT / "raw_blurred"
 GT = ROOT / "ground_truth"
 PRED = ROOT / "reconstructions" / "reconstruct_progress_epoch_120_in_raw_blurred_20260709_202713" / "v42_e120"

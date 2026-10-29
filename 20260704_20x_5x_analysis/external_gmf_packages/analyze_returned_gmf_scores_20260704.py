@@ -6,9 +6,10 @@ import re
 from collections import defaultdict
 from pathlib import Path
 from statistics import mean, median, pstdev
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-ANALYSIS_ROOT = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis")
+ANALYSIS_ROOT = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis'))
 PACKAGE_ROOTS = [
     ANALYSIS_ROOT
     / "external_gmf_packages"

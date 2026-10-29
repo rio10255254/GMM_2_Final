@@ -2,7 +2,8 @@ from pathlib import Path
 import json,hashlib,re,shutil
 from PIL import Image
 import pandas as pd
-R=Path(r'D:\GMM_2_Final');P=R/'Experiments/R129_OpticalPriorHybrid/analysis/thesis_ready_20260920'
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+R=Path(str(PROJECT_ROOT));P=R/'Experiments/R129_OpticalPriorHybrid/analysis/thesis_ready_20260920'
 r=R/'Deliverables/R129_Thesis_Rewrite_Ready_20260920'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def save(rel,o):(r/rel).write_text(json.dumps(o,ensure_ascii=False,indent=2),encoding='utf-8')

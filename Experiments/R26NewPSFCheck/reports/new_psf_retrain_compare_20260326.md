@@ -7,31 +7,31 @@
 
 - 舊版封包既有效果
   - 推論輸出：
-    `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\輸出結果\推論結果\reconstruct_progress_r26_sm035_best_tradeoff_in_Demo_Input_20260324_233331`
+    `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/reconstruct_progress_r26_sm035_best_tradeoff_in_Demo_Input_20260324_233331`
   - 單張分析：
-    `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\analysis_single_image_recon`
+    `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/analysis_single_image_recon`
 - 新版 PSF 重訓效果
   - 使用的新 PSF：
-    `D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat`
+    `PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
   - 新訓練輸出：
-    `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\輸出結果\訓練結果\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223`
+    `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/訓練結果/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223`
   - 新推論輸出：
-    `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\輸出結果\推論結果\reconstruct_progress_best_tradeoff_in_Demo_Input_20260326_093223`
+    `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/reconstruct_progress_best_tradeoff_in_Demo_Input_20260326_093223`
   - 新單張分析：
-    `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\analysis_single_image_recon_newpsf`
+    `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/analysis_single_image_recon_newpsf`
 
 ## 新 PSF 採用依據
 
 - 封包原 PSF 路徑：
-  `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat`
+  `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
 - 舊版封包 PSF SHA256：
   `3AAB9CC1ED9EE0EB9C85227D026A3A8D86D0C035B8D06A46EB688551EFAE79CD`
 - 新版正式 PSF 來源：
-  `D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat`
+  `PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
 - 新版正式 PSF SHA256：
   `F54F75F191AFEE507EA7BE9F5B561A465590A94DFDDD72EF722818D48E82E673`
 - 舊版封包 PSF 備份：
-  `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\輸出結果\比較結果\psf_swap_20260326_093203\PSF_fitted_2D_FOVstack.package_old.mat`
+  `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/比較結果/psf_swap_20260326_093203/PSF_fitted_2D_FOVstack.package_old.mat`
 - 根專案正式 PSF 的 `formal_config.json` 顯示此結果已由 ValidationLab 候選提升為目前 Whole-FOV 正式輸出，生成時間為 `2026-03-26 09:23:57`，並使用 `warm_start + pre_alignment + tilt locked`。
 
 ## 執行方式
@@ -46,13 +46,13 @@
 
 - 新訓練開始時間：`2026-03-26 09:32:23`
 - 新訓練目錄：
-  `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\輸出結果\訓練結果\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223`
+  `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/訓練結果/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223`
 - 本次推論使用權重：
-  `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\輸出結果\訓練結果\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223\weights\best_tradeoff.pth.tar`
+  `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/訓練結果/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223/weights/best_tradeoff.pth.tar`
 - 權重檔時間：
   `best_tradeoff.pth.tar` = `2026-03-26 09:41:32`
 - 新推論輸出：
-  `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\輸出結果\推論結果\reconstruct_progress_best_tradeoff_in_Demo_Input_20260326_093223`
+  `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/reconstruct_progress_best_tradeoff_in_Demo_Input_20260326_093223`
 
 ## 單張分析對照表
 

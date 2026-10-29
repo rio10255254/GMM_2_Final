@@ -11,9 +11,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 ASSET_ROOT = ROOT / "Experiments" / "20260626_training_data_real_slide_assets"
 FIG_DIR = ASSET_ROOT / "figures"
 TABLE_DIR = ASSET_ROOT / "tables"
@@ -28,15 +29,15 @@ R61_DATASET = (
 )
 R61_MANIFEST = R61_DATASET / "manifest.json"
 
-STEP_ROOT = Path(r"D:\GMM_2_Final\Step_analysis_20260623\clean_step_audit_from_original_pos10_20260623_2218")
+STEP_ROOT = Path(str(PROJECT_ROOT / 'Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218'))
 STEP_RAW_DIR = STEP_ROOT / "center2048_bmp"
 STEP_R39_DIR = STEP_ROOT / "clean_reconstruction_outputs" / "reconstruct_progress_r39_best_latest_a970_in_center2048_bmp_20260623" / "01_r39_clean_pos10_center2048"
 STEP_V14_DIR = STEP_ROOT / "clean_reconstruction_outputs" / "reconstruct_progress_best_tradeoff_in_center2048_bmp_20260623_150217" / "02_v14_clean_pos10_center2048"
 STEP_V16_DIR = STEP_ROOT / "clean_reconstruction_outputs" / "reconstruct_progress_best_tradeoff_in_center2048_bmp_20260623_200020" / "03_v16_clean_pos10_center2048"
 STEP_FRAME = "VisionTop_20260615173931287.bmp"
 
-GMF_1UM = Path(r"D:\GMM_2_Final\Step_analysis_20260623\_curated_final_20260624\02_gmf_validation\1um\analysis_center_square_raw_vs_v16_rep0_20260624_0916\gmf_center_square_1um_steps.csv")
-GMF_0P5UM = Path(r"D:\GMM_2_Final\Step_analysis_20260623\_curated_final_20260624\02_gmf_validation\0p5um\analysis_center_square_raw_vs_v16_rep0_20260624_0p5um\gmf_center_square_0p5um_steps.csv")
+GMF_1UM = Path(str(PROJECT_ROOT / 'Step_analysis_20260623/_curated_final_20260624/02_gmf_validation/1um/analysis_center_square_raw_vs_v16_rep0_20260624_0916/gmf_center_square_1um_steps.csv'))
+GMF_0P5UM = Path(str(PROJECT_ROOT / 'Step_analysis_20260623/_curated_final_20260624/02_gmf_validation/0p5um/analysis_center_square_raw_vs_v16_rep0_20260624_0p5um/gmf_center_square_0p5um_steps.csv'))
 
 RAW_100MG = ROOT / "20260618_100MG" / "Image__2026-06-18__17-10-31.bmp"
 OLD_R57_100MG = (

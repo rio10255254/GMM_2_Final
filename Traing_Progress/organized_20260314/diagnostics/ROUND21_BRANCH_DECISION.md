@@ -4,9 +4,9 @@ Date: 2026-03-14
 ## Inputs
 
 - round20 postmortem:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\round20\ROUND20_POSTMORTEM.md`
+  `Traing_Progress/organized_20260314/round20/ROUND20_POSTMORTEM.md`
 - diagnostic matrix summary:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\diagnostics\DIAGNOSTIC_MATRIX_SUMMARY_20260314_232403.md`
+  `Traing_Progress/organized_20260314/diagnostics/DIAGNOSTIC_MATRIX_SUMMARY_20260314_232403.md`
 
 ## Decision
 

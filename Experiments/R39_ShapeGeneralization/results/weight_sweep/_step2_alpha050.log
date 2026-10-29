@@ -1,86 +1,86 @@
-[sweep] loading COMBO weights from D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\weights\best_tradeoff.pth.tar
-[sweep] loading candidate weights from D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728\weights\best_tradeoff.pth.tar
+[sweep] loading COMBO weights from Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar
+[sweep] loading candidate weights from Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/weights/best_tradeoff.pth.tar
 [sweep] state_dicts compatible: 126 tensors, total params=5,095,668
 [sweep] sweeping alphas: [0.5]
 [sweep] === alpha=0.50 (a050) ===
-[sweep] $ C:\Users\Rio\AppData\Local\Programs\Python\Python312\python.exe D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\scripts\run_r39_shape_recon.py --profile shape_val_unseen --weights D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar --recon-root D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050 --device cuda:0
+[sweep] $ C:\Users\Rio\AppData\Local\Programs\Python\Python312\python.exe Experiments/R39_ShapeGeneralization/scripts/run_r39_shape_recon.py --profile shape_val_unseen --weights Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar --recon-root Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050 --device cuda:0
 {
   "profile": "shape_val_unseen",
-  "weights": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\checkpoints\\a050\\best_tradeoff.pth.tar",
+  "weights": "Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar",
   "jobs": [
     {
       "stage": "stage_01_triangles",
-      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\src\\stage_01_triangles",
-      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\lbl\\stage_01_triangles",
-      "recon_root": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050",
+      "input_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/src/stage_01_triangles",
+      "gt_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_01_triangles",
+      "recon_root": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050",
       "output_name": "shape_val_unseen_stage_01_triangles_best_tradeoff.pth",
       "image_pairs": 30
     },
     {
       "stage": "stage_02_circles",
-      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\src\\stage_02_circles",
-      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\lbl\\stage_02_circles",
-      "recon_root": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050",
+      "input_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/src/stage_02_circles",
+      "gt_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_02_circles",
+      "recon_root": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050",
       "output_name": "shape_val_unseen_stage_02_circles_best_tradeoff.pth",
       "image_pairs": 30
     },
     {
       "stage": "stage_03_rectangles",
-      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\src\\stage_03_rectangles",
-      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\lbl\\stage_03_rectangles",
-      "recon_root": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050",
+      "input_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/src/stage_03_rectangles",
+      "gt_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_03_rectangles",
+      "recon_root": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050",
       "output_name": "shape_val_unseen_stage_03_rectangles_best_tradeoff.pth",
       "image_pairs": 30
     },
     {
       "stage": "stage_04_ellipses",
-      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\src\\stage_04_ellipses",
-      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\lbl\\stage_04_ellipses",
-      "recon_root": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050",
+      "input_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/src/stage_04_ellipses",
+      "gt_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_04_ellipses",
+      "recon_root": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050",
       "output_name": "shape_val_unseen_stage_04_ellipses_best_tradeoff.pth",
       "image_pairs": 30
     },
     {
       "stage": "stage_05_polygons",
-      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\src\\stage_05_polygons",
-      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\lbl\\stage_05_polygons",
-      "recon_root": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050",
+      "input_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/src/stage_05_polygons",
+      "gt_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_05_polygons",
+      "recon_root": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050",
       "output_name": "shape_val_unseen_stage_05_polygons_best_tradeoff.pth",
       "image_pairs": 30
     },
     {
       "stage": "stage_06_mixed_simple",
-      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\src\\stage_06_mixed_simple",
-      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\lbl\\stage_06_mixed_simple",
-      "recon_root": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050",
+      "input_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/src/stage_06_mixed_simple",
+      "gt_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_06_mixed_simple",
+      "recon_root": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050",
       "output_name": "shape_val_unseen_stage_06_mixed_simple_best_tradeoff.pth",
       "image_pairs": 30
     },
     {
       "stage": "stage_07_mixed_complex",
-      "input_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\src\\stage_07_mixed_complex",
-      "gt_dir": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization\\shape_val_unseen\\lbl\\stage_07_mixed_complex",
-      "recon_root": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050",
+      "input_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/src/stage_07_mixed_complex",
+      "gt_dir": "Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_07_mixed_complex",
+      "recon_root": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050",
       "output_name": "shape_val_unseen_stage_07_mixed_complex_best_tradeoff.pth",
       "image_pairs": 30
     }
   ]
 }
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_5oery51q\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
 -> Weak PSF active. beta_scale=0.138302, entropy_mix=0.000000
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 30 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_01_triangles_20260430_114616\shape_val_unseen_stage_01_triangles_best_tradeoff.pth
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_01_triangles_20260430_114616/shape_val_unseen_stage_01_triangles_best_tradeoff.pth
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050
 -> Align factor: 64
--> GT dir: D:\GMM_2_Final\Training_Data\r39_shape_generalization\shape_val_unseen\lbl\stage_01_triangles
-[1/30] Processing 0071.bmp... D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:138: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+-> GT dir: Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_01_triangles
+[1/30] Processing 0071.bmp... Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:138: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.amp.autocast(enabled=False):
-D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:370: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:370: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.amp.autocast(enabled=False):
 Done. PSNR=20.25 SSIM=0.3966
 [2/30] Processing 0072.bmp... Done. PSNR=25.76 SSIM=0.9253
@@ -113,19 +113,19 @@ Done. PSNR=20.25 SSIM=0.3966
 [29/30] Processing 0099.bmp... Done. PSNR=26.93 SSIM=0.9429
 [30/30] Processing 0100.bmp... Done. PSNR=25.55 SSIM=0.9139
 -> Avg PSNR/SSIM over 30 pairs: PSNR=25.82 SSIM=0.8553
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_01_triangles_20260430_114616\shape_val_unseen_stage_01_triangles_best_tradeoff.pth
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_01_triangles_20260430_114616/shape_val_unseen_stage_01_triangles_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_p30idx65\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
 -> Weak PSF active. beta_scale=0.138302, entropy_mix=0.000000
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 30 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_02_circles_20260430_114616\shape_val_unseen_stage_02_circles_best_tradeoff.pth
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_02_circles_20260430_114616/shape_val_unseen_stage_02_circles_best_tradeoff.pth
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050
 -> Align factor: 64
--> GT dir: D:\GMM_2_Final\Training_Data\r39_shape_generalization\shape_val_unseen\lbl\stage_02_circles
+-> GT dir: Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_02_circles
 [1/30] Processing 0171.bmp... Done. PSNR=29.34 SSIM=0.9206
 [2/30] Processing 0172.bmp... Done. PSNR=25.37 SSIM=0.9689
 [3/30] Processing 0173.bmp... Done. PSNR=24.33 SSIM=0.7484
@@ -157,19 +157,19 @@ Done. PSNR=20.25 SSIM=0.3966
 [29/30] Processing 0199.bmp... Done. PSNR=25.19 SSIM=0.9674
 [30/30] Processing 0200.bmp... Done. PSNR=29.13 SSIM=0.9774
 -> Avg PSNR/SSIM over 30 pairs: PSNR=28.03 SSIM=0.9361
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_02_circles_20260430_114616\shape_val_unseen_stage_02_circles_best_tradeoff.pth
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_02_circles_20260430_114616/shape_val_unseen_stage_02_circles_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_1d5gw9x5\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
 -> Weak PSF active. beta_scale=0.138302, entropy_mix=0.000000
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 30 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_03_rectangles_20260430_114616\shape_val_unseen_stage_03_rectangles_best_tradeoff.pth
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_03_rectangles_20260430_114616/shape_val_unseen_stage_03_rectangles_best_tradeoff.pth
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050
 -> Align factor: 64
--> GT dir: D:\GMM_2_Final\Training_Data\r39_shape_generalization\shape_val_unseen\lbl\stage_03_rectangles
+-> GT dir: Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_03_rectangles
 [1/30] Processing 0271.bmp... Done. PSNR=25.62 SSIM=0.9297
 [2/30] Processing 0272.bmp... Done. PSNR=23.47 SSIM=0.8922
 [3/30] Processing 0273.bmp... Done. PSNR=28.64 SSIM=0.9641
@@ -201,19 +201,19 @@ Done. PSNR=20.25 SSIM=0.3966
 [29/30] Processing 0299.bmp... Done. PSNR=24.49 SSIM=0.9092
 [30/30] Processing 0300.bmp... Done. PSNR=22.89 SSIM=0.6951
 -> Avg PSNR/SSIM over 30 pairs: PSNR=25.23 SSIM=0.8663
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_03_rectangles_20260430_114616\shape_val_unseen_stage_03_rectangles_best_tradeoff.pth
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_03_rectangles_20260430_114616/shape_val_unseen_stage_03_rectangles_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_50yxrzg6\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
 -> Weak PSF active. beta_scale=0.138302, entropy_mix=0.000000
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 30 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_04_ellipses_20260430_114616\shape_val_unseen_stage_04_ellipses_best_tradeoff.pth
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_04_ellipses_20260430_114616/shape_val_unseen_stage_04_ellipses_best_tradeoff.pth
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050
 -> Align factor: 64
--> GT dir: D:\GMM_2_Final\Training_Data\r39_shape_generalization\shape_val_unseen\lbl\stage_04_ellipses
+-> GT dir: Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_04_ellipses
 [1/30] Processing 0371.bmp... Done. PSNR=24.20 SSIM=0.9646
 [2/30] Processing 0372.bmp... Done. PSNR=31.63 SSIM=0.9783
 [3/30] Processing 0373.bmp... Done. PSNR=33.67 SSIM=0.9914
@@ -245,19 +245,19 @@ Done. PSNR=20.25 SSIM=0.3966
 [29/30] Processing 0399.bmp... Done. PSNR=29.18 SSIM=0.9760
 [30/30] Processing 0400.bmp... Done. PSNR=30.59 SSIM=0.9781
 -> Avg PSNR/SSIM over 30 pairs: PSNR=29.06 SSIM=0.9596
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_04_ellipses_20260430_114616\shape_val_unseen_stage_04_ellipses_best_tradeoff.pth
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_04_ellipses_20260430_114616/shape_val_unseen_stage_04_ellipses_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_it58bsm1\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
 -> Weak PSF active. beta_scale=0.138302, entropy_mix=0.000000
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 30 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_05_polygons_20260430_114616\shape_val_unseen_stage_05_polygons_best_tradeoff.pth
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_05_polygons_20260430_114616/shape_val_unseen_stage_05_polygons_best_tradeoff.pth
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050
 -> Align factor: 64
--> GT dir: D:\GMM_2_Final\Training_Data\r39_shape_generalization\shape_val_unseen\lbl\stage_05_polygons
+-> GT dir: Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_05_polygons
 [1/30] Processing 0471.bmp... Done. PSNR=24.95 SSIM=0.6557
 [2/30] Processing 0472.bmp... Done. PSNR=29.39 SSIM=0.9704
 [3/30] Processing 0473.bmp... Done. PSNR=26.94 SSIM=0.8812
@@ -289,19 +289,19 @@ Done. PSNR=20.25 SSIM=0.3966
 [29/30] Processing 0499.bmp... Done. PSNR=27.48 SSIM=0.9647
 [30/30] Processing 0500.bmp... Done. PSNR=27.99 SSIM=0.9616
 -> Avg PSNR/SSIM over 30 pairs: PSNR=27.47 SSIM=0.9192
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_05_polygons_20260430_114616\shape_val_unseen_stage_05_polygons_best_tradeoff.pth
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_05_polygons_20260430_114616/shape_val_unseen_stage_05_polygons_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_i42o5_p6\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
 -> Weak PSF active. beta_scale=0.138302, entropy_mix=0.000000
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 30 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_06_mixed_simple_20260430_114616\shape_val_unseen_stage_06_mixed_simple_best_tradeoff.pth
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_06_mixed_simple_20260430_114616/shape_val_unseen_stage_06_mixed_simple_best_tradeoff.pth
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050
 -> Align factor: 64
--> GT dir: D:\GMM_2_Final\Training_Data\r39_shape_generalization\shape_val_unseen\lbl\stage_06_mixed_simple
+-> GT dir: Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_06_mixed_simple
 [1/30] Processing 0571.bmp... Done. PSNR=28.27 SSIM=0.9630
 [2/30] Processing 0572.bmp... Done. PSNR=29.09 SSIM=0.9607
 [3/30] Processing 0573.bmp... Done. PSNR=29.44 SSIM=0.9654
@@ -333,19 +333,19 @@ Done. PSNR=20.25 SSIM=0.3966
 [29/30] Processing 0599.bmp... Done. PSNR=29.75 SSIM=0.9606
 [30/30] Processing 0600.bmp... Done. PSNR=26.58 SSIM=0.9554
 -> Avg PSNR/SSIM over 30 pairs: PSNR=27.28 SSIM=0.8873
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_06_mixed_simple_20260430_114616\shape_val_unseen_stage_06_mixed_simple_best_tradeoff.pth
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_06_mixed_simple_20260430_114616/shape_val_unseen_stage_06_mixed_simple_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_fygd239z\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
 -> Weak PSF active. beta_scale=0.138302, entropy_mix=0.000000
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 30 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_07_mixed_complex_20260430_114616\shape_val_unseen_stage_07_mixed_complex_best_tradeoff.pth
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_07_mixed_complex_20260430_114616/shape_val_unseen_stage_07_mixed_complex_best_tradeoff.pth
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050
 -> Align factor: 64
--> GT dir: D:\GMM_2_Final\Training_Data\r39_shape_generalization\shape_val_unseen\lbl\stage_07_mixed_complex
+-> GT dir: Training_Data/r39_shape_generalization/shape_val_unseen/lbl/stage_07_mixed_complex
 [1/30] Processing 0671.bmp... Done. PSNR=27.69 SSIM=0.9429
 [2/30] Processing 0672.bmp... Done. PSNR=24.08 SSIM=0.8787
 [3/30] Processing 0673.bmp... Done. PSNR=25.07 SSIM=0.9034
@@ -377,12 +377,12 @@ Done. PSNR=20.25 SSIM=0.3966
 [29/30] Processing 0699.bmp... Done. PSNR=26.39 SSIM=0.9201
 [30/30] Processing 0700.bmp... Done. PSNR=27.31 SSIM=0.9289
 -> Avg PSNR/SSIM over 30 pairs: PSNR=24.92 SSIM=0.8722
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050\reconstruct_progress_best_tradeoff_in_stage_07_mixed_complex_20260430_114616\shape_val_unseen_stage_07_mixed_complex_best_tradeoff.pth
-[sweep] $ C:\Users\Rio\AppData\Local\Programs\Python\Python312\python.exe D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\scripts\summarize_r39_shape_recon.py --profile shape_val_unseen --recon-root D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050 --output-json D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050_shape_summary.json
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_07_mixed_complex_20260430_114616/shape_val_unseen_stage_07_mixed_complex_best_tradeoff.pth
+[sweep] $ C:\Users\Rio\AppData\Local\Programs\Python\Python312\python.exe Experiments/R39_ShapeGeneralization/scripts/summarize_r39_shape_recon.py --profile shape_val_unseen --recon-root Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050 --output-json Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050_shape_summary.json
 {
   "profile": "shape_val_unseen",
-  "data_root": "D:\\GMM_2_Final\\Training_Data\\r39_shape_generalization",
-  "recon_root": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050",
+  "data_root": "Training_Data/r39_shape_generalization",
+  "recon_root": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050",
   "total_count": 210,
   "overall_avg_psnr": 26.826179439459686,
   "overall_avg_ssim": 0.8987205985756147,
@@ -392,60 +392,60 @@ Done. PSNR=20.25 SSIM=0.3966
       "count": 30,
       "avg_psnr": 25.815606224232095,
       "avg_ssim": 0.8546388561526934,
-      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050\\reconstruct_progress_best_tradeoff_in_stage_01_triangles_20260430_114616\\shape_val_unseen_stage_01_triangles_best_tradeoff.pth"
+      "output_dir": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_01_triangles_20260430_114616/shape_val_unseen_stage_01_triangles_best_tradeoff.pth"
     },
     {
       "stage": "stage_02_circles",
       "count": 30,
       "avg_psnr": 28.022320817335462,
       "avg_ssim": 0.935276186466217,
-      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050\\reconstruct_progress_best_tradeoff_in_stage_02_circles_20260430_114616\\shape_val_unseen_stage_02_circles_best_tradeoff.pth"
+      "output_dir": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_02_circles_20260430_114616/shape_val_unseen_stage_02_circles_best_tradeoff.pth"
     },
     {
       "stage": "stage_03_rectangles",
       "count": 30,
       "avg_psnr": 25.229363687655756,
       "avg_ssim": 0.8656571298837662,
-      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050\\reconstruct_progress_best_tradeoff_in_stage_03_rectangles_20260430_114616\\shape_val_unseen_stage_03_rectangles_best_tradeoff.pth"
+      "output_dir": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_03_rectangles_20260430_114616/shape_val_unseen_stage_03_rectangles_best_tradeoff.pth"
     },
     {
       "stage": "stage_04_ellipses",
       "count": 30,
       "avg_psnr": 29.056503347405616,
       "avg_ssim": 0.9589163462320963,
-      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050\\reconstruct_progress_best_tradeoff_in_stage_04_ellipses_20260430_114616\\shape_val_unseen_stage_04_ellipses_best_tradeoff.pth"
+      "output_dir": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_04_ellipses_20260430_114616/shape_val_unseen_stage_04_ellipses_best_tradeoff.pth"
     },
     {
       "stage": "stage_05_polygons",
       "count": 30,
       "avg_psnr": 27.46613054279614,
       "avg_ssim": 0.918418996532758,
-      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050\\reconstruct_progress_best_tradeoff_in_stage_05_polygons_20260430_114616\\shape_val_unseen_stage_05_polygons_best_tradeoff.pth"
+      "output_dir": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_05_polygons_20260430_114616/shape_val_unseen_stage_05_polygons_best_tradeoff.pth"
     },
     {
       "stage": "stage_06_mixed_simple",
       "count": 30,
       "avg_psnr": 27.272098087573948,
       "avg_ssim": 0.8866177330414454,
-      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050\\reconstruct_progress_best_tradeoff_in_stage_06_mixed_simple_20260430_114616\\shape_val_unseen_stage_06_mixed_simple_best_tradeoff.pth"
+      "output_dir": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_06_mixed_simple_20260430_114616/shape_val_unseen_stage_06_mixed_simple_best_tradeoff.pth"
     },
     {
       "stage": "stage_07_mixed_complex",
       "count": 30,
       "avg_psnr": 24.92123336921878,
       "avg_ssim": 0.8715189417203267,
-      "output_dir": "D:\\GMM_2_Final\\Experiments\\R39_ShapeGeneralization\\results\\weight_sweep\\shape_recon\\a050\\reconstruct_progress_best_tradeoff_in_stage_07_mixed_complex_20260430_114616\\shape_val_unseen_stage_07_mixed_complex_best_tradeoff.pth"
+      "output_dir": "Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050/reconstruct_progress_best_tradeoff_in_stage_07_mixed_complex_20260430_114616/shape_val_unseen_stage_07_mixed_complex_best_tradeoff.pth"
     }
   ]
 }
-[R39] summary written to D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\shape_recon\a050_shape_summary.json
-[sweep] $ C:\Program Files\PowerShell\7\pwsh.EXE -NoProfile -ExecutionPolicy Bypass -File D:\GMM_2_Final\Tools\RunRepresentativeExternalRecon.ps1 -WeightsPath D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar -ReconRoot D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050
+[R39] summary written to Experiments/R39_ShapeGeneralization/results/weight_sweep/shape_recon/a050_shape_summary.json
+[sweep] $ C:\Program Files\PowerShell\7\pwsh.EXE -NoProfile -ExecutionPolicy Bypass -File Tools/RunRepresentativeExternalRecon.ps1 -WeightsPath Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar -ReconRoot Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050
 [RUN] dataset=Pitch1um_Y_100
 [RUN] input=C:\Users\Rio\Downloads\NTU_ImageDataset\Pitch1um_Y_100\Cropped_Output
 [RUN] output_name=pitch1um_y_100_odd
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_e5z02fro\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
@@ -453,12 +453,12 @@ Done. PSNR=20.25 SSIM=0.3966
 -> Mode 'odd': selected 101/202
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 101 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616\pitch1um_y_100_odd
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616/pitch1um_y_100_odd
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050
 -> Align factor: 64
-[1/101] Processing VisionTop_20251029182653732.bmp... D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:138: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+[1/101] Processing VisionTop_20251029182653732.bmp... Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:138: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.amp.autocast(enabled=False):
-D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:370: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:370: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.amp.autocast(enabled=False):
 Done.
 [2/101] Processing VisionTop_20251029182704617.bmp... Done.
@@ -561,13 +561,13 @@ Done.
 [99/101] Processing VisionTop_20251029184429722.bmp... Done.
 [100/101] Processing VisionTop_20251029184440519.bmp... Done.
 [101/101] Processing VisionTop_20251029184451292.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616\pitch1um_y_100_odd
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616/pitch1um_y_100_odd
 [RUN] dataset=Pitch0.1um_Y_60
 [RUN] input=C:\Users\Rio\Downloads\NTU_ImageDataset\Pitch0.1um_Y_60\Cropped_Output
 [RUN] output_name=pitch0p1um_y_60_odd
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_69h7t8sz\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
@@ -575,12 +575,12 @@ Done.
 -> Mode 'odd': selected 61/122
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 61 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616\pitch0p1um_y_60_odd
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616/pitch0p1um_y_60_odd
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050
 -> Align factor: 64
-[1/61] Processing VisionTop_20251029185330879.bmp... D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:138: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+[1/61] Processing VisionTop_20251029185330879.bmp... Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:138: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.amp.autocast(enabled=False):
-D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:370: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:370: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.amp.autocast(enabled=False):
 Done.
 [2/61] Processing VisionTop_20251029185341723.bmp... Done.
@@ -643,13 +643,13 @@ Done.
 [59/61] Processing VisionTop_20251029190354974.bmp... Done.
 [60/61] Processing VisionTop_20251029190405691.bmp... Done.
 [61/61] Processing VisionTop_20251029190416478.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616\pitch0p1um_y_60_odd
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616/pitch0p1um_y_60_odd
 [RUN] dataset=Pitch0.01um_Y_40
 [RUN] input=C:\Users\Rio\Downloads\NTU_ImageDataset\Pitch0.01um_Y_40\Cropped_Output
 [RUN] output_name=pitch0p01um_y_40_odd
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda
--> Weights: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a050\best_tradeoff.pth.tar
+-> Weights: Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a050/best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_p0481evs\psf_from_ckpt.mat)
 -> Weights loaded successfully.
 -> Physics active. reg=10.000000, alpha=0.099926
@@ -657,12 +657,12 @@ Done.
 -> Mode 'odd': selected 41/82
 -> Output tag timestamp from weight source: 20260430_114616
 -> Found 41 images. Starting reconstruction...
--> Output dir: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616\pitch0p01um_y_40_odd
--> Recon root: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050
+-> Output dir: Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616/pitch0p01um_y_40_odd
+-> Recon root: Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050
 -> Align factor: 64
-[1/41] Processing VisionTop_20251029193115711.bmp... D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:138: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+[1/41] Processing VisionTop_20251029193115711.bmp... Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:138: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.amp.autocast(enabled=False):
-D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:370: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py:370: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.amp.autocast(enabled=False):
 Done.
 [2/41] Processing VisionTop_20251029193126446.bmp... Done.
@@ -705,8 +705,8 @@ Done.
 [39/41] Processing VisionTop_20251029193804320.bmp... Done.
 [40/41] Processing VisionTop_20251029193815174.bmp... Done.
 [41/41] Processing VisionTop_20251029193825916.bmp... Done.
--> All done. Results saved to: D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616\pitch0p01um_y_40_odd
-[DONE] manifest=D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\ring_recon\a050\batch_manifest.json
+-> All done. Results saved to: Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260430_114616/pitch0p01um_y_40_odd
+[DONE] manifest=Experiments/R39_ShapeGeneralization/results/weight_sweep/ring_recon/a050/batch_manifest.json
 {
   "found": false,
   "best": null,

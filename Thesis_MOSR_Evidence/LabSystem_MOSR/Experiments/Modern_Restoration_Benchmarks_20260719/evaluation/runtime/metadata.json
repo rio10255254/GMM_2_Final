@@ -7,5 +7,5 @@
   "synchronization": "CUDA synchronized before and after every timed forward",
   "patch_rule": "256x256 real image crop, batch size 1, five warmups",
   "full_frame_rule": "Base U-Net, NAFNet, and EDSR use the deployed 256-pixel overlap-tiled path; MOSR uses its deployed direct full-frame path",
-  "input_frame": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp"
+  "input_frame": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp"
 }

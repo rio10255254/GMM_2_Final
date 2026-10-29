@@ -203,7 +203,7 @@ step_std 已大幅改善，但若未來需要更平滑的趨勢，可以考慮�
 ## Reconstruction Outputs (for external GMF)
 
 ```
-D:\GMM_2_Final\Experiments\R33RobustLoss\results\p95_recon\
+Experiments/R33RobustLoss/results/p95_recon
     reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_091941\
         pitch0p1um_y_60_odd\   (61 frames, 0.8px)
         pitch0p01um_y_40_odd\  (41 frames, 0.08px)
@@ -213,7 +213,7 @@ D:\GMM_2_Final\Experiments\R33RobustLoss\results\p95_recon\
 ## External GMF Score Files
 
 ```
-D:\GMM_2_Final\Experiments\R33RobustLoss\results\external_gmf\
+Experiments/R33RobustLoss/results/external_gmf
     pitch0p8px\GMF_score.txt    (60 entries)
     pitch0p08px\GMF_score.txt   (40 entries)
     pitch8px\GMF_score.txt      (100 entries)

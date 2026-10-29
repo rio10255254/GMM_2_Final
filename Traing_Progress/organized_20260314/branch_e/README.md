@@ -16,5 +16,5 @@
 - selected manifest: `selected\current_branch_e_probe_seed.json`
 
 root status：
-- `D:\GMM_2_Final\000_LONGRUN_BRANCH_E_STATUS.md`
-- `D:\GMM_2_Final\000_LONGRUN_BRANCH_E_STATUS.json`
+- `000_LONGRUN_BRANCH_E_STATUS.md`
+- `000_LONGRUN_BRANCH_E_STATUS.json`

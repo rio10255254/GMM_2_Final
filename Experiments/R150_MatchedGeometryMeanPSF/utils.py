@@ -2,6 +2,7 @@
 from pathlib import Path
 from datetime import datetime,timezone
 import hashlib,json,os,random
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 ROOT=Path(__file__).resolve().parent
 
@@ -25,9 +26,9 @@ def verify_data_lock():
     cfg=data_config();lock=load(ROOT/'data/DATA_LOCK.json')
     if lock['manifest_sha256']!=sha(ROOT/'data/manifest.json'):
         raise RuntimeError('R149 combined data manifest changed')
-    if lock['base_payload_manifest_sha256']!=sha(Path(cfg['base_payload_path'])/'manifest.json'):
+    if lock['base_payload_manifest_sha256']!=sha(Path(PROJECT_ROOT / cfg['base_payload_path'])/'manifest.json'):
         raise RuntimeError('Base payload changed')
-    if lock['base_geometry_manifest_sha256']!=sha(Path(cfg['base_geometry_path'])/'manifest.json'):
+    if lock['base_geometry_manifest_sha256']!=sha(Path(PROJECT_ROOT / cfg['base_geometry_path'])/'manifest.json'):
         raise RuntimeError('Base geometry changed')
     if lock['psf_bank_sha256']!=sha(ROOT/model_config()['psf_bank']):
         raise RuntimeError('PSF bank changed')

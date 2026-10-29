@@ -2,7 +2,7 @@
 
 - control_candidate: r20_ctrl_r19aa
 - best_candidate: r20_ctrl_r19aa
-- selected_checkpoint: D:\GMM_2_Final\Traing_Progress\organized_20260314\round20\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Traing_Progress/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/weights/best_tradeoff.pth.tar
 - center_improvement_vs_control: 0.000000
 - supports_baseline_lock_hypothesis: False
 

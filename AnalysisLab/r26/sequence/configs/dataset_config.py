@@ -3,16 +3,14 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 _RECON_ROOT = Path(
-    r"D:\GMM_2_Final\Traing_Progress\organized_20260316"
-    r"\external_compare_r18_r22_r25_r26\r26_sm035"
-    r"\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260316_190408"
+    str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260316_190408')
 )
 
 _GMF_ROOT = Path(
-    r"D:\GMM_2_Final\Traing_Progress\organized_20260316"
-    r"\external_compare_r18_r22_r25_r26\r26_sm035\gmf_results\raw"
+    str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw')
 )
 
 _INPUT_ROOT = Path(r"C:\Users\Rio\Downloads\NTU_ImageDataset")

@@ -9,11 +9,11 @@ from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 DOCUMENT = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation"
-    r"\results\thesis_v9_citations\thesis_v9_citation_working.docx"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v9_citations/thesis_v9_citation_working.docx')
 )
 AUDIT_JSON = DOCUMENT.with_name("thesis_v9_citation_audit.json")
 

@@ -10,6 +10,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 ROOT = Path(__file__).resolve().parent
@@ -18,8 +19,7 @@ OUTPUT = ROOT / "論文完整版_20260716_v19_第六章更新版.docx"
 AUDIT = ROOT / "v19_build_audit.json"
 
 FIGURE_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724')
 )
 DISPLACEMENT = FIGURE_ROOT / "01_displacement_improvement"
 ABLATION = FIGURE_ROOT / "02_ablation"

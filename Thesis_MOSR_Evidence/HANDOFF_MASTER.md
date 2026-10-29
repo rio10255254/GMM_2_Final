@@ -44,11 +44,11 @@ NTU 機械工程實驗室的精密量測 SR(super-resolution)重建專案。最�
 **完整專案根目錄**:`D:\GMM_2_Final\`
 
 **機器真相文件**:
-- `D:\GMM_2_Final\ESTIMATOR_POLICY.json`(baseline / alternate / verdict 的機器可讀版)
-- `D:\GMM_2_Final\PROJECT_STATE.md`(quick handoff + full current state)
-- `D:\GMM_2_Final\PROJECT_ARCHITECTURE.md`(Layer A/B/C/D 穩定架構)
-- `D:\GMM_2_Final\Experiments\INDEX.md`(實驗目錄索引)
-- `D:\GMM_2_Final\docs\analysis\RESEARCH_PATHS.md`(研究路徑 mermaid 圖)
+- `ESTIMATOR_POLICY.json`(baseline / alternate / verdict 的機器可讀版)
+- `PROJECT_STATE.md`(quick handoff + full current state)
+- `PROJECT_ARCHITECTURE.md`(Layer A/B/C/D 穩定架構)
+- `Experiments/INDEX.md`(實驗目錄索引)
+- `docs/analysis/RESEARCH_PATHS.md`(研究路徑 mermaid 圖)
 
 ### 1.2 baseline 體系(2026-05-27)
 
@@ -550,22 +550,22 @@ Thesis_MOSR_Evidence/
 
 ### 7.3 對外引用(專案內必讀 doc)
 
-- `D:\GMM_2_Final\PROJECT_STATE.md` — 專案現況
-- `D:\GMM_2_Final\PROJECT_ARCHITECTURE.md` — Layer A/B/C/D 穩定架構
-- `D:\GMM_2_Final\ESTIMATOR_POLICY.json` — 機器真相
-- `D:\GMM_2_Final\Experiments\INDEX.md` — 實驗索引
-- `D:\GMM_2_Final\Experiments\R33RobustLoss\reports\INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md` — internal/external 脫鉤關鍵紀錄
+- `PROJECT_STATE.md` — 專案現況
+- `PROJECT_ARCHITECTURE.md` — Layer A/B/C/D 穩定架構
+- `ESTIMATOR_POLICY.json` — 機器真相
+- `Experiments/INDEX.md` — 實驗索引
+- `Experiments/R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md` — internal/external 脫鉤關鍵紀錄
 
 ### 7.4 訓練架構入口
 
-- `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py` — 主 trainer
-- `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py` — 模型定義(含 PSFDeconvPhysics)
-- `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py` — 標準 inference
+- `Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py` — 主 trainer
+- `Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py` — 模型定義(含 PSFDeconvPhysics)
+- `Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py` — 標準 inference
 - 各 R## 實驗目錄底下有自己的 launcher 跟 evaluation script
 
 ### 7.5 既有 720-angle 分析(baseline 4 候選)
 
-- `D:\GMM_2_Final\Experiments\R38v2SeqFixed\results\720angle_analysis\<R30|R33|R38v2|COMBO>\<pitch>\` — 既有 720-angle 完整輸出
+- `Experiments/R38v2SeqFixed/results/720angle_analysis<R30|R33|R38v2|COMBO>\<pitch>\` — 既有 720-angle 完整輸出
 - 含 sequence_summary.json + per_frame_metrics.json + 7 個 plot(01-07)
 
 ### 7.6 Python 環境

@@ -9,6 +9,7 @@ import cv2
 import numpy as np
 import pytest
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,7 +58,7 @@ def test_signed_transport_direction_is_causal() -> None:
 
 
 def test_crop_before_warp_matches_old_full_canvas_core() -> None:
-    package = Path(DESIGN["dataset"]["source_package"])
+    package = Path(PROJECT_ROOT / DESIGN["dataset"]["source_package"])
     manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
     dataset = TRAINER.R99SceneDataset(package, manifest, "train", 512, 256, 3)
     index = next(i for i in range(len(dataset)) if dataset.role_at(i) == "signed_subpixel_motion")
@@ -104,7 +105,7 @@ def test_nonidentity_full_and_tiled_paths_match() -> None:
 
 
 def test_dataset_is_the_locked_procedural_package() -> None:
-    package = Path(DESIGN["dataset"]["source_package"])
+    package = Path(PROJECT_ROOT / DESIGN["dataset"]["source_package"])
     manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
     audit = json.loads((package / "audit.json").read_text(encoding="utf-8"))
     assert audit["passed"] and audit["source_isolation_pass"] and audit["full_array_hash_audit"]

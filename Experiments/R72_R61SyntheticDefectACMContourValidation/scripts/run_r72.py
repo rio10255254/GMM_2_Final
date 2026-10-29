@@ -6,6 +6,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,7 +15,7 @@ CONFIG = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
 RESULTS = ROOT / "results"
 TABLES = RESULTS / "tables"
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
-PYTHON = Path(r"C:\Users\Rio\anaconda3\python.exe")
+PYTHON = Path("python")
 
 
 def sha256(path: Path) -> str:
@@ -35,14 +36,14 @@ def audit_inputs() -> dict:
     expected_names = [f"{image_id:04d}.bmp" for image_id in CONFIG["sources"]["image_ids"]]
     source_counts: dict[str, int] = {}
     for key in ("truth_dir", "raw_dir", "combo_dir", "r61_dir"):
-        names = bmp_names(Path(CONFIG["sources"][key]))
+        names = bmp_names(Path(PROJECT_ROOT / CONFIG["sources"][key]))
         if names != expected_names:
             missing = sorted(set(expected_names) - set(names))
             extra = sorted(set(names) - set(expected_names))
             raise RuntimeError(f"{key} file mismatch; missing={missing}, extra={extra}")
         source_counts[key] = len(names)
 
-    upstream_path = Path(CONFIG["upstream_experiment"]) / "results" / "input_audit.json"
+    upstream_path = Path(PROJECT_ROOT / CONFIG["upstream_experiment"]) / "results" / "input_audit.json"
     upstream = json.loads(upstream_path.read_text(encoding="utf-8"))
     if not upstream.get("independent_of_r61_training"):
         raise RuntimeError("Upstream R71 independence audit did not pass")

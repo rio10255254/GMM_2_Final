@@ -4,8 +4,9 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
 import cv2,numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
-    original=Path(load(ROOT/'config/standalone_build.json')['path']).resolve()
+    original=Path(PROJECT_ROOT / load(ROOT/'config/standalone_build.json')['path']).resolve()
     expected=(REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages').resolve()
     moved=expected/'R129_RelocationCheck'
     assert original.parent==expected and original.name=='R129_OpticalHybrid_Standalone_20260912'

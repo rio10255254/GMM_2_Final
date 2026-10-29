@@ -1,11 +1,12 @@
 param(
     [switch]$Execute
 )
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$repoRoot = 'D:\GMM_2_Final'
+$repoRoot = $ProjectRoot
 $planPath = Join-Path $repoRoot 'docs\operations\MAIN_R32_R46_ARCHIVE_DELETE_PLAN_20260824.json'
 $plan = Get-Content -LiteralPath $planPath -Raw | ConvertFrom-Json
 if ($plan.status -ne 'prearchive_exact_targets_verified') {
@@ -18,7 +19,7 @@ $relatedProcesses = @(
     Get-CimInstance Win32_Process | Where-Object {
         $_.ProcessId -ne $PID -and
         $_.CommandLine -and
-        $_.CommandLine -match 'D:\\GMM_2_Final|GMM_2_Final' -and
+        $_.CommandLine -match 'GMM_2_Final' -and
         $_.CommandLine -match '(?i)train|reconstruct|evaluate|inference|pytest|matlab|git.*(gc|repack|fetch|pack)'
     }
 )

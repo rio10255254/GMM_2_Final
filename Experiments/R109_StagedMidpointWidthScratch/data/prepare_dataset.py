@@ -2,7 +2,8 @@
 from __future__ import annotations
 import hashlib,json,os
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];CONFIG=json.loads((ROOT/'config/experiment.json').read_text(encoding='utf-8'));SOURCE=Path(CONFIG['data']['source_package']);DESTINATION=ROOT/CONFIG['data']['package_root'];EXPECTED=CONFIG['data']['source_manifest_sha256']
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];CONFIG=json.loads((ROOT/'config/experiment.json').read_text(encoding='utf-8'));SOURCE=Path(PROJECT_ROOT / CONFIG['data']['source_package']);DESTINATION=ROOT/CONFIG['data']['package_root'];EXPECTED=CONFIG['data']['source_manifest_sha256']
 def sha(path):
  h=hashlib.sha256()
  with path.open('rb') as handle:

@@ -12,6 +12,7 @@ import os
 from pathlib import Path
 import random
 import shutil
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -131,9 +132,9 @@ def stratified_ids(records: list[dict], count: int, seed: int, include_all_suppl
 
 
 def main() -> None:
-    r114_manifest_path = Path(DATA["r114_manifest"])
-    r109_manifest_path = Path(DATA["r109_manifest"])
-    if sha256(Path(DATA["r109_manifest"]).resolve()) != DATA["r114_source_manifest_sha256"]:
+    r114_manifest_path = Path(PROJECT_ROOT / DATA["r114_manifest"])
+    r109_manifest_path = Path(PROJECT_ROOT / DATA["r109_manifest"])
+    if sha256(Path(PROJECT_ROOT / DATA["r109_manifest"]).resolve()) != DATA["r114_source_manifest_sha256"]:
         raise RuntimeError("R109/R107 source manifest hash drifted")
     r114 = json.loads(r114_manifest_path.read_text(encoding="utf-8"))
     r109 = json.loads(r109_manifest_path.read_text(encoding="utf-8"))
@@ -187,7 +188,7 @@ def main() -> None:
         "common_count": len(common_validation),
         "supplemental_count": len(supplemental_validation),
     })
-    schedule_source = Path(DATA["r114_formal_batch_schedule_bs12"])
+    schedule_source = Path(PROJECT_ROOT / DATA["r114_formal_batch_schedule_bs12"])
     schedule_rows = [
         json.loads(line)
         for line in schedule_source.read_text(encoding="utf-8").splitlines()

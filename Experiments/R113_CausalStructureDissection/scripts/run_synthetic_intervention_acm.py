@@ -8,22 +8,23 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RECON = ROOT / "results" / "physical_validation" / "intervention_reconstructions"
 OUTPUT = ROOT / "results" / "physical_validation" / "synthetic_acm"
-R82_SCRIPTS = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark\scripts")
+R82_SCRIPTS = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/scripts'))
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
 VARIANTS = ("full", "no_shift", "no_width", "learned_support_only", "smoothed_controls")
 SUITES = {
     "R73": {
-        "template": Path(r"D:\GMM_2_Final\Experiments\R104_PhotometricInvariantCausalGateScratch\results\posttraining_validation\external_acm\R73_novel_shapes\config\experiment.json"),
-        "source_root": Path(r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\data\r73_synthetic_acm_val"),
+        "template": Path(str(PROJECT_ROOT / 'Experiments/R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R73_novel_shapes/config/experiment.json')),
+        "source_root": Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val')),
     },
     "R74": {
-        "template": Path(r"D:\GMM_2_Final\Experiments\R104_PhotometricInvariantCausalGateScratch\results\posttraining_validation\external_acm\R74_hard_microscopy\config\experiment.json"),
-        "source_root": Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val"),
+        "template": Path(str(PROJECT_ROOT / 'Experiments/R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R74_hard_microscopy/config/experiment.json')),
+        "source_root": Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val')),
     },
 }
 

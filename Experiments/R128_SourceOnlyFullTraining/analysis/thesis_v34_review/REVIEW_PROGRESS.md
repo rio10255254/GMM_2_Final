@@ -62,7 +62,7 @@ Ch6 exact published claims:
 
 - C:/Users/Rio/OneDrive/學業/碩班/論文/analyze_v34_lsc_mzc.py
   WORKSPACEoutput可用/_thesis_assets_v34/lsc_mzc_comparison
-  imports from D:/GMM_2_Final/Experiments/R81_MultiArchitectureReferenceCircleBenchmark/scripts/evaluate_model.py: SEQUENCE_CONFIG,crop_around,selected_pairs,session_prediction.
+  imports from Experiments/R81_MultiArchitectureReferenceCircleBenchmark/scripts/evaluate_model.py: SEQUENCE_CONFIG,crop_around,selected_pairs,session_prediction.
   imports R80reference_circle_core fit_mzc,measure_inflection_lsc,wiener_contrast_restore.
   loops method then sequence, selected_pairs30; samplecount64/96,iterations13/15,normalwidth2.4/4.
   Need read remainder and inspect curvature reset andactualinputlists.

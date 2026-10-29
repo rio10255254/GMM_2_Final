@@ -2,9 +2,9 @@
 
 Current active workflow:
 - center-lock long-run status:
-  D:\GMM_2_Final\000_LONGRUN_CENTERLOCK_STATUS.md
+  000_LONGRUN_CENTERLOCK_STATUS.md
 - active log:
-  D:\GMM_2_Final\Traing_Progress\organized_20260312\pending\logs\longrun_centerlock_20260312_004144.out.log
+  Traing_Progress/organized_20260312/pending/logs/longrun_centerlock_20260312_004144.out.log
 
 Current directories:
 - pending\logs: active center-lock logs only

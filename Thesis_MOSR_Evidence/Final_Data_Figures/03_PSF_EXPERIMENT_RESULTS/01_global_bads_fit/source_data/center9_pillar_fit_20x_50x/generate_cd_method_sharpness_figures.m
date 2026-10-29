@@ -1,4 +1,5 @@
 function generate_cd_method_sharpness_figures()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))))));
 %GENERATE_CD_METHOD_SHARPNESS_FIGURES
 % Generate thesis figures for the center-nine-pillar CD method and
 % deconvolution sharpness validation. The plotted CD and edge-width values
@@ -6,12 +7,12 @@ function generate_cd_method_sharpness_figures()
 
 close all;
 
-root = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit';
+root = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit');
 figureRoot = fullfile(root, 'figures', 'center9_pillar_fit_20x_50x');
 tableRoot = fullfile(root, 'tables', 'center9_pillar_fit_20x_50x');
 sourceRoot = fullfile(root, 'source_data', 'center9_pillar_fit_20x_50x');
 deconvRoot = fullfile(sourceRoot, 'psf_deconvolution_cd');
-fitRoot = 'D:\GMM_2_Final\PSF_Fitting\output\deconvolution_baseline_psf_20260715';
+fitRoot = fullfile(PROJECT_ROOT, 'PSF_Fitting/output/deconvolution_baseline_psf_20260715');
 outDir = fullfile(figureRoot, 'comparison');
 auditDir = fullfile(sourceRoot, 'sharpness_validation');
 

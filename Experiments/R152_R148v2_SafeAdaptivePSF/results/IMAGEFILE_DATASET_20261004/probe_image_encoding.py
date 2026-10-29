@@ -2,8 +2,9 @@
 import json
 from pathlib import Path
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
-SOURCE=Path(r'D:\GMM_2_Final\Deliverables\R152_Standalone_20261004/data')
+SOURCE=Path(str(PROJECT_ROOT / 'Deliverables/R152_Standalone_20261004/data'))
 OUT=Path(__file__).resolve().parent
 
 def main():

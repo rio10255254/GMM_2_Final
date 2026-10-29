@@ -15,6 +15,7 @@ HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT))
 from model.r117_model import build_model
 from inference.tiled import forward_tiled
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 EXPERIMENTS=ROOT.parent
 R109=EXPERIMENTS/'R109_StagedMidpointWidthScratch'
 RAW_ROOT=EXPERIMENTS/'R100_CausalOperatorScratch/data/live_validation'
@@ -54,7 +55,7 @@ def run():
     c=json.loads((ROOT/'config/experiment.json').read_text())
     rows=[]; montages=[]
     for value in c['validation']['real_preview_inputs']:
-        preview=Path(value);raw_path=RAW_ROOT/preview.name
+        preview=Path(PROJECT_ROOT / value);raw_path=RAW_ROOT/preview.name
         raw,cached=read(raw_path),read(preview)
         reproduced=r109_original_inference(old,raw)
         with torch.inference_mode():

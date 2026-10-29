@@ -19,7 +19,7 @@ import posixpath
 import re
 import urllib.parse
 
-from restructure_resolve import norm, render, resolve
+from restructure_resolve import PROJECT_ABS, norm, render, resolve
 
 BOM = b'\xef\xbb\xbf'
 DOC_EXT = ('.md', '.markdown', '.html', '.htm', '.txt', '.tex')
@@ -58,6 +58,11 @@ class Context:
     external_map: dict
     mode: str              # 'moves' | 'location'
     decisions: dict = None  # {(exact source segment, old target): new target, or None to keep as written}
+    data: object = None     # restructure_readers.DataView: old and new content of the data files this phase rewrites
+    data_side: str = 'old'  # which content a read sees: the old tree's ('old') or the rewritten one ('new')
+    seeds: dict = None      # {python file: data values arriving from other modules}, from restructure_readers.link
+    modules: dict = None    # {python file: source text} of the side being read, for star imports
+    hints: dict = None      # {python file: {name: path}}: names the tool cannot evaluate, given by hand
 
 
 def file_class(name):
@@ -105,15 +110,26 @@ def resolve_token(tok, file_rel, uni, external_map):
     return None
 
 
+def path_tokens(text):
+    """(start, end, token) for every path-shaped token. A backslash that escapes the quote right
+    after the token (JSON text: ...\\Model\\") belongs to the quote, not to the path."""
+    for m in TOKEN.finditer(text):
+        start, end, tok = m.start(), m.end(), m.group(0)
+        if text[end:end + 1] == '"':
+            n = len(tok) - len(tok.rstrip('\\'))
+            if n % 2:
+                end, tok = end - 1, tok[:-1]
+        if '/' in tok or '\\' in tok:
+            yield start, end, tok
+
+
 def token_targets(text, file_rel, uni, external_map):
     """Targets of every path-shaped token in `text`, in order."""
     out = []
-    for m in TOKEN.finditer(text):
-        tok = m.group(0)
-        if '/' in tok or '\\' in tok:
-            found = resolve_token(tok, file_rel, uni, external_map)
-            if found:
-                out.append(found[1].target_rel)
+    for _, _, tok in path_tokens(text):
+        found = resolve_token(tok, file_rel, uni, external_map)
+        if found:
+            out.append(found[1].target_rel)
     return out
 
 
@@ -227,9 +243,8 @@ class _Job:
                 self.add(start, end, new[0], 'link', res.target_rel, new[1])
 
     def tokens(self):
-        for m in TOKEN.finditer(self.text):
-            tok = m.group(0)
-            if ('/' not in tok and '\\' not in tok) or self.masked(*m.span()):
+        for start, end, tok in path_tokens(self.text):
+            if self.masked(start, end):
                 continue
             found = self.resolve_token(tok)
             if found is None:
@@ -237,7 +252,7 @@ class _Job:
             offset, res = found
             new = self.new_text(res)
             if new is not None:
-                self.add(m.start() + offset, m.end(), new[0], 'path', res.target_rel, new[1], hold=False)
+                self.add(start + offset, end, new[0], 'path', res.target_rel, new[1], hold=False)
 
     def resolve_token(self, tok):
         return resolve_token(tok, self.file_old, self.ctx.uni, self.ctx.external_map)
@@ -255,7 +270,9 @@ class _Job:
         if link or self.cls == 'notebook':
             rel = posixpath.relpath(res.target_rel or '.', posixpath.dirname(self.file_new) or '.')
             return rel, res.target_rel
-        return res.target_rel, res.target_rel
+        if not res.target_rel and self.cls == 'doc':
+            return None        # prose naming the project folder itself tells where it was; keep it
+        return res.target_rel or '.', res.target_rel
 
     # -- location mode, scripts --
     def interpreter(self):
@@ -285,7 +302,7 @@ class _Job:
             content = m.group(1)
             res = self.literal_target(content)
             if res is None:
-                if re.search(r'[A-Za-z]:[\\/]+GMM_2_Final', content, re.I):
+                if PROJECT_ABS.search(content):
                     self.problems.append(f'{self.file_old}:{self.line(m.start())}: project path inside a MATLAB literal, fix by hand')
                     self.hold(m.span())
                 continue
@@ -298,17 +315,28 @@ class _Job:
                 new = f"fullfile(PROJECT_ROOT, '{rel}')"
             self.add(m.start(), m.end(), new, 'matlab_root', '', rel)
             self.uses_root = True
-        if self.uses_root and not re.search(r'^\s*PROJECT_ROOT\s*=', self.text, re.M):
-            expr = "mfilename('fullpath')"
-            for _ in range(self.depth() + 1):
-                expr = f'fileparts({expr})'
-            nl = '\r\n' if '\r\n' in self.text else '\n'
-            pos, indent = 0, ''
-            fm = re.search(r'^[ \t]*function\b[^\n]*\n', self.text, re.M)
-            first_code = re.search(r'^[ \t]*[^%\s]', self.text, re.M)
-            if fm and first_code and fm.start() == first_code.start():
-                pos, indent = fm.end(), '    '
-            self.repl.append((pos, pos, f'{indent}PROJECT_ROOT = {expr};{nl}'))
+        if self.uses_root:
+            self.matlab_root_definitions()
+
+    def matlab_root_definitions(self):
+        """Define PROJECT_ROOT in every part that uses it: a MATLAB function, local ones included,
+        has a workspace of its own, so the script part and each function that uses it get a line."""
+        expr = "mfilename('fullpath')"
+        for _ in range(self.depth() + 1):
+            expr = f'fileparts({expr})'
+        nl = '\r\n' if '\r\n' in self.text else '\n'
+        funcs = [m for m in re.finditer(r'^[ \t]*function\b[^\n]*\n', self.text, re.M)]
+        first_code = re.search(r'^[ \t]*[^%\s]', self.text, re.M)
+        script = not (funcs and first_code and funcs[0].start() == first_code.start())
+        # parts: (start of its body, end, where the definition goes, indent)
+        parts = [(0, funcs[0].start() if funcs else len(self.text), 0, '')] if script else []
+        for i, m in enumerate(funcs):
+            parts.append((m.end(), funcs[i + 1].start() if i + 1 < len(funcs) else len(self.text), m.end(), '    '))
+        for start, end, pos, indent in parts:
+            used = any(start <= s < end and 'PROJECT_ROOT' in new for s, _, new in self.repl)
+            defined = re.search(r'^\s*PROJECT_ROOT\s*=', self.text[start:end], re.M)
+            if used and not defined:
+                self.repl.append((pos, pos, f'{indent}PROJECT_ROOT = {expr};{nl}'))
 
     def powershell(self):
         for m in PS_LITERAL.finditer(self.text):
@@ -316,7 +344,7 @@ class _Job:
             content = m.group(1) if double else m.group(2)
             res = self.literal_target(content)
             if res is None:
-                if re.search(r'[A-Za-z]:[\\/]+GMM_2_Final', content, re.I):
+                if PROJECT_ABS.search(content):
                     self.problems.append(f'{self.file_old}:{self.line(m.start())}: project path inside a PowerShell string, fix by hand')
                     self.hold(m.span())
                 continue

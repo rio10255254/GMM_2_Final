@@ -1,9 +1,10 @@
+PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
 % MATLAB trajectory figures for the 30-step Raw / EDSR-x1 / NAFNet / MOSR comparison.
 % The figure surface intentionally contains only the reference, methods, axes, and markers.
 
 clear; clc; close all;
 
-rootDir = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\evaluation\displacement_50x20x_edrs_nafnet_refresh_20260724\modern_50x20x_report\trajectory_figures';
+rootDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report/trajectory_figures');
 dataPath = fullfile(rootDir, 'modern_model_displacement_trajectories.csv');
 outDir = fullfile(rootDir, 'figures_matlab');
 if ~isfolder(outDir); mkdir(outDir); end

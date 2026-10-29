@@ -10,6 +10,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\投稿\IMPACT2026")
@@ -17,13 +18,11 @@ ASSET_DIR = ROOT / "assets"
 QA_DIR = ROOT / "qa"
 
 COMMON_PER_PAIR = Path(
-    r"D:\GMM_2_Final\Experiments\R80_InflectionReferenceCircleSEMValidation"
-    r"\results\tables\displacement_lsc_per_pair_all.csv"
+    str(PROJECT_ROOT / 'Experiments/R80_InflectionReferenceCircleSEMValidation/results/tables/displacement_lsc_per_pair_all.csv')
 )
 
 IMAGE_DIR = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\figures"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/figures')
 )
 
 SEQUENCES = ["50x_x_0p5um", "50x_x_1um", "20x_0p5um", "20x_1um"]

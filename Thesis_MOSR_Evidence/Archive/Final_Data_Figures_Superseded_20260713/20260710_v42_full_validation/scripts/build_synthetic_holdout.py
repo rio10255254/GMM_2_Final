@@ -5,9 +5,10 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-OUT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260710_v42_full_validation\synthetic_holdout")
+OUT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/20260710_v42_full_validation/synthetic_holdout'))
 RAW_DIR = OUT / "raw_blurred"
 GT_DIR = OUT / "ground_truth"
 SIZE = 512

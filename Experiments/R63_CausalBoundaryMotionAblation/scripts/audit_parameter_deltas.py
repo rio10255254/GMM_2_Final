@@ -8,6 +8,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 EXPERIMENT_ROOT = Path(__file__).resolve().parents[1]
@@ -41,7 +42,7 @@ def main() -> None:
     base = torch.load(base_checkpoint, map_location="cpu")["state_dict"]
     records = []
     for item in manifest["records"]:
-        checkpoint = Path(item["checkpoint"])
+        checkpoint = Path(PROJECT_ROOT / item["checkpoint"])
         state = torch.load(checkpoint, map_location="cpu")["state_dict"]
         for group, patterns in GROUPS.items():
             final_sq = 0.0

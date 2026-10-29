@@ -2,6 +2,7 @@ from pathlib import Path
 import sys,json,os,time
 P=Path(__file__).resolve().parent;E=P.parent;sys.path.insert(0,str(E));sys.path.insert(0,str(E/'scripts'))
 from rt import load,sha,record,now,create,verify,np,torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def plain(x):
     if isinstance(x,np.generic):return x.item()
@@ -26,6 +27,6 @@ def atomic(path,value):
 def protected():
     verify()
     for r in load(P/'config/protocol.json')['protected']:
-        if sha(r['path'])!=r['sha256']:raise RuntimeError('Original protected input changed: '+r['path'])
+        if sha(str(PROJECT_ROOT / r['path']))!=r['sha256']:raise RuntimeError('Original protected input changed: '+str(PROJECT_ROOT / r['path']))
 
 def status(phase,**extra):atomic(P/'results/status.json',dict(phase=phase,pid=os.getpid(),utc=now(),model_promoted=False,B_D_complete=False,**extra))

@@ -11,18 +11,19 @@ from pathlib import Path
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 ROOT = Path(__file__).resolve().parent
-SOURCE = Path(r"D:\NTU_ImageDataset\Pitch1um_Y_100\Cropped_Output")
+SOURCE = Path(str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/Cropped_Output'))
 OLD_PACKAGE = Path(
-    r"D:\NTU_ImageDataset\Pitch1um_Y_100\external_gmf_r61_v16_psfoff_20260627"
+    str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/external_gmf_r61_v16_psfoff_20260627')
 )
 RAW = OLD_PACKAGE / "00_raw_input" / "bmp"
 R61 = OLD_PACKAGE / "01_r61_v16_best_tradeoff_psfoff" / "bmp"
 MOSR = ROOT / "reconstruction"
 DEFAULT_TILES = ROOT / "reconstruction_default_tiles"
-DELIVERY = Path(r"D:\GMM_2_Final\Deliverables\MOSR_ONNX")
+DELIVERY = Path(str(PROJECT_ROOT / 'Deliverables/MOSR_ONNX'))
 GMF_ROOT = ROOT / "external_gmf"
 RESULTS = ROOT / "results"
 

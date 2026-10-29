@@ -8,10 +8,11 @@ from docx import Document
 from docx.table import Table
 from docx.text.paragraph import Paragraph
 from docx.oxml.ns import qn
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
 
 SOURCE = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v16_修訂版.docx")
-OUT = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v16_edit_targets.json")
+OUT = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v16_edit_targets.json'))
 
 
 def iter_blocks(doc: Document):

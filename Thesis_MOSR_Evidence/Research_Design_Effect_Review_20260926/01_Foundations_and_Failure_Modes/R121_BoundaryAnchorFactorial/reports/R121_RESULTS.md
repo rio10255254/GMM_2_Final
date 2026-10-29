@@ -38,7 +38,7 @@
 
 A 本身相對 Raw 仍有輪廓改善：歷史參考的配對中位數為 −0.13441、−0.12662；柱距匹配參考為 −0.10694、−0.10037。B/C 也有部分相對 Raw 的改善，但都沒有保住 A 的程度；D 的配對中位數已接近且略差於 Raw。不能把「某些分數仍比 Raw 好」當成改動有效。
 
-![兩套參考與兩個起點的真實輪廓比較](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/paired_sem_effects.png)
+![兩套參考與兩個起點的真實輪廓比較](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/paired_sem_effects.png)
 
 圖中區間為同一樣品內按柱子重抽 3,000 次的區間，保留柱子的全部曝光。它不包含跨樣品或 SEM 參考本身的不確定度。
 
@@ -98,7 +98,7 @@ C/D 確實讓這些合成控制形狀的邊界更準。若只看這張表，很�
 
 原先流程要求：只有兩個初始化都通過輪廓、控制位移與細節，才進入成本更高的真實 LSC 比較。**B/C/D 全部已在輪廓與細節條件失敗，故沒有觸發真實 LSC，也沒有因未執行就填入通過。** 相關程式與條件已準備，但沒有執行結果，不作科學證據。
 
-![細節與控制位移的預定條件](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/quality_guards.png)
+![細節與控制位移的預定條件](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/quality_guards.png)
 
 ## 6. 本輪確實修正與保留下來的部分
 
@@ -106,7 +106,7 @@ C/D 確實讓這些合成控制形狀的邊界更準。若只看這張表，很�
 
 重新由原始 SEM 圖重現了原有 36 個輪廓，全部逐像素一致。發現固定縮放後 SEM 柱距比光學柱距小 0.623%–1.099%，依九張 SEM 圖的共同柱距得到 1.009233335 的全局匹配係數。
 
-這能解釋部分共同偏大：Raw 面積偏差中位數由歷史參考的 +5.3424% 變成柱距匹配參考的 +3.4470%。但參考匹配後三種新改動仍輸給 A，不能靠換尺度挽救結論。新參考獨立保存，舊 SEM 與舊結果沒有覆寫。詳見 [參考核對報告](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/reports/R121_REFERENCE_AUDIT.md)。
+這能解釋部分共同偏大：Raw 面積偏差中位數由歷史參考的 +5.3424% 變成柱距匹配參考的 +3.4470%。但參考匹配後三種新改動仍輸給 A，不能靠換尺度挽救結論。新參考獨立保存，舊 SEM 與舊結果沒有覆寫。詳見 [參考核對報告](../../../../../Experiments/R121_BoundaryAnchorFactorial/reports/R121_REFERENCE_AUDIT.md)。
 
 ### 位置讀法的反例修正
 
@@ -114,13 +114,13 @@ C/D 確實讓這些合成控制形狀的邊界更準。若只看這張表，很�
 
 v2 把剖面放回標準答案的邊界中心，純寬度變化的最大誤報降到約 0.00222 像素，真正膨脹 0.4 像素仍能辨識。已完成的 A/B 不使用此位置項，另核對了兩版損失與三個輸出頭的梯度完全一致，才保留作對照；受影響的 C/D 用新版本和新 run_id 重跑。
 
-這修好了讀法的實作問題，但八次短測證明「讀法正確」尚不足以讓新模型達標。詳見 [方法與修訂紀錄](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/reports/R121_METHODOLOGY.md)。
+這修好了讀法的實作問題，但八次短測證明「讀法正確」尚不足以讓新模型達標。詳見 [方法與修訂紀錄](../../../../../Experiments/R121_BoundaryAnchorFactorial/reports/R121_METHODOLOGY.md)。
 
 ### 固定例子的視覺覆核
 
 下圖使用固定柱子 21、曝光 13 與 24、第一個初始化，所有組別使用同一套由 Raw 決定的顯示範圍，不挑最好看的個別輸出。
 
-![固定真實影像對照](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/fixed_real_examples.png)
+![固定真實影像對照](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/gallery_v2/fixed_real_examples.png)
 
 ## 7. 驗證與失敗紀錄
 
@@ -142,11 +142,11 @@ v2 把剖面放回標準答案的邊界中心，純寬度變化的最大誤報�
 
 ## 9. 主要檔案
 
-- [有效八組實際執行紀錄](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/matrix_finished_v2.json)
-- [訓練與模型核對](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/matrix_verification.json)
-- [預先記錄的 v2 比較條件](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/config/protocol_v2.json)
-- [逐筆真實輪廓結果](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/sem/measurements.csv)
-- [共同控制形狀與位移結果](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/controlled/paired_summary.csv)
-- [有答案的影像及細節結果](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/development/per_view.csv)
-- [逐項決策與全部配對差異](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/assessment/decision.json)
-- [獨立量測覆核與完整性](D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/assessment/verification.json)
+- [有效八組實際執行紀錄](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/matrix_finished_v2.json)
+- [訓練與模型核對](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/matrix_verification.json)
+- [預先記錄的 v2 比較條件](../../../../../Experiments/R121_BoundaryAnchorFactorial/config/protocol_v2.json)
+- [逐筆真實輪廓結果](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/sem/measurements.csv)
+- [共同控制形狀與位移結果](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/controlled/paired_summary.csv)
+- [有答案的影像及細節結果](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/development/per_view.csv)
+- [逐項決策與全部配對差異](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/assessment/decision.json)
+- [獨立量測覆核與完整性](../../../../../Experiments/R121_BoundaryAnchorFactorial/results/assessment/verification.json)

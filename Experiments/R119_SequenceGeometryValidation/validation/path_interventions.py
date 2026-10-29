@@ -21,8 +21,9 @@ sys.path.insert(0, str(ROOT)); sys.path.insert(0, str(ROOT / "data")); sys.path.
 from sequence_bank import SequenceBank, sha
 from sequence_metrics import estimate_position, summarize_sequence
 from inference.run import load as load_r118
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-CHECKPOINT = Path(r"D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/runs/verified_physical_repair/weights/epoch_012.pth")
+CHECKPOINT = Path(str(PROJECT_ROOT / 'Experiments/R118_PhysicalCoordinateRepairScratch/runs/verified_physical_repair/weights/epoch_012.pth'))
 VARIANTS = ("base", "zero_normal_shift", "neutral_width_gain", "no_detail", "attenuation_matched")
 
 

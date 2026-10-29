@@ -21,9 +21,10 @@ import math
 import sys
 from collections import defaultdict
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-REPO_ROOT = Path("D:/GMM_2_Final")
+REPO_ROOT = Path(str(PROJECT_ROOT))
 R39_SCRIPTS = REPO_ROOT / "Experiments" / "R39_ShapeGeneralization" / "scripts"
 sys.path.insert(0, str(R39_SCRIPTS))
 

@@ -6,7 +6,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$Python = python
 $Experiment = Split-Path -Parent $PSScriptRoot
 $Launcher = Join-Path $PSScriptRoot "launch_r75v3.py"
 $DatasetBuilder = Join-Path $PSScriptRoot "r75v3_dataset.py"

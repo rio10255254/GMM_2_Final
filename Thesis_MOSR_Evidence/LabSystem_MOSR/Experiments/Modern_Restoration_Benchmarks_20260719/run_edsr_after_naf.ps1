@@ -20,7 +20,7 @@ if (Test-Path -LiteralPath $edsrSummary) {
 }
 
 New-Item -ItemType Directory -Force -Path $edsrOutput | Out-Null
-$python = 'C:\Users\Rio\anaconda3\python.exe'
+$python = python
 $script = Join-Path $experiment 'train_modern_baseline.py'
 $stdout = Join-Path $edsrOutput 'training_console.log'
 $stderr = Join-Path $edsrOutput 'training_console.err.log'

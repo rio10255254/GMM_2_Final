@@ -16,11 +16,12 @@ from pathlib import Path
 
 import numpy as np
 from scipy import signal
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path(r"D:\GMM_2_Final\Experiments\R141_PSF25_AdaptiveTop4_Standalone")
-ORIGINAL = Path(r"D:\GMM_2_Final\Experiments\R128_SourceOnlyFullTraining\data\package")
+BASE = Path(str(PROJECT_ROOT / 'Experiments/R141_PSF25_AdaptiveTop4_Standalone'))
+ORIGINAL = Path(str(PROJECT_ROOT / 'Experiments/R128_SourceOnlyFullTraining/data/package'))
 IDENTITY = {"clean_identity", "noisy_identity"}
 UNINFORMATIVE = IDENTITY | {"flat_negative"}
 ASSIGNMENT_SEEDS = {"train": 1431001, "dev": 1431002, "test": 1431003}

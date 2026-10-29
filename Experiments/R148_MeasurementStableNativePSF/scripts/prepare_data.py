@@ -7,7 +7,8 @@ from scipy.interpolate import RectBivariateSpline
 from scipy.signal import fftconvolve
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from utils import data_config,load,save,sha,now
-CFG=data_config();BASE=Path(CFG['base_experiment']);PAYLOAD=ROOT/'data/payload'
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+CFG=data_config();BASE=Path(PROJECT_ROOT / CFG['base_experiment']);PAYLOAD=ROOT/'data/payload'
 SPLIT_OFFSET={'train':0,'dev':7,'test':13};SUB=(.25,.5,.75);LARGE=(2.,4.,6.,8.);DIR=((1,0),(0,1),(-1,0),(0,-1));CONTRAST=(.85,.95,1.,1.15);BRIGHT=(-5.,0.,3.,5.);NOISE=(.5,1.,1.5,3.)
 _BANK4=None
 def digest_array(x):return hashlib.sha256(np.ascontiguousarray(x).tobytes()).hexdigest()
@@ -53,8 +54,8 @@ def build(entry):
  return dict(parent_id=entry['parent_id'],split=split,index=index,category=entry['category'],arrays=str(dest.relative_to(PAYLOAD)),metadata=str(meta_path.relative_to(PAYLOAD)),arrays_sha256=sha(dest),metadata_sha256=sha(meta_path),bytes=dest.stat().st_size,views=views,max_clip=max(clips))
 def main():
  if PAYLOAD.exists() and any(PAYLOAD.rglob('*.npz')):raise FileExistsError('Payload already contains arrays; use the existing completion receipt')
- base=load(CFG['base_manifest']);entries=base['entries'];assert len(entries)==768
- lock=dict(base_manifest_path=CFG['base_manifest'],base_manifest_sha256=sha(CFG['base_manifest']),base_entries=768,psf_bank_sha256=sha(ROOT/'calibration/measured_psf_bank.npz'),source_generator=CFG['formation'],created_utc=now());save(ROOT/'data/BASE_DATA_LOCK.json',lock)
+ base=load(str(PROJECT_ROOT / CFG['base_manifest']));entries=base['entries'];assert len(entries)==768
+ lock=dict(base_manifest_path=str(PROJECT_ROOT / CFG['base_manifest']),base_manifest_sha256=sha(str(PROJECT_ROOT / CFG['base_manifest'])),base_entries=768,psf_bank_sha256=sha(ROOT/'calibration/measured_psf_bank.npz'),source_generator=CFG['formation'],created_utc=now());save(ROOT/'data/BASE_DATA_LOCK.json',lock)
  start=time.perf_counter();records=[]
  with concurrent.futures.ProcessPoolExecutor(max_workers=4) as pool:
   for n,record in enumerate(pool.map(build,entries),1):

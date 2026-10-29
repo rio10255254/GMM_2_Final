@@ -11,10 +11,11 @@ sys.path.insert(0, str(ROOT))
 
 from inference.tiled import forward_tiled
 from model.r115_model import build_model, load_r109_for_probe
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 R109 = Path(
-    r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch\weights\selected\R109.pth"
+    str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth')
 )
 
 
@@ -46,7 +47,7 @@ def test_r109_probe_load_reproduces_r109_output() -> None:
     from importlib.util import module_from_spec, spec_from_file_location
 
     r109_path = Path(
-        r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch\model\r109_model.py"
+        str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/model/r109_model.py')
     )
     spec = spec_from_file_location("r109_reference_model", r109_path)
     module = module_from_spec(spec)

@@ -7,10 +7,11 @@ import unittest
 import numpy as np
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R69 = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation")
+R69 = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation'))
 TABLES = ROOT / "results" / "tables"
 RECON = (
     ROOT

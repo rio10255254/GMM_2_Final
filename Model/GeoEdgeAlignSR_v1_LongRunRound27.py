@@ -35,7 +35,7 @@ PROFILE_NAME = "round27_step_mag_recovery"
 SUMMARY_PREFIX = "ROUND27_STEP_MAG_RECOVERY"
 RUN_SEED = 1261720
 CONTROL_CANDIDATE = "r26_sm035"
-CONTROL_CHECKPOINT = Path(r"D:\GMM_2_Final\Traing_Progress\organized_20260316\round26\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408\weights\best_tradeoff.pth.tar")
+CONTROL_CHECKPOINT = Path(str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar'))
 POLICY_PATH = PROJECT_ROOT / "ESTIMATOR_POLICY.json"
 
 PLAN = [

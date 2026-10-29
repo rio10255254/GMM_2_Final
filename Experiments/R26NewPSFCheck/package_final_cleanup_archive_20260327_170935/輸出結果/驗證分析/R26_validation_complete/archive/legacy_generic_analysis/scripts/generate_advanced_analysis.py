@@ -28,6 +28,7 @@ import numpy as np
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
+PROJECT_ROOT = Path(__file__).resolve().parents[9]
 
 # ── Global plot style with CJK font ───────────────────────────────
 plt.rcParams.update({
@@ -48,7 +49,7 @@ plt.rcParams.update({
 
 # ── Paths ──────────────────────────────────────────────────────────
 BUNDLE = Path(
-    r"D:\GMM_2_Final\_deployment_package\GeoEdge_R26_使用包\輸出結果\驗證分析\R26_external_single_bundle"
+    str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_使用包/輸出結果/驗證分析/R26_external_single_bundle')
 )
 INPUT_PATH = BUNDLE / "input_image.bmp"
 OUTPUT_PATH = BUNDLE / "model_output.bmp"

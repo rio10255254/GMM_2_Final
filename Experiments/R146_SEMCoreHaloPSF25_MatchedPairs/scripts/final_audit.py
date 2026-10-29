@@ -6,9 +6,10 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT = Path(__file__).resolve().parents[1]
-R145 = Path(r"D:\GMM_2_Final\Experiments\R145_Center9PSF25_CorrectedPairs")
+R145 = Path(str(PROJECT_ROOT / 'Experiments/R145_Center9PSF25_CorrectedPairs'))
 sys.path.insert(0, str(ROOT))
 from utils import load, now, save, sha
 from verify_package import verify_source_lock

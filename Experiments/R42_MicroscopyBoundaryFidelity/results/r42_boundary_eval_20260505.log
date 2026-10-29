@@ -5,9 +5,9 @@ Windows PowerShell 轉譯開始
 RunAs 使用者: DESKTOP-5J1NJ2L\Rio
 設定名稱:
 電腦: DESKTOP-5J1NJ2L (Microsoft Windows NT 10.0.26200.0)
-主應用程式: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command Set-Location 'D:\GMM_2_Final'
+主應用程式: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command Set-Location '.'
 $ErrorActionPreference = 'Stop'
-Start-Transcript -Path 'D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_boundary_eval_20260505.log'
+Start-Transcript -Path 'Experiments/R42_MicroscopyBoundaryFidelity/results/r42_boundary_eval_20260505.log'
 function Run-One($name, $weights) {
  Write-Host [R42-EVAL] START $name (Get-Date)
  $root = Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\$name
@@ -21,10 +21,10 @@ Run-One 'combo' 'combo'
 Run-One 'r39_a030' 'a030'
 Run-One 'r40_a045' 'r40_a045'
 Run-One 'r41_direct' 'r41_direct'
-Run-One 'r42_combo_best' 'D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301\weights\best_tradeoff.pth.tar'
-Run-One 'r42_combo_latest' 'D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301\weights\latest.pth.tar'
-Run-One 'r42_r41_best' 'D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\weights\best_tradeoff.pth.tar'
-Run-One 'r42_r41_latest' 'D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229\weights\latest.pth.tar'
+Run-One 'r42_combo_best' 'Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/weights/best_tradeoff.pth.tar'
+Run-One 'r42_combo_latest' 'Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/weights/latest.pth.tar'
+Run-One 'r42_r41_best' 'Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar'
+Run-One 'r42_r41_latest' 'Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/latest.pth.tar'
 Write-Host '[R42-EVAL] ALL DONE' (Get-Date)
 Stop-Transcript
 處理序識別碼: 65860
@@ -37,7 +37,7 @@ WSManStackVersion: 3.0
 PSRemotingProtocolVersion: 2.3
 SerializationVersion: 1.1.0.1
 **********************
-已啟動轉譯，輸出檔為 D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\r42_boundary_eval_20260505.log
+已啟動轉譯，輸出檔為 Experiments/R42_MicroscopyBoundaryFidelity/results/r42_boundary_eval_20260505.log
 [R42-EVAL] START combo 2026/5/5 下午 03:36:01
 PS>終止錯誤(): "無法載入模組 'Experiments'。如需詳細資訊，請執行 'Import-Module Experiments'。"
 >> 終止錯誤(): "無法載入模組 'Experiments'。如需詳細資訊，請執行 'Import-Module Experiments'。"

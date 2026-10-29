@@ -3,13 +3,14 @@ from __future__ import annotations
 import json,sys
 from pathlib import Path
 import numpy as np,pandas as pd,torch
-ROOT=Path(__file__).resolve().parents[1];BASE=Path(r'D:\GMM_2_Final\Experiments\R148v2_HybridContextNativePSF');sys.path.insert(0,str(ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];BASE=Path(str(PROJECT_ROOT / 'Experiments/R148v2_HybridContextNativePSF'));sys.path.insert(0,str(ROOT))
 from utils import load,save,sha,now
 
 MODEL='R152-R148v2-SafeAdaptivePSF';PARENT='R148v2-HybridContextNativePSF'
 def main():
- done=load(ROOT/'runs/formal_8192/training_complete.json');rec=done['deployed_checkpoint'];assert done['updates']==8192 and sha(rec['path'])==rec['sha256']
- cp=torch.load(rec['path'],map_location='cpu',weights_only=False);old=torch.load(BASE/'runs/formal_8192/checkpoints/step08192.pth',map_location='cpu',weights_only=False)
+ done=load(ROOT/'runs/formal_8192/training_complete.json');rec=done['deployed_checkpoint'];assert done['updates']==8192 and sha(str(PROJECT_ROOT / rec['path']))==rec['sha256']
+ cp=torch.load(str(PROJECT_ROOT / rec['path']),map_location='cpu',weights_only=False);old=torch.load(BASE/'runs/formal_8192/checkpoints/step08192.pth',map_location='cpu',weights_only=False)
  assert all(torch.equal(value,cp['model']['base.'+key]) for key,value in old['model'].items())
  plan=load(ROOT/'evaluation/capture_plan.json');assert len(plan['frames'])==930 and len(plan['runs'])==30
  receipts=[]

@@ -78,7 +78,7 @@ R75-v2 第 100 輪在 12 個曝光全部優於 Raw。它的最差曝光邊界距
 ## 可追溯結果
 
 - 訓練與內部測試資料：`results/final_analysis`
-- 真實 SEM／ACM 驗證：`D:/GMM_2_Final/Experiments/R77_R75v2ACMContourSEMValidation`
+- 真實 SEM／ACM 驗證：`Experiments/R77_R75v2ACMContourSEMValidation`
 - 訓練選出的權重：`weights/formal/seed_752031/.../best_tradeoff.pth.tar`
 - 完成 100 輪的權重：`runs/.../epoch_100.pth.tar`
 

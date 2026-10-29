@@ -3,20 +3,20 @@
     {
       "candidate": "corridor_macrobridge",
       "family_score": 281.2739735937387,
-      "audit_json": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260311\\selected\\reports\\ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_macrobridge_20260311_164239.json",
-      "audit_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260311\\selected\\reports\\ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_macrobridge_20260311_164239.md",
+      "audit_json": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_macrobridge_20260311_164239.json",
+      "audit_md": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_macrobridge_20260311_164239.md",
       "best_checkpoint_label": "checkpoint_0p8",
-      "best_checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\\weights\\best_tradeoff.pth.tar",
+      "best_checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947/weights/best_tradeoff.pth.tar",
       "best_deployment_score": -126.57561806496233,
       "audit_results": [
         {
           "candidate": "corridor_macrobridge",
           "checkpoint_label": "checkpoint_0p8",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -50,7 +50,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -84,7 +84,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -122,11 +122,11 @@
         {
           "candidate": "corridor_macrobridge",
           "checkpoint_label": "checkpoint_0p08",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_162144\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_162144/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_162144\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_162144/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -160,7 +160,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_162144\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_162144/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -194,7 +194,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_162144\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cmb_20260311_162144/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -232,11 +232,11 @@
         {
           "candidate": "corridor_macrobridge",
           "checkpoint_label": "checkpoint_8px",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_163814\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_163814/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_163814\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_163814/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -270,7 +270,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_163814\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_163814/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -304,7 +304,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_163814\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cmb_20260311_163814/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -344,20 +344,20 @@
     {
       "candidate": "corridor_microbridge",
       "family_score": 286.2403845582508,
-      "audit_json": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260311\\selected\\reports\\ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_microbridge_20260311_164239.json",
-      "audit_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260311\\selected\\reports\\ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_microbridge_20260311_164239.md",
+      "audit_json": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_microbridge_20260311_164239.json",
+      "audit_md": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_microbridge_20260311_164239.md",
       "best_checkpoint_label": "checkpoint_0p08",
-      "best_checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312\\weights\\best_tradeoff.pth.tar",
+      "best_checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312/weights/best_tradeoff.pth.tar",
       "best_deployment_score": -159.19040660280734,
       "audit_results": [
         {
           "candidate": "corridor_microbridge",
           "checkpoint_label": "checkpoint_0p08",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -391,7 +391,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -425,7 +425,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cib_20260311_162312/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -463,11 +463,11 @@
         {
           "candidate": "corridor_microbridge",
           "checkpoint_label": "checkpoint_0p8",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_163137\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_163137/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_163137\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_163137/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -501,7 +501,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_163137\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_163137/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -535,7 +535,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_163137\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cib_20260311_163137/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -573,11 +573,11 @@
         {
           "candidate": "corridor_microbridge",
           "checkpoint_label": "checkpoint_8px",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_163941\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_163941/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_163941\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_163941/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -611,7 +611,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_163941\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_163941/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -645,7 +645,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_163941\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cib_20260311_163941/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -685,20 +685,20 @@
     {
       "candidate": "corridor_balanced",
       "family_score": 279.4062722832645,
-      "audit_json": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260311\\selected\\reports\\ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_balanced_20260311_164239.json",
-      "audit_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260311\\selected\\reports\\ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_balanced_20260311_164239.md",
+      "audit_json": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_balanced_20260311_164239.json",
+      "audit_md": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_balanced_20260311_164239.md",
       "best_checkpoint_label": "checkpoint_0p08",
-      "best_checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439\\weights\\best_tradeoff.pth.tar",
+      "best_checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439/weights/best_tradeoff.pth.tar",
       "best_deployment_score": -184.0609465189278,
       "audit_results": [
         {
           "candidate": "corridor_balanced",
           "checkpoint_label": "checkpoint_0p08",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -732,7 +732,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -766,7 +766,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cbl_20260311_162439/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -804,11 +804,11 @@
         {
           "candidate": "corridor_balanced",
           "checkpoint_label": "checkpoint_0p8",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_163327\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_163327/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_163327\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_163327/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -842,7 +842,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_163327\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_163327/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -876,7 +876,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_163327\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cbl_20260311_163327/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -914,11 +914,11 @@
         {
           "candidate": "corridor_balanced",
           "checkpoint_label": "checkpoint_8px",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_164109\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_164109/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_164109\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_164109/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -952,7 +952,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_164109\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_164109/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -986,7 +986,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_164109\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cbl_20260311_164109/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1026,20 +1026,20 @@
     {
       "candidate": "corridor_defectguard",
       "family_score": 273.21719918505227,
-      "audit_json": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260311\\selected\\reports\\ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_defectguard_20260311_164239.json",
-      "audit_md": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260311\\selected\\reports\\ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_defectguard_20260311_164239.md",
+      "audit_json": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_defectguard_20260311_164239.json",
+      "audit_md": "Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_defectguard_20260311_164239.md",
       "best_checkpoint_label": "checkpoint_0p8",
-      "best_checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758\\weights\\best_tradeoff.pth.tar",
+      "best_checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758/weights/best_tradeoff.pth.tar",
       "best_deployment_score": -184.0609465189278,
       "audit_results": [
         {
           "candidate": "corridor_defectguard",
           "checkpoint_label": "checkpoint_0p8",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1073,7 +1073,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1107,7 +1107,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cdg_20260311_162758/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1145,11 +1145,11 @@
         {
           "candidate": "corridor_defectguard",
           "checkpoint_label": "checkpoint_8px",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cdg_20260311_163647\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cdg_20260311_163647/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cdg_20260311_163647\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cdg_20260311_163647/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1183,7 +1183,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cdg_20260311_163647\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cdg_20260311_163647/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1217,7 +1217,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_cdg_20260311_163647\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_cdg_20260311_163647/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1255,11 +1255,11 @@
         {
           "candidate": "corridor_defectguard",
           "checkpoint_label": "checkpoint_0p08",
-          "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cdg_20260311_162017\\weights\\best_tradeoff.pth.tar",
+          "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cdg_20260311_162017/weights/best_tradeoff.pth.tar",
           "per_scale": {
             "0.08": {
               "expect_dy": 0.08,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cdg_20260311_162017\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cdg_20260311_162017/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1293,7 +1293,7 @@
             },
             "0.8": {
               "expect_dy": 0.8,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cdg_20260311_162017\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cdg_20260311_162017/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1327,7 +1327,7 @@
             },
             "8.0": {
               "expect_dy": 8.0,
-              "checkpoint_path": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p08_SWP_cdg_20260311_162017\\weights\\best_tradeoff.pth.tar",
+              "checkpoint_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_cdg_20260311_162017/weights/best_tradeoff.pth.tar",
               "summary": {
                 "seed": 3407,
                 "best_epoch": 0,
@@ -1366,6 +1366,6 @@
     }
   ],
   "best_candidate": "corridor_macrobridge",
-  "selected_checkpoint": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\\weights\\best_tradeoff.pth.tar",
+  "selected_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947/weights/best_tradeoff.pth.tar",
   "selection_policy": "corridor checkpoint audit across 0.08/0.8/8.0 after 0.8px-family pre-rank"
 }

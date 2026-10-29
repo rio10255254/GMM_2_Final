@@ -8,7 +8,7 @@
 
 完整檔案索引已整理成 CSV：
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\PSF_UPLOAD_FILE_MANIFEST_20260623.csv`
+`PSF_Fitting/quick_recalibration/validation_experiments/PSF_UPLOAD_FILE_MANIFEST_20260623.csv`
 
 這個 CSV 共 1700 筆，欄位包含 category、role、path、extension、size_bytes。若要讓另一個 GPT 檢查所有檔案來源，先上傳這個 CSV。
 
@@ -20,34 +20,34 @@
    `C:\Users\Rio\OneDrive\學業\碩班\均華報告\GMM五月月報.pdf`
 
 2. PSF 快速校正總設計文件  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\DESIGN_TW.md`
+   `PSF_Fitting/quick_recalibration/DESIGN_TW.md`
 
 3. L0 雙 basin 後續修正提案  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\DESIGN_SECTION9_REVISION_PROPOSAL_TW.md`
+   `PSF_Fitting/quick_recalibration/DESIGN_SECTION9_REVISION_PROPOSAL_TW.md`
 
 4. 驗證實驗資料夾總說明  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\README_TW.md`
+   `PSF_Fitting/quick_recalibration/validation_experiments/README_TW.md`
 
 5. 舊 L1 預檢設計  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_PRECHECK_PLAN_TW.md`
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_PRECHECK_PLAN_TW.md`
 
 ### 第二批：這次正式結果
 
 1. 正式 L0 摘要  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata\README_TW.md`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata\L0_newdata_summary.md`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata\L0_newdata_summary.json`
+   `PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata/README_TW.md`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata/L0_newdata_summary.md`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata/L0_newdata_summary.json`
 
 2. L1 三次重拍比較摘要  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\README_TW.md`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.md`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json`
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_newdata/README_TW.md`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_newdata/L1_newdata_summary.md`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_newdata/L1_newdata_summary.json`
 
 3. 同位置兩張影像的補充檢查  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\README_TW.md`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_summary.md`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_summary.json`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_metrics.csv`
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_paired_frame_check/README_TW.md`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_paired_frame_check/paired_frame_summary.md`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_paired_frame_check/paired_frame_summary.json`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_paired_frame_check/paired_frame_metrics.csv`
 
 ### 第三批：每一輪的詳細擬合輸出
 
@@ -55,27 +55,27 @@ Round1 是正式 L0 錨點。Round2/3 是 L1 來源資料，不要再合併進�
 
 Round1：
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary\prep_manifest.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\outputs\manifest.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\outputs\L0_newdata_noise_floor.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\outputs\L0_newdata_noise_floor_report.md`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\outputs\trial_01` 到 `trial_15`
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round1/inputs_primary/prep_manifest.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round1/outputs/manifest.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round1/outputs/L0_newdata_noise_floor.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round1/outputs/L0_newdata_noise_floor_report.md`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round1/outputs/trial_01` 到 `trial_15`
 
 Round2：
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary\prep_manifest.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\outputs\manifest.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\outputs\L0_newdata_noise_floor.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\outputs\L0_newdata_noise_floor_report.md`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\outputs\trial_01` 到 `trial_15`
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round2/inputs_primary/prep_manifest.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round2/outputs/manifest.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round2/outputs/L0_newdata_noise_floor.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round2/outputs/L0_newdata_noise_floor_report.md`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round2/outputs/trial_01` 到 `trial_15`
 
 Round3：
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary\prep_manifest.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\outputs\manifest.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\outputs\L0_newdata_noise_floor.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\outputs\L0_newdata_noise_floor_report.md`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\outputs\trial_01` 到 `trial_15`
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round3/inputs_primary/prep_manifest.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round3/outputs/manifest.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round3/outputs/L0_newdata_noise_floor.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round3/outputs/L0_newdata_noise_floor_report.md`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round3/outputs/trial_01` 到 `trial_15`
 
 每個 trial 資料夾內有四個關鍵檔：
 
@@ -88,9 +88,9 @@ Round3：
 
 這三個資料夾是本次 L1 的三次相同條件重拍。每輪 242 張 BMP，代表 121 個位置，每個位置連續拍兩張。
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\Circle_Round1`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\Circle_Round2`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\Circle_Round3`
+`PSF_Fitting/quick_recalibration/validation_experiments/Circle_Round1`  
+`PSF_Fitting/quick_recalibration/validation_experiments/Circle_Round2`  
+`PSF_Fitting/quick_recalibration/validation_experiments/Circle_Round3`
 
 注意：每輪約 6.34 GB，三輪合計約 19 GB。若 GPT 上傳空間有限，不建議直接全部上傳；可先上傳結果 JSON、CSV、報告、腳本和少量代表影像，完整原始影像用雲端連結。
 
@@ -98,9 +98,9 @@ Round3：
 
 這三個資料夾裡的 `inputs_primary` 是將每輪原始影像整理成 901x901 的 frame-1 輸入。每輪內有 121 張準備影像、GT、圓形邊界遮罩與 prep manifest。
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round1\inputs_primary`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round2\inputs_primary`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata_round3\inputs_primary`
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round1/inputs_primary`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round2/inputs_primary`  
+`PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata_round3/inputs_primary`
 
 每輪的 GT 與遮罩在：
 
@@ -110,7 +110,7 @@ Round3：
 
 原始 GT 來源：
 
-`D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\GT\GT_901_with_Block_proc.bmp`
+`PSF_Fitting/Crop_circle_FreqFiltered/GT/GT_901_with_Block_proc.bmp`
 
 ### 第六批：舊 L0 封存結果，用來對照上月月報
 
@@ -118,47 +118,47 @@ Round3：
 
 主要對照資料：
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\all_sets_comparison.md`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\all_sets_comparison.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\reference_basins.json`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\setA_vs_setB_comparison.md`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\setA_vs_setB_comparison.json`
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/all_sets_comparison.md`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/all_sets_comparison.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/reference_basins.json`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/setA_vs_setB_comparison.md`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/setA_vs_setB_comparison.json`
 
 舊 L0 圖表：
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\fig_4sets_basin_scatter.png`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\fig_basin_alignment.png`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\fig_centroid_distance_proof.png`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\fig_centroid_distance_proof_v2.png`
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/fig_4sets_basin_scatter.png`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/fig_basin_alignment.png`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/fig_centroid_distance_proof.png`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/fig_centroid_distance_proof_v2.png`
 
 舊四組 L0 的完整封存資料：
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\L0_repeat_fit`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\L0_repeat_fit_setB`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\L0_repeat_fit_setC`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\L0_repeat_fit_setD`
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/L0_repeat_fit`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/L0_repeat_fit_setB`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/L0_repeat_fit_setC`  
+`PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/L0_repeat_fit_setD`
 
 ### 第七批：重現分析用腳本
 
 新資料的權威分析入口：
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\l0_newdata_analysis.py`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\l1_newdata_analysis.py`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\paired_frame_analysis.py`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\l0_newdata_tools.py`
+`PSF_Fitting/quick_recalibration/validation_experiments/l0_newdata_analysis.py`  
+`PSF_Fitting/quick_recalibration/validation_experiments/l1_newdata_analysis.py`  
+`PSF_Fitting/quick_recalibration/validation_experiments/paired_frame_analysis.py`  
+`PSF_Fitting/quick_recalibration/validation_experiments/l0_newdata_tools.py`
 
 舊 L0 對照與畫圖：
 
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\compare_all_sets.py`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\compare_setA_setB.py`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\plot_4sets_basin_scatter.py`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\plot_basin_alignment.py`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\plot_centroid_distances.py`  
-`D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\plot_centroid_distances_v2.py`
+`PSF_Fitting/quick_recalibration/validation_experiments/compare_all_sets.py`  
+`PSF_Fitting/quick_recalibration/validation_experiments/compare_setA_setB.py`  
+`PSF_Fitting/quick_recalibration/validation_experiments/plot_4sets_basin_scatter.py`  
+`PSF_Fitting/quick_recalibration/validation_experiments/plot_basin_alignment.py`  
+`PSF_Fitting/quick_recalibration/validation_experiments/plot_centroid_distances.py`  
+`PSF_Fitting/quick_recalibration/validation_experiments/plot_centroid_distances_v2.py`
 
 測試：
 
-`D:\GMM_2_Final\PSF_Fitting\tests\python\test_quick_recalibration_l0_newdata.py`
+`PSF_Fitting/tests/python/test_quick_recalibration_l0_newdata.py`
 
 ## 2. 實驗定義，請 GPT 分析時務必遵守
 
@@ -286,28 +286,28 @@ L1 來源：`Circle_Round1`、`Circle_Round2`、`Circle_Round3`。
 若只能上傳少量檔案，最小組合為：
 
 1. 這份 handoff：  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\PSF_UPLOAD_HANDOFF_20260623_TW.md`
+   `PSF_Fitting/quick_recalibration/validation_experiments/PSF_UPLOAD_HANDOFF_20260623_TW.md`
 
 2. 完整檔案索引 CSV：  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\PSF_UPLOAD_FILE_MANIFEST_20260623.csv`
+   `PSF_Fitting/quick_recalibration/validation_experiments/PSF_UPLOAD_FILE_MANIFEST_20260623.csv`
 
 3. 上月月報 PDF：  
    `C:\Users\Rio\OneDrive\學業\碩班\均華報告\GMM五月月報.pdf`
 
 4. 三個結果 JSON：  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_newdata\L0_newdata_summary.json`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_summary.json`
+   `PSF_Fitting/quick_recalibration/validation_experiments/L0_newdata/L0_newdata_summary.json`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_newdata/L1_newdata_summary.json`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_paired_frame_check/paired_frame_summary.json`
 
 5. paired-frame CSV：  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_metrics.csv`
+   `PSF_Fitting/quick_recalibration/validation_experiments/L1_paired_frame_check/paired_frame_metrics.csv`
 
 6. 舊 L0 對照：  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\all_sets_comparison.json`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\archive_L0_legacy_20260616\cross_set_results\outputs\reference_basins.json`
+   `PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/all_sets_comparison.json`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/archive_L0_legacy_20260616/cross_set_results/outputs/reference_basins.json`
 
 7. 分析腳本：  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\l0_newdata_analysis.py`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\l1_newdata_analysis.py`  
-   `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\paired_frame_analysis.py`
+   `PSF_Fitting/quick_recalibration/validation_experiments/l0_newdata_analysis.py`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/l1_newdata_analysis.py`  
+   `PSF_Fitting/quick_recalibration/validation_experiments/paired_frame_analysis.py`
 

@@ -6,11 +6,11 @@
 - manifest:
   - `Traing_Progress/organized_20260307/selected/current_seed.json`
 - weights:
-  - `D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar`
+  - `Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar`
 
 ## 推理腳本目前預設行為
 
-目前 [GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py](D:/GMM_2_Final/Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py) 已改成：
+目前 [GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py](../../../../Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py) 已改成：
 
 - 預設權重：讀取 `organized_20260307/selected/current_seed.json`
 - 預設輸入資料夾：

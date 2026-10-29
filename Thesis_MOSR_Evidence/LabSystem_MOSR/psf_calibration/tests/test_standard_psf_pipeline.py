@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,7 +26,7 @@ def test_standard_pipeline_manifest_records_original_sources():
     manifest_path = ROOT / "scripts" / "standard_wholefov" / "SOURCE_MANIFEST.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
-    assert manifest["source_project_root"].endswith("D:/GMM_2_Final/PSF_Fitting")
+    assert manifest["source_project_root"].endswith(str(PROJECT_ROOT / 'PSF_Fitting'))
     assert len(manifest["copied_files"]) >= 4
     for item in manifest["copied_files"]:
         assert item["source_sha256"]

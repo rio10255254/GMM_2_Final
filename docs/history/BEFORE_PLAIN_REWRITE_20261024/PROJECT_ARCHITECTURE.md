@@ -141,7 +141,7 @@ PSF 的準確性直接影響模型訓練品質。Whole-FOV PSF（全視野 100 �
 - pure_psf_control 實驗已確認 old_recipe + new_psf 到 epoch 40 沒有重現崩壞
 - physics-first 原則下，較合理的物理 PSF 應成為目前標準
 
-**機器可讀 PSF 政策**：`D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json`
+**機器可讀 PSF 政策**：`docs/policy/PSF_STANDARD_POLICY.json`
 
 ### 注意事項
 

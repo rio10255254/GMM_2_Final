@@ -721,14 +721,14 @@ R101 已經證明，高頻可能是：
 
 最重要的實體來源：
 
-- 論文 V42：D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\README_CURRENT_THESIS_RESULTS.md
-- V42 與 R61 SEM 完整輪廓：D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation 和 R70_V42ACMContourSEMValidation
-- R61 角色與資料：D:\GMM_2_Final\Experiments\R61_STEP_Generalization_20260623
-- R75 / R75v2 / R79：D:\GMM_2_Final\Experiments\R75_R61ArchitectureScratchGeneralization、R75v2_R61ArchitectureScratchGeneralization、R79_R75v3_DenseMicroscopyScratchGeneralization
-- R79 E23/E100 對照：D:\GMM_2_Final\Experiments\R80_R79E23vsE100GeneralizationValidation\reports\R80_RESULTS_TW.md
-- Tile root-cause：D:\GMM_2_Final\Experiments\R84_R79TileStableRootRepair
-- Measurement-native 線：D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch 到 R104_PhotometricInvariantCausalGateScratch
-- 新版 R61 ONNX + 外部 GMF：D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\GmmVisionTool_FixedFlow_Benchmark\analysis\r61v11_gmf_analysis.json
+- 論文 V42：Thesis_MOSR_Evidence/Final_Data_Figures/README_CURRENT_THESIS_RESULTS.md
+- V42 與 R61 SEM 完整輪廓：Experiments/R69_ACMContourSEMValidation 和 R70_V42ACMContourSEMValidation
+- R61 角色與資料：Experiments/R61_STEP_Generalization_20260623
+- R75 / R75v2 / R79：Experiments/R75_R61ArchitectureScratchGeneralization、R75v2_R61ArchitectureScratchGeneralization、R79_R75v3_DenseMicroscopyScratchGeneralization
+- R79 E23/E100 對照：Experiments/R80_R79E23vsE100GeneralizationValidation/reports/R80_RESULTS_TW.md
+- Tile root-cause：Experiments/R84_R79TileStableRootRepair
+- Measurement-native 線：Experiments/R89_MeasurementNativeScratch 到 R104_PhotometricInvariantCausalGateScratch
+- 新版 R61 ONNX + 外部 GMF：Thesis_MOSR_Evidence/External_GMF_Packages/GmmVisionTool_FixedFlow_Benchmark/analysis/r61v11_gmf_analysis.json
 
 ---
 

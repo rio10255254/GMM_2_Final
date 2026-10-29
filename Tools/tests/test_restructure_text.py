@@ -96,6 +96,24 @@ def test_location_mode_matlab_segmented_fullfile(ctx_location):
     assert "PROJECT_ROOT = fileparts(fileparts(mfilename('fullpath')));" in out.decode()
 
 
+def test_location_mode_matlab_root_in_each_function_that_uses_it(ctx_location):
+    src = ("function run()\nx = 1;\nhelper();\nend\n\n"
+           "function helper()\nimg = imread('D:\\GMM_2_Final\\Shared_Sources\\a.bmp');\nend\n").encode()
+    out = rewrite_bytes(src, 'Tools/run.m', 'Tools/run.m', ctx_location)[0].decode()
+    root = "PROJECT_ROOT = fileparts(fileparts(mfilename('fullpath')));"
+    assert out.count(root) == 1
+    assert out.index(root) > out.index('function helper()')
+
+
+def test_location_mode_matlab_script_with_local_functions(ctx_location):
+    src = ("a = imread('D:\\GMM_2_Final\\Shared_Sources\\a.bmp');\nb = helper();\n\n"
+           "function out = helper()\nout = imread('D:\\GMM_2_Final\\Shared_Sources\\a.bmp');\nend\n").encode()
+    out = rewrite_bytes(src, 'Tools/run.m', 'Tools/run.m', ctx_location)[0].decode()
+    root = "PROJECT_ROOT = fileparts(fileparts(mfilename('fullpath')));"
+    assert out.startswith(root) and out.count(root) == 2
+    assert out.index(root, 1) > out.index('function out = helper()')
+
+
 def test_location_mode_powershell(ctx_location):
     src = b"param([string]$x)\r\n$a = 'D:\\GMM_2_Final\\Model\\a.pth'\r\n$b = \"D:\\GMM_2_Final\\Model\\$x\"\r\n"
     out, _, _ = rewrite_bytes(src, 'Tools/run.ps1', 'Tools/run.ps1', ctx_location)
@@ -105,11 +123,25 @@ def test_location_mode_powershell(ctx_location):
     assert "param([string]$x)\r\n$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path\r\n" in text
 
 
+def test_bare_project_root_becomes_dot_in_records_but_stays_in_prose(ctx_location):
+    out, _, _ = rewrite_bytes(b'{"project_root": "D:\\\\GMM_2_Final"}', 'r.json', 'r.json', ctx_location)
+    assert json.loads(out) == {'project_root': '.'}
+    prose = 'The repository lived at D:/GMM_2_Final; see D:/GMM_2_Final/Model/a.pth.\n'.encode()
+    out, _, _ = rewrite_bytes(prose, 'docs/x.md', 'docs/x.md', ctx_location)
+    assert out.decode() == 'The repository lived at D:/GMM_2_Final; see Model/a.pth.\n'
+
+
 def test_location_mode_record_and_interpreter(ctx_location):
     out, _, _ = rewrite_bytes(b'{"model": "D:\\\\GMM_2_Final\\\\Model\\\\a.pth"}', 'r.json', 'r.json', ctx_location)
     assert json.loads(out) == {'model': 'Model/a.pth'}
     out, _, _ = rewrite_bytes(b'& C:\\Users\\Rio\\anaconda3\\python.exe Tools\\x.py\r\n', 'Tools/run.ps1', 'Tools/run.ps1', ctx_location)
     assert out == b'& python Tools\\x.py\r\n'
+
+
+def test_escaped_quote_after_a_path_stays_escaped(ctx_location):
+    nb = {'cells': [{'cell_type': 'code', 'source': ['ROOT = Path(r"D:\\GMM_2_Final\\Model")\n']}]}
+    out, _, _ = rewrite_bytes(json.dumps(nb, indent=1).encode(), 'docs/nb/a.ipynb', 'docs/nb/a.ipynb', ctx_location)
+    assert json.loads(out)['cells'][0]['source'] == ['ROOT = Path(r"../../Model")\n']
 
 
 def test_location_mode_notebook_paths_relative_to_notebook(ctx_location):

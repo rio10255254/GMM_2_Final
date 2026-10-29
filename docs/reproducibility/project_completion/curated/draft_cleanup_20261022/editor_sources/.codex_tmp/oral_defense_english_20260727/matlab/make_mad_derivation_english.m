@@ -1,7 +1,8 @@
 function make_mad_derivation_english()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))))));
 %MAKE_MAD_DERIVATION_ENGLISH Render the appendix derivation in English.
 
-outputDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_english_20260727\assets_english\custom';
+outputDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_tmp/oral_defense_english_20260727/assets_english/custom');
 outputPath = fullfile(outputDir, 'mad_derivation_english.png');
 if ~isfolder(outputDir), mkdir(outputDir); end
 

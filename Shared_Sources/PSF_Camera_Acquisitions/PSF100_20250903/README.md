@@ -30,7 +30,7 @@
 
 ## 同日棋盤原拍（2026-10-28 補）
 
-同一天（2025-09-03）、同一台相機另外拍了 393 張棋盤影像，原本只放在本機 `D:/NonSystemFiles/GMM2/MitsutoyoSample_GMMSys_20x/TestImage/Chess`，專案裡沒有程式或報告引用。電腦要交出去之前補進發布附件 [research-psf100-chessboard-20261028](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-psf100-chessboard-20261028)，恢復後在 `chessboard_same_session/`，檔名不變（`VisionTop_20250903171148.bmp` 這類）。
+同一天（2025-09-03）、同一台相機另外拍了 393 張棋盤影像，原本只放在本機 `Shared_Sources/PSF_Camera_Acquisitions/PSF100_20250903/chessboard_same_session`，專案裡沒有程式或報告引用。電腦要交出去之前補進發布附件 [research-psf100-chessboard-20261028](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-psf100-chessboard-20261028)，恢復後在 `chessboard_same_session/`，檔名不變（`VisionTop_20250903171148.bmp` 這類）。
 
 這批照片當時拿來做什麼沒有留下紀錄；推測和那次拍攝的尺度或畸變校正有關，但沒有證據，這裡不替它補用途。
 

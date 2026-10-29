@@ -18,6 +18,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -197,7 +198,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     seed_everything(args.seed)
-    package = Path(CONFIG["data"][f"{args.profile}_package"])
+    package = Path(PROJECT_ROOT / CONFIG["data"][f"{args.profile}_package"])
     expected_manifest_hash = CONFIG["data"][f"{args.profile}_manifest_sha256"]
     manifest_path = package / "manifest.json"
     if sha256(manifest_path) != expected_manifest_hash:

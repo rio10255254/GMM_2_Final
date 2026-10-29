@@ -11,6 +11,7 @@ sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as backend
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 OUT=ROOT/'poster_assets'
 OUT.mkdir(exist_ok=True)
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':11,'svg.fonttype':'none'})
@@ -41,7 +42,7 @@ def main():
     for ridx,seq in enumerate(['20x_0p5um','20x_1um']):
         spec=conf['sequences'][seq]; fi=int(selection[selection.sequence==seq].iloc[0].start_frame_index)
         chosen.append(dict(sequence=seq,frame_index=fi,rule='start frame of first locked pair, chosen without ranking output quality'))
-        raw=backend.load_grayscale(Path(spec['raw_dir'])/f'frame_{fi:04d}.bmp')
+        raw=backend.load_grayscale(Path(PROJECT_ROOT / spec['raw_dir'])/f'frame_{fi:04d}.bmp')
         recon=np.load(ROOT/f'results/20x/reconstruction/{seq}/frame_{fi:04d}.npz')['output']
         pred=backend.session_prediction(seq,fi,np.array(spec['centers'],float),float(spec['expected_signed_dx_px']))
         pitch=spec['pitch_px'];margin=int(np.ceil(.55*pitch))

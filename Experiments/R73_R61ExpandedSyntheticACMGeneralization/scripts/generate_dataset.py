@@ -7,11 +7,12 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-DATA_ROOT = Path(CONFIG["dataset"]["root"])
+DATA_ROOT = Path(PROJECT_ROOT / CONFIG["dataset"]["root"])
 
 
 def write_bmp(path: Path, image: np.ndarray) -> None:

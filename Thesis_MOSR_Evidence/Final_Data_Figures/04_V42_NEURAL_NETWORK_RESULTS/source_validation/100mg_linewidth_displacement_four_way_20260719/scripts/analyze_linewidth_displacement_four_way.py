@@ -7,6 +7,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,10 +15,7 @@ TABLES = ROOT / "tables"
 TABLES.mkdir(parents=True, exist_ok=True)
 
 SOURCE_ANALYSIS = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\source_validation"
-    r"\100mg_linewidth_generalization_20260719\scripts"
-    r"\analyze_100mg_linewidth_generalization.py"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/source_validation/100mg_linewidth_generalization_20260719/scripts/analyze_100mg_linewidth_generalization.py')
 )
 WIENER_ROOT = ROOT / "wiener_crops"
 

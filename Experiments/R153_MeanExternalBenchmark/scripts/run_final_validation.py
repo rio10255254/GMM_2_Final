@@ -6,6 +6,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from study import read,save,sha
 from scripts.monitor_training import ORDER,completion,processes
 import psutil
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 NEW=['Restormer','USRNet-x1','SwinIR']
 LOGS=ROOT/'runs/final_validation_logs'
@@ -105,7 +106,7 @@ def main():
         assert (manifest['completed_models_user_scope_complete'] if args.completed_only else manifest['full_external_benchmark_complete']) and len(manifest['completed_scope'])==(9 if args.completed_only else 10)
         for row in manifest['files']:assert sha(directory/row['file'])==row['sha256']
         with zipfile.ZipFile(archive) as z:assert z.testzip() is None
-        for row in read(ROOT/'config/source_lock.json')['files']:assert sha(row['path'])==row['sha256']
+        for row in read(ROOT/'config/source_lock.json')['files']:assert sha(str(PROJECT_ROOT / row['path']))==row['sha256']
         save(ROOT/'results'/('completed_models' if args.completed_only else 'full_benchmark')/'final_audit.json',{'state':'passed','complete_methods':manifest['completed_scope'],
              'blocked_official_backends':manifest['blocked_official_backends'],'new_methods_only':NEW,
              'old_seven_repeated':False,'verified_methods_reused':reused_methods,'original_sources_unchanged':True,'archive_sha256':sha(archive),

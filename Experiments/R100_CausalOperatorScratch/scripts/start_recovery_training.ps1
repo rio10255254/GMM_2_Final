@@ -4,7 +4,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$Python = python
 $Entry = Join-Path $Root "training\run_recovery_training.py"
 $Source = Join-Path $Root "weights\formal\seed_1000053\R100_scratch_seed1000053_20260814_180143\weights\epoch_036.pth.tar"
 $Registry = Join-Path $Root "runs\formal_run_registry.json"

@@ -2,7 +2,8 @@
 from __future__ import annotations
 import json
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];TEMPLATE=Path(r'D:\GMM_2_Final\Experiments\R104_PhotometricInvariantCausalGateScratch\results\posttraining_validation\external_acm\R74_hard_microscopy\config\experiment.json');ORDER=['denoise','radiometry','edge']
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];TEMPLATE=Path(str(PROJECT_ROOT / 'Experiments/R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R74_hard_microscopy/config/experiment.json'));ORDER=['denoise','radiometry','edge']
 def main():
  cfg0=json.loads(TEMPLATE.read_text(encoding='utf-8'))
  for index,name in enumerate(ORDER,1):

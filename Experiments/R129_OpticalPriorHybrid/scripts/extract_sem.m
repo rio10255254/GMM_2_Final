@@ -1,8 +1,9 @@
 function extract_sem()
-root='D:/GMM_2_Final/Experiments/R129_OpticalPriorHybrid';
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
+root=fullfile(PROJECT_ROOT, 'Experiments/R129_OpticalPriorHybrid');
 out=fullfile(root,'results','sem');assert(~isfolder(out));mkdir(out);
 meta=jsondecode(fileread(fullfile(root,'results','real_inference.json')));cases=meta.sem_images;
-old=load('D:/GMM_2_Final/Experiments/R70_V42ACMContourSEMValidation/results/masks/acm_primary_masks.mat');
+old=load(fullfile(PROJECT_ROOT, 'Experiments/R70_V42ACMContourSEMValidation/results/masks/acm_primary_masks.mat'));
 count=numel(cases);masks=false(104,104,36,count);cells=zeros(104,104,36,count,'uint8');valid=true(36,count);failure=strings(36,count);
 for k=1:count
  im=imread(cases(k).image.path);

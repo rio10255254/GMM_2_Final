@@ -6,6 +6,7 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,7 +43,7 @@ def balanced_select(records: list[dict], count: int) -> list[dict]:
 
 
 def main() -> None:
-    package = Path(CONFIG["data"]["package_root"])
+    package = Path(PROJECT_ROOT / CONFIG["data"]["package_root"])
     manifest_path = package / "manifest.json"
     actual_hash = sha256_file(manifest_path)
     expected_hash = CONFIG["data"]["source_manifest_sha256"]

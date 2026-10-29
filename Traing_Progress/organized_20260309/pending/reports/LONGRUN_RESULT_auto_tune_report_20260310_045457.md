@@ -4,6 +4,6 @@
 - timestamp: `20260310_045457`
 - best_candidate: `subpix_general_curve`
 - best_score: `4.377483`
-- best_progress_dir: `D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_spg_20260310_053804`
+- best_progress_dir: `Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_spg_20260310_053804`
 - final_score: `-162.138491`
-- final_progress_dir: `D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_FIN_spg_20260310_055939`
+- final_progress_dir: `Traing_Progress/training_progress_GESR_v1_v5_ST8_FIN_spg_20260310_055939`

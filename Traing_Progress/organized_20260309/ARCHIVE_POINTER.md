@@ -15,7 +15,7 @@ D 槽保留當時的外部 GMF 原始證據、分析結果、視覺比較與精�
 完整恢復：
 
 ```powershell
-robocopy H:\GMM_2_Final_Archive\legacy\organized_20260309\20260801_full_history\snapshot D:\GMM_2_Final\Traing_Progress\organized_20260309 /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\legacy\organized_20260309\20260801_full_history\snapshot Traing_Progress/organized_20260309 /E /COPY:DAT /DCOPY:DAT
 ```
 
 恢復後使用中央清單逐檔核對，回報 PASS 才算完整恢復。

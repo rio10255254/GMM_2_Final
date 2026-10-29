@@ -22,6 +22,7 @@ for folder in (ROOT / "model", ROOT / "training", ROOT / "evaluation", ROOT / "i
 from r103_model import build_model  # noqa: E402
 from r103_dataset import R103Dataset  # noqa: E402
 from validate import evaluate  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
@@ -104,7 +105,7 @@ def main() -> None:
     internal_rows: list[dict[str, object]] = []
     appearance_rows: list[dict[str, object]] = []
     manifests: list[dict[str, object]] = []
-    preview_sources = [Path(value) for value in CONFIG["validation"]["real_preview_sources"]]
+    preview_sources = [Path(PROJECT_ROOT / value) for value in CONFIG["validation"]["real_preview_sources"]]
     preview_dir = OUTPUT / "real_previews"
     preview_dir.mkdir(parents=True, exist_ok=True)
 

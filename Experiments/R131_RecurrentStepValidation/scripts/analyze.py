@@ -2,6 +2,8 @@
 from study import *
 from scipy.optimize import least_squares
 import argparse,traceback
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def circle(xy):
     center0=xy.mean(0);z=xy-center0
@@ -38,7 +40,7 @@ def final_audit():
     for n in range(5):assert load(ROOT/f'results/measurements/N{n}/complete.json')['frames']==201
     assert load(ROOT/'results/inference_complete.json')['four_step_old_PNG_parity_frames']==201
     verify_sources();start=load(ROOT/'results/inference_started.json');assert start['source']==rec(ROOT/'scripts/study.py')
-    cfg=load(PLAN['configuration']['path']);allsummary=[];refits=[];pairs_by={};changes=[];worst=[]
+    cfg=load(str(PROJECT_ROOT / PLAN['configuration']['path']));allsummary=[];refits=[];pairs_by={};changes=[];worst=[]
     for n in range(5):
         folder=ROOT/f'results/measurements/N{n}';t=pd.read_csv(folder/'centers.csv');assert len(t)==1809
         for f in PLAN['frames']:

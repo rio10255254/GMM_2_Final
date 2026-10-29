@@ -32,7 +32,7 @@
 - postmortem:
   `BRANCH_E_PHASE2_POSTMORTEM.md`
 - machine-readable policy truth:
-  `D:\GMM_2_Final\ESTIMATOR_POLICY.json`
+  `ESTIMATOR_POLICY.json`
 - manifest:
   `selected\current_branch_e_phase2_seed.json`
 

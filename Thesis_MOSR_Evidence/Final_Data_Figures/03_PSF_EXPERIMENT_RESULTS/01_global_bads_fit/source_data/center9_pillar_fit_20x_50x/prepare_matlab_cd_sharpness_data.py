@@ -7,15 +7,15 @@ from pathlib import Path
 import numpy as np
 from scipy.io import loadmat, savemat
 from scipy.ndimage import gaussian_filter1d, map_coordinates
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 
 ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit')
 )
 SOURCE_ROOT = ROOT / "source_data" / "center9_pillar_fit_20x_50x"
 DECONV_ROOT = SOURCE_ROOT / "psf_deconvolution_cd"
-FIT_ROOT = Path(r"D:\GMM_2_Final\PSF_Fitting\output\deconvolution_baseline_psf_20260715")
+FIT_ROOT = Path(str(PROJECT_ROOT / 'PSF_Fitting/output/deconvolution_baseline_psf_20260715'))
 OUT_DIR = SOURCE_ROOT / "sharpness_validation"
 
 sys.path.insert(0, str(DECONV_ROOT))

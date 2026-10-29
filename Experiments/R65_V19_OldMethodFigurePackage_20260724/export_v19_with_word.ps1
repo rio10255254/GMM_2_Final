@@ -1,8 +1,9 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $ErrorActionPreference = 'Stop'
 
-$source = 'D:\GMM_2_Final\Experiments\R65_V19_OldMethodFigurePackage_20260724\論文完整版_20260716_v19_第六章更新版.docx'
-$output = 'D:\GMM_2_Final\Experiments\R65_V19_OldMethodFigurePackage_20260724\v19_format_alignment_qa.pdf'
-$log = 'D:\GMM_2_Final\Experiments\R65_V19_OldMethodFigurePackage_20260724\v19_word_export.log'
+$source = (Join-Path $ProjectRoot 'Experiments\R65_V19_OldMethodFigurePackage_20260724\論文完整版_20260716_v19_第六章更新版.docx')
+$output = (Join-Path $ProjectRoot 'Experiments\R65_V19_OldMethodFigurePackage_20260724\v19_format_alignment_qa.pdf')
+$log = (Join-Path $ProjectRoot 'Experiments\R65_V19_OldMethodFigurePackage_20260724\v19_word_export.log')
 
 $word = $null
 $document = $null

@@ -21,8 +21,7 @@ _R33_RECON_ROOT = (
     / "reconstruct_progress_best_tradeoff_in_Cropped_Output_20260405_073906"
 )
 _GMF_ROOT = Path(
-    r"D:\GMM_2_Final\Traing_Progress\organized_20260316"
-    r"\external_compare_r18_r22_r25_r26\r26_sm035\gmf_results\raw"
+    str(_REPO_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw')
 )
 
 R33_DATASETS = [

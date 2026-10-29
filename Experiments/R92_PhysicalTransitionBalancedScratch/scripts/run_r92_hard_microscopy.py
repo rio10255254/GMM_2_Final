@@ -11,12 +11,13 @@ import time
 from typing import Any
 
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "config" / "capability_validation_20260812.json"
 INFERENCE = ROOT / "inference" / "reconstruct.py"
-R74_CONFIG = Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\config\experiment.json")
+R74_CONFIG = Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/config/experiment.json'))
 EPOCH = 80
 
 
@@ -48,7 +49,7 @@ def write_json(path: Path, payload: Any) -> None:
 def main() -> int:
     protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
     arm = protocol["arms"]["hard_microscopy"]
-    dataset_manifest_path = Path(arm["manifest"])
+    dataset_manifest_path = Path(PROJECT_ROOT / arm["manifest"])
     dataset_manifest = json.loads(dataset_manifest_path.read_text(encoding="utf-8"))
     records = dataset_manifest["records"]
     if len(records) != int(arm["expected_images"]):
@@ -56,7 +57,7 @@ def main() -> int:
     if sorted({row["family"] for row in records}) != sorted(arm["challenge_families"]):
         raise RuntimeError("Hard-microscopy family mismatch")
 
-    checkpoint = Path(protocol["checkpoint_root"]) / f"epoch_{EPOCH:03d}.pth.tar"
+    checkpoint = Path(PROJECT_ROOT / protocol["checkpoint_root"]) / f"epoch_{EPOCH:03d}.pth.tar"
     if sha256_file(checkpoint) != str(protocol["checkpoint_sha256"]).lower():
         raise RuntimeError("Checkpoint hash mismatch")
     if not torch.cuda.is_available():
@@ -70,7 +71,7 @@ def main() -> int:
     if int(payload.get("epoch", -1)) != EPOCH:
         raise RuntimeError("Checkpoint epoch mismatch")
 
-    results = Path(protocol["output_root"]) / "hard_microscopy"
+    results = Path(PROJECT_ROOT / protocol["output_root"]) / "hard_microscopy"
     reconstruction_root = results / "reconstructions_fp32" / "E080"
     output_dirs: dict[str, str] = {}
     inventory: list[dict[str, Any]] = []
@@ -142,7 +143,7 @@ def main() -> int:
         "families": output_dirs,
         "elapsed_seconds": time.perf_counter() - started,
         "runner_root": str(runner),
-        "matlab_script": str(Path(r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\scripts\run_acm_extraction.m")),
+        "matlab_script": str(Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/scripts/run_acm_extraction.m'))),
     })
     print(json.dumps({"status": "reconstruction_complete_matlab_pending", "images": len(inventory), "runner_root": str(runner)}), flush=True)
     return 0

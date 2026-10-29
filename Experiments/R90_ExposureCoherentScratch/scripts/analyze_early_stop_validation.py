@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,8 +20,8 @@ RESULTS = ROOT / "results" / "early_stop_validation"
 REPORTS = ROOT / "reports" / "early_stop_validation"
 TABLES = RESULTS / "tables"
 ACM = RESULTS / "sem_acm"
-RAW_TABLE = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\tables\primary_contour_metrics.csv")
-BASE_MASK = Path(r"D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch\results\final_validation\sem_acm_epoch100\acm_validation\results\masks\acm_primary_masks.mat")
+RAW_TABLE = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/tables/primary_contour_metrics.csv'))
+BASE_MASK = Path(str(PROJECT_ROOT / 'Experiments/R89_MeasurementNativeScratch/results/final_validation/sem_acm_epoch100/acm_validation/results/masks/acm_primary_masks.mat'))
 
 METRICS = {
     "iou": "higher",
@@ -180,7 +181,7 @@ def radial_diagnostic(protocol: dict[str, Any], stages: list[int]) -> tuple[pd.D
     half = int(np.asarray(base["cell_half"]).squeeze())
     yy, xx = np.mgrid[:2 * half, :2 * half]
     radius = np.hypot(xx - (2 * half - 1) / 2, yy - (2 * half - 1) / 2)
-    raw_root = Path(protocol["development_arms"]["sem_contour"]["optical_inputs"])
+    raw_root = Path(PROJECT_ROOT / protocol["development_arms"]["sem_contour"]["optical_inputs"])
     roots = {"Raw": raw_root}
     roots.update({
         f"E{epoch:03d}": RESULTS / "reconstructions" / "sem" / "stage_root" / f"E{epoch:03d}" / "reconstruction"
@@ -336,7 +337,7 @@ def panel(image: np.ndarray, label: str, width: int = 480, height: int = 300) ->
 
 
 def save_exposure18_montage(protocol: dict[str, Any], stages: list[int]) -> str:
-    raw = read_gray(Path(protocol["development_arms"]["sem_contour"]["optical_inputs"]) / "18.bmp")
+    raw = read_gray(Path(PROJECT_ROOT / protocol["development_arms"]["sem_contour"]["optical_inputs"]) / "18.bmp")
     images = [("Raw", raw)] + [
         (f"E{epoch}", read_gray(RESULTS / "reconstructions" / "sem" / "stage_root" / f"E{epoch:03d}" / "reconstruction" / "18.bmp"))
         for epoch in stages

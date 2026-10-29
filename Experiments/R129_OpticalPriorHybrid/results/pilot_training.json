@@ -133,7 +133,7 @@
         }
       ],
       "checkpoint": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\A\\step24.pth",
+        "path": "Experiments/R129_OpticalPriorHybrid/runs/A/step24.pth",
         "sha256": "f5cd677c5a3def15aed47126fb03bba0e2899cf448c832e27875a10d746b4c9b"
       }
     },
@@ -269,7 +269,7 @@
         }
       ],
       "checkpoint": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\B\\step24.pth",
+        "path": "Experiments/R129_OpticalPriorHybrid/runs/B/step24.pth",
         "sha256": "498e2c584e6b5ea012eb70e9d9e9d389a430e2cbb045d0f20d5c2749c3b94e8c"
       }
     },
@@ -405,7 +405,7 @@
         }
       ],
       "checkpoint": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\C\\step24.pth",
+        "path": "Experiments/R129_OpticalPriorHybrid/runs/C/step24.pth",
         "sha256": "d1fe405dc60f3c45fa0ede603c7ff8fabf168246afccbc96d09867768382fe25"
       }
     },
@@ -541,7 +541,7 @@
         }
       ],
       "checkpoint": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\D\\step24.pth",
+        "path": "Experiments/R129_OpticalPriorHybrid/runs/D/step24.pth",
         "sha256": "13d73d34f7aafc806bd2d56b7b1ac845d0b150d28fdc2fa9a07acc29cea838ee"
       }
     }
@@ -550,8 +550,8 @@
   "all4same_consumed_inputs": true,
   "total_updates": 96,
   "source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\run_pilot.py",
-    "sha256": "e4e6002b3c2012e91bf0808d8bee873c0e7ca2344325946355e9c21a131bc5e7"
+    "path": "Experiments/R129_OpticalPriorHybrid/scripts/run_pilot.py",
+    "sha256": "3b0bf0b22062d660e8912e415c11c95726657f39f1f8715756d561cf6861da87"
   },
   "limited_short_pilot": true,
   "not_model_promotion": true

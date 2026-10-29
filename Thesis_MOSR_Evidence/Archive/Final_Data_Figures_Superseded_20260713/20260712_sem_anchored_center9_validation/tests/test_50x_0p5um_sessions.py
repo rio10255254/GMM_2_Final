@@ -17,9 +17,10 @@ from analyze_50x_0p5um_sessions import (  # noqa: E402
     load_acquisition_mapping,
     run_session_analysis,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-MAPPING = Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\input_mapping.csv")
+MAPPING = Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/input_mapping.csv'))
 
 
 def test_timestamp_sessions_are_stable_across_reasonable_thresholds() -> None:

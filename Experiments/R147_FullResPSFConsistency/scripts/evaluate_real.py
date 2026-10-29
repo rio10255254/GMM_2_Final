@@ -19,6 +19,7 @@ from model import Model
 from utils import load, model_config, now, save, setup, sha
 from verify_package import verify_source_lock
 from evaluation_lock import verify as verify_evaluation_lock
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 MODEL_NAME = "R147-FullResPSFConsistency"
@@ -30,7 +31,7 @@ def final_checkpoint() -> tuple[Path, dict]:
     complete = load(ROOT / "runs/formal_8192/training_complete.json")
     assert complete["updates"] == 8192
     receipt = complete["checkpoint"]
-    path = Path(receipt["path"])
+    path = Path(PROJECT_ROOT / receipt["path"])
     assert receipt["step"] == 8192 and sha(path) == receipt["sha256"]
     return path, receipt
 

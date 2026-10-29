@@ -20,6 +20,7 @@ from scipy.ndimage import center_of_mass
 from scipy.stats import wilcoxon
 from skimage.measure import find_contours
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,7 +33,7 @@ RECON = OUTPUT / "reconstructions"
 TABLES = OUTPUT / "results" / "tables"
 FIGURES = OUTPUT / "figures"
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
-SHARED_ACM = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\scripts\run_acm_extraction.m")
+SHARED_ACM = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/scripts/run_acm_extraction.m'))
 METHODS = ["Raw", "R61v16", "V42E120", "R75v2E100", "R96E44", "R97E48", "R100E40"]
 METRICS = {
     "iou": "higher",
@@ -116,8 +117,8 @@ def align_to_truth(predicted: np.ndarray, truth: np.ndarray) -> np.ndarray:
 
 def reconstruct(protocol: dict) -> dict:
     arm = protocol["sem_contour_arm"]
-    raw_dir = Path(arm["raw_input_dir"])
-    checkpoint_path = Path(protocol["checkpoint"])
+    raw_dir = Path(PROJECT_ROOT / arm["raw_input_dir"])
+    checkpoint_path = Path(PROJECT_ROOT / protocol["checkpoint"])
     checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
     if int(checkpoint["epoch"]) != int(protocol["primary_checkpoint_epoch"]):
         raise RuntimeError("Final checkpoint epoch mismatch")
@@ -153,9 +154,9 @@ def reconstruct(protocol: dict) -> dict:
 
 def run_acm(protocol: dict) -> None:
     arm = protocol["sem_contour_arm"]
-    raw_dir = Path(arm["raw_input_dir"])
+    raw_dir = Path(PROJECT_ROOT / arm["raw_input_dir"])
     sem_dir = Path(arm["sem_dir"])
-    mapping = Path(arm["ordering_mapping"])
+    mapping = Path(PROJECT_ROOT / arm["ordering_mapping"])
     for required in (MATLAB, SHARED_ACM, raw_dir, sem_dir, mapping):
         if not required.exists():
             raise FileNotFoundError(required)
@@ -184,7 +185,7 @@ def assert_same_raw(prior: pd.DataFrame, current: pd.DataFrame) -> None:
 
 def analyze(protocol: dict, manifest: dict) -> dict:
     arm = protocol["sem_contour_arm"]
-    prior_tables = Path(arm["prior_six_method_tables"])
+    prior_tables = Path(PROJECT_ROOT / arm["prior_six_method_tables"])
     prior = pd.read_csv(prior_tables / "six_method_primary_contour_metrics.csv")
     current = pd.read_csv(TABLES / "primary_contour_metrics.csv")
     assert_same_raw(prior, current)
@@ -239,7 +240,7 @@ def analyze(protocol: dict, manifest: dict) -> dict:
     sensitivity_summary.to_csv(TABLES / "r100_sensitivity_summary.csv", index=False)
 
     masks = loadmat(OUTPUT / "results" / "masks" / "acm_primary_masks.mat", squeeze_me=True)
-    prior_masks = loadmat(Path(arm["prior_masks"]), squeeze_me=True)
+    prior_masks = loadmat(Path(PROJECT_ROOT / arm["prior_masks"]), squeeze_me=True)
     truth_masks = masks["truth_masks"].astype(bool)
     raw_cells = masks["raw_cells"]
     raw_masks = masks["raw_masks"].astype(bool)

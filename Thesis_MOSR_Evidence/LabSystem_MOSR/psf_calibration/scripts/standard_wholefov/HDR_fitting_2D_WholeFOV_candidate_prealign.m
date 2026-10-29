@@ -1,5 +1,5 @@
 % Copied for LabSystem_MOSR from
-% D:/GMM_2_Final/PSF_Fitting/PSF_Fitting_ValidationLab/scripts/HDR_fitting_2D_WholeFOV_candidate_prealign.m.
+% PSF_Fitting/PSF_Fitting_ValidationLab/scripts/HDR_fitting_2D_WholeFOV_candidate_prealign.m.
 % Keeps the project-standard candidate fitter and adds input/GT/dependency path parameters.
 function summary = HDR_fitting_2D_WholeFOV_candidate_prealign(varargin)
 global VLAB_CONTEXT VLAB_STATE
@@ -54,6 +54,7 @@ VLAB_STATE = [];
 end
 
 function opts = parse_inputs(varargin)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))));
 parser = inputParser;
 parser.addParameter('subset_indices', 1:100, @(x) isnumeric(x) && ~isempty(x));
 parser.addParameter('warm_start', true, @(x) islogical(x) || isnumeric(x));
@@ -63,7 +64,7 @@ parser.addParameter('output_root', fullfile(fileparts(fileparts(mfilename('fullp
 parser.addParameter('input_folder', '', @(x) ischar(x) || isstring(x));
 parser.addParameter('gt_path', '', @(x) ischar(x) || isstring(x));
 parser.addParameter('psf_basis_path', '', @(x) ischar(x) || isstring(x));
-parser.addParameter('dependency_root', 'D:/GMM_2_Final/PSF_Fitting', @(x) ischar(x) || isstring(x));
+parser.addParameter('dependency_root', fullfile(PROJECT_ROOT, 'PSF_Fitting'), @(x) ischar(x) || isstring(x));
 parser.addParameter('source_grid_cols', 10, @(x) isnumeric(x) && isscalar(x) && x >= 1);
 parser.addParameter('use_gpu', [], @(x) isempty(x) || islogical(x) || isnumeric(x));
 parser.addParameter('prealign_search_radius', 2, @(x) isnumeric(x) && isscalar(x) && x >= 0);

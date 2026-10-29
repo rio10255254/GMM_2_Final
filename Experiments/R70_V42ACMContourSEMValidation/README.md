@@ -7,7 +7,7 @@
 執行完整流程：
 
 ```powershell
-& 'C:\Users\Rio\anaconda3\python.exe' 'D:\GMM_2_Final\Experiments\R70_V42ACMContourSEMValidation\scripts\run_r70.py' --stage all
+& 'C:\Users\Rio\anaconda3\python.exe' 'Experiments/R70_V42ACMContourSEMValidation/scripts/run_r70.py' --stage all
 ```
 
 結果資料夾包含：

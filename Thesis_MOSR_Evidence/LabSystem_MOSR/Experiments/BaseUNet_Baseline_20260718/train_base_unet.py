@@ -18,15 +18,14 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.cuda.amp import GradScaler, autocast
 from torch.utils.data import DataLoader, Dataset
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 DEFAULT_PACKAGE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages"
-    r"\V42_SoftLabelSNR_Standalone_20260709"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_Standalone_20260709')
 )
 DEFAULT_OUTPUT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments"
-    r"\BaseUNet_Baseline_20260718\results"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results')
 )
 
 

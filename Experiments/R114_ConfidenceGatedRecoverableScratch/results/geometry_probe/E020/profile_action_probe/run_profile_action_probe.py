@@ -20,23 +20,21 @@ import sys
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 
 OUT = Path(__file__).resolve().parent
 ROOT = OUT.parents[3]
 SOURCE = Path(
-    r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization"
-    r"\data\r74_hard_acm_val"
+    str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val')
 )
 TEMPLATE = Path(
-    r"D:\GMM_2_Final\Experiments\R104_PhotometricInvariantCausalGateScratch"
-    r"\results\posttraining_validation\external_acm\R74_hard_microscopy"
-    r"\config\experiment.json"
+    str(PROJECT_ROOT / 'Experiments/R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R74_hard_microscopy/config/experiment.json')
 )
 FULL_ROOT = ROOT / "results" / "geometry_probe" / "E020" / "r74_interventions" / "inputs" / "Full"
 CHECKPOINT = ROOT / "runs" / "r114_geometry_probe_scratch_20260830" / "weights" / "epoch_020.pth"
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark\scripts")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/scripts'))
 
 METHODS = ("Full", "FullPlusProfile")
 FAILURE_FAMILIES = ("boundary_fade", "low_contrast", "mixed_hard")

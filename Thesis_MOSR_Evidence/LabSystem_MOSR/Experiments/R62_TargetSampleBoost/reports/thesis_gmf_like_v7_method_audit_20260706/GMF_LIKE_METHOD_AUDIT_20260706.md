@@ -33,7 +33,7 @@
 
 ## Files
 
-- Tool: `D:\GMM_2_Final\Tools\Displacement_Algorithms\scripts\measure_gmf_template.py`
-- Tests: `D:\GMM_2_Final\Tools\Displacement_Algorithms\tests\test_measure_gmf_template.py`
+- Tool: `Tools/Displacement_Algorithms/scripts/measure_gmf_template.py`
+- Tests: `Tools/Displacement_Algorithms/tests/test_measure_gmf_template.py`
 - Compact audit table: `gmf_like_method_audit_compact.csv`
 - Valid comparison table: `gmf_like_method_audit_valid_comparison.csv`

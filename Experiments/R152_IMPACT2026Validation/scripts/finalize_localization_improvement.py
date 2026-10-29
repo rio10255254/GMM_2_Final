@@ -6,6 +6,7 @@ import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/localization_improvement';FIG=ROOT/'poster_assets/localization_improvement';FIG.mkdir(parents=True,exist_ok=True)
 FIELDS=['step_sd_nm','nominal_mae_nm','median_within_grid_sd_nm']
 def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
@@ -46,11 +47,11 @@ def main():
     sys.path.insert(0,str(ROOT/'sources'));import run_displacement_lsc as backend
     backend.SESSION_TABLE=ROOT/'sources/session_anchors.csv';fig,axes=plt.subplots(2,2,figsize=(10,9));raw_pixels_identical=[]
     for ri,seq in enumerate(['20x_0p5um','50x_x_0p5um']):
-        sp=cfg['sequences'][seq];frame=int(locked[locked.sequence==seq].iloc[0].start_frame_index);raw=backend.load_grayscale(Path(sp['raw_dir'])/f'frame_{frame:04d}.bmp');sub='20x' if sp['magnification']=='20x' else '50x_calibrated';rec=np.load(ROOT/f'results/{sub}/reconstruction/{seq}/frame_{frame:04d}.npz')['output'];pred=backend.session_prediction(seq,frame,np.array(sp['centers'],float),sp['expected_signed_dx_px']);margin=int(np.ceil(.55*sp['pitch_px']))
+        sp=cfg['sequences'][seq];frame=int(locked[locked.sequence==seq].iloc[0].start_frame_index);raw=backend.load_grayscale(Path(PROJECT_ROOT / sp['raw_dir'])/f'frame_{frame:04d}.bmp');sub='20x' if sp['magnification']=='20x' else '50x_calibrated';rec=np.load(ROOT/f'results/{sub}/reconstruction/{seq}/frame_{frame:04d}.npz')['output'];pred=backend.session_prediction(seq,frame,np.array(sp['centers'],float),sp['expected_signed_dx_px']);margin=int(np.ceil(.55*sp['pitch_px']))
         x0=max(0,int(np.floor(pred[:,1].min()))-margin);x1=min(raw.shape[1],int(np.ceil(pred[:,1].max()))+margin+1);y0=max(0,int(np.floor(pred[:,2].min()))-margin);y1=min(raw.shape[0],int(np.ceil(pred[:,2].max()))+margin+1)
         for ci,(name,a) in enumerate([('Raw',raw),('R152',rec)]):
             patch=a[y0:y1,x0:x1];ax=axes[ri,ci];ax.imshow(patch,cmap='gray',vmin=0,vmax=1,interpolation='nearest');ax.axis('off');ax.set_title(f'{sp["magnification"]} | {name}',fontsize=15);h,w=patch.shape;length=2/sp['object_um_per_px'];xx=w-w*.08-length;yy=h-h*.09;ax.plot([xx,xx+length],[yy,yy],color='white',lw=3);ax.text(xx+length/2,yy-h*.04,'2 um',ha='center',color='white',fontsize=10)
-        raw_pixels_identical.append(dict(sequence=seq,frame=frame,source=str(Path(sp['raw_dir'])/f'frame_{frame:04d}.bmp'),crop=[x0,y0,x1,y1],display_range=[0,1],no_raw_degradation=True))
+        raw_pixels_identical.append(dict(sequence=seq,frame=frame,source=str(Path(PROJECT_ROOT / sp['raw_dir'])/f'frame_{frame:04d}.bmp'),crop=[x0,y0,x1,y1],display_range=[0,1],no_raw_degradation=True))
     fig.suptitle('Actual Raw and R152 images | same display settings',fontsize=18,weight='bold',y=.98);fig.text(.5,.018,'First locked pair of each magnification. Same crop, grayscale range and scale bar.',ha='center',fontsize=10.5);fig.subplots_adjust(top=.91,bottom=.055,left=.03,right=.97,hspace=.18,wspace=.08)
     for ext in ['png','svg']:fig.savefig(FIG/f'raw_r152_same_display.{ext}',dpi=240)
     plt.close(fig)

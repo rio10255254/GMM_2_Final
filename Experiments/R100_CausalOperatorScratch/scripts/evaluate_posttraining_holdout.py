@@ -10,6 +10,7 @@ import sys
 import time
 
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,7 +63,7 @@ def main() -> None:
         raise RuntimeError("Posttraining protocol is not locked")
     design = read_json(DESIGN_PATH)
     arm = protocol["internal_test_arm"]
-    package = Path(arm["source_package"])
+    package = Path(PROJECT_ROOT / arm["source_package"])
     manifest_path = package / "manifest.json"
     audit_path = package / "audit.json"
     manifest = read_json(manifest_path)
@@ -87,7 +88,7 @@ def main() -> None:
     records: list[dict[str, object]] = []
     started = time.perf_counter()
     for epoch in arm["checkpoints"]:
-        checkpoint_path = Path(protocol["diagnostic_checkpoints"][str(epoch)])
+        checkpoint_path = Path(PROJECT_ROOT / protocol["diagnostic_checkpoints"][str(epoch)])
         checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
         if int(checkpoint["epoch"]) != int(epoch):
             raise RuntimeError(f"Checkpoint epoch mismatch: {checkpoint_path}")

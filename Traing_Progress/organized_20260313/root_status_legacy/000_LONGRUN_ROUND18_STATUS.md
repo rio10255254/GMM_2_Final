@@ -4,9 +4,9 @@ active_label:
 active_command: 
 plan_done: 7
 plan_total: 7
-last_report: D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\reports\ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_SUMMARY_20260313_142259.json
+last_report: Traing_Progress/organized_20260313/round18/selected/reports/ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_SUMMARY_20260313_142259.json
 last_exit: 0
 selected_candidate: r18_ec_highcenter
-selected_checkpoint: D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756\weights\best_tradeoff.pth.tar
-note: all steps completed | family=D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\reports\ROUND18_CENTERPUSH_MULTISCALE_SUMMARY_20260313_142259.md | audit=D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\reports\ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_SUMMARY_20260313_142259.md | recon=D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\external_validation\centerpush_r18_longrun_candidate\recon_manifest.json
+selected_checkpoint: Traing_Progress/organized_20260313/round18/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756/weights/best_tradeoff.pth.tar
+note: all steps completed | family=Traing_Progress/organized_20260313/round18/selected/reports/ROUND18_CENTERPUSH_MULTISCALE_SUMMARY_20260313_142259.md | audit=Traing_Progress/organized_20260313/round18/selected/reports/ROUND18_CENTERPUSH_CHECKPOINT_AUDIT_SUMMARY_20260313_142259.md | recon=Traing_Progress/organized_20260313/round18/external_validation/centerpush_r18_longrun_candidate/recon_manifest.json
 updated_at: 2026-03-13 14:31:08

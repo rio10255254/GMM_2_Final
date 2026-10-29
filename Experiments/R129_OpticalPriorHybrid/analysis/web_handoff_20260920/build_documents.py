@@ -9,9 +9,10 @@ from docx.shared import Inches,Pt,RGBColor
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 sys.stdout.reconfigure(encoding='utf-8')
-REPO=Path(r'D:\GMM_2_Final')
+REPO=Path(str(PROJECT_ROOT))
 SRC=REPO/'Deliverables/R129_Thesis_Rewrite_Ready_20260920'
 HAND=SRC/'04_Results/R129_Handoff'
 DATA=HAND/'01_Raw_R129_Comparison'
@@ -92,8 +93,8 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-SRC=Path(r'D:\GMM_2_Final\Deliverables\R129_Thesis_Rewrite_Ready_20260920')
-WORK=Path(r'D:\GMM_2_Final\Experiments\R129_OpticalPriorHybrid\results\web_handoff_20260920')
+SRC=Path(r'Deliverables/R129_Thesis_Rewrite_Ready_20260920')
+WORK=Path(r'Experiments/R129_OpticalPriorHybrid/results/web_handoff_20260920')
 cats=[('irregular_curved','Irregular boundaries'),('corners_lines_junctions','Lines and junctions'),('dense_close_structures','Dense structures'),('textured_edges','Textured edges'),('clean_identity','Clean control'),('noisy_identity','Noisy control'),('flat_negative','Flat control')]
 for no,sel in [(1,cats[:4]),(2,cats[4:])]:
  fig,axs=plt.subplots(len(sel),3,figsize=(9,2.6*len(sel)),layout='constrained')
@@ -106,7 +107,7 @@ for no,sel in [(1,cats[:4]),(2,cats[4:])]:
   axs[row,0].set_ylabel(label,fontsize=10)
  fig.savefig(WORK/f'figures/training_examples_{no}.png',dpi=160,bbox_inches='tight');plt.close(fig)
 '''
-subprocess.run([r'C:\Users\Rio\anaconda3\python.exe','-c',plot_code],check=True)
+subprocess.run(['python','-c',plot_code],check=True)
 
 # DOCUMENT 1
 d=Doc('01_完整改寫指南','MOSR論文改寫指南','本文件給將接手改寫的網頁版對話使用。它包含已決定的研究範圍、七章改寫安排、圖表配置、文字取捨與可直接使用的交接指令。請先閱讀本文件，再讀方法與結果文件。')

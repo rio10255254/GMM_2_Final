@@ -14,13 +14,14 @@ from typing import Any
 import cv2
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 EXPERIMENT_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = EXPERIMENT_DIR / "results" / "external_acm_stress"
 SETS = {
-    "R73_novel_shapes": Path(r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\data\r73_synthetic_acm_val\manifest.json"),
-    "R74_hard_microscopy": Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val\manifest.json"),
+    "R73_novel_shapes": Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val/manifest.json')),
+    "R74_hard_microscopy": Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val/manifest.json')),
 }
 
 

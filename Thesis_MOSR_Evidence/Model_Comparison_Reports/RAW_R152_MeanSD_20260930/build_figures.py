@@ -14,9 +14,10 @@ import numpy as np
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 from matplotlib.legend_handler import HandlerTuple
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 HERE = Path(__file__).resolve().parent
-ROOT = Path(r"D:\GMM_2_Final")
+ROOT = Path(str(PROJECT_ROOT))
 SOURCE = ROOT / "Experiments/R152_R148v2_SafeAdaptivePSF/results/comparison/all_displacements.csv"
 AUDIT = SOURCE.parents[1] / "final_audit.json"
 REFERENCE = HERE.parent / "WithinScan_30Step_16Models_20260930/summary.json"

@@ -12,16 +12,17 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 REPORT_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R62_TargetSampleBoost\reports\r62_v2_targetboost_displacement_eval"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports/r62_v2_targetboost_displacement_eval')
 )
 
 DATASETS = [
     {
         "dataset": "20260702_100MG",
-        "root": Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis"),
+        "root": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis')),
         "groups": ["x_1um", "x_0p5um"],
         "nominal_um": {"x_1um": 1.0, "x_0p5um": 0.5},
         "methods": [
@@ -46,7 +47,7 @@ DATASETS = [
     },
     {
         "dataset": "20260704_20x_5x",
-        "root": Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis"),
+        "root": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis')),
         "groups": ["20x_1um", "20x_0p5um", "5x_1um", "5x_0p5um"],
         "nominal_um": {"20x_1um": 1.0, "20x_0p5um": 0.5, "5x_1um": 1.0, "5x_0p5um": 0.5},
         "methods": [

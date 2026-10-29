@@ -8,13 +8,14 @@ import unittest
 import numpy as np
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-R69 = Path(CONFIG["paired_evidence"]["r69_root"])
+R69 = Path(PROJECT_ROOT / CONFIG["paired_evidence"]["r69_root"])
 TABLES = ROOT / "results" / "tables"
-RECON = Path(CONFIG["inference"]["reconstruction_dir"])
+RECON = Path(PROJECT_ROOT / CONFIG["inference"]["reconstruction_dir"])
 
 
 def sha256(path: Path) -> str:

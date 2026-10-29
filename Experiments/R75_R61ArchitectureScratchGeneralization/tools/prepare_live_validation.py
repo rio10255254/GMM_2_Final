@@ -7,11 +7,12 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 EXPERIMENT_DIR = Path(__file__).resolve().parents[1]
 SOURCE_IMAGE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\20260618_100MG\Image__2026-06-18__17-10-31.bmp"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/20260618_100MG/Image__2026-06-18__17-10-31.bmp')
 )
 OUTPUT_DIR = EXPERIMENT_DIR / "data" / "live_validation"
 OUTPUT_IMAGE = OUTPUT_DIR / "pillar_center9_50x_raw.bmp"

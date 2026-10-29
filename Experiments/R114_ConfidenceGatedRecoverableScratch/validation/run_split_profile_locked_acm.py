@@ -34,27 +34,24 @@ from validation.r114_split_profile_adapter import (  # noqa: E402
     load_model,
     predict_canonical_tiled,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
 LOCKED_ACM_SCRIPTS = Path(
-    r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark\scripts"
+    str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/scripts')
 )
 SUITE_SPECS = {
     "R73": {
         "manifest": ROOT / "validation" / "manifests" / "R73.json",
         "template": Path(
-            r"D:\GMM_2_Final\Experiments\R104_PhotometricInvariantCausalGateScratch"
-            r"\results\posttraining_validation\external_acm\R73_novel_shapes"
-            r"\config\experiment.json"
+            str(PROJECT_ROOT / 'Experiments/R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R73_novel_shapes/config/experiment.json')
         ),
     },
     "R74": {
         "manifest": ROOT / "validation" / "manifests" / "R74.json",
         "template": Path(
-            r"D:\GMM_2_Final\Experiments\R104_PhotometricInvariantCausalGateScratch"
-            r"\results\posttraining_validation\external_acm\R74_hard_microscopy"
-            r"\config\experiment.json"
+            str(PROJECT_ROOT / 'Experiments/R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R74_hard_microscopy/config/experiment.json')
         ),
     },
 }

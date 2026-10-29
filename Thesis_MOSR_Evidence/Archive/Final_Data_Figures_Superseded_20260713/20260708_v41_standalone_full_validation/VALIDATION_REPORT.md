@@ -4,7 +4,7 @@
 This package validates the long-trained V41-Standalone checkpoint with PSF disabled during inference.
 
 ## Checkpoint
-- Weight: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251\weights\best_tradeoff.pth.tar`
+- Weight: `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights/best_tradeoff.pth.tar`
 - Training finished at 16/16 epochs; best epoch was 16.
 - Training summary: `[SUMMARY] Best epoch = 16, tradeoff = 150.6067, gmf_obj = 150.8683, best_val_rec = 0.029687, best_val_ssim = 0.7068`
 
@@ -43,8 +43,8 @@ Main all-step findings:
 - 5x groups are mixed; they should be treated as limitation / robustness evidence, not as the main advantage claim.
 
 ## Main Files
-- CD comparison table: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260708_v41_standalone_full_validation\tables\cd_center36_old_v41_vs_v41_standalone_summary.csv`
-- Recommended displacement table: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260708_v41_standalone_full_validation\tables\displacement_recommended_profile_summary.csv`
-- Boundary-sensitive ROI V41 comparison: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260708_v41_standalone_full_validation\boundary_sensitive_roi_v41_compare`
-- Summary figures: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260708_v41_standalone_full_validation\figures\validation_summary`
-- Step trace figures: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260708_v41_standalone_full_validation\figures\validation_summary\step_traces`
+- CD comparison table: `Thesis_MOSR_Evidence/Final_Data_Figures/20260708_v41_standalone_full_validation/tables/cd_center36_old_v41_vs_v41_standalone_summary.csv`
+- Recommended displacement table: `Thesis_MOSR_Evidence/Final_Data_Figures/20260708_v41_standalone_full_validation/tables/displacement_recommended_profile_summary.csv`
+- Boundary-sensitive ROI V41 comparison: `Thesis_MOSR_Evidence/Final_Data_Figures/20260708_v41_standalone_full_validation/boundary_sensitive_roi_v41_compare`
+- Summary figures: `Thesis_MOSR_Evidence/Final_Data_Figures/20260708_v41_standalone_full_validation/figures/validation_summary`
+- Step trace figures: `Thesis_MOSR_Evidence/Final_Data_Figures/20260708_v41_standalone_full_validation/figures/validation_summary/step_traces`

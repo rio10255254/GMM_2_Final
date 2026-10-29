@@ -1,9 +1,10 @@
 function measure_acm()
-root='D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation';out=fullfile(root,'analysis','R109_comparison_20260907');
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
+root=fullfile(PROJECT_ROOT, 'Experiments/R119_SequenceGeometryValidation');out=fullfile(root,'analysis','R109_comparison_20260907');
 assert(isfile(fullfile(out,'render_record_v2.json')));assert(~isfile(fullfile(out,'acm_measurements.csv')));
 plan=jsondecode(fileread(fullfile(out,'protocol_v2.json')));method_names=plan.methods;count=numel(method_names);
 old=load(fullfile(root,'results/formal_sem/results/masks/acm_primary_masks.mat'));
-alt=load('D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/pitch_matched_reference.mat');
+alt=load(fullfile(PROJECT_ROOT, 'Experiments/R121_BoundaryAnchorFactorial/results/pitch_matched_reference.mat'));
 n=count*12*36*2;method=strings(n,1);reference=strings(n,1);exposure=zeros(n,1);pillar=zeros(n,1);valid=false(n,1);failure=strings(n,1);
 legacy_boundary=nan(n,1);common_boundary=nan(n,1);signed_area=nan(n,1);raw_offset_x=nan(n,1);raw_offset_y=nan(n,1);
 masks=false(104,104,36,12,count);intensity_cells=zeros(104,104,36,12,count,'uint8');k=0;raw_parity=zeros(36,12);r119_parity=zeros(36,12);

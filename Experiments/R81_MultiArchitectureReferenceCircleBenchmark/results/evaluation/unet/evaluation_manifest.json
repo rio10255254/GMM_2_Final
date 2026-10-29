@@ -11,7 +11,7 @@
     "source": "Ronneberger et al., MICCAI 2015; existing MOSR base-U-Net definition",
     "adaptation": "ordinary three-level U-like network without metrology-specific modules"
   },
-  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\unet\\best_unet.pth.tar",
+  "checkpoint": "Experiments/R81_MultiArchitectureReferenceCircleBenchmark/results/training/unet/best_unet.pth.tar",
   "checkpoint_epoch": 12,
   "checkpoint_validation": {
     "loss": 0.07158357743357169,

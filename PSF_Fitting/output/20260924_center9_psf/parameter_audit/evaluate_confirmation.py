@@ -11,6 +11,7 @@ import numpy as np
 from scipy.io import loadmat
 from scipy.ndimage import gaussian_filter
 from scipy.signal import fftconvolve
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parent
@@ -18,7 +19,7 @@ RUN = ROOT.parent
 IDS = [36, 35, 34, 30, 29, 28, 24, 23, 22]
 TILE = [69, 150, 231]
 CASES = ["confirm_original", "confirm_weight_0", "confirm_weight_0p1", "confirm_bads_restarts", "confirm_amp_fixed", "confirm_profile_gain_0", "confirm_profile_gain_0p1"]
-JULY = Path(r"D:\GMM_2_Final\PSF_Fitting\output\pillar_via_junction_psf_20260713\20x\fit_result\PSF_fitted_2D_FOVstack.mat")
+JULY = Path(str(PROJECT_ROOT / 'PSF_Fitting/output/pillar_via_junction_psf_20260713/20x/fit_result/PSF_fitted_2D_FOVstack.mat'))
 
 
 def records(path):

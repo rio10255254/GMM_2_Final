@@ -7,8 +7,9 @@ from dataset import Bank
 from losses import objective
 from model import Model
 from utils import model_config,now,save,setup,sha,train_config,verify_bank_lock
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
- setup(1522001);lock=verify_bank_lock();mc=model_config();cfg=train_config();assert sha(mc['base_checkpoint'])==mc['base_checkpoint_sha256'];device='cuda' if torch.cuda.is_available() else 'cpu';model=Model(mc,ROOT).to(device);bank=Bank(cfg);batch=bank.batch('dev',0,device);model.eval();model.set_deployment_scale(0)
+ setup(1522001);lock=verify_bank_lock();mc=model_config();cfg=train_config();assert sha(str(PROJECT_ROOT / mc['base_checkpoint']))==mc['base_checkpoint_sha256'];device='cuda' if torch.cuda.is_available() else 'cpu';model=Model(mc,ROOT).to(device);bank=Bank(cfg);batch=bank.batch('dev',0,device);model.eval();model.set_deployment_scale(0)
  with torch.inference_mode():out0,parts0=model(batch['source'],batch['operator_psf_indices'],True)
  exact=float((out0-parts0['base']).abs().max());model.set_deployment_scale(1)
  with torch.inference_mode():out1,parts1=model(batch['source'],batch['operator_psf_indices'],True)

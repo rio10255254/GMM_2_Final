@@ -9,9 +9,10 @@ from typing import Iterable
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-REPO = Path(r"D:\GMM_2_Final")
+REPO = Path(str(PROJECT_ROOT))
 EXPERIMENT_ROOT = REPO / "Experiments" / "R39_ShapeGeneralization"
 SWEEP_ROOT = EXPERIMENT_ROOT / "results" / "a030_x_a043_sweep"
 MOVED_OUTPUT_ROOT = (

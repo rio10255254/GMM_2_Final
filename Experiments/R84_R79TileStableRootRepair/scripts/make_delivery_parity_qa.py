@@ -4,9 +4,10 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Experiments\R84_R79TileStableRootRepair\results\delivery_root_fix")
+ROOT = Path(str(PROJECT_ROOT / 'Experiments/R84_R79TileStableRootRepair/results/delivery_root_fix'))
 OUTPUT = ROOT / "delivery_parity_visual_qa.png"
 CELL = 420
 CAPTION = 44
@@ -15,19 +16,19 @@ CAPTION = 44
 CASES = [
     (
         "Package example 512x512",
-        Path(r"D:\GMM_2_Final\Deliverables\MOSR_ONNX\example\input.bmp"),
+        Path(str(PROJECT_ROOT / 'Deliverables/MOSR_ONNX/example/input.bmp')),
         ROOT / "smoke_example_fixed" / "input.bmp",
         ROOT / "pytorch_reference_example" / "input.bmp",
     ),
     (
         "Customer image 1520x2180",
-        Path(r"D:\NTU_ImageDataset\Pitch1um_Y_100\Cropped_Output\VisionTop_20251029182653732.bmp"),
+        Path(str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/Cropped_Output/VisionTop_20251029182653732.bmp')),
         ROOT / "real_max_2180x1520" / "VisionTop_20251029182653732.bmp",
         ROOT / "pytorch_reference_max" / "VisionTop_20251029182653732.bmp",
     ),
     (
         "SEM P-01 1024x788",
-        Path(r"H:\From_2TB_D_disk\13_thesis\SEM_data\P-01.tiff"),
+        Path(str(PROJECT_ROOT / 'Shared_Sources/SEM_Originals/P-01.tiff')),
         ROOT / "sem_raw" / "P-01.bmp",
         ROOT / "pytorch_reference_sem" / "P-01.bmp",
     ),

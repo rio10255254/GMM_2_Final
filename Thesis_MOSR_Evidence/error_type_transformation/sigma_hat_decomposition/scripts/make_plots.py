@@ -16,9 +16,10 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-ROOT = Path("D:/GMM_2_Final")
+ROOT = Path(str(PROJECT_ROOT))
 OUT = ROOT / "Thesis_MOSR_Evidence/error_type_transformation/sigma_hat_decomposition/results"
 
 # Candidate display order (chronological + role grouping)

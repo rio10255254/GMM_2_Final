@@ -11,4 +11,4 @@
 3. `architecture/`：模型、資料、訓練與推論設計。
 4. `key_results/`：影響結論的表格與完成收據。
 
-完整重建、權重和訓練資料仍在原實驗：`D:\GMM_2_Final\Experiments\R146_SEMCoreHaloPSF25_MatchedPairs`。
+完整重建、權重和訓練資料仍在原實驗：`Experiments/R146_SEMCoreHaloPSF25_MatchedPairs`。

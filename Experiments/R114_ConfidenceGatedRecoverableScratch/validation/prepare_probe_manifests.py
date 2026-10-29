@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,10 +65,10 @@ def first_images(directory: Path, count: int) -> list[Path]:
 
 def real_manifest() -> dict:
     roots = {
-        "real_5x": Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\5x_1um\bmp"),
-        "real_20x": Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\20x_1um\bmp"),
-        "real_50x": Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_1um\bmp"),
-        "junhua": Path(r"D:\NTU_ImageDataset\Pitch1um_Y_100\Raw"),
+        "real_5x": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp')),
+        "real_20x": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp')),
+        "real_50x": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')),
+        "junhua": Path(str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/Raw')),
     }
     records = []
     for family, directory in roots.items():
@@ -104,8 +105,8 @@ def real_manifest() -> dict:
 
 def main() -> int:
     suites = {
-        "R73": Path(r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\data\r73_synthetic_acm_val\manifest.json"),
-        "R74": Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val\manifest.json"),
+        "R73": Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val/manifest.json')),
+        "R74": Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val/manifest.json')),
     }
     for name, path in suites.items():
         if not path.is_file():

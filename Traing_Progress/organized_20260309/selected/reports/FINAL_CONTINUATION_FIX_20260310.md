@@ -4,12 +4,12 @@
 
 1. `final` 不再從舊 seed 重新開始。
    - 位置：
-     `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_AutoTuneTrain.py`
+     `Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py`
    - 現在 `final` 會直接從 `sweep` 的 `best_tradeoff.pth.tar` 接續。
 
 2. `final` 進場時會重置 optimizer 與 epoch 計數。
    - 位置：
-     `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py`
+     `Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py`
    - 新增：
      - `LOAD_RESET_OPTIMIZER`
      - `LOAD_RESET_EPOCH`
@@ -34,7 +34,7 @@
 
 6. LongRun manifest 會優先採用 `recommended_deploy`。
    - 位置：
-     `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_LongRunSupervisor.py`
+     `Model/GeoEdgeAlignSR_v1_LongRunSupervisor.py`
 
 ## 這次修正的核心判斷
 

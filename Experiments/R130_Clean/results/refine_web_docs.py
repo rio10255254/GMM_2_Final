@@ -1,5 +1,6 @@
 from pathlib import Path
-p=Path(r'D:\GMM_2_Final\Experiments\R130_Clean\results\build_web_documents.py')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+p=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean/results/build_web_documents.py'))
 s=p.read_text(encoding='utf-8-sig')
 s=s.replace("st=self.doc.styles['Normal'];", "\n  for border in self.doc.styles.element.xpath('.//w:pBdr'):border.getparent().remove(border)\n  st=self.doc.styles['Normal'];")
 s=s.replace("df=df.copy();self.p(title)","df=df.copy();self.p(title);self.doc.paragraphs[-1].paragraph_format.keep_with_next=True")

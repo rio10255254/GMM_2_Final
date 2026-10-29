@@ -13,6 +13,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from skimage.registration import phase_cross_correlation
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parent
@@ -20,7 +21,7 @@ TRUSTED_ROOT = ROOT / "trusted_full_sequences"
 ALL_ROOT = ROOT / "all_sequences"
 OUT = ROOT / "boundary_projection_tuning_20x1um_5x0p5um_5x1um_20260706"
 MANUAL_ROI_ROOT = (
-    Path("D:/GMM_2_Final/Thesis_MOSR_Evidence")
+    Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
     / "Displacement_3Mag_ManualRun_20260705"
     / "manual_roi_runs"
 )

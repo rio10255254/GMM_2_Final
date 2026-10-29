@@ -2,7 +2,8 @@ from pathlib import Path
 import json,hashlib,zipfile,shutil,re
 import pymupdf
 from docx import Document
-R=Path(r'D:\GMM_2_Final');O=R/'Deliverables/R129_Web_Thesis_Documents_20260920';W=R/'Experiments/R129_OpticalPriorHybrid/results/web_handoff_20260920';S=R/'Deliverables/R129_Thesis_Rewrite_Ready_20260920'
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+R=Path(str(PROJECT_ROOT));O=R/'Deliverables/R129_Web_Thesis_Documents_20260920';W=R/'Experiments/R129_OpticalPriorHybrid/results/web_handoff_20260920';S=R/'Deliverables/R129_Thesis_Rewrite_Ready_20260920'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 inspection=O/'05_完整數據.xlsx.inspect.ndjson'
 if inspection.exists():shutil.move(str(inspection),str(W/'final_workbook_inspect.ndjson'))

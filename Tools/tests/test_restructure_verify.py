@@ -33,6 +33,12 @@ def test_python_equivalence_reevaluates_new_source():
     assert v.python_equivalence(old_src, old_src, 'AnalysisLab/run.py', 'Analyses/AnalysisLab/run.py', ctx_old, ctx_new, RULES) != []
 
 
+def test_evaluated_targets_count_a_climb_chain_once():
+    from restructure_python import evaluated_targets
+    src = "from pathlib import Path\nROOT = Path(__file__).resolve().parents[1]\nM = ROOT / 'Model' / 'a.py'\n"
+    assert evaluated_targets(src, 'AnalysisLab/run.py', Context(OLD, None, {}, 'moves')) == ['', 'Model/a.py']
+
+
 def test_residual_finds_paths_into_old_places_but_ignores_records():
     files = {'docs/x.md': 'see Validations/a.json and Deliverables/Validations/a.json\n',
              'docs/operations/TREE_RESTRUCTURE_20261028.md': '`Validations/a.json` → `Deliverables/Validations/a.json`\n',
@@ -77,3 +83,70 @@ def test_hash_consistency_with_duplicate_contents():
     before = {'a/x.txt': same, 'b/y.txt': same, 'r.json': ('{"sha256": "%s"}' % h).encode()}
     after = {'a/x.txt': same, 'b/y.txt': b'rewritten\n', 'r.json': before['r.json']}
     assert v.hash_consistency(v.hash_pairs(before), after, RULES) == []
+
+
+def test_structure_check_flags_json_that_stopped_parsing():
+    before = {'a.json': b'{"p": "x"}', 'b.ipynb': b'{"cells": []}', 'c.json': b'not json'}
+    after = {'a.json': b'{"p": "y"}', 'b.ipynb': b'{"cells": [}', 'c.json': b'still not json'}
+    assert v.structure(before, after, None) == ['b.ipynb: no longer parses as JSON']
+
+
+def test_content_addressed_files_are_recognised():
+    data = b'{"design": 1}\n'
+    h = hashlib.sha256(data).hexdigest()
+    assert v.content_addressed(f'Experiments/R94/archive/{h}/experiment_design.json', data)
+    assert not v.content_addressed(f'Experiments/R94/archive/{"0" * 64}/experiment_design.json', data)
+    assert not v.content_addressed('docs/x.md', data)
+
+
+def test_location_mode_may_gain_dynamic_expressions():
+    old = "from pathlib import Path\nS = Path('H:/Old/SEM') / name\n"
+    new = "from pathlib import Path\nPROJECT_ROOT = Path(__file__).resolve().parents[1]\nS = Path(str(PROJECT_ROOT / 'Shared_Sources/SEM')) / name\n"
+    ctx = Context(OLD, None, {}, 'location')
+    assert v.python_equivalence(old, new, 'Tools/x.py', 'Tools/x.py', ctx, ctx, None) == []
+
+
+def test_transform_tools_and_their_tests_are_records():
+    for name in ['Tools/restructure_python.py', 'Tools/tests/test_restructure_text.py', 'Tools/check_markdown_links.py',
+                 'Tools/tests/test_check_markdown_links.py', 'docs/operations/TREE_RESTRUCTURE_20261028/moves_phase2.json']:
+        assert v.is_record(name), name
+    assert not v.is_record('Tools/cloud_locator.py') and not v.is_record('Tools/tests/test_cloud_locator.py')
+
+
+def test_residual_reads_only_notebook_code_cells():
+    import json as _json
+    nb = {'cells': [{'cell_type': 'markdown', 'source': ['Ran with C:/Users/Rio/anaconda3/python.exe\n']},
+                    {'cell_type': 'code', 'source': ['x = 1\n']}]}
+    assert v.residual({'docs/a.ipynb': _json.dumps(nb)}, NEW, None, absolute_check=True) == []
+    nb['cells'][1]['source'] = ["p = 'D:/GMM_2_Final/Model/a.py'\n"]
+    assert len(v.residual({'docs/a.ipynb': _json.dumps(nb)}, NEW, None, absolute_check=True)) == 1
+
+
+def test_residual_ignores_folders_that_only_start_with_the_project_name():
+    files = {'Tools/a.py': "A = r'H:\\GMM_2_Final_Archive\\x'\n"}
+    assert v.residual(files, NEW, None, absolute_check=True) == []
+
+
+def test_residual_lets_prose_name_the_project_folder():
+    src = ('"""Run from d:/GMM_2_Final/ or anywhere."""\n'
+           '# the old home was D:\\GMM_2_Final\n'
+           "README = \'\'\'\nKept D:/GMM_2_Final的原模型 as it was.\n\'\'\'\n")
+    assert v.residual({'Tools/a.py': src}, NEW, None, absolute_check=True) == []
+    code = "ROOT = r'D:\\GMM_2_Final'\n"
+    assert len(v.residual({'Tools/a.py': code}, NEW, None, absolute_check=True)) == 1
+    tail = '"""Data in D:/GMM_2_Final/Model/a.py."""\n'
+    assert len(v.residual({'Tools/a.py': tail}, NEW, None, absolute_check=True)) == 1
+
+
+def test_location_equivalence_accepts_the_bare_root_as_dot():
+    from restructure_text import Edit
+    q = chr(39) * 3
+    e = Edit('Tools/a.py', 'Tools/a.py', 3, q + "refs to D:/GMM_2_Final; done" + q, q + "refs to .; done" + q, 'py:string', '', '')
+    assert v.equivalence([e], NEW, NEW, None, {}) == []
+
+
+def test_location_equivalence_accepts_the_bare_root_kept_in_prose():
+    from restructure_text import Edit
+    e = Edit('Tools/a.py', 'Tools/a.py', 1, '"""--root D:/GMM_2_Final scan D:/GMM_2_Final/Model/a.py"""',
+             '"""--root D:/GMM_2_Final scan Model/a.py"""', 'py:string', '', '')
+    assert v.equivalence([e], NEW, NEW, None, {}) == []

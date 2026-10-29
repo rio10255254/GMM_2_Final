@@ -18,6 +18,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
 from skimage.metrics import structural_similarity
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,13 +80,13 @@ def family_map(manifest: dict) -> dict[str, str]:
 
 
 def audit_inputs() -> dict:
-    data_root = Path(CONFIG["data"]["profile_root"])
-    data_manifest_path = Path(CONFIG["data"]["manifest"])
-    training_manifest_path = Path(CONFIG["model"]["training_manifest"])
-    training_root = Path(CONFIG["model"]["training_profile_root"])
-    checkpoint = Path(CONFIG["model"]["checkpoint"])
-    inference_script = Path(CONFIG["inference"]["script"])
-    psf_path = Path(CONFIG["model"]["psf_fitted_path"])
+    data_root = Path(PROJECT_ROOT / CONFIG["data"]["profile_root"])
+    data_manifest_path = Path(PROJECT_ROOT / CONFIG["data"]["manifest"])
+    training_manifest_path = Path(PROJECT_ROOT / CONFIG["model"]["training_manifest"])
+    training_root = Path(PROJECT_ROOT / CONFIG["model"]["training_profile_root"])
+    checkpoint = Path(PROJECT_ROOT / CONFIG["model"]["checkpoint"])
+    inference_script = Path(PROJECT_ROOT / CONFIG["inference"]["script"])
+    psf_path = Path(PROJECT_ROOT / CONFIG["model"]["psf_fitted_path"])
     for path in (data_root, data_manifest_path, training_manifest_path, training_root, checkpoint, inference_script, psf_path):
         if not path.exists():
             raise FileNotFoundError(path)
@@ -198,8 +199,8 @@ def validate_reconstruction_dir(path: Path, expected_names: list[str]) -> bool:
 
 def reconstruct() -> dict:
     audit = read_json(RESULTS / "input_audit.json") if (RESULTS / "input_audit.json").exists() else audit_inputs()
-    data_manifest = read_json(Path(CONFIG["data"]["manifest"]))
-    data_root = Path(CONFIG["data"]["profile_root"])
+    data_manifest = read_json(Path(PROJECT_ROOT / CONFIG["data"]["manifest"]))
+    data_root = Path(PROJECT_ROOT / CONFIG["data"]["profile_root"])
     commands = []
     outputs = {}
     for stage, family in family_map(data_manifest).items():
@@ -212,8 +213,8 @@ def reconstruct() -> dict:
             continue
         command = [
             CONFIG["inference"]["python"],
-            CONFIG["inference"]["script"],
-            "--weights", CONFIG["model"]["checkpoint"],
+            str(PROJECT_ROOT / CONFIG["inference"]["script"]),
+            "--weights", str(PROJECT_ROOT / CONFIG["model"]["checkpoint"]),
             "--input-dir", str(input_dir),
             "--gt-dir", str(gt_dir),
             "--recon-root", str(RECON_ROOT),
@@ -221,7 +222,7 @@ def reconstruct() -> dict:
             "--device", CONFIG["inference"]["device"],
             "--select-mode", "all",
             "--exts", CONFIG["inference"]["extension"],
-            "--psf-fitted-path", CONFIG["model"]["psf_fitted_path"],
+            "--psf-fitted-path", str(PROJECT_ROOT / CONFIG["model"]["psf_fitted_path"]),
             "--no-psf-from-ckpt",
             "--weak-psf-disable",
             "--psf-deconv-reg", str(CONFIG["model"]["psf_deconv_reg"]),
@@ -359,13 +360,13 @@ def metric_row(pred: np.ndarray, truth: np.ndarray) -> dict:
 
 
 def combo_dirs() -> dict[str, Path]:
-    summary = read_json(Path(CONFIG["secondary_reference"]["summary"]))
+    summary = read_json(Path(PROJECT_ROOT / CONFIG["secondary_reference"]["summary"]))
     return {row["feature_family"]: Path(row["output_dir"]) for row in summary["stages"]}
 
 
 def collect_metrics() -> pd.DataFrame:
-    data_manifest = read_json(Path(CONFIG["data"]["manifest"]))
-    data_root = Path(CONFIG["data"]["profile_root"])
+    data_manifest = read_json(Path(PROJECT_ROOT / CONFIG["data"]["manifest"]))
+    data_root = Path(PROJECT_ROOT / CONFIG["data"]["profile_root"])
     inference_manifest = read_json(RESULTS / "inference_manifest.json")
     combo = combo_dirs()
     rows = []

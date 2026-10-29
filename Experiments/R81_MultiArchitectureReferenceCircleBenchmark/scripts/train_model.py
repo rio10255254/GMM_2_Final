@@ -4,11 +4,12 @@ import argparse
 import json
 import sys
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 R81_ROOT = Path(__file__).resolve().parents[1]
 MODERN_ROOT = (
-    Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments")
+    Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments'))
     / "Modern_Restoration_Benchmarks_20260719"
 )
 if str(MODERN_ROOT) not in sys.path:
@@ -27,7 +28,7 @@ from model_zoo import (  # noqa: E402
 
 
 DEFAULT_PACKAGE = (
-    Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages")
+    Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages'))
     / "V42_SoftLabelSNR_FullStandalone_20260709"
 )
 

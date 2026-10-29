@@ -1,9 +1,9 @@
 function plot_v19_old_method_figures()
 % V19 thesis figure package using the original maximum-gradient displacement method.
 
-outputRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724";
-experimentRoot = "D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation";
-neuralRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS";
+outputRoot = "Thesis_MOSR_Evidence/Final_Data_Figures/07_V19_OLD_METHOD_FIGURE_PACKAGE_20260724";
+experimentRoot = "Experiments/R63_CausalBoundaryMotionAblation/results/evaluation";
+neuralRoot = "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS";
 modernRoot = fullfile(neuralRoot, "modern_baseline_three_morphology_20260719");
 
 dirs.displacement = fullfile(outputRoot, "01_displacement_improvement");

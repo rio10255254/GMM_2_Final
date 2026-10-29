@@ -1,5 +1,6 @@
 function extract_cases()
-root='D:/GMM_2_Final/Experiments/R132_BoundaryPolicyStudy'; ref=load('D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/sem_reference.mat'); meta=jsondecode(fileread(fullfile(root,'results','sem_cases.json'))); cases=meta.cases;
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
+root=fullfile(PROJECT_ROOT, 'Experiments/R132_BoundaryPolicyStudy'); ref=load(fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/sem_reference.mat')); meta=jsondecode(fileread(fullfile(root,'results','sem_cases.json'))); cases=meta.cases;
 masks=false(104,104,615); cells=zeros(104,104,615,'uint8'); valid=false(615,1); case_index=zeros(615,1); pillar=zeros(615,1); failure=strings(615,1); count=0;
 for k=1:numel(cases)
  im=imread(cases(k).image.path);

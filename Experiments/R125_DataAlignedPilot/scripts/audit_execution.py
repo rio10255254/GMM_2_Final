@@ -20,6 +20,7 @@ import time
 
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT=Path(__file__).resolve().parents[1]
 HASH_CACHE={}
@@ -169,7 +170,7 @@ def inspect_run(label,arm,seed,config,mh,data,order,initial,record,source_bank,p
     audit.require(ids==order and len(set(ids))==64,scope,'scene_order_changed_or_repeated')
     audit.require(sum(r['view_count'] for r in ledger)==128,scope,'wrong_view_count')
     for row in ledger:
-        sid=row['scene_id'];s=scope+'/'+str(row['optimizer_update']);expected=data[sid];meta=expected['metadata'];entry=expected['entry']
+        sid=row['scene_id'];s=scope+'/'+str(row['optimizer_update']);expected=str(PROJECT_ROOT / data[sid]);meta=expected['metadata'];entry=expected['entry']
         checks={
           'forward_input_hash':row['actual_forward_input_sha256']==expected['actual_forward_input_sha256'],
           'forward_input_shape':row['actual_input_shape']==expected['actual_input_shape'],
@@ -224,8 +225,8 @@ def inspect_run(label,arm,seed,config,mh,data,order,initial,record,source_bank,p
         audit.require(state['exp_avg'].shape==last[name].shape and torch.isfinite(state['exp_avg']).all().item() and torch.isfinite(state['exp_avg_sq']).all().item(),scope,'optimizer_moment_shape_or_finiteness_wrong',name)
     for group in optimizer['param_groups']:
         audit.require(group['lr']==config['optimizer']['lr'] and group['weight_decay']==config['optimizer']['weight_decay'],scope,'optimizer_hyperparameters_changed')
-    last_profile=data[order[-1]]['metadata']['profile'];os=ck['model_state'];extra=os['observation._extra_state']
-    audit.require(tensor_hash(os['observation.kernel'])==data[order[-1]]['actual_kernel_sha256'] and extra['calibration_id']==last_profile['calibration_id'],scope,'last_simulation_profile_binding_wrong')
+    last_profile=data[str(PROJECT_ROOT / order[-1])]['metadata']['profile'];os=ck['model_state'];extra=os['observation._extra_state']
+    audit.require(tensor_hash(os['observation.kernel'])==data[str(PROJECT_ROOT / order[-1])]['actual_kernel_sha256'] and extra['calibration_id']==last_profile['calibration_id'],scope,'last_simulation_profile_binding_wrong')
     implemented=os['observation.vertical_factors'].double().T@os['observation.horizontal_factors'].double()
     actual_error=float((implemented-os['observation.kernel'].double()).abs().sum())
     audit.require(actual_error<=1e-6 and math.isclose(actual_error,extra['factorization']['measured_kernel_L1_error'],abs_tol=1e-12,rel_tol=0),scope,'final_factorization_record_mismatch')

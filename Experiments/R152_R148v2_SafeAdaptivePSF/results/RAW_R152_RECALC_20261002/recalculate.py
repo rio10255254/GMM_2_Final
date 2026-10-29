@@ -9,6 +9,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.optimize import least_squares
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(__file__).resolve().parent
@@ -44,9 +45,9 @@ def check_artifacts(plan):
         checks.append(dict(role='locked_source',path=str(ROOT/relative),sha256=actual))
     complete=read(ROOT/'runs/formal_8192/training_complete.json')
     for role in ('training_checkpoint','deployed_checkpoint'):
-        receipt=complete[role];actual=digest(receipt['path']);assert actual==receipt['sha256']
-        checks.append(dict(role=role,path=receipt['path'],sha256=actual))
-    base=read(ROOT/'config/model.json');assert digest(base['base_checkpoint'])==base['base_checkpoint_sha256']
+        receipt=complete[role];actual=digest(str(PROJECT_ROOT / receipt['path']));assert actual==receipt['sha256']
+        checks.append(dict(role=role,path=str(PROJECT_ROOT / receipt['path']),sha256=actual))
+    base=read(ROOT/'config/model.json');assert digest(str(PROJECT_ROOT / base['base_checkpoint']))==base['base_checkpoint_sha256']
     tasks=[]
     for f in plan['frames']:
         receipt_path=ROOT/'results/reconstruction'/f['run']/f"{f['index']+1:02d}.json"

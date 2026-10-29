@@ -1,17 +1,19 @@
 from r135_common import *
 import importlib,cv2
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def build(tag):
-    plan=load(ROOT/'config/plan.json');info=plan['models'][tag];cp=Path(info['checkpoint']['path']);assert sha(cp)==info['checkpoint']['sha256'];setup();details={}
+    plan=load(ROOT/'config/plan.json');info=plan['models'][tag];cp=Path(PROJECT_ROOT / info['checkpoint']['path']);assert sha(cp)==info['checkpoint']['sha256'];setup();details={}
     if tag in ['V42_old','R61']:
-        path=Path(info['inference'] if tag=='V42_old' else info['command'][1]);sys.path.insert(0,str(path.parent));mod=module('legacy_native_inference',path);captured={}
+        path=Path(str(PROJECT_ROOT / info['inference']) if tag=='V42_old' else str(PROJECT_ROOT / info['command'][1]));sys.path.insert(0,str(path.parent));mod=module('legacy_native_inference',path);captured={}
         class Captured(BaseException):pass
         def capture(model,device,in_path,out_path,align_factor,**kw):captured.update(model=model,device=device,align=align_factor,options=kw);raise Captured()
         original_run=mod.run_one;mod.run_one=capture
-        if tag=='V42_old':args=[str(path),'--weights',str(cp),'--device','cuda:0','--input-dir',str(Path(plan['frames'][0]['source']['path']).parent),'--recon-root',str(ROOT/'results'/tag/'native_loader'),'--output-name','loader','--strict-load']
+        if tag=='V42_old':args=[str(path),'--weights',str(cp),'--device','cuda:0','--input-dir',str(Path(PROJECT_ROOT / plan['frames'][0]['source']['path']).parent),'--recon-root',str(ROOT/'results'/tag/'native_loader'),'--output-name','loader','--strict-load']
         else:
-            args=info['command'][1:].copy()
-            for opt,val in [('--weights',str(cp)),('--input-dir',str(Path(plan['frames'][0]['source']['path']).parent)),('--recon-root',str(ROOT/'results'/tag/'native_loader')),('--output-name','loader')]:args[args.index(opt)+1]=val
+            args=[a if a.startswith('-') or not ('/' in a or '\\' in a) else str(PROJECT_ROOT / a) for a in info['command'][1:]]
+            for opt,val in [('--weights',str(cp)),('--input-dir',str(Path(PROJECT_ROOT / plan['frames'][0]['source']['path']).parent)),('--recon-root',str(ROOT/'results'/tag/'native_loader')),('--output-name','loader')]:args[args.index(opt)+1]=val
         previous=sys.argv;sys.argv=args
         try:mod.main()
         except Captured:pass
@@ -45,7 +47,7 @@ def build(tag):
             x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda()
             with torch.no_grad():value=tile.tiled_forward(m,x,core=256,halo=m.required_halo);return net.boundary_guard(x,value,m.required_halo,16)[0][0,0].cpu().numpy()
     else:
-        directory=Path(info['package']) if tag=='R134_P1' else REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912';sys.path.insert(0,str(directory));runtime=module('frozen_package_runtime',directory/'runtime.py');m,_=runtime.create();m.load_state_dict(torch.load(cp,map_location='cpu')['model']);m.eval();tile=module('r129_staged',P134.parent/'tiled.py')
+        directory=Path(PROJECT_ROOT / info['package']) if tag=='R134_P1' else REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912';sys.path.insert(0,str(directory));runtime=module('frozen_package_runtime',directory/'runtime.py');m,_=runtime.create();m.load_state_dict(torch.load(cp,map_location='cpu')['model']);m.eval();tile=module('r129_staged',P134.parent/'tiled.py')
         def predict(raw):
             x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda()
             with torch.no_grad():v=m(x) if tag=='R134_P1' or max(raw.shape)<=1024 else tile.predict(m,x);return guard(x,v,16)[0,0].cpu().numpy()
@@ -62,5 +64,5 @@ def cached(tag,f):
     if not path.exists():return None,None
     r=load(path);assert r['source']==f['source'];v=r['output_float'];assert sha(v['path'])==v['sha256'];data=np.load(v['path']);value=data['neural_output'] if tag=='R129_W16' else data['output']
     if tag=='R129_W16':
-        raw=cv2.imread(f['source']['path'],0);x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda();y=torch.from_numpy(value)[None,None].cuda();value=guard(x,y,16)[0,0].cpu().numpy()
+        raw=cv2.imread(str(PROJECT_ROOT / f['source']['path']),0);x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda();y=torch.from_numpy(value)[None,None].cuda();value=guard(x,y,16)[0,0].cpu().numpy()
     return value,dict(record=v,source_record=record(path),transform='guard16 from stored preguard output' if tag=='R129_W16' else 'identity')

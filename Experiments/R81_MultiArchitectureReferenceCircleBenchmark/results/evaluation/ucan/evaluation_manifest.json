@@ -30,7 +30,7 @@
     "source": "Tan et al., CVPR 2026; official UCAN code",
     "adaptation": "official convolution-attention core adapted to one-channel x1 restoration; trained from scratch"
   },
-  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\ucan\\best_ucan.pth.tar",
+  "checkpoint": "Experiments/R81_MultiArchitectureReferenceCircleBenchmark/results/training/ucan/best_ucan.pth.tar",
   "checkpoint_epoch": 12,
   "checkpoint_validation": {
     "loss": 0.07900391545319368,

@@ -1,5 +1,5 @@
 function run_competitive_review()
-root='D:/GMM_2_Final/Experiments/R128_SourceOnlyFullTraining';
+root='Experiments/R128_SourceOnlyFullTraining';
 out=fullfile(root,'results','competitive_review');
 assert(isfile(fullfile(out,'plan.json')) && isfile(fullfile(out,'preparation.json')));
 assert(~isfile(fullfile(out,'measurements.csv')));

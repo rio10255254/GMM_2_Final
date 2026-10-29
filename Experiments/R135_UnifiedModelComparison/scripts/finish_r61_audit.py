@@ -1,6 +1,8 @@
 from r135_common import *
 import pandas as pd,shutil,re
 from scipy.io import loadmat
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
     out=ROOT/'results/r61_training_audit';s=load(out/'summary.json');targets=pd.read_csv(out/'SEM_target_matches.csv');roster=pd.read_csv(out/'training_roster.csv');training=targets[(targets.split=='train')&(targets.feature=='pillar')];ids=sorted(int(v) for v in training.sem_id.unique());assert len(ids)==35
     lab=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR';r58=lab/'Training_Data/r60_full_power/hs100mg_basler/r58_frac050_train/manifest.json';r58m=load(r58);refs=pd.read_csv(out/'SEM_reference_values.csv');means={k:float(refs[k].mean()) for k in ['pillar','via']};assert all(abs(means[k]-r58m['sem_radius_nm'][k])<1e-9 for k in means)
@@ -65,5 +67,5 @@ R61的6.59nm細形狀差距等數字仍是實際量到的結果，但應標示�
     p=REPO/'ESTIMATOR_POLICY.json';v=load(p);x=next(x for x in v['open_side_tracks'] if x.get('candidate_id')=='r135_comparison');x.update(r61_same_SEM_reference_in_training=True,r61_individual_eval_pillar_ids_in_final_train=35,r61_training_audit='Experiments/R135_UnifiedModelComparison/reports/R135_R61_TRAINING_AUDIT.md',r61_current201_direct_photo_reuse_not_established=True,model_promoted=False);atomic(p,v)
     p=REPO/'Experiments/INDEX.md';t=p.read_text(encoding='utf-8-sig');t=re.sub(r'(?m)^\| R135 .*$', '| R135 統一模型比較 | [結果](R135_UnifiedModelComparison/reports/R135_RESULTS.md)／[R61資料審查](R135_UnifiedModelComparison/reports/R135_R61_TRAINING_AUDIT.md) | 7組比較完成；R61確認使用35顆評估SEM尺寸值及均值監督，不能當乾淨替代；數值結果保留 |',t);p.write_text(t,encoding='utf-8')
     p=ROOT/'README.md';t=p.read_text(encoding='utf-8');p.write_text(t+'\n\n**資料來源解讀更新：** [R61訓練資料審查](reports/R135_R61_TRAINING_AUDIT.md)確認35顆評估SEM尺寸值進入末階段訓練目標；數值成績保留，不能把R61當成未使用相關答案的替代品。\n',encoding='utf-8')
-    verify();assert all(sha(r['path'])==r['sha256'] for r in s['inputs']);delivery=load(ROOT/'results/delivery_complete.json');assert sha(delivery['report']['path'])==delivery['report']['sha256'];save(out/'complete.json',dict(report=record(report),original_data_weights_and_comparison_report_unchanged=True,individual_eval_SEM_pillars_in_train=35,SEM_supervision_training_rows=1284,real_crop_pairs_reproduced=852,no_promotion=True));print('R61 audit complete:35of36SEMsize references in training; originals unchanged')
+    verify();assert all(sha(r['path'])==r['sha256'] for r in s['inputs']);delivery=load(ROOT/'results/delivery_complete.json');assert sha(str(PROJECT_ROOT / delivery['report']['path']))==delivery['report']['sha256'];save(out/'complete.json',dict(report=record(report),original_data_weights_and_comparison_report_unchanged=True,individual_eval_SEM_pillars_in_train=35,SEM_supervision_training_rows=1284,real_crop_pairs_reproduced=852,no_promotion=True));print('R61 audit complete:35of36SEMsize references in training; originals unchanged')
 if __name__=='__main__':main()

@@ -10,6 +10,7 @@ import cv2
 import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
@@ -29,8 +30,7 @@ DEFAULT_OUTPUT = (
     / "measurement_method_comparison_20260724"
 )
 CORE_PATH = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\scripts\pillar_motion_core.py"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/scripts/pillar_motion_core.py')
 )
 METHODS = ("Raw", "NAFNet", "EDSR", "MOSR")
 MORPHOLOGY_ORDER = ("pillar", "via")

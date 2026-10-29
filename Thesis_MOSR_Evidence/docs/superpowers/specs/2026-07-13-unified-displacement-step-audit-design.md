@@ -58,7 +58,7 @@ The candidate thesis table is fixed in advance to `platform_valid_25pct`. `all_w
 
 The motion and cross-method tolerances are recomputed at 20%, 25%, and 30%. For both signed-step standard deviation and mean within-grid disagreement, an absolute Raw-V42 difference of at most 1.0 nm is `tie`; otherwise V42 lower is `improved` and V42 higher is `worse`. A conclusion is called robust only when this direction does not change across all three tolerances. Raw and V42 are compared on the exact same locked pair list when V42 is evaluable; Raw eligibility itself is unchanged. The existing boundary tracker is cross-checked against independent local two-dimensional tracking.
 
-Formal predeclared event checks are limited to: `50x_x_0p5um` pairs ending at frames 27 and 31 must be cross-session; `50x_x_1um` pair ending at frame 1 must be cross-session; and `20x_0p5um` pairs ending at frames 15, 45, and 46 must fail the 25% Raw motion rule. The only permitted edge-phase reference is `D:/GMM_2_Final/20260704_20x_5x_analysis/phase_algorithm_final_summary/edge_phase_primary_gap30_summary_um.csv`, Raw rows only, and it is diagnostic rather than an eligibility input.
+Formal predeclared event checks are limited to: `50x_x_0p5um` pairs ending at frames 27 and 31 must be cross-session; `50x_x_1um` pair ending at frame 1 must be cross-session; and `20x_0p5um` pairs ending at frames 15, 45, and 46 must fail the 25% Raw motion rule. The only permitted edge-phase reference is `20260704_20x_5x_analysis/phase_algorithm_final_summary/edge_phase_primary_gap30_summary_um.csv`, Raw rows only, and it is diagnostic rather than an eligibility input.
 
 ## Metric definitions
 

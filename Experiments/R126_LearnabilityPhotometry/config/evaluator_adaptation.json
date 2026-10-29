@@ -1,8 +1,8 @@
 {
-  "source_path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\scripts\\evaluate_real_pilot_v2.py",
-  "source_sha256": "dfb8a50728a3b8664f81cf481e9b0d4ee35f3f3412f40a753be51a41b70cb4fe",
-  "adapted_path": "D:\\GMM_2_Final\\Experiments\\R126_LearnabilityPhotometry\\scripts\\evaluate_real.py",
-  "adapted_sha256": "1ec30476e8532845e21fad1377e49056269642b87f46c28f070a4c4eb3d04b37",
+  "source_path": "Experiments/R125_DataAlignedPilot/scripts/evaluate_real_pilot_v2.py",
+  "source_sha256": "849144d9cf15264d24c432d113c7165461f7695030361039fa37548e83a47f89",
+  "adapted_path": "Experiments/R126_LearnabilityPhotometry/scripts/evaluate_real.py",
+  "adapted_sha256": "410050a279a49b7adbcee569fa3a2312d9345887d4987f0a8dacd17953725ade",
   "replacements": [
     {
       "old": "EXPS = ROOT.parent",
@@ -86,5 +86,5 @@
     }
   ],
   "archived_sem_and_phase_calculation_functions_changed": false,
-  "panel": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_panel_v2\\frozen_panel.json"
+  "panel": "Experiments/R125_DataAlignedPilot/results/real_panel_v2/frozen_panel.json"
 }

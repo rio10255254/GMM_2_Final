@@ -8,7 +8,7 @@
 
 ## 真正使用的 SEM 外框
 
-來源是既有 R69 驗證留下的 `D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\masks\acm_primary_masks.mat`。它的 `truth_masks` 是從原始 P 系列 TIFF 逐顆取出的 36 個完整輪廓，不是 Excel 直徑推導的圓。所用九顆沿用已核對的現行 20× 排列：
+來源是既有 R69 驗證留下的 `Experiments/R69_ACMContourSEMValidation/results/masks/acm_primary_masks.mat`。它的 `truth_masks` 是從原始 P 系列 TIFF 逐顆取出的 36 個完整輪廓，不是 Excel 直徑推導的圓。所用九顆沿用已核對的現行 20× 排列：
 
 ```text
 36 35 34

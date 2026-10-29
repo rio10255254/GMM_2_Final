@@ -11,9 +11,10 @@ import numpy as np
 
 from displacement_common import write_csv, write_json
 from measure_gmf_template import measure_sequence
+_PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-PROJECT_ROOT = Path(r"D:\GMM_2_Final")
+PROJECT_ROOT = Path(str(_PROJECT_ROOT))
 CAMERA_PIXEL_UM = 3.45
 
 

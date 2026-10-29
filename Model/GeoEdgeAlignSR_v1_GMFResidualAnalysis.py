@@ -1,9 +1,11 @@
 import os
 import math
 from datetime import datetime
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
-BASE_DIR = r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_round18_round22"
+BASE_DIR = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_round18_round22')
 MODELS = ["round18_baseline", "round22_stepguard", "round22_hold"]
 PITCHES = ["pitch1um_y_100", "pitch0p1um_y_60", "pitch0p01um_y_40"]
 OUTLIER_PITCH = "pitch0p1um_y_60"

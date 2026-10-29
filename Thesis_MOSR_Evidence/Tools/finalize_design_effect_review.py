@@ -1,6 +1,7 @@
 from pathlib import Path
 import csv,hashlib,json
-ROOT=Path(r'D:\GMM_2_Final\Thesis_MOSR_Evidence\Research_Design_Effect_Review_20260926')
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+ROOT=Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Research_Design_Effect_Review_20260926'))
 def sha(p):
  h=hashlib.sha256()
  with p.open('rb') as f:

@@ -22,10 +22,10 @@ Last updated: 2026-06-12
 
 | Lab file | Copied from |
 |---|---|
-| `Training_Data/Data_Simulaion.py` | `D:/GMM_2_Final/Training_Data/Data_Simulaion.py` |
-| `Training_Data/PSF_Convolution.py` | `D:/GMM_2_Final/Training_Data/PSF_Convolution.py` |
-| `Experiments/R39_ShapeGeneralization/scripts/r39_shape_data.py` | `D:/GMM_2_Final/Experiments/R39_ShapeGeneralization/scripts/r39_shape_data.py` |
-| `Experiments/R40_MicroscopyFeatureCoverage/scripts/r40_micro_data.py` | `D:/GMM_2_Final/Experiments/R40_MicroscopyFeatureCoverage/scripts/r40_micro_data.py` |
+| `Training_Data/Data_Simulaion.py` | `Training_Data/Data_Simulaion.py` |
+| `Training_Data/PSF_Convolution.py` | `Training_Data/PSF_Convolution.py` |
+| `Experiments/R39_ShapeGeneralization/scripts/r39_shape_data.py` | `Experiments/R39_ShapeGeneralization/scripts/r39_shape_data.py` |
+| `Experiments/R40_MicroscopyFeatureCoverage/scripts/r40_micro_data.py` | `Experiments/R40_MicroscopyFeatureCoverage/scripts/r40_micro_data.py` |
 
 ## Lab Extensions
 

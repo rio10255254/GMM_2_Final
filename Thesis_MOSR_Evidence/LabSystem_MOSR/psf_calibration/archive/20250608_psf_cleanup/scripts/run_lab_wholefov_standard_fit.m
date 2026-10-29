@@ -1,7 +1,8 @@
+PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))))));
 % Run LabSystem_MOSR PSF fitting with the copied project-standard Whole-FOV fitter.
 %
 % This is only a thin lab entry point. The fitting logic lives in
-% scripts/standard_wholefov/, copied from D:/GMM_2_Final/PSF_Fitting.
+% scripts/standard_wholefov/, copied from PSF_Fitting.
 
 clear; clc;
 
@@ -13,7 +14,7 @@ standard_dir = fullfile(script_dir, 'standard_wholefov');
 input_folder = fullfile(psf_root, 'inputs', '20250605_standard_wholefov', 'measured');
 gt_path = fullfile(psf_root, 'inputs', '20250605_standard_wholefov', 'GT', 'LAB_GT_REQUIRED.bmp');
 output_root = fullfile(psf_root, 'results', '20250605_standard_wholefov');
-dependency_root = 'D:/GMM_2_Final/PSF_Fitting';
+dependency_root = fullfile(PROJECT_ROOT, 'PSF_Fitting');
 psf_basis_path = fullfile(dependency_root, 'SimulatePSF', 'psf_multi.mat');
 
 addpath(standard_dir);

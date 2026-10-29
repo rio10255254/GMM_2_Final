@@ -3,8 +3,9 @@ from __future__ import annotations
 import importlib.util,json,sys
 from pathlib import Path
 import pandas as pd,torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT=Path(__file__).resolve().parents[1];MODULE=ROOT/'scripts/infer_sem_parameter_smoothing.py';OUTPUT=ROOT/'results/parameter_smoothing_sigma1'
-SOURCES={'R73':Path(r'D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\data\r73_synthetic_acm_val\src'),'R74':Path(r'D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val\src')}
+SOURCES={'R73':Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val/src')),'R74':Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val/src'))}
 def load(name,path):
  spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module);return module
 smooth=load('r108g_external_smooth_core',MODULE);core=smooth.core

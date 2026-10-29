@@ -29,6 +29,7 @@ for folder in (ROOT / "model", ROOT / "training"):
 from r104_model import build_model, count_parameters  # noqa: E402
 from r104_dataset import R104Dataset  # noqa: E402
 from losses import central_crop, highpass, loss_components  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 CONFIG_PATH = ROOT / "config" / "experiment.json"
 CONFIG = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
@@ -94,7 +95,7 @@ def verify_sources() -> dict[str, Any]:
     if not bool(CONFIG["training"].get("formal_training_authorized")):
         raise RuntimeError("Formal training is not authorized in experiment.json")
     reference = json.loads((ROOT / "data" / "TRAINING_DATA_REFERENCE.json").read_text(encoding="utf-8"))
-    package = Path(CONFIG["data"]["base_package"])
+    package = Path(PROJECT_ROOT / CONFIG["data"]["base_package"])
     audit_path = package / "audit.json"
     manifest_path = package / "manifest.json"
     if not audit_path.is_file() or not manifest_path.is_file():

@@ -1,8 +1,8 @@
 {
   "reason": "Original MATLAB runner used the reserved methods keyword as a variable and failed before measurements. Rename local label variable in new runner only. Original runner, freeze and failure log preserved.",
-  "original_sha256": "908c0b76e7fbb6a218d6a9cc87aef0348f905d348b8ff98d67fd4e790081ac34",
+  "original_sha256": "6b2ac234b25f1a6ed3cbbc8fe25170369be97d697e03367f8e553fcc16f173b3",
   "revised_runner": "scripts/evaluate_sem_v2.m",
-  "revised_sha256": "a9cfb301cf2264b46c41bfda212637c18dc149cf51d7ba5f9866ca8c918736d4",
+  "revised_sha256": "425210b158bba75b0e35dcf453ee628e86e13052f86866a2839b382e26a45bfb",
   "measurement_parameters_changed": false,
   "training_or_reconstruction_changed": false
 }

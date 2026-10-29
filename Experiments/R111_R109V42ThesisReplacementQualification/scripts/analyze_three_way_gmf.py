@@ -10,13 +10,13 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results" / "external_gmf_three_way"
 REFERENCE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages"
-    r"\Pitch1um_Y_100_Raw_Even_R109E48"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48')
 )
 V42_PACKAGE = ROOT / "external_gmf_v42"
 POLICY = ROOT / "config" / "replacement_metric_policy_v2.json"

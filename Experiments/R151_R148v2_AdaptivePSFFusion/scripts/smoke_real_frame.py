@@ -6,8 +6,9 @@ import cv2,numpy as np,torch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from model import Model
 from utils import model_config,now,save,setup,verify_bank_lock
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-IMAGE=Path(r"C:\Users\Rio\Downloads\20260902_100MF_uncertainty\20260902_100MF_uncertainty\20260903\001804_XY_0\1.bmp")
+IMAGE=Path(str(PROJECT_ROOT / 'Shared_Sources/PI_Repeatability_20260903/raw/001804_XY_0/1.bmp'))
 def main():
  setup(1512701);verify_bank_lock();raw=cv2.imread(str(IMAGE),cv2.IMREAD_UNCHANGED);x=torch.from_numpy(raw.astype(np.float32)[None,None]/255).cuda();model=Model(model_config(),ROOT).cuda().eval();generator=torch.Generator(device='cuda').manual_seed(1512702)
  with torch.no_grad():

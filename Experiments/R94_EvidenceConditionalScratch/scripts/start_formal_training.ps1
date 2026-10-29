@@ -5,7 +5,7 @@ param(
 $ErrorActionPreference = "Stop"
 $env:CUDA_MODULE_LOADING = "EAGER"
 $Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$Python = python
 $LogDirectory = Join-Path $Root "logs"
 New-Item -ItemType Directory -Force -Path $LogDirectory | Out-Null
 $Stdout = Join-Path $LogDirectory "formal_stdout.log"

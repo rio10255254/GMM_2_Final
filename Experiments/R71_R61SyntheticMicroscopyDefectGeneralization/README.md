@@ -7,7 +7,7 @@
 完整執行：
 
 ```powershell
-& 'C:\Users\Rio\anaconda3\python.exe' 'D:\GMM_2_Final\Experiments\R71_R61SyntheticMicroscopyDefectGeneralization\scripts\run_r71.py' --stage all
+& 'C:\Users\Rio\anaconda3\python.exe' 'Experiments/R71_R61SyntheticMicroscopyDefectGeneralization/scripts/run_r71.py' --stage all
 ```
 
 結果說明在 `reports/R71_RESULTS_TW.md`。

@@ -7,11 +7,12 @@ from motion134 import load_reader
 from tiled import tiled_prior
 from torch.nn import functional as F
 import cv2,pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 OUT=ROOT/'results/cross_axis_diagnosis';SEQ='20x_0p5um'
 
 def main():
-    OUT.mkdir(exist_ok=False);panel=load(ROOT/'config/motion_panel.json');plan=load(panel['source_plan']['path']);cfg=load(panel['configuration']['path']);spec=cfg['sequences'][SEQ];core,scope=load_reader()(plan)
+    OUT.mkdir(exist_ok=False);panel=load(ROOT/'config/motion_panel.json');plan=load(str(PROJECT_ROOT / panel['source_plan']['path']));cfg=load(str(PROJECT_ROOT / panel['configuration']['path']));spec=cfg['sequences'][SEQ];core,scope=load_reader()(plan)
     protected=[record(ROOT/'results/long_admission.json'),record(ROOT/'config/full_motion_admission.json'),*load(ROOT/'config/packaging_source_binding.json')['sources']]
     save(OUT/'plan.json',dict(scope='Post-hoc explanation of failed pair; cannot change original admission',sequence=SEQ,frames=[16,17],models=['A_s1342001','A_s1342002','C_s1342001','C_s1342002'],interventions=['C_s1342001 frozen prefixes1to4','C_s1342001 optical cue off','float versus exported8bit','matched reader settings','known horizontal translations of captured frame16'],virtual_horizontal_shifts_px=[-3.,float(spec['expected_signed_dx_px']),-2.5],protected_sources=protected,completion='Repeat measured failure; quantify per-pillar/neighbor contributions, interface/seed/optics/rounding/reader sensitivity and known-motion response; preserve negative qualification'))
     raws={};inputs={};rows=[];parity=[]
@@ -66,7 +67,7 @@ def main():
         measure(name+'_Raw_float',17,shifted,raw=shifted);x=torch.from_numpy(shifted)[None,None].cuda()
         with torch.no_grad():value=guard(x,m(x,prior_runner=lambda p,f:tiled_prior(p,f,512,16)))[0,0].cpu().numpy()
         measure(name+'_C_float',17,value,raw=shifted);np.savez_compressed(OUT/(name+'.npz'),raw=shifted,reconstructed=value,dx=np.array(dx));print('Measured known horizontal input shift',dx,flush=True)
-    pd.concat(rows).to_csv(OUT/'centers.csv',index=False);assert all(sha(r['path'])==r['sha256'] for r in protected);verify()
+    pd.concat(rows).to_csv(OUT/'centers.csv',index=False);assert all(sha(str(PROJECT_ROOT / r['path']))==r['sha256'] for r in protected);verify()
     save(OUT/'forward_complete.json',dict(exact_original_fullfield_replays=parity,measurement_rows=sum(len(t) for t in rows),protected_sources_unchanged=True,source=record(__file__),inputs=inputs))
     print('Diagnostic forward and readout probes complete',flush=True)
 if __name__=='__main__':main()

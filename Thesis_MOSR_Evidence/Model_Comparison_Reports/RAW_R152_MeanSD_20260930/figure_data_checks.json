@@ -8,7 +8,7 @@
   "adjacent_observations": 1800,
   "main_figure": "At each step, mean measured displacement across 30 scans ± sample SD (ddof=1)",
   "secondary_figure": "One within-scan sample SD per 30-step scan; band is their mean ± sample SD",
-  "source": "D:\\GMM_2_Final\\Experiments\\R152_R148v2_SafeAdaptivePSF\\results\\comparison\\all_displacements.csv",
+  "source": "Experiments/R152_R148v2_SafeAdaptivePSF/results/comparison/all_displacements.csv",
   "source_sha256": "32cdcd4cb3f4816dcf2b677ba8ce550a3c2d440fde7fb165ecf37ce34cca2eb0",
   "source_audit_passed": true,
   "independent_statistics_checks": "All 60 means, 60 SDs and 60 within-scan SDs checked with statistics",

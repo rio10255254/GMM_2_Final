@@ -7,10 +7,11 @@ from pathlib import Path
 
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT = Path(__file__).resolve().parents[1]
-R143 = Path(r"D:\GMM_2_Final\Experiments\R143_PSF25_MatchedPairs")
-R145 = Path(r"D:\GMM_2_Final\Experiments\R145_Center9PSF25_CorrectedPairs")
+R143 = Path(str(PROJECT_ROOT / 'Experiments/R143_PSF25_MatchedPairs'))
+R145 = Path(str(PROJECT_ROOT / 'Experiments/R145_Center9PSF25_CorrectedPairs'))
 sys.path.insert(0, str(ROOT))
 from dataset import Bank
 from model import Model
@@ -27,7 +28,7 @@ def main() -> None:
     assert done["original_noise_replay_errors"] == 0
     bank_lock = verify_bank_lock()
     assert manifest["measured_psf_bank_sha256"] == bank_lock["bank_sha256"]
-    assert bank_lock["source_mat_sha256"] == sha(bank_lock["source_mat_path"])
+    assert bank_lock["source_mat_sha256"] == sha(str(PROJECT_ROOT / bank_lock["source_mat_path"]))
     assert bank_lock["object_um_per_px"] == .1725
     assert bank_lock["psf_calibration_uses_sem_geometry"] is True
     assert bank_lock["psf_calibration_uses_sem_diameters"] is False

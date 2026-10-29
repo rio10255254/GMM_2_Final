@@ -9,7 +9,7 @@
     "epochs_5_to_15": "The stored validation and live previews show near-identity behavior; they are retained on disk but are not useful reconstruction candidates.",
     "epochs_after_55": "No fully completed checkpoint exists because training was stopped after epoch 55."
   },
-  "checkpoint_root": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/weights/formal/seed_900041/R90_scratch_seed900041_20260811_104322/weights",
+  "checkpoint_root": "Experiments/R90_ExposureCoherentScratch/weights/formal/seed_900041/R90_scratch_seed900041_20260811_104322/weights",
   "checkpoint_sha256": {
     "20": "07e6559e4a225d0a530ef4eae3b053840e209b095bf0eaf300d51c5a58e4e1a1",
     "25": "c722e62674c264bf54f978650c00a2c526bd52c447385ff3492dee027ce4f2f3",
@@ -20,18 +20,18 @@
     "50": "d456dd894061fc4982e4bbda2c8fe349fcc149c2f4664c11adb77b74e2454426",
     "55": "133aa0cb18487ef7c24c2651926efc62565d962ddb321ace24320f9eab195c43"
   },
-  "model_file": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/model/r90_model.py",
+  "model_file": "Experiments/R90_ExposureCoherentScratch/model/r90_model.py",
   "model_file_sha256": "0999410eb7e11c3626a25f83dbdea7c633137dcd66f75d2a7536d519a7069a6d",
   "development_arms": {
     "real_appearance": {
-      "source_config": "D:/GMM_2_Final/Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/config/experiment.json",
+      "source_config": "Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/config/experiment.json",
       "sequences": ["5x_0p5um", "5x_1um", "20x_0p5um", "20x_1um", "50x_0p5um", "50x_1um"],
       "fixed_frame_indices": [0, 12, 24, 36, -1],
       "expected_frames": 30,
       "interpretation": "Raw-based appearance measurements detect strength and artifacts but are not shape truth."
     },
     "sem_contour": {
-      "optical_inputs": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/results/full_validation_epoch055/sem_acm/locked_optical_inputs",
+      "optical_inputs": "Experiments/R90_ExposureCoherentScratch/results/full_validation_epoch055/sem_acm/locked_optical_inputs",
       "exposures": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
       "physical_pillars": 36,
       "method": "The frozen Chan-Vese contour rule, fixed SEM pairing, and translation-only alignment used in the completed R90 epoch-55 validation.",
@@ -68,7 +68,7 @@
     "delivery_decision": "Package only if the frozen checkpoint remains stable in confirmation. Otherwise keep R61 as the emergency delivery package."
   },
   "output_roots": {
-    "results": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/results/early_stop_validation",
-    "reports": "D:/GMM_2_Final/Experiments/R90_ExposureCoherentScratch/reports/early_stop_validation"
+    "results": "Experiments/R90_ExposureCoherentScratch/results/early_stop_validation",
+    "reports": "Experiments/R90_ExposureCoherentScratch/reports/early_stop_validation"
   }
 }

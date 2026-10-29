@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 from pillar_motion_core import TrackerConfig, track_pillar_grid
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 EXPECTED_SEQUENCE_KEYS = {
@@ -158,7 +159,7 @@ def validate_real_crop_subpixel(
     case_to_directory = {"Raw": "raw_dir", "V42 epoch 120": "v42_dir"}
     if image_case not in case_to_directory:
         raise ValueError("image_case must be 'Raw' or 'V42 epoch 120'")
-    source_path = Path(sequence[case_to_directory[image_case]]) / first_name
+    source_path = Path(PROJECT_ROOT / sequence[case_to_directory[image_case]]) / first_name
     source = _read_grayscale(source_path)
     config = _tracker_config(sequence)
     centers = _initial_centers(sequence)

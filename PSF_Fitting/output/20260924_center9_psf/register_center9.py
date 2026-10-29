@@ -13,9 +13,10 @@ from pathlib import Path
 import cv2
 import numpy as np
 from openpyxl import load_workbook
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-ROOT = Path(r"D:\GMM_2_Final")
+ROOT = Path(str(PROJECT_ROOT))
 CAPTURE = ROOT / "20260924"
 OUT = Path(__file__).resolve().parent
 REFERENCE_JSON = (
@@ -187,7 +188,7 @@ def main():
     current_ids = [int(row[0]) for row in current_config["centers"]]
     if current_ids != PILLAR_IDS.ravel().tolist():
         raise RuntimeError("Current 20x SEM ordering differs from expected image rows")
-    current_raw = Path(current_config["raw_dir"]) / current_config["first_frame"]
+    current_raw = Path(ROOT / current_config["raw_dir"]) / current_config["first_frame"]
     current_affine, current_good, current_inliers = match_affine(sift_features([current_raw])[0], data[12])
     current_centers_zero_based = np.asarray([row[1:3] for row in current_config["centers"]], dtype=float) - 1
     transferred = (current_affine[:, :2] @ current_centers_zero_based.T).T + current_affine[:, 2]

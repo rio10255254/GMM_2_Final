@@ -6,13 +6,14 @@ import cv2,numpy as np,torch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from model import Model
 from utils import load,model_config,now,save,setup,sha
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 FRAMES=[
- Path(r'C:\Users\Rio\Downloads\20260902_100MF_uncertainty\20260902_100MF_uncertainty\20260903\001804_XY_0\1.bmp'),
- Path(r'C:\Users\Rio\Downloads\20260902_100MF_uncertainty\20260902_100MF_uncertainty\20260903\004246_XY_0\1.bmp'),
- Path(r'C:\Users\Rio\Downloads\20260902_100MF_uncertainty\20260902_100MF_uncertainty\20260903\005143_XY_0\31.bmp'),
+ Path(str(PROJECT_ROOT / 'Shared_Sources/PI_Repeatability_20260903/raw/001804_XY_0/1.bmp')),
+ Path(str(PROJECT_ROOT / 'Shared_Sources/PI_Repeatability_20260903/raw/004246_XY_0/1.bmp')),
+ Path(str(PROJECT_ROOT / 'Shared_Sources/PI_Repeatability_20260903/raw/005143_XY_0/31.bmp')),
 ]
 def main():
- setup(1522901);receipt=load(ROOT/'runs/formal_8192/training_complete.json')['deployed_checkpoint'];assert sha(receipt['path'])==receipt['sha256'];model=Model(model_config(),ROOT).cuda().eval();model.load_state_dict(torch.load(receipt['path'],map_location='cpu',weights_only=False)['model'],strict=True);rows=[]
+ setup(1522901);receipt=load(ROOT/'runs/formal_8192/training_complete.json')['deployed_checkpoint'];assert sha(str(PROJECT_ROOT / receipt['path']))==receipt['sha256'];model=Model(model_config(),ROOT).cuda().eval();model.load_state_dict(torch.load(str(PROJECT_ROOT / receipt['path']),map_location='cpu',weights_only=False)['model'],strict=True);rows=[]
  for path in FRAMES:
   raw=cv2.imread(str(path),cv2.IMREAD_UNCHANGED);assert raw is not None and raw.shape==(1544,2064);x=torch.from_numpy(raw.astype(np.float32)[None,None]/255).cuda()
   with torch.inference_mode():full=model(x).cpu().numpy()[0,0];tiled=model.forward_tiled(x).cpu().numpy()[0,0]

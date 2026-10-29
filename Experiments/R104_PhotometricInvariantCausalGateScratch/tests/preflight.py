@@ -20,6 +20,7 @@ for folder in (ROOT, ROOT / "model", ROOT / "training"):
 from model.r104_model import build_model, count_parameters  # noqa: E402
 from training.losses import loss_components, warp_tensor  # noqa: E402
 from training.r104_dataset import R104Dataset  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 def require(condition: bool, message: str) -> None:
@@ -36,7 +37,7 @@ def flatten_views(batch: dict[str, object], key: str) -> torch.Tensor:
 def main() -> None:
     started = time.perf_counter()
     config = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-    package = Path(config["data"]["base_package"])
+    package = Path(PROJECT_ROOT / config["data"]["base_package"])
     audit = json.loads((package / "audit.json").read_text(encoding="utf-8"))
     require(bool(audit["passed"]), "base data audit did not pass")
     require(audit["content_sha256"] == config["data"]["base_content_sha256"], "base data hash drift")

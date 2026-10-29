@@ -4,9 +4,10 @@ import json
 from pathlib import Path
 
 import cv2
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260710_v42_full_validation\circle_round1")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/20260710_v42_full_validation/circle_round1'))
 SOURCE = ROOT / "inputs_first50"
 OUTPUT = ROOT / "inputs_first50_crop2048"
 CROP_XYWH = (0, 0, 2048, 2048)

@@ -3,8 +3,8 @@ function plot_multimodel_displacement_complete_english()
 % The step traces use the Raw-selected top 30 steps. Summary charts use the
 % common-valid intersection so every method is evaluated on identical steps.
 
-sourceRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS\modern_baseline_three_morphology_20260719";
-outputRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\14_V27_MULTIMODEL_DISPLACEMENT_COMPLETE_ENGLISH_20260727";
+sourceRoot = "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/modern_baseline_three_morphology_20260719";
+outputRoot = "Thesis_MOSR_Evidence/Final_Data_Figures/14_V27_MULTIMODEL_DISPLACEMENT_COMPLETE_ENGLISH_20260727";
 figureDir = fullfile(outputRoot, "figures");
 tableDir = fullfile(outputRoot, "tables");
 ensure_dir(outputRoot);

@@ -102,7 +102,7 @@ def main():
 保留相同R129權重與四次計算，只提供新的保留帶選擇；預設16，不改原套件。
 
 ```powershell
-& 'C:\\Users\\Rio\\anaconda3\\python.exe' -B '{(ROOT/'scripts/infer_trial.py').as_posix()}' --input 'C:\\path\\image.bmp' --output 'C:\\path\\new_output.png'
+& python -B '{(ROOT/'scripts/infer_trial.py').as_posix()}' --input 'C:\\path\\image.bmp' --output 'C:\\path\\new_output.png'
 ```
 
 輸出附模型採用比例圖與來源說明；不覆寫既有檔案。SEM完整影像與2048×1536代表影像均由此入口重跑，與本輪16像素保存PNG逐像素一致。這是研究試用功能，不是新精密量測認證，也未自動更換原本使用入口。

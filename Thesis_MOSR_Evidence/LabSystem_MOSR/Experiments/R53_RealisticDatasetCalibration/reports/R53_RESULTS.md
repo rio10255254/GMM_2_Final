@@ -47,7 +47,7 @@ The explicit checkboard-corner subset uses three blur sources evenly:
 - weak-BADS alpha 0.50: 100 train, 40 val
 
 The launcher uses the Lab PSF file:
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\psf_calibration\results\20250605_inner_circle_roi_fine_prealign_fit\PSF_fitted_2D_FOVstack.mat`
+`Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat`
 
 ## Verification Completed
 
@@ -70,8 +70,8 @@ The launcher uses the Lab PSF file:
 ## Formal Training
 
 - Model name: `LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100`
-- Progress directory: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939`
-- Log pointer: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R53_RealisticDatasetCalibration\results\formal_training_logs\latest_formal_training_log.txt`
+- Progress directory: `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939`
+- Log pointer: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/results/formal_training_logs/latest_formal_training_log.txt`
 - Start setting: scratch training, 100 epochs, batch 16, validation batch 4, 4 workers, Lab PSF path configured, PSF-forward loss disabled
 - Completed epochs: 100
 - Internal validation improved through the end: epoch 100 validation total `0.045247`, PSNR `26.39`, SSIM `0.9353`
@@ -106,8 +106,8 @@ case despite having the best internal validation score.
 - Checkboard validation report: `reports/R53_CHECKBOARD_VALIDATION.md`
 - Best checkpoint gate JSON: `results/r53_best_tradeoff_corner_gate.json`
 - Latest checkpoint gate JSON: `results/r53_latest_corner_gate.json`
-- R53 reconstruction output root: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\r53_reconstruction_outputs`
-- R53 GMF-ready case folders: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\gmf_cases\lab_r53_realistic_best_tradeoff` and `...\lab_r53_realistic_latest`
+- R53 reconstruction output root: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/r53_reconstruction_outputs`
+- R53 GMF-ready case folders: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r53_realistic_best_tradeoff` and `...\lab_r53_realistic_latest`
 
 ## Next Direction
 

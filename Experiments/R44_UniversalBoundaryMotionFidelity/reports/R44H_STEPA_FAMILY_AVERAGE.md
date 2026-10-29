@@ -40,9 +40,9 @@
 
 ## 產物
 
-- 平均候選權重：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\r44h_family_average\checkpoints`
-- Step A 表格：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\r44h_family_average\r44h_stepa_summary.csv`
-- Step A JSON：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\r44h_family_average\r44h_stepa_summary.json`
+- 平均候選權重：`Experiments/R44_UniversalBoundaryMotionFidelity/results/r44h_family_average/checkpoints`
+- Step A 表格：`Experiments/R44_UniversalBoundaryMotionFidelity/results/r44h_family_average/r44h_stepa_summary.csv`
+- Step A JSON：`Experiments/R44_UniversalBoundaryMotionFidelity/results/r44h_family_average/r44h_stepa_summary.json`
 
 ## 下一步
 

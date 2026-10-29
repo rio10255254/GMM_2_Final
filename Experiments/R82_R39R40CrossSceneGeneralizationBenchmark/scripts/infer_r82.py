@@ -11,6 +11,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,21 +50,21 @@ def import_module(path: Path, name: str):
 
 def collect_images(config: dict, dataset: str) -> tuple[Path | None, list[tuple[Path, Path]]]:
     if dataset == "real_fov":
-        root = Path(config["real_fov"]["locked_raw_root"])
+        root = Path(PROJECT_ROOT / config["real_fov"]["locked_raw_root"])
         rows = [(path, path.relative_to(root)) for path in sorted(root.rglob("*.bmp"))]
         expected = int(config["real_fov"]["expected_frames"])
         if len(rows) != expected:
             raise RuntimeError(f"real_fov expected {expected} images, found {len(rows)}")
         return root, rows
     if dataset in config["external_acm_suites"]:
-        root = Path(config["external_acm_suites"][dataset]["dataset_root"]) / "src"
+        root = Path(PROJECT_ROOT / config["external_acm_suites"][dataset]["dataset_root"]) / "src"
         rows = [(path, path.relative_to(root)) for path in sorted(root.rglob("*.bmp"))]
         expected = int(config["external_acm_suites"][dataset]["expected_images"])
         if len(rows) != expected:
             raise RuntimeError(f"{dataset} expected {expected} images, found {len(rows)}")
         return root, rows
     if dataset == "sem_acm":
-        root = Path(config["sem_acm"]["raw_input_dir"])
+        root = Path(PROJECT_ROOT / config["sem_acm"]["raw_input_dir"])
         exposures = [int(value) for value in config["sem_acm"]["optical_exposures"]]
         rows = [(root / f"{value}.bmp", Path(f"{value}.bmp")) for value in exposures]
         if not all(path.is_file() for path, _ in rows):
@@ -72,7 +73,7 @@ def collect_images(config: dict, dataset: str) -> tuple[Path | None, list[tuple[
     if dataset == "junhua":
         rows: list[tuple[Path, Path]] = []
         for sequence, item in config["junhua"]["sequences"].items():
-            root = Path(item["input_dir"])
+            root = Path(PROJECT_ROOT / item["input_dir"])
             all_paths = sorted(
                 path for path in root.iterdir()
                 if path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS
@@ -122,8 +123,8 @@ def legacy_state(checkpoint: dict, state_key: str) -> dict:
 
 
 def build_legacy_model(config: dict, item: dict):
-    legacy = import_module(Path(config["runtime"]["legacy_inference_module"]), "r82_legacy_inference")
-    checkpoint_path = Path(item["checkpoint"])
+    legacy = import_module(Path(PROJECT_ROOT / config["runtime"]["legacy_inference_module"]), "r82_legacy_inference")
+    checkpoint_path = Path(PROJECT_ROOT / item["checkpoint"])
     checkpoint = torch.load(checkpoint_path, map_location="cpu")
     state = legacy_state(checkpoint, item["state_key"])
     arch = legacy.infer_arch_from_state(state, ckpt_obj=checkpoint)
@@ -139,7 +140,7 @@ def build_legacy_model(config: dict, item: dict):
         psf_phys_alpha = float(arch["psf_phys_alpha_init"])
         psf_source = "checkpoint_buffer"
     elif mode == "r61_psf_off":
-        psf_path = Path(item["psf_fitted_path"])
+        psf_path = Path(PROJECT_ROOT / item["psf_fitted_path"])
         if not psf_path.is_file():
             raise FileNotFoundError(psf_path)
         weak_psf_enable = bool(item["weak_psf_enable"])
@@ -230,11 +231,11 @@ def build_legacy_model(config: dict, item: dict):
 
 
 def build_r79_model(config: dict, item: dict):
-    module = import_module(Path(config["runtime"]["r79_inference_module"]), "r82_r79_inference")
-    model, state_key = module.build_model(Path(item["checkpoint"]), config["runtime"]["device"], True)
+    module = import_module(Path(PROJECT_ROOT / config["runtime"]["r79_inference_module"]), "r82_r79_inference")
+    model, state_key = module.build_model(Path(PROJECT_ROOT / item["checkpoint"]), config["runtime"]["device"], True)
     if state_key != item["state_key"]:
         raise RuntimeError(f"R79 selected {state_key}, expected {item['state_key']}")
-    checkpoint = torch.load(item["checkpoint"], map_location="cpu")
+    checkpoint = torch.load(str(PROJECT_ROOT / item["checkpoint"]), map_location="cpu")
     if int(checkpoint.get("epoch", -1)) != int(item["expected_epoch"]):
         raise RuntimeError("R79 epoch identity changed")
     details = {
@@ -268,7 +269,7 @@ def manifest_is_valid(path: Path, identity: dict, expected: int) -> bool:
 
 def run(config: dict, model_label: str, dataset: str) -> dict:
     item = config["models"][model_label]
-    checkpoint = Path(item["checkpoint"])
+    checkpoint = Path(PROJECT_ROOT / item["checkpoint"])
     if not checkpoint.is_file():
         raise FileNotFoundError(checkpoint)
     checkpoint_hash = sha256(checkpoint)

@@ -15,6 +15,7 @@ from analyze_base_unet_edge_stability import (
     refine_dark_center,
     truthy,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 def analyze(control_root: Path) -> None:
@@ -43,7 +44,7 @@ def analyze(control_root: Path) -> None:
             radius_px = float(sequence["radius_px"])
             step_px = float(sequence["expected_signed_dx_px"])
             um_per_px = float(sequence["object_um_per_px"])
-            raw_dir = Path(sequence["raw_dir"])
+            raw_dir = Path(PROJECT_ROOT / sequence["raw_dir"])
             smoothed_dir = sigma_root / "reconstruction" / sequence_name
             for _, selected_row in sequence_rows.sort_values("end_frame_index").iterrows():
                 frame_index = int(selected_row.end_frame_index)

@@ -3,6 +3,8 @@ from r135_common import *
 import pandas as pd,cv2,re,collections
 from openpyxl import load_workbook
 from scipy.io import loadmat
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 def main():
     out=ROOT/'results/r61_training_audit';out.mkdir(exist_ok=False);plan=load(ROOT/'config/plan.json');cp=Path(plan['models']['R61']['checkpoint']['path']);assert sha(cp)==plan['models']['R61']['checkpoint']['sha256']
@@ -11,7 +13,7 @@ def main():
     for path in paths:
         r=by_path[normalize(path)];rows.append(dict(split=partition[normalize(path)],path=normalize(path),role=r['role'],domain=r.get('domain',''),feature=r.get('feature',''),sem_reference_id=r.get('sem_reference_id'),sem_radius_nm=r.get('sem_radius_nm'),target_radius_nm=r.get('target_radius_nm')))
     roster=pd.DataFrame(rows);roster.to_csv(out/'training_roster.csv',index=False);counts=roster.groupby(['role','split']).size().unstack(fill_value=0);counts.to_csv(out/'role_counts.csv')
-    r60=data.parent.parent.parent/'r60_sem_truth_boundary/hs100mg_basler/r60_sem_truth_realcrop_anchor_train';r60manifest=load(r60/'manifest.json');parent=Path(r60manifest['microscope_image']);csv=Path(r60manifest['sem_reference_csv']);csvdata=pd.read_csv(csv);workbook=Path('H:/From_2TB_D_disk/13_thesis/SEM_data/via_pilar.xlsx');w=load_workbook(workbook,read_only=True,data_only=True);sheet=w['SEM data'];reference=[]
+    r60=data.parent.parent.parent/'r60_sem_truth_boundary/hs100mg_basler/r60_sem_truth_realcrop_anchor_train';r60manifest=load(r60/'manifest.json');parent=Path(r60manifest['microscope_image']);csv=Path(r60manifest['sem_reference_csv']);csvdata=pd.read_csv(csv);workbook=Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/20260618_100MG/SEM_data/via_pilar.xlsx'));w=load_workbook(workbook,read_only=True,data_only=True);sheet=w['SEM data'];reference=[]
     for row in sheet.iter_rows(min_row=3,max_row=38,values_only=True):reference.append([int(row[16]),float(row[17]),float(row[18])])
     ref=pd.DataFrame(reference,columns=['index','via','pillar']).set_index('index');c=csvdata.set_index(csvdata.columns[0]);assert len(ref)==len(c)==36;diff=float(np.abs(ref[['via','pillar']].values-c.values).max());assert diff<1e-9;ref.to_csv(out/'SEM_reference_values.csv')
     # Reference layout used for the current SEM comparison is exactly the same

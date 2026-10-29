@@ -26,7 +26,7 @@ Test these behaviors:
 - [ ] **Step 2: Run test to verify it fails**
 
 Run:
-`C:\Users\Rio\anaconda3\python.exe -m pytest "D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R59_CDClosedLoopBoundaryLayer\tests" -q`
+`C:\Users\Rio\anaconda3\python.exe -m pytest "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer/tests" -q`
 
 Expected: FAIL because R59 scripts do not exist.
 

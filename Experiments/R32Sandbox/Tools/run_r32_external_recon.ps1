@@ -1,5 +1,5 @@
 param(
-    [string]$PythonExe = "C:\Users\Rio\anaconda3\python.exe",
+    [string]$PythonExe = python,
     [string]$DecisionJson = "",
     [string]$WeightsPath = "",
     [string]$CandidateName = ""

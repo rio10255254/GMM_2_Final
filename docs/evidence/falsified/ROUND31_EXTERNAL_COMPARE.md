@@ -33,7 +33,7 @@ Last updated: 2026-03-19
 | `r31_edge_ratio_low` | 0 | 0.179347 | 0.179347 |
 
 ## Missing External Artifact
-- `r31_eq_combo`：expected raw root `D:\GMM_2_Final\Traing_Progress\organized_20260316\round31\gmf_results\raw\r31_eq_combo` but no `GMF_score.txt` was found. It is treated as external artifact missing, not a measured regression.
+- `r31_eq_combo`：expected raw root `Traing_Progress/organized_20260316/round31/gmf_results/raw/r31_eq_combo` but no `GMF_score.txt` was found. It is treated as external artifact missing, not a measured regression.
 
 ## Verdict
 - measured Round31 candidates all regressed on the `0.8px` main battlefield relative to `r30_b1_dironly = 0.167862`

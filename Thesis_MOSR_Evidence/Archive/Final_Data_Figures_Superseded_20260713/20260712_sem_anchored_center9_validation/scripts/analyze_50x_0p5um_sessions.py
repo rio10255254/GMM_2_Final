@@ -19,11 +19,12 @@ from run_center9_displacement import (
     build_common_pillar_comparison,
     summarize_case_steps,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 PACKAGE = Path(__file__).resolve().parents[1]
 DEFAULT_MAPPING = Path(
-    r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\input_mapping.csv"
+    str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/input_mapping.csv')
 )
 DEFAULT_CONFIG = PACKAGE / "config" / "sequence_center9.json"
 

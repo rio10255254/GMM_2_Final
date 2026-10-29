@@ -679,7 +679,7 @@ In 30 repeated scans of the same microscopy specimen, R152 reduced the pooled wi
 | R152實拍部署保存點 | 17bf7c63f070520a5ef8d4428010340686f465bf1fa03ef8225c0a2eadad4a61 |
 | 25PSF銀行 | efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843 |
 | 合成payload manifest | 902299ce2d1a9355a8cf1b16db79b380ce7ec2fee299ebf88e16498887d964e3 |
-| 合成geometry manifest | e7da057f8176bf184dc12ac7a1622cba31b245dc475f679a639bf044c6a86509 |
+| 合成geometry manifest | a358cf7edaecc32abfa560033b1eb95ce3374e2b1e483cc15cd2661d0c4c4389 |
 
 保存點的檔案雜湊是版本身分，不是性能指標。訓練結束當下training_complete.json中的real_validation_complete=false是較早的時間快照；後來的final_audit.json已passed=true，930張與全部30趟實拍已完成。
 
@@ -772,9 +772,9 @@ lower, upper = curve_mean-curve_sd, curve_mean+curve_sd
 {
   "model_name": "R152-R148v2-SafeAdaptivePSF",
   "architecture": "frozen_r148v2_plus_adaptive_fourier_psf_residual",
-  "base_checkpoint": "D:/GMM_2_Final/Experiments/R148v2_HybridContextNativePSF/runs/formal_8192/checkpoints/step08192.pth",
+  "base_checkpoint": "Experiments/R148v2_HybridContextNativePSF/runs/formal_8192/checkpoints/step08192.pth",
   "base_checkpoint_sha256": "8daddf823166b373d3c3b437ebb9869e3d2260ed83d72613140669d92ee0db22",
-  "base_model_config": "D:/GMM_2_Final/Experiments/R148v2_HybridContextNativePSF/config/model.json",
+  "base_model_config": "Experiments/R148v2_HybridContextNativePSF/config/model.json",
   "context_output_channels": 16,
   "psf_bank": "calibration/measured_psf_bank.npz",
   "psf_count": 25,
@@ -897,12 +897,12 @@ lower, upper = curve_mean-curve_sd, curve_mean+curve_sd
 {
   "created_utc": "2026-09-16T15:37:05.045241+00:00",
   "core_source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R80_InflectionReferenceCircleSEMValidation\\scripts\\reference_circle_core.py",
+    "path": "Experiments/R80_InflectionReferenceCircleSEMValidation/scripts/reference_circle_core.py",
     "sha256": "76e1fe615128cbf9bb19c9775b990a055d73f5e086986a04368f78ca7008248c"
   },
   "thesis_reader_source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\lsc_comparison\\measure.py",
-    "sha256": "60b35b04e792cd2fe2dd3db71e80e013a0d9971a472a31afcc100bbc0e077344"
+    "path": "Experiments/R128_SourceOnlyFullTraining/analysis/lsc_comparison/measure.py",
+    "sha256": "35254ef2224cf7d4538c1ef7c8f6746e0ae40d974b418f2116198fc3830fc4ea"
   },
   "base_centers": [
     [

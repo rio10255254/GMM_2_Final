@@ -1,9 +1,10 @@
 function make_single_720_angle_overlay()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))))))));
 %MAKE_SINGLE_720_ANGLE_OVERLAY
 % One clean P29 sampling schematic based directly on the supplied image.
 
 inputPath = 'C:\Users\Rio\AppData\Local\Temp\codex-clipboard-ebcfb69b-f3cf-4756-b66f-7d1e574941fb.png';
-outputDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_work\radial_cd_illustration_20260726';
+outputDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_work/radial_cd_illustration_20260726');
 outputPath = fullfile(outputDir, '720_equal_angle_sampling_P29_clean.png');
 if ~isfolder(outputDir), mkdir(outputDir); end
 

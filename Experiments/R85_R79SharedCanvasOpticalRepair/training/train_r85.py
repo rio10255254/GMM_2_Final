@@ -17,6 +17,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -184,7 +185,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     seed_everything(args.seed)
 
-    package = Path(CONFIG["data"]["formal_package"])
+    package = Path(PROJECT_ROOT / CONFIG["data"]["formal_package"])
     manifest_path = package / "manifest.json"
     if sha256(manifest_path) != CONFIG["data"]["formal_manifest_sha256"]:
         raise RuntimeError("Formal procedural manifest changed.")

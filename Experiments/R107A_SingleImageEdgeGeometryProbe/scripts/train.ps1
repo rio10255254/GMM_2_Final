@@ -6,7 +6,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
-$python = 'C:\Users\Rio\anaconda3\python.exe'
+$python = python
 $arguments = @((Join-Path $root 'training\train.py'), '--epochs', $Epochs, '--batch-size', $BatchSize, '--workers', $Workers)
 if ($RunId) { $arguments += @('--run-id', $RunId) }
 & $python @arguments

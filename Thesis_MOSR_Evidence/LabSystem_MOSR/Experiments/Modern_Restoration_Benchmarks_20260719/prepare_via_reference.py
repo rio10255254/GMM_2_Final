@@ -7,17 +7,16 @@ from pathlib import Path
 import cv2
 import numpy as np
 from openpyxl import load_workbook
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
 OUTPUT = EXPERIMENT / "evaluation" / "via_reference"
 SEM_WORKBOOK = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\20260618_100MG"
-    r"\SEM_data\via_pilar.xlsx"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/20260618_100MG/SEM_data/via_pilar.xlsx')
 )
 SOURCE_CONFIG = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\config\sequence_center9_50x20x.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json')
 )
 
 
@@ -145,7 +144,7 @@ def main() -> None:
 
     for sequence_name, sequence in source["sequences"].items():
         magnification = str(sequence["magnification"])
-        raw_dir = Path(sequence["raw_dir"])
+        raw_dir = Path(PROJECT_ROOT / sequence["raw_dir"])
         frame_path = raw_dir / str(sequence["first_frame"])
         image = read_gray(frame_path)
         x_expected, y_expected = expected_grid(magnification)
@@ -184,7 +183,7 @@ def main() -> None:
             "group": sequence["group"],
             "magnification": magnification,
             "raw_dir": str(raw_dir),
-            "mosr_dir": sequence["v42_dir"],
+            "mosr_dir": str(PROJECT_ROOT / sequence["v42_dir"]),
             "first_frame": sequence["first_frame"],
             "frame_count": sequence["frame_count"],
             "object_um_per_px": um_per_px,

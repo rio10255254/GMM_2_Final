@@ -17,16 +17,16 @@ a030 與 R40 a043 在外部 GMF 三尺度上的取捨方向互補（2026-05-11 �
 
 | α | checkpoint |
 |---:|---|
-| 0.25 | `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a025\best_tradeoff.pth.tar` |
-| 0.50 | `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a050\best_tradeoff.pth.tar` |
-| 0.75 | `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a075\best_tradeoff.pth.tar` |
+| 0.25 | `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar` |
+| 0.50 | `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a050/best_tradeoff.pth.tar` |
+| 0.75 | `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a075/best_tradeoff.pth.tar` |
 
 ## 外部 ring 三尺度重建（每 α 跑一次）
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File Tools/RunRepresentativeExternalRecon.ps1 -WeightsPath "D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a025\best_tradeoff.pth.tar" -ReconRoot "D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\external_recon\a025"
-powershell -ExecutionPolicy Bypass -File Tools/RunRepresentativeExternalRecon.ps1 -WeightsPath "D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a050\best_tradeoff.pth.tar" -ReconRoot "D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\external_recon\a050"
-powershell -ExecutionPolicy Bypass -File Tools/RunRepresentativeExternalRecon.ps1 -WeightsPath "D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a075\best_tradeoff.pth.tar" -ReconRoot "D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\external_recon\a075"
+powershell -ExecutionPolicy Bypass -File Tools/RunRepresentativeExternalRecon.ps1 -WeightsPath "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar" -ReconRoot "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a025"
+powershell -ExecutionPolicy Bypass -File Tools/RunRepresentativeExternalRecon.ps1 -WeightsPath "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a050/best_tradeoff.pth.tar" -ReconRoot "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a050"
+powershell -ExecutionPolicy Bypass -File Tools/RunRepresentativeExternalRecon.ps1 -WeightsPath "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a075/best_tradeoff.pth.tar" -ReconRoot "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a075"
 ```
 
 完成後 BMP 結構：

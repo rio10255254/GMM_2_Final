@@ -81,27 +81,27 @@ COMBO 基準：8 px `0.154515`、0.8 px `0.131560`、0.08 px `0.099891`。
 
 ### Checkpoint
 
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a025\best_tradeoff.pth.tar`
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a050\best_tradeoff.pth.tar`
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a075\best_tradeoff.pth.tar`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a050/best_tradeoff.pth.tar`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a075/best_tradeoff.pth.tar`
 
 ### 外部 ring 重建
 
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\external_recon\a025\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845\pitch{1um_y_100_odd,0p1um_y_60_odd,0p01um_y_40_odd}\`
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\external_recon\a050\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845\pitch{...}\`
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\external_recon\a075\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845\pitch{...}\`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a025/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845/pitch{1um_y_100_odd,0p1um_y_60_odd,0p01um_y_40_odd}\`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a050/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845/pitch{...}\`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a075/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260511_151845/pitch{...}\`
 
 ### 外部 GMF 解析結果
 
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\external_recon\a025\external_compare_summary.json`
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\external_recon\a050\external_compare_summary.json`
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\external_recon\a075\external_compare_summary.json`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a025/external_compare_summary.json`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a050/external_compare_summary.json`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/external_recon/a075/external_compare_summary.json`
 
 ### 各 α 報告
 
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\reports\R39R40_AVG_a025_EXTERNAL_COMPARE.md`
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\reports\R39R40_AVG_a050_EXTERNAL_COMPARE.md`
-- `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\reports\R39R40_AVG_a075_EXTERNAL_COMPARE.md`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_EXTERNAL_COMPARE.md`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a050_EXTERNAL_COMPARE.md`
+- `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a075_EXTERNAL_COMPARE.md`
 
 ## 方法
 

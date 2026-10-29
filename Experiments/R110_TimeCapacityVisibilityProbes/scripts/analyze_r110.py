@@ -2,7 +2,8 @@ from __future__ import annotations
 import hashlib,json
 from pathlib import Path
 import pandas as pd
-ROOT=Path(__file__).resolve().parents[1];R109=Path(r'D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch');BASE_HISTORY=json.loads((R109/'runs/r109_continuous_parameter_probe/training_history.json').read_text(encoding='utf-8'));BASE_SHORT=BASE_HISTORY[-1]
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];R109=Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'));BASE_HISTORY=json.loads((R109/'runs/r109_continuous_parameter_probe/training_history.json').read_text(encoding='utf-8'));BASE_SHORT=BASE_HISTORY[-1]
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def summary(name):return json.loads((ROOT/'runs'/name/'summary.json').read_text(encoding='utf-8'))
 def acm(tag,suite):

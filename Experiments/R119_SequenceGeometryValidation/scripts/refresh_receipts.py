@@ -6,10 +6,11 @@ status, checks or scientific notes. It does not run inference or training.
 from __future__ import annotations
 import argparse, hashlib, json
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT=Path(__file__).resolve().parents[1]
-PLAN=Path(r'D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/reports/next_design_plan.json')
-ASSETS=Path(r'D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/reports/next_design_assets.json')
+PLAN=Path(str(PROJECT_ROOT / 'Experiments/R118_PhysicalCoordinateRepairScratch/reports/next_design_plan.json'))
+ASSETS=Path(str(PROJECT_ROOT / 'Experiments/R118_PhysicalCoordinateRepairScratch/reports/next_design_assets.json'))
 def sha(p):
  h=hashlib.sha256();
  with Path(p).open('rb') as f:

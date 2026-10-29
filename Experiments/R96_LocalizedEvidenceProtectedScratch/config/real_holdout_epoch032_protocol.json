@@ -4,9 +4,9 @@
   "declared_before_outputs": true,
   "claim_boundary": "Exploratory checkpoint-32 evidence only. This is not the final R96 result and real images have no clean optical ground truth.",
   "checkpoint_epoch": 32,
-  "checkpoint": "D:/GMM_2_Final/Experiments/R96_LocalizedEvidenceProtectedScratch/weights/formal/seed_960041/R96_scratch_seed960041_20260813_131438/weights/epoch_032.pth.tar",
-  "source_sequence_config": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json",
-  "locked_raw_measurements": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv",
+  "checkpoint": "Experiments/R96_LocalizedEvidenceProtectedScratch/weights/formal/seed_960041/R96_scratch_seed960041_20260813_131438/weights/epoch_032.pth.tar",
+  "source_sequence_config": "Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json",
+  "locked_raw_measurements": "Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv",
   "sequences": [
     "5x_0p5um",
     "5x_1um",

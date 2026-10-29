@@ -2,6 +2,7 @@ import os,sys,json,time,hashlib,datetime,random
 from pathlib import Path
 os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG',':4096:8');sys.dont_write_bytecode=True
 import numpy as np,torch
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ROOT=Path(__file__).resolve().parent
 def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def sha(p):
@@ -34,5 +35,5 @@ def create(arm,seed,device='cuda'):
     torch.nn.init.zeros_(m.prior.head.weight);torch.nn.init.zeros_(m.prior.head.bias)
     return m.to(device)
 def verify():
-    for r in load(ROOT/'config/source_protection.json')['sources']:assert sha(r['path'])==r['sha256']
+    for r in load(ROOT/'config/source_protection.json')['sources']:assert sha(str(PROJECT_ROOT / r['path']))==r['sha256']
 

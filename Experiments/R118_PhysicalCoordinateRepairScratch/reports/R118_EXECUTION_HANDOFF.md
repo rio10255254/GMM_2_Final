@@ -7,7 +7,7 @@ reports/next_design_plan.json, and runs/RUN_INDEX.json.
 
 ## 1. Read in this order
 
-1. D:/GMM_2_Final/AGENTS.md and D:/GMM_2_Final/PROJECT_STATE.md.
+1. AGENTS.md and PROJECT_STATE.md.
 2. This document completely.
 3. R118_MEASUREMENT_CONTRACT.md.
 4. R118_IMPLEMENTATION_TASKS.md.
@@ -53,7 +53,7 @@ report the concrete alternatives instead of inventing a winner.
 ## 3. Current verified state
 
 Experiment root:
-D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch
+Experiments/R118_PhysicalCoordinateRepairScratch
 
 | Item | Verified value | Meaning |
 |---|---|---|
@@ -147,7 +147,7 @@ to be implemented merely because it has an assigned filename.
 
 ## 7. Default budgets and experiment identities
 
-Proposed next root: D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation.
+Proposed next root: Experiments/R119_SequenceGeometryValidation.
 It is a PLANNED path, not an existing runnable package. If it already exists
 when activated, inspect its manifest and stop before overwriting or choosing
 an unrecorded alternate name.

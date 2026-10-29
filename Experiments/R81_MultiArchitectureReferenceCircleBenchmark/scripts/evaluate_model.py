@@ -14,13 +14,14 @@ from PIL import Image
 from scipy.io import loadmat
 from scipy.stats import iqr
 from torch.cuda.amp import autocast
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 R81_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_DIR = Path(__file__).resolve().parent
-R80_SCRIPTS = Path(r"D:\GMM_2_Final\Experiments\R80_InflectionReferenceCircleSEMValidation\scripts")
+R80_SCRIPTS = Path(str(PROJECT_ROOT / 'Experiments/R80_InflectionReferenceCircleSEMValidation/scripts'))
 MODERN_ROOT = (
-    Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments")
+    Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments'))
     / "Modern_Restoration_Benchmarks_20260719"
 )
 for import_root in (SCRIPT_DIR, R80_SCRIPTS, MODERN_ROOT):
@@ -39,8 +40,7 @@ from train_model import DEFAULT_PACKAGE, install_registry  # noqa: E402
 
 
 CENTER9_PACKAGE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9')
 )
 SEQUENCE_CONFIG = CENTER9_PACKAGE / "config" / "sequence_center9_50x20x.json"
 AUDIT_TABLE = (
@@ -53,13 +53,12 @@ AUDIT_TABLE = (
 SESSION_TABLE = AUDIT_TABLE.parent / "session_anchor_summary.csv"
 
 PSF_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit')
 )
 STATIC_SOURCE_ROOT = (
     PSF_ROOT / "source_data" / "center9_pillar_fit_20x_50x" / "psf_deconvolution_cd"
 )
-SWEEP_ROOT = Path(r"D:\GMM_2_Final\PSF_Fitting\tests\artifacts\cd_verification_20260714")
+SWEEP_ROOT = Path(str(PROJECT_ROOT / 'PSF_Fitting/tests/artifacts/cd_verification_20260714'))
 SEM_TABLE = (
     PSF_ROOT / "tables" / "center9_pillar_fit_20x_50x" / "cd_before_after_per_pillar.csv"
 )
@@ -312,7 +311,7 @@ def evaluate_displacement(
             | set(pairs["end_frame_index"].astype(int))
         )
         base_centers = np.asarray(specification["centers"], dtype=float)
-        raw_dir = Path(specification["raw_dir"])
+        raw_dir = Path(PROJECT_ROOT / specification["raw_dir"])
         magnification = specification["magnification"]
         pitch = float(specification["pitch_px"])
         radius = float(specification["radius_px"])

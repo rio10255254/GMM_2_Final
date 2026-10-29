@@ -17,23 +17,21 @@ from train_base_unet import (
     build_fixed_psf_layer,
     read_gray_u8,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
 DEFAULT_CHECKPOINT = EXPERIMENT / "results" / "best_base_unet.pth.tar"
 DEFAULT_OUTPUT = EXPERIMENT / "results" / "real_inference"
 SEQUENCE_CONFIG = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\config\sequence_center9_50x20x.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json')
 )
 STATIC_INPUTS = {
     "static_50x_center9": Path(
-        r"D:\GMM_2_Final\Thesis_MOSR_Evidence\20260618_100MG"
-        r"\Image__2026-06-18__17-10-31.bmp"
+        str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/20260618_100MG/Image__2026-06-18__17-10-31.bmp')
     ),
     "static_20x_frame49": Path(
-        r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs"
-        r"\20x_1um\bmp\frame_0049.bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp/frame_0049.bmp')
     ),
 }
 
@@ -182,7 +180,7 @@ def main(
     start = time.time()
 
     for sequence_name, sequence in sequences.items():
-        raw_dir = Path(sequence["raw_dir"])
+        raw_dir = Path(PROJECT_ROOT / sequence["raw_dir"])
         source_paths = sorted(raw_dir.glob("*.bmp"))
         if limit > 0:
             source_paths = source_paths[:limit]

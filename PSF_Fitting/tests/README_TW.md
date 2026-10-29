@@ -17,12 +17,12 @@
 
 ## 執行方式
 
-在 `D:\GMM_2_Final\PSF_Fitting` 下執行：
+在 `PSF_Fitting` 下執行：
 
 ### MATLAB smoke tests
 
 ```powershell
-matlab -batch "cd('D:/GMM_2_Final/PSF_Fitting'); run('tests/run_matlab_smoke_tests.m')"
+matlab -batch "cd('PSF_Fitting'); run('tests/run_matlab_smoke_tests.m')"
 ```
 
 注意：`run_matlab_smoke_tests.m` 會包含少量真正執行 Whole-FOV fitting 的 smoke tests，通常需要數分鐘，並不屬於瞬間完成的檢查。

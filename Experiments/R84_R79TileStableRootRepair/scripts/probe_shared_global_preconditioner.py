@@ -9,10 +9,11 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark'))
 HOLDOUT = ROOT / "data" / "r84_locked_holdout_tile_stable_confirmation"
 OUTPUT = ROOT / "results" / "shared_global_preconditioner_probe"
 DEVICE = "cuda:0"
@@ -101,15 +102,15 @@ def main() -> int:
             print(f"shared-precondition holdout {index}/{len(manifest['pairs'])}", flush=True)
 
     r82_config = json.loads((R82 / "config" / "experiment.json").read_text(encoding="utf-8"))
-    sem_root = Path(r82_config["sem_acm"]["raw_input_dir"])
+    sem_root = Path(PROJECT_ROOT / r82_config["sem_acm"]["raw_input_dir"])
     for exposure in r82_config["sem_acm"]["optical_exposures"]:
         source = sem_root / f"{exposure}.bmp"
         image = module.read_gray(source)
         module.write_bmp(OUTPUT / "reconstructions" / "SEM" / source.name, infer_shared_tiled(module, model, image))
 
     fixtures = [
-        Path(r82_config["real_fov"]["locked_raw_root"]) / "5x_0p5um" / "frame_0000.bmp",
-        Path(r82_config["real_fov"]["locked_raw_root"]) / "50x_0p5um" / "frame_0050.bmp",
+        Path(PROJECT_ROOT / r82_config["real_fov"]["locked_raw_root"]) / "5x_0p5um" / "frame_0000.bmp",
+        Path(PROJECT_ROOT / r82_config["real_fov"]["locked_raw_root"]) / "50x_0p5um" / "frame_0050.bmp",
         sem_root / "18.bmp",
     ]
     for source in fixtures:

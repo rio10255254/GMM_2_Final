@@ -15,7 +15,7 @@ R94／R95／R96／R97／R98共用這份R93基礎。未來需要完整重訓或�
 ```powershell
 if (Test-Path -LiteralPath 'Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal/arrays') { throw '原位置已有資料，請先核對身分。' }
 if (-not (Test-Path -LiteralPath 'H:\GMM_2_Final_Archive\experiments\R93_RecoverableDetailSeparatedScratch\20260925_full_history\data\r93_formal\arrays' -PathType Container)) { throw 'H固定來源未連接，請先取得來源，或按下方GitHub入口取回。' }
-robocopy 'H:\GMM_2_Final_Archive\experiments\R93_RecoverableDetailSeparatedScratch\20260925_full_history\data\r93_formal\arrays' 'D:\GMM_2_Final\Experiments\R93_RecoverableDetailSeparatedScratch\data\r93_formal\arrays' /E /COPY:DAT /DCOPY:DAT /XJ /R:1 /W:1
+robocopy 'H:\GMM_2_Final_Archive\experiments\R93_RecoverableDetailSeparatedScratch\20260925_full_history\data\r93_formal\arrays' 'Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal/arrays' /E /COPY:DAT /DCOPY:DAT /XJ /R:1 /W:1
 if ($LASTEXITCODE -ge 8) { throw '複製失敗，尚未完整恢復；請保留原報告並先處理錯誤。' }
 ```
 

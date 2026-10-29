@@ -4,6 +4,8 @@ import argparse,subprocess,traceback
 from scipy.io import loadmat
 from validation import reference_circle_core as semcore
 from validation.readout_helpers import mask_center_radius,radial_signature
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def wait_image(p):
     while not p.exists():
@@ -12,14 +14,14 @@ def wait_image(p):
 
 def motion(n):
     verify_sources();tag=f'N{n}';out=ROOT/'results/measurements'/tag;out.mkdir(parents=True,exist_ok=False)
-    cfg=load(PLAN['configuration']['path']);core,scope=reader(PLAN);tables=[];repeated=[];start=time.perf_counter()
+    cfg=load(str(PROJECT_ROOT / PLAN['configuration']['path']));core,scope=reader(PLAN);tables=[];repeated=[];start=time.perf_counter()
     save(out/'started.json',dict(utc=now(),pid=os.getpid(),source=rec(__file__)))
     for j,frame in enumerate(PLAN['frames']):
         imagepath=ROOT/'results/images'/tag/frame['sequence']/f"frame_{frame['frame_index']:04d}.png"
         recordpath=ROOT/'results/records'/frame['sequence']/f"frame_{frame['frame_index']:04d}.json"
         wait_image(recordpath);record=next(r for r in load(recordpath)['images'] if r['step']==n)
-        assert sha(imagepath)==record['sha256'];assert sha(frame['source']['path'])==frame['source']['sha256']
-        raw=scope['load_grayscale'](Path(frame['source']['path']));image=scope['load_grayscale'](imagepath)
+        assert sha(imagepath)==record['sha256'];assert sha(str(PROJECT_ROOT / frame['source']['path']))==frame['source']['sha256']
+        raw=scope['load_grayscale'](Path(PROJECT_ROOT / frame['source']['path']));image=scope['load_grayscale'](imagepath)
         table,points=scope['measure_frame'](core,scope,frame['sequence'],frame['frame_index'],cfg['sequences'][frame['sequence']],raw,image,tag)
         if frame['sequence'] not in repeated:
             again,_=scope['measure_frame'](core,scope,frame['sequence'],frame['frame_index'],cfg['sequences'][frame['sequence']],raw,image,tag)
@@ -29,7 +31,7 @@ def motion(n):
         status(out/'status.json',dict(status='running',frames=j+1,total=201,seconds=time.perf_counter()-start))
         if j%25==0:print(tag,'LSC',j+1,'/201',round(time.perf_counter()-start,1),flush=True)
     centers=pd.concat(tables,ignore_index=True);assert len(centers)==1809;centers.to_csv(out/'centers.csv',index=False)
-    fixed=pd.read_csv(PLAN['locked_pairs']['path']);adj=pd.read_csv(PLAN['adjacent_pairs']['path'])
+    fixed=pd.read_csv(str(PROJECT_ROOT / PLAN['locked_pairs']['path']));adj=pd.read_csv(str(PROJECT_ROOT / PLAN['adjacent_pairs']['path']))
     for label,pairs in [('locked120',fixed),('within_session194',adj[~adj.is_repositioning]),('repositioning3',adj[adj.is_repositioning])]:
         per,pillars=scope['pair_table'](centers,pairs,cfg,tag)
         per.to_csv(out/(label+'_pairs.csv'),index=False);pillars.to_csv(out/(label+'_pillar_pairs.csv'),index=False)

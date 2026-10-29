@@ -8,15 +8,15 @@ from pathlib import Path
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 DOCUMENT = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results"
-    r"\thesis_v8_language_cleanup\thesis_v8_language_working.docx"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v8_language_cleanup/thesis_v8_language_working.docx')
 )
 ARCHITECTURE_DIR = DOCUMENT.parent / "architecture_figures"
 ABLATION_FIGURE_DIR = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\figures"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/figures')
 )
 
 

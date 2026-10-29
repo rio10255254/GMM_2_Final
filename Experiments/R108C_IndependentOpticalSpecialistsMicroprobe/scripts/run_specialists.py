@@ -17,21 +17,22 @@ import pandas as pd
 import torch
 import torch.nn.functional as F
 from torch import nn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data';RESULT=ROOT/'results';WEIGHTS=ROOT/'weights';REPORT=ROOT/'reports/R108C_RESULTS_ZH.md'
 for folder in (DATA,RESULT,WEIGHTS,REPORT.parent):folder.mkdir(parents=True,exist_ok=True)
-BASE_ROOT=Path(r'D:\GMM_2_Final\Experiments\R108B_StagedParallelOpticalExpertsMicroprobe')
+BASE_ROOT=Path(str(PROJECT_ROOT / 'Experiments/R108B_StagedParallelOpticalExpertsMicroprobe'))
 BASE_DATA=BASE_ROOT/'data/microprobe_data.npz'
 EXPECTED_BASE_SHA='e01a97bc2b361195d550a6f3c5262e354b2424f8676ae9045c6abed765d39185'
 DEVICE=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 ROLES=['edge','texture','denoise','illumination','identity','mixed']
 REAL_IMAGES=[
- Path(r'D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\5x_dense_raw.bmp'),
- Path(r'D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\20x_mixed_raw.bmp'),
- Path(r'D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\50x_array_raw.bmp'),
- Path(r'D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\pillar_center9_50x_raw.bmp')]
+ Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/5x_dense_raw.bmp')),
+ Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/20x_mixed_raw.bmp')),
+ Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/50x_array_raw.bmp')),
+ Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/pillar_center9_50x_raw.bmp'))]
 
 
 def seed_all(seed:int):random.seed(seed);np.random.seed(seed);torch.manual_seed(seed);torch.cuda.manual_seed_all(seed)

@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 EXPERIMENT_ROOT = Path(__file__).resolve().parents[1]
@@ -38,7 +39,7 @@ def main() -> None:
         for record in manifest["records"]
         if record["variant"] == "full_control" and int(record["seed"]) == 1261200
     )
-    reference_payload = torch.load(Path(reference_record["checkpoint"]), map_location="cpu")
+    reference_payload = torch.load(Path(PROJECT_ROOT / reference_record["checkpoint"]), map_location="cpu")
     reference_state = reference_payload["state_dict"]
     reference_model_config = reference_payload.get("model_config", {})
     reference_output_config = {
@@ -64,7 +65,7 @@ def main() -> None:
     structure_digests: dict[str, set[str]] = {}
     optical_digests: dict[str, set[str]] = {key: set() for key in OPTICAL_KEYS}
     for record in manifest["records"]:
-        checkpoint = Path(record["checkpoint"])
+        checkpoint = Path(PROJECT_ROOT / record["checkpoint"])
         payload = torch.load(checkpoint, map_location="cpu")
         state = payload["state_dict"]
         model_config = payload.get("model_config", {})

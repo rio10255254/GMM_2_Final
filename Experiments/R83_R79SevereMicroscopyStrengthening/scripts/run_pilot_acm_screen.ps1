@@ -1,8 +1,9 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
 $ErrorActionPreference = 'Stop'
 $ExperimentRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$PythonExe = 'C:\Users\Rio\anaconda3\python.exe'
+$PythonExe = python
 $MatlabExe = 'C:\Program Files\MATLAB\R2025b\bin\matlab.exe'
-$R82Scripts = 'D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark\scripts'
+$R82Scripts = (Join-Path $ProjectRoot 'Experiments\R82_R39R40CrossSceneGeneralizationBenchmark\scripts')
 $ScreenRoot = Join-Path $ExperimentRoot 'results\pilot_acm_screen'
 
 & $PythonExe (Join-Path $ExperimentRoot 'scripts\prepare_pilot_acm_screen.py')

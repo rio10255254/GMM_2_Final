@@ -20,6 +20,7 @@ from typing import Iterable
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 EXPERIMENT_DIR = Path(__file__).resolve().parents[1]
@@ -65,8 +66,8 @@ TARGET_SEQUENCES = (
     TargetSequence(
         dataset="20260702_100MG",
         sequence="x_1um",
-        raw_dir=Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_1um\bmp"),
-        teacher_dir=Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\r61_v16_psfoff_x_1um\bmp"),
+        raw_dir=Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')),
+        teacher_dir=Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp')),
         feature_hint="mixed_pillar_line_square",
         magnification_hint="lab_100mg_sequence",
         step_hint_um=1.0,
@@ -74,8 +75,8 @@ TARGET_SEQUENCES = (
     TargetSequence(
         dataset="20260702_100MG",
         sequence="x_0p5um",
-        raw_dir=Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp"),
-        teacher_dir=Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\r61_v16_psfoff_x_0p5um\bmp"),
+        raw_dir=Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp')),
+        teacher_dir=Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um/bmp')),
         feature_hint="mixed_pillar_line_square",
         magnification_hint="lab_100mg_sequence",
         step_hint_um=0.5,
@@ -83,8 +84,8 @@ TARGET_SEQUENCES = (
     TargetSequence(
         dataset="20260704_20x_5x",
         sequence="20x_1um",
-        raw_dir=Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\20x_1um\bmp"),
-        teacher_dir=Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\r61_v16_psfoff_20x_1um\bmp"),
+        raw_dir=Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp')),
+        teacher_dir=Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp')),
         feature_hint="circle_square_line",
         magnification_hint="olympus_20x",
         step_hint_um=1.0,
@@ -92,8 +93,8 @@ TARGET_SEQUENCES = (
     TargetSequence(
         dataset="20260704_20x_5x",
         sequence="20x_0p5um",
-        raw_dir=Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\20x_0p5um\bmp"),
-        teacher_dir=Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\r61_v16_psfoff_20x_0p5um\bmp"),
+        raw_dir=Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp')),
+        teacher_dir=Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um/bmp')),
         feature_hint="circle_square_line",
         magnification_hint="olympus_20x",
         step_hint_um=0.5,
@@ -101,8 +102,8 @@ TARGET_SEQUENCES = (
     TargetSequence(
         dataset="20260704_20x_5x",
         sequence="5x_1um",
-        raw_dir=Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\5x_1um\bmp"),
-        teacher_dir=Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\r61_v16_psfoff_5x_1um\bmp"),
+        raw_dir=Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp')),
+        teacher_dir=Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp')),
         feature_hint="circle_square_line_lowmag",
         magnification_hint="lowmag_5x",
         step_hint_um=1.0,
@@ -110,8 +111,8 @@ TARGET_SEQUENCES = (
     TargetSequence(
         dataset="20260704_20x_5x",
         sequence="5x_0p5um",
-        raw_dir=Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\5x_0p5um\bmp"),
-        teacher_dir=Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\r61_v16_psfoff_5x_0p5um\bmp"),
+        raw_dir=Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp')),
+        teacher_dir=Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um/bmp')),
         feature_hint="circle_square_line_lowmag",
         magnification_hint="lowmag_5x",
         step_hint_um=0.5,

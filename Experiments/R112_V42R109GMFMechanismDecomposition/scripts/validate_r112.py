@@ -7,6 +7,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,8 +19,8 @@ def main() -> int:
     failures: list[str] = []
     checks: dict[str, object] = {}
     for arm, entry in CONFIG["models"].items():
-        score_rows = len(Path(entry["score"]).read_text(encoding="utf-8-sig").splitlines())
-        image_count = len(list(Path(entry["image_dir"]).glob("frame_*.bmp")))
+        score_rows = len(Path(PROJECT_ROOT / entry["score"]).read_text(encoding="utf-8-sig").splitlines())
+        image_count = len(list(Path(PROJECT_ROOT / entry["image_dir"]).glob("frame_*.bmp")))
         checks[f"source_{arm}"] = {"score_rows": score_rows, "images": image_count}
         if score_rows != 100 or image_count != 101:
             failures.append(f"{arm} source population mismatch")

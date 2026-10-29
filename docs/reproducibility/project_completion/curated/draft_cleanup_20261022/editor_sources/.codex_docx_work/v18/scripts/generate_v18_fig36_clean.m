@@ -1,10 +1,11 @@
 function generate_v18_fig36_clean()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))))));
 %GENERATE_V17_FIG36_ZH Redraw Figure 6-36 with Chinese labels.
 
-tablePath = ['D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\' ...
+tablePath = [[fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures') filesep] ...
     '04_V42_NEURAL_NETWORK_RESULTS\source_validation\wiener_baseline_20260715\' ...
     'supplementary_20x_cd\tables\20x_frame49_cd_summary.csv'];
-outDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v18\figures\wiener\figures';
+outDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_docx_work/v18/figures/wiener/figures');
 if ~exist(outDir, 'dir'), mkdir(outDir); end
 
 rows = readtable(tablePath, 'TextType', 'string', 'VariableNamingRule', 'preserve');

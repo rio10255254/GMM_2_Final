@@ -1,4 +1,5 @@
 function run_acm_multimethod(experiment_root)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
 % Extract closed Chan-Vese contours for Raw, R79 epoch 23, and epoch 100.
 % Exact generator masks are the primary geometry truth; ACM on clean labels
 % is retained only as an extraction-quality audit.
@@ -9,7 +10,7 @@ end
 experiment_root = char(experiment_root);
 cfg = jsondecode(fileread(fullfile(experiment_root, 'config', 'experiment.json')));
 inference = jsondecode(fileread(fullfile(experiment_root, 'results', 'inference_manifest.json')));
-data_root = char(cfg.dataset.root);
+data_root = fullfile(PROJECT_ROOT, char(cfg.dataset.root));
 table_dir = fullfile(experiment_root, 'results', 'tables');
 mask_dir = fullfile(experiment_root, 'results', 'masks');
 if ~exist(table_dir, 'dir'), mkdir(table_dir); end

@@ -26,7 +26,7 @@ def write_image(p,a):
 
 def verify():
     base.verify_sources()
-    for r in load(ROOT/'config/protocol.json')['sources']:assert sha(r['path'])==r['sha256'],r['path']
+    for r in load(ROOT/'config/protocol.json')['sources']:assert sha(str(REPO / r['path']))==r['sha256'],str(REPO / r['path'])
 
 def wait(p):
     while not Path(p).exists():
@@ -38,7 +38,7 @@ def setup():
     sources=[rec(R131/'config/protocol.json'),rec(PKG/'validation/extract_sem.m'),rec(PKG/'validation/sem_reference.mat')]
     for e in [13,14,15]:sources.append(rec(R131/f'results/edge_diagnostic/exposure{e}.npz'))
     sources.append(rec(R131/'results/edge_diagnostic/verified.json'))
-    for p in [PLAN['checkpoint']['path'],PLAN['configuration']['path'],PLAN['locked_pairs']['path'],PLAN['adjacent_pairs']['path']]:sources.append(rec(p))
+    for p in [str(REPO / PLAN['checkpoint']['path']),str(REPO / PLAN['configuration']['path']),str(REPO / PLAN['locked_pairs']['path']),str(REPO / PLAN['adjacent_pairs']['path'])]:sources.append(rec(p))
     protocol=dict(utc=now(),question='Is the fixed80px Raw retention necessary, overly broad, or masking underlying size bias?',widths=WIDTHS,transition=16,zero_means='No retention and no transition: exact pre-guard output',checkpoint=PLAN['checkpoint'],steps=4,training_updates=0,
                   populations=dict(normal_SEM='exposures13/14/15, same36 pillars; outer20 and inner16 from source grid',motion='all201frames; locked120 and all194within-session;3repositionings retained',crop_context='same centralpillar16, left crop measurement-window margins0/16/32/64/96 for each of3 exposures; original fullfield reference retained'),
                   crop_limit='Crop tests change actual FOV and therefore global optical/quality statistics too; they test operational context sensitivity, not only neural padding. No independent new physical sample.',

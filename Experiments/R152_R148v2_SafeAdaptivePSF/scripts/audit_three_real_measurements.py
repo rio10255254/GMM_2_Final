@@ -3,13 +3,14 @@ from __future__ import annotations
 import json,sys
 from pathlib import Path
 import cv2,numpy as np,pandas as pd,torch
-ROOT=Path(__file__).resolve().parents[1];BASE=Path(r'D:\GMM_2_Final\Experiments\R148v2_HybridContextNativePSF');sys.path.insert(0,str(ROOT));sys.path.append(str(BASE))
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];BASE=Path(str(PROJECT_ROOT / 'Experiments/R148v2_HybridContextNativePSF'));sys.path.insert(0,str(ROOT));sys.path.append(str(BASE))
 from evaluation.measurement_interface import measure_image
 from model import Model
 from utils import load,model_config,now,save,setup,sha
 
 def main():
- setup(1522802);done=load(ROOT/'runs/formal_8192/training_complete.json');rec=done['deployed_checkpoint'];assert sha(rec['path'])==rec['sha256'];model=Model(model_config(),ROOT).cuda().eval();cp=torch.load(rec['path'],map_location='cpu',weights_only=False);model.load_state_dict(cp['model'],strict=True);assert float(model.deployment_scale)==1
+ setup(1522802);done=load(ROOT/'runs/formal_8192/training_complete.json');rec=done['deployed_checkpoint'];assert sha(str(PROJECT_ROOT / rec['path']))==rec['sha256'];model=Model(model_config(),ROOT).cuda().eval();cp=torch.load(str(PROJECT_ROOT / rec['path']),map_location='cpu',weights_only=False);model.load_state_dict(cp['model'],strict=True);assert float(model.deployment_scale)==1
  config=load(BASE/'evaluation/measurement_config.json');tracking=pd.read_csv(BASE/'evaluation/tracking.csv');plan=load(BASE/'evaluation/capture_plan.json');rows=[]
  for frame_number in (0,465,929):
   frame=plan['frames'][frame_number];run=frame['run'];index=frame['index'];seeds=tracking[(tracking.run==run)&(tracking['index']==index)].sort_values('pillar_id')[['seed_x_px','seed_y_px']].to_numpy();raw=cv2.imread(frame['source']['path'],cv2.IMREAD_UNCHANGED);x=torch.from_numpy(raw.astype(np.float32)[None,None]/255).cuda()

@@ -13,11 +13,12 @@ import numpy as np
 import pandas as pd
 from scipy.stats import entropy
 from sklearn.neighbors import NearestNeighbors
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-R109 = Path(CONFIG["sources"]["r109_root"])
+R109 = Path(PROJECT_ROOT / CONFIG["sources"]["r109_root"])
 OUTPUT = ROOT / "results" / "domain_gap"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(R109 / "training"))
@@ -25,14 +26,14 @@ from r109_dataset import R109Dataset
 
 
 REAL = {
-    "real_5x": [Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\5x_dense_raw.bmp")],
-    "real_20x": [Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\20x_mixed_raw.bmp")],
+    "real_5x": [Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/5x_dense_raw.bmp'))],
+    "real_20x": [Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/20x_mixed_raw.bmp'))],
     "real_50x": [
-        Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\50x_array_raw.bmp"),
-        Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\pillar_center9_50x_raw.bmp"),
+        Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/50x_array_raw.bmp')),
+        Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/pillar_center9_50x_raw.bmp')),
     ],
-    "sem_optical": sorted(Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack").glob("*.bmp")),
-    "junhua_ring": [Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\Pitch1um_Y_100_Raw_Even_R109E48\pitch1um_y100_raw\bmp\frame_0050.bmp")],
+    "sem_optical": sorted(Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack')).glob("*.bmp")),
+    "junhua_ring": [Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/pitch1um_y100_raw/bmp/frame_0050.bmp'))],
 }
 METRICS = [
     "mean", "std", "gradient_rms", "highpass_rms", "edge_density", "local_contrast",

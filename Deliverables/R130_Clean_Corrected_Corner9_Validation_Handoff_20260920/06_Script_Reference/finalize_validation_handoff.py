@@ -4,8 +4,9 @@ import numpy as np,pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-P=Path(r'D:\GMM_2_Final\Deliverables\R130_Clean_Corrected_Corner9_Validation_Handoff_20260920')
-R=Path(r'D:\GMM_2_Final\Experiments\R130_Clean')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+P=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
+R=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean'))
 a=P/'01_Raw_R130_Comparison'
 D=pd.read_csv(a/'all_circles.csv');runs=json.loads((P/'03_Sampling_and_SEM/capture_plan.json').read_text())['runs']
 for j in [0,30]:
@@ -35,7 +36,7 @@ def sha(p):
 # Seal the final delivery after adding the requested contour visualizations.
 items=[dict(path=p.relative_to(P).as_posix(),bytes=p.stat().st_size,sha256=sha(p)) for p in sorted(P.rglob('*')) if p.is_file() and p.name!='MANIFEST.json']
 (P/'MANIFEST.json').write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding='utf-8')
-subprocess.run([r'C:\Users\Rio\anaconda3\python.exe',str(P/'verify_package.py')],check=True)
+subprocess.run(['python',str(P/'verify_package.py')],check=True)
 # Test the read-only verifier's failure behavior using a disposable independent sample.
 with tempfile.TemporaryDirectory(prefix='r130_verify_test_') as temp:
  t=Path(temp);shutil.copy2(P/'verify_package.py',t/'verify_package.py');(t/'sample.txt').write_text('original')
@@ -43,7 +44,7 @@ with tempfile.TemporaryDirectory(prefix='r130_verify_test_') as temp:
  for condition in ['unchanged','modified','missing']:
   if condition=='modified':(t/'sample.txt').write_text('changed')
   if condition=='missing':(t/'sample.txt').unlink()
-  result=subprocess.run([r'C:\Users\Rio\anaconda3\python.exe',str(t/'verify_package.py')],capture_output=True,text=True)
+  result=subprocess.run(['python',str(t/'verify_package.py')],capture_output=True,text=True)
   assert result.returncode==(0 if condition=='unchanged' else 1),(condition,result.stdout)
 zip_path=P.with_suffix('.zip');assert not zip_path.exists()
 with zipfile.ZipFile(zip_path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:

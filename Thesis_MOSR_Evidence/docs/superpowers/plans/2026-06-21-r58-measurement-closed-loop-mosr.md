@@ -6,7 +6,7 @@
 
 **Architecture:** Add a new `R58_MeasurementClosedLoopMOSR` experiment package beside R57. Reuse R57's verified CD measurement/gate tools, but generate softer real-style 100MG anchors, launch several short fine-tune variants from the R55 best checkpoint, reconstruct the same 100MG source image for every checkpoint, measure CD, and rank candidates by SEM-referenced radius error plus non-regression gates.
 
-**Tech Stack:** Python, OpenCV, NumPy, PyTorch training entrypoint from `D:\GMM_2_Final\Model`, existing LabSystem_MOSR reconstruction and R57 CD measurement utilities.
+**Tech Stack:** Python, OpenCV, NumPy, PyTorch training entrypoint from `Model`, existing LabSystem_MOSR reconstruction and R57 CD measurement utilities.
 
 ---
 

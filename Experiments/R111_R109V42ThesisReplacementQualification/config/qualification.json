@@ -4,33 +4,33 @@
   "models": {
     "v42_e120": {
       "role": "thesis_results_model",
-      "checkpoint": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
+      "checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
       "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83"
     },
     "r109_e48": {
       "role": "replacement_candidate",
-      "checkpoint": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
+      "checkpoint": "Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
       "sha256": "77ff8611e764e1350d60592f5d8a25d6786db17897eadce189185cdc4dbc87fc",
       "scratch_training": true,
       "real_pixels_in_training": false
     }
   },
   "frozen_contract": {
-    "sequence_config": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",
-    "sequence_config_sha256": "e7bd2e86490882ee23b65ecf467624df69546fd51b76e51b12232142a34f8601",
-    "top30_selection": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv",
+    "sequence_config": "Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",
+    "sequence_config_sha256": "606ce4f78da290bd7ca474b791221d26e3514192c648d875a95aaea4a3630140",
+    "top30_selection": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv",
     "top30_selection_sha256": "2e26ef80b203a3a2157c2d8a5a94951e3d43b6079db62c633201d9e6a696ae9b",
-    "raw_lock": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/diagnostics/unified_displacement_step_audit/tables/raw_eligibility_locked_before_v42.csv",
+    "raw_lock": "Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/diagnostics/unified_displacement_step_audit/tables/raw_eligibility_locked_before_v42.csv",
     "raw_lock_sha256": "44f77635aa2c189593bf626aa49e295eee1d3e566a65c60048dc4e5714772469",
     "selection_independent_of_candidate": true,
     "no_reselection_for_r109": true,
     "no_metric_rule_change": true
   },
   "r109_reconstructions": {
-    "20x_0p5um": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions/20x_0p5um",
-    "20x_1um": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions/20x_1um",
-    "50x_x_0p5um": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions/50x_0p5um",
-    "50x_x_1um": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions/50x_1um"
+    "20x_0p5um": "Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions/20x_0p5um",
+    "20x_1um": "Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions/20x_1um",
+    "50x_x_0p5um": "Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions/50x_0p5um",
+    "50x_x_1um": "Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions/50x_1um"
   },
   "required_local_tests": [
     "frozen_120_step_center9_displacement",
@@ -42,7 +42,7 @@
     "large_image_tile_parity"
   ],
   "external_test": {
-    "dataset": "D:/NTU_ImageDataset/Pitch1um_Y_100/Raw",
+    "dataset": "Shared_Sources/NTU_Originals/Pitch1um_Y_100/Raw",
     "selection": "filename-sorted 1-based even positions, 101 frames",
     "required_cases": ["Raw", "V42 E120", "R109 E48"],
     "status": "V42 reconstruction and package pending"

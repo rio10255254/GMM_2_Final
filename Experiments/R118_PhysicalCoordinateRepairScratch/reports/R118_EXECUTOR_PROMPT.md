@@ -5,7 +5,7 @@
 ---
 
 請完整執行下一輪的已整理計畫。先讀
-`D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/NEXT_STEPS.md`，
+`Experiments/R118_PhysicalCoordinateRepairScratch/NEXT_STEPS.md`，
 再依它指定的順序讀完整交接、量測規則、階段任務和操作手冊。
 
 使用 `C:/Users/Rio/anaconda3/python.exe`，先執行該資料夾下的

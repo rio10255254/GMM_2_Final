@@ -13,13 +13,14 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 OUTPUT = ROOT / "results" / "detailed_validation" / "02_real_contract"
-MANIFEST = Path(r"D:\GMM_2_Final\Experiments\R114_ConfidenceGatedRecoverableScratch\validation\manifests\real_representatives.json")
-HELPER = Path(r"D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\scripts\evaluate_real_holdout.py")
+MANIFEST = Path(str(PROJECT_ROOT / 'Experiments/R114_ConfidenceGatedRecoverableScratch/validation/manifests/real_representatives.json'))
+HELPER = Path(str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/scripts/evaluate_real_holdout.py'))
 CANDIDATES = {
     24: ROOT / "runs" / "r116_formal_scratch_20260903_202052" / "weights" / "epoch_024.pth",
     42: ROOT / "runs" / "r116_formal_scratch_20260903_202052" / "failure_snapshot.pth",

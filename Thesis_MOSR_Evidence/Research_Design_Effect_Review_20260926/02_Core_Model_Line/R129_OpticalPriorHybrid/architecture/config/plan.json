@@ -1,19 +1,19 @@
 {
   "created_utc": "2026-09-12T08:14:58.131336+00:00",
   "source_checkpoint": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\checkpoints\\step8192.pth",
+    "path": "Experiments/R128_SourceOnlyFullTraining/runs/P_s1285002/checkpoints/step8192.pth",
     "sha256": "9fbdffa3bebe0a37e3f7c2b09239e2e00de6b0522feb101571fcfb7a42699abf"
   },
   "calibration": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\data\\measured_psf_bank.npz",
+    "path": "Experiments/R129_OpticalPriorHybrid/data/measured_psf_bank.npz",
     "sha256": "25cc6c95a224caae0e4a0380a88980551586a35cdb34eebde2635639e2c29553"
   },
   "provenance": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\data\\PSF_PROVENANCE.json",
-    "sha256": "f72cc3f078837af4dd599df7348c3d0c0e5733102b484a98064c5bf7307ce9f5"
+    "path": "Experiments/R129_OpticalPriorHybrid/data/PSF_PROVENANCE.json",
+    "sha256": "199a7e3f7b565b3821ccf9d6e584e9f5fb1d97528fff77c324ac5f80f5a5a39a"
   },
   "shared_data": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\data\\package\\manifest.json",
+    "path": "Experiments/R128_SourceOnlyFullTraining/data/package/manifest.json",
     "sha256": "8cb7afc18a885f4dace5b5309e005c4b530c82d3f323e63441fea71174e1f889"
   },
   "purpose": "Honor requested thesis design requirements while measuringactualbenefitsandcosts.",
@@ -132,7 +132,7 @@
   ],
   "storage_budget_gib": 4,
   "model_code": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\hybrid.py",
+    "path": "Experiments/R129_OpticalPriorHybrid/model/hybrid.py",
     "sha256": "30fea0cd27049fa71da88a30157132b8b4a78ecd42d0b2b8d2d1d327d0a7020e"
   }
 }

@@ -39,20 +39,20 @@
 執行錯誤：
 ```
 Traceback (most recent call last):
-  File "D:\GMM_2_Final\Experiments\R135_UnifiedModelComparison\scripts\continue_comparison.py", line 29, in <module>
+  File "Experiments/R135_UnifiedModelComparison/scripts/continue_comparison.py", line 29, in <module>
     try:main()
         ^^^^^^
-  File "D:\GMM_2_Final\Experiments\R135_UnifiedModelComparison\scripts\continue_comparison.py", line 19, in main
+  File "Experiments/R135_UnifiedModelComparison/scripts/continue_comparison.py", line 19, in main
     if r.returncode:raise RuntimeError(load(ROOT/f'results/{tag}/failure.json')['error'])
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 RuntimeError: Traceback (most recent call last):
-  File "D:\GMM_2_Final\Experiments\R135_UnifiedModelComparison\scripts\run_model.py", line 55, in <module>
+  File "Experiments/R135_UnifiedModelComparison/scripts/run_model.py", line 55, in <module>
     try:main(args.tag)
         ^^^^^^^^^^^^^^
-  File "D:\GMM_2_Final\Experiments\R135_UnifiedModelComparison\scripts\run_model.py", line 22, in main
+  File "Experiments/R135_UnifiedModelComparison/scripts/run_model.py", line 22, in main
     fresh=predict(raw8)
           ^^^^^^^^^^^^^
-  File "D:\GMM_2_Final\Experiments\R135_UnifiedModelComparison\scripts\adapters.py", line 27, in predict
+  File "Experiments/R135_UnifiedModelComparison/scripts/adapters.py", line 27, in predict
     kw=captured['options'];return mod.apply_anchor_output(x,v,mode=kw.get('anchor_output_mode','none'),alpha=kw.get('anchor_alpha',.1),sigma=kw.get('anchor_sigma',2.),detail_gain=kw.get('anchor_detail_gain',.35))
                                   ^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: module 'legacy_native_inference' has no attribute 'apply_anchor_output'

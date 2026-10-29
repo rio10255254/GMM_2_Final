@@ -1,9 +1,10 @@
 function run_contour_check()
-root='D:/GMM_2_Final/Experiments/R128_SourceOnlyFullTraining';out=fullfile(root,'results','full_contour');
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
+root=fullfile(PROJECT_ROOT, 'Experiments/R128_SourceOnlyFullTraining');out=fullfile(root,'results','full_contour');
 assert(isfile(fullfile(out,'plan.json')));assert(~isfile(fullfile(out,'measurements.csv')));
 input=load(fullfile(out,'inputs.mat'));
-old=load('D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat');
-alt=load('D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial/results/pitch_matched_reference.mat');
+old=load(fullfile(PROJECT_ROOT, 'Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat'));
+alt=load(fullfile(PROJECT_ROOT, 'Experiments/R121_BoundaryAnchorFactorial/results/pitch_matched_reference.mat'));
 names={'Raw','R128_PNG','R128_float'};reference_names={'historical','global_pitch_matched'};preset_names={'primary','less_smooth','more_smooth'};
 iterations=[200 150 250];smoothness=[1.0 0.5 2.0];exps=[13 14 15];
 refs=cat(4,old.truth_masks,alt.truth_masks);sem_cells=cat(4,old.truth_cells,alt.truth_cells);

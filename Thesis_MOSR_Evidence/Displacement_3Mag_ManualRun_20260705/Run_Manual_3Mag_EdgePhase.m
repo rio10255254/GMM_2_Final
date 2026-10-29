@@ -1,9 +1,10 @@
 function Run_Manual_3Mag_EdgePhase(varargin)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(mfilename('fullpath'))));
 % Open this file in MATLAB and press Run.
 % Results are written into this same thesis evidence folder by default.
 
 thisDir = fileparts(mfilename('fullpath'));
-toolDir = 'D:\GMM_2_Final\Tools\Displacement_Algorithms';
+toolDir = fullfile(PROJECT_ROOT, 'Tools/Displacement_Algorithms');
 
 addpath(toolDir);
 addpath(fullfile(toolDir, 'phase_correlation_dft', 'legacy_matlab'));

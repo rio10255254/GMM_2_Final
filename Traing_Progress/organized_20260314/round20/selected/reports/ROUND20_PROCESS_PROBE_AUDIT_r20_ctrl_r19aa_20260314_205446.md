@@ -1,7 +1,7 @@
 # Process Probe Audit
 
 - candidate: r20_ctrl_r19aa
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\organized_20260314\round20\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/weights/best_tradeoff.pth.tar
 - process_score: -52.681308
 - passes_target: True
 

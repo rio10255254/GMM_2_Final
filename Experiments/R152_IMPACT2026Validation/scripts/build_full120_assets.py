@@ -12,6 +12,7 @@ sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as backend
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 DATA=ROOT/'results/full120';OUT=ROOT/'poster_assets/full120';OUT.mkdir(parents=True,exist_ok=True)
 METHODS=['Raw','Wiener','R152'];COLORS=['#7d8792','#ce8430','#18799a']
 SEQS=['50x_x_0p5um','50x_x_1um','20x_0p5um','20x_1um']
@@ -51,7 +52,7 @@ def main():
     for ri,seq in enumerate(SEQS):
         spec=conf['sequences'][seq];fi=int(selection[selection.sequence==seq].iloc[0].start_frame_index);mag=spec['magnification'];sub='20x' if mag=='20x' else '50x_calibrated'
         chosen.append(dict(sequence=seq,frame_index=fi,rule='first locked pair start frame, no image-quality selection'))
-        raw=backend.load_grayscale(Path(spec['raw_dir'])/f'frame_{fi:04d}.bmp');recon=np.load(ROOT/f'results/{sub}/reconstruction/{seq}/frame_{fi:04d}.npz')['output']
+        raw=backend.load_grayscale(Path(PROJECT_ROOT / spec['raw_dir'])/f'frame_{fi:04d}.bmp');recon=np.load(ROOT/f'results/{sub}/reconstruction/{seq}/frame_{fi:04d}.npz')['output']
         pred=backend.session_prediction(seq,fi,np.array(spec['centers'],float),float(spec['expected_signed_dx_px']));pitch=spec['pitch_px'];margin=int(np.ceil(.55*pitch))
         x0=max(0,int(np.floor(pred[:,1].min()))-margin);x1=min(raw.shape[1],int(np.ceil(pred[:,1].max()))+margin+1)
         y0=max(0,int(np.floor(pred[:,2].min()))-margin);y1=min(raw.shape[0],int(np.ceil(pred[:,2].max()))+margin+1)

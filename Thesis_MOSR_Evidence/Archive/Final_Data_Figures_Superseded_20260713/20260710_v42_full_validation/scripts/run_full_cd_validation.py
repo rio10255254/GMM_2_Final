@@ -3,9 +3,10 @@ from __future__ import annotations
 import importlib.util
 import sys
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 SOURCE = ROOT / "Final_Data_Figures" / "20260710_v42_checkpoint_cd_validation" / "scripts" / "run_individual_cd_validation.py"
 OUT = ROOT / "Final_Data_Figures" / "20260710_v42_full_validation"
 IMAGE = "Image__2026-06-18__17-10-31.bmp"

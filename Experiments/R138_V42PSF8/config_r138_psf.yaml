@@ -87,7 +87,7 @@
     "context_output_abs": 2e-06,
     "context_gradient_relative": 5e-05
   },
-  "dataset_source": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\data",
+  "dataset_source": "Experiments/R130_Clean/data",
   "dataset_copy_policy": "Extract unchanged source/noiseless/target only; omit stored synthetic kernel4 and latent/geometry arrays; no regeneration.",
   "real_evaluation_after_final_checkpoint_only": true,
   "comparisons": [

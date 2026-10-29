@@ -69,7 +69,7 @@
 
 ## 目的與權威入口
 
-本計畫處理 D:/GMM_2_Final/Thesis_MOSR_Evidence、D:/GMM_2_Final/Experiments、D:/GMM_2_Final/20260704_20x_5x_analysis，以及獨立的 .git 維護。既有根目錄與程式引用路徑保持可用；D 放活動工作、正式報告、採用模型、原始影像與精選證據，H 放經核對的完整歷史。
+本計畫處理 Thesis_MOSR_Evidence、Experiments、20260704_20x_5x_analysis，以及獨立的 .git 維護。既有根目錄與程式引用路徑保持可用；D 放活動工作、正式報告、採用模型、原始影像與精選證據，H 放經核對的完整歷史。
 
 本計畫接續 PROJECT_FUTURE_STRUCTURE_PLAN.md、PROJECT_STORAGE_AND_ARCHIVE_POLICY.md、LABSYSTEM_ARCHIVE_QUEUE.md 與 SOURCE_OF_TRUTH_POLICY.md。正式模型身分仍由 ESTIMATOR_POLICY.json 和 PROJECT_STATE.md 決定；實驗結論仍以各輪 reports 為準。容量整理不改寫研究判決。
 

@@ -11,6 +11,7 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt
 from docx.text.paragraph import Paragraph
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 INPUT_DOCX = Path(
@@ -22,9 +23,7 @@ OUTPUT_DOCX = Path(
     r"\第六章 實驗結果與分析_6.1.2方法與銳利度驗證完整版.docx"
 )
 FIGURE_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\figures"
-    r"\center9_pillar_fit_20x_50x\comparison"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x/comparison')
 )
 METHOD_FIGURE = FIGURE_ROOT / "04_cd_measurement_method.png"
 SHARPNESS_FIGURE = FIGURE_ROOT / "05_sharpness_validation.png"

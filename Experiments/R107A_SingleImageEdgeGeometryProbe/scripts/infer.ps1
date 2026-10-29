@@ -7,7 +7,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
-$python = 'C:\Users\Rio\anaconda3\python.exe'
+$python = python
 & $python (Join-Path $root 'inference\run_folder.py') --checkpoint $Checkpoint --input $InputPath --output $OutputPath --core-size $CoreSize --halo $Halo
 exit $LASTEXITCODE
 

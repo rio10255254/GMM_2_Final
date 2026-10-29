@@ -3,12 +3,12 @@
   "created_local": "2026-08-30",
   "no_training": true,
   "sources": {
-    "data_package": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/data/package",
+    "data_package": "Experiments/R109_StagedMidpointWidthScratch/data/package",
     "data_manifest_sha256": "f10eb706d215b021856bd9ebe4589508d796b5bbb4ddc4b7ee1ee9a5667993ef",
-    "r109_root": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch",
-    "r109_checkpoint": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
+    "r109_root": "Experiments/R109_StagedMidpointWidthScratch",
+    "r109_checkpoint": "Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
     "r109_checkpoint_sha256": "77ff8611e764e1350d60592f5d8a25d6786db17897eadce189185cdc4dbc87fc",
-    "r113_decision": "D:/GMM_2_Final/Experiments/R113_CausalStructureDissection/results/FINAL_DECISION.json"
+    "r113_decision": "Experiments/R113_CausalStructureDissection/results/FINAL_DECISION.json"
   },
   "expected": {
     "train_records": 5000,

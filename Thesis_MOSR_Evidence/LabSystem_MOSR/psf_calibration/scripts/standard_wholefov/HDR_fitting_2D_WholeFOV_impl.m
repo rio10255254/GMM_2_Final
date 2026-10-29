@@ -1,7 +1,8 @@
-% Copied for LabSystem_MOSR from D:/GMM_2_Final/PSF_Fitting/HDR_fitting_2D_WholeFOV_impl.m.
+% Copied for LabSystem_MOSR from PSF_Fitting/HDR_fitting_2D_WholeFOV_impl.m.
 % Keeps the project-standard Whole-FOV Zernike/BADS workflow; only lab data
 % paths are parameterized in this copy.
 function summary = HDR_fitting_2D_WholeFOV_impl(varargin)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))));
 parser = inputParser;
 parser.addParameter('subset_indices', 1:100, @(x) isnumeric(x) && ~isempty(x));
 parser.addParameter('grid_rows', 10, @(x) isnumeric(x) && isscalar(x) && x >= 1);
@@ -14,7 +15,7 @@ parser.addParameter('output_root', fullfile('Crop_circle_FreqFiltered', 'Fits'),
 parser.addParameter('input_folder', '', @(x) ischar(x) || isstring(x));
 parser.addParameter('gt_path', '', @(x) ischar(x) || isstring(x));
 parser.addParameter('psf_basis_path', '', @(x) ischar(x) || isstring(x));
-parser.addParameter('dependency_root', 'D:/GMM_2_Final/PSF_Fitting', @(x) ischar(x) || isstring(x));
+parser.addParameter('dependency_root', fullfile(PROJECT_ROOT, 'PSF_Fitting'), @(x) ischar(x) || isstring(x));
 parser.addParameter('use_gpu', [], @(x) isempty(x) || islogical(x) || isnumeric(x));
 parser.addParameter('prealign_search_radius', 2, @(x) isnumeric(x) && isscalar(x) && x >= 0);
 parser.addParameter('prealign_search_step', 0.25, @(x) isnumeric(x) && isscalar(x) && x > 0);

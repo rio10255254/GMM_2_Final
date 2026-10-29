@@ -4,8 +4,9 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
 import psutil
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 def main():
-    pkg=Path(load(ROOT/'config/standalone_build.json')['path']);run=pkg/'results/training/r129_long_01';deadline=time.monotonic()+1200
+    pkg=Path(PROJECT_ROOT / load(ROOT/'config/standalone_build.json')['path']);run=pkg/'results/training/r129_long_01';deadline=time.monotonic()+1200
     def wait_for(predicate):
         while time.monotonic()<deadline:
             path=run/'status.json'

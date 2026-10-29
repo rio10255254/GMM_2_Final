@@ -26,6 +26,7 @@ from analyze_r76 import (  # noqa: E402
     holm_adjust,
     improvement,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
@@ -35,8 +36,8 @@ AUDIT_ROOT = RESULTS / "epoch100_audit"
 TABLES = AUDIT_ROOT / "results" / "tables"
 FIGURES = RESULTS / "figures"
 REPORTS = ROOT / "reports"
-R69 = Path(CONFIG["paired_evidence"]["r69_root"])
-R70 = Path(CONFIG["paired_evidence"]["r70_root"])
+R69 = Path(PROJECT_ROOT / CONFIG["paired_evidence"]["r69_root"])
+R70 = Path(PROJECT_ROOT / CONFIG["paired_evidence"]["r70_root"])
 METHODS = ["Raw", "R61v16", "V42E120", "R75BestE21", "R75E100"]
 COLORS = {
     "Raw": "#D97706",
@@ -232,7 +233,7 @@ def figures(per_pillar: pd.DataFrame, exposure: pd.DataFrame) -> None:
 
     fig, axes = plt.subplots(3, 3, figsize=(13, 12), constrained_layout=True)
     for row, exposure_id in enumerate([18, 21, 24]):
-        raw_image = np.asarray(Image.open(Path(CONFIG["paired_evidence"]["raw_input_dir"]) / f"{exposure_id}.bmp").convert("L"), dtype=float)
+        raw_image = np.asarray(Image.open(Path(PROJECT_ROOT / CONFIG["paired_evidence"]["raw_input_dir"]) / f"{exposure_id}.bmp").convert("L"), dtype=float)
         recon_image = np.asarray(Image.open(RESULTS / "reconstruction_epoch100" / f"{exposure_id}.bmp").convert("L"), dtype=float)
         difference = np.abs(recon_image - raw_image)
         axes[row, 0].imshow(raw_image, cmap="gray", vmin=0, vmax=255)

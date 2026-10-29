@@ -2,7 +2,8 @@
 from __future__ import annotations
 import json
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];EXP=Path(r'D:\GMM_2_Final\Experiments');OUT=ROOT/'results/locked_inference'
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];EXP=Path(str(PROJECT_ROOT / 'Experiments'));OUT=ROOT/'results/locked_inference'
 TEMPLATES={'R73':EXP/'R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R73_novel_shapes/config/experiment.json','R74':EXP/'R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R74_hard_microscopy/config/experiment.json'}
 def main():
  for suite,template in TEMPLATES.items():

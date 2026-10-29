@@ -6,9 +6,10 @@ import os
 import shutil
 from datetime import datetime
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-ANALYSIS_ROOT = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis")
+ANALYSIS_ROOT = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis'))
 PACKAGE_ROOT = ANALYSIS_ROOT / "external_gmf_packages"
 FULL_ROOT = PACKAGE_ROOT / "gmf_20260704_20x_5x_full_sequences"
 STABLE_ROOT = PACKAGE_ROOT / "gmf_20260704_20x_5x_stable_segments"

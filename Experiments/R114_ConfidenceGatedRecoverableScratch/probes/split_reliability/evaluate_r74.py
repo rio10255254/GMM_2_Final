@@ -17,9 +17,10 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from model.r114_split_profile_model import build_split_profile_model
 from training.split_profile_targets import build_split_profile_targets
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-R74 = Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val")
+R74 = Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val'))
 
 
 def read(path: str | Path) -> np.ndarray:

@@ -3,8 +3,9 @@ import sys,shutil,json,importlib.metadata,platform
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
-    pkg=Path(load(ROOT/'config/standalone_build.json')['path'])
+    pkg=Path(PROJECT_ROOT / load(ROOT/'config/standalone_build.json')['path'])
     shutil.copy2(ROOT/'package_source/preflight.py',pkg/'preflight.py')
     launcher=(pkg/'START_R129.cmd').read_text(encoding='utf-8').replace('\r','')
     (pkg/'START_R129.cmd').write_bytes(launcher.replace('\n','\r\n').encode('ascii'))

@@ -7,11 +7,12 @@ from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.shared import Emu
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 SOURCE = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v21_位移標準差表格版.docx")
 OUTPUT = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v22_消融圖表重整版.docx")
-FIGURE_DIR = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\08_V22_ABLATION_REDESIGN_20260727\figures")
+FIGURE_DIR = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/08_V22_ABLATION_REDESIGN_20260727/figures'))
 FIGURE_WIDTH_EMU = 5_256_000
 
 

@@ -1,6 +1,8 @@
 from common import *
 import csv,shutil
 import cv2
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
     for name in ['config','reports','results','runs/launcher_logs']:(ROOT/name).mkdir(parents=True,exist_ok=True)
     previous=load(REPO/'Experiments/R135_UnifiedModelComparison/config/plan.json')
@@ -14,8 +16,8 @@ def main():
             frames.append(dict(run=p.parent.name,run_index=ri,index=i,image=r['image'],source=record(path),pi_x_um=float(r['x']),pi_y_um=float(r['y']),recorded_at=r['recorded_at'],frame=int(r['frame']),exposure_us=float(r['exposure_us'])))
     assert len(runs)==30 and len(frames)==930
     r129=load(REPO/'Experiments/R129_OpticalPriorHybrid/results/continuous_lsc/plan.json')
-    models=dict(R61=previous['models']['R61'],R129=dict(checkpoint=r129['checkpoint'],package=r129['package'],guard_width=80,guard_transition=16,updates=8192))
-    for info in models.values():assert sha(info['checkpoint']['path'])==info['checkpoint']['sha256']
+    models=dict(R61=previous['models']['R61'],R129=dict(checkpoint=r129['checkpoint'],package=str(PROJECT_ROOT / r129['package']),guard_width=80,guard_transition=16,updates=8192))
+    for info in models.values():assert sha(str(PROJECT_ROOT / info['checkpoint']['path']))==info['checkpoint']['sha256']
     plan=dict(created_utc=now(),runs=runs,frames=frames,models=models,primary='paired full-scan comparison against synchronous PI feedback',units_confirmed_by_user='um',scale_status='pending capture calibration',raw_unchanged=True,training_updates=0,rois=dict(primary=[128,128,1808,1288],inner=[256,256,1552,1032],junction=[1050,450,650,750]),reader=dict(primary='unwindowed overlap-refined intensity translation with illumination offset/scale',secondary='gradient phase correlation'),scan_exclusions=[],output_precision='float32 NPZ plus lossless16bit PNG',analysis_scope='same sample and capture session; not universal model generalization')
     save(ROOT/'config/plan.json',plan)
     save(ROOT/'runs/launcher_logs/active_formal_run.json',dict(status='prepared',created_utc=now(),expected_frames_per_model=930,models=['R61','R129'],training_updates=0))

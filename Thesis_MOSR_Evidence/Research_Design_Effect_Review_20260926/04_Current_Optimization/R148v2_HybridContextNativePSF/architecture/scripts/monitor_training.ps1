@@ -1,4 +1,5 @@
 param([int]$RefreshSeconds = 10)
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..\..')).Path
 $ErrorActionPreference = 'SilentlyContinue'
 $ExperimentRoot = Split-Path -Parent $PSScriptRoot
 $RunRoot = Join-Path $ExperimentRoot 'runs\formal_8192'
@@ -38,7 +39,7 @@ while ($true) {
     $RemainingSeconds = if ($Rate -gt 0) { ($Total - $Step) / $Rate } else { 0 }
     $Eta = if ($RemainingSeconds -gt 0) { $Now.AddSeconds($RemainingSeconds) } else { $null }
     $CheckpointHashOk = $false
-    if ($Latest -and (Test-Path -LiteralPath $Latest.path)) {
+    if ($Latest -and (Test-Path -LiteralPath ([System.IO.Path]::Combine($ProjectRoot, $Latest.path)))) {
         $CheckpointHash = (Get-FileHash -LiteralPath $Latest.path -Algorithm SHA256).Hash.ToLower()
         $CheckpointHashOk = $CheckpointHash -eq $Latest.sha256
     }

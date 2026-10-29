@@ -22,6 +22,7 @@ from integrate_base_unet_v11 import (
     set_cell_shading,
     set_table_borders,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 SOURCE = Path(
@@ -32,8 +33,7 @@ TARGET = Path(
 )
 
 EVIDENCE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments"
-    r"\Modern_Restoration_Benchmarks_20260719\evaluation"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation')
 )
 VIA_SUMMARY = EVIDENCE / "circular_cd_sharpness" / "circular_feature_method_summary.csv"
 LINE_SUMMARY = EVIDENCE / "line" / "tables" / "line_sharpness_summary.csv"
@@ -46,12 +46,10 @@ NAFNET_TRAINING = EVIDENCE.parent / "results" / "nafnet" / "training_summary.jso
 
 VIA_FIGURE = EVIDENCE / "figures_matlab" / "04_20x_via_cd_interval.png"
 LINE_FIGURE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\v12_assets"
-    r"\fig_v12_line_edge_width.png"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/_paper_editing/v12_assets/fig_v12_line_edge_width.png')
 )
 AUDIT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\qa"
-    r"\v12_build_audit.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/_paper_editing/qa/v12_build_audit.json')
 )
 
 

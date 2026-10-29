@@ -3,7 +3,7 @@
 This folder contains the laboratory-system PSF calibration workflow.
 
 The formal path reuses the original project Whole-FOV Zernike/BADS fitting
-workflow from `D:/GMM_2_Final/PSF_Fitting`. The copied MATLAB files are stored
+workflow from `PSF_Fitting`. The copied MATLAB files are stored
 under `scripts/standard_wholefov/` with a source manifest.
 
 The `20250605_PSF_Calibration` image batch has been staged as 25 inner-circle
@@ -41,13 +41,13 @@ inner circle plus two-block target style used by the original project.
 ## Formal Preflight
 
 ```powershell
-matlab -batch "run('D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/scripts/preflight_lab_inner_circle_roi_standard_fit.m')"
+matlab -batch "run('Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/scripts/preflight_lab_inner_circle_roi_standard_fit.m')"
 ```
 
 ## Formal Run Command
 
 ```powershell
-matlab -batch "run('D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/scripts/run_lab_inner_circle_roi_fine_prealign_fit.m')"
+matlab -batch "run('Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/scripts/run_lab_inner_circle_roi_fine_prealign_fit.m')"
 ```
 
 ## Interpretation Rule

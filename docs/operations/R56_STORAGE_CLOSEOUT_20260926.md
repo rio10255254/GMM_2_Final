@@ -12,7 +12,7 @@ D 槽保留內容 23 檔及 62 個原成果／程式／驗證檔再次核對通�
 恢復時由 H 的 payload 按 LabSystem 相對路徑複製回原位置，再按 source_manifest.csv 核對。
 要重做歷史訓練，需先恢復資料，或在啟動程式明確指定封存資料位置。
 完整副本：H:\GMM_2_Final_Archive\lab_system\R56_LabelCoreRepairTraining\20260926_full_history
-本次實際移除與核對：D:/GMM_2_Final/docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。
+本次實際移除與核對：docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。
 
 ## 先前封存與拒絕紀錄（歷史狀態）
 

@@ -6,9 +6,10 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
 import numpy as np,pandas as pd,cv2
 from measure import reader,measure_frame
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 def main():
-    out=ROOT/'results/lsc_comparison';plan=load(out/'plan.json');cfg=load(plan['configuration']['path'])
+    out=ROOT/'results/lsc_comparison';plan=load(out/'plan.json');cfg=load(str(PROJECT_ROOT / plan['configuration']['path']))
     assert (out/'verification.json').exists()
     worst=pd.read_csv(out/'worst_pairs_vs_R61.csv').iloc[0];seq=str(worst.sequence)
     folder=out/'worst_end_to_end_replay';folder.mkdir(exist_ok=False)
@@ -18,12 +19,12 @@ def main():
     core,scope=reader(plan);rows=[]
     for index in [int(worst.start_frame_index),int(worst.end_frame_index)]:
         frame=next(f for f in plan['frames'] if f['sequence']==seq and f['frame_index']==index)
-        dest=folder/f'frame_{index:04d}';module.main(frame['source']['path'],dest,'cuda')
+        dest=folder/f'frame_{index:04d}';module.main(str(PROJECT_ROOT / frame['source']['path']),dest,'cuda')
         original=load(out/'R128_images'/seq/f'frame_{index:04d}'/'record.json')
         with np.load(dest/'output_float.npz') as a,np.load(original['output_float']['path']) as b:
             assert np.array_equal(a['output'],b['output']) and np.array_equal(a['neural_output'],b['neural_output'])
         assert np.array_equal(cv2.imread(str(dest/'reconstruction.png'),0),cv2.imread(original['image']['path'],0))
-        raw=scope['load_grayscale'](Path(frame['source']['path']));image=scope['load_grayscale'](dest/'reconstruction.png')
+        raw=scope['load_grayscale'](Path(PROJECT_ROOT / frame['source']['path']));image=scope['load_grayscale'](dest/'reconstruction.png')
         measured,_=measure_frame(core,scope,seq,index,cfg['sequences'][seq],raw,image,'R128_P_s1285002')
         old=pd.read_csv(out/'measurements/R128_P_s1285002'/seq/f'frame_{index:04d}'/'centers.csv')
         keys=['lsc_center_x_px','lsc_center_y_px','lsc_radius_px'];err=float(np.max(np.abs(measured[keys].to_numpy()-old[keys].to_numpy())))

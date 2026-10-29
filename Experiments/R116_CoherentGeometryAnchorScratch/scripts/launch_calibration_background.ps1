@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
-$python = 'C:\Users\Rio\anaconda3\python.exe'
+$python = python
 $trainer = Join-Path $root 'training\continue_calibration.py'
 $lock = Join-Path $root 'runs\active_run.lock'
 if (Test-Path -LiteralPath $lock) {

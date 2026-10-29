@@ -6,11 +6,12 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-R109 = Path(CONFIG["sources"]["r109_root"])
+R109 = Path(PROJECT_ROOT / CONFIG["sources"]["r109_root"])
 OUTPUT = ROOT / "results" / "training_contract"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 R109_CONFIG = json.loads((R109 / "config" / "experiment.json").read_text(encoding="utf-8"))

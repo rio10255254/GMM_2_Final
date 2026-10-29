@@ -23,7 +23,7 @@ Use v14 as the immediate predecessor and R39 a970 as the strong boundary referen
 
 v14 best checkpoint:
 
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217\weights\best_tradeoff.pth.tar`
+`Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217/weights/best_tradeoff.pth.tar`
 
 v14 is useful but not enough:
 
@@ -71,7 +71,7 @@ Required checks:
 
 Current v14 boundary validation folder:
 
-`D:\GMM_2_Final\R61_motiontexture_dpv96_20260623\diverse_phantom_validation_20260623_164241`
+`R61_motiontexture_dpv96_20260623/diverse_phantom_validation_20260623_164241`
 
 ## Required Validation Layer B - 20260603 Real Sequence
 
@@ -90,7 +90,7 @@ Required checks:
 
 Current v14 20260603 summary:
 
-`D:\GMM_2_Final\Reconstruct_Progress\20260603_external_gmf_prepare\local_motion_probe_summary_after_r61_motiontexture_full_e8.json`
+`Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.json`
 
 ## Required Validation Layer C - Step Small-Displacement Sequence
 
@@ -98,7 +98,7 @@ Purpose: test whether the model preserves small displacement behavior on a diffe
 
 Source images:
 
-`D:\GMM_2_Final\Step`
+`Step`
 
 Known source structure:
 
@@ -109,11 +109,11 @@ Known source structure:
 
 Use the selected +10-position sequence:
 
-`D:\GMM_2_Final\Step_analysis_20260623\selected_1um_positions.csv`
+`Step_analysis_20260623/selected_1um_positions.csv`
 
 For non-tiled inference, use the center 2048 x 2048 staged input:
 
-`D:\GMM_2_Final\Step_analysis_20260623\selected_1um_input_center2048\bmp`
+`Step_analysis_20260623/selected_1um_input_center2048/bmp`
 
 Known staged count:
 
@@ -131,11 +131,11 @@ Required checks:
 
 Current Step summary:
 
-`D:\GMM_2_Final\Step_analysis_20260623\STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_SUMMARY.md`
+`Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_SUMMARY.md`
 
 Current Step preview:
 
-`D:\GMM_2_Final\Step_analysis_20260623\step_center2048_raw_r39_v14_preview.png`
+`Step_analysis_20260623/step_center2048_raw_r39_v14_preview.png`
 
 ## Candidate Acceptance
 

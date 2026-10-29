@@ -6,6 +6,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from pathlib import Path
 from scipy.ndimage import uniform_filter1d
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 plt.rcParams.update({
     "font.family": "sans-serif",
@@ -17,7 +18,7 @@ plt.rcParams.update({
     "axes.spines.top": False, "axes.spines.right": False,
 })
 
-PKG     = Path(r"D:\GMM_2_Final\_deployment_package\GeoEdge_R26_使用包")
+PKG     = Path(str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_使用包'))
 IN_DIR  = PKG / "輸出結果" / "驗證分析" / "R26_external_batch_bundle" / "input_subset"
 OUT_BMP = PKG / "輸出結果" / "推論結果" / "reconstruct_progress_r26_sm035_best_tradeoff_in_input_subset_20260317_162050"
 DEST    = PKG / "輸出結果" / "驗證分析" / "R26_validation_complete"

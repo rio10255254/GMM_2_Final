@@ -10,9 +10,10 @@ from pathlib import Path
 
 import numpy as np
 from openpyxl import load_workbook
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-PROJECT = Path(r"D:\GMM_2_Final")
+PROJECT = Path(str(PROJECT_ROOT))
 ROOT = Path(__file__).resolve().parent
 IDS = [[36, 35, 34], [30, 29, 28], [24, 23, 22]]
 

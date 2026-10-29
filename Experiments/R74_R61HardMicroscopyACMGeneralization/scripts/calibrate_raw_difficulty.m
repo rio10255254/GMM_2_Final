@@ -1,4 +1,5 @@
 function calibrate_raw_difficulty(experiment_root)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
 if nargin < 1 || strlength(string(experiment_root)) == 0
     experiment_root = fileparts(fileparts(mfilename('fullpath')));
 end
@@ -7,7 +8,7 @@ if exist(fullfile(experiment_root, 'results', 'inference_manifest.json'), 'file'
     error('R61 outputs already exist. Raw difficulty calibration must precede reconstruction.');
 end
 cfg = jsondecode(fileread(fullfile(experiment_root, 'config', 'experiment.json')));
-data_root = char(cfg.dataset.root);
+data_root = fullfile(PROJECT_ROOT, char(cfg.dataset.root));
 table_dir = fullfile(experiment_root, 'results', 'tables');
 if ~exist(table_dir, 'dir'), mkdir(table_dir); end
 rows = struct([]);

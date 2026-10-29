@@ -1,9 +1,9 @@
 function plot_v19_old_method_figures_english()
 % V19 thesis figure package using the original maximum-gradient displacement method.
 
-outputRoot = "D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_english_20260727\assets_english\v19";
-experimentRoot = "D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation";
-neuralRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS";
+outputRoot = "PSF_Fitting/.codex_tmp/oral_defense_english_20260727/assets_english/v19";
+experimentRoot = "Experiments/R63_CausalBoundaryMotionAblation/results/evaluation";
+neuralRoot = "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS";
 modernRoot = fullfile(neuralRoot, "modern_baseline_three_morphology_20260719");
 
 dirs.displacement = fullfile(outputRoot, "01_displacement_improvement");

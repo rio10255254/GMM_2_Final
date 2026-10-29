@@ -15,6 +15,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -194,8 +195,8 @@ def main() -> int:
     with np.load(ROOT / "data" / "continuous_pairs.npz") as loaded:
         arrays = {name: loaded[name] for name in loaded.files}
     models = load_models(device)
-    live_dir = Path("D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/data/live_validation")
-    motion_dir = Path("D:/GMM_2_Final/20260702_100MG_位移_50x/x_1um")
+    live_dir = Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation'))
+    motion_dir = Path(str(PROJECT_ROOT / '20260702_100MG_位移_50x/x_1um'))
     if args.quick_g:
         proxy = {"A": models["A"], "B": models["D"], "C": models["G"]}
         aggregate, rows, _outputs = EVAL.synthetic_evaluation(proxy, arrays, device)

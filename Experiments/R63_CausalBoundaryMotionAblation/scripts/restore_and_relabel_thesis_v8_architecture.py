@@ -6,11 +6,11 @@ import zipfile
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results"
-    r"\thesis_v8_language_cleanup"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v8_language_cleanup')
 )
 SOURCE = ROOT / "original_architecture_media"
 OUTPUT = ROOT / "patched_architecture_media"

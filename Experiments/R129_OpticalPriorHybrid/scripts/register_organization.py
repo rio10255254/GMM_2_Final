@@ -4,12 +4,13 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
 import cv2,numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     check=load(ROOT/'results/organization/verification.json')
     assert check['passed'] and check['real_count']==11 and check['new_training_updates']==0
     for item in load(ROOT/'config/organization_plan.json')['original_files']+load(ROOT/'config/organization_plan.json')['organized_files']:
-        assert sha(item['path'])==item['sha256']
+        assert sha(str(PROJECT_ROOT / item['path']))==item['sha256']
     output=ROOT/'results/organization/cli_sem13.png'
     assert np.array_equal(cv2.imread(str(output),0),cv2.imread(str(ROOT/'results/real/D_24/sem13.png'),0))
     before=sha(output)

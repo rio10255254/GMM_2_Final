@@ -5,14 +5,14 @@ import json
 from pathlib import Path
 
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 EVALUATION_ROOT = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/results/evaluation')
 )
 OUTPUT_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\09_V23_ABLATION_COMPLETE_ENGLISH_20260727\audit"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/09_V23_ABLATION_COMPLETE_ENGLISH_20260727/audit')
 )
 VARIANTS = ("shift_safe_matched", "standard_upsample_matched")
 SEEDS = (1261200, 1261217)

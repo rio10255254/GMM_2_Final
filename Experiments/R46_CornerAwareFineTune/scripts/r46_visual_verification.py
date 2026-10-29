@@ -17,6 +17,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 plt.rcParams["font.sans-serif"] = [
@@ -25,7 +26,7 @@ plt.rcParams["font.sans-serif"] = [
 plt.rcParams["axes.unicode_minus"] = False
 
 
-REPO_ROOT = Path("D:/GMM_2_Final")
+REPO_ROOT = Path(str(PROJECT_ROOT))
 
 # R39 / R40 各 model 重建路徑(沿用 rayleigh_visual_verification.py 定義)
 R39_RECON_BASE = {

@@ -7,23 +7,20 @@ import numpy as np
 import pandas as pd
 
 import analyze_shift_safe_50x_cd_alternatives as common
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 EVALUATION_ROOT = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/results/evaluation')
 )
 SEQUENCE_CONFIG = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\config\sequence_center9_50x20x.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json')
 )
 FIXED_20X_MANIFEST = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\source_validation\wiener_baseline_20260715"
-    r"\supplementary_20x_cd\manifest.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/source_validation/wiener_baseline_20260715/supplementary_20x_cd/manifest.json')
 )
 OUTPUT_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\12_V25_20X_CD_PRESENTATION_CANDIDATE_20260727"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/12_V25_20X_CD_PRESENTATION_CANDIDATE_20260727')
 )
 VARIANTS = common.VARIANTS
 SEEDS = common.SEEDS

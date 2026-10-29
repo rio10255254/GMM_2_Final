@@ -135,6 +135,12 @@ def test_location_mode_comment_and_docstring_become_relative_text(ctx_location):
     assert out == '"""Reads Model/w.pth."""\n# see Validations/a.json\n'
 
 
+def test_docstrings_and_comments_keep_a_bare_project_root(ctx_location):
+    src = '"""Reads from D:/GMM_2_Final and D:/GMM_2_Final/Model/w.pth."""\n# lived in D:\\GMM_2_Final\n'
+    out, _, _ = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == '"""Reads from D:/GMM_2_Final and Model/w.pth."""\n# lived in D:\\GMM_2_Final\n'
+
+
 def test_location_mode_mid_literal_path_is_reported(ctx_location):
     src = "cmd = 'python D:\\\\GMM_2_Final\\\\Tools\\\\x.py'\n"
     out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
@@ -209,3 +215,44 @@ def test_decisions_keep_or_retarget_ambiguous_expressions():
     ctx.decisions = {}
     _, _, unresolved = rewrite_python(src, 'Model/train.py', 'Model/train.py', ctx)
     assert unresolved[0].target == 'Traing_Progress' and unresolved[0].segment == seg
+
+
+def test_archive_folder_with_project_prefix_is_not_the_project(ctx_location):
+    src = "A = r'H:\\GMM_2_Final_Archive\\active_runs'\n"
+    out, edits, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == src and edits == [] and unresolved == []
+
+
+def test_multiline_template_paths_become_relative_text(ctx_location):
+    src = "DOC = '''# Report\nSource: D:/GMM_2_Final/Model/w.pth\n'''\n"
+    out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == "DOC = '''# Report\nSource: Model/w.pth\n'''\n" and unresolved == []
+
+
+def test_generated_launcher_template_drops_the_interpreter_path(ctx_location):
+    src = "CMD = '@echo off\\r\\n\"C:\\\\Users\\\\Rio\\\\anaconda3\\\\python.exe\" -B run.py\\r\\n'\nDOC = '''Ran with C:/Users/Rio/anaconda3/python.exe\nfrom D:/GMM_2_Final\n'''\n"
+    out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert "CMD = '@echo off\\r\\npython -B run.py\\r\\n'\n" in out
+    assert "DOC = '''Ran with python\nfrom .\n'''\n" in out and unresolved == []
+
+
+def test_root_inserted_after_imports_that_follow_a_future_import(ctx_location):
+    src = ('from __future__ import annotations\n"""Doc."""\nimport sys\nfrom pathlib import Path\n'
+           "W = r'D:\\GMM_2_Final\\Model\\w.pth'\n")
+    out, _, _ = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == ('from __future__ import annotations\n"""Doc."""\nimport sys\nfrom pathlib import Path\n'
+                   'PROJECT_ROOT = Path(__file__).resolve().parents[1]\n'
+                   "W = str(PROJECT_ROOT / 'Model/w.pth')\n")
+    exec(compile(out, 'Tools/x.py', 'exec'), {'__file__': 'D:/x/Tools/x.py', '__name__': 'm'})
+
+
+def test_path_imported_only_after_the_first_use_is_imported_again(ctx_location):
+    src = "W = r'D:\\GMM_2_Final\\Model\\w.pth'\nfrom pathlib import Path\n"
+    out, _, _ = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    exec(compile(out, 'Tools/x.py', 'exec'), {'__file__': 'D:/x/Tools/x.py', '__name__': 'm'})
+
+
+def test_multiline_fstring_template_paths_become_relative_text(ctx_location):
+    src = "DOC = f'''# {name}\nSource: D:/GMM_2_Final/Model/w.pth\n'''\n"
+    out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == "DOC = f'''# {name}\nSource: Model/w.pth\n'''\n" and unresolved == []

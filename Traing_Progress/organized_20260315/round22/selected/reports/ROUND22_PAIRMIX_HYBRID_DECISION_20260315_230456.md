@@ -3,7 +3,7 @@
 - winner_candidate: r22_pairmix_stepguard
 - selected_candidate: r22_pairmix_stepguard
 - confirmed: True
-- selected_checkpoint: D:\GMM_2_Final\Traing_Progress\organized_20260315\round22\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Traing_Progress/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/weights/best_tradeoff.pth.tar
 - macro_estimator: edge_band_refine
 - mid_center_ratio_min: 0.2500
 - mid_step_max: 0.4500

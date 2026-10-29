@@ -65,7 +65,7 @@
 
 ## 這輪產物
 
-- 0.1um 影像包：`D:\GMM_2_Final\Step_analysis_20260623\clean_step_audit_from_original_pos1_0p1um_20260624_0018`
+- 0.1um 影像包：`Step_analysis_20260623/clean_step_audit_from_original_pos1_0p1um_20260624_0018`
 - 主要統計表：`fast_edge_step_summary.csv`
 - 所有配對明細：`fast_edge_step_pairs.csv`
 - 主要圖：`fast_edge_step_median_dx_vs_expected.png`、`fast_edge_step_abs_error_um_bar.png`、`fast_edge_step_error_by_position_clean.png`

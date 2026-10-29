@@ -1,7 +1,7 @@
 # pitch0p01um_y_40 POSY Step Stats
 
 GMF score path:
-D:\GMM_2_Final\Traing_Progress\organized_20260310\external_validation\microstep_uint16_probe\gmf_results\raw\pitch0p01um_y_40\GMF_score.txt
+Traing_Progress/organized_20260310/external_validation/microstep_uint16_probe/gmf_results/raw/pitch0p01um_y_40/GMF_score.txt
 
 Expected step:
 - 0.08 px

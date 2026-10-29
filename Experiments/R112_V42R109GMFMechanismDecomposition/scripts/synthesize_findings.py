@@ -6,11 +6,12 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
-R111 = Path(r"D:\GMM_2_Final\Experiments\R111_R109V42ThesisReplacementQualification\results")
+R111 = Path(str(PROJECT_ROOT / 'Experiments/R111_R109V42ThesisReplacementQualification/results'))
 
 
 def row(table: pd.DataFrame, key: str, value: str) -> dict[str, object]:

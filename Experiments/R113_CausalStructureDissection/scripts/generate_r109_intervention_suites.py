@@ -12,15 +12,16 @@ import cv2
 import numpy as np
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R109 = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+R109 = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 CHECKPOINT = R109 / "weights" / "selected" / "R109.pth"
 OUTPUT = ROOT / "results" / "physical_validation" / "intervention_reconstructions"
 SOURCES = {
-    "R73": Path(r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\data\r73_synthetic_acm_val\src"),
-    "R74": Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val\src"),
+    "R73": Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val/src')),
+    "R74": Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val/src')),
 }
 CANONICAL = {
     "R73": R109 / "results" / "posttraining" / "E048" / "R73",

@@ -1,52 +1,53 @@
 param(
     [switch]$Execute
 )
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$labRoot = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR'
+$labRoot = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\LabSystem_MOSR')
 $rootPrefix = [IO.Path]::GetFullPath($labRoot).TrimEnd('\') + '\'
 $targets = @(
     [pscustomobject]@{
         id = 'training_data'
-        path = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r52_corner_stability_guard'
+        path = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r52_corner_stability_guard')
         files = 23502
         bytes = [int64]9881861535
     },
     [pscustomobject]@{
         id = 'run_formal'
-        path = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415'
+        path = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415')
         files = 60
         bytes = [int64]1742280373
     },
     [pscustomobject]@{
         id = 'run_smoke'
-        path = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_smoke_e001_b001_20260614_225229'
+        path = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_smoke_e001_b001_20260614_225229')
         files = 20
         bytes = [int64]280603817
     },
     [pscustomobject]@{
         id = 'corner_validation'
-        path = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\corner_geometry_validation_r52_20260615'
+        path = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\corner_geometry_validation_r52_20260615')
         files = 11
         bytes = [int64]2157746
     },
     [pscustomobject]@{
         id = 'reconstruction_outputs'
-        path = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\r52_reconstruction_outputs'
+        path = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\r52_reconstruction_outputs')
         files = 102
         bytes = [int64]320974212
     },
     [pscustomobject]@{
         id = 'gmf_best_tradeoff'
-        path = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\gmf_cases\lab_r52_stability_best_tradeoff'
+        path = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\gmf_cases\lab_r52_stability_best_tradeoff')
         files = 51
         bytes = [int64]160487106
     },
     [pscustomobject]@{
         id = 'gmf_latest'
-        path = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\gmf_cases\lab_r52_stability_latest'
+        path = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\gmf_cases\lab_r52_stability_latest')
         files = 51
         bytes = [int64]160487106
     }
@@ -56,7 +57,7 @@ $relatedProcesses = @(
     Get-CimInstance Win32_Process | Where-Object {
         $_.ProcessId -ne $PID -and
         $_.CommandLine -and
-        $_.CommandLine -match 'D:\\GMM_2_Final|GMM_2_Final' -and
+        $_.CommandLine -match 'GMM_2_Final' -and
         $_.CommandLine -match '(?i)train|reconstruct|evaluate|inference|pytest|matlab'
     }
 )

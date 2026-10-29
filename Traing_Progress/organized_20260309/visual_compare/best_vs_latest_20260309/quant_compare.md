@@ -1,8 +1,8 @@
 # 三張樣本的代理量化比較
 
 比較對象：
-D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
-D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_mcf_20260309_231113\weights\best_tradeoff.pth.tar
+Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar
+Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_mcf_20260309_231113/weights/best_tradeoff.pth.tar
 
 平均結果：
 - best 平均 edge_width_10_90_px: 10.674

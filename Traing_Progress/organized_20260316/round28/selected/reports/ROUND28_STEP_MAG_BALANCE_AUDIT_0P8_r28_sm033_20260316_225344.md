@@ -1,7 +1,7 @@
 # Process Probe Audit
 
 - candidate: r28_sm033
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r28sm033_20260316_224405\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r28sm033_20260316_224405/weights/best_tradeoff.pth.tar
 - geom_method: pairmix_algblend
 - expect_dy: 0.80
 - process_score: 18.008571

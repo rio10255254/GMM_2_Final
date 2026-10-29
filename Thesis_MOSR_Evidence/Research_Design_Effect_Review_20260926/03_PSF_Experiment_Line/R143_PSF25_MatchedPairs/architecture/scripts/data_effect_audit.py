@@ -6,9 +6,10 @@ from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path(r"D:\GMM_2_Final\Experiments\R141_PSF25_AdaptiveTop4_Standalone")
+BASE = Path(str(PROJECT_ROOT / 'Experiments/R141_PSF25_AdaptiveTop4_Standalone'))
 sys.path.insert(0, str(ROOT))
 from utils import load, now, save, sha
 

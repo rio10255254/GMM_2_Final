@@ -76,4 +76,4 @@ The next model-level direction is not another V14/V15/V16 long training run. The
 - Phase displacement: `anchor_detail035_phase_eval_20260706/detail035_phase_summary.csv`
 - GMF displacement: `anchor_detail035_gmf_eval_20260706/detail035_gmf_summary.csv`
 - Quality metrics: `anchor_quality_metrics_20260706/anchor_quality_summary_sample10.csv`
-- Fusion tool: `D:/GMM_2_Final/Tools/Displacement_Algorithms/scripts/motion_preserving_fusion.py`
+- Fusion tool: `Tools/Displacement_Algorithms/scripts/motion_preserving_fusion.py`

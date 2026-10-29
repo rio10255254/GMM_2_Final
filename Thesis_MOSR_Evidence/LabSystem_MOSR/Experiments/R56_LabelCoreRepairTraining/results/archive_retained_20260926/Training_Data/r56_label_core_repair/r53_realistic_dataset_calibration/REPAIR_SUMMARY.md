@@ -1,7 +1,7 @@
 # R56 Label Core Repair Summary
 
 - generated_at: `2026-06-18T10:09:32`
-- output_root: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r56_label_core_repair\r53_realistic_dataset_calibration`
+- output_root: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r56_label_core_repair/r53_realistic_dataset_calibration`
 - total_pairs: `7740`
 - core_repaired_pairs: `589`
 - grad_ratio_threshold: `1.5`

@@ -1,8 +1,9 @@
 """Representative R130 synthetic pair with R139 U-Net, disposable two-update probe."""
 from pathlib import Path
 import json,sys,time,torch
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,r'D:\GMM_2_Final\Experiments\R130_Clean')
+sys.path.insert(0,str(PROJECT_ROOT / 'Experiments/R130_Clean'))
 sys.path.insert(0,str(ROOT))
 from model import Model
 from training_policy import optimizer,apply_epoch_policy,project_beta_after_step
@@ -10,7 +11,7 @@ from dataset_r130_clean import Bank
 from losses_r130_clean import objective
 from utils import setup
 cfg=json.loads((ROOT/'config/model.json').read_text(encoding='utf-8-sig'))
-data_cfg=json.loads(Path(r'D:\GMM_2_Final\Experiments\R130_Clean\config_r130_clean.yaml').read_text(encoding='utf-8-sig'))
+data_cfg=json.loads(Path(str(PROJECT_ROOT / 'Experiments/R130_Clean/config_r130_clean.yaml')).read_text(encoding='utf-8-sig'))
 setup(139001);model=Model(cfg,ROOT).cuda();opt=optimizer(model,base_lr=1e-3,optical_lr_multiplier=.05)
 bank=Bank(data_cfg);batch=bank.batch('train',0,'cuda',0)
 values=[]

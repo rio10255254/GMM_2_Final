@@ -4,8 +4,9 @@ import json
 from pathlib import Path
 
 from pypdf import PdfReader
+PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
-root = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v18")
+root = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v18'))
 pdf_path = root / "word_render" / "v18.pdf"
 reader = PdfReader(str(pdf_path))
 

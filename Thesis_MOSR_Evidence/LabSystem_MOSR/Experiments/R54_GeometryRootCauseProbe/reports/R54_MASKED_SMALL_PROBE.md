@@ -75,9 +75,9 @@ from this R54 edge-band checkpoint is not justified.
 
 ## Artifacts
 
-- Masked package: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r54_geometry_root_cause_probe\r54_masked_small_overfit_train`
-- Small-probe eval summary: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\results\masked_overfit_probe\r54_edgeband_eval_summary.csv`
-- Small-probe visual sheet: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\results\masked_overfit_probe\r54_edgeband_eval_contact_sheet.png`
-- Real checkboard validation report: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\reports\R54_CHECKBOARD_VALIDATION.md`
-- Real checkboard corner metrics: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\corner_geometry_validation_r54_20260616\corner_metrics_summary.csv`
-- R54 GMF-ready image folder: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\gmf_cases\lab_r54_edgeband_epoch020`
+- Masked package: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r54_geometry_root_cause_probe/r54_masked_small_overfit_train`
+- Small-probe eval summary: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/masked_overfit_probe/r54_edgeband_eval_summary.csv`
+- Small-probe visual sheet: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/masked_overfit_probe/r54_edgeband_eval_contact_sheet.png`
+- Real checkboard validation report: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_CHECKBOARD_VALIDATION.md`
+- Real checkboard corner metrics: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r54_20260616/corner_metrics_summary.csv`
+- R54 GMF-ready image folder: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r54_edgeband_epoch020`

@@ -7,11 +7,13 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager
 from common import *
 from compare_native_sizes import crossing_radii
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     font_manager.fontManager.addfont('C:/Windows/Fonts/msjh.ttc');plt.rcParams['font.family']='Microsoft JhengHei';plt.rcParams['axes.unicode_minus']=False
     root=ROOT/'results/sem_native_v2';d=np.load(root/'native_references.npz');objects=pd.read_csv(root/'native_SEM_objects.csv');row=objects[(objects.file==1)&(objects.local==1)].iloc[0];pid=int(row.pillar)
-    sem=np.array(Image.open(r'H:\From_2TB_D_disk\13_thesis\SEM_data\P-01.tiff'))[...,0];opt=cv2.imread(str(EXPS/'R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/13.bmp'),0);mapping=loadmat(EXPS/'R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat',variable_names=['global_index'])['global_index'];gy,gx=np.argwhere(mapping==pid)[0];oc=d['optical_centers'][gy*6+gx];sc=np.array([row.center_x,row.center_y]);theta=np.arange(720)*2*np.pi/720;co,si=np.cos(theta),np.sin(theta)
+    sem=np.array(Image.open(str(PROJECT_ROOT / 'Shared_Sources/SEM_Originals/P-01.tiff')))[...,0];opt=cv2.imread(str(EXPS/'R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/13.bmp'),0);mapping=loadmat(EXPS/'R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat',variable_names=['global_index'])['global_index'];gy,gx=np.argwhere(mapping==pid)[0];oc=d['optical_centers'][gy*6+gx];sc=np.array([row.center_x,row.center_y]);theta=np.arange(720)*2*np.pi/720;co,si=np.cos(theta),np.sin(theta)
     fig,axes=plt.subplots(1,2,figsize=(11,5.5))
     axes[0].imshow(sem,cmap='gray',vmin=0,vmax=255)
     for name,color,label in [('inner','#49b594','亮帶內側'),('rim','#eab54f','亮帶中心'),('outer','#db6c5d','亮帶外側')]:

@@ -14,13 +14,14 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R109 = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+R109 = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 CHECKPOINT = R109 / "weights" / "selected" / "R109.pth"
-SEQUENCE_CONFIG = Path(r"D:\GMM_2_Final\Experiments\R111_R109V42ThesisReplacementQualification\config\r109_thesis_sequence_config.json")
-TOP30 = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS\tables\top30_raw_motion_selection.csv")
+SEQUENCE_CONFIG = Path(str(PROJECT_ROOT / 'Experiments/R111_R109V42ThesisReplacementQualification/config/r109_thesis_sequence_config.json'))
+TOP30 = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv'))
 OUTPUT = ROOT / "results" / "physical_validation" / "lsc_interventions" / "reconstructions"
 HALO = 192
 CORE = 512
@@ -100,7 +101,7 @@ def main() -> int:
             if args.all_frames
             else sorted(set(pairs["end_frame_index"].astype(int)) | set(pairs["end_frame_index"].astype(int) - 1))
         )
-        raw_dir = Path(specification["raw_dir"])
+        raw_dir = Path(PROJECT_ROOT / specification["raw_dir"])
         for done, frame_index in enumerate(indices, 1):
             filename = f"frame_{frame_index:04d}.bmp"
             image = read_gray(raw_dir / filename)

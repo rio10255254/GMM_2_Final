@@ -9,11 +9,12 @@ from typing import Any
 import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "config" / "capability_validation_20260812.json"
-R74_TABLES = Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\results\tables")
+R74_TABLES = Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/results/tables'))
 
 
 def write_json(path: Path, payload: Any) -> None:
@@ -68,7 +69,7 @@ def paired_summary(method_rows: pd.DataFrame, reference_rows: pd.DataFrame, meth
 
 def main() -> int:
     protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
-    root = Path(protocol["output_root"]) / "hard_microscopy"
+    root = Path(PROJECT_ROOT / protocol["output_root"]) / "hard_microscopy"
     runner_tables = root / "matlab_runner" / "results" / "tables"
     output_tables = root / "tables"
     output_tables.mkdir(parents=True, exist_ok=True)

@@ -4,7 +4,8 @@ from pathlib import Path
 from datetime import datetime,timezone
 import hashlib,json,sys
 import numpy as np,pandas as pd,torch
-ROOT=Path(__file__).resolve().parents[1];R148=Path(r'D:\GMM_2_Final\Experiments\R148v2_HybridContextNativePSF');sys.path.insert(0,str(ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];R148=Path(str(PROJECT_ROOT / 'Experiments/R148v2_HybridContextNativePSF'));sys.path.insert(0,str(ROOT))
 from dataset import Bank
 from losses import objective,boundary_coordinates
 from model import Model

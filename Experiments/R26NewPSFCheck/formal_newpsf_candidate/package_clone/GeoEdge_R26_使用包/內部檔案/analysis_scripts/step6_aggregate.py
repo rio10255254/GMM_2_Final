@@ -1,8 +1,9 @@
 """step6_aggregate.py — 彙總所有模組結果為 ring_analysis_summary.json"""
 from pathlib import Path
 import json, numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
-DEST = Path(r"D:\GMM_2_Final\_deployment_package\GeoEdge_R26_使用包\輸出結果\驗證分析\R26_validation_complete")
+DEST = Path(str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_使用包/輸出結果/驗證分析/R26_validation_complete'))
 
 import csv as csv_mod
 

@@ -6,12 +6,13 @@ from infer134 import predict
 from motion134 import load_reader
 from scipy.optimize import least_squares
 import cv2,pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 def main():
     while not (ROOT/'results/motion_screen.json').exists():
         if (ROOT/'results/motion_not_triggered.json').exists():return
         time.sleep(5)
-    screen=load(ROOT/'results/motion_screen.json');panel=load(ROOT/'config/motion_panel.json');cfg=load(panel['configuration']['path']);_,scope=load_reader()(load(panel['source_plan']['path']));raw=pd.read_csv(ROOT/'results/motion/Raw_pairs.csv');checks=[];records=[];refits=[]
+    screen=load(ROOT/'results/motion_screen.json');panel=load(ROOT/'config/motion_panel.json');cfg=load(str(PROJECT_ROOT / panel['configuration']['path']));_,scope=load_reader()(load(str(PROJECT_ROOT / panel['source_plan']['path'])));raw=pd.read_csv(ROOT/'results/motion/Raw_pairs.csv');checks=[];records=[];refits=[]
     def wrong(t):return sum(int((np.sign(g.aggregate_dx_um)!=np.sign(cfg['sequences'][s]['expected_signed_dx_px'])).sum()) for s,g in t.groupby('sequence'))
     for seed in load(ROOT/'config/study.json')['seeds']:
         counts={}
@@ -29,7 +30,7 @@ def main():
                 records.append(dict(tag=tag,case=case,source=f['source'],image=record(d/'reconstruction.png'),centers=record(d/'centers.csv'),points=record(d/'points.npz')))
             # One actual whole-field replay per checkpoint, in addition to all
             # saved-point and pair-arithmetic checks.
-            f=panel['frames'][0];raw8=cv2.imread(f['source']['path'],0);m=create(arm,seed);m.load_state_dict(torch.load(cp,map_location='cpu')['model']);m.eval();x=torch.from_numpy(raw8.astype(np.float32)/255)[None,None].cuda();value=predict(m,x)[0,0].cpu().numpy();img=np.rint(value*255).clip(0,255).astype(np.uint8);old=folder/f['sequence']/f"frame_{f['frame_index']:04d}/reconstruction.png";assert np.array_equal(img,cv2.imread(str(old),0));del m;torch.cuda.empty_cache()
+            f=panel['frames'][0];raw8=cv2.imread(str(PROJECT_ROOT / f['source']['path']),0);m=create(arm,seed);m.load_state_dict(torch.load(cp,map_location='cpu')['model']);m.eval();x=torch.from_numpy(raw8.astype(np.float32)/255)[None,None].cuda();value=predict(m,x)[0,0].cpu().numpy();img=np.rint(value*255).clip(0,255).astype(np.uint8);old=folder/f['sequence']/f"frame_{f['frame_index']:04d}/reconstruction.png";assert np.array_equal(img,cv2.imread(str(old),0));del m;torch.cuda.empty_cache()
         checks.append(dict(seed=seed,A_wrong=counts['A'],C_wrong=counts['C'],Raw_wrong=wrong(raw),passed=counts['C']<=counts['A'] and counts['C']<=wrong(raw)))
     verify();save(ROOT/'results/motion_audit.json',dict(passed=all(r['passed'] for r in checks),wrong_direction_checks=checks,all_pairs_valid=True,independent_center_refits=len(refits),maximum_center_refit_difference_px=max(refits),whole_field_replays=4,records=records,source=record(__file__)));print('Motion audit complete',flush=True)
 if __name__=='__main__':main()

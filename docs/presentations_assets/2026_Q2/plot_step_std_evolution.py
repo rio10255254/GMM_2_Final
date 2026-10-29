@@ -172,6 +172,8 @@ ax.grid(True, alpha=0.25, axis="y", linestyle="--")
 
 # --- 圖例 ---
 from matplotlib.lines import Line2D
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 legend_elements = [
     Line2D(
@@ -230,7 +232,7 @@ ax.text(
 
 plt.tight_layout()
 
-output = r"d:\GMM_2_Final\docs\presentations_assets\2026_Q2\step_std_evolution.png"
+output = str(PROJECT_ROOT / 'docs/presentations_assets/2026_Q2/step_std_evolution.png')
 plt.savefig(output, dpi=200, bbox_inches="tight", facecolor="white")
 plt.close()
 print(f"Saved: {output}")

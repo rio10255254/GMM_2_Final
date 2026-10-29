@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import sys
 import time
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,7 +30,7 @@ def main() -> int:
     parser.add_argument("--core", type=int, default=256)
     args = parser.parse_args()
     design = json.loads((ROOT / "config" / "experiment_design.json").read_text(encoding="utf-8"))
-    package = Path(design["data"]["source_package"])
+    package = Path(PROJECT_ROOT / design["data"]["source_package"])
     manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
     module = load("r95_loader_benchmark_data", ROOT / "training" / "r95_dataset.py")
     dataset = module.R95SceneDataset(package, manifest, "train", args.patch, args.core, 1)

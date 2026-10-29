@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "utc": "2026-09-08T06:48:49.168767+00:00",
-  "manifest_path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\data\\package\\manifest.json",
-  "manifest_sha256": "1144bba58176e1168e8f4ee599ca6a32a79d227c9a9b8031e239ba6370014302",
+  "manifest_path": "Experiments/R125_DataAlignedPilot/data/package/manifest.json",
+  "manifest_sha256": "d01b35b1c564ce1fe9e84883f54db80a99b43f544ad593f6dfc81d7ff79fd6a1",
   "scope": "independent stored-array and model-fit audit; no training and no real calibration qualification",
   "screen_limits_fixed_before_measurement": {
     "target_area_max_abs": 2e-07,
@@ -16004,7 +16004,7 @@
     }
   ],
   "generator_source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\data\\generator.py",
+    "path": "Experiments/R125_DataAlignedPilot/data/generator.py",
     "sha256": "1cbbba12ac4f3b7402d50eb034db369e6ef48ae57398699082dc33710674477c",
     "file_read_call_sites": [
       {
@@ -16023,8 +16023,8 @@
     "note": "Call-site inventory supplements manual source review; absence of image reads alone is not a complete information-flow proof."
   },
   "R124_immutable_source_hashes": {
-    "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\model\\observation.py": "6525c10f4a61b3d9f886e54c4cd53fba1f12cd0faa30da3154f8c85d51deff21",
-    "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\model\\calibration.py": "1e28ebc60284bf5a016ed4d8b003cdc2ec622ee398d47e0fb0ba15fa16b04c1b"
+    "Experiments/R124_RealFirstPrototype/model/observation.py": "6525c10f4a61b3d9f886e54c4cd53fba1f12cd0faa30da3154f8c85d51deff21",
+    "Experiments/R124_RealFirstPrototype/model/calibration.py": "1e28ebc60284bf5a016ed4d8b003cdc2ec622ee398d47e0fb0ba15fa16b04c1b"
   },
   "R124_sources_unchanged": true,
   "ancestor_declarations": [

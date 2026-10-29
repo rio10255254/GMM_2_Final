@@ -8,12 +8,13 @@ sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as original
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     original.CONFIG_PATH=ROOT/'sources/sequence_config.json'
     original.AUDIT_TABLE=ROOT/'sources/raw_eligibility.csv'
     original.SESSION_TABLE=ROOT/'sources/session_anchors.csv'
-    original.SWEEP_ROOT=Path('D:/GMM_2_Final/PSF_Fitting/tests/artifacts/cd_verification_20260714')
+    original.SWEEP_ROOT=Path(str(PROJECT_ROOT / 'PSF_Fitting/tests/artifacts/cd_verification_20260714'))
     original.RESULTS=ROOT/'results/submission_replay'
     original.TABLES=original.RESULTS
     original.FIGURES=original.RESULTS

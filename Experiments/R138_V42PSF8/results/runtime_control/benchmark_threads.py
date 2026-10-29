@@ -1,7 +1,8 @@
 from pathlib import Path
 import sys,time,json,os
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 os.environ['CUDA_VISIBLE_DEVICES']='-1';os.environ['PYTHONWARNINGS']='ignore::FutureWarning'
-P=Path(r'D:\GMM_2_Final\Experiments\R138_V42PSF8');sys.path.insert(0,str(P))
+P=Path(str(PROJECT_ROOT / 'Experiments/R138_V42PSF8'));sys.path.insert(0,str(P))
 import torch,numpy as np
 from utils import config
 from train_r138_psf import create,update,learning_rate

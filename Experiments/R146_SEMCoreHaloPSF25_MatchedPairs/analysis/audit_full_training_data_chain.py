@@ -16,6 +16,7 @@ R145 = ROOT.parent / "R145_Center9PSF25_CorrectedPairs"
 SOURCE_META = ROOT.parent / "R128_SourceOnlyFullTraining/data/package"
 sys.path.insert(0, str(ROOT))
 from utils import load, now, save, sha
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 def array_sha(value: np.ndarray) -> str:
@@ -35,7 +36,7 @@ def old_sensor_noise(meta: dict, view: int, shape: tuple[int, int]) -> np.ndarra
 def main() -> None:
     lock = load(ROOT / "calibration/BANK_LOCK.json")
     assert lock["research_only"] is True and lock["psf_calibration_uses_sem_geometry"] is True
-    mat = Path(lock["source_mat_path"])
+    mat = Path(PROJECT_ROOT / lock["source_mat_path"])
     assert sha(mat) == lock["source_mat_sha256"]
     grid = loadmat(mat)["psf_grid"]
     assert grid.shape == (101, 101, 5, 5)

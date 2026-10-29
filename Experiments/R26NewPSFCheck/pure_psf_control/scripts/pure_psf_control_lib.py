@@ -12,9 +12,10 @@ from typing import Any
 
 import cv2
 import numpy as np
+_PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-PROJECT_ROOT = Path(r"D:\GMM_2_Final")
+PROJECT_ROOT = Path(str(_PROJECT_ROOT))
 EXPERIMENT_ROOT = PROJECT_ROOT / "Experiments" / "R26NewPSFCheck" / "pure_psf_control"
 OLD_PSF_ARCHIVE = PROJECT_ROOT / "Experiments" / "R26NewPSFCheck" / "artifacts" / "package_cleanup_archive_20260326" / "psf_swap_20260326_093203" / "PSF_fitted_2D_FOVstack.package_old.mat"
 ROOT_FORMAL_PSF = PROJECT_ROOT / "PSF_Fitting" / "Crop_circle_FreqFiltered" / "Fits" / "PSF_fitted_2D_FOVstack.mat"

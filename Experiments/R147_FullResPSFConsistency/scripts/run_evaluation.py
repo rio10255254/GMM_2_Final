@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from utils import load, now, save, sha
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 PHASES = (
@@ -24,7 +25,7 @@ PHASES = (
 
 def main() -> None:
     train = load(ROOT / "runs/formal_8192/training_complete.json")
-    if train["updates"] != 8192 or sha(train["checkpoint"]["path"]) != train["checkpoint"]["sha256"]:
+    if train["updates"] != 8192 or sha(str(PROJECT_ROOT / train["checkpoint"]["path"])) != train["checkpoint"]["sha256"]:
         raise RuntimeError("Full training has not been verified")
     status_path = ROOT / "runs/evaluation_status.json"
     for phase, script, output in PHASES:

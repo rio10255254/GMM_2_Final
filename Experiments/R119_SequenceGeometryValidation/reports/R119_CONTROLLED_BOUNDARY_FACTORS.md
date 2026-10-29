@@ -1,6 +1,6 @@
 # R119：固定形狀的模糊、亮度與位移控制檢查
 
-日期：2026-09-06，Asia/Taipei。固定模型：R119 B E42。所有新結果位於 [控制檢查資料夾](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/controlled_boundary_factors_20260906)。
+日期：2026-09-06，Asia/Taipei。固定模型：R119 B E42。所有新結果位於 [控制檢查資料夾](../analysis/controlled_boundary_factors_20260906)。
 
 **我的決斷：先核實並修正合成成像與真實邊界參考的對應，再決定訓練改動。現在不刪除位置功能、不直接增加懲罰、不延長訓練，也不把真實樣品量出的偏差硬設成固定縮小量。**
 
@@ -93,7 +93,7 @@
 
 這是對現有證據的機制解釋，尚不是從訓練歷程證明唯一因果來源。也尚不能確定 +0.661 像素全部是成像偏差、SEM 參考定義差异或尺寸配準誤差；更不能把它當成所有影像都應縮小的常數。
 
-![本次決斷的主要證據](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/controlled_boundary_factors_20260906/decision_evidence.png)
+![本次決斷的主要證據](../analysis/controlled_boundary_factors_20260906/decision_evidence.png)
 
 ## 6. 真正的物體移動沒有被誤當成應消除的錯誤
 
@@ -120,12 +120,12 @@
 
 ## 8. 可重現證據與限制
 
-- [主檢查事先範圍](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/controlled_boundary_factors_20260906/protocol.json)
-- [主檢查全部量測](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/controlled_boundary_factors_20260906/measurements.csv)
-- [亮度追查全部量測](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/controlled_boundary_factors_20260906/radiometry_measurements.csv)
-- [真實邊界全部量測](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/controlled_boundary_factors_20260906/real_halfcontrast_measurements_v2.csv)
-- [條件與決斷摘要](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/controlled_boundary_factors_20260906/decision.json)
-- [數值與完整性覆核](D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/analysis/controlled_boundary_factors_20260906/verification.json)
+- [主檢查事先範圍](../analysis/controlled_boundary_factors_20260906/protocol.json)
+- [主檢查全部量測](../analysis/controlled_boundary_factors_20260906/measurements.csv)
+- [亮度追查全部量測](../analysis/controlled_boundary_factors_20260906/radiometry_measurements.csv)
+- [真實邊界全部量測](../analysis/controlled_boundary_factors_20260906/real_halfcontrast_measurements_v2.csv)
+- [條件與決斷摘要](../analysis/controlled_boundary_factors_20260906/decision.json)
+- [數值與完整性覆核](../analysis/controlled_boundary_factors_20260906/verification.json)
 
 每个条件的完整影像和逐剖面結果另存為壓縮檔，可直接重算。重複出現在模糊、亮度、位移三組中的基準條件，作為精確重現檢查，不當成獨立樣本增加證據量。七種輸出的共同有效樣本一併保存。
 

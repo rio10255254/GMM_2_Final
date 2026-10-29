@@ -10,6 +10,7 @@ from pathlib import Path
 from docx import Document
 from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 SOURCE = Path(
@@ -17,8 +18,7 @@ SOURCE = Path(
     r"\論文完整版_20260716_v9.docx"
 )
 WORK_DIR = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation"
-    r"\results\thesis_v10_citation_logic"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v10_citation_logic')
 )
 WORKING = WORK_DIR / "thesis_v10_citation_working.docx"
 FORMAL = Path(

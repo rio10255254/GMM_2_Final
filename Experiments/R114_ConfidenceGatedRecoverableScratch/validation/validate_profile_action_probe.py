@@ -7,11 +7,12 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results" / "geometry_probe" / "E020" / "profile_action_probe"
-SOURCE = Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val")
+SOURCE = Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val'))
 
 
 def read(path: str | Path) -> np.ndarray:

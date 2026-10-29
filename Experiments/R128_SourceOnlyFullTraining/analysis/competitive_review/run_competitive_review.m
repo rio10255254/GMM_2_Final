@@ -1,5 +1,6 @@
 function run_competitive_review()
-root='D:/GMM_2_Final/Experiments/R128_SourceOnlyFullTraining';
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
+root=fullfile(PROJECT_ROOT, 'Experiments/R128_SourceOnlyFullTraining');
 out=fullfile(root,'results','competitive_review');
 assert(isfile(fullfile(out,'plan.json')) && isfile(fullfile(out,'preparation.json')));
 assert(~isfile(fullfile(out,'measurements.csv')));

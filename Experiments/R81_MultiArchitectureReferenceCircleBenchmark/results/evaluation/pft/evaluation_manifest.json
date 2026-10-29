@@ -36,7 +36,7 @@
     "source": "Long et al., CVPR 2025; official PFT-SR code",
     "adaptation": "official progressive-focused core reduced to six layers and adapted to one-channel x1 restoration; trained from scratch"
   },
-  "checkpoint": "D:\\GMM_2_Final\\Experiments\\R81_MultiArchitectureReferenceCircleBenchmark\\results\\training\\pft\\best_pft.pth.tar",
+  "checkpoint": "Experiments/R81_MultiArchitectureReferenceCircleBenchmark/results/training/pft/best_pft.pth.tar",
   "checkpoint_epoch": 15,
   "checkpoint_validation": {
     "loss": 0.12791420487885657,

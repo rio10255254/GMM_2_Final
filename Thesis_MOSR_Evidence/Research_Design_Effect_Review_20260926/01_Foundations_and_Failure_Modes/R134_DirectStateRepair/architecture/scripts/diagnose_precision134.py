@@ -6,10 +6,11 @@ from rt import *
 from motion134 import load_reader
 from infer134 import predict
 import cv2,pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 def main():
     base=ROOT/'results/cross_axis_diagnosis';out=ROOT/'results/cross_axis_precision';out.mkdir(exist_ok=False)
-    panel=load(ROOT/'config/motion_panel.json');plan=load(panel['source_plan']['path']);cfg=load(panel['configuration']['path']);core,scope=load_reader()(plan);seq='20x_0p5um';spec=cfg['sequences'][seq]
+    panel=load(ROOT/'config/motion_panel.json');plan=load(str(PROJECT_ROOT / panel['source_plan']['path']));cfg=load(str(PROJECT_ROOT / panel['configuration']['path']));core,scope=load_reader()(plan);seq='20x_0p5um';spec=cfg['sequences'][seq]
     save(out/'plan.json',dict(scope='Exploratory precision diagnosis after noticing a float versus8bit discrepancy; cannot amend original admission',case=[16,17],neighbor_frames=[15,16,17,18,19,20],bits=[8,10,12,16],source=record(__file__),original_admission=record(ROOT/'results/long_admission.json')))
     rows=[];rasters={}
     def measure(tag,index,image):

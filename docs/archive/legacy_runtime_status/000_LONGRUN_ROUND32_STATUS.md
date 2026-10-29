@@ -4,12 +4,12 @@ active_label: round32_real_eq_rerun
 active_command: 
 plan_done: 0
 plan_total: 5
-last_report: D:\GMM_2_Final\Traing_Progress\auto_tune_reports\auto_tune_report_20260319_154449.json
+last_report: Traing_Progress/auto_tune_reports/auto_tune_report_20260319_154449.json
 last_exit: 0
 selected_candidate: 
 selected_checkpoint: 
 active_pid: 0
-active_log: D:\GMM_2_Final\Traing_Progress\organized_20260316\round32\pending\logs\round32_real_eq_rerun_20260319_154444.log
-active_err_log: D:\GMM_2_Final\Traing_Progress\organized_20260316\round32\pending\logs\round32_real_eq_rerun_20260319_154444.log.err
+active_log: Traing_Progress/organized_20260316/round32/pending/logs/round32_real_eq_rerun_20260319_154444.log
+active_err_log: Traing_Progress/organized_20260316/round32/pending/logs/round32_real_eq_rerun_20260319_154444.log.err
 note: R32 child process completed and wrote a successful report.
 updated_at: 2026-03-19 17:29:43

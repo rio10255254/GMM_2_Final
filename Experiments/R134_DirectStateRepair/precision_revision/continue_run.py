@@ -2,6 +2,8 @@
 from common import *
 from report import publish
 import subprocess,psutil,traceback,cv2,pandas as pd
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 PKG=E.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915'
 OPS=P/'results/operations'
 
@@ -54,7 +56,7 @@ def main():
     checks=motion['full201_checks']+motion['matched12_checks']+sem['checks'];eligible=all(x['passed'] for x in checks);assert eligible==(motion['passed'] and sem['passed'])
     cp=E/'runs/R134_C_s1342001/step0512.pth';save(P/'results/admission.json',dict(eligible=eligible,checks=checks,checkpoint=record(cp),motion=record(P/'results/motion/complete.json'),sem=record(P/'results/sem/complete.json'),protocol=record(P/'config/protocol.json'),original_negative_admission_unchanged=record(E/'results/long_admission.json'),scope='R134 P1 engineering longtraining admission, reused development data; no model promotion'))
     if not eligible:stage('not_admitted',failed=[r for r in checks if not r['passed']]);return
-    for r in load(P/'config/package_sources.json')['sources']:assert sha(r['path'])==r['sha256']
+    for r in load(P/'config/package_sources.json')['sources']:assert sha(str(PROJECT_ROOT / r['path']))==r['sha256']
     stage('building_package');command([P/'build_package.py'],'build_package');stage('package_preflight',package=str(PKG));command([PKG/'preflight.py'],'package_preflight')
     parent=PKG.parent.resolve();target=(parent/'R134P_搬移實測').resolve();assert PKG.resolve().parent==parent and target.parent==parent and not target.exists();save(OPS/'relocation_paths_checked.json',dict(source=str(PKG.resolve()),target=str(target),allowed_parent=str(parent)));PKG.rename(target)
     try:

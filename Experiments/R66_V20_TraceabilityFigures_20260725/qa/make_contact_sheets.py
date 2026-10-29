@@ -2,10 +2,11 @@ import argparse
 from pathlib import Path
 
 from PIL import Image, ImageDraw
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 DEFAULT_ROOT = Path(
-    r"D:\GMM_2_Final\Experiments\R66_V20_TraceabilityFigures_20260725\qa\v20_final_render"
+    str(PROJECT_ROOT / 'Experiments/R66_V20_TraceabilityFigures_20260725/qa/v20_final_render')
 )
 COLS = 4
 ROWS = 3

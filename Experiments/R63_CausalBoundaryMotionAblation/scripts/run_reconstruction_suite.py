@@ -108,7 +108,7 @@ def main() -> None:
     for record in records:
         variant = str(record["variant"])
         seed = int(record["seed"])
-        checkpoint = Path(record["checkpoint"])
+        checkpoint = Path(REPO_ROOT / record["checkpoint"])
         base = RECON_ROOT / variant / f"seed{seed}"
         if "synthetic" in targets:
             out = base / "synthetic_50x_unseen"

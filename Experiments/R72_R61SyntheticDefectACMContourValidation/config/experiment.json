@@ -2,7 +2,7 @@
   "experiment_id": "R72_R61SyntheticDefectACMContourValidation",
   "created_date": "2026-07-30",
   "scientific_question": "Does frozen R61v16 make the complete closed contour of unseen synthetic microscopy edge defects closer to clean truth than the raw input?",
-  "upstream_experiment": "D:\\GMM_2_Final\\Experiments\\R71_R61SyntheticMicroscopyDefectGeneralization",
+  "upstream_experiment": "Experiments/R71_R61SyntheticMicroscopyDefectGeneralization",
   "model": {
     "name": "R61v16",
     "checkpoint_sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
@@ -11,10 +11,10 @@
   "sources": {
     "feature_family": "edge_defects",
     "image_ids": [80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],
-    "truth_dir": "D:\\GMM_2_Final\\Training_Data\\r40_microscopy_feature_coverage\\micro_val_unseen\\lbl\\stage_32_micro_edge_defects",
-    "raw_dir": "D:\\GMM_2_Final\\Training_Data\\r40_microscopy_feature_coverage\\micro_val_unseen\\src\\stage_32_micro_edge_defects",
-    "combo_dir": "D:\\GMM_2_Final\\Experiments\\R40_MicroscopyFeatureCoverage\\results\\micro_recon\\reconstruct_progress_best_tradeoff_in_stage_32_micro_edge_defects_20260408_003525\\micro_val_unseen_stage_32_micro_edge_defects_best_tradeoff.pth",
-    "r61_dir": "D:\\GMM_2_Final\\Experiments\\R71_R61SyntheticMicroscopyDefectGeneralization\\results\\inference_runs\\reconstruct_progress_best_tradeoff_in_stage_32_micro_edge_defects_20260623_200020\\r61v16_psfoff_micro_val_unseen_edge_defects"
+    "truth_dir": "Training_Data/r40_microscopy_feature_coverage/micro_val_unseen/lbl/stage_32_micro_edge_defects",
+    "raw_dir": "Training_Data/r40_microscopy_feature_coverage/micro_val_unseen/src/stage_32_micro_edge_defects",
+    "combo_dir": "Experiments/R40_MicroscopyFeatureCoverage/results/micro_recon/reconstruct_progress_best_tradeoff_in_stage_32_micro_edge_defects_20260408_003525/micro_val_unseen_stage_32_micro_edge_defects_best_tradeoff.pth",
+    "r61_dir": "Experiments/R71_R61SyntheticMicroscopyDefectGeneralization/results/inference_runs/reconstruct_progress_best_tradeoff_in_stage_32_micro_edge_defects_20260623_200020/r61v16_psfoff_micro_val_unseen_edge_defects"
   },
   "acm": {
     "implementation": "MATLAB activecontour",

@@ -8,6 +8,7 @@ import json
 import torch
 
 from model.r115_model import build_model, load_r109_for_probe
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,7 +44,7 @@ def load_model(checkpoint: str | None, device: torch.device):
             raise RuntimeError("formal R115 checkpoint is not scratch")
         model.load_state_dict(saved["model"], strict=True)
     elif "profile" in saved:
-        load_r109_for_probe(model, CONFIG["short_probe"]["baseline_checkpoint"])
+        load_r109_for_probe(model, str(PROJECT_ROOT / CONFIG["short_probe"]["baseline_checkpoint"]))
         state = model.state_dict()
         state.update(saved["profile"])
         model.load_state_dict(state, strict=True)

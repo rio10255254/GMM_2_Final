@@ -9,9 +9,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path("D:/GMM_2_Final/Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 SOURCE_ROOT = ROOT / "Final_Data_Figures" / "20260709_v41_1_quick_finetune_validation"
 SOURCE_SUMMARY = SOURCE_ROOT / "tables" / "v41_1_local_edge_summary_by_case.csv"
 SOURCE_STEPS = SOURCE_ROOT / "tables" / "v41_1_local_edge_step_measurements.csv"

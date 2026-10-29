@@ -13,7 +13,7 @@
 完整恢復：
 
 ```powershell
-robocopy H:\GMM_2_Final_Archive\quarantine\PSF_Fitting_editor_scratch\20260801\snapshot D:\GMM_2_Final\PSF_Fitting /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\quarantine\PSF_Fitting_editor_scratch\20260801\snapshot PSF_Fitting /E /COPY:DAT /DCOPY:DAT
 ```
 
 資料夾中的套件連結不是實體內容，未重複複製；若需要重啟舊工作區，依原專案設定重新安裝套件即可。

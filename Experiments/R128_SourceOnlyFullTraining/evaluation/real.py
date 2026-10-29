@@ -13,6 +13,7 @@ spec=importlib.util.spec_from_file_location('r128_verified_tiling',R124/'inferen
 # These R127 modules contain numerical routines only; none writes on import.
 sys.path.append(str(R127/'scripts'))
 from motion_reader_v3 import measure
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ANGLE=np.arange(720)*2*np.pi/720;C=np.cos(ANGLE);S=np.sin(ANGLE)
 
 def radial(image,center,radii):
@@ -41,8 +42,8 @@ def bidirectional(a,b):
     return dict(forward=f,reverse=r,cycle_error=cycle,valid=bool(cycle is not None and cycle<=.1))
 
 def read_image(source):
-    if sha(source['path'])!=source['sha256']:raise RuntimeError('Real source identity mismatch')
-    raw=cv2.imread(source['path'],cv2.IMREAD_GRAYSCALE)
+    if sha(str(PROJECT_ROOT / source['path']))!=source['sha256']:raise RuntimeError('Real source identity mismatch')
+    raw=cv2.imread(str(PROJECT_ROOT / source['path']),cv2.IMREAD_GRAYSCALE)
     if raw is None or raw.dtype!=np.uint8:raise ValueError('Frozen real panel requires exact8bit sources')
     return raw.astype(np.float32)/np.float32(255)
 

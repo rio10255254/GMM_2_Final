@@ -15,10 +15,11 @@ from scipy.io import loadmat
 from scipy.ndimage import center_of_mass
 from scipy.stats import wilcoxon
 from skimage.measure import find_contours
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R69 = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation")
+R69 = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation'))
 RESULTS = ROOT / "results"
 TABLES = RESULTS / "tables"
 FIGURES = RESULTS / "figures"

@@ -1,6 +1,7 @@
 """Read-only verification of the R139 untrained architecture prototype."""
 from pathlib import Path
 import json,hashlib,ast
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ROOT=Path(__file__).resolve().parent
 
 def sha(path):
@@ -14,7 +15,7 @@ for rel,expected in lock.items():
     assert sha(ROOT/rel)==expected,rel
 source=json.loads((ROOT/'config/SOURCE_MAP.json').read_text(encoding='utf-8-sig'))
 for name,item in source.items():
-    assert sha(item['path'])==item['sha256'],name
+    assert sha(str(PROJECT_ROOT / item['path']))==item['sha256'],name
 checks=[('preflight.json','status','untrained_prototype_preflight_only'),('generated_pair_preflight.json','status','discarded_real_pair_smoke')]
 for name,key,value in checks:
     report=json.loads((ROOT/'results'/name).read_text(encoding='utf-8-sig'))

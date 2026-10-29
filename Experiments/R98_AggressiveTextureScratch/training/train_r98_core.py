@@ -24,6 +24,7 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -559,7 +560,7 @@ def main() -> int:
     torch.set_num_threads(max(1, args.cpu_threads))
     seed = int(DESIGN["independence"]["seed"])
     seed_all(seed)
-    package = Path(DESIGN["data"]["source_package"])
+    package = Path(PROJECT_ROOT / DESIGN["data"]["source_package"])
     manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
     audit = json.loads((package / "audit.json").read_text(encoding="utf-8"))
     if not audit.get("passed") or manifest.get("content_sha256") != DESIGN["data"]["source_content_sha256"]:

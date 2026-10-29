@@ -7,11 +7,12 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack")
-R79 = Path(r"D:\GMM_2_Final\Experiments\R80_R79E23vsE100GeneralizationValidation\results\reconstructions\sem\R79E23")
+RAW = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
+R79 = Path(str(PROJECT_ROOT / 'Experiments/R80_R79E23vsE100GeneralizationValidation/results/reconstructions/sem/R79E23'))
 R108C = ROOT / "results" / "sem_no_radiometry_g0p25"
 OUTPUT = ROOT / "results" / "r79_sem_action_basis"
 SIGMAS = (0.6, 1.2, 2.4, 4.8, 9.6)

@@ -5,10 +5,11 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
 from data_bank import Bank
 from engine import update,checkpoint,restore,objective
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
     out=ROOT/'results/preflight';out.mkdir(exist_ok=False);cfg=load(ROOT/'config/training.json');prov=load(ROOT/'config/provenance.json')
     save(out/'started.json',dict(utc=now(),source=record(__file__)))
-    for item in prov['protected']:assert sha(item['path'])==item['sha256']
+    for item in prov['protected']:assert sha(str(PROJECT_ROOT / item['path']))==item['sha256']
     bank=Bank();groups={s:set() for s in cfg['splits']};counts={s:0 for s in groups}
     for (split,index),e in bank.entries.items():
         a,meta,_=bank.read(split,index);groups[split].add(meta['geometry_sha256']);counts[split]+=1

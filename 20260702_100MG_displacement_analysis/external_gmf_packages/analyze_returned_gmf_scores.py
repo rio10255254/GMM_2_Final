@@ -7,15 +7,16 @@ import re
 from collections import defaultdict
 from pathlib import Path
 from statistics import mean, median, pstdev
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-ANALYSIS_ROOT = Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis")
+ANALYSIS_ROOT = Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis'))
 PACKAGE_ROOTS = [
     Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\external_gmf_packages\gmf_20260702_100mg_x_motion_full_sequences"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/external_gmf_packages/gmf_20260702_100mg_x_motion_full_sequences')
     ),
     Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\external_gmf_packages\gmf_20260702_100mg_x_motion_stable_segments"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/external_gmf_packages/gmf_20260702_100mg_x_motion_stable_segments')
     ),
 ]
 OUT_ROOT = ANALYSIS_ROOT / "external_gmf_packages" / "external_gmf_analysis"

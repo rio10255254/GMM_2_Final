@@ -1,14 +1,15 @@
+PROJECT_ROOT = fileparts(fileparts(mfilename('fullpath')));
 clear; close all; clc;
 
-outRoot = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\11_V24_RAW_ANCHOR_INTUITIVE_FIGURES_20260727';
+outRoot = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/11_V24_RAW_ANCHOR_INTUITIVE_FIGURES_20260727');
 figureDir = fullfile(outRoot, 'figures');
 tableDir = fullfile(outRoot, 'tables');
 if ~exist(figureDir, 'dir'), mkdir(figureDir); end
 if ~exist(tableDir, 'dir'), mkdir(tableDir); end
 
-summaryPath = 'D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation\aggregate\candidate_seed_summary.csv';
-centerPath = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\01_CURRENT_THESIS_RESULTS_V42_CENTER9\cd\tables\center9_cd_per_pillar.csv';
-reconRoot = 'D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation\reconstructions';
+summaryPath = fullfile(PROJECT_ROOT, 'Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/aggregate/candidate_seed_summary.csv');
+centerPath = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/cd/tables/center9_cd_per_pillar.csv');
+reconRoot = fullfile(PROJECT_ROOT, 'Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/reconstructions');
 seeds = [1261200, 1261217];
 
 blue = [0.075, 0.365, 0.650];

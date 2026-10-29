@@ -50,10 +50,10 @@ B/D的新成像資料仍缺獨立材料邊界與光學對應校準，目前未�
 執行錯誤原文：
 ```
 Traceback (most recent call last):
-  File "D:\GMM_2_Final\Experiments\R134_DirectStateRepair\scripts\continue_qualified134.py", line 149, in <module>
+  File "Experiments/R134_DirectStateRepair/scripts/continue_qualified134.py", line 149, in <module>
     try:main()
         ^^^^^^
-  File "D:\GMM_2_Final\Experiments\R134_DirectStateRepair\scripts\continue_qualified134.py", line 100, in main
+  File "Experiments/R134_DirectStateRepair/scripts/continue_qualified134.py", line 100, in main
     if not live(owner['pid']) or abs(psutil.Process(owner['pid']).create_time()-owner['created'])>1:raise RuntimeError('Full201 worker stopped without admission; inspect its preserved error log')
                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 RuntimeError: Full201 worker stopped without admission; inspect its preserved error log

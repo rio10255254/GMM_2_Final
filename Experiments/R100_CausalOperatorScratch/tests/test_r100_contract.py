@@ -9,6 +9,7 @@ import cv2
 import numpy as np
 import pytest
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -126,7 +127,7 @@ def test_nonidentity_full_and_tiled_paths_match() -> None:
 
 
 def test_dataset_is_locked_isolated_and_unchanged() -> None:
-    package = Path(DESIGN["dataset"]["source_package"])
+    package = Path(PROJECT_ROOT / DESIGN["dataset"]["source_package"])
     manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
     audit = json.loads((package / "audit.json").read_text(encoding="utf-8"))
     assert audit["passed"] and audit["source_isolation_pass"] and audit["full_array_hash_audit"]

@@ -9,11 +9,12 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULT = ROOT / "results" / "five_x_edge_alignment"
-RAW_ROOT = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs")
+RAW_ROOT = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs'))
 INFER_PATH = ROOT / "scripts" / "infer_no_radiometry_folder.py"
 SEQUENCES = ("5x_0p5um", "5x_1um")
 FRAME_INDICES = (0, 12, 24, 36, 49)

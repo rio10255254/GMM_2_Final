@@ -9,6 +9,7 @@ from localization_readers import baseline,radial_lsc,intensity_circle,pair_trans
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/localization_improvement'
 sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as backend
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main(extended=False,fresh=False):
     cfg=json.loads((ROOT/'sources/sequence_config.json').read_text(encoding='utf-8-sig'));locked=pd.read_csv(ROOT/'sources/original_locked_pairs.csv');backend.SESSION_TABLE=ROOT/'sources/session_anchors.csv';rows=[];rng=np.random.default_rng(50631)
     shifts=[(0.,0.),(1.,0.),(-1.,0.),(.17,.11),(.43,-.21),(.79,.13),(-.31,-.17),(-.67,.23)]
@@ -16,7 +17,7 @@ def main(extended=False,fresh=False):
         shifts=[(0.,0.),(1.,0.),(-1.,0.),(.29,-.13),(.58,.23),(.91,-.09),(-.47,.07),(-.82,-.19)]
         rng=np.random.default_rng(62091)
     for seq,s in cfg['sequences'].items():
-        selected=locked[locked.sequence==seq];fi=int(selected.iloc[len(selected)//2 if fresh else 0].start_frame_index);mag=s['magnification'];raw=backend.load_grayscale(Path(s['raw_dir'])/f'frame_{fi:04d}.bmp');pred=backend.session_prediction(seq,fi,np.array(s['centers'],float),s['expected_signed_dx_px']);pitch=s['pitch_px'];margin=int(np.ceil(.55*pitch));half=int(np.ceil(.46*pitch))
+        selected=locked[locked.sequence==seq];fi=int(selected.iloc[len(selected)//2 if fresh else 0].start_frame_index);mag=s['magnification'];raw=backend.load_grayscale(Path(PROJECT_ROOT / s['raw_dir'])/f'frame_{fi:04d}.bmp');pred=backend.session_prediction(seq,fi,np.array(s['centers'],float),s['expected_signed_dx_px']);pitch=s['pitch_px'];margin=int(np.ceil(.55*pitch));half=int(np.ceil(.46*pitch))
         x0=max(0,int(np.floor(pred[:,1].min()))-margin);x1=min(raw.shape[1],int(np.ceil(pred[:,1].max()))+margin+1);y0=max(0,int(np.floor(pred[:,2].min()))-margin);y1=min(raw.shape[0],int(np.ceil(pred[:,2].max()))+margin+1)
         r=raw[y0:y1,x0:x1];psf=backend.loadmat(backend.SWEEP_ROOT/f'{mag}_deconvolution_sweep.mat')['psf'];folder='20x' if mag=='20x' else '50x_calibrated'
         methods={'Raw':r,'Wiener':backend.wiener_contrast_restore(r,psf,backend.NSR,pitch_px=pitch),'R152':np.load(ROOT/f'results/{folder}/reconstruction/{seq}/frame_{fi:04d}.npz')['output'][y0:y1,x0:x1].astype(float)}

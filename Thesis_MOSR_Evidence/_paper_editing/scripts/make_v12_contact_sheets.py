@@ -4,9 +4,10 @@ import json
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\qa\v12_final_render_20260720_c")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/_paper_editing/qa/v12_final_render_20260720_c'))
 PAGES = ROOT / "pages"
 CONTACTS = ROOT / "contact_sheets"
 REPORT = ROOT / "page_image_audit.json"

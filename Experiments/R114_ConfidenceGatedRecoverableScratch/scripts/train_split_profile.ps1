@@ -14,7 +14,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $PSScriptRoot
-$Python = 'C:\Users\Rio\anaconda3\python.exe'
+$Python = python
 $Trainer = Join-Path $Root 'training\train_split_profile.py'
 
 if (-not (Test-Path -LiteralPath $Python -PathType Leaf)) {

@@ -19,6 +19,7 @@ sys.dont_write_bytecode = True
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPS = ROOT.parent
@@ -118,7 +119,7 @@ def freeze_panel():
         raise ValueError("Expected six fixed motion suites")
     motion = []
     for sequence, roi in first.items():
-        paths = [Path(roi["first_raw"]), Path(roi["first_raw"]).with_name("frame_0001.bmp")]
+        paths = [Path(PROJECT_ROOT / roi["first_raw"]), Path(PROJECT_ROOT / roi["first_raw"]).with_name("frame_0001.bmp")]
         if sha(paths[0]) != roi["first_raw_sha256"]:
             raise ValueError(f"R123 source hash changed: {sequence}")
         images = [gray(path) for path in paths]
