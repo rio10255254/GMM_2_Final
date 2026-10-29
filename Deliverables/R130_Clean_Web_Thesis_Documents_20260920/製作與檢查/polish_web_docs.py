@@ -1,7 +1,8 @@
 from pathlib import Path
 from docx import Document
 from docx.shared import Pt
-P=Path(r'D:\GMM_2_Final\Deliverables\R130_Clean_Web_Thesis_Documents_20260920')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+P=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Web_Thesis_Documents_20260920'))
 for p in P.glob('*.docx'):
  d=Document(p)
  if p.name.startswith('03_'):
@@ -16,4 +17,4 @@ for p in P.glob('*.docx'):
   md=P/'閱讀文字版'/(p.stem+'.md');md.write_text(md.read_text(encoding='utf-8').replace('4.4.3 是方向感知與局部強度調節殘差','4.4.3 是方向感知且受限的邊界殘差'),encoding='utf-8')
 for name in ['sem_points.npz','tracking.csv']:
  import shutil
- shutil.copy2(Path(r'D:\GMM_2_Final\Experiments\R130_Clean\evaluation')/name,P/'完整數據'/name)
+ shutil.copy2(Path(str(PROJECT_ROOT / 'Experiments/R130_Clean/evaluation'))/name,P/'完整數據'/name)

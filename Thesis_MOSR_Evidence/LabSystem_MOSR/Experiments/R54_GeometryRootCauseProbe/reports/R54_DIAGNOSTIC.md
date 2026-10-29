@@ -62,9 +62,9 @@ candidate. See `reports/R54_MASKED_SMALL_PROBE.md` and
 
 ## Artifacts
 
-- Diagnosis JSON: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\results\root_cause_probe\r54_root_cause_diagnosis.json`
-- Hypothesis table: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\results\root_cause_probe\r54_hypothesis_table.csv`
-- Selected probe pairs: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\results\root_cause_probe\r54_small_overfit_probe_pairs.csv`
-- Overlay contact sheet: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\results\root_cause_probe\r54_small_probe_overlays.png`
-- Follow-up masked small-probe report: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\reports\R54_MASKED_SMALL_PROBE.md`
-- Follow-up real checkboard validation report: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R54_GeometryRootCauseProbe\reports\R54_CHECKBOARD_VALIDATION.md`
+- Diagnosis JSON: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/root_cause_probe/r54_root_cause_diagnosis.json`
+- Hypothesis table: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/root_cause_probe/r54_hypothesis_table.csv`
+- Selected probe pairs: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/root_cause_probe/r54_small_overfit_probe_pairs.csv`
+- Overlay contact sheet: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/root_cause_probe/r54_small_probe_overlays.png`
+- Follow-up masked small-probe report: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_MASKED_SMALL_PROBE.md`
+- Follow-up real checkboard validation report: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_CHECKBOARD_VALIDATION.md`

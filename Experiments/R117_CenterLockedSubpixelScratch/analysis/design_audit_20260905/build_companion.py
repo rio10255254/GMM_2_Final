@@ -24,7 +24,7 @@ Oracle geometry tests isolate coordinate errors and are not deployment results.
 The real image reference is the pre-R109 source verified by reproducing R109.
 The center-nine radial profile measures edge oscillation, not circularity truth.
 '''),
-    nbf.v4.new_code_cell("from pathlib import Path\nimport json, subprocess, sys\nimport pandas as pd\nhere = Path(r'D:\\GMM_2_Final\\Experiments\\R117_CenterLockedSubpixelScratch\\analysis\\design_audit_20260905')\n"),
+    nbf.v4.new_code_cell("from pathlib import Path\nimport json, subprocess, sys\nimport pandas as pd\nhere = Path(r'Experiments/R117_CenterLockedSubpixelScratch/analysis/design_audit_20260905')\n"),
     nbf.v4.new_markdown_cell('## Reproduce the diagnostics'),
     nbf.v4.new_code_cell("for script in ['diagnose.py', 'preview_source_audit.py', 'render_mechanism_audit.py']:\n    completed = subprocess.run([sys.executable, str(here / script)], capture_output=True, text=True, encoding='utf-8', errors='replace')\n    if completed.returncode:\n        raise RuntimeError(completed.stderr[-6000:] + completed.stdout[-3000:])\n    print(script, 'passed')"),
     nbf.v4.new_markdown_cell('## Check protected inputs and actual supervision'),

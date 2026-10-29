@@ -15,9 +15,10 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-REPO_ROOT = Path("D:/GMM_2_Final")
+REPO_ROOT = Path(str(PROJECT_ROOT))
 DEFAULT_CSV = (
     REPO_ROOT
     / "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep"

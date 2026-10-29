@@ -1,7 +1,7 @@
 clc; clear; close all;
 
 %% ========== 檔案設定 ==========
-GT_file_path = "D:\NonSystemFiles\GMM2\MitsutoyoSample_GMMSys_20x\TestImage\Representative_Clusters_Output\Crop_circle_1201\Crop_circle_901_v2\GT\GT_901_with_Block.bmp";
+GT_file_path = "PSF_Fitting/Crop_circle_FreqFiltered/GT/GT_901_with_Block_proc.bmp";
 out_folder   = "D:\NonSystemFiles\GMM2\MitsutoyoSample_GMMSys_20x\TestImage\Representative_Clusters_Output\Crop_circle_1201\Crop_circle_901_v2\GT\";   % 若不想存檔可註解下面 imwrite
 
 if ~exist(out_folder,'dir'); mkdir(out_folder); end

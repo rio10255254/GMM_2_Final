@@ -1,34 +1,34 @@
 {
   "v42_model": {
-    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\model_v42.py",
+    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py",
     "sha256": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242"
   },
   "v42_training": {
-    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\train_v42.py",
+    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/train_v42.py",
     "sha256": "ff2334e4c2fb3d66eefe91436b01681690c5bf6b0eb33054b549caae1e84b2f2"
   },
   "r129_reconstruction": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\organized\\reconstruction.py",
+    "path": "Experiments/R129_OpticalPriorHybrid/model/organized/reconstruction.py",
     "sha256": "71594f2cf78a2b2cb4dc17213a670532e51b9b240cfde3aab767ad95f7f8dab6"
   },
   "r130_clean_design": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\config\\USER_SPECIFICATION.md",
+    "path": "Experiments/R130_Clean/config/USER_SPECIFICATION.md",
     "sha256": "43fd462eaf0f4d526c5490e25d6c4fc29aec1a63dfabea7f427ea25eab7c485a"
   },
   "r130_synthetic_manifest": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R130_Clean\\data\\manifest.json",
+    "path": "Experiments/R130_Clean/data/manifest.json",
     "sha256": "5c4ca8d04d7f9604f862337c486ef9120f1ea34e0a4ad946b6ea42c63921d974"
   },
   "r138_last_model": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R138_V42PSF8\\model_r138_psf.py",
+    "path": "Experiments/R138_V42PSF8/model_r138_psf.py",
     "sha256": "9591ae3a23c33363325f75ffb2825a32e426dc24806e7f8d2f623db48ac208c5"
   },
   "r138_results": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R138_V42PSF8\\results\\final_audit.json",
+    "path": "Experiments/R138_V42PSF8/results/final_audit.json",
     "sha256": "69c81130b41fb3fede7283c83de3ffdde13945d150ffdf9e10383a925fa62dca"
   },
   "psf_bank_original": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R138_V42PSF8\\calibration\\measured_psf_bank.npz",
+    "path": "Experiments/R138_V42PSF8/calibration/measured_psf_bank.npz",
     "sha256": "25cc6c95a224caae0e4a0380a88980551586a35cdb34eebde2635639e2c29553"
   }
 }

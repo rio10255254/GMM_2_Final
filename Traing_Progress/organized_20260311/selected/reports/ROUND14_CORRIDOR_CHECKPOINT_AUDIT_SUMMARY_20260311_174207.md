@@ -1,7 +1,7 @@
 # ROUND14_CORRIDOR Checkpoint Audit Summary
 
 - best_candidate: corridor_macrobridge
-- selected_checkpoint: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_173108\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_173108/weights/best_tradeoff.pth.tar
 - selection_policy: corridor checkpoint audit across 0.08/0.8/8.0 after 0.8px-family pre-rank
 
 | candidate | family | deploy | checkpoint |

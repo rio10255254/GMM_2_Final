@@ -1,9 +1,10 @@
 function build_english_wiener_figures()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))))));
 %BUILD_ENGLISH_WIENER_FIGURES Export English thesis figures.
 
 close all;
-packageRoot = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS';
-outputRoot = 'D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_english_20260727\assets_english\wiener';
+packageRoot = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS');
+outputRoot = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_tmp/oral_defense_english_20260727/assets_english/wiener');
 figureDir = fullfile(outputRoot, 'figures');
 tableDir = fullfile(outputRoot, 'tables');
 qaDir = fullfile(outputRoot, 'qa');
@@ -69,7 +70,7 @@ copyfile(fullfile(sourceTables, 'three_way_spatial_correlations.csv'), fullfile(
 configPath = fullfile(packageRoot,'..','01_CURRENT_THESIS_RESULTS_V42_CENTER9','config','sequence_center9_50x20x.json');
 configPayload = jsondecode(fileread(configPath));
 calibrationRows = readCsv(fullfile(sourceTables,'wiener_selected_nsr.csv'));
-fitRoot = 'D:\GMM_2_Final\PSF_Fitting\output\deconvolution_baseline_psf_20260715';
+fitRoot = fullfile(PROJECT_ROOT, 'PSF_Fitting/output/deconvolution_baseline_psf_20260715');
 case50 = loadCalibrationCase('50x',calibrationRows,configPayload,wienerRoot,fitRoot);
 case20 = loadCalibrationCase('20x',calibrationRows,configPayload,wienerRoot,fitRoot);
 raw50Path=case50.rawPath; v4250Path=case50.v42Path; wiener50Path=case50.wienerPath;
@@ -503,6 +504,7 @@ rect=[max(1,floor(min(centers(:,1))-margin)),max(1,floor(min(centers(:,2))-margi
 end
 
 function data=loadCalibrationCase(magnification,rows,configPayload,wienerRoot,fitRoot)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))))));
 row=rows(string(rows.magnification)==string(magnification),:);
 assert(height(row)==1,'Expected one selected calibration row per magnification.');
 sequenceName=char(string(row.calibration_sequence));
@@ -516,8 +518,8 @@ centerValues=double(sequence.centers);
 assert(size(centers,1)==9 && size(centerValues,1)==9,'Calibration case must contain exactly nine pillars.');
 data.sequence=sequenceName;
 data.frameIndex=frameIndex;
-data.rawPath=fullfile(sequence.raw_dir,sprintf('frame_%04d.bmp',frameIndex));
-data.v42Path=fullfile(sequence.v42_dir,sprintf('frame_%04d.bmp',frameIndex));
+data.rawPath=fullfile(PROJECT_ROOT,sequence.raw_dir,sprintf('frame_%04d.bmp',frameIndex));
+data.v42Path=fullfile(PROJECT_ROOT,sequence.v42_dir,sprintf('frame_%04d.bmp',frameIndex));
 data.wienerPath=fullfile(wienerRoot,'reconstructions',validName,sprintf('frame_%04d.bmp',frameIndex));
 data.centers=centers;
 data.ids=centerValues(:,1);

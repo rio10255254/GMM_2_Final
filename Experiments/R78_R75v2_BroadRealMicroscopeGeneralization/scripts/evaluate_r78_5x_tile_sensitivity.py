@@ -15,6 +15,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import run_r78 as primary
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 def metrics(raw: np.ndarray, model: np.ndarray) -> dict:
@@ -36,7 +37,7 @@ def metrics(raw: np.ndarray, model: np.ndarray) -> dict:
 
 def main() -> None:
     raw_path = Path(
-        "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0000.bmp"
+        str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0000.bmp')
     )
     paths = {
         "R75 tile 512 / overlap 64": primary.R75_RECON / "5x_0p5um" / "frame_0000.bmp",

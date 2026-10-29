@@ -1,10 +1,11 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $ErrorActionPreference = "Stop"
 
-$root = "D:\GMM_2_Final\Traing_Progress\organized_20260311\external_validation\round11_annulus_lock_defect"
+$root = "$ProjectRoot\Traing_Progress\organized_20260311\external_validation\round11_annulus_lock_defect"
 $reconRoot = Join-Path $root "reconstructions"
 $logRoot = Join-Path $root "logs"
-$weights = "D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_ald_20260310_235036\weights\best_tradeoff.pth.tar"
-$script = "D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py"
+$weights = "$ProjectRoot\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_ald_20260310_235036\weights\best_tradeoff.pth.tar"
+$script = "$ProjectRoot\Model\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py"
 
 $mixedDir = Join-Path $reconRoot "reconstruct_progress_best_tradeoff_in_Cropped_Output_20260310_235036"
 if (Test-Path $mixedDir) {

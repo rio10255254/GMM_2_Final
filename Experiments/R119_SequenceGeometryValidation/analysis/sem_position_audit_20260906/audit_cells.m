@@ -1,8 +1,9 @@
 function audit_cells()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
 % Diagnose the original failed export check without editing any measurement.
 % R69 run_acm_extraction.m lines 150-151 stores im2uint8(mat2gray(cell)).
 % New measured_arrays.mat deliberately keeps original intensities for detail QA.
-root='D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation';
+root=fullfile(PROJECT_ROOT, 'Experiments/R119_SequenceGeometryValidation');
 out=fullfile(root,'analysis','sem_position_audit_20260906');
 assert(~isfile(fullfile(out,'cell_export_diagnosis.csv')),'Preserve prior diagnostic');
 old=load(fullfile(root,'results','formal_sem','results','masks','acm_primary_masks.mat'));

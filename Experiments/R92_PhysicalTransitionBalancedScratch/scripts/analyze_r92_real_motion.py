@@ -9,12 +9,13 @@ import sys
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "config" / "capability_validation_20260812.json"
-R91_ANALYZER = Path(r"D:\GMM_2_Final\Experiments\R91_DetailDecoupledScratch\scripts\analyze_r91_real_motion.py")
-ISO_SCRIPT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\analyze_isocontour_boundary_displacement.py")
+R91_ANALYZER = Path(str(PROJECT_ROOT / 'Experiments/R91_DetailDecoupledScratch/scripts/analyze_r91_real_motion.py'))
+ISO_SCRIPT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/analyze_isocontour_boundary_displacement.py'))
 SEQUENCE_NAME = "50x_x_1um"
 
 
@@ -38,7 +39,7 @@ def write_json(path: Path, payload: dict) -> None:
 def main() -> int:
     protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
     arm = protocol["arms"]["real_motion"]
-    results = Path(protocol["output_root"])
+    results = Path(PROJECT_ROOT / protocol["output_root"])
     recon_root = results / "reconstructions_fp32"
     output = results / "motion_analysis_fp32"
     tables = output / "tables"
@@ -49,14 +50,14 @@ def main() -> int:
     helper.SEQUENCE_NAME = SEQUENCE_NAME
 
     method_dirs = {
-        "Raw": Path(arm["ordered_source"]),
+        "Raw": Path(PROJECT_ROOT / arm["ordered_source"]),
         "R92_E80": recon_root / "motion" / "E080",
     }
-    sequence = json.loads(Path(arm["sequence_config"]).read_text(encoding="utf-8"))["sequences"][SEQUENCE_NAME]
+    sequence = json.loads(Path(PROJECT_ROOT / arm["sequence_config"]).read_text(encoding="utf-8"))["sequences"][SEQUENCE_NAME]
     frame_count = int(sequence["frame_count"])
     for directory in method_dirs.values():
         helper.method_paths(directory, frame_count)
-    selected = helper.locked_steps(Path(arm["locked_steps"]))
+    selected = helper.locked_steps(Path(PROJECT_ROOT / arm["locked_steps"]))
     audit = helper.source_and_manifest_audit(protocol, method_dirs, frame_count)
     if not audit["requested_and_ordered_sources_are_same_files"] or not audit["all_stage_manifests_pass"]:
         raise RuntimeError(f"Motion input audit failed: {audit}")

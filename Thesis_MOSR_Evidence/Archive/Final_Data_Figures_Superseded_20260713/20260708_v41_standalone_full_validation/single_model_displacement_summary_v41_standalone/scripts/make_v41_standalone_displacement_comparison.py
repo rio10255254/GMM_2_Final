@@ -6,10 +6,11 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 
 VALIDATION_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260708_v41_standalone_full_validation"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/20260708_v41_standalone_full_validation')
 )
 SOURCE_DIR = VALIDATION_ROOT / "boundary_sensitive_roi_v41_compare"
 SOURCE_ALL_STEPS = SOURCE_DIR / "tables" / "boundary_sensitive_all_steps.csv"

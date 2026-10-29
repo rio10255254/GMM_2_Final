@@ -9,6 +9,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,12 +20,11 @@ QA = OUTPUT / "qa"
 for directory in (TABLES, FIGURES, QA):
     directory.mkdir(parents=True, exist_ok=True)
 
-R80_ROOT = Path(r"D:\GMM_2_Final\Experiments\R80_InflectionReferenceCircleSEMValidation")
+R80_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R80_InflectionReferenceCircleSEMValidation'))
 R80_SCRIPT = R80_ROOT / "scripts" / "run_displacement_lsc.py"
 R109_CONFIG = ROOT / "config" / "r109_thesis_sequence_config.json"
 TOP30 = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\tables\top30_raw_motion_selection.csv"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv')
 )
 
 

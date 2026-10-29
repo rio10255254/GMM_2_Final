@@ -3,7 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 import argparse,sys
 import numpy as np,torch
-ROOT=Path(__file__).resolve().parents[1];R149=Path(r'D:\GMM_2_Final\Experiments\R149_MatchedGeometryLocalBoundary');sys.path.insert(0,str(ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];R149=Path(str(PROJECT_ROOT / 'Experiments/R149_MatchedGeometryLocalBoundary'));sys.path.insert(0,str(ROOT))
 from dataset import Bank
 from losses import objective,stage_terms
 from model import Model

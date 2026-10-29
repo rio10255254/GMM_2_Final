@@ -14,16 +14,17 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 OUTPUT = ROOT / "results" / "detailed_validation" / "03_real_motion"
-HELPER = Path(r"D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\scripts\evaluate_real_holdout.py")
-CONFIG_PATH = Path(r"D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\config\sequences.json")
-LOCKED = Path(r"D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\results\tables\tile_motion_measurements.csv")
-R109_SUMMARY = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch\results\posttraining_motion\E048\motion_sequence_summary.csv")
-R61_SUMMARY = Path(r"D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\results\tables\sequence_summary.csv")
+HELPER = Path(str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/scripts/evaluate_real_holdout.py'))
+CONFIG_PATH = Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json'))
+LOCKED = Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv'))
+R109_SUMMARY = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/motion_sequence_summary.csv'))
+R61_SUMMARY = Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/sequence_summary.csv'))
 CANDIDATES = {
     "R116_E024": ROOT / "runs" / "r116_formal_scratch_20260903_202052" / "weights" / "epoch_024.pth",
     "R116_E042": ROOT / "runs" / "r116_formal_scratch_20260903_202052" / "failure_snapshot.pth",
@@ -89,7 +90,7 @@ def reconstruct_all(name: str, checkpoint: Path, device: torch.device) -> tuple[
     total = sum(int(item["frame_count"]) for item in CONFIG["sequences"].values())
     done = 0
     for sequence, item in CONFIG["sequences"].items():
-        paths = sorted(Path(item["raw_dir"]).glob("frame_*.bmp"))
+        paths = sorted(Path(PROJECT_ROOT / item["raw_dir"]).glob("frame_*.bmp"))
         if len(paths) != int(item["frame_count"]):
             raise RuntimeError(f"{sequence}: input inventory mismatch")
         for index, path in enumerate(paths):

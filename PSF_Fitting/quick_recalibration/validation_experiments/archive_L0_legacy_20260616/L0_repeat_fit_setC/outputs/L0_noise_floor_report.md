@@ -106,18 +106,18 @@ BADS 對不同係數的行為差很多——有些是真的有噪聲可量,有�
 
 ## 用到的 trial 目錄
 
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_01`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_02`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_03`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_04`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_05`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_06`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_07`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_08`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_09`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_10`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_11`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_12`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_13`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_14`
-- `D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L0_repeat_fit_setC\outputs\trial_15`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_01`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_02`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_03`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_04`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_05`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_06`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_07`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_08`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_09`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_10`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_11`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_12`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_13`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_14`
+- `PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit_setC/outputs/trial_15`

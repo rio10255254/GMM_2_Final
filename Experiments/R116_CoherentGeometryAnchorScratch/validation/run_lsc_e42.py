@@ -11,16 +11,17 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import skimage.segmentation.morphsnakes as morphsnakes
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "results" / "detailed_validation" / "05_lsc_e42"
 TABLES = OUTPUT / "tables"
 TABLES.mkdir(parents=True, exist_ok=True)
-R80_SCRIPT = Path(r"D:\GMM_2_Final\Experiments\R80_InflectionReferenceCircleSEMValidation\scripts\run_displacement_lsc.py")
-V42_CONFIG = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\01_CURRENT_THESIS_RESULTS_V42_CENTER9\config\sequence_center9_50x20x.json")
-TOP30 = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS\tables\top30_raw_motion_selection.csv")
-REFERENCE_PAIRS = Path(r"D:\GMM_2_Final\Experiments\R111_R109V42ThesisReplacementQualification\results\lsc_current_top30\tables\four_method_lsc_per_pair_current_top30.csv")
+R80_SCRIPT = Path(str(PROJECT_ROOT / 'Experiments/R80_InflectionReferenceCircleSEMValidation/scripts/run_displacement_lsc.py'))
+V42_CONFIG = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json'))
+TOP30 = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv'))
+REFERENCE_PAIRS = Path(str(PROJECT_ROOT / 'Experiments/R111_R109V42ThesisReplacementQualification/results/lsc_current_top30/tables/four_method_lsc_per_pair_current_top30.csv'))
 RECON_ROOT = ROOT / "results" / "detailed_validation" / "03_real_motion" / "R116_E042" / "reconstructions"
 METHOD = "R116 E42"
 SEQUENCE_MAP = {
@@ -111,7 +112,7 @@ def main() -> int:
             raise RuntimeError(f"{sequence}: expected 30 Raw-locked pairs, found {len(pairs)}")
         frame_indices = sorted(set(pairs["start_frame_index"].astype(int)) | set(pairs["end_frame_index"].astype(int)))
         base_centers = np.asarray(specification["centers"], dtype=float)
-        raw_dir = Path(specification["raw_dir"])
+        raw_dir = Path(PROJECT_ROOT / specification["raw_dir"])
         model_dir = RECON_ROOT / SEQUENCE_MAP[sequence]
         magnification = specification["magnification"]
         pitch = float(specification["pitch_px"])

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parent
@@ -38,8 +39,8 @@ CORE_FILES = (
     "scripts/prepare_r61_universal_dataset.py",
 )
 FORBIDDEN_PATH_MARKERS = (
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR",
-    r"D:\GMM_2_Final\Model",
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR'),
+    str(PROJECT_ROOT / 'Model'),
     r"C:\Users\Rio\Downloads",
     "__CURRENT_SELECTED_SEED__",
 )

@@ -4,7 +4,7 @@
 
 ## 執行方式
 
-在 `D:\GMM_2_Final\PSF_Fitting` 下執行：
+在 `PSF_Fitting` 下執行：
 
 ```powershell
 python .\PSF_Report_Helper\run_report_analysis.py
@@ -65,8 +65,8 @@ python .\PSF_Report_Helper\run_report_analysis.py `
 
 ## 測試
 
-- Python 單元測試已統一集中於 `D:\GMM_2_Final\PSF_Fitting\tests\python\test_report_analysis.py`
-- 在 `D:\GMM_2_Final\PSF_Fitting` 下可執行：
+- Python 單元測試已統一集中於 `PSF_Fitting/tests/python/test_report_analysis.py`
+- 在 `PSF_Fitting` 下可執行：
 
 ```powershell
 pytest tests/python/test_report_analysis.py -q

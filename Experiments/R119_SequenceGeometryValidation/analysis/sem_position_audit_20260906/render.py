@@ -14,6 +14,7 @@ ROOT = OUT.parents[1]
 sys.path.insert(0, str(ROOT))
 from inference.run import load, read
 from model.network import continuous_width
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 def sha(path):
     h = hashlib.sha256()
@@ -102,7 +103,7 @@ def render():
     images=OUT/'images';images.mkdir(exist_ok=False)
     torch.set_num_threads(4);cv2.setNumThreads(1)
     device='cuda' if torch.cuda.is_available() else 'cpu'
-    model=load(protocol['checkpoint'],device)
+    model=load(str(PROJECT_ROOT / protocol['checkpoint']),device)
     rows=[]
     for exposure in protocol['exposures']:
         source=ROOT.parent/f'R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/{exposure}.bmp'

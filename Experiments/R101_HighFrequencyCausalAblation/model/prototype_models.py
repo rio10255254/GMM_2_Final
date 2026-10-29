@@ -8,9 +8,10 @@ from pathlib import Path
 import torch
 from torch import nn
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-R100_PATH = Path("D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/model/r100_model.py")
+R100_PATH = Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/model/r100_model.py'))
 
 
 def _load_r100():

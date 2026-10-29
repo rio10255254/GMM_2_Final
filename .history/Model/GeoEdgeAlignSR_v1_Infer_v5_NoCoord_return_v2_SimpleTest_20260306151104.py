@@ -22,6 +22,7 @@ import numpy as np
 import scipy.io
 import torch
 import torch.nn.functional as F
+_PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 # -----------------------------------------------------------------------------
@@ -69,8 +70,8 @@ DEFAULT_ALIGN_FACTOR = 64
 MANUAL_SELECT_MODE = "odd"
 # Set to a path string or Path(...) for hard override; set None to use CLI/auto search.
 # Example:
-# MANUAL_WEIGHTS_PATH = Path(r"D:\GMM_2_Final\Traing_Progress\training_progress_xxx\weights\latest.pth.tar")
-MANUAL_WEIGHTS_PATH = r"D:\GMM_2_Final\Traing_Progress\organized_20260306\selected\runs\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_shift_priority_20260306_120501\weights\best_tradeoff.pth.tar"
+# MANUAL_WEIGHTS_PATH = Path(r"Traing_Progress/training_progress_xxx/weights/latest.pth.tar")
+MANUAL_WEIGHTS_PATH = str(_PROJECT_ROOT / 'Traing_Progress/organized_20260306/selected/runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_shift_priority_20260306_120501/weights/best_tradeoff.pth.tar')
 
 VALID_EXTS = {".bmp", ".png", ".tif", ".tiff", ".jpg", ".jpeg"}
 ALLOWED_MISMATCH = {"band_limit.filter_mask"}

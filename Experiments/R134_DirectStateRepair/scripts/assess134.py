@@ -4,6 +4,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from rt import *
 import pandas as pd
 from scipy.optimize import least_squares
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def fit(xy):
     origin=xy.mean(0);z=xy-origin
@@ -22,9 +23,9 @@ def main():
             assert all(int(v['step'])==512 for v in final['optimizer']['state'].values())
             states[arm,seed]=initial['model'];rows=[json.loads(x) for x in (run/'updates.jsonl').read_text().splitlines()];assert [r['step'] for r in rows]==list(range(1,513)) and len({r['parent'] for r in rows})==512;logs[arm,seed]=rows
             # Independent actual input replay across the complete one-pass schedule.
-            manifest=load(Path(cfg['data_root'])/'manifest.json');entries={e['index']:e for e in manifest['entries'] if e['split']=='train'}
+            manifest=load(Path(PROJECT_ROOT / cfg['data_root'])/'manifest.json');entries={e['index']:e for e in manifest['entries'] if e['split']=='train'}
             for row in rows[::16]:
-                index=row['parent'];entry=entries[index];data=np.load(Path(cfg['data_root'])/entry['arrays_path']);meta=load(Path(cfg['data_root'])/entry['metadata_path']);rng=np.random.default_rng(np.random.SeedSequence([cfg['noise_seed'],0,index]));image=np.rint(np.clip(data['noiseless'].astype(np.float64)+rng.normal(0,meta['noise_sigma_gray']/255,data['source'].shape),0,1)*255).astype(np.uint8);tensor=np.ascontiguousarray(image[:,None,32:352,32:352].astype(np.float32)/np.float32(255));assert digest(tensor)==row['input_sha256']
+                index=row['parent'];entry=entries[index];data=np.load(Path(PROJECT_ROOT / cfg['data_root'])/entry['arrays_path']);meta=load(Path(PROJECT_ROOT / cfg['data_root'])/entry['metadata_path']);rng=np.random.default_rng(np.random.SeedSequence([cfg['noise_seed'],0,index]));image=np.rint(np.clip(data['noiseless'].astype(np.float64)+rng.normal(0,meta['noise_sigma_gray']/255,data['source'].shape),0,1)*255).astype(np.uint8);tensor=np.ascontiguousarray(image[:,None,32:352,32:352].astype(np.float32)/np.float32(255));assert digest(tensor)==row['input_sha256']
             dev=load(run/'dev_0512.json');clean=[r['mae_gray'] for r in dev['rows'] if r['category']=='clean_identity'];reports.append(dict(arm=arm,seed=seed,dev_mae_gray=dev['mean_mae_gray'],Raw_dev_mae_gray=dev['Raw_mae_gray'],clean_identity_mae_gray=float(np.mean(clean)),clean_max_gray=float(max(clean))))
             for step in [0,512]:
                 folder=ROOT/f'results/real/{arm}_s{seed}_p{step:04d}';table=pd.read_csv(folder/'measurements.csv');assert len(table)==108;points=np.load(folder/'points.npz');scale=load(folder/'complete.json')['scale_nm_per_px']

@@ -3,9 +3,10 @@ from __future__ import annotations
 import hashlib,importlib.util,json,math,sys,time
 from pathlib import Path
 import cv2,numpy as np,pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT=Path(__file__).resolve().parents[1];OUTPUT=ROOT/'results/real_motion_no_radiometry_g0p25';OUTPUT.mkdir(parents=True,exist_ok=True)
-HELPER=Path(r'D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\scripts\evaluate_real_holdout.py');CONFIG_PATH=Path(r'D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\config\sequences.json');LOCKED=Path(r'D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\results\tables\tile_motion_measurements.csv')
+HELPER=Path(str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/scripts/evaluate_real_holdout.py'));CONFIG_PATH=Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json'));LOCKED=Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv'))
 def load(name,path):
  spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module);return module
 helpers=load('motion_helpers',HELPER);infer=load('r108c_no_rad_infer',ROOT/'scripts/infer_no_radiometry_folder.py');CONFIG=json.loads(CONFIG_PATH.read_text(encoding='utf-8'))
@@ -16,7 +17,7 @@ def read(path):return helpers.read_gray(path)
 def main():
  models,selectors=infer.nr.load(.25);locked=pd.read_csv(LOCKED);reconstructed={};records=[];appearance=[];total=sum(int(item['frame_count']) for item in CONFIG['sequences'].values());done=0;started=time.perf_counter()
  for sequence,item in CONFIG['sequences'].items():
-  paths=sorted(Path(item['raw_dir']).glob('frame_*.bmp'))
+  paths=sorted(Path(PROJECT_ROOT / item['raw_dir']).glob('frame_*.bmp'))
   if len(paths)!=int(item['frame_count']):raise RuntimeError(f'{sequence} inventory')
   for index,path in enumerate(paths):
    destination=OUTPUT/'reconstructions'/sequence/path.name

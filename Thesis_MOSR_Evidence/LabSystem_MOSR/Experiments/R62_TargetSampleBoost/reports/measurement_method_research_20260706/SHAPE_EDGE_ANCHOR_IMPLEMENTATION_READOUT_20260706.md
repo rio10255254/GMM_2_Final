@@ -4,7 +4,7 @@
 
 Implemented a new open displacement tool:
 
-`D:\GMM_2_Final\Tools\Displacement_Algorithms\scripts\measure_shape_edge_anchor.py`
+`Tools/Displacement_Algorithms/scripts/measure_shape_edge_anchor.py`
 
 The tool measures displacement from boundary structure instead of raw texture. It works in two stages:
 
@@ -25,7 +25,7 @@ This is intended for thesis cases where the reconstructed image should make boun
 
 Automated tests added:
 
-`D:\GMM_2_Final\Tools\Displacement_Algorithms\tests\test_measure_shape_edge_anchor.py`
+`Tools/Displacement_Algorithms/tests/test_measure_shape_edge_anchor.py`
 
 Covered cases:
 

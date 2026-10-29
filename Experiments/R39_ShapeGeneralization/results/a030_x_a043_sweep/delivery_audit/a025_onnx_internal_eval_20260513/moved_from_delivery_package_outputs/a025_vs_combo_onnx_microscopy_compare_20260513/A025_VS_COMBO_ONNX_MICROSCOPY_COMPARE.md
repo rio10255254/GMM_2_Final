@@ -1,8 +1,8 @@
 # a025 ONNX vs COMBO ONNX 顯微影像重建比較
 
-- COMBO 包：`D:\GMM_2_Final\_deployment_package\GeoEdge_COMBO_ONNX_Company_Package_20260424`
-- a025 包：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511`
-- 比較輸出根目錄：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_vs_combo_onnx_microscopy_compare_20260513`
+- COMBO 包：`_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424`
+- a025 包：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511`
+- 比較輸出根目錄：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_vs_combo_onnx_microscopy_compare_20260513`
 - 比較張數：`387`
 
 ## 整體結果
@@ -45,12 +45,12 @@
 
 ## 視覺對照圖
 
-- 分類代表圖：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_vs_combo_onnx_microscopy_compare_20260513\visuals\a025_vs_combo_representative_by_family.png`
-- a025 贏最多的案例：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_vs_combo_onnx_microscopy_compare_20260513\visuals\a025_biggest_wins_vs_combo.png`
-- COMBO 贏最多的案例：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_vs_combo_onnx_microscopy_compare_20260513\visuals\combo_biggest_wins_vs_a025.png`
+- 分類代表圖：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_vs_combo_onnx_microscopy_compare_20260513/visuals/a025_vs_combo_representative_by_family.png`
+- a025 贏最多的案例：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_vs_combo_onnx_microscopy_compare_20260513/visuals/a025_biggest_wins_vs_combo.png`
+- COMBO 贏最多的案例：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_vs_combo_onnx_microscopy_compare_20260513/visuals/combo_biggest_wins_vs_a025.png`
 
 ## 檔案
 
-- 每張圖詳細數字：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_vs_combo_onnx_microscopy_compare_20260513\metrics\a025_vs_combo_per_image.csv`
-- 分類摘要：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_vs_combo_onnx_microscopy_compare_20260513\metrics\a025_vs_combo_family_summary.csv`
-- JSON 摘要：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_vs_combo_onnx_microscopy_compare_20260513\metrics\a025_vs_combo_summary.json`
+- 每張圖詳細數字：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_vs_combo_onnx_microscopy_compare_20260513/metrics/a025_vs_combo_per_image.csv`
+- 分類摘要：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_vs_combo_onnx_microscopy_compare_20260513/metrics/a025_vs_combo_family_summary.csv`
+- JSON 摘要：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_vs_combo_onnx_microscopy_compare_20260513/metrics/a025_vs_combo_summary.json`

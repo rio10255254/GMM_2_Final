@@ -3,6 +3,6 @@
   "actual_error": "The later local variable cell shadowed MATLAB cell(), so cell(1,9) was treated as use of an uninitialized variable. The earlier guess about methods was incorrect. Both failed before scientific measurements.",
   "fix": "Rename crop variable to patch_image in new v3 runner. Preserve v1/v2 sources and failed logs.",
   "revised_runner": "scripts/evaluate_sem_v3.m",
-  "revised_sha256": "7967787742d2f03ffd0ddf374ed7b3899b7d0d94e8a83f694bf9305d45144702",
+  "revised_sha256": "c5364cc292b7037b16db877b7fd0f97dfe5c02e11110eae31d0eca359747fff2",
   "numerical_helpers_and_measurement_parameters_changed": false
 }

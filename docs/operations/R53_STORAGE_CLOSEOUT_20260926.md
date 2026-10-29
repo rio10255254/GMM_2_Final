@@ -12,7 +12,7 @@ D 槽保留內容 121 檔及 104 個原成果／程式／驗證檔再次核對�
 恢復時由 H 的 payload 按 LabSystem 相對路徑複製回原位置，再按 source_manifest.csv 核對。
 要重做歷史訓練，需先恢復資料，或在啟動程式明確指定封存資料位置。
 完整副本：H:\GMM_2_Final_Archive\lab_system\R53_RealisticDatasetCalibration\20260926_full_history
-本次實際移除與核對：D:/GMM_2_Final/docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。
+本次實際移除與核對：docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。
 
 ## 先前封存與拒絕紀錄（歷史狀態）
 
@@ -35,7 +35,7 @@ H 完整副本位置：H:/GMM_2_Final_Archive/lab_system/R53_RealisticDatasetCal
 
 R53 完整實驗說明、程式、正式報告、完整 batch16 正式訓練 run、角點驗證資料及共享驗證程式留在原位置。其餘失敗 run 的設定、日誌與代表影像，以及資料 manifest，另保存到：
 
-D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/results/archive_retained_20260926
+Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/results/archive_retained_20260926
 
 這個保留包有 121 個檔案、134,430,502 bytes（128.203 MiB）；每個檔案與 H 原件 SHA-256 相同，最後複核再次通過。原位置新增 ARCHIVE_POINTER_R53_20260926.md，說明恢復相對路徑。
 

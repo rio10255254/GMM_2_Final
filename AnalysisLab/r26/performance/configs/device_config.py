@@ -7,6 +7,7 @@ All paths must point to valid locations on the current machine.
 from __future__ import annotations
 
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 # ---------------------------------------------------------------------------
 # Device identity
@@ -20,31 +21,27 @@ DEVICE_NAME: str = "RTX_A6000_Main"
 # ---------------------------------------------------------------------------
 # R26 model checkpoint (.pth.tar)
 CHECKPOINT: Path = Path(
-    r"D:\GMM_2_Final\Traing_Progress\organized_20260316"
-    r"\round26\archive\runs"
-    r"\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408"
-    r"\weights\best_tradeoff.pth.tar"
+    str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar')
 )
 
 # PSF fitted file (.mat)
 PSF_PATH: Path = Path(
-    r"D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits"
-    r"\PSF_fitted_2D_FOVstack.mat"
+    str(PROJECT_ROOT / 'PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat')
 )
 
 # Directory containing test input images (BMP files) for inference benchmark
 # Can be the single_image demo or a larger dataset directory.
 TEST_INPUT_DIR: Path = Path(
-    r"D:\GMM_2_Final\AnalysisLab\r26\single_image\inputs"
+    str(PROJECT_ROOT / 'AnalysisLab/r26/single_image/inputs')
 )
 
 # Training data directories (src = input, lbl = ground truth label).
 # Only needed for training benchmark; set both to None to skip or use synthetic data.
 TRAINING_SRC_DIR: Path | None = Path(
-    r"D:\GMM_2_Final\Training_Data\tra_src_ring"
+    str(PROJECT_ROOT / 'Training_Data/tra_src_ring')
 )
 TRAINING_LBL_DIR: Path | None = Path(
-    r"D:\GMM_2_Final\Training_Data\tra_lbl_ring"
+    str(PROJECT_ROOT / 'Training_Data/tra_lbl_ring')
 )
 
 # ---------------------------------------------------------------------------

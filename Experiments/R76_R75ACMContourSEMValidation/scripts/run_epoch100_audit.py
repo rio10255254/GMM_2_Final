@@ -7,15 +7,16 @@ import sys
 
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
 RESULTS = ROOT / "results"
 AUDIT_ROOT = RESULTS / "epoch100_audit"
-RAW_DIR = Path(CONFIG["paired_evidence"]["raw_input_dir"])
+RAW_DIR = Path(PROJECT_ROOT / CONFIG["paired_evidence"]["raw_input_dir"])
 RECON_DIR = RESULTS / "reconstruction_epoch100"
-R69 = Path(CONFIG["paired_evidence"]["r69_root"])
+R69 = Path(PROJECT_ROOT / CONFIG["paired_evidence"]["r69_root"])
 PYTHON = Path(CONFIG["inference"]["python"])
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
 SHARED_ACM = R69 / "scripts" / "run_acm_extraction.m"

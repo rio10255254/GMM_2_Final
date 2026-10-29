@@ -8,10 +8,11 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
-EVIDENCE = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures")
+EVIDENCE = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures'))
 CURRENT = EVIDENCE / "01_CURRENT_THESIS_RESULTS_V42_CENTER9"
 NETWORK = EVIDENCE / "04_V42_NEURAL_NETWORK_RESULTS"
 SCRIPT_ROOT = CURRENT / "scripts"

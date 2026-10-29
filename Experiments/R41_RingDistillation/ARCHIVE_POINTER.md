@@ -37,9 +37,9 @@ D 槽只移除已在 H 槽完整保存的大型候選重建、掃描 checkpoint�
 若要完整恢復 R41，先把以下三個資料夾複製回各自原始位置：
 
 ```powershell
-robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\experiment D:\GMM_2_Final\Experiments\R41_RingDistillation /E /COPY:DAT /DCOPY:DAT
-robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\training_run D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028 /E /COPY:DAT /DCOPY:DAT
-robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\training_data D:\GMM_2_Final\Training_Data\r41_ring_distillation /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\experiment Experiments/R41_RingDistillation /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\training_run Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028 /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\training_data Training_Data/r41_ring_distillation /E /COPY:DAT /DCOPY:DAT
 ```
 
 恢復後使用 `Tools/project_storage_guard.py verify-manifest` 搭配中央索引列出的三份清單再次核對。核對通過後，內容才算完整恢復。

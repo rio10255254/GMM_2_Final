@@ -3,7 +3,7 @@
 - winner_candidate: r23_pac_w003
 - selected_candidate: r23_pac_w003
 - confirmed: True
-- selected_checkpoint: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r23w03_20260316_154316\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r23w03_20260316_154316/weights/best_tradeoff.pth.tar
 - macro_estimator: edge_band_refine
 - mid_center_ratio_min: 0.2500
 - mid_step_max: 0.4500

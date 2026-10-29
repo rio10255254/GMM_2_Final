@@ -1,15 +1,15 @@
 {
   "created_utc": "2026-09-13T12:45:17.840814+00:00",
   "source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\probe_full_sequence_inference.py",
-    "sha256": "3791b49db2af4ff5c3905b9f8c791a22cedbfd4c48b27c3fb4f5a1fded9a1667"
+    "path": "Experiments/R129_OpticalPriorHybrid/scripts/probe_full_sequence_inference.py",
+    "sha256": "ce0a0afb96f0ef8339f8d4b37ea413b3ec4723eac806f8c2df8b5cbb0d003afb"
   },
   "frame": {
-    "path": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+    "path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
     "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b"
   },
   "checkpoint": {
-    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
     "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
   },
   "method": "Exact full-field original organized forward; no tiling/ROI substitution",

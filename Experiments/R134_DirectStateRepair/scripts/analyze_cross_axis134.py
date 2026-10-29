@@ -8,6 +8,7 @@ from scipy.optimize import least_squares
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     base=ROOT/'results/cross_axis_diagnosis';prec=ROOT/'results/cross_axis_precision_v2';out=ROOT/'results/cross_axis_analysis';out.mkdir(exist_ok=False)
@@ -48,7 +49,7 @@ def main():
         baseline='Raw' if '_Raw_' in method else 'C_s1342001_float';a=t[(t.method==baseline)&(t.frame_index==16)].sort_values('pillar_id');b=g.sort_values('pillar_id');dy=(b.lsc_center_y_px.values-a.lsc_center_y_px.values)*scale;virtual.append(dict(method=method,side_response_nm=float(np.median(dy))))
     pd.DataFrame(virtual).to_csv(out/'known_horizontal_image_shifts.csv',index=False)
     # Independent image registration is context only: real Y motion is not known.
-    panel=load(ROOT/'config/motion_panel.json');plan=load(panel['source_plan']['path']);raws={};recons={};bounds=[]
+    panel=load(ROOT/'config/motion_panel.json');plan=load(str(PROJECT_ROOT / panel['source_plan']['path']));raws={};recons={};bounds=[]
     for i in [16,17]:
         f=next(f for f in plan['frames'] if f['sequence']==sequence and f['frame_index']==i);raws[i]=cv2.imread(f['source']['path'],0).astype(np.float32)/255;recons[i]=np.load(base/f'images/C_s1342001/{i:04d}.npz')['image'];bounds.append(np.load(ROOT/f'results/full_motion/{sequence}/frame_{i:04d}/points.npz')['roi_bounds'])
     bounds=np.stack(bounds);x0,y0=bounds[:,:2].min(0);x1,y1=bounds[:,2:].max(0);x0,y0,x1,y1=map(int,[x0,y0,x1,y1]);registration=[]
@@ -64,7 +65,7 @@ def main():
         points=np.load(ROOT/f'results/full_motion/{sequence}/frame_{i:04d}/points.npz')['inflection_points'].reshape(-1,2);h,w=raws[i].shape;margin.append(float(np.min(np.concatenate([points[:,0],points[:,1],w-1-points[:,0],h-1-points[:,1]]))))
     assert min(margin)>32
     # Inspect actual training metadata instead of assuming absence of small shapes.
-    data=Path(load(ROOT/'config/study.json')['data_root']);entries=load(data/'manifest.json')['entries'];meta=[load(data/e['metadata_path']) for e in entries if e['split']=='train'];dense=[m['shape'] for m in meta if m['category']=='dense_close_structures'];radius=[m['shape']['radius'] for m in meta if 'radius' in m['shape']]
+    data=Path(PROJECT_ROOT / load(ROOT/'config/study.json')['data_root']);entries=load(data/'manifest.json')['entries'];meta=[load(data/e['metadata_path']) for e in entries if e['split']=='train'];dense=[m['shape'] for m in meta if m['category']=='dense_close_structures'];radius=[m['shape']['radius'] for m in meta if 'radius' in m['shape']]
     coverage=dict(training_parents=len(meta),irregular_radius_minmax=[min(radius),max(radius)],dense_disks=sum(s['motif']=='disks' for s in dense),dense_pitch_minmax=[min(s['pitch'] for s in dense),max(s['pitch'] for s in dense)],training_x_shift_minmax=[min(m['shift_xy'][0] for m in meta),max(m['shift_xy'][0] for m in meta)],real_nominal_x_shift_px=-.5/.1725,scope='Coverage mismatch is a follow-up design concern, not the proven cause of this pair; small disks do exist in training')
     save(out/'data_coverage_context.json',coverage)
     fig,ax=plt.subplots(2,2,figsize=(12,8.5));ax[0,0].imshow(raws[16][y0:y1,x0:x1],cmap='gray',vmin=0,vmax=1,interpolation='nearest');ct=p[(p.method=='Raw_exact')&(p.frame_index==16)]

@@ -4,7 +4,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $PSScriptRoot
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$Python = python
 $Config = Join-Path $Root "config\experiment.json"
 $Data = Join-Path $Root "data\continuous_pairs.npz"
 $Summary = Join-Path $Root "results\comparison_summary.json"

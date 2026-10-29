@@ -1,18 +1,19 @@
 function build_v20_traceability_figures()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(mfilename('fullpath'))));
 % Build the traceability figures added to thesis v20.
 % Every annotation is tied to the actual source frame and the locked
 % coordinates used by the corresponding measurement package.
 
 close all; clc;
-root = 'D:\GMM_2_Final\Experiments\R66_V20_TraceabilityFigures_20260725';
+root = fullfile(PROJECT_ROOT, 'Experiments/R66_V20_TraceabilityFigures_20260725');
 out = fullfile(root, 'figures');
 if ~exist(out, 'dir'), mkdir(out); end
 
-rawStatic = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\20260618_100MG\Image__2026-06-18__17-10-31.bmp';
-raw50 = 'D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp\frame_0000.bmp';
-raw50b = 'D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp\frame_0001.bmp';
-raw20 = 'D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\20x_0p5um\bmp\frame_0000.bmp';
-staticCenterTable = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\01_CURRENT_THESIS_RESULTS_V42_CENTER9\cd\tables\center9_cd_per_pillar.csv';
+rawStatic = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/20260618_100MG/Image__2026-06-18__17-10-31.bmp');
+raw50 = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
+raw50b = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0001.bmp');
+raw20 = fullfile(PROJECT_ROOT, '20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp');
+staticCenterTable = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/cd/tables/center9_cd_per_pillar.csv');
 
 pillar50Initial = [24 1100.5 642.5; 23 1173.5 642.5; 22 1244.5 642.5; ...
                    30 1100.5 714.5; 29 1173.5 714.5; 28 1244.5 714.5; ...
@@ -54,14 +55,14 @@ makeIdentity(raw20, via20, [1656 1733 673 749], 0.1725, 'V', ...
 makeLineRegions(raw50, 0.069, fullfile(out, '09_line_measurement_regions.png'));
 
 rawA = rawStatic;
-fullA = 'D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation\reconstructions\full_control\seed1261200\static_50x_sem\Image__2026-06-18__17-10-31.bmp';
-noA = 'D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation\reconstructions\no_raw_position_anchor\seed1261200\static_50x_sem\Image__2026-06-18__17-10-31.bmp';
+fullA = fullfile(PROJECT_ROOT, 'Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/reconstructions/full_control/seed1261200/static_50x_sem/Image__2026-06-18__17-10-31.bmp');
+noA = fullfile(PROJECT_ROOT, 'Experiments/R63_CausalBoundaryMotionAblation/results/evaluation/reconstructions/no_raw_position_anchor/seed1261200/static_50x_sem/Image__2026-06-18__17-10-31.bmp');
 makeComparison({rawA, fullA, noA}, {'Raw','完整模型','移除位置基準'}, ...
     [768 889 687 808], 0.069, fullfile(out, '10_ablation_p29_matched_comparison.png'));
 
-naf50 = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\results\nafnet\real_inference\sequences\50x_x_0p5um\frame_0000.bmp';
-eds50 = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\results\edsr\real_inference\sequences\50x_x_0p5um\frame_0000.bmp';
-mos50 = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\02_V42_E120_SOURCE_MATERIAL\reconstructions\50x_0p5um\frame_0000.bmp';
+naf50 = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/real_inference/sequences/50x_x_0p5um/frame_0000.bmp');
+eds50 = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/real_inference/sequences/50x_x_0p5um/frame_0000.bmp');
+mos50 = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions/50x_0p5um/frame_0000.bmp');
 makeComparison({raw50, naf50, eds50, mos50}, {'Raw','NAFNet','EDSR-x1','MOSR'}, ...
     [1065 1281 607 823], 0.069, fullfile(out, '11_multimodel_50x_pillar_matched_comparison.png'));
 makeComparison({raw50, naf50, eds50, mos50}, {'Raw','NAFNet','EDSR-x1','MOSR'}, ...

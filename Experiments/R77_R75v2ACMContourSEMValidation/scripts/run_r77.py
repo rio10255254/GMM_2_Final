@@ -9,6 +9,7 @@ import sys
 
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,14 +18,14 @@ MODEL = CONFIG["model"]
 EVIDENCE = CONFIG["paired_evidence"]
 INFERENCE = CONFIG["inference"]
 CONTOUR = CONFIG["contour"]
-R69 = Path(EVIDENCE["r69_root"])
-RAW_DIR = Path(EVIDENCE["raw_input_dir"])
-BEST_RECON = Path(INFERENCE["best_reconstruction_dir"])
-E100_RECON = Path(INFERENCE["epoch100_reconstruction_dir"])
+R69 = Path(PROJECT_ROOT / EVIDENCE["r69_root"])
+RAW_DIR = Path(PROJECT_ROOT / EVIDENCE["raw_input_dir"])
+BEST_RECON = Path(PROJECT_ROOT / INFERENCE["best_reconstruction_dir"])
+E100_RECON = Path(PROJECT_ROOT / INFERENCE["epoch100_reconstruction_dir"])
 PYTHON = Path(INFERENCE["python"])
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
 SHARED_ACM = R69 / "scripts" / "run_acm_extraction.m"
-R76_RUNNER = Path(EVIDENCE["r76_root"]) / "scripts" / "run_r76.py"
+R76_RUNNER = Path(PROJECT_ROOT / EVIDENCE["r76_root"]) / "scripts" / "run_r76.py"
 
 
 def load_shared_runner():
@@ -77,7 +78,7 @@ def reconstruct(checkpoint: Path, directory: Path) -> None:
     run(
         [
             str(PYTHON),
-            MODEL["inference_script"],
+            str(PROJECT_ROOT / MODEL["inference_script"]),
             "--checkpoint",
             str(checkpoint),
             "--input",

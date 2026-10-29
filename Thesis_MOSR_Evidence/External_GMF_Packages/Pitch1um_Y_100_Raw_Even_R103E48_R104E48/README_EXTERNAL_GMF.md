@@ -2,7 +2,7 @@
 
 This package contains 101 selected frames from:
 
-`D:\NTU_ImageDataset\Pitch1um_Y_100\Raw`
+`Shared_Sources/NTU_Originals/Pitch1um_Y_100/Raw`
 
 Only the 2nd, 4th, 6th, ... files after filename sorting are included (one frame per two-image position).
 

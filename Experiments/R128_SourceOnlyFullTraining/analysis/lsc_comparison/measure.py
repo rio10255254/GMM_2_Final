@@ -7,6 +7,7 @@ from common import *
 import numpy as np,pandas as pd
 from PIL import Image
 import skimage.segmentation.morphsnakes as morphsnakes
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 def reader(plan):
@@ -14,7 +15,7 @@ def reader(plan):
     path=base/'reference_circle_core.py'
     spec=importlib.util.spec_from_file_location('r128_locked_reference_core',path)
     module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
-    scope=dict(np=np,pd=pd,Path=Path,Image=Image,SESSION_TABLE=Path(plan['sessions']['path']),morphsnakes=morphsnakes)
+    scope=dict(np=np,pd=pd,Path=Path,Image=Image,SESSION_TABLE=Path(PROJECT_ROOT / plan['sessions']['path']),morphsnakes=morphsnakes)
     source=base/'run_displacement_lsc.py';wanted={'session_prediction','load_grayscale','summarize_pairs'}
     tree=ast.parse(source.read_text(encoding='utf-8-sig'))
     nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in wanted]
@@ -62,16 +63,16 @@ def pair_table(centers,pairs,cfg,method):
 
 
 def main(method,stream=False):
-    out=ROOT/'results/lsc_comparison';plan=load(out/'plan.json');cfg=load(plan['configuration']['path']);pairs=pd.read_csv(out/'locked_pairs.csv')
+    out=ROOT/'results/lsc_comparison';plan=load(out/'plan.json');cfg=load(str(PROJECT_ROOT / plan['configuration']['path']));pairs=pd.read_csv(out/'locked_pairs.csv')
     assert method in ['Raw','R61v16_PSFOFF','R128_P_s1285002']
-    for source in plan['sources']:assert sha(source['path'])==source['sha256'],source['path']
+    for source in plan['sources']:assert sha(str(PROJECT_ROOT / source['path']))==source['sha256'],str(PROJECT_ROOT / source['path'])
     if method=='R61v16_PSFOFF':assert load(out/'R61_reproduction.json')['all_exact']
     folder=out/'measurements'/method;folder.mkdir(parents=True,exist_ok=False)
     core,scope=reader(plan)
     save(folder/'started.json',dict(started_utc=now(),source=record(__file__),plan=record(out/'plan.json'),method=method,pid=os.getpid()))
     tables=[];records=[];repeat_errors=[];start=time.perf_counter()
     for n,frame in enumerate(plan['frames'],1):
-        seq=frame['sequence'];idx=frame['frame_index'];source=frame['source'];assert sha(source['path'])==source['sha256']
+        seq=frame['sequence'];idx=frame['frame_index'];source=frame['source'];assert sha(str(PROJECT_ROOT / source['path']))==source['sha256']
         if method=='Raw':image_source=source
         elif method=='R61v16_PSFOFF':image_source=frame['R61']
         else:
@@ -81,7 +82,7 @@ def main(method,stream=False):
                 time.sleep(1)
             image_source=load(rec)['image']
         assert sha(image_source['path'])==image_source['sha256']
-        raw=scope['load_grayscale'](Path(source['path']));image=scope['load_grayscale'](Path(image_source['path']));assert raw.shape==image.shape
+        raw=scope['load_grayscale'](Path(PROJECT_ROOT / source['path']));image=scope['load_grayscale'](Path(image_source['path']));assert raw.shape==image.shape
         measured,points=measure_frame(core,scope,seq,idx,cfg['sequences'][seq],raw,image,method)
         if not any(x['sequence']==seq for x in repeat_errors):
             repeated,_=measure_frame(core,scope,seq,idx,cfg['sequences'][seq],raw,image,method)
@@ -98,7 +99,7 @@ def main(method,stream=False):
     centers.to_csv(folder/'centers.csv',index=False);per_pair.to_csv(folder/'per_pair.csv',index=False);pillar_pairs.to_csv(folder/'per_pillar_pair.csv',index=False);summary.to_csv(folder/'summary.csv',index=False)
     parity={}
     if method=='Raw':
-        oldpath=next(x['path'] for x in plan['sources'] if x['path'].endswith('four_method_lsc_centers_current_top30.csv'))
+        oldpath=next(str(PROJECT_ROOT / x['path']) for x in plan['sources'] if str(PROJECT_ROOT / x['path']).endswith('four_method_lsc_centers_current_top30.csv'))
         old=pd.read_csv(oldpath);old=old[old.method=='Raw'];matched=centers.merge(old,on=['sequence','frame_index','method','pillar_id'],suffixes=('','_old'),validate='one_to_one');assert len(matched)==len(centers)==len(old)
         for key in ['lsc_center_x_px','lsc_center_y_px','lsc_radius_px']:
             parity[key]=float((matched[key]-matched[key+'_old']).abs().max());assert parity[key]<1e-7,(key,parity[key])

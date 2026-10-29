@@ -77,8 +77,8 @@ Lower confidence: a basic inference/package mistake, because the five cases have
 
 ## Generated Files
 
-- Corner metrics table: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\corner_geometry_validation\corner_metrics_per_measurement.csv`
-- Corner summary table: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\corner_geometry_validation\corner_metrics_summary.csv`
-- Training coverage table: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\corner_geometry_validation\training_data_coverage_summary.csv`
-- Visual corner sheet: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\corner_geometry_validation\corner_patch_contact_sheet.png`
-- Metric chart: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\corner_geometry_validation\corner_metric_summary.png`
+- Corner metrics table: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation/corner_metrics_per_measurement.csv`
+- Corner summary table: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation/corner_metrics_summary.csv`
+- Training coverage table: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation/training_data_coverage_summary.csv`
+- Visual corner sheet: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation/corner_patch_contact_sheet.png`
+- Metric chart: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation/corner_metric_summary.png`

@@ -5,7 +5,7 @@ for external GMF validation.
 
 ## Source Sequence
 
-- Input capture folder: `D:/GMM_2_Final/Thesis_MOSR_Evidence/20250605_checkboard`
+- Input capture folder: `Thesis_MOSR_Evidence/20250605_checkboard`
 - Image count: 51 BMP frames
 - First frame: `Image__2026-06-05__16-04-32.bmp`
 - Last frame: `Image__2026-06-05__16-14-03.bmp`

@@ -50,5 +50,5 @@ def create(device='cuda',original=False):
 def verify_frozen():
     f=load(ROOT/'config/frozen.json')
     for item in f['sources']:
-        if sha(item['path'])!=item['sha256']:raise RuntimeError('Frozen source changed: '+item['path'])
+        if sha(str(REPO / item['path']))!=item['sha256']:raise RuntimeError('Frozen source changed: '+str(REPO / item['path']))
     return sha(ROOT/'config/frozen.json')

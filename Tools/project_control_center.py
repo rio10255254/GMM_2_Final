@@ -668,7 +668,7 @@ def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict
             "weight_sweep_summary_md",
         ):
             if key in reports:
-                return format_report(reports[key])
+                return format_report(str(REPO / reports[key]))
         if reports:
             return format_report(next(iter(reports.values())))
         if item.get("report"):
@@ -681,7 +681,7 @@ def build_truth_sources(repo: Path, policy: dict[str, Any], analysis_index: dict
             "model_name": formal["model_name"],
             "decision_effective_date": formal["decision_effective_date"],
             "machine_truth": relpath(POLICY_PATH),
-            "report": relpath(Path(formal["reports"]["results_md"])),
+            "report": relpath(Path(REPO / formal["reports"]["results_md"])),
             "evidence_map": relpath(EVIDENCE_MAP_PATH),
         },
         "approved_alternates": [

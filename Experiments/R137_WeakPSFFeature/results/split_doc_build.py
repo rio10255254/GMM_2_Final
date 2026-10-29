@@ -1,5 +1,6 @@
 from pathlib import Path
-p=Path(r'D:\GMM_2_Final\Experiments\R137_WeakPSFFeature\results\build_documents.py');s=p.read_text(encoding='utf-8-sig');prefix,body=s.split('# Reuse only the previously reviewed document formatting class, not the old authoring execution.',1)
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+p=Path(str(PROJECT_ROOT / 'Experiments/R137_WeakPSFFeature/results/build_documents.py'));s=p.read_text(encoding='utf-8-sig');prefix,body=s.split('# Reuse only the previously reviewed document formatting class, not the old authoring execution.',1)
 pre=p.with_name('prepare_doc_data.py');pre.write_text(prefix+"\nsave(P/'來源與核對/SOURCE_COPIES.json',source)\n",encoding='utf-8')
 header='''from pathlib import Path
 import ast,json,hashlib,shutil
@@ -8,7 +9,7 @@ from docx import Document
 from docx.shared import Inches,Pt,RGBColor
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-R=Path(r'D:\\GMM_2_Final\\Experiments\\R137_WeakPSFFeature');B=R.parent/'R130_Clean';P=Path(r'D:\\GMM_2_Final\\Deliverables\\R137_WeakPSF_Web_Documents_20260922');S=R/'results/comparison'
+R=Path(r'Experiments/R137_WeakPSFFeature');B=R.parent/'R130_Clean';P=Path(r'Deliverables/R137_WeakPSF_Web_Documents_20260922');S=R/'results/comparison'
 def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def save(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -21,6 +22,6 @@ p.with_name('author_docs.py').write_text(header+body,encoding='utf-8')
 p.write_text('''from pathlib import Path
 import subprocess
 root=Path(__file__).resolve().parent
-subprocess.run([r'C:\\Users\\Rio\\anaconda3\\python.exe',str(root/'prepare_doc_data.py')],check=True)
+subprocess.run([rpython,str(root/'prepare_doc_data.py')],check=True)
 subprocess.run([r'C:\\Users\\Rio\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe',str(root/'author_docs.py')],check=True)
 ''',encoding='utf-8')

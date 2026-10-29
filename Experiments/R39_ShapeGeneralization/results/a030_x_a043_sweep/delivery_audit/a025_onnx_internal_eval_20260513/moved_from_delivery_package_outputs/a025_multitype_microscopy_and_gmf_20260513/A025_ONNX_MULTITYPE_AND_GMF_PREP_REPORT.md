@@ -1,7 +1,7 @@
 # a025 ONNX 多類顯微重建與外部 GMF 準備報告
 
-- 模型包：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511`
-- 輸出根目錄：`D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_multitype_microscopy_and_gmf_20260513`
+- 模型包：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511`
+- 輸出根目錄：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_multitype_microscopy_and_gmf_20260513`
 - 顯微/邊界/位移抽樣重建張數：`387`
 
 ## 分類摘要
@@ -30,6 +30,6 @@
 
 ## 外部 GMF 準備路徑
 
-- pitch8px：重建圖 `D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_multitype_microscopy_and_gmf_20260513\external_gmf_prepare\recon_for_gmf\pitch8px`；GMF_score 放置 `D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_multitype_microscopy_and_gmf_20260513\external_gmf_prepare\gmf_score_drop_here\pitch8px\GMF_score.txt`；張數 `101/101`
-- pitch0p8px：重建圖 `D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_multitype_microscopy_and_gmf_20260513\external_gmf_prepare\recon_for_gmf\pitch0p8px`；GMF_score 放置 `D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_multitype_microscopy_and_gmf_20260513\external_gmf_prepare\gmf_score_drop_here\pitch0p8px\GMF_score.txt`；張數 `61/61`
-- pitch0p08px：重建圖 `D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_multitype_microscopy_and_gmf_20260513\external_gmf_prepare\recon_for_gmf\pitch0p08px`；GMF_score 放置 `D:\GMM_2_Final\_deployment_package\GeoEdge_R39R40_a025_ONNX_Company_Package_20260511\outputs\a025_multitype_microscopy_and_gmf_20260513\external_gmf_prepare\gmf_score_drop_here\pitch0p08px\GMF_score.txt`；張數 `41/41`
+- pitch8px：重建圖 `_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_multitype_microscopy_and_gmf_20260513/external_gmf_prepare/recon_for_gmf/pitch8px`；GMF_score 放置 `_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_multitype_microscopy_and_gmf_20260513/external_gmf_prepare/gmf_score_drop_here/pitch8px/GMF_score.txt`；張數 `101/101`
+- pitch0p8px：重建圖 `_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_multitype_microscopy_and_gmf_20260513/external_gmf_prepare/recon_for_gmf/pitch0p8px`；GMF_score 放置 `_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_multitype_microscopy_and_gmf_20260513/external_gmf_prepare/gmf_score_drop_here/pitch0p8px/GMF_score.txt`；張數 `61/61`
+- pitch0p08px：重建圖 `_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_multitype_microscopy_and_gmf_20260513/external_gmf_prepare/recon_for_gmf/pitch0p08px`；GMF_score 放置 `_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs/a025_multitype_microscopy_and_gmf_20260513/external_gmf_prepare/gmf_score_drop_here/pitch0p08px/GMF_score.txt`；張數 `41/41`

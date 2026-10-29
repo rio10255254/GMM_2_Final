@@ -14,7 +14,7 @@ Secondary objective:
 
 ### Training / validation logic
 
-- Added `TRAIN_INCLUDE_SUBDIRS` support in [GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py](D:/GMM_2_Final/Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py) so autotune can train on explicit stage subsets instead of only excluding folders.
+- Added `TRAIN_INCLUDE_SUBDIRS` support in [GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py](../../Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py) so autotune can train on explicit stage subsets instead of only excluding folders.
 - Added true `monitor_shift` GMF proxy validation:
   - uses one fixed monitor image
   - synthesizes a known-step sequence with `GMF_MONITOR_STEP_DY = 8`
@@ -23,7 +23,7 @@ Secondary objective:
 
 ### Training data
 
-- Updated [Data_Simulaion.py](D:/GMM_2_Final/Training_Data/Data_Simulaion.py):
+- Updated [Data_Simulaion.py](../../Training_Data/Data_Simulaion.py):
   - restored `RUN_STAGE_IDS = []` for normal manual use
   - made stage `08/09/10` milder and cleaner for curve-boundary learning
   - added `stage_13_curve_clean_general`
@@ -33,7 +33,7 @@ Secondary objective:
 
 ### Auto tune strategy
 
-- Updated [GeoEdgeAlignSR_v1_AutoTuneTrain.py](D:/GMM_2_Final/Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py):
+- Updated [GeoEdgeAlignSR_v1_AutoTuneTrain.py](../../Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py):
   - expected known step: `dx=0`, `dy=8`
   - proxy source: `monitor_shift`
   - reduced validation cost enough to make repeated sweep/final feasible
@@ -68,10 +68,10 @@ Sweep intermediate run folders were removed during cleanup after extracting rank
 ## Final Run
 
 Final run directory:
-- [training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332](D:/GMM_2_Final/Traing_Progress/organized_20260306/selected/runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332)
+- [training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332](selected/runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332)
 
 Chosen checkpoint:
-- [best_tradeoff.pth.tar](D:/GMM_2_Final/Traing_Progress/organized_20260306/selected/runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332/weights/best_tradeoff.pth.tar)
+- [best_tradeoff.pth.tar](selected/runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332/weights/best_tradeoff.pth.tar)
 
 Reason:
 - this checkpoint was written at `2026-03-06 20:19:40`
@@ -127,12 +127,12 @@ Interpretation:
 ## Current Adopted Version
 
 Current adopted manual inference weight path is already updated in:
-- [GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py](D:/GMM_2_Final/Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py)
+- [GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py](../../Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py)
 
 Path now points to:
 
 ```text
-D:\GMM_2_Final\Traing_Progress\organized_20260306\selected\runs\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332\weights\best_tradeoff.pth.tar
+Traing_Progress/organized_20260306/selected/runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_AUTO_FINAL_step8_curve_sharp_20260306_200332/weights/best_tradeoff.pth.tar
 ```
 
 ## Practical Conclusion

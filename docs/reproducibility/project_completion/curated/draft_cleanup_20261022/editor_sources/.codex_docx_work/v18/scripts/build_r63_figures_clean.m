@@ -1,11 +1,12 @@
 function build_r63_figures_clean()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))))));
 %BUILD_R63_FIGURES_ZH Export Chinese MATLAB figures for the thesis.
 
-experimentDir = 'D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation';
+experimentDir = fullfile(PROJECT_ROOT, 'Experiments/R63_CausalBoundaryMotionAblation');
 aggregateDir = fullfile(experimentDir, 'results', 'evaluation', 'aggregate');
 protectionDir = fullfile(experimentDir, 'results', 'evaluation', 'output_protection', 'aggregate');
 tableDir = fullfile(experimentDir, 'results', 'tables');
-figureDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v18\figures\r63';
+figureDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_docx_work/v18/figures/r63');
 if ~exist(figureDir, 'dir'); mkdir(figureDir); end
 
 factorial = readtable(fullfile(aggregateDir, 'factorial_effects.csv'), 'TextType', 'string');

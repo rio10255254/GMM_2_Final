@@ -13,6 +13,7 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,7 +56,7 @@ def write_json(path: Path, payload: Any) -> None:
 
 def main() -> int:
     protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
-    checkpoint = Path(protocol["checkpoint_root"]) / "epoch_080.pth.tar"
+    checkpoint = Path(PROJECT_ROOT / protocol["checkpoint_root"]) / "epoch_080.pth.tar"
     if sha256_file(checkpoint) != str(protocol["checkpoint_sha256"]).lower():
         raise RuntimeError("Checkpoint hash mismatch")
     if not torch.cuda.is_available():
@@ -66,7 +67,7 @@ def main() -> int:
     if int(payload.get("epoch", -1)) != 80:
         raise RuntimeError("Checkpoint epoch mismatch")
 
-    live_root = Path(protocol["arms"]["fixed_live_branch_probe"]["input_directory"])
+    live_root = Path(PROJECT_ROOT / protocol["arms"]["fixed_live_branch_probe"]["input_directory"])
     rows: list[dict[str, Any]] = []
     for source in sorted(live_root.glob("*.bmp")):
         raw, _dtype = inference.read_gray(source)
@@ -91,7 +92,7 @@ def main() -> int:
         })
 
     table = pd.DataFrame(rows)
-    results = Path(protocol["output_root"])
+    results = Path(PROJECT_ROOT / protocol["output_root"])
     table_path = results / "tables" / "branch_direction_analysis.csv"
     table.to_csv(table_path, index=False, encoding="utf-8-sig")
     medians = {

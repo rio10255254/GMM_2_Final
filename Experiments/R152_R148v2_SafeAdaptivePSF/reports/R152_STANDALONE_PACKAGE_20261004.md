@@ -11,7 +11,7 @@
 - [設定與預設路徑](../../../Deliverables/R152_Standalone_20261004/settings.py)
 - [完整性檢查](../../../Deliverables/R152_Standalone_20261004/check_package.py)
 
-獨立資料夾為`D:\GMM_2_Final\Deliverables\R152_Standalone_20261004`。約350.5 MB，包含794個檔案，其中20個Python檔案、768個母場景資料檔；ZIP約338.1 MB。所有控制、設定、說明、索引及檢查清單都是`.py`，包內沒有JSON、BAT、PS1、TXT或Markdown。實際數據與權重保留NPZ、PTH、BMP必要格式。
+獨立資料夾為`Deliverables/R152_Standalone_20261004`。約350.5 MB，包含794個檔案，其中20個Python檔案、768個母場景資料檔；ZIP約338.1 MB。所有控制、設定、說明、索引及檢查清單都是`.py`，包內沒有JSON、BAT、PS1、TXT或Markdown。實際數據與權重保留NPZ、PTH、BMP必要格式。
 
 ## 2 整齊的功能分組
 
@@ -65,10 +65,10 @@ R152_Standalone_20261004/
 目前可直接使用已驗證的Anaconda Python：
 
 ```powershell
-& "C:\Users\Rio\anaconda3\python.exe" "D:\GMM_2_Final\Deliverables\R152_Standalone_20261004\start_here.py"
-& "C:\Users\Rio\anaconda3\python.exe" "D:\GMM_2_Final\Deliverables\R152_Standalone_20261004\check_package.py" --full-data --model
-& "C:\Users\Rio\anaconda3\python.exe" "D:\GMM_2_Final\Deliverables\R152_Standalone_20261004\train.py"
-& "C:\Users\Rio\anaconda3\python.exe" "D:\GMM_2_Final\Deliverables\R152_Standalone_20261004\infer.py"
+& "C:\Users\Rio\anaconda3\python.exe" "Deliverables/R152_Standalone_20261004/start_here.py"
+& "C:\Users\Rio\anaconda3\python.exe" "Deliverables/R152_Standalone_20261004/check_package.py" --full-data --model
+& "C:\Users\Rio\anaconda3\python.exe" "Deliverables/R152_Standalone_20261004/train.py"
+& "C:\Users\Rio\anaconda3\python.exe" "Deliverables/R152_Standalone_20261004/infer.py"
 ```
 
 也可以在具備numpy、PyTorch及Pillow的Python IDE中直接執行train.py或infer.py。搬到其他機器後，start_here.py會依當前資料夾與Python顯示新的路徑，程式內不需要修改舊機器地址。

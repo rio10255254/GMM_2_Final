@@ -12,11 +12,11 @@ This file preserves the legacy empirical baseline identity after the 2026-03-27 
 ## Archived references
 
 - root legacy PSF copy:
-  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\policy_transition_archive_20260327\root_psf_legacy\PSF_fitted_2D_FOVstack_legacy_empirical.mat`
+  `Experiments/R26NewPSFCheck/policy_transition_archive_20260327/root_psf_legacy/PSF_fitted_2D_FOVstack_legacy_empirical.mat`
 - package legacy PSF copy:
-  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\policy_transition_archive_20260327\package_psf_legacy\PSF_fitted_2D_FOVstack_legacy_empirical.mat`
+  `Experiments/R26NewPSFCheck/policy_transition_archive_20260327/package_psf_legacy/PSF_fitted_2D_FOVstack_legacy_empirical.mat`
 - legacy deployed checkpoint:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260316\round26\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408\weights\best_tradeoff.pth.tar`
+  `Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar`
 
 ## Purpose
 

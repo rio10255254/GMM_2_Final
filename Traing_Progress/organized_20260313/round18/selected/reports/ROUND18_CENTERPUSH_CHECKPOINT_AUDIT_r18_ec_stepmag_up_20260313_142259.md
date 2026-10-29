@@ -3,7 +3,7 @@
 - candidate: r18_ec_stepmag_up
 - mode: centerlock0p8
 - best_checkpoint_label: checkpoint_8px
-- best_checkpoint_path: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST8_SWP_r18eu_20260313_141911\weights\best_tradeoff.pth.tar
+- best_checkpoint_path: Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_r18eu_20260313_141911/weights/best_tradeoff.pth.tar
 - best_deployment_score: -112.579910
 
 | checkpoint | s0.08 | s0.8 | s8 | deploy |

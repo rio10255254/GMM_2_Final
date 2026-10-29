@@ -15,7 +15,7 @@ D 槽 `selected_evidence/` 保留 38 份小型核心證據，包含原始 GMF �
 完整恢復：
 
 ```powershell
-robocopy H:\GMM_2_Final_Archive\legacy\organized_20260310\20260801_full_history\snapshot D:\GMM_2_Final\Traing_Progress\organized_20260310 /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\legacy\organized_20260310\20260801_full_history\snapshot Traing_Progress/organized_20260310 /E /COPY:DAT /DCOPY:DAT
 ```
 
 恢復後使用中央清單逐檔核對，回報 PASS 才算完整恢復。

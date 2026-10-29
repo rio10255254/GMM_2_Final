@@ -3,14 +3,13 @@ from __future__ import annotations
 import json
 import shutil
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
 EVALUATION = EXPERIMENT / "evaluation"
 TARGET = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS"
-    r"\modern_baseline_three_morphology_20260719"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/modern_baseline_three_morphology_20260719')
 )
 
 

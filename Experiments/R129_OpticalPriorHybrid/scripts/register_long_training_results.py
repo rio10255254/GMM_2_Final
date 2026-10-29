@@ -3,8 +3,9 @@ import sys,json,shutil
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
-    out=ROOT/'results/long_training_review_20260913_v2';v=load(out/'verification.json');pkg=Path(v['package'])
+    out=ROOT/'results/long_training_review_20260913_v2';v=load(out/'verification.json');pkg=Path(PROJECT_ROOT / v['package'])
     assert v['unique_updates']==8192 and v['final_public_inference_replay_exact']
     report=ROOT/'reports/R129_LONG_TRAINING_RESULTS.md';rel=report.relative_to(REPO).as_posix()
     paths=[REPO/'PROJECT_STATE.md',REPO/'ESTIMATOR_POLICY.json',REPO/'Experiments/INDEX.md',REPO/'docs/operations/PROJECT_STORAGE_REGISTRY.json',ROOT/'README.md',ROOT/'reports/R129_RESULTS.md',ROOT/'MANIFEST.md']

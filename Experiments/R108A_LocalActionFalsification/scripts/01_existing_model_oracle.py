@@ -21,6 +21,7 @@ import pandas as pd
 from scipy.stats import entropy
 from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.model_selection import LeaveOneGroupOut
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,7 +30,7 @@ REPORT = ROOT / "reports" / "01_EXISTING_MODEL_ORACLE.md"
 RESULT.mkdir(parents=True, exist_ok=True)
 REPORT.parent.mkdir(parents=True, exist_ok=True)
 
-EXPERIMENTS = Path(r"D:\GMM_2_Final\Experiments")
+EXPERIMENTS = Path(str(PROJECT_ROOT / 'Experiments'))
 R73_MANIFEST = EXPERIMENTS / "R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val/manifest.json"
 R74_MANIFEST = EXPERIMENTS / "R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val/manifest.json"
 R80_EXTERNAL = EXPERIMENTS / "R80_R79E23vsE100GeneralizationValidation/results/tables/external_acm_primary_combined.csv"

@@ -6,9 +6,10 @@ from common import load,sha,save,record,now,REPO
 import numpy as np,pandas as pd,torch,cv2
 from scipy.io import loadmat
 from scipy.optimize import least_squares
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 def main():
-    pkg=Path(load(ROOT/'config/standalone_build.json')['path']);run=pkg/'results/training/r129_long_01'
+    pkg=Path(PROJECT_ROOT / load(ROOT/'config/standalone_build.json')['path']);run=pkg/'results/training/r129_long_01'
     out=ROOT/'results/long_training_review_20260913';out.mkdir(exist_ok=False)
     completion=load(run/'completion.json');cfg=load(pkg/'config/training.json')
     for item in completion['records']:assert sha(pkg/item['path'])==item['sha256']

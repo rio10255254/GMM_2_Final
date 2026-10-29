@@ -13,6 +13,7 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +21,7 @@ PROTOCOL_PATH = ROOT / "config" / "posttraining_validation_protocol.json"
 DESIGN_PATH = ROOT / "config" / "experiment_design.json"
 MODEL_PATH = ROOT / "model" / "r100_model.py"
 INFERENCE_PATH = ROOT / "inference" / "reconstruct.py"
-HELPERS_PATH = Path(r"D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\scripts\evaluate_real_holdout.py")
+HELPERS_PATH = Path(str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/scripts/evaluate_real_holdout.py'))
 OUTPUT = ROOT / "results" / "posttraining_validation" / "real_generalization"
 
 
@@ -185,10 +186,10 @@ def main() -> None:
     if not protocol.get("locked_before_new_posttraining_outputs"):
         raise RuntimeError("Posttraining protocol is not locked")
     arm = protocol["real_microscope_arm"]
-    sequence_config_path = Path(arm["source_sequence_config"])
-    locked_path = Path(arm["locked_raw_measurements"])
-    checkpoint_path = Path(protocol["checkpoint"])
-    prior_root = Path(arm["prior_real_results"])
+    sequence_config_path = Path(PROJECT_ROOT / arm["source_sequence_config"])
+    locked_path = Path(PROJECT_ROOT / arm["locked_raw_measurements"])
+    checkpoint_path = Path(PROJECT_ROOT / protocol["checkpoint"])
+    prior_root = Path(PROJECT_ROOT / arm["prior_real_results"])
     prior_wide_path = prior_root / "motion_locked_wide.csv"
     prior_appearance_path = prior_root / "appearance_per_frame.csv"
     for required in (sequence_config_path, locked_path, checkpoint_path, prior_wide_path, prior_appearance_path):

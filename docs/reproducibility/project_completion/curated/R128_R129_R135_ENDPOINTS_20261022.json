@@ -2,7 +2,7 @@
   "models": [
     {
       "label": "V42_old",
-      "declared_original_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\results\\training_results\\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\\epoch_120.pth.tar",
+      "declared_original_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
       "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83",
       "original_usage": "native thesis output; no extra FOV blend",
       "existing_published_providers": [
@@ -19,7 +19,7 @@
     },
     {
       "label": "V42_clean",
-      "declared_original_checkpoint": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\runs\\v42_clean\\checkpoints\\step04096.pth",
+      "declared_original_checkpoint": "Experiments/R130_CleanV42Comparison/runs/v42_clean/checkpoints/step04096.pth",
       "sha256": "ecb4c09ae47ff1f03449a6f2368cb396bb6f7dc0bc6dc4cc1acc3c3d55fbc42b",
       "original_usage": "original80/16",
       "existing_published_providers": [
@@ -36,7 +36,7 @@
     },
     {
       "label": "R61",
-      "declared_original_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020\\weights\\best_tradeoff.pth.tar",
+      "declared_original_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
       "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
       "original_usage": "original PSF-off deployment",
       "existing_published_providers": [
@@ -67,7 +67,7 @@
     },
     {
       "label": "R128",
-      "declared_original_checkpoint": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\checkpoints\\step8192.pth",
+      "declared_original_checkpoint": "Experiments/R128_SourceOnlyFullTraining/runs/P_s1285002/checkpoints/step8192.pth",
       "sha256": "9fbdffa3bebe0a37e3f7c2b09239e2e00de6b0522feb101571fcfb7a42699abf",
       "original_usage": "original64/16",
       "existing_published_providers": [
@@ -84,7 +84,7 @@
     },
     {
       "label": "R129_W16",
-      "declared_original_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+      "declared_original_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
       "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd",
       "original_usage": "previously chosen16/16 research output",
       "existing_published_providers": [
@@ -101,7 +101,7 @@
     },
     {
       "label": "R134_P1",
-      "declared_original_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R134_DirectState_Precision_Standalone_20260915\\results\\training\\r134p_long_01\\checkpoints\\step08192.pth",
+      "declared_original_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915/results/training/r134p_long_01/checkpoints/step08192.pth",
       "sha256": "9a31573b9783c258ae33ea002188b1191ce443665b9125ebaf0b27c746b4a46c",
       "original_usage": "16/16",
       "existing_published_providers": [

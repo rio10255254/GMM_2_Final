@@ -1,9 +1,10 @@
 param()
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
 
 $ErrorActionPreference = "Stop"
 
-$pkg = "D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包"
-$archive = "D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326"
+$pkg = "$ProjectRoot\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包"
+$archive = "$ProjectRoot\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326"
 
 New-Item -ItemType Directory -Force -Path $archive | Out-Null
 

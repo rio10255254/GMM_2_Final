@@ -11,7 +11,8 @@ from scipy.interpolate import RectBivariateSpline
 from scipy.signal import fftconvolve
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from utils import data_config,load,save,sha,now
-CFG=data_config();BASE_PAYLOAD=Path(CFG['base_payload_path']);BASE_GEOMETRY=Path(CFG['base_geometry_path']);OVERLAY=ROOT/'data/overlay'
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+CFG=data_config();BASE_PAYLOAD=Path(PROJECT_ROOT / CFG['base_payload_path']);BASE_GEOMETRY=Path(PROJECT_ROOT / CFG['base_geometry_path']);OVERLAY=ROOT/'data/overlay'
 SPLIT_OFFSET={'train':0,'dev':7,'test':13};SPLIT_CODE={'train':0,'dev':1,'test':2};SUB=(.25,.5,.75);LARGE=(2.,4.,6.,8.);DIR=((1,0),(0,1),(-1,0),(0,-1));CONTRAST=(.85,.95,1.,1.15);BRIGHT=(-5.,0.,3.,5.);NOISE=(.5,1.,1.5,3.)
 _BANK4=None
 def digest(x):return hashlib.sha256(np.ascontiguousarray(x).tobytes()).hexdigest()

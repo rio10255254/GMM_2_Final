@@ -1,17 +1,17 @@
 [AUTO] sweep start | profile=round7_sequence_microstep_probe seed=1261200 sweep_epochs=4 final_epochs=6
 [AUTO] objective: known-step GMF first (expect_dx=0.000, expect_dy=0.080, source=monitor_shift), then boundary/texture realism.
 
-[AUTO][SWEEP] candidate=seq_clean_anchor overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean', 'stage_17_annulus_microstep_clean', 'stage_19_annulus_microstep_sequence_clean'), 'LR': 3.6e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'W_GRADMAG': 1.04, 'W_EDGE_ORI_SIMPLE': 0.56, 'SEQ_LOSS_WEIGHT': 0.26, 'SEQ_GRAD_WEIGHT': 0.06}
+[AUTO][SWEEP] candidate=seq_clean_anchor overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean', 'stage_17_annulus_microstep_clean', 'stage_19_annulus_microstep_sequence_clean'), 'LR': 3.6e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'W_GRADMAG': 1.04, 'W_EDGE_ORI_SIMPLE': 0.56, 'SEQ_LOSS_WEIGHT': 0.26, 'SEQ_GRAD_WEIGHT': 0.06}
 [RUN] tag=GESR_v1_v5_ST0p08_SWP_sca_20260310_154418 model=GESR_v1_v5_ST0p08_SWP_sca
-[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sca_20260310_154418
-[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sca_20260310_154418\weights
+[RUN] progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sca_20260310_154418
+[RUN] weights_dir=Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sca_20260310_154418/weights
 [REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
 [SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
 [FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=1 batch_log_every=5 csv_flush_n=50
 [GMF_KPI] expect_dx_px=0.0 expect_dy_px=0.08 expected_step_px=0.080000 outlier_t=0.500000 outlier_t_rel=0.100000
 [INFO] Pre-flight sanity check disabled.
 [DATA] include_subdirs=('stage_13_curve_clean_general', 'stage_15_annulus_sparse_clean', 'stage_17_annulus_microstep_clean', 'stage_19_annulus_microstep_sequence_clean') -> remaining=325
-[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sca_20260310_154418\_repro\GESR_v1_v5_ST0p08_SWP_sca
+[REPRO][SPLIT] save fixed split: Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sca_20260310_154418/_repro/GESR_v1_v5_ST0p08_SWP_sca
 [INFO] Train batches/epoch: 77
 [INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=8)
 [INFO] GMF_VALIDATE_SOURCE = monitor_shift
@@ -24,7 +24,7 @@
 [SIMPLETEST_V2] eq_shift tiny=(0.002, 0.1) mid=(0.1, 0.6) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
 [SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
 [INFO] Sequence pairs: ENABLED (pairs=120, batches=60, batch_size=2)
-[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resuming v5 training from: Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar
 [INFO] Optimizer state reset after checkpoint load.
 [INFO] Loaded weights from epoch 3, but epoch counter reset to 0.
 [INFO] Resumed from epoch 0
@@ -157,17 +157,17 @@ Starting Epoch 4/4
 [SUMMARY] Best epoch = 0, tradeoff = 36.3111, gmf_obj = 36.3111, step_std = 0.0000, outlier = 0.0000, step_err = 0.0800, gain_p10 = -74.4748, best_val_rec = 0.004990, best_val_ssim = 0.9416
 [AUTO][SWEEP][DONE] candidate=seq_clean_anchor score=2.196736 step_err=0.080000 pos_std=0.000000 pass02=0.000000
 
-[AUTO][SWEEP] candidate=seq_defect_balance overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect'), 'LR': 3.8e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'W_GRADMAG': 1.05, 'W_EDGE_ORI_SIMPLE': 0.58, 'SEQ_LOSS_WEIGHT': 0.28, 'SEQ_GRAD_WEIGHT': 0.08}
+[AUTO][SWEEP] candidate=seq_defect_balance overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect'), 'LR': 3.8e-06, 'FREEZE_PHYSICS_EPOCH': 24, 'PHYS_WARMUP_END': 24, 'WEAK_PSF_STAGE0_EPOCHS': 24, 'WEAK_PSF_STAGE1_EPOCHS': 34, 'WEAK_PSF_ACTIVE_START_E': 25, 'W_GRADMAG': 1.05, 'W_EDGE_ORI_SIMPLE': 0.58, 'SEQ_LOSS_WEIGHT': 0.28, 'SEQ_GRAD_WEIGHT': 0.08}
 [RUN] tag=GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302 model=GESR_v1_v5_ST0p08_SWP_sdb
-[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302
-[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302\weights
+[RUN] progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302
+[RUN] weights_dir=Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302/weights
 [REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
 [SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
 [FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=1 batch_log_every=5 csv_flush_n=50
 [GMF_KPI] expect_dx_px=0.0 expect_dy_px=0.08 expected_step_px=0.080000 outlier_t=0.500000 outlier_t_rel=0.100000
 [INFO] Pre-flight sanity check disabled.
 [DATA] include_subdirs=('stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect') -> remaining=650
-[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302\_repro\GESR_v1_v5_ST0p08_SWP_sdb
+[REPRO][SPLIT] save fixed split: Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302/_repro/GESR_v1_v5_ST0p08_SWP_sdb
 [INFO] Train batches/epoch: 154
 [INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=16)
 [INFO] GMF_VALIDATE_SOURCE = monitor_shift
@@ -180,7 +180,7 @@ Starting Epoch 4/4
 [SIMPLETEST_V2] eq_shift tiny=(0.002, 0.1) mid=(0.1, 0.6) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
 [SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
 [INFO] Sequence pairs: ENABLED (pairs=120, batches=60, batch_size=2)
-[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resuming v5 training from: Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar
 [INFO] Optimizer state reset after checkpoint load.
 [INFO] Loaded weights from epoch 3, but epoch counter reset to 0.
 [INFO] Resumed from epoch 0
@@ -313,17 +313,17 @@ Starting Epoch 4/4
 [SUMMARY] Best epoch = 0, tradeoff = 36.3103, gmf_obj = 36.3103, step_std = 0.0000, outlier = 0.0000, step_err = 0.0800, gain_p10 = -74.4748, best_val_rec = 0.004064, best_val_ssim = 0.9443
 [AUTO][SWEEP][DONE] candidate=seq_defect_balance score=2.325206 step_err=0.080000 pos_std=0.000000 pass02=0.000000
 
-[AUTO][SWEEP] candidate=seq_general_curve overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect'), 'LR': 4e-06, 'FREEZE_PHYSICS_EPOCH': 22, 'PHYS_WARMUP_END': 22, 'WEAK_PSF_STAGE0_EPOCHS': 22, 'WEAK_PSF_STAGE1_EPOCHS': 32, 'WEAK_PSF_ACTIVE_START_E': 23, 'W_GRADMAG': 1.04, 'W_EDGE_ORI_SIMPLE': 0.56, 'SEQ_LOSS_WEIGHT': 0.24, 'SEQ_GRAD_WEIGHT': 0.06}
+[AUTO][SWEEP] candidate=seq_general_curve overrides={'LOAD_MODEL': True, 'PRETRAINED_PATH': 'Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar', 'TRAIN_INCLUDE_SUBDIRS': ('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect'), 'LR': 4e-06, 'FREEZE_PHYSICS_EPOCH': 22, 'PHYS_WARMUP_END': 22, 'WEAK_PSF_STAGE0_EPOCHS': 22, 'WEAK_PSF_STAGE1_EPOCHS': 32, 'WEAK_PSF_ACTIVE_START_E': 23, 'W_GRADMAG': 1.04, 'W_EDGE_ORI_SIMPLE': 0.56, 'SEQ_LOSS_WEIGHT': 0.24, 'SEQ_GRAD_WEIGHT': 0.06}
 [RUN] tag=GESR_v1_v5_ST0p08_SWP_sgc_20260310_160222 model=GESR_v1_v5_ST0p08_SWP_sgc
-[RUN] progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sgc_20260310_160222
-[RUN] weights_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sgc_20260310_160222\weights
+[RUN] progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sgc_20260310_160222
+[RUN] weights_dir=Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sgc_20260310_160222/weights
 [REPRO] mode=ON seed=1261200 deterministic=ON tf32=OFF amp=OFF fixed_split=ON num_workers=0
 [SEED] active=1261200 cudnn_deterministic=1 cudnn_benchmark=0 tf32_matmul=0 tf32_cudnn=0
 [FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=1 batch_log_every=5 csv_flush_n=50
 [GMF_KPI] expect_dx_px=0.0 expect_dy_px=0.08 expected_step_px=0.080000 outlier_t=0.500000 outlier_t_rel=0.100000
 [INFO] Pre-flight sanity check disabled.
 [DATA] include_subdirs=('stage_04_ellipses', 'stage_08_annulus_focus', 'stage_09_annulus_non_overlap', 'stage_10_annulus_overlap', 'stage_13_curve_clean_general', 'stage_14_annulus_edge_defect_focus', 'stage_15_annulus_sparse_clean', 'stage_16_annulus_sparse_defect_clean', 'stage_17_annulus_microstep_clean', 'stage_18_annulus_microstep_defect', 'stage_19_annulus_microstep_sequence_clean', 'stage_20_annulus_microstep_sequence_defect') -> remaining=1050
-[REPRO][SPLIT] save fixed split: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sgc_20260310_160222\_repro\GESR_v1_v5_ST0p08_SWP_sgc
+[REPRO][SPLIT] save fixed split: Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sgc_20260310_160222/_repro/GESR_v1_v5_ST0p08_SWP_sgc
 [INFO] Train batches/epoch: 249
 [INFO] Validation: ENABLED (VAL_RATIO=0.05, val batches=26)
 [INFO] GMF_VALIDATE_SOURCE = monitor_shift
@@ -336,7 +336,7 @@ Starting Epoch 4/4
 [SIMPLETEST_V2] eq_shift tiny=(0.002, 0.1) mid=(0.1, 0.6) band_r=[0.15,0.45] band_every_n_batch=2 edgeLap_thr=0.060 dilate=3
 [SIMPLETEST_V2] intensity-eq=DISABLED thicken_guard=1 self_band_ready_e=6 psf_guard_only=0
 [INFO] Sequence pairs: ENABLED (pairs=120, batches=60, batch_size=2)
-[INFO] Resuming v5 training from: D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar
+[INFO] Resuming v5 training from: Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar
 [INFO] Optimizer state reset after checkpoint load.
 [INFO] Loaded weights from epoch 3, but epoch counter reset to 0.
 [INFO] Resumed from epoch 0
@@ -468,6 +468,6 @@ Starting Epoch 4/4
 [SUMMARY] Best epoch = 0, tradeoff = 36.3105, gmf_obj = 36.3105, step_std = 0.0000, outlier = 0.0000, step_err = 0.0800, gain_p10 = -74.4748, best_val_rec = 0.006376, best_val_ssim = 0.9177
 [AUTO][SWEEP][DONE] candidate=seq_general_curve score=2.287391 step_err=0.080000 pos_std=0.000000 pass02=0.000000
 
-[AUTO] best candidate=seq_defect_balance score=2.325206 progress_dir=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302 best_ckpt=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302\weights\best_tradeoff.pth.tar
-[AUTO] report=D:\GMM_2_Final\Traing_Progress\auto_tune_reports\auto_tune_report_20260310_154418.json
-[AUTO] recommended_deploy kind=sweep score=2.325206 ckpt=D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302\weights\best_tradeoff.pth.tar
+[AUTO] best candidate=seq_defect_balance score=2.325206 progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302 best_ckpt=Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302/weights/best_tradeoff.pth.tar
+[AUTO] report=Traing_Progress/auto_tune_reports/auto_tune_report_20260310_154418.json
+[AUTO] recommended_deploy kind=sweep score=2.325206 ckpt=Traing_Progress/training_progress_GESR_v1_v5_ST0p08_SWP_sdb_20260310_155302/weights/best_tradeoff.pth.tar

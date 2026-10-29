@@ -1,7 +1,7 @@
 ﻿# Process Probe Audit
 
 - candidate: be_ctrl_edge
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\organized_20260315\branch_e_followup\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/organized_20260315/branch_e_followup/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929/weights/best_tradeoff.pth.tar
 - geom_method: edge_centroid
 - expect_dy: 8.00
 - process_score: -72.629906

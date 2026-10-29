@@ -7,11 +7,13 @@ import math
 import os
 import sys
 import argparse
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 # --- R26 baseline GMF results (already scored) ---
 BASELINE_SPECS = {
     "r26_sm035_baseline": {
-        "root": r"D:\GMM_2_Final\Traing_Progress\organized_20260316\external_compare_r18_r22_r25_r26\r26_sm035\gmf_results\raw",
+        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw'),
         "pitch_map": {
             "8px":    "pitch8px",
             "0p8px":  "pitch0p8px",
@@ -148,7 +150,7 @@ def main():
     if args.tta_gmf_root:
         tta_gmf_root = args.tta_gmf_root
     else:
-        tta_gmf_root = rf"D:\GMM_2_Final\Traing_Progress\organized_20260316\tta_experiment\r26_tta_{tta_mode}\gmf_results\raw"
+        tta_gmf_root = rf"{PROJECT_ROOT}\Traing_Progress\organized_20260316\tta_experiment\r26_tta_{tta_mode}\gmf_results\raw"
 
     tta_spec = {
         "root": tta_gmf_root,
@@ -159,7 +161,7 @@ def main():
         },
     }
 
-    report_dir = rf"D:\GMM_2_Final\Traing_Progress\organized_20260316\tta_experiment\r26_tta_{tta_mode}\reports"
+    report_dir = rf"{PROJECT_ROOT}\Traing_Progress\organized_20260316\tta_experiment\r26_tta_{tta_mode}\reports"
     os.makedirs(report_dir, exist_ok=True)
 
     all_specs = {

@@ -8,6 +8,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -65,8 +66,8 @@ def radial(image: np.ndarray) -> tuple[float, float, float]:
 
 
 def main() -> int:
-    coords = coordinates(Path(CONFIG["models"]["Raw"]["score"]))
-    dirs = {arm: Path(CONFIG["models"][arm]["image_dir"]) for arm in ("Raw", "V42 E120", "R109 E48")}
+    coords = coordinates(Path(PROJECT_ROOT / CONFIG["models"]["Raw"]["score"]))
+    dirs = {arm: Path(PROJECT_ROOT / CONFIG["models"][arm]["image_dir"]) for arm in ("Raw", "V42 E120", "R109 E48")}
     variants: dict[str, list[np.ndarray]] = {
         "Raw": [],
         "V42 E120": [],

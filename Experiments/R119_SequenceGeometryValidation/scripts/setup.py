@@ -8,9 +8,10 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT = Path(__file__).resolve().parents[1]
-R118 = Path(r"D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch")
+R118 = Path(str(PROJECT_ROOT / 'Experiments/R118_PhysicalCoordinateRepairScratch'))
 PLAN_ID = "r118-next-single-image-sequence-geometry-v1"
 
 

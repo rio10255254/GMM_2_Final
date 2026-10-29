@@ -1,7 +1,7 @@
 function plot_20x_cd_presentation_candidate()
 % Plot the 20x counterpart of the bias-corrected 50x CD summary.
 
-root = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures" + ...
+root = "Thesis_MOSR_Evidence/Final_Data_Figures" + ...
     "\12_V25_20X_CD_PRESENTATION_CANDIDATE_20260727";
 figureDir = fullfile(root, "figures");
 if ~isfolder(figureDir)

@@ -14,11 +14,13 @@ import math
 import os
 import glob
 from datetime import datetime
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 # ────────────────────────────────────────────────────────────
 # 0. Paths
 # ────────────────────────────────────────────────────────────
-BASE_DIR = r"D:\GMM_2_Final\Traing_Progress\organized_20260316"
+BASE_DIR = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316')
 OUTPUT_DIR = os.path.join(BASE_DIR, "analysis")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

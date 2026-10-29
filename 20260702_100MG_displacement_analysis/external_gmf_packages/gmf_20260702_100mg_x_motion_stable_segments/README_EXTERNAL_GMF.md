@@ -1,6 +1,6 @@
 # Stable-segment GMF package
 
-Source analysis root: D:\GMM_2_Final\20260702_100MG_displacement_analysis
+Source analysis root: 20260702_100MG_displacement_analysis
 
 This stable package splits sequences at long timing gaps. Use it for cleaner model-vs-raw displacement comparison.
 

@@ -83,16 +83,16 @@
   "optical_statistics": {
     "output": "config/optical_statistics.json",
     "source_sets": [
-      "D:/GMM_2_Final/20260704_5x",
-      "D:/GMM_2_Final/20260704_20x",
-      "D:/GMM_2_Final/20260702_100MG_位移_50x"
+      "20260704_5x",
+      "20260704_20x",
+      "20260702_100MG_位移_50x"
     ],
     "store_source_pixels": false,
     "store_patch_coordinates": false
   },
   "dataset": {
     "generator_version": "r92_physical_transition_balanced_v1_reused_without_pixel_changes",
-    "source_package": "D:/GMM_2_Final/Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
+    "source_package": "Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
     "source_content_sha256": "260ccc5b4e31727e7fc97082b831717aa4c06d9f429ef98a5ce1210cb49bf5d5",
     "reuse_existing_arrays_without_regeneration": true,
     "master_seed": 920041,

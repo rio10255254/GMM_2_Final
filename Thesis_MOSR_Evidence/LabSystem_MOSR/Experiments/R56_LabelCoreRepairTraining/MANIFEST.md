@@ -16,40 +16,40 @@
 
 ## Data Packages
 
-- Train: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r56_label_core_repair\r53_realistic_dataset_calibration\r53_realistic_calibrated_train_6000`
-- Validation pool: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r56_label_core_repair\r53_realistic_dataset_calibration\r53_realistic_calibrated_val`
-- QA summary: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r56_label_core_repair\r53_realistic_dataset_calibration\qa\r56_label_core_qa_summary.json`
+- Train: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r56_label_core_repair/r53_realistic_dataset_calibration/r53_realistic_calibrated_train_6000`
+- Validation pool: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r56_label_core_repair/r53_realistic_dataset_calibration/r53_realistic_calibrated_val`
+- QA summary: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r56_label_core_repair/r53_realistic_dataset_calibration/qa/r56_label_core_qa_summary.json`
 
 ## Planned Training
 
 - Scratch run: 50 epochs, batch 16, 4 workers, PSF-forward loss disabled
 - Boundary geometry: enabled from the repaired package sidecars
-- Formal log pointer: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R56_LabelCoreRepairTraining\results\formal_training_logs\latest_formal_training_log.txt`
+- Formal log pointer: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/results/formal_training_logs/latest_formal_training_log.txt`
 
 ## Validation
 
-- Real Lab checkboard reconstruction target: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare`
+- Real Lab checkboard reconstruction target: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare`
 - Corner validation: completed and failed against Lab R40 / R55 best
 - External GMF: not recommended from R56 because local real-corner validation failed
 
 ## Training Runs
 
-- Formal run: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r56_label_core_repair_r53_scratch_formal_label_core_repair_e050_b016_w04_nophys_20260618_122705`
-- Formal stdout: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R56_LabelCoreRepairTraining\results\formal_training_logs\r56_formal_label_core_repair_e050_b016_w04_nophys_20260618_122702_stdout.log`
-- Formal stderr: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R56_LabelCoreRepairTraining\results\formal_training_logs\r56_formal_label_core_repair_e050_b016_w04_nophys_20260618_122702_stderr.log`
+- Formal run: `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r56_label_core_repair_r53_scratch_formal_label_core_repair_e050_b016_w04_nophys_20260618_122705`
+- Formal stdout: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/results/formal_training_logs/r56_formal_label_core_repair_e050_b016_w04_nophys_20260618_122702_stdout.log`
+- Formal stderr: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/results/formal_training_logs/r56_formal_label_core_repair_e050_b016_w04_nophys_20260618_122702_stderr.log`
 
 ## Reconstruction Runs
 
-- Best tradeoff: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\gmf_cases\lab_r56_label_core_repair_best_tradeoff`
-- Latest: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\gmf_cases\lab_r56_label_core_repair_latest`
+- Best tradeoff: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r56_label_core_repair_best_tradeoff`
+- Latest: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r56_label_core_repair_latest`
 - Corner validation report: `reports/R56_CHECKBOARD_VALIDATION.md`
 
 ## Verification
 
-- `C:\Users\Rio\anaconda3\python.exe -m pytest D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R56_LabelCoreRepairTraining\tests -q`
-- `C:\Users\Rio\anaconda3\python.exe D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R56_LabelCoreRepairTraining\scripts\launch_r56.py --candidate r56_label_core_repair_r53_scratch --data-root D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r56_label_core_repair\r53_realistic_dataset_calibration --num-epoch 50 --dry-run`
-- `C:\Users\Rio\anaconda3\python.exe -u D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R56_LabelCoreRepairTraining\scripts\run_r56_checkboard_reconstruction.py`
-- `C:\Users\Rio\anaconda3\python.exe -u D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R56_LabelCoreRepairTraining\scripts\validate_r56_checkboard_corner_geometry.py`
+- `C:\Users\Rio\anaconda3\python.exe -m pytest Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/tests -q`
+- `C:\Users\Rio\anaconda3\python.exe Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/scripts/launch_r56.py --candidate r56_label_core_repair_r53_scratch --data-root Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r56_label_core_repair/r53_realistic_dataset_calibration --num-epoch 50 --dry-run`
+- `C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/scripts/run_r56_checkboard_reconstruction.py`
+- `C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/scripts/validate_r56_checkboard_corner_geometry.py`
 
 
 ## 2026-09-26 歷史封存狀態
@@ -69,4 +69,4 @@ D 槽保留內容 23 檔及 62 個原成果／程式／驗證檔再次核對通�
 恢復時由 H 的 payload 按 LabSystem 相對路徑複製回原位置，再按 source_manifest.csv 核對。
 要重做歷史訓練，需先恢復資料，或在啟動程式明確指定封存資料位置。
 完整副本：H:\GMM_2_Final_Archive\lab_system\R56_LabelCoreRepairTraining\20260926_full_history
-本次實際移除與核對：D:/GMM_2_Final/docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。
+本次實際移除與核對：docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。

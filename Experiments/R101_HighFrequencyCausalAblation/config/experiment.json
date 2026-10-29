@@ -4,7 +4,7 @@
   "purpose": "Short causal A/B/C falsification before any full R101 scratch training.",
   "training_authorized": true,
   "full_r101_training_authorized": false,
-  "reference_model_path": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/model/r100_model.py",
+  "reference_model_path": "Experiments/R100_CausalOperatorScratch/model/r100_model.py",
   "source_isolation": {
     "checkpoint_loading_allowed": false,
     "resume_allowed": false,
@@ -85,8 +85,8 @@
       "halo_fraction",
       "known_motion_step_mae_px"
     ],
-    "real_live_validation_dir": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/data/live_validation",
-    "real_motion_sequence_dir": "D:/GMM_2_Final/20260702_100MG_位移_50x/x_1um",
+    "real_live_validation_dir": "Experiments/R100_CausalOperatorScratch/data/live_validation",
+    "real_motion_sequence_dir": "20260702_100MG_位移_50x/x_1um",
     "tile_core_size": 128,
     "tile_halo": 192
   }

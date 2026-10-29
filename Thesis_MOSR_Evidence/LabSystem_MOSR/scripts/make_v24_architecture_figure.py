@@ -6,9 +6,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Circle, FancyArrowPatch, Rectangle
 from PIL import Image, ImageFilter
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 OUT_DIR = ROOT / "LabSystem_MOSR" / "Figures" / "network_architecture_20260707"
 RAW_EXAMPLE = (
     ROOT

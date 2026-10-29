@@ -1,15 +1,15 @@
 {
   "created_utc": "2026-09-12T08:20:04.101271+00:00",
   "original_plan": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\config\\plan.json",
-    "sha256": "e2eeaa64f3bf47785bed0bf110ba655932860469c61f228a33309d5fa87f09c2"
+    "path": "Experiments/R129_OpticalPriorHybrid/config/plan.json",
+    "sha256": "e3b213882b878932df9c4e9ce774a49a0a8d36c1dbeffb76c9fd961e1d59955a"
   },
   "original_forward": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\hybrid.py",
+    "path": "Experiments/R129_OpticalPriorHybrid/model/hybrid.py",
     "sha256": "30fea0cd27049fa71da88a30157132b8b4a78ecd42d0b2b8d2d1d327d0a7020e"
   },
   "active_implementation": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\hybrid_v2.py",
+    "path": "Experiments/R129_OpticalPriorHybrid/model/hybrid_v2.py",
     "sha256": "063f35c62d9e4c867b85491b7294af70b5b931636bbca849dd5c5eb118329cbe"
   },
   "reason": "Original reflection/bilinear CUDA backward rejected deterministic execution. New explicit adjoints and concatenation preserve forward, no criterion relaxation.",
@@ -17,7 +17,7 @@
   "CPU_full_forward_exact": true,
   "finite_difference_gradcheck_passed": true,
   "tests": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\integration_tests_v2.json",
+    "path": "Experiments/R129_OpticalPriorHybrid/results/integration_tests_v2.json",
     "sha256": "5000555e8f1b44a9ea2d3cb28304ee80aad00ffe1af2cd767034bc3167c29b60"
   }
 }

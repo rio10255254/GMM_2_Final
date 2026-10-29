@@ -1125,5 +1125,5 @@ Whole-FOV PSF 使用了 100 個空間位置的不同 PSF 核，理論上應該�
 ---
 
 *本報告基於 Codex 修正後的 `run_single_image_analysis.py`（2026-03-29）自動生成，並由 Claude Code 撰寫詳細解讀。*
-*分析腳本位於 `D:\GMM_2_Final\_analysis_single_image_test\run_single_image_analysis.py`*
-*輸出文件位於 `D:\GMM_2_Final\_analysis_single_image_test\analysis_results\`*
+*分析腳本位於 `_analysis_single_image_test/run_single_image_analysis.py`*
+*輸出文件位於 `_analysis_single_image_test/analysis_results`*

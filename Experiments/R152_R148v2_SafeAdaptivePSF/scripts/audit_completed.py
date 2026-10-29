@@ -8,9 +8,10 @@ from dataset import Bank
 from losses import objective
 from model import Model
 from utils import load,model_config,now,save,setup,sha,train_config
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
- setup(1522801);done=load(ROOT/'runs/formal_8192/training_complete.json');rec=done['deployed_checkpoint'];assert sha(rec['path'])==rec['sha256'];mc=model_config();cfg=train_config();model=Model(mc,ROOT).cuda().eval();cp=torch.load(rec['path'],map_location='cpu',weights_only=False);model.load_state_dict(cp['model'],strict=True);bank=Bank(cfg)
+ setup(1522801);done=load(ROOT/'runs/formal_8192/training_complete.json');rec=done['deployed_checkpoint'];assert sha(str(PROJECT_ROOT / rec['path']))==rec['sha256'];mc=model_config();cfg=train_config();model=Model(mc,ROOT).cuda().eval();cp=torch.load(str(PROJECT_ROOT / rec['path']),map_location='cpu',weights_only=False);model.load_state_dict(cp['model'],strict=True);bank=Bank(cfg)
  scores={}
  for scale in (0.0,1.0):
   model.set_deployment_scale(scale);rows=[]
@@ -19,9 +20,9 @@ def main():
     batch=bank.batch('test',index,'cuda');output,parts=model(batch['source'],batch['operator_psf_indices'],True);loss,terms=objective(output,parts,batch,model,cfg);task=sum(cfg['loss'][k]*terms[k] for k in ('image','gradient','pair_output','boundary'))+cfg['loss']['observation']*terms['observation'];rows.append(dict(task=float(task),image=float(terms['image']),gradient=float(terms['gradient']),pair_output=float(terms['pair_output']),boundary=float(terms['boundary']),observation=float(terms['observation'])))
   scores[str(scale)]={k:float(np.mean([r[k] for r in rows])) for k in rows[0]}
  frames=[
-  Path(r'C:\Users\Rio\Downloads\20260902_100MF_uncertainty\20260902_100MF_uncertainty\20260903\001804_XY_0\1.bmp'),
-  Path(r'C:\Users\Rio\Downloads\20260902_100MF_uncertainty\20260902_100MF_uncertainty\20260903\004246_XY_0\1.bmp'),
-  Path(r'C:\Users\Rio\Downloads\20260902_100MF_uncertainty\20260902_100MF_uncertainty\20260903\005143_XY_0\31.bmp'),
+  Path(str(PROJECT_ROOT / 'Shared_Sources/PI_Repeatability_20260903/raw/001804_XY_0/1.bmp')),
+  Path(str(PROJECT_ROOT / 'Shared_Sources/PI_Repeatability_20260903/raw/004246_XY_0/1.bmp')),
+  Path(str(PROJECT_ROOT / 'Shared_Sources/PI_Repeatability_20260903/raw/005143_XY_0/31.bmp')),
  ]
  real=[]
  for path in frames:

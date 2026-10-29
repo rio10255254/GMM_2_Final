@@ -10,6 +10,7 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,7 +48,7 @@ def _resolve(path_text: str) -> Path:
 
 
 def _load_template(setup: dict) -> np.ndarray:
-    path = _resolve(setup["template"]["source_gt_path"])
+    path = _resolve(str(PROJECT_ROOT / setup["template"]["source_gt_path"]))
     img = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)
     if img is None:
         raise FileNotFoundError(f"Unable to read source GT template: {path}")

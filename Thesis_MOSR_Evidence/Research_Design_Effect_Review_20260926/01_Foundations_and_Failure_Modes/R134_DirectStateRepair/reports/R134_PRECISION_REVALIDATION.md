@@ -16,7 +16,7 @@ SEM驗證：通過。
 
 位移驗證：通過。
 
-獨立訓練包：`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages\R134_DirectState_Precision_Standalone_20260915`。
+獨立訓練包：`Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915`。
 
 最終完整201張已完成；沿用原條件的結果：全部符合。這是開發結果，未自動採用。
 

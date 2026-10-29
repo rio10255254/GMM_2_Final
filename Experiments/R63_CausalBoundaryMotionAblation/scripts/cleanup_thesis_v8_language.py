@@ -5,11 +5,11 @@ from pathlib import Path
 
 from docx import Document
 from docx.oxml.ns import qn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 SOURCE = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results"
-    r"\thesis_v8_language_cleanup\thesis_v8_language_working.docx"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v8_language_cleanup/thesis_v8_language_working.docx')
 )
 DESTINATION = SOURCE
 

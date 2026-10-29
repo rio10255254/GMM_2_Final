@@ -15,6 +15,7 @@ from scipy.io import loadmat
 from scipy.ndimage import center_of_mass
 from scipy.stats import wilcoxon
 from skimage.measure import find_contours
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,10 +26,10 @@ TABLES = RESULTS / "tables"
 E100_TABLES = RESULTS / "epoch100_audit" / "results" / "tables"
 FIGURES = RESULTS / "figures"
 REPORTS = ROOT / "reports"
-RAW_DIR = Path(EVIDENCE["raw_input_dir"])
-R69 = Path(EVIDENCE["r69_root"])
-R70 = Path(EVIDENCE["r70_root"])
-R76 = Path(EVIDENCE["r76_root"])
+RAW_DIR = Path(PROJECT_ROOT / EVIDENCE["raw_input_dir"])
+R69 = Path(PROJECT_ROOT / EVIDENCE["r69_root"])
+R70 = Path(PROJECT_ROOT / EVIDENCE["r70_root"])
+R76 = Path(PROJECT_ROOT / EVIDENCE["r76_root"])
 BEST_LABEL = CONFIG["contour"]["best_method_label"]
 E100_LABEL = CONFIG["contour"]["epoch100_method_label"]
 METHODS = ["Raw", "R61v16", "V42E120", "R75Old", BEST_LABEL, E100_LABEL]
@@ -359,8 +360,8 @@ def make_figures(per_pillar: pd.DataFrame, exposure: pd.DataFrame) -> None:
     fig.savefig(FIGURES / "03_checkpoint_comparison.png", dpi=190, facecolor="white")
     plt.close(fig)
 
-    best_dir = Path(CONFIG["inference"]["best_reconstruction_dir"])
-    final_dir = Path(CONFIG["inference"]["epoch100_reconstruction_dir"])
+    best_dir = Path(PROJECT_ROOT / CONFIG["inference"]["best_reconstruction_dir"])
+    final_dir = Path(PROJECT_ROOT / CONFIG["inference"]["epoch100_reconstruction_dir"])
     fig, axes = plt.subplots(3, 3, figsize=(13, 13), constrained_layout=True)
     for row, exposure_id in enumerate([18, 21, 24]):
         for col, (title, directory) in enumerate([("Raw", RAW_DIR), ("R75-v2 E84", best_dir), ("R75-v2 E100", final_dir)]):

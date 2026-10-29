@@ -9,11 +9,12 @@ from model.network import Model
 from training.engine import setup
 from train import verify_binding
 from evaluation.real import read_image,predict
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 def main():
     out=ROOT/'results/lsc_comparison';plan=load(out/'plan.json');verify_binding(load(ROOT/'config/frozen_training.json'))
-    cp=plan['checkpoint_R128'];assert sha(cp['path'])==cp['sha256'];setup(1285002)
-    payload=torch.load(cp['path'],map_location='cpu');assert payload['step']==8192 and payload['seed']==1285002 and payload['arm']=='P'
+    cp=plan['checkpoint_R128'];assert sha(str(PROJECT_ROOT / cp['path']))==cp['sha256'];setup(1285002)
+    payload=torch.load(str(PROJECT_ROOT / cp['path']),map_location='cpu');assert payload['step']==8192 and payload['seed']==1285002 and payload['arm']=='P'
     model=Model(payload['model_config']).to('cuda');model.load_state_dict(payload['model']);model.eval()
     save(out/'inference_started.json',dict(started_utc=now(),plan=record(out/'plan.json'),source=record(__file__),checkpoint=cp,pid=os.getpid()))
     start=time.perf_counter();records=[]
@@ -21,8 +22,8 @@ def main():
         folder=out/'R128_images'/frame['sequence']/f"frame_{frame['frame_index']:04d}";folder.mkdir(parents=True,exist_ok=False)
         raw=read_image(frame['source']);reused=frame['R128_reuse']
         if reused:
-            assert sha(reused['path'])==reused['sha256']
-            with np.load(reused['path']) as f:applied=f['output'];neural=f['neural_output']
+            assert sha(str(PROJECT_ROOT / reused['path']))==reused['sha256']
+            with np.load(str(PROJECT_ROOT / reused['path'])) as f:applied=f['output'];neural=f['neural_output']
             npz=reused
         else:
             applied,neural,w=predict(model,raw)

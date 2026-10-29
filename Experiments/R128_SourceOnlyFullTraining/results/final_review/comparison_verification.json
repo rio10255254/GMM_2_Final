@@ -11,7 +11,7 @@
     "worst_motion_pair_recomputed": "50x_0p5um",
     "recomputed_worst_motion_change_px": 0.005860166654473166,
     "checkpoint": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\checkpoints\\step8192.pth",
+      "path": "Experiments/R128_SourceOnlyFullTraining/runs/P_s1285002/checkpoints/step8192.pth",
       "sha256": "9fbdffa3bebe0a37e3f7c2b09239e2e00de6b0522feb101571fcfb7a42699abf"
     }
   },
@@ -228,84 +228,84 @@
   ],
   "sources": [
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285001\\evaluations\\real_step8192\\full_images\\sem_optical_exposure13\\output_float.npz",
+      "path": "Experiments/R128_SourceOnlyFullTraining/runs/I_s1285001/evaluations/real_step8192/full_images/sem_optical_exposure13/output_float.npz",
       "sha256": "5b1f634142b518eaff2a01b0d23957f2bc66d1d1b6db2a2c1bee96658d5e14fc"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+      "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/13.bmp",
       "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88",
       "bytes": 677582
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285001\\evaluations\\real_step8192\\full_images\\sem_optical_exposure24\\output_float.npz",
+      "path": "Experiments/R128_SourceOnlyFullTraining/runs/I_s1285001/evaluations/real_step8192/full_images/sem_optical_exposure24/output_float.npz",
       "sha256": "88fd61d3e5a1d45bca40551ecaf226a8b9185ad00afba6987b005bddf0e42e70"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\24.bmp",
+      "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/24.bmp",
       "sha256": "f511c567e57a519877b13d64f4ea22b4c0c55b0fd9554ca75389ccd14cfae6a6",
       "bytes": 677582
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285001\\evaluations\\real_step8192\\full_images\\sem_optical_exposure13\\output_float.npz",
+      "path": "Experiments/R128_SourceOnlyFullTraining/runs/P_s1285001/evaluations/real_step8192/full_images/sem_optical_exposure13/output_float.npz",
       "sha256": "de66ae68d27094a6b282deaa4d7faba583d25d9bd4a236b3468c6bbe118d3eb0"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+      "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/13.bmp",
       "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88",
       "bytes": 677582
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285001\\evaluations\\real_step8192\\full_images\\sem_optical_exposure24\\output_float.npz",
+      "path": "Experiments/R128_SourceOnlyFullTraining/runs/P_s1285001/evaluations/real_step8192/full_images/sem_optical_exposure24/output_float.npz",
       "sha256": "15f84cd7e2112ed04fa37f3bade70022d332c84d883295af15df69bfd0cae48c"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\24.bmp",
+      "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/24.bmp",
       "sha256": "f511c567e57a519877b13d64f4ea22b4c0c55b0fd9554ca75389ccd14cfae6a6",
       "bytes": 677582
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285002\\evaluations\\real_step8192\\full_images\\sem_optical_exposure13\\output_float.npz",
+      "path": "Experiments/R128_SourceOnlyFullTraining/runs/I_s1285002/evaluations/real_step8192/full_images/sem_optical_exposure13/output_float.npz",
       "sha256": "c1e4a071ebd66f17f2bbdc6a4a02c815b7d9bd1ef19dd841bee98ef4a80753e0"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+      "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/13.bmp",
       "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88",
       "bytes": 677582
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\I_s1285002\\evaluations\\real_step8192\\full_images\\sem_optical_exposure24\\output_float.npz",
+      "path": "Experiments/R128_SourceOnlyFullTraining/runs/I_s1285002/evaluations/real_step8192/full_images/sem_optical_exposure24/output_float.npz",
       "sha256": "01813262dfb60be88af30b21d70efe85b6312aa56f545aa1b527f846027bb715"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\24.bmp",
+      "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/24.bmp",
       "sha256": "f511c567e57a519877b13d64f4ea22b4c0c55b0fd9554ca75389ccd14cfae6a6",
       "bytes": 677582
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\evaluations\\real_step8192\\full_images\\sem_optical_exposure13\\output_float.npz",
+      "path": "Experiments/R128_SourceOnlyFullTraining/runs/P_s1285002/evaluations/real_step8192/full_images/sem_optical_exposure13/output_float.npz",
       "sha256": "96c9f044526a2fe5857f2aa671a281931c473f74a01fa06e97597c7ecde0529c"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+      "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/13.bmp",
       "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88",
       "bytes": 677582
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\evaluations\\real_step8192\\full_images\\sem_optical_exposure24\\output_float.npz",
+      "path": "Experiments/R128_SourceOnlyFullTraining/runs/P_s1285002/evaluations/real_step8192/full_images/sem_optical_exposure24/output_float.npz",
       "sha256": "6a63b2c19cd9806a3aee3209af072c4cafb099100606366b4308025c38811e31"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\24.bmp",
+      "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/24.bmp",
       "sha256": "f511c567e57a519877b13d64f4ea22b4c0c55b0fd9554ca75389ccd14cfae6a6",
       "bytes": 677582
     }
   ],
   "source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\final_review\\compare_results.py",
+    "path": "Experiments/R128_SourceOnlyFullTraining/analysis/final_review/compare_results.py",
     "sha256": "7098d0ef49ff5d0300b3f2df20fcb802673b50300c568c21ea5743187fcee969"
   },
   "selection": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\final_review\\selection.json",
+    "path": "Experiments/R128_SourceOnlyFullTraining/results/final_review/selection.json",
     "sha256": "9dde6b2c1b4ccce83a9a65f415b9465be3a40fddc1fbbf4dcf409d1849e3b067"
   }
 }

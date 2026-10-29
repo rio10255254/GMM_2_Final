@@ -16,6 +16,7 @@ import torch
 import torch.nn.functional as F
 from scipy.ndimage import label as component_label
 from torch import nn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,10 +32,10 @@ ROLES = ["edge", "texture", "denoise", "illumination", "identity", "mixed"]
 TRAIN_FAMILIES = ["circle", "ellipse", "rectangle", "polygon", "lobed", "ring"]
 HOLDOUT_FAMILIES = ["crescent", "thin_neck", "rough", "mixed_array"]
 REAL_IMAGES = [
-    Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\5x_dense_raw.bmp"),
-    Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\20x_mixed_raw.bmp"),
-    Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\50x_array_raw.bmp"),
-    Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch\data\live_validation\pillar_center9_50x_raw.bmp"),
+    Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/5x_dense_raw.bmp')),
+    Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/20x_mixed_raw.bmp')),
+    Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/50x_array_raw.bmp')),
+    Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation/pillar_center9_50x_raw.bmp')),
 ]
 
 

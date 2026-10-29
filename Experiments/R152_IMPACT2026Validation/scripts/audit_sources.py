@@ -5,10 +5,11 @@ import numpy as np
 import pandas as pd
 from scipy.io import loadmat
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path('D:/GMM_2_Final')
+SOURCE = Path(str(PROJECT_ROOT))
 R152 = SOURCE / 'Experiments/R152_R148v2_SafeAdaptivePSF'
 R80 = SOURCE / 'Experiments/R80_InflectionReferenceCircleSEMValidation'
 CENTER = SOURCE / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9'
@@ -76,13 +77,13 @@ def main():
         assert np.array_equal(locked[['start_frame_index','end_frame_index']].to_numpy(),reproduced[['start_frame_index','end_frame_index']].to_numpy())
         frame_ids=sorted(set(locked.start_frame_index)|set(locked.end_frame_index))
         for i in frame_ids:
-            p=Path(spec['raw_dir'])/f'frame_{i:04d}.bmp'
+            p=Path(SOURCE / spec['raw_dir'])/f'frame_{i:04d}.bmp'
             rec=register(p, f'locked raw {seq} frame {i}')
             if rec['exists']:
                 with Image.open(p) as im: rec.update(width=im.width,height=im.height,mode=im.mode)
             manifests.append(dict(sequence=seq,frame_index=int(i),**rec))
-            register(Path(spec['v42_dir'])/f'frame_{i:04d}.bmp',f'historical submitted MOSR image {seq} frame {i}; not R152')
-        counts.append(dict(sequence=seq,pairs=30,unique_frames=len(frame_ids),scale_um_per_px=spec['object_um_per_px'],raw_dir=spec['raw_dir']))
+            register(Path(SOURCE / spec['v42_dir'])/f'frame_{i:04d}.bmp',f'historical submitted MOSR image {seq} frame {i}; not R152')
+        counts.append(dict(sequence=seq,pairs=30,unique_frames=len(frame_ids),scale_um_per_px=spec['object_um_per_px'],raw_dir=str(SOURCE / spec['raw_dir'])))
         for method in ['Raw','Wiener','MOSR']:
             sub=pairs[(pairs.sequence==seq)&(pairs.method==method)].sort_values('pair_rank_raw_locked')
             assert np.array_equal(sub[['start_frame_index','end_frame_index']].to_numpy(),locked[['start_frame_index','end_frame_index']].to_numpy())
@@ -124,7 +125,7 @@ def main():
     mc=load(R152/'config/model.json'); receipt=load(R152/'runs/formal_8192/training_complete.json'); banklock=load(R152/'calibration/BANK_LOCK.json')
     for name in ['model.py','base_model.py','optical/adaptive_fourier_psf.py','optical/fullres_psf.py','config/model.json','config/SOURCE_LOCK.json','calibration/BANK_LOCK.json','runs/formal_8192/training_complete.json']:
         register(R152/name,'R152 delivered implementation and identity', 'r152_'+name.replace('/','_'))
-    for p,expected_hash in [(Path(mc['base_checkpoint']),mc['base_checkpoint_sha256']),(Path(receipt['deployed_checkpoint']['path']),receipt['deployed_checkpoint']['sha256']),(R152/mc['psf_bank'],banklock['bank_sha256'])]:
+    for p,expected_hash in [(Path(SOURCE / mc['base_checkpoint']),mc['base_checkpoint_sha256']),(Path(SOURCE / receipt['deployed_checkpoint']['path']),receipt['deployed_checkpoint']['sha256']),(R152/mc['psf_bank'],banklock['bank_sha256'])]:
         rec=register(p,'R152 immutable inference dependency'); assert rec.get('sha256')==expected_hash
     verified=[]
     for s in ['verify_package.py','verify_complete_record.py']:
@@ -133,8 +134,8 @@ def main():
         verified.append(dict(script=s,result=json.loads(run.stdout)))
     save(OUT/'r152_package_verification.json',verified)
     import torch
-    cp=torch.load(receipt['deployed_checkpoint']['path'],map_location='cpu',weights_only=False)
-    basecp=torch.load(mc['base_checkpoint'],map_location='cpu',weights_only=False)
+    cp=torch.load(str(SOURCE / receipt['deployed_checkpoint']['path']),map_location='cpu',weights_only=False)
+    basecp=torch.load(str(SOURCE / mc['base_checkpoint']),map_location='cpu',weights_only=False)
     frozen_equal=all(torch.equal(cp['model']['base.'+k],v) for k,v in basecp['model'].items())
     assert frozen_equal and float(cp['model']['deployment_scale'])==1
     save(OUT/'r152_model_identity.json',dict(checkpoint=receipt['deployed_checkpoint'],base_checkpoint_sha256=mc['base_checkpoint_sha256'],deployment_scale=1,base_state_items=len(basecp['model']),frozen_base_identical=frozen_equal,optical_state={k:list(v.shape) for k,v in cp['model'].items() if 'bank' in k or 'mean_kernel' in k or 'psf_descriptors' in k},delivered_optical_scale_um_per_px=banklock['object_um_per_px'],compatible_50x_bank_found=False))

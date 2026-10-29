@@ -6,10 +6,11 @@ import torch
 from scipy.io import loadmat
 from optical.fullres_psf import FullResPSF
 from optical.adaptive_fourier_psf import AdaptiveFourierPSFFusion
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT=Path(__file__).resolve().parents[1]
-SWEEP=Path('D:/GMM_2_Final/PSF_Fitting/tests/artifacts/cd_verification_20260714/50x_deconvolution_sweep.mat')
-FIT=Path('D:/GMM_2_Final/PSF_Fitting/output/pillar_via_junction_psf_20260713/50x/fit_result/PSF_fitted_2D_FOVstack.mat')
+SWEEP=Path(str(PROJECT_ROOT / 'PSF_Fitting/tests/artifacts/cd_verification_20260714/50x_deconvolution_sweep.mat'))
+FIT=Path(str(PROJECT_ROOT / 'PSF_Fitting/output/pillar_via_junction_psf_20260713/50x/fit_result/PSF_fitted_2D_FOVstack.mat'))
 def sha(path):
     h=hashlib.sha256()
     with Path(path).open('rb') as f:
@@ -18,7 +19,7 @@ def sha(path):
 def load_original_kernel():
     manifest=json.loads((ROOT/'results/source_manifest.json').read_text(encoding='utf-8'))
     for p in [SWEEP,FIT]:
-        rec=next(r for r in manifest if Path(r['path'])==p);assert sha(p)==rec['sha256']
+        rec=next(r for r in manifest if Path(PROJECT_ROOT / r['path'])==p);assert sha(p)==rec['sha256']
     kernel=np.asarray(loadmat(SWEEP,variable_names=['psf'])['psf'],dtype=np.float64)
     fit=np.squeeze(loadmat(FIT,variable_names=['psf_grid'])['psf_grid']).astype(np.float64);fit/=fit.sum()
     if kernel.shape!=(101,101) or not np.isfinite(kernel).all() or (kernel<0).any() or kernel.sum()<=0:raise ValueError('Invalid objective calibration')

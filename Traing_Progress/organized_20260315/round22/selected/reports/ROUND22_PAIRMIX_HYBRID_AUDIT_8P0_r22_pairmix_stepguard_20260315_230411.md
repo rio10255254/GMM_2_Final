@@ -1,7 +1,7 @@
 # Process Probe Audit
 
 - candidate: r22_pairmix_stepguard
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/weights/best_tradeoff.pth.tar
 - geom_method: edge_band_refine
 - expect_dy: 8.00
 - process_score: -72.323441

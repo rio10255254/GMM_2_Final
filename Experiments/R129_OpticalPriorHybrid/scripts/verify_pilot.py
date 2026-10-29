@@ -13,6 +13,7 @@ from scipy.optimize import least_squares
 from run_pilot import setup
 from model.hybrid_v2 import Hybrid
 from evaluate_real import guard
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     plan = load(ROOT/'config/plan.json')
@@ -82,7 +83,7 @@ def main():
 
     centers=pd.read_csv(ROOT/'results/motion_centers_with_raw.csv')
     expected=pd.read_csv(ROOT/'results/motion_pairs.csv')
-    panel=load(ROOT/'config/real_panel.json');cfg=load(panel['sequence_config']['path'])
+    panel=load(ROOT/'config/real_panel.json');cfg=load(str(PROJECT_ROOT / panel['sequence_config']['path']))
     max_motion=0.
     for r in expected.itertuples():
         g=centers[(centers.tag==r.tag)&(centers.sequence==r.sequence)]
@@ -96,7 +97,7 @@ def main():
     kernels=np.load(ROOT/'data/measured_psf_bank.npz')
     m=Hybrid(torch.from_numpy(kernels['mean']),torch.from_numpy(kernels['candidates'])).cuda()
     m.load_state_dict(torch.load(ROOT/'runs/D/step24.pth',map_location='cuda')['model']);m.eval()
-    raw=cv2.imread(panel['sem'][1]['source']['path'],0)
+    raw=cv2.imread(str(PROJECT_ROOT / panel['sem'][1]['source']['path']),0)
     x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda()
     with torch.no_grad():
         details=m.forward_details(x,trace=True);out=guard(x,details.output)[0,0].cpu().numpy()

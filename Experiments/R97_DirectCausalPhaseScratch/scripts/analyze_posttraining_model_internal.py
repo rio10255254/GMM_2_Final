@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import linear_sum_assignment
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -339,7 +340,7 @@ def main() -> None:
     ]
     write_json(OUTPUT / "component_geometry.json", geometry)
 
-    large_path = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\5x_0p5um\bmp\frame_0000.bmp")
+    large_path = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0000.bmp'))
     large = read_gray(large_path)
     crop = large[256:1280, 512:1536]
     tensor = torch.from_numpy(crop.astype(np.float32) / 255.0)[None, None].to(device)

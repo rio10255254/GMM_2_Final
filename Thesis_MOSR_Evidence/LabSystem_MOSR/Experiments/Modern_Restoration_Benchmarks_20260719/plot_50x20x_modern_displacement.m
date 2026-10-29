@@ -1,9 +1,10 @@
+PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
 % Clean MATLAB figures for the refreshed 50x/20x modern-model displacement comparison.
 % Figure bodies intentionally contain only legend, axes, tick labels, and CI marks.
 
 clear; clc; close all;
 
-rootDir = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\evaluation\displacement_50x20x_edrs_nafnet_refresh_20260724\modern_50x20x_report';
+rootDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report');
 summaryPath = fullfile(rootDir, 'modern_displacement_by_magnification.csv');
 outDir = fullfile(rootDir, 'figures_matlab');
 if ~isfolder(outDir); mkdir(outDir); end
@@ -23,6 +24,7 @@ plotMetric(T, "via", "mae_nm", "mae_ci95_low_nm", "mae_ci95_high_nm", ...
     '相對 PI 回授位置的平均絕對誤差 (nm)', '04_via_displacement_mae_50x20x');
 
 function plotMetric(T, morphology, metricName, lowName, highName, yLabelText, fileStem)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
     methods = ["Raw", "EDSR-x1", "NAFNet", "MOSR"];
     magnifications = ["50x", "20x"];
     colors = [0.35 0.35 0.35; 0.46 0.36 0.65; 0.80 0.47 0.10; 0.00 0.45 0.74];
@@ -75,7 +77,7 @@ function plotMetric(T, morphology, metricName, lowName, highName, yLabelText, fi
     yMax = max(upperValues(:));
     ylim(ax, [yMin, yMax * 1.15]);
     drawnow;
-    rootDir = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\evaluation\displacement_50x20x_edrs_nafnet_refresh_20260724\modern_50x20x_report';
+    rootDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report');
     outDir = fullfile(rootDir, 'figures_matlab');
     exportgraphics(f, fullfile(outDir, fileStem + ".png"), 'Resolution', 300);
     exportgraphics(f, fullfile(outDir, fileStem + ".pdf"), 'ContentType', 'vector');

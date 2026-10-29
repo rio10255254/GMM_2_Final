@@ -143,7 +143,7 @@ Phase2 也同樣證明：
 
 正式 machine-readable truth：
 
-- `D:\GMM_2_Final\ESTIMATOR_POLICY.json`
+- `ESTIMATOR_POLICY.json`
 
 ## 9. Final Decision
 

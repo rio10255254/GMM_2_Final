@@ -8,12 +8,13 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "results" / "physical_validation" / "line_interventions"
-SOURCE_SCRIPT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS\source_validation\100mg_linewidth_generalization_20260719\scripts\analyze_100mg_linewidth_generalization.py")
-FULL = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch\results\posttraining_motion\E048\reconstructions")
+SOURCE_SCRIPT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/source_validation/100mg_linewidth_generalization_20260719/scripts/analyze_100mg_linewidth_generalization.py'))
+FULL = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions'))
 SMOOTH = ROOT / "results" / "physical_validation" / "lsc_interventions" / "reconstructions" / "smoothed_controls"
 
 
@@ -36,13 +37,13 @@ def main() -> int:
     module.SEQUENCES = {
         "50x_x_0p5um": {
             "nominal_step_um": 0.5,
-            "raw": Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp"),
+            "raw": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp')),
             "base": FULL / "50x_0p5um",
             "mosr": SMOOTH / "50x_x_0p5um",
         },
         "50x_x_1um": {
             "nominal_step_um": 1.0,
-            "raw": Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_1um\bmp"),
+            "raw": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')),
             "base": FULL / "50x_1um",
             "mosr": SMOOTH / "50x_x_1um",
         },

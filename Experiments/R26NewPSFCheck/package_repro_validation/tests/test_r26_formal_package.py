@@ -5,10 +5,11 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 PACKAGE_ROOT = Path(
-    r"D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包"
+    str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包')
 )
 INTERNAL_ROOT = PACKAGE_ROOT / "內部檔案"
 NEW_STANDARD_PSF_HASH = "BAFF1039744ED17CFFBA3D9F36A2535A7171BAC74E4B67669EDE412FB4B44F08"

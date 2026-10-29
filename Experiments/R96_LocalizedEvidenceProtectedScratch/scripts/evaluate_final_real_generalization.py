@@ -13,6 +13,7 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -153,9 +154,9 @@ def main() -> None:
     if not protocol.get("locked_before_epoch44_outputs"):
         raise RuntimeError("Final protocol was not locked")
     arm = protocol["real_microscope_arm"]
-    sequence_config_path = Path(arm["source_sequence_config"])
-    locked_path = Path(arm["locked_raw_measurements"])
-    checkpoint_path = Path(protocol["checkpoint"])
+    sequence_config_path = Path(PROJECT_ROOT / arm["source_sequence_config"])
+    locked_path = Path(PROJECT_ROOT / arm["locked_raw_measurements"])
+    checkpoint_path = Path(PROJECT_ROOT / protocol["checkpoint"])
     config = read_json(sequence_config_path)
     locked = pd.read_csv(locked_path)
     if not checkpoint_path.is_file():

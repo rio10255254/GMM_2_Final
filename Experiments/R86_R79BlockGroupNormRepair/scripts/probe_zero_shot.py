@@ -9,11 +9,12 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark")
-R84 = Path(r"D:\GMM_2_Final\Experiments\R84_R79TileStableRootRepair")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark'))
+R84 = Path(str(PROJECT_ROOT / 'Experiments/R84_R79TileStableRootRepair'))
 HOLDOUT = R84 / "data" / "r84_locked_holdout_tile_stable_confirmation"
 OUTPUT = ROOT / "results" / "zero_shot_probe"
 DEVICE = "cuda:0"
@@ -66,8 +67,8 @@ def main() -> int:
     summary = table.groupby("method", as_index=False).agg(median_mae=("mae", "median"), median_edge_mae=("edge_mae", "median"))
 
     config = json.loads((R82 / "config" / "experiment.json").read_text(encoding="utf-8"))
-    raw_root = Path(config["real_fov"]["locked_raw_root"])
-    sem_root = Path(config["sem_acm"]["raw_input_dir"])
+    raw_root = Path(PROJECT_ROOT / config["real_fov"]["locked_raw_root"])
+    sem_root = Path(PROJECT_ROOT / config["sem_acm"]["raw_input_dir"])
     fixtures = [raw_root / "5x_0p5um" / "frame_0000.bmp", raw_root / "50x_0p5um" / "frame_0050.bmp", sem_root / "18.bmp"]
     tile_rows = []
     for source in fixtures:

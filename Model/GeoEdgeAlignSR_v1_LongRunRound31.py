@@ -38,7 +38,7 @@ PROFILE_NAME = "round31_b1_hyperparam"
 SUMMARY_PREFIX = "ROUND31_B1_HYPERPARAM"
 RUN_SEED = 1261830
 CONTROL_CANDIDATE = "r30_b1_dironly"
-CONTROL_CHECKPOINT = Path(r"D:\GMM_2_Final\Traing_Progress\organized_20260316\round30\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913\weights\best_tradeoff.pth.tar")
+CONTROL_CHECKPOINT = Path(str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round30/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913/weights/best_tradeoff.pth.tar'))
 POLICY_PATH = PROJECT_ROOT / "ESTIMATOR_POLICY.json"
 
 PLAN = [

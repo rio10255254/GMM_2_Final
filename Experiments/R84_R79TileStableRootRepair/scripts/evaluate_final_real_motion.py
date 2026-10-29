@@ -7,10 +7,11 @@ import json
 from pathlib import Path
 
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark'))
 OUTPUT = ROOT / "results" / "final_confirmation"
 
 
@@ -33,7 +34,7 @@ def load_module(path: Path):
 
 def main() -> int:
     config = json.loads((R82 / "config" / "experiment.json").read_text(encoding="utf-8"))
-    locked = Path(config["real_fov"]["locked_measurements"])
+    locked = Path(PROJECT_ROOT / config["real_fov"]["locked_measurements"])
     if sha256(locked) != config["real_fov"]["locked_measurements_sha256"]:
         raise RuntimeError("Locked real-FOV measurements changed.")
     config["models"] = {"R84": {}}

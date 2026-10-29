@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $package = Split-Path -Parent $PSScriptRoot
-$python = 'C:\Users\Rio\anaconda3\python.exe'
+$python = python
 
 if (-not (Test-Path -LiteralPath $python)) {
     throw "Python runtime not found: $python"

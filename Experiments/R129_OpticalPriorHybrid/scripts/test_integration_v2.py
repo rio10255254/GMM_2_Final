@@ -7,10 +7,11 @@ import numpy as np,torch
 from torch import nn
 from torch.nn import functional as F
 from model.hybrid_v2 import Hybrid,MeasuredOptics
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
     p=load(ROOT/'config/plan.json');a=np.load(ROOT/'data/measured_psf_bank.npz');torch.manual_seed(p['common_seed']);torch.set_num_threads(4)
     torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False;torch.backends.cudnn.deterministic=True;torch.use_deterministic_algorithms(True)
-    mean=torch.from_numpy(a['mean']);bank=torch.from_numpy(a['candidates']);device='cuda';m=Hybrid(mean,bank).to(device);state=torch.load(p['source_checkpoint']['path'],map_location='cpu')['model'];m.initialize_from_r128(state);m.eval()
+    mean=torch.from_numpy(a['mean']);bank=torch.from_numpy(a['candidates']);device='cuda';m=Hybrid(mean,bank).to(device);state=torch.load(str(PROJECT_ROOT / p['source_checkpoint']['path']),map_location='cpu')['model'];m.initialize_from_r128(state);m.eval()
     results={};x=torch.rand(2,1,128,128,device=device)
     with torch.no_grad():
         opt,trace=m.optics(x,True,True);off,_=m.optics(x,False);assert torch.equal(off,x)

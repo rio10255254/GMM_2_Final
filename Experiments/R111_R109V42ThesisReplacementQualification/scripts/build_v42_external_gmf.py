@@ -16,21 +16,20 @@ import cv2
 import numpy as np
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "qualification.json").read_text(encoding="utf-8"))
 V42_PACKAGE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages"
-    r"\V42_SoftLabelSNR_FullStandalone_20260709"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709')
 )
 INFERENCE_SCRIPT = V42_PACKAGE / "infer_v42.py"
-CHECKPOINT = Path(CONFIG["models"]["v42_e120"]["checkpoint"])
+CHECKPOINT = Path(PROJECT_ROOT / CONFIG["models"]["v42_e120"]["checkpoint"])
 EXPECTED_CHECKPOINT_SHA256 = CONFIG["models"]["v42_e120"]["sha256"]
 
 REFERENCE_PACKAGE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages"
-    r"\Pitch1um_Y_100_Raw_Even_R109E48"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48')
 )
 RAW_DIR = REFERENCE_PACKAGE / "pitch1um_y100_raw" / "bmp"
 R109_DIR = REFERENCE_PACKAGE / "pitch1um_y100_r109_e48" / "bmp"

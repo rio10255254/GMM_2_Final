@@ -1,9 +1,10 @@
 from pathlib import Path
 
 from PIL import Image, ImageDraw
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-SEM_DIR = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\20260618_100MG\SEM_data")
+SEM_DIR = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/20260618_100MG/SEM_data'))
 OUT_DIR = Path(__file__).resolve().parent / "sem_previews"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

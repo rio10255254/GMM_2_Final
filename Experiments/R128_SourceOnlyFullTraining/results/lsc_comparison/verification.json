@@ -1,8 +1,8 @@
 {
   "verified_utc": "2026-09-10T10:01:40.844889+00:00",
   "source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\lsc_comparison\\analyze.py",
-    "sha256": "f4b1d149c9b251ac06f330f04e6cdb5f94381ca95d22b1c674f7ac0b08c43e66"
+    "path": "Experiments/R128_SourceOnlyFullTraining/analysis/lsc_comparison/analyze.py",
+    "sha256": "6630d06c3f2864742e8a4955585600a47349e8887218231f7baa57d969bac6e9"
   },
   "checks": [
     {
@@ -81,23 +81,23 @@
     "cross_axis_abs_nm": 7.105427357601002e-15
   },
   "R61_reproduction": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\R61_reproduction.json",
-    "sha256": "fa0c507e23af92cec5b74ae634b1641624eeec984a9944a922be79e9cc93bd51"
+    "path": "Experiments/R128_SourceOnlyFullTraining/results/lsc_comparison/R61_reproduction.json",
+    "sha256": "7d039651eafa830eac83cfa1ace09a163523b37fa3c87544c7885997c88d9ae3"
   },
   "original_source_records_unchanged": true,
   "frozen_checkpoints_unchanged": true,
   "no_training": true,
   "no_new_confirmation": true,
   "primary_summary": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\combined_summary.csv",
+    "path": "Experiments/R128_SourceOnlyFullTraining/results/lsc_comparison/combined_summary.csv",
     "sha256": "1c1e06254092404cba6c231d3fc316eb9788c812ab52e0a305094ea9bef2aad4"
   },
   "primary_pairs": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\combined_pairs.csv",
+    "path": "Experiments/R128_SourceOnlyFullTraining/results/lsc_comparison/combined_pairs.csv",
     "sha256": "918a7b6ad59bd6d88494c1e02f1557bddab9de5e42a248a1f6dd29d505c982b8"
   },
   "plan": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\lsc_comparison\\plan.json",
-    "sha256": "fdeb720f8d91cd2dcd06688200e4eb9f5286c0cefa97a1df4883030bb581ceba"
+    "path": "Experiments/R128_SourceOnlyFullTraining/results/lsc_comparison/plan.json",
+    "sha256": "61e8aa292fd737329f002a0290f5ff035e8ee7ceb64209225f3f52640406befb"
   }
 }

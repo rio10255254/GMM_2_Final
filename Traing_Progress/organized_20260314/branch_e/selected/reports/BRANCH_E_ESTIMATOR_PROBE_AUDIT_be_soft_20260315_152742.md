@@ -1,7 +1,7 @@
 ﻿# Process Probe Audit
 
 - candidate: be_soft
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\organized_20260314\branch_e\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_besc_20260315_151939\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/organized_20260314/branch_e/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besc_20260315_151939/weights/best_tradeoff.pth.tar
 - geom_method: soft_centroid
 - expect_dy: 0.80
 - process_score: nan

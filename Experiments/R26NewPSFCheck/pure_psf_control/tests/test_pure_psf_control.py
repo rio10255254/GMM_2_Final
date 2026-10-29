@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import importlib.util
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 LIB_PATH = Path(
-    r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\pure_psf_control\scripts\pure_psf_control_lib.py"
+    str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/pure_psf_control/scripts/pure_psf_control_lib.py')
 )
 REPORT_PATH = Path(
-    r"D:\GMM_2_Final\Traing_Progress\auto_tune_reports\auto_tune_report_20260316_185417.json"
+    str(PROJECT_ROOT / 'Traing_Progress/auto_tune_reports/auto_tune_report_20260316_185417.json')
 )
 
 

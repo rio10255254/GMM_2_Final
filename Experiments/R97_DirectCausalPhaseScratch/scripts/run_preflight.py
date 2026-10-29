@@ -14,7 +14,7 @@ import torch
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PYTHON = Path(r"C:\Users\Rio\anaconda3\python.exe")
+PYTHON = Path("python")
 MEASURED_SOURCE_FILES = (
     Path("model/r97_model.py"),
     Path("training/r97_dataset.py"),

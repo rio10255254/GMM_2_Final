@@ -7,16 +7,14 @@ from statistics import NormalDist
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
 
 SOURCE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments"
-    r"\Modern_Restoration_Benchmarks_20260719\evaluation\selection_sensitivity"
-    r"\all_pair_measurements.csv"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/selection_sensitivity/all_pair_measurements.csv')
 )
 OUTPUT = Path(
-    r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work"
-    r"\v14_selection_sensitivity_raw_mosr"
+    str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v14_selection_sensitivity_raw_mosr')
 )
 
 METHODS = ("Raw", "MOSR")

@@ -1,6 +1,8 @@
 """Time standalone prefixes, excluding intermediate output exports."""
 from study import *
 import inspect,random,traceback
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     while not (ROOT/'results/inference_complete.json').exists():
@@ -11,7 +13,7 @@ def main():
     namespace=dict(torch=torch,F=F,tiled_prior=tiled_prior);exec(source,namespace);fn=namespace['predict_n']
     save(ROOT/'results/standalone_prefix_source.json',dict(source=source,original=rec(R129/'scripts/sequence_inference.py'),rule='Only loop bound varied; one final anchor and FOV guard, no intermediate exports'))
     verify_sources();m=model();before=runtime.state_digest(m);rows=[];parity=[]
-    cases=[('SEM14',PKG/'validation/inputs/sem14.png'),('full_field',Path(PLAN['frames'][0]['source']['path']))]
+    cases=[('SEM14',PKG/'validation/inputs/sem14.png'),('full_field',Path(PROJECT_ROOT / PLAN['frames'][0]['source']['path']))]
     for name,path in cases:
         raw,x=tensor(path)
         with torch.no_grad():

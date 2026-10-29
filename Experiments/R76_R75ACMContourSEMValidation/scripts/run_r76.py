@@ -10,6 +10,7 @@ import time
 
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,9 +18,9 @@ CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="ut
 MODEL = CONFIG["model"]
 EVIDENCE = CONFIG["paired_evidence"]
 INFERENCE = CONFIG["inference"]
-R69 = Path(EVIDENCE["r69_root"])
-RAW_DIR = Path(EVIDENCE["raw_input_dir"])
-RECON_DIR = Path(INFERENCE["reconstruction_dir"])
+R69 = Path(PROJECT_ROOT / EVIDENCE["r69_root"])
+RAW_DIR = Path(PROJECT_ROOT / EVIDENCE["raw_input_dir"])
+RECON_DIR = Path(PROJECT_ROOT / INFERENCE["reconstruction_dir"])
 PYTHON = Path(INFERENCE["python"])
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
 SHARED_ACM = R69 / "scripts" / "run_acm_extraction.m"
@@ -41,8 +42,8 @@ def run(command: list[str]) -> None:
 
 def find_checkpoint(wait_minutes: float = 0.0) -> tuple[Path, Path]:
     deadline = time.monotonic() + max(0.0, wait_minutes) * 60.0
-    expected_run_name = Path(MODEL["training_run_dir"]).name
-    weights_root = Path(MODEL["formal_weights_root"])
+    expected_run_name = Path(PROJECT_ROOT / MODEL["training_run_dir"]).name
+    weights_root = Path(PROJECT_ROOT / MODEL["formal_weights_root"])
     while True:
         export_dir = weights_root / expected_run_name
         manifest_path = export_dir / "export_manifest.json"
@@ -81,8 +82,8 @@ def audit_sources(checkpoint: Path, export_manifest_path: Path) -> dict:
         raw_checks.append({"exposure": exposure, "sha256": source_hash, "identical": True})
 
     sem_dir = Path(EVIDENCE["sem_dir"])
-    legacy_sem_dir = Path(EVIDENCE["legacy_sem_dir"])
-    ordering_manifest_path = Path(EVIDENCE["ordering_manifest"])
+    legacy_sem_dir = Path(PROJECT_ROOT / EVIDENCE["legacy_sem_dir"])
+    ordering_manifest_path = Path(PROJECT_ROOT / EVIDENCE["ordering_manifest"])
     ordering_manifest = json.loads(ordering_manifest_path.read_text(encoding="utf-8"))
     if ordering_manifest.get("status") != "verified" or ordering_manifest.get("exact_copy_count") != 18:
         raise RuntimeError("SEM 排序驗證紀錄不完整。")
@@ -98,7 +99,7 @@ def audit_sources(checkpoint: Path, export_manifest_path: Path) -> dict:
                 raise RuntimeError(f"目前 SEM 與舊配對資料不同：{name}")
             sem_checks.append({"file": name, "sha256": current_hash, "identical": True})
 
-    ordering = pd.read_csv(Path(EVIDENCE["ordering_mapping"])).rename(
+    ordering = pd.read_csv(Path(PROJECT_ROOT / EVIDENCE["ordering_mapping"])).rename(
         columns={
             "global_pillar_id": "pillar_id",
             "grid_row_1_to_6": "grid_row",
@@ -121,13 +122,13 @@ def audit_sources(checkpoint: Path, export_manifest_path: Path) -> dict:
     ):
         raise RuntimeError("36 顆 SEM 對應表的完整性檢查失敗。")
 
-    legacy_code = Path(EVIDENCE["legacy_pairing_code"])
+    legacy_code = Path(PROJECT_ROOT / EVIDENCE["legacy_pairing_code"])
     code_text = legacy_code.read_text(encoding="utf-8", errors="replace")
     if "image_cropped" not in code_text or "SEM\\P-0" not in code_text:
         raise RuntimeError("舊研究程式缺少預期的光學/SEM 配對記錄。")
 
     export_manifest = json.loads(export_manifest_path.read_text(encoding="utf-8"))
-    training_run_dir = Path(MODEL["training_run_dir"])
+    training_run_dir = Path(PROJECT_ROOT / MODEL["training_run_dir"])
     final_epoch_path = training_run_dir / f"epoch_{int(MODEL['expected_epochs']):03d}.pth.tar"
     if not final_epoch_path.is_file():
         raise RuntimeError(
@@ -205,7 +206,7 @@ def reconstruct(checkpoint: Path, audit: dict) -> None:
     run(
         [
             str(PYTHON),
-            MODEL["inference_script"],
+            str(PROJECT_ROOT / MODEL["inference_script"]),
             "--checkpoint",
             str(checkpoint),
             "--input",

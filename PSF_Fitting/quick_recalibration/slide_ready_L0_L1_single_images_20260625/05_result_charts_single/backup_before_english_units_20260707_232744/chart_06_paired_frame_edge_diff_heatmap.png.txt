@@ -2,4 +2,4 @@ Title: Paired-frame edge difference by FOV
 What it shows: Shows how much the circle-edge gray values changed between the two consecutive frames at each grid location.
 Slide use: Use this as an image-layer support figure: it explains that same-position consecutive frames were visually stable.
 Caution: This is an image-difference check, not a PSF coefficient fitting result for frame 2.
-Source: D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_paired_frame_check\paired_frame_metrics.csv
+Source: PSF_Fitting/quick_recalibration/validation_experiments/L1_paired_frame_check/paired_frame_metrics.csv

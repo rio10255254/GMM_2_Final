@@ -18,12 +18,12 @@
     "per-image symmetric band oracle",
     "fixed symmetric detail-gain sweep"
   ],
-  "synthetic_source": "D:/GMM_2_Final/Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
+  "synthetic_source": "Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
   "real_sources": {
-    "5x": "D:/GMM_2_Final/20260704_5x",
-    "20x": "D:/GMM_2_Final/20260704_20x",
-    "50x": "D:/GMM_2_Final/20260702_100MG_位移_50x",
-    "x1um": "D:/GMM_2_Final/20260702_100MG_位移_50x/x_1um"
+    "5x": "20260704_5x",
+    "20x": "20260704_20x",
+    "50x": "20260702_100MG_位移_50x",
+    "x1um": "20260702_100MG_位移_50x/x_1um"
   },
   "sample_contract": {
     "synthetic_views_per_role_per_split": 28,

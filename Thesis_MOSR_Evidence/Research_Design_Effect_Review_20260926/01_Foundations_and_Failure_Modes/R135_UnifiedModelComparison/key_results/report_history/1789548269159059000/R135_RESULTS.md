@@ -39,17 +39,17 @@
 執行錯誤：
 ```
 Traceback (most recent call last):
-  File "D:\GMM_2_Final\Experiments\R135_UnifiedModelComparison\scripts\continue_comparison_v2.py", line 26, in <module>
+  File "Experiments/R135_UnifiedModelComparison/scripts/continue_comparison_v2.py", line 26, in <module>
     try:main()
         ^^^^^^
-  File "D:\GMM_2_Final\Experiments\R135_UnifiedModelComparison\scripts\continue_comparison_v2.py", line 16, in main
+  File "Experiments/R135_UnifiedModelComparison/scripts/continue_comparison_v2.py", line 16, in main
     if r.returncode:raise RuntimeError(load(ROOT/f'results/{tag}/failure.json')['error'])
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 RuntimeError: Traceback (most recent call last):
-  File "D:\GMM_2_Final\Experiments\R135_UnifiedModelComparison\scripts\run_model_v2.py", line 55, in <module>
+  File "Experiments/R135_UnifiedModelComparison/scripts/run_model_v2.py", line 55, in <module>
     try:main(args.tag)
         ^^^^^^^^^^^^^^
-  File "D:\GMM_2_Final\Experiments\R135_UnifiedModelComparison\scripts\run_model_v2.py", line 29, in main
+  File "Experiments/R135_UnifiedModelComparison/scripts/run_model_v2.py", line 29, in main
     oldplan=load(REPO/'Experiments/R128_SourceOnlyFullTraining/results/lsc_comparison/plan.json');old=next(x for x in oldplan['frames'] if x['sequence']==f['sequence'] and x['frame_index']==f['frame_index']);historical=Path(old['R61']['path'])
                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 StopIteration

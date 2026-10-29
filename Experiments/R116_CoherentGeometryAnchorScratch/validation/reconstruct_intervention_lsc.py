@@ -18,9 +18,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from validation import intervention_adapter
 from validation.interventions import MODES
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-V42_CONFIG = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\01_CURRENT_THESIS_RESULTS_V42_CENTER9\config\sequence_center9_50x20x.json")
-TOP30 = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS\tables\top30_raw_motion_selection.csv")
+V42_CONFIG = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json'))
+TOP30 = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv'))
 SEQUENCE_MAP = {
     "50x_x_0p5um": "50x_0p5um",
     "50x_x_1um": "50x_1um",
@@ -64,7 +65,7 @@ def main() -> int:
     for sequence, destination_name in SEQUENCE_MAP.items():
         rows = selected.loc[selected["sequence"].eq(sequence)]
         indices = sorted(set(rows["end_frame_index"].astype(int)) | set(rows["end_frame_index"].astype(int) - 1))
-        raw_dir = Path(config["sequences"][sequence]["raw_dir"])
+        raw_dir = Path(PROJECT_ROOT / config["sequences"][sequence]["raw_dir"])
         for frame_index in indices:
             source = raw_dir / f"frame_{frame_index:04d}.bmp"
             raw = read_gray(source)

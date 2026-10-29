@@ -4,6 +4,7 @@ function codex {
         [Parameter(ValueFromRemainingArguments = $true)]
         [string[]]$Args
     )
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
 
     $codexCmd = $null
     try {
@@ -20,7 +21,7 @@ function codex {
         throw 'codex.cmd not found. Install Codex CLI first.'
     }
 
-    $resumeAllHelper = 'D:\GMM_2_Final\_portable_env_sim_20260318\install\scripts\codex_resume_all.ps1'
+    $resumeAllHelper = (Join-Path $ProjectRoot '_portable_env_sim_20260318\install\scripts\codex_resume_all.ps1')
 
     if (
         $Args.Count -ge 2 -and

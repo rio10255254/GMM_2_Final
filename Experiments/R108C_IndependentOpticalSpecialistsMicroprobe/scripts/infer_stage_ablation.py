@@ -9,13 +9,14 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('inference_core',ROOT/'scripts/infer_calibrated.py')
 if spec is None or spec.loader is None:raise RuntimeError('Cannot load inference core')
 infer=importlib.util.module_from_spec(spec);sys.modules[spec.name]=infer;spec.loader.exec_module(infer)
-SOURCE=Path(r'D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val\src')
+SOURCE=Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val/src'))
 ORDER=infer.cal.adopt.ORDER
 
 

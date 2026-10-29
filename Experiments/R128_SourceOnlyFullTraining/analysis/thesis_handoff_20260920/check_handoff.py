@@ -4,10 +4,11 @@ import hashlib
 import json
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'results/thesis_handoff_review_20260920'
-PACKAGE=Path(r'D:\GMM_2_Final\Deliverables\R128_Corrected_Corner9_Thesis_Handoff_20260920')
+PACKAGE=Path(str(PROJECT_ROOT / 'Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920'))
 DATA=PACKAGE/'01_Raw_R128_Comparison'
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 manifest=json.loads((PACKAGE/'MANIFEST.json').read_text(encoding='utf-8'))

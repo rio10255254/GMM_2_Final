@@ -9,6 +9,7 @@ ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/definition_audit';OUT
 sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as backend
 from probe_lsc_order import reset
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 SEQS=['50x_x_0p5um','50x_x_1um','20x_0p5um','20x_1um'];METHODS=['Raw','Wiener','V42','R152']
 def save(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 def main():
@@ -17,9 +18,9 @@ def main():
         s=cfg['sequences'][seq];mag=s['magnification'];selected=locked[locked.sequence==seq];frameids=sorted(set(selected.start_frame_index)|set(selected.end_frame_index));pitch=s['pitch_px'];margin=int(np.ceil(.55*pitch));half=int(np.ceil(.46*pitch));normal=2.4 if mag=='20x' else 4.
         psf=backend.loadmat(backend.SWEEP_ROOT/f'{mag}_deconvolution_sweep.mat')['psf'];folder='20x' if mag=='20x' else '50x_calibrated'
         for fi in frameids:
-            raw=backend.load_grayscale(Path(s['raw_dir'])/f'frame_{fi:04d}.bmp');pred=backend.session_prediction(seq,int(fi),np.array(s['centers'],float),s['expected_signed_dx_px'])
+            raw=backend.load_grayscale(Path(PROJECT_ROOT / s['raw_dir'])/f'frame_{fi:04d}.bmp');pred=backend.session_prediction(seq,int(fi),np.array(s['centers'],float),s['expected_signed_dx_px'])
             x0=max(0,int(np.floor(pred[:,1].min()))-margin);x1=min(raw.shape[1],int(np.ceil(pred[:,1].max()))+margin+1);y0=max(0,int(np.floor(pred[:,2].min()))-margin);y1=min(raw.shape[0],int(np.ceil(pred[:,2].max()))+margin+1)
-            r=raw[y0:y1,x0:x1];methods={'Raw':r,'Wiener':backend.wiener_contrast_restore(r,psf,backend.NSR,pitch_px=pitch),'V42':backend.load_grayscale(Path(s['v42_dir'])/f'frame_{fi:04d}.bmp')[y0:y1,x0:x1],'R152':np.load(ROOT/f'results/{folder}/reconstruction/{seq}/frame_{fi:04d}.npz')['output'][y0:y1,x0:x1].astype(float)}
+            r=raw[y0:y1,x0:x1];methods={'Raw':r,'Wiener':backend.wiener_contrast_restore(r,psf,backend.NSR,pitch_px=pitch),'V42':backend.load_grayscale(Path(PROJECT_ROOT / s['v42_dir'])/f'frame_{fi:04d}.bmp')[y0:y1,x0:x1],'R152':np.load(ROOT/f'results/{folder}/reconstruction/{seq}/frame_{fi:04d}.npz')['output'][y0:y1,x0:x1].astype(float)}
             for method,image in methods.items():
                 mi={'Raw':0,'Wiener':1,'V42':2,'R152':2}[method]
                 for pi,(pid,x,y) in enumerate(pred):

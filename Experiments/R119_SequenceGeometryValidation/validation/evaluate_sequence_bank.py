@@ -21,10 +21,11 @@ sys.path.insert(0, str(ROOT / "validation"))
 from sequence_bank import SequenceBank, sha
 from sequence_metrics import estimate_position, summarize_sequence
 from inference.run import load as load_r118
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-R118_CHECKPOINT = Path(r"D:/GMM_2_Final/Experiments/R118_PhysicalCoordinateRepairScratch/runs/verified_physical_repair/weights/epoch_012.pth")
-R109_CHECKPOINT = Path(r"D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth")
-R109_SOURCE = Path(r"D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/model/r109_model.py")
+R118_CHECKPOINT = Path(str(PROJECT_ROOT / 'Experiments/R118_PhysicalCoordinateRepairScratch/runs/verified_physical_repair/weights/epoch_012.pth'))
+R109_CHECKPOINT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth'))
+R109_SOURCE = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/model/r109_model.py'))
 
 
 def load_r109(device):

@@ -4,8 +4,9 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np
 from utils import ROOT,config,load,save,sha,now
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
- cfg=config();src=Path(cfg['dataset_source']);m=load(src/'manifest.json');out=ROOT/'data';out.mkdir(exist_ok=True);entries=[]
+ cfg=config();src=Path(PROJECT_ROOT / cfg['dataset_source']);m=load(src/'manifest.json');out=ROOT/'data';out.mkdir(exist_ok=True);entries=[]
  allowed_meta=['parent_id','split','index','category','geometry_sha256','shift_xy','noise_sigma_gray','motion_observable','real_or_SEM_answers_used','external_source_inputs']
  for i,e in enumerate(m['entries']):
   p=src/e['arrays_path'];meta=src/e['metadata_path'];assert sha(p)==e['arrays_sha256'] and sha(meta)==e['metadata_sha256']

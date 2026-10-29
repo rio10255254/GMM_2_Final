@@ -12,14 +12,15 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "results" / "direct_edge_texture_probe"
 ADOPT_PATH = ROOT / "scripts" / "train_adoptions.py"
-SEM = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack")
-R73 = Path(r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\data\r73_synthetic_acm_val\src")
-R74 = Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val\src")
+SEM = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
+R73 = Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val/src'))
+R74 = Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val/src'))
 
 
 def load_module(name: str, path: Path):

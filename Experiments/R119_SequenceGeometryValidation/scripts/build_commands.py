@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PYTHON = r"C:/Users/Rio/anaconda3/python.exe"
+PYTHON = "python"
 
 
 def main():

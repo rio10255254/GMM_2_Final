@@ -7,6 +7,7 @@ from motion134 import load_reader
 from tiled import tiled_prior
 from scipy.optimize import least_squares
 import cv2,pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     while not (ROOT/'results/motion_screen.json').exists():
@@ -17,7 +18,7 @@ def main():
     motion_audit=load(ROOT/'results/motion_audit.json')
     if not screen['passed'] or not motion_audit['passed']:
         save(ROOT/'results/long_admission.json',dict(eligible=False,reason='12pairmotion screen failed'));return
-    panel=load(ROOT/'config/motion_panel.json');plan=load(panel['source_plan']['path']);cfg=load(plan['configuration']['path']);core,scope=load_reader()(plan);seed=screen['selected_seed'];tag=f'C_s{seed}';cp=ROOT/f'runs/R134_C_s{seed}/step0512.pth';payload=torch.load(cp,map_location='cpu');m=create('C',seed);m.load_state_dict(payload['model']);m.eval();out=ROOT/'results/full_motion';out.mkdir(exist_ok=False);tables=[];refits=[];reused=0
+    panel=load(ROOT/'config/motion_panel.json');plan=load(str(PROJECT_ROOT / panel['source_plan']['path']));cfg=load(plan['configuration']['path']);core,scope=load_reader()(plan);seed=screen['selected_seed'];tag=f'C_s{seed}';cp=ROOT/f'runs/R134_C_s{seed}/step0512.pth';payload=torch.load(cp,map_location='cpu');m=create('C',seed);m.load_state_dict(payload['model']);m.eval();out=ROOT/'results/full_motion';out.mkdir(exist_ok=False);tables=[];refits=[];reused=0
     save(out/'started.json',dict(seed=seed,checkpoint=record(cp),rules=record(ROOT/'config/full_motion_admission.json'),source=record(__file__)))
     for j,f in enumerate(plan['frames']):
         case=f"{f['sequence']}/frame_{f['frame_index']:04d}";dest=out/case;dest.mkdir(parents=True);old=ROOT/'results/motion'/tag/case

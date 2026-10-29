@@ -9,8 +9,8 @@
   "measurement_grid_cols": 5,
   "requires_gt": true,
   "gt_path": "LabSystem_MOSR/psf_calibration/inputs/20250605_standard_wholefov/GT/LAB_GT_REQUIRED.bmp",
-  "dependency_root": "D:/GMM_2_Final/PSF_Fitting",
-  "psf_basis_path": "D:/GMM_2_Final/PSF_Fitting/SimulatePSF/psf_multi.mat",
+  "dependency_root": "PSF_Fitting",
+  "psf_basis_path": "PSF_Fitting/SimulatePSF/psf_multi.mat",
   "copied_fitter_dir": "LabSystem_MOSR/psf_calibration/scripts/standard_wholefov",
   "output_dir": "LabSystem_MOSR/psf_calibration/results/20250605_standard_wholefov",
   "notes": [

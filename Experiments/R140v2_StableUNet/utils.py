@@ -2,6 +2,7 @@
 from pathlib import Path
 from datetime import datetime,timezone
 import hashlib,json,os,random
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ROOT=Path(__file__).resolve().parent
 
 def now():return datetime.now(timezone.utc).isoformat()
@@ -36,7 +37,7 @@ def verify_frozen(lock):
   if sha(ROOT/rel)!=expected:raise RuntimeError('Frozen R140v2 execution source changed: '+rel)
 def verify_protected():
  for item in load(ROOT/'config/PROTECTED_SOURCES.json'):
-  if sha(item['path'])!=item['sha256']:raise RuntimeError('Protected historical artifact changed: '+item['path'])
+  if sha(str(PROJECT_ROOT / item['path']))!=item['sha256']:raise RuntimeError('Protected historical artifact changed: '+str(PROJECT_ROOT / item['path']))
 def verify_evaluation():
  for rel,expected in load(ROOT/'config/EVALUATION_REFERENCE.json')['local_files'].items():
   if sha(ROOT/rel)!=expected:raise RuntimeError('R140v2 evaluation input changed: '+rel)

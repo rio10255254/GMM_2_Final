@@ -4,7 +4,7 @@
 - Profile: self-contained source-independent data and bounded exploratory learning.
 - Branch: `codex/r125-data-aligned-pilot`.
 - Current run truth: `runs/matrix_state.json`; individual training `runs/{A|B|C}_s{seed}/state.json` and `summary.json`.
-- Admitted data: `data/package_v2/manifest.json`, SHA256 `ab1c3d61c542b207a206f05bb3b141070d770a88bab61c3d6ca3d80b242223f7`.
+- Admitted data: `data/package_v2/manifest.json`, SHA256 `f371ed372f7ed73e015e10dae5295bb25cbd86573a581b6a283ce66277ed35f4`.
 - Original rejected data: `data/package/manifest.json`, admission remains false and original evidence unchanged.
 - Planned actual study:64scenes x2views,64updates per arm/start,3arms x2starts=384updates. No best-checkpoint search.
 - Controls: A omits explicit observation steps; B includes them; C adds geometry/reference-consistency supervision. Common data/order/initial tensors and unchanged image/observation/reference losses.

@@ -8,10 +8,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[2]
-R112 = Path(r"D:\GMM_2_Final\Experiments\R112_V42R109GMFMechanismDecomposition")
+R112 = Path(str(PROJECT_ROOT / 'Experiments/R112_V42R109GMFMechanismDecomposition'))
 NEW_DIR = ROOT / "results" / "measurement_qa"
 ARMS = ("Raw", "V42 E120", "R109 E48")
 

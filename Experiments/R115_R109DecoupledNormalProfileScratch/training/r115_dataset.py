@@ -10,6 +10,7 @@ import cv2
 import numpy as np
 import torch
 from torch.utils.data import Dataset
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -139,7 +140,7 @@ def normalize_original_record(row: dict) -> dict:
     return {
         **row,
         "record_id": f"r109_{row['split']}_{int(row['scene_index']):06d}",
-        "_package_root": str(Path(DATA["r109_package_root"])),
+        "_package_root": str(Path(PROJECT_ROOT / DATA["r109_package_root"])),
     }
 
 
@@ -147,8 +148,8 @@ class R115Dataset(Dataset):
     def __init__(self, split: str, epoch: int = 0, arm: str = "B", limit: int = 0):
         self.arm = arm.upper()
         if self.arm in {"A", "A_FULL", "ORIGINAL"}:
-            self.package = Path(DATA["r109_package_root"])
-            manifest = json.loads(Path(DATA["r109_manifest"]).read_text(encoding="utf-8"))
+            self.package = Path(PROJECT_ROOT / DATA["r109_package_root"])
+            manifest = json.loads(Path(PROJECT_ROOT / DATA["r109_manifest"]).read_text(encoding="utf-8"))
             records = [normalize_original_record(row) for row in manifest["records"]]
             subset_path = ROOT / "data" / "ablation_a_r109_original.json"
         elif self.arm in {"B", "FORMAL"}:
@@ -157,7 +158,7 @@ class R115Dataset(Dataset):
             records = [{**row, "_package_root": str(self.package)} for row in manifest["records"]]
             subset_path = ROOT / "data" / "ablation_b_r114_balanced.json"
         elif self.arm == "MIXED":
-            original_manifest = json.loads(Path(DATA["r109_manifest"]).read_text(encoding="utf-8"))
+            original_manifest = json.loads(Path(PROJECT_ROOT / DATA["r109_manifest"]).read_text(encoding="utf-8"))
             records = [normalize_original_record(row) for row in original_manifest["records"]]
             local_package = ROOT / DATA["package_root"]
             local_manifest = json.loads((local_package / "manifest.json").read_text(encoding="utf-8"))
@@ -173,7 +174,7 @@ class R115Dataset(Dataset):
             self.package = local_package
             subset_path = ROOT / "data" / "ablation_b_r114_balanced.json"
         elif self.arm == "C":
-            original_manifest = json.loads(Path(DATA["r109_manifest"]).read_text(encoding="utf-8"))
+            original_manifest = json.loads(Path(PROJECT_ROOT / DATA["r109_manifest"]).read_text(encoding="utf-8"))
             selected = set(json.loads((ROOT / "data" / "ablation_a_r109_original.json").read_text(encoding="utf-8"))["record_ids"])
             records = [
                 row for row in (normalize_original_record(item) for item in original_manifest["records"])
@@ -193,7 +194,7 @@ class R115Dataset(Dataset):
             self.package = local_package
             subset_path = ROOT / "data" / "ablation_a_r109_original.json"
         elif self.arm == "D":
-            original_manifest = json.loads(Path(DATA["r109_manifest"]).read_text(encoding="utf-8"))
+            original_manifest = json.loads(Path(PROJECT_ROOT / DATA["r109_manifest"]).read_text(encoding="utf-8"))
             selected = set(json.loads((ROOT / "data" / "ablation_a_r109_original.json").read_text(encoding="utf-8"))["record_ids"])
             records = [
                 row for row in (normalize_original_record(item) for item in original_manifest["records"])

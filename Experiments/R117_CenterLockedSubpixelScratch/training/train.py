@@ -30,6 +30,7 @@ from inference.tiled import forward_tiled
 from model.r117_model import build_model, count_parameters
 from training.dataset import R117Dataset
 from training.losses import detector_loss, detail_loss, paired_loss, shift_loss, soft_object, width_loss
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 @dataclass(frozen=True)
@@ -232,7 +233,7 @@ def save_previews(model, device, run_dir: Path, epoch: int) -> None:
     encode(run_dir / "previews" / f"epoch_{epoch:03d}_synthetic.png", np.rint(np.clip(np.concatenate(rows, 0), 0, 1) * 255).astype(np.uint8))
     real_rows = []
     for value in CONFIG["validation"]["real_preview_inputs"]:
-        path = Path(value)
+        path = Path(PROJECT_ROOT / value)
         if not path.is_file():
             continue
         raw = cv2.imdecode(np.fromfile(str(path), np.uint8), cv2.IMREAD_GRAYSCALE).astype(np.float32) / 255.0

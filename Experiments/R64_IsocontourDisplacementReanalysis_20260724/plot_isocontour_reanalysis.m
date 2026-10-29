@@ -1,5 +1,5 @@
 function plot_isocontour_reanalysis()
-root = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\06_DISPLACEMENT_EXPERIMENTS_ISOCONTOUR_20260724";
+root = "Thesis_MOSR_Evidence/Final_Data_Figures/06_DISPLACEMENT_EXPERIMENTS_ISOCONTOUR_20260724";
 fontName = "Microsoft JhengHei";
 set(groot, "defaultAxesFontName", fontName);
 set(groot, "defaultTextFontName", fontName);

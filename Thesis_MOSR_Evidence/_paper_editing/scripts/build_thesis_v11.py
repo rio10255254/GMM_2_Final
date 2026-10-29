@@ -13,11 +13,12 @@ from docx.oxml.ns import qn
 from docx.shared import Pt
 from docx.text.paragraph import Paragraph
 from lxml import etree
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 SOURCE = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v10.docx")
 TARGET = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v11.docx")
-AUDIT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\qa\v11_build_audit.json")
+AUDIT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/_paper_editing/qa/v11_build_audit.json'))
 
 M_NS = "http://schemas.openxmlformats.org/officeDocument/2006/math"
 NS = {"m": M_NS, "w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}

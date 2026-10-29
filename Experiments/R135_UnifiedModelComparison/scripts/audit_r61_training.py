@@ -3,15 +3,17 @@ from r135_common import *
 import pandas as pd,cv2,re,collections
 from openpyxl import load_workbook
 from scipy.io import loadmat
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
-    out=ROOT/'results/r61_training_audit';out.mkdir(exist_ok=False);plan=load(ROOT/'config/plan.json');cp=Path(plan['models']['R61']['checkpoint']['path']);assert sha(cp)==plan['models']['R61']['checkpoint']['sha256']
+    out=ROOT/'results/r61_training_audit';out.mkdir(exist_ok=False);plan=load(ROOT/'config/plan.json');cp=Path(PROJECT_ROOT / plan['models']['R61']['checkpoint']['path']);assert sha(cp)==plan['models']['R61']['checkpoint']['sha256']
     lab=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR';exp=lab/'Experiments/R61_BoundaryGeneralizationUniversal';data=lab/'Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16';manifest=load(data/'manifest.json');split=data/'splits/grouped_seed1337_val100';meta=load(split/'split_meta.json');train=np.load(split/'train_idx.npy');val=np.load(split/'val_idx.npy');paths=meta['source_paths_sorted'];assert len(paths)==20296 and len(set(paths))==20296;assert len(train)==18266 and len(val)==2030 and not set(train)&set(val)
     normalize=lambda p:str(p).replace('\\','/');by_path={normalize(r['package_src']):r for r in manifest['pairs']};assert set(map(normalize,paths))==set(by_path);partition={normalize(paths[int(i)]):'train' for i in train};partition.update({normalize(paths[int(i)]):'val' for i in val});rows=[]
     for path in paths:
         r=by_path[normalize(path)];rows.append(dict(split=partition[normalize(path)],path=normalize(path),role=r['role'],domain=r.get('domain',''),feature=r.get('feature',''),sem_reference_id=r.get('sem_reference_id'),sem_radius_nm=r.get('sem_radius_nm'),target_radius_nm=r.get('target_radius_nm')))
     roster=pd.DataFrame(rows);roster.to_csv(out/'training_roster.csv',index=False);counts=roster.groupby(['role','split']).size().unstack(fill_value=0);counts.to_csv(out/'role_counts.csv')
-    r60=data.parent.parent.parent/'r60_sem_truth_boundary/hs100mg_basler/r60_sem_truth_realcrop_anchor_train';r60manifest=load(r60/'manifest.json');parent=Path(r60manifest['microscope_image']);csv=Path(r60manifest['sem_reference_csv']);csvdata=pd.read_csv(csv);workbook=Path('H:/From_2TB_D_disk/13_thesis/SEM_data/via_pilar.xlsx');w=load_workbook(workbook,read_only=True,data_only=True);sheet=w['SEM data'];reference=[]
+    r60=data.parent.parent.parent/'r60_sem_truth_boundary/hs100mg_basler/r60_sem_truth_realcrop_anchor_train';r60manifest=load(r60/'manifest.json');parent=Path(r60manifest['microscope_image']);csv=Path(r60manifest['sem_reference_csv']);csvdata=pd.read_csv(csv);workbook=Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/20260618_100MG/SEM_data/via_pilar.xlsx'));w=load_workbook(workbook,read_only=True,data_only=True);sheet=w['SEM data'];reference=[]
     for row in sheet.iter_rows(min_row=3,max_row=38,values_only=True):reference.append([int(row[16]),float(row[17]),float(row[18])])
     ref=pd.DataFrame(reference,columns=['index','via','pillar']).set_index('index');c=csvdata.set_index(csvdata.columns[0]);assert len(ref)==len(c)==36;diff=float(np.abs(ref[['via','pillar']].values-c.values).max());assert diff<1e-9;ref.to_csv(out/'SEM_reference_values.csv')
     # Reference layout used for the current SEM comparison is exactly the same
@@ -37,9 +39,9 @@ def main():
         a=cv2.imdecode(np.fromfile(p,np.uint8),cv2.IMREAD_GRAYSCALE);assert a is not None;return a,hashlib.sha256(str(a.shape).encode()+a.tobytes()).hexdigest()
     _,parenthash=pixels(parent);identities=[]
     for f in plan['frames']:
-        a,h=pixels(f['source']['path']);identities.append(dict(role='motion',sequence=f['sequence'],frame=f['frame_index'],same_as_training_parent=h==parenthash,shape=str(a.shape),pixel_sha256=h))
+        a,h=pixels(str(PROJECT_ROOT / f['source']['path']));identities.append(dict(role='motion',sequence=f['sequence'],frame=f['frame_index'],same_as_training_parent=h==parenthash,shape=str(a.shape),pixel_sha256=h))
     for e,s in plan['SEM_sources'].items():
-        a,h=pixels(s['path']);identities.append(dict(role='SEM_optical',frame=int(e),same_as_training_parent=h==parenthash,shape=str(a.shape),pixel_sha256=h))
+        a,h=pixels(str(PROJECT_ROOT / s['path']));identities.append(dict(role='SEM_optical',frame=int(e),same_as_training_parent=h==parenthash,shape=str(a.shape),pixel_sha256=h))
     pd.DataFrame(identities).to_csv(out/'evaluation_full_image_identity.csv',index=False)
     # Final-stage group split does not necessarily separate allSEM identities.
     ids={s:set((r['feature'],r['sem_id']) for r in checks if r['split']==s) for s in ['train','val']};shared=sorted(ids['train']&ids['val'])

@@ -4,7 +4,8 @@ import hashlib,importlib.util,json,math,sys,time
 from pathlib import Path
 import cv2,numpy as np,pandas as pd,torch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'model'));from r109_model import build_model
-INFER=ROOT/'validation/reconstruct_locked_suites.py';HELPER=Path(r'D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\scripts\evaluate_real_holdout.py');CONFIG_PATH=Path(r'D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\config\sequences.json');LOCKED=Path(r'D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\results\tables\tile_motion_measurements.csv');CHECKPOINT=ROOT/'runs/r109_formal_scratch_continuous_b8_20260826/weights/epoch_048.pth';OUTPUT=ROOT/'results/posttraining_motion/E048';OUTPUT.mkdir(parents=True,exist_ok=True)
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+INFER=ROOT/'validation/reconstruct_locked_suites.py';HELPER=Path(str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/scripts/evaluate_real_holdout.py'));CONFIG_PATH=Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json'));LOCKED=Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv'));CHECKPOINT=ROOT/'runs/r109_formal_scratch_continuous_b8_20260826/weights/epoch_048.pth';OUTPUT=ROOT/'results/posttraining_motion/E048';OUTPUT.mkdir(parents=True,exist_ok=True)
 def load(name,path):spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module);return module
 infer=load('r109_motion_infer',INFER);helpers=load('r109_motion_helpers',HELPER);CONFIG=json.loads(CONFIG_PATH.read_text(encoding='utf-8'))
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -13,7 +14,7 @@ def read(path):return helpers.read_gray(path)
 def main():
  device=torch.device('cuda:0');model=build_model().to(device);model.load_state_dict(torch.load(CHECKPOINT,map_location=device,weights_only=False)['model']);model.eval();locked=pd.read_csv(LOCKED);reconstructed={};records=[];appearance=[];total=sum(int(item['frame_count']) for item in CONFIG['sequences'].values());done=0;started=time.perf_counter()
  for sequence,item in CONFIG['sequences'].items():
-  paths=sorted(Path(item['raw_dir']).glob('frame_*.bmp'))
+  paths=sorted(Path(PROJECT_ROOT / item['raw_dir']).glob('frame_*.bmp'))
   if len(paths)!=int(item['frame_count']):raise RuntimeError(f'{sequence} inventory')
   for index,path in enumerate(paths):destination=OUTPUT/'reconstructions'/sequence/path.name;raw=read(path);value=np.round(infer.tiled(model,raw.astype(np.float32)/255,device,core=1024,halo=192)*255).astype(np.uint8);helpers.write_gray(destination,value);reconstructed[(sequence,index)]=destination;records.append({'sequence':sequence,'frame_index':index,'source':str(path),'source_sha256':sha(path),'output':str(destination),'output_sha256':sha(destination)});appearance.append({'sequence':sequence,'frame_index':index,**helpers.appearance_metrics(raw,value,1024)});done+=1;print(json.dumps({'done':done,'total':total,'sequence':sequence,'frame':index}),flush=True) if done%10==0 or done==total else None
  pd.DataFrame(records).to_csv(OUTPUT/'reconstruction_manifest.csv',index=False);app=pd.DataFrame(appearance);app.to_csv(OUTPUT/'appearance_per_frame.csv',index=False);app.groupby('sequence').median(numeric_only=True).reset_index().to_csv(OUTPUT/'appearance_sequence_summary.csv',index=False);motion=[]

@@ -14,6 +14,7 @@ from analyze_wiener_three_way_results import (
     _measure_half_height_width,
     _measure_radial_width,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 PACKAGE = Path(__file__).resolve().parents[1]
@@ -25,8 +26,7 @@ TABLES = OUTPUT / "tables"
 TABLES.mkdir(parents=True, exist_ok=True)
 
 RAW_PATH = Path(
-    r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs"
-    r"\20x_1um\bmp\frame_0049.bmp"
+    str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp/frame_0049.bmp')
 )
 WIENER_PATH = WIENER / "reconstructions" / "x20x_1um" / "frame_0049.bmp"
 MOSR_PATH = (

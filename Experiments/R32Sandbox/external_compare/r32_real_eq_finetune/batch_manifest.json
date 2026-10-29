@@ -1,31 +1,31 @@
 ﻿{
     "generated_at":  "2026-03-19 19:08:48",
-    "decision_json":  "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\reports\\ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.json",
+    "decision_json":  "Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.json",
     "candidate":  "r32_real_eq_finetune",
-    "weights_path":  "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\artifacts\\training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431\\weights\\best_tradeoff.pth.tar",
-    "infer_script":  "D:\\GMM_2_Final\\Model\\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
-    "compare_script":  "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\Model\\external_gmf_round32_compare.py",
-    "candidate_root":  "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\external_compare\\r32_real_eq_finetune",
-    "recon_root":  "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\external_compare\\r32_real_eq_finetune\\reconstructions",
-    "gmf_raw_root":  "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\external_compare\\r32_real_eq_finetune\\gmf_results\\raw\\r32_real_eq_finetune",
+    "weights_path":  "Experiments/R32Sandbox/artifacts/training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431/weights/best_tradeoff.pth.tar",
+    "infer_script":  "Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+    "compare_script":  "Experiments/R32Sandbox/Model/external_gmf_round32_compare.py",
+    "candidate_root":  "Experiments/R32Sandbox/external_compare/r32_real_eq_finetune",
+    "recon_root":  "Experiments/R32Sandbox/external_compare/r32_real_eq_finetune/reconstructions",
+    "gmf_raw_root":  "Experiments/R32Sandbox/external_compare/r32_real_eq_finetune/gmf_results/raw/r32_real_eq_finetune",
     "datasets":  [
                      {
                          "name":  "Pitch1um_Y_100",
                          "input_dir":  "C:\\Users\\Rio\\Downloads\\NTU_ImageDataset\\Pitch1um_Y_100\\Cropped_Output",
                          "output_name":  "pitch1um_y_100_odd",
-                         "expected_gmf_score":  "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\external_compare\\r32_real_eq_finetune\\gmf_results\\raw\\r32_real_eq_finetune\\pitch8px\\GMF_score.txt"
+                         "expected_gmf_score":  "Experiments/R32Sandbox/external_compare/r32_real_eq_finetune/gmf_results/raw/r32_real_eq_finetune/pitch8px/GMF_score.txt"
                      },
                      {
                          "name":  "Pitch0.1um_Y_60",
                          "input_dir":  "C:\\Users\\Rio\\Downloads\\NTU_ImageDataset\\Pitch0.1um_Y_60\\Cropped_Output",
                          "output_name":  "pitch0p1um_y_60_odd",
-                         "expected_gmf_score":  "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\external_compare\\r32_real_eq_finetune\\gmf_results\\raw\\r32_real_eq_finetune\\pitch0p8px\\GMF_score.txt"
+                         "expected_gmf_score":  "Experiments/R32Sandbox/external_compare/r32_real_eq_finetune/gmf_results/raw/r32_real_eq_finetune/pitch0p8px/GMF_score.txt"
                      },
                      {
                          "name":  "Pitch0.01um_Y_40",
                          "input_dir":  "C:\\Users\\Rio\\Downloads\\NTU_ImageDataset\\Pitch0.01um_Y_40\\Cropped_Output",
                          "output_name":  "pitch0p01um_y_40_odd",
-                         "expected_gmf_score":  "D:\\GMM_2_Final\\Experiments\\R32Sandbox\\external_compare\\r32_real_eq_finetune\\gmf_results\\raw\\r32_real_eq_finetune\\pitch0p08px\\GMF_score.txt"
+                         "expected_gmf_score":  "Experiments/R32Sandbox/external_compare/r32_real_eq_finetune/gmf_results/raw/r32_real_eq_finetune/pitch0p08px/GMF_score.txt"
                      }
                  ],
     "completed_at":  "2026-03-19 19:10:04"

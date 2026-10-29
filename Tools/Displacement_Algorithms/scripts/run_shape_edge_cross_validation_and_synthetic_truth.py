@@ -18,16 +18,14 @@ from measure_feature_anchor import measure as measure_feature_anchor
 from measure_gmf_template import measure_sequence as measure_gmf_sequence
 from measure_phase_dft import measure as measure_phase
 from measure_shape_edge_anchor import measure_sequence as measure_shape_edge
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 SOURCE_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages"
-    r"\best_displacement_models_20260706\trusted_full_sequences"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/best_displacement_models_20260706/trusted_full_sequences')
 )
 OUTPUT_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments"
-    r"\R62_TargetSampleBoost\reports\measurement_method_research_20260706"
-    r"\cross_validation_and_synthetic_truth_20260707"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports/measurement_method_research_20260706/cross_validation_and_synthetic_truth_20260707')
 )
 
 REAL_CROP = (1010, 35, 900, 650)

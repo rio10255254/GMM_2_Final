@@ -25,7 +25,7 @@ Its role is to keep `R32` external validation inside the sandbox boundary instea
 ### 1. 跑 recon / Run Reconstruction
 
 ```powershell
-powershell.exe -File "D:\GMM_2_Final\Experiments\R32Sandbox\Tools\run_r32_external_recon.ps1"
+powershell.exe -File "Experiments/R32Sandbox/Tools/run_r32_external_recon.ps1"
 ```
 
 ### 2. 執行外部 GMF scoring / Run External GMF Scoring
@@ -38,29 +38,29 @@ Use the fixed external GMF tool to score the three pitch reconstruction outputs.
 將 `GMF_score.txt` 放到以下位置：  
 Place `GMF_score.txt` into the following locations:
 
-- `D:\GMM_2_Final\Experiments\R32Sandbox\external_compare\<candidate>\gmf_results\raw\<candidate>\pitch8px\GMF_score.txt`
-- `D:\GMM_2_Final\Experiments\R32Sandbox\external_compare\<candidate>\gmf_results\raw\<candidate>\pitch0p8px\GMF_score.txt`
-- `D:\GMM_2_Final\Experiments\R32Sandbox\external_compare\<candidate>\gmf_results\raw\<candidate>\pitch0p08px\GMF_score.txt`
+- `Experiments/R32Sandbox/external_compare<candidate>\gmf_results\raw\<candidate>\pitch8px\GMF_score.txt`
+- `Experiments/R32Sandbox/external_compare<candidate>\gmf_results\raw\<candidate>\pitch0p8px\GMF_score.txt`
+- `Experiments/R32Sandbox/external_compare<candidate>\gmf_results\raw\<candidate>\pitch0p08px\GMF_score.txt`
 
 ### 4. 產生 compare 報告 / Generate Compare Report
 
 ```powershell
-C:\Users\Rio\anaconda3\python.exe "D:\GMM_2_Final\Experiments\R32Sandbox\Model\external_gmf_round32_compare.py"
+C:\Users\Rio\anaconda3\python.exe "Experiments/R32Sandbox/Model/external_gmf_round32_compare.py"
 ```
 
 ## 正式輸出 / Formal Outputs
 
 - compare markdown  
-  `D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.md`
+  `Experiments/R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md`
 - compare json  
-  `D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.json`
+  `Experiments/R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.json`
 
 ## 2026-03-20 現況 / 2026-03-20 Current State
 
 - selected candidate：`r32_real_eq_finetune`  
   Selected candidate: `r32_real_eq_finetune`
 - selected checkpoint：  
-  `D:\GMM_2_Final\Experiments\R32Sandbox\artifacts\training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431\weights\best_tradeoff.pth.tar`
+  `Experiments/R32Sandbox/artifacts/training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431/weights/best_tradeoff.pth.tar`
 - three pitch recon outputs：已生成  
   The three pitch reconstruction outputs have already been generated.
 - compare status：`completed`  

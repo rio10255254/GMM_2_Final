@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 import torch
 from skimage.metrics import structural_similarity
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -98,7 +99,7 @@ def update_status(stage: str, state: str, detail: str = "") -> None:
 def checkpoint_audit(config: dict) -> dict:
     records = {}
     for label, item in config["models"].items():
-        checkpoint = Path(item["checkpoint"])
+        checkpoint = Path(PROJECT_ROOT / item["checkpoint"])
         actual_hash = require_hash(checkpoint, item["checkpoint_sha256"])
         payload = torch.load(checkpoint, map_location="cpu")
         epoch = int(payload.get("epoch", -1))
@@ -118,7 +119,7 @@ def checkpoint_audit(config: dict) -> dict:
 
 def audit_internal_test(config: dict) -> tuple[dict, list[dict]]:
     item = config["internal_test"]
-    manifest_path = Path(item["manifest"])
+    manifest_path = Path(PROJECT_ROOT / item["manifest"])
     require_hash(manifest_path, item["manifest_sha256"])
     manifest = read_json(manifest_path)
     if manifest.get("content_sha256") != item["dataset_content_sha256"]:
@@ -135,7 +136,7 @@ def audit_internal_test(config: dict) -> tuple[dict, list[dict]]:
     if overlap:
         raise RuntimeError(f"Internal-test geometry leakage: {sorted(overlap)[:5]}")
     roles = Counter(row["training_role"] for row in rows)
-    package = Path(item["package_root"])
+    package = Path(PROJECT_ROOT / item["package_root"])
     for row in rows:
         for key in ("package_src", "package_lbl", "geometry_mask", "geometry_mask_aa"):
             if not (package / row[key]).is_file():
@@ -153,9 +154,9 @@ def audit_internal_test(config: dict) -> tuple[dict, list[dict]]:
 
 def audit_real_fov(config: dict) -> dict:
     item = config["real_fov"]
-    require_hash(Path(item["r78_input_audit"]), item["r78_input_audit_sha256"])
-    require_hash(Path(item["locked_measurements"]), item["locked_measurements_sha256"])
-    raw_root = Path(item["locked_raw_root"])
+    require_hash(Path(PROJECT_ROOT / item["r78_input_audit"]), item["r78_input_audit_sha256"])
+    require_hash(Path(PROJECT_ROOT / item["locked_measurements"]), item["locked_measurements_sha256"])
+    raw_root = Path(PROJECT_ROOT / item["locked_raw_root"])
     audit = {"total_frames": 0, "sequences": {}, "exact_duplicate_groups": []}
     hash_to_paths: dict[str, list[str]] = defaultdict(list)
     for sequence, settings in item["sequences"].items():
@@ -188,10 +189,10 @@ def audit_external_suites(config: dict) -> dict:
     result = {}
     all_source_hashes: dict[str, list[str]] = defaultdict(list)
     for suite, item in config["external_acm_suites"].items():
-        manifest_path = Path(item["manifest"])
+        manifest_path = Path(PROJECT_ROOT / item["manifest"])
         require_hash(manifest_path, item["manifest_sha256"])
-        source_config = read_json(Path(item["source_config"]))
-        root = Path(item["dataset_root"])
+        source_config = read_json(Path(PROJECT_ROOT / item["source_config"]))
+        root = Path(PROJECT_ROOT / item["dataset_root"])
         families = source_config["dataset"]["families"]
         expected_per = int(source_config["dataset"]["images_per_family"])
         expected_names = [f"{index:04d}.bmp" for index in range(expected_per)]
@@ -233,14 +234,14 @@ def audit_external_suites(config: dict) -> dict:
 
 def audit_sem(config: dict) -> dict:
     item = config["sem_acm"]
-    require_hash(Path(item["ordering_manifest"]), item["ordering_manifest_sha256"])
-    ordering_manifest = read_json(Path(item["ordering_manifest"]))
+    require_hash(Path(PROJECT_ROOT / item["ordering_manifest"]), item["ordering_manifest_sha256"])
+    ordering_manifest = read_json(Path(PROJECT_ROOT / item["ordering_manifest"]))
     if ordering_manifest.get("status") != "verified" or int(ordering_manifest.get("exact_copy_count", -1)) != 18:
         raise RuntimeError("SEM ordering evidence is not verified")
-    mapping = pd.read_csv(item["ordering_mapping"])
+    mapping = pd.read_csv(str(PROJECT_ROOT / item["ordering_mapping"]))
     if len(mapping) != 36 or mapping["global_pillar_id"].nunique() != 36:
         raise RuntimeError("SEM 36-pillar mapping is incomplete")
-    raw_dir = Path(item["raw_input_dir"])
+    raw_dir = Path(PROJECT_ROOT / item["raw_input_dir"])
     source_dir = Path(item["raw_source_dir"])
     checks = []
     for exposure in item["optical_exposures"]:
@@ -329,8 +330,8 @@ def run_inference(config: dict, label: str, input_path: Path, output: Path, coun
     output.mkdir(parents=True, exist_ok=True)
     command = [
         config["runtime"]["python"],
-        config["runtime"]["inference_script"],
-        "--checkpoint", model["checkpoint"],
+        str(PROJECT_ROOT / config["runtime"]["inference_script"]),
+        "--checkpoint", str(PROJECT_ROOT / model["checkpoint"]),
         "--input", str(input_path),
         "--output", str(output),
         "--device", config["runtime"]["device"],
@@ -347,7 +348,7 @@ def infer_all(config: dict) -> None:
     update_status("inference", "running")
     runtime = config["runtime"]
     real = config["real_fov"]
-    raw_root = Path(real["locked_raw_root"])
+    raw_root = Path(PROJECT_ROOT / real["locked_raw_root"])
     for label in config["models"]:
         run_inference(
             config, label, raw_root, RECON / "real_tile1024" / label,
@@ -361,19 +362,19 @@ def infer_all(config: dict) -> None:
             )
         for suite, item in config["external_acm_suites"].items():
             run_inference(
-                config, label, Path(item["dataset_root"]) / "src", RECON / "external" / suite / label,
+                config, label, Path(PROJECT_ROOT / item["dataset_root"]) / "src", RECON / "external" / suite / label,
                 int(item["expected_images"]), int(runtime["primary_tile_size"]), int(runtime["primary_overlap"]),
             )
         sem = config["sem_acm"]
         run_inference(
-            config, label, Path(sem["raw_input_dir"]), RECON / "sem" / label,
+            config, label, Path(PROJECT_ROOT / sem["raw_input_dir"]), RECON / "sem" / label,
             len(sem["optical_exposures"]), int(sem["tile_size"]), int(sem["overlap"]),
         )
     update_status("inference", "complete", "Primary, 5x sensitivity, external ACM, and SEM reconstructions complete")
 
 
 def load_inference_module(config: dict):
-    path = Path(config["runtime"]["inference_script"])
+    path = Path(PROJECT_ROOT / config["runtime"]["inference_script"])
     spec = importlib.util.spec_from_file_location("r79_inference", path)
     if spec is None or spec.loader is None:
         raise RuntimeError(path)
@@ -424,12 +425,12 @@ def internal_metrics_for_image(pred: np.ndarray, source: np.ndarray, truth: np.n
 def evaluate_internal(config: dict) -> None:
     update_status("internal_test", "running")
     _, rows = audit_internal_test(config)
-    package = Path(config["internal_test"]["package_root"])
+    package = Path(PROJECT_ROOT / config["internal_test"]["package_root"])
     module = load_inference_module(config)
     device = config["runtime"]["device"]
     records = []
     for label, item in config["models"].items():
-        model, state_key = module.build_model(Path(item["checkpoint"]), device, True)
+        model, state_key = module.build_model(Path(PROJECT_ROOT / item["checkpoint"]), device, True)
         if state_key != "ema_state_dict":
             raise RuntimeError(f"{label}: EMA weights were not selected")
         output_root = RECON / "internal_test" / label
@@ -675,7 +676,7 @@ def off_source_metric(raw: np.ndarray, model: np.ndarray, settings: dict) -> dic
 def evaluate_real(config: dict) -> None:
     update_status("real_fov_analysis", "running")
     item = config["real_fov"]
-    locked = pd.read_csv(item["locked_measurements"])
+    locked = pd.read_csv(str(PROJECT_ROOT / item["locked_measurements"]))
     locked["raw_reference_valid"] = as_bool(locked["raw_reference_valid"])
     motion = pd.concat([compute_motion_rows(config, locked, label) for label in config["models"]], ignore_index=True)
     TABLES.mkdir(parents=True, exist_ok=True)
@@ -683,7 +684,7 @@ def evaluate_real(config: dict) -> None:
     summary = summarize_motion(motion, item["motion_gates"])
     summary.to_csv(TABLES / "real_motion_summary.csv", index=False)
 
-    raw_root = Path(item["locked_raw_root"])
+    raw_root = Path(PROJECT_ROOT / item["locked_raw_root"])
     fidelity_rows = []
     artifact_rows = []
     for sequence, sequence_item in item["sequences"].items():
@@ -760,11 +761,11 @@ def external_arm_ready(root: Path, expected_images: int) -> bool:
 
 
 def prepare_external_acm_arm(config: dict, suite: str, item: dict) -> Path:
-    source_config = read_json(Path(item["source_config"]))
+    source_config = read_json(Path(PROJECT_ROOT / item["source_config"]))
     arm = RESULTS / "acm_external" / suite
     arm_config = {
         "experiment_id": f"R80_{suite}_R79E23_vs_R79E100",
-        "dataset": {**source_config["dataset"], "root": item["dataset_root"]},
+        "dataset": {**source_config["dataset"], "root": str(PROJECT_ROOT / item["dataset_root"])},
         "acm": {
             **source_config["acm"],
             "iterations": item["iterations"],
@@ -827,9 +828,9 @@ def run_sem_acm(config: dict) -> None:
     update_status("sem_acm", "running")
     item = config["sem_acm"]
     matlab = config["runtime"]["matlab"]
-    shared = Path(item["shared_acm_script"])
+    shared = Path(PROJECT_ROOT / item["shared_acm_script"])
     script_dir = shared.parent.as_posix().replace("'", "''")
-    raw_dir = Path(item["raw_input_dir"]).as_posix().replace("'", "''")
+    raw_dir = Path(PROJECT_ROOT / item["raw_input_dir"]).as_posix().replace("'", "''")
     for label in config["models"]:
         arm = RESULTS / "acm_sem" / label
         if sem_arm_ready(arm, label):

@@ -1,7 +1,8 @@
 from __future__ import annotations
 import json
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];EXP=Path(r'D:\GMM_2_Final\Experiments')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];EXP=Path(str(PROJECT_ROOT / 'Experiments'))
 def main():
  for guard in (.12,.25):
   suffix='' if abs(guard-.12)<1e-9 else '_g0p25'

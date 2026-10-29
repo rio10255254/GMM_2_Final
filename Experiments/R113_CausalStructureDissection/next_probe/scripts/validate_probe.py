@@ -5,6 +5,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,14 +29,14 @@ def main() -> int:
     checks = []
     selection_path = ROOT / CONFIG["data"]["selection_file"]
     selection = json.loads(selection_path.read_text(encoding="utf-8"))
-    source_manifest = Path(CONFIG["data"]["package_root"]) / "manifest.json"
+    source_manifest = Path(PROJECT_ROOT / CONFIG["data"]["package_root"]) / "manifest.json"
     add(checks, "source_manifest_frozen",
         sha256_file(source_manifest).lower() == CONFIG["data"]["source_manifest_sha256"].lower(),
         sha256_file(source_manifest))
     canonical = json.dumps(selection["records"], sort_keys=True, separators=(",", ":")).encode("utf-8")
     add(checks, "selection_records_hash", hashlib.sha256(canonical).hexdigest() == selection["records_sha256"],
         selection["records_sha256"])
-    file_hash_ok = True; failures = []; package = Path(CONFIG["data"]["package_root"])
+    file_hash_ok = True; failures = []; package = Path(PROJECT_ROOT / CONFIG["data"]["package_root"])
     for row in selection["records"]:
         for field, expected in row["source_file_hashes"].items():
             actual = sha256_file(package / row[field])

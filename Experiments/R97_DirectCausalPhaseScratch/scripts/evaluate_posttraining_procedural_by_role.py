@@ -9,6 +9,7 @@ import sys
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -99,11 +100,11 @@ def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
     protocol = read_json(PROTOCOL_PATH)
     design = read_json(DESIGN_PATH)
-    checkpoint_path = Path(protocol["checkpoint"])
+    checkpoint_path = Path(PROJECT_ROOT / protocol["checkpoint"])
     checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
     if int(checkpoint["epoch"]) != 48:
         raise RuntimeError("Checkpoint is not E48")
-    package = Path(design["data"]["source_package"])
+    package = Path(PROJECT_ROOT / design["data"]["source_package"])
     manifest = read_json(package / "manifest.json")
     patch, core = 768, 384
     per_role = int(design["training"]["final_validation_scenes_per_role"])

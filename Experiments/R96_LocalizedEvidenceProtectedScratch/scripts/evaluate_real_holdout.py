@@ -16,6 +16,7 @@ import numpy as np
 import pandas as pd
 from skimage.metrics import structural_similarity
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -245,11 +246,11 @@ def main() -> None:
     output_root.mkdir(parents=True, exist_ok=True)
     write_json(output_root / "protocol_snapshot.json", protocol)
 
-    sequence_config_path = Path(protocol["source_sequence_config"])
-    locked_path = Path(protocol["locked_raw_measurements"])
+    sequence_config_path = Path(PROJECT_ROOT / protocol["source_sequence_config"])
+    locked_path = Path(PROJECT_ROOT / protocol["locked_raw_measurements"])
     config = read_json(sequence_config_path)
     locked = pd.read_csv(locked_path)
-    checkpoint_path = Path(protocol["checkpoint"])
+    checkpoint_path = Path(PROJECT_ROOT / protocol["checkpoint"])
     design = read_json(DESIGN_PATH)
     device_name = args.device or protocol["inference"]["device"]
     device = torch.device(device_name if torch.cuda.is_available() or not str(device_name).startswith("cuda") else "cpu")

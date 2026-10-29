@@ -5,6 +5,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
 plt.rcParams.update({
     "font.family": "sans-serif",
@@ -16,7 +17,7 @@ plt.rcParams.update({
     "axes.spines.top": False, "axes.spines.right": False,
 })
 
-PKG   = Path(r"D:\GMM_2_Final\_deployment_package\GeoEdge_R26_使用包")
+PKG   = Path(str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_使用包'))
 DEST  = PKG / "輸出結果" / "驗證分析" / "R26_validation_complete"
 NAMES = sorted([f.name for f in (PKG / "輸出結果" / "驗證分析" /
                 "R26_external_batch_bundle" / "input_subset").glob("*.bmp")])

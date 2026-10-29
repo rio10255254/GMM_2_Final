@@ -37,7 +37,7 @@ The formal result path must follow the order in which the thesis argues its case
 
 Superseded material will be moved, not permanently deleted, to:
 
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\Archive\Final_Data_Figures_Superseded_20260713`
+`Thesis_MOSR_Evidence/Archive/Final_Data_Figures_Superseded_20260713`
 
 The archive will contain:
 

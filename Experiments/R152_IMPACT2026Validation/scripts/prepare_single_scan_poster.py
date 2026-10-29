@@ -3,7 +3,8 @@ from pathlib import Path
 import json,hashlib
 import numpy as np,pandas as pd
 from PIL import Image
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/separate_conditions';SRC=Path('D:/GMM_2_Final/Experiments/R152_R148v2_SafeAdaptivePSF')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'results/separate_conditions';SRC=Path(str(PROJECT_ROOT / 'Experiments/R152_R148v2_SafeAdaptivePSF'))
 def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 lock=load(OUT/'single_scan_presentation_lock.json');base=load(OUT/'poster_data.json');assert load(OUT/'20x_complete.json')['passed'] and load(OUT/'50x_complete.json')['passed']

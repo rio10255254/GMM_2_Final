@@ -10,11 +10,12 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from torch.utils.data import default_collate
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R100 = Path(r"D:\GMM_2_Final\Experiments\R100_CausalOperatorScratch")
-PACKAGE = Path(r"D:\GMM_2_Final\Experiments\R92_PhysicalTransitionBalancedScratch\data\r92_formal")
+R100 = Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch'))
+PACKAGE = Path(str(PROJECT_ROOT / 'Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal'))
 OUTPUT = ROOT / "results" / "gradient_conflicts"
 
 
@@ -55,7 +56,7 @@ def main() -> None:
 
     design = json.loads((R100 / "config" / "experiment_design.json").read_text(encoding="utf-8"))
     protocol = json.loads((R100 / "config" / "posttraining_validation_protocol.json").read_text(encoding="utf-8"))
-    checkpoint = torch.load(Path(protocol["checkpoint"]), map_location="cpu", weights_only=False)
+    checkpoint = torch.load(Path(PROJECT_ROOT / protocol["checkpoint"]), map_location="cpu", weights_only=False)
     model = MODEL.build_model(base=int(design["architecture"]["model_width"]))
     model.load_state_dict(checkpoint[protocol["checkpoint_state"]], strict=True)
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")

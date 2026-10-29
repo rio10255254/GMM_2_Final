@@ -48,7 +48,7 @@ def read_policy() -> dict:
     policy = load_estimator_policy(POLICY_JSON)
     sources = get_legacy_sources(policy)
     macro_guard_pass = True
-    reevaluation_json = sources.get("phase2_reevaluation_json")
+    reevaluation_json = str(PROJECT_ROOT / sources.get("phase2_reevaluation_json"))
     if reevaluation_json:
         try:
             macro_guard_pass = bool(

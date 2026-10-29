@@ -15,14 +15,15 @@ import numpy as np
 import torch
 from torch import nn
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CHECKPOINT = Path(
-    r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch\weights\selected\R109.pth"
+    str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth')
 )
 R109_MODEL_FILE = Path(
-    r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch\model\r109_model.py"
+    str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/model/r109_model.py')
 )
 VARIANTS = (
     "r109_current",

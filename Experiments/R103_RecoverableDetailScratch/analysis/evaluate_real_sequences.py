@@ -22,11 +22,12 @@ for folder in (ROOT / "model", ROOT / "inference"):
 
 from r103_model import build_model  # noqa: E402
 from reconstruct import reconstruct_tensor  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-HELPER_PATH = Path(r"D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\scripts\evaluate_real_holdout.py")
-SEQUENCE_CONFIG = Path(r"D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\config\sequences.json")
-LOCKED_MOTION = Path(r"D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\results\tables\tile_motion_measurements.csv")
+HELPER_PATH = Path(str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/scripts/evaluate_real_holdout.py'))
+SEQUENCE_CONFIG = Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json'))
+LOCKED_MOTION = Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv'))
 OUTPUT = ROOT / "results" / "posttraining_validation" / "real_sequences"
 
 
@@ -185,8 +186,8 @@ def main() -> None:
 
     for sequence in selected_sequences:
         item = SEQUENCES["sequences"][sequence]
-        raw_paths = sorted(Path(item["raw_dir"]).glob("frame_*.bmp"))
-        r61_paths = sorted(Path(item["recon_dir"]).glob("frame_*.bmp"))
+        raw_paths = sorted(Path(PROJECT_ROOT / item["raw_dir"]).glob("frame_*.bmp"))
+        r61_paths = sorted(Path(PROJECT_ROOT / item["recon_dir"]).glob("frame_*.bmp"))
         if len(raw_paths) != int(item["frame_count"]) or len(r61_paths) != len(raw_paths):
             raise RuntimeError(f"{sequence}: frame inventory mismatch")
         fixed = {0, 12, 24, 36, len(raw_paths) - 1}

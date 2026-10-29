@@ -4,10 +4,11 @@ import sys, json, time
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[1]
-MODEL_ROOT=Path('D:/GMM_2_Final/Experiments/R152_R148v2_SafeAdaptivePSF')
+MODEL_ROOT=Path(str(PROJECT_ROOT / 'Experiments/R152_R148v2_SafeAdaptivePSF'))
 sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as backend
 sys.path.insert(0,str(MODEL_ROOT))
@@ -38,11 +39,11 @@ def main(magnification='20x',optical_mode='native'):
         assert sha(MODEL_ROOT/name)==expected,name
     cfg=load(MODEL_ROOT/'config/model.json'); lock=load(MODEL_ROOT/'calibration/BANK_LOCK.json')
     receipt=load(MODEL_ROOT/'runs/formal_8192/training_complete.json')['deployed_checkpoint']
-    assert sha(receipt['path'])==receipt['sha256']
-    assert sha(cfg['base_checkpoint'])==cfg['base_checkpoint_sha256']
+    assert sha(str(PROJECT_ROOT / receipt['path']))==receipt['sha256']
+    assert sha(str(PROJECT_ROOT / cfg['base_checkpoint']))==cfg['base_checkpoint_sha256']
     assert sha(MODEL_ROOT/cfg['psf_bank'])==lock['bank_sha256'] and lock['object_um_per_px']==0.1725
     device='cuda' if torch.cuda.is_available() else 'cpu'
-    cp=torch.load(receipt['path'],map_location='cpu',weights_only=False)
+    cp=torch.load(str(PROJECT_ROOT / receipt['path']),map_location='cpu',weights_only=False)
     assert cp['model_config']==cfg
     model=Model(cfg,MODEL_ROOT).to(device).eval();model.load_state_dict(cp['model'],strict=True)
     assert float(model.deployment_scale)==1
@@ -65,7 +66,7 @@ def main(magnification='20x',optical_mode='native'):
         base=np.asarray(spec['centers'],float);pitch=float(spec['pitch_px']);radius=float(spec['radius_px']);scale=float(spec['object_um_per_px'])
         psf=np.asarray(backend.loadmat(backend.SWEEP_ROOT/f'{mag}_deconvolution_sweep.mat',squeeze_me=True)['psf'],float)
         for fi in frameids:
-            source=Path(spec['raw_dir'])/f'frame_{fi:04d}.bmp'; expected=manifests.loc[(seq,fi),'sha256']
+            source=Path(PROJECT_ROOT / spec['raw_dir'])/f'frame_{fi:04d}.bmp'; expected=manifests.loc[(seq,fi),'sha256']
             assert sha(source)==expected
             raw=backend.load_grayscale(source)
             outputdir=OUT/'reconstruction'/seq;outputdir.mkdir(parents=True,exist_ok=True)

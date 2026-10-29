@@ -2,7 +2,7 @@
 
 This package contains 202 frames from:
 
-`D:\NTU_ImageDataset\Pitch1um_Y_100\Cropped_Output`
+`Shared_Sources/NTU_Originals/Pitch1um_Y_100/Cropped_Output`
 
 The three arms use the same normalized names and order:
 

@@ -14,12 +14,13 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "config" / "capability_validation_20260812.json"
 INFERENCE = ROOT / "inference" / "reconstruct.py"
-R91_HELPER = Path(r"D:\GMM_2_Final\Experiments\R91_DetailDecoupledScratch\scripts\run_r91_capability_validation.py")
+R91_HELPER = Path(str(PROJECT_ROOT / 'Experiments/R91_DetailDecoupledScratch/scripts/run_r91_capability_validation.py'))
 EPOCH = 80
 
 
@@ -122,20 +123,20 @@ def summarize_by_magnification(table: pd.DataFrame) -> pd.DataFrame:
 
 def main() -> int:
     protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
-    results = Path(protocol["output_root"])
+    results = Path(PROJECT_ROOT / protocol["output_root"])
     recon_root = results / "reconstructions_fp32"
     tables = results / "tables"
     figures = results / "figures"
-    checkpoint = Path(protocol["checkpoint_root"]) / f"epoch_{EPOCH:03d}.pth.tar"
+    checkpoint = Path(PROJECT_ROOT / protocol["checkpoint_root"]) / f"epoch_{EPOCH:03d}.pth.tar"
     helper = load_module("r92_r91_validation_helpers", R91_HELPER)
     inference = load_module("r92_capability_inference", INFERENCE)
     helper.PRIMARY_AMP = False
 
     required_hashes = {
         checkpoint: protocol["checkpoint_sha256"],
-        Path(protocol["model_file"]): protocol["model_file_sha256"],
-        Path(protocol["inference_file"]): protocol["inference_file_sha256"],
-        Path(protocol["training_summary"]): protocol["training_summary_sha256"],
+        Path(PROJECT_ROOT / protocol["model_file"]): protocol["model_file_sha256"],
+        Path(PROJECT_ROOT / protocol["inference_file"]): protocol["inference_file_sha256"],
+        Path(PROJECT_ROOT / protocol["training_summary"]): protocol["training_summary_sha256"],
     }
     for path, expected in required_hashes.items():
         if not path.is_file() or helper.sha256_file(path) != str(expected).lower():

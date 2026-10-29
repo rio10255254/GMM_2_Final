@@ -2,7 +2,7 @@
 from pathlib import Path
 import subprocess
 ROOT=Path(__file__).resolve().parent
-PYTHON='C:/Users/Rio/anaconda3/python.exe'
+PYTHON='python'
 CHECKPOINT=''
 INPUT=''
 OUTPUT=''

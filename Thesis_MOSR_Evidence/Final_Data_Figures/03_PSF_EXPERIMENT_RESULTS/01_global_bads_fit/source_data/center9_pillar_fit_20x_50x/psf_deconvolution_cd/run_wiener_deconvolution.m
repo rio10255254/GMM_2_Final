@@ -1,10 +1,11 @@
 function run_wiener_deconvolution()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))));
 % Apply each fitted PSF to a background-normalized pillar-contrast image.
 % One fixed regularization value is used for both magnifications.  It is
 % selected on held-out calibration imagery and is not tuned against CD.
 
-figure_root = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\figures\center9_pillar_fit_20x_50x';
-fit_root = 'D:\GMM_2_Final\PSF_Fitting\output\deconvolution_baseline_psf_20260715';
+figure_root = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x');
+fit_root = fullfile(PROJECT_ROOT, 'PSF_Fitting/output/deconvolution_baseline_psf_20260715');
 source_root = fileparts(mfilename('fullpath'));
 
 cfg = struct('label', {'20x', '50x'});

@@ -17,9 +17,10 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-ROOT = Path("D:/GMM_2_Final")
+ROOT = Path(str(PROJECT_ROOT))
 OUT_ROOT = ROOT / "Thesis_MOSR_Evidence/error_type_transformation/sigma_hat_decomposition"
 
 

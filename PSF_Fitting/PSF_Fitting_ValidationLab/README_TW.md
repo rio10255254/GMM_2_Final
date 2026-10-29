@@ -62,14 +62,14 @@
 PowerShell：
 
 ```powershell
-Set-Location D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab
+Set-Location PSF_Fitting/PSF_Fitting_ValidationLab
 .\run_validation_lab.ps1
 ```
 
 直接跑目前合理版 full100：
 
 ```powershell
-Set-Location D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab
+Set-Location PSF_Fitting/PSF_Fitting_ValidationLab
 .\run_reasonable_fit.ps1
 ```
 

@@ -1,8 +1,9 @@
 function generate_v18_ch6_early_figures_clean()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))))));
 %GENERATE_V17_CH6_EARLY_FIGURES_ZH Redraw Chapter 6 figures with Chinese labels.
 
 close all;
-outDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v18\figures\early';
+outDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_docx_work/v18/figures/early');
 if ~exist(outDir, 'dir'), mkdir(outDir); end
 
 set(groot, 'defaultFigureColor', 'w');
@@ -12,7 +13,7 @@ set(groot, 'defaultAxesFontSize', 10.5);
 set(groot, 'defaultAxesLineWidth', 0.85);
 set(groot, 'defaultLineLineWidth', 1.5);
 
-root = ['D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\' ...
+root = [[fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures') filesep] ...
     '03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit'];
 figureRoot = fullfile(root, 'figures', 'center9_pillar_fit_20x_50x');
 sourceRoot = fullfile(root, 'source_data', 'center9_pillar_fit_20x_50x');
@@ -34,7 +35,7 @@ for label = ["20x", "50x"]
 end
 
 % Figures 6-4 and 6-5: fitted PSFs.
-fitRoot = 'D:\GMM_2_Final\PSF_Fitting\output\deconvolution_baseline_psf_20260715';
+fitRoot = fullfile(PROJECT_ROOT, 'PSF_Fitting/output/deconvolution_baseline_psf_20260715');
 drawPSF(fullfile(fitRoot, '50x', 'fit_result', 'PSF_fitted_2D_FOVstack.mat'), ...
     '50 倍擬合點擴散函數', fullfile(outDir, 'fig6-04_zh.png'));
 drawPSF(fullfile(fitRoot, '20x', 'fit_result', 'PSF_fitted_2D_FOVstack.mat'), ...
@@ -69,7 +70,7 @@ drawGroupedBars(100.*[summary.raw_max_ringing_ratio, summary.deconvolved_max_rin
     fullfile(outDir, 'fig6-17_zh.png'));
 
 % Figure 6-20: training losses.
-trainingPath = ['D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages\' ...
+trainingPath = [[fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages') filesep] ...
     'V42_SoftLabelSNR_FullStandalone_20260709\results\training_results\' ...
     'training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\' ...
     'V42_SoftLabelSNR_full_training_20260709_202710_val_log_v5.csv'];
@@ -77,7 +78,7 @@ training = readmatrix(trainingPath, 'NumHeaderLines', 1);
 drawTraining(training(:,1), training(:,5:7), fullfile(outDir, 'fig6-20_zh.png'));
 
 % Figures 6-21 and 6-22: full-FOV locators.
-rerunRoot = ['D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\' ...
+rerunRoot = [[fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures') filesep] ...
     '04_V42_NEURAL_NETWORK_RESULTS\source_validation\rerun_20260715\inputs'];
 raw50 = imread(fullfile(rerunRoot, '50x_0p5um_latest', 'frame_0000.bmp'));
 centers50 = [1100.5,642.5;1173.5,642.5;1244.5,642.5;1100.5,714.5; ...

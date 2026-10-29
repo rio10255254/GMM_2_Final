@@ -8,7 +8,7 @@
   "initial_parameter_sha256": "a5d458571e2bb687b479194c8f29fbd8694256d9494470a296d3b87e497d9c62",
   "architecture_sha256": "39d1923c9ba41b8d38d324ab6f5236e515d8632025d90fcc8f2ef0fd009cf90e",
   "trainer_sha256": "d71f3fcb9009f28652d727d61b50e46979f8c4d7d995eac57bcd90881ca5c2e4",
-  "locked_design_sha256": "9fea66f07c1e661ffe23f23578d9aabeaae391167d79a9e566321b74f6fa2a5d",
+  "locked_design_sha256": "31872e3c38c942470c6a773744fb9d282e5c341421b60a8de39ee1d79f74fc97",
   "acceptance_gates_sha256": "b89585c5e7193ca7506b5c90492b7a9dd9ef81a802ebb9c9536798e154159625",
   "authorization_sha256": "2b473f2f27a13ff168f335896a0f4945656ee5536da28f13a8ff92aceffb0b2e",
   "dataset_content_sha256": "bcce2a7b3e4b4c87db2ae396d8786dbd51607208d8ab2efa55accf37f3f2d988",
@@ -51,7 +51,7 @@
   },
   "optical_statistics_sha256": "dd7908e04c537f7a169c104a328f4c6f5908fc5f29b6cc28f501521c8ddbad4f",
   "real_optical_aggregate_statistics_only": true,
-  "implementation_lock_sha256": "15bdd3caa5d4aa16ed34fa38203a6279bd2ecdf02f902242572f5a53fba88e01",
+  "implementation_lock_sha256": "95aa4e76925954185241fec0abddb7cbac48686ca7a0d19dcba63a1950fb40b9",
   "checkpoint_loaded": false,
   "resume_source": null,
   "teacher_used": false,
@@ -59,7 +59,7 @@
   "optimizer_fresh": true,
   "ema_initialized_from_random_model": true,
   "started_at": "2026-08-11T18:02:03.924104",
-  "run_dir": "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\weights\\formal\\seed_910041\\R91_scratch_seed910041_20260811_180203",
+  "run_dir": "Experiments/R91_DetailDecoupledScratch/weights/formal/seed_910041/R91_scratch_seed910041_20260811_180203",
   "baseline_gpu_used_gib": 1.55908203125,
   "gpu_total_gib": 47.98779296875,
   "detail_head_learning_rate_multiplier": 1.25,
@@ -336,18 +336,18 @@
     "gpu_estimated_peak_free_gib": 20.9599609375
   },
   "synthetic_preview_paths": [
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\synthetic_live_validation\\epoch_060\\validation_00_textured_general_geometry.png",
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\synthetic_live_validation\\epoch_060\\validation_01_identity_and_detail_guard.png",
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\synthetic_live_validation\\epoch_060\\validation_02_exposure_coherent_bundle.png",
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\synthetic_live_validation\\epoch_060\\validation_03_difficult_contour.png",
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\synthetic_live_validation\\epoch_060\\validation_04_cross_tile_and_dense.png",
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\synthetic_live_validation\\epoch_060\\validation_05_signed_subpixel_motion.png",
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\synthetic_live_validation\\epoch_060\\validation_06_clean_contour_anchor.png"
+    "Experiments/R91_DetailDecoupledScratch/results/synthetic_live_validation/epoch_060/validation_00_textured_general_geometry.png",
+    "Experiments/R91_DetailDecoupledScratch/results/synthetic_live_validation/epoch_060/validation_01_identity_and_detail_guard.png",
+    "Experiments/R91_DetailDecoupledScratch/results/synthetic_live_validation/epoch_060/validation_02_exposure_coherent_bundle.png",
+    "Experiments/R91_DetailDecoupledScratch/results/synthetic_live_validation/epoch_060/validation_03_difficult_contour.png",
+    "Experiments/R91_DetailDecoupledScratch/results/synthetic_live_validation/epoch_060/validation_04_cross_tile_and_dense.png",
+    "Experiments/R91_DetailDecoupledScratch/results/synthetic_live_validation/epoch_060/validation_05_signed_subpixel_motion.png",
+    "Experiments/R91_DetailDecoupledScratch/results/synthetic_live_validation/epoch_060/validation_06_clean_contour_anchor.png"
   ],
   "real_preview_paths": [
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\real_live_validation\\epoch_060\\20x_mixed_raw_raw_r91_diff.png",
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\real_live_validation\\epoch_060\\50x_array_raw_raw_r91_diff.png",
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\real_live_validation\\epoch_060\\5x_dense_raw_raw_r91_diff.png",
-    "D:\\GMM_2_Final\\Experiments\\R91_DetailDecoupledScratch\\results\\real_live_validation\\epoch_060\\pillar_center9_50x_raw_raw_r91_diff.png"
+    "Experiments/R91_DetailDecoupledScratch/results/real_live_validation/epoch_060/20x_mixed_raw_raw_r91_diff.png",
+    "Experiments/R91_DetailDecoupledScratch/results/real_live_validation/epoch_060/50x_array_raw_raw_r91_diff.png",
+    "Experiments/R91_DetailDecoupledScratch/results/real_live_validation/epoch_060/5x_dense_raw_raw_r91_diff.png",
+    "Experiments/R91_DetailDecoupledScratch/results/real_live_validation/epoch_060/pillar_center9_50x_raw_raw_r91_diff.png"
   ]
 }

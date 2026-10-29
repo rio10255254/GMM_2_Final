@@ -4,6 +4,7 @@ import numpy as np
 import torch
 from training.dataset import Scenes as ControlScenes
 from training.base import CONFIG,FamilyOrder,flatten,fine_reliability
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 class Scenes(ControlScenes):
     def __init__(self,split='train',epoch=0,limit=0,arm='A',**kwargs):
@@ -27,7 +28,7 @@ class Scenes(ControlScenes):
             # Consume the same original RNG draws; only affine radiometry changes.
             rng.uniform(.8,1.15);rng.uniform(-.03,.03);shared_noise=float(rng.uniform(*CONFIG['data']['noise_sigma_gray']))/255
         else:
-            package=Path(CONFIG['data']['package_root'])
+            package=Path(PROJECT_ROOT / CONFIG['data']['package_root'])
             target=[np.load(package/record['target_'+side]).astype(np.float32)/255 for side in ['a','b']]
             source=[np.load(package/record['source_'+side]).astype(np.float32) for side in ['a','b']]
             sdf=np.stack([np.load(package/record['sdf_'+s]).astype(np.float32) for s in ['a','b']])

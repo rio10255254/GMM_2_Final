@@ -1,11 +1,12 @@
 from pathlib import Path
 import json,hashlib,numpy as np,pandas as pd,shutil,datetime
-P=Path(r'D:\GMM_2_Final\Experiments\R137_WeakPSFFeature');repo=P.parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+P=Path(str(PROJECT_ROOT / 'Experiments/R137_WeakPSFFeature'));repo=P.parents[1]
 def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def save(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2),encoding='utf-8')
 for rel,h in load(P/'config/source_lock.json').items():assert sha(P/rel)==h,rel
-for x in load(P/'config/protected_sources.json'):assert sha(x['path'])==x['sha256'],x['path']
+for x in load(P/'config/protected_sources.json'):assert sha(str(repo / x['path']))==x['sha256'],str(repo / x['path'])
 t=load(P/'runs/formal_8192/training_complete.json');assert t['unique_updates']==8192 and sha(t['final_checkpoint']['path'])==t['final_checkpoint']['sha256']
 rows=[json.loads(s) for s in (P/'runs/formal_8192/updates.jsonl').read_text().splitlines()];assert [r['step'] for r in rows]==list(range(1,8193))
 C=pd.read_csv(P/'results/comparison/all_circles.csv');D=pd.read_csv(P/'results/comparison/all_displacements.csv');assert len(C)==33480 and len(D)==7200

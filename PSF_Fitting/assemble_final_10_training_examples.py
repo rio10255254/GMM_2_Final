@@ -6,9 +6,10 @@ import json
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Slide_Assets\Training_Data_Representatives")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Slide_Assets/Training_Data_Representatives'))
 SELECTED = ROOT / "selected"
 OUTPUT = ROOT / "Final_10_Representative_Categories"
 

@@ -1,7 +1,8 @@
 function evaluate_sem()
-root='D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial';out=fullfile(root,'results','sem');
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
+root=fullfile(PROJECT_ROOT, 'Experiments/R121_BoundaryAnchorFactorial');out=fullfile(root,'results','sem');
 assert(isfile(fullfile(out,'render_manifest.json')));assert(~isfile(fullfile(out,'measurements.csv')));
-old=load('D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat');
+old=load(fullfile(PROJECT_ROOT, 'Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat'));
 alt=load(fullfile(root,'results/pitch_matched_reference.mat'));
 matrix=jsondecode(fileread(fullfile(root,'results/matrix_finished_v2.json'))); methods=cell(1,9);methods{1}='Raw';for j=1:8,methods{j+1}=matrix.runs(j).run_id;end
 refs={'historical','pitch_matched'};n=9*12*36*2;method=strings(n,1);reference=strings(n,1);exposure=zeros(n,1);pillar=zeros(n,1);valid=false(n,1);failure=strings(n,1);
@@ -9,7 +10,7 @@ boundary=nan(n,1);signed_area=nan(n,1);hd95=nan(n,1);k=0;raw_parity=zeros(36,12)
 for m=1:9
  for e=1:12
   exp=e+12;
-  if m==1,source=sprintf('D:/GMM_2_Final/Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/%d.bmp',exp);
+  if m==1,source=sprintf(fullfile(PROJECT_ROOT, 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/%d.bmp'),exp);
   else,source=fullfile(out,'recon',methods{m},[num2str(exp) '.png']);end
   image=imread(source);
   for r=1:6

@@ -30,6 +30,7 @@ from infer_modern_baseline import (  # noqa: E402
     load_model as load_modern_model,
     reconstruct_tiled,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 BASE_CHECKPOINT = (
@@ -45,8 +46,7 @@ MOSR_CHECKPOINT = (
     / "epoch_120.pth.tar"
 )
 FULL_FRAME = Path(
-    r"D:\GMM_2_Final\20260702_100MG_displacement_analysis"
-    r"\raw_inputs\x_0p5um\bmp\frame_0000.bmp"
+    str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp')
 )
 
 

@@ -38,10 +38,10 @@ This means R61 is not scratch output. It should be read as a candidate model fam
 
 ## Links To Lab/Thesis Evidence
 
-- Step working analysis: `D:\GMM_2_Final\Step_analysis_20260623`
-- Step curated evidence: `D:\GMM_2_Final\Step_analysis_20260623\_curated_final_20260624`
-- Thesis evidence entry: `D:\GMM_2_Final\Thesis_MOSR_Evidence\Experiments\20260624_STEP_boundary_displacement_cd_validation`
-- Central archive: `D:\GMM_2_Final\_MOSR_Project_Archive_20260624`
+- Step working analysis: `Step_analysis_20260623`
+- Step curated evidence: `Step_analysis_20260623/_curated_final_20260624`
+- Thesis evidence entry: `Thesis_MOSR_Evidence/Experiments/20260624_STEP_boundary_displacement_cd_validation`
+- Central archive: `_MOSR_Project_Archive_20260624`
 
 ## Guardrails
 

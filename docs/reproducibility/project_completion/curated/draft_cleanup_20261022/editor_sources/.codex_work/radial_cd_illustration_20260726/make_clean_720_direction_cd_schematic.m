@@ -1,12 +1,13 @@
 function make_clean_720_direction_cd_schematic()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))))))));
 %MAKE_CLEAN_720_DIRECTION_CD_SCHEMATIC
 % Clean two-panel explanatory figure. The supplied annotated P29 image is
 % placed unchanged at left; the right panel uses the actual current radial
 % averaging rule on the corresponding Raw image.
 
 annotatedImagePath = 'C:\Users\Rio\AppData\Local\Temp\codex-clipboard-ebcfb69b-f3cf-4756-b66f-7d1e574941fb.png';
-rawImagePath = 'D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp\frame_0000.bmp';
-outputDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_work\radial_cd_illustration_20260726';
+rawImagePath = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
+outputDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_work/radial_cd_illustration_20260726');
 outputPath = fullfile(outputDir, '720_direction_radial_cd_clean_schematic_50x_P29.png');
 if ~isfolder(outputDir), mkdir(outputDir); end
 

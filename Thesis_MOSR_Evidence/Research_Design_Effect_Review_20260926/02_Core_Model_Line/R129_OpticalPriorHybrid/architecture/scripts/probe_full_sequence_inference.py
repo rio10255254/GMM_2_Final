@@ -5,9 +5,10 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from common import load,save,record,sha,now,REPO
 import cv2,numpy as np,torch
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 def main():
     out=ROOT/'results/continuous_lsc';out.mkdir(exist_ok=False)
-    pkg=Path(load(ROOT/'config/standalone_build.json')['path']);sys.path.insert(0,str(pkg));import runtime
+    pkg=Path(PROJECT_ROOT / load(ROOT/'config/standalone_build.json')['path']);sys.path.insert(0,str(pkg));import runtime
     from model.inference_policy import guard
     cp=pkg/'results/training/r129_long_01/checkpoints/step08192.pth'
     assert sha(cp)=='086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd'

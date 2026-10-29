@@ -6,9 +6,10 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260710_v42_full_validation\circle_round1")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/20260710_v42_full_validation/circle_round1'))
 CASES = {
     "raw": ROOT / "inputs_first50_crop2048",
     "v42_e120": ROOT / "reconstructions_crop2048" / "reconstruct_progress_epoch_120_in_inputs_first50_crop2048_20260709_202713" / "v42_e120",

@@ -12,12 +12,13 @@ import numpy as np
 import torch
 
 from r109_interventions import render_variants
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[2]
 STRUCTURE = ROOT / "results" / "structure"
 OUT = STRUCTURE / "control_maps"
-MODEL_ROOT = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+MODEL_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 CHECKPOINT = MODEL_ROOT / "weights" / "selected" / "R109.pth"
 EXPECTED_SHA = "77ff8611e764e1350d60592f5d8a25d6786db17897eadce189185cdc4dbc87fc"
 CASES = ("junhua_pitch100", "sem_paired_optical", "real_50x")

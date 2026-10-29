@@ -6,9 +6,10 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT = Path(__file__).resolve().parents[1]
-R146 = Path(r"D:\GMM_2_Final\Experiments\R146_SEMCoreHaloPSF25_MatchedPairs")
+R146 = Path(str(PROJECT_ROOT / 'Experiments/R146_SEMCoreHaloPSF25_MatchedPairs'))
 sys.path.insert(0, str(ROOT))
 from utils import load, now, save, sha
 from verify_package import verify_source_lock
@@ -22,7 +23,7 @@ def main() -> None:
     complete = load(ROOT / "runs/formal_8192/training_complete.json")
     checkpoint = complete["checkpoint"]
     assert pre["passed"] and complete["updates"] == checkpoint["step"] == 8192
-    assert sha(checkpoint["path"]) == checkpoint["sha256"]
+    assert sha(str(PROJECT_ROOT / checkpoint["path"])) == checkpoint["sha256"]
     assert len((ROOT / "runs/formal_8192/updates.jsonl").read_text(encoding="utf-8").splitlines()) == 8192
     assert load(ROOT / "results/reconstruction_complete.json")["images"] == 930
     assert load(ROOT / "results/measurement_complete.json")["circles"] == 8370

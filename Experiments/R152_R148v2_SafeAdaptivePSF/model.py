@@ -6,12 +6,13 @@ import torch
 from torch import nn
 from base_model import Model as BaseModel
 from optical.adaptive_fourier_psf import AdaptiveFourierPSFFusion
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 class Model(nn.Module):
  def __init__(self,cfg,root:Path|None=None):
   super().__init__();self.cfg=dict(cfg);root=Path(root) if root else Path(__file__).resolve().parent
-  base_cfg=json.loads(Path(cfg['base_model_config']).read_text(encoding='utf-8'));self.base=BaseModel(base_cfg,root)
-  checkpoint_path=Path(cfg['base_checkpoint']);checkpoint=torch.load(checkpoint_path,map_location='cpu',weights_only=False);self.base.load_state_dict(checkpoint['model'],strict=True)
+  base_cfg=json.loads(Path(PROJECT_ROOT / cfg['base_model_config']).read_text(encoding='utf-8'));self.base=BaseModel(base_cfg,root)
+  checkpoint_path=Path(PROJECT_ROOT / cfg['base_checkpoint']);checkpoint=torch.load(checkpoint_path,map_location='cpu',weights_only=False);self.base.load_state_dict(checkpoint['model'],strict=True)
   for parameter in self.base.parameters():parameter.requires_grad_(False)
   self.base.eval();self.psf_fusion=AdaptiveFourierPSFFusion(cfg,root/cfg['psf_bank'])
   maximum=float(cfg['safe_scale_max']);initial=float(cfg['safe_scale_initial']);fraction=initial/maximum

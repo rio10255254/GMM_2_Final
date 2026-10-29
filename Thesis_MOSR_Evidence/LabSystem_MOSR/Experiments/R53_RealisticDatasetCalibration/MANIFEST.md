@@ -17,8 +17,8 @@
 
 ## Data Packages
 
-- Train: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r53_realistic_dataset_calibration\r53_realistic_calibrated_train_6000`
-- Validation: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r53_realistic_dataset_calibration\r53_realistic_calibrated_val`
+- Train: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r53_realistic_dataset_calibration/r53_realistic_calibrated_train_6000`
+- Validation: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r53_realistic_dataset_calibration/r53_realistic_calibrated_val`
 
 ## Training Runs
 
@@ -40,12 +40,12 @@
 - Dataset audit JSON: `results/dataset_audit/r53_dataset_audit.json`
 - Dataset contact sheet: `results/dataset_audit/r53_train_contact_sheet.png`
 - Formal log pointer: `results/formal_training_logs/latest_formal_training_log.txt`
-- R53 reconstruction outputs: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\r53_reconstruction_outputs`
-- R53 corner validation artifacts: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20250605_checkboard_external_gmf_prepare\corner_geometry_validation_r53_20260616`
+- R53 reconstruction outputs: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/r53_reconstruction_outputs`
+- R53 corner validation artifacts: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r53_20260616`
 
 ## Verification
 
-- `C:\Users\Rio\anaconda3\python.exe -m pytest D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R53_RealisticDatasetCalibration\tests -q`
+- `C:\Users\Rio\anaconda3\python.exe -m pytest Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/tests -q`
 - `C:\Users\Rio\anaconda3\python.exe LabSystem_MOSR\Experiments\R53_RealisticDatasetCalibration\scripts\r53_realistic_dataset_data.py validate-splits --profile all`
 - `C:\Users\Rio\anaconda3\python.exe LabSystem_MOSR\Experiments\R53_RealisticDatasetCalibration\scripts\launch_r53.py --candidate r53_realistic_calibrated_scratch --num-epoch 100 --dry-run`
 - `C:\Users\Rio\anaconda3\python.exe -u LabSystem_MOSR\Experiments\R53_RealisticDatasetCalibration\scripts\launch_r53.py --candidate r53_realistic_calibrated_scratch --num-epoch 2 --batch-size 32 --val-batch-size 8 --num-workers 4 --max-train-batches 2 --val-ratio 0.01 --run-suffix stability_e002_b002_w04`
@@ -70,4 +70,4 @@ D 槽保留內容 121 檔及 104 個原成果／程式／驗證檔再次核對�
 恢復時由 H 的 payload 按 LabSystem 相對路徑複製回原位置，再按 source_manifest.csv 核對。
 要重做歷史訓練，需先恢復資料，或在啟動程式明確指定封存資料位置。
 完整副本：H:\GMM_2_Final_Archive\lab_system\R53_RealisticDatasetCalibration\20260926_full_history
-本次實際移除與核對：D:/GMM_2_Final/docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。
+本次實際移除與核對：docs/operations/storage_execution_20260926/native_cleanup_execution.json、post_cleanup_verification.json。

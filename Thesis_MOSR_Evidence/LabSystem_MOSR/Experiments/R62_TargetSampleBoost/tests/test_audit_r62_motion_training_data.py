@@ -3,10 +3,11 @@ from __future__ import annotations
 import csv
 import sys
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 SCRIPTS_DIR = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R62_TargetSampleBoost\scripts"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/scripts')
 )
 sys.path.insert(0, str(SCRIPTS_DIR))
 

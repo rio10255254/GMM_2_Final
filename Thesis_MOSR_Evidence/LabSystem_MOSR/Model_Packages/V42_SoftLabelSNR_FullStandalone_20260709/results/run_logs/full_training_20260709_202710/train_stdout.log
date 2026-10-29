@@ -1,6 +1,6 @@
 [RUN] tag=V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713 model=V42_SoftLabelSNR_full_training_20260709_202710
-[RUN] progress_dir=D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages\V42_SoftLabelSNR_FullStandalone_20260709\results\training_results\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713
-[RUN] weights_dir=D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages\V42_SoftLabelSNR_FullStandalone_20260709\results\training_results\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\weights
+[RUN] progress_dir=Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713
+[RUN] weights_dir=Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/weights
 [REPRO] mode=OFF seed=1337 deterministic=OFF tf32=ON amp=OFF fixed_split=OFF num_workers=4
 [SEED] active=1261200 cudnn_deterministic=0 cudnn_benchmark=1 tf32_matmul=1 tf32_cudnn=1
 [FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=2 batch_log_every=5 csv_flush_n=50
@@ -9,7 +9,7 @@
 [INFO] Pre-flight sanity check disabled.
 [PHYS] disabled: PHYS_FORWARD_ENABLE=False
 [DATA] include_subdirs=('stage_34_r61_legacy_shape', 'stage_35_r61_sequence_guard', 'stage_36_r61_sem_truth_anchor', 'stage_37_r61_universal_synthetic', 'stage_38_r61_motion_synthetic', 'stage_39_r61_motion_texture_synthetic', 'stage_40_r61_step_guard_motion_texture_synthetic', 'stage_40_r62_target_real_pseudo', 'stage_40_r62_real_motion_pair', 'stage_40_r62_target_selfshift_motion_pair', 'stage_40_r62_gmf_roi_selfshift_motion_pair', 'stage_40_r62_lowmag_dualroi_selfshift_pair', 'stage_40_r62_multimag_raw_motion_guard_pair', 'stage_40_r62_stability_shape_teacher_pair') -> remaining=11254
-[DATA][SPLIT] load external fixed split: D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages\V42_SoftLabelSNR_FullStandalone_20260709\training_data\splits\grouped_seed1337_val120
+[DATA][SPLIT] load external fixed split: Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/training_data/splits/grouped_seed1337_val120
 [DATA][GROUP_BALANCE] groups=60 samples=9857->12321 group_size=58..475 missing_manifest=0 keys=['role', 'target_dataset', 'magnification_hint', 'shape_family']
 [INFO] Train batches/epoch: 1540
 [INFO] Validation: ENABLED (VAL_RATIO=0.12, val batches=699)
@@ -17,7 +17,7 @@
 [INFO] Sequence validation: ENABLED (pairs=1000, batches=500)
 [INFO] Sequence pairs: ENABLED (pairs=2400, batches=1200, batch_size=2)
 [INFO] R44 motion pairs: ENABLED (pairs=3600, batches=1800, batch_size=2)
-[INFO] Resuming training from explicit checkpoint: D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages\V42_SoftLabelSNR_FullStandalone_20260709\weights\base_v41_standalone_best_tradeoff.pth.tar
+[INFO] Resuming training from explicit checkpoint: Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/weights/base_v41_standalone_best_tradeoff.pth.tar
 [LOAD] model: strict=False fallback, missing=['quality_gate.offset.0.weight', 'quality_gate.offset.0.bias', 'quality_gate.offset.2.weight', 'quality_gate.offset.2.bias'], unexpected=[], skipped_shape=[], expanded_shape=[]
 [LOAD] ema_model: strict=False fallback, missing=['quality_gate.offset.0.weight', 'quality_gate.offset.0.bias', 'quality_gate.offset.2.weight', 'quality_gate.offset.2.bias'], unexpected=[], skipped_shape=[], expanded_shape=[]
 [INFO] Optimizer state reset after checkpoint load.
@@ -25,9 +25,9 @@
 [INFO] Resumed from epoch 0
 [FINETUNE] trainable_name_patterns=['quality_gate', 'boundary_adapter', 'p1', 'out'] trainable=26 frozen=101
 [LOAD] model: strict=False fallback, missing=['quality_gate.offset.0.weight', 'quality_gate.offset.0.bias', 'quality_gate.offset.2.weight', 'quality_gate.offset.2.bias'], unexpected=[], skipped_shape=[], expanded_shape=[]
-[KD] loaded frozen REGION_KD teacher: D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages\V42_SoftLabelSNR_FullStandalone_20260709\weights\base_v41_standalone_best_tradeoff.pth.tar
+[KD] loaded frozen REGION_KD teacher: Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/weights/base_v41_standalone_best_tradeoff.pth.tar
 [REGION_KD] enabled: weight=36.0000 band_px=12.00 warmup_epoch=0
-[WARN] monitor image not found. Using first train src: D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages\V42_SoftLabelSNR_FullStandalone_20260709\training_data\src\stage_34_r61_legacy_shape\ring\0001_stage_08_annulus_focus_0701.bmp
+[WARN] monitor image not found. Using first train src: Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/training_data/src/stage_34_r61_legacy_shape/ring/0001_stage_08_annulus_focus_0701.bmp
 [MONITOR_REF] edgeW_ref=4.1819 hf_ref=0.0011 cb_ref=0.024642
 -> Epoch 0 Val Done. Total=0.265715 | Rec=0.029589 | Edge=0.274415 | EdgeProf=0.000000 | PSNR=15.24 | SSIM=0.7076 | FFTShape=0.000000 | CB=0.000000 | HF=0.003
 [MONITOR][E000] range[0.1101,0.9613] mean=0.4913 std=0.1824 p95=0.8628 p99=0.9139 cb=0.02464 hf_ratio=0.001 edgeW=4.1819

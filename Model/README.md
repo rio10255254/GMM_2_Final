@@ -169,7 +169,7 @@ Python 3.12，需 NVIDIA GPU（CUDA）進行訓練。
 **執行方式（從 Model/ 資料夾）：**
 
 ```bash
-cd d:\GMM_2_Final\Model
+cd Model
 python GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py
 ```
 
@@ -227,7 +227,7 @@ Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_{times
 **執行方式（從 Model/ 資料夾）：**
 
 ```bash
-cd d:\GMM_2_Final\Model
+cd Model
 python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py
 ```
 
@@ -342,7 +342,7 @@ A: 確認 `PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
 A: `../Traing_Progress/` 下沒有完整的 training run。可透過 `--weights` 明確指定路徑：
 ```bash
 python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py \
-    --weights d:\GMM_2_Final\Traing_Progress\training_progress_xxx\weights\best_tradeoff.pth.tar
+    --weights Traing_Progress/training_progress_xxx/weights/best_tradeoff.pth.tar
 ```
 
 **Q: 為什麼舊 checkpoint 沒有跟著新的 PSF 更新？**
@@ -435,7 +435,7 @@ GMF-style localization.
 Typical training command:
 
 ```bash
-cd d:\GMM_2_Final\Model
+cd Model
 python GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py
 ```
 
@@ -465,7 +465,7 @@ The training loss is a weighted mixture of:
 Typical inference command:
 
 ```bash
-cd d:\GMM_2_Final\Model
+cd Model
 python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py
 ```
 

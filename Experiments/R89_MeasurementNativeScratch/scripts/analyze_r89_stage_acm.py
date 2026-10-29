@@ -13,9 +13,10 @@ from scipy import ndimage
 from scipy.io import loadmat
 from scipy.stats import wilcoxon
 from skimage.metrics import structural_similarity
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch")
+ROOT = Path(str(PROJECT_ROOT / 'Experiments/R89_MeasurementNativeScratch'))
 EPOCHS = [5, 15, 35, 55, 75, 100]
 TOLERANCE = 1e-6
 
@@ -722,11 +723,11 @@ def main() -> int:
 
     real_specs = {
         "5x": {
-            "raw": Path(r"D:\GMM_2_Final\20260704_5x\1um\Image__2026-07-04__17-51-47.bmp"),
+            "raw": Path(str(PROJECT_ROOT / '20260704_5x/1um/Image__2026-07-04__17-51-47.bmp')),
             "name": "Image__2026-07-04__17-51-47.bmp",
         },
         "20x": {
-            "raw": Path(r"D:\GMM_2_Final\20260704_20x\1um\Image__2026-07-04__18-10-19.bmp"),
+            "raw": Path(str(PROJECT_ROOT / '20260704_20x/1um/Image__2026-07-04__18-10-19.bmp')),
             "name": "Image__2026-07-04__18-10-19.bmp",
         },
     }

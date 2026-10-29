@@ -7,8 +7,8 @@ $ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $inferScript = Join-Path $projectRoot "Model\GeoEdgeAlignSR_v1_Infer_TTA.py"
-$weightsPath = "D:\GMM_2_Final\Traing_Progress\organized_20260316\round26\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408\weights\best_tradeoff.pth.tar"
-$reconRoot = "D:\GMM_2_Final\Traing_Progress\organized_20260316\tta_experiment\r26_tta_$TtaMode"
+$weightsPath = "$ProjectRoot\Traing_Progress\organized_20260316\round26\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408\weights\best_tradeoff.pth.tar"
+$reconRoot = "$ProjectRoot\Traing_Progress\organized_20260316\tta_experiment\r26_tta_$TtaMode"
 
 $datasets = @(
     @{

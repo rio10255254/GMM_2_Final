@@ -4,13 +4,13 @@
   "cd_is_secondary": true,
   "external_gmf_is_last_compatibility_check": true,
   "suites": {
-    "R73": "D:/GMM_2_Final/Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val",
-    "R74": "D:/GMM_2_Final/Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val",
+    "R73": "Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val",
+    "R74": "Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val",
     "SEM": "H:/From_2TB_D_disk/13_thesis/SEM_data",
-    "real_5x": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp",
-    "real_20x": "D:/GMM_2_Final/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
-    "real_50x": "D:/GMM_2_Final/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
-    "junhua_raw": "D:/NTU_ImageDataset/Pitch1um_Y_100/Raw"
+    "real_5x": "20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp",
+    "real_20x": "20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
+    "real_50x": "20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
+    "junhua_raw": "Shared_Sources/NTU_Originals/Pitch1um_Y_100/Raw"
   },
   "tile_tests": {
     "core_sizes": [768, 1024],

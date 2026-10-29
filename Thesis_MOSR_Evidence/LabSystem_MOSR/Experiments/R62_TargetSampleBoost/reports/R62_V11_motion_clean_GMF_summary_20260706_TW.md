@@ -32,13 +32,13 @@
 
 稽核工具輸出：
 
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R62_TargetSampleBoost\reports\r62_motion_training_data_audit_20260706`
+`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports/r62_motion_training_data_audit_20260706`
 
 ## 建立的乾淨資料包
 
 新資料包：
 
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r62_target_sample_boost\hs100mg_basler\r62_target_sample_boost_v4_motion_clean`
+`Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r62_target_sample_boost/hs100mg_basler/r62_target_sample_boost_v4_motion_clean`
 
 資料數量：
 
@@ -75,7 +75,7 @@ V7 best checkpoint
 
 訓練輸出：
 
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_motion_clean_v11_v11_motion_clean_from_v7_probe_e1_mtb300_b8_20260706_20260706_031435`
+`Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_motion_clean_v11_v11_motion_clean_from_v7_probe_e1_mtb300_b8_20260706_20260706_031435`
 
 重要注意：
 

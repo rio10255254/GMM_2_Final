@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,9 +19,9 @@ PROTOCOL = ROOT / "config" / "capability_validation_20260811.json"
 RESULTS = ROOT / "results" / "capability_diagnosis_20260811"
 TABLES = RESULTS / "tables"
 FIGURES = RESULTS / "figures"
-RAW_ACM = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\tables\primary_contour_metrics.csv")
-R90_E45_ACM = Path(r"D:\GMM_2_Final\Experiments\R90_ExposureCoherentScratch\results\early_stop_validation\sem_acm\E045\tables\primary_contour_metrics.csv")
-BASE_MASK = Path(r"D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch\results\final_validation\sem_acm_epoch100\acm_validation\results\masks\acm_primary_masks.mat")
+RAW_ACM = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/tables/primary_contour_metrics.csv'))
+R90_E45_ACM = Path(str(PROJECT_ROOT / 'Experiments/R90_ExposureCoherentScratch/results/early_stop_validation/sem_acm/E045/tables/primary_contour_metrics.csv'))
+BASE_MASK = Path(str(PROJECT_ROOT / 'Experiments/R89_MeasurementNativeScratch/results/final_validation/sem_acm_epoch100/acm_validation/results/masks/acm_primary_masks.mat'))
 
 METRICS = {
     "iou": "higher",

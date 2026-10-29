@@ -1,7 +1,7 @@
 # R146 來源與執行身分
 
 - 類型：自包含研究對照；狀態：研究版 PSF、768 組配對、8192 次從零訓練、930 張實拍及 8370 顆圓量測完成，`results/final_audit.json` 通過；研究版 PSF 不升級正式用途。
-- 指定 MAT：`D:\GMM_2_Final\PSF_Fitting\output\20260924_center9_psf\model_search\PSF_20260924_SEM_core_halo_25_RESEARCH.mat`，SHA-256 `0d85d63c08a943a56d6fd74d2ce250b0d656d1170e7ab185e95d2ff369a797e6`。檔案明記 `research_only=1`，本輪不提升它為正式 PSF。
+- 指定 MAT：`PSF_Fitting/output/20260924_center9_psf/model_search/PSF_20260924_SEM_core_halo_25_RESEARCH.mat`，SHA-256 `0d85d63c08a943a56d6fd74d2ce250b0d656d1170e7ab185e95d2ff369a797e6`。檔案明記 `research_only=1`，本輪不提升它為正式 PSF。
 - 來源檢查：`model_search/verification.json` 通過，25 顆 101×101 非負、單顆總和 1、峰值與強度重心置中；物面 0.1725 µm/像素，九顆 SEM 編號為 36、35、34／30、29、28／24、23、22。預先封存的 E 組六張照片、18 個留出圓外觀中，研究版均優於原 BADS 與單一高斯；同九顆實物，不是新樣品準確度證明。
 - 本包銀行：`calibration/measured_psf_bank.npz`，由指定 MAT 列優先 5×5 安裝，SHA-256 `efc9d70d6427d82ba84f1371f71b6423f1491a815956412f8d6a627b72b1f843`。真實 SEM 外框用於光學 PSF 擬合，神經清晰答案維持合成場景。
 - 對照：R145、R143 的 768 清晰母場景、分組及逐場景 PSF 索引固定；新銀行與它形成的模糊輸入為本輪變更。原模型架構與光學分支設定不修正。

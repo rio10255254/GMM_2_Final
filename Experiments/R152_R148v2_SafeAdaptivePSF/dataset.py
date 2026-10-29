@@ -6,13 +6,14 @@ import numpy as np
 import torch
 
 from utils import data_config, digest_array, load, sha
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 class Bank:
     def __init__(self, cfg):
         self.cfg = cfg
         reference = data_config()
-        source = Path(reference["source_experiment"])
+        source = Path(PROJECT_ROOT / reference["source_experiment"])
         self.root = source / "data/payload"
         self.geometry_root = source / "data/geometry"
         if sha(self.root / "manifest.json") != reference["payload_manifest_sha256"]:

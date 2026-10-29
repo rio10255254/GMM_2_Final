@@ -15,6 +15,7 @@ import numpy as np
 import pandas as pd
 from skimage.metrics import structural_similarity
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -112,7 +113,7 @@ def appearance_metrics(raw: np.ndarray, model: np.ndarray) -> dict[str, float]:
 
 def fixed_sources(protocol: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     appearance_arm = protocol["arms"]["fixed_real_appearance"]
-    source_config = read_json(Path(appearance_arm["source_config"]))
+    source_config = read_json(Path(PROJECT_ROOT / appearance_arm["source_config"]))
     appearance: list[dict[str, Any]] = []
     for sequence in appearance_arm["sequences"]:
         item = source_config["sequences"][sequence]
@@ -136,7 +137,7 @@ def fixed_sources(protocol: dict[str, Any]) -> tuple[list[dict[str, Any]], list[
     if len(appearance) != int(appearance_arm["expected_frames_per_stage"]):
         raise RuntimeError("Fixed appearance population mismatch")
 
-    live_root = Path(protocol["arms"]["fixed_live_branch_probe"]["input_directory"])
+    live_root = Path(PROJECT_ROOT / protocol["arms"]["fixed_live_branch_probe"]["input_directory"])
     live = []
     for path in sorted(live_root.glob("*.bmp")):
         live.append({"filename": path.name, "source": str(path), "sha256": sha256_file(path)})
@@ -144,7 +145,7 @@ def fixed_sources(protocol: dict[str, Any]) -> tuple[list[dict[str, Any]], list[
         raise RuntimeError("Live branch-probe population mismatch")
 
     sem_arm = protocol["arms"]["sem_contour"]
-    sem_root = Path(sem_arm["optical_inputs"])
+    sem_root = Path(PROJECT_ROOT / sem_arm["optical_inputs"])
     sem = []
     for exposure in sem_arm["exposures"]:
         path = sem_root / f"{int(exposure)}.bmp"
@@ -153,7 +154,7 @@ def fixed_sources(protocol: dict[str, Any]) -> tuple[list[dict[str, Any]], list[
         sem.append({"exposure": int(exposure), "source": str(path), "sha256": sha256_file(path)})
 
     motion_arm = protocol["arms"]["real_motion"]
-    motion_root = Path(motion_arm["ordered_source"])
+    motion_root = Path(PROJECT_ROOT / motion_arm["ordered_source"])
     motion_paths = image_paths(motion_root)
     if len(motion_paths) != int(motion_arm["expected_frames_per_stage"]):
         raise RuntimeError("Motion population mismatch")
@@ -277,12 +278,12 @@ def main() -> int:
     sem_stages = {int(value) for value in protocol["representative_stages"]["sem_contour"]}
     motion_stages = {int(value) for value in protocol["representative_stages"]["real_motion"]}
     all_stages = appearance_stages
-    checkpoint_root = Path(protocol["checkpoint_root"])
+    checkpoint_root = Path(PROJECT_ROOT / protocol["checkpoint_root"])
     checkpoints = {epoch: checkpoint_root / f"epoch_{epoch:03d}.pth.tar" for epoch in all_stages}
     for epoch, checkpoint in checkpoints.items():
         if sha256_file(checkpoint) != str(protocol["checkpoint_sha256"][str(epoch)]).lower():
             raise RuntimeError(f"E{epoch}: checkpoint hash mismatch")
-    if sha256_file(Path(protocol["model_file"])) != str(protocol["model_file_sha256"]).lower():
+    if sha256_file(Path(PROJECT_ROOT / protocol["model_file"])) != str(protocol["model_file_sha256"]).lower():
         raise RuntimeError("R91 model hash mismatch")
 
     appearance, live, sem, motion = fixed_sources(protocol)

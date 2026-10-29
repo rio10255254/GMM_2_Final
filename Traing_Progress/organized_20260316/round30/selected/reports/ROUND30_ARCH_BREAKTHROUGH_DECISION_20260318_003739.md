@@ -3,7 +3,7 @@
 - winner_candidate: r30_b1a1a5_full
 - selected_candidate: r30_b1a1a5_full
 - confirmed: True
-- selected_checkpoint: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r30full_20260317_154449\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30full_20260317_154449/weights/best_tradeoff.pth.tar
 - macro_estimator: edge_band_refine
 - mid_center_ratio_min: 0.2500
 - mid_step_max: 0.4500

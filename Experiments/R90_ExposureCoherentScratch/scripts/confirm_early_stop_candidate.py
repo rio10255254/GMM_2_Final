@@ -14,12 +14,13 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SELECTION = ROOT / "config" / "early_stop_confirmation.json"
-R78_CONFIG = Path(r"D:\GMM_2_Final\Experiments\R78_R75v2_BroadRealMicroscopeGeneralization\config\experiment.json")
-LOCKED_MOTION = Path(r"D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\results\tables\tile_motion_measurements.csv")
+R78_CONFIG = Path(str(PROJECT_ROOT / 'Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/config/experiment.json'))
+LOCKED_MOTION = Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv'))
 LOCKED_MOTION_SHA256 = "3f48cdebfd032e3231c6b1ba6315fd10535125675d99dbbb0f92dfe8a49fb7d4"
 INFERENCE = ROOT / "inference" / "reconstruct.py"
 VALIDATION = ROOT / "scripts" / "validate_real_generalization_epoch055.py"
@@ -92,7 +93,7 @@ def reconstruct_all(inference, model, device: torch.device, config: dict[str, An
     total = sum(int(item["frame_count"]) for item in config["sequences"].values())
     completed = 0
     for sequence, item in config["sequences"].items():
-        sources = image_paths(Path(item["raw_dir"]))
+        sources = image_paths(Path(PROJECT_ROOT / item["raw_dir"]))
         if len(sources) != int(item["frame_count"]):
             raise RuntimeError(f"{sequence}: source count mismatch")
         for source in sources:
@@ -125,7 +126,7 @@ def reconstruct_all(inference, model, device: torch.device, config: dict[str, An
 def evaluate_appearance(validation, config: dict[str, Any]) -> tuple[pd.DataFrame, pd.DataFrame]:
     rows: list[dict[str, Any]] = []
     for sequence, item in config["sequences"].items():
-        raw_paths = image_paths(Path(item["raw_dir"]))
+        raw_paths = image_paths(Path(PROJECT_ROOT / item["raw_dir"]))
         recon_paths = image_paths(RECON / sequence)
         if [path.name for path in raw_paths] != [path.name for path in recon_paths]:
             raise RuntimeError(f"{sequence}: reconstruction identities mismatch")
@@ -161,8 +162,8 @@ def evaluate_appearance(validation, config: dict[str, Any]) -> tuple[pd.DataFram
 
 def tile_consistency(inference, model, device: torch.device, config: dict[str, Any]) -> dict[str, Any]:
     sources = {
-        "5x_0p5um": image_paths(Path(config["sequences"]["5x_0p5um"]["raw_dir"]))[24],
-        "50x_1um": image_paths(Path(config["sequences"]["50x_1um"]["raw_dir"]))[24],
+        "5x_0p5um": image_paths(Path(PROJECT_ROOT / config["sequences"]["5x_0p5um"]["raw_dir"]))[24],
+        "50x_1um": image_paths(Path(PROJECT_ROOT / config["sequences"]["50x_1um"]["raw_dir"]))[24],
     }
     report: dict[str, Any] = {"status": "complete", "halo": 192, "images": {}}
     if device.type == "cuda":
@@ -245,7 +246,7 @@ def comparison_to_existing(motion: pd.DataFrame, appearance: pd.DataFrame) -> di
 def main() -> int:
     selection = read_json(SELECTION)
     config = read_json(R78_CONFIG)
-    checkpoint = Path(selection["checkpoint"])
+    checkpoint = Path(PROJECT_ROOT / selection["checkpoint"])
     if sha256_file(checkpoint) != selection["checkpoint_sha256"]:
         raise RuntimeError("Selected checkpoint hash mismatch")
     if sha256_file(LOCKED_MOTION) != LOCKED_MOTION_SHA256:

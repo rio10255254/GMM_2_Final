@@ -3,8 +3,9 @@ import sys,shutil
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
-    pkg=Path(load(ROOT/'config/standalone_build.json')['path']);dest=pkg/'addons/full_field';dest.mkdir(parents=True,exist_ok=False)
+    pkg=Path(PROJECT_ROOT / load(ROOT/'config/standalone_build.json')['path']);dest=pkg/'addons/full_field';dest.mkdir(parents=True,exist_ok=False)
     shutil.copy2(ROOT/'scripts/sequence_inference.py',dest/'sequence_inference.py')
     script='''"""Full-field trained R129 inference using global optics and context-preserving local computation."""
 import os,sys,argparse,time

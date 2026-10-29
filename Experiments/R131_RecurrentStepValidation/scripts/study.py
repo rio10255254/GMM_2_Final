@@ -26,7 +26,7 @@ def status(p,v):
             temp=p.with_suffix('.writing');temp.write_text(json.dumps(v,ensure_ascii=False),encoding='utf-8');os.replace(temp,p);return
         except PermissionError:time.sleep(.1)
     raise RuntimeError('status write remained locked')
-PLAN=load(OLD/'plan.json'); PKG=Path(PLAN['package'])
+PLAN=load(OLD/'plan.json'); PKG=Path(REPO / PLAN['package'])
 sys.path.insert(0,str(R129/'scripts'))
 from sequence_inference import tiled_prior,predict as original_predict
 from continuous_common import reader
@@ -37,7 +37,7 @@ from model.inference_policy import guard
 
 def model():
     runtime.setup(1319001)
-    p=torch.load(PLAN['checkpoint']['path'],map_location='cpu');runtime.verify_binding(p['binding'])
+    p=torch.load(str(REPO / PLAN['checkpoint']['path']),map_location='cpu');runtime.verify_binding(p['binding'])
     m,_=runtime.create('cuda');m.load_state_dict(p['model'],strict=True);m.eval()
     return m
 
@@ -74,12 +74,12 @@ def tensor(path):
 
 def verify_sources():
     p=load(ROOT/'config/protocol.json')
-    for r in p['protected_sources']:assert sha(r['path'])==r['sha256'],r['path']
+    for r in p['protected_sources']:assert sha(str(REPO / r['path']))==r['sha256'],str(REPO / r['path'])
 
 def prepare():
     for name in ('config','reports','results','runs/launcher_logs'):(ROOT/name).mkdir(parents=True,exist_ok=True)
     panel=load(PKG/'validation/panel.json')
-    protected={str(Path(r['path'])):r for r in PLAN['protected_sources']+[PLAN['checkpoint']]}
+    protected={str(Path(REPO / r['path'])):r for r in PLAN['protected_sources']+[PLAN['checkpoint']]}
     for p in [*PKG.glob('model/*.py'),PKG/'runtime.py',PKG/'validation/panel.json',PKG/'validation/sem_reference.mat',PKG/'validation/reference_circle_core.py',PKG/'validation/readout_helpers.py',PKG/'validation/extract_sem.m',R129/'scripts/sequence_inference.py',R129/'scripts/continuous_common.py',R129/'scripts/common.py',OLD/'plan.json',OLD/'comparison_summary.csv']:
         protected[str(p)]=rec(p)
     for image in panel['images']:
@@ -135,7 +135,7 @@ def infer():
     save(ROOT/'results/inference_started.json',dict(utc=now(),pid=os.getpid(),source=rec(__file__),cases=cases,checkpoint=PLAN['checkpoint']))
     start=time.perf_counter();stats=[]
     for j,c in enumerate(cases):
-        assert sha(c['source']['path'])==c['source']['sha256'];raw,x=tensor(c['source']['path']);previous=None;images=[]
+        assert sha(str(REPO / c['source']['path']))==c['source']['sha256'];raw,x=tensor(str(REPO / c['source']['path']));previous=None;images=[]
         with torch.no_grad():
             for n,y in prefixes(m,x):
                 value=y[0,0].cpu().numpy();image=np.rint(value*255).clip(0,255).astype(np.uint8)

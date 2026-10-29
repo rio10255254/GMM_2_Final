@@ -3,7 +3,7 @@
 - candidate: corridor_macrobridge
 - mode: corridor0p8
 - best_checkpoint_label: checkpoint_0p8
-- best_checkpoint_path: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947\weights\best_tradeoff.pth.tar
+- best_checkpoint_path: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_cmb_20260311_162947/weights/best_tradeoff.pth.tar
 - best_deployment_score: -126.575618
 
 | checkpoint | s0.08 | s0.8 | s8 | deploy |

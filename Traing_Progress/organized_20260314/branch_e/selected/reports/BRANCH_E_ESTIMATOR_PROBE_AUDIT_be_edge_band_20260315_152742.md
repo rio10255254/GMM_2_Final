@@ -1,7 +1,7 @@
 ﻿# Process Probe Audit
 
 - candidate: be_edge_band
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\organized_20260314\branch_e\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_beeb_20260315_152214\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/organized_20260314/branch_e/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_beeb_20260315_152214/weights/best_tradeoff.pth.tar
 - geom_method: edge_band_refine
 - expect_dy: 0.80
 - process_score: -1129.372189

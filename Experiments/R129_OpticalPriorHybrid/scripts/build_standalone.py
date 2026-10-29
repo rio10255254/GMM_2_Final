@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT),str(ROOT/'scripts')]
 from common import *
 import numpy as np,cv2
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     target=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912'
@@ -49,17 +50,17 @@ def main():
     helpers+='\n\n'+extract(REPO/'Experiments/R116_CoherentGeometryAnchorScratch/validation/run_lsc_e42.py',['reset_curvature_cycle'])
     write('validation/readout_helpers.py','import numpy as np\nimport skimage.segmentation.morphsnakes as morphsnakes\n\n'+helpers+'\n')
     write('objectives.py','import math\nimport torch\n\n'+extract(R128/'training/objectives.py',['robust_gray','translated'])+'\n')
-    panel=load(ROOT/'config/real_panel.json');sequences=load(panel['sequence_config']['path'])['sequences']
+    panel=load(ROOT/'config/real_panel.json');sequences=load(str(PROJECT_ROOT / panel['sequence_config']['path']))['sequences']
     sys.path.insert(0,str(R128/'analysis/lsc_comparison'));from measure import reader
     _,scope=reader(load(R128/'results/lsc_comparison/plan.json'));images=[]
     for item in panel['sem']:
-        name=f"sem{item['exposure']}";relative='validation/inputs/'+name+'.png';raw=cv2.imread(item['source']['path'],0)
+        name=f"sem{item['exposure']}";relative='validation/inputs/'+name+'.png';raw=cv2.imread(str(PROJECT_ROOT / item['source']['path']),0)
         p=target/relative;p.parent.mkdir(parents=True,exist_ok=True);assert cv2.imwrite(str(p),raw)
         images.append(dict(name=name,kind='sem',path=relative,sha256=sha(p),original_source=item['source']))
         copy(ROOT/'results/real/D_24'/(name+'.png'),'validation/baseline/'+name+'.png')
-        if item['exposure']==14:copy(item['source']['path'],'sample_inputs/pillar_normal.bmp')
+        if item['exposure']==14:copy(str(PROJECT_ROOT / item['source']['path']),'sample_inputs/pillar_normal.bmp')
     for item in panel['motion']:
-        s=sequences[item['sequence']];x0,y0,x1,y1=item['box'];raw=cv2.imread(item['source']['path'],0)[y0:y1,x0:x1]
+        s=sequences[item['sequence']];x0,y0,x1,y1=item['box'];raw=cv2.imread(str(PROJECT_ROOT / item['source']['path']),0)[y0:y1,x0:x1]
         name=f"{item['sequence']}_{item['frame_index']:04d}";relative='validation/inputs/'+name+'.png';p=target/relative;assert cv2.imwrite(str(p),raw)
         prediction=scope['session_prediction'](item['sequence'],item['frame_index'],np.asarray(s['centers'],float),s['expected_signed_dx_px'])
         centers=[[int(pid),float(x-x0),float(y-y0)] for pid,x,y in prediction]

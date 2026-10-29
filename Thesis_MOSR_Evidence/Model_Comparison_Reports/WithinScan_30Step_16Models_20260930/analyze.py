@@ -7,9 +7,10 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 OUT = Path(__file__).resolve().parent
-EXP = Path(r"D:\GMM_2_Final\Experiments")
+EXP = Path(str(PROJECT_ROOT / 'Experiments'))
 R152 = EXP / "R152_R148v2_SafeAdaptivePSF"
 R150 = EXP / "R150_MatchedGeometryMeanPSF"
 R136 = EXP / "R136_PIRepeatability"

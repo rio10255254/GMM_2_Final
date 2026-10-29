@@ -138,7 +138,7 @@ PSF_Fitting/
 建議仍從本資料夾啟動，方便看輸出：
 
 ```
-d:\GMM_2_Final\PSF_Fitting\
+PSF_Fitting
 ```
 
 若從其他資料夾呼叫 `run_psf_fitting_manual.m`，相對輸出路徑仍會以本資料夾為基準，不會寫到目前工作資料夾底下。
@@ -438,7 +438,7 @@ WholeFOV path is the more important operational workflow.
 ### 與下游模型同步的規則
 
 - `Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat` 是目前正式 Whole-FOV PSF 輸出位置。
-- `D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py`
+- `Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py`
   直接讀取這個正式路徑，因此未來新的訓練 run 會自然吃到最新正式 PSF。
 - 但已存在的舊 checkpoint 不應被回頭改寫；它們的推論預設應維持使用 checkpoint 當時封存的 PSF buffer，
   以保留 git / 實驗歷史的可重現性。
@@ -564,7 +564,7 @@ These are usually environment or path issues rather than fitting-logic issues.
 | 2026-03-25 | Whole-FOV 正式主線升級為 refined pre-alignment 版，舊版封存至 `legacy/`，正式輸出維持相容格式 |
 | 2026-04-30 | 更新 `PSF_Fitting_Tutorial/` 為可打包、可從頭跑的 PSF 全流程 notebook 教材 |
 | 2025-10 | WholeFOV 批次版加入 Warm-start、Precompute 優化、Tilt 鎖定 |
-| 2026-03-04 | 路徑全面改為相對路徑，整合至 `d:\GMM_2_Final\PSF_Fitting\`；新增本說明文件 |
+| 2026-03-04 | 路徑全面改為相對路徑，整合至 `PSF_Fitting`；新增本說明文件 |
 
 - `2025-09-24`
   - single-image 2D fitting version completed
@@ -572,4 +572,4 @@ These are usually environment or path issues rather than fitting-logic issues.
   - WholeFOV batch fitting added warm-start, precompute, and tilt locking
 - `2026-03-04`
   - paths were normalized to relative-path usage under
-    `d:\GMM_2_Final\PSF_Fitting\` and this documentation was added
+    `PSF_Fitting` and this documentation was added

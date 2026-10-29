@@ -1,7 +1,7 @@
 # Estimator Formula Probe Summary
 
 - generated_at: 2026-03-15 21:40:18
-- checkpoint: `D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756\weights\best_tradeoff.pth.tar`
+- checkpoint: `Traing_Progress/organized_20260313/round18/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756/weights/best_tradeoff.pth.tar`
 - macro_policy_estimator: `edge_band_refine`
 - macro_guard_pass: `True`
 - round21_ready: `False`

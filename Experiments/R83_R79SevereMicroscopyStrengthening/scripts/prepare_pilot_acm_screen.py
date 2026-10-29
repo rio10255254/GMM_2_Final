@@ -6,10 +6,11 @@ import importlib.util
 import json
 import shutil
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark'))
 OUTPUT = ROOT / "results" / "pilot_acm_screen"
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
 
@@ -99,7 +100,7 @@ def main() -> int:
             inference_manifests[suite]["output_dirs"][method] = reconstruct_tree(module, model, raw_dirs, target_root)
 
         sem_cfg = json.loads((R82 / "config" / "experiment.json").read_text(encoding="utf-8"))["sem_acm"]
-        raw_sem = Path(sem_cfg["raw_input_dir"])
+        raw_sem = Path(PROJECT_ROOT / sem_cfg["raw_input_dir"])
         sem_target = OUTPUT / "SEM" / "results" / "reconstructions" / "sem_acm" / method
         for exposure in sem_cfg["optical_exposures"]:
             source = raw_sem / f"{exposure}.bmp"

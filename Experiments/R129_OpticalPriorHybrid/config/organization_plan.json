@@ -3,89 +3,89 @@
   "purpose": "Architecture map and behavior-preserving organization; no new modules or training",
   "original_files": [
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\hybrid_v2.py",
+      "path": "Experiments/R129_OpticalPriorHybrid/model/hybrid_v2.py",
       "sha256": "063f35c62d9e4c867b85491b7294af70b5b931636bbca849dd5c5eb118329cbe"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\evaluate_real.py",
-      "sha256": "b89c0884600628193a685c2808e215fe0ee51b87c21e6816e342e7826105f412"
+      "path": "Experiments/R129_OpticalPriorHybrid/scripts/evaluate_real.py",
+      "sha256": "f3705ad8f9358dac67661a96261d568bef5a7b45ced3d959e6a0d94347e4174d"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\infer_image.py",
-      "sha256": "7c390fe9306431bc2b3f690235736d38bc11a7e5404f88930cd7df2615be39ad"
+      "path": "Experiments/R129_OpticalPriorHybrid/scripts/infer_image.py",
+      "sha256": "25203874e14b5b3ebac27951ef3af5691422fb2c5ded3ff32d7f2ab85dd01c05"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\config\\plan.json",
-      "sha256": "e2eeaa64f3bf47785bed0bf110ba655932860469c61f228a33309d5fa87f09c2"
+      "path": "Experiments/R129_OpticalPriorHybrid/config/plan.json",
+      "sha256": "e3b213882b878932df9c4e9ce774a49a0a8d36c1dbeffb76c9fd961e1d59955a"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\config\\implementation_v2.json",
-      "sha256": "2bbc2a800d9ab551804e577c3286505126319dfb1933ba7954ae1f7a3302e0aa"
+      "path": "Experiments/R129_OpticalPriorHybrid/config/implementation_v2.json",
+      "sha256": "60b58b738f3e0d8d9a7e7127de57cc5a68a6d4762aecf75173a2cc6fcd62e15c"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\verification.json",
+      "path": "Experiments/R129_OpticalPriorHybrid/results/verification.json",
       "sha256": "ed2cf25f99ea0171117b96051de5d6693251a55cf9cf201e9d7ee3a38d3763d8"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\A\\initial.pth",
+      "path": "Experiments/R129_OpticalPriorHybrid/runs/A/initial.pth",
       "sha256": "d4403492b8eb06ec8296fd2512f635734dc9f93e489fb66c4197a03ffe05a8ad"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\B\\initial.pth",
+      "path": "Experiments/R129_OpticalPriorHybrid/runs/B/initial.pth",
       "sha256": "c599d8ec023fc9db5d7e6eae3e04096dcbe9912d0f3340665610474904b0c16e"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\C\\initial.pth",
+      "path": "Experiments/R129_OpticalPriorHybrid/runs/C/initial.pth",
       "sha256": "7d14369792424a2877b7d20dd553257456c24e6d5934e6606c731d379a0d03db"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\D\\initial.pth",
+      "path": "Experiments/R129_OpticalPriorHybrid/runs/D/initial.pth",
       "sha256": "153f575903eb4d10b758821d78ad8f627d7bb10a16c22c04833667e5940ca73d"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\A\\step24.pth",
+      "path": "Experiments/R129_OpticalPriorHybrid/runs/A/step24.pth",
       "sha256": "f5cd677c5a3def15aed47126fb03bba0e2899cf448c832e27875a10d746b4c9b"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\B\\step24.pth",
+      "path": "Experiments/R129_OpticalPriorHybrid/runs/B/step24.pth",
       "sha256": "498e2c584e6b5ea012eb70e9d9e9d389a430e2cbb045d0f20d5c2749c3b94e8c"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\C\\step24.pth",
+      "path": "Experiments/R129_OpticalPriorHybrid/runs/C/step24.pth",
       "sha256": "d1fe405dc60f3c45fa0ede603c7ff8fabf168246afccbc96d09867768382fe25"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\runs\\D\\step24.pth",
+      "path": "Experiments/R129_OpticalPriorHybrid/runs/D/step24.pth",
       "sha256": "13d73d34f7aafc806bd2d56b7b1ac845d0b150d28fdc2fa9a07acc29cea838ee"
     }
   ],
   "organized_files": [
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\organized\\hybrid.py",
+      "path": "Experiments/R129_OpticalPriorHybrid/model/organized/hybrid.py",
       "sha256": "49ef06e0e6061b8106fc89523b95d26de318a4a235acd2f8613a23aa2b86d7df"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\organized\\inference_policy.py",
+      "path": "Experiments/R129_OpticalPriorHybrid/model/organized/inference_policy.py",
       "sha256": "bac2d488114f6d600e8cf0536088bad93f17d6e56337acc2f39b06e109d6d314"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\organized\\operators.py",
+      "path": "Experiments/R129_OpticalPriorHybrid/model/organized/operators.py",
       "sha256": "e3285675114037317c8ab30fb87f18a9d19cab451230fb11c4c14fca2bab6c07"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\organized\\optics.py",
+      "path": "Experiments/R129_OpticalPriorHybrid/model/organized/optics.py",
       "sha256": "676bbb35d5e86c1b41fbdbe046263b7e9b207a9de0cef87e68c8468aae5ac4a8"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\organized\\output_policy.py",
+      "path": "Experiments/R129_OpticalPriorHybrid/model/organized/output_policy.py",
       "sha256": "ab70c2deb34b24739d54242dfef7c571122a9386833e6b032d8208c849d13591"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\organized\\reconstruction.py",
+      "path": "Experiments/R129_OpticalPriorHybrid/model/organized/reconstruction.py",
       "sha256": "71594f2cf78a2b2cb4dc17213a670532e51b9b240cfde3aab767ad95f7f8dab6"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\model\\organized\\__init__.py",
+      "path": "Experiments/R129_OpticalPriorHybrid/model/organized/__init__.py",
       "sha256": "c9bee3382295dcc511cdbd5d642e32df449ee55d0107b98171566446f80c9233"
     }
   ],
@@ -98,7 +98,7 @@
   ],
   "acceptance": "exact equality; no tolerance relaxation",
   "source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\organize_model.py",
+    "path": "Experiments/R129_OpticalPriorHybrid/scripts/organize_model.py",
     "sha256": "74e52f69f148d446d645f8b0ac3a8b4cd23460151f93231cd287a6cf2b4d9844"
   }
 }

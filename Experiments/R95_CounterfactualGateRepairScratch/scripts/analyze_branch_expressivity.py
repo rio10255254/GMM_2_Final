@@ -12,10 +12,11 @@ from typing import Any
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R93 = Path(r"D:\GMM_2_Final\Experiments\R93_RecoverableDetailSeparatedScratch")
+R93 = Path(str(PROJECT_ROOT / 'Experiments/R93_RecoverableDetailSeparatedScratch'))
 
 
 def load(name: str, path: Path):

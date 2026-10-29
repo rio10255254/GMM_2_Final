@@ -8,6 +8,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +16,7 @@ RESULT = ROOT / "results" / "r107_data_contract_audit"
 REPORT = ROOT / "reports" / "03_R107_DATA_CONTRACT_AUDIT.md"
 RESULT.mkdir(parents=True, exist_ok=True)
 REPORT.parent.mkdir(parents=True, exist_ok=True)
-R107 = Path(r"D:\GMM_2_Final\Experiments\R107A_SingleImageEdgeGeometryProbe")
+R107 = Path(str(PROJECT_ROOT / 'Experiments/R107A_SingleImageEdgeGeometryProbe'))
 sys.path.insert(0, str(R107 / "training"))
 from r107_dataset import R107Dataset  # noqa: E402
 

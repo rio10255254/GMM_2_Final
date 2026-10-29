@@ -1,7 +1,7 @@
 把外部 GMF 工具對 0.08 px pitch ring 重建跑出的 GMF_score.txt 放到這個資料夾,檔名必須是 GMF_score.txt(大寫敏感)。
 
 來源 BMP 在:
-D:\GMM_2_Final\Experiments\R46_CornerAwareFineTune\results\ring_recon\r46\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260514_230359\pitch0p01um_y_40_odd\
+Experiments/R46_CornerAwareFineTune/results/ring_recon/r46/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260514_230359/pitch0p01um_y_40_odd
 
 放完後跑:
 python Experiments/R46_CornerAwareFineTune/scripts/r46_external_compare.py

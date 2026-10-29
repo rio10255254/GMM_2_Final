@@ -4,10 +4,11 @@ import re
 from docx import Document
 
 import build_chapter4_reframe as base
+PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
 
 OUT = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\第四章_研究方法_量測導向完整擴寫稿_樸素圖表版.docx")
-base.FIG_DIR = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\05_CHAPTER4_METHOD_PLAIN")
+base.FIG_DIR = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/05_CHAPTER4_METHOD_PLAIN'))
 
 
 def body(doc, text, **kwargs):

@@ -15,13 +15,14 @@ import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 OUTPUT = ROOT / "results" / "detailed_validation" / "04_sem_acm"
-RAW_DIR = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack")
-MATLAB_SCRIPT = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\scripts\run_acm_extraction.m")
+RAW_DIR = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
+MATLAB_SCRIPT = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/scripts/run_acm_extraction.m'))
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
 CANDIDATES = {
     "R116E024": ROOT / "runs" / "r116_formal_scratch_20260903_202052" / "weights" / "epoch_024.pth",
@@ -29,9 +30,9 @@ CANDIDATES = {
     "R116E048": ROOT / "runs" / "r116_calibration_from_e42_20260903_235500" / "weights" / "epoch_048.pth",
 }
 BASELINES = {
-    "R61v16": Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\tables\primary_contour_metrics.csv"),
-    "V42E120": Path(r"D:\GMM_2_Final\Experiments\R70_V42ACMContourSEMValidation\results\tables\primary_contour_metrics.csv"),
-    "R109_E048": Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch\results\posttraining_acm\E048\SEM\results\tables\primary_contour_metrics.csv"),
+    "R61v16": Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/tables/primary_contour_metrics.csv')),
+    "V42E120": Path(str(PROJECT_ROOT / 'Experiments/R70_V42ACMContourSEMValidation/results/tables/primary_contour_metrics.csv')),
+    "R109_E048": Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/results/posttraining_acm/E048/SEM/results/tables/primary_contour_metrics.csv')),
 }
 METRICS = {
     "iou": "higher",

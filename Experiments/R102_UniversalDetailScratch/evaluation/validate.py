@@ -19,6 +19,7 @@ for folder in (ROOT / "training", ROOT / "inference"):
         sys.path.insert(0, str(folder))
 
 from losses import central_crop, gradient_magnitude, highpass, warp_tensor  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
@@ -200,7 +201,7 @@ def save_real_previews(model: torch.nn.Module, device: torch.device, epoch: int,
     output_dir.mkdir(parents=True, exist_ok=True)
     paths: list[str] = []
     for source_name in CONFIG["validation"]["real_preview_sources"]:
-        source_path = Path(source_name)
+        source_path = Path(PROJECT_ROOT / source_name)
         image = cv2.imread(str(source_path), cv2.IMREAD_GRAYSCALE)
         if image is None:
             raise FileNotFoundError(source_path)

@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT))
 import train as trainer
 from utils import load, now, save, sha
 from verify_package import verify_source_lock
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 def main() -> None:
@@ -35,7 +36,7 @@ def main() -> None:
         complete = load(ROOT / "runs/formal_8192/training_complete.json")
         assert complete["updates"] == 8192
         checkpoint = complete["checkpoint"]
-        assert checkpoint["step"] == 8192 and sha(checkpoint["path"]) == checkpoint["sha256"]
+        assert checkpoint["step"] == 8192 and sha(str(PROJECT_ROOT / checkpoint["path"])) == checkpoint["sha256"]
         save(marker, dict(status, state="training_complete", checkpoint=checkpoint, completed_utc=now()))
     except BaseException:
         save(marker, dict(status, state="failed", error=traceback.format_exc(), failed_utc=now()))

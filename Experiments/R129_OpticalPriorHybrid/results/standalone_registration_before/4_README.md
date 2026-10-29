@@ -13,7 +13,7 @@ Completed 2026-09-12: four matched 24-update pilots (96 updates), all 864 normal
 One-model trial entry (Anaconda Python; PyTorch/CUDA, NumPy, SciPy, pandas and OpenCV):
 
 ```powershell
-& 'C:\Users\Rio\anaconda3\python.exe' -B 'D:\GMM_2_Final\Experiments\R129_OpticalPriorHybrid\scripts\infer_image.py' --input 'C:\path\image.bmp' --output 'C:\path\new_r129.png'
+& 'C:\Users\Rio\anaconda3\python.exe' -B 'Experiments/R129_OpticalPriorHybrid/scripts/infer_image.py' --input 'C:\path\image.bmp' --output 'C:\path\new_r129.png'
 ```
 
 Use 8-bit grayscale, at least 193×193 pixels; output must be a new PNG path. Default is direct full-image GPU execution. Large images need sufficient GPU memory; no tiled equivalence is claimed for the full optical stage. This entry fixes the retained D step24 checkpoint, checks its source hash and writes a provenance sidecar. It has been run on a real full SEM-paired input and reproduces the recorded image exactly.

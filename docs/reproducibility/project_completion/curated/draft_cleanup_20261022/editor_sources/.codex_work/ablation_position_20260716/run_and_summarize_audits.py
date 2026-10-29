@@ -12,9 +12,10 @@ import pandas as pd
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 FORMAL_PACKAGE = ROOT / "Final_Data_Figures" / "01_CURRENT_THESIS_RESULTS_V42_CENTER9"
 DIAGNOSTIC = ROOT / "Final_Data_Figures" / "05_ABLATION_DIAGNOSTICS" / "boundary_position_diagnostic"
 CONFIG_SOURCE = FORMAL_PACKAGE / "config" / "sequence_center9_50x20x.json"

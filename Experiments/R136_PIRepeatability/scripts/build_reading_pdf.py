@@ -57,7 +57,7 @@ def image(path,height=330):
 def num(v,n=3):return f'{float(v):.{n}f}'
 def reading_charts(positions,scans):
  import subprocess
- subprocess.run([r'C:\Users\Rio\anaconda3\python.exe',str(ROOT/'scripts/build_pdf_charts.py')],check=True)
+ subprocess.run(['python',str(ROOT/'scripts/build_pdf_charts.py')],check=True)
 def main():
  key=load(ROOT/'results/lsc/r61_analysis/key_results.json');cal=load(T/'calibration.json');summary=pd.read_csv(T/'summary.csv');rep=pd.read_csv(T/'repeatability.csv');scans=pd.read_csv(T/'per_scan.csv');positions=pd.read_csv(T/'per_position.csv');individual=pd.read_csv(T/'individual_circle_summary.csv');pairs=pd.read_csv(T/'paired_comparisons.csv');audit=load(ROOT/'results/lsc/r61_analysis/verification.json')
  snapshot=load(TMP/'package_context.json');reading_charts(positions,scans)

@@ -10,6 +10,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import skimage.segmentation.morphsnakes as morphsnakes
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,16 +18,14 @@ OUTPUT = ROOT / "results" / "lsc_current_top30"
 TABLES = OUTPUT / "tables"
 TABLES.mkdir(parents=True, exist_ok=True)
 
-R80_ROOT = Path(r"D:\GMM_2_Final\Experiments\R80_InflectionReferenceCircleSEMValidation")
+R80_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R80_InflectionReferenceCircleSEMValidation'))
 R80_SCRIPT = R80_ROOT / "scripts" / "run_displacement_lsc.py"
 V42_CONFIG = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\config\sequence_center9_50x20x.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json')
 )
 R109_CONFIG = ROOT / "config" / "r109_thesis_sequence_config.json"
 TOP30 = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\tables\top30_raw_motion_selection.csv"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv')
 )
 
 
@@ -87,7 +86,7 @@ def main() -> int:
         for key, value in specification.items():
             if key == "v42_dir":
                 continue
-            if r109_specification.get(key) != value:
+            if str(PROJECT_ROOT / r109_specification.get(key)) != str(PROJECT_ROOT / value):
                 raise RuntimeError(f"{sequence}: V42/R109 config differs at {key}")
         pairs = selected_pairs_current(sequence)
         frame_indices = sorted(
@@ -95,9 +94,9 @@ def main() -> int:
             | set(pairs["end_frame_index"].astype(int))
         )
         base_centers = np.asarray(specification["centers"], dtype=float)
-        raw_dir = Path(specification["raw_dir"])
-        v42_dir = Path(specification["v42_dir"])
-        r109_dir = Path(r109_specification["v42_dir"])
+        raw_dir = Path(PROJECT_ROOT / specification["raw_dir"])
+        v42_dir = Path(PROJECT_ROOT / specification["v42_dir"])
+        r109_dir = Path(PROJECT_ROOT / r109_specification["v42_dir"])
         magnification = specification["magnification"]
         pitch = float(specification["pitch_px"])
         radius = float(specification["radius_px"])

@@ -13,9 +13,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path("D:/GMM_2_Final/Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 PACKAGE_ROOT = ROOT / "Final_Data_Figures" / "20260710_v42_full_validation"
 SOURCE_ALL = PACKAGE_ROOT / "boundary_sensitive_roi" / "tables" / "all_steps.csv"
 SOURCE_SELECTED = PACKAGE_ROOT / "boundary_sensitive_roi" / "tables" / "selected_steps.csv"

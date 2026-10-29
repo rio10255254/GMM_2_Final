@@ -3,6 +3,7 @@ from pathlib import Path
 import sys,re,shutil,os
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from rt import *
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     decision=load(ROOT/'results/long_admission.json');result=load(decision['motion201']['path']);assert not decision['eligible']
@@ -38,5 +39,5 @@ All201 images were computed; closeout failed because a NumPy boolean could not b
     p=repo/'ESTIMATOR_POLICY.json';v=load(p);x=next(x for x in v['open_side_tracks'] if x.get('candidate_id')=='R134_direct_state');x.update(status='full201_recovered_not_admitted',completed_short_updates=2048,full201_complete=True,full201_checks_passed=19,full201_checks_total=20,long_training_started=False,long_package_created=False,recovery='Experiments/R134_DirectStateRepair/results/full_motion_recovery_v2/complete.json',model_promoted=False);atomic(p,v)
     p=repo/'Experiments/INDEX.md';t=p.read_text(encoding='utf-8-sig');t=re.sub(r'(?m)^\| R134 .*$', '| R134 直接影像狀態修正 | [當前結果](R134_DirectStateRepair/reports/R134_RESULTS.md) | 完整201張恢復核算：19/20項通過，最大非預期方向偏移超限；未打包或長訓練；B/D待校準 |',t);p.write_text(t,encoding='utf-8')
     p=repo/'docs/operations/PROJECT_STORAGE_REGISTRY.json';v=load(p);x=next(x for x in v['entries'] if x['id']=='r134_direct_state');x['state']='full201_recovered_not_admitted';atomic(p,v)
-    verify();assert all(sha(x['path'])==x['sha256'] for x in load(ROOT/'config/packaging_source_binding.json')['sources']);save(ROOT/'results/full_motion_recovery_v2/publication_verified.json',dict(original_frozen_sources_unchanged=True,thresholds_unchanged=True,decision=record(ROOT/'results/long_admission.json'),long_training_started=False));print('Negative admission published; original sources and thresholds unchanged')
+    verify();assert all(sha(str(PROJECT_ROOT / x['path']))==x['sha256'] for x in load(ROOT/'config/packaging_source_binding.json')['sources']);save(ROOT/'results/full_motion_recovery_v2/publication_verified.json',dict(original_frozen_sources_unchanged=True,thresholds_unchanged=True,decision=record(ROOT/'results/long_admission.json'),long_training_started=False));print('Negative admission published; original sources and thresholds unchanged')
 if __name__=='__main__':main()

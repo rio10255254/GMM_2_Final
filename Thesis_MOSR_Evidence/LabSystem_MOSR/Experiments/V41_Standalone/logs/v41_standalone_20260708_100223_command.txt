@@ -1,1 +1,1 @@
-python -X utf8 D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\V41_Standalone\scripts\launch_v41_standalone.py --num-epoch 16 --device cuda:0 --batch-size 4 --val-batch-size 2 --num-workers 2 --run-suffix standalone_full_e16_20260708_100223
+python -X utf8 Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone/scripts/launch_v41_standalone.py --num-epoch 16 --device cuda:0 --batch-size 4 --val-batch-size 2 --num-workers 2 --run-suffix standalone_full_e16_20260708_100223

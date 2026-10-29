@@ -9,7 +9,8 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.i
 from sequence_bank import SequenceBank, sha
 from sequence_metrics import estimate_position, summarize_sequence
 from inference.run import load
-R109_CHECKPOINT=Path(r'D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth');R109_SOURCE=Path(r'D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/model/r109_model.py')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+R109_CHECKPOINT=Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth'));R109_SOURCE=Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch/model/r109_model.py'))
 
 def load_r109(device):
  spec=importlib.util.spec_from_file_location('r109_formal_ref',R109_SOURCE);m=importlib.util.module_from_spec(spec);assert spec.loader is not None;spec.loader.exec_module(m);saved=torch.load(R109_CHECKPOINT,map_location='cpu',weights_only=False);model=m.build_model();model.load_state_dict(saved['model']);return model.to(device).eval().requires_grad_(False)

@@ -1,6 +1,7 @@
 function prepare_pitch_reference()
-root='D:/GMM_2_Final/Experiments/R121_BoundaryAnchorFactorial';
-old=load('D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat');
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
+root=fullfile(PROJECT_ROOT, 'Experiments/R121_BoundaryAnchorFactorial');
+old=load(fullfile(PROJECT_ROOT, 'Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat'));
 audit=readtable(fullfile(root,'results/reference_scale.csv'));
 scale_adjustment=old.opt_pitch/median(audit.median_pitch);
 assert(scale_adjustment>.95 && scale_adjustment<1.05);

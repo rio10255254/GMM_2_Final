@@ -9,6 +9,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 plt.rcParams['font.sans-serif']=['Microsoft JhengHei','DejaVu Sans']
 plt.rcParams['axes.unicode_minus']=False
 
@@ -35,8 +36,8 @@ def main():
     for case in cases:
         images=[]
         for item in case['inputs']:
-            assert sha(item['path'])==item['sha256']
-            im=cv2.imread(item['path'],cv2.IMREAD_UNCHANGED);assert im.ndim==2 and im.dtype==np.uint8;images.append(im)
+            assert sha(str(PROJECT_ROOT / item['path']))==item['sha256']
+            im=cv2.imread(str(PROJECT_ROOT / item['path']),cv2.IMREAD_UNCHANGED);assert im.ndim==2 and im.dtype==np.uint8;images.append(im)
         assert len({im.shape for im in images})==1
         x0,y0,x1,y1=case['box'];h,w=images[0].shape;assert 0<=x0<x1<=w and 0<=y0<y1<=h
         fig,axes=plt.subplots(2,3,figsize=(12,7.3),layout='constrained',gridspec_kw={'height_ratios':[1,.75]})

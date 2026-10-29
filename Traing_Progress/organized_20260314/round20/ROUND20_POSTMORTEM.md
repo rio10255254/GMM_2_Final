@@ -50,11 +50,11 @@ Round20 第一次啟動曾因程序生命週期問題中途中止。
 正式入口：
 
 - root status:
-  `D:\GMM_2_Final\000_LONGRUN_ROUND20_STATUS.md`
+  `000_LONGRUN_ROUND20_STATUS.md`
 - process summary:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\round20\selected\reports\ROUND20_PROCESS_PROBE_SUMMARY_20260314_205446.md`
+  `Traing_Progress/organized_20260314/round20/selected/reports/ROUND20_PROCESS_PROBE_SUMMARY_20260314_205446.md`
 - audit summary:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\round20\selected\reports\ROUND20_PROCESS_PROBE_AUDIT_SUMMARY_20260314_205446.md`
+  `Traing_Progress/organized_20260314/round20/selected/reports/ROUND20_PROCESS_PROBE_AUDIT_SUMMARY_20260314_205446.md`
 
 ## Key Numbers
 

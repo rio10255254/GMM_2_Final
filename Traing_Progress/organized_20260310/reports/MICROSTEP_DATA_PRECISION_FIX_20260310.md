@@ -49,12 +49,12 @@ This is the key proof:
 
 ## Current Status
 - old `uint8` stage_17/18 data were moved out of training roots to:
-  - `D:\GMM_2_Final\Training_Data\archived_microstep_uint8_20260310`
+  - `Training_Data/archived_microstep_uint8_20260310`
 - full rebuild is running now
 - stdout log:
-  - `D:\GMM_2_Final\Traing_Progress\organized_20260310\pending\logs\microstep_rebuild_20260310_134350.out.log`
+  - `Traing_Progress/organized_20260310/pending/logs/microstep_rebuild_20260310_134350.out.log`
 - stderr log:
-  - `D:\GMM_2_Final\Traing_Progress\organized_20260310\pending\logs\microstep_rebuild_20260310_134350.err.log`
+  - `Traing_Progress/organized_20260310/pending/logs/microstep_rebuild_20260310_134350.err.log`
 
 ## Next Step
 After the rebuild completes, the correct next move is not to blindly retune everything at once.

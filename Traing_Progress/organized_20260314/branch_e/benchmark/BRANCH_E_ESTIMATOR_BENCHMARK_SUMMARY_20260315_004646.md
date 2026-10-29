@@ -1,7 +1,7 @@
 # Branch E Estimator Benchmark Summary
 
 - generated_at: 2026-03-15 00:46:46
-- weights_path: `D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756\weights\best_tradeoff.pth.tar`
+- weights_path: `Traing_Progress/organized_20260313/round18/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756/weights/best_tradeoff.pth.tar`
 - chosen_probe_candidates: `be_ctrl_edge, be_edge_band, be_soft_band, be_soft`
 - best_non_control_estimator: `edge_band_refine`
 - improvement_vs_edge_abs_px: 20.3622

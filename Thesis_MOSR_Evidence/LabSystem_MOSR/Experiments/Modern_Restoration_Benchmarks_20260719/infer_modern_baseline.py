@@ -24,11 +24,11 @@ from train_modern_baseline import (  # noqa: E402
     TrainConfig,
     build_training_model,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 SEQUENCE_CONFIG = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\config\sequence_center9_50x20x.json"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json')
 )
 
 
@@ -165,7 +165,7 @@ def main(
     total_tick = time.perf_counter()
 
     for sequence_name, sequence in sequences.items():
-        raw_dir = Path(sequence["raw_dir"])
+        raw_dir = Path(PROJECT_ROOT / sequence["raw_dir"])
         source_paths = sorted(raw_dir.glob("*.bmp"))
         if limit > 0:
             source_paths = source_paths[:limit]

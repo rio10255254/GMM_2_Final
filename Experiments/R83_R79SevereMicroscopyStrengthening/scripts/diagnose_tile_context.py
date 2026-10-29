@@ -11,10 +11,11 @@ import numpy as np
 import pandas as pd
 import torch
 from torch import nn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark'))
 OUTPUT = ROOT / "results" / "tile_context_diagnosis"
 
 
@@ -44,8 +45,8 @@ def main() -> int:
     checkpoint = ROOT / "weights" / "selected" / "r83_model.pth.tar"
     module = load_inference_module()
 
-    raw_root = Path(r82["real_fov"]["locked_raw_root"])
-    sem_root = Path(r82["sem_acm"]["raw_input_dir"])
+    raw_root = Path(PROJECT_ROOT / r82["real_fov"]["locked_raw_root"])
+    sem_root = Path(PROJECT_ROOT / r82["sem_acm"]["raw_input_dir"])
     samples = [
         ("real_5x", raw_root / "5x_0p5um" / "frame_0000.bmp"),
         ("real_50x", raw_root / "50x_0p5um" / "frame_0050.bmp"),

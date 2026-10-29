@@ -7,6 +7,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,9 +15,9 @@ RUN_ID = "R99_scratch_seed990053_20260814_105831"
 WEIGHTS = ROOT / "weights" / "formal" / "seed_990053" / RUN_ID / "weights"
 OUT = ROOT / "reports" / "deep_dive"
 SETS = {
-    "5x": Path(r"D:\GMM_2_Final\20260704_5x"),
-    "20x": Path(r"D:\GMM_2_Final\20260704_20x"),
-    "50x": Path(r"D:\GMM_2_Final\20260702_100MG_位移_50x"),
+    "5x": Path(str(PROJECT_ROOT / '20260704_5x')),
+    "20x": Path(str(PROJECT_ROOT / '20260704_20x')),
+    "50x": Path(str(PROJECT_ROOT / '20260702_100MG_位移_50x')),
 }
 EPOCHS = (24, 40)
 CENTERS = ((448, 448), (448, 1600), (768, 1024), (1088, 448), (1088, 1600))

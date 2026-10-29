@@ -20,15 +20,15 @@ Round20 不是新模型競賽，而是流程驗證 round。
 快速入口：
 
 - round root:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\round20`
+  `Traing_Progress/organized_20260314/round20`
 - round20 postmortem:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\round20\ROUND20_POSTMORTEM.md`
+  `Traing_Progress/organized_20260314/round20/ROUND20_POSTMORTEM.md`
 - selected audit summary:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\round20\selected\reports\ROUND20_PROCESS_PROBE_AUDIT_SUMMARY_20260314_205446.md`
+  `Traing_Progress/organized_20260314/round20/selected/reports/ROUND20_PROCESS_PROBE_AUDIT_SUMMARY_20260314_205446.md`
 - diagnostic matrix summary:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\diagnostics\DIAGNOSTIC_MATRIX_SUMMARY_20260314_232403.md`
+  `Traing_Progress/organized_20260314/diagnostics/DIAGNOSTIC_MATRIX_SUMMARY_20260314_232403.md`
 - round21 branch decision:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\diagnostics\ROUND21_BRANCH_DECISION.md`
+  `Traing_Progress/organized_20260314/diagnostics/ROUND21_BRANCH_DECISION.md`
 
 最新方向：
 

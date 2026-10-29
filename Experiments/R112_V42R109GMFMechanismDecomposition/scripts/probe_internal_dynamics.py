@@ -13,6 +13,7 @@ import numpy as np
 import pandas as pd
 import torch
 from scipy.stats import spearmanr
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,10 +23,9 @@ OUTPUT.mkdir(parents=True, exist_ok=True)
 CROP_SIZE = 1536
 
 R111_LOADER = Path(
-    r"D:\GMM_2_Final\Experiments\R111_R109V42ThesisReplacementQualification"
-    r"\scripts\build_v42_external_gmf.py"
+    str(PROJECT_ROOT / 'Experiments/R111_R109V42ThesisReplacementQualification/scripts/build_v42_external_gmf.py')
 )
-R109_ROOT = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+R109_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 
 
 def load_module(path: Path, name: str):
@@ -69,18 +69,18 @@ def corr(left: pd.Series, right: pd.Series) -> dict[str, float]:
 
 
 def main() -> int:
-    raw_score = parse_score(Path(CONFIG["models"]["Raw"]["score"]), "raw")
-    v42_score = parse_score(Path(CONFIG["models"]["V42 E120"]["score"]), "v42")
-    r109_score = parse_score(Path(CONFIG["models"]["R109 E48"]["score"]), "r109")
+    raw_score = parse_score(Path(PROJECT_ROOT / CONFIG["models"]["Raw"]["score"]), "raw")
+    v42_score = parse_score(Path(PROJECT_ROOT / CONFIG["models"]["V42 E120"]["score"]), "v42")
+    r109_score = parse_score(Path(PROJECT_ROOT / CONFIG["models"]["R109 E48"]["score"]), "r109")
     coordinates = raw_score.join(v42_score).join(r109_score)
-    raw_dir = Path(CONFIG["models"]["Raw"]["image_dir"])
+    raw_dir = Path(PROJECT_ROOT / CONFIG["models"]["Raw"]["image_dir"])
 
     v42_loader = load_module(R111_LOADER, "r112_dynamics_v42_loader")
     _, v42_model, device, temp_psf_dir, _, _ = v42_loader.load_model()
     sys.path.insert(0, str(R109_ROOT / "model"))
     from r109_model import build_model
 
-    r109_payload = torch.load(Path(CONFIG["models"]["R109 E48"]["checkpoint"]), map_location=device, weights_only=False)
+    r109_payload = torch.load(Path(PROJECT_ROOT / CONFIG["models"]["R109 E48"]["checkpoint"]), map_location=device, weights_only=False)
     r109_model = build_model().to(device)
     r109_model.load_state_dict(r109_payload["model"])
     r109_model.eval()

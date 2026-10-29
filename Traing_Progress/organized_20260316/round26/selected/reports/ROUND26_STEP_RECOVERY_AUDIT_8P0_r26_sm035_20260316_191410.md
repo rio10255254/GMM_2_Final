@@ -1,7 +1,7 @@
 # Process Probe Audit
 
 - candidate: r26_sm035
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar
 - geom_method: edge_band_refine
 - expect_dy: 8.00
 - process_score: -66.828584

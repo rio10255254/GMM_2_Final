@@ -9,13 +9,14 @@ import cv2
 import numpy as np
 import torch
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 R105B_ROOT = ROOT.parent / "R105B_EvidenceSetReconstructionFalsification"
 R105B_SCRIPT = R105B_ROOT / "scripts" / "run_probe.py"
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-SOURCE = Path(CONFIG["source"])
+SOURCE = Path(PROJECT_ROOT / CONFIG["source"])
 RESULTS = ROOT / "results"
 REPORTS = ROOT / "reports"
 SCALE = 5

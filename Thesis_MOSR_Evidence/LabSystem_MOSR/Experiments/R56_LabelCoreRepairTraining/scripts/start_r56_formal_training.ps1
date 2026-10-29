@@ -1,7 +1,8 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..')).Path
 $ErrorActionPreference = "Stop"
 
-$RepoRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence"
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$RepoRoot = "$ProjectRoot\Thesis_MOSR_Evidence"
+$Python = python
 $Launcher = Join-Path $RepoRoot "LabSystem_MOSR\Experiments\R56_LabelCoreRepairTraining\scripts\launch_r56.py"
 $DataRoot = Join-Path $RepoRoot "LabSystem_MOSR\Training_Data\r56_label_core_repair\r53_realistic_dataset_calibration"
 $LogDir = Join-Path $RepoRoot "LabSystem_MOSR\Experiments\R56_LabelCoreRepairTraining\results\formal_training_logs"

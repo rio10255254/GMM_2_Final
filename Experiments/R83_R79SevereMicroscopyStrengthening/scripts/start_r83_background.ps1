@@ -7,7 +7,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ExperimentRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$PythonExe = 'C:\Users\Rio\anaconda3\python.exe'
+$PythonExe = python
 $Launcher = Join-Path $ExperimentRoot 'scripts\launch_r83.py'
 $LogDir = Join-Path $ExperimentRoot 'results\logs'
 $LogPath = Join-Path $LogDir 'r83_training.log'

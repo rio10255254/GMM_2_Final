@@ -15,6 +15,7 @@ import cv2
 import numpy as np
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 METHODS = ['RAW', 'Wiener', 'EDSR-x1', 'NAFNet', 'RDN-x1', 'RCAN-x1',
            'Restormer', 'USRNet-x1', 'SwinIR', 'MOSR']
@@ -220,9 +221,9 @@ def main():
         pixels = np.asarray(Image.open(image).convert('RGB'))
         assert np.array_equal(pixels[:, :, 0], pixels[:, :, 1]) and np.array_equal(pixels[:, :, 1], pixels[:, :, 2]), image
     for row in read(ROOT / 'config/source_lock.json')['files']:
-        assert sha(row['path']) == row['sha256']
+        assert sha(str(PROJECT_ROOT / row['path'])) == row['sha256']
     old_archive = read(ROOT / 'config/USER_RESUME_20261006.json')
-    assert sha(old_archive['completed_nine_method_archive']) == old_archive['completed_nine_method_archive_sha256']
+    assert sha(str(PROJECT_ROOT / old_archive['completed_nine_method_archive'])) == old_archive['completed_nine_method_archive_sha256']
     result = {'state': 'passed', 'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
               'scope': METHODS, 'scans_per_method': 30, 'frames_per_method': 930,
               'readouts_per_method': 8370, 'failures': 0, 'runtime_samples': 150,

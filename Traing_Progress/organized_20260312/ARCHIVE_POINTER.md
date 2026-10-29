@@ -15,7 +15,7 @@ D 槽保留 13 份歷史報告與種子、少量 pending 紀錄，以及 1 份 `
 完整恢復：
 
 ```powershell
-robocopy H:\GMM_2_Final_Archive\legacy\organized_20260312\20260801_full_history\snapshot D:\GMM_2_Final\Traing_Progress\organized_20260312 /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\legacy\organized_20260312\20260801_full_history\snapshot Traing_Progress/organized_20260312 /E /COPY:DAT /DCOPY:DAT
 ```
 
 恢復後使用中央清單逐檔核對，回報 PASS 才算完整恢復。

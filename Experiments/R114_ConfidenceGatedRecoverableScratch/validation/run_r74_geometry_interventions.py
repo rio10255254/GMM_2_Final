@@ -16,14 +16,15 @@ import torch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from model.full_model import build_full_model
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 OUT = ROOT / "results" / "geometry_probe" / "E020" / "r74_interventions"
-SOURCE = Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val")
-TEMPLATE = Path(r"D:\GMM_2_Final\Experiments\R104_PhotometricInvariantCausalGateScratch\results\posttraining_validation\external_acm\R74_hard_microscopy\config\experiment.json")
+SOURCE = Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val'))
+TEMPLATE = Path(str(PROJECT_ROOT / 'Experiments/R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R74_hard_microscopy/config/experiment.json'))
 CHECKPOINT = ROOT / "runs" / "r114_geometry_probe_scratch_20260830" / "weights" / "epoch_020.pth"
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark\scripts")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/scripts'))
 
 
 def load_base(device: torch.device):

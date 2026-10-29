@@ -4,6 +4,7 @@ from pathlib import Path
 import sys
 
 import nbformat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 PSF_FITTING_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PSF_FITTING_ROOT))
@@ -21,8 +22,8 @@ def test_tutorial_package_is_self_contained() -> None:
     notebook = nbformat.read(tutorial_root / "PSF_full_workflow_tutorial_tw.ipynb", as_version=4)
     notebook_text = "\n".join("".join(cell.get("source", "")) for cell in notebook.cells)
 
-    assert "D:\\GMM_2_Final" not in readme_text
-    assert "D:\\GMM_2_Final" not in notebook_text
+    assert str(PROJECT_ROOT) not in readme_text
+    assert str(PROJECT_ROOT) not in notebook_text
     assert "從頭到尾" in readme_text
     assert "run_full_workflow" in notebook_text
 

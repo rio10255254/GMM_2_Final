@@ -6,9 +6,10 @@ from pathlib import Path
 import numpy as np
 import pypdfium2 as pdfium
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-PDF = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\qa\v11_render_20260718\論文完整版_20260716_v11.pdf")
+PDF = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/_paper_editing/qa/v11_render_20260718/論文完整版_20260716_v11.pdf'))
 ROOT = PDF.parent
 PAGE_DIR = ROOT / "pages"
 CONTACT_DIR = ROOT / "contact_sheets"

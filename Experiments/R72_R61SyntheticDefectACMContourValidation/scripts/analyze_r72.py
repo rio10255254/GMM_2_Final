@@ -15,6 +15,7 @@ from scipy.io import loadmat
 from scipy.ndimage import center_of_mass
 from scipy.stats import spearmanr, wilcoxon
 from skimage.measure import find_contours
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -331,7 +332,7 @@ def draw_contour(axis: plt.Axes, mask: np.ndarray, color: str, linewidth: float 
 
 
 def read_image(directory_key: str, image_id: int) -> np.ndarray:
-    path = Path(CONFIG["sources"][directory_key]) / f"{image_id:04d}.bmp"
+    path = Path(PROJECT_ROOT / CONFIG["sources"][directory_key]) / f"{image_id:04d}.bmp"
     return np.asarray(Image.open(path).convert("L"), dtype=np.uint8)
 
 

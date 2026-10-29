@@ -5,11 +5,11 @@ from pathlib import Path
 
 from docx import Document
 from docx.oxml.ns import qn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 DOCUMENT = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation"
-    r"\results\thesis_v8_work\thesis_v8_working.docx"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/results/thesis_v8_work/thesis_v8_working.docx')
 )
 
 RESULTS_TEXT = (

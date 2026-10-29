@@ -2,4 +2,4 @@ Title: Capture-to-capture shifts are below the warning level
 What it shows: Ranks coefficients by median normalized capture shift. The unit is dimensionless because each value is divided by its local L0 floor.
 Slide use: Use this on an L1 detail slide to show that the conclusion is not hiding one unstable coefficient.
 Caution: Gray coefficients are shown for context only because they are locked, saturated, or not reliable for the main readout.
-Source: D:\GMM_2_Final\PSF_Fitting\quick_recalibration\validation_experiments\L1_newdata\L1_newdata_summary.json
+Source: PSF_Fitting/quick_recalibration/validation_experiments/L1_newdata/L1_newdata_summary.json

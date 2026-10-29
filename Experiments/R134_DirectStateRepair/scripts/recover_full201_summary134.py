@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from rt import *
 import pandas as pd
 from scipy.optimize import least_squares
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     old=ROOT/'results/full_motion';out=ROOT/'results/full_motion_recovery';out.mkdir(exist_ok=False)
@@ -12,7 +13,7 @@ def main():
     save(out/'original_artifacts_before.json',dict(files=before,purpose='Preserve original partial JSON and all images/measurements; this is not a refreshed protected baseline'))
     started=load(old/'started.json');rules=load(ROOT/'config/full_motion_admission.json')['requirements']
     for key in ['checkpoint','rules','source']:assert sha(started[key]['path'])==started[key]['sha256']
-    panel=load(ROOT/'config/motion_panel.json');cfg=load(panel['configuration']['path']);plan=load(panel['source_plan']['path']);centers=pd.read_csv(old/'centers.csv');assert len(centers)==1809
+    panel=load(ROOT/'config/motion_panel.json');cfg=load(str(PROJECT_ROOT / panel['configuration']['path']));plan=load(str(PROJECT_ROOT / panel['source_plan']['path']));centers=pd.read_csv(old/'centers.csv');assert len(centers)==1809
     assert not centers.duplicated(['sequence','frame_index','pillar_id']).any();assert np.isfinite(centers[['lsc_center_x_px','lsc_center_y_px']]).all().all()
     errors=[];tables=[]
     for f in plan['frames']:

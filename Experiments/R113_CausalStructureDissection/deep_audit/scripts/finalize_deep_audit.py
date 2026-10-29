@@ -8,6 +8,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -214,9 +215,9 @@ R109 的主要瓶頸不是模型太小，也不是 patch 不夠大。真正原�
         "domain_gap_complete": domain["status"] == "complete",
         "boundary_probe_complete": detectability["status"] == "complete",
         "all_source_hashes_unchanged": (
-            sha256(Path(json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))["sources"]["data_package"]) / "manifest.json")
+            sha256(Path(PROJECT_ROOT / json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))["sources"]["data_package"]) / "manifest.json")
             == json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))["sources"]["data_manifest_sha256"]
-            and sha256(Path(json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))["sources"]["r109_checkpoint"]))
+            and sha256(Path(PROJECT_ROOT / json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))["sources"]["r109_checkpoint"]))
             == json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))["sources"]["r109_checkpoint_sha256"]
         ),
     }

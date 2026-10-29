@@ -13,16 +13,17 @@ import pandas as pd
 import torch
 import torch.nn.functional as F
 from torch import nn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA, WEIGHTS, RESULTS = (ROOT / name for name in ("data", "weights", "results"))
 for folder in (DATA, WEIGHTS, RESULTS):
     folder.mkdir(parents=True, exist_ok=True)
-ECORE_PATH = Path(r"D:\GMM_2_Final\Experiments\R108E_ContourConservingProfileRendererMicroprobe\scripts\run_probe.py")
-SOURCE_DATA = Path(r"D:\GMM_2_Final\Experiments\R108E_ContourConservingProfileRendererMicroprobe\data\profile_renderer_data.npz")
+ECORE_PATH = Path(str(PROJECT_ROOT / 'Experiments/R108E_ContourConservingProfileRendererMicroprobe/scripts/run_probe.py'))
+SOURCE_DATA = Path(str(PROJECT_ROOT / 'Experiments/R108E_ContourConservingProfileRendererMicroprobe/data/profile_renderer_data.npz'))
 SOURCE_DATA_SHA = "3e3ed993a03a0b354888b3d28edc4d2edcc26ee624f317e4615bfcb5a41b7663"
-R108E_WEIGHT = Path(r"D:\GMM_2_Final\Experiments\R108E_ContourConservingProfileRendererMicroprobe\weights\contour_profile_renderer.pth")
+R108E_WEIGHT = Path(str(PROJECT_ROOT / 'Experiments/R108E_ContourConservingProfileRendererMicroprobe/weights/contour_profile_renderer.pth'))
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 

@@ -5,9 +5,10 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
 import numpy as np,pandas as pd
 from measure import reader
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 def main():
-    out=ROOT/'results/lsc_comparison';p=load(out/'plan.json');cfg=load(p['configuration']['path']);core,scope=reader(p)
+    out=ROOT/'results/lsc_comparison';p=load(out/'plan.json');cfg=load(str(PROJECT_ROOT / p['configuration']['path']));core,scope=reader(p)
     # Same required-halo formula as the frozen model, evaluated from its frozen configuration.
     c=load(ROOT/'config/study.json')['model'];perstep=math.ceil((2*(2+2*sum(c['dilations']))+3)/4)+1;halo=math.ceil((c['iterations']*perstep+2)/16)*16
     rows=[]

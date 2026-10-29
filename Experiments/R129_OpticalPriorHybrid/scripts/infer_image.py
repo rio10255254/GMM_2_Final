@@ -9,6 +9,7 @@ import cv2,numpy as np,torch
 from model.hybrid_v2 import Hybrid
 from run_pilot import setup
 from evaluate_real import guard
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -24,8 +25,8 @@ def main():
     plan=load(ROOT/'config/plan.json');impl=load(ROOT/'config/implementation_v2.json')
     cp=load(ROOT/'runs/D/summary.json')['checkpoint']
     for item in [cp,plan['calibration'],impl['active_implementation']]:
-        if sha(item['path'])!=item['sha256']:raise RuntimeError('Source mismatch: '+item['path'])
-    setup(plan['common_seed']);bank=np.load(plan['calibration']['path'])
+        if sha(str(PROJECT_ROOT / item['path']))!=item['sha256']:raise RuntimeError('Source mismatch: '+str(PROJECT_ROOT / item['path']))
+    setup(plan['common_seed']);bank=np.load(str(PROJECT_ROOT / plan['calibration']['path']))
     model=Hybrid(torch.from_numpy(bank['mean']),torch.from_numpy(bank['candidates'])).to(args.device)
     model.load_state_dict(torch.load(cp['path'],map_location=args.device)['model']);model.eval()
     x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].to(args.device)

@@ -1,6 +1,7 @@
 function measure_sem_replay()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
 % Correct historical display-export comparison; original failed runner is preserved.
-root='D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation';
+root=fullfile(PROJECT_ROOT, 'Experiments/R119_SequenceGeometryValidation');
 out=fullfile(root,'analysis','sem_position_audit_20260906');
 assert(isfile(fullfile(out,'render_audit.json')),'Rendering incomplete');
 assert(~isfile(fullfile(out,'measurements_replay.csv')),'Do not overwrite measurements');

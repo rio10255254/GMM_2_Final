@@ -11,11 +11,12 @@ import cv2
 import numpy as np
 import pandas as pd
 from skimage.metrics import structural_similarity
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL_PATH = ROOT / "reports" / "full_validation_epoch055" / "validation_protocol.json"
-R78_CONFIG_PATH = Path(r"D:\GMM_2_Final\Experiments\R78_R75v2_BroadRealMicroscopeGeneralization\config\experiment.json")
+R78_CONFIG_PATH = Path(str(PROJECT_ROOT / 'Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/config/experiment.json'))
 RESULTS = ROOT / "results" / "full_validation_epoch055"
 RECON_ROOT = RESULTS / "reconstructions"
 TABLES = RESULTS / "tables"
@@ -97,10 +98,10 @@ def verify_inputs(protocol: dict, config: dict) -> dict:
         raise RuntimeError("Locked Raw eligibility table changed")
     audit = {"status": "complete", "locked_table_hash_verified": True, "sequences": {}}
     for sequence, item in config["sequences"].items():
-        raw_paths = image_paths(Path(item["raw_dir"]))
+        raw_paths = image_paths(Path(PROJECT_ROOT / item["raw_dir"]))
         if len(raw_paths) != int(item["frame_count"]):
             raise RuntimeError(f"{sequence}: Raw frame count mismatch")
-        methods = {"R61v16": image_paths(Path(item["r61_dir"]))}
+        methods = {"R61v16": image_paths(Path(PROJECT_ROOT / item["r61_dir"]))}
         for label in ("R89E100", "R90E55"):
             directory = RECON_ROOT / label / sequence
             paths = image_paths(directory)
@@ -289,9 +290,9 @@ def save_montage(sequence: str, raw: np.ndarray, methods: dict[str, np.ndarray])
 def evaluate_appearance(config: dict) -> tuple[pd.DataFrame, pd.DataFrame]:
     rows = []
     for sequence, item in config["sequences"].items():
-        raw_paths = image_paths(Path(item["raw_dir"]))
+        raw_paths = image_paths(Path(PROJECT_ROOT / item["raw_dir"]))
         paths_by_method = {
-            "R61v16": image_paths(Path(item["r61_dir"])),
+            "R61v16": image_paths(Path(PROJECT_ROOT / item["r61_dir"])),
             "R89E100": image_paths(RECON_ROOT / "R89E100" / sequence),
             "R90E55": image_paths(RECON_ROOT / "R90E55" / sequence),
         }

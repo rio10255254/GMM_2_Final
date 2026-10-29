@@ -1,4 +1,5 @@
 function run_acm_multimethod(experiment_root)
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
 % Run one locked Chan-Vese contour protocol for Raw and every R82 model.
 
 if nargin < 1 || strlength(string(experiment_root)) == 0
@@ -7,7 +8,7 @@ end
 experiment_root = char(experiment_root);
 cfg = jsondecode(fileread(fullfile(experiment_root, 'config', 'experiment.json')));
 inference = jsondecode(fileread(fullfile(experiment_root, 'results', 'inference_manifest.json')));
-data_root = char(cfg.dataset.root);
+data_root = fullfile(PROJECT_ROOT, char(cfg.dataset.root));
 table_dir = fullfile(experiment_root, 'results', 'tables');
 mask_dir = fullfile(experiment_root, 'results', 'masks');
 if ~exist(table_dir, 'dir'), mkdir(table_dir); end

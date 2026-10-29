@@ -13,7 +13,7 @@ import subprocess as process_api
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PYTHON = Path(r"C:\Users\Rio\anaconda3\python.exe")
+PYTHON = Path("python")
 MINIMUM_FREE_MIB = 2048
 MAXIMUM_CANDIDATE_SECONDS = 120.0
 MEASURED_SOURCE_FILES = (

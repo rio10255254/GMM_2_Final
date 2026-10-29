@@ -3,12 +3,12 @@
   "locked_before_new_posttraining_outputs": true,
   "primary_checkpoint_epoch": 48,
   "checkpoint_state": "ema_state_dict",
-  "checkpoint": "D:/GMM_2_Final/Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_048.pth.tar",
+  "checkpoint": "Experiments/R97_DirectCausalPhaseScratch/weights/formal/seed_970043/R97_scratch_seed970043_20260813_200802/weights/epoch_048.pth.tar",
   "selection_policy": "Epoch 48 is the fixed formal endpoint. Earlier checkpoints are trajectory diagnostics only and cannot replace it after real or SEM results are seen.",
   "real_microscope_arm": {
-    "source_sequence_config": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json",
-    "locked_raw_measurements": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv",
-    "r96_reconstruction_root": "D:/GMM_2_Final/Experiments/R96_LocalizedEvidenceProtectedScratch/results/final_validation/real_generalization/reconstructions",
+    "source_sequence_config": "Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json",
+    "locked_raw_measurements": "Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv",
+    "r96_reconstruction_root": "Experiments/R96_LocalizedEvidenceProtectedScratch/results/final_validation/real_generalization/reconstructions",
     "sequences": [
       "5x_0p5um",
       "5x_1um",
@@ -30,9 +30,9 @@
     }
   },
   "sem_contour_arm": {
-    "raw_input_dir": "D:/GMM_2_Final/Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack",
+    "raw_input_dir": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack",
     "sem_dir": "H:/From_2TB_D_disk/13_thesis/SEM_data",
-    "ordering_mapping": "H:/From_2TB_D_disk/13_thesis/SEM_data/ordering_result_20260729/SEM_center36_file_mapping.csv",
+    "ordering_mapping": "Thesis_MOSR_Evidence/SEM_data/ordering_result_20260729/SEM_center36_file_mapping.csv",
     "exposures": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
     "physical_pillars": 36,
     "contour_method": "Chan-Vese active contour",

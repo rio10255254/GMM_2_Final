@@ -13,12 +13,13 @@ import numpy as np
 import pandas as pd
 from scipy.io import loadmat
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "config" / "early_stop_validation.json"
 INFERENCE = ROOT / "inference" / "reconstruct.py"
-BASE_MASK = Path(r"D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch\results\final_validation\sem_acm_epoch100\acm_validation\results\masks\acm_primary_masks.mat")
+BASE_MASK = Path(str(PROJECT_ROOT / 'Experiments/R89_MeasurementNativeScratch/results/final_validation/sem_acm_epoch100/acm_validation/results/masks/acm_primary_masks.mat'))
 OUTPUT = ROOT / "results" / "early_stop_validation" / "branch_diagnostics"
 SEM_EXPOSURES = (13, 17, 18, 19, 24)
 BRANCHES = ("low_delta", "detail_delta", "edge_delta", "correction")
@@ -83,8 +84,8 @@ def extract_cell(image: np.ndarray, center: np.ndarray, half: int) -> np.ndarray
 def main() -> int:
     protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
     stages = [int(value) for value in protocol["stage_candidates"]]
-    checkpoint_root = Path(protocol["checkpoint_root"])
-    sem_root = Path(protocol["development_arms"]["sem_contour"]["optical_inputs"])
+    checkpoint_root = Path(PROJECT_ROOT / protocol["checkpoint_root"])
+    sem_root = Path(PROJECT_ROOT / protocol["development_arms"]["sem_contour"]["optical_inputs"])
     base = loadmat(BASE_MASK, variable_names=["opt_centers", "cell_half"])
     centers = np.asarray(base["opt_centers"], dtype=float)
     half = int(np.asarray(base["cell_half"]).squeeze())
@@ -95,7 +96,7 @@ def main() -> int:
         "edge_annulus": (radius >= 35) & (radius < 42),
         "outside": (radius >= 47) & (radius < 51),
     }
-    five_x_path = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\5x_0p5um\bmp\frame_0024.bmp")
+    five_x_path = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0024.bmp'))
     five_x = read_gray(five_x_path)
     raw_gradient = gradient_magnitude(five_x)
     raw_support = raw_gradient >= float(np.percentile(raw_gradient, 85))

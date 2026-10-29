@@ -1,6 +1,6 @@
 # Lab Training Data Style Audit
 
-- training_root: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data`
+- training_root: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data`
 - sample_per_package: `160` (`0` means all pairs)
 - discovered_packages: `28`
 - discovered_pairs: `55784`

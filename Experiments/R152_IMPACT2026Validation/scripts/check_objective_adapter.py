@@ -5,8 +5,9 @@ import numpy as np
 import torch
 from scipy.signal import fftconvolve
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 sys.dont_write_bytecode=True
-ROOT=Path(__file__).resolve().parents[1];MODEL_ROOT=Path('D:/GMM_2_Final/Experiments/R152_R148v2_SafeAdaptivePSF')
+ROOT=Path(__file__).resolve().parents[1];MODEL_ROOT=Path(str(PROJECT_ROOT / 'Experiments/R152_R148v2_SafeAdaptivePSF'))
 sys.path.insert(0,str(MODEL_ROOT))
 from model import Model
 from utils import setup,load,save,sha
@@ -14,10 +15,10 @@ from objective_optics import install_50x,load_original_kernel,configure_optical_
 
 def main():
     setup(1309001);cfg=load(MODEL_ROOT/'config/model.json');receipt=load(MODEL_ROOT/'runs/formal_8192/training_complete.json')['deployed_checkpoint']
-    assert sha(receipt['path'])==receipt['sha256']
+    assert sha(str(PROJECT_ROOT / receipt['path']))==receipt['sha256']
     device='cuda' if torch.cuda.is_available() else 'cpu'
-    m=Model(cfg,MODEL_ROOT).to(device).eval();m.load_state_dict(torch.load(receipt['path'],map_location='cpu',weights_only=False)['model'])
-    image_path=Path(load(ROOT/'sources/sequence_config.json')['sequences']['50x_x_0p5um']['raw_dir'])/'frame_0000.bmp'
+    m=Model(cfg,MODEL_ROOT).to(device).eval();m.load_state_dict(torch.load(str(PROJECT_ROOT / receipt['path']),map_location='cpu',weights_only=False)['model'])
+    image_path=Path(PROJECT_ROOT / load(ROOT/'sources/sequence_config.json')['sequences']['50x_x_0p5um']['raw_dir'])/'frame_0000.bmp'
     a=np.asarray(Image.open(image_path),dtype=np.float32)/255
     x=torch.from_numpy(a[560:816,1050:1306][None,None]).to(device)
     with torch.inference_mode():old=m.forward_tiled(x)

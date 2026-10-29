@@ -7,6 +7,7 @@ from datetime import datetime
 from pathlib import Path
 
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +21,7 @@ def dump(path: Path, payload: object) -> None:
 
 def main() -> int:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
-    package = Path(config["data"]["base_package"])
+    package = Path(PROJECT_ROOT / config["data"]["base_package"])
     manifest_path = package / "manifest.json"
     audit_path = package / "audit.json"
     if not manifest_path.is_file() or not audit_path.is_file():

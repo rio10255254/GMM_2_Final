@@ -3,7 +3,7 @@
 The delivered reader accepts8bit/16bit gray images and color images, preserves integer input depth before conversion, and reports displacement in source-image pixels. It never automatically converts to micrometers or treats a commanded stage move as truth. Existing output files are refused.
 
 ```powershell
-& C:\Users\Rio\anaconda3\python.exe D:\GMM_2_Final\Experiments\R127_MeasurementPreservationRepair\scripts\measure_pair.py --first C:\Data\frame0.tif --second C:\Data\frame1.tif --output C:\Data\pair_result.json
+& C:\Users\Rio\anaconda3\python.exe Experiments/R127_MeasurementPreservationRepair/scripts/measure_pair.py --first C:\Data\frame0.tif --second C:\Data\frame1.tif --output C:\Data\pair_result.json
 ```
 
 To retain a local diagnostic while using the full images as larger context, add `--roi X Y WIDTH HEIGHT`. The result explicitly distinguishes local validity from the scope of the returned translation. If matching is ambiguous, `displacement_xy_px` is null and the status is `not_uniquely_measurable`. A numeric return is a conditional image-registration estimate, not independently measured stage truth.

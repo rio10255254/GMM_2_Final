@@ -3,6 +3,7 @@ from pathlib import Path
 import sys,re,shutil
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from rt import *
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     result=load(ROOT/'results/cross_axis_analysis/complete.json');assert result['independent_center_refits']==702 and result['original_negative_admission_unchanged']
@@ -21,5 +22,5 @@ def main():
     p=ROOT/'MANIFEST.md';p.write_text(p.read_text(encoding='utf-8')+'\nCross-axis follow-up: cross_axis_diagnosis (468centerrows), cross_axis_precision_v2 (234centerrows), cross_axis_analysis (702independentrefits, figures, cohort context); retain initial precision-test failure. Canonical R134_CROSS_AXIS_DIAGNOSIS.md. Original admission and frozen packaging sources unchanged; no long training triggered.\n',encoding='utf-8')
     p=ROOT/'results/continuation/status.json';v=load(p);v.update(diagnosis='case_quantization_effect_identified_full_precision201_pending',diagnosis_report=str(ROOT/'reports/R134_CROSS_AXIS_DIAGNOSIS.md'),updated_utc=now());atomic(p,v)
     p=repo/'docs/operations/PROJECT_STORAGE_REGISTRY.json';v=load(p);x=next(x for x in v['entries'] if x['id']=='r134_direct_state');x.update(diagnosis='complete_case_precision_followup',actual_gib=sum(p.stat().st_size for p in ROOT.rglob('*') if p.is_file())/2**30);atomic(p,v)
-    verify();assert sha(admission['path'])==admission['sha256'];assert all(sha(x['path'])==x['sha256'] for x in load(ROOT/'config/packaging_source_binding.json')['sources']);save(ROOT/'results/cross_axis_analysis/publication_verified.json',dict(original_admission_unchanged=True,frozen_source_binding_unchanged=True,model_promoted=False,report=record(ROOT/'reports/R134_CROSS_AXIS_DIAGNOSIS.md')));print('Diagnosis published without changing original admission or frozen model sources')
+    verify();assert sha(admission['path'])==admission['sha256'];assert all(sha(str(PROJECT_ROOT / x['path']))==x['sha256'] for x in load(ROOT/'config/packaging_source_binding.json')['sources']);save(ROOT/'results/cross_axis_analysis/publication_verified.json',dict(original_admission_unchanged=True,frozen_source_binding_unchanged=True,model_promoted=False,report=record(ROOT/'reports/R134_CROSS_AXIS_DIAGNOSIS.md')));print('Diagnosis published without changing original admission or frozen model sources')
 if __name__=='__main__':main()

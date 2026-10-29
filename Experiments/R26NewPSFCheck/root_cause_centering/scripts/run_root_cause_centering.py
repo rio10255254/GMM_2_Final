@@ -23,9 +23,10 @@ from root_cause_centering_lib import (
     load_run_profile,
     summarize_psf_pair,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\root_cause_centering")
+ROOT = Path(str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/root_cause_centering'))
 REPORTS = ROOT / "reports"
 TABLES = ROOT / "tables"
 FIGURES = ROOT / "figures"
@@ -35,31 +36,31 @@ MANIFESTS = ROOT / "manifests"
 
 OLD_RUN = ROOT / "archived_inputs" / "r26sm035_recipe_profile_20260316"
 NEW_RUN = Path(
-    r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223"
+    str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/artifacts/package_cleanup_archive_20260326/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223')
 )
 OLD_PSF = Path(
-    r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326\psf_swap_20260326_093203\PSF_fitted_2D_FOVstack.package_old.mat"
+    str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/artifacts/package_cleanup_archive_20260326/psf_swap_20260326_093203/PSF_fitted_2D_FOVstack.package_old.mat')
 )
-NEW_PSF = Path(r"D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat")
+NEW_PSF = Path(str(PROJECT_ROOT / 'PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat'))
 RAW_SAMPLE = Path(
-    r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\ablation_single_sample\input\VisionTop_20251029182653732.bmp"
+    str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/ablation_single_sample/input/VisionTop_20251029182653732.bmp')
 )
-ABLATION_ROOT = Path(r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\ablation_single_sample")
+ABLATION_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/ablation_single_sample'))
 OLD_RECON = ABLATION_ROOT / "reconstruct_progress_r26_sm035_best_tradeoff_in_input_20260324_233331" / "old_ckpt_oldpsf" / RAW_SAMPLE.name
 NEW_RECON = ABLATION_ROOT / "reconstruct_progress_best_tradeoff_in_input_20260326_115148" / "new_ckpt_newpsf" / RAW_SAMPLE.name
 OLD_RECON_NO_OVERRIDE_NEWPSF = ABLATION_ROOT / "reconstruct_progress_r26_sm035_best_tradeoff_in_input_20260324_233331" / "old_ckpt_newpsf" / RAW_SAMPLE.name
 NEW_RECON_NO_OVERRIDE_OLDPSF = ABLATION_ROOT / "reconstruct_progress_best_tradeoff_in_input_20260326_115148" / "new_ckpt_oldpsf" / RAW_SAMPLE.name
 
 ANALYSIS_CORE_PATH = Path(
-    r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326\analysis_single_image_recon\scripts\analysis_core.py"
+    str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/artifacts/package_cleanup_archive_20260326/analysis_single_image_recon/scripts/analysis_core.py')
 )
 ANALYSIS_CONFIG_PATH = Path(
-    r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326\analysis_single_image_recon\scripts\analysis_config.json"
+    str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/artifacts/package_cleanup_archive_20260326/analysis_single_image_recon/scripts/analysis_config.json')
 )
 ROI_LOG_PATH = Path(
-    r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326\analysis_single_image_recon\logs\roi_selection.json"
+    str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/artifacts/package_cleanup_archive_20260326/analysis_single_image_recon/logs/roi_selection.json')
 )
-INFER_SCRIPT_PATH = Path(r"D:\GMM_2_Final\Model\GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py")
+INFER_SCRIPT_PATH = Path(str(PROJECT_ROOT / 'Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py'))
 
 OLD_BEST_CKPT = OLD_RUN / "weights" / "best_tradeoff.pth.tar"
 NEW_BEST_CKPT = NEW_RUN / "weights" / "best_tradeoff.pth.tar"

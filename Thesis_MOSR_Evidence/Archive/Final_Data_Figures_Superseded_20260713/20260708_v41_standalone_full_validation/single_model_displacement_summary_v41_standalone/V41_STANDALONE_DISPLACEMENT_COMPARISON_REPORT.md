@@ -35,5 +35,5 @@
 
 ## 來源
 
-- source_all_steps: D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260708_v41_standalone_full_validation\boundary_sensitive_roi_v41_compare\tables\boundary_sensitive_all_steps.csv
+- source_all_steps: Thesis_MOSR_Evidence/Final_Data_Figures/20260708_v41_standalone_full_validation/boundary_sensitive_roi_v41_compare/tables/boundary_sensitive_all_steps.csv
 - generated_at: 2026-07-08T22:52:23

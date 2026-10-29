@@ -9,6 +9,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,10 +27,10 @@ def main() -> int:
     checks: dict[str, object] = {}
 
     for key, path_field, hash_field in (
-        ("r109_checkpoint", CONFIG["models"]["r109_e48"]["checkpoint"], CONFIG["models"]["r109_e48"]["sha256"]),
-        ("v42_checkpoint", CONFIG["models"]["v42_e120"]["checkpoint"], CONFIG["models"]["v42_e120"]["sha256"]),
-        ("sequence_config", CONFIG["frozen_contract"]["sequence_config"], CONFIG["frozen_contract"]["sequence_config_sha256"]),
-        ("top30_selection", CONFIG["frozen_contract"]["top30_selection"], CONFIG["frozen_contract"]["top30_selection_sha256"]),
+        ("r109_checkpoint", str(PROJECT_ROOT / CONFIG["models"]["r109_e48"]["checkpoint"]), CONFIG["models"]["r109_e48"]["sha256"]),
+        ("v42_checkpoint", str(PROJECT_ROOT / CONFIG["models"]["v42_e120"]["checkpoint"]), CONFIG["models"]["v42_e120"]["sha256"]),
+        ("sequence_config", str(PROJECT_ROOT / CONFIG["frozen_contract"]["sequence_config"]), CONFIG["frozen_contract"]["sequence_config_sha256"]),
+        ("top30_selection", str(PROJECT_ROOT / CONFIG["frozen_contract"]["top30_selection"]), CONFIG["frozen_contract"]["top30_selection_sha256"]),
     ):
         path = Path(path_field)
         actual = sha256(path) if path.is_file() else "missing"

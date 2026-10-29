@@ -14,11 +14,12 @@ import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.neighbors import NearestNeighbors
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-R109 = Path(CONFIG["sources"]["r109_root"])
+R109 = Path(PROJECT_ROOT / CONFIG["sources"]["r109_root"])
 OUTPUT = ROOT / "results" / "degradation_recoverability"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(R109 / "training"))
@@ -227,7 +228,7 @@ def main() -> int:
     collisions.to_csv(OUTPUT / "nearest_source_ambiguity.csv", index=False, encoding="utf-8-sig")
     save_worst_panel(frame)
 
-    manifest = json.loads((Path(CONFIG["sources"]["data_package"]) / "manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads((Path(PROJECT_ROOT / CONFIG["sources"]["data_package"]) / "manifest.json").read_text(encoding="utf-8"))
     roles = pd.Series([record["role"] for record in manifest["records"]])
     record_identity_fraction = float(roles.eq("identity").mean())
     effective_first_identity = record_identity_fraction

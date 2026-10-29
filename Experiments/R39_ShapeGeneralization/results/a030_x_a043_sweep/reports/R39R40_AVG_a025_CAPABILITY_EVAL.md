@@ -97,7 +97,7 @@
 
 ### R40 micro_val_unseen 五聯（5 顯微類 × 4 frame）
 
-`D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\visuals\contact_sheet_a025_micro_five_panel.png`
+`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_micro_five_panel.png`
 
 GT / COMBO / a030 / R40 a043 / R39R40_a025 五欄對比，cell 大小 260×260。
 
@@ -111,23 +111,23 @@ GT / COMBO / a030 / R40 a043 / R39R40_a025 五欄對比，cell 大小 260×260�
 
 ### R39 shape_val_unseen 五聯（7 形狀類 × 3 frame）
 
-`D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\visuals\contact_sheet_a025_shape_five_panel.png`
+`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_shape_five_panel.png`
 
 純幾何形狀的差異比顯微小很多。COMBO 邊界較糊、其他三個（a030 / a043 / a025）都重建得不錯。a025 跟 a030 視覺幾乎一樣，跟 a043 比稍微淡一點銳度。
 
 ### 四聯版本（沒有 a043）
 
-`D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\visuals\contact_sheet_a025_four_panel.png`
+`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_four_panel.png`
 
 cell 較大（320×320），純粹聚焦 GT / COMBO / a030 / a025 三個候選對比。
 
 ## 產物
 
-- 逐張指標：`D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\capability_eval\per_pair_metrics.csv`
-- 逐 stage 平均：`D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\capability_eval\stage_summary.csv`
-- 整體平均：`D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\capability_eval\overall_summary.csv`
-- 視覺四項統計：`D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\capability_eval\visual_stats.csv`
-- 視覺對比 sheet：`D:/GMM_2_Final/Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_four_panel.png`（由 r39r40_a025_four_panel_contact.py 產生）
+- 逐張指標：`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/per_pair_metrics.csv`
+- 逐 stage 平均：`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/stage_summary.csv`
+- 整體平均：`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/overall_summary.csv`
+- 視覺四項統計：`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/capability_eval/visual_stats.csv`
+- 視覺對比 sheet：`Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_four_panel.png`（由 r39r40_a025_four_panel_contact.py 產生）
 
 ## 方法
 

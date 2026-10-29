@@ -8,12 +8,13 @@ from training.data import Bank
 from training.engine import create,update,checkpoint,restore,state_digest
 from evaluation.generated import evaluate as generated_eval
 from evaluation.real import evaluate as real_eval
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def verify_binding(binding):
     for p,h in binding['implementation_sha256'].items():
         if sha(p)!=h:raise RuntimeError(f'Frozen implementation changed: {p}')
     for item in binding['required_records']:
-        if sha(item['path'])!=item['sha256']:raise RuntimeError('Frozen input/decision record changed')
+        if sha(str(PROJECT_ROOT / item['path']))!=item['sha256']:raise RuntimeError('Frozen input/decision record changed')
     if not load(ROOT/'results/data_audit.json')['passed'] or not load(ROOT/'results/engineering_preflight.json')['passed'] or not load(ROOT/'results/real_evaluator_preflight.json')['passed']:raise RuntimeError('Readiness failed')
 
 def train(arm,seed,resume=False):

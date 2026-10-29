@@ -2,7 +2,7 @@
 
 %% ========== File Settings ==========
 obs_img_path = "D:\NonSystemFiles\GMM2\MitsutoyoSample_GMMSys_20x\TestImage\Representative_Clusters_Output\Crop_circle_1201\Crop_circle_901_v2\VisionTop_20250903160550.bmp";
-out_folder   = "D:\NonSystemFiles\GMM2\MitsutoyoSample_GMMSys_20x\TestImage\Representative_Clusters_Output\Crop_circle_1201\Crop_circle_901_v2\FrequencyFiltered\";
+out_folder   = "PSF_Fitting/SingleImage_Input\";
 suffix_tag   = "_freqDenoise";
 
 if ~exist(out_folder, 'dir'); mkdir(out_folder); end

@@ -6,7 +6,7 @@
 
 在PowerShell執行以下一行，將兩個範例位置換成原圖與新的結果資料夾：
 
-    & 'C:\Users\Rio\anaconda3\python.exe' 'D:\GMM_2_Final\Experiments\R128_SourceOnlyFullTraining\trial\restore.py' --input 'D:\你的照片\原圖.bmp' --output-dir 'D:\你的照片\本次修復結果'
+    & 'C:\Users\Rio\anaconda3\python.exe' 'Experiments/R128_SourceOnlyFullTraining/trial/restore.py' --input 'D:\你的照片\原圖.bmp' --output-dir 'D:\你的照片\本次修復結果'
 
 結果資料夾已存在時，程式會停止，避免覆寫先前結果。資料夾內：
 

@@ -19,6 +19,7 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from data.geometry import draw_mask,analytic_texture,translate_high
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 CONFIG=json.loads((ROOT/'config/experiment.json').read_text())
 PACKAGE=ROOT/CONFIG['data']['package_root']
 
@@ -87,7 +88,7 @@ def process_scene(row):
         if complete and same_optics:return previous
         # Rebuild only this generated observation record. Reference hardlinks
         # remain immutable; changed optical settings do not silently reuse old data.
-    source=Path(CONFIG['source_package'])
+    source=Path(PROJECT_ROOT / CONFIG['source_package'])
     if not source.exists():source=PACKAGE
     record=dict(row)
     for key in ('target_a','target_b','mask_a','mask_b','sdf_a','sdf_b','mask2_a','mask2_b','sdf2_a','sdf2_b'):
@@ -115,7 +116,7 @@ def process_scene(row):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--workers',type=int,default=6);parser.add_argument('--limit',type=int,default=0);args=parser.parse_args()
-    original=Path(CONFIG['source_package'])/'manifest.json'
+    original=Path(PROJECT_ROOT / CONFIG['source_package'])/'manifest.json'
     if original.exists():
         if sha(original)!=CONFIG['source_manifest_sha256']:raise RuntimeError('reference manifest differs')
     else:

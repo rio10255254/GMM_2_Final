@@ -16,14 +16,15 @@ from scipy.io import loadmat
 from scipy.ndimage import center_of_mass
 from scipy.stats import wilcoxon
 from skimage.measure import find_contours
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-R69 = Path(CONFIG["paired_evidence"]["r69_root"])
-R70 = Path(CONFIG["paired_evidence"]["r70_root"])
-RAW_DIR = Path(CONFIG["paired_evidence"]["raw_input_dir"])
-RECON_DIR = Path(CONFIG["inference"]["reconstruction_dir"])
+R69 = Path(PROJECT_ROOT / CONFIG["paired_evidence"]["r69_root"])
+R70 = Path(PROJECT_ROOT / CONFIG["paired_evidence"]["r70_root"])
+RAW_DIR = Path(PROJECT_ROOT / CONFIG["paired_evidence"]["raw_input_dir"])
+RECON_DIR = Path(PROJECT_ROOT / CONFIG["inference"]["reconstruction_dir"])
 RESULTS = ROOT / "results"
 TABLES = RESULTS / "tables"
 FIGURES = RESULTS / "figures"

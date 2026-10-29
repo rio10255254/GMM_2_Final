@@ -5,9 +5,10 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-ROOT = Path(r"D:\GMM_2_Final")
+ROOT = Path(str(PROJECT_ROOT))
 OUT = ROOT / "Experiments" / "R66_V20_TraceabilityFigures_20260725" / "qa"
 
 PATHS = {

@@ -17,8 +17,8 @@
 
 ## 目前外部驗證主入口
 
-- [external_validation/current_seed/README.md](D:/GMM_2_Final/Traing_Progress/organized_20260309/external_validation/current_seed/README.md)
-- [external_validation/current_seed/CURRENT_TARGET.json](D:/GMM_2_Final/Traing_Progress/organized_20260309/external_validation/current_seed/CURRENT_TARGET.json)
+- [external_validation/current_seed/README.md](external_validation/current_seed/README.md)
+- [external_validation/current_seed/CURRENT_TARGET.json](external_validation/current_seed/CURRENT_TARGET.json)
 
 目前驗證對象：
 
@@ -27,7 +27,7 @@
 - seed label：
   - `step8_curve_stdguard_v2`
 - 實際權重：
-  - `D:\GMM_2_Final\Traing_Progress\organized_20260307\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\weights\best_tradeoff.pth.tar`
+  - `Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar`
 
 ## 目前已保存的外部驗證結果
 

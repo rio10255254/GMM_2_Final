@@ -7,6 +7,7 @@ from common import *
 import torch,numpy as np
 from torch.nn import functional as F
 from model.hybrid_v2 import Hybrid
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 MODEL_NAME_BASE='R129_OpticalPriorHybrid'
 
@@ -15,7 +16,7 @@ def setup(seed):
 
 def create(arm,plan):
     setup(plan['common_seed']);d=np.load(ROOT/'data/measured_psf_bank.npz');m=Hybrid(torch.from_numpy(d['mean']),torch.from_numpy(d['candidates']),**plan['arms'][arm]).to('cuda')
-    m.initialize_from_r128(torch.load(plan['source_checkpoint']['path'],map_location='cpu')['model']);return m
+    m.initialize_from_r128(torch.load(str(PROJECT_ROOT / plan['source_checkpoint']['path']),map_location='cpu')['model']);return m
 
 def digest(m):
     import hashlib
@@ -29,8 +30,8 @@ def loss(m,b,helpers):
     return image+.2*gradient+.2*pair,dict(image=float(image.detach()),gradient=float(gradient.detach()),pair=float(pair.detach()))
 
 def main():
-    plan=load(ROOT/'config/plan.json');impl=load(ROOT/'config/implementation_v2.json');assert sha(impl['active_implementation']['path'])==impl['active_implementation']['sha256'];assert load(ROOT/'results/integration_tests_v2.json')['passed']
-    assert sha(plan['source_checkpoint']['path'])==plan['source_checkpoint']['sha256'] and sha(plan['calibration']['path'])==plan['calibration']['sha256']
+    plan=load(ROOT/'config/plan.json');impl=load(ROOT/'config/implementation_v2.json');assert sha(str(PROJECT_ROOT / impl['active_implementation']['path']))==impl['active_implementation']['sha256'];assert load(ROOT/'results/integration_tests_v2.json')['passed']
+    assert sha(str(PROJECT_ROOT / plan['source_checkpoint']['path']))==plan['source_checkpoint']['sha256'] and sha(str(PROJECT_ROOT / plan['calibration']['path']))==plan['calibration']['sha256']
     datafile=R128/'training/data.py';spec=importlib.util.spec_from_file_location('r129_shared_data',datafile);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);bank=module.Bank()
     objective=R128/'training/objectives.py';nodes=[n for n in ast.parse(objective.read_text()).body if isinstance(n,ast.FunctionDef) and n.name in ['robust_gray','translated']];helpers=dict(torch=torch,F=F,math=math);exec(compile(ast.Module(body=nodes,type_ignores=[]),str(objective),'exec'),helpers)
     save(ROOT/'runs/pilot_started.json',dict(started_utc=now(),plan=record(ROOT/'config/plan.json'),implementation=record(ROOT/'config/implementation_v2.json'),source=record(__file__),data_source=record(datafile),loss_helper=record(objective),expected_updates=96,MODEL_NAME_BASE=MODEL_NAME_BASE))

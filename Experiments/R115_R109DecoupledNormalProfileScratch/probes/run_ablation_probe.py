@@ -21,6 +21,7 @@ sys.path.insert(0, str(ROOT))
 from model.r115_model import build_model, count_parameters, load_r109_for_probe
 from training.losses import profile_evidence_components, profile_objective
 from training.r115_dataset import R115Dataset
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
@@ -129,7 +130,7 @@ def train_arm(
     probe = CONFIG["short_probe"]
     seed = int(CONFIG["seed"])
     seed_everything(seed)
-    checkpoint = Path(probe["baseline_checkpoint"])
+    checkpoint = Path(PROJECT_ROOT / probe["baseline_checkpoint"])
     if sha256(checkpoint) != probe["baseline_checkpoint_sha256"]:
         raise RuntimeError("R109 baseline checkpoint hash mismatch")
     model = build_model().to(device)

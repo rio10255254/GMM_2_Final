@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,7 +28,7 @@ def sha256(path: Path) -> str:
 
 
 def main() -> int:
-    package = Path(CONFIG["data"]["formal_package"])
+    package = Path(PROJECT_ROOT / CONFIG["data"]["formal_package"])
     manifest_path = package / "manifest.json"
     if sha256(manifest_path) != CONFIG["data"]["formal_manifest_sha256"]:
         raise RuntimeError("Formal procedural manifest changed.")

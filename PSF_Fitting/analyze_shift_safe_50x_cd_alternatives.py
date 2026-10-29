@@ -6,18 +6,17 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 EVALUATION_ROOT = Path(
-    r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation"
+    str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation/results/evaluation')
 )
 SEM_TABLE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\cd\tables\center9_cd_per_pillar.csv"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/cd/tables/center9_cd_per_pillar.csv')
 )
 OUTPUT_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\10_V23_50X_CD_PRESENTATION_CANDIDATES_20260727"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/10_V23_50X_CD_PRESENTATION_CANDIDATES_20260727')
 )
 VARIANTS = ("shift_safe_matched", "standard_upsample_matched")
 SEEDS = (1261200, 1261217)

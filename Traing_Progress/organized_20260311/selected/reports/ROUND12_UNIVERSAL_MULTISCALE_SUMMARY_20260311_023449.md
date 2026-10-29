@@ -1,7 +1,7 @@
 # Round12 Universal Multiscale Summary
 
 - best_candidate: universal_sign_guard
-- selected_checkpoint: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_usg_20260311_022337\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_usg_20260311_022337/weights/best_tradeoff.pth.tar
 - selection_policy: prefer 0.8px checkpoint for winning candidate
 
 | candidate | s0.08 | s0.8 | s8 | min_ann_sign | min_seq_sign | max_center | max_step | max_thick | universal |

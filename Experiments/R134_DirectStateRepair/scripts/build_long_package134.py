@@ -5,13 +5,14 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.i
 from rt import *
 from motion134 import load_reader
 import cv2
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     admission=load(ROOT/'results/long_admission.json');assert admission['eligible'],'No long-training package for an unqualified candidate'
     for key in ['stage1','motion12','motion201']:assert sha(admission[key]['path'])==admission[key]['sha256']
     assert load(ROOT/'results/motion_audit.json')['passed']
     for item in load(ROOT/'config/packaging_source_binding.json')['sources']:
-        assert sha(item['path'])==item['sha256'],item['path']
+        assert sha(str(PROJECT_ROOT / item['path']))==item['sha256'],str(PROJECT_ROOT / item['path'])
     seed=admission['selected_seed'];checkpoint_source=Path(admission['checkpoint']['path']);assert sha(checkpoint_source)==admission['checkpoint']['sha256']
     source=ROOT.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912'
     for rel,expected in load(source/'PACKAGE_MANIFEST.json')['files'].items():
@@ -61,15 +62,15 @@ class Hybrid(Network):
     text=text.replace(needle,"from verify_package import verify\n    verify(False)\n    m,_=create(a.device);state=torch.load(a.checkpoint,map_location=a.device)\n    if 'binding' in state:verify_binding(state['binding'])\n    elif sha(a.checkpoint)!=sha(ROOT/'weights/initial_r134.pth'):raise RuntimeError('Checkpoint is not the packaged generation or a bound run')\n    m.load_state_dict(state['model'],strict=True);m.eval()")
     p.write_text(text,encoding='utf-8')
     shutil.copy2(checkpoint_source,pkg/'weights/initial_r134.pth');shutil.copy2(ROOT/'calibration/measured_psf_bank.npz',pkg/'calibration/measured_psf_bank.npz')
-    shutil.copytree(Path(load(ROOT/'config/study.json')['data_root']),pkg/'training_data')
+    shutil.copytree(Path(PROJECT_ROOT / load(ROOT/'config/study.json')['data_root']),pkg/'training_data')
     cfg=load(source/'config/training.json');cfg.update(model_name='R134_DirectState_LongTraining',seed=seed,order_seed=1349002,noise_seed=1349003,initial_weights='weights/initial_r134.pth',continuation='Same-generation C512 checkpoint; optimizer reset;8192additionalupdates, not fresh-from-zero and not legacy neural inheritance',training_target_note='Native image+0.2gradient+0.2paired residual; direct image state; geometry requirement NOT added',architecture_changes=False)
     save(pkg/'config/training.json',cfg)
     for name in ['extract_sem.m','sem_reference.mat','reference_circle_core.py','readout_helpers.py','__init__.py']:shutil.copy2(ROOT/'validation'/name,pkg/'validation'/name)
-    mp=load(ROOT/'config/motion_panel.json');oldplan=load(mp['source_plan']['path']);scfg=load(mp['configuration']['path']);_,scope=load_reader()(oldplan);images=[]
+    mp=load(ROOT/'config/motion_panel.json');oldplan=load(str(PROJECT_ROOT / mp['source_plan']['path']));scfg=load(str(PROJECT_ROOT / mp['configuration']['path']));_,scope=load_reader()(oldplan);images=[]
     for e in [13,14,15]:
         src=ROOT/f'validation/inputs/sem{e}.png';dest=pkg/f'validation/inputs/sem{e}.png';dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dest);images.append(dict(name=f'sem{e}',kind='sem',path=dest.relative_to(pkg).as_posix(),sha256=sha(dest),original_source=record(src)))
     for frame in mp['frames']:
-        seq=frame['sequence'];index=frame['frame_index'];src=Path(frame['source']['path']);dest=pkg/f'validation/inputs/{seq}_{index:04d}.bmp';shutil.copy2(src,dest);spec=scfg['sequences'][seq];centers=scope['session_prediction'](seq,index,np.asarray(spec['centers'],float),spec['expected_signed_dx_px'])
+        seq=frame['sequence'];index=frame['frame_index'];src=Path(PROJECT_ROOT / frame['source']['path']);dest=pkg/f'validation/inputs/{seq}_{index:04d}.bmp';shutil.copy2(src,dest);spec=scfg['sequences'][seq];centers=scope['session_prediction'](seq,index,np.asarray(spec['centers'],float),spec['expected_signed_dx_px'])
         images.append(dict(name=f'{seq}_{index:04d}',kind='motion',path=dest.relative_to(pkg).as_posix(),sha256=sha(dest),sequence=seq,frame_index=index,global_origin=[0,0],centers_local=centers.tolist(),original_source=frame['source']))
     seqs={k:{a:b for a,b in s.items() if a!='raw_dir'} for k,s in scfg['sequences'].items()}
     save(pkg/'validation/panel.json',dict(images=images,sequences=seqs,motion_pairs=mp['pairs'],scope='Full native fields,12fixedpairs; not full201long-end qualification'))
@@ -83,7 +84,7 @@ class Hybrid(Network):
         inp=pkg/'sample_inputs'/(name+src.suffix);exp=pkg/'verification'/(name+'.png');shutil.copy2(src,inp);shutil.copy2(expected,exp);gold.append(dict(name=name,input=inp.relative_to(pkg).as_posix(),expected=exp.relative_to(pkg).as_posix()))
     save(pkg/'verification/golden.json',dict(cases=gold))
     for name in ['verify_package.py','preflight.py']:shutil.copy2(ROOT/'package_templates'/name,pkg/name)
-    save(pkg/'PROVENANCE.json',dict(generation='R134_C',admission=admission,source_checkpoint=record(checkpoint_source),source_data_manifest=record(Path(load(ROOT/'config/study.json')['data_root'])/'manifest.json'),B_D_not_implemented=True,calibration_not_material_edge_qualified=True,initial_prior_updates=512,planned_additional_updates=8192,originals_unchanged=True))
+    save(pkg/'PROVENANCE.json',dict(generation='R134_C',admission=admission,source_checkpoint=record(checkpoint_source),source_data_manifest=record(Path(PROJECT_ROOT / load(ROOT/'config/study.json')['data_root'])/'manifest.json'),B_D_not_implemented=True,calibration_not_material_edge_qualified=True,initial_prior_updates=512,planned_additional_updates=8192,originals_unchanged=True))
     (pkg/'README_TW.md').write_text('# R134 直接影像模型獨立長訓練包\n\n操作入口：START_R134.cmd。只有R134 C這一代；起始為已通過短測及位移條件的512次模型，另做8192次延續訓練，優化器重新開始。原R129不變。\n\n可開始、查看、安全暫停、續訓與重建範例。關閉選單不會停止背景訓練。所有資料／模型／校準／驗證程式在包內；Python、CUDA與MATLAB須由本機提供。\n\n每512次驗證全部128開發來源，0/512/2048/4096/8192檢查3張正常SEM及12對完整視野影像，終點檢查128生成測試。這些是既有開發資料，不是新未知樣品。完成训练不自动采用最后权重。\n\n目前仅新接口C，独立材料校准B/D尚未完成；没有新增几何要求或物理尺寸认证。初始与最终结果分开，默认重建仍保留包内起始模型。\n',encoding='utf-8')
     files={p.relative_to(pkg).as_posix():sha(p) for p in pkg.rglob('*') if p.is_file() and 'results' not in p.relative_to(pkg).parts}
     save(pkg/'PACKAGE_MANIFEST.json',dict(generation='R134_C',files=files,created_utc=now()))

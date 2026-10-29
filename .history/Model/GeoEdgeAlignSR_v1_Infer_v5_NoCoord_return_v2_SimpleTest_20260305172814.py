@@ -69,7 +69,7 @@ DEFAULT_ALIGN_FACTOR = 64
 MANUAL_SELECT_MODE = "odd"
 # Set to a path string or Path(...) for hard override; set None to use CLI/auto search.
 # Example:
-# MANUAL_WEIGHTS_PATH = Path(r"D:\GMM_2_Final\Traing_Progress\training_progress_xxx\weights\latest.pth.tar")
+# MANUAL_WEIGHTS_PATH = Path(r"Traing_Progress/training_progress_xxx/weights/latest.pth.tar")
 MANUAL_WEIGHTS_PATH = None
 
 VALID_EXTS = {".bmp", ".png", ".tif", ".tiff", ".jpg", ".jpeg"}

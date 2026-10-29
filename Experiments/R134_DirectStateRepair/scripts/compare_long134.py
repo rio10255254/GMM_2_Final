@@ -7,14 +7,15 @@ from infer134 import predict
 from motion134 import load_reader
 import cv2,pandas as pd
 from scipy.optimize import least_squares
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     pkg=Path(load(ROOT/'results/package_built.json')['path']);run=pkg/'results/training/r134_long_01';done=load(run/'completion.json');cp=pkg/done['final_checkpoint']['path'];assert sha(cp)==done['final_checkpoint']['sha256']
     state=torch.load(cp,map_location='cpu');assert state['step']==8192
     for rel,h in state['binding']['runtime_files'].items():assert sha(pkg/rel)==h
     seed=load(ROOT/'results/long_admission.json')['selected_seed'];m=create('C',seed);m.load_state_dict(state['model'],strict=True);m.eval()
-    panel=load(ROOT/'config/motion_panel.json');plan=load(panel['source_plan']['path']);cfg=load(panel['configuration']['path']);core,scope=load_reader()(plan);out=ROOT/'results/long_final_comparison';out.mkdir(exist_ok=False);tables=[];errors=[];records=[]
-    save(out/'started.json',dict(checkpoint=record(cp),source=record(__file__),plan=record(panel['source_plan']['path']),no_automatic_promotion=True))
+    panel=load(ROOT/'config/motion_panel.json');plan=load(str(PROJECT_ROOT / panel['source_plan']['path']));cfg=load(str(PROJECT_ROOT / panel['configuration']['path']));core,scope=load_reader()(plan);out=ROOT/'results/long_final_comparison';out.mkdir(exist_ok=False);tables=[];errors=[];records=[]
+    save(out/'started.json',dict(checkpoint=record(cp),source=record(__file__),plan=record(str(PROJECT_ROOT / panel['source_plan']['path'])),no_automatic_promotion=True))
     for j,f in enumerate(plan['frames']):
         source=Path(f['source']['path']);assert sha(source)==f['source']['sha256'];raw=cv2.imread(str(source),0);x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda();value=predict(m,x)[0,0].cpu().numpy();im=np.rint(value*255).clip(0,255).astype(np.uint8)
         dest=out/f['sequence']/f"frame_{f['frame_index']:04d}";dest.mkdir(parents=True);assert cv2.imwrite(str(dest/'reconstruction.png'),im)

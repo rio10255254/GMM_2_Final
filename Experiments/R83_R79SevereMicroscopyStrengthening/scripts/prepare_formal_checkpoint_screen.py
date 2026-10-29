@@ -8,10 +8,11 @@ import shutil
 from pathlib import Path
 
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark'))
 OUTPUT = ROOT / "results" / "formal_checkpoint_screen"
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
 EPOCHS = [5, 10, 15, 20, 25, 30]
@@ -103,7 +104,7 @@ def main() -> int:
     suite_configs, inference_manifests = prepare_external_configs(methods)
     r82_config = json.loads((R82 / "config" / "experiment.json").read_text(encoding="utf-8"))
     sem_cfg = r82_config["sem_acm"]
-    raw_sem = Path(sem_cfg["raw_input_dir"])
+    raw_sem = Path(PROJECT_ROOT / sem_cfg["raw_input_dir"])
     checkpoint_records = []
 
     for method, checkpoint in checkpoints.items():

@@ -3,7 +3,8 @@ tests = functiontests(localfunctions);
 end
 
 function test_final_outputs(testCase)
-root = fullfile('D:','GMM_2_Final','Thesis_MOSR_Evidence', ...
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
+root = fullfile(PROJECT_ROOT,'Thesis_MOSR_Evidence', ...
     'Final_Data_Figures','03_PSF_EXPERIMENT_RESULTS','01_global_bads_fit');
 fig = fullfile(root,'figures','center9_pillar_fit_20x_50x');
 src = fullfile(root,'source_data','center9_pillar_fit_20x_50x','psf_analysis');

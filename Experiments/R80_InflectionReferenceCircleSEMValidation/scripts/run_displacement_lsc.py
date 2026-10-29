@@ -30,11 +30,11 @@ from reference_circle_core import (  # noqa: E402
     measure_inflection_lsc,
     wiener_contrast_restore,
 )
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 PACKAGE_CENTER9 = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9')
 )
 CONFIG_PATH = PACKAGE_CENTER9 / "config" / "sequence_center9_50x20x.json"
 AUDIT_TABLE = (
@@ -45,7 +45,7 @@ AUDIT_TABLE = (
     / "raw_eligibility_locked_before_v42.csv"
 )
 SESSION_TABLE = AUDIT_TABLE.parent / "session_anchor_summary.csv"
-SWEEP_ROOT = Path(r"D:\GMM_2_Final\PSF_Fitting\tests\artifacts\cd_verification_20260714")
+SWEEP_ROOT = Path(str(PROJECT_ROOT / 'PSF_Fitting/tests/artifacts/cd_verification_20260714'))
 
 NSR = 0.0565
 METHODS = ("Raw", "Wiener", "MOSR")
@@ -110,8 +110,8 @@ def process_sequence(sequence: str, config: dict, limit_pairs: int) -> tuple[pd.
         set(pairs["start_frame_index"].astype(int)) | set(pairs["end_frame_index"].astype(int))
     )
     base_centers = np.asarray(specification["centers"], dtype=float)
-    raw_dir = Path(specification["raw_dir"])
-    mosr_dir = Path(specification["v42_dir"])
+    raw_dir = Path(PROJECT_ROOT / specification["raw_dir"])
+    mosr_dir = Path(PROJECT_ROOT / specification["v42_dir"])
     magnification = specification["magnification"]
     pitch = float(specification["pitch_px"])
     radius = float(specification["radius_px"])

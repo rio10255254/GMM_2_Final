@@ -17,11 +17,11 @@ import numpy as np
 
 SOURCES = {
     'B': ('Experiments/R108B_StagedParallelOpticalExpertsMicroprobe/scripts/run_microprobe.py',
-          'de5b79a2ac0f7d07fd93648b745629a71c60facfd98762f7268cc133d70b3fb2',
+          'c70d8cb39f65ebf06428f3dd28f20f4e3a3de1368c95e4556c044dad3e3c89c1',
           ['sha256', 'polygon_points', 'draw_mask', 'low_field', 'render_scene', 'generate_split', 'prepare_data'],
           ['SIZE', 'SUPER', 'ROLES', 'TRAIN_FAMILIES', 'HOLDOUT_FAMILIES']),
     'E': ('Experiments/R108E_ContourConservingProfileRendererMicroprobe/scripts/run_probe.py',
-          'abdf0c99aecc201589610bbd3fefb981d2e4999879706d50818447f8312647a6',
+          '2bfe9ee12f1450aa732b165b5c91a0c5b6c93a31a65e357ca140bfa99cbe5527',
           ['sha256', 'low_field', 'motion_kernel', 'angular_wedge', 'render', 'build_data'],
           ['BASE_SHA', 'CHALLENGES']),
 }

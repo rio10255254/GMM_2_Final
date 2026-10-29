@@ -1,8 +1,10 @@
 from rt import *
 from functools import lru_cache
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 class Bank:
     def __init__(self):
-        self.cfg=load(ROOT/'config/study.json');self.root=Path(self.cfg['data_root']);self.manifest=load(self.root/'manifest.json');self.entries={(e['split'],e['index']):e for e in self.manifest['entries']}
+        self.cfg=load(ROOT/'config/study.json');self.root=Path(PROJECT_ROOT / self.cfg['data_root']);self.manifest=load(self.root/'manifest.json');self.entries={(e['split'],e['index']):e for e in self.manifest['entries']}
         assert len(self.entries)==768
     @lru_cache(maxsize=16)
     def read(self,split,index):

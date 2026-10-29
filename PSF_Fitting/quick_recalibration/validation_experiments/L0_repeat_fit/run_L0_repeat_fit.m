@@ -8,7 +8,7 @@
 %   PSF_Fitting/quick_recalibration/validation_experiments/L0_repeat_fit/README_TW.md
 %
 % 執行前提:
-%   - MATLAB Current Folder 設為 d:\GMM_2_Final\PSF_Fitting\
+%   - MATLAB Current Folder 設為 PSF_Fitting
 %   - addpath('SimulatePSF') 已執行
 %   - bads-1.1.3/ 在 path(底層 fitter 會自己 addpath,但保險起見)
 

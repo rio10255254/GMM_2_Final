@@ -1,10 +1,11 @@
 function tune_visual_deconvolution()
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))))))));
 %TUNE_VISUAL_DECONVOLUTION Compare visually sharper deconvolution variants.
 
 close all;
-outputRoot = 'D:\GMM_2_Final\PSF_Fitting\.codex_work\deconvolution_visual_tuning_final_20260716';
-fitRoot = 'D:\GMM_2_Final\PSF_Fitting\output\deconvolution_baseline_psf_20260715';
-reviewRoot = ['D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\' ...
+outputRoot = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_work/deconvolution_visual_tuning_final_20260716');
+fitRoot = fullfile(PROJECT_ROOT, 'PSF_Fitting/output/deconvolution_baseline_psf_20260715');
+reviewRoot = [[fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures') filesep] ...
     '03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit\figures\' ...
     'center9_pillar_fit_20x_50x\wiener_visual_sharpness_retest'];
 reviewNsr = 0.050;

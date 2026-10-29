@@ -2,7 +2,7 @@
 
 - candidate: universal_balanced_bridge
 - best_checkpoint_label: checkpoint_0p8
-- best_checkpoint_path: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_ubb_20260311_130213\weights\best_tradeoff.pth.tar
+- best_checkpoint_path: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_ubb_20260311_130213/weights/best_tradeoff.pth.tar
 - best_deployment_score: -559.190354
 
 | checkpoint | s0.08 | s0.8 | s8 | deploy |

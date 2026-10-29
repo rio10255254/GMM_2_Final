@@ -17,6 +17,7 @@ sys.path.insert(0, str(ROOT))
 from evaluation.measurement_interface import measure_image
 from model import Model
 from utils import load, model_config, now, save, setup, sha
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 MODEL_NAME = "R152-R148v2-SafeAdaptivePSF"
@@ -35,7 +36,7 @@ def final_checkpoint() -> tuple[Path, dict]:
     complete = load(ROOT / "runs/formal_8192/training_complete.json")
     assert complete["updates"] == 8192
     receipt = complete["deployed_checkpoint"]
-    path = Path(receipt["path"])
+    path = Path(PROJECT_ROOT / receipt["path"])
     assert receipt["step"] == 8192 and sha(path) == receipt["sha256"]
     return path, receipt
 

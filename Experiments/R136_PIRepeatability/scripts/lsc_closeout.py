@@ -5,11 +5,13 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 OUT=ROOT/'results/lsc/analysis';T=OUT/'tables';REPORT=ROOT/'reports/R136_LSC_RESULTS.md'
 
 def prepare():
     plan=load(ROOT/'config/plan.json');cfg=load(ROOT/'config/lsc_plan.json');assert load(OUT/'verification.json')['complete']
-    assert sha(cfg['core_source']['path'])==cfg['core_source']['sha256']
+    assert sha(str(PROJECT_ROOT / cfg['core_source']['path']))==cfg['core_source']['sha256']
     counts={};centers=pd.read_csv(T/'all_circle_centers.csv');pairs=pd.read_csv(T/'all_individual_circle_pairs.csv');readout=pd.read_csv(T/'all_measurements.csv')
     for model in ['Raw','R61','R129']:
         c=centers[centers.model==model];assert len(c)==8370 and len(c.drop_duplicates(['run','index','pillar_id']))==8370

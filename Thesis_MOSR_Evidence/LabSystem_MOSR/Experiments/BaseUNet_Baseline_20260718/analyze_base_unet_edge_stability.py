@@ -8,10 +8,11 @@ import cv2
 import numpy as np
 import pandas as pd
 from scipy.ndimage import gaussian_filter1d
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
-EVIDENCE = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures")
+EVIDENCE = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures'))
 CURRENT = EVIDENCE / "01_CURRENT_THESIS_RESULTS_V42_CENTER9"
 NETWORK = EVIDENCE / "04_V42_NEURAL_NETWORK_RESULTS"
 
@@ -164,8 +165,8 @@ def analyze(results_root: Path) -> None:
         radius_px = float(sequence["radius_px"])
         step_px = float(sequence["expected_signed_dx_px"])
         um_per_px = float(sequence["object_um_per_px"])
-        raw_dir = Path(sequence["raw_dir"])
-        mosr_dir = Path(sequence["v42_dir"])
+        raw_dir = Path(PROJECT_ROOT / sequence["raw_dir"])
+        mosr_dir = Path(PROJECT_ROOT / sequence["v42_dir"])
         base_dir = results_root / "real_inference" / "sequences" / sequence_name
 
         for _, selected_row in sequence_rows.sort_values("end_frame_index").iterrows():

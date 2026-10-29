@@ -13,32 +13,32 @@
 ## File Map
 
 **Create**
-- `D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md`
-- `D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json`
-- `D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\README.md`
-- `D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\candidate_manifest.json`
-- `D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md`
-- `D:\GMM_2_Final\Experiments\R26NewPSFCheck\package_policy_transition\tests\test_psf_policy_transition.py`
-- `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\參考文件\R26_LEGACY_BASELINE_MANIFEST.md`
+- `docs/policy/PSF_POLICY_TRANSITION_R26.md`
+- `docs/policy/PSF_STANDARD_POLICY.json`
+- `Experiments/R26NewPSFCheck/formal_newpsf_candidate/README.md`
+- `Experiments/R26NewPSFCheck/formal_newpsf_candidate/candidate_manifest.json`
+- `Experiments/R26NewPSFCheck/formal_newpsf_candidate/reports/NEW_PSF_FORMAL_R26_COMPARE.md`
+- `Experiments/R26NewPSFCheck/package_policy_transition/tests/test_psf_policy_transition.py`
+- `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/參考文件/R26_LEGACY_BASELINE_MANIFEST.md`
 
 **Modify**
-- `D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat`
-- `D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\formal_config.json`
-- `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat`
-- `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\formal_r26_recipe.json`
-- `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\參考文件\R26_FORMAL_REPRO_MANIFEST.md`
-- `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\使用說明.md`
-- `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\檔案結構說明.md`
-- `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\Model\README.md`
-- `D:\GMM_2_Final\Experiments\R26NewPSFCheck\package_repro_validation\tests\test_r26_formal_package.py`
+- `PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
+- `PSF_Fitting/Crop_circle_FreqFiltered/Fits/formal_config.json`
+- `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
+- `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/formal_r26_recipe.json`
+- `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/參考文件/R26_FORMAL_REPRO_MANIFEST.md`
+- `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/使用說明.md`
+- `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/檔案結構說明.md`
+- `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/Model/README.md`
+- `Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py`
 
 **Use / Inspect**
-- `D:\GMM_2_Final\Traing_Progress\auto_tune_reports\auto_tune_report_20260316_185417.json`
-- `D:\GMM_2_Final\Traing_Progress\organized_20260316\round26\selected\current_round26_step_recovery_seed.json`
-- `D:\GMM_2_Final\Traing_Progress\organized_20260316\round26\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408\weights\best_tradeoff.pth.tar`
-- `D:\GMM_2_Final\Traing_Progress\organized_20260316\round25\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r25sw010_20260316_173027\weights\best_tradeoff.pth.tar`
-- `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\GeoEdge_PackageSmokeTest.ps1`
-- `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\GeoEdge_NativeLauncher.ps1`
+- `Traing_Progress/auto_tune_reports/auto_tune_report_20260316_185417.json`
+- `Traing_Progress/organized_20260316/round26/selected/current_round26_step_recovery_seed.json`
+- `Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar`
+- `Traing_Progress/organized_20260316/round25/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r25sw010_20260316_173027/weights/best_tradeoff.pth.tar`
+- `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/GeoEdge_PackageSmokeTest.ps1`
+- `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/GeoEdge_NativeLauncher.ps1`
 
 ## Non-Negotiable Decision Boundary
 
@@ -49,10 +49,10 @@
 ## Task 1: Freeze Policy and Provenance
 
 **Files:**
-- Create: `D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md`
-- Create: `D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json`
-- Create: `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\參考文件\R26_LEGACY_BASELINE_MANIFEST.md`
-- Modify: `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\參考文件\R26_FORMAL_REPRO_MANIFEST.md`
+- Create: `docs/policy/PSF_POLICY_TRANSITION_R26.md`
+- Create: `docs/policy/PSF_STANDARD_POLICY.json`
+- Create: `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/參考文件/R26_LEGACY_BASELINE_MANIFEST.md`
+- Modify: `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/參考文件/R26_FORMAL_REPRO_MANIFEST.md`
 
 - [ ] **Step 1: Write the failing policy test**
 
@@ -65,7 +65,7 @@ Add assertions in `test_psf_policy_transition.py` that require:
 
 Run:
 ```powershell
-pytest D:\GMM_2_Final\Experiments\R26NewPSFCheck\package_policy_transition\tests\test_psf_policy_transition.py -q
+pytest Experiments/R26NewPSFCheck/package_policy_transition/tests/test_psf_policy_transition.py -q
 ```
 
 Expected: FAIL because the policy and legacy manifest do not exist yet.
@@ -86,21 +86,21 @@ Run the same `pytest` command and confirm the new policy artifacts are present a
 - [ ] **Step 5: Commit**
 
 ```powershell
-git add D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json D:\GMM_2_Final\Experiments\R26NewPSFCheck\package_policy_transition\tests\test_psf_policy_transition.py D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\參考文件\R26_LEGACY_BASELINE_MANIFEST.md D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\參考文件\R26_FORMAL_REPRO_MANIFEST.md
+git add docs/policy/PSF_POLICY_TRANSITION_R26.md docs/policy/PSF_STANDARD_POLICY.json Experiments/R26NewPSFCheck/package_policy_transition/tests/test_psf_policy_transition.py _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/參考文件/R26_LEGACY_BASELINE_MANIFEST.md _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/參考文件/R26_FORMAL_REPRO_MANIFEST.md
 git commit -m "docs: define R26 PSF standard transition policy"
 ```
 
 ## Task 2: Produce a Same-Recipe New-PSF Candidate
 
 **Files:**
-- Create: `D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\README.md`
-- Create: `D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\candidate_manifest.json`
-- Modify: `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\formal_r26_recipe.json` only in a cloned or sandboxed candidate package copy
+- Create: `Experiments/R26NewPSFCheck/formal_newpsf_candidate/README.md`
+- Create: `Experiments/R26NewPSFCheck/formal_newpsf_candidate/candidate_manifest.json`
+- Modify: `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/formal_r26_recipe.json` only in a cloned or sandboxed candidate package copy
 
 - [ ] **Step 1: Clone the current formal package into a candidate workspace**
 
 Create a candidate copy under:
-`D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\package_clone\`
+`Experiments/R26NewPSFCheck/formal_newpsf_candidate/package_clone`
 
 Do not edit the shipping package yet.
 
@@ -145,14 +145,14 @@ Required run identity:
 - [ ] **Step 6: Commit candidate manifest updates**
 
 ```powershell
-git add D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\README.md D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\candidate_manifest.json
+git add Experiments/R26NewPSFCheck/formal_newpsf_candidate/README.md Experiments/R26NewPSFCheck/formal_newpsf_candidate/candidate_manifest.json
 git commit -m "exp: stage formal new-PSF package candidate"
 ```
 
 ## Task 3: Compare the New-PSF Candidate Against Legacy Formal R26
 
 **Files:**
-- Create: `D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md`
+- Create: `Experiments/R26NewPSFCheck/formal_newpsf_candidate/reports/NEW_PSF_FORMAL_R26_COMPARE.md`
 - Use existing comparison/test assets from `package_repro_validation` and single-image analysis scripts
 
 - [ ] **Step 1: Write the failing comparison test**
@@ -185,17 +185,17 @@ Run the same test and confirm the comparison artifact is present and structured.
 - [ ] **Step 5: Commit**
 
 ```powershell
-git add D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md
+git add Experiments/R26NewPSFCheck/formal_newpsf_candidate/reports/NEW_PSF_FORMAL_R26_COMPARE.md
 git commit -m "docs: record formal new-PSF candidate comparison"
 ```
 
 ## Task 4: Promote the New PSF to Root and Package Defaults
 
 **Files:**
-- Modify: `D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat`
-- Modify: `D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\formal_config.json`
-- Modify: `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat`
-- Modify: `D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\formal_r26_recipe.json`
+- Modify: `PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
+- Modify: `PSF_Fitting/Crop_circle_FreqFiltered/Fits/formal_config.json`
+- Modify: `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
+- Modify: `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/formal_r26_recipe.json`
 - Modify package manifests/docs listed in File Map
 
 - [ ] **Step 1: Archive the legacy PSF before replacing defaults**
@@ -225,8 +225,8 @@ All docs must now say:
 
 Run:
 ```powershell
-pytest D:\GMM_2_Final\Experiments\R26NewPSFCheck\package_repro_validation\tests\test_r26_formal_package.py -q
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\GeoEdge_PackageSmokeTest.ps1 -InferenceSampleCount 1 -SkipTrain
+pytest Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py -q
+powershell -NoProfile -ExecutionPolicy Bypass -File _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/GeoEdge_PackageSmokeTest.ps1 -InferenceSampleCount 1 -SkipTrain
 ```
 
 Expected:
@@ -236,7 +236,7 @@ Expected:
 - [ ] **Step 6: Commit**
 
 ```powershell
-git add D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\formal_config.json D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包
+git add PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat PSF_Fitting/Crop_circle_FreqFiltered/Fits/formal_config.json _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包
 git commit -m "feat: promote new PSF as current R26 standard"
 ```
 
@@ -264,9 +264,9 @@ Run a parity check on:
 
 Run:
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\GeoEdge_NativeLauncher.ps1 -Action show-config
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\GeoEdge_R26_FormalTrain.ps1 -Action dry-run
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\GeoEdge_R26_FormalInfer.ps1 -Action dry-run-demo -InputDir D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案\Demo_Input -ReconRoot D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\輸出結果\推論結果
+powershell -NoProfile -ExecutionPolicy Bypass -File _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/GeoEdge_NativeLauncher.ps1 -Action show-config
+powershell -NoProfile -ExecutionPolicy Bypass -File _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/GeoEdge_R26_FormalTrain.ps1 -Action dry-run
+powershell -NoProfile -ExecutionPolicy Bypass -File _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/GeoEdge_R26_FormalInfer.ps1 -Action dry-run-demo -InputDir _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/Demo_Input -ReconRoot _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果
 ```
 
 Expected:
@@ -285,7 +285,7 @@ Summarize:
 - [ ] **Step 5: Commit**
 
 ```powershell
-git add D:\GMM_2_Final\docs\policy D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate D:\GMM_2_Final\_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包
+git add docs/policy Experiments/R26NewPSFCheck/formal_newpsf_candidate _deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包
 git commit -m "chore: finalize R26 PSF policy transition"
 ```
 

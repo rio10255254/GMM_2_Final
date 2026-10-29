@@ -4,9 +4,10 @@ import importlib.util
 import json
 import sys
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 SOURCE = ROOT / "Final_Data_Figures" / "20260708_v41_standalone_full_validation" / "scripts" / "analyze_boundary_sensitive_roi_v41_compare.py"
 OUT = ROOT / "Final_Data_Figures" / "20260710_v42_full_validation" / "boundary_sensitive_roi"
 V42_ROOT = ROOT / "Final_Data_Figures" / "20260710_v42_full_validation" / "reconstructions" / "reconstruct_progress_epoch_120_in_bmp_20260709_202713"

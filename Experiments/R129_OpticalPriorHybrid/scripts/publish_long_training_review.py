@@ -8,11 +8,12 @@ from scipy.io import loadmat
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 plt.rcParams['font.sans-serif']=['Microsoft JhengHei','DejaVu Sans'];plt.rcParams['axes.unicode_minus']=False
 
 def main():
     out=ROOT/'results/long_training_review_20260913_v2';v=load(out/'verification.json');assert v['final_public_inference_replay_exact']
-    pkg=Path(v['package']);run=pkg/'results/training/r129_long_01';t=pd.read_csv(out/'trajectory.csv');dev=pd.read_csv(out/'development.csv')
+    pkg=Path(PROJECT_ROOT / v['package']);run=pkg/'results/training/r129_long_01';t=pd.read_csv(out/'trajectory.csv');dev=pd.read_csv(out/'development.csv')
     figures=ROOT/'reports/figures';fig,axes=plt.subplots(1,3,figsize=(13,4.2),layout='constrained')
     plots=[('centered_shape_nm','細部形狀誤差（奈米）','#367d78'),('diameter_error_nm','尺寸誤差（奈米）','#b66448')]
     for ax,(key,title,color) in zip(axes,plots):

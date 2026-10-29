@@ -8,6 +8,7 @@ import sys
 import time
 
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,7 +29,7 @@ def main() -> int:
     data_module = load("r94_phase1_data", ROOT / "training" / "r94_dataset.py")
     trainer = load("r94_phase1_trainer", ROOT / "training" / "train_r94.py")
     design = json.loads((ROOT / "config" / "experiment_design.json").read_text())
-    package = Path(design["data"]["source_package"])
+    package = Path(PROJECT_ROOT / design["data"]["source_package"])
     manifest = json.loads((package / "manifest.json").read_text())
     dataset = data_module.R94SceneDataset(package, manifest, "train", 512, 256, 1)
     started = time.perf_counter()

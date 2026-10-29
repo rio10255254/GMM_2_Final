@@ -12,9 +12,10 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
-ROOT = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis")
+ROOT = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis'))
 OUT = ROOT / "motion_analysis"
 OUT.mkdir(parents=True, exist_ok=True)
 

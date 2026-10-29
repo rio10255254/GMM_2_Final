@@ -4,7 +4,7 @@ import argparse, json, subprocess, sys, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PYTHON = Path(r"C:/Users/Rio/anaconda3/python.exe")
+PYTHON = Path("python")
 
 
 def run_matrix(output: Path, seeds: list[int], candidates: list[str]):

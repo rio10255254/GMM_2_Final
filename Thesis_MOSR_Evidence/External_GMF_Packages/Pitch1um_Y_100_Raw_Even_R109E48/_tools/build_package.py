@@ -13,11 +13,12 @@ import cv2
 import numpy as np
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 PACKAGE = Path(__file__).resolve().parents[1]
-SOURCE = Path(r"D:\NTU_ImageDataset\Pitch1um_Y_100\Raw")
-MODEL_ROOT = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+SOURCE = Path(str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/Raw'))
+MODEL_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 CHECKPOINT = MODEL_ROOT / "weights" / "selected" / "R109.pth"
 EXPECTED_CHECKPOINT_SHA256 = "77ff8611e764e1350d60592f5d8a25d6786db17897eadce189185cdc4dbc87fc"
 RAW_DIR = PACKAGE / "pitch1um_y100_raw" / "bmp"

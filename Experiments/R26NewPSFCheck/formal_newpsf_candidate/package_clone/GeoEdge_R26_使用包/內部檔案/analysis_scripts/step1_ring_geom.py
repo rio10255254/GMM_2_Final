@@ -2,8 +2,9 @@
 import cv2, math, json
 import numpy as np
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
-PKG    = Path(r"D:\GMM_2_Final\_deployment_package\GeoEdge_R26_使用包")
+PKG    = Path(str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_使用包'))
 IN_DIR = PKG / "輸出結果" / "驗證分析" / "R26_external_batch_bundle" / "input_subset"
 DEST   = PKG / "輸出結果" / "驗證分析" / "R26_validation_complete"
 NAMES  = sorted([f.name for f in IN_DIR.glob("*.bmp")])

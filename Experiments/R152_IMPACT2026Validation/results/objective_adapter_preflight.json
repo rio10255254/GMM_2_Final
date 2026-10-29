@@ -2,10 +2,10 @@
   "passed": true,
   "installation": {
     "mode": "50x original single calibrated kernel",
-    "source_path": "D:\\GMM_2_Final\\PSF_Fitting\\tests\\artifacts\\cd_verification_20260714\\50x_deconvolution_sweep.mat",
+    "source_path": "PSF_Fitting/tests/artifacts/cd_verification_20260714/50x_deconvolution_sweep.mat",
     "source_sha256": "a5d82edc4bc290e5e1d5657841e317dd891dbd1dde8883cfaaa7c2e903851feb",
     "source_key": "psf",
-    "fit_path": "D:\\GMM_2_Final\\PSF_Fitting\\output\\pillar_via_junction_psf_20260713\\50x\\fit_result\\PSF_fitted_2D_FOVstack.mat",
+    "fit_path": "PSF_Fitting/output/pillar_via_junction_psf_20260713/50x/fit_result/PSF_fitted_2D_FOVstack.mat",
     "fit_sha256": "b4b41567093d81849ff996961c174a3f4e134d732255c9e8460b9a71619b7e72",
     "effective_bank_path": "C:\\Users\\Rio\\.codex\\worktrees\\impact-r152\\GMM_2_Final\\Experiments\\R152_IMPACT2026Validation\\config\\50x_calibrated_psf.npz",
     "effective_bank_sha256": "f9dfcb17145f9388ddc161ce8f0ec43e8adc15322bd3822b194b0f09bb0d7bb0",
@@ -24,7 +24,7 @@
       "psf_fusion.bank"
     ],
     "selector_mode": "single calibrated kernel, weight exactly 1; original selector parameters retained but unused",
-    "adapter_sha256": "e76e65eabddbf23ce2f01f0c8eb71596719802ba413201805ef706dbe5ed64c7",
+    "adapter_sha256": "77e70eaf1767507a4293e8bfd620a51448e09d0bdd07196f56d49cdce1c58dff",
     "temporary_and_reversible": true,
     "native_25_psf_default_preserved": true
   },
@@ -32,7 +32,7 @@
   "independent_inverse_filter_max_error": 1.110193268982762e-06,
   "shared_vs_calibrated_patch_max_difference": 0.12743261456489563,
   "full_vs_tiled_real_frame_max_difference": 2.980232238769531e-07,
-  "real_frame": "D:\\GMM_2_Final\\20260702_100MG_displacement_analysis\\raw_inputs\\x_0p5um\\bmp\\frame_0000.bmp",
+  "real_frame": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
   "single_weight_exactly_one": true,
   "caches_reset_on_installation": true,
   "learned_parameters_unchanged": true,

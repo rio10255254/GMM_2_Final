@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $PSScriptRoot
-$Python = 'C:\Users\Rio\anaconda3\python.exe'
+$Python = python
 
 & $Python -m pytest (Join-Path $Root 'tests') -q
 & $Python (Join-Path $PSScriptRoot 'check_supervision_capability.py')

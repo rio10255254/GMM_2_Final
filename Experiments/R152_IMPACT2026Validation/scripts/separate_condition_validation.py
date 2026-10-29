@@ -6,10 +6,11 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[1]
-SRC=Path('D:/GMM_2_Final/Experiments/R152_R148v2_SafeAdaptivePSF')
+SRC=Path(str(PROJECT_ROOT / 'Experiments/R152_R148v2_SafeAdaptivePSF'))
 OUT=ROOT/'results/separate_conditions'
 sys.path.insert(0,str(ROOT/'sources'))
 import run_displacement_lsc as backend
@@ -86,7 +87,7 @@ def run20():
     steps=pd.DataFrame(steps);assert len(steps)==2700
     stats=steps.groupby(['run','run_index','method']).displacement_nm.agg(n='count',mean_nm='mean',step_sd_nm='std').reset_index();assert stats.n.eq(30).all()
     steps.to_csv(OUT/'20x_steps.csv',index=False);stats.to_csv(OUT/'20x_scan_sd.csv',index=False)
-    source_summary=load(Path('D:/GMM_2_Final/Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/summary.json'))
+    source_summary=load(Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/summary.json')))
     summary={};wide=stats.pivot(index='run_index',columns='method',values='step_sd_nm')
     for m in ['Raw','Wiener','MOSR']:
         v=wide[m].to_numpy();gain=100*(1-v/wide.Raw.to_numpy())
@@ -105,8 +106,8 @@ def run50():
     from utils import setup
     from objective_optics import install_50x,configure_optical_input,load_original_kernel
     setup(1309001);torch.set_num_threads(2)
-    cfg=load(SRC/'config/model.json');rec=load(SRC/'runs/formal_8192/training_complete.json')['deployed_checkpoint'];assert sha(rec['path'])==rec['sha256']
-    model=Model(cfg,SRC).cuda().eval();model.load_state_dict(torch.load(rec['path'],map_location='cpu',weights_only=False)['model'],strict=True)
+    cfg=load(SRC/'config/model.json');rec=load(SRC/'runs/formal_8192/training_complete.json')['deployed_checkpoint'];assert sha(str(PROJECT_ROOT / rec['path']))==rec['sha256']
+    model=Model(cfg,SRC).cuda().eval();model.load_state_dict(torch.load(str(PROJECT_ROOT / rec['path']),map_location='cpu',weights_only=False)['model'],strict=True)
     params={k:v.detach().cpu().clone() for k,v in model.named_parameters()};installed=install_50x(model,cfg,SRC)
     k=load_original_kernel();assert np.array_equal(model.base.optics.mean_kernel.cpu().numpy()[0,0],k.astype('float32'))
     assert np.array_equal(model.psf_fusion.bank.cpu().numpy()[0,0],k.astype('float32'))
@@ -119,7 +120,7 @@ def run50():
         mc=dict(patch_half=34,radius_px=s['radius_px'],sample_count=96,acm_iterations=15,normal_half_width_px=4.0)
         for fi in frames:
             old=ROOT/f'results/50x_calibrated/reconstruction/{seq}/frame_{fi:04d}.npz';receipt=load(old.with_suffix('.json'))
-            source=Path(s['raw_dir'])/f'frame_{fi:04d}.bmp'
+            source=Path(PROJECT_ROOT / s['raw_dir'])/f'frame_{fi:04d}.bmp'
             assert sha(source)==receipt['source_sha256'] and sha(old)==receipt['output_sha256'] and receipt['checkpoint_sha256']==rec['sha256'] and receipt['bank_sha256']==installed['effective_bank_sha256']
             raw=backend.load_grayscale(source);x=torch.from_numpy(raw.astype(np.float32)[None,None]).cuda()
             with torch.inference_mode():new=model.forward_tiled(x)

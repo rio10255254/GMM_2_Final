@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,11 +33,11 @@ def bootstrap_median_ci(values: np.ndarray, seed: int, repetitions: int = 10000)
 
 
 def load_sem(protocol: dict[str, Any]) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    r92_path = Path(protocol["output_root"]) / "sem_acm_fp32" / "E080" / "tables" / "primary_contour_metrics.csv"
+    r92_path = Path(PROJECT_ROOT / protocol["output_root"]) / "sem_acm_fp32" / "E080" / "tables" / "primary_contour_metrics.csv"
     sources = {
-        "Raw_R61": Path(protocol["comparators"]["sem_raw_r61"]),
-        "R90_E45": Path(protocol["comparators"]["sem_r90_e45"]),
-        "R91_E52": Path(protocol["comparators"]["sem_r91_e52"]),
+        "Raw_R61": Path(PROJECT_ROOT / protocol["comparators"]["sem_raw_r61"]),
+        "R90_E45": Path(PROJECT_ROOT / protocol["comparators"]["sem_r90_e45"]),
+        "R91_E52": Path(PROJECT_ROOT / protocol["comparators"]["sem_r91_e52"]),
         "R92_E80": r92_path,
     }
     frames: list[pd.DataFrame] = []
@@ -99,7 +100,7 @@ def load_sem(protocol: dict[str, Any]) -> tuple[pd.DataFrame, pd.DataFrame, pd.D
 
 def appearance_comparison(results: Path) -> pd.DataFrame:
     r92 = pd.read_csv(results / "tables" / "real_appearance_per_frame_fp32.csv")
-    r91 = pd.read_csv(Path(r"D:\GMM_2_Final\Experiments\R91_DetailDecoupledScratch\results\capability_diagnosis_20260811\tables\real_appearance_per_frame_fp32.csv"))
+    r91 = pd.read_csv(Path(str(PROJECT_ROOT / 'Experiments/R91_DetailDecoupledScratch/results/capability_diagnosis_20260811/tables/real_appearance_per_frame_fp32.csv')))
     metrics = [
         "mean_abs_change_gray",
         "edge_gain_on_raw_support",
@@ -120,7 +121,7 @@ def appearance_comparison(results: Path) -> pd.DataFrame:
 
 def motion_comparison(protocol: dict[str, Any], results: Path) -> pd.DataFrame:
     r92 = json.loads((results / "motion_analysis_fp32" / "summary.json").read_text(encoding="utf-8"))
-    r91 = json.loads(Path(protocol["comparators"]["r91_motion_summary"]).read_text(encoding="utf-8"))
+    r91 = json.loads(Path(PROJECT_ROOT / protocol["comparators"]["r91_motion_summary"]).read_text(encoding="utf-8"))
     rows: list[dict[str, Any]] = []
     for readout, key, population in (
         ("isocontour", "isocontour_summary", "locked30_common_valid"),
@@ -184,7 +185,7 @@ def save_overview(path: Path, appearance: pd.DataFrame, sem: pd.DataFrame, motio
 
 def main() -> int:
     protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
-    results = Path(protocol["output_root"])
+    results = Path(PROJECT_ROOT / protocol["output_root"])
     tables = results / "tables"
     figures = results / "figures"
     real_state = json.loads((results / "real_validation_state_fp32.json").read_text(encoding="utf-8"))

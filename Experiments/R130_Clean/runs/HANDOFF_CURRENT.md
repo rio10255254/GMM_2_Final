@@ -2,7 +2,7 @@
 
 User explicitly requested reading and executing C:/Users/Rio/Downloads/R130_Clean_Codex_建構訓練完整規格.md. This supersedes earlier paper-preparation work for this task. The full objective includes scratch8192 training, generated dev/test,930native reconstructions, unchanged ACM/PI/SEM comparisons for Raw/R129/R130-Clean, profiling and final reports. Do not stop at training launch or claim completion from a step counter.
 
-Execution root: D:/GMM_2_Final/Experiments/R130_Clean
+Execution root: Experiments/R130_Clean
 Current exec session:3846. Pipeline/training process originally20344. Consult runs/formal_8192/status.json and runs/pipeline_status.json for current phase. Do not restart an incomplete formal run; the pipeline is already live and automatically advances.
 
 Preflight completed:300101params; no pretrained/optimizer/EMA; noPSF; exact initial identity; 32-step sanity separate and discarded; nonneutral full/tile difference0; full384versus320crop core difference0, gradient relative1.51e-7. Native dependency radius82, halo96; all synthetic shifts <.9px, required context84. Residual cap.35, eta initial.05, max.25, one tanh. All frozen before formal start.

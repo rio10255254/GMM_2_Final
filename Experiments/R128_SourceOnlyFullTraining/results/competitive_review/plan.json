@@ -37,60 +37,60 @@
   ],
   "sources": {
     "R128_masks": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\masks.mat",
+      "path": "Experiments/R128_SourceOnlyFullTraining/results/full_contour/masks.mat",
       "sha256": "b80e5eec52980c86c854fc9a6d194d680b446cce194a538b653f6e34a9f47196"
     },
     "R128_measurements": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\measurements.csv",
+      "path": "Experiments/R128_SourceOnlyFullTraining/results/full_contour/measurements.csv",
       "sha256": "082f1178e5f3b981ab47fdc9fe709c050cd03edccbeb503773711a395ff59b2f"
     },
     "R128_verification": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\verification.json",
-      "sha256": "3d72e775bea795e250e46f369cd402cce22e56c7b3bedd86921ced2cac3a4d28"
+      "path": "Experiments/R128_SourceOnlyFullTraining/results/full_contour/verification.json",
+      "sha256": "f30dabe2cdf1c07e8ce61f2c131fdfd3612bd504131b3cb3c72dfed1230d7e96"
     },
     "historical_masks": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\analysis\\R109_comparison_20260907\\acm_arrays.mat",
+      "path": "Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/acm_arrays.mat",
       "sha256": "e74ebf85d34b9ea09f489ed1ab9fe8a1d28b25e1b9db9e7b0cb12318440e2122"
     },
     "historical_protocol": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\analysis\\R109_comparison_20260907\\protocol_v2.json",
+      "path": "Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/protocol_v2.json",
       "sha256": "6138dcb15fcbfa35f27497729c865335bbf24bba8a4d41e02f05f34d561dc220"
     },
     "R61_masks": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\results\\masks\\acm_primary_masks.mat",
+      "path": "Experiments/R69_ACMContourSEMValidation/results/masks/acm_primary_masks.mat",
       "sha256": "2ac2e8e3d7eb45c09f1bac56c6db372c230639b0186ab5301e13cacdeb127fc3"
     },
     "R61_manifest": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\MANIFEST.md",
+      "path": "Experiments/R69_ACMContourSEMValidation/MANIFEST.md",
       "sha256": "596e7f74d8eed4dd3175ab3c8e8f48f113d66e7c509bc070da381270b468843d"
     },
     "LSC_pairs": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\results\\formal_lsc\\analysis\\tables\\combined_lsc_per_pair.csv",
+      "path": "Experiments/R119_SequenceGeometryValidation/results/formal_lsc/analysis/tables/combined_lsc_per_pair.csv",
       "sha256": "61fd151c14b4b80feea288dc00642c0e0b949988f6bc2cf95dfa22ca312e79d7"
     },
     "LSC_summary": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\results\\formal_lsc\\analysis\\tables\\combined_lsc_summary.csv",
+      "path": "Experiments/R119_SequenceGeometryValidation/results/formal_lsc/analysis/tables/combined_lsc_summary.csv",
       "sha256": "856be74d8cd970f59991222a659a0b634f42239ee631743737d93a2f14b48dce"
     },
     "LSC_metric_source": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R80_InflectionReferenceCircleSEMValidation\\scripts\\run_displacement_lsc.py",
-      "sha256": "b9489e34e352743c82a05a38356997ea224e7bfc78053e15b610d22d96c8b0bd"
+      "path": "Experiments/R80_InflectionReferenceCircleSEMValidation/scripts/run_displacement_lsc.py",
+      "sha256": "afa72464cdf7ae909dd55d7fcfdf87007da63a9fc4dc4f071fe5665b4c60c433"
     },
     "metric_helper_source": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\full_contour\\run_contour_check.m",
-      "sha256": "3b66d649b7dc320cdd19a42418d0f966d9d6eb640d4df3c99581aa331c2921fe"
+      "path": "Experiments/R128_SourceOnlyFullTraining/analysis/full_contour/run_contour_check.m",
+      "sha256": "c6e924c418c3e8fb51251491f6c3b9ff1fca2a56b9fa6141f1dc3df38d47d878"
     },
     "prepare_source": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\competitive_review\\prepare.py",
+      "path": "Experiments/R128_SourceOnlyFullTraining/analysis/competitive_review/prepare.py",
       "sha256": "a43df5d6ce9e2a3488fa7322bde5b7cfa6134fccb0e0f4c7d5be1d5ad2d741f5"
     },
     "worker_head": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\competitive_review\\worker_head.txt",
-      "sha256": "95766edc835e854433abb6659d7be18a5e54c03af792a6246309a053f082b076"
+      "path": "Experiments/R128_SourceOnlyFullTraining/analysis/competitive_review/worker_head.txt",
+      "sha256": "5188222bf5c6e48c66cbcd3524f0bbd732bfba64477e22ce1b41635286f443e4"
     },
     "matlab_worker": {
-      "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\competitive_review\\run_competitive_review.m",
-      "sha256": "3bed2a4c2964b4aaa80a50a907b7700d8c681749e3c32f883429da32586fef44"
+      "path": "Experiments/R128_SourceOnlyFullTraining/analysis/competitive_review/run_competitive_review.m",
+      "sha256": "034db0a47ec6d23ea51124a83928253257262a60b8d92081851f183214be331c"
     }
   }
 }

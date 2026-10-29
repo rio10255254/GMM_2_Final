@@ -4,8 +4,9 @@ import json,zipfile,xml.etree.ElementTree as ET,shutil,math,sys
 import openpyxl
 from PIL import Image,ImageDraw,ImageFont
 import pymupdf
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.stdout.reconfigure(encoding='utf-8')
-R=Path(r'D:\GMM_2_Final');W=R/'Experiments/R129_OpticalPriorHybrid/results/web_handoff_20260920';O=R/'Deliverables/R129_Web_Thesis_Documents_20260920'
+R=Path(str(PROJECT_ROOT));W=R/'Experiments/R129_OpticalPriorHybrid/results/web_handoff_20260920';O=R/'Deliverables/R129_Web_Thesis_Documents_20260920'
 inputs=json.loads((W/'workbook_inputs.json').read_text(encoding='utf-8'));f=O/'05_完整數據.xlsx'
 backup=W/'artifact_tool_before_timestamp_preservation.xlsx'
 if not backup.exists():shutil.copy2(f,backup)

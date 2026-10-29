@@ -13,6 +13,7 @@ import numpy as np
 import pandas as pd
 import torch
 from torch import nn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,10 +24,9 @@ FRAMES = [1, 25, 50, 75, 100]
 CROP_SIZE = 1536
 
 R111_V42_LOADER = Path(
-    r"D:\GMM_2_Final\Experiments\R111_R109V42ThesisReplacementQualification"
-    r"\scripts\build_v42_external_gmf.py"
+    str(PROJECT_ROOT / 'Experiments/R111_R109V42ThesisReplacementQualification/scripts/build_v42_external_gmf.py')
 )
-R109_MODEL_ROOT = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+R109_MODEL_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 
 
 def load_module(path: Path, name: str):
@@ -119,17 +119,17 @@ def v42_raw_anchor(raw: np.ndarray, pred: np.ndarray) -> np.ndarray:
 
 
 def main() -> int:
-    coordinates = parse_coordinates(Path(CONFIG["models"]["Raw"]["score"]))
-    raw_dir = Path(CONFIG["models"]["Raw"]["image_dir"])
-    v42_dir = Path(CONFIG["models"]["V42 E120"]["image_dir"])
-    r109_dir = Path(CONFIG["models"]["R109 E48"]["image_dir"])
+    coordinates = parse_coordinates(Path(PROJECT_ROOT / CONFIG["models"]["Raw"]["score"]))
+    raw_dir = Path(PROJECT_ROOT / CONFIG["models"]["Raw"]["image_dir"])
+    v42_dir = Path(PROJECT_ROOT / CONFIG["models"]["V42 E120"]["image_dir"])
+    r109_dir = Path(PROJECT_ROOT / CONFIG["models"]["R109 E48"]["image_dir"])
 
     v42_loader = load_module(R111_V42_LOADER, "r112_v42_loader")
     _, v42_model, device, temp_psf_dir, _, _ = v42_loader.load_model()
     sys.path.insert(0, str(R109_MODEL_ROOT / "model"))
     from r109_model import build_model
 
-    r109_payload = torch.load(Path(CONFIG["models"]["R109 E48"]["checkpoint"]), map_location=device, weights_only=False)
+    r109_payload = torch.load(Path(PROJECT_ROOT / CONFIG["models"]["R109 E48"]["checkpoint"]), map_location=device, weights_only=False)
     r109_model = build_model().to(device)
     r109_model.load_state_dict(r109_payload["model"])
     r109_model.eval()

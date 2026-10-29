@@ -12,11 +12,11 @@
     },
     "V42 E120": {
       "kind": "thesis_results_model",
-      "sequence_root": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions"
+      "sequence_root": "Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions"
     },
     "R109 E48": {
       "kind": "replacement_candidate",
-      "sequence_root": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions"
+      "sequence_root": "Experiments/R109_StagedMidpointWidthScratch/results/posttraining_motion/E048/reconstructions"
     }
   },
   "sequence_name_map": {
@@ -41,9 +41,9 @@
       "R109 E48": "20x_1um"
     }
   },
-  "pillar_config": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",
-  "via_config": "D:/GMM_2_Final/Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/via_reference/via_center9_reference.json",
-  "sem_workbook": "D:/GMM_2_Final/Thesis_MOSR_Evidence/20260618_100MG/SEM_data/via_pilar.xlsx",
-  "top30_selection": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv",
-  "line_reference": "D:/GMM_2_Final/Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/source_validation/100mg_linewidth_generalization_20260719/manifest.json"
+  "pillar_config": "Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",
+  "via_config": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/via_reference/via_center9_reference.json",
+  "sem_workbook": "Thesis_MOSR_Evidence/20260618_100MG/SEM_data/via_pilar.xlsx",
+  "top30_selection": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv",
+  "line_reference": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/source_validation/100mg_linewidth_generalization_20260719/manifest.json"
 }

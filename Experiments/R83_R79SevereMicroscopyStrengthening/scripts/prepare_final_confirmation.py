@@ -14,10 +14,11 @@ import numpy as np
 import pandas as pd
 import torch
 from skimage.metrics import structural_similarity
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark'))
 OUTPUT = ROOT / "results" / "final_confirmation"
 RECON = OUTPUT / "reconstructions"
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
@@ -241,7 +242,7 @@ def prepare_development_recheck(module, model) -> None:
 def prepare_sem(module, model, r82_config: dict) -> None:
     sem_cfg = r82_config["sem_acm"]
     sem_root = OUTPUT / "SEM_reserved"
-    raw_root = Path(sem_cfg["raw_input_dir"])
+    raw_root = Path(PROJECT_ROOT / sem_cfg["raw_input_dir"])
     for exposure in sem_cfg["optical_exposures"]:
         source = raw_root / f"{exposure}.bmp"
         raw = module.read_gray(source)
@@ -266,7 +267,7 @@ def prepare_sem(module, model, r82_config: dict) -> None:
 
 def prepare_real_fov(module, model, r82_config: dict) -> list[dict]:
     item = r82_config["real_fov"]
-    raw_root = Path(item["locked_raw_root"])
+    raw_root = Path(PROJECT_ROOT / item["locked_raw_root"])
     sources = sorted(raw_root.rglob("*.bmp"))
     if len(sources) != int(item["expected_frames"]):
         raise RuntimeError("Real-FOV frame count changed.")
@@ -295,7 +296,7 @@ def prepare_tile_consistency(module, model, real_samples: list[dict], r82_config
     samples = list(real_samples)
     for source in sorted((ROOT / "data" / "live_validation").glob("*.bmp")):
         samples.append({"category": "live_validation", "name": source.name, "path": str(source)})
-    sem_root = Path(r82_config["sem_acm"]["raw_input_dir"])
+    sem_root = Path(PROJECT_ROOT / r82_config["sem_acm"]["raw_input_dir"])
     for exposure in [13, 18, 24]:
         source = sem_root / f"{exposure}.bmp"
         samples.append({"category": "SEM", "name": source.name, "path": str(source)})
@@ -327,7 +328,7 @@ def main() -> int:
         raise RuntimeError("Locked holdout content hash changed.")
     checkpoint, selected_manifest = selected_checkpoint()
     module = load_inference_module()
-    parent = Path(CONFIG["parent_model"]["checkpoint"])
+    parent = Path(PROJECT_ROOT / CONFIG["parent_model"]["checkpoint"])
     r79_model, r79_key = module.build_model(parent, "cuda:0", True)
     r83_model, r83_key = module.build_model(checkpoint, "cuda:0", True)
     if r79_key != "ema_state_dict" or r83_key != "ema_state_dict":

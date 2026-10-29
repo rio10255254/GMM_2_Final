@@ -1,7 +1,7 @@
 {
   "candidate": "r61_motion_texture_stepguard_v16_dualgate_boundary_focus",
   "profile": "r61_universal_boundary_train_motion_texture_step_guard_v16",
-  "data_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_motion_texture_step_guard_v16",
+  "data_dir": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16",
   "total_pairs": 20296,
   "role_counts": {
     "legacy_shape": 800,
@@ -17,9 +17,9 @@
     "dark": 8448,
     "unknown": 3400
   },
-  "base_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217\\weights\\best_tradeoff.pth.tar",
+  "base_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217/weights/best_tradeoff.pth.tar",
   "scratch_training": false,
-  "lab_compatible_checkpoint": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\_checkpoint_cache\\best_tradeoff.pth_labpsf_0f8fe3b7e902.tar",
+  "lab_compatible_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/_checkpoint_cache/best_tradeoff.pth_labpsf_0f8fe3b7e902.tar",
   "model_name": "LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623",
   "num_epoch": 8,
   "device": "cuda:0",
@@ -40,7 +40,7 @@
     "stage_40_r61_step_guard_motion_texture_synthetic"
   ],
   "motion_grad_weight": 0.25,
-  "fixed_split_dir": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r61_universal_boundary_generalization\\hs100mg_basler\\r61_universal_boundary_train_motion_texture_step_guard_v16\\splits\\grouped_seed1337_val100",
+  "fixed_split_dir": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100",
   "fixed_split_group_overlap_count": 0,
   "fixed_split_train_count": 18266,
   "fixed_split_val_count": 2030,
@@ -50,6 +50,6 @@
   "selection_gate": "synthetic_generalization_plus_cd_plus_sequence_guard"
 }
 [RUN] tag=LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020 model=LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623
-[RUN] progress_dir=D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020
-[RUN] weights_dir=D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020\weights
+[RUN] progress_dir=Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020
+[RUN] weights_dir=Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights
 [REPRO] mode=OFF seed=1337 deterministic=OFF tf32=ON amp=ON fixed_split=OFF num_workers=2

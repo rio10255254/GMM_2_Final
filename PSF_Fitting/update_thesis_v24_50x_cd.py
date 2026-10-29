@@ -10,6 +10,7 @@ from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.shared import Emu, Pt
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 SOURCE = Path(
@@ -21,8 +22,7 @@ OUTPUT = Path(
     r"\論文完整版_20260716_v24_50倍CD校正驗證版.docx"
 )
 FIGURE_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\10_V23_50X_CD_PRESENTATION_CANDIDATES_20260727\figures"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/10_V23_50X_CD_PRESENTATION_CANDIDATES_20260727/figures')
 )
 FIGURE_WIDTH_EMU = 5_256_000
 

@@ -12,11 +12,12 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-INPUT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\Pitch1um_Y_100_Raw_Even_R109E48\pitch1um_y100_raw\bmp")
+INPUT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/pitch1um_y100_raw/bmp'))
 CHECKPOINT = ROOT / "runs" / "r116_formal_scratch_20260903_202052" / "failure_snapshot.pth"
 OUTPUT = ROOT / "results" / "detailed_validation" / "06_external_gmf" / "E042"
 

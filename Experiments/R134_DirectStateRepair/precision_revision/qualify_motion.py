@@ -5,13 +5,15 @@ from validation import reference_circle_core as core
 from audit import refit,pair_audit,full_checks,wrong
 import readout as rd
 import pandas as pd,cv2,traceback
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
-    out=P/'results/motion';out.mkdir(exist_ok=False);protected();assert load(P/'results/preflight/complete.json')['passed'];protocol=load(P/'config/protocol.json');panel=load(E/'config/motion_panel.json');plan=load(panel['source_plan']['path']);cfg=load(panel['configuration']['path']);scope=vars(rd);records=[];allcenters={};allfits=[];pair_count=0
+    out=P/'results/motion';out.mkdir(exist_ok=False);protected();assert load(P/'results/preflight/complete.json')['passed'];protocol=load(P/'config/protocol.json');panel=load(E/'config/motion_panel.json');plan=load(str(PROJECT_ROOT / panel['source_plan']['path']));cfg=load(str(PROJECT_ROOT / panel['configuration']['path']));scope=vars(rd);records=[];allcenters={};allfits=[];pair_count=0
     save(out/'started.json',dict(utc=now(),pid=os.getpid(),sources=[record(P/n) for n in ['qualify_motion.py','common.py','precision_io.py','readout.py','audit.py','config/protocol.json']]))
     for arm,seed in [('C',1342001),('A',1342001),('A',1342002),('C',1342002)]:
         tag=f'{arm}_s{seed}';frames=plan['frames'] if tag=='C_s1342001' else panel['frames'];cp=E/f'runs/R134_{arm}_s{seed}/step0512.pth';m=create(arm,seed);m.load_state_dict(torch.load(cp,map_location='cpu')['model']);m.eval();tables=[]
         for j,f in enumerate(frames):
-            assert sha(f['source']['path'])==f['source']['sha256'];raw8=cv2.imread(f['source']['path'],0);x=torch.from_numpy(raw8.astype(np.float32)/255)[None,None].cuda();value=predict(m,x)[0,0].cpu().numpy();d=out/tag/f['sequence']/f"frame_{f['frame_index']:04d}";exact,preview,high=write_values(d,'reconstruction',value)
+            assert sha(str(PROJECT_ROOT / f['source']['path']))==f['source']['sha256'];raw8=cv2.imread(str(PROJECT_ROOT / f['source']['path']),0);x=torch.from_numpy(raw8.astype(np.float32)/255)[None,None].cuda();value=predict(m,x)[0,0].cpu().numpy();d=out/tag/f['sequence']/f"frame_{f['frame_index']:04d}";exact,preview,high=write_values(d,'reconstruction',value)
             previous=(E/'results/full_motion' if tag=='C_s1342001' else E/'results/motion'/tag)/f['sequence']/f"frame_{f['frame_index']:04d}/reconstruction.png";assert np.array_equal(cv2.imread(str(previous),0),cv2.imread(str(preview),0))
             loaded=read_values(exact);t,p=rd.measure_frame(core,scope,f['sequence'],f['frame_index'],cfg['sequences'][f['sequence']],raw8.astype(float)/255,loaded.astype(float),tag);t.to_csv(d/'centers.csv',index=False);np.savez_compressed(d/'points.npz',**p);allfits.extend(refit(p['inflection_points'],t));tables.append(t);records.append(dict(tag=tag,source=f['source'],checkpoint=record(cp),values=record(exact),preview=record(preview),points=record(d/'points.npz'),centers=record(d/'centers.csv')))
             atomic(out/'status.json',dict(tag=tag,frames=j+1,total=len(frames),total_completed=len(records),total_planned=273));print('Precision motion',tag,j+1,'/',len(frames),flush=True)

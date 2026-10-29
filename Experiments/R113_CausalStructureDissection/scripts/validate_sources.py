@@ -5,6 +5,7 @@ import hashlib
 import json
 from datetime import datetime
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,7 +34,7 @@ def main() -> int:
     failures: list[str] = []
     models: dict[str, dict[str, object]] = {}
     for name, spec in CONFIG["models"].items():
-        checkpoint = Path(spec["checkpoint"])
+        checkpoint = Path(PROJECT_ROOT / spec["checkpoint"])
         exists = checkpoint.is_file()
         actual = sha256(checkpoint) if exists else None
         expected = str(spec["sha256"]).lower()
@@ -50,7 +51,7 @@ def main() -> int:
             "hash_pass": bool(actual == expected),
         }
 
-    r112_root = Path(CONFIG["reference_experiments"]["r112"])
+    r112_root = Path(PROJECT_ROOT / CONFIG["reference_experiments"]["r112"])
     r112_config = json.loads((r112_root / "config" / "experiment.json").read_text(encoding="utf-8"))
     expected_images = [f"frame_{index:04d}.bmp" for index in range(101)]
     gmf_sources: dict[str, dict[str, object]] = {}
@@ -75,7 +76,7 @@ def main() -> int:
             "rows_pass": rows_pass,
         }
 
-    r111_root = Path(CONFIG["reference_experiments"]["r111"])
+    r111_root = Path(PROJECT_ROOT / CONFIG["reference_experiments"]["r111"])
     qualification = json.loads((r111_root / "config" / "qualification.json").read_text(encoding="utf-8"))
     frozen_contract: dict[str, dict[str, object]] = {}
     for name in ("sequence_config", "top30_selection", "raw_lock"):
@@ -91,12 +92,12 @@ def main() -> int:
             "hash_pass": bool(actual == expected),
         }
 
-    sem_input = Path(CONFIG["reference_experiments"]["r69"]) / "inputs" / "sem_paired_50x_exposure_stack"
+    sem_input = Path(PROJECT_ROOT / CONFIG["reference_experiments"]["r69"]) / "inputs" / "sem_paired_50x_exposure_stack"
     sem_names = image_names(sem_input) if sem_input.is_dir() else []
     if len(sem_names) != 12:
         failures.append(f"SEM optical exposure population expected 12, found {len(sem_names)}")
 
-    r109_root = Path(CONFIG["reference_experiments"]["r109"])
+    r109_root = Path(PROJECT_ROOT / CONFIG["reference_experiments"]["r109"])
     checkpoint_dir = r109_root / "runs" / "r109_formal_scratch_continuous_b8_20260826" / "weights"
     trajectory = sorted(checkpoint_dir.glob("epoch_*.pth"))
     expected_trajectory = [f"epoch_{epoch:03d}.pth" for epoch in range(4, 49, 4)]

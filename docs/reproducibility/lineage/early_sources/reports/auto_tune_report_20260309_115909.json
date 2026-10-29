@@ -94,7 +94,7 @@
       "model_name_base": "GESR_v1_v5_ST8_SWP_gmc",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_04_ellipses",
           "stage_08_annulus_focus",
@@ -141,13 +141,13 @@
       },
       "score_shift_first": 4.366500576810399,
       "duration_sec": 458.0056712627411,
-      "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_gmc_20260309_115909"
+      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_gmc_20260309_115909"
     },
     {
       "candidate": "step8_gmf_hold_no_weakpsf",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_04_ellipses",
           "stage_08_annulus_focus",
@@ -178,14 +178,14 @@
         "W_DETAIL_BASE": 0.01
       },
       "error": "RuntimeError: Error(s) in loading state_dict for GeoEdgeAlignSR_v1_v5_NoCoord:\n\tUnexpected key(s) in state_dict: \"weak_psf_block.beta\", \"weak_psf_block.PSFs\", \"weak_psf_block.beta_scale\", \"weak_psf_block.psf_temp\", \"weak_psf_block.entropy_mix\", \"weak_psf_block.lowfreq_ratio\", \"weak_psf_block.beta_scale_max\", \"weak_psf_block.reg\", \"weak_psf_block.gating.1.weight\", \"weak_psf_block.gating.1.bias\", \"weak_psf_block.gating.3.weight\", \"weak_psf_block.gating.3.bias\". ",
-      "traceback": "Traceback (most recent call last):\n  File \"D:\\GMM_2_Final\\Model\\GeoEdgeAlignSR_v1_AutoTuneTrain.py\", line 857, in main\n    res = _run_one_candidate(\n          ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\GMM_2_Final\\Model\\GeoEdgeAlignSR_v1_AutoTuneTrain.py\", line 209, in _run_one_candidate\n    summary = train_mod.run_one_seed(int(seed), args=args_ns)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\GMM_2_Final\\Model\\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py\", line 6267, in run_one_seed\n    start_epoch = _resume_training_state(model, optimizer, ema_model)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\GMM_2_Final\\Model\\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py\", line 5441, in _resume_training_state\n    start_epoch, ema_loaded = load_ckpt(ckpt_path_v5, model, optimizer, ema_model=ema_model)\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\GMM_2_Final\\Model\\GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py\", line 778, in load_ckpt\n    model.load_state_dict(state_dict, strict=True)\n  File \"C:\\Users\\Rio\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 2581, in load_state_dict\n    raise RuntimeError(\nRuntimeError: Error(s) in loading state_dict for GeoEdgeAlignSR_v1_v5_NoCoord:\n\tUnexpected key(s) in state_dict: \"weak_psf_block.beta\", \"weak_psf_block.PSFs\", \"weak_psf_block.beta_scale\", \"weak_psf_block.psf_temp\", \"weak_psf_block.entropy_mix\", \"weak_psf_block.lowfreq_ratio\", \"weak_psf_block.beta_scale_max\", \"weak_psf_block.reg\", \"weak_psf_block.gating.1.weight\", \"weak_psf_block.gating.1.bias\", \"weak_psf_block.gating.3.weight\", \"weak_psf_block.gating.3.bias\". \n"
+      "traceback": "Traceback (most recent call last):\n  File \"Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py\", line 857, in main\n    res = _run_one_candidate(\n          ^^^^^^^^^^^^^^^^^^^\n  File \"Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py\", line 209, in _run_one_candidate\n    summary = train_mod.run_one_seed(int(seed), args=args_ns)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py\", line 6267, in run_one_seed\n    start_epoch = _resume_training_state(model, optimizer, ema_model)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py\", line 5441, in _resume_training_state\n    start_epoch, ema_loaded = load_ckpt(ckpt_path_v5, model, optimizer, ema_model=ema_model)\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py\", line 778, in load_ckpt\n    model.load_state_dict(state_dict, strict=True)\n  File \"C:\\Users\\Rio\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 2581, in load_state_dict\n    raise RuntimeError(\nRuntimeError: Error(s) in loading state_dict for GeoEdgeAlignSR_v1_v5_NoCoord:\n\tUnexpected key(s) in state_dict: \"weak_psf_block.beta\", \"weak_psf_block.PSFs\", \"weak_psf_block.beta_scale\", \"weak_psf_block.psf_temp\", \"weak_psf_block.entropy_mix\", \"weak_psf_block.lowfreq_ratio\", \"weak_psf_block.beta_scale_max\", \"weak_psf_block.reg\", \"weak_psf_block.gating.1.weight\", \"weak_psf_block.gating.1.bias\", \"weak_psf_block.gating.3.weight\", \"weak_psf_block.gating.3.bias\". \n"
     },
     {
       "candidate": "step8_gmf_hold_balanced",
       "model_name_base": "GESR_v1_v5_ST8_SWP_gmb",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_02_circles",
           "stage_04_ellipses",
@@ -234,7 +234,7 @@
       },
       "score_shift_first": 4.292641656444854,
       "duration_sec": 482.3070068359375,
-      "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_gmb_20260309_120650"
+      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_gmb_20260309_120650"
     }
   ],
   "best_candidate": {
@@ -243,7 +243,7 @@
     "score_shift_first": 4.366500576810399,
     "overrides": {
       "LOAD_MODEL": true,
-      "PRETRAINED_PATH": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar",
+      "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
       "TRAIN_INCLUDE_SUBDIRS": [
         "stage_04_ellipses",
         "stage_08_annulus_focus",
@@ -272,7 +272,7 @@
       "W_EDGELOCAL_LAP_END": 0.04,
       "W_DETAIL_BASE": 0.01
     },
-    "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_gmc_20260309_115909"
+    "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_gmc_20260309_115909"
   },
   "final_run": {
     "candidate": "step8_gmf_hold_clean",
@@ -295,7 +295,7 @@
     },
     "score_shift_first": 2.5179405619436075,
     "duration_sec": 1986.717402458191,
-    "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_FIN_gmc_20260309_121452"
+    "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_FIN_gmc_20260309_121452"
   },
   "status": "ok"
 }

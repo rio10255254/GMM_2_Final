@@ -22,23 +22,24 @@ for folder in (ROOT / "model", ROOT / "inference"):
 
 from r103_model import build_model  # noqa: E402
 from reconstruct import reconstruct_tensor  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
 RUN = json.loads((ROOT / "runs" / "active_run.json").read_text(encoding="utf-8"))
 OUTPUT = ROOT / "results" / "posttraining_validation" / "external_acm"
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
-ACM_SCRIPT = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark\scripts\run_acm_multimethod.m")
-R82_RESULTS = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark\results\acm_external")
+ACM_SCRIPT = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/scripts/run_acm_multimethod.m'))
+R82_RESULTS = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/results/acm_external'))
 SUITES = {
     "R73_novel_shapes": {
-        "root": Path(r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\data\r73_synthetic_acm_val"),
-        "config": Path(r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\config\experiment.json"),
+        "root": Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val')),
+        "config": Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/config/experiment.json')),
         "initialization": "automatic_otsu",
     },
     "R74_hard_microscopy": {
-        "root": Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\data\r74_hard_acm_val"),
-        "config": Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization\config\experiment.json"),
+        "root": Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val')),
+        "config": Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization/config/experiment.json')),
         "initialization": "smoothed_otsu",
     },
 }

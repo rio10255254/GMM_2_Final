@@ -9,7 +9,7 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PYTHON = Path(r"C:\Users\Rio\anaconda3\python.exe")
+PYTHON = Path("python")
 
 
 def child(patch: int, core: int) -> dict:

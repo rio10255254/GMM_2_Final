@@ -11,9 +11,9 @@
 目前最重要入口：
 
 - matrix summary:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\diagnostics\DIAGNOSTIC_MATRIX_SUMMARY_20260314_232403.md`
+  `Traing_Progress/organized_20260314/diagnostics/DIAGNOSTIC_MATRIX_SUMMARY_20260314_232403.md`
 - branch decision:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260314\diagnostics\ROUND21_BRANCH_DECISION.md`
+  `Traing_Progress/organized_20260314/diagnostics/ROUND21_BRANCH_DECISION.md`
 
 truth source 說明：
 

@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib, json, sys
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT=Path(__file__).resolve().parents[1]
 def sha(p):
@@ -19,12 +20,12 @@ def main():
         return verify_current()
     sources=load(ROOT/'results/source_manifest.json')
     for r in sources:
-        assert r['exists'] and sha(r['path'])==r['sha256'],r['path']
+        assert r['exists'] and sha(str(PROJECT_ROOT / r['path']))==r['sha256'],str(PROJECT_ROOT / r['path'])
         if 'snapshot' in r:assert sha(ROOT/r['snapshot'])==r['sha256']
     replay=load(ROOT/'results/submission_replay_check.json');assert replay['passed']
     manifest=load(ROOT/'results/20x/reconstruction_manifest.json');assert len(manifest)==80
     for r in manifest:
-        assert sha(r['output'])==r['output_sha256'] and sha(r['source'])==r['source_sha256']
+        assert sha(r['output'])==r['output_sha256'] and sha(str(PROJECT_ROOT / r['source']))==r['source_sha256']
         a=np.load(r['output'])['output']
         assert a.dtype==np.float32 and list(a.shape)==r['shape'] and np.isfinite(a).all() and a.min()>=0 and a.max()<=1
     centers=pd.read_csv(ROOT/'results/20x/centers.csv');pairs=pd.read_csv(ROOT/'results/20x/per_pair.csv');summary=pd.read_csv(ROOT/'results/20x/summary.csv')

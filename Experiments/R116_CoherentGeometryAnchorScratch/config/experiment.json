@@ -14,7 +14,7 @@
     "r109_checkpoint_allowed_only_for_counterfactual_probe": true
   },
   "data": {
-    "source_package": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/data/package",
+    "source_package": "Experiments/R109_StagedMidpointWidthScratch/data/package",
     "source_manifest_sha256": "f10eb706d215b021856bd9ebe4589508d796b5bbb4ddc4b7ee1ee9a5667993ef",
     "package_root": "data/package",
     "train_scenes": 5000,
@@ -118,10 +118,10 @@
     "formal_per_class": 32,
     "run_every_epochs": 2,
     "real_preview_inputs": [
-      "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/5x_dense_raw.bmp",
-      "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/20x_mixed_raw.bmp",
-      "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/50x_array_raw.bmp",
-      "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/pillar_center9_50x_raw.bmp"
+      "Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/5x_dense_raw.bmp",
+      "Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/20x_mixed_raw.bmp",
+      "Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/50x_array_raw.bmp",
+      "Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/pillar_center9_50x_raw.bmp"
     ]
   },
   "pretraining_probes": {

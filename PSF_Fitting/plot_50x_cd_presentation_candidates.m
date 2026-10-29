@@ -1,7 +1,7 @@
 function plot_50x_cd_presentation_candidates()
 % Candidate English figures for a fair presentation of the 50x CD ablation.
 
-root = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\10_V23_50X_CD_PRESENTATION_CANDIDATES_20260727";
+root = "Thesis_MOSR_Evidence/Final_Data_Figures/10_V23_50X_CD_PRESENTATION_CANDIDATES_20260727";
 figureDir = fullfile(root, "figures");
 if ~isfolder(figureDir)
     mkdir(figureDir);

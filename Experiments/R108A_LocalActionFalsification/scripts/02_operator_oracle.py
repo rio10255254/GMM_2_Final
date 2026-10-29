@@ -21,6 +21,7 @@ import numpy as np
 import pandas as pd
 from scipy.ndimage import binary_erosion, distance_transform_edt
 from skimage.restoration import wiener
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,7 +29,7 @@ RESULT = ROOT / "results" / "operator_oracle"
 REPORT = ROOT / "reports" / "02_OPERATOR_ORACLE.md"
 RESULT.mkdir(parents=True, exist_ok=True)
 REPORT.parent.mkdir(parents=True, exist_ok=True)
-EXPERIMENTS = Path(r"D:\GMM_2_Final\Experiments")
+EXPERIMENTS = Path(str(PROJECT_ROOT / 'Experiments'))
 MANIFESTS = {
     "R73": EXPERIMENTS / "R73_R61ExpandedSyntheticACMGeneralization/data/r73_synthetic_acm_val/manifest.json",
     "R74": EXPERIMENTS / "R74_R61HardMicroscopyACMGeneralization/data/r74_hard_acm_val/manifest.json",

@@ -12,11 +12,12 @@ from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
 
 SOURCE = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v16_修訂版.docx")
 OUTPUT = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v17_修訂版.docx")
-WORK = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work")
+WORK = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work'))
 EARLY = WORK / "v17_chinese_figures" / "early"
 WIENER = WORK / "v17_chinese_figures" / "wiener" / "figures"
 R63 = WORK / "v17_chinese_figures" / "r63"

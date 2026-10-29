@@ -18,11 +18,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 from torch import nn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL_PATH = ROOT / "model" / "prototype_models.py"
-RECONSTRUCT_PATH = Path("D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/inference/reconstruct.py")
+RECONSTRUCT_PATH = Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/inference/reconstruct.py'))
 
 
 def load_module(name: str, path: Path):

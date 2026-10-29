@@ -1,7 +1,7 @@
 function make_raw_position_anchor_principle_schematic()
 % English schematic for explaining the Raw-position anchoring principle.
 
-outRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures" + ...
+outRoot = "Thesis_MOSR_Evidence/Final_Data_Figures" + ...
     "\13_V26_RAW_POSITION_ANCHOR_PRINCIPLE_20260727";
 figureDir = fullfile(outRoot, "figures");
 if ~isfolder(figureDir)

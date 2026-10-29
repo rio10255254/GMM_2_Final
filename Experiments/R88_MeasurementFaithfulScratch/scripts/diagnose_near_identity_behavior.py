@@ -17,6 +17,7 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,7 +31,7 @@ RUN_ROOT = ROOT / "runs" / "training_R88_scratch_seed880031_20260810_205058"
 PROGRESS_PATH = RUN_ROOT / "run_progress.json"
 TRAINING_LOG_PATH = RUN_ROOT / "training_log.csv"
 WEIGHTS_ROOT = ROOT / "weights" / "formal" / "seed_880031" / "R88_scratch_seed880031_20260810_205058" / "weights"
-REAL_FRAME = Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_1um\bmp\frame_0025.bmp")
+REAL_FRAME = Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp/frame_0025.bmp'))
 OUTPUT_ROOT = ROOT / "results" / "diagnosis_near_identity_behavior"
 
 

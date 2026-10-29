@@ -9,7 +9,7 @@
 - package_train_kind: `full_train_baseline`
 - model_name: `GESR_v1_v5_ST0p8_SWP_r26sm035`
 - source report:
-  - `D:\GMM_2_Final\Traing_Progress\auto_tune_reports\auto_tune_report_20260316_185417.json`
+  - `Traing_Progress/auto_tune_reports/auto_tune_report_20260316_185417.json`
 
 ## 固定 hash
 

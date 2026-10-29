@@ -5,10 +5,11 @@ from pathlib import Path
 
 from docx import Document
 from docx.oxml.ns import qn
+PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
 
 SOURCE = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v17_修訂版.docx")
-OUT = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v18\chapter6_inventory.json")
+OUT = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v18/chapter6_inventory.json'))
 
 
 def paragraph_text(paragraph) -> str:

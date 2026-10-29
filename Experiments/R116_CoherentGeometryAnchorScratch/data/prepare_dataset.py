@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,7 +30,7 @@ def write_json(path: Path, payload: dict) -> None:
 
 def main() -> int:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
-    source = Path(config["data"]["source_package"]).resolve()
+    source = Path(PROJECT_ROOT / config["data"]["source_package"]).resolve()
     destination = (ROOT / config["data"]["package_root"]).resolve()
     source_manifest = source / "manifest.json"
     if not source_manifest.is_file():

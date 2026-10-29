@@ -9,6 +9,7 @@ import sys
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,7 +51,7 @@ def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
     design = read_json(DESIGN_PATH)
     protocol = read_json(PROTOCOL_PATH)
-    checkpoint = torch.load(Path(protocol["checkpoint"]), map_location="cpu", weights_only=False)
+    checkpoint = torch.load(Path(PROJECT_ROOT / protocol["checkpoint"]), map_location="cpu", weights_only=False)
     model = MODEL.build_model(base=int(design["architecture"]["model_width"]))
     model.load_state_dict(checkpoint[protocol["checkpoint_state"]], strict=True)
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")

@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.i
 from common import *
 import numpy as np,pandas as pd
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
     meta=load(ROOT/'results/real_inference.json');cases=meta['sem_images'];d=loadmat(ROOT/'results/sem/masks_cells.mat',variable_names=['masks','cells','valid']);assert d['valid'].all(),'Keep failed cases; do not silently remove them'
@@ -30,10 +31,10 @@ def main():
                 change=x[metric]-y[metric];gain=change*(1 if metric=='correlation' else -1);contrasts.append(dict(step=step,comparison=factor,candidate=a,control=b,metric=metric,median_candidate_minus_control=float(change.median()),improved=int((gain>1e-7).sum()),worsened=int((gain< -1e-7).sum()),tied=int((gain.abs()<=1e-7).sum())))
     pd.DataFrame(contrasts).to_csv(ROOT/'results/sem/factor_contrasts.csv',index=False)
     # Raw is measured with the exact same source-defined ROI and circle reader.
-    panel=load(ROOT/'config/real_panel.json');cfg=load(panel['sequence_config']['path']);sys.path.insert(0,str(R128/'analysis/lsc_comparison'));from measure import reader
+    panel=load(ROOT/'config/real_panel.json');cfg=load(str(PROJECT_ROOT / panel['sequence_config']['path']));sys.path.insert(0,str(R128/'analysis/lsc_comparison'));from measure import reader
     _,sc=reader(load(R128/'results/lsc_comparison/plan.json'));raw_rows=[]
     for f in panel['motion']:
-        s=cfg['sequences'][f['sequence']];im=sc['load_grayscale'](Path(f['source']['path']));x0,y0,x1,y1=f['box'];im=im[y0:y1,x0:x1];pred=sc['session_prediction'](f['sequence'],f['frame_index'],np.asarray(s['centers'],float),s['expected_signed_dx_px'])
+        s=cfg['sequences'][f['sequence']];im=sc['load_grayscale'](Path(PROJECT_ROOT / f['source']['path']));x0,y0,x1,y1=f['box'];im=im[y0:y1,x0:x1];pred=sc['session_prediction'](f['sequence'],f['frame_index'],np.asarray(s['centers'],float),s['expected_signed_dx_px'])
         for pid,x,y in pred:
             patch,c,origin=core.crop_around(im,(x-x0,y-y0),int(np.ceil(.46*s['pitch_px'])));sc['reset_curvature_cycle']();m=core.measure_inflection_lsc(patch,c,s['radius_px'],sample_count=64 if s['magnification']=='20x' else 96,acm_iterations=13 if s['magnification']=='20x' else 15,normal_half_width_px=2.4 if s['magnification']=='20x' else 4.,polarity='dark')
             raw_rows.append(dict(tag='Raw',sequence=f['sequence'],frame_index=f['frame_index'],pillar_id=int(pid),cx=m.lsc.cx+origin[0]+x0,cy=m.lsc.cy+origin[1]+y0,scale=s['object_um_per_px']))

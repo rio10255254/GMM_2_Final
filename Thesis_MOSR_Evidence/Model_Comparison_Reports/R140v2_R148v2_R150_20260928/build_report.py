@@ -10,15 +10,16 @@ from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
 from docx.enum.section import WD_SECTION
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 OUT = Path(__file__).resolve().parent
-ROOT = Path(r"D:\GMM_2_Final\Experiments")
+ROOT = Path(str(PROJECT_ROOT / 'Experiments'))
 R140 = ROOT / "R140v2_StableUNet"
 R148 = ROOT / "R148v2_HybridContextNativePSF"
 R150 = ROOT / "R150_MatchedGeometryMeanPSF"
 COMP = R150 / "results/comparison"
-WITHIN = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Model_Comparison_Reports\WithinScan_30Step_16Models_20260930")
-EFF = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Efficiency_Validation_R140v2_R148v2_20260928")
+WITHIN = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930'))
+EFF = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Efficiency_Validation_R140v2_R148v2_20260928'))
 DOCX = OUT / "R140v2_R148v2_R150_Conference_Report_20260928.docx"
 FIG = OUT / "figures"
 FIG.mkdir(parents=True, exist_ok=True)

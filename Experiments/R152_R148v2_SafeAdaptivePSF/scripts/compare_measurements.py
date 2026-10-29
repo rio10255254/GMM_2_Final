@@ -5,7 +5,8 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np,pandas as pd
 from scipy.optimize import least_squares
 from utils import ROOT,load,save,now
-BASE=Path(r'D:\GMM_2_Final\Experiments\R148v2_HybridContextNativePSF')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+BASE=Path(str(PROJECT_ROOT / 'Experiments/R148v2_HybridContextNativePSF'))
 MODEL='R152-R148v2-SafeAdaptivePSF';PARENT='R148v2-HybridContextNativePSF';MODELS=['Raw','R129','R130-Clean','R137-WeakPSF','R138-V42PSF8','R139-UNetRecurrent','R140v2-StableUNet','R143-PSF25-MatchedPairs','R145-Center9PSF25-CorrectedPairs','R146-SEMCoreHaloPSF25-MatchedPairs','R147-FullResPSFConsistency',PARENT,MODEL];NM=172.5;TH=np.linspace(0,2*np.pi,720,endpoint=False)
 def signature(points,center):
  d=points-center;a=np.mod(np.arctan2(d[:,1],d[:,0]),2*np.pi);r=np.linalg.norm(d,axis=1);ix=np.argsort(a);a,r=a[ix],r[ix]

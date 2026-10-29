@@ -8,6 +8,7 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
@@ -15,10 +16,7 @@ INPUT_DIR = EXPERIMENT / "inputs" / "shifted"
 RESULTS_DIR = EXPERIMENT / "results"
 QA_DIR = EXPERIMENT / "qa"
 MOSR_CHECKPOINT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages"
-    r"\V42_SoftLabelSNR_FullStandalone_20260709\results\training_results"
-    r"\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713"
-    r"\epoch_120.pth.tar"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar')
 )
 
 

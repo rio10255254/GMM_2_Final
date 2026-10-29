@@ -11,14 +11,14 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
 from docx.shared import Inches, Pt
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-PACKAGE = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\04_V42_NEURAL_NETWORK_RESULTS")
+PACKAGE = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS'))
 FIGURES = PACKAGE / "figures"
 TABLES = PACKAGE / "tables"
 PSF_PACKAGE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit')
 )
 PSF_FIGURES = PSF_PACKAGE / "figures" / "center9_pillar_fit_20x_50x"
 PSF_TABLES = PSF_PACKAGE / "tables" / "center9_pillar_fit_20x_50x"

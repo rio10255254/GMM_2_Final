@@ -1,6 +1,6 @@
 # Diagnostic Matrix Summary
 - generated_at: 2026-03-14 22:25:00
-- weights_path: `D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\runs\training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756\weights\best_tradeoff.pth.tar`
+- weights_path: `Traing_Progress/organized_20260313/round18/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_r18eh_20260313_141756/weights/best_tradeoff.pth.tar`
 - truth_source: generator_replay
 - recommended_branch: **Branch L**
 - rationale: Estimator gap on clean/convolved is small; remaining error is more likely target/label alignment on SR.

@@ -9,9 +9,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.ndimage import gaussian_filter1d, map_coordinates
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT = Path(__file__).resolve().parents[1]
-R140 = Path(r"D:\GMM_2_Final\Experiments\R140v2_StableUNet")
+R140 = Path(str(PROJECT_ROOT / 'Experiments/R140v2_StableUNet'))
 sys.path.insert(0, str(ROOT / "analysis"))
 from measure_raw_edge_width import ANGLES, RADII, crossing
 sys.path.insert(0, str(ROOT))

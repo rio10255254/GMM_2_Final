@@ -19,9 +19,10 @@ import torch
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 PACKAGE = ROOT / "LabSystem_MOSR" / "Model_Packages" / "V42_SoftLabelSNR_FullStandalone_20260709"
 FINAL_CHECKPOINT = (
     PACKAGE
@@ -210,7 +211,7 @@ def to_uint8(image01: np.ndarray) -> np.ndarray:
 def calibrate_formal_reproduction(device: torch.device) -> dict:
     model, model_meta = build_model(FINAL_CHECKPOINT, device, boundary_enabled=True)
     raw_path = Path(
-        r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp\frame_0000.bmp"
+        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp')
     )
     formal_path = FORMAL_ROOT / "50x_0p5um" / "frame_0000.bmp"
     image01, _ = read_gray01(raw_path)
@@ -245,7 +246,7 @@ def reconstruct_sequences(
     records = []
     started = time.perf_counter()
     for sequence_name, sequence in config.items():
-        input_dir = Path(sequence["raw_dir"])
+        input_dir = Path(PROJECT_ROOT / sequence["raw_dir"])
         output_dir = condition_root / SEQUENCE_OUTPUT_NAMES[sequence_name]
         output_dir.mkdir(parents=True, exist_ok=True)
         frame_count = int(sequence["frame_count"])

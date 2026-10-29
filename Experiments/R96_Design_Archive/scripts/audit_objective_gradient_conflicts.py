@@ -7,10 +7,11 @@ from pathlib import Path
 import sys
 
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path(r"D:\GMM_2_Final\Experiments\R93_RecoverableDetailSeparatedScratch\data\r93_formal")
+SOURCE = Path(str(PROJECT_ROOT / 'Experiments/R93_RecoverableDetailSeparatedScratch/data/r93_formal'))
 WEIGHT = ROOT / "weights" / "formal" / "seed_950041" / "R95_scratch_seed950041_20260813_003125" / "weights" / "epoch_032.pth.tar"
 OUTPUT = ROOT / "reports" / "objective_gradient_conflicts" / "epoch032_on_epoch33_large_patch.json"
 

@@ -17,8 +17,10 @@
 | `external_unmapped.tsv` | 程式裡指向外部、但內容不在雲端（或檔案已經不在這台電腦）的位置與引用次數。這些引用照原樣保留 |
 | `build_external_map.py` | 產生上面兩份的程式。它要讀這台電腦上的外部檔案，所以只能在交機前跑 |
 | `baseline/` | 改動前記下的基準：本來就壞的連結、驗證器輸出、本來就失敗的測試 |
-| `edits_phaseN.jsonl`、`unresolved_phaseN.tsv`、`problems_phaseN.txt` | 各階段每一處改寫、工具無法決定的位置、無法讀取的檔 |
+| `edits_phaseN.jsonl.gz`、`unresolved_phaseN.tsv`、`problems_phaseN.txt` | 各階段每一處改寫、工具無法決定的位置、無法讀取的檔 |
 | `decisions_phaseN.json` | 工具無法決定的位置，人工判斷後的決定與理由 |
+| `reader_hints_phaseN.json` | 工具算不出路徑的名字（從設定值拼出來的、或由載入它的程式在執行時才設定的），人工指出它指向哪個檔與理由 |
+| `manual_phaseN_*.py` | `apply` 之後的人工修正，寫成可以重跑的程式：每一處都要原文完全相符才改 |
 | `hash_changes_phaseN.json` | 各階段改寫後雜湊的變動（舊 sha → 新 sha），第 5 階段替換 Release 清單時用 |
 | `verify_phaseN.txt` | 各階段驗證的結果 |
 
@@ -26,6 +28,7 @@
 
 - `Tools/restructure_tree.py`：每個階段的 `plan`、`apply`、`verify`，以及 `baseline`。
 - `Tools/restructure_rules.py`、`restructure_resolve.py`、`restructure_text.py`、`restructure_python.py`、`restructure_hashes.py`、`restructure_verify.py`：規則、路徑解析、文字與 Python 改寫、雜湊連鎖、驗證。
+- `Tools/restructure_readers.py`：程式把資料檔（JSON、YAML、TOML）裡的路徑讀回來用的地方。從讀檔的那一行一路追到用固定鍵名取值的地方，跨函式、跨模組、經過容器都追；讀取處改成接上專案根目錄，驗證時逐一確認讀到的位置跟原本相同。
 - `Tools/check_markdown_links.py`：連結檢查，之後也會一直用。
 - `Tools/handoff_inventory.py`：交機盤點，第 6 階段會再跑一次。
 
@@ -38,3 +41,67 @@
 ## 各階段
 
 （每個階段完成後補上：搬了什麼、改寫數量、人工處理的位置、驗證結果。）
+
+### 第 1 階段：路徑改成跟著專案走（2026-10-29）
+
+不搬任何資料夾，只把寫死這台電腦的路徑改掉，讓專案放在哪個資料夾都能用。
+
+**改了什麼。** 4,828 個檔、135,202 處。
+
+- 紀錄（JSON、CSV、log 等）裡的絕對路徑改成相對於專案根目錄：122,536 處。
+- 文件 8,619 處，連結 96 處。
+- Python 的絕對路徑改成從檔案位置推出的專案根目錄（`PROJECT_ROOT`）：1,575 處（讀回資料檔的另計，見下）。
+- MATLAB 217 處，PowerShell 51 處。
+- 直譯器路徑改成 `python`：114 處。
+
+單提專案資料夾本身的地方：在紀錄和模板裡寫成 `.`，在說明文字（文件、docstring、註解）裡照原樣保留，因為它記的是當時在哪裡做的。
+
+**讀回資料檔的程式。** 紀錄裡的路徑改成相對之後，把這些紀錄讀回來用的程式（各輪的 `config/experiment.json`、manifest、`ESTIMATOR_POLICY.json`）會拿到相對路徑。原本的寫法是 `實驗資料夾 / 設定值` 或 `Path(設定值)`，前者會接錯資料夾，後者要看執行目錄。`Tools/restructure_readers.py` 從讀檔處追到每個用固定鍵名取值的地方，把讀取處改成接上專案根目錄：
+
+- 一共 1,006 處，分布在 399 個檔。
+- 寫法有三種：
+  - `Path(PROJECT_ROOT / 值)`
+  - `str(PROJECT_ROOT / 值)`：字串用法照舊是字串，值跟以前一樣是絕對路徑。
+  - 原本是 `實驗資料夾 / 值` 的，把前面換成 `PROJECT_ROOT`。
+- `PROJECT_ROOT / 絕對路徑` 得到的就是那個絕對路徑，所以之後重跑時程式自己寫出絕對路徑也一樣對。
+
+**人工指出的地方。**
+
+- `reader_hints_phase1.json`，4 處：
+  - R67 以檔名動態載入論文 `source_scripts` 底下的三支分析腳本，並把 `MANIFEST_PATH` 設成它自己產生的 manifest。
+  - R77 的 `R76_RUNNER` 是從設定值拼出來的。
+- `decisions_phase1.json`，1 處：R63 的 `pair_text()` 把整筆紀錄串成文字來搜尋關鍵字，不開檔，維持原樣。
+
+**人工修正（`apply` 之後）。**
+
+- `manual_phase1_writer.py`：center9 頻譜 manifest 的寫出端改成寫相對路徑；讀回它的測試由工具改。
+- `manual_phase1_data_readers.py`，工具不改寫的讀取端，共 20 個檔：
+  - MATLAB 讀設定檔的 15 個檔（R72–R83 的 ACM、V42 第 6.2 節圖表腳本，以及 `docs/reproducibility` 底下的編輯用副本）：改成 `fullfile(PROJECT_ROOT, ...)`。
+  - R148v2 的兩支監看腳本：用 `[System.IO.Path]::Combine($ProjectRoot, ...)`，相對、絕對路徑都對。
+  - R128 `check_r61.py` 重播 `plan.json` 記錄的整串指令：工作目錄改成專案根目錄。
+  - R135 `adapters.py`、`adapters_v2.py` 在行程內重跑同一串指令：沒被替換的路徑參數接上專案根目錄。
+
+**留給人看的清單。** `unresolved_phase1.tsv` 76 列、41 個檔，全部是「值帶著改過的路徑進到工具追不到的地方」，不擋 `apply`。逐條看過：
+
+- 寫出紀錄、畫圖、做表、印出、數值比對、遞迴序列化。
+- 傳給讀取處已經改好的函式（R129 → R128 `reader()`、R152 的 PSF 融合只讀數值設定）。
+
+都不需要再改。真的會讀路徑的（上面的人工修正與提示）已經處理。
+
+**原樣保留。** 16 個非 UTF-8 的檔，見 `problems_phase1.txt`：
+
+- 第三方的 `bads-1.1.3` 原始碼。
+- 早期幾輪用 cp950 寫的 log。
+
+**驗證。** `verify_phase1.txt`：0 個問題。檢查項目：
+
+- 每一處改寫的等價性。
+- Python 路徑重新求值。
+- 每個讀回資料值的位置新舊相同。
+- 殘留的本機路徑。
+- 雜湊連鎖：內容改變的檔，它的 sha256 在引用它的紀錄裡跟著更新，人工修正之後再用 `rehash` 帶一次，最終共 4,426 個雜湊變動（`hash_changes_phase1.json`）。
+- 連結、驗證器、各組 pytest 都對照基準線。
+
+在這個 checkout 跑測試前，從原本的工作樹複製了測試會讀的本機資料：R118 的資料包、R67 名單上的 checkpoint 與影格等，共 38.2 GB，都不進 git。原本的工作樹靠絕對路徑直接讀到它們；改成相對路徑後，測試讀的是這個 checkout 自己的資料夾。
+
+這一階段也修了工具在 MATLAB 的一個錯誤：`PROJECT_ROOT` 原本只定義在檔案的第一個函式裡，用到它的 local function 看不到。現在每個用到它的函式各自定義一次。

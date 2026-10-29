@@ -1,7 +1,7 @@
 {
   "completed_utc": "2026-09-13T13:36:35.989608+00:00",
   "source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\scripts\\replay_continuous_worst.py",
+    "path": "Experiments/R129_OpticalPriorHybrid/scripts/replay_continuous_worst.py",
     "sha256": "80717801a8b427d1262da0dd5bd62d804ac5e4cf15d33215aa804aeb52cd03e1"
   },
   "selection": {
@@ -19,7 +19,7 @@
       "sequence": "20x_0p5um",
       "frame_index": 1,
       "public_image": {
-        "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\inference\\continuous_lsc_worst_replay\\frame_0001.png",
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/inference/continuous_lsc_worst_replay/frame_0001.png",
         "sha256": "05dc72fbb191481ea94eaf34a6d89ec0acb8e740ad7823d85f264d1bb16b92f9"
       },
       "image_exact": true,
@@ -29,7 +29,7 @@
       "sequence": "20x_0p5um",
       "frame_index": 2,
       "public_image": {
-        "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\inference\\continuous_lsc_worst_replay\\frame_0002.png",
+        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/inference/continuous_lsc_worst_replay/frame_0002.png",
         "sha256": "f008a78d94d24cfc328235a90fe6b8cd42a52165bf611a13bc3964d9a924c89f"
       },
       "image_exact": true,
@@ -37,7 +37,7 @@
     }
   ],
   "public_addon_manifest": {
-    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\addons\\full_field\\ADDON_MANIFEST.json",
+    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/addons/full_field/ADDON_MANIFEST.json",
     "sha256": "967d946975c35e2e5c3d1ada1e15563e48b02635585e955a5331eb82fec0d241"
   },
   "no_new_training_or_model_change": true

@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from typing import Any, Mapping
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _safe_float(v: Any, default: float = float("nan")) -> float:
@@ -42,7 +43,7 @@ def get_macro_estimator(policy: Mapping[str, Any], default: str = "edge_band_ref
 
 def resolve_control_center_ref(policy: Mapping[str, Any], default: float = 1.0) -> float:
     sources = get_legacy_sources(policy)
-    reevaluation_json = sources.get("phase2_reevaluation_json")
+    reevaluation_json = str(PROJECT_ROOT / sources.get("phase2_reevaluation_json"))
     if reevaluation_json:
         try:
             reevaluation = _load_json(Path(str(reevaluation_json)))
@@ -50,7 +51,7 @@ def resolve_control_center_ref(policy: Mapping[str, Any], default: float = 1.0) 
         except Exception:
             pass
 
-    round26_decision_md = sources.get("round26_decision_md")
+    round26_decision_md = str(PROJECT_ROOT / sources.get("round26_decision_md"))
     if round26_decision_md:
         round26_decision_json = Path(str(round26_decision_md)).with_suffix(".json")
         try:

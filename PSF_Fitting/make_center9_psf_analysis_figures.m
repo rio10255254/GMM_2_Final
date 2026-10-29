@@ -23,7 +23,8 @@ out = struct('metrics', metrics, 'figure_paths', figure_paths, 'data', data);
 end
 
 function opts = default_options()
-root = fullfile('D:', 'GMM_2_Final');
+    PROJECT_ROOT = fileparts(fileparts(mfilename('fullpath')));
+root = fullfile(PROJECT_ROOT);
 package_root = fullfile(root, 'Thesis_MOSR_Evidence', 'Final_Data_Figures', ...
     '03_PSF_EXPERIMENT_RESULTS', '01_global_bads_fit');
 opts.fit_root = fullfile(root, 'PSF_Fitting', 'output', ...

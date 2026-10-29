@@ -7,11 +7,11 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 PACKAGE_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\03_PSF_EXPERIMENT_RESULTS\01_global_bads_fit"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit')
 )
 FIGURE_ROOT = PACKAGE_ROOT / "figures" / "center9_pillar_fit_20x_50x"
 TABLE_ROOT = PACKAGE_ROOT / "tables" / "center9_pillar_fit_20x_50x"
@@ -179,7 +179,7 @@ def test_spectra_use_absolute_dbfs_without_per_image_normalization() -> None:
             assert np.isfinite(data["fy_cycles_per_pixel"]).all()
 
         record = manifest["records"][magnification]
-        assert record["wiener_source"] == str(wiener_path)
+        assert str(PROJECT_ROOT / record["wiener_source"]) == str(wiener_path)
         assert record["wiener_array"] == "restored"
         assert record["wiener_nsr"] == 0.05
 

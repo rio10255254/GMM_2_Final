@@ -9,10 +9,11 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK, WD_LINE_SPACING
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
+PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
 
 OUT = Path(r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\第四章_研究方法_量測導向重整稿.docx")
-FIG_DIR = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\05_CHAPTER4_METHOD_REFRAME")
+FIG_DIR = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/05_CHAPTER4_METHOD_REFRAME'))
 
 FONT_EA = "標楷體"
 FONT_LATIN = "Times New Roman"

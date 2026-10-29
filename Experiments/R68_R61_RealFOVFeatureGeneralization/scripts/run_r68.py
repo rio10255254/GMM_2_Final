@@ -10,6 +10,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,19 +37,19 @@ def read_gray(path: Path) -> np.ndarray:
 
 
 def validate_inputs(config: dict) -> dict:
-    checkpoint = Path(config["checkpoint"])
+    checkpoint = Path(PROJECT_ROOT / config["checkpoint"])
     if not checkpoint.is_file():
         raise FileNotFoundError(checkpoint)
     audit = {"checkpoint": str(checkpoint), "sequences": {}, "total_frames": 0}
     for name, item in config["sequences"].items():
-        raw_dir, recon_dir = Path(item["raw_dir"]), Path(item["recon_dir"])
+        raw_dir, recon_dir = Path(PROJECT_ROOT / item["raw_dir"]), Path(PROJECT_ROOT / item["recon_dir"])
         raw, recon = image_paths(raw_dir), image_paths(recon_dir)
         expected = int(item["frame_count"])
         if len(raw) != expected or len(recon) != expected:
             raise RuntimeError(f"{name}: expected {expected}; raw={len(raw)}, recon={len(recon)}")
         if [p.name for p in raw] != [p.name for p in recon]:
             raise RuntimeError(f"{name}: Raw and R61 filenames do not match")
-        manifest_path = Path(item["source_manifest"])
+        manifest_path = Path(PROJECT_ROOT / item["source_manifest"])
         manifest = read_json(manifest_path)
         if Path(manifest["weights"]).resolve() != checkpoint.resolve():
             raise RuntimeError(f"{name}: source reconstruction used another checkpoint")
@@ -71,7 +72,7 @@ def validate_inputs(config: dict) -> dict:
 
 
 def mapping_for(item: dict, sequence: str) -> dict[str, datetime]:
-    rows = pd.read_csv(item["mapping_csv"], encoding="utf-8-sig")
+    rows = pd.read_csv(str(PROJECT_ROOT / item["mapping_csv"]), encoding="utf-8-sig")
     possible_groups = {sequence, sequence.replace("50x_", "x_")}
     rows = rows.loc[rows["group"].astype(str).isin(possible_groups)]
     output = {}
@@ -128,7 +129,7 @@ def bounded_ecc_shift(a: np.ndarray, b: np.ndarray, initial_dx: float, initial_d
 
 
 def analyze_sequence(name: str, item: dict, config: dict) -> tuple[list[dict], dict]:
-    raw_paths, recon_paths = image_paths(Path(item["raw_dir"])), image_paths(Path(item["recon_dir"]))
+    raw_paths, recon_paths = image_paths(Path(PROJECT_ROOT / item["raw_dir"])), image_paths(Path(PROJECT_ROOT / item["recon_dir"]))
     mapping = mapping_for(item, name)
     tiles = select_tiles(read_gray(raw_paths[0]), config["tile_grid"])
     max_gap = float(config["max_time_gap_seconds"])

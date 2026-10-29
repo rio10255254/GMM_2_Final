@@ -15,6 +15,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -416,7 +417,7 @@ def make_figures(
     fig.savefig(FIGURES / "03_5x_tile_sensitivity.png", bbox_inches="tight")
     plt.close(fig)
 
-    raw_root = Path(CONFIG["real_fov"]["locked_raw_root"])
+    raw_root = Path(PROJECT_ROOT / CONFIG["real_fov"]["locked_raw_root"])
     selected = ["5x_0p5um", "20x_0p5um", "50x_0p5um"]
     fig, axes = plt.subplots(3, 3, figsize=(13, 10))
     for row, sequence in enumerate(selected):
@@ -433,8 +434,8 @@ def make_figures(
     plt.close(fig)
 
     for suite, item in CONFIG["external_acm_suites"].items():
-        source_config = json.loads(Path(item["source_config"]).read_text(encoding="utf-8"))
-        data_root = Path(item["dataset_root"])
+        source_config = json.loads(Path(PROJECT_ROOT / item["source_config"]).read_text(encoding="utf-8"))
+        data_root = Path(PROJECT_ROOT / item["dataset_root"])
         families = source_config["dataset"]["families"]
         fig, axes = plt.subplots(len(families), 3, figsize=(12, 3 * len(families)))
         for row, family in enumerate(families):
@@ -451,7 +452,7 @@ def make_figures(
         fig.savefig(FIGURES / f"05_{suite}_fixed_examples.png", bbox_inches="tight")
         plt.close(fig)
 
-    sem_raw = Path(CONFIG["sem_acm"]["raw_input_dir"]) / "18.bmp"
+    sem_raw = Path(PROJECT_ROOT / CONFIG["sem_acm"]["raw_input_dir"]) / "18.bmp"
     fig, axes = plt.subplots(1, 3, figsize=(13, 4))
     images = [read_gray(sem_raw), read_gray(RECON / "sem" / "R79E23" / "18.bmp"), read_gray(RECON / "sem" / "R79E100" / "18.bmp")]
     for axis, image, label in zip(axes, images, ["Raw", "R79E23", "R79E100"]):
@@ -461,7 +462,7 @@ def make_figures(
     plt.close(fig)
 
     r74_item = CONFIG["external_acm_suites"]["R74_hard_microscopy"]
-    r74_config = json.loads(Path(r74_item["source_config"]).read_text(encoding="utf-8"))
+    r74_config = json.loads(Path(PROJECT_ROOT / r74_item["source_config"]).read_text(encoding="utf-8"))
     r74_families = r74_config["dataset"]["families"]
     r74_masks = loadmat(
         RESULTS / "acm_external" / "R74_hard_microscopy" / "results" / "masks" / "acm_primary_masks.mat",
@@ -472,7 +473,7 @@ def make_figures(
         index = row * int(r74_config["dataset"]["images_per_family"])
         stage = family["stage"]
         images = [
-            read_gray(Path(r74_item["dataset_root"]) / "src" / stage / "0000.bmp"),
+            read_gray(Path(PROJECT_ROOT / r74_item["dataset_root"]) / "src" / stage / "0000.bmp"),
             read_gray(RECON / "external" / "R74_hard_microscopy" / "R79E23" / stage / "0000.bmp"),
             read_gray(RECON / "external" / "R74_hard_microscopy" / "R79E100" / stage / "0000.bmp"),
         ]

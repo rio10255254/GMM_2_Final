@@ -4,15 +4,15 @@
   "locked_at": "2026-08-15T08:32:58+08:00",
   "primary_checkpoint_epoch": 40,
   "checkpoint_state": "ema_state_dict",
-  "checkpoint": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_040.pth.tar",
+  "checkpoint": "Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_040.pth.tar",
   "diagnostic_checkpoints": {
-    "32": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_032.pth.tar",
-    "36": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_036.pth.tar",
-    "40": "D:/GMM_2_Final/Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_040.pth.tar"
+    "32": "Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_032.pth.tar",
+    "36": "Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_036.pth.tar",
+    "40": "Experiments/R100_CausalOperatorScratch/weights/formal/seed_1000053/R100_scratch_seed1000053_20260814_180143/weights/epoch_040.pth.tar"
   },
   "selection_policy": "Epoch 40 is the fixed formal endpoint selected before these external tests. Epochs 32 and 36 are trajectory diagnostics only and cannot replace it after real or SEM results are seen.",
   "internal_test_arm": {
-    "source_package": "D:/GMM_2_Final/Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
+    "source_package": "Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal",
     "split": "internal_test",
     "all_observations": true,
     "checkpoints": [
@@ -27,9 +27,9 @@
     "device": "cuda:0"
   },
   "real_microscope_arm": {
-    "source_sequence_config": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json",
-    "locked_raw_measurements": "D:/GMM_2_Final/Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv",
-    "prior_real_results": "D:/GMM_2_Final/Experiments/R97_DirectCausalPhaseScratch/results/posttraining_validation/real_generalization",
+    "source_sequence_config": "Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json",
+    "locked_raw_measurements": "Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv",
+    "prior_real_results": "Experiments/R97_DirectCausalPhaseScratch/results/posttraining_validation/real_generalization",
     "sequences": [
       "5x_0p5um",
       "5x_1um",
@@ -62,11 +62,11 @@
     }
   },
   "sem_contour_arm": {
-    "raw_input_dir": "D:/GMM_2_Final/Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack",
+    "raw_input_dir": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack",
     "sem_dir": "H:/From_2TB_D_disk/13_thesis/SEM_data",
-    "ordering_mapping": "H:/From_2TB_D_disk/13_thesis/SEM_data/ordering_result_20260729/SEM_center36_file_mapping.csv",
-    "prior_six_method_tables": "D:/GMM_2_Final/Experiments/R97_DirectCausalPhaseScratch/results/posttraining_validation/sem_contour/results/tables",
-    "prior_masks": "D:/GMM_2_Final/Experiments/R97_DirectCausalPhaseScratch/results/posttraining_validation/sem_contour/results/masks/acm_primary_masks.mat",
+    "ordering_mapping": "Thesis_MOSR_Evidence/SEM_data/ordering_result_20260729/SEM_center36_file_mapping.csv",
+    "prior_six_method_tables": "Experiments/R97_DirectCausalPhaseScratch/results/posttraining_validation/sem_contour/results/tables",
+    "prior_masks": "Experiments/R97_DirectCausalPhaseScratch/results/posttraining_validation/sem_contour/results/masks/acm_primary_masks.mat",
     "exposures": [
       13,
       14,

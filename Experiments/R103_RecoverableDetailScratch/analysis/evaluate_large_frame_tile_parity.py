@@ -18,11 +18,12 @@ for folder in (ROOT / "model", ROOT / "inference"):
 
 from r103_model import build_model  # noqa: E402
 from reconstruct import reconstruct_full_reference, reconstruct_tensor  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
 RUN = json.loads((ROOT / "runs" / "active_run.json").read_text(encoding="utf-8"))
-SEQUENCES = json.loads(Path(r"D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\config\sequences.json").read_text(encoding="utf-8"))
+SEQUENCES = json.loads(Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json')).read_text(encoding="utf-8"))
 OUTPUT = ROOT / "results" / "posttraining_validation" / "large_tile_parity"
 SELECTED = ("5x_0p5um", "20x_0p5um", "50x_1um")
 
@@ -46,7 +47,7 @@ def main() -> None:
     model = load_model(device)
     rows: list[dict[str, object]] = []
     for sequence in SELECTED:
-        raw_path = sorted(Path(SEQUENCES["sequences"][sequence]["raw_dir"]).glob("frame_*.bmp"))[0]
+        raw_path = sorted(Path(PROJECT_ROOT / SEQUENCES["sequences"][sequence]["raw_dir"]).glob("frame_*.bmp"))[0]
         image = cv2.imdecode(np.fromfile(raw_path, dtype=np.uint8), cv2.IMREAD_GRAYSCALE)
         if image is None:
             raise RuntimeError(raw_path)

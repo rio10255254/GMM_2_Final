@@ -2,20 +2,20 @@
   "schema_version": 1,
   "completed_utc": "2026-09-08T08:03:07.342699+00:00",
   "scope": "execution integrity only; no efficacy promotion",
-  "audit_implementation_sha256": "137d183976d6fa03d74681472379a8d2e5c659f91ddbd3ec9c6285f4c61c4857",
-  "manifest_sha256": "ab1c3d61c542b207a206f05bb3b141070d770a88bab61c3d6ca3d80b242223f7",
+  "audit_implementation_sha256": "6be37550473fc1dfa72b20065f9bb1ef0f1751321220381ee62ab9ee1faf92b9",
+  "manifest_sha256": "f371ed372f7ed73e015e10dae5295bb25cbd86573a581b6a283ce66277ed35f4",
   "protocol_sha256": "ca834ceaa6ce42c0ecf51ec6b5d272a8517e5fd5996012824867eb7588fef8d5",
   "frozen_real_panel_sha256": "f16cda0509e9861df3b8b61ef4e1cfc1c4ccdaecd393dba7ef0b0f3fe7843e49",
   "implementation_source_sha256": {
-    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\prototype\\__init__.py": "679a265fe75eab9638f02a838b6d05523aca3e085d7dea6c7a77f3c6694c7804",
-    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\prototype\\factorized_observation.py": "3b407ac5876575cf79ecdf4c3b5749c1d489cc2035c659f40f353c4c010eee15",
-    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\prototype\\network.py": "1adf056c49f79ad02b7783b7b718e4e71f0831bca8240fc4f0657b1b7ad4e2a8",
-    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\training\\objectives.py": "357d3f07096d8e51534ebb280e3d1f4133608877e42a66d4837b18bcc666edf3",
-    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\training\\context.py": "47e5efc1754ee6c434ed16ae8708029c2d9e23bfe7a82237d90591e2429d5e9c",
-    "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\training\\train_pilot.py": "1e4c9eea1d260ce49c2b3e1bca050adce6ceffe285c48e7e269a7e4902264975",
-    "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\model\\observation.py": "6525c10f4a61b3d9f886e54c4cd53fba1f12cd0faa30da3154f8c85d51deff21",
-    "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\model\\calibration.py": "1e28ebc60284bf5a016ed4d8b003cdc2ec622ee398d47e0fb0ba15fa16b04c1b",
-    "D:\\GMM_2_Final\\Experiments\\R124_RealFirstPrototype\\model\\network.py": "cd28871f053d5a6303b7ede76b84316df749ec40623f230e88f6559ecd22bc11"
+    "Experiments/R125_DataAlignedPilot/prototype/__init__.py": "679a265fe75eab9638f02a838b6d05523aca3e085d7dea6c7a77f3c6694c7804",
+    "Experiments/R125_DataAlignedPilot/prototype/factorized_observation.py": "3b407ac5876575cf79ecdf4c3b5749c1d489cc2035c659f40f353c4c010eee15",
+    "Experiments/R125_DataAlignedPilot/prototype/network.py": "1adf056c49f79ad02b7783b7b718e4e71f0831bca8240fc4f0657b1b7ad4e2a8",
+    "Experiments/R125_DataAlignedPilot/training/objectives.py": "357d3f07096d8e51534ebb280e3d1f4133608877e42a66d4837b18bcc666edf3",
+    "Experiments/R125_DataAlignedPilot/training/context.py": "47e5efc1754ee6c434ed16ae8708029c2d9e23bfe7a82237d90591e2429d5e9c",
+    "Experiments/R125_DataAlignedPilot/training/train_pilot.py": "1e4c9eea1d260ce49c2b3e1bca050adce6ceffe285c48e7e269a7e4902264975",
+    "Experiments/R124_RealFirstPrototype/model/observation.py": "6525c10f4a61b3d9f886e54c4cd53fba1f12cd0faa30da3154f8c85d51deff21",
+    "Experiments/R124_RealFirstPrototype/model/calibration.py": "1e28ebc60284bf5a016ed4d8b003cdc2ec622ee398d47e0fb0ba15fa16b04c1b",
+    "Experiments/R124_RealFirstPrototype/model/network.py": "cd28871f053d5a6303b7ede76b84316df749ec40623f230e88f6559ecd22bc11"
   },
   "source_interface_review": {
     "trainer_sha256": "1e4c9eea1d260ce49c2b3e1bca050adce6ceffe285c48e7e269a7e4902264975",
@@ -1575,7 +1575,7 @@
   "initial_shared_tensor_equality_by_seed_checked": true,
   "initial_evaluations": [
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_A_s1235001_step0000\\summary.json",
+      "path": "Experiments/R125_DataAlignedPilot/results/real_A_s1235001_step0000/summary.json",
       "sha256": "432e448b31034d12db449c799aa2c221f433ea66cafa4a18d610a62112f97711",
       "completed_utc": "2026-09-08T07:39:18.079933+00:00",
       "checkpoint_sha256": "99123964cdbc9ca5a2ee56fe394494bebc97a376fbec27e1d35c4c5507917e07",
@@ -1587,7 +1587,7 @@
       "scientific_promotion": false
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_B_s1235001_step0000\\summary.json",
+      "path": "Experiments/R125_DataAlignedPilot/results/real_B_s1235001_step0000/summary.json",
       "sha256": "5e4455d29d8408cbfd5c621edcaf9f2736a8f3ce1621b2663d561cb5d4a5540d",
       "completed_utc": "2026-09-08T07:39:53.272527+00:00",
       "checkpoint_sha256": "997a5bf440dadddd9c7b462c1d6bcab7bded93954843ba5f0a7fd65c53f4bd60",
@@ -1599,7 +1599,7 @@
       "scientific_promotion": false
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_C_s1235001_step0000\\summary.json",
+      "path": "Experiments/R125_DataAlignedPilot/results/real_C_s1235001_step0000/summary.json",
       "sha256": "603f05ad8ca945a4134a084e3bc5f8fdf92c032adc23ee0420c77f0b251a2b49",
       "completed_utc": "2026-09-08T07:40:27.924403+00:00",
       "checkpoint_sha256": "7f00b5b5770f4fee6f25886f2a2cb5281d4dadd0bff7c3705785e1a1db48b89a",
@@ -1611,7 +1611,7 @@
       "scientific_promotion": false
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_A_s1235002_step0000\\summary.json",
+      "path": "Experiments/R125_DataAlignedPilot/results/real_A_s1235002_step0000/summary.json",
       "sha256": "859363d8d73f75ce039e3e32837ab74eeb9bac976ba52b84e632667286f13cfa",
       "completed_utc": "2026-09-08T07:41:03.144398+00:00",
       "checkpoint_sha256": "5005244418d19ecc58798b9d3ad53c64f778888ffced37bfb838e291e436270d",
@@ -1623,7 +1623,7 @@
       "scientific_promotion": false
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_B_s1235002_step0000\\summary.json",
+      "path": "Experiments/R125_DataAlignedPilot/results/real_B_s1235002_step0000/summary.json",
       "sha256": "73f85b4c4d528f3f51366d11d431708fb75b53957ccee336d02b2b6798ca5c58",
       "completed_utc": "2026-09-08T07:41:38.337672+00:00",
       "checkpoint_sha256": "e8c7100ee83b9c0fa6ebae4f71577846a0686d61c8da2ed53290e72359bf30e5",
@@ -1635,7 +1635,7 @@
       "scientific_promotion": false
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_C_s1235002_step0000\\summary.json",
+      "path": "Experiments/R125_DataAlignedPilot/results/real_C_s1235002_step0000/summary.json",
       "sha256": "befdccad1389bfefc0bf9bd4a21726b6b15371f0bfc074dd962947e4125b7633",
       "completed_utc": "2026-09-08T07:42:12.564537+00:00",
       "checkpoint_sha256": "235ef9133f3c3144d953f1405564863d25b9c25c4e248c99feccf0cc8be27c70",
@@ -1685,7 +1685,7 @@
         64.0
       ],
       "real_evaluation": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_A_s1235001_step0064\\summary.json",
+        "path": "Experiments/R125_DataAlignedPilot/results/real_A_s1235001_step0064/summary.json",
         "sha256": "a72f141fa117b778617cbbcbd376f344697de0358eecd890c0d34bcac929e58b",
         "completed_utc": "2026-09-08T07:45:01.859676+00:00",
         "checkpoint_sha256": "08d7787a476bd43afa87603bee2970ec041263b50dcfb265d5b080e215b46b6d",
@@ -1736,7 +1736,7 @@
         64.0
       ],
       "real_evaluation": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_B_s1235001_step0064\\summary.json",
+        "path": "Experiments/R125_DataAlignedPilot/results/real_B_s1235001_step0064/summary.json",
         "sha256": "3cffd05d390e1996329c7cae32e76777247e5524b641dbd79421ec17dac5d1cb",
         "completed_utc": "2026-09-08T07:47:56.170918+00:00",
         "checkpoint_sha256": "b11856517db8c6a34dccce612ce1baf914c3ea5c9e04066c77c7b8a444a1fa5b",
@@ -1791,7 +1791,7 @@
         64.0
       ],
       "real_evaluation": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_C_s1235001_step0064\\summary.json",
+        "path": "Experiments/R125_DataAlignedPilot/results/real_C_s1235001_step0064/summary.json",
         "sha256": "2fdb72793a41126a7dfb376942f2ae8e368f473f1d41b5dc97da1427c612b8c0",
         "completed_utc": "2026-09-08T07:50:52.629609+00:00",
         "checkpoint_sha256": "cda3a2f64dd6013fb968d463e100cc813ba423be17df73a75f320046c7085a9b",
@@ -1841,7 +1841,7 @@
         64.0
       ],
       "real_evaluation": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_A_s1235002_step0064\\summary.json",
+        "path": "Experiments/R125_DataAlignedPilot/results/real_A_s1235002_step0064/summary.json",
         "sha256": "e47c633306b91803634c8e19e61b40f3b334e830b59ddd5dcbd206810a1f51e9",
         "completed_utc": "2026-09-08T07:53:36.820088+00:00",
         "checkpoint_sha256": "1424a628894e571442c414d458354e46fcf3bb47b6d621b4da9489e61b519fc4",
@@ -1892,7 +1892,7 @@
         64.0
       ],
       "real_evaluation": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_B_s1235002_step0064\\summary.json",
+        "path": "Experiments/R125_DataAlignedPilot/results/real_B_s1235002_step0064/summary.json",
         "sha256": "5c7688f98989e8cb50d9f1b314737060112f87a999ed55380458c257e509d443",
         "completed_utc": "2026-09-08T07:56:30.657771+00:00",
         "checkpoint_sha256": "f8606f4e7a68da494913aa7d6f1f9416d5e461d74fd9db3fd167d50305548b86",
@@ -1947,7 +1947,7 @@
         64.0
       ],
       "real_evaluation": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\results\\real_C_s1235002_step0064\\summary.json",
+        "path": "Experiments/R125_DataAlignedPilot/results/real_C_s1235002_step0064/summary.json",
         "sha256": "9605b2d255e2bb8c2f2d033ecdf928c49b22cf9920c123bbb28c2f33f4081b66",
         "completed_utc": "2026-09-08T07:59:25.925509+00:00",
         "checkpoint_sha256": "047cd17eb663d910459034484ebf9d8d2cb8ac16714a428e4800df4ce56ed9d3",
@@ -1966,121 +1966,121 @@
       "stage": "matrix_initializations",
       "returncode": 0,
       "elapsed_seconds": 1.952664699871093,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\matrix_initializations.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/matrix_initializations.log"
     },
     {
       "stage": "eval_A_s1235001_step0000",
       "returncode": 0,
       "elapsed_seconds": 35.166985400021076,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_A_s1235001_step0000.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_A_s1235001_step0000.log"
     },
     {
       "stage": "eval_B_s1235001_step0000",
       "returncode": 0,
       "elapsed_seconds": 35.2623848002404,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_B_s1235001_step0000.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_B_s1235001_step0000.log"
     },
     {
       "stage": "eval_C_s1235001_step0000",
       "returncode": 0,
       "elapsed_seconds": 34.58086630003527,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_C_s1235001_step0000.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_C_s1235001_step0000.log"
     },
     {
       "stage": "eval_A_s1235002_step0000",
       "returncode": 0,
       "elapsed_seconds": 35.200089199934155,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_A_s1235002_step0000.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_A_s1235002_step0000.log"
     },
     {
       "stage": "eval_B_s1235002_step0000",
       "returncode": 0,
       "elapsed_seconds": 35.20842849975452,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_B_s1235002_step0000.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_B_s1235002_step0000.log"
     },
     {
       "stage": "eval_C_s1235002_step0000",
       "returncode": 0,
       "elapsed_seconds": 34.20080550014973,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_C_s1235002_step0000.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_C_s1235002_step0000.log"
     },
     {
       "stage": "train_A_s1235001",
       "returncode": 0,
       "elapsed_seconds": 134.9813966997899,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_A_s1235001.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/train_A_s1235001.log"
     },
     {
       "stage": "eval_A_s1235001_step0064",
       "returncode": 0,
       "elapsed_seconds": 34.307008100207895,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_A_s1235001_step0064.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_A_s1235001_step0064.log"
     },
     {
       "stage": "train_B_s1235001",
       "returncode": 0,
       "elapsed_seconds": 140.1752929999493,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_B_s1235001.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/train_B_s1235001.log"
     },
     {
       "stage": "eval_B_s1235001_step0064",
       "returncode": 0,
       "elapsed_seconds": 34.21839420031756,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_B_s1235001_step0064.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_B_s1235001_step0064.log"
     },
     {
       "stage": "train_C_s1235001",
       "returncode": 0,
       "elapsed_seconds": 141.6750114997849,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_C_s1235001.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/train_C_s1235001.log"
     },
     {
       "stage": "eval_C_s1235001_step0064",
       "returncode": 0,
       "elapsed_seconds": 34.7005544998683,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_C_s1235001_step0064.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_C_s1235001_step0064.log"
     },
     {
       "stage": "train_A_s1235002",
       "returncode": 0,
       "elapsed_seconds": 129.99247470032424,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_A_s1235002.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/train_A_s1235002.log"
     },
     {
       "stage": "eval_A_s1235002_step0064",
       "returncode": 0,
       "elapsed_seconds": 34.22125310031697,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_A_s1235002_step0064.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_A_s1235002_step0064.log"
     },
     {
       "stage": "train_B_s1235002",
       "returncode": 0,
       "elapsed_seconds": 139.70199779979885,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_B_s1235002.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/train_B_s1235002.log"
     },
     {
       "stage": "eval_B_s1235002_step0064",
       "returncode": 0,
       "elapsed_seconds": 34.119407599791884,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_B_s1235002_step0064.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_B_s1235002_step0064.log"
     },
     {
       "stage": "train_C_s1235002",
       "returncode": 0,
       "elapsed_seconds": 141.18574129976332,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\train_C_s1235002.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/train_C_s1235002.log"
     },
     {
       "stage": "eval_C_s1235002_step0064",
       "returncode": 0,
       "elapsed_seconds": 34.079382199794054,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\eval_C_s1235002_step0064.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/eval_C_s1235002_step0064.log"
     },
     {
       "stage": "aggregate_real",
       "returncode": 0,
       "elapsed_seconds": 4.446835699956864,
-      "log": "D:\\GMM_2_Final\\Experiments\\R125_DataAlignedPilot\\runs\\launcher_logs\\aggregate_real.log"
+      "log": "Experiments/R125_DataAlignedPilot/runs/launcher_logs/aggregate_real.log"
     }
   ],
   "initial_evaluations_before_any_training": true,

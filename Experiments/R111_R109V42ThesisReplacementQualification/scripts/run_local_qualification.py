@@ -12,6 +12,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,11 +20,11 @@ CONFIG_PATH = ROOT / "config" / "qualification.json"
 CONFIG = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
 RESULTS = ROOT / "results"
 
-EVIDENCE = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
-R109_ROOT = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+EVIDENCE = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
+R109_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 R109_INFERENCE = R109_ROOT / "inference" / "run_folder.py"
-R109_CHECKPOINT = Path(CONFIG["models"]["r109_e48"]["checkpoint"])
-V42_CHECKPOINT = Path(CONFIG["models"]["v42_e120"]["checkpoint"])
+R109_CHECKPOINT = Path(PROJECT_ROOT / CONFIG["models"]["r109_e48"]["checkpoint"])
+V42_CHECKPOINT = Path(PROJECT_ROOT / CONFIG["models"]["v42_e120"]["checkpoint"])
 THESIS_CENTER9 = EVIDENCE / "Final_Data_Figures" / "01_CURRENT_THESIS_RESULTS_V42_CENTER9"
 THESIS_RESULTS = EVIDENCE / "Final_Data_Figures" / "04_V42_NEURAL_NETWORK_RESULTS"
 V42_SOURCE = EVIDENCE / "Final_Data_Figures" / "02_V42_E120_SOURCE_MATERIAL"
@@ -33,9 +34,9 @@ V42_STATIC = V42_SOURCE / "reconstructions" / "100mg_static" / RAW_STATIC.name
 R109_STATIC_DIR = RESULTS / "reconstructions" / "100mg_static"
 R109_STATIC = R109_STATIC_DIR / RAW_STATIC.name
 
-THESIS_SEQUENCE_CONFIG = Path(CONFIG["frozen_contract"]["sequence_config"])
-TOP30_SELECTION = Path(CONFIG["frozen_contract"]["top30_selection"])
-THESIS_RAW_LOCK = Path(CONFIG["frozen_contract"]["raw_lock"])
+THESIS_SEQUENCE_CONFIG = Path(PROJECT_ROOT / CONFIG["frozen_contract"]["sequence_config"])
+TOP30_SELECTION = Path(PROJECT_ROOT / CONFIG["frozen_contract"]["top30_selection"])
+THESIS_RAW_LOCK = Path(PROJECT_ROOT / CONFIG["frozen_contract"]["raw_lock"])
 THESIS_AUDIT = THESIS_CENTER9 / "diagnostics" / "unified_displacement_step_audit"
 THESIS_ALL_PAIRS = THESIS_AUDIT / "tables" / "all_adjacent_pairs_audit.csv"
 
@@ -92,7 +93,7 @@ def validate_frozen_inputs() -> dict[str, object]:
     sequence_config = json.loads(THESIS_SEQUENCE_CONFIG.read_text(encoding="utf-8"))
     for sequence, directory in CONFIG["r109_reconstructions"].items():
         expected = int(sequence_config["sequences"][sequence]["frame_count"])
-        folder = Path(directory)
+        folder = Path(PROJECT_ROOT / directory)
         names = sorted(path.name for path in folder.glob("frame_*.bmp"))
         expected_names = [f"frame_{index:04d}.bmp" for index in range(expected)]
         if names != expected_names:
@@ -148,7 +149,7 @@ def build_r109_sequence_config() -> Path:
     config["candidate_model"] = "R109 E48"
     config["source_contract_sha256"] = sha256(THESIS_SEQUENCE_CONFIG)
     for sequence, directory in CONFIG["r109_reconstructions"].items():
-        config["sequences"][sequence]["v42_dir"] = str(Path(directory)).replace("\\", "/")
+        config["sequences"][sequence]["v42_dir"] = str(Path(PROJECT_ROOT / directory)).replace("\\", "/")
     output = ROOT / "config" / "r109_thesis_sequence_config.json"
     output.write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
     return output
@@ -482,13 +483,13 @@ def run_line_validation() -> dict[str, object]:
     module.SEQUENCES = {
         "50x_x_0p5um": {
             "nominal_step_um": 0.5,
-            "raw": Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp"),
+            "raw": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp')),
             "base": V42_SOURCE / "reconstructions" / "50x_0p5um",
             "mosr": r109_sequence_root / "50x_0p5um",
         },
         "50x_x_1um": {
             "nominal_step_um": 1.0,
-            "raw": Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_1um\bmp"),
+            "raw": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')),
             "base": V42_SOURCE / "reconstructions" / "50x_1um",
             "mosr": r109_sequence_root / "50x_1um",
         },
@@ -523,7 +524,7 @@ def run_line_validation() -> dict[str, object]:
 def collect_shared_sem() -> dict[str, object]:
     r109 = json.loads((R109_ROOT / "results" / "FINAL_SELECTION.json").read_text(encoding="utf-8"))["external_acm"]["SEM_per_pillar"]
     v42_table = pd.read_csv(
-        Path(r"D:\GMM_2_Final\Experiments\R70_V42ACMContourSEMValidation\results\tables\v42_paired_comparison_summary.csv")
+        Path(str(PROJECT_ROOT / 'Experiments/R70_V42ACMContourSEMValidation/results/tables/v42_paired_comparison_summary.csv'))
     )
     values = {
         row.metric: float(row.target_median)
@@ -566,8 +567,7 @@ def build_local_summary(
         "shared_sem_acm": collect_shared_sem(),
         "tile_parity": json.loads(
             Path(
-                r"D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages"
-                r"\Pitch1um_Y_100_Raw_Even_R109E48\_records\qa_report.json"
+                str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/_records/qa_report.json')
             ).read_text(encoding="utf-8")
         )["tile_grid_parity"],
         "external_gmf": {

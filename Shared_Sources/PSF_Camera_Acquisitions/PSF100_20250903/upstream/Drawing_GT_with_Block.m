@@ -49,7 +49,7 @@ GT = im2gray(GT);
 % GT = (1 - eta) * GT + eta * noiseFull;   % 疊加雜訊，不會吃掉形狀
 
 % GT = imnoise(GT,'gaussian',0,1e-2);    % （保留你的原註解行）
-imwrite(GT, "D:\NonSystemFiles\GMM2\MitsutoyoSample_GMMSys_20x\TestImage\Representative_Clusters_Output\Crop_circle_1201\Crop_circle_901_v2\GT\GT_901_with_Block.bmp")
+imwrite(GT, "PSF_Fitting/Crop_circle_FreqFiltered/GT/GT_901_with_Block_proc.bmp")
 imshow(GT)
 
 % 簡化後：顯示 GT 與 img 的梯度差異圖

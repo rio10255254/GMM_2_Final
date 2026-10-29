@@ -9,14 +9,15 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "results" / "structure_probe" / "sem_interventions"
 CONTRACT = ROOT / "results" / "physical_validation" / "sem_acm_contract"
-R82_SCRIPTS = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark\scripts")
+R82_SCRIPTS = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/scripts'))
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
-RAW = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack")
+RAW = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
 SEM = Path(r"H:\From_2TB_D_disk\13_thesis\SEM_data")
 VARIANTS = ("full", "no_shift", "no_width", "learned_support_only", "smoothed_controls")
 EXPOSURES = tuple(range(13, 25))

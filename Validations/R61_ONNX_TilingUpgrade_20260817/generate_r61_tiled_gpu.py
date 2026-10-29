@@ -9,9 +9,10 @@ import cv2
 import numpy as np
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-PROJECT = Path(r"D:\GMM_2_Final")
+PROJECT = Path(str(PROJECT_ROOT))
 PACKAGE = PROJECT / "Deliverables" / "MOSR_R61_ONNX"
 CHECKPOINT = (
     PROJECT

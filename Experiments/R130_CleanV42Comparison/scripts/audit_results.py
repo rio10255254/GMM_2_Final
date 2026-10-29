@@ -8,11 +8,12 @@ from scipy.optimize import least_squares
 from scipy.io import loadmat
 from data_bank import Bank
 from continuous import reader
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
     out=ROOT/'results/audit';out.mkdir(exist_ok=False);run=ROOT/'runs/v42_clean';completion=load(run/'completion.json');continuous=load(ROOT/'results/continuous/complete.json');cfg=load(ROOT/'config/training.json');verify_frozen()
     assert completion['epochs']==32 and completion['updates']==4096 and continuous['frames']==201
     assert continuous['source']==load(ROOT/'results/continuous/started.json')['source']
-    for rec in load(ROOT/'config/evaluation_implementation.json')['sources']:assert sha(rec['path'])==rec['sha256']
+    for rec in load(ROOT/'config/evaluation_implementation.json')['sources']:assert sha(str(PROJECT_ROOT / rec['path']))==rec['sha256']
     recovery=load(ROOT/'results/io_recovery/recovery_plan.json')
     for name in ['wrapper','original_atomic_source','frozen_source_manifest']:
         rec=recovery[name];assert sha(rec['path'])==rec['sha256']
@@ -71,7 +72,7 @@ def main():
                 radii=np.linalg.norm(z-c,axis=1);return radii-radii.mean()
             fit=least_squares(residual,np.zeros(2),xtol=1e-12,ftol=1e-12,gtol=1e-12);c=fit.x+origin;r=np.linalg.norm(z-fit.x,axis=1).mean()
             diff=max(abs(c[0]-row.lsc_center_x_px),abs(c[1]-row.lsc_center_y_px),abs(r-row.lsc_radius_px));assert diff<1e-4;max_difference=max(diff,max_difference)
-    allsumm=[];data_cfg=load(plan['configuration']['path']);comparisons=[]
+    allsumm=[];data_cfg=load(str(PROJECT_ROOT / plan['configuration']['path']));comparisons=[]
     for population in ['locked120','within_session194']:
         pairs=pd.read_csv(measurements/(population+'_pairs.csv'));check,pillars=scope['pair_table'](centers,pairs,data_cfg,'V42_clean32')
         for k in ['measured_step_um','nominal_abs_error_nm','within_grid_sd_nm','cross_axis_abs_nm']:assert float(abs(check[k]-pairs[k]).max())<1e-8
@@ -82,8 +83,8 @@ def main():
     summary=pd.concat(allsumm);summary.to_csv(out/'V42_LSC_summary.csv',index=False);pd.DataFrame(comparisons).to_csv(out/'LSC_paired_vs_R129.csv',index=False)
     dev=[dict(epoch=e,loss=load(run/f'evaluations/epoch{e:02d}/dev.json')['mean_loss']) for e in range(33)];pd.DataFrame(dev).to_csv(out/'dev_trajectory.csv',index=False)
     # Preserve R129 unchanged and the original V42 source/weight identities.
-    for rec in load(ROOT/'config/provenance.json')['protected']:assert sha(rec['path'])==rec['sha256']
-    for rec in plan['protected_sources']:assert sha(rec['path'])==rec['sha256']
+    for rec in load(ROOT/'config/provenance.json')['protected']:assert sha(str(PROJECT_ROOT / rec['path']))==rec['sha256']
+    for rec in plan['protected_sources']:assert sha(str(PROJECT_ROOT / rec['path']))==rec['sha256']
     save(out/'verified.json',dict(completed_utc=now(),source=record(__file__),epochs=32,unique_updates=4096,actual_update_calls=len(rows),replayed_updates=replays,unique_parent_pairs=16384,independently_rebuilt_updates=rebuild,independently_rebuilt_parent_pairs=len(rebuild)*4,fresh_initialization_reproduced=True,final_optimizer_step4096=True,SEM_rows=108*5,independent_final_SEM_refits=108,SEM_max_refit_differences=sem_error,full_reconstructed_frames=201,independent_LSC_refits=1809,max_LSC_refit_difference_px=max_difference,all_declared_R129_sources_unchanged=True,shared_calibration_not_new_independent_evidence=True,model_promoted=False,final_checkpoint=completion['checkpoint'],SEM_trajectory=trajectories))
     print(pd.DataFrame(trajectories).to_string(index=False));print(summary[summary.scope=='all_four_sequences'].to_string(index=False))
 if __name__=='__main__':main()

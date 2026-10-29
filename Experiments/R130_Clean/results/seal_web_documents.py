@@ -2,7 +2,8 @@ from pathlib import Path
 import hashlib,json,zipfile,shutil
 from PIL import Image,ImageChops
 from docx import Document
-P=Path(r'D:\GMM_2_Final\Deliverables\R130_Clean_Web_Thesis_Documents_20260920');R=Path(r'D:\GMM_2_Final\Experiments\R130_Clean');H=Path(r'D:\GMM_2_Final\Deliverables\R130_Clean_Corrected_Corner9_Validation_Handoff_20260920')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+P=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Web_Thesis_Documents_20260920'));R=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean'));H=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 for n in [1,3,4,5,6]:
  a=Image.open(R/f'results/web_docs_qa_final/05/page-{n}.png');b=Image.open(R/f'results/web_docs_qa_polished/05/page-{n}.png');assert ImageChops.difference(a,b).getbbox() is None

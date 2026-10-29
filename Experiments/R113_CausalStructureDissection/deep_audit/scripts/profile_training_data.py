@@ -13,11 +13,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.stats import ks_2samp
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-PACKAGE = Path(CONFIG["sources"]["data_package"])
+PACKAGE = Path(PROJECT_ROOT / CONFIG["sources"]["data_package"])
 OUTPUT = ROOT / "results" / "data_profile"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 

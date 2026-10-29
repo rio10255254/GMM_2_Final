@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-SCRIPTS_DIR = Path(r"D:\GMM_2_Final\Tools\Displacement_Algorithms\scripts")
+SCRIPTS_DIR = Path(str(PROJECT_ROOT / 'Tools/Displacement_Algorithms/scripts'))
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 

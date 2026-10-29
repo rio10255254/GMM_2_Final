@@ -46,15 +46,15 @@
 ## Verification Commands
 
 ```powershell
-C:\Users\Rio\anaconda3\python.exe -m pytest D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R57_GeometryConstrainedMOSR\tests -q
+C:\Users\Rio\anaconda3\python.exe -m pytest Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/tests -q
 ```
 
 ```powershell
-C:\Users\Rio\anaconda3\python.exe -u D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R57_GeometryConstrainedMOSR\scripts\launch_r57.py --candidate r57_geom_cd_anchor_finetune --dry-run
+C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/launch_r57.py --candidate r57_geom_cd_anchor_finetune --dry-run
 ```
 
 ```powershell
-C:\Users\Rio\anaconda3\python.exe -u D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R57_GeometryConstrainedMOSR\scripts\validate_r57_cd_gate.py --summary-csv D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20260618_100MG_user_recon\cd_measurement_20260620_basler_ace\cd_measurement_summary_basler_50x.csv --candidate-image "PSF關" --reference-image "原圖"
+C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/validate_r57_cd_gate.py --summary-csv Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260618_100MG_user_recon/cd_measurement_20260620_basler_ace/cd_measurement_summary_basler_50x.csv --candidate-image "PSF關" --reference-image "原圖"
 ```
 
 ## Pilot Runs
@@ -69,18 +69,18 @@ C:\Users\Rio\anaconda3\python.exe -u D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSyst
 ## Current Best Exploratory Candidate
 
 - Candidate: anchor-focus latest checkpoint
-- Training run: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_geom_cd_anchor_finetune_anchor_focus_e006_b004_mtb080_20260620_153625`
-- Reconstruction: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20260618_100MG_user_recon\reconstruct_progress_latest_in_20260618_100MG_20260620_153625\r57_anchor_focus_e006_b004_mtb080_latest_weakpsf_off`
-- CD report: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20260618_100MG_user_recon\cd_measurement_20260620_r57_anchor_focus_latest`
+- Training run: `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_geom_cd_anchor_finetune_anchor_focus_e006_b004_mtb080_20260620_153625`
+- Reconstruction: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260618_100MG_user_recon/reconstruct_progress_latest_in_20260618_100MG_20260620_153625/r57_anchor_focus_e006_b004_mtb080_latest_weakpsf_off`
+- CD report: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260618_100MG_user_recon/cd_measurement_20260620_r57_anchor_focus_latest`
 - Gate report: `reports/r57_anchor_focus_latest_cd_gate.json`
 - Adoption status: not adopted; still worse than original-image CD error.
 
 ## Rejected R57.1 Candidate
 
 - Candidate: asymmetric CD latest checkpoint
-- Training run: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_1_asym_cd_anchor_finetune_asym_cd_aligned_e004_b004_mtb120_lr3e6_20260620_163628`
-- Reconstruction: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20260618_100MG_user_recon\reconstruct_progress_latest_in_20260618_100MG_20260620_163628\r57_1_asym_cd_aligned_e004_latest_weakpsf_off`
-- CD report: `D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Reconstruct_Progress\20260618_100MG_user_recon\cd_measurement_20260620_r57_1_asym_cd_aligned_latest`
+- Training run: `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_1_asym_cd_anchor_finetune_asym_cd_aligned_e004_b004_mtb120_lr3e6_20260620_163628`
+- Reconstruction: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260618_100MG_user_recon/reconstruct_progress_latest_in_20260618_100MG_20260620_163628/r57_1_asym_cd_aligned_e004_latest_weakpsf_off`
+- CD report: `Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260618_100MG_user_recon/cd_measurement_20260620_r57_1_asym_cd_aligned_latest`
 - Gate report: `reports/r57_1_asym_cd_aligned_latest_cd_gate.json`
 - Adoption status: rejected; the direct full-radius asymmetric CD correction
   overcorrected both via and pillar boundaries.

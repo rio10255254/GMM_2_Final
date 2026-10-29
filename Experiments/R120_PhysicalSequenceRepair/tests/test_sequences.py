@@ -8,6 +8,7 @@ from training.dataset import Scenes
 from data.kernels import centered_asymmetric,centroid,convolve
 from data.replay import latent_reference,image_formation,CONFIG
 import cv2
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 def test_centered_asymmetry_really_has_no_impulse_translation():
@@ -57,7 +58,7 @@ def test_foreground_direction_independent_of_brightness():
 def test_nonzero_phase_replays_before_sensor_sampling():
     folder=ROOT/'data/sequences/train'
     item=json.loads((folder/'manifest.json').read_text())['records'][0]
-    records=json.loads((Path(CONFIG['data']['package_root'])/'manifest.json').read_text())['records']
+    records=json.loads((Path(PROJECT_ROOT / CONFIG['data']['package_root'])/'manifest.json').read_text())['records']
     row=next(r for r in records if r['scene_index']==item['scene_index'])
     high=latent_reference(row)
     assert high.shape==(2048,2048)
@@ -71,7 +72,7 @@ def test_nonzero_phase_replays_before_sensor_sampling():
 
 
 def test_all_zero_phase_geometry_matches_original_labels():
-    base=Path(CONFIG['data']['package_root'])
+    base=Path(PROJECT_ROOT / CONFIG['data']['package_root'])
     records={r['scene_index']:r for r in json.loads((base/'manifest.json').read_text())['records']}
     folder=ROOT/'data/sequences/train'
     for item in json.loads((folder/'manifest.json').read_text())['records']:

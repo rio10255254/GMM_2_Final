@@ -94,7 +94,7 @@
       "model_name_base": "GESR_v1_v5_ST8_SWP_gmc",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_04_ellipses",
           "stage_08_annulus_focus",
@@ -141,14 +141,14 @@
       },
       "score_shift_first": 4.370712229292323,
       "duration_sec": 327.8832440376282,
-      "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_gmc_20260309_144411"
+      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_gmc_20260309_144411"
     },
     {
       "candidate": "step8_gmf_hold_no_weakpsf",
       "model_name_base": "GESR_v1_v5_ST8_SWP_gnw",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_04_ellipses",
           "stage_08_annulus_focus",
@@ -202,14 +202,14 @@
       },
       "score_shift_first": 4.185319953074398,
       "duration_sec": 335.2574644088745,
-      "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_gnw_20260309_144939"
+      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_gnw_20260309_144939"
     },
     {
       "candidate": "step8_gmf_hold_balanced",
       "model_name_base": "GESR_v1_v5_ST8_SWP_gmb",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_02_circles",
           "stage_04_ellipses",
@@ -258,7 +258,7 @@
       },
       "score_shift_first": 4.295827624350963,
       "duration_sec": 346.7403209209442,
-      "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_gmb_20260309_145515"
+      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_gmb_20260309_145515"
     }
   ],
   "best_candidate": {
@@ -267,7 +267,7 @@
     "score_shift_first": 4.370712229292323,
     "overrides": {
       "LOAD_MODEL": true,
-      "PRETRAINED_PATH": "D:\\GMM_2_Final\\Traing_Progress\\organized_20260307\\selected\\runs\\training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625\\weights\\best_tradeoff.pth.tar",
+      "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
       "TRAIN_INCLUDE_SUBDIRS": [
         "stage_04_ellipses",
         "stage_08_annulus_focus",
@@ -296,7 +296,7 @@
       "W_EDGELOCAL_LAP_END": 0.04,
       "W_DETAIL_BASE": 0.01
     },
-    "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_SWP_gmc_20260309_144411"
+    "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_gmc_20260309_144411"
   },
   "final_run": {
     "candidate": "step8_gmf_hold_clean",
@@ -319,7 +319,7 @@
     },
     "score_shift_first": 2.517930628212671,
     "duration_sec": 1082.7643103599548,
-    "progress_dir": "D:\\GMM_2_Final\\Traing_Progress\\training_progress_GESR_v1_v5_ST8_FIN_gmc_20260309_150101"
+    "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_FIN_gmc_20260309_150101"
   },
   "status": "ok"
 }

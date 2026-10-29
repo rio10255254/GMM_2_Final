@@ -1,11 +1,12 @@
 param(
     [switch]$Execute
 )
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$repoRoot = 'D:\GMM_2_Final'
+$repoRoot = $ProjectRoot
 $summaryPath = Join-Path $repoRoot 'docs\operations\STANDALONE_TRAINING_HISTORY_EXECUTION_20260824.json'
 $planPath = Join-Path $repoRoot 'docs\operations\STANDALONE_TRAINING_HISTORY_DELETE_PLAN_20260824.csv'
 $summary = Get-Content -LiteralPath $summaryPath -Raw | ConvertFrom-Json

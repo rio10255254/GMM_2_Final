@@ -2,7 +2,8 @@ from pathlib import Path
 import json,hashlib,shutil,zipfile,datetime
 import pandas as pd,numpy as np
 from docx import Document
-P=Path(r'D:\GMM_2_Final\Deliverables\R137_WeakPSF_Web_Documents_20260922');R=Path(r'D:\GMM_2_Final\Experiments\R137_WeakPSFFeature')
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+P=Path(str(PROJECT_ROOT / 'Deliverables/R137_WeakPSF_Web_Documents_20260922'));R=Path(str(PROJECT_ROOT / 'Experiments/R137_WeakPSFFeature'))
 def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def save(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -52,8 +53,8 @@ save(P/'完整數據/TABLE_INVENTORY.json',inventory)
 save(P/'來源與核對/FINAL_DOCUMENT_CHECK.json',dict(checked_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),word_documents=4,pages={'01':3,'02':5,'03':3,'04':4},all_15_pages_visually_reviewed=True,figure_count=6,source_copies_byte_identical=len(source),all_circle_rows=33480,all_displacement_rows=7200,summary_recompute_max_difference_nm=max(errors),word_displacement_and_SEM_tables_verified=True,word_all36_pillars_verified=True,original_timings_unchanged=True,GPU_concurrency='User-reported possible explanation; not quantitatively established',new_speed_benchmark=False))
 # Source locks and historical protected records are not rebaselined.
 for rel,h in load(R/'config/source_lock.json').items():assert sha(R/rel)==h
-for r in load(R/'config/protected_sources.json'):assert sha(r['path'])==r['sha256']
-shutil.copy2(Path(r'D:\GMM_2_Final\Deliverables\R130_Clean_Corrected_Corner9_Validation_Handoff_20260920\verify_package.py'),P/'verify_package.py')
+for r in load(R/'config/protected_sources.json'):assert sha(str(PROJECT_ROOT / r['path']))==r['sha256']
+shutil.copy2(Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920/verify_package.py')),P/'verify_package.py')
 items=[dict(path=q.relative_to(P).as_posix(),bytes=q.stat().st_size,sha256=sha(q)) for q in sorted(P.rglob('*')) if q.is_file() and q.name!='MANIFEST.json'];save(P/'MANIFEST.json',items)
 small=P.parent/'R137_四份實驗文件_20260922.zip';full=P.with_suffix('.zip')
 for zpath,files in [(small,list(P.glob('*.docx'))+[P/'00_閱讀與上傳說明.md',P/'閱讀文字版/05_完整統計細表.md']),(full,[q for q in P.rglob('*') if q.is_file()])]:

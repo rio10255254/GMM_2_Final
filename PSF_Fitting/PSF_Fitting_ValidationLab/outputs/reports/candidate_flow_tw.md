@@ -1,6 +1,6 @@
 # 正式候選流程說明
 
-- 候選主程式：`D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\scripts\HDR_fitting_2D_WholeFOV_candidate_prealign.m`
+- 候選主程式：`PSF_Fitting/PSF_Fitting_ValidationLab/scripts/HDR_fitting_2D_WholeFOV_candidate_prealign.m`
 - 這個候選版仍以原 Whole-FOV 流程的 loss、warm-start、BADS 參數與 PSF 重建方式為基底。
 - 和原流程相比，主要新增的是顯式 `pre_alignment on/off` 開關、可設定 `prealign_step`，以及可指定 `subset_indices` / `output_root` 的獨立重跑能力。
 - 目前候選版預設維持 `warm_start = true`。

@@ -1,7 +1,8 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
 $ErrorActionPreference = 'Stop'
 
 $documentPath = 'C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v12.docx'
-$backupPath = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\_paper_editing\qa\v12_before_index_refresh.docx'
+$backupPath = (Join-Path $ProjectRoot 'Thesis_MOSR_Evidence\_paper_editing\qa\v12_before_index_refresh.docx')
 
 Copy-Item -LiteralPath $documentPath -Destination $backupPath -Force
 

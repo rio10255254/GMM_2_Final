@@ -8,6 +8,7 @@ import sys
 
 import torch
 from torch.utils.data._utils.collate import default_collate
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,7 +48,7 @@ def cosine(a: torch.Tensor, b: torch.Tensor) -> float:
 def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     design = json.loads((ROOT / "config" / "experiment_design.json").read_text(encoding="utf-8"))
-    package = Path(design["data"]["source_package"])
+    package = Path(PROJECT_ROOT / design["data"]["source_package"])
     manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
     checkpoint = torch.load(
         ROOT / "weights" / "formal" / "seed_960041" / "R96_scratch_seed960041_20260813_131438" / "weights" / "epoch_044.pth.tar",

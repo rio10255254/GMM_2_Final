@@ -7,7 +7,7 @@
 This area is the isolated MOSR line for the laboratory imaging system.
 
 It is intentionally separated from the original industry-project experiment
-history under `D:/GMM_2_Final/Experiments/`. The original project remains the
+history under `Experiments`. The original project remains the
 method and baseline reference. This area records the lab-system replication:
 lab PSF calibration first, then lab data generation, lab training, lab
 inference, and lab validation.
@@ -73,7 +73,7 @@ corner artifacts than the earlier Lab controls.
 
 | Path | Status |
 |---|---|
-| `psf_calibration/scripts/standard_wholefov/` | Project-standard fitter copied from `D:/GMM_2_Final/PSF_Fitting`. |
+| `psf_calibration/scripts/standard_wholefov/` | Project-standard fitter copied from `PSF_Fitting`. |
 | `psf_calibration/scripts/run_lab_inner_circle_roi_fine_prealign_fit.m` | Current lab ROI PSF fit entry point. |
 | `psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/` | Current validated BADS candidate for lab data generation. |
 | `psf_calibration/results/20250605_inner_circle_roi_fine_prealign_validation/` | Current forward-model PSF validation. |

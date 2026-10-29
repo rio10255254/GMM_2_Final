@@ -1,6 +1,7 @@
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..\..\..\..\..\..')).Path
 $ErrorActionPreference = 'Stop'
 $deckPath = 'C:\Users\Rio\OneDrive\學業\碩班\論文\可用\江彥諠_口試簡報_附講稿_英文圖表_v17效能修正.pptx'
-$outputDir = 'D:\GMM_2_Final\PSF_Fitting\.codex_tmp\oral_defense_with_notes_20260728\powerpoint-final-render'
+$outputDir = (Join-Path $ProjectRoot 'PSF_Fitting\.codex_tmp\oral_defense_with_notes_20260728\powerpoint-final-render')
 New-Item -ItemType Directory -Force $outputDir | Out-Null
 
 $powerPoint = $null

@@ -13,6 +13,7 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,10 +22,10 @@ DESIGN_PATH = ROOT / "config" / "experiment_design.json"
 MODEL_PATH = ROOT / "model" / "r97_model.py"
 INFERENCE_PATH = ROOT / "inference" / "reconstruct.py"
 HELPERS_PATH = Path(
-    r"D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\scripts\evaluate_real_holdout.py"
+    str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/scripts/evaluate_real_holdout.py')
 )
 R96_MOTION_PATH = Path(
-    r"D:\GMM_2_Final\Experiments\R96_LocalizedEvidenceProtectedScratch\results\final_validation\real_generalization\r96_motion_measurements.csv"
+    str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/results/final_validation/real_generalization/r96_motion_measurements.csv')
 )
 OUTPUT = ROOT / "results" / "posttraining_validation" / "real_generalization"
 
@@ -196,10 +197,10 @@ def main() -> None:
     if not protocol.get("locked_before_new_posttraining_outputs"):
         raise RuntimeError("Posttraining protocol is not locked")
     arm = protocol["real_microscope_arm"]
-    sequence_config_path = Path(arm["source_sequence_config"])
-    locked_path = Path(arm["locked_raw_measurements"])
-    checkpoint_path = Path(protocol["checkpoint"])
-    r96_root = Path(arm["r96_reconstruction_root"])
+    sequence_config_path = Path(PROJECT_ROOT / arm["source_sequence_config"])
+    locked_path = Path(PROJECT_ROOT / arm["locked_raw_measurements"])
+    checkpoint_path = Path(PROJECT_ROOT / protocol["checkpoint"])
+    r96_root = Path(PROJECT_ROOT / arm["r96_reconstruction_root"])
     for required in (sequence_config_path, locked_path, checkpoint_path, R96_MOTION_PATH):
         if not required.is_file():
             raise FileNotFoundError(required)
@@ -417,7 +418,7 @@ def finalize_existing() -> None:
     """Finish tables after a post-reconstruction aggregation failure without rerunning inference."""
     protocol = read_json(PROTOCOL_PATH)
     arm = protocol["real_microscope_arm"]
-    locked_path = Path(arm["locked_raw_measurements"])
+    locked_path = Path(PROJECT_ROOT / arm["locked_raw_measurements"])
     locked = pd.read_csv(locked_path)
     r96_motion = pd.read_csv(R96_MOTION_PATH)
     r97_motion = pd.read_csv(OUTPUT / "r97_motion_measurements.csv")

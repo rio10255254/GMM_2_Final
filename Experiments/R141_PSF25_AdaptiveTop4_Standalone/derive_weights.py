@@ -5,8 +5,9 @@ from pathlib import Path
 import torch
 from utils import ROOT,model_config,setup,sha,now
 from model import Model
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-SOURCE=Path(r'D:\GMM_2_Final\Experiments\R140v2_StableUNet\runs\formal_8192\checkpoints\step08192.pth')
+SOURCE=Path(str(PROJECT_ROOT / 'Experiments/R140v2_StableUNet/runs/formal_8192/checkpoints/step08192.pth'))
 EXPECTED='b96980287f02329b36f2188886462e51cadabad2259c8a13018f68e3b3f2650c'
 
 def main():

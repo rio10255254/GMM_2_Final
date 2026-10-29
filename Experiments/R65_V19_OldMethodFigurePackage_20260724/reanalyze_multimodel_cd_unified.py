@@ -19,15 +19,14 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 from scipy.ndimage import map_coordinates
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 EXPERIMENT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR"
-    r"\Experiments\Modern_Restoration_Benchmarks_20260719"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719')
 )
 LEGACY_SCRIPTS = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\scripts"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/scripts')
 )
 sys.path.insert(0, str(EXPERIMENT))
 sys.path.insert(0, str(LEGACY_SCRIPTS))
@@ -45,9 +44,7 @@ THRESHOLDS = tuple(np.round(np.arange(0.35, 0.651, 0.05), 2))
 MANIFEST_PATH = EXPERIMENT / "evaluation_manifest.json"
 STATIC_SEQUENCES = {"50x": "50x_x_0p5um", "20x": "20x_0p5um"}
 PILLAR_SEM_TABLE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\cd\tables"
-    r"\center9_cd_per_pillar.csv"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/cd/tables/center9_cd_per_pillar.csv')
 )
 
 
@@ -125,10 +122,10 @@ def load_references(
     manifest: dict[str, object], magnification: str
 ) -> tuple[dict[str, object], dict[str, dict[str, object]]]:
     pillar_config = json.loads(
-        Path(str(manifest["pillar_config"])).read_text(encoding="utf-8")
+        Path(str(str(PROJECT_ROOT / manifest["pillar_config"]))).read_text(encoding="utf-8")
     )
     via_config = json.loads(
-        Path(str(manifest["via_config"])).read_text(encoding="utf-8")
+        Path(str(str(PROJECT_ROOT / manifest["via_config"]))).read_text(encoding="utf-8")
     )
     sequence_name = STATIC_SEQUENCES[magnification]
     pillar_sequence = pillar_config["sequences"][sequence_name]
@@ -186,7 +183,7 @@ def method_image(
     if method == "Raw":
         directory = raw_dir
     else:
-        root = Path(str(manifest["methods"][method]["sequence_root"]))
+        root = Path(str(str(PROJECT_ROOT / manifest["methods"][method]["sequence_root"])))
         mapped = str(manifest["sequence_name_map"][sequence_name][method])
         directory = root / mapped
     return directory / str(sequence["first_frame"])

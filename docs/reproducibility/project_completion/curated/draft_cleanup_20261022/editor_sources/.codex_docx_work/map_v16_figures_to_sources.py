@@ -4,14 +4,15 @@ import hashlib
 import json
 from collections import defaultdict
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
 
-EXTRACTED = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v16_ch6_figures")
+EXTRACTED = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v16_ch6_figures'))
 ROOTS = [
-    Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"),
-    Path(r"D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation"),
+    Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures')),
+    Path(str(PROJECT_ROOT / 'Experiments/R63_CausalBoundaryMotionAblation')),
 ]
-OUT = Path(r"D:\GMM_2_Final\PSF_Fitting\.codex_docx_work\v16_figure_source_map.json")
+OUT = Path(str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v16_figure_source_map.json'))
 
 
 def digest(path: Path):

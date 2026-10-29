@@ -11,11 +11,11 @@
     "sem_or_hs100mg_in_training": false
   },
   "data": {
-    "r109_manifest": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/data/package/manifest.json",
-    "r109_package_root": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/data/package",
-    "r114_manifest": "D:/GMM_2_Final/Experiments/R114_ConfidenceGatedRecoverableScratch/data/manifest.json",
-    "r114_preparation_result": "D:/GMM_2_Final/Experiments/R114_ConfidenceGatedRecoverableScratch/data/preparation_result.json",
-    "r114_formal_batch_schedule_bs12": "D:/GMM_2_Final/Experiments/R114_ConfidenceGatedRecoverableScratch/data/batches/formal_train_bs12_epoch0.jsonl",
+    "r109_manifest": "Experiments/R109_StagedMidpointWidthScratch/data/package/manifest.json",
+    "r109_package_root": "Experiments/R109_StagedMidpointWidthScratch/data/package",
+    "r114_manifest": "Experiments/R114_ConfidenceGatedRecoverableScratch/data/manifest.json",
+    "r114_preparation_result": "Experiments/R114_ConfidenceGatedRecoverableScratch/data/preparation_result.json",
+    "r114_formal_batch_schedule_bs12": "Experiments/R114_ConfidenceGatedRecoverableScratch/data/batches/formal_train_bs12_epoch0.jsonl",
     "r114_source_manifest_sha256": "f10eb706d215b021856bd9ebe4589508d796b5bbb4ddc4b7ee1ee9a5667993ef",
     "package_root": "data/package",
     "train_scenes": 5000,
@@ -90,7 +90,7 @@
     "spatial_normalization": false
   },
   "short_probe": {
-    "baseline_checkpoint": "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
+    "baseline_checkpoint": "Experiments/R109_StagedMidpointWidthScratch/weights/selected/R109.pth",
     "baseline_checkpoint_sha256": "77ff8611e764e1350d60592f5d8a25d6786db17897eadce189185cdc4dbc87fc",
     "epochs": 6,
     "batch_size": 8,

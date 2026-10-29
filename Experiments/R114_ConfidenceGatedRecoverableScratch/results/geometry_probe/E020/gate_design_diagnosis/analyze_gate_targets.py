@@ -17,10 +17,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import ndimage, stats
 from sklearn.metrics import roc_auc_score
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Experiments\R114_ConfidenceGatedRecoverableScratch")
-R74_ROOT = Path(r"D:\GMM_2_Final\Experiments\R74_R61HardMicroscopyACMGeneralization")
+ROOT = Path(str(PROJECT_ROOT / 'Experiments/R114_ConfidenceGatedRecoverableScratch'))
+R74_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R74_R61HardMicroscopyACMGeneralization'))
 R74_MANIFEST = R74_ROOT / "data" / "r74_hard_acm_val" / "manifest.json"
 INTERNAL_ROOT = ROOT / "results" / "geometry_probe" / "E020" / "R74_contract" / "internal_maps"
 OUTPUT = ROOT / "results" / "geometry_probe" / "E020" / "gate_design_diagnosis"

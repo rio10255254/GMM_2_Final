@@ -8,6 +8,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
@@ -130,7 +131,7 @@ def main() -> None:
         "20x_1um": 50,
     }
     for method in ("NAFNet", "EDSR"):
-        root = Path(manifest["methods"][method]["sequence_root"])
+        root = Path(PROJECT_ROOT / manifest["methods"][method]["sequence_root"])
         for sequence, expected_count in frame_counts.items():
             directory = root / manifest["sequence_name_map"][sequence][method]
             files = sorted(directory.glob("frame_*.bmp"))

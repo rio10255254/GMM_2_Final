@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 from scipy.ndimage import gaussian_filter1d
 from scipy.stats import wilcoxon
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
@@ -22,14 +23,10 @@ TABLES = EXPERIMENT / "analysis" / "tables"
 QA = EXPERIMENT / "qa"
 
 PILLAR_CORE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\01_CURRENT_THESIS_RESULTS_V42_CENTER9\scripts\pillar_motion_core.py"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/scripts/pillar_motion_core.py')
 )
 LINE_CORE = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\source_validation"
-    r"\100mg_linewidth_generalization_20260719\scripts"
-    r"\analyze_100mg_linewidth_generalization.py"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/source_validation/100mg_linewidth_generalization_20260719/scripts/analyze_100mg_linewidth_generalization.py')
 )
 
 METHOD_LABELS = {
@@ -217,7 +214,7 @@ def main() -> None:
     input_meta = json.loads(INPUT_MANIFEST_JSON.read_text(encoding="utf-8"))
     case_meta = {case["case_id"]: case for case in input_meta["cases"]}
     method_dirs = {
-        key: Path(value)
+        key: Path(PROJECT_ROOT / value)
         for key, value in json.loads(OUTPUT_MAP.read_text(encoding="utf-8")).items()
     }
     methods = list(METHOD_LABELS)

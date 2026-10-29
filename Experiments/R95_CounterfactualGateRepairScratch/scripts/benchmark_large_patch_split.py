@@ -8,6 +8,7 @@ import time
 
 import torch
 from torch.utils.data import DataLoader
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +27,7 @@ def main() -> int:
     train = load("r95_train_benchmark", ROOT / "training" / "train_r95.py")
     design = json.loads((ROOT / "config" / "experiment_design.json").read_text(encoding="utf-8"))
     recovery = json.loads((ROOT / "config" / "interruption_recovery.json").read_text(encoding="utf-8"))
-    package = Path(design["data"]["source_package"])
+    package = Path(PROJECT_ROOT / design["data"]["source_package"])
     manifest = json.loads((package / "manifest.json").read_text(encoding="utf-8"))
     checkpoint_path = (
         ROOT / "weights" / "formal" / "seed_950041"

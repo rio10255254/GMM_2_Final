@@ -28,7 +28,7 @@
 - 目前不建議先把 tilt 放進正式主線：`alignment_tilt_rep16` 沒有帶來更好的 peak offset，且 mean iterations 比 `alignment_subpixel_rep16` 高 16.2。
 
 ## 產出位置
-- 比較表：`D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\outputs\tables\experiment_comparison.csv`
-- 偏移比較圖：`D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\outputs\figures\representative_offset_comparison.png`
-- fval/iterations 圖：`D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\outputs\figures\fval_iterations_comparison.png`
-- candidate flow 說明：`D:\GMM_2_Final\PSF_Fitting\PSF_Fitting_ValidationLab\outputs\reports\candidate_flow_tw.md`
+- 比較表：`PSF_Fitting/PSF_Fitting_ValidationLab/outputs/tables/experiment_comparison.csv`
+- 偏移比較圖：`PSF_Fitting/PSF_Fitting_ValidationLab/outputs/figures/representative_offset_comparison.png`
+- fval/iterations 圖：`PSF_Fitting/PSF_Fitting_ValidationLab/outputs/figures/fval_iterations_comparison.png`
+- candidate flow 說明：`PSF_Fitting/PSF_Fitting_ValidationLab/outputs/reports/candidate_flow_tw.md`

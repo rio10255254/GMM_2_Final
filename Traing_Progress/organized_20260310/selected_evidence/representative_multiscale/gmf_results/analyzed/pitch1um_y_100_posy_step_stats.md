@@ -1,6 +1,6 @@
 # pitch1um_y_100 POSY Step Stats
 
-- GMF score: `D:\GMM_2_Final\Traing_Progress\organized_20260310\external_validation\representative_multiscale\gmf_results\raw\pitch1um_y_100\GMF_score.txt`
+- GMF score: `Traing_Progress/organized_20260310/external_validation/representative_multiscale/gmf_results/raw/pitch1um_y_100/GMF_score.txt`
 - expected_step_px: `8.0`
 - num_positions: `100`
 - num_steps: `99`

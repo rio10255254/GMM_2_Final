@@ -8,7 +8,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $PSScriptRoot
-$Python = 'C:\Users\Rio\anaconda3\python.exe'
+$Python = python
 $Arguments = @(
     "$Root\training\train.py",
     '--campaign', $Campaign,

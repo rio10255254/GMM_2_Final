@@ -19,11 +19,12 @@ import numpy as np
 import pandas as pd
 from skimage.metrics import structural_similarity
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "config" / "early_stop_validation.json"
-R78_CONFIG = Path(r"D:\GMM_2_Final\Experiments\R78_R75v2_BroadRealMicroscopeGeneralization\config\experiment.json")
+R78_CONFIG = Path(str(PROJECT_ROOT / 'Experiments/R78_R75v2_BroadRealMicroscopeGeneralization/config/experiment.json'))
 INFERENCE = ROOT / "inference" / "reconstruct.py"
 RESULTS = ROOT / "results" / "early_stop_validation"
 REPORTS = ROOT / "reports" / "early_stop_validation"
@@ -142,7 +143,7 @@ def fixed_sources(protocol: dict[str, Any], r78: dict[str, Any]) -> tuple[list[d
     indices_rule = protocol["development_arms"]["real_appearance"]["fixed_frame_indices"]
     for sequence in protocol["development_arms"]["real_appearance"]["sequences"]:
         item = r78["sequences"][sequence]
-        paths = image_paths(Path(item["raw_dir"]))
+        paths = image_paths(Path(PROJECT_ROOT / item["raw_dir"]))
         if len(paths) != int(item["frame_count"]):
             raise RuntimeError(f"{sequence}: expected {item['frame_count']} frames, found {len(paths)}")
         indices = [len(paths) - 1 if int(index) < 0 else int(index) for index in indices_rule]
@@ -160,7 +161,7 @@ def fixed_sources(protocol: dict[str, Any], r78: dict[str, Any]) -> tuple[list[d
                 "sha256": sha256_file(path),
             })
     sem: list[dict[str, Any]] = []
-    sem_root = Path(protocol["development_arms"]["sem_contour"]["optical_inputs"])
+    sem_root = Path(PROJECT_ROOT / protocol["development_arms"]["sem_contour"]["optical_inputs"])
     for exposure in protocol["development_arms"]["sem_contour"]["exposures"]:
         path = sem_root / f"{int(exposure)}.bmp"
         if not path.is_file():
@@ -253,7 +254,7 @@ def main() -> int:
     r78 = read_json(R78_CONFIG)
     stages = [int(value) for value in protocol["stage_candidates"]]
     checkpoints = {
-        epoch: Path(protocol["checkpoint_root"]) / f"epoch_{epoch:03d}.pth.tar"
+        epoch: Path(PROJECT_ROOT / protocol["checkpoint_root"]) / f"epoch_{epoch:03d}.pth.tar"
         for epoch in stages
     }
     for epoch, checkpoint in checkpoints.items():
@@ -261,7 +262,7 @@ def main() -> int:
         expected = str(protocol["checkpoint_sha256"][str(epoch)]).lower()
         if observed != expected:
             raise RuntimeError(f"E{epoch}: checkpoint hash mismatch")
-    if sha256_file(Path(protocol["model_file"])) != str(protocol["model_file_sha256"]).lower():
+    if sha256_file(Path(PROJECT_ROOT / protocol["model_file"])) != str(protocol["model_file_sha256"]).lower():
         raise RuntimeError("Model file hash mismatch")
 
     appearance_sources, sem_sources = fixed_sources(protocol, r78)

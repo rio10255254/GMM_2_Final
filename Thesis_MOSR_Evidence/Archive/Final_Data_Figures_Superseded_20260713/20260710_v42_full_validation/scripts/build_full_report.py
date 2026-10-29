@@ -6,9 +6,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.patches import Patch
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260710_v42_full_validation")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/20260710_v42_full_validation'))
 
 
 def main() -> None:

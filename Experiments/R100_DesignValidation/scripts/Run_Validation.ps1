@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $PSScriptRoot
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$Python = python
 $Matlab = "C:\Program Files\MATLAB\R2025b\bin\matlab.exe"
 
 Write-Host "R100 design validation: core experiments" -ForegroundColor Cyan

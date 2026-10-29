@@ -13,15 +13,15 @@ import pandas as pd
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 PACKAGE = Path(__file__).resolve().parents[1]
-DEFAULT_MAPPING = Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\input_mapping.csv")
+DEFAULT_MAPPING = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/input_mapping.csv'))
 DEFAULT_CONFIG = PACKAGE / "config" / "sequence_center9.json"
 DEFAULT_COMPARISON = PACKAGE / "displacement" / "tables" / "20x_0p5um_comparison.csv"
 EDGE_PHASE_SUMMARY = Path(
-    r"D:\GMM_2_Final\20260704_20x_5x_analysis\phase_algorithm_final_summary"
-    r"\edge_phase_primary_gap30_summary_um.csv"
+    str(PROJECT_ROOT / '20260704_20x_5x_analysis/phase_algorithm_final_summary/edge_phase_primary_gap30_summary_um.csv')
 )
 
 

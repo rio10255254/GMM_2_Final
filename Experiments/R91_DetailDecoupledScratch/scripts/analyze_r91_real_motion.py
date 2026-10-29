@@ -11,6 +11,7 @@ from typing import Any
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +21,7 @@ RECON_ROOT = RESULTS / "reconstructions_fp32"
 OUTPUT = RESULTS / "motion_analysis_fp32"
 TABLES = OUTPUT / "tables"
 FIGURES = OUTPUT / "figures"
-ISO_SCRIPT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\analyze_isocontour_boundary_displacement.py")
+ISO_SCRIPT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/analyze_isocontour_boundary_displacement.py'))
 SEQUENCE_NAME = "50x_x_1um"
 
 
@@ -228,10 +229,10 @@ def add_relative_columns(summary: pd.DataFrame) -> pd.DataFrame:
 
 def source_and_manifest_audit(protocol: dict[str, Any], method_dirs: dict[str, Path], frame_count: int) -> dict[str, Any]:
     arm = protocol["arms"]["real_motion"]
-    mapping = pd.read_csv(arm["source_mapping"])
+    mapping = pd.read_csv(str(PROJECT_ROOT / arm["source_mapping"]))
     rows = mapping.loc[mapping["group"] == "x_1um"].sort_values("index")
-    requested = Path(arm["requested_source"])
-    ordered = Path(arm["ordered_source"])
+    requested = Path(PROJECT_ROOT / arm["requested_source"])
+    ordered = Path(PROJECT_ROOT / arm["ordered_source"])
     same_files = len(rows) == frame_count
     for row in rows.itertuples(index=False):
         source = requested / str(row.original_name)
@@ -296,13 +297,13 @@ def main() -> int:
     protocol = json.loads(PROTOCOL.read_text(encoding="utf-8"))
     arm = protocol["arms"]["real_motion"]
     stages = [int(value) for value in protocol["representative_stages"]["real_motion"]]
-    method_dirs = {"Raw": Path(arm["ordered_source"])}
+    method_dirs = {"Raw": Path(PROJECT_ROOT / arm["ordered_source"])}
     method_dirs.update({f"R91_E{epoch}": RECON_ROOT / "motion" / f"E{epoch:03d}" for epoch in stages})
-    sequence = json.loads(Path(arm["sequence_config"]).read_text(encoding="utf-8"))["sequences"][SEQUENCE_NAME]
+    sequence = json.loads(Path(PROJECT_ROOT / arm["sequence_config"]).read_text(encoding="utf-8"))["sequences"][SEQUENCE_NAME]
     frame_count = int(sequence["frame_count"])
     for directory in method_dirs.values():
         method_paths(directory, frame_count)
-    selected = locked_steps(Path(arm["locked_steps"]))
+    selected = locked_steps(Path(PROJECT_ROOT / arm["locked_steps"]))
     audit = source_and_manifest_audit(protocol, method_dirs, frame_count)
     if not audit["requested_and_ordered_sources_are_same_files"] or not audit["all_stage_manifests_pass"]:
         raise RuntimeError(f"Motion input audit failed: {audit}")

@@ -10,6 +10,7 @@ import cv2
 import numpy as np
 import torch
 from torch.utils.data import Dataset
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -89,7 +90,7 @@ def degrade(target: np.ndarray, mask: np.ndarray, rng: np.random.Generator,
 
 class ProbeDataset(Dataset):
     def __init__(self, split: str, epoch: int = 0, limit: int = 0):
-        self.package = Path(CONFIG["data"]["package_root"])
+        self.package = Path(PROJECT_ROOT / CONFIG["data"]["package_root"])
         selection = json.loads((ROOT / CONFIG["data"]["selection_file"]).read_text(encoding="utf-8"))
         self.records = [row for row in selection["records"] if row["split"] == split]
         if limit > 0:

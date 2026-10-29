@@ -9,11 +9,12 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 R73_TABLES = Path(
-    r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\results\tables"
+    str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/results/tables')
 )
 
 

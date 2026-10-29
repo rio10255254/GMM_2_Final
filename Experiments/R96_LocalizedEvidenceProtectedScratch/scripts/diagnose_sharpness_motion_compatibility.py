@@ -10,13 +10,14 @@ import sys
 import cv2
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 FINAL = ROOT / "results" / "final_validation" / "real_generalization"
 OUTPUT = ROOT / "results" / "deep_diagnosis" / "sharpness_motion_compatibility"
-CONFIG = Path(r"D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\config\sequences.json")
-LOCKED = Path(r"D:\GMM_2_Final\Experiments\R68_R61_RealFOVFeatureGeneralization\results\tables\tile_motion_measurements.csv")
+CONFIG = Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json'))
+LOCKED = Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv'))
 PREDECLARED_STEPS = {0, 12, 24, 36, 48}
 
 
@@ -84,7 +85,7 @@ def main() -> None:
         for sequence in config["sequences"]
     }
     for sequence, item in config["sequences"].items():
-        raw_paths = sorted(Path(item["raw_dir"]).glob("frame_*.bmp"))
+        raw_paths = sorted(Path(PROJECT_ROOT / item["raw_dir"]).glob("frame_*.bmp"))
         r96_paths = sorted((FINAL / "reconstructions" / sequence).glob("frame_*.bmp"))
         if len(raw_paths) != len(r96_paths):
             raise RuntimeError(f"{sequence}: inventory mismatch")

@@ -5,9 +5,10 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 sys.stdout.reconfigure(encoding='utf-8')
-R=Path(r'D:\GMM_2_Final');E=R/'Experiments/R129_OpticalPriorHybrid'
+R=Path(str(PROJECT_ROOT));E=R/'Experiments/R129_OpticalPriorHybrid'
 O=R/'Deliverables/R129_Thesis_Rewrite_Ready_20260920';H=O/'04_Results/R129_Handoff'
 def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(rel,t):

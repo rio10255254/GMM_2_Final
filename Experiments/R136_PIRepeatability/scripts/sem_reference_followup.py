@@ -5,9 +5,10 @@ from pathlib import Path
 import hashlib,json,shutil
 import numpy as np
 from scipy.io import savemat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 R=Path(__file__).resolve().parents[1]; O=R/'results/sem_reference_followup';O.mkdir(exist_ok=True)
 old=R.parent/'R135_UnifiedModelComparison'
-sem=Path('H:/From_2TB_D_disk/13_thesis/SEM_data');copy=Path('D:/GMM_2_Final/Thesis_MOSR_Evidence/20260618_100MG/SEM_data');legacy=Path('H:/From_2TB_D_disk/13_thesis/matlab/ch4/SEMdataset/SEM')
+sem=Path('H:/From_2TB_D_disk/13_thesis/SEM_data');copy=Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/20260618_100MG/SEM_data'));legacy=Path(str(PROJECT_ROOT / 'Shared_Sources/SEM_Originals'))
 records=[]
 for kind in ['P','V']:
  for i in range(1,10):

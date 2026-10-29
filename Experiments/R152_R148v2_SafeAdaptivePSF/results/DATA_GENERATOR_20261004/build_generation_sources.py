@@ -39,7 +39,7 @@ def main():
     expected = {
         'r125_geometry_helper.py':'89a98fe8e5f595691a973b7e699e47fca84eacc822f065155b4880039471bcb5',
         'r128_scene_generation.py':'93f443920148b2d2440e1e19c6d3192eb0adec879644bf404b2c058af458062c',
-        'r148_physical_views.py':'42b5410c607e4f7b9321c8f61226abe9d8b246d2ecefe763c26d4dc43a09684b',
+        'r148_physical_views.py':'11ea1b83f34671dc4a501e6af91052b477a5379bee339555d5fab01704b9d14a',
     }
     records = {}
     for name, source in historical.items():

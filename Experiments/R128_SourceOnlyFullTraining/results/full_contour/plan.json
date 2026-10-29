@@ -2,7 +2,7 @@
   "created_utc": "2026-09-10T08:26:01.977928+00:00",
   "question": "Does the entire extracted optical contour approach the matched SEM contour after R128reconstruction?",
   "candidate": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\runs\\P_s1285002\\checkpoints\\step8192.pth",
+    "path": "Experiments/R128_SourceOnlyFullTraining/runs/P_s1285002/checkpoints/step8192.pth",
     "sha256": "9fbdffa3bebe0a37e3f7c2b09239e2e00de6b0522feb101571fcfb7a42699abf"
   },
   "exposures": [
@@ -36,14 +36,14 @@
     {
       "name": "historical",
       "record": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\results\\formal_sem\\results\\masks\\acm_primary_masks.mat",
+        "path": "Experiments/R119_SequenceGeometryValidation/results/formal_sem/results/masks/acm_primary_masks.mat",
         "sha256": "68e45e7e68d60404fb0c30203a0775e4ba644d937578e21bd2d74fc988071bdc"
       }
     },
     {
       "name": "global_pitch_matched",
       "record": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R121_BoundaryAnchorFactorial\\results\\pitch_matched_reference.mat",
+        "path": "Experiments/R121_BoundaryAnchorFactorial/results/pitch_matched_reference.mat",
         "sha256": "c7ede6ddf1e0a37b3dc68d27de5c11a88790bef6f153116ea4d0bba61f460bcc"
       }
     }
@@ -64,49 +64,49 @@
     {
       "exposure": 13,
       "Raw": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\13.bmp",
+        "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/13.bmp",
         "sha256": "7c1825bd0dfcf3cf1d992d36b1fc574ff5c3301340fc00fdffac2e269be90d88"
       },
       "reconstruction": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\nearby_brightness\\exposure13\\output.npz",
+        "path": "Experiments/R128_SourceOnlyFullTraining/results/nearby_brightness/exposure13/output.npz",
         "sha256": "96c9f044526a2fe5857f2aa671a281931c473f74a01fa06e97597c7ecde0529c"
       }
     },
     {
       "exposure": 14,
       "Raw": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\14.bmp",
+        "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/14.bmp",
         "sha256": "d25366ad663741d56b7d32bf42c6d44a1904789a5f36cd4563951218d6ac3ec1"
       },
       "reconstruction": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\nearby_brightness\\exposure14\\output.npz",
+        "path": "Experiments/R128_SourceOnlyFullTraining/results/nearby_brightness/exposure14/output.npz",
         "sha256": "db59f428abb03202e623d7b0c7cba3ba175ccd22714c405e382ceb2b92f5bdae"
       }
     },
     {
       "exposure": 15,
       "Raw": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\inputs\\sem_paired_50x_exposure_stack\\15.bmp",
+        "path": "Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/15.bmp",
         "sha256": "441133eabd7f650150331bf408e7d16ff50c3629b0f0d3461b79150bf8cd6dbe"
       },
       "reconstruction": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\nearby_brightness\\exposure15\\output.npz",
+        "path": "Experiments/R128_SourceOnlyFullTraining/results/nearby_brightness/exposure15/output.npz",
         "sha256": "3a48898d0e25fe3202811008e568a4cca9984e8218342b6765bf223cc6e069bf"
       }
     }
   ],
   "input_mat": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\results\\full_contour\\inputs.mat",
+    "path": "Experiments/R128_SourceOnlyFullTraining/results/full_contour/inputs.mat",
     "sha256": "525a3098655371b4a28af19fd14d2e5eaba5170d98c62681f6d75870129f6f14"
   },
   "original_helper_source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R119_SequenceGeometryValidation\\analysis\\R109_comparison_20260907\\measure_acm.m",
-    "sha256": "bae5e90add19753066a7f94fc20588110eb8f8774ebddbaa245249965c7c5d22"
+    "path": "Experiments/R119_SequenceGeometryValidation/analysis/R109_comparison_20260907/measure_acm.m",
+    "sha256": "4a974bce2a797c51f8e34422e543f6b41f489ba4e9b0ce2a83e89b7806a6518c"
   },
   "copied_helper_sha256": "0b7d3661a981077d27335d192ac75770026aa63a0a814cd44db304b82c8409f2",
   "new_matlab_source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R128_SourceOnlyFullTraining\\analysis\\full_contour\\run_contour_check.m",
-    "sha256": "3b66d649b7dc320cdd19a42418d0f966d9d6eb640d4df3c99581aa331c2921fe"
+    "path": "Experiments/R128_SourceOnlyFullTraining/analysis/full_contour/run_contour_check.m",
+    "sha256": "c6e924c418c3e8fb51251491f6c3b9ff1fca2a56b9fa6141f1dc3df38d47d878"
   },
   "training_updates": 0,
   "no_new_confirmation_claim": true,

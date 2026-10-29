@@ -8,10 +8,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 
 VALIDATION_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\20260708_v41_standalone_full_validation"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/20260708_v41_standalone_full_validation')
 )
 CORE_SCRIPT_DIR = VALIDATION_ROOT / "local_edge_band_displacement_v41_standalone" / "scripts"
 sys.path.insert(0, str(CORE_SCRIPT_DIR))

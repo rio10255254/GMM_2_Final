@@ -9,15 +9,13 @@ from typing import Any
 import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
 MANIFEST_PATH = EXPERIMENT / "evaluation_manifest.json"
 SOURCE_SCRIPT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\source_validation"
-    r"\100mg_linewidth_generalization_20260719\scripts"
-    r"\analyze_100mg_linewidth_generalization.py"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/source_validation/100mg_linewidth_generalization_20260719/scripts/analyze_100mg_linewidth_generalization.py')
 )
 
 
@@ -31,7 +29,7 @@ def load_source_module():
 
 
 def build_sequences(manifest: dict[str, Any], methods: list[str]) -> dict[str, dict[str, Any]]:
-    source_config = json.loads(Path(manifest["pillar_config"]).read_text(encoding="utf-8"))
+    source_config = json.loads(Path(PROJECT_ROOT / manifest["pillar_config"]).read_text(encoding="utf-8"))
     output: dict[str, dict[str, Any]] = {}
     for sequence_name in ("50x_x_0p5um", "50x_x_1um"):
         sequence = source_config["sequences"][sequence_name]
@@ -39,7 +37,7 @@ def build_sequences(manifest: dict[str, Any], methods: list[str]) -> dict[str, d
         for method in methods:
             if method == "Raw":
                 continue
-            root = Path(manifest["methods"][method]["sequence_root"])
+            root = Path(PROJECT_ROOT / manifest["methods"][method]["sequence_root"])
             mapped = manifest["sequence_name_map"][sequence_name][method]
             directories[method] = root / mapped
         output[sequence_name] = {
@@ -58,7 +56,7 @@ def available_methods(
         if method == "Raw":
             methods.append(method)
             continue
-        root = Path(manifest["methods"][method]["sequence_root"])
+        root = Path(PROJECT_ROOT / manifest["methods"][method]["sequence_root"])
         required = [
             root / manifest["sequence_name_map"][sequence][method] / "frame_0000.bmp"
             for sequence in ("50x_x_0p5um", "50x_x_1um")
@@ -178,7 +176,7 @@ def main(output_root: Path, allow_missing: bool) -> None:
     module.method_directory = method_directory
     module.TABLES.mkdir(parents=True, exist_ok=True)
     module.CROPS.mkdir(parents=True, exist_ok=True)
-    selection = pd.read_csv(manifest["top30_selection"])
+    selection = pd.read_csv(str(PROJECT_ROOT / manifest["top30_selection"]))
     selection = selection.loc[
         module.truthy(selection["top30_raw_motion_selected"])
         & selection["sequence"].isin(sequences),

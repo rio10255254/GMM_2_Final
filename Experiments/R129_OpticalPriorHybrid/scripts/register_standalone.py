@@ -4,8 +4,9 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from common import *
 import psutil
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 def main():
-    pkg=Path(load(ROOT/'config/standalone_build.json')['path']);cycle=load(pkg/'results/manual_training_cycle.json')
+    pkg=Path(PROJECT_ROOT / load(ROOT/'config/standalone_build.json')['path']);cycle=load(pkg/'results/manual_training_cycle.json')
     ready=load(pkg/'results/preflight/complete.json');moved=load(pkg/'results/relocation_test.json')
     status=load(pkg/'results/training/r129_long_01/status.json')
     assert ready['passed'] and moved['passed'] and cycle['passed']

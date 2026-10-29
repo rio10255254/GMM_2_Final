@@ -260,13 +260,13 @@ The formal production baseline is now **COMBO / `r38v2_8px_gate_p95`**.
 正式入口 / Formal entry points：
 
 - checkpoint:
-  `D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\weights\best_tradeoff.pth.tar`
+  `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
 - promoted baseline report:
-  `D:\GMM_2_Final\Experiments\R38v2SeqFixed\reports\COMBO_RESULTS.md`
+  `Experiments/R38v2SeqFixed/reports/COMBO_RESULTS.md`
 - complete series context:
-  `D:\GMM_2_Final\Experiments\R33RobustLoss\reports\R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
+  `Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md`
 - machine-readable truth:
-  `D:\GMM_2_Final\ESTIMATOR_POLICY.json`
+  `ESTIMATOR_POLICY.json`
 
 COMBO 之所以被升級，不是因為它在單一 GMF 指標上最極端，而是因為它在 `0.8px` 主戰場、`8px` 宏觀守門、視覺 steepness、以及 residual_std 四個面向同時最均衡。
 COMBO was promoted not because it is the most extreme on any single metric, but because it best balances the `0.8px` battlefield, the `8px` guard, visual steepness, and residual quality.
@@ -304,9 +304,9 @@ One-line role: **GMF-extreme approved alternate; not the formal baseline.**
 
 正式入口 / Formal entry points：
 - report:
-  `D:\GMM_2_Final\Experiments\R33RobustLoss\reports\R33_EXPERIMENT_SUMMARY.md`
+  `Experiments/R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md`
 - checkpoint:
-  `D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941\weights\best_tradeoff.pth.tar`
+  `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar`
 
 ### R38v2 / r38v2_8px_gate — Visual Priority Alternate
 
@@ -327,9 +327,9 @@ One-line role: **visual-priority approved alternate; not the formal baseline.**
 
 正式入口 / Formal entry points：
 - report:
-  `D:\GMM_2_Final\Experiments\R38v2SeqFixed\reports\R38v2_RESULTS.md`
+  `Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md`
 - checkpoint:
-  `D:\GMM_2_Final\Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957\weights\best_tradeoff.pth.tar`
+  `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar`
 
 ### R39R40_avg_a025 / r39r40_complementary_avg_a025 — Balanced Full-Spectrum Alternate
 
@@ -367,16 +367,16 @@ R39 a030（COMBO ↔ R39_strong α=0.30 權重平均）與 R40 a043（COMBO ↔ 
 
 正式入口 / Formal entry points：
 - promotion report:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\reports\R39R40_AVG_a025_CAPABILITY_EVAL.md`
+  `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_CAPABILITY_EVAL.md`
 - sweep results:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\reports\R39R40_COMPLEMENTARY_AVG_RESULTS.md`
+  `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_COMPLEMENTARY_AVG_RESULTS.md`
 - external GMF compare:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\reports\R39R40_AVG_a025_EXTERNAL_COMPARE.md`
+  `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_EXTERNAL_COMPARE.md`
 - checkpoint:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a025\best_tradeoff.pth.tar`
+  `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar`
 - 視覺對比 sheet（R40 micro 5 聯 / R39 shape 5 聯）:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\visuals\contact_sheet_a025_micro_five_panel.png`
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\visuals\contact_sheet_a025_shape_five_panel.png`
+  `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_micro_five_panel.png`
+  `Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/visuals/contact_sheet_a025_shape_five_panel.png`
 
 ## 3. Current Promoted State / 目前正式狀態
 
@@ -441,18 +441,18 @@ a030 屬 sharp band（接近 COMBO / R38v2,推算對 R30 約 +78.8% edge_steepne
 正式入口 / Formal entry points：
 
 - experiment results:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\reports\R39_RESULTS.md`
+  `Experiments/R39_ShapeGeneralization/reports/R39_RESULTS.md`
 - external GMF compare:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\reports\R39_EXTERNAL_COMPARE.md`
+  `Experiments/R39_ShapeGeneralization/reports/R39_EXTERNAL_COMPARE.md`
 - weight sweep summary + plot:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\sweep_summary.md`
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\sweep_tradeoff.png`
+  `Experiments/R39_ShapeGeneralization/results/weight_sweep/sweep_summary.md`
+  `Experiments/R39_ShapeGeneralization/results/weight_sweep/sweep_tradeoff.png`
 - representative visual sheet:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\shape_recon\r39_representative_shape_sheet.png`
+  `Experiments/R39_ShapeGeneralization/results/shape_recon/r39_representative_shape_sheet.png`
 - averaged checkpoint:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a030\best_tradeoff.pth.tar`
+  `Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a030/best_tradeoff.pth.tar`
 - external GMF score files:
-  `D:\GMM_2_Final\Experiments\R39_ShapeGeneralization\results\external_gmf_a030\pitch{8px,0p8px,0p08px}\GMF_score.txt`
+  `Experiments/R39_ShapeGeneralization/results/external_gmf_a030/pitch{8px,0p8px,0p08px}\GMF_score.txt`
 
 a030 在 ESTIMATOR_POLICY.json 的位置：`open_side_tracks[].candidate_id = "R39_a030"`，狀態 `external_gmf_complete_alternate_grade_pending_promotion`。
 未升級進 `approved_alternates` 之前，COMBO 仍是唯一正式 baseline，R33 / R38v2 仍是現有 approved alternates；a030 是 alternate-grade 但等專案決策。
@@ -465,13 +465,13 @@ R39 收尾 finding：a030 在訓練分布內(ring + 簡單幾何形狀)是 alter
 
 核心產物：
 
-- 報告：`D:\GMM_2_Final\Experiments\R43_CandidateUsabilityAudit\reports\R43A_USABILITY_AUDIT.md`
-- 分數表：`D:\GMM_2_Final\Experiments\R43_CandidateUsabilityAudit\results\candidate_usability\usability_scorecard.json`
-- CSV：`D:\GMM_2_Final\Experiments\R43_CandidateUsabilityAudit\results\candidate_usability\usability_scorecard.csv`
+- 報告：`Experiments/R43_CandidateUsabilityAudit/reports/R43A_USABILITY_AUDIT.md`
+- 分數表：`Experiments/R43_CandidateUsabilityAudit/results/candidate_usability/usability_scorecard.json`
+- CSV：`Experiments/R43_CandidateUsabilityAudit/results/candidate_usability/usability_scorecard.csv`
 - 肉眼檢查圖：
-  - `D:\GMM_2_Final\Experiments\R43_CandidateUsabilityAudit\results\visual_review\micro_feature_visual_sheet.png`
-  - `D:\GMM_2_Final\Experiments\R43_CandidateUsabilityAudit\results\visual_review\boundary_feature_visual_sheet.png`
-  - `D:\GMM_2_Final\Experiments\R43_CandidateUsabilityAudit\results\visual_review\boundary_zoom_visual_sheet.png`
+  - `Experiments/R43_CandidateUsabilityAudit/results/visual_review/micro_feature_visual_sheet.png`
+  - `Experiments/R43_CandidateUsabilityAudit/results/visual_review/boundary_feature_visual_sheet.png`
+  - `Experiments/R43_CandidateUsabilityAudit/results/visual_review/boundary_zoom_visual_sheet.png`
 
 重點結論：
 - `R39 a030`：外部 GMF PASS_TRADEOFF，形狀泛化明顯改善，是近期最接近「堪用替代候選」的結果。
@@ -516,10 +516,10 @@ R45 縮放掃描：
 
 正式入口 / Canonical files：
 
-- 實驗根目錄：`D:\GMM_2_Final\Experiments\R45_FamilyBoundaryAdapter`
-- 主結果報告：`D:\GMM_2_Final\Experiments\R45_FamilyBoundaryAdapter\reports\R45_RESULTS.md`
-- 縮放掃描總表：`D:\GMM_2_Final\Experiments\R45_FamilyBoundaryAdapter\results\diagnostics\r45_adapter_scale_sweep_summary.csv`
-- 代表圖：`D:\GMM_2_Final\Experiments\R45_FamilyBoundaryAdapter\results\visual_samples\r45_s08_vs_r44b_target_compare.png`
+- 實驗根目錄：`Experiments/R45_FamilyBoundaryAdapter`
+- 主結果報告：`Experiments/R45_FamilyBoundaryAdapter/reports/R45_RESULTS.md`
+- 縮放掃描總表：`Experiments/R45_FamilyBoundaryAdapter/results/diagnostics/r45_adapter_scale_sweep_summary.csv`
+- 代表圖：`Experiments/R45_FamilyBoundaryAdapter/results/visual_samples/r45_s08_vs_r44b_target_compare.png`
 
 下一步判斷：
 
@@ -550,10 +550,10 @@ R45B 診斷結果：
 
 R45B 正式入口：
 
-- 診斷報告：`D:\GMM_2_Final\Experiments\R45_FamilyBoundaryAdapter\reports\R45B_TEACHER_DIAGNOSTICS.md`
-- oracle 總結：`D:\GMM_2_Final\Experiments\R45_FamilyBoundaryAdapter\results\r45b_teacher_diagnostics\r45b_oracle_summary.json`
-- 老師殘差表：`D:\GMM_2_Final\Experiments\R45_FamilyBoundaryAdapter\results\r45b_teacher_diagnostics\r45b_residual_summary.csv`
-- 代表圖：`D:\GMM_2_Final\Experiments\R45_FamilyBoundaryAdapter\results\visual_samples\r45b_teacher_diagnostics_sheet.png`
+- 診斷報告：`Experiments/R45_FamilyBoundaryAdapter/reports/R45B_TEACHER_DIAGNOSTICS.md`
+- oracle 總結：`Experiments/R45_FamilyBoundaryAdapter/results/r45b_teacher_diagnostics/r45b_oracle_summary.json`
+- 老師殘差表：`Experiments/R45_FamilyBoundaryAdapter/results/r45b_teacher_diagnostics/r45b_residual_summary.csv`
+- 代表圖：`Experiments/R45_FamilyBoundaryAdapter/results/visual_samples/r45b_teacher_diagnostics_sheet.png`
 
 ### R44 Universal Boundary Motion Fidelity
 
@@ -594,30 +594,30 @@ R45B 正式入口：
 - 結論：R44 證明 motion 資料能推動位移忠實度，也證明單純調權重、排除分族、大區塊/混合場景短訓練修補、把問題歸咎於指標誤判、R44B 家族全域平均、或單一老師局部蒸餾都不足；現成候選能力分散，下一步應轉向 adapter / 分族小頭 / 推論時分族選擇
 
 正式入口：
-- 實驗根目錄：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity`
-- 主結果報告：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\reports\R44_RESULTS.md`
-- 資料產生器：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\scripts\r44_motion_data.py`
-- 訓練啟動器：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\scripts\launch_r44.py`
-- 代表圖：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\visual_samples\r44_motion_r42_vs_r44_contact_sheet.png`
-- R44C 代表圖：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\visual_samples\r44c_probe_r42_r44b_r44c_sheet.png`
-- 總表：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\summary\r44_motion_summary_all.csv`
-- R44C 探針總表：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\summary\r44c_probe_summary.csv`
-- R44D 診斷報告：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\reports\R44D_FAMILY_DIAGNOSTIC.md`
-- R44D 邊界熱圖：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\diagnostics\r44d_boundary_heatmap.png`
-- R44D 位移熱圖：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\diagnostics\r44d_motion_heatmap.png`
-- R44E 專項報告：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\reports\R44E_TARGETED_PROBE.md`
-- R44E 探針總表：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\summary\r44e_probe_summary.csv`
-- R44E 代表圖：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\visual_samples\r44e_region_mixed_probe_sheet.png`
-- R44F 錯誤解剖報告：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\reports\R44F_ERROR_DIAGNOSTIC.md`
-- R44F 指標壓力測試：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\diagnostics\r44f_metric_stress.csv`
-- R44F 代表圖：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\visual_samples\r44f_error_dissection_sheet.png`
-- R44G 邊界形狀報告：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\reports\R44G_BOUNDARY_SHAPE_METRICS.md`
-- R44G 邊界形狀分數表：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\diagnostics\r44g_boundary_shape_scorecard.csv`
-- R44G 邊界形狀熱圖：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\visual_samples\r44g_boundary_shape_heatmap.png`
-- R44H Step A 報告：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\reports\R44H_STEPA_FAMILY_AVERAGE.md`
-- R44H Step A 總表：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\r44h_family_average\r44h_stepa_summary.csv`
-- R44H Step B 報告：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\reports\R44H_STEPB_REGION_KD.md`
-- R44H Step B 位移摘要：`D:\GMM_2_Final\Experiments\R44_UniversalBoundaryMotionFidelity\results\r44h_stepb_region_kd\r44h_stepb_motion_summary.json`
+- 實驗根目錄：`Experiments/R44_UniversalBoundaryMotionFidelity`
+- 主結果報告：`Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44_RESULTS.md`
+- 資料產生器：`Experiments/R44_UniversalBoundaryMotionFidelity/scripts/r44_motion_data.py`
+- 訓練啟動器：`Experiments/R44_UniversalBoundaryMotionFidelity/scripts/launch_r44.py`
+- 代表圖：`Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44_motion_r42_vs_r44_contact_sheet.png`
+- R44C 代表圖：`Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44c_probe_r42_r44b_r44c_sheet.png`
+- 總表：`Experiments/R44_UniversalBoundaryMotionFidelity/results/summary/r44_motion_summary_all.csv`
+- R44C 探針總表：`Experiments/R44_UniversalBoundaryMotionFidelity/results/summary/r44c_probe_summary.csv`
+- R44D 診斷報告：`Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44D_FAMILY_DIAGNOSTIC.md`
+- R44D 邊界熱圖：`Experiments/R44_UniversalBoundaryMotionFidelity/results/diagnostics/r44d_boundary_heatmap.png`
+- R44D 位移熱圖：`Experiments/R44_UniversalBoundaryMotionFidelity/results/diagnostics/r44d_motion_heatmap.png`
+- R44E 專項報告：`Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44E_TARGETED_PROBE.md`
+- R44E 探針總表：`Experiments/R44_UniversalBoundaryMotionFidelity/results/summary/r44e_probe_summary.csv`
+- R44E 代表圖：`Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44e_region_mixed_probe_sheet.png`
+- R44F 錯誤解剖報告：`Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44F_ERROR_DIAGNOSTIC.md`
+- R44F 指標壓力測試：`Experiments/R44_UniversalBoundaryMotionFidelity/results/diagnostics/r44f_metric_stress.csv`
+- R44F 代表圖：`Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44f_error_dissection_sheet.png`
+- R44G 邊界形狀報告：`Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44G_BOUNDARY_SHAPE_METRICS.md`
+- R44G 邊界形狀分數表：`Experiments/R44_UniversalBoundaryMotionFidelity/results/diagnostics/r44g_boundary_shape_scorecard.csv`
+- R44G 邊界形狀熱圖：`Experiments/R44_UniversalBoundaryMotionFidelity/results/visual_samples/r44g_boundary_shape_heatmap.png`
+- R44H Step A 報告：`Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44H_STEPA_FAMILY_AVERAGE.md`
+- R44H Step A 總表：`Experiments/R44_UniversalBoundaryMotionFidelity/results/r44h_family_average/r44h_stepa_summary.csv`
+- R44H Step B 報告：`Experiments/R44_UniversalBoundaryMotionFidelity/reports/R44H_STEPB_REGION_KD.md`
+- R44H Step B 位移摘要：`Experiments/R44_UniversalBoundaryMotionFidelity/results/r44h_stepb_region_kd/r44h_stepb_motion_summary.json`
 
 ### R40 Microscopy Feature Coverage
 
@@ -644,15 +644,15 @@ Step audit：8px `99` steps、0.8px `59` steps、0.08px `39` steps 全部納入�
 正式入口 / Formal entry points：
 
 - experiment results:
-  `D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\reports\R40_RESULTS.md`
+  `Experiments/R40_MicroscopyFeatureCoverage/reports/R40_RESULTS.md`
 - external GMF compare:
-  `D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\reports\R40_EXTERNAL_COMPARE.md`
+  `Experiments/R40_MicroscopyFeatureCoverage/reports/R40_EXTERNAL_COMPARE.md`
 - external step audit:
-  `D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\external_gmf\step_audit\step_audit_summary.json`
+  `Experiments/R40_MicroscopyFeatureCoverage/results/external_gmf/step_audit/step_audit_summary.json`
 - representative visual sheet:
-  `D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\r40_a045_micro_comparison_sheet.png`
+  `Experiments/R40_MicroscopyFeatureCoverage/results/weight_sweep/combo_best_low_alpha/r40_a045_micro_comparison_sheet.png`
 - averaged checkpoint:
-  `D:\GMM_2_Final\Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\checkpoints\a045\best_tradeoff.pth.tar`
+  `Experiments/R40_MicroscopyFeatureCoverage/results/weight_sweep/combo_best_low_alpha/checkpoints/a045/best_tradeoff.pth.tar`
 
 R40 在 ESTIMATOR_POLICY.json 的位置：`open_side_tracks[].candidate_id = "R40_a045"`，狀態 `external_gmf_complete_research_capacity_only_not_promotable`。COMBO 仍是唯一正式 baseline；R40 不進 approved alternates。
 
@@ -736,11 +736,11 @@ Storage note (2026-08-01)：R41 封存前完整快照、正式訓練與專用資
 - `r42_r41_best`、`r42_combo_latest`、`r42_r41_latest` 外部 GMF 補測完成；三者皆不堪作量測替代
 
 正式入口：
-- 實驗主報告：`D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\reports\R42_RESULTS.md`
-- 外部比較報告：`D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\reports\R42_EXTERNAL_COMPARE.md`
-- 訓練啟動器：`D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\scripts\launch_r42.py`
-- 資料包根目錄：`D:\GMM_2_Final\Training_Data\r42_microscopy_boundary_fidelity\`
-- 代表圖：`D:\GMM_2_Final\Experiments\R42_MicroscopyBoundaryFidelity\results\boundary_recon\r42_representative_boundary_sheet.png`
+- 實驗主報告：`Experiments/R42_MicroscopyBoundaryFidelity/reports/R42_RESULTS.md`
+- 外部比較報告：`Experiments/R42_MicroscopyBoundaryFidelity/reports/R42_EXTERNAL_COMPARE.md`
+- 訓練啟動器：`Experiments/R42_MicroscopyBoundaryFidelity/scripts/launch_r42.py`
+- 資料包根目錄：`Training_Data/r42_microscopy_boundary_fidelity`
+- 代表圖：`Experiments/R42_MicroscopyBoundaryFidelity/results/boundary_recon/r42_representative_boundary_sheet.png`
 
 R42 當前發現：資料與幾何目標可以推起通用顯微邊界忠實度；問題不在「模型完全學不會」，而在「推高通用邊界能力後，連續位移下的位置穩定性會退步」。低 alpha 權重平均證明能力不是小幅混合就能安全帶回；守門 KD 診斷證明單張影像老師牽引也不夠；外部 GMF 補測進一步確認這不是本地分析假象。下一輪應改做通用邊界位置一致性：對線條、格線、曲線、缺陷與大區塊建立已知位移 / phase / pitch 的序列約束，讓所有顯微結構的邊界位置穩定，不只是補環形。
 
@@ -752,9 +752,9 @@ One-line verdict: **all measured Round31 B1 hyperparameter candidates regressed 
 正式入口 / Formal entry points：
 
 - decision:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260316\round31\selected\reports\ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md`
+  `Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md`
 - external compare:
-  `D:\GMM_2_Final\Traing_Progress\organized_20260316\round31\selected\reports\ROUND31_EXTERNAL_COMPARE.md`
+  `Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md`
 
 measured candidates / 已量測候選：
 
@@ -776,11 +776,11 @@ One-line verdict: **the `R32Sandbox` internal winner failed the final external g
 正式入口 / Formal entry points：
 
 - sandbox README:
-  `D:\GMM_2_Final\Experiments\R32Sandbox\README.md`
+  `Experiments/R32Sandbox/README.md`
 - decision memo:
-  `D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md`
+  `Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md`
 - final external compare:
-  `D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_EXTERNAL_COMPARE.md`
+  `Experiments/R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md`
 
 核心數字 / Core numbers：
 
@@ -810,13 +810,13 @@ One-line role: **PSF-validation side track; pending external GMF; not the active
 正式入口 / Formal entry points：
 
 - sandbox README:
-  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\README.md`
+  `Experiments/R26NewPSFCheck/README.md`
 - status:
-  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\reports\STATUS_20260326.md`
+  `Experiments/R26NewPSFCheck/reports/STATUS_20260326.md`
 - PSF audit:
-  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\psf_audit\PSF_FORMAL_AUDIT_20260326.md`
+  `Experiments/R26NewPSFCheck/psf_audit/PSF_FORMAL_AUDIT_20260326.md`
 - promote compare:
-  `D:\GMM_2_Final\Experiments\R26NewPSFCheck\formal_newpsf_candidate\reports\NEW_PSF_FORMAL_R26_COMPARE.md`
+  `Experiments/R26NewPSFCheck/formal_newpsf_candidate/reports/NEW_PSF_FORMAL_R26_COMPARE.md`
 
 ## 5. Measurement Policy Status / 量測政策狀態
 
@@ -830,9 +830,9 @@ One-line role: **PSF-validation side track; pending external GMF; not the active
 正式入口 / Formal entry points：
 
 - divergence analysis:
-  `D:\GMM_2_Final\Experiments\R33RobustLoss\reports\INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md`
+  `Experiments/R33RobustLoss/reports/INTERNAL_EXTERNAL_DIVERGENCE_ANALYSIS.md`
 - machine-readable policy:
-  `D:\GMM_2_Final\ESTIMATOR_POLICY.json`
+  `ESTIMATOR_POLICY.json`
 
 量化修復狀態 / Quantization policy：
 
@@ -850,10 +850,10 @@ R26 研究線的 PSF 已於 2026-03-27 正式完成政策切換。
 | **legacy empirical baseline** | 舊 PSF | 歷史上取得較好經驗數值；保留用於引用與對照，不刪除，不再作為正式預設 |
 
 機器可讀 PSF 政策 / Machine-readable PSF policy：
-`D:\GMM_2_Final\docs\policy\PSF_STANDARD_POLICY.json`
+`docs/policy/PSF_STANDARD_POLICY.json`
 
 詳細說明 / Full details：
-`D:\GMM_2_Final\docs\policy\PSF_POLICY_TRANSITION_R26.md`
+`docs/policy/PSF_POLICY_TRANSITION_R26.md`
 
 ## 7. Next Decision Boundary / 下一個決策邊界
 

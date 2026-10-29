@@ -16,6 +16,6 @@ SEM驗證：通過。
 
 位移驗證：通過。
 
-獨立訓練包：`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Model_Packages\R134_DirectState_Precision_Standalone_20260915`。
+獨立訓練包：`Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915`。
 
 來源：`precision_revision/config/protocol.json`；目前狀態：`precision_revision/results/status.json`；位移進度：`precision_revision/results/motion/status.json`；實際套件測試：`precision_revision/results/operations/`。

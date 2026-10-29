@@ -6,9 +6,10 @@ import sys
 from pathlib import Path
 
 import torch
+_PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-PROJECT_ROOT = Path(r"D:\GMM_2_Final")
+PROJECT_ROOT = Path(str(_PROJECT_ROOT))
 MODEL_DIR = PROJECT_ROOT / "Model"
 if str(MODEL_DIR) not in sys.path:
     sys.path.insert(0, str(MODEL_DIR))

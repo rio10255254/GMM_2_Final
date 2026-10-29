@@ -7,6 +7,7 @@ import numpy as np
 import cv2
 import torch
 from torch.utils.data import Dataset,Sampler
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 ROOT=Path(__file__).resolve().parents[1]
 CONFIG=json.loads((ROOT/'config/experiment.json').read_text())
@@ -27,7 +28,7 @@ def fine_reliability(clean_observation,target,noise_sigma):
 
 class Scenes(Dataset):
     def __init__(self,split='train',epoch=0,limit=0,distance_orientation=None):
-        self.package=ROOT/CONFIG['data']['package_root']
+        self.package=PROJECT_ROOT/CONFIG['data']['package_root']
         self.records=[r for r in json.loads((self.package/'manifest.json').read_text())['records'] if r['split']==split]
         if limit:self.records=self.records[:limit]
         self.epoch=epoch;self.split=split

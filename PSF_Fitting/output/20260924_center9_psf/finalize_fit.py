@@ -13,10 +13,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.io import loadmat, savemat
 from scipy.signal import fftconvolve
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parent
-JULY = Path(r"D:\GMM_2_Final\PSF_Fitting\output\pillar_via_junction_psf_20260713\20x\fit_result\PSF_fitted_2D_FOVstack.mat")
+JULY = Path(str(PROJECT_ROOT / 'PSF_Fitting/output/pillar_via_junction_psf_20260713/20x/fit_result/PSF_fitted_2D_FOVstack.mat'))
 LOWER = np.array([-.3, -.3, -.1, 0, -.1, -.05, -.05, -.05, -.05, -.01, -.01, 0, -.01, -.01, .8])
 UPPER = np.array([.3, .3, .1, 1, .1, .05, .05, .05, .05, .01, .01, .3, .01, .01, 1.25])
 

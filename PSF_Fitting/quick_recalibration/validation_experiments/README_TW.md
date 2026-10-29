@@ -76,7 +76,7 @@
 | 理論 PSF 基底 | `PSF_Fitting/SimulatePSF/psf_multi.mat` |
 | BADS 套件 | `PSF_Fitting/bads-1.1.3/` |
 
-MATLAB Current Folder 必須設為 `d:\GMM_2_Final\PSF_Fitting\`。
+MATLAB Current Folder 必須設為 `PSF_Fitting`。
 
 ---
 

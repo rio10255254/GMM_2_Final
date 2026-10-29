@@ -6,6 +6,7 @@ from dataset import Bank
 from losses import objective
 from model import Model
 from utils import ROOT,data_config,load,model_config,now,save,setup,sha,train_config,verify_bank_lock
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 def lr_for(step,total,cfg):
  o=cfg['optimizer'];warm=min(cfg['warmup'],max(8,total//8))
  if step<=warm:return o['max_lr']*step/warm
@@ -17,7 +18,7 @@ def assess(model,bank,split,device,cfg,limit=None):
    b=bank.batch(split,i,device);out,parts=model(b['source'],b['operator_psf_indices'],True);loss,terms=objective(out,parts,b,model,cfg);task=sum(cfg['loss'][k]*terms[k] for k in ('image','gradient','pair_output','boundary'))+cfg['loss']['observation']*terms['observation'];rows.append(dict(total=float(loss),task=float(task),**{k:float(v) for k,v in terms.items()}))
  keys=rows[0].keys();return dict(split=split,parents=n,mean={k:sum(r[k] for r in rows)/n for k in keys})
 def main():
- p=argparse.ArgumentParser();p.add_argument('--run-name',required=True);p.add_argument('--short-updates',type=int);p.add_argument('--seed',type=int);p.add_argument('--assessment-limit',type=int,default=16);a=p.parse_args();cfg=train_config();mc=model_config();reference=data_config();seed=cfg['model_seed'] if a.seed is None else a.seed;setup(seed);verify_bank_lock();checkpoint_path=Path(mc['base_checkpoint']);assert sha(checkpoint_path)==mc['base_checkpoint_sha256'];bank=Bank(cfg);device=cfg['device'];model=Model(mc,ROOT).to(device);trainable=[p for p in model.parameters() if p.requires_grad];opt=torch.optim.AdamW(trainable,lr=cfg['optimizer']['max_lr'],weight_decay=cfg['optimizer']['weight_decay']);run=ROOT/'runs'/a.run_name
+ p=argparse.ArgumentParser();p.add_argument('--run-name',required=True);p.add_argument('--short-updates',type=int);p.add_argument('--seed',type=int);p.add_argument('--assessment-limit',type=int,default=16);a=p.parse_args();cfg=train_config();mc=model_config();reference=data_config();seed=cfg['model_seed'] if a.seed is None else a.seed;setup(seed);verify_bank_lock();checkpoint_path=Path(PROJECT_ROOT / mc['base_checkpoint']);assert sha(checkpoint_path)==mc['base_checkpoint_sha256'];bank=Bank(cfg);device=cfg['device'];model=Model(mc,ROOT).to(device);trainable=[p for p in model.parameters() if p.requires_grad];opt=torch.optim.AdamW(trainable,lr=cfg['optimizer']['max_lr'],weight_decay=cfg['optimizer']['weight_decay']);run=ROOT/'runs'/a.run_name
  if run.exists() and not (run/'latest.json').exists():raise FileExistsError('Run exists without a resumable checkpoint')
  run.mkdir(parents=True,exist_ok=True);(run/'checkpoints').mkdir(exist_ok=True);latest=run/'latest.json';log=run/'updates.jsonl';start=0;total=cfg['updates'] if a.short_updates is None else a.short_updates;formal=a.short_updates is None
  if latest.exists():

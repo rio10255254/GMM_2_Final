@@ -14,10 +14,10 @@ What should not be overstated:
 - The 0.4 mm certified line-width value exists, but the current Step displacement images do not include that line-width region.
 
 Full archive:
-D:\GMM_2_Final\_MOSR_Project_Archive_20260624
+_MOSR_Project_Archive_20260624
 
 R61 model-candidate line:
-D:\GMM_2_Final\Experiments\R61_STEP_Generalization_20260623
+Experiments/R61_STEP_Generalization_20260623
 
 Primary Step working folder:
-D:\GMM_2_Final\Step_analysis_20260623
+Step_analysis_20260623

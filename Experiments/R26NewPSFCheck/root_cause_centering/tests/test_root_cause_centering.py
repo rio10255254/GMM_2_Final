@@ -2,9 +2,10 @@ import sys
 from pathlib import Path
 
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\root_cause_centering")
+ROOT = Path(str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/root_cause_centering'))
 SCRIPTS = ROOT / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
@@ -19,12 +20,12 @@ from root_cause_centering_lib import (  # noqa: E402
 
 OLD_RUN = ROOT / "archived_inputs" / "r26sm035_recipe_profile_20260316"
 NEW_RUN = Path(
-    r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223"
+    str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/artifacts/package_cleanup_archive_20260326/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260326_093223')
 )
 OLD_PSF = Path(
-    r"D:\GMM_2_Final\Experiments\R26NewPSFCheck\artifacts\package_cleanup_archive_20260326\psf_swap_20260326_093203\PSF_fitted_2D_FOVstack.package_old.mat"
+    str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/artifacts/package_cleanup_archive_20260326/psf_swap_20260326_093203/PSF_fitted_2D_FOVstack.package_old.mat')
 )
-NEW_PSF = Path(r"D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat")
+NEW_PSF = Path(str(PROJECT_ROOT / 'PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat'))
 
 
 def test_build_delta_matrix_detects_recipe_drift():

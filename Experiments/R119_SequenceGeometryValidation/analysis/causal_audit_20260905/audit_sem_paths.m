@@ -1,5 +1,6 @@
 function audit_sem_paths()
-root='D:/GMM_2_Final/Experiments/R119_SequenceGeometryValidation';
+    PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath'))))));
+root=fullfile(PROJECT_ROOT, 'Experiments/R119_SequenceGeometryValidation');
 out=fullfile(root,'analysis','causal_audit_20260905','sem_paths');
 saved=load(fullfile(root,'results','formal_sem','results','masks','acm_primary_masks.mat'));
 names={'Raw','base','no_detail','no_width','no_shift','attenuation'};

@@ -1,8 +1,8 @@
 function redraw_ablation_figures_v23()
 % Redraw the complete thesis ablation section in English.
 
-evaluationRoot = "D:\GMM_2_Final\Experiments\R63_CausalBoundaryMotionAblation\results\evaluation";
-outputRoot = "D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures\09_V23_ABLATION_COMPLETE_ENGLISH_20260727";
+evaluationRoot = "Experiments/R63_CausalBoundaryMotionAblation/results/evaluation";
+outputRoot = "Thesis_MOSR_Evidence/Final_Data_Figures/09_V23_ABLATION_COMPLETE_ENGLISH_20260727";
 figureDir = fullfile(outputRoot, "figures");
 tableDir = fullfile(outputRoot, "tables");
 ensure_dir(outputRoot);

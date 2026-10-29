@@ -13,7 +13,7 @@ PSF_Convolution.py
 
 輸入：
   Training_Data/generated/<stage_XX>/  (*.bmp/*.tif, 512×512 灰階)
-  D:/GMM_2_Final/PSF_Fitting/.../PSF_fitted_2D_FOVstack.mat
+  PSF_Fitting/.../PSF_fitted_2D_FOVstack.mat
     └─ psf_grid: (101, 101, 10, 10)  float64
 
 輸出：
@@ -28,6 +28,8 @@ import cv2
 import scipy.io as sio
 from scipy.signal import fftconvolve
 from typing import List, Optional
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 # ─────────────────────────────────────────────
 #  路徑設定
@@ -35,7 +37,7 @@ from typing import List, Optional
 BASE_DIR      = os.path.dirname(__file__)
 INPUT_ROOT    = os.path.join(BASE_DIR, "generated")
 OUTPUT_ROOT   = os.path.join(BASE_DIR, "generated_convolved")
-PSF_MAT_PATH  = r"D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat"
+PSF_MAT_PATH  = str(PROJECT_ROOT / 'PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat')
 IMAGE_EXTENSIONS = (".bmp", ".png", ".jpg", ".jpeg", ".tif", ".tiff")
 PHOTON_SCALE_RANGE = (45.0, 180.0)   # alpha：提高最低光子數，降低顆粒噪聲主導
 READ_NOISE_SIGMA_RANGE = (0.7, 2.2)  # sigma：收斂讀噪幅度，保留真實感但減少斑點污染

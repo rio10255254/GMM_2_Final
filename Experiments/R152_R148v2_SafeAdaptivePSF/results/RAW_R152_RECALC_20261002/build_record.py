@@ -62,7 +62,7 @@ def main():
     pillars=pd.read_csv(OUT/'per_pillar_geometry_RAW_R152.csv')
     sem_pillars=pd.read_csv(OUT/'SEM_size_by_pillar_RAW_R152.csv')
     mc,tc,dc=read(ROOT/'config/model.json'),read(ROOT/'config/train.json'),read(ROOT/'config/data.json')
-    base_root=Path(dc['source_experiment']);bc=read(base_root/'config/model.json');bt=read(base_root/'config/train.json')
+    base_root=Path(PROJECT / dc['source_experiment']);bc=read(base_root/'config/model.json');bt=read(base_root/'config/train.json')
     payload=read(base_root/'data/payload/manifest.json')
     cats=collections.Counter(e['category'] for e in payload['entries'])
     views=[v for e in payload['entries'] for v in e['views']]
@@ -544,7 +544,7 @@ SEM實物幾何曾用於系統PSF光學校準，並沒有把SEM直徑放進神�
 沒有重疊平均與額外接縫平滑。三張固定原尺寸影像的整張／分塊核對是以前完成的設定核對，本次保留原紀錄；不是今天重測硬體秒數。
 ''')
     add(table(['固定影像','平均绝對差，八位元灰階','最大差，灰階','接縫／一般區域平均差比例'],
-              [[Path(x['frame']).parent.name+'/'+Path(x['frame']).name,fmt(x['mean_abs_gray'],10),fmt(x['max_gray'],10),fmt(x['seam_to_interior_ratio'],4)] for x in tile['frames']]))
+              [[Path(PROJECT / x['frame']).parent.name+'/'+Path(PROJECT / x['frame']).name,fmt(x['mean_abs_gray'],10),fmt(x['max_gray'],10),fmt(x['seam_to_interior_ratio'],4)] for x in tile['frames']]))
     timings=[x for x in matched['frames'] if x['model']=='R152']
     median_matched=float(np.median([x['median_seconds'] for x in timings]))
     add(f'''同一RTX A6000、FP32、每張預跑一次、每張五次的三張實拍，R152中位秒數依序為{', '.join(fmt(x['median_seconds'],4) for x in timings)}秒，三張中位數的中位为{median_matched:.4f}秒／張。

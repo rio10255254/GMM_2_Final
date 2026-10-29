@@ -9,9 +9,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
-ROOT = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
+ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 LEGACY_ROOT = ROOT / "Final_Data_Figures" / "20260708_v41_standalone_full_validation"
 OUT_ROOT = ROOT / "Final_Data_Figures" / "20260710_v42_checkpoint_cd_validation"
 TABLE_DIR = OUT_ROOT / "tables"

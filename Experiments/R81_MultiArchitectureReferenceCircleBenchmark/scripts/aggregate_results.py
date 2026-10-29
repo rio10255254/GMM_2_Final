@@ -18,10 +18,11 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 from model_zoo import MODEL_SPECS  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 R80_TABLES = (
-    Path(r"D:\GMM_2_Final\Experiments\R80_InflectionReferenceCircleSEMValidation")
+    Path(str(PROJECT_ROOT / 'Experiments/R80_InflectionReferenceCircleSEMValidation'))
     / "results"
     / "tables"
 )

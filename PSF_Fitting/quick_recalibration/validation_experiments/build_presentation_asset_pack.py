@@ -14,9 +14,10 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-ROOT = Path(r"D:\GMM_2_Final\PSF_Fitting")
+ROOT = Path(str(PROJECT_ROOT / 'PSF_Fitting'))
 VE = ROOT / "quick_recalibration" / "validation_experiments"
 OUT = ROOT / "quick_recalibration" / "presentation_assets_20260623_L0_L1"
 

@@ -48,36 +48,36 @@
     "via": 1641.9986465187549
   },
   "mean_reference": {
-    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Training_Data\\r60_full_power\\hs100mg_basler\\r58_frac050_train\\manifest.json",
+    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r60_full_power/hs100mg_basler/r58_frac050_train/manifest.json",
     "sha256": "0f1ee65d8fcce6ba622d998cceca1332b363644cdac5e57f3ee06f4d769c87e8"
   },
   "current_SEM_matches_original_reference_arrays": [
     {
       "source": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\results\\masks\\acm_primary_masks.mat",
+        "path": "Experiments/R69_ACMContourSEMValidation/results/masks/acm_primary_masks.mat",
         "sha256": "2ac2e8e3d7eb45c09f1bac56c6db372c230639b0186ab5301e13cacdeb127fc3"
       },
       "all_reference_arrays_exact": true
     },
     {
       "source": {
-        "path": "D:\\GMM_2_Final\\Experiments\\R70_V42ACMContourSEMValidation\\results\\masks\\acm_primary_masks.mat",
+        "path": "Experiments/R70_V42ACMContourSEMValidation/results/masks/acm_primary_masks.mat",
         "sha256": "329ebe6444095ae21f1579d0779b5fc948d9af828848440217ff902bd71f529b"
       },
       "all_reference_arrays_exact": true
     }
   ],
   "SEM_source_code": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R69_ACMContourSEMValidation\\scripts\\run_acm_extraction.m",
+    "path": "Experiments/R69_ACMContourSEMValidation/scripts/run_acm_extraction.m",
     "sha256": "48ac881ab524cef020172f92699c515f4c93c70be1c405d6d8f093fa1b0f4a0b"
   },
   "inherited_soup_checkpoint": {
-    "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\reports\\r39_best_latest_soup_20260623\\r39_best_latest_a970.pth.tar",
+    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/r39_best_latest_soup_20260623/r39_best_latest_a970.pth.tar",
     "sha256": "26051fd87de066821e0df751c4855d319842e2ad5c7038b6d6499e327bf520c0"
   },
   "inherited_soup_metadata": {
-    "best": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotrect_groupbalanced_identityposguard_region_kd_boundary_focus_r39_from_a948_groupbalanced_identityposguard_rotrect_v10_80b_20260623_083645\\weights\\best_tradeoff.pth.tar",
-    "latest": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Traing_Progress\\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotrect_groupbalanced_identityposguard_region_kd_boundary_focus_r39_from_a948_groupbalanced_identityposguard_rotrect_v10_80b_20260623_083645\\weights\\latest.pth.tar",
+    "best": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotrect_groupbalanced_identityposguard_region_kd_boundary_focus_r39_from_a948_groupbalanced_identityposguard_rotrect_v10_80b_20260623_083645/weights/best_tradeoff.pth.tar",
+    "latest": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotrect_groupbalanced_identityposguard_region_kd_boundary_focus_r39_from_a948_groupbalanced_identityposguard_rotrect_v10_80b_20260623_083645/weights/latest.pth.tar",
     "alpha_latest": 0.97
   },
   "older_ancestry_not_fully_closed": true

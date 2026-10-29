@@ -9,13 +9,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "results" / "sem_signed_profile_analysis"
 SOURCES = {
-    "R61v16": Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\masks\acm_primary_masks.mat"),
-    "R79E23": Path(r"D:\GMM_2_Final\Experiments\R80_R79E23vsE100GeneralizationValidation\results\acm_sem\R79E23\results\masks\acm_primary_masks.mat"),
+    "R61v16": Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/masks/acm_primary_masks.mat')),
+    "R79E23": Path(str(PROJECT_ROOT / 'Experiments/R80_R79E23vsE100GeneralizationValidation/results/acm_sem/R79E23/results/masks/acm_primary_masks.mat')),
     "R108F_full": ROOT / "results" / "acm" / "SEM" / "results" / "masks" / "acm_primary_masks.mat",
     "R108F_flow_only": ROOT / "results" / "acm" / "SEM_operator_ablation" / "flow_only" / "results" / "masks" / "acm_primary_masks.mat",
     "R108F_sharpen_only": ROOT / "results" / "acm" / "SEM_operator_ablation" / "sharpen_only" / "results" / "masks" / "acm_primary_masks.mat",

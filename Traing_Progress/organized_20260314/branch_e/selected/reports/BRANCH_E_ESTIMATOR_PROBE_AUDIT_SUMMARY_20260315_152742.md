@@ -2,7 +2,7 @@
 
 - control_candidate: be_ctrl_edge
 - best_candidate: be_soft_band
-- selected_checkpoint: D:\GMM_2_Final\Traing_Progress\organized_20260314\branch_e\selected\runs\training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453\weights\best_tradeoff.pth.tar
+- selected_checkpoint: Traing_Progress/organized_20260314/branch_e/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453/weights/best_tradeoff.pth.tar
 - center_improvement_vs_control: 7.641896
 - estimator_probe_success: False
 

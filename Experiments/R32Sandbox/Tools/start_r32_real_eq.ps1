@@ -1,5 +1,5 @@
 param(
-    [string]$PythonExe = "C:\Users\Rio\anaconda3\python.exe",
+    [string]$PythonExe = python,
     [string]$CandidateFilter = "r32_real_eq_finetune",
     [double]$ExpectDy = 0.8,
     [int]$SweepEpochs = 40,

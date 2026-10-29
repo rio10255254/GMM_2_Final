@@ -12,11 +12,12 @@ import numpy as np
 import pandas as pd
 import torch
 from skimage.metrics import structural_similarity
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-R82 = Path(r"D:\GMM_2_Final\Experiments\R82_R39R40CrossSceneGeneralizationBenchmark")
-R83 = Path(r"D:\GMM_2_Final\Experiments\R83_R79SevereMicroscopyStrengthening")
+R82 = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark'))
+R83 = Path(str(PROJECT_ROOT / 'Experiments/R83_R79SevereMicroscopyStrengthening'))
 OUTPUT = ROOT / "results" / "final_confirmation"
 TABLES = OUTPUT / "tables"
 RECON = OUTPUT / "reconstructions"
@@ -241,7 +242,7 @@ def prepare_r73_r74(module, model) -> None:
 def prepare_sem(module, model, r82_config: dict) -> None:
     sem = r82_config["sem_acm"]
     root = OUTPUT / "SEM_reserved"
-    raw_root = Path(sem["raw_input_dir"])
+    raw_root = Path(PROJECT_ROOT / sem["raw_input_dir"])
     r84_dir = root / "results" / "reconstructions" / "sem_acm" / "R84"
     for exposure in sem["optical_exposures"]:
         source = raw_root / f"{exposure}.bmp"
@@ -263,7 +264,7 @@ def prepare_sem(module, model, r82_config: dict) -> None:
 
 def prepare_real_fov_and_fixed_tiles(module, model, r82_config: dict, tile_rows: list[dict]) -> None:
     real = r82_config["real_fov"]
-    raw_root = Path(real["locked_raw_root"])
+    raw_root = Path(PROJECT_ROOT / real["locked_raw_root"])
     sources = sorted(raw_root.rglob("*.bmp"))
     if len(sources) != int(real["expected_frames"]):
         raise RuntimeError(f"Expected {real['expected_frames']} real frames, found {len(sources)}")
@@ -278,7 +279,7 @@ def prepare_real_fov_and_fixed_tiles(module, model, r82_config: dict, tile_rows:
         if index % 50 == 0:
             print(f"real FOV {index}/{len(sources)}", flush=True)
     fixed.extend(sorted((R83 / "data" / "live_validation").glob("*.bmp")))
-    sem_root = Path(r82_config["sem_acm"]["raw_input_dir"])
+    sem_root = Path(PROJECT_ROOT / r82_config["sem_acm"]["raw_input_dir"])
     fixed.extend(sem_root / f"{exposure}.bmp" for exposure in (13, 18, 24))
     if len(fixed) != 18:
         raise RuntimeError(f"Expected 18 fixed tile samples, found {len(fixed)}")

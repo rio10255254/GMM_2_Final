@@ -31,6 +31,7 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset, Sampler
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1431,7 +1432,7 @@ def preflight(run_kind: str) -> tuple[Path, dict[str, Any], dict[str, Any]]:
         raise RuntimeError("Scratch guard rejected a forbidden launcher token")
     if run_kind == "formal" and DESIGN.get("formal_training_authorized") is not True:
         raise RuntimeError("R99 formal training has not passed preflight authorization")
-    package = Path(DESIGN["dataset"]["source_package"])
+    package = Path(PROJECT_ROOT / DESIGN["dataset"]["source_package"])
     manifest_path, audit_path = package / "manifest.json", package / "audit.json"
     if not manifest_path.is_file() or not audit_path.is_file():
         raise FileNotFoundError(f"Dataset and audit are required: {package}")

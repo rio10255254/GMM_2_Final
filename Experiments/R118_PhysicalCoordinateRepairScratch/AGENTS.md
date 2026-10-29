@@ -1,6 +1,6 @@
 # R118 handoff entry
 
-Read the parent D:/GMM_2_Final/AGENTS.md and PROJECT_STATE.md first.
+Read the parent AGENTS.md and PROJECT_STATE.md first.
 For next-design work start at NEXT_STEPS.md and follow its full reading order.
 Older GMF production gates do not override the current thesis scope: accurate
 shape, stable displacement and faithful detail.

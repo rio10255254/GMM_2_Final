@@ -13,9 +13,10 @@ import cv2
 import numpy as np
 import pandas as pd
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-R143 = Path(r"D:\GMM_2_Final\Experiments\R143_PSF25_MatchedPairs")
-R140 = Path(r"D:\GMM_2_Final\Experiments\R140v2_StableUNet")
+R143 = Path(str(PROJECT_ROOT / 'Experiments/R143_PSF25_MatchedPairs'))
+R140 = Path(str(PROJECT_ROOT / 'Experiments/R140v2_StableUNet'))
 PAIRS = ((0, 1), (899, 900), (924, 925))
 NOISE_SIGMA_GRAY = 1.5
 REPEATS = 8

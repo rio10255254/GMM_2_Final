@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 $ExperimentRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$Python = "C:\Users\Rio\anaconda3\python.exe"
+$Python = python
 $Runner = Join-Path $ExperimentRoot "scripts\run_r80.py"
 
 Set-Location $ExperimentRoot

@@ -4,10 +4,11 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 R=Path(__file__).resolve().parents[1];O=R/'results/sem_reference_followup'
-old=cv2.imread('H:/From_2TB_D_disk/13_thesis/matlab/ch4/SEMdataset/image_B2D/13.bmp',0)
-crop=cv2.imread('H:/From_2TB_D_disk/13_thesis/matlab/ch4/SEMdataset/image_cropped/13.bmp',0)
-new=cv2.imread('C:/Users/Rio/Downloads/20260902_100MF_uncertainty/20260902_100MF_uncertainty/20260903/001804_XY_0/1.bmp',0)
+old=cv2.imread(str(PROJECT_ROOT / 'Shared_Sources/SEM_Originals/full_optical_B2D/13.bmp'),0)
+crop=cv2.imread(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack/13.bmp'),0)
+new=cv2.imread(str(PROJECT_ROOT / 'Shared_Sources/PI_Repeatability_20260903/raw/001804_XY_0/1.bmp'),0)
 res=cv2.matchTemplate(old,crop,cv2.TM_CCOEFF_NORMED);_,corr,_,loc=cv2.minMaxLoc(res)
 print('Legacy crop location',loc,'correlation',corr,flush=True)
 ref=loadmat(R.parent/'R135_UnifiedModelComparison/validation/sem_reference.mat');cent=ref['opt_centers']+loc

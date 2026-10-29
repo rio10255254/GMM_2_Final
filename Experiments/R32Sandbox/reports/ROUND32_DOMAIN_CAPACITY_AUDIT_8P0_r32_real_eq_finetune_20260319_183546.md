@@ -1,7 +1,7 @@
 # Process Probe Audit
 
 - candidate: r32_real_eq_finetune
-- checkpoint_path: D:\GMM_2_Final\Experiments\R32Sandbox\artifacts\training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431\weights\best_tradeoff.pth.tar
+- checkpoint_path: Experiments/R32Sandbox/artifacts/training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431/weights/best_tradeoff.pth.tar
 - geom_method: edge_band_refine
 - expect_dy: 8.00
 - process_score: -70.052579

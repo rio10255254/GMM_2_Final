@@ -60,7 +60,7 @@ class MeasurementResult:
 
 
 def _python() -> str:
-    return sys.executable or r"C:\Users\Rio\anaconda3\python.exe"
+    return sys.executable or "python"
 
 
 def _read_csv(path: Path) -> list[dict]:

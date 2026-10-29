@@ -3,7 +3,7 @@ from pathlib import Path
 import subprocess
 import sys
 ROOT=Path(__file__).resolve().parent
-PYTHON=Path(r'C:\Users\Rio\anaconda3\python.exe')
+PYTHON=Path('python')
 if __name__=='__main__':
     interpreter=str(PYTHON) if PYTHON.is_file() else sys.executable
     checked=subprocess.call([interpreter,str(ROOT/'validation/preflight.py')],cwd=ROOT)

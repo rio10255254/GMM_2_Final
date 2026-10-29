@@ -1,6 +1,6 @@
 # Full-sequence GMF package
 
-Source analysis root: D:\GMM_2_Final\20260702_100MG_displacement_analysis
+Source analysis root: 20260702_100MG_displacement_analysis
 
 This full package preserves every frame from the capture. Use it to see how external GMF handles the complete real run, including pauses.
 

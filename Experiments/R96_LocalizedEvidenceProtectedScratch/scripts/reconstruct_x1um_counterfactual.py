@@ -19,10 +19,11 @@ import time
 import cv2
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path(r"D:\GMM_2_Final\20260702_100MG_位移_50x\x_1um")
+SOURCE = Path(str(PROJECT_ROOT / '20260702_100MG_位移_50x/x_1um'))
 CHECKPOINT = ROOT / "weights" / "formal" / "seed_960041" / "R96_scratch_seed960041_20260813_131438" / "weights" / "epoch_044.pth.tar"
 OUTPUT = ROOT / "results" / "x1um_counterfactual_reconstruction"
 

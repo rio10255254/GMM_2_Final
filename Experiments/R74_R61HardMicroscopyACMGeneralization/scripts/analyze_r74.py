@@ -9,11 +9,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.io import loadmat
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 os.environ["GMM_ACM_EXPERIMENT_ROOT"] = str(ROOT)
-BASE_PATH = Path(r"D:\GMM_2_Final\Experiments\R73_R61ExpandedSyntheticACMGeneralization\scripts\analyze_r73.py")
+BASE_PATH = Path(str(PROJECT_ROOT / 'Experiments/R73_R61ExpandedSyntheticACMGeneralization/scripts/analyze_r73.py'))
 spec = importlib.util.spec_from_file_location("r73_analysis_base", BASE_PATH)
 base = importlib.util.module_from_spec(spec)
 assert spec.loader is not None

@@ -1,6 +1,7 @@
 from pathlib import Path
 import shutil,subprocess,hashlib,json
-P=Path(r'D:\GMM_2_Final\Experiments\R139_UNetRecurrentPrototype');repo=P.parents[1];ref=repo/'Experiments/R130_Clean';old=repo/'Experiments/R138_V42PSF8'
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+P=Path(str(PROJECT_ROOT / 'Experiments/R139_UNetRecurrentPrototype'));repo=P.parents[1];ref=repo/'Experiments/R130_Clean';old=repo/'Experiments/R138_V42PSF8'
 def sha(p):
  h=hashlib.sha256()
  with open(p,'rb') as f:

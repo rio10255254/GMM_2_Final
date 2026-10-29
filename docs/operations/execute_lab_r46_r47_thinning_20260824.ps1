@@ -1,11 +1,12 @@
 param(
     [switch]$Execute
 )
+$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$repoRoot = 'D:\GMM_2_Final'
+$repoRoot = $ProjectRoot
 $planPath = Join-Path $repoRoot 'docs\operations\LAB_R46_R47_ARCHIVE_DELETE_PLAN_20260824.json'
 $plan = Get-Content -LiteralPath $planPath -Raw | ConvertFrom-Json
 if ($plan.status -ne 'prearchive_exact_targets_verified') {

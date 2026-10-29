@@ -9,13 +9,14 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL_DIR = ROOT / "model"
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
 PARENT = CONFIG["parent_model"]
-SOURCE = Path(PARENT["checkpoint"])
+SOURCE = Path(PROJECT_ROOT / PARENT["checkpoint"])
 TARGET = ROOT / PARENT["seed_checkpoint"]
 REPORT = ROOT / "reports" / "seed_parity_audit.json"
 MONITOR = ROOT / "data" / "live_validation" / "50x_array_raw.bmp"

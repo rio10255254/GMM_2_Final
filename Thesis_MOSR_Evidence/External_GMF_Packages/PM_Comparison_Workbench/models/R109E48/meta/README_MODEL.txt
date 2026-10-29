@@ -1,6 +1,6 @@
 模型：R109E48
-來源原圖 : D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\Pitch1um_Y_100_Raw_Even_R109E48\pitch1um_y100_raw\bmp
-來源重建 : D:\GMM_2_Final\Thesis_MOSR_Evidence\External_GMF_Packages\Pitch1um_Y_100_Raw_Even_R109E48\pitch1um_y100_r109_e48\bmp
+來源原圖 : Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/pitch1um_y100_raw/bmp
+來源重建 : Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/pitch1um_y100_r109_e48/bmp
 影格數   : 101
 
 執行外部工具時

@@ -10,18 +10,17 @@ import cv2
 import numpy as np
 import pandas as pd
 from scipy.ndimage import gaussian_filter1d, map_coordinates
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 
 EXPERIMENT = Path(__file__).resolve().parent
 MANIFEST_PATH = EXPERIMENT / "evaluation_manifest.json"
 PILLAR_SEM_META = {
     "50x": Path(
-        r"D:\GMM_2_Final\PSF_Fitting\output"
-        r"\deconvolution_baseline_psf_20260715\50x\selected_frame.json"
+        str(PROJECT_ROOT / 'PSF_Fitting/output/deconvolution_baseline_psf_20260715/50x/selected_frame.json')
     ),
     "20x": Path(
-        r"D:\GMM_2_Final\PSF_Fitting\output"
-        r"\deconvolution_baseline_psf_20260715\20x\selected_frame.json"
+        str(PROJECT_ROOT / 'PSF_Fitting/output/deconvolution_baseline_psf_20260715/20x/selected_frame.json')
     ),
 }
 STATIC_SEQUENCES = {"50x": "50x_x_0p5um", "20x": "20x_0p5um"}
@@ -145,7 +144,7 @@ def method_sequence_dir(
 ) -> Path:
     if method == "Raw":
         return raw_dir
-    root = Path(manifest["methods"][method]["sequence_root"])
+    root = Path(PROJECT_ROOT / manifest["methods"][method]["sequence_root"])
     mapped = manifest["sequence_name_map"][sequence_name][method]
     return root / mapped
 
@@ -154,8 +153,8 @@ def circular_references(
     manifest: dict[str, Any],
     magnification: str,
 ) -> tuple[dict[str, Any], dict[str, list[dict[str, Any]]]]:
-    pillar_config = json.loads(Path(manifest["pillar_config"]).read_text(encoding="utf-8"))
-    via_config = json.loads(Path(manifest["via_config"]).read_text(encoding="utf-8"))
+    pillar_config = json.loads(Path(PROJECT_ROOT / manifest["pillar_config"]).read_text(encoding="utf-8"))
+    via_config = json.loads(Path(PROJECT_ROOT / manifest["via_config"]).read_text(encoding="utf-8"))
     sequence_name = STATIC_SEQUENCES[magnification]
     pillar_sequence = pillar_config["sequences"][sequence_name]
     via_sequence = via_config["sequences"][sequence_name]

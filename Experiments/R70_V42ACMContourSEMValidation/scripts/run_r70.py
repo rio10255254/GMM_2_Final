@@ -8,13 +8,14 @@ import sys
 
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-R69_ROOT = Path(CONFIG["shared_reference"]["r69_root"])
-RAW_DIR = Path(CONFIG["shared_reference"]["raw_input_dir"])
-RECON_DIR = Path(CONFIG["inference"]["reconstruction_dir"])
+R69_ROOT = Path(PROJECT_ROOT / CONFIG["shared_reference"]["r69_root"])
+RAW_DIR = Path(PROJECT_ROOT / CONFIG["shared_reference"]["raw_input_dir"])
+RECON_DIR = Path(PROJECT_ROOT / CONFIG["inference"]["reconstruction_dir"])
 RECON_ROOT = ROOT / "results" / "inference_runs"
 PYTHON = Path(CONFIG["inference"]["python"])
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
@@ -46,9 +47,9 @@ def reconstruct() -> None:
     run(
         [
             str(PYTHON),
-            model["inference_script"],
+            str(PROJECT_ROOT / model["inference_script"]),
             "--weights",
-            model["checkpoint"],
+            str(PROJECT_ROOT / model["checkpoint"]),
             "--input-dir",
             str(RAW_DIR),
             "--recon-root",

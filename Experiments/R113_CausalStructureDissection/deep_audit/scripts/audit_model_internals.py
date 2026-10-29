@@ -14,11 +14,12 @@ import pandas as pd
 import torch
 import torch.nn.functional as F
 from sklearn.metrics import average_precision_score, roc_auc_score
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
-R109 = Path(CONFIG["sources"]["r109_root"])
+R109 = Path(PROJECT_ROOT / CONFIG["sources"]["r109_root"])
 OUTPUT = ROOT / "results" / "model_internals"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(R109 / "model"))
@@ -299,7 +300,7 @@ def main() -> int:
     checkpoint_frame = pd.DataFrame(rows)
     checkpoint_frame.to_csv(OUTPUT / "checkpoint_internal_dynamics.csv", index=False, encoding="utf-8-sig")
 
-    final_checkpoint = torch.load(Path(CONFIG["sources"]["r109_checkpoint"]), map_location=DEVICE, weights_only=False)
+    final_checkpoint = torch.load(Path(PROJECT_ROOT / CONFIG["sources"]["r109_checkpoint"]), map_location=DEVICE, weights_only=False)
     model.load_state_dict(final_checkpoint["model"])
     invariance, invariance_summary = representation_invariance(model, indices[:12])
     invariance.to_csv(OUTPUT / "representation_invariance_pairs.csv", index=False, encoding="utf-8-sig")

@@ -9,6 +9,7 @@ import pandas as pd
 from scipy.ndimage import gaussian_filter1d
 from scipy.signal import correlate, correlation_lags, find_peaks
 from scipy.stats import wilcoxon
+PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 
 OUTPUT = Path(__file__).resolve().parents[1]
@@ -17,17 +18,13 @@ CROPS = OUTPUT / "images"
 PIXEL_UM = 0.069
 
 SELECTION_PATH = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\04_V42_NEURAL_NETWORK_RESULTS\tables\top30_raw_motion_selection.csv"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv')
 )
 BASE_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments"
-    r"\BaseUNet_Baseline_20260718\results_full_data_fixed_psf_tiled_e30"
-    r"\real_inference\sequences"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/real_inference/sequences')
 )
 MOSR_ROOT = Path(
-    r"D:\GMM_2_Final\Thesis_MOSR_Evidence\Final_Data_Figures"
-    r"\02_V42_E120_SOURCE_MATERIAL\reconstructions"
+    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions')
 )
 
 METHODS = ("Raw", "Base U-Net", "MOSR")
@@ -35,8 +32,7 @@ SEQUENCES = {
     "50x_x_0p5um": {
         "nominal_step_um": 0.5,
         "raw": Path(
-            r"D:\GMM_2_Final\20260702_100MG_displacement_analysis"
-            r"\raw_inputs\x_0p5um\bmp"
+            str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp')
         ),
         "base": BASE_ROOT / "50x_x_0p5um",
         "mosr": MOSR_ROOT / "50x_0p5um",
@@ -44,8 +40,7 @@ SEQUENCES = {
     "50x_x_1um": {
         "nominal_step_um": 1.0,
         "raw": Path(
-            r"D:\GMM_2_Final\20260702_100MG_displacement_analysis"
-            r"\raw_inputs\x_1um\bmp"
+            str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')
         ),
         "base": BASE_ROOT / "50x_x_1um",
         "mosr": MOSR_ROOT / "50x_1um",

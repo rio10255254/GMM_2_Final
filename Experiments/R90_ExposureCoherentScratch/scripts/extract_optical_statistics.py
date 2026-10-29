@@ -16,6 +16,7 @@ from typing import Any
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -161,7 +162,7 @@ def main() -> int:
     config = DESIGN["optical_statistics"]
     sets = [
         analyse_set(
-            Path(path),
+            Path(PROJECT_ROOT / path),
             int(config["maximum_frames_per_set"]),
             int(config["flat_patch_size"]),
             int(config["flat_patches_per_frame"]),

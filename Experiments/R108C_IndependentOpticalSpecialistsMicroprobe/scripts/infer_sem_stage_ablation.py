@@ -11,10 +11,11 @@ import cv2
 import numpy as np
 import torch
 import torch.nn.functional as F
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\inputs\sem_paired_50x_exposure_stack")
+SOURCE = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
 OUTPUT = ROOT / "results" / "sem_stage_ablation_g0p25"
 INFER_PATH = ROOT / "scripts" / "infer_no_radiometry_folder.py"
 

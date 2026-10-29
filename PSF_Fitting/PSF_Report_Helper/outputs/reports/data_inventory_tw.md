@@ -2,8 +2,8 @@
 
 ## 採用資料
 
-- PSF stack：`D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\PSF_fitted_2D_FOVstack.mat`
-- 批次摘要：`D:\GMM_2_Final\PSF_Fitting\Crop_circle_FreqFiltered\Fits\batch_results.csv`
+- PSF stack：`PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`
+- 批次摘要：`PSF_Fitting/Crop_circle_FreqFiltered/Fits/batch_results.csv`
 - 選擇原則：使用明確指定的資料路徑。
 
 ## 資料完整性

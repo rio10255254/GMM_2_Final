@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 from scipy.io import loadmat
 from scipy.stats import wilcoxon
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,12 +19,12 @@ SEM_ROOT = ROOT / "results" / "full_validation_epoch055" / "sem_acm"
 R90_TABLE = SEM_ROOT / "acm_output" / "R90E55" / "tables" / "primary_contour_metrics.csv"
 R90_MASK = SEM_ROOT / "acm_output" / "R90E55" / "masks" / "stage_primary_masks.mat"
 FULL_ACM_TABLE_ROOT = SEM_ROOT / "sensitivity_full" / "results" / "tables"
-BASE_MASK = Path(r"D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch\results\final_validation\sem_acm_epoch100\acm_validation\results\masks\acm_primary_masks.mat")
-R69_TABLE = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\tables\primary_contour_metrics.csv")
-R89_TABLE = Path(r"D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch\results\final_validation\sem_acm_epoch100\acm_validation\results\tables\primary_contour_metrics.csv")
+BASE_MASK = Path(str(PROJECT_ROOT / 'Experiments/R89_MeasurementNativeScratch/results/final_validation/sem_acm_epoch100/acm_validation/results/masks/acm_primary_masks.mat'))
+R69_TABLE = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/tables/primary_contour_metrics.csv'))
+R89_TABLE = Path(str(PROJECT_ROOT / 'Experiments/R89_MeasurementNativeScratch/results/final_validation/sem_acm_epoch100/acm_validation/results/tables/primary_contour_metrics.csv'))
 RAW_DIR = ROOT / "results" / "full_validation_epoch055" / "sem_acm" / "locked_optical_inputs"
-R61_DIR = Path(r"D:\GMM_2_Final\Experiments\R69_ACMContourSEMValidation\results\inference_runs\reconstruct_progress_best_tradeoff_in_sem_paired_50x_exposure_stack_20260623_200020\r61v16_psfoff_sem_paired_50x")
-R89_DIR = Path(r"D:\GMM_2_Final\Experiments\R89_MeasurementNativeScratch\results\final_validation\sem_acm_epoch100\reconstruction")
+R61_DIR = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/results/inference_runs/reconstruct_progress_best_tradeoff_in_sem_paired_50x_exposure_stack_20260623_200020/r61v16_psfoff_sem_paired_50x'))
+R89_DIR = Path(str(PROJECT_ROOT / 'Experiments/R89_MeasurementNativeScratch/results/final_validation/sem_acm_epoch100/reconstruction'))
 R90_DIR = SEM_ROOT / "stage_root" / "R90E55" / "reconstruction"
 OUTPUT = ROOT / "reports" / "full_validation_epoch055" / "sem_acm"
 

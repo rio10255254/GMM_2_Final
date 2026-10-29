@@ -9,7 +9,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $projectRoot = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
-$pythonExe = "C:\Users\Rio\anaconda3\python.exe"
+$pythonExe = python
 
 Push-Location $projectRoot
 try {

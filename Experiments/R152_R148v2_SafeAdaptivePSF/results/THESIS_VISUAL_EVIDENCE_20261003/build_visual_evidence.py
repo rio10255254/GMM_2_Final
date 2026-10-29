@@ -17,6 +17,7 @@ import pandas as pd
 from scipy.io import loadmat
 import torch
 from pypdf import PdfWriter
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 OUT=Path(__file__).resolve().parent
 ROOT=OUT.parents[1]
@@ -57,7 +58,7 @@ def fwhm(line):
 def main():
     for p in (OUT,DOC,FIG,DATA,CAL):p.mkdir(parents=True,exist_ok=True)
     lock=read(ROOT/'calibration/BANK_LOCK.json')
-    bank_path=ROOT/'calibration/measured_psf_bank.npz';mat_path=Path(lock['source_mat_path'])
+    bank_path=ROOT/'calibration/measured_psf_bank.npz';mat_path=Path(PROJECT_ROOT / lock['source_mat_path'])
     assert sha(bank_path)==lock['bank_sha256'] and sha(mat_path)==lock['source_mat_sha256']
     with np.load(bank_path,allow_pickle=False) as z:bank=z['all_kernels'].copy()
     mat=loadmat(mat_path);ordered=np.stack([mat['psf_grid'][:,:,r,c] for r in range(5) for c in range(5)])
@@ -65,7 +66,7 @@ def main():
     assert np.isfinite(bank).all() and (bank>=0).all() and np.max(np.abs(bank.sum((1,2))-1))<1e-12
     names=[str(mat['source_image_names_row_major'][r,c].item()) for r in range(5) for c in range(5)]
     assert names==lock['source_image_names_row_major'] and abs(float(mat['object_pixel_um'].item())-PX_UM)<1e-15
-    complete=read(ROOT/'runs/formal_8192/training_complete.json');cp_path=Path(complete['deployed_checkpoint']['path'])
+    complete=read(ROOT/'runs/formal_8192/training_complete.json');cp_path=Path(PROJECT_ROOT / complete['deployed_checkpoint']['path'])
     assert sha(cp_path)==complete['deployed_checkpoint']['sha256']
     cp=torch.load(cp_path,map_location='cpu',weights_only=False)
     actual_bank=cp['model']['psf_fusion.bank'][:,0].numpy()

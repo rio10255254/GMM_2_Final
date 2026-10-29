@@ -28,5 +28,5 @@ The fitted Y slope is `-8.0194 px/step`, essentially matching the commanded `-8 
 ## Files
 
 - Source score log: `E:/Archive/GMM_Software_residual/GmmVisionToolExe_20260107/GMF_score.txt`
-- New tiled images: `D:/GMM_2_Final/Thesis_MOSR_Evidence/External_GMF_Packages/GmmVisionTool_FixedFlow_Benchmark/r61v11_tiled_unique`
+- New tiled images: `Thesis_MOSR_Evidence/External_GMF_Packages/GmmVisionTool_FixedFlow_Benchmark/r61v11_tiled_unique`
 - Machine-readable readout: `analysis/r61v11_gmf_analysis.json`

@@ -4,8 +4,9 @@ import hashlib,json
 import numpy as np
 import pandas as pd
 from PIL import Image
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT=Path(__file__).resolve().parents[1]
-SRC=Path('D:/GMM_2_Final/Experiments/R152_R148v2_SafeAdaptivePSF')
+SRC=Path(str(PROJECT_ROOT / 'Experiments/R152_R148v2_SafeAdaptivePSF'))
 OUT=ROOT/'results/scan_repeatability';OUT.mkdir(parents=True,exist_ok=True)
 ASSET=ROOT/'poster_build/scan_assets';ASSET.mkdir(parents=True,exist_ok=True)
 MODEL='R152-R148v2-SafeAdaptivePSF'

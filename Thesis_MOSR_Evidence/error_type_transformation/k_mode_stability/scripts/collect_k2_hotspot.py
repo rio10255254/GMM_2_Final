@@ -13,9 +13,10 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
-ROOT = Path("D:/GMM_2_Final")
+ROOT = Path(str(PROJECT_ROOT))
 SOURCE = ROOT / "Experiments/R38v2SeqFixed/results/720angle_analysis"
 OUT_K = ROOT / "Thesis_MOSR_Evidence/error_type_transformation/k_mode_stability/results"
 OUT_H = ROOT / "Thesis_MOSR_Evidence/error_type_transformation/residual_hotspot/results"

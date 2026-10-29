@@ -6,6 +6,8 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
+from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 OUT=ROOT/'results/lsc/four_model_analysis';T=OUT/'tables';FIG=ROOT/'reports/lsc_four_model_figures';REPORT=ROOT/'reports/R136_LSC_FOUR_MODEL_RESULTS.md'
 MODELS=['Raw','R61','R129','R128'];COLORS={'Raw':'#565D67','R61':'#117C99','R129':'#C56B2A','R128':'#8054A5'}
 
@@ -14,7 +16,7 @@ def protected(plan):
 
 def prepare():
     plan=load(ROOT/'config/r128_extension.json');protected(plan);cfg=load(ROOT/'config/lsc_plan.json');audit=load(OUT/'verification.json');assert audit['complete'] and audit['independent_circle_fits']==33480
-    assert sha(cfg['core_source']['path'])==cfg['core_source']['sha256'];assert sha(plan['models']['R128']['checkpoint']['path'])==plan['models']['R128']['checkpoint']['sha256']
+    assert sha(str(PROJECT_ROOT / cfg['core_source']['path']))==cfg['core_source']['sha256'];assert sha(plan['models']['R128']['checkpoint']['path'])==plan['models']['R128']['checkpoint']['sha256']
     complete=load(ROOT/'results/R128/complete.json');assert complete['frames']==930 and len(complete['records'])==930
     for r in complete['records']:
         assert Path(r['values']['path']).is_file() and Path(r['image']['path']).is_file()

@@ -30,6 +30,7 @@ sys.path.insert(0, str(TRAINER_RUNTIME_DIR))
 sys.path.insert(0, str(MODEL_DIR))
 
 from r83_dataset import audit_package, build_package  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 def sha256(path: Path) -> str:
@@ -98,7 +99,7 @@ def assert_runtime_contract(trainer) -> dict:
 
 def assert_seed_checkpoint() -> dict:
     parent = CONFIG["parent_model"]
-    source = experiment_path(parent["checkpoint"])
+    source = experiment_path(str(PROJECT_ROOT / parent["checkpoint"]))
     seed = experiment_path(parent["seed_checkpoint"])
     if not source.is_file():
         raise FileNotFoundError(f"R79 source checkpoint is missing: {source}")

@@ -103,10 +103,10 @@
   "validation": {
     "classes": ["standard", "low_contrast", "uneven_illumination", "asymmetric_blur_halo", "boundary_fade", "mixed_hard", "identity", "flat_negative"],
     "real_preview_inputs": [
-      "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/5x_dense_raw.bmp",
-      "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/20x_mixed_raw.bmp",
-      "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/50x_array_raw.bmp",
-      "D:/GMM_2_Final/Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/pillar_center9_50x_raw.bmp"
+      "Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/5x_dense_raw.bmp",
+      "Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/20x_mixed_raw.bmp",
+      "Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/50x_array_raw.bmp",
+      "Experiments/R109_StagedMidpointWidthScratch/results/posttraining/E048/real/pillar_center9_50x_raw.bmp"
     ],
     "thesis_axes": ["ACM_shape", "LSC_displacement_stability", "clarity_and_detail", "identity_and_tile_safety"],
     "external_gmf_role": "industry_only_not_thesis_selection"

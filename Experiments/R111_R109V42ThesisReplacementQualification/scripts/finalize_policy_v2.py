@@ -8,13 +8,14 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 POLICY_PATH = ROOT / "config" / "replacement_metric_policy_v2.json"
-R70 = Path(r"D:\GMM_2_Final\Experiments\R70_V42ACMContourSEMValidation")
-R109 = Path(r"D:\GMM_2_Final\Experiments\R109_StagedMidpointWidthScratch")
+R70 = Path(str(PROJECT_ROOT / 'Experiments/R70_V42ACMContourSEMValidation'))
+R109 = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))
 
 
 def sem_comparison() -> dict[str, object]:

@@ -5,10 +5,11 @@ import math
 from collections import defaultdict
 from pathlib import Path
 from statistics import mean, median, pstdev
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 ANALYSIS_DIR = Path(
-    r"D:\GMM_2_Final\20260704_20x_5x_analysis\external_gmf_packages\external_gmf_analysis"
+    str(PROJECT_ROOT / '20260704_20x_5x_analysis/external_gmf_packages/external_gmf_analysis')
 )
 STEPS_CSV = ANALYSIS_DIR / "external_gmf_consecutive_steps.csv"
 

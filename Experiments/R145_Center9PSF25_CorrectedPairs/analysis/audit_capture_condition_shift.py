@@ -12,8 +12,9 @@ from scipy.ndimage import gaussian_filter1d, map_coordinates
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from utils import now, save, sha
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-PROJECT = Path(r"D:\GMM_2_Final")
+PROJECT = Path(str(PROJECT_ROOT))
 FITTING = PROJECT / "PSF_Fitting/output/20260924_center9_psf"
 R143 = PROJECT / "Experiments/R143_PSF25_MatchedPairs"
 ANGLES = np.linspace(0, 2*np.pi, 64, endpoint=False)

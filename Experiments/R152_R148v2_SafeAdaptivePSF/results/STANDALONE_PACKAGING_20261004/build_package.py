@@ -9,6 +9,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 ROOT=Path(__file__).resolve().parents[2]
 OUT=Path(__file__).resolve().parent
@@ -25,7 +26,7 @@ def reformatted(code):return ast.unparse(ast.parse(code))+'\n'
 def main():
     OUT.mkdir(parents=True,exist_ok=True);DEST.mkdir(parents=True,exist_ok=True)
     cfg=read(ROOT/'config/model.json');train=read(ROOT/'config/train.json');reference=read(ROOT/'config/data.json')
-    base=Path(reference['source_experiment']);base_cfg=read(base/'config/model.json');base_train=read(base/'config/train.json')
+    base=Path(PROJECT_ROOT / reference['source_experiment']);base_cfg=read(base/'config/model.json');base_train=read(base/'config/train.json')
     for relative,expected in read(ROOT/'config/SOURCE_LOCK.json')['files'].items():assert sha(ROOT/relative)==expected,relative
     payload_root=base/'data/payload';geo_root=base/'data/geometry'
     assert sha(payload_root/'manifest.json')==reference['payload_manifest_sha256']
@@ -62,12 +63,12 @@ def main():
     (DEST/'calibration').mkdir(exist_ok=True)
     shutil.copy2(ROOT/'calibration/measured_psf_bank.npz',DEST/'calibration/psf25_bank.npz')
     complete=read(ROOT/'runs/formal_8192/training_complete.json')
-    base_cp=torch.load(cfg['base_checkpoint'],map_location='cpu',weights_only=False)
-    train_cp=torch.load(complete['training_checkpoint']['path'],map_location='cpu',weights_only=False)
-    deployed=torch.load(complete['deployed_checkpoint']['path'],map_location='cpu',weights_only=False)
-    assert sha(cfg['base_checkpoint'])==cfg['base_checkpoint_sha256']
-    assert sha(complete['training_checkpoint']['path'])==complete['training_checkpoint']['sha256']
-    assert sha(complete['deployed_checkpoint']['path'])==complete['deployed_checkpoint']['sha256']
+    base_cp=torch.load(str(PROJECT_ROOT / cfg['base_checkpoint']),map_location='cpu',weights_only=False)
+    train_cp=torch.load(str(PROJECT_ROOT / complete['training_checkpoint']['path']),map_location='cpu',weights_only=False)
+    deployed=torch.load(str(PROJECT_ROOT / complete['deployed_checkpoint']['path']),map_location='cpu',weights_only=False)
+    assert sha(str(PROJECT_ROOT / cfg['base_checkpoint']))==cfg['base_checkpoint_sha256']
+    assert sha(str(PROJECT_ROOT / complete['training_checkpoint']['path']))==complete['training_checkpoint']['sha256']
+    assert sha(str(PROJECT_ROOT / complete['deployed_checkpoint']['path']))==complete['deployed_checkpoint']['sha256']
     (DEST/'weights').mkdir(exist_ok=True)
     torch.save(dict(model=base_cp['model'],step=8192,phase='base',model_name='R152 frozen base',
                     source_checkpoint_sha256=cfg['base_checkpoint_sha256']),DEST/'weights/base_reference.pth')

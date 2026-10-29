@@ -3,7 +3,7 @@
   "measurement": "For each of nine circular features, use symmetric left/right crossings at 30%, 40%, 50%, 60%, and 70% local contrast on five horizontal chords; take the median threshold displacement per feature and the median across features.",
   "fairness": "Raw, NAFNet, EDSR, and MOSR share the same Raw-defined position windows, pre-locked 30 steps, thresholds, validity rules, and physical pixel scales.",
   "position_reference": "The PI platform-reported commanded step stored for each capture group is treated as the displacement reference; no method-specific calibration is applied.",
-  "manifest": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Experiments\\Modern_Restoration_Benchmarks_20260719\\evaluation_manifest.json",
+  "manifest": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation_manifest.json",
   "outputs": {
     "steps": "step_measurements_locked30.csv",
     "summary": "summary_by_morphology_magnification.csv",

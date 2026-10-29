@@ -1,7 +1,7 @@
 # Process Probe Audit
 
 - candidate: r23_pac_w010
-- checkpoint_path: D:\GMM_2_Final\Traing_Progress\training_progress_GESR_v1_v5_ST0p8_SWP_r23w10_20260316_154927\weights\best_tradeoff.pth.tar
+- checkpoint_path: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r23w10_20260316_154927/weights/best_tradeoff.pth.tar
 - geom_method: pairmix_algblend
 - expect_dy: 0.80
 - process_score: 7.351319

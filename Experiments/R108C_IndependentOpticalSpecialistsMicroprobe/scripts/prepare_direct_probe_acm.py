@@ -3,10 +3,11 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPERIMENTS = Path(r"D:\GMM_2_Final\Experiments")
+EXPERIMENTS = Path(str(PROJECT_ROOT / 'Experiments'))
 PROBE = ROOT / "results" / "direct_edge_texture_probe"
 SUITES = {
     "R73": EXPERIMENTS / "R104_PhotometricInvariantCausalGateScratch/results/posttraining_validation/external_acm/R73_novel_shapes/config/experiment.json",

@@ -16,15 +16,15 @@ Candidate name:
 
 Best v16 checkpoint:
 
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020\weights\best_tradeoff.pth.tar`
+`Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar`
 
 Training log:
 
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\R61_BoundaryGeneralizationUniversal\reports\training_logs\r61_motion_texture_stepguard_v16_full_e8_20260623_200012.out.log`
+`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs/r61_motion_texture_stepguard_v16_full_e8_20260623_200012.out.log`
 
 Dataset package:
 
-`D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Training_Data\r61_universal_boundary_generalization\hs100mg_basler\r61_universal_boundary_train_motion_texture_step_guard_v16`
+`Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16`
 
 ## Non-Negotiable Rules
 
@@ -64,8 +64,8 @@ Run the 96-case diverse phantom validation with v16 weights:
 
 ```powershell
 python .\LabSystem_MOSR\Experiments\R61_BoundaryGeneralizationUniversal\scripts\run_diverse_phantom_validation.py `
-  --weights "D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020\weights\best_tradeoff.pth.tar" `
-  --output-root "D:\GMM_2_Final\R61_stepguard_v16_dpv96_20260623" `
+  --weights "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar" `
+  --output-root "R61_stepguard_v16_dpv96_20260623" `
   --device cuda:0
 ```
 
@@ -75,7 +75,7 @@ Important: do not treat the v14 `boundary_metrics.csv` as the R39 or R8 baseline
 
 Use the existing v14 validation folder as the comparison reference:
 
-`D:\GMM_2_Final\R61_motiontexture_dpv96_20260623\diverse_phantom_validation_20260623_164241`
+`R61_motiontexture_dpv96_20260623/diverse_phantom_validation_20260623_164241`
 
 Acceptance checks:
 
@@ -93,7 +93,7 @@ Prepare a new v16 20260603 reconstruction case:
 
 ```powershell
 python .\LabSystem_MOSR\Experiments\R61_BoundaryGeneralizationUniversal\scripts\prepare_real_sample_gmf_package.py `
-  --weights "D:\GMM_2_Final\Thesis_MOSR_Evidence\LabSystem_MOSR\Traing_Progress\training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020\weights\best_tradeoff.pth.tar" `
+  --weights "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar" `
   --case-name "24_r61_motion_texture_stepguard_v16_full_e8_best" `
   --role "r61_motion_texture_stepguard_v16_full_e8_best" `
   --device cuda:0 `
@@ -104,7 +104,7 @@ Then rerun the local motion probe summary so the new case is compared with raw i
 
 Use the current v14 summary as the comparison reference:
 
-`D:\GMM_2_Final\Reconstruct_Progress\20260603_external_gmf_prepare\local_motion_probe_summary_after_r61_motiontexture_full_e8.json`
+`Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.json`
 
 Acceptance checks:
 
@@ -119,15 +119,15 @@ Purpose: test whether v16 preserves small-displacement behavior on a different c
 
 Source images:
 
-`D:\GMM_2_Final\Step`
+`Step`
 
 Staged center-crop input:
 
-`D:\GMM_2_Final\Step_analysis_20260623\selected_1um_input_center2048\bmp`
+`Step_analysis_20260623/selected_1um_input_center2048/bmp`
 
 Package folder to keep outputs comparable:
 
-`D:\GMM_2_Final\Step_analysis_20260623\r61_step_1um_center2048_recon_package`
+`Step_analysis_20260623/r61_step_1um_center2048_recon_package`
 
 Use the same inference behavior as the real-sample package: all BMPs, PSF from argument, checkpoint PSF ignored, weak PSF disabled, physical alpha zero.
 
@@ -146,11 +146,11 @@ Then run:
 
 ```powershell
 python .\LabSystem_MOSR\Experiments\R61_BoundaryGeneralizationUniversal\scripts\probe_step_sequence_motion.py `
-  --paths-tsv "D:\GMM_2_Final\Step_analysis_20260623\step_center2048_raw_r39_v14_v16_paths.tsv" `
-  --selected-manifest "D:\GMM_2_Final\Step_analysis_20260623\selected_1um_positions.csv" `
-  --output-json "D:\GMM_2_Final\Step_analysis_20260623\step_motion_probe_center2048_raw_r39_v14_v16_summary.json" `
-  --output-csv "D:\GMM_2_Final\Step_analysis_20260623\step_motion_probe_center2048_raw_r39_v14_v16_pairs.csv" `
-  --output-md "D:\GMM_2_Final\Step_analysis_20260623\STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_V16_SUMMARY.md"
+  --paths-tsv "Step_analysis_20260623/step_center2048_raw_r39_v14_v16_paths.tsv" `
+  --selected-manifest "Step_analysis_20260623/selected_1um_positions.csv" `
+  --output-json "Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_v16_summary.json" `
+  --output-csv "Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_v16_pairs.csv" `
+  --output-md "Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_V16_SUMMARY.md"
 ```
 
 Acceptance checks:
@@ -168,13 +168,13 @@ After the three validation layers are complete, run the combined gate:
 ```powershell
 python .\LabSystem_MOSR\Experiments\R61_BoundaryGeneralizationUniversal\scripts\score_triple_generalization_gate.py `
   --boundary-gate-json "<v16 gate versus R39 json>" `
-  --real-motion-summary-json "D:\GMM_2_Final\Reconstruct_Progress\20260603_external_gmf_prepare\local_motion_probe_summary_after_r61_stepguard_v16_full_e8.json" `
+  --real-motion-summary-json "Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_stepguard_v16_full_e8.json" `
   --real-motion-baseline-case "raw_input" `
   --real-motion-candidate-case "24_r61_motion_texture_stepguard_v16_full_e8_best" `
-  --step-summary-json "D:\GMM_2_Final\Step_analysis_20260623\step_motion_probe_center2048_raw_r39_v14_v16_summary.json" `
+  --step-summary-json "Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_v16_summary.json" `
   --step-baseline-case "01_r39_a970_step_1um_center2048" `
   --step-candidate-case "03_v16_stepguard_step_1um_center2048" `
-  --output-json "D:\GMM_2_Final\Step_analysis_20260623\triple_gate_v16_boundary_real_step_vs_raw_r39.json" `
+  --output-json "Step_analysis_20260623/triple_gate_v16_boundary_real_step_vs_raw_r39.json" `
   --no-fail-exit
 ```
 

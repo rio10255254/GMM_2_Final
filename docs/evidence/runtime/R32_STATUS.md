@@ -4,10 +4,10 @@ active_label: round32_guard_8px
 active_command: internal audit
 plan_done: 4
 plan_total: 4
-last_report: D:\GMM_2_Final\Experiments\R32Sandbox\reports\ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md
+last_report: Experiments/R32Sandbox/reports/ROUND32_DOMAIN_CAPACITY_DECISION_20260319_183614.md
 last_exit: 0
 selected_candidate: r32_real_eq_finetune
-selected_checkpoint: D:\GMM_2_Final\Experiments\R32Sandbox\artifacts\training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431\weights\best_tradeoff.pth.tar
+selected_checkpoint: Experiments/R32Sandbox/artifacts/training_progress_GESR_v1_v5_ST0p8_SWP_r32realeq_20260319_165431/weights/best_tradeoff.pth.tar
 active_pid: 0
 active_log: 
 active_err_log: 

@@ -9,10 +9,10 @@
 在 PowerShell 中執行，輸出資料夾必須尚不存在：
 
 ```powershell
-& 'C:\Users\Rio\anaconda3\python.exe' 'D:\GMM_2_Final\Experiments\R124_RealFirstPrototype\inference\run.py' `
-  --input 'D:\GMM_2_Final\Experiments\R119_SequenceGeometryValidation\validation\inputs\Raw\20x_mixed_raw.bmp' `
-  --output 'D:\GMM_2_Final\Experiments\R124_RealFirstPrototype\results\my_diagnostic' `
-  --profile 'D:\GMM_2_Final\Experiments\R124_RealFirstPrototype\config\gaussian_diagnostic.json' `
+& 'C:\Users\Rio\anaconda3\python.exe' 'Experiments/R124_RealFirstPrototype/inference/run.py' `
+  --input 'Experiments/R119_SequenceGeometryValidation/validation/inputs/Raw/20x_mixed_raw.bmp' `
+  --output 'Experiments/R124_RealFirstPrototype/results/my_diagnostic' `
+  --profile 'Experiments/R124_RealFirstPrototype/config/gaussian_diagnostic.json' `
   --device cuda
 ```
 

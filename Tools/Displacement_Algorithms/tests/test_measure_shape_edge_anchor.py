@@ -5,9 +5,10 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
-SCRIPTS_DIR = Path(r"D:\GMM_2_Final\Tools\Displacement_Algorithms\scripts")
+SCRIPTS_DIR = Path(str(PROJECT_ROOT / 'Tools/Displacement_Algorithms/scripts'))
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 

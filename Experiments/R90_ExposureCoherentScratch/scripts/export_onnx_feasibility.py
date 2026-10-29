@@ -15,6 +15,7 @@ import numpy as np
 import onnx
 import onnxruntime as ort
 import torch
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,11 +28,11 @@ CORE = 512
 HALO = 192
 TILE = CORE + 2 * HALO
 SOURCES = {
-    "5x": Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\5x_0p5um\bmp\frame_0024.bmp"),
-    "20x": Path(r"D:\GMM_2_Final\20260704_20x_5x_analysis\raw_inputs\20x_0p5um\bmp\frame_0024.bmp"),
-    "50x": Path(r"D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_1um\bmp\frame_0024.bmp"),
+    "5x": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0024.bmp')),
+    "20x": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0024.bmp')),
+    "50x": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp/frame_0024.bmp')),
     "sem18": ROOT / "results" / "full_validation_epoch055" / "sem_acm" / "locked_optical_inputs" / "18.bmp",
-    "junhua_example": Path(r"D:\GMM_2_Final\Deliverables\MOSR_R61_ONNX\example\input.bmp"),
+    "junhua_example": Path(str(PROJECT_ROOT / 'Deliverables/MOSR_R61_ONNX/example/input.bmp')),
 }
 
 
@@ -97,7 +98,7 @@ def reconstruct_onnx(inference, session: ort.InferenceSession, image: np.ndarray
 
 def main() -> int:
     selection = json.loads(SELECTION.read_text(encoding="utf-8"))
-    checkpoint = Path(selection["checkpoint"])
+    checkpoint = Path(PROJECT_ROOT / selection["checkpoint"])
     if sha256_file(checkpoint) != selection["checkpoint_sha256"]:
         raise RuntimeError("Checkpoint hash mismatch")
     for label, source in SOURCES.items():

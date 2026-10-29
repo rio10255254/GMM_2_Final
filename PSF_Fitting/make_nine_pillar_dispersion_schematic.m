@@ -1,10 +1,11 @@
+PROJECT_ROOT = fileparts(fileparts(mfilename('fullpath')));
 %% Slide-ready schematic for nine-pillar displacement dispersion.
 % Uses a real 50x consecutive-frame pair and a compact symbolic summary.
 
 clear; close all; clc;
 
-sourceDir = 'D:\GMM_2_Final\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp';
-outputDir = 'D:\GMM_2_Final\Thesis_MOSR_Evidence\Slide_Assets\Nine_Pillar_Displacement_Dispersion';
+sourceDir = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp');
+outputDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Slide_Assets/Nine_Pillar_Displacement_Dispersion');
 if ~exist(outputDir, 'dir')
     mkdir(outputDir);
 end

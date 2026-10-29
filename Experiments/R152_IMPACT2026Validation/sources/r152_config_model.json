@@ -1,9 +1,9 @@
 {
   "model_name": "R152-R148v2-SafeAdaptivePSF",
   "architecture": "frozen_r148v2_plus_adaptive_fourier_psf_residual",
-  "base_checkpoint": "D:/GMM_2_Final/Experiments/R148v2_HybridContextNativePSF/runs/formal_8192/checkpoints/step08192.pth",
+  "base_checkpoint": "Experiments/R148v2_HybridContextNativePSF/runs/formal_8192/checkpoints/step08192.pth",
   "base_checkpoint_sha256": "8daddf823166b373d3c3b437ebb9869e3d2260ed83d72613140669d92ee0db22",
-  "base_model_config": "D:/GMM_2_Final/Experiments/R148v2_HybridContextNativePSF/config/model.json",
+  "base_model_config": "Experiments/R148v2_HybridContextNativePSF/config/model.json",
   "context_output_channels": 16,
   "psf_bank": "calibration/measured_psf_bank.npz",
   "psf_count": 25,

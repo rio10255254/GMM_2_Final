@@ -3,6 +3,7 @@ from pathlib import Path
 import ast,hashlib,json,subprocess
 import numpy as np
 import pandas as pd
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT=Path(__file__).resolve().parents[1]
 def sha(p):
     h=hashlib.sha256()
@@ -21,7 +22,7 @@ def main():
     assert sha(ROOT/'sources/objective_optics_first50run.py')==initial['adapter_sha256']
     sources=load(ROOT/'results/source_manifest.json')
     for r in sources:
-        assert r['exists'] and sha(r['path'])==r['sha256'],r['path']
+        assert r['exists'] and sha(str(PROJECT_ROOT / r['path']))==r['sha256'],str(PROJECT_ROOT / r['path'])
         if 'snapshot' in r:assert sha(ROOT/r['snapshot'])==r['sha256']
     frames=[]
     for folder in ['20x','50x_calibrated']:

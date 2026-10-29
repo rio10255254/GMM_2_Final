@@ -75,7 +75,7 @@ roundNN/
 
 - **Round 18 / `r18_ec_highcenter`**
 - 快速入口：
-  `D:\GMM_2_Final\Traing_Progress\organized_20260313\round18\selected\current_centerpush_seed.json`
+  `Traing_Progress/organized_20260313/round18/selected/current_centerpush_seed.json`
 
 Round 19 已完成，但**未通過 internal gate**，因此不升級 current adopted model，也沒有進 external GMF。
 

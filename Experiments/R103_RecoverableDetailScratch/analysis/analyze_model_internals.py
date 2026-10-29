@@ -18,6 +18,7 @@ for folder in (ROOT / "model", ROOT / "inference"):
 
 from r103_model import build_model  # noqa: E402
 from reconstruct import reconstruct_full_reference, reconstruct_tensor  # noqa: E402
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="utf-8"))
@@ -51,7 +52,7 @@ def main() -> None:
     shift_rows: list[dict[str, object]] = []
     tile_rows: list[dict[str, object]] = []
     for source_name in CONFIG["validation"]["real_preview_sources"]:
-        source_path = Path(source_name)
+        source_path = Path(PROJECT_ROOT / source_name)
         image = cv2.imread(str(source_path), cv2.IMREAD_GRAYSCALE)
         if image is None:
             raise FileNotFoundError(source_path)

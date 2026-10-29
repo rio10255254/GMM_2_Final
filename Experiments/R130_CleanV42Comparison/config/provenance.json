@@ -1,7 +1,7 @@
 {
   "created_utc": "2026-09-13T15:19:21.664235+00:00",
   "source": {
-    "path": "D:\\GMM_2_Final\\Experiments\\R130_CleanV42Comparison\\scripts\\prepare.py",
+    "path": "Experiments/R130_CleanV42Comparison/scripts/prepare.py",
     "sha256": "a6a7fd1d319455fc6603563abeca63ae5c1c7fce512360bada9313d85fadf738"
   },
   "legacy_checkpoint_read_only_for_architecture_metadata_and_fixed_calibration": true,
@@ -16,59 +16,59 @@
   "fresh_weak_effective_scale": 0.35,
   "protected": [
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\results\\training_results\\training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713\\epoch_120.pth.tar",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
       "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\V42_SoftLabelSNR_FullStandalone_20260709\\model_v42.py",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py",
       "sha256": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\training_data\\manifest.json",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/training_data/manifest.json",
       "sha256": "8cb7afc18a885f4dace5b5309e005c4b530c82d3f323e63441fea71174e1f889"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\results\\training\\r129_long_01\\checkpoints\\step08192.pth",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
       "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\PACKAGE_MANIFEST.json",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/PACKAGE_MANIFEST.json",
       "sha256": "fe68b9f571d73dfa024ca864f877dd4343732841cbb63ef6b18b4b2344c5bd4a"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\hybrid.py",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/model/hybrid.py",
       "sha256": "49ef06e0e6061b8106fc89523b95d26de318a4a235acd2f8613a23aa2b86d7df"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\inference_policy.py",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/model/inference_policy.py",
       "sha256": "bac2d488114f6d600e8cf0536088bad93f17d6e56337acc2f39b06e109d6d314"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\operators.py",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/model/operators.py",
       "sha256": "e3285675114037317c8ab30fb87f18a9d19cab451230fb11c4c14fca2bab6c07"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\optics.py",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/model/optics.py",
       "sha256": "676bbb35d5e86c1b41fbdbe046263b7e9b207a9de0cef87e68c8468aae5ac4a8"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\output_policy.py",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/model/output_policy.py",
       "sha256": "ab70c2deb34b24739d54242dfef7c571122a9386833e6b032d8208c849d13591"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\reconstruction.py",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/model/reconstruction.py",
       "sha256": "71594f2cf78a2b2cb4dc17213a670532e51b9b240cfde3aab767ad95f7f8dab6"
     },
     {
-      "path": "D:\\GMM_2_Final\\Thesis_MOSR_Evidence\\LabSystem_MOSR\\Model_Packages\\R129_OpticalHybrid_Standalone_20260912\\model\\__init__.py",
+      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/model/__init__.py",
       "sha256": "c9bee3382295dcc511cdbd5d642e32df449ee55d0107b98171566446f80c9233"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\continuous_lsc\\comparison_summary.csv",
+      "path": "Experiments/R129_OpticalPriorHybrid/results/continuous_lsc/comparison_summary.csv",
       "sha256": "f8c29bf0d917466aed2cc630136503c37ec234822f8389d837edf82a85cbf066"
     },
     {
-      "path": "D:\\GMM_2_Final\\Experiments\\R129_OpticalPriorHybrid\\results\\long_training_review_20260913_v2\\trajectory.csv",
+      "path": "Experiments/R129_OpticalPriorHybrid/results/long_training_review_20260913_v2/trajectory.csv",
       "sha256": "19aabeb3f8b95af7b1a24e3767cf6750b53ab05927d835c9cdf048c1bc6411e9"
     }
   ],

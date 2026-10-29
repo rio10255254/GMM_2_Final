@@ -14,9 +14,10 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
-EVIDENCE = Path(r"D:\GMM_2_Final\Thesis_MOSR_Evidence")
+EVIDENCE = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 DATA = EVIDENCE / "LabSystem_MOSR" / "Training_Data"
 R55 = (
     DATA
