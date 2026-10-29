@@ -100,12 +100,43 @@ def str_leaves(obj, keys=()):
         yield keys, obj
 
 
+@dataclass(frozen=True)
+class AnyOf:
+    """A computed key: one of `keys` (a loop over constants), or a key matching `regex` (an f-string)."""
+    keys: frozenset = None
+    regex: str = None
+
+    def accepts(self, k):
+        if self.keys is not None:
+            return k in self.keys
+        return isinstance(k, str) and re.fullmatch(self.regex, k) is not None
+
+    def __str__(self):
+        return '{' + ','.join(sorted(map(str, self.keys))) + '}' if self.keys is not None else self.regex
+
+
+def fits(p, k):
+    """Pattern element `p` can be data key `k`."""
+    return p == STAR or p == k or (isinstance(p, AnyOf) and p.accepts(k))
+
+
+def overlap(a, b):
+    """Two pattern elements can stand for the same key."""
+    if a == STAR or b == STAR or a == b or (isinstance(a, AnyOf) and isinstance(b, AnyOf)):
+        return True
+    return (isinstance(a, AnyOf) and a.accepts(b)) or (isinstance(b, AnyOf) and b.accepts(a))
+
+
 def matches(pattern, keys):
-    return len(pattern) == len(keys) and all(p == STAR or p == k for p, k in zip(pattern, keys))
+    return len(pattern) == len(keys) and all(fits(p, k) for p, k in zip(pattern, keys))
 
 
 def below(pattern, keys):
-    return len(keys) > len(pattern) and all(p == STAR or p == k for p, k in zip(pattern, keys))
+    return len(keys) > len(pattern) and all(fits(p, k) for p, k in zip(pattern, keys))
+
+
+def pathlike(text):
+    return ABS_START.match(text) is not None or '/' in text or '\\' in text
 
 
 def mentions(src, basenames):
@@ -452,7 +483,7 @@ class Readers:
         def key(k, to):
             """Go through key `k` (STAR for any key) and push the result at `to`."""
             if prefix:
-                if prefix[0] == STAR or k == STAR or prefix[0] == k:
+                if overlap(prefix[0], k):
                     self.push(to, name, pattern, prefix[1:], via, certain)
             else:
                 self.push(to, name, pattern + (k,), (), via, certain)
@@ -475,14 +506,14 @@ class Readers:
                            for c in changed) for e in p.slice.elts) and not prefix:
                     escape('a selection of several keys')
             else:
-                key(STAR, p)                                   # one of the entries, whichever the key picks
+                key(self.computed_key(p.slice), p)             # one of the entries, whichever the key picks
             return
         if isinstance(p, ast.Attribute) and p.value is node:
             call = self.parent.get(p)
             is_call = isinstance(call, ast.Call) and call.func is p
             if p.attr == 'get' and is_call:
                 ok, k = _const_key(call.args[0]) if call.args else (False, None)
-                key(k if ok else STAR, call)
+                key(k if ok else (self.computed_key(call.args[0]) if call.args else STAR), call)
             elif p.attr in ('values', 'items') and is_call:
                 self.iterate(call, args, pair=p.attr == 'items', escape=escape)
             elif p.attr == 'copy' and is_call:
@@ -544,6 +575,33 @@ class Readers:
                           ast.JoinedStr, ast.Delete)) or p is None:
             return
         escape(type(p).__name__)
+
+    def computed_key(self, expr):
+        """What a computed key can be: AnyOf for a loop over constants or an f-string, else STAR."""
+        if isinstance(expr, ast.Name):
+            home = self.home(expr)
+            keys = set()
+            for st in self.stores.get((home, expr.id), []):
+                loop = self.parent.get(st)
+                if isinstance(st, ast.Name) and isinstance(loop, (ast.For, ast.comprehension)) and loop.target is st and \
+                        isinstance(loop.iter, (ast.Tuple, ast.List, ast.Set)) and \
+                        all(_const_key(e)[0] for e in loop.iter.elts):
+                    keys.update(_const_key(e)[1] for e in loop.iter.elts)
+                else:
+                    return STAR
+            return AnyOf(keys=frozenset(keys)) if keys else STAR
+        rx = self._key_regex(expr)
+        return AnyOf(regex=rx) if rx is not None and rx.replace('.*', '') else STAR
+
+    def _key_regex(self, expr):
+        if isinstance(expr, ast.Constant) and isinstance(expr.value, str):
+            return re.escape(expr.value)
+        if isinstance(expr, ast.JoinedStr):
+            return ''.join(re.escape(v.value) if isinstance(v, ast.Constant) else '.*' for v in expr.values)
+        if isinstance(expr, ast.BinOp) and isinstance(expr.op, ast.Add):
+            parts = [self._key_regex(x) for x in (expr.left, expr.right)]
+            return ''.join(x if x is not None else '.*' for x in parts)
+        return None
 
     def string(self, node, p, args):
         """A string value: read here, unless it goes to a function of this module. Then the function's
@@ -849,6 +907,8 @@ class Readers:
                 continue
             name, keys = changed[0][0], changed[0][1]
             label = f"{name}:{'/'.join(map(str, keys))}"
+            # an unchanged value that does not look like a path (a family name) is not what this read opens
+            leaves = {l for l in leaves if l in changed or pathlike(l[2])}
             expect = {l: self.mapped(self.target(node, l[2])) for l in leaves}
             if all(self.target(node, l[3]) == expect[l] for l in leaves):
                 continue

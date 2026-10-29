@@ -18,12 +18,15 @@ OLD = {'data': {'package_root': 'D:/GMM_2_Final/Experiments/R121_x/data/pkg', 's
        'sha256': 'a' * 64,
        'items': [{'path': 'D:/GMM_2_Final/Shared/out/a.png'}, {'path': 'D:/GMM_2_Final/Shared/out/b.png'}],
        'mixed': [{'path': 'D:/GMM_2_Final/Shared/out/a.png'}, {'path': 'local/b.png'}],
-       'cmd': 'python D:/GMM_2_Final/Model/x.py --in D:/GMM_2_Final/Shared/out'}
+       'cmd': 'python D:/GMM_2_Final/Model/x.py --in D:/GMM_2_Final/Shared/out',
+       'sources': {'family': 'edge', 'raw_dir': 'D:/GMM_2_Final/Shared/out', 'rel_dir': 'local/out',
+                   'model_dir': 'D:/GMM_2_Final/Model'}}
 NEW = {'data': {'package_root': 'Experiments/R121_x/data/pkg', 'seed_name': 'x'},
        'out': 'Shared\\out', 'model': 'Model/w.pth', 'sha256': 'b' * 64,
        'items': [{'path': 'Shared/out/a.png'}, {'path': 'Shared/out/b.png'}],
        'mixed': [{'path': 'Shared/out/a.png'}, {'path': 'local/b.png'}],
-       'cmd': 'python Model/x.py --in Shared/out'}
+       'cmd': 'python Model/x.py --in Shared/out',
+       'sources': {'family': 'edge', 'raw_dir': 'Shared/out', 'rel_dir': 'local/out', 'model_dir': 'Model'}}
 CFG = f'{EXP}/config/experiment.json'
 FILE = f'{EXP}/training/base.py'
 HEAD = "from pathlib import Path\nimport json\nROOT = Path(__file__).resolve().parents[1]\n"
@@ -128,9 +131,9 @@ def test_mixed_list_is_reported_not_rewritten(ctx):
 
 
 def test_dynamic_key_over_mixed_values_is_reported(ctx):
-    src = HEAD + LOAD + "for k in ('out', 'model'):\n    open(CONFIG[k])\n"
+    src = HEAD + LOAD + "for k in ('raw_dir', 'rel_dir'):\n    open(CONFIG['sources'][k])\n"
     out, unresolved = rewrite(src, ctx)
-    assert "open(CONFIG[k])" in out
+    assert "open(CONFIG['sources'][k])" in out
     assert any(u.reason.startswith('data value') for u in unresolved)
 
 
@@ -304,3 +307,19 @@ def test_a_literal_inside_a_read_is_still_rewritten(ctx):
     out, unresolved = rewrite(src, ctx)
     assert "M = open(str(PROJECT_ROOT / CONFIG.get('model', str(PROJECT_ROOT / 'Model/w.pth'))))\n" in out
     assert not unresolved
+
+
+def test_loop_over_constant_keys(ctx):
+    src = HEAD + LOAD + "for key in ('raw_dir', 'model_dir'):\n    open(CONFIG['sources'][key])\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "    open(str(PROJECT_ROOT / CONFIG['sources'][key]))\n" in out and not unresolved
+
+
+def test_key_built_from_a_name(ctx):
+    src = HEAD + LOAD + "def get(side):\n    return open(CONFIG['sources'][side + '_dir'])\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "    return open(CONFIG['sources'][side + '_dir'])\n" in out
+    assert unresolved                    # rel_dir is relative to the working directory: not fixable
+    src = HEAD + LOAD + "def get(kind):\n    return open(CONFIG['sources'][f'mo{kind}_dir'])\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "    return open(str(PROJECT_ROOT / CONFIG['sources'][f'mo{kind}_dir']))\n" in out and not unresolved
