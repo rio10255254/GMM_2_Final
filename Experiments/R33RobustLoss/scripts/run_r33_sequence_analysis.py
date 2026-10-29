@@ -8,8 +8,8 @@ import sys
 from pathlib import Path
 
 _REPO_ROOT = Path(__file__).resolve().parents[3]
-sys.path.insert(0, str(_REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "scripts"))
-sys.path.insert(0, str(_REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "configs"))
+sys.path.insert(0, str(_REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "scripts"))
+sys.path.insert(0, str(_REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "configs"))
 
 from dataset_config import DatasetConfig
 import run_sequence_analysis as seq
@@ -68,7 +68,7 @@ def main():
     result = seq.main(datasets=available, out_root=OUT_ROOT, verbose=True)
 
     # Print comparison with R30 baseline
-    r30_cross = _REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "results" / "cross_dataset" / "cross_dataset_comparison.json"
+    r30_cross = _REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "results" / "cross_dataset" / "cross_dataset_comparison.json"
     if r30_cross.exists():
         with open(r30_cross) as f:
             r30_data = json.load(f)

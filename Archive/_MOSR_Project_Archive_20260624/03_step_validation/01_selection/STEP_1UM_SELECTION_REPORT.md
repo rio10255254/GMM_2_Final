@@ -29,8 +29,8 @@ Use positions `0, 10, 20, ..., 390`. This gives 40 selected positions, or 39 one
 
 The remaining final positions after 390 are intentionally not used, because they do not complete another 1um interval.
 
-Selection manifest: `Step_analysis_20260623/selected_1um_positions.csv`
-Pair manifest: `Step_analysis_20260623/selected_1um_pairs.csv`
+Selection manifest: `Analyses/Step_analysis_20260623/selected_1um_positions.csv`
+Pair manifest: `Analyses/Step_analysis_20260623/selected_1um_pairs.csv`
 
 ## Important caveat
 

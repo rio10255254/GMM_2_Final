@@ -41,10 +41,10 @@ IMAGE_CASES_100MG = {
 
 STEP_FRAME = "VisionTop_20260615173931287.bmp"
 IMAGE_CASES_CONCENTRIC = {
-    "raw": Path(str(PROJECT_ROOT / 'Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218/center2048_bmp'))
+    "raw": Path(str(PROJECT_ROOT / 'Analyses/Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218/center2048_bmp'))
     / STEP_FRAME,
     "combo_psf_bypass": OLD_ASSET_ROOT / "recon_combo_psf_bypass_concentric" / STEP_FRAME,
-    "r61_v16": Path(str(PROJECT_ROOT / 'Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218'))
+    "r61_v16": Path(str(PROJECT_ROOT / 'Analyses/Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218'))
     / "clean_reconstruction_outputs"
     / "reconstruct_progress_best_tradeoff_in_center2048_bmp_20260623_200020"
     / "03_v16_clean_pos10_center2048"

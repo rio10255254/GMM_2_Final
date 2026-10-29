@@ -2,7 +2,7 @@
   "schema": 1,
   "files": [
     {
-      "path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "path": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
       "bytes": 3146806,
       "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
       "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
@@ -68,7 +68,7 @@
       "role": "exact_graph_object_to_fetch_from_GitHub"
     }
   ],
-  "camera_source": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+  "camera_source": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
   "graphs": [
     {
       "id": "R90_ONNX_feasibility",
@@ -93,7 +93,7 @@
   "original_wrapper_input": "Deliverables/Company_Packages/MOSR_R61_ONNX/example/input.bmp",
   "original_wrapper_reference": "Deliverables/Company_Packages/MOSR_R61_ONNX/example/output.bmp",
   "source_files_for_ordinary_git": [
-    "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+    "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
     "Deliverables/Company_Packages/MOSR_R61_ONNX/README.md",
     "Deliverables/Company_Packages/MOSR_R61_ONNX/requirements.txt",
     "Deliverables/Company_Packages/MOSR_R61_ONNX/run.py",

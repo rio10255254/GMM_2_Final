@@ -75,7 +75,7 @@ function Get-LauncherConfig {
         }
     }
 
-    $legacyReconRoots = @('Reconstruct_Progress', '.\Reconstruct_Progress')
+    $legacyReconRoots = @('Reconstruct_Progress', 'Analyses\Reconstruct_Progress')
     if ($legacyReconRoots -contains [string]$cfg['demo_recon_root']) {
         $cfg['demo_recon_root'] = '..\輸出結果\推論結果'
     }

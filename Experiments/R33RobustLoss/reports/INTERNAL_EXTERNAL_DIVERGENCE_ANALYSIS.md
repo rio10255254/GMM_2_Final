@@ -89,7 +89,7 @@ Internal 的分佈在尾部（P10、P90 以外）明顯更散——這就是 cir
 360 → 720：噪聲地板降 √2 ≈ 0.123 px
 360 → 1080：噪聲地板降 √3 ≈ 0.100 px
 
-需修改：`AnalysisLab/r26/single_image/scripts/run_single_image_analysis.py`
+需修改：`Analyses/AnalysisLab/r26/single_image/scripts/run_single_image_analysis.py`
 的 `extract_radial_edge_candidates()` 和 `summarize_circle_fits()`
 
 ### A2：加權 circle fit

@@ -30,10 +30,10 @@ SYNTH_INPUT = EXPERIMENT_ROOT / "results" / "synthetic_shift_inputs" / "50x_unse
 STATIC_INPUT = REPO_ROOT / "Thesis_MOSR_Evidence" / "20260618_100MG"
 MODES = ("full", "no_boundary", "no_anchor", "no_gate", "no_all")
 REAL = {
-    "50x_x_0p5um": (REPO_ROOT / "20260702_100MG_displacement_analysis" / "raw_inputs" / "x_0p5um" / "bmp", 51),
-    "50x_x_1um": (REPO_ROOT / "20260702_100MG_displacement_analysis" / "raw_inputs" / "x_1um" / "bmp", 50),
-    "20x_0p5um": (REPO_ROOT / "20260704_20x_5x_analysis" / "raw_inputs" / "20x_0p5um" / "bmp", 50),
-    "20x_1um": (REPO_ROOT / "20260704_20x_5x_analysis" / "raw_inputs" / "20x_1um" / "bmp", 50),
+    "50x_x_0p5um": (REPO_ROOT / "Analyses" / "20260702_100MG_displacement_analysis" / "raw_inputs" / "x_0p5um" / "bmp", 51),
+    "50x_x_1um": (REPO_ROOT / "Analyses" / "20260702_100MG_displacement_analysis" / "raw_inputs" / "x_1um" / "bmp", 50),
+    "20x_0p5um": (REPO_ROOT / "Analyses" / "20260704_20x_5x_analysis" / "raw_inputs" / "20x_0p5um" / "bmp", 50),
+    "20x_1um": (REPO_ROOT / "Analyses" / "20260704_20x_5x_analysis" / "raw_inputs" / "20x_1um" / "bmp", 50),
 }
 
 

@@ -55,22 +55,22 @@ DEFAULT_HYBRID_TEACHER_SOURCES: dict[tuple[str, str], str] = {
 
 DEFAULT_HYBRID_TEACHER_DIRS: dict[tuple[str, str], Path] = {
     ("20260702_100MG", "x_1um"): Path(
-        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r62_v20_gmfroi_e1_mtb200_psfoff_x_1um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/r62_v20_gmfroi_e1_mtb200_psfoff_x_1um/bmp')
     ),
     ("20260702_100MG", "x_0p5um"): Path(
-        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r62_v28_multimagraw_latest_psfoff_x_0p5um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/r62_v28_multimagraw_latest_psfoff_x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "20x_1um"): Path(
-        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_20x_1um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_20x_1um/bmp')
     ),
     ("20260704_20x_5x", "20x_0p5um"): Path(
-        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v28_multimagraw_latest_psfoff_20x_0p5um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r62_v28_multimagraw_latest_psfoff_20x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "5x_1um"): Path(
-        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_5x_1um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_5x_1um/bmp')
     ),
     ("20260704_20x_5x", "5x_0p5um"): Path(
-        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_5x_0p5um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_5x_0p5um/bmp')
     ),
 }
 

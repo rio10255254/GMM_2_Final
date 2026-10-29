@@ -13,7 +13,7 @@ def main():
     loader=ROOT.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/benchmark_models.py'
     v42=ROOT.parent.parent/'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar'
     cp=load(ROOT/'trial/manifest.json')['checkpoint'];assert sha(cp['path'])==cp['sha256'];assert sha(v42)=='89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83'
-    frame=ROOT.parent.parent/'20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp'
+    frame=ROOT.parent.parent/'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp'
     save(out/'plan.json',dict(created_utc=now(),source=record(__file__),helper=record(source),V42_loader=record(loader),V42_checkpoint=record(v42),R128_checkpoint=cp,input=record(frame),
         common_recipe=dict(tile_size=256,overlap=128,tile_batch=8,patch_warmups=10,patch_iterations=30,full_warmups=2,full_iterations=8),
         arithmetic='Both models explicit strictFP32/TF32off/deterministic, fresh paired control. Do not directly rank these new timings against older published scores with unspecified TF32 flags.',

@@ -57,8 +57,8 @@ def _case_templates_20x_5x() -> dict[str, str]:
 
 
 def default_case_specs() -> list[GateSpec]:
-    root_100mg = PROJECT_ROOT / "20260702_100MG_displacement_analysis"
-    root_20x_5x = PROJECT_ROOT / "20260704_20x_5x_analysis"
+    root_100mg = PROJECT_ROOT / "Analyses" / "20260702_100MG_displacement_analysis"
+    root_20x_5x = PROJECT_ROOT / "Analyses" / "20260704_20x_5x_analysis"
     specs: list[GateSpec] = []
     for group, nominal in (("x_1um", 1.0), ("x_0p5um", 0.5)):
         specs.append(

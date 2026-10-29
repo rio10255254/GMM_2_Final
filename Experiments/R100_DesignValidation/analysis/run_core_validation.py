@@ -26,11 +26,11 @@ R99 = Path(str(PROJECT_ROOT / 'Experiments/R99_GeometryTextureCoherentScratch'))
 R92_PACKAGE = Path(str(PROJECT_ROOT / 'Experiments/R92_PhysicalTransitionBalancedScratch/data/r92_formal'))
 R96_MOTION = Path(str(PROJECT_ROOT / 'Experiments/R96_LocalizedEvidenceProtectedScratch/results/x1um_counterfactual_reconstruction'))
 REAL_SETS = {
-    "5x": Path(str(PROJECT_ROOT / '20260704_5x')),
-    "20x": Path(str(PROJECT_ROOT / '20260704_20x')),
-    "50x": Path(str(PROJECT_ROOT / '20260702_100MG_位移_50x')),
+    "5x": Path(str(PROJECT_ROOT / 'Shared_Sources' / 'Real_Sample_Captures' / '20260704_5x')),
+    "20x": Path(str(PROJECT_ROOT / 'Shared_Sources' / 'Real_Sample_Captures' / '20260704_20x')),
+    "50x": Path(str(PROJECT_ROOT / 'Shared_Sources' / 'Real_Sample_Captures' / '20260702_100MG_位移_50x')),
 }
-X1UM = Path(str(PROJECT_ROOT / '20260702_100MG_位移_50x/x_1um'))
+X1UM = Path(str(PROJECT_ROOT / 'Shared_Sources/Real_Sample_Captures/20260702_100MG_位移_50x/x_1um'))
 RUN_ID = "R99_scratch_seed990053_20260814_105831"
 R99_WEIGHTS = R99 / "weights" / "formal" / "seed_990053" / RUN_ID / "weights"
 RESULTS = ROOT / "results"

@@ -47,7 +47,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import check_markdown_links
 from restructure_hashes import propagate
 from restructure_python import rewrite_python
-from restructure_readers import DATA_EXT, DataView, link, read_targets
+from restructure_readers import DATA_EXT, DataView, link, mapped_target, read_targets
 from restructure_resolve import Universe, git_env
 from restructure_rules import compose, load_rules
 from restructure_text import Context, Edit, file_class, rewrite_bytes
@@ -383,7 +383,7 @@ def do_verify(ph):
         now_reads = read_targets(py_new[new_name], new_name, ctx_new)
         if before is None or now_reads is None:
             continue
-        expect = Counter((d, k, t if ':' in t else verify._expect(t, rules, flat_decisions)) for d, k, t in before)
+        expect = Counter((d, k, mapped_target(t, rules) if ':' in t else verify._expect(t, rules, flat_decisions)) for d, k, t in before)
         got = Counter(now_reads)
         if expect != got:
             show = lambda c: sorted(f"{d}:{'/'.join(map(str, k))} -> {t}" for d, k, t in c.elements())[:4]
@@ -405,7 +405,7 @@ def do_verify(ph):
                     except SyntaxError:
                         pass
     texts = {n: after[n] for n in now if rewritable(n)}
-    problems += verify.residual(texts, new_uni, ph.upto, absolute_check=True)
+    problems += verify.residual(texts, new_uni, ph.upto, absolute_check=True, old_uni=old_uni)
     problems += verify.hash_consistency(pairs, after, rules)
     for name in sorted(parsed_before):
         new = (rules.map(name) if rules else None) or name

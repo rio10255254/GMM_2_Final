@@ -9,7 +9,7 @@ Quantify R26 model training and inference performance across different devices. 
 ## 2. Directory Structure
 
 ```
-AnalysisLab/r26/performance/
+Analyses/AnalysisLab/r26/performance/
 ├── README.md                          # Complete usage tutorial (Chinese)
 ├── scripts/
 │   ├── run_inference_benchmark.py     # Inference benchmark

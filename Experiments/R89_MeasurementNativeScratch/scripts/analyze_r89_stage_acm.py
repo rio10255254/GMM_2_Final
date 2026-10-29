@@ -723,11 +723,11 @@ def main() -> int:
 
     real_specs = {
         "5x": {
-            "raw": Path(str(PROJECT_ROOT / '20260704_5x/1um/Image__2026-07-04__17-51-47.bmp')),
+            "raw": Path(str(PROJECT_ROOT / 'Shared_Sources/Real_Sample_Captures/20260704_5x/1um/Image__2026-07-04__17-51-47.bmp')),
             "name": "Image__2026-07-04__17-51-47.bmp",
         },
         "20x": {
-            "raw": Path(str(PROJECT_ROOT / '20260704_20x/1um/Image__2026-07-04__18-10-19.bmp')),
+            "raw": Path(str(PROJECT_ROOT / 'Shared_Sources/Real_Sample_Captures/20260704_20x/1um/Image__2026-07-04__18-10-19.bmp')),
             "name": "Image__2026-07-04__18-10-19.bmp",
         },
     }

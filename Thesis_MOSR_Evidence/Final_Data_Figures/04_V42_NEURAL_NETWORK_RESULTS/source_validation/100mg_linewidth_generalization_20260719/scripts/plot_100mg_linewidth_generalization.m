@@ -98,7 +98,7 @@ function plotRoiMap(rootDir, figureDir)
 rawPath = fullfile(fileparts(fileparts(fileparts(fileparts(rootDir)))), ...
     '20260702_100MG_displacement_analysis', 'raw_inputs', 'x_0p5um', 'bmp', 'frame_0000.bmp');
 if ~exist(rawPath, 'file')
-    rawPath = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
+    rawPath = fullfile(PROJECT_ROOT, 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
 end
 I = imread(rawPath);
 fig = newFigure([980 760]);

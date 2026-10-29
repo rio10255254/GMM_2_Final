@@ -13,7 +13,7 @@ Last updated: 2026-08-13
 第一版的安全原則正確，但有三個過度設計：
 
 1. 同時規劃 `PROJECT_CATALOG`、`DATASET_CATALOG`、`RESULT_CATALOG`，會增加三份容易落後的中央清單；目前連既有實驗索引與容量登錄都已出現更新落差，不應再增加人工維護面。
-2. 規劃把 LabSystem 搬到新 `Workspaces`、把日期型分析搬進 `AnalysisLab/projects`，會改寫大量已記錄路徑，也與 AnalysisLab 現有「模型版本優先」設計衝突。
+2. 規劃把 LabSystem 搬到新 `Workspaces`、把日期型分析搬進 `Analyses/AnalysisLab/projects`，會改寫大量已記錄路徑，也與 AnalysisLab 現有「模型版本優先」設計衝突。
 3. 對所有實驗強制同一棵結果樹，無法涵蓋 R87–R95 已經形成的自包含研究模式。
 
 因此第二版改成：
@@ -77,10 +77,10 @@ D:\GMM_2_Final\
 ├── Model\                            共享主模型程式；保持平面結構
 ├── Tools\                            全專案治理與檢查工具
 ├── Experiments\                      R 系列實驗；每輪直接掛在此層
-├── AnalysisLab\                      可重用、跨版本的模型分析；維持版本優先
+├── Analyses\AnalysisLab\                      可重用、跨版本的模型分析；維持版本優先
 ├── Training_Data\                    共享訓練資料與既有產生程式
 ├── Traing_Progress\                  歷史與共享主線訓練輸出；名稱永久保留
-├── Reconstruct_Progress\             舊共享重建表面；新工作不再預設寫入
+├── Analyses\Reconstruct_Progress\             舊共享重建表面；新工作不再預設寫入
 ├── PSF_Fitting\                      獨立 PSF 工作系統；原位治理
 ├── Thesis_MOSR_Evidence\             論文證據與 LabSystem；原位治理
 ├── Deliverables\                     新正式交付包入口
@@ -88,8 +88,8 @@ D:\GMM_2_Final\
 │
 ├── 20260702_*                         既有原始／分析入口；固定原位、逐批薄化
 ├── 20260704_*                         既有原始／分析入口；固定原位、逐批薄化
-├── Step\                              既有不可替代原始資料；固定原位
-├── Step_analysis_20260623\            既有分析入口；固定原位、逐批薄化
+├── Shared_Sources\Real_Sample_Captures\Step\                              既有不可替代原始資料；固定原位
+├── Analyses\Step_analysis_20260623\            既有分析入口；固定原位、逐批薄化
 ├── Deliverables\Company_Packages\              舊交付相容區；不再新增新包
 └── 其他 legacy／archive 根層項目      先索引與判定，不因名稱直接搬動或刪除
 ```
@@ -101,7 +101,7 @@ D:\GMM_2_Final\
 | 只服務一個 R 輪次的程式、資料、權重或結果 | 該輪 `Experiments/R##_Description` | 脈絡完整，自然一起收尾 |
 | 多輪都會使用的正式模型程式 | `Model` | 保持共享主線唯一來源 |
 | 多輪共享的大型訓練資料 | `Training_Data` | 避免每輪重複 payload |
-| 可重用、跨模型版本的分析方法 | `AnalysisLab/r##/...` | 符合既有版本優先設計 |
+| 可重用、跨模型版本的分析方法 | `Analyses/AnalysisLab/r##/...` | 符合既有版本優先設計 |
 | 一次性實驗分析 | 所屬實驗的 `scripts/reports/results` | 不把短期工作變成全域模組 |
 | 論文專屬圖表、主張與來源 | `Thesis_MOSR_Evidence` | 留在論文證據鏈內 |
 | PSF 擬合、校正與驗證 | `PSF_Fitting` | 維持獨立工作系統 |
@@ -179,7 +179,7 @@ Training_Data\r##_purpose_v##\
 
 ### AnalysisLab 永久維持版本優先
 
-現有 `AnalysisLab/r26/{single_image,sequence,performance}` 設計合理，因此不新增 `AnalysisLab/projects`，也不把 100MG、20x/5x 或 Step 日期型工作區硬塞進去。
+現有 `Analyses/AnalysisLab/r26/{single_image,sequence,performance}` 設計合理，因此不新增 `Analyses/AnalysisLab/projects`，也不把 100MG、20x/5x 或 Step 日期型工作區硬塞進去。
 
 - 可重用、跨版本的方法：進 AnalysisLab。
 - 一次性研究：留在所屬實驗。

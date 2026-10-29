@@ -24,7 +24,7 @@ LAB_PSF_PATH = (
     / "20250605_inner_circle_roi_fine_prealign_fit"
     / "PSF_fitted_2D_FOVstack.mat"
 )
-DEFAULT_PACKAGE_ROOT = PROJECT_ROOT / "Reconstruct_Progress" / "20260603_external_gmf_prepare"
+DEFAULT_PACKAGE_ROOT = PROJECT_ROOT / "Analyses" / "Reconstruct_Progress" / "20260603_external_gmf_prepare"
 DEFAULT_RECON_ROOT = DEFAULT_PACKAGE_ROOT / "r61_reconstruction_outputs"
 DEFAULT_WEIGHTS = EXPERIMENT_DIR / "reports" / "r39_best_latest_soup_20260623" / "r39_best_latest_a970.pth.tar"
 DEFAULT_CASE_NAME = "05_r61_r39_a970_candidate"

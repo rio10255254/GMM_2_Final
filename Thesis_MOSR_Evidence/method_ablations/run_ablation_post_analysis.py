@@ -164,7 +164,7 @@ def report(tag: str, weights_override: Path | None = None) -> int:
     print(f"     then re-run to extend sigma_b_table.csv")
     print(f"")
     print(f"  3. (Optional) 720-angle analysis on {tag} recon:")
-    print(f"     AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py")
+    print(f"     Analyses/AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py")
     print(f"     -> sequence_summary.json -> extend k=2 / hotspot tables")
     print(f"")
     print(f"  4. Write verification report:")

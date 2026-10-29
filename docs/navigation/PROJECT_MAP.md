@@ -41,16 +41,16 @@
 | [Deliverables](../../Deliverables/README.md) | 可獨立使用的包：R152 獨立版／影像版、R61 訓練資料重新生成器、R128–R130 論文交接包、ONNX 包 |
 | [_deployment_package](../../Deliverables/Company_Packages/README.md) | COMBO、R26、R39R40 較早的正式交付（保留當時介面） |
 | [Validations](../../Deliverables/Validations/README.md) | 交付包當時的核對 |
-| [AnalysisLab](../../AnalysisLab/README.md) | 跨版本幾何品質分析 |
+| [AnalysisLab](../../Analyses/AnalysisLab/README.md) | 跨版本幾何品質分析 |
 | [Training_Data](../../Training_Data/README.md) | 第一代資料生成程式（影像被 gitignore） |
 
 ### 依樣品／日期分的分析（不要混用）
 
 | 資料夾 | 內容 |
 |---|---|
-| [20260702_100MG_displacement_analysis](../../20260702_100MG_displacement_analysis/README.md) | 100MG 樣品 X 方向位移（不是 Step，也不是 9/3 的 30 趟） |
-| [20260704_20x_5x_analysis](../../20260704_20x_5x_analysis/README.md) | 20×／5× 實拍、重建與比較 |
-| [Step_analysis_20260623](../../Step_analysis_20260623/README.md) | Step 樣品的位移、尺寸、形狀 |
+| [20260702_100MG_displacement_analysis](../../Analyses/20260702_100MG_displacement_analysis/README.md) | 100MG 樣品 X 方向位移（不是 Step，也不是 9/3 的 30 趟） |
+| [20260704_20x_5x_analysis](../../Analyses/20260704_20x_5x_analysis/README.md) | 20×／5× 實拍、重建與比較 |
+| [Step_analysis_20260623](../../Analyses/Step_analysis_20260623/README.md) | Step 樣品的位移、尺寸、形狀 |
 | [_MOSR_Project_Archive_20260624](../../Archive/_MOSR_Project_Archive_20260624/README.md) | 6 月 Step／R61 證據快照（**不是**最新入口） |
 
 ### 歷史與封存（通常不必打開）
@@ -58,9 +58,9 @@
 | 資料夾 | 內容 |
 |---|---|
 | [Traing_Progress](../../Traing_Progress/README.md) | 早期訓練、選模、失敗（**拼字是歷史，勿改名**） |
-| [Reconstruct_Progress](../../Reconstruct_Progress/README.md) | 舊共享重建說明 |
+| [Reconstruct_Progress](../../Analyses/Reconstruct_Progress/README.md) | 舊共享重建說明 |
 | [Historical_Archive](../../Archive/Historical_Archive/README.md)、[Project_Archive](../../Archive/Project_Archive/README.md)、[Trash_Archive](../../Archive/Trash_Archive/README.md) | 各時期封存；Trash_Archive 內仍有早期 R2／3／6／7／9 的調參原件 |
-| [_build153](../../_build153/README.md) | R153 官方 Mamba 後端建置失敗的來源 |
+| [_build153](../../Experiments/R153_MeanExternalBenchmark/_build153/README.md) | R153 官方 Mamba 後端建置失敗的來源 |
 | [_portable_env_sim_20260318](../../Archive/_portable_env_sim_20260318/README.md) | 舊便攜環境少量原始碼 |
 | `Archive/.history/`、`.github/` | 編輯器歷史快照；協作範本與檢查 |
 

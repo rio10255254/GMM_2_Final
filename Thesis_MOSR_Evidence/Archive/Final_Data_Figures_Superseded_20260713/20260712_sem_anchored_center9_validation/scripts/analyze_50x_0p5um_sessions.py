@@ -24,7 +24,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 PACKAGE = Path(__file__).resolve().parents[1]
 DEFAULT_MAPPING = Path(
-    str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/input_mapping.csv')
+    str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/input_mapping.csv')
 )
 DEFAULT_CONFIG = PACKAGE / "config" / "sequence_center9.json"
 

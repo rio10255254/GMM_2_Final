@@ -1,0 +1,12 @@
+# 20× 位移原拍
+
+2026-07-04 拍攝，20×，兩組位移：`0.5um/`、`1um/` 各 50 張，8 位元灰階 BMP。分析在 [20260704_20x_5x_analysis](../../../Analyses/20260704_20x_5x_analysis/README.md)。
+
+影像在發布附件 [research-shared-sources-20261016](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-shared-sources-20261016)，Git 裡只有這份說明；恢復後就放在這裡，路徑是 `Shared_Sources/Real_Sample_Captures/20260704_20x/...`。原本在專案根目錄，只存在附件裡；2026-10-28 重整時定了這個位置。
+
+```powershell
+python Tools/download_research_assets.py --repo rio10255254/GMM_2_Final --tag research-shared-sources-20261016 --output ../captures-20x --prefix Shared_Sources/Real_Sample_Captures/20260704_20x
+python Tools/research_asset_bundle.py restore --manifest ../captures-20x/RESEARCH_ASSETS.json.gz --assets ../captures-20x --destination . --prefix Shared_Sources/Real_Sample_Captures/20260704_20x --keep-identical-existing
+```
+
+返回：[實拍原拍](../README.md)。

@@ -12,7 +12,7 @@ ROOT = Path(str(PROJECT_ROOT))
 OUT = ROOT / "Experiments" / "R66_V20_TraceabilityFigures_20260725" / "qa"
 
 PATHS = {
-    "sequence_raw": ROOT / r"20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp\frame_0000.bmp",
+    "sequence_raw": ROOT / r"Analyses\20260702_100MG_displacement_analysis\raw_inputs\x_0p5um\bmp\frame_0000.bmp",
     "static_raw": ROOT / r"Thesis_MOSR_Evidence\20260618_100MG\Image__2026-06-18__17-10-31.bmp",
     "ablation_full": ROOT / r"Experiments\R63_CausalBoundaryMotionAblation\results\evaluation\reconstructions\full_control\seed1261200\static_50x_sem\Image__2026-06-18__17-10-31.bmp",
     "ablation_wrong_no_geometry": ROOT / r"Experiments\R63_CausalBoundaryMotionAblation\results\evaluation\reconstructions\no_geometry_anchor\seed1261200\static_50x_sem\Image__2026-06-18__17-10-31.bmp",

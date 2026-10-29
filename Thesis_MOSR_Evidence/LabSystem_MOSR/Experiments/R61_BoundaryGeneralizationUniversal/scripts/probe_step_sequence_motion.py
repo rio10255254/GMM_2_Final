@@ -13,8 +13,8 @@ import numpy as np
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[5]
-DEFAULT_STEP_ROOT = PROJECT_ROOT / "Step"
-DEFAULT_ANALYSIS_ROOT = PROJECT_ROOT / "Step_analysis_20260623"
+DEFAULT_STEP_ROOT = PROJECT_ROOT / "Shared_Sources" / "Real_Sample_Captures" / "Step"
+DEFAULT_ANALYSIS_ROOT = PROJECT_ROOT / "Analyses" / "Step_analysis_20260623"
 DEFAULT_SELECTED_MANIFEST = DEFAULT_ANALYSIS_ROOT / "selected_1um_positions.csv"
 DEFAULT_OUT_JSON = DEFAULT_ANALYSIS_ROOT / "step_motion_probe_summary.json"
 DEFAULT_OUT_CSV = DEFAULT_ANALYSIS_ROOT / "step_motion_probe_pairs.csv"

@@ -469,3 +469,17 @@ def test_a_decision_keeps_a_read_as_written(ctx):
     out, unresolved = rewrite(src, kept)
     assert out == src and not unresolved
     assert read_targets(src, FILE, kept) == []
+
+
+def test_moves_mode_a_value_used_from_the_project_root_follows_the_move():
+    from restructure_rules import Rule, RuleSet
+    old = {'AnalysisLab/index.json': b'{"entry_point": "AnalysisLab/README.md"}'}
+    new = {'AnalysisLab/index.json': b'{"entry_point": "Analyses/AnalysisLab/README.md"}'}
+    rules = RuleSet([Rule('AnalysisLab', 'Analyses/AnalysisLab')], [])
+    uni = Universe.from_paths(['AnalysisLab/index.json', 'AnalysisLab/README.md', 'Tools/show.py'])
+    ctx = Context(uni, rules, {}, 'moves', data=DataView(old, new, {'AnalysisLab/index.json': 'Analyses/AnalysisLab/index.json'}))
+    src = ("from pathlib import Path\nimport json\nROOT = Path(__file__).resolve().parents[1]\n"
+           "d = json.loads((ROOT / 'AnalysisLab' / 'index.json').read_text())\nprint(f\"hub: {d['entry_point']}\")\n"
+           "ok = d['entry_point'] == 'x'\n")
+    out, edits, unresolved = rewrite_python(src, 'Tools/show.py', 'Tools/show.py', ctx)
+    assert not [u for u in unresolved if u.reason.startswith('data value')]

@@ -21,7 +21,7 @@
     },
     {
       "path": "Experiments/R135_UnifiedModelComparison/config/plan.json",
-      "sha256": "5f2c58222ede2c6813360a5dddb4a2cf759a099eb7262a15a4b93b8f5ae48b78"
+      "sha256": "e3c2774c23cac00dd95a7495c950f9b03735ceaa860c8bf89e5977cc69a4a22c"
     }
   ],
   "checkpoint": {
@@ -30,15 +30,15 @@
   },
   "loader": {
     "native_loader": {
-      "path": "20260702_100MG_displacement_analysis/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
-      "sha256": "a96b0d0741623ddb495cec2f922d6af4a147f7fb5a16608241e3fe5e2148ded8"
+      "path": "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+      "sha256": "fcc7d26ac4eb730aa05efb0b02528040f46b527d1f709c7a482238ac79d69d00"
     },
     "command": [
-      "20260702_100MG_displacement_analysis/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
+      "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
       "--weights",
       "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
       "--input-dir",
-      "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
+      "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
       "--recon-root",
       "Experiments/R135_UnifiedModelComparison/results/R61/native_loader",
       "--output-name",

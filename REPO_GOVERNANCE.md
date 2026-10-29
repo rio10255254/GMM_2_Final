@@ -128,7 +128,7 @@ Expected tracked content:
 - `PSF_Fitting/`
 - `PSF_Fitting/PSF_Fitting_ValidationLab/outputs/` 中少量刻意保留的 smoke fixtures、aggregate fixtures 與 current-standard evidence
   - 例如 `candidate_smoke/`、`reasonable_smoke/`、`experiments/`、`final_candidate_full100/`
-- `AnalysisLab/` 中按版本收納的常駐分析腳本、測試、結果與報告
+- `Analyses/AnalysisLab/` 中按版本收納的常駐分析腳本、測試、結果與報告
 - `Experiments/R32Sandbox/` 中的程式、說明、runtime status、manifest 與輕量報告（已關閉沙盒）
 - `Experiments/R26NewPSFCheck/` 中的程式、說明、audit、報告與輕量 artifacts（open side track，pending external GMF）
 - `docs/policy/` 中的正式政策文件（PSF policy 等）
@@ -145,7 +145,7 @@ Expected untracked content:
   bulk subdirectories such as `weights/`, `artifacts/`, `logs/`, `reconstructions/`, and `gmf_results/`
 - `PSF_Fitting/PSF_Fitting_ValidationLab/outputs/` 的 bulk 內容
   except for the curated smoke fixtures and current-standard evidence listed above
-- `AnalysisLab/` 內的 `__pycache__/`、`.pytest_cache/` 等執行快取
+- `Analyses/AnalysisLab/` 內的 `__pycache__/`、`.pytest_cache/` 等執行快取
   execution caches inside the permanent analysis tree
 - root 再生成的 `000_LONGRUN_*` runtime outputs
   regenerated root runtime outputs such as `000_LONGRUN_*`

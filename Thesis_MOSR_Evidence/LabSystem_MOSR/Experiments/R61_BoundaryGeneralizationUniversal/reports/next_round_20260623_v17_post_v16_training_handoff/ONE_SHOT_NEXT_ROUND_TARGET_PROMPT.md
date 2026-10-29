@@ -104,7 +104,7 @@ Then rerun the local motion probe summary so the new case is compared with raw i
 
 Use the current v14 summary as the comparison reference:
 
-`Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.json`
+`Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.json`
 
 Acceptance checks:
 
@@ -123,11 +123,11 @@ Source images:
 
 Staged center-crop input:
 
-`Step_analysis_20260623/selected_1um_input_center2048/bmp`
+`Analyses/Step_analysis_20260623/selected_1um_input_center2048/bmp`
 
 Package folder to keep outputs comparable:
 
-`Step_analysis_20260623/r61_step_1um_center2048_recon_package`
+`Analyses/Step_analysis_20260623/r61_step_1um_center2048_recon_package`
 
 Use the same inference behavior as the real-sample package: all BMPs, PSF from argument, checkpoint PSF ignored, weak PSF disabled, physical alpha zero.
 
@@ -146,11 +146,11 @@ Then run:
 
 ```powershell
 python .\LabSystem_MOSR\Experiments\R61_BoundaryGeneralizationUniversal\scripts\probe_step_sequence_motion.py `
-  --paths-tsv "Step_analysis_20260623/step_center2048_raw_r39_v14_v16_paths.tsv" `
-  --selected-manifest "Step_analysis_20260623/selected_1um_positions.csv" `
-  --output-json "Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_v16_summary.json" `
-  --output-csv "Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_v16_pairs.csv" `
-  --output-md "Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_V16_SUMMARY.md"
+  --paths-tsv "Analyses/Step_analysis_20260623/step_center2048_raw_r39_v14_v16_paths.tsv" `
+  --selected-manifest "Analyses/Step_analysis_20260623/selected_1um_positions.csv" `
+  --output-json "Analyses/Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_v16_summary.json" `
+  --output-csv "Analyses/Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_v16_pairs.csv" `
+  --output-md "Analyses/Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_V16_SUMMARY.md"
 ```
 
 Acceptance checks:
@@ -168,13 +168,13 @@ After the three validation layers are complete, run the combined gate:
 ```powershell
 python .\LabSystem_MOSR\Experiments\R61_BoundaryGeneralizationUniversal\scripts\score_triple_generalization_gate.py `
   --boundary-gate-json "<v16 gate versus R39 json>" `
-  --real-motion-summary-json "Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_stepguard_v16_full_e8.json" `
+  --real-motion-summary-json "Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_stepguard_v16_full_e8.json" `
   --real-motion-baseline-case "raw_input" `
   --real-motion-candidate-case "24_r61_motion_texture_stepguard_v16_full_e8_best" `
-  --step-summary-json "Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_v16_summary.json" `
+  --step-summary-json "Analyses/Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_v16_summary.json" `
   --step-baseline-case "01_r39_a970_step_1um_center2048" `
   --step-candidate-case "03_v16_stepguard_step_1um_center2048" `
-  --output-json "Step_analysis_20260623/triple_gate_v16_boundary_real_step_vs_raw_r39.json" `
+  --output-json "Analyses/Step_analysis_20260623/triple_gate_v16_boundary_real_step_vs_raw_r39.json" `
   --no-fail-exit
 ```
 

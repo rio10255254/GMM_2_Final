@@ -55,11 +55,11 @@ What still failed:
 
 v16 reconstruction case:
 
-`Reconstruct_Progress/20260603_external_gmf_prepare/24_r61_motion_texture_stepguard_v16_full_e8_best`
+`Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/24_r61_motion_texture_stepguard_v16_full_e8_best`
 
 Motion summary:
 
-`Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_stepguard_v16_full_e8.md`
+`Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_stepguard_v16_full_e8.md`
 
 Key tail std dy:
 
@@ -86,15 +86,15 @@ Source check:
 
 v16 Step reconstruction case:
 
-`Step_analysis_20260623/r61_step_1um_center2048_recon_package/03_v16_stepguard_step_1um_center2048`
+`Analyses/Step_analysis_20260623/r61_step_1um_center2048_recon_package/03_v16_stepguard_step_1um_center2048`
 
 Step motion summary:
 
-`Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_V16_SUMMARY.md`
+`Analyses/Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_V16_SUMMARY.md`
 
 Preview:
 
-`Step_analysis_20260623/step_center2048_raw_r39_v14_v16_preview.png`
+`Analyses/Step_analysis_20260623/step_center2048_raw_r39_v14_v16_preview.png`
 
 Key Step values:
 
@@ -113,7 +113,7 @@ The remaining concern is stability, not scale. On the Step metric used here, v16
 
 Clean recopy audit:
 
-`Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218/STEP_CLEAN_RECOPY_AUDIT_REPORT.md`
+`Analyses/Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218/STEP_CLEAN_RECOPY_AUDIT_REPORT.md`
 
 Replicate-stream check:
 
@@ -132,7 +132,7 @@ Replicate 0 is close to v14/R39, but replicate 1 is slightly worse. This support
 
 Output:
 
-`Step_analysis_20260623/triple_gate_v16_boundary_real_step_vs_raw_r39.json`
+`Analyses/Step_analysis_20260623/triple_gate_v16_boundary_real_step_vs_raw_r39.json`
 
 Result:
 

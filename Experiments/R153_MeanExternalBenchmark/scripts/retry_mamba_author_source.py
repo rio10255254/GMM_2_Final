@@ -7,7 +7,7 @@ from study import read,save
 
 
 def main():
-    work=ROOT.parents[1]/'_build153'
+    work=ROOT.parents[1]/'Experiments' / 'R153_MeanExternalBenchmark' / '_build153'
     work.mkdir(exist_ok=True)
     response=requests.get('https://github.com/state-spaces/mamba/archive/refs/tags/v1.0.1.zip',timeout=90)
     response.raise_for_status()

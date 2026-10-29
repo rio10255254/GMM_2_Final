@@ -24,7 +24,7 @@ DEFAULT_CASES = {
 DATASETS = [
     {
         "dataset": "20260702_100MG",
-        "root": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis')),
+        "root": Path(str(PROJECT_ROOT / 'Analyses' / '20260702_100MG_displacement_analysis')),
         "groups": ["x_1um", "x_0p5um"],
         "nominal_um": {"x_1um": 1.0, "x_0p5um": 0.5},
         "object_um_per_px": {"x_1um": 0.069, "x_0p5um": 0.069},
@@ -36,7 +36,7 @@ DATASETS = [
     },
     {
         "dataset": "20260704_20x_5x",
-        "root": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis')),
+        "root": Path(str(PROJECT_ROOT / 'Analyses' / '20260704_20x_5x_analysis')),
         "groups": ["20x_1um", "20x_0p5um", "5x_1um", "5x_0p5um"],
         "nominal_um": {"20x_1um": 1.0, "20x_0p5um": 0.5, "5x_1um": 1.0, "5x_0p5um": 0.5},
         "object_um_per_px": {"20x_1um": 0.1725, "20x_0p5um": 0.1725, "5x_1um": 0.69, "5x_0p5um": 0.69},

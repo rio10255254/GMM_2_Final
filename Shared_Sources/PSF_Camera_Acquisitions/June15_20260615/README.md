@@ -18,6 +18,6 @@
 
 ## 同日另一批Step
 
-788張Step照片已有GitHub原附件，並非這726張Circle原拍的另一個名稱。本次[完整既有位置表](STEP_EXISTING_PROVIDERS.json)讓兩組可分別追查；沿用既有保存和核對紀錄，這次不重傳整組Step。其位移、尺寸與論文解讀見[Step分析入口](../../../Step_analysis_20260623/README.md)。
+788張Step照片已有GitHub原附件，並非這726張Circle原拍的另一個名稱。本次[完整既有位置表](STEP_EXISTING_PROVIDERS.json)讓兩組可分別追查；沿用既有保存和核對紀錄，這次不重傳整組Step。其位移、尺寸與論文解讀見[Step分析入口](../../../Analyses/Step_analysis_20260623/README.md)。
 
 返回：[原拍總入口](../README.md)。

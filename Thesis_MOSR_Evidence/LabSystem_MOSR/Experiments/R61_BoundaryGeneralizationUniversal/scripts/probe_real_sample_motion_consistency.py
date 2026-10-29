@@ -13,7 +13,7 @@ import numpy as np
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[5]
-DEFAULT_PACKAGE_ROOT = PROJECT_ROOT / "Reconstruct_Progress" / "20260603_external_gmf_prepare"
+DEFAULT_PACKAGE_ROOT = PROJECT_ROOT / "Analyses" / "Reconstruct_Progress" / "20260603_external_gmf_prepare"
 DEFAULT_PATHS_TSV = DEFAULT_PACKAGE_ROOT / "paths_for_gmf_tool.tsv"
 DEFAULT_OUT_JSON = DEFAULT_PACKAGE_ROOT / "local_motion_probe_summary.json"
 DEFAULT_OUT_CSV = DEFAULT_PACKAGE_ROOT / "local_motion_probe_steps.csv"

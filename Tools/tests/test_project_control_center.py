@@ -133,7 +133,7 @@ def test_truth_sources_expose_analysis_summary():
     payload = module.build_payload(REPO, view="truth", health_level="quick", requested_modules=[])
 
     analysis = payload["truth_sources"]["analysis"]
-    assert analysis["entry_point"] == "AnalysisLab/README.md"
+    assert analysis["entry_point"] == "Analyses/AnalysisLab/README.md"
     assert analysis["layout_policy"] == "version_first"
     assert analysis["versions"][0]["version"] == "r26"
     assert analysis["versions"][0]["analysis_count"] >= 1
@@ -158,7 +158,7 @@ def test_truth_sources_accept_open_side_track_results_report():
             }
         ],
     }
-    analysis_index = {"entry_point": "AnalysisLab/README.md", "layout_policy": "version_first", "versions": {}}
+    analysis_index = {"entry_point": "Analyses/AnalysisLab/README.md", "layout_policy": "version_first", "versions": {}}
 
     sources = module.build_truth_sources(REPO, policy, analysis_index)
 
@@ -193,7 +193,7 @@ def test_truth_sources_accept_approved_alternate_capability_eval_report():
         ],
         "open_side_tracks": [],
     }
-    analysis_index = {"entry_point": "AnalysisLab/README.md", "layout_policy": "version_first", "versions": {}}
+    analysis_index = {"entry_point": "Analyses/AnalysisLab/README.md", "layout_policy": "version_first", "versions": {}}
 
     sources = module.build_truth_sources(REPO, policy, analysis_index)
 

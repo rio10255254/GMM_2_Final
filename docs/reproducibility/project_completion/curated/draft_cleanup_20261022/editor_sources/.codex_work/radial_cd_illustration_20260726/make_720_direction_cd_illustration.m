@@ -3,7 +3,7 @@ function make_720_direction_cd_illustration()
 %MAKE_720_DIRECTION_CD_ILLUSTRATION
 % Read-only explanatory figure for the current 720-direction radial CD rule.
 
-inputPath = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
+inputPath = fullfile(PROJECT_ROOT, 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
 outputDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_work/radial_cd_illustration_20260726');
 outputPath = fullfile(outputDir, '720_direction_radial_cd_method_50x_P29.png');
 if ~isfolder(outputDir), mkdir(outputDir); end

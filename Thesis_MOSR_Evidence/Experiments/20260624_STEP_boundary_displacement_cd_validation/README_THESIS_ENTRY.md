@@ -6,7 +6,7 @@ What can be stated:
 - On the Step sample, v16/R61 reconstruction preserves continuous displacement evidence and does not inflate the measured circle CD.
 - On 100 and 200 um center circles, the reconstructed images are closer to nominal size than raw images by about 0.17 um.
 - The optical shape estimate for the 100 um circle is close to the Mitutoyo report roundness scale, but this is not a certified roundness measurement.
-- The recent R61 multi-round tests are not just scratch work. They are the R-series model-candidate line behind the current Step/v16 evidence, especially `R61_stepguard_v16_dpv96_matched_20260623`.
+- The recent R61 multi-round tests are not just scratch work. They are the R-series model-candidate line behind the current Shared_Sources/Real_Sample_Captures/Step/v16 evidence, especially `R61_stepguard_v16_dpv96_matched_20260623`.
 
 What should not be overstated:
 - This is not yet a universal guarantee across all samples.

@@ -135,6 +135,12 @@ def equivalence(edits, old_uni, new_uni, rules, external_map, decisions=None):
                 got = norm(posixpath.join(posixpath.dirname(e.file_new), new))
             else:
                 got = norm(new)
+        elif res.style.kind in ('root_rel', 'file_rel'):
+            # the rewrite kept the way the old text was read; read the new text that way too, without
+            # guessing again (a folder of the same name beside the file, say docs/x/experiments, would mislead)
+            new = urllib.parse.unquote(re.split(r'[#?]', e.new, 1)[0]) if res.style.encoded else re.split(r'[#?]', e.new, 1)[0]
+            new = new.replace('\\\\', '/').replace('\\', '/')
+            got = norm(new) if res.style.kind == 'root_rel' else norm(posixpath.join(posixpath.dirname(e.file_new), new))
         else:
             r2 = resolve(e.new, e.file_new, new_uni, external_map)
             got = r2.target_rel if r2 else None
@@ -216,7 +222,11 @@ def _prose_spans(src):
     return out
 
 
-def residual(files, uni, rules, absolute_check=False):
+def residual(files, uni, rules, absolute_check=False, old_uni=None):
+    """Paths still pointing at an old place, and (absolute_check) text naming this machine. With
+    `old_uni`, a reading of a token counts as an old place only if it was one: it, or its folder,
+    existed before the move."""
+    was = (lambda p: old_uni.exists(p) or old_uni.exists(posixpath.dirname(p))) if old_uni is not None else (lambda p: True)
     out = []
     for name in sorted(files):
         if is_record(name):
@@ -240,9 +250,10 @@ def residual(files, uni, rules, absolute_check=False):
             if '/' not in tok and '\\' not in tok:
                 continue
             for cands in _interpretations(tok, name):
-                if any(uni.exists(p) for p in cands):
+                # a pattern piece (lab_r46_*) does not exist itself; the folder it sits in does
+                if any(uni.exists(p) or (uni.exists(posixpath.dirname(p)) and rules.map(p) is None) for p in cands):
                     break
-                stale = next((p for p in cands if rules.map(p) is not None), None)
+                stale = next((p for p in cands if rules.map(p) is not None and was(p)), None)
                 if stale:
                     out.append(f'{name}:{text.count(chr(10), 0, m.start()) + 1}: {tok} still points at {stale}')
                     break

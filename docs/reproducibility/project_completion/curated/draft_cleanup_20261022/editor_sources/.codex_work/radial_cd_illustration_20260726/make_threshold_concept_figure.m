@@ -5,7 +5,7 @@ function make_threshold_concept_figure()
 % 720-direction arithmetic-mean radial profile rule.  It is explanatory
 % only; no source measurement code or result is changed.
 
-inputPath = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
+inputPath = fullfile(PROJECT_ROOT, 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
 outputDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_work/radial_cd_illustration_20260726');
 outputPath = fullfile(outputDir, 'relative_threshold_concept_P29_radial_profile_v2.png');
 if ~isfolder(outputDir), mkdir(outputDir); end

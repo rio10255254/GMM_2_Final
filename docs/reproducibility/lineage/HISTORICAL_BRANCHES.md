@@ -34,9 +34,9 @@
 
 ## 三張舊圖容易誤讀的地方
 
-三輪原JSON的`gmf_step_std`均為8px的0.201031、0.8px的0.191336、0.08px的0.180313，對應原R26分析。三個固定版本的`AnalysisLab/r26/sequence/configs/dataset_config.py`，`_GMF_ROOT`都指向`external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw`；分析程式按這條路徑讀回傳。
+三輪原JSON的`gmf_step_std`均為8px的0.201031、0.8px的0.191336、0.08px的0.180313，對應原R26分析。三個固定版本的`Analyses/AnalysisLab/r26/sequence/configs/dataset_config.py`，`_GMF_ROOT`都指向`external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw`；分析程式按這條路徑讀回傳。
 
-因此圖中藍紅柱是各輪的內部量法，**橘色GMF actual點沿用R26，不能當成R34、R35、R37各自獨立的外部回傳**。原圖、原JSON和原報告均不改；本頁補來源讀法，避免把共用參照重複當成三輪新證據。橘色虛線則為舊R30基準。[目前原設定](../../../AnalysisLab/r26/sequence/configs/dataset_config.py)／[原讀取程式](../../../AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py)／[逐份核對](PLOT_REFERENCE_ORIGIN_AUDIT.json)。
+因此圖中藍紅柱是各輪的內部量法，**橘色GMF actual點沿用R26，不能當成R34、R35、R37各自獨立的外部回傳**。原圖、原JSON和原報告均不改；本頁補來源讀法，避免把共用參照重複當成三輪新證據。橘色虛線則為舊R30基準。[目前原設定](../../../Analyses/AnalysisLab/r26/sequence/configs/dataset_config.py)／[原讀取程式](../../../Analyses/AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py)／[逐份核對](PLOT_REFERENCE_ORIGIN_AUDIT.json)。
 
 較早報告的一些表格使用內部步長與當時比較欄，不能直接與後來正式外部GMF總表混排。研究判斷仍以原完整系列和正式政策為準；本次沒有重新計算或改判。
 

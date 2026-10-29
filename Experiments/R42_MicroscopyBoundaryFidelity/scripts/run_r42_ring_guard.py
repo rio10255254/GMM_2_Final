@@ -9,8 +9,8 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-SEQ_SCRIPT_DIR = REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "scripts"
-SEQ_CONFIG_DIR = REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "configs"
+SEQ_SCRIPT_DIR = REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "scripts"
+SEQ_CONFIG_DIR = REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "configs"
 sys.path.insert(0, str(SEQ_SCRIPT_DIR))
 sys.path.insert(0, str(SEQ_CONFIG_DIR))
 

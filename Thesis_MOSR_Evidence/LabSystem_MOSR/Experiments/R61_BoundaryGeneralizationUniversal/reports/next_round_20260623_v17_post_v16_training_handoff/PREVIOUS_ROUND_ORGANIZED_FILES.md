@@ -61,9 +61,9 @@ Key v14 result:
 
 | item | what it is | status | path |
 |---|---|---|---|
-| 20260603 package | Existing package for raw and reconstructed 20260603 cases | use | `Reconstruct_Progress/20260603_external_gmf_prepare` |
-| v14 20260603 case | v14 reconstruction of the 11-frame real sequence | compare | `Reconstruct_Progress/20260603_external_gmf_prepare/23_r61_motion_texture_v11base_full_e8_best` |
-| v14 motion summary | Local-motion summary including v14 | compare | `Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.json` |
+| 20260603 package | Existing package for raw and reconstructed 20260603 cases | use | `Analyses/Reconstruct_Progress/20260603_external_gmf_prepare` |
+| v14 20260603 case | v14 reconstruction of the 11-frame real sequence | compare | `Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/23_r61_motion_texture_v11base_full_e8_best` |
+| v14 motion summary | Local-motion summary including v14 | compare | `Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.json` |
 
 Key values:
 
@@ -76,13 +76,13 @@ Key values:
 | item | what it is | status | path |
 |---|---|---|---|
 | Step source images | Original Step capture folder with 788 BMP files | source of truth | `Step` |
-| Step selection report | Explains selected 1 um sequence | use | `Step_analysis_20260623/STEP_1UM_SELECTION_REPORT.md` |
-| Selected center-crop input | 80 selected input images cropped to center 2048 x 2048 | use for v16 inference | `Step_analysis_20260623/selected_1um_input_center2048/bmp` |
-| R39 center-crop Step output | 80-frame R39 Step reconstruction | strong reference | `Step_analysis_20260623/r61_step_1um_center2048_recon_package/01_r39_a970_step_1um_center2048/bmp` |
-| v14 center-crop Step output | 80-frame v14 Step reconstruction | compare | `Step_analysis_20260623/r61_step_1um_center2048_recon_package/02_v14_motion_texture_step_1um_center2048/bmp` |
-| Step raw/R39/v14 summary | Current Step motion summary before v16 | compare | `Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_SUMMARY.md` |
-| Step raw/R39/v14 preview | Visual preview of raw, R39, and v14 | inspect | `Step_analysis_20260623/step_center2048_raw_r39_v14_preview.png` |
-| v14 triple gate | Combined verdict for v14 | compare | `Step_analysis_20260623/triple_gate_v14_boundary_real_step_vs_raw_r39.json` |
+| Step selection report | Explains selected 1 um sequence | use | `Analyses/Step_analysis_20260623/STEP_1UM_SELECTION_REPORT.md` |
+| Selected center-crop input | 80 selected input images cropped to center 2048 x 2048 | use for v16 inference | `Analyses/Step_analysis_20260623/selected_1um_input_center2048/bmp` |
+| R39 center-crop Step output | 80-frame R39 Step reconstruction | strong reference | `Analyses/Step_analysis_20260623/r61_step_1um_center2048_recon_package/01_r39_a970_step_1um_center2048/bmp` |
+| v14 center-crop Step output | 80-frame v14 Step reconstruction | compare | `Analyses/Step_analysis_20260623/r61_step_1um_center2048_recon_package/02_v14_motion_texture_step_1um_center2048/bmp` |
+| Step raw/R39/v14 summary | Current Step motion summary before v16 | compare | `Analyses/Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_SUMMARY.md` |
+| Step raw/R39/v14 preview | Visual preview of raw, R39, and v14 | inspect | `Analyses/Step_analysis_20260623/step_center2048_raw_r39_v14_preview.png` |
+| v14 triple gate | Combined verdict for v14 | compare | `Analyses/Step_analysis_20260623/triple_gate_v14_boundary_real_step_vs_raw_r39.json` |
 
 Key values:
 

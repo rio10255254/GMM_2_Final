@@ -16,7 +16,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "results" / "x1um_counterfactual_reconstruction"
-SOURCE = Path(str(PROJECT_ROOT / '20260702_100MG_位移_50x/x_1um'))
+SOURCE = Path(str(PROJECT_ROOT / 'Shared_Sources/Real_Sample_Captures/20260702_100MG_位移_50x/x_1um'))
 LOCKED = Path(str(PROJECT_ROOT / 'Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv'))
 HELPERS_PATH = ROOT / "scripts" / "evaluate_real_holdout.py"
 ARMS = ("00_raw", "01_r96", "02_detail_gate_open", "03_all_gate_open", "04_phase_safe_detail")

@@ -211,7 +211,7 @@ def to_uint8(image01: np.ndarray) -> np.ndarray:
 def calibrate_formal_reproduction(device: torch.device) -> dict:
     model, model_meta = build_model(FINAL_CHECKPOINT, device, boundary_enabled=True)
     raw_path = Path(
-        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp')
+        str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp')
     )
     formal_path = FORMAL_ROOT / "50x_0p5um" / "frame_0000.bmp"
     image01, _ = read_gray01(raw_path)

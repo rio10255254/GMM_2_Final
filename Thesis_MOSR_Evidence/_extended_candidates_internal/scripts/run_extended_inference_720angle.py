@@ -84,11 +84,11 @@ def run_inference(tag: str, ckpt: Path, pitch: dict, device: str) -> Path | None
 
 
 def import_sequence_runner():
-    seq_dir = REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "scripts"
-    cfg_dir = REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "configs"
+    seq_dir = REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "scripts"
+    cfg_dir = REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "configs"
     sys.path.insert(0, str(cfg_dir))
     sys.path.insert(0, str(seq_dir))
-    si_dir = REPO_ROOT / "AnalysisLab" / "r26" / "single_image" / "scripts"
+    si_dir = REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "single_image" / "scripts"
     sys.path.insert(0, str(si_dir))
 
     from dataset_config import DatasetConfig

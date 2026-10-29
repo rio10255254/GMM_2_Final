@@ -10,9 +10,9 @@ out = fullfile(root, 'figures');
 if ~exist(out, 'dir'), mkdir(out); end
 
 rawStatic = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/20260618_100MG/Image__2026-06-18__17-10-31.bmp');
-raw50 = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
-raw50b = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0001.bmp');
-raw20 = fullfile(PROJECT_ROOT, '20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp');
+raw50 = fullfile(PROJECT_ROOT, 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
+raw50b = fullfile(PROJECT_ROOT, 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0001.bmp');
+raw20 = fullfile(PROJECT_ROOT, 'Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp');
 staticCenterTable = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/cd/tables/center9_cd_per_pillar.csv');
 
 pillar50Initial = [24 1100.5 642.5; 23 1173.5 642.5; 22 1244.5 642.5; ...

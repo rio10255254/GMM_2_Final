@@ -27,7 +27,7 @@
   },
   "locked_r68_evidence": {
     "config": "Experiments/R68_R61_RealFOVFeatureGeneralization/config/sequences.json",
-    "config_sha256": "a5764956f0672c6133ac1b3f860a9e5127eebe7cb1254bc03b252b6712f57f7a",
+    "config_sha256": "6c9a32e4e08184dfa3c7ec25cc783843e5a7a6c68d2bfb3871afb22c076b9cd4",
     "measurements": "Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/tile_motion_measurements.csv",
     "measurements_sha256": "3f48cdebfd032e3231c6b1ba6315fd10535125675d99dbbb0f92dfe8a49fb7d4",
     "summary": "Experiments/R68_R61_RealFOVFeatureGeneralization/results/tables/sequence_summary.csv",
@@ -67,49 +67,49 @@
       "magnification": 5,
       "nominal_step_um": 0.5,
       "frame_count": 50,
-      "raw_dir": "20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp",
-      "r61_dir": "20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um/bmp",
-      "r61_manifest": "20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um_manifest.json"
+      "raw_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp",
+      "r61_dir": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um/bmp",
+      "r61_manifest": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um_manifest.json"
     },
     "5x_1um": {
       "magnification": 5,
       "nominal_step_um": 1.0,
       "frame_count": 50,
-      "raw_dir": "20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp",
-      "r61_dir": "20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp",
-      "r61_manifest": "20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um_manifest.json"
+      "raw_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp",
+      "r61_dir": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp",
+      "r61_manifest": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um_manifest.json"
     },
     "20x_0p5um": {
       "magnification": 20,
       "nominal_step_um": 0.5,
       "frame_count": 50,
-      "raw_dir": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
-      "r61_dir": "20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um/bmp",
-      "r61_manifest": "20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um_manifest.json"
+      "raw_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
+      "r61_dir": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um/bmp",
+      "r61_manifest": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um_manifest.json"
     },
     "20x_1um": {
       "magnification": 20,
       "nominal_step_um": 1.0,
       "frame_count": 50,
-      "raw_dir": "20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
-      "r61_dir": "20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp",
-      "r61_manifest": "20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um_manifest.json"
+      "raw_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
+      "r61_dir": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp",
+      "r61_manifest": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um_manifest.json"
     },
     "50x_0p5um": {
       "magnification": 50,
       "nominal_step_um": 0.5,
       "frame_count": 51,
-      "raw_dir": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
-      "r61_dir": "20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um/bmp",
-      "r61_manifest": "20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um_manifest.json"
+      "raw_dir": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
+      "r61_dir": "Analyses/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um/bmp",
+      "r61_manifest": "Analyses/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um_manifest.json"
     },
     "50x_1um": {
       "magnification": 50,
       "nominal_step_um": 1.0,
       "frame_count": 50,
-      "raw_dir": "20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
-      "r61_dir": "20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp",
-      "r61_manifest": "20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um_manifest.json"
+      "raw_dir": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
+      "r61_dir": "Analyses/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp",
+      "r61_manifest": "Analyses/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um_manifest.json"
     }
   }
 }

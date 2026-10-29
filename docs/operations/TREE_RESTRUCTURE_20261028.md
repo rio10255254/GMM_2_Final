@@ -145,3 +145,36 @@
 - `rehash` 改成照搬移規則找檔案在 HEAD 的原身，不靠 git 的改名猜測。新檔案在 HEAD 沒有原身；被大幅手改的搬移檔，git 會看成刪除加新增。
 - 往上爬到共同上層再往下接的寫法，驗證時只算一個目標。
 - 深層副本裡從根目錄寫起、本來就壞的連結，目標照規則搬移後仍視為同一個舊問題。
+
+### 第 3 階段：跨輪分析與只在 Release 的原拍（2026-10-30）
+
+**搬了什麼。** 589 個檔，規則見 `moves_phase3.json`：
+
+- 根目錄的五個跨輪實拍分析和 `AnalysisLab` 集中到 `Analyses/`。
+- 兩個位移分析資料夾第一層的 `_r61_real_sample_runtime_*` 快照，原封不動收進各自的 `_r61_real_sample_runtime/`。100MG 有 112 個、20×／5× 有 213 個，名稱不變，一個都沒刪。
+- `_build153` 歸回 R153。
+
+**只在 Release 的原拍。** `Step`、`20260702_100MG_位移_50x`、`20260704_20x`、`20260704_5x`、`20260924` 原本只在 Release 裡，檔案樹上看不到。
+
+- 這一階段在解析時讓它們的 Release 路徑經過規則對應，指向它們的引用跟著改到 `Shared_Sources/Real_Sample_Captures/`、`Shared_Sources/PSF_Camera_Acquisitions/20260924/`。
+- 每個新位置放一份 README，寫明內容、在哪個 Release、怎麼取回。取回指令用新位置當 `--prefix`。
+- Release 清單本身在第 5 階段才換，換完之後這些指令就能直接用。
+
+**改了什麼。** 983 個檔、12,763 處：紀錄 10,907 處、連結 820 處、文件 388 處、Python 589 處、腳本 59 處。雜湊 801 個變動。
+
+**補進來的檔。** `Analyses/20260702_100MG_phase_dft_analysis_matlab/` 底下 10 張只在本機的 PNG（相位 DFT 位移圖、最佳 30 張的比較、ROI 預覽），從原工作樹複製進來，逐張核對 sha256 相同。
+
+**README。**
+
+- 新寫：`Analyses/README.md`、`Shared_Sources/Real_Sample_Captures/README.md`，以及五個原拍資料夾各一份。
+- `Shared_Sources/README.md`、`Shared_Sources/PSF_Camera_Acquisitions/README.md` 補上新位置。
+
+**沒有人工決定的地方。** `plan` 回報的兩處讀回資料值，是 `AnalysisLab/index.json` 的 `entry_point`，被拿來比較字串和顯示。值是從專案根目錄寫的專案相對路徑，照規則改成新位置後，讀它的地方本來就該跟著到新位置。工具補上這條規則之後，就不再回報。
+
+**驗證。** `verify_phase3.txt`：0 個問題。
+
+這一階段工具補了三處：
+
+- 等價檢查改成用舊值當初的讀法（根目錄相對或檔案相對）去讀新值。`docs/reproducibility/` 底下有小寫的 `experiments/`，在 Windows 上會被重新猜成相對於檔案。
+- 殘留檢查遇到 `lab_r46_*` 這類樣式片段，只要它所在的資料夾存在就算數。
+- 殘留檢查裡，被判成「還指著舊位置」的解讀，必須在搬移前真的存在過才算。R53、R56 封存清單裡的路徑，是相對於封存資料夾寫的，從來不是指根目錄的 `Reconstruct_Progress`。

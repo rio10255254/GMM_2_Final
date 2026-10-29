@@ -7,12 +7,12 @@ Scope:
 
 Created:
 - Central archive: _MOSR_Project_Archive_20260624
-- Step curated package: Step_analysis_20260623/_curated_final_20260624
+- Step curated package: Analyses/Step_analysis_20260623/_curated_final_20260624
 - Small thesis entry: Thesis_MOSR_Evidence/Experiments/20260624_STEP_boundary_displacement_cd_validation
 
 Moved:
 - 41 loose files from the root of Step_analysis_20260623 into _historical_loose_files_20260624.
-- A manifest of old and new locations is stored at Step_analysis_20260623/_historical_loose_files_20260624/MOVED_LOOSE_FILES_MANIFEST.csv.
+- A manifest of old and new locations is stored at Analyses/Step_analysis_20260623/_historical_loose_files_20260624/MOVED_LOOSE_FILES_MANIFEST.csv.
 
 Copied into curated evidence:
 - Step selection tables and reports.

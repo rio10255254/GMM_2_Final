@@ -3,7 +3,7 @@
 Per ablation:
   Step 1: inference on 3 r26 sequences -> recon BMP under
           Thesis_MOSR_Evidence/method_ablations/_ablation_recon/<TAG>/<pitch>/...
-  Step 2: invoke AnalysisLab/r26/sequence runner with custom DatasetConfig list
+  Step 2: invoke Analyses/AnalysisLab/r26/sequence runner with custom DatasetConfig list
           pointing at the new recon, output to
           Thesis_MOSR_Evidence/method_ablations/_ablation_720angle/<TAG>/
 
@@ -94,13 +94,13 @@ def run_inference(tag: str, ckpt: Path, pitch: dict, device: str) -> Path | None
 
 
 def import_sequence_runner():
-    """Import AnalysisLab/r26/sequence runner + DatasetConfig dynamically."""
-    seq_dir = REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "scripts"
-    cfg_dir = REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "configs"
+    """Import Analyses/AnalysisLab/r26/sequence runner + DatasetConfig dynamically."""
+    seq_dir = REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "scripts"
+    cfg_dir = REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "configs"
     sys.path.insert(0, str(cfg_dir))
     sys.path.insert(0, str(seq_dir))
     # also single_image for shared helpers
-    si_dir = REPO_ROOT / "AnalysisLab" / "r26" / "single_image" / "scripts"
+    si_dir = REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "single_image" / "scripts"
     sys.path.insert(0, str(si_dir))
 
     from dataset_config import DatasetConfig
