@@ -423,9 +423,18 @@ class Readers:
                     path = n.value.args[1]
         elif name == 'import_module' and value.args and _const_key(value.args[0])[0]:
             return self.module_file(value.args[0].value, 0)
-        elif name in self.defs and value.args and any(isinstance(c, ast.Call) and _fname(c) == 'spec_from_file_location'
-                                                       for d in self.defs[name] for c in ast.walk(d)):
-            path = value.args[0]
+        elif name in self.defs:
+            # a helper: the argument it hands to spec_from_file_location as the path
+            for d in self.defs[name]:
+                for c in ast.walk(d):
+                    if isinstance(c, ast.Call) and _fname(c) == 'spec_from_file_location' and len(c.args) > 1 and \
+                            isinstance(c.args[1], ast.Name):
+                        params = [a.arg for a in d.args.posonlyargs + d.args.args]
+                        kw = next((k.value for k in value.keywords if k.arg == c.args[1].id), None)
+                        if kw is not None:
+                            path = kw
+                        elif c.args[1].id in params and params.index(c.args[1].id) < len(value.args):
+                            path = value.args[params.index(c.args[1].id)]
         if path is None:
             return None
         v = self.job.ev(path)
@@ -794,6 +803,8 @@ class Readers:
         elif callee in ('append', 'add', 'insert') and isinstance(fn, ast.Attribute) and \
                 (callee != 'insert' or (len(call.args) == 2 and call.args[1] is node)):
             self.container(fn.value, (STAR,), args, escape)
+        elif callee == 'get' and isinstance(fn, ast.Attribute) and len(call.args) == 2 and call.args[1] is node:
+            self.push(call, *args)                     # cfg.get('sequences', cfg): the default may be what comes back
         elif callee == 'setdefault' and isinstance(fn, ast.Attribute) and len(call.args) == 2 and call.args[1] is node:
             self.container(fn.value, (STAR,), args, escape)
         elif callee == 'update' and isinstance(fn, ast.Attribute) and first:

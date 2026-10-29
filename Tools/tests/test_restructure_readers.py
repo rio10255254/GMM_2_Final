@@ -392,3 +392,21 @@ def test_function_alias_from_a_module(ctx):
     ctx = linked(ctx, {MAIN: main, COMMON: common})
     out, _ = rewrite(common, ctx, COMMON)
     assert "    return Path(PROJECT_ROOT / cfg['model']).exists()\n" in out
+
+
+def test_module_loaded_by_a_helper_taking_the_path_second(ctx):
+    runner = "from pathlib import Path\ndef data_dir(cfg):\n    return Path(cfg['out'])\n"
+    main = HEAD + LOAD + ("import importlib.util\ndef load_module(name, path):\n"
+                          "    spec = importlib.util.spec_from_file_location(name, path)\n"
+                          "    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n    return module\n"
+                          "helper = load_module('r', ROOT / 'scripts' / 'runner.py')\nhelper.data_dir(CONFIG)\n")
+    ctx = replace(ctx, uni=Universe.from_paths(PATHS + [RUNNER]))
+    ctx.seeds = link({FILE: main, RUNNER: runner}, ctx)
+    out, _ = rewrite(runner, ctx, RUNNER)
+    assert "    return Path(PROJECT_ROOT / cfg['out'])\n" in out
+
+
+def test_whole_config_as_a_get_default(ctx):
+    src = HEAD + LOAD + "seqs = CONFIG.get('sequences', CONFIG)\nP = Path(seqs['data']['package_root'])\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "P = Path(PROJECT_ROOT / seqs['data']['package_root'])\n" in out
