@@ -58,6 +58,18 @@ FUNCS = (ast.FunctionDef, ast.AsyncFunctionDef)
 SELF = ('self', 'cls')
 
 
+def mapped_target(t, rules):
+    """Where a read target ends up after the moves. A value used as it is ('cwd:' + value) is read
+    from the project root, where the programs run; it follows the move like any project path."""
+    if not rules:
+        return t
+    if t.startswith('cwd:'):
+        rel = norm(t[4:])
+        m = rules.map(rel) if rel else None
+        return 'cwd:' + m if m else t
+    return (rules.map(t) if ':' not in t else None) or t
+
+
 def _fname(call):
     fn = call.func
     return fn.attr if isinstance(fn, ast.Attribute) else fn.id if isinstance(fn, ast.Name) else None
@@ -1106,8 +1118,7 @@ class Readers:
         return t if t is not None else 'bad:' + value
 
     def mapped(self, t):
-        rules = self.ctx.rules
-        return (rules.map(t) if rules and ':' not in t else None) or t
+        return mapped_target(t, self.ctx.rules)
 
     # ---------- rewriting ----------
     def rewrite(self):
