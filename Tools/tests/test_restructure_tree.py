@@ -45,7 +45,7 @@ def args(repo, *more):
 def test_plan_apply_verify(tmp_path):
     repo, rec = make_repo(tmp_path)
     assert restructure_tree.main(args(repo, 'plan', '--phase', '2')) == 0
-    assert (repo / 'AnalysisLab/run.py').exists() and (rec / 'edits_phase2.jsonl').exists()
+    assert (repo / 'AnalysisLab/run.py').exists() and (rec / 'edits_phase2.jsonl.gz').exists()
     assert git(repo, 'status', '--porcelain', '--untracked-files=no') == ''
     assert restructure_tree.main(args(repo, 'apply', '--phase', '2')) == 0
     assert not (repo / 'AnalysisLab').exists()

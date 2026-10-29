@@ -10,7 +10,7 @@ content is in the cloud, interpreter paths). Phases 2-4 are moves mode with
 `moves_phaseN.json` from the records folder. Release and local paths are seen through the
 phases already applied.
 
-plan    writes edits_phaseN.jsonl, unresolved_phaseN.tsv and problems_phaseN.txt; changes nothing else.
+plan    writes edits_phaseN.jsonl.gz, unresolved_phaseN.tsv and problems_phaseN.txt; changes nothing else.
 apply   refuses while blocking unresolved references remain (not covered by
         decisions_phaseN.json); otherwise moves tracked files, writes the rewrites, runs the
         hash chain (hash_changes_phaseN.json) and stages everything. It does not commit.
@@ -28,6 +28,7 @@ values read out of data files.
 import argparse
 import csv
 import fnmatch
+import gzip
 import hashlib
 import io
 import json
@@ -163,9 +164,9 @@ def plan(ph, write_reports=True):
     block = [u for u in unresolved if blocking(u)]
     if write_reports:
         ph.rec.mkdir(parents=True, exist_ok=True)
-        with open(ph.rec / f'edits_phase{ph.n}.jsonl', 'w', encoding='utf-8', newline='\n') as f:
-            for e in edits:
-                f.write(json.dumps(asdict(e), ensure_ascii=False) + '\n')
+        # gzip with no timestamp: the same edits give the same bytes, and a phase stays under GitHub's file limit
+        text = ''.join(json.dumps(asdict(e), ensure_ascii=False) + '\n' for e in edits)
+        (ph.rec / f'edits_phase{ph.n}.jsonl.gz').write_bytes(gzip.compress(text.encode('utf-8'), mtime=0))
         with open(ph.rec / f'unresolved_phase{ph.n}.tsv', 'w', encoding='utf-8', newline='') as f:
             w = csv.writer(f, delimiter='\t', lineterminator='\n')
             w.writerow(['file', 'line', 'segment', 'reason', 'target', 'blocking'])
@@ -334,9 +335,9 @@ def run_validator(repo):
 def do_verify(ph):
     problems = []
     edits = []
-    path = ph.rec / f'edits_phase{ph.n}.jsonl'
+    path = ph.rec / f'edits_phase{ph.n}.jsonl.gz'
     if path.exists():
-        edits = [Edit(**json.loads(l)) for l in path.read_text(encoding='utf-8').splitlines() if l]
+        edits = [Edit(**json.loads(l)) for l in gzip.decompress(path.read_bytes()).decode('utf-8').splitlines() if l]
     old_uni, new_uni = ph.universe(ref='HEAD'), ph.universe(applied='upto')
     # before: stream HEAD once
     shas, tokens, old_py, parsed_before = {}, {}, {}, set()
