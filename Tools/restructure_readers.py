@@ -48,6 +48,7 @@ HARMLESS = ('len', 'isinstance', 'bool', 'print', 'repr', 'type', 'id', 'dump', 
 # library calls that write a value out or test membership: they read no path out of it
 WRITERS = ('save', 'savez', 'savez_compressed', 'savemat', 'dump', 'writerow', 'writerows', 'to_csv', 'to_json',
            'isin', 'issubset', 'issuperset', 'intersection', 'union', 'difference')
+OUTPUTS = ('print', 'dumps', 'dump', 'pprint', 'pformat', 'repr', 'write', 'writerow', 'writerows', 'info', 'warning', 'debug')
 TYPE_CHECKS = ('isinstance', 'type', 'bool', 'len', 'id', 'hash', 'int', 'float', 'round')
 SAME_SHAPE = ('deepcopy', 'copy', 'dict', 'list', 'tuple', 'sorted', 'reversed', 'OrderedDict')
 NEUTRAL = (None, '', 0, False)
@@ -723,6 +724,8 @@ class Readers:
         callee = _fname(call) if fn is not None else None
         if callee in TYPE_CHECKS and isinstance(fn, ast.Name):
             return                                     # isinstance(x, dict): not used as a path
+        if callee in OUTPUTS:
+            return                                     # print(x), json.dumps(x): shown or written out, not opened
         if self.guarded_off(node):
             return                                     # under `if isinstance(x, dict)`: a string never gets here
         if isinstance(p, ast.Expr):
@@ -1037,10 +1040,16 @@ class Readers:
         return isinstance(v, (ast.Dict, ast.List)) and not (v.keys if isinstance(v, ast.Dict) else v.elts)
 
     # ---------- where a read lands ----------
+    def kept(self, node, name):
+        """decisions_phaseN.json keeps this read as written: segment = its source, target_old = 'data:<file>:<data file>'."""
+        return self.job.decision(node, f'data:{self.job.file_old}:{name}')[0]
+
     def groups(self):
         """{read node: ([(data file, keys, old text, new text)], bindings passed through)}"""
         out = {}
         for r in self.reads:
+            if self.kept(r.node, r.name):
+                continue
             leaves, via = out.setdefault(r.node, (set(), set()))
             for keys, (o, n) in self.view.leaves(r.name).items():
                 if n is not None and matches(r.pattern, keys):
@@ -1048,8 +1057,20 @@ class Readers:
             via |= r.via
         return out
 
+    def value_top(self, node):
+        """The expression whose value a read may become: cfg.get('k', <read>), x or <read>, a if c else <read>."""
+        while True:
+            p = self.parent.get(node)
+            if isinstance(p, ast.Call) and _fname(p) == 'get' and len(p.args) == 2 and p.args[1] is node:
+                node = p
+            elif (isinstance(p, ast.IfExp) and node is not p.test) or isinstance(p, ast.BoolOp):
+                node = p
+            else:
+                return node
+
     def base(self, node):
         """The folder a read value is joined to: a Val, 'cwd' when used as is, None when not evaluable."""
+        node = self.value_top(node)
         p = self.parent.get(node)
         ev = self.ev
         if isinstance(p, ast.BinOp) and isinstance(p.op, ast.Div) and p.right is node:

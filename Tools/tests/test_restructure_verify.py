@@ -125,3 +125,21 @@ def test_residual_reads_only_notebook_code_cells():
 def test_residual_ignores_folders_that_only_start_with_the_project_name():
     files = {'Tools/a.py': "A = r'H:\\GMM_2_Final_Archive\\x'\n"}
     assert v.residual(files, NEW, None, absolute_check=True) == []
+
+
+def test_residual_lets_prose_name_the_project_folder():
+    src = ('"""Run from d:/GMM_2_Final/ or anywhere."""\n'
+           '# the old home was D:\\GMM_2_Final\n'
+           "README = \'\'\'\nKept D:/GMM_2_Final的原模型 as it was.\n\'\'\'\n")
+    assert v.residual({'Tools/a.py': src}, NEW, None, absolute_check=True) == []
+    code = "ROOT = r'D:\\GMM_2_Final'\n"
+    assert len(v.residual({'Tools/a.py': code}, NEW, None, absolute_check=True)) == 1
+    tail = '"""Data in D:/GMM_2_Final/Model/a.py."""\n'
+    assert len(v.residual({'Tools/a.py': tail}, NEW, None, absolute_check=True)) == 1
+
+
+def test_location_equivalence_accepts_the_bare_root_as_dot():
+    from restructure_text import Edit
+    q = chr(39) * 3
+    e = Edit('Tools/a.py', 'Tools/a.py', 3, q + "refs to D:/GMM_2_Final; done" + q, q + "refs to .; done" + q, 'py:string', '', '')
+    assert v.equivalence([e], NEW, NEW, None, {}) == []

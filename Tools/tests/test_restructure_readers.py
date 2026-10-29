@@ -444,3 +444,28 @@ def test_path_constant_imported_from_another_module(ctx):
     ctx = linked(ctx, {MAIN: main, COMMON: common})
     out, _ = rewrite(main, ctx, MAIN)
     assert "        self.root = Path(PROJECT_ROOT / self.cfg['out'])\n" in out
+
+
+def test_read_targets_of_a_nested_read_agree(ctx):
+    src = HEAD + LOAD + "M = Path(CONFIG['data'].get('package_root', CONFIG['model']))\nN = Path(CONFIG.get('x') or CONFIG['out'])\n"
+    out, _ = rewrite(src, ctx)
+    before = read_targets(src, FILE, ctx)
+    after = read_targets(out, FILE, replace(ctx, data_side='new'))
+    assert sorted(before) == sorted(after)
+
+
+def test_string_printed_or_dumped_is_not_a_read(ctx):
+    src = HEAD + LOAD + "print(CONFIG['out'])\nprint(json.dumps(CONFIG['model'], indent=1))\n"
+    out, unresolved = rewrite(src, ctx)
+    assert out == src and not unresolved
+
+
+def test_a_decision_keeps_a_read_as_written(ctx):
+    src = HEAD + LOAD + "text = ' '.join(str(v) for v in CONFIG['sources'].values())\n"
+    out, unresolved = rewrite(src, ctx)
+    assert unresolved                         # mixed values: the root does not fix it
+    key = ('v', f'data:{FILE}:{CFG}')
+    kept = replace(ctx, decisions={key: None})
+    out, unresolved = rewrite(src, kept)
+    assert out == src and not unresolved
+    assert read_targets(src, FILE, kept) == []

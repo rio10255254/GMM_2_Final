@@ -1,0 +1,6 @@
+[
+ {"segment": "value",
+  "target_old": "data:Experiments/R63_CausalBoundaryMotionAblation/scripts/audit_evaluation_population.py:Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/training_data/manifest.json",
+  "target_new": null,
+  "why": "pair_text() joins every value of a manifest pair into lower-case text to search words in it; it opens nothing. The paths in that text become project-relative, which the word search does not depend on."}
+]

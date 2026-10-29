@@ -20,6 +20,8 @@ import posixpath
 import re
 import subprocess
 import tempfile
+import io
+import tokenize
 import urllib.parse
 from pathlib import Path
 
@@ -98,6 +100,8 @@ def equivalence(edits, old_uni, new_uni, rules, external_map, decisions=None):
         if cls == 'py':
             if kind in ('string', 'comment'):
                 old = [_expect(t, rules, decisions) for t in token_targets(e.old, e.file_old, old_uni, external_map)]
+                if rules is None:
+                    old = [t for t in old if t]      # location mode: the project folder itself is written '.'
                 new = token_targets(e.new, e.file_new, new_uni, external_map)
                 if Counter(old) != Counter(new):
                     problems.append(f'{where}: targets {old} became {new}')
@@ -190,6 +194,27 @@ def _notebook_code(text):
                    for c in cells if c.get('cell_type') == 'code')
 
 
+def _prose_spans(src):
+    """Comments, docstrings and multi-line strings of Python source: text where naming the project
+    folder itself (no path below it) records where the work was done, and is kept."""
+    try:
+        toks = list(tokenize.generate_tokens(io.StringIO(src).readline))
+    except (tokenize.TokenError, IndentationError, SyntaxError):
+        return []
+    starts = [0]
+    for line in src.splitlines(keepends=True):
+        starts.append(starts[-1] + len(line))
+    off = lambda pos: starts[pos[0] - 1] + pos[1]
+    out, prev = [], None
+    for t in toks:
+        if t.type == tokenize.COMMENT or (t.type == tokenize.STRING and (
+                t.start[0] != t.end[0] or prev in (None, tokenize.NEWLINE, tokenize.NL, tokenize.INDENT, tokenize.DEDENT))):
+            out.append((off(t.start), off(t.end)))
+        if t.type not in (tokenize.COMMENT, tokenize.NL):
+            prev = t.type
+    return out
+
+
 def residual(files, uni, rules, absolute_check=False):
     out = []
     for name in sorted(files):
@@ -200,9 +225,13 @@ def residual(files, uni, rules, absolute_check=False):
             continue
         if absolute_check and name.lower().endswith(EXECUTABLE):
             code = _notebook_code(text) if name.lower().endswith('.ipynb') else text
-            m = PROJECT_ABS.search(code) or INTERPRETER.search(code)
+            prose = _prose_spans(code) if name.lower().endswith('.py') else []
+            # naming the project folder itself in prose is kept; a path below it, or any name in code, is not
+            hits = [m for m in PROJECT_ABS.finditer(code)
+                    if re.match(r'[\\/]+[A-Za-z0-9_.\-]', code[m.end():]) or not any(a <= m.start() < b for a, b in prose)]
+            m = (hits[0] if hits else None) or INTERPRETER.search(code)
             if m:
-                out.append(f'{name}:{text.count(chr(10), 0, m.start()) + 1}: names this machine ({m.group(0)})')
+                out.append(f'{name}:{code.count(chr(10), 0, m.start()) + 1}: names this machine ({m.group(0)})')
         if rules is None:
             continue
         for m in TOKEN.finditer(text):
