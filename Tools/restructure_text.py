@@ -315,17 +315,28 @@ class _Job:
                 new = f"fullfile(PROJECT_ROOT, '{rel}')"
             self.add(m.start(), m.end(), new, 'matlab_root', '', rel)
             self.uses_root = True
-        if self.uses_root and not re.search(r'^\s*PROJECT_ROOT\s*=', self.text, re.M):
-            expr = "mfilename('fullpath')"
-            for _ in range(self.depth() + 1):
-                expr = f'fileparts({expr})'
-            nl = '\r\n' if '\r\n' in self.text else '\n'
-            pos, indent = 0, ''
-            fm = re.search(r'^[ \t]*function\b[^\n]*\n', self.text, re.M)
-            first_code = re.search(r'^[ \t]*[^%\s]', self.text, re.M)
-            if fm and first_code and fm.start() == first_code.start():
-                pos, indent = fm.end(), '    '
-            self.repl.append((pos, pos, f'{indent}PROJECT_ROOT = {expr};{nl}'))
+        if self.uses_root:
+            self.matlab_root_definitions()
+
+    def matlab_root_definitions(self):
+        """Define PROJECT_ROOT in every part that uses it: a MATLAB function, local ones included,
+        has a workspace of its own, so the script part and each function that uses it get a line."""
+        expr = "mfilename('fullpath')"
+        for _ in range(self.depth() + 1):
+            expr = f'fileparts({expr})'
+        nl = '\r\n' if '\r\n' in self.text else '\n'
+        funcs = [m for m in re.finditer(r'^[ \t]*function\b[^\n]*\n', self.text, re.M)]
+        first_code = re.search(r'^[ \t]*[^%\s]', self.text, re.M)
+        script = not (funcs and first_code and funcs[0].start() == first_code.start())
+        # parts: (start of its body, end, where the definition goes, indent)
+        parts = [(0, funcs[0].start() if funcs else len(self.text), 0, '')] if script else []
+        for i, m in enumerate(funcs):
+            parts.append((m.end(), funcs[i + 1].start() if i + 1 < len(funcs) else len(self.text), m.end(), '    '))
+        for start, end, pos, indent in parts:
+            used = any(start <= s < end and 'PROJECT_ROOT' in new for s, _, new in self.repl)
+            defined = re.search(r'^\s*PROJECT_ROOT\s*=', self.text[start:end], re.M)
+            if used and not defined:
+                self.repl.append((pos, pos, f'{indent}PROJECT_ROOT = {expr};{nl}'))
 
     def powershell(self):
         for m in PS_LITERAL.finditer(self.text):
