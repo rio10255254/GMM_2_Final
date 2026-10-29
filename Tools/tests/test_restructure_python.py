@@ -135,6 +135,12 @@ def test_location_mode_comment_and_docstring_become_relative_text(ctx_location):
     assert out == '"""Reads Model/w.pth."""\n# see Validations/a.json\n'
 
 
+def test_docstrings_and_comments_keep_a_bare_project_root(ctx_location):
+    src = '"""Reads from D:/GMM_2_Final and D:/GMM_2_Final/Model/w.pth."""\n# lived in D:\\GMM_2_Final\n'
+    out, _, _ = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
+    assert out == '"""Reads from D:/GMM_2_Final and Model/w.pth."""\n# lived in D:\\GMM_2_Final\n'
+
+
 def test_location_mode_mid_literal_path_is_reported(ctx_location):
     src = "cmd = 'python D:\\\\GMM_2_Final\\\\Tools\\\\x.py'\n"
     out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)

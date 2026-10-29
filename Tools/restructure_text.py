@@ -105,15 +105,26 @@ def resolve_token(tok, file_rel, uni, external_map):
     return None
 
 
+def path_tokens(text):
+    """(start, end, token) for every path-shaped token. A backslash that escapes the quote right
+    after the token (JSON text: ...\\Model\\") belongs to the quote, not to the path."""
+    for m in TOKEN.finditer(text):
+        start, end, tok = m.start(), m.end(), m.group(0)
+        if text[end:end + 1] == '"':
+            n = len(tok) - len(tok.rstrip('\\'))
+            if n % 2:
+                end, tok = end - 1, tok[:-1]
+        if '/' in tok or '\\' in tok:
+            yield start, end, tok
+
+
 def token_targets(text, file_rel, uni, external_map):
     """Targets of every path-shaped token in `text`, in order."""
     out = []
-    for m in TOKEN.finditer(text):
-        tok = m.group(0)
-        if '/' in tok or '\\' in tok:
-            found = resolve_token(tok, file_rel, uni, external_map)
-            if found:
-                out.append(found[1].target_rel)
+    for _, _, tok in path_tokens(text):
+        found = resolve_token(tok, file_rel, uni, external_map)
+        if found:
+            out.append(found[1].target_rel)
     return out
 
 
@@ -227,9 +238,8 @@ class _Job:
                 self.add(start, end, new[0], 'link', res.target_rel, new[1])
 
     def tokens(self):
-        for m in TOKEN.finditer(self.text):
-            tok = m.group(0)
-            if ('/' not in tok and '\\' not in tok) or self.masked(*m.span()):
+        for start, end, tok in path_tokens(self.text):
+            if self.masked(start, end):
                 continue
             found = self.resolve_token(tok)
             if found is None:
@@ -237,7 +247,7 @@ class _Job:
             offset, res = found
             new = self.new_text(res)
             if new is not None:
-                self.add(m.start() + offset, m.end(), new[0], 'path', res.target_rel, new[1], hold=False)
+                self.add(start + offset, end, new[0], 'path', res.target_rel, new[1], hold=False)
 
     def resolve_token(self, tok):
         return resolve_token(tok, self.file_old, self.ctx.uni, self.ctx.external_map)

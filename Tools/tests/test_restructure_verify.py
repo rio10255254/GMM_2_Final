@@ -85,6 +85,12 @@ def test_hash_consistency_with_duplicate_contents():
     assert v.hash_consistency(v.hash_pairs(before), after, RULES) == []
 
 
+def test_structure_check_flags_json_that_stopped_parsing():
+    before = {'a.json': b'{"p": "x"}', 'b.ipynb': b'{"cells": []}', 'c.json': b'not json'}
+    after = {'a.json': b'{"p": "y"}', 'b.ipynb': b'{"cells": [}', 'c.json': b'still not json'}
+    assert v.structure(before, after, None) == ['b.ipynb: no longer parses as JSON']
+
+
 def test_content_addressed_files_are_recognised():
     data = b'{"design": 1}\n'
     h = hashlib.sha256(data).hexdigest()

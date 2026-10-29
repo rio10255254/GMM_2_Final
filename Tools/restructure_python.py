@@ -495,7 +495,9 @@ class _PyJob:
                 continue
             if not _is_str(node) or node in in_fstring or node in self.consumed:
                 continue
-            if node in docs or self.ctx.mode == 'moves':
+            if node in docs:
+                self.fragment(node, cls='doc')      # a docstring is prose, read like a document
+            elif self.ctx.mode == 'moves':
                 self.fragment(node)
             else:
                 self.location_literal(node)
@@ -566,7 +568,7 @@ class _PyJob:
                 continue
             s = self.starts[tok.start[0] - 1] + tok.start[1]
             e = self.starts[tok.end[0] - 1] + tok.end[1]
-            new, edits, _ = rewrite_fragment(self.src[s:e], self.file_old, self.file_new, self.ctx, 'record')
+            new, edits, _ = rewrite_fragment(self.src[s:e], self.file_old, self.file_new, self.ctx, 'doc')
             if new != self.src[s:e]:
                 self.replace(s, e, new, 'comment', edits[0].old_target if edits else '', edits[0].new_target if edits else '')
 

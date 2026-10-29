@@ -315,7 +315,7 @@ def do_verify(ph):
         edits = [Edit(**json.loads(l)) for l in path.read_text(encoding='utf-8').splitlines() if l]
     old_uni, new_uni = ph.universe(ref='HEAD'), ph.universe(applied='upto')
     # before: stream HEAD once
-    shas, tokens, old_py = {}, {}, {}
+    shas, tokens, old_py, parsed_before = {}, {}, {}, set()
     edited_py = {e.file_old for e in edits if e.file_old.lower().endswith('.py')}
     for name, data in head_blobs(ph.repo):
         if verify.is_record(name):
@@ -325,6 +325,8 @@ def do_verify(ph):
             tokens[name] = verify.hex_tokens(name, data)
         if name in edited_py:
             old_py[name] = data.decode('utf-8-sig', errors='replace')
+        if verify.parses(name, data):
+            parsed_before.add(name)
     pairs = verify.hash_pairs_from(shas, tokens)
     now = [n for n in tracked(ph.repo) if not verify.is_record(n)]
     after = OnDisk(ph.repo, now)
@@ -351,6 +353,10 @@ def do_verify(ph):
     texts = {n: after[n] for n in now if rewritable(n)}
     problems += verify.residual(texts, new_uni, ph.upto, absolute_check=True)
     problems += verify.hash_consistency(pairs, after, rules)
+    for name in sorted(parsed_before):
+        new = (rules.map(name) if rules else None) or name
+        if new in after and verify.parses(new, after[new]) is False:
+            problems.append(f'{new}: no longer parses as JSON')
     if rules:
         # the old tree as this machine has it (tracked + Release + local files), moved by this phase
         problems += verify.virtual_tree([e for e in edits if e.old_target], old_uni, rules)

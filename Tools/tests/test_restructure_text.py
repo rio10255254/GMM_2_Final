@@ -120,6 +120,12 @@ def test_location_mode_record_and_interpreter(ctx_location):
     assert out == b'& python Tools\\x.py\r\n'
 
 
+def test_escaped_quote_after_a_path_stays_escaped(ctx_location):
+    nb = {'cells': [{'cell_type': 'code', 'source': ['ROOT = Path(r"D:\\GMM_2_Final\\Model")\n']}]}
+    out, _, _ = rewrite_bytes(json.dumps(nb, indent=1).encode(), 'docs/nb/a.ipynb', 'docs/nb/a.ipynb', ctx_location)
+    assert json.loads(out)['cells'][0]['source'] == ['ROOT = Path(r"../../Model")\n']
+
+
 def test_location_mode_notebook_paths_relative_to_notebook(ctx_location):
     nb = {'cells': [{'cell_type': 'code', 'source': ["w = r'D:\\GMM_2_Final\\Model\\a.pth'\n"]}]}
     data = json.dumps(nb, indent=1).encode()

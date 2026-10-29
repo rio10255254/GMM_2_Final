@@ -41,6 +41,29 @@ def is_record(name):
         bool(TRANSFORM_CODE.match(name))
 
 
+def parses(name, data):
+    """Whether a JSON-family file (.json, .ipynb, .json.gz) parses; None for other files."""
+    low = name.lower()
+    if not low.endswith(('.json', '.ipynb', '.json.gz')):
+        return None
+    import json
+    try:
+        json.loads(_text(name, data) or '')
+        return True
+    except ValueError:
+        return False
+
+
+def structure(before, after, rules):
+    """JSON-family files that parsed before the transform must still parse after it."""
+    out = []
+    for name, data in sorted(before.items()):
+        new = (rules.map(name) if rules else None) or name
+        if parses(name, data) and new in after and parses(new, after[new]) is False:
+            out.append(f'{new}: no longer parses as JSON')
+    return out
+
+
 def content_addressed(name, data):
     """A file stored under its own sha256 (a folder or file named by it): its identity is its
     content, so the transform never rewrites it."""
