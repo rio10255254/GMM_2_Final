@@ -120,3 +120,31 @@ def test_verify_catches_a_bad_rewrite(tmp_path):
     p = repo / 'Analyses/AnalysisLab/run.py'
     p.write_text(p.read_text(encoding='utf-8').replace('parents[2]', 'parents[1]'), encoding='utf-8')
     assert restructure_tree.main(args(repo, 'verify', '--phase', '2')) == 1
+
+
+def make_reader_repo(tmp_path):
+    repo, rec = make_repo(tmp_path)
+    write(repo, 'Experiments/R1/config/experiment.json', json.dumps({'data': {'root': 'D:/GMM_2_Final/Model'}}) + '\n')
+    write(repo, 'Experiments/R1/scripts/run.py', "from pathlib import Path\nimport json\nROOT = Path(__file__).resolve().parents[1]\n"
+                                                 "CONFIG = json.loads((ROOT / 'config/experiment.json').read_text())\n"
+                                                 "DATA = ROOT/CONFIG['data']['root']\n")
+    git(repo, 'add', '-A'); git(repo, 'commit', '-qm', 'reader')
+    return repo, rec
+
+
+def test_phase1_fixes_readers_of_rewritten_data(tmp_path):
+    repo, rec = make_reader_repo(tmp_path)
+    assert restructure_tree.main(args(repo, 'apply', '--phase', '1')) == 0
+    assert json.loads((repo / 'Experiments/R1/config/experiment.json').read_text(encoding='utf-8')) == {'data': {'root': 'Model'}}
+    src = (repo / 'Experiments/R1/scripts/run.py').read_text(encoding='utf-8')
+    assert "DATA = PROJECT_ROOT/CONFIG['data']['root']\n" in src
+    assert restructure_tree.main(args(repo, 'verify', '--phase', '1')) == 0
+
+
+def test_verify_catches_a_reader_left_as_it_was(tmp_path):
+    repo, rec = make_reader_repo(tmp_path)
+    assert restructure_tree.main(args(repo, 'apply', '--phase', '1')) == 0
+    p = repo / 'Experiments/R1/scripts/run.py'
+    p.write_text(git(repo, 'show', 'HEAD:Experiments/R1/scripts/run.py'), encoding='utf-8', newline='\n')
+    assert restructure_tree.main(args(repo, 'verify', '--phase', '1')) == 1
+    assert 'Experiments/R1/config/experiment.json' in (rec / 'verify_phase1.txt').read_text(encoding='utf-8')

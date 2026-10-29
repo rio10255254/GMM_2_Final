@@ -58,6 +58,8 @@ class Context:
     external_map: dict
     mode: str              # 'moves' | 'location'
     decisions: dict = None  # {(exact source segment, old target): new target, or None to keep as written}
+    data: object = None     # restructure_readers.DataView: old and new content of the data files this phase rewrites
+    data_side: str = 'old'  # which content a read sees: the old tree's ('old') or the rewritten one ('new')
 
 
 def file_class(name):

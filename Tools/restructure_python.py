@@ -30,6 +30,7 @@ import re
 import tokenize
 import warnings
 
+from restructure_readers import Readers, read_parents
 from restructure_resolve import PROJECT_ABS, norm, resolve
 from restructure_text import ABS_START, INTERPRETER, Edit, rewrite_fragment
 
@@ -91,7 +92,7 @@ def evaluated_targets(src, file_rel, ctx):
         return None
     job = _PyJob(src, tree, file_rel, file_rel, ctx)
     job.bind_pass(tree, record=False)
-    skip = job.docstrings()
+    skip = job.docstrings() | read_parents(job)      # a joined data value is checked by read_targets
     for node in ast.walk(tree):
         if isinstance(node, ast.JoinedStr):
             skip.update(n for n in ast.walk(node))
@@ -445,8 +446,17 @@ class _PyJob:
         self.walk(self.tree)
         self.strings()
         self.comments()
+        if self.ctx.data is not None:
+            Readers(self).run().rewrite()
         if self.ctx.mode == 'location':
             self.insert_root()
+
+    def drop_inside(self, start, end):
+        """Forget rewrites inside [start, end): that source is being replaced as a whole."""
+        keep = [i for i, (s, e, _) in enumerate(self.repl) if not (start <= s and e <= end)]
+        self.repl = [self.repl[i] for i in keep]
+        self.edits = [self.edits[i] for i in keep]
+        self.root_uses = [u for u in self.root_uses if not (start <= u[0] and u[1] <= end)]
 
     def bind_pass(self, tree, record):
         for node in ast.walk(tree):
@@ -573,28 +583,42 @@ class _PyJob:
                 self.replace(s, e, new, 'comment', edits[0].old_target if edits else '', edits[0].new_target if edits else '')
 
     # ---------- location mode: project root ----------
-    def module_root_name(self, before):
+    def module_root_name(self, before, path_only=False):
         for stmt in self.tree.body:
             if isinstance(stmt, ast.Assign) and len(stmt.targets) == 1 and isinstance(stmt.targets[0], ast.Name):
                 v = self.ev(stmt.value)
-                if v is not None and v.rel == '' and not v.dyn and self.span(stmt)[1] <= before:
+                if v is not None and v.rel == '' and not v.dyn and self.span(stmt)[1] <= before and (v.is_path or not path_only):
                     return stmt.targets[0].id, v.is_path
         return None
 
     def insert_root(self):
         if not self.root_uses:
             return
-        first = min(s for s, _, _, _ in self.root_uses)
-        found = self.module_root_name(first)
-        if found:
-            name, is_path = found
-        else:
+        # a path read out of a data file is joined with '/', so it needs a Path-valued root
+        groups = {}
+        for use in self.root_uses:
+            groups.setdefault(use[2].startswith('reader'), []).append(use)
+        names, missing = {}, []
+        for reader, uses in groups.items():
+            first = min(u[0] for u in uses)
+            names[reader] = self.module_root_name(first, path_only=reader)
+            if names[reader] is None:
+                missing.append(first)
+        if missing:
             bound = {t.id for n in ast.walk(self.tree) if isinstance(n, (ast.Assign, ast.AnnAssign))
                      for t in (n.targets if isinstance(n, ast.Assign) else [n.target]) if isinstance(t, ast.Name)}
-            name, is_path = ('_PROJECT_ROOT' if 'PROJECT_ROOT' in bound else 'PROJECT_ROOT'), True
-            self.insert_definition(name, first)
+            inserted = '_PROJECT_ROOT' if 'PROJECT_ROOT' in bound else 'PROJECT_ROOT'
+            self.insert_definition(inserted, min(missing))
+            names = {k: v or (inserted, True) for k, v in names.items()}
         for s, e, kind, rel in self.root_uses:
-            if kind == 'fstring':
+            name, is_path = names[kind.startswith('reader')]
+            if kind == 'reader_base':
+                new = name
+            elif kind == 'reader_join':
+                new = f'{name} / {self.src[s:e]}'
+            elif kind == 'reader_str':
+                new = f'str({name} / {self.src[s:e]})'
+            elif kind == 'fstring':
                 new = '{' + name + '}'
             elif not rel:
                 new = f'str({name})' if is_path else name

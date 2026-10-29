@@ -35,6 +35,7 @@ import subprocess
 import sys
 import threading
 import warnings
+from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
 
@@ -42,13 +43,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import check_markdown_links
 from restructure_hashes import propagate
 from restructure_python import rewrite_python
+from restructure_readers import DATA_EXT, DataView, read_targets
 from restructure_resolve import Universe, git_env
 from restructure_rules import compose, load_rules
 from restructure_text import Context, Edit, file_class, rewrite_bytes
 import restructure_verify as verify
 
 RECORDS = 'docs/operations/TREE_RESTRUCTURE_20261028'
-NON_BLOCKING = ('syntax error', 'not UTF-8', 'not gzip')
+# a data value the tool could not fix is listed for checking by hand; a read it got wrong fails verify
+NON_BLOCKING = ('syntax error', 'not UTF-8', 'not gzip', 'data value')
 PYTEST_GROUPS = ['Tools/tests', 'Model/tests', 'PSF_Fitting/tests', 'AnalysisLab/tests', 'Analyses/AnalysisLab/tests',
                  'Thesis_MOSR_Evidence/tests']
 
@@ -125,9 +128,12 @@ def plan(ph, write_reports=True):
     ctx = ph.context(ph.universe())
     moves = {f: m for f in files if ph.rules and (m := ph.rules.map(f)) and not verify.is_record(f)}
     changed, edits, unresolved, problems = {}, [], [], []
-    for name in files:
-        if verify.is_record(name) or not rewritable(name):
-            continue
+    todo = [n for n in files if not verify.is_record(n) and rewritable(n)]
+    # data files first: rewriting a Python file that reads one back needs its old and new content
+    data_old = {}
+    for name in sorted(todo, key=lambda n: n.lower().endswith('.py')):
+        if name.lower().endswith('.py') and ctx.data is None:
+            ctx.data = DataView(data_old, {n: changed[n] for n in data_old}, moves)
         data = (ph.repo / name).read_bytes()
         if verify.content_addressed(name, data):
             continue                 # stored under its own sha256: rewriting would break its identity
@@ -136,6 +142,8 @@ def plan(ph, write_reports=True):
         edits += e; unresolved += u; problems += p
         if out != data:
             changed[name] = out
+            if name.lower().endswith(DATA_EXT):
+                data_old[name] = data
     block = [u for u in unresolved if blocking(u)]
     if write_reports:
         ph.rec.mkdir(parents=True, exist_ok=True)
@@ -317,6 +325,9 @@ def do_verify(ph):
     # before: stream HEAD once
     shas, tokens, old_py, parsed_before = {}, {}, {}, set()
     edited_py = {e.file_old for e in edits if e.file_old.lower().endswith('.py')}
+    data_names = {e.file_old for e in edits if e.file_old.lower().endswith(DATA_EXT)}
+    data_old, reader_py = {}, {}
+    names_view = DataView({n: b'' for n in data_names}, {})
     for name, data in head_blobs(ph.repo):
         if verify.is_record(name):
             continue
@@ -325,16 +336,42 @@ def do_verify(ph):
             tokens[name] = verify.hex_tokens(name, data)
         if name in edited_py:
             old_py[name] = data.decode('utf-8-sig', errors='replace')
+        if name in data_names:
+            data_old[name] = data
+        if name.lower().endswith('.py') and data_names:
+            text = data.decode('utf-8-sig', errors='replace')
+            if names_view.mentioned_in(text):
+                reader_py[name] = text
         if verify.parses(name, data):
             parsed_before.add(name)
     pairs = verify.hash_pairs_from(shas, tokens)
     now = [n for n in tracked(ph.repo) if not verify.is_record(n)]
     after = OnDisk(ph.repo, now)
     rules = ph.rules
+    mapped = lambda n: (rules.map(n) if rules else None) or n
     problems += verify.equivalence([e for e in edits if not e.kind.startswith('py:') or e.kind in ('py:string', 'py:comment')],
                                    old_uni, new_uni, rules, ph.external)
     flat_decisions = {k[1]: v for k, v in ph.decisions.items() if v}
+    view = DataView({n: d for n, d in data_old.items() if mapped(n) in after},
+                    {n: after[mapped(n)] for n in data_old if mapped(n) in after},
+                    {n: mapped(n) for n in data_old})
     ctx_old, ctx_new = ph.context(old_uni), ph.context(new_uni, rules=None)
+    ctx_old.data, ctx_new.data, ctx_new.data_side = view, view, 'new'
+    # every read of a rewritten data value lands where it did
+    for old_name, src in sorted(reader_py.items()):
+        new_name = mapped(old_name)
+        if new_name not in after:
+            continue
+        before = read_targets(src, old_name, ctx_old)
+        now_reads = read_targets(after[new_name].decode('utf-8-sig', errors='replace'), new_name, ctx_new)
+        if before is None or now_reads is None:
+            continue
+        expect = Counter((d, k, t if ':' in t else verify._expect(t, rules, flat_decisions)) for d, k, t in before)
+        got = Counter(now_reads)
+        if expect != got:
+            show = lambda c: sorted(f"{d}:{'/'.join(map(str, k))} -> {t}" for d, k, t in c.elements())[:4]
+            problems.append(f'{new_name}: data values read from other places; expected {show(expect - got)}, '
+                            f'got {show(got - expect)}')
     for old_name, src in sorted(old_py.items()):
         new_name = (rules.map(old_name) if rules else None) or old_name
         if new_name in after:
