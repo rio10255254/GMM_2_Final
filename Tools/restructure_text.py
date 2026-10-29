@@ -60,6 +60,7 @@ class Context:
     decisions: dict = None  # {(exact source segment, old target): new target, or None to keep as written}
     data: object = None     # restructure_readers.DataView: old and new content of the data files this phase rewrites
     data_side: str = 'old'  # which content a read sees: the old tree's ('old') or the rewritten one ('new')
+    seeds: dict = None      # {python file: data values arriving from other modules}, from restructure_readers.link
 
 
 def file_class(name):

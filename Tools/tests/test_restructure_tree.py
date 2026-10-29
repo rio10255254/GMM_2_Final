@@ -148,3 +148,18 @@ def test_verify_catches_a_reader_left_as_it_was(tmp_path):
     p.write_text(git(repo, 'show', 'HEAD:Experiments/R1/scripts/run.py'), encoding='utf-8', newline='\n')
     assert restructure_tree.main(args(repo, 'verify', '--phase', '1')) == 1
     assert 'Experiments/R1/config/experiment.json' in (rec / 'verify_phase1.txt').read_text(encoding='utf-8')
+
+
+def test_phase1_follows_values_into_another_module(tmp_path):
+    repo, rec = make_reader_repo(tmp_path)
+    write(repo, 'Experiments/R1/scripts/common.py', "from pathlib import Path\ndef data_dir(cfg):\n    return Path(cfg['data']['root'])\n")
+    write(repo, 'Experiments/R1/scripts/use.py', "from pathlib import Path\nimport json\nfrom common import data_dir\n"
+                                                 "ROOT = Path(__file__).resolve().parents[1]\n"
+                                                 "D = data_dir(json.loads((ROOT / 'config/experiment.json').read_text()))\n")
+    git(repo, 'add', '-A'); git(repo, 'commit', '-qm', 'two modules')
+    assert restructure_tree.main(args(repo, 'apply', '--phase', '1')) == 0
+    assert "return Path(PROJECT_ROOT / cfg['data']['root'])\n" in (repo / 'Experiments/R1/scripts/common.py').read_text(encoding='utf-8')
+    assert restructure_tree.main(args(repo, 'verify', '--phase', '1')) == 0
+    p = repo / 'Experiments/R1/scripts/common.py'
+    p.write_text(git(repo, 'show', 'HEAD:Experiments/R1/scripts/common.py'), encoding='utf-8', newline='\n')
+    assert restructure_tree.main(args(repo, 'verify', '--phase', '1')) == 1

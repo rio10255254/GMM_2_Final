@@ -43,7 +43,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import check_markdown_links
 from restructure_hashes import propagate
 from restructure_python import rewrite_python
-from restructure_readers import DATA_EXT, DataView, read_targets
+from restructure_readers import DATA_EXT, DataView, link, read_targets
 from restructure_resolve import Universe, git_env
 from restructure_rules import compose, load_rules
 from restructure_text import Context, Edit, file_class, rewrite_bytes
@@ -134,6 +134,8 @@ def plan(ph, write_reports=True):
     for name in sorted(todo, key=lambda n: n.lower().endswith('.py')):
         if name.lower().endswith('.py') and ctx.data is None:
             ctx.data = DataView(data_old, {n: changed[n] for n in data_old}, moves)
+            py = {n: (ph.repo / n).read_bytes().decode('utf-8-sig', errors='replace') for n in todo if n.lower().endswith('.py')}
+            ctx.seeds = link(py, ctx)
         data = (ph.repo / name).read_bytes()
         if verify.content_addressed(name, data):
             continue                 # stored under its own sha256: rewriting would break its identity
@@ -326,8 +328,7 @@ def do_verify(ph):
     shas, tokens, old_py, parsed_before = {}, {}, {}, set()
     edited_py = {e.file_old for e in edits if e.file_old.lower().endswith('.py')}
     data_names = {e.file_old for e in edits if e.file_old.lower().endswith(DATA_EXT)}
-    data_old, reader_py = {}, {}
-    names_view = DataView({n: b'' for n in data_names}, {})
+    data_old, py_old = {}, {}
     for name, data in head_blobs(ph.repo):
         if verify.is_record(name):
             continue
@@ -339,9 +340,7 @@ def do_verify(ph):
         if name in data_names:
             data_old[name] = data
         if name.lower().endswith('.py') and data_names:
-            text = data.decode('utf-8-sig', errors='replace')
-            if names_view.mentioned_in(text):
-                reader_py[name] = text
+            py_old[name] = data.decode('utf-8-sig', errors='replace')
         if verify.parses(name, data):
             parsed_before.add(name)
     pairs = verify.hash_pairs_from(shas, tokens)
@@ -357,13 +356,15 @@ def do_verify(ph):
                     {n: mapped(n) for n in data_old})
     ctx_old, ctx_new = ph.context(old_uni), ph.context(new_uni, rules=None)
     ctx_old.data, ctx_new.data, ctx_new.data_side = view, view, 'new'
-    # every read of a rewritten data value lands where it did
-    for old_name, src in sorted(reader_py.items()):
+    # every read of a rewritten data value lands where it did, values crossing modules included
+    py_new = {mapped(n): after[mapped(n)].decode('utf-8-sig', errors='replace') for n in py_old if mapped(n) in after}
+    ctx_old.seeds, ctx_new.seeds = link(py_old, ctx_old), link(py_new, ctx_new)
+    for old_name, src in sorted(py_old.items()):
         new_name = mapped(old_name)
-        if new_name not in after:
+        if new_name not in py_new or not (view.mentioned_in(src) or old_name in ctx_old.seeds or new_name in ctx_new.seeds):
             continue
         before = read_targets(src, old_name, ctx_old)
-        now_reads = read_targets(after[new_name].decode('utf-8-sig', errors='replace'), new_name, ctx_new)
+        now_reads = read_targets(py_new[new_name], new_name, ctx_new)
         if before is None or now_reads is None:
             continue
         expect = Counter((d, k, t if ':' in t else verify._expect(t, rules, flat_decisions)) for d, k, t in before)

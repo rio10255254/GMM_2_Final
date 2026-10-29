@@ -9,17 +9,23 @@ the project root, and so verification can check that every read lands where it d
 
 Followed: a call whose first argument (through open(), .open(), .read_text(), or a name
 from `with open(...) as f`) evaluates to a rewritten data file; constant subscripts and
-.get('key'); names bound to such values, per function scope; `self.attr` within a class;
-for-loops and comprehensions over lists, .values() and .items(); same-module functions
-that return such a value (their callers are followed) or receive one as an argument. A
-value with rewritten paths below it that goes anywhere else is reported for checking by
-hand, as is a read the project root cannot fix (a command line, a list mixing absolute
+.get('key'); names bound to such values (the binding that reaches each use, per scope;
+comprehensions are scopes of their own); `self.attr` within a class; for-loops and
+comprehensions over lists, .values() and .items(); values put into dict and list literals,
+dict(key=...), .append() and comprehensions; functions that return such a value (their
+callers are followed) or receive one as an argument, in the same module or, through
+imports that resolve to a file of the project, in another (link() carries values across
+modules until nothing new arrives).
+
+A value with rewritten paths below it that goes anywhere else is reported for checking
+by hand, as is a read the project root cannot fix (a command line, a list mixing absolute
 and relative entries) or one reached through a name that also holds other values.
 """
 import ast
 from collections import defaultdict
 from dataclasses import dataclass
 import json
+import posixpath
 import re
 import warnings
 
@@ -35,16 +41,31 @@ OPENERS = ('read_text', 'read_bytes', 'open')
 FILE_MODULES = ('io', 'codecs', 'gzip', 'builtins')
 PARSER_MODULES = ('json', 'yaml', 'toml', 'tomllib', 'tomli', 'orjson', 'ujson', 'simplejson', 'json5', 'hjson')
 PARSERS = ('load', 'loads', 'safe_load', 'full_load', 'unsafe_load')
+LOADER_NAME = re.compile(r'load|read', re.I)
 # uses of a loaded value that read no path out of it
 HARMLESS = ('len', 'isinstance', 'bool', 'print', 'repr', 'type', 'id', 'dump', 'dumps', 'pprint', 'pformat',
-            'keys', 'hash', 'sorted', 'set', 'any', 'all')
+            'keys', 'hash', 'set', 'any', 'all', 'format')
+TYPE_CHECKS = ('isinstance', 'type', 'bool', 'len', 'id', 'hash')
+SAME_SHAPE = ('deepcopy', 'copy', 'dict', 'list', 'tuple', 'sorted', 'reversed', 'OrderedDict')
 NEUTRAL = (None, '', 0, False)
-SCOPES = (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda)
+COMPS = (ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)
+SCOPES = (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda) + COMPS
+FUNCS = (ast.FunctionDef, ast.AsyncFunctionDef)
 
 
 def _fname(call):
     fn = call.func
     return fn.attr if isinstance(fn, ast.Attribute) else fn.id if isinstance(fn, ast.Name) else None
+
+
+def _const_key(node):
+    if isinstance(node, ast.Constant) and isinstance(node.value, (str, int)) and not isinstance(node.value, bool):
+        return True, node.value
+    return False, None
+
+
+def _pos(node):
+    return node.lineno, node.col_offset
 
 
 # ---------- data ----------
@@ -87,6 +108,11 @@ def below(pattern, keys):
     return len(keys) > len(pattern) and all(p == STAR or p == k for p, k in zip(pattern, keys))
 
 
+def mentions(src, basenames):
+    """A cheap filter: the source names one of these files (a load site always spells its name)."""
+    return any(m.group(0).lower() in basenames for m in DATA_NAME.finditer(src))
+
+
 class DataView:
     """Old and new contents of the data files a phase rewrites, keyed by their old names."""
 
@@ -97,8 +123,7 @@ class DataView:
         self._objs, self._leaves, self._changed = {}, {}, {}
 
     def mentioned_in(self, src):
-        """A cheap filter: the source names one of these files (a load site always spells its name)."""
-        return any(m.group(0).lower() in self.basenames for m in DATA_NAME.finditer(src))
+        return mentions(src, self.basenames)
 
     def find(self, rel, side):
         """The old name of the data file at `rel` as `side` sees it, or None when it is not one of them."""
@@ -152,13 +177,29 @@ class Read:
 
 
 class Readers:
-    def __init__(self, job):
+    """One module. `seeds` are values arriving from other modules (see link()):
+    ('param', function, position or keyword, data, pattern, prefix, certain)
+    ('global', imported name, data, pattern, prefix, certain)
+    ('ret', imported function, data, pattern, prefix, certain)
+
+    A followed value is the part `pattern` of data file `data`, wrapped in `prefix`: keys an
+    access must go through first (a value put into {'k': value} has prefix ('k',)). Only an
+    unwrapped value that is one string leaf is a read. `certain` is False for a value from a
+    call that may not parse the file (shutil.copy2(path, ...)): it is followed but never
+    reported as escaping."""
+
+    def __init__(self, job, seeds=()):
         self.job, self.ctx = job, job.ctx
         self.view, self.side = job.ctx.data, job.ctx.data_side
         self.parent = job.parent
+        self.seeds = seeds
         self.queue, self.seen = [], set()
-        self.reads, self.escapes = [], []
-        self.bound = defaultdict(set)        # binding -> store nodes or calls it was bound through
+        self.reads, self.escapes, self.pending = [], [], []
+        self.outgoing = set()                 # (file, function, slot, data, pattern, prefix, certain)
+        self.exports = defaultdict(set)       # module-level name -> {(data, pattern, prefix, certain)}
+        self.returned = defaultdict(set)      # module-level function -> {(data, pattern, prefix, certain)}
+        self.bound = defaultdict(set)         # binding -> store nodes / calls / 'seed' it was bound through
+        self._imports = None
         self._index()
 
     # ---------- index ----------
@@ -189,13 +230,14 @@ class Readers:
     def _index(self):
         tree = self.job.tree
         self.globals = set()
-        self.stores = defaultdict(list)      # (scope, name) -> Name/arg nodes that bind it
+        self.stores = defaultdict(list)      # (scope, name) -> Name / arg nodes that bind it
         self.uses = defaultdict(list)        # (scope, name) -> Name loads
         self.attr_stores = defaultdict(list)
         self.attr_uses = defaultdict(list)   # (class, attr) -> self.attr loads
         self.defs = defaultdict(list)
         self.calls = defaultdict(list)       # function name -> calls by name or self.<name>
         self.opened = {}                     # (scope, name) -> path expression of an opened file
+        self.syspath = []
         for node in ast.walk(tree):
             if isinstance(node, ast.Global):
                 for n in node.names:
@@ -221,6 +263,12 @@ class Readers:
                     self.calls[fn.id].append(node)
                 elif isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name) and fn.value.id == 'self':
                     self.calls[fn.attr].append(node)
+                if isinstance(fn, ast.Attribute) and fn.attr in ('insert', 'append') and \
+                        isinstance(fn.value, ast.Attribute) and fn.value.attr == 'path' and \
+                        isinstance(fn.value.value, ast.Name) and fn.value.value.id == 'sys' and node.args:
+                    v = self.job.ev(node.args[-1])
+                    if v is not None and not v.dyn:
+                        self.syspath.append(v.rel)
             elif isinstance(node, (ast.With, ast.AsyncWith)):
                 for it in node.items:
                     if isinstance(it.optional_vars, ast.Name):
@@ -250,6 +298,63 @@ class Readers:
             return name in PARSERS and isinstance(v, ast.Name) and v.id in PARSER_MODULES
         return isinstance(fn, ast.Name) and (name in PARSERS or (own and name in self.loader_defs))
 
+    # ---------- imports ----------
+    def module_file(self, module, level):
+        d = posixpath.dirname(self.job.file_old)
+        sub = (module or '').replace('.', '/')
+        if level:
+            base = d
+            for _ in range(level - 1):
+                base = posixpath.dirname(base)
+            dirs = [base]
+        else:
+            dirs, a = list(self.syspath) + [d], d
+            while a:
+                a = posixpath.dirname(a)
+                dirs.append(a)
+        for b in dirs:
+            if not sub:
+                continue
+            for c in (f'{b}/{sub}.py' if b else f'{sub}.py', f'{b}/{sub}/__init__.py' if b else f'{sub}/__init__.py'):
+                c = norm(c)
+                if c and c != self.job.file_old and self.ctx.uni.exists(c):
+                    return c
+        return None
+
+    def imports(self):
+        """{local name: (file, name in that file, or None for the module itself)} for project modules."""
+        if self._imports is None:
+            out = {}
+            for node in ast.walk(self.job.tree):
+                if isinstance(node, ast.ImportFrom):
+                    f = self.module_file(node.module, node.level)
+                    for a in node.names:
+                        local = a.asname or a.name
+                        sub = self.module_file(((node.module + '.') if node.module else '') + a.name, node.level)
+                        if sub:
+                            out[local] = (sub, None)
+                        elif f:
+                            out[local] = (f, a.name)
+                elif isinstance(node, ast.Import):
+                    for a in node.names:
+                        if a.asname or '.' not in a.name:
+                            f = self.module_file(a.name, 0)
+                            if f:
+                                out[a.asname or a.name] = (f, None)
+            self._imports = out
+        return self._imports
+
+    def callee_elsewhere(self, call):
+        """(file, function) when the call goes to a function of another project module."""
+        fn = call.func
+        if isinstance(fn, ast.Name) and fn.id not in self.defs:
+            f = self.imports().get(fn.id)
+            return (f[0], f[1]) if f and f[1] else None
+        if isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name) and fn.value.id not in self.defs:
+            f = self.imports().get(fn.value.id)
+            return (f[0], fn.attr) if f and f[1] is None else None
+        return None
+
     # ---------- load sites ----------
     def unwrap(self, node):
         for _ in range(6):
@@ -277,167 +382,367 @@ class Readers:
         return self.view.find(v.rel, self.side)
 
     def run(self):
-        if self.view is None or not self.view.mentioned_in(self.job.src):
+        if self.view is None:
             return self
-        for node in ast.walk(self.job.tree):
-            if not isinstance(node, ast.Call) or self.is_opener(node) or _fname(node) in PATH_CALLS:
-                continue
-            arg = node.args[0] if node.args else \
-                next((k.value for k in node.keywords if k.arg in ('path', 'file', 'fp', 'filename', 'fname')), None)
-            name = self.data_file(arg) if arg is not None else None
-            if name:
-                self.push(node, name, (), frozenset(), self.is_parser(node))
+        if self.view.mentioned_in(self.job.src):
+            for node in ast.walk(self.job.tree):
+                if not isinstance(node, ast.Call) or self.is_opener(node) or _fname(node) in PATH_CALLS:
+                    continue
+                arg = node.args[0] if node.args else \
+                    next((k.value for k in node.keywords if k.arg in ('path', 'file', 'fp', 'filename', 'fname')), None)
+                name = self.data_file(arg) if arg is not None else None
+                if name:
+                    certain = self.is_parser(node) or bool(LOADER_NAME.search(_fname(node) or ''))
+                    self.push(node, name, (), (), frozenset(), certain)
+        for seed in self.seeds:
+            self.seed(seed)
         while self.queue:
             self.follow(*self.queue.pop())
+        self.settle()
         return self
 
-    def push(self, node, name, pattern, via, certain):
-        key = (node, name, pattern, via)
-        if key not in self.seen:
+    def seed(self, seed):
+        kind, ident, slot = seed[0], seed[1], seed[2] if seed[0] == 'param' else None
+        name, pattern, prefix, certain = seed[-4:]
+        via = frozenset({('import', ident)})
+        if kind == 'param':
+            for d in self.defs.get(ident, []):
+                if isinstance(self.parent.get(d), ast.Module):
+                    self.bind_param(d, slot, False, 'seed', name, pattern, prefix, via, certain)
+        elif kind == 'global':
+            for u in self.uses.get((None, ident), []):
+                self.push(u, name, pattern, prefix, via, certain)
+        elif kind == 'ret':
+            for c in self.calls.get(ident, []):
+                if isinstance(c.func, ast.Name):
+                    self.push(c, name, pattern, prefix, via, certain)
+
+    def push(self, node, name, pattern, prefix, via, certain):
+        key = (node, name, pattern, prefix, via)
+        if key not in self.seen and len(pattern) + len(prefix) < 40:
             self.seen.add(key)
             self.queue.append(key + (certain,))
 
     # ---------- following ----------
-    def follow(self, node, name, pattern, via, certain):
+    def follow(self, node, name, pattern, prefix, via, certain):
         changed = self.view.changed(name)
-        if any(matches(pattern, k) for k in changed):
-            self.reads.append(Read(node, name, pattern, via))
-            return
-        if not any(below(pattern, k) for k in changed):
-            return
         p = self.parent.get(node)
+        args = (name, pattern, prefix, via, certain)
+        if not prefix:
+            hit = any(matches(pattern, k) for k in changed)
+            deeper = any(below(pattern, k) for k in changed)
+            if hit and not deeper:
+                self.string(node, p, args)
+                return
+            if not hit and not deeper:
+                return
+        elif not any(matches(pattern, k) or below(pattern, k) for k in changed):
+            return
 
         def escape(why):
-            if certain and any(below(pattern, k) and ABS_START.match(v[0]) for k, v in changed.items()):
+            if certain and any((matches(pattern, k) or below(pattern, k)) and ABS_START.match(v[0])
+                               for k, v in changed.items()):
                 self.escapes.append((node, name, pattern, why))
 
+        def key(k, to):
+            """Go through key `k` (STAR for any key) and push the result at `to`."""
+            if prefix:
+                if prefix[0] == STAR or k == STAR or prefix[0] == k:
+                    self.push(to, name, pattern, prefix[1:], via, certain)
+            else:
+                self.push(to, name, pattern + (k,), (), via, certain)
+
         if isinstance(p, ast.Subscript) and p.value is node:
-            if isinstance(p.ctx, ast.Load):
-                k = p.slice
-                if isinstance(k, ast.Constant) and isinstance(k.value, (str, int)) and not isinstance(k.value, bool):
-                    self.push(p, name, pattern + (k.value,), via, certain)
-                else:
-                    escape('a dynamic key')
+            if not isinstance(p.ctx, ast.Load):
+                return
+            ok, k = _const_key(p.slice)
+            if ok:
+                key(k, p)
+            elif isinstance(p.slice, ast.Slice):
+                self.push(p, *args)
+            elif isinstance(p.slice, (ast.List, ast.Tuple)) and all(_const_key(e)[0] for e in p.slice.elts):
+                if any(any(matches(pattern + (_const_key(e)[1],), c) or below(pattern + (_const_key(e)[1],), c)
+                           for c in changed) for e in p.slice.elts) and not prefix:
+                    escape('a selection of several keys')
+            elif (prefix and prefix[0] == STAR) or (not prefix and self.view.kind_at(name, pattern) == 'list'):
+                key(STAR, p)                                   # an index into a list
+            else:
+                escape('a dynamic key')
             return
         if isinstance(p, ast.Attribute) and p.value is node:
             call = self.parent.get(p)
             is_call = isinstance(call, ast.Call) and call.func is p
             if p.attr == 'get' and is_call:
-                k = call.args[0] if call.args else None
-                if isinstance(k, ast.Constant) and isinstance(k.value, (str, int)) and not isinstance(k.value, bool):
-                    self.push(call, name, pattern + (k.value,), via, certain)
+                ok, k = _const_key(call.args[0]) if call.args else (False, None)
+                if ok:
+                    key(k, call)
                 else:
                     escape('a dynamic key')
             elif p.attr in ('values', 'items') and is_call:
-                self.iterate(call, name, pattern, via, certain, pair=p.attr == 'items', escape=escape)
+                self.iterate(call, args, pair=p.attr == 'items', escape=escape)
             elif p.attr == 'copy' and is_call:
-                self.push(call, name, pattern, via, certain)
+                self.push(call, *args)
+            elif p.attr in ('append', 'add', 'extend', 'insert', 'update', 'setdefault', 'pop', 'clear', 'sort', 'remove'):
+                return                                         # changing the followed value itself
             elif p.attr not in HARMLESS:
                 escape(f'.{p.attr}')
             return
         if isinstance(p, (ast.Assign, ast.AnnAssign, ast.NamedExpr)) and p.value is node:
             for t in (p.targets if isinstance(p, ast.Assign) else [p.target]):
-                self.bind(t, name, pattern, via, certain)
+                self.bind(t, *args)
             if isinstance(p, ast.NamedExpr):
-                self.push(p, name, pattern, via, certain)
+                self.push(p, *args)
             return
         if isinstance(p, ast.Return):
             f = self.scope(p)
-            if isinstance(f, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            if isinstance(f, FUNCS):
                 for call in self.calls.get(f.name, []):
-                    self.push(call, name, pattern, via, certain)
+                    self.push(call, *args)
+                if isinstance(self.parent.get(f), ast.Module):
+                    self.returned[f.name].add((name, pattern, prefix, certain))
             return
-        if (isinstance(p, ast.IfExp) and node is not p.test) or isinstance(p, ast.BoolOp):
-            self.push(p, name, pattern, via, certain)
+        if (isinstance(p, ast.IfExp) and node is not p.test) or isinstance(p, (ast.BoolOp, ast.Await)):
+            self.push(p, *args)
             return
         if isinstance(p, (ast.For, ast.AsyncFor, ast.comprehension)) and p.iter is node:
-            if self.view.kind_at(name, pattern) == 'list':
-                self.loop(p, name, pattern, via, certain, pair=False, escape=escape)
-            return                                   # iterating a dict yields its keys
-        call, kw = (self.parent.get(p), p.arg) if isinstance(p, ast.keyword) else (p, None)
-        if isinstance(call, ast.Call) and (node in call.args or kw):
-            callee = _fname(call)
-            if callee == 'enumerate' and call.args and call.args[0] is node:
-                self.iterate(call, name, pattern, via, certain, pair=True, escape=escape)
-            elif callee in ('deepcopy', 'copy', 'dict'):
-                self.push(call, name, pattern, via, certain)
-            elif callee in HARMLESS:
-                pass
-            elif callee in self.defs and (isinstance(call.func, ast.Name) or
-                                          (isinstance(call.func, ast.Attribute) and isinstance(call.func.value, ast.Name)
-                                           and call.func.value.id == 'self')):
-                self.argument(call, node, kw, name, pattern, via, certain, escape)
-            else:
-                escape(f'{callee or "a call"}()')
+            if prefix or self.view.kind_at(name, pattern) == 'list':
+                self.loop(p, args, pair=False, escape=escape)
+            return                                             # iterating a dict yields its keys
+        if isinstance(p, ast.Dict):
+            if node in p.values:
+                k = p.keys[p.values.index(node)]
+                ok, kv = _const_key(k) if k is not None else (False, None)
+                if ok:
+                    self.push(p, name, pattern, (kv,) + prefix, via, certain)
+                else:
+                    escape('a dict with computed keys' if k is not None else '**')
             return
-        if isinstance(p, (ast.Compare, ast.Expr, ast.Assert, ast.If, ast.While)) or p is None:
+        if isinstance(p, (ast.List, ast.Tuple, ast.Set)) and node in p.elts:
+            q = self.parent.get(p)
+            if isinstance(p, ast.Tuple) and isinstance(q, ast.Assign) and q.value is p and len(q.targets) == 1 and \
+                    isinstance(q.targets[0], (ast.Tuple, ast.List)) and len(q.targets[0].elts) == len(p.elts):
+                self.bind(q.targets[0].elts[p.elts.index(node)], *args)
+            elif isinstance(p.ctx, ast.Load) if hasattr(p, 'ctx') else True:
+                self.push(p, name, pattern, (STAR,) + prefix, via, certain)
+            return
+        if isinstance(p, COMPS) and (getattr(p, 'elt', None) is node or getattr(p, 'value', None) is node):
+            self.push(p, name, pattern, (STAR,) + prefix, via, certain)
+            return
+        call, kw = (self.parent.get(p), p.arg) if isinstance(p, ast.keyword) else (p, None)
+        if isinstance(call, ast.Call) and (kw is not None or node in call.args):
+            self.call(call, node, kw, args, escape)
+            return
+        if isinstance(p, ast.keyword):
+            escape('**')
+            return
+        if isinstance(p, (ast.Compare, ast.Expr, ast.Assert, ast.If, ast.While, ast.UnaryOp, ast.FormattedValue,
+                          ast.JoinedStr, ast.Delete)) or p is None:
             return
         escape(type(p).__name__)
 
-    def iterate(self, producer, name, pattern, via, certain, pair, escape):
+    def string(self, node, p, args):
+        """A string value: read here, unless it goes to a function of this module. Then the function's
+        own uses decide, as long as every call gives it a followed value (settle())."""
+        name, pattern, prefix, via, certain = args
+        call, kw = (self.parent.get(p), p.arg) if isinstance(p, ast.keyword) else (p, None)
+        fn = call.func if isinstance(call, ast.Call) else None
+        callee = _fname(call) if fn is not None else None
+        if callee in TYPE_CHECKS and isinstance(fn, ast.Name):
+            return                                     # isinstance(x, dict): not used as a path
+        if (isinstance(p, ast.Attribute) and p.value is node and p.attr in ('values', 'items', 'keys', 'get')) or \
+                (isinstance(p, ast.Subscript) and p.value is node):
+            return                                     # used as a dict or list: a string never gets here
+        if fn is not None and (kw is not None or node in call.args) and callee in self.defs and \
+                (isinstance(fn, ast.Name) or (isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name)
+                                              and fn.value.id == 'self')):
+            slot = kw if kw is not None else call.args.index(node)
+            if kw is not None or not any(isinstance(x, ast.Starred) for x in call.args[:slot + 1]):
+                keys = [k for d in self.defs[callee]
+                        if (k := self.bind_param(d, slot, isinstance(fn, ast.Attribute), call, *args))]
+                if keys:
+                    self.pending.append((node, name, pattern, via, keys))
+                    return
+        self.reads.append(Read(node, name, pattern, via))
+
+    def settle(self):
+        """A string given to a function that other calls give other values is read at the call."""
+        dropped = set()
+        for node, name, pattern, via, keys in self.pending:
+            amb = [k for k in keys if self.ambiguous(k)]
+            if amb:
+                self.reads.append(Read(node, name, pattern, via))
+                dropped.update(amb)
+        self.reads = [r for r in self.reads if not (r.via & dropped)]
+
+    def call(self, call, node, kw, args, escape):
+        name, pattern, prefix, via, certain = args
+        callee, fn = _fname(call), call.func
+        first = kw is None and call.args and call.args[0] is node
+        if callee == 'enumerate' and first:
+            self.iterate(call, args, pair=True, escape=escape)
+        elif callee in SAME_SHAPE and first:
+            self.push(call, *args)
+        elif callee == 'dict' and kw is not None:
+            self.push(call, name, pattern, (kw,) + prefix, via, certain)
+        elif callee in ('append', 'add', 'insert') and isinstance(fn, ast.Attribute) and \
+                (callee != 'insert' or (len(call.args) == 2 and call.args[1] is node)):
+            self.container(fn.value, (STAR,), args, escape)
+        elif callee == 'extend' and isinstance(fn, ast.Attribute) and first:
+            self.container(fn.value, (), args, escape)
+        elif callee in HARMLESS:
+            pass
+        elif callee in self.defs and (isinstance(fn, ast.Name) or
+                                      (isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name) and fn.value.id == 'self')):
+            for d in self.defs[callee]:
+                slot = kw if kw is not None else call.args.index(node)
+                if kw is None and any(isinstance(x, ast.Starred) for x in call.args[:slot + 1]):
+                    escape(f'{callee}()')
+                    continue
+                if not self.bind_param(d, slot, isinstance(fn, ast.Attribute), call, *args):
+                    escape(f'{callee}()')
+        elif (target := self.callee_elsewhere(call)) is not None:
+            slot = kw if kw is not None else call.args.index(node)
+            if kw is None and any(isinstance(x, ast.Starred) for x in call.args[:slot + 1]):
+                escape(f'{callee}()')
+            else:
+                self.outgoing.add((target[0], target[1], slot, name, pattern, prefix, certain))
+        else:
+            escape(f'{callee or "a call"}()')
+
+    def iterate(self, producer, args, pair, escape):
         loop = self.parent.get(producer)
         if isinstance(loop, (ast.For, ast.AsyncFor, ast.comprehension)) and loop.iter is producer:
-            self.loop(loop, name, pattern, via, certain, pair, escape)
-        else:
+            self.loop(loop, args, pair, escape)
+        elif pair:
             escape(f'{_fname(producer)}()')
+        else:
+            name, pattern, prefix, via, certain = args
+            self.push(producer, name, pattern, (STAR,) + prefix, via, certain)     # .values(): a list of them
 
-    def loop(self, loop, name, pattern, via, certain, pair, escape):
+    def loop(self, loop, args, pair, escape):
+        name, pattern, prefix, via, certain = args
         t = loop.target
         if pair:
             if not (isinstance(t, (ast.Tuple, ast.List)) and len(t.elts) == 2):
                 escape('a loop target')
                 return
             t = t.elts[1]
-        self.bind(t, name, pattern + (STAR,), via, certain)
-
-    def bind(self, t, name, pattern, via, certain):
-        if isinstance(t, ast.Name):
-            key = ('name', self.home_store(t), t.id)
-            uses = self.uses.get(key[1:], [])
-        elif isinstance(t, ast.Attribute) and isinstance(t.value, ast.Name) and t.value.id == 'self':
-            key = ('attr', self.class_of(t), t.attr)
-            uses = self.attr_uses.get(key[1:], [])
+        if prefix:
+            self.bind(t, name, pattern, prefix[1:], via, certain)
         else:
-            if certain:
-                self.escapes.append((t, name, pattern, 'unpacking or a container'))
-            return
-        self.bound[key].add(t)
-        for u in uses:
-            self.push(u, name, pattern, via | {key}, certain)
+            self.bind(t, name, pattern + (STAR,), (), via, certain)
 
-    def argument(self, call, node, kw, name, pattern, via, certain, escape):
-        method = isinstance(call.func, ast.Attribute)
-        for d in self.defs[_fname(call)]:
-            a = d.args
-            params = a.posonlyargs + a.args
-            if method:
-                params = params[1:]
-            if kw is not None:
-                target = next((x for x in params + a.kwonlyargs if x.arg == kw), None)
+    # ---------- bindings ----------
+    def bind_pos(self, t):
+        """Where a binding takes effect: after the value it is given is computed."""
+        p = self.parent.get(t)
+        while p is not None and not isinstance(p, (ast.stmt, ast.comprehension, ast.withitem, ast.NamedExpr)):
+            p = self.parent.get(p)
+        if isinstance(p, (ast.Assign, ast.AnnAssign, ast.AugAssign, ast.NamedExpr)) and p.value is not None:
+            return p.value.end_lineno, p.value.end_col_offset
+        if isinstance(p, (ast.For, ast.AsyncFor)):
+            return p.iter.end_lineno, p.iter.end_col_offset
+        if isinstance(p, ast.withitem):
+            return p.context_expr.end_lineno, p.context_expr.end_col_offset
+        return _pos(t)
+
+    def uses_of_store(self, t):
+        """[(load, binding key)] for the loads that binding `t` reaches."""
+        ident = t.arg if isinstance(t, ast.arg) else t.id
+        home = self.scope(t) if isinstance(t, ast.arg) else self.home_store(t)
+        stores = self.stores.get((home, ident), [])
+        out = []
+        for u in self.uses.get((home, ident), []):
+            if isinstance(home, COMPS) or isinstance(t, ast.arg) and len(stores) == 1:
+                out.append((u, ('store', t)))
+            elif self.scope(u) is not home:
+                out.append((u, ('free', home, ident)))       # read later, from a nested function
             else:
-                i = call.args.index(node)
-                target = params[i] if i < len(params) and not any(isinstance(x, ast.Starred) for x in call.args[:i + 1]) else None
-            if target is None:
-                escape(f'{_fname(call)}()')
-                continue
-            key = ('name', d, target.arg)
-            self.bound[key].add(call)
-            for u in self.uses.get((d, target.arg), []):
-                self.push(u, name, pattern, via | {key}, certain)
+                before = [s for s in stores if (self.bind_pos(s) if not isinstance(s, ast.arg) else (0, 0)) < _pos(u)]
+                reach = max(before, key=lambda s: self.bind_pos(s) if not isinstance(s, ast.arg) else (0, 0), default=None)
+                if reach is t:
+                    out.append((u, ('store', t)))
+        return out
+
+    def bind(self, t, name, pattern, prefix, via, certain):
+        if isinstance(t, ast.Name):
+            home = self.home_store(t)
+            self.bound[('free', home, t.id)].add(t)
+            if home is None:
+                self.exports[t.id].add((name, pattern, prefix, certain))
+            for u, k in self.uses_of_store(t):
+                self.push(u, name, pattern, prefix, via | {k}, certain)
+        elif isinstance(t, ast.Attribute) and isinstance(t.value, ast.Name) and t.value.id == 'self':
+            k = ('attr', self.class_of(t), t.attr)
+            self.bound[k].add(t)
+            for u in self.attr_uses.get(k[1:], []):
+                self.push(u, name, pattern, prefix, via | {k}, certain)
+        elif isinstance(t, (ast.Tuple, ast.List)) and prefix and prefix[0] == STAR:
+            for e in t.elts:
+                self.bind(e, name, pattern, prefix[1:], via, certain)
+        elif isinstance(t, ast.Subscript) and isinstance(t.ctx, ast.Store):
+            ok, k = _const_key(t.slice)
+            if ok:
+                self.container(t.value, (k,), (name, pattern, prefix, via, certain), None)
+            elif certain:
+                self.escapes.append((t, name, pattern, 'a dynamic key'))
+        elif certain:
+            self.escapes.append((t, name, pattern, 'unpacking or a container'))
+
+    def container(self, c, add, args, escape):
+        """The value goes into container `c` under keys `add`: follow c's later reads."""
+        name, pattern, prefix, via, certain = args
+        if isinstance(c, ast.Name):
+            home = self.home(c)
+            stores = self.stores.get((home, c.id), [])
+            before = [s for s in stores if not isinstance(s, ast.arg) and self.bind_pos(s) <= _pos(c)]
+            reach = max(before, key=self.bind_pos, default=None)
+            if reach is not None:
+                for u, k in self.uses_of_store(reach):
+                    if u is not c:
+                        self.push(u, name, pattern, add + prefix, via | {k}, certain)
+                return
+        elif isinstance(c, ast.Attribute) and isinstance(c.value, ast.Name) and c.value.id == 'self':
+            k = ('attr', self.class_of(c), c.attr)
+            for u in self.attr_uses.get(k[1:], []):
+                if u is not c:
+                    self.push(u, name, pattern, add + prefix, via | {k}, certain)
+            return
+        if escape:
+            escape('a container')
+        elif certain:
+            self.escapes.append((c, name, pattern, 'a container'))
+
+    def bind_param(self, d, slot, method, through, name, pattern, prefix, via, certain):
+        a = d.args
+        params = a.posonlyargs + a.args
+        if method and params:
+            params = params[1:]
+        if isinstance(slot, str):
+            target = next((x for x in params + a.kwonlyargs if x.arg == slot), None)
+        else:
+            target = params[slot] if slot < len(params) else None
+        if target is None:
+            return None
+        k = ('param', d, target.arg)
+        self.bound[k].add(through)
+        for u, sk in self.uses_of_store(target):
+            self.push(u, name, pattern, prefix, via | {k, sk}, certain)
+        return k
 
     def ambiguous(self, key):
         """Some way this binding gets its value is not a followed data value."""
-        kind, scope, ident = key
-        if kind == 'attr':
-            stores = self.attr_stores.get((scope, ident), [])
-        else:
-            stores = [s for s in self.stores.get((scope, ident), []) if not isinstance(s, ast.arg)]
-            params = [s for s in self.stores.get((scope, ident), []) if isinstance(s, ast.arg)]
-            if params:
-                d = scope
-                calls = self.calls.get(getattr(d, 'name', None), [])
-                if not calls or any(c not in self.bound[key] for c in calls):
-                    return True
+        kind = key[0]
+        if kind in ('store', 'import'):
+            return False
+        if kind == 'param':
+            d = key[1]
+            if 'seed' in self.bound[key]:
+                return False
+            calls = self.calls.get(d.name, [])
+            return not calls or any(c not in self.bound[key] for c in calls)
+        stores = self.attr_stores.get(key[1:], []) if kind == 'attr' else \
+            [s for s in self.stores.get(key[1:], []) if not isinstance(s, ast.arg)]
         for s in stores:
             if s in self.bound[key]:
                 continue
@@ -445,7 +750,7 @@ class Readers:
             if isinstance(p, (ast.Assign, ast.AnnAssign)) and self._neutral(p.value):
                 continue
             return True
-        return False
+        return kind == 'free' and any(isinstance(s, ast.arg) for s in self.stores.get(key[1:], []))
 
     @staticmethod
     def _neutral(v):
@@ -526,7 +831,7 @@ class Readers:
             if any(re.search(r'\s', l[2]) and not self.ctx.uni.exists(expect[l]) for l in changed):
                 job.report(node, f'data value {label} read here holds more than a path; check by hand', label)
                 continue
-            amb = sorted(k[2] for k in via if self.ambiguous(k))
+            amb = sorted({str(k[2]) for k in via if self.ambiguous(k)})
             if amb:
                 job.report(node, f'data value {label} reaches here through {", ".join(amb)}, which also holds other '
                                  'values; check by hand', label)
@@ -555,22 +860,8 @@ class Readers:
             job.root_uses.append((s, e, 'reader_str', ''))
 
 
-def read_parents(job):
-    """Expressions that join a followed read value: their evaluation belongs to the read check."""
-    if job.ctx.data is None or not job.ctx.data.mentioned_in(job.src):
-        return set()
-    r = Readers(job).run()
-    out = set()
-    for read in r.reads:
-        p = job.parent.get(read.node)
-        if isinstance(p, ast.BinOp) or isinstance(p, ast.Call):
-            out.add(p)
-    return out
-
-
-def read_targets(src, file_rel, ctx):
-    """[(data file, keys, target)] for every read of a changed data value, with the value of
-    ctx.data_side, or None when the source does not parse."""
+# ---------- across modules ----------
+def _job(src, rel, ctx):
     from restructure_python import _PyJob
     try:
         with warnings.catch_warnings():
@@ -578,11 +869,79 @@ def read_targets(src, file_rel, ctx):
             tree = ast.parse(src)
     except (SyntaxError, ValueError):
         return None
-    job = _PyJob(src, tree, file_rel, file_rel, ctx)
+    job = _PyJob(src, tree, rel, rel, ctx)
     job.bind_pass(tree, record=False)
+    return job
+
+
+def link(sources, ctx, rounds=12):
+    """{file: seeds} for values crossing module boundaries. `sources` holds every Python file of
+    the side ctx.data_side describes ({name: text}); a round analyses the files with something new."""
+    seeds = defaultdict(set)
+    if ctx.data is None:
+        return {}
+    results = {}
+    todo = {f for f, s in sources.items() if ctx.data.mentioned_in(s)}
+    for _ in range(rounds):
+        if not todo:
+            break
+        for f in todo:
+            job = _job(sources[f], f, ctx)
+            if job is not None:
+                results[f] = Readers(job, frozenset(seeds[f])).run()
+        new = defaultdict(set)
+        for r in results.values():
+            for f, func, slot, *val in r.outgoing:
+                if f in sources:
+                    new[f].add(('param', func, slot, *val))
+        names = {n: f for f, r in results.items() for n in list(r.exports) + list(r.returned)}
+        if names:
+            pat = re.compile(r'\b(?:' + '|'.join(map(re.escape, sorted(names))) + r')\b')
+            for f, s in sources.items():
+                if 'import' not in s or not pat.search(s):
+                    continue
+                job = _job(s, f, ctx)
+                if job is None:
+                    continue
+                for local, (tf, attr) in Readers(job).imports().items():
+                    r = results.get(tf)
+                    if r is None or attr is None:
+                        continue
+                    for v in r.exports.get(attr, ()):
+                        new[f].add(('global', local, *v))
+                    for v in r.returned.get(attr, ()):
+                        new[f].add(('ret', local, *v))
+        todo = set()
+        for f, s in new.items():
+            if s - seeds[f]:
+                seeds[f] |= s
+                todo.add(f)
+    return {f: frozenset(s) for f, s in seeds.items()}
+
+
+def read_parents(job):
+    """Expressions that join a followed read value: their evaluation belongs to the read check."""
+    seeds = (job.ctx.seeds or {}).get(job.file_old, ())
+    if job.ctx.data is None or not (seeds or job.ctx.data.mentioned_in(job.src)):
+        return set()
+    r = Readers(job, seeds).run()
+    out = set()
+    for read in r.reads:
+        p = job.parent.get(read.node)
+        if isinstance(p, (ast.BinOp, ast.Call)):
+            out.add(p)
+    return out
+
+
+def read_targets(src, file_rel, ctx):
+    """[(data file, keys, target)] for every read of a changed data value, with the value of
+    ctx.data_side, or None when the source does not parse."""
+    job = _job(src, file_rel, ctx)
+    if job is None:
+        return None
     if ctx.data is None:
         return []
-    r = Readers(job).run()
+    r = Readers(job, (ctx.seeds or {}).get(file_rel, ())).run()
     out = []
     for node, (leaves, _) in r.groups().items():
         for name, keys, o, n in leaves:

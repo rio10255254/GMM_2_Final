@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import pytest
 from restructure_python import rewrite_python
-from restructure_readers import DataView, read_targets
+from restructure_readers import DataView, link, read_targets
 from restructure_resolve import Universe
 from restructure_text import Context
 
@@ -157,3 +157,94 @@ def test_read_targets_agree_before_and_after(ctx):
     assert sorted(before) == sorted(after)
     assert sorted(before) != sorted(after_unfixed)
     assert (CFG, ('data', 'package_root'), f'{EXP}/data/pkg') in before
+
+
+def test_dict_keyword_wraps_the_value_under_its_key(ctx):
+    src = HEAD + LOAD + "protocol = dict(checkpoint=CONFIG['data'], n=1)\nshown = {k: v for k, v in protocol.items()}\n" \
+        "P = Path(protocol['checkpoint']['package_root'])\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "P = Path(PROJECT_ROOT / protocol['checkpoint']['package_root'])\n" in out
+    assert not [u for u in unresolved if 'no longer reach' in u.reason]
+
+
+def test_recursive_walk_over_everything_is_not_a_read(ctx):
+    src = HEAD + LOAD + "def walk(x):\n    if isinstance(x, dict):\n        for y in x.values():\n            walk(y)\nwalk(CONFIG)\n"
+    out, unresolved = rewrite(src, ctx)
+    assert out == src
+    assert not [u for u in unresolved if 'no longer reach' in u.reason]
+
+
+def test_comprehensions_are_scopes_of_their_own(ctx):
+    src = HEAD + LOAD + "a = [x + 1 for x in range(3)]\npaths = [Path(x['path']) for x in CONFIG['items']]\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "paths = [Path(PROJECT_ROOT / x['path']) for x in CONFIG['items']]\n" in out
+    assert not unresolved
+
+
+def test_a_loop_variable_used_again_later(ctx):
+    src = HEAD + LOAD + "for rec in CONFIG['items']:\n    open(rec['path'])\nrec = {'path': 'local'}\nprint(rec['path'])\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "    open(str(PROJECT_ROOT / rec['path']))\n" in out
+    assert "print(rec['path'])\n" in out and not unresolved
+
+
+def test_string_put_into_a_dict_literal_is_fixed_where_it_goes_in(ctx):
+    src = HEAD + LOAD + "src = {'model': CONFIG['model'], 'n': 2}\nM = Path(src['model'])\n"
+    out, _ = rewrite(src, ctx)
+    assert "src = {'model': str(PROJECT_ROOT / CONFIG['model']), 'n': 2}\nM = Path(src['model'])\n" in out
+
+
+def test_object_put_into_a_dict_literal_is_followed(ctx):
+    src = HEAD + LOAD + "src = {'d': CONFIG['data'], 'n': 2}\nM = Path(src['d']['package_root'])\n"
+    out, _ = rewrite(src, ctx)
+    assert "M = Path(PROJECT_ROOT / src['d']['package_root'])\n" in out
+
+
+def test_string_passed_to_a_shared_helper_is_fixed_at_the_call(ctx):
+    src = HEAD + LOAD + "def sha(p):\n    return open(p, 'rb').read()\nsha(CONFIG['model'])\nsha('local.bin')\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "sha(str(PROJECT_ROOT / CONFIG['model']))\n" in out
+    assert "    return open(p, 'rb').read()\n" in out and not unresolved
+
+
+def test_values_appended_to_a_list(ctx):
+    src = HEAD + LOAD + "rows = []\nfor r in CONFIG['items']:\n    rows.append(r)\nfor r in rows:\n    open(r['path'])\n"
+    out, _ = rewrite(src, ctx)
+    assert "    open(str(PROJECT_ROOT / r['path']))\n" in out
+
+
+MAIN = f'{EXP}/scripts/run.py'
+COMMON = f'{EXP}/scripts/common.py'
+
+
+def linked(ctx, sources):
+    ctx = replace(ctx, uni=Universe.from_paths(PATHS + [COMMON]))
+    ctx.seeds = link(sources, ctx)
+    return ctx
+
+
+def test_value_passed_to_a_function_of_another_module(ctx):
+    common = "from pathlib import Path\ndef check(cfg):\n    return [Path(s['path']) for s in cfg['items']]\n"
+    main = "from pathlib import Path\nimport json\nfrom common import check\nROOT = Path(__file__).resolve().parents[1]\n" + LOAD + "check(CONFIG)\n"
+    ctx = linked(ctx, {MAIN: main, COMMON: common})
+    out, _ = rewrite(common, ctx, COMMON)
+    assert "return [Path(PROJECT_ROOT / s['path']) for s in cfg['items']]\n" in out
+    _, unresolved = rewrite(main, ctx, MAIN)
+    assert not unresolved
+
+
+def test_config_imported_from_another_module(ctx):
+    main = "from pathlib import Path\nimport sys\nsys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'training'))\n" \
+           "from base import CONFIG\nOUT = Path(CONFIG['out'])\n"
+    base = HEAD + LOAD
+    ctx = linked(ctx, {MAIN: main, FILE: base})
+    out, _ = rewrite(main, ctx, MAIN)
+    assert "OUT = Path(PROJECT_ROOT / CONFIG['out'])\n" in out
+
+
+def test_loader_function_imported_from_another_module(ctx):
+    common = HEAD + "def load_config():\n    return json.loads((ROOT / 'config/experiment.json').read_text())\n"
+    main = "from pathlib import Path\nfrom common import load_config\ncfg = load_config()\nM = Path(cfg['model'])\n"
+    ctx = linked(ctx, {MAIN: main, COMMON: common.replace('parents[1]', 'parents[1]')})
+    out, _ = rewrite(main, ctx, MAIN)
+    assert "M = Path(PROJECT_ROOT / cfg['model'])\n" in out

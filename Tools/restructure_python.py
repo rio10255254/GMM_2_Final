@@ -447,7 +447,7 @@ class _PyJob:
         self.strings()
         self.comments()
         if self.ctx.data is not None:
-            Readers(self).run().rewrite()
+            Readers(self, (self.ctx.seeds or {}).get(self.file_old, ())).run().rewrite()
         if self.ctx.mode == 'location':
             self.insert_root()
 
