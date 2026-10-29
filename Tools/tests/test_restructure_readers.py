@@ -410,3 +410,19 @@ def test_whole_config_as_a_get_default(ctx):
     src = HEAD + LOAD + "seqs = CONFIG.get('sequences', CONFIG)\nP = Path(seqs['data']['package_root'])\n"
     out, unresolved = rewrite(src, ctx)
     assert "P = Path(PROJECT_ROOT / seqs['data']['package_root'])\n" in out
+
+
+def test_config_given_to_a_class(ctx):
+    src = HEAD + LOAD + ("class Model:\n    def __init__(self, cfg, root):\n        self.ckpt = Path(cfg['model'])\n"
+                         "m = Model(CONFIG, ROOT)\n")
+    out, unresolved = rewrite(src, ctx)
+    assert "        self.ckpt = Path(PROJECT_ROOT / cfg['model'])\n" in out and not unresolved
+
+
+def test_config_given_to_a_class_of_another_module(ctx):
+    common = "from pathlib import Path\nclass Model:\n    def __init__(self, cfg):\n        self.ckpt = Path(cfg['model'])\n"
+    main = "from pathlib import Path\nimport json\nfrom common import Model\nROOT = Path(__file__).resolve().parents[1]\n" + LOAD + \
+           "m = Model(CONFIG)\n"
+    ctx = linked(ctx, {MAIN: main, COMMON: common})
+    out, _ = rewrite(common, ctx, COMMON)
+    assert "        self.ckpt = Path(PROJECT_ROOT / cfg['model'])\n" in out

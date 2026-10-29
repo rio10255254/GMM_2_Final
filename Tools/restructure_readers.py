@@ -283,6 +283,7 @@ class Readers:
         self.attr_stores = defaultdict(list)
         self.attr_uses = defaultdict(list)   # (class, attr) -> self.attr loads
         self.defs = defaultdict(list)
+        self.inits = defaultdict(list)       # class name -> its __init__: calling the class calls it
         self.calls = defaultdict(list)       # function name -> calls by name or self.<name>
         self.opened = {}                     # (scope, name) -> path expression of an opened file
         self.syspath = []
@@ -295,6 +296,9 @@ class Readers:
             if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda)):
                 if not isinstance(node, ast.Lambda):
                     self.defs[node.name].append(node)
+                    owner = self.parent.get(node)
+                    if node.name == '__init__' and isinstance(owner, ast.ClassDef):
+                        self.inits[owner.name].append(node)
                 a = node.args
                 for arg in a.posonlyargs + a.args + a.kwonlyargs + [x for x in (a.vararg, a.kwarg) if x]:
                     self.stores[(node, arg.arg)].append(arg)
@@ -507,6 +511,9 @@ class Readers:
             for d in self.defs.get(ident, []):
                 if isinstance(self.parent.get(d), ast.Module):
                     self.bind_param(d, slot, False, 'seed', name, pattern, prefix, via, certain)
+            for d in self.inits.get(ident, []):
+                if isinstance(self.parent.get(self.parent.get(d)), ast.Module):
+                    self.bind_param(d, slot, True, 'seed', name, pattern, prefix, via, certain)
         elif kind == 'global':
             for u in self.uses.get((None, ident), []):
                 self.push(u, name, pattern, prefix, via, certain)
@@ -823,6 +830,12 @@ class Readers:
                     continue
                 if not self.bind_param(d, slot, isinstance(fn, ast.Attribute), call, *args):
                     escape(f'{callee}()')
+        elif callee in self.inits and isinstance(fn, ast.Name):
+            slot = kw if kw is not None else call.args.index(node)
+            for d in self.inits[callee]:                  # Model(cfg): its __init__(self, cfg)
+                if (kw is None and any(isinstance(x, ast.Starred) for x in call.args[:slot + 1])) or \
+                        not self.bind_param(d, slot, True, call, *args):
+                    escape(f'{callee}()')
         elif (target := self.callee_elsewhere(call)) is not None:
             slot = kw if kw is not None else call.args.index(node)
             if kw is None and any(isinstance(x, ast.Starred) for x in call.args[:slot + 1]):
@@ -983,7 +996,8 @@ class Readers:
             d = key[1]
             if 'seed' in self.bound[key]:
                 return False
-            calls = self.calls.get(d.name, [])
+            owner = self.parent.get(d)
+            calls = self.calls.get(owner.name if d.name == '__init__' and isinstance(owner, ast.ClassDef) else d.name, [])
             return not calls or any(c not in self.bound[key] for c in calls)
         stores = self.attr_stores.get(key[1:], []) if kind == 'attr' else \
             [s for s in self.stores.get(key[1:], []) if not isinstance(s, ast.arg)]
