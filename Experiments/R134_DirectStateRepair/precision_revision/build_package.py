@@ -8,7 +8,7 @@ def main():
     for k in ['motion','sem','protocol']:assert sha(admission[k]['path'])==admission[k]['sha256']
     for group in ['motion','sem']:
         for r in load(admission[group]['path'])['sources']:assert sha(r['path'])==r['sha256']
-    source=E.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912';pkg=source.parent/'R134_DirectState_Precision_Standalone_20260915'
+    source=E.parent.parent/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912';pkg=source.parent/'R134_DirectState_Precision_Standalone_20260915'
     for path,h in load(source/'PACKAGE_MANIFEST.json')['files'].items():assert sha(source/path)==h
     if pkg.exists():raise FileExistsError('Preserve existing package; no automatic hash rebaseline')
     registry=E.parent.parent/'docs/operations/PROJECT_STORAGE_REGISTRY.json';reg=load(registry);assert not any(e['id']=='r134_precision_package' for e in reg['entries']);save(P/'results/storage_before_package.json',reg);reg['entries'].append(dict(id='r134_precision_package',path=pkg.relative_to(E.parent.parent).as_posix(),tier='active',state='building_qualified_precision_revision',budget_gib=12,action='protect',priority=0,keep='One R134 C precision-preserved standalone generation; original models and negative8bitqualification retained',blocked_by=[]));atomic(registry,reg)

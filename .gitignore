@@ -23,6 +23,12 @@ _portable_env_sim_20260318/
 Project_Archive/
 Trash_Archive/
 _deployment_package/
+# the company packages that were in _deployment_package/ (their README is the folder's guide and stays tracked)
+/Deliverables/Company_Packages/GeoEdge_COMBO_ONNX_Company_Package_20260424/
+/Deliverables/Company_Packages/GeoEdge_COMBO_ONNX_Company_Package_20260424.zip
+/Deliverables/Company_Packages/GeoEdge_R26_正式交付版/
+/Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/
+/Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511.zip
 
 # Training data and bulk experiment outputs
 Training_Data/
@@ -225,8 +231,8 @@ AnalysisLab/**/.pytest_cache/
 Shared_Sources/**/raw/
 Shared_Sources/**/*.zip
 # Completed local regeneration/aborted-copy payloads; sources and reports stay outside.
-/Validations/R61_TrainingData_Regenerator_20261004/generated/
-/Validations/R61_TrainingData_Regenerator_20261004/generated_v2/
-/Thesis_MOSR_Evidence/Research_Round_Library_20260926_ABORTED_OVERSIZED/01_Foundations_and_Failure_Modes/
-/Thesis_MOSR_Evidence/Research_Round_Library_20260926_ABORTED_OVERSIZED/02_Core_Model_Line/
-/Thesis_MOSR_Evidence/Research_Round_Library_20260926_ABORTED_OVERSIZED/03_PSF_Experiment_Line/
+/Deliverables/Validations/R61_TrainingData_Regenerator_20261004/generated/
+/Deliverables/Validations/R61_TrainingData_Regenerator_20261004/generated_v2/
+/Archive/Research_Round_Library_20260926_ABORTED_OVERSIZED/01_Foundations_and_Failure_Modes/
+/Archive/Research_Round_Library_20260926_ABORTED_OVERSIZED/02_Core_Model_Line/
+/Archive/Research_Round_Library_20260926_ABORTED_OVERSIZED/03_PSF_Experiment_Line/

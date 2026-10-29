@@ -10,8 +10,8 @@ def save(p,v):
     p=Path(p);p.parent.mkdir(parents=True,exist_ok=True)
     with p.open('x',encoding='utf-8') as f:json.dump(v,f,ensure_ascii=False,indent=2)
 def main():
-    legacy=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709'
-    package=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912'
+    legacy=REPO/'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709'
+    package=REPO/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912'
     cp=legacy/'results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar'
     payload=torch.load(cp,map_location='cpu');state=payload['state_dict'];assert sha(cp)=='89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83'
     for name in ['model','config','calibration','validation','training','runs/launcher_logs','results','reports']: (ROOT/name).mkdir(parents=True,exist_ok=True)

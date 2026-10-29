@@ -40,8 +40,8 @@ cd GMM_2_Final
 | 你要做的事 | 必須先確認 |
 |---|---|
 | 生成訓練資料 | [生成方法](GENERATION_GUIDE.md)：原生成器、實際設定、亂數、來源與修正。R94至98共用R93；R99／100／102至104共用R92，兩套不能互換 |
-| 重建R61 v16資料 | [獨立包說明](../../Deliverables/R61_TrainingData_Regenerator_20261004/README_TW.md)：3,400組繼承來源和當時幾何仍要取回，其餘16,896組由原程式生成 |
-| 使用R152論文版 | [獨立影像包](../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md)：保留原25PSF、模型與資料配方，不是其他專案同名R152 |
+| 重建R61 v16資料 | [獨立包說明](../../Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004/README_TW.md)：3,400組繼承來源和當時幾何仍要取回，其餘16,896組由原程式生成 |
+| 使用R152論文版 | [獨立影像包](../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/README.md)：保留原25PSF、模型與資料配方，不是其他專案同名R152 |
 | 讀取原模型 | [關鍵模型](MODEL_GUIDE.md)：先找用途、原內容身分及適配程式，最佳／最後／平滑模型不能互換 |
 | 做實拍位移比較 | [930張共用原拍](../../Shared_Sources/PI_Repeatability_20260903/README.md)：同時保留30份原位置紀錄、順序及曝光，不以重建圖代替 |
 

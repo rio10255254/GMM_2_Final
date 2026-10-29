@@ -16,7 +16,7 @@ CAPTION = 44
 CASES = [
     (
         "Package example 512x512",
-        Path(str(PROJECT_ROOT / 'Deliverables/MOSR_ONNX/example/input.bmp')),
+        Path(str(PROJECT_ROOT / 'Deliverables/Company_Packages/MOSR_ONNX/example/input.bmp')),
         ROOT / "smoke_example_fixed" / "input.bmp",
         ROOT / "pytorch_reference_example" / "input.bmp",
     ),

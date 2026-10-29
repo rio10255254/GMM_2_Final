@@ -1,6 +1,6 @@
 # R84：消除 R79 的切塊差異，以及最後的結案
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [起點 R79](<../R79_R75v3_DenseMicroscopyScratchGeneralization/FILE_GUIDE.md>) · [前一輪 R83](<../R83_R79SevereMicroscopyStrengthening/FILE_GUIDE.md>) · [第二種修法 R85](<../R85_R79SharedCanvasOpticalRepair/FILE_GUIDE.md>) · [第三種修法 R86](<../R86_R79BlockGroupNormRepair/FILE_GUIDE.md>) · [R79 ONNX 交付包](<../../Deliverables/MOSR_ONNX/README.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [起點 R79](<../R79_R75v3_DenseMicroscopyScratchGeneralization/FILE_GUIDE.md>) · [前一輪 R83](<../R83_R79SevereMicroscopyStrengthening/FILE_GUIDE.md>) · [第二種修法 R85](<../R85_R79SharedCanvasOpticalRepair/FILE_GUIDE.md>) · [第三種修法 R86](<../R86_R79BlockGroupNormRepair/FILE_GUIDE.md>) · [R79 ONNX 交付包](<../../Deliverables/Company_Packages/MOSR_ONNX/README.md>)
 
 **一句話：** R83 發現 R79 的輸出會隨切塊大小改變。2026-08-10 的 R84 改成只用局部運算的網路從頭訓練，切塊一致性修好了、實拍位移也保住，但 10 道門檻只過 7 道，SEM 邊界誤差是 R79 的 2.28 倍。R85、R86 換了兩種修法也一樣。**這個資料夾同時放了三輪的總結案：** 保留原本的 R79，把來源推論與 ONNX 交付都改成只能整張重建一次。
 
@@ -43,7 +43,7 @@
 
 ## 讀這些內容要知道的事
 
-1. **`Deliverables/MOSR_ONNX` 是 R79，`Deliverables/MOSR_R61_ONNX` 是 R61**，兩個交付包不同。
+1. **`Deliverables/Company_Packages/MOSR_ONNX` 是 R79，`Deliverables/Company_Packages/MOSR_R61_ONNX` 是 R61**，兩個交付包不同。
 2. **外部 GMF 沒有重跑**（當時新金鑰還沒取得），改用相同模型雜湊、12 張逐像素一致與既有六組位移當不變性確認。
 3. **專案正式基準仍是 COMBO**；R79 是當時研究線與應急重建的預設。
 
@@ -53,7 +53,7 @@
 |---|---|
 | 資料生成、篩選、最終確認、交付一致性程式與測試 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>)、[config/](<config>)，已在 GitHub |
 | 最終判決、交付修正、共用前處理探測的結果 | [results/](<results>) |
-| R79 ONNX 交付包 | [Deliverables/MOSR_ONNX/](<../../Deliverables/MOSR_ONNX/README.md>) 的說明與程式在 GitHub；`model.onnx`（15.4 MB）在那個路徑上沒有上傳，但**同內容**的檔案在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的 `research-fixed-models-006.zip` 裡，路徑是本資料夾 `results/delivery_root_fix/extracted_package_1_1/MOSR_ONNX/model.onnx`（結案時解壓驗證的那份） |
+| R79 ONNX 交付包 | [Deliverables/Company_Packages/MOSR_ONNX/](<../../Deliverables/Company_Packages/MOSR_ONNX/README.md>) 的說明與程式在 GitHub；`model.onnx`（15.4 MB）在那個路徑上沒有上傳，但**同內容**的檔案在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的 `research-fixed-models-006.zip` 裡，路徑是本資料夾 `results/delivery_root_fix/extracted_package_1_1/MOSR_ONNX/model.onnx`（結案時解壓驗證的那份） |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 

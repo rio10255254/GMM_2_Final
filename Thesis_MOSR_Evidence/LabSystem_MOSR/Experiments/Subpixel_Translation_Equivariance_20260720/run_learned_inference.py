@@ -27,7 +27,7 @@ QA_DIR = EXPERIMENT / "qa"
 LAB_ROOT = EXPERIMENT.parents[1]
 BASE_EXPERIMENT = LAB_ROOT / "Experiments" / "BaseUNet_Baseline_20260718"
 MODERN_EXPERIMENT = LAB_ROOT / "Experiments" / "Modern_Restoration_Benchmarks_20260719"
-PACKAGE = LAB_ROOT / "Model_Packages" / "V42_SoftLabelSNR_FullStandalone_20260709"
+PACKAGE = LAB_ROOT / ".." / ".." / "Deliverables" / "Standalone_Models" / "V42_SoftLabelSNR_FullStandalone_20260709"
 
 CHECKPOINTS = {
     "base_unet": BASE_EXPERIMENT

@@ -47,7 +47,7 @@ def build(tag):
             x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda()
             with torch.no_grad():value=tile.tiled_forward(m,x,core=256,halo=m.required_halo);return net.boundary_guard(x,value,m.required_halo,16)[0][0,0].cpu().numpy()
     else:
-        directory=Path(PROJECT_ROOT / info['package']) if tag=='R134_P1' else REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912';sys.path.insert(0,str(directory));runtime=module('frozen_package_runtime',directory/'runtime.py');m,_=runtime.create();m.load_state_dict(torch.load(cp,map_location='cpu')['model']);m.eval();tile=module('r129_staged',P134.parent/'tiled.py')
+        directory=Path(PROJECT_ROOT / info['package']) if tag=='R134_P1' else REPO/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912';sys.path.insert(0,str(directory));runtime=module('frozen_package_runtime',directory/'runtime.py');m,_=runtime.create();m.load_state_dict(torch.load(cp,map_location='cpu')['model']);m.eval();tile=module('r129_staged',P134.parent/'tiled.py')
         def predict(raw):
             x=torch.from_numpy(raw.astype(np.float32)/255)[None,None].cuda()
             with torch.no_grad():v=m(x) if tag=='R134_P1' or max(raw.shape)<=1024 else tile.predict(m,x);return guard(x,v,16)[0,0].cpu().numpy()

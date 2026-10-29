@@ -10,7 +10,7 @@ import numpy as np
 from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[2];OUT=Path(__file__).resolve().parent
-PROJECT=ROOT.parents[1];PACK=PROJECT/'Deliverables/R152_Standalone_20261004'
+PROJECT=ROOT.parents[1];PACK=PROJECT/'Deliverables/Standalone_Models/R152_Standalone_20261004'
 RELOC=OUT/'relocated_runtime';FOREIGN=OUT/'foreign_working_directory'
 
 def main():

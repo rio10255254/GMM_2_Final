@@ -4,7 +4,7 @@ from report import publish
 import subprocess,psutil,traceback,cv2,pandas as pd
 from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-PKG=E.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915'
+PKG=E.parent.parent/'Deliverables/Standalone_Models/R134_DirectState_Precision_Standalone_20260915'
 OPS=P/'results/operations'
 
 def stage(phase,**kw):status(phase,**kw);publish()

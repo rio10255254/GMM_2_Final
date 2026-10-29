@@ -42,7 +42,7 @@ V42_LOADER = Path(
     str(PROJECT_ROOT / 'Experiments/R111_R109V42ThesisReplacementQualification/scripts/build_v42_external_gmf.py')
 )
 V42_MODEL_FILE = Path(
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py')
+    str(PROJECT_ROOT / 'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py')
 )
 R61_MODEL_FILE = Path(str(PROJECT_ROOT / 'Model/GeoEdgeAlignSR_v1_ModelA_v5_NoCoord.py'))
 R109_ROOT = Path(str(PROJECT_ROOT / 'Experiments/R109_StagedMidpointWidthScratch'))

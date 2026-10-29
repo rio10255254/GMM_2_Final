@@ -160,7 +160,7 @@ R33 發現「限制極端像素的拉扯」能大幅改善定位，但邊緣變�
 | [Step_analysis_20260623](../../Step_analysis_20260623/) | Step 樣品的位移、尺寸與形狀 |
 | [20260702_100MG_displacement_analysis](../../20260702_100MG_displacement_analysis/) | 100MG 樣品的位移 |
 | [20260704_20x_5x_analysis](../../20260704_20x_5x_analysis/) | 20× 與 5× 實拍 |
-| [Validations/MOSR_ONNX_JunHua](../../Validations/MOSR_ONNX_JunHua/) | 均華 202 張實拍的 ONNX 交付驗證 |
+| [Deliverables/Validations/MOSR_ONNX_JunHua](../../Deliverables/Validations/MOSR_ONNX_JunHua/) | 均華 202 張實拍的 ONNX 交付驗證 |
 
 ## 階段 5　因果拆解與泛化（R63–R87，約 7 月中～8 月）
 

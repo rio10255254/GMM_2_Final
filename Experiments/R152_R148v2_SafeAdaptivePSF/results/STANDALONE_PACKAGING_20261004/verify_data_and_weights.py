@@ -10,7 +10,7 @@ import numpy as np
 import torch
 
 ROOT=Path(__file__).resolve().parents[2];OUT=Path(__file__).resolve().parent
-PACK=ROOT.parents[1]/'Deliverables/R152_Standalone_20261004'
+PACK=ROOT.parents[1]/'Deliverables/Standalone_Models/R152_Standalone_20261004'
 sys.path.insert(0,str(ROOT))
 from dataset import Bank as SourceBank
 source_cfg=json.loads((ROOT/'config/train.json').read_text(encoding='utf-8'))

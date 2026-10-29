@@ -112,7 +112,7 @@ def main():
         for row in rows:
             relative=row['logical_path'];key=relative.casefold()
             if row['origin']!='D_worktree' and ((key in canonical and canonical[key]!=row['sha256']) or (key in published_by_path and published_by_path[key]!=row['sha256']) or (key in destinations and destinations[key]!=row['sha256'])):
-                relative='Historical_Archive/'+Path(row['source']).relative_to(archive).as_posix();key=relative.casefold()
+                relative='Archive/Historical_Archive/'+Path(row['source']).relative_to(archive).as_posix();key=relative.casefold()
             previous=destinations.get(key)
             if previous is not None and previous!=row['sha256']:raise ValueError('Unresolved captured historical source versions')
             destinations[key]=row['sha256']

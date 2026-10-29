@@ -10,7 +10,7 @@
 
 ## Fixed source assets
 
-- Model package: `Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709`
+- Model package: `Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709`
 - Starting checkpoint: package-local `weights/base_v41_standalone_best_tradeoff.pth.tar`
 - Fixed split: package-local `training_data/splits/grouped_seed1337_val120`
 - PSF: package-local `psf/PSF_fitted_2D_FOVstack.mat`

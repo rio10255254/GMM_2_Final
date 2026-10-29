@@ -203,8 +203,8 @@ def build(root: Path, catalog: Path, output: Path, write_docs: bool):
         choose(path, size, 'endpoint_model', '保存此獨立實驗組實際存在的最後模型；不等於採用', force_payload=True)
 
     # Sources necessary for the two already designed standalone regenerators.
-    for folder in ['Deliverables/R61_TrainingData_Regenerator_20261004',
-                   'Deliverables/R152_Standalone_ImageFiles_20261004']:
+    for folder in ['Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004',
+                   'Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004']:
         package = root / folder
         for path in package.rglob('*'):
             if not path.is_file() or any(part in {'outputs', '__pycache__', '.venv'} for part in path.relative_to(package).parts):

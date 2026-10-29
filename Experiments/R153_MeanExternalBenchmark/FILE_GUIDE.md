@@ -84,7 +84,7 @@ MOSR 沒有比 EDSR、NAFNet 快；它的配置峰值最低，但保留峰值比
 | 論文要改哪裡 | [論文修改對照表](<reports/THESIS_UPDATE_MAP.md>)、[修改指南](<reports/FINAL_BENCHMARK_THESIS_HANDOFF/PAPER_UPDATE_GUIDE.md>) |
 | 外部模型權重、訓練紀錄（約 2.9 GB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，目前要下載約 23 GB |
 | 外部模型的作者原始碼 | 本資料夾 [vendor/](<vendor>)；精確來源版本與訓練設定記在 [config/](<config>) |
-| 共用訓練資料 | [R152 生成包](<../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md>) 的 TIFF 資料，可用固定種子重新產生 |
+| 共用訓練資料 | [R152 生成包](<../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/README.md>) 的 TIFF 資料，可用固定種子重新產生 |
 | 交付核對 | `python Experiments/R153_MeanExternalBenchmark/scripts/verify_final_delivery.py`（不做 GPU 重建或重新擬合） |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。

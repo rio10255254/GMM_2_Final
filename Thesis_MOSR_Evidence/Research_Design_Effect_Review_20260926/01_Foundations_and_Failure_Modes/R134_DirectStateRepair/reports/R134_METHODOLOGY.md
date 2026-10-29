@@ -11,7 +11,7 @@
     "A",
     "C"
   ],
-  "data_root": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/training_data",
+  "data_root": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/training_data",
   "splits": {
     "train": 512,
     "dev": 128,

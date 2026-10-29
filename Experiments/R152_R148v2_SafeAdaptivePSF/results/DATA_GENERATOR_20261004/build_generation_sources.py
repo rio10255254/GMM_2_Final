@@ -7,7 +7,7 @@ import shutil
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[4]
-PACK = PROJECT/'Deliverables/R152_Standalone_ImageFiles_20261004'
+PACK = PROJECT/'Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004'
 OUT = Path(__file__).resolve().parent
 
 

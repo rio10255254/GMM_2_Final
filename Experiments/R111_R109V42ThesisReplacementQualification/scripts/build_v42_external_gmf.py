@@ -22,7 +22,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "config" / "qualification.json").read_text(encoding="utf-8"))
 V42_PACKAGE = Path(
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709')
+    str(PROJECT_ROOT / 'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709')
 )
 INFERENCE_SCRIPT = V42_PACKAGE / "infer_v42.py"
 CHECKPOINT = Path(PROJECT_ROOT / CONFIG["models"]["v42_e120"]["checkpoint"])

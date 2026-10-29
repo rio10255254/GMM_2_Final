@@ -41,7 +41,10 @@ from models_modern import (  # noqa: E402
 
 DEFAULT_PACKAGE = (
     EXPERIMENT.parents[1]
-    / "Model_Packages"
+    / ".."
+    / ".."
+    / "Deliverables"
+    / "Standalone_Models"
     / "V42_SoftLabelSNR_FullStandalone_20260709"
 )
 

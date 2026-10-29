@@ -333,7 +333,7 @@
     },
     {
       "id": "lab_model_packages",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages",
+      "path": "Deliverables/Standalone_Models",
       "tier": "formal",
       "state": "thesis_current_review",
       "size_gib_snapshot": 18.68,
@@ -632,7 +632,7 @@
     },
     {
       "id": "r129_standalone_long_training",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912",
+      "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912",
       "tier": "active",
       "state": "long_training_complete_not_adopted",
       "budget_gib": 12,
@@ -713,7 +713,7 @@
     },
     {
       "id": "r134_precision_package",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915",
+      "path": "Deliverables/Standalone_Models/R134_DirectState_Precision_Standalone_20260915",
       "tier": "active",
       "state": "building_qualified_precision_revision",
       "budget_gib": 12,
@@ -1010,7 +1010,7 @@
       "action": "protect",
       "priority": 0,
       "keep": "Keep30 original geometry witnesses, original successful/failed receipts and complete historical dataset descriptions. Not the removed full generated outputs and not a new model evaluation.",
-      "restore_guide": "Validations/R61_TrainingData_Regenerator_20261004/CLEANUP_AND_REBUILD_20261021.md",
+      "restore_guide": "Deliverables/Validations/R61_TrainingData_Regenerator_20261004/CLEANUP_AND_REBUILD_20261021.md",
       "blocked_by": []
     },
     {
@@ -1022,7 +1022,7 @@
       "priority": 0,
       "keep": "Preserve copy contents not directly matched to the read-only current canonical-source review, with original path/hash mapping. This does not prove all copies are unique new scientific versions.",
       "verified_payload_bytes": 9005717257,
-      "restore_guide": "Thesis_MOSR_Evidence/Research_Round_Library_20260926_ABORTED_OVERSIZED/ABORTED_README.md",
+      "restore_guide": "Archive/Research_Round_Library_20260926_ABORTED_OVERSIZED/ABORTED_README.md",
       "blocked_by": []
     }
   ],

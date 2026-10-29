@@ -11,7 +11,7 @@ def main(method):
     if method=='V42':
         m,_=create();cp=ROOT/'runs/v42_clean/checkpoints/step04096.pth';m.load_state_dict(torch.load(cp,map_location='cuda')['model']);forward=lambda x:guard(x,m(x))
     else:
-        package=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912';sys.path.insert(0,str(package));import runtime
+        package=REPO/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912';sys.path.insert(0,str(package));import runtime
         m,_=runtime.create();cp=package/'results/training/r129_long_01/checkpoints/step08192.pth';m.load_state_dict(torch.load(cp,map_location='cuda')['model'])
         p=REPO/'Experiments/R129_OpticalPriorHybrid/scripts/sequence_inference.py';spec=importlib.util.spec_from_file_location('r129_benchmark_staged',p);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
         forward=lambda x:guard(x,module.predict(m,x,512))

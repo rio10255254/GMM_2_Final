@@ -29,7 +29,7 @@
   "decision": "Report all endpoints, paired gains and tradeoffs. Fewer steps are supported for further testing only if primary geometry/motion do not worsen meaningfully; no posthoc composite score or automatic adoption. No application equivalence margin is invented.",
   "completion": "Preflight prefix equivalence, all204images*5prefixes,108SEMrows*5,1809LSCcenters*5,all populations, timing, independent saved-point refits and source integrity. Failures retained.",
   "checkpoint": {
-    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
+    "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
     "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
   }
 }

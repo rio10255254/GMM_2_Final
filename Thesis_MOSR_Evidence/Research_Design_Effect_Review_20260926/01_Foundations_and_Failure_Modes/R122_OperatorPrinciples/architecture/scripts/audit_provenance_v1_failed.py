@@ -7,7 +7,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[6]
 
 ROOT = pathlib.Path(str(PROJECT_ROOT))
 E = ROOT/'Experiments/R122_OperatorPrinciples'
-V = ROOT/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709'
+V = ROOT/'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709'
 D = V/'training_data'
 fingerprints = {}
 def sha(p):

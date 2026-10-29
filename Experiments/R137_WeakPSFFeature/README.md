@@ -18,4 +18,4 @@ START_R137.cmd 啟動整個流程；已完成時不覆寫。CHECK_STATUS.cmd 只
 
 ## 詳細文件與速度情境補充 20260922
 
-[四份獨立文件閱讀入口](../../Deliverables/R137_WeakPSF_Web_Documents_20260922/00_閱讀與上傳說明.md)。使用者提出GPU同時被其他訓練程序使用的可能原因；目前計時不可據以判定模型固有快慢。[速度解讀補充](reports/R137_RUNTIME_SCOPE_ADDENDUM.md)。原始時間和量測值保留。
+[四份獨立文件閱讀入口](../../Deliverables/Thesis_Handoffs/R137_WeakPSF_Web_Documents_20260922/00_閱讀與上傳說明.md)。使用者提出GPU同時被其他訓練程序使用的可能原因；目前計時不可據以判定模型固有快慢。[速度解讀補充](reports/R137_RUNTIME_SCOPE_ADDENDUM.md)。原始時間和量測值保留。

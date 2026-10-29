@@ -173,7 +173,7 @@ def derive_archive_maps(root,archive):
     for domain in sorted(ARCHIVE_DOMAINS-{'active_runs','compatibility_views'}):
         for batch in (archive/domain).glob('*'):
             if batch.is_dir():
-                candidates.append({'physical':str(batch),'logical':'Historical_Archive/'+domain+'/'+batch.name,'supporting_published_files':0,'origin':'bounded_historical_context'})
+                candidates.append({'physical':str(batch),'logical':'Archive/Historical_Archive/'+domain+'/'+batch.name,'supporting_published_files':0,'origin':'bounded_historical_context'})
     # Remove redundant child projections only when their logical mapping agrees.
     accepted=[]
     ordered=sorted(candidates,key=lambda r:(r['origin']=='bounded_historical_context',len(Path(r['physical']).parts),-r['supporting_published_files']))

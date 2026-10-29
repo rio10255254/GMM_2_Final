@@ -65,7 +65,7 @@ R148v2 是 R148 的修正版：保留多尺度的優點，但不讓它直接決�
 | 程式、設定、資料清單、量測介面 | 本資料夾（`model.py`、`train.py`、`infer.py`、[config/](<config/README.md>)、[data/](<data/README.md>)、[evaluation/](<evaluation/README.md>)），已在 GitHub |
 | 第 8,192 次的正式權重（`runs/formal_8192/checkpoints/step08192.pth`，約 15.6 MB，SHA-256 開頭 `8daddf82`） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) 的 `research-fixed-models-013.zip`。另外，R152 用的「原起始參照」（約 5.9 MB）在 [`research-training-kits-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016) 的 `research-r152-frozen-inputs-001.zip`；兩者檔案大小不同，不是同一個檔，要逐位元組對應原紀錄時以前者為準 |
 | 12 模型比較表、930 張圓心、最終稽核、訓練深度分析（約 254 MB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，目前要下載約 4.1 GB |
-| 訓練資料 | 與 R152 相同的 768 個母場景，可用固定種子重新產生，見 [R152 生成包](<../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md>) |
+| 訓練資料 | 與 R152 相同的 768 個母場景，可用固定種子重新產生，見 [R152 生成包](<../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/README.md>) |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 

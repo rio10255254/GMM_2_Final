@@ -12,8 +12,8 @@ from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[2];OUT=Path(__file__).resolve().parent
 PROJECT=ROOT.parents[1]
-SOURCE=PROJECT/'Deliverables/R152_Standalone_20261004'
-DEST=PROJECT/'Deliverables/R152_Standalone_ImageFiles_20261004'
+SOURCE=PROJECT/'Deliverables/Standalone_Models/R152_Standalone_20261004'
+DEST=PROJECT/'Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004'
 sys.path.insert(0,str(SOURCE))
 from data_index import ENTRIES
 from reference_info import REFERENCE

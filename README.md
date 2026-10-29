@@ -25,7 +25,7 @@
 
 | 用途 | 目前模型 | 怎麼評分 |
 |---|---|---|
-| **公司端量測部署** | **COMBO**（正式基準，2026-04-08 起；歷史前任 baseline 是 R30） | 環形影像交給固定的外部定位工具（GmmVisionTool 的 GMF），看 1／0.1／0.01 µm 三個位移尺度的穩定度。COMBO 交付為 ONNX 包（`_deployment_package/`）；之後的 ONNX 交付（`Deliverables/MOSR_ONNX/`、`MOSR_R61_ONNX/`）以均華 202 張等實拍驗證（`Validations/MOSR_ONNX_JunHua/`） |
+| **公司端量測部署** | **COMBO**（正式基準，2026-04-08 起；歷史前任 baseline 是 R30） | 環形影像交給固定的外部定位工具（GmmVisionTool 的 GMF），看 1／0.1／0.01 µm 三個位移尺度的穩定度。COMBO 交付為 ONNX 包（`Deliverables/Company_Packages/`）；之後的 ONNX 交付（`Deliverables/Company_Packages/MOSR_ONNX/`、`MOSR_R61_ONNX/`）以均華 202 張等實拍驗證（`Deliverables/Validations/MOSR_ONNX_JunHua/`） |
 | **論文** | **R152 / MOSR**，對照 RAW | 2026-09-03 拍攝的 930 張 PI 位移重拍，看位移、尺寸、輪廓 |
 
 兩者考的是不同的試，並不衝突。R152 沒有取代 COMBO 的正式身分。機器可讀的版本在 [ESTIMATOR_POLICY.json](ESTIMATOR_POLICY.json)。

@@ -7,8 +7,8 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 R=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean'))
-H=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
-P=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Web_Thesis_Documents_20260920'))
+H=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
+P=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R130_Clean_Web_Thesis_Documents_20260920'))
 assert not (P/"MANIFEST.json").exists(), "Do not overwrite sealed delivery"
 P.mkdir(exist_ok=True)
 (P/'完整數據').mkdir(exist_ok=True);(P/'圖表').mkdir(exist_ok=True);(P/'閱讀文字版').mkdir(exist_ok=True);(P/'製作與檢查').mkdir(exist_ok=True)

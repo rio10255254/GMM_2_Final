@@ -11,7 +11,7 @@
   "transition": 16,
   "zero_means": "No retention and no transition: exact pre-guard output",
   "checkpoint": {
-    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
+    "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
     "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
   },
   "steps": 4,
@@ -37,14 +37,14 @@
   "sources": [
     {
       "path": "Experiments/R131_RecurrentStepValidation/config/protocol.json",
-      "sha256": "118c543bbc2b69f91358e76f46d26e9adb986bef34ad1cbb7ce913092b22f7f9"
+      "sha256": "68c0db8b8b934d3bed498d81a358472124149c0cefed187b62251b1a5206950f"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/extract_sem.m",
+      "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/validation/extract_sem.m",
       "sha256": "439e17c80d16d33ce7f067319c4031910bc508c3b894d012e42c8dc83b9bffef"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/sem_reference.mat",
+      "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/validation/sem_reference.mat",
       "sha256": "329ebe6444095ae21f1579d0779b5fc948d9af828848440217ff902bd71f529b"
     },
     {
@@ -61,10 +61,10 @@
     },
     {
       "path": "Experiments/R131_RecurrentStepValidation/results/edge_diagnostic/verified.json",
-      "sha256": "6e26d87e90e6b2f65429e086d46276b559b7b97e935205e3b43c87e55d4360a8"
+      "sha256": "623e53d3c6d2e734c24049ab3fc9320918ac937cb8c69270265b4867d5333a96"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
+      "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
       "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
     },
     {

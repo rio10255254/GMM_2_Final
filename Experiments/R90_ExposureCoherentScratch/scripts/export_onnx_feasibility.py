@@ -32,7 +32,7 @@ SOURCES = {
     "20x": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0024.bmp')),
     "50x": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp/frame_0024.bmp')),
     "sem18": ROOT / "results" / "full_validation_epoch055" / "sem_acm" / "locked_optical_inputs" / "18.bmp",
-    "junhua_example": Path(str(PROJECT_ROOT / 'Deliverables/MOSR_R61_ONNX/example/input.bmp')),
+    "junhua_example": Path(str(PROJECT_ROOT / 'Deliverables/Company_Packages/MOSR_R61_ONNX/example/input.bmp')),
 }
 
 

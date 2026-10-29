@@ -2,7 +2,7 @@ from pathlib import Path
 import pandas as pd,numpy as np,json,hashlib,zipfile,shutil,datetime
 from docx import Document
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-P=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Web_Thesis_Documents_20260920'));R=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean'));H=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
+P=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R130_Clean_Web_Thesis_Documents_20260920'));R=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean'));H=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 C=pd.read_csv(P/'完整數據/all_circles.csv');D=pd.read_csv(P/'完整數據/all_displacements.csv');I=pd.read_csv(P/'完整數據/individual_circle_displacements.csv')
 assert len(C)==25110 and len(D)==5400 and len(I)==48600

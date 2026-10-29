@@ -61,7 +61,7 @@
 | 彙總結果、主張稽核、各條件量測 | [results/evaluation/aggregate/](<results/evaluation/aggregate/README.md>)，已在 GitHub |
 | 24 張圖 | PDF 版在 Release [`research-project-context-20261021`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-project-context-20261021)（要下載約 0.9 GB 的附件）；PNG 版只在原電腦上 |
 | 32 次訓練的選中保存點 | Release [`research-priority-sources-20261022`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-priority-sources-20261022) 的一個附件（31 個檔案、約 545 MB） |
-| 起點模型與資料切分 | [V42 完整包](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md>) |
+| 起點模型與資料切分 | [V42 完整包](<../../Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md>) |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 

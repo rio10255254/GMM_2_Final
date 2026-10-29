@@ -90,7 +90,7 @@ D:\GMM_2_Final\
 ├── 20260704_*                         既有原始／分析入口；固定原位、逐批薄化
 ├── Step\                              既有不可替代原始資料；固定原位
 ├── Step_analysis_20260623\            既有分析入口；固定原位、逐批薄化
-├── _deployment_package\              舊交付相容區；不再新增新包
+├── Deliverables\Company_Packages\              舊交付相容區；不再新增新包
 └── 其他 legacy／archive 根層項目      先索引與判定，不因名稱直接搬動或刪除
 ```
 

@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,json,shutil,hashlib,datetime
 ROOT=Path(__file__).resolve().parents[1];REPO=ROOT.parent.parent
-PKG=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912'
+PKG=REPO/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912'
 def rec(p):return dict(path=str(p.resolve()),sha256=hashlib.sha256(p.read_bytes()).hexdigest())
 def save(p,v):
     p.parent.mkdir(parents=True,exist_ok=True)

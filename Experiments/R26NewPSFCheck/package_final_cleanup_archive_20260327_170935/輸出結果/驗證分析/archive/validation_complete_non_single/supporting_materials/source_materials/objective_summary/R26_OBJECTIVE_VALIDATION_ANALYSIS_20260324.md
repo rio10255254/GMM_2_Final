@@ -1,7 +1,7 @@
 # R26 模型目標達成驗證分析
 
 **生成日期**：2026-03-24
-**分析範圍**：_deployment_package/GeoEdge_R26_使用包
+**分析範圍**：Deliverables/Company_Packages/GeoEdge_R26_使用包
 **模型版本**：GeoEdgeAlignSR_v1_v5_NoCoord（r26_sm035_best_tradeoff）
 
 ---

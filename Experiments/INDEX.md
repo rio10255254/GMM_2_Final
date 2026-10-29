@@ -25,9 +25,9 @@ Last updated: 2026-10-24
 
 ## Open Research / Side Tracks
 
-R152最新正式訓練TIFF影像版：[使用入口](../Deliverables/R152_Standalone_ImageFiles_20261004/start_here.py)／[訓練入口](../Deliverables/R152_Standalone_ImageFiles_20261004/train.py)／`../Deliverables/R152_Standalone_ImageFiles_20261004.zip`（原本機包；[GitHub閱讀入口](../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)）／[交付報告](R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)。訓練目錄只有9216張TIFF，沒有PNG／NPZ；實際讀值、原前4次損失、續訓均精確一致，程式設定只用PY。舊NPZ版為來源快照。 已補[全部影像生成入口](../Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py)／[原始流程與核對](R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md)，無原影像可從固定種子重做全部9216 TIFF，像素與檔案完全相同。
+R152最新正式訓練TIFF影像版：[使用入口](../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/start_here.py)／[訓練入口](../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/train.py)／`../Deliverables/R152_Standalone_ImageFiles_20261004.zip`（原本機包；[GitHub閱讀入口](../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)）／[交付報告](R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)。訓練目錄只有9216張TIFF，沒有PNG／NPZ；實際讀值、原前4次損失、續訓均精確一致，程式設定只用PY。舊NPZ版為來源快照。 已補[全部影像生成入口](../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generate_data.py)／[原始流程與核對](R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md)，無原影像可從固定種子重做全部9216 TIFF，像素與檔案完全相同。
 
-R152獨立模型與完整訓練資料：[手動使用入口](../Deliverables/R152_Standalone_20261004/start_here.py)／[完整交付報告](R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md)／`../Deliverables/R152_Standalone_20261004.zip`（原本機包；[GitHub閱讀入口](../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md)）。768母場景／3072視圖、原幾何、25PSF及已訓練權重完整包內化；操作與設定一律PY。整張原生示例、全部來源輸入及短訓練前4次損失精確一致，另址與續訓已實跑，不重訓正式模型。
+R152獨立模型與完整訓練資料：[手動使用入口](../Deliverables/Standalone_Models/R152_Standalone_20261004/start_here.py)／[完整交付報告](R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md)／`../Deliverables/R152_Standalone_20261004.zip`（原本機包；[GitHub閱讀入口](../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md)）。768母場景／3072視圖、原幾何、25PSF及已訓練權重完整包內化；操作與設定一律PY。整張原生示例、全部來源輸入及短訓練前4次損失精確一致，另址與續訓已實跑，不重訓正式模型。
 
 R152論文實際圖像補件：[25顆實際PSF、RAW／MOSR同區域與30次輪廓](R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)。附第6.1／6.2.3／6.2.4節中英文圖說，實際矩陣與校正資料、原生影像、30趟64點邊界及九顆補充；共用亮度尺度、只平移對齊輪廓。`../Deliverables/R152_THESIS_VISUAL_EVIDENCE_20261003.zip`（原本機包；[GitHub閱讀入口](../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)）。
 
@@ -119,7 +119,7 @@ R136最新十字九顆的R128專頁完成：位移30次曲線、60位置詳表�
 R136新十字九顆Raw/R128完整對照交付：10張圖（新增平均±1SD疊圖）、3600合併位移／32400逐顆位移／16740輪廓。R128短步PI差降低54.6%、短步重拍61.9%、輪廓重拍78.3%；SEM平均尺寸偏大差距185.182→222.040nm及終點偏差未改善亦完整保留。 [完整比較](R136_PIRepeatability/reports/R136_RAW_R128_CORNER9_RESULTS.md)
 
 <!-- R128_CORNER9_THESIS_HANDOFF -->
-R128修正取樣位置論文交接包（2026-09-20）：Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。
+R128修正取樣位置論文交接包（2026-09-20）：Deliverables/Thesis_Handoffs/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。
 
 <!-- R129_CORNER9_REVALIDATED_20260920 -->
 R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 [R129報告](R136_PIRepeatability/reports/R136_RAW_R129_CORNER9_RESULTS.md)

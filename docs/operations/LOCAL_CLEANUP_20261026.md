@@ -10,7 +10,7 @@
 
 整理時把「能重跑」分成兩種標準：
 
-- **嚴格標準（整批保留，不在本次清單內）：** 正式基準與核准替代（COMBO、R33、R38v2、a025 所在的 R39／R40）、論文線（R152、R153、論文候選 R129 與 V42 相關輪次、論文比較基礎 R136、`Thesis_MOSR_Evidence` 的論文圖、方法消融與論文編輯）、廠商交付（R61 v16、`Validations/MOSR_ONNX_JunHua`）、所有整包交付（`Deliverables/`、`Model_Packages/`、外部 GMF 比較包、`_deployment_package/`）、共用原始來源，以及進行中的 `PSF_Fitting/quick_recalibration/`。
+- **嚴格標準（整批保留，不在本次清單內）：** 正式基準與核准替代（COMBO、R33、R38v2、a025 所在的 R39／R40）、論文線（R152、R153、論文候選 R129 與 V42 相關輪次、論文比較基礎 R136、`Thesis_MOSR_Evidence` 的論文圖、方法消融與論文編輯）、廠商交付（R61 v16、`Deliverables/Validations/MOSR_ONNX_JunHua`）、所有整包交付（`Deliverables/`、`Model_Packages/`、外部 GMF 比較包、`Deliverables/Company_Packages/`）、共用原始來源，以及進行中的 `PSF_Fitting/quick_recalibration/`。
 - **寬鬆標準（本次清單）：** 已結束、未採用的探索線。條件是該線在 git 上有報告或閱讀卡（結論已記錄），且原始拍攝在雲端或本機保留。這些產物日後只能用原程式與原始來源重新做一套，結果相近但不保證逐位元相同；r62 這類以前一版模型輸出當教師標籤的資料，重做需要重跑訓練鏈。
 
 不論哪條線，以下一律不刪：相機原拍與原始量測、人工標記、模型檔（`.pth`、`.tar`、`.onnx`）、git 追蹤的檔、Markdown 文件直接連結的檔或其所在資料夾（上一兩層）、最近 14 天內修改過的檔。

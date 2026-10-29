@@ -63,7 +63,7 @@ Read the answer-first report in `reports/R63_RESULTS.md` or the portable self-co
 
 ## Data
 
-- Standalone model package: `Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/`
+- Standalone model package: `Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/`
 - Training outputs: `results/training_runs/`
 - Evaluation outputs: `results/evaluation/`
 - Key finding table: `results/evaluation/aggregate/R63_key_findings.csv`

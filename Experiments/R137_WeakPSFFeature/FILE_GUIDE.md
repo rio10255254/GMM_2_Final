@@ -36,7 +36,7 @@
 | 需要什麼 | 在哪裡 |
 |---|---|
 | 模型、訓練、評估程式 | 本資料夾，已在 GitHub |
-| 9/22 整理的四份閱讀文件 | [`Deliverables/R137_WeakPSF_Web_Documents_20260922/`](<../../Deliverables/R137_WeakPSF_Web_Documents_20260922/00_閱讀與上傳說明.md>) |
+| 9/22 整理的四份閱讀文件 | [`Deliverables/Thesis_Handoffs/R137_WeakPSF_Web_Documents_20260922/`](<../../Deliverables/Thesis_Handoffs/R137_WeakPSF_Web_Documents_20260922/00_閱讀與上傳說明.md>) |
 | 權重、930 張重建、量測表 | 查 `python Tools/cloud_locator.py where Experiments/R137_WeakPSFFeature/<路徑>` |
 
 ## 原始報告

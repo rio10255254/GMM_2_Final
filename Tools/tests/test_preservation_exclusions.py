@@ -15,5 +15,5 @@ def test_private_backup_prefix_is_excluded_without_hiding_a_research_package():
 
 
 def test_same_private_archive_bytes_cannot_reenter_through_an_alias():
-    assert excluded({'logical_path':'Historical_Archive/copy.zip','sha256':'a'*64,'bytes':123},POLICY)
+    assert excluded({'logical_path':'Archive/Historical_Archive/copy.zip','sha256':'a'*64,'bytes':123},POLICY)
     assert not excluded({'path':'data/observation.npy','sha256':'a'*64,'bytes':124},POLICY)

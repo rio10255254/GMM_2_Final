@@ -11,9 +11,8 @@ EXPERIMENT_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = EXPERIMENT_ROOT.parents[1]
 PACKAGE_ROOT = (
     REPO_ROOT
-    / "Thesis_MOSR_Evidence"
-    / "LabSystem_MOSR"
-    / "Model_Packages"
+    / "Deliverables"
+    / "Standalone_Models"
     / "V42_SoftLabelSNR_FullStandalone_20260709"
 )
 MANIFEST_PATH = PACKAGE_ROOT / "training_data" / "manifest.json"

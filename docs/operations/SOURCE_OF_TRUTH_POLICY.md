@@ -88,7 +88,7 @@ Last updated: 2026-04-08
 |------|------|
 | `Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py` | **Canonical**（主線推理） |
 | `Model/GeoEdgeAlignSR_v1_Infer_TTA.py` | Canonical（TTA 推理） |
-| `_deployment_package/.../Infer_v5...SimpleTest.py` | **Mirror**（部署包副本） |
+| `Deliverables/Company_Packages/.../Infer_v5...SimpleTest.py` | **Mirror**（部署包副本） |
 | `Experiments/R26NewPSFCheck/.../Infer_v5...SimpleTest.py` | **Mirror**（R26 package clone） |
 
 **修改推理腳本時，必須同步更新所有 mirror 副本。**

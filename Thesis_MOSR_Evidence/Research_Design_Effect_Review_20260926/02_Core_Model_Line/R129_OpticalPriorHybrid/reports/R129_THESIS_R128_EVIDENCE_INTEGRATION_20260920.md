@@ -1,6 +1,6 @@
 # 論文只採 R129：單一模型的精簡改寫方案
 
-> 2026-09-20 備稿完成：請以 [完整定稿計畫](R129_THESIS_FINAL_REWRITE_PLAN_20260920.md) 及 Deliverables/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md 為最新入口。單一R129、保留ACM與Contour、本次刪除消融；原Word未修改。
+> 2026-09-20 備稿完成：請以 [完整定稿計畫](R129_THESIS_FINAL_REWRITE_PLAN_20260920.md) 及 Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md 為最新入口。單一R129、保留ACM與Contour、本次刪除消融；原Word未修改。
 
 2026-09-20。依使用者最新指示：**論文只介紹與評估 R129，不納入 R128／R61／V42 的模型競賽，也不呈現內部多種教法或版本選拔。** 檔名保留作既有連結入口，R128交接包只是本次內部查閱來源。本頁取代較早的多模型規劃。
 

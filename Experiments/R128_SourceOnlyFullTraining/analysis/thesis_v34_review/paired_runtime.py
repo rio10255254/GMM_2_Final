@@ -11,7 +11,7 @@ def main():
     out=ROOT/'results/thesis_v34_review_20260912/paired_runtime';out.mkdir(exist_ok=False)
     source=Path('C:/Users/Rio/OneDrive/學業/碩班/論文/benchmark_v34_eight_models.py')
     loader=ROOT.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/benchmark_models.py'
-    v42=ROOT.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar'
+    v42=ROOT.parent.parent/'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar'
     cp=load(ROOT/'trial/manifest.json')['checkpoint'];assert sha(cp['path'])==cp['sha256'];assert sha(v42)=='89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83'
     frame=ROOT.parent.parent/'20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp'
     save(out/'plan.json',dict(created_utc=now(),source=record(__file__),helper=record(source),V42_loader=record(loader),V42_checkpoint=record(v42),R128_checkpoint=cp,input=record(frame),

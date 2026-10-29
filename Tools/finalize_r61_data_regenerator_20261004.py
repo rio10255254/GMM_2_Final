@@ -8,8 +8,8 @@ from pathlib import Path
 import zipfile
 
 PROJECT = Path(__file__).resolve().parents[1]
-PACKAGE = PROJECT / "Deliverables/R61_TrainingData_Regenerator_20261004"
-VALIDATION = PROJECT / "Validations/R61_TrainingData_Regenerator_20261004"
+PACKAGE = PROJECT / "Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004"
+VALIDATION = PROJECT / "Deliverables/Validations/R61_TrainingData_Regenerator_20261004"
 ZIP = PACKAGE.with_suffix(".zip")
 
 
@@ -29,7 +29,7 @@ def main() -> None:
         raise RuntimeError("The rebuild or portability checks have not passed")
     if full["identical_training_files"] != 114283 or full["total_pairs"] != 20296:
         raise RuntimeError("The full original training dataset has not been reproduced")
-    requested = json.loads((PROJECT / "Deliverables/MOSR_R61_ONNX/manifest.json").read_text(encoding="utf-8"))
+    requested = json.loads((PROJECT / "Deliverables/Company_Packages/MOSR_R61_ONNX/manifest.json").read_text(encoding="utf-8"))
     weight = PROJECT / "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar"
     model_match = sha256(weight) == requested["source_checkpoint_sha256"]
     if not model_match:

@@ -245,7 +245,7 @@ User-confirmed ordinary external training supersedes the initial common-five-los
 
 同日新增generate_data.py及generation/五份當初原始程式，從固定種子重新生成全部768母場景／9216 TIFF，阻擋舊實驗及現成影像讀取仍通過；所有像素、TIFF內容、完整實際輸入及前四次CUDA更新均相同。另址無訓練影像時可生成，--data-dir可直接正式訓練新資料。最新包35個PY、9257檔約476.5MB，ZIP約457.5MB，outputs空白。[完整生成與驗證紀錄](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md)。
 
-最新交付為Deliverables/R152_Standalone_ImageFiles_20261004，正式Bank.read從TIFF直接讀取，不依賴NPZ訓練容器。3072清楚／3072無噪模糊／3072幾何標記，原float16轉訓練FP32的數值完整保存於TIFF32，索引及向量標記為PY。全905969664影像值的PNG16測試有144073個還原差，故選浮點TIFF；使用者指定不附PNG。全部3072實際輸入／目標／幾何／算子均與原版完全相同，CUDA前4次損失、停2次接續至4次與連續4次亦完全相同。35個PY、9257檔約476.5MB，ZIP約457.5MB；模型／權重／PSF未改，沒有新的正式訓練。[報告](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)。
+最新交付為Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004，正式Bank.read從TIFF直接讀取，不依賴NPZ訓練容器。3072清楚／3072無噪模糊／3072幾何標記，原float16轉訓練FP32的數值完整保存於TIFF32，索引及向量標記為PY。全905969664影像值的PNG16測試有144073個還原差，故選浮點TIFF；使用者指定不附PNG。全部3072實際輸入／目標／幾何／算子均與原版完全相同，CUDA前4次損失、停2次接續至4次與連續4次亦完全相同。35個PY、9257檔約476.5MB，ZIP約457.5MB；模型／權重／PSF未改，沒有新的正式訓練。[報告](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)。
 
 ### R152 clean Python standalone package (2026-10-04)
 
@@ -275,9 +275,9 @@ Deliverables/R152_Standalone_20261004包含完整3072視圖和768組幾何資料
 
 ### R136 十字中心九顆
 
-R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 [R129交接入口](Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920/START_HERE.md)
+R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 [R129交接入口](Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920/START_HERE.md)
 
-R128修正取樣位置論文交接包（2026-09-20）：Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。
+R128修正取樣位置論文交接包（2026-09-20）：Deliverables/Thesis_Handoffs/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。
 
 R136新十字九顆Raw/R128完整對照交付：10張圖（新增平均±1SD疊圖）、3600合併位移／32400逐顆位移／16740輪廓。R128短步PI差降低54.6%、短步重拍61.9%、輪廓重拍78.3%；SEM平均尺寸偏大差距185.182→222.040nm及終點偏差未改善亦完整保留。 [Raw/R128完整比較](Experiments/R136_PIRepeatability/reports/R136_RAW_R128_CORNER9_RESULTS.md)
 

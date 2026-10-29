@@ -4,7 +4,7 @@ from PIL import Image
 import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 R=Path(str(PROJECT_ROOT));P=R/'Experiments/R129_OpticalPriorHybrid/analysis/thesis_ready_20260920'
-r=R/'Deliverables/R129_Thesis_Rewrite_Ready_20260920'
+r=R/'Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def save(rel,o):(r/rel).write_text(json.dumps(o,ensure_ascii=False,indent=2),encoding='utf-8')
 cp=json.loads((r/'07_Checks/source_copies.json').read_text(encoding='utf-8'))

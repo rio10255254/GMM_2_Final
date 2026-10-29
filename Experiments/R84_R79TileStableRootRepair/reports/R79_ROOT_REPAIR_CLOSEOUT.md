@@ -43,7 +43,7 @@ R79 保留原權重與原模型，不升級 R84、R85 或 R86。正式修復是�
 
 ## 最終交付
 
-- 使用資料夾：`Deliverables/MOSR_ONNX`
+- 使用資料夾：`Deliverables/Company_Packages/MOSR_ONNX`
 - 對外交付壓縮包：`Deliverables/MOSR_ONNX.zip`
 - 壓縮包 SHA-256：`62943894cee74b4f3c0bfd4be3bc893109f3616ddf9c9cb25067d212953a8f9b`
 

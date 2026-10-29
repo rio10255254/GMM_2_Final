@@ -15,10 +15,10 @@ policy_path=PROJECT/'ESTIMATOR_POLICY.json';before=policy_path.read_bytes();poli
 baseline=copy.deepcopy(policy['formal_baseline']);alternates=copy.deepcopy(policy['approved_alternates'])
 policy['artifact_index']['R152_TIFF_training_standalone_20261004']={
     'date':'2026-10-04','status':'complete','role':'latest formal-training image-file delivery',
-    'package':'Deliverables/R152_Standalone_ImageFiles_20261004',
+    'package':'Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004',
     'archive':'Deliverables/R152_Standalone_ImageFiles_20261004.zip',
     'report':'Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md',
-    'entry':'Deliverables/R152_Standalone_ImageFiles_20261004/train.py',
+    'entry':'Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/train.py',
     'all_controls_python':True,'formal_data_format':'TIFF float32','clear_images':3072,'blur_images':3072,
     'geometry_images':3072,'training_NPZ_files':0,'training_PNG_files':0,
     'all_original_training_inputs_exact':True,'first_four_update_losses_exact':True,

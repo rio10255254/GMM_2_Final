@@ -103,8 +103,8 @@ ZIP SHA-256：`{receipt['archive_sha256']}`。
     policy=json.loads(before.decode('utf-8-sig'))
     baseline=deepcopy(policy['formal_baseline']);alternates=deepcopy(policy['approved_alternates'])
     item=policy['artifact_index']['R152_TIFF_training_standalone_20261004']
-    item.update(generation_entry='Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py',
-                generation_guide='Deliverables/R152_Standalone_ImageFiles_20261004/generation_guide.py',
+    item.update(generation_entry='Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generate_data.py',
+                generation_guide='Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generation_guide.py',
                 generation_report=str(report.relative_to(PROJECT)).replace('\\','/'),
                 original_generation_sources_preserved=5,complete_generation_from_fixed_seeds_verified=True,
                 regenerated_TIFFs_exact=9216,regenerated_inputs_and_first4_losses_exact=True,
@@ -120,7 +120,7 @@ ZIP SHA-256：`{receipt['archive_sha256']}`。
                         'Last updated: 2026-10-04（R152完整影像生成程式補齊，從頭重新生成核對完成）',1)
     anchor='2026-10-04 TIFF影像版：'
     i=state.index(anchor);end=state.index('\n',i)
-    state=state[:end]+' 同日補齊五份原始生成程式及[完整生成入口](Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py)；阻擋舊資料讀取仍從頭生成全部9216 TIFF且逐檔相同，新資料前四次CUDA更新也完全相同。'+state[end:]
+    state=state[:end]+' 同日補齊五份原始生成程式及[完整生成入口](Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generate_data.py)；阻擋舊資料讀取仍從頭生成全部9216 TIFF且逐檔相同，新資料前四次CUDA更新也完全相同。'+state[end:]
     anchor='### R152 formal TIFF-image training package (2026-10-04)\n'
     addition=f'\n同日新增generate_data.py及generation/五份當初原始程式，從固定種子重新生成全部768母場景／9216 TIFF，阻擋舊實驗及現成影像讀取仍通過；所有像素、TIFF內容、完整實際輸入及前四次CUDA更新均相同。另址無訓練影像時可生成，--data-dir可直接正式訓練新資料。最新包{receipt["python_files"]}個PY、{receipt["file_count"]}檔約{mb:.1f}MB，ZIP約{zipmb:.1f}MB，outputs空白。[完整生成與驗證紀錄](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md)。\n'
     assert anchor in state

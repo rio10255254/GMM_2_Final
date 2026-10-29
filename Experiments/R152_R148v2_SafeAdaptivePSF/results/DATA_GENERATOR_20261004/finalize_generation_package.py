@@ -13,8 +13,8 @@ import zipfile
 PROJECT=Path(__file__).resolve().parents[4]
 ROOT=PROJECT/'Experiments/R152_R148v2_SafeAdaptivePSF'
 OUT=Path(__file__).resolve().parent
-PACK=PROJECT/'Deliverables/R152_Standalone_ImageFiles_20261004'
-OLD=PROJECT/'Deliverables/R152_Standalone_20261004'
+PACK=PROJECT/'Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004'
+OLD=PROJECT/'Deliverables/Standalone_Models/R152_Standalone_20261004'
 
 
 def sha(path):

@@ -17,7 +17,7 @@ plt.rcParams.update({
     "axes.spines.top": False, "axes.spines.right": False,
 })
 
-PKG   = Path(str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_使用包'))
+PKG   = Path(str(PROJECT_ROOT / 'Deliverables/Company_Packages/GeoEdge_R26_使用包'))
 DEST  = PKG / "輸出結果" / "驗證分析" / "R26_validation_complete"
 NAMES = sorted([f.name for f in (PKG / "輸出結果" / "驗證分析" /
                 "R26_external_batch_bundle" / "input_subset").glob("*.bmp")])

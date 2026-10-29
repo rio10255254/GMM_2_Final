@@ -17,7 +17,7 @@ plt.rcParams.update({
     "axes.spines.top": False, "axes.spines.right": False,
 })
 
-PKG     = Path(str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_使用包'))
+PKG     = Path(str(PROJECT_ROOT / 'Deliverables/Company_Packages/GeoEdge_R26_使用包'))
 IN_DIR  = PKG / "輸出結果" / "驗證分析" / "R26_external_batch_bundle" / "input_subset"
 OUT_BMP = PKG / "輸出結果" / "推論結果" / "reconstruct_progress_r26_sm035_best_tradeoff_in_input_subset_20260317_162050"
 DEST    = PKG / "輸出結果" / "驗證分析" / "R26_validation_complete"

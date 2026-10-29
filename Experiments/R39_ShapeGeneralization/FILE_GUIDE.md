@@ -76,7 +76,7 @@ a030 的 0.08px 是當時全專案最低的外部數字。a025 是第一個三�
 | a030 與 a025 的權重（各約 19.5 MB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)；見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
 | 訓練資料 | 用 `scripts/r39_shape_data.py build --profile all` 重新產生；環形部分來自[早期主線共用環形來源](<../../Shared_Sources/Baseline_Ring_Inputs/README.md>) |
 | 權重平均 | `scripts/run_r39_weight_sweep.py`（11 點 sweep，邏輯在 `r39_weight_sweep.py`）、`scripts/r39r40_complementary_average.py`（a030 × a043） |
-| 交給公司的 a025 ONNX 包 | [GeoEdge_R39R40_a025_ONNX_Company_Package_20260511](<../../_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/README.md>)；內容稽核見 [ONNX 包內容稽核](<results/a030_x_a043_sweep/reports/R39R40_A025_ONNX_PACKAGE_CONTENT_AUDIT_20260513.md>) |
+| 交給公司的 a025 ONNX 包 | [GeoEdge_R39R40_a025_ONNX_Company_Package_20260511](<../../Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/README.md>)；內容稽核見 [ONNX 包內容稽核](<results/a030_x_a043_sweep/reports/R39R40_A025_ONNX_PACKAGE_CONTENT_AUDIT_20260513.md>) |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 

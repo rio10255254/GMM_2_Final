@@ -51,7 +51,7 @@ def main():
             previous=paths.get(key)
             if previous and previous['sha256']!=source['sha256']:
                 if source['origin']=='D_worktree':raise ValueError('Distinct current original files map to one destination')
-                relative='Historical_Archive/'+Path(source['source']).relative_to(archive).as_posix();key=relative.casefold()
+                relative='Archive/Historical_Archive/'+Path(source['source']).relative_to(archive).as_posix();key=relative.casefold()
             if key in paths:
                 if paths[key]['sha256']!=source['sha256']:raise ValueError('Historical source version collision')
                 continue

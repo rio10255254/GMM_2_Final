@@ -6,8 +6,8 @@
 
 | 內容 | 移除的D副本 | 實測多出的D空間 | 保留／恢復 |
 |---|---:|---:|---|
-| R61舊重建測試的兩套生成輸出 | 228,568份 | 24,648,835,072 bytes | 真正訓練資料、完整生成包、兩版測試來源及原成功／失敗報告保留；15份差異與15份歷史對照另留H。[重建入口](../../Validations/R61_TrainingData_Regenerator_20261004/CLEANUP_AND_REBUILD_20261021.md)。 |
-| 已停止的過大型閱讀副本 | 19,507份 | 13,143,080,960 bytes | 原實驗及目前精簡閱讀版保留；未直接對上的副本保守留H，[原停止原因及保存入口](../../Thesis_MOSR_Evidence/Research_Round_Library_20260926_ABORTED_OVERSIZED/ABORTED_README.md)可查，不把未直接對上解讀成新的科學結果。 |
+| R61舊重建測試的兩套生成輸出 | 228,568份 | 24,648,835,072 bytes | 真正訓練資料、完整生成包、兩版測試來源及原成功／失敗報告保留；15份差異與15份歷史對照另留H。[重建入口](../../Deliverables/Validations/R61_TrainingData_Regenerator_20261004/CLEANUP_AND_REBUILD_20261021.md)。 |
+| 已停止的過大型閱讀副本 | 19,507份 | 13,143,080,960 bytes | 原實驗及目前精簡閱讀版保留；未直接對上的副本保守留H，[原停止原因及保存入口](../../Archive/Research_Round_Library_20260926_ABORTED_OVERSIZED/ABORTED_README.md)可查，不把未直接對上解讀成新的科學結果。 |
 | R93固定共用資料的大陣列 | 18,072份 | 35,844,415,488 bytes | 全部D/H內容及原陣列核對碼相同，固定原件在H；模型、完整結果及小型資料紀錄留D。[取回說明](../../Experiments/R93_RecoverableDetailSeparatedScratch/data/ARCHIVE_POINTER_20261022.md)。 |
 | 本機版本暫存 | 201,434份 | 172,766,003,200 bytes | 只移除已完整存入獨立H封包的重複暫存；原D工作分支、索引及原有歷史封包保持。 |
 

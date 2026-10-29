@@ -6,7 +6,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 PATCH_ROOT = Path(
-    str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_GPU補丁')
+    str(PROJECT_ROOT / 'Deliverables/Company_Packages/GeoEdge_R26_正式交付版/GeoEdge_R26_GPU補丁')
 )
 PAYLOAD_RUNTIME = PATCH_ROOT / "payload" / "內部檔案" / "portable_runtime"
 

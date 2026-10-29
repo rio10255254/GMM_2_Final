@@ -2,7 +2,7 @@ from pathlib import Path
 from docx import Document
 from docx.shared import Pt
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-P=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Web_Thesis_Documents_20260920'))
+P=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R130_Clean_Web_Thesis_Documents_20260920'))
 for p in P.glob('*.docx'):
  d=Document(p)
  if p.name.startswith('03_'):

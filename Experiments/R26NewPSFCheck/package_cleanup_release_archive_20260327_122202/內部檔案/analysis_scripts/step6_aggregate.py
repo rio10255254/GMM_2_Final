@@ -3,7 +3,7 @@ from pathlib import Path
 import json, numpy as np
 PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
-DEST = Path(str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_使用包/輸出結果/驗證分析/R26_validation_complete'))
+DEST = Path(str(PROJECT_ROOT / 'Deliverables/Company_Packages/GeoEdge_R26_使用包/輸出結果/驗證分析/R26_validation_complete'))
 
 import csv as csv_mod
 

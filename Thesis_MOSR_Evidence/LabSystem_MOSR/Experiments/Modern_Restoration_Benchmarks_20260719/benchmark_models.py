@@ -20,7 +20,7 @@ from torch.cuda.amp import autocast
 
 EXPERIMENT = Path(__file__).resolve().parent
 BASE_EXPERIMENT = EXPERIMENT.parent / "BaseUNet_Baseline_20260718"
-PACKAGE = EXPERIMENT.parents[1] / "Model_Packages" / "V42_SoftLabelSNR_FullStandalone_20260709"
+PACKAGE = EXPERIMENT.parents[1] / ".." / ".." / "Deliverables" / "Standalone_Models" / "V42_SoftLabelSNR_FullStandalone_20260709"
 for path in (EXPERIMENT, BASE_EXPERIMENT, PACKAGE):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))

@@ -6,7 +6,7 @@ sys.dont_write_bytecode=True
 
 PROJECT=Path(__file__).resolve().parents[4]
 OUT=Path(__file__).resolve().parent
-PACK=PROJECT/'Deliverables/R152_Standalone_ImageFiles_20261004'
+PACK=PROJECT/'Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004'
 
 
 def normalized(path):
@@ -14,7 +14,7 @@ def normalized(path):
 
 
 forbidden=[normalized(PROJECT/'Experiments'),normalized(PROJECT/'Thesis_MOSR_Evidence'),
-           normalized(PROJECT/'Deliverables/R152_Standalone_20261004'),normalized(PACK/'data')]
+           normalized(PROJECT/'Deliverables/Standalone_Models/R152_Standalone_20261004'),normalized(PACK/'data')]
 allowed=normalized(OUT)
 
 

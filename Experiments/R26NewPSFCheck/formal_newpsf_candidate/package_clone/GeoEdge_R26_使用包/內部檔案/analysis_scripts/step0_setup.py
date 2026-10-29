@@ -3,7 +3,7 @@ import shutil
 from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
-PKG        = Path(str(PROJECT_ROOT / '_deployment_package/GeoEdge_R26_使用包'))
+PKG        = Path(str(PROJECT_ROOT / 'Deliverables/Company_Packages/GeoEdge_R26_使用包'))
 DEST       = PKG / "輸出結果" / "驗證分析" / "R26_validation_complete"
 SRC_SINGLE = PKG / "輸出結果" / "驗證分析" / "R26_external_single_bundle"
 SRC_BATCH  = PKG / "輸出結果" / "驗證分析" / "R26_external_batch_bundle"

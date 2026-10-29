@@ -33,7 +33,7 @@ def main():
         if '/portable_runtime/' in '/'+row['logical_path'].casefold():skipped['generic_runtime']+=1;continue
         path=row['logical_path'];key=path.casefold();source=Path(row['source'])
         if row['origin']!='D_worktree' and ((key in canonical and canonical[key]!=row['sha256']) or (key in prior_by_path and prior_by_path[key]!=row['sha256']) or (key in destinations and destinations[key]!=row['sha256'])):
-            path='Historical_Archive/'+source.relative_to(archive).as_posix();key=path.casefold()
+            path='Archive/Historical_Archive/'+source.relative_to(archive).as_posix();key=path.casefold()
         if key in destinations:
             if destinations[key]!=row['sha256']:raise ValueError('Unresolved historical model version: '+path)
             skipped['identical_destination_and_bytes']+=1

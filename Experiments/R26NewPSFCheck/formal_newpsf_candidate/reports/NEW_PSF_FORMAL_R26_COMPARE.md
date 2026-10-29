@@ -51,9 +51,9 @@ pure control 的核心結論仍成立：
 smoke test 產出：
 
 - demo:
-  - `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/_smoketest_demo/reconstruct_progress_r26_sm035_best_tradeoff_in_input_subset_20260327_101759`
+  - `Deliverables/Company_Packages/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/_smoketest_demo/reconstruct_progress_r26_sm035_best_tradeoff_in_input_subset_20260327_101759`
 - custom:
-  - `_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/_smoketest_custom/reconstruct_progress_r26_sm035_best_tradeoff_in_input_subset_20260327_101759`
+  - `Deliverables/Company_Packages/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/_smoketest_custom/reconstruct_progress_r26_sm035_best_tradeoff_in_input_subset_20260327_101759`
 
 ## 指標解讀
 

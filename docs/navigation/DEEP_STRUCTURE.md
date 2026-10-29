@@ -9,7 +9,7 @@
 | 目的 | 路線 |
 |---|---|
 | 找某一輪的設定、原報告與數表 | [研究分區](../reproducibility/EXPERIMENTS.md) → 該輪閱讀卡 → 「直接查看這一輪的檔案分工」 → 該輪FILE_GUIDE與原子資料夾 |
-| 找Lab的校正、資料與模型版本 | [Lab校正](../../Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/CONTENTS.md) → [資料形成](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/CONTENTS.md) → [Lab各輪](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/README.md) → [模型包版本](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/README.md) |
+| 找Lab的校正、資料與模型版本 | [Lab校正](../../Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/CONTENTS.md) → [資料形成](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/CONTENTS.md) → [Lab各輪](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/README.md) → [模型包版本](../../Deliverables/Standalone_Models/README.md) |
 | 找獨立使用包或舊論文交接 | [交付包分類](../../Deliverables/CONTENTS.md) → 包外內容導讀 → 原包；依用途再取得附件 |
 
 ## 優先釐清的深層區域
@@ -21,7 +21,7 @@
 | [R93資料與來源](../../Experiments/R93_RecoverableDetailSeparatedScratch/FILE_GUIDE.md) | 失敗前測、正式資料、60輪停止與48輪綜合候選分開 |
 | [R136重拍與量測](../../Experiments/R136_PIRepeatability/FILE_GUIDE.md) | 原中心量測、LSC、SEM與形狀尺寸結果分區；多張／多圈不直接當獨立重拍 |
 | [R148v2幾何與比較來源](../../Experiments/R148v2_HybridContextNativePSF/FILE_GUIDE.md) | 幾何陣列、原比較中心與真正影像來源分開；短測模型不當正式8192模型 |
-| [Lab模型包](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/README.md) | V42的180組小測試包與11,254組完整訓練包分開；R61、R129、R134維持原介面與身分 |
+| [Lab模型包](../../Deliverables/Standalone_Models/README.md) | V42的180組小測試包與11,254組完整訓練包分開；R61、R129、R134維持原介面與身分 |
 
 ## 整理界線
 

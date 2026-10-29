@@ -1708,7 +1708,7 @@
         "overlay_figure": "results/sem_corner9/Raw_R128_comparison/figures/09_mean_error_sd_overlay.png"
       },
       "r128_thesis_handoff": {
-        "path": "Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920",
+        "path": "Deliverables/Thesis_Handoffs/R128_Corrected_Corner9_Thesis_Handoff_20260920",
         "entry": "START_HERE.md",
         "instructions": "HANDOFF_FOR_THESIS.md",
         "date": "2026-09-20",
@@ -1719,7 +1719,7 @@
         "status": "verified_current_corner9",
         "note": "R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。",
         "report": "Experiments/R136_PIRepeatability/reports/R136_RAW_R129_CORNER9_RESULTS.md",
-        "handoff": "Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920",
+        "handoff": "Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920",
         "formal_promotion": false,
         "SEM_direction": "working inference remains, not uniquely confirmed",
         "full_total_uncertainty": null
@@ -1811,7 +1811,7 @@
       "selected_research_width": 16,
       "transition": 16,
       "checkpoint": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
+        "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
         "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
       },
       "training_updates": 0,
@@ -1832,7 +1832,7 @@
       "report": "Experiments/R131_RecurrentStepValidation/reports/R131_RESULTS.md",
       "training_updates": 0,
       "checkpoint": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
+        "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
         "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
       },
       "recurrent_prefixes": [
@@ -1941,7 +1941,7 @@
       },
       "prior_pilot_status": "bounded_pilot_complete_mixed_real_results",
       "long_training": {
-        "package": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912",
+        "package": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912",
         "report": "Experiments/R129_OpticalPriorHybrid/reports/R129_LONG_TRAINING_RESULTS.md",
         "run": "r129_long_01",
         "planned_updates": 8192,
@@ -1949,7 +1949,7 @@
         "observed_utc": "2026-09-12T14:20:12.463340+00:00",
         "observed_pid": 5596,
         "status": "complete_not_adopted",
-        "live_status": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/status.json",
+        "live_status": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/status.json",
         "all_data_local": true,
         "preflight_passed": true,
         "relocation_passed": true,
@@ -4336,11 +4336,11 @@
       "date": "2026-10-04",
       "status": "complete",
       "role": "portable model training/inference delivery",
-      "package": "Deliverables/R152_Standalone_20261004",
+      "package": "Deliverables/Standalone_Models/R152_Standalone_20261004",
       "archive": "Deliverables/R152_Standalone_20261004.zip",
       "report": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md",
-      "training_entry": "Deliverables/R152_Standalone_20261004/train.py",
-      "inference_entry": "Deliverables/R152_Standalone_20261004/infer.py",
+      "training_entry": "Deliverables/Standalone_Models/R152_Standalone_20261004/train.py",
+      "inference_entry": "Deliverables/Standalone_Models/R152_Standalone_20261004/infer.py",
       "all_control_files_python": true,
       "training_parents": 768,
       "training_views": 3072,
@@ -4356,10 +4356,10 @@
       "date": "2026-10-04",
       "status": "complete",
       "role": "latest formal-training image-file delivery",
-      "package": "Deliverables/R152_Standalone_ImageFiles_20261004",
+      "package": "Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004",
       "archive": "Deliverables/R152_Standalone_ImageFiles_20261004.zip",
       "report": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md",
-      "entry": "Deliverables/R152_Standalone_ImageFiles_20261004/train.py",
+      "entry": "Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/train.py",
       "all_controls_python": true,
       "formal_data_format": "TIFF float32",
       "clear_images": 3072,
@@ -4372,8 +4372,8 @@
       "resume_exact": true,
       "model_and_weights_unchanged": true,
       "archive_sha256": "3dbde8f7b6f574546f5be53d560fac9e19b34801aaac4891e8dd90a153368c7b",
-      "generation_entry": "Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py",
-      "generation_guide": "Deliverables/R152_Standalone_ImageFiles_20261004/generation_guide.py",
+      "generation_entry": "Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generate_data.py",
+      "generation_guide": "Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generation_guide.py",
       "generation_report": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md",
       "original_generation_sources_preserved": 5,
       "complete_generation_from_fixed_seeds_verified": true,

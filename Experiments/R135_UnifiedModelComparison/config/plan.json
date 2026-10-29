@@ -3,10 +3,10 @@
   "models": {
     "V42_old": {
       "checkpoint": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
+        "path": "Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
         "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83"
       },
-      "inference": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/infer_v42.py",
+      "inference": "Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/infer_v42.py",
       "history_overlap": true,
       "guard": "native thesis output; no extra FOV blend"
     },
@@ -59,17 +59,17 @@
     },
     "R129_W16": {
       "checkpoint": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
+        "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
         "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
       },
       "guard": "previously chosen16/16 research output"
     },
     "R134_P1": {
       "checkpoint": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915/results/training/r134p_long_01/checkpoints/step08192.pth",
+        "path": "Deliverables/Standalone_Models/R134_DirectState_Precision_Standalone_20260915/results/training/r134p_long_01/checkpoints/step08192.pth",
         "sha256": "9a31573b9783c258ae33ea002188b1191ce443665b9125ebaf0b27c746b4a46c"
       },
-      "package": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915",
+      "package": "Deliverables/Standalone_Models/R134_DirectState_Precision_Standalone_20260915",
       "guard": "16/16"
     }
   },
@@ -2695,10 +2695,10 @@
       "sha256": "afb1f6812a63f078541783dedf672ef0599ed7856ed1a16e88bcfbd38f511a36"
     },
     "checkpoint": {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
+      "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
       "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
     },
-    "package": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912",
+    "package": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912",
     "frames": [
       {
         "sequence": "50x_x_0p5um",
@@ -5710,7 +5710,7 @@
   },
   "protected": [
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
+      "path": "Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar",
       "sha256": "89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83"
     },
     {
@@ -5726,16 +5726,16 @@
       "sha256": "9fbdffa3bebe0a37e3f7c2b09239e2e00de6b0522feb101571fcfb7a42699abf"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
+      "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
       "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915/results/training/r134p_long_01/checkpoints/step08192.pth",
+      "path": "Deliverables/Standalone_Models/R134_DirectState_Precision_Standalone_20260915/results/training/r134p_long_01/checkpoints/step08192.pth",
       "sha256": "9a31573b9783c258ae33ea002188b1191ce443665b9125ebaf0b27c746b4a46c"
     },
     {
       "path": "Experiments/R129_OpticalPriorHybrid/results/continuous_lsc/plan.json",
-      "sha256": "dbad889d6e0805783fedd6efd1d871ebed91a7abb1f893aea11cdf5f11922793"
+      "sha256": "48f9582030b3866ba4c543a93b424e10681726b00c1e33ab15cf75aceb145148"
     },
     {
       "path": "Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",
@@ -5758,11 +5758,11 @@
       "sha256": "056e8165d822215e39c1819cc355b39dac95416f47f15591ec3bde51c78b989e"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py",
+      "path": "Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py",
       "sha256": "5ade3c9f22fbe24560bc700bb0fb3228a30c584d6c5784c62ff9043085d95242"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/infer_v42.py",
+      "path": "Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/infer_v42.py",
       "sha256": "915d4913e37c675c19162c0cf7abef467b420d31ce0e3a789378c2133b633c3f"
     },
     {

@@ -57,7 +57,7 @@
 本專案有一份正式交付封包，位於：
 
 ```
-_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包
+Deliverables/Company_Packages/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包
 ```
 
 這份封包記錄了 R26 正式交付的完整狀態，包含訓練輸出、推論輸出、分析報告等，具有**「交付版本語意」**——也就是說，它的內容代表了「我們正式提交給對方的成果」。
@@ -446,7 +446,7 @@ GMF_score.txt 回填完成後，即可使用根專案的 GMF 比較腳本，對 
 
 > **注意事項**
 >
-> - 本 sandbox 內所有輸出均**不應回寫到**交付封包主結構（`_deployment_package/`）。
+> - 本 sandbox 內所有輸出均**不應回寫到**交付封包主結構（`Deliverables/Company_Packages/`）。
 > - 若要重現本次 external recon，請確認 `C:\Users\Rio\Downloads\NTU_ImageDataset\` 下有三個資料集的 `Cropped_Output` 子目錄。
 > - 使用的 Python 環境為 `C:\Users\Rio\anaconda3\python.exe`，GPU 為 NVIDIA RTX A6000（CUDA `cuda:0`）。
 > - PSF 正式輸出（`PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat`）**不應在本 sandbox 內被覆寫**；若需重跑 PSF fitting，應在 ValidationLab 或獨立 recheck output root 內進行。

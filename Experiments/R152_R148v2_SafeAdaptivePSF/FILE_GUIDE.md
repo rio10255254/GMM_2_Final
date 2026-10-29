@@ -80,10 +80,10 @@ R152 的做法因此很保守：**R148v2 一個權重都不動**，只在它的�
 
 | 需要什麼 | 在哪裡 |
 |---|---|
-| R152 部署模型、凍結的 R148v2、25 顆 PSF 與設定 | Release [`research-training-kits-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016) 的 `research-r152-frozen-inputs-001.zip`（約 28.8 MB），解開後放在 [R152 生成包](<../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md>) 的 `weights/` 與 `calibration/`；內容與用途見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
+| R152 部署模型、凍結的 R148v2、25 顆 PSF 與設定 | Release [`research-training-kits-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016) 的 `research-r152-frozen-inputs-001.zip`（約 28.8 MB），解開後放在 [R152 生成包](<../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/README.md>) 的 `weights/` 與 `calibration/`；內容與用途見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
 | 930 張原始照片與 30 份平台紀錄 | Release [`shared-pi-20260903-v1`](https://github.com/rio10255254/GMM_2_Final/releases/tag/shared-pi-20260903-v1)，還原方法見 [PI 原始拍攝資料](<../../Shared_Sources/PI_Repeatability_20260903/README.md>) |
-| 全部 9,216 張訓練 TIFF | 不上傳，用固定種子重新生成，逐張核對原版像素：[生成包](<../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md>) |
-| 訓練與推論程式 | [獨立包](<../../Deliverables/R152_Standalone_ImageFiles_20261004/README.md>)（`train.py`、`infer.py`、`settings.py`），或本資料夾的原始程式 |
+| 全部 9,216 張訓練 TIFF | 不上傳，用固定種子重新生成，逐張核對原版像素：[生成包](<../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/README.md>) |
+| 訓練與推論程式 | [獨立包](<../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/README.md>)（`train.py`、`infer.py`、`settings.py`），或本資料夾的原始程式 |
 
 下載模型附件：
 
@@ -94,7 +94,7 @@ gh release download research-training-kits-20261016 --repo rio10255254/GMM_2_Fin
 重新生成訓練資料（需要 numpy、scipy、Pillow，並先備妥 25 顆 PSF 的 `calibration/psf25_bank.npz`）：
 
 ```powershell
-cd Deliverables/R152_Standalone_ImageFiles_20261004
+cd Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004
 python generate_data.py --output-dir outputs/generated_data --workers 2
 ```
 

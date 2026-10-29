@@ -138,7 +138,7 @@ Expected untracked content:
 
 - `Traing_Progress/`
 - `Training_Data/`
-- `_deployment_package/`
+- `Deliverables/Company_Packages/`
 - 各類 backup / archive
   backup / archive directories
 - `weights/`、`artifacts/`、`logs/`、`reconstructions/`、`gmf_results/` 等 bulk 子目錄

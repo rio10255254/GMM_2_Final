@@ -3,7 +3,7 @@ import hashlib,json,zipfile,shutil
 from PIL import Image,ImageChops
 from docx import Document
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-P=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Web_Thesis_Documents_20260920'));R=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean'));H=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
+P=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R130_Clean_Web_Thesis_Documents_20260920'));R=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean'));H=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 for n in [1,3,4,5,6]:
  a=Image.open(R/f'results/web_docs_qa_final/05/page-{n}.png');b=Image.open(R/f'results/web_docs_qa_polished/05/page-{n}.png');assert ImageChops.difference(a,b).getbbox() is None
@@ -35,7 +35,7 @@ sources=[R/'reports/R130_CLEAN_RESULTS.md',R/'reports/TRAINING_PROVENANCE.md',R/
 (P/'製作與檢查/SOURCE_REFERENCES.json').write_text(json.dumps([dict(path=str(q),sha256=sha(q)) for q in sources],ensure_ascii=False,indent=2),encoding='utf-8')
 items=[dict(path=q.relative_to(P).as_posix(),bytes=q.stat().st_size,sha256=sha(q)) for q in sorted(P.rglob('*')) if q.is_file() and q.name!='MANIFEST.json']
 (P/'MANIFEST.json').write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding='utf-8')
-small=P.parent/'R130_Clean_五份論文文件_20260920.zip';full=P.with_suffix('.zip')
+small=P.parent.parent/'R130_Clean_五份論文文件_20260920.zip';full=P.with_suffix('.zip')
 for dest,files in [(small,list(P.glob('*.docx'))+[P/'00_上傳與閱讀說明.md']),(full,[q for q in P.rglob('*') if q.is_file()])]:
  assert not dest.exists()
  with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
