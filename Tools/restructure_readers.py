@@ -45,7 +45,7 @@ LOADER_NAME = re.compile(r'load|read', re.I)
 # uses of a loaded value that read no path out of it
 HARMLESS = ('len', 'isinstance', 'bool', 'print', 'repr', 'type', 'id', 'dump', 'dumps', 'pprint', 'pformat',
             'keys', 'hash', 'set', 'any', 'all', 'format')
-TYPE_CHECKS = ('isinstance', 'type', 'bool', 'len', 'id', 'hash')
+TYPE_CHECKS = ('isinstance', 'type', 'bool', 'len', 'id', 'hash', 'int', 'float', 'round')
 SAME_SHAPE = ('deepcopy', 'copy', 'dict', 'list', 'tuple', 'sorted', 'reversed', 'OrderedDict')
 NEUTRAL = (None, '', 0, False)
 COMPS = (ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)
@@ -180,6 +180,18 @@ class DataView:
             self._changed[name] = {k: v for k, v in self.leaves(name).items()
                                    if v[1] is not None and v[0] != v[1] and not HEX64.fullmatch(v[0])}
         return self._changed[name]
+
+    def kinds_at(self, name, pattern):
+        """Every kind of value ('dict', 'list', 'str', 'other') the pattern can stand for."""
+        nodes = [self.obj(name)]
+        for k in pattern:
+            nxt = []
+            for node in nodes:
+                items = list(node.items()) if isinstance(node, dict) else list(enumerate(node)) if isinstance(node, list) else []
+                nxt += [v for key, v in items if fits(k, key)]
+            nodes = nxt
+        return {'dict' if isinstance(n, dict) else 'list' if isinstance(n, list) else 'str' if isinstance(n, str) else 'other'
+                for n in nodes}
 
     def kind_at(self, name, pattern):
         node = self.obj(name)
@@ -476,6 +488,9 @@ class Readers:
             return
 
         def escape(why):
+            kinds = self.view.kinds_at(name, pattern) if not prefix else set()
+            if kinds and all(self.guarded_off(node, k) for k in kinds - {'other'}):
+                return
             if certain and any((matches(pattern, k) or below(pattern, k)) and ABS_START.match(v[0])
                                for k, v in changed.items()):
                 self.escapes.append((node, name, pattern, why))
@@ -582,13 +597,22 @@ class Readers:
             home = self.home(expr)
             keys = set()
             for st in self.stores.get((home, expr.id), []):
-                loop = self.parent.get(st)
-                if isinstance(st, ast.Name) and isinstance(loop, (ast.For, ast.comprehension)) and loop.target is st and \
-                        isinstance(loop.iter, (ast.Tuple, ast.List, ast.Set)) and \
-                        all(_const_key(e)[0] for e in loop.iter.elts):
-                    keys.update(_const_key(e)[1] for e in loop.iter.elts)
-                else:
+                loop, at = self.parent.get(st), None
+                if isinstance(loop, (ast.Tuple, ast.List)) and isinstance(self.parent.get(loop), (ast.For, ast.comprehension)) \
+                        and self.parent.get(loop).target is loop:
+                    at, loop = loop.elts.index(st), self.parent.get(loop)       # for split, key in (("a", "k1"), ...)
+                elif not (isinstance(loop, (ast.For, ast.comprehension)) and loop.target is st):
                     return STAR
+                items = loop.iter.elts if isinstance(loop.iter, (ast.Tuple, ast.List, ast.Set)) else None
+                if items is None:
+                    return STAR
+                for e in items:
+                    if at is not None:
+                        e = e.elts[at] if isinstance(e, (ast.Tuple, ast.List)) and at < len(e.elts) else None
+                    ok, k = _const_key(e) if e is not None else (False, None)
+                    if not ok:
+                        return STAR
+                    keys.add(k)
             return AnyOf(keys=frozenset(keys)) if keys else STAR
         rx = self._key_regex(expr)
         return AnyOf(regex=rx) if rx is not None and rx.replace('.*', '') else STAR
@@ -612,9 +636,27 @@ class Readers:
         callee = _fname(call) if fn is not None else None
         if callee in TYPE_CHECKS and isinstance(fn, ast.Name):
             return                                     # isinstance(x, dict): not used as a path
+        if self.guarded_off(node):
+            return                                     # under `if isinstance(x, dict)`: a string never gets here
+        if isinstance(p, ast.Expr):
+            return                                     # the value is thrown away
         if (isinstance(p, ast.Attribute) and p.value is node and p.attr in ('values', 'items', 'keys', 'get')) or \
                 (isinstance(p, ast.Subscript) and p.value is node):
             return                                     # used as a dict or list: a string never gets here
+        into = isinstance(p, (ast.Dict, ast.List, ast.Tuple, ast.Set) + COMPS) or \
+            (isinstance(p, ast.keyword) and _fname(call) == 'dict')
+        if into and not all(ABS_START.match(o) for k, (o, n) in self.view.leaves(name).items()
+                            if matches(pattern, k) and pathlike(o)):
+            # mixed values carried in a container (a serializer, a copy): where they are read decides
+            self.carry(node, p, args)
+            return
+        f = self.scope(p) if isinstance(p, ast.Return) else None
+        if isinstance(f, FUNCS):
+            for c in self.calls.get(f.name, []):       # returned as it is: the caller's use decides
+                self.push(c, *args)
+            if isinstance(self.parent.get(f), ast.Module):
+                self.returned[f.name].add((name, pattern, prefix, certain))
+            return
         if fn is not None and (kw is not None or node in call.args) and callee in self.defs and \
                 (isinstance(fn, ast.Name) or (isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name)
                                               and fn.value.id == 'self')):
@@ -626,6 +668,50 @@ class Readers:
                     self.pending.append((node, name, pattern, via, keys))
                     return
         self.reads.append(Read(node, name, pattern, via))
+
+    def carry(self, node, p, args):
+        """Follow the container a value goes into, wrapping the value in the key it goes under."""
+        name, pattern, prefix, via, certain = args
+        if isinstance(p, ast.Dict):
+            if node in p.values:
+                k = p.keys[p.values.index(node)]
+                ok, kv = _const_key(k) if k is not None else (False, None)
+                if ok:
+                    self.push(p, name, pattern, (kv,) + prefix, via, certain)
+        elif isinstance(p, ast.keyword):
+            self.push(self.parent.get(p), name, pattern, (p.arg,) + prefix, via, certain)
+        else:
+            self.push(p, name, pattern, (STAR,) + prefix, via, certain)
+
+    def guarded_off(self, node, kind='str'):
+        """`node` (a name) sits where an isinstance() test of that name has ruled out its kind of value."""
+        if not isinstance(node, ast.Name):
+            return False
+        allowed = {'str': ('str', 'object'), 'dict': ('dict', 'Mapping', 'MutableMapping', 'object'),
+                   'list': ('list', 'tuple', 'Sequence', 'Iterable', 'object')}.get(kind, ())
+        if not allowed:
+            return False
+
+        def rules_out_str(test):
+            if isinstance(test, ast.BoolOp) and isinstance(test.op, ast.And):
+                return any(rules_out_str(v) for v in test.values)
+            if not (isinstance(test, ast.Call) and _fname(test) == 'isinstance' and len(test.args) == 2 and
+                    isinstance(test.args[0], ast.Name) and test.args[0].id == node.id):
+                return False
+            types = test.args[1].elts if isinstance(test.args[1], ast.Tuple) else [test.args[1]]
+            return not any(isinstance(t, (ast.Name, ast.Attribute)) and
+                           (t.id if isinstance(t, ast.Name) else t.attr) in allowed for t in types)
+
+        child, p = node, self.parent.get(node)
+        while p is not None and not isinstance(p, FUNCS):
+            if isinstance(p, (ast.If, ast.IfExp)) and child is not p.test and \
+                    (child in p.body if isinstance(p, ast.If) else child is p.body) and rules_out_str(p.test):
+                return True
+            if isinstance(p, ast.BoolOp) and isinstance(p.op, ast.And) and child in p.values and \
+                    any(rules_out_str(v) for v in p.values[:p.values.index(child)]):
+                return True
+            child, p = p, self.parent.get(p)
+        return False
 
     def settle(self):
         """A string given to a function that other calls give other values is read at the call."""

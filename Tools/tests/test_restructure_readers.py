@@ -323,3 +323,19 @@ def test_key_built_from_a_name(ctx):
     src = HEAD + LOAD + "def get(kind):\n    return open(CONFIG['sources'][f'mo{kind}_dir'])\n"
     out, unresolved = rewrite(src, ctx)
     assert "    return open(str(PROJECT_ROOT / CONFIG['sources'][f'mo{kind}_dir']))\n" in out and not unresolved
+
+
+def test_type_conversions_and_isinstance_guards_are_not_reads(ctx):
+    src = HEAD + LOAD + ("def plain(item):\n"
+                         "    if isinstance(item, dict):\n        return {k: plain(v) for k, v in item.items()}\n"
+                         "    if isinstance(item, (int, float)) and item > 0:\n        return item.real\n"
+                         "    return item\n"
+                         "plain(CONFIG)\nn = int(CONFIG['data']['seed_name'] or 0)\n")
+    out, unresolved = rewrite(src, ctx)
+    assert out == src and not unresolved
+
+
+def test_loop_unpacking_constant_pairs_gives_the_keys(ctx):
+    src = HEAD + LOAD + "for name, key in (('a', 'raw_dir'), ('b', 'model_dir')):\n    open(CONFIG['sources'][key])\n"
+    out, unresolved = rewrite(src, ctx)
+    assert "    open(str(PROJECT_ROOT / CONFIG['sources'][key]))\n" in out and not unresolved
