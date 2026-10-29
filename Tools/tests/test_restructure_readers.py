@@ -426,3 +426,11 @@ def test_config_given_to_a_class_of_another_module(ctx):
     ctx = linked(ctx, {MAIN: main, COMMON: common})
     out, _ = rewrite(common, ctx, COMMON)
     assert "        self.ckpt = Path(PROJECT_ROOT / cfg['model'])\n" in out
+
+
+def test_a_hint_names_the_file_a_name_holds(ctx):
+    src = "from pathlib import Path\nimport json\nMANIFEST_PATH = Path(__file__).parent / 'missing.json'\n" \
+          "def main():\n    m = json.loads(MANIFEST_PATH.read_text())\n    return Path(m['out'])\n"
+    ctx = replace(ctx, hints={FILE: {'MANIFEST_PATH': CFG}})
+    out, _ = rewrite(src, ctx)
+    assert "    return Path(PROJECT_ROOT / m['out'])\n" in out

@@ -62,6 +62,7 @@ class Context:
     data_side: str = 'old'  # which content a read sees: the old tree's ('old') or the rewritten one ('new')
     seeds: dict = None      # {python file: data values arriving from other modules}, from restructure_readers.link
     modules: dict = None    # {python file: source text} of the side being read, for star imports
+    hints: dict = None      # {python file: {name: path}}: names the tool cannot evaluate, given by hand
 
 
 def file_class(name):

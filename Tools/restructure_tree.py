@@ -21,6 +21,9 @@ verify  compares HEAD (before) with the work tree (after): equivalence, Python
 
 decisions_phaseN.json: [{"segment": exact source, "target_old": "...", "target_new": "..." or null, "why": "..."}]
 null keeps the expression as written. The records folder itself is never rewritten.
+reader_hints_phaseN.json: [{"file": "...py", "name": "MANIFEST_PATH", "path": "...", "why": "..."}]: a name whose
+path the tool cannot evaluate (built from a data value, or set by the module that loads this one), for following
+values read out of data files.
 """
 import argparse
 import csv
@@ -73,6 +76,11 @@ class Phase:
         if ext.exists():
             data = json.loads(ext.read_text(encoding='utf-8'))
             self.external = {**data.get('files', {}), **data.get('dirs', {}), **data.get('junctions', {})}
+        self.hints = {}
+        hints = self.rec / f'reader_hints_phase{self.n}.json'
+        if hints.exists():
+            for h in json.loads(hints.read_text(encoding='utf-8')):
+                self.hints.setdefault(h['file'], {})[h['name']] = h['path']
         self.decisions = {}
         dec = self.rec / f'decisions_phase{self.n}.json'
         if dec.exists():
@@ -85,7 +93,13 @@ class Phase:
         return Universe.build(self.repo, self.args.cloud_index, self.args.local_inventory, a, reparse, ref=ref)
 
     def context(self, uni, rules='phase'):
-        return Context(uni, self.rules if rules == 'phase' else None, self.external, self.mode, self.decisions)
+        hints = self.hints
+        if rules != 'phase' and self.rules:
+            # the rewritten side: files and paths at their new places
+            m = lambda r: self.rules.map(r) or r
+            hints = {m(f): {k: m(v) for k, v in h.items()} for f, h in self.hints.items()}
+        return Context(uni, self.rules if rules == 'phase' else None, self.external, self.mode, self.decisions,
+                       hints=hints)
 
 
 def tracked(repo, ref=None):
@@ -361,7 +375,8 @@ def do_verify(ph):
     ctx_old.seeds, ctx_new.seeds = link(py_old, ctx_old), link(py_new, ctx_new)
     for old_name, src in sorted(py_old.items()):
         new_name = mapped(old_name)
-        if new_name not in py_new or not (view.mentioned_in(src) or old_name in ctx_old.seeds or new_name in ctx_new.seeds):
+        if new_name not in py_new or not (view.mentioned_in(src) or old_name in ctx_old.seeds or new_name in ctx_new.seeds
+                                          or old_name in (ctx_old.hints or {})):
             continue
         before = read_targets(src, old_name, ctx_old)
         now_reads = read_targets(py_new[new_name], new_name, ctx_new)

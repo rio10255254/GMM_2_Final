@@ -248,7 +248,19 @@ class Readers:
         self.returned = defaultdict(set)      # module-level function -> {(data, pattern, prefix, certain)}
         self.bound = defaultdict(set)         # binding -> store nodes / calls / 'seed' it was bound through
         self._imports = None
+        self.hints = (job.ctx.hints or {}).get(job.file_old, {})
         self._index()
+
+    def ev(self, node):
+        """The job's evaluation, plus names a hint gives a path to (reader_hints_phaseN.json)."""
+        if isinstance(node, ast.Name) and node.id in self.hints:
+            from restructure_python import Val
+            return Val(self.hints[node.id], True)
+        if self.hints and isinstance(node, ast.Call) and _fname(node) in PATH_CALLS and len(node.args) == 1:
+            v = self.ev(node.args[0])
+            if v is not None:
+                return v
+        return self.job.ev(node)
 
     # ---------- index ----------
     def scope(self, node):
@@ -318,7 +330,7 @@ class Readers:
                 if isinstance(fn, ast.Attribute) and fn.attr in ('insert', 'append') and \
                         isinstance(fn.value, ast.Attribute) and fn.value.attr == 'path' and \
                         isinstance(fn.value.value, ast.Name) and fn.value.value.id == 'sys' and node.args:
-                    v = self.job.ev(node.args[-1])
+                    v = self.ev(node.args[-1])
                     if v is not None and not v.dyn:
                         self.syspath.append(v.rel)
             elif isinstance(node, (ast.With, ast.AsyncWith)):
@@ -441,7 +453,7 @@ class Readers:
                             path = value.args[params.index(c.args[1].id)]
         if path is None:
             return None
-        v = self.job.ev(path)
+        v = self.ev(path)
         if v is None or v.dyn or not v.rel.endswith('.py') or not self.ctx.uni.exists(v.rel):
             return None
         return v.rel
@@ -476,7 +488,7 @@ class Readers:
 
     def data_file(self, node):
         try:
-            v = self.job.ev(self.unwrap(node))
+            v = self.ev(self.unwrap(node))
         except RecursionError:
             return None
         if v is None or v.dyn or v.is_file:
@@ -486,7 +498,7 @@ class Readers:
     def run(self):
         if self.view is None:
             return self
-        if self.view.mentioned_in(self.job.src):
+        if self.hints or self.view.mentioned_in(self.job.src):
             for node in ast.walk(self.job.tree):
                 if not isinstance(node, ast.Call) or self.is_opener(node) or _fname(node) in PATH_CALLS:
                     continue
@@ -1033,7 +1045,7 @@ class Readers:
     def base(self, node):
         """The folder a read value is joined to: a Val, 'cwd' when used as is, None when not evaluable."""
         p = self.parent.get(node)
-        ev = self.job.ev
+        ev = self.ev
         if isinstance(p, ast.BinOp) and isinstance(p.op, ast.Div) and p.right is node:
             return ev(p.left)
         if isinstance(p, ast.Call) and node in p.args:
@@ -1173,7 +1185,7 @@ def link(sources, ctx, rounds=12):
     if ctx.data is None:
         return {}
     results = {}
-    todo = {f for f, s in sources.items() if ctx.data.mentioned_in(s)}
+    todo = {f for f, s in sources.items() if ctx.data.mentioned_in(s) or f in (ctx.hints or {})}
     for _ in range(rounds):
         if not todo:
             break
@@ -1217,7 +1229,7 @@ def link(sources, ctx, rounds=12):
 def read_parents(job):
     """Expressions that join a followed read value: their evaluation belongs to the read check."""
     seeds = (job.ctx.seeds or {}).get(job.file_old, ())
-    if job.ctx.data is None or not (seeds or job.ctx.data.mentioned_in(job.src)):
+    if job.ctx.data is None or not (seeds or job.file_old in (job.ctx.hints or {}) or job.ctx.data.mentioned_in(job.src)):
         return set()
     r = Readers(job, seeds).run()
     out = set()
