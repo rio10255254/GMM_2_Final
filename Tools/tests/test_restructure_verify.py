@@ -161,3 +161,20 @@ def test_python_equivalence_accepts_a_climb_via_the_common_ancestor():
     ctx_old, ctx_new = Context(old, rules, {}, 'moves'), Context(new, None, {}, 'moves')
     assert v.python_equivalence(old_src, new_src, 'Thesis_MOSR_Evidence/LabSystem_MOSR/run.py', 'LabSystem_MOSR/run.py',
                                 ctx_old, ctx_new, rules) == []
+
+
+def test_equivalence_reads_the_new_text_the_way_the_old_one_was_read():
+    from restructure_text import Edit
+    rules = RuleSet([Rule('_build153', 'Experiments/R153/_build153')])
+    old = Universe.from_paths(['_build153/a.py', 'docs/repro/experiments/x.md', 'docs/repro/files.json'])
+    new = Universe.from_paths(['Experiments/R153/_build153/a.py', 'docs/repro/experiments/x.md', 'docs/repro/files.json'])
+    e = Edit('docs/repro/files.json', 'docs/repro/files.json', 1, '_build153/a.py', 'Experiments/R153/_build153/a.py',
+             'record:path', '_build153/a.py', 'Experiments/R153/_build153/a.py')
+    assert v.equivalence([e], old, new, rules, {}) == []
+
+
+def test_residual_accepts_a_pattern_whose_folder_exists_where_the_file_reads_it():
+    rules = RuleSet([Rule('Reconstruct_Progress', 'Analyses/Reconstruct_Progress')])
+    new = Universe.from_paths(['Lab/Reconstruct_Progress/prep/gmf_cases/a.bmp', 'Analyses/Reconstruct_Progress/README.md'])
+    files = {'Lab/MANIFEST.md': 'outputs in `Reconstruct_Progress/prep/gmf_cases/lab_r46_*/`\n'}
+    assert v.residual(files, new, rules) == []

@@ -135,6 +135,12 @@ def equivalence(edits, old_uni, new_uni, rules, external_map, decisions=None):
                 got = norm(posixpath.join(posixpath.dirname(e.file_new), new))
             else:
                 got = norm(new)
+        elif res.style.kind in ('root_rel', 'file_rel'):
+            # the rewrite kept the way the old text was read; read the new text that way too, without
+            # guessing again (a folder of the same name beside the file, say docs/x/experiments, would mislead)
+            new = urllib.parse.unquote(re.split(r'[#?]', e.new, 1)[0]) if res.style.encoded else re.split(r'[#?]', e.new, 1)[0]
+            new = new.replace('\\\\', '/').replace('\\', '/')
+            got = norm(new) if res.style.kind == 'root_rel' else norm(posixpath.join(posixpath.dirname(e.file_new), new))
         else:
             r2 = resolve(e.new, e.file_new, new_uni, external_map)
             got = r2.target_rel if r2 else None
@@ -240,7 +246,8 @@ def residual(files, uni, rules, absolute_check=False):
             if '/' not in tok and '\\' not in tok:
                 continue
             for cands in _interpretations(tok, name):
-                if any(uni.exists(p) for p in cands):
+                # a pattern piece (lab_r46_*) does not exist itself; the folder it sits in does
+                if any(uni.exists(p) or (uni.exists(posixpath.dirname(p)) and rules.map(p) is None) for p in cands):
                     break
                 stale = next((p for p in cands if rules.map(p) is not None), None)
                 if stale:
