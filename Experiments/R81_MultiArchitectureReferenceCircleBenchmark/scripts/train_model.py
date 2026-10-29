@@ -28,7 +28,7 @@ from model_zoo import (  # noqa: E402
 
 
 DEFAULT_PACKAGE = (
-    Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages'))
+    Path(str(PROJECT_ROOT / 'Deliverables/Standalone_Models'))
     / "V42_SoftLabelSNR_FullStandalone_20260709"
 )
 

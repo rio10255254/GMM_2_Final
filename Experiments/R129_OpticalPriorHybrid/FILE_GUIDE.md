@@ -49,8 +49,8 @@ D 相對 A 有 27/36 顆形狀改善，但尺寸 21/36 顆變差。**A 組就不
 |---|---|
 | 模型（原版與整理版）、推論入口、分析程式 | 本資料夾 `model/`、`scripts/`，已在 GitHub；單圖入口 `scripts/infer_organized.py --input <影像> --output <新PNG>` |
 | 連續 LSC、長訓練核對、SEM 結果表 | `results/` 下對應資料夾，已在 GitHub |
-| 獨立操作套件（含 START_R129.cmd 與說明） | [R129 獨立套件](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/README_TW.md>) 的說明與程式在 GitHub |
-| 9/20 的論文改寫備稿 | [`Deliverables/R129_Thesis_Rewrite_Ready_20260920/`](<../../Deliverables/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md>)、[`R129_Corrected_Corner9_Thesis_Handoff_20260920/`](<../../Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920>) |
+| 獨立操作套件（含 START_R129.cmd 與說明） | [R129 獨立套件](<../../Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/README_TW.md>) 的說明與程式在 GitHub |
+| 9/20 的論文改寫備稿 | [`Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920/`](<../../Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md>)、[`R129_Corrected_Corner9_Thesis_Handoff_20260920/`](<../../Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920>) |
 | 權重、201 張重建影像 | 見下方說明 |
 
 > 權重與大型輸出的位置：查 `python Tools/cloud_locator.py where Experiments/R129_OpticalPriorHybrid/<路徑>`。

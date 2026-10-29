@@ -9,7 +9,7 @@ warnings.filterwarnings('ignore',category=FutureWarning)
 
 def main():
  cfg=config();m,opt=create(cfg);initial=state_digest(m);bank=Bank(cfg);checks={}
- src=ROOT.parents[1]/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py'
+ src=ROOT.parents[1]/'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/model_v42.py'
  def body(p):return ast.dump(next(n for n in ast.parse(p.read_text(encoding='utf-8-sig')).body if isinstance(n,ast.ClassDef) and n.name=='WeakPSFDeconvBlock'),include_attributes=False)
  assert body(src)==body(ROOT/'optical/feature.py');checks['V42_class_identical']=True
  sp=importlib.util.spec_from_file_location('v42_test_reference',src);v42=importlib.util.module_from_spec(sp);sp.loader.exec_module(v42)

@@ -23,7 +23,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[8]
 
 
 ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
-PACKAGE = ROOT / "LabSystem_MOSR" / "Model_Packages" / "V42_SoftLabelSNR_FullStandalone_20260709"
+PACKAGE = ROOT / ".." / "Deliverables" / "Standalone_Models" / "V42_SoftLabelSNR_FullStandalone_20260709"
 FINAL_CHECKPOINT = (
     PACKAGE
     / "results"

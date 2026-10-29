@@ -64,7 +64,7 @@ This documents historical quirks and conventions that cannot be changed but must
 已修復的腳本：
 - `Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py`
 - `Model/GeoEdgeAlignSR_v1_Infer_TTA.py`
-- `_deployment_package/.../Infer_v5...SimpleTest.py`
+- `Deliverables/Company_Packages/.../Infer_v5...SimpleTest.py`
 - `Experiments/R26NewPSFCheck/.../Infer_v5...SimpleTest.py`（2 份）
 
 詳見 `Experiments/R33RobustLoss/reports/QUANTIZATION_FIX_ANALYSIS.md`。

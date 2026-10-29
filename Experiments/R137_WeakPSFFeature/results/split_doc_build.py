@@ -9,7 +9,7 @@ from docx import Document
 from docx.shared import Inches,Pt,RGBColor
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-R=Path(r'Experiments/R137_WeakPSFFeature');B=R.parent/'R130_Clean';P=Path(r'Deliverables/R137_WeakPSF_Web_Documents_20260922');S=R/'results/comparison'
+R=Path(r'Experiments/R137_WeakPSFFeature');B=R.parent/'R130_Clean';P=Path(r'Deliverables/Thesis_Handoffs/R137_WeakPSF_Web_Documents_20260922');S=R/'results/comparison'
 def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def save(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2),encoding='utf-8')

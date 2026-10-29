@@ -3,7 +3,7 @@ from pathlib import Path
 import json,hashlib,shutil,re
 import pandas as pd
 R=Path(__file__).resolve().parents[1];B=R/'results/sem_corner9';REPO=R.parents[1]
-D=REPO/'Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920'
+D=REPO/'Deliverables/Thesis_Handoffs/R128_Corrected_Corner9_Thesis_Handoff_20260920'
 D.mkdir(parents=True,exist_ok=True);copies=[]
 def cp(src,dst):
  dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)

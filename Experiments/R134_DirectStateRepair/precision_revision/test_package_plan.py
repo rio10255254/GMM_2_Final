@@ -9,7 +9,7 @@ def main():
     sys.modules['net.staged']=tiled;scope={'__package__':'net','__name__':'net.precision_package_probe'};exec(compile(wrapper,'precision_package_wrapper','exec'),scope);m=create('C',1342001,'cpu');state=torch.load(E/'runs/R134_C_s1342001/step0512.pth',map_location='cpu')['model'];m.load_state_dict(state);m.eval();b=np.load(E/'calibration/measured_psf_bank.npz');n=scope['Hybrid'](torch.from_numpy(b['mean']),torch.from_numpy(b['candidates']));n.load_state_dict(state);n.eval();x=torch.rand(1,1,193,201)
     with torch.no_grad():a=m(x);v=n(x)
     assert torch.equal(a,v)
-    source=E.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912'
+    source=E.parent.parent/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912'
     train=(source/'train_r129.py').read_text(encoding='utf-8-sig').replace('R129_OpticalHybrid_LongTraining','R134_Precision_LongTraining').replace('r129','r134p').replace('R129','R134P');tree=ast.parse(train);name=next(n.value.value for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='MODEL_NAME_BASE' for t in n.targets));assert name=='R134_Precision_LongTraining' and "default='r134p_long_01'" in train
     model_name=name
     assert 'im2uint8(mat2gray(cellim))' not in (P/'validation/extract_sem_precise.m').read_text(encoding='utf-8')

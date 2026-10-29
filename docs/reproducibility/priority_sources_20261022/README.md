@@ -34,7 +34,7 @@ python Tools/research_asset_bundle.py restore --manifest ../priority-download/RE
 兩行的`--prefix`須一致，依用途換成下列位置；要本批全部395份時省略`--prefix`。相同既有檔案可保留，內容不同會停止且不覆寫。
 
 - Lab原拍：`Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/raw`
-- 原邊界量測：`Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920/04_Verification_and_Sources/centers/Raw`
+- 原邊界量測：`Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920/04_Verification_and_Sources/centers/Raw`
 - 固定驗證圖：`Experiments/R130_CleanV42Comparison/validation/inputs`
 - PSF小輸入：`PSF_Fitting/Deconvolution`及`PSF_Fitting/SingleImage_Input`，可重複指定`--prefix`
 - 其餘295張：`Shared_Sources/PSF_Camera_Acquisitions/PSF100_20250903/raw`
@@ -66,7 +66,7 @@ LabSystem原拍恢復到[原準備程式](../../../Thesis_MOSR_Evidence/LabSyste
 若要同時恢復這些共用位置，先用上述原方法下載所需附件，再改用本頁的`RESTORE_WITH_KNOWN_ALIASES.json.gz`作為恢復清單。它沿用相同的10個ZIP，不需重傳或重複下載。例如恢復R129套件的11張圖：
 
 ```powershell
-python Tools/research_asset_bundle.py restore --manifest docs/reproducibility/priority_sources_20261022/RESTORE_WITH_KNOWN_ALIASES.json.gz --assets ../priority-download --destination . --prefix Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/validation/inputs --keep-identical-existing
+python Tools/research_asset_bundle.py restore --manifest docs/reproducibility/priority_sources_20261022/RESTORE_WITH_KNOWN_ALIASES.json.gz --assets ../priority-download --destination . --prefix Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/validation/inputs --keep-identical-existing
 ```
 
 若只下載了R63模型，需再取得本版`research-fixed-validation-inputs-001.zip`才能恢復上述共用圖；不用下載全部原拍。

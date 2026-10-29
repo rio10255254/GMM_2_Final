@@ -89,6 +89,12 @@ def compare(baseline, current, rules=None):
         f = (rules.map(b.file) if rules else None) or b.file
         known.add((f, b.resolved))
         known.add((f, (rules.map(b.resolved) if rules and b.resolved else None) or b.resolved))
+        # a link written from the project root but read beside the file was broken before; the rewrite
+        # moved its target as a root-relative path, so it stays the same broken link
+        path = norm(urllib.parse.unquote(re.split(r'[#?]', b.target, 1)[0]))
+        moved = rules.map(path) if rules and path else None
+        if moved:
+            known.add((f, norm(posixpath.join(posixpath.dirname(f), moved))))
     return [c for c in current if (c.file, c.resolved) not in known]
 
 

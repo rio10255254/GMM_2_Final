@@ -1,6 +1,6 @@
 # 以 R129 更新論文：保留原架構的實驗與改寫計畫
 
-> 2026-09-20 備稿完成：請以 [完整定稿計畫](R129_THESIS_FINAL_REWRITE_PLAN_20260920.md) 及 Deliverables/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md 為最新入口。單一R129、保留ACM與Contour、本次刪除消融；原Word未修改。
+> 2026-09-20 備稿完成：請以 [完整定稿計畫](R129_THESIS_FINAL_REWRITE_PLAN_20260920.md) 及 Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md 為最新入口。單一R129、保留ACM與Contour、本次刪除消融；原Word未修改。
 
 > 最新範圍補充：ACM主動輪廓方法與輪廓結果保留為正文重點；本次刪除消融章節及其相關主張，未來再另行設計。原文中E5/E8或三組模組開關均不再是本次改稿必做工作。
 

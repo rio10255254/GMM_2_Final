@@ -69,7 +69,7 @@ LabSystem 從 6 月初開始修實拍棋盤的角點，Lab R46～R56 一直修�
 1. **v16 在不同文件裡的定位不一樣，三份都是原始紀錄：**
    - [v16 驗證報告](<reports/next_round_20260623_v17_post_v16_training_handoff/V16_VALIDATION_RESULTS.md>)（6/23）：三道門檻全部未過，不能升為論文結果。
    - [主專案 R61 STEP 資料夾](<../../../../Experiments/R61_STEP_Generalization_20260623/FILE_GUIDE.md>)（6/23～24）：把 v16 的驗證稱為「目前的論文／主模型候選」，Step 樣品上的證據支持 CD 保留與位移穩定，但不能證明跨樣品通用。
-   - [R61 ONNX 交付包](<../../../../Deliverables/MOSR_R61_ONNX/README.md>)：「為已驗證量測影像準備的應急交付版」，適用均華、HS100MG 這類亮環或位移影像；遇到不同材料、極低對比或完全不同形狀時，應同時保留原圖確認。
+   - [R61 ONNX 交付包](<../../../../Deliverables/Company_Packages/MOSR_R61_ONNX/README.md>)：「為已驗證量測影像準備的應急交付版」，適用均華、HS100MG 這類亮環或位移影像；遇到不同材料、極低對比或完全不同形狀時，應同時保留原圖確認。
 2. **一個量測方法的修正。** Step 序列原圖一開始量到約 0.74 px，後來發現那是亮度相位相關的響應太弱造成的；改用邊緣為基礎的量法，原圖也量到約 8 px，跟 1 µm 的預期尺度一致。
 3. **不能說成完全獨立。** v16 的 3,400 組繼承來源（舊形狀、SEM 錨點、序列守門）與歷史幾何必須凍結匯入，不能只靠新的生成程式取代；SEM 錨點也來自同一批樣品。
 4. **之後的 SEM 來源審查**限制了 R61 的獨立準確度宣稱（見主專案 R135 等輪次）。
@@ -81,7 +81,7 @@ LabSystem 從 6 月初開始修實拍棋盤的角點，Lab R46～R56 一直修�
 | 進度報告、v15～v17 交接、模擬幻影驗證 | 本資料夾 [reports/](<reports/README.md>)，已在 GitHub |
 | v16 最佳權重與訓練紀錄（約 71 MB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，目前要下載約 8 GB |
 | R61 ONNX 交付包（模型、光學常數、示例） | Release [`research-r61-onnx-delivery-20261021`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-r61-onnx-delivery-20261021)，約 15 MB；包內 `model.onnx` 與原電腦上的交付檔逐位元組相同 |
-| v16 訓練資料的重建 | [R61 完整訓練資料重建包](<../../../../Deliverables/R61_TrainingData_Regenerator_20261004/README_TW.md>)；生成方法與 3,400 組繼承來源見[生成方法](<../../../../docs/reproducibility/GENERATION_GUIDE.md>)與 [R61 原檔對照](<../../../../docs/reproducibility/r61_regeneration_example/README.md>) |
+| v16 訓練資料的重建 | [R61 完整訓練資料重建包](<../../../../Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004/README_TW.md>)；生成方法與 3,400 組繼承來源見[生成方法](<../../../../docs/reproducibility/GENERATION_GUIDE.md>)與 [R61 原檔對照](<../../../../docs/reproducibility/r61_regeneration_example/README.md>) |
 | 程式與測試 | 本資料夾 [scripts/](<scripts>)（資料建置、啟動、驗證）、[tests/](<tests>) |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。

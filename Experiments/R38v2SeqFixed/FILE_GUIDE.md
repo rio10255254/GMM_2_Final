@@ -76,7 +76,7 @@ COMBO 的擬合殘差在三個尺度、內外邊界上都是當時的歷史最�
 | COMBO 與 R38v2 權重（各約 50 MB） | Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016)，見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
 | 早期共用環形訓練資料 1,100 組 | [早期主線共用環形來源](<../../Shared_Sources/Baseline_Ring_Inputs/README.md>)，有已驗證的完整還原指令 |
 | stage_25／26 的 8px 序列 | 150 張乾淨影像與 150 張卷積後影像，原生成程式與主線 PSF 保留；見[四輪方法與來源](<../../docs/reproducibility/round_source_reviews/BASELINE_20261023.md>) |
-| 交給公司的 ONNX 包 | [GeoEdge_COMBO_ONNX_Company_Package_20260424](<../../_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/README.md>) |
+| 交給公司的 ONNX 包 | [GeoEdge_COMBO_ONNX_Company_Package_20260424](<../../Deliverables/Company_Packages/GeoEdge_COMBO_ONNX_Company_Package_20260424/README.md>) |
 
 > **目前的缺口與限制：**
 >

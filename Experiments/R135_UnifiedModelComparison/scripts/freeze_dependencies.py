@@ -8,7 +8,7 @@ def main():
         elif tag=='R61':folders=[Path(PROJECT_ROOT / info['command'][1]).parent]
         elif tag=='V42_clean':folders=[REPO/'Experiments/R130_CleanV42Comparison/model',REPO/'Experiments/R130_CleanV42Comparison/scripts',REPO/'Experiments/R130_CleanV42Comparison/calibration',REPO/'Experiments/R130_CleanV42Comparison/config']
         elif tag=='R128':folders=[REPO/'Experiments/R128_SourceOnlyFullTraining/model',REPO/'Experiments/R124_RealFirstPrototype/inference']
-        else:folders=[Path(PROJECT_ROOT / info['package'])] if tag=='R134_P1' else [REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912']
+        else:folders=[Path(PROJECT_ROOT / info['package'])] if tag=='R134_P1' else [REPO/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912']
         for directory in folders:
             for p in directory.glob('*.py'):files.add(p)
             for p in directory.glob('*.json'):files.add(p)

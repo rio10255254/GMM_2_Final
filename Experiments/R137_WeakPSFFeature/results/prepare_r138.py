@@ -1,7 +1,7 @@
 from pathlib import Path
 import json,shutil,hashlib,subprocess
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-R=Path(str(PROJECT_ROOT / 'Experiments/R137_WeakPSFFeature'));P=R.parent/'R138_V42PSF8';repo=R.parents[1];Q=repo/'Deliverables/R137_PSF100_V42_Select8_20260923';assert not P.exists();P.mkdir()
+R=Path(str(PROJECT_ROOT / 'Experiments/R137_WeakPSFFeature'));P=R.parent/'R138_V42PSF8';repo=R.parents[1];Q=repo/'Deliverables/Standalone_Models/R137_PSF100_V42_Select8_20260923';assert not P.exists();P.mkdir()
 for d in ['scripts','reports','reports/figures','results','runs/launcher_logs','config','calibration','optical']:(P/d).mkdir(parents=True,exist_ok=True)
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def save(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2),encoding='utf-8')

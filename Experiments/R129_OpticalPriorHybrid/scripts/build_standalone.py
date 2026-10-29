@@ -7,7 +7,7 @@ import numpy as np,cv2
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 def main():
-    target=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912'
+    target=REPO/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912'
     if target.exists():raise FileExistsError(target)
     registry=REPO/'docs/operations/PROJECT_STORAGE_REGISTRY.json';before=load(registry)
     save(ROOT/'config/standalone_storage_before.json',before)

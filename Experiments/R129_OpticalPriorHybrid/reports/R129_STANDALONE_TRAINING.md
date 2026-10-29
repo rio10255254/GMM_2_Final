@@ -4,7 +4,7 @@
 
 ## 套件與操作
 
-套件位置：`Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912`。
+套件位置：`Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912`。
 
 操作入口是包內 **START_R129.cmd**；說明是 **README_TW.md**。可開始新訓練、安全暫停、續訓、查看狀態、核對套件與重建範例影像。訓練在背景執行，關閉選單不會停止訓練；以選單 Pause safely 暫停。相同名稱不能重複開始，已有訓練請選 Resume。
 

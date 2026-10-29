@@ -6,8 +6,8 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 R=Path(str(PROJECT_ROOT / 'Experiments/R130_Clean'))
-OLD=Path(str(PROJECT_ROOT / 'Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920'))
-P=Path(str(PROJECT_ROOT / 'Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
+OLD=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920'))
+P=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920'))
 assert not P.exists(), 'Never overwrite a previous handoff'
 def sha(p):
  h=hashlib.sha256()

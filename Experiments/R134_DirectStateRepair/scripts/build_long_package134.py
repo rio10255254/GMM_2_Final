@@ -14,7 +14,7 @@ def main():
     for item in load(ROOT/'config/packaging_source_binding.json')['sources']:
         assert sha(str(PROJECT_ROOT / item['path']))==item['sha256'],str(PROJECT_ROOT / item['path'])
     seed=admission['selected_seed'];checkpoint_source=Path(admission['checkpoint']['path']);assert sha(checkpoint_source)==admission['checkpoint']['sha256']
-    source=ROOT.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912'
+    source=ROOT.parent.parent/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912'
     for rel,expected in load(source/'PACKAGE_MANIFEST.json')['files'].items():
         assert sha(source/rel)==expected,'Original source package changed: '+rel
     pkg=source.parent/'R134_DirectState_Standalone_20260915'

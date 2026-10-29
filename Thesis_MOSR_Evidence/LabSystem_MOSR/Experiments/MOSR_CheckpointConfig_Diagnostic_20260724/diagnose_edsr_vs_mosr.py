@@ -26,7 +26,10 @@ SUBPIXEL = (
 TRAIN_LOG = (
     ROOT.parent
     / ".."
-    / "Model_Packages"
+    / ".."
+    / ".."
+    / "Deliverables"
+    / "Standalone_Models"
     / "V42_SoftLabelSNR_FullStandalone_20260709"
     / "results"
     / "run_logs"

@@ -177,7 +177,7 @@ def main():
             old=canonical.get(key)
             is_current=row['origin'] in {'D_worktree','registered_H_reference'}
             if not is_current and old and old['sha256']!=row['sha256']:
-                relative='Historical_Archive/'+Path(row['source']).relative_to(archive).as_posix();key=relative.casefold()
+                relative='Archive/Historical_Archive/'+Path(row['source']).relative_to(archive).as_posix();key=relative.casefold()
             elif is_current and old and old['sha256']!=row['sha256']:
                 if key in repo_current:raise ValueError('Current Git source differs from a non-owned captured local file: '+relative)
                 if old.get('source_origin') in {'D_worktree','registered_H_reference'}:

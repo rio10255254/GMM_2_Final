@@ -14,7 +14,7 @@
   "transition": 16,
   "zero_means": "No retention and no transition: exact pre-guard output",
   "checkpoint": {
-    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
+    "path": "Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/results/training/r129_long_01/checkpoints/step08192.pth",
     "sha256": "086608339c6418b9dfd650f6809b1f7b45e65b6eb11452afe7df45c5b24ff1fd"
   },
   "steps": 4,

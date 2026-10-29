@@ -16,8 +16,8 @@ Last updated: 2026-10-06（九方法完整論文交付完成，SwinIR使用者�
 2026-10-05晚間：使用者授權先暫停訓練釋放GPU，Restormer保存step896。七方法同GPU／FP32／batch1共105次效率實測完成；Wiener930張／8370量測已完成且無失敗，EDSR等四個外部模型實拍驗證依序執行。完成本階段核對後自動續訓，完整benchmark仍未完成。[效率報告](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_EFFICIENCY.md)／[階段論文資料](Experiments/R153_MeanExternalBenchmark/reports/AVAILABLE_MODELS_STAGE_PROGRESS/REPORT.md)。
 2026-10-05：第一部分平均數論文交接已完成。獨立由保存圓心與PI重算7200筆位移與36組區間，三張新灰階主圖、全部30趟與30位置表、前6／後24趟、完整CSV與可重算資料均核對；ZIP約3.03MiB。起點相對MAE區間跨零的判讀已明確改寫，尺寸及SEM原數據保留，原論文未修改。[網頁對話交接文件](Experiments/R153_MeanExternalBenchmark/reports/MOSR_MEAN_THESIS_HANDOFF_20261005/MOSR_MEAN_THESIS_HANDOFF.md)／[完整交接包](Experiments/R153_MeanExternalBenchmark/reports/MOSR_MEAN_THESIS_HANDOFF_20261005.zip)。
 2026-10-05：口試補充工作進行中，九顆平均向量已重算並重現舊中位數；RAW／MOSR主指標8.781／4.273nm、30/30趟改善。外部模型依使用者確認採一般訓練，各自原訓練目標、共同資料與合成驗證規則；七方法依序自動接續；使用者改為未開始模型最多8輪，並在預估完成加緩衝時巡檢。平均數論文交接包與修改對照表已完成，完整實拍benchmark待完成。[平均／中位數報告](Experiments/R153_MeanExternalBenchmark/reports/MEAN_MEDIAN_RESULTS.md)／[訓練監看](Experiments/R153_MeanExternalBenchmark/reports/TRAINING_MONITOR.md)。
-2026-10-04 TIFF影像版：依使用者要求，正式訓練直接讀clear／blur／geometry的TIFF，訓練目錄NPZ及PNG皆0。9216張浮點TIFF保留全部3072視圖與標記，實際讀入值全部等同原版；前4次更新損失及2＋2續訓相對連續4次完全相同。最新包為[TIFF版入口](Deliverables/R152_Standalone_ImageFiles_20261004/start_here.py)及[完整報告](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)，舊NPZ版保留為來源快照。程式／設定仍只用PY，正式模型權重不變。 同日補齊五份原始生成程式及[完整生成入口](Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py)；阻擋舊資料讀取仍從頭生成全部9216 TIFF且逐檔相同，新資料前四次CUDA更新也完全相同。
-2026-10-04：R152獨立包完成，程式／設定／索引／操作入口一律PY；完整768母場景／3072視圖、幾何與25PSF、主體及部署權重均包內定位。原版全部輸入與209張量完全相同，前四次訓練損失、2＋2續訓與連續4次、全1544×2064原生示例輸出均完全相同；另址阻擋原實驗讀取仍可訓練與CPU推論。20個PY、794檔約350.5MB，ZIP約338.1MB，無快取或試跑產物。[手動使用入口](Deliverables/R152_Standalone_20261004/start_here.py)／[完整交付報告](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md)。
+2026-10-04 TIFF影像版：依使用者要求，正式訓練直接讀clear／blur／geometry的TIFF，訓練目錄NPZ及PNG皆0。9216張浮點TIFF保留全部3072視圖與標記，實際讀入值全部等同原版；前4次更新損失及2＋2續訓相對連續4次完全相同。最新包為[TIFF版入口](Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/start_here.py)及[完整報告](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)，舊NPZ版保留為來源快照。程式／設定仍只用PY，正式模型權重不變。 同日補齊五份原始生成程式及[完整生成入口](Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generate_data.py)；阻擋舊資料讀取仍從頭生成全部9216 TIFF且逐檔相同，新資料前四次CUDA更新也完全相同。
+2026-10-04：R152獨立包完成，程式／設定／索引／操作入口一律PY；完整768母場景／3072視圖、幾何與25PSF、主體及部署權重均包內定位。原版全部輸入與209張量完全相同，前四次訓練損失、2＋2續訓與連續4次、全1544×2064原生示例輸出均完全相同；另址阻擋原實驗讀取仍可訓練與CPU推論。20個PY、794檔約350.5MB，ZIP約338.1MB，無快取或試跑產物。[手動使用入口](Deliverables/Standalone_Models/R152_Standalone_20261004/start_here.py)／[完整交付報告](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md)。
 2026-10-03：三項論文圖補齊。25顆實際PSF逐顆與原MAT及部署銀行核對；第16趟起點的RAW／R152同視野、同座標放大與比例尺；中央物件5起點全部30條64點實測輪廓及九顆補充。只移除輪廓平移，不縮放或旋轉；影像共用固定0～1亮度。五頁PDF已逐頁渲染與查看，含中英文圖說、完整矩陣、校正資料及影像／輪廓數據。[補件入口](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_THESIS_VISUAL_EVIDENCE_20261003/FIGURE_NOTES.md)。
 2026-10-02：按使用者確認的「每趟30個相鄰步距樣本標準差」完整重算RAW／R152。30趟合併波動10.200→4.865nm，30/30趟改善，逐趟改善36.9%～64.6%；單步PI平均絕對差8.167→4.003nm。尺寸與輪廓重拍降低，SEM工作表平均直徑差169.883→204.281nm，終點平均PI差40.892→42.842nm，完整保留。930張RAW及930份原生輸出身分全部重驗。模型兩階段訓練、架構、公式、全部主要表格、數據與灰階圖整理成可供網頁對話獨立閱讀的[完整研究紀錄](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/REPORT.md)。論文研究選用R152，專案正式基準身分未改。
 ### Storage / Historical Archive
@@ -88,10 +88,10 @@ R130-Clean完整執行及獨立複核完成（2026-09-20）：PSF OFF、scratch8
 
 
 <!-- R129_CORNER9_REVALIDATED_20260920 -->
-R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 [R129交接入口](Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920/START_HERE.md)
+R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 [R129交接入口](Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920/START_HERE.md)
 
 <!-- R128_CORNER9_THESIS_HANDOFF -->
-R128修正取樣位置論文交接包（2026-09-20）：Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。
+R128修正取樣位置論文交接包（2026-09-20）：Deliverables/Thesis_Handoffs/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。
 
 <!-- R136_RAW_R128_COMPLETE_COMPARISON -->
 R136新十字九顆Raw/R128完整對照交付：10張圖（新增平均±1SD疊圖）、3600合併位移／32400逐顆位移／16740輪廓。R128短步PI差降低54.6%、短步重拍61.9%、輪廓重拍78.3%；SEM平均尺寸偏大差距185.182→222.040nm及終點偏差未改善亦完整保留。 [Raw/R128完整比較](Experiments/R136_PIRepeatability/reports/R136_RAW_R128_CORNER9_RESULTS.md)
@@ -188,7 +188,7 @@ User-confirmed ordinary external training supersedes the initial common-five-los
 
 同日新增generate_data.py及generation/五份當初原始程式，從固定種子重新生成全部768母場景／9216 TIFF，阻擋舊實驗及現成影像讀取仍通過；所有像素、TIFF內容、完整實際輸入及前四次CUDA更新均相同。另址無訓練影像時可生成，--data-dir可直接正式訓練新資料。最新包35個PY、9257檔約476.5MB，ZIP約457.5MB，outputs空白。[完整生成與驗證紀錄](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md)。
 
-最新交付為Deliverables/R152_Standalone_ImageFiles_20261004，正式Bank.read從TIFF直接讀取，不依賴NPZ訓練容器。3072清楚／3072無噪模糊／3072幾何標記，原float16轉訓練FP32的數值完整保存於TIFF32，索引及向量標記為PY。全905969664影像值的PNG16測試有144073個還原差，故選浮點TIFF；使用者指定不附PNG。全部3072實際輸入／目標／幾何／算子均與原版完全相同，CUDA前4次損失、停2次接續至4次與連續4次亦完全相同。35個PY、9257檔約476.5MB，ZIP約457.5MB；模型／權重／PSF未改，沒有新的正式訓練。[報告](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)。
+最新交付為Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004，正式Bank.read從TIFF直接讀取，不依賴NPZ訓練容器。3072清楚／3072無噪模糊／3072幾何標記，原float16轉訓練FP32的數值完整保存於TIFF32，索引及向量標記為PY。全905969664影像值的PNG16測試有144073個還原差，故選浮點TIFF；使用者指定不附PNG。全部3072實際輸入／目標／幾何／算子均與原版完全相同，CUDA前4次損失、停2次接續至4次與連續4次亦完全相同。35個PY、9257檔約476.5MB，ZIP約457.5MB；模型／權重／PSF未改，沒有新的正式訓練。[報告](Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_TIFF_TRAINING_PACKAGE_20261004.md)。
 
 ### R152 clean Python standalone package (2026-10-04)
 
@@ -218,9 +218,9 @@ Deliverables/R152_Standalone_20261004包含完整3072視圖和768組幾何資料
 
 ### R136 十字中心九顆
 
-R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 [R129交接入口](Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920/START_HERE.md)
+R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 [R129交接入口](Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920/START_HERE.md)
 
-R128修正取樣位置論文交接包（2026-09-20）：Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。
+R128修正取樣位置論文交接包（2026-09-20）：Deliverables/Thesis_Handoffs/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。
 
 R136新十字九顆Raw/R128完整對照交付：10張圖（新增平均±1SD疊圖）、3600合併位移／32400逐顆位移／16740輪廓。R128短步PI差降低54.6%、短步重拍61.9%、輪廓重拍78.3%；SEM平均尺寸偏大差距185.182→222.040nm及終點偏差未改善亦完整保留。 [Raw/R128完整比較](Experiments/R136_PIRepeatability/reports/R136_RAW_R128_CORNER9_RESULTS.md)
 

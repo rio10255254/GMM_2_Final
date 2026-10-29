@@ -8,8 +8,8 @@ from pathlib import Path
 import shutil
 
 PROJECT = Path(__file__).resolve().parents[1]
-PACKAGE = PROJECT / "Deliverables/R61_TrainingData_Regenerator_20261004"
-VALIDATION = PROJECT / "Validations/R61_TrainingData_Regenerator_20261004"
+PACKAGE = PROJECT / "Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004"
+VALIDATION = PROJECT / "Deliverables/Validations/R61_TrainingData_Regenerator_20261004"
 DATA = PROJECT / "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16"
 
 

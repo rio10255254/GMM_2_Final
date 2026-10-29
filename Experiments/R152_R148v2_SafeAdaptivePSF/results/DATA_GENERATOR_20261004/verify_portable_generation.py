@@ -8,7 +8,7 @@ sys.dont_write_bytecode=True
 
 PROJECT=Path(__file__).resolve().parents[4]
 OUT=Path(__file__).resolve().parent
-PACK=PROJECT/'Deliverables/R152_Standalone_ImageFiles_20261004'
+PACK=PROJECT/'Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004'
 MOVED=OUT/'portable_generation_copy'
 
 

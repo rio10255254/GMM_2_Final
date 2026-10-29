@@ -41,8 +41,8 @@
 | R102_UniversalDetailScratch | [experiment.json](<../../Experiments/R102_UniversalDetailScratch/config/experiment.json>)、[r102_dataset.py](<../../Experiments/R102_UniversalDetailScratch/training/r102_dataset.py>)、[prepare_data.py](<../../Experiments/R102_UniversalDetailScratch/data/prepare_data.py>)、[TRAINING_DATA_REFERENCE.json](<../../Experiments/R102_UniversalDetailScratch/data/TRAINING_DATA_REFERENCE.json>) | r92 |
 | R103_RecoverableDetailScratch | [experiment.json](<../../Experiments/R103_RecoverableDetailScratch/config/experiment.json>)、[r103_dataset.py](<../../Experiments/R103_RecoverableDetailScratch/training/r103_dataset.py>)、[prepare_data.py](<../../Experiments/R103_RecoverableDetailScratch/data/prepare_data.py>)、[TRAINING_DATA_REFERENCE.json](<../../Experiments/R103_RecoverableDetailScratch/data/TRAINING_DATA_REFERENCE.json>) | r92 |
 | R104_PhotometricInvariantCausalGateScratch | [experiment.json](<../../Experiments/R104_PhotometricInvariantCausalGateScratch/config/experiment.json>)、[r104_dataset.py](<../../Experiments/R104_PhotometricInvariantCausalGateScratch/training/r104_dataset.py>)、[TRAINING_DATA_REFERENCE.json](<../../Experiments/R104_PhotometricInvariantCausalGateScratch/data/TRAINING_DATA_REFERENCE.json>) | r92 |
-| R61_BoundaryGeneralizationUniversal | [regenerate_r61.py](<../../Deliverables/R61_TrainingData_Regenerator_20261004/regenerate_r61.py>)、[README_TW.md](<../../Deliverables/R61_TrainingData_Regenerator_20261004/README_TW.md>) | 獨立產生／原獨立包 |
-| R152_R148v2_SafeAdaptivePSF | [generate_data.py](<../../Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py>)、[R152_DATA_GENERATION_REPRODUCTION_20261004.md](<../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md>) | 獨立產生／原獨立包 |
+| R61_BoundaryGeneralizationUniversal | [regenerate_r61.py](<../../Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004/regenerate_r61.py>)、[README_TW.md](<../../Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004/README_TW.md>) | 獨立產生／原獨立包 |
+| R152_R148v2_SafeAdaptivePSF | [generate_data.py](<../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generate_data.py>)、[R152_DATA_GENERATION_REPRODUCTION_20261004.md](<../../Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_DATA_GENERATION_REPRODUCTION_20261004.md>) | 獨立產生／原獨立包 |
 
 ## 原本生成後還做過什麼
 
@@ -77,8 +77,8 @@ R61與R152的獨立生產入口：
 R61不是只留程式和種子就足夠：早期繼承的幾何標記曾有不同歷史版本，固定匯入的來源仍須保存。[這個小型原檔對照](r61_regeneration_example/README.md)用一組當年訓練裁切與兩版標記說明原因，不把標記版本差異當成新的物理準確度比較。
 
 ```powershell
-python Deliverables/R61_TrainingData_Regenerator_20261004/regenerate_r61.py --output-root YOUR_NEW_R61_FOLDER --report YOUR_NEW_R61_REPORT.json
-python Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py --workers 2 --output-dir YOUR_NEW_R152_FOLDER
+python Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004/regenerate_r61.py --output-root YOUR_NEW_R61_FOLDER --report YOUR_NEW_R61_REPORT.json
+python Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generate_data.py --workers 2 --output-dir YOUR_NEW_R152_FOLDER
 ```
 
 本機2026-10-22清理後，R93的formal／locked_holdout大陣列保留在已核對的H固定封存，D只清掉重複副本；R94／95／96／97／98舊完整訓練或資料驗證前，須先依[R93取回說明](../../Experiments/R93_RecoverableDetailSeparatedScratch/data/ARCHIVE_POINTER_20261022.md)恢復同一份固定資料。生成器、原設定、修正、模型、數表及封存規則保留；不以R92替代，也不把封存組的儲存核對當成已做模型評估。

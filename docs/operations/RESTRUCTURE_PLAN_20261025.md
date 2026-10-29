@@ -24,7 +24,7 @@
 | `20260702_100MG_displacement_analysis/`、`20260704_20x_5x_analysis/` | R63～R140 約 30 輪的設定與腳本把它們當實拍序列輸入；論文證據區的審核腳本與測試 | 不動 |
 | `Step_analysis_20260623/` | 論文證據區的製圖腳本、R139／R140 的儲存登記 | 不動 |
 | `AnalysisLab/` | R33～R46 的守門腳本與論文消融分析直接匯入它的程式 | 不動 |
-| `_deployment_package/` | 874 處絕對路徑、38 個實驗程式 | 不動 |
+| `Deliverables/Company_Packages/` | 874 處絕對路徑、38 個實驗程式 | 不動 |
 | `Reconstruct_Progress/` | `ESTIMATOR_POLICY.json`、`Model/`、多輪設定 | 不動 |
 | `_build153/` | R153 的重試腳本用 `ROOT.parents[1]/'_build153'` 讀取 | 不動 |
 | `Deliverables/` | 189 個 markdown 連結，其中 11 份是原始報告 | 不動 |
@@ -72,7 +72,7 @@
 
 **寫閱讀卡時發現的另一類缺口：** 有些輪次的結果檔在 Release 裡，但不在 GitHub 程式樹（有些是 2026-10 從主版本移出、只留在 git 歷史），所以報告與閱讀卡提到的數字在 GitHub 上點不到出處。目前查到的有：R148v2 的 12 模型比較表與最終稽核（R148v2 也沒有寫最終結果報告）、R43 的分數表、R44 的總表與分族診斷、R45 的縮放掃描與 R45B／R45C 逐塊表。這些多半是小型 CSV／JSON，適合直接補回 git（見下方 E2）。寫第六、七階段閱讀卡時又找到幾批，**原本以為只在原電腦上，2026-10-25 用 cloud_locator 逐檔查過，其實都在 Release `research-results-models-20261016` 的壓縮包裡**，只是不在程式樹上，讀者要下載 1～4 GB 的附件才拿得到一個幾 KB 的檔：R102 的停止與塌縮診斷（`reports/*.json`，五個共約 31 KB）、R108A／R108C～R108G 的結果摘要與表格、R117 的訓練完成稽核與因果決策、R120 的 `results/`（約 0.5 MB；MANIFEST 指向的 `reports/R120_RESULTS.md` 從沒寫出來）、R121 的決策與 SEM 量測表、R122 的 V42 來源追查逐筆表（約 3.6 MB，論文相關）、R123 的真實來源清單與重算表；另外 R61_STEP 的三份清單、R75v2／R79／R81／R88～R91／R99 的正式權重、LabSystem Modern_Restoration 的兩個對照模型權重也是同一類。這些閱讀卡已在 2026-10-25 改正說法（先前十七處寫成「只在原電腦上」）。小型表格適合直接補回 git（E2）；權重留在 Release，但 E1 重新打包時應讓單一輪次能單獨下載。
 
-**還有一類是「在雲端，但不在讀者會找的位置」。** 例如 R79 的交付模型 `Deliverables/MOSR_ONNX/model.onnx`（15.4 MB）在交付包的路徑上沒有上傳，同內容的檔案卻在 `research-fixed-models-006.zip` 裡、掛在 R84 結案時解壓驗證的副本路徑下。檔案沒丟，但只看交付包的人會以為缺件。**COMBO 與 a025 交給公司的兩個 ONNX**（`_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx`、`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx`，各約 16 MB）也是同一類：內容在 Release `research-history-curated-20261022` 的 `selected-history-and-deployments.zip` 裡（`deployment_graphs/COMBO_company_body/model.onnx`、`deployment_graphs/R39R40_a025_company_body/model.onnx`）。那個壓縮包沒有清單，2026-10-26 用 `cloud_locator.py build --with-zips` 展開後才查到。`cloud_locator.py scan` 的 `release-other-path` 狀態就是在找這一類；E3 補件時，這種小而重要的交付檔適合直接放回原位置。
+**還有一類是「在雲端，但不在讀者會找的位置」。** 例如 R79 的交付模型 `Deliverables/Company_Packages/MOSR_ONNX/model.onnx`（15.4 MB）在交付包的路徑上沒有上傳，同內容的檔案卻在 `research-fixed-models-006.zip` 裡、掛在 R84 結案時解壓驗證的副本路徑下。檔案沒丟，但只看交付包的人會以為缺件。**COMBO 與 a025 交給公司的兩個 ONNX**（`Deliverables/Company_Packages/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx`、`Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx`，各約 16 MB）也是同一類：內容在 Release `research-history-curated-20261022` 的 `selected-history-and-deployments.zip` 裡（`deployment_graphs/COMBO_company_body/model.onnx`、`deployment_graphs/R39R40_a025_company_body/model.onnx`）。那個壓縮包沒有清單，2026-10-26 用 `cloud_locator.py build --with-zips` 展開後才查到。`cloud_locator.py scan` 的 `release-other-path` 狀態就是在找這一類；E3 補件時，這種小而重要的交付檔適合直接放回原位置。
 
 **寫閱讀卡時發現的跨輪閱讀陷阱：** 7 月的位移稽核工具把候選欄固定命名為「V42」，後來 Base U-Net、R63 等重用它時，報告寫的「V42」其實是各自的候選（已在時間線開頭加註）；R64 換量法重算後 R63 的消融結論改變；R80、R81 的轉折點量法下 50× CD 原圖比所有模型都好。這些都寫進了對應的閱讀卡，引用數字時要連量法一起說。
 
@@ -101,12 +101,12 @@
 | 舊位置 | 新位置 | 要一起改的 | 風險 |
 |---|---|---|---|
 | `trial_README.md` | `archive/trial_README.md` | 1 份導覽文件 | 低 |
-| `Project_Archive/` | `archive/Project_Archive/` | 導覽文件、`.gitignore` | 低 |
-| `Trash_Archive/` | `archive/Trash_Archive/` | 導覽文件、`.gitignore` | 低 |
-| `_MOSR_Project_Archive_20260624/` | `archive/_MOSR_Project_Archive_20260624/` | 導覽文件 | 低 |
-| `_portable_env_sim_20260318/` | `archive/_portable_env_sim_20260318/` | `.gitignore`、`Tools/research_recovery.py` 的排除清單 | 中，要實跑工具 |
-| `Validations/` | `Deliverables/Validations/` | 根 README、2 個 R61 交付工具 | 中，要實跑工具 |
-| `Historical_Archive/` | `archive/Historical_Archive/` | 6 個還原／索引工具 | 中，工具用路徑組出邏輯位置，要改並重新驗證 |
+| `Archive/Project_Archive/` | `archive/Project_Archive/` | 導覽文件、`.gitignore` | 低 |
+| `Archive/Trash_Archive/` | `archive/Trash_Archive/` | 導覽文件、`.gitignore` | 低 |
+| `Archive/_MOSR_Project_Archive_20260624/` | `archive/_MOSR_Project_Archive_20260624/` | 導覽文件 | 低 |
+| `Archive/_portable_env_sim_20260318/` | `archive/_portable_env_sim_20260318/` | `.gitignore`、`Tools/research_recovery.py` 的排除清單 | 中，要實跑工具 |
+| `Deliverables/Validations/` | `Deliverables/Validations/` | 根 README、2 個 R61 交付工具 | 中，要實跑工具 |
+| `Archive/Historical_Archive/` | `archive/Historical_Archive/` | 6 個還原／索引工具 | 中，工具用路徑組出邏輯位置，要改並重新驗證 |
 
 最底層的資料夾名稱一律不改，只改上層位置。10 月收據 json 裡的舊路徑不改寫，由本帳本對照。根目錄只會少 4～7 個項目，效果有限，所以這一項不急。
 

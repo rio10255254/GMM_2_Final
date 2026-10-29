@@ -4,7 +4,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from common import *
 import torch,numpy as np
 def main():
-    v42=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709'
+    v42=REPO/'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709'
     cp=v42/'results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/epoch_120.pth.tar'
     assert sha(cp)=='89942bc9b31125e836a17b6a3490d078126807e1c8bd179b73588a38c2301f83'
     old=load(R128/'trial/manifest.json')['checkpoint'];assert sha(old['path'])==old['sha256']

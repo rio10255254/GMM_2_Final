@@ -105,7 +105,7 @@ Historical SEM order verified. P/V polarity checked in raw. Working inference ho
 R136新十字九顆Raw/R128完整對照交付：9張圖、3600合併位移／32400逐顆位移／16740輪廓。R128短步PI差降低54.6%、短步重拍61.9%、輪廓重拍78.3%；SEM平均尺寸偏大差距185.182→222.040nm及終點偏差未改善亦完整保留。 results/sem_corner9/Raw_R128_comparison; reports/R136_RAW_R128_CORNER9_RESULTS.md. Sources paired/rechecked,9plots viewed,ZIPCRCpassed. No new model inference or training.
 
 ## Thesis handoff package 2026-09-20
-R128修正取樣位置論文交接包（2026-09-20）：Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。 Original source results remain intact. No thesis Word edit yet.
+R128修正取樣位置論文交接包（2026-09-20）：Deliverables/Thesis_Handoffs/R128_Corrected_Corner9_Thesis_Handoff_20260920；先讀START_HERE.md與HANDOFF_FOR_THESIS.md。含Raw對照、修正後九顆、圖表、完整明細與方向推定限制；280檔約94MB，雜湊及閱讀連結檢查通過。 Original source results remain intact. No thesis Word edit yet.
 
 ## R129 current-standard revalidation 2026-09-20
 R129修正取樣位置再驗證完成（2026-09-20）：與Raw共16740圓擬合及720方向輪廓重算、4影像重播、60個R129不確定度分量重算通過。短步PI差4.125nm、重拍4.251nm；尺寸重拍19.231nm、輪廓18.437nm。SEM尺寸偏大224.472nm及30μm終點偏差+42.933nm保留。獨立論文交接包285檔約101MB，全部雜湊核對。 Folder: Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920. Start START_HERE.md and HANDOFF_FOR_THESIS.md. Fixed8192 original80/16, not W16. R128 deliverable unchanged.

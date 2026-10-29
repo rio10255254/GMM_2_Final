@@ -38,7 +38,7 @@ candidatePath = fullfile(sourceRoot, 'thesis_50x_20x', 'displacement_screened_ca
 auditPath = fullfile(sourceRoot, 'diagnostics', 'unified_displacement_step_audit', 'tables', 'all_adjacent_pairs_audit.csv');
 tolerancePath = fullfile(sourceRoot, 'diagnostics', 'unified_displacement_step_audit', 'tables', 'tolerance_sensitivity_20_25_30pct.csv');
 allPopulationPath = fullfile(sourceRoot, 'diagnostics', 'unified_displacement_step_audit', 'tables', 'all_population_comparisons.csv');
-trainingLogPath = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/V42_SoftLabelSNR_full_training_20260709_202710_val_log_v5.csv');
+trainingLogPath = fullfile(PROJECT_ROOT, 'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/results/training_results/training_progress_V42_SoftLabelSNR_full_training_20260709_202710_20260709_202713/V42_SoftLabelSNR_full_training_20260709_202710_val_log_v5.csv');
 
 cdTable = readCsv(cdPath);
 cdSummary = readCsv(cdSummaryPath);

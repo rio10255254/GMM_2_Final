@@ -2,7 +2,7 @@ import sys,ast,shutil
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from utils import ROOT,load,save,sha
-R=ROOT.parents[1];old=R/'Experiments/R136_PIRepeatability';hand=R/'Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920'
+R=ROOT.parents[1];old=R/'Experiments/R136_PIRepeatability';hand=R/'Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920'
 def main():
  protected=[];copies=[]
  def copy(src,rel):
@@ -32,7 +32,7 @@ def main():
  # Preservation audit concerns old results/code; never deserialize an old model.
  for item in load(hand/'MANIFEST.json'):
   p=hand/item['path'];assert sha(p)==item['sha256'];protected.append(dict(path=str(p),sha256=item['sha256']))
- for p in (R/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912/model').glob('*.py'):protected.append(dict(path=str(p),sha256=sha(p)))
+ for p in (R/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912/model').glob('*.py'):protected.append(dict(path=str(p),sha256=sha(p)))
  unique=list({p['path']:p for p in protected}.values());save(ROOT/'config/protected_sources.json',unique)
  save(ROOT/'config/evaluation_manifest.json',dict(copies=copies,local_files={str(p.relative_to(ROOT)):sha(p) for p in (ROOT/'evaluation').rglob('*') if p.is_file()},measurement_functions_exact_source=True,no_old_weights_loaded=True,no_real_model_evaluation_performed=True))
  print('Frozen evaluation interface and baseline inputs prepared; no real inference performed.',flush=True)

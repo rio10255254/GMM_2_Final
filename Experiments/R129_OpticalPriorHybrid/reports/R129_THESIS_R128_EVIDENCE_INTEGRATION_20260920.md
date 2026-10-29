@@ -1,6 +1,6 @@
 # 論文只採 R129：單一模型的精簡改寫方案
 
-> 2026-09-20 備稿完成：請以 [完整定稿計畫](R129_THESIS_FINAL_REWRITE_PLAN_20260920.md) 及 Deliverables/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md 為最新入口。單一R129、保留ACM與Contour、本次刪除消融；原Word未修改。
+> 2026-09-20 備稿完成：請以 [完整定稿計畫](R129_THESIS_FINAL_REWRITE_PLAN_20260920.md) 及 Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md 為最新入口。單一R129、保留ACM與Contour、本次刪除消融；原Word未修改。
 
 2026-09-20。依使用者最新指示：**論文只介紹與評估 R129，不納入 R128／R61／V42 的模型競賽，也不呈現內部多種教法或版本選拔。** 檔名保留作既有連結入口，R128交接包只是本次內部查閱來源。本頁取代較早的多模型規劃。
 
@@ -95,7 +95,7 @@ V42作為本文現用模型的敘述、架構圖、逐層配置、資料配方�
 
 ## 內部核對來源（不是論文內容清單）
 
-- [R128交接包](../../../Deliverables/R128_Corrected_Corner9_Thesis_Handoff_20260920/HANDOFF_FOR_THESIS.md)：提供圖表組織與統計定義參考，不是R129成績來源。
+- [R128交接包](../../../Deliverables/Thesis_Handoffs/R128_Corrected_Corner9_Thesis_Handoff_20260920/HANDOFF_FOR_THESIS.md)：提供圖表組織與統計定義參考，不是R129成績來源。
 - [本次數值核對](../../R128_SourceOnlyFullTraining/results/thesis_handoff_review_20260920/verification.json)：279清單檔、40項摘要重算符合；未重做影像抽邊或SEM認證。
 - [R129架構](R129_ARCHITECTURE.md)、[R129接續訓練](R129_LONG_TRAINING_RESULTS.md)。
 - [R128原始方法](../../R128_SourceOnlyFullTraining/reports/R128_METHODOLOGY.md)：僅供核對初始化與前期訓練來源。

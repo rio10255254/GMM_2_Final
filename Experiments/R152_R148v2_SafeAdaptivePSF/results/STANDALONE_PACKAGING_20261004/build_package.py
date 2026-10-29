@@ -13,7 +13,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 ROOT=Path(__file__).resolve().parents[2]
 OUT=Path(__file__).resolve().parent
-DEST=ROOT.parents[1]/'Deliverables/R152_Standalone_20261004'
+DEST=ROOT.parents[1]/'Deliverables/Standalone_Models/R152_Standalone_20261004'
 
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()

@@ -93,7 +93,7 @@
     },
     {
       "id": "R61_deployment_body",
-      "original_path": "Deliverables/MOSR_R61_ONNX/model.onnx",
+      "original_path": "Deliverables/Company_Packages/MOSR_R61_ONNX/model.onnx",
       "graph_sha256": "7baf6fda38a843deff0fb840a3821d44f09a69b1485b2a263281c5096f3f31d8",
       "onnx_graph_checker_passed": true,
       "opset_imports": [
@@ -138,7 +138,7 @@
     },
     {
       "id": "COMBO_company_body",
-      "original_path": "_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
+      "original_path": "Deliverables/Company_Packages/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
       "graph_sha256": "9fe80f8ef1ef5a464f2bf9eec559337cd849fd0b792e97afb36eee83bd0e0d72",
       "onnx_graph_checker_passed": true,
       "opset_imports": [
@@ -183,7 +183,7 @@
     },
     {
       "id": "R39R40_a025_company_body",
-      "original_path": "_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
+      "original_path": "Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
       "graph_sha256": "c3f17abc87a09c0628ddc1d46e3e2fa858af8a21b3c649c6f4329c9638175f70",
       "onnx_graph_checker_passed": true,
       "opset_imports": [
@@ -356,13 +356,13 @@
       "origin": "D_worktree"
     },
     {
-      "logical_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R61_STEP_Generalization_Standalone_20260910/weights/best_tradeoff.pth.tar",
+      "logical_path": "Deliverables/Standalone_Models/R61_STEP_Generalization_Standalone_20260910/weights/best_tradeoff.pth.tar",
       "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
       "bytes": 17517150,
       "origin": "D_worktree"
     },
     {
-      "logical_path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R61_STEP_Generalization_Standalone_20260910/weights/variants/R61_stepguard_v16_dpv96_best_tradeoff.pth.tar",
+      "logical_path": "Deliverables/Standalone_Models/R61_STEP_Generalization_Standalone_20260910/weights/variants/R61_stepguard_v16_dpv96_best_tradeoff.pth.tar",
       "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
       "bytes": 17517150,
       "origin": "D_worktree"

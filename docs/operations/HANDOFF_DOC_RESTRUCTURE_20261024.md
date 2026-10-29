@@ -64,7 +64,7 @@
 
 | 用途 | 目前模型 | 評分方式 |
 |---|---|---|
-| 公司端量測部署 | **COMBO**（正式基準，2026-04-08；前任 R30） | 環形影像交給固定、不能改的外部 GmmVisionTool GMF；8／0.8／0.08 px ＝ 1／0.1／0.01 µm 三尺度 step_std。交付為 ONNX（`_deployment_package/`、`Deliverables/MOSR_ONNX*`），以均華 202 張實拍驗證（`Validations/MOSR_ONNX_JunHua/`） |
+| 公司端量測部署 | **COMBO**（正式基準，2026-04-08；前任 R30） | 環形影像交給固定、不能改的外部 GmmVisionTool GMF；8／0.8／0.08 px ＝ 1／0.1／0.01 µm 三尺度 step_std。交付為 ONNX（`Deliverables/Company_Packages/`、`Deliverables/Company_Packages/MOSR_ONNX*`），以均華 202 張實拍驗證（`Deliverables/Validations/MOSR_ONNX_JunHua/`） |
 | 論文 | **R152（論文稱 MOSR）** 對 RAW | 2026-09-03 的 930 張 PI 位移重拍（30 趟 × 31 位置）、PI 回授、SEM |
 
 `ESTIMATOR_POLICY.json` 只登記公司端那條線；論文採用另記在 `PROJECT_STATE.md` 與 R153 交接。
@@ -82,7 +82,7 @@
 
 ### 3.4 使用者的工作習慣（整理時必須尊重）
 - **刻意保留失敗。**不採用、停止、撤回（R119）都完整留著，並寫明限制。
-- **刻意保存「改動前的樣子」。**很多實驗資料夾有 `project_context_before/`、`mutable_context_before/`、`*_BEFORE_*` 檔；`.history/` 是**刻意追蹤**的編輯器快照（提交 `36f1c917`）。不要取消追蹤。
+- **刻意保存「改動前的樣子」。**很多實驗資料夾有 `project_context_before/`、`mutable_context_before/`、`*_BEFORE_*` 檔；`Archive/.history/` 是**刻意追蹤**的編輯器快照（提交 `36f1c917`）。不要取消追蹤。
 - **嚴格區分身分。**原拍、處理輸入、合成資料、模型輸出、量測座標各有名稱；best／latest／EMA 不互換；同號不同系統（主 R39 ≠ Lab R39；V42 ≠ R42；stage01–33 是資料類型）。
 - **限制句是結論的一部分。**「重拍穩定不等於準確」「同樣本 SEM 只算一致性檢查」等句子不可刪。
 - 9 月的設計回顧 `Thesis_MOSR_Evidence/Research_Design_Effect_Review_20260926/05_Cross_Round_Analysis/`（DESIGN_EVOLUTION、FAILURE_PATTERNS、RECOMMENDATIONS）是使用者自己的判斷整理，價值很高，只能加索引，不能改。

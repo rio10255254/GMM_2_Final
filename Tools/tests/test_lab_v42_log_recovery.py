@@ -9,7 +9,7 @@ TOOLS = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(TOOLS))
 from replay_lab_v42_history import original_log_layout, read_original_log, verify_stdout
 
-TRAINER = TOOLS.parent / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/train_v42.py'
+TRAINER = TOOLS.parent / 'Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/train_v42.py'
 
 
 def test_original_writer_layout_explains_both_opposite_shifts():

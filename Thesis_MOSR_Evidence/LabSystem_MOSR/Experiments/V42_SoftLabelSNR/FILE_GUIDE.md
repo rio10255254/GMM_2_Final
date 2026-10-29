@@ -74,7 +74,7 @@ V41 有兩個懷疑的問題：答案影像的邊界可能有像素階梯；模�
 |---|---|
 | 舊版論文的 V42 結果、圖表與重現腳本 | [`01_CURRENT_THESIS_RESULTS_V42_CENTER9/`](<../../../Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/README.md>)、[`04_V42_NEURAL_NETWORK_RESULTS/`](<../../../Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/README.md>)，已在 GitHub |
 | V42 原表、兩份固定模型與重做（約 51 MB） | Release [`research-v42-history-replay-20261021`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-v42-history-replay-20261021)；`python Tools/replay_lab_v42_history.py --root . --output <新資料夾>`，加 `--native` 跑四次 CPU 推論，細節見 [V42 完整歷史](<../../../../docs/reproducibility/lab_comparisons/V42_HISTORY.md>) |
-| 完整模型包（程式、PSF、必要權重，約 403 MB） | [V42 完整包](<../../Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md>) 的程式在 GitHub；權重在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) |
+| 完整模型包（程式、PSF、必要權重，約 403 MB） | [V42 完整包](<../../../../Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md>) 的程式在 GitHub；權重在 Release [`research-results-models-20261016`](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-results-models-20261016) |
 | 短測程式與測試 | 本資料夾 [scripts/](<scripts>)、[tests/](<tests>) |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
@@ -87,7 +87,7 @@ V41 有兩個懷疑的問題：答案影像的邊界可能有像素階梯；模�
 |---|---|
 | [V42 短測結果](<V42_SOFTLABEL_SNR_SMOKE_RESULT.md>) | 2026-07-09 的兩輪短測：資料、模型改動、短測指標與測試 |
 | [V42 完整歷史](<../../../../docs/reproducibility/lab_comparisons/V42_HISTORY.md>) | 2026-10 整理：短測與完整訓練的分界、實際起點、各個模型檔的身分、欄位錯置的原因 |
-| [V42 完整包說明](<../../Model_Packages/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md>) | 建立時寫的包說明（當時長訓練尚未完成，原文保留） |
+| [V42 完整包說明](<../../../../Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md>) | 建立時寫的包說明（當時長訓練尚未完成，原文保留） |
 | [舊版論文的 V42 結果](<../../../Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/README.md>) | 中心九顆的 CD 與位移結果 |
 
 2026 年 10 月的保存與核對紀錄見[保存紀錄](<../../../../docs/reproducibility/experiments/lab__V42_SoftLabelSNR.md>)與 [Lab 逐輪必要來源核對](<../../../../docs/reproducibility/round_source_reviews/LAB_SYSTEM_20261023.md>)。

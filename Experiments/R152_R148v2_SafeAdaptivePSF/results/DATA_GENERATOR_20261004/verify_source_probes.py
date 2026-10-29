@@ -8,7 +8,7 @@ sys.dont_write_bytecode=True
 import numpy as np
 
 PROJECT=Path(__file__).resolve().parents[4]
-PACK=PROJECT/'Deliverables/R152_Standalone_ImageFiles_20261004'
+PACK=PROJECT/'Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004'
 sys.path.insert(0,str(PACK))
 from data_index import ENTRIES
 from generation.scene import parameters,canonical,render_initial_latent

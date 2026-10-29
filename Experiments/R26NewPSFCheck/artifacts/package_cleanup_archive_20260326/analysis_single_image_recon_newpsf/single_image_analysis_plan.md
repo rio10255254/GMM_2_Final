@@ -1,8 +1,8 @@
 # 單張影像重建分析規劃摘要
 
 ## 可用資料
-- RAW：`_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/Demo_Input/VisionTop_20251029182653732.bmp`
-- R26：`_deployment_package/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/reconstruct_progress_best_tradeoff_in_Demo_Input_20260326_093223/VisionTop_20251029182653732.bmp`
+- RAW：`Deliverables/Company_Packages/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/Demo_Input/VisionTop_20251029182653732.bmp`
+- R26：`Deliverables/Company_Packages/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/輸出結果/推論結果/reconstruct_progress_best_tradeoff_in_Demo_Input_20260326_093223/VisionTop_20251029182653732.bmp`
 - RAW SHA256：`2a9dadc128b00a4bb285736eeb62405b08843ec8d3d90d807638a4fb3dcdf77f`
 - R26 SHA256：`63a5771814d8e48cdb28adae3e245e098d191f1a805afbbcc4b5daa61a6c497b`
 - 可重用邏輯：`detect_ring`、radial profile、ring ROI。

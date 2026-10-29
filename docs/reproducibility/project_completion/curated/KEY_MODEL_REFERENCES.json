@@ -295,7 +295,7 @@
       "case": "R152_base_reference.pth",
       "scope": "main/R152_R148v2_SafeAdaptivePSF",
       "role": "frozen_initial_base_required_by_original_portable_entry",
-      "path": "Deliverables/R152_Standalone_20261004/weights/base_reference.pth",
+      "path": "Deliverables/Standalone_Models/R152_Standalone_20261004/weights/base_reference.pth",
       "bytes": 5907918,
       "sha256": "4661bdfccc9d55c3e3d946ccfbf549d9ae9d8f3b8463ef836e40b2ac7140f88f",
       "selection_source": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md",
@@ -303,7 +303,7 @@
       "existing_published_locations": [
         {
           "tag": "research-training-kits-20261016",
-          "path": "Deliverables/R152_Standalone_ImageFiles_20261004/weights/base_reference.pth",
+          "path": "Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/weights/base_reference.pth",
           "asset": "research-r152-frozen-inputs-001.zip",
           "bytes": 5907918,
           "sha256": "4661bdfccc9d55c3e3d946ccfbf549d9ae9d8f3b8463ef836e40b2ac7140f88f"
@@ -315,7 +315,7 @@
       "case": "R152_r152_deployed.pth",
       "scope": "main/R152_R148v2_SafeAdaptivePSF",
       "role": "actual_thesis_deployed_model_required_by_original_portable_entry",
-      "path": "Deliverables/R152_Standalone_20261004/weights/r152_deployed.pth",
+      "path": "Deliverables/Standalone_Models/R152_Standalone_20261004/weights/r152_deployed.pth",
       "bytes": 7106622,
       "sha256": "2932f79d29a51be2350addf189e9ef635f038a542df55957de1749c0c0dc950c",
       "selection_source": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md",
@@ -323,7 +323,7 @@
       "existing_published_locations": [
         {
           "tag": "research-training-kits-20261016",
-          "path": "Deliverables/R152_Standalone_ImageFiles_20261004/weights/r152_deployed.pth",
+          "path": "Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/weights/r152_deployed.pth",
           "asset": "research-r152-frozen-inputs-001.zip",
           "bytes": 7106622,
           "sha256": "2932f79d29a51be2350addf189e9ef635f038a542df55957de1749c0c0dc950c"

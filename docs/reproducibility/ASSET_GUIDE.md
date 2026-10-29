@@ -54,7 +54,7 @@ gh release download RELEASE_TAG --repo rio10255254/GMM_2_Final --pattern ASSET_N
 | 需要什麼 | 取得位置與界線 |
 |---|---|
 | 9月3日930張原拍、30份原始位置紀錄 | [共用原拍與恢復](../../Shared_Sources/PI_Repeatability_20260903/README.md)。原始拍攝ZIP約2.03GB，只保留這一次共用來源 |
-| R61 v16繼承來源 | [原生成包](../../Deliverables/R61_TrainingData_Regenerator_20261004/README_TW.md)、[固定來源版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016)。不是只靠種子可重算的3,400組歷史來源／幾何必須保留 |
+| R61 v16繼承來源 | [原生成包](../../Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004/README_TW.md)、[固定來源版本](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-training-kits-20261016)。不是只靠種子可重算的3,400組歷史來源／幾何必須保留 |
 | R93／R94至98基礎 | [R93來源導讀](r93_shared/README.md)及[本機固定資料位置](../../Experiments/R93_RecoverableDetailSeparatedScratch/data/ARCHIVE_POINTER_20261022.md)。可先讀方法，不必先下載約12.6GB共用formal來源；生成器與原修正另在[生成方法](GENERATION_GUIDE.md) |
 | 四輪選用模型、原表及失敗影像 | [R94／95／97／98導讀](four_rounds/README.md)。先選輪次和用途，完整歷程包不是每次閱讀的必需品 |
 | Step、多倍率原拍、SEM與原工作表 | [共用來源與影像取捨](SOURCE_AND_IMAGE_DECISIONS.md)。原拍、SEM、合成及模型輸出各有不同角色 |

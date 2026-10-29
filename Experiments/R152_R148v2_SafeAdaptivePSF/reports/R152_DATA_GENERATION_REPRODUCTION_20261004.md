@@ -5,10 +5,10 @@
 ## 交付與操作
 
 - [完整最新獨立包](../../../Deliverables/R152_Standalone_ImageFiles_20261004.zip)
-- [完整影像生成入口](../../../Deliverables/R152_Standalone_ImageFiles_20261004/generate_data.py)
-- [純PY操作說明](../../../Deliverables/R152_Standalone_ImageFiles_20261004/generation_guide.py)
-- [固定場景配方](../../../Deliverables/R152_Standalone_ImageFiles_20261004/generation/recipe.py)
-- [五份原始程式身分](../../../Deliverables/R152_Standalone_ImageFiles_20261004/generation/source_history.py)
+- [完整影像生成入口](../../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generate_data.py)
+- [純PY操作說明](../../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generation_guide.py)
+- [固定場景配方](../../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generation/recipe.py)
+- [五份原始程式身分](../../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/generation/source_history.py)
 
 直接執行generate_data.py，會生成全部768母場景、每個四視圖，輸出到包內outputs/generated_data。重新生成影像可以由train.py --data-dir outputs/generated_data直接讀取；完整兩階段可加--from-scratch。如原data資料夾已不存在，可指定--output-dir data重建。既有非空資料夾不默默覆寫；--resume會核對已完成影像後接續，--verify-only則重新核對完整生成資料。
 

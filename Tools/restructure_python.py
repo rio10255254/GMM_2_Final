@@ -100,6 +100,8 @@ def evaluated_targets(src, file_rel, ctx):
     for node in ast.walk(tree):
         if node in skip:
             continue
+        if job.is_top_chain(node) and job.is_join_base(node):
+            continue                 # a climb a join starts from: the join's target is the one that counts
         if job.is_top_chain(node) or job.join_parts(node) is not None or \
                 (_is_str(node) and ABS_START.match(node.value)):
             v = job.ev(node)
@@ -262,6 +264,16 @@ class _PyJob:
         if isinstance(node, ast.Call) and _fname(node) == 'dirname':
             return 1
         return 0
+
+    def is_join_base(self, node):
+        """`node` is what a join starts from: X / 'a', os.path.join(X, 'a'), Path(X, 'a'), X.joinpath('a')."""
+        p = self.parent.get(node)
+        if isinstance(p, ast.BinOp) and isinstance(p.op, ast.Div) and p.left is node:
+            return True
+        if isinstance(p, ast.Call) and len(p.args) > 1 and p.args[0] is node and \
+                (_fname(p) in PATH_CALLS or (_fname(p) == 'join' and isinstance(p.func, ast.Attribute))):
+            return True
+        return isinstance(p, ast.Attribute) and p.attr == 'joinpath' and p.value is node
 
     def is_top_chain(self, node):
         if self.inner(node) is None:

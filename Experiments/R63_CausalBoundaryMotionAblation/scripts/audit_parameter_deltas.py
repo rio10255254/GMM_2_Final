@@ -33,9 +33,8 @@ def main() -> None:
     # Use the canonical source recorded by the experiment, not path inference from the run.
     package_root = (
         EXPERIMENT_ROOT.parents[1]
-        / "Thesis_MOSR_Evidence"
-        / "LabSystem_MOSR"
-        / "Model_Packages"
+        / "Deliverables"
+        / "Standalone_Models"
         / "V42_SoftLabelSNR_FullStandalone_20260709"
     )
     base_checkpoint = package_root / "weights" / "base_v41_standalone_best_tradeoff.pth.tar"

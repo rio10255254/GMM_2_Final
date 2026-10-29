@@ -47,7 +47,7 @@
 | 需要什麼 | 在哪裡 |
 |---|---|
 | 模型、訓練、篩選與診斷程式 | 本資料夾，已在 GitHub；`STATUS_R134.cmd` 可看當時進度 |
-| 獨立訓練包（P1） | `Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Precision_Standalone_20260915/` |
+| 獨立訓練包（P1） | `Deliverables/Standalone_Models/R134_DirectState_Precision_Standalone_20260915/` |
 | 側向偏移診斷、精度重驗、權重與重建 | 查 `python Tools/cloud_locator.py where Experiments/R134_DirectStateRepair/<路徑>` |
 
 ## 原始報告

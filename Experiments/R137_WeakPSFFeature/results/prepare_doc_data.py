@@ -5,7 +5,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-R=Path(str(PROJECT_ROOT / 'Experiments/R137_WeakPSFFeature'));B=R.parent/'R130_Clean';P=Path(str(PROJECT_ROOT / 'Deliverables/R137_WeakPSF_Web_Documents_20260922'))
+R=Path(str(PROJECT_ROOT / 'Experiments/R137_WeakPSFFeature'));B=R.parent/'R130_Clean';P=Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R137_WeakPSF_Web_Documents_20260922'))
 assert not P.exists();P.mkdir()
 for n in ['完整數據','圖表','閱讀文字版','來源與核對']:(P/n).mkdir()
 def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
@@ -41,7 +41,7 @@ addendum='# R137 執行時間解讀補充\n\n'+explanation+'\n\n既有6.9887秒�
 add=R/'reports/R137_RUNTIME_SCOPE_ADDENDUM.md';assert not add.exists();add.write_text(addendum,encoding='utf-8')
 cp(add,'來源與核對/R137_RUNTIME_SCOPE_ADDENDUM.md');cp(R/'reports/R137_RESULTS.md','來源與核對/R137_RESULTS_original.md')
 figs={}
-for key,src in {'displacement':R/'reports/figures/displacement.png','onoff':R/'reports/figures/PSF_on_off_example.png','selected':Path(str(PROJECT_ROOT / 'Deliverables/R129_Corrected_Corner9_Thesis_Handoff_20260920/03_Sampling_and_SEM/selected_nine.png'))}.items():cp(src,'圖表/'+key+'.png');figs[key]=P/'圖表'/(key+'.png')
+for key,src in {'displacement':R/'reports/figures/displacement.png','onoff':R/'reports/figures/PSF_on_off_example.png','selected':Path(str(PROJECT_ROOT / 'Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920/03_Sampling_and_SEM/selected_nine.png'))}.items():cp(src,'圖表/'+key+'.png');figs[key]=P/'圖表'/(key+'.png')
 colors={'Raw':'#777777','R129':'#2774AE','R130-Clean':'#E47722','R137-WeakPSF':'#198754'}
 def figsave(fig,key):fig.savefig(P/'圖表'/(key+'.png'),dpi=180,bbox_inches='tight');fig.savefig(P/'圖表'/(key+'.svg'),bbox_inches='tight');plt.close(fig);figs[key]=P/'圖表'/(key+'.png')
 fig,axs=plt.subplots(1,2,figsize=(11,3.6),layout='constrained')

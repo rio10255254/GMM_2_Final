@@ -1,8 +1,8 @@
 {
   "camera_source": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
-  "original_wrapper": "Deliverables/MOSR_R61_ONNX/run.py",
-  "original_wrapper_input": "Deliverables/MOSR_R61_ONNX/example/input.bmp",
-  "original_wrapper_reference": "Deliverables/MOSR_R61_ONNX/example/output.bmp",
+  "original_wrapper": "Deliverables/Company_Packages/MOSR_R61_ONNX/run.py",
+  "original_wrapper_input": "Deliverables/Company_Packages/MOSR_R61_ONNX/example/input.bmp",
+  "original_wrapper_reference": "Deliverables/Company_Packages/MOSR_R61_ONNX/example/output.bmp",
   "schema": 2,
   "files": [
     {
@@ -12,43 +12,43 @@
       "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
     },
     {
-      "path": "Deliverables/MOSR_R61_ONNX/README.md",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/README.md",
       "bytes": 1663,
       "sha256": "2c204c5d5a286a1cb20b733538023b6a98f33c4a7d9b058d8207680bc84aae1d",
       "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
     },
     {
-      "path": "Deliverables/MOSR_R61_ONNX/requirements.txt",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/requirements.txt",
       "bytes": 73,
       "sha256": "05fdfe5ad254c7c0fb11a7e810087e309d41ca908c1dacea863d67e81577b333",
       "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
     },
     {
-      "path": "Deliverables/MOSR_R61_ONNX/run.py",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/run.py",
       "bytes": 10555,
       "sha256": "ccc8bc58002593e9a881f18256b83d2f97188014e6d98d37570ed9b07c6125b6",
       "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
     },
     {
-      "path": "Deliverables/MOSR_R61_ONNX/manifest.json",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/manifest.json",
       "bytes": 2515,
       "sha256": "c4731ba41903fd2236588656c030a253c2aeec7879f42a7b7095b86b86750091",
       "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
     },
     {
-      "path": "Deliverables/MOSR_R61_ONNX/optics.npz",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/optics.npz",
       "bytes": 38032,
       "sha256": "4249803fe7c0c8d5cab693fd41f3ca193933e759b292dc87b9ddbf5cb00186a7",
       "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
     },
     {
-      "path": "Deliverables/MOSR_R61_ONNX/example/input.bmp",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/example/input.bmp",
       "bytes": 263222,
       "sha256": "ababc002eeb25f2b648bb016dae21fdd2e51cfb43c18be0367f82c051f2aff1a",
       "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
     },
     {
-      "path": "Deliverables/MOSR_R61_ONNX/example/output.bmp",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/example/output.bmp",
       "bytes": 263222,
       "sha256": "bf36d1dadaf58c5bcc0864953582aa00e7c1472a58f157145754380d93d332c5",
       "role": "unchanged_original_ONNX_delivery_source_or_fixed_research_input"
@@ -66,18 +66,18 @@
       "role": "exact_graph_object_to_fetch_from_GitHub"
     },
     {
-      "path": "Deliverables/MOSR_R61_ONNX/model.onnx",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/model.onnx",
       "sha256": "7baf6fda38a843deff0fb840a3821d44f09a69b1485b2a263281c5096f3f31d8",
       "bytes": 16151146,
       "role": "exact_graph_object_to_fetch_from_GitHub"
     },
     {
-      "path": "_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
+      "path": "Deliverables/Company_Packages/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
       "sha256": "9fe80f8ef1ef5a464f2bf9eec559337cd849fd0b792e97afb36eee83bd0e0d72",
       "bytes": 16105107
     },
     {
-      "path": "_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
+      "path": "Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
       "sha256": "c3f17abc87a09c0628ddc1d46e3e2fa858af8a21b3c649c6f4329c9638175f70",
       "bytes": 16105107
     }
@@ -97,20 +97,20 @@
     },
     {
       "id": "R61_deployment_body",
-      "path": "Deliverables/MOSR_R61_ONNX/model.onnx",
-      "original_path": "Deliverables/MOSR_R61_ONNX/model.onnx",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/model.onnx",
+      "original_path": "Deliverables/Company_Packages/MOSR_R61_ONNX/model.onnx",
       "historical_role": "R61 deployed neural-network graph; complete reconstruction also requires original Python optical processing and optics.npz"
     },
     {
       "id": "COMBO_company_body",
-      "path": "_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
-      "original_path": "_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
+      "path": "Deliverables/Company_Packages/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
+      "original_path": "Deliverables/Company_Packages/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
       "historical_role": "Company package labeled COMBO: main network body; original report explicitly excludes weak-PSF graph block and retains Python optical preprocessing"
     },
     {
       "id": "R39R40_a025_company_body",
-      "path": "_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
-      "original_path": "_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
+      "path": "Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
+      "original_path": "Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
       "historical_role": "Company package labeled R39R40 alpha0.25: saved delivery graph, with original preprocessing and reference differences retained; no new adoption decision"
     }
   ],
@@ -153,7 +153,7 @@
     },
     {
       "id": "R61_deployment_body",
-      "path": "Deliverables/MOSR_R61_ONNX/model.onnx",
+      "path": "Deliverables/Company_Packages/MOSR_R61_ONNX/model.onnx",
       "sha256": "7baf6fda38a843deff0fb840a3821d44f09a69b1485b2a263281c5096f3f31d8",
       "bytes": 16151146,
       "repo": "rio10255254/GMM_2_Final",
@@ -171,7 +171,7 @@
     },
     {
       "id": "COMBO_company_body",
-      "path": "_deployment_package/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
+      "path": "Deliverables/Company_Packages/GeoEdge_COMBO_ONNX_Company_Package_20260424/model/geoedge_combo_body.onnx",
       "sha256": "9fe80f8ef1ef5a464f2bf9eec559337cd849fd0b792e97afb36eee83bd0e0d72",
       "bytes": 16105107,
       "repo": "rio10255254/GMM_2_Final",
@@ -189,7 +189,7 @@
     },
     {
       "id": "R39R40_a025_company_body",
-      "path": "_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
+      "path": "Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/model/geoedge_r39r40_a025_body.onnx",
       "sha256": "c3f17abc87a09c0628ddc1d46e3e2fa858af8a21b3c649c6f4329c9638175f70",
       "bytes": 16105107,
       "repo": "rio10255254/GMM_2_Final",

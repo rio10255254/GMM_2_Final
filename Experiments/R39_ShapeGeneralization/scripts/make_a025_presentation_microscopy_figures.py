@@ -26,7 +26,8 @@ CSV_PATH = COMPARE_ROOT / "metrics" / "a025_vs_combo_per_image.csv"
 SUMMARY_JSON = COMPARE_ROOT / "metrics" / "a025_vs_combo_summary.json"
 OLD_PACKAGE_OUTPUT_ROOT = (
     REPO
-    / "_deployment_package"
+    / "Deliverables"
+    / "Company_Packages"
     / "GeoEdge_R39R40_a025_ONNX_Company_Package_20260511"
     / "outputs"
 )

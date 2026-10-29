@@ -20,7 +20,7 @@ No MOSR architecture/weights, original thesis, existing circle fits, scale, dire
 
 Branch: sandbox/r153-mean-external-benchmark; inherited current research checkout f0183af6e03954804d0ad82b2687149623e94700 to preserve existing uncommitted work and current evidence paths. main remains unchanged. Local tracking only; no remote publication requested.
 
-Shared data: Deliverables/R152_Standalone_ImageFiles_20261004/data. Model/measurement lineage is recorded in config/source_lock.json. Requested public reports are reports/MEAN_MEDIAN_RESULTS.md, reports/BENCHMARK_RESULTS.md and reports/THESIS_UPDATE_MAP.md. The latter two now exist: the update map records confirmed mean-analysis changes, while the benchmark report explicitly marks unfinished real comparisons. After monitoring, run scripts/write_benchmark_progress.py to refresh verified training and synthetic results without GPU inference.
+Shared data: Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/data. Model/measurement lineage is recorded in config/source_lock.json. Requested public reports are reports/MEAN_MEDIAN_RESULTS.md, reports/BENCHMARK_RESULTS.md and reports/THESIS_UPDATE_MAP.md. The latter two now exist: the update map records confirmed mean-analysis changes, while the benchmark report explicitly marks unfinished real comparisons. After monitoring, run scripts/write_benchmark_progress.py to refresh verified training and synthetic results without GPU inference.
 
 Storage: D retains active code, fixed protocol, weights, reconstructions, readouts and complete reports; 160 GiB new-output budget, stop before D free falls below 50 GiB. No cleanup of existing results. H is a future verified archive destination, not an implicit move authorization.
 

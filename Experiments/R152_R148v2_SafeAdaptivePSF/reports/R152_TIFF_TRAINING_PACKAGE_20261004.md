@@ -4,9 +4,9 @@
 
 ## 使用位置
 
-- [TIFF版使用說明](../../../Deliverables/R152_Standalone_ImageFiles_20261004/start_here.py)
-- [正式訓練入口](../../../Deliverables/R152_Standalone_ImageFiles_20261004/train.py)
-- [推論入口](../../../Deliverables/R152_Standalone_ImageFiles_20261004/infer.py)
+- [TIFF版使用說明](../../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/start_here.py)
+- [正式訓練入口](../../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/train.py)
+- [推論入口](../../../Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/infer.py)
 - [完整TIFF版獨立包](../../../Deliverables/R152_Standalone_ImageFiles_20261004.zip)
 
 包內程式、設定、說明、索引、檢查清單仍一律PY。全部路徑由包位置定位，模型、PSF和已驗證權重與上一版相同。

@@ -13,7 +13,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 GMM_ROOT = Path(str(PROJECT_ROOT))
-PACKAGE = GMM_ROOT / "Deliverables" / "MOSR_ONNX"
+PACKAGE = GMM_ROOT / "Deliverables" / "Company_Packages" / "MOSR_ONNX"
 R79 = GMM_ROOT / "Experiments" / "R79_R75v3_DenseMicroscopyScratchGeneralization"
 CHECKPOINT = (
     R79

@@ -9,7 +9,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 sys.stdout.reconfigure(encoding='utf-8')
 R=Path(str(PROJECT_ROOT));E=R/'Experiments/R129_OpticalPriorHybrid'
-O=R/'Deliverables/R129_Thesis_Rewrite_Ready_20260920';H=O/'04_Results/R129_Handoff'
+O=R/'Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920';H=O/'04_Results/R129_Handoff'
 def load(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 def write(rel,t):
  p=O/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(t,encoding='utf-8')

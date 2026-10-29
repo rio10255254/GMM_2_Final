@@ -27,7 +27,7 @@
 
 ## 拿資料與重做
 
-可重做程度：**partial**。選定種子 `selected/current_round26_step_recovery_seed.json` 不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡。R26 正式交付包在 `_deployment_package/GeoEdge_R26_正式交付版/`；2026-10-26 的全專案掃描顯示其中約 5.6 GB 在雲端找不到同內容。
+可重做程度：**partial**。選定種子 `selected/current_round26_step_recovery_seed.json` 不在 git 樹上，在 Release `research-results-models-20261016` 的壓縮包裡。R26 正式交付包在 `Deliverables/Company_Packages/GeoEdge_R26_正式交付版/`；2026-10-26 的全專案掃描顯示其中約 5.6 GB 在雲端找不到同內容。
 
 ## 原始報告
 

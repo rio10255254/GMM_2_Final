@@ -13,10 +13,10 @@ PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 sys.stdout.reconfigure(encoding='utf-8')
 REPO=Path(str(PROJECT_ROOT))
-SRC=REPO/'Deliverables/R129_Thesis_Rewrite_Ready_20260920'
+SRC=REPO/'Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920'
 HAND=SRC/'04_Results/R129_Handoff'
 DATA=HAND/'01_Raw_R129_Comparison'
-OUT=REPO/'Deliverables/R129_Web_Thesis_Documents_20260920'
+OUT=REPO/'Deliverables/Thesis_Handoffs/R129_Web_Thesis_Documents_20260920'
 WORK=REPO/'Experiments/R129_OpticalPriorHybrid/results/web_handoff_20260920'
 OUT.mkdir(exist_ok=True);WORK.mkdir(parents=True,exist_ok=True)
 (OUT/'Editable_Word').mkdir(exist_ok=True);(WORK/'figures').mkdir(exist_ok=True)
@@ -93,7 +93,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-SRC=Path(r'Deliverables/R129_Thesis_Rewrite_Ready_20260920')
+SRC=Path(r'Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920')
 WORK=Path(r'Experiments/R129_OpticalPriorHybrid/results/web_handoff_20260920')
 cats=[('irregular_curved','Irregular boundaries'),('corners_lines_junctions','Lines and junctions'),('dense_close_structures','Dense structures'),('textured_edges','Textured edges'),('clean_identity','Clean control'),('noisy_identity','Noisy control'),('flat_negative','Flat control')]
 for no,sel in [(1,cats[:4]),(2,cats[4:])]:

@@ -22,7 +22,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 DEFAULT_PACKAGE = Path(
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/V42_SoftLabelSNR_Standalone_20260709')
+    str(PROJECT_ROOT / 'Deliverables/Standalone_Models/V42_SoftLabelSNR_Standalone_20260709')
 )
 DEFAULT_OUTPUT = Path(
     str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results')

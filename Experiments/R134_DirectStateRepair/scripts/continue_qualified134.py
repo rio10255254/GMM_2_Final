@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from rt import load,save,atomic,record,sha,now,verify
 import psutil
 
-PKG=ROOT.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R134_DirectState_Standalone_20260915'
+PKG=ROOT.parent.parent/'Deliverables/Standalone_Models/R134_DirectState_Standalone_20260915'
 OUT=ROOT/'results/continuation'
 
 def command(args,cwd=None,label='command'):

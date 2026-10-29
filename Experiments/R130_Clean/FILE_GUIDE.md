@@ -50,7 +50,7 @@
 |---|---|
 | 模型、訓練、推論、評估程式與設定 | 本資料夾，已在 GitHub |
 | 原圖九顆柱的基準圓心、比較結果摘要 | `evaluation/`、`results/`，已在 GitHub |
-| 9/20 的論文交接資料 | [`Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920/`](<../../Deliverables/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920>) |
+| 9/20 的論文交接資料 | [`Deliverables/Thesis_Handoffs/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920/`](<../../Deliverables/Thesis_Handoffs/R130_Clean_Corrected_Corner9_Validation_Handoff_20260920>) |
 | 權重、930 張重建 | 見下方說明 |
 
 > 權重與大型輸出的位置：查 `python Tools/cloud_locator.py where Experiments/R130_Clean/<路徑>`。

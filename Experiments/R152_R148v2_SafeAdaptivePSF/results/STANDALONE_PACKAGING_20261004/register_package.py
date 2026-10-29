@@ -18,10 +18,10 @@ path=PROJECT/'ESTIMATOR_POLICY.json';before=path.read_bytes();policy=json.loads(
 baseline=copy.deepcopy(policy['formal_baseline']);alternates=copy.deepcopy(policy['approved_alternates'])
 policy['artifact_index']['R152_python_standalone_20261004']={
     'date':'2026-10-04','status':'complete','role':'portable model training/inference delivery',
-    'package':'Deliverables/R152_Standalone_20261004','archive':'Deliverables/R152_Standalone_20261004.zip',
+    'package':'Deliverables/Standalone_Models/R152_Standalone_20261004','archive':'Deliverables/R152_Standalone_20261004.zip',
     'report':'Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_STANDALONE_PACKAGE_20261004.md',
-    'training_entry':'Deliverables/R152_Standalone_20261004/train.py',
-    'inference_entry':'Deliverables/R152_Standalone_20261004/infer.py',
+    'training_entry':'Deliverables/Standalone_Models/R152_Standalone_20261004/train.py',
+    'inference_entry':'Deliverables/Standalone_Models/R152_Standalone_20261004/infer.py',
     'all_control_files_python':True,'training_parents':768,'training_views':3072,
     'published_weight_tensors_exact':209,'published_native_sample_inference_exact':True,
     'source_input_views_exact':True,'resume_and_relocated_runtime_verified':True,

@@ -12,7 +12,7 @@
 
 移出來源：
 
-`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs`
+`Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511/outputs`
 
 保存位置：
 
@@ -55,7 +55,7 @@
 
 重新壓縮後的 zip：
 
-- 路徑：`_deployment_package/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511.zip`
+- 路徑：`Deliverables/Company_Packages/GeoEdge_R39R40_a025_ONNX_Company_Package_20260511.zip`
 - 大小：約 14.27 MB
 - zip 內檔案數：13
 - zip 內 `outputs/`：0

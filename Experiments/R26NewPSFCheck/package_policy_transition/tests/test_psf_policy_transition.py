@@ -6,8 +6,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 ROOT = Path(str(PROJECT_ROOT))
-PACKAGE_INTERNAL = ROOT / r"_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案"
-PACKAGE_DOCS = ROOT / r"_deployment_package\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\參考文件"
+PACKAGE_INTERNAL = ROOT / r"Deliverables\Company_Packages\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\內部檔案"
+PACKAGE_DOCS = ROOT / r"Deliverables\Company_Packages\GeoEdge_R26_正式交付版\GeoEdge_R26_使用包\參考文件"
 POLICY_ROOT = ROOT / "docs" / "policy"
 
 NEW_STANDARD_PSF_HASH = "BAFF1039744ED17CFFBA3D9F36A2535A7171BAC74E4B67669EDE412FB4B44F08"

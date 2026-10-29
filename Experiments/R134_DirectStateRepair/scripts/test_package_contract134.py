@@ -24,7 +24,7 @@ def main():
     else:raise AssertionError('Legacy misleading diagnostics exposed')
     sources=[*ROOT.glob('scripts/*.py'),*ROOT.glob('package_templates/*.py')]
     for p in sources:ast.parse(p.read_text(encoding='utf-8-sig'),filename=str(p))
-    source=ROOT.parent.parent/'Thesis_MOSR_Evidence/LabSystem_MOSR/Model_Packages/R129_OpticalHybrid_Standalone_20260912'
+    source=ROOT.parent.parent/'Deliverables/Standalone_Models/R129_OpticalHybrid_Standalone_20260912'
     assert '(d - 80) / 16' in (source/'model/inference_policy.py').read_text()
     verify();save(ROOT/'results/package_contract_prebuild.json',dict(passed=True,CPU_trained_image_exact=True,image_shape=list(x.shape),rejected_unsafe_contracts=rejected,parsed_sources=len(sources),not_package_preflight=True,not_long_admission=True))
     print('Pre-build contracts passed; actual package tests remain mandatory',flush=True)

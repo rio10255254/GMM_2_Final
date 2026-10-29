@@ -11,7 +11,7 @@ import numpy as np
 import torch
 
 ROOT=Path(__file__).resolve().parents[2];OUT=Path(__file__).resolve().parent
-PROJECT=ROOT.parents[1];PACK=PROJECT/'Deliverables/R152_Standalone_20261004'
+PROJECT=ROOT.parents[1];PACK=PROJECT/'Deliverables/Standalone_Models/R152_Standalone_20261004'
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8'))
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 

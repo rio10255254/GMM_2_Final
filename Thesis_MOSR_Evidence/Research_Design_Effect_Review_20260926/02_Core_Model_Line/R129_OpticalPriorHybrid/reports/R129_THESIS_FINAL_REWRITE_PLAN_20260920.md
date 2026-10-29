@@ -2,7 +2,7 @@
 
 2026-09-20。本計畫整合使用者最新決定，取代先前互相牴觸的待辦：**一個R129模型、保留ACM與Contour正文重點、完整抽換V42現用模型內容、本次刪除消融、聚焦正常實拍下的量測成果。**
 
-本次交付是改稿計畫與資料準備，不是已改完的論文。原Word保留，正式改稿在副本完成。資料入口為 `Deliverables/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md`。
+本次交付是改稿計畫與資料準備，不是已改完的論文。原Word保留，正式改稿在副本完成。資料入口為 `Deliverables/Thesis_Handoffs/R129_Thesis_Rewrite_Ready_20260920/START_HERE.md`。
 
 ## 一、主題與敘事
 

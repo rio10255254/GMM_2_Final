@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
-SOURCE=Path(str(PROJECT_ROOT / 'Deliverables/R152_Standalone_20261004/data'))
+SOURCE=Path(str(PROJECT_ROOT / 'Deliverables/Standalone_Models/R152_Standalone_20261004/data'))
 OUT=Path(__file__).resolve().parent
 
 def main():

@@ -105,3 +105,43 @@
 在這個 checkout 跑測試前，從原本的工作樹複製了測試會讀的本機資料：R118 的資料包、R67 名單上的 checkpoint 與影格等，共 38.2 GB，都不進 git。原本的工作樹靠絕對路徑直接讀到它們；改成相對路徑後，測試讀的是這個 checkout 自己的資料夾。
 
 這一階段也修了工具在 MATLAB 的一個錯誤：`PROJECT_ROOT` 原本只定義在檔案的第一個函式裡，用到它的 local function 看不到。現在每個用到它的函式各自定義一次。
+
+### 第 2 階段：封存與交付各歸一處（2026-10-29）
+
+**搬了什麼。** 597 個檔，規則見 `moves_phase2.json`：
+
+- 根目錄的六個封存資料夾，加上 `Thesis_MOSR_Evidence` 裡中途停止的 `Research_Round_Library_20260926_ABORTED_OVERSIZED`，集中到 `Archive/`。
+- 交付包按用途分到 `Deliverables/` 底下：
+  - `Company_Packages`：原本的 `_deployment_package` 和兩個 MOSR ONNX。
+  - `Thesis_Handoffs`：R128 到 R137 的論文交接。
+  - `Standalone_Models`：原本的 `LabSystem_MOSR/Model_Packages`，以及 R137、R152 的獨立包。
+  - `Data_Regenerators`。
+- `Validations` 移到 `Deliverables/Validations`。
+- 根目錄的 `trial_README.md` 移回它說明的 R128 `trial/` 資料夾。
+
+**改了什麼。** 431 個檔、7,663 處引用跟著改到新位置：紀錄 6,399 處、文件 814 處、連結 243 處、Python 199 處、腳本 8 處。內容改變的檔，雜湊共 559 個變動。
+
+**人工判斷。**
+
+- `decisions_phase2.json`，31 處：都是在定義「`Thesis_MOSR_Evidence` 或 `LabSystem_MOSR` 這個資料夾」的寫法，例如 `THESIS = PROJECT_ROOT / 'Thesis_MOSR_Evidence'`。資料夾本身不搬，只有底下一兩個子資料夾搬走，所以維持原樣。從它往下接的固定路徑，工具各自求值、各自改寫。
+- `trial_README.md` 搬進 `trial/` 後，工具把它的執行指令當成相對於文件的路徑，改成了 `'restore.py'`。這是要在專案根目錄執行的指令，所以改回 `Experiments/R128_SourceOnlyFullTraining/trial/restore.py`。它是同資料夾 `README.md` 較早的一份，兩份都留，在它開頭加一句說明。
+- `Research_Round_Library_..._ABORTED_OVERSIZED` 的 `ABORTED_README.md` 寫「請使用同層的設計與效果回顧」。搬走之後兩者不再同層，所以在文末補一段現在的位置，原文不改。
+
+**README。**
+
+- 新寫：`Archive/README.md`、`Deliverables/Thesis_Handoffs/README.md`、`Deliverables/Data_Regenerators/README.md`。
+- 擴充：`Deliverables/README.md` 補上五類的說明；`Company_Packages`、`Standalone_Models` 原本就有的 README 補上新放進來的包與原位置。
+
+**`.gitignore`。**
+
+- 指到 `Validations`、`Research_Round_Library` 的條目改到新位置。
+- `_deployment_package/` 原條目保留，另外逐一列出搬到 `Company_Packages` 的三個包和兩個 zip。不整個忽略 `Company_Packages`，因為兩個 MOSR ONNX 原本不在忽略範圍內。
+- `verify` 確認本機每個檔是否被忽略，前後都一樣。
+
+**驗證。** `verify_phase2.txt`：0 個問題。
+
+這一階段工具補了三處：
+
+- `rehash` 改成照搬移規則找檔案在 HEAD 的原身，不靠 git 的改名猜測。新檔案在 HEAD 沒有原身；被大幅手改的搬移檔，git 會看成刪除加新增。
+- 往上爬到共同上層再往下接的寫法，驗證時只算一個目標。
+- 深層副本裡從根目錄寫起、本來就壞的連結，目標照規則搬移後仍視為同一個舊問題。
