@@ -405,7 +405,7 @@ def do_verify(ph):
                     except SyntaxError:
                         pass
     texts = {n: after[n] for n in now if rewritable(n)}
-    problems += verify.residual(texts, new_uni, ph.upto, absolute_check=True)
+    problems += verify.residual(texts, new_uni, ph.upto, absolute_check=True, old_uni=old_uni)
     problems += verify.hash_consistency(pairs, after, rules)
     for name in sorted(parsed_before):
         new = (rules.map(name) if rules else None) or name

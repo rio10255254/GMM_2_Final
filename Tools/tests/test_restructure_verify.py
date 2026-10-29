@@ -178,3 +178,13 @@ def test_residual_accepts_a_pattern_whose_folder_exists_where_the_file_reads_it(
     new = Universe.from_paths(['Lab/Reconstruct_Progress/prep/gmf_cases/a.bmp', 'Analyses/Reconstruct_Progress/README.md'])
     files = {'Lab/MANIFEST.md': 'outputs in `Reconstruct_Progress/prep/gmf_cases/lab_r46_*/`\n'}
     assert v.residual(files, new, rules) == []
+
+
+def test_residual_ignores_a_reading_that_never_existed_before_the_move():
+    rules = RuleSet([Rule('Reconstruct_Progress', 'Analyses/Reconstruct_Progress')])
+    old = Universe.from_paths(['Reconstruct_Progress/README.md', 'Lab/archive/MANIFEST.csv', 'Docs/a.md'])
+    new = Universe.from_paths(['Analyses/Reconstruct_Progress/README.md', 'Lab/archive/MANIFEST.csv', 'Docs/a.md'])
+    files = {'Lab/archive/MANIFEST.csv': 'relative_path\nReconstruct_Progress/prep/gone/a.bmp\n',
+             'Docs/a.md': 'see Reconstruct_Progress/README.md\n'}
+    found = v.residual(files, new, rules, old_uni=old)
+    assert len(found) == 1 and found[0].startswith('Docs/a.md')

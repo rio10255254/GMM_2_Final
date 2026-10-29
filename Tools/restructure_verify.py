@@ -222,7 +222,11 @@ def _prose_spans(src):
     return out
 
 
-def residual(files, uni, rules, absolute_check=False):
+def residual(files, uni, rules, absolute_check=False, old_uni=None):
+    """Paths still pointing at an old place, and (absolute_check) text naming this machine. With
+    `old_uni`, a reading of a token counts as an old place only if it was one: it, or its folder,
+    existed before the move."""
+    was = (lambda p: old_uni.exists(p) or old_uni.exists(posixpath.dirname(p))) if old_uni is not None else (lambda p: True)
     out = []
     for name in sorted(files):
         if is_record(name):
@@ -249,7 +253,7 @@ def residual(files, uni, rules, absolute_check=False):
                 # a pattern piece (lab_r46_*) does not exist itself; the folder it sits in does
                 if any(uni.exists(p) or (uni.exists(posixpath.dirname(p)) and rules.map(p) is None) for p in cands):
                     break
-                stale = next((p for p in cands if rules.map(p) is not None), None)
+                stale = next((p for p in cands if rules.map(p) is not None and was(p)), None)
                 if stale:
                     out.append(f'{name}:{text.count(chr(10), 0, m.start()) + 1}: {tok} still points at {stale}')
                     break
