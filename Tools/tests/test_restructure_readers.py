@@ -345,3 +345,50 @@ def test_library_writers_read_no_path(ctx):
     src = HEAD + LOAD + "import torch\ntorch.save({'config': CONFIG, 'n': 1}, 'w.pth')\n"
     out, unresolved = rewrite(src, ctx)
     assert out == src and not unresolved
+
+
+def test_cls_attribute_in_a_test_class(ctx):
+    src = HEAD + ("import unittest\nclass T(unittest.TestCase):\n    @classmethod\n    def setUpClass(cls):\n"
+                  "        cls.config = json.loads((ROOT / 'config/experiment.json').read_text())\n"
+                  "    def test_out(self):\n        self.assertTrue(Path(self.config['out']).is_dir())\n")
+    out, unresolved = rewrite(src, ctx)
+    assert "Path(PROJECT_ROOT / self.config['out'])" in out and not unresolved
+
+
+def test_spread_and_extend_keep_entries(ctx):
+    src = HEAD + LOAD + ("rows = ['x', *CONFIG['items']]\nfor r in rows[1:]:\n    open(r['path'])\n"
+                         "merged = {**CONFIG['data'], 'n': 1}\nP = Path(merged['package_root'])\n"
+                         "acc = []\nacc += CONFIG['items']\nfirst = {}\nfor r in CONFIG['items']:\n    first.setdefault(r['path'], r)\n"
+                         "for v in first.values():\n    open(v['path'])\nopen(acc[0]['path'])\n")
+    out, unresolved = rewrite(src, ctx)
+    assert "    open(str(PROJECT_ROOT / r['path']))\n" in out
+    assert "P = Path(PROJECT_ROOT / merged['package_root'])\n" in out
+    assert "    open(str(PROJECT_ROOT / v['path']))\n" in out
+    assert "open(str(PROJECT_ROOT / acc[0]['path']))\n" in out
+    assert not unresolved
+
+
+RUNNER = f'{EXP}/scripts/runner.py'
+
+
+def test_module_loaded_from_a_file_path(ctx):
+    runner = "from pathlib import Path\nCONFIG = None\ndef data_dir(cfg):\n    return Path(cfg['out'])\ndef model():\n    return Path(CONFIG['model'])\n"
+    main = HEAD + LOAD + ("import importlib.util\nspec = importlib.util.spec_from_file_location('r', ROOT / 'scripts' / 'runner.py')\n"
+                          "module = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(module)\n"
+                          "module.CONFIG = CONFIG\nmodule.data_dir(CONFIG)\n")
+    ctx = replace(ctx, uni=Universe.from_paths(PATHS + [RUNNER]))
+    ctx.seeds = link({FILE: main, RUNNER: runner}, ctx)
+    _, unresolved = rewrite(main, ctx)
+    assert not unresolved
+    out, _ = rewrite(runner, ctx, RUNNER)
+    assert "    return Path(PROJECT_ROOT / cfg['out'])\n" in out
+    assert "    return Path(PROJECT_ROOT / CONFIG['model'])\n" in out
+
+
+def test_function_alias_from_a_module(ctx):
+    common = "from pathlib import Path\ndef verify(cfg):\n    return Path(cfg['model']).exists()\n"
+    main = "from pathlib import Path\nimport json\nimport common\nROOT = Path(__file__).resolve().parents[1]\n" + LOAD + \
+           "check = common.verify\ncheck(CONFIG)\n"
+    ctx = linked(ctx, {MAIN: main, COMMON: common})
+    out, _ = rewrite(common, ctx, COMMON)
+    assert "    return Path(PROJECT_ROOT / cfg['model']).exists()\n" in out

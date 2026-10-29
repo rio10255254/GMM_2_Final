@@ -54,6 +54,7 @@ NEUTRAL = (None, '', 0, False)
 COMPS = (ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)
 SCOPES = (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda) + COMPS
 FUNCS = (ast.FunctionDef, ast.AsyncFunctionDef)
+SELF = ('self', 'cls')
 
 
 def _fname(call):
@@ -242,6 +243,7 @@ class Readers:
         self.queue, self.seen = [], set()
         self.reads, self.escapes, self.pending = [], [], []
         self.outgoing = set()                 # (file, function, slot, data, pattern, prefix, certain)
+        self.globals_out = set()              # (file, module-level name, data, pattern, prefix, certain)
         self.exports = defaultdict(set)       # module-level name -> {(data, pattern, prefix, certain)}
         self.returned = defaultdict(set)      # module-level function -> {(data, pattern, prefix, certain)}
         self.bound = defaultdict(set)         # binding -> store nodes / calls / 'seed' it was bound through
@@ -301,13 +303,13 @@ class Readers:
                     loads.append(node)
                 else:
                     self.stores[(self.home_store(node), node.id)].append(node)
-            elif isinstance(node, ast.Attribute) and isinstance(node.value, ast.Name) and node.value.id == 'self':
+            elif isinstance(node, ast.Attribute) and isinstance(node.value, ast.Name) and node.value.id in SELF:
                 (self.attr_uses if isinstance(node.ctx, ast.Load) else self.attr_stores)[(self.class_of(node), node.attr)].append(node)
             elif isinstance(node, ast.Call):
                 fn = node.func
                 if isinstance(fn, ast.Name):
                     self.calls[fn.id].append(node)
-                elif isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name) and fn.value.id == 'self':
+                elif isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name) and fn.value.id in SELF:
                     self.calls[fn.attr].append(node)
                 if isinstance(fn, ast.Attribute) and fn.attr in ('insert', 'append') and \
                         isinstance(fn.value, ast.Attribute) and fn.value.attr == 'path' and \
@@ -392,8 +394,44 @@ class Readers:
                             f = self.module_file(a.name, 0)
                             if f:
                                 out[a.asname or a.name] = (f, None)
+            assigns = [n for n in ast.walk(self.job.tree) if isinstance(n, ast.Assign) and len(n.targets) == 1
+                       and isinstance(n.targets[0], ast.Name)]
+            for node in assigns:                       # a module loaded from its file path
+                f = self.loaded_module(node.value)
+                if f:
+                    out[node.targets[0].id] = (f, None)
+            for node in assigns:                       # check = common.verify
+                v = node.value
+                if isinstance(v, ast.Attribute) and isinstance(v.value, ast.Name) and v.value.id in out and \
+                        out[v.value.id][1] is None:
+                    out.setdefault(node.targets[0].id, (out[v.value.id][0], v.attr))
             self._imports = out
         return self._imports
+
+    def loaded_module(self, value):
+        """The project file a call loads as a module: importlib.util.module_from_spec(spec) for a
+        spec_from_file_location(name, PATH), a helper of this module that does that with its first
+        argument, or importlib.import_module('name')."""
+        if not isinstance(value, ast.Call):
+            return None
+        name = _fname(value)
+        path = None
+        if name == 'module_from_spec' and value.args and isinstance(value.args[0], ast.Name):
+            for n in ast.walk(self.job.tree):
+                if isinstance(n, ast.Assign) and any(isinstance(t, ast.Name) and t.id == value.args[0].id for t in n.targets) \
+                        and isinstance(n.value, ast.Call) and _fname(n.value) == 'spec_from_file_location' and len(n.value.args) > 1:
+                    path = n.value.args[1]
+        elif name == 'import_module' and value.args and _const_key(value.args[0])[0]:
+            return self.module_file(value.args[0].value, 0)
+        elif name in self.defs and value.args and any(isinstance(c, ast.Call) and _fname(c) == 'spec_from_file_location'
+                                                       for d in self.defs[name] for c in ast.walk(d)):
+            path = value.args[0]
+        if path is None:
+            return None
+        v = self.job.ev(path)
+        if v is None or v.dyn or not v.rel.endswith('.py') or not self.ctx.uni.exists(v.rel):
+            return None
+        return v.rel
 
     def callee_elsewhere(self, call):
         """(file, function) when the call goes to a function of another project module."""
@@ -568,8 +606,20 @@ class Readers:
                 ok, kv = _const_key(k) if k is not None else (False, None)
                 if ok:
                     self.push(p, name, pattern, (kv,) + prefix, via, certain)
+                elif k is None:
+                    self.push(p, *args)                        # {**row, ...}: row's own keys
                 else:
-                    escape('a dict with computed keys' if k is not None else '**')
+                    escape('a dict with computed keys')
+            return
+        if isinstance(p, ast.Starred) and isinstance(self.parent.get(p), (ast.List, ast.Tuple, ast.Set)):
+            self.push(self.parent.get(p), *args)               # [a, *rows]: rows' own entries
+            return
+        if isinstance(p, ast.AugAssign) and p.value is node and isinstance(p.op, ast.Add):
+            if isinstance(p.target, ast.Name):                 # acc += rows: what acc holds from here on
+                for u, k in self.uses_of_store(p.target):
+                    self.push(u, name, pattern, prefix, via | {k}, certain)
+            else:
+                self.container(p.target, (), args, escape)
             return
         if isinstance(p, (ast.List, ast.Tuple, ast.Set)) and node in p.elts:
             q = self.parent.get(p)
@@ -662,7 +712,7 @@ class Readers:
             return
         if fn is not None and (kw is not None or node in call.args) and callee in self.defs and \
                 (isinstance(fn, ast.Name) or (isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name)
-                                              and fn.value.id == 'self')):
+                                              and fn.value.id in SELF)):
             slot = kw if kw is not None else call.args.index(node)
             if kw is not None or not any(isinstance(x, ast.Starred) for x in call.args[:slot + 1]):
                 keys = [k for d in self.defs[callee]
@@ -744,13 +794,17 @@ class Readers:
         elif callee in ('append', 'add', 'insert') and isinstance(fn, ast.Attribute) and \
                 (callee != 'insert' or (len(call.args) == 2 and call.args[1] is node)):
             self.container(fn.value, (STAR,), args, escape)
+        elif callee == 'setdefault' and isinstance(fn, ast.Attribute) and len(call.args) == 2 and call.args[1] is node:
+            self.container(fn.value, (STAR,), args, escape)
+        elif callee == 'update' and isinstance(fn, ast.Attribute) and first:
+            self.container(fn.value, (), args, escape)
         elif callee == 'extend' and isinstance(fn, ast.Attribute) and first:
             self.container(fn.value, (), args, escape)
         elif callee in HARMLESS or (callee in WRITERS and isinstance(fn, ast.Attribute) and
-                                   not (isinstance(fn.value, ast.Name) and fn.value.id == 'self')):
+                                   not (isinstance(fn.value, ast.Name) and fn.value.id in SELF)):
             pass
         elif callee in self.defs and (isinstance(fn, ast.Name) or
-                                      (isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name) and fn.value.id == 'self')):
+                                      (isinstance(fn, ast.Attribute) and isinstance(fn.value, ast.Name) and fn.value.id in SELF)):
             for d in self.defs[callee]:
                 slot = kw if kw is not None else call.args.index(node)
                 if kw is None and any(isinstance(x, ast.Starred) for x in call.args[:slot + 1]):
@@ -848,11 +902,14 @@ class Readers:
                 self.exports[t.id].add((name, pattern, prefix, certain))
             for u, k in self.uses_of_store(t):
                 self.push(u, name, pattern, prefix, via | {k}, certain)
-        elif isinstance(t, ast.Attribute) and isinstance(t.value, ast.Name) and t.value.id == 'self':
+        elif isinstance(t, ast.Attribute) and isinstance(t.value, ast.Name) and t.value.id in SELF:
             k = ('attr', self.class_of(t), t.attr)
             self.bound[k].add(t)
             for u in self.attr_uses.get(k[1:], []):
                 self.push(u, name, pattern, prefix, via | {k}, certain)
+        elif isinstance(t, ast.Attribute) and isinstance(t.value, ast.Name) and \
+                (self.imports().get(t.value.id) or (None, 'x'))[1] is None and t.value.id in self.imports():
+            self.globals_out.add((self.imports()[t.value.id][0], t.attr, name, pattern, prefix, certain))
         elif isinstance(t, (ast.Tuple, ast.List)) and prefix and prefix[0] == STAR:
             for e in t.elts:
                 self.bind(e, name, pattern, prefix[1:], via, certain)
@@ -878,7 +935,7 @@ class Readers:
                     if u is not c:
                         self.push(u, name, pattern, add + prefix, via | {k}, certain)
                 return
-        elif isinstance(c, ast.Attribute) and isinstance(c.value, ast.Name) and c.value.id == 'self':
+        elif isinstance(c, ast.Attribute) and isinstance(c.value, ast.Name) and c.value.id in SELF:
             k = ('attr', self.class_of(c), c.attr)
             for u in self.attr_uses.get(k[1:], []):
                 if u is not c:
@@ -1104,6 +1161,9 @@ def link(sources, ctx, rounds=12):
             for f, func, slot, *val in r.outgoing:
                 if f in sources:
                     new[f].add(('param', func, slot, *val))
+            for f, var, *val in r.globals_out:
+                if f in sources:
+                    new[f].add(('global', var, *val))
         names = {n: f for f, r in results.items() for n in list(r.exports) + list(r.returned)}
         if names:
             pat = re.compile(r'\b(?:' + '|'.join(map(re.escape, sorted(names))) + r')\b')
