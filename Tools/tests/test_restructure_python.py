@@ -277,3 +277,14 @@ def test_a_decision_can_be_scoped_to_one_file():
     assert "T = os.path.join(PROJECT_ROOT, 'Experiments', 'Training_Runs')\n" in out and unresolved == []
     out, _, unresolved = rewrite_python(src, 'Model/a.py', 'Model/a.py', ctx)
     assert out == src and unresolved == []
+
+
+def test_a_decision_keeps_a_climb_that_cannot_reach_its_old_target():
+    paths = ['Thesis_MOSR_Evidence/LabSystem_MOSR/psf/scripts/run.py', 'Thesis_MOSR_Evidence/a.png']
+    ctx = Context(Universe.from_paths(paths), RuleSet([Rule('Thesis_MOSR_Evidence/LabSystem_MOSR', 'LabSystem_MOSR')]), {}, 'moves')
+    src = "from pathlib import Path\nROOT = Path(__file__).resolve().parents[1]\nT = ROOT.parents[1].resolve()\n"
+    _, _, unresolved = rewrite_python(src, 'Thesis_MOSR_Evidence/LabSystem_MOSR/psf/scripts/run.py', 'LabSystem_MOSR/psf/scripts/run.py', ctx)
+    assert unresolved
+    ctx.decisions = {('Thesis_MOSR_Evidence/LabSystem_MOSR/psf/scripts/run.py', 'ROOT.parents[1].resolve()', 'Thesis_MOSR_Evidence'): None}
+    out, _, unresolved = rewrite_python(src, 'Thesis_MOSR_Evidence/LabSystem_MOSR/psf/scripts/run.py', 'LabSystem_MOSR/psf/scripts/run.py', ctx)
+    assert out == src and unresolved == []

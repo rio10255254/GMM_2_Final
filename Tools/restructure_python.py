@@ -326,13 +326,16 @@ class _PyJob:
         if new is None:
             return
         if tail:
+            decided, kept = self.decision(top, tval.rel)
+            if decided and kept is None:
+                return                     # decisions_phaseN.json: it means a place that is no longer above it
             if outer is not top:
-                self.report(top, f'climbing from {new_b} cannot reach {new_t}')
+                self.report(top, f'climbing from {new_b} cannot reach {new_t}', tval.rel)
                 return
             if isinstance(outer, ast.Call):
                 callee = self.text(outer.func)
                 if '.' not in callee:
-                    self.report(top, f'climbing from {new_b} cannot reach {new_t}')
+                    self.report(top, f'climbing from {new_b} cannot reach {new_t}', tval.rel)
                     return
                 new = f"{callee.rsplit('.', 1)[0]}.join({new}, '{tail}')"
             else:
