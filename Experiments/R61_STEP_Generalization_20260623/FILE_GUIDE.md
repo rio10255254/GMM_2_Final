@@ -1,6 +1,6 @@
 # R61 STEP：v16 在 Step 樣品上的驗證入口
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [模型本體 Lab R61](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>) · [Step 分析資料夾](<../../Step_analysis_20260623/_curated_final_20260624/README_STEP_VALIDATION.md>) · [論文證據入口](<../../Thesis_MOSR_Evidence/Experiments/20260624_STEP_boundary_displacement_cd_validation/README_THESIS_ENTRY.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [模型本體 Lab R61](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>) · [Step 分析資料夾](<../../Analyses/Step_analysis_20260623/_curated_final_20260624/README_STEP_VALIDATION.md>) · [論文證據入口](<../../Thesis_MOSR_Evidence/Experiments/20260624_STEP_boundary_displacement_cd_validation/README_THESIS_ENTRY.md>)
 
 **一句話：** 這個資料夾不是另一份從零訓練的 R61，而是把 Lab R61 在 2026-06-23 的幾次模擬幻影驗證從專案根目錄搬過來集中保存，並當作 v16 在 Step 樣品上驗證的入口。Step 樣品上，v16 讓外部 GMF 的步距更穩（1 µm 步距的標準差從 0.191 降到 0.129 px），100、200 µm 圓的直徑比原圖更接近標稱值約 0.17 µm，量測對門檻的敏感度也從 ±0.33 µm 降到 ±0.03 µm。
 
@@ -56,8 +56,8 @@ Lab R61 的 v16 在模擬幻影上沒過自己的三道門檻，但在 Step 這�
 | 需要什麼 | 在哪裡 |
 |---|---|
 | 模擬幻影門檻摘要與推論程式副本 | 本資料夾 [runs/](<runs>)，已在 GitHub |
-| Step 挑選、外部 GMF、CD 與形狀、來源路徑 | [Step 分析整理版](<../../Step_analysis_20260623/_curated_final_20260624/README_STEP_VALIDATION.md>)，已在 GitHub |
-| 7/2 的 CD 與圓度重新核對 | [CD 重新核對](<../../Step_analysis_20260623/cd_calibration_report_recheck_20260702/STEP_CD_RECHECK_READOUT.md>)、[圓度重新核對](<../../Step_analysis_20260623/cd_calibration_report_recheck_20260702/STEP_ROUNDNESS_RECHECK_READOUT.md>) |
+| Step 挑選、外部 GMF、CD 與形狀、來源路徑 | [Step 分析整理版](<../../Analyses/Step_analysis_20260623/_curated_final_20260624/README_STEP_VALIDATION.md>)，已在 GitHub |
+| 7/2 的 CD 與圓度重新核對 | [CD 重新核對](<../../Analyses/Step_analysis_20260623/cd_calibration_report_recheck_20260702/STEP_CD_RECHECK_READOUT.md>)、[圓度重新核對](<../../Analyses/Step_analysis_20260623/cd_calibration_report_recheck_20260702/STEP_ROUNDNESS_RECHECK_READOUT.md>) |
 | v16 模型與 ONNX | 見 [Lab R61](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>) 的「拿資料與重做」 |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。

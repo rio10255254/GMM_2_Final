@@ -39,7 +39,7 @@ R61_100MG = (
 )
 
 STEP_FRAME = "VisionTop_20260615173931287.bmp"
-STEP_RAW = Path(str(PROJECT_ROOT / 'Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218/center2048_bmp')) / STEP_FRAME
+STEP_RAW = Path(str(PROJECT_ROOT / 'Analyses/Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218/center2048_bmp')) / STEP_FRAME
 STEP_COMBO_PSF_ON = (
     ASSET_ROOT
     / "recon_combo"
@@ -49,7 +49,7 @@ STEP_COMBO_PSF_ON = (
 )
 STEP_COMBO = ASSET_ROOT / "recon_combo_psf_bypass_concentric" / STEP_FRAME
 STEP_R61 = (
-    Path(str(PROJECT_ROOT / 'Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218'))
+    Path(str(PROJECT_ROOT / 'Analyses/Step_analysis_20260623/clean_step_audit_from_original_pos10_20260623_2218'))
     / "clean_reconstruction_outputs"
     / "reconstruct_progress_best_tradeoff_in_center2048_bmp_20260623_200020"
     / "03_v16_clean_pos10_center2048"
@@ -62,8 +62,8 @@ COMBO_CD = ASSET_ROOT / "cd_measurement_100mg_combo_psf_bypass" / "cd_measuremen
 R61_CD = ROOT / "Experiments" / "20260626_training_data_real_slide_assets" / "cd_measurement_100mg_r61_v16" / "cd_measurement_per_feature.csv"
 SEM_CD = ROOT / ".tmp" / "sem_data" / "sem_cd_36_records.csv"
 
-GMF_1UM = Path(str(PROJECT_ROOT / 'Step_analysis_20260623/_curated_final_20260624/02_gmf_validation/1um/analysis_center_square_raw_vs_v16_rep0_20260624_0916/gmf_center_square_1um_steps.csv'))
-GMF_0P5UM = Path(str(PROJECT_ROOT / 'Step_analysis_20260623/_curated_final_20260624/02_gmf_validation/0p5um/analysis_center_square_raw_vs_v16_rep0_20260624_0p5um/gmf_center_square_0p5um_steps.csv'))
+GMF_1UM = Path(str(PROJECT_ROOT / 'Analyses/Step_analysis_20260623/_curated_final_20260624/02_gmf_validation/1um/analysis_center_square_raw_vs_v16_rep0_20260624_0916/gmf_center_square_1um_steps.csv'))
+GMF_0P5UM = Path(str(PROJECT_ROOT / 'Analyses/Step_analysis_20260623/_curated_final_20260624/02_gmf_validation/0p5um/analysis_center_square_raw_vs_v16_rep0_20260624_0p5um/gmf_center_square_0p5um_steps.csv'))
 
 PILLAR = "\u5713\u67f1"
 

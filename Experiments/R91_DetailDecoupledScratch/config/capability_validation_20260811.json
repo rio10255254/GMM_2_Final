@@ -59,9 +59,9 @@
       "interpretation": "Primary shape-accuracy arm. The contour rule, SEM pairing, and translation-only alignment remain fixed."
     },
     "real_motion": {
-      "requested_source": "20260702_100MG_位移_50x/x_1um",
-      "ordered_source": "20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
-      "source_mapping": "20260702_100MG_displacement_analysis/input_mapping.csv",
+      "requested_source": "Shared_Sources/Real_Sample_Captures/20260702_100MG_位移_50x/x_1um",
+      "ordered_source": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
+      "source_mapping": "Analyses/20260702_100MG_displacement_analysis/input_mapping.csv",
       "sequence_config": "Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",
       "locked_steps": "Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/tables/top30_raw_motion_selection.csv",
       "expected_frames_per_stage": 50,

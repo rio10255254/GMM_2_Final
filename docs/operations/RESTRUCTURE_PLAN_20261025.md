@@ -21,12 +21,12 @@
 | 資料夾 | 被誰實際讀取 | 判斷 |
 |---|---|---|
 | `Experiments/`、`Model/`、`PSF_Fitting/`、`Training_Data/`、`Traing_Progress/`、`Thesis_MOSR_Evidence/`、`Shared_Sources/` | 上千個程式、設定、報告 | 不動 |
-| `20260702_100MG_displacement_analysis/`、`20260704_20x_5x_analysis/` | R63～R140 約 30 輪的設定與腳本把它們當實拍序列輸入；論文證據區的審核腳本與測試 | 不動 |
-| `Step_analysis_20260623/` | 論文證據區的製圖腳本、R139／R140 的儲存登記 | 不動 |
-| `AnalysisLab/` | R33～R46 的守門腳本與論文消融分析直接匯入它的程式 | 不動 |
+| `Analyses/20260702_100MG_displacement_analysis/`、`Analyses/20260704_20x_5x_analysis/` | R63～R140 約 30 輪的設定與腳本把它們當實拍序列輸入；論文證據區的審核腳本與測試 | 不動 |
+| `Analyses/Step_analysis_20260623/` | 論文證據區的製圖腳本、R139／R140 的儲存登記 | 不動 |
+| `Analyses/AnalysisLab/` | R33～R46 的守門腳本與論文消融分析直接匯入它的程式 | 不動 |
 | `Deliverables/Company_Packages/` | 874 處絕對路徑、38 個實驗程式 | 不動 |
-| `Reconstruct_Progress/` | `ESTIMATOR_POLICY.json`、`Model/`、多輪設定 | 不動 |
-| `_build153/` | R153 的重試腳本用 `ROOT.parents[1]/'_build153'` 讀取 | 不動 |
+| `Analyses/Reconstruct_Progress/` | `ESTIMATOR_POLICY.json`、`Model/`、多輪設定 | 不動 |
+| `Experiments/R153_MeanExternalBenchmark/_build153/` | R153 的重試腳本用 `ROOT.parents[1]/'_build153'` 讀取 | 不動 |
 | `Deliverables/` | 189 個 markdown 連結，其中 11 份是原始報告 | 不動 |
 
 所以檔案樹的整理重點，放在**導覽層**和**文件層**，不放在搬動研究資料夾。
@@ -112,7 +112,7 @@
 
 ### D. 程式快照合併（需要使用者點頭）
 
-`20260702_100MG_displacement_analysis/`、`20260704_20x_5x_analysis/`、`Reconstruct_Progress/`、`Step_analysis_20260623/` 等處，共有 364 個 `_r61_real_sample_runtime_<時間>/` 資料夾，每個只有一支推論程式快照，但實際只有 **2 種內容**（230 份與 134 份）。
+`Analyses/20260702_100MG_displacement_analysis/`、`Analyses/20260704_20x_5x_analysis/`、`Analyses/Reconstruct_Progress/`、`Analyses/Step_analysis_20260623/` 等處，共有 364 個 `_r61_real_sample_runtime_<時間>/` 資料夾，每個只有一支推論程式快照，但實際只有 **2 種內容**（230 份與 134 份）。
 
 建議改成「2 份程式 + 一張清單」，清單寫明每個舊位置、時間與對應版本。檔案仍在 git 歷史裡。要先確認沒有設定或報告用這些路徑實際讀取程式；這是唯一會讓檔案數變少的動作，所以需要使用者明確同意。
 

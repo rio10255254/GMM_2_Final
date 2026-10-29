@@ -140,21 +140,21 @@ def build_samples() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         {
             "case": "real_5x",
             "family": "real microscope 5x",
-            "source": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp/frame_0025.bmp')),
+            "source": Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp/frame_0025.bmp')),
             "size": 512,
             "fixed_center": True,
         },
         {
             "case": "real_20x",
             "family": "real microscope 20x",
-            "source": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp/frame_0025.bmp')),
+            "source": Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp/frame_0025.bmp')),
             "size": 512,
             "fixed_center": True,
         },
         {
             "case": "real_50x",
             "family": "real microscope 50x",
-            "source": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp/frame_0025.bmp')),
+            "source": Path(str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp/frame_0025.bmp')),
             "size": 512,
             "fixed_center": True,
         },
@@ -591,9 +591,9 @@ def canonical_reference(case: str, model: str) -> Path | None:
     mapping = {
         ("junhua_pitch100", "V42_E120"): Path(str(PROJECT_ROOT / 'Experiments/R111_R109V42ThesisReplacementQualification/external_gmf_v42/pitch1um_y100_v42_e120_tiled/bmp/frame_0050.bmp')),
         ("junhua_pitch100", "R109_E48"): Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/Pitch1um_Y_100_Raw_Even_R109E48/pitch1um_y100_r109_e48/bmp/frame_0050.bmp')),
-        ("real_5x", "R61_v16"): Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp/frame_0025.bmp')),
-        ("real_20x", "R61_v16"): Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp/frame_0025.bmp')),
-        ("real_50x", "R61_v16"): Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp/frame_0025.bmp')),
+        ("real_5x", "R61_v16"): Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp/frame_0025.bmp')),
+        ("real_20x", "R61_v16"): Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp/frame_0025.bmp')),
+        ("real_50x", "R61_v16"): Path(str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp/frame_0025.bmp')),
     }
     return mapping.get((case, model))
 
@@ -844,8 +844,8 @@ def main() -> int:
 
         # One exact-size R61 replay separates loader correctness from its known
         # spatial-context sensitivity (GroupNorm uses the whole inference area).
-        r61_full_source = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp/frame_0025.bmp'))
-        r61_full_reference = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp/frame_0025.bmp'))
+        r61_full_source = Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp/frame_0025.bmp'))
+        r61_full_reference = Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp/frame_0025.bmp'))
         r61_full_raw = read_gray(r61_full_source)
         r61_full_tensor = to_tensor(r61_full_raw, device)
         with temporary_scalar(r61.physics_layer.alpha, 0.0):

@@ -60,8 +60,8 @@
     },
     {
       "path": "Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/training_data/manifest.json",
-      "bytes": 21240956,
-      "sha256": "eecc891e55e474ae0e6fef1b0eb3be4e92408572c4f6be655e47bce1982fa202",
+      "bytes": 21241109,
+      "sha256": "479efcf002ec2d00dec1d35953aa4ed4bdfea5d45a17284ca703d8196a870e3d",
       "role": "unchanged_original_V42_history_or_camera_source"
     },
     {
@@ -95,13 +95,13 @@
       "role": "unchanged_original_V42_history_or_camera_source"
     },
     {
-      "path": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+      "path": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
       "bytes": 3146806,
       "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
       "role": "unchanged_original_V42_history_or_camera_source"
     },
     {
-      "path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "path": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
       "bytes": 3146806,
       "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
       "role": "unchanged_original_V42_history_or_camera_source"
@@ -128,7 +128,7 @@
   "inputs": [
     {
       "id": "20x",
-      "source": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+      "source": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
       "crop_xywh": [
         768,
         512,
@@ -138,7 +138,7 @@
     },
     {
       "id": "50x",
-      "source": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "source": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
       "crop_xywh": [
         768,
         512,

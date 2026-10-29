@@ -95,7 +95,7 @@ CANONICAL_INFERENCE_SCRIPTS = [
     "Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
     "Model/GeoEdgeAlignSR_v1_Infer_TTA.py",
 ]
-CANONICAL_SEQUENCE_ANALYSIS_SCRIPT = "AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py"
+CANONICAL_SEQUENCE_ANALYSIS_SCRIPT = "Analyses/AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py"
 REQUIRED_SEQUENCE_ANALYSIS_ANGLE_COUNT = 720
 OFFICIAL_STANDARD_HEALTH_COMMAND = "python Tools/project_control_center.py --view health --health-level standard"
 

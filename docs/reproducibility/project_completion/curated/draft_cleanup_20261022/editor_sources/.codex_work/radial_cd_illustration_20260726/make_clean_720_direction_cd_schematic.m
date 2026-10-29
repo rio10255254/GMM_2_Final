@@ -6,7 +6,7 @@ function make_clean_720_direction_cd_schematic()
 % averaging rule on the corresponding Raw image.
 
 annotatedImagePath = 'C:\Users\Rio\AppData\Local\Temp\codex-clipboard-ebcfb69b-f3cf-4756-b66f-7d1e574941fb.png';
-rawImagePath = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
+rawImagePath = fullfile(PROJECT_ROOT, 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
 outputDir = fullfile(PROJECT_ROOT, 'PSF_Fitting/.codex_work/radial_cd_illustration_20260726');
 outputPath = fullfile(outputDir, '720_direction_radial_cd_clean_schematic_50x_P29.png');
 if ~isfolder(outputDir), mkdir(outputDir); end

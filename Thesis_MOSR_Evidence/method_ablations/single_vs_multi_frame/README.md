@@ -91,6 +91,6 @@ Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_N
 1. 從 `Traing_Progress/training_progress_*_NO_SEQ_*/weights/best_tradeoff.pth.tar` 拿到 checkpoint
 2. 跑 external GMF 三尺度 recon(把 `Cropped_Output` 帶 BMP 過模型)
 3. 跑 σ̂+b 分解(直接加到 9 候選的 table 變 10)
-4. 跑 720-angle 分析(用 AnalysisLab/r26/sequence 腳本,加新 candidate dir)
+4. 跑 720-angle 分析(用 Analyses/AnalysisLab/r26/sequence 腳本,加新 candidate dir)
 5. 寫 `reports/ablation_a_verification.md`,跟 COMBO 對比
 6. 更新 `TIER_1_FINAL_VERDICT.md` 的「方法歸因」段

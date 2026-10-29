@@ -65,9 +65,9 @@ def first_images(directory: Path, count: int) -> list[Path]:
 
 def real_manifest() -> dict:
     roots = {
-        "real_5x": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp')),
-        "real_20x": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp')),
-        "real_50x": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')),
+        "real_5x": Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp')),
+        "real_20x": Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp')),
+        "real_50x": Path(str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')),
         "junhua": Path(str(PROJECT_ROOT / 'Shared_Sources/NTU_Originals/Pitch1um_Y_100/Raw')),
     }
     records = []

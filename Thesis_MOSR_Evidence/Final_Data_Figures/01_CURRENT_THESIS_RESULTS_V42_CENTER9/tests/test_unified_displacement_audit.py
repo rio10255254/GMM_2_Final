@@ -30,8 +30,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
 
 CONFIG = PACKAGE / "config" / "sequence_center9_50x20x.json"
-MAPPING_50X = Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/input_mapping.csv'))
-MAPPING_20X = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/input_mapping.csv'))
+MAPPING_50X = Path(str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/input_mapping.csv'))
+MAPPING_20X = Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/input_mapping.csv'))
 
 
 def _mapping(path: Path, group: str) -> pd.DataFrame:

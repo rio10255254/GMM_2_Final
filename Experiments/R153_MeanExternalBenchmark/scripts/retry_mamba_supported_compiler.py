@@ -8,7 +8,7 @@ from study import read,save
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--math-defines',action='store_true');args=parser.parse_args()
-    base=ROOT.parents[1]/'_build153'
+    base=ROOT.parents[1]/'Experiments' / 'R153_MeanExternalBenchmark' / '_build153'
     source=base/'mamba-msvc'
     if not source.exists():shutil.copytree(base/'mamba-1.0.1',source,ignore=shutil.ignore_patterns('build','dist','*.egg-info','__pycache__'))
     vcvars=Path(r'C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\Auxiliary\Build\vcvars64.bat')

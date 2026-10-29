@@ -482,45 +482,45 @@ R39 a030 與 R40 a043 在 α=0.25（75% a030 + 25% a043）的跨輪權重平均�
 >
 > external 0.8px **`0.191`**
 
-📄 Entry: [AnalysisLab/r26/README](AnalysisLab/r26/README.md)
+📄 Entry: [Analyses/AnalysisLab/r26/README](Analyses/AnalysisLab/r26/README.md)
 
 ### 📊 測試重建影像（single-image demo）
 
-![R26 single-image output](AnalysisLab/r26/single_image/recon/output_preview.png)
+![R26 single-image output](Analyses/AnalysisLab/r26/single_image/recon/output_preview.png)
 
-- Input：[`VisionTop_20251029182653732.bmp`](AnalysisLab/r26/single_image/inputs/VisionTop_20251029182653732.bmp) · [preview](AnalysisLab/r26/single_image/inputs/input_preview.png)
-- Output (r26_sm035 best_tradeoff)：[`VisionTop_*.bmp`](AnalysisLab/r26/single_image/recon/reconstruct_progress_r26_sm035_best_tradeoff_in_Demo_Input_20260327_122202/VisionTop_20251029182653732.bmp) · [preview](AnalysisLab/r26/single_image/recon/output_preview.png)
+- Input：[`VisionTop_20251029182653732.bmp`](Analyses/AnalysisLab/r26/single_image/inputs/VisionTop_20251029182653732.bmp) · [preview](Analyses/AnalysisLab/r26/single_image/inputs/input_preview.png)
+- Output (r26_sm035 best_tradeoff)：[`VisionTop_*.bmp`](Analyses/AnalysisLab/r26/single_image/recon/reconstruct_progress_r26_sm035_best_tradeoff_in_Demo_Input_20260327_122202/VisionTop_20251029182653732.bmp) · [preview](Analyses/AnalysisLab/r26/single_image/recon/output_preview.png)
 
 ### 📈 指標圖表（single_image analysis，8 張）
 
-完整報告：[`AnalysisLab/r26/single_image/reports/R26_SingleImage_Analysis_Report.md`](AnalysisLab/r26/single_image/reports/R26_SingleImage_Analysis_Report.md)
+完整報告：[`Analyses/AnalysisLab/r26/single_image/reports/R26_SingleImage_Analysis_Report.md`](Analyses/AnalysisLab/r26/single_image/reports/R26_SingleImage_Analysis_Report.md)
 
-- [01 edge profiles](AnalysisLab/r26/single_image/results/01_edge_profiles.png)
-- [02 circle fit](AnalysisLab/r26/single_image/results/02_circle_fit.png)
-- [03 angular consistency](AnalysisLab/r26/single_image/results/03_angular_consistency.png)
-- [04 frequency spectrum](AnalysisLab/r26/single_image/results/04_frequency_spectrum.png)
-- [05 overview and artifacts](AnalysisLab/r26/single_image/results/05_overview_and_artifacts.png)
-- [06 edge width angular](AnalysisLab/r26/single_image/results/06_edge_width_angular.png)
-- [07 residual harmonics](AnalysisLab/r26/single_image/results/07_residual_harmonics.png)
-- [08 residual hotspot](AnalysisLab/r26/single_image/results/08_residual_hotspot.png)
+- [01 edge profiles](Analyses/AnalysisLab/r26/single_image/results/01_edge_profiles.png)
+- [02 circle fit](Analyses/AnalysisLab/r26/single_image/results/02_circle_fit.png)
+- [03 angular consistency](Analyses/AnalysisLab/r26/single_image/results/03_angular_consistency.png)
+- [04 frequency spectrum](Analyses/AnalysisLab/r26/single_image/results/04_frequency_spectrum.png)
+- [05 overview and artifacts](Analyses/AnalysisLab/r26/single_image/results/05_overview_and_artifacts.png)
+- [06 edge width angular](Analyses/AnalysisLab/r26/single_image/results/06_edge_width_angular.png)
+- [07 residual harmonics](Analyses/AnalysisLab/r26/single_image/results/07_residual_harmonics.png)
+- [08 residual hotspot](Analyses/AnalysisLab/r26/single_image/results/08_residual_hotspot.png)
 
 ### 📈 指標圖表（sequence analysis）
 
-完整報告：[`AnalysisLab/r26/sequence/reports/R26_Sequence_Analysis_Report.md`](AnalysisLab/r26/sequence/reports/R26_Sequence_Analysis_Report.md)
+完整報告：[`Analyses/AnalysisLab/r26/sequence/reports/R26_Sequence_Analysis_Report.md`](Analyses/AnalysisLab/r26/sequence/reports/R26_Sequence_Analysis_Report.md)
 
-- Cross-scale：[08 step std](AnalysisLab/r26/sequence/results/cross_dataset/08_cross_scale_step_std.png) · [09 residual](AnalysisLab/r26/sequence/results/cross_dataset/09_cross_scale_residual_improvement.png) · [10 k2](AnalysisLab/r26/sequence/results/cross_dataset/10_cross_scale_k2_stability.png)
+- Cross-scale：[08 step std](Analyses/AnalysisLab/r26/sequence/results/cross_dataset/08_cross_scale_step_std.png) · [09 residual](Analyses/AnalysisLab/r26/sequence/results/cross_dataset/09_cross_scale_residual_improvement.png) · [10 k2](Analyses/AnalysisLab/r26/sequence/results/cross_dataset/10_cross_scale_k2_stability.png)
 
 ### Per-pitch（21 張）
-- `pitch0p01um_y_40`: [01](AnalysisLab/r26/sequence/results/pitch0p01um_y_40/01_center_trajectory.png) · [02](AnalysisLab/r26/sequence/results/pitch0p01um_y_40/02_step_stability.png) · [03](AnalysisLab/r26/sequence/results/pitch0p01um_y_40/03_residual_std_timeseries.png) · [04](AnalysisLab/r26/sequence/results/pitch0p01um_y_40/04_k2_amplitude_timeseries.png) · [05](AnalysisLab/r26/sequence/results/pitch0p01um_y_40/05_hotspot_persistence.png) · [06](AnalysisLab/r26/sequence/results/pitch0p01um_y_40/06_edge_width_consistency.png) · [07](AnalysisLab/r26/sequence/results/pitch0p01um_y_40/07_center_offset_drift.png)
-- `pitch0p1um_y_60`: [01](AnalysisLab/r26/sequence/results/pitch0p1um_y_60/01_center_trajectory.png) · [02](AnalysisLab/r26/sequence/results/pitch0p1um_y_60/02_step_stability.png) · [03](AnalysisLab/r26/sequence/results/pitch0p1um_y_60/03_residual_std_timeseries.png) · [04](AnalysisLab/r26/sequence/results/pitch0p1um_y_60/04_k2_amplitude_timeseries.png) · [05](AnalysisLab/r26/sequence/results/pitch0p1um_y_60/05_hotspot_persistence.png) · [06](AnalysisLab/r26/sequence/results/pitch0p1um_y_60/06_edge_width_consistency.png) · [07](AnalysisLab/r26/sequence/results/pitch0p1um_y_60/07_center_offset_drift.png)
-- `pitch1um_y_100`: [01](AnalysisLab/r26/sequence/results/pitch1um_y_100/01_center_trajectory.png) · [02](AnalysisLab/r26/sequence/results/pitch1um_y_100/02_step_stability.png) · [03](AnalysisLab/r26/sequence/results/pitch1um_y_100/03_residual_std_timeseries.png) · [04](AnalysisLab/r26/sequence/results/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](AnalysisLab/r26/sequence/results/pitch1um_y_100/05_hotspot_persistence.png) · [06](AnalysisLab/r26/sequence/results/pitch1um_y_100/06_edge_width_consistency.png) · [07](AnalysisLab/r26/sequence/results/pitch1um_y_100/07_center_offset_drift.png)
+- `pitch0p01um_y_40`: [01](Analyses/AnalysisLab/r26/sequence/results/pitch0p01um_y_40/01_center_trajectory.png) · [02](Analyses/AnalysisLab/r26/sequence/results/pitch0p01um_y_40/02_step_stability.png) · [03](Analyses/AnalysisLab/r26/sequence/results/pitch0p01um_y_40/03_residual_std_timeseries.png) · [04](Analyses/AnalysisLab/r26/sequence/results/pitch0p01um_y_40/04_k2_amplitude_timeseries.png) · [05](Analyses/AnalysisLab/r26/sequence/results/pitch0p01um_y_40/05_hotspot_persistence.png) · [06](Analyses/AnalysisLab/r26/sequence/results/pitch0p01um_y_40/06_edge_width_consistency.png) · [07](Analyses/AnalysisLab/r26/sequence/results/pitch0p01um_y_40/07_center_offset_drift.png)
+- `pitch0p1um_y_60`: [01](Analyses/AnalysisLab/r26/sequence/results/pitch0p1um_y_60/01_center_trajectory.png) · [02](Analyses/AnalysisLab/r26/sequence/results/pitch0p1um_y_60/02_step_stability.png) · [03](Analyses/AnalysisLab/r26/sequence/results/pitch0p1um_y_60/03_residual_std_timeseries.png) · [04](Analyses/AnalysisLab/r26/sequence/results/pitch0p1um_y_60/04_k2_amplitude_timeseries.png) · [05](Analyses/AnalysisLab/r26/sequence/results/pitch0p1um_y_60/05_hotspot_persistence.png) · [06](Analyses/AnalysisLab/r26/sequence/results/pitch0p1um_y_60/06_edge_width_consistency.png) · [07](Analyses/AnalysisLab/r26/sequence/results/pitch0p1um_y_60/07_center_offset_drift.png)
+- `pitch1um_y_100`: [01](Analyses/AnalysisLab/r26/sequence/results/pitch1um_y_100/01_center_trajectory.png) · [02](Analyses/AnalysisLab/r26/sequence/results/pitch1um_y_100/02_step_stability.png) · [03](Analyses/AnalysisLab/r26/sequence/results/pitch1um_y_100/03_residual_std_timeseries.png) · [04](Analyses/AnalysisLab/r26/sequence/results/pitch1um_y_100/04_k2_amplitude_timeseries.png) · [05](Analyses/AnalysisLab/r26/sequence/results/pitch1um_y_100/05_hotspot_persistence.png) · [06](Analyses/AnalysisLab/r26/sequence/results/pitch1um_y_100/06_edge_width_consistency.png) · [07](Analyses/AnalysisLab/r26/sequence/results/pitch1um_y_100/07_center_offset_drift.png)
 
 ### 🔍 分析圖（performance benchmark）
 
-- [01 inference latency comparison](AnalysisLab/r26/performance/results/cross_device/01_inference_latency_comparison.png)
-- [02 inference throughput comparison](AnalysisLab/r26/performance/results/cross_device/02_inference_throughput_comparison.png)
-- [03 training throughput comparison](AnalysisLab/r26/performance/results/cross_device/03_training_throughput_comparison.png)
-- [04 gpu memory comparison](AnalysisLab/r26/performance/results/cross_device/04_gpu_memory_comparison.png)
+- [01 inference latency comparison](Analyses/AnalysisLab/r26/performance/results/cross_device/01_inference_latency_comparison.png)
+- [02 inference throughput comparison](Analyses/AnalysisLab/r26/performance/results/cross_device/02_inference_throughput_comparison.png)
+- [03 training throughput comparison](Analyses/AnalysisLab/r26/performance/results/cross_device/03_training_throughput_comparison.png)
+- [04 gpu memory comparison](Analyses/AnalysisLab/r26/performance/results/cross_device/04_gpu_memory_comparison.png)
 
 ---
 
@@ -836,7 +836,7 @@ Same-recipe 對照：old recipe + new PSF → epoch 10/20/40 沒有重現先前�
 8. 底部 `---` 分隔線
 9. 在最上面 TOC 加一行
 
-所有路徑用**相對於本檔目錄（`Experiments/`）的相對路徑**；跨到其他 tracked 目錄（`AnalysisLab/`、`docs/archive/`）時用 `../` 前綴。
+所有路徑用**相對於本檔目錄（`Experiments/`）的相對路徑**；跨到其他 tracked 目錄（`Analyses/AnalysisLab/`、`docs/archive/`）時用 `../` 前綴。
 
 **這份文件不是 mandatory 更新項**（不列入 `CLAUDE.md` 的 5 項強制清單），但**強烈建議**在每輪有視覺輸出時更新——demo / 會議 / PR review 時會非常省時。
 

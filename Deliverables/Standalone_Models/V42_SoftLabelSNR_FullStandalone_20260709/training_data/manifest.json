@@ -70,8 +70,8 @@
     "20260702_100MG/x_1um": {
       "matched_frames_used": 50,
       "patches_written": 250,
-      "raw_dir": "20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
-      "teacher_dir": "20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp",
+      "raw_dir": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
+      "teacher_dir": "Analyses/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_1um/bmp",
       "feature_hint": "mixed_pillar_line_square",
       "magnification_hint": "lab_100mg_sequence",
       "step_hint_um": 1.0
@@ -79,8 +79,8 @@
     "20260702_100MG/x_0p5um": {
       "matched_frames_used": 50,
       "patches_written": 250,
-      "raw_dir": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
-      "teacher_dir": "20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um/bmp",
+      "raw_dir": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
+      "teacher_dir": "Analyses/20260702_100MG_displacement_analysis/r61_v16_psfoff_x_0p5um/bmp",
       "feature_hint": "mixed_pillar_line_square",
       "magnification_hint": "lab_100mg_sequence",
       "step_hint_um": 0.5
@@ -88,8 +88,8 @@
     "20260704_20x_5x/20x_1um": {
       "matched_frames_used": 50,
       "patches_written": 250,
-      "raw_dir": "20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
-      "teacher_dir": "20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp",
+      "raw_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
+      "teacher_dir": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_20x_1um/bmp",
       "feature_hint": "circle_square_line",
       "magnification_hint": "olympus_20x",
       "step_hint_um": 1.0
@@ -97,8 +97,8 @@
     "20260704_20x_5x/20x_0p5um": {
       "matched_frames_used": 50,
       "patches_written": 250,
-      "raw_dir": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
-      "teacher_dir": "20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um/bmp",
+      "raw_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
+      "teacher_dir": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_20x_0p5um/bmp",
       "feature_hint": "circle_square_line",
       "magnification_hint": "olympus_20x",
       "step_hint_um": 0.5
@@ -106,8 +106,8 @@
     "20260704_20x_5x/5x_1um": {
       "matched_frames_used": 50,
       "patches_written": 250,
-      "raw_dir": "20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp",
-      "teacher_dir": "20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp",
+      "raw_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp",
+      "teacher_dir": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_5x_1um/bmp",
       "feature_hint": "circle_square_line_lowmag",
       "magnification_hint": "lowmag_5x",
       "step_hint_um": 1.0
@@ -115,8 +115,8 @@
     "20260704_20x_5x/5x_0p5um": {
       "matched_frames_used": 50,
       "patches_written": 250,
-      "raw_dir": "20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp",
-      "teacher_dir": "20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um/bmp",
+      "raw_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp",
+      "teacher_dir": "Analyses/20260704_20x_5x_analysis/r61_v16_psfoff_5x_0p5um/bmp",
       "feature_hint": "circle_square_line_lowmag",
       "magnification_hint": "lowmag_5x",
       "step_hint_um": 0.5
@@ -327528,7 +327528,7 @@
       "configured_roi_count": 2,
       "stability_teacher_pairs": 100,
       "stability_teacher_frames": 200,
-      "teacher_dir": "20260702_100MG_displacement_analysis/r62_v35_aggressive_mtb500_psfoff_x_1um/bmp",
+      "teacher_dir": "Analyses/20260702_100MG_displacement_analysis/r62_v35_aggressive_mtb500_psfoff_x_1um/bmp",
       "teacher_source": "v35",
       "rois": [
         {
@@ -327552,7 +327552,7 @@
       "configured_roi_count": 2,
       "stability_teacher_pairs": 100,
       "stability_teacher_frames": 200,
-      "teacher_dir": "20260702_100MG_displacement_analysis/proc_dog_raw_x_0p5um/bmp",
+      "teacher_dir": "Analyses/20260702_100MG_displacement_analysis/proc_dog_raw_x_0p5um/bmp",
       "teacher_source": "dog_raw",
       "rois": [
         {
@@ -327576,7 +327576,7 @@
       "configured_roi_count": 1,
       "stability_teacher_pairs": 50,
       "stability_teacher_frames": 100,
-      "teacher_dir": "20260704_20x_5x_analysis/proc_morph_raw_20x_1um/bmp",
+      "teacher_dir": "Analyses/20260704_20x_5x_analysis/proc_morph_raw_20x_1um/bmp",
       "teacher_source": "morph_raw",
       "rois": [
         {
@@ -327594,7 +327594,7 @@
       "configured_roi_count": 1,
       "stability_teacher_pairs": 50,
       "stability_teacher_frames": 100,
-      "teacher_dir": "20260704_20x_5x_analysis/proc_unsharp35_v35_20x_0p5um/bmp",
+      "teacher_dir": "Analyses/20260704_20x_5x_analysis/proc_unsharp35_v35_20x_0p5um/bmp",
       "teacher_source": "unsharp_v35",
       "rois": [
         {
@@ -327612,7 +327612,7 @@
       "configured_roi_count": 2,
       "stability_teacher_pairs": 100,
       "stability_teacher_frames": 200,
-      "teacher_dir": "20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_5x_0p5um/bmp",
+      "teacher_dir": "Analyses/20260704_20x_5x_analysis/r62_v31_v28_externaldetail35_psfoff_5x_0p5um/bmp",
       "teacher_source": "v31",
       "rois": [
         {

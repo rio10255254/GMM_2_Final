@@ -101,7 +101,7 @@ GitHub 上的 git 歷史只有約 75 個提交，最早是 2026-04-14。**2026-0
 | 3 | 根目錄約 37 項、角色混雜 | 程式、實驗、證據、日期型分析、7 個封存／底線資料夾、`trial_README.md` 並列 | 看不出結構 |
 | 4 | `Thesis_MOSR_Evidence/` 是雜物間 | `LabSystem_MOSR` 1,717 檔（自帶 Experiments／Traing_Progress／Model_Packages，等於第二個專案）；另有 20 多個子資料夾，部分只是早期設想（如 `visual_vs_metric_decoupling` 1 檔） | 看不出哪些是實質證據 |
 | 5 | **路徑高度寫死** | `git grep` 統計：1,109 個程式／設定檔含 `D:\GMM_2_Final`；約 800 個提到 `Traing_Progress`／`PSF_Fitting`／`Training_Data`；514 個提到 `Thesis_MOSR_Evidence`；日期型分析資料夾各有 160–170 個外部引用 | **大規模搬動會同時弄壞程式、報告、還原工具與已發布核對紀錄** |
-| 6 | CI 從 2026-04-18 起每次都紅 | `Validate Governance` 跑 `project_control_center.py --view health --health-level standard`；(a) `AnalysisLab/index.json` 從未被提交（`git log --all` 查無；README、`AnalysisLab/tests/test_analysis_lab_layout.py`、控制中心都要它）；(b) workflow 只裝 pytest，但檢查要 torch、torchmetrics、cv2、pandas、requests、nbformat；(c) 白名單測試有 25 failed + 1 error，全是寫死 `D:\GMM_2_Final` 或只在本機存在的檔案 | GitHub runner 上**不可能變綠**；它實際上是「本機健康檢查」 |
+| 6 | CI 從 2026-04-18 起每次都紅 | `Validate Governance` 跑 `project_control_center.py --view health --health-level standard`；(a) `Analyses/AnalysisLab/index.json` 從未被提交（`git log --all` 查無；README、`Analyses/AnalysisLab/tests/test_analysis_lab_layout.py`、控制中心都要它）；(b) workflow 只裝 pytest，但檢查要 torch、torchmetrics、cv2、pandas、requests、nbformat；(c) 白名單測試有 25 failed + 1 error，全是寫死 `D:\GMM_2_Final` 或只在本機存在的檔案 | GitHub runner 上**不可能變綠**；它實際上是「本機健康檢查」 |
 | 7 | 3 月策略史有控制字元 | `docs/history/PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md` 有 20 個控制字元（13 個 NUL、`\x08`、`\x1b`），grep 把它當二進位。成因是 PowerShell 雙引號字串吃掉反引號：`` `0 ``→NUL、`` `b ``→退格、`` `e ``→ESC。反推可還原，例如 `` `0.8px` ``、`` `be_soft_band_refine` ``、`` `edge_centroid` ``（`be_soft_band` 是確實存在的候選名）。從 GitHub 第一個提交 `04cd52ba` 起就是壞的 | 使用者最重要的敘事文件之一，閱讀時有缺字 |
 | 8 | GMF、MOSR 沒有統一定義 | GMF 全名在檔案中有 Geometric Matching Feature／Function、Gaussian Mixture Field 三種；MOSR 沒有全名 | 名詞表已照實標註 |
 | 9 | 同批資料不同口徑的數字 | R152 紀錄 RAW 10.200 nm（九顆取中位數），R153 表 RAW 8.781 nm（算術平均） | 已在文件中說明不可跨表比 |
@@ -130,9 +130,9 @@ GitHub 上的 git 歷史只有約 75 個提交，最早是 2026-04-14。**2026-0
 - 把 PR #47 拉下來讀：`git fetch origin claude/vigilant-sagan-7zyae5`。在本機核對第 3 節的推斷。
 
 ### 步驟 1：CI（需使用者決定方向）
-- 在本機找原本的 `AnalysisLab/index.json`（D 槽工作區、H 封存）。找得到就提交原檔；找不到，README 第 89 行與 `test_analysis_lab_layout.py` 定義了它的結構，可依此重建（要標明是重建的）。雲端曾依此暫時重建並驗證 `docs` 模組可通過，但沒有提交。
+- 在本機找原本的 `Analyses/AnalysisLab/index.json`（D 槽工作區、H 封存）。找得到就提交原檔；找不到，README 第 89 行與 `test_analysis_lab_layout.py` 定義了它的結構，可依此重建（要標明是重建的）。雲端曾依此暫時重建並驗證 `docs` 模組可通過，但沒有提交。
 - 讓使用者二選一：
-  - (a) CI 改成 GitHub runner 能跑的部分：`validate_project_structure.py`、`Tools/tests/test_truth_plane_policy.py`、`AnalysisLab/tests`。完整 standard health 留給本機。**建議這個。**
+  - (a) CI 改成 GitHub runner 能跑的部分：`validate_project_structure.py`、`Tools/tests/test_truth_plane_policy.py`、`Analyses/AnalysisLab/tests`。完整 standard health 留給本機。**建議這個。**
   - (b) 維持現狀，當本機健康檢查用。
 
   不要用跳過或停用測試的方式讓 CI 變綠。
@@ -170,7 +170,7 @@ GitHub 上的 git 歷史只有約 75 個提交，最早是 2026-04-14。**2026-0
 
 ```powershell
 python Tools/validate_project_structure.py
-python -m pytest -q Tools/tests/test_truth_plane_policy.py AnalysisLab/tests
+python -m pytest -q Tools/tests/test_truth_plane_policy.py Analyses/AnalysisLab/tests
 python Tools/project_control_center.py --view health --health-level standard
 ```
 

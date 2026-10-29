@@ -49,7 +49,7 @@ d:\GMM_2_Final\
 │           ├── best_tradeoff.pth.tar
 │           ├── best_detail_guarded.pth.tar
 │           └── latest.pth.tar
-└── Reconstruct_Progress/         ← 推論輸出
+└── Analyses/Reconstruct_Progress/         ← 推論輸出
     └── reconstruct_progress_{timestamp}/
 ```
 
@@ -234,7 +234,7 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py
 **自動行為：**
 - 自動搜尋 `../Traing_Progress/` 下最新的 training run 中的 `best_tradeoff.pth.tar`
 - 預設輸入：`../Training_Data/tra_src_ring/`
-- 輸出至：`../Reconstruct_Progress/reconstruct_progress_{timestamp}/`
+- 輸出至：`../Analyses/Reconstruct_Progress/reconstruct_progress_{timestamp}/`
 
 **常用 CLI 參數：**
 
@@ -281,7 +281,7 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py \
 **推論輸出結構：**
 
 ```
-Reconstruct_Progress/reconstruct_progress_{timestamp}/
+Analyses/Reconstruct_Progress/reconstruct_progress_{timestamp}/
 ├── input/     ← 輸入影像的副本
 ├── output/    ← 模型推論結果（BMP/PNG）
 └── diff/      ← 與 GT 的差異圖（若有提供 --gt-dir）
@@ -407,7 +407,7 @@ Related paths outside this folder:
   - fitted PSF artifacts used by the model
 - `Traing_Progress/`
   - training outputs such as checkpoints and logs
-- `Reconstruct_Progress/`
+- `Analyses/Reconstruct_Progress/`
   - inference outputs
 
 > Note: `Traing_Progress/` is intentionally misspelled for historical
@@ -474,7 +474,7 @@ Inference behavior:
 - automatically finds the latest `best_tradeoff.pth.tar` under
   `../Traing_Progress/` unless you override it
 - defaults to `../Training_Data/tra_src_ring/` as input
-- writes outputs under `../Reconstruct_Progress/reconstruct_progress_{timestamp}/`
+- writes outputs under `../Analyses/Reconstruct_Progress/reconstruct_progress_{timestamp}/`
 
 Useful CLI options include:
 

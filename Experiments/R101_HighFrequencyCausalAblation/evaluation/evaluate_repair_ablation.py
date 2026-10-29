@@ -196,7 +196,7 @@ def main() -> int:
         arrays = {name: loaded[name] for name in loaded.files}
     models = load_models(device)
     live_dir = Path(str(PROJECT_ROOT / 'Experiments/R100_CausalOperatorScratch/data/live_validation'))
-    motion_dir = Path(str(PROJECT_ROOT / '20260702_100MG_位移_50x/x_1um'))
+    motion_dir = Path(str(PROJECT_ROOT / 'Shared_Sources/Real_Sample_Captures/20260702_100MG_位移_50x/x_1um'))
     if args.quick_g:
         proxy = {"A": models["A"], "B": models["D"], "C": models["G"]}
         aggregate, rows, _outputs = EVAL.synthetic_evaluation(proxy, arrays, device)

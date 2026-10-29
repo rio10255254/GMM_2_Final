@@ -159,8 +159,8 @@ def run_ring_guard(
     summary_json: Path,
 ) -> dict:
     """Use ring guard internals so candidate is not constrained to known names."""
-    sys.path.insert(0, str(_REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "scripts"))
-    sys.path.insert(0, str(_REPO_ROOT / "AnalysisLab" / "r26" / "sequence" / "configs"))
+    sys.path.insert(0, str(_REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "scripts"))
+    sys.path.insert(0, str(_REPO_ROOT / "Analyses" / "AnalysisLab" / "r26" / "sequence" / "configs"))
     import run_r39_ring_guard as guard
     import run_sequence_analysis as seq
 

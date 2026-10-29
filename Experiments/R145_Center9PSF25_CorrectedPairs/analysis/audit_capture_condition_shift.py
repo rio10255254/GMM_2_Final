@@ -35,7 +35,7 @@ def main() -> None:
     assert len(locations) == 225
     rows = []
     for image_index, group in locations.groupby("image_index"):
-        path = PROJECT / "20260924" / group.image.iloc[0]
+        path = PROJECT / "Shared_Sources" / "PSF_Camera_Acquisitions" / "20260924" / group.image.iloc[0]
         image = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)
         assert image is not None and image.shape == (1544, 2064)
         for row in group.itertuples():

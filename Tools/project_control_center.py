@@ -27,7 +27,7 @@ STORAGE_REGISTRY_PATH = REPO / "docs" / "operations" / "PROJECT_STORAGE_REGISTRY
 STORAGE_LIFECYCLE_PATH = REPO / "docs" / "operations" / "PROJECT_STORAGE_LIFECYCLE_PLAN.md"
 QUARANTINE_INDEX_PATH = REPO / "docs" / "operations" / "PROJECT_QUARANTINE_INDEX.md"
 STORAGE_GUARD_PATH = REPO / "Tools" / "project_storage_guard.py"
-ANALYSIS_INDEX_PATH = REPO / "AnalysisLab" / "index.json"
+ANALYSIS_INDEX_PATH = REPO / "Analyses" / "AnalysisLab" / "index.json"
 EVIDENCE_MAP_PATH = REPO / "docs" / "evidence" / "EVIDENCE_MAP.md"
 WORKFLOW_PATH = REPO / ".github" / "workflows" / "validate-governance.yml"
 PRE_COMMIT_TEMPLATE_PATH = REPO / "Tools" / "hooks" / "pre-commit"
@@ -71,10 +71,10 @@ HEALTH_LEVEL_MODULES = {
     "deep": ["docs", "entrypoints", "python", "matlab"],
 }
 PYTEST_TARGETS = [
-    "AnalysisLab/tests",
-    "AnalysisLab/r26/performance/tests",
-    "AnalysisLab/r26/sequence/tests",
-    "AnalysisLab/r26/single_image/tests",
+    "Analyses/AnalysisLab/tests",
+    "Analyses/AnalysisLab/r26/performance/tests",
+    "Analyses/AnalysisLab/r26/sequence/tests",
+    "Analyses/AnalysisLab/r26/single_image/tests",
     "Experiments/R26NewPSFCheck/package_repro_validation/tests",
     "Experiments/R26NewPSFCheck/pure_psf_control/tests",
     "Experiments/R26NewPSFCheck/root_cause_centering/tests",
@@ -121,7 +121,7 @@ ENTRYPOINT_SPECS = [
         "id": "analysis_hub",
         "label": "analysis hub",
         "role": "analysis entry",
-        "path": REPO / "AnalysisLab" / "README.md",
+        "path": REPO / "Analyses" / "AnalysisLab" / "README.md",
         "help_command": None,
     },
     {

@@ -44,7 +44,7 @@ GeoEdge_R26_Handoff/
 │           ├── best_tradeoff.pth.tar
 │           ├── best_detail_guarded.pth.tar
 │           └── latest.pth.tar
-└── Reconstruct_Progress/         ← 推論結果
+└── Analyses/Reconstruct_Progress/         ← 推論結果
     └── reconstruct_progress_{timestamp}/
 ```
 
@@ -240,7 +240,7 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py \
 **推論結果結構：**
 
 ```
-Reconstruct_Progress/reconstruct_progress_{timestamp}/
+Analyses/Reconstruct_Progress/reconstruct_progress_{timestamp}/
 ├── input/     ← 輸入影像的副本
 ├── output/    ← 模型推論結果（BMP/PNG）
 └── diff/      ← 與 GT 的差異圖（若有提供 --gt-dir）

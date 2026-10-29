@@ -41,22 +41,22 @@ ANCHOR_TEACHER_ROLE = "target_real_anchor_blend10_teacher_pair"
 
 DEFAULT_ANCHOR_TEACHER_DIRS: dict[tuple[str, str], Path] = {
     ("20260702_100MG", "x_1um"): Path(
-        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r62_v7_anchor_blend10_x_1um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/r62_v7_anchor_blend10_x_1um/bmp')
     ),
     ("20260702_100MG", "x_0p5um"): Path(
-        str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/r62_v7_anchor_blend10_x_0p5um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/r62_v7_anchor_blend10_x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "20x_1um"): Path(
-        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v7_anchor_blend10_20x_1um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r62_v7_anchor_blend10_20x_1um/bmp')
     ),
     ("20260704_20x_5x", "20x_0p5um"): Path(
-        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v7_anchor_blend10_20x_0p5um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r62_v7_anchor_blend10_20x_0p5um/bmp')
     ),
     ("20260704_20x_5x", "5x_1um"): Path(
-        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v7_anchor_blend10_5x_1um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r62_v7_anchor_blend10_5x_1um/bmp')
     ),
     ("20260704_20x_5x", "5x_0p5um"): Path(
-        str(PROJECT_ROOT / '20260704_20x_5x_analysis/r62_v7_anchor_blend10_5x_0p5um/bmp')
+        str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/r62_v7_anchor_blend10_5x_0p5um/bmp')
     ),
 }
 

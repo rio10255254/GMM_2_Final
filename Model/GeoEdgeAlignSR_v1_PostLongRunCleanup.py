@@ -206,7 +206,7 @@ def main() -> int:
             moved["root_legacy_runs"].append(str(dst))
 
     # 5) Move legacy reconstruction root into archive.
-    legacy_reconstruct = PROJECT_ROOT / "Reconstruct_Progress"
+    legacy_reconstruct = PROJECT_ROOT / "Analyses" / "Reconstruct_Progress"
     if legacy_reconstruct.exists():
         dst = ORG_ROOT / "archive" / "legacy_root" / "Reconstruct_Progress"
         if _safe_move(legacy_reconstruct, dst):

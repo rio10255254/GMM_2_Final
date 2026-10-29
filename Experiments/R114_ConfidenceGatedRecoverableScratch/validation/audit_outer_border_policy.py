@@ -18,7 +18,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 CHECKPOINT = ROOT / "runs" / "r114_geometry_probe_scratch_20260830" / "weights" / "epoch_020.pth"
-SOURCE = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp/frame_0000.bmp'))
+SOURCE = Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/raw_inputs/5x_1um/bmp/frame_0000.bmp'))
 OUTPUT = ROOT / "results" / "tile_boundary_policy"
 
 

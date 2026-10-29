@@ -40,11 +40,11 @@ Key result:
 
 | item | what it is | status | path |
 |---|---|---|---|
-| v14 real reconstruction case | The 11 reconstructed 20260603 frames for v14 | use as predecessor | `Reconstruct_Progress/20260603_external_gmf_prepare/23_r61_motion_texture_v11base_full_e8_best` |
-| v14 real preview | Raw versus v14 visual preview | inspect if needed | `Reconstruct_Progress/20260603_external_gmf_prepare/23_r61_motion_texture_v11base_full_e8_best/preview_raw_vs_v14.png` |
-| Real motion JSON | Main local-motion summary including v14 | use | `Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.json` |
-| Real motion CSV | Row-level local-motion table | use for detailed checks | `Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.csv` |
-| Real motion readable table | Human-readable summary table | use for quick review | `Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.md` |
+| v14 real reconstruction case | The 11 reconstructed 20260603 frames for v14 | use as predecessor | `Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/23_r61_motion_texture_v11base_full_e8_best` |
+| v14 real preview | Raw versus v14 visual preview | inspect if needed | `Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/23_r61_motion_texture_v11base_full_e8_best/preview_raw_vs_v14.png` |
+| Real motion JSON | Main local-motion summary including v14 | use | `Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.json` |
+| Real motion CSV | Row-level local-motion table | use for detailed checks | `Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.csv` |
+| Real motion readable table | Human-readable summary table | use for quick review | `Analyses/Reconstruct_Progress/20260603_external_gmf_prepare/local_motion_probe_summary_after_r61_motiontexture_full_e8.md` |
 
 Key result:
 
@@ -58,14 +58,14 @@ Key result:
 | item | what it is | status | path |
 |---|---|---|---|
 | Step source images | The original Step capture folder with 788 BMP files | source of truth | `Step` |
-| Step selection report | Readable report explaining the selected 1 um sequence | use | `Step_analysis_20260623/STEP_1UM_SELECTION_REPORT.md` |
-| Step baseline JSON | Machine-readable Step grouping summary | use | `Step_analysis_20260623/step_baseline_summary.json` |
-| Same-position pairs | Repeat-capture baseline pairs | use | `Step_analysis_20260623/within_position_pairs.csv` |
-| Adjacent 0.1 um pairs | Raw adjacent-position probe | keep | `Step_analysis_20260623/adjacent_0p1um_pairs.csv` |
-| Selected 1 um positions | Positions 0, 10, 20, ..., 390 | use | `Step_analysis_20260623/selected_1um_positions.csv` |
-| Selected 1 um pairs | Two replicate streams for the selected +10-position sequence | use | `Step_analysis_20260623/selected_1um_pairs.csv` |
-| Full-size selected input | 80 selected input images at full 5120 image size | keep, but do not infer full-size without tiling | `Step_analysis_20260623/selected_1um_input/bmp` |
-| Center-crop selected input | 80 selected input images cropped to center 2048 x 2048 | use for current inference | `Step_analysis_20260623/selected_1um_input_center2048/bmp` |
+| Step selection report | Readable report explaining the selected 1 um sequence | use | `Analyses/Step_analysis_20260623/STEP_1UM_SELECTION_REPORT.md` |
+| Step baseline JSON | Machine-readable Step grouping summary | use | `Analyses/Step_analysis_20260623/step_baseline_summary.json` |
+| Same-position pairs | Repeat-capture baseline pairs | use | `Analyses/Step_analysis_20260623/within_position_pairs.csv` |
+| Adjacent 0.1 um pairs | Raw adjacent-position probe | keep | `Analyses/Step_analysis_20260623/adjacent_0p1um_pairs.csv` |
+| Selected 1 um positions | Positions 0, 10, 20, ..., 390 | use | `Analyses/Step_analysis_20260623/selected_1um_positions.csv` |
+| Selected 1 um pairs | Two replicate streams for the selected +10-position sequence | use | `Analyses/Step_analysis_20260623/selected_1um_pairs.csv` |
+| Full-size selected input | 80 selected input images at full 5120 image size | keep, but do not infer full-size without tiling | `Analyses/Step_analysis_20260623/selected_1um_input/bmp` |
+| Center-crop selected input | 80 selected input images cropped to center 2048 x 2048 | use for current inference | `Analyses/Step_analysis_20260623/selected_1um_input_center2048/bmp` |
 
 Key result:
 
@@ -77,13 +77,13 @@ Key result:
 
 | item | what it is | status | path |
 |---|---|---|---|
-| R39 center-crop Step output | 80-frame PSF-off R39 Step reconstruction | use as strong reference | `Step_analysis_20260623/r61_step_1um_center2048_recon_package/01_r39_a970_step_1um_center2048/bmp` |
-| v14 center-crop Step output | 80-frame PSF-off v14 Step reconstruction | use as predecessor | `Step_analysis_20260623/r61_step_1um_center2048_recon_package/02_v14_motion_texture_step_1um_center2048/bmp` |
-| Raw/R39/v14 Step summary | Combined readable Step motion table | use | `Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_SUMMARY.md` |
-| Raw/R39/v14 Step JSON | Combined machine-readable Step motion summary | use | `Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_summary.json` |
-| Raw/R39/v14 path list | The exact folders passed to the Step motion-probe script | use for reruns | `Step_analysis_20260623/step_center2048_raw_r39_v14_paths.tsv` |
-| Raw/R39/v14 preview | Visual preview comparing raw, R39, and v14 on two Step positions | inspect | `Step_analysis_20260623/step_center2048_raw_r39_v14_preview.png` |
-| v14 triple gate | Combined boundary, 20260603, and Step verdict for v14 | use as baseline verdict | `Step_analysis_20260623/triple_gate_v14_boundary_real_step_vs_raw_r39.json` |
+| R39 center-crop Step output | 80-frame PSF-off R39 Step reconstruction | use as strong reference | `Analyses/Step_analysis_20260623/r61_step_1um_center2048_recon_package/01_r39_a970_step_1um_center2048/bmp` |
+| v14 center-crop Step output | 80-frame PSF-off v14 Step reconstruction | use as predecessor | `Analyses/Step_analysis_20260623/r61_step_1um_center2048_recon_package/02_v14_motion_texture_step_1um_center2048/bmp` |
+| Raw/R39/v14 Step summary | Combined readable Step motion table | use | `Analyses/Step_analysis_20260623/STEP_MOTION_PROBE_CENTER2048_RAW_R39_V14_SUMMARY.md` |
+| Raw/R39/v14 Step JSON | Combined machine-readable Step motion summary | use | `Analyses/Step_analysis_20260623/step_motion_probe_center2048_raw_r39_v14_summary.json` |
+| Raw/R39/v14 path list | The exact folders passed to the Step motion-probe script | use for reruns | `Analyses/Step_analysis_20260623/step_center2048_raw_r39_v14_paths.tsv` |
+| Raw/R39/v14 preview | Visual preview comparing raw, R39, and v14 on two Step positions | inspect | `Analyses/Step_analysis_20260623/step_center2048_raw_r39_v14_preview.png` |
+| v14 triple gate | Combined boundary, 20260603, and Step verdict for v14 | use as baseline verdict | `Analyses/Step_analysis_20260623/triple_gate_v14_boundary_real_step_vs_raw_r39.json` |
 
 Key result:
 
@@ -106,9 +106,9 @@ Key result:
 
 | item | what it is | status | path |
 |---|---|---|---|
-| Full-size R39 Step attempt | Full 5120 inference attempt that failed with CUDA out-of-memory | diagnostic only | `Step_analysis_20260623/r61_step_1um_recon_package` |
-| v14 stale center-crop launch attempt | Earlier v14 launch attempt that stalled before valid output | diagnostic only | `Step_analysis_20260623/r61_step_1um_center2048_recon_package/_r61_real_sample_runtime_20260623_191526` |
-| Center-crop smoke output | Small smoke-test output used before the full 80-frame run | diagnostic only | `Step_analysis_20260623/r61_step_1um_center2048_smoke_reconstruction_outputs` |
+| Full-size R39 Step attempt | Full 5120 inference attempt that failed with CUDA out-of-memory | diagnostic only | `Analyses/Step_analysis_20260623/r61_step_1um_recon_package` |
+| v14 stale center-crop launch attempt | Earlier v14 launch attempt that stalled before valid output | diagnostic only | `Analyses/Step_analysis_20260623/r61_step_1um_center2048_recon_package/_r61_real_sample_runtime_20260623_191526` |
+| Center-crop smoke output | Small smoke-test output used before the full 80-frame run | diagnostic only | `Analyses/Step_analysis_20260623/r61_step_1um_center2048_smoke_reconstruction_outputs` |
 
 Do not delete these yet, but do not use them as successful results.
 

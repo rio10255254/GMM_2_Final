@@ -21,7 +21,7 @@
     },
     {
       "path": "Experiments/R135_UnifiedModelComparison/config/plan.json",
-      "sha256": "5f2c58222ede2c6813360a5dddb4a2cf759a099eb7262a15a4b93b8f5ae48b78"
+      "sha256": "e3c2774c23cac00dd95a7495c950f9b03735ceaa860c8bf89e5977cc69a4a22c"
     }
   ],
   "checkpoint": {
@@ -40,7 +40,7 @@
       "--device",
       "cuda:0",
       "--input-dir",
-      "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
+      "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
       "--recon-root",
       "Experiments/R135_UnifiedModelComparison/results/V42_old/native_loader",
       "--output-name",

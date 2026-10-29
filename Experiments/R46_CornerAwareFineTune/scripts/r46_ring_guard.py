@@ -4,7 +4,7 @@
 階段:
 1. Ring 重建:對 Pitch1um_Y_100、Pitch0.1um_Y_60、Pitch0.01um_Y_40 三個 pitch
    跑 R46 inference,輸出 layout 對齊 R39 weight sweep 既有結構
-2. 720-angle 分析:呼叫 AnalysisLab/r26/sequence/scripts 算 step_std
+2. 720-angle 分析:呼叫 Analyses/AnalysisLab/r26/sequence/scripts 算 step_std
 
 輸出:
 - results/ring_recon/r46/reconstruct_progress_best_tradeoff_in_Cropped_Output_<timestamp>/

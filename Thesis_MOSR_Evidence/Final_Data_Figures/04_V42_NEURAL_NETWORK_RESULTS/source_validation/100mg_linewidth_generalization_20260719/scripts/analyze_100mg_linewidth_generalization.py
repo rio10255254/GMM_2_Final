@@ -32,7 +32,7 @@ SEQUENCES = {
     "50x_x_0p5um": {
         "nominal_step_um": 0.5,
         "raw": Path(
-            str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp')
+            str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp')
         ),
         "base": BASE_ROOT / "50x_x_0p5um",
         "mosr": MOSR_ROOT / "50x_0p5um",
@@ -40,7 +40,7 @@ SEQUENCES = {
     "50x_x_1um": {
         "nominal_step_um": 1.0,
         "raw": Path(
-            str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')
+            str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')
         ),
         "base": BASE_ROOT / "50x_x_1um",
         "mosr": MOSR_ROOT / "50x_1um",

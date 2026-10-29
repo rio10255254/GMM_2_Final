@@ -21,6 +21,6 @@
 
 其他大量候選、訓練來源與版本歷史不在本輪清理範圍；不能把舊清單的容量當作現在仍可回收的數字。GitHub 既有附件均未刪除。
 
-[52 個歷史目錄及恢復入口](../../20260704_20x_5x_analysis/ARCHIVE_POINTER_20261021.md)。完整實際證據位於 `H:\GMM_2_Final_Archive\reproducibility\20261021_d_cleanup`，包含原拒絕、成功操作、前後量測及切換後檢查，較早的 0 bytes 拒絕狀態另留歷史。
+[52 個歷史目錄及恢復入口](../../Analyses/20260704_20x_5x_analysis/ARCHIVE_POINTER_20261021.md)。完整實際證據位於 `H:\GMM_2_Final_Archive\reproducibility\20261021_d_cleanup`，包含原拒絕、成功操作、前後量測及切換後檢查，較早的 0 bytes 拒絕狀態另留歷史。
 
 排查使用 [OpenAI 官方規則檢查說明](https://learn.chatgpt.com/docs/agent-configuration/rules)；唯讀規則檢查沒有執行被測指令，本機沒有命中的禁止規則，不能用其結果代表所有內建判斷。

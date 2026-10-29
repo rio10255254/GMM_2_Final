@@ -24,12 +24,12 @@ REPORT_DIR = Path(
 DATASETS = [
     {
         "name": "20260702_100MG",
-        "analysis_root": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis')),
+        "analysis_root": Path(str(PROJECT_ROOT / 'Analyses' / '20260702_100MG_displacement_analysis')),
         "groups": ["x_1um", "x_0p5um"],
     },
     {
         "name": "20260704_20x_5x",
-        "analysis_root": Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis')),
+        "analysis_root": Path(str(PROJECT_ROOT / 'Analyses' / '20260704_20x_5x_analysis')),
         "groups": ["20x_1um", "20x_0p5um", "5x_1um", "5x_0p5um"],
     },
 ]

@@ -31,7 +31,7 @@ STATIC_INPUTS = {
         str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/20260618_100MG/Image__2026-06-18__17-10-31.bmp')
     ),
     "static_20x_frame49": Path(
-        str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp/frame_0049.bmp')
+        str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp/frame_0049.bmp')
     ),
 }
 

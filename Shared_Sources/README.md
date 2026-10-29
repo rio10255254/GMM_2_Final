@@ -14,7 +14,8 @@
 | 公司圓環位移序列 | 2025-10-29六組序列原拍，另有裁切輸入 | [NTU原拍與裁切](NTU_Originals/README.md) |
 | 0615三輪PSF取像 | 三輪各242張，共726張原拍；同位置兩張及原擬合使用方式有記錄 | [三輪原拍、處理輸入與恢復方法](PSF_Camera_Acquisitions/README.md) |
 | Lab 25位置校正 | 原25張，實拍日2026-06-05；舊路徑名稱20250605保留為歷史身分 | [原校正補件及按用途取得](../docs/reproducibility/priority_sources_20261022/README.md) |
-| Step、多倍率及其他實拍 | 既有來源與保存理由各有身分，避免和模型輸出混用 | [原來源與影像用途](../docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md) |
+| Step、多倍率及其他實拍 | 既有來源與保存理由各有身分，避免和模型輸出混用 | [原來源與影像用途](../docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)；Step、100MG 50×、20×、5× 的原拍與恢復位置見 [實拍原拍](Real_Sample_Captures/README.md) |
+| 2026-09-24中央九點PSF | 25張原拍加拍攝紀錄 | [原拍與取回](PSF_Camera_Acquisitions/20260924/README.md) |
 
 ## 量測、人工參照與固定比較輸入
 

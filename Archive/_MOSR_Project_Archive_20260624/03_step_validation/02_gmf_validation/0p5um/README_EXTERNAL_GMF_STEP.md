@@ -2,8 +2,8 @@
 
 This package is prepared for external GMF validation.
 
-- Source audit root: `Step_analysis_20260623/clean_step_audit_from_original_pos5_0p5um_20260623_2352`
-- Source manifest: `Step_analysis_20260623/clean_step_audit_from_original_pos5_0p5um_20260623_2352/selected_0p5um_positions.csv`
+- Source audit root: `Analyses/Step_analysis_20260623/clean_step_audit_from_original_pos5_0p5um_20260623_2352`
+- Source manifest: `Analyses/Step_analysis_20260623/clean_step_audit_from_original_pos5_0p5um_20260623_2352/selected_0p5um_positions.csv`
 - Expected adjacent step: `0.5 um`
 - Camera pixel / objective: `2.5 um / 20x`
 - Object-plane pixel size: `0.125000 um/px`

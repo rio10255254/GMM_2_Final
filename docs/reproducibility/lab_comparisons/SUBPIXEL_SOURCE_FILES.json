@@ -22,14 +22,14 @@
     },
     {
       "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/inputs/input_manifest.json",
-      "bytes": 10537,
-      "sha256": "95d29bd42fd272b1dedf92cc0c03eea67590ce67bcb0f78cfc21bf83dc2f0fa6",
+      "bytes": 10591,
+      "sha256": "c4157ac3036a3f8d04200764b7db5767c8df3d97022caa96f562af96269d2e53",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
       "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/inputs/input_manifest.csv",
-      "bytes": 20265,
-      "sha256": "9a17c2b2306a633db476850be9439863e28d501ce8223481759aeac13d617ca6",
+      "bytes": 21399,
+      "sha256": "30c2eb4b3d54c56142c41ac67eed88fbe1c4eed012c07b5fc6f07158a34a74eb",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
@@ -69,13 +69,13 @@
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "path": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
       "bytes": 3146806,
       "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
       "role": "frozen_original_raw_source_frame"
     },
     {
-      "path": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+      "path": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
       "bytes": 3146806,
       "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
       "role": "frozen_original_raw_source_frame"
@@ -102,37 +102,37 @@
   "case_sources": [
     {
       "case_id": "50x_pillar",
-      "source_project_path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "source_project_path": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
       "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
       "bytes": 3146806
     },
     {
       "case_id": "50x_via",
-      "source_project_path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "source_project_path": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
       "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
       "bytes": 3146806
     },
     {
       "case_id": "50x_vertical_lines",
-      "source_project_path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "source_project_path": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
       "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
       "bytes": 3146806
     },
     {
       "case_id": "50x_horizontal_lines",
-      "source_project_path": "20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
+      "source_project_path": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp",
       "sha256": "064b6be767eb660f803228c52133fb0a211184a5443a67d59eac658c400b0e9b",
       "bytes": 3146806
     },
     {
       "case_id": "20x_pillar",
-      "source_project_path": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+      "source_project_path": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
       "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
       "bytes": 3146806
     },
     {
       "case_id": "20x_via",
-      "source_project_path": "20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
+      "source_project_path": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp/frame_0000.bmp",
       "sha256": "fc57fb321a5004f693b15d57170270d7a52f0195c6a3d04499d411f3d8ff2c74",
       "bytes": 3146806
     }

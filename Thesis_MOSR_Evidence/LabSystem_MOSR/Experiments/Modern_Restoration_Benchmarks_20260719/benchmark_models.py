@@ -46,7 +46,7 @@ MOSR_CHECKPOINT = (
     / "epoch_120.pth.tar"
 )
 FULL_FRAME = Path(
-    str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp')
+    str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp')
 )
 
 

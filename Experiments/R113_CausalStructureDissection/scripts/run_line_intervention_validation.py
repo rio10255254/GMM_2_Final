@@ -37,13 +37,13 @@ def main() -> int:
     module.SEQUENCES = {
         "50x_x_0p5um": {
             "nominal_step_um": 0.5,
-            "raw": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp')),
+            "raw": Path(str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp')),
             "base": FULL / "50x_0p5um",
             "mosr": SMOOTH / "50x_x_0p5um",
         },
         "50x_x_1um": {
             "nominal_step_um": 1.0,
-            "raw": Path(str(PROJECT_ROOT / '20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')),
+            "raw": Path(str(PROJECT_ROOT / 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp')),
             "base": FULL / "50x_1um",
             "mosr": SMOOTH / "50x_x_1um",
         },

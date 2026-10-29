@@ -3,7 +3,7 @@ PROJECT_ROOT = fileparts(fileparts(mfilename('fullpath')));
 
 clear; close all; clc;
 
-sourcePath = fullfile(PROJECT_ROOT, '20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
+sourcePath = fullfile(PROJECT_ROOT, 'Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp/frame_0000.bmp');
 outputDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Slide_Assets/Nine_Pillar_Displacement_Dispersion');
 if ~exist(outputDir, 'dir')
     mkdir(outputDir);

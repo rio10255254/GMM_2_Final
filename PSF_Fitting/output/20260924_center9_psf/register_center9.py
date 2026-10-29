@@ -17,7 +17,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 ROOT = Path(str(PROJECT_ROOT))
-CAPTURE = ROOT / "20260924"
+CAPTURE = ROOT / "Shared_Sources" / "PSF_Camera_Acquisitions" / "20260924"
 OUT = Path(__file__).resolve().parent
 REFERENCE_JSON = (
     ROOT / "PSF_Fitting" / "output" / "pillar_via_junction_psf_20260713"

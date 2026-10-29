@@ -92,7 +92,7 @@ def main():
     print(f"  2. Add candidate to sigma_b decompose script:")
     print(f"     Thesis_MOSR_Evidence/error_type_transformation/sigma_hat_decomposition/scripts/decompose_sigma_b.py")
     print(f"  3. Run 720-angle analysis on recon:")
-    print(f"     AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py")
+    print(f"     Analyses/AnalysisLab/r26/sequence/scripts/run_sequence_analysis.py")
     print(f"  4. Re-run collector for k=2 / hotspot:")
     print(f"     Thesis_MOSR_Evidence/error_type_transformation/k_mode_stability/scripts/collect_k2_hotspot.py")
     print(f"  5. Write verification report comparing ablation vs COMBO")

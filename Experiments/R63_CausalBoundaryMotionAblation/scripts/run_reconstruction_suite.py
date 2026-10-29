@@ -19,19 +19,19 @@ STATIC_50X_INPUT = REPO_ROOT / "Thesis_MOSR_Evidence" / "20260618_100MG"
 
 REAL_SEQUENCES = {
     "50x_x_0p5um": (
-        REPO_ROOT / "20260702_100MG_displacement_analysis" / "raw_inputs" / "x_0p5um" / "bmp",
+        REPO_ROOT / "Analyses" / "20260702_100MG_displacement_analysis" / "raw_inputs" / "x_0p5um" / "bmp",
         51,
     ),
     "50x_x_1um": (
-        REPO_ROOT / "20260702_100MG_displacement_analysis" / "raw_inputs" / "x_1um" / "bmp",
+        REPO_ROOT / "Analyses" / "20260702_100MG_displacement_analysis" / "raw_inputs" / "x_1um" / "bmp",
         50,
     ),
     "20x_0p5um": (
-        REPO_ROOT / "20260704_20x_5x_analysis" / "raw_inputs" / "20x_0p5um" / "bmp",
+        REPO_ROOT / "Analyses" / "20260704_20x_5x_analysis" / "raw_inputs" / "20x_0p5um" / "bmp",
         50,
     ),
     "20x_1um": (
-        REPO_ROOT / "20260704_20x_5x_analysis" / "raw_inputs" / "20x_1um" / "bmp",
+        REPO_ROOT / "Analyses" / "20260704_20x_5x_analysis" / "raw_inputs" / "20x_1um" / "bmp",
         50,
     ),
 }

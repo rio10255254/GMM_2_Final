@@ -96,7 +96,7 @@ def main() -> int:
         "edge_annulus": (radius >= 35) & (radius < 42),
         "outside": (radius >= 47) & (radius < 51),
     }
-    five_x_path = Path(str(PROJECT_ROOT / '20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0024.bmp'))
+    five_x_path = Path(str(PROJECT_ROOT / 'Analyses/20260704_20x_5x_analysis/raw_inputs/5x_0p5um/bmp/frame_0024.bmp'))
     five_x = read_gray(five_x_path)
     raw_gradient = gradient_magnitude(five_x)
     raw_support = raw_gradient >= float(np.percentile(raw_gradient, 85))
