@@ -256,3 +256,24 @@ def test_multiline_fstring_template_paths_become_relative_text(ctx_location):
     src = "DOC = f'''# {name}\nSource: D:/GMM_2_Final/Model/w.pth\n'''\n"
     out, _, unresolved = rewrite_python(src, 'Tools/x.py', 'Tools/x.py', ctx_location)
     assert out == "DOC = f'''# {name}\nSource: Model/w.pth\n'''\n" and unresolved == []
+
+
+def test_a_hint_gives_an_expression_its_path():
+    paths = ['Model/auto.py', 'Traing_Progress/organized_20260313/round18/selected/seed.json']
+    ctx = Context(Universe.from_paths(paths), RuleSet([Rule('Traing_Progress', 'Experiments/Legacy')]), {}, 'moves',
+                  hints={'Model/auto.py': {'train_mod.PROJECT_ROOT': ''}})
+    src = ("from pathlib import Path\nimport train_mod\n"
+           "M = Path(train_mod.PROJECT_ROOT) / 'Traing_Progress' / 'organized_20260313' / 'round18' / 'selected' / 'seed.json'\n")
+    out, _, unresolved = rewrite_python(src, 'Model/auto.py', 'Model/auto.py', ctx)
+    assert "M = Path(train_mod.PROJECT_ROOT) / 'Experiments' / 'Legacy' / 'organized_20260313'" in out and unresolved == []
+
+
+def test_a_decision_can_be_scoped_to_one_file():
+    ctx = Context(Universe.from_paths(PATHS), RULES, {}, 'moves')
+    seg = "os.path.join(PROJECT_ROOT, 'Traing_Progress')"
+    src = f"import os\nPROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\nT = {seg}\n"
+    ctx.decisions = {('Model/train.py', seg, 'Traing_Progress'): 'Experiments/Training_Runs', (seg, 'Traing_Progress'): None}
+    out, _, unresolved = rewrite_python(src, 'Model/train.py', 'Model/train.py', ctx)
+    assert "T = os.path.join(PROJECT_ROOT, 'Experiments', 'Training_Runs')\n" in out and unresolved == []
+    out, _, unresolved = rewrite_python(src, 'Model/a.py', 'Model/a.py', ctx)
+    assert out == src and unresolved == []

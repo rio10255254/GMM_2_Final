@@ -86,7 +86,8 @@ class Phase:
         dec = self.rec / f'decisions_phase{self.n}.json'
         if dec.exists():
             for d in json.loads(dec.read_text(encoding='utf-8')):
-                self.decisions[(d['segment'], d['target_old'])] = d['target_new']
+                key = (d['file'], d['segment'], d['target_old']) if d.get('file') else (d['segment'], d['target_old'])
+                self.decisions[key] = d['target_new']
 
     def universe(self, ref=None, applied='before'):
         a = self.before if applied == 'before' else self.upto
@@ -365,7 +366,11 @@ def do_verify(ph):
     mapped = lambda n: (rules.map(n) if rules else None) or n
     problems += verify.equivalence([e for e in edits if not e.kind.startswith('py:') or e.kind in ('py:string', 'py:comment')],
                                    old_uni, new_uni, rules, ph.external)
-    flat_decisions = {k[1]: v for k, v in ph.decisions.items() if v}
+    # target_old -> target_new for one file: its own decisions over the ones for every file
+    def decided(name):
+        out = {k[1]: v for k, v in ph.decisions.items() if v and len(k) == 2}
+        out.update({k[2]: v for k, v in ph.decisions.items() if v and len(k) == 3 and k[0] == name})
+        return out
     view = DataView({n: d for n, d in data_old.items() if mapped(n) in after},
                     {n: after[mapped(n)] for n in data_old if mapped(n) in after},
                     {n: mapped(n) for n in data_old})
@@ -383,7 +388,7 @@ def do_verify(ph):
         now_reads = read_targets(py_new[new_name], new_name, ctx_new)
         if before is None or now_reads is None:
             continue
-        expect = Counter((d, k, mapped_target(t, rules) if ':' in t else verify._expect(t, rules, flat_decisions)) for d, k, t in before)
+        expect = Counter((d, k, mapped_target(t, rules) if ':' in t else verify._expect(t, rules, decided(old_name))) for d, k, t in before)
         got = Counter(now_reads)
         if expect != got:
             show = lambda c: sorted(f"{d}:{'/'.join(map(str, k))} -> {t}" for d, k, t in c.elements())[:4]
@@ -393,7 +398,7 @@ def do_verify(ph):
         new_name = (rules.map(old_name) if rules else None) or old_name
         if new_name in after:
             new_src = after[new_name].decode('utf-8-sig', errors='replace')
-            problems += verify.python_equivalence(src, new_src, old_name, new_name, ctx_old, ctx_new, rules, flat_decisions)
+            problems += verify.python_equivalence(src, new_src, old_name, new_name, ctx_old, ctx_new, rules, decided(old_name))
             with warnings.catch_warnings():
                 warnings.simplefilter('ignore', SyntaxWarning)
                 try:
