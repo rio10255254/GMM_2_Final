@@ -150,3 +150,14 @@ def test_location_equivalence_accepts_the_bare_root_kept_in_prose():
     e = Edit('Tools/a.py', 'Tools/a.py', 1, '"""--root D:/GMM_2_Final scan D:/GMM_2_Final/Model/a.py"""',
              '"""--root D:/GMM_2_Final scan Model/a.py"""', 'py:string', '', '')
     assert v.equivalence([e], NEW, NEW, None, {}) == []
+
+
+def test_python_equivalence_accepts_a_climb_via_the_common_ancestor():
+    old_src = "from pathlib import Path\nT = Path(__file__).resolve().parents[1]\n"
+    new_src = "from pathlib import Path\nT = (Path(__file__).resolve().parents[1] / 'Thesis_MOSR_Evidence')\n"
+    rules = RuleSet([Rule('Thesis_MOSR_Evidence/LabSystem_MOSR', 'LabSystem_MOSR')])
+    old = Universe.from_paths(['Thesis_MOSR_Evidence/LabSystem_MOSR/run.py', 'Thesis_MOSR_Evidence/a.png'])
+    new = Universe.from_paths(['LabSystem_MOSR/run.py', 'Thesis_MOSR_Evidence/a.png'])
+    ctx_old, ctx_new = Context(old, rules, {}, 'moves'), Context(new, None, {}, 'moves')
+    assert v.python_equivalence(old_src, new_src, 'Thesis_MOSR_Evidence/LabSystem_MOSR/run.py', 'LabSystem_MOSR/run.py',
+                                ctx_old, ctx_new, rules) == []

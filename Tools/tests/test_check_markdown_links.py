@@ -49,3 +49,13 @@ def test_compare_flags_only_new_breaks(tmp_path):
     assert [b.target for b in compare(base, scan(tmp_path), rules)] == ['../AnalysisLab/run.py']
     make(tmp_path, {'docs/a.md': '[run](../Analyses/AnalysisLab/run.py) [old](../Analyses/AnalysisLab/gone.py)\n'})
     assert compare(base, scan(tmp_path), rules) == []
+
+
+def test_compare_knows_a_broken_root_relative_link_whose_target_moved():
+    from check_markdown_links import Broken
+    rules = RuleSet([Rule('Deliverables/R129_x', 'Deliverables/Thesis_Handoffs/R129_x')], [])
+    base = [Broken('Experiments/R1/state/PROJECT_STATE.md', 3, 'Deliverables/R129_x/START_HERE.md',
+                       'Experiments/R1/state/Deliverables/R129_x/START_HERE.md')]
+    now = [Broken('Experiments/R1/state/PROJECT_STATE.md', 3, 'Deliverables/Thesis_Handoffs/R129_x/START_HERE.md',
+                      'Experiments/R1/state/Deliverables/Thesis_Handoffs/R129_x/START_HERE.md')]
+    assert compare(base, now, rules) == []
