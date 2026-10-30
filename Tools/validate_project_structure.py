@@ -9,6 +9,8 @@ Checks:
 5. Inference script copies are in sync (quantization fix)
 6. Legacy governance surfaces exist and stay whitelisted
 7. Truth-plane docs and ESTIMATOR_POLICY schema stay aligned
+Also a reminder (warning): executable code that names a path inside the project folder on a fixed
+drive; programs find the project root from their own location.
 
 Experiments/Legacy (early organized_* batches) and Experiments/Training_Runs (one training_progress_*
 folder per run) are not rounds: each needs only its README and one line in INDEX.md.
@@ -440,6 +442,38 @@ def check_recon_gallery_format():
         )
 
 
+# a path below the project folder written into code; a bare mention of the folder (in a docstring, say) is fine
+HARDCODED_PROJECT_PATH = re.compile(r"[A-Za-z]:(?:\\\\|\\|/)+GMM_2_Final(?:\\\\|\\|/)+[A-Za-z0-9_.\-]", re.I)
+HARDCODED_SCAN_EXT = (".py", ".ps1", ".m")
+# the restructure tools and their tests carry such paths as test data; the restructure record shows old paths
+HARDCODED_SCAN_SKIP = re.compile(r"^(?:Tools/(?:tests/test_)?(?:restructure_[a-z_]+|check_markdown_links)\.py|"
+                                 r"Tools/tests/test_validate_project_structure\.py|docs/operations/TREE_RESTRUCTURE_20261028/)")
+
+
+def _project_files() -> list[str]:
+    if (REPO / ".git").exists():
+        out = subprocess.run(["git", "-c", "core.quotepath=false", "-C", str(REPO), "ls-files", "-z"],
+                             capture_output=True)
+        if out.returncode == 0:
+            return [p for p in out.stdout.decode("utf-8", "replace").split("\0") if p]
+    return [p.relative_to(REPO).as_posix() for p in REPO.rglob("*") if p.is_file()]
+
+
+def check_hardcoded_project_paths():
+    print("=== Check 12: Hard-coded project paths in code ===")
+    for rel in _project_files():
+        if not rel.lower().endswith(HARDCODED_SCAN_EXT) or HARDCODED_SCAN_SKIP.match(rel):
+            continue
+        try:
+            text = (REPO / rel).read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        m = HARDCODED_PROJECT_PATH.search(text)
+        if m:
+            line = text.count("\n", 0, m.start()) + 1
+            warn(f"{rel}:{line} names a path inside {m.group(0)[:-1]}...; derive the project root from the file's location")
+
+
 def check_quick_handoff_length():
     """Enforce PROJECT_STATE.md Quick Handoff region <= 60 interior lines.
 
@@ -494,6 +528,7 @@ def run_validator() -> dict[str, list[str]]:
     check_legacy_runtime_archive_paths()
     check_quick_handoff_length()
     check_recon_gallery_format()
+    check_hardcoded_project_paths()
 
     return {
         "errors": list(ERRORS),

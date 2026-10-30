@@ -322,3 +322,13 @@ def test_missing_legacy_readme_is_reported(tmp_path):
     module = _load_validator_module(tmp_path)
     module.check_experiment_dirs()
     assert any("Experiments/Legacy/README.md" in e for e in module.ERRORS)
+
+
+def test_hardcoded_project_path_warns(tmp_path):
+    drive = "D:"
+    _touch(tmp_path / "Tools/x.py", "P = r'" + drive + "\\GMM_2_Final\\Model'\n")
+    _touch(tmp_path / "Tools/y.py", '"""Run from ' + drive + '/GMM_2_Final or anywhere."""\nfrom pathlib import Path\n')
+    module = _load_validator_module(tmp_path)
+    module.check_hardcoded_project_paths()
+    found = [w for w in module.WARNINGS if "GMM_2_Final" in w]
+    assert len(found) == 1 and "Tools/x.py" in found[0]
