@@ -1,4 +1,4 @@
-"""Upload completed, locally hashed bundles to an authorized private draft release.
+"""Upload completed, locally hashed bundles to an authorized draft release.
 
 Publishing the draft is deliberately a separate action after restore validation.
 Existing assets must match; this tool never replaces an uploaded asset.
@@ -12,6 +12,13 @@ import time
 import zipfile
 
 from research_recovery import digest, write_json
+
+
+def check_visibility(is_private, public_ok):
+    """Release assets of a public repository are public too, so uploading there must be asked for."""
+    if not is_private and not public_ok:
+        raise ValueError('The repository is public, so its release assets are public; pass --public-ok '
+                         'once the data is authorized for public release')
 
 
 def command(arguments):
@@ -48,10 +55,10 @@ def main():
     parser.add_argument('--title', required=True); parser.add_argument('--target', required=True)
     parser.add_argument('--bundle', type=Path, required=True); parser.add_argument('--watch', action='store_true')
     parser.add_argument('--workers', type=int, default=4)
+    parser.add_argument('--public-ok', action='store_true', help='allow a public repository (its assets are public)')
     args = parser.parse_args()
     identity = json.loads(command(['repo', 'view', args.repo, '--json', 'isPrivate']))
-    if not identity['isPrivate']:
-        raise ValueError('This authorized collection is intended for the private repository')
+    check_visibility(identity['isPrivate'], args.public_ok)
     existing = subprocess.run(['gh','release','view',args.tag,'--repo',args.repo], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if existing.returncode:
         command(['release','create',args.tag,'--repo',args.repo,'--draft','--target',args.target,
