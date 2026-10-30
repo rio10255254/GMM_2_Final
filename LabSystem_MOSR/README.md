@@ -4,6 +4,8 @@
 
 2026-10-22研究歷史補註：[Lab校正、資料基礎、R39／R40、R46至62、V41／V42及平行比較](../docs/reproducibility/lineage/LAB_SYSTEM.md)已有串聯入口。下方Current Scope保留建立時的狀態，不表示後來Lab停在R48。資料stage01至33是生成類型，不是33次獨立訓練；現在論文採用仍以PROJECT_STATE.md及R153交接為準。
 
+2026-09-24 新控制程式的效果錄影（三支 MP4）在 [control_program_recordings_20260924](control_program_recordings_20260924/README.md)，影片本身在發布附件。
+
 This area is the isolated MOSR line for the laboratory imaging system.
 
 It is intentionally separated from the original industry-project experiment

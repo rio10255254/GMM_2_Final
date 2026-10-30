@@ -233,3 +233,13 @@
 
 - 人工提示可以給一個運算式（例如 `train_mod.PROJECT_ROOT`）指定路徑，不只限變數名。
 - 人工判斷可以只針對某一個檔，同一個寫法在不同檔可以判成不同去處；往上爬的寫法也能被判斷保留。
+
+### 只在本機的控制程式錄影上傳（2026-10-30）
+
+專案根目錄有三支 2026-09-24 的控制程式效果錄影（MP4，共 124.9 MB），原本只在原電腦上。專案擁有者看過檔名與大小後同意上傳。
+
+- 發布附件 [labsystem-control-recordings-20261028](https://github.com/rio10255254/GMM_2_Final/releases/tag/labsystem-control-recordings-20261028)，在專案裡的位置是 `LabSystem_MOSR/control_program_recordings_20260924/`，資料夾裡只追蹤 README，`.gitignore` 擋住還原回來的 MP4。
+- 打包時把三支的 sha256 與大小寫進選擇清單；上傳後從 Release 重新下載、驗證、還原，三支 sha256 與原檔相同，檔名（含全形破折號）一字不差。README 裡的取回指令照寫法實際跑過。
+- 本機原檔沒有刪。
+
+**repo 是公開的。** 上傳工具原本只准傳到私人 repo，這次被擋下。專案擁有者確認是自己公開的，所有資料（含發布附件）都已授權公開。`publish_research_assets.py`、`publish_research_batch.py` 改成公開 repo 要加 `--public-ok` 才放行：公開 repo 的附件也是公開的，所以仍要明確表示。

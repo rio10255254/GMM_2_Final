@@ -1,4 +1,4 @@
-"""Add a uniquely named, reviewed batch to a private draft research release.
+"""Add a uniquely named, reviewed batch to a draft research release.
 
 Each batch has its own immutable metadata names. A collection-wide manifest and
 publication happen after independent download/restore checks, never here.
@@ -11,7 +11,7 @@ import re
 import shutil
 import subprocess
 
-from publish_research_assets import command,release_state,upload_one
+from publish_research_assets import check_visibility,command,release_state,upload_one
 from research_recovery import digest,write_json
 
 def main():
@@ -20,10 +20,10 @@ def main():
     p.add_argument('--title',required=True);p.add_argument('--target',required=True)
     p.add_argument('--bundle',type=Path,required=True);p.add_argument('--batch',required=True)
     p.add_argument('--workers',type=int,choices=range(1,5),default=2)
+    p.add_argument('--public-ok',action='store_true',help='allow a public repository (its assets are public)')
     a=p.parse_args()
     if not re.fullmatch('[A-Z][A-Z0-9_]{0,39}',a.batch):raise ValueError('Invalid batch metadata prefix')
-    if not json.loads(command(['repo','view',a.repo,'--json','isPrivate']))['isPrivate']:
-        raise ValueError('The authorized research archive is private')
+    check_visibility(json.loads(command(['repo','view',a.repo,'--json','isPrivate']))['isPrivate'],a.public_ok)
     existing=subprocess.run(['gh','release','view',a.tag,'--repo',a.repo],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     if existing.returncode:
         command(['release','create',a.tag,'--repo',a.repo,'--draft','--target',a.target,'--title',a.title,
