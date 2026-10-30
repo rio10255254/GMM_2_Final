@@ -178,3 +178,58 @@
 - 等價檢查改成用舊值當初的讀法（根目錄相對或檔案相對）去讀新值。`docs/reproducibility/` 底下有小寫的 `experiments/`，在 Windows 上會被重新猜成相對於檔案。
 - 殘留檢查遇到 `lab_r46_*` 這類樣式片段，只要它所在的資料夾存在就算數。
 - 殘留檢查裡，被判成「還指著舊位置」的解讀，必須在搬移前真的存在過才算。R53、R56 封存清單裡的路徑，是相對於封存資料夾寫的，從來不是指根目錄的 `Reconstruct_Progress`。
+
+### 第 4 階段：拆開 `Traing_Progress`，LabSystem 回到根目錄（2026-10-30）
+
+**搬了什麼。** 2,141 個檔，規則見 `moves_phase4.json`：
+
+- 根目錄的 `Traing_Progress` 拆成兩處，資料夾名稱都沒改：
+  - 每次訓練一個的 `training_progress_*` 移到 `Experiments/Training_Runs/`。
+  - 其餘（`organized_*` 早期整理批次、`auto_tune_reports` 等）移到 `Experiments/Legacy/`，原本的 README 也跟著過去。
+- `Thesis_MOSR_Evidence/LabSystem_MOSR` 移到根目錄 `LabSystem_MOSR/`。它有自己的校正、資料與模型歷史，不是論文證據的一部分。`LabSystem_MOSR/Traing_Progress` 是 Lab 自己的資料夾，名稱照舊。
+
+**改了什麼。** 1,658 個檔、91,770 處：紀錄 84,924 處、文件 4,247 處、連結 1,001 處、Python 1,573 處、腳本 24 處、notebook 1 處。雜湊 1,335 個變動。
+
+`Model/` 訓練器的預設輸出位置跟著改成 `Experiments/Training_Runs/`。改之前先加了 `Model/tests/test_default_training_output_dir.py`，確認它在舊程式上失敗、改寫後通過。
+
+**人工判斷。**
+
+- `decisions_phase4.json`，594 處。程式裡寫 `PROJECT_ROOT / 'Traing_Progress'` 的地方，工具無法自己知道要接的是哪一半，所以逐處判斷：
+  - 548 處接的是訓練輸出，改到 `Experiments/Training_Runs`。
+  - 6 處接的是早期批次（自動調參與 R32 的 `progress_root`、DiagnosticMatrix、`research_recovery`、驗證器的 `legacy_root` 和它的測試），改到 `Experiments/Legacy`。
+  - 40 處維持原樣：24 處是論文區自己的路徑，4 處是 LabSystem R51–R54 測試裡的暫存資料夾，1 處是封存的垃圾區，1 處是 LabSystem `psf_calibration` 往上爬到論文區的寫法，10 處是不指路徑的字串。
+  - 往上爬那處（`validate_inner_circle_psf_fit.py`）：`ROOT.parents[1]` 原本是論文區，LabSystem 搬到根目錄後剛好變成專案根，原本接的 `LabSystem_MOSR/…` 照樣找得到，所以整支程式該跟搬家前一樣。apply 卻在同檔另兩行爬回 `Thesis_MOSR_Evidence`，`manual_phase4.py` 把它還原，sha256 與搬家前相同。判斷裡加了 `reaches: ""`，寫明這段不改的程式搬家後指到專案根。
+- `reader_hints_phase4.json`，3 處：自動調參與 R32 用 `train_mod.PROJECT_ROOT`、`research_recovery` 用 `root` 當根目錄，工具從別的模組追不到它的值，所以人工告訴它這就是專案根。
+- `manual_phase4_legacy_joins.py`，515 個檔：第一次 `verify` 抓到的錯。推論程式（`Model/` 的 `Infer_v5_SimpleTest`、`Infer_TTA`，以及它們散在各輪快照與交付包裡的副本）用同一個 `TRAINING_PROGRESS_ROOT` 既找 `training_progress_*` 權重，又接 `organized_*` 早期批次；`PostLongRunCleanup` 的 `TP_ROOT` 也一樣。這個根照判斷改到 `Training_Runs` 之後，接 `organized_*` 的地方會指到不存在的 `Experiments/Training_Runs/organized_…`。腳本在根的下一行加 `LEGACY_ROOT`，把那些接法改用它；重跑不會再改。根本身不是專案根的副本（交付包內部的 `Traing_Progress`、`parents[1]` 指到副本上層的舊版）不動。
+- `manual_phase4.py`，4 處只出現在訊息和組字串裡的舊名，工具不會改：R46 的找不到檔訊息、`project_reproducibility_audit` 的兩個邏輯位置、`replay_legacy_multiscale_selection` 和 `replay_shared_model_history` 組出來的路徑。
+
+**README。**
+
+- 新寫：`Experiments/Training_Runs/README.md`。
+- `Experiments/Legacy/README.md`（原 `Traing_Progress/README.md`）補一段拆分說明；`Experiments/INDEX.md` 頂端加兩行指到這兩區。
+- `Thesis_MOSR_Evidence/README.md` 標題改成「論文證據」，註明 LabSystem 的新位置。
+
+**規則與首頁文件。**
+
+- `CLAUDE.md`、`AGENTS.md`：Known quirks 改成新位置；加一條提醒，新程式從自己的位置找專案根，不寫死磁碟路徑。
+- `QUIRKS.md` 第 1 節改寫成這個拼字的歷史；`STARTING_NEW_EXPERIMENT.md`、`LEGACY_ROUNDS_OPERATIONS.md`、`SOURCE_OF_TRUTH_POLICY.md`、`Model/README.md`、`TIMELINE.md` 裡「拼字是歷史，不可改名」這類現在已不成立的句子，改成「原在根目錄 `Traing_Progress`，2026-10-28 移來」。`HANDOFF_DOC_RESTRUCTURE_20261024.md` 是當時的紀錄，原意不改，只加註。
+- `README.md`、`PROJECT_MAP.md`、`PROJECT_ARCHITECTURE.md` 第 5 節換成重整後的根目錄；`README.md` 加「從 GitHub 接手」的三步。`PROJECT_MAP.md` 原本那句「不為了外觀搬動 LabSystem、Model、Traing_Progress」改成搬動時路徑要一起改的說明。
+- `PROJECT_STATE.md`：寫明 GitHub 之後是唯一的家，§4 補上外部 GMF 量測程式、H 槽路徑依賴、本機獨有內容三項尚未清點的缺口。
+
+**驗證器。** `Tools/validate_project_structure.py` 把 `Experiments/Legacy`、`Experiments/Training_Runs` 當成共用區，只要求 README，不套輪次規則。
+
+另外新增的 Check 12（程式裡寫死 `D:\GMM_2_Final\…` 這類路徑時發提醒，目前 0 處）是新功能，不是搬家帶來的改寫，所以放在第 4 階段之後另一個 commit，不算進這一階段的紀錄。
+
+**`.gitignore`。** `Traing_Progress/*` 換成 `Experiments/Legacy/*`、`Experiments/Training_Runs/*`，各自放行 README；原本 90 條 `organized_*` 的條目改到 `Experiments/Legacy/`。根目錄 `Traing_Progress/` 的條目保留，舊副本裡若還有這個資料夾也照樣忽略。
+
+**驗證。** `verify_phase4.txt`：0 個問題。跑了三次才到 0：第一次抓到 `organized_*` 接錯根（上面的 `manual_phase4_legacy_joins.py`）和 5 處單段名稱的誤報；第二次抓到 LabSystem 往上爬那支被改壞、新加的 `LEGACY_ROOT` 被算成新目的地、說明文字裡帶斜線的 `Traing_Progress/` 被當成舊路徑，以及 Check 12 的新程式。真的錯都修了，誤報則修工具並補測試。
+
+這一階段工具補了五處：
+
+- 判斷可以加 `reaches`，寫明不改的程式搬家後指到哪裡（`""` 是專案根），驗證時拿它當預期。
+- 一個根拆成兩個時，新加的那個根（例如 `LEGACY_ROOT`）只是其他新目標的上層，不算新的目的地；接錯根的地方照樣會報成目標遺失。
+
+- 等價檢查遇到只剩一段、沒有斜線的新值（`'Thesis_MOSR_Evidence/LabSystem_MOSR'` 改成 `'LabSystem_MOSR'`），若這個名字在新樹根目錄存在，就把它當目標。原本會誤報成「目標消失」。
+
+- 人工提示可以給一個運算式（例如 `train_mod.PROJECT_ROOT`）指定路徑，不只限變數名。
+- 人工判斷可以只針對某一個檔，同一個寫法在不同檔可以判成不同去處；往上爬的寫法也能被判斷保留。

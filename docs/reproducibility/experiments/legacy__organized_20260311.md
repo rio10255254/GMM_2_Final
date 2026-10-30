@@ -1,6 +1,6 @@
 # legacy/organized_20260311 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260311/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260311/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,29 +22,29 @@ Round11整環缺陷、Round12方法組、Round13固定單模型與Round14 corrid
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Round12 Universal Multiscale Summary](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND12_UNIVERSAL_MULTISCALE_SUMMARY_20260311_023449.md>)
-- [原始報告：ROUND13_UNIVERSAL Checkpoint Audit Summary](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_131800.md>)
-- [原始報告：ROUND13_UNIVERSAL Checkpoint Audit Summary](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_balanced_bridge_20260311_131800.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_clean_anchor_20260311_150225.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_defect_anchor_20260311_150225.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_macro_lock_20260311_131800.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_sign_guard_20260311_131800.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_sign_guard_20260311_150225.md>)
-- [原始報告：ROUND13_UNIVERSAL Multiscale Summary](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_MULTISCALE_SUMMARY_20260311_131800.md>)
-- [原始報告：ROUND13_UNIVERSAL Multiscale Summary](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_MULTISCALE_SUMMARY_20260311_150225.md>)
-- [原始報告：ROUND14_CORRIDOR Checkpoint Audit Summary](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_164239.md>)
-- [原始報告：ROUND14_CORRIDOR Checkpoint Audit Summary](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_174207.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_balanced_20260311_164239.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_balanced_20260311_174207.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_centerlock_20260311_174207.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_defectguard_20260311_164239.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_macrobridge_20260311_164239.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_macrobridge_20260311_174207.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_microbridge_20260311_164239.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_microbridge_20260311_174207.md>)
-- [原始報告：ROUND14_CORRIDOR Multiscale Summary](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_MULTISCALE_SUMMARY_20260311_164239.md>)
-- [原始報告：ROUND14_CORRIDOR Multiscale Summary](<../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_MULTISCALE_SUMMARY_20260311_174207.md>)
+- [原始報告：Round12 Universal Multiscale Summary](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND12_UNIVERSAL_MULTISCALE_SUMMARY_20260311_023449.md>)
+- [原始報告：ROUND13_UNIVERSAL Checkpoint Audit Summary](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_131800.md>)
+- [原始報告：ROUND13_UNIVERSAL Checkpoint Audit Summary](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_balanced_bridge_20260311_131800.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_clean_anchor_20260311_150225.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_defect_anchor_20260311_150225.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_macro_lock_20260311_131800.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_sign_guard_20260311_131800.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_universal_sign_guard_20260311_150225.md>)
+- [原始報告：ROUND13_UNIVERSAL Multiscale Summary](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_MULTISCALE_SUMMARY_20260311_131800.md>)
+- [原始報告：ROUND13_UNIVERSAL Multiscale Summary](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_MULTISCALE_SUMMARY_20260311_150225.md>)
+- [原始報告：ROUND14_CORRIDOR Checkpoint Audit Summary](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_164239.md>)
+- [原始報告：ROUND14_CORRIDOR Checkpoint Audit Summary](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_174207.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_balanced_20260311_164239.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_balanced_20260311_174207.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_centerlock_20260311_174207.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_defectguard_20260311_164239.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_macrobridge_20260311_164239.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_macrobridge_20260311_174207.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_microbridge_20260311_164239.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_corridor_microbridge_20260311_174207.md>)
+- [原始報告：ROUND14_CORRIDOR Multiscale Summary](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_MULTISCALE_SUMMARY_20260311_164239.md>)
+- [原始報告：ROUND14_CORRIDOR Multiscale Summary](<../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_MULTISCALE_SUMMARY_20260311_174207.md>)
 
 ## 重做與驗證範圍
 

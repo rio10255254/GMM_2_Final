@@ -9,7 +9,7 @@ from pathlib import Path
 import shutil
 
 PROJECT = Path(__file__).resolve().parents[1]
-LAB = PROJECT / "Thesis_MOSR_Evidence" / "LabSystem_MOSR"
+LAB = PROJECT / "LabSystem_MOSR"
 PACKAGE = PROJECT / "Deliverables" / "Data_Regenerators" / "R61_TrainingData_Regenerator_20261004"
 DATA = LAB / "Training_Data" / "r61_universal_boundary_generalization" / "hs100mg_basler" / "r61_universal_boundary_train_motion_texture_step_guard_v16"
 GENERATOR = LAB / "Experiments" / "R61_BoundaryGeneralizationUniversal" / "scripts" / "prepare_r61_universal_dataset.py"

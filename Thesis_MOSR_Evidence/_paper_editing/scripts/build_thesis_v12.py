@@ -33,7 +33,7 @@ TARGET = Path(
 )
 
 EVIDENCE = Path(
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation')
+    str(PROJECT_ROOT / 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation')
 )
 VIA_SUMMARY = EVIDENCE / "circular_cd_sharpness" / "circular_feature_method_summary.csv"
 LINE_SUMMARY = EVIDENCE / "line" / "tables" / "line_sharpness_summary.csv"

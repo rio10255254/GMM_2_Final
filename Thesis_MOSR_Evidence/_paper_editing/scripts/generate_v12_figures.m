@@ -2,7 +2,7 @@ function generate_v12_figures
     PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
 % Generate restrained MATLAB-style figures used by thesis v12.
 
-inputCsv = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/line/tables/line_sharpness_summary.csv');
+inputCsv = fullfile(PROJECT_ROOT, 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/line/tables/line_sharpness_summary.csv');
 outputDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/_paper_editing/v12_assets');
 
 if ~isfolder(outputDir)

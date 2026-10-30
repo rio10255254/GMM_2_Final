@@ -13,8 +13,8 @@
 ### Task 1: Add Asymmetric Anchor Data Behavior
 
 **Files:**
-- Modify: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/prepare_r57_geometry_dataset.py`
-- Test: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/tests/test_prepare_r57_geometry_dataset.py`
+- Modify: `LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/prepare_r57_geometry_dataset.py`
+- Test: `LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/tests/test_prepare_r57_geometry_dataset.py`
 
 - [x] **Step 1: Write failing test**
 
@@ -30,7 +30,7 @@ assert pillar_record["source_radius_nm"] > pillar_record["target_radius_nm"]
 Run:
 
 ```powershell
-C:\Users\Rio\anaconda3\python.exe -m pytest Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/tests/test_prepare_r57_geometry_dataset.py -q
+C:\Users\Rio\anaconda3\python.exe -m pytest LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/tests/test_prepare_r57_geometry_dataset.py -q
 ```
 
 Expected: fail because anchor records do not yet expose source/target radius bias.
@@ -60,8 +60,8 @@ Run the same test file.
 ### Task 2: Add R57.1 Launcher Identity
 
 **Files:**
-- Modify: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/launch_r57.py`
-- Test: `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/tests/test_launch_r57.py`
+- Modify: `LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/launch_r57.py`
+- Test: `LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/tests/test_launch_r57.py`
 
 - [x] **Step 1: Write failing test**
 
@@ -85,21 +85,21 @@ Add candidate mapping and set identity fields. Use anchor-focus by default when 
 Run:
 
 ```powershell
-C:\Users\Rio\anaconda3\python.exe -m pytest Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/tests/test_launch_r57.py -q
+C:\Users\Rio\anaconda3\python.exe -m pytest LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/tests/test_launch_r57.py -q
 ```
 
 ### Task 3: Regenerate Data and Run R57.1 Pilot
 
 **Files:**
-- Generated package: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r57_geometry_constrained/hs100mg_basler_anchor/r57_hs100mg_r55_finetune_train`
-- Training outputs under `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress`
+- Generated package: `LabSystem_MOSR/Training_Data/r57_geometry_constrained/hs100mg_basler_anchor/r57_hs100mg_r55_finetune_train`
+- Training outputs under `LabSystem_MOSR/Traing_Progress`
 
 - [x] **Step 1: Regenerate dataset**
 
 Run:
 
 ```powershell
-C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/prepare_r57_geometry_dataset.py
+C:\Users\Rio\anaconda3\python.exe -u LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/prepare_r57_geometry_dataset.py
 ```
 
 - [x] **Step 2: Dry-run launcher**
@@ -107,7 +107,7 @@ C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experim
 Run:
 
 ```powershell
-C:\Users\Rio\anaconda3\python.exe -u Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/launch_r57.py --candidate r57_1_asym_cd_anchor_finetune --num-epoch 4 --batch-size 4 --val-batch-size 2 --num-workers 2 --seq-batch-size 2 --max-train-batches 120 --val-ratio 0.02 --run-suffix asym_cd_anchor_e004_b004_mtb120_lr3e6 --device cuda:0 --lr 3e-6 --dry-run
+C:\Users\Rio\anaconda3\python.exe -u LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/scripts/launch_r57.py --candidate r57_1_asym_cd_anchor_finetune --num-epoch 4 --batch-size 4 --val-batch-size 2 --num-workers 2 --seq-batch-size 2 --max-train-batches 120 --val-ratio 0.02 --run-suffix asym_cd_anchor_e004_b004_mtb120_lr3e6 --device cuda:0 --lr 3e-6 --dry-run
 ```
 
 - [x] **Step 3: Run pilot training**

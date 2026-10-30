@@ -56,7 +56,7 @@ STEP_R61 = (
     / STEP_FRAME
 )
 
-RAW_CD = ROOT / "LabSystem_MOSR" / "Reconstruct_Progress" / "20260618_100MG_user_recon" / "cd_measurement_20260624_corrected_69nm" / "raw_original" / "cd_measurement_per_feature.csv"
+RAW_CD = ROOT / ".." / "LabSystem_MOSR" / "Reconstruct_Progress" / "20260618_100MG_user_recon" / "cd_measurement_20260624_corrected_69nm" / "raw_original" / "cd_measurement_per_feature.csv"
 COMBO_CD_PSF_ON = ASSET_ROOT / "cd_measurement_100mg_combo" / "cd_measurement_per_feature.csv"
 COMBO_CD = ASSET_ROOT / "cd_measurement_100mg_combo_psf_bypass" / "cd_measurement_per_feature.csv"
 R61_CD = ROOT / "Experiments" / "20260626_training_data_real_slide_assets" / "cd_measurement_100mg_r61_v16" / "cd_measurement_per_feature.csv"

@@ -1,6 +1,6 @@
 # legacy/estimator_formula_probe 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260315/estimator_formula_probe/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260315/estimator_formula_probe/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,13 +22,13 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_edge_ctrl.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_light.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_sharp.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_stepmix.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_stepmix_sharp.md>)
-- [原始報告：Estimator Formula Probe Summary](<../../../Traing_Progress/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_PROBE_SUMMARY_20260315_214018.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_edge_ctrl.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_light.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_sharp.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_stepmix.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_AUDIT_soft_band_stepmix_sharp.md>)
+- [原始報告：Estimator Formula Probe Summary](<../../../Experiments/Legacy/organized_20260315/estimator_formula_probe/selected/reports/ESTIMATOR_FORMULA_PROBE_SUMMARY_20260315_214018.md>)
 
 ## 重做與驗證範圍
 

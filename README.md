@@ -50,19 +50,31 @@
 真實照片 → 模型重建 → 獨立量測程式找圓心／輪廓 → 對照平台回授（PI）與電子顯微鏡（SEM）
 ```
 
-## 資料夾角色（常用的）
+## 資料夾角色
 
 | 資料夾 | 內容 |
 |---|---|
-| `Experiments/` | 主專案各輪（R26–R153）：程式、設定、報告、結果 |
+| `Experiments/` | 主專案各輪（R26–R153）：程式、設定、報告、結果。另有兩個共用區：`Legacy/` 是早期訓練、選模與整理批次，`Training_Runs/` 是每次訓練一個的紀錄 |
 | `Model/` | 第一代共用模型與訓練、推論、自動調參 |
 | `PSF_Fitting/` | 光學校正（MATLAB） |
 | `Shared_Sources/` | 不可替代的原始照片與量測入口 |
-| `Thesis_MOSR_Evidence/` | 論文證據與 LabSystem（實驗室顯微鏡）整條研究線 |
-| `Deliverables/` | 可獨立使用的交付包（R152 獨立版等） |
+| `LabSystem_MOSR/` | LabSystem（實驗室顯微鏡）整條研究線，有自己的校正、資料與模型歷史 |
+| `Thesis_MOSR_Evidence/` | 論文證據與跨模型比較 |
+| `Analyses/` | 不屬於單一輪、各輪共用的實拍分析與分析工具 |
+| `Deliverables/` | 可獨立使用的交付包：合作廠商部署包、論文交接、獨立模型、資料重新生成器、交付核對 |
+| `Training_Data/` | 第一代訓練資料的生成程式（影像不進 git） |
+| `Archive/` | 不再日常使用、但保留當時脈絡的舊資料夾 |
 | `Tools/`、`docs/` | 工具與文件 |
 
-其餘日期型分析與封存區見 [專案地圖](docs/navigation/PROJECT_MAP.md)。
+2026-10-28 重整把原本散在根目錄的資料夾按角色收進上面這些家，資料夾內部與名稱沒有改，程式與紀錄裡的路徑同時改到新位置。舊報告和舊 log 仍寫當時的路徑（例如 `Traing_Progress`），新舊對照見[重整操作紀錄](docs/operations/TREE_RESTRUCTURE_20261028.md)。更細的地圖在[專案地圖](docs/navigation/PROJECT_MAP.md)。
+
+## 從 GitHub 接手這個專案
+
+原本那台電腦交出去之後，GitHub 的程式庫加上發布附件（Release）就是這個專案唯一完整的家。接手時大致三步：
+
+1. **取得程式**：照[入門指南](docs/reproducibility/GETTING_STARTED.md)的 `git clone` 指令。程式會從自己所在的位置找專案根目錄，放在哪個資料夾都能跑，不需要 `D:\GMM_2_Final` 這個路徑。
+2. **準備 Python 環境**：以各輪或各交付包自己的 `requirements.txt` 為準；全專案沒有一份通用的環境檔，因為不同輪次用的套件版本不同。MATLAB 光學校正與外部 GMF 量測要另外安裝。
+3. **按需取回大檔案**：原拍、模型與資料放在發布附件裡，不用整套下載。先跑 `python Tools/cloud_locator.py build` 下載各附件的清單，再用 `python Tools/cloud_locator.py where <專案內路徑>` 查某個檔案在哪個附件，然後用 `gh release download` 取回。選哪些附件看[按用途取得](docs/reproducibility/ASSET_GUIDE.md)。
 
 ## 保存狀態
 

@@ -1,6 +1,6 @@
 # R70：用同一套 SEM 完整輪廓檢查 V42
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R69](<../R69_ACMContourSEMValidation/FILE_GUIDE.md>) · [下一輪 R71](<../R71_R61SyntheticMicroscopyDefectGeneralization/FILE_GUIDE.md>) · [V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R69](<../R69_ACMContourSEMValidation/FILE_GUIDE.md>) · [下一輪 R71](<../R71_R61SyntheticMicroscopyDefectGeneralization/FILE_GUIDE.md>) · [V42](<../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
 
 **一句話：** 2026-07-30 把當時論文採用的 V42 第 120 輪，套到跟 R69 完全相同的 12 張曝光、36 顆 SEM 柱、相同輪廓參數與只平移的對齊。V42 也讓 36 顆全部比原圖更接近 SEM，但改善幅度不到 R61 v16 的一半（0.523% 對 0.441% 柱距），而且從曝光 20 起就失去改善；不過在最暗的兩張，V42 沒有像 R61 那樣把輪廓急遽擴大。
 

@@ -71,12 +71,12 @@ def external_output(root: Path, output: Path) -> Path:
 
 def experiment_roots(root: Path) -> list[str]:
     result = []
-    for rel in ['Experiments', 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments']:
+    for rel in ['Experiments', 'LabSystem_MOSR/Experiments']:
         base = root / rel
         if base.exists():
             result.extend((p.relative_to(root).as_posix()) for p in sorted(base.iterdir())
                           if p.is_dir() and not p.name.startswith('.') and p.name != 'reports')
-    for base in sorted((root / 'Traing_Progress').glob('organized*')):
+    for base in sorted((root / 'Experiments' / 'Legacy').glob('organized*')):
         if base.name < 'organized_20260313':
             result.append(base.relative_to(root).as_posix())
         else:

@@ -13,6 +13,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
 DATASET = (
     ROOT
+    / ".."
     / "LabSystem_MOSR"
     / "Training_Data"
     / "r61_universal_boundary_generalization"

@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -24,23 +24,23 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：R60 Boundary Data / Model Audit - 2026-06-22](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/R60_BOUNDARY_DATA_MODEL_AUDIT_20260622.md>)
-- [原始報告：R60 Boundary-Focus Training Status - 2026-06-22](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/R60_BOUNDARY_FOCUS_TRAINING_STATUS_20260622.md>)
-- [原始報告：R60 Boundary Root Cause Analysis - 2026-06-22](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/R60_BOUNDARY_ROOT_CAUSE_ANALYSIS_20260622.md>)
-- [原始報告：Synthetic Phantom Boundary Validation - 2026-06-23](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/SYNTHETIC_PHANTOM_VALIDATION_20260623.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e002_mtb256_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e003_mtb256_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e004_mtb064_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e004_mtb256_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e005_mtb256_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e008_mtb064_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e008_mtb064_20260622_epochs/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/fullish_e012_mtb256_epoch_scan_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/fullish_e012_mtb256_polarityfix_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/grouped_split_e004_mtb064_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/grouped_strat_e004_mtb064_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/grouped_strat_e004_mtb064_20260622_epochs/R60_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R60 Automated Round Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/verify_existing_polarityfix_e004/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Boundary Data / Model Audit - 2026-06-22](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/R60_BOUNDARY_DATA_MODEL_AUDIT_20260622.md>)
+- [原始報告：R60 Boundary-Focus Training Status - 2026-06-22](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/R60_BOUNDARY_FOCUS_TRAINING_STATUS_20260622.md>)
+- [原始報告：R60 Boundary Root Cause Analysis - 2026-06-22](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/R60_BOUNDARY_ROOT_CAUSE_ANALYSIS_20260622.md>)
+- [原始報告：Synthetic Phantom Boundary Validation - 2026-06-23](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/SYNTHETIC_PHANTOM_VALIDATION_20260623.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e002_mtb256_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e003_mtb256_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e004_mtb064_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e004_mtb256_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e005_mtb256_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e008_mtb064_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/boundary_focus_e008_mtb064_20260622_epochs/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/fullish_e012_mtb256_epoch_scan_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/fullish_e012_mtb256_polarityfix_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/grouped_split_e004_mtb064_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/grouped_strat_e004_mtb064_20260622/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/grouped_strat_e004_mtb064_20260622_epochs/R60_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R60 Automated Round Status](<../../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/reports/r60_automated_rounds/verify_existing_polarityfix_e004/R60_AUTOMATED_ROUNDS_STATUS.md>)
 
 ## 重做與驗證範圍
 

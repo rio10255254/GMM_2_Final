@@ -90,7 +90,7 @@ C1+C2 成立的條件:**σ̂ 從 R30 → R33/R38v2 → COMBO 單調下降,b 跨�
 
 | Tag | GMF_score.txt path 樣板 |
 |---|---|
-| R30 | `Traing_Progress/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch{8px,0p8px,0p08px}/GMF_score.txt` |
+| R30 | `Experiments/Legacy/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch{8px,0p8px,0p08px}/GMF_score.txt` |
 | R33 | `Experiments/R33RobustLoss/results/external_gmf/pitch{8px,0p8px,0p08px}/GMF_score.txt` |
 | R38v2 | `Experiments/R38v2SeqFixed/results/external_gmf/pitch{8px,0p8px,0p08px}/GMF_score.txt` |
 | COMBO | `Experiments/R38v2SeqFixed/results/external_gmf_combo/pitch{8px,0p8px,0p08px}/GMF_score.txt` |

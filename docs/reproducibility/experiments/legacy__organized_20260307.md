@@ -1,6 +1,6 @@
 # legacy/organized_20260307 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260307/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260307/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,11 +22,11 @@ Round1及修復round1b分開：保留stage15／16稀疏曲邊配方、四候選�
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：20260309 Restart 批次](<../../../Traing_Progress/organized_20260307/pending/reports/AUTO_TUNE_CHAIN_PLAN_20260309_RESTART.md>)
-- [原始報告：AutoTune 完成摘要 20260309_134617](<../../../Traing_Progress/organized_20260307/pending/reports/AUTO_TUNE_RESULT_20260309_134617.md>)
-- [原始報告：AutoTune 完成摘要 20260309_144411](<../../../Traing_Progress/organized_20260307/pending/reports/AUTO_TUNE_RESULT_20260309_144411.md>)
-- [原始報告：AutoTune 完成摘要 20260309_151919](<../../../Traing_Progress/organized_20260307/pending/reports/AUTO_TUNE_RESULT_20260309_151919.md>)
-- [原始報告：0307 自動化調整 Round 1](<../../../Traing_Progress/organized_20260307/selected/reports/AUTO_TUNE_ROUND1_20260307.md>)
+- [原始報告：20260309 Restart 批次](<../../../Experiments/Legacy/organized_20260307/pending/reports/AUTO_TUNE_CHAIN_PLAN_20260309_RESTART.md>)
+- [原始報告：AutoTune 完成摘要 20260309_134617](<../../../Experiments/Legacy/organized_20260307/pending/reports/AUTO_TUNE_RESULT_20260309_134617.md>)
+- [原始報告：AutoTune 完成摘要 20260309_144411](<../../../Experiments/Legacy/organized_20260307/pending/reports/AUTO_TUNE_RESULT_20260309_144411.md>)
+- [原始報告：AutoTune 完成摘要 20260309_151919](<../../../Experiments/Legacy/organized_20260307/pending/reports/AUTO_TUNE_RESULT_20260309_151919.md>)
+- [原始報告：0307 自動化調整 Round 1](<../../../Experiments/Legacy/organized_20260307/selected/reports/AUTO_TUNE_ROUND1_20260307.md>)
 
 ## 重做與驗證範圍
 

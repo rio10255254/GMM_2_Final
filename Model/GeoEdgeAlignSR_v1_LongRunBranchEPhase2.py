@@ -21,9 +21,9 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-REPORT_ROOT = PROJECT_ROOT / "Traing_Progress" / "auto_tune_reports"
-SOURCE_BRANCH_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260314" / "branch_e"
-ORG_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260315" / "branch_e_followup"
+REPORT_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "auto_tune_reports"
+SOURCE_BRANCH_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260314" / "branch_e"
+ORG_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260315" / "branch_e_followup"
 LOG_ROOT = ORG_ROOT / "pending" / "logs"
 SELECTED_DIR = ORG_ROOT / "selected"
 REPORT_DIR = SELECTED_DIR / "reports"
@@ -365,7 +365,7 @@ def _write_seed_manifest(selected_candidate: str, selected_checkpoint: str, conf
 
 
 def _move_new_runs(start_ts: float, selected_candidate: str) -> None:
-    root = PROJECT_ROOT / "Traing_Progress"
+    root = PROJECT_ROOT / "Experiments" / "Training_Runs"
     selected_root = SELECTED_DIR / "runs"
     archive_runs = ARCHIVE_DIR / "runs"
     archive_audits = ARCHIVE_DIR / "audit_runs"

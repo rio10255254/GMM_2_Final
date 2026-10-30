@@ -1,6 +1,6 @@
 # legacy/round19 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260313/round19/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260313/round19/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,12 +22,12 @@ ABSANCHOR的絕對位置錨點與多候選審查，保存內部改善、未採�
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND19_ABSANCHOR Checkpoint Audit Summary](<../../../Traing_Progress/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_SUMMARY_20260313_190541.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_abs_anchor_20260313_190541.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_abs_only_20260313_190541.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_abs_strong_20260313_190541.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_af_abs_20260313_190541.md>)
-- [原始報告：ROUND19_ABSANCHOR Multiscale Summary](<../../../Traing_Progress/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_MULTISCALE_SUMMARY_20260313_190541.md>)
+- [原始報告：ROUND19_ABSANCHOR Checkpoint Audit Summary](<../../../Experiments/Legacy/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_SUMMARY_20260313_190541.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_abs_anchor_20260313_190541.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_abs_only_20260313_190541.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_abs_strong_20260313_190541.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_CHECKPOINT_AUDIT_r19_af_abs_20260313_190541.md>)
+- [原始報告：ROUND19_ABSANCHOR Multiscale Summary](<../../../Experiments/Legacy/organized_20260313/round19/selected/reports/ROUND19_ABSANCHOR_MULTISCALE_SUMMARY_20260313_190541.md>)
 
 ## 重做與驗證範圍
 

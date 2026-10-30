@@ -15,7 +15,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "config" / "capability_validation_20260812.json"
 R91_ANALYZER = Path(str(PROJECT_ROOT / 'Experiments/R91_DetailDecoupledScratch/scripts/analyze_r91_real_motion.py'))
-ISO_SCRIPT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/analyze_isocontour_boundary_displacement.py'))
+ISO_SCRIPT = Path(str(PROJECT_ROOT / 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/analyze_isocontour_boundary_displacement.py'))
 SEQUENCE_NAME = "50x_x_1um"
 
 

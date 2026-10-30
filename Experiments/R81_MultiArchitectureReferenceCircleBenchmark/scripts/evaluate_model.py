@@ -21,7 +21,7 @@ R81_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_DIR = Path(__file__).resolve().parent
 R80_SCRIPTS = Path(str(PROJECT_ROOT / 'Experiments/R80_InflectionReferenceCircleSEMValidation/scripts'))
 MODERN_ROOT = (
-    Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments'))
+    Path(str(PROJECT_ROOT / 'LabSystem_MOSR/Experiments'))
     / "Modern_Restoration_Benchmarks_20260719"
 )
 for import_root in (SCRIPT_DIR, R80_SCRIPTS, MODERN_ROOT):

@@ -21,18 +21,18 @@
 
 | 資料夾 | 刪除量 |
 |---|---:|
-| `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r62_target_sample_boost` | 102.26 GB |
+| `LabSystem_MOSR/Training_Data/r62_target_sample_boost` | 102.26 GB |
 | `20260704_20x_5x_analysis` | 90.40 GB |
-| `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization`（v16 以外的版本） | 53.43 GB |
+| `LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization`（v16 以外的版本） | 53.43 GB |
 | `20260702_100MG_displacement_analysis` | 49.90 GB |
 | `Step_analysis_20260623` | 35.92 GB |
-| `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r55_source_style_rebuild` | 34.81 GB |
+| `LabSystem_MOSR/Training_Data/r55_source_style_rebuild` | 34.81 GB |
 | `Experiments/R147_FullResPSFConsistency` | 20.53 GB |
 | `Experiments/R116_CoherentGeometryAnchorScratch` | 17.18 GB |
 | `Experiments/R130_Clean` | 14.20 GB |
 | `Experiments/R137_WeakPSFFeature` | 14.15 GB |
 | `Experiments/R140v2_StableUNet` | 13.98 GB |
-| `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r57_geometry_constrained` | 13.11 GB |
+| `LabSystem_MOSR/Training_Data/r57_geometry_constrained` | 13.11 GB |
 | `Experiments/R128_SourceOnlyFullTraining` | 12.40 GB |
 | `Experiments/R114_ConfidenceGatedRecoverableScratch` | 12.18 GB |
 | `Experiments/R143_PSF25_MatchedPairs` | 10.69 GB |

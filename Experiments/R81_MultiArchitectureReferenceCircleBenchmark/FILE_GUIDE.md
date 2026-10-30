@@ -1,6 +1,6 @@
 # R81：十三個模型用同一套轉折點量法比
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [量法來源 R80](<../R80_InflectionReferenceCircleSEMValidation/FILE_GUIDE.md>) · [前一次只比兩個外部模型](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>) · [下一輪 R82](<../R82_R39R40CrossSceneGeneralizationBenchmark/FILE_GUIDE.md>) · [論文最後的十方法比較 R153](<../R153_MeanExternalBenchmark/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [量法來源 R80](<../R80_InflectionReferenceCircleSEMValidation/FILE_GUIDE.md>) · [前一次只比兩個外部模型](<../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>) · [下一輪 R82](<../R82_R39R40CrossSceneGeneralizationBenchmark/FILE_GUIDE.md>) · [論文最後的十方法比較 R153](<../R153_MeanExternalBenchmark/FILE_GUIDE.md>)
 
 **一句話：** 把論文的外部比較從 EDSR、NAFNet 兩個擴大到 12 個架構（從 SRCNN 到 2025 的 PFT-SR、2026 的 UCAN），全部用同一份 V42 訓練資料從頭訓練，再跟 V42 一起用 R80 的轉折點＋參考圓量法比五項指標。沒有一個模型包辦第一：20× CD 是 Restormer、50× CD 是 SwinIR、三項位移都是 UCAN；V42 沒有拿到任何一項第一，而 50× CD 原圖比所有模型都好。
 

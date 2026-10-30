@@ -39,7 +39,7 @@ CORE_FILES = (
     "scripts/prepare_r61_universal_dataset.py",
 )
 FORBIDDEN_PATH_MARKERS = (
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR'),
+    str(PROJECT_ROOT / 'LabSystem_MOSR'),
     str(PROJECT_ROOT / 'Model'),
     r"C:\Users\Rio\Downloads",
     "__CURRENT_SELECTED_SEED__",

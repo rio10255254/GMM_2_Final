@@ -11,7 +11,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[7]
 
 
 SOURCE = Path(
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/selection_sensitivity/all_pair_measurements.csv')
+    str(PROJECT_ROOT / 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/selection_sensitivity/all_pair_measurements.csv')
 )
 OUTPUT = Path(
     str(PROJECT_ROOT / 'PSF_Fitting/.codex_docx_work/v14_selection_sensitivity_raw_mosr')

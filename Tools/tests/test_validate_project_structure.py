@@ -112,7 +112,7 @@ def load_validator_module():
 def test_legacy_operations_docs_contract():
     assert (REPO / "docs" / "operations" / "LEGACY_ROUNDS_OPERATIONS.md").exists()
     for batch_name, surfaces in LEGACY_BATCH_SPECS.items():
-        legacy_root = REPO / "Traing_Progress" / batch_name
+        legacy_root = REPO / "Experiments" / "Legacy" / batch_name
         assert legacy_root.is_dir(), f"Missing legacy batch: {batch_name}"
         assert (legacy_root / "README.md").exists(), f"{batch_name} missing README.md"
         assert (legacy_root / "MANIFEST.md").exists(), f"{batch_name} missing MANIFEST.md"
@@ -143,21 +143,21 @@ def test_validator_declares_legacy_surfaces():
 
 def test_legacy_gitignore_only_allows_whitelisted_governance_docs():
     allowed = [
-        REPO / "Traing_Progress" / "organized_20260313" / "round18" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260314" / "round20" / "MANIFEST.md",
-        REPO / "Traing_Progress" / "organized_20260315" / "pairwise_delta_probe" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round23" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round31" / "MANIFEST.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "external_compare_r18_r22_r25" / "MANIFEST.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "tta_experiment" / "r26_tta_cross5" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260313" / "round18" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260314" / "round20" / "MANIFEST.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260315" / "pairwise_delta_probe" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round23" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round31" / "MANIFEST.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "external_compare_r18_r22_r25" / "MANIFEST.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "tta_experiment" / "r26_tta_cross5" / "README.md",
     ]
     blocked = [
-        REPO / "Traing_Progress" / "organized_20260313" / "round18" / "external_validation" / "future_note" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260314" / "branch_e" / "archive" / "future_note" / "MANIFEST.md",
-        REPO / "Traing_Progress" / "organized_20260315" / "round22" / "selected" / "reports" / "extra" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round23" / "archive" / "future_note" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round31" / "archive" / "future_note" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260313" / "round18" / "external_validation" / "future_note" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260314" / "branch_e" / "archive" / "future_note" / "MANIFEST.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260315" / "round22" / "selected" / "reports" / "extra" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round23" / "archive" / "future_note" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round31" / "archive" / "future_note" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
     ]
 
     for path in allowed:
@@ -298,3 +298,37 @@ def test_recon_gallery_format_missing_file(tmp_path):
     module = _load_validator_module(tmp_path)
     module.check_recon_gallery_format()
     assert not module.ERRORS, "Missing optional gallery should not be an error"
+
+
+def _touch(path: Path, text: str = "x\n") -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+
+
+def test_legacy_and_training_runs_exempt_from_round_rules(tmp_path):
+    (tmp_path / "Experiments/Legacy/organized_20260313/round01").mkdir(parents=True)
+    (tmp_path / "Experiments/Training_Runs/training_progress_20260410").mkdir(parents=True)
+    _touch(tmp_path / "Experiments/Legacy/README.md")
+    _touch(tmp_path / "Experiments/Training_Runs/README.md")
+    _touch(tmp_path / "Experiments/INDEX.md", "- Legacy: early batches\n- Training_Runs: one folder per run\n")
+    module = _load_validator_module(tmp_path)
+    module.check_experiment_dirs()
+    module.check_index_references()
+    assert not [e for e in module.ERRORS + module.WARNINGS if "Legacy" in e or "Training_Runs" in e]
+
+
+def test_missing_legacy_readme_is_reported(tmp_path):
+    (tmp_path / "Experiments/Legacy/organized_20260313").mkdir(parents=True)
+    module = _load_validator_module(tmp_path)
+    module.check_experiment_dirs()
+    assert any("Experiments/Legacy/README.md" in e for e in module.ERRORS)
+
+
+def test_hardcoded_project_path_warns(tmp_path):
+    drive = "D:"
+    _touch(tmp_path / "Tools/x.py", "P = r'" + drive + "\\GMM_2_Final\\Model'\n")
+    _touch(tmp_path / "Tools/y.py", '"""Run from ' + drive + '/GMM_2_Final or anywhere."""\nfrom pathlib import Path\n')
+    module = _load_validator_module(tmp_path)
+    module.check_hardcoded_project_paths()
+    found = [w for w in module.WARNINGS if "GMM_2_Final" in w]
+    assert len(found) == 1 and "Tools/x.py" in found[0]

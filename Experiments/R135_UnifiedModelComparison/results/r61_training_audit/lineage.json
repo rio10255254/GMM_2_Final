@@ -2,16 +2,16 @@
   "chain": [
     {
       "checkpoint": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+        "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
         "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b"
       },
       "log": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs/r61_motion_texture_stepguard_v16_full_e8_20260623_200012.out.log",
+        "path": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs/r61_motion_texture_stepguard_v16_full_e8_20260623_200012.out.log",
         "sha256": "f675f4340915f6a4b7838c431708ab307afc939122308b5549a58583910caa50"
       },
       "candidate": "r61_motion_texture_stepguard_v16_dualgate_boundary_focus",
-      "data_dir": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16",
-      "base_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217/weights/best_tradeoff.pth.tar",
+      "data_dir": "LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16",
+      "base_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217/weights/best_tradeoff.pth.tar",
       "scratch_training": false,
       "num_epoch": 8,
       "lr": 2.5e-07,
@@ -20,21 +20,21 @@
         "[FINETUNE] trainable_name_patterns=['boundary_adapter'] trainable=8 frozen=115"
       ],
       "split_lines": [
-        "[DATA][SPLIT] load external fixed split: Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100"
+        "[DATA][SPLIT] load external fixed split: LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100"
       ]
     },
     {
       "checkpoint": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217/weights/best_tradeoff.pth.tar",
+        "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217/weights/best_tradeoff.pth.tar",
         "sha256": "d1469ef55845df87eb514d3e3035ac086cf7831bd6ed807fecafb17e9610db74"
       },
       "log": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs/r61_motion_texture_v11base_full_e8_20260623_150211.out.log",
+        "path": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs/r61_motion_texture_v11base_full_e8_20260623_150211.out.log",
         "sha256": "8fb3c7cc97e07e9d07902ccb382741e106dac394089cefa0e26192ba75900ca2"
       },
       "candidate": "r61_motion_texture_v11base_dualgate_boundary_focus",
-      "data_dir": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_guard_v14",
-      "base_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/r39_best_latest_soup_20260623/r39_best_latest_a970.pth.tar",
+      "data_dir": "LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_guard_v14",
+      "base_checkpoint": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/r39_best_latest_soup_20260623/r39_best_latest_a970.pth.tar",
       "scratch_training": false,
       "num_epoch": 8,
       "lr": 5e-07,
@@ -43,9 +43,9 @@
         "[FINETUNE] trainable_name_patterns=['boundary_adapter'] trainable=8 frozen=115"
       ],
       "split_lines": [
-        "[DATA][SPLIT] load external fixed split: Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_guard_v14/splits/grouped_seed1337_val100"
+        "[DATA][SPLIT] load external fixed split: LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_guard_v14/splits/grouped_seed1337_val100"
       ]
     }
   ],
-  "unresolved_older_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/r39_best_latest_soup_20260623/r39_best_latest_a970.pth.tar"
+  "unresolved_older_checkpoint": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/r39_best_latest_soup_20260623/r39_best_latest_a970.pth.tar"
 }

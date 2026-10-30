@@ -1,0 +1,947 @@
+{
+  "profile": "checkboard_corner_val_unseen",
+  "description": "Held-out Lab checkboard/right-angle corner validation set.",
+  "repo_root": "LabSystem_MOSR",
+  "output_dir": "LabSystem_MOSR/Training_Data/r46_corner_aware_finetune/checkboard_corner_val_unseen",
+  "total_pairs": 100,
+  "count_by_role": {
+    "corner": 100
+  },
+  "count_by_stage": {
+    "stage_48_checkboard_corners": 100
+  },
+  "link_counts": {
+    "hardlink": 200
+  },
+  "shape_stages": [
+    "stage_01_triangles",
+    "stage_02_circles",
+    "stage_03_rectangles",
+    "stage_04_ellipses",
+    "stage_05_polygons",
+    "stage_06_mixed_simple",
+    "stage_07_mixed_complex"
+  ],
+  "micro_stages": [
+    "stage_29_micro_lines_grid",
+    "stage_30_micro_large_regions",
+    "stage_31_micro_textures",
+    "stage_32_micro_edge_defects",
+    "stage_33_micro_mixed_fields"
+  ],
+  "corner_stages": [
+    "stage_48_checkboard_corners"
+  ],
+  "micro_stage_families": {
+    "stage_29_micro_lines_grid": "lines_grid",
+    "stage_30_micro_large_regions": "large_regions",
+    "stage_31_micro_textures": "textures",
+    "stage_32_micro_edge_defects": "edge_defects",
+    "stage_33_micro_mixed_fields": "mixed_fields"
+  },
+  "corner_stage_families": {
+    "stage_48_checkboard_corners": "checkboard_corners"
+  },
+  "pairs": [
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0400.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0400.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0400.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0400.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0401.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0401.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0401.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0401.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0402.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0402.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0402.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0402.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0403.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0403.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0403.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0403.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0404.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0404.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0404.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0404.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0405.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0405.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0405.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0405.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0406.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0406.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0406.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0406.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0407.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0407.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0407.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0407.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0408.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0408.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0408.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0408.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0409.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0409.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0409.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0409.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0410.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0410.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0410.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0410.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0411.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0411.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0411.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0411.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0412.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0412.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0412.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0412.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0413.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0413.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0413.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0413.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0414.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0414.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0414.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0414.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0415.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0415.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0415.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0415.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0416.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0416.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0416.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0416.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0417.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0417.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0417.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0417.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0418.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0418.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0418.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0418.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0419.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0419.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0419.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0419.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0420.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0420.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0420.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0420.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0421.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0421.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0421.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0421.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0422.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0422.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0422.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0422.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0423.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0423.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0423.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0423.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0424.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0424.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0424.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0424.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0425.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0425.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0425.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0425.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0426.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0426.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0426.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0426.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0427.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0427.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0427.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0427.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0428.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0428.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0428.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0428.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0429.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0429.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0429.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0429.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0430.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0430.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0430.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0430.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0431.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0431.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0431.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0431.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0432.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0432.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0432.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0432.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0433.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0433.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0433.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0433.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0434.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0434.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0434.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0434.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0435.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0435.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0435.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0435.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0436.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0436.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0436.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0436.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0437.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0437.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0437.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0437.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0438.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0438.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0438.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0438.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0439.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0439.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0439.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0439.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0440.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0440.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0440.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0440.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0441.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0441.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0441.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0441.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0442.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0442.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0442.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0442.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0443.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0443.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0443.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0443.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0444.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0444.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0444.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0444.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0445.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0445.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0445.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0445.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0446.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0446.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0446.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0446.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0447.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0447.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0447.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0447.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0448.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0448.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0448.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0448.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0449.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0449.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0449.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0449.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0450.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0450.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0450.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0450.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0451.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0451.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0451.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0451.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0452.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0452.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0452.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0452.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0453.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0453.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0453.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0453.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0454.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0454.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0454.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0454.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0455.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0455.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0455.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0455.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0456.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0456.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0456.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0456.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0457.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0457.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0457.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0457.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0458.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0458.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0458.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0458.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0459.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0459.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0459.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0459.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0460.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0460.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0460.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0460.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0461.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0461.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0461.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0461.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0462.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0462.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0462.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0462.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0463.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0463.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0463.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0463.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0464.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0464.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0464.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0464.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0465.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0465.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0465.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0465.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0466.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0466.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0466.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0466.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0467.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0467.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0467.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0467.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0468.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0468.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0468.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0468.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0469.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0469.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0469.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0469.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0470.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0470.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0470.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0470.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0471.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0471.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0471.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0471.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0472.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0472.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0472.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0472.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0473.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0473.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0473.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0473.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0474.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0474.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0474.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0474.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0475.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0475.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0475.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0475.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0476.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0476.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0476.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0476.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0477.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0477.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0477.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0477.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0478.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0478.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0478.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0478.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0479.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0479.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0479.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0479.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0480.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0480.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0480.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0480.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0481.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0481.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0481.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0481.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0482.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0482.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0482.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0482.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0483.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0483.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0483.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0483.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0484.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0484.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0484.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0484.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0485.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0485.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0485.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0485.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0486.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0486.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0486.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0486.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0487.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0487.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0487.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0487.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0488.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0488.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0488.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0488.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0489.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0489.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0489.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0489.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0490.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0490.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0490.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0490.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0491.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0491.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0491.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0491.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0492.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0492.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0492.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0492.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0493.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0493.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0493.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0493.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0494.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0494.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0494.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0494.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0495.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0495.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0495.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0495.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0496.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0496.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0496.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0496.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0497.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0497.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0497.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0497.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0498.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0498.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0498.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0498.bmp"
+    },
+    {
+      "role": "corner",
+      "stage": "stage_48_checkboard_corners",
+      "feature_family": "checkboard_corners",
+      "src": "LabSystem_MOSR/Training_Data/generated_convolved/stage_48_checkboard_corners/0499.bmp",
+      "lbl": "LabSystem_MOSR/Training_Data/generated/stage_48_checkboard_corners/0499.bmp",
+      "package_src": "src/stage_40_boundary_mixed/stage_48_checkboard_corners/0499.bmp",
+      "package_lbl": "lbl/stage_40_boundary_mixed/stage_48_checkboard_corners/0499.bmp"
+    }
+  ]
+}

@@ -88,7 +88,19 @@ def _text(name, data):
 
 
 def _expect(target, rules, decisions):
-    return (decisions or {}).get(target) or (rules.map(target) if rules else None) or target
+    # a decision may send a target to the project root itself (''), so test membership, not truth
+    if decisions and target in decisions:
+        return decisions[target]
+    return (rules.map(target) if rules else None) or target
+
+
+def _one_segment(literal, uni):
+    """A string that is one root-level name with no slash ('LabSystem_MOSR'): path tokens need a
+    slash, so a folder moved up to the root would otherwise read as no target at all."""
+    name = literal.strip().lstrip('rbuRBU').strip('\'"')
+    if name and re.fullmatch(r'[\w.\-]+', name) and uni.exists(name):
+        return [uni.canon(name)]
+    return []
 
 
 # ---------- 3. equivalence ----------
@@ -100,7 +112,7 @@ def equivalence(edits, old_uni, new_uni, rules, external_map, decisions=None):
         if cls == 'py':
             if kind in ('string', 'comment'):
                 old = [_expect(t, rules, decisions) for t in token_targets(e.old, e.file_old, old_uni, external_map)]
-                new = token_targets(e.new, e.file_new, new_uni, external_map)
+                new = token_targets(e.new, e.file_new, new_uni, external_map) or _one_segment(e.new, new_uni)
                 if rules is None:
                     # location mode: the project folder itself is written '.', or kept as written in prose
                     old, new = [t for t in old if t], [t for t in new if t]
@@ -159,6 +171,11 @@ def python_equivalence(old_src, new_src, file_old, file_new, ctx_old, ctx_new, r
     fixed_new = Counter(t for t in new if not t.endswith('/<dyn>') and not (location and t == ''))
     problems = []
     lost, extra = fixed_old - fixed_new, fixed_new - fixed_old
+    # a folder that one root became split into needs a new base ('LEGACY_ROOT'); a base that other new
+    # targets sit under is no new destination, and a join that went to the wrong base still shows as lost
+    for t in list(extra):
+        if any(o.startswith(t + '/') for o in fixed_new):
+            del extra[t]
     # location mode may gain targets: an external path that maps into the project becomes evaluable;
     # a wrong rewrite still shows as a target that went missing
     if lost or (extra and not location):

@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -26,11 +26,11 @@
 
 本輪當年沒有文字報告，原件是設定與完整數表：
 
-- [原第10輪替換設定](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation_manifest_best_checkpoint.json)
-- [原可用性與缺測表](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation/displacement_availability.csv)
-- [逐步原量測](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation/displacement_step_measurements.csv)
-- [各序列完整原表](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation/displacement_summary.csv)
-- [共同有效母體完整原表](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation/displacement_pooled_common_valid.csv)
+- [原第10輪替換設定](../../../LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation_manifest_best_checkpoint.json)
+- [原可用性與缺測表](../../../LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation/displacement_availability.csv)
+- [逐步原量測](../../../LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation/displacement_step_measurements.csv)
+- [各序列完整原表](../../../LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation/displacement_summary.csv)
+- [共同有效母體完整原表](../../../LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/evaluation/displacement_pooled_common_valid.csv)
 - [後補讀法與結果限制](../lineage/LAB_BEST_CHECKPOINT_READING.md)
 
 ## 重做與驗證範圍

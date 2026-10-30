@@ -360,7 +360,7 @@ def legacy_findings() -> dict:
     selection = read_json(r118 / "reports" / "next_design_selected_ids.json")
     bank_path = r120 / "data" / "sequences" / "train" / "manifest.json"
     bank = read_json(bank_path)
-    r61_launcher = ROOT.parent.parent / "Thesis_MOSR_Evidence" / "LabSystem_MOSR" / "Experiments" / "R61_BoundaryGeneralizationUniversal" / "scripts" / "launch_r61.py"
+    r61_launcher = ROOT.parent.parent / "LabSystem_MOSR" / "Experiments" / "R61_BoundaryGeneralizationUniversal" / "scripts" / "launch_r61.py"
     launcher = r61_launcher.read_text(encoding="utf-8-sig")
     return {
         "scope": "R118 manifest and one actual four-array record; R120 bank manifest/loader; R61 launcher, not whole historical datasets",

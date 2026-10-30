@@ -22,7 +22,7 @@ DOCUMENT = Path(
     r"C:\Users\Rio\OneDrive\學業\碩班\論文\可用\論文完整版_20260716_v11.docx"
 )
 RESULTS = Path(
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_v2')
+    str(PROJECT_ROOT / 'LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_v2')
 )
 SUMMARY = RESULTS / "analysis" / "learning_baseline_method_summary.csv"
 TRAINING = RESULTS / "training_summary.json"

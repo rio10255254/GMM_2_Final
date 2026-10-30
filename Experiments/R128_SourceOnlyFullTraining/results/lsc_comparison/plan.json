@@ -6,7 +6,7 @@
     "sha256": "9fbdffa3bebe0a37e3f7c2b09239e2e00de6b0522feb101571fcfb7a42699abf"
   },
   "checkpoint_R61": {
-    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+    "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
     "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b"
   },
   "sources": [
@@ -95,7 +95,7 @@
       },
       "inference_source": {
         "path": "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
-        "sha256": "fcc7d26ac4eb730aa05efb0b02528040f46b527d1f709c7a482238ac79d69d00"
+        "sha256": "81e8890f20080b0bb12d246efec42b292b5390a0a9c069ea90da56310094461c"
       },
       "inference_log": {
         "path": "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210629/logs/r61_v16_psfoff_x_0p5um_infer.log",
@@ -111,7 +111,7 @@
           "image_count": "51",
           "note": "R61 v16 PSF-off reconstruction for 20260702 100MG lab-system x_0.5um displacement set."
         },
-        "weights": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+        "weights": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
         "input_dir": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
         "input_count": 51,
         "recon_output_dir": "Analyses/20260702_100MG_displacement_analysis/reconstructions/reconstruct_progress_best_tradeoff_in_bmp_20260623_200020/r61_v16_psfoff_x_0p5um",
@@ -122,7 +122,7 @@
           "C:\\Users\\Rio\\anaconda3\\python.exe",
           "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
           "--weights",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+          "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
           "--input-dir",
           "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
           "--recon-root",
@@ -136,7 +136,7 @@
           "--exts",
           ".bmp",
           "--psf-fitted-path",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+          "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
           "--no-psf-from-ckpt",
           "--weak-psf-disable",
           "--psf-deconv-reg",
@@ -156,7 +156,7 @@
       },
       "inference_source": {
         "path": "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210538/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
-        "sha256": "fcc7d26ac4eb730aa05efb0b02528040f46b527d1f709c7a482238ac79d69d00"
+        "sha256": "81e8890f20080b0bb12d246efec42b292b5390a0a9c069ea90da56310094461c"
       },
       "inference_log": {
         "path": "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210538/logs/r61_v16_psfoff_x_1um_infer.log",
@@ -172,7 +172,7 @@
           "image_count": "50",
           "note": "R61 v16 PSF-off reconstruction for 20260702 100MG lab-system x_1um displacement set."
         },
-        "weights": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+        "weights": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
         "input_dir": "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
         "input_count": 50,
         "recon_output_dir": "Analyses/20260702_100MG_displacement_analysis/reconstructions/reconstruct_progress_best_tradeoff_in_bmp_20260623_200020/r61_v16_psfoff_x_1um",
@@ -183,7 +183,7 @@
           "C:\\Users\\Rio\\anaconda3\\python.exe",
           "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210538/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
           "--weights",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+          "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
           "--input-dir",
           "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_1um/bmp",
           "--recon-root",
@@ -197,7 +197,7 @@
           "--exts",
           ".bmp",
           "--psf-fitted-path",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+          "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
           "--no-psf-from-ckpt",
           "--weak-psf-disable",
           "--psf-deconv-reg",
@@ -217,7 +217,7 @@
       },
       "inference_source": {
         "path": "Analyses/20260704_20x_5x_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260704_183616/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
-        "sha256": "fcc7d26ac4eb730aa05efb0b02528040f46b527d1f709c7a482238ac79d69d00"
+        "sha256": "81e8890f20080b0bb12d246efec42b292b5390a0a9c069ea90da56310094461c"
       },
       "inference_log": {
         "path": "Analyses/20260704_20x_5x_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260704_183616/logs/r61_v16_psfoff_20x_0p5um_infer.log",
@@ -233,7 +233,7 @@
           "image_count": "50",
           "note": "R61 v16 PSF-off reconstruction for 20260704 20x_0p5um."
         },
-        "weights": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+        "weights": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
         "input_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
         "input_count": 50,
         "recon_output_dir": "Analyses/20260704_20x_5x_analysis/reconstructions/reconstruct_progress_best_tradeoff_in_bmp_20260623_200020/r61_v16_psfoff_20x_0p5um",
@@ -244,7 +244,7 @@
           "C:\\Users\\Rio\\anaconda3\\python.exe",
           "Analyses/20260704_20x_5x_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260704_183616/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
           "--weights",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+          "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
           "--input-dir",
           "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_0p5um/bmp",
           "--recon-root",
@@ -258,7 +258,7 @@
           "--exts",
           ".bmp",
           "--psf-fitted-path",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+          "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
           "--no-psf-from-ckpt",
           "--weak-psf-disable",
           "--psf-deconv-reg",
@@ -278,7 +278,7 @@
       },
       "inference_source": {
         "path": "Analyses/20260704_20x_5x_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260704_183639/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
-        "sha256": "fcc7d26ac4eb730aa05efb0b02528040f46b527d1f709c7a482238ac79d69d00"
+        "sha256": "81e8890f20080b0bb12d246efec42b292b5390a0a9c069ea90da56310094461c"
       },
       "inference_log": {
         "path": "Analyses/20260704_20x_5x_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260704_183639/logs/r61_v16_psfoff_20x_1um_infer.log",
@@ -294,7 +294,7 @@
           "image_count": "50",
           "note": "R61 v16 PSF-off reconstruction for 20260704 20x_1um."
         },
-        "weights": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+        "weights": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
         "input_dir": "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
         "input_count": 50,
         "recon_output_dir": "Analyses/20260704_20x_5x_analysis/reconstructions/reconstruct_progress_best_tradeoff_in_bmp_20260623_200020/r61_v16_psfoff_20x_1um",
@@ -305,7 +305,7 @@
           "C:\\Users\\Rio\\anaconda3\\python.exe",
           "Analyses/20260704_20x_5x_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260704_183639/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
           "--weights",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+          "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
           "--input-dir",
           "Analyses/20260704_20x_5x_analysis/raw_inputs/20x_1um/bmp",
           "--recon-root",
@@ -319,7 +319,7 @@
           "--exts",
           ".bmp",
           "--psf-fitted-path",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+          "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
           "--no-psf-from-ckpt",
           "--weak-psf-disable",
           "--psf-deconv-reg",

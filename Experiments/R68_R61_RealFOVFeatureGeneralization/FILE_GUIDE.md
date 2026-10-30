@@ -1,6 +1,6 @@
 # R68：R61 v16 在整個視野、三種倍率下會不會改壞位移
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R67](<../R67_UniversalModelGeneralization/FILE_GUIDE.md>) · [下一輪 R69](<../R69_ACMContourSEMValidation/FILE_GUIDE.md>) · [模型本體 Lab R61](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R67](<../R67_UniversalModelGeneralization/FILE_GUIDE.md>) · [下一輪 R69](<../R69_ACMContourSEMValidation/FILE_GUIDE.md>) · [模型本體 Lab R61](<../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>)
 
 **一句話：** 中心裁切可能藏住問題，所以 2026-07-29 在 5×、20×、50× 各兩組位移序列（共 301 張，都是 R61 v16 訓練之後才拍的）裡，每組從原圖第一張自動挑 24 個內容豐富的區域，比較重建後的位移跟原圖量到的位移是否一致。六組全部通過七道預設門檻：方向一致率 100%，位移比例在 0.99～1.02 之間。
 
@@ -44,7 +44,7 @@ R61 v16 在不同倍率、整個視野的許多區域，能不能保住真實量
 | 需要什麼 | 在哪裡 |
 |---|---|
 | 執行程式、測試、序列設定 | 本資料夾 [scripts/run_r68.py](<scripts/run_r68.py>)、[tests/](<tests>)、[config/sequences.json](<config/sequences.json>)，已在 GitHub |
-| R61 v16 模型 | 見 [Lab R61](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>) |
+| R61 v16 模型 | 見 [Lab R61](<../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>) |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 

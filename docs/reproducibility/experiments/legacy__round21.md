@@ -1,6 +1,6 @@
 # legacy/round21 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260315/round21/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260315/round21/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,16 +22,16 @@ HYBRID估計器各候選、兩尺度回傳與原postmortem；保留它未解除�
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND21_HYBRID_ESTIMATOR AUDIT_0P8 Summary](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_0P8_SUMMARY_20260315_220410.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_0P8_r21_midsoft_ctrlguard_20260315_220410.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_0P8_r21_midsoft_stephard_20260315_220410.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_0P8_r21_midsoft_stepup_20260315_220410.md>)
-- [原始報告：ROUND21_HYBRID_ESTIMATOR AUDIT_8P0 Summary](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_8P0_SUMMARY_20260315_220522.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_8P0_r21_midsoft_ctrlguard_20260315_220522.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_8P0_r21_midsoft_stephard_20260315_220522.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_8P0_r21_midsoft_stepup_20260315_220522.md>)
-- [原始報告：ROUND21_HYBRID_ESTIMATOR Decision Memo](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_DECISION_20260315_220621.md>)
-- [原始報告：ROUND21_HYBRID_ESTIMATOR Summary](<../../../Traing_Progress/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_SUMMARY_20260315_220410.md>)
+- [原始報告：ROUND21_HYBRID_ESTIMATOR AUDIT_0P8 Summary](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_0P8_SUMMARY_20260315_220410.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_0P8_r21_midsoft_ctrlguard_20260315_220410.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_0P8_r21_midsoft_stephard_20260315_220410.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_0P8_r21_midsoft_stepup_20260315_220410.md>)
+- [原始報告：ROUND21_HYBRID_ESTIMATOR AUDIT_8P0 Summary](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_8P0_SUMMARY_20260315_220522.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_8P0_r21_midsoft_ctrlguard_20260315_220522.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_8P0_r21_midsoft_stephard_20260315_220522.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_AUDIT_8P0_r21_midsoft_stepup_20260315_220522.md>)
+- [原始報告：ROUND21_HYBRID_ESTIMATOR Decision Memo](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_DECISION_20260315_220621.md>)
+- [原始報告：ROUND21_HYBRID_ESTIMATOR Summary](<../../../Experiments/Legacy/organized_20260315/round21/selected/reports/ROUND21_HYBRID_ESTIMATOR_SUMMARY_20260315_220410.md>)
 
 ## 重做與驗證範圍
 

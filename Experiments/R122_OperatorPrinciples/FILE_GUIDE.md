@@ -1,6 +1,6 @@
 # R122：操作原理的驗證，以及 V42 論文評估資料的來源追查
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R121](<../R121_BoundaryAnchorFactorial/FILE_GUIDE.md>) · [下一輪 R123](<../R123_RealFirstModelDesign/FILE_GUIDE.md>) · [被追查的 V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R121](<../R121_BoundaryAnchorFactorial/FILE_GUIDE.md>) · [下一輪 R123](<../R123_RealFirstModelDesign/FILE_GUIDE.md>) · [被追查的 V42](<../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
 
 **一句話：** 2026-09-08 的純診斷輪，沒有訓練。做了三件事：證明「移位置」「變窄」在連續剖面上可以分開，但直接在像素上插值做不到；用可重跑的反例說明單張影像有訓練也消除不了的歧義；追查論文實際使用的 V42 第 120 輪，發現 7 月論文的位移與尺寸評估影像，全部都能追到它的訓練來源。結論是下一個模型不再以「超越 V42」為目標，V42 那批論文數字只能當同樣品上的結果。
 
@@ -35,7 +35,7 @@
 
 ## 讀這些內容要知道的事
 
-1. **這跟論文直接相關。** [V42 閱讀卡](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)第 3 點寫的「不是獨立未知樣本的驗證」，證據就在這裡。後來論文改用 R152 與 9/3 的 930 張比較。
+1. **這跟論文直接相關。** [V42 閱讀卡](<../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)第 3 點寫的「不是獨立未知樣本的驗證」，證據就在這裡。後來論文改用 R152 與 9/3 的 930 張比較。
 2. **沒有重建 V41 以前的完整訓練歷史**，所以不宣稱已查完所有可能的資料重用；12 個有差異的答案剛好都在 V42 宣告的邊緣柔化清單裡，沒有逐像素重現柔化步驟。
 3. **本輪做了一個資料來源檢查器** `scripts/split_guard.py`，會拒絕同樣品、共同祖先或來源缺失的分割，並用 V42 的 301 個重合來源驗證它真的會拒絕。
 

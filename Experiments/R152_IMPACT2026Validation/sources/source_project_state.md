@@ -411,7 +411,7 @@ The formal production baseline is now **COMBO / `r38v2_8px_gate_p95`**.
 正式入口 / Formal entry points：
 
 - checkpoint:
-  `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
+  `Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
 - promoted baseline report:
   `Experiments/R38v2SeqFixed/reports/COMBO_RESULTS.md`
 - complete series context:
@@ -457,7 +457,7 @@ One-line role: **GMF-extreme approved alternate; not the formal baseline.**
 - report:
   `Experiments/R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md`
 - checkpoint:
-  `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar`
+  `Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar`
 
 ### R38v2 / r38v2_8px_gate — Visual Priority Alternate
 
@@ -480,7 +480,7 @@ One-line role: **visual-priority approved alternate; not the formal baseline.**
 - report:
   `Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md`
 - checkpoint:
-  `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar`
+  `Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar`
 
 ### R39R40_avg_a025 / r39r40_complementary_avg_a025 — Balanced Full-Spectrum Alternate
 
@@ -903,9 +903,9 @@ One-line verdict: **all measured Round31 B1 hyperparameter candidates regressed 
 正式入口 / Formal entry points：
 
 - decision:
-  `Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md`
+  `Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md`
 - external compare:
-  `Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md`
+  `Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md`
 
 measured candidates / 已量測候選：
 

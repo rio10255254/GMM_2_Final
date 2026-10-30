@@ -1,6 +1,6 @@
 # R130（V42 對照）：用乾淨資料重訓一次 V42，跟 R129 比
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [被比較的 R129](<../R129_OpticalPriorHybrid/FILE_GUIDE.md>) · [原本的 V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>) · [同編號的另一件事：R130 Clean](<../R130_Clean/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [被比較的 R129](<../R129_OpticalPriorHybrid/FILE_GUIDE.md>) · [原本的 V42](<../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>) · [同編號的另一件事：R130 Clean](<../R130_Clean/FILE_GUIDE.md>)
 
 **一句話：** 舊 V42 的漂亮分數受資料重用影響（[R122](<../R122_OperatorPrinciples/FILE_GUIDE.md>)），那它的架構本身到底如何？2026-09-13 依使用者要求，R129 完全不動，只把 V42 架構從零重訓一次：用跟 R129 同一批 512 個乾淨合成母場景，不用舊權重、舊老師或任何實拍與 SEM 答案，32 輪、4,096 次更新。結果是乾淨 V42 跟 R129 互有勝負；舊 V42 那個很大的細節優勢沒有重現。
 

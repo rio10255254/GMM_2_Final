@@ -1,6 +1,0 @@
-{
-  "purpose": "Test whether the line-displacement ranking depends on Raw-ranked step selection",
-  "selection_source": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/selection_sensitivity/all_pair_measurements.csv",
-  "metric": "Shared individual 50% line-edge crossing displacement",
-  "limit": "Absolute error remains relative to nominal commanded motion, not a stored per-frame feedback value."
-}

@@ -8,13 +8,13 @@
 
 | 階段 | 實際做了甚麼 | 原件與重要限制 |
 |---|---|---|
-| 光學校正 | 同一組25位置Lab ROI，用主專案的Whole-FOV Zernike／BADS流程；細預對齊改0.10px與385px裁切 | [粗細對齊比較](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/reports/FINE_PREALIGN_COMPARISON_20250608.md)。中心更穩不代表全面勝過高斯，原高斯控制保留 |
-| stage01至33資料基礎 | 2,968組乾淨答案、Lab BADS輸入與高斯控制；1100環形配對；R39 safe1240／strong1590／保留210，R40訓練1300／保留100 | [完整資料基礎](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/reports/LAB_TRAINING_DATA_STAGE01_33_20250608.md)。stage是資料類型，不是33次訓練；第一批沒有R41／42／44資料 |
-| 相容起點與25輪短跑 | 沿用COMBO網路權重，去掉舊PSF緩衝並以Lab25位置重建；Lab R39及R40各25輪 | [原bootstrap](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/reports/LAB_TRAINING_BOOTSTRAP_20250608.md)。PSF緩衝不同不表示整個模型從零；略過驗證的輪次不能當品質比較 |
-| 首次100輪正式訓練 | R39 safe及R40 combo各100輪，沒有開force_fast_eval；原log仍只有50個偶數輪填正式驗證 | [完整100輪報告](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/reports/LAB_FORMAL_TRAINING_100E_20260609.md)。品質最佳第100輪與內部best第21／44輪都保留，之後按實拍量測另判 |
-| 首次實拍GMF與角點失敗 | 51張棋盤照片，外部只有50列／49步；重建對整段步長波動只有小幅改善，同時角點受損 | [原五種GMF結果](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/reports/LAB_CHECKBOARD_EXTERNAL_GMF_20260611.md)、[根因拆解](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/reports/LAB_GMF_ROOT_CAUSE_DEEP_PROBE_20260611.md)。共同異常步留在主結果，移除只作診斷 |
+| 光學校正 | 同一組25位置Lab ROI，用主專案的Whole-FOV Zernike／BADS流程；細預對齊改0.10px與385px裁切 | [粗細對齊比較](../../../LabSystem_MOSR/psf_calibration/reports/FINE_PREALIGN_COMPARISON_20250608.md)。中心更穩不代表全面勝過高斯，原高斯控制保留 |
+| stage01至33資料基礎 | 2,968組乾淨答案、Lab BADS輸入與高斯控制；1100環形配對；R39 safe1240／strong1590／保留210，R40訓練1300／保留100 | [完整資料基礎](../../../LabSystem_MOSR/Training_Data/reports/LAB_TRAINING_DATA_STAGE01_33_20250608.md)。stage是資料類型，不是33次訓練；第一批沒有R41／42／44資料 |
+| 相容起點與25輪短跑 | 沿用COMBO網路權重，去掉舊PSF緩衝並以Lab25位置重建；Lab R39及R40各25輪 | [原bootstrap](../../../LabSystem_MOSR/Experiments/reports/LAB_TRAINING_BOOTSTRAP_20250608.md)。PSF緩衝不同不表示整個模型從零；略過驗證的輪次不能當品質比較 |
+| 首次100輪正式訓練 | R39 safe及R40 combo各100輪，沒有開force_fast_eval；原log仍只有50個偶數輪填正式驗證 | [完整100輪報告](../../../LabSystem_MOSR/Experiments/reports/LAB_FORMAL_TRAINING_100E_20260609.md)。品質最佳第100輪與內部best第21／44輪都保留，之後按實拍量測另判 |
+| 首次實拍GMF與角點失敗 | 51張棋盤照片，外部只有50列／49步；重建對整段步長波動只有小幅改善，同時角點受損 | [原五種GMF結果](../../../LabSystem_MOSR/Experiments/reports/LAB_CHECKBOARD_EXTERNAL_GMF_20260611.md)、[根因拆解](../../../LabSystem_MOSR/Experiments/reports/LAB_GMF_ROOT_CAUSE_DEEP_PROBE_20260611.md)。共同異常步留在主結果，移除只作診斷 |
 
-資料原生成器是[Lab乾淨資料](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/Data_Simulaion.py)與[Lab光學卷積](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/PSF_Convolution.py)，並由各輪原資料組合器建配對。它們和主專案同名程式有Lab路徑及控制差異，不能混用。
+資料原生成器是[Lab乾淨資料](../../../LabSystem_MOSR/Training_Data/Data_Simulaion.py)與[Lab光學卷積](../../../LabSystem_MOSR/Training_Data/PSF_Convolution.py)，並由各輪原資料組合器建配對。它們和主專案同名程式有Lab路徑及控制差異，不能混用。
 
 ## 為甚麼R46一路做到R62
 
@@ -26,7 +26,7 @@ R57至60轉到SEM與尺寸答案：同樣本錨點、半量修正、同影像後
 
 ## V41與V42接在哪裡
 
-V41的原設計從R61v16起步，用R62 v13老師配對11,254組，不是從探索期某個V41檔案隨意續訓。V42原180組兩輪短測再加入軟答案邊帶與品質閘；後來完整120輪及平滑best第10輪另有完整來源。[原V41設計](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone/V41_STANDALONE_DESIGN.md)、[原V42短測](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/V42_SOFTLABEL_SNR_SMOKE_RESULT.md)、[已釐清的完整V42歷史](../lab_comparisons/V42_HISTORY.md)必須一起閱讀。
+V41的原設計從R61v16起步，用R62 v13老師配對11,254組，不是從探索期某個V41檔案隨意續訓。V42原180組兩輪短測再加入軟答案邊帶與品質閘；後來完整120輪及平滑best第10輪另有完整來源。[原V41設計](../../../LabSystem_MOSR/Experiments/V41_Standalone/V41_STANDALONE_DESIGN.md)、[原V42短測](../../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/V42_SOFTLABEL_SNR_SMOKE_RESULT.md)、[已釐清的完整V42歷史](../lab_comparisons/V42_HISTORY.md)必須一起閱讀。
 
 主專案R41是環形蒸餾，R42是顯微邊界；它們與Lab V41／V42不是同一實驗。主專案R61的STEP／論文驗證入口也不是另一份獨立從零R61模型。
 

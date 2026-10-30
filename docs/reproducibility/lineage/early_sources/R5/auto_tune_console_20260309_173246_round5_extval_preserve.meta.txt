@@ -1,4 +1,4 @@
 pid=24932
-out=Traing_Progress/organized_20260309/pending/logs/auto_tune_console_20260309_173246_round5_extval_preserve.out.log
-err=Traing_Progress/organized_20260309/pending/logs/auto_tune_console_20260309_173246_round5_extval_preserve.err.log
+out=Experiments/Legacy/organized_20260309/pending/logs/auto_tune_console_20260309_173246_round5_extval_preserve.out.log
+err=Experiments/Legacy/organized_20260309/pending/logs/auto_tune_console_20260309_173246_round5_extval_preserve.err.log
 cmd=python -u Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py --profile round5_extval_preserve --sweep-epochs 6 --final-epochs 10 --deterministic

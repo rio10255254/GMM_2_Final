@@ -93,7 +93,7 @@
       "model_name_base": "GESR_v1_v5_ST8_SWP_s0h",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_04_ellipses",
           "stage_08_annulus_focus",
@@ -147,14 +147,14 @@
       },
       "score_shift_first": 4.196952523309399,
       "duration_sec": 491.0947587490082,
-      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_s0h_20260309_105119"
+      "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST8_SWP_s0h_20260309_105119"
     },
     {
       "candidate": "step8_seed_stage0_sharp",
       "model_name_base": "GESR_v1_v5_ST8_SWP_s0s",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_02_circles",
           "stage_04_ellipses",
@@ -209,13 +209,13 @@
       },
       "score_shift_first": 4.3520209475086595,
       "duration_sec": 492.57042169570923,
-      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_s0s_20260309_105930"
+      "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST8_SWP_s0s_20260309_105930"
     },
     {
       "candidate": "step8_seed_no_weakpsf",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_04_ellipses",
           "stage_08_annulus_focus",
@@ -256,7 +256,7 @@
       "model_name_base": "GESR_v1_v5_ST8_SWP_s0g",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_02_circles",
           "stage_04_ellipses",
@@ -312,7 +312,7 @@
       },
       "score_shift_first": 4.479145164564997,
       "duration_sec": 502.7873594760895,
-      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_s0g_20260309_110745"
+      "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST8_SWP_s0g_20260309_110745"
     }
   ],
   "best_candidate": {
@@ -321,7 +321,7 @@
     "score_shift_first": 4.479145164564997,
     "overrides": {
       "LOAD_MODEL": true,
-      "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
+      "PRETRAINED_PATH": "Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
       "TRAIN_INCLUDE_SUBDIRS": [
         "stage_02_circles",
         "stage_04_ellipses",
@@ -359,7 +359,7 @@
       "WEAK_PSF_BETA_SCALE_STAGE2": 0.06,
       "WEAK_PSF_BETA_SCALE_STAGE3": 0.06
     },
-    "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_SWP_s0g_20260309_110745"
+    "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST8_SWP_s0g_20260309_110745"
   },
   "final_run": {
     "candidate": "step8_seed_hold_general",
@@ -382,7 +382,7 @@
     },
     "score_shift_first": 2.6826529991815313,
     "duration_sec": 2571.2900156974792,
-    "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST8_FIN_s0g_20260309_111608"
+    "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST8_FIN_s0g_20260309_111608"
   },
   "status": "ok"
 }

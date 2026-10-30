@@ -20,7 +20,7 @@ from scipy.stats import wilcoxon
 
 from research_recovery import safe_relative,write_json
 
-BASE='Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720'
+BASE='LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720'
 
 
 def sha(path):

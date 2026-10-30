@@ -1,0 +1,8 @@
+[
+ {"file": "Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py", "name": "train_mod.PROJECT_ROOT", "path": "",
+  "why": "train_mod is Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py, whose PROJECT_ROOT is Path(__file__).parents[1]: the project root."},
+ {"file": "Experiments/R32Sandbox/Model/autotune_r32.py", "name": "train_mod.PROJECT_ROOT", "path": "",
+  "why": "train_mod is train_r32.py beside it, whose PROJECT_ROOT is SHARED_ROOT = Path(__file__).parents[3]: the project root."},
+ {"file": "Tools/research_recovery.py", "name": "root", "path": "",
+  "why": "root is the project root the command line passes to catalog()."}
+]

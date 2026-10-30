@@ -60,8 +60,8 @@ noA = fullfile(PROJECT_ROOT, 'Experiments/R63_CausalBoundaryMotionAblation/resul
 makeComparison({rawA, fullA, noA}, {'Raw','完整模型','移除位置基準'}, ...
     [768 889 687 808], 0.069, fullfile(out, '10_ablation_p29_matched_comparison.png'));
 
-naf50 = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/real_inference/sequences/50x_x_0p5um/frame_0000.bmp');
-eds50 = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/real_inference/sequences/50x_x_0p5um/frame_0000.bmp');
+naf50 = fullfile(PROJECT_ROOT, 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/real_inference/sequences/50x_x_0p5um/frame_0000.bmp');
+eds50 = fullfile(PROJECT_ROOT, 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/real_inference/sequences/50x_x_0p5um/frame_0000.bmp');
 mos50 = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/02_V42_E120_SOURCE_MATERIAL/reconstructions/50x_0p5um/frame_0000.bmp');
 makeComparison({raw50, naf50, eds50, mos50}, {'Raw','NAFNet','EDSR-x1','MOSR'}, ...
     [1065 1281 607 823], 0.069, fullfile(out, '11_multimodel_50x_pillar_matched_comparison.png'));

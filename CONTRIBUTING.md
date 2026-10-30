@@ -22,7 +22,7 @@ Tracked content includes:
 刻意**不**追蹤的內容包括：  
 Intentionally untracked content includes:
 
-- `Traing_Progress/`
+- `Experiments/Legacy/`
 - `Training_Data/`
 - `Deliverables/Company_Packages/`
 - 大量 artifact，例如 `weights/`、`artifacts/`、`logs/`、`reconstructions/`、`gmf_results/`

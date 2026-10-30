@@ -399,13 +399,13 @@
     },
     {
       "role": "selected_R61_model",
-      "source": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+      "source": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
       "exists": true,
       "bytes": 17517150,
       "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
       "selected_provider": {
-        "path_key": "thesis_mosr_evidence/labsystem_mosr/traing_progress/training_progress_lab_gesr_v1_v5_st0p8_swp_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+        "path_key": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+        "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
         "bytes": 17517150,
         "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b",
         "release": "research-results-models-20261016",
@@ -417,13 +417,13 @@
     },
     {
       "role": "fixed_PSF",
-      "source": "Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+      "source": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
       "exists": true,
       "bytes": 1951267,
       "sha256": "4a05a7f9ac1a4639057489fa18bf52361d2164bdd4ec7503b8ddd12d1d90f1f3",
       "selected_provider": {
-        "path_key": "thesis_mosr_evidence/labsystem_mosr/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/psf_fitted_2d_fovstack.mat",
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+        "path_key": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+        "path": "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
         "bytes": 1951267,
         "sha256": "4a05a7f9ac1a4639057489fa18bf52361d2164bdd4ec7503b8ddd12d1d90f1f3",
         "release": "research-results-models-20261016",
@@ -437,13 +437,13 @@
       "role": "frozen_inference_runtime",
       "source": "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
       "exists": true,
-      "bytes": 38367,
-      "sha256": "fcc7d26ac4eb730aa05efb0b02528040f46b527d1f709c7a482238ac79d69d00",
+      "bytes": 38453,
+      "sha256": "81e8890f20080b0bb12d246efec42b292b5390a0a9c069ea90da56310094461c",
       "selected_provider": {
         "path_key": "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
         "path": "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
-        "bytes": 38367,
-        "sha256": "fcc7d26ac4eb730aa05efb0b02528040f46b527d1f709c7a482238ac79d69d00",
+        "bytes": 38453,
+        "sha256": "81e8890f20080b0bb12d246efec42b292b5390a0a9c069ea90da56310094461c",
         "release": "research-preservation-20261021",
         "asset": "ordinary_repository"
       }
@@ -604,8 +604,8 @@
     },
     {
       "path": "Experiments/R69_ACMContourSEMValidation/config/experiment.json",
-      "bytes": 2132,
-      "sha256": "d4662a050518e5b273ea3ac571fc1c236ef62d8d90cfdfd054d00f799503c038",
+      "bytes": 2090,
+      "sha256": "858508be76ed6d9e055ad651db04206b98ab89b1970531cd5633c86a987578e9",
       "git_blob": "568ad77c0796ed1e29aaedd242191a32f4653e6d",
       "matches_published_git": true,
       "providers": []

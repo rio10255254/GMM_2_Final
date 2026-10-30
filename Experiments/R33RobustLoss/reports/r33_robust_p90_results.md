@@ -3,7 +3,7 @@
 ## Training
 - Candidate: `r33_robust_p90` (ROBUST_LOSS_PERCENTILE=0.90, WARMUP=10)
 - Epochs: 100, Best: epoch 23
-- Checkpoint: `Traing_Progress/training_progress_..._20260405_073906/weights/best_tradeoff.pth.tar`
+- Checkpoint: `Experiments/Training_Runs/training_progress_..._20260405_073906/weights/best_tradeoff.pth.tar`
 
 ## Key Findings
 

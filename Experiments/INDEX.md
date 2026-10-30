@@ -12,6 +12,11 @@ Last updated: 2026-10-24
 | 位移波動的定義 | 論文主要指標是「單趟走 30 步的步距標準差」，不是固定某一步跨 30 趟的標準差。見 [16 方法單趟重算](../Thesis_MOSR_Evidence/Model_Comparison_Reports/WithinScan_30Step_16Models_20260930/WITHIN_SCAN_30_STEP_16_MODEL_REASSESSMENT.md) |
 | 保存與缺件 | [STATUS.md](../docs/reproducibility/STATUS.md)、[KNOWN_GAPS.md](../docs/reproducibility/KNOWN_GAPS.md) |
 
+這一層另有兩個不是實驗輪的資料夾（2026-10-28 由原本根目錄的 `Traing_Progress` 拆成）：
+
+- [Legacy](Legacy/README.md)：早期 `organized_*` 整理批次與 Round16 至 31 的選模紀錄。
+- [Training_Runs](Training_Runs/README.md)：每次訓練一個 `training_progress_*` 資料夾，`Model/` 訓練器的預設輸出。
+
 2026-10 的逐批保存收據（取回核對、補件、清理）原本堆在本頁開頭，原文逐位元組保留在 [docs/history/BEFORE_PLAIN_REWRITE_20261024/Experiments__INDEX.md](../docs/history/BEFORE_PLAIN_REWRITE_20261024/Experiments__INDEX.md)，另見 [docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md](../docs/history/EXPERIMENT_INDEX_BEFORE_PROJECT_COMPLETION_20261021.md)。以下表格未更動。
 
 ## Active（formal baseline + approved alternates）
@@ -83,7 +88,7 @@ RAW／R152論文與網頁對話交接入口：[完整設計、訓練、驗證、
 | R34 / R35 / R37 | (sandbox only) | `sandbox/r34` / `r35` / `r37` | all failed to restore sharpness |
 | R38 | `R38SeqConsistency/` | `sandbox/r38` | seq all-stages noise corrupted 0.8px |
 
-Round31（legacy batch）亦 closed，見 `Traing_Progress/organized_20260316/round31/`。
+Round31（legacy batch）亦 closed，見 `Experiments/Legacy/organized_20260316/round31/`。
 
 ## 完整系列報告
 

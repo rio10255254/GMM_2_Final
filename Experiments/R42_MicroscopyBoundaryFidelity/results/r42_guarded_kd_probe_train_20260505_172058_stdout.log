@@ -10,7 +10,7 @@
     "micro": 250,
     "boundary": 280
   },
-  "base_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar",
+  "base_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar",
   "model_name": "GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe",
   "num_epoch": 8,
   "simpletest_max_epoch": 8,
@@ -29,13 +29,13 @@
     "enabled": true,
     "combo_weight": 0.2,
     "capacity_weight": 0.05,
-    "combo_path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
-    "capacity_path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar"
+    "combo_path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+    "capacity_path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar"
   }
 }
 [RUN] tag=GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe_20260505_172101 model=GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe
-[RUN] progress_dir=Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe_20260505_172101
-[RUN] weights_dir=Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe_20260505_172101/weights
+[RUN] progress_dir=Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe_20260505_172101
+[RUN] weights_dir=Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe_20260505_172101/weights
 [REPRO] mode=OFF seed=1337 deterministic=OFF tf32=ON amp=ON fixed_split=OFF num_workers=4
 [SEED] active=1261200 cudnn_deterministic=0 cudnn_benchmark=1 tf32_matmul=1 tf32_cudnn=1
 [FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=2 batch_log_every=5 csv_flush_n=50
@@ -46,12 +46,12 @@
 [INFO] GMF_VALIDATE_SOURCE = val_batch
 [INFO] Sequence validation: DISABLED
 [INFO] Sequence pairs: DISABLED
-[INFO] Resuming training from explicit checkpoint: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar
+[INFO] Resuming training from explicit checkpoint: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar
 [INFO] Optimizer state reset after checkpoint load.
 [INFO] Loaded weights from epoch 21, but epoch counter reset to 0.
 [INFO] Resumed from epoch 0
-[KD] loaded frozen COMBO teacher: Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar
-[KD] loaded frozen R40 teacher: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar
+[KD] loaded frozen COMBO teacher: Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar
+[KD] loaded frozen R40 teacher: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar
 [KD] enabled: combo_weight=0.2000 r40_weight=0.0500 warmup_epoch=0
 [MONITOR_REF] edgeW_ref=5.2184 hf_ref=0.0000 cb_ref=0.001719
 -> Epoch 0 Val Done. Total=0.058214 | Rec=0.003718 | Edge=0.040073 | EdgeProf=0.000000 | PSNR=30.23 | SSIM=0.9351 | FFTShape=0.000000 | CB=0.000000 | HF=0.006

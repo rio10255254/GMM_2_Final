@@ -26,8 +26,8 @@ from GeoEdgeAlignSR_v1_PolicyAccess import load_probe_policy_pack
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-REPORT_ROOT = PROJECT_ROOT / "Traing_Progress" / "auto_tune_reports"
-ORG_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260316" / "round30"
+REPORT_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "auto_tune_reports"
+ORG_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260316" / "round30"
 LOG_ROOT = ORG_ROOT / "pending" / "logs"
 SELECTED_DIR = ORG_ROOT / "selected"
 REPORT_DIR = SELECTED_DIR / "reports"
@@ -39,7 +39,7 @@ PROFILE_NAME = "round30_architecture_breakthrough"
 SUMMARY_PREFIX = "ROUND30_ARCH_BREAKTHROUGH"
 RUN_SEED = 1261830
 CONTROL_CANDIDATE = "r26_sm035"
-CONTROL_CHECKPOINT = Path(str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar'))
+CONTROL_CHECKPOINT = Path(str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar'))
 POLICY_PATH = PROJECT_ROOT / "ESTIMATOR_POLICY.json"
 
 PLAN = [
@@ -499,7 +499,7 @@ def _move_new_runs(start_ts: float, selected_candidate: str) -> None:
         path.mkdir(parents=True, exist_ok=True)
 
     selected_token = _candidate_path_token(selected_candidate)
-    for path in (PROJECT_ROOT / "Traing_Progress").glob("training_progress_GESR_v1_v5_ST0p8_SWP_r30*"):
+    for path in (PROJECT_ROOT / "Experiments" / "Training_Runs").glob("training_progress_GESR_v1_v5_ST0p8_SWP_r30*"):
         try:
             mtime = path.stat().st_mtime
         except OSError:
@@ -512,7 +512,7 @@ def _move_new_runs(start_ts: float, selected_candidate: str) -> None:
             shutil.rmtree(target, ignore_errors=True)
         shutil.move(str(path), str(target))
 
-    for path in (PROJECT_ROOT / "Traing_Progress").glob("training_progress_process_probe_r30*"):
+    for path in (PROJECT_ROOT / "Experiments" / "Training_Runs").glob("training_progress_process_probe_r30*"):
         try:
             mtime = path.stat().st_mtime
         except OSError:

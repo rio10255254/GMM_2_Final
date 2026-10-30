@@ -5,8 +5,9 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-TP_ROOT = PROJECT_ROOT / "Traing_Progress"
-ORG_ROOT = TP_ROOT / "organized_20260311"
+TP_ROOT = PROJECT_ROOT / "Experiments" / "Training_Runs"
+LEGACY_ROOT = PROJECT_ROOT / "Experiments" / "Legacy"  # early organized_* batches
+ORG_ROOT = LEGACY_ROOT / "organized_20260311"
 STATUS_MD = PROJECT_ROOT / "000_LONGRUN_UNIVERSAL_STATUS.md"
 RUN_FLAG = PROJECT_ROOT / "000_LONGRUN_UNIVERSAL_RUNNING.txt"
 CLEANUP_STATUS_MD = PROJECT_ROOT / "000_POST_CLEANUP_STATUS.md"

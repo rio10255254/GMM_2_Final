@@ -17,8 +17,8 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-REPORT_ROOT = PROJECT_ROOT / "Traing_Progress" / "auto_tune_reports"
-ORG_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260314" / "round20"
+REPORT_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "auto_tune_reports"
+ORG_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260314" / "round20"
 LOG_ROOT = ORG_ROOT / "pending" / "logs"
 SUMMARY_DIR = ORG_ROOT / "selected" / "reports"
 SELECTED_DIR = ORG_ROOT / "selected"

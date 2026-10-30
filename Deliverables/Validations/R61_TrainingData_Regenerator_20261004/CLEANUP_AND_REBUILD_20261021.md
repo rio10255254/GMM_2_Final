@@ -13,6 +13,6 @@ H:\GMM_2_Final_Archive\validation_history\R61_Regenerator_20261004_cleanup_20261
 C:\Users\Rio\anaconda3\python.exe Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004/regenerate_r61.py --output-root D:\R61_Rebuilt_New --report D:\R61_Rebuilt_New\rebuild_check.json
 ```
 
-來源包仍在 Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004；實際訓練庫仍在 Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16。
+來源包仍在 Deliverables/Data_Regenerators/R61_TrainingData_Regenerator_20261004；實際訓練庫仍在 LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16。
 
 [一個原影像與標記對照](../../../docs/reproducibility/r61_regeneration_example/README.md)說明為什麼除了生成程式，仍須保留部分早期來源。

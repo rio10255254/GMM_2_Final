@@ -17,7 +17,7 @@ end
 
 function draw_via(outDir)
     PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))));
-csvPath = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/circular_cd_sharpness/circular_feature_cd_intervals.csv');
+csvPath = fullfile(PROJECT_ROOT, 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/circular_cd_sharpness/circular_feature_cd_intervals.csv');
 T = readtable(csvPath, 'TextType', 'string', 'VariableNamingRule', 'preserve');
 S = T(T.magnification == "20x" & T.morphology == "via", :);
 methods = ["Raw", "NAFNet", "EDSR", "MOSR"];
@@ -77,7 +77,7 @@ end
 
 function draw_lines(outDir)
     PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))));
-inputCsv = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/line/tables/line_sharpness_summary.csv');
+inputCsv = fullfile(PROJECT_ROOT, 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/line/tables/line_sharpness_summary.csv');
 T = readtable(inputCsv, 'TextType', 'string');
 orientations = ["horizontal_lines", "vertical_lines"];
 methods = ["Raw", "MOSR"];

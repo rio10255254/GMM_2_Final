@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -44,47 +44,47 @@
 
 
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_fixed_psf/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_fixed_psf/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_fixed_psf/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_fixed_psf/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_e15_tiled/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_e15_tiled/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_e15_tiled/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_e15_tiled/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
-- [原始報告：基礎 U-Net 重新訓練與位移穩定性檢查](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/BASE_UNET_RETEST_SUMMARY_TW.md>)
+- [原始報告：基礎 U-Net 重新訓練與位移穩定性檢查](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/BASE_UNET_RETEST_SUMMARY_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_0p5/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_0p5/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_0p5/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_0p5/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_1p0/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_1p0/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_1p0/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_1p0/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_1p5/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_1p5/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_1p5/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_1p5/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_2p0/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_2p0/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_2p0/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/smoothing_control/sigma_2p0/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_v2/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_v2/displacement_audit/UNIFIED_AUDIT_REPORT_TW.md>)
 
-- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_v2/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
+- [原始報告：四組位移實驗 Raw 鎖定、V42 盲化稽核](<../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_v2/displacement_audit/candidate/CANDIDATE_READOUT_TW.md>)
 
 
 

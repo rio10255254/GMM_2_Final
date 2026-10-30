@@ -25,8 +25,8 @@ import GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest as infer  # noqa:
 
 
 MODELS = [
-    ("R30",   REPO_ROOT / r"Traing_Progress\organized_20260316\round30\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913\weights\best_tradeoff.pth.tar"),
-    ("COMBO", REPO_ROOT / r"Traing_Progress\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\weights\best_tradeoff.pth.tar"),
+    ("R30",   REPO_ROOT / r"Experiments\Legacy\organized_20260316\round30\archive\runs\training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913\weights\best_tradeoff.pth.tar"),
+    ("COMBO", REPO_ROOT / r"Experiments\Training_Runs\training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525\weights\best_tradeoff.pth.tar"),
     ("a030",  REPO_ROOT / r"Experiments\R39_ShapeGeneralization\results\weight_sweep\checkpoints\a030\best_tradeoff.pth.tar"),
     ("a043",  REPO_ROOT / r"Experiments\R40_MicroscopyFeatureCoverage\results\weight_sweep\combo_best_low_alpha\checkpoints\a043\best_tradeoff.pth.tar"),
     ("a025",  REPO_ROOT / r"Experiments\R39_ShapeGeneralization\results\a030_x_a043_sweep\checkpoints\a025\best_tradeoff.pth.tar"),

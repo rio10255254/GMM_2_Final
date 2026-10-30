@@ -48,9 +48,10 @@ except ImportError:
 # Defaults
 # -----------------------------------------------------------------------------
 PROJECT_ROOT = SCRIPT_DIR.parent
-TRAINING_PROGRESS_ROOT = PROJECT_ROOT / "Traing_Progress"  # keep same folder name as training script
-CURRENT_SELECTED_SEED_MANIFEST = TRAINING_PROGRESS_ROOT / "organized_20260316" / "round26" / "selected" / "current_round26_step_recovery_seed.json"
-CURRENT_EXTERNAL_VALIDATION_ROOT = TRAINING_PROGRESS_ROOT / "organized_20260316" / "external_validation" / "current_seed"
+TRAINING_PROGRESS_ROOT = PROJECT_ROOT / "Experiments" / "Training_Runs"  # keep same folder name as training script
+LEGACY_ROOT = PROJECT_ROOT / "Experiments" / "Legacy"  # early organized_* batches
+CURRENT_SELECTED_SEED_MANIFEST = LEGACY_ROOT / "organized_20260316" / "round26" / "selected" / "current_round26_step_recovery_seed.json"
+CURRENT_EXTERNAL_VALIDATION_ROOT = LEGACY_ROOT / "organized_20260316" / "external_validation" / "current_seed"
 TRAIN_MODEL_NAME = "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest"
 TRAIN_PROGRESS_PREFIX = f"training_progress_{TRAIN_MODEL_NAME}"
 TRAIN_WEIGHT_FILENAMES = [
@@ -63,7 +64,7 @@ TRAIN_WEIGHT_FILENAMES = [
 LEGACY_WEIGHT_CANDIDATES: list[Path] = []
 # DEFAULT_INPUT_DIR = PROJECT_ROOT / "Training_Data" / "tra_src_ring"
 DEFAULT_INPUT_DIR = "C:\\Users\\Rio\\Downloads\\NTU_ImageDataset\\Pitch1um_Y_100\\Cropped_Output"
-DEFAULT_RECON_PROGRESS_ROOT = TRAINING_PROGRESS_ROOT / "organized_20260316" / "tta_experiments" / "reconstructions"
+DEFAULT_RECON_PROGRESS_ROOT = LEGACY_ROOT / "organized_20260316" / "tta_experiments" / "reconstructions"
 DEFAULT_RUN_PREFIX = "reconstruct_progress"
 TRAIN_PROGRESS_TS_PATTERN = re.compile(r"^training_progress_.+_(\d{8}(?:_\d{6})?)$")
 FOLDER_TS_PATTERN = re.compile(r"(20\d{6}(?:_\d{6})?)")

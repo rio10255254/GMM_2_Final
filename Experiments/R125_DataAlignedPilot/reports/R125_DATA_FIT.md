@@ -16,7 +16,7 @@
 
 這是有範圍限制的介面及来源判斷，沒有逐筆重審所有舊資料，也不由教師或 SEM 答案的存在推斷作弊。R61 的歷史角色和 V42 的已查證評估重用問題必須分開。可重用過去實驗帶來的知識，資料本身仍需重新取得符合契約的來源與產物。
 
-來源：[R61 啟動設定](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/launch_r61.py)、[R118 資料清單](../../R118_PhysicalCoordinateRepairScratch/data/package/manifest.json)、[R120 物理序列清單](../../R120_PhysicalSequenceRepair/data/sequences/train/manifest.json)。核對範圍與當時指紋保存在 [第一版審查](<../results/data_audit_v1.json>) 的 `legacy` 欄位。
+來源：[R61 啟動設定](../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/launch_r61.py)、[R118 資料清單](../../R118_PhysicalCoordinateRepairScratch/data/package/manifest.json)、[R120 物理序列清單](../../R120_PhysicalSequenceRepair/data/sequences/train/manifest.json)。核對範圍與當時指紋保存在 [第一版審查](<../results/data_audit_v1.json>) 的 `legacy` 欄位。
 
 ## 2. 實際使用的新資料與母數
 

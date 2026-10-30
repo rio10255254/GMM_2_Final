@@ -5,7 +5,7 @@ Extended candidates (those without prior 720-angle analysis):
 
 This mirrors run_ablation_inference_and_720angle.py but with explicit
 full checkpoint paths (since extended candidates' ckpts live across
-many experiment subdirs, not under Traing_Progress/...weights/).
+many experiment subdirs, not under Experiments/Legacy/...weights/).
 
 Output:
   recon BMP    -> Thesis_MOSR_Evidence/_extended_candidates_internal/_recon/<TAG>/<pitch>/...
@@ -38,8 +38,8 @@ CANDIDATES = {
     "a030": REPO_ROOT / "Experiments/R39_ShapeGeneralization/results/weight_sweep/checkpoints/a030/best_tradeoff.pth.tar",
     "a025": REPO_ROOT / "Experiments/R39_ShapeGeneralization/results/a030_x_a043_sweep/checkpoints/a025/best_tradeoff.pth.tar",
     "R40_a045": REPO_ROOT / "Experiments/R40_MicroscopyFeatureCoverage/results/weight_sweep/combo_best_low_alpha/checkpoints/a045/best_tradeoff.pth.tar",
-    "R42_r41best": REPO_ROOT / "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar",
-    "R46": REPO_ROOT / "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r46_a025_corner_finetune_20260514_230359/weights/best_tradeoff.pth.tar",
+    "R42_r41best": REPO_ROOT / "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar",
+    "R46": REPO_ROOT / "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r46_a025_corner_finetune_20260514_230359/weights/best_tradeoff.pth.tar",
 }
 
 PITCHES = [

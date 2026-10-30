@@ -9,6 +9,11 @@ Checks:
 5. Inference script copies are in sync (quantization fix)
 6. Legacy governance surfaces exist and stay whitelisted
 7. Truth-plane docs and ESTIMATOR_POLICY schema stay aligned
+Also a reminder (warning): executable code that names a path inside the project folder on a fixed
+drive; programs find the project root from their own location.
+
+Experiments/Legacy (early organized_* batches) and Experiments/Training_Runs (one training_progress_*
+folder per run) are not rounds: each needs only its README and one line in INDEX.md.
 
 Run: python Tools/validate_project_structure.py
 """
@@ -124,11 +129,18 @@ def warn(msg: str):
     print(f"  WARN:  {msg}")
 
 
+SHARED_EXPERIMENT_DIRS = ("Legacy", "Training_Runs")
+
+
 def check_experiment_dirs():
     print("=== Check 1: Experiment directories ===")
     exp_root = REPO / "Experiments"
     for d in sorted(exp_root.iterdir()):
-        if not d.is_dir() or d.name.startswith("."):
+        if not d.is_dir() or d.name.startswith(".") or d.name == "__pycache__":
+            continue
+        if d.name in SHARED_EXPERIMENT_DIRS:
+            if not (d / "README.md").exists():
+                error(f"Experiments/{d.name}/README.md is missing")
             continue
         if not (d / "README.md").exists():
             error(f"{d.name}/ missing README.md")
@@ -245,16 +257,16 @@ def check_legacy_governance():
     guide_text = guide.read_text(encoding="utf-8") if guide.exists() else ""
     tracked_targets: list[Path] = []
     for batch_name, surfaces in LEGACY_BATCH_SPECS.items():
-        legacy_root = REPO / "Traing_Progress" / batch_name
+        legacy_root = REPO / "Experiments" / "Legacy" / batch_name
         if not legacy_root.is_dir():
-            error(f"Legacy batch missing: Traing_Progress/{batch_name}")
+            error(f"Legacy batch missing: Experiments/Legacy/{batch_name}")
             continue
         batch_readme = legacy_root / "README.md"
         batch_manifest = legacy_root / "MANIFEST.md"
         if not batch_readme.exists():
-            error(f"Traing_Progress/{batch_name}/README.md is missing")
+            error(f"Experiments/Legacy/{batch_name}/README.md is missing")
         if not batch_manifest.exists():
-            error(f"Traing_Progress/{batch_name}/MANIFEST.md is missing")
+            error(f"Experiments/Legacy/{batch_name}/MANIFEST.md is missing")
         tracked_targets.extend([batch_readme, batch_manifest])
         if guide_text and batch_name not in guide_text:
             warn(f"LEGACY_ROUNDS_OPERATIONS.md does not mention batch {batch_name}")
@@ -262,14 +274,14 @@ def check_legacy_governance():
         for dirname in surfaces:
             surface = legacy_root / dirname
             if not surface.is_dir():
-                error(f"Legacy surface missing: Traing_Progress/{batch_name}/{dirname}")
+                error(f"Legacy surface missing: Experiments/Legacy/{batch_name}/{dirname}")
                 continue
             readme = surface / "README.md"
             manifest = surface / "MANIFEST.md"
             if not readme.exists():
-                error(f"Traing_Progress/{batch_name}/{dirname}/README.md is missing")
+                error(f"Experiments/Legacy/{batch_name}/{dirname}/README.md is missing")
             if not manifest.exists():
-                error(f"Traing_Progress/{batch_name}/{dirname}/MANIFEST.md is missing")
+                error(f"Experiments/Legacy/{batch_name}/{dirname}/MANIFEST.md is missing")
             tracked_targets.extend([readme, manifest])
             surface_name = Path(dirname).name
             if guide_text and surface_name not in guide_text:
@@ -287,12 +299,12 @@ def check_legacy_governance():
             error(f"Legacy governance file is ignored by git: {target.relative_to(REPO)}")
 
     blocked_targets = [
-        REPO / "Traing_Progress" / "organized_20260313" / "round18" / "external_validation" / "future_note" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260314" / "branch_e" / "archive" / "future_note" / "MANIFEST.md",
-        REPO / "Traing_Progress" / "organized_20260315" / "round22" / "selected" / "reports" / "extra" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round23" / "archive" / "future_note" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round31" / "archive" / "future_note" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260313" / "round18" / "external_validation" / "future_note" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260314" / "branch_e" / "archive" / "future_note" / "MANIFEST.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260315" / "round22" / "selected" / "reports" / "extra" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round23" / "archive" / "future_note" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round31" / "archive" / "future_note" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
     ]
     for target in blocked_targets:
         result = subprocess.run(
@@ -430,6 +442,38 @@ def check_recon_gallery_format():
         )
 
 
+# a path below the project folder written into code; a bare mention of the folder (in a docstring, say) is fine
+HARDCODED_PROJECT_PATH = re.compile(r"[A-Za-z]:(?:\\\\|\\|/)+GMM_2_Final(?:\\\\|\\|/)+[A-Za-z0-9_.\-]", re.I)
+HARDCODED_SCAN_EXT = (".py", ".ps1", ".m")
+# the restructure tools and their tests carry such paths as test data; the restructure record shows old paths
+HARDCODED_SCAN_SKIP = re.compile(r"^(?:Tools/(?:tests/test_)?(?:restructure_[a-z_]+|check_markdown_links)\.py|"
+                                 r"Tools/tests/test_validate_project_structure\.py|docs/operations/TREE_RESTRUCTURE_20261028/)")
+
+
+def _project_files() -> list[str]:
+    if (REPO / ".git").exists():
+        out = subprocess.run(["git", "-c", "core.quotepath=false", "-C", str(REPO), "ls-files", "-z"],
+                             capture_output=True)
+        if out.returncode == 0:
+            return [p for p in out.stdout.decode("utf-8", "replace").split("\0") if p]
+    return [p.relative_to(REPO).as_posix() for p in REPO.rglob("*") if p.is_file()]
+
+
+def check_hardcoded_project_paths():
+    print("=== Check 12: Hard-coded project paths in code ===")
+    for rel in _project_files():
+        if not rel.lower().endswith(HARDCODED_SCAN_EXT) or HARDCODED_SCAN_SKIP.match(rel):
+            continue
+        try:
+            text = (REPO / rel).read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        m = HARDCODED_PROJECT_PATH.search(text)
+        if m:
+            line = text.count("\n", 0, m.start()) + 1
+            warn(f"{rel}:{line} names a path inside {m.group(0)[:-1]}...; derive the project root from the file's location")
+
+
 def check_quick_handoff_length():
     """Enforce PROJECT_STATE.md Quick Handoff region <= 60 interior lines.
 
@@ -484,6 +528,7 @@ def run_validator() -> dict[str, list[str]]:
     check_legacy_runtime_archive_paths()
     check_quick_handoff_length()
     check_recon_gallery_format()
+    check_hardcoded_project_paths()
 
     return {
         "errors": list(ERRORS),

@@ -1,6 +1,6 @@
 # legacy/branch_e_followup 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260315/branch_e_followup/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,16 +22,16 @@ Branch E校正後再評估
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：BRANCH_E_PHASE2 AUDIT_0P8 Summary](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_0P8_SUMMARY_20260315_154136.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_0P8_be_ctrl_edge_20260315_154136.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_0P8_be_edge_band_20260315_154136.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_0P8_be_soft_band_20260315_154136.md>)
-- [原始報告：BRANCH_E_PHASE2 AUDIT_8P0 Summary](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_8P0_SUMMARY_20260315_154230.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_8P0_be_ctrl_edge_20260315_154230.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_8P0_be_soft_band_20260315_154230.md>)
-- [原始報告：BRANCH_E_PHASE2 Decision Memo](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_DECISION_20260315_154300.md>)
-- [原始報告：BRANCH_E_PHASE2 Extended Probe Summary](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_EXTENDED_SUMMARY_20260315_154136.md>)
-- [原始報告：BRANCH_E_PHASE2 Reevaluation](<../../../Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_REEVALUATION_20260315_203359.md>)
+- [原始報告：BRANCH_E_PHASE2 AUDIT_0P8 Summary](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_0P8_SUMMARY_20260315_154136.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_0P8_be_ctrl_edge_20260315_154136.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_0P8_be_edge_band_20260315_154136.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_0P8_be_soft_band_20260315_154136.md>)
+- [原始報告：BRANCH_E_PHASE2 AUDIT_8P0 Summary](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_8P0_SUMMARY_20260315_154230.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_8P0_be_ctrl_edge_20260315_154230.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_AUDIT_8P0_be_soft_band_20260315_154230.md>)
+- [原始報告：BRANCH_E_PHASE2 Decision Memo](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_DECISION_20260315_154300.md>)
+- [原始報告：BRANCH_E_PHASE2 Extended Probe Summary](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_EXTENDED_SUMMARY_20260315_154136.md>)
+- [原始報告：BRANCH_E_PHASE2 Reevaluation](<../../../Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_REEVALUATION_20260315_203359.md>)
 
 ## 重做與驗證範圍
 

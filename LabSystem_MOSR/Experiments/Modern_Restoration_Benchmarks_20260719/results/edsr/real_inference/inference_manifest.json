@@ -1,0 +1,23 @@
+{
+  "purpose": "Modern learned restoration inference on every formal displacement frame",
+  "checkpoint": "LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/best_edsr.pth.tar",
+  "checkpoint_epoch": 15,
+  "checkpoint_validation": {
+    "loss": 0.09668789293404347,
+    "l1": 0.06820404780568634,
+    "rmse": 0.09247066423032932,
+    "ssim": 0.85762662446405
+  },
+  "model_key": "edsr",
+  "model_parameter_count": 4070785,
+  "package": "Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709",
+  "device": "cuda",
+  "gpu": "NVIDIA RTX A6000",
+  "frame_count": 201,
+  "tile_size": 256,
+  "tile_overlap": 128,
+  "tile_batch": 32,
+  "median_inference_seconds": 3.8493894999992335,
+  "mean_inference_seconds": 3.8522982437809956,
+  "total_elapsed_seconds": 782.9400877000007
+}

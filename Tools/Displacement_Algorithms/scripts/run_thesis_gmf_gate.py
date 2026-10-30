@@ -420,7 +420,6 @@ def build_parser() -> argparse.ArgumentParser:
         "--output-dir",
         default=str(
             PROJECT_ROOT
-            / "Thesis_MOSR_Evidence"
             / "LabSystem_MOSR"
             / "Experiments"
             / "R62_TargetSampleBoost"

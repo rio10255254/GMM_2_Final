@@ -56,7 +56,7 @@ IMAGE_CASES_CONCENTRIC = {
     / STEP_FRAME,
 }
 
-RAW_CD = ROOT / "LabSystem_MOSR" / "Reconstruct_Progress" / "20260618_100MG_user_recon" / "cd_measurement_20260624_corrected_69nm" / "raw_original" / "cd_measurement_per_feature.csv"
+RAW_CD = ROOT / ".." / "LabSystem_MOSR" / "Reconstruct_Progress" / "20260618_100MG_user_recon" / "cd_measurement_20260624_corrected_69nm" / "raw_original" / "cd_measurement_per_feature.csv"
 SEM_CD = ROOT / ".tmp" / "sem_data" / "sem_cd_36_records.csv"
 PILLAR = "\u5713\u67f1"
 NM_PER_PX = 69.0

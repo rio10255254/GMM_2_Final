@@ -1,6 +1,6 @@
 # legacy/round30 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260316/round30/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260316/round30/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,17 +22,17 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND30_ARCH_BREAKTHROUGH AUDIT_0P8 Summary](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_SUMMARY_20260318_003534.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_r30_b1_dironly_20260318_003534.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_r30_b1a1_dir_lblur_20260318_003534.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_r30_b1a1a5_full_20260318_003534.md>)
-- [原始報告：ROUND30_ARCH_BREAKTHROUGH AUDIT_8P0 Summary](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_SUMMARY_20260318_003647.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_r30_b1_dironly_20260318_003647.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_r30_b1a1_dir_lblur_20260318_003647.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_r30_b1a1a5_full_20260318_003647.md>)
-- [原始報告：ROUND30_ARCH_BREAKTHROUGH Decision Memo](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md>)
-- [原始報告：ROUND30_ARCH_BREAKTHROUGH Summary](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_SUMMARY_20260317_160002.md>)
-- [原始報告：Round30 External GMF Compare: R26sm035 vs R30 B1 Candidates](<../../../Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_EXTERNAL_COMPARE.md>)
+- [原始報告：ROUND30_ARCH_BREAKTHROUGH AUDIT_0P8 Summary](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_SUMMARY_20260318_003534.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_r30_b1_dironly_20260318_003534.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_r30_b1a1_dir_lblur_20260318_003534.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_0P8_r30_b1a1a5_full_20260318_003534.md>)
+- [原始報告：ROUND30_ARCH_BREAKTHROUGH AUDIT_8P0 Summary](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_SUMMARY_20260318_003647.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_r30_b1_dironly_20260318_003647.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_r30_b1a1_dir_lblur_20260318_003647.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_AUDIT_8P0_r30_b1a1a5_full_20260318_003647.md>)
+- [原始報告：ROUND30_ARCH_BREAKTHROUGH Decision Memo](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md>)
+- [原始報告：ROUND30_ARCH_BREAKTHROUGH Summary](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_SUMMARY_20260317_160002.md>)
+- [原始報告：Round30 External GMF Compare: R26sm035 vs R30 B1 Candidates](<../../../Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_EXTERNAL_COMPARE.md>)
 
 ## 重做與驗證範圍
 

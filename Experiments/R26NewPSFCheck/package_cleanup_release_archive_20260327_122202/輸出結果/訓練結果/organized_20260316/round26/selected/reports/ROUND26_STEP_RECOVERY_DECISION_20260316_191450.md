@@ -3,7 +3,7 @@
 - winner_candidate: r26_sm035
 - selected_candidate: r26_sm035
 - confirmed: True
-- selected_checkpoint: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar
+- selected_checkpoint: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar
 - macro_estimator: edge_band_refine
 - mid_center_ratio_min: 0.2500
 - mid_step_max: 0.4500

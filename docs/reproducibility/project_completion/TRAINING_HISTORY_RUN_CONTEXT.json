@@ -2,7 +2,7 @@
   "status": "ORIGINAL_FILES_PRESERVED_WITH_ONE_HISTORICAL_IDENTITY_CONFLICT_RETAINED",
   "runs": [
     {
-      "run": "Traing_Progress/organized_20260314/branch_e/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453",
+      "run": "Experiments/Legacy/organized_20260314/branch_e/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453",
       "new_paths": 4,
       "new_model_paths": 1,
       "original_run_metadata": {
@@ -10,8 +10,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_besb_20260315_152453",
         "model_name": "GESR_v1_v5_ST0p8_SWP_besb",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -26,7 +26,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/organized_20260314/branch_e/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453/GESR_v1_v5_ST0p8_SWP_besb_val_log_v5.csv",
+          "path": "Experiments/Legacy/organized_20260314/branch_e/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_besb_20260315_152453/GESR_v1_v5_ST0p8_SWP_besb_val_log_v5.csv",
           "rows": 6,
           "first_epoch": 1,
           "last_epoch": 6,
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419",
+      "run": "Experiments/Legacy/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419",
       "new_paths": 4,
       "new_model_paths": 1,
       "original_run_metadata": {
@@ -43,8 +43,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r20ca",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -59,7 +59,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/GESR_v1_v5_ST0p8_SWP_r20ca_val_log_v5.csv",
+          "path": "Experiments/Legacy/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/GESR_v1_v5_ST0p8_SWP_r20ca_val_log_v5.csv",
           "rows": 4,
           "first_epoch": 1,
           "last_epoch": 4,
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/organized_20260315/branch_e_followup/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929",
+      "run": "Experiments/Legacy/organized_20260315/branch_e_followup/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929",
       "new_paths": 4,
       "new_model_paths": 1,
       "original_run_metadata": {
@@ -76,8 +76,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_bece_20260315_152929",
         "model_name": "GESR_v1_v5_ST0p8_SWP_bece",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -92,7 +92,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/organized_20260315/branch_e_followup/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929/GESR_v1_v5_ST0p8_SWP_bece_val_log_v5.csv",
+          "path": "Experiments/Legacy/organized_20260315/branch_e_followup/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_bece_20260315_152929/GESR_v1_v5_ST0p8_SWP_bece_val_log_v5.csv",
           "rows": 10,
           "first_epoch": 1,
           "last_epoch": 10,
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238",
+      "run": "Experiments/Legacy/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238",
       "new_paths": 4,
       "new_model_paths": 1,
       "original_run_metadata": {
@@ -109,8 +109,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r21mcg",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -125,7 +125,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238/GESR_v1_v5_ST0p8_SWP_r21mcg_val_log_v5.csv",
+          "path": "Experiments/Legacy/organized_20260315/round21/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r21mcg_20260315_215238/GESR_v1_v5_ST0p8_SWP_r21mcg_val_log_v5.csv",
           "rows": 8,
           "first_epoch": 1,
           "last_epoch": 8,
@@ -134,7 +134,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625",
+      "run": "Experiments/Legacy/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625",
       "new_paths": 4,
       "new_model_paths": 1,
       "original_run_metadata": {
@@ -142,8 +142,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r22ps",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -158,7 +158,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/GESR_v1_v5_ST0p8_SWP_r22ps_val_log_v5.csv",
+          "path": "Experiments/Legacy/organized_20260315/round22/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r22ps_20260315_225625/GESR_v1_v5_ST0p8_SWP_r22ps_val_log_v5.csv",
           "rows": 8,
           "first_epoch": 1,
           "last_epoch": 8,
@@ -167,7 +167,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/organized_20260316/round29/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056",
+      "run": "Experiments/Legacy/organized_20260316/round29/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056",
       "new_paths": 4,
       "new_model_paths": 1,
       "original_run_metadata": {
@@ -175,8 +175,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r29sm042",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -191,7 +191,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/organized_20260316/round29/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056/GESR_v1_v5_ST0p8_SWP_r29sm042_val_log_v5.csv",
+          "path": "Experiments/Legacy/organized_20260316/round29/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r29sm042_20260317_114056/GESR_v1_v5_ST0p8_SWP_r29sm042_val_log_v5.csv",
           "rows": 12,
           "first_epoch": 1,
           "last_epoch": 12,
@@ -200,7 +200,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311",
+      "run": "Experiments/Legacy/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311",
       "new_paths": 4,
       "new_model_paths": 1,
       "original_run_metadata": {
@@ -208,8 +208,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r31eqprobup",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -224,7 +224,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311/GESR_v1_v5_ST0p8_SWP_r31eqprobup_val_log_v5.csv",
+          "path": "Experiments/Legacy/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311/GESR_v1_v5_ST0p8_SWP_r31eqprobup_val_log_v5.csv",
           "rows": 15,
           "first_epoch": 1,
           "last_epoch": 15,
@@ -233,7 +233,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -241,8 +241,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -257,7 +257,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073230/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -266,7 +266,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -274,8 +274,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -290,7 +290,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -299,7 +299,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -307,8 +307,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -323,7 +323,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -332,7 +332,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -340,8 +340,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -356,7 +356,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_114824/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -365,7 +365,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -373,8 +373,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -389,7 +389,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_153826/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -398,7 +398,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -406,8 +406,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -422,7 +422,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_225024/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -431,7 +431,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -439,8 +439,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -455,7 +455,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_235455/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -464,7 +464,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -472,8 +472,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -488,7 +488,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_004833/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -497,7 +497,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -505,8 +505,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -521,7 +521,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -530,7 +530,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -538,8 +538,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -554,7 +554,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -563,7 +563,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -571,8 +571,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -587,7 +587,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -596,7 +596,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525",
+      "run": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525",
       "new_paths": 48,
       "new_model_paths": 21,
       "original_run_metadata": {
@@ -604,8 +604,8 @@
         "seed_deterministic": false,
         "run_tag": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525",
         "model_name": "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest",
-        "progress_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525",
-        "pretrained_dir": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -620,7 +620,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -629,7 +629,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833",
+      "run": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833",
       "new_paths": 16,
       "new_model_paths": 5,
       "original_run_metadata": {
@@ -637,8 +637,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833",
         "model_name": "GESR_v1_v5_ST0p8_FIN_r30b1a1",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -653,7 +653,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833/GESR_v1_v5_ST0p8_FIN_r30b1a1_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_150833/GESR_v1_v5_ST0p8_FIN_r30b1a1_val_log_v5.csv",
           "rows": 10,
           "first_epoch": 1,
           "last_epoch": 10,
@@ -662,7 +662,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250",
+      "run": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250",
       "new_paths": 16,
       "new_model_paths": 5,
       "original_run_metadata": {
@@ -670,8 +670,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250",
         "model_name": "GESR_v1_v5_ST0p8_FIN_r30b1a1",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -686,7 +686,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250/GESR_v1_v5_ST0p8_FIN_r30b1a1_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_FIN_r30b1a1_20260317_155250/GESR_v1_v5_ST0p8_FIN_r30b1a1_val_log_v5.csv",
           "rows": 10,
           "first_epoch": 1,
           "last_epoch": 10,
@@ -695,7 +695,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032",
+      "run": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032",
       "new_paths": 5,
       "new_model_paths": 2,
       "original_run_metadata": {
@@ -703,8 +703,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r30b1a1",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -719,7 +719,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032/GESR_v1_v5_ST0p8_SWP_r30b1a1_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1a1_20260317_150032/GESR_v1_v5_ST0p8_SWP_r30b1a1_val_log_v5.csv",
           "rows": 15,
           "first_epoch": 1,
           "last_epoch": 15,
@@ -728,7 +728,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245",
+      "run": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245",
       "new_paths": 5,
       "new_model_paths": 2,
       "original_run_metadata": {
@@ -736,8 +736,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r30b1dir",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -752,7 +752,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245/GESR_v1_v5_ST0p8_SWP_r30b1dir_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_145245/GESR_v1_v5_ST0p8_SWP_r30b1dir_val_log_v5.csv",
           "rows": 15,
           "first_epoch": 1,
           "last_epoch": 15,
@@ -761,7 +761,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116",
+      "run": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116",
       "new_paths": 5,
       "new_model_paths": 2,
       "original_run_metadata": {
@@ -769,8 +769,8 @@
         "seed_deterministic": true,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r30b1dir",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116/weights",
         "device": "cuda:0",
         "amp": false,
         "cudnn_deterministic": true,
@@ -785,7 +785,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116/GESR_v1_v5_ST0p8_SWP_r30b1dir_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152116/GESR_v1_v5_ST0p8_SWP_r30b1dir_val_log_v5.csv",
           "rows": 13,
           "first_epoch": 1,
           "last_epoch": 13,
@@ -794,7 +794,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958",
+      "run": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958",
       "new_paths": 50,
       "new_model_paths": 23,
       "original_run_metadata": {
@@ -802,8 +802,8 @@
         "seed_deterministic": false,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -818,7 +818,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -827,7 +827,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728",
+      "run": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728",
       "new_paths": 50,
       "new_model_paths": 23,
       "original_run_metadata": {
@@ -835,8 +835,8 @@
         "seed_deterministic": false,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -851,7 +851,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -860,7 +860,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537",
+      "run": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537",
       "new_paths": 50,
       "new_model_paths": 23,
       "original_run_metadata": {
@@ -868,8 +868,8 @@
         "seed_deterministic": false,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -884,7 +884,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537/GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537/GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,
@@ -893,7 +893,7 @@
       ]
     },
     {
-      "run": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920",
+      "run": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920",
       "new_paths": 50,
       "new_model_paths": 23,
       "original_run_metadata": {
@@ -901,8 +901,8 @@
         "seed_deterministic": false,
         "run_tag": "GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920",
         "model_name": "GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo",
-        "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920",
-        "pretrained_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/weights",
+        "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920",
+        "pretrained_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/weights",
         "device": "cuda:0",
         "amp": true,
         "cudnn_deterministic": false,
@@ -917,7 +917,7 @@
       },
       "validation_logs": [
         {
-          "path": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_val_log_v5.csv",
+          "path": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_val_log_v5.csv",
           "rows": 100,
           "first_epoch": 1,
           "last_epoch": 100,

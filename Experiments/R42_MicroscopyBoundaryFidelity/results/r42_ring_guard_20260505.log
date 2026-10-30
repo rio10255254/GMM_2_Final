@@ -21,7 +21,7 @@ SerializationVersion: 1.1.0.1
 [R42-RING] infer r42_combo_best pitch1um_y_100_odd 2026/5/5 下午 03:45:57
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_32h685qt\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -140,7 +140,7 @@ st\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch1um
 [R42-RING] infer r42_combo_best pitch0p1um_y_60_odd 2026/5/5 下午 03:46:41
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_wunty5c4\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -219,7 +219,7 @@ st\reconstruct_progress_best_tradeoff_in_Cropped_Output_20260505_142301\pitch0p1
 [R42-RING] infer r42_combo_best pitch0p01um_y_40_odd 2026/5/5 下午 03:47:01
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_c1z2cdcd\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -284,7 +284,7 @@ g_guard_summary.json"
 [R42-RING] infer r42_combo_latest pitch1um_y_100_odd 2026/5/5 下午 03:54:34
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_9blxl6n2\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -403,7 +403,7 @@ test\reconstruct_progress_latest_in_Cropped_Output_20260505_142301\pitch1um_y_10
 [R42-RING] infer r42_combo_latest pitch0p1um_y_60_odd 2026/5/5 下午 03:55:18
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_2wcu0k8b\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -482,7 +482,7 @@ test\reconstruct_progress_latest_in_Cropped_Output_20260505_142301\pitch0p1um_y_
 [R42-RING] infer r42_combo_latest pitch0p01um_y_40_odd 2026/5/5 下午 03:55:38
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_1rr7kgj4\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -547,7 +547,7 @@ ing_guard_summary.json"
 [R42-RING] infer r42_r41_best pitch1um_y_100_odd 2026/5/5 下午 04:03:11
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_7_gypcxc\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -666,7 +666,7 @@ gress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch1um_y_100_odd
 [R42-RING] infer r42_r41_best pitch0p1um_y_60_odd 2026/5/5 下午 04:03:55
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_3303qg77\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -745,7 +745,7 @@ gress_best_tradeoff_in_Cropped_Output_20260505_145229\pitch0p1um_y_60_odd
 [R42-RING] infer r42_r41_best pitch0p01um_y_40_odd 2026/5/5 下午 04:04:15
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_plw7pvnn\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -810,7 +810,7 @@ guard_summary.json"
 [R42-RING] infer r42_r41_latest pitch1um_y_100_odd 2026/5/5 下午 04:11:49
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_6o5pu6__\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -929,7 +929,7 @@ st\reconstruct_progress_latest_in_Cropped_Output_20260505_145229\pitch1um_y_100_
 [R42-RING] infer r42_r41_latest pitch0p1um_y_60_odd 2026/5/5 下午 04:12:33
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_yx9dyy00\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1008,7 +1008,7 @@ st\reconstruct_progress_latest_in_Cropped_Output_20260505_145229\pitch0p1um_y_60
 [R42-RING] infer r42_r41_latest pitch0p01um_y_40_odd 2026/5/5 下午 04:12:53
 -> [DEBUG] Manual override active: select_mode='odd'
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_gprsfdly\psf_from_ckpt.mat)
 -> Weights loaded successfully.

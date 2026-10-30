@@ -1,6 +1,6 @@
 # legacy/organized_20260312 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260312/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260312/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,12 +22,12 @@ Round15保留0.8中心鎖定、其他尺度限制、初跑失敗與修復重啟�
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND15_CENTERLOCK Checkpoint Audit Summary](<../../../Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_balanced_20260312_022742.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_defectguard_20260312_022742.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_macroguard_20260312_022742.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_pure_20260312_022742.md>)
-- [原始報告：ROUND15_CENTERLOCK Multiscale Summary](<../../../Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_MULTISCALE_SUMMARY_20260312_022742.md>)
+- [原始報告：ROUND15_CENTERLOCK Checkpoint Audit Summary](<../../../Experiments/Legacy/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_balanced_20260312_022742.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_defectguard_20260312_022742.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_macroguard_20260312_022742.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_centerlock_pure_20260312_022742.md>)
+- [原始報告：ROUND15_CENTERLOCK Multiscale Summary](<../../../Experiments/Legacy/organized_20260312/selected/reports/ROUND15_CENTERLOCK_MULTISCALE_SUMMARY_20260312_022742.md>)
 
 ## 重做與驗證範圍
 

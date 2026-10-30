@@ -145,9 +145,12 @@ class _PyJob:
 
     def decision(self, node, target):
         """(True, new target or None) when a recorded decision covers this expression."""
-        key = (self.text(node), target)
         decisions = self.ctx.decisions or {}
-        return (True, decisions[key]) if key in decisions else (False, None)
+        text = self.text(node)
+        for key in ((self.file_old, text, target), (text, target)):     # a decision for this file comes first
+            if key in decisions:
+                return True, decisions[key]
+        return False, None
 
     def replace(self, start, end, new, kind, old_target='', new_target=''):
         old = self.src[start:end]
@@ -172,6 +175,11 @@ class _PyJob:
 
     # ---------- evaluation ----------
     def ev(self, node):
+        hints = (self.ctx.hints or {}).get(self.file_old)
+        if hints and isinstance(node, (ast.Name, ast.Attribute, ast.Call)):
+            text = ast.unparse(node)
+            if text in hints:                # reader_hints_phaseN.json: what the tool cannot evaluate, given by hand
+                return Val(hints[text], True)
         if isinstance(node, ast.Name):
             if node.id == '__file__':
                 return Val(self.file_old, False, is_file=True)
@@ -318,13 +326,16 @@ class _PyJob:
         if new is None:
             return
         if tail:
+            decided, kept = self.decision(top, tval.rel)
+            if decided and kept is None:
+                return                     # decisions_phaseN.json: it means a place that is no longer above it
             if outer is not top:
-                self.report(top, f'climbing from {new_b} cannot reach {new_t}')
+                self.report(top, f'climbing from {new_b} cannot reach {new_t}', tval.rel)
                 return
             if isinstance(outer, ast.Call):
                 callee = self.text(outer.func)
                 if '.' not in callee:
-                    self.report(top, f'climbing from {new_b} cannot reach {new_t}')
+                    self.report(top, f'climbing from {new_b} cannot reach {new_t}', tval.rel)
                     return
                 new = f"{callee.rsplit('.', 1)[0]}.join({new}, '{tail}')"
             else:

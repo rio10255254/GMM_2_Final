@@ -1,0 +1,4 @@
+pid=42436
+out=Experiments\Legacy\organized_20260309\pending\logs\auto_tune_console_20260309_180935_chain01.out.log
+err=Experiments\Legacy\organized_20260309\pending\logs\auto_tune_console_20260309_180935_chain01.err.log
+cmd=python -u Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py --profile round5_extval_data_probe --sweep-epochs 6 --final-epochs 10 --deterministic

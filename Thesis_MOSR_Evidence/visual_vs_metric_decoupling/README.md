@@ -71,7 +71,7 @@ Last updated: 2026-05-26
 
 | Tag | external GMF JSON | 視覺指標來源 |
 |---|---|---|
-| R30 | `Traing_Progress/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch*/GMF_score.txt`(需自己 parse) | (基準,定義為 0) |
+| R30 | `Experiments/Legacy/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch*/GMF_score.txt`(需自己 parse) | (基準,定義為 0) |
 | R33 | `Experiments/R33RobustLoss/results/external_gmf/pitch*/GMF_score.txt` | PROJECT_STATE table |
 | R38v2 | `Experiments/R38v2SeqFixed/results/external_gmf/pitch*/GMF_score.txt` | PROJECT_STATE table |
 | COMBO | `Experiments/R38v2SeqFixed/results/external_gmf_combo/pitch*/GMF_score.txt` | PROJECT_STATE table |

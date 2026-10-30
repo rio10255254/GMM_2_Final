@@ -9,7 +9,7 @@ LIB_PATH = Path(
     str(PROJECT_ROOT / 'Experiments/R26NewPSFCheck/pure_psf_control/scripts/pure_psf_control_lib.py')
 )
 REPORT_PATH = Path(
-    str(PROJECT_ROOT / 'Traing_Progress/auto_tune_reports/auto_tune_report_20260316_185417.json')
+    str(PROJECT_ROOT / 'Experiments/Legacy/auto_tune_reports/auto_tune_report_20260316_185417.json')
 )
 
 

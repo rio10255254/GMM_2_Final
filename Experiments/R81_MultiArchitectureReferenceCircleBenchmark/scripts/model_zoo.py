@@ -20,7 +20,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 R81_ROOT = Path(__file__).resolve().parents[1]
 MODERN_ROOT = (
-    Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments'))
+    Path(str(PROJECT_ROOT / 'LabSystem_MOSR/Experiments'))
     / "Modern_Restoration_Benchmarks_20260719"
 )
 BASE_UNET_ROOT = MODERN_ROOT.parent / "BaseUNet_Baseline_20260718"

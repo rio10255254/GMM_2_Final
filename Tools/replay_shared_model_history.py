@@ -38,7 +38,7 @@ def main():
     cases=[];original_ctor=native.GeoEdgeAlignSR_v1_v5_NoCoord
     for label,run in RUNS:
       for epoch in [5,100]:
-        key=label+'_E'+str(epoch).zfill(3);relative='Traing_Progress/'+run+'/epoch_'+str(epoch).zfill(3)+'.pth.tar'
+        key=label+'_E'+str(epoch).zfill(3);relative='Experiments/Training_Runs/'+run+'/epoch_'+str(epoch).zfill(3)+'.pth.tar'
         weights=a.data_root/safe_relative(relative)
         deadline=time.time()+10800
         while not weights.exists():

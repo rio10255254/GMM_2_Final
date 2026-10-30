@@ -70,7 +70,7 @@ def main():
             err=float(np.max(np.abs(expected.astype(float)-patch))) if same_shape else None
             pixel_checks.append({'sequence':name,'frame':f,'package_src':p['package_src'],'shape_match':same_shape,'max_abs_gray':err,'exact_pixels':same_shape and err==0})
     table('v42_evaluation_overlap.csv',seqrows);table('v42_training_evaluation_ancestry.csv',matches);table('v42_source_pixel_checks.csv',pixel_checks)
-    r60=ROOT/'Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r60_sem_truth_boundary/hs100mg_basler/r60_sem_truth_realcrop_anchor_train'
+    r60=ROOT/'LabSystem_MOSR/Training_Data/r60_sem_truth_boundary/hs100mg_basler/r60_sem_truth_realcrop_anchor_train'
     r60m=read(r60/'manifest.json');sem=[p for p in ps['train'] if p['role']=='sem_truth_anchor']
     # Bind inherited paired payload to its original R60 source by exact relative name/hash.
     semchecks=[]

@@ -38,7 +38,7 @@ GeoEdge_R26_Handoff/
 │   └── tra_lbl_ring/             ← 目標影像（Ground Truth）
 ├── PSF_Fitting/                  ← PSF 擬合結果（供模型讀取）
 │   └── Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat
-├── Traing_Progress/              ← 訓練結果（checkpoint、log、圖表）
+├── Experiments/Legacy/              ← 訓練結果（checkpoint、log、圖表）
 │   └── training_progress_{MODEL}_{timestamp}/
 │       └── weights/
 │           ├── best_tradeoff.pth.tar
@@ -48,7 +48,7 @@ GeoEdge_R26_Handoff/
     └── reconstruct_progress_{timestamp}/
 ```
 
-> **注意：** `Traing_Progress/` 資料夾名稱有拼寫錯誤（少一個 i），為歷史遺留，勿更名以免程式找不到路徑。
+> **注意：** `Experiments/Legacy/` 資料夾名稱有拼寫錯誤（少一個 i），為歷史遺留，勿更名以免程式找不到路徑。
 
 ---
 
@@ -168,7 +168,7 @@ python GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py
 **訓練結果（自動建立於 `../Traing_Progress/`）：**
 
 ```
-Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_{timestamp}/
+Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_{timestamp}/
 ├── weights/
 │   ├── best_tradeoff.pth.tar         ← 最佳整體 tradeoff checkpoint
 │   ├── best_detail_guarded.pth.tar   ← 細節保護最佳 checkpoint

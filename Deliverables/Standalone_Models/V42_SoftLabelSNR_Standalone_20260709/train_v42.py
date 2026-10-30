@@ -1129,7 +1129,7 @@ def load_ckpt(path: str, model: nn.Module, optimizer=None, ema_model: Optional[n
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = str(Path(__file__).resolve().parents[1])
-PACKAGE_ROOT = str((Path(PROJECT_ROOT).parent.parent / 'Thesis_MOSR_Evidence' / 'LabSystem_MOSR'))
+PACKAGE_ROOT = str((Path(PROJECT_ROOT).parent.parent / 'LabSystem_MOSR'))
 
 
 def _default_training_progress_root() -> str:

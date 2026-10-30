@@ -1,0 +1,329 @@
+{
+  "training_story": "standalone_full_final_training",
+  "candidate": "v41_standalone_long",
+  "profile": "r62_target_sample_boost_v13_measurement_view_safe_teacher",
+  "data_root": "LabSystem_MOSR/Training_Data/r62_target_sample_boost/hs100mg_basler",
+  "profile_dir": "LabSystem_MOSR/Training_Data/r62_target_sample_boost/hs100mg_basler/r62_target_sample_boost_v13_measurement_view_safe_teacher",
+  "base_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+  "uses_version_chain_checkpoint": false,
+  "total_pairs": 11254,
+  "required_role_count": 15,
+  "missing_required_roles": [],
+  "train_include_subdirs": [
+    "stage_34_r61_legacy_shape",
+    "stage_35_r61_sequence_guard",
+    "stage_36_r61_sem_truth_anchor",
+    "stage_37_r61_universal_synthetic",
+    "stage_38_r61_motion_synthetic",
+    "stage_39_r61_motion_texture_synthetic",
+    "stage_40_r61_step_guard_motion_texture_synthetic",
+    "stage_40_r62_target_real_pseudo",
+    "stage_40_r62_real_motion_pair",
+    "stage_40_r62_target_selfshift_motion_pair",
+    "stage_40_r62_gmf_roi_selfshift_motion_pair",
+    "stage_40_r62_lowmag_dualroi_selfshift_pair",
+    "stage_40_r62_multimag_raw_motion_guard_pair",
+    "stage_40_r62_stability_shape_teacher_pair"
+  ],
+  "motion_include_subdirs": [
+    "stage_38_r61_motion_synthetic",
+    "stage_39_r61_motion_texture_synthetic",
+    "stage_40_r61_step_guard_motion_texture_synthetic",
+    "stage_40_r62_real_motion_pair",
+    "stage_40_r62_target_selfshift_motion_pair",
+    "stage_40_r62_gmf_roi_selfshift_motion_pair",
+    "stage_40_r62_lowmag_dualroi_selfshift_pair",
+    "stage_40_r62_multimag_raw_motion_guard_pair",
+    "stage_40_r62_stability_shape_teacher_pair"
+  ],
+  "default_num_epoch": 16,
+  "default_batch_size": 4,
+  "default_num_workers": 2,
+  "default_lr": 1.2e-07
+}
+{
+  "candidate": "v41_standalone_long",
+  "profile": "r62_target_sample_boost_v13_measurement_view_safe_teacher",
+  "data_dir": "LabSystem_MOSR/Training_Data/r62_target_sample_boost/hs100mg_basler/r62_target_sample_boost_v13_measurement_view_safe_teacher",
+  "total_pairs": 11254,
+  "role_counts": {
+    "legacy_shape": 240,
+    "motion_synthetic": 760,
+    "motion_texture_synthetic": 760,
+    "sem_truth_anchor": 640,
+    "sequence_guard": 420,
+    "step_guard_motion_texture_synthetic": 760,
+    "target_real_gmf_roi_selfshift_motion_pair": 360,
+    "target_real_lowmag_gmf_dot_r61_motion_pair": 600,
+    "target_real_lowmag_square_raw_shape_pair": 200,
+    "target_real_motion_pair": 1176,
+    "target_real_multimag_raw_motion_guard_pair": 1600,
+    "target_real_pseudo_boundary": 1470,
+    "target_real_selfshift_motion_pair": 708,
+    "target_real_stability_shape_teacher_pair": 800,
+    "universal_synthetic": 760
+  },
+  "polarity_counts": {
+    "bright": 1516,
+    "dark": 1524,
+    "mixed": 1500,
+    "unknown": 1300
+  },
+  "base_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+  "scratch_training": false,
+  "lab_compatible_checkpoint": "LabSystem_MOSR/Traing_Progress/_checkpoint_cache/best_tradeoff.pth_labpsf_f4ae98aed4fe.tar",
+  "model_name": "LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223",
+  "num_epoch": 16,
+  "device": "cuda:0",
+  "lr": 1.2e-07,
+  "use_amp": false,
+  "train_include_subdirs": [
+    "stage_34_r61_legacy_shape",
+    "stage_35_r61_sequence_guard",
+    "stage_36_r61_sem_truth_anchor",
+    "stage_37_r61_universal_synthetic",
+    "stage_38_r61_motion_synthetic",
+    "stage_39_r61_motion_texture_synthetic",
+    "stage_40_r61_step_guard_motion_texture_synthetic",
+    "stage_40_r62_target_real_pseudo",
+    "stage_40_r62_real_motion_pair",
+    "stage_40_r62_target_selfshift_motion_pair",
+    "stage_40_r62_gmf_roi_selfshift_motion_pair",
+    "stage_40_r62_lowmag_dualroi_selfshift_pair",
+    "stage_40_r62_multimag_raw_motion_guard_pair",
+    "stage_40_r62_stability_shape_teacher_pair"
+  ],
+  "motion_enable": true,
+  "motion_include_subdirs": [
+    "stage_38_r61_motion_synthetic",
+    "stage_39_r61_motion_texture_synthetic",
+    "stage_40_r61_step_guard_motion_texture_synthetic",
+    "stage_40_r62_real_motion_pair",
+    "stage_40_r62_target_selfshift_motion_pair",
+    "stage_40_r62_gmf_roi_selfshift_motion_pair",
+    "stage_40_r62_lowmag_dualroi_selfshift_pair",
+    "stage_40_r62_multimag_raw_motion_guard_pair",
+    "stage_40_r62_stability_shape_teacher_pair"
+  ],
+  "motion_grad_weight": 0.24,
+  "motion_input_lowfreq_weight": 4.0,
+  "motion_input_lowfreq_sigma": 2.0,
+  "input_lowfreq_weight": 24.0,
+  "input_lowfreq_sigma": 2.0,
+  "seq_src_dir": "LabSystem_MOSR/Training_Data/r62_target_sample_boost/hs100mg_basler/r62_target_sample_boost_v13_measurement_view_safe_teacher/src",
+  "seq_lbl_dir": "LabSystem_MOSR/Training_Data/r62_target_sample_boost/hs100mg_basler/r62_target_sample_boost_v13_measurement_view_safe_teacher/lbl",
+  "seq_include_subdirs": [
+    "stage_38_r61_motion_synthetic",
+    "stage_39_r61_motion_texture_synthetic",
+    "stage_40_r61_step_guard_motion_texture_synthetic",
+    "stage_40_r62_real_motion_pair",
+    "stage_40_r62_target_selfshift_motion_pair",
+    "stage_40_r62_gmf_roi_selfshift_motion_pair",
+    "stage_40_r62_lowmag_dualroi_selfshift_pair",
+    "stage_40_r62_multimag_raw_motion_guard_pair",
+    "stage_40_r62_stability_shape_teacher_pair"
+  ],
+  "seq_loss_weight": 0.24,
+  "seq_grad_weight": 0.06,
+  "seq_geom_weights": {
+    "center": 0.034,
+    "radius": 0.012,
+    "thick": 0.004,
+    "drift": 0.006,
+    "step_mag": 0.04,
+    "abs_center": 0.024,
+    "single_abs_center": 0.018
+  },
+  "fixed_split_dir": "LabSystem_MOSR/Training_Data/r62_target_sample_boost/hs100mg_basler/r62_target_sample_boost_v13_measurement_view_safe_teacher/splits/grouped_seed1337_val120",
+  "fixed_split_group_overlap_count": 0,
+  "fixed_split_train_count": 9857,
+  "fixed_split_val_count": 1397,
+  "boundary_geom_enable": true,
+  "r61_universal_boundary_training": true,
+  "anti_answer_leakage_required": true,
+  "selection_gate": "synthetic_generalization_plus_cd_plus_sequence_guard"
+}
+[RUN] tag=LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251 model=LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223
+[RUN] progress_dir=LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251
+[RUN] weights_dir=LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights
+[REPRO] mode=OFF seed=1337 deterministic=OFF tf32=ON amp=OFF fixed_split=OFF num_workers=2
+[SEED] active=1261200 cudnn_deterministic=0 cudnn_benchmark=1 tf32_matmul=1 tf32_cudnn=1
+[FAST_IO] mode=ON disable_plots=ON plot_every=20 monitor_every=5 val_every=2 batch_log_every=5 csv_flush_n=50
+[GMF_KPI] expect_dx_px=None expect_dy_px=None expected_step_px=0.000000 outlier_t=0.500000 outlier_t_rel=0.100000
+[FINETUNE] trainable_name_patterns=['boundary_adapter', 'p1', 'out'] trainable=22 frozen=101
+[INFO] Pre-flight sanity check disabled.
+[PHYS] disabled: PHYS_FORWARD_ENABLE=False
+[DATA] include_subdirs=('stage_34_r61_legacy_shape', 'stage_35_r61_sequence_guard', 'stage_36_r61_sem_truth_anchor', 'stage_37_r61_universal_synthetic', 'stage_38_r61_motion_synthetic', 'stage_39_r61_motion_texture_synthetic', 'stage_40_r61_step_guard_motion_texture_synthetic', 'stage_40_r62_target_real_pseudo', 'stage_40_r62_real_motion_pair', 'stage_40_r62_target_selfshift_motion_pair', 'stage_40_r62_gmf_roi_selfshift_motion_pair', 'stage_40_r62_lowmag_dualroi_selfshift_pair', 'stage_40_r62_multimag_raw_motion_guard_pair', 'stage_40_r62_stability_shape_teacher_pair') -> remaining=11254
+[DATA][SPLIT] load external fixed split: LabSystem_MOSR/Training_Data/r62_target_sample_boost/hs100mg_basler/r62_target_sample_boost_v13_measurement_view_safe_teacher/splits/grouped_seed1337_val120
+[DATA][GROUP_BALANCE] groups=60 samples=9857->12321 group_size=58..475 missing_manifest=0 keys=['role', 'target_dataset', 'magnification_hint', 'shape_family']
+[INFO] Train batches/epoch: 3080
+[INFO] Validation: ENABLED (VAL_RATIO=0.1, val batches=699)
+[INFO] GMF_VALIDATE_SOURCE = seq_val
+[INFO] Sequence validation: ENABLED (pairs=1000, batches=500)
+[INFO] Sequence pairs: ENABLED (pairs=2400, batches=1200, batch_size=2)
+[INFO] R44 motion pairs: ENABLED (pairs=3600, batches=1800, batch_size=2)
+[INFO] Resuming training from explicit checkpoint: LabSystem_MOSR/Traing_Progress/_checkpoint_cache/best_tradeoff.pth_labpsf_f4ae98aed4fe.tar
+[LOAD] model: strict=False fallback, missing=['physics_layer.PSFs', 'physics_layer.PSF_mean', 'physics_layer.PSF_center', 'weak_psf_block.PSFs'], unexpected=[], skipped_shape=[], expanded_shape=[]
+[LOAD] ema_model: strict=False fallback, missing=['physics_layer.PSFs', 'physics_layer.PSF_mean', 'physics_layer.PSF_center', 'weak_psf_block.PSFs'], unexpected=[], skipped_shape=[], expanded_shape=[]
+[INFO] Optimizer state reset after checkpoint load.
+[INFO] Loaded weights from epoch 8, but epoch counter reset to 0.
+[INFO] Resumed from epoch 0
+[FINETUNE] trainable_name_patterns=['boundary_adapter', 'p1', 'out'] trainable=22 frozen=101
+[LOAD] model: strict=False fallback, missing=['physics_layer.PSFs', 'physics_layer.PSF_mean', 'physics_layer.PSF_center', 'weak_psf_block.PSFs'], unexpected=[], skipped_shape=[], expanded_shape=[]
+[KD] loaded frozen REGION_KD teacher: LabSystem_MOSR/Traing_Progress/_checkpoint_cache/best_tradeoff.pth_labpsf_f4ae98aed4fe.tar
+[REGION_KD] enabled: weight=36.0000 band_px=12.00 warmup_epoch=0
+[MONITOR_REF] edgeW_ref=10.5338 hf_ref=0.0062 cb_ref=0.028175
+-> Epoch 0 Val Done. Total=0.209125 | Rec=0.032693 | Edge=0.319797 | EdgeProf=0.000000 | PSNR=14.82 | SSIM=0.6755 | FFTShape=0.000000 | CB=0.000000 | HF=0.002
+[MONITOR][E000] range[0.1527,0.9263] mean=0.5440 std=0.1016 p95=0.8239 p99=0.8632 cb=0.02817 hf_ratio=0.006 edgeW=10.5338
+[SEQVAL][E000] score=0.7149 sign=0.9904 d1=0.7632 grad=0.8467 ratio=0.7639 pairs=1000
+[ANNSEQ][E000] score=0.5865 sign=1.0000 step=0.1029 center=3.8933 radius=0.0021 thick=0.0104 pairs=114
+
+Starting Epoch 1/16
+[WEIGHT][E001] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E001] Rec=0.021134 (18.2%) GradMag=0.179746 (80.6%) EdgeOri=0.009146 (1.2%) EqGeom=0.000000 (0.0%) Total=0.654386 time=628.7s
+[MONITOR][E001] range[0.1527,0.9262] mean=0.5440 std=0.1016 p95=0.8239 p99=0.8632 cb=0.02818 hf_ratio=0.006 edgeW=9.5357
+[VAL][E001] skipped by FAST_VAL_EVERY_EPOCH=2
+[SEQVAL][E001] score=0.7223 sign=0.9904 d1=0.7444 grad=0.8295 ratio=0.7243 pairs=1000
+[ANNSEQ][E001] score=0.5236 sign=1.0000 step=0.1066 center=4.5071 radius=0.0020 thick=0.0135 pairs=114
+[BEST] skip update at E001 (<E002 min-best)
+[SUMMARY] Best epoch = 0, tradeoff = 140.6898, gmf_obj = 140.6898, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.0377, best_val_rec = 0.032693, best_val_ssim = 0.6755
+
+Starting Epoch 2/16
+[WEIGHT][E002] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E002] Rec=0.020614 (20.3%) GradMag=0.152477 (77.9%) EdgeOri=0.012471 (1.8%) EqGeom=0.000000 (0.0%) Total=0.627203 time=670.1s
+-> Epoch 2 Val Done. Total=0.195866 | Rec=0.030582 | Edge=0.298588 | EdgeProf=0.000000 | PSNR=15.11 | SSIM=0.6970 | FFTShape=0.000000 | CB=0.000000 | HF=0.003
+[SEQVAL][E002] score=0.7258 sign=0.9890 d1=0.7328 grad=0.8222 ratio=0.6898 pairs=1000
+[ANNSEQ][E002] score=0.4973 sign=1.0000 step=0.1273 center=4.7245 radius=0.0021 thick=0.0149 pairs=114
+[SIMPLETEST][CTRL_OFF] GMF_BAD triggered; LR/geom decay disabled.
+[SUMMARY] Best epoch = 0, tradeoff = 140.6898, gmf_obj = 140.6898, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.0377, best_val_rec = 0.032693, best_val_ssim = 0.6755
+
+Starting Epoch 3/16
+[WEIGHT][E003] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E003] Rec=0.020421 (20.3%) GradMag=0.150325 (77.7%) EdgeOri=0.013614 (2.0%) EqGeom=0.000000 (0.0%) Total=0.616460 time=665.0s
+[VAL][E003] skipped by FAST_VAL_EVERY_EPOCH=2
+[SEQVAL][E003] score=0.7271 sign=0.9876 d1=0.7265 grad=0.8182 ratio=0.6689 pairs=1000
+[ANNSEQ][E003] score=0.4997 sign=1.0000 step=0.1498 center=4.6545 radius=0.0024 thick=0.0150 pairs=114
+[SUMMARY] Best epoch = 0, tradeoff = 140.6898, gmf_obj = 140.6898, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.0377, best_val_rec = 0.032693, best_val_ssim = 0.6755
+
+Starting Epoch 4/16
+[WEIGHT][E004] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E004] Rec=0.020298 (20.2%) GradMag=0.149618 (77.6%) EdgeOri=0.014301 (2.1%) EqGeom=0.000000 (0.0%) Total=0.612990 time=594.9s
+-> Epoch 4 Val Done. Total=0.191701 | Rec=0.030124 | Edge=0.291952 | EdgeProf=0.000000 | PSNR=15.17 | SSIM=0.7016 | FFTShape=0.000000 | CB=0.000000 | HF=0.003
+[SEQVAL][E004] score=0.7277 sign=0.9863 d1=0.7221 grad=0.8151 ratio=0.6534 pairs=1000
+[ANNSEQ][E004] score=0.5144 sign=1.0000 step=0.1710 center=4.4656 radius=0.0027 thick=0.0145 pairs=114
+[SUMMARY] Best epoch = 0, tradeoff = 140.6898, gmf_obj = 140.6898, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.0377, best_val_rec = 0.032693, best_val_ssim = 0.6755
+
+Starting Epoch 5/16
+[WEIGHT][E005] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E005] Rec=0.020110 (20.3%) GradMag=0.147409 (77.5%) EdgeOri=0.013895 (2.1%) EqGeom=0.000000 (0.0%) Total=0.606938 time=585.5s
+[MONITOR][E005] range[0.1529,0.9261] mean=0.5440 std=0.1016 p95=0.8239 p99=0.8632 cb=0.02794 hf_ratio=0.006 edgeW=8.1430
+[VAL][E005] skipped by FAST_VAL_EVERY_EPOCH=2
+[SEQVAL][E005] score=0.7282 sign=0.9853 d1=0.7188 grad=0.8125 ratio=0.6410 pairs=1000
+[ANNSEQ][E005] score=0.5413 sign=1.0000 step=0.1889 center=4.1614 radius=0.0032 thick=0.0136 pairs=114
+[SUMMARY] Best epoch = 0, tradeoff = 140.6898, gmf_obj = 140.6898, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.0377, best_val_rec = 0.032693, best_val_ssim = 0.6755
+
+Starting Epoch 6/16
+[WEIGHT][E006] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.000 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E006] Rec=0.020322 (20.4%) GradMag=0.148392 (77.6%) EdgeOri=0.013094 (2.0%) EqGeom=0.000000 (0.0%) Total=0.606906 time=665.6s
+-> Epoch 6 Val Done. Total=0.189006 | Rec=0.029919 | Edge=0.287627 | EdgeProf=0.000000 | PSNR=15.20 | SSIM=0.7037 | FFTShape=0.000000 | CB=0.000000 | HF=0.003
+[SEQVAL][E006] score=0.7284 sign=0.9843 d1=0.7164 grad=0.8103 ratio=0.6305 pairs=1000
+[ANNSEQ][E006] score=0.5701 sign=1.0000 step=0.2026 center=3.8480 radius=0.0036 thick=0.0127 pairs=114
+[SELF_BAND] ready at E006 base_score=99.6811 base_edgeW=8.4041 base_hf=0.0061
+[SUMMARY] Best epoch = 0, tradeoff = 140.6898, gmf_obj = 140.6898, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.0377, best_val_rec = 0.032693, best_val_ssim = 0.6755
+
+Starting Epoch 7/16
+[WEIGHT][E007] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.016 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E007] Rec=0.020219 (20.4%) GradMag=0.147901 (77.8%) EdgeOri=0.011910 (1.8%) EqGeom=0.000000 (0.0%) Total=0.600619 time=651.3s
+[VAL][E007] skipped by FAST_VAL_EVERY_EPOCH=2
+[SEQVAL][E007] score=0.7285 sign=0.9833 d1=0.7147 grad=0.8089 ratio=0.6201 pairs=1000
+[ANNSEQ][E007] score=0.5989 sign=1.0000 step=0.2121 center=3.5423 radius=0.0040 thick=0.0118 pairs=114
+[BEST] Updated best: tradeoff=141.8740 (edge_pen=0.000 hf_pen=0.000) gmf_obj=141.8740 gmf_fitness=-0.6952 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.4740 at epoch 7
+[SUMMARY] Best epoch = 7, tradeoff = 141.8740, gmf_obj = 141.8740, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.4740, best_val_rec = 0.032693, best_val_ssim = 0.6755
+
+Starting Epoch 8/16
+[WEIGHT][E008] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.016 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E008] Rec=0.020152 (20.5%) GradMag=0.147016 (77.8%) EdgeOri=0.011346 (1.7%) EqGeom=0.000000 (0.0%) Total=0.596711 time=665.5s
+-> Epoch 8 Val Done. Total=0.187027 | Rec=0.029813 | Edge=0.284323 | EdgeProf=0.000000 | PSNR=15.21 | SSIM=0.7049 | FFTShape=0.000000 | CB=0.000000 | HF=0.003
+[SEQVAL][E008] score=0.7283 sign=0.9823 d1=0.7136 grad=0.8078 ratio=0.6109 pairs=1000
+[ANNSEQ][E008] score=0.6237 sign=1.0000 step=0.2189 center=3.2815 radius=0.0044 thick=0.0111 pairs=114
+[BEST] Updated best: tradeoff=143.1119 (edge_pen=0.000 hf_pen=0.000) gmf_obj=143.1119 gmf_fitness=-0.5546 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.4605 at epoch 8
+[SUMMARY] Best epoch = 8, tradeoff = 143.1119, gmf_obj = 143.1119, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.4605, best_val_rec = 0.029813, best_val_ssim = 0.7049
+
+Starting Epoch 9/16
+[WEIGHT][E009] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.016 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E009] Rec=0.020015 (20.6%) GradMag=0.144680 (77.5%) EdgeOri=0.011791 (1.8%) EqGeom=0.000000 (0.0%) Total=0.589846 time=656.5s
+[VAL][E009] skipped by FAST_VAL_EVERY_EPOCH=2
+[SEQVAL][E009] score=0.7280 sign=0.9814 d1=0.7127 grad=0.8071 ratio=0.6027 pairs=1000
+[ANNSEQ][E009] score=0.6444 sign=1.0000 step=0.2235 center=3.0650 radius=0.0047 thick=0.0106 pairs=114
+[BEST] Updated best: tradeoff=144.1350 (edge_pen=0.000 hf_pen=0.000) gmf_obj=144.1350 gmf_fitness=-0.4726 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.4557 at epoch 9
+[SUMMARY] Best epoch = 9, tradeoff = 144.1350, gmf_obj = 144.1350, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.4557, best_val_rec = 0.029813, best_val_ssim = 0.7049
+
+Starting Epoch 10/16
+[WEIGHT][E010] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.016 w_phys=0.000 eq_factor=0.000
+[SIMPLETEST][E010] Rec=0.020093 (20.8%) GradMag=0.144416 (77.6%) EdgeOri=0.010426 (1.6%) EqGeom=0.000000 (0.0%) Total=0.588652 time=664.2s
+[MONITOR][E010] range[0.1531,0.9265] mean=0.5440 std=0.1015 p95=0.8241 p99=0.8635 cb=0.02726 hf_ratio=0.006 edgeW=8.9615
+-> Epoch 10 Val Done. Total=0.185308 | Rec=0.029733 | Edge=0.281357 | EdgeProf=0.000000 | PSNR=15.22 | SSIM=0.7058 | FFTShape=0.000000 | CB=0.000000 | HF=0.003
+[SEQVAL][E010] score=0.7281 sign=0.9808 d1=0.7116 grad=0.8063 ratio=0.5942 pairs=1000
+[ANNSEQ][E010] score=0.6735 sign=1.0000 step=0.2250 center=2.7728 radius=0.0051 thick=0.0098 pairs=114
+[BEST] Updated best: tradeoff=145.6027 (edge_pen=0.000 hf_pen=0.000) gmf_obj=145.6027 gmf_fitness=-0.3040 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.4257 at epoch 10
+[SUMMARY] Best epoch = 10, tradeoff = 145.6027, gmf_obj = 145.6027, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.4257, best_val_rec = 0.029733, best_val_ssim = 0.7058
+
+Starting Epoch 11/16
+[WEIGHT][E011] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.016 w_phys=0.000 eq_factor=0.294
+[SIMPLETEST][E011] Rec=0.019906 (20.6%) GradMag=0.144167 (77.5%) EdgeOri=0.011030 (1.7%) EqGeom=0.000174 (0.2%) Total=0.583571 time=860.1s
+[VAL][E011] skipped by FAST_VAL_EVERY_EPOCH=2
+[SEQVAL][E011] score=0.7280 sign=0.9802 d1=0.7109 grad=0.8056 ratio=0.5896 pairs=1000
+[ANNSEQ][E011] score=0.6949 sign=1.0000 step=0.2257 center=2.5584 radius=0.0054 thick=0.0093 pairs=114
+[BEST] Updated best: tradeoff=146.7014 (edge_pen=0.000 hf_pen=0.000) gmf_obj=146.7014 gmf_fitness=-0.0792 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.3851 at epoch 11
+[SUMMARY] Best epoch = 11, tradeoff = 146.7014, gmf_obj = 146.7014, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.3851, best_val_rec = 0.029733, best_val_ssim = 0.7058
+
+Starting Epoch 12/16
+[WEIGHT][E012] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.016 w_phys=0.000 eq_factor=0.324
+[SIMPLETEST][E012] Rec=0.019795 (20.9%) GradMag=0.140492 (77.2%) EdgeOri=0.010321 (1.6%) EqGeom=0.000196 (0.2%) Total=0.577463 time=860.6s
+-> Epoch 12 Val Done. Total=0.184173 | Rec=0.029693 | Edge=0.279133 | EdgeProf=0.000000 | PSNR=15.23 | SSIM=0.7063 | FFTShape=0.000000 | CB=0.000000 | HF=0.003
+[SEQVAL][E012] score=0.7284 sign=0.9801 d1=0.7099 grad=0.8050 ratio=0.5839 pairs=1000
+[ANNSEQ][E012] score=0.7219 sign=1.0000 step=0.2227 center=2.2954 radius=0.0056 thick=0.0086 pairs=114
+[BEST] Updated best: tradeoff=148.0206 (edge_pen=0.000 hf_pen=0.000) gmf_obj=148.0206 gmf_fitness=-0.1386 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.3978 at epoch 12
+[SUMMARY] Best epoch = 12, tradeoff = 148.0206, gmf_obj = 148.0206, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.3978, best_val_rec = 0.029693, best_val_ssim = 0.7063
+
+Starting Epoch 13/16
+[WEIGHT][E013] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.016 w_phys=0.000 eq_factor=0.353
+[SIMPLETEST][E013] Rec=0.019830 (20.8%) GradMag=0.141284 (77.2%) EdgeOri=0.011354 (1.8%) EqGeom=0.000223 (0.2%) Total=0.575670 time=859.9s
+[VAL][E013] skipped by FAST_VAL_EVERY_EPOCH=2
+[SEQVAL][E013] score=0.7284 sign=0.9797 d1=0.7094 grad=0.8049 ratio=0.5789 pairs=1000
+[ANNSEQ][E013] score=0.7434 sign=1.0000 step=0.2206 center=2.0854 radius=0.0059 thick=0.0081 pairs=114
+[BEST] Updated best: tradeoff=149.0954 (edge_pen=0.000 hf_pen=0.000) gmf_obj=149.0954 gmf_fitness=-0.0363 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.3811 at epoch 13
+[SUMMARY] Best epoch = 13, tradeoff = 149.0954, gmf_obj = 149.0954, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.3811, best_val_rec = 0.029693, best_val_ssim = 0.7063
+
+Starting Epoch 14/16
+[WEIGHT][E014] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.016 w_phys=0.000 eq_factor=0.382
+[SIMPLETEST][E014] Rec=0.019708 (20.7%) GradMag=0.141696 (77.4%) EdgeOri=0.010583 (1.7%) EqGeom=0.000227 (0.2%) Total=0.568475 time=858.4s
+-> Epoch 14 Val Done. Total=0.183192 | Rec=0.029675 | Edge=0.277234 | EdgeProf=0.000000 | PSNR=15.23 | SSIM=0.7067 | FFTShape=0.000000 | CB=0.000000 | HF=0.003
+[SEQVAL][E014] score=0.7288 sign=0.9797 d1=0.7085 grad=0.8043 ratio=0.5750 pairs=1000
+[ANNSEQ][E014] score=0.7564 sign=1.0000 step=0.2202 center=1.9564 radius=0.0061 thick=0.0078 pairs=114
+[GUARD][LAP][E014] hold=4 reason=oversmooth
+[BEST] Updated best: tradeoff=149.6642 (edge_pen=0.000 hf_pen=0.053) gmf_obj=149.7169 gmf_fitness=-0.1806 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.4087 at epoch 14
+[SUMMARY] Best epoch = 14, tradeoff = 149.6642, gmf_obj = 149.7169, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.4087, best_val_rec = 0.029675, best_val_ssim = 0.7067
+
+Starting Epoch 15/16
+[WEIGHT][E015] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.008 w_phys=0.000 eq_factor=0.412
+[SIMPLETEST][E015] Rec=0.019444 (20.8%) GradMag=0.138270 (77.1%) EdgeOri=0.011080 (1.8%) EqGeom=0.000253 (0.3%) Total=0.563240 time=861.4s
+[MONITOR][E015] range[0.1535,0.9263] mean=0.5440 std=0.1014 cb=0.02580 hf_ratio=0.005 edgeW=8.7511
+[VAL][E015] skipped by FAST_VAL_EVERY_EPOCH=2
+[SEQVAL][E015] score=0.7284 sign=0.9791 d1=0.7084 grad=0.8046 ratio=0.5712 pairs=1000
+[ANNSEQ][E015] score=0.7689 sign=1.0000 step=0.2188 center=1.8345 radius=0.0063 thick=0.0075 pairs=114
+[GUARD][BAND][E015] trigger hold=3 score=99.6633/99.6811 edgeW=8.7511/8.4041 hf=0.0055/0.0061 lap_boost=on(3)
+[GUARD][LAP][E015] hold=4 reason=oversmooth
+[BEST] Updated best: tradeoff=150.1779 (edge_pen=0.000 hf_pen=0.153) gmf_obj=150.3305 gmf_fitness=-0.0952 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.3941 at epoch 15
+[SUMMARY] Best epoch = 15, tradeoff = 150.1779, gmf_obj = 150.3305, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.3941, best_val_rec = 0.029675, best_val_ssim = 0.7067
+
+Starting Epoch 16/16
+[WEIGHT][E016] w_rec=1.000 w_ssim=0.050 w_gradmag=0.520 w_edgeori=0.150 w_eqgeom=0.250 w_stat=0.050 w_band=0.050 w_hf_lap=0.030 w_edgeLocalLap=0.010 w_phys=0.000 eq_factor=0.441
+[SIMPLETEST][E016] Rec=0.019409 (20.8%) GradMag=0.138333 (77.2%) EdgeOri=0.010522 (1.7%) EqGeom=0.000255 (0.3%) Total=0.557781 time=857.4s
+-> Epoch 16 Val Done. Total=0.182603 | Rec=0.029687 | Edge=0.275948 | EdgeProf=0.000000 | PSNR=15.22 | SSIM=0.7068 | FFTShape=0.000000 | CB=0.000000 | HF=0.003
+[SEQVAL][E016] score=0.7282 sign=0.9787 d1=0.7080 grad=0.8045 ratio=0.5687 pairs=1000
+[ANNSEQ][E016] score=0.7794 sign=1.0000 step=0.2178 center=1.7317 radius=0.0064 thick=0.0073 pairs=114
+[GUARD][BAND][E016] trigger hold=3 score=99.6792/99.6811 edgeW=8.7687/8.4041 hf=0.0053/0.0061 lap_boost=on(3)
+[GUARD][LAP][E016] hold=4 reason=oversmooth
+[BEST] Updated best: tradeoff=150.6067 (edge_pen=0.000 hf_pen=0.262) gmf_obj=150.8683 gmf_fitness=0.0118 step_std=0.0000 outlier=0.0000 step_err=0.0000 gain_p10=-0.3779 at epoch 16
+[SUMMARY] Best epoch = 16, tradeoff = 150.6067, gmf_obj = 150.8683, step_std = 0.0000, outlier = 0.0000, step_err = 0.0000, gain_p10 = -0.3779, best_val_rec = 0.029687, best_val_ssim = 0.7068

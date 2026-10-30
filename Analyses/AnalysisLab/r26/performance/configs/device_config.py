@@ -21,7 +21,7 @@ DEVICE_NAME: str = "RTX_A6000_Main"
 # ---------------------------------------------------------------------------
 # R26 model checkpoint (.pth.tar)
 CHECKPOINT: Path = Path(
-    str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar')
+    str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar')
 )
 
 # PSF fitted file (.mat)

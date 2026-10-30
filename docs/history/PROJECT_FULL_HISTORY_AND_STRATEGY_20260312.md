@@ -310,7 +310,7 @@
 
 權重位置：
 
-`Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar`
+`Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar`
 
 這顆模型之所以重要，不是因為它是最終答案，而是因為它成為後續很多實驗的穩定起點。
 
@@ -566,7 +566,7 @@
 
 代表性 smoke test report：
 
-`Traing_Progress/auto_tune_reports/auto_tune_report_20260312_003844.json`
+`Experiments/Legacy/auto_tune_reports/auto_tune_report_20260312_003844.json`
 
 其中最佳候選為：
 
@@ -615,9 +615,9 @@
 對應的失敗 log 與 report：
 
 - log  
-  `Traing_Progress/organized_20260312/pending/logs/longrun_centerlock_20260312_004144.out.log`
+  `Experiments/Legacy/organized_20260312/pending/logs/longrun_centerlock_20260312_004144.out.log`
 - report  
-  `Traing_Progress/auto_tune_reports/auto_tune_report_20260312_010708.json`
+  `Experiments/Legacy/auto_tune_reports/auto_tune_report_20260312_010708.json`
 
 這次失敗的價值在於：它提醒後續所有工作中，**終端輸出層的 patch 也可能反過來污染訓練流程本身**，不能把它當成無關緊要的 UI 細節。
 
@@ -644,7 +644,7 @@
 
 重啟後的 longrun 使用新 log：
 
-`Traing_Progress/organized_20260312/pending/logs/longrun_centerlock_20260312_014509.out.log`
+`Experiments/Legacy/organized_20260312/pending/logs/longrun_centerlock_20260312_014509.out.log`
 
 新的狀態檔也回到正確起點：
 
@@ -950,8 +950,8 @@
 
 主要歸檔都集中在：
 
-- `Traing_Progress/organized_20260311`
-- `Traing_Progress/organized_20260312`
+- `Experiments/Legacy/organized_20260311`
+- `Experiments/Legacy/organized_20260312`
 
 其中典型結構包括：
 
@@ -992,15 +992,15 @@
 
 第一次失敗的舊 log：
 
-`Traing_Progress/organized_20260312/pending/logs/longrun_centerlock_20260312_004144.out.log`
+`Experiments/Legacy/organized_20260312/pending/logs/longrun_centerlock_20260312_004144.out.log`
 
 重啟後目前 active 的新 log：
 
-`Traing_Progress/organized_20260312/pending/logs/longrun_centerlock_20260312_014509.out.log`
+`Experiments/Legacy/organized_20260312/pending/logs/longrun_centerlock_20260312_014509.out.log`
 
 ### 12.3 目前 universal 正式入口
 
-`Traing_Progress/organized_20260311/selected/current_universal_seed.json`
+`Experiments/Legacy/organized_20260311/selected/current_universal_seed.json`
 
 ### 12.4 目前 center-lock 長跑主入口
 
@@ -1024,25 +1024,25 @@
 
 ### 12.5 目前最重要的歷史報告
 
-`Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.md`
+`Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.md`
 
-`Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_174207.md`
+`Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_174207.md`
 
 ### 12.5a round15 的起點 smoke test
 
-`Traing_Progress/auto_tune_reports/auto_tune_report_20260312_003844.json`
+`Experiments/Legacy/auto_tune_reports/auto_tune_report_20260312_003844.json`
 
 ### 12.5b round15 第一次失敗的報告
 
-`Traing_Progress/auto_tune_reports/auto_tune_report_20260312_010708.json`
+`Experiments/Legacy/auto_tune_reports/auto_tune_report_20260312_010708.json`
 
 ### 12.6 外部驗證歷史總表
 
-`Traing_Progress/organized_20260310/external_validation/representative_multiscale/reports/representative_multiscale_posy_step_summary.md`
+`Experiments/Legacy/organized_20260310/external_validation/representative_multiscale/reports/representative_multiscale_posy_step_summary.md`
 
-`Traing_Progress/organized_20260311/external_validation/round11_annulus_lock_defect/reports/round11_annulus_lock_defect_posy_step_summary.md`
+`Experiments/Legacy/organized_20260311/external_validation/round11_annulus_lock_defect/reports/round11_annulus_lock_defect_posy_step_summary.md`
 
-`Traing_Progress/organized_20260311/external_validation/universal_longrun_candidate/reports/universal_longrun_candidate_posy_step_summary.md`
+`Experiments/Legacy/organized_20260311/external_validation/universal_longrun_candidate/reports/universal_longrun_candidate_posy_step_summary.md`
 
 ---
 
@@ -1878,7 +1878,7 @@ round14 不是最終結果，但它第一次把問題定義從：
 
 對應的 active log：
 
-`Traing_Progress/organized_20260312/pending/logs/longrun_centerlock_20260312_014509.out.log`
+`Experiments/Legacy/organized_20260312/pending/logs/longrun_centerlock_20260312_014509.out.log`
 
 本次更新時，最新已觀察到的輸出包含：
 
@@ -1901,7 +1901,7 @@ round14 不是最終結果，但它第一次把問題定義從：
 如果之後需要最新狀態，只看：
 
 - `000_LONGRUN_CENTERLOCK_STATUS.md`
-- `Traing_Progress/organized_20260312/pending/logs/longrun_centerlock_20260312_014509.out.log`
+- `Experiments/Legacy/organized_20260312/pending/logs/longrun_centerlock_20260312_014509.out.log`
 
 ---
 
@@ -2448,7 +2448,7 @@ round16 已於 `2026-03-12` 在完成 round15 分析後啟動，並在確認目�
 
 **修正後的正式啟動配置：**
 
-- `ORG_ROOT` 改為獨立的 `Traing_Progress/organized_r16/`（完全隔離）
+- `ORG_ROOT` 改為獨立的 `Experiments/Legacy/organized_r16/`（完全隔離）
 - `SEQ_GEOM_METHOD` common default 改為 `algebraic_fit`（round15 診斷確認 2x 優勢）
 - `SEQ_MONO_WEIGHT` common default 改為 `0.0`（round15 sign_acc=1.0，方向已解決）
 - 4 個 candidate 重新設計（聚焦 center magnitude，非 direction）：
@@ -2461,13 +2461,13 @@ round16 已於 `2026-03-12` 在完成 round15 分析後啟動，並在確認目�
 | r16_algfit_driftfocus | algebraic_fit | 0.0 | 0.78 | drift 一致性強化 |
 
 round16 active log：
-`Traing_Progress/organized_r16/pending/logs/longrun_round16_20260312.out.log`
+`Experiments/Legacy/organized_r16/pending/logs/longrun_round16_20260312.out.log`
 
 round16 狀態檔：
 `000_LONGRUN_ROUND16_STATUS.md`
 
 round16 所有輸出目錄：
-`Traing_Progress/organized_r16`（與 round15 的 organized_20260312 完全隔離）
+`Experiments/Legacy/organized_r16`（與 round15 的 organized_20260312 完全隔離）
 
 ---
 
@@ -2604,7 +2604,7 @@ Resume checkpoint: `r16_edge_highcenter` (center_err=0.87，歷史最低)
 ### 40.3 執行狀態
 
 Round17 狀態檔：`000_LONGRUN_ROUND17_STATUS.md`
-Round17 log：`Traing_Progress/organized_r17/pending/logs/longrun_round17_20260313.out.log`
+Round17 log：`Experiments/Legacy/organized_r17/pending/logs/longrun_round17_20260313.out.log`
 
 | step | 內容 | 狀態 |
 |------|------|------|
@@ -2727,7 +2727,7 @@ D:\GMM_2_Final\
 ├── Model/                                ← 僅保留 r16/r17/r18 相關腳本
 ├── Tools/AutoTuneTerminal/               ← 僅保留 AutoTune 系列監看工具
 ├── weights/                              ← 僅 round18_resume_init.pth.tar
-└── Traing_Progress/                      ← organized_r16/r17/r18 + raw training dirs
+└── Experiments/Legacy/                      ← organized_r16/r17/r18 + raw training dirs
 ```
 
 ---
@@ -2938,7 +2938,7 @@ Round19 已完整跑完，且執行面是成功的：
 - `000_LONGRUN_ROUND19_STATUS.json`
 
 Round19 的正式整理入口：
-- `Traing_Progress/organized_20260313/round19`
+- `Experiments/Legacy/organized_20260313/round19`
 
 ### 44.2 Round19 的最終選定候選
 
@@ -2946,10 +2946,10 @@ Round19 最後選定的是：
 - `r19_abs_anchor`
 
 正式 seed manifest：
-- `Traing_Progress/organized_20260313/round19/selected/current_absanchor_seed.json`
+- `Experiments/Legacy/organized_20260313/round19/selected/current_absanchor_seed.json`
 
 正式 selected checkpoint：
-- `Traing_Progress/organized_20260313/round19/selected/runs/training_progress_GESR_v1_v5_ST0p08_SWP_r19aa_20260313_184728/weights/best_tradeoff.pth.tar`
+- `Experiments/Legacy/organized_20260313/round19/selected/runs/training_progress_GESR_v1_v5_ST0p08_SWP_r19aa_20260313_184728/weights/best_tradeoff.pth.tar`
 
 ### 44.3 Round19 的實驗結論
 
@@ -3147,15 +3147,15 @@ Round20 已完整跑完，且不是中途中止。
 
 正式 round 入口：
 
-- `Traing_Progress/organized_20260314/round20`
+- `Experiments/Legacy/organized_20260314/round20`
 
 正式 process summary：
 
-- `Traing_Progress/organized_20260314/round20/selected/reports/ROUND20_PROCESS_PROBE_SUMMARY_20260314_205446.md`
+- `Experiments/Legacy/organized_20260314/round20/selected/reports/ROUND20_PROCESS_PROBE_SUMMARY_20260314_205446.md`
 
 正式 audit summary：
 
-- `Traing_Progress/organized_20260314/round20/selected/reports/ROUND20_PROCESS_PROBE_AUDIT_SUMMARY_20260314_205446.md`
+- `Experiments/Legacy/organized_20260314/round20/selected/reports/ROUND20_PROCESS_PROBE_AUDIT_SUMMARY_20260314_205446.md`
 
 ### 46.2 Round20 的最終選定
 
@@ -3165,11 +3165,11 @@ Round20 最後的 control candidate 是：
 
 正式 seed manifest：
 
-- `Traing_Progress/organized_20260314/round20/selected/current_process_probe_seed.json`
+- `Experiments/Legacy/organized_20260314/round20/selected/current_process_probe_seed.json`
 
 正式 selected checkpoint：
 
-- `Traing_Progress/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/weights/best_tradeoff.pth.tar`
+- `Experiments/Legacy/organized_20260314/round20/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r20ca_20260314_204419/weights/best_tradeoff.pth.tar`
 
 ### 46.3 Round20 實際回答了什麼
 
@@ -3618,7 +3618,7 @@ Round21 不是 estimator-side 的失敗。
 ### 52.2 正式結果
 
 正式 summary：
-- `Traing_Progress/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_PROBE_SUMMARY_20260315_224024.md`
+- `Experiments/Legacy/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_PROBE_SUMMARY_20260315_224024.md`
 
 最佳候選為：
 - `pairmix_algblend`
@@ -3803,7 +3803,7 @@ Round22 通過 calibrated internal pairmix gate（center_err 0.1845，step_err 0
 - Round18 / r18_ec_highcenter 維持為 current adopted baseline
 
 完整比較報告：
-`Traing_Progress/organized_20260316/external_compare_round18_round22
+`Experiments/Legacy/organized_20260316/external_compare_round18_round22
 eports\EXTERNAL_COMPARE_R18_R22_SUMMARY.md`
 
 ---
@@ -3843,7 +3843,7 @@ Section 54 記錄了 external GMF 三方比較的結果：R22 通過 internal ga
 本節記錄 Phase A per-frame residual analysis 的結果與根本原因確認。
 
 分析報告入口：
-`Traing_Progress/organized_20260316/external_compare_round18_round22
+`Experiments/Legacy/organized_20260316/external_compare_round18_round22
 eports\GMF_RESIDUAL_ANALYSIS_20260316_141953.md`
 
 ---
@@ -3958,7 +3958,7 @@ Phase A 確認 anchor autocorr 是關鍵後，最直接的修復：在 R22 stepg
 
 **否定假說：Fine-tuning + pairmix abs_center weight 無法改善 anchor autocorr**
 
-報告入口：`Traing_Progress/organized_20260316/round23/selected/reports`
+報告入口：`Experiments/Legacy/organized_20260316/round23/selected/reports`
 
 ---
 
@@ -4000,9 +4000,9 @@ Fine-tuning 路線的根本限制：
 
 **Fine-tuning abs_center 路線正式結束。**
 
-Joint postmortem：`Traing_Progress/organized_20260316/round24/ROUND2324_POSTMORTEM.md`
+Joint postmortem：`Experiments/Legacy/organized_20260316/round24/ROUND2324_POSTMORTEM.md`
 
-報告入口：`Traing_Progress/organized_20260316/round24/selected/reports`
+報告入口：`Experiments/Legacy/organized_20260316/round24/selected/reports`
 
 ---
 
@@ -4048,7 +4048,7 @@ Round23+24 的共同失敗模式揭示了一個結構性事實：
 ### 58.5 啟動狀態
 
 - **啟動時間**：2026-03-16
-- **Log**：`Traing_Progress/organized_20260316/round25/pending/logs/round25_run.log`
+- **Log**：`Experiments/Legacy/organized_20260316/round25/pending/logs/round25_run.log`
 - **Status**：`000_LONGRUN_ROUND25_STATUS.md`
 - **Profile**：`round25_scratch_abs`（`GeoEdgeAlignSR_v1_AutoTuneTrain.py`）
 - **LongRun 腳本**：`Model/GeoEdgeAlignSR_v1_LongRunRound25.py`
@@ -4180,7 +4180,7 @@ Round26 目前只完成 internal gate，尚未完成 external truth 驗證。
 3. 判定 `r26_sm035` 是否可取代 `r25_sw010` 成為新的 adopted baseline
 
 Round26 winner checkpoint：
-`Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar`
+`Experiments/Legacy/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar`
 
 ### 59.8 External GMF 四方比較結果（2026-03-16）
 
@@ -4192,7 +4192,7 @@ Round26 winner checkpoint：
 
 Autocorr 0.8px：R18=0.151 / R22h=0.202 / R25=0.021 / R26=**0.226**
 
-報告：`Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_SUMMARY.md`
+報告：`Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25_r26/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_SUMMARY.md`
 
 **升級決定：R26 sm035 升級為 current adopted baseline。**
 
@@ -4250,7 +4250,7 @@ step_mag 存在一個最佳區間：
 - 啟動時間：2026-03-16
 - Profile：`round27_step_mag_recovery`
 - LongRun 腳本：`Model/GeoEdgeAlignSR_v1_LongRunRound27.py`
-- Log：`Traing_Progress/organized_20260316/round27/pending/logs/round27_run.log`
+- Log：`Experiments/Legacy/organized_20260316/round27/pending/logs/round27_run.log`
 - Status：`000_LONGRUN_ROUND27_STATUS.md`
 
 ### 60.5 訓練結果（2026-03-16）
@@ -4267,7 +4267,7 @@ vs R26 sm035 baseline：
 - center_err：0.0691 → **0.0603**（-12.7%）
 - step_err：0.0857 → **0.0737**（-14.0%）
 
-Checkpoint：`Traing_Progress/organized_20260316/round27/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r27sm028_20260316_202936/weights/best_tradeoff.pth.tar`
+Checkpoint：`Experiments/Legacy/organized_20260316/round27/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r27sm028_20260316_202936/weights/best_tradeoff.pth.tar`
 
 ### 60.6 假說驗證
 
@@ -4389,9 +4389,9 @@ AutoTuneTrain.py 的 Round28 profile 初版包含三個無效 CFG key（在 comm
 
 ### 62.7 當前狀態與下一步
 
-- checkpoint: `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r28sm030_20260316_223351/weights/best_tradeoff.pth.tar`
-- decision memo: `Traing_Progress/organized_20260316/round28/selected/reports/ROUND28_STEP_MAG_BALANCE_DECISION_20260316_225523.md`
-- GMF dirs: `Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28/r28_sm030/gmf_results/raw{pitch8px,pitch0p8px,pitch0p08px}\`
+- checkpoint: `Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r28sm030_20260316_223351/weights/best_tradeoff.pth.tar`
+- decision memo: `Experiments/Legacy/organized_20260316/round28/selected/reports/ROUND28_STEP_MAG_BALANCE_DECISION_20260316_225523.md`
+- GMF dirs: `Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28/r28_sm030/gmf_results/raw{pitch8px,pitch0p8px,pitch0p08px}\`
 - 比較腳本: `Model/GeoEdgeAlignSR_v1_ExternalGMFSixWayComparison.py`
 - 驗證目標：0.8px external GMF step std < 0.1913（R26 baseline）
 
@@ -4453,9 +4453,9 @@ step_mag=0.35（R26）→ autocorr=+0.226（穩定域）。
 
 | 類型 | 路徑 |
 |------|------|
-| 6-way 比較 MD | `Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_SUMMARY.md` |
-| 6-way 比較 JSON | `Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_SUMMARY.json` |
-| R28 重建影像 | `Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28/r28_sm030/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260316_224911` |
+| 6-way 比較 MD | `Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_SUMMARY.md` |
+| 6-way 比較 JSON | `Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28/reports/EXTERNAL_COMPARE_R18_R22_R25_R26_R27_R28_SUMMARY.json` |
+| R28 重建影像 | `Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28/r28_sm030/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260316_224911` |
 
 ### 63.5 下一步選項
 
@@ -4513,8 +4513,8 @@ R28 的失敗（step_mag=0.30 崩潰）確認了 step_mag 景觀的非單調性�
 | `Model/GeoEdgeAlignSR_v1_LongRunRound29.py` | 訓練 orchestration |
 | `Model/GeoEdgeAlignSR_v1_ExternalGMFSevenWayComparison.py` | 7-way GMF comparison（含 R29） |
 | `000_LONGRUN_ROUND29_STATUS.md` | 狀態追蹤 |
-| `Traing_Progress/organized_20260316/round29` | 訓練輸出 |
-| `Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28_r29` | GMF 比較根目錄 |
+| `Experiments/Legacy/organized_20260316/round29` | 訓練輸出 |
+| `Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25_r26_r27_r28_r29` | GMF 比較根目錄 |
 
 ---
 
@@ -4689,7 +4689,7 @@ Status：
 
 Batch root：
 
-- `Traing_Progress/organized_20260316/round30`
+- `Experiments/Legacy/organized_20260316/round30`
 
 ### 68.4 決策邊界
 

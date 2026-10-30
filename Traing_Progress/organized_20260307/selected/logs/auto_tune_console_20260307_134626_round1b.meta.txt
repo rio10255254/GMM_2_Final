@@ -1,4 +1,0 @@
-pid=38812
-out=Traing_Progress/organized_20260307/pending/logs/auto_tune_console_20260307_134626_round1b.out.log
-err=Traing_Progress/organized_20260307/pending/logs/auto_tune_console_20260307_134626_round1b.err.log
-cmd=python -u Model/GeoEdgeAlignSR_v1_AutoTuneTrain.py --sweep-epochs 5 --final-epochs 18 --deterministic

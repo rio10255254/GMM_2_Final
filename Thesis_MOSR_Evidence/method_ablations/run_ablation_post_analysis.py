@@ -26,7 +26,7 @@ from pathlib import Path
 
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
-PROGRESS_ROOT = _REPO_ROOT / "Traing_Progress"
+PROGRESS_ROOT = _REPO_ROOT / "Experiments" / "Training_Runs"
 
 
 ABLATION_REGISTRY = {

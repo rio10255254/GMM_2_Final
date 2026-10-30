@@ -1,6 +1,6 @@
 # legacy/organized_20260310 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260310/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260310/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,10 +22,10 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Microstep Data Precision Fix 2026-03-10](<../../../Traing_Progress/organized_20260310/reports/MICROSTEP_DATA_PRECISION_FIX_20260310.md>)
-- [原始報告：pitch0p01um_y_40 POSY Step Stats](<../../../Traing_Progress/organized_20260310/selected_evidence/microstep_uint16_probe/reports/pitch0p01um_y_40_posy_step_stats.md>)
-- [原始報告：Representative Multiscale GMF POSY Step Comparison](<../../../Traing_Progress/organized_20260310/selected_evidence/representative_multiscale/reports/representative_multiscale_posy_step_summary.md>)
-- [原始報告：SeqVal vs Crossscale GMF POSY Step Comparison](<../../../Traing_Progress/organized_20260310/selected_evidence/seqval_crossscale_compare/reports/seqval_crossscale_posy_step_summary.md>)
+- [原始報告：Microstep Data Precision Fix 2026-03-10](<../../../Experiments/Legacy/organized_20260310/reports/MICROSTEP_DATA_PRECISION_FIX_20260310.md>)
+- [原始報告：pitch0p01um_y_40 POSY Step Stats](<../../../Experiments/Legacy/organized_20260310/selected_evidence/microstep_uint16_probe/reports/pitch0p01um_y_40_posy_step_stats.md>)
+- [原始報告：Representative Multiscale GMF POSY Step Comparison](<../../../Experiments/Legacy/organized_20260310/selected_evidence/representative_multiscale/reports/representative_multiscale_posy_step_summary.md>)
+- [原始報告：SeqVal vs Crossscale GMF POSY Step Comparison](<../../../Experiments/Legacy/organized_20260310/selected_evidence/seqval_crossscale_compare/reports/seqval_crossscale_posy_step_summary.md>)
 
 ## 重做與驗證範圍
 

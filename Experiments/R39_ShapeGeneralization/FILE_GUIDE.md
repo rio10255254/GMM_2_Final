@@ -1,6 +1,6 @@
 # R39：讓模型不只會圓環，以及核准替代 R39R40_a025 的由來
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [起點 COMBO](<../R38v2SeqFixed/FILE_GUIDE.md>) · [下一輪 R40](<../R40_MicroscopyFeatureCoverage/README.md>) · [後續 R46](<../R46_CornerAwareFineTune/FILE_GUIDE.md>) · [Lab 同名 R39（不同實驗）](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R39_ShapeGeneralization/>) · [正式身分登記](<../../ESTIMATOR_POLICY.json>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [起點 COMBO](<../R38v2SeqFixed/FILE_GUIDE.md>) · [下一輪 R40](<../R40_MicroscopyFeatureCoverage/README.md>) · [後續 R46](<../R46_CornerAwareFineTune/FILE_GUIDE.md>) · [Lab 同名 R39（不同實驗）](<../../LabSystem_MOSR/Experiments/R39_ShapeGeneralization/>) · [正式身分登記](<../../ESTIMATOR_POLICY.json>)
 
 **一句話：** COMBO 對圓環很強，遇到三角形、矩形、多邊形就明顯變差。R39 加入受控的合成多形狀資料重新微調，形狀大幅進步，但環形定位退步；接著把訓練結果和 COMBO 的權重做線性平均，找回環形穩定度，同時保留一部分形狀能力（a030）。後來再把 a030 跟 R40 的 a043 平均，得到 R39R40_a025：三個外部尺度第一次全部守在 COMBO 的 3% 以內，2026-05-11 升為核准替代。
 

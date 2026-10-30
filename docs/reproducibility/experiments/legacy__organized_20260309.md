@@ -1,6 +1,6 @@
 # legacy/organized_20260309 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260309/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260309/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,17 +22,17 @@ step8_curve_stdguard_v2屬歷史驗證對象，原始回傳不可用新讀法覆
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：GMF POSY 步長統計 2026-03-09](<../../../Traing_Progress/organized_20260309/external_validation/current_seed/reports/GMF_POSY_step_stats_current_seed_20260309.md>)
-- [原始報告：AUTO_TUNE_CHAIN_20260309_EXTVAL](<../../../Traing_Progress/organized_20260309/pending/reports/AUTO_TUNE_CHAIN_PLAN_20260309_EXTVAL.md>)
-- [原始報告：AutoTune 完成摘要 20260309_173251](<../../../Traing_Progress/organized_20260309/pending/reports/AUTO_TUNE_RESULT_20260309_173251.md>)
-- [原始報告：AutoTune 完成摘要 20260309_180937](<../../../Traing_Progress/organized_20260309/pending/reports/AUTO_TUNE_RESULT_20260309_180937.md>)
-- [原始報告：LongRun 結果 auto_tune_report_20260310_002048](<../../../Traing_Progress/organized_20260309/pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_002048.md>)
-- [原始報告：LongRun 結果 auto_tune_report_20260310_033006](<../../../Traing_Progress/organized_20260309/pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_033006.md>)
-- [原始報告：LongRun 結果 auto_tune_report_20260310_045457](<../../../Traing_Progress/organized_20260309/pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_045457.md>)
-- [原始報告：LongRun 結果 auto_tune_report_20260310_071754](<../../../Traing_Progress/organized_20260309/pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_071754.md>)
-- [原始報告：0309 已保存外部驗證基準](<../../../Traing_Progress/organized_20260309/selected/reports/EXTERNAL_VALIDATION_BASELINE_20260309.md>)
-- [原始報告：Final Continuation Fix 2026-03-10](<../../../Traing_Progress/organized_20260309/selected/reports/FINAL_CONTINUATION_FIX_20260310.md>)
-- [原始報告：Round6 + LongRun 分析結論 2026-03-10](<../../../Traing_Progress/organized_20260309/selected/reports/ROUND6_LONGRUN_ANALYSIS_20260310.md>)
+- [原始報告：GMF POSY 步長統計 2026-03-09](<../../../Experiments/Legacy/organized_20260309/external_validation/current_seed/reports/GMF_POSY_step_stats_current_seed_20260309.md>)
+- [原始報告：AUTO_TUNE_CHAIN_20260309_EXTVAL](<../../../Experiments/Legacy/organized_20260309/pending/reports/AUTO_TUNE_CHAIN_PLAN_20260309_EXTVAL.md>)
+- [原始報告：AutoTune 完成摘要 20260309_173251](<../../../Experiments/Legacy/organized_20260309/pending/reports/AUTO_TUNE_RESULT_20260309_173251.md>)
+- [原始報告：AutoTune 完成摘要 20260309_180937](<../../../Experiments/Legacy/organized_20260309/pending/reports/AUTO_TUNE_RESULT_20260309_180937.md>)
+- [原始報告：LongRun 結果 auto_tune_report_20260310_002048](<../../../Experiments/Legacy/organized_20260309/pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_002048.md>)
+- [原始報告：LongRun 結果 auto_tune_report_20260310_033006](<../../../Experiments/Legacy/organized_20260309/pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_033006.md>)
+- [原始報告：LongRun 結果 auto_tune_report_20260310_045457](<../../../Experiments/Legacy/organized_20260309/pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_045457.md>)
+- [原始報告：LongRun 結果 auto_tune_report_20260310_071754](<../../../Experiments/Legacy/organized_20260309/pending/reports/LONGRUN_RESULT_auto_tune_report_20260310_071754.md>)
+- [原始報告：0309 已保存外部驗證基準](<../../../Experiments/Legacy/organized_20260309/selected/reports/EXTERNAL_VALIDATION_BASELINE_20260309.md>)
+- [原始報告：Final Continuation Fix 2026-03-10](<../../../Experiments/Legacy/organized_20260309/selected/reports/FINAL_CONTINUATION_FIX_20260310.md>)
+- [原始報告：Round6 + LongRun 分析結論 2026-03-10](<../../../Experiments/Legacy/organized_20260309/selected/reports/ROUND6_LONGRUN_ANALYSIS_20260310.md>)
 
 ## 重做與驗證範圍
 

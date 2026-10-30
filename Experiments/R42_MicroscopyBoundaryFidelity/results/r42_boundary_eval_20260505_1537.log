@@ -20,7 +20,7 @@ SerializationVersion: 1.1.0.1
 [R42-EVAL] START combo 2026/5/5 下午 03:36:39
 {
   "profile": "boundary_val_unseen",
-  "weights": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_00352
+  "weights": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_00352
 5\\weights\\best_tradeoff.pth.tar",
   "jobs": [
     {
@@ -96,7 +96,7 @@ undary_mixed",
   ]
 }
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
+-> Weights: Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
 ghts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_wr60m2dq\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -135,7 +135,7 @@ h
 construct_progress_best_tradeoff_in_stage_34_boundary_lines_20260408_003525\boundary_val_unseen_stage_34_boundary_lines_
 best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
+-> Weights: Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
 ghts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_7od9b4rk\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -174,7 +174,7 @@ h
 construct_progress_best_tradeoff_in_stage_35_boundary_grids_20260408_003525\boundary_val_unseen_stage_35_boundary_grids_
 best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
+-> Weights: Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
 ghts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_ifwsv4x7\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -214,7 +214,7 @@ ions
 construct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260408_003525\boundary_val_unseen_stage_36_boundary_ju
 nctions_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
+-> Weights: Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
 ghts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_6qx51cjs\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -254,7 +254,7 @@ s
 construct_progress_best_tradeoff_in_stage_37_boundary_curves_20260408_003525\boundary_val_unseen_stage_37_boundary_curve
 s_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
+-> Weights: Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
 ghts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_kmpf4veh\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -294,7 +294,7 @@ ns
 construct_progress_best_tradeoff_in_stage_38_boundary_regions_20260408_003525\boundary_val_unseen_stage_38_boundary_regi
 ons_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
+-> Weights: Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
 ghts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_94x_ar6z\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -334,7 +334,7 @@ ts
 construct_progress_best_tradeoff_in_stage_39_boundary_defects_20260408_003525\boundary_val_unseen_stage_39_boundary_defe
 cts_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
+-> Weights: Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/wei
 ghts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_7v15dlu8\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1397,7 +1397,7 @@ h"
 [R42-EVAL] START r41_direct 2026/5/5 下午 03:37:54
 {
   "profile": "boundary_val_unseen",
-  "weights": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028
+  "weights": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028
 \weights\\best_tradeoff.pth.tar",
   "jobs": [
     {
@@ -1473,7 +1473,7 @@ undary_mixed",
   ]
 }
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
 ts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_y1ji34sh\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1512,7 +1512,7 @@ ff.pth
 ct\reconstruct_progress_best_tradeoff_in_stage_34_boundary_lines_20260505_103028\boundary_val_unseen_stage_34_boundary_l
 ines_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
 ts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_klaj0p_e\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1551,7 +1551,7 @@ ff.pth
 ct\reconstruct_progress_best_tradeoff_in_stage_35_boundary_grids_20260505_103028\boundary_val_unseen_stage_35_boundary_g
 rids_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
 ts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_h6kh5xlp\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1591,7 +1591,7 @@ ions
 ct\reconstruct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260505_103028\boundary_val_unseen_stage_36_bounda
 ry_junctions_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
 ts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_kqjj5ej8\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1631,7 +1631,7 @@ s
 ct\reconstruct_progress_best_tradeoff_in_stage_37_boundary_curves_20260505_103028\boundary_val_unseen_stage_37_boundary_
 curves_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
 ts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_anq1xlot\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1671,7 +1671,7 @@ ns
 ct\reconstruct_progress_best_tradeoff_in_stage_38_boundary_regions_20260505_103028\boundary_val_unseen_stage_38_boundary
 _regions_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
 ts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_2n92i204\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1711,7 +1711,7 @@ ts
 ct\reconstruct_progress_best_tradeoff_in_stage_39_boundary_defects_20260505_103028\boundary_val_unseen_stage_39_boundary
 _defects_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weigh
 ts\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_nufj0xqu\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1857,7 +1857,7 @@ pth"
 [R42-EVAL] START r42_combo_best 2026/5/5 下午 03:38:18
 {
   "profile": "boundary_val_unseen",
-  "weights": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_
+  "weights": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_
 142301\\weights\\best_tradeoff.pth.tar",
   "jobs": [
     {
@@ -1933,7 +1933,7 @@ undary_mixed",
   ]
 }
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf__9mn09cd\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -1972,7 +1972,7 @@ adeoff.pth
 o_best\reconstruct_progress_best_tradeoff_in_stage_34_boundary_lines_20260505_142301\boundary_val_unseen_stage_34_bounda
 ry_lines_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_oi5r_z_u\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2011,7 +2011,7 @@ adeoff.pth
 o_best\reconstruct_progress_best_tradeoff_in_stage_35_boundary_grids_20260505_142301\boundary_val_unseen_stage_35_bounda
 ry_grids_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_2zx5vdv3\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2051,7 +2051,7 @@ ions
 o_best\reconstruct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260505_142301\boundary_val_unseen_stage_36_bo
 undary_junctions_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_o51hkjyf\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2091,7 +2091,7 @@ s
 o_best\reconstruct_progress_best_tradeoff_in_stage_37_boundary_curves_20260505_142301\boundary_val_unseen_stage_37_bound
 ary_curves_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_oh23ingd\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2131,7 +2131,7 @@ ns
 o_best\reconstruct_progress_best_tradeoff_in_stage_38_boundary_regions_20260505_142301\boundary_val_unseen_stage_38_boun
 dary_regions_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_g9oy7o3i\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2171,7 +2171,7 @@ ts
 o_best\reconstruct_progress_best_tradeoff_in_stage_39_boundary_defects_20260505_142301\boundary_val_unseen_stage_39_boun
 dary_defects_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_0dol_h9p\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2318,7 +2318,7 @@ off.pth"
 [R42-EVAL] START r42_combo_latest 2026/5/5 下午 03:38:42
 {
   "profile": "boundary_val_unseen",
-  "weights": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_
+  "weights": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_
 142301\\weights\\latest.pth.tar",
   "jobs": [
     {
@@ -2394,7 +2394,7 @@ undary_mixed",
   ]
 }
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf__tmxicxr\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2432,7 +2432,7 @@ ruct_progress_latest_in_stage_34_boundary_lines_20260505_142301\boundary_val_uns
 o_latest\reconstruct_progress_latest_in_stage_34_boundary_lines_20260505_142301\boundary_val_unseen_stage_34_boundary_li
 nes_latest.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_1q_j45n_\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2470,7 +2470,7 @@ ruct_progress_latest_in_stage_35_boundary_grids_20260505_142301\boundary_val_uns
 o_latest\reconstruct_progress_latest_in_stage_35_boundary_grids_20260505_142301\boundary_val_unseen_stage_35_boundary_gr
 ids_latest.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_6fvg09z7\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2510,7 +2510,7 @@ ions
 o_latest\reconstruct_progress_latest_in_stage_36_boundary_junctions_20260505_142301\boundary_val_unseen_stage_36_boundar
 y_junctions_latest.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_oe8aadn0\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2549,7 +2549,7 @@ s
 o_latest\reconstruct_progress_latest_in_stage_37_boundary_curves_20260505_142301\boundary_val_unseen_stage_37_boundary_c
 urves_latest.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_qjfvbtzq\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2589,7 +2589,7 @@ ns
 o_latest\reconstruct_progress_latest_in_stage_38_boundary_regions_20260505_142301\boundary_val_unseen_stage_38_boundary_
 regions_latest.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_2n00nzyx\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2629,7 +2629,7 @@ ts
 o_latest\reconstruct_progress_latest_in_stage_39_boundary_defects_20260505_142301\boundary_val_unseen_stage_39_boundary_
 defects_latest.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_14230
 1\weights\latest.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf__wo177ad\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2776,7 +2776,7 @@ _progress_latest_in_stage_40_boundary_mixed_20260505_142301\\boundary_val_unseen
 best\reconstruct_progress_best_tradeoff_in_stage_34_boundary_lines_20260505_145229\boundary_val_unseen_stage_34_boundary
 _lines_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_7e_3609c\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2815,7 +2815,7 @@ eoff.pth
 best\reconstruct_progress_best_tradeoff_in_stage_35_boundary_grids_20260505_145229\boundary_val_unseen_stage_35_boundary
 _grids_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_c2k4zo73\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2855,7 +2855,7 @@ ions
 best\reconstruct_progress_best_tradeoff_in_stage_36_boundary_junctions_20260505_145229\boundary_val_unseen_stage_36_boun
 dary_junctions_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_0wmx1try\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2895,7 +2895,7 @@ s
 best\reconstruct_progress_best_tradeoff_in_stage_37_boundary_curves_20260505_145229\boundary_val_unseen_stage_37_boundar
 y_curves_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_a5d2ef10\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2935,7 +2935,7 @@ ns
 best\reconstruct_progress_best_tradeoff_in_stage_38_boundary_regions_20260505_145229\boundary_val_unseen_stage_38_bounda
 ry_regions_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_xqxyq1xu\psf_from_ckpt.mat)
 -> Weights loaded successfully.
@@ -2975,7 +2975,7 @@ ts
 best\reconstruct_progress_best_tradeoff_in_stage_39_boundary_defects_20260505_145229\boundary_val_unseen_stage_39_bounda
 ry_defects_best_tradeoff.pth
 -> Using device: cuda:0
--> Weights: Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
+-> Weights: Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229
 weights\best_tradeoff.pth.tar
 -> PSF source: ckpt-buffer (C:\Users\Rio\AppData\Local\Temp\geoedge_psf_j2v5za6k\psf_from_ckpt.mat)
 -> Weights loaded successfully.

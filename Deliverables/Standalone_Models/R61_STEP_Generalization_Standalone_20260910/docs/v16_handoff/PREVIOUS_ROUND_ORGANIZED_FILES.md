@@ -8,19 +8,19 @@ Large outputs stay in their original folders. This index explains what each item
 
 | item | what it is | status | path |
 |---|---|---|---|
-| Current handoff folder | The clean starting packet for the next round | use first | `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff` |
-| Older v15 target folder | The earlier target and archive index made before this cleanup | keep as prior note | `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v15_step_guard` |
-| R61 progress note | Running narrative of what the R61 line has tried and learned | keep updating | `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/R61_PROGRESS_20260623.md` |
+| Current handoff folder | The clean starting packet for the next round | use first | `LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff` |
+| Older v15 target folder | The earlier target and archive index made before this cleanup | keep as prior note | `LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v15_step_guard` |
+| R61 progress note | Running narrative of what the R61 line has tried and learned | keep updating | `LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/R61_PROGRESS_20260623.md` |
 
 ## B. v14 Training Result
 
 | item | what it is | status | path |
 |---|---|---|---|
-| v14 best checkpoint | Best saved weight from the full v14 motion-texture run | use as predecessor | `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217/weights/best_tradeoff.pth.tar` |
-| v14 training folder | Full training output folder, including weights and run artifacts | keep | `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217` |
-| v14 training stdout | Main command output from the 8-epoch run | keep for audit | `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs/r61_motion_texture_v11base_full_e8_20260623_150211.out.log` |
-| v14 training stderr | Warnings and stderr from the 8-epoch run | keep for audit | `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs/r61_motion_texture_v11base_full_e8_20260623_150211.err.log` |
-| v14 dataset package | Old data plus camera-texture known-motion data | reuse as backbone | `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_guard_v14` |
+| v14 best checkpoint | Best saved weight from the full v14 motion-texture run | use as predecessor | `LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217/weights/best_tradeoff.pth.tar` |
+| v14 training folder | Full training output folder, including weights and run artifacts | keep | `LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_v11base_dualgate_boundary_focus_motiontexture_full_e8_20260623_150217` |
+| v14 training stdout | Main command output from the 8-epoch run | keep for audit | `LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs/r61_motion_texture_v11base_full_e8_20260623_150211.out.log` |
+| v14 training stderr | Warnings and stderr from the 8-epoch run | keep for audit | `LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs/r61_motion_texture_v11base_full_e8_20260623_150211.err.log` |
+| v14 dataset package | Old data plus camera-texture known-motion data | reuse as backbone | `LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_guard_v14` |
 
 ## C. Simulated Boundary Validation
 
@@ -97,10 +97,10 @@ Key result:
 
 | item | what it is | status | path |
 |---|---|---|---|
-| Step motion probe script | Measures repeat-capture and selected +10-position image motion | use | `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/probe_step_sequence_motion.py` |
-| Triple gate script | Combines simulated boundary, 20260603 real motion, and Step checks | use | `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/score_triple_generalization_gate.py` |
-| Step motion probe tests | Regression tests for Step pair construction and summaries | keep running | `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/tests/test_probe_step_sequence_motion.py` |
-| Triple gate tests | Regression tests for the combined gate | keep running | `Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/tests/test_score_triple_generalization_gate.py` |
+| Step motion probe script | Measures repeat-capture and selected +10-position image motion | use | `LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/probe_step_sequence_motion.py` |
+| Triple gate script | Combines simulated boundary, 20260603 real motion, and Step checks | use | `LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/score_triple_generalization_gate.py` |
+| Step motion probe tests | Regression tests for Step pair construction and summaries | keep running | `LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/tests/test_probe_step_sequence_motion.py` |
+| Triple gate tests | Regression tests for the combined gate | keep running | `LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/tests/test_score_triple_generalization_gate.py` |
 
 ## H. Diagnostic Or Failed Records
 

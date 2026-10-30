@@ -45,9 +45,10 @@ except ImportError:
 # Defaults
 # -----------------------------------------------------------------------------
 PROJECT_ROOT = SCRIPT_DIR.parent
-TRAINING_PROGRESS_ROOT = PROJECT_ROOT / "Traing_Progress"  # keep same folder name as training script
-CURRENT_SELECTED_SEED_MANIFEST = TRAINING_PROGRESS_ROOT / "organized_20260307" / "selected" / "current_seed.json"
-CURRENT_EXTERNAL_VALIDATION_ROOT = TRAINING_PROGRESS_ROOT / "organized_20260309" / "external_validation" / "current_seed"
+TRAINING_PROGRESS_ROOT = PROJECT_ROOT / "Experiments" / "Training_Runs"  # keep same folder name as training script
+LEGACY_ROOT = PROJECT_ROOT / "Experiments" / "Legacy"  # early organized_* batches
+CURRENT_SELECTED_SEED_MANIFEST = LEGACY_ROOT / "organized_20260307" / "selected" / "current_seed.json"
+CURRENT_EXTERNAL_VALIDATION_ROOT = LEGACY_ROOT / "organized_20260309" / "external_validation" / "current_seed"
 TRAIN_MODEL_NAME = "GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest"
 TRAIN_PROGRESS_PREFIX = f"training_progress_{TRAIN_MODEL_NAME}"
 TRAIN_WEIGHT_FILENAMES = [
@@ -71,7 +72,7 @@ DEFAULT_ALIGN_FACTOR = 64
 MANUAL_SELECT_MODE = None
 # Set to a path string or Path(...) for hard override; set None to use CLI/auto search.
 # Example:
-# MANUAL_WEIGHTS_PATH = Path(r"Traing_Progress/training_progress_xxx/weights/latest.pth.tar")
+# MANUAL_WEIGHTS_PATH = Path(r"Experiments/Training_Runs/training_progress_xxx/weights/latest.pth.tar")
 MANUAL_WEIGHTS_PATH = None
 
 VALID_EXTS = {".bmp", ".png", ".tif", ".tiff", ".jpg", ".jpeg"}

@@ -1,7 +1,7 @@
 {
   "candidate": "r40_combo_best",
-  "combo_checkpoint": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
-  "candidate_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/weights/best_tradeoff.pth.tar",
+  "combo_checkpoint": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+  "candidate_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/weights/best_tradeoff.pth.tar",
   "thresholds": {
     "min_micro_psnr": 26.0,
     "min_high_frequency_retention": 0.34,

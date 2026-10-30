@@ -73,7 +73,7 @@ geoedge_assets/                        ← 資料夾名稱隨意
 
 | 檔案 | 本機路徑 |
 |------|---------|
-| `best_tradeoff.pth.tar` | `Traing_Progress/organized_20260316/round26/archive/runs/.../weights/` |
+| `best_tradeoff.pth.tar` | `Experiments/Legacy/organized_20260316/round26/archive/runs/.../weights/` |
 | `PSF_fitted_2D_FOVstack.mat` | `PSF_Fitting/Crop_circle_FreqFiltered/Fits/` |
 | `tra_src_ring/` | `Training_Data/tra_src_ring/` |
 | `tra_lbl_ring/` | `Training_Data/tra_lbl_ring/` |

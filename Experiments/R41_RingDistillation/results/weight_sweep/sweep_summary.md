@@ -1,7 +1,7 @@
 # R41 權重平均 sweep — COMBO ↔ r41_kd_from_a045
 
-COMBO checkpoint:`Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
-候選 checkpoint:`Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weights/best_tradeoff.pth.tar`
+COMBO checkpoint:`Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
+候選 checkpoint:`Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weights/best_tradeoff.pth.tar`
 
 ## Trade-off 表
 

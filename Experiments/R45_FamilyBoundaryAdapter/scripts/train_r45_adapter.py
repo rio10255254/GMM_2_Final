@@ -31,7 +31,8 @@ from r45_adapter_model import (  # noqa: E402
 EXPERIMENT_ROOT = REPO_ROOT / "Experiments" / "R45_FamilyBoundaryAdapter"
 DEFAULT_BASE_CHECKPOINT = (
     REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Training_Runs"
     / "training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801"
     / "weights"
     / "best_tradeoff.pth.tar"

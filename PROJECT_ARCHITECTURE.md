@@ -56,7 +56,7 @@ U-Net（編碼 48→96→192 通道，三次下採樣，解碼接 skip），核�
 | OpticalBandpassFilter | 僅訓練時模擬顯微鏡頻率截止，抑制物理上不可能的細節 |
 
 訓練入口 `Model/GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py`；自動調參 `…AutoTuneTrain.py`；外部比較 `…ExternalGMF*.py`。
-權重在 `Traing_Progress/training_progress_*/weights/`（資料夾拼字是歷史錯誤，**不可改名**）：`best_tradeoff`（綜合最佳，COMBO 即此類）、`best_detail_guarded`、`latest`。名叫 best **不等於**正式採用。
+權重在 `Experiments/Training_Runs/training_progress_*/weights/`（原在根目錄拼錯字的 `Traing_Progress`，2026-10-28 移到這裡，資料夾名稱沒改）：`best_tradeoff`（綜合最佳，COMBO 即此類）、`best_detail_guarded`、`latest`。名叫 best **不等於**正式採用。
 `Training_Data/tra_src_ring`、`tra_lbl_ring` 被 gitignore，用 `Data_Simulaion.py` + `PSF_Convolution.py` 重新生成。
 「完整重新訓練」與「autotune 搜尋（12 epoch、提早驗證）」語意不同，搜尋約束不是模型本身。
 
@@ -152,8 +152,11 @@ y_R152 = clip( y_base + d·s·(x_PSF − x), 0, 1 )      d=1，s≈0.0138，模�
 |---|---|
 | 根目錄共用主線（`Model/`、`PSF_Fitting/`） | 維護 R26/R30 的穩定流程：訓練、推論、稽核、外部比較；**不吸收**實驗專用 loader／launcher |
 | `Experiments/R##_…` | 每輪自成一體，報告只在自己的 `reports/` 編輯；R32 沙盒已關閉保留（external FAIL） |
-| LabSystem | `Thesis_MOSR_Evidence/LabSystem_MOSR/` 是獨立的成像條件與研究史；Lab R39 ≠ 主 R39，V42 ≠ 主 R42 |
+| `Experiments/Legacy`、`Experiments/Training_Runs` | 不算輪次的共用區：前者是早期整理批次，後者是 `Model/` 訓練器每次訓練的輸出；兩者都出自原根目錄 `Traing_Progress` |
+| LabSystem | `LabSystem_MOSR/` 是獨立的成像條件與研究史；Lab R39 ≠ 主 R39，V42 ≠ 主 R42 |
 | 共用原始資料 | `Shared_Sources/` 保存一次，各輪引用同一來源 |
+| 跨輪分析、交付、封存 | `Analyses/` 放跨輪實拍分析，`Deliverables/` 按用途分五類交付包，`Archive/` 放不再日常使用的舊資料夾（原名放入、內容不改） |
+| 專案根目錄 | 程式從自己的位置找專案根，不寫死磁碟路徑；驗證器會對寫死 `D:\GMM_2_Final\…` 的程式發提醒 |
 
 細節、新實驗模板與命名：[docs/operations/STARTING_NEW_EXPERIMENT.md](docs/operations/STARTING_NEW_EXPERIMENT.md)；哪份才是正本：[SOURCE_OF_TRUTH_POLICY.md](docs/operations/SOURCE_OF_TRUTH_POLICY.md)；特殊路徑：[QUIRKS.md](docs/operations/QUIRKS.md)。
 

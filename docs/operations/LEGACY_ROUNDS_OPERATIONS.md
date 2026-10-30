@@ -1,16 +1,19 @@
 # Legacy Rounds Operations Guide
 
-Last updated: 2026-04-08
+Last updated: 2026-04-08 (paths updated 2026-10-28)
+
+> These batches lived under the root folder `Traing_Progress` until the 2026-10-28 restructure moved them,
+> unchanged, to `Experiments/Legacy/`. Reports and logs written before that date still name the old path.
 
 ## Purpose
 
 This guide defines the operational surface for the preserved legacy batches
 under:
 
-- `Traing_Progress/organized_20260313/`
-- `Traing_Progress/organized_20260314/`
-- `Traing_Progress/organized_20260315/`
-- `Traing_Progress/organized_20260316/`
+- `Experiments/Legacy/organized_20260313/`
+- `Experiments/Legacy/organized_20260314/`
+- `Experiments/Legacy/organized_20260315/`
+- `Experiments/Legacy/organized_20260316/`
 
 Use this guide when you need to:
 - safely reopen `Round16` through `Round31`
@@ -49,10 +52,10 @@ by this guide.
 
 ## Batch Start Here
 
-1. `Traing_Progress/organized_20260313/MANIFEST.md` — `round16`-`round19` and status-bridge batch
-2. `Traing_Progress/organized_20260314/MANIFEST.md` — transition batch from `round20` into `branch_e`
-3. `Traing_Progress/organized_20260315/MANIFEST.md` — estimator-side batch for `round21` / `round22`
-4. `Traing_Progress/organized_20260316/MANIFEST.md` — external-compare and mainline breakthrough batch
+1. `Experiments/Legacy/organized_20260313/MANIFEST.md` — `round16`-`round19` and status-bridge batch
+2. `Experiments/Legacy/organized_20260314/MANIFEST.md` — transition batch from `round20` into `branch_e`
+3. `Experiments/Legacy/organized_20260315/MANIFEST.md` — estimator-side batch for `round21` / `round22`
+4. `Experiments/Legacy/organized_20260316/MANIFEST.md` — external-compare and mainline breakthrough batch
 
 ## Cross-Batch Lineage
 

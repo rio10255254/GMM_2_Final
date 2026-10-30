@@ -1,6 +1,6 @@
 # legacy/tta_experiment 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260316/tta_experiment/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260316/tta_experiment/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,7 +22,7 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：TTA Experiment: R26 Baseline vs R26 + TTA (cross5)](<../../../Traing_Progress/organized_20260316/tta_experiment/r26_tta_cross5/reports/TTA_VS_BASELINE_CROSS5_COMPARISON.md>)
+- [原始報告：TTA Experiment: R26 Baseline vs R26 + TTA (cross5)](<../../../Experiments/Legacy/organized_20260316/tta_experiment/r26_tta_cross5/reports/TTA_VS_BASELINE_CROSS5_COMPARISON.md>)
 
 ## 重做與驗證範圍
 

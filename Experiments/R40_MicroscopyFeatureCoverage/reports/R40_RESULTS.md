@@ -121,8 +121,8 @@ R40 解讀規則建議：
 
 | Candidate | 起點 | 完成的 run |
 |---|---|---|
-| `r40_micro_capacity_a030` | R39 a030 | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537/` |
-| `r40_micro_capacity_combo` | COMBO | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/` |
+| `r40_micro_capacity_a030` | R39 a030 | `Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_a030_20260504_134537/` |
+| `r40_micro_capacity_combo` | COMBO | `Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920/` |
 
 訓練後分析時，`best_tradeoff.pth.tar` 與 `latest.pth.tar` 都評估了——trainer 選的最佳 checkpoint 與最後一個 epoch 在 microscopy 特徵 trade-off 上最佳化的點不同。
 

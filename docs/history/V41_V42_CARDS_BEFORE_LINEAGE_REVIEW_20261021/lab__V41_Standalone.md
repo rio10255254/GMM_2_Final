@@ -16,7 +16,7 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：V41-Standalone Training Design](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone/V41_STANDALONE_DESIGN.md>)
+- [原始報告：V41-Standalone Training Design](<../../../LabSystem_MOSR/Experiments/V41_Standalone/V41_STANDALONE_DESIGN.md>)
 
 ## 重做與驗證範圍
 

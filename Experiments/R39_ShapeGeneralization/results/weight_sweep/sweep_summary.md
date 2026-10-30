@@ -1,7 +1,7 @@
 # R39 權重平均 sweep — COMBO ↔ r39_shape_mix_strong
 
-COMBO checkpoint:`Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
-候選 checkpoint:`Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/weights/best_tradeoff.pth.tar`
+COMBO checkpoint:`Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
+候選 checkpoint:`Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/weights/best_tradeoff.pth.tar`
 門檻:shape PSNR ≥ 24.84、8px ≤ 0.155、0.8px ≤ 0.155、0.08px ≤ 0.135
 
 ## Trade-off 表

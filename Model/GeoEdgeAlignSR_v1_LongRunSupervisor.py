@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Optional
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-ORGANIZED_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260309"
+ORGANIZED_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260309"
 PENDING_ROOT = ORGANIZED_ROOT / "pending"
 PENDING_LOGS = PENDING_ROOT / "logs"
 PENDING_REPORTS = PENDING_ROOT / "reports"
@@ -136,7 +136,7 @@ def _report_summary_lines(report: Dict[str, Any]) -> List[str]:
 
 
 def _latest_report_since(since_ts: float) -> Optional[Path]:
-    reports = sorted((PROJECT_ROOT / "Traing_Progress" / "auto_tune_reports").glob("auto_tune_report_*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+    reports = sorted((PROJECT_ROOT / "Experiments" / "Legacy" / "auto_tune_reports").glob("auto_tune_report_*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
     for report in reports:
         if report.stat().st_mtime >= since_ts - 2.0:
             return report

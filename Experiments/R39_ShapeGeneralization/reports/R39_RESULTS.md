@@ -38,14 +38,14 @@ R39 測試一條受控的多形狀資料路線，看能不能在不傷 ring 表�
 
 兩個候選都從 COMBO 接續：
 
-`Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
+`Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
 
 訓練後的 checkpoint：
 
 | Candidate | Checkpoint |
 |---|---|
-| `r39_shape_mix_safe` | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/weights/best_tradeoff.pth.tar` |
-| `r39_shape_mix_strong` | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/weights/best_tradeoff.pth.tar` |
+| `r39_shape_mix_safe` | `Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/weights/best_tradeoff.pth.tar` |
+| `r39_shape_mix_strong` | `Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728/weights/best_tradeoff.pth.tar` |
 
 ## 升級前必須通過的檢查
 

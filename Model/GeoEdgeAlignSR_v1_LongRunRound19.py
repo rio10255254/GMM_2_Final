@@ -22,8 +22,8 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-REPORT_ROOT = PROJECT_ROOT / "Traing_Progress" / "auto_tune_reports"
-ORG_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260313" / "round19"
+REPORT_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "auto_tune_reports"
+ORG_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260313" / "round19"
 LOG_ROOT = ORG_ROOT / "pending" / "logs"
 STATUS_MD = PROJECT_ROOT / "000_LONGRUN_ROUND19_STATUS.md"
 STATUS_JSON = PROJECT_ROOT / "000_LONGRUN_ROUND19_STATUS.json"
@@ -37,7 +37,7 @@ AUDIT_TOP_K = 4
 RUN_SEED = 1261201
 ARCHIVE_DIR = ORG_ROOT / "archive"
 RESUME_CACHE_DIR = ARCHIVE_DIR / "resume_cache"
-ROUND17_SELECTED_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260313" / "round17" / "selected"
+ROUND17_SELECTED_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260313" / "round17" / "selected"
 ROUND17_SEED_MANIFEST = ROUND17_SELECTED_ROOT / "current_stepfix_seed.json"
 ROUND17_SEED_FALLBACK = (
     ROUND17_SELECTED_ROOT

@@ -4,7 +4,7 @@
 
 ## Dataset check
 
-- Dataset: `Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16`
+- Dataset: `LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16`
 - Target: `boundary_generalization_without_same_sample_posthoc_correction`
 - Total pairs: `20296`
 - Role counts: `{'legacy_shape': 800, 'motion_synthetic': 4800, 'motion_texture_synthetic': 4800, 'sem_truth_anchor': 1400, 'sequence_guard': 1200, 'step_guard_motion_texture_synthetic': 3200, 'universal_synthetic': 4096}`

@@ -3,7 +3,7 @@
 **Date**: 2026-04-08
 **Branch**: `sandbox/r38v2`
 **Candidate**: `r38v2_8px_gate_p95`
-**Checkpoint**: `Traing_Progress/..._20260408_003525/weights/best_tradeoff.pth.tar`
+**Checkpoint**: `Experiments/Legacy/..._20260408_003525/weights/best_tradeoff.pth.tar`
 **Best Epoch**: 21
 
 ## 設計
@@ -70,4 +70,4 @@ Internal step_std 用 circle-fit（對 residual 敏感），GMF 用 template mat
 
 ## Checkpoint
 
-`Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`
+`Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar`

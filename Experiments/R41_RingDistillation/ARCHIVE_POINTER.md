@@ -15,7 +15,7 @@ R41 已完成訓練與所有本地檢查。它證明顯微特徵能力可以保�
 | 子目錄 | 原始位置 | 內容 |
 |---|---|---|
 | `experiment` | `Experiments/R41_RingDistillation` | 封存前的整個實驗資料夾，包含全部結果與候選輸出 |
-| `training_run` | `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028` | 30 輪正式訓練與權重 |
+| `training_run` | `Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028` | 30 輪正式訓練與權重 |
 | `training_data` | `Training_Data/r41_ring_distillation` | R41 專用訓練與驗證資料 |
 
 三部分合計 6,075 個檔案、7.375 GiB。三份 SHA-256 清單已逐檔驗證通過，零缺漏、零不一致。
@@ -38,7 +38,7 @@ D 槽只移除已在 H 槽完整保存的大型候選重建、掃描 checkpoint�
 
 ```powershell
 robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\experiment Experiments/R41_RingDistillation /E /COPY:DAT /DCOPY:DAT
-robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\training_run Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028 /E /COPY:DAT /DCOPY:DAT
+robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\training_run Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028 /E /COPY:DAT /DCOPY:DAT
 robocopy H:\GMM_2_Final_Archive\experiments\R41_RingDistillation\20260801_full_history\training_data Training_Data/r41_ring_distillation /E /COPY:DAT /DCOPY:DAT
 ```
 

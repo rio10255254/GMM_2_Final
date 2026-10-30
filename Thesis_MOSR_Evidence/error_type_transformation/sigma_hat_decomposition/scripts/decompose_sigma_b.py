@@ -30,9 +30,9 @@ CANDIDATES = [
         "model": "r30_b1_dironly",
         "role": "Former baseline (starting point)",
         "paths": {
-            "8px": ROOT / "Traing_Progress/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch8px/GMF_score.txt",
-            "0p8px": ROOT / "Traing_Progress/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch0p8px/GMF_score.txt",
-            "0p08px": ROOT / "Traing_Progress/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch0p08px/GMF_score.txt",
+            "8px": ROOT / "Experiments/Legacy/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch8px/GMF_score.txt",
+            "0p8px": ROOT / "Experiments/Legacy/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch0p8px/GMF_score.txt",
+            "0p08px": ROOT / "Experiments/Legacy/organized_20260316/round30/gmf_results/raw/r30_b1_dironly/pitch0p08px/GMF_score.txt",
         },
     },
     {

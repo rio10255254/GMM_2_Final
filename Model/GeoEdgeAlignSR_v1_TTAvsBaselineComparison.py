@@ -13,7 +13,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 # --- R26 baseline GMF results (already scored) ---
 BASELINE_SPECS = {
     "r26_sm035_baseline": {
-        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw'),
+        "root": str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw'),
         "pitch_map": {
             "8px":    "pitch8px",
             "0p8px":  "pitch0p8px",

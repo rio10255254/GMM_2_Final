@@ -223,7 +223,7 @@ E10 之後:
    - 如果視覺上越來越厚，但 thickening guard 幾乎不觸發，通常是 baseline/reference 沒對齊「你認為的好狀態」。
 
 4. 對照 monitor 輸出:
-   - `Traing_Progress/training_progress_*/monitor_epoch_XXX_v5.bmp`
+   - `Experiments/Training_Runs/training_progress_*/monitor_epoch_XXX_v5.bmp`
    - 若視覺退化與 Eq ramp 區間 (E6-20) 高度相關，診斷會更扎實。
 
 ## 7. 如果你希望後期也維持 E1-5 那種銳利 (調整方向)

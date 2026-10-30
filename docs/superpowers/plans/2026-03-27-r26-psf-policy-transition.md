@@ -33,10 +33,10 @@
 - `Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py`
 
 **Use / Inspect**
-- `Traing_Progress/auto_tune_reports/auto_tune_report_20260316_185417.json`
-- `Traing_Progress/organized_20260316/round26/selected/current_round26_step_recovery_seed.json`
-- `Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar`
-- `Traing_Progress/organized_20260316/round25/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r25sw010_20260316_173027/weights/best_tradeoff.pth.tar`
+- `Experiments/Legacy/auto_tune_reports/auto_tune_report_20260316_185417.json`
+- `Experiments/Legacy/organized_20260316/round26/selected/current_round26_step_recovery_seed.json`
+- `Experiments/Legacy/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar`
+- `Experiments/Legacy/organized_20260316/round25/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r25sw010_20260316_173027/weights/best_tradeoff.pth.tar`
 - `Deliverables/Company_Packages/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/GeoEdge_PackageSmokeTest.ps1`
 - `Deliverables/Company_Packages/GeoEdge_R26_正式交付版/GeoEdge_R26_使用包/內部檔案/GeoEdge_NativeLauncher.ps1`
 

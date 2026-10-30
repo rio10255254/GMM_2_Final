@@ -1136,7 +1136,7 @@ def _default_training_progress_root() -> str:
     packaged_output_root = Path(PACKAGE_ROOT) / "輸出結果" / "訓練結果"
     if (Path(PACKAGE_ROOT) / "輸出結果").exists() or packaged_output_root.exists():
         return str(packaged_output_root)
-    return os.path.join(PROJECT_ROOT, "Traing_Progress")
+    return os.path.join(PROJECT_ROOT, "Experiments", "Training_Runs")
 
 
 TRAINING_PROGRESS_ROOT = _default_training_progress_root()

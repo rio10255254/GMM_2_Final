@@ -28,7 +28,8 @@ from r44_motion_data import (  # noqa: E402
 
 COMBO_CHECKPOINT = (
     REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Training_Runs"
     / "training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525"
     / "weights"
     / "best_tradeoff.pth.tar"

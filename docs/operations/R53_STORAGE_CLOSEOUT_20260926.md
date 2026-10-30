@@ -35,7 +35,7 @@ H 完整副本位置：H:/GMM_2_Final_Archive/lab_system/R53_RealisticDatasetCal
 
 R53 完整實驗說明、程式、正式報告、完整 batch16 正式訓練 run、角點驗證資料及共享驗證程式留在原位置。其餘失敗 run 的設定、日誌與代表影像，以及資料 manifest，另保存到：
 
-Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/results/archive_retained_20260926
+LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/results/archive_retained_20260926
 
 這個保留包有 121 個檔案、134,430,502 bytes（128.203 MiB）；每個檔案與 H 原件 SHA-256 相同，最後複核再次通過。原位置新增 ARCHIVE_POINTER_R53_20260926.md，說明恢復相對路徑。
 
