@@ -9,7 +9,7 @@ COMBO results in the error-type-transformation metrics is attributable
 to the multi-frame training protocol.
 
 Training output goes to:
-    Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_<tag>_<timestamp>/
+    Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_<tag>_<timestamp>/
 
 Usage:
     python launch_ablation_no_seq.py --num-epoch 50 --device cuda:0
@@ -75,7 +75,7 @@ def main():
     print(f"  ROBUST_LOSS_PERCENTILE = {CFG.ROBUST_LOSS_PERCENTILE}")
     print(f"  NUM_EPOCH              = {CFG.NUM_EPOCH}")
     print(f"  DEVICE                 = {CFG.DEVICE}")
-    print(f"  Output to              = Traing_Progress/training_progress_{CFG.MODEL_NAME}_<timestamp>/")
+    print(f"  Output to              = Experiments/Training_Runs/training_progress_{CFG.MODEL_NAME}_<timestamp>/")
     print(f"{'='*60}\n")
     trainer.main()
 

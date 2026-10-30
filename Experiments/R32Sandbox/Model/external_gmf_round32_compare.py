@@ -11,7 +11,7 @@ PROJECT_ROOT = SANDBOX_ROOT.parents[1]
 REPORT_DIR = SANDBOX_ROOT / "reports"
 SUMMARY_MD = REPORT_DIR / "ROUND32_EXTERNAL_COMPARE.md"
 SUMMARY_JSON = REPORT_DIR / "ROUND32_EXTERNAL_COMPARE.json"
-ROUND30_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly"
+ROUND30_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly"
 
 PITCH_MAP = {
     "8px": "pitch8px",

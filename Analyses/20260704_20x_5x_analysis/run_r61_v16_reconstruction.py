@@ -9,10 +9,10 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 ANALYSIS_ROOT = Path(str(PROJECT_ROOT / 'Analyses' / '20260704_20x_5x_analysis'))
 PREPARE_SCRIPT = Path(
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/prepare_real_sample_gmf_package.py')
+    str(PROJECT_ROOT / 'LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/prepare_real_sample_gmf_package.py')
 )
 WEIGHTS = Path(
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar')
+    str(PROJECT_ROOT / 'LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar')
 )
 GROUPS = ["20x_0p5um", "20x_1um", "5x_0p5um", "5x_1um"]
 

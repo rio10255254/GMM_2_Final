@@ -22,9 +22,9 @@
   },
   "active_marker_globs": [
     "Experiments/*/runs/launcher_logs/active_formal_run.json",
-    "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/*/runs/launcher_logs/active_formal_run.json",
+    "LabSystem_MOSR/Experiments/*/runs/launcher_logs/active_formal_run.json",
     "Experiments/*/runs/active_run.json",
-    "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/*/runs/active_run.json"
+    "LabSystem_MOSR/Experiments/*/runs/active_run.json"
   ],
   "active_status_prefixes": [
     "active",
@@ -98,15 +98,15 @@
       "reason": "completed R95 48-epoch formal run; protect its locked design, continuation history, audits and checkpoints"
     },
     {
-      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+      "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
       "reason": "formal COMBO checkpoint"
     },
     {
-      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar",
+      "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar",
       "reason": "approved R33 checkpoint"
     },
     {
-      "path": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar",
+      "path": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar",
       "reason": "approved R38v2 checkpoint"
     },
     {

@@ -5,7 +5,7 @@ ROOT=pathlib.Path(str(PROJECT_ROOT))
 OLD=pathlib.Path(r"H:\GMM_2_Final_Archive\operation_logs\Storage_Migration_20260926")
 OUT=ROOT/"docs/operations/storage_execution_20260926"
 OUT.mkdir(exist_ok=True)
-LAB=ROOT/"Thesis_MOSR_Evidence/LabSystem_MOSR"
+LAB=ROOT/"LabSystem_MOSR"
 def ext(p):return pathlib.Path("\\\\?\\"+str(p))
 def digest(p):
  h=hashlib.sha256()

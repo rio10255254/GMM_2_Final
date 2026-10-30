@@ -1,6 +1,6 @@
 # legacy/branch_e 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260314/branch_e/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260314/branch_e/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,13 +22,13 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：BRANCH_E_ESTIMATOR_PROBE Audit Summary](<../../../Traing_Progress/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_SUMMARY_20260315_152742.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_be_ctrl_edge_20260315_152742.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_be_edge_band_20260315_152742.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_be_soft_20260315_152742.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_be_soft_band_20260315_152742.md>)
-- [原始報告：BRANCH_E_ESTIMATOR_PROBE Decision Memo](<../../../Traing_Progress/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_DECISION_20260315_152909.md>)
-- [原始報告：BRANCH_E_ESTIMATOR_PROBE Summary](<../../../Traing_Progress/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_SUMMARY_20260315_152742.md>)
+- [原始報告：BRANCH_E_ESTIMATOR_PROBE Audit Summary](<../../../Experiments/Legacy/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_SUMMARY_20260315_152742.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_be_ctrl_edge_20260315_152742.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_be_edge_band_20260315_152742.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_be_soft_20260315_152742.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_AUDIT_be_soft_band_20260315_152742.md>)
+- [原始報告：BRANCH_E_ESTIMATOR_PROBE Decision Memo](<../../../Experiments/Legacy/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_DECISION_20260315_152909.md>)
+- [原始報告：BRANCH_E_ESTIMATOR_PROBE Summary](<../../../Experiments/Legacy/organized_20260314/branch_e/selected/reports/BRANCH_E_ESTIMATOR_PROBE_SUMMARY_20260315_152742.md>)
 
 ## 重做與驗證範圍
 

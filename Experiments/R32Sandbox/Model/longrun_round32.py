@@ -45,7 +45,7 @@ SUMMARY_PREFIX = "ROUND32_DOMAIN_CAPACITY"
 MERGED_PROFILE_JSON = REPORT_DIR / f"{SUMMARY_PREFIX}_MERGED_PROFILE_REPORT.json"
 RUN_SEED = 1261830
 CONTROL_CANDIDATE = "r30_b1_dironly"
-CONTROL_CHECKPOINT = Path(str(SHARED_ROOT / 'Traing_Progress/organized_20260316/round30/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913/weights/best_tradeoff.pth.tar'))
+CONTROL_CHECKPOINT = Path(str(SHARED_ROOT / 'Experiments/Legacy/organized_20260316/round30/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913/weights/best_tradeoff.pth.tar'))
 POLICY_PATH = SHARED_ROOT / "ESTIMATOR_POLICY.json"
 ROUND32_REAL_EQ_DIR = SHARED_ROOT / "Training_Data" / "generated_convolved" / "Real_Image"
 

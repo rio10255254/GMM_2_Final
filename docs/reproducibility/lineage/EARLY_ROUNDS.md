@@ -8,7 +8,7 @@
 
 0307 Round1與修復round1b，將選模改成直接重視8px步長、極端值與平均偏移，新增stage15／16稀疏曲邊。保留Windows長路徑、選模視窗與日誌不同步的失敗。後來stdguard_v2作內部種子，不能直接當作當時外部正式採用版。
 
-[原進度與四候選](../../../Traing_Progress/organized_20260307/selected/reports/AUTO_TUNE_ROUND1_20260307.md)／[後來整理](../../../Traing_Progress/organized_20260307/ROUND1_CLEANUP_REPORT_20260309.md)。進度的執行中是當日截面。更早0306自動調參另屬前置基礎。
+[原進度與四候選](../../../Experiments/Legacy/organized_20260307/selected/reports/AUTO_TUNE_ROUND1_20260307.md)／[後來整理](../../../Experiments/Legacy/organized_20260307/ROUND1_CLEANUP_REPORT_20260309.md)。進度的執行中是當日截面。更早0306自動調參另屬前置基礎。
 
 ## R2
 
@@ -38,7 +38,7 @@ round5_extval_preserve與round5_extval_data_probe的原報告分開：前者降�
 
 Round6包含subpixel_guard與microstep_probe的多次不同尺度。正常完成仍常出現final破壞sweep，當時沒有全域新贏家取代0307種子。分開保存各尺度、重啟與較長／較短final，不把最後run當採用。
 
-[原長跑分析與完整分數](../../../Traing_Progress/organized_20260309/selected/reports/ROUND6_LONGRUN_ANALYSIS_20260310.md)／[所有原profile表](EARLY_REPORTS.md)。
+[原長跑分析與完整分數](../../../Experiments/Legacy/organized_20260309/selected/reports/ROUND6_LONGRUN_ANALYSIS_20260310.md)／[所有原profile表](EARLY_REPORTS.md)。
 
 ## R7
 

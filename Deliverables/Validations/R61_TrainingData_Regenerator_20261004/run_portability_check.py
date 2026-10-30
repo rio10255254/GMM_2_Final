@@ -10,7 +10,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 VALIDATION = Path(__file__).resolve().parent
 PACKAGE = VALIDATION / "portable_copy_v2" / "R61_TrainingData_Regenerator_20261004"
-HISTORICAL_LAB = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR'))
+HISTORICAL_LAB = Path(str(PROJECT_ROOT / 'LabSystem_MOSR'))
 DENIED_ROOT = os.path.normcase(str(HISTORICAL_LAB.resolve()))
 denied = []
 

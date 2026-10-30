@@ -52,7 +52,7 @@ python Experiments/R39_ShapeGeneralization/scripts/launch_r39.py --candidate r39
 
 ```powershell
 python Experiments/R39_ShapeGeneralization/scripts/run_r39_shape_recon.py --profile shape_val_unseen --dry-run
-python Experiments/R39_ShapeGeneralization/scripts/run_r39_shape_recon.py --profile shape_val_unseen --weights Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar
+python Experiments/R39_ShapeGeneralization/scripts/run_r39_shape_recon.py --profile shape_val_unseen --weights Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar
 python Experiments/R39_ShapeGeneralization/scripts/summarize_r39_shape_recon.py --profile shape_val_unseen
 ```
 
@@ -63,7 +63,7 @@ python Experiments/R39_ShapeGeneralization/scripts/summarize_r39_shape_recon.py 
 R39 的 local ring guard = 三尺度 ring 重建 + 720-angle 序列分析。它不是正式的外部 GMF,只是早期警示用。
 
 ```powershell
-.\Tools\RunRepresentativeExternalRecon.ps1 -WeightsPath Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/weights/best_tradeoff.pth.tar -ReconRoot Experiments/R39_ShapeGeneralization/results/ring_recon/r39_shape_mix_safe
+.\Tools\RunRepresentativeExternalRecon.ps1 -WeightsPath Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958/weights/best_tradeoff.pth.tar -ReconRoot Experiments/R39_ShapeGeneralization/results/ring_recon/r39_shape_mix_safe
 python Experiments/R39_ShapeGeneralization/scripts/run_r39_ring_guard.py --candidate r39_shape_mix_safe
 ```
 

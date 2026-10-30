@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -24,9 +24,9 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Lab R54 Edge-Band Probe Checkboard Validation - 2026-06-16](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_CHECKBOARD_VALIDATION.md>)
-- [原始報告：R54 Geometry Root-Cause Probe](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_DIAGNOSTIC.md>)
-- [原始報告：R54 Masked Small-Overfit Probe](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_MASKED_SMALL_PROBE.md>)
+- [原始報告：Lab R54 Edge-Band Probe Checkboard Validation - 2026-06-16](<../../../LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_CHECKBOARD_VALIDATION.md>)
+- [原始報告：R54 Geometry Root-Cause Probe](<../../../LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_DIAGNOSTIC.md>)
+- [原始報告：R54 Masked Small-Overfit Probe](<../../../LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_MASKED_SMALL_PROBE.md>)
 
 ## 重做與驗證範圍
 

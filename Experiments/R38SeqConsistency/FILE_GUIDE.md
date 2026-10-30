@@ -60,7 +60,7 @@ R33 讓定位大幅變準，但邊緣明顯變軟；R34、R35、R37 想從頻率
 |---|---|
 | 序列分析結果（35 個檔案） | 本資料夾 [results/](<results>)，已在 GitHub |
 | 送 GMF 的逐張重建影像（約 200 張） | 2026-08-24 已移到原電腦的 H 槽封存並逐檔核對，見[封存紀錄](<ARCHIVE_POINTER_20260824.md>)；也保存在 GitHub 主版本的 git 歷史裡 |
-| 模型權重與訓練紀錄 | `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842/`，見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
+| 模型權重與訓練紀錄 | `Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_122842/`，見[模型指南](<../../docs/reproducibility/MODEL_GUIDE.md>) |
 | 序列資料 | 用 `Training_Data/` 的原生成程式與當時的 PSF 重新產生，見[生成方法](<../../docs/reproducibility/GENERATION_GUIDE.md>) |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。

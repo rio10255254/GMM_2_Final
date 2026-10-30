@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -44,7 +44,7 @@
 
 
 
-- [原始報告：真實顯微影像子像素平移一致性實驗](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/EXPERIMENT_REPORT_zh-TW.md>)
+- [原始報告：真實顯微影像子像素平移一致性實驗](<../../../LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/EXPERIMENT_REPORT_zh-TW.md>)
 
 
 

@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -24,8 +24,8 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Lab R52 Corner-Stability Guard Checkboard Validation - 2026-06-15](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_CHECKBOARD_VALIDATION.md>)
-- [原始報告：R52 Corner-Stability Guard Results](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_RESULTS.md>)
+- [原始報告：Lab R52 Corner-Stability Guard Checkboard Validation - 2026-06-15](<../../../LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_CHECKBOARD_VALIDATION.md>)
+- [原始報告：R52 Corner-Stability Guard Results](<../../../LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_RESULTS.md>)
 
 ## 重做與驗證範圍
 

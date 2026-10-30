@@ -18,7 +18,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 EVIDENCE = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence'))
-DATA = EVIDENCE / "LabSystem_MOSR" / "Training_Data"
+DATA = EVIDENCE / ".." / "LabSystem_MOSR" / "Training_Data"
 R55 = (
     DATA
     / "r55_source_style_rebuild"

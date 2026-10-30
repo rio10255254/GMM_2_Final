@@ -1,6 +1,6 @@
 # R64：換一套位移量法，重算三組實驗
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R63](<../R63_CausalBoundaryMotionAblation/FILE_GUIDE.md>) · [同一天用舊量法做的 R65](<../R65_V19_OldMethodFigurePackage_20260724/FILE_GUIDE.md>) · [量法比較的出處](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R63](<../R63_CausalBoundaryMotionAblation/FILE_GUIDE.md>) · [同一天用舊量法做的 R65](<../R65_V19_OldMethodFigurePackage_20260724/FILE_GUIDE.md>) · [量法比較的出處](<../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>)
 
 **一句話：** 2026-07-24 決定試用新的位移量法：每顆柱取五條水平弦、30%～70% 五個灰階門檻的等強度輪廓交點，取中位數當中心，並改用平台的**實際回授**位置當參考。R64 用這套量法，把三組已有的實驗（Raw／Wiener／MOSR 位移改善、R63 消融、多模型比較）全部重算一次。沒有新訓練。重算後 R63 的消融結論有變：移除原圖位置錨定，九顆柱位移離散度增加 35%；位移安全上採樣從「支持」降為「趨勢」。
 
@@ -43,7 +43,7 @@
 1. **量法會改變因果結論。** R63 用舊量法時，原圖位置錨定的作用主要在 CD 與振鈴，位移上沒有支持；R64 用新量法時，它對九顆柱一致性的作用最明顯。位移安全上採樣則反過來。兩組結果都保留，引用時要說明用的是哪一套量法。
 2. **Wiener 只有處理柱的區域。** 留存的 20× Wiener 影像在孔的區域跟原圖逐像素相同，所以位移改善只比柱。
 3. **V42 沒有全面領先。** 20×、1.0 µm 的誤差高於原圖，50× 兩組的九顆柱離散度也高於原圖與 Wiener。
-4. 選新量法的理由應該建立在邊界定義與合成驗證上，不是因為它讓哪個模型排名較好（見[量法比較報告](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/measurement_method_comparison_20260724/METHOD_COMPARISON_REPORT_zh-TW.md>)）。
+4. 選新量法的理由應該建立在邊界定義與合成驗證上，不是因為它讓哪個模型排名較好（見[量法比較報告](<../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/measurement_method_comparison_20260724/METHOD_COMPARISON_REPORT_zh-TW.md>)）。
 
 ## 拿資料與重做
 
@@ -51,7 +51,7 @@
 |---|---|
 | 重算程式與 MATLAB 畫圖 | 本資料夾 [run_isocontour_reanalysis.py](<run_isocontour_reanalysis.py>)、[plot_isocontour_reanalysis.m](<plot_isocontour_reanalysis.m>)，已在 GitHub |
 | 報告、圖表索引與圖 | [論文證據區 06_DISPLACEMENT_EXPERIMENTS_ISOCONTOUR_20260724/](<../../Thesis_MOSR_Evidence/Final_Data_Figures/06_DISPLACEMENT_EXPERIMENTS_ISOCONTOUR_20260724/README.md>) |
-| 被重算的原始量測 | [R63](<../R63_CausalBoundaryMotionAblation/FILE_GUIDE.md>)、[EDSR／NAFNet 對照](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>)、[V42 論文結果](<../../Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/README.md>) |
+| 被重算的原始量測 | [R63](<../R63_CausalBoundaryMotionAblation/FILE_GUIDE.md>)、[EDSR／NAFNet 對照](<../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>)、[V42 論文結果](<../../Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/README.md>) |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 

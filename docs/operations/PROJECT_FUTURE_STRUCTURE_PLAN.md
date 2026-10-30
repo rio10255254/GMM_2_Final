@@ -79,7 +79,7 @@ D:\GMM_2_Final\
 ├── Experiments\                      R 系列實驗；每輪直接掛在此層
 ├── Analyses\AnalysisLab\                      可重用、跨版本的模型分析；維持版本優先
 ├── Training_Data\                    共享訓練資料與既有產生程式
-├── Traing_Progress\                  歷史與共享主線訓練輸出；名稱永久保留
+├── Experiments\Legacy\                  歷史與共享主線訓練輸出；名稱永久保留
 ├── Analyses\Reconstruct_Progress\             舊共享重建表面；新工作不再預設寫入
 ├── PSF_Fitting\                      獨立 PSF 工作系統；原位治理
 ├── Thesis_MOSR_Evidence\             論文證據與 LabSystem；原位治理
@@ -231,7 +231,7 @@ Acquisitions\YYYYMMDD_system_sample\
 
 ### Legacy rounds
 
-`Traing_Progress/organized_20260313` 至 `organized_20260316` 只加導覽與恢復資訊，不重構內容。
+`Experiments/Legacy/organized_20260313` 至 `organized_20260316` 只加導覽與恢復資訊，不重構內容。
 
 ## Deliverables
 

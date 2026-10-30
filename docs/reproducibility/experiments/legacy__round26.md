@@ -1,6 +1,6 @@
 # legacy/round26 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260316/round26/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260316/round26/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,16 +22,16 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND26_STEP_RECOVERY AUDIT_0P8 Summary](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_SUMMARY_20260316_191318.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_r26_sm025_20260316_191318.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_r26_sm030_20260316_191318.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_r26_sm035_20260316_191318.md>)
-- [原始報告：ROUND26_STEP_RECOVERY AUDIT_8P0 Summary](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_SUMMARY_20260316_191410.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_r26_sm025_20260316_191410.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_r26_sm030_20260316_191410.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_r26_sm035_20260316_191410.md>)
-- [原始報告：ROUND26_STEP_RECOVERY Decision Memo](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_DECISION_20260316_191450.md>)
-- [原始報告：ROUND26_STEP_RECOVERY Summary](<../../../Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_SUMMARY_20260316_191318.md>)
+- [原始報告：ROUND26_STEP_RECOVERY AUDIT_0P8 Summary](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_SUMMARY_20260316_191318.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_r26_sm025_20260316_191318.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_r26_sm030_20260316_191318.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_0P8_r26_sm035_20260316_191318.md>)
+- [原始報告：ROUND26_STEP_RECOVERY AUDIT_8P0 Summary](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_SUMMARY_20260316_191410.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_r26_sm025_20260316_191410.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_r26_sm030_20260316_191410.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_AUDIT_8P0_r26_sm035_20260316_191410.md>)
+- [原始報告：ROUND26_STEP_RECOVERY Decision Memo](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_DECISION_20260316_191450.md>)
+- [原始報告：ROUND26_STEP_RECOVERY Summary](<../../../Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_SUMMARY_20260316_191318.md>)
 
 ## 重做與驗證範圍
 

@@ -17,7 +17,8 @@ from r42_boundary_data import DEFAULT_DATA_ROOT, ensure_data_package  # noqa: E4
 
 COMBO_CHECKPOINT = (
     REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Training_Runs"
     / "training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525"
     / "weights"
     / "best_tradeoff.pth.tar"

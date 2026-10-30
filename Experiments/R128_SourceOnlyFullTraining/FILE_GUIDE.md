@@ -1,6 +1,6 @@
 # R128：只用乾淨生成資料的完整訓練
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R127](<../R127_MeasurementPreservationRepair/FILE_GUIDE.md>) · [下一輪 R129](<../R129_OpticalPriorHybrid/FILE_GUIDE.md>) · [被拿來比較的 V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R127](<../R127_MeasurementPreservationRepair/FILE_GUIDE.md>) · [下一輪 R129](<../R129_OpticalPriorHybrid/FILE_GUIDE.md>) · [被拿來比較的 V42](<../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
 
 **一句話：** 真實優先路線第一次完整訓練。模型只看觀測影像，不內建任何假設的真實 PSF；四次共享修正。比較兩種訓練方式，各兩個起點，各 8,192 次更新，2026-09-09 跑完。留下的是第四個版本 P_s1285002：正常亮度下 36/36 顆柱的尺寸比對改善，完整外輪廓、LSC 的柱間一致性都勝過 R61、R109、R119。但暗照片 29/36 顆退步，清楚影像也會被改動。9/12 拿它跟論文 v34 的 V42 逐項比，結論是不能直接替換論文主模型。
 

@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/R51_BlurSourceProbe/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -24,8 +24,8 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Lab R51 Blur-Source Probe Checkboard Validation - 2026-06-14](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_CHECKBOARD_VALIDATION.md>)
-- [原始報告：R51 Blur-Source Probe Results](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_RESULTS.md>)
+- [原始報告：Lab R51 Blur-Source Probe Checkboard Validation - 2026-06-14](<../../../LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_CHECKBOARD_VALIDATION.md>)
+- [原始報告：R51 Blur-Source Probe Results](<../../../LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_RESULTS.md>)
 
 ## 重做與驗證範圍
 

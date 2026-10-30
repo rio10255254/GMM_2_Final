@@ -60,7 +60,7 @@ Last updated: 2026-09-12（R129 核心設計接入短測完成；保留設計，
 | R34 / R35 / R37 | (sandbox only) | `sandbox/r34` / `r35` / `r37` | all failed to restore sharpness |
 | R38 | `R38SeqConsistency/` | `sandbox/r38` | seq all-stages noise corrupted 0.8px |
 
-Round31（legacy batch）亦 closed，見 `Traing_Progress/organized_20260316/round31/`。
+Round31（legacy batch）亦 closed，見 `Experiments/Legacy/organized_20260316/round31/`。
 
 ## 完整系列報告
 

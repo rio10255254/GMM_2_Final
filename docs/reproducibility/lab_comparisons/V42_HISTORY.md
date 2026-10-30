@@ -4,7 +4,7 @@
 
 ## 兩輪試跑與120輪完整訓練分開
 
-原[V42短測報告](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/V42_SOFTLABEL_SNR_SMOKE_RESULT.md)只描述180組、15類各12組的兩輪試跑。另一個[完整獨立包](../../../Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md)是在當時建立時寫成，因此仍說長訓練未完成、預設推論使用短測模型。原文保留，不能把這段建立時狀態當成後來的結果。
+原[V42短測報告](../../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/V42_SOFTLABEL_SNR_SMOKE_RESULT.md)只描述180組、15類各12組的兩輪試跑。另一個[完整獨立包](../../../Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/README_TW.md)是在當時建立時寫成，因此仍說長訓練未完成、預設推論使用短測模型。原文保留，不能把這段建立時狀態當成後來的結果。
 
 完整包的[當時啟動紀錄](../../../Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/CURRENT_FULL_TRAINING_RUN.json)、120列連續原表、全部第1至120輪權重及[最後執行紀錄](../../../Deliverables/Standalone_Models/V42_SoftLabelSNR_FullStandalone_20260709/results/run_logs/full_training_20260709_202710/train_stdout.log)共同證明後來完成120輪。先前19:04啟動的版本另有兩列完整輪次及第1、2輪權重；其「未完成一輪即停止」舊註記與現存結果矛盾，照原樣保留。該次stdout是空檔，不冒稱已由它核對分數。
 

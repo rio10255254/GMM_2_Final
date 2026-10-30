@@ -64,10 +64,10 @@ Last updated: 2026-09-26
 
 主要恢復入口：
 
-- R16–R31：各 `Traing_Progress/organized_20260313`–`16` 根目錄的 `ARCHIVE_POINTER_20260824.md`
+- R16–R31：各 `Experiments/Legacy/organized_20260313`–`16` 根目錄的 `ARCHIVE_POINTER_20260824.md`
 - 主專案七輪：各實驗根目錄的 `ARCHIVE_POINTER_20260824.md`
 - Lab R46／R47：各 Lab 實驗根目錄的 `ARCHIVE_POINTER_20260824.md`
-- 共享訓練歷史：`Traing_Progress/ARCHIVE_POINTER_STANDALONE_20260824.md`
+- 共享訓練歷史：`Experiments/Legacy/ARCHIVE_POINTER_STANDALONE_20260824.md`
 - 完整決策與停止邊界：`docs/operations/PROJECT_R1_R51_STORAGE_REVIEW_20260824.md`
 
 ## 2026-08-24 新完成封存
@@ -119,56 +119,56 @@ organized_20260310 完成核對後，D 槽移除大型 `external_validation/`，
 
 - 13 份完整快照清單：`H:\GMM_2_Final_Archive\manifests\Lab_R48_*_20260801.csv`
 - H 槽批次紀錄：`H:\GMM_2_Final_Archive\lab_system\R48_RealCornerTransfer\20260801_full_history\ARCHIVE_RECORD.md`
-- D 槽恢復說明：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer/ARCHIVE_POINTER_R48_20260801.md`
-- 精確封存範圍：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer/ARCHIVE_SCOPE_R48_20260801.json`
+- D 槽恢復說明：`LabSystem_MOSR/Experiments/R48_RealCornerTransfer/ARCHIVE_POINTER_R48_20260801.md`
+- 精確封存範圍：`LabSystem_MOSR/Experiments/R48_RealCornerTransfer/ARCHIVE_SCOPE_R48_20260801.json`
 
 ## Lab R49 清單
 
 - 13 份完整快照清單：`H:\GMM_2_Final_Archive\manifests\Lab_R49_*_20260809.csv`
 - H 槽批次紀錄：`H:\GMM_2_Final_Archive\lab_system\R49_CADAnchorRealGeometry\20260809_full_history\ARCHIVE_RECORD.md`
-- D 槽恢復說明：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/ARCHIVE_POINTER_R49_20260809.md`
-- 精確封存範圍：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/ARCHIVE_SCOPE_R49_20260809.json`
-- 精確移除清單與結果：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/ARCHIVE_DELETE_PLAN_R49_20260809.json`
+- D 槽恢復說明：`LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/ARCHIVE_POINTER_R49_20260809.md`
+- 精確封存範圍：`LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/ARCHIVE_SCOPE_R49_20260809.json`
+- 精確移除清單與結果：`LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/ARCHIVE_DELETE_PLAN_R49_20260809.json`
 
 ## Lab R52 清單（已完成）
 
 - 八份完整快照清單：`H:\GMM_2_Final_Archive\manifests\Lab_R52_*_20260813.csv`
 - H 槽批次紀錄：`H:\GMM_2_Final_Archive\lab_system\R52_CornerStabilityGuard\20260813_full_history\ARCHIVE_RECORD.md`
-- D 槽恢復說明：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/ARCHIVE_POINTER_R52_20260813.md`
-- 精確封存範圍：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/ARCHIVE_SCOPE_R52_20260813.json`
-- 精確移除清單與結果：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/ARCHIVE_DELETE_PLAN_R52_20260813.json`
-- 最終執行紀錄：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/ARCHIVE_EXECUTION_R52_20260824.json`
-- D 槽精簡保留包：`Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/`
+- D 槽恢復說明：`LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/ARCHIVE_POINTER_R52_20260813.md`
+- 精確封存範圍：`LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/ARCHIVE_SCOPE_R52_20260813.json`
+- 精確移除清單與結果：`LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/ARCHIVE_DELETE_PLAN_R52_20260813.json`
+- 最終執行紀錄：`LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/ARCHIVE_EXECUTION_R52_20260824.json`
+- D 槽精簡保留包：`LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/`
 
 ## organized_20260311 清單
 
 - 完整快照清單：`H:\GMM_2_Final_Archive\manifests\organized_20260311_20260801_full.csv`
 - 複製紀錄：`H:\GMM_2_Final_Archive\operation_logs\organized_20260311_20260801_robocopy.log`
-- D 槽恢復說明：`Traing_Progress/organized_20260311/ARCHIVE_POINTER.md`
+- D 槽恢復說明：`Experiments/Legacy/organized_20260311/ARCHIVE_POINTER.md`
 
 ## organized_20260307 清單
 
 - 完整快照清單：`H:\GMM_2_Final_Archive\manifests\organized_20260307_20260801_full.csv`
 - 複製紀錄：`H:\GMM_2_Final_Archive\operation_logs\organized_20260307_20260801_robocopy.log`
-- D 槽恢復說明：`Traing_Progress/organized_20260307/ARCHIVE_POINTER.md`
+- D 槽恢復說明：`Experiments/Legacy/organized_20260307/ARCHIVE_POINTER.md`
 
 ## organized_20260312 清單
 
 - 完整快照清單：`H:\GMM_2_Final_Archive\manifests\organized_20260312_20260801_full.csv`
 - 複製紀錄：`H:\GMM_2_Final_Archive\operation_logs\organized_20260312_20260801_robocopy.log`
-- D 槽恢復說明：`Traing_Progress/organized_20260312/ARCHIVE_POINTER.md`
+- D 槽恢復說明：`Experiments/Legacy/organized_20260312/ARCHIVE_POINTER.md`
 
 ## organized_20260309 清單
 
 - 完整快照清單：`H:\GMM_2_Final_Archive\manifests\organized_20260309_20260801_full.csv`
 - 複製紀錄：`H:\GMM_2_Final_Archive\operation_logs\organized_20260309_20260801_robocopy.log`
-- D 槽恢復說明：`Traing_Progress/organized_20260309/ARCHIVE_POINTER.md`
+- D 槽恢復說明：`Experiments/Legacy/organized_20260309/ARCHIVE_POINTER.md`
 
 ## organized_20260310 清單
 
 - 完整快照清單：`H:\GMM_2_Final_Archive\manifests\organized_20260310_20260801_full.csv`
 - 複製紀錄：`H:\GMM_2_Final_Archive\operation_logs\organized_20260310_20260801_robocopy.log`
-- D 槽恢復說明：`Traing_Progress/organized_20260310/ARCHIVE_POINTER.md`
+- D 槽恢復說明：`Experiments/Legacy/organized_20260310/ARCHIVE_POINTER.md`
 
 ## 判讀原則
 

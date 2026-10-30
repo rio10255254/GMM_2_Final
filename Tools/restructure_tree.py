@@ -20,6 +20,8 @@ verify  compares HEAD (before) with the work tree (after): equivalence, Python
         validator and the pytest groups against the baseline. Exit 1 on any new problem.
 
 decisions_phaseN.json: [{"segment": exact source, "target_old": "...", "target_new": "..." or null, "why": "..."}]
+    optional "file" scopes a decision to one file; optional "reaches" says where code kept as written
+    (target_new null) points once the folders move, "" for the project root, for verify to expect
 null keeps the expression as written. The records folder itself is never rewritten.
 reader_hints_phaseN.json: [{"file": "...py", "name": "MANIFEST_PATH", "path": "...", "why": "..."}]: a name whose
 path the tool cannot evaluate (built from a data value, or set by the module that loads this one), for following
@@ -83,11 +85,14 @@ class Phase:
             for h in json.loads(hints.read_text(encoding='utf-8')):
                 self.hints.setdefault(h['file'], {})[h['name']] = h['path']
         self.decisions = {}
+        self.reaches = {}       # kept code (target_new null) and where it reaches once the folders move
         dec = self.rec / f'decisions_phase{self.n}.json'
         if dec.exists():
             for d in json.loads(dec.read_text(encoding='utf-8')):
                 key = (d['file'], d['segment'], d['target_old']) if d.get('file') else (d['segment'], d['target_old'])
                 self.decisions[key] = d['target_new']
+                if d.get('reaches') is not None:
+                    self.reaches[key] = d['reaches']
 
     def universe(self, ref=None, applied='before'):
         a = self.before if applied == 'before' else self.upto
@@ -370,6 +375,8 @@ def do_verify(ph):
     def decided(name):
         out = {k[1]: v for k, v in ph.decisions.items() if v and len(k) == 2}
         out.update({k[2]: v for k, v in ph.decisions.items() if v and len(k) == 3 and k[0] == name})
+        out.update({k[1]: v for k, v in ph.reaches.items() if len(k) == 2})
+        out.update({k[2]: v for k, v in ph.reaches.items() if len(k) == 3 and k[0] == name})
         return out
     view = DataView({n: d for n, d in data_old.items() if mapped(n) in after},
                     {n: after[mapped(n)] for n in data_old if mapped(n) in after},

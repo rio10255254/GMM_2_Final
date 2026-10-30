@@ -2,7 +2,7 @@ import csv,json,pathlib,os,hashlib,datetime,shutil
 from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ROOT=pathlib.Path(str(PROJECT_ROOT))
-LAB=ROOT/"Thesis_MOSR_Evidence/LabSystem_MOSR"
+LAB=ROOT/"LabSystem_MOSR"
 OLD=pathlib.Path(r"H:\GMM_2_Final_Archive\operation_logs\Storage_Migration_20260926")
 OUT=ROOT/"docs/operations/storage_execution_20260926"
 def ext(p):return pathlib.Path("\\\\?\\"+str(p))

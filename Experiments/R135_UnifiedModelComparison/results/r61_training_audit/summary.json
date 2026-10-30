@@ -1,6 +1,6 @@
 {
   "checkpoint": {
-    "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+    "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
     "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b"
   },
   "train_count": 18266,
@@ -55,31 +55,31 @@
   "scope": "Positive proof of reused SEM size supervision and same static-photo crop/target training. No direct current201photo inclusion established by this full-parent hash check; arbitrary transformed crops and earlier ancestor data remain outside this negative result.",
   "inputs": [
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
       "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/manifest.json",
+      "path": "LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/manifest.json",
       "sha256": "4337cb2cc87da9508f531d9c5ef85a94355ae1039942a37e3dc85afaf6ecd3eb"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100/split_meta.json",
+      "path": "LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100/split_meta.json",
       "sha256": "c5aeab4ac2dd071636bf7cf9476f770f04a63304660bf51dbbf4ebeb6addefe6"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100/train_idx.npy",
+      "path": "LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100/train_idx.npy",
       "sha256": "051b4dc69a54deb59df576f3a593a3a24efd78bad4403d645d8a47885e192ed0"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100/val_idx.npy",
+      "path": "LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/splits/grouped_seed1337_val100/val_idx.npy",
       "sha256": "0753fa48955bc45571ce23b3b9a5336e9fc6d56e880e228112c1275f109bc98e"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r60_sem_truth_boundary/hs100mg_basler/r60_sem_truth_realcrop_anchor_train/manifest.json",
-      "sha256": "6b1a82e21f053e232bd653c7a76131de76a8b40f66268e4179b2401da4144c64"
+      "path": "LabSystem_MOSR/Training_Data/r60_sem_truth_boundary/hs100mg_basler/r60_sem_truth_realcrop_anchor_train/manifest.json",
+      "sha256": "b4c90296d75f062ed32fe8a54f79aaeb017253327a984ecda41c3903432acb81"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260618_100MG_user_recon/cd_measurement_20260620_basler_ace/sem_reference_36_radius.csv",
+      "path": "LabSystem_MOSR/Reconstruct_Progress/20260618_100MG_user_recon/cd_measurement_20260620_basler_ace/sem_reference_36_radius.csv",
       "sha256": "8c047747fbd91381f5da7905f5b9ff4c5f43859c87609223ebe5c56bf635d7f4"
     },
     {
@@ -91,16 +91,16 @@
       "sha256": "b909a8827f2292a9d8981f995f86e3cb59787ef619d27bb3ef36cf6bc812010f"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/scripts/prepare_r60_sem_truth_dataset.py",
-      "sha256": "948476e46995422aa268bb0789b215fb99051b99621a3a43ca6feea81804eeb9"
+      "path": "LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/scripts/prepare_r60_sem_truth_dataset.py",
+      "sha256": "d03e433f4cebfeceb1f7c5c596e481ce2b7a482cb74061d3b181048695d0a36e"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/launch_r61.py",
-      "sha256": "e9d9cb30590a1ac9688b28525e064014e8329b0cd0fc0a82dd9fea315c566a96"
+      "path": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/scripts/launch_r61.py",
+      "sha256": "3b618af0f7a75118d0f5f3e49efa04a73655cb0127a27311a78413202424262c"
     },
     {
       "path": "Experiments/R135_UnifiedModelComparison/config/plan.json",
-      "sha256": "e3c2774c23cac00dd95a7495c950f9b03735ceaa860c8bf89e5977cc69a4a22c"
+      "sha256": "36db9d4f897cd0044ec857fe23721871506783d3de770508dd92d8cac5a10211"
     }
   ]
 }

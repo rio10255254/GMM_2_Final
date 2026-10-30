@@ -3,7 +3,7 @@
 - winner_candidate: r31_eq_prob_up
 - selected_candidate: r31_eq_prob_up
 - confirmed: True
-- selected_checkpoint: Traing_Progress/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311/weights/best_tradeoff.pth.tar
+- selected_checkpoint: Experiments/Legacy/organized_20260316/round31/selected/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r31eqprobup_20260318_110311/weights/best_tradeoff.pth.tar
 - macro_estimator: edge_band_refine
 - mid_center_ratio_min: 0.2500
 - mid_step_max: 0.4500

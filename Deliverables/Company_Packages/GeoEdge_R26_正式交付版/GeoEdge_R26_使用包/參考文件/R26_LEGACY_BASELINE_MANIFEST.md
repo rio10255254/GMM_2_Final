@@ -16,7 +16,7 @@ This file preserves the legacy empirical baseline identity after the 2026-03-27 
 - package legacy PSF copy:
   `Experiments/R26NewPSFCheck/policy_transition_archive_20260327/package_psf_legacy/PSF_fitted_2D_FOVstack_legacy_empirical.mat`
 - legacy deployed checkpoint:
-  `Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar`
+  `Experiments/Legacy/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar`
 
 ## Purpose
 

@@ -1,6 +1,6 @@
 # PROJECT STATE / 專案狀態
 
-Last updated: 2026-10-28（收進 R152 IMPACT 2026 獨立工作區紀錄）；2026-10-24 文件整併改寫，內容事實截至 2026-10-23
+Last updated: 2026-10-30（資料夾重整與交機準備）；2026-10-28 收進 R152 IMPACT 2026 獨立工作區紀錄；2026-10-24 文件整併改寫，內容事實截至 2026-10-23
 
 這份只寫**現在的狀態**。系統怎麼設計、怎麼判斷好壞看 [PROJECT_ARCHITECTURE.md](PROJECT_ARCHITECTURE.md)；機器可讀的正式身分是 [ESTIMATOR_POLICY.json](ESTIMATOR_POLICY.json)；整體巡檢用 `python Tools/project_control_center.py`；縮寫看 [docs/README.md](docs/README.md)。
 
@@ -27,6 +27,7 @@ Last updated: 2026-10-28（收進 R152 IMPACT 2026 獨立工作區紀錄）；20
 - 相機原拍、SEM、模型、資料以 GitHub 發布附件保存，按需下載，不須整套取回。固定保存版本：[research-curated-20261021](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-curated-20261021)。
 - **逐輪必要來源的查核仍在進行，不能宣稱全專案完整。** 缺口：R63 一個原選中模型（第 24 輪版本）、主專案 R36 無法辨認、R95 早期狀態與 9 個早期 ANN 量當年未寫出。
 - 可再生的大型訓練資料不上傳，只保留生成程式、設定、種子與必要來源；舊的全量上傳與排程已停用（停止標記不得移除）。
+- **這台電腦之後會交給別人，從此 GitHub 程式庫加發布附件是唯一完整的家。** 2026-10-28 起按角色重整資料夾（新舊對照見[重整操作紀錄](docs/operations/TREE_RESTRUCTURE_20261028.md)），程式改成從自己的位置找專案根。交機前仍要清點只在本機的東西，見 §4。
 
 ### 保護規則
 - 不改正式基準與核准替代的身分；原拍、論文、正式模型、活動訓練來源受保護；不啟動新訓練或推論除非明確要求。
@@ -151,6 +152,9 @@ R153 十方法（算術平均口徑，nm）：
 | R95 與早期 ANN | 第一次回到第 8 輪的更新／亂數狀態、9 個早期 ANN 量當年未寫出，不補造 |
 | 其餘逐輪來源 | 已對 62 個範圍的指定面向核對；全專案閉合**尚未宣稱** |
 | 已找回 | R94 的 19 版與 R95 的 3 版早期程式、R13 較早公式（216 項分數與 5 次選擇重算相同） |
+| 外部 GMF 量測程式 | 廠商提供的量測工具，在本機 `E:/GMM_Software/GmmVisionToolExe_20260107`，不在 GitHub。各輪的外部 GMF 結果已保存，但交機後要重新量測，得另外取得這個工具 |
+| H 槽封存路徑 | 仍有地方寫著 `H:/From_2TB_D_disk`、`H:/GMM_2_Final_Archive` 的位置：程式裡約 40 處（28 支 Python、少數 PowerShell 與 MATLAB），其餘約 5,600 處在 1,025 份 JSON 清單與取回紀錄裡（2026-10-30 統計）。H 槽不會跟著 GitHub 走；那些資料是否都已在發布附件，屬於交機前清點，尚未完成 |
+| 只在本機的內容 | 未提交的改動、其他工作目錄、`D:/NTU_ImageDataset`、`E:/MitsutoyoSample_GMMSys_20x` 等外部資料還沒逐項清點；清點後先給專案負責人看清單，再決定上傳哪些 |
 
 細節：[KNOWN_GAPS.md](docs/reproducibility/KNOWN_GAPS.md)、[STATUS.md](docs/reproducibility/STATUS.md)。
 

@@ -1,6 +1,6 @@
 # legacy/pairwise_delta_probe 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260315/pairwise_delta_probe/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260315/pairwise_delta_probe/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,13 +22,13 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_edge_ctrl_0p8.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_macro_guard_ref_8p0.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_pairmix_algblend_0p8.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_pairmix_softblend_0p8.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_pairmix_softcentroid_0p8.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_soft_band_0p8.md>)
-- [原始報告：Pairwise Delta Probe Summary](<../../../Traing_Progress/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_PROBE_SUMMARY_20260315_224024.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_edge_ctrl_0p8.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_macro_guard_ref_8p0.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_pairmix_algblend_0p8.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_pairmix_softblend_0p8.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_pairmix_softcentroid_0p8.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_AUDIT_soft_band_0p8.md>)
+- [原始報告：Pairwise Delta Probe Summary](<../../../Experiments/Legacy/organized_20260315/pairwise_delta_probe/selected/reports/PAIRWISE_DELTA_PROBE_SUMMARY_20260315_224024.md>)
 
 ## 重做與驗證範圍
 

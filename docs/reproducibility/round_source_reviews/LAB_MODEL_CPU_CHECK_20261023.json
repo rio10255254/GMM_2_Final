@@ -3,7 +3,7 @@
   "models": [
     {
       "role": "BaseUNet_e30",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/best_base_unet.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/best_base_unet.pth.tar",
       "epoch": 12,
       "tensor_count": 111,
       "all_floating_finite": true,
@@ -12,7 +12,7 @@
     },
     {
       "role": "EDSR_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/best_edsr.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/best_edsr.pth.tar",
       "epoch": 15,
       "tensor_count": 107,
       "all_floating_finite": true,
@@ -21,7 +21,7 @@
     },
     {
       "role": "NAFNet_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/best_nafnet.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/best_nafnet.pth.tar",
       "epoch": 15,
       "tensor_count": 273,
       "all_floating_finite": true,
@@ -30,7 +30,7 @@
     },
     {
       "role": "Lab_R39_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260609_173931/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260609_173931/weights/best_tradeoff.pth.tar",
       "epoch": 21,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -39,7 +39,7 @@
     },
     {
       "role": "Lab_R39_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260609_173931/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260609_173931/weights/latest.pth.tar",
       "epoch": 100,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -48,7 +48,7 @@
     },
     {
       "role": "Lab_R40_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/best_tradeoff.pth.tar",
       "epoch": 44,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -57,7 +57,7 @@
     },
     {
       "role": "Lab_R40_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/latest.pth.tar",
       "epoch": 100,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -66,7 +66,7 @@
     },
     {
       "role": "R46_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/results/archive_retained_20260824/representative_checkpoints/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/results/archive_retained_20260824/representative_checkpoints/best_tradeoff.pth.tar",
       "epoch": 17,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -75,7 +75,7 @@
     },
     {
       "role": "R46_detail",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/results/archive_retained_20260824/representative_checkpoints/best_detail_guarded.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/results/archive_retained_20260824/representative_checkpoints/best_detail_guarded.pth.tar",
       "epoch": 15,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -84,7 +84,7 @@
     },
     {
       "role": "R46_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/results/archive_retained_20260824/representative_checkpoints/latest.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/results/archive_retained_20260824/representative_checkpoints/latest.pth.tar",
       "epoch": 25,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -93,7 +93,7 @@
     },
     {
       "role": "R47_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/results/archive_retained_20260824/representative_checkpoints/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/results/archive_retained_20260824/representative_checkpoints/best_tradeoff.pth.tar",
       "epoch": 33,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -102,7 +102,7 @@
     },
     {
       "role": "R47_detail",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/results/archive_retained_20260824/representative_checkpoints/best_detail_guarded.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/results/archive_retained_20260824/representative_checkpoints/best_detail_guarded.pth.tar",
       "epoch": 11,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -111,7 +111,7 @@
     },
     {
       "role": "R47_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/results/archive_retained_20260824/representative_checkpoints/latest.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/results/archive_retained_20260824/representative_checkpoints/latest.pth.tar",
       "epoch": 200,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -120,49 +120,49 @@
     },
     {
       "role": "R48_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_tradeoff.pth.tar",
       "local_D_present": false,
       "provider_asset": "research-fixed-models-004.zip",
       "server_asset_digest_verified": true
     },
     {
       "role": "R48_detail",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_detail_guarded.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_detail_guarded.pth.tar",
       "local_D_present": false,
       "provider_asset": "research-fixed-models-008.zip",
       "server_asset_digest_verified": true
     },
     {
       "role": "R48_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_resume_e120_to200_20260613_235726/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_resume_e120_to200_20260613_235726/weights/latest.pth.tar",
       "local_D_present": false,
       "provider_asset": "research-fixed-models-017.zip",
       "server_asset_digest_verified": true
     },
     {
       "role": "R49_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_tradeoff.pth.tar",
       "local_D_present": false,
       "provider_asset": "research-fixed-models-001.zip",
       "server_asset_digest_verified": true
     },
     {
       "role": "R49_detail",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_detail_guarded.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_detail_guarded.pth.tar",
       "local_D_present": false,
       "provider_asset": "research-fixed-models-013.zip",
       "server_asset_digest_verified": true
     },
     {
       "role": "R49_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/latest.pth.tar",
       "local_D_present": false,
       "provider_asset": "research-fixed-models-016.zip",
       "server_asset_digest_verified": true
     },
     {
       "role": "R51_mixed_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602/weights/best_tradeoff.pth.tar",
       "epoch": 12,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -171,7 +171,7 @@
     },
     {
       "role": "R51_mixed_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602/weights/latest.pth.tar",
       "epoch": 12,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -180,7 +180,7 @@
     },
     {
       "role": "R52_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/formal_run_evidence/checkpoints/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/formal_run_evidence/checkpoints/best_tradeoff.pth.tar",
       "epoch": 23,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -189,7 +189,7 @@
     },
     {
       "role": "R52_detail",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/formal_run_evidence/checkpoints/best_detail_guarded.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/formal_run_evidence/checkpoints/best_detail_guarded.pth.tar",
       "epoch": 13,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -198,7 +198,7 @@
     },
     {
       "role": "R52_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/formal_run_evidence/checkpoints/latest.pth.tar",
+      "path": "LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/results/archive_retained_20260813/formal_run_evidence/checkpoints/latest.pth.tar",
       "epoch": 100,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -207,7 +207,7 @@
     },
     {
       "role": "R53_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/best_tradeoff.pth.tar",
       "epoch": 15,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -216,7 +216,7 @@
     },
     {
       "role": "R53_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/latest.pth.tar",
       "epoch": 100,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -225,7 +225,7 @@
     },
     {
       "role": "R54_edgeband_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650/weights/best_tradeoff.pth.tar",
       "epoch": 0,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -234,7 +234,7 @@
     },
     {
       "role": "R54_edgeband_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650/weights/latest.pth.tar",
       "epoch": 20,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -243,7 +243,7 @@
     },
     {
       "role": "R55_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r55_source_style_r53_scratch_formal_source_style_e050_b016_w04_nophys_20260618_002532/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r55_source_style_r53_scratch_formal_source_style_e050_b016_w04_nophys_20260618_002532/weights/best_tradeoff.pth.tar",
       "epoch": 15,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -252,7 +252,7 @@
     },
     {
       "role": "R55_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r55_source_style_r53_scratch_formal_source_style_e050_b016_w04_nophys_20260618_002532/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r55_source_style_r53_scratch_formal_source_style_e050_b016_w04_nophys_20260618_002532/weights/latest.pth.tar",
       "epoch": 50,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -261,7 +261,7 @@
     },
     {
       "role": "R56_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r56_label_core_repair_r53_scratch_formal_label_core_repair_e050_b016_w04_nophys_20260618_122705/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r56_label_core_repair_r53_scratch_formal_label_core_repair_e050_b016_w04_nophys_20260618_122705/weights/best_tradeoff.pth.tar",
       "epoch": 15,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -270,7 +270,7 @@
     },
     {
       "role": "R56_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r56_label_core_repair_r53_scratch_formal_label_core_repair_e050_b016_w04_nophys_20260618_122705/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r56_label_core_repair_r53_scratch_formal_label_core_repair_e050_b016_w04_nophys_20260618_122705/weights/latest.pth.tar",
       "epoch": 50,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -279,7 +279,7 @@
     },
     {
       "role": "R57_asym_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_1_asym_cd_anchor_finetune_asym_cd_aligned_e004_b004_mtb120_lr3e6_20260620_163628/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_1_asym_cd_anchor_finetune_asym_cd_aligned_e004_b004_mtb120_lr3e6_20260620_163628/weights/best_tradeoff.pth.tar",
       "epoch": 0,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -288,7 +288,7 @@
     },
     {
       "role": "R57_asym_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_1_asym_cd_anchor_finetune_asym_cd_aligned_e004_b004_mtb120_lr3e6_20260620_163628/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r57_1_asym_cd_anchor_finetune_asym_cd_aligned_e004_b004_mtb120_lr3e6_20260620_163628/weights/latest.pth.tar",
       "epoch": 4,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -297,7 +297,7 @@
     },
     {
       "role": "R58_full_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r58_frac050_full_e030_mtb512_20260621_2300_20260621_231035/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r58_frac050_full_e030_mtb512_20260621_2300_20260621_231035/weights/best_tradeoff.pth.tar",
       "epoch": 2,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -306,7 +306,7 @@
     },
     {
       "role": "R58_full_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r58_frac050_full_e030_mtb512_20260621_2300_20260621_231035/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r58_frac050_full_e030_mtb512_20260621_2300_20260621_231035/weights/latest.pth.tar",
       "epoch": 30,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -315,7 +315,7 @@
     },
     {
       "role": "R60_polarity_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r60_semtruth_realcrop_anchor_fullish_e012_mtb256_polarityfix_20260622_20260622_010758/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r60_semtruth_realcrop_anchor_fullish_e012_mtb256_polarityfix_20260622_20260622_010758/weights/best_tradeoff.pth.tar",
       "epoch": 0,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -324,7 +324,7 @@
     },
     {
       "role": "R60_polarity_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r60_semtruth_realcrop_anchor_fullish_e012_mtb256_polarityfix_20260622_20260622_010758/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r60_semtruth_realcrop_anchor_fullish_e012_mtb256_polarityfix_20260622_20260622_010758/weights/latest.pth.tar",
       "epoch": 12,
       "tensor_count": 126,
       "all_floating_finite": true,
@@ -333,7 +333,7 @@
     },
     {
       "role": "R61_v16_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
       "epoch": 8,
       "tensor_count": 135,
       "all_floating_finite": true,
@@ -342,7 +342,7 @@
     },
     {
       "role": "R61_v16_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/latest.pth.tar",
       "epoch": 8,
       "tensor_count": 135,
       "all_floating_finite": true,
@@ -351,7 +351,7 @@
     },
     {
       "role": "R62_v7_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_seqgeom_mobility_v7_v7_noamp_lr3e7_short_e2_b80_20260705_20260705_235849/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_seqgeom_mobility_v7_v7_noamp_lr3e7_short_e2_b80_20260705_20260705_235849/weights/best_tradeoff.pth.tar",
       "epoch": 2,
       "tensor_count": 135,
       "all_floating_finite": true,
@@ -360,7 +360,7 @@
     },
     {
       "role": "R62_v28_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_v20_multimag_raw_guard_v28_v28_multimagraw_e1_mtb300_20260706_20260706_122650/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_v20_multimag_raw_guard_v28_v28_multimagraw_e1_mtb300_20260706_20260706_122650/weights/latest.pth.tar",
       "epoch": 1,
       "tensor_count": 135,
       "all_floating_finite": true,
@@ -369,7 +369,7 @@
     },
     {
       "role": "V41_best",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights/best_tradeoff.pth.tar",
       "epoch": 16,
       "tensor_count": 135,
       "all_floating_finite": true,
@@ -378,7 +378,7 @@
     },
     {
       "role": "V41_final",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights/latest.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights/latest.pth.tar",
       "epoch": 16,
       "tensor_count": 135,
       "all_floating_finite": true,
@@ -414,7 +414,7 @@
     },
     {
       "role": "new_missing_R62_fixed_output_package",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/packaged_checkpoints/r62_v24_v7_anchor_blend10_builtin/r62_v24_v7_anchor_blend10_builtin.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/packaged_checkpoints/r62_v24_v7_anchor_blend10_builtin/r62_v24_v7_anchor_blend10_builtin.pth.tar",
       "epoch": 2,
       "tensor_count": 135,
       "all_floating_finite": true,
@@ -422,7 +422,7 @@
     },
     {
       "role": "new_missing_R62_fixed_output_package",
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/packaged_checkpoints/r62_v29_v28_detail35_anchor/r62_v29_v28_detail35_anchor.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/packaged_checkpoints/r62_v29_v28_detail35_anchor/r62_v29_v28_detail35_anchor.pth.tar",
       "epoch": 1,
       "tensor_count": 135,
       "all_floating_finite": true,

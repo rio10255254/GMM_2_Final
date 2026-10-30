@@ -1035,7 +1035,7 @@ Read `docs/operations/SOURCE_OF_TRUTH_POLICY.md` before editing any file that mi
 - For R33+ experiments, `Experiments/*/reports/` is the only editable location for experiment reports
 - `docs/evidence/` contains curated copies used as stable citation anchors — may drift from canonical; canonical is authoritative
 - `Model/GeoEdgeAlignSR_v1_Infer_v5_*.py` is canonical; deployment/package copies must be synced manually
-- For legacy batches under `Traing_Progress/organized_20260313-20260316/`, use `docs/operations/LEGACY_ROUNDS_OPERATIONS.md` before editing legacy surfaces
+- For legacy batches under `Experiments/Legacy/organized_20260313-20260316/`, use `docs/operations/LEGACY_ROUNDS_OPERATIONS.md` before editing legacy surfaces
 - When in doubt about which copy is canonical, check the policy file or ask the user
 ```
 
@@ -1112,7 +1112,7 @@ Last updated: 2026-04-14
 | R34/R35/R37 | (sandbox only) | `sandbox/r34` etc. | all failed to restore sharpness |
 | R38 | `R38SeqConsistency/` | `sandbox/r38` | seq all-stages noise corrupted 0.8px |
 
-Round31（legacy batch）亦 closed，見 `Traing_Progress/organized_20260316/round31/`。
+Round31（legacy batch）亦 closed，見 `Experiments/Legacy/organized_20260316/round31/`。
 
 ## 規範文件
 

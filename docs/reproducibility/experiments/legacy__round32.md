@@ -1,6 +1,6 @@
 # legacy/round32 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260316/round32/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260316/round32/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,11 +22,11 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_long_from_r25_20260318_185125.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_long_from_r25_20260318_224545.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_long_from_r25_20260318_234624.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_long_from_r25_20260319_005007.md>)
-- [原始報告：ROUND32_DOMAIN_CAPACITY Summary](<../../../Traing_Progress/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_SUMMARY_20260318_185125.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_long_from_r25_20260318_185125.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_long_from_r25_20260318_224545.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_long_from_r25_20260318_234624.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_AUDIT_0P8_r32_long_from_r25_20260319_005007.md>)
+- [原始報告：ROUND32_DOMAIN_CAPACITY Summary](<../../../Experiments/Legacy/organized_20260316/round32/selected/reports/ROUND32_DOMAIN_CAPACITY_SUMMARY_20260318_185125.md>)
 
 ## 重做與驗證範圍
 

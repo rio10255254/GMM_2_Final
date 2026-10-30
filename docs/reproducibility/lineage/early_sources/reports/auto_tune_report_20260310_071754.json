@@ -97,7 +97,7 @@
       "model_name_base": "GESR_v1_v5_ST0p8_SWP_mcf",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_13_curve_clean_general",
           "stage_15_annulus_sparse_clean",
@@ -134,14 +134,14 @@
       },
       "score_shift_first": -0.4293534060646955,
       "duration_sec": 523.3193798065186,
-      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_mcf_20260310_071754"
+      "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_mcf_20260310_071754"
     },
     {
       "candidate": "micro_defect_balance",
       "model_name_base": "GESR_v1_v5_ST0p8_SWP_mdb",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_13_curve_clean_general",
           "stage_14_annulus_edge_defect_focus",
@@ -181,14 +181,14 @@
       },
       "score_shift_first": 0.37905518253157666,
       "duration_sec": 523.5026578903198,
-      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_mdb_20260310_072638"
+      "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_mdb_20260310_072638"
     },
     {
       "candidate": "micro_general_curve",
       "model_name_base": "GESR_v1_v5_ST0p8_SWP_mgc",
       "overrides": {
         "LOAD_MODEL": true,
-        "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
+        "PRETRAINED_PATH": "Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
         "TRAIN_INCLUDE_SUBDIRS": [
           "stage_04_ellipses",
           "stage_08_annulus_focus",
@@ -232,7 +232,7 @@
       },
       "score_shift_first": 1.253649689100726,
       "duration_sec": 526.31924700737,
-      "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_mgc_20260310_073521"
+      "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_mgc_20260310_073521"
     }
   ],
   "best_candidate": {
@@ -241,7 +241,7 @@
     "score_shift_first": 1.253649689100726,
     "overrides": {
       "LOAD_MODEL": true,
-      "PRETRAINED_PATH": "Traing_Progress/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
+      "PRETRAINED_PATH": "Experiments/Legacy/organized_20260307/selected/runs/training_progress_GESR_v1_v5_ST8_SWP_stdg_20260307_135625/weights/best_tradeoff.pth.tar",
       "TRAIN_INCLUDE_SUBDIRS": [
         "stage_04_ellipses",
         "stage_08_annulus_focus",
@@ -267,7 +267,7 @@
       "W_EDGELOCAL_LAP_END": 0.04,
       "W_DETAIL_BASE": 0.006
     },
-    "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_mgc_20260310_073521"
+    "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_mgc_20260310_073521"
   },
   "final_run": {
     "candidate": "micro_general_curve",
@@ -290,7 +290,7 @@
     },
     "score_shift_first": -5.977283381952201,
     "duration_sec": 2346.5926892757416,
-    "progress_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_FIN_mgc_20260310_074408"
+    "progress_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_FIN_mgc_20260310_074408"
   },
   "status": "ok"
 }

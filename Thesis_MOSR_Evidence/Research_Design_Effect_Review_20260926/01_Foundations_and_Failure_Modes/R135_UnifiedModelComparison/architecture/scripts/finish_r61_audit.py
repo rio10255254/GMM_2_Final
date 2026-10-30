@@ -3,7 +3,7 @@ import pandas as pd,shutil,re
 from scipy.io import loadmat
 def main():
     out=ROOT/'results/r61_training_audit';s=load(out/'summary.json');targets=pd.read_csv(out/'SEM_target_matches.csv');roster=pd.read_csv(out/'training_roster.csv');training=targets[(targets.split=='train')&(targets.feature=='pillar')];ids=sorted(int(v) for v in training.sem_id.unique());assert len(ids)==35
-    lab=REPO/'Thesis_MOSR_Evidence/LabSystem_MOSR';r58=lab/'Training_Data/r60_full_power/hs100mg_basler/r58_frac050_train/manifest.json';r58m=load(r58);refs=pd.read_csv(out/'SEM_reference_values.csv');means={k:float(refs[k].mean()) for k in ['pillar','via']};assert all(abs(means[k]-r58m['sem_radius_nm'][k])<1e-9 for k in means)
+    lab=REPO/'LabSystem_MOSR';r58=lab/'Training_Data/r60_full_power/hs100mg_basler/r58_frac050_train/manifest.json';r58m=load(r58);refs=pd.read_csv(out/'SEM_reference_values.csv');means={k:float(refs[k].mean()) for k in ['pillar','via']};assert all(abs(means[k]-r58m['sem_radius_nm'][k])<1e-9 for k in means)
     manifest=load(lab/'Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/manifest.json');mean_checks=0
     for r in manifest['pairs']:
         if r['role']=='sequence_guard':assert abs(r['sem_radius_nm']-means[r['feature']])<1e-9;assert abs(r['target_radius_nm']-(r['sem_radius_nm']+.5*(r['source_radius_nm']-r['sem_radius_nm'])))<1e-9;mean_checks+=1

@@ -92,7 +92,7 @@ Experiments/R##_Description/
 
 ### 型態 A：共享主線實驗
 
-適合沿用根層 `Model`、`Training_Data` 與 `Traing_Progress` 的實驗。該輪保留 launcher、報告與結果；共享模型和資料不複製進實驗。需要時可增加：
+適合沿用根層 `Model`、`Training_Data` 與 `Experiments/Training_Runs` 的實驗（`Model/` 訓練器的輸出預設寫到 `Experiments/Training_Runs/`；`Experiments/Legacy/` 是早期整理批次，不放新實驗）。該輪保留 launcher、報告與結果；共享模型和資料不複製進實驗。需要時可增加：
 
 ```text
 ├── tests/
@@ -148,7 +148,7 @@ README 或 MANIFEST 必須聲明採用哪一種型態。若有 `data`，必須�
 
 - Experiment profile: `shared-mainline` 或 `self-contained`
 - Training data: 實際 payload、可重建方式或共享來源與核對值
-- Checkpoint: `Traing_Progress/.../weights/...` 或本輪 `weights/...`
+- Checkpoint: `Experiments/Legacy/.../weights/...` 或本輪 `weights/...`
 - External GMF: `results/external_gmf/`（有送外部驗證時）
 - Closeout: D 槽保留內容、H 槽封存候選與恢復入口
 

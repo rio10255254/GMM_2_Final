@@ -4,7 +4,7 @@
 This package validates the long-trained V41-Standalone checkpoint with PSF disabled during inference.
 
 ## Checkpoint
-- Weight: `Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights/best_tradeoff.pth.tar`
+- Weight: `LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_standalone_full_e16_20260708_100223_20260708_100251/weights/best_tradeoff.pth.tar`
 - Training finished at 16/16 epochs; best epoch was 16.
 - Training summary: `[SUMMARY] Best epoch = 16, tradeoff = 150.6067, gmf_obj = 150.8683, best_val_rec = 0.029687, best_val_ssim = 0.7068`
 

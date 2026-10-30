@@ -22,6 +22,7 @@ The agent may analyze requirements, edit files, run shell commands, and verify r
 - Keep changes scoped to the request.
 - Run relevant checks before reporting completion.
 - Summarize the outcome with enough detail for the user to understand what changed and why; call out any remaining risks.
+- It helps for new code to find the project root from its own location (for example `Path(__file__).resolve().parents[N]`) rather than naming a drive path, so the project keeps working from any folder or machine.
 
 ## Experiment conventions (MUST follow)
 
@@ -57,13 +58,13 @@ Read `docs/operations/SOURCE_OF_TRUTH_POLICY.md` before editing any file that mi
 - For R33+ experiments, `Experiments/*/reports/` is the only editable location for experiment reports
 - `docs/evidence/` contains curated copies used as stable citation anchors — may drift from canonical; canonical is authoritative
 - `Model/GeoEdgeAlignSR_v1_Infer_v5_*.py` is canonical; deployment/package copies must be synced manually
-- For legacy batches under `Traing_Progress/organized_20260313-20260316/`, use `docs/operations/LEGACY_ROUNDS_OPERATIONS.md` before editing legacy surfaces
+- For legacy batches under `Experiments/Legacy/organized_20260313-20260316/`, use `docs/operations/LEGACY_ROUNDS_OPERATIONS.md` before editing legacy surfaces
 - When in doubt about which copy is canonical, check the policy file or ask the user
 
 ## Known quirks
 
 Read `docs/operations/QUIRKS.md` before making changes that touch:
-- `Traing_Progress/` (intentional typo, do not rename)
+- `Experiments/Legacy/` and `Experiments/Training_Runs/` (the root `Traing_Progress` folder, split on 2026-10-28; old reports and logs still name it)
 - `Training_Data/` (gitignored but has tracked Python scripts)
 - Model/ directory (flat structure is intentional)
 - External GMF outlier methods (different scripts use different rules)

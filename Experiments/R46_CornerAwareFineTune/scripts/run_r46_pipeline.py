@@ -20,11 +20,11 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[3]
 R46_ROOT = REPO_ROOT / "Experiments" / "R46_CornerAwareFineTune"
 SCRIPT_DIR = R46_ROOT / "scripts"
-TRAINING_PROGRESS_DIR = REPO_ROOT / "Traing_Progress"
+TRAINING_PROGRESS_DIR = REPO_ROOT / "Experiments" / "Training_Runs"
 
 
 def find_latest_r46_checkpoint() -> Path | None:
-    """找 Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r46_*_*/weights/best_tradeoff.pth.tar
+    """找 Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r46_*_*/weights/best_tradeoff.pth.tar
     取 timestamp 最晚那個。"""
     candidates = sorted(TRAINING_PROGRESS_DIR.glob(
         "training_progress_GESR_v1_v5_ST0p8_SWP_r46_a025_corner_finetune_*"
@@ -66,7 +66,7 @@ def main(argv: list[str] | None = None) -> int:
     if weights is None:
         weights = find_latest_r46_checkpoint()
         if weights is None:
-            print("[FAIL] R46 best_tradeoff.pth.tar not found in Traing_Progress/")
+            print("[FAIL] R46 best_tradeoff.pth.tar not found in Experiments/Training_Runs/")
             print("       Either training is not done, or pass --weights explicitly.")
             return 1
     weights = Path(weights).resolve()

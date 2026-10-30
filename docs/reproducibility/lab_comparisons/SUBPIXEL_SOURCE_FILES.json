@@ -3,67 +3,67 @@
   "purpose": "Exact historical 126-input regeneration and original saved-row aggregation, without retraining or inference",
   "files": [
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/prepare_subpixel_inputs.py",
-      "bytes": 12721,
-      "sha256": "9793cab6186505a57589ecc211dc671c30b00a78e4224a010c1d437088bd1f83",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/prepare_subpixel_inputs.py",
+      "bytes": 12700,
+      "sha256": "0aa6c213bf89e03d390e79ad211da4398fbdae336bd0f0ba8fbaeebb137e660f",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analyze_subpixel_equivariance.py",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analyze_subpixel_equivariance.py",
       "bytes": 39196,
-      "sha256": "56c047d6aca0557ba3dc13cfbb139e3c3016e8d62b9d46c61866c037f9653482",
+      "sha256": "96381876b9c97db076c83f13a48a619fef72a79b5f773143462d7baf3034958d",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/predeclared_design.json",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/predeclared_design.json",
       "bytes": 3691,
       "sha256": "a305fa5bd511ff31b03b5cb393df10d4df45427c7b0d957fb0983c8d849e7246",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/inputs/input_manifest.json",
-      "bytes": 10591,
-      "sha256": "c4157ac3036a3f8d04200764b7db5767c8df3d97022caa96f562af96269d2e53",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/inputs/input_manifest.json",
+      "bytes": 10549,
+      "sha256": "2f1ff7c3a6db02a72fdb7d1101fede60a68ade8666930d9c62515448c6c5b693",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/inputs/input_manifest.csv",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/inputs/input_manifest.csv",
       "bytes": 21399,
       "sha256": "30c2eb4b3d54c56142c41ac67eed88fbe1c4eed012c07b5fc6f07158a34a74eb",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/EXPERIMENT_REPORT_zh-TW.md",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/EXPERIMENT_REPORT_zh-TW.md",
       "bytes": 4117,
       "sha256": "4486edd0d75cf8ca8af373221cd02d9710ba74a13dce963c178cc925f6e57529",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/cluster_translation_metrics.csv",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/cluster_translation_metrics.csv",
       "bytes": 133397,
       "sha256": "e1922eb2b7c23c6f0da3ad36a780169f23aac7674fac38d399cc73c405fe50e7",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/primary_translation_summary_by_method.csv",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/primary_translation_summary_by_method.csv",
       "bytes": 1313,
       "sha256": "d85fe802130ce854d619b3b019567d98722cd92bf19c8fc6cbe93cc5e6fdd7c4",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/primary_translation_summary_by_group.csv",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/primary_translation_summary_by_group.csv",
       "bytes": 3334,
       "sha256": "67e4143595db3354b7eb0b1448e9d97c31d9a24d752f728afebeb2094e3756d4",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/primary_translation_summary_by_shift.csv",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/primary_translation_summary_by_shift.csv",
       "bytes": 1628,
       "sha256": "cc11f1d2441a76e0662b4c7815ec7d5e97657c34460402c6223044d92932f418",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/paired_mosr_comparisons.csv",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/analysis/tables/paired_mosr_comparisons.csv",
       "bytes": 722,
       "sha256": "c7bdccb0d1a491148fe5ac0237a4e72d6a29e98d965fa59ba918fcaa27b1a728",
       "role": "unchanged_original_generator_design_geometry_or_saved_statistics"
@@ -81,21 +81,21 @@
       "role": "frozen_original_raw_source_frame"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/mosr_inference_manifest.json",
-      "bytes": 897,
-      "sha256": "6517d1054e30f41ef2831490a83f80f7a175abb79b08caa3c51fff5659ede066",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/mosr_inference_manifest.json",
+      "bytes": 876,
+      "sha256": "bd1cf125befc2ef0c0f5256d395148acac1765b5364381a270059ac0888f38bf",
       "role": "original_model_output_identity_and_inference_settings_not_reexecuted_by_this_replay"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/learned_inference_manifest.json",
-      "bytes": 3911,
-      "sha256": "5ecaf1ee396258c491f03ccc17cf9fe017b02802e66c2e9ba38b6dcf5694b45f",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/learned_inference_manifest.json",
+      "bytes": 3743,
+      "sha256": "bac2491afdde5e478900a9f897d2831d7cdf28bfa56c7b3343535010691db767",
       "role": "original_model_output_identity_and_inference_settings_not_reexecuted_by_this_replay"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/method_outputs.json",
-      "bytes": 678,
-      "sha256": "f614c0e64b9eb28d6414f0dee5b96d4b4a24f85813ed40b1092af7d0b60ca96b",
+      "path": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/method_outputs.json",
+      "bytes": 573,
+      "sha256": "ca2b07dbc9df4b1ce080626d6615bd10434417ee1f97c203d7588275d312cfe5",
       "role": "original_model_output_identity_and_inference_settings_not_reexecuted_by_this_replay"
     }
   ],

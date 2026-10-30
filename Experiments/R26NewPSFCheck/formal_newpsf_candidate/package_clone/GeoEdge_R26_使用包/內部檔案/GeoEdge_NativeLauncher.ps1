@@ -81,7 +81,7 @@ function Get-LauncherConfig {
         $cfg['demo_recon_root'] = '..\輸出結果\推論結果'
     }
 
-    $legacyTrainRoots = @('', 'Traing_Progress', '.\Traing_Progress')
+    $legacyTrainRoots = @('', 'Traing_Progress', 'Experiments\Legacy')
     if ($legacyTrainRoots -contains [string]$cfg['train_progress_root']) {
         $cfg['train_progress_root'] = '..\輸出結果\訓練結果'
     }

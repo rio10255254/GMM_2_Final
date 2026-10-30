@@ -38,7 +38,7 @@ Last updated: 2026-03-18
 - 結論：正式升級 `Round30 / r30_b1_dironly` 為新 production baseline；下一步進入 `Round31 B1 hyperparam tuning`
 
 ## 方法註記
-- `PosY` 直接由 `Traing_Progress/organized_20260316/round30/gmf_results/raw*\pitch*\GMF_score.txt` 解析
+- `PosY` 直接由 `Experiments/Legacy/organized_20260316/round30/gmf_results/raw*\pitch*\GMF_score.txt` 解析
 - `step[i] = PosY[i+1] - PosY[i]`
 - `0.8px` outlier 規則沿用既有 compare workflow：`|step - mean(step)| > 3 * std(step)`
 - `lag-1 autocorr` 定義為每個模型自身 `PosY` 經線性去趨勢後的 anchor residual Pearson lag-1 correlation

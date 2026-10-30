@@ -43,7 +43,7 @@ d:\GMM_2_Final\
 │   └── tra_lbl_ring/             ← 目標影像（Ground Truth）
 ├── PSF_Fitting/                  ← PSF 擬合結果（供模型讀取）
 │   └── Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat
-├── Traing_Progress/              ← 訓練輸出（checkpoint、log、圖表）
+├── Experiments/Legacy/              ← 訓練輸出（checkpoint、log、圖表）
 │   └── training_progress_{MODEL}_{timestamp}/
 │       └── weights/
 │           ├── best_tradeoff.pth.tar
@@ -53,7 +53,7 @@ d:\GMM_2_Final\
     └── reconstruct_progress_{timestamp}/
 ```
 
-> **注意：** `Traing_Progress/` 資料夾名稱有拼寫錯誤（少一個 i），為歷史遺留，勿更名以免程式找不到路徑。
+> **注意：** `Experiments/Legacy/` 資料夾名稱有拼寫錯誤（少一個 i），為歷史遺留，勿更名以免程式找不到路徑。
 
 ---
 
@@ -186,10 +186,10 @@ python GeoEdgeAlignSR_v1_Train_v5_NoCoord_return_v2_SimpleTest.py
 | `WEAK_PSF_K` | `4` | Weak PSF block 使用的代表 PSF 數量 |
 | `SIMPLETEST_MODE` | `True` | 使用 SimpleTest 模式（精簡驗證） |
 
-**訓練輸出（自動建立於 `../Traing_Progress/`）：**
+**訓練輸出（自動建立於 `../Experiments/Legacy/`）：**
 
 ```
-Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_{timestamp}/
+Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_{timestamp}/
 ├── weights/
 │   ├── best_tradeoff.pth.tar         ← 最佳整體 tradeoff checkpoint
 │   ├── best_detail_guarded.pth.tar   ← 細節保護最佳 checkpoint
@@ -232,7 +232,7 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py
 ```
 
 **自動行為：**
-- 自動搜尋 `../Traing_Progress/` 下最新的 training run 中的 `best_tradeoff.pth.tar`
+- 自動搜尋 `../Experiments/Legacy/` 下最新的 training run 中的 `best_tradeoff.pth.tar`
 - 預設輸入：`../Training_Data/tra_src_ring/`
 - 輸出至：`../Analyses/Reconstruct_Progress/reconstruct_progress_{timestamp}/`
 
@@ -339,10 +339,10 @@ Analyses/Reconstruct_Progress/reconstruct_progress_{timestamp}/
 A: 確認 `PSF_Fitting/Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat` 存在（需先執行 `PSF_Fitting/HDR_fitting_2D_WholeFOV.m` 的 Section 1）。
 
 **Q: 推論時找不到 checkpoint**
-A: `../Traing_Progress/` 下沒有完整的 training run。可透過 `--weights` 明確指定路徑：
+A: `../Experiments/Legacy/` 下沒有完整的 training run。可透過 `--weights` 明確指定路徑：
 ```bash
 python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py \
-    --weights Traing_Progress/training_progress_xxx/weights/best_tradeoff.pth.tar
+    --weights Experiments/Training_Runs/training_progress_xxx/weights/best_tradeoff.pth.tar
 ```
 
 **Q: 為什麼舊 checkpoint 沒有跟著新的 PSF 更新？**
@@ -405,13 +405,14 @@ Related paths outside this folder:
   - supervised source / label training data
 - `PSF_Fitting/`
   - fitted PSF artifacts used by the model
-- `Traing_Progress/`
+- `Experiments/Legacy/`
   - training outputs such as checkpoints and logs
 - `Analyses/Reconstruct_Progress/`
   - inference outputs
 
-> Note: `Traing_Progress/` is intentionally misspelled for historical
-> compatibility. Do not rename it unless all dependent code is updated.
+> Note: training output used to go to the root folder `Traing_Progress` (a historical misspelling).
+> On 2026-10-28 it was split into `Experiments/Training_Runs/` (one `training_progress_*` folder per run,
+> the trainer's default output) and `Experiments/Legacy/` (early organized batches). Old logs still name the old path.
 
 ### Architecture Summary
 
@@ -449,7 +450,7 @@ Important training facts:
 - Python 3.12
 - CUDA GPU expected for training
 - `TrainConfig` controls LR, crop size, epochs, PSF path, and weak-PSF settings
-- outputs are written under `../Traing_Progress/`
+- outputs are written under `../Experiments/Legacy/`
 
 The training loss is a weighted mixture of:
 
@@ -472,7 +473,7 @@ python GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py
 Inference behavior:
 
 - automatically finds the latest `best_tradeoff.pth.tar` under
-  `../Traing_Progress/` unless you override it
+  `../Experiments/Legacy/` unless you override it
 - defaults to `../Training_Data/tra_src_ring/` as input
 - writes outputs under `../Analyses/Reconstruct_Progress/reconstruct_progress_{timestamp}/`
 
@@ -517,7 +518,7 @@ exists.
 
 **Q: Inference cannot find a checkpoint.**  
 A: Pass `--weights` explicitly if the automatic search under
-`../Traing_Progress/` does not find a valid run.
+`../Experiments/Legacy/` does not find a valid run.
 
 **Q: I see a PSF shape mismatch.**  
 A: Inference defaults to `--psf-from-ckpt`. If needed, switch to an explicit

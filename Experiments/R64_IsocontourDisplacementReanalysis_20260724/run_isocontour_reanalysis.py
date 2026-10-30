@@ -28,7 +28,6 @@ FIGURE_ROOT = (
 R63 = ROOT / "Experiments" / "R63_CausalBoundaryMotionAblation"
 MODERN = (
     ROOT
-    / "Thesis_MOSR_Evidence"
     / "LabSystem_MOSR"
     / "Experiments"
     / "Modern_Restoration_Benchmarks_20260719"

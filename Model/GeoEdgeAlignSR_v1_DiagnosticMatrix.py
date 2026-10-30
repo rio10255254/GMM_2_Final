@@ -14,7 +14,7 @@ import torch.nn.functional as F
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
-TRAINING_PROGRESS_ROOT = PROJECT_ROOT / "Traing_Progress"
+TRAINING_PROGRESS_ROOT = PROJECT_ROOT / "Experiments" / "Legacy"
 DEFAULT_OUTPUT_ROOT = TRAINING_PROGRESS_ROOT / "organized_20260314" / "diagnostics"
 DEFAULT_SEED_MANIFEST = (
     TRAINING_PROGRESS_ROOT

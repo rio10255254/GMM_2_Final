@@ -40,12 +40,12 @@ from profiles_r32 import build_round32_domain_capacity_probe
 
 PROJECT_ROOT = SANDBOX_ROOT
 
-r26_r25_seed_ckpt = str(SHARED_ROOT / 'Traing_Progress/organized_20260316/round25/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r25sw010_20260316_173027/weights/best_tradeoff.pth.tar')
-r27_r26_seed_ckpt = str(SHARED_ROOT / 'Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar')
-r28_r27_seed_ckpt = str(SHARED_ROOT / 'Traing_Progress/organized_20260316/round27/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r27sm028_20260316_202936/weights/best_tradeoff.pth.tar')
+r26_r25_seed_ckpt = str(SHARED_ROOT / 'Experiments/Legacy/organized_20260316/round25/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r25sw010_20260316_173027/weights/best_tradeoff.pth.tar')
+r27_r26_seed_ckpt = str(SHARED_ROOT / 'Experiments/Legacy/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar')
+r28_r27_seed_ckpt = str(SHARED_ROOT / 'Experiments/Legacy/organized_20260316/round27/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r27sm028_20260316_202936/weights/best_tradeoff.pth.tar')
 # Round28 seeds from R26 (not R27): searching 0.8px/0.08px balance sweet spot
-r28_r26_seed_ckpt = str(SHARED_ROOT / 'Traing_Progress/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar')
-r31_r30_b1_seed_ckpt = str(SHARED_ROOT / 'Traing_Progress/organized_20260316/round30/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913/weights/best_tradeoff.pth.tar')
+r28_r26_seed_ckpt = str(SHARED_ROOT / 'Experiments/Legacy/organized_20260316/round26/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r26sm035_20260316_190408/weights/best_tradeoff.pth.tar')
+r31_r30_b1_seed_ckpt = str(SHARED_ROOT / 'Experiments/Legacy/organized_20260316/round30/archive/runs/training_progress_GESR_v1_v5_ST0p8_SWP_r30b1dir_20260317_152913/weights/best_tradeoff.pth.tar')
 
 
 def _jsonable(v: Any):
@@ -163,7 +163,7 @@ def _choose_recommended_candidate(best: Dict[str, Any], final_run: Dict[str, Any
 
 
 def _resolve_seed_checkpoint() -> str:
-    progress_root = Path(train_mod.PROJECT_ROOT) / "Traing_Progress"
+    progress_root = Path(train_mod.PROJECT_ROOT) / "Experiments" / "Legacy"
     selected_roots = [
         progress_root / "organized_20260309" / "selected",
         progress_root / "organized_20260307" / "selected",
@@ -3534,7 +3534,8 @@ def main():
         )
         round18_manifest = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round18"
             / "selected"
@@ -3542,7 +3543,8 @@ def main():
         )
         round18_fallback = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round18"
             / "selected"
@@ -3699,7 +3701,8 @@ def main():
         )
         round18_manifest = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round18"
             / "selected"
@@ -3707,7 +3710,8 @@ def main():
         )
         round18_fallback = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round18"
             / "selected"
@@ -3849,7 +3853,8 @@ def main():
         )
         round18_manifest = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round18"
             / "selected"
@@ -3857,7 +3862,8 @@ def main():
         )
         round18_fallback = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round18"
             / "selected"
@@ -4000,7 +4006,8 @@ def main():
         )
         round18_manifest = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round18"
             / "selected"
@@ -4008,7 +4015,8 @@ def main():
         )
         round18_fallback = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round18"
             / "selected"
@@ -4151,7 +4159,8 @@ def main():
         )
         round22_hold_checkpoint = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260315"
             / "round22"
             / "archive"
@@ -4298,7 +4307,8 @@ def main():
         )
         r25_r18_seed_ckpt = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round18"
             / "selected"
@@ -5271,7 +5281,8 @@ def main():
         )
         round17_manifest = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round17"
             / "selected"
@@ -5279,7 +5290,8 @@ def main():
         )
         round17_fallback = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round17"
             / "selected"
@@ -5490,7 +5502,8 @@ def main():
         )
         round17_manifest = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round17"
             / "selected"
@@ -5498,7 +5511,8 @@ def main():
         )
         round17_fallback = (
             Path(train_mod.PROJECT_ROOT)
-            / "Traing_Progress"
+            / "Experiments"
+            / "Legacy"
             / "organized_20260313"
             / "round17"
             / "selected"

@@ -48,14 +48,16 @@ DEFAULT_OUTPUT_DIR = (
 CANDIDATE_CHECKPOINTS = {
     "r39_shape_mix_safe": (
         _REPO_ROOT
-        / "Traing_Progress"
+        / "Experiments"
+        / "Training_Runs"
         / "training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_safe_20260428_165958"
         / "weights"
         / "best_tradeoff.pth.tar"
     ),
     "r39_shape_mix_strong": (
         _REPO_ROOT
-        / "Traing_Progress"
+        / "Experiments"
+        / "Training_Runs"
         / "training_progress_GESR_v1_v5_ST0p8_SWP_r39_shape_mix_strong_20260428_180728"
         / "weights"
         / "best_tradeoff.pth.tar"

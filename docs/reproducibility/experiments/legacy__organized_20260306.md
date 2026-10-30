@@ -1,6 +1,6 @@
 # legacy/organized_20260306 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260306/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260306/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,12 +22,12 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Auto Tune 8px Report](<../../../Traing_Progress/organized_20260306/AUTO_TUNE_8PX_REPORT_20260306.md>)
-- [原始報告：自動調優持續報告 (2026-03-06)](<../../../Traing_Progress/organized_20260306/AUTO_TUNE_CONTINUE_REPORT_20260306.md>)
-- [原始報告：清理報告 (2026-03-06)](<../../../Traing_Progress/organized_20260306/CLEANUP_REPORT_20260306.md>)
-- [原始報告：Cleanup Report v2 (2026-03-06)](<../../../Traing_Progress/organized_20260306/CLEANUP_REPORT_20260306_v2.md>)
-- [原始報告：Cleanup Report (2026-03-07)](<../../../Traing_Progress/organized_20260306/CLEANUP_REPORT_20260307.md>)
-- [原始報告：訓練產物總索引（中文）](<../../../Traing_Progress/organized_20260306/README.md>)
+- [原始報告：Auto Tune 8px Report](<../../../Experiments/Legacy/organized_20260306/AUTO_TUNE_8PX_REPORT_20260306.md>)
+- [原始報告：自動調優持續報告 (2026-03-06)](<../../../Experiments/Legacy/organized_20260306/AUTO_TUNE_CONTINUE_REPORT_20260306.md>)
+- [原始報告：清理報告 (2026-03-06)](<../../../Experiments/Legacy/organized_20260306/CLEANUP_REPORT_20260306.md>)
+- [原始報告：Cleanup Report v2 (2026-03-06)](<../../../Experiments/Legacy/organized_20260306/CLEANUP_REPORT_20260306_v2.md>)
+- [原始報告：Cleanup Report (2026-03-07)](<../../../Experiments/Legacy/organized_20260306/CLEANUP_REPORT_20260307.md>)
+- [原始報告：訓練產物總索引（中文）](<../../../Experiments/Legacy/organized_20260306/README.md>)
 
 ## 重做與驗證範圍
 

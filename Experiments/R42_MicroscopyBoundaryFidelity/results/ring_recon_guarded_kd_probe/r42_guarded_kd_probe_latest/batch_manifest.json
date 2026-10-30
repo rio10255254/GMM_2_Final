@@ -1,6 +1,6 @@
 ﻿{
     "started_at":  "2026-05-05 17:26:32",
-    "weights_path":  "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe_20260505_172101/weights/latest.pth.tar",
+    "weights_path":  "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_guarded_kd_probe_20260505_172101/weights/latest.pth.tar",
     "infer_script":  "Model/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
     "recon_root":  "Experiments/R42_MicroscopyBoundaryFidelity/results/ring_recon_guarded_kd_probe/r42_guarded_kd_probe_latest",
     "datasets":  [

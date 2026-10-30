@@ -1,6 +1,6 @@
 # R111：R109 能不能取代論文用的 V42
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [候選 R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>) · [現任 V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>) · [GMF 差異拆解 R112](<../R112_V42R109GMFMechanismDecomposition/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [候選 R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>) · [現任 V42](<../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>) · [GMF 差異拆解 R112](<../R112_V42R109GMFMechanismDecomposition/FILE_GUIDE.md>)
 
 **一句話：** 2026-08-27 凍結 V42 第 120 輪與 R109 第 48 輪，保留論文的原圖選定母體與所有量測規則，把替換前需要的證據一格一格填滿：120 步位移、靜態中心九顆 CD、門檻穩健的 CD、20×／50× 邊緣、線條、共用 SEM 輪廓、切塊一致性、同一批影像的外部 GMF。用確定性 LSC 量的位移，兩者統計上相當；但外部 GMF 上 V42 穩定得多，所以 V42 維持論文模型，R109 留作泛化、暗曝光、線條與工程上更強的研究延伸。
 

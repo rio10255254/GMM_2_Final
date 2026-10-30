@@ -7,13 +7,13 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 MODEL_SPECS = {
     "round18_baseline": {
-        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_round18_round22/round18_baseline/gmf_results/raw'),
+        "root": str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316/external_compare_round18_round22/round18_baseline/gmf_results/raw'),
     },
     "round22_hold": {
-        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_round18_round22/round22_hold/gmf_results/raw'),
+        "root": str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316/external_compare_round18_round22/round22_hold/gmf_results/raw'),
     },
     "r25_sw010": {
-        "root": str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25/r25_sw010/gmf_results/raw'),
+        "root": str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25/r25_sw010/gmf_results/raw'),
     },
 }
 
@@ -32,7 +32,7 @@ PITCH_SPECS = {
     },
 }
 
-REPORT_DIR = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25/reports')
+REPORT_DIR = str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25/reports')
 SUMMARY_MD_PATH = os.path.join(REPORT_DIR, "EXTERNAL_COMPARE_R18_R22_R25_SUMMARY.md")
 SUMMARY_JSON_PATH = os.path.join(REPORT_DIR, "EXTERNAL_COMPARE_R18_R22_R25_SUMMARY.json")
 MAIN_PITCH = "pitch0p1um_y_60"

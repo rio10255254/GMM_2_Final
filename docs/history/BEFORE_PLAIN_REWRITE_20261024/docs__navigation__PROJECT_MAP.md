@@ -51,13 +51,13 @@
 | [_deployment_package](<../../_deployment_package/README.md>) | R26、COMBO、R39R40舊交付相容入口 |
 | [_portable_env_sim_20260318](<../../_portable_env_sim_20260318/README.md>) | 舊便攜環境少量原來源 |
 | [docs](<../README.md>) | 整體文件、導讀、保存及操作 |
-| `Thesis_MOSR_Evidence/LabSystem_MOSR/` | [Lab獨立研究工作區](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/README.md>)；不是另一個專案根層 |
+| `LabSystem_MOSR/` | [Lab獨立研究工作區](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/README.md>)；不是另一個專案根層 |
 
 ## 每輪資料夾怎麼讀
 
 先讀`README`確認問題與完成範圍，再看正式`reports`和完整結果；需要重做才進`config/scripts`。自包含實驗另有`model/training/inference/data/runs/weights`，一輪仍由同一資料夾負責，不拆成散落全專案的第二套來源。
 
-較早Round16至31的正式決策在`Traing_Progress/organized_.../roundXX/selected/reports`，R26等歷史例外依[正式來源規則](../operations/SOURCE_OF_TRUTH_POLICY.md)。`docs/evidence`是穩定引用副本，可能落後，不能覆蓋原報告。
+較早Round16至31的正式決策在`Experiments/Legacy/organized_.../roundXX/selected/reports`，R26等歷史例外依[正式來源規則](../operations/SOURCE_OF_TRUTH_POLICY.md)。`docs/evidence`是穩定引用副本，可能落後，不能覆蓋原報告。
 
 ## 新內容歸屬
 

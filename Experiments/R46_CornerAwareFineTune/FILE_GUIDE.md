@@ -1,6 +1,6 @@
 # R46：形狀與顯微大幅進步，環形定位卻崩潰
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [起點 R39R40_avg_a025](<../R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_CAPABILITY_EVAL.md>) · [前一輪 R45](<../R45_FamilyBoundaryAdapter/README.md>) · [Lab 同名 R46（不同實驗）](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [起點 R39R40_avg_a025](<../R39_ShapeGeneralization/results/a030_x_a043_sweep/reports/R39R40_AVG_a025_CAPABILITY_EVAL.md>) · [前一輪 R45](<../R45_FamilyBoundaryAdapter/README.md>) · [Lab 同名 R46（不同實驗）](<../../LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/>)
 
 **一句話：** 從核准替代 a025 出發，加重邊緣與高頻損失微調 15 輪。形狀與顯微影像的 PSNR 提升 2～3.5 dB，角點、直邊、邊界全部顯著變好；但環形影像的位移定位完全崩潰，外部 GMF 的 8px 退步將近 10 倍，是本專案歷次升級候選中最差的一次。失敗診斷找到了明確原因。
 

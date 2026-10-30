@@ -145,11 +145,11 @@ def derive_archive_maps(root,archive):
     for (physical,logical),count in votes.items():
         if count>=2 and Path(physical).is_dir():candidates.append({'physical':physical,'logical':logical,'supporting_published_files':count,'origin':'published_selection_projection'})
     # Canonical snapshots with an explicit snapshot directory have unambiguous roots.
-    for sub,logical in [('main_training_history','Traing_Progress')]:
+    for sub,logical in [('main_training_history','Experiments/Training_Runs')]:
         for snapshot in (archive/sub).glob('*/snapshot'):
             candidates.append({'physical':str(snapshot),'logical':logical,'supporting_published_files':0,'origin':'registered_snapshot_layout'})
     for snapshot in (archive/'legacy').glob('*/*/snapshot'):
-        candidates.append({'physical':str(snapshot),'logical':'Traing_Progress/'+snapshot.parent.parent.name,'supporting_published_files':0,'origin':'legacy_snapshot_layout'})
+        candidates.append({'physical':str(snapshot),'logical':'Experiments/Legacy/'+snapshot.parent.parent.name,'supporting_published_files':0,'origin':'legacy_snapshot_layout'})
     for name in (archive/'experiments').glob('*'):
         if not name.is_dir():continue
         for date in name.iterdir():
@@ -167,7 +167,7 @@ def derive_archive_maps(root,archive):
             for label in ['payload','snapshot']:
                 candidate=date/label
                 if candidate.is_dir():
-                    candidates.append({'physical':str(candidate),'logical':'Thesis_MOSR_Evidence/LabSystem_MOSR','supporting_published_files':0,'origin':'lab_multi_root_snapshot'});break
+                    candidates.append({'physical':str(candidate),'logical':'LabSystem_MOSR','supporting_published_files':0,'origin':'lab_multi_root_snapshot'});break
     # Include the bounded archive records themselves, including older versions.
     # They cannot pull in reproduction downloads, runtime libraries or live runs.
     for domain in sorted(ARCHIVE_DOMAINS-{'active_runs','compatibility_views'}):

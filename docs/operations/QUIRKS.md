@@ -7,13 +7,11 @@ This documents historical quirks and conventions that cannot be changed but must
 
 ---
 
-## 1. `Traing_Progress/` 拼字錯誤
+## 1. `Traing_Progress` 這個拼字（歷史）
 
-`Traing_Progress/` 少了一個 `i`（應為 `Training_Progress`）。
-**不能改名**——所有訓練腳本、checkpoint 路徑、config 都硬引用這個拼錯的名稱。
-改名會破壞所有現有 checkpoint 和訓練流程。
+原本根目錄的 `Traing_Progress` 少了一個 `i`（應為 `Training_Progress`）。因為訓練腳本、checkpoint 路徑和設定都寫死這個名字，所以一直沒改。
 
-記錄於 `Model/README.md` line 52。
+2026-10-28 重整時，它拆成兩處：`organized_*` 早期批次在 [Experiments/Legacy](../../Experiments/Legacy/README.md)，每次訓練一個的 `training_progress_*` 在 [Experiments/Training_Runs](../../Experiments/Training_Runs/README.md)。程式、設定與紀錄裡的路徑都同時改到新位置。舊報告和舊 log 裡仍會看到 `Traing_Progress`，那是當時的路徑；新舊對照見 [重整操作紀錄](TREE_RESTRUCTURE_20261028.md)。`LabSystem_MOSR/Traing_Progress` 是實驗室系統自己的資料夾，名稱照舊。
 
 ## 2. `Training_Data/` 被 gitignore 但有 2 個 Python 腳本被追蹤
 

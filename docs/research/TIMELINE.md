@@ -64,7 +64,7 @@ B 的均華 202 張和 D 的 930 張都是借用合作廠商均華的光學系�
 
 做法是自動調參：每輪產生幾組候選設定，用內部分數挑，再交給外部 GMF 看三個尺度。很快就發現內部分數、三個尺度、外部 GMF 的結論常常不一致；而且把模型訓練得更久，常常會把早期比較好的版本訓練壞。這兩個教訓決定了之後所有輪次的驗收方式。
 
-早期資料按日期批次存放在 [Traing_Progress/](../../Traing_Progress/)（拼字是歷史，刻意不改），一個日期不等於一輪。逐輪原件見[早期輪次](../reproducibility/lineage/EARLY_ROUNDS.md)。
+早期資料按日期批次存放在 [Experiments/Legacy/](../../Experiments/Legacy/)（原本是根目錄拼錯字的 `Traing_Progress`，2026-10-28 移到這裡），一個日期不等於一輪。逐輪原件見[早期輪次](../reproducibility/lineage/EARLY_ROUNDS.md)。
 
 | 輪次 | 做了什麼 → 結果 | 去哪看 |
 |---|---|---|
@@ -121,7 +121,7 @@ R33 發現「限制極端像素的拉扯」能大幅改善定位，但邊緣變�
 
 **這階段在問：** 論文要用實驗室自己的顯微系統，成像條件完全不同，模型要怎麼轉過去？同時，公司端的實拍樣品（條件 B）也開始大量進來。
 
-這段研究放在 [Thesis_MOSR_Evidence/LabSystem_MOSR/](../../Thesis_MOSR_Evidence/LabSystem_MOSR/)，是從 COMBO 分出去的一支：沿用 COMBO 的網路權重，但改用實驗室自己量的 25 位置 PSF 和自己生成的資料。它的編號 R46～R62 剛好填上主專案 R47～R62 的空號，但**是不同的實驗**。
+這段研究放在 [LabSystem_MOSR/](../../LabSystem_MOSR/)，是從 COMBO 分出去的一支：沿用 COMBO 的網路權重，但改用實驗室自己量的 25 位置 PSF 和自己生成的資料。它的編號 R46～R62 剛好填上主專案 R47～R62 的空號，但**是不同的實驗**。
 
 故事大致是：第一次拿實拍棋盤去測，重建後步長只小幅改善，角點反而被弄壞 → R46～R56 連續修角點、模糊來源、答案風格，一直修不好實拍角點 → R57～R60 改用 SEM 尺寸當答案 → R61 擴大通用邊界與位移保護 → R62 針對目標樣品 → V41、V42（V42 是 R152 之前的論文模型）。這裡很多 SEM 答案來自同一批樣品，所以「SEM 分數變好」**不是**獨立的準確度證據。完整脈絡見 [Lab 全線](../reproducibility/lineage/LAB_SYSTEM.md)。
 
@@ -129,29 +129,29 @@ R33 發現「限制極端像素的拉扯」能大幅改善定位，但邊緣變�
 
 | 輪次 | 做了什麼 → 結果 | 去哪看 |
 |---|---|---|
-| Lab R39／R40 | 在 Lab 條件下做多形狀與顯微特徵 → **研究候選**：當後續角點實驗的固定對照 | [Lab R39](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R39_ShapeGeneralization/FILE_GUIDE.md)、[Lab R40](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R40_MicroscopyFeatureCoverage/FILE_GUIDE.md) |
-| Lab R46 | 用角點資料保守修正 → **未採用**：25 輪有效但沒修好實體圓角 | [Lab R46](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/FILE_GUIDE.md) |
-| Lab R47 | 加入更真實的邊界與背景 → **未採用**：200 輪仍沒修好，訓練更久不等於有效 | [Lab R47](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/FILE_GUIDE.md) |
-| Lab R48 | 用實體失敗型態與幾何標記 → **未採用**：內部改善，實體反而更差 | [Lab R48](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer/FILE_GUIDE.md) |
-| Lab R49 | 加入可信區域內的實體 CAD 答案 → **未採用**：角點退步；CAD 答案修正量太大，又只佔一成資料 | [Lab R49](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/FILE_GUIDE.md) |
-| Lab R50 | 診斷 Lab 光學模糊是否過強 → **分析**：完整 BADS 比實拍更軟 | [Lab R50](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/FILE_GUIDE.md) |
-| Lab R51 | 短測高斯、弱 BADS、混合光學 → **未採用**：典型角點改善，但大偏移比例上升 | [Lab R51](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/FILE_GUIDE.md) |
-| Lab R52 | 混合光學加角點穩定限制 → **未採用**：100 輪後大偏移仍多 | [Lab R52](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/FILE_GUIDE.md) |
-| Lab R53 | 重新平衡六類資料，從零 100 輪 → **未採用**：實體角點仍失敗；記憶體不足等過程問題也是脈絡 | [Lab R53](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/FILE_GUIDE.md) |
-| Lab R54 | 拆解角點損害來源 → **分析**：可信區域內學得會，轉到實體全圖就失敗 | [Lab R54](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/FILE_GUIDE.md) |
-| Lab R55 | 把答案改回原圖的灰階風格 → **研究候選**：best 通過 Lab 角點門檻，latest 退步；外部 GMF 沒有贏原圖。R57 從它起步 | [Lab R55](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R55_SourceStyleRealisticTraining/FILE_GUIDE.md) |
-| Lab R56 | 只修弱答案的核心區域 → **未採用**：角點大偏移變多；外部 GMF 反而排第一，但只比原圖好 2.2% | [Lab R56](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/FILE_GUIDE.md) |
-| Lab R57 | 加入同樣本 SEM 半徑約束尺寸 → **未採用**：100MG 尺寸門檻沒過；SEM 同時當答案和比較，也不能算獨立驗證 | [Lab R57](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/FILE_GUIDE.md) |
-| Lab R58 | 用只修一半的 SEM 答案做閉環 → **分析**：刻意的部分修正，不期待完全到 SEM 外框 | [Lab R58](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/FILE_GUIDE.md) |
-| Lab R59 | 在同一張影像上估尺寸再移動邊界 → **分析**：同樣本後修正，數字變好不代表網路學會 | [Lab R59](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer/FILE_GUIDE.md) |
-| Lab R60 | 改用 SEM 答案與實拍裁切，修正亮暗方向與驗證集洩漏 → **研究候選**：邊界聚焦版在同一張 100MG 上通過 CD 門檻，但合成幻影上亮物體變差，不是通用邊界；稽核指出主因是訓練資料沒有正確表示真實邊界。成為 R61 的對照基準 | [Lab R60](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/FILE_GUIDE.md) |
-| **Lab R61** | 擴大通用邊界、位移與 Step 保護，經 v1～v16 → **研究候選**：v16 成為後續交付與論文線的起點（ONNX 交付用的「R61」就是它） | [Lab R61](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md)、[主 R61 STEP 驗證](../../Experiments/R61_STEP_Generalization_20260623/FILE_GUIDE.md) |
-| Lab R62 | 針對目標樣品增補，加保守的原圖參考輸出 → **研究候選**：相位位移恢復不等於每個局部圓心都更準 | [Lab R62](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/FILE_GUIDE.md) |
-| V41 | 從 R61v16 起步，用 11,254 組目標樣品與老師配對訓練 → **研究候選** | [V41](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V41_Standalone/FILE_GUIDE.md) |
-| **V42** | 從 V41 起步，柔化答案邊帶並加品質閘，後來完整 120 輪 → **採用**（R152 之前的論文模型） | [V42](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md)、[V42 完整歷史](../reproducibility/lab_comparisons/V42_HISTORY.md) |
-| Base U-Net、EDSR／NAFNet | 在 Lab 條件下訓練對照方法（約 7/18～7/19） → **分析**：與後來 R153 的十方法比較是不同的比較 | [Base U-Net](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/FILE_GUIDE.md)、[EDSR／NAFNet](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md) |
-| 次像素平移測試 | 用數學平移的輸入測位移保持（約 7/20） → **分析**：插值位移不同於平台重拍，MOSR 沒有全面勝過 EDSR | [平移測試](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/FILE_GUIDE.md) |
-| 模型選擇點診斷 | 比較第 10 輪與第 120 輪、推論設定（約 7/24） → **分析** | [最佳點](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/FILE_GUIDE.md)、[設定](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_CheckpointConfig_Diagnostic_20260724/FILE_GUIDE.md) |
+| Lab R39／R40 | 在 Lab 條件下做多形狀與顯微特徵 → **研究候選**：當後續角點實驗的固定對照 | [Lab R39](../../LabSystem_MOSR/Experiments/R39_ShapeGeneralization/FILE_GUIDE.md)、[Lab R40](../../LabSystem_MOSR/Experiments/R40_MicroscopyFeatureCoverage/FILE_GUIDE.md) |
+| Lab R46 | 用角點資料保守修正 → **未採用**：25 輪有效但沒修好實體圓角 | [Lab R46](../../LabSystem_MOSR/Experiments/R46_CornerAwareFineTune/FILE_GUIDE.md) |
+| Lab R47 | 加入更真實的邊界與背景 → **未採用**：200 輪仍沒修好，訓練更久不等於有效 | [Lab R47](../../LabSystem_MOSR/Experiments/R47_RealisticBoundaryGeneralization/FILE_GUIDE.md) |
+| Lab R48 | 用實體失敗型態與幾何標記 → **未採用**：內部改善，實體反而更差 | [Lab R48](../../LabSystem_MOSR/Experiments/R48_RealCornerTransfer/FILE_GUIDE.md) |
+| Lab R49 | 加入可信區域內的實體 CAD 答案 → **未採用**：角點退步；CAD 答案修正量太大，又只佔一成資料 | [Lab R49](../../LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/FILE_GUIDE.md) |
+| Lab R50 | 診斷 Lab 光學模糊是否過強 → **分析**：完整 BADS 比實拍更軟 | [Lab R50](../../LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/FILE_GUIDE.md) |
+| Lab R51 | 短測高斯、弱 BADS、混合光學 → **未採用**：典型角點改善，但大偏移比例上升 | [Lab R51](../../LabSystem_MOSR/Experiments/R51_BlurSourceProbe/FILE_GUIDE.md) |
+| Lab R52 | 混合光學加角點穩定限制 → **未採用**：100 輪後大偏移仍多 | [Lab R52](../../LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/FILE_GUIDE.md) |
+| Lab R53 | 重新平衡六類資料，從零 100 輪 → **未採用**：實體角點仍失敗；記憶體不足等過程問題也是脈絡 | [Lab R53](../../LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/FILE_GUIDE.md) |
+| Lab R54 | 拆解角點損害來源 → **分析**：可信區域內學得會，轉到實體全圖就失敗 | [Lab R54](../../LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/FILE_GUIDE.md) |
+| Lab R55 | 把答案改回原圖的灰階風格 → **研究候選**：best 通過 Lab 角點門檻，latest 退步；外部 GMF 沒有贏原圖。R57 從它起步 | [Lab R55](../../LabSystem_MOSR/Experiments/R55_SourceStyleRealisticTraining/FILE_GUIDE.md) |
+| Lab R56 | 只修弱答案的核心區域 → **未採用**：角點大偏移變多；外部 GMF 反而排第一，但只比原圖好 2.2% | [Lab R56](../../LabSystem_MOSR/Experiments/R56_LabelCoreRepairTraining/FILE_GUIDE.md) |
+| Lab R57 | 加入同樣本 SEM 半徑約束尺寸 → **未採用**：100MG 尺寸門檻沒過；SEM 同時當答案和比較，也不能算獨立驗證 | [Lab R57](../../LabSystem_MOSR/Experiments/R57_GeometryConstrainedMOSR/FILE_GUIDE.md) |
+| Lab R58 | 用只修一半的 SEM 答案做閉環 → **分析**：刻意的部分修正，不期待完全到 SEM 外框 | [Lab R58](../../LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/FILE_GUIDE.md) |
+| Lab R59 | 在同一張影像上估尺寸再移動邊界 → **分析**：同樣本後修正，數字變好不代表網路學會 | [Lab R59](../../LabSystem_MOSR/Experiments/R59_CDClosedLoopBoundaryLayer/FILE_GUIDE.md) |
+| Lab R60 | 改用 SEM 答案與實拍裁切，修正亮暗方向與驗證集洩漏 → **研究候選**：邊界聚焦版在同一張 100MG 上通過 CD 門檻，但合成幻影上亮物體變差，不是通用邊界；稽核指出主因是訓練資料沒有正確表示真實邊界。成為 R61 的對照基準 | [Lab R60](../../LabSystem_MOSR/Experiments/R60_SEMTruthBoundaryTraining/FILE_GUIDE.md) |
+| **Lab R61** | 擴大通用邊界、位移與 Step 保護，經 v1～v16 → **研究候選**：v16 成為後續交付與論文線的起點（ONNX 交付用的「R61」就是它） | [Lab R61](../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md)、[主 R61 STEP 驗證](../../Experiments/R61_STEP_Generalization_20260623/FILE_GUIDE.md) |
+| Lab R62 | 針對目標樣品增補，加保守的原圖參考輸出 → **研究候選**：相位位移恢復不等於每個局部圓心都更準 | [Lab R62](../../LabSystem_MOSR/Experiments/R62_TargetSampleBoost/FILE_GUIDE.md) |
+| V41 | 從 R61v16 起步，用 11,254 組目標樣品與老師配對訓練 → **研究候選** | [V41](../../LabSystem_MOSR/Experiments/V41_Standalone/FILE_GUIDE.md) |
+| **V42** | 從 V41 起步，柔化答案邊帶並加品質閘，後來完整 120 輪 → **採用**（R152 之前的論文模型） | [V42](../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md)、[V42 完整歷史](../reproducibility/lab_comparisons/V42_HISTORY.md) |
+| Base U-Net、EDSR／NAFNet | 在 Lab 條件下訓練對照方法（約 7/18～7/19） → **分析**：與後來 R153 的十方法比較是不同的比較 | [Base U-Net](../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/FILE_GUIDE.md)、[EDSR／NAFNet](../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md) |
+| 次像素平移測試 | 用數學平移的輸入測位移保持（約 7/20） → **分析**：插值位移不同於平台重拍，MOSR 沒有全面勝過 EDSR | [平移測試](../../LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/FILE_GUIDE.md) |
+| 模型選擇點診斷 | 比較第 10 輪與第 120 輪、推論設定（約 7/24） → **分析** | [最佳點](../../LabSystem_MOSR/Experiments/MOSR_BestCheckpoint_Diagnostic_20260724/FILE_GUIDE.md)、[設定](../../LabSystem_MOSR/Experiments/MOSR_CheckpointConfig_Diagnostic_20260724/FILE_GUIDE.md) |
 
 **同一時期的實拍樣品分析（條件 B）：** 這些不是 R 編號的實驗，是拿當時的模型去量真實樣品。
 

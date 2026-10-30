@@ -68,7 +68,7 @@ def main():
     for case, mode, folder, prefix, stamp in CASES:
         scope = early_scope if case == "R13_131800" else late_scope
         arithmetic_source = early_source if case == "R13_131800" else late_source
-        relative = f"Traing_Progress/{folder}/selected/reports/{prefix}_CHECKPOINT_AUDIT_SUMMARY_{stamp}.json"
+        relative = f"Experiments/Legacy/{folder}/selected/reports/{prefix}_CHECKPOINT_AUDIT_SUMMARY_{stamp}.json"
         data = json.loads((root / relative).read_text(encoding="utf-8-sig"))
         families = []
         numbers = 0

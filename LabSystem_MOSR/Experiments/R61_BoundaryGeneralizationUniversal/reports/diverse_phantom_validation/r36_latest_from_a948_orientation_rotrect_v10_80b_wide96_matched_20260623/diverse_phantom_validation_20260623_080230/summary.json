@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-06-23T08:02:47",
+  "weights": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_polarity_boundary_adapter_orientation_rotated_rect_guard_region_kd_boundary_focus_r36_from_a948_orientation_rotrect_v10_80b_20260623_075823/weights/latest.pth.tar",
+  "run_dir": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230",
+  "case_count": 96,
+  "case_manifest": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/case_manifest.json",
+  "metrics_csv": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/boundary_metrics.csv",
+  "input_dir": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/input",
+  "truth_dir": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/truth",
+  "recon_dir": "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/recon/reconstruct_progress_latest_in_input_20260623_075823/diverse_phantom_recon",
+  "skip_reconstruct": false,
+  "input_mean_chamfer_px": 0.7355705767695326,
+  "recon_mean_chamfer_px": 0.48373880068377023,
+  "size": 512,
+  "seeds": [
+    7001,
+    7002,
+    7003,
+    7004
+  ],
+  "biases": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5
+  ],
+  "blur_sigmas": [
+    1.0,
+    1.5
+  ],
+  "noise_sigmas": [
+    1.0,
+    3.0
+  ]
+}

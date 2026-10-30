@@ -17,7 +17,8 @@ from r41_data import DEFAULT_OUTPUT_ROOT, ensure_data_package  # noqa: E402
 
 COMBO_CHECKPOINT = (
     REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Training_Runs"
     / "training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525"
     / "weights"
     / "best_tradeoff.pth.tar"
@@ -34,7 +35,8 @@ R39_A030_CHECKPOINT = (
 )
 R40_ENDPOINT_CHECKPOINT = (
     REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Training_Runs"
     / "training_progress_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260504_145920"
     / "weights"
     / "best_tradeoff.pth.tar"

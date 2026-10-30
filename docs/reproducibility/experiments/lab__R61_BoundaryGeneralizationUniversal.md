@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -26,21 +26,21 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：R61 boundary generalization progress - 2026-06-23](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/R61_PROGRESS_20260623.md>)
-- [原始報告：Next Round Target Prompt - v15 Step Guard](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v15_step_guard/NEXT_ROUND_TARGET_PROMPT.md>)
-- [原始報告：Previous Round Archive Index - v14 Motion Texture and Step Guard](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v15_step_guard/PREVIOUS_ROUND_ARCHIVE_INDEX.md>)
-- [原始報告：R61 Next Round Handoff - v16](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/HANDOFF_README.md>)
-- [原始報告：One-Shot Target Prompt For The Next Long Run](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/ONE_SHOT_NEXT_ROUND_TARGET_PROMPT.md>)
-- [原始報告：Previous Round Organized File Map](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/PREVIOUS_ROUND_ORGANIZED_FILES.md>)
-- [原始報告：Ready Checklist For The Next Round](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/READY_CHECKLIST.md>)
-- [原始報告：v16 Implementation Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/V16_IMPLEMENTATION_STATUS.md>)
-- [原始報告：R61 Next Round Handoff - post v16 full training](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/HANDOFF_README.md>)
-- [原始報告：One-Shot Target Prompt For The Next Run](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/ONE_SHOT_NEXT_ROUND_TARGET_PROMPT.md>)
-- [原始報告：One-Shot v17 Target Prompt After v16 Validation](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/ONE_SHOT_V17_TARGET_PROMPT_AFTER_V16.md>)
-- [原始報告：Previous Round Organized File Map](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/PREVIOUS_ROUND_ORGANIZED_FILES.md>)
-- [原始報告：Ready Checklist](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/READY_CHECKLIST.md>)
-- [原始報告：v16 Full Training Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/V16_FULL_TRAINING_STATUS.md>)
-- [原始報告：v16 Validation Results](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/V16_VALIDATION_RESULTS.md>)
+- [原始報告：R61 boundary generalization progress - 2026-06-23](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/R61_PROGRESS_20260623.md>)
+- [原始報告：Next Round Target Prompt - v15 Step Guard](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v15_step_guard/NEXT_ROUND_TARGET_PROMPT.md>)
+- [原始報告：Previous Round Archive Index - v14 Motion Texture and Step Guard](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v15_step_guard/PREVIOUS_ROUND_ARCHIVE_INDEX.md>)
+- [原始報告：R61 Next Round Handoff - v16](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/HANDOFF_README.md>)
+- [原始報告：One-Shot Target Prompt For The Next Long Run](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/ONE_SHOT_NEXT_ROUND_TARGET_PROMPT.md>)
+- [原始報告：Previous Round Organized File Map](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/PREVIOUS_ROUND_ORGANIZED_FILES.md>)
+- [原始報告：Ready Checklist For The Next Round](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/READY_CHECKLIST.md>)
+- [原始報告：v16 Implementation Status](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v16_handoff/V16_IMPLEMENTATION_STATUS.md>)
+- [原始報告：R61 Next Round Handoff - post v16 full training](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/HANDOFF_README.md>)
+- [原始報告：One-Shot Target Prompt For The Next Run](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/ONE_SHOT_NEXT_ROUND_TARGET_PROMPT.md>)
+- [原始報告：One-Shot v17 Target Prompt After v16 Validation](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/ONE_SHOT_V17_TARGET_PROMPT_AFTER_V16.md>)
+- [原始報告：Previous Round Organized File Map](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/PREVIOUS_ROUND_ORGANIZED_FILES.md>)
+- [原始報告：Ready Checklist](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/READY_CHECKLIST.md>)
+- [原始報告：v16 Full Training Status](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/V16_FULL_TRAINING_STATUS.md>)
+- [原始報告：v16 Validation Results](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/next_round_20260623_v17_post_v16_training_handoff/V16_VALIDATION_RESULTS.md>)
 
 ## 重做與驗證範圍
 

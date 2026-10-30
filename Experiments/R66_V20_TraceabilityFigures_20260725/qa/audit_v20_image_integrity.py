@@ -17,8 +17,8 @@ PATHS = {
     "ablation_full": ROOT / r"Experiments\R63_CausalBoundaryMotionAblation\results\evaluation\reconstructions\full_control\seed1261200\static_50x_sem\Image__2026-06-18__17-10-31.bmp",
     "ablation_wrong_no_geometry": ROOT / r"Experiments\R63_CausalBoundaryMotionAblation\results\evaluation\reconstructions\no_geometry_anchor\seed1261200\static_50x_sem\Image__2026-06-18__17-10-31.bmp",
     "ablation_correct_no_raw_anchor": ROOT / r"Experiments\R63_CausalBoundaryMotionAblation\results\evaluation\reconstructions\no_raw_position_anchor\seed1261200\static_50x_sem\Image__2026-06-18__17-10-31.bmp",
-    "nafnet": ROOT / r"Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\results\nafnet\real_inference\sequences\50x_x_0p5um\frame_0000.bmp",
-    "edsr": ROOT / r"Thesis_MOSR_Evidence\LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\results\edsr\real_inference\sequences\50x_x_0p5um\frame_0000.bmp",
+    "nafnet": ROOT / r"LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\results\nafnet\real_inference\sequences\50x_x_0p5um\frame_0000.bmp",
+    "edsr": ROOT / r"LabSystem_MOSR\Experiments\Modern_Restoration_Benchmarks_20260719\results\edsr\real_inference\sequences\50x_x_0p5um\frame_0000.bmp",
     "mosr": ROOT / r"Thesis_MOSR_Evidence\Final_Data_Figures\02_V42_E120_SOURCE_MATERIAL\reconstructions\50x_0p5um\frame_0000.bmp",
 }
 

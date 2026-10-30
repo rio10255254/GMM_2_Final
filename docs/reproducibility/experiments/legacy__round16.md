@@ -1,6 +1,6 @@
 # legacy/round16 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260313/round16/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260313/round16/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,12 +22,12 @@ EDGEFIT的實際候選配置、三尺度初排與固定模型審查、演算法�
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND16_EDGEFIT Checkpoint Audit Summary](<../../../Traing_Progress/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_SUMMARY_20260312_090623.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_algfit_driftfocus_20260312_090623.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_algfit_lightmono_20260312_090623.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_algfit_pure_20260312_090623.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_edge_highcenter_20260312_090623.md>)
-- [原始報告：ROUND16_EDGEFIT Multiscale Summary](<../../../Traing_Progress/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_MULTISCALE_SUMMARY_20260312_090623.md>)
+- [原始報告：ROUND16_EDGEFIT Checkpoint Audit Summary](<../../../Experiments/Legacy/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_SUMMARY_20260312_090623.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_algfit_driftfocus_20260312_090623.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_algfit_lightmono_20260312_090623.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_algfit_pure_20260312_090623.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_CHECKPOINT_AUDIT_r16_edge_highcenter_20260312_090623.md>)
+- [原始報告：ROUND16_EDGEFIT Multiscale Summary](<../../../Experiments/Legacy/organized_20260313/round16/selected/reports/ROUND16_EDGEFIT_MULTISCALE_SUMMARY_20260312_090623.md>)
 
 ## 重做與驗證範圍
 

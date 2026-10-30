@@ -1,6 +1,6 @@
 # legacy/round29 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260316/round29/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260316/round29/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,16 +22,16 @@ R30之前的歷史候選
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND29_STEP_MAG_UPPER AUDIT_0P8 Summary](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_SUMMARY_20260317_124532.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_r29_sm038_20260317_124532.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_r29_sm040_20260317_124532.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_r29_sm042_20260317_124532.md>)
-- [原始報告：ROUND29_STEP_MAG_UPPER AUDIT_8P0 Summary](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_SUMMARY_20260317_124630.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_r29_sm038_20260317_124630.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_r29_sm040_20260317_124630.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_r29_sm042_20260317_124630.md>)
-- [原始報告：ROUND29_STEP_MAG_UPPER Decision Memo](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_DECISION_20260317_124715.md>)
-- [原始報告：ROUND29_STEP_MAG_UPPER Summary](<../../../Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_SUMMARY_20260317_115029.md>)
+- [原始報告：ROUND29_STEP_MAG_UPPER AUDIT_0P8 Summary](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_SUMMARY_20260317_124532.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_r29_sm038_20260317_124532.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_r29_sm040_20260317_124532.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_0P8_r29_sm042_20260317_124532.md>)
+- [原始報告：ROUND29_STEP_MAG_UPPER AUDIT_8P0 Summary](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_SUMMARY_20260317_124630.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_r29_sm038_20260317_124630.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_r29_sm040_20260317_124630.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_AUDIT_8P0_r29_sm042_20260317_124630.md>)
+- [原始報告：ROUND29_STEP_MAG_UPPER Decision Memo](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_DECISION_20260317_124715.md>)
+- [原始報告：ROUND29_STEP_MAG_UPPER Summary](<../../../Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_SUMMARY_20260317_115029.md>)
 
 ## 重做與驗證範圍
 

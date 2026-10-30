@@ -188,3 +188,42 @@ def test_residual_ignores_a_reading_that_never_existed_before_the_move():
              'Docs/a.md': 'see Reconstruct_Progress/README.md\n'}
     found = v.residual(files, new, rules, old_uni=old)
     assert len(found) == 1 and found[0].startswith('Docs/a.md')
+
+
+def test_equivalence_accepts_a_moved_folder_written_as_one_segment():
+    # 'Thesis_MOSR_Evidence/LabSystem_MOSR' moved to the root: the new string has no slash left
+    rules = RuleSet([Rule('Thesis_MOSR_Evidence/LabSystem_MOSR', 'LabSystem_MOSR')])
+    old = Universe.from_paths(['Thesis_MOSR_Evidence/LabSystem_MOSR/run.py', 'Tools/a.py'])
+    new = Universe.from_paths(['LabSystem_MOSR/run.py', 'Tools/a.py'])
+    good = Edit('Tools/a.py', 'Tools/a.py', 1, "'Thesis_MOSR_Evidence/LabSystem_MOSR'", "'LabSystem_MOSR'", 'py:string', '', '')
+    bad = Edit('Tools/a.py', 'Tools/a.py', 1, "'Thesis_MOSR_Evidence/LabSystem_MOSR'", "'LabSystem'", 'py:string', '', '')
+    assert v.equivalence([good], old, new, rules, {}) == []
+    assert len(v.equivalence([bad], old, new, rules, {})) == 1
+
+
+def test_python_equivalence_takes_a_kept_climb_to_where_it_now_reaches():
+    # the code is kept as written; after the move the same climb reaches the project root
+    src = "from pathlib import Path\nT = Path(__file__).resolve().parents[1]\n"
+    rules = RuleSet([Rule('Thesis_MOSR_Evidence/LabSystem_MOSR', 'LabSystem_MOSR')])
+    old = Universe.from_paths(['Thesis_MOSR_Evidence/LabSystem_MOSR/run.py', 'Thesis_MOSR_Evidence/a.png'])
+    new = Universe.from_paths(['LabSystem_MOSR/run.py', 'Thesis_MOSR_Evidence/a.png'])
+    ctx_old, ctx_new = Context(old, rules, {}, 'moves'), Context(new, None, {}, 'moves')
+    args = (src, src, 'Thesis_MOSR_Evidence/LabSystem_MOSR/run.py', 'LabSystem_MOSR/run.py', ctx_old, ctx_new, rules)
+    assert v.python_equivalence(*args, {'Thesis_MOSR_Evidence': ''}) == []
+    assert v.python_equivalence(*args) != []
+
+
+def test_python_equivalence_does_not_count_a_new_base_folder_as_a_destination():
+    # one root that held both kinds of folder becomes two roots; the new one is only joined onto
+    old_src = ("from pathlib import Path\nP = Path(__file__).resolve().parents[1]\nT = P / 'Traing_Progress'\n"
+               "S = T / 'organized_1' / 'a.json'\n")
+    new_src = ("from pathlib import Path\nP = Path(__file__).resolve().parents[1]\nT = P / 'Experiments' / 'Training_Runs'\n"
+               "L = P / 'Experiments' / 'Legacy'\nS = L / 'organized_1' / 'a.json'\n")
+    wrong = new_src.replace("S = L /", "S = T /")
+    rules = RuleSet([Rule('Traing_Progress', 'Experiments/Legacy')])
+    old = Universe.from_paths(['Traing_Progress/organized_1/a.json', 'Model/a.py'])
+    new = Universe.from_paths(['Experiments/Legacy/organized_1/a.json', 'Experiments/Training_Runs/README.md', 'Model/a.py'])
+    ctx_old, ctx_new = Context(old, rules, {}, 'moves'), Context(new, None, {}, 'moves')
+    dec = {'Traing_Progress': 'Experiments/Training_Runs'}
+    assert v.python_equivalence(old_src, new_src, 'Model/a.py', 'Model/a.py', ctx_old, ctx_new, rules, dec) == []
+    assert v.python_equivalence(old_src, wrong, 'Model/a.py', 'Model/a.py', ctx_old, ctx_new, rules, dec) != []

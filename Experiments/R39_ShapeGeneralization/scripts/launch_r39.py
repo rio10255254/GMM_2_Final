@@ -17,7 +17,8 @@ from r39_shape_data import DEFAULT_OUTPUT_ROOT, PROFILES, build_plan, materializ
 
 COMBO_CHECKPOINT = (
     _REPO_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Training_Runs"
     / "training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525"
     / "weights"
     / "best_tradeoff.pth.tar"

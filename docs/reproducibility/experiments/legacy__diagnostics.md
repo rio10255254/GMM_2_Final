@@ -1,6 +1,6 @@
 # legacy/diagnostics 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260314/diagnostics/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260314/diagnostics/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,13 +22,13 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：Diagnostic Matrix Summary](<../../../Traing_Progress/organized_20260314/diagnostics/DIAGNOSTIC_MATRIX_SUMMARY_20260314_232403.md>)
-- [原始報告：diagnostics — Legacy Side Surface Manifest](<../../../Traing_Progress/organized_20260314/diagnostics/MANIFEST.md>)
-- [原始報告：Diagnostics](<../../../Traing_Progress/organized_20260314/diagnostics/README.md>)
-- [原始報告：Round21 Branch Decision](<../../../Traing_Progress/organized_20260314/diagnostics/ROUND21_BRANCH_DECISION.md>)
-- [原始報告：Diagnostic Matrix Summary](<../../../Traing_Progress/organized_20260314/diagnostics/archive/DIAGNOSTIC_MATRIX_SUMMARY_20260314_232215.md>)
-- [原始報告：Diagnostic Matrix Summary](<../../../Traing_Progress/organized_20260314/diagnostics/archive/smoke/DIAGNOSTIC_MATRIX_SUMMARY_20260314_222500.md>)
-- [原始報告：Diagnostic Matrix Summary](<../../../Traing_Progress/organized_20260314/diagnostics/archive/smoke_batch/DIAGNOSTIC_MATRIX_SUMMARY_20260314_222611.md>)
+- [原始報告：Diagnostic Matrix Summary](<../../../Experiments/Legacy/organized_20260314/diagnostics/DIAGNOSTIC_MATRIX_SUMMARY_20260314_232403.md>)
+- [原始報告：diagnostics — Legacy Side Surface Manifest](<../../../Experiments/Legacy/organized_20260314/diagnostics/MANIFEST.md>)
+- [原始報告：Diagnostics](<../../../Experiments/Legacy/organized_20260314/diagnostics/README.md>)
+- [原始報告：Round21 Branch Decision](<../../../Experiments/Legacy/organized_20260314/diagnostics/ROUND21_BRANCH_DECISION.md>)
+- [原始報告：Diagnostic Matrix Summary](<../../../Experiments/Legacy/organized_20260314/diagnostics/archive/DIAGNOSTIC_MATRIX_SUMMARY_20260314_232215.md>)
+- [原始報告：Diagnostic Matrix Summary](<../../../Experiments/Legacy/organized_20260314/diagnostics/archive/smoke/DIAGNOSTIC_MATRIX_SUMMARY_20260314_222500.md>)
+- [原始報告：Diagnostic Matrix Summary](<../../../Experiments/Legacy/organized_20260314/diagnostics/archive/smoke_batch/DIAGNOSTIC_MATRIX_SUMMARY_20260314_222611.md>)
 
 ## 重做與驗證範圍
 

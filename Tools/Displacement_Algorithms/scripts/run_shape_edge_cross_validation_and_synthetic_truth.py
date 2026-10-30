@@ -25,7 +25,7 @@ SOURCE_ROOT = Path(
     str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/External_GMF_Packages/best_displacement_models_20260706/trusted_full_sequences')
 )
 OUTPUT_ROOT = Path(
-    str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports/measurement_method_research_20260706/cross_validation_and_synthetic_truth_20260707')
+    str(PROJECT_ROOT / 'LabSystem_MOSR/Experiments/R62_TargetSampleBoost/reports/measurement_method_research_20260706/cross_validation_and_synthetic_truth_20260707')
 )
 
 REAL_CROP = (1010, 35, 900, 650)

@@ -136,7 +136,7 @@ Expected tracked content:
 預期不追蹤的內容：  
 Expected untracked content:
 
-- `Traing_Progress/`
+- `Experiments/Legacy/`
 - `Training_Data/`
 - `Deliverables/Company_Packages/`
 - 各類 backup / archive

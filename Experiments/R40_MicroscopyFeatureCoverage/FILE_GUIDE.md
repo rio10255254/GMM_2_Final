@@ -1,6 +1,6 @@
 # R40：補上顯微特徵，證明問題出在資料而不是模型
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R39 與 a025](<../R39_ShapeGeneralization/FILE_GUIDE.md>) · [下一輪 R41](<../R41_RingDistillation/README.md>) · [Lab 同名 R40（不同實驗）](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R40_MicroscopyFeatureCoverage/>) · [正式身分登記](<../../ESTIMATOR_POLICY.json>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R39 與 a025](<../R39_ShapeGeneralization/FILE_GUIDE.md>) · [下一輪 R41](<../R41_RingDistillation/README.md>) · [Lab 同名 R40（不同實驗）](<../../LabSystem_MOSR/Experiments/R40_MicroscopyFeatureCoverage/>) · [正式身分登記](<../../ESTIMATOR_POLICY.json>)
 
 **一句話：** R39 發現模型會把格線抹平、把紋理當雜訊，原因是訓練資料裡根本沒有這些內容。R40 加入五類合成顯微特徵重新微調，顯微重建 PSNR 從 COMBO 的 22.7 拉到 29～31，證明問題出在資料覆蓋，不是模型能力上限。但每個訓練端點都破壞了環形定位，權重平均找到的最佳守門點 a045，外部 8px 還是退步 22.8%，所以 R40 本身不升級。它的 a043 後來成了核准替代 R39R40_a025 的另一端原料。
 

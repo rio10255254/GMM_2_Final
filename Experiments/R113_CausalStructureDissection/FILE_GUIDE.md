@@ -1,6 +1,6 @@
 # R113：拆開 V42、R61、R109 為什麼表現不同
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R112](<../R112_V42R109GMFMechanismDecomposition/FILE_GUIDE.md>) · [下一輪 R114](<../R114_ConfidenceGatedRecoverableScratch/FILE_GUIDE.md>) · [R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>) · [V42](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [前一輪 R112](<../R112_V42R109GMFMechanismDecomposition/FILE_GUIDE.md>) · [下一輪 R114](<../R114_ConfidenceGatedRecoverableScratch/FILE_GUIDE.md>) · [R109](<../R109_StagedMidpointWidthScratch/FILE_GUIDE.md>) · [V42](<../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>)
 
 **一句話：** 2026-08-30 回答 R109 到底卡在哪：渲染器的表達能力、學到的控制、訓練軌跡，還是量測本身。結論有三個：R109 的「修正需求」與「邊界支撐」判斷沒有學起來，幾乎是固定值；寬度與法線位移都需要，但同一條邊界上的控制要有沿輪廓方向的連續性，固定平滑不可用；現有渲染器在薄環、月牙、窄間隙有容量上限，需要受限、零局部均值的細節支路。這一輪也修正了 R112 的環形量測，並找出幾個關於 V42 的結構事實。
 

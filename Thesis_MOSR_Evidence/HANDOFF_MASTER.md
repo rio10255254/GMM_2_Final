@@ -209,7 +209,7 @@ R39 → R40 → R41 → R42 → R43 → R44 → R45 → R46。**全部都是「�
   - NO_FREQ:`W_HF_LAP = 0.0, FFT_W_PHASE = 0.0`
 
 **訓練輸出**:
-- NO_SEQ: `Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_SEQ_20260526_230916/`
+- NO_SEQ: `Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_SEQ_20260526_230916/`
 - NO_EQ: `..._NO_EQ_20260526_235037/`
 - NO_EDGE: `..._NO_EDGE_20260527_003614/`
 - NO_FREQ: `..._NO_FREQ_20260527_012452/`
@@ -346,7 +346,7 @@ python pack.py /tmp/unpacked/ output.docx --validate false
 
 ### 4.5 ABLATIONS 用 base_dir vs full_ckpt_path 兩種命名
 
-Ablation A-B(NO_SEQ/EQ/EDGE/FREQ)的 ckpt 都在 `Traing_Progress/<dir>/weights/best_tradeoff.pth.tar`,所以原 batch script 用 base_dir。
+Ablation A-B(NO_SEQ/EQ/EDGE/FREQ)的 ckpt 都在 `Experiments/Legacy/<dir>/weights/best_tradeoff.pth.tar`,所以原 batch script 用 base_dir。
 
 Extended candidates(a030/a025/R40_a045/R42_r41best/R46)ckpt 在不同 Experiments 子目錄,所以新 batch script(`run_extended_inference_720angle.py`)用 full_ckpt_path 寫死。
 
@@ -447,7 +447,7 @@ User 會用 PI(Physik Instrumente)精密位移台做 XY 雙軸微小平移實驗
 **Baseline 4 個 visual_metrics 補測**(目前缺):
 - R30 / R33 / R38v2 / COMBO 的 absolute edge_steepness_p95 / contrast_std 等
 - 需新跑 inference 對 r26 三尺度 sequence
-- R30 ckpt path 需確認(可能在 `Traing_Progress/organized_20260316/round30/...`)
+- R30 ckpt path 需確認(可能在 `Experiments/Legacy/organized_20260316/round30/...`)
 
 ### 6.4 Round 2 v3 修改(7 項)
 
@@ -667,7 +667,7 @@ System Python(`C:/Python314/`)沒裝 numpy / defusedxml,不要用。
 - **Single seed**:所有 ablation 跑單 seed,0.8 px 上的「NO_SEQ vs COMBO 接近」結論可能在 seed variance 內翻盤。Multi-seed 補測待做。
 - **Baseline visual_metrics 缺**:R30 / R33 / R38v2 / COMBO 的 absolute edge_steepness 沒新算,只有 ESTIMATOR_POLICY 既有的 vs R30 (%) 數字
 - **CRB proxy 用 raw vs recon 比例,不是精確 Fisher 計算**:正式 CRB 需要對 PSF 做 Fisher 數值積分,可作 future work
-- **R30 r26 sequence recon BMP 位置不明確**:對 R30 補跑 inference 需要找 R30 ckpt(可能在 `Traing_Progress/organized_20260316/round30/...`,但具體路徑沒確認)
+- **R30 r26 sequence recon BMP 位置不明確**:對 R30 補跑 inference 需要找 R30 ckpt(可能在 `Experiments/Legacy/organized_20260316/round30/...`,但具體路徑沒確認)
 
 ### 10.2 對 SEQ-EDGE 分工的解讀注意
 

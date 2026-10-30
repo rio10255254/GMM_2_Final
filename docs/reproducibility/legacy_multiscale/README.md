@@ -44,9 +44,9 @@ python Tools/replay_legacy_multiscale_selection.py --root . --output NEW_LEGACY_
 
 ## 原始依據
 
-- [Round12三尺度方法組初排](../../../Traing_Progress/organized_20260311/selected/reports/ROUND12_UNIVERSAL_MULTISCALE_SUMMARY_20260311_023449.md)
-- [Round13較晚方法組初排](../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_MULTISCALE_SUMMARY_20260311_150225.md)與[固定模型審查](../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.md)
-- [Round13較早審查原值](../../../Traing_Progress/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_131800.md)
-- [Round14較晚方法組初排](../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_MULTISCALE_SUMMARY_20260311_174207.md)與[固定模型審查](../../../Traing_Progress/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_174207.md)
-- [Round15方法組初排](../../../Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_MULTISCALE_SUMMARY_20260312_022742.md)與[固定模型審查](../../../Traing_Progress/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.md)
+- [Round12三尺度方法組初排](../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND12_UNIVERSAL_MULTISCALE_SUMMARY_20260311_023449.md)
+- [Round13較晚方法組初排](../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_MULTISCALE_SUMMARY_20260311_150225.md)與[固定模型審查](../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_150225.md)
+- [Round13較早審查原值](../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND13_UNIVERSAL_CHECKPOINT_AUDIT_SUMMARY_20260311_131800.md)
+- [Round14較晚方法組初排](../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_MULTISCALE_SUMMARY_20260311_174207.md)與[固定模型審查](../../../Experiments/Legacy/organized_20260311/selected/reports/ROUND14_CORRIDOR_CHECKPOINT_AUDIT_SUMMARY_20260311_174207.md)
+- [Round15方法組初排](../../../Experiments/Legacy/organized_20260312/selected/reports/ROUND15_CENTERLOCK_MULTISCALE_SUMMARY_20260312_022742.md)與[固定模型審查](../../../Experiments/Legacy/organized_20260312/selected/reports/ROUND15_CENTERLOCK_CHECKPOINT_AUDIT_SUMMARY_20260312_022742.md)
 - [原審查程式](../../../Model/GeoEdgeAlignSR_v1_UniversalCheckpointAudit.py)及[Round15排序與啟動程式](../../../Model/GeoEdgeAlignSR_v1_LongRunCenterLock.py)

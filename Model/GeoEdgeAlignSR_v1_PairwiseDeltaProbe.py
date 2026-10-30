@@ -13,14 +13,15 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PROCESS_AUDIT = PROJECT_ROOT / "Model" / "GeoEdgeAlignSR_v1_ProcessProbeAudit.py"
 ROUND18_MANIFEST = (
     PROJECT_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Legacy"
     / "organized_20260313"
     / "round18"
     / "selected"
     / "current_centerpush_seed.json"
 )
 POLICY_JSON = PROJECT_ROOT / "ESTIMATOR_POLICY.json"
-DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260315" / "pairwise_delta_probe"
+DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260315" / "pairwise_delta_probe"
 
 
 def parse_args() -> argparse.Namespace:
@@ -46,12 +47,12 @@ def move_new_audit_runs(before: set[str], archive_dir: Path) -> None:
     archive_dir.mkdir(parents=True, exist_ok=True)
     now = {
         p.name
-        for p in (PROJECT_ROOT / "Traing_Progress").glob("training_progress_process_probe_*")
+        for p in (PROJECT_ROOT / "Experiments" / "Training_Runs").glob("training_progress_process_probe_*")
         if p.is_dir()
     }
     new_names = sorted(now - before)
     for name in new_names:
-        src = PROJECT_ROOT / "Traing_Progress" / name
+        src = PROJECT_ROOT / "Experiments" / "Training_Runs" / name
         dst = archive_dir / name
         if dst.exists():
             shutil.rmtree(dst)
@@ -72,7 +73,7 @@ def run_audit(
     reports.mkdir(parents=True, exist_ok=True)
     before = {
         p.name
-        for p in (PROJECT_ROOT / "Traing_Progress").glob("training_progress_process_probe_*")
+        for p in (PROJECT_ROOT / "Experiments" / "Training_Runs").glob("training_progress_process_probe_*")
         if p.is_dir()
     }
     suffix = str(float(expect_dy)).replace(".", "p")

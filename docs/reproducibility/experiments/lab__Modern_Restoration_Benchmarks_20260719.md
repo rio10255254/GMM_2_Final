@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -44,65 +44,65 @@
 
 
 
-- [原始報告：三形貌現代模型比較：正式結果報告](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/RESULTS_REPORT_ZH_TW.md>)
+- [原始報告：三形貌現代模型比較：正式結果報告](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/RESULTS_REPORT_ZH_TW.md>)
 
-- [原始報告：MOSR Result Audit and Defensible Positioning](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/calculation_audit/MOSR_RESULT_AUDIT_20260719.md>)
+- [原始報告：MOSR Result Audit and Defensible Positioning](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/calculation_audit/MOSR_RESULT_AUDIT_20260719.md>)
 
-- [原始報告：50×與20×下 EDSR-x1、NAFNet 與 MOSR 的位移比較](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report/RESULTS_zh-TW.md>)
+- [原始報告：50×與20×下 EDSR-x1、NAFNet 與 MOSR 的位移比較](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report/RESULTS_zh-TW.md>)
 
-- [原始報告：現代模型逐步位移比較：建議圖說](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report/trajectory_figures/CAPTIONS_zh-TW.md>)
+- [原始報告：現代模型逐步位移比較：建議圖說](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/displacement_50x20x_edrs_nafnet_refresh_20260724/modern_50x20x_report/trajectory_figures/CAPTIONS_zh-TW.md>)
 
-- [原始報告：等灰階輪廓邊界位移驗證](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/isocontour_boundary_validation_20260724/VALIDATION_REPORT_zh-TW.md>)
+- [原始報告：等灰階輪廓邊界位移驗證](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/isocontour_boundary_validation_20260724/VALIDATION_REPORT_zh-TW.md>)
 
-- [原始報告：新位移量測法候選圖索引](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/measurement_method_comparison_20260724/FIGURE_INDEX_zh-TW.md>)
+- [原始報告：新位移量測法候選圖索引](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/measurement_method_comparison_20260724/FIGURE_INDEX_zh-TW.md>)
 
-- [原始報告：位移邊界量測方法比較](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/measurement_method_comparison_20260724/METHOD_COMPARISON_REPORT_zh-TW.md>)
+- [原始報告：位移邊界量測方法比較](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/measurement_method_comparison_20260724/METHOD_COMPARISON_REPORT_zh-TW.md>)
 
-- [原始報告：EDSR-PyTorch](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/EDSR-PyTorch/README.md>)
+- [原始報告：EDSR-PyTorch](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/EDSR-PyTorch/README.md>)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/datasets/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/datasets/README.md)
 
-- [原始報告：reproduce the GoPro dataset results](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/docs/GoPro.md>)
+- [原始報告：reproduce the GoPro dataset results](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/docs/GoPro.md>)
 
-- [原始報告：reproduce the REDS dataset results](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/docs/REDS.md>)
+- [原始報告：reproduce the REDS dataset results](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/docs/REDS.md>)
 
-- [原始報告：reproduce the SIDD dataset results](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/docs/SIDD.md>)
+- [原始報告：reproduce the SIDD dataset results](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/docs/SIDD.md>)
 
-- [原始報告：Reproduce the Stereo SR Results](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/docs/StereoSR.md>)
+- [原始報告：Reproduce the Stereo SR Results](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/docs/StereoSR.md>)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/experiments/pretrained_models/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/experiments/pretrained_models/README.md)
 
-- [readme.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/readme.md)
+- [readme.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/NAFNet/readme.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Defocus_Deblurring/Datasets/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Defocus_Deblurring/Datasets/README.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Defocus_Deblurring/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Defocus_Deblurring/README.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Defocus_Deblurring/pretrained_models/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Defocus_Deblurring/pretrained_models/README.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Denoising/Datasets/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Denoising/Datasets/README.md)
 
-- [原始報告：Image Denoising](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Denoising/README.md>)
+- [原始報告：Image Denoising](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Denoising/README.md>)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Denoising/pretrained_models/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Denoising/pretrained_models/README.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Deraining/Datasets/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Deraining/Datasets/README.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Deraining/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Deraining/README.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Deraining/pretrained_models/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Deraining/pretrained_models/README.md)
 
-- [原始報告：Installation](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/INSTALL.md>)
+- [原始報告：Installation](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/INSTALL.md>)
 
-- [LICENSE.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/LICENSE.md)
+- [LICENSE.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/LICENSE.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Motion_Deblurring/Datasets/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Motion_Deblurring/Datasets/README.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Motion_Deblurring/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Motion_Deblurring/README.md)
 
-- [README.md](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Motion_Deblurring/pretrained_models/README.md)
+- [README.md](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/Motion_Deblurring/pretrained_models/README.md)
 
-- [原始報告：Restormer: Efficient Transformer for High-Resolution Image Restoration (CVPR 2022 -- Oral)](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/README.md>)
+- [原始報告：Restormer: Efficient Transformer for High-Resolution Image Restoration (CVPR 2022 -- Oral)](<../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/third_party/Restormer/README.md>)
 
 
 

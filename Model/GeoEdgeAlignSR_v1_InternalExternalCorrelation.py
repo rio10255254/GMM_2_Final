@@ -20,7 +20,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 # ────────────────────────────────────────────────────────────
 # 0. Paths
 # ────────────────────────────────────────────────────────────
-BASE_DIR = str(PROJECT_ROOT / 'Traing_Progress/organized_20260316')
+BASE_DIR = str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316')
 OUTPUT_DIR = os.path.join(BASE_DIR, "analysis")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

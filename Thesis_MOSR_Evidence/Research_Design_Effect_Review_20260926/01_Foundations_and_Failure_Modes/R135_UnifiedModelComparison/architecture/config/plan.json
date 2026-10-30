@@ -19,14 +19,14 @@
     },
     "R61": {
       "checkpoint": {
-        "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+        "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
         "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b"
       },
       "command": [
         "C:\\Users\\Rio\\anaconda3\\python.exe",
         "Analyses/20260702_100MG_displacement_analysis/_r61_real_sample_runtime/_r61_real_sample_runtime_20260702_210629/runtime/GeoEdgeAlignSR_v1_Infer_v5_NoCoord_return_v2_SimpleTest.py",
         "--weights",
-        "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+        "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
         "--input-dir",
         "Analyses/20260702_100MG_displacement_analysis/raw_inputs/x_0p5um/bmp",
         "--recon-root",
@@ -40,7 +40,7 @@
         "--exts",
         ".bmp",
         "--psf-fitted-path",
-        "Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
+        "LabSystem_MOSR/psf_calibration/results/20250605_inner_circle_roi_fine_prealign_fit/PSF_fitted_2D_FOVstack.mat",
         "--no-psf-from-ckpt",
         "--weak-psf-disable",
         "--psf-deconv-reg",
@@ -5333,7 +5333,7 @@
     "protected_sources": [
       {
         "path": "Experiments/R128_SourceOnlyFullTraining/results/lsc_comparison/plan.json",
-        "sha256": "f64b30b5ea45aff299212411a9627c3eef52bdd6daaa79b103a2169c7ef5b044"
+        "sha256": "1a5685a2dcb9bf3adb4feb6e71f0b5a81e3f0154288ff4fe5fabdb86012deafc"
       },
       {
         "path": "Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",
@@ -5718,7 +5718,7 @@
       "sha256": "ecb4c09ae47ff1f03449a6f2368cb396bb6f7dc0bc6dc4cc1acc3c3d55fbc42b"
     },
     {
-      "path": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
+      "path": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020/weights/best_tradeoff.pth.tar",
       "sha256": "9821d58cc9fcf323cda0cdced0a3ea9ac39fa7acd4e7e51927c6a82e873b288b"
     },
     {
@@ -5735,7 +5735,7 @@
     },
     {
       "path": "Experiments/R129_OpticalPriorHybrid/results/continuous_lsc/plan.json",
-      "sha256": "a32878428cbd1b43a725ff7d9a80c1abec96c3549e7f13713b2e5ff45a42fc28"
+      "sha256": "4fca7ce71c14ca92bfb34e99755bd1e190391fb1bb6e85060fef9dae5c0491af"
     },
     {
       "path": "Thesis_MOSR_Evidence/Final_Data_Figures/01_CURRENT_THESIS_RESULTS_V42_CENTER9/config/sequence_center9_50x20x.json",

@@ -7,7 +7,7 @@
 | Status | **External PASS** — GMF 極致型候選 |
 | Mechanism | Winsorize gradient_magnitude_loss + laplacian_hf_loss at 95th percentile |
 | External GMF 0.8px | **0.119049** (-29.1% vs R30) |
-| Checkpoint | `Traing_Progress/..._20260405_091941/weights/best_tradeoff.pth.tar` |
+| Checkpoint | `Experiments/Legacy/..._20260405_091941/weights/best_tradeoff.pth.tar` |
 | Key Reports | `reports/R33_EXPERIMENT_SUMMARY.md`, `reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md` |
 
 ## Scope: Series Hub

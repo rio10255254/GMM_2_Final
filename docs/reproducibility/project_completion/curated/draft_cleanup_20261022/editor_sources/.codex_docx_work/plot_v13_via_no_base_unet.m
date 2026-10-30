@@ -1,7 +1,7 @@
 PROJECT_ROOT = fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))))))));
 clear; close all; clc;
 
-csvPath = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/circular_cd_sharpness/circular_feature_cd_intervals.csv');
+csvPath = fullfile(PROJECT_ROOT, 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/circular_cd_sharpness/circular_feature_cd_intervals.csv');
 outDir = fullfile(PROJECT_ROOT, 'Thesis_MOSR_Evidence/Final_Data_Figures/04_V42_NEURAL_NETWORK_RESULTS/modern_baseline_three_morphology_20260719/figures');
 if ~exist(outDir, 'dir')
     mkdir(outDir);

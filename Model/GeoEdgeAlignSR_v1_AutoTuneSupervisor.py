@@ -454,7 +454,7 @@ def _launch_next_round(
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--meta", required=True, help="Path to the active auto_tune meta.txt")
-    p.add_argument("--organized-root", default="Traing_Progress/organized_20260309")
+    p.add_argument("--organized-root", default="Experiments/Legacy/organized_20260309")
     p.add_argument("--watch-interval-sec", type=int, default=30)
     p.add_argument("--report-timeout-sec", type=int, default=900)
     p.add_argument("--promote-threshold", type=float, default=0.25)
@@ -466,7 +466,7 @@ def main() -> int:
     project_root = Path(__file__).resolve().parents[1]
     organized_root = (project_root / args.organized_root).resolve()
     pending_root = organized_root / "pending"
-    report_root = project_root / "Traing_Progress" / "auto_tune_reports"
+    report_root = project_root / "Experiments" / "Legacy" / "auto_tune_reports"
     meta_path = Path(args.meta).resolve()
     status_root = pending_root / "status"
     chain_plan_path = Path(args.chain_plan).resolve() if str(args.chain_plan).strip() else None

@@ -16,7 +16,7 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：真實顯微影像子像素平移一致性實驗](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/EXPERIMENT_REPORT_zh-TW.md>)
+- [原始報告：真實顯微影像子像素平移一致性實驗](<../../../LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/EXPERIMENT_REPORT_zh-TW.md>)
 
 ## 重做與驗證範圍
 

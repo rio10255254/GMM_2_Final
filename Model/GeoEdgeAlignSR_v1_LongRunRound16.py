@@ -21,8 +21,8 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-REPORT_ROOT = PROJECT_ROOT / "Traing_Progress" / "auto_tune_reports"
-ORG_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260313" / "round16"
+REPORT_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "auto_tune_reports"
+ORG_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260313" / "round16"
 LOG_ROOT = ORG_ROOT / "pending" / "logs"
 STATUS_MD = PROJECT_ROOT / "000_LONGRUN_ROUND16_STATUS.md"
 STATUS_JSON = PROJECT_ROOT / "000_LONGRUN_ROUND16_STATUS.json"
@@ -35,7 +35,7 @@ PROFILE_NAME = "round16_edgefit_centerlock"
 SUMMARY_PREFIX = "ROUND16_EDGEFIT"
 AUDIT_TOP_K = 4
 RUN_SEED = 1261201
-RESUME_FROM_CHECKPOINT: "str | None" = str(PROJECT_ROOT / 'Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_clp_20260312_021219/weights/best_tradeoff.pth.tar')
+RESUME_FROM_CHECKPOINT: "str | None" = str(PROJECT_ROOT / 'Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_clp_20260312_021219/weights/best_tradeoff.pth.tar')
 
 
 PLAN = [

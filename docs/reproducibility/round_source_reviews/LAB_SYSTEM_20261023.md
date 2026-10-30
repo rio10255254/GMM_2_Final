@@ -1,6 +1,6 @@
 # LabSystem 逐輪必要來源與模型核對
 
-[Lab完整沿革](<../lineage/LAB_SYSTEM.md>) · [Lab深層資料夾](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/SOURCE_AND_MODEL_GUIDE.md>) · [目前保存狀態](<../STATUS.md>)
+[Lab完整沿革](<../lineage/LAB_SYSTEM.md>) · [Lab深層資料夾](<../../../LabSystem_MOSR/SOURCE_AND_MODEL_GUIDE.md>) · [目前保存狀態](<../STATUS.md>)
 
 本次按26個Lab研究範圍逐輪核對原設定、選模說明、代表模型、必要原拍／SEM／PSF及資料清單。模型名稱相同不代表同一輪；主專案R號、Lab R號、V版本及資料stage仍分開。
 

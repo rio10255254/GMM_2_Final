@@ -33,7 +33,7 @@ python Tools/research_asset_bundle.py restore --manifest ../priority-download/RE
 
 兩行的`--prefix`須一致，依用途換成下列位置；要本批全部395份時省略`--prefix`。相同既有檔案可保留，內容不同會停止且不覆寫。
 
-- Lab原拍：`Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/raw`
+- Lab原拍：`LabSystem_MOSR/psf_calibration/raw`
 - 原邊界量測：`Deliverables/Thesis_Handoffs/R129_Corrected_Corner9_Thesis_Handoff_20260920/04_Verification_and_Sources/centers/Raw`
 - 固定驗證圖：`Experiments/R130_CleanV42Comparison/validation/inputs`
 - PSF小輸入：`PSF_Fitting/Deconvolution`及`PSF_Fitting/SingleImage_Input`，可重複指定`--prefix`
@@ -45,7 +45,7 @@ python Tools/research_asset_bundle.py restore --manifest ../priority-download/RE
 
 R63使用[原32筆固定名單](../../../Experiments/R63_CausalBoundaryMotionAblation/results/training_manifest.json)與[這次可取得位置](R63_ORIGINAL_SELECTION_AVAILABILITY.json)。只保存當年選用端點，不要求重傳每個中間epoch。不要在缺少全歷程時重新呼叫挑選所有epoch的程式，然後把新選擇當作原判決。共同初始模型與PSF已有舊發布來源，不重傳；仍缺的1個版本使原32模型全套重新推論不能宣稱完成，原完整結果照原紀錄閱讀。
 
-LabSystem原拍恢復到[原準備程式](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/scripts/prepare_inner_circle_roi_gt.py)實際讀取的位置；[原設定](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/configs/lab_optical_setup_20250605.json)和[原25列裁切對照](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/inputs/20250605_inner_circle_roi/MANIFEST.json)保留。可再產生的ROI圖及展示圖沿生成方法，不另包一套。換機時將新副本設定中的舊D槽絕對路徑指向自己的恢復位置，保留原設定作歷史對照。
+LabSystem原拍恢復到[原準備程式](../../../LabSystem_MOSR/psf_calibration/scripts/prepare_inner_circle_roi_gt.py)實際讀取的位置；[原設定](../../../LabSystem_MOSR/psf_calibration/configs/lab_optical_setup_20250605.json)和[原25列裁切對照](../../../LabSystem_MOSR/psf_calibration/inputs/20250605_inner_circle_roi/MANIFEST.json)保留。可再產生的ROI圖及展示圖沿生成方法，不另包一套。換機時將新副本設定中的舊D槽絕對路徑指向自己的恢復位置，保留原設定作歷史對照。
 
 原邊界資料每份有`points/coarse`兩組31×9×64×2座標；尺寸、欄位與有限數值已檢查，不把它混稱重建像素。它與原表、相機拍攝及既有結果一同使用，不補造沒有記錄的量。11張固定驗證圖則對應[原凍結設定](../../../Experiments/R130_CleanV42Comparison/config/frozen.json)。
 

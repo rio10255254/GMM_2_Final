@@ -2,7 +2,7 @@
 
 **Date**: 2026-04-07
 **Branch**: `sandbox/r38v2`
-**Checkpoint**: `Traing_Progress/training_progress_..._20260406_235957/weights/best_tradeoff.pth.tar`
+**Checkpoint**: `Experiments/Training_Runs/training_progress_..._20260406_235957/weights/best_tradeoff.pth.tar`
 **Best Epoch**: 54
 
 ## 設計：三重修復

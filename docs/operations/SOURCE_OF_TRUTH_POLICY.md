@@ -17,13 +17,13 @@ Last updated: 2026-04-08
 | R33 實驗報告 | `Experiments/R33RobustLoss/reports/*.md` | — |
 | R38v2/COMBO 報告 | `Experiments/R38v2SeqFixed/reports/*.md` | — |
 | R32 external compare | `Experiments/R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md` | `docs/evidence/falsified/ROUND32_EXTERNAL_COMPARE.md`（鏡像） |
-| R31 external compare | `Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md` | `docs/evidence/falsified/ROUND31_EXTERNAL_COMPARE.md`（curated copy） |
-| R30 baseline proof | — (來源在 Traing_Progress/) | `docs/evidence/baseline/ROUND30_EXTERNAL_COMPARE.md`（curated copy） |
+| R31 external compare | `Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md` | `docs/evidence/falsified/ROUND31_EXTERNAL_COMPARE.md`（curated copy） |
+| R30 baseline proof | — (來源在 Experiments/Legacy/) | `docs/evidence/baseline/ROUND30_EXTERNAL_COMPARE.md`（curated copy） |
 
 **規則**：
 - `Experiments/*/reports/` 是 R33+ 實驗報告的**主要可編輯位置**
 - **R26 例外**：R26NewPSFCheck 的 canonical 報告分佈在多個子目錄（`psf_audit/`、`formal_newpsf_candidate/reports/`、`pure_psf_control/reports/`、`root_cause_centering/reports/`），這些都是 canonical，不是 mirror。R26 的結構是歷史產物，見 `docs/operations/QUIRKS.md` §4。
-- `docs/evidence/` 裡的 R30/R31 檔案是從 `Traing_Progress/` 複製的歷史 curated copy，原始來源不在 Experiments/
+- `docs/evidence/` 裡的 R30/R31 檔案是從 `Experiments/Legacy/` 複製的歷史 curated copy，原始來源在這個早期批次區，不在各輪的 `Experiments/R##_…`
 
 ### docs/evidence/ 鏡像政策（2026-04-14 更新）
 
@@ -38,29 +38,29 @@ Last updated: 2026-04-08
 
 | 類型 | Canonical (可編輯) | Mirror (只讀) |
 |------|-------------------|--------------|
-| `organized_20260313/root_status_legacy` 狀態快照 | `Traing_Progress/organized_20260313/root_status_legacy/*.md/json` | `docs/archive/legacy_runtime_status/*` curated copies where present |
-| `Round16`-`Round19` 決策鏈 | `Traing_Progress/organized_20260313/roundXX/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
-| `Round20` process probe | `Traing_Progress/organized_20260314/round20/ROUND20_POSTMORTEM.md`, `Traing_Progress/organized_20260314/round20/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
-| `diagnostics` 分支決策 | `Traing_Progress/organized_20260314/diagnostics/*.md/json` | `docs/evidence/*` curated copies where present |
-| `branch_e` estimator probe | `Traing_Progress/organized_20260314/branch_e/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
-| `Round21` / `Round22` 決策鏈 | `Traing_Progress/organized_20260315/roundXX/ROUND2X_POSTMORTEM.md`, `Traing_Progress/organized_20260315/roundXX/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
-| `pairwise_delta_probe` | `Traing_Progress/organized_20260315/pairwise_delta_probe/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
-| `branch_e_followup` | `Traing_Progress/organized_20260315/branch_e_followup/BRANCH_E_PHASE2_POSTMORTEM.md`, `Traing_Progress/organized_20260315/branch_e_followup/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
-| `estimator_formula_probe` | `Traing_Progress/organized_20260315/estimator_formula_probe/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
-| `Round23`-`Round31` 決策鏈 | `Traing_Progress/organized_20260316/roundXX/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
-| `Round18` vs `Round22` compare | `Traing_Progress/organized_20260316/external_compare_round18_round22/reports/*.md/json` | `docs/evidence/historical_baselines/*` curated summaries |
-| `Round25`-`Round29` compare chain | `Traing_Progress/organized_20260316/external_compare_*/reports/*.md/json` | `docs/evidence/historical_baselines/*` curated summaries |
-| `Round30` final external proof | `Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_EXTERNAL_COMPARE.md` | `docs/evidence/baseline/ROUND30_EXTERNAL_COMPARE.md` |
-| TTA side direction | `Traing_Progress/organized_20260316/tta_experiment/r26_tta_cross5/reports/*.md/json` | `docs/evidence/side_directions/TTA_VS_BASELINE_CROSS5_COMPARISON.md/json` |
-| Screening analysis | `Traing_Progress/organized_20260316/analysis/INTERNAL_EXTERNAL_CORRELATION.md/json` | `docs/evidence/analysis/INTERNAL_EXTERNAL_CORRELATION.md/json` |
+| `organized_20260313/root_status_legacy` 狀態快照 | `Experiments/Legacy/organized_20260313/root_status_legacy/*.md/json` | `docs/archive/legacy_runtime_status/*` curated copies where present |
+| `Round16`-`Round19` 決策鏈 | `Experiments/Legacy/organized_20260313/roundXX/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
+| `Round20` process probe | `Experiments/Legacy/organized_20260314/round20/ROUND20_POSTMORTEM.md`, `Experiments/Legacy/organized_20260314/round20/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
+| `diagnostics` 分支決策 | `Experiments/Legacy/organized_20260314/diagnostics/*.md/json` | `docs/evidence/*` curated copies where present |
+| `branch_e` estimator probe | `Experiments/Legacy/organized_20260314/branch_e/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
+| `Round21` / `Round22` 決策鏈 | `Experiments/Legacy/organized_20260315/roundXX/ROUND2X_POSTMORTEM.md`, `Experiments/Legacy/organized_20260315/roundXX/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
+| `pairwise_delta_probe` | `Experiments/Legacy/organized_20260315/pairwise_delta_probe/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
+| `branch_e_followup` | `Experiments/Legacy/organized_20260315/branch_e_followup/BRANCH_E_PHASE2_POSTMORTEM.md`, `Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
+| `estimator_formula_probe` | `Experiments/Legacy/organized_20260315/estimator_formula_probe/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
+| `Round23`-`Round31` 決策鏈 | `Experiments/Legacy/organized_20260316/roundXX/selected/reports/*.md/json` | `docs/evidence/*` curated copies where present |
+| `Round18` vs `Round22` compare | `Experiments/Legacy/organized_20260316/external_compare_round18_round22/reports/*.md/json` | `docs/evidence/historical_baselines/*` curated summaries |
+| `Round25`-`Round29` compare chain | `Experiments/Legacy/organized_20260316/external_compare_*/reports/*.md/json` | `docs/evidence/historical_baselines/*` curated summaries |
+| `Round30` final external proof | `Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_EXTERNAL_COMPARE.md` | `docs/evidence/baseline/ROUND30_EXTERNAL_COMPARE.md` |
+| TTA side direction | `Experiments/Legacy/organized_20260316/tta_experiment/r26_tta_cross5/reports/*.md/json` | `docs/evidence/side_directions/TTA_VS_BASELINE_CROSS5_COMPARISON.md/json` |
+| Screening analysis | `Experiments/Legacy/organized_20260316/analysis/INTERNAL_EXTERNAL_CORRELATION.md/json` | `docs/evidence/analysis/INTERNAL_EXTERNAL_CORRELATION.md/json` |
 
 **規則**：
-- `Traing_Progress/organized_20260313/` 到 `Traing_Progress/organized_20260316/` 都是 preserved historical working surfaces；補導引層，不重構原始 evidence layout。
+- `Experiments/Legacy/organized_20260313/` 到 `Experiments/Legacy/organized_20260316/` 都是 preserved historical working surfaces；補導引層，不重構原始 evidence layout。
 - `round16`-`round19`、`round20`、`round21`、`round22`、`round23`-`round31` 的 canonical decision surface 在各自的 `selected/reports/`；若 root 另有 `POSTMORTEM.md`，它也是 canonical。
 - `diagnostics/`、`pairwise_delta_probe/`、`branch_e/`、`branch_e_followup/`、`estimator_formula_probe/` 的 canonical surface 在各自 root 或 `selected/reports/`，依上表為準。
 - `external_compare_round18_round22/` 與 `external_compare_*` 的 canonical compare surface 在各自的 `reports/`；沒有 `reports/` 的 payload-only compare directories 只保留 raw recon / GMF，不是 mirror。
 - `docs/evidence/` 對這批 legacy batches 仍是 curated mirror / index，除非 policy 明確說它本身就是索引層（例如 `EVIDENCE_MAP.md`）。
-- `round32/` 雖然仍保留在 `Traing_Progress/organized_20260316/`，但 canonical 治理面已移到 `Experiments/R32Sandbox/`，不要在兩處同時維護。
+- `round32/` 雖然仍保留在 `Experiments/Legacy/organized_20260316/`，但 canonical 治理面已移到 `Experiments/R32Sandbox/`，不要在兩處同時維護。
 - 操作入口請先看 `docs/operations/LEGACY_ROUNDS_OPERATIONS.md`，不要直接把長河歷史文件當成 editable source。
 
 ### 治理文件

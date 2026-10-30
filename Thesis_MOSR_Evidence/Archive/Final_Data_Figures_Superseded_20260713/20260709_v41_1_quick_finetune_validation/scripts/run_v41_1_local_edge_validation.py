@@ -519,6 +519,7 @@ def main() -> None:
         "title": "V41.1 quick fine-tune local edge validation",
         "weight": str(
             ROOT
+            / ".."
             / "LabSystem_MOSR"
             / "Traing_Progress"
             / "training_progress_LAB_GESR_v1_v5_ST0p8_SWP_v41_standalone_long_v41_1_quick_e3_mtb300_lr4e8_20260709_20260709_102434"

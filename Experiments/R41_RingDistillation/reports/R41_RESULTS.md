@@ -37,7 +37,7 @@ R41 測試：用顯式 ring anchoring 能不能把 ring 行為拉回 COMBO 附�
   - R40 teacher 載入。
   - Batch log 含 `loss_kd_combo` 與 `loss_kd_r40`。
 - 2026-05-05：`r41_kd_from_a045` 正式訓練完成。
-  - Run 目錄：`Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028`。
+  - Run 目錄：`Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028`。
   - Best checkpoint：`weights\best_tradeoff.pth.tar`。
   - 30 / 30 epoch 跑完。
 - 2026-05-05：Held-out microscopy 驗證對 best checkpoint 跑完。

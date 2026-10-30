@@ -30,11 +30,11 @@ This role is synthetic only. It does not use real Step images or real Step label
 
 Path:
 
-`Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16`
+`LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16`
 
 Manifest:
 
-`Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/manifest.json`
+`LabSystem_MOSR/Training_Data/r61_universal_boundary_generalization/hs100mg_basler/r61_universal_boundary_train_motion_texture_step_guard_v16/manifest.json`
 
 Counts:
 
@@ -99,7 +99,7 @@ Result:
 
 Smoke run folder:
 
-`Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_smoke_v16_20260623_20260623_195253`
+`LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_smoke_v16_20260623_20260623_195253`
 
 ## Next Required Run
 
@@ -107,7 +107,7 @@ The next step is the real 8-epoch training run. A suggested command is:
 
 ```powershell
 $ts = Get-Date -Format "yyyyMMdd_HHmmss"
-$logDir = "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs"
+$logDir = "LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/training_logs"
 python .\LabSystem_MOSR\Experiments\R61_BoundaryGeneralizationUniversal\scripts\launch_r61.py `
   --candidate r61_motion_texture_stepguard_v16_dualgate_boundary_focus `
   --num-epoch 8 `

@@ -38,7 +38,7 @@ R33 用截尾換到了定位精度，代價是邊緣變軟。在 R34、R35、R37
 |---|---|
 | 序列分析結果 | 本資料夾 [results/sequence_analysis/](<results/sequence_analysis>)，已在 GitHub |
 | 送 GMF 的逐張重建影像（約 200 張） | 2026-08-24 移到原電腦 H 槽封存並逐檔核對，見[封存紀錄](<ARCHIVE_POINTER_20260824.md>)；也保存在 GitHub 主版本的 git 歷史裡 |
-| 訓練紀錄 | `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404/` |
+| 訓練紀錄 | `Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_222404/` |
 
 查某個檔案現在在哪：`python Tools/cloud_locator.py where <路徑>`。
 

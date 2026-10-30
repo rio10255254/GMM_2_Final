@@ -21,7 +21,7 @@ RECON_ROOT = RESULTS / "reconstructions_fp32"
 OUTPUT = RESULTS / "motion_analysis_fp32"
 TABLES = OUTPUT / "tables"
 FIGURES = OUTPUT / "figures"
-ISO_SCRIPT = Path(str(PROJECT_ROOT / 'Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/analyze_isocontour_boundary_displacement.py'))
+ISO_SCRIPT = Path(str(PROJECT_ROOT / 'LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/analyze_isocontour_boundary_displacement.py'))
 SEQUENCE_NAME = "50x_x_1um"
 
 

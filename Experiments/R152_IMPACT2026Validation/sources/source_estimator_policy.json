@@ -13,7 +13,7 @@
     "role": "most_balanced_production_baseline",
     "status": "formal_production_baseline",
     "decision_effective_date": "2026-04-08",
-    "checkpoint": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
+    "checkpoint": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar",
     "reports": {
       "results_md": "Experiments/R38v2SeqFixed/reports/COMBO_RESULTS.md",
       "series_md": "Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
@@ -48,7 +48,7 @@
       "role": "gmf_extreme_alternate",
       "status": "approved_alternate",
       "recommended_for": "GMF-priority deployments where geometric precision is more important than visual sharpness",
-      "checkpoint": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar",
+      "checkpoint": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar",
       "reports": {
         "results_md": "Experiments/R33RobustLoss/reports/R33_EXPERIMENT_SUMMARY.md",
         "series_md": "Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
@@ -75,7 +75,7 @@
       "role": "visual_priority_alternate",
       "status": "approved_alternate",
       "recommended_for": "Visual-priority deployments that still need an externally validated GMF improvement",
-      "checkpoint": "Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar",
+      "checkpoint": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260406_235957/weights/best_tradeoff.pth.tar",
       "reports": {
         "results_md": "Experiments/R38v2SeqFixed/reports/R38v2_RESULTS.md",
         "series_md": "Experiments/R33RobustLoss/reports/R33_R38v2_COMPLETE_EXPERIMENT_SERIES.md",
@@ -266,7 +266,7 @@
       "candidate_id": "R30",
       "model_name": "r30_b1_dironly",
       "round": "Round30",
-      "experiment_surface": "Traing_Progress/organized_20260316/round30",
+      "experiment_surface": "Experiments/Legacy/organized_20260316/round30",
       "external_gmf_0p8px": 0.167862
     },
     "approved_alternate_count": 3,
@@ -2455,7 +2455,7 @@
       },
       "base_model": {
         "candidate": "R44B from R42",
-        "checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801/weights/best_tradeoff.pth.tar",
+        "checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801/weights/best_tradeoff.pth.tar",
         "frozen": true
       },
       "data_packages": {
@@ -2665,48 +2665,48 @@
         "max_train_batches_per_epoch": 160,
         "candidates": {
           "r44_motion_from_r42_best": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801",
-            "best_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801/weights/best_tradeoff.pth.tar",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801",
+            "best_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r42_best_20260506_201801/weights/best_tradeoff.pth.tar",
             "verdict": "best_research_candidate"
           },
           "r44_motion_from_r40_a045": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143",
-            "best_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143/weights/best_tradeoff.pth.tar",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143",
+            "best_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_r40_a045_20260506_203143/weights/best_tradeoff.pth.tar",
             "verdict": "mixed_scene_boundary_reference_not_main_candidate"
           },
           "r44_motion_from_combo": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231",
-            "best_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231/weights/best_tradeoff.pth.tar",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231",
+            "best_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44_motion_from_combo_20260506_204231/weights/best_tradeoff.pth.tar",
             "verdict": "large_region_boundary_reference_not_main_candidate"
           },
           "r44c_low_motion_static_guard": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_low_motion_static_guard_20260506_230332",
-            "best_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_low_motion_static_guard_20260506_230332/weights/best_tradeoff.pth.tar",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_low_motion_static_guard_20260506_230332",
+            "best_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_low_motion_static_guard_20260506_230332/weights/best_tradeoff.pth.tar",
             "verdict": "probe_complete_not_best"
           },
           "r44c_family_holdout_motion": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_family_holdout_motion_20260506_230836",
-            "best_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_family_holdout_motion_20260506_230836/weights/best_tradeoff.pth.tar",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_family_holdout_motion_20260506_230836",
+            "best_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_family_holdout_motion_20260506_230836/weights/best_tradeoff.pth.tar",
             "verdict": "negative_probe_family_holdout_did_not_help"
           },
           "r44c_static_heavy_all_motion": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_static_heavy_all_motion_20260506_231357",
-            "best_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_static_heavy_all_motion_20260506_231357/weights/best_tradeoff.pth.tar",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_static_heavy_all_motion_20260506_231357",
+            "best_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44c_static_heavy_all_motion_20260506_231357/weights/best_tradeoff.pth.tar",
             "verdict": "best_r44c_probe_research_only_small_balance_gain"
           },
           "r44e_region_mix_repair_from_r44b_r42": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_mix_repair_from_r44b_r42_20260507_035322",
-            "eval_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_mix_repair_from_r44b_r42_20260507_035322/weights/latest.pth.tar",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_mix_repair_from_r44b_r42_20260507_035322",
+            "eval_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_mix_repair_from_r44b_r42_20260507_035322/weights/latest.pth.tar",
             "verdict": "closest_r44e_probe_but_not_candidate_region_boundary_worse"
           },
           "r44e_region_prior_from_r41": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_prior_from_r41_20260507_035819",
-            "eval_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_prior_from_r41_20260507_035819/weights/latest.pth.tar",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_prior_from_r41_20260507_035819",
+            "eval_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_region_prior_from_r41_20260507_035819/weights/latest.pth.tar",
             "verdict": "negative_probe_grid_and_overall_motion_regressed"
           },
           "r44e_mixed_prior_from_r44b_r40": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_mixed_prior_from_r44b_r40_20260507_040148",
-            "eval_checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_mixed_prior_from_r44b_r40_20260507_040148/weights/latest.pth.tar",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_mixed_prior_from_r44b_r40_20260507_040148",
+            "eval_checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44e_mixed_prior_from_r44b_r40_20260507_040148/weights/latest.pth.tar",
             "verdict": "negative_probe_target_families_slightly_better_but_grid_and_overall_motion_regressed"
           }
         },
@@ -3042,7 +3042,7 @@
         "r44h_stepb_eval_checkpoint_policy": "latest_checkpoint_used_because_probe_epochs_are_below_best_epoch_min",
         "candidates": {
           "r44h_stepb_region_kd_main": {
-            "run_dir": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r44h_stepb_region_kd_main_20260509_102558",
+            "run_dir": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r44h_stepb_region_kd_main_20260509_102558",
             "eval_checkpoint": "Experiments/R44_UniversalBoundaryMotionFidelity/results/r44h_stepb_region_kd/checkpoints/r44h_stepb_region_kd_main_latest.pth.tar",
             "verdict": "negative_probe_motion_preserved_but_target_shape_worse"
           }
@@ -3127,10 +3127,10 @@
       },
       "notes": "R42 證明通用顯微邊界忠實度可以被合成幾何資料推起來，但不進 approved alternate，也不能取代 COMBO。低 alpha 權重平均沒有共同通過點；守門 KD 保留邊界能力但讓本地三尺度環形守門更差；2026-05-06 外部 GMF 補測三個候選後，最佳 r42_r41_best 仍在 8px +24.63%、0.8px +94.33%、0.08px +98.87%，所以不建議作量測替代。",
       "checkpoint_references": {
-        "r42_combo_best": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/weights/best_tradeoff.pth.tar",
-        "r42_combo_latest": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/weights/latest.pth.tar",
-        "r42_r41_best": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar",
-        "r42_r41_latest": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/latest.pth.tar"
+        "r42_combo_best": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/weights/best_tradeoff.pth.tar",
+        "r42_combo_latest": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_combo_20260505_142301/weights/latest.pth.tar",
+        "r42_r41_best": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/best_tradeoff.pth.tar",
+        "r42_r41_latest": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r42_boundary_from_r41_20260505_145229/weights/latest.pth.tar"
       },
       "boundary_validation": {
         "profile": "boundary_val_unseen",
@@ -3579,7 +3579,7 @@
       "status": "weight_sweep_complete_no_guarded_tradeoff",
       "mainline_status": "research_complete_not_promotion_candidate",
       "goal": "Recover ring behavior while keeping the microscopy-feature reconstruction capacity proven by R40.",
-      "checkpoint": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weights/best_tradeoff.pth.tar",
+      "checkpoint": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r41_kd_from_a045_20260505_103028/weights/best_tradeoff.pth.tar",
       "reports": {
         "results_md": "Experiments/R41_RingDistillation/reports/R41_RESULTS.md",
         "external_compare_md": "Experiments/R41_RingDistillation/reports/R41_EXTERNAL_COMPARE.md",
@@ -3648,20 +3648,20 @@
     {
       "candidate_id": "LabSystem_MOSR_R48_RealCornerTransfer",
       "round": "LabSystem R48 real-corner transfer",
-      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer",
+      "experiment": "LabSystem_MOSR/Experiments/R48_RealCornerTransfer",
       "status": "completed_negative_real_corner_validation",
       "mainline_status": "lab_method_transfer_side_track_not_main_baseline_candidate",
       "goal": "Test whether Lab checkboard-like real-corner data plus geometry sidecars can fix the rounded-corner failure seen after moving MOSR to the laboratory optical system.",
       "reports": {
-        "checkboard_validation_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer/reports/R48_CHECKBOARD_VALIDATION_20260613.md",
-        "experiment_manifest_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R48_RealCornerTransfer/MANIFEST.md",
-        "data_report_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/reports/LAB_R48_REAL_CORNER_DATA_20260613.md"
+        "checkboard_validation_md": "LabSystem_MOSR/Experiments/R48_RealCornerTransfer/reports/R48_CHECKBOARD_VALIDATION_20260613.md",
+        "experiment_manifest_md": "LabSystem_MOSR/Experiments/R48_RealCornerTransfer/MANIFEST.md",
+        "data_report_md": "LabSystem_MOSR/Training_Data/reports/LAB_R48_REAL_CORNER_DATA_20260613.md"
       },
       "training": {
         "completed_epochs": 200,
-        "latest_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_resume_e120_to200_20260613_235726/weights/latest.pth.tar",
-        "best_tradeoff_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_tradeoff.pth.tar",
-        "best_detail_guarded_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_detail_guarded.pth.tar"
+        "latest_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_resume_e120_to200_20260613_235726/weights/latest.pth.tar",
+        "best_tradeoff_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_tradeoff.pth.tar",
+        "best_detail_guarded_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r48_real_corner_r39_latest_20260613_163644/weights/best_detail_guarded.pth.tar"
       },
       "real_corner_validation": {
         "frames_checked": 51,
@@ -3678,21 +3678,21 @@
     {
       "candidate_id": "LabSystem_MOSR_R49_CADAnchorRealGeometry",
       "round": "LabSystem R49 CAD-anchor real-geometry transfer",
-      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry",
+      "experiment": "LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry",
       "status": "completed_negative_real_corner_validation",
       "mainline_status": "lab_method_transfer_side_track_not_main_baseline_candidate",
       "goal": "Test whether a small real Lab CAD-anchor checkboard slice plus geometry sidecars can fix the rounded-corner failure after R48.",
       "reports": {
-        "results_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/reports/R49_RESULTS_20260614.md",
-        "checkboard_validation_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/reports/R49_CHECKBOARD_VALIDATION_20260614.md",
-        "experiment_manifest_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/MANIFEST.md"
+        "results_md": "LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/reports/R49_RESULTS_20260614.md",
+        "checkboard_validation_md": "LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/reports/R49_CHECKBOARD_VALIDATION_20260614.md",
+        "experiment_manifest_md": "LabSystem_MOSR/Experiments/R49_CADAnchorRealGeometry/MANIFEST.md"
       },
       "training": {
         "completed_epochs": 100,
-        "formal_run": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324",
-        "latest_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/latest.pth.tar",
-        "best_tradeoff_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_tradeoff.pth.tar",
-        "best_detail_guarded_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_detail_guarded.pth.tar",
+        "formal_run": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324",
+        "latest_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/latest.pth.tar",
+        "best_tradeoff_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_tradeoff.pth.tar",
+        "best_detail_guarded_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r49_cad_anchor_r40_tradeoff_e100_cad_anchor_r40_20260614_145324/weights/best_detail_guarded.pth.tar",
         "internal_best_epoch": 50
       },
       "real_corner_validation": {
@@ -3712,14 +3712,14 @@
     {
       "candidate_id": "LabSystem_MOSR_R50_PSFControlDiagnosis",
       "round": "LabSystem R50 PSF/degradation control diagnosis",
-      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis",
+      "experiment": "LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis",
       "status": "completed_psf_control_diagnostic_not_training_candidate",
       "mainline_status": "lab_method_transfer_diagnostic_not_main_baseline_candidate",
       "goal": "Check whether the selected Lab BADS PSF is too soft as the single degradation truth for real Lab checkboard-corner training.",
       "reports": {
-        "results_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/reports/R50_RESULTS.md",
-        "experiment_manifest_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/MANIFEST.md",
-        "summary_json": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/results/psf_control_diagnosis/summary.json"
+        "results_md": "LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/reports/R50_RESULTS.md",
+        "experiment_manifest_md": "LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/MANIFEST.md",
+        "summary_json": "LabSystem_MOSR/Experiments/R50_PSFControlDiagnosis/results/psf_control_diagnosis/summary.json"
       },
       "diagnostic_metrics": {
         "real_checkboard_images": 51,
@@ -3738,32 +3738,32 @@
     {
       "candidate_id": "LabSystem_MOSR_R51_BlurSourceProbe",
       "round": "LabSystem R51 blur-source training probe",
-      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe",
+      "experiment": "LabSystem_MOSR/Experiments/R51_BlurSourceProbe",
       "status": "completed_directional_probe_not_promoted",
       "mainline_status": "lab_method_transfer_probe_not_main_baseline_candidate",
       "goal": "Compare Gaussian, weak-BADS alpha 0.50, and mixed-PSF corner blur sources before committing to another long Lab-system training run.",
       "reports": {
-        "checkboard_validation_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_CHECKBOARD_VALIDATION.md",
-        "experiment_manifest_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/MANIFEST.md",
-        "corner_summary_csv": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r51_20260614/corner_metrics_summary.csv",
-        "corner_summary_json": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r51_20260614/corner_validation_summary.json",
-        "results_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_RESULTS.md"
+        "checkboard_validation_md": "LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_CHECKBOARD_VALIDATION.md",
+        "experiment_manifest_md": "LabSystem_MOSR/Experiments/R51_BlurSourceProbe/MANIFEST.md",
+        "corner_summary_csv": "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r51_20260614/corner_metrics_summary.csv",
+        "corner_summary_json": "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r51_20260614/corner_validation_summary.json",
+        "results_md": "LabSystem_MOSR/Experiments/R51_BlurSourceProbe/reports/R51_RESULTS.md"
       },
       "data_packages": {
-        "root": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r51_blur_source_probe",
+        "root": "LabSystem_MOSR/Training_Data/r51_blur_source_probe",
         "gaussian_probe_pairs": 1550,
         "weak_bads_probe_pairs": 1550,
         "mixed_psf_probe_pairs": 1550,
         "held_out_mixed_corner_val_pairs": 100
       },
       "training": {
-        "source_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/best_tradeoff.pth.tar",
+        "source_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/best_tradeoff.pth.tar",
         "epochs": 12,
         "max_train_batches_per_epoch": 80,
         "runs": {
-          "gaussian": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_gaussian_corner_probe_short_e012_b080_20260614_215954",
-          "weak_bads": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_weak_bads_corner_probe_short_e012_b080_20260614_220314",
-          "mixed_psf": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602"
+          "gaussian": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_gaussian_corner_probe_short_e012_b080_20260614_215954",
+          "weak_bads": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_weak_bads_corner_probe_short_e012_b080_20260614_220314",
+          "mixed_psf": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602"
         }
       },
       "real_corner_validation": {
@@ -3782,31 +3782,31 @@
     {
       "candidate_id": "LabSystem_MOSR_R52_CornerStabilityGuard",
       "round": "LabSystem R52 corner-stability guard formal training",
-      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard",
+      "experiment": "LabSystem_MOSR/Experiments/R52_CornerStabilityGuard",
       "status": "completed_real_corner_gate_failed_not_promoted",
       "mainline_status": "lab_method_transfer_formal_run_not_main_baseline_candidate",
       "goal": "Test whether a larger mixed-PSF plus real-corner stability package can preserve R51 median-corner gains while reducing large real-corner shifts.",
       "reports": {
-        "results_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_RESULTS.md",
-        "checkboard_validation_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_CHECKBOARD_VALIDATION.md",
-        "experiment_manifest_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/MANIFEST.md",
-        "corner_summary_csv": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r52_20260615/corner_metrics_summary.csv",
-        "pairwise_json": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r52_20260615/r52_pairwise_corner_comparison.json"
+        "results_md": "LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_RESULTS.md",
+        "checkboard_validation_md": "LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/reports/R52_CHECKBOARD_VALIDATION.md",
+        "experiment_manifest_md": "LabSystem_MOSR/Experiments/R52_CornerStabilityGuard/MANIFEST.md",
+        "corner_summary_csv": "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r52_20260615/corner_metrics_summary.csv",
+        "pairwise_json": "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r52_20260615/r52_pairwise_corner_comparison.json"
       },
       "data_packages": {
-        "root": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r52_corner_stability_guard",
+        "root": "LabSystem_MOSR/Training_Data/r52_corner_stability_guard",
         "formal_train_pairs": 4000,
         "held_out_validation_pairs": 700,
         "train_geometry_sidecars": 4000,
         "validation_geometry_sidecars": 700
       },
       "training": {
-        "source_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602/weights/best_tradeoff.pth.tar",
+        "source_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r51_mixed_psf_corner_probe_short_e012_b080_20260614_220602/weights/best_tradeoff.pth.tar",
         "completed_epochs": 100,
-        "formal_run": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415",
+        "formal_run": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415",
         "internal_best_epoch": 23,
-        "best_tradeoff_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415/weights/best_tradeoff.pth.tar",
-        "latest_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415/weights/latest.pth.tar"
+        "best_tradeoff_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415/weights/best_tradeoff.pth.tar",
+        "latest_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r52_stability_from_r51_mixed_best_formal_e100_20260614_225415/weights/latest.pth.tar"
       },
       "real_corner_validation": {
         "frames_checked": 51,
@@ -3828,8 +3828,8 @@
       "external_gmf": {
         "status": "gmf_ready_image_folders_created_no_r52_score_text_present",
         "gmf_cases": [
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r52_stability_best_tradeoff",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r52_stability_latest"
+          "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r52_stability_best_tradeoff",
+          "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r52_stability_latest"
         ]
       },
       "notes": "R52 completed the formal long run and reconstructed the real Lab checkboard sequence. The latest checkpoint improved median shift versus R40 but still raised the large-shift corner rate and created new outlier corners. It is useful failure evidence but not a Lab baseline."
@@ -3837,19 +3837,19 @@
     {
       "candidate_id": "LabSystem_MOSR_R53_RealisticDatasetCalibration",
       "round": "LabSystem R53 realistic dataset calibration",
-      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration",
+      "experiment": "LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration",
       "status": "completed_real_corner_gate_failed_not_promoted",
       "mainline_status": "lab_method_transfer_formal_run_not_main_baseline_candidate",
       "goal": "Test whether a main-project-like Lab training mix with gray textures, microscopy detail, varied geometry, mixed-PSF corners, and masked real CAD anchors improves real Lab checker-corner reconstruction.",
       "reports": {
-        "results_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/reports/R53_RESULTS.md",
-        "checkboard_validation_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/reports/R53_CHECKBOARD_VALIDATION.md",
-        "experiment_manifest_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/MANIFEST.md",
-        "corner_summary_csv": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r53_20260616/corner_metrics_summary.csv",
-        "pairwise_json": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r53_20260616/r53_pairwise_corner_comparison.json"
+        "results_md": "LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/reports/R53_RESULTS.md",
+        "checkboard_validation_md": "LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/reports/R53_CHECKBOARD_VALIDATION.md",
+        "experiment_manifest_md": "LabSystem_MOSR/Experiments/R53_RealisticDatasetCalibration/MANIFEST.md",
+        "corner_summary_csv": "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r53_20260616/corner_metrics_summary.csv",
+        "pairwise_json": "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/corner_geometry_validation_r53_20260616/r53_pairwise_corner_comparison.json"
       },
       "data_packages": {
-        "root": "Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/r53_realistic_dataset_calibration",
+        "root": "LabSystem_MOSR/Training_Data/r53_realistic_dataset_calibration",
         "formal_train_pairs": 6000,
         "held_out_validation_pairs": 1740,
         "train_mix": {
@@ -3870,7 +3870,7 @@
       "training": {
         "source": "scratch",
         "completed_epochs": 100,
-        "formal_run": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939",
+        "formal_run": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939",
         "batch_size": 16,
         "num_workers": 4,
         "psf_forward_loss": "disabled",
@@ -3878,8 +3878,8 @@
         "epoch100_val_total": 0.045247,
         "epoch100_psnr": 26.39,
         "epoch100_ssim": 0.9353,
-        "best_tradeoff_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/best_tradeoff.pth.tar",
-        "latest_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/latest.pth.tar"
+        "best_tradeoff_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/best_tradeoff.pth.tar",
+        "latest_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r53_realistic_calibrated_scratch_formal_b016_w04_nophys_e100_20260616_154939/weights/latest.pth.tar"
       },
       "real_corner_validation": {
         "frames_checked": 51,
@@ -3902,8 +3902,8 @@
       "external_gmf": {
         "status": "gmf_ready_image_folders_created_no_r53_score_text_present",
         "gmf_cases": [
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r53_realistic_best_tradeoff",
-          "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r53_realistic_latest"
+          "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r53_realistic_best_tradeoff",
+          "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r53_realistic_latest"
         ]
       },
       "notes": "R53 completed a more realistic, main-project-like Lab data mix and reached better internal validation at epoch 100, but the real Lab checkboard corner validation regressed. The latest checkpoint is especially unsafe on real corners; R53 is failure evidence, not a Lab baseline."
@@ -3911,18 +3911,18 @@
     {
       "candidate_id": "LabSystem_MOSR_R54_GeometryRootCauseProbe",
       "round": "LabSystem R54 geometry root-cause probe",
-      "experiment": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe",
+      "experiment": "LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe",
       "status": "completed_small_probe_real_checkboard_failed",
       "mainline_status": "lab_method_transfer_diagnostic_not_main_baseline_candidate",
       "goal": "Determine whether repeated Lab checkboard failures are caused by reconstruction geometry damage, generic data insufficiency, CAD GT reliability, or PSF-only mismatch before launching another long training run.",
       "reports": {
-        "diagnostic_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_DIAGNOSTIC.md",
-        "masked_small_probe_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_MASKED_SMALL_PROBE.md",
-        "checkboard_validation_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_CHECKBOARD_VALIDATION.md",
-        "diagnosis_json": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/root_cause_probe/r54_root_cause_diagnosis.json",
-        "selected_probe_pairs_csv": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/root_cause_probe/r54_small_overfit_probe_pairs.csv",
-        "masked_eval_summary_csv": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/masked_overfit_probe/r54_edgeband_eval_summary.csv",
-        "experiment_manifest_md": "Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/MANIFEST.md"
+        "diagnostic_md": "LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_DIAGNOSTIC.md",
+        "masked_small_probe_md": "LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_MASKED_SMALL_PROBE.md",
+        "checkboard_validation_md": "LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/reports/R54_CHECKBOARD_VALIDATION.md",
+        "diagnosis_json": "LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/root_cause_probe/r54_root_cause_diagnosis.json",
+        "selected_probe_pairs_csv": "LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/root_cause_probe/r54_small_overfit_probe_pairs.csv",
+        "masked_eval_summary_csv": "LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/results/masked_overfit_probe/r54_edgeband_eval_summary.csv",
+        "experiment_manifest_md": "LabSystem_MOSR/Experiments/R54_GeometryRootCauseProbe/MANIFEST.md"
       },
       "corner_damage_diagnosis": {
         "raw_input_pct_peak_shift_gt_5px": 1.676,
@@ -3934,7 +3934,7 @@
         "verdict": "RECONSTRUCTION_ITSELF_DAMAGES_REAL_CHECKBOARD_CORNERS"
       },
       "cad_reference_diagnosis": {
-        "source": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20260613_checkboard_cad_reference_strict_rect",
+        "source": "LabSystem_MOSR/Reconstruct_Progress/20260613_checkboard_cad_reference_strict_rect",
         "valid_pair_count": 36,
         "high_quality_probe_pair_count": 36,
         "median_reliable_mask_coverage": 0.0161,
@@ -3944,9 +3944,9 @@
       },
       "masked_small_overfit_probe": {
         "status": "passed_on_masked_cad_package_only",
-        "source_checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/best_tradeoff.pth.tar",
-        "run_dir": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650",
-        "checkpoint": "Thesis_MOSR_Evidence/LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650/epoch_020.pth.tar",
+        "source_checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r40_micro_capacity_combo_20260609_185153/weights/best_tradeoff.pth.tar",
+        "run_dir": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650",
+        "checkpoint": "LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r54_masked_overfit_from_r40_edgeband_e020_20260616_224650/epoch_020.pth.tar",
         "epochs": 20,
         "pairs": 72,
         "input_inside_mae_to_label": 61.145,
@@ -3971,7 +3971,7 @@
       },
       "external_gmf": {
         "status": "gmf_ready_image_folder_created_no_r54_score_text_present",
-        "gmf_case": "Thesis_MOSR_Evidence/LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r54_edgeband_epoch020"
+        "gmf_case": "LabSystem_MOSR/Reconstruct_Progress/20250605_checkboard_external_gmf_prepare/gmf_cases/lab_r54_edgeband_epoch020"
       },
       "next_gate": {
         "status": "do_not_continue_from_r54_edgeband_as_training_candidate",
@@ -4069,7 +4069,7 @@
       "candidate_id": "Round31",
       "status": "closed_follow_up",
       "verdict": "external_regression",
-      "report_md": "Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md"
+      "report_md": "Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md"
     },
     {
       "candidate_id": "Round32",
@@ -4106,7 +4106,7 @@
       "candidate_id": "TTA C2",
       "status": "falsified",
       "verdict": "0p8_main_battlefield_regression",
-      "report_md": "Traing_Progress/organized_20260316/tta_experiment/r26_tta_cross5/reports/TTA_VS_BASELINE_CROSS5_COMPARISON.md"
+      "report_md": "Experiments/Legacy/organized_20260316/tta_experiment/r26_tta_cross5/reports/TTA_VS_BASELINE_CROSS5_COMPARISON.md"
     }
   ],
   "measurement_policy": {
@@ -4198,17 +4198,17 @@
       }
     },
     "legacy": {
-      "phase2_reevaluation_json": "Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_REEVALUATION_20260315_203359.json",
-      "phase2_reevaluation_md": "Traing_Progress/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_REEVALUATION_20260315_203359.md",
-      "round26_decision_md": "Traing_Progress/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_DECISION_20260316_191450.md",
-      "round29_decision_md": "Traing_Progress/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_DECISION_20260317_124715.md",
-      "round30_decision_md": "Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md",
-      "round30_external_compare_md": "Traing_Progress/organized_20260316/round30/selected/reports/ROUND30_EXTERNAL_COMPARE.md",
-      "round31_decision_md": "Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md",
-      "round31_external_compare_md": "Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md",
+      "phase2_reevaluation_json": "Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_REEVALUATION_20260315_203359.json",
+      "phase2_reevaluation_md": "Experiments/Legacy/organized_20260315/branch_e_followup/selected/reports/BRANCH_E_PHASE2_REEVALUATION_20260315_203359.md",
+      "round26_decision_md": "Experiments/Legacy/organized_20260316/round26/selected/reports/ROUND26_STEP_RECOVERY_DECISION_20260316_191450.md",
+      "round29_decision_md": "Experiments/Legacy/organized_20260316/round29/selected/reports/ROUND29_STEP_MAG_UPPER_DECISION_20260317_124715.md",
+      "round30_decision_md": "Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_ARCH_BREAKTHROUGH_DECISION_20260318_003739.md",
+      "round30_external_compare_md": "Experiments/Legacy/organized_20260316/round30/selected/reports/ROUND30_EXTERNAL_COMPARE.md",
+      "round31_decision_md": "Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md",
+      "round31_external_compare_md": "Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md",
       "round32_external_compare_md": "Experiments/R32Sandbox/reports/ROUND32_EXTERNAL_COMPARE.md",
-      "tta_report_md": "Traing_Progress/organized_20260316/tta_experiment/r26_tta_cross5/reports/TTA_VS_BASELINE_CROSS5_COMPARISON.md",
-      "correlation_report_md": "Traing_Progress/organized_20260316/analysis/INTERNAL_EXTERNAL_CORRELATION.md"
+      "tta_report_md": "Experiments/Legacy/organized_20260316/tta_experiment/r26_tta_cross5/reports/TTA_VS_BASELINE_CROSS5_COMPARISON.md",
+      "correlation_report_md": "Experiments/Legacy/organized_20260316/analysis/INTERNAL_EXTERNAL_CORRELATION.md"
     }
   },
   "notes": [

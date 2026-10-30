@@ -214,7 +214,7 @@ See `PROJECT_STATE.md` for full current state and working rules.
 
 ### M4 — docs/evidence/ 放寬同步規則
 
-**不刪除任何 mirror 檔。** 保留 20 份 mirror 的理由是提供「穩定引用錨點」—— canonical source 在 `Traing_Progress/organized_*/` 這層不建議直接編輯的歷史面下。
+**不刪除任何 mirror 檔。** 保留 20 份 mirror 的理由是提供「穩定引用錨點」—— canonical source 在 `Experiments/Legacy/organized_*/` 這層不建議直接編輯的歷史面下。
 
 **改動：**
 - `docs/operations/SOURCE_OF_TRUTH_POLICY.md` 新增一段：「`docs/evidence/*` 的 mirror 以 canonical 為準，不保證同步；mirror 僅供論文、對外報告的穩定引用錨點使用」

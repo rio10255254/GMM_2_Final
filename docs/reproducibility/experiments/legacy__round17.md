@@ -1,6 +1,6 @@
 # legacy/round17 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260313/round17/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260313/round17/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,12 +22,12 @@ STEPFIX各ec／af候選、步長要求、三尺度與固定模型原表及實際
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND17_STEPFIX Checkpoint Audit Summary](<../../../Traing_Progress/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_SUMMARY_20260313_130618.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_r17_af_stepmag_20260313_130618.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_r17_ec_balanced_20260313_130618.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_r17_ec_gradboost_20260313_130618.md>)
-- [原始報告：Universal Checkpoint Audit](<../../../Traing_Progress/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_r17_ec_stepmag_20260313_130618.md>)
-- [原始報告：ROUND17_STEPFIX Multiscale Summary](<../../../Traing_Progress/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_MULTISCALE_SUMMARY_20260313_130618.md>)
+- [原始報告：ROUND17_STEPFIX Checkpoint Audit Summary](<../../../Experiments/Legacy/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_SUMMARY_20260313_130618.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_r17_af_stepmag_20260313_130618.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_r17_ec_balanced_20260313_130618.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_r17_ec_gradboost_20260313_130618.md>)
+- [原始報告：Universal Checkpoint Audit](<../../../Experiments/Legacy/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_CHECKPOINT_AUDIT_r17_ec_stepmag_20260313_130618.md>)
+- [原始報告：ROUND17_STEPFIX Multiscale Summary](<../../../Experiments/Legacy/organized_20260313/round17/selected/reports/ROUND17_STEPFIX_MULTISCALE_SUMMARY_20260313_130618.md>)
 
 ## 重做與驗證範圍
 

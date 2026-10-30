@@ -20,7 +20,7 @@
 
 | 資料夾 | 被誰實際讀取 | 判斷 |
 |---|---|---|
-| `Experiments/`、`Model/`、`PSF_Fitting/`、`Training_Data/`、`Traing_Progress/`、`Thesis_MOSR_Evidence/`、`Shared_Sources/` | 上千個程式、設定、報告 | 不動 |
+| `Experiments/`、`Model/`、`PSF_Fitting/`、`Training_Data/`、`Experiments/Legacy/`、`Thesis_MOSR_Evidence/`、`Shared_Sources/` | 上千個程式、設定、報告 | 不動 |
 | `Analyses/20260702_100MG_displacement_analysis/`、`Analyses/20260704_20x_5x_analysis/` | R63～R140 約 30 輪的設定與腳本把它們當實拍序列輸入；論文證據區的審核腳本與測試 | 不動 |
 | `Analyses/Step_analysis_20260623/` | 論文證據區的製圖腳本、R139／R140 的儲存登記 | 不動 |
 | `Analyses/AnalysisLab/` | R33～R46 的守門腳本與論文消融分析直接匯入它的程式 | 不動 |
@@ -81,7 +81,7 @@
 ### A. 導覽層（不搬任何檔案）
 
 1. **研究時間線** `docs/research/TIMELINE.md`：R1～R153 加 LabSystem，八階段，每輪一列寫「做了什麼 → 結果」。**樣板已完成。**
-2. **每輪閱讀卡**：把各輪的 `FILE_GUIDE.md` 改寫成閱讀卡（在研究裡的位置、問什麼、怎麼做、結果、限制、資料怎麼拿、原始報告、檔案分工），原始 `README.md` 不動。**2026-10-26 全部完成**：主專案 R26NewPSFCheck、R32～R153、LabSystem 各輪，以及 `Traing_Progress/` 的 R1～R32 早期批次，倉庫裡已沒有舊格式的 FILE_GUIDE。早期批次的卡片較精簡，數字照原報告寫並註明出處。寫卡過程中發現並改正的錯誤（R18／R22 的外部比較結論、十七處「只在原電腦上」的誤寫、COMBO 與 a025 ONNX 的位置、SEM 九顆方向的更正）都已同步到時間線與本計畫。
+2. **每輪閱讀卡**：把各輪的 `FILE_GUIDE.md` 改寫成閱讀卡（在研究裡的位置、問什麼、怎麼做、結果、限制、資料怎麼拿、原始報告、檔案分工），原始 `README.md` 不動。**2026-10-26 全部完成**：主專案 R26NewPSFCheck、R32～R153、LabSystem 各輪，以及 `Experiments/Legacy/` 的 R1～R32 早期批次，倉庫裡已沒有舊格式的 FILE_GUIDE。早期批次的卡片較精簡，數字照原報告寫並註明出處。寫卡過程中發現並改正的錯誤（R18／R22 的外部比較結論、十七處「只在原電腦上」的誤寫、COMBO 與 a025 ONNX 的位置、SEM 九顆方向的更正）都已同步到時間線與本計畫。
 3. **根目錄 README 的資料夾地圖**：既然大部分資料夾不能搬，就在首頁把 26 個資料夾分成「研究本體／實拍分析／交付／工具與文件／封存」幾組，每個寫一句角色和「日常需不需要打開」。
 
 ### B. 文件層（搬動 `docs/` 內部，引用以腳本改寫並驗證）

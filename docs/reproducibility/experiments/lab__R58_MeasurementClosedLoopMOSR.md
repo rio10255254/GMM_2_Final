@@ -2,7 +2,7 @@
 
 [Lab逐輪必要來源與代表模型核對](<../round_source_reviews/LAB_SYSTEM_20261023.md>)
 
-[直接查看這一輪的檔案分工](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [LabSystem：校正、資料與專屬模型](../routes/lab.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -24,8 +24,8 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：R58 Automated Rounds Status](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/reports/r58_automated_rounds/R58_AUTOMATED_ROUNDS_STATUS.md>)
-- [原始報告：R58 Boundary Root-Cause Check](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/reports/r58_boundary_root_cause/R58_BOUNDARY_ROOT_CAUSE_20260622.md>)
+- [原始報告：R58 Automated Rounds Status](<../../../LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/reports/r58_automated_rounds/R58_AUTOMATED_ROUNDS_STATUS.md>)
+- [原始報告：R58 Boundary Root-Cause Check](<../../../LabSystem_MOSR/Experiments/R58_MeasurementClosedLoopMOSR/reports/r58_boundary_root_cause/R58_BOUNDARY_ROOT_CAUSE_20260622.md>)
 
 ## 重做與驗證範圍
 

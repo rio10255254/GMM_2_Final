@@ -21,6 +21,7 @@ TABLE_DIR = ASSET_ROOT / "tables"
 
 R61_DATASET = (
     ROOT
+    / ".."
     / "LabSystem_MOSR"
     / "Training_Data"
     / "r61_universal_boundary_generalization"
@@ -42,6 +43,7 @@ GMF_0P5UM = Path(str(PROJECT_ROOT / 'Analyses/Step_analysis_20260623/_curated_fi
 RAW_100MG = ROOT / "20260618_100MG" / "Image__2026-06-18__17-10-31.bmp"
 OLD_R57_100MG = (
     ROOT
+    / ".."
     / "LabSystem_MOSR"
     / "Reconstruct_Progress"
     / "20260618_100MG_user_recon"
@@ -57,8 +59,8 @@ NEW_R61_100MG = (
     / "Image__2026-06-18__17-10-31.bmp"
 )
 
-RAW_CD = ROOT / "LabSystem_MOSR" / "Reconstruct_Progress" / "20260618_100MG_user_recon" / "cd_measurement_20260624_corrected_69nm" / "raw_original" / "cd_measurement_per_feature.csv"
-OLD_R57_CD = ROOT / "LabSystem_MOSR" / "Reconstruct_Progress" / "20260618_100MG_user_recon" / "cd_measurement_20260621_r57_1_asym_cd_aligned_best_tradeoff" / "cd_measurement_per_feature.csv"
+RAW_CD = ROOT / ".." / "LabSystem_MOSR" / "Reconstruct_Progress" / "20260618_100MG_user_recon" / "cd_measurement_20260624_corrected_69nm" / "raw_original" / "cd_measurement_per_feature.csv"
+OLD_R57_CD = ROOT / ".." / "LabSystem_MOSR" / "Reconstruct_Progress" / "20260618_100MG_user_recon" / "cd_measurement_20260621_r57_1_asym_cd_aligned_best_tradeoff" / "cd_measurement_per_feature.csv"
 NEW_R61_CD = ASSET_ROOT / "cd_measurement_100mg_r61_v16" / "cd_measurement_per_feature.csv"
 SEM_CD = ROOT / ".tmp" / "sem_data" / "sem_cd_36_records.csv"
 SEM_CONTACT = ROOT / ".tmp" / "sem_data" / "sem_contact_sheet.png"

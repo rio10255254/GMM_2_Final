@@ -6,7 +6,7 @@
 
 2026-06-23 07:58，從r31／r28-pos75混合的a948起點出發，給邊界修正支路增加方向輸入，使用旋轉矩形保護v10資料。原命令是6輪、每輪最多80批、batch 4、裁切256；原設定包含學習率0.000002。這是短程接續，沒有從零訓練一個主專案R36。
 
-[原啟動與評估命令](LAB_R61_R36_ORIGINAL_COMMANDS.json)均有原成功退出紀錄；[當時啟動設定](LAB_R61_R36_ORIGINAL_LAUNCH_CONFIGURATION.json)保留真實資料與起點。原正式敘事在[Lab R61進度報告](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/R61_PROGRESS_20260623.md)。
+[原啟動與評估命令](LAB_R61_R36_ORIGINAL_COMMANDS.json)均有原成功退出紀錄；[當時啟動設定](LAB_R61_R36_ORIGINAL_LAUNCH_CONFIGURATION.json)保留真實資料與起點。原正式敘事在[Lab R61進度報告](../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/R61_PROGRESS_20260623.md)。
 
 v10是**7,496組**：800舊形狀、1,400 SEM答案錨點、1,200序列保護、4,096合成；固定分組為6,745訓練／751驗證。它不是後來v16的20,296組，也不能只把預設profile換成現在版本。分組重疊為零不等於同樣本SEM答案或反覆開發用評估已成獨立實拍證據。
 
@@ -16,9 +16,9 @@ v10是**7,496組**：800舊形狀、1,400 SEM答案錨點、1,200序列保護、
 
 | 原版本 | 平均輪廓距離（px） | 未通過分組 | 原完整表與判斷 |
 |---|---|---|---|
-| R8比較基準 | 0.4847606391073593 | 參考 | [完整原表](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/wide_96case_r60_vs_r8best_20260623/R8_best_tradeoff/diverse_phantom_validation_20260623_040536/boundary_metrics.csv>) |
-| R36 best | 0.483770348650675 | 橢圓、旋轉矩形 | [完整原表](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/boundary_metrics.csv>)／[原分組判斷](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/r36_best_vs_r8_gate.json>) |
-| R36 latest | 0.48373880068377023 | 0及0.5偏移、旋轉矩形 | [完整原表](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/boundary_metrics.csv>)／[原分組判斷](<../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/r36_latest_vs_r8_gate.json>) |
+| R8比較基準 | 0.4847606391073593 | 參考 | [完整原表](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/wide_96case_r60_vs_r8best_20260623/R8_best_tradeoff/diverse_phantom_validation_20260623_040536/boundary_metrics.csv>) |
+| R36 best | 0.483770348650675 | 橢圓、旋轉矩形 | [完整原表](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/boundary_metrics.csv>)／[原分組判斷](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_best_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/r36_best_vs_r8_gate.json>) |
+| R36 latest | 0.48373880068377023 | 0及0.5偏移、旋轉矩形 | [完整原表](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/diverse_phantom_validation_20260623_080230/boundary_metrics.csv>)／[原分組判斷](<../../../LabSystem_MOSR/Experiments/R61_BoundaryGeneralizationUniversal/reports/diverse_phantom_validation/r36_latest_from_a948_orientation_rotrect_v10_80b_wide96_matched_20260623/r36_latest_vs_r8_gate.json>) |
 
 每份CSV含2,304列，保留每案例的輸入／重建與物件讀值；不是2,304次獨立實驗。96個案例已用於這條開發線的反覆選擇，不能改稱新的相機重拍或未知樣本驗證。
 

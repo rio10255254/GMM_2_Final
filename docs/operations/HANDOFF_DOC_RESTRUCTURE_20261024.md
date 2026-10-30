@@ -75,7 +75,7 @@
 |---|---|---|
 | A 公司端環形 + 外部 GMF | 2026-03～05 | R1–R45、COMBO、R39R40 |
 | B 實拍樣品擴充與交付 | 約 2026-06～08 | Step、100MG、20×／5×、均華、主 R61 STEP 線、ONNX 交付 |
-| C 實驗室顯微系統 LabSystem | 2026-06～07（V42 沿用到 9 月） | `Thesis_MOSR_Evidence/LabSystem_MOSR/`：Lab R39–R62、V41／V42 |
+| C 實驗室顯微系統 LabSystem | 2026-06～07（V42 沿用到 9 月） | `LabSystem_MOSR/`：Lab R39–R62、V41／V42 |
 | D 9/3 PI 930 張重拍 | 2026-09～10 | R122 起的真實優先路線、R148v2 → R152、R153 十方法 |
 
 **推斷、待本機確認：**930 張是在哪台顯微鏡上拍的（文件沒有明說）；均華在研究中的確切角色（從檔案看是提供實拍、接收 ONNX 交付的外部方）；B 系統的期間界線。
@@ -112,7 +112,7 @@ GitHub 上的 git 歷史只有約 75 個提交，最早是 2026-04-14。**2026-0
 
 1. **不刪檔，不改寫原報告與當時的敘事。**只能加導讀，或搬動並留位置對照。
 2. **任何搬動都要有 `舊路徑 → 新路徑` 帳本**，舊位置留 README 指路，並用腳本改寫所有引用。改完跑連結檢查器與 `validate_project_structure.py`。
-3. **不動寫死路徑的區域：**`Experiments/`、`Model/`、`PSF_Fitting/`、`Training_Data/`、`Traing_Progress/`（拼字是歷史，不可改名）、`Thesis_MOSR_Evidence/`、日期型分析資料夾。
+3. **不動寫死路徑的區域：**`Experiments/`、`Model/`、`PSF_Fitting/`、`Training_Data/`、`Experiments/Legacy/`（當時是根目錄的 `Traing_Progress`，拼字是歷史，當時不改名；2026-10-28 重整才拆進 `Experiments/`）、`Thesis_MOSR_Evidence/`、日期型分析資料夾。
 4. **研究保存檔保留原始位元組**（PROJECT_ARCHITECTURE §6；`.gitattributes`）。修正第 4 節 #7 這類問題前必須問使用者。
 5. 遵守 `CLAUDE.md`／`AGENTS.md`、`docs/operations/SOURCE_OF_TRUTH_POLICY.md`、`docs/operations/QUIRKS.md`。各輪正式報告只在該輪 `reports/` 編輯。
 6. 不改 `ESTIMATOR_POLICY.json` 的身分；不啟動訓練或推論；不清 D／H 槽（除非使用者當次明確授權）。

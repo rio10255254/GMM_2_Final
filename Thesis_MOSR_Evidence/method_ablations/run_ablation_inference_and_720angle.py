@@ -35,10 +35,10 @@ RECON_OUT_ROOT = REPO_ROOT / "Thesis_MOSR_Evidence" / "method_ablations" / "_abl
 SEQ_OUT_ROOT = REPO_ROOT / "Thesis_MOSR_Evidence" / "method_ablations" / "_ablation_720angle"
 
 ABLATIONS = {
-    "NO_SEQ":  "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_SEQ_20260526_230916",
-    "NO_EQ":   "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_EQ_20260526_235037",
-    "NO_EDGE": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_EDGE_20260527_003614",
-    "NO_FREQ": "Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_FREQ_20260527_012452",
+    "NO_SEQ":  "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_SEQ_20260526_230916",
+    "NO_EQ":   "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_EQ_20260526_235037",
+    "NO_EDGE": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_EDGE_20260527_003614",
+    "NO_FREQ": "Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_FREQ_20260527_012452",
 }
 
 PITCHES = [

@@ -1,0 +1,93 @@
+{
+  "experiment": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720",
+  "input_manifest": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/inputs/input_manifest.csv",
+  "input_count": 126,
+  "input_dtype": "uint16",
+  "input_normalization": "uint16 / 65535",
+  "inference_support": "whole 512x512 crop; no tiling",
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX A6000",
+  "torch_version": "2.3.0+cu121",
+  "cuda_version": "12.1",
+  "opencv_version": "4.12.0",
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "pid": 32340,
+  "methods": [
+    {
+      "method": "base_unet",
+      "checkpoint": "LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/best_base_unet.pth.tar",
+      "checkpoint_sha256": "26c66852ef7030c6b0445e1892b1f6b304329dc759640fc5761b8c66e64e77d2",
+      "checkpoint_epoch": 12,
+      "parameter_count": 4010690,
+      "batch_size": 2,
+      "input_count": 126,
+      "output_directory": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/base_unet",
+      "inference_seconds_total": 3.9603654999591527,
+      "inference_seconds_per_image": 0.03143147222189804,
+      "wall_seconds": 13.678786399999808,
+      "deterministic_repeat_qa": {
+        "filenames": [
+          "50x_pillar__ref.png",
+          "50x_pillar__x_m1p00.png"
+        ],
+        "max_uint16_level_difference": 0,
+        "passed": true
+      },
+      "output_minimum": 0,
+      "output_maximum": 63455,
+      "maximum_clipped_low_fraction": 0.000133514404296875,
+      "maximum_clipped_high_fraction": 0.0
+    },
+    {
+      "method": "edsr",
+      "checkpoint": "LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/edsr/best_edsr.pth.tar",
+      "checkpoint_sha256": "584e97bc0578dfaa16dab5f1ac4450f2cb23b09d87f6ab20912807050dd0eedb",
+      "checkpoint_epoch": 15,
+      "parameter_count": 4070785,
+      "batch_size": 2,
+      "input_count": 126,
+      "output_directory": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/edsr",
+      "inference_seconds_total": 7.723558399993635,
+      "inference_seconds_per_image": 0.06129808253963202,
+      "wall_seconds": 15.7548397999999,
+      "deterministic_repeat_qa": {
+        "filenames": [
+          "50x_pillar__ref.png",
+          "50x_pillar__x_m1p00.png"
+        ],
+        "max_uint16_level_difference": 0,
+        "passed": true
+      },
+      "output_minimum": 550,
+      "output_maximum": 61764,
+      "maximum_clipped_low_fraction": 0.0,
+      "maximum_clipped_high_fraction": 0.0
+    },
+    {
+      "method": "nafnet",
+      "checkpoint": "LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/results/nafnet/best_nafnet.pth.tar",
+      "checkpoint_sha256": "3c14534f761a7c027a6bda2db92a14ca87e6818e16356d968d8eea12667e3c9e",
+      "checkpoint_epoch": 15,
+      "parameter_count": 4182141,
+      "batch_size": 2,
+      "input_count": 126,
+      "output_directory": "LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/nafnet",
+      "inference_seconds_total": 3.3163640999991912,
+      "inference_seconds_per_image": 0.02632034999999358,
+      "wall_seconds": 10.485815300002287,
+      "deterministic_repeat_qa": {
+        "filenames": [
+          "50x_pillar__ref.png",
+          "50x_pillar__x_m1p00.png"
+        ],
+        "max_uint16_level_difference": 0,
+        "passed": true
+      },
+      "output_minimum": 0,
+      "output_maximum": 65535,
+      "maximum_clipped_low_fraction": 0.000278472900390625,
+      "maximum_clipped_high_fraction": 0.021106719970703125
+    }
+  ]
+}

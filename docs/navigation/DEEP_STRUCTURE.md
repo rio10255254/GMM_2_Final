@@ -9,7 +9,7 @@
 | 目的 | 路線 |
 |---|---|
 | 找某一輪的設定、原報告與數表 | [研究分區](../reproducibility/EXPERIMENTS.md) → 該輪閱讀卡 → 「直接查看這一輪的檔案分工」 → 該輪FILE_GUIDE與原子資料夾 |
-| 找Lab的校正、資料與模型版本 | [Lab校正](../../Thesis_MOSR_Evidence/LabSystem_MOSR/psf_calibration/CONTENTS.md) → [資料形成](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Training_Data/CONTENTS.md) → [Lab各輪](../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/README.md) → [模型包版本](../../Deliverables/Standalone_Models/README.md) |
+| 找Lab的校正、資料與模型版本 | [Lab校正](../../LabSystem_MOSR/psf_calibration/CONTENTS.md) → [資料形成](../../LabSystem_MOSR/Training_Data/CONTENTS.md) → [Lab各輪](../../LabSystem_MOSR/Experiments/README.md) → [模型包版本](../../Deliverables/Standalone_Models/README.md) |
 | 找獨立使用包或舊論文交接 | [交付包分類](../../Deliverables/CONTENTS.md) → 包外內容導讀 → 原包；依用途再取得附件 |
 
 ## 優先釐清的深層區域

@@ -12,10 +12,11 @@ import torch.nn.functional as F
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
-DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260314" / "branch_e" / "benchmark"
+DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260314" / "branch_e" / "benchmark"
 DEFAULT_SEED_MANIFEST = (
     PROJECT_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Legacy"
     / "organized_20260313"
     / "round18"
     / "selected"

@@ -16,7 +16,6 @@ PROJECT = Path(str(PROJECT_ROOT))
 PACKAGE = PROJECT / "Deliverables" / "Company_Packages" / "MOSR_R61_ONNX"
 CHECKPOINT = (
     PROJECT
-    / "Thesis_MOSR_Evidence"
     / "LabSystem_MOSR"
     / "Traing_Progress"
     / "training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r61_motion_texture_stepguard_v16_dualgate_boundary_focus_full_e8_20260623_20260623_200020"

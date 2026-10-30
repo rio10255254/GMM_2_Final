@@ -6,11 +6,11 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 _RECON_ROOT = Path(
-    str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260316_190408')
+    str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/reconstruct_progress_best_tradeoff_in_Cropped_Output_20260316_190408')
 )
 
 _GMF_ROOT = Path(
-    str(PROJECT_ROOT / 'Traing_Progress/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw')
+    str(PROJECT_ROOT / 'Experiments/Legacy/organized_20260316/external_compare_r18_r22_r25_r26/r26_sm035/gmf_results/raw')
 )
 
 _INPUT_ROOT = Path(r"C:\Users\Rio\Downloads\NTU_ImageDataset")

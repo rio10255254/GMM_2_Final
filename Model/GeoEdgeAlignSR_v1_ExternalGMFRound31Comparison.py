@@ -18,9 +18,9 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-ROUND30_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260316" / "round30" / "gmf_results" / "raw"
-ROUND31_ROOT = PROJECT_ROOT / "Traing_Progress" / "organized_20260316" / "round31" / "gmf_results" / "raw"
-REPORT_DIR = PROJECT_ROOT / "Traing_Progress" / "organized_20260316" / "round31" / "selected" / "reports"
+ROUND30_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260316" / "round30" / "gmf_results" / "raw"
+ROUND31_ROOT = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260316" / "round31" / "gmf_results" / "raw"
+REPORT_DIR = PROJECT_ROOT / "Experiments" / "Legacy" / "organized_20260316" / "round31" / "selected" / "reports"
 SUMMARY_MD = REPORT_DIR / "ROUND31_EXTERNAL_COMPARE.md"
 SUMMARY_JSON = REPORT_DIR / "ROUND31_EXTERNAL_COMPARE.json"
 

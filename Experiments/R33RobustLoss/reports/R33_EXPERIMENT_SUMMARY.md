@@ -197,8 +197,8 @@ step_std 已大幅改善，但若未來需要更平滑的趨勢，可以考慮�
 
 | Candidate | Path |
 |-----------|------|
-| p90 | `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906/weights/best_tradeoff.pth.tar` |
-| **p95 (winner)** | `Traing_Progress/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar` |
+| p90 | `Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_073906/weights/best_tradeoff.pth.tar` |
+| **p95 (winner)** | `Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260405_091941/weights/best_tradeoff.pth.tar` |
 
 ## Reconstruction Outputs (for external GMF)
 

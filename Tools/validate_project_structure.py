@@ -10,6 +10,9 @@ Checks:
 6. Legacy governance surfaces exist and stay whitelisted
 7. Truth-plane docs and ESTIMATOR_POLICY schema stay aligned
 
+Experiments/Legacy (early organized_* batches) and Experiments/Training_Runs (one training_progress_*
+folder per run) are not rounds: each needs only its README and one line in INDEX.md.
+
 Run: python Tools/validate_project_structure.py
 """
 from __future__ import annotations
@@ -124,11 +127,18 @@ def warn(msg: str):
     print(f"  WARN:  {msg}")
 
 
+SHARED_EXPERIMENT_DIRS = ("Legacy", "Training_Runs")
+
+
 def check_experiment_dirs():
     print("=== Check 1: Experiment directories ===")
     exp_root = REPO / "Experiments"
     for d in sorted(exp_root.iterdir()):
-        if not d.is_dir() or d.name.startswith("."):
+        if not d.is_dir() or d.name.startswith(".") or d.name == "__pycache__":
+            continue
+        if d.name in SHARED_EXPERIMENT_DIRS:
+            if not (d / "README.md").exists():
+                error(f"Experiments/{d.name}/README.md is missing")
             continue
         if not (d / "README.md").exists():
             error(f"{d.name}/ missing README.md")
@@ -245,16 +255,16 @@ def check_legacy_governance():
     guide_text = guide.read_text(encoding="utf-8") if guide.exists() else ""
     tracked_targets: list[Path] = []
     for batch_name, surfaces in LEGACY_BATCH_SPECS.items():
-        legacy_root = REPO / "Traing_Progress" / batch_name
+        legacy_root = REPO / "Experiments" / "Legacy" / batch_name
         if not legacy_root.is_dir():
-            error(f"Legacy batch missing: Traing_Progress/{batch_name}")
+            error(f"Legacy batch missing: Experiments/Legacy/{batch_name}")
             continue
         batch_readme = legacy_root / "README.md"
         batch_manifest = legacy_root / "MANIFEST.md"
         if not batch_readme.exists():
-            error(f"Traing_Progress/{batch_name}/README.md is missing")
+            error(f"Experiments/Legacy/{batch_name}/README.md is missing")
         if not batch_manifest.exists():
-            error(f"Traing_Progress/{batch_name}/MANIFEST.md is missing")
+            error(f"Experiments/Legacy/{batch_name}/MANIFEST.md is missing")
         tracked_targets.extend([batch_readme, batch_manifest])
         if guide_text and batch_name not in guide_text:
             warn(f"LEGACY_ROUNDS_OPERATIONS.md does not mention batch {batch_name}")
@@ -262,14 +272,14 @@ def check_legacy_governance():
         for dirname in surfaces:
             surface = legacy_root / dirname
             if not surface.is_dir():
-                error(f"Legacy surface missing: Traing_Progress/{batch_name}/{dirname}")
+                error(f"Legacy surface missing: Experiments/Legacy/{batch_name}/{dirname}")
                 continue
             readme = surface / "README.md"
             manifest = surface / "MANIFEST.md"
             if not readme.exists():
-                error(f"Traing_Progress/{batch_name}/{dirname}/README.md is missing")
+                error(f"Experiments/Legacy/{batch_name}/{dirname}/README.md is missing")
             if not manifest.exists():
-                error(f"Traing_Progress/{batch_name}/{dirname}/MANIFEST.md is missing")
+                error(f"Experiments/Legacy/{batch_name}/{dirname}/MANIFEST.md is missing")
             tracked_targets.extend([readme, manifest])
             surface_name = Path(dirname).name
             if guide_text and surface_name not in guide_text:
@@ -287,12 +297,12 @@ def check_legacy_governance():
             error(f"Legacy governance file is ignored by git: {target.relative_to(REPO)}")
 
     blocked_targets = [
-        REPO / "Traing_Progress" / "organized_20260313" / "round18" / "external_validation" / "future_note" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260314" / "branch_e" / "archive" / "future_note" / "MANIFEST.md",
-        REPO / "Traing_Progress" / "organized_20260315" / "round22" / "selected" / "reports" / "extra" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round23" / "archive" / "future_note" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round31" / "archive" / "future_note" / "README.md",
-        REPO / "Traing_Progress" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260313" / "round18" / "external_validation" / "future_note" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260314" / "branch_e" / "archive" / "future_note" / "MANIFEST.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260315" / "round22" / "selected" / "reports" / "extra" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round23" / "archive" / "future_note" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round31" / "archive" / "future_note" / "README.md",
+        REPO / "Experiments" / "Legacy" / "organized_20260316" / "round30" / "gmf_results" / "raw" / "r30_b1_dironly" / "pitch8px" / "MANIFEST.md",
     ]
     for target in blocked_targets:
         result = subprocess.run(

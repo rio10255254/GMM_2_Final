@@ -1,6 +1,6 @@
 # R63：MOSR 的哪個設計真的有用
 
-[研究時間線](<../../docs/research/TIMELINE.md>) · [被拆解的 V42 流程](<../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>) · [下一輪 R64](<../R64_IsocontourDisplacementReanalysis_20260724/FILE_GUIDE.md>)
+[研究時間線](<../../docs/research/TIMELINE.md>) · [被拆解的 V42 流程](<../../LabSystem_MOSR/Experiments/V42_SoftLabelSNR/FILE_GUIDE.md>) · [下一輪 R64](<../R64_IsocontourDisplacementReanalysis_20260724/FILE_GUIDE.md>)
 
 **一句話：** 為了在論文裡說清楚 MOSR 的每個設計各負責什麼，2026-07-16 起做了一輪大型消融：16 個條件、各 2 個種子，共 32 次訓練、18,272 張重建，量測規則在看結果前就凍結。完整 MOSR 相對原圖的改善很穩（四組位移序列合併，九顆柱不一致量降 60.5%）；但拆到單一機制時，只有兩個站得住：**原圖位置錨定**是邊界安全裝置，**位移安全上採樣**讓不同柱子之間的位移更一致（約 14%）。其他幾何、位移損失大多不到預先設定的門檻。
 

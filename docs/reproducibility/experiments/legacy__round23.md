@@ -1,6 +1,6 @@
 # legacy/round23 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260316/round23/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260316/round23/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,16 +22,16 @@ R22之後的歷史候選
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND23_ANCHOR_CONSISTENCY AUDIT_0P8 Summary](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_SUMMARY_20260316_155229.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_r23_pac_w003_20260316_155229.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_r23_pac_w005_20260316_155229.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_r23_pac_w010_20260316_155229.md>)
-- [原始報告：ROUND23_ANCHOR_CONSISTENCY AUDIT_8P0 Summary](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_SUMMARY_20260316_155320.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_r23_pac_w003_20260316_155320.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_r23_pac_w005_20260316_155320.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_r23_pac_w010_20260316_155320.md>)
-- [原始報告：ROUND23_ANCHOR_CONSISTENCY Decision Memo](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_DECISION_20260316_155400.md>)
-- [原始報告：ROUND23_ANCHOR_CONSISTENCY Summary](<../../../Traing_Progress/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_SUMMARY_20260316_155229.md>)
+- [原始報告：ROUND23_ANCHOR_CONSISTENCY AUDIT_0P8 Summary](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_SUMMARY_20260316_155229.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_r23_pac_w003_20260316_155229.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_r23_pac_w005_20260316_155229.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_0P8_r23_pac_w010_20260316_155229.md>)
+- [原始報告：ROUND23_ANCHOR_CONSISTENCY AUDIT_8P0 Summary](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_SUMMARY_20260316_155320.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_r23_pac_w003_20260316_155320.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_r23_pac_w005_20260316_155320.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_AUDIT_8P0_r23_pac_w010_20260316_155320.md>)
+- [原始報告：ROUND23_ANCHOR_CONSISTENCY Decision Memo](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_DECISION_20260316_155400.md>)
+- [原始報告：ROUND23_ANCHOR_CONSISTENCY Summary](<../../../Experiments/Legacy/organized_20260316/round23/selected/reports/ROUND23_ANCHOR_CONSISTENCY_SUMMARY_20260316_155229.md>)
 
 ## 重做與驗證範圍
 

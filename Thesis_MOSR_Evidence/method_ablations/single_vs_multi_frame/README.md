@@ -74,7 +74,7 @@ python Thesis_MOSR_Evidence/method_ablations/single_vs_multi_frame/scripts/launc
 
 訓練輸出會落在:
 ```
-Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_SEQ_<timestamp>/
+Experiments/Training_Runs/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_NO_SEQ_<timestamp>/
 ```
 
 ## 啟動前的最後 sanity check
@@ -88,7 +88,7 @@ Traing_Progress/training_progress_GESR_v1_v5_ST0p8_SWP_r38v2_8px_gate_p95_ABLA_N
 
 ## 訓練完成後我會做的事
 
-1. 從 `Traing_Progress/training_progress_*_NO_SEQ_*/weights/best_tradeoff.pth.tar` 拿到 checkpoint
+1. 從 `Experiments/Training_Runs/training_progress_*_NO_SEQ_*/weights/best_tradeoff.pth.tar` 拿到 checkpoint
 2. 跑 external GMF 三尺度 recon(把 `Cropped_Output` 帶 BMP 過模型)
 3. 跑 σ̂+b 分解(直接加到 9 候選的 table 變 10)
 4. 跑 720-angle 分析(用 Analyses/AnalysisLab/r26/sequence 腳本,加新 candidate dir)

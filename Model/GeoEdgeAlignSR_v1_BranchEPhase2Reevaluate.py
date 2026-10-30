@@ -24,7 +24,8 @@ from GeoEdgeAlignSR_v1_PolicyAccess import load_estimator_policy
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PHASE2_REPORT_ROOT = (
     PROJECT_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Legacy"
     / "organized_20260315"
     / "branch_e_followup"
     / "selected"
@@ -32,7 +33,8 @@ PHASE2_REPORT_ROOT = (
 )
 BENCHMARK_ROOT = (
     PROJECT_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Legacy"
     / "organized_20260314"
     / "branch_e"
     / "benchmark"
@@ -40,7 +42,8 @@ BENCHMARK_ROOT = (
 POLICY_PATH = PROJECT_ROOT / "ESTIMATOR_POLICY.json"
 PHASE2_MANIFEST = (
     PROJECT_ROOT
-    / "Traing_Progress"
+    / "Experiments"
+    / "Legacy"
     / "organized_20260315"
     / "branch_e_followup"
     / "selected"

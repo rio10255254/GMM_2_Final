@@ -4,7 +4,7 @@
 
 ## 126張測試圖實際來自什麼
 
-原[輸入紀錄](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/inputs/input_manifest.json)登記的是**2張完整來源影像、6個裁切區域**。50倍同一張包含pillar、via、水平線及垂直線四個區域；20倍同一張提供pillar與via兩區。每區保存一張參照及20種數學平移，共126張；其中6張是參照裁切、120張經Lanczos平移。它們不是126次重新拍攝。
+原[輸入紀錄](../../../LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/inputs/input_manifest.json)登記的是**2張完整來源影像、6個裁切區域**。50倍同一張包含pillar、via、水平線及垂直線四個區域；20倍同一張提供pillar與via兩區。每區保存一張參照及20種數學平移，共126張；其中6張是參照裁切、120張經Lanczos平移。它們不是126次重新拍攝。
 
 完整來源是兩張2048×1536、8-bit影像，內容符合原紀錄的核對碼。衍生輸入採512×512、16-bit儲存，以保留插值後的灰階；這不代表相機新增了16-bit取像。原程式、原設計、原裁切與幾何紀錄均保留。
 
@@ -22,17 +22,17 @@
 | Compact NAFNet | 30輪時程中的最佳第15輪 | 與其訓練總輪數分開 |
 | Lab MOSR／V42 | 第120輪，PSF來自權重內部，外部錨定關閉 | 第10輪最佳權重與定位保護版本是另外的診斷，不能覆蓋這份第120輪結果 |
 
-原[模型輸出身分](MODEL_IDENTITIES.json)保留四份模型的完整核對碼，均能對應到本次完整來源清單。小型重做不執行模型，完整模型仍由原保存附件恢復；[原推論紀錄](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/learned_inference_manifest.json)與[MOSR原設定](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/mosr_inference_manifest.json)才是當時實際版本。
+原[模型輸出身分](MODEL_IDENTITIES.json)保留四份模型的完整核對碼，均能對應到本次完整來源清單。小型重做不執行模型，完整模型仍由原保存附件恢復；[原推論紀錄](../../../LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/learned_inference_manifest.json)與[MOSR原設定](../../../LabSystem_MOSR/Experiments/Subpixel_Translation_Equivariance_20260720/results/mosr_inference_manifest.json)才是當時實際版本。
 
 原主要表的中位誤差依序為Raw 0.00397、Base U-Net 0.00747、EDSR 0.00402、NAFNet 0.01544、MOSR 0.00954 pixel。MOSR沒有在這個完整平移範圍領先EDSR或Base U-Net；原診斷另外列出的0.1 pixel較有利子集，不能代替預先固定的主要結果。
 
 ## 七月平台比較與九月重拍是不同證據
 
-[現代模型的計算審查](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/calculation_audit/MOSR_RESULT_AUDIT_20260719.md)明記：當時評估表的位移參照是名義命令，沒有逐幀數值PI回授；30步依Raw相對名義運動的偏差排序，本身對Raw較有利。較早文字寫「PI回授」不能自動升格為已取得逐幀回授。後來[9月3日30趟原拍與位置紀錄](../../../Shared_Sources/PI_Repeatability_20260903/README.md)是另一批資料，不可依相同`frame_0000`名稱回填成7月那批的回授。
+[現代模型的計算審查](../../../LabSystem_MOSR/Experiments/Modern_Restoration_Benchmarks_20260719/evaluation/calculation_audit/MOSR_RESULT_AUDIT_20260719.md)明記：當時評估表的位移參照是名義命令，沒有逐幀數值PI回授；30步依Raw相對名義運動的偏差排序，本身對Raw較有利。較早文字寫「PI回授」不能自動升格為已取得逐幀回授。後來[9月3日30趟原拍與位置紀錄](../../../Shared_Sources/PI_Repeatability_20260903/README.md)是另一批資料，不可依相同`frame_0000`名稱回填成7月那批的回授。
 
 同一審查也分清實際部署與網路速度：原正式表MOSR整張推論約408ms，其餘方法用重疊切片；相同輸入方式下，MOSR並不比Base U-Net快。這兩張表都保留，不能只留下較有利的速度圖。20倍via尺寸改善也要保留明顯環狀振鈴；line沒有獨立SEM尺寸，不能延伸成絕對線寬準確度。
 
-[Base U-Net收尾報告](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/BASE_UNET_RETEST_SUMMARY_TW.md)與現代比較的CD統計及共同有效步母體不同，不能跨表混算排名。[模型／設定診斷](../../../Thesis_MOSR_Evidence/LabSystem_MOSR/Experiments/MOSR_CheckpointConfig_Diagnostic_20260724/diagnosis/DIAGNOSTIC_REPORT_zh-TW.md)的取樣相位解釋按當時診斷閱讀，不能把事後說明直接當成只改一個變因的因果證明。
+[Base U-Net收尾報告](../../../LabSystem_MOSR/Experiments/BaseUNet_Baseline_20260718/results_full_data_fixed_psf_tiled_e30/BASE_UNET_RETEST_SUMMARY_TW.md)與現代比較的CD統計及共同有效步母體不同，不能跨表混算排名。[模型／設定診斷](../../../LabSystem_MOSR/Experiments/MOSR_CheckpointConfig_Diagnostic_20260724/diagnosis/DIAGNOSTIC_REPORT_zh-TW.md)的取樣相位解釋按當時診斷閱讀，不能把事後說明直接當成只改一個變因的因果證明。
 
 ## 品質預覽也不能算成相機原圖
 

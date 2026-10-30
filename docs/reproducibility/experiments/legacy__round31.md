@@ -1,6 +1,6 @@
 # legacy/round31 研究與重做紀錄
 
-[直接查看這一輪的檔案分工](<../../../Traing_Progress/organized_20260316/round31/FILE_GUIDE.md>)
+[直接查看這一輪的檔案分工](<../../../Experiments/Legacy/organized_20260316/round31/FILE_GUIDE.md>)
 
 [全部實驗](../EXPERIMENTS.md) · [早期批次與歷史支線](../routes/early.md) · [現在保存到哪裡](../STATUS.md)
 
@@ -22,19 +22,19 @@
 
 下列是原始報告與歷史版本；較晚的收尾、因果審查與來源審查優先於早期進度文字。
 
-- [原始報告：ROUND31_B1_HYPERPARAM AUDIT_0P8 Summary](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_SUMMARY_20260318_113707.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_r31_edge_ratio_low_20260318_113707.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_r31_eq_combo_20260318_113707.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_r31_eq_prob_up_20260318_113707.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_r31_eq_weight_up_20260318_113707.md>)
-- [原始報告：ROUND31_B1_HYPERPARAM AUDIT_8P0 Summary](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_SUMMARY_20260318_113834.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_r31_edge_ratio_low_20260318_113834.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_r31_eq_combo_20260318_113834.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_r31_eq_prob_up_20260318_113834.md>)
-- [原始報告：Process Probe Audit](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_r31_eq_weight_up_20260318_113834.md>)
-- [原始報告：ROUND31_B1_HYPERPARAM Decision Memo](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md>)
-- [原始報告：ROUND31_B1_HYPERPARAM Summary](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_SUMMARY_20260318_113707.md>)
-- [原始報告：Round31 External GMF Compare: R30 B1 dironly vs R31 Candidates](<../../../Traing_Progress/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md>)
+- [原始報告：ROUND31_B1_HYPERPARAM AUDIT_0P8 Summary](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_SUMMARY_20260318_113707.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_r31_edge_ratio_low_20260318_113707.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_r31_eq_combo_20260318_113707.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_r31_eq_prob_up_20260318_113707.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_0P8_r31_eq_weight_up_20260318_113707.md>)
+- [原始報告：ROUND31_B1_HYPERPARAM AUDIT_8P0 Summary](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_SUMMARY_20260318_113834.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_r31_edge_ratio_low_20260318_113834.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_r31_eq_combo_20260318_113834.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_r31_eq_prob_up_20260318_113834.md>)
+- [原始報告：Process Probe Audit](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_AUDIT_8P0_r31_eq_weight_up_20260318_113834.md>)
+- [原始報告：ROUND31_B1_HYPERPARAM Decision Memo](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_DECISION_20260318_113938.md>)
+- [原始報告：ROUND31_B1_HYPERPARAM Summary](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_B1_HYPERPARAM_SUMMARY_20260318_113707.md>)
+- [原始報告：Round31 External GMF Compare: R30 B1 dironly vs R31 Candidates](<../../../Experiments/Legacy/organized_20260316/round31/selected/reports/ROUND31_EXTERNAL_COMPARE.md>)
 
 ## 重做與驗證範圍
 
