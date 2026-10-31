@@ -13,6 +13,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      # Some tracked paths run past Windows' 260-character limit (the longest is 465),
+      # so checkout fails with "Filename too long" unless git may use long paths.
+      - name: Allow long paths in git
+        run: git config --system core.longpaths true
+
       - name: Check out repository
         uses: actions/checkout@v5
 
