@@ -1,10 +1,28 @@
-# LabSystem_MOSR
+# 實驗室顯微鏡研究線（LabSystem）
 
-研究閱讀先看[Lab全線與原資料](../docs/reproducibility/lineage/LAB_SYSTEM.md)、[V42原歷程](../docs/reproducibility/lab_comparisons/V42_HISTORY.md)；主R輪次及目前R152／RAW論文另看[全研究沿革](../docs/reproducibility/lineage/README.md)。下方原啟動／bootstrap說明保留原日期，不作今日完整狀態。
+主專案一開始用的是合作廠商那邊的影像。後來研究換到實驗室自己的一台顯微鏡（Basler 相機加 20× 物鏡），光學條件不同，PSF 要重量、訓練資料要重做、模型也要重新驗證，所以另外開了這條線，自己的校正、資料和模型歷史都放在這裡。
 
-2026-10-22研究歷史補註：[Lab校正、資料基礎、R39／R40、R46至62、V41／V42及平行比較](../docs/reproducibility/lineage/LAB_SYSTEM.md)已有串聯入口。下方Current Scope保留建立時的狀態，不表示後來Lab停在R48。資料stage01至33是生成類型，不是33次獨立訓練；現在論文採用仍以PROJECT_STATE.md及R153交接為準。
+大致走過這幾步：
 
-2026-09-24 新控制程式的效果錄影（三支 MP4）在 [control_program_recordings_20260924](control_program_recordings_20260924/README.md)，影片本身在發布附件。
+1. 先量這台顯微鏡的 PSF（25 個位置），再照它生成 Lab 自己的訓練資料（stage01 到 33 是資料的**種類**，不是 33 次訓練）。
+2. 從主專案的 COMBO 出發，訓練 Lab 版的 R39、R40。
+3. 拿棋盤格實拍去量，發現模型會把直角磨圓。R46 到 R62 一路在處理角點、邊界和尺寸。
+4. 再做出 V41、V42。V42 是 R152 之前的論文模型。
+
+這裡的編號跟主專案各自獨立：Lab 的 R39 不是主專案的 R39，V42 也跟主專案的 R42 無關。論文現在用的是主專案的 R152，見[目前狀態](../PROJECT_STATE.md)。
+
+## 從哪裡開始讀
+
+| 我想… | 打開 |
+|---|---|
+| 一次看懂這條線從校正到 V42 的全貌 | [Lab 研究全線](../docs/reproducibility/lineage/LAB_SYSTEM.md) |
+| 看 V42 完整的來歷 | [V42 歷程](../docs/reproducibility/lab_comparisons/V42_HISTORY.md) |
+| 看 Lab 跟主專案各輪的前後關係 | [研究沿革](../docs/reproducibility/lineage/README.md) |
+| 看新控制程式跑起來的樣子 | [2026-09-24 的三支錄影](control_program_recordings_20260924/README.md)（影片在 Releases 附件） |
+
+下面是這個資料夾 2026-06 建立時寫的英文說明，只寫到 R48，保留原文當作當時的紀錄，不代表 Lab 停在 R48。
+
+## 建立時的說明（2026-06，英文原文）
 
 This area is the isolated MOSR line for the laboratory imaging system.
 

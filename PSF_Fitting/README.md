@@ -1,4 +1,14 @@
-# PSF_Fitting — 說明文件 / Documentation
+# 光學校正：量出顯微鏡怎麼糊（PSF_Fitting）
+
+顯微鏡拍一個極小的點，照片上會變成一小團糊，這團糊的形狀叫 PSF。整個研究的第一步就是把它量準：訓練資料要照它把清楚的圖弄糊，模型裡的物理層也要用它。量不準，後面全部跟著偏。
+
+這裡用 MATLAB 做三件事：先算出沒有像差時理論上的 PSF，再拿實拍照片把真實的像差擬合出來，最後用擬合結果還原實驗影像、跟電子顯微鏡（SEM）的答案對照，確認量得對不對。視野裡不同位置糊法不同，所以正式流程是整個視野（Whole-FOV）一起擬合。
+
+- 拍來校正的原始照片在 [Shared_Sources/PSF_Camera_Acquisitions](../Shared_Sources/PSF_Camera_Acquisitions/README.md)。
+- 實驗室那台顯微鏡的校正另外在 [LabSystem_MOSR/psf_calibration](../LabSystem_MOSR/README.md)。
+- 這個資料夾裡的光學資料怎麼保存、哪些在 Releases，見[保存審查](docs/PSF_GITHUB_PRESERVATION_AUDIT_20261021.md)。
+
+下面是完整的技術說明（中英對照）。
 
 ## 概覽 / Overview
 
