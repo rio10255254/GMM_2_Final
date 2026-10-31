@@ -60,8 +60,30 @@ def added_zip(tag):
     return f'{tag}.restructure-20261028.zip'
 
 
-def gh(args):
-    result = subprocess.run(['gh', *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+READ_TIMEOUT = 600
+WRITE_TIMEOUT = 3600
+READ_ATTEMPTS = 3
+
+
+def _is_read(args):
+    return (args[:2] == ['release', 'download'] or args[:2] == ['release', 'view']
+            or (args[:1] == ['api'] and '-X' not in args))
+
+
+def gh(args, runner=subprocess.run):
+    """Run gh with a timeout. A 2026-10-30 plan sat fifteen hours on one download that never answered,
+    so reads are retried; writes are not, because a repeated upload could meet its own half-finished
+    copy, and apply_one's rollback already handles a failed write."""
+    read = _is_read(args)
+    attempts = READ_ATTEMPTS if read else 1
+    for attempt in range(attempts):
+        try:
+            result = runner(['gh', *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                            timeout=READ_TIMEOUT if read else WRITE_TIMEOUT)
+            break
+        except subprocess.TimeoutExpired:
+            if attempt == attempts - 1:
+                raise RuntimeError('gh ' + ' '.join(args[:3]) + f' timed out {attempts} time(s)')
     if result.returncode:
         raise RuntimeError('gh ' + ' '.join(args[:3]) + ' failed: ' + result.stderr.decode('utf-8', 'replace')[-300:])
     return result.stdout.decode('utf-8')

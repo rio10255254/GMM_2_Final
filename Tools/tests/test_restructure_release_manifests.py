@@ -258,3 +258,38 @@ def test_test_git_ignores_a_git_dir_the_hook_environment_sets(tmp_path, monkeypa
     _git(tmp_path / 'r', 'init', '-q')
     assert (decoy / '.git' / 'config').read_bytes() == before
     assert (tmp_path / 'r' / '.git').is_dir()
+
+
+class _FakeRun:
+    """Stands in for subprocess.run: raises TimeoutExpired `timeouts` times, then succeeds."""
+
+    def __init__(self, timeouts):
+        self.timeouts = timeouts
+        self.calls = []
+
+    def __call__(self, cmd, **kwargs):
+        import subprocess
+        self.calls.append(kwargs.get('timeout'))
+        if len(self.calls) <= self.timeouts:
+            raise subprocess.TimeoutExpired(cmd, kwargs.get('timeout'))
+        return subprocess.CompletedProcess(cmd, 0, b'ok', b'')
+
+
+def test_gh_retries_a_download_that_hangs():
+    fake = _FakeRun(timeouts=2)
+    assert rm.gh(['release', 'download', 't', '--pattern', 'x'], runner=fake) == 'ok'
+    assert len(fake.calls) == 3 and all(fake.calls)
+
+
+def test_gh_gives_up_on_a_read_after_three_hangs():
+    fake = _FakeRun(timeouts=3)
+    with pytest.raises(RuntimeError, match='timed out'):
+        rm.gh(['api', 'repos/o/r/releases'], runner=fake)
+    assert len(fake.calls) == 3
+
+
+def test_gh_never_repeats_an_upload():
+    fake = _FakeRun(timeouts=1)
+    with pytest.raises(RuntimeError, match='timed out'):
+        rm.gh(['release', 'upload', 't', 'f'], runner=fake)
+    assert len(fake.calls) == 1 and fake.calls[0]
