@@ -1,23 +1,25 @@
 # 論文證據
 
-本區保存論文主張的來源、跨模型比較及較早草稿／補測。原本也在這裡的 LabSystem，2026-10-28 重整時移到根目錄 [LabSystem_MOSR](../LabSystem_MOSR/README.md)，內容沒有改。**目前論文採R152／RAW，最新交接在[R153原完整報告](../Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)**；不能用本區舊版v2章節設想取代目前論文。
+這裡放論文裡各項說法的來源、跨模型的比較，以及較早的草稿和補做的測試。
 
-## 從用途找
+**論文現在用的是 R152（MOSR）對照 RAW，最新的交接在 [R153 完整報告](../Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)。** 這個資料夾裡有一份較早的 v2 章節構想，那是當時的規劃，不是現在的論文。
 
-| 目的 | 入口 |
+原本放在這裡的實驗室顯微鏡研究線，2026-10-28 移到最上層的 [LabSystem_MOSR](../LabSystem_MOSR/README.md)，內容沒有改。
+
+## 照用途找
+
+| 我想找… | 打開 |
 |---|---|
-| 現在採用什麼、完整十方法結果與限制 | [R153論文交接](../Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)、[目前狀態](../PROJECT_STATE.md) |
-| Lab校正、訓練資料、R39／40至R62及V41／V42 | [Lab研究全線](../docs/reproducibility/lineage/LAB_SYSTEM.md)、[Lab原工作區](../LabSystem_MOSR/README.md) |
-| 模型設計、效果與未採用原因 | [2026-09-26原回顧](Research_Design_Effect_Review_20260926/README.md)，按原日期閱讀；[全研究沿革](../docs/reproducibility/lineage/README.md)含後續主R至153 |
-| 完整原數表、SEM、位移和重拍 | 先由[逐輪閱讀](../docs/reproducibility/EXPERIMENTS.md)找所屬報告；[來源與圖冊](../docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)分清原拍、答案及模型輸出 |
-| 原論文、修訂與可編輯圖 | [精選原稿及製圖來源](../docs/reproducibility/project_completion/curated/draft_cleanup_20261022/README.md)、[較早編輯歷史](../docs/reproducibility/project_completion/EDITOR_HISTORY.md) |
+| 現在用哪個模型、十種方法的完整結果和限制 | [R153 論文交接](../Experiments/R153_MeanExternalBenchmark/reports/FINAL_BENCHMARK_THESIS_HANDOFF/REPORT.md)、[目前狀態](../PROJECT_STATE.md) |
+| Lab 的校正、訓練資料、R39／40 到 R62、V41／V42 | [Lab 研究全線](../docs/reproducibility/lineage/LAB_SYSTEM.md)、[Lab 的資料夾](../LabSystem_MOSR/README.md) |
+| 模型怎麼設計、效果如何、為什麼沒採用 | [2026-09-26 的回顧](Research_Design_Effect_Review_20260926/README.md)（照當時的日期讀）；之後一直到 R153 的發展看[研究沿革](../docs/reproducibility/lineage/README.md) |
+| 完整的原始數表、SEM、位移和重拍 | 先從[逐輪閱讀](../docs/reproducibility/EXPERIMENTS.md)找到所屬的報告；[每批照片的來源與用途](../docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md)分清楚哪些是原拍、哪些是參考答案、哪些是模型輸出 |
+| 論文原稿、修訂版和可以編輯的圖 | [精選原稿與製圖來源](../docs/reproducibility/project_completion/curated/draft_cleanup_20261022/README.md)、[較早的編輯歷史](../docs/reproducibility/project_completion/EDITOR_HISTORY.md) |
 
-## 本區的原結構
+## 讀這裡的東西要注意
 
-原本在本區的`LabSystem_MOSR`（現在在根目錄）是具有自己校正、資料和模型歷史的工作區；Lab R39不等於主R39，V42不等於主R42。其他`Experiments`、日期型分析及章節證據，按其原報告與時間閱讀。
+- `visual_vs_metric_decoupling`、`error_type_transformation`、`method_ablations` 這些資料夾名稱，來自早期的章節構想。資料夾存在，不代表裡面的推論都驗證過了，實際做到哪裡要看各自的報告。
+- 這裡放論文證據；跨版本的分析工具在 `Analyses/AnalysisLab`；主專案每一輪的正式報告在 `Experiments`。
+- 讀數字時要連同它的來源一起看：用的是哪批原拍、有沒有用到 SEM 參考答案、訓練資料從哪來。重拍穩定不等於絕對準確；同一片樣品的答案，也不會自動變成獨立驗證。
 
-`visual_vs_metric_decoupling`、`error_type_transformation`、`method_ablations`等名稱來自早期章節／機制設想。資料夾存在不代表所有因果主張已驗證，完成範圍回各自報告，不能把設想寫成已完成證明。
-
-本區服務論文證據，`Analyses/AnalysisLab`服務跨版本分析工具，主`Experiments`保留主R輪次的正式報告。原相機、SEM答案與訓練來源依賴須連同數據一起讀；重拍穩定不等於絕對準確，同樣本答案也不自動成為獨立驗證。
-
-[本次整理前的原首頁與章節敘事](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/Thesis_MOSR_Evidence/README.md)保留原文，原稿、圖、研究程式和結果沒有因首頁整理而搬動或改寫。
+[2026-10-22 整理前的首頁與章節敘事](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/Thesis_MOSR_Evidence/README.md)保留原文。整理說明文字時，原稿、圖、研究程式和結果都沒有搬動或改寫。
