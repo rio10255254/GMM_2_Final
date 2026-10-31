@@ -2,33 +2,35 @@
 
 [專案首頁](../README.md) · [資料夾地圖](navigation/PROJECT_MAP.md)
 
-## 文件分工：每份文件只做一件事
+## 每份文件只回答一個問題
 
-| 文件 | 回答的問題 | 變動頻率 |
+| 文件 | 回答什麼 | 多久會改 |
 |---|---|---|
-| [README.md](../README.md) | 這是什麼？結論？去哪找？ | 很少 |
-| [PROJECT_ARCHITECTURE.md](../PROJECT_ARCHITECTURE.md) | 系統怎麼設計？怎麼判斷好壞？何時能升級？ | 規則改變時 |
-| [PROJECT_STATE.md](../PROJECT_STATE.md) | **現在**用哪個模型？結果？缺什麼？ | 每次有新結論 |
-| [ESTIMATOR_POLICY.json](../ESTIMATOR_POLICY.json) | 機器可讀的正式身分與數字（**最高權威**） | 升級／新結論時 |
-| [Experiments/INDEX.md](../Experiments/INDEX.md) | 每個實驗的狀態一覽 | 每輪完成時 |
-| [reproducibility/EXPERIMENTS.md](reproducibility/EXPERIMENTS.md) | 研究怎麼一路走到現在？某階段看哪裡？ | 很少 |
+| [README.md](../README.md) | 這是什麼研究？結果如何？東西在哪？ | 很少 |
+| [PROJECT_ARCHITECTURE.md](../PROJECT_ARCHITECTURE.md) | 系統怎麼設計？怎麼判斷模型好不好？什麼時候可以換正式模型？ | 規則改的時候 |
+| [PROJECT_STATE.md](../PROJECT_STATE.md) | **現在**用哪個模型？結果？還缺什麼？ | 每次有新結論 |
+| [ESTIMATOR_POLICY.json](../ESTIMATOR_POLICY.json) | 正式模型身分和數字，給程式讀的版本（**最權威**） | 換模型或有新結論時 |
+| [Experiments/INDEX.md](../Experiments/INDEX.md) | 每一輪實驗的狀態一覽 | 每輪做完時 |
+| [reproducibility/EXPERIMENTS.md](reproducibility/EXPERIMENTS.md) | 研究怎麼一路走到現在？某個階段去哪看？ | 很少 |
 | [navigation/PROJECT_MAP.md](navigation/PROJECT_MAP.md) | 這個資料夾放什麼？ | 很少 |
-| 各輪 `Experiments/R##/reports/` | 該輪的**正式**結論（唯一可編輯處） | 該輪期間 |
+| 各輪的 `Experiments/R##/reports/` | 那一輪的**正式**結論，要改只能改這裡 | 那一輪進行中 |
 
-衝突時的優先順序：**各輪正式報告 ＞ ESTIMATOR_POLICY.json ＞ PROJECT_STATE.md ＞ 其他入口頁**。`docs/evidence/` 等副本可能落後，不能覆蓋原報告。
+幾份文件說法不一致時，照這個順序相信：**各輪正式報告 ＞ ESTIMATOR_POLICY.json ＞ PROJECT_STATE.md ＞ 其他入口頁**。`docs/evidence/` 裡的是為了方便引用而複製的副本，可能比原報告舊，有出入時以原報告為準。
 
-## docs/ 底下
+## docs/ 底下有什麼
 
-| 子資料夾 | 內容 |
+| 資料夾 | 裡面是什麼 |
 |---|---|
-| `reproducibility/` | 研究閱讀與保存：逐輪閱讀卡、沿革、資料取得、缺件、各次保存收據。保存收據只證明當時範圍，**日常可略過** |
-| `operations/` | 維護規則：新實驗指南、正本規則、已知怪癖、儲存與封存 |
+| `reproducibility/` | 讀懂和重做研究：逐輪閱讀卡、研究沿革、怎麼取得資料、缺了什麼、每次保存資料的收據。收據只證明當時保存了哪些，**平常不用看** |
+| `operations/` | 維護規則：開新實驗、哪份才是正本、特殊的路徑、儲存與封存 |
 | `navigation/` | 資料夾地圖與深層目錄導讀 |
-| `policy/` | PSF 標準等專項政策 |
-| `evidence/`、`analysis/` | 穩定引用副本與跨輪分析 |
-| `history/` | 被取代的舊敘事與整理前版本（唯讀） |
-| `archive/` | 固定快照，如 `docs/archive/legacy_runtime_status/`（較早的程序狀態，不取代 PROJECT_STATE） |
-| `superpowers/`、`runtime/`、`presentations_assets/` | 工具產物與簡報素材 |
+| `research/` | 研究時間軸 |
+| `policy/` | PSF 標準這類專門規定 |
+| `evidence/`、`analysis/` | 方便引用的報告副本、跨輪分析 |
+| `history/` | 被新版取代的舊說明，只讀不改 |
+| `archive/` | 固定的舊快照，例如較早的執行狀態（`docs/archive/legacy_runtime_status/`）；不代表現在的狀態 |
+| `superpowers/` | 資料夾整理這類大工程的設計書和執行計畫 |
+| `runtime/`、`presentations_assets/` | 程式留下的舊狀態檔、簡報素材 |
 
 ## 名詞表
 

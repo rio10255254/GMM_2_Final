@@ -1,8 +1,17 @@
-# Model — 說明文件 / Documentation
+# 第一代共用模型（GeoEdgeAlignSR）
 
-## 先確認使用哪條研究線（2026-10-22）
+這裡是專案前半段大家共用的那個模型：訓練、還原（推論）、自動調參的程式都在這。廠商端現在的正式模型 COMBO 就是從這裡訓練出來的。
 
-本頁下方介紹共享GeoEdgeAlignSR主線，不能當成R87之後所有獨立架構的通用訓練入口。[目前模型身分](../PROJECT_STATE.md)區分COMBO正式基準與R152／RAW論文；要找固定檔案用[模型指南](../docs/reproducibility/MODEL_GUIDE.md)，要生成資料用[各輪來源方法](../docs/reproducibility/GENERATION_GUIDE.md)。R94等自包含架構與R152依所屬實驗／交付包使用。
+**先確認你要的是不是這個。**
+
+- 論文用的 R152（MOSR），以及 R87 以後很多從零設計的模型，都有自己的程式，放在各自的實驗資料夾或交付包裡，不是用這裡的程式訓練的。
+- 哪個模型是現在的正式身分，看[目前狀態](../PROJECT_STATE.md)。
+- 要找某個存好的模型檔，看[模型指南](../docs/reproducibility/MODEL_GUIDE.md)。
+- 要生成訓練資料，看[各輪的生成方法](../docs/reproducibility/GENERATION_GUIDE.md)。
+
+用這裡的程式訓練，每次的權重和紀錄會寫到 `Experiments/Training_Runs/training_progress_<模型名>_<時間>/`。
+
+下面是這個模型的技術說明。
 
 ## 概覽
 
@@ -36,14 +45,14 @@ Model/
 **與本資料夾並列的相關路徑（程式以相對路徑存取）：**
 
 ```
-d:\GMM_2_Final\
+專案根目錄/
 ├── Model/                        ← 本資料夾
 ├── Training_Data/                ← 訓練資料（src / label）
 │   ├── tra_src_ring/             ← 輸入影像（量測圖）
 │   └── tra_lbl_ring/             ← 目標影像（Ground Truth）
 ├── PSF_Fitting/                  ← PSF 擬合結果（供模型讀取）
 │   └── Crop_circle_FreqFiltered/Fits/PSF_fitted_2D_FOVstack.mat
-├── Experiments/Legacy/              ← 訓練輸出（checkpoint、log、圖表）
+├── Experiments/Training_Runs/       ← 訓練輸出（checkpoint、log、圖表）
 │   └── training_progress_{MODEL}_{timestamp}/
 │       └── weights/
 │           ├── best_tradeoff.pth.tar
@@ -53,7 +62,7 @@ d:\GMM_2_Final\
     └── reconstruct_progress_{timestamp}/
 ```
 
-> **注意：** `Experiments/Legacy/` 資料夾名稱有拼寫錯誤（少一個 i），為歷史遺留，勿更名以免程式找不到路徑。
+> **注意：** 訓練輸出原本寫到最上層的 `Traing_Progress/`（少一個 i 是當年的拼字），2026-10-28 整理時改到 `Experiments/Training_Runs/`，訓練程式的預設位置也跟著改了。舊的 log 和報告裡還會看到 `Traing_Progress`，那是當時的路徑。
 
 ---
 

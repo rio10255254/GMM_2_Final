@@ -62,7 +62,7 @@ Short result:
 
 Run folder:
 
-- `Experiments/Training_Runs/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_motion_v4_v4_selfshift_short_e2_b200_20260705_20260705_225038`
+- `Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_motion_v4_v4_selfshift_short_e2_b200_20260705_20260705_225038`
 
 ### V5 adapter-guard candidate
 
@@ -83,7 +83,7 @@ Short result:
 
 Run folder:
 
-- `Experiments/Training_Runs/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_adapterguard_v5_v5_adapterguard_short_e2_b200_20260705_20260705_225547`
+- `Traing_Progress/training_progress_LAB_GESR_v1_v5_ST0p8_SWP_r62_target_selfshift_adapterguard_v5_v5_adapterguard_short_e2_b200_20260705_20260705_225547`
 
 ## Verification done
 

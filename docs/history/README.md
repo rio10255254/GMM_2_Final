@@ -1,15 +1,17 @@
-# 研究歷史與舊說明
+# 舊說明與研究歷史
 
-這裡保存長期敘事、原設計和舊版閱讀位置。現在的採用模型與研究進度回[目前狀態](../../PROJECT_STATE.md)，各輪結論回正式原報告；不要把早期提案、執行中標記或舊README當成今日狀態。
+這裡放被新版取代的說明、早期的長篇研究敘事和當初的設計，只讀不改。想知道現在用哪個模型、研究做到哪，請看[目前狀態](../../PROJECT_STATE.md)；每一輪的結論看那一輪的正式報告。這裡的早期提案、「執行中」標記和舊 README，都是當時的樣子，不代表今天的狀態。
 
-| 想找什麼 | 入口 |
+| 想找什麼 | 打開 |
 |---|---|
-| R1至R153及Lab的前後關係 | [最新沿革](../reproducibility/lineage/README.md) |
-| 早期完整研究敘事 | [原長期歷史](PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md)；正文與前言各按原日期閱讀 |
-| 被目前簡明首頁取代的原介紹 | [2026-10-22整理前首頁](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/README.md) |
-| 原論文證據區的章節設想 | [整理前論文證據首頁](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/Thesis_MOSR_Evidence/README.md)；不是目前R153交接 |
-| 保存過程的完整舊流水紀錄 | [整理前保存首頁](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/docs/reproducibility/project_completion/README.md)；目前看[分日期收據入口](../reproducibility/project_completion/README.md) |
-| 2026-10-24 白話改寫前的首頁、狀態、架構、導航與實驗索引原文 | [逐位元組原文](BEFORE_PLAIN_REWRITE_20261024/README.md) |
-| 舊根層狀態、決策與圖 | [小型歷史封存](../archive/README.md)、原輪次與Traing_Progress |
+| R1 到 R153 和 Lab 各輪的前後關係 | [研究沿革](../reproducibility/lineage/README.md) |
+| 早期完整的研究敘事 | [長期歷史與策略（2026-03-12）](PROJECT_FULL_HISTORY_AND_STRATEGY_20260312.md)，正文和前言照各自的日期讀 |
+| 2026-10-22 整理前的首頁 | [當時的 README](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/README.md) |
+| 論文證據區原本的章節構想 | [當時的論文證據首頁](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/Thesis_MOSR_Evidence/README.md)，不是現在的 R153 交接 |
+| 保存資料過程的完整舊紀錄 | [當時的保存首頁](https://github.com/rio10255254/GMM_2_Final/blob/1b1cbdf3804df53f0e3c853b8dcf57e7471c6520/docs/reproducibility/project_completion/README.md)；現在的版本是[分日期的收據入口](../reproducibility/project_completion/README.md) |
+| 2026-10-24 白話改寫前的首頁、狀態、架構、導覽和實驗索引 | [逐位元組的原文](BEFORE_PLAIN_REWRITE_20261024/README.md) |
+| 2026-10-31 再次改寫前的首頁與各資料夾說明 | [改寫前的 commit](https://github.com/rio10255254/GMM_2_Final/tree/957fe6285840762ef2491d7d3b26a1539caf4e46) |
+| Releases 改寫前的標題與說明（記著當時核對過什麼） | [33 份原文](RELEASE_NOTES_BEFORE_20261031/README.md) |
+| 早期最上層的狀態檔、決策和圖 | [小型歷史封存](../archive/README.md)、各輪原資料夾、[Experiments/Legacy](../../Experiments/Legacy/README.md)（原本的 `Traing_Progress`） |
 
-本次只重寫會被當成目前入口的說明，原內容仍留在上表的固定GitHub歷史。原報告、程式、數字、圖、原稿和固定收據不因閱讀整理而改成新版本結論。
+每次改寫都只動「會被當成入口」的說明，原本的內容留在上表的固定版本裡。原報告、程式、數字、圖、論文原稿和收據，不會因為整理說明文字而改成新版的結論。
