@@ -234,6 +234,13 @@
 - 人工提示可以給一個運算式（例如 `train_mod.PROJECT_ROOT`）指定路徑，不只限變數名。
 - 人工判斷可以只針對某一個檔，同一個寫法在不同檔可以判成不同去處；往上爬的寫法也能被判斷保留。
 
+**2026-10-31 補修：兩份文件裡指的是自己包裡的資料夾。** 準備第 5 階段時，把第 2 到第 4 階段的 11.2 萬處改寫逐一對回 git 與本機清單，找到 4 處真的改錯：
+
+- R26 打包備份裡那份 `Model/README.md` 的副本（第 41、51 行）：它的 `Traing_Progress/` 指的是包裡自己的 `內部檔案/Traing_Progress/`。
+- LabSystem 的 R62 報告（第 65、86 行）：它指的是 LabSystem 自己的訓練紀錄 `LabSystem_MOSR/Traing_Progress/training_progress_LAB_GESR_*`，根目錄從來沒有。
+
+搬家規則把這幾行改成 `Experiments/Legacy`、`Experiments/Training_Runs`。`manual_phase4_inner_folders.py` 把它們從第 1 階段前的 commit 改回原文，兩個檔的新 sha256 也帶進 `hash_changes_phase4.json` 和三份目錄檔（`REPOSITORY_FILES.json.gz`、`SOURCE_AVAILABILITY.json.gz`、`CURATED_FILE_MAP.json.gz`）。腳本重跑不會再改任何東西。其餘疑似的地方（142 處 `py:join`、`.history` 與 `FILE_GUIDE` 裡的命中）逐一看過，都是誤報。
+
 ### 只在本機的控制程式錄影上傳（2026-10-30）
 
 專案根目錄有三支 2026-09-24 的控制程式效果錄影（MP4，共 124.9 MB），原本只在原電腦上。專案擁有者看過檔名與大小後同意上傳。
