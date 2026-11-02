@@ -23,6 +23,7 @@
 | `manual_phaseN_*.py` | `apply` 之後的人工修正，寫成可以重跑的程式：每一處都要原文完全相符才改 |
 | `hash_changes_phaseN.json` | 各階段改寫後雜湊的變動（舊 sha → 新 sha），第 5 階段替換 Release 清單時用 |
 | `verify_phaseN.txt` | 各階段驗證的結果 |
+| `releases_phase5.json` | 第 5 階段每個 Release 的處理：換掉的原清單（改名後的名稱與 sha256）、新上傳的檔與 sha256、取回抽樣的結果 |
 
 ## 工具
 
@@ -250,3 +251,47 @@
 - 本機原檔沒有刪。
 
 **repo 是公開的。** 上傳工具原本只准傳到私人 repo，這次被擋下。專案擁有者確認是自己公開的，所有資料（含發布附件）都已授權公開。`publish_research_assets.py`、`publish_research_batch.py` 改成公開 repo 要加 `--public-ok` 才放行：公開 repo 的附件也是公開的，所以仍要明確表示。
+
+### 第 5 階段：Release 清單跟著新路徑（2026-11-01 到 11-02）
+
+**動了哪些 Release。** 33 個裡動了 14 個，逐一記在 `releases_phase5.json`：
+
+- 10 個沒有路徑清單，只按附件編目，不受搬家影響，沒碰。
+- 9 個有清單，但沒有任何路徑在搬移範圍內，也沒有 git 改寫過的內容，沒碰。
+- 14 個換了清單。設計時估 11 個；多出來的 `r94-complete-record`、`r95-complete-record`、`research-psf-camera-acquisitions` 路徑一條都沒變，但裡面有檔在 git 裡被前幾階段改寫過，要補傳改寫後的版本，清單才指得到。
+
+14 個合計 393,379 條路徑，其中 210,424 條換到新位置；399 筆紀錄改指向補傳的內容，共補傳 395 個物件。路徑最多的是 `research-project-context`，換了 151,537 條。
+
+**每個 Release 怎麼換。** 照設計的做法，`Tools/restructure_release_manifests.py` 的 `apply` 一次處理一個：
+
+- `RESEARCH_ASSETS.json.gz`、`BUNDLE_SUMMARY.json`、`SHA256SUMS.txt` 改名成 `*.pre-restructure-20261028.*` 留在原 Release，內容一個位元都沒動。
+- 上傳新的三份，加上一個 `<tag>.restructure-20261028.zip` 裝補傳的物件；每個上傳的檔都跟 GitHub 回報的 sha256 核對。
+- 換完立刻用 `verify` 抽樣取回：補傳的物件全部抽，搬家的路徑抽 20 條，下載附件、`restore` 到暫存資料夾，逐檔核對 sha256 落在新路徑。14 個全部 PASS。
+
+先做只有 1 條路徑的 `research-lab-r61-r36-source`，確認沒問題才做其他 13 個。
+
+**新舊清單只有路徑不同。** 每個新清單在產生時都核對過：內容雜湊的集合跟原清單相同，只多了補傳的那些。條目裡記原始位置的欄位（`historical_source`、`run`）照原值保留，它們記的是當初從哪裡來。
+
+**雜湊連鎖說法不同的 1,996 處。** 前幾階段的雜湊紀錄說某些內容在 git 裡被改寫過，但逐條路徑去對，Release 裡那條路徑的內容並沒有被改寫。1,996 處逐一分類，全部是同一種：那條路徑從來不在 git 裡，是只存在 Release 的副本，git 改寫的是同樣內容在別的路徑上的那一份。所以這些條目保留 Release 原本的位元組。主要在 `research-historical-evidence`（1,845 處）和 `research-results-models`（150 處）。
+
+**git 裡的清單副本。** 有 14 份 Release 清單或摘要的副本放在 git 裡。其中 5 份本來就跟新上傳的一樣；另外 9 份換成新上傳的位元組：
+
+- `Shared_Sources/PSF_Camera_Acquisitions/` 的 `RESEARCH_ASSETS.json.gz`、`BUNDLE_SUMMARY.json`
+- `docs/reproducibility/four_rounds/` 的 `CAMERA_ORIGINALS_MANIFEST.json.gz`、`R94_RECORD_MANIFEST.json.gz`、`R95_RECORD_MANIFEST.json.gz`
+- `docs/reproducibility/priority_sources_20261022/RESEARCH_ASSETS.json.gz`、`round_source_followthrough_20261022/RESEARCH_ASSETS.json.gz`
+- `docs/reproducibility/project_completion/TRAINING_HISTORY_MANIFEST.json.gz`
+- `docs/reproducibility/verification/RESULTS_MODELS_BUNDLE_SUMMARY.json`
+
+前幾階段的全文改寫已經動過這幾份副本，但改成了半套：R94、R95 被改寫的檔換上了新雜湊，`asset` 卻還指著原本的 zip，照它取回會核對失敗；另外四份把 `historical_source`、`run` 這些記原始位置的欄位也改成了新路徑。換成 Release 上的版本之後，兩個問題都消失。沒有程式讀這些副本。
+
+`Shared_Sources/PSF_Camera_Acquisitions/DELIVERY_VERIFIED.json`、`priority_sources_20261022/` 與 `round_source_followthrough_20261022/` 的 `DELIVERY_VERIFIED.json`，以及 `docs/reproducibility/lineage/` 的 `HISTORICAL_GAPS_DELIVERY_20261022.json`、`LAB_R61_R36_FIXED_INITIALIZER.json`、`LAB_R61_R36_PROVIDERS.json`，記著原清單的雜湊。它們是當時取回驗證的收據，原清單也還在 Release 裡（改名成 `*.pre-restructure-20261028.*`），所以不改。
+
+**執行中補的三處。**
+
+- `plan` 第一次跑了兩天沒有結束。原因是 `git cat-file --batch` 的請求一次全部寫進去，量一大，兩邊的管道都滿了，git 和這支程式互相等。改成另開一條執行緒送請求、主程式同時讀回應，補了一個大量物件的測試。
+- `research-project-context` 的抽樣要下載約 0.95 GB，600 秒逾時；重試時 `gh` 又不肯覆蓋上一次留下的半個檔。下載改成兩小時逾時，重試加 `--clobber`，兩件事各補了測試。
+- `research-training-history-supplement` 的抽樣要下載一個 1.52 GB 的附件，兩次都在約 55 分鐘、下載超過 95% 時被 GitHub 斷線（HTTP/2 `PROTOCOL_ERROR`）。`gh` 不能接續，重試只會從頭再來、再撞上同一個斷點。抽樣的附件下載改用 `curl -C -`，斷了就從已經下載的位置接下去，最多五次，下載完再跟 GitHub 列的 sha256 核對；補了三個測試。改完重跑，PASS。
+
+`r95-complete-record` 的 `apply` 在上傳完之後、寫下結果之前被中斷（當時外層迴圈把驗證的結束碼吃掉了，停下來改寫迴圈）。它的每個改名與上傳都已經跟 GitHub 回報的 sha256 核對過，結果是事後照實補寫的，`releases_phase5.json` 裡這筆有註記。之後重跑 `verify` 一樣 PASS。
+
+**雲端索引。** 換完之後第一次 `python Tools/cloud_locator.py build`，抽查的結果反過來：新路徑查不到，舊路徑查得到。原因是 `cloud_locator` 下載清單時，快取裡只要有同名檔就不再下載，這次清單換了內容、名稱沒變，它就一直讀舊的。改成快取檔的 sha256 要跟 Release 列的一致才沿用，不一致就重新下載，補了兩個測試。重建後 33 個 Release、398,192 條路徑；從 `research-training-kits`、`research-project-context`、`research-lab-r61-r36-source`、`research-training-history-supplement` 各抽一條搬過家的路徑，新路徑都查得到，舊路徑都查不到。在這之前 build 過的電腦（包括原電腦的主工作區）重跑一次 `build` 就會自動換新。

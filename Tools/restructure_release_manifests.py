@@ -95,6 +95,31 @@ def gh(args, runner=subprocess.run):
     return result.stdout.decode('utf-8')
 
 
+DOWNLOAD_ATTEMPTS = 5
+
+
+def download_attachment(repo, tag, name, folder, digest, runner=subprocess.run):
+    """Download one release attachment, resuming after a cut connection, and check GitHub's sha256.
+
+    On 2026-11-02 GitHub reset the connection twice after about 55 minutes, both times past 95% of a
+    1.5 GB attachment; gh cannot resume, so a retry would start over and meet the same cut. curl's
+    `-C -` continues from the bytes already on disk. The repository is public, so no token is needed."""
+    out = Path(folder) / name
+    url = f'https://github.com/{repo}/releases/download/{tag}/{name}'
+    for _ in range(DOWNLOAD_ATTEMPTS):
+        cmd = ['curl', '--location', '--fail', '--silent', '--show-error', '-C', '-', '-o', str(out), url]
+        try:
+            result = runner(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=DOWNLOAD_TIMEOUT)
+        except subprocess.TimeoutExpired:
+            continue
+        if result.returncode == 0:
+            break
+    else:
+        raise RuntimeError(f'{name}: download was cut {DOWNLOAD_ATTEMPTS} times')
+    if 'sha256:' + bundle.digest(out) != digest:
+        raise RuntimeError(f'{name}: downloaded bytes do not have the sha256 GitHub lists')
+
+
 def git_env():
     """The environment without GIT_* variables. git runs hooks with GIT_DIR and GIT_INDEX_FILE set, and
     `git -C <repo>` follows them, so a call meant for one repository would act on another."""
@@ -401,7 +426,7 @@ def choose_sample(old_files, new_files, assets, size, seed):
     return sorted(set(picked + chosen))
 
 
-def verify_one(repo, tag, plan_dir, sample, work, run=gh):
+def verify_one(repo, tag, plan_dir, sample, work, run=gh, fetch=download_attachment):
     d = Path(plan_dir) / tag
     s = json.loads((d / 'summary.json').read_text(encoding='utf-8'))
     work = Path(work) / tag
@@ -432,7 +457,7 @@ def verify_one(repo, tag, plan_dir, sample, work, run=gh):
     rows = [new['files'][i] for i in picked]
     needed = sorted({r['asset'] for r in rows})
     for name in needed:
-        run(['release', 'download', tag, '--repo', repo, '--pattern', name, '--dir', str(dl)])
+        fetch(repo, tag, name, dl, now[name]['digest'])
     sub = {**new, 'files': rows, 'assets': [assets[n] for n in needed]}
     with gzip.open(work / 'sample.json.gz', 'wt', encoding='utf-8') as stream:
         json.dump(sub, stream, ensure_ascii=False)

@@ -334,3 +334,43 @@ def test_sha256_of_many_objects_does_not_deadlock(tmp_path, monkeypatch):
         proc.kill()
     assert not hung, 'sha256_of hung on a large batch'
     assert all(tree.content(p) == (hashlib.sha256(d).hexdigest(), len(d)) for p, d in contents.items())
+
+
+class _CutDownload:
+    """Stands in for curl: each call appends the next piece to the output file and fails until the last."""
+
+    def __init__(self, pieces, fail_code=92):
+        self.pieces = list(pieces)
+        self.fail_code = fail_code
+        self.cmds = []
+
+    def __call__(self, cmd, **kwargs):
+        import subprocess
+        self.cmds.append(cmd)
+        out = Path(cmd[cmd.index('-o') + 1])
+        piece = self.pieces.pop(0) if self.pieces else b''
+        with open(out, 'ab') as f:
+            f.write(piece)
+        return subprocess.CompletedProcess(cmd, 0 if not self.pieces else self.fail_code, b'', b'stream error')
+
+
+def test_download_attachment_resumes_where_a_cut_connection_stopped(tmp_path):
+    body = b'attachment bytes'
+    fake = _CutDownload([body[:5], body[5:11], body[11:]])
+    rm.download_attachment('o/r', 'tag', 'big.zip', tmp_path, 'sha256:' + hashlib.sha256(body).hexdigest(), runner=fake)
+    assert (tmp_path / 'big.zip').read_bytes() == body
+    assert len(fake.cmds) == 3 and all(c[c.index('-C') + 1] == '-' for c in fake.cmds)
+    assert fake.cmds[0][-1] == 'https://github.com/o/r/releases/download/tag/big.zip'
+
+
+def test_download_attachment_rejects_bytes_github_does_not_list(tmp_path):
+    fake = _CutDownload([b'something else'])
+    with pytest.raises(RuntimeError, match='sha256'):
+        rm.download_attachment('o/r', 'tag', 'big.zip', tmp_path, 'sha256:' + '0' * 64, runner=fake)
+
+
+def test_download_attachment_gives_up_after_five_cut_connections(tmp_path):
+    fake = _CutDownload([b'x'] * 9)
+    with pytest.raises(RuntimeError, match='big.zip'):
+        rm.download_attachment('o/r', 'tag', 'big.zip', tmp_path, 'sha256:' + '0' * 64, runner=fake)
+    assert len(fake.cmds) == 5

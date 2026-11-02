@@ -71,3 +71,22 @@ def test_files_removed_from_the_tree_count_as_recoverable_history(tmp_path):
     cloud.history_blobs={'blob-old':'Experiments/R33/results/recon/frame.bmp'}
     status,where=cloud.classify('Experiments/R33/results/recon/frame.bmp',3,'sha-b','blob-old')
     assert status=='git-history' and 'frame.bmp' in where
+
+
+def test_cached_manifest_is_fetched_again_when_the_release_holds_other_bytes(tmp_path, monkeypatch):
+    import hashlib
+    (tmp_path/'RESEARCH_ASSETS.json.gz').write_bytes(b'old manifest')
+    calls=[]
+    def download(cmd, **kwargs):
+        calls.append(cmd)
+        (tmp_path/'RESEARCH_ASSETS.json.gz').write_bytes(b'new manifest')
+    monkeypatch.setattr(cloud_locator.subprocess,'run',download)
+    cloud_locator.fetch('owner/repo','tag','RESEARCH_ASSETS.json.gz',tmp_path,hashlib.sha256(b'new manifest').hexdigest())
+    assert (tmp_path/'RESEARCH_ASSETS.json.gz').read_bytes()==b'new manifest' and len(calls)==1
+
+
+def test_cached_manifest_with_the_release_bytes_is_not_downloaded_again(tmp_path, monkeypatch):
+    import hashlib
+    (tmp_path/'RESEARCH_ASSETS.json.gz').write_bytes(b'manifest')
+    monkeypatch.setattr(cloud_locator.subprocess,'run',lambda *a, **k: (_ for _ in ()).throw(AssertionError('downloaded')))
+    cloud_locator.fetch('owner/repo','tag','RESEARCH_ASSETS.json.gz',tmp_path,hashlib.sha256(b'manifest').hexdigest())
