@@ -11,18 +11,30 @@ on:
 jobs:
   validate:
     runs-on: windows-latest
+    env:
+      # help texts and test output carry Chinese; the runner's default console encoding (cp1252) cannot print them
+      PYTHONUTF8: "1"
 
     steps:
+      # Some tracked paths run past Windows' 260-character limit (the longest is 465),
+      # so checkout fails with "Filename too long" unless git may use long paths.
+      - name: Allow long paths in git
+        run: git config --system core.longpaths true
+
       - name: Check out repository
         uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
-      - name: Install test dependency
-        run: python -m pip install pytest
+      - name: Install dependencies
+        run: python -m pip install -r .github/ci-requirements.txt
 
       - name: Run project control center standard health
         run: python Tools/project_control_center.py --view health --health-level standard
+
+      - name: List failing tests
+        if: failure()
+        run: python -c "import subprocess, sys; sys.path.insert(0, 'Tools'); import project_control_center as c; sys.exit(subprocess.call([sys.executable, '-m', 'pytest', '-q', '-rfE', '--tb=short', *c.PYTEST_TARGETS]))"

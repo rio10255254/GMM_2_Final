@@ -1,0 +1,25 @@
+# What the standard health check needs on the GitHub runner: the entry points'
+# --help imports and the test suites. Versions follow the project machine's
+# Python 3.12 environment (psutil 5.9.0 has no 3.12 wheel, so 5.9.8).
+# OpenCV is 4.11 here: 4.12 requires numpy 2, and the project machine runs it on numpy 1.26
+# only because pip installed it over the declared range.
+numpy==1.26.4
+scipy==1.13.1
+opencv-python-headless==4.11.0.86
+matplotlib==3.9.2
+pillow==10.4.0
+torch==2.3.0
+torchmetrics==1.8.2
+tqdm==4.66.5
+pandas==2.2.2
+scikit-image==0.24.0
+onnx==1.21.0
+onnxruntime==1.20.1
+psutil==5.9.8
+requests==2.32.3
+PyYAML==6.0.1
+lxml==5.2.1
+nbformat==5.10.4
+openpyxl==3.1.5
+seaborn==0.13.2
+pytest==7.4.4
