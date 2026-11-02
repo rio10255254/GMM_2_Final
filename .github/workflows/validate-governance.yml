@@ -11,6 +11,9 @@ on:
 jobs:
   validate:
     runs-on: windows-latest
+    env:
+      # help texts and test output carry Chinese; the runner's default console encoding (cp1252) cannot print them
+      PYTHONUTF8: "1"
 
     steps:
       # Some tracked paths run past Windows' 260-character limit (the longest is 465),
@@ -31,3 +34,7 @@ jobs:
 
       - name: Run project control center standard health
         run: python Tools/project_control_center.py --view health --health-level standard
+
+      - name: List failing tests
+        if: failure()
+        run: python -c "import subprocess, sys; sys.path.insert(0, 'Tools'); import project_control_center as c; sys.exit(subprocess.call([sys.executable, '-m', 'pytest', '-q', '-rfE', '--tb=short', *c.PYTEST_TARGETS]))"
