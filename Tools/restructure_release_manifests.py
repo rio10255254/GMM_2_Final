@@ -32,6 +32,7 @@ from pathlib import Path
 import random
 import subprocess
 import sys
+import threading
 import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -223,14 +224,22 @@ class GitTree:
             return
         proc = subprocess.Popen(['git', '-C', str(self.repo), 'cat-file', '--batch'],
                                 stdin=subprocess.PIPE, stdout=subprocess.PIPE, env=git_env())
-        proc.stdin.write(''.join(s + '\n' for s in todo).encode())
-        proc.stdin.close()
+
+        def send():
+            # requests go in from a thread while answers are read here: written all at once first, a large
+            # batch fills both pipes and git and this process wait on each other forever
+            proc.stdin.write(''.join(s + '\n' for s in todo).encode())
+            proc.stdin.close()
+
+        writer = threading.Thread(target=send, daemon=True)
+        writer.start()
         for s in todo:
             header = proc.stdout.readline().split()
             size = int(header[2])
             data = proc.stdout.read(size)
             proc.stdout.read(1)
             self._sha256[s] = (sha256(data), size)
+        writer.join()
         proc.wait()
 
     def content(self, path):

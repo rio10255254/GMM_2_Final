@@ -293,3 +293,27 @@ def test_gh_never_repeats_an_upload():
     with pytest.raises(RuntimeError, match='timed out'):
         rm.gh(['release', 'upload', 't', 'f'], runner=fake)
     assert len(fake.calls) == 1 and fake.calls[0]
+
+
+def test_sha256_of_many_objects_does_not_deadlock(tmp_path, monkeypatch):
+    # writing every request before reading any answer filled both pipes and hung the plan for two days
+    import subprocess
+    import threading
+    repo = tmp_path / 'r'
+    (repo / 'many').mkdir(parents=True)
+    _git(repo, 'init', '-q')
+    contents = {f'many/{i}.txt': (f'object {i}\n' * 20).encode() for i in range(3000)}
+    for path, data in contents.items():
+        (repo / path).write_bytes(data)
+    _git(repo, 'add', '-A'); _git(repo, 'commit', '-qm', 'many')
+    tree = rm.GitTree('HEAD', repo)
+    started, real_popen = [], subprocess.Popen
+    monkeypatch.setattr(subprocess, 'Popen', lambda *a, **k: started.append(real_popen(*a, **k)) or started[-1])
+    worker = threading.Thread(target=tree.sha256_of, args=(list(contents),), daemon=True)
+    worker.start()
+    worker.join(60)
+    hung = worker.is_alive()
+    for proc in started:
+        proc.kill()
+    assert not hung, 'sha256_of hung on a large batch'
+    assert all(tree.content(p) == (hashlib.sha256(d).hexdigest(), len(d)) for p, d in contents.items())
