@@ -83,7 +83,7 @@ PYTEST_TARGETS = [
 ]
 COMPILE_TARGETS = [
     "Model",
-    "AnalysisLab",
+    "Analyses",
     "Experiments",
     "Tools",
     "Training_Data",
