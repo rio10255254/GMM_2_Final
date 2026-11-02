@@ -101,10 +101,11 @@ def build(args):
     for release in releases:
         tag = release['tag_name']
         names = {a['name'] for a in release['assets']}
+        digests = {a['name']: (a.get('digest') or '').removeprefix('sha256:') or None for a in release['assets']}
         target = manifests / tag
         indexed = set()
         if 'RESEARCH_ASSETS.json.gz' in names:
-            fetch(args.repo, tag, 'RESEARCH_ASSETS.json.gz', target)
+            fetch(args.repo, tag, 'RESEARCH_ASSETS.json.gz', target, digests['RESEARCH_ASSETS.json.gz'])
             with gzip.open(target / 'RESEARCH_ASSETS.json.gz', 'rt', encoding='utf-8-sig') as stream:
                 data = json.load(stream)
             db.executemany('INSERT INTO objects VALUES (?,?,?,?,?,?)',
@@ -112,7 +113,7 @@ def build(args):
                             for r in data.get('files', [])))
             indexed = {r.get('asset') for r in data.get('files', [])}
         if tag == PI_TAG and 'ORIGINAL_ACQUISITION_MANIFEST.json' in names:
-            fetch(args.repo, tag, 'ORIGINAL_ACQUISITION_MANIFEST.json', target)
+            fetch(args.repo, tag, 'ORIGINAL_ACQUISITION_MANIFEST.json', target, digests['ORIGINAL_ACQUISITION_MANIFEST.json'])
             data = json.loads((target / 'ORIGINAL_ACQUISITION_MANIFEST.json').read_text(encoding='utf-8'))
             db.executemany('INSERT INTO objects VALUES (?,?,?,?,?,?)',
                            ((PI_ROOT + r['path'], r['sha256'], r['bytes'], tag, data['archive_name'], 'pi-acquisition')
@@ -162,11 +163,17 @@ def zip_members(repo, tag, name, target):
     return members
 
 
-def fetch(repo, tag, name, target):
+def fetch(repo, tag, name, target, sha256=None):
+    """Download one attachment unless the cached copy has the bytes the release lists for it.
+
+    A release can replace an attachment under the same name (the 2026-10-28 restructure replaced
+    manifests this way), so a cached file is kept only while its sha256 matches."""
     target.mkdir(parents=True, exist_ok=True)
-    if not (target / name).exists():
-        subprocess.run(['gh', 'release', 'download', tag, '--repo', repo, '--pattern', name, '--dir', str(target)],
-                       check=True, capture_output=True)
+    cached = target / name
+    if cached.exists() and (sha256 is None or hashlib.sha256(cached.read_bytes()).hexdigest() == sha256):
+        return
+    subprocess.run(['gh', 'release', 'download', tag, '--repo', repo, '--pattern', name, '--dir', str(target),
+                    '--clobber'], check=True, capture_output=True)
 
 
 class Cloud:

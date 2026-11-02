@@ -1,0 +1,615 @@
+{
+ "what": "Phase 5: release manifests replaced so restores land on the restructured paths",
+ "repo": "rio10255254/GMM_2_Final",
+ "tree_before": "20b0d56d62a8c70854ffb11b396d171110d0d9e4",
+ "tool_commit": "f150e2b859bcbd84c13ee258d9e2ba4f2e0405e6",
+ "hash_chain_disagreements_note": "Every disagreement (all releases together) is a path that was never in git: a copy that only the release holds. Its bytes are what the release stores, so the new manifest keeps them; the phase records only say the same content was rewritten at some other path in git.",
+ "counts": {
+  "changed": 14,
+  "unchanged": 9,
+  "no manifest": 10
+ },
+ "releases": [
+  {
+   "tag": "four-round-preview-origins-20261021",
+   "status": "changed",
+   "paths": 4,
+   "paths_changed": 3,
+   "records_replaced": 0,
+   "objects_added": 0,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "54bd7527daa1d2894b3547d239c99798bef1c3960dbf6fd7364538249a559b66"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "95220f4385545faaf80cf05ce8033fab209aae5ede1fa09fa000fc2384319cc2"
+    },
+    "SHA256SUMS.txt": {
+     "renamed_to": "SHA256SUMS.pre-restructure-20261028.txt",
+     "sha256": "fc24d5af7d5c903c495afb8cbb86308e17f48eddf28d723efb57c375fb31d46b"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "819720a50dbf7ca949164c04639f5b5d324bc78f70d44b3071516b55263f4046",
+    "BUNDLE_SUMMARY.json": "54bd7527daa1d2894b3547d239c99798bef1c3960dbf6fd7364538249a559b66",
+    "SHA256SUMS.txt": "2821f09d5f6105ed51793a2b6915d0d9219214aeb36aacfb86e9a44a1e2f20dc"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 3,
+    "added_objects_sampled": 0,
+    "attachments_downloaded": [
+     "research-four-round-preview-camera-001.zip"
+    ],
+    "files_restored_and_verified": 3
+   }
+  },
+  {
+   "tag": "labsystem-control-recordings-20261028",
+   "status": "unchanged"
+  },
+  {
+   "tag": "r152-impact2026-reconstructions-20261028",
+   "status": "unchanged"
+  },
+  {
+   "tag": "r93-complete-record-20261020",
+   "status": "unchanged"
+  },
+  {
+   "tag": "r94-complete-record-20261021",
+   "status": "changed",
+   "paths": 151,
+   "paths_changed": 0,
+   "records_replaced": 15,
+   "objects_added": 15,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "162125af439543c09b8ceeddaaa906b18195ae8ef3ab65aa42648011761c6ff9"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "58970b52c7b25cca71bbf8bd4931d44375c581e4cf01b6c324e3e0f2db89a4af"
+    },
+    "SHA256SUMS.txt": {
+     "renamed_to": "SHA256SUMS.pre-restructure-20261028.txt",
+     "sha256": "0613d8f940c980e3e4bf8cddbe65576a14c0eafd55087dc4ac15dd615e1bcce6"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "37e62881177a87a4b418d8353f2ffd883f0d33213cf0541dc51da3a6f6c4a7b5",
+    "r94-complete-record-20261021.restructure-20261028.zip": "63bdb8c5db594874b19894ad6502f6837cb620f1f290e4ed517d20039ebf3996",
+    "BUNDLE_SUMMARY.json": "a66e7dc9a4dc0143f6d59d92358745207be60e146b8fb907f622e80548fa3d5b",
+    "SHA256SUMS.txt": "716cbd70a8af27a4bfe01319199410d5c6f62e559fbf71d400dc56bcebb126c3"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 15,
+    "added_objects_sampled": 15,
+    "attachments_downloaded": [
+     "r94-complete-record-20261021.restructure-20261028.zip"
+    ],
+    "files_restored_and_verified": 15
+   }
+  },
+  {
+   "tag": "r95-complete-record-20261021",
+   "status": "changed",
+   "paths": 308,
+   "paths_changed": 0,
+   "records_replaced": 3,
+   "objects_added": 3,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "01dde8f63d91a78c980148ff8bef2a7f7962d8ec12eed19ef6ce5064983cf1c9"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "a4dad25d6a7e3e31442283955742844cf53252dd14e7562a2d51c2dc3f4496b0"
+    },
+    "SHA256SUMS.txt": {
+     "renamed_to": "SHA256SUMS.pre-restructure-20261028.txt",
+     "sha256": "b60de5cddd8e220edd6a07d9ce5ab3db4614e59ca2f2af7aeaf7b6a2cfd07618"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "4734e0826b3a9a5e4d2951e2e8ecf8b6cb2e0b525b4bfd71696e2c15fae20c2d",
+    "r95-complete-record-20261021.restructure-20261028.zip": "0b5a6974a3bfb985da237205a86a67d260a918887cee81fc253e8c75f5e3766d",
+    "BUNDLE_SUMMARY.json": "aa850e8da2203799c6821d68d2b7fe2c4dd128d548d7182561b274d724fda3e4",
+    "SHA256SUMS.txt": "051786e3ea76b3c9792ce6574957fa3183d9795b91237fa156ca80441d3d0a62"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 3,
+    "added_objects_sampled": 3,
+    "attachments_downloaded": [
+     "r95-complete-record-20261021.restructure-20261028.zip"
+    ],
+    "files_restored_and_verified": 3
+   },
+   "note": "apply was stopped after its uploads; GitHub digests of every renamed and uploaded asset were checked against the plan on 2026-11-02 and this record written by hand"
+  },
+  {
+   "tag": "r97-complete-record-20261021",
+   "status": "unchanged"
+  },
+  {
+   "tag": "r98-complete-record-20261021",
+   "status": "unchanged"
+  },
+  {
+   "tag": "research-baseline-fixed-sources-20261023",
+   "status": "unchanged"
+  },
+  {
+   "tag": "research-curated-20261021",
+   "status": "no manifest"
+  },
+  {
+   "tag": "research-historical-evidence-20261016",
+   "status": "changed",
+   "paths": 37679,
+   "paths_changed": 24949,
+   "records_replaced": 0,
+   "objects_added": 0,
+   "hash_chain_disagreements": 1845,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "3219ce653cb64ca8799ae65d4afc9a425555044a1825831a9c57bf65aa53eebc"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "6aae51d6bfd78300b315c687ad562034ac8cc1305b88464bffd8a65ec4e6e8b5"
+    },
+    "SHA256SUMS.txt": {
+     "renamed_to": "SHA256SUMS.pre-restructure-20261028.txt",
+     "sha256": "c77d93446f1981e51a11fbe96ecbe8e30bcf63783f4d88ce486dd190cc728557"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "2e4e2b33202086027af7e62a6a31b4e24e895058eb3ea983c8fbd56e01fc34ea",
+    "BUNDLE_SUMMARY.json": "3219ce653cb64ca8799ae65d4afc9a425555044a1825831a9c57bf65aa53eebc",
+    "SHA256SUMS.txt": "ed32f9648d015e66319816f7b3364d217798b8ef4d3f4bd040d234a8362514c8"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 20,
+    "added_objects_sampled": 0,
+    "attachments_downloaded": [
+     "research-lab-cad-anchors-002.zip",
+     "research-lab-real-checkboard-004.zip"
+    ],
+    "files_restored_and_verified": 20
+   }
+  },
+  {
+   "tag": "research-history-curated-20261022",
+   "status": "no manifest"
+  },
+  {
+   "tag": "research-lab-r61-r36-source-20261022",
+   "status": "changed",
+   "paths": 1,
+   "paths_changed": 1,
+   "records_replaced": 0,
+   "objects_added": 0,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "5d5d7bb00b1560d40d1c7dd75c24d7b5ba35e75f4ae7580087a252b257866877"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "3250fb9784ea815dca8b02a23b299218f62ad72115bec19278a176b9c33fc1d9"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "9445c9ddd404099a670c1593d9be062a2dee50f6968e081940dd8a495194a9a8",
+    "BUNDLE_SUMMARY.json": "5d5d7bb00b1560d40d1c7dd75c24d7b5ba35e75f4ae7580087a252b257866877"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 1,
+    "added_objects_sampled": 0,
+    "attachments_downloaded": [
+     "research-lab-r61-r36-initializer-001.zip"
+    ],
+    "files_restored_and_verified": 1
+   }
+  },
+  {
+   "tag": "research-lab-subpixel-replay-20261021",
+   "status": "no manifest"
+  },
+  {
+   "tag": "research-localonly-models-20261026",
+   "status": "unchanged"
+  },
+  {
+   "tag": "research-models-by-round-20261026",
+   "status": "changed",
+   "paths": 16,
+   "paths_changed": 5,
+   "records_replaced": 0,
+   "objects_added": 0,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "88121ab6dbf242e56c59cf86976096032d230b09baaeb37a054c408b7a5311e4"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "9991be2058de12dea413d36fc2b0ec147d4e98f609510b9f5bd1a96ae2968c50"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "e08e09f7d3ae5b8bb91a493fabc26d323ebb8bdf4ea7068a83966ff43d797c52",
+    "BUNDLE_SUMMARY.json": "88121ab6dbf242e56c59cf86976096032d230b09baaeb37a054c408b7a5311e4"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 5,
+    "added_objects_sampled": 0,
+    "attachments_downloaded": [
+     "research-model-combo-001.zip",
+     "research-model-r152-thesis-007.zip",
+     "research-model-r33-008.zip",
+     "research-model-r38v2-009.zip"
+    ],
+    "files_restored_and_verified": 5
+   }
+  },
+  {
+   "tag": "research-ntu-gmf-and-crops-20261028",
+   "status": "unchanged"
+  },
+  {
+   "tag": "research-optical-calibration-replay-20261021",
+   "status": "no manifest"
+  },
+  {
+   "tag": "research-preservation-20261016",
+   "status": "no manifest"
+  },
+  {
+   "tag": "research-preservation-20261020",
+   "status": "no manifest"
+  },
+  {
+   "tag": "research-preservation-20261021",
+   "status": "no manifest"
+  },
+  {
+   "tag": "research-priority-sources-20261022",
+   "status": "changed",
+   "paths": 395,
+   "paths_changed": 55,
+   "records_replaced": 0,
+   "objects_added": 0,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "8ef88e86d5df627c16365a8548f55dc5bbcbb62ff6450034c745c354dae5cd78"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "5eee1b44c67ecb69c0e60729bbe0db2b6a9fefcdff5121a5adf2a3bc1098d2f2"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "940d8eaacb3e25b5e1652d506d2a1b4ead96d7650f6370457d918af4fe6a9f7c",
+    "BUNDLE_SUMMARY.json": "8ef88e86d5df627c16365a8548f55dc5bbcbb62ff6450034c745c354dae5cd78"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 20,
+    "added_objects_sampled": 0,
+    "attachments_downloaded": [
+     "research-raw-boundary-observations-010.zip"
+    ],
+    "files_restored_and_verified": 20
+   }
+  },
+  {
+   "tag": "research-project-context-20261021",
+   "status": "changed",
+   "paths": 182471,
+   "paths_changed": 151537,
+   "records_replaced": 71,
+   "objects_added": 69,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "7aa38bcbbeb6d088148d5f5d79ce6e4f2644c895866421309e2441e2b4173d26"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "8fc18ff4b8ea95ccb6cd9aa6efd5bd1c8999908d0d1f5bea13e9415d32d7f776"
+    },
+    "SHA256SUMS.txt": {
+     "renamed_to": "SHA256SUMS.pre-restructure-20261028.txt",
+     "sha256": "b1638bdafe99a58c11d1d60de449f9cbf0163ff03a5cac6be1d964d8f94322a5"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "fcf4e8121dcabac81778d14a8cb3993d8340aae05c1ecb7d8448af22529f71e6",
+    "research-project-context-20261021.restructure-20261028.zip": "d1a0d303df743e7c524dfbb3bd40245ab95afca0cf43e270481155e6d8a5968a",
+    "BUNDLE_SUMMARY.json": "490cd3be7a7f5aa414308a4ed0750318f10b455c190bb8c744b83807f34bf9a9",
+    "SHA256SUMS.txt": "bcd39ed6e4b53d74d220edabad6d0f2919111c93feb05c93e6844c829cdd2232"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 91,
+    "added_objects_sampled": 71,
+    "attachments_downloaded": [
+     "research-project-context-20261021.restructure-20261028.zip",
+     "research-project-context-b001-001.zip"
+    ],
+    "files_restored_and_verified": 91
+   }
+  },
+  {
+   "tag": "research-psf-camera-acquisitions-20261022",
+   "status": "changed",
+   "paths": 929,
+   "paths_changed": 0,
+   "records_replaced": 2,
+   "objects_added": 2,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "c794ffb4405db763a5e5dddf2f4ac22a1d5db10840890bdfc85d1547b8af09df"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "6cff9aa4780791dd8b1af8b15376aa998c483da6997698476e14077428b8a069"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "379d5724e1636e73e85d7f2751c629470053c06348c8e51203ba9d112658852e",
+    "research-psf-camera-acquisitions-20261022.restructure-20261028.zip": "c9380ccefe5016d76668c2d232781c5d6aa5b9e81a5e5d2b80b08075d600a355",
+    "BUNDLE_SUMMARY.json": "94d14a4ea5629ebdc042509891165e35d0dbdbeb1a33ed93b0edbf0446a44a2c"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 2,
+    "added_objects_sampled": 2,
+    "attachments_downloaded": [
+     "research-psf-camera-acquisitions-20261022.restructure-20261028.zip"
+    ],
+    "files_restored_and_verified": 2
+   }
+  },
+  {
+   "tag": "research-psf100-chessboard-20261028",
+   "status": "unchanged"
+  },
+  {
+   "tag": "research-r61-onnx-delivery-20261021",
+   "status": "no manifest"
+  },
+  {
+   "tag": "research-results-models-20261016",
+   "status": "changed",
+   "paths": 61090,
+   "paths_changed": 14574,
+   "records_replaced": 308,
+   "objects_added": 306,
+   "hash_chain_disagreements": 150,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "78769702a9eca66f90f9d291e21de07bf2b2b4166e9c2ad72198c74a2f4d323e"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "508a5a168274da2dba69b4f36c8d885572e5dbbd8d4d5db85833d8e7082826e2"
+    },
+    "SHA256SUMS.txt": {
+     "renamed_to": "SHA256SUMS.pre-restructure-20261028.txt",
+     "sha256": "505462b584d5ccb74e99cad70d6ffbdd4ad8974d6b02947dbde9b4d99b8c04c4"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "a1a463543408742f20f8562e360d6fabd1cf035ad1f542b0776c992a4ad86d04",
+    "research-results-models-20261016.restructure-20261028.zip": "c412b7a33fad7d0ee4ea9dee8f4d678766625ca7f8b2d9b839a2b65302046f32",
+    "BUNDLE_SUMMARY.json": "1206171dea7226a362bf602b45f60306df86581b6a049f5bd5d8cdccede3789f",
+    "SHA256SUMS.txt": "5e8bc46c901bfbb786075df4b6a0de8c41570fec166cdccb22332fdf3a65b861"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 328,
+    "added_objects_sampled": 308,
+    "attachments_downloaded": [
+     "research-fixed-models-023.zip",
+     "research-full-numeric-results-027.zip",
+     "research-results-models-20261016.restructure-20261028.zip"
+    ],
+    "files_restored_and_verified": 328
+   }
+  },
+  {
+   "tag": "research-round-source-followthrough-20261022",
+   "status": "changed",
+   "paths": 130,
+   "paths_changed": 11,
+   "records_replaced": 0,
+   "objects_added": 0,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "326d91e11670c633035a12bf63c9a158ef59bef90a332daea5e90daa6e6f4279"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "48dfadc1f2817cfb2f62aa30d0658717bdddd3c0c786d020689d9b0d76dca590"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "26a8bcaf0808127169f947da171e318295fa4bba3cdd51bd524f3d96d9157e56",
+    "BUNDLE_SUMMARY.json": "326d91e11670c633035a12bf63c9a158ef59bef90a332daea5e90daa6e6f4279"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 11,
+    "added_objects_sampled": 0,
+    "attachments_downloaded": [
+     "research-r113-fixed-probe-sources-003.zip",
+     "research-sem-orientation-and-review-evidence-007.zip",
+     "research-thesis-traceability-reference-frames-008.zip"
+    ],
+    "files_restored_and_verified": 11
+   }
+  },
+  {
+   "tag": "research-shared-sources-20261016",
+   "status": "changed",
+   "paths": 92332,
+   "paths_changed": 1416,
+   "records_replaced": 0,
+   "objects_added": 0,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "44bf85e7884508c84e6982d786e03223ecfda8b83557d78de68d6e28ece5251d"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "60df1fe0bf8e97a70025e1dc4be8e88c3ac5dfcce18505f8444855bc40dea57f"
+    },
+    "SHA256SUMS.txt": {
+     "renamed_to": "SHA256SUMS.pre-restructure-20261028.txt",
+     "sha256": "72216418e65cb25bd787cd3eed6ff99bbf37f49ccb73ce991504a874667dd28f"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "6e776f9e83ee7806399860daef647a79dbbf6d0dae02d4a8865be31d4c652503",
+    "BUNDLE_SUMMARY.json": "44bf85e7884508c84e6982d786e03223ecfda8b83557d78de68d6e28ece5251d",
+    "SHA256SUMS.txt": "1628c0aa2f185945643bc843a42842169cd6ae765e14e3fdffa1dbb831915577"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 20,
+    "added_objects_sampled": 0,
+    "attachments_downloaded": [
+     "research-camera-multiscale-001.zip",
+     "research-camera-step-027.zip"
+    ],
+    "files_restored_and_verified": 20
+   }
+  },
+  {
+   "tag": "research-training-history-supplement-20261021",
+   "status": "changed",
+   "paths": 851,
+   "paths_changed": 851,
+   "records_replaced": 0,
+   "objects_added": 0,
+   "hash_chain_disagreements": 0,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "ac681ec7914c298c7ecb1f1f352c67c77d3db319a350234b2f41a6e8a275932c"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "e5b1e2e37891a9bbfdb3bddd8e515a115fe1a2960ebc1f4ed339f56b79e95c76"
+    },
+    "SHA256SUMS.txt": {
+     "renamed_to": "SHA256SUMS.pre-restructure-20261028.txt",
+     "sha256": "2de9f63e31fc1e95e190623d30183800d815c3ea03320baba1f989969df45c67"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "dfa9927dd0fdc65b38daf713e2265c3352a8a8304aa9659d5e212dcf72883a7d",
+    "BUNDLE_SUMMARY.json": "ac681ec7914c298c7ecb1f1f352c67c77d3db319a350234b2f41a6e8a275932c",
+    "SHA256SUMS.txt": "252a3c9f31533bc01ee7e7e0c854c1d0034392ae9db533cd544483f59d759429"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 20,
+    "added_objects_sampled": 0,
+    "attachments_downloaded": [
+     "research-training-history-supplement-005.zip",
+     "research-training-history-supplement-016.zip"
+    ],
+    "files_restored_and_verified": 20
+   }
+  },
+  {
+   "tag": "research-training-kits-20261016",
+   "status": "changed",
+   "paths": 17022,
+   "paths_changed": 17022,
+   "records_replaced": 0,
+   "objects_added": 0,
+   "hash_chain_disagreements": 1,
+   "sha_sets_equal_except_added": true,
+   "original": {
+    "BUNDLE_SUMMARY.json": {
+     "renamed_to": "BUNDLE_SUMMARY.pre-restructure-20261028.json",
+     "sha256": "2aebe72e47375329306e1741b2db4bc3d5cd19d35b73987a354257c42e904959"
+    },
+    "RESEARCH_ASSETS.json.gz": {
+     "renamed_to": "RESEARCH_ASSETS.pre-restructure-20261028.json.gz",
+     "sha256": "70f1f902234d21b037eb86c63ce09c00dc803a4493ffba8b4ce53a7acecdde7d"
+    },
+    "SHA256SUMS.txt": {
+     "renamed_to": "SHA256SUMS.pre-restructure-20261028.txt",
+     "sha256": "a6731f2afc9e41db6ce27be212199dcdf953b5afbbb26dd320a069d5adcadb2d"
+    }
+   },
+   "uploaded": {
+    "RESEARCH_ASSETS.json.gz": "93f3ad58a9a04121a7664fb74ad4ce39c5fea016c18f080a877e94012d3cabf0",
+    "BUNDLE_SUMMARY.json": "2aebe72e47375329306e1741b2db4bc3d5cd19d35b73987a354257c42e904959",
+    "SHA256SUMS.txt": "d038d7ac515017f0edc740ef71a2118bc1e49f3f775e2c51a746bfd3102ba012"
+   },
+   "verify": {
+    "status": "PASS",
+    "sampled": 20,
+    "added_objects_sampled": 0,
+    "attachments_downloaded": [
+     "research-r152-frozen-inputs-001.zip",
+     "research-r61-frozen-inputs-003.zip"
+    ],
+    "files_restored_and_verified": 20
+   }
+  },
+  {
+   "tag": "research-v42-history-replay-20261021",
+   "status": "no manifest"
+  },
+  {
+   "tag": "shared-pi-20260903-v1",
+   "status": "no manifest"
+  }
+ ]
+}
