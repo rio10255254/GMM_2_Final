@@ -266,10 +266,12 @@ class _FakeRun:
     def __init__(self, timeouts):
         self.timeouts = timeouts
         self.calls = []
+        self.cmds = []
 
     def __call__(self, cmd, **kwargs):
         import subprocess
         self.calls.append(kwargs.get('timeout'))
+        self.cmds.append(cmd)
         if len(self.calls) <= self.timeouts:
             raise subprocess.TimeoutExpired(cmd, kwargs.get('timeout'))
         return subprocess.CompletedProcess(cmd, 0, b'ok', b'')
@@ -293,6 +295,21 @@ def test_gh_never_repeats_an_upload():
     with pytest.raises(RuntimeError, match='timed out'):
         rm.gh(['release', 'upload', 't', 'f'], runner=fake)
     assert len(fake.calls) == 1 and fake.calls[0]
+
+
+def test_gh_retries_a_download_over_its_half_finished_file():
+    # a 0.95 GB download timed out, and the retry refused the partial file the first try left behind
+    fake = _FakeRun(timeouts=1)
+    rm.gh(['release', 'download', 't', '--pattern', 'a.zip', '--dir', 'd'], runner=fake)
+    assert '--clobber' not in fake.cmds[0] and fake.cmds[1].count('--clobber') == 1
+
+
+def test_gh_gives_a_download_longer_than_other_reads():
+    fake = _FakeRun(timeouts=0)
+    rm.gh(['release', 'download', 't', '--pattern', 'a.zip', '--dir', 'd', '--clobber'], runner=fake)
+    rm.gh(['release', 'view', 't'], runner=fake)
+    assert fake.calls[0] > fake.calls[1] == rm.READ_TIMEOUT
+    assert fake.cmds[0].count('--clobber') == 1
 
 
 def test_sha256_of_many_objects_does_not_deadlock(tmp_path, monkeypatch):

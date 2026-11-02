@@ -62,6 +62,7 @@ def added_zip(tag):
 
 
 READ_TIMEOUT = 600
+DOWNLOAD_TIMEOUT = 7200  # a 1.7 GB attachment takes about twenty minutes here; two hours still catches a hang
 WRITE_TIMEOUT = 3600
 READ_ATTEMPTS = 3
 
@@ -74,17 +75,21 @@ def _is_read(args):
 def gh(args, runner=subprocess.run):
     """Run gh with a timeout. A 2026-10-30 plan sat fifteen hours on one download that never answered,
     so reads are retried; writes are not, because a repeated upload could meet its own half-finished
-    copy, and apply_one's rollback already handles a failed write."""
+    copy, and apply_one's rollback already handles a failed write. A retried download overwrites the
+    partial file the timed-out try left, which gh otherwise refuses."""
     read = _is_read(args)
+    download = args[:2] == ['release', 'download']
     attempts = READ_ATTEMPTS if read else 1
+    timeout = DOWNLOAD_TIMEOUT if download else READ_TIMEOUT if read else WRITE_TIMEOUT
     for attempt in range(attempts):
         try:
-            result = runner(['gh', *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                            timeout=READ_TIMEOUT if read else WRITE_TIMEOUT)
+            result = runner(['gh', *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout)
             break
         except subprocess.TimeoutExpired:
             if attempt == attempts - 1:
                 raise RuntimeError('gh ' + ' '.join(args[:3]) + f' timed out {attempts} time(s)')
+            if download and '--clobber' not in args:
+                args = [*args, '--clobber']
     if result.returncode:
         raise RuntimeError('gh ' + ' '.join(args[:3]) + ' failed: ' + result.stderr.decode('utf-8', 'replace')[-300:])
     return result.stdout.decode('utf-8')
