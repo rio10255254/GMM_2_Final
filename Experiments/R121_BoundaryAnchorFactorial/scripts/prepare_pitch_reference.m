@@ -9,7 +9,7 @@ assert(~isfile(fullfile(root,'results/pitch_matched_reference.mat')),'Do not rep
 blocks=[3 1;3 2;3 3;2 3;2 2;2 1;1 1;1 2;1 3];
 truth_masks=false(104,104,36);truth_cells=zeros(104,104,36,'uint8');
 for p=1:9
- image=imread(sprintf('H:/From_2TB_D_disk/13_thesis/SEM_data/P-%02d.tiff',p));if ndims(image)==3,image=image(:,:,1);end
+ image=imread(fullfile(PROJECT_ROOT, 'Shared_Sources/SEM_Originals', sprintf('P-%02d.tiff',p)));if ndims(image)==3,image=image(:,:,1);end
  resized=imresize(image(7:754,142:914),scale_adjustment/3.23,'bicubic');
  centers=imfindcircles(resized,[28 45],'ObjectPolarity','bright','Sensitivity',.90,'EdgeThreshold',.05);assert(size(centers,1)==4);
  centers=sort_grid_centers(centers,2,2);br=blocks(p,1);bc=blocks(p,2);ids=reshape(old.global_index(2*br-1:2*br,2*bc-1:2*bc).',1,[]);

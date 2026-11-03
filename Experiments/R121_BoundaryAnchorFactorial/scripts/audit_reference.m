@@ -5,7 +5,7 @@ old=load(fullfile(PROJECT_ROOT, 'Experiments/R119_SequenceGeometryValidation/res
 file=zeros(9,1);pitch_x=zeros(9,1);pitch_y=zeros(9,1);median_pitch=zeros(9,1);parity=zeros(36,1);
 blocks=[3 1;3 2;3 3;2 3;2 2;2 1;1 1;1 2;1 3];k=0;
 for p=1:9
- image=imread(sprintf('H:/From_2TB_D_disk/13_thesis/SEM_data/P-%02d.tiff',p));if ndims(image)==3,image=image(:,:,1);end
+ image=imread(fullfile(PROJECT_ROOT, 'Shared_Sources/SEM_Originals', sprintf('P-%02d.tiff',p)));if ndims(image)==3,image=image(:,:,1);end
  resized=imresize(image(7:754,142:914),1/3.23,'bicubic');
  centers=imfindcircles(resized,[28 45],'ObjectPolarity','bright','Sensitivity',.90,'EdgeThreshold',.05);
  assert(size(centers,1)==4);centers=sort_grid_centers(centers,2,2);

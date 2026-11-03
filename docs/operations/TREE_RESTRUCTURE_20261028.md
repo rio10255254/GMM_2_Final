@@ -24,6 +24,9 @@
 | `hash_changes_phaseN.json` | 各階段改寫後雜湊的變動（舊 sha → 新 sha），第 5 階段替換 Release 清單時用 |
 | `verify_phaseN.txt` | 各階段驗證的結果 |
 | `releases_phase5.json` | 第 5 階段每個 Release 的處理：換掉的原清單（改名後的名稱與 sha256）、新上傳的檔與 sha256、取回抽樣的結果 |
+| `releases_phase6.json` | 第 6 階段：33 個 Release 改寫後的標題與說明全文（GitHub 不留說明的修改歷史）、讀回比對、實際跑過的取回範例，以及 `research-results-models` 補換的 `RESTORE_MANIFEST` |
+| `hash_chain_phase6.json` | 第 6 階段找到並改回的雜湊連鎖誤換，以及判斷不了、照原樣留下的位置 |
+| `handoff_check_phase6.json` | 交機前最後檢查（全新 clone、取回、測試、索引、分支、重新盤點）的結果 |
 
 ## 工具
 
@@ -295,3 +298,35 @@
 `r95-complete-record` 的 `apply` 在上傳完之後、寫下結果之前被中斷（當時外層迴圈把驗證的結束碼吃掉了，停下來改寫迴圈）。它的每個改名與上傳都已經跟 GitHub 回報的 sha256 核對過，結果是事後照實補寫的，`releases_phase5.json` 裡這筆有註記。之後重跑 `verify` 一樣 PASS。
 
 **雲端索引。** 換完之後第一次 `python Tools/cloud_locator.py build`，抽查的結果反過來：新路徑查不到，舊路徑查得到。原因是 `cloud_locator` 下載清單時，快取裡只要有同名檔就不再下載，這次清單換了內容、名稱沒變，它就一直讀舊的。改成快取檔的 sha256 要跟 Release 列的一致才沿用，不一致就重新下載，補了兩個測試。重建後 33 個 Release、398,192 條路徑；從 `research-training-kits`、`research-project-context`、`research-lab-r61-r36-source`、`research-training-history-supplement` 各抽一條搬過家的路徑，新路徑都查得到，舊路徑都查不到。在這之前 build 過的電腦（包括原電腦的主工作區）重跑一次 `build` 就會自動換新。
+
+### 第 6 階段：交機前的最後檢查（2026-11-03）
+
+照設計書「交機前的最後檢查」做，結果記在 `handoff_check_phase6.json`。過程中找到三個要修的地方，也一起處理了。
+
+**全新 clone。** 在 `D:\GMM_2_Final_handoff_check` 照入門指南的 `git clone --depth 1` 取 main（`c8ea0ef4`），之後只用這份 clone 和 GitHub。
+
+- **測試**：pre-commit 那套測試在 clone 裡 422 個通過、15 個失敗。失敗的跟 GitHub CI 上一直失敗的那批相同（CI 多一個要呼叫 PowerShell 的測試，本機被跳過）。它們缺的是不進 git 的資料：R26 交付包內部檔、`Experiments/Legacy/auto_tune_reports/`、R26 的 `archived_inputs` 與 `package_cleanup_archive`，這些都在 Release 裡，取回後就有；center9 Wiener 的圖表（`Thesis_MOSR_Evidence/Final_Data_Figures/03_PSF_EXPERIMENT_RESULTS/01_global_bads_fit/figures/center9_pillar_fit_20x_50x/`）不在雲端，是原工作區 sandbox 分支上還沒提交的工作，見下面「只在本機」。
+- **雲端索引**：clone 裡從零 `cloud_locator.py build`，33 個 Release；四條搬過家的路徑新位置都查得到、舊位置都查不到。
+- **取回代表性資料**：照樹上 README 的指令（`download_research_assets.py --prefix` 加 `research_asset_bundle.py restore --destination . --keep-identical-existing`），把 `--prefix` 縮到每類一個檔，取回到 clone 裡：Step、NTU `Pitch1um_Y_100` 一張原拍和它外部 GMF 量測包裡的一個檔、PSF100 一張原拍、COMBO 模型、R152 兩個模型與 PSF。全部 PASS，都落在 README 寫的位置。930 張 PI 重拍照它 README 的 `restore_pi_acquisition.py` 取回，結果見 `handoff_check_phase6.json`。
+- **乾跑**：`ESTIMATOR_POLICY.json` 登記的 COMBO 模型路徑，在 clone 裡指到剛取回的檔。R152 論文版獨立包 `R152_Standalone_ImageFiles_20261004` 的 `manifest.py` 裡，屬於 git 的 34 個檔和從 Release 取回的 6 個檔全部核對相符；它接著要的 9,216 張 TIFF 是由 `generate_data.py` 生成的，這次不生成，沒有跑推論。
+
+**分支和標籤。** `D:\GMM_2_Final` 與另兩個工作樹共用的 102 個本機分支和標籤，37 個在 GitHub 有同名的、65 個已被 GitHub 上的分支包含，沒有只在本機的。沒提交的改動不在 GitHub：原工作區有 438 個刪除（原檔在 git 歷史裡）和 52 個修改，`C:\Users\Rio\.codex\worktrees\impact-r152` 有 3 個修改；這些是專案擁有者自己的工作，沒有動。
+
+**再盤點一次。** 用 10-28 同一支 `Tools/handoff_inventory.py`、同樣三個根目錄（原專案、`H:\GMM_2_Final_Archive`、C 槽的 R152 IMPACT 工作區）重掃 2,623,875 個檔。10-28 之後沒有新出現的檔，也沒有新變成只在本機的檔。第一次重掃一度報出 688 個「新的只在本機」，原因是第 5 階段重建索引時沒加 `--with-zips`，沒有清單的 ZIP（R61 ONNX 交付包、歷史精選包等）裡面的檔沒進索引；加上之後重掃，歸零。
+
+**補換 `research-results-models` 的第二份取回清單。** 這個 Release 另有一份 `RESTORE_MANIFEST_20261016.json.gz`，跟 `RESEARCH_ASSETS.json.gz` 只差兩條：兩份 2026-10-16 收尾前的舊治理設定檔還原到 `Historical_Archive/pre_closeout_20261016/`，不會跟現行的同名檔撞在一起。第 5 階段只換了 `RESEARCH_ASSETS.json.gz`，這份還寫著舊路徑（`Traing_Progress/` 756 條、`Thesis_MOSR_Evidence/LabSystem_MOSR/` 10,946 條）。照第 5 階段的做法換掉：新檔以第 5 階段的新清單為底，那兩條改放 `Archive/Historical_Archive/pre_closeout_20261016/`，原檔改名成 `RESTORE_MANIFEST_20261016.pre-restructure-20261028.json.gz` 留著。上傳後 GitHub 回報的 sha256 跟本機相同，用它取回 R152 的 PSF 檔也 PASS。`SHA256SUMS.txt` 從來沒列過這份，前後都沒列。
+
+**改寫 33 個 Release 的說明。** 每份都照同一個格式：這是什麼、取回後放在哪（從清單算出的位置表）、怎麼取回、核對過什麼，加上 2026-10-28 整理對它的影響。英文標題改成中文，tag 不改。原文在 `docs/history/RELEASE_NOTES_BEFORE_20261031/`，新的全文在 `releases_phase6.json`。發布後逐份從 GitHub 讀回，33 份都相同（GitHub 存說明時把換行改成 CRLF，比對時先統一換行）。說明裡的取回範例，下載量 130 MB 以下的 11 個照原樣實際跑過，全部 PASS；較大的沒跑，說明裡也不寫跑過。
+
+**SEM 原圖的路徑。** 10 支會讀 SEM 原圖的程式（R69、R103、R113、R121、R127、R136 和 `PSF_Fitting/output/20260924_center9_psf/audit_sem_mapping.py`）寫死 `H:\From_2TB_D_disk\13_thesis\SEM_data`。那個資料夾的 25 個檔，在雲端都以同樣的相對路徑、同樣的 sha256 還原到 `Shared_Sources/SEM_Originals/`，所以改成專案內的這個位置（`manual_phase6_sem_originals.py`）。寫在報告文字裡的「原始 SEM：H:/…」是出處紀錄，照原樣留著；`Thesis_MOSR_Evidence` 裡兩份 R127 腳本是論文回顧的節錄副本，資料夾裡沒有它們需要的 `common.py`，也照原樣留著。記著這些程式雜湊的紀錄用 `rehash --phase 6` 帶過一次（`hash_changes_phase6.json`；這階段沒有搬家，`moves_phase6.json` 是空的）。
+
+**雜湊連鎖的誤換。** R152 論文版獨立包自我核對時，有 2 個檔對不上。追下去是前幾階段的雜湊連鎖只看內容不看路徑：同一份內容放在兩個位置、只有一個位置被改寫時，所有寫著那個舊雜湊的地方都被換成新雜湊，包括配對著「沒被改寫的那個位置」的紀錄。全 repo 掃一遍（`manual_phase6_hash_chain_audit.py`），每一處找它在紀錄裡配對的路徑，那個檔如果還是舊內容，就把值改回舊雜湊（`manual_phase6_hash_chain_fix.py`）：改回 102 處，168 處本來就對，38 處配對不到路徑、照原樣留下（清單在 `hash_chain_phase6.json`）。`rehash` 跟著又把 10 處換錯，用同一支程式改回，之後不再用 `rehash`，改用按路徑更新的 `manual_phase6_path_rehash.py` 把三份路徑對照表（`REPOSITORY_FILES.json.gz`、`CURATED_FILE_MAP.json.gz`、`SOURCE_AVAILABILITY.json.gz`）帶到一致。最後逐筆核對這三份表裡在 git 的路徑：雜湊跟檔案不符的，main 上有 1,331 筆，現在 1,254 筆，沒有新增，77 筆是這次順便修好的；剩下的在整理之前就存在，因為這些表記的是固定 commit 的快照。`hash_changes_phase6.json` 本身也是照內容記的，用它的時候要注意同一個問題。
+
+**已知差異。** R134 `native_calibration_replay.json` 與 R135 `reference_scope.json` 這兩份紀錄也存在 `research-results-models-20261016`，git 裡的版本這次多改了一個雜湊值。檔案本身在 git 裡，照 README 的方式取回時遇到內容不同的既有檔會停下，不會蓋掉 git 的版本，所以沒有為這兩個檔重換整份清單。
+
+**只在本機的東西。** 下面這些不在 GitHub，交機前要由專案擁有者決定：
+
+- 原工作區 sandbox 分支上沒提交的 52 個修改，以及 center9 Wiener 的 67 個圖表與數據檔（18.9 MB）。
+- 10-28 盤點時照保存原則判斷不上傳的本機資料（原專案 368 GB、H 槽封存區 953 GB，大多是可以重新生成的訓練資料、逐張重建與中途模型）。
+
+**留下的外部路徑。** 程式裡還寫著 `H:\GMM_2_Final_Archive\…` 的，是當年為這台電腦的 H 槽寫的封存與清理工具（`Tools/assemble_verified_archive_collection.py`、`plan_research_*_archive.py`、`storage_cleanup_*_20260926.py` 等），以及 R130、R137–R140 把重建結果寫到 H 槽的準備腳本；它們交機後本來就跑不了，照原樣留著當紀錄。`d:/GMM_2_Final/` 只剩 13 處，都在註解裡的使用說明。

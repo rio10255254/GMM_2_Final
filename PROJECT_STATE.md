@@ -153,8 +153,8 @@ R153 十方法（算術平均口徑，nm）：
 | 其餘逐輪來源 | 已對 62 個範圍的指定面向核對；全專案閉合**尚未宣稱** |
 | 已找回 | R94 的 19 版與 R95 的 3 版早期程式、R13 較早公式（216 項分數與 5 次選擇重算相同） |
 | 外部 GMF 量測程式 | 廠商提供的量測工具，不在 GitHub。2026-03 的文件記它裝在 `E:\GMM_Software\GmmVisionToolExe_20260107`，2026-10 的掃描已經找不到，E 槽也沒有接上，現在這台電腦上沒有可用的版本。各輪的外部 GMF 分數和送量的影像都已保存；要重新量測得另外向廠商取得。不依賴這個工具的位移量法在 `Tools/Displacement_Algorithms/` |
-| H 槽封存路徑 | 仍有地方寫著 `H:/From_2TB_D_disk`、`H:/GMM_2_Final_Archive` 的位置：程式裡約 40 處（28 支 Python、少數 PowerShell 與 MATLAB），其餘約 5,600 處在 1,025 份 JSON 清單與取回紀錄裡（2026-10-30 統計）。H 槽不會跟著 GitHub 走；那些資料是否都已在發布附件，屬於交機前清點，尚未完成 |
-| 只在本機的內容 | 未提交的改動、其他工作目錄、`D:/NTU_ImageDataset`、`E:/MitsutoyoSample_GMMSys_20x` 等外部資料還沒逐項清點；清點後先給專案負責人看清單，再決定上傳哪些 |
+| H 槽封存路徑 | 2026-11-03 交機檢查後：讀 SEM 原圖的 10 支程式已改指 `Shared_Sources/SEM_Originals/`（內容與 H 槽原件逐檔相同）。還寫著 `H:/GMM_2_Final_Archive` 的是當年為這台電腦寫的封存、清理工具與把重建寫到 H 槽的準備腳本，交機後本來就跑不了，照原樣留作紀錄；JSON 清單與取回紀錄裡的 H 槽路徑是當時的出處。細節見[重整紀錄第 6 階段](docs/operations/TREE_RESTRUCTURE_20261028.md) |
+| 只在本機的內容 | 2026-11-03 重新盤點（原專案、H 槽封存區、C 槽 R152 IMPACT 工作區，共 262 萬個檔）：10-28 之後沒有新增只在本機的檔。不在 GitHub、要由專案負責人決定的：原工作區沒提交的 52 個修改與 center9 Wiener 圖表數據 67 個檔（18.9 MB），以及 10-28 照保存原則判斷不上傳的本機資料 |
 
 細節：[KNOWN_GAPS.md](docs/reproducibility/KNOWN_GAPS.md)、[STATUS.md](docs/reproducibility/STATUS.md)。
 
