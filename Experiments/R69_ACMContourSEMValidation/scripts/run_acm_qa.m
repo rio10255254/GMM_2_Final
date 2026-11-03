@@ -7,7 +7,7 @@ raw_dir = fullfile(experiment_root, 'inputs', 'sem_paired_50x_exposure_stack');
 recon_dir = fullfile(experiment_root, 'results', 'inference_runs', ...
     'reconstruct_progress_best_tradeoff_in_sem_paired_50x_exposure_stack_20260623_200020', ...
     'r61v16_psfoff_sem_paired_50x');
-sem_dir = 'H:\From_2TB_D_disk\13_thesis\SEM_data';
+sem_dir = fullfile(fileparts(fileparts(fileparts(script_dir))), 'Shared_Sources', 'SEM_Originals');
 mask_dir = fullfile(experiment_root, 'results', 'masks');
 if ~exist(mask_dir, 'dir'), mkdir(mask_dir); end
 

@@ -31,7 +31,7 @@ CONFIG = json.loads((ROOT / "config" / "experiment.json").read_text(encoding="ut
 RUN = json.loads((ROOT / "runs" / "active_run.json").read_text(encoding="utf-8"))
 OUTPUT = ROOT / "results" / "causal_diagnostics" / "alpha_probe"
 RAW_SEM = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
-SEM_DIR = Path(r"H:\From_2TB_D_disk\13_thesis\SEM_data")
+SEM_DIR = PROJECT_ROOT / 'Shared_Sources/SEM_Originals'
 SHARED = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/scripts'))
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
 ALPHAS = {"A025": 0.25, "A050": 0.50, "A075": 0.75, "A100": 1.00, "A125": 1.25}

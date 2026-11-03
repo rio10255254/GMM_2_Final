@@ -16,7 +16,7 @@ end
 if nargin < 4 || isempty(model_name)
     model_name = 'R61v16';
 end
-sem_dir = 'H:\From_2TB_D_disk\13_thesis\SEM_data';
+sem_dir = fullfile(fileparts(fileparts(fileparts(script_dir))), 'Shared_Sources', 'SEM_Originals');
 table_dir = fullfile(experiment_root, 'results', 'tables');
 mask_dir = fullfile(experiment_root, 'results', 'masks');
 if ~exist(table_dir, 'dir'), mkdir(table_dir); end

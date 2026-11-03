@@ -64,7 +64,7 @@ def main():
     assert [int(c[0]) for c in current["centers"]] == [item for row in IDS for item in row]
     transfer = json.loads((ROOT / "current_20x_identity_transfer.json").read_text(encoding="utf-8"))
     assert transfer["max_center_residual_px"] < 1.5
-    archive = Path(r"H:\From_2TB_D_disk\13_thesis\SEM_data")
+    archive = PROJECT_ROOT / 'Shared_Sources/SEM_Originals'
     archive_names = ["via_pilar.xlsx", "P-01.tiff", "P-02.tiff", "P-05.tiff", "P-06.tiff"]
     def digest(path):
         h = hashlib.sha256()

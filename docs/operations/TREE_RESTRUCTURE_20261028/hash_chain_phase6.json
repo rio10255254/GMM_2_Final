@@ -1,0 +1,850 @@
+{
+ "what": "Phase 6 hash-chain review: values the content-based chain replaced although the file the record pairs them with was never changed",
+ "method": "manual_phase6_hash_chain_audit.py lists suspicious values; manual_phase6_hash_chain_fix.py pairs each with the nearest preceding path in the record and restores the old value when that file still has the old content; manual_phase6_path_rehash.py then updates the path->sha catalogs by path; manual_phase6_catalog_consistency.py checks the result against origin/main",
+ "fixed_first_pass": [
+  {
+   "record": "Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/manifest.py",
+   "kind": "wrong",
+   "path": "Deliverables\\Standalone_Models\\R152_Standalone_ImageFiles_20261004\\generation\\original_sources\\r148_physical_views.py",
+   "value": "11ea1b83f346"
+  },
+  {
+   "record": "Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004/manifest.py",
+   "kind": "wrong",
+   "path": "Deliverables\\Standalone_Models\\R152_Standalone_ImageFiles_20261004\\generation\\original_sources\\r148v2_geometry_labels.py",
+   "value": "e62817c7423d"
+  },
+  {
+   "record": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/sources/config/SOURCE_LOCK.json",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\dataset.py",
+   "value": "0a96a9705ba1"
+  },
+  {
+   "record": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/sources/config/SOURCE_LOCK.json",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\train.py",
+   "value": "70ceb2d7a1f4"
+  },
+  {
+   "record": "Experiments/R152_R148v2_SafeAdaptivePSF/reports/R152_RAW_FULL_RECORD_20261002/sources/config/SOURCE_LOCK.json",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\model.py",
+   "value": "a71f60c8f591"
+  },
+  {
+   "record": "Thesis_MOSR_Evidence/Research_Design_Effect_Review_20260926/03_PSF_Experiment_Line/R147_FullResPSFConsistency/architecture/config/EVALUATION_LOCK.json",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\03_PSF_Experiment_Line\\R147_FullResPSFConsistency\\architecture\\scripts\\evaluate_real.py",
+   "value": "a959acb6f2fb"
+  },
+  {
+   "record": "Thesis_MOSR_Evidence/Research_Design_Effect_Review_20260926/03_PSF_Experiment_Line/R147_FullResPSFConsistency/architecture/config/SOURCE_LOCK.json",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\03_PSF_Experiment_Line\\R147_FullResPSFConsistency\\architecture\\scripts\\launch_r147.py",
+   "value": "a77b58408a45"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\dataset.py",
+   "value": "0a96a9705ba1"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R135_UnifiedModelComparison\\architecture\\scripts\\run_model_v3.py",
+   "value": "0ad748f01ab5"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Deliverables\\Standalone_Models\\R152_Standalone_ImageFiles_20261004\\generation\\original_sources\\r148_physical_views.py",
+   "value": "11ea1b83f346"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\results\\DATA_GENERATOR_20261004\\portable_generation_copy\\generation\\original_sources\\r148_physical_views.py",
+   "value": "11ea1b83f346"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\analysis\\build_record.py",
+   "value": "37106d42e356"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\03_PSF_Experiment_Line\\R147_FullResPSFConsistency\\architecture\\scripts\\audit_activation.py",
+   "value": "3bb940530732"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Deliverables\\Thesis_Handoffs\\R129_Thesis_Rewrite_Ready_20260920\\04_Results\\R129_Handoff\\05_Script_Reference\\raw_r129_corner9_report.py",
+   "value": "496b584d637d"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r129_corner9_report.py",
+   "value": "496b584d637d"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R130_Clean\\results\\independent_result_review.py",
+   "value": "5987ce4964e9"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R135_UnifiedModelComparison\\architecture\\scripts\\run_model_v2.py",
+   "value": "5cc486977a3a"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R135_UnifiedModelComparison\\architecture\\scripts\\run_model.py",
+   "value": "6005e34723c5"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R137_WeakPSFFeature\\architecture\\README.md",
+   "value": "702f9b0d87be"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\prepare_r61_universal_dataset.py",
+   "value": "70a7d65ceec4"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\train.py",
+   "value": "70ceb2d7a1f4"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R127_MeasurementPreservationRepair\\architecture\\scripts\\sem_native_audit.py",
+   "value": "7e364bebdf6e"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\common.py",
+   "value": "92a630a6729b"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\model.py",
+   "value": "a71f60c8f591"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\03_PSF_Experiment_Line\\R147_FullResPSFConsistency\\architecture\\scripts\\launch_r147.py",
+   "value": "a77b58408a45"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\03_PSF_Experiment_Line\\R147_FullResPSFConsistency\\architecture\\scripts\\evaluate_real.py",
+   "value": "a959acb6f2fb"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r128_corner9_report.py",
+   "value": "ab55d2b01639"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R129_OpticalPriorHybrid\\architecture\\scripts\\register_long_training_results.py",
+   "value": "c1550652cfad"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Deliverables\\Thesis_Handoffs\\R130_Clean_Corrected_Corner9_Validation_Handoff_20260920\\06_Script_Reference\\execution_source\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "docs\\history\\TRAINING_LOG_WRITERS_20261021\\8479f05f2a3cf25e93708b5cd4da8b8ffa8ee6fe.py",
+   "value": "c95955cd5904"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R118_PhysicalCoordinateRepairScratch\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R119_SequenceGeometryValidation\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R121_BoundaryAnchorFactorial\\reports\\source_snapshot\\training__base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R121_BoundaryAnchorFactorial\\reports\\source_snapshot\\training__base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R129_OpticalPriorHybrid\\architecture\\scripts\\publish_long_training_review.py",
+   "value": "d8fd493df273"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\analysis\\recalculate.py",
+   "value": "de32095c5fcb"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R131_RecurrentStepValidation\\architecture\\scripts\\measure.py",
+   "value": "e3d04af8e715"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Deliverables\\Standalone_Models\\R152_Standalone_ImageFiles_20261004\\generation\\original_sources\\r148v2_geometry_labels.py",
+   "value": "e62817c7423d"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\results\\DATA_GENERATOR_20261004\\portable_generation_copy\\generation\\original_sources\\r148v2_geometry_labels.py",
+   "value": "e62817c7423d"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R134_DirectStateRepair\\architecture\\dataset134.py",
+   "value": "ec771ec566c0"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\corner9_sem_compare.py",
+   "value": "ec917595559a"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R136_PIRepeatability\\architecture\\scripts\\corner9_sem_compare.py",
+   "value": "ec917595559a"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R127_MeasurementPreservationRepair\\architecture\\scripts\\sem_native_audit_v2.py",
+   "value": "f22eecf140ed"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R128_SourceOnlyFullTraining\\architecture\\scripts\\train.py",
+   "value": "fce4d4bc2a33"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r129_corner9_report.py",
+   "value": "496b584d637d"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r129_corner9_report.py",
+   "value": "496b584d637d"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\prepare_r61_universal_dataset.py",
+   "value": "70a7d65ceec4"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\prepare_r61_universal_dataset.py",
+   "value": "70a7d65ceec4"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\common.py",
+   "value": "92a630a6729b"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\common.py",
+   "value": "92a630a6729b"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r128_corner9_report.py",
+   "value": "ab55d2b01639"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r128_corner9_report.py",
+   "value": "ab55d2b01639"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R118_PhysicalCoordinateRepairScratch\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R118_PhysicalCoordinateRepairScratch\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R119_SequenceGeometryValidation\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R119_SequenceGeometryValidation\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\corner9_sem_compare.py",
+   "value": "ec917595559a"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\corner9_sem_compare.py",
+   "value": "ec917595559a"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\dataset.py",
+   "value": "0a96a9705ba1"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R135_UnifiedModelComparison\\architecture\\scripts\\run_model_v3.py",
+   "value": "0ad748f01ab5"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Deliverables\\Standalone_Models\\R152_Standalone_ImageFiles_20261004\\generation\\original_sources\\r148_physical_views.py",
+   "value": "11ea1b83f346"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\results\\DATA_GENERATOR_20261004\\portable_generation_copy\\generation\\original_sources\\r148_physical_views.py",
+   "value": "11ea1b83f346"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\analysis\\build_record.py",
+   "value": "37106d42e356"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\03_PSF_Experiment_Line\\R147_FullResPSFConsistency\\architecture\\scripts\\audit_activation.py",
+   "value": "3bb940530732"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Deliverables\\Thesis_Handoffs\\R129_Thesis_Rewrite_Ready_20260920\\04_Results\\R129_Handoff\\05_Script_Reference\\raw_r129_corner9_report.py",
+   "value": "496b584d637d"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r129_corner9_report.py",
+   "value": "496b584d637d"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R130_Clean\\results\\independent_result_review.py",
+   "value": "5987ce4964e9"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R135_UnifiedModelComparison\\architecture\\scripts\\run_model_v2.py",
+   "value": "5cc486977a3a"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R135_UnifiedModelComparison\\architecture\\scripts\\run_model.py",
+   "value": "6005e34723c5"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R137_WeakPSFFeature\\architecture\\README.md",
+   "value": "702f9b0d87be"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\prepare_r61_universal_dataset.py",
+   "value": "70a7d65ceec4"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\train.py",
+   "value": "70ceb2d7a1f4"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R127_MeasurementPreservationRepair\\architecture\\scripts\\sem_native_audit.py",
+   "value": "7e364bebdf6e"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\common.py",
+   "value": "92a630a6729b"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\model.py",
+   "value": "a71f60c8f591"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\03_PSF_Experiment_Line\\R147_FullResPSFConsistency\\architecture\\scripts\\launch_r147.py",
+   "value": "a77b58408a45"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\03_PSF_Experiment_Line\\R147_FullResPSFConsistency\\architecture\\scripts\\evaluate_real.py",
+   "value": "a959acb6f2fb"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r128_corner9_report.py",
+   "value": "ab55d2b01639"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R129_OpticalPriorHybrid\\architecture\\scripts\\register_long_training_results.py",
+   "value": "c1550652cfad"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Deliverables\\Thesis_Handoffs\\R130_Clean_Corrected_Corner9_Validation_Handoff_20260920\\06_Script_Reference\\execution_source\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "docs\\history\\TRAINING_LOG_WRITERS_20261021\\8479f05f2a3cf25e93708b5cd4da8b8ffa8ee6fe.py",
+   "value": "c95955cd5904"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R118_PhysicalCoordinateRepairScratch\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R119_SequenceGeometryValidation\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R121_BoundaryAnchorFactorial\\reports\\source_snapshot\\training__base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R121_BoundaryAnchorFactorial\\reports\\source_snapshot\\training__base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R129_OpticalPriorHybrid\\architecture\\scripts\\publish_long_training_review.py",
+   "value": "d8fd493df273"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\reports\\R152_RAW_FULL_RECORD_20261002\\sources\\analysis\\recalculate.py",
+   "value": "de32095c5fcb"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R131_RecurrentStepValidation\\architecture\\scripts\\measure.py",
+   "value": "e3d04af8e715"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Deliverables\\Standalone_Models\\R152_Standalone_ImageFiles_20261004\\generation\\original_sources\\r148v2_geometry_labels.py",
+   "value": "e62817c7423d"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R152_R148v2_SafeAdaptivePSF\\results\\DATA_GENERATOR_20261004\\portable_generation_copy\\generation\\original_sources\\r148v2_geometry_labels.py",
+   "value": "e62817c7423d"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R134_DirectStateRepair\\architecture\\dataset134.py",
+   "value": "ec771ec566c0"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\corner9_sem_compare.py",
+   "value": "ec917595559a"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R136_PIRepeatability\\architecture\\scripts\\corner9_sem_compare.py",
+   "value": "ec917595559a"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\01_Foundations_and_Failure_Modes\\R127_MeasurementPreservationRepair\\architecture\\scripts\\sem_native_audit_v2.py",
+   "value": "f22eecf140ed"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "wrong",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\02_Core_Model_Line\\R128_SourceOnlyFullTraining\\architecture\\scripts\\train.py",
+   "value": "fce4d4bc2a33"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r129_corner9_report.py",
+   "value": "496b584d637d"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "wrong",
+   "path": "LabSystem_MOSR\\Experiments\\R61_BoundaryGeneralizationUniversal\\scripts\\prepare_r61_universal_dataset.py",
+   "value": "70a7d65ceec4"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\common.py",
+   "value": "92a630a6729b"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\raw_r128_corner9_report.py",
+   "value": "ab55d2b01639"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R118_PhysicalCoordinateRepairScratch\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R119_SequenceGeometryValidation\\training\\dataset.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "wrong",
+   "path": "Experiments\\R136_PIRepeatability\\scripts\\corner9_sem_compare.py",
+   "value": "ec917595559a"
+  }
+ ],
+ "fixed_second_pass_note": "rehash after the first pass re-chained 10 values in the four catalogs (R147 SOURCE_LOCK / EVALUATION_LOCK, whose Thesis_MOSR_Evidence copies had been corrected); the same fix restored them, and rehash was not run again",
+ "left_unresolved": [
+  {
+   "record": "Experiments/R120_PhysicalSequenceRepair/results/probe_audit.json",
+   "kind": "unknown",
+   "path": "Experiments\\R120_PhysicalSequenceRepair\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "Experiments/R120_PhysicalSequenceRepair/results/probe_audit.json",
+   "kind": "unknown",
+   "path": "Experiments\\R120_PhysicalSequenceRepair\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "Experiments/R120_PhysicalSequenceRepair/results/probe_audit.json",
+   "kind": "unknown",
+   "path": "Experiments\\R120_PhysicalSequenceRepair\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "Experiments/R120_PhysicalSequenceRepair/results/probe_audit.json",
+   "kind": "unknown",
+   "path": "Experiments\\R120_PhysicalSequenceRepair\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "Experiments/R121_BoundaryAnchorFactorial/config/source_freeze.json",
+   "kind": "unknown",
+   "path": "Experiments\\R121_BoundaryAnchorFactorial\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "Experiments/R121_BoundaryAnchorFactorial/config/source_freeze_v2.json",
+   "kind": "unknown",
+   "path": "Experiments\\R121_BoundaryAnchorFactorial\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "Experiments/R130_Clean/config/source_lock.json",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "Experiments/R137_WeakPSFFeature/config/protected_sources.json",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "Experiments/R138_V42PSF8/config/protected_sources.json",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "Experiments/R149_MatchedGeometryLocalBoundary/config/SOURCE_LOCK.json",
+   "kind": "unknown",
+   "path": null,
+   "value": "e62817c7423d"
+  },
+  {
+   "record": "Experiments/R152_IMPACT2026Validation/sources/r152_config_SOURCE_LOCK.json",
+   "kind": "unknown",
+   "path": "README.md",
+   "value": "0a96a9705ba1"
+  },
+  {
+   "record": "Experiments/R152_IMPACT2026Validation/sources/r152_config_SOURCE_LOCK.json",
+   "kind": "unknown",
+   "path": null,
+   "value": "70ceb2d7a1f4"
+  },
+  {
+   "record": "Experiments/R152_IMPACT2026Validation/sources/r152_config_SOURCE_LOCK.json",
+   "kind": "unknown",
+   "path": "README.md",
+   "value": "a71f60c8f591"
+  },
+  {
+   "record": "Experiments/R152_R148v2_SafeAdaptivePSF/results/DATA_GENERATOR_20261004/build_generation_sources.py",
+   "kind": "unknown",
+   "path": "Experiments\\R148v2_HybridContextNativePSF\\scripts\\prepare_geometry.py",
+   "value": "11ea1b83f346"
+  },
+  {
+   "record": "Thesis_MOSR_Evidence/Research_Design_Effect_Review_20260926/02_Core_Model_Line/R137_WeakPSFFeature/architecture/config/protected_sources.json",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "Thesis_MOSR_Evidence/Research_Design_Effect_Review_20260926/03_PSF_Experiment_Line/R138_V42PSF8/architecture/config/protected_sources.json",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "Thesis_MOSR_Evidence/Research_Design_Effect_Review_20260926/04_Current_Optimization/R148_MeasurementStableNativePSF/architecture/config/SOURCE_LOCK.json",
+   "kind": "unknown",
+   "path": "Thesis_MOSR_Evidence\\Research_Design_Effect_Review_20260926\\04_Current_Optimization\\R148_MeasurementStableNativePSF\\architecture\\calibration\\BANK_LOCK.json",
+   "value": "11ea1b83f346"
+  },
+  {
+   "record": "Thesis_MOSR_Evidence/Research_Design_Effect_Review_20260926/04_Current_Optimization/R148v2_HybridContextNativePSF/architecture/config/SOURCE_LOCK.json",
+   "kind": "unknown",
+   "path": null,
+   "value": "e62817c7423d"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "unknown",
+   "path": "Deliverables\\Thesis_Handoffs\\R129_Thesis_Rewrite_Ready_20260920\\04_Results\\R129_Handoff\\05_Script_Reference\\common.py",
+   "value": "92a630a6729b"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R136_PIRepeatability\\output\\R136_LSC_R61_Reading_Package\\05_定位與分析紀錄\\程式\\common.py",
+   "value": "92a630a6729b"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R120_PhysicalSequenceRepair\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/REPOSITORY_FILES.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R121_BoundaryAnchorFactorial\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R120_PhysicalSequenceRepair\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R120_PhysicalSequenceRepair\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R121_BoundaryAnchorFactorial\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/lineage/SOURCE_AVAILABILITY.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R121_BoundaryAnchorFactorial\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/AVAILABLE_TRAINING_LOG_WRITER_LAYOUTS.json",
+   "kind": "unknown",
+   "path": null,
+   "value": "c95955cd5904"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "unknown",
+   "path": "Deliverables\\Thesis_Handoffs\\R129_Thesis_Rewrite_Ready_20260920\\04_Results\\R129_Handoff\\05_Script_Reference\\common.py",
+   "value": "92a630a6729b"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R136_PIRepeatability\\output\\R136_LSC_R61_Reading_Package\\05_定位與分析紀錄\\程式\\common.py",
+   "value": "92a630a6729b"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R120_PhysicalSequenceRepair\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/CURATED_FILE_MAP.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R121_BoundaryAnchorFactorial\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R130_Clean\\utils.py",
+   "value": "c296b13e5571"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R120_PhysicalSequenceRepair\\training\\base.py",
+   "value": "ca039580c026"
+  },
+  {
+   "record": "docs/reproducibility/project_completion/curated/GENERATION_ROUTES.json.gz",
+   "kind": "unknown",
+   "path": "Experiments\\R121_BoundaryAnchorFactorial\\training\\base.py",
+   "value": "ca039580c026"
+  }
+ ],
+ "catalog_check": "REPOSITORY_FILES / CURATED_FILE_MAP / SOURCE_AVAILABILITY entries for tracked paths whose sha differs from the file: origin/main 1,331, after phase 6 1,254; none new, 77 fixed. The remaining ones predate the restructure (catalogs describe fixed snapshot commits)."
+}

@@ -56,7 +56,7 @@ def main():
     blocks=[(3,1),(3,2),(3,3),(2,3),(2,2),(2,1),(1,1),(1,2),(1,3)]
     sources=[record(oldpath),record(optpath)];records=[];scale_rows=[];arrays={};centers_sem=[];footers=[]
     for file in range(1,10):
-        path=Path(r'H:\From_2TB_D_disk\13_thesis\SEM_data')/f'P-{file:02d}.tiff';im=np.array(Image.open(path))[...,0];sources.append(record(path));crop=im[6:754,141:914]
+        path=REPO/'Shared_Sources/SEM_Originals'/f'P-{file:02d}.tiff';im=np.array(Image.open(path))[...,0];sources.append(record(path));crop=im[6:754,141:914]
         found=cv2.HoughCircles(cv2.GaussianBlur(crop,(0,0),3),cv2.HOUGH_GRADIENT,1,220,param1=40,param2=40,minRadius=90,maxRadius=145)
         if found is None or len(found[0])!=4:raise ValueError(f'Native SEM circle initialization failed: {file}, {None if found is None else found[0].tolist()}')
         initial=found[0,:,:2];initial=initial[np.argsort(initial[:,1])];initial=np.vstack([x[np.argsort(x[:,0])] for x in [initial[:2],initial[2:]]])

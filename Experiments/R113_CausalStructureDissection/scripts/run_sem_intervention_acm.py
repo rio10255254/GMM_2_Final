@@ -18,7 +18,7 @@ CONTRACT = ROOT / "results" / "physical_validation" / "sem_acm_contract"
 R82_SCRIPTS = Path(str(PROJECT_ROOT / 'Experiments/R82_R39R40CrossSceneGeneralizationBenchmark/scripts'))
 MATLAB = Path(r"C:\Program Files\MATLAB\R2025b\bin\matlab.exe")
 RAW = Path(str(PROJECT_ROOT / 'Experiments/R69_ACMContourSEMValidation/inputs/sem_paired_50x_exposure_stack'))
-SEM = Path(r"H:\From_2TB_D_disk\13_thesis\SEM_data")
+SEM = PROJECT_ROOT / 'Shared_Sources/SEM_Originals'
 VARIANTS = ("full", "no_shift", "no_width", "learned_support_only", "smoothed_controls")
 EXPOSURES = tuple(range(13, 25))
 

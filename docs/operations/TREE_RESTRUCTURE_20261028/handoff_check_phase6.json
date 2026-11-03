@@ -1,0 +1,128 @@
+{
+ "what": "Phase 6 handoff check (2026-11-03): only a fresh clone and GitHub were used",
+ "clone": {
+  "path": "D:/GMM_2_Final_handoff_check/GMM_2_Final",
+  "command": "git clone -c core.longpaths=true --depth 1 --single-branch --branch main",
+  "commit": "c8ea0ef43373c66fcf0b440093d827d6f1ee58db",
+  "bytes_on_disk": "2.2 GB"
+ },
+ "tests": {
+  "summary": "15 failed, 422 passed, 1 skipped",
+  "same_as_github_ci": "CI fails the same 15 plus test_native_launcher_show_config_returns_json (needs PowerShell; skipped locally)",
+  "failed": [
+   "Experiments/R26NewPSFCheck/package_repro_validation/tests/test_gpu_patch_package.py::test_gpu_patch_payload_keeps_only_runtime_files",
+   "Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py::test_formal_adapter_applies_historical_r26_run_semantics",
+   "Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py::test_formal_dry_run_exposes_reset_epoch_launch_default",
+   "Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py::test_formal_recipe_manifest_exists",
+   "Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py::test_formal_seed_checkpoint_exists",
+   "Experiments/R26NewPSFCheck/package_repro_validation/tests/test_r26_formal_package.py::test_formal_stage_subset_exists",
+   "Experiments/R26NewPSFCheck/pure_psf_control/tests/test_pure_psf_control.py::test_build_control_spec_enables_epoch_checkpoints",
+   "Experiments/R26NewPSFCheck/pure_psf_control/tests/test_pure_psf_control.py::test_load_round26_recipe_extracts_r26sm035",
+   "Experiments/R26NewPSFCheck/pure_psf_control/tests/test_pure_psf_control.py::test_resolve_round26_training_roots_points_to_stage_layout",
+   "Experiments/R26NewPSFCheck/root_cause_centering/tests/test_root_cause_centering.py::test_build_delta_matrix_detects_recipe_drift",
+   "Experiments/R26NewPSFCheck/root_cause_centering/tests/test_root_cause_centering.py::test_collect_selector_candidates_recovers_expected_epochs",
+   "Experiments/R26NewPSFCheck/root_cause_centering/tests/test_root_cause_centering.py::test_summarize_psf_pair_captures_center_shift_not_width_blowup",
+   "PSF_Fitting/tests/python/test_center9_wiener_evidence.py::test_captured_and_deconvolved_overlays_use_one_shared_grayscale",
+   "PSF_Fitting/tests/python/test_center9_wiener_evidence.py::test_center9_wiener_outputs_match_frozen_parameters_and_all_pillar_results",
+   "PSF_Fitting/tests/python/test_center9_wiener_evidence.py::test_spectra_use_absolute_dbfs_without_per_image_normalization"
+  ],
+  "missing_data": "R26 package internals, Experiments/Legacy/auto_tune_reports, R26 archived_inputs and package_cleanup_archive are in Releases; the center9 Wiener figures are not (owner's uncommitted work)"
+ },
+ "cloud_index": {
+  "built_from_scratch_in_clone": "33 releases, 398,192 paths",
+  "moved_paths_spot_check": "4 of 4 found at the new path, 0 of 4 at the old path"
+ },
+ "retrieved": [
+  {
+   "kind": "Step",
+   "status": "PASS",
+   "files_restored_and_verified": 1,
+   "prefix": "Shared_Sources/Real_Sample_Captures/Step/VisionTop_20260615174037351.bmp"
+  },
+  {
+   "kind": "NTU sequence",
+   "status": "PASS",
+   "files_restored_and_verified": 1,
+   "prefix": "Shared_Sources/NTU_Originals/Pitch1um_Y_100/Raw/VisionTop_20251029182709926.bmp"
+  },
+  {
+   "kind": "NTU external GMF",
+   "status": "PASS",
+   "files_restored_and_verified": 1,
+   "prefix": "Shared_Sources/NTU_Originals/Pitch1um_Y_100/external_gmf_r61_v16_psfoff_20260627/00_raw_input/bmp/VisionTop_20251029182715364.bmp"
+  },
+  {
+   "kind": "COMBO model",
+   "status": "PASS",
+   "files_restored_and_verified": 1,
+   "prefix": "Experiments/Training_Runs/training_progress_GeoEdgeAlignSR_v1_v5_NoCoord_SimpleTest_20260408_003525/weights/best_tradeoff.pth.tar"
+  },
+  {
+   "kind": "R152 models",
+   "status": "PASS",
+   "files_restored_and_verified": 2,
+   "prefix": "Deliverables/Standalone_Models/R152_Standalone_20261004"
+  },
+  {
+   "kind": "PSF100 camera original",
+   "status": "PASS",
+   "files_restored_and_verified": 1,
+   "prefix": "Shared_Sources/PSF_Camera_Acquisitions/PSF100_20250903/raw/VisionTop_20250903160556.bmp"
+  },
+  {
+   "kind": "R152 PSF bank via the new RESTORE_MANIFEST_20261016.json.gz",
+   "status": "PASS",
+   "files_restored_and_verified": 1,
+   "prefix": "Deliverables/Standalone_Models/R152_Standalone_20261004/calibration"
+  },
+  {
+   "kind": "R152 ImageFiles package sources",
+   "status": "PASS",
+   "files_restored_and_verified": 6,
+   "prefix": "Deliverables/Standalone_Models/R152_Standalone_ImageFiles_20261004"
+  },
+  {
+   "kind": "PI repeatability (restore_pi_acquisition.py)",
+   "status": "PASS",
+   "files_restored_and_verified": 960,
+   "photographs": 930,
+   "position_logs": 30,
+   "note": "gh release download was cut twice for the 2.03 GB archive; finished with curl -C - and the sha256 GitHub lists"
+  }
+ ],
+ "dry_runs": [
+  "ESTIMATOR_POLICY.json COMBO checkpoint path resolves to the retrieved file in the clone",
+  "R152_Standalone_ImageFiles_20261004 manifest.py: 34 git files and 6 release files match; the 9,216 TIFFs it then asks for are generated by generate_data.py and were not generated"
+ ],
+ "branches_and_tags": {
+  "local_refs": 102,
+  "same_name_on_github": 37,
+  "contained_in_a_github_branch": 65,
+  "local_only": 0,
+  "uncommitted": {
+   "D:/GMM_2_Final (sandbox/r153-mean-external-benchmark)": "438 deleted (in git history), 52 modified",
+   "C:/Users/Rio/.codex/worktrees/impact-r152/GMM_2_Final": "3 modified"
+  }
+ },
+ "reinventory": {
+  "tool": "Tools/handoff_inventory.py",
+  "roots": [
+   "D:/GMM_2_Final",
+   "H:/GMM_2_Final_Archive",
+   "C:/Users/Rio/.codex/worktrees/impact-r152/GMM_2_Final/Experiments/R152_IMPACT2026Validation"
+  ],
+  "files": 2623875,
+  "new_since_20261028": 0,
+  "newly_local_only": 0,
+  "note": "a first rescan reported 688 newly local-only files; the 2026-11-02 index had been built without --with-zips, so members of manifest-less ZIPs were missing. Rebuilt with --with-zips, the rescan found none."
+ },
+ "restructure_worktree_untracked": {
+  "files": 149730,
+  "GB": 42.23,
+  "copies_of_D_GMM_2_Final": 141893,
+  "in_cloud": 20,
+  "tool_and_test_output": 7817,
+  "verified_delete_dry_run": "149,730 would be deleted after re-hashing both sides, 0 kept",
+  "deletion": "left to the project owner"
+ }
+}
