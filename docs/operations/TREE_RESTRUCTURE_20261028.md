@@ -329,4 +329,37 @@
 - 原工作區 sandbox 分支上沒提交的 52 個修改，以及 center9 Wiener 的 67 個圖表與數據檔（18.9 MB）。
 - 10-28 盤點時照保存原則判斷不上傳的本機資料（原專案 368 GB、H 槽封存區 953 GB，大多是可以重新生成的訓練資料、逐張重建與中途模型）。
 
+> 2026-11-05 補記：上面的 center9 圖表，以及下一節找到的論文圖、簡報原檔和各輪成品圖，已經補進 git 和 Release，見「交機前補件」。
+
 **留下的外部路徑。** 程式裡還寫著 `H:\GMM_2_Final_Archive\…` 的，是當年為這台電腦的 H 槽寫的封存與清理工具（`Tools/assemble_verified_archive_collection.py`、`plan_research_*_archive.py`、`storage_cleanup_*_20260926.py` 等），以及 R130、R137–R140 把重建結果寫到 H 槽的準備腳本；它們交機後本來就跑不了，照原樣留著當紀錄。`d:/GMM_2_Final/` 只剩 13 處，都在註解裡的使用說明。
+
+### 交機前補件：只在本機的圖與原檔（2026-11-05）
+
+第 6 階段「再盤點一次」說 10-28 之後沒有新變成只在本機的檔。這句話只跟 10-28 的盤點比較，沒有回頭檢查 10-28 當時就判成只在本機、但照保存原則其實要留的檔。所以 11-04 從原工作區 `D:\GMM_2_Final` 重新逐檔比對：每個檔都去對 origin/main 的完整歷史（git blob）和 33 個 Release 的內容清單（sha256）。舊配置的路徑先照 `moves_phase*.json` 換成新樹路徑，補回的檔一律放回新樹裡原本的位置。
+
+**小資料夾（825 個只在本機的檔）。**
+
+- **進 git 的 600 個**：論文各章成品圖、簡報圖、`PSF_Fitting/quick_recalibration` 的簡報圖集、三倍率手動 ROI 預覽、各輪展示圖，以及少量 `.sql`、`.md`。main 上的導讀（例如 `IMAGE_GUIDE.txt`、`README_FIRST.txt`）原本就在介紹這些圖。逐檔核對過，進 git 後的內容跟原檔相同。
+- **進 Release 的 224 個**：MATLAB `.fig` 原檔、BMP 重建輸出、權重，以及位在 main 的 `.gitignore` 排除位置（`runs/`、`weights/`、`reconstruct_progress_*`）的檔。
+- **兩個 ZIP**：`Research_Design_Effect_Review_20260926.zip` 和 `PSF_Fitting_Tutorial.zip` 在 main 上已經有展開的資料夾，所以不傳整包，只補缺的 12 張 PNG 和 1 個 tiff。
+- **不收**：12 份整理前的舊版說明，main 上已經有改寫路徑後的版本。
+
+**112 個超過 50 MB 的大資料夾。** 扣掉 `.npz` 逐張陣列之後，比對了 94,000 個檔，其中 16,375 個（17.9 GB）不在雲端。
+
+- **收進 Release**：
+  - 報告或導讀以路徑引用的 119 個。只算 `.md`、`.txt`、`.html`、`.tex` 和圖表來源對照 JSON 裡的引用；推論完列出輸出檔的執行紀錄不算。
+  - 放在 `figures/`、`reports/`、`Final_Data_Figures/` 這類成品圖資料夾的 743 個，含舊版論文圖。
+  - `.fig` 原檔。
+  - 表格和資料檔。
+- **不收**：
+  - 打包進去的 Python 執行環境和 `node_modules`，1,452 個。
+  - 從論文 docx 轉出來的逐頁檢查圖，4,579 個、1.0 GB。
+  - 沒有被報告以路徑引用的逐張結果圖，約 16 GB，主要是 R136、R135、R134。
+
+  這三類照 `docs/reproducibility/SOURCE_AND_IMAGE_DECISIONS.md` 在 2026-10-21 定的界線留在本機。
+
+**Release `research-local-only-recovery-20261105`。** 共 1,157 個位置、1,091 個內容物件，打包成一個 568 MB 的附件，用 `Tools/research_asset_bundle.py` 打包。上傳前在本機跑過兩項檢查，都 PASS：`verify` 讀過每個物件，取回到空資料夾後逐檔比對 sha256。附件裡附了 `RESEARCH_ASSETS.json.gz`，`Tools/cloud_locator.py build` 會把它收進索引。
+
+**逐檔紀錄。** 去處、理由、大小、sha256、新樹路徑和本機原位置都在 `TREE_RESTRUCTURE_20261028/local_only_recovery_20261105.tsv.gz`。
+
+原工作區 sandbox 分支上沒提交的 52 個修改這次沒有動。逐檔比對的結果是：它們跟 main 相同、在 git 歷史裡、在 Release 裡，或是已被 main 上新版取代的舊稿。
