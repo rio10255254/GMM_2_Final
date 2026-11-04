@@ -60,6 +60,7 @@ gh release download RELEASE_TAG --repo rio10255254/GMM_2_Final --pattern ASSET_N
 | Step、多倍率原拍、SEM與原工作表 | [共用來源與影像取捨](SOURCE_AND_IMAGE_DECISIONS.md)。原拍、SEM、合成及模型輸出各有不同角色 |
 | 早期模型與R153外部比較模型 | [模型用途與具體附件](MODEL_GUIDE.md)。同一分包可能包含多個模型，表中分清模型自身大小與附件下載大小 |
 | 原論文草稿、可編輯原圖與必要部署版本 | [精選歷史交付](project_completion/curated/draft_cleanup_20261022/README.md)。約237MB精選原件已保存，不需取回舊數百GB草稿 |
+| 論文圖的 MATLAB `.fig` 原檔、各輪成品圖、舊版論文圖 | [research-local-only-recovery-20261105](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-local-only-recovery-20261105)，一個568MB附件。只要其中幾個檔時，先用 `python Tools/cloud_locator.py where <路徑>` 確認在這個版本；下載方式同本頁上方的 `gh release download`，還原到原位置的指令寫在版本說明裡 |
 
 ## 不要把保存索引當新上傳清單
 

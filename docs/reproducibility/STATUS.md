@@ -28,6 +28,7 @@
 | R32／R147及跨輪固定來源 | [130份原件與15個小模型](round_source_followthrough_20261022/README.md)已發布、取回；包含原R32選中模型、R147最後模型、R108B/C小模型與指定比較輸入 |
 | 可生成的R108資料 | 兩套資料已用GitHub取回的程式重新生成，與歷史檔案相同；[生成範圍與證據](round_source_followthrough_20261022/GENERATION_FROM_GITHUB_VERIFIED.json)，不用另上傳完整訓練資料 |
 | 早期原程式與R13公式 | 22份R94／R95原版本及早期R13公式已找回；[逐項影響](KNOWN_GAPS.md)，不再列為待找 |
+| 交機前只在本機的圖與原檔（2026-11-05） | 600張論文、簡報成品圖放進 git 原位置；1,157個 `.fig` 原檔、各輪成品圖與資料表放進 [research-local-only-recovery-20261105](https://github.com/rio10255254/GMM_2_Final/releases/tag/research-local-only-recovery-20261105)，取回後回到新樹原位置。範圍與不收的類別見[整理紀錄](../operations/TREE_RESTRUCTURE_20261028.md) |
 
 R69另完成[指定來源對照與原表直接閱讀](round_source_reviews/R69_20261022.md)：25個原件已有來源；修正SEM與配對光學圖位於不同附件的說明。當時共用模型程式匯入版本仍保留限制，未宣稱整輪完全重做。
 
